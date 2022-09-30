@@ -67,7 +67,7 @@ public:
      * @hash   -1960178769
      * @symbol ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@@AEBVActorDefinitionTrigger@@@Z
      */
-    MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class ActorDefinitionTrigger const &);
+    MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum class LevelSoundEvent, class ActorDefinitionTrigger const &);
 
 //private:
     /**

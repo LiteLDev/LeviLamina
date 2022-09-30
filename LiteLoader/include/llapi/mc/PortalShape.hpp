@@ -34,7 +34,7 @@ public:
      * @hash   839214008
      * @symbol ??0PortalShape@@QEAA@AEBVBlockSource@@AEBVBlockPos@@W4PortalAxis@@@Z
      */
-    MCAPI PortalShape(class BlockSource const &, class BlockPos const &, enum PortalAxis);
+    MCAPI PortalShape(class BlockSource const &, class BlockPos const &, enum class PortalAxis);
     /**
      * @hash   1818492698
      * @symbol ?createPortalBlocks@PortalShape@@QEBAXAEAVWorldChangeTransaction@@@Z
@@ -79,7 +79,7 @@ public:
      * @hash   2033793048
      * @symbol ?setAxis@PortalShape@@QEAAXW4PortalAxis@@@Z
      */
-    MCAPI void setAxis(enum PortalAxis);
+    MCAPI void setAxis(enum class PortalAxis);
     /**
      * @hash   1044772185
      * @symbol ?updateNeighboringBlocks@PortalShape@@QEBAXAEAVBlockSource@@AEBVVec3@@@Z
@@ -96,7 +96,7 @@ public:
      * @hash   -244346432
      * @symbol ?_getDistanceUntilEdge@PortalShape@@AEBAHAEBVBlockPos@@W4Name@Facing@@AEBVBlockSource@@@Z
      */
-    MCAPI int _getDistanceUntilEdge(class BlockPos const &, enum Facing::Name, class BlockSource const &) const;
+    MCAPI int _getDistanceUntilEdge(class BlockPos const &, enum class Facing::Name, class BlockSource const &) const;
 
 private:
 

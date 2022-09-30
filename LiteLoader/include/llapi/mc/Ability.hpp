@@ -35,7 +35,7 @@ public:
      * @hash   2139479844
      * @symbol ??0Ability@@QEAA@_NW4Options@0@@Z
      */
-    MCAPI Ability(bool, enum Ability::Options);
+    MCAPI Ability(bool, enum class Ability::Options);
     /**
      * @hash   -21106202
      * @symbol ??0Ability@@QEAA@XZ
@@ -55,12 +55,12 @@ public:
      * @hash   -885752415
      * @symbol ?getType@Ability@@QEBA?AW4Type@1@XZ
      */
-    MCAPI enum Ability::Type getType() const;
+    MCAPI enum class Ability::Type getType() const;
     /**
      * @hash   866479498
      * @symbol ?hasOption@Ability@@QEBA_NW4Options@1@@Z
      */
-    MCAPI bool hasOption(enum Ability::Options) const;
+    MCAPI bool hasOption(enum class Ability::Options) const;
     /**
      * @hash   35308954
      * @symbol ?isSet@Ability@@QEBA_NXZ

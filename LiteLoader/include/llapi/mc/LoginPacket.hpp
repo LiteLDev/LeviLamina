@@ -41,7 +41,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@LoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -563303094
      * @vftbl  2
@@ -65,7 +65,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@LoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1410197571
      * @symbol ??0LoginPacket@@QEAA@XZ

@@ -107,7 +107,7 @@ public:
      * @vftbl  133
      * @symbol ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  181
      * @symbol __unk_vfn_181

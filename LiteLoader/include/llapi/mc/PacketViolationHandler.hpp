@@ -37,14 +37,14 @@ public:
      * @hash   820298270
      * @symbol ?checkForViolation@PacketViolationHandler@@QEAA?AW4PacketViolationResponse@@W4MinecraftPacketIds@@W4StreamReadResult@@AEBVNetworkIdentifier@@PEA_N@Z
      */
-    MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
+    MCAPI enum class PacketViolationResponse checkForViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
 
 //private:
     /**
      * @hash   1615645955
      * @symbol ?_handleViolation@PacketViolationHandler@@AEAA?AW4PacketViolationResponse@@W4MinecraftPacketIds@@W4StreamReadResult@@AEBVNetworkIdentifier@@PEA_N@Z
      */
-    MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
+    MCAPI enum class PacketViolationResponse _handleViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
 
 private:
 

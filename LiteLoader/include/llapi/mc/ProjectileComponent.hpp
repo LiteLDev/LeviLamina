@@ -43,7 +43,7 @@ public:
      * @hash   1780104482
      * @symbol ?getAnchor@ProjectileComponent@@QEAA?AW4ProjectileAnchor@@XZ
      */
-    MCAPI enum ProjectileAnchor getAnchor();
+    MCAPI enum class ProjectileAnchor getAnchor();
     /**
      * @hash   -265153208
      * @symbol ?getCatchFire@ProjectileComponent@@QEBA_NXZ
@@ -83,7 +83,7 @@ public:
      * @hash   -981420230
      * @symbol ?getShootSound@ProjectileComponent@@QEAA?AW4LevelSoundEvent@@XZ
      */
-    MCAPI enum LevelSoundEvent getShootSound();
+    MCAPI enum class LevelSoundEvent getShootSound();
     /**
      * @hash   1470122888
      * @symbol ?getShootTarget@ProjectileComponent@@QEAA_NXZ
@@ -103,7 +103,7 @@ public:
      * @hash   289015977
      * @symbol ?getUncertainty@ProjectileComponent@@QEBAMW4Difficulty@@@Z
      */
-    MCAPI float getUncertainty(enum Difficulty) const;
+    MCAPI float getUncertainty(enum class Difficulty) const;
     /**
      * @hash   -2105887866
      * @symbol ?getUncertaintyBase@ProjectileComponent@@QEBAMXZ
@@ -240,7 +240,7 @@ public:
      * @hash   -153016613
      * @symbol ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
      */
-    MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
+    MCAPI void _selectNextMoveDirection(class Actor &, enum class ProjectileComponent::EAxis);
 
 private:
 

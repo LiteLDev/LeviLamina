@@ -31,7 +31,7 @@ public:
      * @hash   -746697729
      * @symbol ?createDataForStorage@BlendingData@@QEBA?AUPersistentBlendData@@W4BlendVersion@@@Z
      */
-    MCAPI struct PersistentBlendData createDataForStorage(enum BlendVersion) const;
+    MCAPI struct PersistentBlendData createDataForStorage(enum class BlendVersion) const;
     /**
      * @hash   175230508
      * @symbol ?getBiome@BlendingData@@QEBA?AV?$ScalarOptional@E@@HHH@Z
@@ -41,7 +41,7 @@ public:
      * @hash   1798218939
      * @symbol ?getBlockType@BlendingData@@QEBA?AW4BlendingBlockType@@HHH@Z
      */
-    MCAPI enum BlendingBlockType getBlockType(int, int, int) const;
+    MCAPI enum class BlendingBlockType getBlockType(int, int, int) const;
     /**
      * @hash   -577029319
      * @symbol ?getDensity@BlendingData@@QEBA?AV?$ScalarOptional@M@@HHH@Z

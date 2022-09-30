@@ -40,7 +40,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@TextPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1415217526
      * @vftbl  2
@@ -58,7 +58,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@TextPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -390089087
      * @symbol ??0TextPacket@@QEAA@XZ
@@ -128,7 +128,7 @@ public:
      * @hash   -1989506386
      * @symbol ??0TextPacket@@AEAA@W4TextPacketType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@_N11@Z
      */
-    MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
+    MCAPI TextPacket(enum class TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
 
 private:
 

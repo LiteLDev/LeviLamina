@@ -160,7 +160,7 @@ public:
      * @hash   -435180442
      * @symbol ?getBannerType@BannerBlockActor@@SA?AW4BannerBlockType@@PEBVCompoundTag@@@Z
      */
-    MCAPI static enum BannerBlockType getBannerType(class CompoundTag const *);
+    MCAPI static enum class BannerBlockType getBannerType(class CompoundTag const *);
     /**
      * @hash   1880222055
      * @symbol ?getBaseColor@BannerBlockActor@@SAHAEBVItemStack@@@Z

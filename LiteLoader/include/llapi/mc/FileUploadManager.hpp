@@ -62,7 +62,7 @@ public:
      * @hash   -571574470
      * @symbol ?setFailed@FileUploadManager@@QEAAXW4UploadError@@@Z
      */
-    MCAPI void setFailed(enum UploadError);
+    MCAPI void setFailed(enum class UploadError);
     /**
      * @hash   -1418932468
      * @symbol ?setUseStream@FileUploadManager@@QEAAX_N@Z

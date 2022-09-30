@@ -559,7 +559,7 @@ public:
      * @hash   217149377
      * @symbol ?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z
      */
-    MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum SemanticConstraint);
+    MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum class SemanticConstraint);
     /**
      * @hash   -1898541035
      * @symbol ?addEnumValues@CommandRegistry@@QEAAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -609,12 +609,12 @@ public:
      * @hash   111398003
      * @symbol ?getCommandStatus@CommandRegistry@@QEBA?AW4CommandStatus@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI enum CommandStatus getCommandStatus(std::string const &) const;
+    MCAPI enum class CommandStatus getCommandStatus(std::string const &) const;
     /**
      * @hash   -705011682
      * @symbol ?isCommandOfType@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandTypeFlag@@@Z
      */
-    MCAPI bool isCommandOfType(std::string const &, enum CommandTypeFlag) const;
+    MCAPI bool isCommandOfType(std::string const &, enum class CommandTypeFlag) const;
     /**
      * @hash   187274015
      * @symbol ?isValidCommand@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -629,7 +629,7 @@ public:
      * @hash   48780604
      * @symbol ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
      */
-    MCAPI void registerCommand(std::string const &, char const *, enum CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
+    MCAPI void registerCommand(std::string const &, char const *, enum class CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
     /**
      * @hash   -444001900
      * @symbol ?removeSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -741,7 +741,7 @@ public:
      * @hash   -851089027
      * @symbol ?_matchesEnumConstraintsSet@CommandRegistry@@AEBA_NAEBVSymbol@1@AEBVCommandOrigin@@0W4SemanticConstraint@@@Z
      */
-    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum SemanticConstraint) const;
+    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum class SemanticConstraint) const;
     /**
      * @hash   -1419483221
      * @symbol ?addEnumValuesToExisting@CommandRegistry@@AEAAXIAEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@std@@@Z
@@ -761,7 +761,7 @@ public:
      * @hash   927616881
      * @symbol ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
      */
-    MCAPI void addSemanticConstraint(enum SemanticConstraint);
+    MCAPI void addSemanticConstraint(enum class SemanticConstraint);
     /**
      * @hash   1776235944
      * @symbol ?addSoftTerminal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -801,7 +801,7 @@ public:
      * @hash   2085605810
      * @symbol ?checkOriginCommandFlags@CommandRegistry@@AEBA_NAEBVCommandOrigin@@UCommandFlag@@W4CommandPermissionLevel@@@Z
      */
-    MCAPI bool checkOriginCommandFlags(class CommandOrigin const &, struct CommandFlag, enum CommandPermissionLevel) const;
+    MCAPI bool checkOriginCommandFlags(class CommandOrigin const &, struct CommandFlag, enum class CommandPermissionLevel) const;
     /**
      * @hash   -1544501703
      * @symbol ?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

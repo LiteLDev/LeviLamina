@@ -47,7 +47,7 @@ public:
     /**
      * @symbol ?getStringsToFilterOrigin@ItemStackRequestData@@QEBAAEBW4TextProcessingEventOrigin@@XZ
      */
-    MCAPI enum TextProcessingEventOrigin const & getStringsToFilterOrigin() const;
+    MCAPI enum class TextProcessingEventOrigin const & getStringsToFilterOrigin() const;
     /**
      * @hash   44916187
      * @symbol ?postLoadItems@ItemStackRequestData@@QEAAXAEAVBlockPalette@@_N@Z
@@ -57,7 +57,7 @@ public:
      * @hash   -1599139296
      * @symbol ?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z
      */
-    MCAPI class ItemStackRequestAction const * tryFindAction(enum ItemStackRequestActionType) const;
+    MCAPI class ItemStackRequestAction const * tryFindAction(enum class ItemStackRequestActionType) const;
     /**
      * @hash   -1955462576
      * @symbol ?write@ItemStackRequestData@@QEBAXAEAVBinaryStream@@@Z

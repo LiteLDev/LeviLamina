@@ -140,7 +140,7 @@ public:
      * @hash   -604592996
      * @symbol ?getArmorSlot@ItemStackBase@@QEBA?AW4ArmorSlot@@XZ
      */
-    MCAPI enum ArmorSlot getArmorSlot() const;
+    MCAPI enum class ArmorSlot getArmorSlot() const;
     /**
      * @hash   -1618814974
      * @symbol ?getAttackDamage@ItemStackBase@@QEBAHXZ
@@ -305,7 +305,7 @@ public:
      * @hash   289803744
      * @symbol ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@@XZ
      */
-    MCAPI enum UseAnimation getUseAnimation() const;
+    MCAPI enum class UseAnimation getUseAnimation() const;
     /**
      * @hash   1492971629
      * @symbol ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ

@@ -38,7 +38,7 @@ public:
      * @vftbl  1
      * @symbol ?tick@FlyNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
      */
-    virtual enum BehaviorStatus tick(class Actor &);
+    virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @hash   180704950
      * @vftbl  2

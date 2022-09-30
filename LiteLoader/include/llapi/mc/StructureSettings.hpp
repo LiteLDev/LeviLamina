@@ -52,7 +52,7 @@ public:
      * @hash   1750866524
      * @symbol ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
      */
-    MCAPI enum AnimationMode getAnimationMode() const;
+    MCAPI enum class AnimationMode getAnimationMode() const;
     /**
      * @hash   1840276840
      * @symbol ?getAnimationSeconds@StructureSettings@@QEBAMXZ
@@ -102,7 +102,7 @@ public:
      * @hash   -2128575652
      * @symbol ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
      */
-    MCAPI enum Mirror getMirror() const;
+    MCAPI enum class Mirror getMirror() const;
     /**
      * @hash   -152731780
      * @symbol ?getPaletteName@StructureSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -122,7 +122,7 @@ public:
      * @hash   136701486
      * @symbol ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
      */
-    MCAPI enum Rotation getRotation() const;
+    MCAPI enum class Rotation getRotation() const;
     /**
      * @hash   798282418
      * @symbol ?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ
@@ -157,7 +157,7 @@ public:
      * @hash   -785899344
      * @symbol ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
      */
-    MCAPI void setAnimationMode(enum AnimationMode);
+    MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @hash   1702692330
      * @symbol ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
@@ -207,7 +207,7 @@ public:
      * @hash   484322950
      * @symbol ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
      */
-    MCAPI void setMirror(enum Mirror);
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @hash   159192120
      * @symbol ?setPaletteName@StructureSettings@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -227,7 +227,7 @@ public:
      * @hash   7956616
      * @symbol ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
      */
-    MCAPI void setRotation(enum Rotation);
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @hash   -485980394
      * @symbol ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z

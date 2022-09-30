@@ -306,6 +306,6 @@ public:
      * @hash   -1594899768
      * @symbol ?setLit@FurnaceBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@W4BlockActorType@@AEBVBlock@@4@Z
      */
-    MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, enum BlockActorType, class Block const &, class Block const &);
+    MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, enum class BlockActorType, class Block const &, class Block const &);
 
 };

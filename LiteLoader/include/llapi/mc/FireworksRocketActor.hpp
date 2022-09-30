@@ -119,7 +119,7 @@ public:
      * @vftbl  141
      * @symbol ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  181
      * @symbol __unk_vfn_181

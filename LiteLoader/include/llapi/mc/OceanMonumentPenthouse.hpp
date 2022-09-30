@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@OceanMonumentPenthouse@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   -216914867
      * @vftbl  4

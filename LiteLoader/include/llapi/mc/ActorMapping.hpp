@@ -43,7 +43,7 @@ public:
      * @hash   -959804045
      * @symbol ?getMappingName@ActorMapping@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorTypeNamespaceRules@@@Z
      */
-    MCAPI std::string getMappingName(enum ActorTypeNamespaceRules) const;
+    MCAPI std::string getMappingName(enum class ActorTypeNamespaceRules) const;
     /**
      * @hash   -1633594797
      * @symbol ??1ActorMapping@@QEAA@XZ

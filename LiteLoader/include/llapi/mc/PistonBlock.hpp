@@ -45,7 +45,7 @@ public:
      * @vftbl  22
      * @symbol ?canProvideSupport@PistonBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @symbol __unk_vfn_29
@@ -328,7 +328,7 @@ public:
      * @hash   513887133
      * @symbol ??0PistonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
      */
-    MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
+    MCAPI PistonBlock(std::string const &, int, enum class PistonBlock::Type);
 
 //private:
 

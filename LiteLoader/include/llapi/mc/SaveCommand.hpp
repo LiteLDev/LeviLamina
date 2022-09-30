@@ -81,6 +81,6 @@ private:
      * @hash   -507441169
      * @symbol ?mState@SaveCommand@@0W4State@1@A
      */
-    MCAPI static enum SaveCommand::State mState;
+    MCAPI static enum class SaveCommand::State mState;
 
 };

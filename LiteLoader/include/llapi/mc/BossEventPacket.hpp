@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@BossEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   603460214
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@BossEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   855963185
      * @symbol ??0BossEventPacket@@QEAA@XZ
@@ -67,11 +67,11 @@ public:
      * @hash   585915502
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
      */
-    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
+    MCAPI BossEventPacket(enum class BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     /**
      * @hash   388598923
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
      */
-    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
+    MCAPI BossEventPacket(enum class BossEventUpdateType, class RaidBossComponent &);
 
 };

@@ -82,7 +82,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@PlayerActionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1897348636
      * @vftbl  2
@@ -100,7 +100,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@PlayerActionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1560659973
      * @symbol ??0PlayerActionPacket@@QEAA@XZ
@@ -110,26 +110,26 @@ public:
      * @hash   1932868401
      * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
      */
-    MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class ActorRuntimeID);
     /**
      * @hash   2127365360
      * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
      */
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class ActorRuntimeID);
     /**
      * @hash   -1003760761
      * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@HVActorRuntimeID@@@Z
      */
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
     /**
      * @hash   -180938058
      * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
      */
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
     /**
      * @hash   147552026
      * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
      */
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
 
 };

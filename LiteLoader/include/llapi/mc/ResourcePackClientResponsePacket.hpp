@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@ResourcePackClientResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1856881888
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@ResourcePackClientResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -945487497
      * @symbol ??0ResourcePackClientResponsePacket@@QEAA@XZ
@@ -72,6 +72,6 @@ public:
      * @hash   -1019064275
      * @symbol ?isResponse@ResourcePackClientResponsePacket@@QEBA_NW4ResourcePackResponse@@@Z
      */
-    MCAPI bool isResponse(enum ResourcePackResponse) const;
+    MCAPI bool isResponse(enum class ResourcePackResponse) const;
 
 };

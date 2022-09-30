@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@PacketViolationWarningPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   156291716
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@PacketViolationWarningPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -868820349
      * @symbol ??0PacketViolationWarningPacket@@QEAA@XZ
@@ -67,6 +67,6 @@ public:
      * @hash   1471721123
      * @symbol ??0PacketViolationWarningPacket@@QEAA@W4StreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI PacketViolationWarningPacket(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, std::string const &);
+    MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
 
 };

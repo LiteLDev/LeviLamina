@@ -89,7 +89,7 @@ public:
      * @vftbl  10
      * @symbol ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
      */
-    virtual enum ItemDescriptor::InternalType getType() const;
+    virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  11
      * @symbol __unk_vfn_11

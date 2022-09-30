@@ -93,19 +93,19 @@ public:
      * @vftbl  10
      * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
      */
-    virtual enum Direction::Type loadDirection(enum Direction::Type);
+    virtual enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @hash   129180960
      * @vftbl  11
      * @symbol ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
      */
-    virtual enum Rotation loadRotation(enum Rotation);
+    virtual enum class Rotation loadRotation(enum class Rotation);
     /**
      * @hash   -357159169
      * @vftbl  12
      * @symbol ?loadMirror@StructureDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
      */
-    virtual enum Mirror loadMirror(enum Mirror);
+    virtual enum class Mirror loadMirror(enum class Mirror);
     /**
      * @hash   1810333265
      * @vftbl  13
@@ -129,7 +129,7 @@ public:
      * @vftbl  16
      * @symbol ?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
      */
-    virtual enum DataLoadHelperType getType() const;
+    virtual enum class DataLoadHelperType getType() const;
     /**
      * @hash   772184273
      * @vftbl  17
@@ -158,6 +158,6 @@ public:
      * @hash   614809903
      * @symbol ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z
      */
-    MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
+    MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum class Rotation, enum class Mirror, class Level &);
 
 };

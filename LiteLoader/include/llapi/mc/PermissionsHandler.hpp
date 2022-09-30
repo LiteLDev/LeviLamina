@@ -46,12 +46,12 @@ public:
      * @hash   1169515862
      * @symbol ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
      */
-    MCAPI enum CommandPermissionLevel getCommandPermissions() const;
+    MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @hash   -1495389454
      * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
      */
-    MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
+    MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @hash   -1461807861
      * @symbol ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
@@ -66,21 +66,21 @@ public:
      * @hash   2061812280
      * @symbol ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
      */
-    MCAPI void setCommandPermissions(enum CommandPermissionLevel);
+    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @hash   634424782
      * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
      */
-    MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
+    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
      * @hash   1487468149
      * @symbol ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
+    MCAPI static enum class PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     /**
      * @hash   -1441723133
      * @symbol ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z
      */
-    MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
+    MCAPI static std::string playerPermissionLevelToString(enum class PlayerPermissionLevel const &);
 
 };

@@ -90,7 +90,7 @@ public:
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@MeleeWeaponEnchant@@EEBA_NW4Type@Enchant@@@Z
      */
-    virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEWEAPONENCHANT
     /**
      * @hash   -566490161
@@ -102,7 +102,7 @@ public:
      * @hash   -342638064
      * @symbol ??0MeleeWeaponEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
      */
-    MCAPI MeleeWeaponEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
+    MCAPI MeleeWeaponEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 //private:
 
@@ -111,6 +111,6 @@ private:
      * @hash   -31357184
      * @symbol ?VALID_ENCHANTMENTS@MeleeWeaponEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
      */
-    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

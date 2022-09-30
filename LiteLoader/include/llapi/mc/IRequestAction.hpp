@@ -58,7 +58,7 @@ public:
      * @hash   -2068339155
      * @symbol ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
      */
-    MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
+    MCAPI IRequestAction(enum class IRequestAction::RequestActionType const &);
     /**
      * @hash   497694715
      * @symbol ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z

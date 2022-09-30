@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@SetDefaultGameTypePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -314969832
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@SetDefaultGameTypePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   1484970223
      * @symbol ??0SetDefaultGameTypePacket@@QEAA@XZ
@@ -67,6 +67,6 @@ public:
      * @hash   613769018
      * @symbol ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
      */
-    MCAPI SetDefaultGameTypePacket(enum GameType);
+    MCAPI SetDefaultGameTypePacket(enum class GameType);
 
 };

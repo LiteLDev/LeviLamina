@@ -40,12 +40,12 @@ public:
      * @hash   1678085334
      * @symbol ?appendFormattedPotionText@Potion@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@W4PotionVariant@1@AEBVPlayer@@M@Z
      */
-    MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
+    MCAPI void appendFormattedPotionText(std::string &, enum class Potion::PotionType, enum class Potion::PotionVariant, class Player const &, float) const;
     /**
      * @hash   -1088656303
      * @symbol ?effectDurationToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MAEBVMobEffectInstance@@@Z
      */
-    MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;
+    MCAPI std::string effectDurationToString(enum class Potion::PotionType, float, class MobEffectInstance const &) const;
     /**
      * @hash   -1566170991
      * @symbol ?effectPotencyToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVMobEffectInstance@@@Z
@@ -55,7 +55,7 @@ public:
      * @hash   1709849585
      * @symbol ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
      */
-    MCAPI std::string getDescriptionId(enum Potion::PotionType) const;
+    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
     /**
      * @hash   -133995080
      * @symbol ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -80,12 +80,12 @@ public:
      * @hash   -2023081554
      * @symbol ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
      */
-    MCAPI std::string getPotentencyDescription(enum Potion::PotionType, float) const;
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
     /**
      * @hash   -1180189960
      * @symbol ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_span@$$CBD$0?0@gsl@@AEBVMobEffectInstance@@@Z
      */
-    MCAPI std::string getPotentencyDescription(enum Potion::PotionType, float, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &) const;
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &) const;
     /**
      * @hash   949133270
      * @symbol ?getPotionId@Potion@@QEBAHXZ
@@ -95,7 +95,7 @@ public:
      * @hash   -1094255750
      * @symbol ?getPotionVariant@Potion@@QEBA?AW4PotionVariant@1@XZ
      */
-    MCAPI enum Potion::PotionVariant getPotionVariant() const;
+    MCAPI enum class Potion::PotionVariant getPotionVariant() const;
     /**
      * @hash   1186388072
      * @symbol ?getPrefix@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -325,7 +325,7 @@ public:
      * @hash   425961769
      * @symbol ?getBasePotion@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
      */
-    MCAPI static std::string getBasePotion(enum Potion::PotionType);
+    MCAPI static std::string getBasePotion(enum class Potion::PotionType);
     /**
      * @hash   996639842
      * @symbol ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
@@ -357,22 +357,22 @@ public:
      * @hash   -1530490232
      * @symbol ??0Potion@@AEAA@V?$basic_string_span@$$CBD$0?0@gsl@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@4@W4PotionVariant@0@@Z
      */
-    MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
+    MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum class Potion::PotionVariant);
     /**
      * @hash   -1411803004
      * @symbol ??0Potion@@AEAA@V?$basic_string_span@$$CBD$0?0@gsl@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
      */
-    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
+    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum class Potion::PotionVariant);
     /**
      * @hash   -1463454512
      * @symbol ?_getDescriptionIdCombiningStrings@Potion@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
      */
-    MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
+    MCAPI std::string _getDescriptionIdCombiningStrings(enum class Potion::PotionType) const;
     /**
      * @hash   -1038165763
      * @symbol ?_getDescriptionIdSingleString@Potion@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
      */
-    MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
+    MCAPI std::string _getDescriptionIdSingleString(enum class Potion::PotionType) const;
     /**
      * @hash   2023664507
      * @symbol ?addPotion@Potion@@CAXV?$shared_ptr@$$CBVPotion@@@std@@@Z

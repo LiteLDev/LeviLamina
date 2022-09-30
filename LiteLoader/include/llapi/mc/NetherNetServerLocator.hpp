@@ -50,7 +50,7 @@ public:
      * @vftbl  3
      * @symbol ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool, enum TransportLayer);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @hash   -1955933884
      * @vftbl  4

@@ -36,7 +36,7 @@ public:
      * @hash   -112469379
      * @symbol ?typeToEvent@GameEventMapping@@SAAEBVGameEvent@@W4GameEventType@GameEventConfig@@@Z
      */
-    MCAPI static class GameEvent const & typeToEvent(enum GameEventConfig::GameEventType);
+    MCAPI static class GameEvent const & typeToEvent(enum class GameEventConfig::GameEventType);
 
 //private:
 

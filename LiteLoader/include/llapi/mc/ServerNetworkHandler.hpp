@@ -51,7 +51,7 @@ public:
      * @hash   1650197483
      * @symbol ?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
      */
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
+    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     /**
      * @hash   493714836
      * @symbol ?getGameSpecificNetEventCallback@ServerNetworkHandler@@UEAAPEAVGameSpecificNetEventCallback@@XZ
@@ -454,7 +454,7 @@ public:
      * @hash   106781460
      * @symbol ?onTextFilterSkipped@ServerNetworkHandler@@EEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void onTextFilterSkipped(class NetworkIdentifier const &, enum SubClientId, std::string const &);
+    MCVAPI void onTextFilterSkipped(class NetworkIdentifier const &, enum class SubClientId, std::string const &);
     /**
      * @hash   -619336524
      * @symbol ?onTick@ServerNetworkHandler@@UEAAXXZ
@@ -484,7 +484,7 @@ public:
      * @hash   -1204131819
      * @symbol ?sendServerLegacyParticle@ServerNetworkHandler@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
      */
-    MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @hash   1522161476
      * @symbol __unk_destructor_-1
@@ -534,7 +534,7 @@ public:
      * @hash   589418713
      * @symbol ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
      */
-    MCAPI void disconnectClient(class NetworkIdentifier const &, enum SubClientId, std::string const &, bool);
+    MCAPI void disconnectClient(class NetworkIdentifier const &, enum class SubClientId, std::string const &, bool);
     /**
      * @hash   832667221
      * @symbol ?engineCancelResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
@@ -579,7 +579,7 @@ public:
      * @hash   1348729831
      * @symbol ?persistPlayerPermissionsToDisk@ServerNetworkHandler@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
      */
-    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum PlayerPermissionLevel);
+    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum class PlayerPermissionLevel);
     /**
      * @hash   1190284406
      * @symbol ?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@@Z
@@ -621,7 +621,7 @@ public:
      * @hash   713119714
      * @symbol ?_createNewPlayer@ServerNetworkHandler@@AEAAAEAVServerPlayer@@AEBVNetworkIdentifier@@AEBVSubClientConnectionRequest@@W4SubClientId@@@Z
      */
-    MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, enum SubClientId);
+    MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, enum class SubClientId);
     /**
      * @hash   -1630131516
      * @symbol ?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEAUChatEvent@@@Z
@@ -641,7 +641,7 @@ public:
      * @hash   -1091034380
      * @symbol ?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
      */
-    MCAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, enum SubClientId);
+    MCAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, enum class SubClientId);
     /**
      * @symbol ?_handleCommandBlockUpdatePacket@ServerNetworkHandler@@AEAAXAEBVServerPlayer@@AEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z
      */

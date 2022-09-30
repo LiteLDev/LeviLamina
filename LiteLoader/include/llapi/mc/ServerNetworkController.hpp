@@ -56,6 +56,6 @@ public:
      * @hash   243925418
      * @symbol ??0ServerNetworkController@@QEAA@_NAEBVUUID@mce@@V?$function@$$A6A_NAEBVServerPlayer@@W4AbilitiesIndex@@@Z@std@@@Z
      */
-    MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
+    MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum class AbilitiesIndex)>);
 
 };

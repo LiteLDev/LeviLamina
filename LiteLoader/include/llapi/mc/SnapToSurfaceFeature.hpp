@@ -52,7 +52,7 @@ public:
      * @hash   29707145
      * @symbol ?_findSnapPos@SnapToSurfaceFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@W4Surface@1@@Z
      */
-    MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum SnapToSurfaceFeature::Surface) const;
+    MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum class SnapToSurfaceFeature::Surface) const;
 
 private:
 

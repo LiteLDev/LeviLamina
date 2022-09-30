@@ -67,17 +67,17 @@ public:
      * @hash   283766389
      * @symbol ?fireClassroomSettingUpdated@MinecraftEventing@@UEAAXW4ClassroomSetting@@W4SettingsScreenMode@@@Z
      */
-    MCVAPI void fireClassroomSettingUpdated(enum ClassroomSetting, enum SettingsScreenMode);
+    MCVAPI void fireClassroomSettingUpdated(enum class ClassroomSetting, enum class SettingsScreenMode);
     /**
      * @hash   -731588516
      * @symbol ?fireClubsEngagementEvent@MinecraftEventing@@UEAAXW4ClubsEngagementAction@IMinecraftEventing@@W4ClubsEngagementTargetType@3@PEBDURealmId@Realms@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireClubsEngagementEvent(enum IMinecraftEventing::ClubsEngagementAction, enum IMinecraftEventing::ClubsEngagementTargetType, char const *, struct Realms::RealmId, std::string);
+    MCVAPI void fireClubsEngagementEvent(enum class IMinecraftEventing::ClubsEngagementAction, enum class IMinecraftEventing::ClubsEngagementTargetType, char const *, struct Realms::RealmId, std::string);
     /**
      * @hash   376256089
      * @symbol ?fireClubsOpenFeedScreenEvent@MinecraftEventing@@UEAAXW4ClubsFeedScreenSource@IMinecraftEventing@@URealmId@Realms@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireClubsOpenFeedScreenEvent(enum IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string);
+    MCVAPI void fireClubsOpenFeedScreenEvent(enum class IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string);
     /**
      * @hash   -639459910
      * @symbol ?fireCodeCommandButtonPressed@MinecraftEventing@@UEAAXXZ
@@ -87,7 +87,7 @@ public:
      * @hash   -1537890902
      * @symbol ?fireCommunitySIFTProcessEvent@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@G_NNDDAEBVValue@Json@@@Z
      */
-    MCVAPI void fireCommunitySIFTProcessEvent(std::string, enum TextProcessingEventOrigin, unsigned short, bool, double, char, char, class Json::Value const &);
+    MCVAPI void fireCommunitySIFTProcessEvent(std::string, enum class TextProcessingEventOrigin, unsigned short, bool, double, char, char, class Json::Value const &);
     /**
      * @hash   268747249
      * @symbol ?fireCourseButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -107,7 +107,7 @@ public:
      * @hash   -337627952
      * @symbol ?fireDayOneExperienceStateChanged@MinecraftEventing@@UEAAXW4DayOneExperienceState@IMinecraftEventing@@V?$optional@I@std@@V?$optional@_K@5@@Z
      */
-    MCVAPI void fireDayOneExperienceStateChanged(enum IMinecraftEventing::DayOneExperienceState, class std::optional<unsigned int>, class std::optional<unsigned __int64>);
+    MCVAPI void fireDayOneExperienceStateChanged(enum class IMinecraftEventing::DayOneExperienceState, class std::optional<unsigned int>, class std::optional<unsigned __int64>);
     /**
      * @hash   -765227372
      * @symbol ?fireEduServiceRequestFailed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00V?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
@@ -252,12 +252,12 @@ public:
      * @hash   468723906
      * @symbol ?fireEventConnectedStorageResult@MinecraftEventing@@UEAAXW4ConnectedStorageEventType@@_NIV?$optional@I@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@3_J222@Z
      */
-    MCVAPI void fireEventConnectedStorageResult(enum ConnectedStorageEventType, bool, unsigned int, class std::optional<unsigned int>, std::string const &, std::string const &, __int64, class std::optional<unsigned int>, class std::optional<unsigned int>, class std::optional<unsigned int>);
+    MCVAPI void fireEventConnectedStorageResult(enum class ConnectedStorageEventType, bool, unsigned int, class std::optional<unsigned int>, std::string const &, std::string const &, __int64, class std::optional<unsigned int>, class std::optional<unsigned int>, class std::optional<unsigned int>);
     /**
      * @hash   511969818
      * @symbol ?fireEventConnectionFailed@MinecraftEventing@@UEAAXW4ConnectionFailureReason@IConnectionEventing@@@Z
      */
-    MCVAPI void fireEventConnectionFailed(enum IConnectionEventing::ConnectionFailureReason);
+    MCVAPI void fireEventConnectionFailed(enum class IConnectionEventing::ConnectionFailureReason);
     /**
      * @hash   -2140527171
      * @symbol ?fireEventContentLogsInWorldSession@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@II@Z
@@ -267,12 +267,12 @@ public:
      * @hash   584114702
      * @symbol ?fireEventContentShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBW4ShareMode@IMinecraftEventing@@@Z
      */
-    MCVAPI void fireEventContentShared(std::string const &, std::string const &, enum IMinecraftEventing::ShareMode const &);
+    MCVAPI void fireEventContentShared(std::string const &, std::string const &, enum class IMinecraftEventing::ShareMode const &);
     /**
      * @hash   -1894808615
      * @symbol ?fireEventControlRemappedByPlayer@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RawInputType@@H@Z
      */
-    MCVAPI void fireEventControlRemappedByPlayer(std::string const &, enum RawInputType, int) const;
+    MCVAPI void fireEventControlRemappedByPlayer(std::string const &, enum class RawInputType, int) const;
     /**
      * @hash   -122019964
      * @symbol ?fireEventCopyWorldEducationEnabled@MinecraftEventing@@UEAAXXZ
@@ -287,7 +287,7 @@ public:
      * @hash   -1354509643
      * @symbol ?fireEventDefaultGameTypeChanged@MinecraftEventing@@UEAAXW4GameType@@0@Z
      */
-    MCVAPI void fireEventDefaultGameTypeChanged(enum GameType, enum GameType);
+    MCVAPI void fireEventDefaultGameTypeChanged(enum class GameType, enum class GameType);
     /**
      * @symbol ?fireEventDevSlashCommandExecuted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
      */
@@ -296,7 +296,7 @@ public:
      * @hash   -558710129
      * @symbol ?fireEventDeviceAccountFailure@MinecraftEventing@@UEAAXW4SignInStage@IMinecraftEventing@@W4DeviceAccountFailurePhase@3@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireEventDeviceAccountFailure(enum IMinecraftEventing::SignInStage, enum IMinecraftEventing::DeviceAccountFailurePhase, unsigned int, std::string const &);
+    MCVAPI void fireEventDeviceAccountFailure(enum class IMinecraftEventing::SignInStage, enum class IMinecraftEventing::DeviceAccountFailurePhase, unsigned int, std::string const &);
     /**
      * @hash   1051577538
      * @symbol ?fireEventDeviceAccountSuccess@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -316,12 +316,12 @@ public:
      * @hash   1117677757
      * @symbol ?fireEventDifficultySet@MinecraftEventing@@UEAAXW4Difficulty@@0@Z
      */
-    MCVAPI void fireEventDifficultySet(enum Difficulty, enum Difficulty);
+    MCVAPI void fireEventDifficultySet(enum class Difficulty, enum class Difficulty);
     /**
      * @hash   -1062924195
      * @symbol ?fireEventDiskStatus@MinecraftEventing@@UEAAXW4DiskStatus@@W4LevelStorageState@Core@@_K@Z
      */
-    MCVAPI void fireEventDiskStatus(enum DiskStatus, enum Core::LevelStorageState, unsigned __int64);
+    MCVAPI void fireEventDiskStatus(enum class DiskStatus, enum class Core::LevelStorageState, unsigned __int64);
     /**
      * @hash   -1018263808
      * @symbol ?fireEventEduContentVerificationFailed@MinecraftEventing@@UEBAXXZ
@@ -331,7 +331,7 @@ public:
      * @hash   -1626630400
      * @symbol ?fireEventEduDemoConversion@MinecraftEventing@@UEAAXW4ADRole@@W4LastClickedSource@@@Z
      */
-    MCVAPI void fireEventEduDemoConversion(enum ADRole, enum LastClickedSource);
+    MCVAPI void fireEventEduDemoConversion(enum class ADRole, enum class LastClickedSource);
     /**
      * @hash   -1422021842
      * @symbol ?fireEventEduOptionSet@MinecraftEventing@@UEBAXAEBVOption@@@Z
@@ -351,12 +351,12 @@ public:
      * @hash   1954521475
      * @symbol ?fireEventEduiOSPurchaseTransaction@MinecraftEventing@@UEBAXAEBW4TransactionStatus@@@Z
      */
-    MCVAPI void fireEventEduiOSPurchaseTransaction(enum TransactionStatus const &) const;
+    MCVAPI void fireEventEduiOSPurchaseTransaction(enum class TransactionStatus const &) const;
     /**
      * @hash   -979665702
      * @symbol ?fireEventElementConstructorUsed@MinecraftEventing@@UEAAXHHW4ElementConstructorUseType@IMinecraftEventing@@@Z
      */
-    MCVAPI void fireEventElementConstructorUsed(int, int, enum IMinecraftEventing::ElementConstructorUseType);
+    MCVAPI void fireEventElementConstructorUsed(int, int, enum class IMinecraftEventing::ElementConstructorUseType);
     /**
      * @hash   146547647
      * @symbol ?fireEventEntitlementListInfo@MinecraftEventing@@UEAAXAEAV?$vector@VContentIdentity@@V?$allocator@VContentIdentity@@@std@@@std@@_N@Z
@@ -396,27 +396,27 @@ public:
      * @hash   788925939
      * @symbol ?fireEventHowToPlayTopicChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InputMode@@@Z
      */
-    MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum InputMode);
+    MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum class InputMode);
     /**
      * @hash   -109869336
      * @symbol ?fireEventIAPPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventIAPPurchaseAttempt(std::string const &, std::string const &, class Offer &, enum PurchasePath);
+    MCVAPI void fireEventIAPPurchaseAttempt(std::string const &, std::string const &, class Offer &, enum class PurchasePath);
     /**
      * @hash   228404237
      * @symbol ?fireEventIAPPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventIAPPurchaseResolved(std::string const &, std::string const &, class Offer &, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
+    MCVAPI void fireEventIAPPurchaseResolved(std::string const &, std::string const &, class Offer &, enum class IMinecraftEventing::PurchaseResult, enum class PurchasePath);
     /**
      * @hash   2131945649
      * @symbol ?fireEventIAPRedeemAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventIAPRedeemAttempt(std::string const &, std::string const &, std::string const &, enum PurchasePath);
+    MCVAPI void fireEventIAPRedeemAttempt(std::string const &, std::string const &, std::string const &, enum class PurchasePath);
     /**
      * @hash   1455267022
      * @symbol ?fireEventIAPRedeemResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventIAPRedeemResolved(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
+    MCVAPI void fireEventIAPRedeemResolved(std::string const &, std::string const &, std::string const &, enum class IMinecraftEventing::PurchaseResult, enum class PurchasePath);
     /**
      * @hash   -288329672
      * @symbol ?fireEventJoinByCode@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -426,7 +426,7 @@ public:
      * @hash   608954438
      * @symbol ?fireEventJoinCanceled@MinecraftEventing@@UEAAXW4LoadingState@@@Z
      */
-    MCVAPI void fireEventJoinCanceled(enum LoadingState);
+    MCVAPI void fireEventJoinCanceled(enum class LoadingState);
     /**
      * @hash   -933581878
      * @symbol ?fireEventLabTableCreated@MinecraftEventing@@UEAAXHHH@Z
@@ -531,7 +531,7 @@ public:
      * @hash   -192370486
      * @symbol ?fireEventOptionsUpdated@MinecraftEventing@@UEAAXAEAVOptions@@W4InputMode@@_N@Z
      */
-    MCVAPI void fireEventOptionsUpdated(class Options &, enum InputMode, bool);
+    MCVAPI void fireEventOptionsUpdated(class Options &, enum class InputMode, bool);
     /**
      * @hash   -2000433633
      * @symbol ?fireEventOreUIError@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -556,7 +556,7 @@ public:
      * @hash   -1521643496
      * @symbol ?fireEventPacketViolationDetected@MinecraftEventing@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
      */
-    MCVAPI void fireEventPacketViolationDetected(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
+    MCVAPI void fireEventPacketViolationDetected(struct ExtendedStreamReadResult const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
     /**
      * @hash   -1936274826
      * @symbol ?fireEventPerformanceContext@MinecraftEventing@@UEAAXAEBVPerfContextTrackerReport@@@Z
@@ -606,7 +606,7 @@ public:
      * @hash   -1926222753
      * @symbol ?fireEventPersonaItemPreviewed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00IIW4PromotionType@IMinecraftEventing@@_N00NW4StoreType@5@@Z
      */
-    MCVAPI void fireEventPersonaItemPreviewed(std::string const &, std::string const &, std::string const &, unsigned int, unsigned int, enum IMinecraftEventing::PromotionType, bool, std::string const &, std::string const &, double, enum IMinecraftEventing::StoreType);
+    MCVAPI void fireEventPersonaItemPreviewed(std::string const &, std::string const &, std::string const &, unsigned int, unsigned int, enum class IMinecraftEventing::PromotionType, bool, std::string const &, std::string const &, double, enum class IMinecraftEventing::StoreType);
     /**
      * @hash   49572878
      * @symbol ?fireEventPersonaLoadingPieces@MinecraftEventing@@UEAAXIN@Z
@@ -651,12 +651,12 @@ public:
      * @hash   611044802
      * @symbol ?fireEventPlayerDamaged@MinecraftEventing@@UEAAXPEAVPlayer@@W4ActorDamageCause@@@Z
      */
-    MCVAPI void fireEventPlayerDamaged(class Player *, enum ActorDamageCause);
+    MCVAPI void fireEventPlayerDamaged(class Player *, enum class ActorDamageCause);
     /**
      * @hash   -301710557
      * @symbol ?fireEventPlayerJoinWorld@MinecraftEventing@@UEAAXAEBIW4SubClientId@@W4PlayerJoinWorldAttemptState@IConnectionEventing@@H@Z
      */
-    MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum SubClientId, enum IConnectionEventing::PlayerJoinWorldAttemptState, int);
+    MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum class SubClientId, enum class IConnectionEventing::PlayerJoinWorldAttemptState, int);
     /**
      * @hash   1932317340
      * @symbol ?fireEventPlayerKicked@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -706,7 +706,7 @@ public:
      * @hash   -1524906101
      * @symbol ?fireEventPopupFiredEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4ActiveDirectoryAction@@@Z
      */
-    MCVAPI void fireEventPopupFiredEdu(std::string const &, std::string const &, std::string const &, std::string const &, enum ActiveDirectoryAction);
+    MCVAPI void fireEventPopupFiredEdu(std::string const &, std::string const &, std::string const &, std::string const &, enum class ActiveDirectoryAction);
     /**
      * @hash   1617574921
      * @symbol ?fireEventPortfolioExported@MinecraftEventing@@UEAAXHH@Z
@@ -726,7 +726,7 @@ public:
      * @hash   194184861
      * @symbol ?fireEventPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventPurchaseAttempt(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::StoreType, enum PurchasePath);
+    MCVAPI void fireEventPurchaseAttempt(std::string const &, std::string const &, std::string const &, enum class IMinecraftEventing::StoreType, enum class PurchasePath);
     /**
      * @hash   883640748
      * @symbol ?fireEventPurchaseFailureDetails@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
@@ -741,7 +741,7 @@ public:
      * @hash   -346236542
      * @symbol ?fireEventPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchaseResult@5@W4PurchasePath@@@Z
      */
-    MCVAPI void fireEventPurchaseResolved(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::StoreType, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
+    MCVAPI void fireEventPurchaseResolved(std::string const &, std::string const &, std::string const &, enum class IMinecraftEventing::StoreType, enum class IMinecraftEventing::PurchaseResult, enum class PurchasePath);
     /**
      * @hash   -894724508
      * @symbol ?fireEventPushNotificationOpened@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -771,7 +771,7 @@ public:
      * @hash   1417129566
      * @symbol ?fireEventRealmShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4ShareMode@IMinecraftEventing@@AEBURealmId@Realms@@@Z
      */
-    MCVAPI void fireEventRealmShared(std::string const &, enum IMinecraftEventing::ShareMode const &, struct Realms::RealmId const &);
+    MCVAPI void fireEventRealmShared(std::string const &, enum class IMinecraftEventing::ShareMode const &, struct Realms::RealmId const &);
     /**
      * @hash   1897824379
      * @symbol ?fireEventRealmUpload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH_N@Z
@@ -786,17 +786,17 @@ public:
      * @hash   339880441
      * @symbol ?fireEventRealmsSubscriptionPurchaseFailed@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@W4RealmsPurchaseFailureReason@@@Z
      */
-    MCVAPI void fireEventRealmsSubscriptionPurchaseFailed(struct ProductSku const &, enum RealmsPurchaseIntent, enum RealmsPurchaseFailureReason);
+    MCVAPI void fireEventRealmsSubscriptionPurchaseFailed(struct ProductSku const &, enum class RealmsPurchaseIntent, enum class RealmsPurchaseFailureReason);
     /**
      * @hash   100146768
      * @symbol ?fireEventRealmsSubscriptionPurchaseStarted@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@@Z
      */
-    MCVAPI void fireEventRealmsSubscriptionPurchaseStarted(struct ProductSku const &, enum RealmsPurchaseIntent);
+    MCVAPI void fireEventRealmsSubscriptionPurchaseStarted(struct ProductSku const &, enum class RealmsPurchaseIntent);
     /**
      * @hash   173736960
      * @symbol ?fireEventRealmsSubscriptionPurchaseSucceeded@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@@Z
      */
-    MCVAPI void fireEventRealmsSubscriptionPurchaseSucceeded(struct ProductSku const &, enum RealmsPurchaseIntent);
+    MCVAPI void fireEventRealmsSubscriptionPurchaseSucceeded(struct ProductSku const &, enum class RealmsPurchaseIntent);
     /**
      * @hash   813136875
      * @symbol ?fireEventReducerBlockEntered@MinecraftEventing@@UEAAXAEBVItemDescriptor@@@Z
@@ -906,17 +906,17 @@ public:
      * @hash   -375451242
      * @symbol ?fireEventSignInEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ADRole@@W4EduSignInStage@IMinecraftEventing@@00AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
      */
-    MCVAPI void fireEventSignInEdu(std::string const &, enum ADRole, enum IMinecraftEventing::EduSignInStage, std::string const &, std::string const &, std::vector<struct std::pair<std::string, std::string>> const &);
+    MCVAPI void fireEventSignInEdu(std::string const &, enum class ADRole, enum class IMinecraftEventing::EduSignInStage, std::string const &, std::string const &, std::vector<struct std::pair<std::string, std::string>> const &);
     /**
      * @hash   325687882
      * @symbol ?fireEventSignInToIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@_NW4SignInStage@3@W4SignInResult@Social@@UPlayerIDs@7@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireEventSignInToIdentity(enum IMinecraftEventing::SignInAccountType, enum IMinecraftEventing::SignInTrigger, bool, enum IMinecraftEventing::SignInStage, enum Social::SignInResult, struct Social::PlayerIDs, std::string const &);
+    MCVAPI void fireEventSignInToIdentity(enum class IMinecraftEventing::SignInAccountType, enum class IMinecraftEventing::SignInTrigger, bool, enum class IMinecraftEventing::SignInStage, enum class Social::SignInResult, struct Social::PlayerIDs, std::string const &);
     /**
      * @hash   -240811885
      * @symbol ?fireEventSignOutOfIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2@Z
      */
-    MCVAPI void fireEventSignOutOfIdentity(enum IMinecraftEventing::SignInAccountType, enum IMinecraftEventing::SignInTrigger, std::string const &, std::string const &);
+    MCVAPI void fireEventSignOutOfIdentity(enum class IMinecraftEventing::SignInAccountType, enum class IMinecraftEventing::SignInTrigger, std::string const &, std::string const &);
     /**
      * @hash   888328853
      * @symbol ?fireEventSplitScreenUpdated@MinecraftEventing@@UEAAXAEBVIClientInstance@@@Z
@@ -936,7 +936,7 @@ public:
      * @hash   -694813537
      * @symbol ?fireEventStartWorld@MinecraftEventing@@UEAAXW4NetworkType@IMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MultiplayerServiceIdentifier@Social@@@Z
      */
-    MCVAPI void fireEventStartWorld(enum IMinecraftEventing::NetworkType, std::string const &, enum Social::MultiplayerServiceIdentifier);
+    MCVAPI void fireEventStartWorld(enum class IMinecraftEventing::NetworkType, std::string const &, enum class Social::MultiplayerServiceIdentifier);
     /**
      * @hash   244602022
      * @symbol ?fireEventStorage@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -988,7 +988,7 @@ public:
      * @hash   -1669169401
      * @symbol ?fireEventStructureExport@MinecraftEventing@@UEBAXAEBUglTFExportData@@W4ExportOutcome@IMinecraftEventing@@W4ExportStage@4@@Z
      */
-    MCVAPI void fireEventStructureExport(struct glTFExportData const &, enum IMinecraftEventing::ExportOutcome, enum IMinecraftEventing::ExportStage) const;
+    MCVAPI void fireEventStructureExport(struct glTFExportData const &, enum class IMinecraftEventing::ExportOutcome, enum class IMinecraftEventing::ExportStage) const;
     /**
      * @hash   -335091685
      * @symbol ?fireEventTagButtonPressed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -998,7 +998,7 @@ public:
      * @hash   356381386
      * @symbol ?fireEventTelemetryHttpError@MinecraftEventing@@UEAAXW4TelemetrySystemType@Events@Social@@VStatus@Http@Bedrock@@@Z
      */
-    MCVAPI void fireEventTelemetryHttpError(enum Social::Events::TelemetrySystemType, class Bedrock::Http::Status);
+    MCVAPI void fireEventTelemetryHttpError(enum class Social::Events::TelemetrySystemType, class Bedrock::Http::Status);
     /**
      * @hash   -1431562009
      * @symbol ?fireEventTreatmentPackApplied@MinecraftEventing@@UEAAXAEBVPackManifest@@@Z
@@ -1107,7 +1107,7 @@ public:
      * @hash   919388177
      * @symbol ?fireEventWorldLoadedClassroomCustomization@MinecraftEventing@@UEAAXW4WorldClassroomCustomization@IMinecraftEventing@@V?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
      */
-    MCVAPI void fireEventWorldLoadedClassroomCustomization(enum IMinecraftEventing::WorldClassroomCustomization, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>);
+    MCVAPI void fireEventWorldLoadedClassroomCustomization(enum class IMinecraftEventing::WorldClassroomCustomization, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>);
     /**
      * @hash   -2108791316
      * @symbol ?fireExternalUriLaunched@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1121,7 +1121,7 @@ public:
     /**
      * @symbol ?fireHostClientTransportSettingSync@MinecraftEventing@@UEAAXW4TransportLayer@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11_K_N@Z
      */
-    MCVAPI void fireHostClientTransportSettingSync(enum TransportLayer, enum TransportLayer, std::string const &, std::string const &, std::string const &, unsigned __int64, bool);
+    MCVAPI void fireHostClientTransportSettingSync(enum class TransportLayer, enum class TransportLayer, std::string const &, std::string const &, std::string const &, unsigned __int64, bool);
     /**
      * @hash   1840481434
      * @symbol ?fireIDESelected@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1131,7 +1131,7 @@ public:
      * @hash   514981530
      * @symbol ?fireInAppCodeBuilderActivated@MinecraftEventing@@UEBAXW4OpenCodeMethod@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireInAppCodeBuilderActivated(enum OpenCodeMethod, std::string const &) const;
+    MCVAPI void fireInAppCodeBuilderActivated(enum class OpenCodeMethod, std::string const &) const;
     /**
      * @hash   -1439379640
      * @symbol ?fireInAppCodeBuilderDismissed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1151,12 +1151,12 @@ public:
      * @hash   586325518
      * @symbol ?fireLessonActionTaken@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4EducationLessonAction@IMinecraftEventing@@H@Z
      */
-    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::EducationLessonAction, int);
+    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, enum class IMinecraftEventing::EducationLessonAction, int);
     /**
      * @hash   -1476775922
      * @symbol ?fireLessonCompleteDialogOpened@MinecraftEventing@@UEBAXW4LessonCompleteDialogEntryPoint@IMinecraftEventing@@@Z
      */
-    MCVAPI void fireLessonCompleteDialogOpened(enum IMinecraftEventing::LessonCompleteDialogEntryPoint) const;
+    MCVAPI void fireLessonCompleteDialogOpened(enum class IMinecraftEventing::LessonCompleteDialogEntryPoint) const;
     /**
      * @hash   -746748364
      * @symbol ?fireLessonProgressEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000H@Z
@@ -1191,7 +1191,7 @@ public:
      * @hash   -1965757224
      * @symbol ?firePermissionsSetEvent@MinecraftEventing@@UEAAXW4PlayerPermissionLevel@@W4CommandPermissionLevel@@01@Z
      */
-    MCVAPI void firePermissionsSetEvent(enum PlayerPermissionLevel, enum CommandPermissionLevel, enum PlayerPermissionLevel, enum CommandPermissionLevel);
+    MCVAPI void firePermissionsSetEvent(enum class PlayerPermissionLevel, enum class CommandPermissionLevel, enum class PlayerPermissionLevel, enum class CommandPermissionLevel);
     /**
      * @hash   1328892624
      * @symbol ?fireQueryOfferResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
@@ -1206,22 +1206,22 @@ public:
      * @hash   318770643
      * @symbol ?fireRealmConnectionEventGenericLambdaCalled@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@W4RealmConnectionLambda@3@W4RealmConnectionResult@3@@Z
      */
-    MCVAPI void fireRealmConnectionEventGenericLambdaCalled(enum IMinecraftEventing::RealmConnectionFlow, enum IMinecraftEventing::RealmConnectionLambda, enum IMinecraftEventing::RealmConnectionResult);
+    MCVAPI void fireRealmConnectionEventGenericLambdaCalled(enum class IMinecraftEventing::RealmConnectionFlow, enum class IMinecraftEventing::RealmConnectionLambda, enum class IMinecraftEventing::RealmConnectionResult);
     /**
      * @hash   456981936
      * @symbol ?fireRealmConnectionEventRealmAPIRequest@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@@Z
      */
-    MCVAPI void fireRealmConnectionEventRealmAPIRequest(enum IMinecraftEventing::RealmConnectionFlow);
+    MCVAPI void fireRealmConnectionEventRealmAPIRequest(enum class IMinecraftEventing::RealmConnectionFlow);
     /**
      * @hash   -659580499
      * @symbol ?fireRealmConnectionEventRealmAPIResponse@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@H@Z
      */
-    MCVAPI void fireRealmConnectionEventRealmAPIResponse(enum IMinecraftEventing::RealmConnectionFlow, int);
+    MCVAPI void fireRealmConnectionEventRealmAPIResponse(enum class IMinecraftEventing::RealmConnectionFlow, int);
     /**
      * @hash   -1155056734
      * @symbol ?fireRealmConnectionEventStart@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@@Z
      */
-    MCVAPI void fireRealmConnectionEventStart(enum IMinecraftEventing::RealmConnectionFlow);
+    MCVAPI void fireRealmConnectionEventStart(enum class IMinecraftEventing::RealmConnectionFlow);
     /**
      * @hash   -2056273270
      * @symbol ?fireScreenLoadTimeUpdateEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@3@1@Z
@@ -1236,7 +1236,7 @@ public:
      * @hash   -22701436
      * @symbol ?fireServerConnectionEvent@MinecraftEventing@@UEAAXW4ServerConnectionOutcome@IConnectionEventing@@INAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireServerConnectionEvent(enum IConnectionEventing::ServerConnectionOutcome, unsigned int, double, std::string const &);
+    MCVAPI void fireServerConnectionEvent(enum class IConnectionEventing::ServerConnectionOutcome, unsigned int, double, std::string const &);
     /**
      * @hash   1287143245
      * @symbol ?fireServerShutdown@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1246,27 +1246,27 @@ public:
      * @hash   -892197291
      * @symbol ?fireServerStarted@MinecraftEventing@@UEAAXW4ServerType@IMinecraftEventing@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireServerStarted(enum IMinecraftEventing::ServerType, std::string);
+    MCVAPI void fireServerStarted(enum class IMinecraftEventing::ServerType, std::string);
     /**
      * @hash   134970758
      * @symbol ?fireShareButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EduShareUriType@@W4EduShareMethodType@@_N@Z
      */
-    MCVAPI void fireShareButtonPressed(std::string const &, enum EduShareUriType, enum EduShareMethodType, bool);
+    MCVAPI void fireShareButtonPressed(std::string const &, enum class EduShareUriType, enum class EduShareMethodType, bool);
     /**
      * @hash   -1661347520
      * @symbol ?fireStorageMigrationEvent@MinecraftEventing@@UEAAX_NW4StorageMigrationType@StorageMigration@Bedrock@@HHV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@7@@Z
      */
-    MCVAPI void fireStorageMigrationEvent(bool, enum Bedrock::StorageMigration::StorageMigrationType, int, int, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, std::string const &);
+    MCVAPI void fireStorageMigrationEvent(bool, enum class Bedrock::StorageMigration::StorageMigrationType, int, int, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, std::string const &);
     /**
      * @hash   -1137422095
      * @symbol ?fireStructureBlockAction@MinecraftEventing@@UEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@PEBVStructureTelemetryClientData@@@Z
      */
-    MCVAPI void fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
+    MCVAPI void fireStructureBlockAction(enum class IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
     /**
      * @hash   -1301260758
      * @symbol ?fireStructureBlockRedstoneActivated@MinecraftEventing@@UEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@PEBVStructureTelemetryClientData@@@Z
      */
-    MCVAPI void fireStructureBlockRedstoneActivated(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
+    MCVAPI void fireStructureBlockRedstoneActivated(enum class IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
     /**
      * @hash   -1149411254
      * @symbol ?fireTextToSpeechToggled@MinecraftEventing@@UEAAX_N0@Z
@@ -1276,12 +1276,12 @@ public:
      * @hash   1738027945
      * @symbol ?fireUserGeneratedUriLaunchFailed@MinecraftEventing@@UEBAXW4UserGeneratedUriSource@@W4ValidationStatus@ResourceUri@Util@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI void fireUserGeneratedUriLaunchFailed(enum UserGeneratedUriSource, enum Util::ResourceUri::ValidationStatus, std::string const &) const;
+    MCVAPI void fireUserGeneratedUriLaunchFailed(enum class UserGeneratedUriSource, enum class Util::ResourceUri::ValidationStatus, std::string const &) const;
     /**
      * @hash   2037996014
      * @symbol ?fireUserGeneratedUriLaunched@MinecraftEventing@@UEBAXW4UserGeneratedUriSource@@@Z
      */
-    MCVAPI void fireUserGeneratedUriLaunched(enum UserGeneratedUriSource) const;
+    MCVAPI void fireUserGeneratedUriLaunched(enum class UserGeneratedUriSource) const;
     /**
      * @hash   1502275104
      * @symbol ?fireWorldConversionAttemptEvent@MinecraftEventing@@UEAAXAEBUWorldConversionReport@Legacy@@@Z
@@ -1492,7 +1492,7 @@ public:
      * @hash   -2123290870
      * @symbol ?fireEventAwardAchievement@MinecraftEventing@@SAXPEAVPlayer@@W4AchievementIds@1@@Z
      */
-    MCAPI static void fireEventAwardAchievement(class Player *, enum MinecraftEventing::AchievementIds);
+    MCAPI static void fireEventAwardAchievement(class Player *, enum class MinecraftEventing::AchievementIds);
     /**
      * @hash   -5399730
      * @symbol ?fireEventBehaviorErrored@MinecraftEventing@@SAXPEAVPlayer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1512,7 +1512,7 @@ public:
      * @hash   -792118476
      * @symbol ?fireEventBlockBroken@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlock@@W4BlockPlacementMethod@1@H@Z
      */
-    MCAPI static void fireEventBlockBroken(class Player *, class Block const &, enum MinecraftEventing::BlockPlacementMethod, int);
+    MCAPI static void fireEventBlockBroken(class Player *, class Block const &, enum class MinecraftEventing::BlockPlacementMethod, int);
     /**
      * @hash   -1860918338
      * @symbol ?fireEventBlockFound@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlockPos@@@Z
@@ -1522,7 +1522,7 @@ public:
      * @hash   -483289675
      * @symbol ?fireEventCampfireBlockUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIBlockInteractionType@1@@Z
      */
-    MCAPI static void fireEventCampfireBlockUsed(class Player *, std::string const &, enum MinecraftEventing::POIBlockInteractionType);
+    MCAPI static void fireEventCampfireBlockUsed(class Player *, std::string const &, enum class MinecraftEventing::POIBlockInteractionType);
     /**
      * @hash   490630913
      * @symbol ?fireEventCaravanChanged@MinecraftEventing@@SAXAEAVMob@@H@Z
@@ -1532,7 +1532,7 @@ public:
      * @hash   -1177745825
      * @symbol ?fireEventItemUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBVItemDescriptor@@W4ItemUseMethod@@@Z
      */
-    MCAPI static void fireEventItemUsed(class Player *, class ItemDescriptor const &, enum ItemUseMethod);
+    MCAPI static void fireEventItemUsed(class Player *, class ItemDescriptor const &, enum class ItemUseMethod);
     /**
      * @hash   1764590139
      * @symbol ?fireEventJukeboxUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBVItemDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1542,17 +1542,17 @@ public:
      * @hash   965122627
      * @symbol ?fireEventLecternBlockUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIBlockInteractionType@1@@Z
      */
-    MCAPI static void fireEventLecternBlockUsed(class Player *, std::string const &, enum MinecraftEventing::POIBlockInteractionType);
+    MCAPI static void fireEventLecternBlockUsed(class Player *, std::string const &, enum class MinecraftEventing::POIBlockInteractionType);
     /**
      * @hash   433841018
      * @symbol ?fireEventMobEffectChanged@MinecraftEventing@@SAXAEAVMob@@AEBVMobEffectInstance@@W4ChangeType@1@@Z
      */
-    MCAPI static void fireEventMobEffectChanged(class Mob &, class MobEffectInstance const &, enum MinecraftEventing::ChangeType);
+    MCAPI static void fireEventMobEffectChanged(class Mob &, class MobEffectInstance const &, enum class MinecraftEventing::ChangeType);
     /**
      * @hash   1696081600
      * @symbol ?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z
      */
-    MCAPI static void fireEventPlayerTeleported(class Player *, float, enum MinecraftEventing::TeleportationCause, int);
+    MCAPI static void fireEventPlayerTeleported(class Player *, float, enum class MinecraftEventing::TeleportationCause, int);
     /**
      * @hash   534141500
      * @symbol ?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z
@@ -1569,7 +1569,7 @@ public:
      * @hash   632776667
      * @symbol ?_fireStructureBlockAction@MinecraftEventing@@AEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@_NPEBVStructureTelemetryClientData@@@Z
      */
-    MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
+    MCAPI void _fireStructureBlockAction(enum class IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
     /**
      * @hash   1264442762
      * @symbol ?_generateWorldSessionId@MinecraftEventing@@AEAAXXZ
@@ -1591,12 +1591,12 @@ private:
      * @hash   1544829321
      * @symbol ?mAcquisitionMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemAcquisitionMethod@@W4AcquisitionMethod@MinecraftEventing@@U?$hash@W4ItemAcquisitionMethod@@@std@@U?$equal_to@W4ItemAcquisitionMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemAcquisitionMethod@@W4AcquisitionMethod@MinecraftEventing@@@std@@@5@@std@@B
      */
-    MCAPI static class std::unordered_map<enum ItemAcquisitionMethod, enum MinecraftEventing::AcquisitionMethod, struct std::hash<enum ItemAcquisitionMethod>, struct std::equal_to<enum ItemAcquisitionMethod>, class std::allocator<struct std::pair<enum ItemAcquisitionMethod const, enum MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap;
+    MCAPI static class std::unordered_map<enum class ItemAcquisitionMethod, enum class MinecraftEventing::AcquisitionMethod, struct std::hash<enum class ItemAcquisitionMethod>, struct std::equal_to<enum class ItemAcquisitionMethod>, class std::allocator<struct std::pair<enum class ItemAcquisitionMethod const, enum class MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap;
     /**
      * @hash   188548675
      * @symbol ?mUseMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemUseMethod@@W4UseMethod@MinecraftEventing@@U?$hash@W4ItemUseMethod@@@std@@U?$equal_to@W4ItemUseMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemUseMethod@@W4UseMethod@MinecraftEventing@@@std@@@5@@std@@B
      */
-    MCAPI static class std::unordered_map<enum ItemUseMethod, enum MinecraftEventing::UseMethod, struct std::hash<enum ItemUseMethod>, struct std::equal_to<enum ItemUseMethod>, class std::allocator<struct std::pair<enum ItemUseMethod const, enum MinecraftEventing::UseMethod>>> const mUseMethodMap;
+    MCAPI static class std::unordered_map<enum class ItemUseMethod, enum class MinecraftEventing::UseMethod, struct std::hash<enum class ItemUseMethod>, struct std::equal_to<enum class ItemUseMethod>, class std::allocator<struct std::pair<enum class ItemUseMethod const, enum class MinecraftEventing::UseMethod>>> const mUseMethodMap;
     /**
      * @hash   1053517870
      * @symbol ?sMutex@MinecraftEventing@@0Vmutex@std@@A

@@ -134,17 +134,17 @@ public:
      * @hash   581722267
      * @symbol ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
      */
-    MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const &);
+    MCAPI static enum class CompoundType getCompoundType(class ItemDescriptor const &);
     /**
      * @hash   326934885
      * @symbol ?getIngredientForCompound@CompoundItem@@SA?AVRecipeIngredient@@W4CompoundType@@@Z
      */
-    MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);
+    MCAPI static class RecipeIngredient getIngredientForCompound(enum class CompoundType);
     /**
      * @hash   -794443298
      * @symbol ?getItemForCompound@CompoundItem@@SA?AVItemInstance@@W4CompoundType@@H@Z
      */
-    MCAPI static class ItemInstance getItemForCompound(enum CompoundType, int);
+    MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int);
     /**
      * @hash   -715824255
      * @symbol ?isCompoundItem@CompoundItem@@SA_NAEBVItemStackBase@@@Z
@@ -161,7 +161,7 @@ public:
      * @hash   55368246
      * @symbol ?_registerSpecialCompound@CompoundItem@@AEAAXAEBVItemInstance@@W4CompoundType@@@Z
      */
-    MCAPI void _registerSpecialCompound(class ItemInstance const &, enum CompoundType);
+    MCAPI void _registerSpecialCompound(class ItemInstance const &, enum class CompoundType);
     /**
      * @hash   41539028
      * @symbol ?_registerSpecialCompounds@CompoundItem@@AEAAXAEBVExperiments@@@Z
@@ -171,7 +171,7 @@ public:
      * @hash   -481441301
      * @symbol ?_getName@CompoundItem@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CompoundType@@@Z
      */
-    MCAPI static std::string _getName(enum CompoundType);
+    MCAPI static std::string _getName(enum class CompoundType);
 
 private:
     /**

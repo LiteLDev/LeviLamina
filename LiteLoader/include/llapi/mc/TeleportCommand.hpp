@@ -65,12 +65,12 @@ public:
      * @hash   1053240961
      * @symbol ?getFacingDirection@TeleportCommand@@AEBA?AW4FacingResult@1@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@PEAVActor@@@Z
      */
-    MCAPI enum TeleportCommand::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
+    MCAPI enum class TeleportCommand::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
     /**
      * @hash   -1509370038
      * @symbol ?actorToLocationTeleportAnalysis@TeleportCommand@@CA?AW4TeleportAnalysis@1@AEBVCommandOrigin@@AEBVCommandArea@@AEAV4@AEBVActor@@VVec3@@@Z
      */
-    MCAPI static enum TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
+    MCAPI static enum class TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
     /**
      * @hash   -314033655
      * @symbol ?getCommandAreaForTargets@TeleportCommand@@CA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVCommandOrigin@@AEBV?$CommandSelectorResults@VActor@@@@VVec3@@H_N@Z

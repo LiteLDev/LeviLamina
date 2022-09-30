@@ -81,7 +81,7 @@ public:
      * @hash   -51376380
      * @symbol ??0AnvilContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI AnvilContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI AnvilContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @hash   -1767732627
      * @symbol ?INPUT_SLOT@AnvilContainerManagerModel@@2HB

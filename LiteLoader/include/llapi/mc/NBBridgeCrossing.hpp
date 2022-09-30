@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@NBBridgeCrossing@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   815835012
      * @vftbl  3

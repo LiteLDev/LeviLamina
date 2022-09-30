@@ -45,7 +45,7 @@ public:
      * @hash   -960611456
      * @symbol ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
      */
-    MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
+    MCAPI PrivateKeyManager(enum class Crypto::Asymmetric::System);
     /**
      * @hash   23801679
      * @symbol ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z
@@ -55,6 +55,6 @@ public:
      * @hash   -814469020
      * @symbol ?sign@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4HashType@Hash@Crypto@@@Z
      */
-    MCAPI std::string sign(std::string const &, enum Crypto::Hash::HashType) const;
+    MCAPI std::string sign(std::string const &, enum class Crypto::Hash::HashType) const;
 
 };

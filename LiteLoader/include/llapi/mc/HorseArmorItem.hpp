@@ -155,12 +155,12 @@ public:
      * @hash   793226624
      * @symbol ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
      */
-    MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
+    MCAPI HorseArmorItem(std::string const &, int, int, enum class HorseArmorItem::Tier);
     /**
      * @hash   917830886
      * @symbol ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
      */
-    MCAPI enum HorseArmorItem::Tier getTier() const;
+    MCAPI enum class HorseArmorItem::Tier getTier() const;
     /**
      * @hash   -2123272282
      * @symbol ?mHealthPerTier@HorseArmorItem@@2QBHB

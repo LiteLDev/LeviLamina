@@ -89,7 +89,7 @@ public:
      * @vftbl  9
      * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @hash   688507500
      * @vftbl  10
@@ -113,7 +113,7 @@ public:
      * @vftbl  15
      * @symbol ?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @hash   -1114661894
      * @vftbl  17
@@ -149,7 +149,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @hash   -2103150692
      * @vftbl  27

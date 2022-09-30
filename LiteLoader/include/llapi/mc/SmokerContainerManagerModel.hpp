@@ -39,6 +39,6 @@ public:
      * @hash   -498376501
      * @symbol ??0SmokerContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI SmokerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI SmokerContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

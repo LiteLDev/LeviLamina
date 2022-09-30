@@ -34,12 +34,12 @@ public:
      * @hash   -1789516056
      * @symbol ?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
      */
-    MCVAPI enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
+    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     /**
      * @hash   -1876247450
      * @symbol ?onMessage@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z
      */
-    MCVAPI enum EventResult onMessage(struct MessageEvent const &);
+    MCVAPI enum class EventResult onMessage(struct MessageEvent const &);
 #endif
 
 };

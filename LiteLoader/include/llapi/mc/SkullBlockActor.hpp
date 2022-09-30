@@ -122,7 +122,7 @@ public:
      * @hash   -1525370924
      * @symbol ?getSkullType@SkullBlockActor@@QEBA?AW4SkullType@1@XZ
      */
-    MCAPI enum SkullBlockActor::SkullType getSkullType() const;
+    MCAPI enum class SkullBlockActor::SkullType getSkullType() const;
     /**
      * @hash   2004055892
      * @symbol ?setRotation@SkullBlockActor@@QEAAXM@Z

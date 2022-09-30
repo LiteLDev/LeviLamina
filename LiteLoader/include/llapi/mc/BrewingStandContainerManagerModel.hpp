@@ -81,6 +81,6 @@ public:
      * @hash   -226323378
      * @symbol ??0BrewingStandContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI BrewingStandContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

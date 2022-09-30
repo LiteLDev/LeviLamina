@@ -35,7 +35,7 @@ public:
     /**
      * @symbol ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
      */
-    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @symbol ?getVec3@SynchedActorDataReader@@QEBA?AVVec3@@G@Z
      */

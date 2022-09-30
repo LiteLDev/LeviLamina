@@ -53,7 +53,7 @@ public:
      * @vftbl  9
      * @symbol ?getPermissionsLevel@AutomationPlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @hash   490161513
      * @vftbl  10
@@ -83,7 +83,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @hash   -478685706
      * @vftbl  24
@@ -106,7 +106,7 @@ public:
      * @hash   -1220410672
      * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandPermissionLevel@@AEBVNetworkIdentifier@@@Z
      */
-    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
+    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum class CommandPermissionLevel, class NetworkIdentifier const &);
     /**
      * @hash   -1759311767
      * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPlayer@@@Z

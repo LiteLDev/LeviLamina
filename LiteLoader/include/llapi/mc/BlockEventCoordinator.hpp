@@ -68,7 +68,7 @@ public:
      * @hash   174153269
      * @symbol ?sendBlockMovedByPiston@BlockEventCoordinator@@QEAAXAEBVBlockPos@@0W4PistonState@@@Z
      */
-    MCAPI void sendBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum PistonState);
+    MCAPI void sendBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum class PistonState);
     /**
      * @hash   1082326263
      * @symbol ?sendBlockPlacedByPlayer@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
@@ -78,12 +78,12 @@ public:
      * @hash   2039920749
      * @symbol ?sendEvent@BlockEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$BlockGameplayEvent@W4CoordinatorResult@@@@@@@Z
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct BlockGameplayEvent<enum CoordinatorResult>> const &);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct BlockGameplayEvent<enum class CoordinatorResult>> const &);
     /**
      * @hash   1550485349
      * @symbol ?sendEvent@BlockEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@@@Z
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableBlockGameplayEvent<enum CoordinatorResult>>);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableBlockGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @hash   483691416
      * @symbol ?sendEvent@BlockEventCoordinator@@QEAAXAEBV?$EventRef@U?$BlockGameplayEvent@X@@@@@Z

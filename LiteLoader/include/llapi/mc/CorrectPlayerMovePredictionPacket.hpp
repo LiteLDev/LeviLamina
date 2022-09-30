@@ -40,7 +40,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@CorrectPlayerMovePredictionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   190599496
      * @vftbl  2
@@ -58,6 +58,6 @@ public:
      * @vftbl  6
      * @symbol ?_read@CorrectPlayerMovePredictionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 
 };

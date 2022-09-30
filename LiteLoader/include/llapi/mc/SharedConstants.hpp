@@ -26,17 +26,17 @@ namespace SharedConstants {
      * @hash   556360639
      * @symbol ?CodeBuilderProtocolVersion@SharedConstants@@3W4ProtocolVersion@CodeBuilder@@B
      */
-    MCAPI extern enum CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
+    MCAPI extern enum class CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
     /**
      * @hash   -2061768339
      * @symbol ?CurrentActorDigestFormat@SharedConstants@@3W4ActorDigestFormat@@B
      */
-    MCAPI extern enum ActorDigestFormat const CurrentActorDigestFormat;
+    MCAPI extern enum class ActorDigestFormat const CurrentActorDigestFormat;
     /**
      * @hash   232758158
      * @symbol ?CurrentBlendVersion@SharedConstants@@3W4BlendVersion@@B
      */
-    MCAPI extern enum BlendVersion const CurrentBlendVersion;
+    MCAPI extern enum class BlendVersion const CurrentBlendVersion;
     /**
      * @hash   1185727587
      * @symbol ?CurrentGameSemVersion@SharedConstants@@3VSemVersion@@B
@@ -46,17 +46,17 @@ namespace SharedConstants {
      * @hash   32604492
      * @symbol ?CurrentLevelChunkFormat@SharedConstants@@3W4LevelChunkFormat@@B
      */
-    MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;
+    MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat;
     /**
      * @hash   1163859491
      * @symbol ?CurrentStorageVersion@SharedConstants@@3W4StorageVersion@@B
      */
-    MCAPI extern enum StorageVersion const CurrentStorageVersion;
+    MCAPI extern enum class StorageVersion const CurrentStorageVersion;
     /**
      * @hash   423315367
      * @symbol ?CurrentSubChunkFormat@SharedConstants@@3W4SubChunkFormat@@B
      */
-    MCAPI extern enum SubChunkFormat const CurrentSubChunkFormat;
+    MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat;
     /**
      * @hash   2032306754
      * @symbol ?DevInitiallyMuteMusic@SharedConstants@@3_NB

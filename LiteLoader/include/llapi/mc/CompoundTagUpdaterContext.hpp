@@ -47,7 +47,7 @@ public:
      * @hash   720761458
      * @symbol ?update@CompoundTagUpdaterContext@@QEAA?AW4CompoundTagUpdaterResult@@AEAVCompoundTag@@I@Z
      */
-    MCAPI enum CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
+    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
 //private:
     /**

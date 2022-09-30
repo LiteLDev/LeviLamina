@@ -37,7 +37,7 @@ public:
      * @hash   704575447
      * @symbol ??0CommandOutputParameter@@QEAA@W4NoCountType@0@@Z
      */
-    MCAPI CommandOutputParameter(enum CommandOutputParameter::NoCountType);
+    MCAPI CommandOutputParameter(enum class CommandOutputParameter::NoCountType);
     /**
      * @hash   -1444216838
      * @symbol ??0CommandOutputParameter@@QEAA@VBlockPos@@@Z

@@ -38,12 +38,12 @@ public:
      * @hash   -1584173772
      * @symbol ?_getOrInitSparseContainer@ItemStackRequestActionCraftHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
      */
-    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum ContainerEnumName);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum class ContainerEnumName);
     /**
      * @hash   10330023
      * @symbol ?_initCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@E@Z
      */
-    MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
+    MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
     /**
      * @hash   -1395652886
      * @symbol ?_initSingleCraftResult@ItemStackRequestActionCraftHandler@@QEAAPEAVItemInstance@@AEBV2@@Z
@@ -58,7 +58,7 @@ public:
      * @hash   528406242
      * @symbol ?endRequest@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W42@@Z
      */
-    MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
+    MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
     /**
      * @hash   795795955
      * @symbol ?endRequestBatch@ItemStackRequestActionCraftHandler@@QEAAXXZ
@@ -68,22 +68,22 @@ public:
      * @hash   -884703013
      * @symbol ?handleConsume@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionConsume@@@Z
      */
-    MCAPI enum ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
+    MCAPI enum class ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
     /**
      * @hash   -350875363
      * @symbol ?handleCraftAction@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
      */
-    MCAPI enum ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    MCAPI enum class ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @hash   1383291403
      * @symbol ?handleCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@@Z
      */
-    MCAPI enum ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
+    MCAPI enum class ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
     /**
      * @hash   -1317613553
      * @symbol ?handleCreate@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCreate@@@Z
      */
-    MCAPI enum ItemStackNetResult handleCreate(class ItemStackRequestActionCreate const &);
+    MCAPI enum class ItemStackNetResult handleCreate(class ItemStackRequestActionCreate const &);
     /**
      * @hash   -1257903700
      * @symbol ?isCraftRequest@ItemStackRequestActionCraftHandler@@QEBA_NXZ
@@ -103,7 +103,7 @@ public:
      * @hash   1750807603
      * @symbol ?preHandleAction@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
      */
-    MCAPI enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
+    MCAPI enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
 
 //private:
     /**
@@ -115,7 +115,7 @@ public:
      * @hash   1418035927
      * @symbol ?_setCreatedItemOutputSlot@ItemStackRequestActionCraftHandler@@AEAA?AW4ItemStackNetResult@@E@Z
      */
-    MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+    MCAPI enum class ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 
 private:
 

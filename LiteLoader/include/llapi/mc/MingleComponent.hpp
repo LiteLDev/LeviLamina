@@ -54,7 +54,7 @@ public:
      * @hash   2108805435
      * @symbol ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
      */
-    MCAPI class MingleComponent & setMingleState(enum MingleComponent::MingleState);
+    MCAPI class MingleComponent & setMingleState(enum class MingleComponent::MingleState);
     /**
      * @hash   1620537669
      * @symbol ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z

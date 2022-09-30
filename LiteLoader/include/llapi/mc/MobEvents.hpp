@@ -48,17 +48,17 @@ public:
      * @hash   -347344793
      * @symbol ?getEvent@MobEvents@@QEBAAEBVMobEvent@@W4MobEventsIndex@@@Z
      */
-    MCAPI class MobEvent const & getEvent(enum MobEventsIndex) const;
+    MCAPI class MobEvent const & getEvent(enum class MobEventsIndex) const;
     /**
      * @hash   -58131093
      * @symbol ?getIndexFromName@MobEvents@@QEBA?AW4MobEventsIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI enum MobEventsIndex getIndexFromName(std::string const &) const;
+    MCAPI enum class MobEventsIndex getIndexFromName(std::string const &) const;
     /**
      * @hash   -1730917795
      * @symbol ?isEnabled@MobEvents@@QEBA_NW4MobEventsIndex@@@Z
      */
-    MCAPI bool isEnabled(enum MobEventsIndex) const;
+    MCAPI bool isEnabled(enum class MobEventsIndex) const;
     /**
      * @hash   1761226080
      * @symbol ?serialize@MobEvents@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
@@ -68,7 +68,7 @@ public:
      * @hash   -1729247259
      * @symbol ?setEnabled@MobEvents@@QEAAXW4MobEventsIndex@@_N@Z
      */
-    MCAPI void setEnabled(enum MobEventsIndex, bool);
+    MCAPI void setEnabled(enum class MobEventsIndex, bool);
     /**
      * @hash   640000366
      * @symbol ?setEventsEnabled@MobEvents@@QEAAX_N@Z

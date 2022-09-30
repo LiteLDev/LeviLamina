@@ -57,7 +57,7 @@ namespace ActorMobilityUtils {
      * @hash   1965940048
      * @symbol ?isUnderLiquid@ActorMobilityUtils@@YA_NAEBVVec3@@0AEBVIConstBlockSource@@W4MaterialType@@@Z
      */
-    MCAPI bool isUnderLiquid(class Vec3 const &, class Vec3 const &, class IConstBlockSource const &, enum MaterialType);
+    MCAPI bool isUnderLiquid(class Vec3 const &, class Vec3 const &, class IConstBlockSource const &, enum class MaterialType);
     /**
      * @symbol ?moveBBs@ActorMobilityUtils@@YAXAEBVVec3@@AEAUAABBShapeComponent@@AEAUSubBBsComponent@@PEAVHitboxComponent@@@Z
      */

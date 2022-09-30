@@ -71,7 +71,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @hash   2073830513
      * @vftbl  29

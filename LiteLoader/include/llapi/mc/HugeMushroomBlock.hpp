@@ -255,14 +255,14 @@ public:
      * @hash   376890760
      * @symbol ??0HugeMushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Type@0@@Z
      */
-    MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum HugeMushroomBlock::Type);
+    MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum class HugeMushroomBlock::Type);
 
 //private:
     /**
      * @hash   1042886565
      * @symbol ?_getBlockItemWithState@HugeMushroomBlock@@AEBA?AVItemInstance@@AEBVBlock@@W4MushroomOuterType@@@Z
      */
-    MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum MushroomOuterType) const;
+    MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum class MushroomOuterType) const;
 
 private:
 

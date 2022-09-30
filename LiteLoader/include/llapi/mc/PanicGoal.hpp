@@ -79,7 +79,7 @@ public:
      * @hash   -80520194
      * @symbol ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
      */
-    MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
+    MCAPI PanicGoal(class Mob &, float, bool, enum class LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum class ActorDamageCause>);
 
 //private:
     /**

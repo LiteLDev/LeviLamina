@@ -44,7 +44,7 @@ public:
      * @hash   94961035
      * @symbol ?setOnFailHandler@RakWebSocketDataFrameParser@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CloseStatusCode@@@Z@std@@@Z
      */
-    MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum CloseStatusCode)>);
+    MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum class CloseStatusCode)>);
     /**
      * @hash   -910722941
      * @symbol ??1RakWebSocketDataFrameParser@@QEAA@XZ
@@ -56,7 +56,7 @@ public:
      * @hash   148270588
      * @symbol ?_failReadFrame@RakWebSocketDataFrameParser@@AEAA?AV?$shared_ptr@VRakWebSocketDataFrame@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4CloseStatusCode@@@Z
      */
-    MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const &, enum CloseStatusCode);
+    MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const &, enum class CloseStatusCode);
 
 private:
 

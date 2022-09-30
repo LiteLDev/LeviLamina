@@ -101,7 +101,7 @@ public:
      * @vftbl  169
      * @symbol ?getEntityTypeId@WanderingTrader@@UEBA?AW4ActorType@@XZ
      */
-    virtual enum ActorType getEntityTypeId() const;
+    virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  181
      * @symbol __unk_vfn_181

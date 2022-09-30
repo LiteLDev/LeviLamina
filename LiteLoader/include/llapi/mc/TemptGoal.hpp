@@ -82,6 +82,6 @@ public:
      * @hash   -613371462
      * @symbol ??0TemptGoal@@QEAA@AEAVMob@@MAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@W4LevelSoundEvent@@UFloatRange@@_NM44@Z
      */
-    MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
+    MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum class LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
 
 };

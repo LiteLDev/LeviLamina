@@ -36,7 +36,7 @@ public:
      * @vftbl  10
      * @symbol ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -205,7 +205,7 @@ public:
      * @vftbl  290
      * @symbol ?getParticleType@Throwable@@MEAA?AW4ParticleType@@XZ
      */
-    virtual enum ParticleType getParticleType();
+    virtual enum class ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
     /**
      * @hash   -1089818730

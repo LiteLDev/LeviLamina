@@ -203,7 +203,7 @@ public:
      * @vftbl  316
      * @symbol ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
      */
-    virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
      * @vftbl  317
      * @symbol __unk_vfn_317

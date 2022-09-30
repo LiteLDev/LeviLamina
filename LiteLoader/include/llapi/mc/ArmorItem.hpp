@@ -221,13 +221,13 @@ public:
      * @vftbl  114
      * @symbol ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
      */
-    virtual enum ActorLocation getEquipLocation() const;
+    virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @hash   -2113837286
      * @vftbl  115
      * @symbol ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getEquipSound() const;
+    virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @hash   -2115572171
      * @vftbl  122
@@ -250,7 +250,7 @@ public:
      * @hash   1939545135
      * @symbol ??0ArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVArmorMaterial@0@HW4ArmorSlot@@@Z
      */
-    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
+    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot);
     /**
      * @hash   -1570360102
      * @symbol ?CHAIN@ArmorItem@@2VArmorMaterial@1@B
@@ -295,12 +295,12 @@ public:
      * @hash   -704075775
      * @symbol ?dispenseArmor@ArmorItem@@SA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@EW4ArmorSlot@@@Z
      */
-    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum ArmorSlot);
+    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum class ArmorSlot);
     /**
      * @hash   1800340607
      * @symbol ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z
      */
-    MCAPI static enum ArmorSlot getSlotForItem(class ItemStackBase const &);
+    MCAPI static enum class ArmorSlot getSlotForItem(class ItemStackBase const &);
     /**
      * @hash   -938224883
      * @symbol ?isDamageable@ArmorItem@@SA_NAEBVItemDescriptor@@@Z

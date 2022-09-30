@@ -63,7 +63,7 @@ public:
     /**
      * @symbol ?getStatusFlag@SynchedActorDataEntityWrapper@@QEBA_NW4ActorFlags@@@Z
      */
-    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @symbol ?getString@SynchedActorDataEntityWrapper@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
      */
@@ -99,7 +99,7 @@ public:
     /**
      * @symbol ?setStatusFlag@SynchedActorDataEntityWrapper@@QEAAXW4ActorFlags@@_N@Z
      */
-    MCAPI void setStatusFlag(enum ActorFlags, bool);
+    MCAPI void setStatusFlag(enum class ActorFlags, bool);
     /**
      * @symbol ?writer@SynchedActorDataEntityWrapper@@QEAA?AVSynchedActorDataWriter@@XZ
      */

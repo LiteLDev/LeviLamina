@@ -99,7 +99,7 @@ public:
      * @vftbl  22
      * @symbol ?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @hash   1215037997
      * @vftbl  24
@@ -135,6 +135,6 @@ public:
      * @hash   -1494954927
      * @symbol ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
      */
-    MCAPI void setMode(enum ComparatorCapacitor::Mode);
+    MCAPI void setMode(enum class ComparatorCapacitor::Mode);
 
 };

@@ -45,7 +45,7 @@ public:
      * @hash   1569458749
      * @symbol ?getDuration@DenyList@@QEBA?AW4Duration@1@AEBUEntry@1@@Z
      */
-    MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const &) const;
+    MCAPI enum class DenyList::Duration getDuration(struct DenyList::Entry const &) const;
     /**
      * @hash   -1942895824
      * @symbol ?getMessage@DenyList@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEntry@1@@Z

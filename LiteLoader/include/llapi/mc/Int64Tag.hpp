@@ -66,7 +66,7 @@ public:
      * @vftbl  5
      * @symbol ?getId@Int64Tag@@UEBA?AW4Type@Tag@@XZ
      */
-    virtual enum Tag::Type getId() const;
+    virtual enum class Tag::Type getId() const;
     /**
      * @hash   8646739
      * @vftbl  6

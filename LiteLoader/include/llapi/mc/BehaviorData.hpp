@@ -40,6 +40,6 @@ public:
      * @hash   262436347
      * @symbol ?hasDataOfType@BehaviorData@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DataType@1@@Z
      */
-    MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
+    MCAPI bool hasDataOfType(std::string const &, enum class BehaviorData::DataType) const;
 
 };

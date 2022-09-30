@@ -52,7 +52,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@ShowCreditsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -280728986
      * @vftbl  2
@@ -70,7 +70,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@ShowCreditsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1633577551
      * @symbol ??0ShowCreditsPacket@@QEAA@XZ
@@ -80,6 +80,6 @@ public:
      * @hash   -1116580806
      * @symbol ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
      */
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum ShowCreditsPacket::CreditsState);
+    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
 
 };

@@ -127,7 +127,7 @@ public:
      * @hash   1672721975
      * @symbol ?_getListeningSoundEvent@AngerLevelComponent@@AEBA?AV?$optional@W4LevelSoundEvent@@@std@@AEAVActor@@@Z
      */
-    MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
+    MCAPI class std::optional<enum class LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
 
 private:
 

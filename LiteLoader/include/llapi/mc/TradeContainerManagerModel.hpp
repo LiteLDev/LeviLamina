@@ -75,7 +75,7 @@ public:
      * @hash   -1956301194
      * @symbol ??0TradeContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
      */
-    MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    MCAPI TradeContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
     /**
      * @hash   28206551
      * @symbol ?getEntity@TradeContainerManagerModel@@QEBAPEAVActor@@XZ

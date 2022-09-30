@@ -54,6 +54,6 @@ private:
      * @hash   -2102380207
      * @symbol ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
      */
-    MCAPI static enum MolangVersion const mStopExpressionVersion;
+    MCAPI static enum class MolangVersion const mStopExpressionVersion;
 
 };

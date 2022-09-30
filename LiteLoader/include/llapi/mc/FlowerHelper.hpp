@@ -30,6 +30,6 @@ namespace FlowerHelper {
      * @hash   -906142811
      * @symbol ?getRandomFlowerBlock@FlowerHelper@@YAAEBVBlock@@W4FlowerPlacementType@@AEBVBlockPos@@AEAVRandom@@AEBVPerlinSimplexNoise@@@Z
      */
-    MCAPI class Block const & getRandomFlowerBlock(enum FlowerPlacementType, class BlockPos const &, class Random &, class PerlinSimplexNoise const &);
+    MCAPI class Block const & getRandomFlowerBlock(enum class FlowerPlacementType, class BlockPos const &, class Random &, class PerlinSimplexNoise const &);
 
 };

@@ -39,7 +39,7 @@ public:
      * @hash   1492412047
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@W4ResourceFileSystem@@@Z
      */
-    MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
+    MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
     /**
      * @hash   806377176
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@@Z

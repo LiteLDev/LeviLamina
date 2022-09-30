@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?postCommitItemRemoved@ContainerScreenValidatorBase@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
      */
-    virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
+    virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const &);
     /**
      * @hash   -975604999
      * @vftbl  2
@@ -56,6 +56,6 @@ public:
      * @hash   662933023
      * @symbol ?isValidContainerForScreen@ContainerScreenValidatorBase@@QEBA_NW4ContainerEnumName@@@Z
      */
-    MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
+    MCAPI bool isValidContainerForScreen(enum class ContainerEnumName) const;
 
 };

@@ -87,7 +87,7 @@ public:
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ExecuteContextCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @hash   774539339
      * @vftbl  10
@@ -99,7 +99,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@ExecuteContextCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @hash   1116836427
      * @vftbl  27
@@ -128,7 +128,7 @@ public:
      * @hash   2027317012
      * @symbol ??0ExecuteContextCommandOrigin@@QEAA@UActorUniqueID@@AEBVVec3@@AEBV?$optional@VVec2@@@std@@00W4ActorLocation@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@@Z
      */
-    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
+    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum class ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
     /**
      * @hash   133583490
      * @symbol ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEAVDimension@@@Z

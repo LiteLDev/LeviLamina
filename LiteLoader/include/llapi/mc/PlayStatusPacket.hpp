@@ -56,7 +56,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@PlayStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   119194173
      * @vftbl  2
@@ -74,7 +74,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@PlayStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -59945526
      * @symbol ??0PlayStatusPacket@@QEAA@XZ
@@ -84,6 +84,6 @@ public:
      * @hash   98508769
      * @symbol ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
      */
-    MCAPI PlayStatusPacket(enum PlayStatus);
+    MCAPI PlayStatusPacket(enum class PlayStatus);
 
 };

@@ -80,7 +80,7 @@ public:
      * @hash   -981081989
      * @symbol ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
      */
-    MCAPI StructureFeature(unsigned int, enum StructureFeatureType);
+    MCAPI StructureFeature(unsigned int, enum class StructureFeatureType);
     /**
      * @hash   -1539610652
      * @symbol ?addHardcodedSpawnAreas@StructureFeature@@QEAAXAEAVLevelChunk@@@Z
@@ -120,7 +120,7 @@ public:
      * @hash   6699992
      * @symbol ?getType@StructureFeature@@QEBA?AW4StructureFeatureType@@XZ
      */
-    MCAPI enum StructureFeatureType getType() const;
+    MCAPI enum class StructureFeatureType getType() const;
     /**
      * @hash   -2050408279
      * @symbol ?isInsideBoundingFeature@StructureFeature@@QEAA_NHHH@Z

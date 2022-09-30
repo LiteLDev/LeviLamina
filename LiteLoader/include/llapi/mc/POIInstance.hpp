@@ -33,7 +33,7 @@ public:
      * @hash   408979802
      * @symbol ??0POIInstance@@QEAA@AEBVBlockPos@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_K4222@Z
      */
-    MCAPI POIInstance(class BlockPos const &, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
+    MCAPI POIInstance(class BlockPos const &, bool, std::string, enum class POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     /**
      * @hash   -299456171
      * @symbol ?decreaseOwnerCount@POIInstance@@QEAAX_K@Z
@@ -88,7 +88,7 @@ public:
      * @hash   -188523374
      * @symbol ?getType@POIInstance@@QEBA?AW4POIType@@XZ
      */
-    MCAPI enum POIType getType() const;
+    MCAPI enum class POIType getType() const;
     /**
      * @hash   398382798
      * @symbol ?getTypeName@POIInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

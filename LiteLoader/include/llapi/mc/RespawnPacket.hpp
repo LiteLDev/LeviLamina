@@ -65,7 +65,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@RespawnPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   589263051
      * @vftbl  2
@@ -83,7 +83,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@RespawnPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   2114244428
      * @symbol ??0RespawnPacket@@QEAA@XZ
@@ -93,6 +93,6 @@ public:
      * @hash   -153596980
      * @symbol ??0RespawnPacket@@QEAA@AEBVVec3@@AEBW4PlayerRespawnState@@@Z
      */
-    MCAPI RespawnPacket(class Vec3 const &, enum PlayerRespawnState const &);
+    MCAPI RespawnPacket(class Vec3 const &, enum class PlayerRespawnState const &);
 
 };

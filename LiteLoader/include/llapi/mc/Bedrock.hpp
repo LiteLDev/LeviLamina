@@ -130,6 +130,6 @@ public:
      * @hash   -940286991
      * @symbol ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
      */
-    MCAPI void throw_system_error(enum std::errc);
+    MCAPI void throw_system_error(enum class std::errc);
 
 };

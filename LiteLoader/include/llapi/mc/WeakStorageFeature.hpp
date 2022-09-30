@@ -35,7 +35,7 @@ public:
      * @hash   -45278851
      * @symbol ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
      */
-    MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
+    MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
     /**
      * @hash   -550218088
      * @symbol ??0WeakStorageFeature@@IEAA@AEBVOwnerStorageFeature@@@Z

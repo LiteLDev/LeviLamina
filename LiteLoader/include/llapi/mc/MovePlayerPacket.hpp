@@ -63,7 +63,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@MovePlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1421359
      * @vftbl  2
@@ -81,7 +81,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@MovePlayerPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -345115498
      * @symbol ??0MovePlayerPacket@@QEAA@XZ
@@ -91,7 +91,7 @@ public:
      * @hash   498594556
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@1@HH@Z
      */
-    MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const &, enum class Player::PositionMode, int, int);
     /**
      * @hash   1767287600
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@AEBVVec3@@@Z

@@ -114,7 +114,7 @@ public:
      * @vftbl  14
      * @symbol ?getStrategyType@DirectoryPackWithEncryptionAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      */
-    virtual enum PackAccessStrategyType getStrategyType() const;
+    virtual enum class PackAccessStrategyType getStrategyType() const;
     /**
      * @hash   1609575971
      * @vftbl  16
@@ -126,7 +126,7 @@ public:
      * @vftbl  17
      * @symbol ?generateAssetSet@DirectoryPackWithEncryptionAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
      */
-    virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @hash   2116904848
      * @vftbl  19

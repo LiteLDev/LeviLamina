@@ -35,13 +35,13 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   -16895464
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -69,7 +69,7 @@ public:
      * @vftbl  55
      * @symbol ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
      */
-    virtual std::string getExitTip(std::string const &, enum InputMode) const;
+    virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /**
      * @vftbl  60
      * @symbol __unk_vfn_60
@@ -239,7 +239,7 @@ public:
      * @hash   1605871587
      * @symbol ?getRowingTime@Boat@@QEBAMW4Side@@@Z
      */
-    MCAPI float getRowingTime(enum Side) const;
+    MCAPI float getRowingTime(enum class Side) const;
     /**
      * @hash   1490171879
      * @symbol ?getWoodID@Boat@@QEBAEXZ
@@ -254,12 +254,12 @@ public:
      * @hash   986766780
      * @symbol ?setPaddleState@Boat@@QEAA_NW4Side@@_N@Z
      */
-    MCAPI bool setPaddleState(enum Side, bool);
+    MCAPI bool setPaddleState(enum class Side, bool);
     /**
      * @hash   871421415
      * @symbol ?setRowingTime@Boat@@QEAAXW4Side@@M@Z
      */
-    MCAPI void setRowingTime(enum Side, float);
+    MCAPI void setRowingTime(enum class Side, float);
 
 //private:
     /**
@@ -276,7 +276,7 @@ public:
      * @hash   1051581765
      * @symbol ?_paddleControl@Boat@@AEAAXW4Side@@AEAVVec3@@1@Z
      */
-    MCAPI void _paddleControl(enum Side, class Vec3 &, class Vec3 &);
+    MCAPI void _paddleControl(enum class Side, class Vec3 &, class Vec3 &);
 
 private:
 

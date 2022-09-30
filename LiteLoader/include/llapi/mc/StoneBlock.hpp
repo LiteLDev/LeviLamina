@@ -266,6 +266,6 @@ public:
      * @hash   -32291887
      * @symbol ?getStoneBlockMapColor@StoneBlock@@SA?AVColor@mce@@W4StoneType@@@Z
      */
-    MCAPI static class mce::Color getStoneBlockMapColor(enum StoneType);
+    MCAPI static class mce::Color getStoneBlockMapColor(enum class StoneType);
 
 };

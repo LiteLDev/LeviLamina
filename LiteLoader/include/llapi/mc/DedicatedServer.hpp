@@ -97,12 +97,12 @@ public:
      * @hash   188108284
      * @symbol ?runDedicatedServerLoop@DedicatedServer@@QEAA?AW4StartResult@1@AEAVFilePathManager@Core@@AEAVPropertiesSettings@@AEAVLevelSettings@@AEAVAllowListFile@@AEAV?$unique_ptr@VPermissionsFile@@U?$default_delete@VPermissionsFile@@@std@@@std@@@Z
      */
-    MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
+    MCAPI enum class DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
     /**
      * @hash   1035794177
      * @symbol ?start@DedicatedServer@@QEAA?AW4StartResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActivationArguments@Bedrock@@@Z
      */
-    MCAPI enum DedicatedServer::StartResult start(std::string const &, class Bedrock::ActivationArguments const &);
+    MCAPI enum class DedicatedServer::StartResult start(std::string const &, class Bedrock::ActivationArguments const &);
 
 //private:
     /**
@@ -114,7 +114,7 @@ public:
      * @hash   -176841080
      * @symbol ?initializeHttp@DedicatedServer@@AEAAXW4Implementation@Http@Bedrock@@@Z
      */
-    MCAPI void initializeHttp(enum Bedrock::Http::Implementation);
+    MCAPI void initializeHttp(enum class Bedrock::Http::Implementation);
     /**
      * @hash   -631517863
      * @symbol ?initializeLogging@DedicatedServer@@AEAAXXZ

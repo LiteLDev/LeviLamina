@@ -194,7 +194,7 @@ public:
      * @hash   75925595
      * @symbol ?getStatusFlag@SynchedActorData@@QEBA_NW4ActorFlags@@@Z
      */
-    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @hash   -908788872
      * @symbol ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
@@ -219,7 +219,7 @@ public:
      * @hash   608604999
      * @symbol ?setStatusFlag@SynchedActorData@@QEAAXW4ActorFlags@@_N@Z
      */
-    MCAPI void setStatusFlag(enum ActorFlags, bool);
+    MCAPI void setStatusFlag(enum class ActorFlags, bool);
     /**
      * @hash   -1613377795
      * @symbol ??1SynchedActorData@@QEAA@XZ

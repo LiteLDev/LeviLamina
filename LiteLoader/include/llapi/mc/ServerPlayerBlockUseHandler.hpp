@@ -27,7 +27,7 @@ enum class PredictionValidationError;
      * @hash   1825347710
      * @symbol ?getErrorForRejectedRequest@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@AEBVItemStackRequestActionMineBlock@@@Z
      */
-    MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer &, class ItemStackRequestActionMineBlock const &);
+    MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer &, class ItemStackRequestActionMineBlock const &);
     /**
      * @hash   -1986082357
      * @symbol ?onAbortDestroyBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
@@ -62,6 +62,6 @@ enum class PredictionValidationError;
      * @hash   2110564136
      * @symbol ?validateClientBlockBreakPrediction@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@PEBVItemStackRequestActionMineBlock@@AEBVBlockPos@@AEBVItemStack@@3PEBUPlayerBlockActionData@@@Z
      */
-    MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer &, class ItemStackRequestActionMineBlock const *, class BlockPos const &, class ItemStack const &, class ItemStack const &, struct PlayerBlockActionData const *);
+    MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer &, class ItemStackRequestActionMineBlock const *, class BlockPos const &, class ItemStack const &, class ItemStack const &, struct PlayerBlockActionData const *);
 
 };

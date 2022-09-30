@@ -47,7 +47,7 @@ public:
      * @hash   936110435
      * @symbol ?getComponent@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
      */
-    MCAPI class BaseCircuitComponent * getComponent(class BlockPos const &, enum CircuitComponentType);
+    MCAPI class BaseCircuitComponent * getComponent(class BlockPos const &, enum class CircuitComponentType);
     /**
      * @hash   -691948722
      * @symbol ?getFromPendingAdd@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@@Z
@@ -57,7 +57,7 @@ public:
      * @hash   1505213873
      * @symbol ?getFromPendingAdd@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
      */
-    MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &, enum CircuitComponentType);
+    MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &, enum class CircuitComponentType);
     /**
      * @hash   -1545245118
      * @symbol ?invalidatePos@CircuitSceneGraph@@QEAAXAEBVBlockPos@@@Z

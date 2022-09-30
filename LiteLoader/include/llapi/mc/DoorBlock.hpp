@@ -363,12 +363,12 @@ public:
      * @hash   1856823678
      * @symbol ??0DoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4DoorType@0@@Z
      */
-    MCAPI DoorBlock(std::string const &, int, class Material const &, enum DoorBlock::DoorType);
+    MCAPI DoorBlock(std::string const &, int, class Material const &, enum class DoorBlock::DoorType);
     /**
      * @hash   1431848598
      * @symbol ?getBlockedDirection@DoorBlock@@QEBA?AW4Type@Direction@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
      */
-    MCAPI enum Direction::Type getBlockedDirection(class IConstBlockSource const &, class BlockPos const &) const;
+    MCAPI enum class Direction::Type getBlockedDirection(class IConstBlockSource const &, class BlockPos const &) const;
     /**
      * @hash   -885829346
      * @symbol ?getDir@DoorBlock@@QEBAHAEBVIConstBlockSource@@AEBVBlockPos@@@Z

@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@MultiplayerSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1688797674
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@MultiplayerSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1679303903
      * @symbol ??0MultiplayerSettingsPacket@@QEAA@XZ
@@ -67,6 +67,6 @@ public:
      * @hash   281613452
      * @symbol ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
      */
-    MCAPI MultiplayerSettingsPacket(enum MultiplayerSettingsPacketType);
+    MCAPI MultiplayerSettingsPacket(enum class MultiplayerSettingsPacketType);
 
 };

@@ -67,7 +67,7 @@ public:
      * @hash   -1394490980
      * @symbol ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
      */
-    MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
+    MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion, class std::function<void (std::string const &)>);
     /**
      * @hash   -1027422929
      * @symbol ?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z
@@ -107,7 +107,7 @@ public:
      * @hash   328182076
      * @symbol ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
      */
-    MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion);
+    MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
     /**
      * @hash   -1982428351
      * @symbol ?setRegistryNetworkUpdateCallback@MinecraftCommands@@QEBAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
@@ -117,7 +117,7 @@ public:
      * @hash   -721427305
      * @symbol ?getOutputType@MinecraftCommands@@SA?AW4CommandOutputType@@AEBVCommandOrigin@@@Z
      */
-    MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
+    MCAPI static enum class CommandOutputType getOutputType(class CommandOrigin const &);
     /**
      * @hash   270286633
      * @symbol ?initBlockEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVBaseGameVersion@@@Z

@@ -59,7 +59,7 @@ public:
      * @vftbl  3
      * @symbol ?startAnnouncingServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool, enum TransportLayer);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @hash   -179593536
      * @vftbl  4
@@ -142,7 +142,7 @@ public:
      * @hash   -4878939
      * @symbol ??0RakNetServerLocator@@QEAA@AEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
      */
-    MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum PermissionLAN, enum PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
+    MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
     /**
      * @hash   -576393673
      * @symbol ?parseUnconnectedPongPacketData@RakNetServerLocator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -179,7 +179,7 @@ public:
      * @hash   -1476288836
      * @symbol ?_enqueueStateChangeRequest@RakNetServerLocator@@AEAAXW4LocatorStateChangeRequest@@UAnnounceServerData@1@UPortPair@@@Z
      */
-    MCAPI void _enqueueStateChangeRequest(enum LocatorStateChangeRequest, struct RakNetServerLocator::AnnounceServerData, struct PortPair);
+    MCAPI void _enqueueStateChangeRequest(enum class LocatorStateChangeRequest, struct RakNetServerLocator::AnnounceServerData, struct PortPair);
     /**
      * @hash   -1977232063
      * @symbol ?_getHostGuid@RakNetServerLocator@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@H@Z

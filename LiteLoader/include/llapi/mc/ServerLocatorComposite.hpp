@@ -45,7 +45,7 @@ public:
      * @vftbl  3
      * @symbol ?startAnnouncingServer@ServerLocatorComposite@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool, enum TransportLayer);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@ServerLocatorComposite@@UEAAXXZ
@@ -118,11 +118,11 @@ public:
     /**
      * @symbol ?initializeRakNetServerLocator@ServerLocatorComposite@@QEAAXAEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@AEBV?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@6@@Z
      */
-    MCAPI void initializeRakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum PermissionLAN, enum PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)> const &);
+    MCAPI void initializeRakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)> const &);
     /**
      * @symbol ?setActiveTransportLayer@ServerLocatorComposite@@QEAAXW4TransportLayer@@@Z
      */
-    MCAPI void setActiveTransportLayer(enum TransportLayer);
+    MCAPI void setActiveTransportLayer(enum class TransportLayer);
     /**
      * @symbol ?setNetherNetServerLocator@ServerLocatorComposite@@QEAAXAEBV?$shared_ptr@UNetherNetInstance@@@std@@@Z
      */

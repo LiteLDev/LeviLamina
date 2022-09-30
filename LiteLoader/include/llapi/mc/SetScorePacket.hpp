@@ -40,7 +40,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@SetScorePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1272123501
      * @vftbl  2
@@ -58,7 +58,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@SetScorePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1715812089
      * @symbol ?change@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
@@ -80,7 +80,7 @@ public:
      * @hash   -590290973
      * @symbol ??0SetScorePacket@@AEAA@W4ScorePacketType@@AEBUScoreboardId@@AEBVObjective@@@Z
      */
-    MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const &, class Objective const &);
+    MCAPI SetScorePacket(enum class ScorePacketType, struct ScoreboardId const &, class Objective const &);
 
 private:
 

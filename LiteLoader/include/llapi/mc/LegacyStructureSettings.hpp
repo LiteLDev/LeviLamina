@@ -37,7 +37,7 @@ public:
      * @hash   -168418870
      * @symbol ??0LegacyStructureSettings@@QEAA@W4Mirror@@W4Rotation@@PEBVBlock@@AEBVBoundingBox@@@Z
      */
-    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
+    MCAPI LegacyStructureSettings(enum class Mirror, enum class Rotation, class Block const *, class BoundingBox const &);
     /**
      * @hash   124327119
      * @symbol ?addSwapAuxValue@LegacyStructureSettings@@QEAAXHH@Z
@@ -57,7 +57,7 @@ public:
      * @hash   2130546516
      * @symbol ?getMirror@LegacyStructureSettings@@QEBAAEBW4Mirror@@XZ
      */
-    MCAPI enum Mirror const & getMirror() const;
+    MCAPI enum class Mirror const & getMirror() const;
     /**
      * @hash   1719831106
      * @symbol ?getRefPos@LegacyStructureSettings@@QEBAAEBVBlockPos@@XZ
@@ -67,7 +67,7 @@ public:
      * @hash   -112084812
      * @symbol ?getRotation@LegacyStructureSettings@@QEBAAEBW4Rotation@@XZ
      */
-    MCAPI enum Rotation const & getRotation() const;
+    MCAPI enum class Rotation const & getRotation() const;
     /**
      * @hash   -622537037
      * @symbol ?getSwappedBlock@LegacyStructureSettings@@QEBAAEBVBlock@@AEBVBlockPalette@@AEBV2@@Z
@@ -122,12 +122,12 @@ public:
      * @hash   -57655436
      * @symbol ?setMirror@LegacyStructureSettings@@QEAAXW4Mirror@@@Z
      */
-    MCAPI void setMirror(enum Mirror);
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @hash   1464422196
      * @symbol ?setProjection@LegacyStructureSettings@@QEAAXW4Projection@@@Z
      */
-    MCAPI void setProjection(enum Projection);
+    MCAPI void setProjection(enum class Projection);
     /**
      * @hash   1897936006
      * @symbol ?setRefPos@LegacyStructureSettings@@QEAAXAEBVBlockPos@@@Z
@@ -137,7 +137,7 @@ public:
      * @hash   -1539606586
      * @symbol ?setRotation@LegacyStructureSettings@@QEAAXW4Rotation@@@Z
      */
-    MCAPI void setRotation(enum Rotation);
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @hash   1291598122
      * @symbol ?setSeed@LegacyStructureSettings@@QEAAXI@Z

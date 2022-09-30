@@ -33,26 +33,26 @@ public:
      * @hash   -200133790
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000000@Z
      */
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @hash   2053921666
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@00000@Z
      */
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @hash   1307418091
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000@Z
      */
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @hash   729339954
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@000@Z
      */
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @hash   -536071029
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@00@Z
      */
-    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
 
 };

@@ -178,7 +178,7 @@ public:
      * @vftbl  85
      * @symbol ?onFertilized@TallGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @hash   1628212810
      * @vftbl  86
@@ -293,13 +293,13 @@ public:
      * @vftbl  181
      * @symbol ?getRenderLayer@TallGrass@@UEBA?AW4BlockRenderLayer@@XZ
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @hash   -2055446398
      * @vftbl  182
      * @symbol ?getRenderLayer@TallGrass@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @hash   999615245
      * @vftbl  187

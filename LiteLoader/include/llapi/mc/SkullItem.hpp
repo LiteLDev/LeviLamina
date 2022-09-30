@@ -61,7 +61,7 @@ public:
      * @vftbl  43
      * @symbol ?getBlockShape@SkullItem@@UEBA?AW4BlockShape@@XZ
      */
-    virtual enum BlockShape getBlockShape() const;
+    virtual enum class BlockShape getBlockShape() const;
     /**
      * @hash   2043838884
      * @vftbl  46
@@ -142,13 +142,13 @@ public:
      * @vftbl  114
      * @symbol ?getEquipLocation@SkullItem@@UEBA?AW4ActorLocation@@XZ
      */
-    virtual enum ActorLocation getEquipLocation() const;
+    virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @hash   1497963500
      * @vftbl  115
      * @symbol ?getEquipSound@SkullItem@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getEquipSound() const;
+    virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @hash   1468203075
      * @vftbl  122

@@ -84,6 +84,6 @@ public:
      * @hash   1415473134
      * @symbol ??0MoveToLiquidGoal@@QEAA@AEAVMob@@MHHHW4MaterialType@@M@Z
      */
-    MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
+    MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum class MaterialType, float);
 
 };

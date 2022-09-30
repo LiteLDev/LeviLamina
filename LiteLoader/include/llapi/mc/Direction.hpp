@@ -35,12 +35,12 @@ public:
      * @hash   331808975
      * @symbol ?DIRECTION_CLOCKWISE@Direction@@2QBW4Type@1@B
      */
-    MCAPI static enum Direction::Type const DIRECTION_CLOCKWISE[];
+    MCAPI static enum class Direction::Type const DIRECTION_CLOCKWISE[];
     /**
      * @hash   -350212723
      * @symbol ?DIRECTION_COUNTER_CLOCKWISE@Direction@@2QBW4Type@1@B
      */
-    MCAPI static enum Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
+    MCAPI static enum class Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
     /**
      * @hash   2132738043
      * @symbol ?DIRECTION_FACING@Direction@@2QBEB
@@ -50,12 +50,12 @@ public:
      * @hash   -1017711237
      * @symbol ?DIRECTION_OPPOSITE@Direction@@2QBW4Type@1@B
      */
-    MCAPI static enum Direction::Type const DIRECTION_OPPOSITE[];
+    MCAPI static enum class Direction::Type const DIRECTION_OPPOSITE[];
     /**
      * @hash   1799275033
      * @symbol ?FACING_DIRECTION@Direction@@2QBW4Type@1@B
      */
-    MCAPI static enum Direction::Type const FACING_DIRECTION[];
+    MCAPI static enum class Direction::Type const FACING_DIRECTION[];
     /**
      * @hash   -700968074
      * @symbol ?STEP_X@Direction@@2QBHB
@@ -70,11 +70,11 @@ public:
      * @hash   -517666864
      * @symbol ?convertFacingDirectionToDirection@Direction@@SA?AW4Type@1@E@Z
      */
-    MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
+    MCAPI static enum class Direction::Type convertFacingDirectionToDirection(unsigned char);
     /**
      * @hash   2065096292
      * @symbol ?getDirection@Direction@@SA?AW4Type@1@MM@Z
      */
-    MCAPI static enum Direction::Type getDirection(float, float);
+    MCAPI static enum class Direction::Type getDirection(float, float);
 
 };

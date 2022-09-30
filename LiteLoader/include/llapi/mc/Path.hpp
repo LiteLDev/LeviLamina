@@ -65,7 +65,7 @@ public:
      * @hash   1546240032
      * @symbol ?getCompletionType@Path@@QEBA?AW4PathCompletionType@@XZ
      */
-    MCAPI enum PathCompletionType getCompletionType() const;
+    MCAPI enum class PathCompletionType getCompletionType() const;
     /**
      * @hash   -491483296
      * @symbol ?getEndPos@Path@@QEBA?AVVec3@@XZ
@@ -90,7 +90,7 @@ public:
      * @hash   -1766241016
      * @symbol ?getNodeType@Path@@QEBA?AW4NodeType@@_K@Z
      */
-    MCAPI enum NodeType getNodeType(unsigned __int64) const;
+    MCAPI enum class NodeType getNodeType(unsigned __int64) const;
     /**
      * @hash   227775566
      * @symbol ?getPos@Path@@QEBA?AVVec3@@PEBVActor@@_K@Z
@@ -147,7 +147,7 @@ public:
      * @hash   -217442867
      * @symbol ?buildFromNodes@Path@@AEAAX$$QEAV?$vector@VNode@Path@@V?$allocator@VNode@Path@@@std@@@std@@W4PathCompletionType@@@Z
      */
-    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
+    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum class PathCompletionType);
 
 private:
 
