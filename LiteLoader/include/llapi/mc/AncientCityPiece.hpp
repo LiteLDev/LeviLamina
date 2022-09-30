@@ -56,11 +56,11 @@ public:
      * @vftbl  16
      * @symbol ?getTerrainAdjustmentEffect@AncientCityPiece@@UEBA?AW4AdjustmentEffect@@XZ
      */
-    virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const;
+    virtual enum class AdjustmentEffect getTerrainAdjustmentEffect() const;
     /**
      * @hash   955398574
      * @symbol ?addPieces@AncientCityPiece@@SAXVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVJigsawStructureRegistry@@W4VanillaBiomeTypes@@AEAVDimension@@@Z
      */
-    MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum VanillaBiomeTypes, class Dimension &);
+    MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum class VanillaBiomeTypes, class Dimension &);
 
 };

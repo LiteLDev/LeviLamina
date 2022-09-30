@@ -119,7 +119,7 @@ public:
      * @vftbl  14
      * @symbol ?getStrategyType@DirectoryPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      */
-    virtual enum PackAccessStrategyType getStrategyType() const;
+    virtual enum class PackAccessStrategyType getStrategyType() const;
     /**
      * @hash   -1011642918
      * @vftbl  16

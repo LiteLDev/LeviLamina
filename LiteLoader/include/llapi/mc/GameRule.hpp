@@ -86,7 +86,7 @@ public:
      * @hash   85434877
      * @symbol ?getType@GameRule@@QEBA?AW4Type@1@XZ
      */
-    MCAPI enum GameRule::Type getType() const;
+    MCAPI enum class GameRule::Type getType() const;
     /**
      * @hash   87232446
      * @symbol ?getValue@GameRule@@QEBAAEBTValue@1@XZ
@@ -106,7 +106,7 @@ public:
      * @hash   648255805
      * @symbol ?resetType@GameRule@@QEAAXW4Type@1@@Z
      */
-    MCAPI void resetType(enum GameRule::Type);
+    MCAPI void resetType(enum class GameRule::Type);
     /**
      * @hash   1904985847
      * @symbol ?setBool@GameRule@@QEAA_N_NPEA_NPEAVValidationError@1@@Z

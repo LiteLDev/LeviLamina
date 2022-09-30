@@ -81,6 +81,6 @@ public:
      * @hash   -621982739
      * @symbol ??0MaterialReducerContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI MaterialReducerContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

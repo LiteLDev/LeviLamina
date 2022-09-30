@@ -35,7 +35,7 @@ public:
      * @hash   466383696
      * @symbol ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
      */
-    MCAPI ContainerValidationSlotData(enum ContainerEnumName, int);
+    MCAPI ContainerValidationSlotData(enum class ContainerEnumName, int);
     /**
      * @hash   663407324
      * @symbol ?matches@ContainerValidationSlotData@@QEBA_NAEBU1@@Z

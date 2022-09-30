@@ -46,7 +46,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@MineshaftRoom@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   904304791
      * @vftbl  3

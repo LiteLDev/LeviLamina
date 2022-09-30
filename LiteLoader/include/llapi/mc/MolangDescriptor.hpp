@@ -70,7 +70,7 @@ public:
      * @vftbl  10
      * @symbol ?getType@MolangDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
      */
-    virtual enum ItemDescriptor::InternalType getType() const;
+    virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  12
      * @symbol ?getHash@MolangDescriptor@@UEBA_KXZ
@@ -84,6 +84,6 @@ public:
     /**
      * @symbol ?fromExpressionTag@MolangDescriptor@@SA?AV?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@@Z
      */
-    MCAPI static std::unique_ptr<struct MolangDescriptor> fromExpressionTag(std::string const &, enum MolangVersion);
+    MCAPI static std::unique_ptr<struct MolangDescriptor> fromExpressionTag(std::string const &, enum class MolangVersion);
 
 };

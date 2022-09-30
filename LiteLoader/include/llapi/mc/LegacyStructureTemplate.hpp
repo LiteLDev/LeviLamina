@@ -59,7 +59,7 @@ public:
      * @hash   780495677
      * @symbol ?getSize@LegacyStructureTemplate@@QEBA?AVBlockPos@@W4Rotation@@@Z
      */
-    MCAPI class BlockPos getSize(enum Rotation) const;
+    MCAPI class BlockPos getSize(enum class Rotation) const;
     /**
      * @hash   -370823784
      * @symbol ?load@LegacyStructureTemplate@@QEAAXAEBVCompoundTag@@@Z
@@ -174,12 +174,12 @@ public:
      * @hash   -732787110
      * @symbol ?getZeroPositionWithTransform@LegacyStructureTemplate@@SA?AVBlockPos@@AEBV2@W4Mirror@@W4Rotation@@HH@Z
      */
-    MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const &, enum Mirror, enum Rotation, int, int);
+    MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const &, enum class Mirror, enum class Rotation, int, int);
     /**
      * @hash   -1331908848
      * @symbol ?transform@LegacyStructureTemplate@@SA?AVBlockPos@@V2@W4Mirror@@W4Rotation@@@Z
      */
-    MCAPI static class BlockPos transform(class BlockPos, enum Mirror, enum Rotation);
+    MCAPI static class BlockPos transform(class BlockPos, enum class Mirror, enum class Rotation);
 
 //private:
     /**

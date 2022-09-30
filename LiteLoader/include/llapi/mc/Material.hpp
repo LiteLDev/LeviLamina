@@ -83,7 +83,7 @@ public:
      * @hash   1014427003
      * @symbol ?isType@Material@@QEBA_NW4MaterialType@@@Z
      */
-    MCAPI bool isType(enum MaterialType) const;
+    MCAPI bool isType(enum class MaterialType) const;
     /**
      * @hash   -2052841709
      * @symbol ??9Material@@QEBA_NAEBV0@@Z
@@ -103,7 +103,7 @@ public:
      * @hash   2003541533
      * @symbol ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
      */
-    MCAPI static class Material const & getMaterial(enum MaterialType);
+    MCAPI static class Material const & getMaterial(enum class MaterialType);
     /**
      * @hash   -1485302303
      * @symbol ?initMaterials@Material@@SAXXZ

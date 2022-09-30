@@ -39,13 +39,13 @@ public:
      * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
      */
-    virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
+    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
      * @hash   -1468289814
      * @vftbl  2
      * @symbol ?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ
      */
-    virtual enum ItemStackNetResult endRequest();
+    virtual enum class ItemStackNetResult endRequest();
     /**
      * @vftbl  3
      * @symbol __unk_vfn_3
@@ -68,7 +68,7 @@ public:
      * @hash   1626057114
      * @symbol ?_handleLabTableCombine@ScreenHandlerLabTable@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionDataless@$08@@@Z
      */
-    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
+    MCAPI enum class ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
 
 private:
 

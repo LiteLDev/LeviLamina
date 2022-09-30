@@ -208,7 +208,7 @@ public:
      * @vftbl  85
      * @symbol ?onFertilized@BigDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @hash   918381919
      * @vftbl  87
@@ -379,7 +379,7 @@ public:
      * @hash   1423332394
      * @symbol ?_setTiltAndScheduleTick@BigDripleafBlock@@AEBAXW4BigDripleafTilt@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    MCAPI void _setTiltAndScheduleTick(enum BigDripleafTilt, class BlockSource &, class BlockPos const &) const;
+    MCAPI void _setTiltAndScheduleTick(enum class BigDripleafTilt, class BlockSource &, class BlockPos const &) const;
 
 private:
 

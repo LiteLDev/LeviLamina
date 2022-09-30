@@ -84,7 +84,7 @@ public:
      * @hash   186749082
      * @symbol ?_createSkeleton@SkeletonHorseTrapGoal@@AEAAPEAVSkeleton@@AEBW4Difficulty@@AEBVHorse@@@Z
      */
-    MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
+    MCAPI class Skeleton * _createSkeleton(enum class Difficulty const &, class Horse const &);
 
 private:
 

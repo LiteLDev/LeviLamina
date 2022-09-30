@@ -33,7 +33,7 @@ public:
      * @hash   -1189634917
      * @symbol ?getCelebrateSound@CelebrateHuntComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
      */
-    MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const &) const;
+    MCAPI enum class LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     /**
      * @hash   -1282246608
      * @symbol ?getCelebrateUntil@CelebrateHuntComponent@@QEBA?BUTick@@XZ

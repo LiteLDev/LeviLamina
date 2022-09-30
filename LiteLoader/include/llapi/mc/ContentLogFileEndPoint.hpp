@@ -45,7 +45,7 @@ public:
      * @hash   -1956865867
      * @symbol ?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
      */
-    MCVAPI void log(enum LogArea, enum LogLevel, char const *);
+    MCVAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**
      * @hash   57087341
      * @symbol ?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ

@@ -55,17 +55,17 @@ struct CachedItemStateMapPtr {
      * @hash   97616138
      * @symbol ?Attachment@VanillaStates@@3V?$ItemStateVariant@W4AttachmentType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum AttachmentType> const Attachment;
+    MCAPI extern class ItemStateVariant<enum class AttachmentType> const Attachment;
     /**
      * @hash   -1390025586
      * @symbol ?BambooLeafSize@VanillaStates@@3V?$ItemStateVariant@W4LeafSize@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum LeafSize> const BambooLeafSize;
+    MCAPI extern class ItemStateVariant<enum class LeafSize> const BambooLeafSize;
     /**
      * @hash   -863195944
      * @symbol ?BambooThickness@VanillaStates@@3V?$ItemStateVariant@W4StalkThickness@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StalkThickness> const BambooThickness;
+    MCAPI extern class ItemStateVariant<enum class StalkThickness> const BambooThickness;
     /**
      * @hash   1399912089
      * @symbol ?BeehiveHoneyLevel@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -80,7 +80,7 @@ struct CachedItemStateMapPtr {
      * @hash   261751722
      * @symbol ?BigDripleafTilt@VanillaStates@@3V?$ItemStateVariant@W4BigDripleafTilt@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum BigDripleafTilt> const BigDripleafTilt;
+    MCAPI extern class ItemStateVariant<enum class BigDripleafTilt> const BigDripleafTilt;
     /**
      * @hash   -75952469
      * @symbol ?BiteCounter@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -130,17 +130,17 @@ struct CachedItemStateMapPtr {
      * @hash   1836298336
      * @symbol ?CauldronLiquid@VanillaStates@@3V?$ItemStateVariant@W4CauldronLiquidType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum CauldronLiquidType> const CauldronLiquid;
+    MCAPI extern class ItemStateVariant<enum class CauldronLiquidType> const CauldronLiquid;
     /**
      * @hash   -1691414376
      * @symbol ?ChemistryTableType@VanillaStates@@3V?$ItemStateVariant@W4ChemistryTableType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum ChemistryTableType> const ChemistryTableType;
+    MCAPI extern class ItemStateVariant<enum class ChemistryTableType> const ChemistryTableType;
     /**
      * @hash   -281519952
      * @symbol ?ChiselType@VanillaStates@@3V?$ItemStateVariant@W4ChiselType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum ChiselType> const ChiselType;
+    MCAPI extern class ItemStateVariant<enum class ChiselType> const ChiselType;
     /**
      * @hash   -1470083381
      * @symbol ?ClusterCount@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -150,7 +150,7 @@ struct CachedItemStateMapPtr {
      * @hash   -1288493734
      * @symbol ?Color@VanillaStates@@3V?$ItemStateVariant@W4BlockColor@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum BlockColor> const Color;
+    MCAPI extern class ItemStateVariant<enum class BlockColor> const Color;
     /**
      * @hash   -668704921
      * @symbol ?ColorBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -170,7 +170,7 @@ struct CachedItemStateMapPtr {
      * @hash   -854066124
      * @symbol ?CoralColor@VanillaStates@@3V?$ItemStateVariant@W4CoralColor@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum CoralColor> const CoralColor;
+    MCAPI extern class ItemStateVariant<enum class CoralColor> const CoralColor;
     /**
      * @hash   -230809379
      * @symbol ?CoralDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -195,7 +195,7 @@ struct CachedItemStateMapPtr {
      * @hash   -1972572424
      * @symbol ?CrackedState@VanillaStates@@3V?$ItemStateVariant@W4HatchLevel@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum HatchLevel> const CrackedState;
+    MCAPI extern class ItemStateVariant<enum class HatchLevel> const CrackedState;
     /**
      * @hash   2020002567
      * @symbol ?DEPRECATED@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -205,7 +205,7 @@ struct CachedItemStateMapPtr {
      * @hash   -133744580
      * @symbol ?Damage@VanillaStates@@3V?$ItemStateVariant@W4AnvilDamage@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum AnvilDamage> const Damage;
+    MCAPI extern class ItemStateVariant<enum class AnvilDamage> const Damage;
     /**
      * @hash   -642951163
      * @symbol ?DeadBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -220,7 +220,7 @@ struct CachedItemStateMapPtr {
      * @hash   980882866
      * @symbol ?DirtType@VanillaStates@@3V?$ItemStateVariant@W4DirtType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum DirtType> const DirtType;
+    MCAPI extern class ItemStateVariant<enum class DirtType> const DirtType;
     /**
      * @hash   137852709
      * @symbol ?DisarmedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -235,7 +235,7 @@ struct CachedItemStateMapPtr {
      * @hash   -1321456038
      * @symbol ?DoublePlantType@VanillaStates@@3V?$ItemStateVariant@W4DoublePlantType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum DoublePlantType> const DoublePlantType;
+    MCAPI extern class ItemStateVariant<enum class DoublePlantType> const DoublePlantType;
     /**
      * @hash   -412257241
      * @symbol ?DragDown@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -245,7 +245,7 @@ struct CachedItemStateMapPtr {
      * @hash   -68337000
      * @symbol ?DripstoneThickness@VanillaStates@@3V?$ItemStateVariant@W4DripstoneThickness@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum DripstoneThickness> const DripstoneThickness;
+    MCAPI extern class ItemStateVariant<enum class DripstoneThickness> const DripstoneThickness;
     /**
      * @hash   -1731914811
      * @symbol ?EndPortalEyeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -275,7 +275,7 @@ struct CachedItemStateMapPtr {
      * @hash   779934714
      * @symbol ?FlowerType@VanillaStates@@3V?$ItemStateVariant@W4FlowerType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum FlowerType> const FlowerType;
+    MCAPI extern class ItemStateVariant<enum class FlowerType> const FlowerType;
     /**
      * @hash   2121014025
      * @symbol ?GrowingPlantAge@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -335,7 +335,7 @@ struct CachedItemStateMapPtr {
      * @hash   357596858
      * @symbol ?LeverDirection@VanillaStates@@3V?$ItemStateVariant@W4LeverDirection@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum LeverDirection> const LeverDirection;
+    MCAPI extern class ItemStateVariant<enum class LeverDirection> const LeverDirection;
     /**
      * @hash   1478695761
      * @symbol ?LiquidDepth@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -355,7 +355,7 @@ struct CachedItemStateMapPtr {
      * @hash   -892136454
      * @symbol ?MonsterEggStoneType@VanillaStates@@3V?$ItemStateVariant@W4MonsterEggStoneType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum MonsterEggStoneType> const MonsterEggStoneType;
+    MCAPI extern class ItemStateVariant<enum class MonsterEggStoneType> const MonsterEggStoneType;
     /**
      * @hash   1759343903
      * @symbol ?MultiFaceDirectionBits@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -365,12 +365,12 @@ struct CachedItemStateMapPtr {
      * @hash   1402419882
      * @symbol ?NewLeafType@VanillaStates@@3V?$ItemStateVariant@W4NewLeafType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum NewLeafType> const NewLeafType;
+    MCAPI extern class ItemStateVariant<enum class NewLeafType> const NewLeafType;
     /**
      * @hash   2003050796
      * @symbol ?NewLogType@VanillaStates@@3V?$ItemStateVariant@W4NewLogType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum NewLogType> const NewLogType;
+    MCAPI extern class ItemStateVariant<enum class NewLogType> const NewLogType;
     /**
      * @hash   1171989989
      * @symbol ?NoDropBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -385,12 +385,12 @@ struct CachedItemStateMapPtr {
      * @hash   -611618202
      * @symbol ?OldLeafType@VanillaStates@@3V?$ItemStateVariant@W4OldLeafType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum OldLeafType> const OldLeafType;
+    MCAPI extern class ItemStateVariant<enum class OldLeafType> const OldLeafType;
     /**
      * @hash   -1779310370
      * @symbol ?OldLogType@VanillaStates@@3V?$ItemStateVariant@W4OldLogType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum OldLogType> const OldLogType;
+    MCAPI extern class ItemStateVariant<enum class OldLogType> const OldLogType;
     /**
      * @hash   -107950075
      * @symbol ?OpenBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -415,12 +415,12 @@ struct CachedItemStateMapPtr {
      * @hash   -960939514
      * @symbol ?PillarAxis@VanillaStates@@3V?$ItemStateVariant@W4PillarAxis@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum PillarAxis> const PillarAxis;
+    MCAPI extern class ItemStateVariant<enum class PillarAxis> const PillarAxis;
     /**
      * @hash   -1231200982
      * @symbol ?PortalAxis@VanillaStates@@3V?$ItemStateVariant@W4PortalAxis@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum PortalAxis> const PortalAxis;
+    MCAPI extern class ItemStateVariant<enum class PortalAxis> const PortalAxis;
     /**
      * @hash   -1777421977
      * @symbol ?PoweredBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -430,7 +430,7 @@ struct CachedItemStateMapPtr {
      * @hash   1258857998
      * @symbol ?PrismarineBlockType@VanillaStates@@3V?$ItemStateVariant@W4PrismarineBlockType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum PrismarineBlockType> const PrismarineBlockType;
+    MCAPI extern class ItemStateVariant<enum class PrismarineBlockType> const PrismarineBlockType;
     /**
      * @hash   383296403
      * @symbol ?PropaguleStage@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -470,27 +470,27 @@ struct CachedItemStateMapPtr {
      * @hash   -1658821258
      * @symbol ?SandStoneType@VanillaStates@@3V?$ItemStateVariant@W4SandStoneType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum SandStoneType> const SandStoneType;
+    MCAPI extern class ItemStateVariant<enum class SandStoneType> const SandStoneType;
     /**
      * @hash   -81660884
      * @symbol ?SandType@VanillaStates@@3V?$ItemStateVariant@W4SandType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum SandType> const SandType;
+    MCAPI extern class ItemStateVariant<enum class SandType> const SandType;
     /**
      * @hash   1670340946
      * @symbol ?SaplingType@VanillaStates@@3V?$ItemStateVariant@W4SaplingType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum SaplingType> const SaplingType;
+    MCAPI extern class ItemStateVariant<enum class SaplingType> const SaplingType;
     /**
      * @hash   1623939730
      * @symbol ?SeaGrassType@VanillaStates@@3V?$ItemStateVariant@W4SeaGrassType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum SeaGrassType> const SeaGrassType;
+    MCAPI extern class ItemStateVariant<enum class SeaGrassType> const SeaGrassType;
     /**
      * @hash   1018412280
      * @symbol ?SpongeType@VanillaStates@@3V?$ItemStateVariant@W4SpongeType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum SpongeType> const SpongeType;
+    MCAPI extern class ItemStateVariant<enum class SpongeType> const SpongeType;
     /**
      * @hash   812864373
      * @symbol ?Stability@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -510,32 +510,32 @@ struct CachedItemStateMapPtr {
      * @hash   1554392732
      * @symbol ?StoneBrickType@VanillaStates@@3V?$ItemStateVariant@W4StoneBrickType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneBrickType> const StoneBrickType;
+    MCAPI extern class ItemStateVariant<enum class StoneBrickType> const StoneBrickType;
     /**
      * @hash   1357188878
      * @symbol ?StoneSlabType@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneSlabType> const StoneSlabType;
+    MCAPI extern class ItemStateVariant<enum class StoneSlabType> const StoneSlabType;
     /**
      * @hash   373940290
      * @symbol ?StoneSlabType2@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType2@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneSlabType2> const StoneSlabType2;
+    MCAPI extern class ItemStateVariant<enum class StoneSlabType2> const StoneSlabType2;
     /**
      * @hash   -1424043772
      * @symbol ?StoneSlabType3@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType3@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneSlabType3> const StoneSlabType3;
+    MCAPI extern class ItemStateVariant<enum class StoneSlabType3> const StoneSlabType3;
     /**
      * @hash   1072939462
      * @symbol ?StoneSlabType4@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType4@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneSlabType4> const StoneSlabType4;
+    MCAPI extern class ItemStateVariant<enum class StoneSlabType4> const StoneSlabType4;
     /**
      * @hash   1925210182
      * @symbol ?StoneType@VanillaStates@@3V?$ItemStateVariant@W4StoneType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StoneType> const StoneType;
+    MCAPI extern class ItemStateVariant<enum class StoneType> const StoneType;
     /**
      * @hash   -1508551483
      * @symbol ?StrippedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -545,12 +545,12 @@ struct CachedItemStateMapPtr {
      * @hash   742653080
      * @symbol ?StructureBlockType@VanillaStates@@3V?$ItemStateVariant@W4StructureBlockType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StructureBlockType> const StructureBlockType;
+    MCAPI extern class ItemStateVariant<enum class StructureBlockType> const StructureBlockType;
     /**
      * @hash   -748537490
      * @symbol ?StructureVoidType@VanillaStates@@3V?$ItemStateVariant@W4StructureVoidType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum StructureVoidType> const StructureVoidType;
+    MCAPI extern class ItemStateVariant<enum class StructureVoidType> const StructureVoidType;
     /**
      * @hash   1712339687
      * @symbol ?SuspendedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -560,7 +560,7 @@ struct CachedItemStateMapPtr {
      * @hash   828405494
      * @symbol ?TallGrassType@VanillaStates@@3V?$ItemStateVariant@W4TallGrassType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum TallGrassType> const TallGrassType;
+    MCAPI extern class ItemStateVariant<enum class TallGrassType> const TallGrassType;
     /**
      * @hash   -295821499
      * @symbol ?ToggleBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -575,7 +575,7 @@ struct CachedItemStateMapPtr {
      * @hash   -1924314746
      * @symbol ?TorchFacingDirection@VanillaStates@@3V?$ItemStateVariant@W4TorchFacing@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum TorchFacing> const TorchFacingDirection;
+    MCAPI extern class ItemStateVariant<enum class TorchFacing> const TorchFacingDirection;
     /**
      * @hash   -269781113
      * @symbol ?TriggeredBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -585,7 +585,7 @@ struct CachedItemStateMapPtr {
      * @hash   789856740
      * @symbol ?TurtleEggCount@VanillaStates@@3V?$ItemStateVariant@W4EggCount@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum EggCount> const TurtleEggCount;
+    MCAPI extern class ItemStateVariant<enum class EggCount> const TurtleEggCount;
     /**
      * @hash   -1054917405
      * @symbol ?TwistingVinesAge@VanillaStates@@3V?$ItemStateVariant@H@@B
@@ -615,27 +615,27 @@ struct CachedItemStateMapPtr {
      * @hash   1245133630
      * @symbol ?WallBlockType@VanillaStates@@3V?$ItemStateVariant@W4WallBlockType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WallBlockType> const WallBlockType;
+    MCAPI extern class ItemStateVariant<enum class WallBlockType> const WallBlockType;
     /**
      * @hash   -1111650508
      * @symbol ?WallConnectionTypeEast@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WallConnectionType> const WallConnectionTypeEast;
+    MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeEast;
     /**
      * @hash   -1252245966
      * @symbol ?WallConnectionTypeNorth@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WallConnectionType> const WallConnectionTypeNorth;
+    MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeNorth;
     /**
      * @hash   -2044956174
      * @symbol ?WallConnectionTypeSouth@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WallConnectionType> const WallConnectionTypeSouth;
+    MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeSouth;
     /**
      * @hash   -75020108
      * @symbol ?WallConnectionTypeWest@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WallConnectionType> const WallConnectionTypeWest;
+    MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeWest;
     /**
      * @hash   -1012097787
      * @symbol ?WallPostBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
@@ -655,7 +655,7 @@ struct CachedItemStateMapPtr {
      * @hash   -841331970
      * @symbol ?WoodType@VanillaStates@@3V?$ItemStateVariant@W4WoodType@@@@B
      */
-    MCAPI extern class ItemStateVariant<enum WoodType> const WoodType;
+    MCAPI extern class ItemStateVariant<enum class WoodType> const WoodType;
     /**
      * @hash   -1480790473
      * @symbol ?getDataState@VanillaStates@@YAPEBVItemState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

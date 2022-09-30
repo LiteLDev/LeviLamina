@@ -38,12 +38,12 @@ public:
      * @hash   719912082
      * @symbol ?getChunksLoadedStatus@ChunksLoadedInfo@@QEBA?AW4ChunksLoadedStatus@@XZ
      */
-    MCAPI enum ChunksLoadedStatus getChunksLoadedStatus() const;
+    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
     /**
      * @hash   -39720620
      * @symbol ?areAllChunksLoadedAndTicking@ChunksLoadedInfo@@SA?AW4ChunksLoadedStatus@@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N@Z
      */
-    MCAPI static enum ChunksLoadedStatus areAllChunksLoadedAndTicking(class Dimension const &, class ChunkSource &, struct Bounds const &, bool, struct Tick, bool);
+    MCAPI static enum class ChunksLoadedStatus areAllChunksLoadedAndTicking(class Dimension const &, class ChunkSource &, struct Bounds const &, bool, struct Tick, bool);
     /**
      * @hash   -1836582627
      * @symbol ?calculateChunksLoadedInfo@ChunksLoadedInfo@@SA?AU1@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N5@Z

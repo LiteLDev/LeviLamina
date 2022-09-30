@@ -214,7 +214,7 @@ public:
      * @vftbl  151
      * @symbol ?getFaceFlip@FaceDirectionalBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
      */
-    virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
      * @vftbl  157
      * @symbol __unk_vfn_157
@@ -254,7 +254,7 @@ public:
      * @hash   -539197916
      * @symbol ?getFaceFlipStatic@FaceDirectionalBlock@@SA?AW4Flip@@EAEBVBlock@@_N@Z
      */
-    MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
+    MCAPI static enum class Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     /**
      * @hash   1868074303
      * @symbol ?getFacingDirection@FaceDirectionalBlock@@SAEAEBVBlock@@_N@Z

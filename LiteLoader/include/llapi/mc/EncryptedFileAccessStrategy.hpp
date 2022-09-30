@@ -84,7 +84,7 @@ public:
      * @vftbl  17
      * @symbol ?generateAssetSet@EncryptedFileAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
      */
-    virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @hash   -643655654
      * @vftbl  21

@@ -233,13 +233,13 @@ public:
      * @vftbl  181
      * @symbol ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @hash   187410451
      * @vftbl  182
      * @symbol ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  188
      * @symbol __unk_vfn_188

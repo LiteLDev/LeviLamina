@@ -113,11 +113,11 @@ public:
      * @hash   110319988
      * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
      */
-    MCAPI static enum PaletteColor fromByte(unsigned char);
+    MCAPI static enum class PaletteColor fromByte(unsigned char);
     /**
      * @hash   -129054999
      * @symbol ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
      */
-    MCAPI static class mce::Color const & getColor(enum PaletteColor);
+    MCAPI static class mce::Color const & getColor(enum class PaletteColor);
 
 };

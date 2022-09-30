@@ -47,7 +47,7 @@ public:
      * @hash   -2096951870
      * @symbol ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
      */
-    MCAPI class CreativeItemGroupCategory * getCreativeCategory(enum CreativeItemCategory);
+    MCAPI class CreativeItemGroupCategory * getCreativeCategory(enum class CreativeItemCategory);
     /**
      * @hash   1016998060
      * @symbol ?getCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@I@Z
@@ -67,12 +67,12 @@ public:
      * @hash   -504394559
      * @symbol ?newCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
      */
-    MCAPI class CreativeItemGroupCategory * newCreativeCategory(std::string const &, enum CreativeItemCategory);
+    MCAPI class CreativeItemGroupCategory * newCreativeCategory(std::string const &, enum class CreativeItemCategory);
     /**
      * @hash   -1919652950
      * @symbol ?newCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@W4CreativeItemCategory@@AEBVHashedString@@AEBVItemInstance@@@Z
      */
-    MCAPI class CreativeGroupInfo * newCreativeGroup(enum CreativeItemCategory, class HashedString const &, class ItemInstance const &);
+    MCAPI class CreativeGroupInfo * newCreativeGroup(enum class CreativeItemCategory, class HashedString const &, class ItemInstance const &);
     /**
      * @hash   647497980
      * @symbol ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z

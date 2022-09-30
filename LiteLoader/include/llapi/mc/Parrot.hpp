@@ -36,7 +36,7 @@ public:
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@Parrot@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -131,7 +131,7 @@ public:
      * @vftbl  133
      * @symbol ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @hash   985391636
      * @vftbl  134

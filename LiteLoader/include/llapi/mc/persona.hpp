@@ -112,11 +112,11 @@ enum class PieceType;
      * @hash   -2135099815
      * @symbol ?pieceTypeFromString@persona@@YA?AW4PieceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI enum persona::PieceType pieceTypeFromString(std::string const &);
+    MCAPI enum class persona::PieceType pieceTypeFromString(std::string const &);
     /**
      * @hash   -1448352244
      * @symbol ?stringFromPieceType@persona@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@1@_N@Z
      */
-    MCAPI std::string const & stringFromPieceType(enum persona::PieceType, bool);
+    MCAPI std::string const & stringFromPieceType(enum class persona::PieceType, bool);
 
 };

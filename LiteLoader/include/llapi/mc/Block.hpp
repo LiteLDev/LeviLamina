@@ -74,7 +74,7 @@ public:
      * @vftbl  1
      * @symbol ?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @hash   686264165
      * @symbol ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
@@ -209,7 +209,7 @@ public:
      * @hash   -1556258083
      * @symbol ?canProvideSupport@Block@@QEBA_NEW4BlockSupportType@@@Z
      */
-    MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
+    MCAPI bool canProvideSupport(unsigned char, enum class BlockSupportType) const;
     /**
      * @hash   967978748
      * @symbol ?canSlide@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -289,7 +289,7 @@ public:
      * @hash   -1713631910
      * @symbol ?getBlockEntityType@Block@@QEBA?AW4BlockActorType@@XZ
      */
-    MCAPI enum BlockActorType getBlockEntityType() const;
+    MCAPI enum class BlockActorType getBlockEntityType() const;
     /**
      * @hash   1460586874
      * @symbol ?getBurnOdds@Block@@QEBAHXZ
@@ -324,7 +324,7 @@ public:
      * @hash   786767276
      * @symbol ?getCreativeCategory@Block@@QEBA?AW4CreativeItemCategory@@XZ
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @hash   1089981860
      * @symbol ?getDebugText@Block@@QEBAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
@@ -474,12 +474,12 @@ public:
      * @hash   698490913
      * @symbol ?hasProperty@Block@@QEBA_NW4BlockProperty@@@Z
      */
-    MCAPI bool hasProperty(enum BlockProperty) const;
+    MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
      * @hash   1271815457
      * @symbol ?hasPropertyNoLock@Block@@QEBA_NW4BlockProperty@@@Z
      */
-    MCAPI bool hasPropertyNoLock(enum BlockProperty) const;
+    MCAPI bool hasPropertyNoLock(enum class BlockProperty) const;
     /**
      * @hash   -1978901376
      * @symbol ?hasRuntimeId@Block@@QEBA?B_NXZ
@@ -579,7 +579,7 @@ public:
      * @hash   1282007655
      * @symbol ?isFilteredOut@Block@@QEBA_NW4BlockRenderLayer@@@Z
      */
-    MCAPI bool isFilteredOut(enum BlockRenderLayer) const;
+    MCAPI bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @hash   -1538259356
      * @symbol ?isHeavy@Block@@QEBA_NXZ
@@ -753,7 +753,7 @@ public:
      * @hash   -1344750445
      * @symbol ?onFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      */
-    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @hash   1582692075
      * @symbol ?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z

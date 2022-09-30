@@ -74,7 +74,7 @@ public:
      * @hash   -809825932
      * @symbol ?getSubChunkState@SubChunk@@QEBA?AW4SubChunkState@1@XZ
      */
-    MCAPI enum SubChunk::SubChunkState getSubChunkState() const;
+    MCAPI enum class SubChunk::SubChunkState getSubChunkState() const;
     /**
      * @hash   -1535376019
      * @symbol ?initialize@SubChunk@@QEAAXPEBVBlock@@_N1AEAVSpinLock@@C@Z
@@ -109,7 +109,7 @@ public:
      * @hash   2102085554
      * @symbol ?prune@SubChunk@@QEAAXW4PruneType@SubChunkStorageUnit@@@Z
      */
-    MCAPI void prune(enum SubChunkStorageUnit::PruneType);
+    MCAPI void prune(enum class SubChunkStorageUnit::PruneType);
     /**
      * @hash   -894922540
      * @symbol ?recalculateHash@SubChunk@@QEAAX_N@Z
@@ -174,7 +174,7 @@ public:
      * @hash   -1663311206
      * @symbol ?setSubChunkState@SubChunk@@QEAAXW4SubChunkState@1@@Z
      */
-    MCAPI void setSubChunkState(enum SubChunk::SubChunkState);
+    MCAPI void setSubChunkState(enum class SubChunk::SubChunkState);
     /**
      * @hash   1610005573
      * @symbol ?shutdown@SubChunk@@QEAAXXZ

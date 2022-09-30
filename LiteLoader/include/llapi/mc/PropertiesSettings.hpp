@@ -69,7 +69,7 @@ public:
      * @hash   1714450856
      * @symbol ?getChatRestrictionLevel@PropertiesSettings@@QEBA?AW4ChatRestrictionLevel@@XZ
      */
-    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getClientThrottleEnabled@PropertiesSettings@@QEBA_NXZ
      */
@@ -85,7 +85,7 @@ public:
     /**
      * @symbol ?getCompressionAlgorithm@PropertiesSettings@@QEBA?AW4PacketCompressionAlgorithm@@XZ
      */
-    MCAPI enum PacketCompressionAlgorithm getCompressionAlgorithm() const;
+    MCAPI enum class PacketCompressionAlgorithm getCompressionAlgorithm() const;
     /**
      * @hash   -1377274859
      * @symbol ?getCompressionThresholdBytesize@PropertiesSettings@@QEBAGXZ
@@ -100,17 +100,17 @@ public:
      * @hash   -131981650
      * @symbol ?getDefaultPlayerPermissionLevel@PropertiesSettings@@QEBA?BW4PlayerPermissionLevel@@XZ
      */
-    MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
+    MCAPI enum class PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
     /**
      * @hash   939402350
      * @symbol ?getDesiredHttpImplementation@PropertiesSettings@@QEBA?AW4Implementation@Http@Bedrock@@XZ
      */
-    MCAPI enum Bedrock::Http::Implementation getDesiredHttpImplementation() const;
+    MCAPI enum class Bedrock::Http::Implementation getDesiredHttpImplementation() const;
     /**
      * @hash   -2058072616
      * @symbol ?getDifficulty@PropertiesSettings@@QEBA?AW4Difficulty@@XZ
      */
-    MCAPI enum Difficulty getDifficulty() const;
+    MCAPI enum class Difficulty getDifficulty() const;
     /**
      * @hash   1020957157
      * @symbol ?getExtraTrustedKeys@PropertiesSettings@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -120,7 +120,7 @@ public:
      * @hash   -14224886
      * @symbol ?getGameMode@PropertiesSettings@@QEBA?AW4GameType@@XZ
      */
-    MCAPI enum GameType getGameMode() const;
+    MCAPI enum class GameType getGameMode() const;
     /**
      * @hash   -409417492
      * @symbol ?getLanguage@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -170,7 +170,7 @@ public:
      * @hash   1061282530
      * @symbol ?getOpPermissionLevel@PropertiesSettings@@QEBA?AW4CommandPermissionLevel@@XZ
      */
-    MCAPI enum CommandPermissionLevel getOpPermissionLevel() const;
+    MCAPI enum class CommandPermissionLevel getOpPermissionLevel() const;
     /**
      * @hash   967673706
      * @symbol ?getPlayerMovementSettings@PropertiesSettings@@QEBAAEBUPlayerMovementSettings@@XZ
@@ -220,7 +220,7 @@ public:
      * @hash   -1524103476
      * @symbol ?getTransportLayerType@PropertiesSettings@@QEBA?AW4TransportLayer@@XZ
      */
-    MCAPI enum TransportLayer getTransportLayerType() const;
+    MCAPI enum class TransportLayer getTransportLayerType() const;
     /**
      * @hash   1550473748
      * @symbol ?isContentLogFileEnabled@PropertiesSettings@@QEBA_NXZ
@@ -280,6 +280,6 @@ public:
      * @hash   1388292967
      * @symbol ?parseGameMode@PropertiesSettings@@SA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI static enum GameType parseGameMode(std::string const &);
+    MCAPI static enum class GameType parseGameMode(std::string const &);
 
 };

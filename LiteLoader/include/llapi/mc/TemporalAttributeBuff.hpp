@@ -67,7 +67,7 @@ public:
      * @hash   1679741706
      * @symbol ??0TemporalAttributeBuff@@QEAA@MHW4AttributeBuffType@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
+    MCAPI TemporalAttributeBuff(float, int, enum class AttributeBuffType, bool, std::string const &);
     /**
      * @hash   -495260639
      * @symbol ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z

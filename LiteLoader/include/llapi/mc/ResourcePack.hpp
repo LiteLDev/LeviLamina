@@ -103,7 +103,7 @@ public:
      * @hash   -1503972810
      * @symbol ?getPackCategory@ResourcePack@@QEBA?AW4PackCategory@@XZ
      */
-    MCAPI enum PackCategory getPackCategory() const;
+    MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @hash   469922510
      * @symbol ?getPackId@ResourcePack@@QEBAAEBVUUID@mce@@XZ
@@ -113,7 +113,7 @@ public:
      * @hash   -1220632010
      * @symbol ?getPackOrigin@ResourcePack@@QEBA?AW4PackOrigin@@XZ
      */
-    MCAPI enum PackOrigin getPackOrigin() const;
+    MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @hash   -2002845759
      * @symbol ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
@@ -168,7 +168,7 @@ public:
      * @hash   1638964919
      * @symbol ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
      */
-    MCAPI bool isType(enum PackType) const;
+    MCAPI bool isType(enum class PackType) const;
     /**
      * @hash   290463216
      * @symbol ?isZipped@ResourcePack@@QEBA_NXZ

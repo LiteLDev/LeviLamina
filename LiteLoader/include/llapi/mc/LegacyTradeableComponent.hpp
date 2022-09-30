@@ -52,7 +52,7 @@ public:
      * @hash   -373937086
      * @symbol ?createDataPacket@LegacyTradeableComponent@@QEAA?AVUpdateTradePacket@@AEAVActor@@W4ContainerID@@@Z
      */
-    MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum ContainerID);
+    MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum class ContainerID);
     /**
      * @hash   906238944
      * @symbol ?getAddRecipeOnUpdate@LegacyTradeableComponent@@QEBA_NXZ

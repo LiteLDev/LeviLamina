@@ -56,7 +56,7 @@ public:
      * @hash   -1562246696
      * @symbol ?getBiomeType@Biome@@QEBA?AW4VanillaBiomeTypes@@XZ
      */
-    MCAPI enum VanillaBiomeTypes getBiomeType() const;
+    MCAPI enum class VanillaBiomeTypes getBiomeType() const;
     /**
      * @hash   -1587574909
      * @symbol ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
@@ -126,7 +126,7 @@ public:
      * @hash   181269609
      * @symbol ?getTemperatureCategory@Biome@@QEBA?AW4BiomeTempCategory@1@XZ
      */
-    MCAPI enum Biome::BiomeTempCategory getTemperatureCategory() const;
+    MCAPI enum class Biome::BiomeTempCategory getTemperatureCategory() const;
     /**
      * @hash   -2143528325
      * @symbol ?getTemperatureWorldGen@Biome@@QEBAMAEBVBlockPos@@F@Z

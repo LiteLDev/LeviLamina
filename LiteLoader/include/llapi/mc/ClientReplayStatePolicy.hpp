@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
      */
-    virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
+    virtual bool isReplayNeeded(enum class AdvanceFrameResult) const;
     /**
      * @hash   914835045
      * @vftbl  2

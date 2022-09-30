@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ?setStatusFlag@SynchedActorDataWriter@@QEAAXW4ActorFlags@@_N@Z
      */
-    MCAPI void setStatusFlag(enum ActorFlags, bool);
+    MCAPI void setStatusFlag(enum class ActorFlags, bool);
 
 //private:
     /**

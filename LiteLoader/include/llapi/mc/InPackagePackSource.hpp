@@ -50,13 +50,13 @@ public:
      * @vftbl  3
      * @symbol ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @hash   -806552015
      * @vftbl  4
      * @symbol ?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @hash   -679434706
      * @vftbl  5
@@ -79,6 +79,6 @@ public:
      * @hash   -231173102
      * @symbol ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
      */
-    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
+    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum class PackType);
 
 };

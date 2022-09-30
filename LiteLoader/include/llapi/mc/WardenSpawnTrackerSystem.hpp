@@ -34,7 +34,7 @@ public:
      * @hash   -315502602
      * @symbol ?onLevelAddedPlayer@WardenSpawnTrackerSystem@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
      */
-    MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
+    MCVAPI enum class EventResult onLevelAddedPlayer(class Level &, class Player &);
     /**
      * @hash   -1209486783
      * @symbol ?tick@WardenSpawnTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z

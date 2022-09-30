@@ -152,7 +152,7 @@ public:
      * @vftbl  287
      * @symbol ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
      */
-    virtual enum MinecartType getType();
+    virtual enum class MinecartType getType();
     /**
      * @hash   -1673332932
      * @vftbl  288

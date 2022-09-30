@@ -47,7 +47,7 @@ public:
      * @hash   983122571
      * @symbol ?getAngrySound@AngryComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
      */
-    MCAPI enum LevelSoundEvent const getAngrySound(class Mob const &) const;
+    MCAPI enum class LevelSoundEvent const getAngrySound(class Mob const &) const;
     /**
      * @hash   217781216
      * @symbol ?getBroadcastAnger@AngryComponent@@QEBA_NXZ

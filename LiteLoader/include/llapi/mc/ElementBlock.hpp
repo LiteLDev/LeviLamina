@@ -243,22 +243,22 @@ public:
      * @hash   803602984
      * @symbol ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
      */
-    MCAPI ElementBlock(std::string const &, int, enum ElementType);
+    MCAPI ElementBlock(std::string const &, int, enum class ElementType);
     /**
      * @hash   -1001918667
      * @symbol ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
      */
-    MCAPI static struct ElementInfo getElementInfo(enum ElementType);
+    MCAPI static struct ElementInfo getElementInfo(enum class ElementType);
     /**
      * @hash   -1137521708
      * @symbol ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
      */
-    MCAPI static class RecipeIngredient getIngredientForElement(enum ElementType, int);
+    MCAPI static class RecipeIngredient getIngredientForElement(enum class ElementType, int);
     /**
      * @hash   166262642
      * @symbol ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
      */
-    MCAPI static class ItemInstance getItemForElement(enum ElementType, int);
+    MCAPI static class ItemInstance getItemForElement(enum class ElementType, int);
     /**
      * @hash   1014569827
      * @symbol ?initElements@ElementBlock@@SAXXZ
@@ -278,7 +278,7 @@ public:
      * @hash   -1815161550
      * @symbol ?tryGetBlockLegacyForElement@ElementBlock@@SAPEBVBlockLegacy@@W4ElementType@@@Z
      */
-    MCAPI static class BlockLegacy const * tryGetBlockLegacyForElement(enum ElementType);
+    MCAPI static class BlockLegacy const * tryGetBlockLegacyForElement(enum class ElementType);
 
 //private:
 

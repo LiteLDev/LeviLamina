@@ -143,7 +143,7 @@ public:
      * @vftbl  87
      * @symbol ?useTimeDepleted@PotionItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @hash   773533380
      * @vftbl  96
@@ -179,7 +179,7 @@ public:
      * @vftbl  136
      * @symbol ?getPotionType@PotionItem@@UEBA?AW4PotionType@Potion@@XZ
      */
-    virtual enum Potion::PotionType getPotionType() const;
+    virtual enum class Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
     /**
      * @hash   -1818603769
@@ -201,6 +201,6 @@ public:
      * @hash   1388132723
      * @symbol ?isDestructivePotion@PotionItem@@SA_NW4PotionVariant@Potion@@@Z
      */
-    MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
+    MCAPI static bool isDestructivePotion(enum class Potion::PotionVariant);
 
 };

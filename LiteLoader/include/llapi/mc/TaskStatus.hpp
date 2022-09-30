@@ -43,12 +43,12 @@ public:
      * @hash   751778496
      * @symbol ??BTaskStatus@@QEBA?AW4Value@0@XZ
      */
-    MCAPI operator enum TaskStatus::Value() const;
+    MCAPI operator enum class TaskStatus::Value() const;
     /**
      * @hash   -577171104
      * @symbol ?toAsyncStatus@TaskStatus@@QEBA?AW4AsyncStatus@Threading@Bedrock@@XZ
      */
-    MCAPI enum Bedrock::Threading::AsyncStatus toAsyncStatus() const;
+    MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     /**
      * @hash   1163702464
      * @symbol ?toErrorCode@TaskStatus@@QEBA?AVerror_code@std@@XZ

@@ -132,7 +132,7 @@ public:
      * @hash   -2016155222
      * @symbol ?getChalkboardSize@ChalkboardBlockActor@@QEBA?BW4ChalkboardSize@@XZ
      */
-    MCAPI enum ChalkboardSize const getChalkboardSize() const;
+    MCAPI enum class ChalkboardSize const getChalkboardSize() const;
     /**
      * @hash   1597957258
      * @symbol ?getLocked@ChalkboardBlockActor@@QEBA_NXZ
@@ -157,12 +157,12 @@ public:
      * @hash   -1177206525
      * @symbol ?calculateAllBlocks@ChalkboardBlockActor@@SA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@W4ChalkboardSize@@H@Z
      */
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum ChalkboardSize, int);
+    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum class ChalkboardSize, int);
     /**
      * @hash   388344067
      * @symbol ?canCreateChalkboard@ChalkboardBlockActor@@SA_NPEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EHAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVItemStack@@_N@Z
      */
-    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, std::vector<class BlockPos> &, class ItemStack const &, bool);
+    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum class ChalkboardSize, unsigned char, int, std::vector<class BlockPos> &, class ItemStack const &, bool);
     /**
      * @hash   -1386758703
      * @symbol ?convertFromEntity@ChalkboardBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVCompoundTag@@@Z
@@ -172,7 +172,7 @@ public:
      * @hash   -1438787770
      * @symbol ?createChalkboard@ChalkboardBlockActor@@SAPEAV1@PEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EH_NAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, bool, class ItemStack const &, std::string);
+    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum class ChalkboardSize, unsigned char, int, bool, class ItemStack const &, std::string);
 
 //private:
     /**

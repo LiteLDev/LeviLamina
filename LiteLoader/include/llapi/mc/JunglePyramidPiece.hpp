@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@JunglePyramidPiece@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   -2123871832
      * @vftbl  4

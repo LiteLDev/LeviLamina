@@ -64,7 +64,7 @@ public:
      * @hash   1063110078
      * @symbol ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
      */
-    MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum ItemColor>> &, class Json::Value const &);
+    MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum class ItemColor>> &, class Json::Value const &);
 
 private:
 

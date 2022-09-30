@@ -314,11 +314,11 @@ public:
      * @hash   -2096739058
      * @symbol ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
      */
-    MCAPI static class ItemInstance getItemForType(enum ChemistryTableType, int);
+    MCAPI static class ItemInstance getItemForType(enum class ChemistryTableType, int);
     /**
      * @hash   -1708757844
      * @symbol ?isUIValidForPlayer@ChemistryTableBlock@@SA_NAEBVBlockPos@@AEAVPlayer@@MW4ChemistryTableType@@@Z
      */
-    MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum ChemistryTableType);
+    MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum class ChemistryTableType);
 
 };

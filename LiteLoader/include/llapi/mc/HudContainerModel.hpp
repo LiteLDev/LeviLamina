@@ -88,7 +88,7 @@ public:
      * @hash   -1297612127
      * @symbol ??0HudContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
      */
-    MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
+    MCAPI HudContainerModel(enum class ContainerEnumName, class Player &);
 
 //private:
     /**

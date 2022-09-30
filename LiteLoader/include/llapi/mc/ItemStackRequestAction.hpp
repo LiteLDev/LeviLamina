@@ -62,12 +62,12 @@ public:
      * @hash   -502064773
      * @symbol ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
      */
-    MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
+    MCAPI ItemStackRequestAction(enum class ItemStackRequestActionType);
     /**
      * @hash   2052355280
      * @symbol ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
      */
-    MCAPI enum ItemStackRequestActionType getActionType() const;
+    MCAPI enum class ItemStackRequestActionType getActionType() const;
     /**
      * @hash   1603973336
      * @symbol ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
@@ -77,7 +77,7 @@ public:
      * @hash   741044845
      * @symbol ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
      */
-    MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
+    MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     /**
      * @hash   2132846239
      * @symbol ?read@ItemStackRequestAction@@SA?AV?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
@@ -91,6 +91,6 @@ private:
      * @hash   -1080217533
      * @symbol ?actionTypeMap@ItemStackRequestAction@@0V?$BidirectionalUnorderedMap@W4ItemStackRequestActionType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const actionTypeMap;
 
 };

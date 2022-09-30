@@ -40,49 +40,49 @@ public:
      * @vftbl  1
      * @symbol ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
      */
-    virtual class WorldTemplatePackSource & createWorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum PackType, enum PackOrigin);
+    virtual class WorldTemplatePackSource & createWorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum class PackType, enum class PackOrigin);
     /**
      * @hash   724078802
      * @vftbl  2
      * @symbol ?getWorldTemplatePackSource@PackSourceFactory@@UEBAPEAVWorldTemplatePackSource@@AEBVUUID@mce@@W4PackType@@@Z
      */
-    virtual class WorldTemplatePackSource * getWorldTemplatePackSource(class mce::UUID const &, enum PackType) const;
+    virtual class WorldTemplatePackSource * getWorldTemplatePackSource(class mce::UUID const &, enum class PackType) const;
     /**
      * @hash   -643769638
      * @vftbl  3
      * @symbol ?createDirectoryPackSource@PackSourceFactory@@UEAAAEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
      */
-    virtual class DirectoryPackSource & createDirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
+    virtual class DirectoryPackSource & createDirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
     /**
      * @hash   385655908
      * @vftbl  4
      * @symbol ?getDirectoryPackSource@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
      */
-    virtual class DirectoryPackSource * getDirectoryPackSource(class Core::Path const &, enum PackType) const;
+    virtual class DirectoryPackSource * getDirectoryPackSource(class Core::Path const &, enum class PackType) const;
     /**
      * @hash   -1821774438
      * @vftbl  5
      * @symbol ?createInPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
      */
-    virtual class InPackagePackSource & createInPackagePackSource(enum PackType);
+    virtual class InPackagePackSource & createInPackagePackSource(enum class PackType);
     /**
      * @hash   170223544
      * @vftbl  6
      * @symbol ?getInPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
      */
-    virtual class InPackagePackSource * getInPackagePackSource(enum PackType);
+    virtual class InPackagePackSource * getInPackagePackSource(enum class PackType);
     /**
      * @hash   1663610611
      * @vftbl  7
      * @symbol ?createWorldHistoryPackSource@PackSourceFactory@@UEAAAEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
      */
-    virtual class WorldHistoryPackSource & createWorldHistoryPackSource(class Core::Path const &, enum PackType);
+    virtual class WorldHistoryPackSource & createWorldHistoryPackSource(class Core::Path const &, enum class PackType);
     /**
      * @hash   -1200462440
      * @vftbl  8
      * @symbol ?getWorldHistoryPackSource@PackSourceFactory@@UEBAPEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
      */
-    virtual class WorldHistoryPackSource * getWorldHistoryPackSource(class Core::Path const &, enum PackType) const;
+    virtual class WorldHistoryPackSource * getWorldHistoryPackSource(class Core::Path const &, enum class PackType) const;
     /**
      * @hash   -152216688
      * @vftbl  9
@@ -100,13 +100,13 @@ public:
      * @vftbl  11
      * @symbol ?createDynamicPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
      */
-    virtual class InPackagePackSource & createDynamicPackagePackSource(enum PackType);
+    virtual class InPackagePackSource & createDynamicPackagePackSource(enum class PackType);
     /**
      * @hash   837723958
      * @vftbl  12
      * @symbol ?getDynamicPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
      */
-    virtual class InPackagePackSource * getDynamicPackagePackSource(enum PackType);
+    virtual class InPackagePackSource * getDynamicPackagePackSource(enum class PackType);
     /**
      * @hash   -1065519032
      * @vftbl  13

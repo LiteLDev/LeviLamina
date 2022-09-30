@@ -49,7 +49,7 @@ public:
      * @hash   -778715545
      * @symbol ?getItemLockMode@ItemLockHelper@@SA?AW4ItemLockMode@@AEBVItemStackBase@@@Z
      */
-    MCAPI static enum ItemLockMode getItemLockMode(class ItemStackBase const &);
+    MCAPI static enum class ItemLockMode getItemLockMode(class ItemStackBase const &);
     /**
      * @hash   1873204127
      * @symbol ?isItemLocked@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z

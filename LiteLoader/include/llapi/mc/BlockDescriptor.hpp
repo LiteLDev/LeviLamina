@@ -131,7 +131,7 @@ public:
      * @hash   679611031
      * @symbol ?fromTagExpression@BlockDescriptor@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@@Z
      */
-    MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum MolangVersion);
+    MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum class MolangVersion);
 
 //private:
     /**

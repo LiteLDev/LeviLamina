@@ -81,7 +81,7 @@ public:
      * @hash   -147309815
      * @symbol ??0LabTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI LabTableContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @hash   438284445
      * @symbol ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB

@@ -173,7 +173,7 @@ public:
      * @vftbl  22
      * @symbol ?canProvideSupport@BlockLegacy@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @hash   -1168955886
      * @vftbl  23
@@ -493,7 +493,7 @@ public:
      * @vftbl  79
      * @symbol ?getRedstoneProperty@BlockLegacy@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
      * @hash   -1233149134
      * @vftbl  80
@@ -510,7 +510,7 @@ public:
      * @vftbl  82
      * @symbol ?isFilteredOut@BlockLegacy@@UEBA_NW4BlockRenderLayer@@@Z
      */
-    virtual bool isFilteredOut(enum BlockRenderLayer) const;
+    virtual bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @hash   -492898732
      * @vftbl  83
@@ -528,7 +528,7 @@ public:
      * @vftbl  85
      * @symbol ?onFertilized@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @hash   1433194055
      * @vftbl  86
@@ -918,7 +918,7 @@ public:
      * @vftbl  151
      * @symbol ?getFaceFlip@BlockLegacy@@UEBA?AW4Flip@@EAEBVBlock@@@Z
      */
-    virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
      * @hash   2028784027
      * @vftbl  152
@@ -1093,13 +1093,13 @@ public:
      * @vftbl  181
      * @symbol ?getRenderLayer@BlockLegacy@@MEBA?AW4BlockRenderLayer@@XZ
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @hash   -2020880650
      * @vftbl  182
      * @symbol ?getRenderLayer@BlockLegacy@@MEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @hash   -556468032
      * @vftbl  183
@@ -1353,7 +1353,7 @@ public:
      * @hash   -427053878
      * @symbol ?addBlockProperties@BlockLegacy@@QEAAAEAV1@W4BlockProperty@@@Z
      */
-    MCAPI class BlockLegacy & addBlockProperties(enum BlockProperty);
+    MCAPI class BlockLegacy & addBlockProperties(enum class BlockProperty);
     /**
      * @hash   -740371832
      * @symbol ?addTag@BlockLegacy@@QEAAAEAV1@AEBVHashedString@@@Z
@@ -1398,7 +1398,7 @@ public:
      * @hash   2022758104
      * @symbol ?getBlockEntityType@BlockLegacy@@QEBA?AW4BlockActorType@@XZ
      */
-    MCAPI enum BlockActorType getBlockEntityType() const;
+    MCAPI enum class BlockActorType getBlockEntityType() const;
     /**
      * @hash   1132978645
      * @symbol ?getBlockItemId@BlockLegacy@@QEBAFXZ
@@ -1423,7 +1423,7 @@ public:
      * @hash   -1977452150
      * @symbol ?getCreativeCategory@BlockLegacy@@QEBA?AW4CreativeItemCategory@@XZ
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @hash   66689410
      * @symbol ?getDebugText@BlockLegacy@@QEBAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
@@ -1492,7 +1492,7 @@ public:
      * @hash   377430163
      * @symbol ?hasProperty@BlockLegacy@@QEBA_NW4BlockProperty@@@Z
      */
-    MCAPI bool hasProperty(enum BlockProperty) const;
+    MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
      * @hash   -1174297113
      * @symbol ?hasState@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
@@ -1567,7 +1567,7 @@ public:
      * @hash   -943893124
      * @symbol ?overrideBlockProperties@BlockLegacy@@QEAAAEAV1@W4BlockProperty@@@Z
      */
-    MCAPI class BlockLegacy & overrideBlockProperties(enum BlockProperty);
+    MCAPI class BlockLegacy & overrideBlockProperties(enum class BlockProperty);
     /**
      * @hash   998495456
      * @symbol ?setAllowsRunes@BlockLegacy@@QEAAAEAV1@_N@Z
@@ -1577,7 +1577,7 @@ public:
      * @hash   1414400682
      * @symbol ?setBlockTintType@BlockLegacy@@QEAAAEAV1@W4BlockTintType@@@Z
      */
-    MCAPI class BlockLegacy & setBlockTintType(enum BlockTintType);
+    MCAPI class BlockLegacy & setBlockTintType(enum class BlockTintType);
     /**
      * @hash   -396263042
      * @symbol ?setCanBeExtraBlock@BlockLegacy@@QEAAAEAV1@_N@Z
@@ -1592,7 +1592,7 @@ public:
      * @hash   1045571522
      * @symbol ?setCategory@BlockLegacy@@QEAAAEAV1@W4CreativeItemCategory@@@Z
      */
-    MCAPI class BlockLegacy & setCategory(enum CreativeItemCategory);
+    MCAPI class BlockLegacy & setCategory(enum class CreativeItemCategory);
     /**
      * @hash   399317388
      * @symbol ?setCreativeEnumState@BlockLegacy@@QEAAAEAV1@AEBVItemState@@@Z
@@ -1625,7 +1625,7 @@ public:
     /**
      * @symbol ?setFlammable@BlockLegacy@@QEAAAEAV1@W4FlameOdds@@W4BurnOdds@@W4LavaFlammable@@@Z
      */
-    MCAPI class BlockLegacy & setFlammable(enum FlameOdds, enum BurnOdds, enum LavaFlammable);
+    MCAPI class BlockLegacy & setFlammable(enum class FlameOdds, enum class BurnOdds, enum class LavaFlammable);
     /**
      * @hash   -87571318
      * @symbol ?setIgnoreBlockForInsideCubeRenderer@BlockLegacy@@QEAAX_N@Z

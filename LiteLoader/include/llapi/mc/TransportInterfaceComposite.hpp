@@ -41,7 +41,7 @@ public:
     /**
      * @symbol ?getNetherNetInstance@TransportInterfaceComposite@@QEAA?AV?$shared_ptr@UNetherNetInstance@@@std@@W4TransportLayer@@@Z
      */
-    MCAPI class std::shared_ptr<struct NetherNetInstance> getNetherNetInstance(enum TransportLayer);
+    MCAPI class std::shared_ptr<struct NetherNetInstance> getNetherNetInstance(enum class TransportLayer);
     /**
      * @symbol ?getRakNetInstance@TransportInterfaceComposite@@QEAA?AV?$shared_ptr@VRakNetInstance@@@std@@XZ
      */
@@ -49,7 +49,7 @@ public:
     /**
      * @symbol ?hasNetherNetInstance@TransportInterfaceComposite@@QEAA_NW4TransportLayer@@@Z
      */
-    MCAPI bool hasNetherNetInstance(enum TransportLayer);
+    MCAPI bool hasNetherNetInstance(enum class TransportLayer);
     /**
      * @symbol ?initializeRakNetInstance@TransportInterfaceComposite@@QEAAXAEAVConnectionCallbacks@RakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
      */
@@ -57,7 +57,7 @@ public:
     /**
      * @symbol ?setActiveTransportLayer@TransportInterfaceComposite@@QEAAXW4TransportLayer@@@Z
      */
-    MCAPI void setActiveTransportLayer(enum TransportLayer);
+    MCAPI void setActiveTransportLayer(enum class TransportLayer);
     /**
      * @symbol ?tryEnable@TransportInterfaceComposite@@QEAAXXZ
      */

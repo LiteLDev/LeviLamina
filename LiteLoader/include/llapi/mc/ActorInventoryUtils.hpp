@@ -28,7 +28,7 @@ namespace ActorInventoryUtils {
      * @hash   -941620267
      * @symbol ?forEachItemOnActor@ActorInventoryUtils@@YAXAEBVActor@@W4EquipmentSlot@@AEBVCommandIntegerRange@@V?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
      */
-    MCAPI void forEachItemOnActor(class Actor const &, enum EquipmentSlot, class CommandIntegerRange const &, class std::function<void (class ItemStack const &)>);
+    MCAPI void forEachItemOnActor(class Actor const &, enum class EquipmentSlot, class CommandIntegerRange const &, class std::function<void (class ItemStack const &)>);
     /**
      * @hash   -1592284436
      * @symbol ?forEachItemOnActorHotbar@ActorInventoryUtils@@YAXAEBVActor@@AEBVCommandIntegerRange@@V?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
@@ -43,12 +43,12 @@ namespace ActorInventoryUtils {
      * @hash   -939919483
      * @symbol ?getItem@ActorInventoryUtils@@YAPEBVItemStack@@AEBVActor@@W4EquipmentSlot@@H@Z
      */
-    MCAPI class ItemStack const * getItem(class Actor const &, enum EquipmentSlot, int);
+    MCAPI class ItemStack const * getItem(class Actor const &, enum class EquipmentSlot, int);
     /**
      * @hash   -306927057
      * @symbol ?queryActorEquipmentSlotForItem@ActorInventoryUtils@@YA_NAEBVActor@@AEBVItemInstance@@W4EquipmentSlot@@AEBVCommandIntegerRange@@3@Z
      */
-    MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, enum EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &);
+    MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, enum class EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &);
     /**
      * @hash   -1766092552
      * @symbol ?queryActorForItem@ActorInventoryUtils@@YA_NAEBVActor@@AEBVItemInstance@@AEBVCommandIntegerRange@@@Z

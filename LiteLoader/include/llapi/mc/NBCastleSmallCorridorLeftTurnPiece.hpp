@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@NBCastleSmallCorridorLeftTurnPiece@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   65813562
      * @vftbl  3

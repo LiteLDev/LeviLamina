@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   1839724501
      * @vftbl  4
@@ -53,12 +53,12 @@ public:
      * @hash   180665228
      * @symbol ?_calculateTargetPos@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
      */
-    MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
+    MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum class Rotation, class BlockPos);
     /**
      * @hash   -2085690715
      * @symbol ?_calculateTargetPosLegacy@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
      */
-    MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
+    MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum class Rotation, class BlockPos);
 
 private:
     /**

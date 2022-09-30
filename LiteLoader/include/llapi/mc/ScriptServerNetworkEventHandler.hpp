@@ -46,7 +46,7 @@ public:
      * @vftbl  2
      * @symbol ?handleEvent@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ChatEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ChatEvent &);
 
 //private:
     /**

@@ -68,7 +68,7 @@ public:
      * @hash   -1017860926
      * @symbol ?getBreathableState@BreathableComponent@@QEAAAEAW4BreathableState@1@XZ
      */
-    MCAPI enum BreathableComponent::BreathableState & getBreathableState();
+    MCAPI enum class BreathableComponent::BreathableState & getBreathableState();
     /**
      * @hash   -1837285782
      * @symbol ?getInhaleTime@BreathableComponent@@QEBAMXZ

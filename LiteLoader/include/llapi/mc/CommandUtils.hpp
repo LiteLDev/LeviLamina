@@ -106,7 +106,7 @@ namespace CommandUtils {
      * @hash   -1229062587
      * @symbol ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@XZ
      */
-    MCAPI std::vector<enum ActorType> getInvalidCommandEntities();
+    MCAPI std::vector<enum class ActorType> getInvalidCommandEntities();
     /**
      * @hash   1057373475
      * @symbol ?getOriginPlayer@CommandUtils@@YAPEBVPlayer@@AEBVCommandOrigin@@@Z
@@ -136,7 +136,7 @@ namespace CommandUtils {
      * @hash   -599414845
      * @symbol ?isValidCommandEntity@CommandUtils@@YA_NAEBV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@W4ActorType@@@Z
      */
-    MCAPI bool isValidCommandEntity(std::vector<enum ActorType> const &, enum ActorType);
+    MCAPI bool isValidCommandEntity(std::vector<enum class ActorType> const &, enum class ActorType);
     /**
      * @hash   467229719
      * @symbol ?nameEntity@CommandUtils@@YAXAEAVActor@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

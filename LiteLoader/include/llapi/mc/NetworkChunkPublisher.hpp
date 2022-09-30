@@ -40,7 +40,7 @@ public:
      * @hash   -1619332096
      * @symbol ??0NetworkChunkPublisher@@QEAA@AEAVLevel@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
      */
-    MCAPI NetworkChunkPublisher(class Level &, class NetworkIdentifier const &, enum SubClientId);
+    MCAPI NetworkChunkPublisher(class Level &, class NetworkIdentifier const &, enum class SubClientId);
     /**
      * @hash   -1222344042
      * @symbol ?addSavedChunk@NetworkChunkPublisher@@QEAAXAEBVChunkPos@@@Z
@@ -70,7 +70,7 @@ public:
      * @hash   -221893330
      * @symbol ?moveRegion@NetworkChunkPublisher@@QEAAXAEBVBlockPos@@IAEBVVec3@@W4ChunkSourceViewGenerateMode@ChunkSource@@M@Z
      */
-    MCAPI void moveRegion(class BlockPos const &, unsigned int, class Vec3 const &, enum ChunkSource::ChunkSourceViewGenerateMode, float);
+    MCAPI void moveRegion(class BlockPos const &, unsigned int, class Vec3 const &, enum class ChunkSource::ChunkSourceViewGenerateMode, float);
     /**
      * @hash   141490713
      * @symbol ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z

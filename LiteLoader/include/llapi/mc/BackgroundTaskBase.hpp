@@ -53,7 +53,7 @@ public:
      * @hash   638602002
      * @symbol ?getGroupState@BackgroundTaskBase@@QEBA?AW4TaskGroupState@@XZ
      */
-    MCAPI enum TaskGroupState getGroupState() const;
+    MCAPI enum class TaskGroupState getGroupState() const;
     /**
      * @hash   1210949469
      * @symbol ?getNext@BackgroundTaskBase@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@XZ

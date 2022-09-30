@@ -46,7 +46,7 @@ public:
      * @hash   -2115595128
      * @symbol ?getActorTarget@RenderParams@@QEBAPEAVActor@@W4FilterSubject@@@Z
      */
-    MCAPI class Actor * getActorTarget(enum FilterSubject) const;
+    MCAPI class Actor * getActorTarget(enum class FilterSubject) const;
     /**
      * @hash   -1234684845
      * @symbol ?init@RenderParams@@QEAAAEAV1@PEAVBaseActorRenderContext@@PEAVActor@@PEAVAnimationComponent@@PEAVMolangVariableMap@@V?$shared_ptr@VDataDrivenModel@@@std@@MM@Z

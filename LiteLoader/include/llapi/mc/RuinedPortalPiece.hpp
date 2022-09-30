@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@RuinedPortalPiece@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   -1704558104
      * @vftbl  4

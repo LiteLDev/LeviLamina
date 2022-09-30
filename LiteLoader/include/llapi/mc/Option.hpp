@@ -64,7 +64,7 @@ public:
      * @hash   225046195
      * @symbol ??0Option@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3W4OptionType@@@Z
      */
-    MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
+    MCAPI Option(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, enum class OptionType);
     /**
      * @hash   -1704364870
      * @symbol ?canModify@Option@@QEBA_NXZ

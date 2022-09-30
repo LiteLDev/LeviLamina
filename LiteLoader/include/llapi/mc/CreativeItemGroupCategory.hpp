@@ -37,7 +37,7 @@ public:
      * @hash   -169332701
      * @symbol ??0CreativeItemGroupCategory@@QEAA@PEAVCreativeItemRegistry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
      */
-    MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum CreativeItemCategory);
+    MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum class CreativeItemCategory);
     /**
      * @hash   1329657039
      * @symbol ?addAnonymousGroup@CreativeItemGroupCategory@@QEAAPEAVCreativeGroupInfo@@XZ
@@ -57,7 +57,7 @@ public:
      * @hash   -1456130848
      * @symbol ?getCreativeCategory@CreativeItemGroupCategory@@QEAA?AW4CreativeItemCategory@@XZ
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory();
+    MCAPI enum class CreativeItemCategory getCreativeCategory();
     /**
      * @hash   947739339
      * @symbol ?getOrAddTailAnonymousGroup@CreativeItemGroupCategory@@QEAAPEAVCreativeGroupInfo@@XZ

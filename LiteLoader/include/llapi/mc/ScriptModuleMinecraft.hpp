@@ -65,18 +65,18 @@ public:
     /**
      * @symbol ?bindFacingEnumV010@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptFacing@ScriptModuleMinecraft@@W412@@Scripting@@XZ
      */
-    MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptFacing, enum ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV010();
+    MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptFacing, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV010();
     /**
      * @symbol ?bindFacingEnumV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFacing@ScriptModuleMinecraft@@@Scripting@@XZ
      */
-    MCAPI class Scripting::EnumBindingBuilder<std::string, enum ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
+    MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
     /**
      * @symbol ?bindMessageSourceTypeV010@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptMessageSourceType@ScriptModuleMinecraft@@W412@@Scripting@@XZ
      */
-    MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptMessageSourceType, enum ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV010();
+    MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptMessageSourceType, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV010();
     /**
      * @symbol ?bindMessageSourceTypeV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptMessageSourceType@ScriptModuleMinecraft@@@Scripting@@XZ
      */
-    MCAPI class Scripting::EnumBindingBuilder<std::string, enum ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV1();
+    MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV1();
 
 };

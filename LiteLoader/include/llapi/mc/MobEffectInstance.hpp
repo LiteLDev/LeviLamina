@@ -88,7 +88,7 @@ public:
      * @hash   -1925711371
      * @symbol ?getDifficulityDuration@MobEffectInstance@@QEBAHW4Difficulty@@@Z
      */
-    MCAPI int getDifficulityDuration(enum Difficulty) const;
+    MCAPI int getDifficulityDuration(enum class Difficulty) const;
     /**
      * @hash   477040162
      * @symbol ?getDisplayName@MobEffectInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -163,7 +163,7 @@ public:
      * @hash   -430586553
      * @symbol ?setDifficulityDuration@MobEffectInstance@@QEAAXW4Difficulty@@H@Z
      */
-    MCAPI void setDifficulityDuration(enum Difficulty, int);
+    MCAPI void setDifficulityDuration(enum class Difficulty, int);
     /**
      * @hash   1780782490
      * @symbol ?setDuration@MobEffectInstance@@QEAAXH@Z

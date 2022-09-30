@@ -67,7 +67,7 @@ public:
      * @hash   1142880138
      * @symbol ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@@@std@@H@Z
      */
-    MCAPI static class std::optional<enum LevelSoundEvent> getSoundEventForThreatLevel(int);
+    MCAPI static class std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
     /**
      * @hash   -1371014808
      * @symbol ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z

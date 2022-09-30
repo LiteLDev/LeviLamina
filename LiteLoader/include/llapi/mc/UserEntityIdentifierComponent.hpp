@@ -41,7 +41,7 @@ public:
      * @hash   -1104045304
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@6@@Z
      */
-    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
     /**
      * @hash   -724089323
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@$$QEAV0@@Z

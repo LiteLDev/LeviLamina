@@ -57,7 +57,7 @@ public:
      * @vftbl  22
      * @symbol ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @hash   1938169578
      * @vftbl  25
@@ -387,7 +387,7 @@ public:
      * @hash   -1134512099
      * @symbol ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
      */
-    MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI enum class WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?_getItemInstance@WallBlock@@AEBA?AVItemInstance@@AEBVBlock@@@Z
      */

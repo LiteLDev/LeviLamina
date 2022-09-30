@@ -107,13 +107,13 @@ public:
      * @vftbl  13
      * @symbol ?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ
      */
-    virtual enum TickingAreaLoadMode getLoadMode() const;
+    virtual enum class TickingAreaLoadMode getLoadMode() const;
     /**
      * @hash   -565111682
      * @vftbl  14
      * @symbol ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      */
-    virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage &);
+    virtual void setLoadMode(enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @hash   479681047
      * @vftbl  15
@@ -212,7 +212,7 @@ public:
      * @hash   223357778
      * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
      */
-    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
      * @hash   504696335
      * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBUBounds@@UActorUniqueID@@M@Z
@@ -229,7 +229,7 @@ public:
      * @hash   -2052881454
      * @symbol ??0TickingArea@@AEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@AEBUBounds@@_NM5W4TickingAreaLoadMode@@@Z
      */
-    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum class TickingAreaLoadMode);
     /**
      * @hash   1796910951
      * @symbol ?_center@TickingArea@@AEAAXAEAVLevelStorage@@@Z

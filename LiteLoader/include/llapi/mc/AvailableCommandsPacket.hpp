@@ -137,7 +137,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@AvailableCommandsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   494211362
      * @vftbl  2
@@ -155,7 +155,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@AvailableCommandsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1253213659
      * @symbol ??0AvailableCommandsPacket@@QEAA@XZ

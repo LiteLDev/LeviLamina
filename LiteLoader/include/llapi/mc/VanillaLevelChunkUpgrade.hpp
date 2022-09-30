@@ -86,7 +86,7 @@ enum class Axis;
      * @hash   759838711
      * @symbol ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
      */
-    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum VanillaLevelChunkUpgrade::Axis);
+    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum class VanillaLevelChunkUpgrade::Axis);
     /**
      * @hash   725381591
      * @symbol ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
@@ -136,7 +136,7 @@ enum class Axis;
      * @hash   541173567
      * @symbol ?upgradeOldLimboEntity@VanillaLevelChunkUpgrade@@YAXAEAVCompoundTag@@W4LimboEntitiesVersion@@_N@Z
      */
-    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion, bool);
+    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion, bool);
     /**
      * @hash   1387525221
      * @symbol ?upgradeWorldHeight@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z

@@ -75,7 +75,7 @@ struct FormattedString {
      * @hash   -861107122
      * @symbol ?_logIfValidLogArea@Util@@YAXW4LogArea@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI void _logIfValidLogArea(enum LogArea, std::string const &);
+    MCAPI void _logIfValidLogArea(enum class LogArea, std::string const &);
     /**
      * @hash   -214755237
      * @symbol ?_recordProfanityLocationInWord@Util@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@HH@std@@V?$allocator@U?$pair@HH@std@@@2@@3@HHAEAV?$set@U?$pair@HH@std@@U?$less@U?$pair@HH@std@@@2@V?$allocator@U?$pair@HH@std@@@2@@3@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@3@AEBV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -373,7 +373,7 @@ struct FormattedString {
      * @hash   1588518461
      * @symbol ?toIntWithMinMax@Util@@YA?AW4NumberConversionResult@1@V?$basic_string_span@$$CBD$0?0@gsl@@AEAHHH@Z
      */
-    MCAPI enum Util::NumberConversionResult toIntWithMinMax(class gsl::basic_string_span<char const, -1>, int &, int, int);
+    MCAPI enum class Util::NumberConversionResult toIntWithMinMax(class gsl::basic_string_span<char const, -1>, int &, int, int);
     /**
      * @hash   278094181
      * @symbol ?toLower@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
@@ -403,7 +403,7 @@ struct FormattedString {
      * @hash   -1393320019
      * @symbol ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
      */
-    MCAPI char const * toString(enum BoneTransformType);
+    MCAPI char const * toString(enum class BoneTransformType);
     /**
      * @hash   -473566148
      * @symbol ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
@@ -453,11 +453,11 @@ struct FormattedString {
      * @hash   -1250440235
      * @symbol ?validateIdentifier@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@_NPEAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@3@@Z
      */
-    MCAPI bool validateIdentifier(std::string const &, enum LogArea, bool, struct std::pair<std::string, std::string> *);
+    MCAPI bool validateIdentifier(std::string const &, enum class LogArea, bool, struct std::pair<std::string, std::string> *);
     /**
      * @hash   -165264839
      * @symbol ?validateIdentifierChunk@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@@Z
      */
-    MCAPI bool validateIdentifierChunk(std::string const &, enum LogArea);
+    MCAPI bool validateIdentifierChunk(std::string const &, enum class LogArea);
 
 };

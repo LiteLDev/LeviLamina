@@ -163,6 +163,6 @@ public:
      * @hash   1308749990
      * @symbol ?setType@SignBlockActor@@QEAAXW4SignType@1@@Z
      */
-    MCAPI void setType(enum SignBlockActor::SignType);
+    MCAPI void setType(enum class SignBlockActor::SignType);
 
 };

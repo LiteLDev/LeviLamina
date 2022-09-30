@@ -252,12 +252,12 @@ public:
      * @hash   1915159688
      * @symbol ??0Container@@QEAA@W4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
      */
-    MCAPI Container(enum ContainerType, std::string const &, bool);
+    MCAPI Container(enum class ContainerType, std::string const &, bool);
     /**
      * @hash   658649256
      * @symbol ??0Container@@QEAA@W4ContainerType@@@Z
      */
-    MCAPI Container(enum ContainerType);
+    MCAPI Container(enum class ContainerType);
     /**
      * @hash   -494627967
      * @symbol ??0Container@@QEAA@AEBV0@@Z
@@ -267,12 +267,12 @@ public:
      * @hash   331263116
      * @symbol ?getContainerType@Container@@QEBA?AW4ContainerType@@XZ
      */
-    MCAPI enum ContainerType getContainerType() const;
+    MCAPI enum class ContainerType getContainerType() const;
     /**
      * @hash   -1628534656
      * @symbol ?getGameplayContainerType@Container@@QEBA?AW4ContainerType@@XZ
      */
-    MCAPI enum ContainerType getGameplayContainerType() const;
+    MCAPI enum class ContainerType getGameplayContainerType() const;
     /**
      * @hash   -337788061
      * @symbol ?getItemCount@Container@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
@@ -302,7 +302,7 @@ public:
      * @hash   1676051372
      * @symbol ?setGameplayContainerType@Container@@QEAAXW4ContainerType@@@Z
      */
-    MCAPI void setGameplayContainerType(enum ContainerType);
+    MCAPI void setGameplayContainerType(enum class ContainerType);
     /**
      * @hash   -1618129431
      * @symbol ?triggerTransactionChange@Container@@QEAAXHAEBVItemStack@@0@Z
@@ -312,12 +312,12 @@ public:
      * @hash   1204016659
      * @symbol ?getContainerTypeId@Container@@SA?AW4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI static enum ContainerType getContainerTypeId(std::string const &);
+    MCAPI static enum class ContainerType getContainerTypeId(std::string const &);
     /**
      * @hash   -1649010403
      * @symbol ?getContainerTypeName@Container@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContainerType@@@Z
      */
-    MCAPI static std::string const & getContainerTypeName(enum ContainerType);
+    MCAPI static std::string const & getContainerTypeName(enum class ContainerType);
 
 //protected:
     /**
@@ -336,6 +336,6 @@ protected:
      * @hash   989333048
      * @symbol ?containerTypeMap@Container@@1V?$BidirectionalUnorderedMap@W4ContainerType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ContainerType, std::string> const containerTypeMap;
 
 };

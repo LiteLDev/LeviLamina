@@ -120,7 +120,7 @@ public:
      * @hash   977618897
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
      */
-    MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
+    MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);
     /**
      * @hash   -1824854614
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@@Z

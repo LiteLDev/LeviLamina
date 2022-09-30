@@ -45,7 +45,7 @@ public:
      * @hash   -908380027
      * @symbol ?toDateTime@DateManager@@SA?AUtm@@_JW4TimeZoneType@1@@Z
      */
-    MCAPI static struct tm toDateTime(__int64, enum DateManager::TimeZoneType);
+    MCAPI static struct tm toDateTime(__int64, enum class DateManager::TimeZoneType);
     /**
      * @hash   1000432896
      * @symbol ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUtm@@AEBV23@@Z
@@ -55,16 +55,16 @@ public:
      * @hash   1684551365
      * @symbol ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@AEBV23@@Z
      */
-    MCAPI static std::string toString(__int64 const &, enum DateManager::TimeZoneType, std::string const &);
+    MCAPI static std::string toString(__int64 const &, enum class DateManager::TimeZoneType, std::string const &);
     /**
      * @hash   -1261729526
      * @symbol ?toString_DateTime@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUtm@@W4TimeZoneType@1@@Z
      */
-    MCAPI static std::string toString_DateTime(struct tm const &, enum DateManager::TimeZoneType);
+    MCAPI static std::string toString_DateTime(struct tm const &, enum class DateManager::TimeZoneType);
     /**
      * @hash   1081276254
      * @symbol ?toString_DateTime@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@@Z
      */
-    MCAPI static std::string toString_DateTime(__int64 const &, enum DateManager::TimeZoneType);
+    MCAPI static std::string toString_DateTime(__int64 const &, enum class DateManager::TimeZoneType);
 
 };

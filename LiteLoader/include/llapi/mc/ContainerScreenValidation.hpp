@@ -56,12 +56,12 @@ public:
      * @hash   981080280
      * @symbol ??0ContainerScreenValidation@@QEAA@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@std@@@Z
      */
-    MCAPI ContainerScreenValidation(class ContainerScreenContext const &, enum ContainerValidationCaller, class std::unordered_map<enum ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum ContainerEnumName>, struct std::equal_to<enum ContainerEnumName>, class std::allocator<struct std::pair<enum ContainerEnumName const, class std::shared_ptr<class Container>>>>);
+    MCAPI ContainerScreenValidation(class ContainerScreenContext const &, enum class ContainerValidationCaller, class std::unordered_map<enum class ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum class ContainerEnumName>, struct std::equal_to<enum class ContainerEnumName>, class std::allocator<struct std::pair<enum class ContainerEnumName const, class std::shared_ptr<class Container>>>>);
     /**
      * @hash   442371210
      * @symbol ?getOrCreateSparseContainer@ContainerScreenValidation@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
      */
-    MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum class ContainerEnumName);
     /**
      * @hash   -2028064990
      * @symbol ?isCraftingImplemented@ContainerScreenValidation@@QEAA_NXZ
@@ -111,7 +111,7 @@ public:
      * @hash   -567760834
      * @symbol ?makeContainerScreenValidation@ContainerScreenValidation@@SA?AV?$unique_ptr@VContainerScreenValidation@@U?$default_delete@VContainerScreenValidation@@@std@@@std@@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@3@@Z
      */
-    MCAPI static std::unique_ptr<class ContainerScreenValidation> makeContainerScreenValidation(class ContainerScreenContext const &, enum ContainerValidationCaller, class std::unordered_map<enum ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum ContainerEnumName>, struct std::equal_to<enum ContainerEnumName>, class std::allocator<struct std::pair<enum ContainerEnumName const, class std::shared_ptr<class Container>>>>);
+    MCAPI static std::unique_ptr<class ContainerScreenValidation> makeContainerScreenValidation(class ContainerScreenContext const &, enum class ContainerValidationCaller, class std::unordered_map<enum class ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum class ContainerEnumName>, struct std::equal_to<enum class ContainerEnumName>, class std::allocator<struct std::pair<enum class ContainerEnumName const, class std::shared_ptr<class Container>>>>);
 
 //protected:
     /**
@@ -133,7 +133,7 @@ public:
      * @hash   -493107567
      * @symbol ?_tryTransferSpecial@ContainerScreenValidation@@IEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@HW4ContainerScreenRequestActionType@@@Z
      */
-    MCAPI struct ContainerValidationResult _tryTransferSpecial(struct ContainerValidationSlotData const &, int, enum ContainerScreenRequestActionType);
+    MCAPI struct ContainerValidationResult _tryTransferSpecial(struct ContainerValidationSlotData const &, int, enum class ContainerScreenRequestActionType);
 
 //private:
     /**
@@ -150,7 +150,7 @@ public:
      * @hash   910863620
      * @symbol ?_getOrCreateContainerValidator@ContainerScreenValidation@@AEAA?AV?$shared_ptr@$$CBVContainerValidationBase@@@std@@W4ContainerEnumName@@@Z
      */
-    MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum ContainerEnumName);
+    MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum class ContainerEnumName);
     /**
      * @hash   1174660348
      * @symbol ?_propagateContainers@ContainerScreenValidation@@AEAA_NXZ

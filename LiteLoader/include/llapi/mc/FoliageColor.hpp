@@ -55,7 +55,7 @@ public:
      * @hash   269654280
      * @symbol ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
      */
-    MCAPI static int getFoliageColor(enum FoliageColor::PaletteName, float, float);
+    MCAPI static int getFoliageColor(enum class FoliageColor::PaletteName, float, float);
     /**
      * @hash   -1029864688
      * @symbol ?getMapBirchColor@FoliageColor@@SAHMM@Z

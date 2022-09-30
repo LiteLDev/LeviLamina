@@ -33,12 +33,12 @@ public:
      * @hash   1793047894
      * @symbol ??0ContainerValidationResult@@QEAA@W4ContainerValidationOutcome@@@Z
      */
-    MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
+    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
     /**
      * @hash   165544786
      * @symbol ??0ContainerValidationResult@@QEAA@$$QEAV?$vector@UContainerValidationOperation@@V?$allocator@UContainerValidationOperation@@@std@@@std@@W4ContainerValidationOutcome@@W4ContainerScreenRequestActionType@@@Z
      */
-    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
+    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum class ContainerValidationOutcome, enum class ContainerScreenRequestActionType);
     /**
      * @hash   224060704
      * @symbol ?isSuccess@ContainerValidationResult@@QEBA_NXZ
@@ -48,7 +48,7 @@ public:
      * @hash   1450781744
      * @symbol ?tryGetOperation@ContainerValidationResult@@QEBAPEBUContainerValidationOperation@@W4ContainerValidationOperationType@@@Z
      */
-    MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;
+    MCAPI struct ContainerValidationOperation const * tryGetOperation(enum class ContainerValidationOperationType) const;
     /**
      * @hash   -1541809453
      * @symbol ??1ContainerValidationResult@@QEAA@XZ

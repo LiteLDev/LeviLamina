@@ -210,7 +210,7 @@ public:
      * @vftbl  288
      * @symbol ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
      */
-    virtual enum ParticleType getTrailParticle();
+    virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
     /**
      * @hash   -1866595807

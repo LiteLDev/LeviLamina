@@ -42,6 +42,6 @@ public:
      * @hash   600788078
      * @symbol ?setLerpStyle@KeyFrameLerpMode@@QEAAXW4KeyFrameLerpStyle@@@Z
      */
-    MCAPI void setLerpStyle(enum KeyFrameLerpStyle);
+    MCAPI void setLerpStyle(enum class KeyFrameLerpStyle);
 
 };

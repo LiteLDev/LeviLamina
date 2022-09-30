@@ -45,7 +45,7 @@ public:
      * @hash   -498302018
      * @symbol ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
      */
-    MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
+    MCAPI enum class WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     /**
      * @hash   459062212
      * @symbol ??1WorldPacksHistoryFile@@QEAA@XZ

@@ -45,6 +45,6 @@ public:
      * @hash   -721388906
      * @symbol ??0DropperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI DropperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI DropperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

@@ -118,7 +118,7 @@ public:
      * @hash   -1776205697
      * @symbol ?TypeId@SculkSensorBlockActor@@2W4BlockActorType@@B
      */
-    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static enum class BlockActorType const TypeId;
     /**
      * @hash   -1055750183
      * @symbol ?TypeString@SculkSensorBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

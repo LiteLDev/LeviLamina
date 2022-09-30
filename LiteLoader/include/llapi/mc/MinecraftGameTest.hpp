@@ -75,7 +75,7 @@ public:
      * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
      */
-    virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
      * @vftbl  12
      * @symbol __unk_vfn_12
@@ -200,7 +200,7 @@ public:
      * @hash   155716420
      * @symbol ?runTestAt@MinecraftGameTest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@AEBVBlockPos@@V?$optional@W4Rotation@@@3@@Z
      */
-    MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum Rotation>);
+    MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum class Rotation>);
     /**
      * @hash   1546143921
      * @symbol ?runTests@MinecraftGameTest@@QEAAAEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@AEAVDimension@@$$QEAUTestParameters@gametest@@@Z

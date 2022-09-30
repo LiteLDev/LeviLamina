@@ -95,7 +95,7 @@ public:
      * @vftbl  9
      * @symbol ?containsMaterial@BlockSource@@UEBA_NAEBVAABB@@W4MaterialType@@@Z
      */
-    virtual bool containsMaterial(class AABB const &, enum MaterialType) const;
+    virtual bool containsMaterial(class AABB const &, enum class MaterialType) const;
     /**
      * @hash   -491776851
      * @vftbl  10
@@ -191,7 +191,7 @@ public:
      * @vftbl  25
      * @symbol ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@@Z
      */
-    virtual class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(enum ActorType, class AABB const &, class Actor const *);
+    virtual class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(enum class ActorType, class AABB const &, class Actor const *);
     /**
      * @hash   -38794112
      * @vftbl  26
@@ -319,7 +319,7 @@ public:
      * @hash   -383166678
      * @symbol ?canProvideSupport@BlockSource@@QEBA_NAEBVBlockPos@@EW4BlockSupportType@@@Z
      */
-    MCAPI bool canProvideSupport(class BlockPos const &, unsigned char, enum BlockSupportType) const;
+    MCAPI bool canProvideSupport(class BlockPos const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @hash   -199449739
      * @symbol ?canSeeSky@BlockSource@@QEBA_NAEBVBlockPos@@@Z
@@ -409,7 +409,7 @@ public:
      * @hash   823329190
      * @symbol ?fetchBlockEntities@BlockSource@@QEBA?AV?$vector@PEAVBlockActor@@V?$allocator@PEAVBlockActor@@@std@@@std@@W4BlockActorType@@AEBVAABB@@@Z
      */
-    MCAPI std::vector<class BlockActor *> fetchBlockEntities(enum BlockActorType, class AABB const &) const;
+    MCAPI std::vector<class BlockActor *> fetchBlockEntities(enum class BlockActorType, class AABB const &) const;
     /**
      * @hash   -565435344
      * @symbol ?fetchBlocks@BlockSource@@QEBA_NAEBVBlockPos@@AEAVBlockVolume@@@Z
@@ -444,12 +444,12 @@ public:
      * @hash   221470137
      * @symbol ?fetchEntities2@BlockSource@@QEAAAEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@W4ActorType@@AEBVAABB@@_N@Z
      */
-    MCAPI std::vector<class Actor *> const & fetchEntities2(enum ActorType, class AABB const &, bool);
+    MCAPI std::vector<class Actor *> const & fetchEntities2(enum class ActorType, class AABB const &, bool);
     /**
      * @hash   -392577446
      * @symbol ?fetchNearestEntityOfType@BlockSource@@QEAAPEAVActor@@PEBV2@AEBVAABB@@W4ActorType@@@Z
      */
-    MCAPI class Actor * fetchNearestEntityOfType(class Actor const *, class AABB const &, enum ActorType);
+    MCAPI class Actor * fetchNearestEntityOfType(class Actor const *, class AABB const &, enum class ActorType);
     /**
      * @hash   1462927457
      * @symbol ?findNextTopSolidBlockAbove@BlockSource@@QEAA_NAEAVBlockPos@@@Z
@@ -469,7 +469,7 @@ public:
      * @hash   -42228849
      * @symbol ?fireBlockChanged@BlockSource@@QEAAXAEBVBlockPos@@IAEBVBlock@@1HW4BlockChangedEventTarget@@PEBUActorBlockSyncMessage@@PEAVActor@@@Z
      */
-    MCAPI void fireBlockChanged(class BlockPos const &, unsigned int, class Block const &, class Block const &, int, enum BlockChangedEventTarget, struct ActorBlockSyncMessage const *, class Actor *);
+    MCAPI void fireBlockChanged(class BlockPos const &, unsigned int, class Block const &, class Block const &, int, enum class BlockChangedEventTarget, struct ActorBlockSyncMessage const *, class Actor *);
     /**
      * @hash   -891439717
      * @symbol ?fireBlockEntityAboutToBeRemoved@BlockSource@@QEAAXV?$shared_ptr@VBlockActor@@@std@@@Z
@@ -589,7 +589,7 @@ public:
      * @hash   -1402154901
      * @symbol ?getNextTickUpdateForPos@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@AEAUTick@@@Z
      */
-    MCAPI bool getNextTickUpdateForPos(class BlockPos const &, enum TickingQueueType, struct Tick &) const;
+    MCAPI bool getNextTickUpdateForPos(class BlockPos const &, enum class TickingQueueType, struct Tick &) const;
     /**
      * @hash   738783214
      * @symbol ?getPublicSource@BlockSource@@QEBA_NXZ
@@ -614,7 +614,7 @@ public:
      * @hash   1980317482
      * @symbol ?getTickingQueue@BlockSource@@QEBAPEAVBlockTickingQueue@@AEBVBlockPos@@W4TickingQueueType@@_N@Z
      */
-    MCAPI class BlockTickingQueue * getTickingQueue(class BlockPos const &, enum TickingQueueType, bool) const;
+    MCAPI class BlockTickingQueue * getTickingQueue(class BlockPos const &, enum class TickingQueueType, bool) const;
     /**
      * @hash   -1921781489
      * @symbol ?getVoidHeight@BlockSource@@QEBAFXZ
@@ -644,7 +644,7 @@ public:
      * @hash   1809027050
      * @symbol ?hasTickInCurrentTick@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
      */
-    MCAPI bool hasTickInCurrentTick(class BlockPos const &, enum TickingQueueType) const;
+    MCAPI bool hasTickInCurrentTick(class BlockPos const &, enum class TickingQueueType) const;
     /**
      * @hash   -2132484613
      * @symbol ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@@Z
@@ -659,7 +659,7 @@ public:
      * @hash   1409879175
      * @symbol ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
      */
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, enum TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, enum class TickingQueueType) const;
     /**
      * @hash   442419300
      * @symbol ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
@@ -669,12 +669,12 @@ public:
      * @hash   -877542857
      * @symbol ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@W4TickingQueueType@@@Z
      */
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, enum TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, enum class TickingQueueType) const;
     /**
      * @hash   1900571960
      * @symbol ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
      */
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, enum TickingQueueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, enum class TickingQueueType) const;
     /**
      * @hash   1741375078
      * @symbol ?hasUntickedNeighborChunk@BlockSource@@QEBA_NAEBVChunkPos@@H@Z
@@ -729,7 +729,7 @@ public:
      * @hash   -791817244
      * @symbol ?isTouchingMaterial@BlockSource@@QEBA_NAEBVBlockPos@@W4MaterialType@@@Z
      */
-    MCAPI bool isTouchingMaterial(class BlockPos const &, enum MaterialType) const;
+    MCAPI bool isTouchingMaterial(class BlockPos const &, enum class MaterialType) const;
     /**
      * @hash   1594905488
      * @symbol ?isUnderWater@BlockSource@@QEBA_NAEBVVec3@@AEBVBlock@@@Z
@@ -864,7 +864,7 @@ public:
      * @hash   23076437
      * @symbol ?ticksFromNow@BlockSource@@QEBAHAEBVBlockPos@@W4TickingQueueType@@H@Z
      */
-    MCAPI int ticksFromNow(class BlockPos const &, enum TickingQueueType, int) const;
+    MCAPI int ticksFromNow(class BlockPos const &, enum class TickingQueueType, int) const;
     /**
      * @hash   -604366082
      * @symbol ?tryGetBiome@BlockSource@@QEBAPEAVBiome@@AEBVBlockPos@@@Z
@@ -948,7 +948,7 @@ public:
      * @hash   -936389921
      * @symbol ?_removeFromTickingQueue@BlockSource@@AEAAXAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
      */
-    MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum TickingQueueType);
+    MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum class TickingQueueType);
 
 protected:
 

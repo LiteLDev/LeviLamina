@@ -178,7 +178,7 @@ public:
      * @vftbl  85
      * @symbol ?onFertilized@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @hash   -376447050
      * @vftbl  87
@@ -327,7 +327,7 @@ public:
      * @hash   121978674
      * @symbol ??0CaveVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CaveVinesVariant@@@Z
      */
-    MCAPI CaveVinesBlock(std::string const &, int, enum CaveVinesVariant);
+    MCAPI CaveVinesBlock(std::string const &, int, enum class CaveVinesVariant);
 
 //private:
     /**

@@ -57,7 +57,7 @@ public:
      * @vftbl  4
      * @symbol ?sendToClient@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
      */
-    virtual void sendToClient(class NetworkIdentifier const &, class Packet const &, enum SubClientId);
+    virtual void sendToClient(class NetworkIdentifier const &, class Packet const &, enum class SubClientId);
     /**
      * @hash   -869700496
      * @vftbl  5
@@ -75,7 +75,7 @@ public:
      * @vftbl  7
      * @symbol ?sendBroadcast@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBVPacket@@@Z
      */
-    virtual void sendBroadcast(class NetworkIdentifier const &, enum SubClientId, class Packet const &);
+    virtual void sendBroadcast(class NetworkIdentifier const &, enum class SubClientId, class Packet const &);
     /**
      * @hash   1337579513
      * @vftbl  8
@@ -86,7 +86,7 @@ public:
      * @hash   1417168738
      * @symbol ??0LoopbackPacketSender@@QEAA@W4SubClientId@@AEAVNetworkHandler@@@Z
      */
-    MCAPI LoopbackPacketSender(enum SubClientId, class NetworkHandler &);
+    MCAPI LoopbackPacketSender(enum class SubClientId, class NetworkHandler &);
     /**
      * @hash   6464852
      * @symbol ?addLoopbackCallback@LoopbackPacketSender@@QEAAXAEAVNetEventCallback@@@Z

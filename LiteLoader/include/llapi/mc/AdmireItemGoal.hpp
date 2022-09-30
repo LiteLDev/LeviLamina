@@ -79,7 +79,7 @@ public:
      * @hash   -1492290200
      * @symbol ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
      */
-    MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
+    MCAPI AdmireItemGoal(class Mob &, enum class LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
 
 //private:
     /**

@@ -57,6 +57,6 @@ public:
      * @hash   -23826475
      * @symbol ?getVersionMapping@CommandVersion@@SA?BW4CurrentCmdVersion@@AEBVSemVersion@@@Z
      */
-    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
+    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 
 };

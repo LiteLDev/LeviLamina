@@ -63,7 +63,7 @@ public:
      * @vftbl  22
      * @symbol ?canProvideSupport@LightBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @symbol __unk_vfn_29
@@ -184,7 +184,7 @@ public:
      * @vftbl  82
      * @symbol ?isFilteredOut@LightBlock@@UEBA_NW4BlockRenderLayer@@@Z
      */
-    virtual bool isFilteredOut(enum BlockRenderLayer) const;
+    virtual bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @hash   -1377928078
      * @vftbl  90

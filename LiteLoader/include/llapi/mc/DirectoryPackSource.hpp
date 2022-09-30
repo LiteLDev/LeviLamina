@@ -51,13 +51,13 @@ public:
      * @vftbl  3
      * @symbol ?getPackOrigin@DirectoryPackSource@@UEBA?AW4PackOrigin@@XZ
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @hash   1974703653
      * @vftbl  4
      * @symbol ?getPackType@DirectoryPackSource@@UEBA?AW4PackType@@XZ
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @hash   -518105502
      * @vftbl  5
@@ -80,7 +80,7 @@ public:
      * @hash   1683075945
      * @symbol ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
      */
-    MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
+    MCAPI DirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
     /**
      * @hash   -143771185
      * @symbol ?getPath@DirectoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

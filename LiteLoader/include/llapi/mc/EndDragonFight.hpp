@@ -127,7 +127,7 @@ public:
      * @hash   796175101
      * @symbol ?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z
      */
-    MCAPI void _setRespawnStage(enum RespawnAnimation);
+    MCAPI void _setRespawnStage(enum class RespawnAnimation);
     /**
      * @hash   -392526508
      * @symbol ?_spawnExitPortal@EndDragonFight@@AEAAX_N@Z
@@ -137,7 +137,7 @@ public:
      * @hash   2027809512
      * @symbol ?_spawnNewGatewayChunksTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
      */
-    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     /**
      * @hash   2126324740
      * @symbol ?_spawnNewGatewayPair@EndDragonFight@@AEAAXXZ
@@ -157,7 +157,7 @@ public:
      * @hash   1563635946
      * @symbol ?_verifyExitPositionsTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
      */
-    MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _verifyExitPositionsTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
 private:
     /**

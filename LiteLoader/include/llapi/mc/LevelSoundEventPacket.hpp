@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@LevelSoundEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   2000088836
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@LevelSoundEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   1791150659
      * @symbol ??0LevelSoundEventPacket@@QEAA@XZ
@@ -67,6 +67,6 @@ public:
      * @hash   814571107
      * @symbol ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
      */
-    MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
+    MCAPI LevelSoundEventPacket(enum class LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
 
 };

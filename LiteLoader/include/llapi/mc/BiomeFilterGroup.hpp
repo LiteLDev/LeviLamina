@@ -40,7 +40,7 @@ public:
      * @vftbl  1
      * @symbol ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
      */
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
+    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
     /**
      * @hash   -421388207
      * @symbol ??0BiomeFilterGroup@@QEAA@AEBV0@@Z

@@ -38,7 +38,7 @@ public:
      * @hash   588572675
      * @symbol ??0Bounds@@QEAA@AEBVBlockPos@@0HW4Option@0@@Z
      */
-    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
+    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum class Bounds::Option);
     /**
      * @hash   685757544
      * @symbol ??0Bounds@@QEAA@AEBVBlockPos@@HHFF@Z

@@ -58,19 +58,19 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   -1345100824
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   1631554160
      * @vftbl  10
      * @symbol ?initializeComponents@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   2020916571
      * @vftbl  13
@@ -267,7 +267,7 @@ public:
      * @vftbl  115
      * @symbol ?attack@Mob@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
      */
-    virtual bool attack(class Actor &, enum ActorDamageCause const &);
+    virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @hash   -2105956757
      * @vftbl  126
@@ -285,7 +285,7 @@ public:
      * @vftbl  135
      * @symbol ?getBlockDamageCause@Mob@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
      */
-    virtual enum ActorDamageCause getBlockDamageCause(class Block const &) const;
+    virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /**
      * @hash   -1932986537
      * @vftbl  136
@@ -303,31 +303,31 @@ public:
      * @vftbl  141
      * @symbol ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @hash   1125286968
      * @vftbl  155
      * @symbol ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
      */
-    virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    virtual enum class ArmorMaterialType getArmorMaterialTypeInSlot(enum class ArmorSlot) const;
     /**
      * @hash   23388633
      * @vftbl  156
      * @symbol ?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
      */
-    virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    virtual enum class ArmorTextureType getArmorMaterialTextureTypeInSlot(enum class ArmorSlot) const;
     /**
      * @hash   -843661283
      * @vftbl  157
      * @symbol ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
      */
-    virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
     /**
      * @hash   -496309492
      * @vftbl  159
      * @symbol ?setEquippedSlot@Mob@@UEAAXW4EquipmentSlot@@AEBVItemStack@@@Z
      */
-    virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
+    virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
      * @hash   -225050993
      * @vftbl  173
@@ -527,13 +527,13 @@ public:
      * @vftbl  289
      * @symbol ?getHurtSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getHurtSound();
+    virtual enum class LevelSoundEvent getHurtSound();
     /**
      * @hash   726152441
      * @vftbl  290
      * @symbol ?getDeathSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getDeathSound();
+    virtual enum class LevelSoundEvent getDeathSound();
     /**
      * @hash   -1511840582
      * @vftbl  291
@@ -688,7 +688,7 @@ public:
      * @vftbl  316
      * @symbol ?doHurtTarget@Mob@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
      */
-    virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
      * @vftbl  317
      * @symbol __unk_vfn_317
@@ -747,7 +747,7 @@ public:
      * @vftbl  326
      * @symbol ?setDamagedArmor@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
      */
-    virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const &);
+    virtual void setDamagedArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @hash   1990537960
      * @vftbl  327
@@ -861,7 +861,7 @@ public:
      * @vftbl  345
      * @symbol ?setItemSlot@Mob@@UEAA_NW4EquipmentSlot@@AEBVItemStack@@@Z
      */
-    virtual bool setItemSlot(enum EquipmentSlot, class ItemStack const &);
+    virtual bool setItemSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
      * @hash   -1133741420
      * @vftbl  346
@@ -1042,7 +1042,7 @@ public:
      * @hash   -1987805917
      * @symbol ?calcMoveRelativeSpeed@Mob@@QEAAMW4TravelType@@@Z
      */
-    MCAPI float calcMoveRelativeSpeed(enum TravelType);
+    MCAPI float calcMoveRelativeSpeed(enum class TravelType);
     /**
      * @hash   1194377924
      * @symbol ?checkForPostHitDamageImmunity@Mob@@QEAA_NMAEBVActorDamageSource@@@Z
@@ -1112,7 +1112,7 @@ public:
      * @hash   237772939
      * @symbol ?getItemSlot@Mob@@QEBAAEBVItemStack@@W4EquipmentSlot@@@Z
      */
-    MCAPI class ItemStack const & getItemSlot(enum EquipmentSlot) const;
+    MCAPI class ItemStack const & getItemSlot(enum class EquipmentSlot) const;
     /**
      * @hash   535596674
      * @symbol ?getJumpEffectAmplifierValue@Mob@@QEAAMXZ
@@ -1172,7 +1172,7 @@ public:
      * @hash   -1868292338
      * @symbol ?getTravelType@Mob@@QEAA?AW4TravelType@@XZ
      */
-    MCAPI enum TravelType getTravelType();
+    MCAPI enum class TravelType getTravelType();
     /**
      * @hash   -898337938
      * @symbol ?getYRotA@Mob@@QEBAMXZ
@@ -1267,12 +1267,12 @@ public:
      * @hash   -1021717196
      * @symbol ?sendArmorDamageSlot@Mob@@QEAAXW4ArmorSlot@@@Z
      */
-    MCAPI void sendArmorDamageSlot(enum ArmorSlot);
+    MCAPI void sendArmorDamageSlot(enum class ArmorSlot);
     /**
      * @hash   235839090
      * @symbol ?sendArmorSlot@Mob@@QEAAXW4ArmorSlot@@@Z
      */
-    MCAPI void sendArmorSlot(enum ArmorSlot);
+    MCAPI void sendArmorSlot(enum class ArmorSlot);
     /**
      * @hash   623146202
      * @symbol ?setEatCounter@Mob@@QEAAXH@Z
@@ -1342,7 +1342,7 @@ public:
      * @hash   779477822
      * @symbol ?setSpawnMethod@Mob@@QEAAXW4MobSpawnMethod@@@Z
      */
-    MCAPI void setSpawnMethod(enum MobSpawnMethod);
+    MCAPI void setSpawnMethod(enum class MobSpawnMethod);
     /**
      * @hash   -1658007618
      * @symbol ?setSpeedModifier@Mob@@QEAAXM@Z
@@ -1492,7 +1492,7 @@ public:
      * @hash   -2011787300
      * @symbol ?_calcMoveRelativeSpeed@Mob@@SAMAEAUIMobMovementProxy@@W4TravelType@@@Z
      */
-    MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum TravelType);
+    MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum class TravelType);
     /**
      * @hash   2075533051
      * @symbol ?_travel@Mob@@SAXAEAUIMobMovementProxy@@MMM@Z
@@ -1522,7 +1522,7 @@ public:
      * @hash   -349139145
      * @symbol ?getTravelType@Mob@@SA?AW4TravelType@@AEAUIMobMovementProxy@@@Z
      */
-    MCAPI static enum TravelType getTravelType(struct IMobMovementProxy &);
+    MCAPI static enum class TravelType getTravelType(struct IMobMovementProxy &);
     /**
      * @hash   1053647467
      * @symbol ?isImmobile@Mob@@SA_NAEBUIActorMovementProxy@@@Z

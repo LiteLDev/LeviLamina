@@ -157,7 +157,7 @@ public:
      * @hash   -762731377
      * @symbol ?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
      */
-    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
+    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum class BlockChangedEventTarget, class Actor *);
     /**
      * @hash   828419752
      * @symbol ?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z
@@ -613,7 +613,7 @@ public:
      * @hash   -1120954111
      * @symbol ?CurrentLimboEntitiesVersion@Dimension@@2W4LimboEntitiesVersion@@B
      */
-    MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
+    MCAPI static enum class LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     /**
      * @hash   -1102638065
      * @symbol ?LOW_CPU_PACKET_BLOCK_LIMIT@Dimension@@2IB

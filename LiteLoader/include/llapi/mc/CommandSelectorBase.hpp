@@ -69,12 +69,12 @@ public:
      * @hash   -200630813
      * @symbol ?addGameModeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@W4GameType@@@@@Z
      */
-    MCAPI void addGameModeFilter(struct InvertableFilter<enum GameType> const &);
+    MCAPI void addGameModeFilter(struct InvertableFilter<enum class GameType> const &);
     /**
      * @hash   -1879375813
      * @symbol ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVCommandIntegerRange@@W4EquipmentSlot@@1@Z
      */
-    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum EquipmentSlot, class CommandIntegerRange const &);
+    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum class EquipmentSlot, class CommandIntegerRange const &);
     /**
      * @hash   1525762279
      * @symbol ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
@@ -124,7 +124,7 @@ public:
      * @hash   -631703970
      * @symbol ?getOrder@CommandSelectorBase@@QEBA?AW4CommandSelectionOrder@@XZ
      */
-    MCAPI enum CommandSelectionOrder getOrder() const;
+    MCAPI enum class CommandSelectionOrder getOrder() const;
     /**
      * @hash   -1150313768
      * @symbol ?hasName@CommandSelectorBase@@QEBA_NXZ
@@ -159,7 +159,7 @@ public:
      * @hash   -513630378
      * @symbol ?setOrder@CommandSelectorBase@@QEAAXW4CommandSelectionOrder@@@Z
      */
-    MCAPI void setOrder(enum CommandSelectionOrder);
+    MCAPI void setOrder(enum class CommandSelectionOrder);
     /**
      * @hash   -1653690942
      * @symbol ?setPosition@CommandSelectorBase@@QEAAXAEBVCommandPosition@@@Z
@@ -184,7 +184,7 @@ public:
      * @hash   265432520
      * @symbol ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
      */
-    MCAPI void setType(enum CommandSelectionType);
+    MCAPI void setType(enum class CommandSelectionType);
     /**
      * @hash   360161084
      * @symbol ?setVersion@CommandSelectorBase@@QEAAXH@Z

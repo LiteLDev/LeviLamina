@@ -38,7 +38,7 @@ public:
      * @hash   1977677787
      * @symbol ?addItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@V?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
      */
-    MCAPI void addItemNetworkChangedCallback(enum ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    MCAPI void addItemNetworkChangedCallback(enum class ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
     /**
      * @hash   1552003036
      * @symbol ?isUsingLegacyScreenTransactions@SparseContainer@@QEBA_NXZ
@@ -48,7 +48,7 @@ public:
      * @hash   -643521686
      * @symbol ?removeItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@@Z
      */
-    MCAPI void removeItemNetworkChangedCallback(enum ContainerEnumName);
+    MCAPI void removeItemNetworkChangedCallback(enum class ContainerEnumName);
 
 //protected:
     /**

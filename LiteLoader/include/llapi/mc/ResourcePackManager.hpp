@@ -117,7 +117,7 @@ public:
      * @hash   -912899647
      * @symbol ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
      */
-    MCAPI void clearStack(enum ResourcePackStackType, bool);
+    MCAPI void clearStack(enum class ResourcePackStackType, bool);
     /**
      * @hash   2111185405
      * @symbol ?composeFullStack@ResourcePackManager@@QEBAHAEAVResourcePackStack@@AEBV2@11@Z
@@ -147,7 +147,7 @@ public:
      * @hash   1107803889
      * @symbol ?getStack@ResourcePackManager@@QEBAAEBVResourcePackStack@@W4ResourcePackStackType@@@Z
      */
-    MCAPI class ResourcePackStack const & getStack(enum ResourcePackStackType) const;
+    MCAPI class ResourcePackStack const & getStack(enum class ResourcePackStackType) const;
     /**
      * @hash   827969961
      * @symbol ?handlePendingStackChanges@ResourcePackManager@@QEAAXXZ
@@ -177,7 +177,7 @@ public:
      * @hash   -613842425
      * @symbol ?setStack@ResourcePackManager@@QEAA_NV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@W4ResourcePackStackType@@_N@Z
      */
-    MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum ResourcePackStackType, bool);
+    MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum class ResourcePackStackType, bool);
     /**
      * @hash   -845971072
      * @symbol ?unRegisterResourcePackListener@ResourcePackManager@@QEAAXAEAVResourcePackListener@@@Z

@@ -31,12 +31,12 @@ public:
      * @hash   1976603064
      * @symbol ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
      */
-    MCVAPI enum EventResult onEvent(struct PlayerFormCloseEvent const &);
+    MCVAPI enum class EventResult onEvent(struct PlayerFormCloseEvent const &);
     /**
      * @hash   -1148469335
      * @symbol ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z
      */
-    MCVAPI enum EventResult onEvent(struct PlayerFormResponseEvent const &);
+    MCVAPI enum class EventResult onEvent(struct PlayerFormResponseEvent const &);
 #endif
     /**
      * @hash   -215298984

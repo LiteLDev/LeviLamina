@@ -35,7 +35,7 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@AreaEffectCloud@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -195,7 +195,7 @@ public:
      * @hash   780315944
      * @symbol ?getParticle@AreaEffectCloud@@QEBA?AW4ParticleType@@XZ
      */
-    MCAPI enum ParticleType getParticle() const;
+    MCAPI enum class ParticleType getParticle() const;
     /**
      * @hash   -2126834851
      * @symbol ?notifyPickup@AreaEffectCloud@@QEAAXXZ
@@ -220,7 +220,7 @@ public:
      * @hash   -800211274
      * @symbol ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
      */
-    MCAPI void setParticle(enum ParticleType);
+    MCAPI void setParticle(enum class ParticleType);
     /**
      * @hash   -1216556582
      * @symbol ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z

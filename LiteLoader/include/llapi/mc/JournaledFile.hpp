@@ -39,7 +39,7 @@ public:
      * @hash   -1727495219
      * @symbol ?open@JournaledFile@@QEAA?AVResult@Core@@VPath@3@VFileOpenMode@3@W4FileBufferingMode@3@@Z
      */
-    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
+    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
     /**
      * @hash   -1493131966
      * @symbol ?write@JournaledFile@@QEAA?AVResult@Core@@PEBX_K@Z

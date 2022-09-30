@@ -48,7 +48,7 @@ public:
      * @hash   1948396956
      * @symbol ?getType@LabTableReaction@@QEAA?AW4LabTableReactionType@@XZ
      */
-    MCAPI enum LabTableReactionType getType();
+    MCAPI enum class LabTableReactionType getType();
     /**
      * @hash   -1675973851
      * @symbol ?tick@LabTableReaction@@QEAA_NAEAVBlockSource@@@Z
@@ -58,6 +58,6 @@ public:
      * @hash   125520013
      * @symbol ?createReaction@LabTableReaction@@SA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@W4LabTableReactionType@@AEBVBlockPos@@_N@Z
      */
-    MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const &, bool);
+    MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum class LabTableReactionType, class BlockPos const &, bool);
 
 };

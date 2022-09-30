@@ -33,7 +33,7 @@ public:
      * @hash   -626767185
      * @symbol ??0OwnerStorageFeature@@IEAA@W4VariadicInit@0@AEAVFeatureRegistry@@@Z
      */
-    MCAPI OwnerStorageFeature(enum OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
+    MCAPI OwnerStorageFeature(enum class OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     /**
      * @hash   -359953811
      * @symbol ??0OwnerStorageFeature@@IEAA@$$QEAV0@@Z

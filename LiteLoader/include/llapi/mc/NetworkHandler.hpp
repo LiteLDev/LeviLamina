@@ -215,7 +215,7 @@ public:
      * @hash   -833190232
      * @symbol ?isHostingPlayer@NetworkHandler@@QEBA_NAEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
      */
-    MCAPI bool isHostingPlayer(class NetworkIdentifier const &, enum SubClientId const &) const;
+    MCAPI bool isHostingPlayer(class NetworkIdentifier const &, enum class SubClientId const &) const;
     /**
      * @hash   1042904496
      * @symbol ?isServer@NetworkHandler@@QEBA_NXZ
@@ -235,7 +235,7 @@ public:
      * @hash   1702515468
      * @symbol ?send@NetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
      */
-    MCAPI void send(class NetworkIdentifier const &, class Packet const &, enum SubClientId);
+    MCAPI void send(class NetworkIdentifier const &, class Packet const &, enum class SubClientId);
     /**
      * @hash   -943840019
      * @symbol ?sendToMultiple@NetworkHandler@@QEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
@@ -258,7 +258,7 @@ public:
      * @hash   -1827336436
      * @symbol ?unregisterClientOrServerInstance@NetworkHandler@@QEAAXAEBW4SubClientId@@@Z
      */
-    MCAPI void unregisterClientOrServerInstance(enum SubClientId const &);
+    MCAPI void unregisterClientOrServerInstance(enum class SubClientId const &);
     /**
      * @hash   -874431349
      * @symbol ?update@NetworkHandler@@QEAAXPEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@@Z
@@ -275,7 +275,7 @@ public:
      * @hash   83880648
      * @symbol ?_handlePacketViolation@NetworkHandler@@AEAAXW4StreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@AEAVConnection@1@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &, class NetworkHandler::Connection &, enum SubClientId, std::string const &);
+    MCAPI void _handlePacketViolation(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &, class NetworkHandler::Connection &, enum class SubClientId, std::string const &);
     /**
      * @hash   -1886609783
      * @symbol ?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

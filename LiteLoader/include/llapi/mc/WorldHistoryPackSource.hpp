@@ -51,13 +51,13 @@ public:
      * @vftbl  3
      * @symbol ?getPackOrigin@WorldHistoryPackSource@@UEBA?AW4PackOrigin@@XZ
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @hash   318133040
      * @vftbl  4
      * @symbol ?getPackType@WorldHistoryPackSource@@UEBA?AW4PackType@@XZ
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @hash   -880743427
      * @vftbl  5
@@ -80,7 +80,7 @@ public:
      * @hash   848271880
      * @symbol ??0WorldHistoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@@Z
      */
-    MCAPI WorldHistoryPackSource(class Core::Path const &, enum PackType);
+    MCAPI WorldHistoryPackSource(class Core::Path const &, enum class PackType);
     /**
      * @hash   -331735939
      * @symbol ?getPathToWorld@WorldHistoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -90,7 +90,7 @@ public:
      * @hash   -1699007053
      * @symbol ?generateHistoryFilePath@WorldHistoryPackSource@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@W4PackType@@@Z
      */
-    MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum PackType);
+    MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum class PackType);
 
 //private:
     /**

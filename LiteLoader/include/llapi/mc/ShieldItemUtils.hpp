@@ -42,6 +42,6 @@ private:
      * @hash   -28867247
      * @symbol ?mAlwaysBlockableDamageCauses@ShieldItemUtils@@0V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@B
      */
-    MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
+    MCAPI static std::vector<enum class ActorDamageCause> const mAlwaysBlockableDamageCauses;
 
 };

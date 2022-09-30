@@ -280,7 +280,7 @@ public:
      * @hash   1484174514
      * @symbol ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlockActor@@@Z
      */
-    MCAPI SignBlock(std::string const &, int, bool, enum SignBlockActor::SignType);
+    MCAPI SignBlock(std::string const &, int, bool, enum class SignBlockActor::SignType);
 
 //private:
     /**

@@ -64,7 +64,7 @@ public:
     /**
      * @symbol ??0WorldTemplatePackSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
      */
-    MCAPI WorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum PackType, enum PackOrigin);
+    MCAPI WorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum class PackType, enum class PackOrigin);
     /**
      * @hash   -1170178152
      * @symbol ?getWorldTemplateId@WorldTemplatePackSource@@QEBAAEBVUUID@mce@@XZ

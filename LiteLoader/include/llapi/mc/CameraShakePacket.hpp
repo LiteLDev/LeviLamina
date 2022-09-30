@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@CameraShakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1103273026
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@CameraShakePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -383308283
      * @symbol ??0CameraShakePacket@@QEAA@XZ
@@ -67,11 +67,11 @@ public:
      * @hash   -1169837384
      * @symbol ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
      */
-    MCAPI CameraShakePacket(enum CameraShakeAction);
+    MCAPI CameraShakePacket(enum class CameraShakeAction);
     /**
      * @hash   2140092352
      * @symbol ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
      */
-    MCAPI CameraShakePacket(float, float, enum CameraShakeType);
+    MCAPI CameraShakePacket(float, float, enum class CameraShakeType);
 
 };

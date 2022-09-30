@@ -52,12 +52,12 @@ public:
      * @hash   486091751
      * @symbol ?LogMissingChildSchemaOption@JsonUtil@@YAXW4LogArea@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@22@Z
      */
-    MCAPI void LogMissingChildSchemaOption(enum LogArea, class Json::Value const &, std::string const &, std::string const &, std::string const &);
+    MCAPI void LogMissingChildSchemaOption(enum class LogArea, class Json::Value const &, std::string const &, std::string const &, std::string const &);
     /**
      * @hash   -1742444923
      * @symbol ?LogUnknownChildSchemaOption@JsonUtil@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@AEBVValue@Json@@@Z
      */
-    MCAPI void LogUnknownChildSchemaOption(std::string const &, enum LogArea, class Json::Value const &);
+    MCAPI void LogUnknownChildSchemaOption(std::string const &, enum class LogArea, class Json::Value const &);
     /**
      * @hash   -682626454
      * @symbol ?eraseSchema@JsonUtil@@YAXAEBVHashedString@@AEBVSemVersion@@@Z
@@ -87,7 +87,7 @@ public:
      * @hash   -194021829
      * @symbol ?parseBannerBlockType@JsonUtil@@YA_NAEAW4BannerBlockType@@AEBVValue@Json@@@Z
      */
-    MCAPI bool parseBannerBlockType(enum BannerBlockType &, class Json::Value const &);
+    MCAPI bool parseBannerBlockType(enum class BannerBlockType &, class Json::Value const &);
     /**
      * @symbol ?parseItem@JsonUtil@@YA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAHV?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
      */
@@ -96,7 +96,7 @@ public:
      * @hash   1607868373
      * @symbol ?parseItemColor@JsonUtil@@YA_NAEAW4ItemColor@@AEBVValue@Json@@@Z
      */
-    MCAPI bool parseItemColor(enum ItemColor &, class Json::Value const &);
+    MCAPI bool parseItemColor(enum class ItemColor &, class Json::Value const &);
     /**
      * @hash   -724513838
      * @symbol ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z

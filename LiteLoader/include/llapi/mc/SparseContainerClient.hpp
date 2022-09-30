@@ -44,6 +44,6 @@ private:
      * @hash   -1357243731
      * @symbol ?pushSlotPredictionResultMap@SparseContainerClient@@0V?$BidirectionalUnorderedMap@W4PushSlotPredictionResult@SparseContainerClient@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
 
 };

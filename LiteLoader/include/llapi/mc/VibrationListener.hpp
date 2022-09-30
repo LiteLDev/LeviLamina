@@ -56,7 +56,7 @@ public:
      * @hash   -81932712
      * @symbol ??0VibrationListener@@QEAA@$$QEAV?$unique_ptr@VVibrationListenerConfig@@U?$default_delete@VVibrationListenerConfig@@@std@@@std@@VPositionSource@GameEvents@@IW4OwnerType@0@@Z
      */
-    MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
+    MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum class VibrationListener::OwnerType);
     /**
      * @hash   2050355208
      * @symbol ?getLatestReceivedVibration@VibrationListener@@QEBAAEBVGameEvent@@XZ

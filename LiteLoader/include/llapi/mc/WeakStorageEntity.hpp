@@ -40,12 +40,12 @@ public:
      * @hash   -1669459157
      * @symbol ??0WeakStorageEntity@@IEAA@W4VariadicInit@0@AEBVEntityContext@@@Z
      */
-    MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
+    MCAPI WeakStorageEntity(enum class WeakStorageEntity::VariadicInit, class EntityContext const &);
     /**
      * @hash   -698714046
      * @symbol ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
      */
-    MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
+    MCAPI WeakStorageEntity(enum class WeakStorageEntity::EmptyInit);
     /**
      * @hash   -1556862531
      * @symbol ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z

@@ -50,6 +50,6 @@ public:
      * @hash   758504364
      * @symbol ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
      */
-    MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
+    MCAPI void setCompactionCallback(class std::function<void (enum class CompactionStatus)>);
 
 };

@@ -123,6 +123,6 @@ public:
      * @hash   -558060161
      * @symbol ??0MinecartItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MinecartType@@@Z
      */
-    MCAPI MinecartItem(std::string const &, int, enum MinecartType);
+    MCAPI MinecartItem(std::string const &, int, enum class MinecartType);
 
 };
