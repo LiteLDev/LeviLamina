@@ -215,7 +215,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         }
         if (modules.find("ClientChunkPreGeneration") != modules.end()) {
             const nlohmann::json& setting = modules.at("ClientChunkPreGeneration");
-            conf.enableClientChunkPreGeneration = setting.value("enable", true);
+            conf.enableClientChunkPreGeneration = setting.value("enabled", true);
         }
     }
 }
@@ -266,7 +266,7 @@ bool ll::LoadLLConfig() {
             // if (IsWineEnvironment()) {
             //     ChooseLanguage();
             // }
-            filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
+            filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename());
             ll::SaveLLConfig();
         } else {
             try {
