@@ -1,4 +1,4 @@
-<!-- Version: 2.7.1 -->
+<!-- Version: 2.7.2 -->
 
 # LiteLoader Release Note
 
@@ -7,9 +7,4 @@
 
 ## Bug Fixes
 
-- Fix abnormal packet vulnerability caused by BDS @dreamguxiang
-
-## New Features
-
-- Add `enableClientChunkPreGeneration` option in configuration file @dreamguxiang
-- Refactor LLSE's `LLAPI` @shishkevichd
+- Fix configuration option `ClientChunkPreGeneration` error
