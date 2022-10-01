@@ -6,11 +6,6 @@
 #include <thread>
 #include "llapi/LLAPI.h"
 
-/////////////////////// CrashLogger ///////////////////////
-// When comes with these plugins, disable builtin CrashLogger since they will cause crash
-#define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
-
-
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
