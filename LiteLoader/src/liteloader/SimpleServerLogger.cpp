@@ -5,7 +5,6 @@
 #include "llapi/EventAPI.h"
 #include "liteloader/Config.h"
 #include "llapi/mc/ItemStack.hpp"
-#include "llapi/mc/CommandParameterData.hpp"
 #include "llapi/mc/CommandRegistry.hpp"
 #include <magic_enum/magic_enum.hpp>
 
