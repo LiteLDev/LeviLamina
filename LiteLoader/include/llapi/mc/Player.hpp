@@ -117,6 +117,7 @@ public:
      */
     LIAPI bool giveItem(ItemStack* item);
     LIAPI bool giveItem(string typeName, int count);
+    LIAPI bool giveItem(ItemStack* item, int amount);
 
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);

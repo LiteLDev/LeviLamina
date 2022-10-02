@@ -2131,7 +2131,11 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
         auto item = ItemClass::extract(args[0]);
         if (!item)
             return Local<Value>(); // Null
-
+        if (args.size() >= 2)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            return Boolean::newBoolean(player->giveItem(item, args[1].toInt()));
+        }
         return Boolean::newBoolean(player->giveItem(item));
     }
     CATCH("Fail in giveItem!");
