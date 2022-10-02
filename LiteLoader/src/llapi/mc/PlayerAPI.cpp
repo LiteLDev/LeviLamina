@@ -187,9 +187,9 @@ bool Player::giveItem(ItemStack* item, int amount) {
     return true;
 }
 
-bool Player::giveItem(string typeName, int count) {
+bool Player::giveItem(string typeName, int amount) {
     int temp;
-    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), count, temp);
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), amount, temp);
     for (auto& itemstack : itemlist) {
         if (!itemstack.isNull()) {
             if (!this->add(itemstack) && !this->isCreative()) {
