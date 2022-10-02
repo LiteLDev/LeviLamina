@@ -1,11 +1,8 @@
 #include "llapi/Global.h"
 #include "liteloader/Config.h"
 #include "llapi/mc/CommandParameterData.hpp"
-#include "llapi/LoggerAPI.h"
 #include <magic_enum/magic_enum.hpp>
 /////////////////// Built in UnlockCmd ///////////////////
-
-bool isUnlockCmdEnabled = true;
 
 // ==> LiteLoader/Main/SimpleServerLogger.cpp
 void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2);
