@@ -181,7 +181,10 @@ bool Player::giveItem(ItemStack* item, int amount) {
     single->set(1);
     for (int i = 0; i < amount; i++)
     {
-        this->add(*single->clone_s());
+        auto it = *single->clone_s();
+        if (!this->add(it) && !this->isCreative()) {
+            this->drop(it, false);
+        }
     }
     refreshInventory();
     return true;
