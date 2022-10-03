@@ -23,6 +23,7 @@ public:
     LIAPI std::string getTypeName();
 
     LIAPI bool addItem_s(ItemStack* item);
+    LIAPI bool addItem_s(ItemStack* item, int amount);
     LIAPI bool addItemToFirstEmptySlot_s(ItemStack* item);
     LIAPI bool removeItem_s(int slot, unsigned int number);
     LIAPI ItemStack* getSlot(int slot);

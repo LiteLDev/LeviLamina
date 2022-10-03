@@ -80,6 +80,10 @@ Local<Value> ContainerClass::addItem(const Arguments& args) {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
+        if (args.size() >= 2) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            return Boolean::newBoolean(container->addItem_s(item, args[1].toInt()));
+        }
         return Boolean::newBoolean(container->addItem_s(item));
     }
     CATCH("Fail in addItem!");

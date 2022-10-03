@@ -18,6 +18,18 @@ LIAPI bool Container::addItem_s(ItemStack* item) {
     return true;
 }
 
+// Ignore item.mCount when given amount.
+LIAPI bool Container::addItem_s(ItemStack* item, int amount) {
+    auto single = item->clone_s();
+    single->set(1);
+    for (int i = 0; i < amount; i++)
+    {
+        if (!this->addItem(*single->clone_s()))
+            return false;
+    }
+    return true;
+}
+
 LIAPI bool Container::addItemToFirstEmptySlot_s(ItemStack* item) {
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
 }
