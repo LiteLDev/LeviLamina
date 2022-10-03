@@ -164,6 +164,9 @@ inline void loadDotNETEngine() {
     if (version != llVersion) {
         ll::logger.warn(tr("ll.loader.loadDotNetEngine.error.versionNotMatch", version, llVersion));
     }
+    if (filesystem::exists("plugins/lib/managed/dotnet") {
+        path = "plugins/LiteLoader/LLNETPreloader.dll";
+    }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
         ll::logger.info(tr("ll.loader.loadDotNetEngine.success"));
