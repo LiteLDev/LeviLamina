@@ -36,7 +36,6 @@ public:
      */
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
     /**
-     * @hash   -226625052
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~EducationOptions();

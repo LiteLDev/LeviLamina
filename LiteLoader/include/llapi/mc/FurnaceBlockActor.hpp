@@ -136,7 +136,6 @@ public:
      */
     MCVAPI void tick(class BlockSource &);
     /**
-     * @hash   -1679367352
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~FurnaceBlockActor();

@@ -115,7 +115,6 @@ public:
      */
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
-     * @hash   -743838956
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatformWindows();

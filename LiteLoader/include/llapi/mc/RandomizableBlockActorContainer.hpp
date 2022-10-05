@@ -51,7 +51,6 @@ public:
      */
     MCVAPI void startOpen(class Player &);
     /**
-     * @hash   2135527592
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~RandomizableBlockActorContainer();

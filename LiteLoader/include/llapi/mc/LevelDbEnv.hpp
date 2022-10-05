@@ -125,7 +125,6 @@ public:
      */
     MCVAPI class leveldb::Status UnlockFile(class leveldb::FileLock *);
     /**
-     * @hash   271836324
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~LevelDbEnv();

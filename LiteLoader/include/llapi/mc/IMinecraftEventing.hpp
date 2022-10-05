@@ -35,7 +35,6 @@ public:
      */
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
     /**
-     * @hash   629902276
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~IMinecraftEventing();

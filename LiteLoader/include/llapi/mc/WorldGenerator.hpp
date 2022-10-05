@@ -77,7 +77,6 @@ public:
      */
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
-     * @hash   2129122788
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~WorldGenerator();

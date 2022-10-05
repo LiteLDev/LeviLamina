@@ -31,6 +31,6 @@ public:
      * @hash   -1139997187
      * @symbol ??0ContainerValidationOperation@@QEAA@W4ContainerValidationOperationType@@AEBUContainerValidationSlotData@@HAEBVItemStack@@@Z
      */
-    MCAPI ContainerValidationOperation(enum class ContainerValidationOperationType, struct ContainerValidationSlotData const &, int, class ItemStack const &);
+    MCAPI ContainerValidationOperation(enum ContainerValidationOperationType, struct ContainerValidationSlotData const &, int, class ItemStack const &);
 
 };

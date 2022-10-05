@@ -167,7 +167,6 @@ public:
      */
     MCVAPI void tick();
     /**
-     * @hash   1977650740
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~RakNetInstance();

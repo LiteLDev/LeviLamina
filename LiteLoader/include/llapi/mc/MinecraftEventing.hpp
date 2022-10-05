@@ -1468,7 +1468,6 @@ public:
      */
     MCVAPI void updatePrimaryLocalUserId(unsigned int const &);
     /**
-     * @hash   2105797960
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~MinecraftEventing();

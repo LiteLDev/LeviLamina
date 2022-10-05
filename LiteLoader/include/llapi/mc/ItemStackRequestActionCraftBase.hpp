@@ -41,7 +41,6 @@ public:
      */
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
     /**
-     * @hash   -1091677160
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ItemStackRequestActionCraftBase();

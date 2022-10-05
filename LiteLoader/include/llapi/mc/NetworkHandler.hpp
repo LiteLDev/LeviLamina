@@ -119,7 +119,6 @@ public:
      */
     MCVAPI bool useIPv6Only() const;
     /**
-     * @hash   1164875716
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~NetworkHandler();

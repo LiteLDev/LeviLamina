@@ -103,7 +103,6 @@ public:
      */
     MCVAPI void updateScreens();
     /**
-     * @hash   985867508
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerInstance();
