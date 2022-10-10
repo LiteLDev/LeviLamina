@@ -683,6 +683,25 @@ enum class ItemStackNetResult : unsigned char {
 //     int Min = 1, Max = 0x7FFFFFFF;
 // };
 
+enum class ClientPlayMode {
+	Normal              = 0,
+	Teaser              = 1,
+	Screen              = 2,
+	Viewer              = 3,
+	VR                  = 4,
+	Placement           = 5,
+	LivingRoom          = 6,
+	ExitLevel           = 7,
+	ExitLevelLivingRoom = 8
+}
+
+enum class InputMode {
+	Mouse            = 1,
+	Touch            = 2,
+	GamePad          = 3,
+	MotionController = 4
+}
+
 enum class InventoryTransactionError {
     Unknown            = 0,
     NoError            = 1,
