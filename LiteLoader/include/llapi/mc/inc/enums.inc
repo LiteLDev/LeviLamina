@@ -693,14 +693,14 @@ enum class ClientPlayMode {
 	LivingRoom          = 6,
 	ExitLevel           = 7,
 	ExitLevelLivingRoom = 8
-}
+};
 
 enum class InputMode {
 	Mouse            = 1,
 	Touch            = 2,
 	GamePad          = 3,
 	MotionController = 4
-}
+};
 
 enum class InventoryTransactionError {
     Unknown            = 0,
