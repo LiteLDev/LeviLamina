@@ -2256,7 +2256,26 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     return original(this, a2, a3, a4, a5, a6, a7, a8);
 }
 
-#include "llapi/Impl/FormPacketHelper.h"
+TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z",
+                       BlockPos* pos, BlockSource* bs)
+{
+    auto spawn = original(this, pos, bs);
+    if (spawn)
+    {
+        IF_LISTENED(MobSpawnEvent) {
+            MobSpawnEvent ev{};
+            ev.mTypeName = "minecraft:wandering_trader";
+            ev.mPos = spawn->toVec3();
+            ev.mDimensionId = bs->getDimensionId();
+            if (!ev.call())
+                return std::nullopt;
+        }
+        IF_LISTENED_END(MobSpawnEvent)
+    }
+    return spawn;
+}
+
+#include "llapi/impl/FormPacketHelper.h"
 #include "llapi/mc/Json.hpp"
 ////////////// FormResponsePacket //////////////
 

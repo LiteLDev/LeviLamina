@@ -30,8 +30,8 @@ enum class CommandVisibilityFlag : unsigned short {
 //
 enum class CommmandUnknown8Flag : unsigned short {
     None = 0x00,
-    Unknown = 0x08;
-}
+    Unknown = 0x08,
+};
 
 enum class CommandSyncFlag : unsigned short {
     Synced = 0x00,

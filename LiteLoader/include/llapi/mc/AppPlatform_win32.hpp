@@ -256,7 +256,6 @@ public:
      */
     MCVAPI void updateTextBoxText(std::string const &);
     /**
-     * @hash   -1619372552
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatform_win32();

@@ -35,7 +35,6 @@ public:
      */
     MCVAPI void log(char const *);
     /**
-     * @hash   1521840372
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ContentLogEndPoint();

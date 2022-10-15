@@ -76,7 +76,6 @@ public:
      */
     MCVAPI __int64 nextLong();
     /**
-     * @hash   1467770228
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~Random();

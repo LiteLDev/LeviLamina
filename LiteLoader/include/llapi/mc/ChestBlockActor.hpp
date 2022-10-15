@@ -236,7 +236,6 @@ public:
      */
     MCVAPI void triggerEvent(int, int);
     /**
-     * @hash   -875834104
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ChestBlockActor();

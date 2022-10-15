@@ -1,7 +1,8 @@
-name: CMake(self-hosted)
+name: CMake(pull request)
 
 on:
-  push:
+  workflow_dispatch:
+  pull_request:
     paths:
       - '**.cpp'
       - '**.cc'
@@ -11,7 +12,7 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
-      - '.github/workflows/cmake-self-hosted.yml'
+      - '.github/workflows/cmake_pr.yml'
       - '**/CMakeLists.txt'
 
 env:
@@ -19,13 +20,13 @@ env:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v3.0.2
         with:
           fetch-depth: 1
-          submodules: 'true'
+          #submodules: 'true' 
 
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
@@ -70,7 +71,7 @@ jobs:
         shell: bash
 
       - name: Get MSVC Path
-        working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
+        working-directory: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
         shell: bash
 
@@ -84,10 +85,9 @@ jobs:
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
-      - name: Pack output and SDK
+      - name: Pack output
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
         shell: cmd
 
       - name: Configure CMake(ClangCL)
@@ -97,26 +97,6 @@ jobs:
 
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
-
-
-      - name: Compress Resource Packs
-        run: |
-          cd build/output/plugins/LiteLoader/ResourcePacks
-          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
-          rm -r LiteLoaderBDS-CUI
-        shell: bash
-
-      - name: Update LiteLoaderSDK
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cd scripts
-          ./UploadSDK.cmd action
-        env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: github-actions[bot]
-        shell: cmd
 
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0

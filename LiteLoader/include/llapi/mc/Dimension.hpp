@@ -204,7 +204,6 @@ public:
      */
     MCVAPI void tickRedstone();
     /**
-     * @hash   1528904200
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~Dimension();

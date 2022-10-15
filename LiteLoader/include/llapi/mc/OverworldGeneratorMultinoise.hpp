@@ -92,7 +92,6 @@ public:
      */
     MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
     /**
-     * @hash   1691184708
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~OverworldGeneratorMultinoise();

@@ -31,7 +31,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
     /**
-     * @hash   966201672
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ScatteredFeaturePiece();

@@ -29,7 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
     /**
-     * @hash   -1382234552
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ICerealDefinitionSerializer();

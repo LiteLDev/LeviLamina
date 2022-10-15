@@ -83,7 +83,6 @@ public:
      */
     MCVAPI bool stop();
     /**
-     * @hash   2024440520
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~DedicatedServer();

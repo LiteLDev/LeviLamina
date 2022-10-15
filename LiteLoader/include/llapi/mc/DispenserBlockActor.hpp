@@ -111,7 +111,6 @@ public:
      */
     MCVAPI void stopOpen(class Player &);
     /**
-     * @hash   -88371592
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~DispenserBlockActor();

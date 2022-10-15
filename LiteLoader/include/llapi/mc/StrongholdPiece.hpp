@@ -33,7 +33,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
     /**
-     * @hash   1724874440
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~StrongholdPiece();

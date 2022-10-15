@@ -1064,7 +1064,6 @@ public:
      */
     MCVAPI void vibrate(int);
     /**
-     * @hash   -1915518696
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatform();

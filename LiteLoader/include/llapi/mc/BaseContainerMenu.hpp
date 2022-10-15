@@ -76,7 +76,6 @@ public:
      */
     MCVAPI void setData(int, int);
     /**
-     * @hash   -1121050184
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~BaseContainerMenu();

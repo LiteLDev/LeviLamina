@@ -42,7 +42,6 @@ public:
      */
     MCVAPI enum class PackType getPackType() const;
     /**
-     * @hash   -1033336940
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~PackSource();

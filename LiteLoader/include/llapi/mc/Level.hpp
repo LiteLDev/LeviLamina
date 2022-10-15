@@ -2097,7 +2097,6 @@ public:
      */
     MCVAPI void waitAsyncSuspendWork();
     /**
-     * @hash   -1254238888
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~Level();

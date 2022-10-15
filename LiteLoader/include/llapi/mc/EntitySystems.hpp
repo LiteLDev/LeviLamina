@@ -41,7 +41,6 @@ public:
      */
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     /**
-     * @hash   -1228431832
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~EntitySystems();

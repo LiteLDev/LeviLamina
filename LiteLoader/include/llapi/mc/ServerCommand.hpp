@@ -29,7 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
     /**
-     * @hash   -769714584
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerCommand();
