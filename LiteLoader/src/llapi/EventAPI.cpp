@@ -1605,8 +1605,8 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
 TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z", BucketItem,
               BlockSource* blockSource, Block* block, BlockPos* blockPos, Actor* actor, ItemStack* itemStack, unsigned char face) {
     IF_LISTENED(PlayerUseBucketEvent) {
-        //当actor为空时，执行实体是发射器
-        if(actor) {
+        // 当actor为空时，执行实体是发射器
+        if (actor) {
             PlayerUseBucketEvent ev{};
             ev.mPlayer = (Player*)actor;
             ev.mEventType = PlayerUseBucketEvent::EventType::Place;
