@@ -1605,15 +1605,18 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
 TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z", BucketItem,
               BlockSource* blockSource, Block* block, BlockPos* blockPos, Actor* actor, ItemStack* itemStack, unsigned char face) {
     IF_LISTENED(PlayerUseBucketEvent) {
-        PlayerUseBucketEvent ev{};
-        ev.mPlayer = (Player*)actor;
-        ev.mEventType = PlayerUseBucketEvent::EventType::Place;
-        ev.mTargetPos = blockPos->toVec3();
-        ev.mBucket = itemStack;
-        ev.mBlockInstance = BlockInstance::createBlockInstance(block, *blockPos, actor->getDimensionId());
-        ev.mFace = face;
-        if (!ev.call())
-            return false;
+        // 当actor为空时，执行实体是发射器
+        if (actor) {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = (Player*)actor;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Place;
+            ev.mTargetPos = blockPos->toVec3();
+            ev.mBucket = itemStack;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(block, *blockPos, actor->getDimensionId());
+            ev.mFace = face;
+            if (!ev.call())
+                return false;
+        }
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
     return original(this, blockSource, block, blockPos, actor, itemStack, face);
