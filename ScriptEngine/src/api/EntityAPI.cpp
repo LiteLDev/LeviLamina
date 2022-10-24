@@ -98,6 +98,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("setTag", &EntityClass::setNbt)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
         .instanceFunction("getTag", &EntityClass::getNbt)
+        .instanceFunction("distanceToPos", &EntityClass::distanceTo)
         .build();
 
 
