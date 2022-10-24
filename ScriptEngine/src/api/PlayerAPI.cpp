@@ -127,7 +127,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("isSprinting", &PlayerClass::isSprinting)
         .instanceFunction("setSprinting", &PlayerClass::setSprinting)
         .instanceFunction("sendToast", &PlayerClass::sendToast)
-        .instanceFunction("distanceToPos", &PlayerClass::distanceToPos)
+        .instanceFunction("distanceTo", &PlayerClass::distanceTo)
+        .instanceFunction("distanceToSqr", &PlayerClass::distanceToSqr)
 
         .instanceFunction("getBlockStandingOn", &PlayerClass::getBlockStandingOn)
         .instanceFunction("getDevice", &PlayerClass::getDevice)
@@ -222,6 +223,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("removeItem", &PlayerClass::removeItem)
         .instanceFunction("getAllItems", &PlayerClass::getAllItems)
         .instanceFunction("removeScore", &PlayerClass::deleteScore)
+        .instanceFunction("distanceToPos", &PlayerClass::distanceTo)
         .build();
 
 
@@ -2575,7 +2577,7 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
     CATCH("Fail in sendToast!");
 }
 
-Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
+Local<Value> PlayerClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     if (args.size() == 4) {
         CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2607,6 +2609,17 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
                 else {
                     pos = *posObj;
                 }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
             } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
@@ -2631,11 +2644,79 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        if ((int)player->getDimensionId() != pos.dim) {
-            return Local<Value>();
-        } else {
-            return Number::newNumber(player->distanceTo(pos.getVec3()));
-        }
+        return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
-    CATCH("Fail in distanceToPos!")
+    CATCH("Fail in distanceTo!")
+}
+
+Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    if (args.size() == 4) {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    }
+
+    try {
+        FloatVec4 pos;
+
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos.x = posObj->x;
+                    pos.y = posObj->y;
+                    pos.z = posObj->z;
+                    pos.dim = posObj->dim;
+                }
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos = *posObj;
+                }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        } else if (args.size() == 4) {
+            // number pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+
+            pos.x = args[0].asNumber().toFloat();
+            pos.y = args[1].asNumber().toFloat();
+            pos.z = args[2].asNumber().toFloat();
+            pos.dim = args[3].toInt();
+        } else {
+            LOG_WRONG_ARGS_COUNT();
+            return Local<Value>();
+        }
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->distanceToSqr(pos.getVec3()));
+    }
+    CATCH("Fail in distanceToSqr!")
 }
