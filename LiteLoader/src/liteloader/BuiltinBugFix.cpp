@@ -208,6 +208,7 @@ TInstanceHook(NetworkPeer::DataStatus,
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
+        std::cout << packetId << std::endl;
         if (packetId == 0) {
             data->clear();
             return NetworkPeer::DataStatus::NoData;

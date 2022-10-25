@@ -487,6 +487,7 @@ struct OperationNodeValues {
 class Editor {
 public:
     class IEditorManager;
+    class IEditorPlayer;
 };
 
 struct SubChunkStorageUnit {

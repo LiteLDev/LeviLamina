@@ -21,7 +21,6 @@
 #include "llapi/mc/TeleportTarget.hpp"
 #include "llapi/mc/UserEntityIdentifierComponent.hpp"
 #include "llapi/mc/OnFireSystem.hpp"
-#include "llapi/mc/TeleportRotationData.hpp"
 #include "llapi/mc/ClipDefaults.hpp"
 #include "llapi/mc/ItemStack.hpp"
 #include "llapi/mc/ActorDefinitionIdentifier.hpp"
