@@ -103,7 +103,8 @@ public:
     Local<Value> isSprinting(const Arguments& args);
     Local<Value> setSprinting(const Arguments& args);
     Local<Value> sendToast(const Arguments& args);
-    Local<Value> distanceToPos(const Arguments& args);
+    Local<Value> distanceTo(const Arguments& args);
+    Local<Value> distanceToSqr(const Arguments& args);
 
     Local<Value> getBlockStandingOn(const Arguments& args);
     Local<Value> getDevice(const Arguments& args);

@@ -70,7 +70,8 @@ public:
     Local<Value> stopFire(const Arguments& args);
     Local<Value> setScale(const Arguments& args);
 
-    Local<Value> distanceToPos(const Arguments& args);
+    Local<Value> distanceTo(const Arguments& args);
+    Local<Value> distanceToSqr(const Arguments& args);
 
     Local<Value> isPlayer(const Arguments& args);
     Local<Value> toPlayer(const Arguments& args);
