@@ -316,9 +316,10 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bo
     return true;
 }
 
-#include "llapi/mc/ItemRegistry.hpp"
+#include "llapi/mc/ItemRegistryRef.hpp"
+#include "llapi/mc/ItemRegistryManager.hpp"
 ItemStack* Level::getItemStackFromId(short itemId, int aux) {
-    auto item = ItemRegistry::getItem(itemId);
+    auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
         return new ItemStack(*item, 1, aux,0);
     return nullptr;
