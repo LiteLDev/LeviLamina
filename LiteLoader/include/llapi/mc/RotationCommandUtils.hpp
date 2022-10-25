@@ -18,7 +18,17 @@
 namespace RotationCommandUtils {
 
 #define AFTER_EXTRA
-class RotationData;
+
+class RotationData {
+    char filler[32];
+
+	public:
+    MCAPI RotationData(class RelativeFloat const&, class RelativeFloat const&,
+                               class std::optional<class Vec2> const&);
+		
+};
+
+;
 enum class FacingResult;
 
 #undef AFTER_EXTRA

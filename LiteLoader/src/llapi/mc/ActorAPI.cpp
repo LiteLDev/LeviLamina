@@ -27,6 +27,7 @@
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/Vec2.hpp"
 #include "llapi/mc/AABB.hpp"
+#include "llapi/mc/RotationCommandUtils.hpp"
 
 class UserEntityIdentifierComponent;
 
@@ -101,21 +102,29 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-static_assert(sizeof(TeleportRotationData) == 32);
+static_assert(sizeof(RotationCommandUtils::RotationData) == 32);
+
 bool Actor::teleport(Vec3 to, int dimID) {
     if (!this->isAlive())
         return false;
     char mem[48];
-    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, TeleportRotationData{getRotation().x, getRotation().y, {}}, 15);
+    auto computeTarget =
+        (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>,
+                              std::optional<RotationCommandUtils::RotationData> const&,
+                              int))(&TeleportCommand::computeTarget);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID,
+                                RotationCommandUtils::RotationData{getRotation().x, getRotation().y, {}}, 15);
     TeleportCommand::applyTarget(*this, *target, false);
     return true;
 }
 
 bool Actor::teleport(Vec3 to, int dimID, float x, float y) {
     char mem[48];
-    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, TeleportRotationData{x, y, {}}, 15);
+    auto computeTarget =
+        (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>,
+                              std::optional<RotationCommandUtils::RotationData> const&,
+                              int))(&TeleportCommand::computeTarget);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, RotationCommandUtils::RotationData{x, y, {}}, 15);
     TeleportCommand::applyTarget(*this, *target, false);
     return true;
 }
