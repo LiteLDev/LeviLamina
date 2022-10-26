@@ -656,6 +656,10 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
 
     // DataItem
     bs.writeUnsignedVarInt(0);
+    // PropertySyncIntEntry
+    bs.writeUnsignedVarInt(0);
+    // PropertySyncFloatEntry
+    bs.writeUnsignedVarInt(0);
 
     // Links
     bs.writeUnsignedVarInt(0);
