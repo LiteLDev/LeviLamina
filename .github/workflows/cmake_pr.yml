@@ -62,7 +62,7 @@ jobs:
 
       - name: Get Short Sha
         id: sha_short
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Change LITELOADER_VERSION_COMMIT_SHA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
