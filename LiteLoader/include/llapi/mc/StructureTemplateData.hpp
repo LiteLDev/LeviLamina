@@ -21,7 +21,7 @@ class StructureTemplateData {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    void* __vftable;
+    void** __vftable;
     int mFormatVersion;
     BlockPos mSize;
     BlockPos mStructureWorldOrigin;
