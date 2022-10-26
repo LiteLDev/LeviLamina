@@ -208,7 +208,6 @@ TInstanceHook(NetworkPeer::DataStatus,
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
-        std::cout << packetId << std::endl;
         if (packetId == 0) {
             data->clear();
             return NetworkPeer::DataStatus::NoData;
@@ -235,30 +234,6 @@ THook(void*,
     auto res = original(thi, a1, a2, a3, a4, a5, a6);
     connState(thi) = false;
     return res;
-}
-
-THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        new (res) std::string();
-        return res;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
-}
-
-THook(bool,
-      "?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        return false;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
 }
 
 // Fix wine stop
