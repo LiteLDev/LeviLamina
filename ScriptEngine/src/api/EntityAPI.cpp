@@ -17,6 +17,9 @@
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Mob.hpp>
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
+#include <llapi/mc/SharedAttributes.hpp>
+#include <llapi/mc/Attribute.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 using magic_enum::enum_integer;
@@ -70,6 +73,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
+        .instanceFunction("setHealth", &EntityClass::setHealth)
+        .instanceFunction("setMaxHealth", &EntityClass::setMaxHealth)
         .instanceFunction("setFire", &EntityClass::setFire)
         .instanceFunction("stopFire", &EntityClass::stopFire)
         .instanceFunction("isPlayer", &EntityClass::isPlayer)
@@ -955,6 +960,42 @@ Local<Value> EntityClass::heal(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in heal!");
+}
+
+Local<Value> EntityClass::setHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = entity->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHealth!");
+}
+
+Local<Value> EntityClass::setMaxHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = entity->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxHealth!");
 }
 
 // For Compatibility

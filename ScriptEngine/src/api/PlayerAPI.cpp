@@ -15,6 +15,8 @@
 #include "engine/EngineOwnData.h"
 #include "engine/GlobalShareData.h"
 #include "main/EconomicSystem.h"
+#include <llapi/mc/Attribute.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
 #include <llapi/mc/Player.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>
 #include <llapi/mc/Actor.hpp>
@@ -27,6 +29,7 @@
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/SynchedActorData.hpp>
 #include <llapi/mc/SimulatedPlayer.hpp>
+#include <llapi/mc/SharedAttributes.hpp>
 #include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/Command.hpp>
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
@@ -121,6 +124,9 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
         .instanceFunction("heal", &PlayerClass::heal)
+        .instanceFunction("setHealth", &PlayerClass::setHealth)
+        .instanceFunction("setMaxHealth", &PlayerClass::setMaxHealth)
+        .instanceFunction("setHungry", &PlayerClass::setHungry)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
         .instanceFunction("clearItem", &PlayerClass::clearItem)
@@ -2060,6 +2066,60 @@ Local<Value> PlayerClass::heal(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in heal!");
+}
+
+Local<Value> PlayerClass::setHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHealth!");
+}
+
+Local<Value> PlayerClass::setMaxHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxHealth!");
+}
+
+Local<Value> PlayerClass::setHungry(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(player->HUNGER);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHungry!");
 }
 
 Local<Value> PlayerClass::setFire(const Arguments& args) {
