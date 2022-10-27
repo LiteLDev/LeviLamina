@@ -65,6 +65,8 @@ public:
     Local<Value> kill(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
+    Local<Value> setHealth(const Arguments& args);
+    Local<Value> setMaxHealth(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
     Local<Value> stopFire(const Arguments& args);
