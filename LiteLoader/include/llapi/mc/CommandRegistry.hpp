@@ -39,7 +39,7 @@ public:
     struct ParseTable;
     class Symbol {
     public:
-        unsigned val;
+        int val;
         MCAPI Symbol(unsigned __int64 = -1);
         MCAPI Symbol(class Symbol const&);
         MCAPI unsigned __int64 toIndex() const;
@@ -117,10 +117,10 @@ public:
         Symbol main_symbol;              // 92
         Symbol alt_symbol;               // 96
         CommandFlag flag;                // 100
-        int unk72;
-        int unk76;
-        int unk80;
-        bool b84;
+        int firstRule;
+        int firstFactorization;
+        int firstOptional;
+        bool runnable;
 
         inline Signature(std::string_view name,
                          std::string_view desc,

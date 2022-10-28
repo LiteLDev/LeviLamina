@@ -26,6 +26,7 @@ class CommandOrigin {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    mce::UUID mUUID;
 
 /**
  * @brief Get the player as the command origin.

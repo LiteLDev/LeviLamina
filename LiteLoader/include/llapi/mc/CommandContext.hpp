@@ -11,8 +11,8 @@
 // Include Headers or Declare Types Here
 #include <string>
 #include "CommandOrigin.hpp"
+#include "CommandVersion.hpp"
 class CommandOrigin;
-
 #undef BEFORE_EXTRA
 
 /**
@@ -22,29 +22,24 @@ class CommandOrigin;
 class CommandContext {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
 public:
-    std::string command;
-    std::unique_ptr<CommandOrigin> origin;
-    int Version = 18;
+    std::string mCommand;
+    std::unique_ptr<CommandOrigin> mOrigin;
+    int mVersion = CommandVersion::CurrentVersion;
 
     std::string& getCmd() {
-        return command;
+        return mCommand;
     }
     class CommandOrigin& getOrigin() {
-        return *origin;
+        return *mOrigin;
     }
 
     template <typename T>
     [[deprecated]]
-    CommandContext(T&& x, CommandOrigin* o)
-        : command(std::forward<T>(x))
-        , origin(o){};
+    CommandContext(T&& x, CommandOrigin* o) : mCommand(std::forward<T>(x)), mOrigin(o){};
     template <typename T>
-    CommandContext(T&& x, std::unique_ptr<CommandOrigin> ori)
-        : command(std::forward<T>(x))
-        , origin(std::move(ori)){};
+    CommandContext(T&& x, std::unique_ptr<CommandOrigin> ori) : mCommand(std::forward<T>(x)), mOrigin(std::move(ori)){};
 
 
 #undef AFTER_EXTRA

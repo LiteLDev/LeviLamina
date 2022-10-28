@@ -20,9 +20,9 @@ class CommandItem {
 
 #define AFTER_EXTRA
 // Add Member There
-    short unk0; //0
-    bool unk2;  //2
-    int itemId; //4
+    short mVersion; // 0
+    bool mOverrideAux;           // 2
+    int mId;           // 4
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDITEM

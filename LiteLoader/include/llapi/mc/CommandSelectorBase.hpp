@@ -26,26 +26,27 @@ class Player;
 class CommandSelectorBase {
 
 #define AFTER_EXTRA
-// Add Member There
-private:
-uint32_t version;
-uint32_t type;
-uint32_t order;
-std::vector<InvertableFilter<std::string>> nameFilters;
-char pad_0040[24];
-std::vector<InvertableFilter<ActorDefinitionIdentifier>> familyFilters;
-std::vector<InvertableFilter<std::string>> tagFilters;
-std::vector<std::function<bool(CommandOrigin const&, Actor const&)>> customFilters;
-CommandPosition position;
-BlockPos box;
-float radiusMin;
-float radiusMax;
-uint64_t resultCount;
-bool includeDeadPlayers;
-char pad_0185[5];
-bool playerOnly;
-char explicitIdSelector;
-char unk192;
+    // Add Member There
+public:
+    uint32_t mVersion;
+    uint32_t mType;
+    uint32_t mOrder;
+    std::vector<InvertableFilter<std::string>> mNameFilters;
+    std::vector<InvertableFilter<ActorDefinitionIdentifier>> mTypeFilters;
+    std::vector<InvertableFilter<std::string>> mFamilyFilters;
+    std::vector<InvertableFilter<std::string>> mTagFilters;
+    std::vector<std::function<bool(CommandOrigin const&, Actor const&)>> mFilterChain;
+    CommandPosition mPosition;
+    BlockPos mBoxDeltas;
+    float mRadiusMin;
+    float mRadiusMax;
+    uint64_t mCount;
+    bool mIncludeDeadPlayers;
+    bool mIsPositionBound;
+    bool mDistanceFiltered;
+    bool mHaveDeltas;
+    bool mForcePlayer;
+    bool mIsExplicitIdSelector;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORBASE

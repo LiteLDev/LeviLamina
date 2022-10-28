@@ -19,8 +19,9 @@ class CommandIntegerRange {
 
 #define AFTER_EXTRA
 public:
-    int min, max;
-    bool inverted;
+    int mMinValue;
+    int mMaxValue;
+    bool mInvert;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDINTEGERRANGE

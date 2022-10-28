@@ -6,7 +6,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+#include "CommandSelector.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -20,7 +20,10 @@ class CommandMessage {
 
 #define AFTER_EXTRA
 // Add Member There
-    struct MessageComponent
+    struct MessageComponent {
+    std::string string;
+    std::unique_ptr<CommandSelector<Actor>> selection;
+    };
     /*{
         char filler[200];
         void* unk[2];

@@ -166,6 +166,7 @@ CompoundTag& getServerOriginTag() {
     return *cached;
 }
 
+
 std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player) {
     static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
     auto tag = cached->clone();
@@ -192,7 +193,6 @@ std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
 }
 
 
-static void* FAKE_PORGVTBL[26];
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
     auto tag = getPlayerOriginTag(*pl);
     auto origin = PlayerCommandOrigin::load(*tag, *Global<Level>);
@@ -220,7 +220,7 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
         Dimension* dim = lv->getDimension(dimId);
         if (!dim)
             return {};
-        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); // IDA Dimension::registerEntity
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 440); // IDA Dimension::registerEntity
 
         // Check Valid
         std::vector<Actor*> result;

@@ -409,7 +409,6 @@ public:
                 optional,
                 (int)offset + std::max(8, (int)sizeof(T))};
             param.addOptions(option);
-            // logger.warn(Global<CommandRegistry>->describe(param));
             return param;
         }
 
