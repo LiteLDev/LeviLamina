@@ -1605,15 +1605,18 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
 TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z", BucketItem,
               BlockSource* blockSource, Block* block, BlockPos* blockPos, Actor* actor, ItemStack* itemStack, unsigned char face) {
     IF_LISTENED(PlayerUseBucketEvent) {
-        PlayerUseBucketEvent ev{};
-        ev.mPlayer = (Player*)actor;
-        ev.mEventType = PlayerUseBucketEvent::EventType::Place;
-        ev.mTargetPos = blockPos->toVec3();
-        ev.mBucket = itemStack;
-        ev.mBlockInstance = BlockInstance::createBlockInstance(block, *blockPos, actor->getDimensionId());
-        ev.mFace = face;
-        if (!ev.call())
-            return false;
+        // 当actor为空时，执行实体是发射器
+        if (actor) {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = (Player*)actor;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Place;
+            ev.mTargetPos = blockPos->toVec3();
+            ev.mBucket = itemStack;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(block, *blockPos, actor->getDimensionId());
+            ev.mFace = face;
+            if (!ev.call())
+                return false;
+        }
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
     return original(this, blockSource, block, blockPos, actor, itemStack, face);
@@ -1648,7 +1651,7 @@ struct BucketPlayerAndActor {
     Actor* owner;
 };
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_f1efd4c97256fb90f8a5625718bf0fe5>::operator()",
+THook(void, "<lambda_54df3fc3e331d6aa3755551a14a31db0>::operator()",
       BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
@@ -2256,7 +2259,26 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     return original(this, a2, a3, a4, a5, a6, a7, a8);
 }
 
-#include "llapi/Impl/FormPacketHelper.h"
+TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z",
+                       BlockPos* pos, BlockSource* bs)
+{
+    auto spawn = original(this, pos, bs);
+    if (spawn)
+    {
+        IF_LISTENED(MobSpawnEvent) {
+            MobSpawnEvent ev{};
+            ev.mTypeName = "minecraft:wandering_trader";
+            ev.mPos = spawn->toVec3();
+            ev.mDimensionId = bs->getDimensionId();
+            if (!ev.call())
+                return std::nullopt;
+        }
+        IF_LISTENED_END(MobSpawnEvent)
+    }
+    return spawn;
+}
+
+#include "llapi/impl/FormPacketHelper.h"
 #include "llapi/mc/Json.hpp"
 ////////////// FormResponsePacket //////////////
 

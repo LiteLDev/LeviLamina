@@ -5,7 +5,6 @@
 #include "llapi/EventAPI.h"
 #include "liteloader/Config.h"
 #include "llapi/mc/ItemStack.hpp"
-#include "llapi/mc/CommandParameterData.hpp"
 #include "llapi/mc/CommandRegistry.hpp"
 #include <magic_enum/magic_enum.hpp>
 
@@ -62,5 +61,5 @@ void LogCommandRegistration(std::string const& name, char const* description, en
                             short flag1, short flag2) {
     static Logger logger("RegsterCommand");
     logger.consoleLevel = logger.debug.level;
-    logger.debug("{:<18} - {:<12} - {}", name, magic_enum::enum_name(perm), I18n::get(description));
+    logger.debug("{:<18} - {:<12} - 0x{:<5x} - {}", name, magic_enum::enum_name(perm), flag1 | flag2, I18n::get(description));
 }

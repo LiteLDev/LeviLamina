@@ -541,7 +541,7 @@ void autoGenerate() {
     // add include
     oss << std::endl;
     forEachPacket([&](Packet const& packet, std::string className, size_t size) {
-        oss << fmt::format("#include "llapi/mc/{}.hpp"\n", className);
+        oss << fmt::format("#include \"llapi/mc/{}.hpp\"\n", className);
     });
     oss << std::endl;
     replaceString(content, "#ifdef INCLUDE_ALL_PACKET\n", "#endif", oss.str());
@@ -640,8 +640,8 @@ static_assert(sizeof(ResourcePackClientResponsePacket) == 0x48, "size of Resourc
 static_assert(sizeof(TextPacket) == 0xD8, "size of TextPacket should be 216");
 static_assert(sizeof(SetTimePacket) == 0x38, "size of SetTimePacket should be 56");
 static_assert(sizeof(StartGamePacket) == 0x520, "size of StartGamePacket should be 1312");
-static_assert(sizeof(AddPlayerPacket) == 0x4E0, "size of AddPlayerPacket should be 1248");
-static_assert(sizeof(AddActorPacket) == 0x180, "size of AddActorPacket should be 384");
+static_assert(sizeof(AddPlayerPacket) == 0x5E8, "size of AddPlayerPacket should be 1512");
+static_assert(sizeof(AddActorPacket) == 0x1B0, "size of AddActorPacket should be 432");
 static_assert(sizeof(RemoveActorPacket) == 0x38, "size of RemoveActorPacket should be 56");
 static_assert(sizeof(AddItemActorPacket) == 0xE0, "size of AddItemActorPacket should be 224");
 static_assert(sizeof(TakeItemActorPacket) == 0x40, "size of TakeItemActorPacket should be 64");
@@ -665,7 +665,7 @@ static_assert(sizeof(BlockPickRequestPacket) == 0x40, "size of BlockPickRequestP
 static_assert(sizeof(ActorPickRequestPacket) == 0x40, "size of ActorPickRequestPacket should be 64");
 static_assert(sizeof(PlayerActionPacket) == 0x58, "size of PlayerActionPacket should be 88");
 static_assert(sizeof(HurtArmorPacket) == 0x40, "size of HurtArmorPacket should be 64");
-static_assert(sizeof(SetActorDataPacket) == 0x58, "size of SetActorDataPacket should be 88");
+static_assert(sizeof(SetActorDataPacket) == 0x88, "size of SetActorDataPacket should be 136");
 static_assert(sizeof(SetActorMotionPacket) == 0x48, "size of SetActorMotionPacket should be 72");
 static_assert(sizeof(SetActorLinkPacket) == 0x50, "size of SetActorLinkPacket should be 80");
 static_assert(sizeof(SetHealthPacket) == 0x38, "size of SetHealthPacket should be 56");
@@ -833,8 +833,8 @@ static_assert(sizeof(ResourcePackClientResponsePacket) == 0x48 || sizeof(Resourc
 static_assert(sizeof(TextPacket) == 0xD8 || sizeof(TextPacket) == 48, "size of TextPacket should be 216 or 48(default)");
 static_assert(sizeof(SetTimePacket) == 0x38 || sizeof(SetTimePacket) == 48, "size of SetTimePacket should be 56 or 48(default)");
 static_assert(sizeof(StartGamePacket) == 0x520 || sizeof(StartGamePacket) == 48, "size of StartGamePacket should be 1312 or 48(default)");
-static_assert(sizeof(AddPlayerPacket) == 0x4E0 || sizeof(AddPlayerPacket) == 48, "size of AddPlayerPacket should be 1248 or 48(default)");
-static_assert(sizeof(AddActorPacket) == 0x180 || sizeof(AddActorPacket) == 48, "size of AddActorPacket should be 384 or 48(default)");
+static_assert(sizeof(AddPlayerPacket) == 0x5E8 || sizeof(AddPlayerPacket) == 48, "size of AddPlayerPacket should be 1512 or 48(default)");
+static_assert(sizeof(AddActorPacket) == 0x1B0 || sizeof(AddActorPacket) == 48, "size of AddActorPacket should be 432 or 48(default)");
 static_assert(sizeof(RemoveActorPacket) == 0x38 || sizeof(RemoveActorPacket) == 48, "size of RemoveActorPacket should be 56 or 48(default)");
 static_assert(sizeof(AddItemActorPacket) == 0xE0 || sizeof(AddItemActorPacket) == 48, "size of AddItemActorPacket should be 224 or 48(default)");
 static_assert(sizeof(TakeItemActorPacket) == 0x40 || sizeof(TakeItemActorPacket) == 48, "size of TakeItemActorPacket should be 64 or 48(default)");
@@ -858,7 +858,7 @@ static_assert(sizeof(BlockPickRequestPacket) == 0x40 || sizeof(BlockPickRequestP
 static_assert(sizeof(ActorPickRequestPacket) == 0x40 || sizeof(ActorPickRequestPacket) == 48, "size of ActorPickRequestPacket should be 64 or 48(default)");
 static_assert(sizeof(PlayerActionPacket) == 0x58 || sizeof(PlayerActionPacket) == 48, "size of PlayerActionPacket should be 88 or 48(default)");
 static_assert(sizeof(HurtArmorPacket) == 0x40 || sizeof(HurtArmorPacket) == 48, "size of HurtArmorPacket should be 64 or 48(default)");
-static_assert(sizeof(SetActorDataPacket) == 0x58 || sizeof(SetActorDataPacket) == 48, "size of SetActorDataPacket should be 88 or 48(default)");
+static_assert(sizeof(SetActorDataPacket) == 0x88 || sizeof(SetActorDataPacket) == 48, "size of SetActorDataPacket should be 136 or 48(default)");
 static_assert(sizeof(SetActorMotionPacket) == 0x48 || sizeof(SetActorMotionPacket) == 48, "size of SetActorMotionPacket should be 72 or 48(default)");
 static_assert(sizeof(SetActorLinkPacket) == 0x50 || sizeof(SetActorLinkPacket) == 48, "size of SetActorLinkPacket should be 80 or 48(default)");
 static_assert(sizeof(SetHealthPacket) == 0x38 || sizeof(SetHealthPacket) == 48, "size of SetHealthPacket should be 56 or 48(default)");

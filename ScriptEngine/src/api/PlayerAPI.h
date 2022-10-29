@@ -94,6 +94,9 @@ public:
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
+    Local<Value> setHealth(const Arguments& args);
+    Local<Value> setMaxHealth(const Arguments& args);
+    Local<Value> setHungry(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
     Local<Value> stopFire(const Arguments& args);
@@ -103,7 +106,8 @@ public:
     Local<Value> isSprinting(const Arguments& args);
     Local<Value> setSprinting(const Arguments& args);
     Local<Value> sendToast(const Arguments& args);
-    Local<Value> distanceToPos(const Arguments& args);
+    Local<Value> distanceTo(const Arguments& args);
+    Local<Value> distanceToSqr(const Arguments& args);
 
     Local<Value> getBlockStandingOn(const Arguments& args);
     Local<Value> getDevice(const Arguments& args);

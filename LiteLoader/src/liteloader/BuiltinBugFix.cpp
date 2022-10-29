@@ -236,30 +236,6 @@ THook(void*,
     return res;
 }
 
-THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        new (res) std::string();
-        return res;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
-}
-
-THook(bool,
-      "?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        return false;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
-}
-
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
     original(this);

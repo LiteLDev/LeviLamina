@@ -33,6 +33,7 @@ public:
     Local<Value> getDamage();
     Local<Value> getAttackDamage();
     Local<Value> getMaxDamage();
+    Local<Value> getLore();
 
     Local<Value> isArmorItem();
     Local<Value> isBlock();

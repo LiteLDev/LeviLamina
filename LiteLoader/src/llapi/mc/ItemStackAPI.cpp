@@ -32,9 +32,10 @@ ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
     return item;
 }
 
-#include "llapi/mc/ItemRegistry.hpp"
+#include "llapi/mc/ItemRegistryRef.hpp"
+#include "llapi/mc/ItemRegistryManager.hpp"
 ItemStack* ItemStack::create(short itemId, int aux, int count) {
-    auto item = ItemRegistry::getItem(itemId);
+    auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
         return new ItemStack(*item, count, aux,0);
     return nullptr;

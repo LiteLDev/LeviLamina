@@ -3,8 +3,6 @@
 
 #include "llapi/mc/Minecraft.hpp"
 
-#include "llapi/mc/Actor.hpp"
-#include "llapi/mc/Mob.hpp"
 #include "llapi/mc/Player.hpp"
 #include "llapi/mc/ServerPlayer.hpp"
 
@@ -38,7 +36,6 @@
 
 #include "llapi/mc/ItemStackDescriptor.hpp"
 #include "llapi/mc/NetworkItemStackDescriptor.hpp"
-#include "llapi/mc/ToastRequestPacket.hpp"
 
 #include "llapi/impl/ObjectivePacketHelper.h"
 #include "llapi/impl/FormPacketHelper.h"
@@ -48,6 +45,7 @@
 
 #include "llapi/mc/CommandUtils.hpp"
 #include "llapi/mc/ItemInstance.hpp"
+#include "llapi/mc/Item.hpp"
 
 using ll::logger;
 
@@ -66,7 +64,7 @@ Certificate* Player::getCertificate() {
 
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2264);
+        return dAccess<std::string>(this, 2200);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -173,26 +171,32 @@ bool Player::talkAs(const std::string& msg) {
 
 
 bool Player::giveItem(ItemStack* item) {
-    int temp;
-    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(item->getTypeName())), item->getCount(), temp);
-    for (auto& itemstack : itemlist) {
-        if (!itemstack.isNull()) {
-            if (!this->add(itemstack) && !this->isCreative()) {
-                this->drop(itemstack, 0);
-            }
+    this->add(*item);
+    refreshInventory();
+    return true;
+}
+
+bool Player::giveItem(ItemStack* item, int amount) {
+    auto single = item->clone_s();
+    single->set(1);
+    for (int i = 0; i < amount; i++)
+    {
+        auto it = *single->clone_s();
+        if (!this->add(it) && !this->isCreative()) {
+            this->drop(it, false);
         }
     }
     refreshInventory();
     return true;
 }
 
-bool Player::giveItem(string typeName, int count) {
+bool Player::giveItem(string typeName, int amount) {
     int temp;
-    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), count, temp);
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), amount, temp);
     for (auto& itemstack : itemlist) {
         if (!itemstack.isNull()) {
             if (!this->add(itemstack) && !this->isCreative()) {
-                this->drop(itemstack, 0);
+                this->drop(itemstack, false);
             }
         }
     }
@@ -255,7 +259,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 5328); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {
@@ -283,7 +287,6 @@ bool Player::setNbt(CompoundTag* nbt) {
     return true;
 }
 #include "llapi/mc/Attribute.hpp"
-#include "llapi/mc/AttributeInstance.hpp"
 #include "llapi/mc/HashedString.hpp"
 #include "llapi/SendPacketAPI.h"
 bool Player::refreshAttribute(class Attribute const& attribute) {
@@ -620,7 +623,6 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-#include "llapi/SendPacketAPI.h"
 bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);                                // RuntimeId
@@ -653,6 +655,10 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     bs.writeUnsignedVarInt(0);
 
     // DataItem
+    bs.writeUnsignedVarInt(0);
+    // PropertySyncIntEntry
+    bs.writeUnsignedVarInt(0);
+    // PropertySyncFloatEntry
     bs.writeUnsignedVarInt(0);
 
     // Links
