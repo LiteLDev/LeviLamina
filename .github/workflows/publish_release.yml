@@ -12,7 +12,7 @@ env:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v3.0.2
