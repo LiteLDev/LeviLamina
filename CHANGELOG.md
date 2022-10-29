@@ -22,11 +22,10 @@
 
 ## Bug Fixes
 
-- Fix #834 and #850 @Redbeanw44602
-- Fix #856 @ShrBox
-- Fix #855 (#865) @quizhizhe
-- Fix ItemStack::create @dreamguxiang
-- Fix Actor::teleport @dreamguxiang
-- Fix #863 @dreamguxiang
-- Fix #858,#859 @dreamguxiang
-- Fix #861 @dreamguxiang
+- Fix `Player::giveItem` bug #834,#850 @Redbeanw44602
+- Fix PlayerInfo api error #856 @ShrBox
+- Fix PlayerUseBucketEvent fails to listen in some cases #855(#865) @quizhizhe
+- Fix `Actor::teleport` @dreamguxiang
+- Fix some ios players join server and server lag #863 @dreamguxiang
+- Fix `runcmd/runcmdEx` some commands cannot be executed #858,#859,#715,#553 @dreamguxiang
+- Fix `mc.cloneMob` pos error #861 @dreamguxiang
