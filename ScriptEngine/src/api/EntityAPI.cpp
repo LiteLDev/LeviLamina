@@ -17,6 +17,9 @@
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Mob.hpp>
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
+#include <llapi/mc/SharedAttributes.hpp>
+#include <llapi/mc/Attribute.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 using magic_enum::enum_integer;
@@ -70,6 +73,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
+        .instanceFunction("setHealth", &EntityClass::setHealth)
+        .instanceFunction("setMaxHealth", &EntityClass::setMaxHealth)
         .instanceFunction("setFire", &EntityClass::setFire)
         .instanceFunction("stopFire", &EntityClass::stopFire)
         .instanceFunction("isPlayer", &EntityClass::isPlayer)
@@ -78,7 +83,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("toItem", &EntityClass::toItem)
         .instanceFunction("getBlockStandingOn", &EntityClass::getBlockStandingOn)
         .instanceFunction("getArmor", &EntityClass::getArmor)
-        .instanceFunction("distanceToPos", &EntityClass::distanceToPos)
+        .instanceFunction("distanceTo", &EntityClass::distanceTo)
+        .instanceFunction("distanceToSqr", &EntityClass::distanceToSqr)
         .instanceFunction("hasContainer", &EntityClass::hasContainer)
         .instanceFunction("getContainer", &EntityClass::getContainer)
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
@@ -97,6 +103,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("setTag", &EntityClass::setNbt)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
         .instanceFunction("getTag", &EntityClass::getNbt)
+        .instanceFunction("distanceToPos", &EntityClass::distanceTo)
         .build();
 
 
@@ -657,7 +664,7 @@ Local<Value> EntityClass::teleport(const Arguments& args) {
     CATCH("Fail in teleportEntity!")
 }
 
-Local<Value> EntityClass::distanceToPos(const Arguments& args) {
+Local<Value> EntityClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     if (args.size() == 4) {
         CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -689,6 +696,17 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
                 else {
                     pos = *posObj;
                 }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
             } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
@@ -713,14 +731,81 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        if ((int)entity->getDimensionId() != pos.dim) {
+        return Number::newNumber(entity->distanceTo(pos.getVec3()));
+    }
+    CATCH("Fail in distanceTo!")
+}
+
+Local<Value> EntityClass::distanceToSqr(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    if (args.size() == 4) {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    }
+
+    try {
+        FloatVec4 pos;
+
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos.x = posObj->x;
+                    pos.y = posObj->y;
+                    pos.z = posObj->z;
+                    pos.dim = posObj->dim;
+                }
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos = *posObj;
+                }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        } else if (args.size() == 4) {
+            // number pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+
+            pos.x = args[0].asNumber().toFloat();
+            pos.y = args[1].asNumber().toFloat();
+            pos.z = args[2].asNumber().toFloat();
+            pos.dim = args[3].toInt();
+        } else {
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
-        else {
-            return Number::newNumber(entity->distanceTo(pos.getVec3()));
-        }
+
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Number::newNumber(entity->distanceToSqr(pos.getVec3()));
     }
-    CATCH("Fail in distanceToPos!")
+    CATCH("Fail in distanceToSqr!")
 }
 
 Local<Value> EntityClass::kill(const Arguments& args) {
@@ -875,6 +960,42 @@ Local<Value> EntityClass::heal(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in heal!");
+}
+
+Local<Value> EntityClass::setHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = entity->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHealth!");
+}
+
+Local<Value> EntityClass::setMaxHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = entity->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxHealth!");
 }
 
 // For Compatibility

@@ -1,7 +1,6 @@
 #pragma once
 #include "CommandSelectorBase.hpp"
 
-// static_assert(offsetof(CommandSelectorBase, explicitIdSelector) == 165);
 template <typename T>
 class CommandSelector : public CommandSelectorBase {
 public:

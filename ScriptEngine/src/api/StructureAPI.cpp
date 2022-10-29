@@ -40,7 +40,7 @@ Local<Value> McClass::getStructure(const Arguments& args) {
         auto Structure = StructureTemplate::fromWorld("", pos1->getDimensionId(),
         pos1->getBlockPos() + BlockPos(0, 1, 0), pos2->getBlockPos() + BlockPos(0, 1, 0), ignoreBlocks, ignoreEntities);
 
-        return NbtCompoundClass::pack(std::move(Structure.toTag()));
+        return NbtCompoundClass::pack(std::move(Structure->toTag()));
     }
     CATCH("Fail in getStructure!");
 }
@@ -79,7 +79,7 @@ Local<Value> McClass::setStructure(const Arguments& args) {
     try {
         IntPos* pos = IntPos::extractPos(args[1]);
         auto Structure = StructureTemplate::fromTag("", *nbt);
-        return Boolean::newBoolean(Structure.toWorld(pos->getDimensionId(),
+        return Boolean::newBoolean(Structure->toWorld(pos->getDimensionId(),
         pos->getBlockPos() + BlockPos(0, 1, 0), mirror, rotation));
     }
     CATCH("Fail in setStructure!");

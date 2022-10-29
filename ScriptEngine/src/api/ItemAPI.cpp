@@ -24,6 +24,7 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("count", &ItemClass::getCount)
         .instanceProperty("aux", &ItemClass::getAux)
         .instanceProperty("damage", &ItemClass::getDamage)
+        .instanceProperty("lore", &ItemClass::getLore)
         .instanceProperty("attackDamage", &ItemClass::getAttackDamage)
         .instanceProperty("maxDamage", &ItemClass::getMaxDamage)
         .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
@@ -150,6 +151,21 @@ Local<Value> ItemClass::getMaxDamage() {
         return Number::newNumber(item->getMaxDamage());
     }
     CATCH("Fail in GetMaxDamage!");
+}
+
+Local<Value> ItemClass::getLore() {
+    try {
+        std::vector<std::string> loreArray = item->getCustomLore();
+
+        Local<Array> loreValueList = Array::newArray();
+
+        for (std::string lore : loreArray) {
+            loreValueList.add(String::newString(lore));
+        }
+        
+        return loreValueList;
+    }
+    CATCH("Fail in GetLore!");
 }
 
 

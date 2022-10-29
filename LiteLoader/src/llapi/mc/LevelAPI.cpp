@@ -166,6 +166,7 @@ CompoundTag& getServerOriginTag() {
     return *cached;
 }
 
+
 std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player) {
     static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
     auto tag = cached->clone();
@@ -192,7 +193,6 @@ std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
 }
 
 
-static void* FAKE_PORGVTBL[26];
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
     auto tag = getPlayerOriginTag(*pl);
     auto origin = PlayerCommandOrigin::load(*tag, *Global<Level>);
@@ -220,7 +220,7 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
         Dimension* dim = lv->getDimension(dimId);
         if (!dim)
             return {};
-        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); // IDA Dimension::registerEntity
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 440); // IDA Dimension::registerEntity
 
         // Check Valid
         std::vector<Actor*> result;
@@ -298,11 +298,16 @@ Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
     Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnMob(pos, dimId, std::move(name));
 }
-
+#include "llapi/mc/ListTag.hpp"
+#include "llapi/mc/FloatTag.hpp"
 Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
     Spawner* sp = &Global<Level>->getSpawner();
     Mob* mob = sp->spawnMob(pos, dimId, std::move(ac->getTypeName()));
-    mob->setNbt(ac->getNbt().get());
+    auto nbt = ac->getNbt();
+    nbt->getList("Pos")->get(0)->asFloatTag()->set(pos.x);
+    nbt->getList("Pos")->get(1)->asFloatTag()->set(pos.y);
+    nbt->getList("Pos")->get(2)->asFloatTag()->set(pos.z);
+    mob->setNbt(nbt.get());
     return mob;
 }
 
@@ -316,9 +321,10 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bo
     return true;
 }
 
-#include "llapi/mc/ItemRegistry.hpp"
+#include "llapi/mc/ItemRegistryRef.hpp"
+#include "llapi/mc/ItemRegistryManager.hpp"
 ItemStack* Level::getItemStackFromId(short itemId, int aux) {
-    auto item = ItemRegistry::getItem(itemId);
+    auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
         return new ItemStack(*item, 1, aux,0);
     return nullptr;

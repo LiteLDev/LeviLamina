@@ -65,12 +65,15 @@ public:
     Local<Value> kill(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
+    Local<Value> setHealth(const Arguments& args);
+    Local<Value> setMaxHealth(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
     Local<Value> stopFire(const Arguments& args);
     Local<Value> setScale(const Arguments& args);
 
-    Local<Value> distanceToPos(const Arguments& args);
+    Local<Value> distanceTo(const Arguments& args);
+    Local<Value> distanceToSqr(const Arguments& args);
 
     Local<Value> isPlayer(const Arguments& args);
     Local<Value> toPlayer(const Arguments& args);
