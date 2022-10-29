@@ -86,11 +86,6 @@ jobs:
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
-      - name: Get MSVC Path
-        working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
-        run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
-        shell: bash
-
       - name: Configure CMake(MSVC)
         run: |
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
