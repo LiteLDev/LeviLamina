@@ -18,7 +18,7 @@ massive API, lots of packed utility interfaces, a rich event system and powerful
 
 `LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
 
-Writing plugins in **C++, Golang, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
+Writing plugins in **C++, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -83,7 +83,7 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages              | `C++`, `Go`, `JavaScript(NodeJs)`, `Lua`, `.NET` |
+| Supported languages              | `C++`, `JavaScript(NodeJs)`, `Lua`, `.NET` |
 | -------------------------------- | ------------------------------------------------ |
 | **Upcoming supported languages** | `Python`, `Ruby`, `TypeScript`                   |
 
