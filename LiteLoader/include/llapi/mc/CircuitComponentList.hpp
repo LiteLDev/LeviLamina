@@ -20,7 +20,7 @@ class CircuitComponentList {
 
 #define AFTER_EXTRA
 // Add Member There
-
+class item {};
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
 public:
