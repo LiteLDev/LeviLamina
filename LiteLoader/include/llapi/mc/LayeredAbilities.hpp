@@ -19,7 +19,8 @@
 class LayeredAbilities {
 
 #define AFTER_EXTRA
-
+private:
+    char filler[32];
 #undef AFTER_EXTRA
 public:
     /**
