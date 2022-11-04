@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?tryGetDefinitionSerializer@EntityComponentFactoryJson@@QEBAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -366386648
+     * @hash   -366325144
      */
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
 

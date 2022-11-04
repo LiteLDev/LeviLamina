@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0HC_CALL@@QEAA@XZ
-     * @hash   1192196174
+     * @hash   1192257678
      */
     MCAPI HC_CALL();
 

@@ -5,7 +5,7 @@ on:
     inputs:
       tag:
         required: true
-        description: 'tag is going to be released'
+        description: 'release tag'
 
 env:
   BUILD_TYPE: Release

@@ -41,7 +41,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
-     * @hash   1488208319
+     * @hash   1488269823
      */
     virtual unsigned __int64 getPackSize() const;
     /**
@@ -65,49 +65,49 @@ public:
     /**
      * @vftbl  5
      * @symbol ?setIsTrusted@ZipPackAccessStrategy@@UEAAX_N@Z
-     * @hash   805526107
+     * @hash   805587611
      */
     virtual void setIsTrusted(bool);
     /**
      * @vftbl  6
      * @symbol ?isTrusted@ZipPackAccessStrategy@@UEBA_NXZ
-     * @hash   -463008188
+     * @hash   -462946684
      */
     virtual bool isTrusted() const;
     /**
      * @vftbl  7
      * @symbol ?hasAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
-     * @hash   -1057546796
+     * @hash   -1057485292
      */
     virtual bool hasAsset(class Core::Path const &, bool) const;
     /**
      * @vftbl  8
      * @symbol ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
-     * @hash   1121332660
+     * @hash   1121394164
      */
     virtual bool hasFolder(class Core::Path const &) const;
     /**
      * @vftbl  9
      * @symbol ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -33504657
+     * @hash   -33443153
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
      * @vftbl  10
      * @symbol ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   -425249629
+     * @hash   -425188125
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
     /**
      * @vftbl  11
      * @symbol ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1798102064
+     * @hash   1798163568
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &);
     /**
      * @vftbl  12
      * @symbol ?forEachIn@ZipPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-     * @hash   -219484401
+     * @hash   -219422897
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     /**
@@ -125,31 +125,31 @@ public:
     /**
      * @vftbl  16
      * @symbol ?createSubPack@ZipPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-     * @hash   -585553650
+     * @hash   -585492146
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /**
      * @vftbl  19
      * @symbol ?unload@ZipPackAccessStrategy@@UEAAXXZ
-     * @hash   1594962613
+     * @hash   1595024117
      */
     virtual void unload();
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@ZipPackAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   -649275424
+     * @hash   -649213920
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z
-     * @hash   1747772878
+     * @hash   1747834382
      */
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
 //private:
     /**
      * @symbol ?_tryReadFromPendingQueue@ZipPackAccessStrategy@@AEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1670855052
+     * @hash   -1670793548
      */
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
 

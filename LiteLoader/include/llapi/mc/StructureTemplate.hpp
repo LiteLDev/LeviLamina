@@ -89,11 +89,6 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -574935648
-     */
-    MCAPI std::string const & getName() const;
-    /**
      * @symbol ??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
      * @hash   1671214954
      */
@@ -113,6 +108,11 @@ public:
      * @hash   -1556979564
      */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
+    /**
+     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -574935648
+     */
+    MCAPI std::string const & getName() const;
     /**
      * @symbol ?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ
      * @hash   1720585746

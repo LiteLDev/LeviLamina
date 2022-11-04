@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@WaterMovementDescription@@UEBAPEBDXZ
-     * @hash   1333418990
+     * @hash   1333480494
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -1450142987
+     * @hash   -1450081483
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@WaterMovementDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -2021301633
+     * @hash   -2021240129
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0WaterMovementDescription@@QEAA@XZ
-     * @hash   1999828882
+     * @hash   1999890386
      */
     MCAPI WaterMovementDescription();
 

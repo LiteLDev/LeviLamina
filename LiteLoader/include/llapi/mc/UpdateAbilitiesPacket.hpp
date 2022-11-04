@@ -9,7 +9,7 @@
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
-
+#include "SerializedAbilitiesData.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +19,7 @@
 class UpdateAbilitiesPacket : public Packet {
 
 #define AFTER_EXTRA
-
+    SerializedAbilitiesData mData;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEABILITIESPACKET
 public:

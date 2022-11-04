@@ -22,7 +22,7 @@ namespace MaxAutoStepUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getMaxAutoStep@MaxAutoStepUtility@@YAM_N@Z
-     * @hash   -921730964
+     * @hash   -921669460
      */
     MCAPI float getMaxAutoStep(bool);
 

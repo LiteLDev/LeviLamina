@@ -34,6 +34,7 @@
 #include <llapi/mc/Command.hpp>
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <llapi/PlayerInfoAPI.h>
+#include <llapi/mc/Biome.hpp>
 #include "main/SafeGuardRecord.h"
 #include <string>
 #include <vector>
@@ -169,6 +170,9 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getTotalExperience", &PlayerClass::getTotalExperience)
         .instanceFunction("setTotalExperience", &PlayerClass::setTotalExperience)
         .instanceFunction("getXpNeededForNextLevel", &PlayerClass::getXpNeededForNextLevel)
+        .instanceFunction("setAbility", &PlayerClass::setAbility)
+        .instanceFunction("getBiomeId", &PlayerClass::getBiomeId)
+        .instanceFunction("getBiomeName", &PlayerClass::getBiomeName)
 
         .instanceFunction("sendSimpleForm", &PlayerClass::sendSimpleForm)
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
@@ -2779,4 +2783,41 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
         return Number::newNumber(player->distanceToSqr(pos.getVec3()));
     }
     CATCH("Fail in distanceToSqr!")
+}
+
+Local<Value> PlayerClass::setAbility(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        player->setAbility(AbilitiesIndex(args[0].asNumber().toInt32()), args[1].asBoolean().value());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAbility!");
+}
+
+Local<Value> PlayerClass::getBiomeId() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto bio = player->getBiome();
+        return Number::newNumber(bio->getId());
+    }
+    CATCH("Fail in getBiomeId!");
+}
+
+Local<Value> PlayerClass::getBiomeName() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto bio = player->getBiome();
+        return String::newString(bio->getName());
+    }
+    CATCH("Fail in getBiomeName!");
 }

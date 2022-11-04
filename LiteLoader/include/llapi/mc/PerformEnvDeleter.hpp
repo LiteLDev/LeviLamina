@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??RPerformEnvDeleter@@QEAAXPEAUHC_PERFORM_ENV@@@Z
-     * @hash   1449810688
+     * @hash   1449872192
      */
     MCAPI void operator()(struct HC_PERFORM_ENV *);
 

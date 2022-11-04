@@ -254,3 +254,8 @@ bool Actor::hasTag(const string& tag) {
     auto tags = getAllTags();
     return std::find(tags.begin(), tags.end(), tag) != tags.end();
 }
+
+Biome* Actor::getBiome() {
+    auto bs = getBlockSource();
+    return const_cast<Biome*>(&bs->getConstBiome(getPos().toBlockPos()));
+}

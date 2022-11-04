@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@NavigationClimbDescription@@UEBAPEBDXZ
-     * @hash   -239177063
+     * @hash   -239115559
      */
     virtual char const * getJsonName() const;
     /**

@@ -184,7 +184,7 @@ struct FormattedString {
     MCAPI std::string fromHex(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?generateHashMapFromListTag@Util@@YA?AV?$BidirectionalUnorderedMap@H_K@@AEBVListTag@@@Z
-     * @hash   1663363302
+     * @hash   1663424806
      */
     MCAPI class BidirectionalUnorderedMap<int, unsigned __int64> generateHashMapFromListTag(class ListTag const &);
     /**

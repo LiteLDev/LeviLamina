@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?initialize@AddRiderDefinition@@QEAAXAEAVEntityContext@@AEAVAddRiderComponent@@@Z
-     * @hash   334828861
+     * @hash   334890365
      */
     MCAPI void initialize(class EntityContext &, class AddRiderComponent &);
     /**
      * @symbol ?buildSchema@AddRiderDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAddRiderDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -2139885002
+     * @hash   -2139823498
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>> &);
 

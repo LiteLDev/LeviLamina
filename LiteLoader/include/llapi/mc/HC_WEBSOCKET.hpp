@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?AddRef@HC_WEBSOCKET@@QEAAXXZ
-     * @hash   -1597762603
+     * @hash   -1597701099
      */
     MCAPI void AddRef();
     /**
      * @symbol ?Connect@HC_WEBSOCKET@@QEAAJPEBD0PEAUXAsyncBlock@@@Z
-     * @hash   -1177287846
+     * @hash   -1177226342
      */
     MCAPI long Connect(char const *, char const *, struct XAsyncBlock *);
     /**
      * @symbol ?DecRef@HC_WEBSOCKET@@QEAAXXZ
-     * @hash   -578216123
+     * @hash   -578154619
      */
     MCAPI void DecRef();
     /**
      * @symbol ?Disconnect@HC_WEBSOCKET@@QEAAJXZ
-     * @hash   925617723
+     * @hash   925679227
      */
     MCAPI long Disconnect();
     /**
@@ -65,7 +65,7 @@ public:
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const & ProxyUri() const;
     /**
      * @symbol ?Send@HC_WEBSOCKET@@QEAAJPEBDPEAUXAsyncBlock@@@Z
-     * @hash   1270845801
+     * @hash   1270907305
      */
     MCAPI long Send(char const *, struct XAsyncBlock *);
     /**
@@ -75,17 +75,17 @@ public:
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const & Uri() const;
     /**
      * @symbol ?BinaryMessageFunc@HC_WEBSOCKET@@SAXPEAU1@PEBEIPEAX@Z
-     * @hash   -1539677532
+     * @hash   -1539616028
      */
     MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET *, unsigned char const *, unsigned int, void *);
     /**
      * @symbol ?CloseFunc@HC_WEBSOCKET@@SAXPEAU1@W4HCWebSocketCloseStatus@@PEAX@Z
-     * @hash   441065392
+     * @hash   441126896
      */
     MCAPI static void CloseFunc(struct HC_WEBSOCKET *, enum class HCWebSocketCloseStatus, void *);
     /**
      * @symbol ?MessageFunc@HC_WEBSOCKET@@SAXPEAU1@PEBDPEAX@Z
-     * @hash   -1014750419
+     * @hash   -1014688915
      */
     MCAPI static void MessageFunc(struct HC_WEBSOCKET *, char const *, void *);
 

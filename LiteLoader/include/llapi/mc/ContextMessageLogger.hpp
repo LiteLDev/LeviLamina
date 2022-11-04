@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?log@ContextMessageLogger@@QEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-     * @hash   -2023566371
+     * @hash   -2023504867
      */
     MCAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**

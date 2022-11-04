@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?send@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z
-     * @hash   -1542498059
+     * @hash   -1542436555
      */
     virtual void send(class Packet &);
     /**
      * @vftbl  2
      * @symbol ?sendToServer@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z
-     * @hash   -311818409
+     * @hash   -311756905
      */
     virtual void sendToServer(class Packet &);
     /**
      * @vftbl  3
      * @symbol ?sendToClient@LoopbackPacketSender@@UEAAXPEBVUserEntityIdentifierComponent@@AEBVPacket@@@Z
-     * @hash   -189235161
+     * @hash   -189173657
      */
     virtual void sendToClient(class UserEntityIdentifierComponent const *, class Packet const &);
     /**
      * @vftbl  4
      * @symbol ?sendToClient@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
-     * @hash   1585856288
+     * @hash   1585917792
      */
     virtual void sendToClient(class NetworkIdentifier const &, class Packet const &, enum class SubClientId);
     /**
      * @vftbl  5
      * @symbol ?sendToClients@LoopbackPacketSender@@UEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
-     * @hash   -569376464
+     * @hash   -569314960
      */
     virtual void sendToClients(std::vector<struct NetworkIdentifierWithSubId> const &, class Packet const &);
     /**
      * @vftbl  6
      * @symbol ?sendBroadcast@LoopbackPacketSender@@UEAAXAEBVPacket@@@Z
-     * @hash   2017702289
+     * @hash   2017763793
      */
     virtual void sendBroadcast(class Packet const &);
     /**
      * @vftbl  7
      * @symbol ?sendBroadcast@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBVPacket@@@Z
-     * @hash   695537919
+     * @hash   695599423
      */
     virtual void sendBroadcast(class NetworkIdentifier const &, enum class SubClientId, class Packet const &);
     /**
      * @vftbl  8
      * @symbol ?flush@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-     * @hash   1637872793
+     * @hash   1637934297
      */
     virtual void flush(class NetworkIdentifier const &, class std::function<void (void)> &&);
     /**
      * @symbol ??0LoopbackPacketSender@@QEAA@W4SubClientId@@AEAVNetworkHandler@@@Z
-     * @hash   1717462018
+     * @hash   1717523522
      */
     MCAPI LoopbackPacketSender(enum class SubClientId, class NetworkHandler &);
     /**
      * @symbol ?addLoopbackCallback@LoopbackPacketSender@@QEAAXAEAVNetEventCallback@@@Z
-     * @hash   306758132
+     * @hash   306819636
      */
     MCAPI void addLoopbackCallback(class NetEventCallback &);
     /**
      * @symbol ?removeLoopbackCallback@LoopbackPacketSender@@QEAAXAEAVNetEventCallback@@@Z
-     * @hash   -305387168
+     * @hash   -305325664
      */
     MCAPI void removeLoopbackCallback(class NetEventCallback &);
     /**

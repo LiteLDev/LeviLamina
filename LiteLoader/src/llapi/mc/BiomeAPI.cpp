@@ -2,13 +2,13 @@
 #include "llapi/mc/BiomeRegistry.hpp"
 #include "llapi/mc/VanillaBiomes.hpp"
 #include "llapi/mc/Level.hpp"
-
+#include "llapi/mc/HashedString.hpp"
 int Biome::getId() const {
     return dAccess<int, 136>(this);
 }
 
 std::string const& Biome::getName() const {
-    return dAccess<std::string, 8>(this);
+    return dAccess<HashedString, 8>(this).getString();
 }
 
 Biome* Biome::fromId(int id) {

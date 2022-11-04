@@ -39,22 +39,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
     /**
      * @symbol ?containerContentChanged@SimpleSparseContainer@@EEAAXH@Z
-     * @hash   615122937
+     * @hash   615184441
      */
     MCVAPI void containerContentChanged(int);
     /**
      * @symbol ?getContainerSize@SimpleSparseContainer@@UEBAHXZ
-     * @hash   260346712
+     * @hash   260408216
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@SimpleSparseContainer@@UEBAAEBVItemStack@@H@Z
-     * @hash   -19720397
+     * @hash   -19658893
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@SimpleSparseContainer@@UEBAHXZ
-     * @hash   520627863
+     * @hash   520689367
      */
     MCVAPI int getMaxStackSize() const;
     /**
@@ -64,40 +64,40 @@ public:
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@SimpleSparseContainer@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -435772510
+     * @hash   -435711006
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@SimpleSparseContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   1602932511
+     * @hash   1602994015
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@SimpleSparseContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1757612065
+     * @hash   -1757550561
      */
     MCVAPI void stopOpen(class Player &);
 #endif
     /**
      * @symbol ??0SimpleSparseContainer@@QEAA@AEAVContainer@@W4SparseContainerBackingSetType@@V?$unique_ptr@VISparseContainerSetListener@@U?$default_delete@VISparseContainerSetListener@@@std@@@std@@V?$unique_ptr@VIPlayerContainerSetter@@U?$default_delete@VIPlayerContainerSetter@@@std@@@4@@Z
-     * @hash   -1981301220
+     * @hash   -1981239716
      */
     MCAPI SimpleSparseContainer(class Container &, enum class SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
     /**
      * @symbol ?clearItem@SimpleSparseContainer@@QEAAXH@Z
-     * @hash   1471830070
+     * @hash   1471891574
      */
     MCAPI void clearItem(int);
     /**
      * @symbol ?pushAllToBackingContainer@SimpleSparseContainer@@QEAAXXZ
-     * @hash   -830265355
+     * @hash   -830203851
      */
     MCAPI void pushAllToBackingContainer();
 
 //private:
     /**
      * @symbol ?_setBackingContainerSlot@SimpleSparseContainer@@AEAAXHAEBVItemStack@@@Z
-     * @hash   -1793574935
+     * @hash   -1793513431
      */
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 

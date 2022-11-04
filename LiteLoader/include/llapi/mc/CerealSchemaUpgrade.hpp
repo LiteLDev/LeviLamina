@@ -47,12 +47,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &) const;
     /**
      * @symbol ??0CerealSchemaUpgrade@@QEAA@VSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -1287759250
+     * @hash   -1287697746
      */
     MCAPI CerealSchemaUpgrade(class SemVersion, std::string const &, std::string const &);
     /**
      * @symbol ?bindLegacySchema@CerealSchemaUpgrade@@QEAAXAEAVSchemaFactory@reflection@@@Z
-     * @hash   509604576
+     * @hash   509666080
      */
     MCAPI void bindLegacySchema(class reflection::SchemaFactory &);
     /**
@@ -62,7 +62,7 @@ public:
     MCAPI class SemVersion const & getPreviousVersion() const;
     /**
      * @symbol ?getPreviousVersionString@CerealSchemaUpgrade@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   979449364
+     * @hash   979510868
      */
     MCAPI std::string const & getPreviousVersionString() const;
     /**
@@ -77,12 +77,12 @@ public:
     MCAPI class SemVersion const & getTargetVersion() const;
     /**
      * @symbol ?registerLegacySchema@CerealSchemaUpgrade@@QEAAXXZ
-     * @hash   -688001811
+     * @hash   -687940307
      */
     MCAPI void registerLegacySchema();
     /**
      * @symbol ?setPreviousVersion@CerealSchemaUpgrade@@QEAAXAEBVSemVersion@@@Z
-     * @hash   -1869193132
+     * @hash   -1869131628
      */
     MCAPI void setPreviousVersion(class SemVersion const &);
 

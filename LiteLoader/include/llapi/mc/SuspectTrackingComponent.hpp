@@ -40,12 +40,12 @@ public:
     MCAPI class std::optional<class BlockPos> getSuspiciousPos() const;
     /**
      * @symbol ?getTicksSinceLastSuspect@SuspectTrackingComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
-     * @hash   1882826854
+     * @hash   1882888358
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     /**
      * @symbol ?setSuspiciousPos@SuspectTrackingComponent@@QEAAXV?$optional@VBlockPos@@@std@@UTick@@@Z
-     * @hash   2143158748
+     * @hash   2143220252
      */
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
 

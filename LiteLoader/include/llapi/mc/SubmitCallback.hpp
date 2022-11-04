@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?Register@SubmitCallback@@QEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
-     * @hash   1001175050
+     * @hash   1001236554
      */
     MCAPI long Register(void *, void ( *)(void *, struct XTaskQueueObject *, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     /**
      * @symbol ?Unregister@SubmitCallback@@QEAAXUXTaskQueueRegistrationToken@@@Z
-     * @hash   76801310
+     * @hash   76862814
      */
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
 

@@ -25,8 +25,14 @@
 #include "llapi/mc/SharedConstants.hpp"
 #include "llapi/mc/PropertiesSettings.hpp"
 #include "llapi/ScheduleAPI.h"
-#include <Windows.h>
 
+#include "llapi/mc/UpdateAdventureSettingsPacket.hpp"
+#include "llapi/mc/UpdateAbilitiesPacket.hpp"
+#include "llapi/mc/LayeredAbilities.hpp"
+#include "llapi/mc/RequestAbilityPacket.hpp"
+#include "llapi/mc/AdventureSettings.hpp"
+
+#include <Windows.h>
 using namespace ll;
 
 // Fix the listening port twice
@@ -401,4 +407,37 @@ THook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z", __int64 a1
         }
     }
     return original(a1, a2);
+}
+
+//From https://github.com/dreamguxiang/BETweaker
+enum class AbilitiesLayer;
+enum class SubClientId;
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
+              ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt) {
+    original(this, nid, pkt);
+    if (ll::globalConfig.enableFixAbility) {
+        auto index = pkt.getAbility();
+        if (index == AbilitiesIndex::Flying) {
+            auto sp = _getServerPlayer(nid, (SubClientId)pkt.clientSubId);
+            if (!sp)
+                return;
+            if (!sp->getUserEntityIdentifierComponent())
+                return;
+            bool flying;
+            if (!pkt.tryGetBool(flying))
+                return;
+            auto abilities = sp->getAbilities();
+            auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
+            flying = flying && mayFly;
+            Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+            ab.setBool(0);
+            if (flying)
+                ab.setBool(1);
+            UpdateAbilitiesPacket pkt(sp->getUniqueID(), *abilities);
+            auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
+            abilities->setAbility(AbilitiesIndex::Flying, flying);
+            sp->sendNetworkPacket(pkt2);
+            sp->sendNetworkPacket(pkt);
+        }
+    }
 }

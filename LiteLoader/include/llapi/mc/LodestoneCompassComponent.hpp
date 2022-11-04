@@ -37,12 +37,12 @@ public:
     MCAPI LodestoneCompassComponent(class LodestoneCompassComponent &&);
     /**
      * @symbol ?getAnimationFrame@LodestoneCompassComponent@@QEAAHAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   1825120955
+     * @hash   1825182459
      */
     MCAPI int getAnimationFrame(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, class BlockPos const &, class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?initialize@LodestoneCompassComponent@@QEAAXAEBVPositionTrackingId@@@Z
-     * @hash   854747306
+     * @hash   854808810
      */
     MCAPI void initialize(class PositionTrackingId const &);
     /**
@@ -52,7 +52,7 @@ public:
     MCAPI class LodestoneCompassComponent & operator=(class LodestoneCompassComponent &&);
     /**
      * @symbol ?setTrackOnlyInSameDimension@LodestoneCompassComponent@@QEAAXAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
-     * @hash   1675059723
+     * @hash   1675121227
      */
     MCAPI void setTrackOnlyInSameDimension(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
     /**
@@ -62,19 +62,19 @@ public:
     MCAPI ~LodestoneCompassComponent();
     /**
      * @symbol ?getSpinningAnimationFrame@LodestoneCompassComponent@@SAHXZ
-     * @hash   -1501929630
+     * @hash   -1501868126
      */
     MCAPI static int getSpinningAnimationFrame();
     /**
      * @symbol ?makeCalculatorId@LodestoneCompassComponent@@SA?AV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBUActorUniqueID@@@Z
-     * @hash   56298093
+     * @hash   56359597
      */
     MCAPI static class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> makeCalculatorId(struct ActorUniqueID const &);
 
 //private:
     /**
      * @symbol ?_findCalculator@LodestoneCompassComponent@@AEAAPEAVLodestoneCompassComponentCalculator@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
-     * @hash   216288495
+     * @hash   216349999
      */
     MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
 

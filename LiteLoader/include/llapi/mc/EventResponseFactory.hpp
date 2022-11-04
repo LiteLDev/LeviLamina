@@ -38,7 +38,7 @@ public:
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     /**
      * @symbol ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-     * @hash   957060243
+     * @hash   957121747
      */
     MCAPI void initSchema(std::string const &, class SemVersion const &);
 

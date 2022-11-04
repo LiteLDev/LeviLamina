@@ -42,262 +42,262 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isString@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -483852977
+     * @hash   -483791473
      */
     virtual bool isString() const;
     /**
      * @vftbl  3
      * @symbol ?isObject@NBTSchemaReader@@UEBA_NXZ
-     * @hash   206764813
+     * @hash   206826317
      */
     virtual bool isObject() const;
     /**
      * @vftbl  4
      * @symbol ?isArray@NBTSchemaReader@@UEBA_NXZ
-     * @hash   588333571
+     * @hash   588395075
      */
     virtual bool isArray() const;
     /**
      * @vftbl  5
-     * @hash   2032984773
+     * @hash   2033046277
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   2033908294
+     * @hash   2033969798
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   2034785687
+     * @hash   2034847191
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   2035709208
+     * @hash   2035770712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   2036586601
+     * @hash   2036648105
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -1242280317
+     * @hash   -1242218813
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -1241495180
+     * @hash   -1241433676
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -1240571659
+     * @hash   -1240510155
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -1239648138
+     * @hash   -1239586634
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?isFloat@NBTSchemaReader@@UEBA_NXZ
-     * @hash   965057910
+     * @hash   965119414
      */
     virtual bool isFloat() const;
     /**
      * @vftbl  15
      * @symbol ?isDouble@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -1783597073
+     * @hash   -1783535569
      */
     virtual bool isDouble() const;
     /**
      * @vftbl  16
      * @symbol ?asBool@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -749567936
+     * @hash   -749506432
      */
     virtual bool asBool() const;
     /**
      * @vftbl  17
-     * @hash   -1236676726
+     * @hash   -1236615222
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
-     * @hash   -1235753205
+     * @hash   -1235691701
      */
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -1234860436
+     * @hash   -1234798932
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -1214542974
+     * @hash   -1214481470
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
-     * @hash   -1213650205
+     * @hash   -1213588701
      */
     virtual void __unk_vfn_21();
     /**
      * @vftbl  22
-     * @hash   -1212726684
+     * @hash   -1212665180
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -1211710907
+     * @hash   -1211649403
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  24
-     * @hash   -1210787386
+     * @hash   -1210725882
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
      * @symbol ?asFloat@NBTSchemaReader@@UEBAMXZ
-     * @hash   -95537740
+     * @hash   -95476236
      */
     virtual float asFloat() const;
     /**
      * @vftbl  26
      * @symbol ?asDouble@NBTSchemaReader@@UEBANXZ
-     * @hash   -1879948152
+     * @hash   -1879886648
      */
     virtual double asDouble() const;
     /**
      * @vftbl  27
      * @symbol ?asString@NBTSchemaReader@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1713737241
+     * @hash   1713798745
      */
     virtual std::string asString() const;
     /**
      * @vftbl  28
      * @symbol ?members@NBTSchemaReader@@UEBA_KXZ
-     * @hash   -1566877547
+     * @hash   -1566816043
      */
     virtual unsigned __int64 members() const;
     /**
      * @vftbl  29
      * @symbol ?length@NBTSchemaReader@@UEBA_KXZ
-     * @hash   -1630147310
+     * @hash   -1630085806
      */
     virtual unsigned __int64 length() const;
     /**
      * @vftbl  30
      * @symbol ?pushMember@NBTSchemaReader@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-     * @hash   1053398553
+     * @hash   1053460057
      */
     virtual std::string pushMember(unsigned __int64);
     /**
      * @vftbl  31
      * @symbol ?pushElement@NBTSchemaReader@@UEAAX_K@Z
-     * @hash   903690303
+     * @hash   903751807
      */
     virtual void pushElement(unsigned __int64);
     /**
      * @vftbl  32
      * @symbol ?pop@NBTSchemaReader@@UEAAXXZ
-     * @hash   -117502828
+     * @hash   -117441324
      */
     virtual void pop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
      * @symbol ?asInt16@NBTSchemaReader@@UEBAFXZ
-     * @hash   -4490276
+     * @hash   -4428772
      */
     MCVAPI short asInt16() const;
     /**
      * @symbol ?asInt32@NBTSchemaReader@@UEBAHXZ
-     * @hash   1846054243
+     * @hash   1846115747
      */
     MCVAPI int asInt32() const;
     /**
      * @symbol ?asInt64@NBTSchemaReader@@UEBA_JXZ
-     * @hash   1787333452
+     * @hash   1787394956
      */
     MCVAPI __int64 asInt64() const;
     /**
      * @symbol ?asInt8@NBTSchemaReader@@UEBACXZ
-     * @hash   -1243288169
+     * @hash   -1243226665
      */
     MCVAPI signed char asInt8() const;
     /**
      * @symbol ?asUInt16@NBTSchemaReader@@UEBAGXZ
-     * @hash   546915990
+     * @hash   546977494
      */
     MCVAPI unsigned short asUInt16() const;
     /**
      * @symbol ?asUInt32@NBTSchemaReader@@UEBAIXZ
-     * @hash   -2056540451
+     * @hash   -2056478947
      */
     MCVAPI unsigned int asUInt32() const;
     /**
      * @symbol ?asUInt64@NBTSchemaReader@@UEBA_KXZ
-     * @hash   278038150
+     * @hash   278099654
      */
     MCVAPI unsigned __int64 asUInt64() const;
     /**
      * @symbol ?asUInt8@NBTSchemaReader@@UEBAEXZ
-     * @hash   2115403521
+     * @hash   2115465025
      */
     MCVAPI unsigned char asUInt8() const;
     /**
      * @symbol ?isBool@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -1511261192
+     * @hash   -1511199688
      */
     MCVAPI bool isBool() const;
     /**
      * @symbol ?isInt16@NBTSchemaReader@@UEBA_NXZ
-     * @hash   859410590
+     * @hash   859472094
      */
     MCVAPI bool isInt16() const;
     /**
      * @symbol ?isInt32@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -1037758648
+     * @hash   -1037697144
      */
     MCVAPI bool isInt32() const;
     /**
      * @symbol ?isInt64@NBTSchemaReader@@UEBA_NXZ
-     * @hash   1778872375
+     * @hash   1778933879
      */
     MCVAPI bool isInt64() const;
     /**
      * @symbol ?isInt8@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -1364541545
+     * @hash   -1364480041
      */
     MCVAPI bool isInt8() const;
     /**
      * @symbol ?isUInt16@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -170832355
+     * @hash   -170770851
      */
     MCVAPI bool isUInt16() const;
     /**
      * @symbol ?isUInt32@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -2068001593
+     * @hash   -2067940089
      */
     MCVAPI bool isUInt32() const;
     /**
      * @symbol ?isUInt64@NBTSchemaReader@@UEBA_NXZ
-     * @hash   748629430
+     * @hash   748690934
      */
     MCVAPI bool isUInt64() const;
     /**
      * @symbol ?isUInt8@NBTSchemaReader@@UEBA_NXZ
-     * @hash   -982133192
+     * @hash   -982071688
      */
     MCVAPI bool isUInt8() const;
 #endif
     /**
      * @symbol ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-     * @hash   -639617760
+     * @hash   -639556256
      */
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
 

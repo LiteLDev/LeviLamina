@@ -97,6 +97,9 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
              {"ClientChunkPreGeneration", {
                 {"enabled", conf.enableClientChunkPreGeneration}
             }},
+            {"FixAbility", {
+                {"enabled", conf.enableFixAbility}
+            }},
         }}
     };
     // clang-format on
@@ -216,6 +219,10 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.find("ClientChunkPreGeneration") != modules.end()) {
             const nlohmann::json& setting = modules.at("ClientChunkPreGeneration");
             conf.enableClientChunkPreGeneration = setting.value("enabled", true);
+        }
+        if (modules.find("FixAbility") != modules.end()) {
+            const nlohmann::json& setting = modules.at("FixAbility");
+            conf.enableFixAbility = setting.value("enabled", true);
         }
     }
 }

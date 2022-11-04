@@ -33,27 +33,27 @@ public:
 public:
     /**
      * @symbol ?create@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEAVResourceLocation@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackReport@@_N@Z
-     * @hash   -1848970962
+     * @hash   -1848909458
      */
     MCAPI static std::unique_ptr<class PackAccessStrategy> create(class ResourceLocation &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackReport &, bool);
     /**
      * @symbol ?createForDirectory@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@_N@Z
-     * @hash   936309938
+     * @hash   936371442
      */
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForDirectory(class ResourceLocation const &, bool);
     /**
      * @symbol ?createForEncrypted@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@_N@Z
-     * @hash   1760667884
+     * @hash   1760729388
      */
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(class ResourceLocation const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, bool);
     /**
      * @symbol ?createForEncryptedZip@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -1603724912
+     * @hash   -1603663408
      */
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     /**
      * @symbol ?createForZip@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@_N@Z
-     * @hash   -1978497998
+     * @hash   -1978436494
      */
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const &, bool);
 
