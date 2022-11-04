@@ -105,7 +105,7 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
 
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2200);
+        return dAccess<std::string>(this, 2160);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
