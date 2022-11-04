@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0WaterMovementComponent@@QEAA@XZ
-     * @hash   -1824200221
+     * @hash   -1824138717
      */
     MCAPI WaterMovementComponent();
     /**
@@ -41,7 +41,7 @@ public:
     MCAPI float getDragFactor() const;
     /**
      * @symbol ?initFromDefinition@WaterMovementComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -64278598
+     * @hash   -64217094
      */
     MCAPI void initFromDefinition(class Actor &);
     /**

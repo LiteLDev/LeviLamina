@@ -8,7 +8,7 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "LayeredAbilities.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -18,7 +18,8 @@
 struct SerializedAbilitiesData {
 
 #define AFTER_EXTRA
-
+    ActorUniqueID mUid;
+    LayeredAbilities mAbilities;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA
 public:

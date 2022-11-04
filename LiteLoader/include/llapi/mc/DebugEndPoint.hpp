@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?initializeContentLogging@DebugEndPoint@@QEAAXAEAVResourcePackManager@@AEBVPath@Core@@@Z
-     * @hash   1218683649
+     * @hash   1218745153
      */
     MCAPI void initializeContentLogging(class ResourcePackManager &, class Core::Path const &);
 

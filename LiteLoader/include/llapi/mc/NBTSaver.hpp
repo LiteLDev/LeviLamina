@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
-     * @hash   1106222566
+     * @hash   1106284070
      */
     MCAPI class CompoundTag getSavedCompoundTag();
 

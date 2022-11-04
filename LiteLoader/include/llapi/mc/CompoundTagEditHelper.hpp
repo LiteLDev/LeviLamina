@@ -32,24 +32,24 @@ public:
 public:
     /**
      * @symbol ?getParent@CompoundTagEditHelper@@QEBAPEBVCompoundTag@@XZ
-     * @hash   2042090465
+     * @hash   2042151969
      */
     MCAPI class CompoundTag const * getParent() const;
     /**
      * @symbol ?replaceWith@CompoundTagEditHelper@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@3@@Z
-     * @hash   1736149683
+     * @hash   1736211187
      */
     MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
     /**
      * @symbol ??1CompoundTagEditHelper@@QEAA@XZ
-     * @hash   -1291706221
+     * @hash   -1291644717
      */
     MCAPI ~CompoundTagEditHelper();
 
 //private:
     /**
      * @symbol ?pushChild@CompoundTagEditHelper@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1463911451
+     * @hash   -1463849947
      */
     MCAPI void pushChild(std::string const &);
 

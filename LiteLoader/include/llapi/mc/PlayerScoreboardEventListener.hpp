@@ -53,17 +53,17 @@ public:
     /**
      * @vftbl  4
      * @symbol ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -809167670
+     * @hash   -809106166
      */
     virtual enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?getPlayerSubscriptions@PlayerScoreboardEventListener@@QEAAAEAVSubscribedObjectives@@AEBUScoreboardId@@AEBVPlayer@@@Z
-     * @hash   -1748863794
+     * @hash   -1748802290
      */
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     /**
      * @symbol ?removePlayerSubscriptions@PlayerScoreboardEventListener@@QEAAXAEBUScoreboardId@@@Z
-     * @hash   1333065068
+     * @hash   1333126572
      */
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
 

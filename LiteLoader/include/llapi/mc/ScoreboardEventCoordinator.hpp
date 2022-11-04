@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?sendOnObjectiveAdded@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1833281740
+     * @hash   1833343244
      */
     MCAPI void sendOnObjectiveAdded(std::string const &);
     /**
      * @symbol ?sendOnObjectiveRemoved@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   276884860
+     * @hash   276946364
      */
     MCAPI void sendOnObjectiveRemoved(std::string const &);
     /**
      * @symbol ?sendOnScoreChanged@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -784249706
+     * @hash   -784188202
      */
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?sendOnScoreboardIdentityRemoved@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@@Z
-     * @hash   -1613974674
+     * @hash   -1613913170
      */
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);
 

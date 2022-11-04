@@ -37,7 +37,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1326799774
+     * @hash   -1326738270
      */
     MCAPI void reloadComponent(class Actor &);
 

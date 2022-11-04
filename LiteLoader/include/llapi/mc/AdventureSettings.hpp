@@ -18,7 +18,12 @@
 struct AdventureSettings {
 
 #define AFTER_EXTRA
-
+public:
+    bool mNoPvM;
+    bool mNoMvP;
+    bool mImmutableWorld;
+    bool mShowNameTags;
+    bool mAutoJump;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGS
 public:

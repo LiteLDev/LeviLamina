@@ -36,24 +36,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onSignalReceive@WardenVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
-     * @hash   1790454031
+     * @hash   1790515535
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
      * @vftbl  2
      * @symbol ?isValidVibration@WardenVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
-     * @hash   -1612923241
+     * @hash   -1612861737
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
      * @vftbl  3
      * @symbol ?shouldListen@WardenVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-     * @hash   -1579318938
+     * @hash   -1579257434
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
     /**
      * @symbol ??0WardenVibrationConfig@@QEAA@AEAVActor@@G@Z
-     * @hash   -1886043842
+     * @hash   -1885982338
      */
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
 

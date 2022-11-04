@@ -37,22 +37,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?what@DebugAssertException@@UEBAPEBDXZ
-     * @hash   259177225
+     * @hash   259238729
      */
     virtual char const * what() const;
     /**
      * @symbol ??0DebugAssertException@@QEAA@PEBD00H00@Z
-     * @hash   638741197
+     * @hash   638802701
      */
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
     /**
      * @symbol ??0DebugAssertException@@QEAA@AEBV0@@Z
-     * @hash   1535412545
+     * @hash   1535474049
      */
     MCAPI DebugAssertException(class DebugAssertException const &);
     /**
      * @symbol ?isEnabled@DebugAssertException@@SA_NXZ
-     * @hash   -630803428
+     * @hash   -630741924
      */
     MCAPI static bool isEnabled();
 

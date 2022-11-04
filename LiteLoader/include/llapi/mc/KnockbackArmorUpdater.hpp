@@ -169,7 +169,7 @@ public:
     /**
      * @vftbl  27
      * @symbol ?onEvent@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
-     * @hash   116994919
+     * @hash   117056423
      */
     virtual enum class EventResult onEvent(struct ActorEquippedArmorEvent const &);
 

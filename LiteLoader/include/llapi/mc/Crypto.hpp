@@ -32,7 +32,7 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?init@Crypto@@YAXXZ
-     * @hash   -827244834
+     * @hash   -827183330
      */
     MCAPI void init();
 

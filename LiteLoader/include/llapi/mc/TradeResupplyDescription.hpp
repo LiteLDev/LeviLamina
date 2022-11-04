@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TradeResupplyDescription@@UEBAPEBDXZ
-     * @hash   1199516094
+     * @hash   1199577598
      */
     virtual char const * getJsonName() const;
     /**

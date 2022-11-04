@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?addDamageCondition@HurtOnConditionDefinition@@QEAAXAEBUDamageCondition@@@Z
-     * @hash   758694054
+     * @hash   758755558
      */
     MCAPI void addDamageCondition(struct DamageCondition const &);
     /**
      * @symbol ?buildSchema@HurtOnConditionDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHurtOnConditionDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -744108238
+     * @hash   -744046734
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition>> &);
 

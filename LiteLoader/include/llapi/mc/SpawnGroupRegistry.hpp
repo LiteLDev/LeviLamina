@@ -41,13 +41,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRootKey@SpawnGroupRegistry@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1331245048
+     * @hash   1331306552
      */
     virtual std::string const & getRootKey();
     /**
      * @vftbl  2
      * @symbol ?getFileType@SpawnGroupRegistry@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1731824813
+     * @hash   1731886317
      */
     virtual std::string const & getFileType();
     /**
@@ -59,17 +59,17 @@ public:
     /**
      * @vftbl  4
      * @symbol ?readResourceFiles@SpawnGroupRegistry@@MEAAXAEAVResourcePackManager@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@@std@@@2@@std@@@Z
-     * @hash   2019196757
+     * @hash   2019258261
      */
     virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
     /**
      * @symbol ??0SpawnGroupRegistry@@QEAA@AEAVResourcePackManager@@@Z
-     * @hash   123954176
+     * @hash   124015680
      */
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
     /**
      * @symbol ?getSpawnGroup@SpawnGroupRegistry@@QEBAPEBVSpawnGroupData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2064113554
+     * @hash   2064175058
      */
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
 

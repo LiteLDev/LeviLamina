@@ -44,6 +44,8 @@ public:
     Local<Value> getInWaterOrRain();
     Local<Value> getInWorld();
     Local<Value> getSpeed();
+    Local<Value> getBiomeName();
+    Local<Value> getBiomeId();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> isInvisible();

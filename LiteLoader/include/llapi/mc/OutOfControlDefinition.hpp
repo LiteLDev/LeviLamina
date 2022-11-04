@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
-     * @hash   -1101289175
+     * @hash   -1101227671
      */
     MCAPI void initialize(class EntityContext &, class OutOfControlComponent &) const;
     /**
      * @symbol ?uninitialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
-     * @hash   -550757063
+     * @hash   -550695559
      */
     MCAPI void uninitialize(class EntityContext &, class OutOfControlComponent &) const;
     /**

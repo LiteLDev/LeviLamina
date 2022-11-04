@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?Release@AsyncState@@QEAAXXZ
-     * @hash   -103463933
+     * @hash   -103402429
      */
     MCAPI void Release();
 

@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @symbol ??0Pack@@QEAA@V?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@V?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@2@V?$unique_ptr@VSubpackInfoCollection@@U?$default_delete@VSubpackInfoCollection@@@std@@@2@V?$unique_ptr@VPackMetadata@@U?$default_delete@VPackMetadata@@@std@@@2@@Z
-     * @hash   659505026
+     * @hash   659566530
      */
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     /**
@@ -64,47 +64,47 @@ public:
     MCAPI class SubpackInfoCollection * getSubpackInfoStack();
     /**
      * @symbol ?move@Pack@@QEAAX$$QEAV1@@Z
-     * @hash   106235756
+     * @hash   106297260
      */
     MCAPI void move(class Pack &&);
     /**
      * @symbol ?notifyDeleted@Pack@@QEAAXXZ
-     * @hash   -1794385837
+     * @hash   -1794324333
      */
     MCAPI void notifyDeleted();
     /**
      * @symbol ?notifyUpdated@Pack@@QEAAXXZ
-     * @hash   -1149652029
+     * @hash   -1149590525
      */
     MCAPI void notifyUpdated();
     /**
      * @symbol ?registerPackDeletedCallback@Pack@@QEAAXPEAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-     * @hash   -1406771099
+     * @hash   -1406709595
      */
     MCAPI void registerPackDeletedCallback(void *, class std::function<void (class Pack &)>);
     /**
      * @symbol ?registerPackUpdatedCallback@Pack@@QEAAXPEAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-     * @hash   -912419435
+     * @hash   -912357931
      */
     MCAPI void registerPackUpdatedCallback(void *, class std::function<void (class Pack &)>);
     /**
      * @symbol ?unregisterPackDeletedCallback@Pack@@QEAAXPEAX@Z
-     * @hash   1993805543
+     * @hash   1993867047
      */
     MCAPI void unregisterPackDeletedCallback(void *);
     /**
      * @symbol ?unregisterPackUpdatedCallback@Pack@@QEAAXPEAX@Z
-     * @hash   703489987
+     * @hash   703551491
      */
     MCAPI void unregisterPackUpdatedCallback(void *);
     /**
      * @symbol ?createPack@Pack@@SA?AV?$unique_ptr@VPack@@U?$default_delete@VPack@@@std@@@std@@AEBVResourceLocation@@W4PackType@@W4PackOrigin@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@PEAVPackSourceReport@@@Z
-     * @hash   322294443
+     * @hash   322355947
      */
     MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum class PackType, enum class PackOrigin, class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceReport *);
     /**
      * @symbol ?createPackMetadata@Pack@@SA?AV?$unique_ptr@VPackMetadata@@U?$default_delete@VPackMetadata@@@std@@@std@@W4PackType@@AEAVPackManifest@@AEBVPackAccessStrategy@@AEAVPackReport@@@Z
-     * @hash   -290860408
+     * @hash   -290798904
      */
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum class PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 

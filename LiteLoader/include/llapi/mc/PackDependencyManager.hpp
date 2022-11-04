@@ -24,17 +24,17 @@ namespace PackDependencyManager {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getMissingDependencyIdentities@PackDependencyManager@@YA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@V?$not_null@PEBVPackSource@@@gsl@@AEBVPackManifest@@@Z
-     * @hash   1366559194
+     * @hash   1366620698
      */
     MCAPI std::vector<struct PackIdVersion> getMissingDependencyIdentities(class gsl::not_null<class PackSource const *>, class PackManifest const &);
     /**
      * @symbol ?hasMissingDependencies@PackDependencyManager@@YA_NV?$not_null@PEBVPackSource@@@gsl@@AEBVPackManifest@@@Z
-     * @hash   525355554
+     * @hash   525417058
      */
     MCAPI bool hasMissingDependencies(class gsl::not_null<class PackSource const *>, class PackManifest const &);
     /**
      * @symbol ?isNativeModule@PackDependencyManager@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -286366634
+     * @hash   -286305130
      */
     MCAPI bool isNativeModule(std::string const &);
 

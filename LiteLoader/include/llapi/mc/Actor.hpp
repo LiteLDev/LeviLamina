@@ -24,6 +24,8 @@ class Vec2;
 class BlockInstance;
 class ItemStack;
 class BlockSource;
+class Biome;
+
 enum class FaceID : char;
 
 #undef BEFORE_EXTRA
@@ -71,6 +73,7 @@ public:
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
     LIAPI float quickEvalMolangScript(const string& expression);
+    LIAPI Biome* getBiome();
     //LIAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
 
     inline Vec3 getPos()

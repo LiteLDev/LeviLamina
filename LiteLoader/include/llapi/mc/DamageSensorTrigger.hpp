@@ -36,7 +36,7 @@ public:
     MCAPI DamageSensorTrigger(struct DamageSensorTrigger const &);
     /**
      * @symbol ?setCause@DamageSensorTrigger@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1784147104
+     * @hash   1784208608
      */
     MCAPI void setCause(std::string const &);
     /**

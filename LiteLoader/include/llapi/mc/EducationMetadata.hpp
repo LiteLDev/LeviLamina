@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ??0EducationMetadata@@QEAA@XZ
-     * @hash   1971052227
+     * @hash   1971113731
      */
     MCAPI EducationMetadata();
     /**
