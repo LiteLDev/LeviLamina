@@ -36,7 +36,7 @@ public:
     MCAPI HitboxComponent(class HitboxComponent const &);
     /**
      * @symbol ?fromCompoundTag@HitboxComponent@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   469640552
+     * @hash   469702056
      */
     MCAPI void fromCompoundTag(class CompoundTag const &);
     /**
@@ -46,7 +46,7 @@ public:
     MCAPI class HitboxComponent & operator=(class HitboxComponent &&);
     /**
      * @symbol ?toCompoundTag@HitboxComponent@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   -1222741698
+     * @hash   -1222680194
      */
     MCAPI void toCompoundTag(class CompoundTag &);
     /**

@@ -22,17 +22,17 @@ namespace asio {
 #undef AFTER_EXTRA
     /**
      * @symbol ?asio_handler_allocate@asio@@YAPEAX_KZZ
-     * @hash   -410650231
+     * @hash   -410588727
      */
     MCAPI void * asio_handler_allocate(unsigned __int64, ...);
     /**
      * @symbol ?asio_handler_deallocate@asio@@YAXPEAX_KZZ
-     * @hash   -1604442279
+     * @hash   -1604380775
      */
     MCAPI void asio_handler_deallocate(void *, unsigned __int64, ...);
     /**
      * @symbol ??Hasio@@YA?AV?$buffers_iterator@Vconst_buffers_1@asio@@D@0@AEBV10@_J@Z
-     * @hash   -804639014
+     * @hash   -804577510
      */
     MCAPI class asio::buffers_iterator<class asio::const_buffers_1, char> operator+(class asio::buffers_iterator<class asio::const_buffers_1, char> const &, __int64);
 

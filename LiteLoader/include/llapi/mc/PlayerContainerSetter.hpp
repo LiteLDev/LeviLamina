@@ -38,24 +38,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-     * @hash   42260922
+     * @hash   42322426
      */
     virtual void setArmor(int, class ItemStack const &);
     /**
      * @vftbl  2
      * @symbol ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
-     * @hash   1408644546
+     * @hash   1408706050
      */
     virtual void setOffhandSlot(class ItemStack const &);
     /**
      * @vftbl  3
      * @symbol ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -1109938233
+     * @hash   -1109876729
      */
     virtual void setPlayerUIItem(int, class ItemStack const &);
     /**
      * @symbol ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
-     * @hash   121687504
+     * @hash   121749008
      */
     MCAPI PlayerContainerSetter(class Player &);
 

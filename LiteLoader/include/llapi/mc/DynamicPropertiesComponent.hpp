@@ -35,7 +35,7 @@ public:
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DynamicPropertiesComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1915738040
+     * @hash   1915799544
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**

@@ -39,12 +39,12 @@ public:
     MCAPI GameEventListenerComponent();
     /**
      * @symbol ?initialize@GameEventListenerComponent@@QEAA_NV?$unique_ptr@VGameEventDynamicRegistration@@U?$default_delete@VGameEventDynamicRegistration@@@std@@@std@@@Z
-     * @hash   -829751307
+     * @hash   -829689803
      */
     MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
     /**
      * @symbol ??4GameEventListenerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -218063426
+     * @hash   -218001922
      */
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     /**
@@ -54,7 +54,7 @@ public:
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     /**
      * @symbol ??1GameEventListenerComponent@@QEAA@XZ
-     * @hash   -1362547141
+     * @hash   -1362485637
      */
     MCAPI ~GameEventListenerComponent();
 

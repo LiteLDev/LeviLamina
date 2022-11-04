@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?lookup@SerializerEnumMapping@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_J@Z
-     * @hash   1049143012
+     * @hash   1049204516
      */
     MCAPI bool lookup(std::string const &, __int64 &) const;
     /**
      * @symbol ?lookup@SerializerEnumMapping@@QEBA_N_JAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   153328137
+     * @hash   153389641
      */
     MCAPI bool lookup(__int64, std::string &) const;
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI class SerializerEnumMapping & operator=(class SerializerEnumMapping &&);
     /**
      * @symbol ?toString@SerializerEnumMapping@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -729828968
+     * @hash   -729767464
      */
     MCAPI std::string toString() const;
 

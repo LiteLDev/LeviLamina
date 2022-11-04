@@ -169,7 +169,7 @@ public:
     /**
      * @vftbl  27
      * @symbol ?onEvent@NetheriteArmorEquippedListener@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
-     * @hash   1546439458
+     * @hash   1546500962
      */
     virtual enum class EventResult onEvent(struct ActorEquippedArmorEvent const &);
 

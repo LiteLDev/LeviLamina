@@ -31,29 +31,29 @@ public:
 public:
     /**
      * @symbol ??0CompoundTagUpdaterContext@@QEAA@XZ
-     * @hash   392425441
+     * @hash   392486945
      */
     MCAPI CompoundTagUpdaterContext();
     /**
      * @symbol ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterBuilder@@EEE@Z
-     * @hash   -734384554
+     * @hash   -734323050
      */
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     /**
      * @symbol ?sortUpdaters@CompoundTagUpdaterContext@@QEAAXXZ
-     * @hash   47213603
+     * @hash   47275107
      */
     MCAPI void sortUpdaters();
     /**
      * @symbol ?update@CompoundTagUpdaterContext@@QEAA?AW4CompoundTagUpdaterResult@@AEAVCompoundTag@@I@Z
-     * @hash   1069566018
+     * @hash   1069627522
      */
     MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
 //private:
     /**
      * @symbol ?comparisonPredicate@CompoundTagUpdaterContext@@CA_NAEBV?$unique_ptr@VCompoundTagUpdater@@U?$default_delete@VCompoundTagUpdater@@@std@@@std@@0@Z
-     * @hash   1997001219
+     * @hash   1997062723
      */
     MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
 

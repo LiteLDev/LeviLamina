@@ -42,7 +42,7 @@ public:
     MCAPI ~EntityGoalFactory();
     /**
      * @symbol ?addGoals@EntityGoalFactory@@SAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
-     * @hash   -647862867
+     * @hash   -647801363
      */
     MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
 

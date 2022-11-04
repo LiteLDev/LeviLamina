@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0CerealDocumentUpgradeStep@@QEAA@AEBVSemVersion@@AEBUSchema@reflection@@@Z
-     * @hash   -1147675121
+     * @hash   -1147613617
      */
     MCAPI CerealDocumentUpgradeStep(class SemVersion const &, struct reflection::Schema const &);
     /**
      * @symbol ??0CerealDocumentUpgradeStep@@QEAA@AEBV0@@Z
-     * @hash   -848257999
+     * @hash   -848196495
      */
     MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const &);
     /**
      * @symbol ?addUpgrade@CerealDocumentUpgradeStep@@QEAAXV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
-     * @hash   -299388789
+     * @hash   -299327285
      */
     MCAPI void addUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>);
     /**
      * @symbol ?apply@CerealDocumentUpgradeStep@@QEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
-     * @hash   -1849805493
+     * @hash   -1849743989
      */
     MCAPI bool apply(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &);
     /**
      * @symbol ?canUpgrade@CerealDocumentUpgradeStep@@QEBA_NAEBVSemVersion@@@Z
-     * @hash   -507439585
+     * @hash   -507378081
      */
     MCAPI bool canUpgrade(class SemVersion const &) const;
     /**
@@ -59,7 +59,7 @@ public:
     MCAPI class SemVersion const & getTargetVersion() const;
     /**
      * @symbol ??4CerealDocumentUpgradeStep@@QEAAAEAV0@AEBV0@@Z
-     * @hash   490635756
+     * @hash   490697260
      */
     MCAPI class CerealDocumentUpgradeStep & operator=(class CerealDocumentUpgradeStep const &);
 

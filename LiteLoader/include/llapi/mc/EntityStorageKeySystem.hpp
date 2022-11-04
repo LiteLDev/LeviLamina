@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?generateStorageKey@EntityStorageKeySystem@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
-     * @hash   1338151012
+     * @hash   1338212516
      */
     MCAPI static std::string generateStorageKey(__int64);
     /**
      * @symbol ?getIsDirtySinceSerialization@EntityStorageKeySystem@@SA_NAEAVEntityContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -810018348
+     * @hash   -809956844
      */
     MCAPI static bool getIsDirtySinceSerialization(class EntityContext &, std::string const &);
     /**
      * @symbol ?setDirtyFromNonSerializedState@EntityStorageKeySystem@@SAXAEAVEntityContext@@@Z
-     * @hash   1929680034
+     * @hash   1929741538
      */
     MCAPI static void setDirtyFromNonSerializedState(class EntityContext &);
     /**
      * @symbol ?setLastSerializedState@EntityStorageKeySystem@@SAXAEAVEntityContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   949008379
+     * @hash   949069883
      */
     MCAPI static void setLastSerializedState(class EntityContext &, std::string const &);
 

@@ -24,12 +24,12 @@ namespace EntityGlobalComponentsUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?initializeGlobalComponents@EntityGlobalComponentsUtility@@YAXAEAVEntityRegistry@@@Z
-     * @hash   -1159920451
+     * @hash   -1159858947
      */
     MCAPI void initializeGlobalComponents(class EntityRegistry &);
     /**
      * @symbol ?removeGlobalComponents@EntityGlobalComponentsUtility@@YAXAEAVEntityRegistry@@@Z
-     * @hash   -1189937859
+     * @hash   -1189876355
      */
     MCAPI void removeGlobalComponents(class EntityRegistry &);
 

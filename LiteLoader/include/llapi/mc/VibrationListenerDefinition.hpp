@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ?initialize@VibrationListenerDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -1861792610
+     * @hash   -1861731106
      */
     MCAPI void initialize(class EntityContext &);
     /**

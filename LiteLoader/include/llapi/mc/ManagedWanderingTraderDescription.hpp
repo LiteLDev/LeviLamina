@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@ManagedWanderingTraderDescription@@UEBAPEBDXZ
-     * @hash   435683964
+     * @hash   435745468
      */
     virtual char const * getJsonName() const;
     /**

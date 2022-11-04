@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?getPlayerJumpPendingScale@MobOnPlayerJumpSystem@@SAMH@Z
-     * @hash   1163099929
+     * @hash   1163161433
      */
     MCAPI static float getPlayerJumpPendingScale(int);
 

@@ -47,79 +47,79 @@ public:
     /**
      * @vftbl  2
      * @symbol ?canTaskRunAgain@BackgroundWorker@@UEBA_NXZ
-     * @hash   1413640742
+     * @hash   1413702246
      */
     virtual bool canTaskRunAgain() const;
     /**
      * @symbol ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@AEAVWorkerPool@@1@Z
-     * @hash   1057524306
+     * @hash   1057585810
      */
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     /**
      * @symbol ?getApproximateTaskCount@BackgroundWorker@@QEBA_KXZ
-     * @hash   345282331
+     * @hash   345343835
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
      * @symbol ?getThreadId@BackgroundWorker@@QEBA?AVid@thread@std@@XZ
-     * @hash   -272483450
+     * @hash   -272421946
      */
     MCAPI class std::thread::id getThreadId() const;
     /**
      * @symbol ?isIdle@BackgroundWorker@@QEBA_NXZ
-     * @hash   -1441663950
+     * @hash   -1441602446
      */
     MCAPI bool isIdle() const;
     /**
      * @symbol ?processTaskSync@BackgroundWorker@@QEAA_NXZ
-     * @hash   -1929806618
+     * @hash   -1929745114
      */
     MCAPI bool processTaskSync();
     /**
      * @symbol ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     * @hash   906221323
+     * @hash   906282827
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @symbol ?requestStop@BackgroundWorker@@QEAAX_N@Z
-     * @hash   908069714
+     * @hash   908131218
      */
     MCAPI void requestStop(bool);
     /**
      * @symbol ?resetWorkerThreadID@BackgroundWorker@@QEAAXXZ
-     * @hash   -1906498061
+     * @hash   -1906436557
      */
     MCAPI void resetWorkerThreadID();
     /**
      * @symbol ?resortPriorityQueue@BackgroundWorker@@QEAAXXZ
-     * @hash   498886339
+     * @hash   498947843
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?start@BackgroundWorker@@QEAAXXZ
-     * @hash   -1056888237
+     * @hash   -1056826733
      */
     MCAPI void start();
     /**
      * @symbol ?wake@BackgroundWorker@@QEAAXXZ
-     * @hash   -1332879099
+     * @hash   -1332817595
      */
     MCAPI void wake();
     /**
      * @symbol ?getLocal@BackgroundWorker@@SAPEAV1@XZ
-     * @hash   552521800
+     * @hash   552583304
      */
     MCAPI static class BackgroundWorker * getLocal();
 
 //private:
     /**
      * @symbol ?_processNextTask@BackgroundWorker@@AEAA_NXZ
-     * @hash   -1809285534
+     * @hash   -1809224030
      */
     MCAPI bool _processNextTask();
     /**
      * @symbol ?_runOneTask@BackgroundWorker@@AEAA?AW4RunOneResult@1@XZ
-     * @hash   -951439987
+     * @hash   -951378483
      */
     MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
 

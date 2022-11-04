@@ -97,7 +97,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   1963514885
+     * @hash   1963576389
      */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
@@ -109,7 +109,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-     * @hash   -217689633
+     * @hash   -217628129
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
@@ -188,7 +188,7 @@ public:
 #endif
     /**
      * @symbol ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
-     * @hash   -954589582
+     * @hash   -954528078
      */
     MCAPI NewUniqueIdsDataLoadHelper(class ILevel &);
 

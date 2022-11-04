@@ -7,10 +7,10 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "ReadOnlyBinaryStream.hpp"
-#include "Vec3.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "Vec3.hpp"
 #undef BEFORE_EXTRA
 
 /**

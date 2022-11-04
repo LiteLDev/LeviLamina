@@ -122,7 +122,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?getSubPath@PackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1657876917
+     * @hash   -1657815413
      */
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
@@ -134,7 +134,7 @@ public:
     /**
      * @vftbl  17
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
-     * @hash   -823883722
+     * @hash   -823822218
      */
     virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
@@ -152,18 +152,18 @@ public:
     /**
      * @vftbl  20
      * @symbol ?hasUpgradeFiles@PackAccessStrategy@@UEBA_NXZ
-     * @hash   686139021
+     * @hash   686200525
      */
     virtual bool hasUpgradeFiles() const;
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@PackAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   2051638497
+     * @hash   2051700001
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0PackAccessStrategy@@QEAA@XZ
-     * @hash   886022204
+     * @hash   886083708
      */
     MCAPI PackAccessStrategy();
     /**
@@ -180,17 +180,17 @@ public:
 //protected:
     /**
      * @symbol ?_addToAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
-     * @hash   -1496235821
+     * @hash   -1496174317
      */
     MCAPI void _addToAssetSet(class Core::Path const &);
     /**
      * @symbol ?_deleteFromAssetSet@PackAccessStrategy@@IEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   -367680065
+     * @hash   -367618561
      */
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ?_isInAssetSet@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
-     * @hash   -2048097305
+     * @hash   -2048035801
      */
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
 

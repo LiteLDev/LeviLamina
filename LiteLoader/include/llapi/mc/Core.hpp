@@ -167,7 +167,7 @@ enum class FileAccessType;
     MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
     /**
      * @symbol ?transferDirectory@Core@@YA?AVResult@1@PEAVFileSystemImpl@1@AEBVPath@1@01AEBV?$function@$$A6A?AVResult@Core@@AEBVPath@2@0@Z@std@@@Z
-     * @hash   182496384
+     * @hash   182557888
      */
     MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &, class std::function<class Core::Result (class Core::Path const &, class Core::Path const &)> const &);
 

@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@PreferredPathDescription@@UEBAPEBDXZ
-     * @hash   -240368050
+     * @hash   -240306546
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@PreferredPathDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   1535446901
+     * @hash   1535508405
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@PreferredPathDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1283431921
+     * @hash   -1283370417
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0PreferredPathDescription@@QEAA@XZ
-     * @hash   -1985523966
+     * @hash   -1985462462
      */
     MCAPI PreferredPathDescription();
 

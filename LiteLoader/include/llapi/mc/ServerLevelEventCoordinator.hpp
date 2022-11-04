@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
-     * @hash   -1160189803
+     * @hash   -1160128299
      */
     MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
     /**
      * @symbol ?sendLevelRemovedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
-     * @hash   -1323874155
+     * @hash   -1323812651
      */
     MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @symbol ?sendLevelSaveData@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVCompoundTag@@@Z
-     * @hash   -734639171
+     * @hash   -734577667
      */
     MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
 

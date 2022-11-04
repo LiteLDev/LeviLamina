@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getPackSize@DirectoryPackAccessStrategy@@UEBA_KXZ
-     * @hash   -11458445
+     * @hash   -11396941
      */
     virtual unsigned __int64 getPackSize() const;
     /**
@@ -70,49 +70,49 @@ public:
     /**
      * @vftbl  6
      * @symbol ?isTrusted@DirectoryPackAccessStrategy@@UEBA_NXZ
-     * @hash   412331800
+     * @hash   412393304
      */
     virtual bool isTrusted() const;
     /**
      * @vftbl  7
      * @symbol ?hasAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
-     * @hash   -2007734344
+     * @hash   -2007672840
      */
     virtual bool hasAsset(class Core::Path const &, bool) const;
     /**
      * @vftbl  8
      * @symbol ?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
-     * @hash   1775052576
+     * @hash   1775114080
      */
     virtual bool hasFolder(class Core::Path const &) const;
     /**
      * @vftbl  9
      * @symbol ?getAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   762221771
+     * @hash   762283275
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
      * @vftbl  10
      * @symbol ?deleteAsset@DirectoryPackAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   1983219631
+     * @hash   1983281135
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
     /**
      * @vftbl  11
      * @symbol ?writeAsset@DirectoryPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1619925188
+     * @hash   1619986692
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &);
     /**
      * @vftbl  12
      * @symbol ?forEachIn@DirectoryPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-     * @hash   1904895291
+     * @hash   1904956795
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     /**
      * @vftbl  13
      * @symbol ?forEachInAssetSet@DirectoryPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@@Z
-     * @hash   -1826859359
+     * @hash   -1826797855
      */
     virtual void forEachInAssetSet(class Core::Path const &, class std::function<void (class Core::Path const &)>) const;
     /**
@@ -124,7 +124,7 @@ public:
     /**
      * @vftbl  16
      * @symbol ?createSubPack@DirectoryPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-     * @hash   -1963901558
+     * @hash   -1963840054
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /**
@@ -141,7 +141,7 @@ public:
     virtual void unload();
     /**
      * @symbol ??0DirectoryPackAccessStrategy@@QEAA@AEBVResourceLocation@@_N@Z
-     * @hash   469139205
+     * @hash   469200709
      */
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
 

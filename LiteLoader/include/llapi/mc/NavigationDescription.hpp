@@ -44,13 +44,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -1603225513
+     * @hash   -1603164009
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@NavigationDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1820529151
+     * @hash   -1820467647
      */
     virtual void serializeData(class Json::Value &) const;
     /**

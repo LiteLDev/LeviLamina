@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0ResetEventObj@@QEAA@_N0@Z
-     * @hash   -1800510945
+     * @hash   -1800449441
      */
     MCAPI ResetEventObj(bool, bool);
     /**
      * @symbol ?set@ResetEventObj@@QEAAXXZ
-     * @hash   1735211481
+     * @hash   1735272985
      */
     MCAPI void set();
     /**
      * @symbol ?wait@ResetEventObj@@QEAAXXZ
-     * @hash   -674043571
+     * @hash   -673982067
      */
     MCAPI void wait();
     /**
      * @symbol ?wait_until@ResetEventObj@@QEAA_NV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-     * @hash   -787003318
+     * @hash   -786941814
      */
     MCAPI bool wait_until(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     /**
      * @symbol ??1ResetEventObj@@QEAA@XZ
-     * @hash   240940296
+     * @hash   241001800
      */
     MCAPI ~ResetEventObj();
 

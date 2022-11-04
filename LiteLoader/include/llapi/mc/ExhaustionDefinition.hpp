@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?initialize@ExhaustionDefinition@@QEAAXAEAVEntityContext@@AEAVExhaustionComponent@@@Z
-     * @hash   -2054838937
+     * @hash   -2054777433
      */
     MCAPI void initialize(class EntityContext &, class ExhaustionComponent &);
     /**
      * @symbol ?buildSchema@ExhaustionDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExhaustionDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -775912090
+     * @hash   -775850586
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExhaustionDefinition>> &);
 

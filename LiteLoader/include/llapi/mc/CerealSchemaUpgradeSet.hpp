@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?findNext@CerealSchemaUpgradeSet@@QEBA?AV?$shared_ptr@VCerealSchemaUpgrade@@@std@@AEBVSemVersion@@@Z
-     * @hash   -868956246
+     * @hash   -868894742
      */
     MCAPI class std::shared_ptr<class CerealSchemaUpgrade> findNext(class SemVersion const &) const;
     /**
      * @symbol ?forEach@CerealSchemaUpgradeSet@@QEAA_NV?$function@$$A6A_NV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z@std@@@Z
-     * @hash   96712509
+     * @hash   96774013
      */
     MCAPI bool forEach(class std::function<bool (class std::shared_ptr<class CerealSchemaUpgrade>)>);
     /**

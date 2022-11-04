@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0DefinitionEvent@@QEAA@$$QEAV0@@Z
-     * @hash   -2026970313
+     * @hash   -2026908809
      */
     MCAPI DefinitionEvent(class DefinitionEvent &&);
     /**

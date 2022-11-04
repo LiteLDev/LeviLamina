@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@OnFireComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -1075428471
+     * @hash   -1075366967
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@OnFireComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -385470917
+     * @hash   -385409413
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@OnFireComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
-     * @hash   981851298
+     * @hash   981912802
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@OnFireComponent@@SA_NAEBVCompoundTag@@@Z
-     * @hash   1350898803
+     * @hash   1350960307
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 

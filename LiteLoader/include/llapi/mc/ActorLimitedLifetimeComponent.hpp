@@ -36,22 +36,22 @@ public:
     MCAPI ActorLimitedLifetimeComponent();
     /**
      * @symbol ?addAdditionalSaveData@ActorLimitedLifetimeComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -261951495
+     * @hash   -261889991
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@ActorLimitedLifetimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1557228213
+     * @hash   -1557166709
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@ActorLimitedLifetimeComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
-     * @hash   1141382996
+     * @hash   1141444500
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@ActorLimitedLifetimeComponent@@SA_NAEBVCompoundTag@@@Z
-     * @hash   -2019282559
+     * @hash   -2019221055
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 

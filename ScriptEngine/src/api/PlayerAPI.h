@@ -204,5 +204,7 @@ public:
     Local<Value> getIP();
     Local<Value> getAllItems(const Arguments& args);
     Local<Value> removeItem(const Arguments& args);
+
+    Local<Value> setAbility(const Arguments& args);
 };
 extern ClassDefine<PlayerClass> PlayerClassBuilder;

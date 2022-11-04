@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0CerealDocumentUpgrader@@QEAA@AEBUSchema@reflection@@@Z
-     * @hash   1066188126
+     * @hash   1066249630
      */
     MCAPI CerealDocumentUpgrader(struct reflection::Schema const &);
     /**
      * @symbol ?clear@CerealDocumentUpgrader@@QEAAXXZ
-     * @hash   -71003517
+     * @hash   -70942013
      */
     MCAPI void clear();
     /**
      * @symbol ?registerUpgrade@CerealDocumentUpgrader@@QEAAXV?$shared_ptr@VCerealSchemaUpgrade@@@std@@AEBUSchema@reflection@@@Z
-     * @hash   -1859065342
+     * @hash   -1859003838
      */
     MCAPI void registerUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>, struct reflection::Schema const &);
     /**
      * @symbol ?upgradeJson@CerealDocumentUpgrader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@V?$optional@VSemVersion@@@3@V?$function@$$A6A_NAEBVSemVersion@@@Z@3@@Z
-     * @hash   -91079925
+     * @hash   -91018421
      */
     MCAPI bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>, class std::function<bool (class SemVersion const &)>);
 
 //private:
     /**
      * @symbol ?_getVersion@CerealDocumentUpgrader@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-     * @hash   -1844441434
+     * @hash   -1844379930
      */
     MCAPI std::string _getVersion(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &);
 
