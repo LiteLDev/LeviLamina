@@ -55,6 +55,8 @@ public:
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
+    Local<Value> getBiomeName();
+    Local<Value> getBiomeId();
     Local<Value> isLoading();
     Local<Value> isInvisible();
     Local<Value> isInsidePortal();

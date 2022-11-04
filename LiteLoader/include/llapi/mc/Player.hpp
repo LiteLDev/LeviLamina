@@ -20,6 +20,7 @@ class Container;
 class CompoundTag;
 class LayeredAbilities;
 
+class Biome;
 #include "UserEntityIdentifierComponent.hpp"
 #include "ScorePacketInfo.hpp"
 #include "DataItem.hpp"

@@ -20,6 +20,7 @@
 #include <llapi/mc/SharedAttributes.hpp>
 #include <llapi/mc/Attribute.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
+#include <llapi/mc/Biome.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 using magic_enum::enum_integer;
@@ -68,6 +69,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("isAngry", &EntityClass::isAngry)
         .instanceProperty("isBaby", &EntityClass::isBaby)
         .instanceProperty("isMoving", &EntityClass::isMoving)
+        .instanceProperty("getBiomeName", &EntityClass::getBiomeName)
+        .instanceProperty("getBiomeId", &EntityClass::getBiomeId)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
@@ -1208,6 +1211,28 @@ Local<Value> EntityClass::quickEvalMolangScript(const Arguments& args) {
         return Number::newNumber(actor->quickEvalMolangScript(args[0].toStr()));
     }
     CATCH("Fail in quickEvalMolangScript!");
+}
+
+Local<Value> EntityClass::getBiomeId() {
+    try {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        auto bio = actor->getBiome();
+        return Number::newNumber(bio->getId());
+    }
+    CATCH("Fail in getBiomeId!");
+}
+
+Local<Value> EntityClass::getBiomeName() {
+    try {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        auto bio = actor->getBiome();
+        return String::newString(bio->getName());
+    }
+    CATCH("Fail in getBiomeName!");
 }
 
 Local<Value> McClass::getAllEntities(const Arguments& args) {

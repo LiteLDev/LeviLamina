@@ -52,6 +52,10 @@
 #include "llapi/mc/UpdateAdventureSettingsPacket.hpp"
 #include "llapi/mc/AdventureSettings.hpp"
 
+#include "llapi/mc/Biome.hpp"
+#include "llapi/mc/BlockSource.hpp"
+#include "llapi/mc/ChunkPos.hpp"
+
 using ll::logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() {
