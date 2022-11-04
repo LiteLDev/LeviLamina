@@ -409,6 +409,7 @@ THook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z", __int64 a1
     return original(a1, a2);
 }
 
+//From https://github.com/dreamguxiang/BETweaker
 enum class AbilitiesLayer;
 enum class SubClientId;
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
@@ -425,7 +426,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             bool flying;
             if (!pkt.tryGetBool(flying))
                 return;
-            auto abilities = &dAccess<LayeredAbilities>(sp, 2196);
+            auto abilities = sp->getAbilities();
             auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
             flying = flying && mayFly;
             Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);

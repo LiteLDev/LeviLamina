@@ -18,6 +18,8 @@ class NetworkIdentifier;
 class Certificate;
 class Container;
 class CompoundTag;
+class LayeredAbilities;
+
 #include "UserEntityIdentifierComponent.hpp"
 #include "ScorePacketInfo.hpp"
 #include "DataItem.hpp"
@@ -75,6 +77,9 @@ public:
     LIAPI bool setTotalExperience(size_t exp);
     LIAPI bool reduceExperience(size_t exp);
 
+    LIAPI LayeredAbilities* getAbilities();
+    LIAPI void setAbility(AbilitiesIndex index, bool value);
+	
     // Experience required to upgrade to level from (level-1)
     LIAPI static int getXpNeededForLevel(int level);
 

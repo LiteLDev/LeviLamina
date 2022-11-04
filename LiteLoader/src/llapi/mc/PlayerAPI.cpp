@@ -46,6 +46,11 @@
 #include "llapi/mc/CommandUtils.hpp"
 #include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/Item.hpp"
+#include "llapi/mc/LayeredAbilities.hpp"
+
+#include "llapi/mc/UpdateAbilitiesPacket.hpp"
+#include "llapi/mc/UpdateAdventureSettingsPacket.hpp"
+#include "llapi/mc/AdventureSettings.hpp"
 
 using ll::logger;
 
@@ -62,11 +67,48 @@ Certificate* Player::getCertificate() {
     return nullptr;
 }
 
+enum class AbilitiesLayer;
+LayeredAbilities* Player::getAbilities() {
+    return &dAccess<LayeredAbilities>(this, 2196); // AbilityCommand::execute
+}
+
+//From https://github.com/dreamguxiang/BETweaker
+void Player::setAbility(AbilitiesIndex index, bool value) {
+    ActorUniqueID uid = getUniqueID();
+    auto abilities = getAbilities();
+    auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    if (index == AbilitiesIndex::Flying && value && isOnGround()) {
+        abilities->setAbility(AbilitiesIndex::MayFly, value);
+    }
+    if (index == AbilitiesIndex::MayFly && value == false && flying) {
+        abilities->setAbility(AbilitiesIndex::Flying, false);
+    }
+    abilities->setAbility(index, value);
+    auto mayfly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
+    auto noclip = abilities->getAbility(AbilitiesIndex::NoClip).getBool();
+    setCanFly(mayfly || noclip);
+    if (index == AbilitiesIndex::NoClip) {
+        abilities->setAbility(AbilitiesIndex::Flying, value);
+    }
+    flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+    ab.setBool(0);
+    if (flying)
+        ab.setBool(1);
+    UpdateAbilitiesPacket pkt(uid, *abilities);
+    auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
+    abilities->setAbility(AbilitiesIndex::Flying, flying);
+    sendNetworkPacket(pkt2);
+    sendNetworkPacket(pkt);
+}
+
+
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
         return dAccess<std::string>(this, 2200);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
+
 
 int Player::getAvgPing() {
     if (isSimulatedPlayer())
