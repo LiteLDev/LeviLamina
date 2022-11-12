@@ -62,5 +62,7 @@ public:
     Local<Value> setDamage(const Arguments& args);
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
+
+    Local<Value> match(const Arguments& args);
 };
 extern ClassDefine<ItemClass> ItemClassBuilder;
