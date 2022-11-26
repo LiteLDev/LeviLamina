@@ -26,6 +26,7 @@ public:
     LIAPI int getDespawnTime();
     LIAPI bool setDespawnTime(int);
     LIAPI int getLatestSpawnTime();
+    LIAPI int& despawnTime();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTOR
 public:
