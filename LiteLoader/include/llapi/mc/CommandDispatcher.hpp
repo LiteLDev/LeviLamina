@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
-     * @hash   -592504211
+     * @hash   -576144147
      */
     virtual int performCommand(class CommandOrigin const &, class Command &);
     /**
      * @symbol ??0CommandDispatcher@@QEAA@XZ
-     * @hash   -2031298370
+     * @hash   -2014938306
      */
     MCAPI CommandDispatcher();
 

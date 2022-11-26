@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@CentralSpikedFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1472714077
+     * @hash   1628442205
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0CentralSpikedFeature@@QEAA@AEBVBlock@@@Z
-     * @hash   375141644
+     * @hash   530869772
      */
     MCAPI CentralSpikedFeature(class Block const &);
 

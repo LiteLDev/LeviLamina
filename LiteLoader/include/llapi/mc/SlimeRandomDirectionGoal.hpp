@@ -38,44 +38,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SlimeRandomDirectionGoal@@UEAA_NXZ
-     * @hash   -1526379575
+     * @hash   -1364870071
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   578565733
+     * @hash   738599141
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@SlimeRandomDirectionGoal@@UEAAXXZ
-     * @hash   1908039213
+     * @hash   2069533341
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SlimeRandomDirectionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -570086937
+     * @hash   -408531305
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SlimeRandomDirectionGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1592809190
+     * @hash   1754364822
      */
     MCAPI SlimeRandomDirectionGoal(class Mob &);
 

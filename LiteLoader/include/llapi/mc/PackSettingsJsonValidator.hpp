@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?getValidator@PackSettingsJsonValidator@@SA?AVProperty@JsonValidator@@XZ
-     * @hash   345072376
+     * @hash   577080840
      */
     MCAPI static class JsonValidator::Property getValidator();
 

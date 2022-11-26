@@ -34,12 +34,12 @@ public:
 public:
     /**
      * @symbol ?copyData@BehaviorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAV1@@Z
-     * @hash   73725194
+     * @hash   714412362
      */
     MCAPI void copyData(std::string const &, std::string const &, class BehaviorData &);
     /**
      * @symbol ?hasDataOfType@BehaviorData@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DataType@1@@Z
-     * @hash   -181115125
+     * @hash   459572043
      */
     MCAPI bool hasDataOfType(std::string const &, enum class BehaviorData::DataType) const;
 

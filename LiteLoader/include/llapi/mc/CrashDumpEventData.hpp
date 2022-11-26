@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0CrashDumpEventData@@QEAA@W4CrashDumpLogStringID@@0@Z
-     * @hash   -1808973307
+     * @hash   -1297690555
      */
     MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
     /**
      * @symbol ?kFormat@CrashDumpEventData@@2QBUCrashDumpFormatEntryImpl@@B
-     * @hash   -1885708979
+     * @hash   -1326145587
      */
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 

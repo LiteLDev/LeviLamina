@@ -37,13 +37,13 @@ public:
     virtual ~BoostableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BoostableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1262442508
+     * @hash   1377777884
      */
     virtual void tick(class EntityRegistry &);
 

@@ -39,32 +39,32 @@ public:
     virtual ~NetworkItemInstanceDescriptor();
     /**
      * @symbol ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-     * @hash   -813391444
+     * @hash   -100421700
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemInstance@@@Z
-     * @hash   -1491632602
+     * @hash   -778662858
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor@@QEAA@$$QEAV0@@Z
-     * @hash   -223953389
+     * @hash   -265822237
      */
     MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor &&);
     /**
      * @symbol ?getItemInstance@NetworkItemInstanceDescriptor@@QEBA?AVItemInstance@@AEBVBlockPalette@@@Z
-     * @hash   2057536433
+     * @hash   -1524461119
      */
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
     /**
      * @symbol ?read@NetworkItemInstanceDescriptor@@QEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -758096546
+     * @hash   -45126802
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@NetworkItemInstanceDescriptor@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   -634574206
+     * @hash   78395538
      */
     MCAPI void write(class BinaryStream &) const;
 

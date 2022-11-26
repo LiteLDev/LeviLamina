@@ -37,7 +37,7 @@ public:
     virtual ~SmokerContainerScreenValidator();
     /**
      * @symbol ??0SmokerContainerScreenValidator@@QEAA@XZ
-     * @hash   -615168524
+     * @hash   -143017692
      */
     MCAPI SmokerContainerScreenValidator();
 

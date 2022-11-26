@@ -31,47 +31,47 @@ public:
 public:
     /**
      * @symbol ??0LevelEventCoordinator@@QEAA@XZ
-     * @hash   -2145795066
+     * @hash   -2061872858
      */
     MCAPI LevelEventCoordinator();
     /**
      * @symbol ?registerLevelGameplayHandler@LevelEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VLevelGameplayHandler@@U?$default_delete@VLevelGameplayHandler@@@std@@@std@@@Z
-     * @hash   -1494949232
+     * @hash   -1320431632
      */
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     /**
      * @symbol ?sendEvent@LevelEventCoordinator@@QEAAXAEBV?$EventRef@U?$LevelGameplayEvent@X@@@@@Z
-     * @hash   798316774
+     * @hash   882238982
      */
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
     /**
      * @symbol ?sendLevelBiomesRegistered@LevelEventCoordinator@@QEAAXAEAVIWorldRegistriesProvider@@@Z
-     * @hash   -910505018
+     * @hash   -826582810
      */
     MCAPI void sendLevelBiomesRegistered(class IWorldRegistriesProvider &);
     /**
      * @symbol ?sendLevelInitialized@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
-     * @hash   -479901186
+     * @hash   -395978978
      */
     MCAPI void sendLevelInitialized(class Level &);
     /**
      * @symbol ?sendLevelRemovedActor@LevelEventCoordinator@@QEAAXAEAVLevel@@AEAVActor@@@Z
-     * @hash   -1283095923
+     * @hash   -1199173715
      */
     MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     /**
      * @symbol ?sendLevelScriptTick@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
-     * @hash   1345524020
+     * @hash   1429446228
      */
     MCAPI void sendLevelScriptTick(class Level &);
     /**
      * @symbol ?sendLevelTick@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
-     * @hash   2001817466
+     * @hash   2085739674
      */
     MCAPI void sendLevelTick(class Level &);
     /**
      * @symbol ?sendLevelWeatherChanged@LevelEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-     * @hash   -1964703882
+     * @hash   -1880781674
      */
     MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);
 

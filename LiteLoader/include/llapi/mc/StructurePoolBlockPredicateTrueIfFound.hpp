@@ -36,18 +36,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?test@StructurePoolBlockPredicateTrueIfFound@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-     * @hash   -870365893
+     * @hash   -115404293
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
      * @vftbl  2
      * @symbol ?test@StructurePoolBlockPredicateTrueIfFound@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     * @hash   -62006251
+     * @hash   34739541
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
      * @symbol ??0StructurePoolBlockPredicateTrueIfFound@@QEAA@AEBV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@M@Z
-     * @hash   187052065
+     * @hash   942013665
      */
     MCAPI StructurePoolBlockPredicateTrueIfFound(class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &, float);
 

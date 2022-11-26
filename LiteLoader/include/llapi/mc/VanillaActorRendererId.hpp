@@ -24,67 +24,67 @@ namespace VanillaActorRendererId {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_map@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -1449515941
+     * @hash   -613445941
      */
     MCAPI extern class HashedString const _map;
     /**
      * @symbol ?_photo@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   129427339
+     * @hash   965497339
      */
     MCAPI extern class HashedString const _photo;
     /**
      * @symbol ?_query@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   685629179
+     * @hash   1521699179
      */
     MCAPI extern class HashedString const _query;
     /**
      * @symbol ?elderGuardian@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -292588007
+     * @hash   543481993
      */
     MCAPI extern class HashedString const elderGuardian;
     /**
      * @symbol ?elderGuardianGhost@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   226248971
+     * @hash   1062318971
      */
     MCAPI extern class HashedString const elderGuardianGhost;
     /**
      * @symbol ?guardian@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -1232142373
+     * @hash   -396072373
      */
     MCAPI extern class HashedString const guardian;
     /**
      * @symbol ?itemEntity@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   1747907915
+     * @hash   -1710989381
      */
     MCAPI extern class HashedString const itemEntity;
     /**
      * @symbol ?lingeringPotion@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -1302238359
+     * @hash   -466168359
      */
     MCAPI extern class HashedString const lingeringPotion;
     /**
      * @symbol ?npc@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   1703691945
+     * @hash   -1755205351
      */
     MCAPI extern class HashedString const npc;
     /**
      * @symbol ?player@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   1653568123
+     * @hash   -1805329173
      */
     MCAPI extern class HashedString const player;
     /**
      * @symbol ?shield@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -302460453
+     * @hash   533609547
      */
     MCAPI extern class HashedString const shield;
     /**
      * @symbol ?thrownPotion@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   1492961547
+     * @hash   -1965935749
      */
     MCAPI extern class HashedString const thrownPotion;
     /**
      * @symbol ?trident@VanillaActorRendererId@@3VHashedString@@B
-     * @hash   -54682887
+     * @hash   781387113
      */
     MCAPI extern class HashedString const trident;
 

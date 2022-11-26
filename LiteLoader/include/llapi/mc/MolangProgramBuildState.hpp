@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ?allocateInstruction@MolangProgramBuildState@@QEAA_KXZ
-     * @hash   -1098603541
+     * @hash   -1062900469
      */
     MCAPI unsigned __int64 allocateInstruction();
     /**
      * @symbol ?emplaceInstruction@MolangProgramBuildState@@QEAAXV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
-     * @hash   -1481715347
+     * @hash   -1445243475
      */
     MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
     /**
      * @symbol ?emplaceInstruction@MolangProgramBuildState@@QEAAX_KV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
-     * @hash   -347956983
+     * @hash   -311485111
      */
     MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams &)>);
     /**
      * @symbol ?insertJumpWithMaddAtIndex@MolangProgramBuildState@@QEAAX_K0MM@Z
-     * @hash   -1021782511
+     * @hash   -985449023
      */
     MCAPI void insertJumpWithMaddAtIndex(unsigned __int64, unsigned __int64, float, float);
     /**
      * @symbol ?numInstructions@MolangProgramBuildState@@QEBA_KXZ
-     * @hash   2344539
+     * @hash   39508331
      */
     MCAPI unsigned __int64 numInstructions() const;
     /**
      * @symbol ?pushReturnValue@MolangProgramBuildState@@QEAAXXZ
-     * @hash   1444366851
+     * @hash   1481530643
      */
     MCAPI void pushReturnValue();
     /**
      * @symbol ?setReturnValue@MolangProgramBuildState@@QEAAXM@Z
-     * @hash   1294065752
+     * @hash   1330922024
      */
     MCAPI void setReturnValue(float);
     /**
      * @symbol ??1MolangProgramBuildState@@QEAA@XZ
-     * @hash   -164637629
+     * @hash   -129580349
      */
     MCAPI ~MolangProgramBuildState();
 

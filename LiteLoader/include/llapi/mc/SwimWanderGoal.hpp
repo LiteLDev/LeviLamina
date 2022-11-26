@@ -38,53 +38,53 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SwimWanderGoal@@UEAA_NXZ
-     * @hash   -608794232
+     * @hash   -447192472
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SwimWanderGoal@@UEAA_NXZ
-     * @hash   -551168650
+     * @hash   -389566890
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SwimWanderGoal@@UEAAXXZ
-     * @hash   419580865
+     * @hash   580336945
      */
     virtual void start();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@SwimWanderGoal@@UEAAXXZ
-     * @hash   1708012540
+     * @hash   1869614300
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SwimWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -710194648
+     * @hash   -548531384
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SwimWanderGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -44128971
+     * @hash   117641925
      */
     MCAPI SwimWanderGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_setWantedPosition@SwimWanderGoal@@IEAA_NXZ
-     * @hash   1788787280
+     * @hash   1950558176
      */
     MCAPI bool _setWantedPosition();
 

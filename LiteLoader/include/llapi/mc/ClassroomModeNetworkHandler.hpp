@@ -33,25 +33,25 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODENETWORKHANDLER
     /**
      * @symbol ?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
-     * @hash   270481496
+     * @hash   366981272
      */
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     /**
      * @symbol ?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-     * @hash   2070565825
+     * @hash   2024945233
      */
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
 #endif
     /**
      * @symbol ??0ClassroomModeNetworkHandler@@QEAA@_N@Z
-     * @hash   -153920121
+     * @hash   -199540713
      */
     MCAPI ClassroomModeNetworkHandler(bool);
 
 //private:
     /**
      * @symbol ?_connect@ClassroomModeNetworkHandler@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -113901625
+     * @hash   -159522217
      */
     MCAPI void _connect(std::string const &);
 

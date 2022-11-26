@@ -38,138 +38,138 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-     * @hash   -1128239307
+     * @hash   -1026542443
      */
     virtual enum class EventResult onEvent(struct ActorNotificationEvent const &);
     /**
      * @vftbl  2
-     * @hash   -1153574302
+     * @hash   -1051662174
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1151727260
+     * @hash   -1049815132
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1150803739
+     * @hash   -1048891611
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1149880218
+     * @hash   -1047968090
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1148956697
+     * @hash   -1047044569
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -1148033176
+     * @hash   -1046121048
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1147109655
+     * @hash   -1045197527
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -131009277
+     * @hash   -29097149
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -130085756
+     * @hash   -28173628
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -129162235
+     * @hash   -27250107
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -128238714
+     * @hash   -26326586
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -127315193
+     * @hash   -25403065
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
-     * @hash   -126391672
+     * @hash   -24479544
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -125468151
+     * @hash   -23556023
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  17
-     * @hash   -124544630
+     * @hash   -22632502
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
-     * @hash   -123621109
+     * @hash   -21708981
      */
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -122697588
+     * @hash   -20785460
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -102380126
+     * @hash   -467998
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
-     * @hash   -101456605
+     * @hash   455523
      */
     virtual void __unk_vfn_21();
     /**
      * @vftbl  22
-     * @hash   -100533084
+     * @hash   1379044
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -99609563
+     * @hash   2302565
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  24
-     * @hash   -98686042
+     * @hash   3226086
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
-     * @hash   -97762521
+     * @hash   4149607
      */
     virtual void __unk_vfn_25();
     /**
      * @vftbl  26
-     * @hash   -96839000
+     * @hash   5073128
      */
     virtual void __unk_vfn_26();
     /**
      * @vftbl  27
      * @symbol ?onEvent@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
-     * @hash   117056423
+     * @hash   635458263
      */
     virtual enum class EventResult onEvent(struct ActorEquippedArmorEvent const &);
 

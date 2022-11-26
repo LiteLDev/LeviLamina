@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ??0WeakEntityRef@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@@Z
-     * @hash   1463633998
+     * @hash   1588425614
      */
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     /**
      * @symbol ??BWeakEntityRef@@QEBA?AV?$WeakRefT@UEntityRefTraits@@@@XZ
-     * @hash   2047444946
+     * @hash   -2122730734
      */
     MCAPI operator class WeakRefT<struct EntityRefTraits>() const;
     /**
      * @symbol ??4WeakEntityRef@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1541515404
+     * @hash   -1385648892
      */
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     /**
      * @symbol ??8WeakEntityRef@@QEBA_NV?$WeakRefT@UEntityRefTraits@@@@@Z
-     * @hash   -1603191044
+     * @hash   -1478399428
      */
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     /**
      * @symbol ??8WeakEntityRef@@QEBA_NV0@@Z
-     * @hash   -1025472881
+     * @hash   -900681265
      */
     MCAPI bool operator==(class WeakEntityRef) const;
     /**
      * @symbol ??1WeakEntityRef@@QEAA@XZ
-     * @hash   -421436908
+     * @hash   -331487308
      */
     MCAPI ~WeakEntityRef();
 

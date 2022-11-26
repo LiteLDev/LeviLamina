@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@GrowingPlantFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1914712019
+     * @hash   -1638547789
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0GrowingPlantFeature@@QEAA@XZ
-     * @hash   1330171062
+     * @hash   2071878550
      */
     MCAPI GrowingPlantFeature();
 

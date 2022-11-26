@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlaySoundPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1642249717
+     * @hash   -1716192901
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlaySoundPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   667933880
+     * @hash   593990696
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlaySoundPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -890168625
+     * @hash   -964111809
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlaySoundPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1311280991
+     * @hash   1237337807
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlaySoundPacket@@QEAA@XZ
-     * @hash   606793807
+     * @hash   532850623
      */
     MCAPI PlaySoundPacket();
     /**
      * @symbol ??0PlaySoundPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-     * @hash   958150307
+     * @hash   884207123
      */
     MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
 

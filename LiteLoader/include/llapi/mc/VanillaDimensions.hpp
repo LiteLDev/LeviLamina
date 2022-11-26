@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?Nether@VanillaDimensions@@2V?$AutomaticID@VDimension@@H@@B
-     * @hash   -1198785011
+     * @hash   -553408163
      */
     MCAPI static class AutomaticID<class Dimension, int> const Nether;
     /**
      * @symbol ?Overworld@VanillaDimensions@@2V?$AutomaticID@VDimension@@H@@B
-     * @hash   1168344935
+     * @hash   1813721783
      */
     MCAPI static class AutomaticID<class Dimension, int> const Overworld;
     /**
      * @symbol ?TheEnd@VanillaDimensions@@2V?$AutomaticID@VDimension@@H@@B
-     * @hash   -1620909231
+     * @hash   -975532383
      */
     MCAPI static class AutomaticID<class Dimension, int> const TheEnd;
     /**
      * @symbol ?TheEndSpawnPoint@VanillaDimensions@@2VVec3@@B
-     * @hash   326415119
+     * @hash   1104294647
      */
     MCAPI static class Vec3 const TheEndSpawnPoint;
     /**
      * @symbol ?Undefined@VanillaDimensions@@2V?$AutomaticID@VDimension@@H@@B
-     * @hash   -564657485
+     * @hash   80719363
      */
     MCAPI static class AutomaticID<class Dimension, int> const Undefined;
     /**
      * @symbol ?convertPointBetweenDimensions@VanillaDimensions@@SA_NAEBVVec3@@AEAV2@V?$AutomaticID@VDimension@@H@@2AEBVDimensionConversionData@@@Z
-     * @hash   1884021015
+     * @hash   -1681447337
      */
     MCAPI static bool convertPointBetweenDimensions(class Vec3 const &, class Vec3 &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, class DimensionConversionData const &);
     /**
      * @symbol ?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z
-     * @hash   1717450361
+     * @hash   -1848017991
      */
     MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int);
     /**
      * @symbol ?fromString@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2099817699
+     * @hash   -1370318755
      */
     MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const &);
     /**
      * @symbol ?toSerializedInt@VanillaDimensions@@SAHAEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -305812723
+     * @hash   423686221
      */
     MCAPI static int toSerializedInt(class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?toString@VanillaDimensions@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   1747439585
+     * @hash   -1818028767
      */
     MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const &);
 
@@ -86,7 +86,7 @@ public:
 protected:
     /**
      * @symbol ?DimensionMap@VanillaDimensions@@1V?$BidirectionalUnorderedMap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@@@B
-     * @hash   1163148395
+     * @hash   1808525243
      */
     MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const DimensionMap;
 

@@ -38,62 +38,62 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VEntityPlacerItemComponent@@@@UEBA_NXZ
-     * @hash   -1602152091
+     * @hash   -1505652315
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?useOn@EntityPlacerItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   -49716085
+     * @hash   466809883
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VEntityPlacerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   804134935
+     * @hash   1398263575
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VEntityPlacerItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   928347593
+     * @hash   1547308473
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?dispense@EntityPlacerItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -201636830
+     * @hash   314412482
      */
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @symbol ?bindType@EntityPlacerItemComponent@@SAXXZ
-     * @hash   1500225855
+     * @hash   2014906703
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@EntityPlacerItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   80862960
+     * @hash   597312048
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
      * @symbol ?_positionAndRotateActor@EntityPlacerItemComponent@@AEBAXAEAVActor@@VVec3@@EAEBV3@PEBVBlockLegacy@@@Z
-     * @hash   -1504542951
+     * @hash   -989877479
      */
     MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
     /**
      * @symbol ?_setActorCustomName@EntityPlacerItemComponent@@AEBAXAEAVActor@@AEBVItemStack@@@Z
-     * @hash   1732540074
+     * @hash   -2047746374
      */
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
 

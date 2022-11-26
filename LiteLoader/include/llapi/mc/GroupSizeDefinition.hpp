@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@GroupSizeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGroupSizeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1353995048
+     * @hash   -836085240
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition>> &);
 

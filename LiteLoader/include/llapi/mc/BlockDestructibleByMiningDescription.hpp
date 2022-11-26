@@ -36,51 +36,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDestructibleByMiningDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   274289193
+     * @hash   743041929
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDestructibleByMiningDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   250268635
+     * @hash   719021371
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockDestructibleByMiningDescription@@UEBA_NXZ
-     * @hash   -2043378879
+     * @hash   -1946879103
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockDestructibleByMiningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   388406579
+     * @hash   857174691
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockDestructibleByMiningDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1467440911
+     * @hash   1936193647
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockDestructibleByMiningDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1043182569
+     * @hash   740671759
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByMiningDescription@@SAXXZ
-     * @hash   -170051277
+     * @hash   298240179
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDestructibleByMiningDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1818316046
+     * @hash   -2007898514
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

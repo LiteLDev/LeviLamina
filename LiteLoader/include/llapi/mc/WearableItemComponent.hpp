@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VWearableItemComponent@@@@UEBA_NXZ
-     * @hash   2115234448
+     * @hash   -2083233072
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWearableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   586044722
+     * @hash   1180173362
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWearableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1690216094
+     * @hash   -1985790322
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@@XZ
-     * @hash   -1976705798
+     * @hash   -1914648262
      */
     MCAPI enum class EquipmentSlot getSlot() const;
     /**
      * @symbol ?use@WearableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -1829945064
+     * @hash   -1263324088
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?bindType@WearableItemComponent@@SAXXZ
-     * @hash   634831967
+     * @hash   1201053167
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@WearableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -254531626
+     * @hash   312196982
      */
     MCAPI static class HashedString const & getIdentifier();
 

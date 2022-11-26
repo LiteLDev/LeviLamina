@@ -39,35 +39,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetHealthPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   859468744
+     * @hash   785525560
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetHealthPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   447819381
+     * @hash   373876197
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetHealthPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1129543954
+     * @hash   1087675106
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetHealthPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -243279838
+     * @hash   -285148686
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetHealthPacket@@QEAA@XZ
-     * @hash   1311689634
+     * @hash   1237746450
      */
     MCAPI SetHealthPacket();
     /**
      * @symbol ??0SetHealthPacket@@QEAA@H@Z
-     * @hash   -1697164087
+     * @hash   -1771107271
      */
     MCAPI SetHealthPacket(int);
 

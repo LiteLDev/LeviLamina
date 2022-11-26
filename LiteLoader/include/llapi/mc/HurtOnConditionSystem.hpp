@@ -37,13 +37,13 @@ public:
     virtual ~HurtOnConditionSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@HurtOnConditionSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1809812780
+     * @hash   1897286844
      */
     virtual void tick(class EntityRegistry &);
 

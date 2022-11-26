@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ExternalLinkSettings@@QEAA@XZ
-     * @hash   1725642290
+     * @hash   1813623762
      */
     MCAPI ~ExternalLinkSettings();
 

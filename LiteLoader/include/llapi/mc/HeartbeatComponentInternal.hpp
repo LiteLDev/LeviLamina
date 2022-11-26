@@ -22,17 +22,17 @@ namespace HeartbeatComponentInternal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?INTERVAL_KEY@HeartbeatComponentInternal@@3PEBDEB
-     * @hash   1326449378
+     * @hash   -2097698158
      */
     MCAPI extern char const * INTERVAL_KEY;
     /**
      * @symbol ?SOUND_EVENT_DEFAULT_VALUE@HeartbeatComponentInternal@@3PEBDEB
-     * @hash   1278881904
+     * @hash   -2145265632
      */
     MCAPI extern char const * SOUND_EVENT_DEFAULT_VALUE;
     /**
      * @symbol ?SOUND_EVENT_KEY@HeartbeatComponentInternal@@3PEBDEB
-     * @hash   -1451430232
+     * @hash   -580610472
      */
     MCAPI extern char const * SOUND_EVENT_KEY;
 

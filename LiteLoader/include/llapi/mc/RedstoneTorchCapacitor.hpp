@@ -38,93 +38,93 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ
-     * @hash   1683737672
+     * @hash   -2142707528
      */
     virtual int getStrength() const;
     /**
      * @vftbl  10
      * @symbol ?removeSource@RedstoneTorchCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
-     * @hash   1278371036
+     * @hash   1746893132
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
      * @vftbl  11
      * @symbol ?addSource@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1087686526
+     * @hash   -619164430
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -590797286
+     * @hash   -122275190
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1566536754
+     * @hash   -1098014658
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?cacheValues@RedstoneTorchCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -220710249
+     * @hash   247811847
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  16
      * @symbol ?updateDependencies@RedstoneTorchCapacitor@@EEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-     * @hash   -881230726
+     * @hash   -412708630
      */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
      * @symbol ?isHalfPulse@RedstoneTorchCapacitor@@UEBA_NXZ
-     * @hash   1025819626
+     * @hash   1494341722
      */
     virtual bool isHalfPulse() const;
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@RedstoneTorchCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -616128788
+     * @hash   139340220
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ
-     * @hash   985529423
+     * @hash   1082029199
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0RedstoneTorchCapacitor@@QEAA@XZ
-     * @hash   -1189439754
+     * @hash   -720917658
      */
     MCAPI RedstoneTorchCapacitor();
     /**
      * @symbol ?resetBurnOutCount@RedstoneTorchCapacitor@@QEAAXXZ
-     * @hash   -287705981
+     * @hash   180816115
      */
     MCAPI void resetBurnOutCount();
     /**
      * @symbol ?setOn@RedstoneTorchCapacitor@@QEAAX_N@Z
-     * @hash   -550109458
+     * @hash   -81587362
      */
     MCAPI void setOn(bool);
 
 //private:
     /**
      * @symbol ?FindStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
-     * @hash   1359399658
+     * @hash   1827921754
      */
     MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 

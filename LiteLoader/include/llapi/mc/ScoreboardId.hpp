@@ -27,62 +27,62 @@ public:
 public:
     /**
      * @symbol ??0ScoreboardId@@QEAA@_J@Z
-     * @hash   1793750933
+     * @hash   -1789738091
      */
     MCAPI ScoreboardId(__int64);
     /**
      * @symbol ??0ScoreboardId@@QEAA@XZ
-     * @hash   -868814853
+     * @hash   -157336581
      */
     MCAPI ScoreboardId();
     /**
      * @symbol ??0ScoreboardId@@QEAA@AEBU0@@Z
-     * @hash   1254795343
+     * @hash   1966273615
      */
     MCAPI ScoreboardId(struct ScoreboardId const &);
     /**
      * @symbol ?getHash@ScoreboardId@@QEBA_KXZ
-     * @hash   -744743355
+     * @hash   -33249707
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ?getIdentityDef@ScoreboardId@@QEBAAEBVIdentityDefinition@@XZ
-     * @hash   1629447260
+     * @hash   -1954026388
      */
     MCAPI class IdentityDefinition const & getIdentityDef() const;
     /**
      * @symbol ?isValid@ScoreboardId@@QEBA_NXZ
-     * @hash   1161249302
+     * @hash   1872742950
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??BScoreboardId@@QEBA_NXZ
-     * @hash   988348786
+     * @hash   1699842434
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??9ScoreboardId@@QEBA_NAEBU0@@Z
-     * @hash   -859226807
+     * @hash   -147733159
      */
     MCAPI bool operator!=(struct ScoreboardId const &) const;
     /**
      * @symbol ??EScoreboardId@@QEAAAEAU0@XZ
-     * @hash   -264257862
+     * @hash   447235786
      */
     MCAPI struct ScoreboardId & operator++();
     /**
      * @symbol ??4ScoreboardId@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1981783802
+     * @hash   -1270305530
      */
     MCAPI struct ScoreboardId & operator=(struct ScoreboardId const &);
     /**
      * @symbol ??8ScoreboardId@@QEBA_NAEBU0@@Z
-     * @hash   -751976250
+     * @hash   -1078765370
      */
     MCAPI bool operator==(struct ScoreboardId const &) const;
     /**
      * @symbol ?INVALID@ScoreboardId@@2U1@A
-     * @hash   663519897
+     * @hash   1527328201
      */
     MCAPI static struct ScoreboardId INVALID;
 

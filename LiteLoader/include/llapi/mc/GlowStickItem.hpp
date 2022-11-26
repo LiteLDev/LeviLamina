@@ -39,100 +39,100 @@ public:
     virtual ~GlowStickItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -222020782
+     * @hash   -125521006
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
-     * @hash   -63198356
+     * @hash   526732636
      */
     virtual bool isValidAuxValue(int) const;
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -165686001
+     * @hash   -69186225
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -276670826
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -256353364
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@GlowStickItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -1606991164
+     * @hash   -1017060172
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
-     * @hash   810172465
+     * @hash   1400103457
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @symbol ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1560384780
+     * @hash   -970453788
      */
     MCAPI GlowStickItem(std::string const &, int);
     /**
      * @symbol ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
-     * @hash   826067925
+     * @hash   1612227429
      */
     MCAPI static enum class ItemColor const COLORS[];
     /**
      * @symbol ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
-     * @hash   -1493371273
+     * @hash   -707211769
      */
     MCAPI static int const MAX_ACTIVE_TICKS;
 

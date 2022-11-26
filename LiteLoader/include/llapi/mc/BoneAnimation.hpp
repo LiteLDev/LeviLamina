@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?addAnimationChannel@BoneAnimation@@QEAAAEAVBoneAnimationChannel@@W4BoneTransformType@@@Z
-     * @hash   128585937
+     * @hash   152818513
      */
     MCAPI class BoneAnimationChannel & addAnimationChannel(enum class BoneTransformType);
     /**
      * @symbol ?setRotationRelativeMode@BoneAnimation@@QEAAXW4BoneAnimationRelativeMode@@@Z
-     * @hash   1438859626
+     * @hash   1462938442
      */
     MCAPI void setRotationRelativeMode(enum class BoneAnimationRelativeMode);
 

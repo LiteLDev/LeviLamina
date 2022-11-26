@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0AtomicTimeAccumulator@@QEAA@XZ
-     * @hash   574416810
+     * @hash   672223546
      */
     MCAPI AtomicTimeAccumulator();
     /**
      * @symbol ?addTime@AtomicTimeAccumulator@@QEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-     * @hash   909971707
+     * @hash   1632812843
      */
     MCAPI void addTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     /**
      * @symbol ?reset@AtomicTimeAccumulator@@QEAAXXZ
-     * @hash   584153411
+     * @hash   1306994547
      */
     MCAPI void reset();
 

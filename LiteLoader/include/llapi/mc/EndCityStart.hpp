@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isValid@EndCityStart@@UEBA_NXZ
-     * @hash   1586495182
+     * @hash   1757353294
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0EndCityStart@@QEAA@AEAVDimension@@AEAVRandom@@AEBVChunkPos@@@Z
-     * @hash   649564259
+     * @hash   820422371
      */
     MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
     /**
      * @symbol ?getYPositionForFeature@EndCityStart@@SAHAEBVChunkPos@@AEAVDimension@@@Z
-     * @hash   -210173006
+     * @hash   -39314894
      */
     MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
 

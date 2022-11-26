@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@SendLinkPacketOfPassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -437815504
+     * @hash   -431957248
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?sendLinkPacketOfPassengers@SendLinkPacketOfPassengersSystem@@SAXAEAVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEAUVehicleComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UPassengerComponent@@@@$$CBUActorUniqueIDComponent@@@@@Z
-     * @hash   1893285479
+     * @hash   1899543511
      */
     MCAPI static void sendLinkPacketOfPassengers(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent>, struct ActorUniqueIDComponent const>);
 

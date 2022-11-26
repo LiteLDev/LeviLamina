@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0HopperComponent@@QEAA@XZ
-     * @hash   -1265533067
+     * @hash   -1285829387
      */
     MCAPI HopperComponent();
     /**
      * @symbol ?getLastPosition@HopperComponent@@QEBA?AVBlockPos@@XZ
-     * @hash   1672114044
+     * @hash   1651817724
      */
     MCAPI class BlockPos getLastPosition() const;
     /**
      * @symbol ?pullInItems@HopperComponent@@QEAA_NAEAVActor@@@Z
-     * @hash   -168112445
+     * @hash   -188408765
      */
     MCAPI bool pullInItems(class Actor &);
 

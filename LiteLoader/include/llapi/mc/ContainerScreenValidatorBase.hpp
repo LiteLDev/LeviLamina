@@ -38,24 +38,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?postCommitItemRemoved@ContainerScreenValidatorBase@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
-     * @hash   -1744392027
+     * @hash   -1565138619
      */
     virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const &);
     /**
      * @vftbl  2
      * @symbol ?isCraftingImplemented@ContainerScreenValidatorBase@@UEAA_NXZ
-     * @hash   -971730247
+     * @hash   -874984455
      */
     virtual bool isCraftingImplemented();
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@ContainerScreenValidatorBase@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   229079189
+     * @hash   698047189
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ?isValidContainerForScreen@ContainerScreenValidatorBase@@QEBA_NW4ContainerEnumName@@@Z
-     * @hash   -1414692065
+     * @hash   -945724065
      */
     MCAPI bool isValidContainerForScreen(enum class ContainerEnumName) const;
 

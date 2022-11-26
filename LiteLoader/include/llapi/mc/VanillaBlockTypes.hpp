@@ -23,2123 +23,1193 @@ namespace VanillaBlockTypes {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?mAcaciaStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1769422470
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mAcaciaStairs;
-    /**
-     * @symbol ?mAllow@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   378368654
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mAllow;
-    /**
      * @symbol ?mAmethystBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   340652492
+     * @hash   983369292
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAmethystBlock;
     /**
      * @symbol ?mAmethystCluster@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   737111606
+     * @hash   1379828406
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAmethystCluster;
     /**
-     * @symbol ?mAncientDebris@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   357097826
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mAncientDebris;
-    /**
-     * @symbol ?mAndesiteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   995916192
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mAndesiteStairs;
-    /**
      * @symbol ?mAnvil@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1427017396
+     * @hash   -782955196
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAnvil;
     /**
      * @symbol ?mAzalea@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1349924014
+     * @hash   -707145710
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAzalea;
     /**
      * @symbol ?mBambooBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -31979522
+     * @hash   610998670
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBambooBlock;
     /**
      * @symbol ?mBambooSapling@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1300492572
+     * @hash   1943470764
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBambooSapling;
     /**
      * @symbol ?mBasalt@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1051597388
+     * @hash   1694467948
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBasalt;
     /**
      * @symbol ?mBeacon@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1903896534
+     * @hash   -1259795894
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBeacon;
     /**
      * @symbol ?mBeeNest@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1256670064
+     * @hash   -613799504
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBeeNest;
     /**
      * @symbol ?mBeehive@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1980484984
+     * @hash   -1337614424
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBeehive;
     /**
      * @symbol ?mBigDripleaf@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   280806842
+     * @hash   923585146
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBigDripleaf;
     /**
-     * @symbol ?mBirchStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1513481936
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBirchStairs;
-    /**
      * @symbol ?mBlackstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1558481902
+     * @hash   -2093637898
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBlackstone;
     /**
      * @symbol ?mBlackstoneDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1065936052
+     * @hash   1708768172
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBlackstoneDoubleSlab;
     /**
      * @symbol ?mBlackstoneSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1153943606
+     * @hash   -511111486
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBlackstoneSlab;
     /**
-     * @symbol ?mBlackstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1336469486
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBlackstoneStairs;
-    /**
      * @symbol ?mBoneBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -995163122
+     * @hash   -351100922
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBoneBlock;
     /**
      * @symbol ?mBookshelf@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1193067478
+     * @hash   1837229622
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBookshelf;
     /**
      * @symbol ?mBrewingStand@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1242444842
+     * @hash   -598321138
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBrewingStand;
     /**
-     * @symbol ?mBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   52578778
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBrickStairs;
-    /**
-     * @symbol ?mBubbleColumn@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1093020950
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBubbleColumn;
-    /**
      * @symbol ?mBuddingAmethyst@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1032326452
+     * @hash   -389609652
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBuddingAmethyst;
     /**
      * @symbol ?mButtonAcacia@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1781996258
+     * @hash   -1139002690
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonAcacia;
     /**
      * @symbol ?mButtonBirch@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1987131088
+     * @hash   -1344137520
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonBirch;
     /**
      * @symbol ?mButtonDarkOak@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1036153762
+     * @hash   -393160194
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonDarkOak;
     /**
      * @symbol ?mButtonJungle@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -882211272
+     * @hash   -239217704
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonJungle;
     /**
      * @symbol ?mButtonSpruce@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1296873334
+     * @hash   -653879766
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonSpruce;
     /**
      * @symbol ?mCalcite@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1264674738
+     * @hash   -621957938
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCalcite;
     /**
-     * @symbol ?mCameraBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1834962228
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCameraBlock;
-    /**
-     * @symbol ?mCarvedPumpkin@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -147403438
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCarvedPumpkin;
-    /**
      * @symbol ?mCauldron@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   733234678
+     * @hash   1377358382
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCauldron;
     /**
      * @symbol ?mCaveVines@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2061194420
+     * @hash   -1590994572
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCaveVines;
     /**
      * @symbol ?mCaveVinesBodyWithBerries@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   461102010
+     * @hash   1103880314
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCaveVinesBodyWithBerries;
     /**
      * @symbol ?mCaveVinesHeadWithBerries@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1414031802
+     * @hash   -771253498
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCaveVinesHeadWithBerries;
     /**
-     * @symbol ?mChain@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1261268202
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mChain;
-    /**
-     * @symbol ?mChalkboard@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1849353296
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mChalkboard;
-    /**
-     * @symbol ?mChemicalHeat@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1465961162
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mChemicalHeat;
-    /**
-     * @symbol ?mChemistryTable@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1090637598
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mChemistryTable;
-    /**
      * @symbol ?mChest@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   777179326
+     * @hash   1421333782
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mChest;
     /**
      * @symbol ?mChiseledDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1849950148
+     * @hash   -1802300348
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mChiseledDeepslate;
     /**
      * @symbol ?mChiseledPolishedBlackstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   645444560
+     * @hash   1288276680
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mChiseledPolishedBlackstone;
     /**
      * @symbol ?mChorusPlantBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   438972930
+     * @hash   1083019754
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mChorusPlantBlock;
     /**
      * @symbol ?mCobbledDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1505636462
+     * @hash   -2146583282
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslate;
     /**
      * @symbol ?mCobbledDeepslateDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -144074396
+     * @hash   498642404
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateDoubleSlab;
     /**
      * @symbol ?mCobbledDeepslateSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -99501014
+     * @hash   543246538
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateSlab;
     /**
-     * @symbol ?mCobbledDeepslateStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2116501358
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateStairs;
-    /**
      * @symbol ?mCobblestone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -764913748
+     * @hash   -120720852
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobblestone;
     /**
-     * @symbol ?mCobblestoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1929156696
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCobblestoneStairs;
-    /**
      * @symbol ?mConduitBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1275614840
+     * @hash   -631514200
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mConduitBlock;
     /**
      * @symbol ?mCopperBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1994919900
+     * @hash   -1657238340
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCopperBlock;
     /**
-     * @symbol ?mCoral@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   590686622
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoral;
-    /**
-     * @symbol ?mCoralBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -774690414
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralBlock;
-    /**
-     * @symbol ?mCoralFan@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1892054630
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralFan;
-    /**
-     * @symbol ?mCoralFanDead@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -562392330
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanDead;
-    /**
-     * @symbol ?mCoralFanHang@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   316940954
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanHang;
-    /**
-     * @symbol ?mCoralFanHang2@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1457945952
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanHang2;
-    /**
-     * @symbol ?mCoralFanHang3@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -323824150
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanHang3;
-    /**
      * @symbol ?mCrackedDeepslateTiles@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1990070498
+     * @hash   -1347353698
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrackedDeepslateTiles;
     /**
      * @symbol ?mCrimsonButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   456356814
+     * @hash   1099227374
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonButton;
     /**
      * @symbol ?mCrimsonDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -32068944
+     * @hash   610801616
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonDoubleSlab;
     /**
      * @symbol ?mCrimsonFungus@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2026450606
+     * @hash   -1624354546
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonFungus;
     /**
      * @symbol ?mCrimsonNylium@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   100332794
+     * @hash   743203354
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonNylium;
     /**
      * @symbol ?mCrimsonPressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -947703882
+     * @hash   -304833322
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonPressurePlate;
     /**
      * @symbol ?mCrimsonSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1494297410
+     * @hash   -851426850
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonSlab;
     /**
-     * @symbol ?mCrimsonStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1902960578
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonStairs;
-    /**
      * @symbol ?mCryingObsidian@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   860704128
+     * @hash   1503551624
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCryingObsidian;
     /**
      * @symbol ?mCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1507035146
+     * @hash   -2145123094
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCutCopper;
     /**
      * @symbol ?mCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   502842366
+     * @hash   1145620670
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCutCopperSlab;
     /**
      * @symbol ?mCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1490288958
+     * @hash   2133705366
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCutCopperStairs;
     /**
-     * @symbol ?mDarkOakStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1294256890
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDarkOakStairs;
-    /**
-     * @symbol ?mDarkPrismarineStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -935894946
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDarkPrismarineStairs;
-    /**
      * @symbol ?mDaylightDetector@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1043056326
+     * @hash   -398994126
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDaylightDetector;
     /**
      * @symbol ?mDaylightDetectorInverted@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -826926836
+     * @hash   -182880012
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDaylightDetectorInverted;
     /**
      * @symbol ?mDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   848084046
+     * @hash   1490831598
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslate;
     /**
      * @symbol ?mDeepslateBrickDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   861643464
+     * @hash   1504360264
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateBrickDoubleSlab;
     /**
      * @symbol ?mDeepslateBrickSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1147353930
+     * @hash   -504629442
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateBrickSlab;
     /**
-     * @symbol ?mDeepslateBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   155117086
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateBrickStairs;
-    /**
      * @symbol ?mDeepslateTileDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   6232568
+     * @hash   648949368
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateTileDoubleSlab;
     /**
      * @symbol ?mDeepslateTileSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   593913822
+     * @hash   1236645998
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateTileSlab;
     /**
-     * @symbol ?mDeepslateTileStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1509057722
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateTileStairs;
-    /**
      * @symbol ?mDeepslateTiles@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1383865970
+     * @hash   2026598146
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDeepslateTiles;
     /**
-     * @symbol ?mDeny@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -342050574
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDeny;
-    /**
-     * @symbol ?mDioriteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   275148668
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDioriteStairs;
-    /**
      * @symbol ?mDispenser@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1461414394
+     * @hash   -817244562
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDispenser;
     /**
      * @symbol ?mDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1524574372
+     * @hash   -2127614620
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleCutCopperSlab;
     /**
      * @symbol ?mDoubleStoneSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   556762968
+     * @hash   1200925112
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleStoneSlab;
     /**
      * @symbol ?mDoubleStoneSlab2@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1703310850
+     * @hash   -1947617310
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleStoneSlab2;
     /**
      * @symbol ?mDoubleStoneSlab3@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1456243060
+     * @hash   -813264868
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleStoneSlab3;
     /**
      * @symbol ?mDoubleStoneSlab4@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -322121258
+     * @hash   320856934
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleStoneSlab4;
     /**
      * @symbol ?mDoubleWoodenSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -499184324
+     * @hash   144862500
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleWoodenSlab;
     /**
      * @symbol ?mDragonEgg@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   572175712
+     * @hash   1216214848
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDragonEgg;
     /**
-     * @symbol ?mDriedKelpBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1266269860
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mDriedKelpBlock;
-    /**
      * @symbol ?mDripstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   953875652
+     * @hash   1596692396
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDripstone;
     /**
      * @symbol ?mDropper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2089845144
+     * @hash   -1445775256
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDropper;
     /**
-     * @symbol ?mElement0@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -974637470
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement0;
-    /**
-     * @symbol ?mElement1@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   159484332
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement1;
-    /**
-     * @symbol ?mElement10@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -19639766
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement10;
-    /**
-     * @symbol ?mElement100@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1278972540
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement100;
-    /**
-     * @symbol ?mElement101@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -144850738
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement101;
-    /**
-     * @symbol ?mElement102@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   989271064
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement102;
-    /**
-     * @symbol ?mElement103@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2123392866
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement103;
-    /**
-     * @symbol ?mElement104@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1037452628
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement104;
-    /**
-     * @symbol ?mElement105@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   96669174
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement105;
-    /**
-     * @symbol ?mElement106@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1230790976
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement106;
-    /**
-     * @symbol ?mElement107@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1930054518
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement107;
-    /**
-     * @symbol ?mElement108@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -795932716
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement108;
-    /**
-     * @symbol ?mElement109@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   338189086
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement109;
-    /**
-     * @symbol ?mElement11@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1114482036
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement11;
-    /**
-     * @symbol ?mElement110@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -481096494
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement110;
-    /**
-     * @symbol ?mElement111@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   653025308
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement111;
-    /**
-     * @symbol ?mElement112@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1787147110
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement112;
-    /**
-     * @symbol ?mElement113@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1373698384
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement113;
-    /**
-     * @symbol ?mElement114@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -239576582
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement114;
-    /**
-     * @symbol ?mElement115@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   894545220
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement115;
-    /**
-     * @symbol ?mElement116@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2028667022
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement116;
-    /**
-     * @symbol ?mElement117@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1132178472
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement117;
-    /**
-     * @symbol ?mElement118@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1943330
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement118;
-    /**
-     * @symbol ?mElement12@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2046363458
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement12;
-    /**
-     * @symbol ?mElement13@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -912241656
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement13;
-    /**
-     * @symbol ?mElement14@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   221880146
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement14;
-    /**
-     * @symbol ?mElement15@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1356001948
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement15;
-    /**
-     * @symbol ?mElement16@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1804843546
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement16;
-    /**
-     * @symbol ?mElement17@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -670721744
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement17;
-    /**
-     * @symbol ?mElement18@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   463400058
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement18;
-    /**
-     * @symbol ?mElement19@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1597521860
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement19;
-    /**
-     * @symbol ?mElement2@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1293606134
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement2;
-    /**
-     * @symbol ?mElement20@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   778236280
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement20;
-    /**
-     * @symbol ?mElement21@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1912358082
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement21;
-    /**
-     * @symbol ?mElement22@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1248487412
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement22;
-    /**
-     * @symbol ?mElement23@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -114365610
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement23;
-    /**
-     * @symbol ?mElement24@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1019756192
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement24;
-    /**
-     * @symbol ?mElement25@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2141089302
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement25;
-    /**
-     * @symbol ?mElement26@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1006967500
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement26;
-    /**
-     * @symbol ?mElement27@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   127154302
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement27;
-    /**
-     * @symbol ?mElement28@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1261276104
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement28;
-    /**
-     * @symbol ?mElement29@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1899569390
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement29;
-    /**
-     * @symbol ?mElement3@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1867239360
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement3;
-    /**
-     * @symbol ?mElement30@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1576112326
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement30;
-    /**
-     * @symbol ?mElement31@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1584733168
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement31;
-    /**
-     * @symbol ?mElement32@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -450611366
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement32;
-    /**
-     * @symbol ?mElement33@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   683510436
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement33;
-    /**
-     * @symbol ?mElement34@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1817632238
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement34;
-    /**
-     * @symbol ?mElement35@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1343213256
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement35;
-    /**
-     * @symbol ?mElement36@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -209091454
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement36;
-    /**
-     * @symbol ?mElement37@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   925030348
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement37;
-    /**
-     * @symbol ?mElement38@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2059152150
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement38;
-    /**
-     * @symbol ?mElement39@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1101693344
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement39;
-    /**
-     * @symbol ?mElement4@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -733117558
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement4;
-    /**
-     * @symbol ?mElement40@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1920978924
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement40;
-    /**
-     * @symbol ?mElement41@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -786857122
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement41;
-    /**
-     * @symbol ?mElement42@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   347264680
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement42;
-    /**
-     * @symbol ?mElement43@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1481386482
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement43;
-    /**
-     * @symbol ?mElement44@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1679459012
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement44;
-    /**
-     * @symbol ?mElement45@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -545337210
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement45;
-    /**
-     * @symbol ?mElement46@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   588784592
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement46;
-    /**
-     * @symbol ?mElement47@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1722906394
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement47;
-    /**
-     * @symbol ?mElement48@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1437939100
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement48;
-    /**
-     * @symbol ?mElement49@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -303817298
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement49;
-    /**
-     * @symbol ?mElement5@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   401004244
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement5;
-    /**
-     * @symbol ?mElement50@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1123102878
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement50;
-    /**
-     * @symbol ?mElement51@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   11018924
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement51;
-    /**
-     * @symbol ?mElement52@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1145140726
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement52;
-    /**
-     * @symbol ?mElement53@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2015704768
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement53;
-    /**
-     * @symbol ?mElement54@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -881582966
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement54;
-    /**
-     * @symbol ?mElement55@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   252538836
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement55;
-    /**
-     * @symbol ?mElement56@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1386660638
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement56;
-    /**
-     * @symbol ?mElement57@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1774184856
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement57;
-    /**
-     * @symbol ?mElement58@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -640063054
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement58;
-    /**
-     * @symbol ?mElement59@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   494058748
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement59;
-    /**
-     * @symbol ?mElement6@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1535126046
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement6;
-    /**
-     * @symbol ?mElement60@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -325226832
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement60;
-    /**
-     * @symbol ?mElement61@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   808894970
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement61;
-    /**
-     * @symbol ?mElement62@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1943016772
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement62;
-    /**
-     * @symbol ?mElement63@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1217828722
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement63;
-    /**
-     * @symbol ?mElement64@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -83706920
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement64;
-    /**
-     * @symbol ?mElement65@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1050414882
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement65;
-    /**
-     * @symbol ?mElement66@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2110430612
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement66;
-    /**
-     * @symbol ?mElement67@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -976308810
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement67;
-    /**
-     * @symbol ?mElement68@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   157812992
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement68;
-    /**
-     * @symbol ?mElement69@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1291934794
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement69;
-    /**
-     * @symbol ?mElement7@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1625719448
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement7;
-    /**
-     * @symbol ?mElement70@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   472649214
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement70;
-    /**
-     * @symbol ?mElement71@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1606771016
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement71;
-    /**
-     * @symbol ?mElement72@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1554074478
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement72;
-    /**
-     * @symbol ?mElement73@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -419952676
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement73;
-    /**
-     * @symbol ?mElement74@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   714169126
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement74;
-    /**
-     * @symbol ?mElement75@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1848290928
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement75;
-    /**
-     * @symbol ?mElement76@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1312554566
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement76;
-    /**
-     * @symbol ?mElement77@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -178432764
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement77;
-    /**
-     * @symbol ?mElement78@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   955689038
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement78;
-    /**
-     * @symbol ?mElement79@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2089810840
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement79;
-    /**
-     * @symbol ?mElement8@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -491597646
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement8;
-    /**
-     * @symbol ?mElement80@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1270525260
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement80;
-    /**
-     * @symbol ?mElement81@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1890320234
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement81;
-    /**
-     * @symbol ?mElement82@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -756198432
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement82;
-    /**
-     * @symbol ?mElement83@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   377923370
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement83;
-    /**
-     * @symbol ?mElement84@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1512045172
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement84;
-    /**
-     * @symbol ?mElement85@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1648800322
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement85;
-    /**
-     * @symbol ?mElement86@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -514678520
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement86;
-    /**
-     * @symbol ?mElement87@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   619443282
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement87;
-    /**
-     * @symbol ?mElement88@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1753565084
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement88;
-    /**
-     * @symbol ?mElement89@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1407280410
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement89;
-    /**
-     * @symbol ?mElement9@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   642524156
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement9;
-    /**
-     * @symbol ?mElement90@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2068401306
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement90;
-    /**
-     * @symbol ?mElement91@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1092444188
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement91;
-    /**
-     * @symbol ?mElement92@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   41677614
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement92;
-    /**
-     * @symbol ?mElement93@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1175799416
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement93;
-    /**
-     * @symbol ?mElement94@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1985046078
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement94;
-    /**
-     * @symbol ?mElement95@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -850924276
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement95;
-    /**
-     * @symbol ?mElement96@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   283197526
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement96;
-    /**
-     * @symbol ?mElement97@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1417319328
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement97;
-    /**
-     * @symbol ?mElement98@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1743526166
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement98;
-    /**
-     * @symbol ?mElement99@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -609404364
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mElement99;
-    /**
      * @symbol ?mEnchantingTable@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   264482126
+     * @hash   908552014
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mEnchantingTable;
     /**
-     * @symbol ?mEndBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   410826874
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndBrickStairs;
-    /**
      * @symbol ?mExposedCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1408166318
+     * @hash   2050975374
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCopper;
     /**
      * @symbol ?mExposedCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1950683304
+     * @hash   -1701474936
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopper;
     /**
      * @symbol ?mExposedCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1978077596
+     * @hash   -1674111396
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperSlab;
     /**
      * @symbol ?mExposedCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1844756828
+     * @hash   -1806671052
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperStairs;
     /**
      * @symbol ?mExposedDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -871035958
+     * @hash   -228257654
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedDoubleCutCopperSlab;
     /**
      * @symbol ?mFrogSpawn@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1473091998
+     * @hash   -830390574
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mFrogSpawn;
     /**
      * @symbol ?mGildedBlackstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -405864256
+     * @hash   236967864
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGildedBlackstone;
     /**
      * @symbol ?mGlass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -527879988
+     * @hash   116289844
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGlass;
     /**
      * @symbol ?mGlassPane@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -502215556
+     * @hash   141915836
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGlassPane;
     /**
      * @symbol ?mGlowLichen@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   935093322
+     * @hash   1577848562
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGlowLichen;
     /**
      * @symbol ?mGlowingObsidian@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -349644636
+     * @hash   294394500
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGlowingObsidian;
     /**
      * @symbol ?mGoldBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1448294670
+     * @hash   2092456814
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGoldBlock;
     /**
-     * @symbol ?mGraniteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1164986132
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mGraniteStairs;
-    /**
      * @symbol ?mGrass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -327908976
+     * @hash   316283920
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGrass;
     /**
      * @symbol ?mGrassPathBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -372397586
+     * @hash   271641550
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mGrassPathBlock;
     /**
      * @symbol ?mHardGlass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1081261666
+     * @hash   -437330162
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHardGlass;
     /**
      * @symbol ?mHardGlassPane@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1542134590
+     * @hash   -2108901202
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHardGlassPane;
     /**
      * @symbol ?mHardStainedGlass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1447993312
+     * @hash   -804061808
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHardStainedGlass;
     /**
      * @symbol ?mHardStainedGlassPane@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1698272064
+     * @hash   -1054340560
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHardStainedGlassPane;
     /**
      * @symbol ?mHeavyWeightedPressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1469818440
+     * @hash   2113880640
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHeavyWeightedPressurePlate;
     /**
      * @symbol ?mHopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1674967730
+     * @hash   -1975937366
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mHopper;
     /**
      * @symbol ?mInfestedDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   963413806
+     * @hash   1606130606
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mInfestedDeepslate;
     /**
      * @symbol ?mInfoReserved6@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2030418788
+     * @hash   -1386379652
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mInfoReserved6;
     /**
      * @symbol ?mInfoUpdateGame1@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -390011236
+     * @hash   254027900
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mInfoUpdateGame1;
     /**
      * @symbol ?mInfoUpdateGame2@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   744110566
+     * @hash   1388149702
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mInfoUpdateGame2;
     /**
-     * @symbol ?mJukebox@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   164790152
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mJukebox;
-    /**
-     * @symbol ?mJungleStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1720927208
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mJungleStairs;
-    /**
-     * @symbol ?mKelp@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1172097682
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mKelp;
-    /**
      * @symbol ?mLargeAmethystBud@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   937182092
+     * @hash   1579898892
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLargeAmethystBud;
     /**
      * @symbol ?mLavaCauldron@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1863024526
+     * @hash   -1789072210
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLavaCauldron;
     /**
      * @symbol ?mLever@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   368907048
+     * @hash   1013053816
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLever;
     /**
      * @symbol ?mLightWeightedPressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2140833886
+     * @hash   -1496771686
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLightWeightedPressurePlate;
     /**
-     * @symbol ?mLightningRod@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -142364612
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mLightningRod;
-    /**
      * @symbol ?mLitRedStoneLamp@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1529400498
+     * @hash   -2121443094
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLitRedStoneLamp;
     /**
      * @symbol ?mLodestoneBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1985023130
+     * @hash   -1667073606
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLodestoneBlock;
     /**
      * @symbol ?mMagmaBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1176647970
+     * @hash   -532601146
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMagmaBlock;
     /**
      * @symbol ?mMangroveButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1946031272
+     * @hash   -1706226912
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangroveButton;
     /**
      * @symbol ?mMangroveDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   249411210
+     * @hash   892112634
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangroveDoubleSlab;
     /**
      * @symbol ?mMangrovePressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1319899836
+     * @hash   -677198412
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangrovePressurePlate;
     /**
      * @symbol ?mMangrovePropagule@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1598889596
+     * @hash   -2053368588
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangrovePropagule;
     /**
      * @symbol ?mMangroveRoots@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1296384540
+     * @hash   1939093652
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangroveRoots;
     /**
      * @symbol ?mMangroveSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -271715320
+     * @hash   370986104
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangroveSlab;
     /**
-     * @symbol ?mMangroveStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -413339936
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mMangroveStairs;
-    /**
      * @symbol ?mMangroveWood@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1595037886
+     * @hash   -2057227986
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMangroveWood;
     /**
      * @symbol ?mMediumAmethystBud@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1361040906
+     * @hash   2003757706
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMediumAmethystBud;
     /**
      * @symbol ?mMobSpawner@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   999805650
+     * @hash   1643967794
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMobSpawner;
     /**
      * @symbol ?mMonsterStoneEgg@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1284839712
+     * @hash   -640708320
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMonsterStoneEgg;
     /**
      * @symbol ?mMossyCobblestone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   221487748
+     * @hash   865649892
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMossyCobblestone;
     /**
-     * @symbol ?mMossyCobblestoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2082160184
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mMossyCobblestoneStairs;
-    /**
-     * @symbol ?mMossyStoneBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   893957734
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mMossyStoneBrickStairs;
-    /**
      * @symbol ?mMovingBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   783111122
+     * @hash   1427273266
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMovingBlock;
     /**
      * @symbol ?mMudBrickDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   797658634
+     * @hash   1440375434
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMudBrickDoubleSlab;
     /**
      * @symbol ?mMudBrickSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1851795360
+     * @hash   -1800455136
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMudBrickSlab;
     /**
-     * @symbol ?mMudBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   230024848
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mMudBrickStairs;
-    /**
      * @symbol ?mMuddyMangroveRoots@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   73369624
+     * @hash   716078736
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMuddyMangroveRoots;
     /**
-     * @symbol ?mNetherBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1093396386
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherBrickStairs;
-    /**
-     * @symbol ?mNote@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1780337254
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mNote;
-    /**
-     * @symbol ?mOakStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -222263878
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mOakStairs;
-    /**
      * @symbol ?mObserver@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   446733278
+     * @hash   1090895422
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mObserver;
     /**
      * @symbol ?mObsidian@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1290580848
+     * @hash   1934742992
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mObsidian;
     /**
      * @symbol ?mOchreFroglight@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1763076168
+     * @hash   -1120374744
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOchreFroglight;
     /**
      * @symbol ?mOxidizedCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1859105148
+     * @hash   -1793053092
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCopper;
     /**
      * @symbol ?mOxidizedCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   753614906
+     * @hash   1396423962
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopper;
     /**
      * @symbol ?mOxidizedCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1148997586
+     * @hash   -506219282
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopperSlab;
     /**
      * @symbol ?mOxidizedCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1107114130
+     * @hash   -463574714
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopperStairs;
     /**
      * @symbol ?mOxidizedDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1816813284
+     * @hash   -1835375708
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedDoubleCutCopperSlab;
     /**
      * @symbol ?mPearlescentFroglight@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   913193662
+     * @hash   1555895086
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPearlescentFroglight;
     /**
      * @symbol ?mPiston@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -103580796
+     * @hash   540581348
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPiston;
     /**
      * @symbol ?mPistonArm@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   189299346
+     * @hash   833461490
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPistonArm;
     /**
      * @symbol ?mPointedDripstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1032139820
+     * @hash   1674956564
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPointedDripstone;
     /**
-     * @symbol ?mPolishedAndesiteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   7033816
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedAndesiteStairs;
-    /**
      * @symbol ?mPolishedBasalt@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -707864460
+     * @hash   -64993900
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBasalt;
     /**
      * @symbol ?mPolishedBlackstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   880363614
+     * @hash   1523188046
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstone;
     /**
      * @symbol ?mPolishedBlackstoneBrickDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -413969032
+     * @hash   228863088
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickDoubleSlab;
     /**
      * @symbol ?mPolishedBlackstoneBrickSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1054523506
+     * @hash   -411691386
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickSlab;
     /**
-     * @symbol ?mPolishedBlackstoneBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -297817922
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickStairs;
-    /**
      * @symbol ?mPolishedBlackstoneButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -127346070
+     * @hash   515470674
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneButton;
     /**
      * @symbol ?mPolishedBlackstoneDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1014996748
+     * @hash   1657813492
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneDoubleSlab;
     /**
      * @symbol ?mPolishedBlackstonePressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2077343794
+     * @hash   -1574806758
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstonePressurePlate;
     /**
      * @symbol ?mPolishedBlackstoneSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2142795230
+     * @hash   -1499978486
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneSlab;
     /**
-     * @symbol ?mPolishedBlackstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1808211578
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneStairs;
-    /**
      * @symbol ?mPolishedDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   272048206
+     * @hash   914788070
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslate;
     /**
      * @symbol ?mPolishedDeepslateDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1721217844
+     * @hash   -1931032652
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslateDoubleSlab;
     /**
      * @symbol ?mPolishedDeepslateSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -214267894
+     * @hash   428471970
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslateSlab;
     /**
-     * @symbol ?mPolishedDeepslateStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -760464782
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslateStairs;
-    /**
-     * @symbol ?mPolishedDioriteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -310917772
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDioriteStairs;
-    /**
-     * @symbol ?mPolishedGraniteStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   578919692
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedGraniteStairs;
-    /**
      * @symbol ?mPortal@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -931143678
+     * @hash   -287012286
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPortal;
     /**
      * @symbol ?mPoweredComparator@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1308338320
+     * @hash   1952400520
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPoweredComparator;
     /**
      * @symbol ?mPoweredRepeater@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -896714564
+     * @hash   -252583172
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPoweredRepeater;
     /**
      * @symbol ?mPressurePlateAcacia@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   287808494
+     * @hash   930802062
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPressurePlateAcacia;
     /**
      * @symbol ?mPressurePlateBirch@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1089042000
+     * @hash   -446048432
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPressurePlateBirch;
     /**
      * @symbol ?mPressurePlateDarkOak@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1297869090
+     * @hash   -654875522
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPressurePlateDarkOak;
     /**
      * @symbol ?mPressurePlateJungle@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1187593480
+     * @hash   1830587048
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPressurePlateJungle;
     /**
      * @symbol ?mPressurePlateSpruce@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   772931418
+     * @hash   1415924986
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPressurePlateSpruce;
     /**
      * @symbol ?mPrismarine@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1484541158
+     * @hash   2128580294
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPrismarine;
     /**
-     * @symbol ?mPrismarineBricksStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   527194206
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPrismarineBricksStairs;
-    /**
-     * @symbol ?mPrismarineStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -600763094
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPrismarineStairs;
-    /**
      * @symbol ?mPurpurBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1808810330
+     * @hash   -1164755818
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPurpurBlock;
     /**
-     * @symbol ?mPurpurStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1941179454
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPurpurStairs;
-    /**
      * @symbol ?mQuartzBricks@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   785540220
+     * @hash   1428356964
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mQuartzBricks;
     /**
-     * @symbol ?mQuartzStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1054736156
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mQuartzStairs;
-    /**
      * @symbol ?mRawCopperBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   974218866
+     * @hash   1616935666
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mRawCopperBlock;
     /**
-     * @symbol ?mRedNetherBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   558730878
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedNetherBrickStairs;
-    /**
      * @symbol ?mRedSandstone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1309146890
+     * @hash   1953193714
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mRedSandstone;
     /**
-     * @symbol ?mRedSandstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1555512870
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedSandstoneStairs;
-    /**
      * @symbol ?mRedStoneDust@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1510447462
+     * @hash   -2140365378
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mRedStoneDust;
     /**
      * @symbol ?mRedstoneBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   316784158
+     * @hash   960846358
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mRedstoneBlock;
     /**
      * @symbol ?mReeds@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1217515978
+     * @hash   -573369210
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mReeds;
     /**
      * @symbol ?mReinforcedDeepslate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -865020676
+     * @hash   -222303876
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mReinforcedDeepslate;
     /**
      * @symbol ?mSand@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -178948142
+     * @hash   465244754
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSand;
     /**
      * @symbol ?mSandStone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1111084506
+     * @hash   -466914674
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSandStone;
     /**
-     * @symbol ?mSandstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   501131306
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSandstoneStairs;
-    /**
      * @symbol ?mSculk@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -219593492
+     * @hash   423123308
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSculk;
     /**
      * @symbol ?mSculkCatalyst@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1209142162
+     * @hash   -566425362
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSculkCatalyst;
     /**
      * @symbol ?mSculkSensor@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   932443864
+     * @hash   1575260608
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSculkSensor;
     /**
      * @symbol ?mSculkShrieker@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -800506046
+     * @hash   -157789246
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSculkShrieker;
     /**
      * @symbol ?mSculkVein@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   344569308
+     * @hash   987286108
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSculkVein;
     /**
-     * @symbol ?mSeaGrass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   307191680
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSeaGrass;
-    /**
      * @symbol ?mShulkerBox@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1571236504
+     * @hash   -927212744
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mShulkerBox;
     /**
      * @symbol ?mSkull@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1178634662
+     * @hash   1822696862
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSkull;
     /**
      * @symbol ?mSlimeBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   534037396
+     * @hash   1178084220
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSlimeBlock;
     /**
      * @symbol ?mSmallAmethystBud@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -650375676
+     * @hash   -7658876
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmallAmethystBud;
     /**
      * @symbol ?mSmallDripleaf@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   203551576
+     * @hash   846329880
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmallDripleaf;
     /**
      * @symbol ?mSmoothBasalt@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2009144240
+     * @hash   -1643106256
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmoothBasalt;
     /**
-     * @symbol ?mSmoothQuartzStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1634826264
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSmoothQuartzStairs;
-    /**
-     * @symbol ?mSmoothRedSandstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -255519846
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSmoothRedSandstoneStairs;
-    /**
-     * @symbol ?mSmoothSandstoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -183169994
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSmoothSandstoneStairs;
-    /**
      * @symbol ?mSmoothStone@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -889948982
+     * @hash   -247063046
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmoothStone;
     /**
      * @symbol ?mSoulSand@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1320714832
+     * @hash   1964846224
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSoulSand;
     /**
-     * @symbol ?mSponge@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1745305770
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSponge;
-    /**
      * @symbol ?mSporeBlossom@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1345859270
+     * @hash   1988637574
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSporeBlossom;
     /**
-     * @symbol ?mSpruceStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2141336414
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSpruceStairs;
-    /**
      * @symbol ?mStainedGlass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2049467862
+     * @hash   -1405428726
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStainedGlass;
     /**
      * @symbol ?mStainedGlassPane@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   900670402
+     * @hash   1544709538
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStainedGlassPane;
     /**
      * @symbol ?mStickyPiston@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2087905506
+     * @hash   -1443743362
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStickyPiston;
     /**
      * @symbol ?mStickyPistonArm@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   874729992
+     * @hash   1517600552
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStickyPistonArm;
     /**
-     * @symbol ?mStoneBrickStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   481659670
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mStoneBrickStairs;
-    /**
      * @symbol ?mStoneButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1204172134
+     * @hash   -560025366
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneButton;
     /**
      * @symbol ?mStonePressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1336562506
+     * @hash   1980709274
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStonePressurePlate;
     /**
      * @symbol ?mStoneSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   785674242
+     * @hash   1429836386
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneSlab;
     /**
      * @symbol ?mStoneSlab2@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   209395112
+     * @hash   853434248
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneSlab2;
     /**
      * @symbol ?mStoneSlab3@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1344785434
+     * @hash   1987763626
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneSlab3;
     /**
      * @symbol ?mStoneSlab4@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1816060060
+     * @hash   -1173081868
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneSlab4;
     /**
-     * @symbol ?mStoneStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   731385514
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mStoneStairs;
-    /**
      * @symbol ?mStrippedMangroveWood@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   533271988
+     * @hash   1175973412
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStrippedMangroveWood;
     /**
      * @symbol ?mSweetBerryBushBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -954543742
+     * @hash   -311673182
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSweetBerryBushBlock;
     /**
      * @symbol ?mTNT@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1198156160
+     * @hash   1842318304
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTNT;
     /**
      * @symbol ?mTarget@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1065159164
+     * @hash   1709205988
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTarget;
     /**
      * @symbol ?mTintedGlass@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1944413520
+     * @hash   -1707836976
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTintedGlass;
     /**
      * @symbol ?mTrappedChest@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1150604368
+     * @hash   1794666568
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTrappedChest;
     /**
      * @symbol ?mTripwire@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -511114482
+     * @hash   132947718
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTripwire;
     /**
      * @symbol ?mTripwireHook@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1346176972
+     * @hash   1990239172
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTripwireHook;
     /**
      * @symbol ?mTuff@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1395028140
+     * @hash   -752311340
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTuff;
     /**
-     * @symbol ?mTurtleEgg@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -496232042
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mTurtleEgg;
-    /**
      * @symbol ?mTwistingVinesBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   93206968
+     * @hash   736077528
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mTwistingVinesBlock;
     /**
      * @symbol ?mUndyedShulkerBox@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1327169734
+     * @hash   -683145974
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUndyedShulkerBox;
     /**
      * @symbol ?mUnlitRedStoneLamp@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1886824120
+     * @hash   -1764019472
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnlitRedStoneLamp;
     /**
      * @symbol ?mUnpoweredComparator@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1202435862
+     * @hash   1846498062
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnpoweredComparator;
     /**
      * @symbol ?mUnpoweredRepeater@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -539290942
+     * @hash   104840450
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnpoweredRepeater;
     /**
      * @symbol ?mVerdantFroglight@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -75398094
+     * @hash   567303330
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mVerdantFroglight;
     /**
      * @symbol ?mVine@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -806296346
+     * @hash   -162164954
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mVine;
     /**
      * @symbol ?mWarpedButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   642083196
+     * @hash   1284953756
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedButton;
     /**
      * @symbol ?mWarpedDoubleSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -142058146
+     * @hash   500812414
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedDoubleSlab;
     /**
      * @symbol ?mWarpedFungus@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2082790308
+     * @hash   -1438628164
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedFungus;
     /**
      * @symbol ?mWarpedNylium@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   286059176
+     * @hash   928929736
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedNylium;
     /**
      * @symbol ?mWarpedPressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -804999336
+     * @hash   -162128776
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedPressurePlate;
     /**
      * @symbol ?mWarpedSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1480688660
+     * @hash   -837818100
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedSlab;
     /**
-     * @symbol ?mWarpedStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1717234196
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mWarpedStairs;
-    /**
      * @symbol ?mWarpedWartBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1622064552
+     * @hash   -2030032184
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWarpedWartBlock;
     /**
      * @symbol ?mWaterlily@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1353981838
+     * @hash   1998105542
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaterlily;
     /**
      * @symbol ?mWaxedCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2133469784
+     * @hash   -1518719208
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCopper;
     /**
      * @symbol ?mWaxedCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -173931178
+     * @hash   468847126
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCutCopper;
     /**
      * @symbol ?mWaxedCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   224552762
+     * @hash   867308002
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCutCopperSlab;
     /**
      * @symbol ?mWaxedCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   164828034
+     * @hash   808206002
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCutCopperStairs;
     /**
      * @symbol ?mWaxedDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   568806064
+     * @hash   1211561304
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedExposedCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1129899778
+     * @hash   1772678082
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCopper;
     /**
      * @symbol ?mWaxedExposedCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -489657988
+     * @hash   153120316
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCutCopper;
     /**
      * @symbol ?mWaxedExposedCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1885041568
+     * @hash   -1242286328
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCutCopperSlab;
     /**
      * @symbol ?mWaxedExposedCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   61860136
+     * @hash   705238104
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCutCopperStairs;
     /**
      * @symbol ?mWaxedExposedDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -381476522
+     * @hash   261278718
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedOxidizedCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1816649664
+     * @hash   -1835562392
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCopper;
     /**
      * @symbol ?mWaxedOxidizedCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1888433186
+     * @hash   -1245677946
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCutCopper;
     /**
      * @symbol ?mWaxedOxidizedCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -652088926
+     * @hash   -9341374
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCutCopperSlab;
     /**
      * @symbol ?mWaxedOxidizedCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -548033542
+     * @hash   95275234
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCutCopperStairs;
     /**
      * @symbol ?mWaxedOxidizedDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -190603512
+     * @hash   452144040
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedWeatheredCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -177677072
+     * @hash   465101232
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCopper;
     /**
      * @symbol ?mWaxedWeatheredCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   612752862
+     * @hash   1255531166
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopper;
     /**
      * @symbol ?mWaxedWeatheredCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1347206206
+     * @hash   -704450966
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopperSlab;
     /**
      * @symbol ?mWaxedWeatheredCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1518187018
+     * @hash   -2133402310
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopperStairs;
     /**
      * @symbol ?mWaxedWeatheredDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2032921912
+     * @hash   -1619290144
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredDoubleCutCopperSlab;
     /**
      * @symbol ?mWeatheredCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1147768476
+     * @hash   1790577532
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCopper;
     /**
      * @symbol ?mWeatheredCutCopper@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   920483338
+     * @hash   1563292394
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopper;
     /**
      * @symbol ?mWeatheredCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   435698174
+     * @hash   1078476478
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopperSlab;
     /**
      * @symbol ?mWeatheredCutCopperStairs@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1374468926
+     * @hash   2018008342
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopperStairs;
     /**
      * @symbol ?mWeatheredDoubleCutCopperSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -156792660
+     * @hash   485985644
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredDoubleCutCopperSlab;
     /**
      * @symbol ?mWeb@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -2048777252
+     * @hash   -1404615108
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeb;
     /**
      * @symbol ?mWeepingVines@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   638919218
+     * @hash   1281789778
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeepingVines;
     /**
      * @symbol ?mWitherRose@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1014578790
+     * @hash   1657449350
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWitherRose;
     /**
      * @symbol ?mWoodBlock@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   2036909692
+     * @hash   -1615187044
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWoodBlock;
     /**
      * @symbol ?mWoodButton@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1083538320
+     * @hash   -439437680
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWoodButton;
     /**
      * @symbol ?mWoodPressurePlate@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   1873106284
+     * @hash   -1777714244
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWoodPressurePlate;
     /**
      * @symbol ?mWoodenSlab@VanillaBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1993100062
+     * @hash   -1349053238
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWoodenSlab;
     /**
      * @symbol ?registerBlocks@VanillaBlockTypes@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   560855188
+     * @hash   1321275268
      */
     MCAPI void registerBlocks(class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?unregisterBlocks@VanillaBlockTypes@@YAXXZ
-     * @hash   1206387888
+     * @hash   1976556352
      */
     MCAPI void unregisterBlocks();
 

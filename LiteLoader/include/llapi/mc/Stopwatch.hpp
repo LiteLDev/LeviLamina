@@ -37,34 +37,34 @@ public:
     /**
      * @vftbl  1
      * @symbol ?stop@Stopwatch@@UEAANXZ
-     * @hash   -548202289
+     * @hash   -36581265
      */
     virtual double stop();
     /**
      * @vftbl  2
      * @symbol ?stopContinue@Stopwatch@@UEAANXZ
-     * @hash   1173278614
+     * @hash   1684899638
      */
     virtual double stopContinue();
     /**
      * @vftbl  3
      * @symbol ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -99654411
+     * @hash   411966613
      */
     virtual void print(std::string const &);
     /**
      * @symbol ??0Stopwatch@@QEAA@XZ
-     * @hash   723487801
+     * @hash   1235108825
      */
     MCAPI Stopwatch();
     /**
      * @symbol ?reset@Stopwatch@@QEAAXXZ
-     * @hash   1854727955
+     * @hash   -1928618317
      */
     MCAPI void reset();
     /**
      * @symbol ?start@Stopwatch@@QEAAXXZ
-     * @hash   1553441881
+     * @hash   2065062905
      */
     MCAPI void start();
 

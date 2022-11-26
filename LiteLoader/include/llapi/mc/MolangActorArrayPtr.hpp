@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MolangActorArrayPtr@@QEAA@XZ
-     * @hash   -1625249242
+     * @hash   -1837853194
      */
     MCAPI ~MolangActorArrayPtr();
 

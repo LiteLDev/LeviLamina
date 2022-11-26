@@ -31,136 +31,141 @@ public:
 public:
     /**
      * @symbol ??0BaseCommandBlock@@QEAA@XZ
-     * @hash   259412287
+     * @hash   1016557279
      */
     MCAPI BaseCommandBlock();
     /**
      * @symbol ?getCommand@BaseCommandBlock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1191653234
+     * @hash   -1211980306
      */
     MCAPI std::string const & getCommand() const;
     /**
      * @symbol ?getLastOutput@BaseCommandBlock@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   631239042
+     * @hash   1388399410
      */
     MCAPI std::string getLastOutput() const;
     /**
      * @symbol ?getName@BaseCommandBlock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -769577108
+     * @hash   -12416740
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getRawName@BaseCommandBlock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1094484050
+     * @hash   -969507922
      */
     MCAPI std::string const & getRawName() const;
     /**
      * @symbol ?getSuccessCount@BaseCommandBlock@@QEBAHXZ
-     * @hash   1471465654
+     * @hash   1413575014
      */
     MCAPI int getSuccessCount() const;
     /**
      * @symbol ?getTickDelay@BaseCommandBlock@@QEBAHXZ
-     * @hash   -1579232616
+     * @hash   -1637123256
      */
     MCAPI int getTickDelay() const;
     /**
      * @symbol ?getTrackOutput@BaseCommandBlock@@QEBA_NXZ
-     * @hash   2141967684
+     * @hash   -1395839244
      */
     MCAPI bool getTrackOutput() const;
     /**
+     * @symbol ?getVersion@BaseCommandBlock@@QEBAHXZ
+     * @hash   1999202088
+     */
+    MCAPI int getVersion() const;
+    /**
      * @symbol ?load@BaseCommandBlock@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1463308817
+     * @hash   -706148449
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?performCommand@BaseCommandBlock@@QEAA_NAEAVBlockSource@@AEBUActorUniqueID@@@Z
-     * @hash   -1797110544
+     * @hash   -1039950176
      */
     MCAPI bool performCommand(class BlockSource &, struct ActorUniqueID const &);
     /**
      * @symbol ?performCommand@BaseCommandBlock@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEA_N@Z
-     * @hash   2054852732
+     * @hash   -1482954196
      */
     MCAPI bool performCommand(class BlockSource &, class BlockPos const &, bool &);
     /**
      * @symbol ?save@BaseCommandBlock@@QEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1972068985
+     * @hash   -1214908617
      */
     MCAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?setCommand@BaseCommandBlock@@QEAAXAEAVBlockSource@@AEBUActorUniqueID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   650365152
+     * @hash   1407479392
      */
     MCAPI void setCommand(class BlockSource &, struct ActorUniqueID const &, std::string const &);
     /**
      * @symbol ?setCommand@BaseCommandBlock@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -316644038
+     * @hash   440470202
      */
     MCAPI void setCommand(class BlockSource &, class BlockPos const &, std::string const &);
     /**
      * @symbol ?setLastOutput@BaseCommandBlock@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -2134178162
+     * @hash   -1377063922
      */
     MCAPI void setLastOutput(std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?setName@BaseCommandBlock@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1495191358
+     * @hash   -2042661698
      */
     MCAPI void setName(std::string const &);
     /**
      * @symbol ?setShouldExecuteOnFirstTick@BaseCommandBlock@@QEAAX_N@Z
-     * @hash   -1708115786
+     * @hash   -951001546
      */
     MCAPI void setShouldExecuteOnFirstTick(bool);
     /**
      * @symbol ?setSuccessCount@BaseCommandBlock@@QEAAXH@Z
-     * @hash   -56620520
+     * @hash   593645896
      */
     MCAPI void setSuccessCount(int);
     /**
      * @symbol ?setTickDelay@BaseCommandBlock@@QEAAXH@Z
-     * @hash   978437638
+     * @hash   1628704054
      */
     MCAPI void setTickDelay(int);
     /**
      * @symbol ?setTrackOutput@BaseCommandBlock@@QEAAX_N@Z
-     * @hash   2030822000
+     * @hash   -1507031056
      */
     MCAPI void setTrackOutput(bool);
     /**
      * @symbol ?shouldExecuteOnFirstTick@BaseCommandBlock@@QEBA_NXZ
-     * @hash   -1953759472
+     * @hash   -1198920880
      */
     MCAPI bool shouldExecuteOnFirstTick() const;
     /**
      * @symbol ??1BaseCommandBlock@@QEAA@XZ
-     * @hash   1305585213
+     * @hash   1460237021
      */
     MCAPI ~BaseCommandBlock();
 
 //private:
     /**
      * @symbol ?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z
-     * @hash   -763819878
+     * @hash   -6674886
      */
     MCAPI bool _performCommand(class BlockSource &, class CommandOrigin const &, bool &);
     /**
      * @symbol ?_setCommand@BaseCommandBlock@@AEAAXAEAVBlockSource@@AEBVCommandOrigin@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1011313239
+     * @hash   1768473607
      */
     MCAPI void _setCommand(class BlockSource &, class CommandOrigin const &, std::string const &);
     /**
      * @symbol ?compile@BaseCommandBlock@@AEAAXAEBVCommandOrigin@@AEAVLevel@@@Z
-     * @hash   -577611060
+     * @hash   179549308
      */
     MCAPI void compile(class CommandOrigin const &, class Level &);
 
 private:
     /**
      * @symbol ?DefaultCommandBlockName@BaseCommandBlock@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1078031682
+     * @hash   688363198
      */
     MCAPI static std::string const DefaultCommandBlockName;
 

@@ -33,12 +33,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
     /**
      * @symbol ?_onDisable@ServerLocator@@EEAAXXZ
-     * @hash   948335280
+     * @hash   1037300816
      */
     MCVAPI void _onDisable();
     /**
      * @symbol ?_onEnable@ServerLocator@@EEAAXXZ
-     * @hash   1483871015
+     * @hash   1572836551
      */
     MCVAPI void _onEnable();
 #endif

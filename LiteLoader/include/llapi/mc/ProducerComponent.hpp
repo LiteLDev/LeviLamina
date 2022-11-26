@@ -38,57 +38,63 @@ public:
     /**
      * @vftbl  3
      * @symbol ?setStrength@ProducerComponent@@UEAAXH@Z
-     * @hash   -757972912
+     * @hash   -226732112
      */
     virtual void setStrength(int);
     /**
      * @vftbl  8
      * @symbol ?canStopPower@ProducerComponent@@UEBA_NXZ
-     * @hash   -788083248
+     * @hash   -256842448
      */
     virtual bool canStopPower() const;
     /**
      * @vftbl  9
      * @symbol ?setStopPower@ProducerComponent@@UEAAX_N@Z
-     * @hash   -1443662113
+     * @hash   -912421313
      */
     virtual void setStopPower(bool);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -418994565
+     * @hash   112246235
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -329254051
+     * @hash   201986749
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -37660613
+     * @hash   151787083
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
+     * @vftbl  25
+     * @symbol ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
+     * @hash   -1316622834
+     */
+    virtual unsigned char getPoweroutDirection() const;
+    /**
      * @symbol ??0ProducerComponent@@QEAA@XZ
-     * @hash   1056141815
+     * @hash   1587382615
      */
     MCAPI ProducerComponent();
     /**
      * @symbol ?allowAttachments@ProducerComponent@@QEAAX_N@Z
-     * @hash   -376682926
+     * @hash   154557874
      */
     MCAPI void allowAttachments(bool);
 

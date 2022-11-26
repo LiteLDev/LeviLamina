@@ -38,74 +38,74 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@PickupItemsGoal@@UEAA_NXZ
-     * @hash   348419433
+     * @hash   510543977
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@PickupItemsGoal@@UEAA_NXZ
-     * @hash   1089035303
+     * @hash   1251144471
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@PickupItemsGoal@@UEAAXXZ
-     * @hash   -678205134
+     * @hash   -516095966
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@PickupItemsGoal@@UEAAXXZ
-     * @hash   211176850
+     * @hash   373286018
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@PickupItemsGoal@@UEAAXXZ
-     * @hash   50292829
+     * @hash   212401997
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PickupItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1690600647
+     * @hash   1852709815
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0PickupItemsGoal@@QEAA@AEAVMob@@M_NHHM11H11AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@@Z
-     * @hash   1304304817
+     * @hash   1466413985
      */
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
 //private:
     /**
      * @symbol ?_dropItem@PickupItemsGoal@@AEBAXAEBVItemStack@@@Z
-     * @hash   -990135043
+     * @hash   -828025875
      */
     MCAPI void _dropItem(class ItemStack const &) const;
     /**
      * @symbol ?_filterValidTargets@PickupItemsGoal@@AEBA?AV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@AEBV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@3@@Z
-     * @hash   -1161333091
+     * @hash   -999223923
      */
     MCAPI std::vector<class WeakEntityRef> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
     /**
      * @symbol ?_getShareableItem@PickupItemsGoal@@AEBAPEBUShareable@@AEBVItemStack@@@Z
-     * @hash   445830004
+     * @hash   607939172
      */
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
     /**
      * @symbol ?_hasRoomForCarriedItem@PickupItemsGoal@@AEBA_NXZ
-     * @hash   -1771133464
+     * @hash   -1609024296
      */
     MCAPI bool _hasRoomForCarriedItem() const;
     /**
      * @symbol ?_pickItemUp@PickupItemsGoal@@AEAAXPEAVItemActor@@@Z
-     * @hash   1942657683
+     * @hash   2104766851
      */
     MCAPI void _pickItemUp(class ItemActor *);
 

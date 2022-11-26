@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?getAreaIterator@BiomeSource@@SA?AVBlockPosIterator@@AEBVBoundingBox@@I@Z
-     * @hash   -1098045074
+     * @hash   -555087762
      */
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
 

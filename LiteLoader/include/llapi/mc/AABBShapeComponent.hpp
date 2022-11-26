@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?toString@AABBShapeComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1312388324
+     * @hash   -1298350036
      */
     MCAPI std::string toString() const;
 

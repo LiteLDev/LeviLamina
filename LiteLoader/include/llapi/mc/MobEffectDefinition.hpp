@@ -32,39 +32,39 @@ public:
 public:
     /**
      * @symbol ??0MobEffectDefinition@@QEAA@XZ
-     * @hash   -697511056
+     * @hash   -773545376
      */
     MCAPI MobEffectDefinition();
     /**
      * @symbol ?initialize@MobEffectDefinition@@QEAAXAEAVEntityContext@@AEAVMobEffectComponent@@@Z
-     * @hash   -1757345307
+     * @hash   -1833379627
      */
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
     /**
      * @symbol ?setCooldownTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
-     * @hash   -1248564409
+     * @hash   -1324598729
      */
     MCAPI void setCooldownTimeInTicks(int const &);
     /**
      * @symbol ?setEffectTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
-     * @hash   1564717287
+     * @hash   1488682967
      */
     MCAPI void setEffectTimeInTicks(int const &);
     /**
      * @symbol ?setMobEffectByName@MobEffectDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -596299300
+     * @hash   -672333620
      */
     MCAPI void setMobEffectByName(std::string const &);
     /**
      * @symbol ?buildSchema@MobEffectDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMobEffectDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1573509914
+     * @hash   1497475594
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition>> &);
 
 //private:
     /**
      * @symbol ?_parseMobEffectId@MobEffectDefinition@@CAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1802535639
+     * @hash   1726501319
      */
     MCAPI static int _parseMobEffectId(std::string const &);
 

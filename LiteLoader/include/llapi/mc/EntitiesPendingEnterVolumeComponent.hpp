@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0EntitiesPendingEnterVolumeComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1700261893
+     * @hash   -1644339381
      */
     MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
     /**
      * @symbol ??1EntitiesPendingEnterVolumeComponent@@QEAA@XZ
-     * @hash   1484317965
+     * @hash   1540240477
      */
     MCAPI ~EntitiesPendingEnterVolumeComponent();
 

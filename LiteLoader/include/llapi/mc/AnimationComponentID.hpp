@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0AnimationComponentID@@QEAA@AEBUActorUniqueID@@GW4AttachableSlotIndex@@@Z
-     * @hash   -844042980
+     * @hash   -827559908
      */
     MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum class AttachableSlotIndex);
     /**
      * @symbol ?getHash@AnimationComponentID@@QEBA_KXZ
-     * @hash   1322988251
+     * @hash   1339486699
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ??8AnimationComponentID@@QEBA_NAEBV0@@Z
-     * @hash   1346683011
+     * @hash   -1943882429
      */
     MCAPI bool operator==(class AnimationComponentID const &) const;
 

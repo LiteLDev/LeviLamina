@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS@PredictedMovementValues@@2_JB
-     * @hash   50583536
+     * @hash   816000816
      */
     MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
     /**
      * @symbol ?DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL@PredictedMovementValues@@2_NB
-     * @hash   -1201493457
+     * @hash   -436076177
      */
     MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
     /**
      * @symbol ?SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS@PredictedMovementValues@@2_JB
-     * @hash   1992519160
+     * @hash   -1537030856
      */
     MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
 

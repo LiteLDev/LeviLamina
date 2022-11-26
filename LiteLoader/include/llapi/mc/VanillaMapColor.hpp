@@ -22,372 +22,372 @@ namespace VanillaMapColor {
 #undef AFTER_EXTRA
     /**
      * @symbol ?CLAY@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1238342199
+     * @hash   2100536023
      */
     MCAPI extern class mce::Color const CLAY;
     /**
      * @symbol ?COLOR_BLACK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -647772843
+     * @hash   214420981
      */
     MCAPI extern class mce::Color const COLOR_BLACK;
     /**
      * @symbol ?COLOR_BLUE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -663634281
+     * @hash   198559543
      */
     MCAPI extern class mce::Color const COLOR_BLUE;
     /**
      * @symbol ?COLOR_BROWN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -515972987
+     * @hash   346220837
      */
     MCAPI extern class mce::Color const COLOR_BROWN;
     /**
      * @symbol ?COLOR_CYAN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -429000937
+     * @hash   433192887
      */
     MCAPI extern class mce::Color const COLOR_CYAN;
     /**
      * @symbol ?COLOR_GRAY@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -712784137
+     * @hash   149409687
      */
     MCAPI extern class mce::Color const COLOR_GRAY;
     /**
      * @symbol ?COLOR_GREEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1211688011
+     * @hash   -349494187
      */
     MCAPI extern class mce::Color const COLOR_GREEN;
     /**
      * @symbol ?COLOR_LIGHT_BLUE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1448005111
+     * @hash   -1984768361
      */
     MCAPI extern class mce::Color const COLOR_LIGHT_BLUE;
     /**
      * @symbol ?COLOR_LIGHT_GRAY@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1398993639
+     * @hash   -2033779833
      */
     MCAPI extern class mce::Color const COLOR_LIGHT_GRAY;
     /**
      * @symbol ?COLOR_LIGHT_GREEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -171686059
+     * @hash   690507765
      */
     MCAPI extern class mce::Color const COLOR_LIGHT_GREEN;
     /**
      * @symbol ?COLOR_MAGENTA@VanillaMapColor@@3VColor@mce@@B
-     * @hash   2143681797
+     * @hash   -1289091675
      */
     MCAPI extern class mce::Color const COLOR_MAGENTA;
     /**
      * @symbol ?COLOR_ORANGE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1874955721
+     * @hash   -1012761897
      */
     MCAPI extern class mce::Color const COLOR_ORANGE;
     /**
      * @symbol ?COLOR_PINK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   833763271
+     * @hash   1695957095
      */
     MCAPI extern class mce::Color const COLOR_PINK;
     /**
      * @symbol ?COLOR_PURPLE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1082654329
+     * @hash   -220460505
      */
     MCAPI extern class mce::Color const COLOR_PURPLE;
     /**
      * @symbol ?COLOR_RED@VanillaMapColor@@3VColor@mce@@B
-     * @hash   521227845
+     * @hash   1383421669
      */
     MCAPI extern class mce::Color const COLOR_RED;
     /**
      * @symbol ?COLOR_YELLOW@VanillaMapColor@@3VColor@mce@@B
-     * @hash   179958823
+     * @hash   1042152647
      */
     MCAPI extern class mce::Color const COLOR_YELLOW;
     /**
      * @symbol ?CRIMSON_HYPHAE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1045113017
+     * @hash   -182919193
      */
     MCAPI extern class mce::Color const CRIMSON_HYPHAE;
     /**
      * @symbol ?CRIMSON_NYLIUM@VanillaMapColor@@3VColor@mce@@B
-     * @hash   15927303
+     * @hash   878121127
      */
     MCAPI extern class mce::Color const CRIMSON_NYLIUM;
     /**
      * @symbol ?CRIMSON_STEM@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -204479241
+     * @hash   657714583
      */
     MCAPI extern class mce::Color const CRIMSON_STEM;
     /**
      * @symbol ?DEEPSLATE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   2138044229
+     * @hash   -1294729243
      */
     MCAPI extern class mce::Color const DEEPSLATE;
     /**
      * @symbol ?DIAMOND@VanillaMapColor@@3VColor@mce@@B
-     * @hash   292033173
+     * @hash   1154226997
      */
     MCAPI extern class mce::Color const DIAMOND;
     /**
      * @symbol ?DIRT@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1989521401
+     * @hash   -1127327577
      */
     MCAPI extern class mce::Color const DIRT;
     /**
      * @symbol ?ELEMENT_GROUP_ACTINIDE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -151664633
+     * @hash   710529191
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_ACTINIDE;
     /**
      * @symbol ?ELEMENT_GROUP_ALKALINE_EARTH@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -136173081
+     * @hash   726020743
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_ALKALINE_EARTH;
     /**
      * @symbol ?ELEMENT_GROUP_ALKALI_METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1421719511
+     * @hash   -2011053961
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_ALKALI_METAL;
     /**
      * @symbol ?ELEMENT_GROUP_BASIC_METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1086526309
+     * @hash   1948720133
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_BASIC_METAL;
     /**
      * @symbol ?ELEMENT_GROUP_HALOGEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1364490197
+     * @hash   -2068283275
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_HALOGEN;
     /**
      * @symbol ?ELEMENT_GROUP_LATHANIDE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1538941899
+     * @hash   -676748075
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_LATHANIDE;
     /**
      * @symbol ?ELEMENT_GROUP_NOBLE_GAS@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -527637467
+     * @hash   334556357
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_NOBLE_GAS;
     /**
      * @symbol ?ELEMENT_GROUP_NON_METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   145098661
+     * @hash   1007292485
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_NON_METAL;
     /**
      * @symbol ?ELEMENT_GROUP_SEMI_METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   777747031
+     * @hash   1639940855
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_SEMI_METAL;
     /**
      * @symbol ?ELEMENT_GROUP_TRANSITION_METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1738612009
+     * @hash   -876418185
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_TRANSITION_METAL;
     /**
      * @symbol ?ELEMENT_GROUP_UNKNOWN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   473910229
+     * @hash   1336104053
      */
     MCAPI extern class mce::Color const ELEMENT_GROUP_UNKNOWN;
     /**
      * @symbol ?EMERALD@VanillaMapColor@@3VColor@mce@@B
-     * @hash   561413301
+     * @hash   1423607125
      */
     MCAPI extern class mce::Color const EMERALD;
     /**
      * @symbol ?FIRE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -355792377
+     * @hash   506401447
      */
     MCAPI extern class mce::Color const FIRE;
     /**
      * @symbol ?GLOW_LICHEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -217306715
+     * @hash   644887109
      */
     MCAPI extern class mce::Color const GLOW_LICHEN;
     /**
      * @symbol ?GOLD@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1397003289
+     * @hash   -534809465
      */
     MCAPI extern class mce::Color const GOLD;
     /**
      * @symbol ?GRASS@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -840507467
+     * @hash   21686357
      */
     MCAPI extern class mce::Color const GRASS;
     /**
      * @symbol ?ICE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -436092971
+     * @hash   426100853
      */
     MCAPI extern class mce::Color const ICE;
     /**
      * @symbol ?LAPIS@VanillaMapColor@@3VColor@mce@@B
-     * @hash   963783685
+     * @hash   1825977509
      */
     MCAPI extern class mce::Color const LAPIS;
     /**
      * @symbol ?METAL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -787535451
+     * @hash   74658373
      */
     MCAPI extern class mce::Color const METAL;
     /**
      * @symbol ?NETHER@VanillaMapColor@@3VColor@mce@@B
-     * @hash   716830455
+     * @hash   1579024279
      */
     MCAPI extern class mce::Color const NETHER;
     /**
      * @symbol ?NONE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1521919439
+     * @hash   -2135758785
      */
     MCAPI extern class mce::Color const NONE;
     /**
      * @symbol ?PLANT@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1117024203
+     * @hash   -254830379
      */
     MCAPI extern class mce::Color const PLANT;
     /**
      * @symbol ?PODZOL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   263973159
+     * @hash   1126166983
      */
     MCAPI extern class mce::Color const PODZOL;
     /**
      * @symbol ?QUARTZ@VanillaMapColor@@3VColor@mce@@B
-     * @hash   906708103
+     * @hash   1768901927
      */
     MCAPI extern class mce::Color const QUARTZ;
     /**
      * @symbol ?RAW_IRON@VanillaMapColor@@3VColor@mce@@B
-     * @hash   25363895
+     * @hash   887557719
      */
     MCAPI extern class mce::Color const RAW_IRON;
     /**
      * @symbol ?SAND@VanillaMapColor@@3VColor@mce@@B
-     * @hash   137346215
+     * @hash   999540039
      */
     MCAPI extern class mce::Color const SAND;
     /**
      * @symbol ?SCULK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -2053045739
+     * @hash   -1190851915
      */
     MCAPI extern class mce::Color const SCULK;
     /**
      * @symbol ?SNOW@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1844647577
+     * @hash   -982453753
      */
     MCAPI extern class mce::Color const SNOW;
     /**
      * @symbol ?STONE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   618011317
+     * @hash   1480205141
      */
     MCAPI extern class mce::Color const STONE;
     /**
      * @symbol ?TERRACOTTA_BLACK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1769717207
+     * @hash   -1663056265
      */
     MCAPI extern class mce::Color const TERRACOTTA_BLACK;
     /**
      * @symbol ?TERRACOTTA_BLUE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -585323371
+     * @hash   276870453
      */
     MCAPI extern class mce::Color const TERRACOTTA_BLUE;
     /**
      * @symbol ?TERRACOTTA_BROWN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1901517063
+     * @hash   -1531256409
      */
     MCAPI extern class mce::Color const TERRACOTTA_BROWN;
     /**
      * @symbol ?TERRACOTTA_CYAN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -350690027
+     * @hash   511503797
      */
     MCAPI extern class mce::Color const TERRACOTTA_CYAN;
     /**
      * @symbol ?TERRACOTTA_GRAY@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -634473227
+     * @hash   227720597
      */
     MCAPI extern class mce::Color const TERRACOTTA_GRAY;
     /**
      * @symbol ?TERRACOTTA_GREEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1205802039
+     * @hash   2067995863
      */
     MCAPI extern class mce::Color const TERRACOTTA_GREEN;
     /**
      * @symbol ?TERRACOTTA_LIGHT_BLUE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1991200117
+     * @hash   -1441573355
      */
     MCAPI extern class mce::Color const TERRACOTTA_LIGHT_BLUE;
     /**
      * @symbol ?TERRACOTTA_LIGHT_GRAY@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1942188645
+     * @hash   -1490584827
      */
     MCAPI extern class mce::Color const TERRACOTTA_LIGHT_GRAY;
     /**
      * @symbol ?TERRACOTTA_LIGHT_GREEN@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -522658217
+     * @hash   339535607
      */
     MCAPI extern class mce::Color const TERRACOTTA_LIGHT_GREEN;
     /**
      * @symbol ?TERRACOTTA_MAGENTA@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1449571591
+     * @hash   -1983201881
      */
     MCAPI extern class mce::Color const TERRACOTTA_MAGENTA;
     /**
      * @symbol ?TERRACOTTA_ORANGE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   42643637
+     * @hash   904837461
      */
     MCAPI extern class mce::Color const TERRACOTTA_ORANGE;
     /**
      * @symbol ?TERRACOTTA_PINK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   912074181
+     * @hash   1774268005
      */
     MCAPI extern class mce::Color const TERRACOTTA_PINK;
     /**
      * @symbol ?TERRACOTTA_PURPLE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   834945029
+     * @hash   1697138853
      */
     MCAPI extern class mce::Color const TERRACOTTA_PURPLE;
     /**
      * @symbol ?TERRACOTTA_RED@VanillaMapColor@@3VColor@mce@@B
-     * @hash   108439367
+     * @hash   970633191
      */
     MCAPI extern class mce::Color const TERRACOTTA_RED;
     /**
      * @symbol ?TERRACOTTA_WHITE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1815593255
+     * @hash   -1617180217
      */
     MCAPI extern class mce::Color const TERRACOTTA_WHITE;
     /**
      * @symbol ?TERRACOTTA_YELLOW@VanillaMapColor@@3VColor@mce@@B
-     * @hash   2097558181
+     * @hash   -1335215291
      */
     MCAPI extern class mce::Color const TERRACOTTA_YELLOW;
     /**
      * @symbol ?WARPED_HYPHAE@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1712850581
+     * @hash   -1719922891
      */
     MCAPI extern class mce::Color const WARPED_HYPHAE;
     /**
      * @symbol ?WARPED_NYLIUM@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1521076395
+     * @hash   -658882571
      */
     MCAPI extern class mce::Color const WARPED_NYLIUM;
     /**
      * @symbol ?WARPED_STEM@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1506589755
+     * @hash   -644395931
      */
     MCAPI extern class mce::Color const WARPED_STEM;
     /**
      * @symbol ?WARPED_WART_BLOCK@VanillaMapColor@@3VColor@mce@@B
-     * @hash   1750415941
+     * @hash   -1682357531
      */
     MCAPI extern class mce::Color const WARPED_WART_BLOCK;
     /**
      * @symbol ?WATER@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1944286203
+     * @hash   -1082092379
      */
     MCAPI extern class mce::Color const WATER;
     /**
      * @symbol ?WOOD@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -1628422665
+     * @hash   -766228841
      */
     MCAPI extern class mce::Color const WOOD;
     /**
      * @symbol ?WOOL@VanillaMapColor@@3VColor@mce@@B
-     * @hash   -2007186857
+     * @hash   -1144993033
      */
     MCAPI extern class mce::Color const WOOL;
 

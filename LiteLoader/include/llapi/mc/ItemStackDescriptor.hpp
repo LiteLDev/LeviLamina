@@ -39,17 +39,17 @@ public:
     virtual ~ItemStackDescriptor();
     /**
      * @symbol ??0ItemStackDescriptor@@QEAA@XZ
-     * @hash   -42429952
+     * @hash   675521616
      */
     MCAPI ItemStackDescriptor();
     /**
      * @symbol ??0ItemStackDescriptor@@QEAA@AEBVItem@@HGPEBVCompoundTag@@@Z
-     * @hash   -419300114
+     * @hash   298651454
      */
     MCAPI ItemStackDescriptor(class Item const &, int, unsigned short, class CompoundTag const *);
     /**
      * @symbol ??4ItemStackDescriptor@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1143421612
+     * @hash   1861373180
      */
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);
 

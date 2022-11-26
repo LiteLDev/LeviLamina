@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0BedrockLoadContext@@QEAA@AEBVSemVersion@@@Z
-     * @hash   1909821402
+     * @hash   -1873232726
      */
     MCAPI BedrockLoadContext(class SemVersion const &);
     /**
      * @symbol ??1BedrockLoadContext@@QEAA@XZ
-     * @hash   -1268921555
+     * @hash   -1178971955
      */
     MCAPI ~BedrockLoadContext();
 

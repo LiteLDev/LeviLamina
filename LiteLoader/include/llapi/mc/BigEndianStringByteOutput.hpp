@@ -37,31 +37,31 @@ public:
     /**
      * @vftbl  3
      * @symbol ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
-     * @hash   1364691011
+     * @hash   1883631011
      */
     virtual void writeFloat(float);
     /**
      * @vftbl  4
      * @symbol ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
-     * @hash   1963026251
+     * @hash   -1813001045
      */
     virtual void writeDouble(double);
     /**
      * @vftbl  6
      * @symbol ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
-     * @hash   1243174003
+     * @hash   1762114003
      */
     virtual void writeShort(short);
     /**
      * @vftbl  7
      * @symbol ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
-     * @hash   1276262093
+     * @hash   1795202093
      */
     virtual void writeInt(int);
     /**
      * @vftbl  8
      * @symbol ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
-     * @hash   -1316654480
+     * @hash   -797714480
      */
     virtual void writeLongLong(__int64);
 

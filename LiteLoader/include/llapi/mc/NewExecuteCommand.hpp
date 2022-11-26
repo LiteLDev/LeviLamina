@@ -37,44 +37,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@NewExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1973444781
+     * @hash   1980333229
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@NewExecuteCommand@@SAXAEAVCommandRegistry@@H@Z
-     * @hash   -998737001
+     * @hash   -991925433
      */
     MCAPI static void setup(class CommandRegistry &, int);
 
 //private:
     /**
      * @symbol ?_commandOutputFail@NewExecuteCommand@@AEBAXAEAVCommandOutput@@AEBV?$optional@H@std@@@Z
-     * @hash   904902417
+     * @hash   911068193
      */
     MCAPI void _commandOutputFail(class CommandOutput &, class std::optional<int> const &) const;
     /**
      * @symbol ?_commandOutputSuccess@NewExecuteCommand@@AEBAXAEAVCommandOutput@@AEBV?$optional@H@std@@@Z
-     * @hash   217871452
+     * @hash   224083356
      */
     MCAPI void _commandOutputSuccess(class CommandOutput &, class std::optional<int> const &) const;
     /**
      * @symbol ?_detectConditionSubcommand@NewExecuteCommand@@AEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$optional@H@std@@@Z
-     * @hash   -1153223129
+     * @hash   -1146903593
      */
     MCAPI bool _detectConditionSubcommand(class CommandOrigin const &, class CommandOutput &, class std::optional<int> &) const;
     /**
      * @symbol ?_getScoreFromSelectorOnObjective@NewExecuteCommand@@AEBA?AV?$optional@UScoreInfo@@@std@@AEBVScoreboard@@AEBV?$CommandSelector@VActor@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -787613827
+     * @hash   -781048275
      */
     MCAPI class std::optional<struct ScoreInfo> _getScoreFromSelectorOnObjective(class Scoreboard const &, class CommandSelector<class Actor> const &, std::string const &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_getScoreboardIdForSelector@NewExecuteCommand@@AEBA?AV?$optional@UScoreboardId@@@std@@AEBVScoreboard@@AEBV?$CommandSelector@VActor@@@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   443861420
+     * @hash   450426972
      */
     MCAPI class std::optional<struct ScoreboardId> _getScoreboardIdForSelector(class Scoreboard const &, class CommandSelector<class Actor> const &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleScoreNotFound@NewExecuteCommand@@AEBAXAEBVCommandOrigin@@AEBV?$CommandSelector@VActor@@@@AEBVObjective@@AEAVCommandOutput@@@Z
-     * @hash   -1621736819
+     * @hash   -1614986755
      */
     MCAPI void _handleScoreNotFound(class CommandOrigin const &, class CommandSelector<class Actor> const &, class Objective const &, class CommandOutput &) const;
 

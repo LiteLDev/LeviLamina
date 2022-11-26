@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??1LegacyBlendedNoise@@QEAA@XZ
-     * @hash   67920893
+     * @hash   239209533
      */
     MCAPI ~LegacyBlendedNoise();
     /**
      * @symbol ?make@LegacyBlendedNoise@@SA?AV1@AEAVIRandom@@@Z
-     * @hash   -1388985193
+     * @hash   -631517305
      */
     MCAPI static class LegacyBlendedNoise make(class IRandom &);
 

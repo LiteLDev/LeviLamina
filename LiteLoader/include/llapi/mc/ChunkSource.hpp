@@ -40,311 +40,311 @@ public:
     /**
      * @vftbl  1
      * @symbol ?shutdown@ChunkSource@@UEAAXXZ
-     * @hash   108237637
+     * @hash   863952661
      */
     virtual void shutdown();
     /**
      * @vftbl  2
      * @symbol ?isShutdownDone@ChunkSource@@UEAA_NXZ
-     * @hash   1900773635
+     * @hash   -1638478637
      */
     virtual bool isShutdownDone();
     /**
      * @vftbl  3
      * @symbol ?getExistingChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   -185195826
+     * @hash   -5942418
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
      * @vftbl  4
      * @symbol ?getRandomChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
-     * @hash   2059035373
+     * @hash   -2056678515
      */
     virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /**
      * @vftbl  5
      * @symbol ?isChunkKnown@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
-     * @hash   1940687641
+     * @hash   -1598564631
      */
     virtual bool isChunkKnown(class ChunkPos const &);
     /**
      * @vftbl  6
      * @symbol ?isChunkSaved@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
-     * @hash   18459381
+     * @hash   774174405
      */
     virtual bool isChunkSaved(class ChunkPos const &);
     /**
      * @vftbl  7
      * @symbol ?createNewChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
-     * @hash   974335844
+     * @hash   1730050868
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  8
      * @symbol ?getOrLoadChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
-     * @hash   -554193857
+     * @hash   201521167
      */
     virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  9
      * @symbol ?postProcess@ChunkSource@@UEAA_NAEAVChunkViewSource@@@Z
-     * @hash   711794095
+     * @hash   808293871
      */
     virtual bool postProcess(class ChunkViewSource &);
     /**
      * @vftbl  10
      * @symbol ?checkAndReplaceChunk@ChunkSource@@UEAAXAEAVChunkViewSource@@AEAVLevelChunk@@@Z
-     * @hash   434102371
+     * @hash   523067907
      */
     virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /**
      * @vftbl  11
      * @symbol ?loadChunk@ChunkSource@@UEAAXAEAVLevelChunk@@_N@Z
-     * @hash   -1953339689
+     * @hash   -1197624665
      */
     virtual void loadChunk(class LevelChunk &, bool);
     /**
      * @vftbl  12
      * @symbol ?postProcessMobsAt@ChunkSource@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-     * @hash   549514513
+     * @hash   1305229537
      */
     virtual void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
      * @vftbl  13
      * @symbol ?saveLiveChunk@ChunkSource@@UEAA_NAEAVLevelChunk@@@Z
-     * @hash   148759110
+     * @hash   904474134
      */
     virtual bool saveLiveChunk(class LevelChunk &);
     /**
      * @vftbl  14
      * @symbol ?writeEntityChunkTransfer@ChunkSource@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -442705658
+     * @hash   313009366
      */
     virtual void writeEntityChunkTransfer(class LevelChunk &);
     /**
      * @vftbl  15
      * @symbol ?writeEntityChunkTransfersToUnloadedChunk@ChunkSource@@UEAAXAEBVChunkKey@@AEBV?$vector@UActorUnloadedChunkTransferEntry@@V?$allocator@UActorUnloadedChunkTransferEntry@@@std@@@std@@@Z
-     * @hash   -2107916666
+     * @hash   -1352201642
      */
     virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
     /**
      * @vftbl  16
      * @symbol ?hintDiscardBatchBegin@ChunkSource@@UEAAXXZ
-     * @hash   939439349
+     * @hash   1695154373
      */
     virtual void hintDiscardBatchBegin();
     /**
      * @vftbl  17
      * @symbol ?hintDiscardBatchEnd@ChunkSource@@UEAAXXZ
-     * @hash   -136177337
+     * @hash   619537687
      */
     virtual void hintDiscardBatchEnd();
     /**
      * @vftbl  18
      * @symbol ?acquireDiscarded@ChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-     * @hash   1045468622
+     * @hash   1801183646
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
      * @vftbl  19
      * @symbol ?compact@ChunkSource@@UEAAXXZ
-     * @hash   1926465826
+     * @hash   -1612786446
      */
     virtual void compact();
     /**
      * @vftbl  20
      * @symbol ?flushPendingDiscardedChunkWrites@ChunkSource@@UEAAXXZ
-     * @hash   989692662
+     * @hash   1745407686
      */
     virtual void flushPendingDiscardedChunkWrites();
     /**
      * @vftbl  21
      * @symbol ?flushThreadBatch@ChunkSource@@UEAAXXZ
-     * @hash   -1488108085
+     * @hash   -732393061
      */
     virtual void flushThreadBatch();
     /**
      * @vftbl  22
      * @symbol ?isWithinWorldLimit@ChunkSource@@UEBA_NAEBVChunkPos@@@Z
-     * @hash   -19619462
+     * @hash   76880314
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
      * @vftbl  23
      * @symbol ?getChunkMap@ChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
-     * @hash   -998685360
+     * @hash   -905414544
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /**
      * @vftbl  24
      * @symbol ?getStorage@ChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
-     * @hash   727588339
+     * @hash   1483303363
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /**
      * @vftbl  25
      * @symbol ?clearDeletedEntities@ChunkSource@@UEAAXXZ
-     * @hash   2048031884
+     * @hash   2136997420
      */
     virtual void clearDeletedEntities();
     /**
      * @vftbl  26
      * @symbol ?canCreateViews@ChunkSource@@UEBA_NXZ
-     * @hash   871953234
+     * @hash   968699026
      */
     virtual bool canCreateViews() const;
     /**
      * @vftbl  27
      * @symbol ?tryGetBlendingDataProvider@ChunkSource@@UEAA?AV?$unique_ptr@VBlendingDataProvider@@U?$default_delete@VBlendingDataProvider@@@std@@@std@@XZ
-     * @hash   -585683975
+     * @hash   170031049
      */
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /**
      * @vftbl  28
      * @symbol ?loadLevelChunkMetaDataDictionary@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
-     * @hash   1184059977
+     * @hash   1939775001
      */
     virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
     /**
      * @symbol ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
-     * @hash   -344983601
+     * @hash   410731423
      */
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     /**
      * @symbol ??0ChunkSource@@QEAA@PEAVDimension@@H@Z
-     * @hash   912380861
+     * @hash   1668095885
      */
     MCAPI ChunkSource(class Dimension *, int);
     /**
      * @symbol ?checkAndLaunchChunkGenerationTasks@ChunkSource@@QEAAX_N@Z
-     * @hash   1462778172
+     * @hash   -2076474100
      */
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
     /**
      * @symbol ?createEmptyView@ChunkSource@@QEAA?AV?$GridArea@V?$shared_ptr@VLevelChunk@@@std@@@@W4LoadMode@1@_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@W4ChunkSourceViewGenerateMode@1@UActorUniqueID@@@Z
-     * @hash   -769626951
+     * @hash   -13911927
      */
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum class ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum class ChunkSource::ChunkSourceViewGenerateMode, struct ActorUniqueID);
     /**
      * @symbol ?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   707070660
+     * @hash   1462785684
      */
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
     /**
      * @symbol ?getAvailableChunkAt@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVBlockPos@@@Z
-     * @hash   892397908
+     * @hash   1648112932
      */
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunkAt(class BlockPos const &);
     /**
      * @symbol ?getChunkSide@ChunkSource@@QEBAHXZ
-     * @hash   -205557534
+     * @hash   -225884606
      */
     MCAPI int getChunkSide() const;
     /**
      * @symbol ?getDimension@ChunkSource@@QEBAAEAVDimension@@XZ
-     * @hash   924079240
+     * @hash   961396792
      */
     MCAPI class Dimension & getDimension() const;
     /**
      * @symbol ?getGeneratedChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   -1302685516
+     * @hash   -546970492
      */
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const &);
     /**
      * @symbol ?getLevel@ChunkSource@@QEBAAEAVLevel@@XZ
-     * @hash   1339509592
+     * @hash   1464700984
      */
     MCAPI class Level & getLevel() const;
     /**
      * @symbol ?getServerGeneratedAreas@ChunkSource@@QEAAXAEBVChunkPos@@AEA_N11@Z
-     * @hash   -1875866162
+     * @hash   -1120151138
      */
     MCAPI void getServerGeneratedAreas(class ChunkPos const &, bool &, bool &, bool &);
     /**
      * @symbol ?setShuttingDown@ChunkSource@@QEAAX_N@Z
-     * @hash   1321350254
+     * @hash   2077065278
      */
     MCAPI void setShuttingDown(bool);
     /**
      * @symbol ?gPerfIsClientSide@ChunkSource@@2_NA
-     * @hash   -1366455637
+     * @hash   -504738469
      */
     MCAPI static bool gPerfIsClientSide;
 
 //protected:
     /**
      * @symbol ?_checkAndDispatchTaskForLevelChunk@ChunkSource@@IEAA_NAEBU?$pair@VChunkPos@@W4ChunkState@@@std@@_N@Z
-     * @hash   -1583645003
+     * @hash   -827929979
      */
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum class ChunkState> const &, bool);
     /**
      * @symbol ?_checkForReplacementDataTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
-     * @hash   1896626008
+     * @hash   -1642626264
      */
     MCAPI void _checkForReplacementDataTask(class LevelChunk &, class ChunkViewSource &);
     /**
      * @symbol ?_checkForUnblockingChunks@ChunkSource@@IEAAXAEBVLevelChunk@@@Z
-     * @hash   -123821439
+     * @hash   631893585
      */
     MCAPI void _checkForUnblockingChunks(class LevelChunk const &);
     /**
      * @symbol ?_checkLevelChunkForNextStage@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@W4ChunkState@@@Z
-     * @hash   2100703924
+     * @hash   -1438548348
      */
     MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum class ChunkState);
     /**
      * @symbol ?_checkLevelChunkForPostProcessing@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@@Z
-     * @hash   1807541114
+     * @hash   -1731711158
      */
     MCAPI void _checkLevelChunkForPostProcessing(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &);
     /**
      * @symbol ?_chunkAtStage@ChunkSource@@IEAA_NV?$weak_ptr@VLevelChunk@@@std@@W4ChunkState@@@Z
-     * @hash   1971314258
+     * @hash   -1567938014
      */
     MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum class ChunkState);
     /**
      * @symbol ?_freeChunkGenerationGridMap@ChunkSource@@IEAAXAEBVChunkPos@@_N@Z
-     * @hash   -934154279
+     * @hash   -178439255
      */
     MCAPI void _freeChunkGenerationGridMap(class ChunkPos const &, bool);
     /**
      * @symbol ?_launchGenerationTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@_N@Z
-     * @hash   -1501135795
+     * @hash   -745420771
      */
     MCAPI void _launchGenerationTask(class std::shared_ptr<class LevelChunk> const &, bool);
     /**
      * @symbol ?_launchLightingTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@AEBV?$shared_ptr@VChunkViewSource@@@3@_N@Z
-     * @hash   -820659940
+     * @hash   -64944916
      */
     MCAPI void _launchLightingTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);
     /**
      * @symbol ?_launchPostProcessingTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@AEBV?$shared_ptr@VChunkViewSource@@@3@_N@Z
-     * @hash   775961365
+     * @hash   1531676389
      */
     MCAPI void _launchPostProcessingTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);
     /**
      * @symbol ?_launchReplacementDataTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@AEBV?$shared_ptr@VChunkViewSource@@@3@_N@Z
-     * @hash   -199470672
+     * @hash   556244352
      */
     MCAPI void _launchReplacementDataTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);
     /**
      * @symbol ?_lightingTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@AEAVChunkViewSource@@@Z
-     * @hash   -371457239
+     * @hash   384257785
      */
     MCAPI void _lightingTask(class std::shared_ptr<class LevelChunk> const &, class ChunkViewSource &);
     /**
      * @symbol ?_loadChunkTask@ChunkSource@@IEAAXAEAVLevelChunk@@@Z
-     * @hash   -2127554901
+     * @hash   -1371839877
      */
     MCAPI void _loadChunkTask(class LevelChunk &);
     /**
      * @symbol ?_postProcessingTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
-     * @hash   -390520002
+     * @hash   365195022
      */
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     /**
      * @symbol ?_spawnChunkGenerationTasks@ChunkSource@@IEAAXH_N@Z
-     * @hash   2074964341
+     * @hash   -1464287931
      */
     MCAPI void _spawnChunkGenerationTasks(int, bool);
 

@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0ExplosionStartedEvent@@QEAA@AEBU0@@Z
-     * @hash   -1071400811
+     * @hash   -1005376267
      */
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const &);
     /**
      * @symbol ??0ExplosionStartedEvent@@QEAA@$$QEAU0@@Z
-     * @hash   2066838451
+     * @hash   2132862995
      */
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent &&);
     /**
      * @symbol ??1ExplosionStartedEvent@@QEAA@XZ
-     * @hash   -1244697142
+     * @hash   -1178672598
      */
     MCAPI ~ExplosionStartedEvent();
 

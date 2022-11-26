@@ -38,193 +38,193 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serverInitItemStackIds@FillingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   1389468763
+     * @hash   1434182171
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @vftbl  5
      * @symbol ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
-     * @hash   -427744506
+     * @hash   -383031098
      */
     virtual class ItemStack const & getItem(int) const;
     /**
      * @vftbl  9
      * @symbol ?setItem@FillingContainer@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -161466081
+     * @hash   -116768049
      */
     virtual void setItem(int, class ItemStack const &);
     /**
      * @vftbl  10
      * @symbol ?setItemWithForceBalance@FillingContainer@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   719093526
+     * @hash   763791558
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
      * @vftbl  11
      * @symbol ?removeItem@FillingContainer@@UEAAXHH@Z
-     * @hash   1322563436
+     * @hash   1367276844
      */
     virtual void removeItem(int, int);
     /**
      * @vftbl  14
      * @symbol ?getContainerSize@FillingContainer@@UEBAHXZ
-     * @hash   -1227400075
+     * @hash   -1182686667
      */
     virtual int getContainerSize() const;
     /**
      * @vftbl  15
      * @symbol ?getMaxStackSize@FillingContainer@@UEBAHXZ
-     * @hash   876233956
+     * @hash   920947364
      */
     virtual int getMaxStackSize() const;
     /**
      * @vftbl  16
      * @symbol ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1400983902
+     * @hash   -1312018366
      */
     virtual void startOpen(class Player &);
     /**
      * @vftbl  17
      * @symbol ?stopOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -377522494
+     * @hash   -288556958
      */
     virtual void stopOpen(class Player &);
     /**
      * @vftbl  22
-     * @hash   -308831756
+     * @hash   -212331980
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -307908235
+     * @hash   -211408459
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  33
      * @symbol ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
-     * @hash   786936191
+     * @hash   831649599
      */
     virtual bool add(class ItemStack &);
     /**
      * @vftbl  34
      * @symbol ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
-     * @hash   -734096949
+     * @hash   -689383541
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
      * @vftbl  35
      * @symbol ?clearSlot@FillingContainer@@UEAAXH@Z
-     * @hash   -1950685905
+     * @hash   -1905972497
      */
     virtual void clearSlot(int);
     /**
      * @vftbl  36
      * @symbol ?clearInventory@FillingContainer@@UEAAHH@Z
-     * @hash   -223073306
+     * @hash   -178359898
      */
     virtual int clearInventory(int);
     /**
      * @vftbl  37
      * @symbol ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
-     * @hash   -315890474
+     * @hash   -271177066
      */
     virtual void load(class ListTag const &, class SemVersion const &, class Level &);
     /**
      * @vftbl  38
      * @symbol ?getEmptySlotsCount@FillingContainer@@UEBAHXZ
-     * @hash   -391073270
+     * @hash   -346359862
      */
     virtual int getEmptySlotsCount() const;
     /**
      * @symbol ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
-     * @hash   -2031615656
+     * @hash   -1986902248
      */
     MCAPI FillingContainer(class Player *, int, enum class ContainerType);
     /**
      * @symbol ?getHotbarSize@FillingContainer@@QEBAHXZ
-     * @hash   1733532902
+     * @hash   1691264278
      */
     MCAPI int getHotbarSize() const;
     /**
      * @symbol ?getSlotWithItem@FillingContainer@@QEBAHAEBVItemStack@@_N1@Z
-     * @hash   89821193
+     * @hash   134534601
      */
     MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;
     /**
      * @symbol ?hasResource@FillingContainer@@QEAA_NH@Z
-     * @hash   -1319252449
+     * @hash   -1274539041
      */
     MCAPI bool hasResource(int);
     /**
      * @symbol ??4FillingContainer@@QEAAAEAV0@AEBV0@@Z
-     * @hash   401367204
+     * @hash   380794116
      */
     MCAPI class FillingContainer & operator=(class FillingContainer const &);
     /**
      * @symbol ?removeResource@FillingContainer@@QEAAHAEBVItemStack@@_N1H@Z
-     * @hash   1058418448
+     * @hash   1103131856
      */
     MCAPI int removeResource(class ItemStack const &, bool, bool, int);
     /**
      * @symbol ?removeResource@FillingContainer@@QEAA_NH@Z
-     * @hash   679610925
+     * @hash   724324333
      */
     MCAPI bool removeResource(int);
     /**
      * @symbol ?save@FillingContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -1083125052
+     * @hash   -1038411644
      */
     MCAPI std::unique_ptr<class ListTag> save() const;
     /**
      * @symbol ?swapSlots@FillingContainer@@QEAAXHH@Z
-     * @hash   -815676069
+     * @hash   -770978037
      */
     MCAPI void swapSlots(int, int);
 
 //protected:
     /**
      * @symbol ?_addResource@FillingContainer@@IEAAHAEBVItemStack@@@Z
-     * @hash   -967453298
+     * @hash   -922739890
      */
     MCAPI int _addResource(class ItemStack const &);
     /**
      * @symbol ?_doDrop@FillingContainer@@IEAAXAEAVItemStack@@_N@Z
-     * @hash   1766201463
+     * @hash   1810914871
      */
     MCAPI void _doDrop(class ItemStack &, bool);
     /**
      * @symbol ?_fixBackwardCompabilityItem@FillingContainer@@IEAAXAEAVItemStack@@@Z
-     * @hash   -806988975
+     * @hash   -762275567
      */
     MCAPI void _fixBackwardCompabilityItem(class ItemStack &);
     /**
      * @symbol ?_getEmptySlotsCount@FillingContainer@@IEBAHHH@Z
-     * @hash   -1967267915
+     * @hash   -1922554507
      */
     MCAPI int _getEmptySlotsCount(int, int) const;
     /**
      * @symbol ?_getFreeSlot@FillingContainer@@IEBAHXZ
-     * @hash   801532726
+     * @hash   846246134
      */
     MCAPI int _getFreeSlot() const;
     /**
      * @symbol ?_getSlot@FillingContainer@@IEBAHH@Z
-     * @hash   1735434147
+     * @hash   1780147555
      */
     MCAPI int _getSlot(int) const;
     /**
      * @symbol ?_getSlotWithRemainingSpace@FillingContainer@@IEBAHAEBVItemStack@@@Z
-     * @hash   -1215261118
+     * @hash   -1170547710
      */
     MCAPI int _getSlotWithRemainingSpace(class ItemStack const &) const;
     /**
      * @symbol ?_isCreative@FillingContainer@@IEBA_NXZ
-     * @hash   -207556894
+     * @hash   -162843486
      */
     MCAPI bool _isCreative() const;
     /**
      * @symbol ?_release@FillingContainer@@IEAAXH@Z
-     * @hash   -1383126090
+     * @hash   -1338412682
      */
     MCAPI void _release(int);
 

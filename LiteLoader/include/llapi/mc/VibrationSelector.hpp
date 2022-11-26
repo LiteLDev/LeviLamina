@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0VibrationSelector@@QEAA@XZ
-     * @hash   -906742403
+     * @hash   -919750499
      */
     MCAPI VibrationSelector();
     /**
      * @symbol ?addCandidate@VibrationSelector@@QEAAXUTick@@AEBVGameEvent@@AEBUGameEventContext@@AEBVBlockPos@@@Z
-     * @hash   -198069787
+     * @hash   -211077883
      */
     MCAPI void addCandidate(struct Tick, class GameEvent const &, struct GameEventContext const &, class BlockPos const &);
     /**
      * @symbol ?consumeBestCandidate@VibrationSelector@@QEAA?AV?$optional@VVibrationInfo@@@std@@UTick@@@Z
-     * @hash   -800626788
+     * @hash   -813634884
      */
     MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
     /**
      * @symbol ?load@VibrationSelector@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1746313657
+     * @hash   1733305561
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@VibrationSelector@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   403095646
+     * @hash   390087550
      */
     MCAPI void save(class CompoundTag &) const;
 

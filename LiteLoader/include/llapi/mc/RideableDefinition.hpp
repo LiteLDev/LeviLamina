@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?addFamilyTypeByName@RideableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -346134754
+     * @hash   -202046258
      */
     MCAPI void addFamilyTypeByName(std::string const &);
     /**
      * @symbol ?initialize@RideableDefinition@@QEAAXAEAVEntityContext@@AEAVRideableComponent@@@Z
-     * @hash   1017409711
+     * @hash   1161744223
      */
     MCAPI void initialize(class EntityContext &, class RideableComponent &);
     /**
      * @symbol ?buildSchema@RideableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRideableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1218428534
+     * @hash   1362517030
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>> &);
 

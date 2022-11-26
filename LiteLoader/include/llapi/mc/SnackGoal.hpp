@@ -38,117 +38,117 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SnackGoal@@UEAA_NXZ
-     * @hash   2114547663
+     * @hash   -2018141329
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SnackGoal@@UEAA_NXZ
-     * @hash   1886282397
+     * @hash   2048591453
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SnackGoal@@UEAAXXZ
-     * @hash   2097804920
+     * @hash   -2034884072
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SnackGoal@@UEAAXXZ
-     * @hash   148059192
+     * @hash   310337496
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SnackGoal@@UEAAXXZ
-     * @hash   -1177289933
+     * @hash   -1015011629
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SnackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   337103569
+     * @hash   499412625
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?getRandomEatingEnd@SnackGoal@@MEBAHXZ
-     * @hash   1441943435
+     * @hash   1604221739
      */
     virtual int getRandomEatingEnd() const;
     /**
      * @symbol ??0SnackGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MMM@Z
-     * @hash   275829080
+     * @hash   438138136
      */
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 //private:
     /**
      * @symbol ?_hasSnackableItems@SnackGoal@@AEAA_NXZ
-     * @hash   1910087928
+     * @hash   2072396984
      */
     MCAPI bool _hasSnackableItems();
     /**
      * @symbol ?_isSnackableItem@SnackGoal@@AEBA_NAEBVItemStack@@@Z
-     * @hash   1264833564
+     * @hash   1427142620
      */
     MCAPI bool _isSnackableItem(class ItemStack const &) const;
     /**
      * @symbol ?_updateHand@SnackGoal@@AEAAXAEBVItemStack@@@Z
-     * @hash   -471958782
+     * @hash   -309649726
      */
     MCAPI void _updateHand(class ItemStack const &);
 
 private:
     /**
      * @symbol ?CHEW_CHANCE@SnackGoal@@0HB
-     * @hash   1540292571
+     * @hash   -2000024489
      */
     MCAPI static int const CHEW_CHANCE;
     /**
      * @symbol ?EATING_TIME@SnackGoal@@0HB
-     * @hash   -1234761507
+     * @hash   -480111271
      */
     MCAPI static int const EATING_TIME;
     /**
      * @symbol ?PATH_RANGE@SnackGoal@@0MB
-     * @hash   -1724371547
+     * @hash   -969721311
      */
     MCAPI static float const PATH_RANGE;
     /**
      * @symbol ?RANDOM_EATING_END@SnackGoal@@0HB
-     * @hash   -210363655
+     * @hash   544286581
      */
     MCAPI static int const RANDOM_EATING_END;
     /**
      * @symbol ?RANDOM_EATING_START@SnackGoal@@0HB
-     * @hash   -1670451876
+     * @hash   -915801640
      */
     MCAPI static int const RANDOM_EATING_START;
     /**
      * @symbol ?SEARCH_SIZE@SnackGoal@@0MB
-     * @hash   1271093006
+     * @hash   2025743242
      */
     MCAPI static float const SEARCH_SIZE;
     /**
      * @symbol ?STOP_DIST_SQRD@SnackGoal@@0MB
-     * @hash   -1680652890
+     * @hash   -926002654
      */
     MCAPI static float const STOP_DIST_SQRD;
 

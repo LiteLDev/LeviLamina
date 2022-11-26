@@ -32,12 +32,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
     /**
      * @symbol ?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
-     * @hash   1019749663
+     * @hash   1108715199
      */
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
     /**
      * @symbol ??1IMinecraftEventing@@UEAA@XZ
-     * @hash   721343348
+     * @hash   902918532
      */
     MCVAPI ~IMinecraftEventing();
 #endif

@@ -37,13 +37,13 @@ public:
     virtual ~BehaviorSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BehaviorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   136299649
+     * @hash   260752993
      */
     virtual void tick(class EntityRegistry &);
 

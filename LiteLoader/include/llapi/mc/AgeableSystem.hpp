@@ -37,13 +37,13 @@ public:
     virtual ~AgeableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AgeableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1224827448
+     * @hash   1382354568
      */
     virtual void tick(class EntityRegistry &);
 

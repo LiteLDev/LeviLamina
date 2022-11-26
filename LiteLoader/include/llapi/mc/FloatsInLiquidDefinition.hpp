@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@FloatsInLiquidDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFloatsInLiquidDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1700391242
+     * @hash   1782760474
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FloatsInLiquidDefinition>> &);
 

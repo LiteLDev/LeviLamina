@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1TagUpdateToken@@QEAA@XZ
-     * @hash   -1819182096
+     * @hash   -1717193088
      */
     MCAPI ~TagUpdateToken();
 

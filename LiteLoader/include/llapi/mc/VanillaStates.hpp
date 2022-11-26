@@ -29,652 +29,662 @@ struct CachedItemStateMapPtr {
 #undef AFTER_EXTRA
     /**
      * @symbol ?Active@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   21195927
+     * @hash   665742471
      */
     MCAPI extern class ItemStateVariant<bool> const Active;
     /**
      * @symbol ?Age@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   504619473
+     * @hash   1149166017
      */
     MCAPI extern class ItemStateVariant<int> const Age;
     /**
      * @symbol ?AgeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1820665303
+     * @hash   -1829755449
      */
     MCAPI extern class ItemStateVariant<bool> const AgeBit;
     /**
      * @symbol ?AllowUnderwaterBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   2006947255
+     * @hash   -1643473497
      */
     MCAPI extern class ItemStateVariant<bool> const AllowUnderwaterBit;
     /**
      * @symbol ?AttachedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -124359787
+     * @hash   520186757
      */
     MCAPI extern class ItemStateVariant<bool> const AttachedBit;
     /**
      * @symbol ?Attachment@VanillaStates@@3V?$ItemStateVariant@W4AttachmentType@@@@B
-     * @hash   355517786
+     * @hash   1000064330
      */
     MCAPI extern class ItemStateVariant<enum class AttachmentType> const Attachment;
     /**
      * @symbol ?BambooLeafSize@VanillaStates@@3V?$ItemStateVariant@W4LeafSize@@@@B
-     * @hash   -1132123938
+     * @hash   -487577394
      */
     MCAPI extern class ItemStateVariant<enum class LeafSize> const BambooLeafSize;
     /**
      * @symbol ?BambooThickness@VanillaStates@@3V?$ItemStateVariant@W4StalkThickness@@@@B
-     * @hash   -605294296
+     * @hash   39252248
      */
     MCAPI extern class ItemStateVariant<enum class StalkThickness> const BambooThickness;
     /**
      * @symbol ?BeehiveHoneyLevel@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1657813737
+     * @hash   -1992607015
      */
     MCAPI extern class ItemStateVariant<int> const BeehiveHoneyLevel;
     /**
      * @symbol ?BigDripleafHead@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -630021131
+     * @hash   14525413
      */
     MCAPI extern class ItemStateVariant<bool> const BigDripleafHead;
     /**
      * @symbol ?BigDripleafTilt@VanillaStates@@3V?$ItemStateVariant@W4BigDripleafTilt@@@@B
-     * @hash   519653370
+     * @hash   1164199914
      */
     MCAPI extern class ItemStateVariant<enum class BigDripleafTilt> const BigDripleafTilt;
     /**
      * @symbol ?BiteCounter@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   181949179
+     * @hash   826495723
      */
     MCAPI extern class ItemStateVariant<int> const BiteCounter;
     /**
      * @symbol ?BlockLightLevel@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -1851321207
+     * @hash   -1206774663
      */
     MCAPI extern class ItemStateVariant<int> const BlockLightLevel;
     /**
      * @symbol ?Bloom@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1873788661
+     * @hash   -1776632091
      */
     MCAPI extern class ItemStateVariant<bool> const Bloom;
     /**
+     * @symbol ?BooksStored@VanillaStates@@3V?$ItemStateVariant@H@@B
+     * @hash   650222333
+     */
+    MCAPI extern class ItemStateVariant<int> const BooksStored;
+    /**
      * @symbol ?BrewingStandSlotABit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1296097865
+     * @hash   -651551321
      */
     MCAPI extern class ItemStateVariant<bool> const BrewingStandSlotABit;
     /**
      * @symbol ?BrewingStandSlotBBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1877223113
+     * @hash   -1232676569
      */
     MCAPI extern class ItemStateVariant<bool> const BrewingStandSlotBBit;
     /**
      * @symbol ?BrewingStandSlotCBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1836618935
+     * @hash   -1813801817
      */
     MCAPI extern class ItemStateVariant<bool> const BrewingStandSlotCBit;
     /**
      * @symbol ?ButtonPressedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1012697271
+     * @hash   1657243815
      */
     MCAPI extern class ItemStateVariant<bool> const ButtonPressedBit;
     /**
      * @symbol ?CanSummon@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -344431595
+     * @hash   300114949
      */
     MCAPI extern class ItemStateVariant<bool> const CanSummon;
     /**
      * @symbol ?Candles@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1423517119
+     * @hash   2068063663
      */
     MCAPI extern class ItemStateVariant<int> const Candles;
     /**
      * @symbol ?CauldronLiquid@VanillaStates@@3V?$ItemStateVariant@W4CauldronLiquidType@@@@B
-     * @hash   2094199984
+     * @hash   -1556220768
      */
     MCAPI extern class ItemStateVariant<enum class CauldronLiquidType> const CauldronLiquid;
     /**
      * @symbol ?ChemistryTableType@VanillaStates@@3V?$ItemStateVariant@W4ChemistryTableType@@@@B
-     * @hash   -1433512728
+     * @hash   -788966184
      */
     MCAPI extern class ItemStateVariant<enum class ChemistryTableType> const ChemistryTableType;
     /**
      * @symbol ?ChiselType@VanillaStates@@3V?$ItemStateVariant@W4ChiselType@@@@B
-     * @hash   -23618304
+     * @hash   620928240
      */
     MCAPI extern class ItemStateVariant<enum class ChiselType> const ChiselType;
     /**
      * @symbol ?ClusterCount@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -1212181733
+     * @hash   -567635189
      */
     MCAPI extern class ItemStateVariant<int> const ClusterCount;
     /**
      * @symbol ?Color@VanillaStates@@3V?$ItemStateVariant@W4BlockColor@@@@B
-     * @hash   -1030592086
+     * @hash   -386045542
      */
     MCAPI extern class ItemStateVariant<enum class BlockColor> const Color;
     /**
      * @symbol ?ColorBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -410803273
+     * @hash   233743271
      */
     MCAPI extern class ItemStateVariant<bool> const ColorBit;
     /**
      * @symbol ?ComposterFillLevel@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1874123351
+     * @hash   -1776297401
      */
     MCAPI extern class ItemStateVariant<int> const ComposterFillLevel;
     /**
      * @symbol ?ConditionalBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   421205527
+     * @hash   1065752071
      */
     MCAPI extern class ItemStateVariant<bool> const ConditionalBit;
     /**
      * @symbol ?CoralColor@VanillaStates@@3V?$ItemStateVariant@W4CoralColor@@@@B
-     * @hash   -596164476
+     * @hash   48382068
      */
     MCAPI extern class ItemStateVariant<enum class CoralColor> const CoralColor;
     /**
      * @symbol ?CoralDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   27092269
+     * @hash   671638813
      */
     MCAPI extern class ItemStateVariant<int> const CoralDirection;
     /**
      * @symbol ?CoralFanDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1641493421
+     * @hash   -2008927331
      */
     MCAPI extern class ItemStateVariant<int> const CoralFanDirection;
     /**
      * @symbol ?CoralHangTypeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   2142863767
+     * @hash   -1507556985
      */
     MCAPI extern class ItemStateVariant<bool> const CoralHangTypeBit;
     /**
      * @symbol ?CoveredBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1244583689
+     * @hash   -600037145
      */
     MCAPI extern class ItemStateVariant<bool> const CoveredBit;
     /**
      * @symbol ?CrackedState@VanillaStates@@3V?$ItemStateVariant@W4HatchLevel@@@@B
-     * @hash   -1714670776
+     * @hash   -1070124232
      */
     MCAPI extern class ItemStateVariant<enum class HatchLevel> const CrackedState;
     /**
      * @symbol ?DEPRECATED@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -2017063081
+     * @hash   -1372516537
      */
     MCAPI extern class ItemStateVariant<int> const DEPRECATED;
     /**
      * @symbol ?Damage@VanillaStates@@3V?$ItemStateVariant@W4AnvilDamage@@@@B
-     * @hash   124157068
+     * @hash   768703612
      */
     MCAPI extern class ItemStateVariant<enum class AnvilDamage> const Damage;
     /**
      * @symbol ?DeadBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -385049515
+     * @hash   259497029
      */
     MCAPI extern class ItemStateVariant<bool> const DeadBit;
     /**
      * @symbol ?Direction@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   505194321
+     * @hash   1149740865
      */
     MCAPI extern class ItemStateVariant<int> const Direction;
     /**
      * @symbol ?DirtType@VanillaStates@@3V?$ItemStateVariant@W4DirtType@@@@B
-     * @hash   1238784514
+     * @hash   1883331058
      */
     MCAPI extern class ItemStateVariant<enum class DirtType> const DirtType;
     /**
      * @symbol ?DisarmedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   395754357
+     * @hash   1040300901
      */
     MCAPI extern class ItemStateVariant<bool> const DisarmedBit;
     /**
      * @symbol ?DoorHingeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1869075383
+     * @hash   -1781345369
      */
     MCAPI extern class ItemStateVariant<bool> const DoorHingeBit;
     /**
      * @symbol ?DoublePlantType@VanillaStates@@3V?$ItemStateVariant@W4DoublePlantType@@@@B
-     * @hash   -1063554390
+     * @hash   -419007846
      */
     MCAPI extern class ItemStateVariant<enum class DoublePlantType> const DoublePlantType;
     /**
      * @symbol ?DragDown@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -154355593
+     * @hash   490190951
      */
     MCAPI extern class ItemStateVariant<bool> const DragDown;
     /**
      * @symbol ?DripstoneThickness@VanillaStates@@3V?$ItemStateVariant@W4DripstoneThickness@@@@B
-     * @hash   189564648
+     * @hash   834111192
      */
     MCAPI extern class ItemStateVariant<enum class DripstoneThickness> const DripstoneThickness;
     /**
      * @symbol ?EndPortalEyeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1474013163
+     * @hash   -829466619
      */
     MCAPI extern class ItemStateVariant<bool> const EndPortalEyeBit;
     /**
      * @symbol ?ExplodeBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1315987977
+     * @hash   -671441433
      */
     MCAPI extern class ItemStateVariant<bool> const ExplodeBit;
     /**
      * @symbol ?Extinguished@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -76728969
+     * @hash   567817575
      */
     MCAPI extern class ItemStateVariant<bool> const Extinguished;
     /**
      * @symbol ?FacingDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -43793475
+     * @hash   600753069
      */
     MCAPI extern class ItemStateVariant<int> const FacingDirection;
     /**
      * @symbol ?FillLevel@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -2033044011
+     * @hash   -1388497467
      */
     MCAPI extern class ItemStateVariant<int> const FillLevel;
     /**
      * @symbol ?FlowerType@VanillaStates@@3V?$ItemStateVariant@W4FlowerType@@@@B
-     * @hash   1037836362
+     * @hash   1682382906
      */
     MCAPI extern class ItemStateVariant<enum class FlowerType> const FlowerType;
     /**
      * @symbol ?GrowingPlantAge@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -1916051623
+     * @hash   -1271505079
      */
     MCAPI extern class ItemStateVariant<int> const GrowingPlantAge;
     /**
      * @symbol ?Growth@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1663088927
+     * @hash   -1987331825
      */
     MCAPI extern class ItemStateVariant<int> const Growth;
     /**
      * @symbol ?HangingBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1277229303
+     * @hash   1921775847
      */
     MCAPI extern class ItemStateVariant<bool> const HangingBit;
     /**
      * @symbol ?HeadPieceBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   38515671
+     * @hash   683062215
      */
     MCAPI extern class ItemStateVariant<bool> const HeadPieceBit;
     /**
      * @symbol ?Height@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -634322785
+     * @hash   10223759
      */
     MCAPI extern class ItemStateVariant<int> const Height;
     /**
      * @symbol ?HugeMushroomBits@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   137275107
+     * @hash   781821651
      */
     MCAPI extern class ItemStateVariant<int> const HugeMushroomBits;
     /**
      * @symbol ?InWallBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1747035637
+     * @hash   -1903385115
      */
     MCAPI extern class ItemStateVariant<bool> const InWallBit;
     /**
      * @symbol ?InfiniburnBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1206246539
+     * @hash   -561699995
      */
     MCAPI extern class ItemStateVariant<bool> const InfiniburnBit;
     /**
      * @symbol ?ItemFrameMapBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   423716821
+     * @hash   1068263365
      */
     MCAPI extern class ItemStateVariant<bool> const ItemFrameMapBit;
     /**
      * @symbol ?ItemFramePhotoBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -491371659
+     * @hash   153174885
      */
     MCAPI extern class ItemStateVariant<bool> const ItemFramePhotoBit;
     /**
      * @symbol ?KelpAge@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1342338421
+     * @hash   1986884965
      */
     MCAPI extern class ItemStateVariant<int> const KelpAge;
     /**
+     * @symbol ?LastInteractedSlot@VanillaStates@@3V?$ItemStateVariant@H@@B
+     * @hash   -690592269
+     */
+    MCAPI extern class ItemStateVariant<int> const LastInteractedSlot;
+    /**
      * @symbol ?LeverDirection@VanillaStates@@3V?$ItemStateVariant@W4LeverDirection@@@@B
-     * @hash   615498506
+     * @hash   1260045050
      */
     MCAPI extern class ItemStateVariant<enum class LeverDirection> const LeverDirection;
     /**
      * @symbol ?LiquidDepth@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1736597409
+     * @hash   -1913823343
      */
     MCAPI extern class ItemStateVariant<int> const LiquidDepth;
     /**
      * @symbol ?Lit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   125346485
+     * @hash   769893029
      */
     MCAPI extern class ItemStateVariant<bool> const Lit;
     /**
      * @symbol ?MoisturizedAmount@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   285975309
+     * @hash   930521853
      */
     MCAPI extern class ItemStateVariant<int> const MoisturizedAmount;
     /**
      * @symbol ?MonsterEggStoneType@VanillaStates@@3V?$ItemStateVariant@W4MonsterEggStoneType@@@@B
-     * @hash   -634234806
+     * @hash   10311738
      */
     MCAPI extern class ItemStateVariant<enum class MonsterEggStoneType> const MonsterEggStoneType;
     /**
      * @symbol ?MultiFaceDirectionBits@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   2017245551
+     * @hash   -1633175201
      */
     MCAPI extern class ItemStateVariant<int> const MultiFaceDirectionBits;
     /**
      * @symbol ?NewLeafType@VanillaStates@@3V?$ItemStateVariant@W4NewLeafType@@@@B
-     * @hash   1660321530
+     * @hash   -1990099222
      */
     MCAPI extern class ItemStateVariant<enum class NewLeafType> const NewLeafType;
     /**
      * @symbol ?NewLogType@VanillaStates@@3V?$ItemStateVariant@W4NewLogType@@@@B
-     * @hash   -2034014852
+     * @hash   -1389468308
      */
     MCAPI extern class ItemStateVariant<enum class NewLogType> const NewLogType;
     /**
      * @symbol ?NoDropBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1429891637
+     * @hash   2074438181
      */
     MCAPI extern class ItemStateVariant<bool> const NoDropBit;
     /**
      * @symbol ?OccupiedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1219224843
+     * @hash   -574678299
      */
     MCAPI extern class ItemStateVariant<bool> const OccupiedBit;
     /**
      * @symbol ?OldLeafType@VanillaStates@@3V?$ItemStateVariant@W4OldLeafType@@@@B
-     * @hash   -353716554
+     * @hash   290829990
      */
     MCAPI extern class ItemStateVariant<enum class OldLeafType> const OldLeafType;
     /**
      * @symbol ?OldLogType@VanillaStates@@3V?$ItemStateVariant@W4OldLogType@@@@B
-     * @hash   -1521408722
+     * @hash   -876862178
      */
     MCAPI extern class ItemStateVariant<enum class OldLogType> const OldLogType;
     /**
      * @symbol ?OpenBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   149951573
+     * @hash   794498117
      */
     MCAPI extern class ItemStateVariant<bool> const OpenBit;
     /**
      * @symbol ?OutputLitBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -969931529
+     * @hash   -325384985
      */
     MCAPI extern class ItemStateVariant<bool> const OutputLitBit;
     /**
      * @symbol ?OutputSubtractBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1712060501
+     * @hash   -1938360251
      */
     MCAPI extern class ItemStateVariant<bool> const OutputSubtractBit;
     /**
      * @symbol ?PersistentBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -318229803
+     * @hash   326316741
      */
     MCAPI extern class ItemStateVariant<bool> const PersistentBit;
     /**
      * @symbol ?PillarAxis@VanillaStates@@3V?$ItemStateVariant@W4PillarAxis@@@@B
-     * @hash   -703037866
+     * @hash   -58491322
      */
     MCAPI extern class ItemStateVariant<enum class PillarAxis> const PillarAxis;
     /**
      * @symbol ?PortalAxis@VanillaStates@@3V?$ItemStateVariant@W4PortalAxis@@@@B
-     * @hash   -973299334
+     * @hash   -328752790
      */
     MCAPI extern class ItemStateVariant<enum class PortalAxis> const PortalAxis;
     /**
      * @symbol ?PoweredBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1519520329
+     * @hash   -874973785
      */
     MCAPI extern class ItemStateVariant<bool> const PoweredBit;
     /**
      * @symbol ?PrismarineBlockType@VanillaStates@@3V?$ItemStateVariant@W4PrismarineBlockType@@@@B
-     * @hash   1516759646
+     * @hash   -2133661106
      */
     MCAPI extern class ItemStateVariant<enum class PrismarineBlockType> const PrismarineBlockType;
     /**
      * @symbol ?PropaguleStage@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   641198051
+     * @hash   1285744595
      */
     MCAPI extern class ItemStateVariant<int> const PropaguleStage;
     /**
      * @symbol ?RailDataBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -170680587
+     * @hash   473865957
      */
     MCAPI extern class ItemStateVariant<bool> const RailDataBit;
     /**
      * @symbol ?RailDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -76896435
+     * @hash   567650109
      */
     MCAPI extern class ItemStateVariant<int> const RailDirection;
     /**
      * @symbol ?RedstoneSignal@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1499503785
+     * @hash   2144050329
      */
     MCAPI extern class ItemStateVariant<int> const RedstoneSignal;
     /**
      * @symbol ?RepeaterDelay@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1671003433
+     * @hash   -1979417319
      */
     MCAPI extern class ItemStateVariant<int> const RepeaterDelay;
     /**
      * @symbol ?RespawnAnchorCharge@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -940417419
+     * @hash   -295870875
      */
     MCAPI extern class ItemStateVariant<int> const RespawnAnchorCharge;
     /**
      * @symbol ?Rotation@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -1526611283
+     * @hash   -882064739
      */
     MCAPI extern class ItemStateVariant<int> const Rotation;
     /**
      * @symbol ?SandStoneType@VanillaStates@@3V?$ItemStateVariant@W4SandStoneType@@@@B
-     * @hash   -1400919610
+     * @hash   -756373066
      */
     MCAPI extern class ItemStateVariant<enum class SandStoneType> const SandStoneType;
     /**
      * @symbol ?SandType@VanillaStates@@3V?$ItemStateVariant@W4SandType@@@@B
-     * @hash   176240764
+     * @hash   820787308
      */
     MCAPI extern class ItemStateVariant<enum class SandType> const SandType;
     /**
      * @symbol ?SaplingType@VanillaStates@@3V?$ItemStateVariant@W4SaplingType@@@@B
-     * @hash   1928242594
+     * @hash   -1722178158
      */
     MCAPI extern class ItemStateVariant<enum class SaplingType> const SaplingType;
     /**
      * @symbol ?SeaGrassType@VanillaStates@@3V?$ItemStateVariant@W4SeaGrassType@@@@B
-     * @hash   1881841378
+     * @hash   -1768579374
      */
     MCAPI extern class ItemStateVariant<enum class SeaGrassType> const SeaGrassType;
     /**
      * @symbol ?SpongeType@VanillaStates@@3V?$ItemStateVariant@W4SpongeType@@@@B
-     * @hash   1276313928
+     * @hash   1920860472
      */
     MCAPI extern class ItemStateVariant<enum class SpongeType> const SpongeType;
     /**
      * @symbol ?Stability@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1070766021
+     * @hash   1715312565
      */
     MCAPI extern class ItemStateVariant<int> const Stability;
     /**
      * @symbol ?StabilityCheckBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1989154709
+     * @hash   -1661266043
      */
     MCAPI extern class ItemStateVariant<bool> const StabilityCheckBit;
     /**
      * @symbol ?StandingRotation@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   2093216485
+     * @hash   -1557204267
      */
     MCAPI extern class ItemStateVariant<int> const StandingRotation;
     /**
      * @symbol ?StoneBrickType@VanillaStates@@3V?$ItemStateVariant@W4StoneBrickType@@@@B
-     * @hash   1812294380
+     * @hash   -1838126372
      */
     MCAPI extern class ItemStateVariant<enum class StoneBrickType> const StoneBrickType;
     /**
      * @symbol ?StoneSlabType@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType@@@@B
-     * @hash   1615090526
+     * @hash   -2035330226
      */
     MCAPI extern class ItemStateVariant<enum class StoneSlabType> const StoneSlabType;
     /**
      * @symbol ?StoneSlabType2@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType2@@@@B
-     * @hash   631841938
+     * @hash   1276388482
      */
     MCAPI extern class ItemStateVariant<enum class StoneSlabType2> const StoneSlabType2;
     /**
      * @symbol ?StoneSlabType3@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType3@@@@B
-     * @hash   -1166142124
+     * @hash   -521595580
      */
     MCAPI extern class ItemStateVariant<enum class StoneSlabType3> const StoneSlabType3;
     /**
      * @symbol ?StoneSlabType4@VanillaStates@@3V?$ItemStateVariant@W4StoneSlabType4@@@@B
-     * @hash   1330841110
+     * @hash   1975387654
      */
     MCAPI extern class ItemStateVariant<enum class StoneSlabType4> const StoneSlabType4;
     /**
      * @symbol ?StoneType@VanillaStates@@3V?$ItemStateVariant@W4StoneType@@@@B
-     * @hash   -2111855466
+     * @hash   -1467308922
      */
     MCAPI extern class ItemStateVariant<enum class StoneType> const StoneType;
     /**
      * @symbol ?StrippedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1250649835
+     * @hash   -606103291
      */
     MCAPI extern class ItemStateVariant<bool> const StrippedBit;
     /**
      * @symbol ?StructureBlockType@VanillaStates@@3V?$ItemStateVariant@W4StructureBlockType@@@@B
-     * @hash   1000554728
+     * @hash   1645101272
      */
     MCAPI extern class ItemStateVariant<enum class StructureBlockType> const StructureBlockType;
     /**
      * @symbol ?StructureVoidType@VanillaStates@@3V?$ItemStateVariant@W4StructureVoidType@@@@B
-     * @hash   -490635842
+     * @hash   153910702
      */
     MCAPI extern class ItemStateVariant<enum class StructureVoidType> const StructureVoidType;
     /**
      * @symbol ?SuspendedBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1970241335
+     * @hash   -1680179417
      */
     MCAPI extern class ItemStateVariant<bool> const SuspendedBit;
     /**
      * @symbol ?TallGrassType@VanillaStates@@3V?$ItemStateVariant@W4TallGrassType@@@@B
-     * @hash   1086307142
+     * @hash   1730853686
      */
     MCAPI extern class ItemStateVariant<enum class TallGrassType> const TallGrassType;
     /**
      * @symbol ?ToggleBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -37919851
+     * @hash   606626693
      */
     MCAPI extern class ItemStateVariant<bool> const ToggleBit;
     /**
      * @symbol ?TopSlotBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   143114039
+     * @hash   787660583
      */
     MCAPI extern class ItemStateVariant<bool> const TopSlotBit;
     /**
      * @symbol ?TorchFacingDirection@VanillaStates@@3V?$ItemStateVariant@W4TorchFacing@@@@B
-     * @hash   -1666413098
+     * @hash   -1021866554
      */
     MCAPI extern class ItemStateVariant<enum class TorchFacing> const TorchFacingDirection;
     /**
      * @symbol ?TriggeredBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -11879465
+     * @hash   632667079
      */
     MCAPI extern class ItemStateVariant<bool> const TriggeredBit;
     /**
      * @symbol ?TurtleEggCount@VanillaStates@@3V?$ItemStateVariant@W4EggCount@@@@B
-     * @hash   1047758388
+     * @hash   1692304932
      */
     MCAPI extern class ItemStateVariant<enum class EggCount> const TurtleEggCount;
     /**
      * @symbol ?TwistingVinesAge@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -797015757
+     * @hash   -152469213
      */
     MCAPI extern class ItemStateVariant<int> const TwistingVinesAge;
     /**
      * @symbol ?UpdateBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -1959445931
+     * @hash   -1314899387
      */
     MCAPI extern class ItemStateVariant<bool> const UpdateBit;
     /**
      * @symbol ?UpperBlockBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   1249205813
+     * @hash   1893752357
      */
     MCAPI extern class ItemStateVariant<bool> const UpperBlockBit;
     /**
      * @symbol ?UpsideDownBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -902592107
+     * @hash   -258045563
      */
     MCAPI extern class ItemStateVariant<bool> const UpsideDownBit;
     /**
      * @symbol ?VineDirectionBits@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   -699116343
+     * @hash   -54569799
      */
     MCAPI extern class ItemStateVariant<int> const VineDirectionBits;
     /**
      * @symbol ?WallBlockType@VanillaStates@@3V?$ItemStateVariant@W4WallBlockType@@@@B
-     * @hash   1503035278
+     * @hash   -2147385474
      */
     MCAPI extern class ItemStateVariant<enum class WallBlockType> const WallBlockType;
     /**
      * @symbol ?WallConnectionTypeEast@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
-     * @hash   -853748860
+     * @hash   -209202316
      */
     MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeEast;
     /**
      * @symbol ?WallConnectionTypeNorth@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
-     * @hash   -994344318
+     * @hash   -349797774
      */
     MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeNorth;
     /**
      * @symbol ?WallConnectionTypeSouth@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
-     * @hash   -1787054526
+     * @hash   -1142507982
      */
     MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeSouth;
     /**
      * @symbol ?WallConnectionTypeWest@VanillaStates@@3V?$ItemStateVariant@W4WallConnectionType@@@@B
-     * @hash   182881540
+     * @hash   827428084
      */
     MCAPI extern class ItemStateVariant<enum class WallConnectionType> const WallConnectionTypeWest;
     /**
      * @symbol ?WallPostBit@VanillaStates@@3V?$ItemStateVariant@_N@@B
-     * @hash   -754196139
+     * @hash   -109649595
      */
     MCAPI extern class ItemStateVariant<bool> const WallPostBit;
     /**
      * @symbol ?WeepingVinesAge@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   161454737
+     * @hash   806001281
      */
     MCAPI extern class ItemStateVariant<int> const WeepingVinesAge;
     /**
      * @symbol ?WeirdoDirection@VanillaStates@@3V?$ItemStateVariant@H@@B
-     * @hash   1740903309
+     * @hash   -1909517443
      */
     MCAPI extern class ItemStateVariant<int> const WeirdoDirection;
     /**
      * @symbol ?WoodType@VanillaStates@@3V?$ItemStateVariant@W4WoodType@@@@B
-     * @hash   -583430322
+     * @hash   61116222
      */
     MCAPI extern class ItemStateVariant<enum class WoodType> const WoodType;
     /**
-     * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@AEAUCachedItemStateMapPtr@1@@Z
-     * @hash   -1730665944
-     */
-    MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
-    /**
      * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@@Z
-     * @hash   846866863
+     * @hash   1566186895
      */
     MCAPI class ItemState const * getState(class HashedString const &);
     /**
+     * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@AEAUCachedItemStateMapPtr@1@@Z
+     * @hash   -1011345912
+     */
+    MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
+    /**
      * @symbol ?registerStates@VanillaStates@@YAXXZ
-     * @hash   1170756038
+     * @hash   1890076070
      */
     MCAPI void registerStates();
     /**
      * @symbol ?unregisterStates@VanillaStates@@YAXXZ
-     * @hash   270809144
+     * @hash   990129176
      */
     MCAPI void unregisterStates();
 

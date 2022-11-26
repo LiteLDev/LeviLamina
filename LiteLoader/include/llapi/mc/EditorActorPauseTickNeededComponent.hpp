@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1EditorActorPauseTickNeededComponent@@QEAA@XZ
-     * @hash   -1923393319
+     * @hash   -1833443719
      */
     MCAPI ~EditorActorPauseTickNeededComponent();
 

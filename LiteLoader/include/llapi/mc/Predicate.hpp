@@ -24,7 +24,7 @@ namespace Predicate {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_calulatePositionalChance@Predicate@@YA_NMMHHHM@Z
-     * @hash   1413514039
+     * @hash   -2126491657
      */
     MCAPI bool _calulatePositionalChance(float, float, int, int, int, float);
 

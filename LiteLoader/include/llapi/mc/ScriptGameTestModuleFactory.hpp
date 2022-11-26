@@ -40,36 +40,36 @@ public:
     virtual ~ScriptGameTestModuleFactory();
     /**
      * @symbol ??0ScriptGameTestModuleFactory@@QEAA@AEAVGameTestRegistry@gametest@@@Z
-     * @hash   -332736442
+     * @hash   -303629674
      */
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1592544184
+     * @hash   -1552151432
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
      * @symbol ?_addVersions@ScriptGameTestModuleFactory@@AEAAXXZ
-     * @hash   -2059981062
+     * @hash   -2030582150
      */
     MCAPI void _addVersions();
     /**
      * @symbol ?_generateBindings@ScriptGameTestModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1225797035
+     * @hash   -1196398123
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 private:
     /**
      * @symbol ?ModuleName@ScriptGameTestModuleFactory@@0PEBDEB
-     * @hash   2103323667
+     * @hash   -1331494813
      */
     MCAPI static char const * ModuleName;
     /**
      * @symbol ?ModuleUUID@ScriptGameTestModuleFactory@@0VUUID@mce@@A
-     * @hash   -608996459
+     * @hash   215510789
      */
     MCAPI static class mce::UUID ModuleUUID;
 

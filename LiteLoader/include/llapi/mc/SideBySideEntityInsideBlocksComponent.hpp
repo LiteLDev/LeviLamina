@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0SideBySideEntityInsideBlocksComponent@@QEAA@AEBU0@@Z
-     * @hash   152195045
+     * @hash   289887125
      */
     MCAPI SideBySideEntityInsideBlocksComponent(struct SideBySideEntityInsideBlocksComponent const &);
     /**
      * @symbol ??4SideBySideEntityInsideBlocksComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   533042102
+     * @hash   666152134
      */
     MCAPI struct SideBySideEntityInsideBlocksComponent & operator=(struct SideBySideEntityInsideBlocksComponent &&);
     /**
      * @symbol ??1SideBySideEntityInsideBlocksComponent@@QEAA@XZ
-     * @hash   -339923537
+     * @hash   -972922705
      */
     MCAPI ~SideBySideEntityInsideBlocksComponent();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?nextLong@Xoroshiro128PlusPlus@@QEAA_JXZ
-     * @hash   -1872874591
+     * @hash   -1716854319
      */
     MCAPI __int64 nextLong();
 

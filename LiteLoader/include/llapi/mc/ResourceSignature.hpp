@@ -33,34 +33,34 @@ public:
 public:
     /**
      * @symbol ?areKnownFilesValid@ResourceSignature@@QEAA_NAEBVPackAccessStrategy@@@Z
-     * @hash   -1050954391
+     * @hash   -979825015
      */
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     /**
      * @symbol ??1ResourceSignature@@QEAA@XZ
-     * @hash   1914678342
+     * @hash   2004166662
      */
     MCAPI ~ResourceSignature();
     /**
      * @symbol ?SIGNATURE_FILENAME@ResourceSignature@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-     * @hash   134062316
+     * @hash   1616831500
      */
     MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 //private:
     /**
      * @symbol ?_areKnownFilesValid@ResourceSignature@@AEAA_NAEBVPackAccessStrategy@@_N@Z
-     * @hash   -860654502
+     * @hash   -789478998
      */
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
     /**
      * @symbol ?_checkSignedFiles@ResourceSignature@@AEBA_NAEBVPackAccessStrategy@@@Z
-     * @hash   1550068650
+     * @hash   1621228778
      */
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
     /**
      * @symbol ?_loadSignaturesFile@ResourceSignature@@AEAAXAEBVPath@Core@@AEBVPackAccessStrategy@@@Z
-     * @hash   -1498700990
+     * @hash   -1427540862
      */
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
 

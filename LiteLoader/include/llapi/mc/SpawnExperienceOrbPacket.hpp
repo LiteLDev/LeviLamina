@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SpawnExperienceOrbPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -265483172
+     * @hash   -335659236
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SpawnExperienceOrbPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -920872183
+     * @hash   -991048247
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SpawnExperienceOrbPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2063642494
+     * @hash   1993466430
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SpawnExperienceOrbPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -966692178
+     * @hash   -1036868242
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SpawnExperienceOrbPacket@@QEAA@XZ
-     * @hash   -411964194
+     * @hash   -482140258
      */
     MCAPI SpawnExperienceOrbPacket();
     /**
      * @symbol ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
-     * @hash   -1379799378
+     * @hash   -1449975442
      */
     MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
 

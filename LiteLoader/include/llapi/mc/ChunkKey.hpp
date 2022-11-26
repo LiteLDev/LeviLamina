@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0ChunkKey@@QEAA@AEBVLevelChunk@@@Z
-     * @hash   -812400335
+     * @hash   -243442207
      */
     MCAPI ChunkKey(class LevelChunk const &);
     /**
      * @symbol ??0ChunkKey@@QEAA@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -85306470
+     * @hash   483651658
      */
     MCAPI ChunkKey(class ChunkPos const &, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?asSpan@ChunkKey@@QEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   446451352
+     * @hash   1015424856
      */
     MCAPI class gsl::basic_string_span<char const, -1> asSpan() const;
     /**
      * @symbol ?hashCode@ChunkKey@@QEBA_KXZ
-     * @hash   683897019
+     * @hash   1252870523
      */
     MCAPI unsigned __int64 hashCode() const;
 

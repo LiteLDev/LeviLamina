@@ -34,56 +34,61 @@ public:
 public:
     /**
      * @symbol ??0ScriptPluginManager@@QEAA@AEAVScriptEngine@Scripting@@_NV?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
-     * @hash   269701518
+     * @hash   348580398
      */
     MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, bool, std::unique_ptr<class IScriptTelemetryLogger>);
     /**
      * @symbol ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEBVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@AEBV?$vector@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@V?$allocator@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@@2@@std@@@Z
-     * @hash   -1533138809
+     * @hash   -1451938153
      */
     MCAPI class ScriptPluginManagerResult discoverPlugins(enum class ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &, std::vector<class std::function<bool (class PackManifest const &, struct Scripting::ModuleDescriptor const &, struct Scripting::ModuleDescriptor const &, class ScriptPluginResult &)>> const &);
     /**
      * @symbol ?getPluginStats@ScriptPluginManager@@QEBA?AV?$vector@UScriptPluginStats@@V?$allocator@UScriptPluginStats@@@std@@@std@@XZ
-     * @hash   738502362
+     * @hash   820010538
      */
     MCAPI std::vector<struct ScriptPluginStats> getPluginStats() const;
     /**
      * @symbol ?getPlugins@ScriptPluginManager@@QEBAAEBV?$vector@VScriptPlugin@@V?$allocator@VScriptPlugin@@@std@@@std@@XZ
-     * @hash   1084292806
+     * @hash   1047006006
      */
     MCAPI std::vector<class ScriptPlugin> const & getPlugins() const;
     /**
      * @symbol ?releaseAll@ScriptPluginManager@@QEAAXXZ
-     * @hash   2099624103
+     * @hash   -2113665881
      */
     MCAPI void releaseAll();
     /**
      * @symbol ?releasePlugins@ScriptPluginManager@@QEAAXXZ
-     * @hash   -1567547963
+     * @hash   -1485870651
      */
     MCAPI void releasePlugins();
     /**
      * @symbol ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@XZ
-     * @hash   422270892
+     * @hash   503948204
      */
     MCAPI class ScriptPluginManagerResult runAll();
     /**
      * @symbol ??1ScriptPluginManager@@QEAA@XZ
-     * @hash   772802379
+     * @hash   851681259
      */
     MCAPI ~ScriptPluginManager();
 
 //private:
     /**
      * @symbol ?_generateModuleDependencies@ScriptPluginManager@@AEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@AEBV?$vector@UModuleIdentifier@@V?$allocator@UModuleIdentifier@@@std@@@3@AEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@3@1@Z
-     * @hash   277388281
+     * @hash   357189721
      */
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct ModuleIdentifier> const &, std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
     /**
      * @symbol ?_reportContextResults@ScriptPluginManager@@AEAAXAEBUScriptContextResult@Scripting@@AEAVScriptPluginResult@@@Z
-     * @hash   1461696796
+     * @hash   1541482860
      */
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
+    /**
+     * @symbol ?_tryAddRuntime@ScriptPluginManager@@AEAAXAEBVScriptPlugin@@AEAVScriptPluginResult@@@Z
+     * @hash   -1147152586
+     */
+    MCAPI void _tryAddRuntime(class ScriptPlugin const &, class ScriptPluginResult &);
 
 private:
 

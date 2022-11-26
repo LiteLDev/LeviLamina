@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getMirrorEditCount@StructureTelemetryClientData@@QEBAIXZ
-     * @hash   -282240526
+     * @hash   -110982638
      */
     MCAPI unsigned int getMirrorEditCount() const;
     /**
      * @symbol ?getOffsetEditCount@StructureTelemetryClientData@@QEBAIXZ
-     * @hash   -806445470
+     * @hash   -635187582
      */
     MCAPI unsigned int getOffsetEditCount() const;
     /**
      * @symbol ?getRotationEditCount@StructureTelemetryClientData@@QEBAIXZ
-     * @hash   1561136562
+     * @hash   1705440322
      */
     MCAPI unsigned int getRotationEditCount() const;
     /**
      * @symbol ?getSizeEditCount@StructureTelemetryClientData@@QEBAIXZ
-     * @hash   1787475282
+     * @hash   1958733170
      */
     MCAPI unsigned int getSizeEditCount() const;
 

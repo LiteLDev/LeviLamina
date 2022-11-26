@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4MoveRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1839998450
+     * @hash   1979166626
      */
     MCAPI struct MoveRequestComponent & operator=(struct MoveRequestComponent &&);
     /**
      * @symbol ??1MoveRequestComponent@@QEAA@XZ
-     * @hash   713187465
+     * @hash   852125001
      */
     MCAPI ~MoveRequestComponent();
 

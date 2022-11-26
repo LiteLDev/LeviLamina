@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0RoleChecker@@QEAA@XZ
-     * @hash   -571904389
+     * @hash   -645017269
      */
     MCAPI RoleChecker();
     /**
      * @symbol ?checkRole@RoleChecker@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4ADRole@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z@3@@Z
-     * @hash   -2039016567
+     * @hash   -2112129447
      */
     MCAPI void checkRole(std::string const &, class std::function<void (enum class ADRole, std::string const &, std::string const &)>);
     /**
      * @symbol ?lookupInProgress@RoleChecker@@QEBA_NXZ
-     * @hash   -688794782
+     * @hash   -761907662
      */
     MCAPI bool lookupInProgress() const;
     /**
      * @symbol ??1RoleChecker@@QEAA@XZ
-     * @hash   -769824197
+     * @hash   -842937077
      */
     MCAPI ~RoleChecker();
 

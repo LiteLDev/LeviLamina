@@ -24,7 +24,7 @@ namespace ResourceDefinition {
 #undef AFTER_EXTRA
     /**
      * @symbol ?VANILLA_NAMESPACE@ResourceDefinition@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   622847603
+     * @hash   2048295059
      */
     MCAPI extern std::string const VANILLA_NAMESPACE;
 

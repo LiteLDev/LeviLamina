@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?getCelebrateSound@CelebrateHuntComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
-     * @hash   -2051290581
+     * @hash   -2123726917
      */
     MCAPI enum class LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     /**
      * @symbol ?getCelebrateUntil@CelebrateHuntComponent@@QEBA?BUTick@@XZ
-     * @hash   -1274128080
+     * @hash   -1149336464
      */
     MCAPI struct Tick const getCelebrateUntil() const;
     /**
      * @symbol ?getNextSoundEventTick@CelebrateHuntComponent@@QEBA?BUTick@@XZ
-     * @hash   -20876320
+     * @hash   -41218768
      */
     MCAPI struct Tick const getNextSoundEventTick() const;
     /**
      * @symbol ?isCelebrating@CelebrateHuntComponent@@QEBA_NXZ
-     * @hash   1555004590
+     * @hash   1702475806
      */
     MCAPI bool isCelebrating() const;
     /**
      * @symbol ?setNextSoundEventTick@CelebrateHuntComponent@@QEAAXAEBVMob@@@Z
-     * @hash   -1780933790
+     * @hash   -1853370126
      */
     MCAPI void setNextSoundEventTick(class Mob const &);
     /**
      * @symbol ?startCelebrating@CelebrateHuntComponent@@QEAAXAEBUTick@@@Z
-     * @hash   1110926736
+     * @hash   1038490400
      */
     MCAPI void startCelebrating(struct Tick const &);
     /**
      * @symbol ?stopCelebrating@CelebrateHuntComponent@@QEAAXXZ
-     * @hash   1653632067
+     * @hash   1581195731
      */
     MCAPI void stopCelebrating();
 

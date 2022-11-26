@@ -39,30 +39,30 @@ public:
     virtual ~ScriptActorGameplayHandler();
     /**
      * @vftbl  1
-     * @hash   1095186305
+     * @hash   1150970433
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1095971442
+     * @hash   1151755570
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   1097694515
+     * @hash   1153478643
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?handleEvent@ScriptActorGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUActorDefinitionStartedEvent@@@Z
-     * @hash   1704032512
+     * @hash   1716271808
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent &);
 
 //private:
     /**
      * @symbol ?_handleActorDefinitionStartedEvent@ScriptActorGameplayHandler@@AEBA_NAEAUActorDefinitionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   731863328
+     * @hash   744102624
      */
     MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 

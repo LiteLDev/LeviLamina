@@ -49,48 +49,48 @@ public:
     /**
      * @vftbl  2
      * @symbol ?write@IntArrayTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   229486417
+     * @hash   159095089
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@IntArrayTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   -1079372064
+     * @hash   -1149763392
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@IntArrayTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1137631206
+     * @hash   1067239878
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@IntArrayTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   -501151301
+     * @hash   -571542629
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@IntArrayTag@@UEBA_NAEBVTag@@@Z
-     * @hash   -1260183978
+     * @hash   -1330682938
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@IntArrayTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   -105790120
+     * @hash   -176181448
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@IntArrayTag@@UEBA_KXZ
-     * @hash   -956184530
+     * @hash   -1026575858
      */
     virtual unsigned __int64 hash() const;
     /**
      * @symbol ??0IntArrayTag@@QEAA@XZ
-     * @hash   299895052
+     * @hash   229503724
      */
     MCAPI IntArrayTag();
 

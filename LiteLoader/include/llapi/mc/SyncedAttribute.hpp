@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SyncedAttribute@@QEAA@XZ
-     * @hash   -418834466
+     * @hash   -331160514
      */
     MCAPI ~SyncedAttribute();
 

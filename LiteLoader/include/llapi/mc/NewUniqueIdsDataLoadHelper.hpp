@@ -36,159 +36,159 @@ public:
     virtual ~NewUniqueIdsDataLoadHelper();
     /**
      * @vftbl  1
-     * @hash   1343313409
+     * @hash   1297385297
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1344236930
+     * @hash   1298308818
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   1345129699
+     * @hash   1299201587
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   1346083972
+     * @hash   1300155860
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   1347007493
+     * @hash   1301079381
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   1347946390
+     * @hash   1302018278
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   1348869911
+     * @hash   1302941799
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   1349793432
+     * @hash   1303865320
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   1350716953
+     * @hash   1304788841
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -1928196093
+     * @hash   -1974124205
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -1927272572
+     * @hash   -1973200684
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -1926349051
+     * @hash   -1972277163
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   1963576389
+     * @hash   -1812466283
      */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
      * @vftbl  14
      * @symbol ?loadOwnerID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   -1006852504
+     * @hash   -1052780616
      */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
      * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-     * @hash   -217628129
+     * @hash   300881343
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
      * @vftbl  16
      * @symbol ?getType@NewUniqueIdsDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
-     * @hash   -1543416589
+     * @hash   -1364163181
      */
     virtual enum class DataLoadHelperType getType() const;
     /**
      * @vftbl  17
      * @symbol ?shouldResetTime@NewUniqueIdsDataLoadHelper@@UEAA_NXZ
-     * @hash   -1649236675
+     * @hash   -1552490883
      */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWUNIQUEIDSDATALOADHELPER
     /**
      * @symbol ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   1453547494
+     * @hash   1407619382
      */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     /**
      * @symbol ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   1995827571
+     * @hash   1949899459
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
      * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   -969048323
+     * @hash   -1014976435
      */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
      * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-     * @hash   944227463
+     * @hash   898299351
      */
     MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @symbol ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
-     * @hash   -1742404339
+     * @hash   -1788332451
      */
     MCVAPI unsigned char loadFacingID(unsigned char);
     /**
      * @symbol ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-     * @hash   110182243
+     * @hash   64254131
      */
     MCVAPI enum class Mirror loadMirror(enum class Mirror);
     /**
      * @symbol ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   -1845222329
+     * @hash   -1891150441
      */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
     /**
      * @symbol ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-     * @hash   -1605627932
+     * @hash   -1651556044
      */
     MCVAPI enum class Rotation loadRotation(enum class Rotation);
     /**
      * @symbol ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-     * @hash   -665859901
+     * @hash   -711788013
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
      * @symbol ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-     * @hash   72889666
+     * @hash   26961554
      */
     MCVAPI float loadRotationDegreesY(float);
     /**
      * @symbol ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-     * @hash   1335702830
+     * @hash   1289774718
      */
     MCVAPI float loadRotationRadiansX(float);
     /**
      * @symbol ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-     * @hash   2074452397
+     * @hash   2028524285
      */
     MCVAPI float loadRotationRadiansY(float);
 #endif
     /**
      * @symbol ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
-     * @hash   -954528078
+     * @hash   -435603454
      */
     MCAPI NewUniqueIdsDataLoadHelper(class ILevel &);
 

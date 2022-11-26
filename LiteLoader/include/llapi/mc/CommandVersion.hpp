@@ -36,27 +36,32 @@ public:
 public:
     /**
      * @symbol ??0CommandVersion@@QEAA@HH@Z
-     * @hash   -1054853439
+     * @hash   -882334719
      */
     MCAPI CommandVersion(int, int);
     /**
      * @symbol ?covers@CommandVersion@@QEBA_NAEBV1@@Z
-     * @hash   124934627
+     * @hash   297453347
      */
     MCAPI bool covers(class CommandVersion const &) const;
     /**
+     * @symbol ?getSemVersionFromCommandVersion@CommandVersion@@QEBA?AVSemVersion@@XZ
+     * @hash   1544373236
+     */
+    MCAPI class SemVersion getSemVersionFromCommandVersion() const;
+    /**
      * @symbol ?isCompatible@CommandVersion@@QEBA_NH@Z
-     * @hash   669775353
+     * @hash   842647721
      */
     MCAPI bool isCompatible(int) const;
     /**
      * @symbol ?CurrentVersion@CommandVersion@@2HB
-     * @hash   35926865
+     * @hash   798599529
      */
     MCAPI static int const CurrentVersion;
     /**
      * @symbol ?getVersionMapping@CommandVersion@@SA?BW4CurrentCmdVersion@@AEBVSemVersion@@@Z
-     * @hash   -773421851
+     * @hash   -600549483
      */
     MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 

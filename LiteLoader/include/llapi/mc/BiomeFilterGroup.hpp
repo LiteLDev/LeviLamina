@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
-     * @hash   1345314322
+     * @hash   1447303330
      */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
     /**
      * @symbol ??0BiomeFilterGroup@@QEAA@AEBV0@@Z
-     * @hash   -418728159
+     * @hash   -316231743
      */
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
     /**
      * @symbol ?finalizeParsedValue@BiomeFilterGroup@@QEAAXAEAVIWorldRegistriesProvider@@@Z
-     * @hash   -1934798102
+     * @hash   -1827642758
      */
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 

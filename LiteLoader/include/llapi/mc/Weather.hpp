@@ -38,239 +38,239 @@ public:
     virtual ~Weather();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
+     * @vftbl  7
+     * @hash   -1311050489
+     */
+    virtual void __unk_vfn_7();
+    /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1398168983
+     * @hash   -1309203447
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -382068605
-     */
-    virtual void __unk_vfn_10();
-    /**
-     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-     * @hash   713530835
+     * @hash   806801651
      */
     virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
+     * @vftbl  11
+     * @hash   -292179548
+     */
+    virtual void __unk_vfn_11();
+    /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -379298042
+     * @hash   -290332506
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -378374521
+     * @hash   -289408985
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
-     * @hash   -377451000
+     * @hash   -288485464
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -376527479
+     * @hash   -287561943
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  17
-     * @hash   -375603958
+     * @hash   -286638422
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
-     * @hash   -374680437
+     * @hash   -285714901
      */
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -353439454
+     * @hash   -264473918
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
-     * @hash   -352515933
+     * @hash   -263550397
      */
     virtual void __unk_vfn_21();
     /**
      * @vftbl  22
-     * @hash   -351592412
+     * @hash   -262626876
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -350668891
+     * @hash   -261703355
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  24
-     * @hash   -349745370
+     * @hash   -260779834
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
-     * @hash   -348821849
+     * @hash   -259856313
      */
     virtual void __unk_vfn_25();
     /**
      * @vftbl  26
-     * @hash   -347898328
+     * @hash   -258932792
      */
     virtual void __unk_vfn_26();
     /**
      * @vftbl  27
-     * @hash   -346974807
-     */
-    virtual void __unk_vfn_27();
-    /**
-     * @vftbl  28
      * @symbol ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-     * @hash   -2126696654
+     * @hash   -1371212270
      */
     virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
      * @symbol ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
-     * @hash   -1669974404
+     * @hash   -914490020
      */
     MCAPI Weather(class Dimension &, class IRandom &);
     /**
      * @symbol ?calcSnowBlockDepth@Weather@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   1121469647
+     * @hash   1876954031
      */
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?canPlaceTopSnow@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@_N2PEAH@Z
-     * @hash   -1651176914
+     * @hash   -895692530
      */
     MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;
     /**
      * @symbol ?getFogLevel@Weather@@QEBAMXZ
-     * @hash   -1415536370
+     * @hash   -660051986
      */
     MCAPI float getFogLevel() const;
     /**
      * @symbol ?getLightningLevel@Weather@@QEBAMM@Z
-     * @hash   -2077458895
+     * @hash   -1321974511
      */
     MCAPI float getLightningLevel(float) const;
     /**
      * @symbol ?getRainLevel@Weather@@QEBAMM@Z
-     * @hash   -1039432737
+     * @hash   -283948353
      */
     MCAPI float getRainLevel(float) const;
     /**
      * @symbol ?isLightning@Weather@@QEBA_NXZ
-     * @hash   597215622
+     * @hash   1352700006
      */
     MCAPI bool isLightning() const;
     /**
      * @symbol ?isPrecipitatingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1466873352
+     * @hash   -2072609560
      */
     MCAPI bool isPrecipitatingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isRaining@Weather@@QEBA_NXZ
-     * @hash   -61246074
+     * @hash   694238310
      */
     MCAPI bool isRaining() const;
     /**
      * @symbol ?isRainingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1170386470
+     * @hash   -414902086
      */
     MCAPI bool isRainingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isSnowingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1915784676
+     * @hash   -1160300292
      */
     MCAPI bool isSnowingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?serverTick@Weather@@QEAAXXZ
-     * @hash   -1479621469
+     * @hash   -724137085
      */
     MCAPI void serverTick();
     /**
      * @symbol ?setSkyFlashTime@Weather@@QEAAXH@Z
-     * @hash   -133472918
+     * @hash   -80241206
      */
     MCAPI void setSkyFlashTime(int);
     /**
      * @symbol ?setTargetLightningLevel@Weather@@QEAAXM@Z
-     * @hash   -335603142
+     * @hash   -281296710
      */
     MCAPI void setTargetLightningLevel(float);
     /**
      * @symbol ?setTargetRainLevel@Weather@@QEAAXM@Z
-     * @hash   -499344756
+     * @hash   256124252
      */
     MCAPI void setTargetRainLevel(float);
     /**
      * @symbol ?stop@Weather@@QEAAXXZ
-     * @hash   1510936039
+     * @hash   -2028562249
      */
     MCAPI void stop();
     /**
      * @symbol ?tick@Weather@@QEAAXXZ
-     * @hash   -2091243411
+     * @hash   -1335774403
      */
     MCAPI void tick();
     /**
      * @symbol ?tryToPlaceTopSnow@Weather@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     * @hash   -1136835161
+     * @hash   -381366153
      */
     MCAPI bool tryToPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool);
     /**
      * @symbol ?calcLightningCycleTime@Weather@@SAHAEAVIRandom@@@Z
-     * @hash   -1541161789
+     * @hash   -785677405
      */
     MCAPI static int calcLightningCycleTime(class IRandom &);
     /**
      * @symbol ?calcRainCycleTime@Weather@@SAHAEAVIRandom@@@Z
-     * @hash   1816430217
+     * @hash   -1723052695
      */
     MCAPI static int calcRainCycleTime(class IRandom &);
     /**
      * @symbol ?calcRainDuration@Weather@@SAHAEAVIRandom@@@Z
-     * @hash   1747170725
+     * @hash   -1792312187
      */
     MCAPI static int calcRainDuration(class IRandom &);
     /**
      * @symbol ?rebuildTopSnowToDepth@Weather@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   1726513474
+     * @hash   -1812969438
      */
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
 

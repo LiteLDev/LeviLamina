@@ -33,231 +33,236 @@ public:
 
 public:
     /**
-     * @vftbl  9
+     * @vftbl  11
      * @symbol ?reloadHardcodedClient@Parrot@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1756225675
+     * @hash   1811210251
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -60699808
      */
     virtual ~Parrot();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@Parrot@@UEBAMXZ
-     * @hash   -2046049456
+     * @hash   -1991064880
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  119
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  122
      * @symbol ?setSitting@Parrot@@UEAAX_N@Z
-     * @hash   621651697
+     * @hash   676759281
      */
     virtual void setSitting(bool);
     /**
-     * @vftbl  130
+     * @vftbl  133
      * @symbol ?vehicleLanded@Parrot@@UEAAXAEBVVec3@@0@Z
-     * @hash   -1493296977
+     * @hash   -1438189393
      */
     virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /**
-     * @vftbl  132
+     * @vftbl  135
      * @symbol ?playAmbientSound@Parrot@@UEAAXXZ
-     * @hash   -436485252
+     * @hash   -381500676
      */
     virtual void playAmbientSound();
     /**
-     * @vftbl  133
+     * @vftbl  136
      * @symbol ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1618860206
+     * @hash   1673844782
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @vftbl  134
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   277003940
+     * @hash   331988516
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  193
+     * @vftbl  195
      * @symbol ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
-     * @hash   -1303602361
+     * @hash   -1248617785
      */
     virtual bool canBePulledIntoVehicle() const;
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  274
+     * @vftbl  272
      * @symbol ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   127245948
+     * @hash   171436572
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @vftbl  276
-     * @hash   -1877452527
+     * @vftbl  274
+     * @hash   -1782799793
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  297
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  295
      * @symbol ?aiStep@Parrot@@UEAAXXZ
-     * @hash   1314727685
+     * @hash   1369696885
      */
     virtual void aiStep();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  346
+     * @vftbl  344
      * @symbol ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
-     * @hash   255520465
+     * @hash   310489665
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARROT
     /**
      * @symbol ?_makeFlySound@Parrot@@MEBA_NXZ
-     * @hash   -510478572
+     * @hash   -413978796
      */
     MCVAPI bool _makeFlySound() const;
     /**
      * @symbol ?useNewAi@Parrot@@MEBA_NXZ
-     * @hash   -979811668
+     * @hash   -883311892
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Parrot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   401253634
+     * @hash   456022946
      */
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getFlap@Parrot@@QEBAMXZ
-     * @hash   -342092828
+     * @hash   -287108252
      */
     MCAPI float getFlap() const;
     /**
      * @symbol ?getFlapSpeed@Parrot@@QEBAMXZ
-     * @hash   -1559871370
+     * @hash   -1504886794
      */
     MCAPI float getFlapSpeed() const;
     /**
      * @symbol ?postAiStep@Parrot@@QEAAXXZ
-     * @hash   -194679371
+     * @hash   -139694795
      */
     MCAPI void postAiStep();
 

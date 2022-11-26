@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@NpcDialoguePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -480579523
+     * @hash   -552170179
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@NpcDialoguePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1260827926
+     * @hash   -1332418582
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@NpcDialoguePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   413610365
+     * @hash   342004333
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@NpcDialoguePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1382925091
+     * @hash   -1454515747
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0NpcDialoguePacket@@QEAA@XZ
-     * @hash   -389512499
+     * @hash   -461103155
      */
     MCAPI NpcDialoguePacket();
     /**
      * @symbol ??0NpcDialoguePacket@@QEAA@UActorUniqueID@@@Z
-     * @hash   -1355812966
+     * @hash   -1427157606
      */
     MCAPI NpcDialoguePacket(struct ActorUniqueID);
     /**
      * @symbol ?initializePacket@NpcDialoguePacket@@SA_NAEAV1@PEBVNpcDialogueStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1633435656
+     * @hash   -1705026312
      */
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
 

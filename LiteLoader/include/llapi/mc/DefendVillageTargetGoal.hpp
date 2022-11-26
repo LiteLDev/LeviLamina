@@ -39,40 +39,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DefendVillageTargetGoal@@UEAA_NXZ
-     * @hash   -851948426
+     * @hash   -691684378
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DefendVillageTargetGoal@@UEAA_NXZ
-     * @hash   296240116
+     * @hash   456504164
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  4
      * @symbol ?start@DefendVillageTargetGoal@@UEAAXXZ
-     * @hash   -1077089121
+     * @hash   -916825073
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DefendVillageTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -555709574
+     * @hash   -395430150
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1355408327
+     * @hash   -1258908551
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0DefendVillageTargetGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1072681843
+     * @hash   1232961267
      */
     MCAPI DefendVillageTargetGoal(class Mob &);
 

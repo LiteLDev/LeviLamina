@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
-     * @hash   67978267
+     * @hash   121686635
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
 

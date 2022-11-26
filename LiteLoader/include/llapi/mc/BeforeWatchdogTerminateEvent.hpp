@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BeforeWatchdogTerminateEvent@@QEAA@XZ
-     * @hash   -1425300129
+     * @hash   -1335350529
      */
     MCAPI ~BeforeWatchdogTerminateEvent();
 

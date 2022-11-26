@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?addExplodePosition@ParticlesBlockExplosionEvent@@QEAAXAEBVVec3@@@Z
-     * @hash   40532500
+     * @hash   509423620
      */
     MCAPI void addExplodePosition(class Vec3 const &);
     /**
      * @symbol ?save@ParticlesBlockExplosionEvent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1776687182
+     * @hash   -1307796062
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ??1ParticlesBlockExplosionEvent@@QEAA@XZ
-     * @hash   -2146284545
+     * @hash   -1577126529
      */
     MCAPI ~ParticlesBlockExplosionEvent();
 

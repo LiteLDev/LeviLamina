@@ -323,7 +323,7 @@ Local<Value> ItemClass::isNull(const Arguments& args) {
 
 Local<Value> ItemClass::setNull(const Arguments& args) {
     try {
-        item->setNull();
+        item->setNull({});
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setNull!");

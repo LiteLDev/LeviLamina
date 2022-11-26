@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSprintTimerSystem@SprintTimerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1925774568
+     * @hash   -1931356056
      */
     MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
 

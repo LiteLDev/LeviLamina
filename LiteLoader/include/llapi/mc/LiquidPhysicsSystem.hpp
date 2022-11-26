@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?applyPhysics@LiquidPhysicsSystem@@SA_NW4MaterialType@@AEBVIConstBlockSource@@AEBVAABB@@AEAUStateVectorComponent@@@Z
-     * @hash   -409146078
+     * @hash   -342106718
      */
     MCAPI static bool applyPhysics(enum class MaterialType, class IConstBlockSource const &, class AABB const &, struct StateVectorComponent &);
     /**
      * @symbol ?createApplyFlowSystem@LiquidPhysicsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1532820008
+     * @hash   -1465780648
      */
     MCAPI static struct TickingSystemWithInfo createApplyFlowSystem();
     /**
      * @symbol ?createFilterSystem@LiquidPhysicsSystem@@SA?AUTickingSystemWithInfo@@_N@Z
-     * @hash   1504508613
+     * @hash   1571547973
      */
     MCAPI static struct TickingSystemWithInfo createFilterSystem(bool);
     /**
      * @symbol ?createLiquidFetchingSystem@LiquidPhysicsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1542460678
+     * @hash   -1475421318
      */
     MCAPI static struct TickingSystemWithInfo createLiquidFetchingSystem();
 

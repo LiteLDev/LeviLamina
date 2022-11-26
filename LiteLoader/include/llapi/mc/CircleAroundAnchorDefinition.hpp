@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0CircleAroundAnchorDefinition@@QEAA@XZ
-     * @hash   -879358223
+     * @hash   -719355567
      */
     MCAPI CircleAroundAnchorDefinition();
     /**
      * @symbol ?initialize@CircleAroundAnchorDefinition@@QEAAXAEAVEntityContext@@AEAVCircleAroundAnchorGoal@@@Z
-     * @hash   -1898360705
+     * @hash   -1738373425
      */
     MCAPI void initialize(class EntityContext &, class CircleAroundAnchorGoal &);
     /**
      * @symbol ?buildSchema@CircleAroundAnchorDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCircleAroundAnchorDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1236982145
+     * @hash   -1076979489
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CircleAroundAnchorDefinition>> &);
 

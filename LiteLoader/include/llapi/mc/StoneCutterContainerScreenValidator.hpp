@@ -36,24 +36,24 @@ public:
     virtual ~StoneCutterContainerScreenValidator();
     /**
      * @vftbl  1
-     * @hash   2095050641
+     * @hash   -2020663247
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?isCraftingImplemented@StoneCutterContainerScreenValidator@@UEAA_NXZ
-     * @hash   1416510102
+     * @hash   1513009878
      */
     virtual bool isCraftingImplemented();
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@StoneCutterContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -1719050680
+     * @hash   -1246899848
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ??0StoneCutterContainerScreenValidator@@QEAA@XZ
-     * @hash   2118619317
+     * @hash   -1704197147
      */
     MCAPI StoneCutterContainerScreenValidator();
 

@@ -30,49 +30,49 @@ public:
 public:
     /**
      * @symbol ??0StrictEntityContext@@QEAA@AEBVEntityContextBase@@@Z
-     * @hash   -820581476
+     * @hash   -692791540
      */
     MCAPI StrictEntityContext(class EntityContextBase const &);
     /**
      * @symbol ??0StrictEntityContext@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
-     * @hash   1488041033
+     * @hash   1615830969
      */
     MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ??0StrictEntityContext@@QEAA@$$QEAV0@@Z
-     * @hash   -2008973377
+     * @hash   -1881183441
      */
     MCAPI StrictEntityContext(class StrictEntityContext &&);
     /**
      * @symbol ?isNull@StrictEntityContext@@QEBA_NXZ
-     * @hash   2033385434
+     * @hash   -2133791926
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ??9StrictEntityContext@@QEBA_NAEBV0@@Z
-     * @hash   -1341240055
+     * @hash   -1213450119
      */
     MCAPI bool operator!=(class StrictEntityContext const &) const;
     /**
      * @symbol ??4StrictEntityContext@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1894215978
+     * @hash   2022005914
      */
     MCAPI class StrictEntityContext & operator=(class StrictEntityContext &&);
     /**
      * @symbol ??8StrictEntityContext@@QEBA_NAEBV0@@Z
-     * @hash   1704230020
+     * @hash   1832019956
      */
     MCAPI bool operator==(class StrictEntityContext const &) const;
 
 //protected:
     /**
      * @symbol ?_getEntityId@StrictEntityContext@@IEBA?AVEntityId@@XZ
-     * @hash   140207007
+     * @hash   267996943
      */
     MCAPI class EntityId _getEntityId() const;
     /**
      * @symbol ?_getRegistryId@StrictEntityContext@@IEBAIXZ
-     * @hash   -1933119666
+     * @hash   -1761861778
      */
     MCAPI unsigned int _getRegistryId() const;
 

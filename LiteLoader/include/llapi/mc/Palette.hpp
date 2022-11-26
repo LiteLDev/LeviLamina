@@ -32,92 +32,92 @@ public:
 public:
     /**
      * @symbol ?BLACK@Palette@@2VColor@mce@@B
-     * @hash   2126984977
+     * @hash   -1311600623
      */
     MCAPI static class mce::Color const BLACK;
     /**
      * @symbol ?BLUE@Palette@@2VColor@mce@@B
-     * @hash   734361043
+     * @hash   1590742739
      */
     MCAPI static class mce::Color const BLUE;
     /**
      * @symbol ?BROWN@Palette@@2VColor@mce@@B
-     * @hash   -1742795967
+     * @hash   -886414271
      */
     MCAPI static class mce::Color const BROWN;
     /**
      * @symbol ?CYAN@Palette@@2VColor@mce@@B
-     * @hash   468776275
+     * @hash   1325157971
      */
     MCAPI static class mce::Color const CYAN;
     /**
      * @symbol ?GRAY@Palette@@2VColor@mce@@B
-     * @hash   1839433011
+     * @hash   -1599152589
      */
     MCAPI static class mce::Color const GRAY;
     /**
      * @symbol ?GREEN@Palette@@2VColor@mce@@B
-     * @hash   -515782287
+     * @hash   340599409
      */
     MCAPI static class mce::Color const GREEN;
     /**
      * @symbol ?LIGHT_BLUE@Palette@@2VColor@mce@@B
-     * @hash   627227699
+     * @hash   1483609395
      */
     MCAPI static class mce::Color const LIGHT_BLUE;
     /**
      * @symbol ?LIGHT_GREEN@Palette@@2VColor@mce@@B
-     * @hash   461741585
+     * @hash   1318123281
      */
     MCAPI static class mce::Color const LIGHT_GREEN;
     /**
      * @symbol ?MAGENTA@Palette@@2VColor@mce@@B
-     * @hash   430339265
+     * @hash   1286720961
      */
     MCAPI static class mce::Color const MAGENTA;
     /**
      * @symbol ?ORANGE@Palette@@2VColor@mce@@B
-     * @hash   -1865841293
+     * @hash   -1009459597
      */
     MCAPI static class mce::Color const ORANGE;
     /**
      * @symbol ?PINK@Palette@@2VColor@mce@@B
-     * @hash   428905219
+     * @hash   1285286915
      */
     MCAPI static class mce::Color const PINK;
     /**
      * @symbol ?PURPLE@Palette@@2VColor@mce@@B
-     * @hash   1872717507
+     * @hash   -1565868093
      */
     MCAPI static class mce::Color const PURPLE;
     /**
      * @symbol ?RED@Palette@@2VColor@mce@@B
-     * @hash   -313508351
+     * @hash   542873345
      */
     MCAPI static class mce::Color const RED;
     /**
      * @symbol ?SILVER@Palette@@2VColor@mce@@B
-     * @hash   -2036036797
+     * @hash   -1179655101
      */
     MCAPI static class mce::Color const SILVER;
     /**
      * @symbol ?WHITE@Palette@@2VColor@mce@@B
-     * @hash   2138615905
+     * @hash   -1299969695
      */
     MCAPI static class mce::Color const WHITE;
     /**
      * @symbol ?YELLOW@Palette@@2VColor@mce@@B
-     * @hash   1218716003
+     * @hash   2075097699
      */
     MCAPI static class mce::Color const YELLOW;
     /**
      * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
-     * @hash   -952653644
+     * @hash   -928344188
      */
     MCAPI static enum class PaletteColor fromByte(unsigned char);
     /**
      * @symbol ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
-     * @hash   -1192028631
+     * @hash   -1167719175
      */
     MCAPI static class mce::Color const & getColor(enum class PaletteColor);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemCompleteChargeEvent@@QEAA@XZ
-     * @hash   -1704384538
+     * @hash   -1523947178
      */
     MCAPI ~ItemCompleteChargeEvent();
 

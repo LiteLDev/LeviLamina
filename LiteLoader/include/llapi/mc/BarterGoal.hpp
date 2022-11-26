@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BarterGoal@@UEAA_NXZ
-     * @hash   -1962217377
+     * @hash   -1802168593
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BarterGoal@@UEAA_NXZ
-     * @hash   -1495405651
+     * @hash   -1335372243
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@BarterGoal@@UEAAXXZ
-     * @hash   470640691
+     * @hash   630689475
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@BarterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1374527025
+     * @hash   1534575809
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0BarterGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -806649140
+     * @hash   -646600356
      */
     MCAPI BarterGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_getThrowVector@BarterGoal@@AEAA?AVVec3@@XZ
-     * @hash   -382482457
+     * @hash   -222433673
      */
     MCAPI class Vec3 _getThrowVector();
 

@@ -37,13 +37,13 @@ public:
     virtual ~TimerSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@TimerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -713646492
+     * @hash   -728361324
      */
     virtual void tick(class EntityRegistry &);
 

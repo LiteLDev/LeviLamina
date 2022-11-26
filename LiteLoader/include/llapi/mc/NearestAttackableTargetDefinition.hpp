@@ -38,23 +38,23 @@ public:
     virtual ~NearestAttackableTargetDefinition();
     /**
      * @vftbl  1
-     * @hash   -1362796495
+     * @hash   -1266296719
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?validate@NearestAttackableTargetDefinition@@UEAA_NAEAVMob@@@Z
-     * @hash   566934529
+     * @hash   582894817
      */
     virtual bool validate(class Mob &);
     /**
      * @symbol ?initialize@NearestAttackableTargetDefinition@@QEAAXAEAVEntityContext@@AEAVNearestAttackableTargetGoal@@@Z
-     * @hash   -570213541
+     * @hash   -554253253
      */
     MCAPI void initialize(class EntityContext &, class NearestAttackableTargetGoal &);
     /**
      * @symbol ?buildSchema@NearestAttackableTargetDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNearestAttackableTargetDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -2012287995
+     * @hash   -1996250827
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>> &);
 

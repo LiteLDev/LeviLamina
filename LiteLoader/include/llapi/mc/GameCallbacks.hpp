@@ -48,7 +48,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?onBeforeSimTick@GameCallbacks@@UEAAXXZ
-     * @hash   -1504869727
+     * @hash   -1415904191
      */
     virtual void onBeforeSimTick();
 

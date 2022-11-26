@@ -39,213 +39,212 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@PistonBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1198240488
+     * @hash   -442340952
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@PistonBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1719170935
+     * @hash   -1819081897
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1322353745
+     * @hash   2079037457
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?onRemoved@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1183035837
+     * @hash   1939750301
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  27
+     * @vftbl  30
      * @symbol ?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z
-     * @hash   -1877932258
+     * @hash   -1784661442
      */
     virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /**
-     * @vftbl  28
-     * @hash   -346051286
-     */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
-    /**
      * @vftbl  31
-     * @symbol ?getDeletionDelayTimeSeconds@PistonBlockActor@@UEBAMXZ
-     * @hash   1521238848
+     * @hash   -234921246
      */
-    virtual float getDeletionDelayTimeSeconds() const;
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@PistonBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   2009719466
+     * @hash   -1529517430
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@PistonBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   161167368
+     * @hash   766074584
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0PistonBlockActor@@QEAA@AEBVBlockPos@@_N@Z
-     * @hash   1329932825
+     * @hash   2085617097
      */
     MCAPI PistonBlockActor(class BlockPos const &, bool);
     /**
      * @symbol ?getAttachedBlocks@PistonBlockActor@@QEBAAEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@XZ
-     * @hash   -450994048
+     * @hash   -279290256
      */
     MCAPI std::vector<class BlockPos> const & getAttachedBlocks() const;
     /**
      * @symbol ?getCorrectArmBlock@PistonBlockActor@@QEBAPEBVBlock@@XZ
-     * @hash   1085118165
+     * @hash   1841033077
      */
     MCAPI class Block const * getCorrectArmBlock() const;
     /**
      * @symbol ?getFacingDir@PistonBlockActor@@QEBAAEBVBlockPos@@AEBVIConstBlockSource@@@Z
-     * @hash   1319705235
+     * @hash   2075604771
      */
     MCAPI class BlockPos const & getFacingDir(class IConstBlockSource const &) const;
     /**
      * @symbol ?getProgress@PistonBlockActor@@QEBAMM@Z
-     * @hash   -1851295501
+     * @hash   -1095395965
      */
     MCAPI float getProgress(float) const;
     /**
      * @symbol ?isExpanded@PistonBlockActor@@QEBA_NXZ
-     * @hash   -1183988254
+     * @hash   -428088718
      */
     MCAPI bool isExpanded() const;
     /**
      * @symbol ?isExpanding@PistonBlockActor@@QEBA_NXZ
-     * @hash   -1235381798
+     * @hash   -479482262
      */
     MCAPI bool isExpanding() const;
     /**
      * @symbol ?isMoving@PistonBlockActor@@QEBA_NXZ
-     * @hash   -757668356
+     * @hash   -1768820
      */
     MCAPI bool isMoving() const;
     /**
      * @symbol ?isRetracted@PistonBlockActor@@QEBA_NXZ
-     * @hash   -1787106646
+     * @hash   -1031207110
      */
     MCAPI bool isRetracted() const;
     /**
      * @symbol ?isRetracting@PistonBlockActor@@QEBA_NXZ
-     * @hash   1540939410
+     * @hash   -1998128350
      */
     MCAPI bool isRetracting() const;
     /**
      * @symbol ?moveEntityLastProgress@PistonBlockActor@@QEAAXAEAVActor@@VVec3@@@Z
-     * @hash   648760241
+     * @hash   1404875041
      */
     MCAPI void moveEntityLastProgress(class Actor &, class Vec3);
     /**
      * @symbol ?setShouldVerifyArmType@PistonBlockActor@@QEAAX_N@Z
-     * @hash   -1101956864
+     * @hash   -1177914304
      */
     MCAPI void setShouldVerifyArmType(bool);
 
 //private:
     /**
      * @symbol ?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-     * @hash   550658755
+     * @hash   1306389155
      */
     MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, unsigned char, unsigned char);
     /**
      * @symbol ?_checkAttachedBlocks@PistonBlockActor@@AEAA_NAEAVBlockSource@@@Z
-     * @hash   2122003548
+     * @hash   -1417233348
      */
     MCAPI bool _checkAttachedBlocks(class BlockSource &);
     /**
      * @symbol ?_checkInceptionAchievement@PistonBlockActor@@AEAAXAEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   165319436
+     * @hash   921049836
      */
     MCAPI void _checkInceptionAchievement(class BlockActor &, class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_handleSlimeConnections@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-     * @hash   300663863
+     * @hash   1056394263
      */
     MCAPI bool _handleSlimeConnections(class BlockSource &, class BlockPos const &, unsigned char, unsigned char);
     /**
      * @symbol ?_hasBlockAttached@PistonBlockActor@@AEAA_NAEBVBlockPos@@@Z
-     * @hash   -1475933097
+     * @hash   -720202697
      */
     MCAPI bool _hasBlockAttached(class BlockPos const &);
     /**
      * @symbol ?_moveCollidedEntities@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   816884690
+     * @hash   1572615090
      */
     MCAPI void _moveCollidedEntities(class BlockSource &);
     /**
      * @symbol ?_moveCollidedEntitiesHelper@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVAABB@@AEBVBlockPos@@PEAVActor@@I@Z
-     * @hash   -1387090140
+     * @hash   -631328988
      */
     MCAPI void _moveCollidedEntitiesHelper(class BlockSource &, class AABB const &, class BlockPos const &, class Actor *, unsigned int);
     /**
      * @symbol ?_sortAttachedBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   14305826
+     * @hash   769867090
      */
     MCAPI void _sortAttachedBlocks(class BlockSource &);
     /**
      * @symbol ?_spawnBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   887229959
+     * @hash   1642791223
      */
     MCAPI void _spawnBlocks(class BlockSource &);
     /**
+     * @symbol ?_spawnMovingBlock@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1625398708
+     */
+    MCAPI void _spawnMovingBlock(class BlockSource &, class BlockPos const &);
+    /**
      * @symbol ?_spawnMovingBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   121463609
+     * @hash   878562473
      */
     MCAPI void _spawnMovingBlocks(class BlockSource &);
     /**
      * @symbol ?_spawnResourcesForBlockAndExtraBlock@PistonBlockActor@@CAXAEAVBlockSource@@AEBVBlockPos@@VRandomize@@AEBUResourceDropsContext@@@Z
-     * @hash   -791083217
+     * @hash   -35183681
      */
     MCAPI static void _spawnResourcesForBlockAndExtraBlock(class BlockSource &, class BlockPos const &, class Randomize, struct ResourceDropsContext const &);
 
 private:
     /**
      * @symbol ?ARM_ANIMATION_SPEED@PistonBlockActor@@0MB
-     * @hash   428775739
+     * @hash   1209561331
      */
     MCAPI static float const ARM_ANIMATION_SPEED;
 

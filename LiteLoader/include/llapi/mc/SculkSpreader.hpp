@@ -29,92 +29,92 @@ public:
 public:
     /**
      * @symbol ??0SculkSpreader@@QEAA@_NHHHH@Z
-     * @hash   1183591305
+     * @hash   1744830681
      */
     MCAPI SculkSpreader(bool, int, int, int, int);
     /**
      * @symbol ??0SculkSpreader@@QEAA@XZ
-     * @hash   -1907135056
+     * @hash   -1345895680
      */
     MCAPI SculkSpreader();
     /**
      * @symbol ?addCursors@SculkSpreader@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   -2042189743
+     * @hash   -1481396271
      */
     MCAPI void addCursors(class BlockPos const &, int);
     /**
      * @symbol ?clearCursors@SculkSpreader@@QEAAXXZ
-     * @hash   947024611
+     * @hash   1507818083
      */
     MCAPI void clearCursors();
     /**
      * @symbol ?getAdditionalDecayRate@SculkSpreader@@QEBAHXZ
-     * @hash   159335136
+     * @hash   221392672
      */
     MCAPI int getAdditionalDecayRate() const;
     /**
      * @symbol ?getChargeDecayRate@SculkSpreader@@QEBAHXZ
-     * @hash   1163418278
+     * @hash   1334676166
      */
     MCAPI int getChargeDecayRate() const;
     /**
      * @symbol ?getCursorPosition@SculkSpreader@@QEBA?AVBlockPos@@H@Z
-     * @hash   -46917347
+     * @hash   513876125
      */
     MCAPI class BlockPos getCursorPosition(int) const;
     /**
      * @symbol ?getGrowthSpawnCost@SculkSpreader@@QEBAHXZ
-     * @hash   394223884
+     * @hash   565481772
      */
     MCAPI int getGrowthSpawnCost() const;
     /**
      * @symbol ?getMaxCharge@SculkSpreader@@QEBAHXZ
-     * @hash   -1278620646
+     * @hash   744130490
      */
     MCAPI int getMaxCharge() const;
     /**
      * @symbol ?getNoGrowthRadius@SculkSpreader@@QEBAHXZ
-     * @hash   533504552
+     * @hash   677808312
      */
     MCAPI int getNoGrowthRadius() const;
     /**
      * @symbol ?getNumberOfCursors@SculkSpreader@@QEBAHXZ
-     * @hash   1589736308
+     * @hash   -2144452892
      */
     MCAPI int getNumberOfCursors() const;
     /**
      * @symbol ?getSculkReplaceableBlocks@SculkSpreader@@QEAAAEBV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@XZ
-     * @hash   -707408667
+     * @hash   -582617051
      */
     MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const & getSculkReplaceableBlocks();
     /**
      * @symbol ?getTotalCharge@SculkSpreader@@QEBAHXZ
-     * @hash   -1463156902
+     * @hash   -902378806
      */
     MCAPI int getTotalCharge() const;
     /**
      * @symbol ?isWorldGen@SculkSpreader@@QEBA_NXZ
-     * @hash   -1629187144
+     * @hash   -1481715928
      */
     MCAPI bool isWorldGen() const;
     /**
      * @symbol ?load@SculkSpreader@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -345881864
+     * @hash   214896232
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?save@SculkSpreader@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1087601074
+     * @hash   -526822978
      */
     MCAPI void save(class CompoundTag &) const;
     /**
      * @symbol ?updateCursors@SculkSpreader@@QEAAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-     * @hash   368524393
+     * @hash   929302489
      */
     MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, bool);
     /**
      * @symbol ??1SculkSpreader@@QEAA@XZ
-     * @hash   433647520
+     * @hash   1179752544
      */
     MCAPI ~SculkSpreader();
 

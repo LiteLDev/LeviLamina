@@ -64,35 +64,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@RespawnPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1168136418
+     * @hash   -1242079602
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RespawnPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -264658485
+     * @hash   -338601669
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@RespawnPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -445613796
+     * @hash   -519556980
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@RespawnPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2136226108
+     * @hash   2062282924
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RespawnPacket@@QEAA@XZ
-     * @hash   1260322892
+     * @hash   1186379708
      */
     MCAPI RespawnPacket();
     /**
      * @symbol ??0RespawnPacket@@QEAA@AEBVVec3@@AEBW4PlayerRespawnState@@@Z
-     * @hash   -1007518516
+     * @hash   -1081461700
      */
     MCAPI RespawnPacket(class Vec3 const &, enum class PlayerRespawnState const &);
 

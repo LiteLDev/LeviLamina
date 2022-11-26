@@ -37,33 +37,33 @@ public:
     virtual ~PlayerScoreboardEventListener();
     /**
      * @vftbl  1
-     * @hash   -1154497823
+     * @hash   -1052585695
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1153574302
+     * @hash   -1051662174
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -809106166
+     * @hash   -289628006
      */
     virtual enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?getPlayerSubscriptions@PlayerScoreboardEventListener@@QEAAAEAVSubscribedObjectives@@AEBUScoreboardId@@AEBVPlayer@@@Z
-     * @hash   -1748802290
+     * @hash   -1229324130
      */
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     /**
      * @symbol ?removePlayerSubscriptions@PlayerScoreboardEventListener@@QEAAXAEBUScoreboardId@@@Z
-     * @hash   1333126572
+     * @hash   1852604732
      */
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
 

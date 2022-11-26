@@ -39,97 +39,97 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@TextPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -582482055
+     * @hash   -624750679
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@TextPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   541537830
+     * @hash   499269206
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@TextPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   286117601
+     * @hash   243848977
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@TextPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   647774609
+     * @hash   605844257
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0TextPacket@@QEAA@XZ
-     * @hash   -1264645215
+     * @hash   -1306575567
      */
     MCAPI TextPacket();
     /**
      * @symbol ?createAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-     * @hash   -1357390125
+     * @hash   -1399320477
      */
     MCAPI static class TextPacket createAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?createChat@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-     * @hash   -1371601677
+     * @hash   -1413532029
      */
     MCAPI static class TextPacket createChat(std::string const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?createJukeboxPopup@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -724871213
+     * @hash   -766801565
      */
     MCAPI static class TextPacket createJukeboxPopup(std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?createRawJsonObjectAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1226086955
+     * @hash   1184079723
      */
     MCAPI static class TextPacket createRawJsonObjectAnnouncement(std::string const &);
     /**
      * @symbol ?createRawJsonObjectMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1124814793
+     * @hash   1082746057
      */
     MCAPI static class TextPacket createRawJsonObjectMessage(std::string const &);
     /**
      * @symbol ?createSystemMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2110897771
+     * @hash   2068767531
      */
     MCAPI static class TextPacket createSystemMessage(std::string const &);
     /**
      * @symbol ?createTextObjectMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -1040106241
+     * @hash   -1082297985
      */
     MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const &, std::string, std::string);
     /**
      * @symbol ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-     * @hash   -903072359
+     * @hash   -945264103
      */
     MCAPI static class TextPacket createTextObjectWhisperMessage(std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -1776250741
+     * @hash   -1818442485
      */
     MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const &, std::string const &, std::string const &);
     /**
      * @symbol ?createTranslated@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -385644397
+     * @hash   -427836141
      */
     MCAPI static class TextPacket createTranslated(std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?createTranslatedAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-     * @hash   1114725123
+     * @hash   1072456499
      */
     MCAPI static class TextPacket createTranslatedAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?createWhisper@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-     * @hash   -715397375
+     * @hash   -757665999
      */
     MCAPI static class TextPacket createWhisper(std::string const &, std::string const &, std::string const &, std::string const &);
 
 //private:
     /**
      * @symbol ??0TextPacket@@AEAA@W4TextPacketType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@_N11@Z
-     * @hash   1430904782
+     * @hash   1388974430
      */
     MCAPI TextPacket(enum class TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
 

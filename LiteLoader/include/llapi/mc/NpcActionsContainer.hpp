@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?cloneActions@NpcActionsContainer@@QEBA?AV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
-     * @hash   1870892081
+     * @hash   1924200673
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> cloneActions() const;
     /**
      * @symbol ?getActionAt@NpcActionsContainer@@QEAAPEAVNpcAction@@_K@Z
-     * @hash   -402538585
+     * @hash   -349260745
      */
     MCAPI class NpcAction * getActionAt(unsigned __int64);
     /**
      * @symbol ?getActionCount@NpcActionsContainer@@QEBA_KXZ
-     * @hash   304283617
+     * @hash   357561457
      */
     MCAPI unsigned __int64 getActionCount() const;
     /**
      * @symbol ?getActions@NpcActionsContainer@@QEAAAEAV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
-     * @hash   1294938989
+     * @hash   1388209805
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> & getActions();
     /**
      * @symbol ?getActions@NpcActionsContainer@@QEBAAEBV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
-     * @hash   1618824103
+     * @hash   1712094919
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> const & getActions() const;
     /**
      * @symbol ?getUrlCount@NpcActionsContainer@@QEBAHXZ
-     * @hash   1265172836
+     * @hash   1318450676
      */
     MCAPI int getUrlCount() const;
     /**
      * @symbol ??1NpcActionsContainer@@QEAA@XZ
-     * @hash   -2028186415
+     * @hash   -1880822831
      */
     MCAPI ~NpcActionsContainer();
 

@@ -73,7 +73,7 @@ Certificate* Player::getCertificate() {
 
 enum class AbilitiesLayer;
 LayeredAbilities* Player::getAbilities() {
-    return &dAccess<LayeredAbilities>(this, 2196); // AbilityCommand::execute
+    return &dAccess<LayeredAbilities>(this, 2124); // AbilityCommand::execute
 }
 
 //From https://github.com/dreamguxiang/BETweaker
@@ -109,7 +109,7 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
 
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2160);
+        return dAccess<std::string>(this, 2088);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -257,7 +257,7 @@ int Player::clearItem(string typeName) {
     ItemStack* item = getHandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 
@@ -265,7 +265,7 @@ int Player::clearItem(string typeName) {
     item = (ItemStack*)&getOffhandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 
@@ -305,7 +305,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 5328); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {

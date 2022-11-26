@@ -36,47 +36,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@EatMobGoal@@UEAA_NXZ
-     * @hash   -199581931
+     * @hash   -38779723
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@EatMobGoal@@UEAA_NXZ
-     * @hash   273287939
+     * @hash   434090147
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@EatMobGoal@@UEAAXXZ
-     * @hash   -960201106
+     * @hash   -799398898
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@EatMobGoal@@UEAAXXZ
-     * @hash   -646112690
+     * @hash   -485310482
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@EatMobGoal@@UEAAXXZ
-     * @hash   -1164012519
+     * @hash   -1003194935
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@EatMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -139672645
+     * @hash   21068059
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0EatMobGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1438275506
+     * @hash   1599016210
      */
     MCAPI EatMobGoal(class Mob &);
 

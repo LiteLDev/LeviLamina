@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ShareableDefinition@@QEAA@XZ
-     * @hash   -1927317384
+     * @hash   -1940233224
      */
     MCAPI ShareableDefinition();
     /**
      * @symbol ?addShareable@ShareableDefinition@@QEAAXAEBUShareable@@@Z
-     * @hash   -2053022654
+     * @hash   -2065938494
      */
     MCAPI void addShareable(struct Shareable const &);
     /**
      * @symbol ?addShareableByName@ShareableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -157657174
+     * @hash   -170573014
      */
     MCAPI void addShareableByName(std::string const &);
     /**
      * @symbol ?buildSchema@ShareableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VShareableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1637896634
+     * @hash   1624980794
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShareableDefinition>> &);
 

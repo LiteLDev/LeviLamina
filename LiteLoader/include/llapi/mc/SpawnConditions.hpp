@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSpawnConditionsWithSpawnRules@SpawnConditions@@SA?AV1@AEBV1@AEBVMobSpawnRules@@@Z
-     * @hash   700389202
+     * @hash   1458133858
      */
     MCAPI static class SpawnConditions createSpawnConditionsWithSpawnRules(class SpawnConditions const &, class MobSpawnRules const &);
 

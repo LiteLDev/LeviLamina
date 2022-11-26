@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0BackwardsCompatTextureInfo@@QEAA@XZ
-     * @hash   -461914653
+     * @hash   49183587
      */
     MCAPI BackwardsCompatTextureInfo();
 

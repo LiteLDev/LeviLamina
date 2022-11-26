@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
-     * @hash   -1885094366
+     * @hash   -1958191870
      */
     virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction &);
     /**
      * @vftbl  2
      * @symbol ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
-     * @hash   -210663721
+     * @hash   -283761225
      */
     virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
     /**
      * @symbol ??0MinecraftGameTestBatchRunner@@QEAA@$$QEAV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestTicker@gametest@@$$QEAUTestParameters@4@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@2@AEAVDimension@@@Z
-     * @hash   -512074229
+     * @hash   -585171733
      */
     MCAPI MinecraftGameTestBatchRunner(std::vector<class gametest::GameTestBatch> &&, class gametest::GameTestTicker &, struct gametest::TestParameters &&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 

@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@MovementSoundDistanceOffsetDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UMovementSoundDistanceOffsetDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -487372652
+     * @hash   -405034172
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct MovementSoundDistanceOffsetDefinition>> &);
 

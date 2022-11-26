@@ -30,52 +30,52 @@ public:
 public:
     /**
      * @symbol ??0PositionTrackingId@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1475219834
+     * @hash   -2108238438
      */
     MCAPI PositionTrackingId(std::string const &);
     /**
      * @symbol ??0PositionTrackingId@@QEAA@$$QEAV0@@Z
-     * @hash   1117834559
+     * @hash   993765615
      */
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     /**
      * @symbol ??0PositionTrackingId@@QEAA@AEBV0@@Z
-     * @hash   -1286785919
+     * @hash   -1410854863
      */
     MCAPI PositionTrackingId(class PositionTrackingId const &);
     /**
      * @symbol ?fromTag@PositionTrackingId@@QEAAXPEBVTag@@@Z
-     * @hash   1236295931
+     * @hash   1947804955
      */
     MCAPI void fromTag(class Tag const *);
     /**
      * @symbol ?getTag@PositionTrackingId@@QEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   908355688
+     * @hash   1619864712
      */
     MCAPI std::unique_ptr<class Tag> getTag() const;
     /**
      * @symbol ?init@PositionTrackingId@@QEAAXXZ
-     * @hash   -90257099
+     * @hash   621251925
      */
     MCAPI void init();
     /**
      * @symbol ??4PositionTrackingId@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   658923202
+     * @hash   534854258
      */
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId &&);
     /**
      * @symbol ??4PositionTrackingId@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1105295548
+     * @hash   -1229364492
      */
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId const &);
     /**
      * @symbol ?toString@PositionTrackingId@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -995683590
+     * @hash   -284174566
      */
     MCAPI std::string const toString() const;
     /**
      * @symbol ?INVALID_ID@PositionTrackingId@@2V1@B
-     * @hash   -59222821
+     * @hash   574160747
      */
     MCAPI static class PositionTrackingId const INVALID_ID;
 
@@ -84,7 +84,7 @@ public:
 protected:
     /**
      * @symbol ?sNextId@PositionTrackingId@@1IA
-     * @hash   -1444085662
+     * @hash   -810702094
      */
     MCAPI static unsigned int sNextId;
 

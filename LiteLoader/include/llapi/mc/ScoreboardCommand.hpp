@@ -50,104 +50,104 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ScoreboardCommand@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1183353666
+     * @hash   -1172990242
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ScoreboardCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
-     * @hash   1932047359
+     * @hash   1943871503
      */
     MCAPI static void setup(class CommandRegistry &, struct ScoreboardCommand::InitProxy &&);
 
 //private:
     /**
      * @symbol ?_generateCumulativeOutput@ScoreboardCommand@@AEBAXAEBUSetScoreOutput@1@AEBVObjective@@AEAVCommandOutput@@@Z
-     * @hash   1537553030
+     * @hash   1546947766
      */
     MCAPI void _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const &, class Objective const &, class CommandOutput &) const;
     /**
      * @symbol ?_getObjective@ScoreboardCommand@@AEBAPEAVObjective@@AEBVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEAVCommandOutput@@@Z
-     * @hash   909943102
+     * @hash   919645358
      */
     MCAPI class Objective * _getObjective(class Scoreboard const &, std::string const &, bool, class CommandOutput &) const;
     /**
      * @symbol ?_getScoreboardIdsForSelector@ScoreboardCommand@@AEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@AEAVScoreboard@@AEBV?$WildcardCommandSelector@VActor@@@@AEBVCommandOrigin@@AEAVCommandOutput@@_N@Z
-     * @hash   1976477700
+     * @hash   1986287588
      */
     MCAPI std::vector<struct ScoreboardId> _getScoreboardIdsForSelector(class Scoreboard &, class WildcardCommandSelector<class Actor> const &, class CommandOrigin const &, class CommandOutput &, bool) const;
     /**
      * @symbol ?_getSelectorResultsForObjective@ScoreboardCommand@@AEBA_NAEAV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@AEAVScoreboard@@AEBV?$WildcardCommandSelector@VActor@@@@AEAVObjective@@AEBVCommandOrigin@@AEAVCommandOutput@@_N@Z
-     * @hash   734257155
+     * @hash   744051667
      */
     MCAPI bool _getSelectorResultsForObjective(std::vector<struct ScoreboardId> &, class Scoreboard &, class WildcardCommandSelector<class Actor> const &, class Objective &, class CommandOrigin const &, class CommandOutput &, bool) const;
     /**
      * @symbol ?addObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11AEAVCommandOutput@@@Z
-     * @hash   1553557694
+     * @hash   1563398334
      */
     MCAPI void addObjective(class Scoreboard &, std::string const &, std::string const &, std::string const &, class CommandOutput &) const;
     /**
      * @symbol ?addPlayerScore@ScoreboardCommand@@AEBAXAEAVScoreboard@@W4PlayerScoreSetFunction@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-     * @hash   -1939841727
+     * @hash   -1929632063
      */
     MCAPI void addPlayerScore(class Scoreboard &, enum class PlayerScoreSetFunction, struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &, struct ScoreboardCommand::SetScoreOutput &) const;
     /**
      * @symbol ?applyPlayerOperation@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEBUScoreboardId@@AEAVObjective@@3AEBVCommandOrigin@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-     * @hash   587781565
+     * @hash   598083485
      */
     MCAPI bool applyPlayerOperation(class Scoreboard &, class std::function<std::string const & (struct ActorUniqueID)> const &, struct ScoreboardId const &, class Objective &, class Objective &, class CommandOrigin const &, class CommandOutput &, struct ScoreboardCommand::SetScoreOutput &) const;
     /**
      * @symbol ?listObjectives@ScoreboardCommand@@AEBAXAEBVScoreboard@@AEAVCommandOutput@@@Z
-     * @hash   1003786823
+     * @hash   1014565399
      */
     MCAPI void listObjectives(class Scoreboard const &, class CommandOutput &) const;
     /**
      * @symbol ?listPlayers@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBUScoreboardId@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-     * @hash   1517248816
+     * @hash   1528135024
      */
     MCAPI void listPlayers(class Scoreboard &, struct ScoreboardId const &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     /**
      * @symbol ?objectives@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1714583296
+     * @hash   -1703435696
      */
     MCAPI void objectives(class Scoreboard &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?players@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1091839656
+     * @hash   -1080645928
      */
     MCAPI void players(class Scoreboard &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?removeObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVCommandOutput@@@Z
-     * @hash   1231986961
+     * @hash   1243334449
      */
     MCAPI void removeObjective(class Scoreboard &, std::string const &, class CommandOutput &) const;
     /**
      * @symbol ?resetPlayer@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBUScoreboardId@@PEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-     * @hash   772992547
+     * @hash   784401539
      */
     MCAPI void resetPlayer(class Scoreboard &, struct ScoreboardId const &, class Objective *, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     /**
      * @symbol ?setDisplayObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4ObjectiveSortOrder@@AEAVCommandOutput@@@Z
-     * @hash   757766868
+     * @hash   769344996
      */
     MCAPI void setDisplayObjective(class Scoreboard &, std::string const &, std::string const &, enum class ObjectiveSortOrder, class CommandOutput &) const;
     /**
      * @symbol ?setPlayerRandomScore@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-     * @hash   1939858180
+     * @hash   1951605444
      */
     MCAPI bool setPlayerRandomScore(class Scoreboard &, struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &, struct ScoreboardCommand::SetScoreOutput &) const;
     /**
      * @symbol ?testPlayerScore@ScoreboardCommand@@AEBAXAEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-     * @hash   113663656
+     * @hash   124980392
      */
     MCAPI void testPlayerScore(struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     /**
      * @symbol ?_getNonSortableDisplaySlots@ScoreboardCommand@@CA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVScoreboard@@@Z
-     * @hash   -68402837
+     * @hash   -58623701
      */
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard &);
     /**
      * @symbol ?_getSortableDisplaySlots@ScoreboardCommand@@CA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVScoreboard@@@Z
-     * @hash   191907418
+     * @hash   201748058
      */
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard &);
 

@@ -32,33 +32,33 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
     /**
      * @symbol ?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   493627429
+     * @hash   1055743237
      */
     MCVAPI bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?_write@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   291126141
+     * @hash   853241949
      */
     MCVAPI void _write(class BinaryStream &) const;
     /**
      * @symbol ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@UEAAXAEAVBlockPalette@@_N@Z
-     * @hash   -1903745223
+     * @hash   -1341629415
      */
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
 #endif
     /**
      * @symbol ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEAA@XZ
-     * @hash   -1752545561
+     * @hash   -1190429753
      */
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
     /**
      * @symbol ?getNumCrafts@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEBAEXZ
-     * @hash   1928439581
+     * @hash   1907912621
      */
     MCAPI unsigned char getNumCrafts() const;
     /**
      * @symbol ?getResults@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   893514346
+     * @hash   872987386
      */
     MCAPI std::vector<class ItemInstance> const & getResults() const;
 

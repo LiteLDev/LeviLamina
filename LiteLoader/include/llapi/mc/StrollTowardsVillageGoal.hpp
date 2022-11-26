@@ -39,39 +39,39 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@StrollTowardsVillageGoal@@UEAA_NXZ
-     * @hash   2056326383
+     * @hash   -2076301105
      */
     virtual bool canUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -349254975
+     * @hash   -186915167
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  17
      * @symbol ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
-     * @hash   182346738
+     * @hash   344686546
      */
     virtual class BlockPos _selectRandomPosInVillage();
     /**
      * @symbol ??0StrollTowardsVillageGoal@@QEAA@AEAVMob@@MMMHM@Z
-     * @hash   1083237283
+     * @hash   1245577091
      */
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 

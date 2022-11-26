@@ -33,47 +33,47 @@ public:
 public:
     /**
      * @symbol ??0BlockStateMeta@@QEAA@AEBVItemState@@AEBUBlockStateDefinition@@@Z
-     * @hash   272928323
+     * @hash   828094179
      */
     MCAPI BlockStateMeta(class ItemState const &, struct BlockStateDefinition const &);
     /**
      * @symbol ?getBool@BlockStateMeta@@QEBA?B_NH@Z
-     * @hash   -788406831
+     * @hash   -233271727
      */
     MCAPI bool const getBool(int) const;
     /**
      * @symbol ?getID@BlockStateMeta@@QEBA_KXZ
-     * @hash   159894427
+     * @hash   715029531
      */
     MCAPI unsigned __int64 getID() const;
     /**
      * @symbol ?getInt@BlockStateMeta@@QEBA?BHH@Z
-     * @hash   -1342879823
+     * @hash   -787744719
      */
     MCAPI int const getInt(int) const;
     /**
      * @symbol ?getName@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1754448532
+     * @hash   -1716608196
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getState@BlockStateMeta@@QEBAAEBVItemState@@XZ
-     * @hash   -1312275866
+     * @hash   -757140762
      */
     MCAPI class ItemState const & getState() const;
     /**
      * @symbol ?getString@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -917807059
+     * @hash   -362671955
      */
     MCAPI std::string const & getString(int) const;
     /**
      * @symbol ?getType@BlockStateMeta@@QEBA?BW4Type@Tag@@XZ
-     * @hash   372875848
+     * @hash   520347064
      */
     MCAPI enum class Tag::Type const getType() const;
     /**
      * @symbol ?indexOf@BlockStateMeta@@QEBAHAEB_K@Z
-     * @hash   1294789873
+     * @hash   1849924977
      */
     MCAPI int indexOf(unsigned __int64 const &) const;
 

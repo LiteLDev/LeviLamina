@@ -33,95 +33,95 @@ public:
     /**
      * @vftbl  0
      * @symbol ?clone@ItemTagDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -678499628
+     * @hash   90238868
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
      * @vftbl  1
      * @symbol ?sameItems@ItemTagDescriptor@@UEBA_NAEBUBaseDescriptor@ItemDescriptor@@_N@Z
-     * @hash   869551556
+     * @hash   1636198916
      */
     virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const &, bool) const;
     /**
      * @vftbl  2
      * @symbol ?sameItem@ItemTagDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
-     * @hash   -1753338928
+     * @hash   -986691568
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
      * @vftbl  3
      * @symbol ?getFullName@MolangDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -963703870
+     * @hash   -926386318
      */
     virtual std::string const & getFullName() const;
     /**
      * @vftbl  4
      * @symbol ?getItem@ItemTagDescriptor@@UEBA?AUItemEntry@ItemDescriptor@@XZ
-     * @hash   737870344
+     * @hash   1506132184
      */
     virtual struct ItemDescriptor::ItemEntry getItem() const;
     /**
      * @vftbl  5
      * @symbol ?forEachItemUntil@ItemTagDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-     * @hash   1225092672
+     * @hash   1993662032
      */
     virtual bool forEachItemUntil(class std::function<bool (class Item const &, short)>) const;
     /**
      * @vftbl  6
      * @symbol ?toMap@ItemTagDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     * @hash   1285787546
+     * @hash   2052388778
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
      * @vftbl  7
      * @symbol ?save@ItemTagDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     * @hash   1455219086
+     * @hash   -2073116226
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
      * @vftbl  8
      * @symbol ?serialize@ItemTagDescriptor@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1971164743
+     * @hash   -1204532759
      */
     virtual void serialize(class Json::Value &) const;
     /**
      * @vftbl  9
      * @symbol ?serialize@ItemTagDescriptor@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -418425039
+     * @hash   348206945
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @vftbl  10
      * @symbol ?getType@ItemTagDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
-     * @hash   758075817
+     * @hash   743545497
      */
     virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  11
      * @symbol ?shouldResolve@DeferredDescriptor@@UEBA_NXZ
-     * @hash   861377291
+     * @hash   957877067
      */
     virtual bool shouldResolve() const;
     /**
      * @vftbl  12
      * @symbol ?getHash@ItemTagDescriptor@@UEBA_KXZ
-     * @hash   -1837924882
+     * @hash   -1069663042
      */
     virtual unsigned __int64 getHash() const;
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -823332445
+     * @hash   -667742701
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
     /**
      * @symbol ?deserialize@ItemTagDescriptor@@SA?AV?$unique_ptr@UItemTagDescriptor@@U?$default_delete@UItemTagDescriptor@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1870535515
+     * @hash   -1101797019
      */
     MCAPI static std::unique_ptr<struct ItemTagDescriptor> deserialize(class ReadOnlyBinaryStream &);
 

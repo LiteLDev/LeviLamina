@@ -44,124 +44,129 @@ bool mValidVersion, mAnyVersion;                      // 104, 105
 public:
     /**
      * @symbol ??0SemVersion@@QEAA@XZ
-     * @hash   -1576937543
+     * @hash   -1065654791
      */
     MCAPI SemVersion();
     /**
      * @symbol ??0SemVersion@@QEAA@Uany_version_constructor@0@@Z
-     * @hash   880442185
+     * @hash   1391724937
      */
     MCAPI SemVersion(struct SemVersion::any_version_constructor);
     /**
      * @symbol ??0SemVersion@@QEAA@GGGAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -1293510304
+     * @hash   -782227552
      */
     MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
     /**
      * @symbol ??0SemVersion@@QEAA@AEBV0@@Z
-     * @hash   1420137137
+     * @hash   1509256433
      */
     MCAPI SemVersion(class SemVersion const &);
     /**
      * @symbol ?asString@SemVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1586535010
+     * @hash   -1607061970
      */
     MCAPI std::string const & asString() const;
     /**
      * @symbol ?getMajor@SemVersion@@QEBAGXZ
-     * @hash   -297519929
+     * @hash   -150233225
      */
     MCAPI unsigned short getMajor() const;
     /**
      * @symbol ?getMinor@SemVersion@@QEBAGXZ
-     * @hash   -300667033
+     * @hash   172560119
      */
     MCAPI unsigned short getMinor() const;
     /**
      * @symbol ?getPatch@SemVersion@@QEBAGXZ
-     * @hash   -876310153
+     * @hash   -364858265
      */
     MCAPI unsigned short getPatch() const;
     /**
      * @symbol ?getPreRelease@SemVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1960312444
+     * @hash   2053583260
      */
     MCAPI std::string const & getPreRelease() const;
     /**
      * @symbol ?isAnyVersion@SemVersion@@QEBA_NXZ
-     * @hash   -409759616
+     * @hash   319939216
      */
     MCAPI bool isAnyVersion() const;
     /**
      * @symbol ?isValid@SemVersion@@QEBA_NXZ
-     * @hash   -128738390
+     * @hash   600960442
      */
     MCAPI bool isValid() const;
     /**
+     * @symbol ??9SemVersion@@QEBA_NAEBV0@@Z
+     * @hash   -499655987
+     */
+    MCAPI bool operator!=(class SemVersion const &) const;
+    /**
      * @symbol ??MSemVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1035932991
+     * @hash   -524619487
      */
     MCAPI bool operator<(class SemVersion const &) const;
     /**
      * @symbol ??NSemVersion@@QEBA_NAEBV0@@Z
-     * @hash   423261955
+     * @hash   934575459
      */
     MCAPI bool operator<=(class SemVersion const &) const;
     /**
      * @symbol ??4SemVersion@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1315742556
+     * @hash   -1217259276
      */
     MCAPI class SemVersion & operator=(class SemVersion const &);
     /**
      * @symbol ??8SemVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1676333430
+     * @hash   -1165050678
      */
     MCAPI bool operator==(class SemVersion const &) const;
     /**
      * @symbol ??OSemVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1487132963
+     * @hash   -975819459
      */
     MCAPI bool operator>(class SemVersion const &) const;
     /**
      * @symbol ??PSemVersion@@QEBA_NAEBV0@@Z
-     * @hash   1688949987
+     * @hash   -2094703805
      */
     MCAPI bool operator>=(class SemVersion const &) const;
     /**
      * @symbol ?satisfies@SemVersion@@QEBA_NAEBV1@@Z
-     * @hash   1023873557
+     * @hash   1535325445
      */
     MCAPI bool satisfies(class SemVersion const &) const;
     /**
      * @symbol ??1SemVersion@@QEAA@XZ
-     * @hash   1053922647
+     * @hash   1144671799
      */
     MCAPI ~SemVersion();
     /**
      * @symbol ?AnyVersionConstructor@SemVersion@@2Uany_version_constructor@1@B
-     * @hash   1262752447
+     * @hash   2018390591
      */
     MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
     /**
      * @symbol ?fromJson@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@W4ParseOption@1@@Z
-     * @hash   743576597
+     * @hash   1254890101
      */
     MCAPI static enum class SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum class SemVersion::ParseOption);
     /**
      * @symbol ?fromJsonArray@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@@Z
-     * @hash   -1145294686
+     * @hash   -634011934
      */
     MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
     /**
      * @symbol ?fromString@SemVersion@@SA?AW4MatchType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@W4ParseOption@1@@Z
-     * @hash   1488344001
+     * @hash   1999626753
      */
     MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum class SemVersion::ParseOption);
 
 //private:
     /**
      * @symbol ?_parseVersionToString@SemVersion@@AEAAXXZ
-     * @hash   482972575
+     * @hash   994286079
      */
     MCAPI void _parseVersionToString();
 

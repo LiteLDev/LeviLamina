@@ -29,9 +29,14 @@ public:
 
 public:
     /**
-     * @symbol ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@@Z
-     * @hash   723284031
+     * @symbol ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEBVBlockSource@@@Z
+     * @hash   -1651894946
      */
-    MCAPI ResourceDropsContext(float, class ItemStack const &);
+    MCAPI ResourceDropsContext(float, class ItemStack const &, class BlockSource const &);
+    /**
+     * @symbol ?getRandom@ResourceDropsContext@@QEBAAEAVRandom@@XZ
+     * @hash   -1004966440
+     */
+    MCAPI class Random & getRandom() const;
 
 };

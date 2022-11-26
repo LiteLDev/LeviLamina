@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ChargeAttackGoal@@UEAA_NXZ
-     * @hash   -125212287
+     * @hash   34774993
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@ChargeAttackGoal@@UEAA_NXZ
-     * @hash   318663007
+     * @hash   478650287
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@ChargeAttackGoal@@UEAAXXZ
-     * @hash   1140948682
+     * @hash   1300935962
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ChargeAttackGoal@@UEAAXXZ
-     * @hash   -715630726
+     * @hash   -555628070
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ChargeAttackGoal@@UEAAXXZ
-     * @hash   505041669
+     * @hash   665059701
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ChargeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -447273361
+     * @hash   -287024689
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ChargeAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   22492222
+     * @hash   182679390
      */
     MCAPI ChargeAttackGoal(class Mob &);
 

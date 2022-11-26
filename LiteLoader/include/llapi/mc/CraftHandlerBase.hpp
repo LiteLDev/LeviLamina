@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-     * @hash   1169042064
+     * @hash   1637902432
      */
     virtual enum class ItemStackNetResult handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const &);
     /**
      * @vftbl  2
      * @symbol ?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
-     * @hash   -1680456616
+     * @hash   -1583710824
      */
     virtual enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
     /**
      * @vftbl  3
      * @symbol ?endRequestBatch@CraftHandlerBase@@UEAAXXZ
-     * @hash   -216739054
+     * @hash   -127773518
      */
     virtual void endRequestBatch();
     /**
@@ -63,60 +63,60 @@ public:
     /**
      * @vftbl  5
      * @symbol ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z
-     * @hash   -1266654727
+     * @hash   -1177689191
      */
     virtual void _postCraftRequest(bool);
     /**
      * @vftbl  6
      * @symbol ?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ
-     * @hash   415333586
+     * @hash   508604402
      */
     virtual class Recipes const * _getLevelRecipes() const;
     /**
      * @symbol ??0CraftHandlerBase@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
-     * @hash   1417832106
+     * @hash   1886692474
      */
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     /**
      * @symbol ?_isNonImplementedTrustClientResults@CraftHandlerBase@@QEBA_NXZ
-     * @hash   1832713468
+     * @hash   1759877356
      */
     MCAPI bool _isNonImplementedTrustClientResults() const;
     /**
      * @symbol ?endRequest@CraftHandlerBase@@QEAA?AW4ItemStackNetResult@@W42@@Z
-     * @hash   135553234
+     * @hash   604413602
      */
     MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
     /**
      * @symbol ?handleCraftAction@CraftHandlerBase@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@W42@@Z
-     * @hash   -831367457
+     * @hash   -362507089
      */
     MCAPI enum class ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &, enum class ItemStackNetResult);
     /**
      * @symbol ?isCraftRequest@CraftHandlerBase@@QEAA_NXZ
-     * @hash   -436566118
+     * @hash   -508187526
      */
     MCAPI bool isCraftRequest();
     /**
      * @symbol ?postRequest@CraftHandlerBase@@QEAAX_N@Z
-     * @hash   -1706280332
+     * @hash   -1237419964
      */
     MCAPI void postRequest(bool);
 
 //protected:
     /**
      * @symbol ?_getRecipeFromNetId@CraftHandlerBase@@IEAA?AV?$tuple@W4ItemStackNetResult@@PEBVRecipe@@@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   -218185515
+     * @hash   250674853
      */
     MCAPI class std::tuple<enum class ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?_tryGetSparseContainer@CraftHandlerBase@@IEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-     * @hash   1458525969
+     * @hash   1927386337
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
     /**
      * @symbol ?_validateRequestSlot@CraftHandlerBase@@IEAA?AUItemStackRequestHandlerSlotInfo@@UItemStackRequestSlotInfo@@@Z
-     * @hash   -316982486
+     * @hash   151877882
      */
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 

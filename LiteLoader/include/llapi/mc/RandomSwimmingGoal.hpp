@@ -39,47 +39,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomSwimmingGoal@@UEAA_NXZ
-     * @hash   734629245
+     * @hash   896907549
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomSwimmingGoal@@UEAA_NXZ
-     * @hash   -1282977525
+     * @hash   -1120699221
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomSwimmingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1417707235
+     * @hash   1579985539
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?_setWantedPosition@RandomSwimmingGoal@@MEAA_NXZ
-     * @hash   -1646688902
+     * @hash   -1484410598
      */
     virtual bool _setWantedPosition();
     /**
      * @symbol ??0RandomSwimmingGoal@@QEAA@AEAVMob@@MHHH_N@Z
-     * @hash   -1022441709
+     * @hash   -860163405
      */
     MCAPI RandomSwimmingGoal(class Mob &, float, int, int, int, bool);
 
 //protected:
     /**
      * @symbol ?_getWaterHeights@RandomSwimmingGoal@@IEAAXVBlockPos@@AEAFAEAM22@Z
-     * @hash   -2095015488
+     * @hash   -1932737184
      */
     MCAPI void _getWaterHeights(class BlockPos, short &, float &, float &, float &);
 

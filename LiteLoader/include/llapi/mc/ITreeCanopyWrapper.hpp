@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ITreeCanopyWrapper@@QEAA@XZ
-     * @hash   1753629038
+     * @hash   1843055854
      */
     MCAPI ~ITreeCanopyWrapper();
 

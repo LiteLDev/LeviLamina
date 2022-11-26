@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@LocateCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   463519978
+     * @hash   468102026
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@LocateCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1260344320
+     * @hash   1264926368
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_executeLocateBiome@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1202825118
+     * @hash   -1198535214
      */
     MCAPI void _executeLocateBiome(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_executeLocateStructure@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -894246459
+     * @hash   -889864299
      */
     MCAPI void _executeLocateStructure(class CommandOrigin const &, class CommandOutput &) const;
 

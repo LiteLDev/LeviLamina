@@ -53,67 +53,67 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isInstantaneous@AttributeModifier@@UEBA_NXZ
-     * @hash   -654441199
+     * @hash   -557695407
      */
     virtual bool isInstantaneous() const;
     /**
      * @symbol ??0AttributeModifier@@QEAA@XZ
-     * @hash   129524143
+     * @hash   183370895
      */
     MCAPI AttributeModifier();
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
-     * @hash   602674279
+     * @hash   656536407
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
-     * @hash   59092497
+     * @hash   112970001
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@AEBV0@@Z
-     * @hash   -1501165839
+     * @hash   -1543434463
      */
     MCAPI AttributeModifier(class AttributeModifier const &);
     /**
      * @symbol ?getAmount@AttributeModifier@@QEBAMXZ
-     * @hash   -233618350
+     * @hash   -54810846
      */
     MCAPI float getAmount() const;
     /**
      * @symbol ?getId@AttributeModifier@@QEBAAEBVUUID@mce@@XZ
-     * @hash   -784320720
+     * @hash   -804647792
      */
     MCAPI class mce::UUID const & getId() const;
     /**
      * @symbol ?getName@AttributeModifier@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1423557616
+     * @hash   1386270816
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getOperand@AttributeModifier@@QEBAHXZ
-     * @hash   -704529684
+     * @hash   -642472148
      */
     MCAPI int getOperand() const;
     /**
      * @symbol ?getOperation@AttributeModifier@@QEBAHXZ
-     * @hash   -1334666232
+     * @hash   -1163408344
      */
     MCAPI int getOperation() const;
     /**
      * @symbol ?isSerializable@AttributeModifier@@QEBA_NXZ
-     * @hash   56933130
+     * @hash   94250682
      */
     MCAPI bool isSerializable() const;
     /**
      * @symbol ??4AttributeModifier@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -886418420
+     * @hash   -832556292
      */
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     /**
      * @symbol ??8AttributeModifier@@QEBA_NAEBV0@@Z
-     * @hash   -1790879724
+     * @hash   -1737017596
      */
     MCAPI bool operator==(class AttributeModifier const &) const;
 
@@ -122,7 +122,7 @@ public:
 private:
     /**
      * @symbol ?mInvalidUUID@AttributeModifier@@0VUUID@mce@@B
-     * @hash   -942532148
+     * @hash   -80861108
      */
     MCAPI static class mce::UUID const mInvalidUUID;
 

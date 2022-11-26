@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0WorldTemplateManagerProxy@@QEAA@AEBUWorldTemplateManagerProxyCallbacks@@@Z
-     * @hash   1959311258
+     * @hash   2030302250
      */
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
     /**
      * @symbol ??1WorldTemplateManagerProxy@@QEAA@XZ
-     * @hash   -997267831
+     * @hash   -926276839
      */
     MCAPI ~WorldTemplateManagerProxy();
 

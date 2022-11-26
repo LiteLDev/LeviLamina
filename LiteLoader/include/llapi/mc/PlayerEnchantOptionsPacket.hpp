@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayerEnchantOptionsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -599492608
+     * @hash   -644836432
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerEnchantOptionsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   716109549
+     * @hash   670765725
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayerEnchantOptionsPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -417143862
+     * @hash   -491087046
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlayerEnchantOptionsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1054512550
+     * @hash   -1128455734
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 

@@ -30,67 +30,67 @@ public:
 public:
     /**
      * @symbol ??0BuoyancyComponent@@QEAA@XZ
-     * @hash   -1948270199
+     * @hash   -2021106311
      */
     MCAPI BuoyancyComponent();
     /**
      * @symbol ??0BuoyancyComponent@@QEAA@AEBV0@@Z
-     * @hash   -1725675807
+     * @hash   -1615353007
      */
     MCAPI BuoyancyComponent(class BuoyancyComponent const &);
     /**
      * @symbol ?canFloat@BuoyancyComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   1827344931
+     * @hash   1754524195
      */
     MCAPI bool canFloat(class Actor const &) const;
     /**
      * @symbol ?getBaseBuoyancy@BuoyancyComponent@@QEBAMXZ
-     * @hash   833718804
+     * @hash   1012557060
      */
     MCAPI float getBaseBuoyancy() const;
     /**
      * @symbol ?getBigWaveProbability@BuoyancyComponent@@QEBAMXZ
-     * @hash   1345966746
+     * @hash   1524774250
      */
     MCAPI float getBigWaveProbability() const;
     /**
      * @symbol ?getBigWaveSpeedMultiplier@BuoyancyComponent@@QEBAMXZ
-     * @hash   1870366608
+     * @hash   2049174112
      */
     MCAPI float getBigWaveSpeedMultiplier() const;
     /**
      * @symbol ?getTimer@BuoyancyComponent@@QEBANXZ
-     * @hash   -1642406756
+     * @hash   -1715227492
      */
     MCAPI double getTimer() const;
     /**
      * @symbol ?increaseTimer@BuoyancyComponent@@QEAAXM@Z
-     * @hash   609414062
+     * @hash   536593326
      */
     MCAPI void increaseTimer(float);
     /**
      * @symbol ?loadData@BuoyancyComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-     * @hash   305491671
+     * @hash   232655559
      */
     MCAPI void loadData(std::string const &, class SemVersion const &);
     /**
      * @symbol ?needToResurface@BuoyancyComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   308575269
+     * @hash   235739157
      */
     MCAPI bool needToResurface(class Actor const &) const;
     /**
      * @symbol ??4BuoyancyComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -767226434
+     * @hash   -657026642
      */
     MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     /**
      * @symbol ?shouldApplyGravity@BuoyancyComponent@@QEBA_NXZ
-     * @hash   -902781322
+     * @hash   -975617434
      */
     MCAPI bool shouldApplyGravity() const;
     /**
      * @symbol ?shouldSimulateWaves@BuoyancyComponent@@QEBA_NXZ
-     * @hash   2002948404
+     * @hash   2128139796
      */
     MCAPI bool shouldSimulateWaves() const;
 

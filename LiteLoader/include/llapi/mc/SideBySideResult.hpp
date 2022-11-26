@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0SideBySideResult@@QEAA@$$QEAU0@@Z
-     * @hash   1434260577
+     * @hash   1572091041
      */
     MCAPI SideBySideResult(struct SideBySideResult &&);
     /**
      * @symbol ??1SideBySideResult@@QEAA@XZ
-     * @hash   -804462052
+     * @hash   -666923732
      */
     MCAPI ~SideBySideResult();
 

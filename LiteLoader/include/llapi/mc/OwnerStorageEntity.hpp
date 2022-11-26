@@ -34,47 +34,47 @@ public:
 //protected:
     /**
      * @symbol ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
-     * @hash   17485501
+     * @hash   142676893
      */
     MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::VariadicInit, class EntityRegistry &);
     /**
      * @symbol ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
-     * @hash   332732469
+     * @hash   457923861
      */
     MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::EmptyInit);
     /**
      * @symbol ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
-     * @hash   -1413976982
+     * @hash   -1288785590
      */
     MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);
     /**
      * @symbol ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
-     * @hash   942748383
+     * @hash   1067939775
      */
     MCAPI class EntityContext & _getStackRef() const;
     /**
      * @symbol ?_hasValue@OwnerStorageEntity@@IEBA_NXZ
-     * @hash   -173695433
+     * @hash   -48504041
      */
     MCAPI bool _hasValue() const;
     /**
      * @symbol ?_remake@OwnerStorageEntity@@IEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1102093996
+     * @hash   -976902604
      */
     MCAPI void _remake(class EntityRegistry &);
     /**
      * @symbol ?_reset@OwnerStorageEntity@@IEAAXXZ
-     * @hash   -2141276504
+     * @hash   -2016085112
      */
     MCAPI void _reset();
     /**
      * @symbol ??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z
-     * @hash   2040594920
+     * @hash   -2129180984
      */
     MCAPI class OwnerStorageEntity & operator=(class OwnerStorageEntity &&);
     /**
      * @symbol ??1OwnerStorageEntity@@IEAA@XZ
-     * @hash   -607153872
+     * @hash   -481962480
      */
     MCAPI ~OwnerStorageEntity();
 

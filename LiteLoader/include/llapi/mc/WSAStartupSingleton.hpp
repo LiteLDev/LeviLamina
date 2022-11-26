@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?AddRef@WSAStartupSingleton@@SAXXZ
-     * @hash   1904646565
+     * @hash   -1917062827
      */
     MCAPI static void AddRef();
     /**
      * @symbol ?Deref@WSAStartupSingleton@@SAXXZ
-     * @hash   -2017981145
+     * @hash   -1544723241
      */
     MCAPI static void Deref();
 
@@ -46,7 +46,7 @@ public:
 protected:
     /**
      * @symbol ?refCount@WSAStartupSingleton@@1HA
-     * @hash   496555770
+     * @hash   1059225114
      */
     MCAPI static int refCount;
 

@@ -39,63 +39,63 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@HideGoal@@UEAA_NXZ
-     * @hash   -753894837
+     * @hash   -593323269
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@HideGoal@@UEAA_NXZ
-     * @hash   1627473145
+     * @hash   1788044713
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@HideGoal@@UEAAXXZ
-     * @hash   -1446420396
+     * @hash   -1285848828
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@HideGoal@@UEAAXXZ
-     * @hash   686846996
+     * @hash   847418564
      */
     virtual void stop();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   587881253
+     * @hash   748452821
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  16
      * @symbol ?_getRepathTime@HideGoal@@MEBA_KXZ
-     * @hash   -2131707648
+     * @hash   -1971136080
      */
     virtual unsigned __int64 _getRepathTime() const;
     /**
      * @vftbl  17
      * @symbol ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-     * @hash   610063318
+     * @hash   770634886
      */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
     /**
      * @symbol ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
-     * @hash   -509190398
+     * @hash   -348618830
      */
     MCAPI HideGoal(class Mob &, float, float, float, enum class POIType);
 

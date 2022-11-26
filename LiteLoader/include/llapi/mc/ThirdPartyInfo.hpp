@@ -27,18 +27,18 @@ public:
 
 public:
     /**
-     * @symbol ??0ThirdPartyInfo@@QEAA@XZ
-     * @hash   -877606087
-     */
-    MCAPI ThirdPartyInfo();
-    /**
      * @symbol ??0ThirdPartyInfo@@QEAA@AEBV0@@Z
-     * @hash   1082168001
+     * @hash   -34487839
      */
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     /**
+     * @symbol ??0ThirdPartyInfo@@QEAA@XZ
+     * @hash   -850467447
+     */
+    MCAPI ThirdPartyInfo();
+    /**
      * @symbol ??1ThirdPartyInfo@@QEAA@XZ
-     * @hash   920229191
+     * @hash   1105632999
      */
     MCAPI ~ThirdPartyInfo();
 

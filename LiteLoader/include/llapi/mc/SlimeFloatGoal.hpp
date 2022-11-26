@@ -38,44 +38,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SlimeFloatGoal@@UEAA_NXZ
-     * @hash   906337129
+     * @hash   1067938889
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   578565733
+     * @hash   738599141
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@SlimeFloatGoal@@UEAAXXZ
-     * @hash   585358829
+     * @hash   746960589
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SlimeFloatGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -307363033
+     * @hash   -145730521
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SlimeFloatGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -996775946
+     * @hash   -835143434
      */
     MCAPI SlimeFloatGoal(class Mob &);
 

@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0KeyFrameTransformData@@QEAA@AEBV0@@Z
-     * @hash   442946593
+     * @hash   467179169
      */
     MCAPI KeyFrameTransformData(class KeyFrameTransformData const &);
     /**
      * @symbol ?addChannelTransform@KeyFrameTransformData@@QEAAXAEBVExpressionNode@@H@Z
-     * @hash   824738541
+     * @hash   848971117
      */
     MCAPI void addChannelTransform(class ExpressionNode const &, int);
     /**
      * @symbol ??8KeyFrameTransformData@@QEBA_NAEBV0@@Z
-     * @hash   1132535871
+     * @hash   1156768447
      */
     MCAPI bool operator==(class KeyFrameTransformData const &) const;
 

@@ -23,8 +23,13 @@ namespace CelebrateHuntSystemInternal {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?_stopCelebrating@CelebrateHuntSystemInternal@@YAXAEAVActor@@AEAVCelebrateHuntComponent@@@Z
+     * @hash   -2120725612
+     */
+    MCAPI void _stopCelebrating(class Actor &, class CelebrateHuntComponent &);
+    /**
      * @symbol ?_tickCelebrateHuntComponent@CelebrateHuntSystemInternal@@YAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VCelebrateHuntComponent@@@@@Z
-     * @hash   -137669124
+     * @hash   -27284820
      */
     MCAPI void _tickCelebrateHuntComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class CelebrateHuntComponent> &);
 

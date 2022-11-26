@@ -39,150 +39,150 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@EndGatewayBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1856253992
+     * @hash   2011966744
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@EndGatewayBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1637364889
+     * @hash   -1481652137
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@EndGatewayBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1728637297
+     * @hash   1884334673
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  8
      * @symbol ?onChanged@EndGatewayBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1234418423
+     * @hash   -1078705671
      */
     virtual void onChanged(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @symbol ?triggerEvent@EndGatewayBlockActor@@UEAAXHH@Z
-     * @hash   714153560
+     * @hash   869850936
      */
     virtual void triggerEvent(int, int);
     /**
-     * @vftbl  16
-     * @hash   -376527479
-     */
-    virtual void __unk_vfn_16();
-    /**
      * @vftbl  18
+     * @hash   -285714901
+     */
+    virtual void __unk_vfn_18();
+    /**
+     * @vftbl  20
      * @symbol ?hasAlphaLayer@EndGatewayBlockActor@@UEBA_NXZ
-     * @hash   907643588
+     * @hash   1004143364
      */
     virtual bool hasAlphaLayer() const;
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@EndGatewayBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   766609626
+     * @hash   922291626
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   1770560900
+     * @hash   1926258276
      */
     MCAPI EndGatewayBlockActor(class BlockPos const &);
     /**
      * @symbol ?canTeleport@EndGatewayBlockActor@@QEBA_NPEBVGetCollisionShapeInterface@@AEBVBlockSource@@@Z
-     * @hash   -2072716137
+     * @hash   -1917034137
      */
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
     /**
      * @symbol ?getExitPosition@EndGatewayBlockActor@@QEBA?AVBlockPos@@XZ
-     * @hash   -513977712
+     * @hash   -358264960
      */
     MCAPI class BlockPos getExitPosition() const;
     /**
      * @symbol ?getParticleAmount@EndGatewayBlockActor@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   879103536
+     * @hash   1034816288
      */
     MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?setExitPosition@EndGatewayBlockActor@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -226585654
+     * @hash   -70888278
      */
     MCAPI void setExitPosition(class BlockPos const &);
     /**
      * @symbol ?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z
-     * @hash   -1914295446
+     * @hash   -1758598070
      */
     MCAPI void teleportEntity(class Actor &);
     /**
      * @symbol ?COOLDOWN_TIME@EndGatewayBlockActor@@2HB
-     * @hash   2061844255
+     * @hash   -1479299265
      */
     MCAPI static int const COOLDOWN_TIME;
     /**
      * @symbol ?EVENT_COOLDOWN@EndGatewayBlockActor@@2HB
-     * @hash   -349884763
+     * @hash   403939013
      */
     MCAPI static int const EVENT_COOLDOWN;
     /**
      * @symbol ?SPAWN_TIME@EndGatewayBlockActor@@2HB
-     * @hash   -818883587
+     * @hash   -65059811
      */
     MCAPI static int const SPAWN_TIME;
     /**
      * @symbol ?findExitPortal@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVWorldGenerator@@AEBV2@@Z
-     * @hash   -1145266175
+     * @hash   -989584175
      */
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
     /**
      * @symbol ?findTallestBlock@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@H_N@Z
-     * @hash   760242539
+     * @hash   915924539
      */
     MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     /**
      * @symbol ?findValidSpawnAround@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@_NH@Z
-     * @hash   -1924143841
+     * @hash   -1768461841
      */
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
 
 //private:
     /**
      * @symbol ?_getHighestSection@EndGatewayBlockActor@@CAHAEAVWorldGenerator@@AEAVBlockVolume@@AEBVBlockPos@@@Z
-     * @hash   1654594544
+     * @hash   1810276544
      */
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 

@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LegacyFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   463679052
+     * @hash   620160604
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
-     * @hash   -231179947
+     * @hash   -74698395
      */
     MCAPI LegacyFlowerFeature(enum class FlowerPlacementType);
 

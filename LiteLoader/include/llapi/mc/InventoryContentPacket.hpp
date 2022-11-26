@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@InventoryContentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -271980343
+     * @hash   -144544055
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@InventoryContentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -789047434
+     * @hash   -661611146
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@InventoryContentPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1887927089
+     * @hash   2015363377
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@InventoryContentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   858525025
+     * @hash   985961313
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0InventoryContentPacket@@QEAA@XZ
-     * @hash   1704368977
+     * @hash   1831805265
      */
     MCAPI InventoryContentPacket();
     /**
      * @symbol ??0InventoryContentPacket@@QEAA@W4ContainerID@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   -466277215
+     * @hash   -338840927
      */
     MCAPI InventoryContentPacket(enum class ContainerID, std::vector<class ItemStack> const &);
     /**
      * @symbol ?fromPlayerInventoryId@InventoryContentPacket@@SA?AV1@W4ContainerID@@AEAVPlayer@@@Z
-     * @hash   133956352
+     * @hash   261392640
      */
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum class ContainerID, class Player &);
 

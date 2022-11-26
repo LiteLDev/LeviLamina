@@ -17,7 +17,7 @@
  * @brief MC class BatchedNetworkPeer.
  *
  */
-class BatchedNetworkPeer {
+class BatchedNetworkPeer : public NetworkPeer {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,48 +39,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?sendPacket@BatchedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
-     * @hash   -1321193036
+     * @hash   -1362846620
      */
     virtual void sendPacket(std::string const &, enum class NetworkPeer::Reliability, enum class Compressibility);
     /**
      * @vftbl  2
      * @symbol ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-     * @hash   -822409280
+     * @hash   -864062864
      */
     virtual enum class NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
      * @vftbl  3
      * @symbol ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
-     * @hash   -1212469993
+     * @hash   -1254185081
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /**
      * @vftbl  4
      * @symbol ?update@BatchedNetworkPeer@@UEAAXXZ
-     * @hash   1604151321
+     * @hash   1562497737
      */
     virtual void update();
     /**
      * @vftbl  5
      * @symbol ?flush@BatchedNetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -480828108
+     * @hash   -522543196
      */
     virtual void flush(class std::function<void (void)> &&);
     /**
      * @symbol ??0BatchedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@AEAVScheduler@@@Z
-     * @hash   1274639194
+     * @hash   1232555082
      */
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
     /**
      * @symbol ?setAsyncEnabled@BatchedNetworkPeer@@QEAAX_N@Z
-     * @hash   1352440396
+     * @hash   1310786812
      */
     MCAPI void setAsyncEnabled(bool);
 
 //private:
     /**
      * @symbol ?_startSendTask@BatchedNetworkPeer@@AEAAXXZ
-     * @hash   1538361349
+     * @hash   1496646261
      */
     MCAPI void _startSendTask();
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterParamOption@@VFilterInput@@UFilterStringMap@@@Z
-     * @hash   -1381331070
+     * @hash   -1298761950
      */
     MCAPI FilterParamDefinition(enum class FilterParamType, enum class FilterParamRequirement, std::string, enum class FilterParamOption, class FilterInput, struct FilterStringMap);
     /**
      * @symbol ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VFilterInput@@UFilterStringMap@@@Z
-     * @hash   1389386781
+     * @hash   1471955901
      */
     MCAPI FilterParamDefinition(enum class FilterParamType, enum class FilterParamRequirement, std::string, class FilterInput, struct FilterStringMap);
 

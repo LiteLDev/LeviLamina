@@ -31,97 +31,97 @@ public:
 public:
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_XYZ@@AEBVVec3@@@Z
-     * @hash   -1442878483
+     * @hash   -1431654003
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const &);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_XY@@AEBVVec2@@@Z
-     * @hash   1221038117
+     * @hash   1232262597
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const &);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_UV@@MM@Z
-     * @hash   1398838410
+     * @hash   1410062890
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_TentacleAngleAndSwimRotation@@MM@Z
-     * @hash   -1890424140
+     * @hash   -1879199660
      */
     MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_TRS@@$$QEAU0@11@Z
-     * @hash   1722402224
+     * @hash   1733626704
      */
     MCAPI MolangMemberArray(enum class MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_SpeedAndDirection@@MAEBVVec3@@@Z
-     * @hash   -1920118186
+     * @hash   -1908893706
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_RotYAndPosY@@MM@Z
-     * @hash   -1568002898
+     * @hash   -1556778418
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_RGBA@@AEBVColor@mce@@@Z
-     * @hash   1852696323
+     * @hash   1863920803
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_RGB@@AEBVColor@mce@@@Z
-     * @hash   -1162021505
+     * @hash   -1150797025
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const &);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_PoseIndexAndHurtTime@@HH@Z
-     * @hash   -1544842888
+     * @hash   -1533618408
      */
     MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int, int);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_MinAndMax@@$$QEAU0@1@Z
-     * @hash   1912941017
+     * @hash   1924165497
      */
     MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_BaseAndPattern@@HH@Z
-     * @hash   -885926744
+     * @hash   -874702264
      */
     MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int, int);
     /**
      * @symbol ??0MolangMemberArray@@QEAA@XZ
-     * @hash   -1298992149
+     * @hash   -1138066933
      */
     MCAPI MolangMemberArray();
     /**
      * @symbol ?add@MolangMemberArray@@QEAAXAEBVHashedString@@AEBUMolangScriptArg@@@Z
-     * @hash   -1315625539
+     * @hash   -1304401059
      */
     MCAPI void add(class HashedString const &, struct MolangScriptArg const &);
     /**
      * @symbol ?get@MolangMemberArray@@QEBAPEBUMolangScriptArg@@AEBVHashedString@@@Z
-     * @hash   2037176492
+     * @hash   2048400972
      */
     MCAPI struct MolangScriptArg const * get(class HashedString const &) const;
     /**
      * @symbol ?getMembers@MolangMemberArray@@QEBAPEBV?$vector@UMolangMemberVariable@@V?$allocator@UMolangMemberVariable@@@std@@@std@@XZ
-     * @hash   1891130337
+     * @hash   2015921953
      */
     MCAPI std::vector<struct MolangMemberVariable> const * getMembers() const;
     /**
      * @symbol ?getOrAdd@MolangMemberArray@@QEAAAEAUMolangScriptArg@@AEBVHashedString@@@Z
-     * @hash   -2077074475
+     * @hash   -2065849995
      */
     MCAPI struct MolangScriptArg & getOrAdd(class HashedString const &);
     /**
      * @symbol ??8MolangMemberArray@@QEBA_NAEBU0@@Z
-     * @hash   -2128209220
+     * @hash   -2116984740
      */
     MCAPI bool operator==(struct MolangMemberArray const &) const;
     /**
      * @symbol ??1MolangMemberArray@@QEAA@XZ
-     * @hash   -61173013
+     * @hash   94524363
      */
     MCAPI ~MolangMemberArray();
 

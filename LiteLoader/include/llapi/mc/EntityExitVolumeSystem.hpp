@@ -38,25 +38,25 @@ public:
     virtual ~EntityExitVolumeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@EntityExitVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   723894282
+     * @hash   780570218
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ??0EntityExitVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-     * @hash   501280215
+     * @hash   557787015
      */
     MCAPI EntityExitVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 //private:
     /**
      * @symbol ?_tick@EntityExitVolumeSystem@@AEBAXAEAVEntityContext@@AEAVVolumeBoundsComponent@@AEAVEntitiesInsideVolumeComponent@@@Z
-     * @hash   -638385911
+     * @hash   -581879111
      */
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &, class EntitiesInsideVolumeComponent &) const;
 

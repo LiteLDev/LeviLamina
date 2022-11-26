@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@DefaultLookAngleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDefaultLookAngleDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   6245994
+     * @hash   88615226
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DefaultLookAngleDefinition>> &);
 

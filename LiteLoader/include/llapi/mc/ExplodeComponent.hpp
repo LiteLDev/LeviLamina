@@ -31,62 +31,62 @@ public:
 public:
     /**
      * @symbol ??0ExplodeComponent@@QEAA@XZ
-     * @hash   -1988368168
+     * @hash   -2008664488
      */
     MCAPI ExplodeComponent();
     /**
      * @symbol ?addAdditionalSaveData@ExplodeComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1679080872
+     * @hash   1658784552
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?explode@ExplodeComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
-     * @hash   1913360815
+     * @hash   1893049119
      */
     MCAPI void explode(class Actor &, class Vec3 const &);
     /**
      * @symbol ?getFuseLength@ExplodeComponent@@QEBAHXZ
-     * @hash   -371322682
+     * @hash   -200064794
      */
     MCAPI int getFuseLength() const;
     /**
      * @symbol ?getInitialFuseLength@ExplodeComponent@@QEBAHXZ
-     * @hash   -673505672
+     * @hash   -502247784
      */
     MCAPI int getInitialFuseLength() const;
     /**
      * @symbol ?getIsFuseLit@ExplodeComponent@@QEBA_NXZ
-     * @hash   -1534461182
+     * @hash   -1409269790
      */
     MCAPI bool getIsFuseLit() const;
     /**
      * @symbol ?isFuseLit@ExplodeComponent@@QEBA_NXZ
-     * @hash   1077032528
+     * @hash   1202223920
      */
     MCAPI bool isFuseLit() const;
     /**
      * @symbol ?readAdditionalSaveData@ExplodeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1023414558
+     * @hash   -1043726254
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?requiresTntExplodeGameRuleEnabled@ExplodeComponent@@QEBA_NXZ
-     * @hash   -443775420
+     * @hash   -464087116
      */
     MCAPI bool requiresTntExplodeGameRuleEnabled() const;
     /**
      * @symbol ?setAllowUnderwater@ExplodeComponent@@QEAAX_N@Z
-     * @hash   2023368490
+     * @hash   2003056794
      */
     MCAPI void setAllowUnderwater(bool);
     /**
      * @symbol ?setFuseLength@ExplodeComponent@@QEAAXH@Z
-     * @hash   1735135544
+     * @hash   1714823848
      */
     MCAPI void setFuseLength(int);
     /**
      * @symbol ?setTntExpodeGameRuleRequired@ExplodeComponent@@QEAAXXZ
-     * @hash   -762020123
+     * @hash   -782331819
      */
     MCAPI void setTntExpodeGameRuleRequired();
 

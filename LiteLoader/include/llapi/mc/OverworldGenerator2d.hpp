@@ -34,70 +34,70 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR2D
     /**
      * @symbol ?_prepareHeights@OverworldGenerator2d@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
-     * @hash   -1939849809
+     * @hash   -1768561169
      */
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
     /**
      * @symbol ?decorateWorldGenPostProcess@OverworldGenerator2d@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-     * @hash   476543153
+     * @hash   647416641
      */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     /**
      * @symbol ?findSpawnPosition@OverworldGenerator2d@@UEBA?AVBlockPos@@XZ
-     * @hash   898980684
+     * @hash   1070269324
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
      * @symbol ?generateDensityCellsForChunk@OverworldGenerator2d@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
-     * @hash   -53868604
+     * @hash   117420036
      */
     MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
     /**
      * @symbol ?getBiomeSource@OverworldGenerator2d@@UEBAAEBVBiomeSource@@XZ
-     * @hash   -270887816
+     * @hash   -99599176
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
      * @symbol ?getLevelGenHeight@OverworldGenerator2d@@UEBAHXZ
-     * @hash   562840045
+     * @hash   734128685
      */
     MCVAPI int getLevelGenHeight() const;
     /**
      * @symbol ?getMaterialAdjNoise@OverworldGenerator2d@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
-     * @hash   208507129
+     * @hash   379795769
      */
     MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
     /**
      * @symbol ?getSurfaceNoise@OverworldGenerator2d@@MEAAAEBVPerlinSimplexNoise@@XZ
-     * @hash   -582826293
+     * @hash   -411537653
      */
     MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
     /**
      * @symbol ?getXoroshiroPositionalRandomFactory@OverworldGenerator2d@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
-     * @hash   -2062467377
+     * @hash   -1891194113
      */
     MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 #endif
     /**
      * @symbol ??0OverworldGenerator2d@@QEAA@AEAVDimension@@I_NPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-     * @hash   -2084490281
+     * @hash   -1913217017
      */
     MCAPI OverworldGenerator2d(class Dimension &, unsigned int, bool, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
 
 //private:
     /**
      * @symbol ?_generateDensityCellsForChunk@OverworldGenerator2d@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
-     * @hash   1853939744
+     * @hash   2025228384
      */
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &) const;
     /**
      * @symbol ?_makeBiomeSource@OverworldGenerator2d@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@IAEBVDimension@@@Z
-     * @hash   -484724221
+     * @hash   -313435581
      */
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class Dimension const &);
     /**
      * @symbol ?_makeCommonNodeGraph@OverworldGenerator2d@@CA?AV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@W4GeneratorType@@AEBVBiomeRegistry@@@Z
-     * @hash   -1720548675
+     * @hash   -1549260035
      */
     MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum class GeneratorType, class BiomeRegistry const &);
 

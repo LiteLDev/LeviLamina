@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BlockSet@@QEAA@XZ
-     * @hash   -1218736305
+     * @hash   -1174361169
      */
     MCAPI ~BlockSet();
 

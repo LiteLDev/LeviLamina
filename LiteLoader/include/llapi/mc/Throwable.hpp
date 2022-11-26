@@ -33,210 +33,210 @@ public:
 
 public:
     /**
-     * @vftbl  10
+     * @vftbl  12
      * @symbol ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   748216704
+     * @hash   764868912
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1468490994
      */
     virtual ~Throwable();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  46
+     * @vftbl  48
      * @symbol ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
-     * @hash   -347512258
+     * @hash   -330860050
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  78
+     * @vftbl  81
      * @symbol ?getShadowHeightOffs@Throwable@@UEAAMXZ
-     * @hash   2027323728
+     * @hash   -2017952704
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  171
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  174
      * @symbol ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -997671354
+     * @hash   -981019146
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1897023292
+     * @vftbl  266
+     * @hash   -1802124542
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -589703136
+     * @hash   -573020176
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1566737293
+     * @hash   1583389501
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
+    /**
+     * @vftbl  281
+     * @hash   -1807236101
+     */
+    virtual void __unk_vfn_281();
+    /**
+     * @vftbl  282
+     * @symbol ?getThrowPower@Throwable@@UEAAMXZ
+     * @hash   -1568458332
+     */
+    virtual float getThrowPower();
     /**
      * @vftbl  283
-     * @hash   -1894354595
+     * @hash   -1747636803
      */
     virtual void __unk_vfn_283();
     /**
      * @vftbl  284
-     * @symbol ?getThrowPower@Throwable@@UEAAMXZ
-     * @hash   -1585110540
-     */
-    virtual float getThrowPower();
-    /**
-     * @vftbl  285
-     * @hash   -1842535553
-     */
-    virtual void __unk_vfn_285();
-    /**
-     * @vftbl  286
      * @symbol ?getThrowUpAngleOffset@Throwable@@MEAAMXZ
-     * @hash   297424915
+     * @hash   547115779
      */
     virtual float getThrowUpAngleOffset();
     /**
-     * @vftbl  287
+     * @vftbl  285
      * @symbol ?getGravity@Throwable@@MEAAMXZ
-     * @hash   1688387744
+     * @hash   1705039952
      */
     virtual float getGravity();
     /**
-     * @vftbl  288
+     * @vftbl  286
      * @symbol ?getParticleType@Throwable@@MEAA?AW4ParticleType@@XZ
-     * @hash   899525728
+     * @hash   825582544
      */
     virtual enum class ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
     /**
      * @symbol ?canMakeStepSound@Throwable@@MEBA_NXZ
-     * @hash   -1085943978
+     * @hash   -989198186
      */
     MCVAPI bool canMakeStepSound() const;
     /**
      * @symbol ?onHit@Throwable@@MEAAXAEBVHitResult@@@Z
-     * @hash   767655925
+     * @hash   856621461
      */
     MCVAPI void onHit(class HitResult const &);
     /**
      * @symbol ?stopUponGroundCollision@Throwable@@UEBA_NXZ
-     * @hash   2039037031
+     * @hash   2135782823
      */
     MCVAPI bool stopUponGroundCollision() const;
 #endif
     /**
      * @symbol ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1740888964
+     * @hash   -1724236756
      */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?shoot@Throwable@@QEAAXAEAVMob@@@Z
-     * @hash   -2063506890
+     * @hash   -2046823930
      */
     MCAPI void shoot(class Mob &);
     /**
      * @symbol ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
-     * @hash   228864986
+     * @hash   245547946
      */
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);
 

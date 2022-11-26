@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0GameTestNetworkAdapter@@QEAA@AEAVMinecraftGameTest@@@Z
-     * @hash   -1560207738
+     * @hash   -1601753690
      */
     MCAPI GameTestNetworkAdapter(class MinecraftGameTest &);
     /**
      * @symbol ?rungametest@GameTestNetworkAdapter@@QEAAXV?$not_null@PEAVPacketSender@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVDimension@@AEBUTestParameters@gametest@@@Z
-     * @hash   -713886834
+     * @hash   -755463538
      */
     MCAPI void rungametest(class gsl::not_null<class PacketSender *>, std::string const &, class Dimension &, struct gametest::TestParameters const &);
 

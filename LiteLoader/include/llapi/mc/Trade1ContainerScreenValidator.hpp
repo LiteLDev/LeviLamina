@@ -35,7 +35,7 @@ public:
     virtual ~Trade1ContainerScreenValidator();
     /**
      * @symbol ??0Trade1ContainerScreenValidator@@QEAA@XZ
-     * @hash   674348094
+     * @hash   1146498926
      */
     MCAPI Trade1ContainerScreenValidator();
 

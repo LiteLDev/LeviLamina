@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ?getPriority@PrioritizedGoal@@QEBAHXZ
-     * @hash   -1607629380
+     * @hash   -1463325620
      */
     MCAPI int getPriority() const;
     /**
      * @symbol ?getToStart@PrioritizedGoal@@QEBA_NXZ
-     * @hash   1875712752
+     * @hash   1855170416
      */
     MCAPI bool getToStart() const;
     /**
      * @symbol ?getUsed@PrioritizedGoal@@QEBA_NXZ
-     * @hash   746111518
+     * @hash   725569182
      */
     MCAPI bool getUsed() const;
     /**
      * @symbol ?setToStart@PrioritizedGoal@@QEAAX_N@Z
-     * @hash   1466364044
+     * @hash   1445821708
      */
     MCAPI void setToStart(bool);
     /**
      * @symbol ?setUsed@PrioritizedGoal@@QEAAX_N@Z
-     * @hash   -1736601538
+     * @hash   -1757143874
      */
     MCAPI void setUsed(bool);
     /**
      * @symbol ??1PrioritizedGoal@@QEAA@XZ
-     * @hash   2079310468
+     * @hash   -2126230012
      */
     MCAPI ~PrioritizedGoal();
 

@@ -39,40 +39,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
-     * @hash   -2142802841
+     * @hash   -1983230713
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
-     * @hash   -1654611915
+     * @hash   -1495039787
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  4
      * @symbol ?start@WitherRandomAttackPosGoal@@UEAAXXZ
-     * @hash   702801440
+     * @hash   862373568
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
-     * @hash   -459356592
+     * @hash   -299784464
      */
     virtual void stop();
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0WitherRandomAttackPosGoal@@QEAA@AEAVMob@@MHH@Z
-     * @hash   -2008646995
+     * @hash   -1849074867
      */
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 

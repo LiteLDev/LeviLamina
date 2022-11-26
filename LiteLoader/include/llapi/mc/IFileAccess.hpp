@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0IFileAccess@@QEAA@XZ
-     * @hash   1649969765
+     * @hash   -2133776283
      */
     MCAPI IFileAccess();
 

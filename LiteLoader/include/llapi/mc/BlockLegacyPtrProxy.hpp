@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?setter@BlockLegacyPtrProxy@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -735069104
+     * @hash   -122074112
      */
     MCAPI void setter(std::string const &);
     /**
      * @symbol ?toBlockLegacyPtr@BlockLegacyPtrProxy@@SAXAEAVBlockLegacyPtr@@AEBU1@@Z
-     * @hash   -1877917046
+     * @hash   -1264922054
      */
     MCAPI static void toBlockLegacyPtr(class BlockLegacyPtr &, struct BlockLegacyPtrProxy const &);
     /**
      * @symbol ?toString@BlockLegacyPtrProxy@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU1@@Z
-     * @hash   -930338360
+     * @hash   -317343368
      */
     MCAPI static std::string toString(struct BlockLegacyPtrProxy const &);
 

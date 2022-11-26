@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?ABSORPTION@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   1677374512
+     * @hash   -1757843744
      */
     MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
     /**
      * @symbol ?FATAL_POISON@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -89126008
+     * @hash   770623032
      */
     MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
     /**
      * @symbol ?HARM@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   1897537354
+     * @hash   -1537680902
      */
     MCAPI static class std::shared_ptr<class Amplifier> HARM;
     /**
      * @symbol ?HEAL@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -2147310558
+     * @hash   -1287561518
      */
     MCAPI static class std::shared_ptr<class Amplifier> HEAL;
     /**
      * @symbol ?HUNGER_DURATION@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -207221308
+     * @hash   652527732
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_DURATION;
     /**
      * @symbol ?HUNGER_VALUE@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   347888828
+     * @hash   1207637868
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_VALUE;
     /**
      * @symbol ?POISON@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -894190846
+     * @hash   -34441806
      */
     MCAPI static class std::shared_ptr<class Amplifier> POISON;
     /**
      * @symbol ?REGENERATION@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -553989384
+     * @hash   305759656
      */
     MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
     /**
      * @symbol ?SATURATION@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   330754150
+     * @hash   1190503190
      */
     MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
     /**
      * @symbol ?WITHER@SharedAmplifiers@@2V?$shared_ptr@VAmplifier@@@std@@A
-     * @hash   -286691016
+     * @hash   573058024
      */
     MCAPI static class std::shared_ptr<class Amplifier> WITHER;
 

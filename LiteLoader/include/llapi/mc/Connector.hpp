@@ -50,102 +50,102 @@ public:
     virtual ~Connector();
     /**
      * @vftbl  1
-     * @hash   -165728767
+     * @hash   -10031391
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?getLocalIp@Connector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -351966566
+     * @hash   -425878998
      */
     virtual std::string getLocalIp();
     /**
      * @vftbl  3
-     * @hash   -163881725
+     * @hash   -8184349
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1366637612
+     * @hash   -1273366796
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?getConnectedGameInfo@Connector@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     * @hash   -711507136
+     * @hash   -1626901920
      */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?getNatPunchInfo@Connector@@UEBA?AUNatPunchInfo@1@XZ
-     * @hash   337102006
+     * @hash   295955830
      */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTOR
     /**
      * @symbol ?addConnectionStateListener@Connector@@UEAAXPEAVConnectionStateListener@1@@Z
-     * @hash   223021302
+     * @hash   311986838
      */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
      * @symbol ?getIPv4Port@Connector@@UEBAGXZ
-     * @hash   -927221976
+     * @hash   -833951160
      */
     MCVAPI unsigned short getIPv4Port() const;
     /**
      * @symbol ?getIPv6Port@Connector@@UEBAGXZ
-     * @hash   -240628502
+     * @hash   -147357686
      */
     MCVAPI unsigned short getIPv6Port() const;
     /**
      * @symbol ?getLocalIps@Connector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   1513850143
+     * @hash   1669547519
      */
     MCVAPI std::vector<std::string> getLocalIps() const;
     /**
      * @symbol ?getPort@Connector@@UEBAGXZ
-     * @hash   -1977180701
+     * @hash   -1883909885
      */
     MCVAPI unsigned short getPort() const;
     /**
      * @symbol ?getRefinedLocalIps@Connector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
-     * @hash   -427856926
+     * @hash   -272159550
      */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
     /**
      * @symbol ?isIPv4Supported@Connector@@UEBA_NXZ
-     * @hash   1751639946
+     * @hash   1848385738
      */
     MCVAPI bool isIPv4Supported() const;
     /**
      * @symbol ?isIPv6Supported@Connector@@UEBA_NXZ
-     * @hash   1464754824
+     * @hash   1561500616
      */
     MCVAPI bool isIPv6Supported() const;
     /**
      * @symbol ?removeConnectionStateListener@Connector@@UEAAXPEAVConnectionStateListener@1@@Z
-     * @hash   -71125383
+     * @hash   17840153
      */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
      * @symbol ?setupNatPunch@Connector@@UEAAX_N@Z
-     * @hash   1292811944
+     * @hash   1381777480
      */
     MCVAPI void setupNatPunch(bool);
     /**
      * @symbol ?startNatPunchingClient@Connector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   -1735413991
+     * @hash   -1646448455
      */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
 #endif
     /**
      * @symbol ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
-     * @hash   1936072603
+     * @hash   1862529195
      */
     MCAPI Connector(struct Connector::ConnectionCallbacks &);
 

@@ -7,6 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Bedrock.hpp"
+#include "Scripting.hpp"
 #include "Core.hpp"
 
 #define BEFORE_EXTRA
@@ -35,152 +36,157 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
     /**
      * @symbol ?onAppResumed@ServerInstance@@UEAAXXZ
-     * @hash   -1347625324
+     * @hash   -1165235212
      */
     MCVAPI void onAppResumed();
     /**
      * @symbol ?onAppSuspended@ServerInstance@@UEAAXXZ
-     * @hash   -77295128
+     * @hash   105094984
      */
     MCVAPI void onAppSuspended();
     /**
      * @symbol ?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z
-     * @hash   -1664386747
+     * @hash   -1481996635
      */
     MCVAPI void onCriticalDiskError(bool, enum class Core::LevelStorageState const &);
     /**
      * @symbol ?onGameModeChanged@ServerInstance@@UEAAXXZ
-     * @hash   2038612943
+     * @hash   2127578479
      */
     MCVAPI void onGameModeChanged();
     /**
      * @symbol ?onGameSessionReset@ServerInstance@@UEAAXXZ
-     * @hash   -647272231
+     * @hash   -558306695
      */
     MCVAPI void onGameSessionReset();
     /**
      * @symbol ?onInternetUpdate@ServerInstance@@UEAAXXZ
-     * @hash   -2075881736
+     * @hash   -1986916200
      */
     MCVAPI void onInternetUpdate();
     /**
      * @symbol ?onLevelCorrupt@ServerInstance@@UEAAXXZ
-     * @hash   1707444839
+     * @hash   1889834951
      */
     MCVAPI void onLevelCorrupt();
     /**
      * @symbol ?onLevelExit@ServerInstance@@UEAAXXZ
-     * @hash   -520676878
+     * @hash   -431711342
      */
     MCVAPI void onLevelExit();
     /**
      * @symbol ?onLowDiskSpace@ServerInstance@@UEAAX_N@Z
-     * @hash   1638193289
+     * @hash   1820614153
      */
     MCVAPI void onLowDiskSpace(bool);
     /**
      * @symbol ?onLowMemory@ServerInstance@@UEAAXXZ
-     * @hash   531653669
+     * @hash   714074533
      */
     MCVAPI void onLowMemory();
     /**
      * @symbol ?onOutOfDiskSpace@ServerInstance@@UEAAX_N@Z
-     * @hash   133509978
+     * @hash   315930842
      */
     MCVAPI void onOutOfDiskSpace(bool);
     /**
      * @symbol ?onRequestResourceReload@ServerInstance@@UEAAXXZ
-     * @hash   2101396742
+     * @hash   -2011149690
      */
     MCVAPI void onRequestResourceReload();
     /**
      * @symbol ?onTick@ServerInstance@@UEAAXHH@Z
-     * @hash   -777966869
+     * @hash   -689001333
      */
     MCVAPI void onTick(int, int);
     /**
      * @symbol ?updateScreens@ServerInstance@@UEAAXXZ
-     * @hash   611937453
+     * @hash   700902989
      */
     MCVAPI void updateScreens();
     /**
      * @symbol ??1ServerInstance@@UEAA@XZ
-     * @hash   232581892
+     * @hash   414725988
      */
     MCVAPI ~ServerInstance();
 #endif
     /**
      * @symbol ??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z
-     * @hash   -1403840940
+     * @hash   -1221696844
      */
     MCAPI ServerInstance(class IMinecraftApp &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator>> const &);
     /**
      * @symbol ?disconnectAllClientsWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1192464864
+     * @hash   1374854976
      */
     MCAPI void disconnectAllClientsWithMessage(std::string);
     /**
      * @symbol ?enableItemStackNetManager@ServerInstance@@QEBA_NXZ
-     * @hash   -1693323148
+     * @hash   -1510933036
      */
     MCAPI bool enableItemStackNetManager() const;
     /**
+     * @symbol ?getScriptingEngineV2@ServerInstance@@QEAAPEAVScriptEngine@Scripting@@XZ
+     * @hash   769350317
+     */
+    MCAPI class Scripting::ScriptEngine * getScriptingEngineV2();
+    /**
      * @symbol ?getServerItemRegistry@ServerInstance@@QEBA?AVItemRegistryRef@@XZ
-     * @hash   -1511066226
+     * @hash   -1328645362
      */
     MCAPI class ItemRegistryRef getServerItemRegistry() const;
     /**
-     * @symbol ?initializeServer@ServerInstance@@QEAA_NAEAVIMinecraftApp@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@55VLevelSettings@@H_NUConnectionDefinition@@7AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@9@5AEBVUUID@mce@@AEAVIMinecraftEventing@@AEAVIResourcePackRepository@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@AEAVResourcePackManager@@V?$function@$$A6A?AV?$unique_ptr@VLevelStorage@@U?$default_delete@VLevelStorage@@@std@@@std@@AEAVScheduler@@@Z@9@V?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@9@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@PEAVLevelData@@55V?$unique_ptr@VEducationOptions@@U?$default_delete@VEducationOptions@@@std@@@9@PEAVResourcePackManager@@V?$function@$$A6AXXZ@9@V?$function@$$A6AXXZ@9@PEAVServerMetrics@@PEAVDebugEndPoint@@7V?$shared_ptr@VFileStorageArea@Core@@@9@AEBUNetworkSettingOptions@@77V?$optional@UPlayerMovementSettings@@@9@V?$optional@UScriptSettings@@@9@AEBVExperiments@@W4TransportLayer@@M@Z
-     * @hash   -1261292362
+     * @symbol ?initializeServer@ServerInstance@@QEAA_NAEAVIMinecraftApp@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@55VLevelSettings@@H_NUConnectionDefinition@@7AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@9@5AEBVUUID@mce@@AEAVIMinecraftEventing@@AEAVIResourcePackRepository@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@AEAVResourcePackManager@@V?$function@$$A6A?AV?$unique_ptr@VLevelStorage@@U?$default_delete@VLevelStorage@@@std@@@std@@AEAVScheduler@@@Z@9@V?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@9@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@PEAVLevelData@@55V?$unique_ptr@VEducationOptions@@U?$default_delete@VEducationOptions@@@std@@@9@PEAVResourcePackManager@@V?$function@$$A6AXXZ@9@V?$function@$$A6AXXZ@9@PEAVServerMetrics@@PEAVDebugEndPoint@@7V?$shared_ptr@VFileStorageArea@Core@@@9@AEBUNetworkSettingOptions@@77V?$optional@UPlayerMovementSettings@@@9@V?$optional@UScriptSettings@@@9@AEBVExperiments@@W4TransportLayer@@7MV?$optional@_N@9@@Z
+     * @hash   -1379515890
      */
-    MCAPI bool initializeServer(class IMinecraftApp &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const &, std::string, class mce::UUID const &, class IMinecraftEventing &, class IResourcePackRepository &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ResourcePackManager &, class std::function<std::unique_ptr<class LevelStorage> (class Scheduler &)>, std::unique_ptr<class LevelLooseFileStorage>, std::string const &, class LevelData *, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager *, class std::function<void (void)>, class std::function<void (void)>, class ServerMetrics *, class DebugEndPoint *, bool, class std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const &, bool, bool, class std::optional<struct PlayerMovementSettings>, class std::optional<struct ScriptSettings>, class Experiments const &, enum class TransportLayer, float);
+    MCAPI bool initializeServer(class IMinecraftApp &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const &, std::string, class mce::UUID const &, class IMinecraftEventing &, class IResourcePackRepository &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ResourcePackManager &, class std::function<std::unique_ptr<class LevelStorage> (class Scheduler &)>, std::unique_ptr<class LevelLooseFileStorage>, std::string const &, class LevelData *, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager *, class std::function<void (void)>, class std::function<void (void)>, class ServerMetrics *, class DebugEndPoint *, bool, class std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const &, bool, bool, class std::optional<struct PlayerMovementSettings>, class std::optional<struct ScriptSettings>, class Experiments const &, enum class TransportLayer, bool, float, class std::optional<bool>);
     /**
      * @symbol ?leaveGameSync@ServerInstance@@QEAAXXZ
-     * @hash   486217907
+     * @hash   668608019
      */
     MCAPI void leaveGameSync();
     /**
      * @symbol ?queueForServerThread@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   794397534
+     * @hash   976818398
      */
     MCAPI void queueForServerThread(class std::function<void (void)>);
     /**
-     * @symbol ?setLevelCorruptionCallback@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   857734580
-     */
-    MCAPI void setLevelCorruptionCallback(class std::function<void (void)>);
-    /**
      * @symbol ?setWakeupFrequency@ServerInstance@@QEAAXH@Z
-     * @hash   -1573411786
+     * @hash   -1390944794
      */
     MCAPI void setWakeupFrequency(int);
     /**
      * @symbol ?shutDownWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1336364246
+     * @hash   1518831238
      */
     MCAPI void shutDownWithMessage(std::string);
     /**
      * @symbol ?startServerThread@ServerInstance@@QEAAXXZ
-     * @hash   356168851
+     * @hash   538635843
      */
     MCAPI void startServerThread();
     /**
      * @symbol ?SERVER_MAX_DELAY_BEFORE_SLOWDOWN@ServerInstance@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
-     * @hash   -743200726
+     * @hash   19794834
      */
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
 
 //private:
     /**
      * @symbol ?_threadSafeExecute@ServerInstance@@AEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   401835274
+     * @hash   584025498
      */
     MCAPI void _threadSafeExecute(class std::function<void (void)>);
     /**
      * @symbol ?_update@ServerInstance@@AEAAXXZ
-     * @hash   -1346616852
+     * @hash   -1164426628
      */
     MCAPI void _update();
+    /**
+     * @symbol ?_useClientSideChunkGeneration@ServerInstance@@AEBA_NPEAVLevelData@@@Z
+     * @hash   -450898544
+     */
+    MCAPI bool _useClientSideChunkGeneration(class LevelData *) const;
 
 private:
 

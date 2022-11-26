@@ -68,22 +68,22 @@ public:
 public:
     /**
      * @symbol ??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@2@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@ZPEBDW4CommandParameterDataType@@7H_NH@Z
-     * @hash   1250174919
+     * @hash   1126428871
      */
     MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum class CommandParameterDataType, char const *, int, bool, int);
     /**
      * @symbol ??0CommandParameterData@@QEAA@AEBV0@@Z
-     * @hash   1461560273
+     * @hash   1337814225
      */
     MCAPI CommandParameterData(class CommandParameterData const &);
     /**
      * @symbol ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
-     * @hash   -916690354
+     * @hash   -1038622034
      */
     MCAPI class CommandParameterData & addOptions(enum class CommandParameterOption);
     /**
      * @symbol ??1CommandParameterData@@QEAA@XZ
-     * @hash   291056130
+     * @hash   301281170
      */
     MCAPI ~CommandParameterData();
 

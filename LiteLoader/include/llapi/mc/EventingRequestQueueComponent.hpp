@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0EventingRequestQueueComponent@@QEAA@$$QEAU0@@Z
-     * @hash   1050657549
+     * @hash   1192316637
      */
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent &&);
     /**
      * @symbol ??1EventingRequestQueueComponent@@QEAA@XZ
-     * @hash   -889702513
+     * @hash   -750764977
      */
     MCAPI ~EventingRequestQueueComponent();
 

@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@BoostableDefinition@@QEAAXAEAVEntityContext@@AEAVBoostableComponent@@@Z
-     * @hash   562024645
+     * @hash   489188533
      */
     MCAPI void initialize(class EntityContext &, class BoostableComponent &);
     /**
      * @symbol ?buildSchema@BoostableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBoostableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1943370674
+     * @hash   1870534562
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>> &);
 

@@ -38,22 +38,22 @@ public:
     virtual ~MoveToWaterGoal();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
-     * @hash   -1580441664
+     * @hash   -1419870096
      */
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
 

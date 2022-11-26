@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getBlockList@InsideBlockNotifierComponent@@QEBAAEBV?$vector@VInsideBlockEventMap@@V?$allocator@VInsideBlockEventMap@@@std@@@std@@XZ
-     * @hash   412982834
+     * @hash   506253650
      */
     MCAPI std::vector<class InsideBlockEventMap> const & getBlockList() const;
     /**
      * @symbol ?isTrackedBlock@InsideBlockNotifierComponent@@QEBA_NAEBVBlock@@@Z
-     * @hash   -663826211
+     * @hash   -739860531
      */
     MCAPI bool isTrackedBlock(class Block const &) const;
     /**
      * @symbol ?resetBlocksInsideState@InsideBlockNotifierComponent@@QEAAXXZ
-     * @hash   -622199979
+     * @hash   -698234299
      */
     MCAPI void resetBlocksInsideState();
     /**
      * @symbol ?setInsideBlock@InsideBlockNotifierComponent@@QEAAXAEBVBlock@@_N@Z
-     * @hash   -515213335
+     * @hash   -591247655
      */
     MCAPI void setInsideBlock(class Block const &, bool);
 

@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?setupStandaloneServer@DedicatedServerCommands@@SAXAEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@AEAVIMinecraftApp@@AEAVLevel@@AEAVLevelStorage@@AEAVDedicatedServer@@AEAVAllowListFile@@@Z
-     * @hash   -1496123655
+     * @hash   -1398316919
      */
     MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &);
 
@@ -42,7 +42,7 @@ public:
 private:
     /**
      * @symbol ?mSaveAllFileList@DedicatedServerCommands@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
-     * @hash   -1383216536
+     * @hash   -506077240
      */
     MCAPI static std::vector<std::string> mSaveAllFileList;
 

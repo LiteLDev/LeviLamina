@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SettingsCommandPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   54863966
+     * @hash   12995118
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SettingsCommandPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1464261877
+     * @hash   -1506130725
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SettingsCommandPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -545658484
+     * @hash   -362607204
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SettingsCommandPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2023140700
+     * @hash   -2089974644
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SettingsCommandPacket@@QEAA@XZ
-     * @hash   217664108
+     * @hash   175795260
      */
     MCAPI SettingsCommandPacket();
     /**
      * @symbol ?getCommandString@SettingsCommandPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2134406264
+     * @hash   -2035769416
      */
     MCAPI std::string const & getCommandString() const;
     /**
      * @symbol ?getSupressOutput@SettingsCommandPacket@@QEBA_NXZ
-     * @hash   -803098320
+     * @hash   -844967168
      */
     MCAPI bool getSupressOutput() const;
 

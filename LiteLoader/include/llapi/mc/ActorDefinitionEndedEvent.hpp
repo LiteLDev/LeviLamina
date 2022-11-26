@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorDefinitionEndedEvent@@QEAA@XZ
-     * @hash   -1913614204
+     * @hash   -1824187388
      */
     MCAPI ~ActorDefinitionEndedEvent();
 

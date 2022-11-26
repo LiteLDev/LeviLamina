@@ -41,35 +41,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?carve@CanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z
-     * @hash   859894417
+     * @hash   1031213809
      */
     virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
     /**
      * @vftbl  2
      * @symbol ?addFeature@CanyonFeature@@MEAAXAEAVBlockVolume@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEBVChunkPos@@AEAVRandom@@HHAEBUWorldGenContext@@@Z
-     * @hash   1417560827
+     * @hash   1588880219
      */
     virtual void addFeature(class BlockVolume &, class BiomeSource const &, struct CanyonFeatureUtils::CanyonConfiguration const &, class ChunkPos const &, class Random &, int, int, struct WorldGenContext const &);
     /**
      * @symbol ??0CanyonFeature@@QEAA@F@Z
-     * @hash   1192886070
+     * @hash   1364205462
      */
     MCAPI CanyonFeature(short);
     /**
      * @symbol ?apply@CanyonFeature@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEAVRandom@@IAEBUWorldGenContext@@@Z
-     * @hash   -1189900336
+     * @hash   -1018580944
      */
     MCAPI void apply(class BlockVolume &, class ChunkPos const &, class BiomeSource const &, struct CanyonFeatureUtils::CanyonConfiguration const &, class Random &, unsigned int, struct WorldGenContext const &);
     /**
      * @symbol ?isDiggable@CanyonFeature@@SA_NAEBVBlock@@0@Z
-     * @hash   -2034684485
+     * @hash   -1863365093
      */
     MCAPI static bool isDiggable(class Block const &, class Block const &);
 
 //protected:
     /**
      * @symbol ?addTunnel@CanyonFeature@@IEBAXAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4MMMHHMAEBUWorldGenContext@@@Z
-     * @hash   29466970
+     * @hash   200786362
      */
     MCAPI void addTunnel(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, float, float, float, int, int, float, struct WorldGenContext const &) const;
 

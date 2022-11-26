@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_setActorLinkPacketSystem@SetActorLinkPacketSystemImpl@@SAXAEAVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEBURemovePassengersComponent@@V?$Optional@$$CBV?$FlagComponent@UActorIsBeingDestroyedFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UPassengerInitiatedFlag@@@@@@AEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorUniqueIDComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@@Z
-     * @hash   1504772576
+     * @hash   1500959328
      */
     MCAPI static void _setActorLinkPacketSystem(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct RemovePassengersComponent const &, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const>, class Optional<class FlagComponent<struct PassengerInitiatedFlag> const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorUniqueIDComponent const> &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
 

@@ -24,12 +24,12 @@ namespace GameModeExt {
 #undef AFTER_EXTRA
     /**
      * @symbol ?createDefaultMessenger@GameModeExt@@YA?AV?$unique_ptr@UIGameModeMessenger@@U?$default_delete@UIGameModeMessenger@@@std@@@std@@AEAVPlayer@@@Z
-     * @hash   -727366320
+     * @hash   -711006256
      */
     MCAPI std::unique_ptr<struct IGameModeMessenger> createDefaultMessenger(class Player &);
     /**
      * @symbol ?createDefaultTimer@GameModeExt@@YA?AV?$unique_ptr@UIGameModeTimer@@U?$default_delete@UIGameModeTimer@@@std@@@std@@AEBVPlayer@@@Z
-     * @hash   -1481582274
+     * @hash   -1465222210
      */
     MCAPI std::unique_ptr<struct IGameModeTimer> createDefaultTimer(class Player const &);
 

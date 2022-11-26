@@ -33,62 +33,62 @@ public:
 public:
     /**
      * @symbol ??0InMemoryFile@@QEAA@AEBVPath@Core@@@Z
-     * @hash   -1692827847
+     * @hash   -1219477687
      */
     MCAPI InMemoryFile(class Core::Path const &);
     /**
      * @symbol ?append@InMemoryFile@@QEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-     * @hash   -1724484038
+     * @hash   -1251149254
      */
     MCAPI class leveldb::Status append(class leveldb::Slice const &);
     /**
      * @symbol ?close@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-     * @hash   820130747
+     * @hash   1293465531
      */
     MCAPI class leveldb::Status close(enum class InMemoryAccessMode);
     /**
      * @symbol ?flushToDisk@InMemoryFile@@QEAA?AVStatus@leveldb@@PEAVEnv@3@@Z
-     * @hash   -1795428815
+     * @hash   -1322094031
      */
     MCAPI class leveldb::Status flushToDisk(class leveldb::Env *);
     /**
      * @symbol ?getFilename@InMemoryFile@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   2078404789
+     * @hash   -1743243099
      */
     MCAPI class Core::PathBuffer<std::string> getFilename() const;
     /**
      * @symbol ?isMarkedDirty@InMemoryFile@@QEBA_NXZ
-     * @hash   1044729988
+     * @hash   1518049396
      */
     MCAPI bool isMarkedDirty() const;
     /**
      * @symbol ?isSafeToDelete@InMemoryFile@@QEBA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2111614991
+     * @hash   -1710032897
      */
     MCAPI bool isSafeToDelete(std::string &) const;
     /**
      * @symbol ?markForDelete@InMemoryFile@@QEAAXXZ
-     * @hash   339706211
+     * @hash   813025619
      */
     MCAPI void markForDelete();
     /**
      * @symbol ?open@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-     * @hash   -741106295
+     * @hash   -267786887
      */
     MCAPI class leveldb::Status open(enum class InMemoryAccessMode);
     /**
      * @symbol ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z
-     * @hash   -976278878
+     * @hash   -502959470
      */
     MCAPI class leveldb::Status read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *, unsigned __int64 &) const;
     /**
      * @symbol ?rename@InMemoryFile@@QEAAXAEBVPath@Core@@@Z
-     * @hash   -1388094862
+     * @hash   -914775454
      */
     MCAPI void rename(class Core::Path const &);
     /**
      * @symbol ??1InMemoryFile@@QEAA@XZ
-     * @hash   602475852
+     * @hash   1075810636
      */
     MCAPI ~InMemoryFile();
 

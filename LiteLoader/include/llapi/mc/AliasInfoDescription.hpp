@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0AliasInfoDescription@@QEAA@AEBU0@@Z
-     * @hash   469689903
+     * @hash   514065039
      */
     MCAPI AliasInfoDescription(struct AliasInfoDescription const &);
     /**
      * @symbol ??1AliasInfoDescription@@QEAA@XZ
-     * @hash   1321821896
+     * @hash   1364813192
      */
     MCAPI ~AliasInfoDescription();
 

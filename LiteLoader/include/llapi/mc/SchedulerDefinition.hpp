@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0SchedulerDefinition@@QEAA@XZ
-     * @hash   -1517332614
+     * @hash   1293749242
      */
     MCAPI SchedulerDefinition();
     /**
      * @symbol ?initialize@SchedulerDefinition@@QEAAXAEAVEntityContext@@AEAVSchedulerComponent@@@Z
-     * @hash   -2123147051
+     * @hash   2096216453
      */
     MCAPI void initialize(class EntityContext &, class SchedulerComponent &);
     /**
      * @symbol ?setMaxDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
-     * @hash   -1414627607
+     * @hash   -1490231399
      */
     MCAPI void setMaxDelayTicks(float const &);
     /**
      * @symbol ?setMinDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
-     * @hash   583012425
+     * @hash   507408633
      */
     MCAPI void setMinDelayTicks(float const &);
     /**
      * @symbol ?buildSchema@SchedulerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSchedulerDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1394855406
+     * @hash   1319251614
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
 

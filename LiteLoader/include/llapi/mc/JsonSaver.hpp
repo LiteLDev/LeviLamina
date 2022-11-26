@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?toString@JsonSaver@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   306099876
+     * @hash   406828052
      */
     MCAPI std::string toString();
 

@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  6
      * @symbol ?matches@ShapedChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -2115247177
+     * @hash   -1401923785
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  8
      * @symbol ?getId@ShapedChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
-     * @hash   -1622786923
+     * @hash   -909463531
      */
     virtual class mce::UUID const & getId() const;
     /**
      * @symbol ?ID@ShapedChemistryRecipe@@2VUUID@mce@@B
-     * @hash   -1011132225
+     * @hash   -377625649
      */
     MCAPI static class mce::UUID const ID;
 

@@ -39,49 +39,49 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@HoverPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-     * @hash   249802806
+     * @hash   304064710
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
      * @vftbl  2
      * @symbol ?tick@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   903585729
+     * @hash   957847633
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  3
      * @symbol ?getTempMobPos@HoverPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
-     * @hash   1769579269
+     * @hash   1823841173
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
      * @vftbl  4
      * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-     * @hash   701820410
+     * @hash   756082314
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
      * @vftbl  5
      * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
-     * @hash   -1376520113
+     * @hash   -1322258209
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
      * @vftbl  9
      * @symbol ?stop@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   -1399711306
+     * @hash   -1345449402
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  11
      * @symbol ?canUpdatePath@HoverPathNavigation@@MEBA_NAEBVMob@@@Z
-     * @hash   1993680685
+     * @hash   2047942589
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
      * @vftbl  12
      * @symbol ?updatePath@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   1126749954
+     * @hash   1181011858
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 

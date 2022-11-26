@@ -38,56 +38,56 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onTestStructureLoaded@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   1006454551
+     * @hash   949178951
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
      * @vftbl  2
      * @symbol ?onTestPassed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   -1733704499
+     * @hash   -1791272243
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
      * @vftbl  3
      * @symbol ?onTestFailed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   247405936
+     * @hash   189669056
      */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
     /**
      * @symbol ??0MinecraftReportGameListener@@QEAA@AEAVMinecraftGameTestInstance@@AEAVGameTestTicker@gametest@@@Z
-     * @hash   1379874207
+     * @hash   1321768303
      */
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
 //private:
     /**
      * @symbol ?_generateErrorDescription@MinecraftReportGameListener@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUGameTestError@gametest@@@Z
-     * @hash   283031090
+     * @hash   225002066
      */
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const &) const;
     /**
      * @symbol ?_reportFailure@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
-     * @hash   -1519981452
+     * @hash   -1577918220
      */
     MCAPI void _reportFailure(struct gametest::GameTestError const &, class BlockSource &);
     /**
      * @symbol ?_say@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -1295094511
+     * @hash   -1353031279
      */
     MCAPI void _say(std::string const &, std::string const &);
     /**
      * @symbol ?_spawnBeacon@MinecraftReportGameListener@@AEAAXAEBVBlock@@@Z
-     * @hash   -1461504969
+     * @hash   -1519457113
      */
     MCAPI void _spawnBeacon(class Block const &);
     /**
      * @symbol ?_spawnLectern@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1404699588
+     * @hash   -1462651732
      */
     MCAPI void _spawnLectern(std::string const &);
     /**
      * @symbol ?_visualizeFailedTest@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
-     * @hash   -1832969951
+     * @hash   -1890922095
      */
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const &, class BlockSource &);
 

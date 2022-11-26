@@ -39,115 +39,115 @@ public:
     virtual ~WritableBookItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  59
      * @symbol ?requiresInteract@WritableBookItem@@UEBA_NXZ
-     * @hash   -923242000
+     * @hash   -826742224
      */
     virtual bool requiresInteract() const;
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -276670826
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -256353364
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -265326014
+     * @hash   485530194
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@WritableBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   -1453148569
+     * @hash   -702246233
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
      * @symbol ??0WritableBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   923648314
+     * @hash   1674566026
      */
     MCAPI WritableBookItem(std::string const &, int);
     /**
      * @symbol ?addPageAt@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-     * @hash   -650939750
+     * @hash   99977962
      */
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
     /**
      * @symbol ?deletePage@WritableBookItem@@SA?AUPageContent@@AEAVItemStack@@H@Z
-     * @hash   -1261755896
+     * @hash   -510853560
      */
     MCAPI static struct PageContent deletePage(class ItemStack &, int);
     /**
      * @symbol ?replacePage@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-     * @hash   -146902070
+     * @hash   604000266
      */
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
     /**
      * @symbol ?signBook@WritableBookItem@@SAXAEAVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11@Z
-     * @hash   -1671233869
+     * @hash   -920346909
      */
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     /**
      * @symbol ?swapPages@WritableBookItem@@SAXAEAVItemStack@@HH@Z
-     * @hash   2134501346
+     * @hash   -1409594366
      */
     MCAPI static void swapPages(class ItemStack &, int, int);
 

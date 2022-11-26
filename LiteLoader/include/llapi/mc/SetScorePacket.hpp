@@ -39,47 +39,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetScorePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1703050458
+     * @hash   -1776870634
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetScorePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2125737517
+     * @hash   2095409603
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetScorePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -750040684
+     * @hash   -823860860
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetScorePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -2029178556
+     * @hash   -2102998732
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?change@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
-     * @hash   1725541191
+     * @hash   1651721015
      */
     MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
     /**
      * @symbol ?change@SetScorePacket@@SA?AV1@V?$vector@UScorePacketInfo@@V?$allocator@UScorePacketInfo@@@std@@@std@@@Z
-     * @hash   -1154277620
+     * @hash   -1228097796
      */
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
     /**
      * @symbol ?remove@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
-     * @hash   416181503
+     * @hash   342361327
      */
     MCAPI static class SetScorePacket remove(struct ScoreboardId const &, class Objective const &);
 
 //private:
     /**
      * @symbol ??0SetScorePacket@@AEAA@W4ScorePacketType@@AEBUScoreboardId@@AEBVObjective@@@Z
-     * @hash   -1443889613
+     * @hash   -1517832797
      */
     MCAPI SetScorePacket(enum class ScorePacketType, struct ScoreboardId const &, class Objective const &);
 

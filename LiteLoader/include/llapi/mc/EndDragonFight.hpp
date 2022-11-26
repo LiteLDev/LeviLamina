@@ -39,176 +39,176 @@ public:
 public:
     /**
      * @symbol ??0EndDragonFight@@QEAA@AEAVBlockSource@@@Z
-     * @hash   -1036552997
+     * @hash   -865371989
      */
     MCAPI EndDragonFight(class BlockSource &);
     /**
      * @symbol ?loadData@EndDragonFight@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   418892146
+     * @hash   590134658
      */
     MCAPI void loadData(class CompoundTag const &);
     /**
      * @symbol ?onCrystalDestroyed@EndDragonFight@@QEAAXAEBVEnderCrystal@@AEBVActorDamageSource@@@Z
-     * @hash   1345326881
+     * @hash   1516569393
      */
     MCAPI void onCrystalDestroyed(class EnderCrystal const &, class ActorDamageSource const &);
     /**
      * @symbol ?resetSpikeCrystals@EndDragonFight@@QEAAXXZ
-     * @hash   116107045
+     * @hash   287349557
      */
     MCAPI void resetSpikeCrystals();
     /**
      * @symbol ?saveData@EndDragonFight@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   -1653987130
+     * @hash   -1482744618
      */
     MCAPI void saveData(class CompoundTag &);
     /**
      * @symbol ?spawnNewGatewayChunks@EndDragonFight@@QEAAXAEBVBlockPos@@_N1@Z
-     * @hash   1686013504
+     * @hash   1857240640
      */
     MCAPI void spawnNewGatewayChunks(class BlockPos const &, bool, bool);
     /**
      * @symbol ?tick@EndDragonFight@@QEAAXXZ
-     * @hash   898812053
+     * @hash   1070039189
      */
     MCAPI void tick();
     /**
      * @symbol ?tryRespawn@EndDragonFight@@QEAAXXZ
-     * @hash   794894309
+     * @hash   966121445
      */
     MCAPI void tryRespawn();
     /**
      * @symbol ?verifyExitPositions@EndDragonFight@@QEAAXAEAVEndGatewayBlockActor@@@Z
-     * @hash   -746127610
+     * @hash   -574900474
      */
     MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
     /**
      * @symbol ??1EndDragonFight@@QEAA@XZ
-     * @hash   -905311668
+     * @hash   -749306772
      */
     MCAPI ~EndDragonFight();
 
 //private:
     /**
      * @symbol ?_canSpawnNewGateway@EndDragonFight@@AEBA_NPEAVChunkViewSource@@AEBVBlockPos@@@Z
-     * @hash   -501931416
+     * @hash   -330688904
      */
     MCAPI bool _canSpawnNewGateway(class ChunkViewSource *, class BlockPos const &) const;
     /**
      * @symbol ?_createNewDragon@EndDragonFight@@AEAAXXZ
-     * @hash   1045032450
+     * @hash   1216274962
      */
     MCAPI void _createNewDragon();
     /**
      * @symbol ?_findExitPortal@EndDragonFight@@AEAA?AUBuildMatch@@XZ
-     * @hash   2102014379
+     * @hash   -2021710405
      */
     MCAPI struct BuildMatch _findExitPortal();
     /**
      * @symbol ?_initializeDragon@EndDragonFight@@AEAAXAEAVEnderDragon@@@Z
-     * @hash   808721621
+     * @hash   979964133
      */
     MCAPI void _initializeDragon(class EnderDragon &);
     /**
      * @symbol ?_makeEndIslandFeature@EndDragonFight@@AEAAXAEAVBlockSource@@VBlockPos@@@Z
-     * @hash   1324661781
+     * @hash   1495904293
      */
     MCAPI void _makeEndIslandFeature(class BlockSource &, class BlockPos);
     /**
      * @symbol ?_placeAndLinkNewGatewayPair@EndDragonFight@@AEAAXXZ
-     * @hash   1986692849
+     * @hash   -2137031935
      */
     MCAPI void _placeAndLinkNewGatewayPair();
     /**
      * @symbol ?_setEndGatewayBlockActorExitPosition@EndDragonFight@@AEAA_NAEAVBlockSource@@0AEBVBlockPos@@1_N@Z
-     * @hash   1113408293
+     * @hash   1284650805
      */
     MCAPI bool _setEndGatewayBlockActorExitPosition(class BlockSource &, class BlockSource &, class BlockPos const &, class BlockPos const &, bool);
     /**
      * @symbol ?_setEndGatewayExitPositions@EndDragonFight@@AEAAXXZ
-     * @hash   1334410682
+     * @hash   1505653194
      */
     MCAPI void _setEndGatewayExitPositions();
     /**
      * @symbol ?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z
-     * @hash   870579565
+     * @hash   1041822077
      */
     MCAPI void _setRespawnStage(enum class RespawnAnimation);
     /**
      * @symbol ?_spawnExitPortal@EndDragonFight@@AEAAX_N@Z
-     * @hash   -318091292
+     * @hash   -146848780
      */
     MCAPI void _spawnExitPortal(bool);
     /**
      * @symbol ?_spawnNewGatewayChunksTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
-     * @hash   2102290856
+     * @hash   -2021433928
      */
     MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     /**
      * @symbol ?_spawnNewGatewayPair@EndDragonFight@@AEAAXXZ
-     * @hash   -2094145836
+     * @hash   -1922903324
      */
     MCAPI void _spawnNewGatewayPair();
     /**
      * @symbol ?_tickRespawnAnimation@EndDragonFight@@AEAAXAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-     * @hash   293608986
+     * @hash   464851498
      */
     MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const &, int);
     /**
      * @symbol ?_updateCrystalCount@EndDragonFight@@AEAAXXZ
-     * @hash   786450171
+     * @hash   957692683
      */
     MCAPI void _updateCrystalCount();
     /**
      * @symbol ?_verifyExitPositionsTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
-     * @hash   1638301802
+     * @hash   1809544314
      */
     MCAPI void _verifyExitPositionsTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
 private:
     /**
      * @symbol ?ARENA_SIZE_CHUNKS@EndDragonFight@@0HB
-     * @hash   1607667066
+     * @hash   -1931892726
      */
     MCAPI static int const ARENA_SIZE_CHUNKS;
     /**
      * @symbol ?DEFAULT_PORTAL_LOCATION@EndDragonFight@@0VBlockPos@@B
-     * @hash   -1052379563
+     * @hash   -210989467
      */
     MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
     /**
      * @symbol ?GATEWAY_CHUNK_RADIUS@EndDragonFight@@0HB
-     * @hash   -1502862895
+     * @hash   -747455391
      */
     MCAPI static int const GATEWAY_CHUNK_RADIUS;
     /**
      * @symbol ?GATEWAY_COUNT@EndDragonFight@@0HB
-     * @hash   -312222902
+     * @hash   443184602
      */
     MCAPI static int const GATEWAY_COUNT;
     /**
      * @symbol ?GATEWAY_DISTANCE@EndDragonFight@@0HB
-     * @hash   1227838506
+     * @hash   1983246010
      */
     MCAPI static int const GATEWAY_DISTANCE;
     /**
      * @symbol ?GATEWAY_HEIGHT@EndDragonFight@@0HB
-     * @hash   -1229771680
+     * @hash   -474364176
      */
     MCAPI static int const GATEWAY_HEIGHT;
     /**
      * @symbol ?TIME_BETWEEN_CRYSTAL_SCANS@EndDragonFight@@0HB
-     * @hash   -761861626
+     * @hash   -6454122
      */
     MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PLAYER_SCANS@EndDragonFight@@0HB
-     * @hash   -1427108057
+     * @hash   -671700553
      */
     MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PORTAL_SCANS@EndDragonFight@@0HB
-     * @hash   -2105306282
+     * @hash   -1349898778
      */
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
 

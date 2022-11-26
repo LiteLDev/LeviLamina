@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@HugeFungusFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1465207983
+     * @hash   -2088097953
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0HugeFungusFeature@@QEAA@_N@Z
-     * @hash   -399134310
+     * @hash   342527050
      */
     MCAPI HugeFungusFeature(bool);
 

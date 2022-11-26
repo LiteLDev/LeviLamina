@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@LabTablePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   507151285
+     * @hash   432746821
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LabTablePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1666200162
+     * @hash   1591795698
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LabTablePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2093471429
+     * @hash   2019066965
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@LabTablePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1050148789
+     * @hash   975744325
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LabTablePacket@@QEAA@XZ
-     * @hash   -2144783771
+     * @hash   2075779061
      */
     MCAPI LabTablePacket();
     /**
      * @symbol ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
-     * @hash   1976306868
+     * @hash   1901902404
      */
     MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
     /**
      * @symbol ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
-     * @hash   802001603
+     * @hash   727597139
      */
     MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SendEventStage@@QEAA@XZ
-     * @hash   -1312196826
+     * @hash   -1222770010
      */
     MCAPI ~SendEventStage();
 

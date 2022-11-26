@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@GlobalPauseCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -294228469
+     * @hash   -297242165
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@GlobalPauseCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1930985252
+     * @hash   -1933968196
      */
     MCAPI static void setup(class CommandRegistry &);
 

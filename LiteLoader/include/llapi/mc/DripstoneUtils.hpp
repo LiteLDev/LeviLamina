@@ -29,67 +29,67 @@ struct PointedDripstoneBasePos {
 #undef AFTER_EXTRA
     /**
      * @symbol ?buildBaseToTipColumn@DripstoneUtils@@YAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@EH_N@Z
-     * @hash   1842735790
+     * @hash   2013993678
      */
     MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI &, class BlockPos const &, unsigned char, int, bool);
     /**
      * @symbol ?canBeAdjacentToWater@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   -459607257
+     * @hash   -288349369
      */
     MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI &, class BlockPos const &);
     /**
      * @symbol ?canPlacePool@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   579538855
+     * @hash   750796743
      */
     MCAPI bool canPlacePool(class IBlockWorldGenAPI &, class BlockPos const &);
     /**
      * @symbol ?getDripstoneHeight@DripstoneUtils@@YAMMMMM@Z
-     * @hash   1568483881
+     * @hash   1739741769
      */
     MCAPI float getDripstoneHeight(float, float, float, float);
     /**
      * @symbol ?getPlacementBlock@DripstoneUtils@@YAAEBVBlock@@EAEBW4DripstoneThickness@@@Z
-     * @hash   -896560544
+     * @hash   -725302656
      */
     MCAPI class Block const & getPlacementBlock(unsigned char, enum class DripstoneThickness const &);
     /**
      * @symbol ?getPointedDripstoneBasePos@DripstoneUtils@@YA?AV?$optional@UPointedDripstoneBasePos@DripstoneUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -901950983
+     * @hash   -730693095
      */
     MCAPI class std::optional<struct DripstoneUtils::PointedDripstoneBasePos> getPointedDripstoneBasePos(class IBlockWorldGenAPI &, class BlockPos const &, class Random &);
     /**
      * @symbol ?isCircleMostlyEmbeddedInStone@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@H@Z
-     * @hash   -1340789470
+     * @hash   -1169531582
      */
     MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI &, class BlockPos const &, int);
     /**
      * @symbol ?isDripstoneBaseOrLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   434244759
+     * @hash   605502647
      */
     MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?isEmptyOrWater@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   1359906585
+     * @hash   1531164473
      */
     MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?isEmptyOrWaterOrLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   -1808839847
+     * @hash   -1637581959
      */
     MCAPI bool isEmptyOrWaterOrLava(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?isLava@DripstoneUtils@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   806769881
+     * @hash   978027769
      */
     MCAPI bool isLava(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?placeDripstoneBlockIfPossible@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   2114212853
+     * @hash   -2009496555
      */
     MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI &, class BlockPos const &);
     /**
      * @symbol ?replaceableByDripstone@DripstoneUtils@@YA_NAEBVBlockLegacy@@@Z
-     * @hash   862446778
+     * @hash   1033704666
      */
     MCAPI bool replaceableByDripstone(class BlockLegacy const &);
 

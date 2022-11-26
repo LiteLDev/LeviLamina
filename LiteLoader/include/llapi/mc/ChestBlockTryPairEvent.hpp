@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ChestBlockTryPairEvent@@QEAA@XZ
-     * @hash   452898139
+     * @hash   542324955
      */
     MCAPI ~ChestBlockTryPairEvent();
 

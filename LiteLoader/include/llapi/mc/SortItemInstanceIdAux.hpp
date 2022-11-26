@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??RSortItemInstanceIdAux@@QEBA_NAEBVItemInstance@@0@Z
-     * @hash   -291761733
+     * @hash   459709515
      */
     MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
 

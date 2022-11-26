@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0FileInfo@@QEAA@VPath@Core@@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -222318465
+     * @hash   -159461377
      */
     MCAPI FileInfo(class Core::Path, int, std::string);
     /**
      * @symbol ??1FileInfo@@QEAA@XZ
-     * @hash   2002834580
+     * @hash   -2117399852
      */
     MCAPI ~FileInfo();
 

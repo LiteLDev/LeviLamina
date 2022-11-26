@@ -38,38 +38,38 @@ public:
     virtual ~WorldTemplatePackSource();
     /**
      * @vftbl  1
-     * @hash   915168689
+     * @hash   894641729
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   915969202
+     * @hash   895442242
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   350482419
+     * @hash   412693715
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   351405940
+     * @hash   413617236
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -1350326781
+     * @hash   -1288130861
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     /**
      * @symbol ??0WorldTemplatePackSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
-     * @hash   -1424622108
+     * @hash   -1362318556
      */
     MCAPI WorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum class PackType, enum class PackOrigin);
     /**
      * @symbol ?getWorldTemplateId@WorldTemplatePackSource@@QEBAAEBVUUID@mce@@XZ
-     * @hash   -362230856
+     * @hash   -324390520
      */
     MCAPI class mce::UUID const & getWorldTemplateId() const;
 

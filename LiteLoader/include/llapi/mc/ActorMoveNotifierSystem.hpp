@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createActorMoveNotifierSystem@ActorMoveNotifierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -2000021658
+     * @hash   -1857624522
      */
     MCAPI static struct TickingSystemWithInfo createActorMoveNotifierSystem();
 

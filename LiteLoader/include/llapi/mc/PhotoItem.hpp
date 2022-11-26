@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?TAG_PHOTO_NAME@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -594828133
+     * @hash   1183206379
      */
     MCAPI static std::string const TAG_PHOTO_NAME;
     /**
      * @symbol ?TAG_PHOTO_OWNER@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   237660313
+     * @hash   2015694825
      */
     MCAPI static std::string const TAG_PHOTO_OWNER;
     /**
      * @symbol ?TAG_PHOTO_UUID@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   327090811
+     * @hash   2105125323
      */
     MCAPI static std::string const TAG_PHOTO_UUID;
 

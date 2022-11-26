@@ -22,7 +22,7 @@ namespace OfferFlowerTickUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?offerFlower@OfferFlowerTickUtility@@YAX_NAEAVActor@@H@Z
-     * @hash   714393981
+     * @hash   736781437
      */
     MCAPI void offerFlower(bool, class Actor &, int);
 

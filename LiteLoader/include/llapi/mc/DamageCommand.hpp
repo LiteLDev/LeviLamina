@@ -37,19 +37,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DamageCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1094450761
+     * @hash   -1094189369
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@DamageCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   914135888
+     * @hash   914504912
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_applyDamage@DamageCommand@@AEBAXAEAV?$CommandSelectorResults@VActor@@@@AEBVActorDamageSource@@AEAVCommandOutput@@@Z
-     * @hash   -1995430798
+     * @hash   -1995261662
      */
     MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
 

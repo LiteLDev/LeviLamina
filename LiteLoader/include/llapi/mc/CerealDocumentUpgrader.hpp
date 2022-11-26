@@ -32,29 +32,34 @@ public:
 public:
     /**
      * @symbol ??0CerealDocumentUpgrader@@QEAA@AEBUSchema@reflection@@@Z
-     * @hash   1066249630
+     * @hash   1585635534
      */
     MCAPI CerealDocumentUpgrader(struct reflection::Schema const &);
     /**
+     * @symbol ?buildPatchSchemas@CerealDocumentUpgrader@@QEAAXAEBV?$function@$$A6A?BUSchema@reflection@@AEBVSemVersion@@@Z@std@@@Z
+     * @hash   1291760227
+     */
+    MCAPI void buildPatchSchemas(class std::function<struct reflection::Schema const (class SemVersion const &)> const &);
+    /**
      * @symbol ?clear@CerealDocumentUpgrader@@QEAAXXZ
-     * @hash   -70942013
+     * @hash   448459267
      */
     MCAPI void clear();
     /**
-     * @symbol ?registerUpgrade@CerealDocumentUpgrader@@QEAAXV?$shared_ptr@VCerealSchemaUpgrade@@@std@@AEBUSchema@reflection@@@Z
-     * @hash   -1859003838
+     * @symbol ?registerUpgrade@CerealDocumentUpgrader@@QEAAXV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
+     * @hash   1912049985
      */
-    MCAPI void registerUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>, struct reflection::Schema const &);
+    MCAPI void registerUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>);
     /**
      * @symbol ?upgradeJson@CerealDocumentUpgrader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@V?$optional@VSemVersion@@@3@V?$function@$$A6A_NAEBVSemVersion@@@Z@3@@Z
-     * @hash   -91018421
+     * @hash   428290603
      */
     MCAPI bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>, class std::function<bool (class SemVersion const &)>);
 
 //private:
     /**
      * @symbol ?_getVersion@CerealDocumentUpgrader@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-     * @hash   -1844379930
+     * @hash   -1325393802
      */
     MCAPI std::string _getVersion(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &);
 

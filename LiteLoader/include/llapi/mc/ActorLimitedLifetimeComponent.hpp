@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0ActorLimitedLifetimeComponent@@QEAA@XZ
-     * @hash   1105171515
+     * @hash   1198442331
      */
     MCAPI ActorLimitedLifetimeComponent();
     /**
      * @symbol ?addAdditionalSaveData@ActorLimitedLifetimeComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -261889991
+     * @hash   253790297
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@ActorLimitedLifetimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1557166709
+     * @hash   -1041486421
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@ActorLimitedLifetimeComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
-     * @hash   1141444500
+     * @hash   1657124788
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@ActorLimitedLifetimeComponent@@SA_NAEBVCompoundTag@@@Z
-     * @hash   -2019221055
+     * @hash   -1503540767
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 

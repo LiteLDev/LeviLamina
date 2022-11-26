@@ -29,12 +29,12 @@ struct ColumnRange {
 #undef AFTER_EXTRA
     /**
      * @symbol ?scanColumn@ColumnUtils@@YA?AV?$optional@UColumnRange@ColumnUtils@@@std@@AEBVBlockPos@@HV?$function@$$A6A_NAEBVBlockPos@@@Z@3@1@Z
-     * @hash   1302534261
+     * @hash   2057711125
      */
     MCAPI class std::optional<struct ColumnUtils::ColumnRange> scanColumn(class BlockPos const &, int, class std::function<bool (class BlockPos const &)>, class std::function<bool (class BlockPos const &)>);
     /**
      * @symbol ?scanColumnWithinPosBiome@ColumnUtils@@YA?AV?$optional@UColumnRange@ColumnUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@HV?$function@$$A6A_NAEBVBlockPos@@@Z@3@2@Z
-     * @hash   -1655972411
+     * @hash   -900795547
      */
     MCAPI class std::optional<struct ColumnUtils::ColumnRange> scanColumnWithinPosBiome(class IBlockWorldGenAPI &, class BlockPos const &, int, class std::function<bool (class BlockPos const &)>, class std::function<bool (class BlockPos const &)>);
 

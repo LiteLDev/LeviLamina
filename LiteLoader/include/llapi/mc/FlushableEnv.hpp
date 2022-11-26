@@ -38,7 +38,7 @@ public:
     virtual ~FlushableEnv();
     /**
      * @symbol ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z
-     * @hash   -222920687
+     * @hash   250460225
      */
     MCAPI FlushableEnv(class leveldb::Env *);
 

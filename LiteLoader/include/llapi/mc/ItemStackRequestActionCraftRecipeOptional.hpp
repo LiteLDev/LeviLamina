@@ -36,40 +36,40 @@ public:
     virtual ~ItemStackRequestActionCraftRecipeOptional();
     /**
      * @vftbl  1
-     * @hash   -1369392799
+     * @hash   -1276121983
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ
-     * @hash   -742037119
+     * @hash   -698907439
      */
     virtual int getFilteredStringIndex() const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftRecipeOptional@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   338677353
+     * @hash   900793161
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   1954348065
+     * @hash   -1778503423
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
-     * @hash   1707233610
+     * @hash   -2025617878
      */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     /**
      * @symbol ?getRecipeNetId@ItemStackRequestActionCraftRecipeOptional@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-     * @hash   1640821957
+     * @hash   1785156469
      */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 

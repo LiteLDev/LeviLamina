@@ -40,403 +40,409 @@ public:
     /**
      * @vftbl  1
      * @symbol ?succeedWhenEntityPresent@MinecraftGameTestHelper@@UEAAXAEBUActorDefinitionIdentifier@@HHH_N@Z
-     * @hash   824827668
+     * @hash   766814020
      */
     virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const &, int, int, int, bool);
     /**
      * @vftbl  2
      * @symbol ?succeedWhenEntityPresent@MinecraftGameTestHelper@@UEAAXAEBUActorDefinitionIdentifier@@AEBVBlockPos@@_N@Z
-     * @hash   242904073
+     * @hash   184890425
      */
     virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const &, class BlockPos const &, bool);
     /**
      * @vftbl  3
      * @symbol ?succeedWhenEntityData@MinecraftGameTestHelper@@UEAAXAEBVBlockPos@@AEBUActorDefinitionIdentifier@@V?$function@$$A6A_NAEAVActor@@@Z@std@@@Z
-     * @hash   -1585951852
+     * @hash   -1643965500
      */
     virtual void succeedWhenEntityData(class BlockPos const &, struct ActorDefinitionIdentifier const &, class std::function<bool (class Actor &)>);
     /**
      * @vftbl  4
      * @symbol ?succeedWhenEntityHasComponent@MinecraftGameTestHelper@@UEAAXAEBUActorDefinitionIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@_N@Z
-     * @hash   863026717
+     * @hash   805013069
      */
     virtual void succeedWhenEntityHasComponent(struct ActorDefinitionIdentifier const &, std::string const &, class BlockPos const &, bool);
     /**
      * @vftbl  5
      * @symbol ?succeedWhenBlockPresent@MinecraftGameTestHelper@@UEAAXAEBVBlock@@HHH_N@Z
-     * @hash   1506204215
+     * @hash   1448190567
      */
     virtual void succeedWhenBlockPresent(class Block const &, int, int, int, bool);
     /**
      * @vftbl  6
      * @symbol ?succeedWhenBlockPresent@MinecraftGameTestHelper@@UEAAXAEBVBlock@@AEBVBlockPos@@_N@Z
-     * @hash   1860132668
+     * @hash   1802119020
      */
     virtual void succeedWhenBlockPresent(class Block const &, class BlockPos const &, bool);
     /**
      * @vftbl  7
      * @symbol ?succeedWhenBlockPresent@MinecraftGameTestHelper@@UEAAXAEBVBlockLegacy@@AEBVBlockPos@@_N@Z
-     * @hash   -1356866893
+     * @hash   -1414880541
      */
     virtual void succeedWhenBlockPresent(class BlockLegacy const &, class BlockPos const &, bool);
     /**
      * @vftbl  8
      * @symbol ?setNight@MinecraftGameTestHelper@@UEAAXXZ
-     * @hash   366199390
+     * @hash   308216494
      */
     virtual void setNight();
     /**
      * @vftbl  9
      * @symbol ?setDayTime@MinecraftGameTestHelper@@UEAAXH@Z
-     * @hash   -253978592
+     * @hash   -311946112
      */
     virtual void setDayTime(int);
     /**
      * @vftbl  10
      * @symbol ?setBlock@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@HHHAEBVBlock@@H@Z
-     * @hash   761069190
+     * @hash   703101670
      */
     virtual class std::optional<struct gametest::GameTestError> setBlock(int, int, int, class Block const &, int);
     /**
      * @vftbl  11
      * @symbol ?setBlock@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@AEBVBlock@@H@Z
-     * @hash   1543358513
+     * @hash   1485390993
      */
     virtual class std::optional<struct gametest::GameTestError> setBlock(class BlockPos const &, class Block const &, int);
     /**
      * @vftbl  12
      * @symbol ?destroyBlock@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@_N@Z
-     * @hash   306727142
+     * @hash   248728870
      */
     virtual class std::optional<struct gametest::GameTestError> destroyBlock(class BlockPos const &, bool);
     /**
      * @vftbl  13
      * @symbol ?pressButton@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@HHH@Z
-     * @hash   -83194183
+     * @hash   -141146327
      */
     virtual class std::optional<struct gametest::GameTestError> pressButton(int, int, int);
     /**
      * @vftbl  14
      * @symbol ?pressButton@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@@Z
-     * @hash   -1363420156
+     * @hash   -1421372300
      */
     virtual class std::optional<struct gametest::GameTestError> pressButton(class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?pullLever@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@HHH@Z
-     * @hash   -331070391
+     * @hash   -389037911
      */
     virtual class std::optional<struct gametest::GameTestError> pullLever(int, int, int);
     /**
      * @vftbl  16
      * @symbol ?pullLever@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@@Z
-     * @hash   510576036
+     * @hash   452608516
      */
     virtual class std::optional<struct gametest::GameTestError> pullLever(class BlockPos const &);
     /**
      * @vftbl  17
      * @symbol ?killAllEntities@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@XZ
-     * @hash   -1374077627
+     * @hash   -1432075899
      */
     virtual class std::optional<struct gametest::GameTestError> killAllEntities();
     /**
      * @vftbl  18
      * @symbol ?spawn@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBUActorDefinitionIdentifier@@HHH@Z
-     * @hash   -611352602
+     * @hash   -669366250
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawn(struct ActorDefinitionIdentifier const &, int, int, int);
     /**
      * @vftbl  19
      * @symbol ?spawn@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@@Z
-     * @hash   981777569
+     * @hash   923779297
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawn(struct ActorDefinitionIdentifier const &, class BlockPos const &);
     /**
      * @vftbl  20
      * @symbol ?spawn@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBUActorDefinitionIdentifier@@AEBVVec3@@@Z
-     * @hash   998984825
+     * @hash   940986553
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawn(struct ActorDefinitionIdentifier const &, class Vec3 const &);
     /**
      * @vftbl  21
      * @symbol ?spawnItem@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBVItemStack@@AEBVVec3@@@Z
-     * @hash   -1944585581
+     * @hash   -2002599229
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawnItem(class ItemStack const &, class Vec3 const &);
     /**
      * @vftbl  22
      * @symbol ?spawnWithoutBehaviors@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@@Z
-     * @hash   340148362
+     * @hash   282165466
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawnWithoutBehaviors(struct ActorDefinitionIdentifier const &, class BlockPos const &);
     /**
      * @vftbl  23
      * @symbol ?spawnWithoutBehaviors@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVActor@@@std@@AEBUActorDefinitionIdentifier@@AEBVVec3@@@Z
-     * @hash   487284834
+     * @hash   429301938
      */
     virtual class std::variant<struct gametest::GameTestError, class Actor *> spawnWithoutBehaviors(struct ActorDefinitionIdentifier const &, class Vec3 const &);
     /**
      * @vftbl  24
      * @symbol ?walkTo@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAVMob@@AEBVBlockPos@@M@Z
-     * @hash   -63270737
+     * @hash   -121345889
      */
     virtual class std::optional<struct gametest::GameTestError> walkTo(class Mob &, class BlockPos const &, float);
     /**
      * @vftbl  25
      * @symbol ?walkTo@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAVMob@@AEBVVec3@@M@Z
-     * @hash   31176375
+     * @hash   -26898777
      */
     virtual class std::optional<struct gametest::GameTestError> walkTo(class Mob &, class Vec3 const &, float);
     /**
      * @vftbl  26
      * @symbol ?setTntFuse@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAVActor@@H@Z
-     * @hash   627776818
+     * @hash   569793922
      */
     virtual class std::optional<struct gametest::GameTestError> setTntFuse(class Actor &, int);
     /**
      * @vftbl  27
      * @symbol ?assertEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@_N@Z
-     * @hash   -578547756
+     * @hash   -636561404
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityPresent(struct ActorDefinitionIdentifier const &, bool);
     /**
      * @vftbl  28
      * @symbol ?assertEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@HHH_N@Z
-     * @hash   -1085750827
+     * @hash   -1143764475
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityPresent(struct ActorDefinitionIdentifier const &, int, int, int, bool);
     /**
      * @vftbl  29
      * @symbol ?assertEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@_N@Z
-     * @hash   -2081812822
+     * @hash   -2139826470
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityPresent(struct ActorDefinitionIdentifier const &, class BlockPos const &, bool);
     /**
      * @vftbl  30
      * @symbol ?assertEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@M_N@Z
-     * @hash   684817740
+     * @hash   626804092
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityPresent(struct ActorDefinitionIdentifier const &, class BlockPos const &, float, bool);
     /**
      * @vftbl  31
      * @symbol ?assertEntityInstancePresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@PEBVActor@@AEBVBlockPos@@_N@Z
-     * @hash   381783284
+     * @hash   323785012
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityInstancePresent(class Actor const *, class BlockPos const &, bool);
     /**
      * @vftbl  32
      * @symbol ?assertEntityTouching@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBVVec3@@_N@Z
-     * @hash   -973306728
+     * @hash   -1031274248
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityTouching(struct ActorDefinitionIdentifier const &, class Vec3 const &, bool);
     /**
      * @vftbl  33
      * @symbol ?assertEntityState@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@AEBUActorDefinitionIdentifier@@V?$function@$$A6A_NAEAVActor@@@Z@3@@Z
-     * @hash   802145044
+     * @hash   744192900
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityState(class BlockPos const &, struct ActorDefinitionIdentifier const &, class std::function<bool (class Actor &)>);
     /**
      * @vftbl  34
      * @symbol ?assertBlockPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockLegacy@@HHH_N@Z
-     * @hash   -857496133
+     * @hash   -915386773
      */
     virtual class std::optional<struct gametest::GameTestError> assertBlockPresent(class BlockLegacy const &, int, int, int, bool);
     /**
      * @vftbl  35
      * @symbol ?assertBlockPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockLegacy@@AEBVBlockPos@@_N@Z
-     * @hash   1900474496
+     * @hash   1842599232
      */
     virtual class std::optional<struct gametest::GameTestError> assertBlockPresent(class BlockLegacy const &, class BlockPos const &, bool);
     /**
      * @vftbl  36
      * @symbol ?assertBlockState@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@V?$function@$$A6A_NAEBVBlock@@@Z@3@@Z
-     * @hash   -95567276
+     * @hash   -153457916
      */
     virtual class std::optional<struct gametest::GameTestError> assertBlockState(class BlockPos const &, class std::function<bool (class Block const &)>);
     /**
      * @vftbl  37
      * @symbol ?assertItemEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVItem@@HHHM_N@Z
-     * @hash   -1234373045
+     * @hash   -1292355941
      */
     virtual class std::optional<struct gametest::GameTestError> assertItemEntityPresent(class Item const &, int, int, int, float, bool);
     /**
      * @vftbl  38
      * @symbol ?assertItemEntityPresent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVItem@@AEBVBlockPos@@M_N@Z
-     * @hash   -1258254154
+     * @hash   -1316221674
      */
     virtual class std::optional<struct gametest::GameTestError> assertItemEntityPresent(class Item const &, class BlockPos const &, float, bool);
     /**
      * @vftbl  39
      * @symbol ?assertItemEntityCountIs@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVItem@@AEBVBlockPos@@MH@Z
-     * @hash   687398679
+     * @hash   629431159
      */
     virtual class std::optional<struct gametest::GameTestError> assertItemEntityCountIs(class Item const &, class BlockPos const &, float, int);
     /**
      * @vftbl  40
      * @symbol ?assertContainerEmpty@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@@Z
-     * @hash   686134311
+     * @hash   628228295
      */
     virtual class std::optional<struct gametest::GameTestError> assertContainerEmpty(class BlockPos const &);
     /**
      * @vftbl  41
      * @symbol ?assertContainerContains@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVItemStack@@AEBVBlockPos@@@Z
-     * @hash   968403185
+     * @hash   910497169
      */
     virtual class std::optional<struct gametest::GameTestError> assertContainerContains(class ItemStack const &, class BlockPos const &);
     /**
      * @vftbl  42
      * @symbol ?assertEntityHasComponent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@_N@Z
-     * @hash   -1168216888
+     * @hash   -1226215160
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityHasComponent(struct ActorDefinitionIdentifier const &, std::string const &, class BlockPos const &, bool);
     /**
      * @vftbl  43
      * @symbol ?assertEntityHasArmor@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@W4ArmorSlot@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@HAEBVBlockPos@@_N@Z
-     * @hash   -721159538
+     * @hash   -779065554
      */
     virtual class std::optional<struct gametest::GameTestError> assertEntityHasArmor(struct ActorDefinitionIdentifier const &, enum class ArmorSlot, std::string const &, int, class BlockPos const &, bool);
     /**
      * @vftbl  44
      * @symbol ?print@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1154687530
+     * @hash   -1212639674
      */
     virtual class std::optional<struct gametest::GameTestError> print(std::string const &);
     /**
      * @vftbl  45
      * @symbol ?assertRedstonePower@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@H@Z
-     * @hash   1172247553
+     * @hash   1114264657
      */
     virtual class std::optional<struct gametest::GameTestError> assertRedstonePower(class BlockPos const &, int);
     /**
      * @vftbl  46
      * @symbol ?assertIsWaterlogged@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@_N@Z
-     * @hash   286296812
+     * @hash   228329292
      */
     virtual class std::optional<struct gametest::GameTestError> assertIsWaterlogged(class BlockPos const &, bool);
     /**
      * @vftbl  47
      * @symbol ?pulseRedstone@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@H@Z
-     * @hash   911222419
+     * @hash   853254899
      */
     virtual class std::optional<struct gametest::GameTestError> pulseRedstone(class BlockPos const &, int);
     /**
      * @vftbl  48
      * @symbol ?getFenceConnectivity@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@VScriptGameTestConnectivity@ScriptModuleGameTest@@@std@@AEBVBlockPos@@@Z
-     * @hash   306905057
+     * @hash   248906785
      */
     virtual class std::variant<struct gametest::GameTestError, class ScriptModuleGameTest::ScriptGameTestConnectivity> getFenceConnectivity(class BlockPos const &);
     /**
      * @vftbl  49
      * @symbol ?worldPosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VBlockPos@@@std@@AEBVBlockPos@@@Z
-     * @hash   1683392537
+     * @hash   1625271257
      */
     virtual class std::variant<struct gametest::GameTestError, class BlockPos> worldPosition(class BlockPos const &) const;
     /**
      * @vftbl  50
-     * @symbol ?worldPosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VVec3@@@std@@AEBVVec3@@@Z
-     * @hash   -478959079
+     * @symbol ?worldPosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VVec3@@@std@@AEBUScriptVec3Interface@ScriptModuleMinecraft@@@Z
+     * @hash   -633329692
      */
-    virtual class std::variant<struct gametest::GameTestError, class Vec3> worldPosition(class Vec3 const &) const;
+    virtual class std::variant<struct gametest::GameTestError, class Vec3> worldPosition(struct ScriptModuleMinecraft::ScriptVec3Interface const &) const;
     /**
      * @vftbl  51
      * @symbol ?relativePosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VBlockPos@@@std@@AEBVBlockPos@@@Z
-     * @hash   -998643633
+     * @hash   -1056611153
      */
     virtual class std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const &) const;
     /**
      * @vftbl  52
-     * @symbol ?relativePosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VVec3@@@std@@AEBVVec3@@@Z
-     * @hash   186387023
+     * @symbol ?relativePosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VVec3@@@std@@AEBUScriptVec3Interface@ScriptModuleMinecraft@@@Z
+     * @hash   1473418938
      */
-    virtual class std::variant<struct gametest::GameTestError, class Vec3> relativePosition(class Vec3 const &) const;
+    virtual class std::variant<struct gametest::GameTestError, class Vec3> relativePosition(struct ScriptModuleMinecraft::ScriptVec3Interface const &) const;
     /**
      * @vftbl  53
      * @symbol ?setFluidContainer@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@H@Z
-     * @hash   301190927
+     * @hash   243223407
      */
     virtual class std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const &, int);
     /**
      * @vftbl  54
      * @symbol ?triggerInternalBlockEvent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBV?$vector@MV?$allocator@M@std@@@3@@Z
-     * @hash   950000674
+     * @hash   891987026
      */
     virtual class std::optional<struct gametest::GameTestError> triggerInternalBlockEvent(class BlockPos const &, std::string const &, std::vector<float> const &);
     /**
      * @vftbl  55
      * @symbol ?assertCanReachLocation@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAVMob@@AEBVBlockPos@@_N@Z
-     * @hash   1027781695
+     * @hash   969891055
      */
     virtual class std::optional<struct gametest::GameTestError> assertCanReachLocation(class Mob &, class BlockPos const &, bool);
     /**
      * @vftbl  56
      * @symbol ?spreadFromFaceTowardDirection@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@1@Z
-     * @hash   1898321299
+     * @hash   1840323027
      */
     virtual class std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @vftbl  57
      * @symbol ?spawnSimulatedPlayer@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVSimulatedPlayer@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@W4GameType@@@Z
-     * @hash   838517561
+     * @hash   780488537
      */
     virtual class std::variant<struct gametest::GameTestError, class SimulatedPlayer *> spawnSimulatedPlayer(std::string const &, class BlockPos const &, enum class GameType);
     /**
      * @vftbl  58
      * @symbol ?removeSimulatedPlayer@MinecraftGameTestHelper@@UEAAXAEAVSimulatedPlayer@@@Z
-     * @hash   -279494570
+     * @hash   -337462090
      */
     virtual void removeSimulatedPlayer(class SimulatedPlayer &);
     /**
      * @vftbl  59
      * @symbol ?getDimension@MinecraftGameTestHelper@@UEAA?AV?$variant@UGameTestError@gametest@@PEAVDimension@@@std@@XZ
-     * @hash   923365336
+     * @hash   865367064
      */
     virtual class std::variant<struct gametest::GameTestError, class Dimension *> getDimension();
     /**
      * @vftbl  60
      * @symbol ?getBlockSource@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAPEAVBlockSource@@@Z
-     * @hash   -19866845
+     * @hash   -77865117
      */
     virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource *&);
     /**
+     * @vftbl  61
+     * @symbol ?onPlayerJump@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEAVMob@@H@Z
+     * @hash   662447202
+     */
+    virtual class std::optional<struct gametest::GameTestError> onPlayerJump(class Mob &, int);
+    /**
      * @symbol ??0MinecraftGameTestHelper@@QEAA@AEAVMinecraftGameTestInstance@@@Z
-     * @hash   492541106
+     * @hash   434435202
      */
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
 //private:
     /**
      * @symbol ?_assertEntityPresent@MinecraftGameTestHelper@@AEBA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBVAABB@@AEBVBlockPos@@_N@Z
-     * @hash   963390472
+     * @hash   905284568
      */
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &, class BlockPos const &, bool) const;
     /**
      * @symbol ?_getBlock@MinecraftGameTestHelper@@AEAAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   72645789
+     * @hash   14709021
      */
     MCAPI class Block const & _getBlock(class BlockPos const &);
     /**
      * @symbol ?_getContainer@MinecraftGameTestHelper@@AEAAPEBVContainer@@AEBVBlockPos@@@Z
-     * @hash   1481031665
+     * @hash   1423094897
      */
     MCAPI class Container const * _getContainer(class BlockPos const &);
     /**
      * @symbol ?_getItemEntityCount@MinecraftGameTestHelper@@AEAAHAEBVItem@@AEBVAABB@@@Z
-     * @hash   -984363321
+     * @hash   -1042300089
      */
     MCAPI int _getItemEntityCount(class Item const &, class AABB const &);
     /**
      * @symbol ?_getServerNetworkHandler@MinecraftGameTestHelper@@AEBA?AV?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@XZ
-     * @hash   682300074
+     * @hash   624363306
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>> _getServerNetworkHandler() const;
     /**
      * @symbol ?_getStructureBlockMissingError@MinecraftGameTestHelper@@AEBA?AV?$optional@UGameTestError@gametest@@@std@@XZ
-     * @hash   -1214813752
+     * @hash   -1272735144
      */
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     /**
      * @symbol ?_isEntityPresent@MinecraftGameTestHelper@@AEBA_NAEBUActorDefinitionIdentifier@@AEBVAABB@@@Z
-     * @hash   -1105969373
+     * @hash   -1163844637
      */
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &) const;
 

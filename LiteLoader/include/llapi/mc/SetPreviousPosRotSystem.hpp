@@ -29,9 +29,9 @@ public:
 
 public:
     /**
-     * @symbol ?_setPreviousPosRot@SetPreviousPosRotSystem@@SAXAEAVStrictEntityContext@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UPosRotSetThisTickFlag@@@@@@@Z
-     * @hash   -978356347
+     * @symbol ?_setPreviousPosRot@SetPreviousPosRotSystem@@SAXAEAVStrictEntityContext@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UPrevPosRotSetThisTickFlag@@@@@@@Z
+     * @hash   -948535765
      */
-    MCAPI static void _setPreviousPosRot(class StrictEntityContext &, struct StateVectorComponent &, struct ActorRotationComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PosRotSetThisTickFlag>>);
+    MCAPI static void _setPreviousPosRot(class StrictEntityContext &, struct StateVectorComponent &, struct ActorRotationComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PrevPosRotSetThisTickFlag>>);
 
 };

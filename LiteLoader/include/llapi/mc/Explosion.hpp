@@ -32,49 +32,49 @@ public:
 public:
     /**
      * @symbol ??0Explosion@@QEAA@AEAVBlockSource@@PEAVActor@@AEBVVec3@@M@Z
-     * @hash   -2076679644
+     * @hash   -1507521628
      */
     MCAPI Explosion(class BlockSource &, class Actor *, class Vec3 const &, float);
     /**
      * @symbol ?explode@Explosion@@QEAAXXZ
-     * @hash   -840930425
+     * @hash   -271772409
      */
     MCAPI void explode();
     /**
      * @symbol ?overrideInWater@Explosion@@QEAAX_N@Z
-     * @hash   163962728
+     * @hash   733120744
      */
     MCAPI void overrideInWater(bool);
     /**
      * @symbol ?setAllowUnderwater@Explosion@@QEAAX_N@Z
-     * @hash   850771366
+     * @hash   1419929382
      */
     MCAPI void setAllowUnderwater(bool);
     /**
      * @symbol ?setBreaking@Explosion@@QEAAX_N@Z
-     * @hash   829778488
+     * @hash   1398936504
      */
     MCAPI void setBreaking(bool);
     /**
      * @symbol ?setFire@Explosion@@QEAAX_N@Z
-     * @hash   848469896
+     * @hash   883296536
      */
     MCAPI void setFire(bool);
     /**
      * @symbol ?setMaxResistance@Explosion@@QEAAXM@Z
-     * @hash   906789248
+     * @hash   1475947264
      */
     MCAPI void setMaxResistance(float);
     /**
      * @symbol ??1Explosion@@QEAA@XZ
-     * @hash   1840726353
+     * @hash   -1730246607
      */
     MCAPI ~Explosion();
 
 //private:
     /**
      * @symbol ?_getActorsInRange@Explosion@@AEBA?AV?$vector@V?$not_null@PEAVActor@@@gsl@@V?$allocator@V?$not_null@PEAVActor@@@gsl@@@std@@@std@@PEAVActor@@M@Z
-     * @hash   1317050271
+     * @hash   1886208287
      */
     MCAPI std::vector<class gsl::not_null<class Actor *>> _getActorsInRange(class Actor *, float) const;
 

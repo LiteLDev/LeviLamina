@@ -25,7 +25,7 @@ namespace RayTracingOptionsUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?rayTracingCapabilityRegister@RayTracingOptionsUtil@@3UCapabilityRegisterer@PackManifest@@A
-     * @hash   -998764465
+     * @hash   -130035841
      */
     MCAPI extern struct PackManifest::CapabilityRegisterer rayTracingCapabilityRegister;
 

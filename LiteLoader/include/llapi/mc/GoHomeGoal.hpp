@@ -38,69 +38,69 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@GoHomeGoal@@UEAA_NXZ
-     * @hash   -1918661514
+     * @hash   -1757736298
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@GoHomeGoal@@UEAA_NXZ
-     * @hash   -1445822396
+     * @hash   -1284897180
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@GoHomeGoal@@UEAAXXZ
-     * @hash   1010062191
+     * @hash   1170956655
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@GoHomeGoal@@UEAAXXZ
-     * @hash   1324181359
+     * @hash   1485075823
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@GoHomeGoal@@UEAAXXZ
-     * @hash   805374346
+     * @hash   966268810
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1344376342
+     * @hash   -1183528006
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
-     * @hash   629269091
+     * @hash   790117427
      */
     MCAPI GoHomeGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_getHomeDimension@GoHomeGoal@@AEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   -627629937
+     * @hash   -466781601
      */
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
     /**
      * @symbol ?_getHomePos@GoHomeGoal@@AEBA?AVBlockPos@@XZ
-     * @hash   777462017
+     * @hash   938310353
      */
     MCAPI class BlockPos _getHomePos() const;
     /**
      * @symbol ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
-     * @hash   1783870571
+     * @hash   1944718907
      */
     MCAPI bool _hasRequiredComponents() const;
     /**
      * @symbol ?_triggerOnFailedEvents@GoHomeGoal@@AEAAXXZ
-     * @hash   -32053680
+     * @hash   128794656
      */
     MCAPI void _triggerOnFailedEvents();
 

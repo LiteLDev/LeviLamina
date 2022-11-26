@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@ScaleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UScaleDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   846730808
+     * @hash   929053912
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ScaleDefinition>> &);
 

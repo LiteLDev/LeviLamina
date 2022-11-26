@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createResetSlideOffSetSystem@ResetSlideOffSetSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1126891268
+     * @hash   1146572548
      */
     MCAPI static struct TickingSystemWithInfo createResetSlideOffSetSystem();
 

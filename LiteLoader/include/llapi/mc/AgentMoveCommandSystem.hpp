@@ -35,28 +35,28 @@ public:
     virtual ~AgentMoveCommandSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AgentMoveCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1958653972
+     * @hash   2116519364
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?cleanUp@AgentMoveCommandSystem@@SAXAEAVEntityContext@@M@Z
-     * @hash   550521665
+     * @hash   708325553
      */
     MCAPI static void cleanUp(class EntityContext &, float);
     /**
      * @symbol ?initialize@AgentMoveCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@VMove@4@@@@Z
-     * @hash   1806557661
+     * @hash   1964361549
      */
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move> &);
     /**
      * @symbol ?tickMove@AgentMoveCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@VMove@4@@@@Z
-     * @hash   455296375
+     * @hash   613161767
      */
     MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move> &);
 

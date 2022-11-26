@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?deserialize@LootItemCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-     * @hash   359366605
+     * @hash   832809021
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

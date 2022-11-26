@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_checkFallDamage@CheckFallDamageSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@AEAUCheckFallDamageRequestComponent@@@Z
-     * @hash   -37744528
+     * @hash   70318000
      */
     MCAPI static void _checkFallDamage(class StrictEntityContext &, class ActorOwnerComponent &, struct CheckFallDamageRequestComponent &);
     /**
      * @symbol ?createSystem@CheckFallDamageSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -856934340
+     * @hash   -748979444
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

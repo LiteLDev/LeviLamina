@@ -31,52 +31,52 @@ public:
 public:
     /**
      * @symbol ??0MoveActorAbsoluteData@@QEAA@XZ
-     * @hash   -344557999
+     * @hash   -414980079
      */
     MCAPI MoveActorAbsoluteData();
     /**
      * @symbol ??0MoveActorAbsoluteData@@QEAA@AEBVActor@@@Z
-     * @hash   -2083248358
+     * @hash   2141296858
      */
     MCAPI MoveActorAbsoluteData(class Actor const &);
     /**
      * @symbol ?calculateDelta@MoveActorAbsoluteData@@QEBA?AVMoveActorDeltaData@@AEBV1@@Z
-     * @hash   -1968303801
+     * @hash   -2038725881
      */
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const &) const;
     /**
      * @symbol ?getRot@MoveActorAbsoluteData@@QEBA?AVVec2@@XZ
-     * @hash   -1204171836
+     * @hash   -1274593916
      */
     MCAPI class Vec2 getRot() const;
     /**
      * @symbol ?getYBodyRot@MoveActorAbsoluteData@@QEBAMXZ
-     * @hash   -885288550
+     * @hash   -955710630
      */
     MCAPI float getYBodyRot() const;
     /**
      * @symbol ?getYHeadRot@MoveActorAbsoluteData@@QEBAMXZ
-     * @hash   -1609028946
+     * @hash   -1679451026
      */
     MCAPI float getYHeadRot() const;
     /**
      * @symbol ?isDifferenceSignificant@MoveActorAbsoluteData@@QEBA_NAEBV1@AEBVVec3@@@Z
-     * @hash   -2121324908
+     * @hash   2103220308
      */
     MCAPI bool isDifferenceSignificant(class MoveActorAbsoluteData const &, class Vec3 const &) const;
     /**
      * @symbol ?setRot@MoveActorAbsoluteData@@QEAAXAEBVVec2@@@Z
-     * @hash   -1978675258
+     * @hash   -2049097338
      */
     MCAPI void setRot(class Vec2 const &);
     /**
      * @symbol ?setYBodyRot@MoveActorAbsoluteData@@QEAAXM@Z
-     * @hash   1175169656
+     * @hash   1104747576
      */
     MCAPI void setYBodyRot(float);
     /**
      * @symbol ?setYHeadRot@MoveActorAbsoluteData@@QEAAXM@Z
-     * @hash   213607956
+     * @hash   143185876
      */
     MCAPI void setYHeadRot(float);
 

@@ -39,87 +39,87 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
     /**
      * @symbol ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   1802661439
+     * @hash   -1735191617
      */
     MCVAPI void addHardcodedSpawnAreas(class LevelChunk &);
     /**
      * @symbol ?debugRender@WorldGenerator@@UEAAXXZ
-     * @hash   -797453057
+     * @hash   -40338817
      */
     MCVAPI void debugRender();
     /**
      * @symbol ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-     * @hash   -831166254
+     * @hash   -74052014
      */
     MCVAPI bool findNearestStructureFeature(enum class StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
      * @symbol ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
-     * @hash   1983792094
+     * @hash   -1554060962
      */
     MCVAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
      * @symbol ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
-     * @hash   -882833916
+     * @hash   -125719676
      */
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     /**
      * @symbol ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-     * @hash   -584745924
+     * @hash   172368316
      */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
      * @symbol ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
-     * @hash   523113262
+     * @hash   1280227502
      */
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum class StructureFeatureType) const;
     /**
      * @symbol ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-     * @hash   -1611870008
+     * @hash   -854755768
      */
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
      * @symbol ??1WorldGenerator@@UEAA@XZ
-     * @hash   -2047187916
+     * @hash   -1290073676
      */
     MCVAPI ~WorldGenerator();
 #endif
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-     * @hash   -1622561937
+     * @hash   -865447697
      */
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
-     * @hash   166791456
+     * @hash   923905696
      */
     MCAPI WorldGenerator(class Dimension &);
     /**
      * @symbol ?computeChunkHeightMap@WorldGenerator@@QEAA?AV?$vector@FV?$allocator@F@std@@@std@@AEBVChunkPos@@@Z
-     * @hash   -436551671
+     * @hash   320562569
      */
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
     /**
      * @symbol ?getStructureFeatureRegistry@WorldGenerator@@QEBAAEAVStructureFeatureRegistry@@XZ
-     * @hash   -1012871896
+     * @hash   -916418248
      */
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;
 
 //protected:
     /**
      * @symbol ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
-     * @hash   1678034936
+     * @hash   -1859818120
      */
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     /**
      * @symbol ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   2145555170
+     * @hash   -1392297886
      */
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
 protected:
     /**
      * @symbol ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
-     * @hash   166984509
+     * @hash   947747037
      */
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 

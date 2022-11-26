@@ -32,59 +32,59 @@ public:
 public:
     /**
      * @symbol ?addGoal@GoalSelectorComponent@@QEAAXHV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@@Z
-     * @hash   -827218675
+     * @hash   -847761011
      */
     MCAPI void addGoal(int, std::unique_ptr<class Goal>);
     /**
      * @symbol ?buildDebugInfo@GoalSelectorComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   463898732
+     * @hash   443356396
      */
     MCAPI void buildDebugInfo(std::string &) const;
     /**
      * @symbol ?clearAllGoals@GoalSelectorComponent@@QEAAXXZ
-     * @hash   1298345421
+     * @hash   1277803085
      */
     MCAPI void clearAllGoals();
     /**
      * @symbol ?clearNonTargetedGoals@GoalSelectorComponent@@QEAAXXZ
-     * @hash   9041845
+     * @hash   -11500491
      */
     MCAPI void clearNonTargetedGoals();
     /**
      * @symbol ?clearTargetGoals@GoalSelectorComponent@@QEAAXXZ
-     * @hash   -2016810105
+     * @hash   -2037352441
      */
     MCAPI void clearTargetGoals();
     /**
      * @symbol ?getGoalMap@GoalSelectorComponent@@QEAAAEAV?$vector@U?$pair@GVPrioritizedGoal@@@std@@V?$allocator@U?$pair@GVPrioritizedGoal@@@std@@@2@@std@@XZ
-     * @hash   780549591
+     * @hash   873820407
      */
     MCAPI std::vector<struct std::pair<unsigned short, class PrioritizedGoal>> & getGoalMap();
     /**
      * @symbol ?onPlayerDimensionChanged@GoalSelectorComponent@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-     * @hash   -1579111223
+     * @hash   -1599653559
      */
     MCAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?stopAllGoals@GoalSelectorComponent@@QEAAXXZ
-     * @hash   -1237611899
+     * @hash   -1258154235
      */
     MCAPI void stopAllGoals();
     /**
      * @symbol ?stopNonTargetedGoals@GoalSelectorComponent@@QEAAXXZ
-     * @hash   -2043211683
+     * @hash   -2063754019
      */
     MCAPI void stopNonTargetedGoals();
 
 //private:
     /**
      * @symbol ?_eraseGoals@GoalSelectorComponent@@AEAAXP6A_NAEAU?$pair@GVPrioritizedGoal@@@std@@@Z@Z
-     * @hash   -1019677185
+     * @hash   -1040219521
      */
     MCAPI void _eraseGoals(bool ( *)(struct std::pair<unsigned short, class PrioritizedGoal> &));
     /**
      * @symbol ?_findGoalByKey@GoalSelectorComponent@@AEBA?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@U?$pair@GVPrioritizedGoal@@@std@@@std@@@std@@@std@@G@Z
-     * @hash   -1705010688
+     * @hash   -1725553024
      */
     MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal>>>> _findGoalByKey(unsigned short) const;
 

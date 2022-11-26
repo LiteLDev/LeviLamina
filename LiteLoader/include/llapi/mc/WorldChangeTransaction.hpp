@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0WorldChangeTransaction@@QEAA@AEAVIBlockWorldGenAPI@@@Z
-     * @hash   -171102767
+     * @hash   347944865
      */
     MCAPI WorldChangeTransaction(class IBlockWorldGenAPI &);
     /**
      * @symbol ?apply@WorldChangeTransaction@@QEBA_NXZ
-     * @hash   -1555524972
+     * @hash   -1036477340
      */
     MCAPI bool apply() const;
     /**
      * @symbol ?getBlock@WorldChangeTransaction@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -1398352491
+     * @hash   -879304859
      */
     MCAPI class Block const & getBlock(class BlockPos const &) const;
     /**
      * @symbol ?setBlock@WorldChangeTransaction@@QEAAXAEBVBlockPos@@AEBVBlock@@H@Z
-     * @hash   -465453538
+     * @hash   53594094
      */
     MCAPI void setBlock(class BlockPos const &, class Block const &, int);
     /**
      * @symbol ??1WorldChangeTransaction@@QEAA@XZ
-     * @hash   -140227882
+     * @hash   378819750
      */
     MCAPI ~WorldChangeTransaction();
 

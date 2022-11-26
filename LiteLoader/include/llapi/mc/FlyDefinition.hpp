@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@FlyDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-     * @hash   -591441682
+     * @hash   -509549106
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

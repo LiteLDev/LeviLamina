@@ -36,7 +36,7 @@ public:
 public:
     /**
      * @symbol ?getItemStackNetResultName@ItemStackNetResultMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackNetResult@@@Z
-     * @hash   1452899645
+     * @hash   1478654445
      */
     MCAPI static std::string const & getItemStackNetResultName(enum class ItemStackNetResult);
 
@@ -45,7 +45,7 @@ public:
 private:
     /**
      * @symbol ?mMap@ItemStackNetResultMap@@0V?$BidirectionalUnorderedMap@W4ItemStackNetResult@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
-     * @hash   1014096650
+     * @hash   1850166650
      */
     MCAPI static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const mMap;
 

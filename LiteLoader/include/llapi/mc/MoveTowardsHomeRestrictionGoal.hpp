@@ -38,43 +38,43 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveTowardsHomeRestrictionGoal@@UEAA_NXZ
-     * @hash   -1037742165
+     * @hash   -876432549
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   731202324
+     * @hash   893465252
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   700990406
+     * @hash   861608102
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveTowardsHomeRestrictionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   311728325
+     * @hash   473037941
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0MoveTowardsHomeRestrictionGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1929783016
+     * @hash   2091092632
      */
     MCAPI MoveTowardsHomeRestrictionGoal(class Mob &);
 

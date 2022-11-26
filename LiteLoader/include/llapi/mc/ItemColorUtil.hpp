@@ -24,22 +24,22 @@ namespace ItemColorUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?fromBlockColor@ItemColorUtil@@YA?AW4ItemColor@@W4BlockColor@@@Z
-     * @hash   -1794636040
+     * @hash   -1037321912
      */
     MCAPI enum class ItemColor fromBlockColor(enum class BlockColor);
     /**
      * @symbol ?fromInt@ItemColorUtil@@YA?AW4ItemColor@@H@Z
-     * @hash   -189158704
+     * @hash   356704672
      */
     MCAPI enum class ItemColor fromInt(int);
     /**
      * @symbol ?getName@ItemColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemColor@@@Z
-     * @hash   -1970795068
+     * @hash   -1424931692
      */
     MCAPI std::string const & getName(enum class ItemColor);
     /**
      * @symbol ?getRGBColor@ItemColorUtil@@YAHW4ItemColor@@@Z
-     * @hash   107149252
+     * @hash   652474468
      */
     MCAPI int getRGBColor(enum class ItemColor);
 

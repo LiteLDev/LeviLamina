@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
-     * @hash   -1175960352
+     * @hash   -1139088704
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
-     * @hash   857919008
+     * @hash   946884544
      */
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /**
@@ -69,7 +69,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ
-     * @hash   677145626
+     * @hash   714001898
      */
     virtual class Json::Value _serializeDomain() const;
     /**
@@ -80,29 +80,29 @@ public:
     virtual class Json::Value _serializeValue() const = 0;
     /**
      * @symbol ?serialize@FilterTest@@QEBA?AVValue@Json@@XZ
-     * @hash   -55751122
+     * @hash   -18894850
      */
     MCAPI class Json::Value serialize() const;
 
 //protected:
     /**
      * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_NAEBVHashedString@@0@Z
-     * @hash   -752693425
+     * @hash   -715837153
      */
     MCAPI bool _testValuesWithOperator(class HashedString const &, class HashedString const &) const;
     /**
      * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_NHH@Z
-     * @hash   -96550097
+     * @hash   -59693825
      */
     MCAPI bool _testValuesWithOperator(int, int) const;
     /**
      * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
-     * @hash   831107583
+     * @hash   867963855
      */
     MCAPI bool _testValuesWithOperator(float, float) const;
     /**
      * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_N_N0@Z
-     * @hash   -1985593249
+     * @hash   -1948736977
      */
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 

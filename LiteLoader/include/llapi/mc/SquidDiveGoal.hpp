@@ -38,51 +38,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SquidDiveGoal@@UEAA_NXZ
-     * @hash   -1777802681
+     * @hash   -1733627433
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SquidDiveGoal@@UEAA_NXZ
-     * @hash   308887509
+     * @hash   468920917
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SquidDiveGoal@@UEAAXXZ
-     * @hash   932957296
+     * @hash   977147920
      */
     virtual void start();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SquidDiveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1582596343
+     * @hash   -1538421095
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDDIVEGOAL
     /**
      * @symbol ?stop@SquidDiveGoal@@UEAAXXZ
-     * @hash   -228160144
+     * @hash   -139194608
      */
     MCVAPI void stop();
     /**
      * @symbol ?tick@SquidDiveGoal@@UEAAXXZ
-     * @hash   -712666581
+     * @hash   -623701045
      */
     MCVAPI void tick();
 #endif

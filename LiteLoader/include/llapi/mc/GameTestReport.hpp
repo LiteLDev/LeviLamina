@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??1GameTestReport@@QEAA@XZ
-     * @hash   -538984334
+     * @hash   -586711438
      */
     MCAPI ~GameTestReport();
     /**
      * @symbol ?bindType@GameTestReport@@SAXXZ
-     * @hash   371726643
+     * @hash   467365363
      */
     MCAPI static void bindType();
 

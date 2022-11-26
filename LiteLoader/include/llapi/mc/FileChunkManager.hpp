@@ -31,44 +31,44 @@ public:
 public:
     /**
      * @symbol ??0FileChunkManager@@QEAA@XZ
-     * @hash   1973467320
+     * @hash   1967455304
      */
     MCAPI FileChunkManager();
     /**
      * @symbol ?getChunkInfo@FileChunkManager@@QEBA?AUFileChunkInfo@@H@Z
-     * @hash   -501670349
+     * @hash   -507682365
      */
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
     /**
      * @symbol ?getChunks@FileChunkManager@@QEBAAEBV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@XZ
-     * @hash   311169580
+     * @hash   435961196
      */
     MCAPI std::vector<struct FileChunkInfo> const & getChunks() const;
     /**
      * @symbol ?getTotalNumberOfChunks@FileChunkManager@@QEAAHXZ
-     * @hash   1115835850
+     * @hash   1177893386
      */
     MCAPI int getTotalNumberOfChunks();
     /**
      * @symbol ?reset@FileChunkManager@@QEAAXXZ
-     * @hash   898571811
+     * @hash   892559795
      */
     MCAPI void reset();
     /**
      * @symbol ?reset@FileChunkManager@@QEAAX_KI@Z
-     * @hash   431820940
+     * @hash   425808924
      */
     MCAPI void reset(unsigned __int64, unsigned int);
     /**
      * @symbol ??1FileChunkManager@@QEAA@XZ
-     * @hash   1094572838
+     * @hash   1110963654
      */
     MCAPI ~FileChunkManager();
 
 //private:
     /**
      * @symbol ?_generateChunkInfo@FileChunkManager@@AEAAXXZ
-     * @hash   1842799847
+     * @hash   1836787831
      */
     MCAPI void _generateChunkInfo();
 

@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ScaredGoal@@UEAA_NXZ
-     * @hash   -1894066195
+     * @hash   -1731803267
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@ScaredGoal@@UEAA_NXZ
-     * @hash   -1421211701
+     * @hash   -1258948773
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@ScaredGoal@@UEAAXXZ
-     * @hash   -951757834
+     * @hash   -789494906
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ScaredGoal@@UEAAXXZ
-     * @hash   -637700170
+     * @hash   -475437242
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ScaredGoal@@UEAAXXZ
-     * @hash   -1157076095
+     * @hash   -994813167
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ScaredGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   110839267
+     * @hash   273102195
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ScaredGoal@@QEAA@AEAVMob@@H@Z
-     * @hash   1943567801
+     * @hash   2105830729
      */
     MCAPI ScaredGoal(class Mob &, int);
 

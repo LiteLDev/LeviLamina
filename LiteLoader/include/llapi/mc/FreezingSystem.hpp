@@ -37,23 +37,23 @@ public:
     virtual ~FreezingSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@FreezingSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   799852147
+     * @hash   888725427
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?FREEZE_EFFECT_UUID@FreezingSystem@@2VUUID@mce@@B
-     * @hash   1593752931
+     * @hash   -1832262789
      */
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
     /**
      * @symbol ?VULNERABLE_MOB_FREEZE_DAMAGE@FreezingSystem@@2HB
-     * @hash   1854168633
+     * @hash   -1683815119
      */
     MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
 

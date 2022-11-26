@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0EduSharedUriResource@@QEAA@XZ
-     * @hash   2080927227
+     * @hash   2010320635
      */
     MCAPI EduSharedUriResource();
     /**
      * @symbol ??0EduSharedUriResource@@QEAA@AEBVCompoundTag@@@Z
-     * @hash   1294811980
+     * @hash   1224205388
      */
     MCAPI EduSharedUriResource(class CompoundTag const &);
     /**
      * @symbol ??1EduSharedUriResource@@QEAA@XZ
-     * @hash   816338313
+     * @hash   904319785
      */
     MCAPI ~EduSharedUriResource();
     /**
      * @symbol ?toTag@EduSharedUriResource@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBU1@@Z
-     * @hash   301538665
+     * @hash   230932073
      */
     MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const &);
 

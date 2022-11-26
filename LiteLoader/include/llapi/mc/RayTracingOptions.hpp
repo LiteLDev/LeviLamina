@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?RAY_TRACING_TAG@RayTracingOptions@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
-     * @hash   -1733179495
+     * @hash   -864450871
      */
     MCAPI static class gsl::basic_string_span<char const, -1> const RAY_TRACING_TAG;
 

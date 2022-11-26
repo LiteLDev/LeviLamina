@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0BlockPlacementCondition@@QEAA@AEBU0@@Z
-     * @hash   -66760331
+     * @hash   698764581
      */
     MCAPI BlockPlacementCondition(struct BlockPlacementCondition const &);
     /**
-     * @symbol ??4BlockPlacementCondition@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   810041590
-     */
-    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
-    /**
      * @symbol ??4BlockPlacementCondition@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1014401454
+     * @hash   -1278564514
      */
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
     /**
+     * @symbol ??4BlockPlacementCondition@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1377231478
+     */
+    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
+    /**
      * @symbol ??1BlockPlacementCondition@@QEAA@XZ
-     * @hash   -1709362465
+     * @hash   -1664987329
      */
     MCAPI ~BlockPlacementCondition();
 

@@ -32,113 +32,113 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBENV
     /**
      * @symbol ?CreateDir@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1696376074
+     * @hash   1886238922
      */
     MCVAPI class leveldb::Status CreateDir(std::string const &);
     /**
      * @symbol ?DeleteDir@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   783995385
+     * @hash   973842857
      */
     MCVAPI class leveldb::Status DeleteDir(std::string const &);
     /**
      * @symbol ?DeleteFileA@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1751176511
+     * @hash   -1561344415
      */
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
     /**
      * @symbol ?FileExists@LevelDbEnv@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -511654938
+     * @hash   -321838218
      */
     MCVAPI bool FileExists(std::string const &);
     /**
      * @symbol ?GetChildren@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-     * @hash   946025880
+     * @hash   1135827224
      */
     MCVAPI class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
     /**
      * @symbol ?GetFileSize@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEA_K@Z
-     * @hash   -39443002
+     * @hash   150342966
      */
     MCVAPI class leveldb::Status GetFileSize(std::string const &, unsigned __int64 *);
     /**
      * @symbol ?GetTestDirectory@LevelDbEnv@@UEAA?AVStatus@leveldb@@PEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -924872971
+     * @hash   -735087003
      */
     MCVAPI class leveldb::Status GetTestDirectory(std::string *);
     /**
      * @symbol ?LockFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVFileLock@3@@Z
-     * @hash   632315711
+     * @hash   822101679
      */
     MCVAPI class leveldb::Status LockFile(std::string const &, class leveldb::FileLock **);
     /**
      * @symbol ?NewAppendableFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     * @hash   -312306483
+     * @hash   -122520515
      */
     MCVAPI class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @symbol ?NewLogger@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVLogger@3@@Z
-     * @hash   568906513
+     * @hash   758677105
      */
     MCVAPI class leveldb::Status NewLogger(std::string const &, class leveldb::Logger **);
     /**
      * @symbol ?NewRandomAccessFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
-     * @hash   2107001159
+     * @hash   -1998195545
      */
     MCVAPI class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
      * @symbol ?NewSequentialFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
-     * @hash   -1825744377
+     * @hash   -1635973785
      */
     MCVAPI class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
      * @symbol ?NewWritableFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     * @hash   -1521644791
+     * @hash   -1331889575
      */
     MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @symbol ?NowMicros@LevelDbEnv@@UEAA_KXZ
-     * @hash   -1214499637
+     * @hash   -1024759797
      */
     MCVAPI unsigned __int64 NowMicros();
     /**
      * @symbol ?RenameFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -765966741
+     * @hash   -576226901
      */
     MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
     /**
      * @symbol ?Schedule@LevelDbEnv@@UEAAXP6AXPEAX@Z0@Z
-     * @hash   709864547
+     * @hash   899589011
      */
     MCVAPI void Schedule(void ( *)(void *), void *);
     /**
      * @symbol ?SleepForMicroseconds@LevelDbEnv@@UEAAXH@Z
-     * @hash   -504371498
+     * @hash   -314647034
      */
     MCVAPI void SleepForMicroseconds(int);
     /**
      * @symbol ?StartThread@LevelDbEnv@@UEAAXP6AXPEAX@Z0@Z
-     * @hash   -1181540136
+     * @hash   -1092574600
      */
     MCVAPI void StartThread(void ( *)(void *), void *);
     /**
      * @symbol ?UnlockFile@LevelDbEnv@@UEAA?AVStatus@leveldb@@PEAVFileLock@3@@Z
-     * @hash   292423054
+     * @hash   482147518
      */
     MCVAPI class leveldb::Status UnlockFile(class leveldb::FileLock *);
     /**
      * @symbol ??1LevelDbEnv@@UEAA@XZ
-     * @hash   365230148
+     * @hash   555092996
      */
     MCVAPI ~LevelDbEnv();
 #endif
     /**
      * @symbol ?IsComplete@LevelDbEnv@@QEBA_NXZ
-     * @hash   -2049215634
+     * @hash   -1859429666
      */
     MCAPI bool IsComplete() const;
     /**
      * @symbol ??0LevelDbEnv@@QEAA@XZ
-     * @hash   1278534343
+     * @hash   1468397191
      */
     MCAPI LevelDbEnv();
 
@@ -147,7 +147,7 @@ public:
 private:
     /**
      * @symbol ?sSingleton@LevelDbEnv@@0PEAV1@EA
-     * @hash   -2040973594
+     * @hash   -1172029706
      */
     MCAPI static class LevelDbEnv * sSingleton;
 

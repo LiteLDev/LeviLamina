@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?_minecartComeOffRailSystem@MinecartComeOffRailSystem@@SAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UMoveRequestComponent@@@@@Z
-     * @hash   -859182879
+     * @hash   -802614575
      */
     MCAPI static void _minecartComeOffRailSystem(class StrictEntityContext &, class RailMovementComponent const &, struct StateVectorComponent &, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
     /**
      * @symbol ?createSystem@MinecartComeOffRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -715550596
+     * @hash   -658982292
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?evaluatePosDeltaComingOffRail@MinecartComeOffRailSystem@@SA?AVVec3@@AEBV2@M_N@Z
-     * @hash   -561450298
+     * @hash   -504881994
      */
     MCAPI static class Vec3 evaluatePosDeltaComingOffRail(class Vec3 const &, float, bool);
 

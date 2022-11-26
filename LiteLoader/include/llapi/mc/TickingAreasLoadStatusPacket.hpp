@@ -36,35 +36,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@TickingAreasLoadStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1585604915
+     * @hash   -1659486595
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@TickingAreasLoadStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2122398342
+     * @hash   2098687274
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@TickingAreasLoadStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   13424061
+     * @hash   -28444787
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@TickingAreasLoadStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1768621827
+     * @hash   -1810490675
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0TickingAreasLoadStatusPacket@@QEAA@_N@Z
-     * @hash   870514710
+     * @hash   796633030
      */
     MCAPI TickingAreasLoadStatusPacket(bool);
     /**
      * @symbol ??0TickingAreasLoadStatusPacket@@QEAA@XZ
-     * @hash   903725469
+     * @hash   829843789
      */
     MCAPI TickingAreasLoadStatusPacket();
 

@@ -22,427 +22,427 @@ namespace VanillaBiomeNames {
 #undef AFTER_EXTRA
     /**
      * @symbol ?BambooJungle@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1098521797
+     * @hash   -461632501
      */
     MCAPI extern class HashedString const BambooJungle;
     /**
      * @symbol ?BambooJungleHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1572629421
+     * @hash   -2085448579
      */
     MCAPI extern class HashedString const BambooJungleHills;
     /**
      * @symbol ?BasaltDeltas@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -368710247
+     * @hash   268179049
      */
     MCAPI extern class HashedString const BasaltDeltas;
     /**
      * @symbol ?Beach@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -144243247
+     * @hash   492646049
      */
     MCAPI extern class HashedString const Beach;
     /**
      * @symbol ?BirchForest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   2144123861
+     * @hash   -1513954139
      */
     MCAPI extern class HashedString const BirchForest;
     /**
      * @symbol ?BirchForestHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   753405139
+     * @hash   1390294435
      */
     MCAPI extern class HashedString const BirchForestHills;
     /**
      * @symbol ?BirchForestHillsMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   186702669
+     * @hash   823591965
      */
     MCAPI extern class HashedString const BirchForestHillsMutated;
     /**
      * @symbol ?BirchForestMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -84832245
+     * @hash   552057051
      */
     MCAPI extern class HashedString const BirchForestMutated;
     /**
      * @symbol ?ColdBeach@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1047410071
+     * @hash   -410520775
      */
     MCAPI extern class HashedString const ColdBeach;
     /**
      * @symbol ?ColdOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   429939727
+     * @hash   1066829023
      */
     MCAPI extern class HashedString const ColdOcean;
     /**
      * @symbol ?ColdTaiga@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   2146972463
+     * @hash   -1511105537
      */
     MCAPI extern class HashedString const ColdTaiga;
     /**
      * @symbol ?ColdTaigaHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -497211815
+     * @hash   139677481
      */
     MCAPI extern class HashedString const ColdTaigaHills;
     /**
      * @symbol ?ColdTaigaMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   353091553
+     * @hash   989980849
      */
     MCAPI extern class HashedString const ColdTaigaMutated;
     /**
      * @symbol ?CrimsonForest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -976357517
+     * @hash   -339468221
      */
     MCAPI extern class HashedString const CrimsonForest;
     /**
      * @symbol ?DeepColdOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1009450039
+     * @hash   1646339335
      */
     MCAPI extern class HashedString const DeepColdOcean;
     /**
      * @symbol ?DeepDark@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1286285229
+     * @hash   1923174525
      */
     MCAPI extern class HashedString const DeepDark;
     /**
      * @symbol ?DeepFrozenOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   330593503
+     * @hash   967482799
      */
     MCAPI extern class HashedString const DeepFrozenOcean;
     /**
      * @symbol ?DeepLukewarmOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   950159551
+     * @hash   1587048847
      */
     MCAPI extern class HashedString const DeepLukewarmOcean;
     /**
      * @symbol ?DeepOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1005008255
+     * @hash   1641897551
      */
     MCAPI extern class HashedString const DeepOcean;
     /**
      * @symbol ?DeepWarmOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   163226725
+     * @hash   800116021
      */
     MCAPI extern class HashedString const DeepWarmOcean;
     /**
      * @symbol ?Desert@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   292666307
+     * @hash   929555603
      */
     MCAPI extern class HashedString const Desert;
     /**
      * @symbol ?DesertHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   405829541
+     * @hash   1042718837
      */
     MCAPI extern class HashedString const DesertHills;
     /**
      * @symbol ?DesertMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   193894957
+     * @hash   830784253
      */
     MCAPI extern class HashedString const DesertMutated;
     /**
      * @symbol ?DripstoneCaves@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   97008149
+     * @hash   733897445
      */
     MCAPI extern class HashedString const DripstoneCaves;
     /**
      * @symbol ?ExtremeHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -413368859
+     * @hash   223520437
      */
     MCAPI extern class HashedString const ExtremeHills;
     /**
      * @symbol ?ExtremeHillsEdge@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1126181873
+     * @hash   -489292577
      */
     MCAPI extern class HashedString const ExtremeHillsEdge;
     /**
      * @symbol ?ExtremeHillsMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -751073461
+     * @hash   -114184165
      */
     MCAPI extern class HashedString const ExtremeHillsMutated;
     /**
      * @symbol ?ExtremeHillsPlusTrees@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1260666997
+     * @hash   1897556293
      */
     MCAPI extern class HashedString const ExtremeHillsPlusTrees;
     /**
      * @symbol ?ExtremeHillsPlusTreesMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1695512149
+     * @hash   -1058622853
      */
     MCAPI extern class HashedString const ExtremeHillsPlusTreesMutated;
     /**
      * @symbol ?FlowerForest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   178319097
+     * @hash   815208393
      */
     MCAPI extern class HashedString const FlowerForest;
     /**
      * @symbol ?Forest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   682331059
+     * @hash   1319220355
      */
     MCAPI extern class HashedString const Forest;
     /**
      * @symbol ?ForestHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1424095883
+     * @hash   -787206587
      */
     MCAPI extern class HashedString const ForestHills;
     /**
      * @symbol ?FrozenOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1944986231
+     * @hash   -1713091769
      */
     MCAPI extern class HashedString const FrozenOcean;
     /**
      * @symbol ?FrozenPeaks@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   728696851
+     * @hash   1365586147
      */
     MCAPI extern class HashedString const FrozenPeaks;
     /**
      * @symbol ?FrozenRiver@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -577004685
+     * @hash   59884611
      */
     MCAPI extern class HashedString const FrozenRiver;
     /**
      * @symbol ?Grove@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -813745615
+     * @hash   -176856319
      */
     MCAPI extern class HashedString const Grove;
     /**
      * @symbol ?Hell@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -995281197
+     * @hash   -358391901
      */
     MCAPI extern class HashedString const Hell;
     /**
      * @symbol ?IceMountains@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   455236223
+     * @hash   1092125519
      */
     MCAPI extern class HashedString const IceMountains;
     /**
      * @symbol ?IcePlains@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   579903667
+     * @hash   1216792963
      */
     MCAPI extern class HashedString const IcePlains;
     /**
      * @symbol ?IcePlainsSpikes@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -47383523
+     * @hash   589505773
      */
     MCAPI extern class HashedString const IcePlainsSpikes;
     /**
      * @symbol ?JaggedPeaks@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   482749239
+     * @hash   1119638535
      */
     MCAPI extern class HashedString const JaggedPeaks;
     /**
      * @symbol ?Jungle@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1861995267
+     * @hash   -1796082733
      */
     MCAPI extern class HashedString const Jungle;
     /**
      * @symbol ?JungleEdge@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -35227091
+     * @hash   601662205
      */
     MCAPI extern class HashedString const JungleEdge;
     /**
      * @symbol ?JungleEdgeMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1749080211
+     * @hash   -1908997789
      */
     MCAPI extern class HashedString const JungleEdgeMutated;
     /**
      * @symbol ?JungleHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1606585691
+     * @hash   -969696395
      */
     MCAPI extern class HashedString const JungleHills;
     /**
      * @symbol ?JungleMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -2020366035
+     * @hash   -1383476739
      */
     MCAPI extern class HashedString const JungleMutated;
     /**
      * @symbol ?LegacyFrozenOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1914837883
+     * @hash   -1277948587
      */
     MCAPI extern class HashedString const LegacyFrozenOcean;
     /**
      * @symbol ?LukewarmOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1190497015
+     * @hash   1827386311
      */
     MCAPI extern class HashedString const LukewarmOcean;
     /**
      * @symbol ?LushCaves@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -406417461
+     * @hash   230471835
      */
     MCAPI extern class HashedString const LushCaves;
     /**
      * @symbol ?MangroveSwamp@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1942453383
+     * @hash   -1305564087
      */
     MCAPI extern class HashedString const MangroveSwamp;
     /**
      * @symbol ?Meadow@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1051135359
+     * @hash   1688024655
      */
     MCAPI extern class HashedString const Meadow;
     /**
      * @symbol ?MegaTaiga@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -920698221
+     * @hash   -283808925
      */
     MCAPI extern class HashedString const MegaTaiga;
     /**
      * @symbol ?MegaTaigaHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1681372277
+     * @hash   -1976705723
      */
     MCAPI extern class HashedString const MegaTaigaHills;
     /**
      * @symbol ?Mesa@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1154025451
+     * @hash   -517136155
      */
     MCAPI extern class HashedString const Mesa;
     /**
      * @symbol ?MesaBryce@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1258471003
+     * @hash   -621581707
      */
     MCAPI extern class HashedString const MesaBryce;
     /**
      * @symbol ?MesaPlateau@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1262739667
+     * @hash   1899628963
      */
     MCAPI extern class HashedString const MesaPlateau;
     /**
      * @symbol ?MesaPlateauMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1764570637
+     * @hash   -1893507363
      */
     MCAPI extern class HashedString const MesaPlateauMutated;
     /**
      * @symbol ?MesaPlateauStone@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1295347637
+     * @hash   -658458341
      */
     MCAPI extern class HashedString const MesaPlateauStone;
     /**
      * @symbol ?MesaPlateauStoneMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1567118251
+     * @hash   -930228955
      */
     MCAPI extern class HashedString const MesaPlateauStoneMutated;
     /**
      * @symbol ?MushroomIsland@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   2097603331
+     * @hash   -1560474669
      */
     MCAPI extern class HashedString const MushroomIsland;
     /**
      * @symbol ?MushroomIslandShore@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   564162427
+     * @hash   1201051723
      */
     MCAPI extern class HashedString const MushroomIslandShore;
     /**
      * @symbol ?Ocean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1335735847
+     * @hash   1972625143
      */
     MCAPI extern class HashedString const Ocean;
     /**
      * @symbol ?Plains@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   25893451
+     * @hash   662782747
      */
     MCAPI extern class HashedString const Plains;
     /**
      * @symbol ?RedwoodTaigaHillsMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -684237711
+     * @hash   -47348415
      */
     MCAPI extern class HashedString const RedwoodTaigaHillsMutated;
     /**
      * @symbol ?RedwoodTaigaMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   883725255
+     * @hash   1520614551
      */
     MCAPI extern class HashedString const RedwoodTaigaMutated;
     /**
      * @symbol ?River@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1186162813
+     * @hash   -549273517
      */
     MCAPI extern class HashedString const River;
     /**
      * @symbol ?RoofedForest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1063791591
+     * @hash   -426902295
      */
     MCAPI extern class HashedString const RoofedForest;
     /**
      * @symbol ?RoofedForestMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   775067175
+     * @hash   1411956471
      */
     MCAPI extern class HashedString const RoofedForestMutated;
     /**
      * @symbol ?Savanna@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1894812213
+     * @hash   -1257922917
      */
     MCAPI extern class HashedString const Savanna;
     /**
      * @symbol ?SavannaMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1206123275
+     * @hash   -569233979
      */
     MCAPI extern class HashedString const SavannaMutated;
     /**
      * @symbol ?SavannaPlateau@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1293479427
+     * @hash   -656590131
      */
     MCAPI extern class HashedString const SavannaPlateau;
     /**
      * @symbol ?SavannaPlateauMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -902911677
+     * @hash   -266022381
      */
     MCAPI extern class HashedString const SavannaPlateauMutated;
     /**
      * @symbol ?SnowySlopes@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1285612471
+     * @hash   1922501767
      */
     MCAPI extern class HashedString const SnowySlopes;
     /**
      * @symbol ?SoulsandValley@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1732151221
+     * @hash   -1925926779
      */
     MCAPI extern class HashedString const SoulsandValley;
     /**
      * @symbol ?StoneBeach@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1659909387
+     * @hash   -1023020091
      */
     MCAPI extern class HashedString const StoneBeach;
     /**
      * @symbol ?StonyPeaks@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -53239841
+     * @hash   583649455
      */
     MCAPI extern class HashedString const StonyPeaks;
     /**
      * @symbol ?SunflowerPlains@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   171422747
+     * @hash   808312043
      */
     MCAPI extern class HashedString const SunflowerPlains;
     /**
      * @symbol ?Swampland@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -19684351
+     * @hash   617204945
      */
     MCAPI extern class HashedString const Swampland;
     /**
      * @symbol ?SwamplandMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -411107489
+     * @hash   225781807
      */
     MCAPI extern class HashedString const SwamplandMutated;
     /**
      * @symbol ?Taiga@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1241414537
+     * @hash   -604525241
      */
     MCAPI extern class HashedString const Taiga;
     /**
      * @symbol ?TaigaHills@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   1183785873
+     * @hash   1820675169
      */
     MCAPI extern class HashedString const TaigaHills;
     /**
      * @symbol ?TaigaMutated@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -2127069415
+     * @hash   -1490180119
      */
     MCAPI extern class HashedString const TaigaMutated;
     /**
      * @symbol ?TheEnd@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -1230345651
+     * @hash   -593456355
      */
     MCAPI extern class HashedString const TheEnd;
     /**
      * @symbol ?WarmOcean@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   -413100755
+     * @hash   223788541
      */
     MCAPI extern class HashedString const WarmOcean;
     /**
      * @symbol ?WarpedForest@VanillaBiomeNames@@3VHashedString@@B
-     * @hash   941893041
+     * @hash   1578782337
      */
     MCAPI extern class HashedString const WarpedForest;
 

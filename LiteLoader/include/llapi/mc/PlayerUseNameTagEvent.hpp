@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerUseNameTagEvent@@QEAA@XZ
-     * @hash   -1806451155
+     * @hash   -1702632403
      */
     MCAPI ~PlayerUseNameTagEvent();
 

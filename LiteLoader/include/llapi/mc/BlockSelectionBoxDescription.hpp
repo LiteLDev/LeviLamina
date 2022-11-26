@@ -36,51 +36,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockSelectionBoxDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   241573209
+     * @hash   776273609
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockSelectionBoxDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   572782651
+     * @hash   1107483051
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockSelectionBoxDescription@@UEBA_NXZ
-     * @hash   -1764264367
+     * @hash   -1667764591
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockSelectionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   2119859555
+     * @hash   -1640745613
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockSelectionBoxDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -73279041
+     * @hash   461421359
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockSelectionBoxDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -622693105
+     * @hash   1159646687
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockSelectionBoxDescription@@SAXXZ
-     * @hash   -1572603853
+     * @hash   -1038564621
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockSelectionBoxDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   478780078
+     * @hash   1013465102
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ??0CommandIntegerRange@@QEAA@XZ
-     * @hash   1462539446
+     * @hash   1637871974
      */
     MCAPI CommandIntegerRange();
     /**
      * @symbol ??0CommandIntegerRange@@QEAA@HH_N@Z
-     * @hash   -1452312961
+     * @hash   -1276980433
      */
     MCAPI CommandIntegerRange(int, int, bool);
     /**
      * @symbol ?isWithinRange@CommandIntegerRange@@QEBA_NH@Z
-     * @hash   659103631
+     * @hash   835051199
      */
     MCAPI bool isWithinRange(int) const;
 

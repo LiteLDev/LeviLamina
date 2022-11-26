@@ -33,22 +33,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
     /**
      * @symbol ?onObjectiveAdded@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1646287888
+     * @hash   1748200016
      */
     MCVAPI enum class EventResult onObjectiveAdded(std::string const &);
     /**
      * @symbol ?onObjectiveRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2068086320
+     * @hash   -2124968848
      */
     MCVAPI enum class EventResult onObjectiveRemoved(std::string const &);
     /**
      * @symbol ?onScoreChanged@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   839745451
+     * @hash   941657579
      */
     MCVAPI enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?onScoreboardIdentityRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
-     * @hash   1430724826
+     * @hash   1532636954
      */
     MCVAPI enum class EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
 #endif

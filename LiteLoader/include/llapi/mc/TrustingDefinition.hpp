@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0TrustingDefinition@@QEAA@XZ
-     * @hash   -612094855
+     * @hash   -466222743
      */
     MCAPI TrustingDefinition();
     /**
      * @symbol ?addTrustItemByName@TrustingDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1901863756
+     * @hash   2047828124
      */
     MCAPI void addTrustItemByName(std::string const &);
     /**
      * @symbol ?initialize@TrustingDefinition@@QEBAXAEAVEntityContext@@AEAVTrustingComponent@@@Z
-     * @hash   -447172435
+     * @hash   -301269571
      */
     MCAPI void initialize(class EntityContext &, class TrustingComponent &) const;
     /**
      * @symbol ?buildSchema@TrustingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTrustingDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1898284970
+     * @hash   -1752320602
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TrustingDefinition>> &);
 

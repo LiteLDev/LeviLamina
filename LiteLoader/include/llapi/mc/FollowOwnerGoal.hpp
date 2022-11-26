@@ -38,58 +38,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FollowOwnerGoal@@UEAA_NXZ
-     * @hash   739856347
+     * @hash   900412539
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FollowOwnerGoal@@UEAA_NXZ
-     * @hash   1480395337
+     * @hash   1640951529
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@FollowOwnerGoal@@UEAAXXZ
-     * @hash   -521163980
+     * @hash   -360607788
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FollowOwnerGoal@@UEAAXXZ
-     * @hash   368187252
+     * @hash   528743444
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FollowOwnerGoal@@UEAAXXZ
-     * @hash   207395487
+     * @hash   367951679
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FollowOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1267532133
+     * @hash   1428088325
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1349120504
+     * @hash   -1252374712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-     * @hash   1971823623
+     * @hash   2132379815
      */
     virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ??0FollowOwnerGoal@@QEAA@AEAVMob@@MMM_N1M@Z
-     * @hash   852537216
+     * @hash   1013093408
      */
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
 

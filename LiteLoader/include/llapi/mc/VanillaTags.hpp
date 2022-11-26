@@ -24,107 +24,107 @@ namespace VanillaTags {
 #undef AFTER_EXTRA
     /**
      * @symbol ?DiamondDiggable@VanillaTags@@3VHashedString@@B
-     * @hash   1471270441
+     * @hash   2115463337
      */
     MCAPI extern class HashedString const DiamondDiggable;
     /**
      * @symbol ?Dirt@VanillaTags@@3VHashedString@@B
-     * @hash   38605471
+     * @hash   682798367
      */
     MCAPI extern class HashedString const Dirt;
     /**
      * @symbol ?FertilizeArea@VanillaTags@@3VHashedString@@B
-     * @hash   1193591213
+     * @hash   1837784109
      */
     MCAPI extern class HashedString const FertilizeArea;
     /**
      * @symbol ?GoldDiggable@VanillaTags@@3VHashedString@@B
-     * @hash   1078342351
+     * @hash   1722535247
      */
     MCAPI extern class HashedString const GoldDiggable;
     /**
      * @symbol ?Grass@VanillaTags@@3VHashedString@@B
-     * @hash   581321199
+     * @hash   1225514095
      */
     MCAPI extern class HashedString const Grass;
     /**
      * @symbol ?Gravel@VanillaTags@@3VHashedString@@B
-     * @hash   -518038977
+     * @hash   126153919
      */
     MCAPI extern class HashedString const Gravel;
     /**
      * @symbol ?IronDiggable@VanillaTags@@3VHashedString@@B
-     * @hash   -775754801
+     * @hash   -131561905
      */
     MCAPI extern class HashedString const IronDiggable;
     /**
      * @symbol ?Metal@VanillaTags@@3VHashedString@@B
-     * @hash   -1753929119
+     * @hash   -1109736223
      */
     MCAPI extern class HashedString const Metal;
     /**
      * @symbol ?MobSpawner@VanillaTags@@3VHashedString@@B
-     * @hash   -1361536591
+     * @hash   -717343695
      */
     MCAPI extern class HashedString const MobSpawner;
     /**
      * @symbol ?NotFeatureReplaceable@VanillaTags@@3VHashedString@@B
-     * @hash   743771689
+     * @hash   1387964585
      */
     MCAPI extern class HashedString const NotFeatureReplaceable;
     /**
      * @symbol ?Plant@VanillaTags@@3VHashedString@@B
-     * @hash   619265737
+     * @hash   1263458633
      */
     MCAPI extern class HashedString const Plant;
     /**
      * @symbol ?Pumpkin@VanillaTags@@3VHashedString@@B
-     * @hash   2017105363
+     * @hash   -1633669037
      */
     MCAPI extern class HashedString const Pumpkin;
     /**
      * @symbol ?Rail@VanillaTags@@3VHashedString@@B
-     * @hash   158738981
+     * @hash   802931877
      */
     MCAPI extern class HashedString const Rail;
     /**
      * @symbol ?Sand@VanillaTags@@3VHashedString@@B
-     * @hash   814494281
+     * @hash   1458687177
      */
     MCAPI extern class HashedString const Sand;
     /**
      * @symbol ?Snow@VanillaTags@@3VHashedString@@B
-     * @hash   -1339794089
+     * @hash   -695601193
      */
     MCAPI extern class HashedString const Snow;
     /**
      * @symbol ?Stone@VanillaTags@@3VHashedString@@B
-     * @hash   564935149
+     * @hash   1209128045
      */
     MCAPI extern class HashedString const Stone;
     /**
      * @symbol ?StoneDiggable@VanillaTags@@3VHashedString@@B
-     * @hash   1479628443
+     * @hash   2123821339
      */
     MCAPI extern class HashedString const StoneDiggable;
     /**
      * @symbol ?TextSign@VanillaTags@@3VHashedString@@B
-     * @hash   1723801941
+     * @hash   -1926972459
      */
     MCAPI extern class HashedString const TextSign;
     /**
      * @symbol ?Water@VanillaTags@@3VHashedString@@B
-     * @hash   -1528035135
+     * @hash   -883842239
      */
     MCAPI extern class HashedString const Water;
     /**
      * @symbol ?Wood@VanillaTags@@3VHashedString@@B
-     * @hash   1682726923
+     * @hash   -1968047477
      */
     MCAPI extern class HashedString const Wood;
     /**
      * @symbol ?WoodDiggable@VanillaTags@@3VHashedString@@B
-     * @hash   1140178809
+     * @hash   1784371705
      */
     MCAPI extern class HashedString const WoodDiggable;
 

@@ -73,906 +73,896 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -1005305622
+     * @hash   -239227174
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
-     * @hash   853508917
+     * @hash   1619003077
      */
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>);
     /**
      * @symbol ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@VCompoundTag@@AEBI@Z
-     * @hash   1706206842
+     * @hash   -1823250918
      */
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
     /**
      * @symbol ?addAABBs@Block@@QEBAXAEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   898249814
+     * @hash   1664128374
      */
     MCAPI void addAABBs(class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @symbol ?addCollisionShapes@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -785482367
+     * @hash   -19603807
      */
     MCAPI bool addCollisionShapes(class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @symbol ?addTag@Block@@QEAAAEAV1@AEBVHashedString@@@Z
-     * @hash   589173855
+     * @hash   1355052415
      */
     MCAPI class Block & addTag(class HashedString const &);
     /**
      * @symbol ?animateTick@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1680352636
+     * @hash   -914458700
      */
     MCAPI void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?asItemInstance@Block@@QEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -177720128
+     * @hash   588173808
      */
     MCAPI class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -793199121
+     * @hash   -27305185
      */
     MCAPI bool attack(class Player *, class BlockPos const &) const;
     /**
      * @symbol ?breaksFallingBlocks@Block@@QEBA_NVBaseGameVersion@@@Z
-     * @hash   1276091755
+     * @hash   2041985691
      */
     MCAPI bool breaksFallingBlocks(class BaseGameVersion) const;
     /**
      * @symbol ?buildDescriptionId@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1402183916
+     * @hash   -636289980
      */
     MCAPI std::string buildDescriptionId() const;
     /**
      * @symbol ?buildDescriptionName@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   987662660
+     * @hash   1753556596
      */
     MCAPI std::string buildDescriptionName() const;
     /**
      * @symbol ?cacheComponentData@Block@@QEAAXXZ
-     * @hash   2135325789
+     * @hash   -1393762947
      */
     MCAPI void cacheComponentData();
     /**
      * @symbol ?calcGroundFriction@Block@@QEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
-     * @hash   705494198
+     * @hash   1471434262
      */
     MCAPI float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /**
      * @symbol ?canBeBrokenFromFalling@Block@@QEBA_NXZ
-     * @hash   843069750
+     * @hash   1609009814
      */
     MCAPI bool canBeBrokenFromFalling() const;
     /**
      * @symbol ?canBeBuiltOver@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -38866152
+     * @hash   727073912
      */
     MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?canBeBuiltOver@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-     * @hash   -430586685
+     * @hash   335353379
      */
     MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
      * @symbol ?canBeFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBV1@@Z
-     * @hash   -1687156761
+     * @hash   -921216697
      */
     MCAPI bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?canBeOriginalSurface@Block@@QEBA_NXZ
-     * @hash   -177230170
+     * @hash   588709894
      */
     MCAPI bool canBeOriginalSurface() const;
     /**
      * @symbol ?canConnect@Block@@QEBA_NAEBV1@E0@Z
-     * @hash   841566629
+     * @hash   1607506693
      */
     MCAPI bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
      * @symbol ?canDamperVibrations@Block@@QEBA_NXZ
-     * @hash   1408312004
+     * @hash   -2120715228
      */
     MCAPI bool canDamperVibrations() const;
     /**
      * @symbol ?canHaveExtraData@Block@@QEBA_NXZ
-     * @hash   1888059478
+     * @hash   -1640967754
      */
     MCAPI bool canHaveExtraData() const;
     /**
      * @symbol ?canHurtAndBreakItem@Block@@QEBA_NXZ
-     * @hash   -631792476
+     * @hash   134147588
      */
     MCAPI bool canHurtAndBreakItem() const;
     /**
      * @symbol ?canInstatick@Block@@QEBA_NXZ
-     * @hash   1012309750
+     * @hash   1778249814
      */
     MCAPI bool canInstatick() const;
     /**
      * @symbol ?canOccludeVibrations@Block@@QEBA_NXZ
-     * @hash   578902
+     * @hash   766518966
      */
     MCAPI bool canOccludeVibrations() const;
     /**
      * @symbol ?canProvideFullSupport@Block@@QEBA_NE@Z
-     * @hash   -676953930
+     * @hash   88986134
      */
     MCAPI bool canProvideFullSupport(unsigned char) const;
     /**
      * @symbol ?canProvideMultifaceSupport@Block@@QEBA_NE@Z
-     * @hash   116792292
+     * @hash   882732356
      */
     MCAPI bool canProvideMultifaceSupport(unsigned char) const;
     /**
      * @symbol ?canProvideSupport@Block@@QEBA_NEW4BlockSupportType@@@Z
-     * @hash   -1388782691
+     * @hash   -622842627
      */
     MCAPI bool canProvideSupport(unsigned char, enum class BlockSupportType) const;
     /**
      * @symbol ?canSlide@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1135469516
+     * @hash   1901409580
      */
     MCAPI bool canSlide(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?canSurvive@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1223150590
+     * @hash   1989090654
      */
     MCAPI bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?causesFreezeEffect@Block@@QEBA_NXZ
-     * @hash   -2004681674
+     * @hash   -1238741610
      */
     MCAPI bool causesFreezeEffect() const;
     /**
      * @symbol ?checkIsPathable@Block@@QEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -2124437443
+     * @hash   -1358497379
      */
     MCAPI bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @symbol ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -1166966164
+     * @hash   -401026100
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @symbol ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_NAEBVAABB@@@Z
-     * @hash   -278922221
+     * @hash   487017843
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     /**
      * @symbol ?copyState@Block@@QEBAAEBV1@AEBV1@AEBVItemState@@@Z
-     * @hash   1862058516
+     * @hash   -1666968716
      */
     MCAPI class Block const & copyState(class Block const &, class ItemState const &) const;
     /**
      * @symbol ?dealsContactDamage@Block@@QEBA_NAEBVActor@@_N@Z
-     * @hash   -1638262722
+     * @hash   -872322658
      */
     MCAPI bool dealsContactDamage(class Actor const &, bool) const;
     /**
      * @symbol ?destroy@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -491449783
+     * @hash   274490281
      */
     MCAPI void destroy(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @symbol ?entityInside@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -917560006
+     * @hash   -151619942
      */
     MCAPI void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?executeEvent@Block@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     * @hash   1457742555
+     * @hash   -2071284677
      */
     MCAPI void executeEvent(std::string const &, class RenderParams &) const;
     /**
      * @symbol ?executeItemEvent@Block@@QEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -1496419121
+     * @hash   -730479057
      */
     MCAPI void executeItemEvent(class ItemStackBase &, std::string const &, class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @symbol ?executeTrigger@Block@@QEBA_NAEBVDefinitionTrigger@@AEAVRenderParams@@@Z
-     * @hash   -854536246
+     * @hash   -88596182
      */
     MCAPI bool executeTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /**
      * @symbol ?getAABB@Block@@QEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   -1917256278
+     * @hash   -1151316214
      */
     MCAPI class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @symbol ?getAllowsRunes@Block@@QEBA_NXZ
-     * @hash   -48241994
+     * @hash   717698070
      */
     MCAPI bool getAllowsRunes() const;
     /**
      * @symbol ?getBlockEntityType@Block@@QEBA?AW4BlockActorType@@XZ
-     * @hash   -1546064262
+     * @hash   -780124198
      */
     MCAPI enum class BlockActorType getBlockEntityType() const;
     /**
      * @symbol ?getBurnOdds@Block@@QEBAHXZ
-     * @hash   628945162
+     * @hash   608418202
      */
     MCAPI int getBurnOdds() const;
     /**
      * @symbol ?getCollisionShape@Block@@QEBA_NAEAVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -276675561
+     * @hash   489264503
      */
     MCAPI bool getCollisionShape(class AABB &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @symbol ?getColor@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2104740496
+     * @hash   -1424286736
      */
     MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?getColor@Block@@QEBAHXZ
-     * @hash   1313068224
+     * @hash   2079008288
      */
     MCAPI int getColor() const;
     /**
      * @symbol ?getComparatorSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -578989100
+     * @hash   186950964
      */
     MCAPI int getComparatorSignal(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?getConnectedDirections@Block@@QEBAXAEBVBlockPos@@AEAVBlockSource@@AEA_N222@Z
-     * @hash   1334289655
+     * @hash   2100229719
      */
     MCAPI void getConnectedDirections(class BlockPos const &, class BlockSource &, bool &, bool &, bool &, bool &) const;
     /**
      * @symbol ?getCreativeCategory@Block@@QEBA?AW4CreativeItemCategory@@XZ
-     * @hash   954381052
+     * @hash   1720321116
      */
     MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @symbol ?getDebugText@Block@@QEBAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-     * @hash   1257395748
+     * @hash   2023335812
      */
     MCAPI void getDebugText(std::vector<std::string> &, class BlockPos const &) const;
     /**
      * @symbol ?getDescriptionId@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -39202108
+     * @hash   726737956
      */
     MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ?getDestroySpeed@Block@@QEBAMXZ
-     * @hash   339752524
+     * @hash   319425452
      */
     MCAPI float getDestroySpeed() const;
     /**
      * @symbol ?getDirectSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1431545901
+     * @hash   -665605837
      */
     MCAPI int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?getEntityForModification@Block@@QEBAAEAVEntityContext@@XZ
-     * @hash   1472665716
+     * @hash   -2056361516
      */
     MCAPI class EntityContext & getEntityForModification() const;
     /**
      * @symbol ?getExplosionResistance@Block@@QEBAMPEAVActor@@@Z
-     * @hash   -1996544218
+     * @hash   -1230604154
      */
     MCAPI float getExplosionResistance(class Actor *) const;
     /**
      * @symbol ?getFlameOdds@Block@@QEBAHXZ
-     * @hash   1736323912
+     * @hash   1715796952
      */
     MCAPI int getFlameOdds() const;
     /**
      * @symbol ?getFriction@Block@@QEBAMXZ
-     * @hash   -336276154
+     * @hash   -356803114
      */
     MCAPI float getFriction() const;
     /**
      * @symbol ?getIgnoresDestroyPermissions@Block@@QEBA_NAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   1786012708
+     * @hash   -1743014524
      */
     MCAPI bool getIgnoresDestroyPermissions(class Actor &, class BlockPos const &) const;
     /**
      * @symbol ?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ
-     * @hash   -1648918192
+     * @hash   -1544991808
      */
     MCAPI class BlockLegacy const & getLegacyBlock() const;
     /**
      * @symbol ?getLight@Block@@QEBA?AUBrightness@@XZ
-     * @hash   608302058
+     * @hash   1374242122
      */
     MCAPI struct Brightness getLight() const;
     /**
      * @symbol ?getLightEmission@Block@@QEBA?AUBrightness@@XZ
-     * @hash   -1081152888
+     * @hash   -315212824
      */
     MCAPI struct Brightness getLightEmission() const;
     /**
      * @symbol ?getMapColor@Block@@QEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -486013616
+     * @hash   279926448
      */
     MCAPI class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?getMaterial@Block@@QEBAAEBVMaterial@@XZ
-     * @hash   -635936974
+     * @hash   130141474
      */
     MCAPI class Material const & getMaterial() const;
     /**
      * @symbol ?getMobToSpawn@Block@@QEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
-     * @hash   -1129279095
+     * @hash   -363200647
      */
     MCAPI class MobSpawnerData const * getMobToSpawn(class SpawnConditions const &, class BlockSource &) const;
     /**
      * @symbol ?getName@Block@@QEBAAEBVHashedString@@XZ
-     * @hash   -811168988
+     * @hash   -707242604
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getPlacementBlock@Block@@QEBAAEBV1@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -419579250
+     * @hash   346499198
      */
     MCAPI class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @symbol ?getResourceCount@Block@@QEBAHAEAVRandomize@@H@Z
-     * @hash   -742637096
+     * @hash   23441352
      */
     MCAPI int getResourceCount(class Randomize &, int) const;
     /**
      * @symbol ?getRuntimeId@Block@@QEBAAEBIXZ
-     * @hash   35784883
+     * @hash   -1968568973
      */
     MCAPI unsigned int const & getRuntimeId() const;
     /**
      * @symbol ?getSecondPart@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1380840531
+     * @hash   -614762083
      */
     MCAPI bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @symbol ?getSerializationId@Block@@QEBAAEBVCompoundTag@@XZ
-     * @hash   816011452
+     * @hash   1505102268
      */
     MCAPI class CompoundTag const & getSerializationId() const;
     /**
      * @symbol ?getThickness@Block@@QEBAMXZ
-     * @hash   268902624
+     * @hash   1034981072
      */
     MCAPI float getThickness() const;
     /**
      * @symbol ?getTranslucency@Block@@QEBAMXZ
-     * @hash   1909680772
+     * @hash   -1619208076
      */
     MCAPI float getTranslucency() const;
     /**
      * @symbol ?getVariant@Block@@QEBAHXZ
-     * @hash   734392004
+     * @hash   1500470452
      */
     MCAPI int getVariant() const;
     /**
      * @symbol ?getVisualShape@Block@@QEBAAEBVAABB@@AEAV2@_N@Z
-     * @hash   -41945540
+     * @hash   724132908
      */
     MCAPI class AABB const & getVisualShape(class AABB &, bool) const;
     /**
      * @symbol ?getVisualShapeInWorld@Block@@QEBAAEBVAABB@@AEAVBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   962060592
+     * @hash   1728139040
      */
     MCAPI class AABB const & getVisualShapeInWorld(class BlockSource &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @symbol ?hasBlockEntity@Block@@QEBA_NXZ
-     * @hash   -1140057786
+     * @hash   -373979338
      */
     MCAPI bool hasBlockEntity() const;
     /**
      * @symbol ?hasComparatorSignal@Block@@QEBA_NXZ
-     * @hash   -1202054780
+     * @hash   -435976332
      */
     MCAPI bool hasComparatorSignal() const;
     /**
      * @symbol ?hasProperty@Block@@QEBA_NW4BlockProperty@@@Z
-     * @hash   865612657
+     * @hash   1631691105
      */
     MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
-     * @symbol ?hasPropertyNoLock@Block@@QEBA_NW4BlockProperty@@@Z
-     * @hash   1438937201
-     */
-    MCAPI bool hasPropertyNoLock(enum class BlockProperty) const;
-    /**
      * @symbol ?hasState@Block@@QEBA_NAEBVItemState@@@Z
-     * @hash   -770168351
+     * @hash   -614578607
      */
     MCAPI bool hasState(class ItemState const &) const;
     /**
      * @symbol ?hasTag@Block@@QEBA_NAEBVHashedString@@@Z
-     * @hash   1328723669
+     * @hash   2094356213
      */
     MCAPI bool hasTag(class HashedString const &) const;
     /**
      * @symbol ?hasTag@Block@@QEBA_NAEB_K@Z
-     * @hash   -2005108031
+     * @hash   -1239475487
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?ignoreEntitiesOnPistonMove@Block@@QEBA_NXZ
-     * @hash   -1367265018
+     * @hash   -601617098
      */
     MCAPI bool ignoreEntitiesOnPistonMove() const;
     /**
      * @symbol ?initEntity@Block@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   179858708
+     * @hash   945506628
      */
     MCAPI void initEntity(class EntityRegistry &);
     /**
      * @symbol ?initParams@Block@@QEBAXAEAVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   1124358680
+     * @hash   1890006600
      */
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @symbol ?isAir@Block@@QEBA_NXZ
-     * @hash   1110618244
+     * @hash   1876266164
      */
     MCAPI bool isAir() const;
     /**
      * @symbol ?isAttachedTo@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1630272673
+     * @hash   -864624753
      */
     MCAPI bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
      * @symbol ?isAuxValueRelevantForPicking@Block@@QEBA_NXZ
-     * @hash   -686129274
+     * @hash   79518646
      */
     MCAPI bool isAuxValueRelevantForPicking() const;
     /**
      * @symbol ?isBounceBlock@Block@@QEBA_NXZ
-     * @hash   -1282514444
+     * @hash   -516866524
      */
     MCAPI bool isBounceBlock() const;
     /**
      * @symbol ?isButtonBlock@Block@@QEBA_NXZ
-     * @hash   -1430914588
+     * @hash   -665266668
      */
     MCAPI bool isButtonBlock() const;
     /**
      * @symbol ?isClimbable@Block@@QEBA_NAEBUIActorMovementProxy@@@Z
-     * @hash   1630076363
+     * @hash   -1899243013
      */
     MCAPI bool isClimbable(struct IActorMovementProxy const &) const;
     /**
      * @symbol ?isContainerBlock@Block@@QEBA_NXZ
-     * @hash   -2000995834
+     * @hash   -1235347914
      */
     MCAPI bool isContainerBlock() const;
     /**
      * @symbol ?isCropBlock@Block@@QEBA_NXZ
-     * @hash   -40113804
+     * @hash   725534116
      */
     MCAPI bool isCropBlock() const;
     /**
      * @symbol ?isDoorBlock@Block@@QEBA_NXZ
-     * @hash   -951303756
+     * @hash   -185640460
      */
     MCAPI bool isDoorBlock() const;
     /**
      * @symbol ?isEmpty@Block@@QEBA_NXZ
-     * @hash   248040484
+     * @hash   1013703780
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?isFenceBlock@Block@@QEBA_NXZ
-     * @hash   -633981434
+     * @hash   131681862
      */
     MCAPI bool isFenceBlock() const;
     /**
      * @symbol ?isFenceGateBlock@Block@@QEBA_NXZ
-     * @hash   -1449580586
+     * @hash   -683917290
      */
     MCAPI bool isFenceGateBlock() const;
     /**
      * @symbol ?isFilteredOut@Block@@QEBA_NW4BlockRenderLayer@@@Z
-     * @hash   1446515479
+     * @hash   -2082788521
      */
     MCAPI bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @symbol ?isHeavy@Block@@QEBA_NXZ
-     * @hash   -1373751532
+     * @hash   -608088236
      */
     MCAPI bool isHeavy() const;
     /**
      * @symbol ?isInteractiveBlock@Block@@QEBA_NXZ
-     * @hash   -1936741802
+     * @hash   -1171078506
      */
     MCAPI bool isInteractiveBlock() const;
     /**
      * @symbol ?isLavaFlammable@Block@@QEBA_NXZ
-     * @hash   1991413620
+     * @hash   -1537890380
      */
     MCAPI bool isLavaFlammable() const;
     /**
      * @symbol ?isLeverBlock@Block@@QEBA_NXZ
-     * @hash   711974582
+     * @hash   1477637878
      */
     MCAPI bool isLeverBlock() const;
     /**
      * @symbol ?isMotionBlockingBlock@Block@@QEBA_NXZ
-     * @hash   -639041116
+     * @hash   126622180
      */
     MCAPI bool isMotionBlockingBlock() const;
     /**
      * @symbol ?isMultifaceBlock@Block@@QEBA_NXZ
-     * @hash   2041691910
+     * @hash   -1487612090
      */
     MCAPI bool isMultifaceBlock() const;
     /**
      * @symbol ?isObstructingChests@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1448894496
+     * @hash   -2080409504
      */
     MCAPI bool isObstructingChests(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isPartialBlock@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   201035384
+     * @hash   966698680
      */
     MCAPI bool isPartialBlock(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?isPreservingMediumWhenPlaced@Block@@QEBA_NAEBV1@@Z
-     * @hash   1102935319
+     * @hash   1868598615
      */
     MCAPI bool isPreservingMediumWhenPlaced(class Block const &) const;
     /**
      * @symbol ?isRailBlock@Block@@QEBA_NXZ
-     * @hash   1774496532
+     * @hash   -1754807468
      */
     MCAPI bool isRailBlock() const;
     /**
      * @symbol ?isSignalSource@Block@@QEBA_NXZ
-     * @hash   731957478
+     * @hash   1497620774
      */
     MCAPI bool isSignalSource() const;
     /**
      * @symbol ?isSlabBlock@Block@@QEBA_NXZ
-     * @hash   1691837044
+     * @hash   -1837466956
      */
     MCAPI bool isSlabBlock() const;
     /**
      * @symbol ?isSolid@Block@@QEBA_NXZ
-     * @hash   -226227932
+     * @hash   539435364
      */
     MCAPI bool isSolid() const;
     /**
      * @symbol ?isSolidBlockingBlock@Block@@QEBA_NXZ
-     * @hash   587956438
+     * @hash   1353619734
      */
     MCAPI bool isSolidBlockingBlock() const;
     /**
      * @symbol ?isSolidBlockingBlockAndNotSignalSource@Block@@QEBA_NXZ
-     * @hash   590759190
+     * @hash   1356422486
      */
     MCAPI bool isSolidBlockingBlockAndNotSignalSource() const;
     /**
      * @symbol ?isStairBlock@Block@@QEBA_NXZ
-     * @hash   -935482458
+     * @hash   -169819162
      */
     MCAPI bool isStairBlock() const;
     /**
-     * @symbol ?isStandingSign@Block@@QEBA_NXZ
-     * @hash   497805238
-     */
-    MCAPI bool isStandingSign() const;
-    /**
      * @symbol ?isStemBlock@Block@@QEBA_NXZ
-     * @hash   -1228067052
+     * @hash   -462434508
      */
     MCAPI bool isStemBlock() const;
     /**
      * @symbol ?isThinFenceBlock@Block@@QEBA_NXZ
-     * @hash   -591808698
+     * @hash   173823846
      */
     MCAPI bool isThinFenceBlock() const;
     /**
      * @symbol ?isTopPartialBlock@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   521808108
+     * @hash   1287440652
      */
     MCAPI bool isTopPartialBlock(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?isUnbreakable@Block@@QEBA_NXZ
-     * @hash   682208772
+     * @hash   1447841316
      */
     MCAPI bool isUnbreakable() const;
     /**
      * @symbol ?isWallBlock@Block@@QEBA_NXZ
-     * @hash   -833680716
+     * @hash   -68048172
      */
     MCAPI bool isWallBlock() const;
     /**
      * @symbol ?isWaterBlocking@Block@@QEBA_NXZ
-     * @hash   1361026564
+     * @hash   2126659108
      */
     MCAPI bool isWaterBlocking() const;
     /**
      * @symbol ?keepState@Block@@QEBAAEBV1@AEBVItemState@@@Z
-     * @hash   -1743376957
+     * @hash   -977744413
      */
     MCAPI class Block const & keepState(class ItemState const &) const;
     /**
      * @symbol ?mayConsumeFertilizer@Block@@QEBA_NAEAVBlockSource@@@Z
-     * @hash   434630161
+     * @hash   1200262705
      */
     MCAPI bool mayConsumeFertilizer(class BlockSource &) const;
     /**
      * @symbol ?mayPick@Block@@QEBA_NAEBVBlockSource@@_N@Z
-     * @hash   1841399548
+     * @hash   -1687935204
      */
     MCAPI bool mayPick(class BlockSource const &, bool) const;
     /**
      * @symbol ?mayPick@Block@@QEBA_NXZ
-     * @hash   -548977500
+     * @hash   216655044
      */
     MCAPI bool mayPick() const;
     /**
      * @symbol ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   408830942
+     * @hash   1174463486
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   2106715668
+     * @hash   -1422619084
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?mayPlaceOn@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -328558916
+     * @hash   437073628
      */
     MCAPI bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?movedByPiston@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -265238103
+     * @hash   500394441
      */
     MCAPI void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?neighborChanged@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -361163790
+     * @hash   404468754
      */
     MCAPI void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @symbol ?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   1655036503
+     * @hash   -1874298249
      */
     MCAPI void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @symbol ?onFallOn@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   98864229
+     * @hash   864496773
      */
     MCAPI void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
      * @symbol ?onFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1180334877
+     * @hash   -414702333
      */
     MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @symbol ?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1747123019
+     * @hash   -1782211733
      */
     MCAPI void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?onPlace@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBV1@@Z
-     * @hash   349562952
+     * @hash   1115195496
      */
     MCAPI void onPlace(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?onPlayerPlacing@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z
-     * @hash   -1161981274
+     * @hash   -396348730
      */
     MCAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
     /**
      * @symbol ?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   -1207581320
+     * @hash   -441948776
      */
     MCAPI void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
      * @symbol ?onRemove@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -250999077
+     * @hash   514633467
      */
     MCAPI void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?onStandOn@Block@@QEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   209398889
+     * @hash   975031433
      */
     MCAPI void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
      * @symbol ?onStepOff@Block@@QEBAXAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   -615587783
+     * @hash   150044761
      */
     MCAPI void onStepOff(class Actor &, class BlockPos const &) const;
     /**
      * @symbol ?onStepOn@Block@@QEBAXAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   -1711410261
+     * @hash   -945777717
      */
     MCAPI void onStepOn(class Actor &, class BlockPos const &) const;
     /**
      * @symbol ?onStructureBlockPlace@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -923718599
+     * @hash   -158086055
      */
     MCAPI void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?onStructureNeighborBlockPlace@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -723104343
+     * @hash   42528201
      */
     MCAPI void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?playerDestroy@Block@@QEBAXAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1484117083
+     * @hash   -2045217669
      */
     MCAPI void playerDestroy(class Player &, class BlockPos const &) const;
     /**
      * @symbol ?playerWillDestroy@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1291639770
+     * @hash   2057272314
      */
     MCAPI bool playerWillDestroy(class Player &, class BlockPos const &) const;
     /**
      * @symbol ?popResource@Block@@QEBAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z
-     * @hash   858519402
+     * @hash   1623967434
      */
     MCAPI class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &) const;
     /**
      * @symbol ?pushesOutItems@Block@@QEBA_NXZ
-     * @hash   -1755373034
+     * @hash   -989925002
      */
     MCAPI bool pushesOutItems() const;
     /**
      * @symbol ?pushesUpFallingBlocks@Block@@QEBA_NXZ
-     * @hash   1918691668
+     * @hash   -1610827596
      */
     MCAPI bool pushesUpFallingBlocks() const;
     /**
      * @symbol ?queuedTick@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1872076206
+     * @hash   -1106628174
      */
     MCAPI void queuedTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?randomTick@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -514573806
+     * @hash   250812722
      */
     MCAPI void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?randomlyModifyPosition@Block@@QEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   280525629
+     * @hash   1045743021
      */
     MCAPI class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @symbol ?shouldRandomTick@Block@@QEBA_NXZ
-     * @hash   -624754426
+     * @hash   140462966
      */
     MCAPI bool shouldRandomTick() const;
     /**
      * @symbol ?shouldRandomTickExtraLayer@Block@@QEBA_NXZ
-     * @hash   -1284083210
+     * @hash   -518865818
      */
     MCAPI bool shouldRandomTickExtraLayer() const;
     /**
      * @symbol ?shouldStopFalling@Block@@QEBA_NAEAVActor@@@Z
-     * @hash   -1158984247
+     * @hash   -393766855
      */
     MCAPI bool shouldStopFalling(class Actor &) const;
     /**
-     * @symbol ?spawnResources@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@M@Z
-     * @hash   -1270825557
+     * @symbol ?shouldTickOnSetBlock@Block@@QEBA_NXZ
+     * @hash   -1030918314
      */
-    MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, std::vector<class Item const *> *, float) const;
+    MCAPI bool shouldTickOnSetBlock() const;
     /**
-     * @symbol ?spawnResources@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBV1@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MAEBVItemStack@@@Z
-     * @hash   1285638415
+     * @symbol ?spawnResources@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MAEBVItemStack@@@Z
+     * @hash   -1688005066
      */
-    MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, class ItemStack const &) const;
+    MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, std::vector<class Item const *> *, float, class ItemStack const &) const;
     /**
      * @symbol ?telemetryVariant@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1626646832
+     * @hash   -1903456720
      */
     MCAPI int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?toDebugString@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1917590222
+     * @hash   -1152726478
      */
     MCAPI std::string toDebugString() const;
     /**
      * @symbol ?transformOnFall@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
-     * @hash   696503030
+     * @hash   1461366774
      */
     MCAPI void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /**
      * @symbol ?triggerEvent@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   -2036971349
+     * @hash   -1272107605
      */
     MCAPI void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /**
      * @symbol ?tryGetCopperBehavior@Block@@QEBAPEBVCopperBehavior@@XZ
-     * @hash   -630075209
+     * @hash   134788535
      */
     MCAPI class CopperBehavior const * tryGetCopperBehavior() const;
     /**
      * @symbol ?tryGetInfested@Block@@QEBAPEBV1@XZ
-     * @hash   -1759195695
+     * @hash   -994331951
      */
     MCAPI class Block const * tryGetInfested() const;
     /**
      * @symbol ?tryGetUninfested@Block@@QEBAPEBV1@XZ
-     * @hash   -1895789855
+     * @hash   -1130926111
      */
     MCAPI class Block const * tryGetUninfested() const;
     /**
      * @symbol ?trySpawnResourcesOnExplosion@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBV1@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@M@Z
-     * @hash   -1463945367
+     * @hash   -699081623
      */
     MCAPI void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, std::vector<class Item const *> *, float) const;
     /**
      * @symbol ?tryToPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEBUActorBlockSyncMessage@@@Z
-     * @hash   -1143493562
+     * @hash   -378629818
      */
     MCAPI bool tryToPlace(class BlockSource &, class BlockPos const &, struct ActorBlockSyncMessage const *) const;
     /**
      * @symbol ?tryToTill@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
-     * @hash   1889857442
+     * @hash   -1640246110
      */
     MCAPI bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
      * @symbol ?updateEntityAfterFallOn@Block@@QEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   -146892671
+     * @hash   617894193
      */
     MCAPI void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
      * @symbol ?updateTallestCollisionShape@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@AEBVAABB@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@AEAV4@AEBVVec3@@AEAM@Z
-     * @hash   1485322231
+     * @hash   -2044858201
      */
     MCAPI bool updateTallestCollisionShape(class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     /**
      * @symbol ?use@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   132928552
+     * @hash   897715416
      */
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?waterSpreadCausesSpawn@Block@@QEBA_NXZ
-     * @hash   1028905478
+     * @hash   1786081222
      */
     MCAPI bool waterSpreadCausesSpawn() const;
     /**
      * @symbol ?BLOCK_DESCRIPTION_PREFIX@Block@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -114652797
+     * @hash   1553597075
      */
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
     /**
      * @symbol ?SIZE_OFFSET@Block@@2MB
-     * @hash   1490075067
+     * @hash   -2026136269
      */
     MCAPI static float const SIZE_OFFSET;
 
 //protected:
     /**
      * @symbol ?buildSerializationId@Block@@IEAAXI@Z
-     * @hash   1683578007
+     * @hash   -1845495353
      */
     MCAPI void buildSerializationId(unsigned int);
     /**
      * @symbol ?setRuntimeId@Block@@IEBAXAEBI@Z
-     * @hash   -338131883
+     * @hash   427085509
      */
     MCAPI void setRuntimeId(unsigned int const &) const;
 
 //private:
     /**
-     * @symbol ?_isSolid@Block@@AEBA_NXZ
-     * @hash   805501514
+     * @symbol ?_getBlockOcclusionType@Block@@AEBA?AW4BlockOcclusionType@@XZ
+     * @hash   1009655735
      */
-    MCAPI bool _isSolid() const;
+    MCAPI enum class BlockOcclusionType _getBlockOcclusionType() const;
     /**
      * @symbol ?_lockRegistryForRead@Block@@AEBA?AVBlockTypeRegistryReadLock@@XZ
-     * @hash   -180007670
+     * @hash   585870890
      */
     MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
     /**
      * @symbol ?_tryInitEntityIfNotInitialized@Block@@AEAAXXZ
-     * @hash   54023484
+     * @hash   819902044
      */
     MCAPI void _tryInitEntityIfNotInitialized();
     /**
      * @symbol ?getEntity@Block@@AEBAAEBVEntityContext@@XZ
-     * @hash   405785018
+     * @hash   1171725082
      */
     MCAPI class EntityContext const & getEntity() const;
 

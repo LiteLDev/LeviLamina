@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@PeekDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VPeekDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1452789002
+     * @hash   -1473315962
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);
 

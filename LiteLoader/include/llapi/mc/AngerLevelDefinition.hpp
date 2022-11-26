@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ?addOnIncreaseSoundDefinition@AngerLevelDefinition@@QEAAXAEBVSoundDefinition@@@Z
-     * @hash   2088470844
+     * @hash   2012974684
      */
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const &);
     /**
      * @symbol ?initialize@AngerLevelDefinition@@QEAAXAEAVEntityContext@@AEAVAngerLevelComponent@@@Z
-     * @hash   -1790665339
+     * @hash   -1866161499
      */
     MCAPI void initialize(class EntityContext &, class AngerLevelComponent &);
     /**
      * @symbol ?buildSchema@AngerLevelDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAngerLevelDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1981994486
+     * @hash   1906498326
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>> &);
 

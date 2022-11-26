@@ -40,22 +40,22 @@ public:
 //protected:
     /**
      * @symbol ??0MessagingCommand@@IEAA@_N0@Z
-     * @hash   1725400467
+     * @hash   1807708195
      */
     MCAPI MessagingCommand(bool, bool);
     /**
      * @symbol ?checkChatPermissions@MessagingCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   144750449
+     * @hash   227058177
      */
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?checkMutedAndSendToastIfMuted@MessagingCommand@@IEBAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1838183985
+     * @hash   -1755814753
      */
     MCAPI void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &) const;
     /**
      * @symbol ?checkMutedAndSendToastIfMuted@MessagingCommand@@IEBAXAEBVPlayer@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   243108349
+     * @hash   325477581
      */
     MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;
 

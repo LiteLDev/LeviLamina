@@ -33,12 +33,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IBLOCKWORLDGENAPI
     /**
      * @symbol ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
-     * @hash   -1299290169
+     * @hash   -1202544377
      */
     MCVAPI bool canGetChunk() const;
     /**
      * @symbol ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
-     * @hash   732244055
+     * @hash   825514871
      */
     MCVAPI class LevelChunk * getChunk(class ChunkPos const &);
 #endif

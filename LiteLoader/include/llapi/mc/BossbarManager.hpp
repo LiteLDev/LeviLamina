@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BossbarManager@@QEAA@XZ
-     * @hash   262643969
+     * @hash   324809137
      */
     MCAPI ~BossbarManager();
 

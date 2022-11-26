@@ -24,102 +24,102 @@ namespace NavigationUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?canFlyDirectly@NavigationUtility@@YA_NAEAVMob@@AEBVVec3@@1@Z
-     * @hash   792465426
+     * @hash   779564962
      */
     MCAPI bool canFlyDirectly(class Mob &, class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?canMoveDirectly@NavigationUtility@@YA_NAEAVMob@@AEBVVec3@@1HHH_N@Z
-     * @hash   1054005766
+     * @hash   1041105302
      */
     MCAPI bool canMoveDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     /**
      * @symbol ?canMoveDirectlyWaterBound@NavigationUtility@@YA_NAEBVMob@@AEBVVec3@@1@Z
-     * @hash   -2102492908
+     * @hash   -2115393372
      */
     MCAPI bool canMoveDirectlyWaterBound(class Mob const &, class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?canWalkDirectly@NavigationUtility@@YA_NAEAVMob@@AEBVVec3@@1HHH_N@Z
-     * @hash   -342730186
+     * @hash   -355630650
      */
     MCAPI bool canWalkDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     /**
      * @symbol ?canWalkOn@NavigationUtility@@YA_NAEAVMob@@HHHHHHAEBVVec3@@MM_N@Z
-     * @hash   -2005222526
+     * @hash   -2018122990
      */
     MCAPI bool canWalkOn(class Mob &, int, int, int, int, int, int, class Vec3 const &, float, float, bool);
     /**
      * @symbol ?closeToDone@NavigationUtility@@YA_NAEBVMob@@M@Z
-     * @hash   -433535397
+     * @hash   -446435861
      */
     MCAPI bool closeToDone(class Mob const &, float);
     /**
      * @symbol ?flyCondition@NavigationUtility@@YA_NAEBVMob@@AEAVBlockSource@@HHH@Z
-     * @hash   1812870250
+     * @hash   1799969786
      */
     MCAPI bool flyCondition(class Mob const &, class BlockSource &, int, int, int);
     /**
      * @symbol ?getHeightDifference@NavigationUtility@@YAMAEAVBlockSource@@AEBVVec3@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   424145611
+     * @hash   411245147
      */
     MCAPI float getHeightDifference(class BlockSource &, class Vec3 const &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?getMobScale@NavigationUtility@@YA?BVBlockPos@@AEBVMob@@@Z
-     * @hash   -837725250
+     * @hash   -850625714
      */
     MCAPI class BlockPos const getMobScale(class Mob const &);
     /**
      * @symbol ?getSurfaceY@NavigationUtility@@YAHAEBVMob@@@Z
-     * @hash   957387538
+     * @hash   944487074
      */
     MCAPI int getSurfaceY(class Mob const &);
     /**
      * @symbol ?invalidPathStartStatus@NavigationUtility@@YA_NAEBVMob@@AEAVBlockPos@@@Z
-     * @hash   86823897
+     * @hash   73923433
      */
     MCAPI bool invalidPathStartStatus(class Mob const &, class BlockPos &);
     /**
      * @symbol ?isDoorBlockingPath@NavigationUtility@@YA_NAEBVMob@@AEBVBlock@@AEBVPath@@AEBVBlockPos@@_K@Z
-     * @hash   -1250545411
+     * @hash   -1263445875
      */
     MCAPI bool isDoorBlockingPath(class Mob const &, class Block const &, class Path const &, class BlockPos const &, unsigned __int64);
     /**
      * @symbol ?isInLiquid@NavigationUtility@@YA_NAEBVMob@@@Z
-     * @hash   515159848
+     * @hash   502259384
      */
     MCAPI bool isInLiquid(class Mob const &);
     /**
      * @symbol ?isInNode@NavigationUtility@@YA_NAEBVMob@@AEBVBlockPos@@@Z
-     * @hash   -1650009511
+     * @hash   -1662925351
      */
     MCAPI bool isInNode(class Mob const &, class BlockPos const &);
     /**
      * @symbol ?isLastNode@NavigationUtility@@YA_N_KAEBVPath@@@Z
-     * @hash   -672146088
+     * @hash   -685061928
      */
     MCAPI bool isLastNode(unsigned __int64, class Path const &);
     /**
      * @symbol ?isStableDestination@NavigationUtility@@YA_NAEBVMob@@AEAVBlockPos@@@Z
-     * @hash   1358895277
+     * @hash   1345979437
      */
     MCAPI bool isStableDestination(class Mob const &, class BlockPos &);
     /**
      * @symbol ?isStairBlockFacingMob@NavigationUtility@@YA_NAEBVMob@@AEBVBlockPos@@@Z
-     * @hash   338169513
+     * @hash   325253673
      */
     MCAPI bool isStairBlockFacingMob(class Mob const &, class BlockPos const &);
     /**
      * @symbol ?moveCondition@NavigationUtility@@YA_NAEBVMob@@AEBVBlock@@@Z
-     * @hash   152741581
+     * @hash   139825741
      */
     MCAPI bool moveCondition(class Mob const &, class Block const &);
     /**
      * @symbol ?swimCondition@NavigationUtility@@YA_NAEBVMob@@AEAVBlockSource@@HHH@Z
-     * @hash   790792092
+     * @hash   777876252
      */
     MCAPI bool swimCondition(class Mob const &, class BlockSource &, int, int, int);
     /**
      * @symbol ?trimPathFromSun@NavigationUtility@@YAXAEBVMob@@@Z
-     * @hash   -496554635
+     * @hash   -509470475
      */
     MCAPI void trimPathFromSun(class Mob const &);
 

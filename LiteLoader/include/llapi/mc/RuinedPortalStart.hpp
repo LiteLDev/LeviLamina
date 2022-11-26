@@ -38,7 +38,7 @@ public:
     virtual ~RuinedPortalStart();
     /**
      * @symbol ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   1672611000
+     * @hash   1843792008
      */
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 

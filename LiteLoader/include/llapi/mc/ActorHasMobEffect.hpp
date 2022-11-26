@@ -40,25 +40,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorHasMobEffect@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   979294830
+     * @hash   975466206
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorHasMobEffect@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   -835464018
+     * @hash   -839308018
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@ActorHasMobEffect@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   1614798452
+     * @hash   1697459828
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorHasMobEffect@@MEBA?AVValue@Json@@XZ
-     * @hash   1615043059
+     * @hash   1611199059
      */
     virtual class Json::Value _serializeValue() const;
 

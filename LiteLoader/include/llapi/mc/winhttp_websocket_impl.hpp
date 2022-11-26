@@ -30,34 +30,34 @@ public:
 public:
     /**
      * @symbol ?connect_websocket@winhttp_websocket_impl@@QEAAJPEAUHC_WEBSOCKET@@PEAUXAsyncBlock@@V?$shared_ptr@UWinHttpState@httpclient@xbox@@@std@@@Z
-     * @hash   1069307133
+     * @hash   1581558573
      */
     MCAPI long connect_websocket(struct HC_WEBSOCKET *, struct XAsyncBlock *, class std::shared_ptr<struct xbox::httpclient::WinHttpState>);
     /**
      * @symbol ?send_websocket_binary_message_async@winhttp_websocket_impl@@QEAAJPEAUXAsyncBlock@@PEBEI@Z
-     * @hash   -518847496
+     * @hash   -6596056
      */
     MCAPI long send_websocket_binary_message_async(struct XAsyncBlock *, unsigned char const *, unsigned int);
     /**
      * @symbol ?send_websocket_message_async@winhttp_websocket_impl@@QEAAJPEAUXAsyncBlock@@PEBD@Z
-     * @hash   -415582705
+     * @hash   96668735
      */
     MCAPI long send_websocket_message_async(struct XAsyncBlock *, char const *);
 
 //private:
     /**
      * @symbol ?enqueue_message@winhttp_websocket_impl@@AEAAJV?$shared_ptr@Usend_msg_context@winhttp_websocket_impl@@@std@@@Z
-     * @hash   26821927
+     * @hash   539073367
      */
     MCAPI long enqueue_message(class std::shared_ptr<struct winhttp_websocket_impl::send_msg_context>);
     /**
      * @symbol ?send_complete@winhttp_websocket_impl@@AEAAXJ@Z
-     * @hash   507244585
+     * @hash   1019496025
      */
     MCAPI void send_complete(long);
     /**
      * @symbol ?send_message@winhttp_websocket_impl@@AEAAXV?$shared_ptr@Usend_msg_context@winhttp_websocket_impl@@@std@@@Z
-     * @hash   -608220865
+     * @hash   -95969425
      */
     MCAPI void send_message(class std::shared_ptr<struct winhttp_websocket_impl::send_msg_context>);
 

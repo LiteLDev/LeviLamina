@@ -37,18 +37,18 @@ public:
     virtual ~NpcSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@NpcSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1249251744
+     * @hash   1301837664
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?tickCountdown@NpcSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@ULeaveMenuCountdown@NpcComponents@@@@@Z
-     * @hash   1298498165
+     * @hash   1351084085
      */
     MCAPI static void tickCountdown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct NpcComponents::LeaveMenuCountdown> &);
 

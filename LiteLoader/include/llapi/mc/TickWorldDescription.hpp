@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TickWorldDescription@@UEBAPEBDXZ
-     * @hash   -2059446627
+     * @hash   -2135404067
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@TickWorldDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -964228890
+     * @hash   -1040186330
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@TickWorldDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   318238432
+     * @hash   242280992
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0TickWorldDescription@@QEAA@XZ
-     * @hash   1389047891
+     * @hash   1313090451
      */
     MCAPI TickWorldDescription();
 

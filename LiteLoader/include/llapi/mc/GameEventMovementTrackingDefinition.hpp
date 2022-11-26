@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?initialize@GameEventMovementTrackingDefinition@@QEBAXAEAVEntityContext@@AEAVGameEventMovementTrackingComponent@@@Z
-     * @hash   -550689115
+     * @hash   -626646555
      */
     MCAPI void initialize(class EntityContext &, class GameEventMovementTrackingComponent &) const;
     /**
      * @symbol ?buildSchema@GameEventMovementTrackingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGameEventMovementTrackingDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1285981012
+     * @hash   1210023572
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GameEventMovementTrackingDefinition>> &);
 

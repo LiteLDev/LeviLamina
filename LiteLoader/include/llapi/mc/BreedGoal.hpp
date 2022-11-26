@@ -38,58 +38,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BreedGoal@@UEAA_NXZ
-     * @hash   572058937
+     * @hash   732199977
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BreedGoal@@UEAA_NXZ
-     * @hash   343470775
+     * @hash   503611815
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?stop@BreedGoal@@UEAAXXZ
-     * @hash   -1858544030
+     * @hash   -1698402990
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@BreedGoal@@UEAAXXZ
-     * @hash   1110720493
+     * @hash   1270861533
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@BreedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   961567479
+     * @hash   1121708519
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0BreedGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   1757765771
+     * @hash   1917906811
      */
     MCAPI BreedGoal(class Mob &, float);
 
 //private:
     /**
      * @symbol ?_isCloseEnoughToBreed@BreedGoal@@AEBA_NVVec3@@VVec2@@01@Z
-     * @hash   711838762
+     * @hash   871979802
      */
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     /**
      * @symbol ?_moveToFreePartner@BreedGoal@@AEBAPEAVMob@@XZ
-     * @hash   1541883539
+     * @hash   1702024579
      */
     MCAPI class Mob * _moveToFreePartner() const;
 

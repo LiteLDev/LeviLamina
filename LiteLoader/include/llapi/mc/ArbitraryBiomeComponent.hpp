@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ArbitraryBiomeComponent@@QEAA@XZ
-     * @hash   -2072885093
+     * @hash   -1891309909
      */
     MCAPI ~ArbitraryBiomeComponent();
 

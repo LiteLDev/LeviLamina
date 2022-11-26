@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ??0StrictEntityContextOwner@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
-     * @hash   751943932
+     * @hash   879733868
      */
     MCAPI StrictEntityContextOwner(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ??0StrictEntityContextOwner@@QEAA@$$QEAV0@@Z
-     * @hash   2063335753
+     * @hash   -2103841607
      */
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
     /**
      * @symbol ?getStrictContext@StrictEntityContextOwner@@QEBA?AVStrictEntityContext@@XZ
-     * @hash   -1024333862
+     * @hash   -896543926
      */
     MCAPI class StrictEntityContext getStrictContext() const;
     /**
      * @symbol ??4StrictEntityContextOwner@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1578501244
+     * @hash   1706291180
      */
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     /**
      * @symbol ??1StrictEntityContextOwner@@QEAA@XZ
-     * @hash   1366461370
+     * @hash   1455426906
      */
     MCAPI ~StrictEntityContextOwner();
 

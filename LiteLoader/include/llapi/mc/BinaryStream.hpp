@@ -75,114 +75,114 @@ public:
     virtual ~BinaryStream();
     /**
      * @symbol ??0BinaryStream@@QEAA@XZ
-     * @hash   481332381
+     * @hash   992538253
      */
     MCAPI BinaryStream();
     /**
      * @symbol ??0BinaryStream@@QEAA@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1223641341
+     * @hash   -712420093
      */
     MCAPI BinaryStream(std::string &, bool);
     /**
      * @symbol ?getAndReleaseData@BinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1235756484
+     * @hash   -724581364
      */
     MCAPI std::string getAndReleaseData();
     /**
      * @symbol ?reset@BinaryStream@@QEAAXXZ
-     * @hash   1255117059
+     * @hash   1766292179
      */
     MCAPI void reset();
     /**
      * @symbol ?writeBool@BinaryStream@@QEAAX_N@Z
-     * @hash   -1165919940
+     * @hash   -654744820
      */
     MCAPI void writeBool(bool);
     /**
      * @symbol ?writeByte@BinaryStream@@QEAAXE@Z
-     * @hash   -1715333255
+     * @hash   -1204158135
      */
     MCAPI void writeByte(unsigned char);
     /**
      * @symbol ?writeDouble@BinaryStream@@QEAAXN@Z
-     * @hash   949725584
+     * @hash   1460900704
      */
     MCAPI void writeDouble(double);
     /**
      * @symbol ?writeFloat@BinaryStream@@QEAAXM@Z
-     * @hash   -730490796
+     * @hash   -219315676
      */
     MCAPI void writeFloat(float);
     /**
      * @symbol ?writeSignedBigEndianInt@BinaryStream@@QEAAXH@Z
-     * @hash   2002318328
+     * @hash   -1781473848
      */
     MCAPI void writeSignedBigEndianInt(int);
     /**
      * @symbol ?writeSignedInt@BinaryStream@@QEAAXH@Z
-     * @hash   -257303418
+     * @hash   253871702
      */
     MCAPI void writeSignedInt(int);
     /**
      * @symbol ?writeSignedInt64@BinaryStream@@QEAAX_J@Z
-     * @hash   -1451337971
+     * @hash   -940162851
      */
     MCAPI void writeSignedInt64(__int64);
     /**
      * @symbol ?writeSignedShort@BinaryStream@@QEAAXF@Z
-     * @hash   -419602101
+     * @hash   91573019
      */
     MCAPI void writeSignedShort(short);
     /**
      * @symbol ?writeString@BinaryStream@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -795173066
+     * @hash   -283997946
      */
     MCAPI void writeString(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?writeUnsignedChar@BinaryStream@@QEAAXE@Z
-     * @hash   -225369255
+     * @hash   285805865
      */
     MCAPI void writeUnsignedChar(unsigned char);
     /**
      * @symbol ?writeUnsignedInt@BinaryStream@@QEAAXI@Z
-     * @hash   1733269840
+     * @hash   -2050522336
      */
     MCAPI void writeUnsignedInt(unsigned int);
     /**
      * @symbol ?writeUnsignedInt64@BinaryStream@@QEAAX_K@Z
-     * @hash   -1454288471
+     * @hash   -943113351
      */
     MCAPI void writeUnsignedInt64(unsigned __int64);
     /**
      * @symbol ?writeUnsignedShort@BinaryStream@@QEAAXG@Z
-     * @hash   1232252757
+     * @hash   1743427877
      */
     MCAPI void writeUnsignedShort(unsigned short);
     /**
      * @symbol ?writeUnsignedVarInt@BinaryStream@@QEAAXI@Z
-     * @hash   -778176990
+     * @hash   -267001870
      */
     MCAPI void writeUnsignedVarInt(unsigned int);
     /**
      * @symbol ?writeUnsignedVarInt64@BinaryStream@@QEAAX_K@Z
-     * @hash   -895820427
+     * @hash   -384645307
      */
     MCAPI void writeUnsignedVarInt64(unsigned __int64);
     /**
      * @symbol ?writeVarInt@BinaryStream@@QEAAXH@Z
-     * @hash   -1721639608
+     * @hash   -1210464488
      */
     MCAPI void writeVarInt(int);
     /**
      * @symbol ?writeVarInt64@BinaryStream@@QEAAX_J@Z
-     * @hash   744765845
+     * @hash   1255940965
      */
     MCAPI void writeVarInt64(__int64);
 
 //private:
     /**
      * @symbol ?write@BinaryStream@@AEAAXPEBX_K@Z
-     * @hash   -321356275
+     * @hash   189818845
      */
     MCAPI void write(void const *, unsigned __int64);
 

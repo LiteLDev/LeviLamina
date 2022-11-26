@@ -39,58 +39,58 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -1005349544
+     * @hash   -981301480
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @vftbl  5
      * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
-     * @hash   1385721059
+     * @hash   1409769123
      */
     virtual class ItemStack const & getItem(int) const;
     /**
      * @vftbl  9
      * @symbol ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
-     * @hash   1298578210
+     * @hash   1322626274
      */
     virtual void setItem(int, class ItemStack const &);
     /**
      * @vftbl  14
      * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
-     * @hash   107598744
+     * @hash   131646808
      */
     virtual int getContainerSize() const;
     /**
      * @vftbl  15
      * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
-     * @hash   -1716301897
+     * @hash   -1758170745
      */
     virtual int getMaxStackSize() const;
     /**
      * @vftbl  16
      * @symbol ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1820869905
+     * @hash   -1731904369
      */
     virtual void startOpen(class Player &);
     /**
      * @vftbl  17
      * @symbol ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   2011601807
+     * @hash   2100567343
      */
     virtual void stopOpen(class Player &);
     /**
      * @vftbl  22
-     * @hash   -308831756
+     * @hash   -212331980
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -307908235
+     * @hash   -211408459
      */
     virtual void __unk_vfn_23();
     /**
      * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
-     * @hash   1722420785
+     * @hash   1746468849
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum class ContainerType);
 

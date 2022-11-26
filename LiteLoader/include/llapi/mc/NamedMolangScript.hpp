@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1NamedMolangScript@@QEAA@XZ
-     * @hash   -1161094528
+     * @hash   -1118103232
      */
     MCAPI ~NamedMolangScript();
 

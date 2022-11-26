@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0ContainerValidationCraftResult@@QEAA@$$QEAU0@@Z
-     * @hash   -1094301933
+     * @hash   -622320237
      */
     MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
     /**
      * @symbol ??0ContainerValidationCraftResult@@QEAA@XZ
-     * @hash   1949889535
+     * @hash   -1782715937
      */
     MCAPI ContainerValidationCraftResult();
     /**
      * @symbol ??1ContainerValidationCraftResult@@QEAA@XZ
-     * @hash   124684909
+     * @hash   687031357
      */
     MCAPI ~ContainerValidationCraftResult();
 

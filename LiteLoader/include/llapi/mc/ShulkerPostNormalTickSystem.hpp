@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@ShulkerPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -826197824
+     * @hash   -831148896
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doShulkerPostNormalTickSystem@ShulkerPostNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   1372548285
+     * @hash   1367597213
      */
     MCAPI static void _doShulkerPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

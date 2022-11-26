@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@PanicGoal@@UEAA_NXZ
-     * @hash   -789905642
+     * @hash   -629287946
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@PanicGoal@@UEAA_NXZ
-     * @hash   -1017955644
+     * @hash   -857337948
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@PanicGoal@@UEAAXXZ
-     * @hash   1072447391
+     * @hash   1233065087
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@PanicGoal@@UEAAXXZ
-     * @hash   -877698113
+     * @hash   -717080417
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@PanicGoal@@UEAAXXZ
-     * @hash   2091443402
+     * @hash   -2042906198
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PanicGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1828427286
+     * @hash   -1667809590
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
-     * @hash   -22014514
+     * @hash   138603182
      */
     MCAPI PanicGoal(class Mob &, float, bool, enum class LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum class ActorDamageCause>);
 
 //private:
     /**
      * @symbol ?_tryGeneratePathEnd@PanicGoal@@AEAA_NXZ
-     * @hash   369789873
+     * @hash   530407569
      */
     MCAPI bool _tryGeneratePathEnd();
 

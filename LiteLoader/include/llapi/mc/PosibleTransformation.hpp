@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PosibleTransformation@@QEAA@XZ
-     * @hash   -1886948005
+     * @hash   -1784574597
      */
     MCAPI ~PosibleTransformation();
 

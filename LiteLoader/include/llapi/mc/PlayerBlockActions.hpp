@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?addAbortDestroyBlock@PlayerBlockActions@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   148895529
+     * @hash   77274121
      */
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addContinueDestroyBlock@PlayerBlockActions@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   633836061
+     * @hash   562214653
      */
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStartDestroyBlock@PlayerBlockActions@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   -1543396403
+     * @hash   -1615017811
      */
     MCAPI void addStartDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStopDestroyBlock@PlayerBlockActions@@QEAAXXZ
-     * @hash   1020233987
+     * @hash   948612579
      */
     MCAPI void addStopDestroyBlock();
     /**
      * @symbol ?findFirstOfType@PlayerBlockActions@@QEBAPEBUPlayerBlockActionData@@W4PlayerActionType@@@Z
-     * @hash   1590473158
+     * @hash   1518851750
      */
     MCAPI struct PlayerBlockActionData const * findFirstOfType(enum class PlayerActionType) const;
     /**
      * @symbol ?get@PlayerBlockActions@@QEBA?AV?$span@$$CBUPlayerBlockActionData@@$0?0@gsl@@XZ
-     * @hash   980422472
+     * @hash   908801064
      */
     MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
     /**
      * @symbol ??4PlayerBlockActions@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -14310658
+     * @hash   131453822
      */
     MCAPI class PlayerBlockActions & operator=(class PlayerBlockActions &&);
     /**
      * @symbol ??1PlayerBlockActions@@QEAA@XZ
-     * @hash   -1005766021
+     * @hash   -860001541
      */
     MCAPI ~PlayerBlockActions();
     /**
      * @symbol ?read@PlayerBlockActions@@SA?AV1@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1638140931
+     * @hash   1566519523
      */
     MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@PlayerBlockActions@@SAXAEBV1@AEAVBinaryStream@@@Z
-     * @hash   -1294115253
+     * @hash   -1365736661
      */
     MCAPI static void write(class PlayerBlockActions const &, class BinaryStream &);
 

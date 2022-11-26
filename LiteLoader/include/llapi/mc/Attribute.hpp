@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
-     * @hash   563305805
+     * @hash   617183309
      */
     MCAPI Attribute(class HashedString const &, enum class RedefinitionMode, bool);
     /**
      * @symbol ?getIDValue@Attribute@@QEBA?BIXZ
-     * @hash   -1939509920
+     * @hash   -1768252032
      */
     MCAPI unsigned int const getIDValue() const;
     /**
      * @symbol ?getName@Attribute@@QEBAAEBVHashedString@@XZ
-     * @hash   -1103671722
+     * @hash   -1010400906
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getRedefinitionMode@Attribute@@QEBA?AW4RedefinitionMode@@XZ
-     * @hash   -1211869572
+     * @hash   -1064398356
      */
     MCAPI enum class RedefinitionMode getRedefinitionMode() const;
     /**
      * @symbol ?isClientSyncable@Attribute@@QEBA_NXZ
-     * @hash   369284088
+     * @hash   516801432
      */
     MCAPI bool isClientSyncable() const;
     /**
      * @symbol ??8Attribute@@QEBA_NAEBV0@@Z
-     * @hash   -868988085
+     * @hash   -815110581
      */
     MCAPI bool operator==(class Attribute const &) const;
     /**
      * @symbol ?getByName@Attribute@@SAAEAV1@AEBVHashedString@@@Z
-     * @hash   1982788372
+     * @hash   2036665876
      */
     MCAPI static class Attribute & getByName(class HashedString const &);
 

@@ -39,90 +39,90 @@ public:
     virtual ~PumpkinBlockItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@PumpkinBlockItem@@UEBAHXZ
-     * @hash   701274820
+     * @hash   1297171700
      */
     virtual int getEnchantSlot() const;
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -276670826
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -256353364
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  113
      * @symbol ?getEquipLocation@PumpkinBlockItem@@UEBA?AW4ActorLocation@@XZ
-     * @hash   1978784003
+     * @hash   1936515379
      */
     virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @vftbl  114
      * @symbol ?getEquipSound@PumpkinBlockItem@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -1883544620
+     * @hash   -1957487804
      */
     virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @symbol ??0PumpkinBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -427978330
+     * @hash   167918550
      */
     MCAPI PumpkinBlockItem(std::string const &, int);
 

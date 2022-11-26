@@ -44,165 +44,170 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
     /**
      * @symbol ?_onDisable@RakNetInstance@@EEAAXXZ
-     * @hash   -594096275
+     * @hash   -633028307
      */
     MCVAPI void _onDisable();
     /**
      * @symbol ?_onEnable@RakNetInstance@@EEAAXXZ
-     * @hash   812311332
+     * @hash   773425428
      */
     MCVAPI void _onEnable();
     /**
      * @symbol ?addConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     * @hash   -1274992473
+     * @hash   -1313863001
      */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @symbol ?connect@RakNetInstance@@UEAA_NPEAX@Z
-     * @hash   683111575
+     * @symbol ?closeNetworkConnection@RakNetInstance@@UEAAXAEAVNetworkConnection@@@Z
+     * @hash   -2088643989
      */
-    MCVAPI bool connect(void *);
+    MCVAPI void closeNetworkConnection(class NetworkConnection &);
+    /**
+     * @symbol ?connect@RakNetInstance@@UEAA_NAEBVGameConnectionInfo@Social@@0@Z
+     * @hash   -1847118595
+     */
+    MCVAPI bool connect(class Social::GameConnectionInfo const &, class Social::GameConnectionInfo const &);
     /**
      * @symbol ?disconnect@RakNetInstance@@UEAAXXZ
-     * @hash   464510957
+     * @hash   425917197
      */
     MCVAPI void disconnect();
     /**
      * @symbol ?getConnectedGameInfo@RakNetInstance@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     * @hash   1887804023
+     * @hash   1849210263
      */
     MCVAPI class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
      * @symbol ?getIPv4Port@RakNetInstance@@UEBAGXZ
-     * @hash   820090159
+     * @hash   781496399
      */
     MCVAPI unsigned short getIPv4Port() const;
     /**
      * @symbol ?getIPv6Port@RakNetInstance@@UEBAGXZ
-     * @hash   -1385967743
+     * @hash   -1424561503
      */
     MCVAPI unsigned short getIPv6Port() const;
     /**
      * @symbol ?getLocalIp@RakNetInstance@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1588317311
+     * @hash   -1626911071
      */
     MCVAPI std::string getLocalIp();
     /**
      * @symbol ?getLocalIps@RakNetInstance@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -1749939258
+     * @hash   -1788533018
      */
     MCVAPI std::vector<std::string> getLocalIps() const;
     /**
      * @symbol ?getNatPunchInfo@RakNetInstance@@UEBA?AUNatPunchInfo@Connector@@XZ
-     * @hash   -1114038411
+     * @hash   -1152463035
      */
     MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
     /**
      * @symbol ?getPeer@RakNetInstance@@UEAAPEAVRakPeerInterface@RakNet@@XZ
-     * @hash   -1098381429
+     * @hash   -1136806053
      */
     MCVAPI class RakNet::RakPeerInterface * getPeer();
     /**
      * @symbol ?getPeer@RakNetInstance@@UEBAPEBVRakPeerInterface@RakNet@@XZ
-     * @hash   -918524089
+     * @hash   -956948713
      */
     MCVAPI class RakNet::RakPeerInterface const * getPeer() const;
     /**
      * @symbol ?getPort@RakNetInstance@@UEBAGXZ
-     * @hash   -798880758
+     * @hash   -837305382
      */
     MCVAPI unsigned short getPort() const;
     /**
      * @symbol ?getRefinedLocalIps@RakNetInstance@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
-     * @hash   867449833
+     * @hash   829025209
      */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
     /**
      * @symbol ?getTransportIdentifier@RakNetInstance@@UEBA_KXZ
-     * @hash   1147889494
+     * @hash   1109464870
      */
     MCVAPI unsigned __int64 getTransportIdentifier() const;
     /**
      * @symbol ?host@RakNetInstance@@UEAA_NAEBUConnectionDefinition@@@Z
-     * @hash   1877902834
+     * @hash   1839478210
      */
     MCVAPI bool host(struct ConnectionDefinition const &);
     /**
      * @symbol ?isIPv4Supported@RakNetInstance@@UEBA_NXZ
-     * @hash   1300023585
+     * @hash   1261614337
      */
     MCVAPI bool isIPv4Supported() const;
     /**
      * @symbol ?isIPv6Supported@RakNetInstance@@UEBA_NXZ
-     * @hash   -949450577
+     * @hash   -987859825
      */
     MCVAPI bool isIPv6Supported() const;
     /**
      * @symbol ?isServer@RakNetInstance@@UEBA_NXZ
-     * @hash   514188911
+     * @hash   475779663
      */
     MCVAPI bool isServer() const;
     /**
      * @symbol ?removeConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     * @hash   -509485686
+     * @hash   -547894934
      */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
      * @symbol ?runEvents@RakNetInstance@@UEAAXXZ
-     * @hash   395851685
+     * @hash   357442437
      */
     MCVAPI void runEvents();
     /**
      * @symbol ?setupNatPunch@RakNetInstance@@UEAAX_N@Z
-     * @hash   -84994719
+     * @hash   -123311711
      */
     MCVAPI void setupNatPunch(bool);
     /**
      * @symbol ?startNatPunchingClient@RakNetInstance@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   1421126240
+     * @hash   1382809248
      */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
     /**
      * @symbol ?tick@RakNetInstance@@UEAAXXZ
-     * @hash   97559550
+     * @hash   59242558
      */
     MCVAPI void tick();
     /**
      * @symbol ??1RakNetInstance@@UEAA@XZ
-     * @hash   1146193540
+     * @hash   1107784292
      */
     MCVAPI ~RakNetInstance();
 #endif
     /**
      * @symbol ??0RakNetInstance@@QEAA@AEAUConnectionCallbacks@0@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-     * @hash   -1738016384
+     * @hash   -1776902288
      */
     MCAPI RakNetInstance(struct RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
 //private:
     /**
      * @symbol ?_changeNatState@RakNetInstance@@AEAAXW4NATState@1@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1898138686
+     * @hash   1859252782
      */
     MCAPI void _changeNatState(enum class RakNetInstance::NATState, int, std::string const &);
     /**
      * @symbol ?_createPeer@RakNetInstance@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetInstance@@@std@@AEBVNetworkIdentifier@@@Z
-     * @hash   -711094440
+     * @hash   -750026472
      */
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const &);
     /**
      * @symbol ?_openNatConnection@RakNetInstance@@AEAAXAEBUSystemAddress@RakNet@@@Z
-     * @hash   -754003396
+     * @hash   -792889300
      */
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);
     /**
      * @symbol ?_pingNatService@RakNetInstance@@AEAAX_N@Z
-     * @hash   1025060457
+     * @hash   986174553
      */
     MCAPI void _pingNatService(bool);
     /**
      * @symbol ?_storeLocalIP@RakNetInstance@@AEAAXXZ
-     * @hash   -1846467034
+     * @hash   -1885337562
      */
     MCAPI void _storeLocalIP();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MountTamingEvent@@QEAA@XZ
-     * @hash   761445081
+     * @hash   865263833
      */
     MCAPI ~MountTamingEvent();
 

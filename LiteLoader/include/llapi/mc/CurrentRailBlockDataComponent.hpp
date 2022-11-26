@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1CurrentRailBlockDataComponent@@QEAA@XZ
-     * @hash   842999453
+     * @hash   933994621
      */
     MCAPI ~CurrentRailBlockDataComponent();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1TradeGroup@@QEAA@XZ
-     * @hash   164600789
+     * @hash   226765957
      */
     MCAPI ~TradeGroup();
 

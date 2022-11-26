@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@WalkState@@UEAAXXZ
-     * @hash   1480622412
+     * @hash   1651880300
      */
     virtual void tick();
     /**
      * @vftbl  2
      * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
-     * @hash   1428730241
+     * @hash   1517695777
      */
     virtual void start();
     /**
      * @vftbl  3
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
-     * @hash   -1550575839
+     * @hash   -1379317951
      */
     virtual void stop();
 

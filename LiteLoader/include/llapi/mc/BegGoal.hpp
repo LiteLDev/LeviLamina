@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BegGoal@@UEAA_NXZ
-     * @hash   -1579958023
+     * @hash   -1419909239
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BegGoal@@UEAA_NXZ
-     * @hash   -915288041
+     * @hash   -755239257
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@BegGoal@@UEAAXXZ
-     * @hash   -1569014238
+     * @hash   -1408980830
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@BegGoal@@UEAAXXZ
-     * @hash   3269250
+     * @hash   163302658
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@BegGoal@@UEAAXXZ
-     * @hash   -951307027
+     * @hash   -791273619
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@BegGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1600354981
+     * @hash   1760403765
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0BegGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MHH@Z
-     * @hash   -1122390434
+     * @hash   -962341650
      */
     MCAPI BegGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, int, int);
 
 //private:
     /**
      * @symbol ?_playerHoldingInteresting@BegGoal@@AEAA_NPEAVPlayer@@@Z
-     * @hash   -638557293
+     * @hash   -478508509
      */
     MCAPI bool _playerHoldingInteresting(class Player *);
 

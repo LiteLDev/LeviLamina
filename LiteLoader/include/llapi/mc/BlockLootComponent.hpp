@@ -29,13 +29,13 @@ public:
 public:
     /**
      * @symbol ??0BlockLootComponent@@QEAA@XZ
-     * @hash   -1013230556
+     * @hash   -1249913324
      */
     MCAPI BlockLootComponent();
     /**
-     * @symbol ?spawnResources@BlockLootComponent@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MAEBVItemStack@@@Z
-     * @hash   837695510
+     * @symbol ?getLootTable@BlockLootComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1382209470
      */
-    MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, std::vector<class Item const *> *, float, class ItemStack const &) const;
+    MCAPI std::string const & getLootTable() const;
 
 };

@@ -37,13 +37,13 @@ public:
     virtual ~HomeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@HomeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1093316462
+     * @hash   1182943166
      */
     virtual void tick(class EntityRegistry &);
 

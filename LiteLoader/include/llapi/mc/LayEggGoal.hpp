@@ -39,81 +39,81 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@LayEggGoal@@UEAA_NXZ
-     * @hash   1396185628
+     * @hash   1556741820
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@LayEggGoal@@UEAA_NXZ
-     * @hash   1869040122
+     * @hash   2029596314
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@LayEggGoal@@UEAAXXZ
-     * @hash   -866988571
+     * @hash   -706432379
      */
     virtual void start();
     /**
      * @vftbl  6
      * @symbol ?tick@LayEggGoal@@UEAAXXZ
-     * @hash   -1072445216
+     * @hash   -911889024
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@LayEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -391184524
+     * @hash   -230628332
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@LayEggGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2012837486
+     * @hash   -2121573618
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @vftbl  14
      * @symbol ?_moveToBlock@LayEggGoal@@MEAAXXZ
-     * @hash   -849729890
+     * @hash   -689173698
      */
     virtual void _moveToBlock();
     /**
      * @vftbl  17
      * @symbol ?findTargetBlock@LayEggGoal@@UEAA_NXZ
-     * @hash   -879103736
+     * @hash   -718547544
      */
     virtual bool findTargetBlock();
     /**
      * @symbol ??0LayEggGoal@@QEAA@AEAVMob@@MHHMAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@AEBV?$vector@W4MaterialType@@V?$allocator@W4MaterialType@@@std@@@3@_N3MAEBVItemDescriptor@@AEBVActorDefinitionTrigger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1968306193
+     * @hash   -1807765377
      */
     MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum class MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class ActorDefinitionTrigger const &, std::string const &);
 
 //protected:
     /**
      * @symbol ?_isTargetBlock@LayEggGoal@@IEBA_NAEBVBlockLegacy@@@Z
-     * @hash   -297940234
+     * @hash   -137399418
      */
     MCAPI bool _isTargetBlock(class BlockLegacy const &) const;
     /**
      * @symbol ?_layEgg@LayEggGoal@@IEAAXAEBVBlockPos@@@Z
-     * @hash   1303593699
+     * @hash   1464134515
      */
     MCAPI void _layEgg(class BlockPos const &);
 

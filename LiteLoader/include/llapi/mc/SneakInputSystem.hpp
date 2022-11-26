@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSneakInputSystem@SneakInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1434023532
+     * @hash   -1431178972
      */
     MCAPI static struct TickingSystemWithInfo createSneakInputSystem();
 

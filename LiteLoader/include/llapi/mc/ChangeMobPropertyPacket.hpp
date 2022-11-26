@@ -43,30 +43,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ChangeMobPropertyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1359404751
+     * @hash   -1433809215
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ChangeMobPropertyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1397785634
+     * @hash   -1472190098
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ChangeMobPropertyPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1578049399
+     * @hash   -1652453863
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ChangeMobPropertyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1164146855
+     * @hash   -1238551319
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ChangeMobPropertyPacket@@QEAA@XZ
-     * @hash   -92508455
+     * @hash   -166912919
      */
     MCAPI ChangeMobPropertyPacket();
 

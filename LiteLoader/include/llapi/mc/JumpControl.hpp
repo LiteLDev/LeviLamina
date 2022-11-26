@@ -36,62 +36,62 @@ public:
     virtual ~JumpControl();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?clone@JumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
-     * @hash   -710876521
+     * @hash   -656614617
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
      * @vftbl  3
      * @symbol ?tick@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
-     * @hash   -1892701676
+     * @hash   -1838439772
      */
     virtual void tick(class JumpControlComponent &, class Mob &);
     /**
      * @vftbl  4
-     * @hash   -1366637612
+     * @hash   -1273366796
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-     * @hash   698771144
+     * @hash   753033048
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
     /**
      * @symbol ?getJumpDelay@JumpControl@@MEBAHAEBVJumpControlComponent@@@Z
-     * @hash   1487727293
+     * @hash   1580998109
      */
     MCVAPI int getJumpDelay(class JumpControlComponent const &) const;
     /**
      * @symbol ?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
-     * @hash   644739873
+     * @hash   738010689
      */
     MCVAPI enum class JumpType getJumpType(class JumpControlComponent const &) const;
     /**
      * @symbol ?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
-     * @hash   1171606025
+     * @hash   1260571561
      */
     MCVAPI void initializeInternal(class Mob &, struct JumpControlDescription *);
     /**
      * @symbol ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
-     * @hash   -999726903
+     * @hash   -910761367
      */
     MCVAPI void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
     /**
      * @symbol ?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
-     * @hash   -546795743
+     * @hash   -457830207
      */
     MCVAPI void setJumpType(class JumpControlComponent &, enum class JumpType);
 #endif
     /**
      * @symbol ??0JumpControl@@QEAA@XZ
-     * @hash   234493323
+     * @hash   288755227
      */
     MCAPI JumpControl();
 

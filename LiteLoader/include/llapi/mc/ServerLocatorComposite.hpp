@@ -37,116 +37,116 @@ public:
     virtual ~ServerLocatorComposite();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?startAnnouncingServer@ServerLocatorComposite@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
-     * @hash   -2031609862
+     * @hash   -2069957606
      */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@ServerLocatorComposite@@UEAAXXZ
-     * @hash   -390125266
+     * @hash   -428426882
      */
     virtual void stopAnnouncingServer();
     /**
      * @vftbl  5
      * @symbol ?startServerDiscovery@ServerLocatorComposite@@UEAAXUPortPair@@@Z
-     * @hash   198830343
+     * @hash   160482599
      */
     virtual void startServerDiscovery(struct PortPair);
     /**
      * @vftbl  6
      * @symbol ?stopServerDiscovery@ServerLocatorComposite@@UEAAXXZ
-     * @hash   2115350782
+     * @hash   2077049166
      */
     virtual void stopServerDiscovery();
     /**
      * @vftbl  7
      * @symbol ?addCustomServer@ServerLocatorComposite@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-     * @hash   -2053994213
+     * @hash   -2092357333
      */
     virtual void addCustomServer(class AsynchronousIPResolver const &, int);
     /**
      * @vftbl  8
      * @symbol ?addCustomServer@ServerLocatorComposite@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   309679083
+     * @hash   271315963
      */
     virtual void addCustomServer(std::string const &, int);
     /**
      * @vftbl  9
      * @symbol ?getServerList@ServerLocatorComposite@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
-     * @hash   -302980838
+     * @hash   -341343958
      */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /**
      * @vftbl  10
      * @symbol ?clearServerList@ServerLocatorComposite@@UEAAXXZ
-     * @hash   1123923505
+     * @hash   1085560385
      */
     virtual void clearServerList();
     /**
      * @vftbl  11
      * @symbol ?update@ServerLocatorComposite@@UEAAXXZ
-     * @hash   -171625172
+     * @hash   -209911412
      */
     virtual void update();
     /**
      * @vftbl  12
      * @symbol ?isIPv4Supported@ServerLocatorComposite@@UEBA_NXZ
-     * @hash   -402437885
+     * @hash   -440785629
      */
     virtual bool isIPv4Supported() const;
     /**
      * @vftbl  13
      * @symbol ?isIPv6Supported@ServerLocatorComposite@@UEBA_NXZ
-     * @hash   -65322831
+     * @hash   -103670575
      */
     virtual bool isIPv6Supported() const;
     /**
      * @vftbl  14
      * @symbol ?setGetHostGUIDFn@ServerLocatorComposite@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z
-     * @hash   1496571483
+     * @hash   1458223739
      */
     virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
     /**
      * @vftbl  15
      * @symbol ?getPingTimeForGUID@ServerLocatorComposite@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1890459388
+     * @hash   -1928822508
      */
     virtual float getPingTimeForGUID(std::string const &);
     /**
      * @vftbl  16
      * @symbol ?checkCanConnectToCustomServerAsync@ServerLocatorComposite@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-     * @hash   -1547512200
+     * @hash   -1585875320
      */
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
     /**
      * @symbol ??0ServerLocatorComposite@@QEAA@XZ
-     * @hash   313498064
+     * @hash   275134944
      */
     MCAPI ServerLocatorComposite();
     /**
-     * @symbol ?initializeRakNetServerLocator@ServerLocatorComposite@@QEAAXAEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@AEBV?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@6@@Z
-     * @hash   1416486831
+     * @symbol ?initializeRakNetServerLocator@ServerLocatorComposite@@QEAAXAEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@AEBV?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@6@@Z
+     * @hash   -1802079888
      */
-    MCAPI void initializeRakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)> const &);
+    MCAPI void initializeRakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)> const &);
     /**
      * @symbol ?setActiveTransportLayer@ServerLocatorComposite@@QEAAXW4TransportLayer@@@Z
-     * @hash   1924192734
+     * @hash   1885844990
      */
     MCAPI void setActiveTransportLayer(enum class TransportLayer);
     /**
      * @symbol ?setNetherNetServerLocator@ServerLocatorComposite@@QEAAXAEBV?$shared_ptr@UNetherNetInstance@@@std@@@Z
-     * @hash   841627145
+     * @hash   803279401
      */
     MCAPI void setNetherNetServerLocator(class std::shared_ptr<struct NetherNetInstance> const &);
 

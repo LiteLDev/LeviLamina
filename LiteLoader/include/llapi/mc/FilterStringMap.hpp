@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0FilterStringMap@@QEAA@V?$initializer_list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UFilterInputDefinition@@@std@@@std@@@Z
-     * @hash   753611960
+     * @hash   836181080
      */
     MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
     /**
      * @symbol ??0FilterStringMap@@QEAA@AEBU0@@Z
-     * @hash   -1055043723
+     * @hash   -972474603
      */
     MCAPI FilterStringMap(struct FilterStringMap const &);
     /**
      * @symbol ??4FilterStringMap@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1525636650
+     * @hash   -1443082906
      */
     MCAPI struct FilterStringMap & operator=(struct FilterStringMap &&);
     /**
      * @symbol ??1FilterStringMap@@QEAA@XZ
-     * @hash   1845461695
+     * @hash   1928015439
      */
     MCAPI ~FilterStringMap();
 

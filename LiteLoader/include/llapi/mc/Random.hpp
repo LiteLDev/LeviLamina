@@ -33,93 +33,93 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
     /**
      * @symbol ?consumeCount@Random@@UEAAXI@Z
-     * @hash   1543849971
+     * @hash   1699439715
      */
     MCVAPI void consumeCount(unsigned int);
     /**
      * @symbol ?fork@Random@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-     * @hash   -778469089
+     * @hash   -622879345
      */
     MCVAPI std::unique_ptr<class IRandom> fork();
     /**
      * @symbol ?nextBoolean@Random@@UEAA_NXZ
-     * @hash   461247211
+     * @hash   616836955
      */
     MCVAPI bool nextBoolean();
     /**
      * @symbol ?nextDouble@Random@@UEAANXZ
-     * @hash   802540683
+     * @hash   958130427
      */
     MCVAPI double nextDouble();
     /**
      * @symbol ?nextFloat@Random@@UEAAMXZ
-     * @hash   -165627723
+     * @hash   -10037979
      */
     MCVAPI float nextFloat();
     /**
      * @symbol ?nextGaussianDouble@Random@@UEAANXZ
-     * @hash   -609589770
+     * @hash   -454000026
      */
     MCVAPI double nextGaussianDouble();
     /**
      * @symbol ?nextInt@Random@@UEAAHH@Z
-     * @hash   -295581990
+     * @hash   -139992246
      */
     MCVAPI int nextInt(int);
     /**
      * @symbol ?nextInt@Random@@UEAAHXZ
-     * @hash   1716460485
+     * @hash   1872050229
      */
     MCVAPI int nextInt();
     /**
      * @symbol ?nextLong@Random@@UEAA_JXZ
-     * @hash   -689169630
+     * @hash   -533579886
      */
     MCVAPI __int64 nextLong();
     /**
      * @symbol ??1Random@@UEAA@XZ
-     * @hash   1520156260
+     * @hash   1675746004
      */
     MCVAPI ~Random();
 #endif
     /**
      * @symbol ??0Random@@QEAA@XZ
-     * @hash   -322069937
+     * @hash   -150827425
      */
     MCAPI Random();
     /**
      * @symbol ??0Random@@QEAA@I_N@Z
-     * @hash   -2105635301
+     * @hash   -1950045557
      */
     MCAPI Random(unsigned int, bool);
     /**
      * @symbol ?nextFloat@Random@@QEAAMMM@Z
-     * @hash   -1783684002
+     * @hash   -1627617602
      */
     MCAPI float nextFloat(float, float);
     /**
      * @symbol ?nextGaussianFloat@Random@@QEAAMXZ
-     * @hash   -1803438714
+     * @hash   -1647710586
      */
     MCAPI float nextGaussianFloat();
     /**
      * @symbol ?nextGaussianInt@Random@@QEAAHH@Z
-     * @hash   236745075
+     * @hash   392765347
      */
     MCAPI int nextGaussianInt(int);
     /**
      * @symbol ?nextInt@Random@@QEAAHHH@Z
-     * @hash   -669234048
+     * @hash   -513336784
      */
     MCAPI int nextInt(int, int);
     /**
      * @symbol ?nextIntInclusive@Random@@QEAAHHH@Z
-     * @hash   -1627188734
+     * @hash   -1471168462
      */
     MCAPI int nextIntInclusive(int, int);
     /**
      * @symbol ?getThreadLocal@Random@@SAAEAV1@XZ
-     * @hash   1561133380
+     * @hash   1721182164
      */
     MCAPI static class Random & getThreadLocal();
 
@@ -128,7 +128,7 @@ public:
 private:
     /**
      * @symbol ?mThreadLocalRandom@Random@@0V?$ThreadLocalObject@VRandom@@V?$allocator@VRandom@@@std@@@Threading@Bedrock@@A
-     * @hash   -1034962643
+     * @hash   -173245475
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
 

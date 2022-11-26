@@ -30,37 +30,37 @@ public:
 public:
     /**
      * @symbol ??0EntitySet@@QEAA@XZ
-     * @hash   -1256058437
+     * @hash   -1200135925
      */
     MCAPI EntitySet();
     /**
      * @symbol ??0EntitySet@@QEAA@AEBV0@@Z
-     * @hash   505236209
+     * @hash   561158721
      */
     MCAPI EntitySet(class EntitySet const &);
     /**
      * @symbol ??0EntitySet@@QEAA@$$QEAV0@@Z
-     * @hash   1160431271
+     * @hash   1216353783
      */
     MCAPI EntitySet(class EntitySet &&);
     /**
      * @symbol ?add@EntitySet@@QEAA_NAEBVEntityContext@@@Z
-     * @hash   988859981
+     * @hash   1045843437
      */
     MCAPI bool add(class EntityContext const &);
     /**
      * @symbol ?erase@EntitySet@@QEAA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CB_KVWeakEntityRef@@@std@@@std@@@std@@@std@@V23@@Z
-     * @hash   1042843458
+     * @hash   1099519394
      */
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>> erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>>);
     /**
      * @symbol ?find@EntitySet@@QEBA?AVWeakEntityRef@@AEBVEntityContext@@@Z
-     * @hash   151203399
+     * @hash   208186855
      */
     MCAPI class WeakEntityRef find(class EntityContext const &) const;
     /**
      * @symbol ??4EntitySet@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1906804398
+     * @hash   -1850881886
      */
     MCAPI class EntitySet & operator=(class EntitySet &&);
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?getInteraction@LeashableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   1603610409
+     * @hash   1750897113
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?leash@LeashableComponent@@QEAAXAEAVActor@@0@Z
-     * @hash   -2022545641
+     * @hash   -1875166681
      */
     MCAPI void leash(class Actor &, class Actor &);
     /**
      * @symbol ?unleash@LeashableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -2039183892
+     * @hash   -1891804932
      */
     MCAPI void unleash(class Actor &);
 

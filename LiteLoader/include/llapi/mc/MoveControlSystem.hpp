@@ -37,13 +37,13 @@ public:
     virtual ~MoveControlSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@MoveControlSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1773855397
+     * @hash   -1723437493
      */
     virtual void tick(class EntityRegistry &);
 

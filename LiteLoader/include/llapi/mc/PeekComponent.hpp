@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?getDuration@PeekComponent@@QEAAAEAHXZ
-     * @hash   -1325059233
+     * @hash   -1177465009
      */
     MCAPI int & getDuration();
     /**
      * @symbol ?getHadTarget@PeekComponent@@QEBA_NXZ
-     * @hash   -272977348
+     * @hash   -125506132
      */
     MCAPI bool getHadTarget() const;
     /**
      * @symbol ?setHadTarget@PeekComponent@@QEAAX_N@Z
-     * @hash   659767488
+     * @hash   807115696
      */
     MCAPI void setHadTarget(bool);
 

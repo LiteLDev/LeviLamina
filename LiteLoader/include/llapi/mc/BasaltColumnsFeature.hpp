@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@BasaltColumnsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1965262568
+     * @hash   -1809196168
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_findSurface@BasaltColumnsFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@VBlockPos@@HH@Z
-     * @hash   2121644493
+     * @hash   -2017256403
      */
     MCAPI class std::optional<class BlockPos> _findSurface(class BlockSource &, class BlockPos, int, int) const;
     /**
      * @symbol ?_placeColumnCluster@BasaltColumnsFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@HH@Z
-     * @hash   1507173051
+     * @hash   1663239451
      */
     MCAPI bool _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
 

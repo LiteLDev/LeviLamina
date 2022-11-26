@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
-     * @hash   -2078027765
+     * @hash   -1515542933
      */
     virtual struct ContainerValidationResult tryActivate();
 

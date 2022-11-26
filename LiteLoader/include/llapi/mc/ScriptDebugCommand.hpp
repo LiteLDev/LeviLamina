@@ -37,24 +37,24 @@ public:
     virtual ~ScriptDebugCommand();
     /**
      * @symbol ??0ScriptDebugCommand@@QEAA@XZ
-     * @hash   57342303
+     * @hash   698060223
      */
     MCAPI ScriptDebugCommand();
 
 //protected:
     /**
      * @symbol ?_handleDebuggerAttach@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DebuggerAction@1@1GAEAVCommandOutput@@@Z
-     * @hash   806441362
+     * @hash   1447113154
      */
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum class ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
     /**
      * @symbol ?_handleProfilerAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfilerAction@1@AEAVCommandOutput@@@Z
-     * @hash   1865693604
+     * @hash   -1788586524
      */
     MCAPI void _handleProfilerAction(class IScriptDebugger *, std::string const &, enum class ScriptDebugCommand::ProfilerAction, class CommandOutput &) const;
     /**
      * @symbol ?_handleWatchdogAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4WatchdogAction@1@AEAVCommandOutput@@@Z
-     * @hash   -1006840676
+     * @hash   -366153508
      */
     MCAPI void _handleWatchdogAction(class IScriptDebugger *, std::string const &, enum class ScriptDebugCommand::WatchdogAction, class CommandOutput &) const;
 

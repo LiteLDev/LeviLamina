@@ -38,7 +38,7 @@ public:
     virtual ~BuriedTreasureStart();
     /**
      * @symbol ??0BuriedTreasureStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-     * @hash   -345686180
+     * @hash   -173982388
      */
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 

@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0ClockSpriteCalculator@@QEAA@XZ
-     * @hash   -224965455
+     * @hash   -295464415
      */
     MCAPI ClockSpriteCalculator();
     /**
      * @symbol ?getFrame@ClockSpriteCalculator@@QEBAHXZ
-     * @hash   -218105548
+     * @hash   -46847660
      */
     MCAPI int getFrame() const;
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-     * @hash   -1089246750
+     * @hash   -522133742
      */
     MCAPI int update(class Actor &, bool);
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEBVBlockSource@@AEBVVec3@@_N@Z
-     * @hash   205603871
+     * @hash   772716879
      */
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
 

@@ -39,22 +39,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValid@PrivateKeyManager@@UEBA_NXZ
-     * @hash   -595207751
+     * @hash   -641135863
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
-     * @hash   -1831492720
+     * @hash   -1877359328
      */
     MCAPI PrivateKeyManager(enum class Crypto::Asymmetric::System);
     /**
      * @symbol ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z
-     * @hash   -847079585
+     * @hash   -892976945
      */
     MCAPI std::string computeSecret(class KeyManager const &) const;
     /**
      * @symbol ?sign@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4HashType@Hash@Crypto@@@Z
-     * @hash   -1685334908
+     * @hash   -1731263020
      */
     MCAPI std::string sign(std::string const &, enum class Crypto::Hash::HashType) const;
 

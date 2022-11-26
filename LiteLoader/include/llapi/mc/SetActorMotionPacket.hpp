@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetActorMotionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -950950995
+     * @hash   -790379427
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetActorMotionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1393318794
+     * @hash   1319114218
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetActorMotionPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1030494973
+     * @hash   956290397
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetActorMotionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1550332413
+     * @hash   1476127837
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetActorMotionPacket@@QEAA@XZ
-     * @hash   -679996243
+     * @hash   -754200819
      */
     MCAPI SetActorMotionPacket();
     /**
      * @symbol ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
-     * @hash   1018879118
+     * @hash   944674542
      */
     MCAPI SetActorMotionPacket(class Actor const &);
 

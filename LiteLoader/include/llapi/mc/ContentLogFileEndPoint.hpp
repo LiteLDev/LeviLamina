@@ -34,38 +34,38 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
     /**
      * @symbol ?flush@ContentLogFileEndPoint@@UEAAXXZ
-     * @hash   1676204943
+     * @hash   -2107141329
      */
     MCVAPI void flush();
     /**
      * @symbol ?isEnabled@ContentLogFileEndPoint@@UEBA_NXZ
-     * @hash   -1212080333
+     * @hash   -669076893
      */
     MCVAPI bool isEnabled() const;
     /**
      * @symbol ?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-     * @hash   -1719860203
+     * @hash   -1208239179
      */
     MCVAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**
      * @symbol ?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ
-     * @hash   60962093
+     * @hash   157707885
      */
     MCVAPI bool logOnlyOnce() const;
     /**
      * @symbol ?setEnabled@ContentLogFileEndPoint@@UEAAX_N@Z
-     * @hash   -309908414
+     * @hash   201697234
      */
     MCVAPI void setEnabled(bool);
 #endif
     /**
      * @symbol ??0ContentLogFileEndPoint@@QEAA@VPath@Core@@0@Z
-     * @hash   -222211580
+     * @hash   289409444
      */
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
     /**
      * @symbol ?FILE_NAME@ContentLogFileEndPoint@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
-     * @hash   -126216757
+     * @hash   433346635
      */
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 

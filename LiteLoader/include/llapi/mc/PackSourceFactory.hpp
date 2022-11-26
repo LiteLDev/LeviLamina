@@ -40,90 +40,90 @@ public:
     /**
      * @vftbl  1
      * @symbol ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
-     * @hash   -403115985
+     * @hash   -408989617
      */
     virtual class WorldTemplatePackSource & createWorldTemplatePackSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, enum class PackType, enum class PackOrigin);
     /**
      * @vftbl  2
      * @symbol ?getWorldTemplatePackSource@PackSourceFactory@@UEBAPEAVWorldTemplatePackSource@@AEBVUUID@mce@@W4PackType@@@Z
-     * @hash   433775330
+     * @hash   427901698
      */
     virtual class WorldTemplatePackSource * getWorldTemplatePackSource(class mce::UUID const &, enum class PackType) const;
     /**
      * @vftbl  3
      * @symbol ?createDirectoryPackSource@PackSourceFactory@@UEAAAEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
-     * @hash   -934165366
+     * @hash   -940038998
      */
     virtual class DirectoryPackSource & createDirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
     /**
      * @vftbl  4
      * @symbol ?getDirectoryPackSource@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
-     * @hash   95321684
+     * @hash   89448052
      */
     virtual class DirectoryPackSource * getDirectoryPackSource(class Core::Path const &, enum class PackType) const;
     /**
      * @vftbl  5
      * @symbol ?createInPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
-     * @hash   -2112139414
+     * @hash   -2118013046
      */
     virtual class InPackagePackSource & createInPackagePackSource(enum class PackType);
     /**
      * @vftbl  6
      * @symbol ?getInPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
-     * @hash   -120095304
+     * @hash   -125968936
      */
     virtual class InPackagePackSource * getInPackagePackSource(enum class PackType);
     /**
      * @vftbl  7
      * @symbol ?createWorldHistoryPackSource@PackSourceFactory@@UEAAAEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
-     * @hash   1373261011
+     * @hash   1367387379
      */
     virtual class WorldHistoryPackSource & createWorldHistoryPackSource(class Core::Path const &, enum class PackType);
     /**
      * @vftbl  8
      * @symbol ?getWorldHistoryPackSource@PackSourceFactory@@UEBAPEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
-     * @hash   -1490765912
+     * @hash   -1496639544
      */
     virtual class WorldHistoryPackSource * getWorldHistoryPackSource(class Core::Path const &, enum class PackType) const;
     /**
      * @vftbl  9
      * @symbol ?getDirectoryPackSourceContaining@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBUPackIdVersion@@@Z
-     * @hash   -442550912
+     * @hash   -448424544
      */
     virtual class DirectoryPackSource * getDirectoryPackSourceContaining(struct PackIdVersion const &) const;
     /**
      * @vftbl  10
      * @symbol ?removeFromDirectoryPackSource@PackSourceFactory@@UEAAXAEBVPath@Core@@@Z
-     * @hash   -488249343
+     * @hash   -494122975
      */
     virtual void removeFromDirectoryPackSource(class Core::Path const &);
     /**
      * @vftbl  11
      * @symbol ?createDynamicPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
-     * @hash   -2131154612
+     * @hash   -2137028244
      */
     virtual class InPackagePackSource & createDynamicPackagePackSource(enum class PackType);
     /**
      * @vftbl  12
      * @symbol ?getDynamicPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
-     * @hash   547389734
+     * @hash   541516102
      */
     virtual class InPackagePackSource * getDynamicPackagePackSource(enum class PackType);
     /**
      * @vftbl  13
      * @symbol ?setDynamicPackagePacks@PackSourceFactory@@UEAAXAEBV?$shared_ptr@VIDynamicPackagePacks@@@std@@@Z
-     * @hash   -1355822504
+     * @hash   -1361696136
      */
     virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const &);
     /**
      * @vftbl  14
      * @symbol ?setDynamicPackageRoot@PackSourceFactory@@UEAAXV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   1673885590
+     * @hash   1668011958
      */
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
     /**
      * @symbol ??0PackSourceFactory@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@@Z
-     * @hash   -669949036
+     * @hash   -675822668
      */
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const &);
 

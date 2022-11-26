@@ -39,42 +39,42 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@BeaconContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -885849210
+     * @hash   -730090330
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@BeaconContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   747691305
+     * @hash   903450185
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@BeaconContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   496101602
+     * @hash   651860482
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  17
      * @symbol ?_postInit@BeaconContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   909226589
+     * @hash   1064985469
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0BeaconContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   480224732
+     * @hash   635983612
      */
     MCAPI BeaconContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
-     * @hash   -1790278083
+     * @hash   -1036446619
      */
     MCAPI static int const PAYMENT_SLOT;
 
 //private:
     /**
      * @symbol ?_resetSelectionState@BeaconContainerManagerModel@@AEAAXXZ
-     * @hash   -351802808
+     * @hash   -196043928
      */
     MCAPI void _resetSelectionState();
 

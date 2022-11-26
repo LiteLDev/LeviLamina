@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1RideableComponentData@@QEAA@XZ
-     * @hash   1738312593
+     * @hash   1877250129
      */
     MCAPI ~RideableComponentData();
 

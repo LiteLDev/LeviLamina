@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ?createDataForStorage@BlendingData@@QEBA?AUPersistentBlendData@@W4BlendVersion@@@Z
-     * @hash   -625181201
+     * @hash   132086799
      */
     MCAPI struct PersistentBlendData createDataForStorage(enum class BlendVersion) const;
     /**
      * @symbol ?getBiome@BlendingData@@QEBA?AV?$ScalarOptional@E@@HHH@Z
-     * @hash   296747036
+     * @hash   1054015036
      */
     MCAPI class ScalarOptional<unsigned char> getBiome(int, int, int) const;
     /**
      * @symbol ?getBlockType@BlendingData@@QEBA?AW4BlendingBlockType@@HHH@Z
-     * @hash   1919735467
+     * @hash   -1617963829
      */
     MCAPI enum class BlendingBlockType getBlockType(int, int, int) const;
     /**
      * @symbol ?getDensity@BlendingData@@QEBA?AV?$ScalarOptional@M@@HHH@Z
-     * @hash   -455512791
+     * @hash   301755209
      */
     MCAPI class ScalarOptional<float> getDensity(int, int, int) const;
     /**
      * @symbol ?getHeight@BlendingData@@QEBA?AV?$ScalarOptional@F@@HH@Z
-     * @hash   -1552701139
+     * @hash   -795433139
      */
     MCAPI class ScalarOptional<short> getHeight(int, int) const;
     /**
      * @symbol ?hasBlendDataAt@BlendingData@@QEBA_NHH@Z
-     * @hash   1857291288
+     * @hash   -1680408008
      */
     MCAPI bool hasBlendDataAt(int, int) const;
 

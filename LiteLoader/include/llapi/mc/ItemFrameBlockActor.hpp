@@ -39,151 +39,151 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ItemFrameBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2060507385
+     * @hash   -1477038151
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ItemFrameBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   2104806552
+     * @hash   -1432738984
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1153667262
+     * @hash   -396245502
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  8
      * @symbol ?onChanged@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -430890086
+     * @hash   -275177334
      */
     virtual void onChanged(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?onRemoved@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1150217794
+     * @hash   -392796034
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  17
+     * @vftbl  19
      * @symbol ?getShadowRadius@ItemFrameBlockActor@@UEBAMAEAVBlockSource@@@Z
-     * @hash   1532427374
+     * @hash   1782118238
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@ItemFrameBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1029817365
+     * @hash   -874135365
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   184465703
+     * @hash   940057719
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2095212701
+     * @hash   -1442348211
      */
     MCAPI ItemFrameBlockActor(class BlockPos, enum class BlockActorType, std::string const &);
     /**
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-     * @hash   -1330765339
+     * @hash   -573358955
      */
     MCAPI ItemFrameBlockActor(class BlockPos);
     /**
      * @symbol ?actuallyDropItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   227857539
+     * @hash   985263923
      */
     MCAPI void actuallyDropItem(class BlockSource &, bool);
     /**
      * @symbol ?dropFramedItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   304097683
+     * @hash   1061504067
      */
     MCAPI void dropFramedItem(class BlockSource &, bool);
     /**
      * @symbol ?getFramedItem@ItemFrameBlockActor@@QEBAAEBVItemInstance@@XZ
-     * @hash   -1304208922
+     * @hash   -1907229482
      */
     MCAPI class ItemInstance const & getFramedItem() const;
     /**
      * @symbol ?getRotation@ItemFrameBlockActor@@QEAAMXZ
-     * @hash   -1437451328
+     * @hash   -680029568
      */
     MCAPI float getRotation();
     /**
      * @symbol ?rotateFramedItem@ItemFrameBlockActor@@QEAAXXZ
-     * @hash   52030269
+     * @hash   809452029
      */
     MCAPI void rotateFramedItem();
     /**
      * @symbol ?setItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@AEBVItemInstance@@@Z
-     * @hash   -1165784227
+     * @hash   -408362467
      */
     MCAPI void setItem(class BlockSource &, class ItemInstance const &);
     /**
      * @symbol ?updateNameTag@ItemFrameBlockActor@@QEAAXXZ
-     * @hash   1355346961
+     * @hash   2112768721
      */
     MCAPI void updateNameTag();
     /**
      * @symbol ?ROTATION_DEGREES@ItemFrameBlockActor@@2MB
-     * @hash   358059403
+     * @hash   1138852683
      */
     MCAPI static float const ROTATION_DEGREES;
 
 //private:
     /**
      * @symbol ?_checkMapRemoval@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEAVItemInstance@@@Z
-     * @hash   495549395
+     * @hash   1252955779
      */
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     /**
      * @symbol ?_updateBit@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEBV?$ItemStateVariant@_N@@AEBVHashedString@@@Z
-     * @hash   -1533324266
+     * @hash   -775917882
      */
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 

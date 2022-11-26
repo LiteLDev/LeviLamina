@@ -31,92 +31,92 @@ public:
 public:
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@_N@Z
-     * @hash   74062882
+     * @hash   112026226
      */
     MCAPI CommandOutputParameter(bool);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@W4NoCountType@0@@Z
-     * @hash   -48325769
+     * @hash   -10362425
      */
     MCAPI CommandOutputParameter(enum class CommandOutputParameter::NoCountType);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@VBlockPos@@@Z
-     * @hash   2097849242
+     * @hash   2135812586
      */
     MCAPI CommandOutputParameter(class BlockPos);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@PEBD@Z
-     * @hash   -1766324899
+     * @hash   -1728346179
      */
     MCAPI CommandOutputParameter(char const *);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@M@Z
-     * @hash   1943669200
+     * @hash   1981647920
      */
     MCAPI CommandOutputParameter(float);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@H@Z
-     * @hash   -769697246
+     * @hash   -731718526
      */
     MCAPI CommandOutputParameter(int);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBVActor@@@Z
-     * @hash   2060211442
+     * @hash   2098190162
      */
     MCAPI CommandOutputParameter(class Actor const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@PEBVActor@@@Z
-     * @hash   -1113684033
+     * @hash   -1075705313
      */
     MCAPI CommandOutputParameter(class Actor const *);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1169724255
+     * @hash   -1131730159
      */
     MCAPI CommandOutputParameter(std::vector<std::string> const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$vector@PEBVActor@@V?$allocator@PEBVActor@@@std@@@std@@@Z
-     * @hash   -1605236334
+     * @hash   -1567242238
      */
     MCAPI CommandOutputParameter(std::vector<class Actor const *> const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$vector@PEBVPlayer@@V?$allocator@PEBVPlayer@@@std@@@std@@@Z
-     * @hash   -2013247474
+     * @hash   -1975253378
      */
     MCAPI CommandOutputParameter(std::vector<class Player const *> const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   437043304
+     * @hash   475037400
      */
     MCAPI CommandOutputParameter(std::string const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$CommandSelectorResults@VActor@@@@@Z
-     * @hash   1410740749
+     * @hash   1448734845
      */
     MCAPI CommandOutputParameter(class CommandSelectorResults<class Actor> const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV?$CommandSelectorResults@VPlayer@@@@@Z
-     * @hash   1361942961
+     * @hash   1399937057
      */
     MCAPI CommandOutputParameter(class CommandSelectorResults<class Player> const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@AEBV0@@Z
-     * @hash   -33017823
+     * @hash   4976273
      */
     MCAPI CommandOutputParameter(class CommandOutputParameter const &);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@$$QEAV0@@Z
-     * @hash   -1510848477
+     * @hash   -1472854381
      */
     MCAPI CommandOutputParameter(class CommandOutputParameter &&);
     /**
      * @symbol ??4CommandOutputParameter@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1188563286
+     * @hash   1226511254
      */
     MCAPI class CommandOutputParameter & operator=(class CommandOutputParameter &&);
     /**
      * @symbol ??1CommandOutputParameter@@QEAA@XZ
-     * @hash   189567767
+     * @hash   277241719
      */
     MCAPI ~CommandOutputParameter();
 

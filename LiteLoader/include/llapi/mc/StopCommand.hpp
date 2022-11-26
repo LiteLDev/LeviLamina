@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1259691542
+     * @hash   -1156779974
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
-     * @hash   933399169
+     * @hash   1036310737
      */
     MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
-     * @hash   675127053
+     * @hash   1542410333
      */
     MCAPI static class DedicatedServer * mServer;
 

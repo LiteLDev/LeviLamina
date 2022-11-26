@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@MoveToNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   -1412888293
+     * @hash   -1330688197
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@MoveToNode@@EEAAXAEAVActor@@@Z
-     * @hash   1230370143
+     * @hash   1312570239
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0MoveToNode@@QEAA@XZ
-     * @hash   469160794
+     * @hash   551360890
      */
     MCAPI MoveToNode();
 

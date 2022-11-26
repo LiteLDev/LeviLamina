@@ -38,23 +38,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AddEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1462997874
+     * @hash   1388608786
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AddEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1477086751
+     * @hash   1402697663
      */
     virtual std::string getName() const;
     /**
      * @symbol ??0AddEntityPacket@@QEAA@XZ
-     * @hash   -1632574504
+     * @hash   -1706963592
      */
     MCAPI AddEntityPacket();
     /**
      * @symbol ??0AddEntityPacket@@QEAA@AEBVEntityContext@@@Z
-     * @hash   1484121093
+     * @hash   1409732005
      */
     MCAPI AddEntityPacket(class EntityContext const &);
 

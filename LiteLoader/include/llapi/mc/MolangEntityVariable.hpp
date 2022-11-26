@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0MolangEntityVariable@@QEAA@AEBVHashedString@@@Z
-     * @hash   148676676
+     * @hash   159901156
      */
     MCAPI MolangEntityVariable(class HashedString const &);
     /**
      * @symbol ??1MolangEntityVariable@@QEAA@XZ
-     * @hash   -661679207
+     * @hash   -570684039
      */
     MCAPI ~MolangEntityVariable();
 

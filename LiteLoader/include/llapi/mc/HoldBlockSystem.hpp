@@ -38,20 +38,20 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     * @hash   -1289317431
+     * @hash   -1199214071
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
      * @vftbl  2
      * @symbol ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1973404627
+     * @hash   -1884439091
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_holdBlockSystemOnActorDie@HoldBlockSystem@@CAXAEAUActorDieEvent@@@Z
-     * @hash   -1909402583
+     * @hash   -1819299223
      */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 

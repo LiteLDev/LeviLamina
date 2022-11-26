@@ -39,44 +39,44 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@ScatterParams@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   546628440
+     * @hash   1115771080
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@ScatterParams@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   777334748
+     * @hash   1346431260
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     /**
      * @symbol ?scatter@ScatterParams@@QEBA?AVScatteredPositions@1@AEAVRenderParams@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -379857524
+     * @hash   189300492
      */
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??1ScatterParams@@QEAA@XZ
-     * @hash   1618339584
+     * @hash   1724064960
      */
     MCAPI ~ScatterParams();
     /**
      * @symbol ?initMolangParams@ScatterParams@@SAXAEAVRenderParams@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1712578096
+     * @hash   -1143481584
      */
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
     /**
      * @symbol ?initScatterParamIndices@ScatterParams@@SAXXZ
-     * @hash   -241450509
+     * @hash   327646003
      */
     MCAPI static void initScatterParamIndices();
 
 //private:
     /**
      * @symbol ?_getPos@ScatterParams@@AEBA?AVBlockPos@@IAEBV2@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1110963509
+     * @hash   1680121525
      */
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ?_parseExpressionNodeFloat@ScatterParams@@AEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z
-     * @hash   1995825028
+     * @hash   -1729984252
      */
     MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
 

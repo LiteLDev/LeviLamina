@@ -32,209 +32,209 @@ public:
 public:
     /**
      * @symbol ??0SubClientConnectionRequest@@QEAA@AEBV0@@Z
-     * @hash   547227761
+     * @hash   504959137
      */
     MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const &);
     /**
      * @symbol ?getAnimatedImageData@SubClientConnectionRequest@@QEBA?AV?$vector@VAnimatedImageData@@V?$allocator@VAnimatedImageData@@@std@@@std@@XZ
-     * @hash   -877673892
+     * @hash   -752928404
      */
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     /**
      * @symbol ?getArmSize@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1941669666
+     * @hash   -1816908802
      */
     MCAPI std::string getArmSize() const;
     /**
      * @symbol ?getCapeData@SubClientConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-     * @hash   -1046458446
+     * @hash   -921697582
      */
     MCAPI std::vector<unsigned char> getCapeData() const;
     /**
      * @symbol ?getCapeId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1023998954
+     * @hash   1148744442
      */
     MCAPI std::string getCapeId() const;
     /**
      * @symbol ?getCapeImageHeight@SubClientConnectionRequest@@QEBAGXZ
-     * @hash   1192923559
+     * @hash   1317653671
      */
     MCAPI unsigned short getCapeImageHeight() const;
     /**
      * @symbol ?getCapeImageWidth@SubClientConnectionRequest@@QEBAGXZ
-     * @hash   -522557419
+     * @hash   -397796555
      */
     MCAPI unsigned short getCapeImageWidth() const;
     /**
      * @symbol ?getCertificate@SubClientConnectionRequest@@QEBAPEBVCertificate@@XZ
-     * @hash   -503036159
+     * @hash   -378013903
      */
     MCAPI class Certificate const * getCertificate() const;
     /**
      * @symbol ?getClientRandomId@SubClientConnectionRequest@@QEBA_KXZ
-     * @hash   -1544859587
+     * @hash   -1420067971
      */
     MCAPI unsigned __int64 getClientRandomId() const;
     /**
      * @symbol ?getDeviceId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1097720224
+     * @hash   1222511840
      */
     MCAPI std::string getDeviceId() const;
     /**
      * @symbol ?getDeviceOS@SubClientConnectionRequest@@QEBA?AW4BuildPlatform@@XZ
-     * @hash   -11721514
+     * @hash   113039350
      */
     MCAPI enum class BuildPlatform getDeviceOS() const;
     /**
      * @symbol ?getPersonaPieces@SubClientConnectionRequest@@QEBA?AV?$vector@VSerializedPersonaPieceHandle@@V?$allocator@VSerializedPersonaPieceHandle@@@std@@@std@@XZ
-     * @hash   -2138845832
+     * @hash   -2014084968
      */
     MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
     /**
      * @symbol ?getPieceTintColors@SubClientConnectionRequest@@QEBA?AV?$unordered_map@W4PieceType@persona@@VTintMapColor@@U?$hash@W4PieceType@persona@@@std@@U?$equal_to@W4PieceType@persona@@@5@V?$allocator@U?$pair@$$CBW4PieceType@persona@@VTintMapColor@@@std@@@5@@std@@XZ
-     * @hash   1416807107
+     * @hash   1541475715
      */
     MCAPI class std::unordered_map<enum class persona::PieceType, class TintMapColor, struct std::hash<enum class persona::PieceType>, struct std::equal_to<enum class persona::PieceType>, class std::allocator<struct std::pair<enum class persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     /**
      * @symbol ?getPlatformId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1564525578
+     * @hash   1689301818
      */
     MCAPI std::string getPlatformId() const;
     /**
      * @symbol ?getPlatformOfflineId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2011848374
+     * @hash   -1887072134
      */
     MCAPI std::string getPlatformOfflineId() const;
     /**
      * @symbol ?getPlatformOnlineId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1832968496
+     * @hash   1957760112
      */
     MCAPI std::string getPlatformOnlineId() const;
     /**
      * @symbol ?getPlayFabId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1772664576
+     * @hash   1897440816
      */
     MCAPI std::string getPlayFabId() const;
     /**
      * @symbol ?getSelfSignedId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -429412572
+     * @hash   -304651708
      */
     MCAPI std::string getSelfSignedId() const;
     /**
      * @symbol ?getSkinAnimationData@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   225726022
+     * @hash   350471510
      */
     MCAPI std::string getSkinAnimationData() const;
     /**
      * @symbol ?getSkinColor@SubClientConnectionRequest@@QEBA?AVColor@mce@@XZ
-     * @hash   1184593454
+     * @hash   1309354318
      */
     MCAPI class mce::Color getSkinColor() const;
     /**
      * @symbol ?getSkinData@SubClientConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-     * @hash   -1954881742
+     * @hash   -1830151630
      */
     MCAPI std::vector<unsigned char> getSkinData() const;
     /**
      * @symbol ?getSkinGeometry@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1570821324
+     * @hash   1528552700
      */
     MCAPI std::string getSkinGeometry() const;
     /**
      * @symbol ?getSkinGeometryEngineVersion@SubClientConnectionRequest@@QEBA?AVSemVersion@@XZ
-     * @hash   -125776170
+     * @hash   -1061434
      */
     MCAPI class SemVersion getSkinGeometryEngineVersion() const;
     /**
      * @symbol ?getSkinId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2001964738
+     * @hash   -1877219250
      */
     MCAPI std::string getSkinId() const;
     /**
      * @symbol ?getSkinImageHeight@SubClientConnectionRequest@@QEBAGXZ
-     * @hash   1789743975
+     * @hash   1914474087
      */
     MCAPI unsigned short getSkinImageHeight() const;
     /**
      * @symbol ?getSkinImageWidth@SubClientConnectionRequest@@QEBAGXZ
-     * @hash   60169301
+     * @hash   184930165
      */
     MCAPI unsigned short getSkinImageWidth() const;
     /**
      * @symbol ?getSkinResourcePatch@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -465997106
+     * @hash   -508281106
      */
     MCAPI std::string getSkinResourcePatch() const;
     /**
      * @symbol ?getThirdPartyName@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   465244946
+     * @hash   590036562
      */
     MCAPI std::string getThirdPartyName() const;
     /**
      * @symbol ?isCapeOnClassicSkin@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   181982234
+     * @hash   306743098
      */
     MCAPI bool isCapeOnClassicSkin() const;
     /**
      * @symbol ?isPersonaSkin@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   571298290
+     * @hash   696089906
      */
     MCAPI bool isPersonaSkin() const;
     /**
      * @symbol ?isPremiumSkin@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   -2039828600
+     * @hash   -1915036984
      */
     MCAPI bool isPremiumSkin() const;
     /**
      * @symbol ?isPrimaryUser@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   -2020603302
+     * @hash   -2062902678
      */
     MCAPI bool isPrimaryUser() const;
     /**
      * @symbol ?isThirdPartyNameOnly@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   1904935250
+     * @hash   2029726866
      */
     MCAPI bool isThirdPartyNameOnly() const;
     /**
      * @symbol ?isTrustedSkin@SubClientConnectionRequest@@QEBA_NXZ
-     * @hash   74847688
+     * @hash   199639304
      */
     MCAPI bool isTrustedSkin() const;
     /**
      * @symbol ?toString@SubClientConnectionRequest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -923750216
+     * @hash   -798958600
      */
     MCAPI std::string toString();
     /**
      * @symbol ?verify@SubClientConnectionRequest@@QEAA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_J@Z
-     * @hash   1499892876
+     * @hash   1624684492
      */
     MCAPI bool verify(std::vector<std::string> const &, __int64);
     /**
      * @symbol ?verifySelfSigned@SubClientConnectionRequest@@QEAA_NXZ
-     * @hash   1025732868
+     * @hash   1150524484
      */
     MCAPI bool verifySelfSigned();
     /**
      * @symbol ??1SubClientConnectionRequest@@QEAA@XZ
-     * @hash   -2141550400
+     * @hash   -2016804912
      */
     MCAPI ~SubClientConnectionRequest();
     /**
      * @symbol ?fromString@SubClientConnectionRequest@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1408716538
+     * @hash   1366447914
      */
     MCAPI static class SubClientConnectionRequest fromString(std::string const &);
 
 //private:
     /**
      * @symbol ??0SubClientConnectionRequest@@AEAA@V?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
-     * @hash   -820687805
+     * @hash   -862956429
      */
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     /**
      * @symbol ?validate@SubClientConnectionRequest@@AEBA?AV?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@V23@_J@Z
-     * @hash   -581654174
+     * @hash   -456862558
      */
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 

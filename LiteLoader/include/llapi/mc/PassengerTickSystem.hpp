@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?createMobPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -865507758
+     * @hash   -822162814
      */
     MCAPI static struct TickingSystemWithInfo createMobPostPassengerTickSystem();
     /**
      * @symbol ?createPlayerPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -352064608
+     * @hash   -308719664
      */
     MCAPI static struct TickingSystemWithInfo createPlayerPostPassengerTickSystem();
     /**
      * @symbol ?createPlayerPrePassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1509163406
+     * @hash   -1465818462
      */
     MCAPI static struct TickingSystemWithInfo createPlayerPrePassengerTickSystem();
 

@@ -33,388 +33,398 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -746367662
+     * @hash   -689291950
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -323893205
      */
     virtual ~Horse();
     /**
-     * @vftbl  35
-     * @symbol ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@M@Z
-     * @hash   1756064108
+     * @vftbl  37
+     * @symbol ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@MH@Z
+     * @hash   -976386495
      */
-    virtual class Vec3 getInterpolatedRidingOffset(float) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Horse@@UEAAXXZ
-     * @hash   927681470
+     * @hash   984142142
      */
     virtual void normalTick();
     /**
-     * @vftbl  51
+     * @vftbl  53
      * @symbol ?positionPassenger@Horse@@UEAAXAEAVActor@@M@Z
-     * @hash   -387716170
+     * @hash   -331255498
      */
     virtual void positionPassenger(class Actor &, float);
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@Horse@@UEBAMXZ
-     * @hash   -262872487
+     * @hash   -206411815
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  91
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  94
      * @symbol ?isImmobile@Horse@@MEBA_NXZ
-     * @hash   -862837404
+     * @hash   -806376732
      */
     virtual bool isImmobile() const;
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  121
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  124
      * @symbol ?onFailedTame@Horse@@UEAAXXZ
-     * @hash   487369211
+     * @hash   543829883
      */
     virtual void onFailedTame();
     /**
-     * @vftbl  125
+     * @vftbl  128
      * @symbol ?setStanding@Horse@@UEAAX_N@Z
-     * @hash   32232084
+     * @hash   89107908
      */
     virtual void setStanding(bool);
     /**
-     * @vftbl  140
+     * @vftbl  143
      * @symbol ?feed@Horse@@UEAAXH@Z
-     * @hash   -2138018633
+     * @hash   -2081680969
      */
     virtual void feed(int);
     /**
-     * @vftbl  141
+     * @vftbl  144
      * @symbol ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -83102023
+     * @hash   -26641351
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  173
+     * @vftbl  176
      * @symbol ?canFreeze@Horse@@UEBA_NXZ
-     * @hash   1751589330
+     * @hash   1807926994
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
-     */
-    virtual void __unk_vfn_181();
-    /**
      * @vftbl  183
+     * @hash   1602074556
+     */
+    virtual void __unk_vfn_183();
+    /**
+     * @vftbl  185
      * @symbol ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1796911126
+     * @hash   -1740573462
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl  185
+     * @vftbl  187
      * @symbol ?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z
-     * @hash   -292916250
+     * @hash   -236578586
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl  186
+     * @vftbl  188
      * @symbol ?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z
-     * @hash   -2110490113
+     * @hash   -2054029441
      */
     virtual void handleFallDistanceOnServer(float, float, bool);
     /**
-     * @vftbl  190
+     * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Horse@@UEAAXH@Z
-     * @hash   -1448391867
+     * @hash   -1397774075
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  217
+     * @vftbl  219
      * @symbol ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
-     * @hash   -209362221
+     * @hash   -152901549
      */
     virtual void openContainerComponent(class Player &);
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
     /**
      * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  252
      * @symbol ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   1340302048
+     * @hash   1396639712
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -666968347
+     * @hash   -610092523
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1027941101
+     * @hash   -971511181
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  274
+     * @vftbl  272
      * @symbol ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1756843579
+     * @hash   -1700413659
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  294
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  293
      * @symbol ?travel@Horse@@UEAAXMMM@Z
-     * @hash   1324925646
+     * @hash   1381801470
      */
     virtual void travel(float, float, float);
     /**
-     * @vftbl  297
+     * @vftbl  295
      * @symbol ?aiStep@Horse@@UEAAXXZ
-     * @hash   1824097262
+     * @hash   1881019214
      */
     virtual void aiStep();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  319
+     * @vftbl  317
      * @symbol ?getArmorValue@Horse@@UEBAHXZ
-     * @hash   -198030074
+     * @hash   -141692410
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
+    /**
+     * @vftbl  360
+     * @hash   -927619347
+     */
+    virtual void __unk_vfn_360();
     /**
      * @vftbl  362
-     * @hash   -1022272081
-     */
-    virtual void __unk_vfn_362();
-    /**
-     * @vftbl  364
      * @symbol ?setType@Horse@@UEAAXH@Z
-     * @hash   -1675193255
+     * @hash   -1618317431
      */
     virtual void setType(int);
     /**
-     * @vftbl  365
+     * @vftbl  363
      * @symbol ?getType@Horse@@UEBAHXZ
-     * @hash   288945006
+     * @hash   345405678
      */
     virtual int getType() const;
     /**
-     * @vftbl  366
+     * @vftbl  364
      * @symbol ?setHorseEating@Horse@@UEAAX_N@Z
-     * @hash   -2079975155
+     * @hash   -2022899443
      */
     virtual void setHorseEating(bool);
     /**
-     * @vftbl  367
+     * @vftbl  365
      * @symbol ?getStandAnim@Horse@@UEBAMM@Z
-     * @hash   352400478
+     * @hash   408861150
      */
     virtual float getStandAnim(float) const;
     /**
-     * @vftbl  368
+     * @vftbl  366
      * @symbol ?isAdult@Horse@@UEBA_NXZ
-     * @hash   346465035
+     * @hash   402925707
      */
     virtual bool isAdult() const;
     /**
-     * @vftbl  369
+     * @vftbl  367
      * @symbol ?isHorseEating@Horse@@UEBA_NXZ
-     * @hash   -741313576
+     * @hash   -684852904
      */
     virtual bool isHorseEating() const;
     /**
-     * @vftbl  370
+     * @vftbl  368
      * @symbol ?isMouthOpen@Horse@@UEBA_NXZ
-     * @hash   2075804434
+     * @hash   2132265106
      */
     virtual bool isMouthOpen() const;
     /**
-     * @vftbl  371
+     * @vftbl  369
      * @symbol ?isTailMoving@Horse@@UEBA_NXZ
-     * @hash   -892963213
+     * @hash   -836502541
      */
     virtual bool isTailMoving() const;
     /**
-     * @vftbl  372
+     * @vftbl  370
      * @symbol ?makeMad@Horse@@UEAAXXZ
-     * @hash   -1433894548
+     * @hash   -1377433876
      */
     virtual void makeMad();
     /**
-     * @vftbl  373
+     * @vftbl  371
      * @symbol ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
-     * @hash   1705511446
+     * @hash   1762387270
      */
     virtual bool tameToPlayer(class Player &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSE
     /**
      * @symbol ?useNewAi@Horse@@MEBA_NXZ
-     * @hash   -1860085275
+     * @hash   -1763585499
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   668413225
+     * @hash   724397241
      */
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
+     * @symbol ?postAiStep@Horse@@QEAAXXZ
+     * @hash   -511915941
+     */
+    MCAPI void postAiStep();
+    /**
      * @symbol ?postNormalTick@Horse@@QEAAXXZ
-     * @hash   1035406203
+     * @hash   1092481915
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?postTravel@Horse@@QEAAXPEAVActor@@_NW4HorsePostTravelType@@@Z
-     * @hash   -27882401
+     * @hash   29193311
      */
     MCAPI void postTravel(class Actor *, bool, enum class HorsePostTravelType);
     /**
-     * @symbol ?DONKEY_CHEST_COUNT@Horse@@2HB
-     * @hash   -647822317
-     */
-    MCAPI static int const DONKEY_CHEST_COUNT;
-    /**
      * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@M@Z
-     * @hash   462436997
+     * @hash   518774661
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(struct RenderRotationComponent const &, struct StandAnimationComponent const &, float);
     /**
      * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBVVec2@@MMM@Z
-     * @hash   271451032
+     * @hash   327788696
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
+    /**
+     * @symbol ?getNewPassengerPos@Horse@@SA?AVVec3@@AEBURenderPositionComponent@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@MM@Z
+     * @hash   1423793739
+     */
+    MCAPI static class Vec3 getNewPassengerPos(struct RenderPositionComponent const &, struct RenderRotationComponent const &, struct StandAnimationComponent const &, float, float);
+    /**
+     * @symbol ?setHorseFlag@Horse@@SAXVSynchedActorDataWriter@@W4HorseFlags@@_N@Z
+     * @hash   83762102
+     */
+    MCAPI static void setHorseFlag(class SynchedActorDataWriter, enum class HorseFlags, bool);
 
 //private:
     /**
-     * @symbol ?setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
-     * @hash   2043771960
+     * @symbol ?_setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
+     * @hash   850159399
      */
-    MCAPI void setHorseFlag(enum class HorseFlags, bool);
+    MCAPI void _setHorseFlag(enum class HorseFlags, bool);
     /**
-     * @symbol ?setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
-     * @hash   -1664868170
+     * @symbol ?_setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
+     * @hash   -1569996089
      */
-    MCAPI bool setHorseType(enum class ActorType &);
+    MCAPI bool _setHorseType(enum class ActorType &);
 
 private:
-    /**
-     * @symbol ?DATA_AGE@Horse@@0HB
-     * @hash   147212089
-     */
-    MCAPI static int const DATA_AGE;
 
 };

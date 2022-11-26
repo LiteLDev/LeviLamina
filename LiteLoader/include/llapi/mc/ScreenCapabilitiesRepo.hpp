@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0ScreenCapabilitiesRepo@@QEAA@XZ
-     * @hash   -1329950128
+     * @hash   -1371911232
      */
     MCAPI ScreenCapabilitiesRepo();
     /**
      * @symbol ?get@ScreenCapabilitiesRepo@@QEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1121224019
+     * @hash   -1194336899
      */
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const &) const;
 

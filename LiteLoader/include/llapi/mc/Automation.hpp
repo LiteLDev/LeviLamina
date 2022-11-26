@@ -25,12 +25,12 @@ namespace Automation {
 #undef AFTER_EXTRA
     /**
      * @symbol ?BodyData@Automation@@3PEBDEB
-     * @hash   588252154
+     * @hash   1439751970
      */
     MCAPI extern char const * BodyData;
     /**
      * @symbol ?HeaderData@Automation@@3PEBDEB
-     * @hash   -2058971886
+     * @hash   -1207472070
      */
     MCAPI extern char const * HeaderData;
 

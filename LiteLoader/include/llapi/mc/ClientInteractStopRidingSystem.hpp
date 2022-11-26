@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@ClientInteractStopRidingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   991055572
+     * @hash   1094305412
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?tick@ClientInteractStopRidingSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEBUStateVectorComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UVehicleComponent@@@@$$CBURuntimeIDComponent@@@@@Z
-     * @hash   -1167068013
+     * @hash   -1063818173
      */
     MCAPI static void tick(class StrictEntityContext &, struct PassengerComponent const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>, struct RuntimeIDComponent const>);
 

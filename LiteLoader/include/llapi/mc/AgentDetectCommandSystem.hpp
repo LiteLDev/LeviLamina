@@ -35,23 +35,23 @@ public:
     virtual ~AgentDetectCommandSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AgentDetectCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1950108606
+     * @hash   -1792320094
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?initializeObstacle@AgentDetectCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@VDetectObstacle@4@@@@Z
-     * @hash   558867359
+     * @hash   716655871
      */
     MCAPI static void initializeObstacle(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::DetectObstacle> &);
     /**
      * @symbol ?initializeRedstone@AgentDetectCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@VDetectRedstone@4@@@@Z
-     * @hash   -430320103
+     * @hash   -272531591
      */
     MCAPI static void initializeRedstone(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::DetectRedstone> &);
 

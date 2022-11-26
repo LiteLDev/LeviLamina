@@ -33,201 +33,206 @@ public:
 
 public:
     /**
-     * @vftbl  10
+     * @vftbl  12
      * @symbol ?initializeComponents@Goat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1146537435
+     * @hash   -1089923003
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -13240859
      */
     virtual ~Goat();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  133
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  136
      * @symbol ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1672047913
+     * @hash   1728662345
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @vftbl  141
+     * @vftbl  144
      * @symbol ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
-     * @hash   1273584795
+     * @hash   1330199227
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
-     * @hash   48117939
+     * @hash   104732371
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1634984812
+     * @hash   1691599244
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   486533281
+     * @hash   543163089
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  287
+     * @vftbl  285
      * @symbol ?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   -297253433
+     * @hash   -240639001
      */
     virtual enum class LevelSoundEvent getHurtSound();
     /**
-     * @vftbl  288
+     * @vftbl  286
      * @symbol ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   971585150
+     * @hash   1028199582
      */
     virtual enum class LevelSoundEvent getDeathSound();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  289
+     * @hash   1042759315
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_289();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_346();
+    /**
+     * @vftbl  360
+     * @hash   -927619347
+     */
+    virtual void __unk_vfn_360();
     /**
      * @symbol ??0Goat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1472714615
+     * @hash   1529344423
      */
     MCAPI Goat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getHornCount@Goat@@QEBAHXZ
-     * @hash   350252760
+     * @hash   406867192
      */
     MCAPI int getHornCount() const;
     /**
      * @symbol ?isScreaming@Goat@@QEAA_NXZ
-     * @hash   -1139069220
+     * @hash   -1082454788
      */
     MCAPI bool isScreaming();
     /**
      * @symbol ?reduceHornCount@Goat@@QEAAXXZ
-     * @hash   64561187
+     * @hash   121175619
      */
     MCAPI void reduceHornCount();
 
@@ -236,12 +241,12 @@ public:
 private:
     /**
      * @symbol ?DEFAULT_HORN_COUNT@Goat@@0HA
-     * @hash   955054561
+     * @hash   1808284177
      */
     MCAPI static int DEFAULT_HORN_COUNT;
     /**
      * @symbol ?SCREAMING_GOAT_VARIANT@Goat@@0HA
-     * @hash   262080737
+     * @hash   1115310353
      */
     MCAPI static int SCREAMING_GOAT_VARIANT;
 

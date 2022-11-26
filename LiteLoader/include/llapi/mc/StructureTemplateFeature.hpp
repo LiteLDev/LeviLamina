@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@StructureTemplateFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   632646740
+     * @hash   1378751764
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0StructureTemplateFeature@@QEAA@XZ
-     * @hash   -1493013835
+     * @hash   -746862683
      */
     MCAPI StructureTemplateFeature();
 

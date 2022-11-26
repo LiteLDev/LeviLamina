@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getPlayerChunkPriority@ChunkLoadPriority@@SAHAEBVChunkPos@@0AEBVVec3@@@Z
-     * @hash   1594561472
+     * @hash   2063821616
      */
     MCAPI static int getPlayerChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &);
     /**
      * @symbol ?getTickingAreaChunkPriority@ChunkLoadPriority@@SAHAEBVChunkPos@@0AEBVVec3@@_N@Z
-     * @hash   1144035735
+     * @hash   1613295879
      */
     MCAPI static int getTickingAreaChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &, bool);
 

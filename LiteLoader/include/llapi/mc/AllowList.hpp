@@ -39,48 +39,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     * @hash   1838037691
+     * @hash   1876077915
      */
     virtual void serialize(class Json::Value &);
     /**
      * @vftbl  2
      * @symbol ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     * @hash   -235152132
+     * @hash   -197081156
      */
     virtual void deserialize(class Json::Value &);
     /**
      * @symbol ??0AllowList@@QEAA@V?$function@$$A6AXXZ@std@@@Z
-     * @hash   -89280506
+     * @hash   -51209530
      */
     MCAPI AllowList(class std::function<void (void)>);
     /**
      * @symbol ?addEntry@AllowList@@QEAA_NAEBVAllowListEntry@@@Z
-     * @hash   340536681
+     * @hash   378607657
      */
     MCAPI bool addEntry(class AllowListEntry const &);
     /**
      * @symbol ?getEntries@AllowList@@QEBAAEBV?$vector@VAllowListEntry@@V?$allocator@VAllowListEntry@@@std@@@std@@XZ
-     * @hash   -1774126900
+     * @hash   -1680856084
      */
     MCAPI std::vector<class AllowListEntry> const & getEntries() const;
     /**
      * @symbol ?isAllowed@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   481414440
+     * @hash   519485416
      */
     MCAPI bool isAllowed(class mce::UUID const &, std::string const &) const;
     /**
      * @symbol ?isIgnoringPlayerLimit@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -770135250
+     * @hash   -732064274
      */
     MCAPI bool isIgnoringPlayerLimit(class mce::UUID const &, std::string const &) const;
     /**
      * @symbol ?removeByName@AllowList@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -400706129
+     * @hash   -362635153
      */
     MCAPI bool removeByName(std::string const &);
     /**
      * @symbol ?tryUpdateEntries@AllowList@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -493262176
+     * @hash   -455221952
      */
     MCAPI void tryUpdateEntries(class mce::UUID const &, std::string const &, std::string const &);
 

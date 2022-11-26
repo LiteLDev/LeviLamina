@@ -24,12 +24,12 @@ namespace VoronoiZoomMultiNoise {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getGridOffset@VoronoiZoomMultiNoise@@YA?AVVec3@@AEBVSimplePositionalRandomFactory@@VBlockPos@@@Z
-     * @hash   -996475037
+     * @hash   -239160909
      */
     MCAPI class Vec3 getGridOffset(class SimplePositionalRandomFactory const &, class BlockPos);
     /**
      * @symbol ?getZoomedVoronoiCellIndex@VoronoiZoomMultiNoise@@YAIVBlockPos@@AEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@III@Z
-     * @hash   -1256222838
+     * @hash   -498908710
      */
     MCAPI unsigned int getZoomedVoronoiCellIndex(class BlockPos, std::vector<class Vec3> const &, unsigned int, unsigned int, unsigned int);
 

@@ -33,372 +33,372 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
     /**
      * @symbol ?_applyStateToComponents@DirectPlayerMovementProxy@@MEAAXXZ
-     * @hash   -1323396978
+     * @hash   -1234431442
      */
     MCVAPI void _applyStateToComponents();
     /**
      * @symbol ?_extractStateFromComponents@DirectPlayerMovementProxy@@MEAAXXZ
-     * @hash   1203388746
+     * @hash   1292354282
      */
     MCVAPI void _extractStateFromComponents();
     /**
      * @symbol ?_getPlayer@DirectPlayerMovementProxy@@UEAAPEAVPlayer@@XZ
-     * @hash   -1953761825
+     * @hash   -1828739569
      */
     MCVAPI class Player * _getPlayer();
     /**
      * @symbol ?_onMovePlayerPacketNormal@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@AEBVVec2@@M@Z
-     * @hash   850555312
+     * @hash   900235168
      */
     MCVAPI void _onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /**
      * @symbol ?_resetPos@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   1837279558
+     * @hash   1886944038
      */
     MCVAPI void _resetPos(bool);
     /**
      * @symbol ?_setPositionMode@DirectPlayerMovementProxy@@UEAAXH@Z
-     * @hash   2111781134
+     * @hash   -2133521682
      */
     MCVAPI void _setPositionMode(int);
     /**
      * @symbol ?areHandsBusy@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   897828620
+     * @hash   947370092
      */
     MCVAPI bool areHandsBusy() const;
     /**
      * @symbol ?checkMovementStats@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     * @hash   -170839816
+     * @hash   -121206088
      */
     MCVAPI void checkMovementStats(class Vec3 const &);
     /**
      * @symbol ?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   309554359
+     * @hash   398519895
      */
     MCVAPI void fireEventPersonaEmotePlayed(bool);
     /**
      * @symbol ?getAbilities@DirectPlayerMovementProxy@@UEBAAEBVLayeredAbilities@@XZ
-     * @hash   -1355095678
+     * @hash   -1305446574
      */
     MCVAPI class LayeredAbilities const & getAbilities() const;
     /**
      * @symbol ?getAbilityBool@DirectPlayerMovementProxy@@UEBA_NW4AbilitiesIndex@@@Z
-     * @hash   -1094936809
+     * @hash   -1045287705
      */
     MCVAPI bool getAbilityBool(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getAbilityFloat@DirectPlayerMovementProxy@@UEBAMW4AbilitiesIndex@@@Z
-     * @hash   1173571975
+     * @hash   1223221079
      */
     MCVAPI float getAbilityFloat(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBob@DirectPlayerMovementProxy@@UEBAMXZ
-     * @hash   1479623704
+     * @hash   1529288184
      */
     MCVAPI float getBob() const;
     /**
      * @symbol ?getClientInstance@DirectPlayerMovementProxy@@UEAAPEAUIClientInstanceProxy@@XZ
-     * @hash   1606098822
+     * @hash   1699369638
      */
     MCVAPI struct IClientInstanceProxy * getClientInstance();
     /**
      * @symbol ?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ
-     * @hash   338706370
+     * @hash   431977186
      */
     MCVAPI struct IClientInstanceProxy const * getClientInstance() const;
     /**
      * @symbol ?getCurrentTick@DirectPlayerMovementProxy@@UEBAAEBUTick@@XZ
-     * @hash   -753222184
+     * @hash   -703557704
      */
     MCVAPI struct Tick const & getCurrentTick() const;
     /**
      * @symbol ?getGlidingTicks@DirectPlayerMovementProxy@@UEBAHXZ
-     * @hash   2125745024
+     * @hash   -2119511664
      */
     MCVAPI int getGlidingTicks() const;
     /**
      * @symbol ?getInputMode@DirectPlayerMovementProxy@@UEBA?AW4InputMode@@XZ
-     * @hash   298279867
+     * @hash   347990475
      */
     MCVAPI enum class InputMode getInputMode() const;
     /**
      * @symbol ?getItemUseMovementModifier@DirectPlayerMovementProxy@@UEBAMXZ
-     * @hash   984272909
+     * @hash   1033952765
      */
     MCVAPI float getItemUseMovementModifier() const;
     /**
      * @symbol ?getJumpRidingScale@DirectPlayerMovementProxy@@UEAAMXZ
-     * @hash   787846219
+     * @hash   1037537083
      */
     MCVAPI float getJumpRidingScale();
     /**
      * @symbol ?getLastBob@DirectPlayerMovementProxy@@UEBAMXZ
-     * @hash   -433089758
+     * @hash   -383409902
      */
     MCVAPI float getLastBob() const;
     /**
      * @symbol ?getLastDelta@DirectPlayerMovementProxy@@UEBA?AVVec3@@XZ
-     * @hash   525703943
+     * @hash   563129127
      */
     MCVAPI class Vec3 getLastDelta() const;
     /**
      * @symbol ?getLastPos@DirectPlayerMovementProxy@@UEBA?AVVec3@@XZ
-     * @hash   384716067
+     * @hash   422141251
      */
     MCVAPI class Vec3 getLastPos() const;
     /**
      * @symbol ?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ
-     * @hash   -738499839
+     * @hash   -645229023
      */
     MCVAPI enum class LoadingState getLoadingState() const;
     /**
      * @symbol ?getMoveInputHandler@DirectPlayerMovementProxy@@UEAAPEAVMoveInputHandler@@XZ
-     * @hash   -1809280450
+     * @hash   -1759585218
      */
     MCVAPI class MoveInputHandler * getMoveInputHandler();
     /**
      * @symbol ?getPlayMode@DirectPlayerMovementProxy@@UEBA?AW4ClientPlayMode@@XZ
-     * @hash   -945413322
+     * @hash   -895718090
      */
     MCVAPI enum class ClientPlayMode getPlayMode() const;
     /**
      * @symbol ?getPlayerPaddleForce@DirectPlayerMovementProxy@@UEBAMW4Side@@@Z
-     * @hash   496113272
+     * @hash   545808504
      */
     MCVAPI float getPlayerPaddleForce(enum class Side) const;
     /**
      * @symbol ?getVRMoveAdjustAngle@DirectPlayerMovementProxy@@UEBAMXZ
-     * @hash   -1952335670
+     * @hash   -1902594310
      */
     MCVAPI float getVRMoveAdjustAngle() const;
     /**
      * @symbol ?hasMoveInput@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -1396511438
+     * @hash   -1346493310
      */
     MCVAPI bool hasMoveInput() const;
     /**
      * @symbol ?isAdventureSettingsAutoJump@DirectPlayerMovementProxy@@UEAA_NXZ
-     * @hash   -357581446
+     * @hash   -307563318
      */
     MCVAPI bool isAdventureSettingsAutoJump();
     /**
      * @symbol ?isArmorFlyEnabled@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -1929990762
+     * @hash   -1879972634
      */
     MCVAPI bool isArmorFlyEnabled() const;
     /**
      * @symbol ?isAutoJumpEnabled@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -1546703427
+     * @hash   -1496685299
      */
     MCVAPI bool isAutoJumpEnabled() const;
     /**
      * @symbol ?isAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   282676926
+     * @hash   332695054
      */
     MCVAPI bool isAutoJumping() const;
     /**
      * @symbol ?isEmoting@DirectPlayerMovementProxy@@UEAA_NXZ
-     * @hash   893190975
+     * @hash   943224479
      */
     MCVAPI bool isEmoting();
     /**
      * @symbol ?isFlying@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   3159804
+     * @hash   53208684
      */
     MCVAPI bool isFlying() const;
     /**
      * @symbol ?isLocalPlayer@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -380420651
+     * @hash   -330325643
      */
     MCVAPI bool isLocalPlayer() const;
     /**
      * @symbol ?isPaddling@DirectPlayerMovementProxy@@UEBA_NW4Side@@@Z
-     * @hash   1268304647
+     * @hash   1318399655
      */
     MCVAPI bool isPaddling(enum class Side) const;
     /**
      * @symbol ?isServerAuthoritativeMovement@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   255313652
+     * @hash   305408660
      */
     MCVAPI bool isServerAuthoritativeMovement() const;
     /**
      * @symbol ?isSleeping@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   1341780632
+     * @hash   1388277656
      */
     MCVAPI bool isSleeping() const;
     /**
      * @symbol ?isSlowedByItemUse@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   1704042134
+     * @hash   1754137142
      */
     MCVAPI bool isSlowedByItemUse() const;
     /**
      * @symbol ?isSpectator@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   1019239208
+     * @hash   1069334216
      */
     MCVAPI bool isSpectator() const;
     /**
      * @symbol ?isUsingItem@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   1814431280
+     * @hash   1864526288
      */
     MCVAPI bool isUsingItem() const;
     /**
      * @symbol ?registerFramewiseActionOrStop@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   -1998940165
+     * @hash   -1909974629
      */
     MCVAPI void registerFramewiseActionOrStop();
     /**
      * @symbol ?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   429895009
+     * @hash   518860545
      */
     MCVAPI void sendClientAuthInput();
     /**
      * @symbol ?sendInput@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   1402425300
+     * @hash   1491390836
      */
     MCVAPI void sendInput();
     /**
      * @symbol ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPlayerActionPacket@@@Z
-     * @hash   -243087677
+     * @hash   -192577517
      */
     MCVAPI void sendPacket(class PlayerActionPacket &);
     /**
      * @symbol ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPassengerJumpPacket@@@Z
-     * @hash   1144798186
+     * @hash   1195308346
      */
     MCVAPI void sendPacket(class PassengerJumpPacket &);
     /**
      * @symbol ?sendPlayerInput@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   1494065251
+     * @hash   1544575411
      */
     MCVAPI void sendPlayerInput();
     /**
      * @symbol ?sendPlayerMove@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   -1833387860
+     * @hash   -1782877700
      */
     MCVAPI void sendPlayerMove();
     /**
      * @symbol ?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   808639075
+     * @hash   897604611
      */
     MCVAPI void sendPosition();
     /**
      * @symbol ?sendRequestAbilityPacket@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
-     * @hash   -1033606817
+     * @hash   -983096657
      */
     MCVAPI void sendRequestAbilityPacket(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbilityBool@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
-     * @hash   -663842426
+     * @hash   -613316890
      */
     MCVAPI void setAbilityBool(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbilityFloat@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@M@Z
-     * @hash   40101838
+     * @hash   90627374
      */
     MCVAPI void setAbilityFloat(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   -642739577
+     * @hash   -592214041
      */
     MCVAPI void setAutoJumping(bool);
     /**
      * @symbol ?setBob@DirectPlayerMovementProxy@@UEAAXM@Z
-     * @hash   -173719907
+     * @hash   -123194371
      */
     MCVAPI void setBob(float);
     /**
      * @symbol ?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z
-     * @hash   -2043907297
+     * @hash   -1954941761
      */
     MCVAPI void setCurrentLocalMoveVelocity(class Vec2 const &);
     /**
      * @symbol ?setEmotingStatus@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   1101019957
+     * @hash   1151545493
      */
     MCVAPI void setEmotingStatus(bool);
     /**
      * @symbol ?setHandsBusy@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   -2102442465
+     * @hash   -2051901553
      */
     MCVAPI void setHandsBusy(bool);
     /**
      * @symbol ?setHasMoveInput@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   -223830135
+     * @hash   -173289223
      */
     MCVAPI void setHasMoveInput(bool);
     /**
      * @symbol ?setJumpRidingScale@DirectPlayerMovementProxy@@UEAAXM@Z
-     * @hash   1644936651
+     * @hash   1733902187
      */
     MCVAPI void setJumpRidingScale(float);
     /**
      * @symbol ?setLastBob@DirectPlayerMovementProxy@@UEAAXM@Z
-     * @hash   2027221667
+     * @hash   2077762579
      */
     MCVAPI void setLastBob(float);
     /**
      * @symbol ?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     * @hash   -183567232
+     * @hash   -94601696
      */
     MCVAPI void setLastDelta(class Vec3 const &);
     /**
      * @symbol ?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     * @hash   -566912540
+     * @hash   -477947004
      */
     MCVAPI void setLastPos(class Vec3 const &);
     /**
      * @symbol ?setPlayerPaddleForce@DirectPlayerMovementProxy@@UEAAXW4Side@@M@Z
-     * @hash   169390005
+     * @hash   220038549
      */
     MCVAPI void setPlayerPaddleForce(enum class Side, float);
     /**
      * @symbol ?setWasAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
-     * @hash   -1995862052
+     * @hash   -1906896516
      */
     MCVAPI void setWasAutoJumping(bool);
     /**
      * @symbol ?shouldSendPosition@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -1037581129
+     * @hash   -986932585
      */
     MCVAPI bool shouldSendPosition() const;
     /**
      * @symbol ?startGliding@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   -697331614
+     * @hash   -646683070
      */
     MCVAPI void startGliding();
     /**
      * @symbol ?stopGliding@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   -1590215726
+     * @hash   -1539582558
      */
     MCVAPI void stopGliding();
     /**
      * @symbol ?tryAsPlayer@DirectPlayerMovementProxy@@UEBAPEBUIPlayerMovementProxy@@XZ
-     * @hash   749267994
+     * @hash   842538810
      */
     MCVAPI struct IPlayerMovementProxy const * tryAsPlayer() const;
     /**
      * @symbol ?tryAsPlayer@DirectPlayerMovementProxy@@UEAAPEAUIPlayerMovementProxy@@XZ
-     * @hash   -1895600162
+     * @hash   -1802329346
      */
     MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
     /**
      * @symbol ?tryGetPlayerActionComponent@DirectPlayerMovementProxy@@UEAAPEAUPlayerActionComponent@@XZ
-     * @hash   -1211797080
+     * @hash   -1161194664
      */
     MCVAPI struct PlayerActionComponent * tryGetPlayerActionComponent();
     /**
      * @symbol ?updateClientPlayerInputState@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   1449395566
+     * @hash   1538361102
      */
     MCVAPI void updateClientPlayerInputState();
     /**
      * @symbol ?updateTouch@DirectPlayerMovementProxy@@UEAAXXZ
-     * @hash   958457736
+     * @hash   1009060152
      */
     MCVAPI void updateTouch();
     /**
      * @symbol ?wasAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ
-     * @hash   -801972737
+     * @hash   -705226945
      */
     MCVAPI bool wasAutoJumping() const;
 #endif

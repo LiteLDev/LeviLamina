@@ -24,27 +24,27 @@ namespace RotationUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getRandomRotation@RotationUtil@@YA?AW4Rotation@@AEAVRandom@@@Z
-     * @hash   1956379200
+     * @hash   -1582965328
      */
     MCAPI enum class Rotation getRandomRotation(class Random &);
     /**
      * @symbol ?getRotated@RotationUtil@@YA?AW4Rotation@@W42@0@Z
-     * @hash   987119114
+     * @hash   1742741882
      */
     MCAPI enum class Rotation getRotated(enum class Rotation, enum class Rotation);
     /**
      * @symbol ?getShuffledRotations@RotationUtil@@YA?AV?$vector@W4Rotation@@V?$allocator@W4Rotation@@@std@@@std@@AEAVRandom@@@Z
-     * @hash   396083802
+     * @hash   1151706570
      */
     MCAPI std::vector<enum class Rotation> getShuffledRotations(class Random &);
     /**
      * @symbol ?rotate@RotationUtil@@YA?AVBlockPos@@AEBV2@W4Rotation@@@Z
-     * @hash   -1050912704
+     * @hash   -295059296
      */
     MCAPI class BlockPos rotate(class BlockPos const &, enum class Rotation);
     /**
      * @symbol ?rotate@RotationUtil@@YAEW4Rotation@@E@Z
-     * @hash   856605647
+     * @hash   1612459055
      */
     MCAPI unsigned char rotate(enum class Rotation, unsigned char);
 

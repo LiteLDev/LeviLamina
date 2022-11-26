@@ -39,37 +39,37 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-     * @hash   1725139371
+     * @hash   1779401275
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
      * @vftbl  2
      * @symbol ?tick@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   -1929066986
+     * @hash   -1874805082
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  3
      * @symbol ?getTempMobPos@WaterBoundPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
-     * @hash   759973664
+     * @hash   814235568
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
      * @vftbl  10
      * @symbol ?travel@WaterBoundPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
-     * @hash   1169765019
+     * @hash   1224026923
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /**
      * @vftbl  11
      * @symbol ?canUpdatePath@WaterBoundPathNavigation@@MEBA_NAEBVMob@@@Z
-     * @hash   208108904
+     * @hash   262370808
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
      * @vftbl  12
      * @symbol ?updatePath@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   -148054377
+     * @hash   -93792473
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 

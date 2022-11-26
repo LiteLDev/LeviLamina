@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?initialize@CanFlyDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -1288402468
+     * @hash   -1206079364
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@CanFlyDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -387861492
+     * @hash   -305369252
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@CanFlyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanFlyDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   571953482
+     * @hash   654322714
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>> &);
 

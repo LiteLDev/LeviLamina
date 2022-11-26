@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ServerScriptDebugCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -2010522355
+     * @hash   -1926646275
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ServerScriptDebugCommand@@SAXAEAVCommandRegistry@@PEAVIScriptDebugger@@AEBV?$optional@UScriptSettings@@@std@@@Z
-     * @hash   -1398636768
+     * @hash   -1314729936
      */
     MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
 
@@ -51,12 +51,12 @@ public:
 private:
     /**
      * @symbol ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
-     * @hash   -112818918
+     * @hash   684119162
      */
     MCAPI static class std::optional<unsigned short> sForcedPort;
     /**
      * @symbol ?sServerScriptDebugger@ServerScriptDebugCommand@@0PEAVIScriptDebugger@@EA
-     * @hash   1243962503
+     * @hash   2040900583
      */
     MCAPI static class IScriptDebugger * sServerScriptDebugger;
 

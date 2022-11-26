@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@PassengerFreezeMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1686142288
+     * @hash   1734715072
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?freezeMovement@PassengerFreezeMovementSystem@@SAXAEAVStrictEntityContext@@AEAUStateVectorComponent@@@Z
-     * @hash   1999720877
+     * @hash   2048293661
      */
     MCAPI static void freezeMovement(class StrictEntityContext &, struct StateVectorComponent &);
 

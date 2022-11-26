@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?canSee@SensingComponent@@QEAA_NAEAVMob@@AEBVActor@@@Z
-     * @hash   15279434
+     * @hash   2132954
      */
     MCAPI bool canSee(class Mob &, class Actor const &);
     /**
      * @symbol ?reset@SensingComponent@@QEAAXXZ
-     * @hash   -2002667565
+     * @hash   -2015814045
      */
     MCAPI void reset();
     /**
      * @symbol ?withinFOV@SensingComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-     * @hash   1901348581
+     * @hash   1888202101
      */
     MCAPI bool withinFOV(class Mob &, class Vec3 const &, float);
 

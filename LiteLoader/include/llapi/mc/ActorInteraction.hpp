@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0ActorInteraction@@QEAA@_N@Z
-     * @hash   -1052266286
+     * @hash   -1002694062
      */
     MCAPI ActorInteraction(bool);
     /**
      * @symbol ?capture@ActorInteraction@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -1236357196
+     * @hash   -1186784972
      */
     MCAPI void capture(class std::function<void (void)>);
     /**
      * @symbol ?getInteractText@ActorInteraction@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -101467076
+     * @hash   -8196260
      */
     MCAPI std::string const & getInteractText() const;
     /**
      * @symbol ?interact@ActorInteraction@@QEAAXXZ
-     * @hash   1136533269
+     * @hash   1186105493
      */
     MCAPI void interact();
     /**
      * @symbol ?setInteractText@ActorInteraction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1296706658
+     * @hash   -1247134434
      */
     MCAPI void setInteractText(std::string const &);
     /**
      * @symbol ?shouldCapture@ActorInteraction@@QEBA_NXZ
-     * @hash   1192936428
+     * @hash   1242508652
      */
     MCAPI bool shouldCapture() const;
     /**
      * @symbol ??1ActorInteraction@@QEAA@XZ
-     * @hash   1582916071
+     * @hash   1691239991
      */
     MCAPI ~ActorInteraction();
 

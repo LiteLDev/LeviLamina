@@ -31,226 +31,226 @@ public:
 public:
     /**
      * @symbol ??0NpcComponent@@QEAA@XZ
-     * @hash   -533109256
+     * @hash   -385561160
      */
     MCAPI NpcComponent();
     /**
      * @symbol ??0NpcComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -629694255
+     * @hash   -482146159
      */
     MCAPI NpcComponent(class NpcComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@NpcComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   240947737
+     * @hash   387096617
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?clearSceneStateForAllPlayers@NpcComponent@@QEAAXXZ
-     * @hash   1207279525
+     * @hash   1353351525
      */
     MCAPI void clearSceneStateForAllPlayers();
     /**
      * @symbol ?executeClosingCommands@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1675360736
+     * @hash   -1529288736
      */
     MCAPI void executeClosingCommands(class Actor &, class Player &, std::string const &);
     /**
      * @symbol ?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   650121095
+     * @hash   796193095
      */
     MCAPI void executeCommandAction(class Actor &, class Player &, int, std::string const &);
     /**
      * @symbol ?executeOpeningCommands@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2085682934
+     * @hash   -1939918454
      */
     MCAPI void executeOpeningCommands(class Actor &, class Player &, std::string const &);
     /**
      * @symbol ?getActionsContainer@NpcComponent@@QEAAAEAUNpcActionsContainer@@XZ
-     * @hash   420452030
+     * @hash   566216510
      */
     MCAPI struct NpcActionsContainer & getActionsContainer();
     /**
      * @symbol ?getButtonCounts@NpcComponent@@QEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ
-     * @hash   1351852016
+     * @hash   1497616496
      */
     MCAPI std::vector<int> getButtonCounts() const;
     /**
      * @symbol ?getCommandPermissionLevel@NpcComponent@@QEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -1408941476
+     * @hash   -1312441700
      */
     MCAPI enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @symbol ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -1630638075
+     * @hash   -1484873595
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?getInteractiveText@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   -949136273
+     * @hash   -803387169
      */
     MCAPI std::string const & getInteractiveText(class Actor &) const;
     /**
      * @symbol ?getName@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
-     * @hash   -663841219
+     * @hash   -518092115
      */
     MCAPI std::string const & getName(class Actor const &) const;
     /**
      * @symbol ?getNameRawText@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
-     * @hash   1329509659
+     * @hash   1475258763
      */
     MCAPI std::string const & getNameRawText(class Actor const &) const;
     /**
      * @symbol ?getSkinIndex@NpcComponent@@QEBAHXZ
-     * @hash   -1502343432
+     * @hash   -1356594328
      */
     MCAPI int getSkinIndex() const;
     /**
      * @symbol ?getUpdatedActions@NpcComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@3@AEA_N2@Z
-     * @hash   -2031889062
+     * @hash   -1886139958
      */
     MCAPI void getUpdatedActions(std::string const &, std::vector<std::unique_ptr<class NpcAction>> &, bool &, bool &);
     /**
      * @symbol ?getUrlCount@NpcComponent@@QEBAHXZ
-     * @hash   -1833718074
+     * @hash   -1687968970
      */
     MCAPI int getUrlCount() const;
     /**
      * @symbol ?handleNpcRequest@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBVNpcRequestPacket@@@Z
-     * @hash   -1087538982
+     * @hash   -941789878
      */
     MCAPI void handleNpcRequest(class Actor &, class Player &, class NpcRequestPacket const &);
     /**
      * @symbol ?initClientOnlyData@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -167040438
+     * @hash   -21291334
      */
     MCAPI void initClientOnlyData(class Actor &);
     /**
      * @symbol ?initFromDefinition@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1126693226
+     * @hash   1272442330
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?loadActions@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1583278916
+     * @hash   -1437529812
      */
     MCAPI void loadActions(class Actor &);
     /**
      * @symbol ?loadInteractiveRawText@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1244938518
+     * @hash   -1099189414
      */
     MCAPI void loadInteractiveRawText(class Actor &);
     /**
      * @symbol ?loadNPCData@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -956691412
+     * @hash   -810926932
      */
     MCAPI void loadNPCData(class Actor &);
     /**
      * @symbol ?loadNameRawText@NpcComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1698650996
+     * @hash   -1552886516
      */
     MCAPI void loadNameRawText(class Actor &);
     /**
      * @symbol ??4NpcComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   619159396
+     * @hash   765492788
      */
     MCAPI class NpcComponent & operator=(class NpcComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@NpcComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -370781918
+     * @hash   -225048190
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setActions@NpcComponent@@QEAAXAEAVActor@@$$QEAV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@@Z
-     * @hash   -262108974
+     * @hash   -116344494
      */
     MCAPI void setActions(class Actor &, std::vector<std::unique_ptr<class NpcAction>> &&);
     /**
      * @symbol ?setDialogueScene@NpcComponent@@QEAA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2095264012
+     * @hash   -1949499532
      */
     MCAPI bool setDialogueScene(class Actor &, std::string const &);
     /**
      * @symbol ?setInteractiveText@NpcComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1921138900
+     * @hash   2066903380
      */
     MCAPI void setInteractiveText(class Actor &, std::string const &, bool);
     /**
      * @symbol ?setName@NpcComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -169292686
+     * @hash   -23528206
      */
     MCAPI void setName(class Actor &, std::string const &, bool);
     /**
      * @symbol ?setSceneStateForPlayer@NpcComponent@@QEAAXAEAVActor@@AEBUActorUniqueID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1316191590
+     * @hash   1461956070
      */
     MCAPI void setSceneStateForPlayer(class Actor &, struct ActorUniqueID const &, std::string const &);
     /**
      * @symbol ?setSkinIndex@NpcComponent@@QEAAXAEAVActor@@H_N@Z
-     * @hash   1865703180
+     * @hash   2011467660
      */
     MCAPI void setSkinIndex(class Actor &, int, bool);
     /**
      * @symbol ?MAX_NPC_NAME_LENGTH@NpcComponent@@2_KB
-     * @hash   -590278216
+     * @hash   165382992
      */
     MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
 //private:
     /**
      * @symbol ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
-     * @hash   851378516
+     * @hash   997573524
      */
     MCAPI void _defineEntityDataString(class Actor &, enum class ActorDataIDs);
     /**
      * @symbol ?_deserializeData@NpcComponent@@AEAAXXZ
-     * @hash   -1456057862
+     * @hash   -1309893606
      */
     MCAPI void _deserializeData();
     /**
      * @symbol ?_loadActions@NpcComponent@@AEBAXAEAV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1612869253
+     * @hash   1759033509
      */
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
     /**
      * @symbol ?_serializeActions@NpcComponent@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2058101239
+     * @hash   -2090701801
      */
     MCAPI std::string _serializeActions() const;
 
 private:
     /**
      * @symbol ?ACTIONS_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1496320113
+     * @hash   -56165513
      */
     MCAPI static std::string const ACTIONS_TAG;
     /**
      * @symbol ?INTERACTIVE_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1494820788
+     * @hash   -1359991908
      */
     MCAPI static std::string const INTERACTIVE_TAG;
     /**
      * @symbol ?NAME_RAW_TEXT_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2103475638
+     * @hash   -663321038
      */
     MCAPI static std::string const NAME_RAW_TEXT_TAG;
     /**
      * @symbol ?PLAYER_ID_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1621824853
+     * @hash   -181639501
      */
     MCAPI static std::string const PLAYER_ID_TAG;
     /**
      * @symbol ?PLAYER_SCENE_MAPPING_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1574020623
+     * @hash   -1280761321
      */
     MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
     /**
      * @symbol ?SCENE_NAME_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -755403600
+     * @hash   684781752
      */
     MCAPI static std::string const SCENE_NAME_TAG;
     /**
      * @symbol ?URL_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   444724289
+     * @hash   1884786633
      */
     MCAPI static std::string const URL_TAG;
 

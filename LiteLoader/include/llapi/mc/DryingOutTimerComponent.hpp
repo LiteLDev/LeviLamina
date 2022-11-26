@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0DryingOutTimerComponent@@QEAA@$$QEAV0@@Z
-     * @hash   1598477847
+     * @hash   1756174103
      */
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DryingOutTimerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1914564424
+     * @hash   -1934983752
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canBeAffectedByWaterBottle@DryingOutTimerComponent@@QEBA_NXZ
-     * @hash   -1727586174
+     * @hash   -1748005502
      */
     MCAPI bool canBeAffectedByWaterBottle() const;
     /**
      * @symbol ??4DryingOutTimerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   857452866
+     * @hash   1015149122
      */
     MCAPI class DryingOutTimerComponent & operator=(class DryingOutTimerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@DryingOutTimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -260532290
+     * @hash   -280951618
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?refillTimeWithWaterBottle@DryingOutTimerComponent@@QEAAXUTick@@@Z
-     * @hash   195134152
+     * @hash   174714824
      */
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     /**
      * @symbol ??1DryingOutTimerComponent@@QEAA@XZ
-     * @hash   -1784441525
+     * @hash   -1626745269
      */
     MCAPI ~DryingOutTimerComponent();
 

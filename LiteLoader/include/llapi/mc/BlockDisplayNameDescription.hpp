@@ -38,51 +38,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDisplayNameDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   117308317
+     * @hash   588844109
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   464600711
+     * @hash   936136503
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockDisplayNameDescription@@UEBA_NXZ
-     * @hash   -1708210203
+     * @hash   -1611710427
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -2136879881
+     * @hash   -1665328713
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -621466933
+     * @hash   -149931141
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockDisplayNameDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1334160091
+     * @hash   449525101
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDisplayNameDescription@@SAXXZ
-     * @hash   34310895
+     * @hash   505600671
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDisplayNameDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1874010368
+     * @hash   -1949421136
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -36,45 +36,45 @@ public:
     virtual ~ScriptTickListener();
     /**
      * @vftbl  1
-     * @hash   -1154497823
+     * @hash   -1052585695
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1153574302
+     * @hash   -1051662174
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-     * @hash   -68374149
+     * @hash   15255915
      */
     virtual enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @vftbl  5
-     * @hash   -1150803739
+     * @hash   -1048891611
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1149880218
+     * @hash   -1047968090
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?onLevelScriptTick@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -1130636009
+     * @hash   -1047005945
      */
     virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
-     * @symbol ??0ScriptTickListener@@QEAA@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptCommandProcessor@@@Z
-     * @hash   1179428945
+     * @symbol ??0ScriptTickListener@@QEAA@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptDeferredActionManager@@@Z
+     * @hash   -1104912399
      */
-    MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptCommandProcessor &);
+    MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptDeferredActionManager &);
 
 };

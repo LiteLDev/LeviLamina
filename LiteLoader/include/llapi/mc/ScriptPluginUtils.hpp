@@ -25,42 +25,42 @@ namespace ScriptPluginUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?BETA_RELEASE@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   2042410417
+     * @hash   -1392500319
      */
     MCAPI extern std::string const BETA_RELEASE;
     /**
      * @symbol ?CreateRuntimeByType@ScriptPluginUtils@@YA?AV?$unique_ptr@VIRuntime@Scripting@@U?$default_delete@VIRuntime@Scripting@@@std@@@std@@W4ScriptRuntimeType@@AEAVRegistryManager@Scripting@@PEAVDependencyLocator@6@@Z
-     * @hash   659979682
+     * @hash   743901890
      */
     MCAPI std::unique_ptr<class Scripting::IRuntime> CreateRuntimeByType(enum class ScriptRuntimeType, class Scripting::RegistryManager &, class Scripting::DependencyLocator *);
     /**
      * @symbol ?GetRuntimeType@ScriptPluginUtils@@YA?AW4ScriptRuntimeType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -153054264
+     * @hash   -69132056
      */
     MCAPI enum class ScriptRuntimeType GetRuntimeType(std::string const &);
     /**
      * @symbol ?GetRuntimeTypeFromFileExtension@ScriptPluginUtils@@YA?AW4ScriptRuntimeType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1301312940
+     * @hash   -1217390732
      */
     MCAPI enum class ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const &);
     /**
      * @symbol ?INTERNAL_RELEASE@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1426190159
+     * @hash   -566133599
      */
     MCAPI extern std::string const INTERNAL_RELEASE;
     /**
      * @symbol ?JAVA_SCRIPT_RUNTIME_EXTENSION@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   959752047
+     * @hash   1819808607
      */
     MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
     /**
      * @symbol ?JAVA_SCRIPT_RUNTIME_NAME@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   60689393
+     * @hash   920745953
      */
     MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
     /**
      * @symbol ?SanitizeRuntimeName@ScriptPluginUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   1404230758
+     * @hash   1488152966
      */
     MCAPI std::string SanitizeRuntimeName(std::string const &);
 

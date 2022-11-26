@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CodeBuilderPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1275483640
+     * @hash   -1093155032
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CodeBuilderPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -466791419
+     * @hash   -284493563
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CodeBuilderPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   718386962
+     * @hash   901438242
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CodeBuilderPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1107770270
+     * @hash   -925918318
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 

@@ -30,38 +30,38 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
     /**
      * @symbol ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
-     * @hash   -1645521256
+     * @hash   -1562444728
      */
     MCVAPI enum class EventResult onEvent(struct PlayerFormCloseEvent const &);
     /**
      * @symbol ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z
-     * @hash   -475380343
+     * @hash   -392303815
      */
     MCVAPI enum class EventResult onEvent(struct PlayerFormResponseEvent const &);
 #endif
     /**
      * @symbol ??0ScriptFormPromiseTracker@@QEAA@XZ
-     * @hash   -1316835624
+     * @hash   -1261574280
      */
     MCAPI ScriptFormPromiseTracker();
     /**
      * @symbol ?handleFormResponse@ScriptFormPromiseTracker@@QEAAXIAEBVValue@Json@@@Z
-     * @hash   792243395
+     * @hash   874551123
      */
     MCAPI void handleFormResponse(unsigned int, class Json::Value const &);
     /**
      * @symbol ?handlePlayerQuit@ScriptFormPromiseTracker@@QEAAXAEBVNetworkIdentifier@@@Z
-     * @hash   -1322062670
+     * @hash   -1238986142
      */
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
     /**
      * @symbol ??4ScriptFormPromiseTracker@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -280858620
+     * @hash   -225243628
      */
     MCAPI class ScriptFormPromiseTracker & operator=(class ScriptFormPromiseTracker const &);
     /**
      * @symbol ?rejectAllForShutdown@ScriptFormPromiseTracker@@QEAAXXZ
-     * @hash   1627003045
+     * @hash   1709971941
      */
     MCAPI void rejectAllForShutdown();
 

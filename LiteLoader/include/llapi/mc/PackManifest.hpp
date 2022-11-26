@@ -44,416 +44,416 @@ public:
     /**
      * @vftbl  1
      * @symbol ?clone@PackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
-     * @hash   -670103570
+     * @hash   -1503764130
      */
     virtual std::unique_ptr<class PackManifest> clone() const;
     /**
      * @symbol ??0PackManifest@@QEAA@W4ManifestType@@@Z
-     * @hash   1540627221
+     * @hash   707597077
      */
     MCAPI PackManifest(enum class ManifestType);
     /**
      * @symbol ??0PackManifest@@QEAA@AEBV0@@Z
-     * @hash   1448736641
+     * @hash   615721873
      */
     MCAPI PackManifest(class PackManifest const &);
     /**
      * @symbol ?addLegacyModuleDependency@PackManifest@@QEAAXAEBULegacyPackIdVersion@@@Z
-     * @hash   -1419409490
+     * @hash   2041912622
      */
     MCAPI void addLegacyModuleDependency(struct LegacyPackIdVersion const &);
     /**
      * @symbol ?addModule@PackManifest@@QEAAXAEBVResourceInformation@@@Z
-     * @hash   1512424294
+     * @hash   678779110
      */
     MCAPI void addModule(class ResourceInformation const &);
     /**
      * @symbol ?addModuleDependency@PackManifest@@QEAAXAEBUModuleIdentifier@@@Z
-     * @hash   -16222244
+     * @hash   -849867428
      */
     MCAPI void addModuleDependency(struct ModuleIdentifier const &);
     /**
      * @symbol ?addPackCapability@PackManifest@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   125647504
+     * @hash   -707997680
      */
     MCAPI void addPackCapability(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
-     * @hash   -1994735108
+     * @hash   1466571628
      */
     MCAPI void addPackDependency(struct PackIdVersion const &);
     /**
      * @symbol ?clearLegacyModuleDependencies@PackManifest@@QEAAXXZ
-     * @hash   1146382291
+     * @hash   312721731
      */
     MCAPI void clearLegacyModuleDependencies();
     /**
      * @symbol ?clearModules@PackManifest@@QEAAXXZ
-     * @hash   -1146967995
+     * @hash   -1980628555
      */
     MCAPI void clearModules();
     /**
      * @symbol ?getContentIdentity@PackManifest@@QEBAAEBVContentIdentity@@XZ
-     * @hash   636195044
+     * @hash   -268210492
      */
     MCAPI class ContentIdentity const & getContentIdentity() const;
     /**
      * @symbol ?getDependentPackIdentities@PackManifest@@QEBAAEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@XZ
-     * @hash   -1664816426
+     * @hash   1796182790
      */
     MCAPI std::vector<struct PackIdVersion> const & getDependentPackIdentities() const;
     /**
      * @symbol ?getDescription@PackManifest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1024527304
+     * @hash   -1858495384
      */
     MCAPI std::string getDescription() const;
     /**
      * @symbol ?getFormatVersion@PackManifest@@QEBA?AW4PackManifestFormat@@XZ
-     * @hash   2037366158
+     * @hash   1203398078
      */
     MCAPI enum class PackManifestFormat getFormatVersion() const;
     /**
      * @symbol ?getIdentity@PackManifest@@QEBAAEBUPackIdVersion@@XZ
-     * @hash   -1752938278
+     * @hash   -1650610998
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
     /**
      * @symbol ?getLegacyModuleDependencies@PackManifest@@QEBAAEBV?$vector@ULegacyPackIdVersion@@V?$allocator@ULegacyPackIdVersion@@@std@@@std@@XZ
-     * @hash   1536560772
+     * @hash   702592692
      */
     MCAPI std::vector<struct LegacyPackIdVersion> const & getLegacyModuleDependencies() const;
     /**
      * @symbol ?getLocation@PackManifest@@QEBAAEBVResourceLocation@@XZ
-     * @hash   36928140
+     * @hash   130198956
      */
     MCAPI class ResourceLocation const & getLocation() const;
     /**
      * @symbol ?getManifestOrigin@PackManifest@@QEBA?AW4ManifestOrigin@@XZ
-     * @hash   1933649588
+     * @hash   1099681508
      */
     MCAPI enum class ManifestOrigin getManifestOrigin() const;
     /**
      * @symbol ?getMetaData@PackManifest@@QEBAAEBVResourceMetadata@@XZ
-     * @hash   -1173814660
+     * @hash   -2007782740
      */
     MCAPI class ResourceMetadata const & getMetaData() const;
     /**
      * @symbol ?getMinEngineVersion@PackManifest@@QEBAAEBVSemVersion@@XZ
-     * @hash   2008832214
+     * @hash   -2114431290
      */
     MCAPI class SemVersion const & getMinEngineVersion() const;
     /**
      * @symbol ?getModuleDependencies@PackManifest@@QEBAAEBV?$vector@UModuleIdentifier@@V?$allocator@UModuleIdentifier@@@std@@@std@@XZ
-     * @hash   331590750
+     * @hash   -502377330
      */
     MCAPI std::vector<struct ModuleIdentifier> const & getModuleDependencies() const;
     /**
      * @symbol ?getModules@PackManifest@@QEBAAEBV?$vector@VResourceInformation@@V?$allocator@VResourceInformation@@@std@@@std@@XZ
-     * @hash   1706397024
+     * @hash   872428944
      */
     MCAPI std::vector<class ResourceInformation> const & getModules() const;
     /**
      * @symbol ?getName@PackManifest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1943531824
+     * @hash   1109563744
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getNameForTelemetry@PackManifest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1632477376
+     * @hash   1828521840
      */
     MCAPI std::string getNameForTelemetry() const;
     /**
      * @symbol ?getOriginalFormatVersion@PackManifest@@QEBA?AW4PackManifestFormat@@XZ
-     * @hash   679256444
+     * @hash   -154711636
      */
     MCAPI enum class PackManifestFormat getOriginalFormatVersion() const;
     /**
      * @symbol ?getPackCategory@PackManifest@@QEBA?AW4PackCategory@@XZ
-     * @hash   1332018148
+     * @hash   498050068
      */
     MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackOrigin@PackManifest@@QEBA?AW4PackOrigin@@XZ
-     * @hash   255572596
+     * @hash   -578395484
      */
     MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackScope@PackManifest@@QEBA?AW4PackScope@@XZ
-     * @hash   -407343980
+     * @hash   -1241312060
      */
     MCAPI enum class PackScope getPackScope() const;
     /**
      * @symbol ?getPackSettings@PackManifest@@QEBAAEBVValue@Json@@XZ
-     * @hash   -878412592
+     * @hash   -1712380672
      */
     MCAPI class Json::Value const & getPackSettings() const;
     /**
      * @symbol ?getPackSize@PackManifest@@QEBA_KXZ
-     * @hash   1481784443
+     * @hash   647816363
      */
     MCAPI unsigned __int64 getPackSize() const;
     /**
      * @symbol ?getPackType@PackManifest@@QEBA?AW4PackType@@XZ
-     * @hash   -598255820
+     * @hash   -1432223900
      */
     MCAPI enum class PackType getPackType() const;
     /**
      * @symbol ?getRequiredBaseGameVersion@PackManifest@@QEBAAEBVBaseGameVersion@@XZ
-     * @hash   1661394712
+     * @hash   827426632
      */
     MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     /**
      * @symbol ?hasClientScript@PackManifest@@QEBA_NXZ
-     * @hash   2113501376
+     * @hash   1279533296
      */
     MCAPI bool hasClientScript() const;
     /**
      * @symbol ?hasEducationMetadata@PackManifest@@QEBA_NXZ
-     * @hash   1519826120
+     * @hash   685858040
      */
     MCAPI bool hasEducationMetadata() const;
     /**
      * @symbol ?hasLegacyModuleDependencies@PackManifest@@QEBA_NXZ
-     * @hash   -1758093520
+     * @hash   1702905696
      */
     MCAPI bool hasLegacyModuleDependencies() const;
     /**
      * @symbol ?hasModule@PackManifest@@QEBA_NAEBUPackIdVersion@@@Z
-     * @hash   -2136045615
+     * @hash   1324953601
      */
     MCAPI bool hasModule(struct PackIdVersion const &) const;
     /**
      * @symbol ?hasPackCapability@PackManifest@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1387302525
+     * @hash   553334445
      */
     MCAPI bool hasPackCapability(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?hasPlugins@PackManifest@@QEBA_NXZ
-     * @hash   -51369094
+     * @hash   -885352550
      */
     MCAPI bool hasPlugins() const;
     /**
      * @symbol ?isHidden@PackManifest@@QEBA_NXZ
-     * @hash   1553826278
+     * @hash   719842822
      */
     MCAPI bool isHidden() const;
     /**
      * @symbol ?isPlatformLocked@PackManifest@@QEBA_NXZ
-     * @hash   -1719514132
+     * @hash   1741469708
      */
     MCAPI bool isPlatformLocked() const;
     /**
      * @symbol ?isPremium@PackManifest@@QEBA_NXZ
-     * @hash   2086220458
+     * @hash   1252237002
      */
     MCAPI bool isPremium() const;
     /**
      * @symbol ?isRestrictedPack@PackManifest@@QEBA_NXZ
-     * @hash   -909738230
+     * @hash   -1743721686
      */
     MCAPI bool isRestrictedPack() const;
     /**
      * @symbol ?isUsingPackDescriptionKeyword@PackManifest@@QEBA_NXZ
-     * @hash   108785872
+     * @hash   -725197584
      */
     MCAPI bool isUsingPackDescriptionKeyword() const;
     /**
      * @symbol ?isUsingPackNameKeyword@PackManifest@@QEBA_NXZ
-     * @hash   -736890156
+     * @hash   -1570873612
      */
     MCAPI bool isUsingPackNameKeyword() const;
     /**
      * @symbol ?serialize@PackManifest@@QEBAXW4PackManifestFormat@@AEAVValue@Json@@@Z
-     * @hash   1579770243
+     * @hash   745771411
      */
     MCAPI void serialize(enum class PackManifestFormat, class Json::Value &) const;
     /**
      * @symbol ?setCanBeRedownloaded@PackManifest@@QEAAX_N@Z
-     * @hash   -1365692920
+     * @hash   2095275544
      */
     MCAPI void setCanBeRedownloaded(bool);
     /**
      * @symbol ?setContentIdentity@PackManifest@@QEAAXAEBVContentIdentity@@@Z
-     * @hash   1214851922
+     * @hash   380853090
      */
     MCAPI void setContentIdentity(class ContentIdentity const &);
     /**
      * @symbol ?setDescription@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1394373668
+     * @hash   2066594796
      */
     MCAPI void setDescription(std::string const &);
     /**
      * @symbol ?setFormatVersion@PackManifest@@QEAAXW4PackManifestFormat@@@Z
-     * @hash   1100045388
+     * @hash   266046556
      */
     MCAPI void setFormatVersion(enum class PackManifestFormat);
     /**
      * @symbol ?setHasClientScript@PackManifest@@QEAAXXZ
-     * @hash   -1657977867
+     * @hash   1802990597
      */
     MCAPI void setHasClientScript();
     /**
      * @symbol ?setHasEducationMetadata@PackManifest@@QEAAX_N@Z
-     * @hash   -2113935890
+     * @hash   1347032574
      */
     MCAPI void setHasEducationMetadata(bool);
     /**
      * @symbol ?setHasPlugins@PackManifest@@QEAAX_N@Z
-     * @hash   203551020
+     * @hash   -630447812
      */
     MCAPI void setHasPlugins(bool);
     /**
      * @symbol ?setHidden@PackManifest@@QEAAX_N@Z
-     * @hash   1865747892
+     * @hash   1031749060
      */
     MCAPI void setHidden(bool);
     /**
      * @symbol ?setIdentity@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
-     * @hash   -1021538356
+     * @hash   -1855537188
      */
     MCAPI void setIdentity(struct PackIdVersion const &);
     /**
      * @symbol ?setInvalidUUID@PackManifest@@QEAAXXZ
-     * @hash   -1313617483
+     * @hash   2147350981
      */
     MCAPI void setInvalidUUID();
     /**
      * @symbol ?setLanguageCodesForPackKeywords@PackManifest@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -219730251
+     * @hash   -1053729083
      */
     MCAPI void setLanguageCodesForPackKeywords(std::vector<std::string>);
     /**
      * @symbol ?setLastModifiedDate@PackManifest@@QEAAX_J@Z
-     * @hash   -177100721
+     * @hash   -1011099553
      */
     MCAPI void setLastModifiedDate(__int64);
     /**
      * @symbol ?setLocalizedNameKeywords@PackManifest@@QEAAXAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
-     * @hash   1064530134
+     * @hash   230531302
      */
     MCAPI void setLocalizedNameKeywords(class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     /**
      * @symbol ?setLocation@PackManifest@@QEAAXAEBVResourceLocation@@@Z
-     * @hash   -412929020
+     * @hash   -1246912476
      */
     MCAPI void setLocation(class ResourceLocation const &);
     /**
      * @symbol ?setManifestOrigin@PackManifest@@QEAAXAEBW4ManifestOrigin@@@Z
-     * @hash   -1683860834
+     * @hash   1777123006
      */
     MCAPI void setManifestOrigin(enum class ManifestOrigin const &);
     /**
      * @symbol ?setMetadata@PackManifest@@QEAAXAEBVResourceMetadata@@@Z
-     * @hash   29145980
+     * @hash   -804837476
      */
     MCAPI void setMetadata(class ResourceMetadata const &);
     /**
      * @symbol ?setMinEngineVersion@PackManifest@@QEAAXAEBVSemVersion@@@Z
-     * @hash   -288219806
+     * @hash   -1122218638
      */
     MCAPI void setMinEngineVersion(class SemVersion const &);
     /**
      * @symbol ?setName@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1685279842
+     * @hash   1775688622
      */
     MCAPI void setName(std::string const &);
     /**
      * @symbol ?setOptionLockedState@PackManifest@@QEAAXW4TemplateLockState@@@Z
-     * @hash   760270014
+     * @hash   -73728818
      */
     MCAPI void setOptionLockedState(enum class TemplateLockState);
     /**
      * @symbol ?setOriginalFormatVersion@PackManifest@@QEAAXW4PackManifestFormat@@@Z
-     * @hash   1317309374
+     * @hash   483310542
      */
     MCAPI void setOriginalFormatVersion(enum class PackManifestFormat);
     /**
      * @symbol ?setPackCapabilitiesTrusted@PackManifest@@QEAAXXZ
-     * @hash   -1292211723
+     * @hash   -2126210555
      */
     MCAPI void setPackCapabilitiesTrusted();
     /**
      * @symbol ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
-     * @hash   352337782
+     * @hash   -481661050
      */
     MCAPI void setPackCategory(enum class PackCategory);
     /**
      * @symbol ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
-     * @hash   -1493472218
+     * @hash   1967496246
      */
     MCAPI void setPackOrigin(enum class PackOrigin);
     /**
      * @symbol ?setPackScope@PackManifest@@QEAAXW4PackScope@@@Z
-     * @hash   -1355950832
+     * @hash   2105017632
      */
     MCAPI void setPackScope(enum class PackScope);
     /**
      * @symbol ?setPackSettings@PackManifest@@QEAAXAEBVValue@Json@@@Z
-     * @hash   1095467116
+     * @hash   261468284
      */
     MCAPI void setPackSettings(class Json::Value const &);
     /**
      * @symbol ?setPackSize@PackManifest@@QEAAX_K@Z
-     * @hash   1206634719
+     * @hash   372635887
      */
     MCAPI void setPackSize(unsigned __int64);
     /**
      * @symbol ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
-     * @hash   1683252310
+     * @hash   849253478
      */
     MCAPI void setPackType(enum class PackType);
     /**
      * @symbol ?setPlatformLocked@PackManifest@@QEAAX_N@Z
-     * @hash   -207216434
+     * @hash   -1041215266
      */
     MCAPI void setPlatformLocked(bool);
     /**
      * @symbol ?setRequiredBaseGameVersion@PackManifest@@QEAAXAEBVBaseGameVersion@@@Z
-     * @hash   -284768698
+     * @hash   -1118767530
      */
     MCAPI void setRequiredBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setSourceIdentity@PackManifest@@QEAAXAEBVContentIdentity@@@Z
-     * @hash   1235979572
+     * @hash   401980740
      */
     MCAPI void setSourceIdentity(class ContentIdentity const &);
     /**
      * @symbol ?MarioPackId@PackManifest@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   692586413
+     * @hash   -2112115899
      */
     MCAPI static std::string const MarioPackId;
     /**
      * @symbol ?StringToPackScope@PackManifest@@SA?AW4PackScope@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2125559453
+     * @hash   1336162435
      */
     MCAPI static enum class PackScope StringToPackScope(std::string const &);
 
 //private:
     /**
      * @symbol ?_serializeDependencies@PackManifest@@AEBAXAEAVValue@Json@@@Z
-     * @hash   -1395089532
+     * @hash   2066232580
      */
     MCAPI void _serializeDependencies(class Json::Value &) const;
     /**
      * @symbol ?_serializeHeader@PackManifest@@AEBAXAEAVValue@Json@@@Z
-     * @hash   1435243456
+     * @hash   601598272
      */
     MCAPI void _serializeHeader(class Json::Value &) const;
     /**
      * @symbol ?_serializeModules@PackManifest@@AEBAXAEAVValue@Json@@@Z
-     * @hash   -1015100952
+     * @hash   -1848746136
      */
     MCAPI void _serializeModules(class Json::Value &) const;
     /**
      * @symbol ?_serializeVersion@PackManifest@@AEBAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   607350323
+     * @hash   -226294861
      */
     MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
 
 private:
     /**
      * @symbol ?STRING_TO_PACK_SCOPE@PackManifest@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@@std@@@2@@std@@B
-     * @hash   1128840629
+     * @hash   2040591301
      */
     MCAPI static class std::unordered_map<std::string, enum class PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class PackScope>>> const STRING_TO_PACK_SCOPE;
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1LoadedResourceData@@QEAA@XZ
-     * @hash   564402807
+     * @hash   754127271
      */
     MCAPI ~LoadedResourceData();
 

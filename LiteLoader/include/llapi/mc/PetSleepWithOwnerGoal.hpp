@@ -38,67 +38,67 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@PetSleepWithOwnerGoal@@UEAA_NXZ
-     * @hash   -1907664936
+     * @hash   -1745555768
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@PetSleepWithOwnerGoal@@UEAA_NXZ
-     * @hash   -816920778
+     * @hash   -654873114
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@PetSleepWithOwnerGoal@@UEAAXXZ
-     * @hash   1778696113
+     * @hash   1940805281
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@PetSleepWithOwnerGoal@@UEAAXXZ
-     * @hash   -236385359
+     * @hash   -74276191
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@PetSleepWithOwnerGoal@@UEAAXXZ
-     * @hash   -322049908
+     * @hash   -159940740
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PetSleepWithOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -103942888
+     * @hash   58104776
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0PetSleepWithOwnerGoal@@QEAA@AEAVMob@@MHHM@Z
-     * @hash   992319845
+     * @hash   1154367509
      */
     MCAPI PetSleepWithOwnerGoal(class Mob &, float, int, int, float);
     /**
      * @symbol ?getBedTargetPos@PetSleepWithOwnerGoal@@QEBA?AVVec3@@XZ
-     * @hash   -541265790
+     * @hash   -379156622
      */
     MCAPI class Vec3 getBedTargetPos() const;
     /**
      * @symbol ?getData@PetSleepWithOwnerGoal@@QEBA?AUPetSleepWithOwnerGoalData@@XZ
-     * @hash   -2141690162
+     * @hash   -1979580994
      */
     MCAPI struct PetSleepWithOwnerGoalData getData() const;
     /**
      * @symbol ?getMob@PetSleepWithOwnerGoal@@QEBAAEAVMob@@XZ
-     * @hash   -1573268952
+     * @hash   -1476815304
      */
     MCAPI class Mob & getMob() const;
     /**
      * @symbol ?setState@PetSleepWithOwnerGoal@@QEAAXV?$unique_ptr@VPetSleepWithOwnerState@@U?$default_delete@VPetSleepWithOwnerState@@@std@@@std@@@Z
-     * @hash   -1893541602
+     * @hash   -1731432434
      */
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
 

@@ -40,35 +40,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@RandomDyeFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1449485663
+     * @hash   -977427087
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@RandomDyeFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1698990090
+     * @hash   -1226931514
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@RandomDyeFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   1640662783
+     * @hash   2112721359
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
      * @symbol ?_applyBase@RandomDyeFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@@Z
-     * @hash   1172519385
+     * @hash   1644577961
      */
     MCAPI void _applyBase(class ItemStackBase &, class Random &) const;
     /**
      * @symbol ?_getRandomArmorColor@RandomDyeFunction@@AEBA?AVColor@mce@@AEAVRandom@@@Z
-     * @hash   31028206
+     * @hash   503086782
      */
     MCAPI class mce::Color _getRandomArmorColor(class Random &) const;
     /**
      * @symbol ?_getRandomDyeColor@RandomDyeFunction@@AEBA?AVColor@mce@@AEAVRandom@@@Z
-     * @hash   -1109654257
+     * @hash   -637595681
      */
     MCAPI class mce::Color _getRandomDyeColor(class Random &) const;
 

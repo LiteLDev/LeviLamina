@@ -44,14 +44,14 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@RectLayoutFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1146732661
+     * @hash   1888593909
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 //private:
     /**
      * @symbol ?_tryPlaceFeature@RectLayoutFeature@@AEBA?AV?$optional@UFeatureArea@RectLayoutFeature@@@std@@AEBVVec2@@HAEBV?$array@V?$array@E$0BA@@std@@$0BA@@3@@Z
-     * @hash   -538394396
+     * @hash   203466852
      */
     MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const &, int, class std::array<class std::array<unsigned char, 16>, 16> const &) const;
 

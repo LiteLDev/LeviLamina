@@ -39,40 +39,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@HurtByTargetGoal@@UEAA_NXZ
-     * @hash   -1628039514
+     * @hash   -1583510618
      */
     virtual bool canUse();
     /**
      * @vftbl  4
      * @symbol ?start@HurtByTargetGoal@@UEAAXXZ
-     * @hash   2025620607
+     * @hash   2070149503
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1624750250
+     * @hash   1669279146
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1355408327
+     * @hash   -1258908551
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z
-     * @hash   -925209622
+     * @hash   -880680726
      */
     virtual void alertOther(class Mob *, class Mob *);
     /**
      * @symbol ??0HurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_N@Z
-     * @hash   1713744459
+     * @hash   1758273355
      */
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
 

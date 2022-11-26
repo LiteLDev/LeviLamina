@@ -37,52 +37,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@TemptGoal@@UEAA_NXZ
-     * @hash   -1266703443
+     * @hash   -1106977555
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@TemptGoal@@UEAA_NXZ
-     * @hash   -1495153221
+     * @hash   -1335381205
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@TemptGoal@@UEAAXXZ
-     * @hash   -877702954
+     * @hash   -718069322
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@TemptGoal@@UEAAXXZ
-     * @hash   1467241846
+     * @hash   1626844726
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@TemptGoal@@UEAAXXZ
-     * @hash   141492945
+     * @hash   301095825
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@TemptGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   596910291
+     * @hash   756682307
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0TemptGoal@@QEAA@AEBV0@@Z
-     * @hash   1373415521
+     * @hash   1533187537
      */
     MCAPI TemptGoal(class TemptGoal const &);
     /**
      * @symbol ??0TemptGoal@@QEAA@AEAVMob@@MAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@W4LevelSoundEvent@@UFloatRange@@_NM44@Z
-     * @hash   -553774086
+     * @hash   -394002070
      */
     MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum class LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
 

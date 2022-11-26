@@ -22,17 +22,17 @@ namespace PaddleBehaviorUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?computePaddleForcesBasedOnGaze@PaddleBehaviorUtility@@YAXAEAVVec3@@AEAM1MMM@Z
-     * @hash   -1591482303
+     * @hash   -1664318415
      */
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float, float);
     /**
      * @symbol ?setPaddleForce@PaddleBehaviorUtility@@YA_NAEAUPaddle@@UTick@@M@Z
-     * @hash   1841381502
+     * @hash   1768545390
      */
     MCAPI bool setPaddleForce(struct Paddle &, struct Tick, float);
     /**
      * @symbol ?setPaddleState@PaddleBehaviorUtility@@YA_NAEAUPaddle@@AEAVSynchedActorData@@_NW4Side@@UTick@@22@Z
-     * @hash   -58738178
+     * @hash   -131574290
      */
     MCAPI bool setPaddleState(struct Paddle &, class SynchedActorData &, bool, enum class Side, struct Tick, bool, bool);
 

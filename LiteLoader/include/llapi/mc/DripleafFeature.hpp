@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@DripleafFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   2093869597
+     * @hash   -2044554643
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_placeBigDripleaf@DripleafFeature@@CA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   951179437
+     * @hash   1107507229
      */
     MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
 

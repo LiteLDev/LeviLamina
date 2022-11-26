@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DragonStrafePlayerGoal@@UEAA_NXZ
-     * @hash   -803259606
+     * @hash   -642319014
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DragonStrafePlayerGoal@@UEAA_NXZ
-     * @hash   1899968344
+     * @hash   2060908936
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DragonStrafePlayerGoal@@UEAAXXZ
-     * @hash   -1336780109
+     * @hash   -1175854893
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DragonStrafePlayerGoal@@UEAAXXZ
-     * @hash   1260398419
+     * @hash   1421323635
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DragonStrafePlayerGoal@@UEAAXXZ
-     * @hash   532975630
+     * @hash   693900846
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1214601082
+     * @hash   -1053583610
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DragonStrafePlayerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1965719577
+     * @hash   -1804702105
      */
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?findNewTarget@DragonStrafePlayerGoal@@AEAAXXZ
-     * @hash   808033454
+     * @hash   968974046
      */
     MCAPI void findNewTarget();
     /**
      * @symbol ?navigateToNextPathNode@DragonStrafePlayerGoal@@AEAAXXZ
-     * @hash   2063631756
+     * @hash   -2070394948
      */
     MCAPI void navigateToNextPathNode();
     /**
      * @symbol ?setTarget@DragonStrafePlayerGoal@@AEAAXPEAVActor@@@Z
-     * @hash   1691373658
+     * @hash   1852298874
      */
     MCAPI void setTarget(class Actor *);
 

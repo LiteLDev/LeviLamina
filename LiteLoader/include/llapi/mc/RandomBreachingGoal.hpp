@@ -39,58 +39,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomBreachingGoal@@UEAA_NXZ
-     * @hash   1773545039
+     * @hash   1935823343
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomBreachingGoal@@UEAA_NXZ
-     * @hash   -1685624547
+     * @hash   -1523346243
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@RandomBreachingGoal@@UEAA_NXZ
-     * @hash   -1912900329
+     * @hash   -1816400553
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@RandomBreachingGoal@@UEAAXXZ
-     * @hash   -1419297736
+     * @hash   -1257019432
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RandomBreachingGoal@@UEAAXXZ
-     * @hash   -517564360
+     * @hash   -355286056
      */
     virtual void stop();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomBreachingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1926432367
+     * @hash   -1764154063
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?_setWantedPosition@RandomBreachingGoal@@MEAA_NXZ
-     * @hash   1107719068
+     * @hash   1269997372
      */
     virtual bool _setWantedPosition();
     /**
      * @symbol ??0RandomBreachingGoal@@QEAA@AEAVMob@@MHHHM@Z
-     * @hash   147311347
+     * @hash   309589651
      */
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
 

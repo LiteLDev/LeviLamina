@@ -24,62 +24,62 @@ namespace StructureTag {
 #undef AFTER_EXTRA
     /**
      * @symbol ?BLOCK_ENTITY_DATA@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1895189087
+     * @hash   -113233695
      */
     MCAPI extern std::string const BLOCK_ENTITY_DATA;
     /**
      * @symbol ?BLOCK_INDICES@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2089999229
+     * @hash   -308043837
      */
     MCAPI extern std::string const BLOCK_INDICES;
     /**
      * @symbol ?BLOCK_PALETTE@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   2106470155
+     * @hash   -406541749
      */
     MCAPI extern std::string const BLOCK_PALETTE;
     /**
      * @symbol ?BLOCK_POSITION_DATA@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   819525173
+     * @hash   -1693486731
      */
     MCAPI extern std::string const BLOCK_POSITION_DATA;
     /**
      * @symbol ?ENTITIES@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   401822201
+     * @hash   -2111189703
      */
     MCAPI extern std::string const ENTITIES;
     /**
      * @symbol ?FORMAT_VERSION@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -636950057
+     * @hash   1145005335
      */
     MCAPI extern std::string const FORMAT_VERSION;
     /**
      * @symbol ?PALETTE@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1247235153
+     * @hash   534720239
      */
     MCAPI extern std::string const PALETTE;
     /**
      * @symbol ?SIZE@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1474621095
+     * @hash   307334297
      */
     MCAPI extern std::string const SIZE;
     /**
      * @symbol ?STRUCTURE@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1662756577
+     * @hash   119198815
      */
     MCAPI extern std::string const STRUCTURE;
     /**
      * @symbol ?STRUCTURE_WORLD_ORIGIN@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1649478475
+     * @hash   132476917
      */
     MCAPI extern std::string const STRUCTURE_WORLD_ORIGIN;
     /**
      * @symbol ?TICK_DELAY@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1547079257
+     * @hash   -965932647
      */
     MCAPI extern std::string const TICK_DELAY;
     /**
      * @symbol ?TICK_QUEUE_DATA@StructureTag@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   337277901
+     * @hash   2119233293
      */
     MCAPI extern std::string const TICK_QUEUE_DATA;
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?ZERO_SETTING@FogTransitionSetting@@2U1@B
-     * @hash   1289890345
+     * @hash   1923150905
      */
     MCAPI static struct FogTransitionSetting const ZERO_SETTING;
 

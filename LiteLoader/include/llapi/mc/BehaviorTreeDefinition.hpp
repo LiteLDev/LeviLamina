@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getRoot@BehaviorTreeDefinition@@QEBAPEBVBehaviorDefinition@@XZ
-     * @hash   1357895879
+     * @hash   1337476551
      */
     MCAPI class BehaviorDefinition const * getRoot() const;
 

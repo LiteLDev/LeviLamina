@@ -28,39 +28,44 @@ public:
 
 public:
     /**
-     * @symbol ??0CerealDocumentUpgradeStep@@QEAA@AEBVSemVersion@@AEBUSchema@reflection@@@Z
-     * @hash   -1147613617
+     * @symbol ??0CerealDocumentUpgradeStep@@QEAA@AEBVSemVersion@@@Z
+     * @hash   1881119780
      */
-    MCAPI CerealDocumentUpgradeStep(class SemVersion const &, struct reflection::Schema const &);
+    MCAPI CerealDocumentUpgradeStep(class SemVersion const &);
     /**
      * @symbol ??0CerealDocumentUpgradeStep@@QEAA@AEBV0@@Z
-     * @hash   -848196495
+     * @hash   -328810591
      */
     MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const &);
     /**
      * @symbol ?addUpgrade@CerealDocumentUpgradeStep@@QEAAXV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
-     * @hash   -299327285
+     * @hash   222165131
      */
     MCAPI void addUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>);
     /**
      * @symbol ?apply@CerealDocumentUpgradeStep@@QEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
-     * @hash   -1849743989
+     * @hash   -1328251573
      */
     MCAPI bool apply(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &);
     /**
      * @symbol ?canUpgrade@CerealDocumentUpgradeStep@@QEBA_NAEBVSemVersion@@@Z
-     * @hash   -507378081
+     * @hash   14114335
      */
     MCAPI bool canUpgrade(class SemVersion const &) const;
     /**
      * @symbol ?getTargetVersion@CerealDocumentUpgradeStep@@QEBAAEBVSemVersion@@XZ
-     * @hash   -1448129512
+     * @hash   -1354858696
      */
     MCAPI class SemVersion const & getTargetVersion() const;
     /**
      * @symbol ??4CerealDocumentUpgradeStep@@QEAAAEAV0@AEBV0@@Z
-     * @hash   490697260
+     * @hash   1009806396
      */
     MCAPI class CerealDocumentUpgradeStep & operator=(class CerealDocumentUpgradeStep const &);
+    /**
+     * @symbol ?setSchema@CerealDocumentUpgradeStep@@QEAAXAEBUSchema@reflection@@@Z
+     * @hash   1976664320
+     */
+    MCAPI void setSchema(struct reflection::Schema const &);
 
 };

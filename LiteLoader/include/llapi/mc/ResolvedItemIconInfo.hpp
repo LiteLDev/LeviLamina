@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0ResolvedItemIconInfo@@QEAA@XZ
-     * @hash   487716574
+     * @hash   1077632190
      */
     MCAPI ResolvedItemIconInfo();
     /**
      * @symbol ??0ResolvedItemIconInfo@@QEAA@IH@Z
-     * @hash   -1573497540
+     * @hash   -983535796
      */
     MCAPI ResolvedItemIconInfo(unsigned int, int);
     /**
      * @symbol ??0ResolvedItemIconInfo@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMGG@Z
-     * @hash   1374688403
+     * @hash   1964696275
      */
     MCAPI ResolvedItemIconInfo(std::string const &, float, float, float, float, unsigned short, unsigned short);
     /**
      * @symbol ??0ResolvedItemIconInfo@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemIconInfoType@@@Z
-     * @hash   553738061
+     * @hash   1143776685
      */
     MCAPI ResolvedItemIconInfo(std::string const &, int, enum class ItemIconInfoType);
     /**
      * @symbol ??1ResolvedItemIconInfo@@QEAA@XZ
-     * @hash   855031660
+     * @hash   942705612
      */
     MCAPI ~ResolvedItemIconInfo();
 

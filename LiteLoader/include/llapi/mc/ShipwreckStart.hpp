@@ -38,7 +38,7 @@ public:
     virtual ~ShipwreckStart();
     /**
      * @symbol ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
-     * @hash   -425529284
+     * @hash   -253902372
      */
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 

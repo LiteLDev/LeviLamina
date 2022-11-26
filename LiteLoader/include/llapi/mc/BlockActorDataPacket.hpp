@@ -39,35 +39,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@BlockActorDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1892379540
+     * @hash   1871837204
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BlockActorDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1762067903
+     * @hash   -1782610239
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@BlockActorDataPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1252506
+     * @hash   -21794842
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@BlockActorDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   321876038
+     * @hash   301333702
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BlockActorDataPacket@@QEAA@XZ
-     * @hash   711598598
+     * @hash   691056262
      */
     MCAPI BlockActorDataPacket();
     /**
      * @symbol ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
-     * @hash   -317480152
+     * @hash   -338022488
      */
     MCAPI BlockActorDataPacket(class BlockPos const &, class CompoundTag);
 

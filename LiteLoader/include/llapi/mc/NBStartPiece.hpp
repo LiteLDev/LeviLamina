@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@NBStartPiece@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   -508578661
+     * @hash   -337320773
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @symbol ??0NBStartPiece@@QEAA@AEAVRandom@@HH@Z
-     * @hash   689118493
+     * @hash   860530141
      */
     MCAPI NBStartPiece(class Random &, int, int);
 

@@ -38,59 +38,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA_NXZ
-     * @hash   1779005801
+     * @hash   1875505577
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1778854949
+     * @hash   -1184726309
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -491702075
+     * @hash   127258805
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?canDestroySpecial@DiggerItemComponent@@QEBA_NAEBVBlock@@@Z
-     * @hash   -1519048565
+     * @hash   -994634709
      */
     MCAPI bool canDestroySpecial(class Block const &) const;
     /**
      * @symbol ?getDestroySpeed@DiggerItemComponent@@QEAAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   44413224
+     * @hash   569395992
      */
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     /**
      * @symbol ?mineBlock@DiggerItemComponent@@QEAA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     * @hash   -537996637
+     * @hash   -13029245
      */
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /**
      * @symbol ?bindType@DiggerItemComponent@@SAXXZ
-     * @hash   924876399
+     * @hash   1448844351
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DiggerItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1258447112
+     * @hash   -733464344
      */
     MCAPI static class HashedString const & getIdentifier();
 

@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?initialize@IsIllagerCaptainDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -156531684
+     * @hash   -74116324
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsIllagerCaptainDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -85128532
+     * @hash   -2559412
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsIllagerCaptainDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsIllagerCaptainDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   46447882
+     * @hash   128817114
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIllagerCaptainDefinition>> &);
 

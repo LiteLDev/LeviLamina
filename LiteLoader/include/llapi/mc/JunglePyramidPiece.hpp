@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@JunglePyramidPiece@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   1041838416
+     * @hash   1213526832
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -2039226952
+     * @hash   -1867569288
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ??0JunglePyramidPiece@@QEAA@FHH@Z
-     * @hash   -1404317287
+     * @hash   -1232628871
      */
     MCAPI JunglePyramidPiece(short, int, int);
 

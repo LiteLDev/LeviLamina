@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@ClientPlayerRewindSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -913132106
+     * @hash   -813926154
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doClientPlayerRewindSystem@ClientPlayerRewindSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@AEAVReplayStateComponent@@@Z
-     * @hash   591143964
+     * @hash   680109500
      */
     MCAPI static void _doClientPlayerRewindSystem(class StrictEntityContext const &, class ActorOwnerComponent &, class ReplayStateComponent &);
 

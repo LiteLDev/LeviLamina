@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@RideJumpTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1865146748
+     * @hash   1880076844
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_tickRideJumpTriggerSystem@RideJumpTriggerSystem@@CAXAEAVStrictEntityContext@@AEBUMoveInputComponent@@AEBUPassengerComponent@@AEAUJumpRidingScaleComponent@@AEAUVanillaClientGameplayComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@$$CBUSynchedActorDataComponent@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUPassengerComponent@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UMobOnPlayerJumpRequestComponent@@USendPacketsComponent@@@@@Z
-     * @hash   -1334936595
+     * @hash   -1319975747
      */
     MCAPI static void _tickRideJumpTriggerSystem(class StrictEntityContext &, struct MoveInputComponent const &, struct PassengerComponent const &, struct JumpRidingScaleComponent &, struct VanillaClientGameplayComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct MobFlag> const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct PassengerComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobOnPlayerJumpRequestComponent, struct SendPacketsComponent> &);
 

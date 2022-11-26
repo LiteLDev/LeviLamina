@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
-     * @hash   -925263370
+     * @hash   -836297834
      */
     virtual void initializeInternal(class Mob &);
     /**
      * @vftbl  2
      * @symbol ?tick@LookControl@@UEAAXAEAVMob@@@Z
-     * @hash   -2101801082
+     * @hash   -2085195002
      */
     virtual void tick(class Mob &);
     /**
      * @symbol ??0LookControl@@QEAA@XZ
-     * @hash   -1270061318
+     * @hash   -1253455238
      */
     MCAPI LookControl();
 

@@ -35,20 +35,20 @@ public:
     virtual ~AmbientSoundServerSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AmbientSoundServerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   673691417
+     * @hash   805786633
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickAmbientSoundComponent@AmbientSoundServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VAmbientSoundServerComponent@@@@@Z
-     * @hash   56496728
+     * @hash   188607320
      */
     MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
 

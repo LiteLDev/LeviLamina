@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0ActorAnimationControllerPtr@@QEAA@AEAVActorAnimationControllerGroup@@AEBVHashedString@@@Z
-     * @hash   115317227
+     * @hash   109689611
      */
     MCAPI ActorAnimationControllerPtr(class ActorAnimationControllerGroup &, class HashedString const &);
     /**
      * @symbol ?getName@ActorAnimationControllerPtr@@QEBAAEBVHashedString@@XZ
-     * @hash   -287030168
+     * @hash   -292657784
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?isNull@ActorAnimationControllerPtr@@QEBA_NXZ
-     * @hash   -177112198
+     * @hash   -182739814
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ??CActorAnimationControllerPtr@@QEBAPEBVActorAnimationController@@XZ
-     * @hash   1513118975
+     * @hash   1507491359
      */
     MCAPI class ActorAnimationController const * operator->() const;
     /**
      * @symbol ??CActorAnimationControllerPtr@@QEAAPEAVActorAnimationController@@XZ
-     * @hash   -388575679
+     * @hash   -394203295
      */
     MCAPI class ActorAnimationController * operator->();
     /**
      * @symbol ??1ActorAnimationControllerPtr@@QEAA@XZ
-     * @hash   -1325104145
+     * @hash   -1235677329
      */
     MCAPI ~ActorAnimationControllerPtr();
     /**
      * @symbol ?NONE@ActorAnimationControllerPtr@@2V1@B
-     * @hash   -2084887627
+     * @hash   -1258319995
      */
     MCAPI static class ActorAnimationControllerPtr const NONE;
 

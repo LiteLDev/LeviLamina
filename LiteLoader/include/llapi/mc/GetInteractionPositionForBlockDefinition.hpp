@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@GetInteractionPositionForBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-     * @hash   -1212207752
+     * @hash   -1130222920
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

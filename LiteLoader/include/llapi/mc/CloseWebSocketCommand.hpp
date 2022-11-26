@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@CloseWebSocketCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1053019815
+     * @hash   1225876807
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@CloseWebSocketCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-     * @hash   -1935896277
+     * @hash   -1763039285
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?mApp@CloseWebSocketCommand@@0PEAVIMinecraftApp@@EA
-     * @hash   1580536179
+     * @hash   -1853036845
      */
     MCAPI static class IMinecraftApp * mApp;
 

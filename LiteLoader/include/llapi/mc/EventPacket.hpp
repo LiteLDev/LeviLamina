@@ -91,115 +91,115 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@EventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -695209396
+     * @hash   -567773108
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@EventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2010393849
+     * @hash   2137830137
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@EventPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -65377554
+     * @hash   62058734
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@EventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -755861106
+     * @hash   -628424818
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EventPacket@@QEAA@XZ
-     * @hash   -1718555842
+     * @hash   -1591119554
      */
     MCAPI EventPacket();
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@W4AchievementIds@MinecraftEventing@@_N@Z
-     * @hash   -2092417606
+     * @hash   -1964981318
      */
     MCAPI EventPacket(class Player const *, enum class MinecraftEventing::AchievementIds, bool);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@V?$not_null@PEBVMob@@@gsl@@@Z
-     * @hash   -731628388
+     * @hash   -604192100
      */
     MCAPI EventPacket(class Player const *, class gsl::not_null<class Mob const *>);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@V?$not_null@PEBVActor@@@gsl@@W4InteractionType@MinecraftEventing@@@Z
-     * @hash   142012721
+     * @hash   269449009
      */
     MCAPI EventPacket(class Player const *, class gsl::not_null<class Actor const *>, enum class MinecraftEventing::InteractionType);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1994270019
+     * @hash   -1866833731
      */
     MCAPI EventPacket(class Player const *, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-     * @hash   584788198
+     * @hash   712224486
      */
     MCAPI EventPacket(class Player const *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@PEBVActor@@V?$not_null@PEBVMob@@@gsl@@W4ActorDamageCause@@W4ActorType@@@Z
-     * @hash   -268499182
+     * @hash   -141062894
      */
     MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, enum class ActorType);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@PEBVActor@@V?$not_null@PEBVMob@@@gsl@@W4ActorDamageCause@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z
-     * @hash   -962560174
+     * @hash   -835123886
      */
     MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, std::string, int, enum class ActorType);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@HV?$not_null@PEBVActor@@@gsl@@@Z
-     * @hash   2085944481
+     * @hash   -2081586527
      */
     MCAPI EventPacket(class Player const *, int, class gsl::not_null<class Actor const *>);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@HHW4ActorDamageCause@@_N@Z
-     * @hash   306563512
+     * @hash   433999800
      */
     MCAPI EventPacket(class Player const *, int, int, enum class ActorDamageCause, bool);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@FIF@Z
-     * @hash   1638702823
+     * @hash   1766139111
      */
     MCAPI EventPacket(class Player const *, short, unsigned int, short);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@AEBVRaid@@_N@Z
-     * @hash   1097077840
+     * @hash   1224514128
      */
     MCAPI EventPacket(class Player const *, class Raid const &, bool);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH1@Z
-     * @hash   1057971130
+     * @hash   1185407418
      */
     MCAPI EventPacket(class Player const *, std::string const &, int, int, std::string const &);
     /**
      * @symbol ??0EventPacket@@QEAA@PEBVPlayer@@AEBUData@0@@Z
-     * @hash   -738034447
+     * @hash   -610598159
      */
     MCAPI EventPacket(class Player const *, struct EventPacket::Data const &);
     /**
      * @symbol ??0EventPacket@@QEAA@AEBVPlayer@@W4MovementEventType@@MMMMM@Z
-     * @hash   -1193048775
+     * @hash   -1065612487
      */
     MCAPI EventPacket(class Player const &, enum class MovementEventType, float, float, float, float, float);
     /**
      * @symbol ??0EventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   565764171
+     * @hash   693200459
      */
     MCAPI EventPacket(class Player const &, std::string const &, int);
     /**
      * @symbol ??0EventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1867218584
+     * @hash   -1739782296
      */
     MCAPI EventPacket(class Player const &, std::string const &);
     /**
      * @symbol ??4EventPacket@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -711459800
+     * @hash   -665377928
      */
     MCAPI class EventPacket & operator=(class EventPacket &&);
 

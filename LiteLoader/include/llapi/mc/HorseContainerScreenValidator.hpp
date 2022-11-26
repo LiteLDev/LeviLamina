@@ -37,7 +37,7 @@ public:
     virtual ~HorseContainerScreenValidator();
     /**
      * @symbol ??0HorseContainerScreenValidator@@QEAA@XZ
-     * @hash   -1943586354
+     * @hash   -1471435522
      */
     MCAPI HorseContainerScreenValidator();
 

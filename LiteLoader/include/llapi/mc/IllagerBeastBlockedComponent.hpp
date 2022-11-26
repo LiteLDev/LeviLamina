@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?initFromDefinition@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -111383942
+     * @hash   -22418406
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onBlocked@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@0@Z
-     * @hash   885119920
+     * @hash   1401107728
      */
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 

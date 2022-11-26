@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0PlayerScoreboardId@@QEAA@XZ
-     * @hash   633850892
+     * @hash   1345344540
      */
     MCAPI PlayerScoreboardId();
     /**
      * @symbol ??0PlayerScoreboardId@@QEAA@_J@Z
-     * @hash   1503511718
+     * @hash   1461965766
      */
     MCAPI PlayerScoreboardId(__int64);
     /**
      * @symbol ?getHash@PlayerScoreboardId@@QEBA_KXZ
-     * @hash   1335382403
+     * @hash   2046876051
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ??8PlayerScoreboardId@@QEBA_NAEBU0@@Z
-     * @hash   1540327845
+     * @hash   -1750237595
      */
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
     /**
      * @symbol ?INVALID@PlayerScoreboardId@@2U1@B
-     * @hash   -1878843484
+     * @hash   -1015004428
      */
     MCAPI static struct PlayerScoreboardId const INVALID;
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ServerNetworkGameplayNotificationEvent@@QEAA@XZ
-     * @hash   1222627912
+     * @hash   1288652456
      */
     MCAPI ~ServerNetworkGameplayNotificationEvent();
 

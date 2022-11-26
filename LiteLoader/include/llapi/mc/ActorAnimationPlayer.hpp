@@ -33,23 +33,23 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONPLAYER
     /**
      * @symbol ?bindParticleEffects@ActorAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@@Z
-     * @hash   -1020180724
+     * @hash   -931215188
      */
     MCVAPI void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const &);
     /**
      * @symbol ?bindSoundEffects@ActorAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
-     * @hash   1998822705
+     * @hash   2087788241
      */
     MCVAPI void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
     /**
      * @symbol ?buildBoneToPartMapping@ActorAnimationPlayer@@UEAAXAEAVAnimationComponent@@@Z
-     * @hash   1799430870
+     * @hash   1888396406
      */
     MCVAPI void buildBoneToPartMapping(class AnimationComponent &);
 #endif
     /**
      * @symbol ??0ActorAnimationPlayer@@QEAA@AEBVHashedString@@AEBVExpressionNode@@@Z
-     * @hash   970536256
+     * @hash   994722704
      */
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
 

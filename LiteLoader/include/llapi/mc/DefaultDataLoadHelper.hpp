@@ -38,161 +38,161 @@ public:
     virtual ~DefaultDataLoadHelper();
     /**
      * @vftbl  1
-     * @hash   1343267281
+     * @hash   1297339169
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1344190802
+     * @hash   1298262690
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   1345160451
+     * @hash   1299232339
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   1346083972
+     * @hash   1300155860
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   1346976741
+     * @hash   1301048629
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   1347931014
+     * @hash   1302002902
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   1348854535
+     * @hash   1302926423
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   1349793432
+     * @hash   1303865320
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   1350716953
+     * @hash   1304788841
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -1928149965
+     * @hash   -1974078077
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -1927226444
+     * @hash   -1973154556
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -1926349051
+     * @hash   -1972277163
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -1925425530
+     * @hash   -1971353642
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -1924502009
+     * @hash   -1970430121
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@DefaultDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-     * @hash   -623159819
+     * @hash   -669087931
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
      * @vftbl  16
      * @symbol ?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
-     * @hash   -108267495
+     * @hash   -14996679
      */
     virtual enum class DataLoadHelperType getType() const;
     /**
      * @vftbl  17
      * @symbol ?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ
-     * @hash   1347356195
+     * @hash   1444101987
      */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
     /**
      * @symbol ?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   623322319
+     * @hash   577394207
      */
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
      * @symbol ?loadBlockPosition@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   358817280
+     * @hash   312889168
      */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     /**
      * @symbol ?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   -1357365555
+     * @hash   -1403293667
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
      * @symbol ?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   1776733911
+     * @hash   1730805799
      */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
      * @symbol ?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-     * @hash   1169048673
+     * @hash   1123120561
      */
     MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @symbol ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
-     * @hash   -1954310041
+     * @hash   -2000238153
      */
     MCVAPI unsigned char loadFacingID(unsigned char);
     /**
      * @symbol ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-     * @hash   247741757
+     * @hash   201813645
      */
     MCVAPI enum class Mirror loadMirror(enum class Mirror);
     /**
      * @symbol ?loadOwnerID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   -865581438
+     * @hash   -911509550
      */
     MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
      * @symbol ?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   494829345
+     * @hash   448901233
      */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
     /**
      * @symbol ?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-     * @hash   -657772162
+     * @hash   -703700274
      */
     MCVAPI enum class Rotation loadRotation(enum class Rotation);
     /**
      * @symbol ?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z
-     * @hash   -161619299
+     * @hash   -207547411
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
      * @symbol ?loadRotationDegreesY@DefaultDataLoadHelper@@UEAAMM@Z
-     * @hash   -1291175076
+     * @hash   -1337103188
      */
     MCVAPI float loadRotationDegreesY(float);
     /**
      * @symbol ?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z
-     * @hash   -810274744
+     * @hash   -856202856
      */
     MCVAPI float loadRotationRadiansX(float);
     /**
      * @symbol ?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z
-     * @hash   -1939830521
+     * @hash   -1985758633
      */
     MCVAPI float loadRotationRadiansY(float);
 #endif

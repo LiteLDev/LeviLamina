@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ItemStackRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -2051463156
+     * @hash   -2093332004
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ItemStackRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1042598215
+     * @hash   -1084467063
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ItemStackRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   900751294
+     * @hash   858882446
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ItemStackRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   955764414
+     * @hash   913895566
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestPacket@@QEAA@XZ
-     * @hash   -1596107698
+     * @hash   -1637976546
      */
     MCAPI ItemStackRequestPacket();
     /**
      * @symbol ?getRequestBatch@ItemStackRequestPacket@@QEBAAEBVItemStackRequestBatch@@XZ
-     * @hash   -385369456
+     * @hash   -427238304
      */
     MCAPI class ItemStackRequestBatch const & getRequestBatch() const;
 

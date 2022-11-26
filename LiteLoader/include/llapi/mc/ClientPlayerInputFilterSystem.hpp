@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?create@ClientPlayerInputFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1366412916
+     * @hash   1467141092
      */
     MCAPI static struct TickingSystemWithInfo create();
 
 //private:
     /**
      * @symbol ?tickSystem@ClientPlayerInputFilterSystem@@CAXAEAVStrictEntityContext@@AEBVLoadingStateComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPlayerInputRequestComponent@@@@@Z
-     * @hash   -1226988010
+     * @hash   -1125829306
      */
     MCAPI static void tickSystem(class StrictEntityContext &, class LoadingStateComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PlayerInputRequestComponent>);
 

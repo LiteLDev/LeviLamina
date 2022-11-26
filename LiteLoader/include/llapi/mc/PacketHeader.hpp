@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?getChannel@PacketHeader@@QEBAIXZ
-     * @hash   -761004990
+     * @hash   -806348814
      */
     MCAPI unsigned int getChannel() const;
 

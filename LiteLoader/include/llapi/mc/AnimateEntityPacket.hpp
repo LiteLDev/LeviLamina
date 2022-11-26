@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AnimateEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   913000306
+     * @hash   838595842
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AnimateEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1446034913
+     * @hash   -1520439377
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AnimateEntityPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1901688808
+     * @hash   1827284344
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AnimateEntityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1134581576
+     * @hash   -1208986040
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AnimateEntityPacket@@QEAA@XZ
-     * @hash   1033066200
+     * @hash   958661736
      */
     MCAPI AnimateEntityPacket();
     /**
      * @symbol ??0AnimateEntityPacket@@QEAA@AEBV?$vector@VActorRuntimeID@@V?$allocator@VActorRuntimeID@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@1M1W4MolangVersion@@1@Z
-     * @hash   -1426678772
+     * @hash   -1501083236
      */
     MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum class MolangVersion, std::string const &);
 

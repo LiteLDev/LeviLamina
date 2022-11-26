@@ -33,198 +33,203 @@ public:
 
 public:
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1585317655
      */
     virtual ~Skeleton();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Skeleton@@UEAAXXZ
-     * @hash   -474190194
+     * @hash   -425909554
      */
     virtual void normalTick();
     /**
-     * @vftbl  50
+     * @vftbl  52
      * @symbol ?passengerTick@Skeleton@@UEAAXXZ
-     * @hash   687358513
+     * @hash   735639153
      */
     virtual void passengerTick();
     /**
-     * @vftbl  60
-     * @hash   -188950850
+     * @vftbl  63
+     * @hash   -89434495
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
      * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  116
      * @symbol ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
-     * @hash   -2145985626
+     * @hash   -2097704986
      */
     virtual void setTarget(class Actor *);
     /**
-     * @vftbl  173
+     * @vftbl  176
      * @symbol ?canFreeze@Skeleton@@UEBA_NXZ
-     * @hash   -377526910
+     * @hash   -329261646
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  210
+     * @vftbl  212
      * @symbol ?canBeAffected@Skeleton@@UEBA_NI@Z
-     * @hash   -84045370
+     * @hash   -35780106
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
-     * @vftbl  220
-     * @hash   -2032751088
-     */
-    virtual void __unk_vfn_220();
-    /**
-     * @vftbl  221
-     * @hash   -2018004543
-     */
-    virtual void __unk_vfn_221();
-    /**
      * @vftbl  222
+     * @hash   -1937633230
+     */
+    virtual void __unk_vfn_222();
+    /**
+     * @vftbl  223
+     * @hash   -1919411709
+     */
+    virtual void __unk_vfn_223();
+    /**
+     * @vftbl  224
      * @symbol ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1329008796
+     * @hash   -1280743532
      */
     virtual void getDebugText(std::vector<std::string> &);
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
     /**
      * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  252
      * @symbol ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -952926784
+     * @hash   -904661520
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  289
+     * @hash   1042759315
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_289();
     /**
-     * @vftbl  313
+     * @vftbl  308
+     * @hash   -1142300981
+     */
+    virtual void __unk_vfn_308();
+    /**
+     * @vftbl  311
      * @symbol ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   -1106077471
+     * @hash   -1057812207
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETON
     /**
      * @symbol ?useNewAi@Skeleton@@UEBA_NXZ
-     * @hash   1702260284
+     * @hash   1798760060
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Skeleton@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -616924535
+     * @hash   -568874535
      */
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setWitherParent@Skeleton@@QEAAXPEAVWitherBoss@@@Z
-     * @hash   1767687825
+     * @hash   1815968465
      */
     MCAPI void setWitherParent(class WitherBoss *);
 
@@ -233,7 +238,7 @@ public:
 private:
     /**
      * @symbol ?SPEED_MODIFIER_ATTACK_UUID@Skeleton@@0VUUID@mce@@B
-     * @hash   -548874881
+     * @hash   310689647
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 

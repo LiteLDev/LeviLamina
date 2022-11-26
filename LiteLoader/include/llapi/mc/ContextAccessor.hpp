@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ContextAccessor@@QEAA@XZ
-     * @hash   -1333105550
+     * @hash   -1187341070
      */
     MCAPI ~ContextAccessor();
 

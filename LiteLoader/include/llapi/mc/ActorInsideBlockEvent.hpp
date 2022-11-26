@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ActorInsideBlockEvent@@QEAA@AEBU0@@Z
-     * @hash   -371288523
+     * @hash   -305263979
      */
     MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
     /**
      * @symbol ??1ActorInsideBlockEvent@@QEAA@XZ
-     * @hash   -1229594102
+     * @hash   -1163569558
      */
     MCAPI ~ActorInsideBlockEvent();
 

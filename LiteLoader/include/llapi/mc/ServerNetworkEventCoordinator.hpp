@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAAEAVServerNetworkEventHandler@@XZ
-     * @hash   -90759014
+     * @hash   -97263062
      */
     MCAPI class ServerNetworkEventHandler & getServerNetworkEventHandler();
     /**
      * @symbol ?registerServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerNetworkEventHandler@@U?$default_delete@VServerNetworkEventHandler@@@std@@@std@@@Z
-     * @hash   1094512824
+     * @hash   1269030424
      */
     MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler> &&);
     /**
      * @symbol ?sendEvent@ServerNetworkEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     * @hash   -758137583
+     * @hash   -692113039
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @symbol ?sendMessage@ServerNetworkEventCoordinator@@QEAAXAEAUMessageEvent@@@Z
-     * @hash   -852224490
+     * @hash   -786199946
      */
     MCAPI void sendMessage(struct MessageEvent &);
 

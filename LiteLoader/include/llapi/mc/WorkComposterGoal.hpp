@@ -36,46 +36,46 @@ public:
     virtual ~WorkComposterGoal();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@WorkComposterGoal@@UEAAXXZ
-     * @hash   1066101305
+     * @hash   1237282313
      */
     virtual void start();
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  18
      * @symbol ?useWorkstation@WorkComposterGoal@@UEAAXXZ
-     * @hash   -1802405117
+     * @hash   -1631224109
      */
     virtual void useWorkstation();
     /**
      * @symbol ??0WorkComposterGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -416813283
+     * @hash   -245432387
      */
     MCAPI WorkComposterGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_tryCompostItems@WorkComposterGoal@@AEAA_NXZ
-     * @hash   479958689
+     * @hash   651339585
      */
     MCAPI bool _tryCompostItems();
     /**
      * @symbol ?_tryEmptyComposter@WorkComposterGoal@@AEAA_NXZ
-     * @hash   682000227
+     * @hash   853273491
      */
     MCAPI bool _tryEmptyComposter();
 

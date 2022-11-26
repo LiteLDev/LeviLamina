@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0RoomDefinition@@QEAA@H@Z
-     * @hash   -306396015
+     * @hash   -134523087
      */
     MCAPI RoomDefinition(int);
     /**
      * @symbol ??0RoomDefinition@@QEAA@AEBV0@@Z
-     * @hash   1047861265
+     * @hash   1219734193
      */
     MCAPI RoomDefinition(class RoomDefinition const &);
     /**
      * @symbol ?findSource@RoomDefinition@@QEAA_NH@Z
-     * @hash   -1935541311
+     * @hash   -1763668383
      */
     MCAPI bool findSource(int);
     /**
      * @symbol ?setConnection@RoomDefinition@@QEAAXAEBEV?$shared_ptr@VRoomDefinition@@@std@@@Z
-     * @hash   741060602
+     * @hash   912948906
      */
     MCAPI void setConnection(unsigned char const &, class std::shared_ptr<class RoomDefinition>);
     /**
      * @symbol ??1RoomDefinition@@QEAA@XZ
-     * @hash   -552051496
+     * @hash   -380178568
      */
     MCAPI ~RoomDefinition();
 

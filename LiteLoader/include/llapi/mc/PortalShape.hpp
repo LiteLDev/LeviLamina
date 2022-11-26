@@ -33,69 +33,69 @@ public:
 public:
     /**
      * @symbol ??0PortalShape@@QEAA@AEBVBlockSource@@AEBVBlockPos@@W4PortalAxis@@@Z
-     * @hash   988499592
+     * @hash   1531456904
      */
     MCAPI PortalShape(class BlockSource const &, class BlockPos const &, enum class PortalAxis);
     /**
      * @symbol ?createPortalBlocks@PortalShape@@QEBAXAEAVWorldChangeTransaction@@@Z
-     * @hash   1967916666
+     * @hash   -1784093318
      */
     MCAPI void createPortalBlocks(class WorldChangeTransaction &) const;
     /**
      * @symbol ?createRecord@PortalShape@@QEBA?AVPortalRecord@@XZ
-     * @hash   1930032094
+     * @hash   -1821977890
      */
     MCAPI class PortalRecord createRecord() const;
     /**
      * @symbol ?evaluate@PortalShape@@QEAAXAEBVBlockPos@@AEBVBlockSource@@@Z
-     * @hash   -2052374007
+     * @hash   -1509416695
      */
     MCAPI void evaluate(class BlockPos const &, class BlockSource const &);
     /**
      * @symbol ?getNumberOfPortalBlocks@PortalShape@@QEBAHXZ
-     * @hash   -1006960328
+     * @hash   -862656568
      */
     MCAPI int getNumberOfPortalBlocks() const;
     /**
      * @symbol ?getPortalBlockAABB@PortalShape@@QEBA?AVAABB@@XZ
-     * @hash   98668708
+     * @hash   641626020
      */
     MCAPI class AABB getPortalBlockAABB() const;
     /**
      * @symbol ?isFilled@PortalShape@@QEBA_NXZ
-     * @hash   -428483498
+     * @hash   114473814
      */
     MCAPI bool isFilled() const;
     /**
      * @symbol ?isValid@PortalShape@@QEBA_NXZ
-     * @hash   1923299012
+     * @hash   -1828710972
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?removePortalBlocks@PortalShape@@QEBAXAEAVWorldChangeTransaction@@AEBVBlockPos@@@Z
-     * @hash   -1515269661
+     * @hash   -972312349
      */
     MCAPI void removePortalBlocks(class WorldChangeTransaction &, class BlockPos const &) const;
     /**
      * @symbol ?setAxis@PortalShape@@QEAAXW4PortalAxis@@@Z
-     * @hash   1202889384
+     * @hash   1182577688
      */
     MCAPI void setAxis(enum class PortalAxis);
     /**
      * @symbol ?updateNeighboringBlocks@PortalShape@@QEBAXAEAVBlockSource@@AEBVVec3@@@Z
-     * @hash   1194303785
+     * @hash   1737261097
      */
     MCAPI void updateNeighboringBlocks(class BlockSource &, class Vec3 const &) const;
 
 //private:
     /**
      * @symbol ?_calculatePortalHeight@PortalShape@@AEAAHAEBVBlockSource@@@Z
-     * @hash   1324238443
+     * @hash   1867195755
      */
     MCAPI int _calculatePortalHeight(class BlockSource const &);
     /**
      * @symbol ?_getDistanceUntilEdge@PortalShape@@AEBAHAEBVBlockPos@@W4Name@Facing@@AEBVBlockSource@@@Z
-     * @hash   -94968592
+     * @hash   447988720
      */
     MCAPI int _getDistanceUntilEdge(class BlockPos const &, enum class Facing::Name, class BlockSource const &) const;
 

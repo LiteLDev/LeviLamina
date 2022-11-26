@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0PackSourceReport@@QEAA@XZ
-     * @hash   -208229644
+     * @hash   -145926092
      */
     MCAPI PackSourceReport();
     /**
      * @symbol ??0PackSourceReport@@QEAA@AEBV0@@Z
-     * @hash   -801371631
+     * @hash   -869687199
      */
     MCAPI PackSourceReport(class PackSourceReport const &);
     /**
      * @symbol ?addReport@PackSourceReport@@QEAAXAEBUPackIdVersion@@$$QEAVPackReport@@@Z
-     * @hash   -1194560333
+     * @hash   -1132333661
      */
     MCAPI void addReport(struct PackIdVersion const &, class PackReport &&);
     /**
      * @symbol ?getReports@PackSourceReport@@QEBAAEBV?$unordered_map@UPackIdVersion@@VPackReport@@U?$hash@UPackIdVersion@@@std@@U?$equal_to@UPackIdVersion@@@4@V?$allocator@U?$pair@$$CBUPackIdVersion@@VPackReport@@@std@@@4@@std@@XZ
-     * @hash   -508739447
+     * @hash   -415468631
      */
     MCAPI class std::unordered_map<struct PackIdVersion, class PackReport, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, class PackReport>>> const & getReports() const;
     /**
      * @symbol ?hasErrors@PackSourceReport@@QEBA_NXZ
-     * @hash   -26771670
+     * @hash   35439626
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ??1PackSourceReport@@QEAA@XZ
-     * @hash   1624124354
+     * @hash   1713274402
      */
     MCAPI ~PackSourceReport();
 

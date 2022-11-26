@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SubpackInfo@@QEAA@XZ
-     * @hash   -2012351725
+     * @hash   -1924370253
      */
     MCAPI ~SubpackInfo();
 

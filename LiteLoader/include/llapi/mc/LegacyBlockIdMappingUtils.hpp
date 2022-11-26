@@ -22,22 +22,22 @@ namespace LegacyBlockIdMappingUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?addLegacyBlockIdMapping@LegacyBlockIdMappingUtils@@YAXAEBVBlockLegacy@@_K@Z
-     * @hash   1360511103
+     * @hash   2121684607
      */
     MCAPI void addLegacyBlockIdMapping(class BlockLegacy const &, unsigned __int64);
     /**
      * @symbol ?addLegacyBlockIdMappings@LegacyBlockIdMappingUtils@@YAXXZ
-     * @hash   -1911141102
+     * @hash   -1149967598
      */
     MCAPI void addLegacyBlockIdMappings();
     /**
      * @symbol ?mBlockIdToVanillaBlockTypesMap@LegacyBlockIdMappingUtils@@3V?$unordered_map@IV?$WeakPtr@VBlockLegacy@@@@U?$hash@I@std@@U?$equal_to@I@3@V?$allocator@U?$pair@$$CBIV?$WeakPtr@VBlockLegacy@@@@@std@@@3@@std@@A
-     * @hash   -1516755596
+     * @hash   -874054172
      */
     MCAPI extern class std::unordered_map<unsigned int, class WeakPtr<class BlockLegacy>, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class WeakPtr<class BlockLegacy>>>> mBlockIdToVanillaBlockTypesMap;
     /**
      * @symbol ?mBlockNameToBlockIdMap@LegacyBlockIdMappingUtils@@3V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@std@@A
-     * @hash   1461746341
+     * @hash   2104447765
      */
     MCAPI extern class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mBlockNameToBlockIdMap;
 

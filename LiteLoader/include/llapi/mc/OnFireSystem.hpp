@@ -32,34 +32,34 @@ public:
 public:
     /**
      * @symbol ?extinguishFire@OnFireSystem@@SAXAEAVActor@@@Z
-     * @hash   -1516823104
+     * @hash   -1464636960
      */
     MCAPI static void extinguishFire(class Actor &);
     /**
      * @symbol ?onFireChanged@OnFireSystem@@SAXAEAVActor@@@Z
-     * @hash   960382338
+     * @hash   1012583858
      */
     MCAPI static void onFireChanged(class Actor &);
     /**
      * @symbol ?setOnFire@OnFireSystem@@SAXAEAVActor@@H@Z
-     * @hash   -1957139755
+     * @hash   -1904922859
      */
     MCAPI static void setOnFire(class Actor &, int);
     /**
      * @symbol ?setOnFireNoEffects@OnFireSystem@@SAXAEAVActor@@H@Z
-     * @hash   1519252439
+     * @hash   1571469335
      */
     MCAPI static void setOnFireNoEffects(class Actor &, int);
     /**
      * @symbol ?stopFire@OnFireSystem@@SAXAEAVActor@@@Z
-     * @hash   -1883229424
+     * @hash   -1831012528
      */
     MCAPI static void stopFire(class Actor &);
 
 //protected:
     /**
      * @symbol ?_extinguishFireIfInWater@OnFireSystem@@KA_NAEAVActor@@@Z
-     * @hash   985020696
+     * @hash   1037206840
      */
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
 

@@ -39,63 +39,63 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1213685502
+     * @hash   -741703806
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -621748604
+     * @hash   -149597772
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isItemAllowedToAdd@MaterialReducerInputValidation@@UEBA_NAEBVItemStack@@@Z
-     * @hash   -350143075
+     * @hash   -253397283
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -751235131
+     * @hash   -279253435
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
-     * @hash   -1357255369
+     * @hash   -1260755593
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@MaterialReducerInputValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   -2099936670
+     * @hash   -1943931774
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERINPUTVALIDATION
     /**
      * @symbol ?canDestroy@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   190328297
+     * @hash   286828073
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @symbol ?getAvailableSetCount@MaterialReducerInputValidation@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   1050143393
+     * @hash   1152055521
      */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
     /**
      * @symbol ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
-     * @hash   817228475
+     * @hash   1289379307
      */
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 

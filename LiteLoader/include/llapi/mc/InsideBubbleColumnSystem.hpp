@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?createBoatInsideBubbleColumnSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   375142980
+     * @hash   464846564
      */
     MCAPI static struct TickingSystemWithInfo createBoatInsideBubbleColumnSystem();
     /**
      * @symbol ?createBubbleColumnMovementSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1340439354
+     * @hash   1430142938
      */
     MCAPI static struct TickingSystemWithInfo createBubbleColumnMovementSystem();
     /**
      * @symbol ?createSpawnBubbleColumnParticlesSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -675828216
+     * @hash   -586124632
      */
     MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
 

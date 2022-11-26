@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LegacyForestRockFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2123462891
+     * @hash   -1966566187
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LegacyForestRockFeature@@QEAA@AEBVFeatureRegistry@@@Z
-     * @hash   -1154003352
+     * @hash   -997168152
      */
     MCAPI LegacyForestRockFeature(class FeatureRegistry const &);
 

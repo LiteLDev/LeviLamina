@@ -33,18 +33,18 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
     /**
      * @symbol ?validate@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     * @hash   293828324
+     * @hash   390328100
      */
     MCVAPI bool validate(class Mob &);
     /**
      * @symbol ?validateMobType@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     * @hash   1675102806
+     * @hash   1771602582
      */
     MCVAPI bool validateMobType(class Mob &);
 #endif
     /**
      * @symbol ?initialize@BaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVGoal@@@Z
-     * @hash   -468955345
+     * @hash   -419413873
      */
     MCAPI void initialize(class EntityContext &, class Goal &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?mControlFlagMap@BaseGoalDefinition@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@std@@A
-     * @hash   -1351941339
+     * @hash   -492361435
      */
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mControlFlagMap;
 

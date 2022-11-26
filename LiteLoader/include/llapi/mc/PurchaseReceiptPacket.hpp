@@ -38,31 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PurchaseReceiptPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -260382993
+     * @hash   -334326177
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PurchaseReceiptPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1751156324
+     * @hash   -1825099508
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PurchaseReceiptPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1337570219
+     * @hash   1263627035
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1815121627
+     * @hash   1741163067
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PurchaseReceiptPacket@@QEAA@XZ
-     * @hash   123131499
+     * @hash   49172939
      */
     MCAPI PurchaseReceiptPacket();
+    /**
+     * @symbol ?sMaxReceiptsPerPacket@PurchaseReceiptPacket@@2_KB
+     * @hash   1600155582
+     */
+    MCAPI static unsigned __int64 const sMaxReceiptsPerPacket;
 
 };

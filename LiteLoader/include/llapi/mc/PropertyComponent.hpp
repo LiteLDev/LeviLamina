@@ -33,82 +33,82 @@ public:
 public:
     /**
      * @symbol ??0PropertyComponent@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
-     * @hash   -1452473174
+     * @hash   -1399456726
      */
     MCAPI PropertyComponent(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
     /**
      * @symbol ??0PropertyComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -668493143
+     * @hash   -524466151
      */
     MCAPI PropertyComponent(class PropertyComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@PropertyComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1840391096
+     * @hash   1893407544
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?applyPendingChanges@PropertyComponent@@QEAAXAEBV?$unordered_map@_KV?$variant@HM_N_K@std@@U?$hash@_K@2@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KV?$variant@HM_N_K@std@@@std@@@2@@std@@@Z
-     * @hash   1694333514
+     * @hash   1747349962
      */
     MCAPI void applyPendingChanges(class std::unordered_map<unsigned __int64, class std::variant<int, float, bool, unsigned __int64>, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, class std::variant<int, float, bool, unsigned __int64>>>> const &);
     /**
      * @symbol ?getMolangValue@PropertyComponent@@QEBA_N_KAEAUMolangScriptArg@@@Z
-     * @hash   1611207073
+     * @hash   1664223521
      */
     MCAPI bool getMolangValue(unsigned __int64, struct MolangScriptArg &) const;
     /**
      * @symbol ?getPropertyType@PropertyComponent@@QEBA?AW4ContainedType@PropertyMetadata@@_K@Z
-     * @hash   1416360448
+     * @hash   1469376896
      */
     MCAPI enum class PropertyMetadata::ContainedType getPropertyType(unsigned __int64) const;
     /**
      * @symbol ?hasDirtyProperties@PropertyComponent@@QEBA_NXZ
-     * @hash   -769238240
+     * @hash   -716221792
      */
     MCAPI bool hasDirtyProperties() const;
     /**
      * @symbol ?packAllSyncData@PropertyComponent@@QEBA?AUPropertySyncData@@XZ
-     * @hash   187612980
+     * @hash   240629428
      */
     MCAPI struct PropertySyncData packAllSyncData() const;
     /**
      * @symbol ?packDirtySyncData@PropertyComponent@@QEAA?AUPropertySyncData@@XZ
-     * @hash   -1602955064
+     * @hash   -1549938616
      */
     MCAPI struct PropertySyncData packDirtySyncData();
     /**
      * @symbol ?readLoadedProperties@PropertyComponent@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -145118088
+     * @hash   -92101640
      */
     MCAPI void readLoadedProperties(class CompoundTag const &);
     /**
      * @symbol ?setAliasProperties@PropertyComponent@@QEAAXAEBV?$unordered_map@VHashedString@@V?$shared_ptr@VTag@@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$shared_ptr@VTag@@@std@@@std@@@3@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@1@Z
-     * @hash   -572603527
+     * @hash   -519587079
      */
     MCAPI void setAliasProperties(class std::unordered_map<class HashedString, class std::shared_ptr<class Tag>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<class Tag>>>> const &, std::string const &, std::string const &);
     /**
      * @symbol ?tryGetBool@PropertyComponent@@QEBA?AV?$optional@_N@std@@_K@Z
-     * @hash   1895160888
+     * @hash   1948177336
      */
     MCAPI class std::optional<bool> tryGetBool(unsigned __int64) const;
     /**
      * @symbol ?tryGetFloat@PropertyComponent@@QEBA?AV?$optional@M@std@@_K@Z
-     * @hash   -1787456456
+     * @hash   -1734440008
      */
     MCAPI class std::optional<float> tryGetFloat(unsigned __int64) const;
     /**
      * @symbol ?tryGetInt@PropertyComponent@@QEBA?AV?$optional@H@std@@_K@Z
-     * @hash   864666346
+     * @hash   917682794
      */
     MCAPI class std::optional<int> tryGetInt(unsigned __int64) const;
     /**
      * @symbol ?tryGetString@PropertyComponent@@QEBAPEBVHashedString@@_K@Z
-     * @hash   714706461
+     * @hash   767722909
      */
     MCAPI class HashedString const * tryGetString(unsigned __int64) const;
     /**
      * @symbol ??1PropertyComponent@@QEAA@XZ
-     * @hash   -467333628
+     * @hash   -323552652
      */
     MCAPI ~PropertyComponent();
 

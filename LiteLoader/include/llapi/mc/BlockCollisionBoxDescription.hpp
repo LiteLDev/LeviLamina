@@ -36,51 +36,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockCollisionBoxDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1562344067
+     * @hash   2093507987
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockCollisionBoxDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1663620911
+     * @hash   -1132456991
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockCollisionBoxDescription@@UEBA_NXZ
-     * @hash   131332011
+     * @hash   227831787
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockCollisionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1527759171
+     * @hash   -993397043
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockCollisionBoxDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   110515493
+     * @hash   645215893
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockCollisionBoxDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -789258437
+     * @hash   993181299
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCollisionBoxDescription@@SAXXZ
-     * @hash   -1288296685
+     * @hash   -757778557
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockCollisionBoxDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   2006175466
+     * @hash   -1757627910
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

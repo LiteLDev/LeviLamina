@@ -31,44 +31,44 @@ public:
 public:
     /**
      * @symbol ??0ContentLog@@QEAA@XZ
-     * @hash   -1944405305
+     * @hash   -1432768905
      */
     MCAPI ContentLog();
     /**
      * @symbol ?isEnabled@ContentLog@@QEBA_NXZ
-     * @hash   1221428536
+     * @hash   1346220152
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
-     * @hash   527579529
+     * @hash   1039200553
      */
     MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...);
     /**
      * @symbol ?unregisterEndPoint@ContentLog@@QEAAXV?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
-     * @hash   73455121
+     * @hash   585076145
      */
     MCAPI void unregisterEndPoint(class gsl::not_null<class ContentLogEndPoint *>);
     /**
      * @symbol ?updateEnabledStatus@ContentLog@@QEAAXXZ
-     * @hash   -2023476829
+     * @hash   -1511855805
      */
     MCAPI void updateEnabledStatus();
     /**
      * @symbol ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
-     * @hash   1804029300
+     * @hash   -1979316972
      */
     MCAPI static char const * getLogAreaName(enum class LogArea);
     /**
      * @symbol ?getLogLevelName@ContentLog@@SAPEBDW4LogLevel@@@Z
-     * @hash   712927114
+     * @hash   1224548138
      */
     MCAPI static char const * getLogLevelName(enum class LogLevel);
 
 //private:
     /**
      * @symbol ?_writeToLog@ContentLog@@AEAAX_NW4LogArea@@W4LogLevel@@AEAPEAD@Z
-     * @hash   292677223
+     * @hash   804313623
      */
     MCAPI void _writeToLog(bool, enum class LogArea, enum class LogLevel, char *&);
 

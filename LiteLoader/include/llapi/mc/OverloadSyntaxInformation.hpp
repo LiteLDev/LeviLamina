@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0OverloadSyntaxInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@II@Z
-     * @hash   1060352998
+     * @hash   473451078
      */
     MCAPI OverloadSyntaxInformation(std::string const &, unsigned int, unsigned int);
 

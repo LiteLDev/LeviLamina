@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?SetBroadcastRequestCallback@NetherNetInstance@@QEAAX$$QEAV?$function@$$A6A_NPEAXPEAH@Z@std@@@Z
-     * @hash   -133979918
+     * @hash   -207092798
      */
     MCAPI void SetBroadcastRequestCallback(class std::function<bool (void *, int *)> &&);
     /**
      * @symbol ?SetBroadcastResponseCallback@NetherNetInstance@@QEAAX$$QEAV?$function@$$A6AXAEBUNetworkID@NetherNet@@PEBXH@Z@std@@@Z
-     * @hash   53017232
+     * @hash   -20095648
      */
     MCAPI void SetBroadcastResponseCallback(class std::function<void (struct NetherNet::NetworkID const &, void const *, int)> &&);
 

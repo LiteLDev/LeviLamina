@@ -29,32 +29,32 @@ struct TreeParams {
 #undef AFTER_EXTRA
     /**
      * @symbol ?isValidTreePosition@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   -279894105
+     * @hash   475421143
      */
     MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?isValidTreePosition@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBUTreeParams@1@@Z
-     * @hash   788786523
+     * @hash   1544101771
      */
     MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const &, class BlockPos const &, struct TreeHelper::TreeParams const &);
     /**
      * @symbol ?placeBaseBlock@TreeHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@3@@Z
-     * @hash   1378859675
+     * @hash   2134174923
      */
     MCAPI class std::optional<class BlockPos> placeBaseBlock(class IBlockWorldGenAPI &, class BlockPos const &, std::vector<class BlockDescriptor> const &);
     /**
      * @symbol ?placeDecoratedBlock@TreeHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBVBlock@@AEBUAttachableDecoration@1@AEBUDirectionMask@81@@Z
-     * @hash   -35194421
+     * @hash   720120827
      */
     MCAPI class std::optional<class BlockPos> placeDecoratedBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class Block const &, struct TreeHelper::AttachableDecoration const &, struct TreeHelper::AttachableDecoration::DirectionMask const &);
     /**
      * @symbol ?placeRadialBlockGroup@TreeHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBVBlock@@HH_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@3@@Z
-     * @hash   -786373810
+     * @hash   -31058562
      */
     MCAPI class std::optional<class BlockPos> placeRadialBlockGroup(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class Block const &, int, int, bool, std::vector<class BlockDescriptor> const &);
     /**
      * @symbol ?prepareSpawn@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@2@Z
-     * @hash   -221286972
+     * @hash   534028276
      */
     MCAPI bool prepareSpawn(class IBlockWorldGenAPI const &, class BlockPos const &, int, std::vector<class BlockDescriptor> const &, std::vector<class BlockDescriptor> const &);
 

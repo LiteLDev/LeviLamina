@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getTicksSinceLastVibration@ClientVibrationComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
-     * @hash   -472381482
+     * @hash   -485512586
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     /**
      * @symbol ?setLastVibrationTick@ClientVibrationComponent@@QEAAXUTick@@@Z
-     * @hash   -947768304
+     * @hash   -960899408
      */
     MCAPI void setLastVibrationTick(struct Tick);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0TimerDefinition@@QEAA@XZ
-     * @hash   1004141700
+     * @hash   929275956
      */
     MCAPI TimerDefinition();
     /**
      * @symbol ?addWeightedChoiceEntry@TimerDefinition@@QEAAXAEBUWeightChoiceEntry@@@Z
-     * @hash   -541399856
+     * @hash   -616280976
      */
     MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const &);
     /**
      * @symbol ?initialize@TimerDefinition@@QEBAXAEAVEntityContext@@AEAVTimerComponent@@@Z
-     * @hash   -1858538795
+     * @hash   -1933419915
      */
     MCAPI void initialize(class EntityContext &, class TimerComponent &) const;
     /**
      * @symbol ?buildSchema@TimerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTimerDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -668553918
+     * @hash   -743435038
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TimerDefinition>> &);
 

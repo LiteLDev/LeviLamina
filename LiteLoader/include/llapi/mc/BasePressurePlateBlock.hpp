@@ -37,316 +37,321 @@ public:
      */
     virtual ~BasePressurePlateBlock();
     /**
-     * @vftbl  5
-     * @symbol ?getCollisionShape@BasePressurePlateBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -285564893
-     */
-    virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /**
      * @vftbl  10
      * @symbol ?getAABB@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2104921683
+     * @hash   -1636153571
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  51
      * @symbol ?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ
-     * @hash   286193064
+     * @hash   382692840
      */
     virtual bool isSignalSource() const;
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   1787464230
+     * @hash   1883964006
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@BasePressurePlateBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -669309423
+     * @hash   -572809647
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   524503579
+     * @hash   993071803
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   135451651
+     * @hash   604158259
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1105714385
+     * @hash   -190868545
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  108
      * @symbol ?isAttachedTo@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   1055273953
+     * @hash   1523980561
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  112
      * @symbol ?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   509429456
+     * @hash   977997680
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1745436199
+     * @hash   -2080762985
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1479953287
+     * @hash   1948659895
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@BasePressurePlateBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   193894237
+     * @hash   287165053
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  147
      * @symbol ?canSpawnOn@BasePressurePlateBlock@@UEBA_NPEAVActor@@@Z
-     * @hash   198250524
+     * @hash   294996316
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
      * @vftbl  156
-     * @hash   1472752786
+     * @hash   1569252562
      */
     virtual void __unk_vfn_156();
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BasePressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -2115815084
+     * @hash   -1351043596
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
      * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  170
      * @symbol ?onPlace@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1522781289
+     * @hash   -810918617
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  173
      * @symbol ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -140522733
+     * @hash   328045491
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  176
-     * @hash   1537222432
+     * @hash   1633968224
      */
     virtual void __unk_vfn_176();
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  179
+     * @symbol ?canSurvive@BasePressurePlateBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1446805892
      */
-    virtual void __unk_vfn_187();
+    virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  193
+     * @vftbl  186
+     * @hash   1662597375
+     */
+    virtual void __unk_vfn_186();
+    /**
+     * @vftbl  192
      * @symbol ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
-     * @hash   576176782
+     * @hash   738455086
      */
     virtual int getTickDelay() const;
     /**
-     * @vftbl  194
+     * @vftbl  193
      * @symbol ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -1328376217
      */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
     /**
-     * @vftbl  195
+     * @vftbl  194
      * @symbol ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
      * @hash   1243334188
      */
     virtual int getSignalForData(int) const = 0;
     /**
-     * @vftbl  196
+     * @vftbl  195
      * @symbol ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
      * @hash   -143780401
      */
     virtual int getRedstoneSignal(int) const = 0;
     /**
-     * @vftbl  197
+     * @vftbl  196
      * @symbol ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
-     * @hash   -1104268096
+     * @hash   -635561488
      */
     virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
     /**
      * @symbol ?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ
-     * @hash   286193064
+     * @hash   382692840
      */
     MCVAPI bool isSignalSource() const;
 #endif
@@ -354,19 +359,19 @@ public:
 //protected:
     /**
      * @symbol ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1466959524
+     * @hash   -998283668
      */
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
-     * @hash   -15085228
+     * @hash   453590628
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int, int) const;
 
 //private:
     /**
      * @symbol ?isEntityInsideTriggerable@BasePressurePlateBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1923138963
+     * @hash   -1903121725
      */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
 

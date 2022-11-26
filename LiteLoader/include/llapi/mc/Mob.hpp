@@ -43,1607 +43,1627 @@ public:
 
 public:
     /**
-     * @vftbl  0
+     * @vftbl  2
      * @symbol ?hasComponent@Mob@@UEBA_NAEBVHashedString@@@Z
-     * @hash   -1665806746
+     * @hash   -1617602986
      */
     virtual bool hasComponent(class HashedString const &) const;
     /**
-     * @vftbl  7
+     * @vftbl  9
      * @symbol ?outOfWorld@Mob@@MEAAXXZ
-     * @hash   -1374870627
+     * @hash   -1326251715
      */
     virtual void outOfWorld();
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   276383629
+     * @hash   325002541
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  9
+     * @vftbl  11
      * @symbol ?reloadHardcodedClient@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -2061253400
+     * @hash   -2012465352
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  10
+     * @vftbl  12
      * @symbol ?initializeComponents@Mob@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   914725040
+     * @hash   962944176
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  13
+     * @vftbl  15
      * @symbol ?_doInitialMove@Mob@@MEAAXXZ
-     * @hash   1300028187
+     * @hash   1346171563
      */
     virtual void _doInitialMove();
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1731873358
      */
     virtual ~Mob();
     /**
-     * @vftbl  30
+     * @vftbl  32
      * @symbol ?getInterpolatedBodyRot@Mob@@UEBAMM@Z
-     * @hash   1419430438
+     * @hash   1467157542
      */
     virtual float getInterpolatedBodyRot(float) const;
     /**
-     * @vftbl  31
+     * @vftbl  33
      * @symbol ?getInterpolatedHeadRot@Mob@@UEBAMM@Z
-     * @hash   1962428996
+     * @hash   2010294484
      */
     virtual float getInterpolatedHeadRot(float) const;
     /**
-     * @vftbl  32
+     * @vftbl  34
      * @symbol ?getInterpolatedBodyYaw@Mob@@UEBAMM@Z
-     * @hash   -739206226
+     * @hash   -691402242
      */
     virtual float getInterpolatedBodyYaw(float) const;
     /**
-     * @vftbl  33
+     * @vftbl  35
      * @symbol ?getYawSpeedInDegreesPerSecond@Mob@@UEBAMXZ
-     * @hash   -815079477
+     * @hash   -767029477
      */
     virtual float getYawSpeedInDegreesPerSecond() const;
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?resetInterpolated@Mob@@UEAAXXZ
-     * @hash   1047105065
+     * @hash   1095893113
      */
     virtual void resetInterpolated();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  41
+     * @vftbl  43
      * @symbol ?blockedByShield@Mob@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
-     * @hash   -1302123632
+     * @hash   -1254581040
      */
     virtual void blockedByShield(class ActorDamageSource const &, class Actor &);
     /**
-     * @vftbl  43
+     * @vftbl  45
      * @symbol ?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   2048921853
+     * @hash   2098278813
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Mob@@UEAAXXZ
-     * @hash   335147995
+     * @hash   383551643
      */
     virtual void normalTick();
     /**
-     * @vftbl  49
+     * @vftbl  51
      * @symbol ?baseTick@Mob@@UEAAXXZ
-     * @hash   -2052281035
+     * @hash   -2004815323
      */
     virtual void baseTick();
     /**
-     * @vftbl  50
+     * @vftbl  52
      * @symbol ?passengerTick@Mob@@MEAAXXZ
-     * @hash   -644212201
+     * @hash   -595608665
      */
     virtual void passengerTick();
     /**
-     * @vftbl  52
+     * @vftbl  54
      * @symbol ?startRiding@Mob@@UEAA_NAEAVActor@@@Z
-     * @hash   -839445241
+     * @hash   -790165161
      */
     virtual bool startRiding(class Actor &);
     /**
-     * @vftbl  53
+     * @vftbl  55
      * @symbol ?addPassenger@Mob@@UEAAXAEAVActor@@@Z
-     * @hash   -1671193881
+     * @hash   -1623728169
      */
     virtual void addPassenger(class Actor &);
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  91
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  94
      * @symbol ?isImmobile@Mob@@UEBA_NXZ
-     * @hash   1041241848
+     * @hash   1089522488
      */
     virtual bool isImmobile() const;
     /**
-     * @vftbl  94
+     * @vftbl  97
      * @symbol ?isPickable@Mob@@UEAA_NXZ
-     * @hash   366021118
+     * @hash   414317134
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
-     * @vftbl  96
-     * @symbol ?isSleeping@Mob@@UEBA_NXZ
-     * @hash   -220790451
-     */
-    virtual bool isSleeping() const;
-    /**
-     * @vftbl  97
-     * @symbol ?setSleeping@Mob@@UEAAX_N@Z
-     * @hash   -471522584
-     */
-    virtual void setSleeping(bool);
-    /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
+     * @vftbl  99
+     * @symbol ?isSleeping@Mob@@UEBA_NXZ
+     * @hash   -172463683
+     */
+    virtual bool isSleeping() const;
+    /**
      * @vftbl  100
+     * @symbol ?setSleeping@Mob@@UEAAX_N@Z
+     * @hash   -422442392
+     */
+    virtual void setSleeping(bool);
+    /**
+     * @vftbl  101
+     * @hash   1421489202
+     */
+    virtual void __unk_vfn_101();
+    /**
+     * @vftbl  103
      * @symbol ?isBlocking@Mob@@UEBA_NXZ
-     * @hash   860349639
+     * @hash   908568775
      */
     virtual bool isBlocking() const;
     /**
-     * @vftbl  102
+     * @vftbl  105
      * @symbol ?isAlive@Mob@@UEBA_NXZ
-     * @hash   1781548443
+     * @hash   1829767579
      */
     virtual bool isAlive() const;
     /**
-     * @vftbl  105
-     * @hash   1335894854
-     */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  106
-     * @symbol ?isSurfaceMob@Mob@@UEBA_NXZ
-     * @hash   -318243483
-     */
-    virtual bool isSurfaceMob() const;
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
-    /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
+     * @vftbl  109
+     * @symbol ?isSurfaceMob@Mob@@UEBA_NXZ
+     * @hash   -269870587
+     */
+    virtual bool isSurfaceMob() const;
+    /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
      * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  116
      * @symbol ?setTarget@Mob@@UEAAXPEAVActor@@@Z
-     * @hash   393563209
+     * @hash   442643401
      */
     virtual void setTarget(class Actor *);
     /**
-     * @vftbl  115
+     * @vftbl  118
      * @symbol ?attack@Mob@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   1278298487
+     * @hash   1325764199
      */
     virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
-     * @vftbl  126
+     * @vftbl  129
      * @symbol ?canPowerJump@Mob@@UEBA_NXZ
-     * @hash   1470274795
+     * @hash   1517817387
      */
     virtual bool canPowerJump() const;
     /**
-     * @vftbl  128
+     * @vftbl  131
      * @symbol ?isJumping@Mob@@UEBA_NXZ
-     * @hash   -861408110
+     * @hash   -813127470
      */
     virtual bool isJumping() const;
     /**
-     * @vftbl  135
+     * @vftbl  138
      * @symbol ?getBlockDamageCause@Mob@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
-     * @hash   798207084
+     * @hash   845934188
      */
     virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /**
-     * @vftbl  136
+     * @vftbl  139
      * @symbol ?animateHurt@Mob@@UEAAXXZ
-     * @hash   1642845239
+     * @hash   1690310951
      */
     virtual void animateHurt();
     /**
-     * @vftbl  137
+     * @vftbl  140
      * @symbol ?doFireHurt@Mob@@UEAA_NH@Z
-     * @hash   -1393370154
+     * @hash   -1345643050
      */
     virtual bool doFireHurt(int);
     /**
-     * @vftbl  141
+     * @vftbl  144
      * @symbol ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1666801162
+     * @hash   -1618705034
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  155
+     * @vftbl  158
      * @symbol ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
-     * @hash   407673672
+     * @hash   455400776
      */
     virtual enum class ArmorMaterialType getArmorMaterialTypeInSlot(enum class ArmorSlot) const;
     /**
-     * @vftbl  156
+     * @vftbl  159
      * @symbol ?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
-     * @hash   -694286167
+     * @hash   -646559063
      */
     virtual enum class ArmorTextureType getArmorMaterialTextureTypeInSlot(enum class ArmorSlot) const;
     /**
-     * @vftbl  157
+     * @vftbl  160
      * @symbol ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
-     * @hash   -1561351459
+     * @hash   -1513624355
      */
     virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
     /**
-     * @vftbl  159
+     * @vftbl  162
      * @symbol ?setEquippedSlot@Mob@@UEAAXW4EquipmentSlot@@AEBVItemStack@@@Z
-     * @hash   -1212369812
+     * @hash   -1163443380
      */
     virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
-     * @vftbl  173
+     * @vftbl  176
      * @symbol ?canFreeze@Mob@@UEBA_NXZ
-     * @hash   -943786737
+     * @hash   -896244145
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl  180
+     * @vftbl  182
      * @symbol ?canChangeDimensionsUsingPortal@Mob@@UEBA_NXZ
-     * @hash   -1231499429
+     * @hash   -1183956837
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  185
+     * @vftbl  187
      * @symbol ?causeFallDamage@Mob@@MEAAXMMVActorDamageSource@@@Z
-     * @hash   -541414375
+     * @hash   -493871783
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl  193
+     * @vftbl  195
      * @symbol ?canBePulledIntoVehicle@Mob@@UEBA_NXZ
-     * @hash   -280245667
+     * @hash   -183745891
      */
     virtual bool canBePulledIntoVehicle() const;
     /**
-     * @vftbl  194
+     * @vftbl  196
      * @symbol ?inCaravan@Mob@@UEBA_NXZ
-     * @hash   -656932935
+     * @hash   -608713799
      */
     virtual bool inCaravan() const;
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  199
+     * @vftbl  201
      * @symbol ?stopRiding@Mob@@UEAAX_N00@Z
-     * @hash   -1083177186
+     * @hash   -1033820226
      */
     virtual void stopRiding(bool, bool, bool);
     /**
-     * @vftbl  202
+     * @vftbl  204
      * @symbol ?buildDebugInfo@Mob@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1080222516
+     * @hash   1127765108
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
-     * @vftbl  207
+     * @vftbl  209
      * @symbol ?getDeathTime@Mob@@UEBAHXZ
-     * @hash   1463857478
+     * @hash   1511584582
      */
     virtual int getDeathTime() const;
     /**
-     * @vftbl  218
+     * @vftbl  220
      * @symbol ?swing@Mob@@UEAAXXZ
-     * @hash   1233296005
+     * @hash   1282652965
      */
     virtual void swing();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  225
-     * @symbol ?getYHeadRot@Mob@@UEBAMXZ
-     * @hash   1140884162
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual float getYHeadRot() const;
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  226
-     * @symbol ?setYHeadRot@Mob@@UEAAXM@Z
-     * @hash   745223611
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void setYHeadRot(float);
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  227
-     * @symbol ?getYHeadRotO@Mob@@UEBAMXZ
-     * @hash   2129716313
-     */
-    virtual float getYHeadRotO() const;
-    /**
-     * @vftbl  228
-     * @symbol ?setYHeadRotO@Mob@@UEAAXM@Z
-     * @hash   36252604
-     */
-    virtual void setYHeadRotO(float);
-    /**
-     * @vftbl  247
-     * @hash   -2005177115
-     */
-    virtual void __unk_vfn_247();
-    /**
-     * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  251
+     * @vftbl  249
      * @symbol ?kill@Mob@@UEAAXXZ
-     * @hash   792600773
+     * @hash   840989045
      */
     virtual void kill();
     /**
-     * @vftbl  252
+     * @vftbl  250
      * @symbol ?die@Mob@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -344840877
+     * @hash   -297298285
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  253
+     * @vftbl  251
      * @symbol ?shouldDropDeathLoot@Mob@@UEBA_NXZ
-     * @hash   -938808158
+     * @hash   -889497326
      */
     virtual bool shouldDropDeathLoot() const;
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Mob@@MEAAXAEAVRenderParams@@@Z
-     * @hash   726159423
+     * @hash   775700895
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1089089072
+     * @hash   1136308768
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Mob@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1120160960
+     * @hash   1168764496
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Mob@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1918007373
+     * @hash   1965473085
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  274
+     * @vftbl  272
      * @symbol ?_playStepSound@Mob@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1671669698
+     * @hash   1719150786
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  281
+     * @vftbl  279
      * @symbol ?_removePassenger@Mob@@MEAAXAEBUActorUniqueID@@_N11@Z
-     * @hash   -841139832
+     * @hash   -793751000
      */
     virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /**
-     * @vftbl  282
+     * @vftbl  280
      * @symbol ?_onSizeUpdated@Mob@@MEAAXXZ
-     * @hash   -918818452
+     * @hash   -871337364
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  284
+     * @vftbl  282
      * @symbol ?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z
-     * @hash   1746515060
+     * @hash   1794903332
      */
     virtual void knockback(class Actor *, int, float, float, float, float, float);
     /**
-     * @vftbl  285
+     * @vftbl  283
      * @symbol ?spawnAnim@Mob@@UEAAXXZ
-     * @hash   1070444051
+     * @hash   1159409587
      */
     virtual void spawnAnim();
     /**
-     * @vftbl  286
+     * @vftbl  284
      * @symbol ?setSprinting@Mob@@UEAAX_N@Z
-     * @hash   57641247
+     * @hash   106721439
      */
     virtual void setSprinting(bool);
     /**
-     * @vftbl  287
+     * @vftbl  285
      * @symbol ?getHurtSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   -48974014
+     * @hash   -1246910
      */
     virtual enum class LevelSoundEvent getHurtSound();
     /**
-     * @vftbl  288
+     * @vftbl  286
      * @symbol ?getDeathSound@Mob@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   8708281
+     * @hash   56435385
      */
     virtual enum class LevelSoundEvent getDeathSound();
     /**
-     * @vftbl  289
+     * @vftbl  287
      * @symbol ?getSpeed@Mob@@UEBAMXZ
-     * @hash   -1375571633
+     * @hash   -1327660017
      */
     virtual float getSpeed() const;
     /**
-     * @vftbl  290
+     * @vftbl  288
      * @symbol ?setSpeed@Mob@@UEAAXM@Z
-     * @hash   530645430
+     * @hash   579725622
      */
     virtual void setSpeed(float);
     /**
-     * @vftbl  291
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  290
      * @symbol ?hurtEffects@Mob@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1523682054
+     * @hash   -1475478294
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  292
+     * @vftbl  291
      * @symbol ?getMeleeWeaponDamageBonus@Mob@@UEAAMPEAV1@@Z
-     * @hash   -1669791605
+     * @hash   -1621879989
      */
     virtual float getMeleeWeaponDamageBonus(class Mob *);
     /**
-     * @vftbl  293
+     * @vftbl  292
      * @symbol ?getMeleeKnockbackBonus@Mob@@UEAAHXZ
-     * @hash   -912826082
+     * @hash   -864914466
      */
     virtual int getMeleeKnockbackBonus();
     /**
-     * @vftbl  294
+     * @vftbl  293
      * @symbol ?travel@Mob@@UEAAXMMM@Z
-     * @hash   531835697
+     * @hash   581315665
      */
     virtual void travel(float, float, float);
     /**
-     * @vftbl  295
-     * @symbol ?travel@Mob@@UEBAXAEAUIMobMovementProxy@@MMM@Z
-     * @hash   1236661099
-     */
-    virtual void travel(struct IMobMovementProxy &, float, float, float) const;
-    /**
-     * @vftbl  296
+     * @vftbl  294
      * @symbol ?applyFinalFriction@Mob@@UEAAXM_N@Z
-     * @hash   -754033917
+     * @hash   -706568205
      */
     virtual void applyFinalFriction(float, bool);
     /**
-     * @vftbl  297
+     * @vftbl  295
      * @symbol ?aiStep@Mob@@UEAAXXZ
-     * @hash   1313447227
+     * @hash   1360912939
      */
     virtual void aiStep();
     /**
-     * @vftbl  298
+     * @vftbl  296
      * @symbol ?aiStep@Mob@@UEBAXAEAUIMobMovementProxy@@@Z
-     * @hash   1300803835
+     * @hash   1348269547
      */
     virtual void aiStep(struct IMobMovementProxy &) const;
     /**
-     * @vftbl  299
+     * @vftbl  297
      * @symbol ?pushActors@Mob@@UEAAXXZ
-     * @hash   -1053523601
+     * @hash   -1004920065
      */
     virtual void pushActors();
     /**
-     * @vftbl  300
+     * @vftbl  298
      * @symbol ?lookAt@Mob@@UEAAXPEAVActor@@MM@Z
-     * @hash   1026251114
+     * @hash   1074639386
      */
     virtual void lookAt(class Actor *, float, float);
     /**
-     * @vftbl  301
+     * @vftbl  299
      * @symbol ?isLookingAtAnEntity@Mob@@UEAA_NXZ
-     * @hash   -1737955771
+     * @hash   -1689659755
      */
     virtual bool isLookingAtAnEntity();
     /**
-     * @vftbl  302
+     * @vftbl  300
      * @symbol ?checkSpawnRules@Mob@@UEAA_N_N@Z
-     * @hash   -154205489
+     * @hash   -106662897
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @vftbl  303
+     * @vftbl  301
      * @symbol ?checkSpawnObstruction@Mob@@UEBA_NXZ
-     * @hash   -1061801499
+     * @hash   -1014258907
      */
     virtual bool checkSpawnObstruction() const;
     /**
-     * @vftbl  304
+     * @vftbl  302
      * @symbol ?getAttackAnim@Mob@@UEAAMM@Z
-     * @hash   -2066304540
+     * @hash   -2018577436
      */
     virtual float getAttackAnim(float);
     /**
-     * @vftbl  305
+     * @vftbl  303
      * @symbol ?getItemUseDuration@Mob@@UEBAHXZ
-     * @hash   863628813
+     * @hash   956899629
      */
     virtual int getItemUseDuration() const;
     /**
-     * @vftbl  306
+     * @vftbl  304
      * @symbol ?getItemUseStartupProgress@Mob@@UEBAMXZ
-     * @hash   645618810
+     * @hash   895309674
      */
     virtual float getItemUseStartupProgress() const;
     /**
-     * @vftbl  307
+     * @vftbl  305
      * @symbol ?getItemUseIntervalProgress@Mob@@UEBAMXZ
-     * @hash   -458359042
+     * @hash   -208668178
      */
     virtual float getItemUseIntervalProgress() const;
     /**
-     * @vftbl  308
+     * @vftbl  306
      * @symbol ?getItemUseIntervalAxis@Mob@@UEBAHXZ
-     * @hash   -1677382977
+     * @hash   -1629471361
      */
     virtual int getItemUseIntervalAxis() const;
     /**
-     * @vftbl  309
+     * @vftbl  307
      * @symbol ?getTimeAlongSwing@Mob@@UEBAHXZ
-     * @hash   259062991
+     * @hash   297103215
      */
     virtual int getTimeAlongSwing() const;
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  311
+     * @vftbl  309
      * @symbol ?getMaxHeadXRot@Mob@@UEAAMXZ
-     * @hash   1130040268
+     * @hash   1177951884
      */
     virtual float getMaxHeadXRot();
     /**
-     * @vftbl  312
+     * @vftbl  310
      * @symbol ?isAlliedTo@Mob@@UEAA_NPEAV1@@Z
-     * @hash   1510042379
+     * @hash   1606788171
      */
     virtual bool isAlliedTo(class Mob *);
     /**
-     * @vftbl  313
+     * @vftbl  311
      * @symbol ?doHurtTarget@Mob@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   1997701662
+     * @hash   2045428766
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  315
+     * @vftbl  313
      * @symbol ?leaveCaravan@Mob@@UEAAXXZ
-     * @hash   1630620358
+     * @hash   1679008630
      */
     virtual void leaveCaravan();
     /**
-     * @vftbl  316
+     * @vftbl  314
      * @symbol ?joinCaravan@Mob@@UEAAXPEAV1@@Z
-     * @hash   -1776916227
+     * @hash   -1728527955
      */
     virtual void joinCaravan(class Mob *);
     /**
-     * @vftbl  317
+     * @vftbl  315
      * @symbol ?hasCaravanTail@Mob@@UEBA_NXZ
-     * @hash   1520215140
+     * @hash   1568418900
      */
     virtual bool hasCaravanTail() const;
     /**
-     * @vftbl  318
+     * @vftbl  316
      * @symbol ?getCaravanHead@Mob@@UEBA?AUActorUniqueID@@XZ
-     * @hash   94847961
+     * @hash   142575065
      */
     virtual struct ActorUniqueID getCaravanHead() const;
     /**
-     * @vftbl  319
+     * @vftbl  317
      * @symbol ?getArmorValue@Mob@@UEBAHXZ
-     * @hash   -2010925229
+     * @hash   -1963198125
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl  320
+     * @vftbl  318
      * @symbol ?getArmorCoverPercentage@Mob@@UEBAMXZ
-     * @hash   -1950757946
+     * @hash   -1903030842
      */
     virtual float getArmorCoverPercentage() const;
     /**
-     * @vftbl  321
+     * @vftbl  319
      * @symbol ?getToughnessValue@Mob@@UEBAHXZ
-     * @hash   -1116572704
+     * @hash   -1068661088
      */
     virtual int getToughnessValue() const;
     /**
-     * @vftbl  322
+     * @vftbl  320
      * @symbol ?hurtArmorSlots@Mob@@UEAAXAEBVActorDamageSource@@HV?$bitset@$03@std@@@Z
-     * @hash   1867061124
+     * @hash   1915264884
      */
     virtual void hurtArmorSlots(class ActorDamageSource const &, int, class std::bitset<4>);
     /**
-     * @vftbl  323
+     * @vftbl  321
      * @symbol ?setDamagedArmor@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-     * @hash   -670059350
+     * @hash   -621148294
      */
     virtual void setDamagedArmor(enum class ArmorSlot, class ItemStack const &);
     /**
-     * @vftbl  324
+     * @vftbl  322
      * @symbol ?sendArmorDamage@Mob@@UEAAXV?$bitset@$03@std@@@Z
-     * @hash   1993459400
+     * @hash   2082424936
      */
     virtual void sendArmorDamage(class std::bitset<4>);
     /**
-     * @vftbl  325
+     * @vftbl  323
      * @symbol ?sendArmor@Mob@@UEAAXV?$bitset@$03@std@@@Z
-     * @hash   154256487
+     * @hash   203167543
      */
     virtual void sendArmor(class std::bitset<4>);
     /**
-     * @vftbl  326
+     * @vftbl  324
      * @symbol ?containerChanged@Mob@@UEAAXH@Z
-     * @hash   -1370261851
+     * @hash   -1322719259
      */
     virtual void containerChanged(int);
     /**
-     * @vftbl  327
+     * @vftbl  325
      * @symbol ?updateEquipment@Mob@@UEAAXXZ
-     * @hash   233060316
+     * @hash   282586412
      */
     virtual void updateEquipment();
     /**
-     * @vftbl  328
+     * @vftbl  326
      * @symbol ?clearEquipment@Mob@@UEAAHXZ
-     * @hash   -199964627
+     * @hash   -152422035
      */
     virtual int clearEquipment();
     /**
-     * @vftbl  329
+     * @vftbl  327
      * @symbol ?getAllArmorID@Mob@@UEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ
-     * @hash   -259723442
+     * @hash   -211996338
      */
     virtual std::vector<int> getAllArmorID() const;
     /**
-     * @vftbl  330
+     * @vftbl  328
      * @symbol ?getAllHand@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   -991726109
+     * @hash   -943999005
      */
     virtual std::vector<class ItemStack const *> getAllHand() const;
     /**
-     * @vftbl  331
+     * @vftbl  329
      * @symbol ?getAllEquipment@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   373491740
+     * @hash   421218844
      */
     virtual std::vector<class ItemStack const *> getAllEquipment() const;
     /**
-     * @vftbl  332
+     * @vftbl  330
      * @symbol ?getArmorTypeHash@Mob@@UEAAHXZ
-     * @hash   -1487397299
+     * @hash   -1439670195
      */
     virtual int getArmorTypeHash();
     /**
-     * @vftbl  333
+     * @vftbl  331
      * @symbol ?dropEquipmentOnDeath@Mob@@UEAAXAEBVActorDamageSource@@H@Z
-     * @hash   312094514
+     * @hash   359821618
      */
     virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int);
     /**
-     * @vftbl  334
+     * @vftbl  332
      * @symbol ?dropEquipmentOnDeath@Mob@@UEAAXXZ
-     * @hash   779505789
+     * @hash   827232893
      */
     virtual void dropEquipmentOnDeath();
     /**
-     * @vftbl  335
+     * @vftbl  333
      * @symbol ?clearVanishEnchantedItemsOnDeath@Mob@@UEAAXXZ
-     * @hash   1307632316
+     * @hash   1355174908
      */
     virtual void clearVanishEnchantedItemsOnDeath();
     /**
-     * @vftbl  336
+     * @vftbl  334
      * @symbol ?sendInventory@Mob@@UEAAX_N@Z
-     * @hash   1904520577
+     * @hash   1953431633
      */
     virtual void sendInventory(bool);
     /**
-     * @vftbl  337
+     * @vftbl  335
      * @symbol ?getDamageAfterEnchantReduction@Mob@@UEBAMAEBVActorDamageSource@@M@Z
-     * @hash   -1477238105
+     * @hash   -1429511001
      */
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const &, float) const;
     /**
-     * @vftbl  338
+     * @vftbl  336
      * @symbol ?getDamageAfterArmorReduction@Mob@@UEBAMAEBVActorDamageSource@@M@Z
-     * @hash   308394561
+     * @hash   356121665
      */
     virtual float getDamageAfterArmorReduction(class ActorDamageSource const &, float) const;
     /**
-     * @vftbl  339
+     * @vftbl  337
      * @symbol ?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z
-     * @hash   -1233522153
+     * @hash   -1185795049
      */
     virtual float getDamageAfterResistanceEffect(class ActorDamageSource const &, float) const;
     /**
-     * @vftbl  340
+     * @vftbl  338
      * @symbol ?createAIGoals@Mob@@UEAA_NXZ
-     * @hash   1993634741
+     * @hash   2041177333
      */
     virtual bool createAIGoals();
     /**
-     * @vftbl  341
+     * @vftbl  339
      * @symbol ?onBorn@Mob@@UEAAXAEAVActor@@0@Z
-     * @hash   1391684623
+     * @hash   1480650159
      */
     virtual void onBorn(class Actor &, class Actor &);
     /**
-     * @vftbl  342
+     * @vftbl  340
      * @symbol ?setItemSlot@Mob@@UEAA_NW4EquipmentSlot@@AEBVItemStack@@@Z
-     * @hash   -1084688494
+     * @hash   -1035731310
      */
     virtual bool setItemSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
-     * @vftbl  343
+     * @vftbl  341
      * @symbol ?setTransitioningSitting@Mob@@UEAAX_N@Z
-     * @hash   -1849232828
+     * @hash   -1800152636
      */
     virtual void setTransitioningSitting(bool);
     /**
-     * @vftbl  344
+     * @vftbl  342
      * @symbol ?attackAnimation@Mob@@UEAAXPEAVActor@@M@Z
-     * @hash   1677803570
+     * @hash   1725269282
      */
     virtual void attackAnimation(class Actor *, float);
     /**
-     * @vftbl  345
+     * @vftbl  343
      * @symbol ?getAttackTime@Mob@@UEAAHXZ
-     * @hash   -800208425
+     * @hash   -637930121
      */
     virtual int getAttackTime();
     /**
-     * @vftbl  346
+     * @vftbl  344
      * @symbol ?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -546886533
+     * @hash   -297195669
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
-     * @vftbl  347
+     * @vftbl  345
      * @symbol ?canExistWhenDisallowMob@Mob@@UEBA_NXZ
-     * @hash   -832576132
+     * @hash   -785033540
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  349
+     * @vftbl  347
      * @symbol ?ascendLadder@Mob@@UEAAXXZ
-     * @hash   916212387
+     * @hash   963678099
      */
     virtual void ascendLadder();
     /**
-     * @vftbl  350
+     * @vftbl  348
      * @symbol ?ascendBlockByJumping@Mob@@UEAAXXZ
-     * @hash   -1823028687
+     * @hash   -1775562975
      */
     virtual void ascendBlockByJumping();
     /**
-     * @vftbl  351
+     * @vftbl  349
      * @symbol ?descendBlockByCrouching@Mob@@UEAAXXZ
-     * @hash   -950092811
+     * @hash   -902550219
      */
     virtual void descendBlockByCrouching();
     /**
-     * @vftbl  352
+     * @vftbl  350
      * @symbol ?dropContainer@Mob@@UEAAXXZ
-     * @hash   -1346887079
+     * @hash   -1299159975
      */
     virtual void dropContainer();
     /**
-     * @vftbl  353
+     * @vftbl  351
      * @symbol ?initBodyControl@Mob@@MEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
-     * @hash   1432565190
+     * @hash   1480784326
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
     /**
-     * @vftbl  354
+     * @vftbl  352
      * @symbol ?jumpFromGround@Mob@@MEAAXXZ
-     * @hash   1787296815
+     * @hash   1835685087
      */
     virtual void jumpFromGround();
     /**
-     * @vftbl  355
+     * @vftbl  353
      * @symbol ?jumpFromGround@Mob@@MEBAXAEAUIMobMovementProxy@@@Z
-     * @hash   -470284537
+     * @hash   -421896265
      */
     virtual void jumpFromGround(struct IMobMovementProxy &) const;
     /**
-     * @vftbl  356
+     * @vftbl  354
      * @symbol ?updateAi@Mob@@MEAAXXZ
-     * @hash   1263652689
+     * @hash   1313194161
      */
     virtual void updateAi();
     /**
-     * @vftbl  357
+     * @vftbl  355
      * @symbol ?newServerAiStep@Mob@@MEAAXXZ
-     * @hash   854894199
+     * @hash   903297847
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl  358
+     * @vftbl  356
      * @symbol ?_serverAiMobStep@Mob@@MEAAXXZ
-     * @hash   -374407470
+     * @hash   -285441934
      */
     virtual void _serverAiMobStep();
     /**
-     * @vftbl  359
+     * @vftbl  357
      * @symbol ?dropBags@Mob@@MEAAXXZ
-     * @hash   -81665270
+     * @hash   -33938166
      */
     virtual void dropBags();
     /**
-     * @vftbl  360
+     * @vftbl  358
      * @symbol ?tickDeath@Mob@@MEAAXXZ
-     * @hash   -368137433
+     * @hash   -318780473
      */
     virtual void tickDeath();
     /**
-     * @vftbl  361
+     * @vftbl  359
      * @symbol ?updateGliding@Mob@@MEAAXXZ
-     * @hash   2059304873
+     * @hash   2108830969
      */
     virtual void updateGliding();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
     /**
-     * @vftbl  363
+     * @vftbl  361
      * @symbol ?_getAdjustedAABBForSpawnCheck@Mob@@MEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
-     * @hash   -978765782
+     * @hash   -931945862
      */
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOB
     /**
      * @symbol ?_allowAscendingScaffolding@Mob@@MEBA_NXZ
-     * @hash   1173870879
+     * @hash   1270370655
      */
     MCVAPI bool _allowAscendingScaffolding() const;
     /**
      * @symbol ?ate@Mob@@UEAAXXZ
-     * @hash   -51583815
+     * @hash   37381721
      */
     MCVAPI void ate();
     /**
      * @symbol ?canBeControlledByPassenger@Mob@@UEAA_NXZ
-     * @hash   1086575931
+     * @hash   1183321723
      */
     MCVAPI bool canBeControlledByPassenger();
     /**
+     * @symbol ?getSprintSpeedIncrease@Mob@@UEBAMXZ
+     * @hash   -1845093369
+     */
+    MCVAPI float getSprintSpeedIncrease() const;
+    /**
      * @symbol ?isShootable@Mob@@UEAA_NXZ
-     * @hash   1120656408
+     * @hash   1217156184
      */
     MCVAPI bool isShootable();
     /**
      * @symbol ?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z
-     * @hash   -365011117
+     * @hash   -276045581
      */
     MCVAPI void renderDebugServerState(class Options const &);
     /**
      * @symbol ?useNewAi@Mob@@UEBA_NXZ
-     * @hash   101247497
+     * @hash   197747273
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Mob@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   505000204
+     * @hash   550989820
      */
     MCAPI Mob(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ??0Mob@@QEAA@AEAVLevel@@AEAVEntityContext@@@Z
-     * @hash   -2100454860
+     * @hash   -2054434492
      */
     MCAPI Mob(class Level &, class EntityContext &);
     /**
      * @symbol ?_endJump@Mob@@QEAAXXZ
-     * @hash   614862567
+     * @hash   661005943
      */
     MCAPI void _endJump();
     /**
      * @symbol ?addSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-     * @hash   1785252796
+     * @hash   1832718508
      */
     MCAPI void addSpeedModifier(class mce::UUID const &, std::string const &, float);
     /**
      * @symbol ?calcMoveRelativeSpeed@Mob@@QEAAMW4TravelType@@@Z
-     * @hash   1588210371
+     * @hash   1635752963
      */
     MCAPI float calcMoveRelativeSpeed(enum class TravelType);
     /**
      * @symbol ?checkForPostHitDamageImmunity@Mob@@QEAA_NMAEBVActorDamageSource@@@Z
-     * @hash   475688308
+     * @hash   523230900
      */
     MCAPI bool checkForPostHitDamageImmunity(float, class ActorDamageSource const &);
     /**
      * @symbol ?checkTotemDeathProtection@Mob@@QEAA_NAEBVActorDamageSource@@@Z
-     * @hash   2132528633
+     * @hash   -2114896071
      */
     MCAPI bool checkTotemDeathProtection(class ActorDamageSource const &);
     /**
      * @symbol ?createAI@Mob@@QEAAXV?$vector@UGoalDefinition@@V?$allocator@UGoalDefinition@@@std@@@std@@@Z
-     * @hash   1655412126
+     * @hash   1702954718
      */
     MCAPI void createAI(std::vector<struct GoalDefinition>);
     /**
      * @symbol ?discardFriction@Mob@@QEBA_NXZ
-     * @hash   -1692806226
+     * @hash   -1645079122
      */
     MCAPI bool discardFriction() const;
     /**
      * @symbol ?emitJumpPreventedEvent@Mob@@QEAAXAEBVBlockPos@@@Z
-     * @hash   1125834746
+     * @hash   1173561850
      */
     MCAPI void emitJumpPreventedEvent(class BlockPos const &);
     /**
      * @symbol ?frostWalk@Mob@@QEAAXXZ
-     * @hash   -169408833
+     * @hash   -121681729
      */
     MCAPI void frostWalk();
     /**
      * @symbol ?getBoundOrigin@Mob@@QEBA?AVBlockPos@@XZ
-     * @hash   -1009706100
+     * @hash   -961978996
      */
     MCAPI class BlockPos getBoundOrigin() const;
     /**
      * @symbol ?getCaravanSize@Mob@@QEBAHXZ
-     * @hash   2023217128
+     * @hash   2070944232
      */
     MCAPI int getCaravanSize() const;
     /**
      * @symbol ?getEatCounter@Mob@@QEBAHXZ
-     * @hash   1056804204
+     * @hash   1104531308
      */
     MCAPI int getEatCounter() const;
     /**
      * @symbol ?getFirstCaravanHead@Mob@@QEAAPEAV1@XZ
-     * @hash   -377840264
+     * @hash   -330113160
      */
     MCAPI class Mob * getFirstCaravanHead();
     /**
      * @symbol ?getFlightSpeed@Mob@@QEBAMXZ
-     * @hash   592807590
+     * @hash   640534694
      */
     MCAPI float getFlightSpeed() const;
     /**
      * @symbol ?getFrictionModifier@Mob@@QEBAMXZ
-     * @hash   1299668724
+     * @hash   1347395828
      */
     MCAPI float getFrictionModifier() const;
     /**
      * @symbol ?getGlidingTicks@Mob@@QEBAHXZ
-     * @hash   -764040964
+     * @hash   -716313860
      */
     MCAPI int getGlidingTicks() const;
     /**
      * @symbol ?getItemSlot@Mob@@QEBAAEBVItemStack@@W4EquipmentSlot@@@Z
-     * @hash   -479748101
+     * @hash   -431836485
      */
     MCAPI class ItemStack const & getItemSlot(enum class EquipmentSlot) const;
     /**
      * @symbol ?getJumpEffectAmplifierValue@Mob@@QEAAMXZ
-     * @hash   -181924366
+     * @hash   -134012750
      */
     MCAPI float getJumpEffectAmplifierValue();
     /**
      * @symbol ?getJumpMultiplier@Mob@@QEAAMXZ
-     * @hash   -410757246
+     * @hash   -362845630
      */
     MCAPI float getJumpMultiplier();
     /**
      * @symbol ?getJumpPower@Mob@@QEBAMXZ
-     * @hash   -1938508570
+     * @hash   -1890596954
      */
     MCAPI float getJumpPower() const;
     /**
      * @symbol ?getJumpPrevention@Mob@@QEAA?AUJumpPreventionResult@@XZ
-     * @hash   2139817314
+     * @hash   -2107238366
      */
     MCAPI struct JumpPreventionResult getJumpPrevention();
     /**
      * @symbol ?getJumpTicks@Mob@@QEBAHXZ
-     * @hash   878095978
+     * @hash   926007594
      */
     MCAPI int getJumpTicks() const;
     /**
      * @symbol ?getMovementComponentCurrentSpeed@Mob@@QEBAMXZ
-     * @hash   136887632
+     * @hash   184799248
      */
     MCAPI float getMovementComponentCurrentSpeed() const;
     /**
      * @symbol ?getNoActionTime@Mob@@QEBAHXZ
-     * @hash   -547934036
+     * @hash   -500022420
      */
     MCAPI int getNoActionTime() const;
     /**
      * @symbol ?getPassengerLockedBodyRot@Mob@@QEBAMXZ
-     * @hash   -945100700
+     * @hash   -897189084
      */
     MCAPI float getPassengerLockedBodyRot() const;
     /**
      * @symbol ?getPassengerRotLimit@Mob@@QEBAMXZ
-     * @hash   935251540
+     * @hash   983163156
      */
     MCAPI float getPassengerRotLimit() const;
     /**
      * @symbol ?getRollCounter@Mob@@QEBAHXZ
-     * @hash   1201649496
+     * @hash   1249561112
      */
     MCAPI int getRollCounter() const;
     /**
      * @symbol ?getSwimSpeedMultiplier@Mob@@QEBAMXZ
-     * @hash   -2026248360
+     * @hash   -1978336744
      */
     MCAPI float getSwimSpeedMultiplier() const;
     /**
      * @symbol ?getTargetCaptain@Mob@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -154873214
+     * @hash   -106961598
      */
     MCAPI struct ActorUniqueID getTargetCaptain() const;
     /**
      * @symbol ?getTravelType@Mob@@QEAA?AW4TravelType@@XZ
-     * @hash   1709476814
+     * @hash   1757388430
      */
     MCAPI enum class TravelType getTravelType();
     /**
+     * @symbol ?getYBodyRotation@Mob@@QEBAMXZ
+     * @hash   -809314182
+     */
+    MCAPI float getYBodyRotation() const;
+    /**
+     * @symbol ?getYBodyRotationsNewOld@Mob@@QEBA?AUInterpolationPair@@XZ
+     * @hash   383598038
+     */
+    MCAPI struct InterpolationPair getYBodyRotationsNewOld() const;
+    /**
      * @symbol ?getYRotA@Mob@@QEBAMXZ
-     * @hash   -1615459202
+     * @hash   -1567409202
      */
     MCAPI float getYRotA() const;
     /**
      * @symbol ?getZza@Mob@@QEBAMXZ
-     * @hash   2010726778
+     * @hash   2058822906
      */
     MCAPI float getZza() const;
     /**
      * @symbol ?hasBoundOrigin@Mob@@QEBA_NXZ
-     * @hash   -1148488960
+     * @hash   -1100285200
      */
     MCAPI bool hasBoundOrigin() const;
     /**
      * @symbol ?hurtArmor@Mob@@QEAAXAEBVActorDamageSource@@H@Z
-     * @hash   -481973967
+     * @hash   -433770207
      */
     MCAPI void hurtArmor(class ActorDamageSource const &, int);
     /**
      * @symbol ?isAbleToMove@Mob@@QEBA_NXZ
-     * @hash   1562195552
+     * @hash   1610414688
      */
     MCAPI bool isAbleToMove() const;
     /**
      * @symbol ?isEating@Mob@@QEBA_NXZ
-     * @hash   1786770704
+     * @hash   1835005216
      */
     MCAPI bool isEating() const;
     /**
      * @symbol ?isFrostWalking@Mob@@QEBA_NXZ
-     * @hash   1702899584
+     * @hash   1751149472
      */
     MCAPI bool isFrostWalking() const;
     /**
      * @symbol ?isGliding@Mob@@QEBA_NXZ
-     * @hash   1140091518
+     * @hash   1188356782
      */
     MCAPI bool isGliding() const;
     /**
      * @symbol ?isLayingEgg@Mob@@QEBA_NXZ
-     * @hash   138976974
+     * @hash   187257614
      */
     MCAPI bool isLayingEgg() const;
     /**
      * @symbol ?isPregnant@Mob@@QEBA_NXZ
-     * @hash   1630239248
+     * @hash   1678535264
      */
     MCAPI bool isPregnant() const;
     /**
      * @symbol ?isRolling@Mob@@QEBA_NXZ
-     * @hash   -1807503298
+     * @hash   -1759191906
      */
     MCAPI bool isRolling() const;
     /**
      * @symbol ?isSprinting@Mob@@QEBA_NXZ
-     * @hash   -1947985714
+     * @hash   -1899628194
      */
     MCAPI bool isSprinting() const;
     /**
      * @symbol ?isTransitioningSitting@Mob@@QEBA_NXZ
-     * @hash   -1197143120
+     * @hash   -1148770224
      */
     MCAPI bool isTransitioningSitting() const;
     /**
      * @symbol ?onPlayerDimensionChanged@Mob@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-     * @hash   1810723241
+     * @hash   1859342153
      */
     MCAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?onPlayerJump@Mob@@QEAAXH@Z
-     * @hash   1849541612
+     * @hash   1898160524
      */
     MCAPI void onPlayerJump(int);
     /**
      * @symbol ?removeSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@@Z
-     * @hash   -952566330
+     * @hash   -903778282
      */
     MCAPI void removeSpeedModifier(class mce::UUID const &);
     /**
      * @symbol ?resetAttributes@Mob@@QEAAXXZ
-     * @hash   -1450859071
+     * @hash   -1402071023
      */
     MCAPI void resetAttributes();
     /**
      * @symbol ?resetNoActionTime@Mob@@QEAAXXZ
-     * @hash   1450802267
+     * @hash   1499713323
      */
     MCAPI void resetNoActionTime();
     /**
      * @symbol ?sendArmorDamageSlot@Mob@@QEAAXW4ArmorSlot@@@Z
-     * @hash   -1737839020
+     * @hash   -1688927964
      */
     MCAPI void sendArmorDamageSlot(enum class ArmorSlot);
     /**
      * @symbol ?sendArmorSlot@Mob@@QEAAXW4ArmorSlot@@@Z
-     * @hash   -480282734
+     * @hash   -431371678
      */
     MCAPI void sendArmorSlot(enum class ArmorSlot);
     /**
      * @symbol ?setEatCounter@Mob@@QEAAXH@Z
-     * @hash   -92929494
+     * @hash   -44018438
      */
     MCAPI void setEatCounter(int);
     /**
      * @symbol ?setEating@Mob@@QEAAX_N@Z
-     * @hash   1791321790
+     * @hash   1840232846
      */
     MCAPI void setEating(bool);
     /**
      * @symbol ?setFlightSpeed@Mob@@QEAAXM@Z
-     * @hash   -124898356
+     * @hash   -75971924
      */
     MCAPI void setFlightSpeed(float);
     /**
      * @symbol ?setFrictionModifier@Mob@@QEAAXM@Z
-     * @hash   745400910
+     * @hash   794327342
      */
     MCAPI void setFrictionModifier(float);
     /**
      * @symbol ?setIsLayingEgg@Mob@@QEAAX_N@Z
-     * @hash   -730895860
+     * @hash   -681969428
      */
     MCAPI void setIsLayingEgg(bool);
     /**
      * @symbol ?setIsPregnant@Mob@@QEAAX_N@Z
-     * @hash   1427367678
+     * @hash   1476309486
      */
     MCAPI void setIsPregnant(bool);
     /**
      * @symbol ?setJumpTicks@Mob@@QEAAXH@Z
-     * @hash   -1565677700
+     * @hash   -1516720516
      */
     MCAPI void setJumpTicks(int);
     /**
      * @symbol ?setJumpVelRedux@Mob@@QEAAX_N@Z
-     * @hash   -1033940082
+     * @hash   -984982898
      */
     MCAPI void setJumpVelRedux(bool);
     /**
      * @symbol ?setJumping@Mob@@QEAAX_N@Z
-     * @hash   1009265708
+     * @hash   1058222892
      */
     MCAPI void setJumping(bool);
     /**
      * @symbol ?setMovementComponentCurrentSpeed@Mob@@QEAAXM@Z
-     * @hash   -2097611262
+     * @hash   -2048654078
      */
     MCAPI void setMovementComponentCurrentSpeed(float);
     /**
      * @symbol ?setNaturallySpawned@Mob@@QEAAX_N@Z
-     * @hash   -176475986
+     * @hash   -127518802
      */
     MCAPI void setNaturallySpawned(bool);
     /**
+     * @symbol ?setOldYBodyRotation@Mob@@QEAAXM@Z
+     * @hash   -1148200116
+     */
+    MCAPI void setOldYBodyRotation(float);
+    /**
      * @symbol ?setPassengerLockedBodyRot@Mob@@QEAAXM@Z
-     * @hash   1670282382
+     * @hash   1719347198
      */
     MCAPI void setPassengerLockedBodyRot(float);
     /**
      * @symbol ?setPassengerRotLimit@Mob@@QEAAXM@Z
-     * @hash   -589459986
+     * @hash   -540395170
      */
     MCAPI void setPassengerRotLimit(float);
     /**
      * @symbol ?setRolling@Mob@@QEAAX_N@Z
-     * @hash   910770460
+     * @hash   959835276
      */
     MCAPI void setRolling(bool);
     /**
      * @symbol ?setSpawnMethod@Mob@@QEAAXW4MobSpawnMethod@@@Z
-     * @hash   63694270
+     * @hash   112774462
      */
     MCAPI void setSpawnMethod(enum class MobSpawnMethod);
     /**
      * @symbol ?setSpeedModifier@Mob@@QEAAXM@Z
-     * @hash   1921176126
+     * @hash   1970256318
      */
     MCAPI void setSpeedModifier(float);
     /**
      * @symbol ?setSurfaceMob@Mob@@QEAAX_N@Z
-     * @hash   955188878
+     * @hash   1004269070
      */
     MCAPI void setSurfaceMob(bool);
     /**
      * @symbol ?setSwimSpeedMultiplier@Mob@@QEAAXM@Z
-     * @hash   333371802
+     * @hash   382451994
      */
     MCAPI void setSwimSpeedMultiplier(float);
     /**
      * @symbol ?setTargetCaptain@Mob@@QEAAXUActorUniqueID@@@Z
-     * @hash   79790480
+     * @hash   128870672
      */
     MCAPI void setTargetCaptain(struct ActorUniqueID);
     /**
      * @symbol ?setXxa@Mob@@QEAAXM@Z
-     * @hash   -944056408
+     * @hash   -894960840
      */
     MCAPI void setXxa(float);
     /**
+     * @symbol ?setYBodyRotation@Mob@@QEAAXM@Z
+     * @hash   2077521688
+     */
+    MCAPI void setYBodyRotation(float);
+    /**
+     * @symbol ?setYBodyRotations@Mob@@QEAAXMM@Z
+     * @hash   1197631845
+     */
+    MCAPI void setYBodyRotations(float, float);
+    /**
      * @symbol ?setYRotA@Mob@@QEAAXM@Z
-     * @hash   372188052
+     * @hash   421498884
      */
     MCAPI void setYRotA(float);
     /**
      * @symbol ?setYya@Mob@@QEAAXM@Z
-     * @hash   2042556456
+     * @hash   2091867288
      */
     MCAPI void setYya(float);
     /**
      * @symbol ?setZza@Mob@@QEAAXM@Z
-     * @hash   734155896
+     * @hash   783466728
      */
     MCAPI void setZza(float);
     /**
      * @symbol ?snapToYBodyRot@Mob@@QEAAXM@Z
-     * @hash   -1689607180
+     * @hash   -1640296348
      */
     MCAPI void snapToYBodyRot(float);
     /**
      * @symbol ?snapToYHeadRot@Mob@@QEAAXM@Z
-     * @hash   89510672
+     * @hash   138806128
      */
     MCAPI void snapToYHeadRot(float);
     /**
+     * @symbol ?tryFrostWalk@Mob@@QEAAXXZ
+     * @hash   -951990025
+     */
+    MCAPI void tryFrostWalk();
+    /**
      * @symbol ?tryProcessSoulSpeed@Mob@@QEAAXXZ
-     * @hash   -962333819
+     * @hash   -912792347
      */
     MCAPI void tryProcessSoulSpeed();
     /**
      * @symbol ?ARMOR_DAMAGE_DIVISOR@Mob@@2HB
-     * @hash   1595515627
+     * @hash   -1939934929
      */
     MCAPI static int const ARMOR_DAMAGE_DIVISOR;
     /**
      * @symbol ?ARMOR_PROTECTION_DIVIDER@Mob@@2MB
-     * @hash   -870775843
+     * @hash   -111259103
      */
     MCAPI static float const ARMOR_PROTECTION_DIVIDER;
     /**
      * @symbol ?ASCEND_BLOCK_BY_JUMPING_SPEED@Mob@@2MB
-     * @hash   -887751877
+     * @hash   -128235137
      */
     MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
     /**
      * @symbol ?BASE_ARMOR_TOUGHNESS@Mob@@2MB
-     * @hash   1861731831
+     * @hash   -1673718725
      */
     MCAPI static float const BASE_ARMOR_TOUGHNESS;
     /**
      * @symbol ?DEFAULT_GRAVITY@Mob@@2MB
-     * @hash   -573597987
+     * @hash   185918753
      */
     MCAPI static float const DEFAULT_GRAVITY;
     /**
      * @symbol ?FRICTION_CONSTANT@Mob@@2MB
-     * @hash   322949503
+     * @hash   1082466243
      */
     MCAPI static float const FRICTION_CONSTANT;
     /**
      * @symbol ?FRICTION_CONSTANT_MODIFIED@Mob@@2MB
-     * @hash   615326929
+     * @hash   1374843669
      */
     MCAPI static float const FRICTION_CONSTANT_MODIFIED;
     /**
      * @symbol ?FRICTION_MODIFIER@Mob@@2MB
-     * @hash   -93574743
+     * @hash   665941997
      */
     MCAPI static float const FRICTION_MODIFIER;
     /**
      * @symbol ?GLIDING_FALL_RESET_DELTA@Mob@@2MB
-     * @hash   -843785835
+     * @hash   -84269095
      */
     MCAPI static float const GLIDING_FALL_RESET_DELTA;
     /**
      * @symbol ?LADDER_CLIMB_SPEED@Mob@@2MB
-     * @hash   -1499854945
+     * @hash   -740338205
      */
     MCAPI static float const LADDER_CLIMB_SPEED;
     /**
      * @symbol ?MAX_ARMOR@Mob@@2MB
-     * @hash   1380230737
+     * @hash   2139747477
      */
     MCAPI static float const MAX_ARMOR;
     /**
      * @symbol ?MIN_ARMOR_RATIO@Mob@@2MB
-     * @hash   1647728849
+     * @hash   -1887721707
      */
     MCAPI static float const MIN_ARMOR_RATIO;
     /**
      * @symbol ?NUM_ARMOR_ITEMS@Mob@@2MB
-     * @hash   -1603883813
+     * @hash   -844367073
      */
     MCAPI static float const NUM_ARMOR_ITEMS;
     /**
      * @symbol ?PLAYER_SWIMMING_SURFACE_OFFSET@Mob@@2MB
-     * @hash   -2076517343
+     * @hash   -1317008291
      */
     MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
     /**
      * @symbol ?REMOVE_PASSENGERS_DELAY@Mob@@2HB
-     * @hash   1336278937
+     * @hash   2095795677
      */
     MCAPI static int const REMOVE_PASSENGERS_DELAY;
     /**
      * @symbol ?SLOW_FALL_GRAVITY@Mob@@2MB
-     * @hash   -61172919
+     * @hash   698343821
      */
     MCAPI static float const SLOW_FALL_GRAVITY;
     /**
      * @symbol ?SPAWN_XP_DELAY@Mob@@2HB
-     * @hash   523103627
+     * @hash   1282620367
      */
     MCAPI static int const SPAWN_XP_DELAY;
     /**
      * @symbol ?TOTAL_ROLL_STEPS@Mob@@2HB
-     * @hash   -2101155389
+     * @hash   -1341638649
      */
     MCAPI static int const TOTAL_ROLL_STEPS;
     /**
      * @symbol ?_aiStep@Mob@@SAXAEAUIMobMovementProxy@@@Z
-     * @hash   -1873821018
+     * @hash   -1827677642
      */
     MCAPI static void _aiStep(struct IMobMovementProxy &);
     /**
      * @symbol ?_calcMoveRelativeSpeed@Mob@@SAMAEAUIMobMovementProxy@@W4TravelType@@@Z
-     * @hash   1562199356
+     * @hash   1608342732
      */
     MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum class TravelType);
     /**
      * @symbol ?_travel@Mob@@SAXAEAUIMobMovementProxy@@MMM@Z
-     * @hash   1355813243
+     * @hash   1403202075
      */
     MCAPI static void _travel(struct IMobMovementProxy &, float, float, float);
     /**
      * @symbol ?_updateMobTravel@Mob@@SAXAEAUIMobMovementProxy@@@Z
-     * @hash   -1098853318
+     * @hash   -1051433734
      */
     MCAPI static void _updateMobTravel(struct IMobMovementProxy &);
     /**
      * @symbol ?calculateJumpImpulse@Mob@@SAMAEBUIMobMovementProxy@@@Z
-     * @hash   -35651611
+     * @hash   11890981
      */
     MCAPI static float calculateJumpImpulse(struct IMobMovementProxy const &);
     /**
      * @symbol ?getJumpEffectAmplifierValue@Mob@@SAMAEBUIMobMovementProxy@@@Z
-     * @hash   804085179
+     * @hash   851996795
      */
     MCAPI static float getJumpEffectAmplifierValue(struct IMobMovementProxy const &);
     /**
      * @symbol ?getJumpPrevention@Mob@@SA?AUJumpPreventionResult@@AEBUIMobMovementProxy@@@Z
-     * @hash   -844323013
+     * @hash   -796411397
      */
     MCAPI static struct JumpPreventionResult getJumpPrevention(struct IMobMovementProxy const &);
     /**
      * @symbol ?getTravelType@Mob@@SA?AW4TravelType@@AEAUIMobMovementProxy@@@Z
-     * @hash   -1066306537
+     * @hash   -1018394921
      */
     MCAPI static enum class TravelType getTravelType(struct IMobMovementProxy &);
     /**
      * @symbol ?isImmobile@Mob@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   336910603
+     * @hash   385191243
      */
     MCAPI static bool isImmobile(struct IActorMovementProxy const &);
     /**
      * @symbol ?setSprinting@Mob@@SAXAEAVBaseAttributeMap@@VSynchedActorDataWriter@@_N@Z
-     * @hash   1505024476
+     * @hash   1554104668
      */
     MCAPI static void setSprinting(class BaseAttributeMap &, class SynchedActorDataWriter, bool);
     /**
      * @symbol ?shouldApplyWaterGravity@Mob@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   -458799747
+     * @hash   -409488915
      */
     MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const &);
     /**
      * @symbol ?tryGetFromEntity@Mob@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   -1002883350
+     * @hash   -953341878
      */
     MCAPI static class Mob * tryGetFromEntity(class EntityContext &, bool);
 
 //protected:
     /**
      * @symbol ?_doSprintParticleEffect@Mob@@IEAAXXZ
-     * @hash   -282935266
+     * @hash   -232840258
      */
     MCAPI void _doSprintParticleEffect();
     /**
      * @symbol ?_processSoulSpeed@Mob@@IEAAXXZ
-     * @hash   -1538404777
+     * @hash   -1491000569
      */
     MCAPI void _processSoulSpeed();
     /**
      * @symbol ?_registerMobAttributes@Mob@@IEAAXXZ
-     * @hash   1712500536
+     * @hash   1759889368
      */
     MCAPI void _registerMobAttributes();
     /**
      * @symbol ?getCurrentSwingDuration@Mob@@IEAAHXZ
-     * @hash   -1286707753
+     * @hash   -1238980649
      */
     MCAPI int getCurrentSwingDuration();
     /**
      * @symbol ?saveOffhand@Mob@@IEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -957576252
+     * @hash   -908665196
      */
     MCAPI std::unique_ptr<class ListTag> saveOffhand() const;
     /**
      * @symbol ?tickEffects@Mob@@IEAAXXZ
-     * @hash   -811173064
+     * @hash   -761693096
      */
     MCAPI void tickEffects();
     /**
      * @symbol ?updateAttackAnim@Mob@@IEAAXXZ
-     * @hash   1928812757
+     * @hash   1978354229
      */
     MCAPI void updateAttackAnim();
     /**
      * @symbol ?updateGlidingDurability@Mob@@IEAA_NXZ
-     * @hash   858931807
+     * @hash   908473279
      */
     MCAPI bool updateGlidingDurability();
     /**
      * @symbol ?_jumpFromGround@Mob@@KAXAEAUIMobMovementProxy@@@Z
-     * @hash   1906152918
+     * @hash   1953634006
      */
     MCAPI static void _jumpFromGround(struct IMobMovementProxy &);
 
 //private:
     /**
+     * @symbol ?_getJumpEffectAddend@Mob@@AEAAMXZ
+     * @hash   463798916
+     */
+    MCAPI float _getJumpEffectAddend();
+    /**
      * @symbol ?_initHardCodedComponents@Mob@@AEAA_NXZ
-     * @hash   1805415417
+     * @hash   1852635113
      */
     MCAPI bool _initHardCodedComponents();
     /**
      * @symbol ?_initialize@Mob@@AEAAXAEAVEntityContext@@@Z
-     * @hash   -152405243
+     * @hash   -105185547
      */
     MCAPI void _initialize(class EntityContext &);
     /**
      * @symbol ?_saveArmor@Mob@@AEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   890084975
+     * @hash   937473807
      */
     MCAPI std::unique_ptr<class ListTag> _saveArmor() const;
     /**
      * @symbol ?_updateSprintingState@Mob@@AEAAXXZ
-     * @hash   -1640998595
+     * @hash   -1593548259
      */
     MCAPI void _updateSprintingState();
     /**
      * @symbol ?_verifyAttributes@Mob@@AEAAXXZ
-     * @hash   -1251269621
+     * @hash   -1203803909
      */
     MCAPI void _verifyAttributes();
     /**
+     * @symbol ?_executeDash@Mob@@CAXAEAV1@AEAUIMobMovementProxy@@@Z
+     * @hash   -2062814749
+     */
+    MCAPI static void _executeDash(class Mob &, struct IMobMovementProxy &);
+    /**
      * @symbol ?_tryApplyingLevitation@Mob@@CA_NAEBUIMobMovementProxy@@AEAVVec3@@@Z
-     * @hash   320801024
+     * @hash   368220608
      */
     MCAPI static bool _tryApplyingLevitation(struct IMobMovementProxy const &, class Vec3 &);
 
 protected:
     /**
      * @symbol ?MAX_INACTIVITY_TIMER@Mob@@1HB
-     * @hash   202717571
+     * @hash   962153587
      */
     MCAPI static int const MAX_INACTIVITY_TIMER;
 

@@ -33,33 +33,33 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINER
     /**
      * @symbol ?dropContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
-     * @hash   -2036545911
+     * @hash   -1279093399
      */
     MCVAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
     /**
      * @symbol ?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1456966675
+     * @hash   -699514163
      */
     MCVAPI void initializeContainerContents(class BlockSource &);
     /**
      * @symbol ?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z
-     * @hash   355972830
+     * @hash   1113425342
      */
     MCVAPI void setContainerChanged(int);
     /**
      * @symbol ?startOpen@RandomizableBlockActorContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -2057122181
+     * @hash   -1299669669
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ??1RandomizableBlockActorContainer@@UEAA@XZ
-     * @hash   -2038830360
+     * @hash   -1281377848
      */
     MCVAPI ~RandomizableBlockActorContainer();
 #endif
     /**
      * @symbol ??0RandomizableBlockActorContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4ContainerType@@@Z
-     * @hash   1820960367
+     * @hash   -1716554417
      */
     MCAPI RandomizableBlockActorContainer(enum class BlockActorType, std::string const &, class BlockPos const &, enum class ContainerType);
 

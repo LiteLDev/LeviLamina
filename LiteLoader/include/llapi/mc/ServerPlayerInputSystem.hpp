@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?create@ServerPlayerInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -521611484
+     * @hash   -520535164
      */
     MCAPI static struct TickingSystemWithInfo create();
 

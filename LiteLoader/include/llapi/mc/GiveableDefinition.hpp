@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?addGiveableTrigger@GiveableDefinition@@QEAAXAEBUGiveableTrigger@@@Z
-     * @hash   -1780933960
+     * @hash   -1636568696
      */
     MCAPI void addGiveableTrigger(struct GiveableTrigger const &);
     /**
      * @symbol ?initialize@GiveableDefinition@@QEAAXAEAVEntityContext@@AEAVGiveableComponent@@@Z
-     * @hash   2071014545
+     * @hash   -2079587487
      */
     MCAPI void initialize(class EntityContext &, class GiveableComponent &);
     /**
      * @symbol ?buildSchema@GiveableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGiveableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1883017990
+     * @hash   2027383254
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>> &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createAddLocalPlayerEntityMovedSystem@AddLocalPlayerEntityMovedSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   606077716
+     * @hash   737604020
      */
     MCAPI static struct TickingSystemWithInfo createAddLocalPlayerEntityMovedSystem();
 
