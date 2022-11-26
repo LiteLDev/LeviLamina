@@ -203,7 +203,7 @@ static inline bool checkPktId(unsigned int id) {
 }
 
 static inline bool& connState(void* conn) {
-    return *((bool*)conn + 360);
+    return *((bool*)conn + 362);
 }
 
 
@@ -223,7 +223,7 @@ TInstanceHook(NetworkPeer::DataStatus,
         }
         if (!data->empty()) {
             if (checkPktId(packetId)) {
-                this->disconnect();
+                connState(this) = true;
             } else {
                 if (!connState(this)) {
                     data->clear();
@@ -236,7 +236,15 @@ TInstanceHook(NetworkPeer::DataStatus,
 }
 
 
-
+THook(void*,
+      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
+      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
+      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
+      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
+    auto res = original(thi, a1, a2, a3, a4, a5, a6);
+    connState(thi) = false;
+    return res;
+}
 
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
