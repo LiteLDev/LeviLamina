@@ -1070,8 +1070,9 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ", Player) {
     return original(this);
 }
 
+
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
-TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
+TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@AEAVCommandContext@@_N@Z",
                        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print) {
     Player* sp;
     string cmd;

@@ -14,6 +14,7 @@
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
+#include "llapi/mc/NetworkConnection.hpp"
 
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
@@ -36,7 +37,7 @@
 using namespace ll;
 
 // Fix the listening port twice
-TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
+TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose@1@@Z") {
     static bool isFirstLog = true;
     if (globalConfig.enableFixListenPort) {
         if (isFirstLog) {
@@ -205,11 +206,13 @@ static inline bool& connState(void* conn) {
     return *(bool*)(((char*)conn) + 266);
 }
 
+
+
 TInstanceHook(NetworkPeer::DataStatus,
-              "?receivePacket@Connection@NetworkHandler@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_"
-              "traits@D@std@@V?$allocator@D@2@@std@@AEAV2@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$"
-              "duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z",
-              NetworkHandler::Connection, string* data, __int64 a3, __int64** a4) {
+      "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$"
+      "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
+      "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
+    NetworkConnection, string* data, __int64 a3, __int64** a4) {
     auto status = original(this, data, a3, a4);	
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
@@ -233,14 +236,15 @@ TInstanceHook(NetworkPeer::DataStatus,
 }
 
 THook(void*,
-      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
-      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
-      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
-      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
-    auto res = original(thi, a1, a2, a3, a4, a5, a6);
-    connState(thi) = false;
+      "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
+      "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
+      "Bedrock@@AEAVScheduler@@@Z",
+      void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7) {
+    auto res = original(a1, a1, a2, a3, a4, a5, a6);
+    connState(a1) = false;
     return res;
 }
+
 
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
@@ -334,7 +338,7 @@ TInstanceHook(LevelData*,
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
 
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_6a2afbe2cc72d5b28a061e9f93b837cd>,TaskResult>::_Do_call", __int64 a1,
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_2166e5158bf5234f43e997b0cbaf4395>,TaskResult>::_Do_call", __int64 a1,
       __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
