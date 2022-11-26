@@ -444,7 +444,6 @@ TClasslessInstanceHook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAA
         ev.mPlayer = (Player*)ac;
         ev.mIsSneaking = isSneaking;
         ev.call();
-
         isSneaking = ev.mIsSneaking;
     }
     IF_LISTENED_END(PlayerSneakEvent)
@@ -1844,7 +1843,6 @@ TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordi
     ll::globalRuntimeConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
-    // Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Running;
 
     IF_LISTENED(ServerStartedEvent) {
