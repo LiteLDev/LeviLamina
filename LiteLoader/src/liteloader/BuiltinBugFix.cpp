@@ -203,7 +203,7 @@ static inline bool checkPktId(unsigned int id) {
 }
 
 static inline bool& connState(void* conn) {
-    return *(bool*)(((char*)conn) + 266);
+    return *((bool*)conn + 360);
 }
 
 
@@ -223,7 +223,7 @@ TInstanceHook(NetworkPeer::DataStatus,
         }
         if (!data->empty()) {
             if (checkPktId(packetId)) {
-                connState(this) = true;
+                this->disconnect();
             } else {
                 if (!connState(this)) {
                     data->clear();
@@ -235,15 +235,7 @@ TInstanceHook(NetworkPeer::DataStatus,
     return status;
 }
 
-THook(void*,
-      "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
-      "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
-      "Bedrock@@AEAVScheduler@@@Z",
-      void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7) {
-    auto res = original(a1, a1, a2, a3, a4, a5, a6);
-    connState(a1) = false;
-    return res;
-}
+
 
 
 // Fix wine stop
