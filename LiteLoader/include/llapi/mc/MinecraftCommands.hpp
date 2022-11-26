@@ -23,19 +23,6 @@ class MinecraftCommands {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    [[deprecated]]
-    static MCRESULT _runcmd(void* origin, const std::string& cmd) {
-        if (!Global<MinecraftCommands>)
-            return {0};
-        try
-        {
-            return Global<MinecraftCommands>->executeCommand(*std::make_shared<CommandContext>(cmd, std::unique_ptr<CommandOrigin>((CommandOrigin*)origin)), false);
-        }
-        catch (...)
-        {
-        }
-        return {0};
-    }
     static MCRESULT _runcmd(std::unique_ptr<CommandOrigin> origin, const std::string& cmd)
     {
         if (!Global<MinecraftCommands>)
