@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ShowStoreOfferPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   393427694
+     * @hash   319546014
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ShowStoreOfferPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -192083557
+     * @hash   -265965237
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ShowStoreOfferPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -586265780
+     * @hash   -660147460
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ShowStoreOfferPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   200281564
+     * @hash   126399884
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ShowStoreOfferPacket@@QEAA@XZ
-     * @hash   362350828
+     * @hash   288469148
      */
     MCAPI ShowStoreOfferPacket();
 

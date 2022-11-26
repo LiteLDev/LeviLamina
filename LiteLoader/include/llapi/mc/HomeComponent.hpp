@@ -31,62 +31,62 @@ public:
 public:
     /**
      * @symbol ??0HomeComponent@@QEAA@XZ
-     * @hash   983137754
+     * @hash   968084650
      */
     MCAPI HomeComponent();
     /**
      * @symbol ?addAdditionalSaveData@HomeComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   163183464
+     * @hash   148130360
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getHomeDimension@HomeComponent@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   1165436754
+     * @hash   1150383650
      */
     MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;
     /**
      * @symbol ?getHomePos@HomeComponent@@QEBA?AVBlockPos@@XZ
-     * @hash   1871490206
+     * @hash   1856437102
      */
     MCAPI class BlockPos getHomePos() const;
     /**
      * @symbol ?getRestrictionRadius@HomeComponent@@QEBAHXZ
-     * @hash   -1842179658
+     * @hash   -1670921770
      */
     MCAPI int getRestrictionRadius() const;
     /**
      * @symbol ?hasRestriction@HomeComponent@@QEBA_NXZ
-     * @hash   578036580
+     * @hash   562983476
      */
     MCAPI bool hasRestriction() const;
     /**
      * @symbol ?hasValidHomePos@HomeComponent@@QEBA_NXZ
-     * @hash   999899250
+     * @hash   984846146
      */
     MCAPI bool hasValidHomePos() const;
     /**
      * @symbol ?isWithinRestriction@HomeComponent@@QEBA_NAEBVBlockPos@@@Z
-     * @hash   717723155
+     * @hash   702670051
      */
     MCAPI bool isWithinRestriction(class BlockPos const &) const;
     /**
      * @symbol ??4HomeComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   2006817392
+     * @hash   -2127301568
      */
     MCAPI class HomeComponent & operator=(class HomeComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@HomeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -291359284
+     * @hash   -306412388
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setHome@HomeComponent@@QEAAXAEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   605812817
+     * @hash   590759713
      */
     MCAPI void setHome(class BlockPos const &, class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?tick@HomeComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1918687506
+     * @hash   1903634402
      */
     MCAPI void tick(class Actor &);
 

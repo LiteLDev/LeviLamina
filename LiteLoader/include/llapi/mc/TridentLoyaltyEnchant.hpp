@@ -39,44 +39,44 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@TridentLoyaltyEnchant@@UEBAHH@Z
-     * @hash   -1064226546
+     * @hash   -495652818
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@TridentLoyaltyEnchant@@UEBAHH@Z
-     * @hash   1127605740
+     * @hash   1053585676
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@TridentLoyaltyEnchant@@UEBAHXZ
-     * @hash   -1967546452
+     * @hash   -2009815076
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @symbol ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -954423915
+     * @hash   -385850187
      */
     MCAPI TridentLoyaltyEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

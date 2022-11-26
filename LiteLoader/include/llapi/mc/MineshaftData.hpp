@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0MineshaftData@@QEAA@_N@Z
-     * @hash   1784444310
+     * @hash   1956148102
      */
     MCAPI MineshaftData(bool);
 

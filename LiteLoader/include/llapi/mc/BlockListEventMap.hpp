@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0BlockListEventMap@@QEAA@AEBV0@@Z
-     * @hash   1801253745
+     * @hash   1729509329
      */
     MCAPI BlockListEventMap(class BlockListEventMap const &);
     /**
      * @symbol ??1BlockListEventMap@@QEAA@XZ
-     * @hash   -1087992807
+     * @hash   -963616343
      */
     MCAPI ~BlockListEventMap();
 

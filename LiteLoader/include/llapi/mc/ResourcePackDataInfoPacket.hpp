@@ -45,35 +45,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ResourcePackDataInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -261588777
+     * @hash   -335455081
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ResourcePackDataInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   125978628
+     * @hash   52112324
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ResourcePackDataInfoPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1113716563
+     * @hash   1039850259
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ResourcePackDataInfoPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2025523475
+     * @hash   1951657171
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ResourcePackDataInfoPacket@@QEAA@XZ
-     * @hash   119022387
+     * @hash   45156083
      */
     MCAPI ResourcePackDataInfoPacket();
     /**
      * @symbol ??0ResourcePackDataInfoPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IH_K0_NW4PackType@@@Z
-     * @hash   310660312
+     * @hash   236794008
      */
     MCAPI ResourcePackDataInfoPacket(std::string const &, unsigned int, int, unsigned __int64, std::string const &, bool, enum class PackType);
 

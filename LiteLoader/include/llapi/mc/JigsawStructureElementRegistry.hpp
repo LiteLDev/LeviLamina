@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?clear@JigsawStructureElementRegistry@@QEAAXXZ
-     * @hash   -674735181
+     * @hash   71369843
      */
     MCAPI void clear();
     /**
      * @symbol ?lookupByName@JigsawStructureElementRegistry@@QEBAPEBVStructurePoolElement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -910305368
+     * @hash   -164200344
      */
     MCAPI class StructurePoolElement const * lookupByName(std::string) const;
     /**
      * @symbol ?registerStructureElement@JigsawStructureElementRegistry@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unique_ptr@VStructurePoolElement@@U?$default_delete@VStructurePoolElement@@@std@@@3@@Z
-     * @hash   499399105
+     * @hash   1245504129
      */
     MCAPI void registerStructureElement(std::string, std::unique_ptr<class StructurePoolElement> &&);
     /**
      * @symbol ??1JigsawStructureElementRegistry@@QEAA@XZ
-     * @hash   890046929
+     * @hash   1614041265
      */
     MCAPI ~JigsawStructureElementRegistry();
 

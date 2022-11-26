@@ -20,6 +20,14 @@ namespace Social {
 
 #define AFTER_EXTRA
 // Add Member There
+class MultiplayerServiceManager {
+public:
+    MultiplayerServiceManager() = delete;
+    MultiplayerServiceManager(MultiplayerServiceManager const&) = delete;
+    MultiplayerServiceManager(MultiplayerServiceManager const&&) = delete;
+};
+
+
 namespace Events {
 class AchievementEventing {
 public:
@@ -27,6 +35,7 @@ public:
     AchievementEventing(AchievementEventing const&) = delete;
     AchievementEventing(AchievementEventing const&&) = delete;
 };
+
 class Event {
 public:
     Event() = delete;
@@ -78,7 +87,7 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?INVALID_CONNECTION@Social@@3VGameConnectionInfo@1@B
-     * @hash   -1266076733
+     * @hash   -415122765
      */
     MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
 

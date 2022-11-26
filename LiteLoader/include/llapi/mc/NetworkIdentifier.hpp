@@ -36,54 +36,49 @@ public:
 public:
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@_K@Z
-     * @hash   1086707527
+     * @hash   1211729783
      */
     MCAPI NetworkIdentifier(unsigned __int64);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
-     * @hash   -1558462986
+     * @hash   -1433440730
      */
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
-     * @hash   -227677960
+     * @hash   -102655704
      */
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
-     * @hash   -1153601124
+     * @hash   -1028578868
      */
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     /**
      * @symbol ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1299602400
+     * @hash   -1174580144
      */
     MCAPI std::string getAddress() const;
     /**
      * @symbol ?getHash@NetworkIdentifier@@QEBA_KXZ
-     * @hash   276775019
+     * @hash   402027915
      */
     MCAPI unsigned __int64 getHash() const;
     /**
-     * @symbol ?getNetherNetIDAsString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1986074320
-     */
-    MCAPI std::string getNetherNetIDAsString() const;
-    /**
      * @symbol ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
-     * @hash   1790639858
+     * @hash   1828065042
      */
     MCAPI bool isUnassigned() const;
     /**
      * @symbol ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1010810944
+     * @hash   1136063840
      */
     MCAPI std::string toString() const;
 
 //private:
     /**
      * @symbol ?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z
-     * @hash   -996584369
+     * @hash   -871562113
      */
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 

@@ -38,70 +38,70 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@NapGoal@@UEAA_NXZ
-     * @hash   -1810112272
+     * @hash   -1649540704
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@NapGoal@@UEAA_NXZ
-     * @hash   -1145426914
+     * @hash   -984855346
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@NapGoal@@UEAAXXZ
-     * @hash   -828850215
+     * @hash   -668278647
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@NapGoal@@UEAAXXZ
-     * @hash   743587033
+     * @hash   904158601
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@NapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   58750544
+     * @hash   219322112
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0NapGoal@@QEAA@AEAVMob@@MMMMAEBVActorFilterGroup@@1@Z
-     * @hash   1271283068
+     * @hash   1431854636
      */
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
 
 //private:
     /**
      * @symbol ?_canSleep@NapGoal@@AEBA_NAEBUTick@@@Z
-     * @hash   131665084
+     * @hash   292236652
      */
     MCAPI bool _canSleep(struct Tick const &) const;
     /**
      * @symbol ?_detectsMobs@NapGoal@@AEBA_NXZ
-     * @hash   1268809097
+     * @hash   1429380665
      */
     MCAPI bool _detectsMobs() const;
     /**
      * @symbol ?_setCooldown@NapGoal@@AEAAXXZ
-     * @hash   1690179386
+     * @hash   1850750954
      */
     MCAPI void _setCooldown();
 
 private:
     /**
      * @symbol ?MOB_DETECT_TIME@NapGoal@@0MB
-     * @hash   1636989325
+     * @hash   -1903431523
      */
     MCAPI static float const MOB_DETECT_TIME;
 

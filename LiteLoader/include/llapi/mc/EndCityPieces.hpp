@@ -47,41 +47,41 @@ public:
 public:
     /**
      * @symbol ?init@EndCityPieces@@SAXXZ
-     * @hash   1785409329
+     * @hash   1956820977
      */
     MCAPI static void init();
     /**
      * @symbol ?startHouseTower@EndCityPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@W4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-     * @hash   -941628961
+     * @hash   -770217313
      */
     MCAPI static void startHouseTower(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
 
 //private:
     /**
      * @symbol ?_addHelper@EndCityPieces@@CAPEAVEndCityPiece@1@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@V?$unique_ptr@VEndCityPiece@EndCityPieces@@U?$default_delete@VEndCityPiece@EndCityPieces@@@std@@@4@@Z
-     * @hash   -2131046273
+     * @hash   -1959773009
      */
     MCAPI static class EndCityPieces::EndCityPiece * _addHelper(std::vector<std::unique_ptr<class StructurePiece>> &, std::unique_ptr<class EndCityPieces::EndCityPiece>);
     /**
      * @symbol ?_createPiece@EndCityPieces@@CA?AV?$unique_ptr@VEndCityPiece@EndCityPieces@@U?$default_delete@VEndCityPiece@EndCityPieces@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@PEAVEndCityPiece@1@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Rotation@@_N@Z
-     * @hash   1642955017
+     * @hash   1814228281
      */
     MCAPI static std::unique_ptr<class EndCityPieces::EndCityPiece> _createPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class EndCityPieces::EndCityPiece *, class BlockPos const &, std::string const &, enum class Rotation, bool);
     /**
      * @symbol ?_recursiveChildren@EndCityPieces@@CA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@W4SectionType@1@HPEAVEndCityPiece@1@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@5@AEAVRandom@@@Z
-     * @hash   1543898652
+     * @hash   1715233420
      */
     MCAPI static bool _recursiveChildren(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const &, enum class EndCityPieces::SectionType, int, class EndCityPieces::EndCityPiece *, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
 
 private:
     /**
      * @symbol ?mInsertSettings@EndCityPieces@@0VLegacyStructureSettings@@A
-     * @hash   -1052662092
+     * @hash   -183057036
      */
     MCAPI static class LegacyStructureSettings mInsertSettings;
     /**
      * @symbol ?mOverwriteSettings@EndCityPieces@@0VLegacyStructureSettings@@A
-     * @hash   1887334956
+     * @hash   -1538334804
      */
     MCAPI static class LegacyStructureSettings mOverwriteSettings;
 

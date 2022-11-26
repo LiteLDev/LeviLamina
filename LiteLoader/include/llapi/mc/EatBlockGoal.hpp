@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@EatBlockGoal@@UEAA_NXZ
-     * @hash   -292486584
+     * @hash   -131730504
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@EatBlockGoal@@UEAA_NXZ
-     * @hash   -230701418
+     * @hash   -69945338
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@EatBlockGoal@@UEAAXXZ
-     * @hash   1315096097
+     * @hash   1475852177
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@EatBlockGoal@@UEAAXXZ
-     * @hash   1420417633
+     * @hash   1581173713
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@EatBlockGoal@@UEAAXXZ
-     * @hash   2035320300
+     * @hash   -2098890916
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@EatBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   229937768
+     * @hash   390709224
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0EatBlockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1594851515
+     * @hash   -1433926299
      */
     MCAPI EatBlockGoal(class Mob &);
     /**
      * @symbol ?getEatSuccessChance@EatBlockGoal@@QEBAMAEAVActor@@@Z
-     * @hash   1576444825
+     * @hash   1737200905
      */
     MCAPI float getEatSuccessChance(class Actor &) const;
 

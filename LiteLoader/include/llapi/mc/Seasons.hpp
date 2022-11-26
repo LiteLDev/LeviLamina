@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0Seasons@@QEAA@AEAVDimension@@@Z
-     * @hash   -1326101023
+     * @hash   -757096767
      */
     MCAPI Seasons(class Dimension &);
     /**
      * @symbol ?postProcess@Seasons@@QEAAXAEAVLevelChunk@@AEAVBlockSource@@AEBVChunkPos@@@Z
-     * @hash   214926758
+     * @hash   783931014
      */
     MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     /**
      * @symbol ?tick@Seasons@@QEAAXXZ
-     * @hash   1045229613
+     * @hash   1614233869
      */
     MCAPI void tick();
     /**
      * @symbol ??1Seasons@@QEAA@XZ
-     * @hash   -2123754196
+     * @hash   -1554749940
      */
     MCAPI ~Seasons();
 

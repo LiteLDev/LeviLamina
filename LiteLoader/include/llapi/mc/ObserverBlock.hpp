@@ -38,284 +38,289 @@ public:
     virtual ~ObserverBlock();
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  51
      * @symbol ?isSignalSource@ObserverBlock@@UEBA_NXZ
-     * @hash   -1397486338
+     * @hash   -1300986562
      */
     virtual bool isSignalSource() const;
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
-     * @hash   -2140875555
+     * @hash   -1547023683
      */
     virtual bool isValidAuxValue(int) const;
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -854593008
+     * @hash   -260741136
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -383167106
+     * @hash   -294201570
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  76
      * @symbol ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2012094040
+     * @hash   -1418242168
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1324837663
+     * @hash   -730985791
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1020760439
+     * @hash   -426908567
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ObserverBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   479682291
+     * @hash   1244453779
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   606689511
+     * @hash   1200541383
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ObserverBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1326077910
+     * @hash   1919929782
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  146
      * @symbol ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1636776969
+     * @hash   -1042925097
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   1199312119
+     * @hash   1793163991
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  150
      * @symbol ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     * @hash   124087691
+     * @hash   717939563
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
      * @vftbl  156
-     * @hash   1472752786
+     * @hash   1569252562
      */
     virtual void __unk_vfn_156();
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
      * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  170
      * @symbol ?onPlace@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1923612157
+     * @hash   -1777503267
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  173
      * @symbol ?tick@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1914621165
+     * @hash   -1786494259
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  176
-     * @hash   1537222432
+     * @hash   1633968224
      */
     virtual void __unk_vfn_176();
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
      * @symbol ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1667004677
+     * @hash   -2034110747
      */
     MCAPI ObserverBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_installCircuit@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     * @hash   -518546321
+     * @hash   75305551
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     /**
      * @symbol ?_updateState@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVPulseCapacitor@@_N@Z
-     * @hash   1907344540
+     * @hash   -1793770884
      */
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
 

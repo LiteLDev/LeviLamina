@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0TimeAccumulator@@QEAA@XZ
-     * @hash   -863332107
+     * @hash   -765525371
      */
     MCAPI TimeAccumulator();
     /**
      * @symbol ?getCount@TimeAccumulator@@QEBA_KXZ
-     * @hash   776812105
+     * @hash   901603721
      */
     MCAPI unsigned __int64 getCount() const;
     /**
      * @symbol ?getTimeSumAverageMS@TimeAccumulator@@QEBAMXZ
-     * @hash   -471305812
+     * @hash   251535324
      */
     MCAPI float getTimeSumAverageMS() const;
     /**
      * @symbol ?getTimeSumAverageSeconds@TimeAccumulator@@QEBAMXZ
-     * @hash   -582208728
+     * @hash   140632408
      */
     MCAPI float getTimeSumAverageSeconds() const;
     /**
      * @symbol ?getTimeSumSeconds@TimeAccumulator@@QEBAMXZ
-     * @hash   -1331953196
+     * @hash   -609112060
      */
     MCAPI float getTimeSumSeconds() const;
 

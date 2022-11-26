@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1GameEventPair@@QEAA@XZ
-     * @hash   1251896654
+     * @hash   1342891822
      */
     MCAPI ~GameEventPair();
 

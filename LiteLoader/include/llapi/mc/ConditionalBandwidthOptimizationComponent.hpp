@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0ConditionalBandwidthOptimizationComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -2020731997
+     * @hash   -1893295709
      */
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent &&);
     /**
      * @symbol ?getCurrentOptimizationValues@ConditionalBandwidthOptimizationComponent@@QEAA?AUConditionalBandwidthOptimization@@AEAVActor@@@Z
-     * @hash   -307334195
+     * @hash   -377756275
      */
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor &);
     /**
      * @symbol ?initFromDefinition@ConditionalBandwidthOptimizationComponent@@QEAAXAEAVActor@@AEBVConditionalBandwidthOptimizationDefinition@@@Z
-     * @hash   462534787
+     * @hash   392112707
      */
     MCAPI void initFromDefinition(class Actor &, class ConditionalBandwidthOptimizationDefinition const &);
     /**
      * @symbol ??4ConditionalBandwidthOptimizationComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   538454446
+     * @hash   665890734
      */
     MCAPI class ConditionalBandwidthOptimizationComponent & operator=(class ConditionalBandwidthOptimizationComponent &&);
     /**
      * @symbol ??1ConditionalBandwidthOptimizationComponent@@QEAA@XZ
-     * @hash   257962065
+     * @hash   385398353
      */
     MCAPI ~ConditionalBandwidthOptimizationComponent();
 

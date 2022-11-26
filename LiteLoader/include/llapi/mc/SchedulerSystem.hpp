@@ -37,13 +37,13 @@ public:
     virtual ~SchedulerSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@SchedulerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -2053229446
+     * @hash   -2045387686
      */
     virtual void tick(class EntityRegistry &);
 

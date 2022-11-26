@@ -24,7 +24,7 @@ namespace ItemEventResponse {
 #undef AFTER_EXTRA
     /**
      * @symbol ?EVENT_RESPONSE_VERSION_1_16_100@ItemEventResponse@@3VSemVersion@@B
-     * @hash   1441982637
+     * @hash   2053547661
      */
     MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
 

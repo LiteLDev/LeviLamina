@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DragonFlamingGoal@@UEAA_NXZ
-     * @hash   292467632
+     * @hash   453331344
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DragonFlamingGoal@@UEAA_NXZ
-     * @hash   122460846
+     * @hash   283324558
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DragonFlamingGoal@@UEAAXXZ
-     * @hash   -1715935383
+     * @hash   -1554917911
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DragonFlamingGoal@@UEAAXXZ
-     * @hash   1490568105
+     * @hash   1651585577
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DragonFlamingGoal@@UEAAXXZ
-     * @hash   -1689820988
+     * @hash   -1528803516
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DragonFlamingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1108145120
+     * @hash   1269085712
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DragonFlamingGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1241140867
+     * @hash   -1080200275
      */
     MCAPI DragonFlamingGoal(class Mob &);
 

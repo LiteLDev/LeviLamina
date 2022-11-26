@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
-     * @hash   -996911332
+     * @hash   -485628580
      */
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
     /**
      * @symbol ?kFormat@CrashDumpFrameData@@2QBUCrashDumpFormatEntryImpl@@B
-     * @hash   712371533
+     * @hash   1271934925
      */
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 

@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@DiscFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1685603259
+     * @hash   1841931051
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0DiscFeature@@QEAA@AEBVBlock@@H@Z
-     * @hash   -62926027
+     * @hash   93401765
      */
     MCAPI DiscFeature(class Block const &, int);
 

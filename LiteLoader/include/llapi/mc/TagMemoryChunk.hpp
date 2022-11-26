@@ -47,17 +47,17 @@ public:
 public:
     /**
      * @symbol ?copy@TagMemoryChunk@@QEBA?AU1@XZ
-     * @hash   -2095120211
+     * @hash   2129348125
      */
     MCAPI struct TagMemoryChunk copy() const;
     /**
      * @symbol ??9TagMemoryChunk@@QEBA_NAEBU0@@Z
-     * @hash   -546975290
+     * @hash   210554102
      */
     MCAPI bool operator!=(struct TagMemoryChunk const &) const;
     /**
      * @symbol ??1TagMemoryChunk@@QEAA@XZ
-     * @hash   -1258548564
+     * @hash   -1133756948
      */
     MCAPI ~TagMemoryChunk();
 

@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ??0Timer@@QEAA@MV?$function@$$A6A_JXZ@std@@@Z
-     * @hash   -1097693317
+     * @hash   -1014401525
      */
     MCAPI Timer(float, class std::function<__int64 (void)>);
     /**
      * @symbol ?advanceTime@Timer@@QEAAXM@Z
-     * @hash   -200560922
+     * @hash   -117269130
      */
     MCAPI void advanceTime(float);
     /**
      * @symbol ?getTicks@Timer@@QEBA_KXZ
-     * @hash   -285601375
+     * @hash   -202309583
      */
     MCAPI unsigned __int64 getTicks() const;
     /**
      * @symbol ?getTimeScale@Timer@@QEBAMXZ
-     * @hash   1137221938
+     * @hash   1316029442
      */
     MCAPI float getTimeScale() const;
     /**
      * @symbol ?resetTimePassed@Timer@@QEAAXXZ
-     * @hash   -451917955
+     * @hash   -368626163
      */
     MCAPI void resetTimePassed();
     /**
      * @symbol ?setTimeScale@Timer@@QEAAXM@Z
-     * @hash   -1729174880
+     * @hash   -1645883088
      */
     MCAPI void setTimeScale(float);
     /**
      * @symbol ?stepTick@Timer@@QEAAXH@Z
-     * @hash   684725654
+     * @hash   768017446
      */
     MCAPI void stepTick(int);
     /**
      * @symbol ?stepping@Timer@@QEBA_NXZ
-     * @hash   265063830
+     * @hash   348355622
      */
     MCAPI bool stepping() const;
 

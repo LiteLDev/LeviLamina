@@ -34,54 +34,54 @@ public:
 public:
     /**
      * @symbol ??0ActorAnimationControllerGroup@@QEAA@XZ
-     * @hash   572680416
+     * @hash   567283440
      */
     MCAPI ActorAnimationControllerGroup();
     /**
      * @symbol ?getActorAnimationController@ActorAnimationControllerGroup@@QEAA?AVActorAnimationControllerPtr@@AEBVHashedString@@@Z
-     * @hash   1071830981
+     * @hash   1066664645
      */
     MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const &);
     /**
      * @symbol ?getActorAnimationControllerInfo@ActorAnimationControllerGroup@@QEAA?AV?$shared_ptr@VActorAnimationControllerInfo@@@std@@AEBVHashedString@@@Z
-     * @hash   -1272348546
+     * @hash   -1277514882
      */
     MCAPI class std::shared_ptr<class ActorAnimationControllerInfo> getActorAnimationControllerInfo(class HashedString const &);
     /**
      * @symbol ?loadActorAnimationControllersSync@ActorAnimationControllerGroup@@QEAAXAEAVResourcePackManager@@@Z
-     * @hash   893805998
+     * @hash   888639662
      */
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager &);
     /**
      * @symbol ??1ActorAnimationControllerGroup@@QEAA@XZ
-     * @hash   -154754416
+     * @hash   -160151392
      */
     MCAPI ~ActorAnimationControllerGroup();
     /**
      * @symbol ?loadFormatVersion@ActorAnimationControllerGroup@@SA_NAEBVValue@Json@@AEAVSemVersion@@@Z
-     * @hash   1462641234
+     * @hash   1457459522
      */
     MCAPI static bool loadFormatVersion(class Json::Value const &, class SemVersion &);
 
 //private:
     /**
      * @symbol ?_loadActorAnimationController@ActorAnimationControllerGroup@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@W4CurrentCmdVersion@@@Z
-     * @hash   -490699294
+     * @hash   -495850254
      */
     MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum class CurrentCmdVersion);
     /**
      * @symbol ?_buildAnimationControllerFileSchema_v1_10_Or_Later@ActorAnimationControllerGroup@@CA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorAnimationControllerGroupParseMetaData@@@JsonUtil@@@std@@AEBVSemVersion@@@Z
-     * @hash   1885589515
+     * @hash   1880484683
      */
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorAnimationControllerGroupParseMetaData>> _buildAnimationControllerFileSchema_v1_10_Or_Later(class SemVersion const &);
     /**
      * @symbol ?_buildAnimationControllerFileSchema_v1_8@ActorAnimationControllerGroup@@CA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@_N@JsonUtil@@@std@@XZ
-     * @hash   -460495916
+     * @hash   -465600748
      */
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
     /**
      * @symbol ?upgrade_v1_8_to_v1_10@ActorAnimationControllerGroup@@CA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -1054556186
+     * @hash   -1059737898
      */
     MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value &, class SemVersion const &);
 

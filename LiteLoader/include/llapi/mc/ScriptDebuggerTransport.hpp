@@ -38,66 +38,66 @@ public:
     /**
      * @vftbl  1
      * @symbol ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
-     * @hash   818205002
+     * @hash   900128330
      */
     virtual bool listen(unsigned short);
     /**
      * @vftbl  2
      * @symbol ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   1349663623
+     * @hash   1431586951
      */
     virtual bool connect(std::string const &, unsigned short);
     /**
      * @vftbl  3
      * @symbol ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
-     * @hash   424332403
+     * @hash   506255731
      */
     virtual bool selectClient();
     /**
      * @vftbl  4
      * @symbol ?connected@ScriptDebuggerTransport@@UEBA_NXZ
-     * @hash   271314948
+     * @hash   353238276
      */
     virtual bool connected() const;
     /**
      * @vftbl  5
      * @symbol ?lostConnection@ScriptDebuggerTransport@@UEBA_NXZ
-     * @hash   -981778035
+     * @hash   -899854707
      */
     virtual bool lostConnection() const;
     /**
      * @vftbl  6
      * @symbol ?readyClose@ScriptDebuggerTransport@@UEBA_NXZ
-     * @hash   -1195393040
+     * @hash   -1113469712
      */
     virtual bool readyClose() const;
     /**
      * @vftbl  7
      * @symbol ?close@ScriptDebuggerTransport@@UEAAXXZ
-     * @hash   -1795229054
+     * @hash   -1713305726
      */
     virtual void close();
     /**
      * @vftbl  8
      * @symbol ?peek@ScriptDebuggerTransport@@UEBA_NXZ
-     * @hash   -1662357338
+     * @hash   -1580434010
      */
     virtual bool peek() const;
     /**
      * @vftbl  9
      * @symbol ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
-     * @hash   -685360303
+     * @hash   -603436975
      */
     virtual bool receive(char *, unsigned __int64);
     /**
      * @vftbl  10
      * @symbol ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
-     * @hash   -2011418713
+     * @hash   -1929495385
      */
     virtual void send(char const *, unsigned __int64);
     /**
      * @symbol ??0ScriptDebuggerTransport@@QEAA@AEAVIScriptDebuggerWatchdog@@@Z
-     * @hash   -994487140
+     * @hash   -912563812
      */
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
 

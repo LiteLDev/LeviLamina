@@ -38,45 +38,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SitGoal@@UEAA_NXZ
-     * @hash   525762607
+     * @hash   688025535
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SitGoal@@UEAAXXZ
-     * @hash   898479720
+     * @hash   1060742648
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SitGoal@@UEAAXXZ
-     * @hash   328471256
+     * @hash   417436792
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   328739681
+     * @hash   491002609
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SitGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1504124532
+     * @hash   -1341861604
      */
     MCAPI SitGoal(class Mob &);
 

@@ -39,294 +39,299 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@KelpBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1507614095
+     * @hash   -2031884193
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  60
-     * @hash   -196162194
+     * @hash   -99662418
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  62
      * @symbol ?canContainLiquid@KelpBlock@@UEBA_NXZ
-     * @hash   -1356510599
+     * @hash   -1260010823
      */
     virtual bool canContainLiquid() const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  86
      * @symbol ?onFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1638030825
+     * @hash   -1043517785
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  87
      * @symbol ?mayConsumeFertilizer@KelpBlock@@UEBA_NAEAVBlockSource@@@Z
-     * @hash   752295504
+     * @hash   848795280
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   164574036
+     * @hash   261073812
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1932696577
+     * @hash   -1767773055
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -36762111
+     * @hash   557750929
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@KelpBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1754331685
+     * @hash   -1159834021
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  135
      * @symbol ?getColor@KelpBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1429832911
+     * @hash   -835335247
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@KelpBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   2044252347
+     * @hash   -1656201909
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
      * @vftbl  156
-     * @hash   1479964130
+     * @hash   1576709922
      */
     virtual void __unk_vfn_156();
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
      * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  170
      * @symbol ?onPlace@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   121367157
+     * @hash   715880197
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  173
      * @symbol ?tick@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   67040261
+     * @hash   661553301
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  176
-     * @hash   1537222432
+     * @hash   1633968224
      */
     virtual void __unk_vfn_176();
     /**
      * @vftbl  179
      * @symbol ?canSurvive@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1754691681
+     * @hash   2073798993
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl  189
+     * @vftbl  188
      * @symbol ?getResourceItem@KelpBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   216818541
+     * @hash   811316205
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KELPBLOCK
     /**
      * @symbol ?canBeSilkTouched@KelpBlock@@MEBA_NXZ
-     * @hash   1144935192
+     * @hash   1241680984
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
      * @symbol ?waterSpreadCausesSpawn@KelpBlock@@UEBA_NXZ
-     * @hash   1710704448
+     * @hash   1807204224
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
      * @symbol ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -46179427
+     * @hash   548287485
      */
     MCAPI KelpBlock(std::string const &, int);
     /**
      * @symbol ?shouldGrow@KelpBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   865704566
+     * @hash   1460217606
      */
     MCAPI bool shouldGrow(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_getAge@KelpBlock@@AEBAHAEBVBlock@@@Z
-     * @hash   452445681
+     * @hash   1046912593
      */
     MCAPI int _getAge(class Block const &) const;
     /**
      * @symbol ?_tryGrow@KelpBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -493177036
+     * @hash   101289876
      */
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
 

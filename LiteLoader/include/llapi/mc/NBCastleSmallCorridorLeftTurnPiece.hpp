@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@NBCastleSmallCorridorLeftTurnPiece@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   -183065626
+     * @hash   -11807738
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@NBCastleSmallCorridorLeftTurnPiece@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-     * @hash   145476618
+     * @hash   316734506
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
      * @vftbl  4
      * @symbol ?postProcess@NBCastleSmallCorridorLeftTurnPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1438106078
+     * @hash   -1266848190
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1FogCommandSettings@@QEAA@XZ
-     * @hash   -168326342
+     * @hash   -80344870
      */
     MCAPI ~FogCommandSettings();
 

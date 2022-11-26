@@ -7,6 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Bedrock.hpp"
+#include "Social.hpp"
 #include "Automation.hpp"
 
 #define BEFORE_EXTRA
@@ -49,646 +50,646 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
     /**
+     * @symbol ?_getServerPlayer@ServerNetworkHandler@@EEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
+     * @hash   -1800775783
+     */
+    MCVAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, enum class SubClientId);
+    /**
      * @symbol ?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
-     * @hash   1725032475
+     * @hash   1907745483
      */
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     /**
      * @symbol ?getGameSpecificNetEventCallback@ServerNetworkHandler@@UEAAPEAVGameSpecificNetEventCallback@@XZ
-     * @hash   568580580
+     * @hash   750909188
      */
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVChangeMobPropertyPacket@@@Z
-     * @hash   -558134374
+     * @hash   -469168838
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPhotoTransferPacket@@@Z
-     * @hash   -629653374
+     * @hash   -540687838
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCreatePhotoPacket@@@Z
-     * @hash   2065707433
+     * @hash   -2140294327
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVEditorNetworkPacket@@@Z
-     * @hash   1568577214
+     * @hash   1657542750
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPurchaseReceiptPacket@@@Z
-     * @hash   319592136
+     * @hash   408557672
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCompletedUsingItemPacket@@@Z
-     * @hash   1523497291
+     * @hash   1612462827
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVUpdatePlayerGameTypePacket@@@Z
-     * @hash   -2144996591
+     * @hash   -1961268767
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z
-     * @hash   1013338746
+     * @hash   1197081946
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVActorEventPacket@@@Z
-     * @hash   1283859538
+     * @hash   1466249650
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z
-     * @hash   1686034926
+     * @hash   1868440414
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAnimatePacket@@@Z
-     * @hash   204147518
+     * @hash   386568382
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnimatePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAnvilDamagePacket@@@Z
-     * @hash   716875524
+     * @hash   899311764
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVBlockPickRequestPacket@@@Z
-     * @hash   -120822874
+     * @hash   61628742
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVBookEditPacket@@@Z
-     * @hash   797575380
+     * @hash   980026996
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookEditPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVBossEventPacket@@@Z
-     * @hash   -757226366
+     * @hash   -574774750
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BossEventPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z
-     * @hash   -2076581191
+     * @hash   -1894129575
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheStatusPacket@@@Z
-     * @hash   692026518
+     * @hash   874478134
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientToServerHandshakePacket@@@Z
-     * @hash   -477218751
+     * @hash   -294767135
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientToServerHandshakePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z
-     * @hash   -1769022298
+     * @hash   -1586539930
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z
-     * @hash   -626112692
+     * @hash   -443614948
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z
-     * @hash   1564689091
+     * @hash   1747202211
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CommandRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVContainerClosePacket@@@Z
-     * @hash   -150747472
+     * @hash   31781024
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ContainerClosePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z
-     * @hash   -448070489
+     * @hash   -265526617
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CraftingEventPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDebugInfoPacket@@@Z
-     * @hash   1162000030
+     * @hash   1344543902
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DebugInfoPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z
-     * @hash   419929003
+     * @hash   602442123
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DisconnectPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVEmoteListPacket@@@Z
-     * @hash   -412234983
+     * @hash   -229706487
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EmoteListPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVEmotePacket@@@Z
-     * @hash   -1819672089
+     * @hash   -1637143593
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EmotePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVFilterTextPacket@@@Z
-     * @hash   -1438494894
+     * @hash   -1255966398
      */
     MCVAPI void handle(class NetworkIdentifier const &, class FilterTextPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVGameTestRequestPacket@@@Z
-     * @hash   -174124348
+     * @hash   8419524
      */
     MCVAPI void handle(class NetworkIdentifier const &, class GameTestRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInteractPacket@@@Z
-     * @hash   1644912113
+     * @hash   1827455985
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InteractPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z
-     * @hash   569692149
+     * @hash   752251397
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVItemFrameDropItemPacket@@@Z
-     * @hash   -1752790093
+     * @hash   -1570200093
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVItemStackRequestPacket@@@Z
-     * @hash   -108792771
+     * @hash   73812605
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z
-     * @hash   -485847626
+     * @hash   -303242250
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLecternUpdatePacket@@@Z
-     * @hash   -1227395265
+     * @hash   -1044789889
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LecternUpdatePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacket@@@Z
-     * @hash   -1168224256
+     * @hash   -985603504
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV2@@@Z
-     * @hash   -333965532
+     * @hash   -151344780
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV1@@@Z
-     * @hash   142255685
+     * @hash   324891813
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLoginPacket@@@Z
-     * @hash   -208644666
+     * @hash   -25993162
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LoginPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMapCreateLockedCopyPacket@@@Z
-     * @hash   -239303432
+     * @hash   -56605800
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMapInfoRequestPacket@@@Z
-     * @hash   -143325214
+     * @hash   39372418
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMobEquipmentPacket@@@Z
-     * @hash   1329388473
+     * @hash   1512086105
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MobEquipmentPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z
-     * @hash   -315693539
+     * @hash   -132995907
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorAbsolutePacket@@@Z
-     * @hash   -1879984540
+     * @hash   -1697286908
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MoveActorAbsolutePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMovePlayerPacket@@@Z
-     * @hash   227270053
+     * @hash   409983061
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MovePlayerPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z
-     * @hash   -1942409278
+     * @hash   -1759696270
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z
-     * @hash   1908879915
+     * @hash   2091500667
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNpcRequestPacket@@@Z
-     * @hash   -413717671
+     * @hash   -231096919
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NpcRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPassengerJumpPacket@@@Z
-     * @hash   1251485495
+     * @hash   1434121623
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PassengerJumpPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z
-     * @hash   -1299352512
+     * @hash   -1116685632
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerActionPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerAuthInputPacket@@@Z
-     * @hash   1320017678
+     * @hash   1502761438
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerAuthInputPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerHotbarPacket@@@Z
-     * @hash   -767053104
+     * @hash   -584416976
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerHotbarPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z
-     * @hash   705154806
+     * @hash   887790934
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z
-     * @hash   -1180121319
+     * @hash   -997485191
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerSkinPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z
-     * @hash   -171511399
+     * @hash   11140105
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBClientRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z
-     * @hash   -1425727012
+     * @hash   -1243075508
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestAbilityPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestChunkRadiusPacket@@@Z
-     * @hash   -1436865833
+     * @hash   -1254183577
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestNetworkSettingsPacket@@@Z
-     * @hash   -829169803
+     * @hash   -646472171
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestNetworkSettingsPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestPermissionsPacket@@@Z
-     * @hash   -467513454
+     * @hash   -284738942
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkRequestPacket@@@Z
-     * @hash   1031356798
+     * @hash   1214146686
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRespawnPacket@@@Z
-     * @hash   -1758441561
+     * @hash   -1575651673
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z
-     * @hash   2006437747
+     * @hash   -2105739661
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDefaultGameTypePacket@@@Z
-     * @hash   -2086628708
+     * @hash   -1903654308
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z
-     * @hash   1565158338
+     * @hash   1748148114
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDifficultyPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetLocalPlayerAsInitializedPacket@@@Z
-     * @hash   -919119033
+     * @hash   -736113881
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetLocalPlayerAsInitializedPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerGameTypePacket@@@Z
-     * @hash   814266272
+     * @hash   997286800
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSettingsCommandPacket@@@Z
-     * @hash   -826336457
+     * @hash   -643300553
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SettingsCommandPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVShowCreditsPacket@@@Z
-     * @hash   -889852334
+     * @hash   -706831806
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ShowCreditsPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSimpleEventPacket@@@Z
-     * @hash   247586071
+     * @hash   430621975
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SimpleEventPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnExperienceOrbPacket@@@Z
-     * @hash   -332267651
+     * @hash   -149231747
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVStructureBlockUpdatePacket@@@Z
-     * @hash   1942172820
+     * @hash   2125224100
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataRequestPacket@@@Z
-     * @hash   -2026650769
+     * @hash   -1843614865
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z
-     * @hash   -1769382947
+     * @hash   -1586177907
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubChunkRequestPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
-     * @hash   1399955529
+     * @hash   1583175945
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
-     * @hash   2038837674
+     * @hash   -2072417174
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
     /**
      * @symbol ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTickSyncPacket@@@Z
-     * @hash   610205887
+     * @hash   793933711
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TickSyncPacket const &);
     /**
      * @symbol ?onDisconnect@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-     * @hash   1481800013
+     * @hash   1665497085
      */
     MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
     /**
      * @symbol ?onInvalidPlayerJoinedLobby@ServerNetworkHandler@@UEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1572817071
+     * @hash   -1389119999
      */
     MCVAPI void onInvalidPlayerJoinedLobby(class mce::UUID const &, std::string const &);
     /**
      * @symbol ?onPlayerReady@ServerNetworkHandler@@UEAAXAEAVPlayer@@@Z
-     * @hash   669891592
+     * @hash   758857128
      */
     MCVAPI void onPlayerReady(class Player &);
     /**
      * @symbol ?onTextFilterSkipped@ServerNetworkHandler@@EEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   182754276
+     * @hash   366512852
      */
     MCVAPI void onTextFilterSkipped(class NetworkIdentifier const &, enum class SubClientId, std::string const &);
     /**
      * @symbol ?onTick@ServerNetworkHandler@@UEAAXXZ
-     * @hash   -543363708
+     * @hash   -359605132
      */
     MCVAPI void onTick();
     /**
      * @symbol ?onTransferRequest@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1544405944
+     * @hash   1728164520
      */
     MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
     /**
      * @symbol ?onWebsocketRequest@ServerNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-     * @hash   -332837698
+     * @hash   -149079122
      */
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
     /**
      * @symbol ?onXboxUserBlocked@ServerNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -766300523
+     * @hash   -582618827
      */
     MCVAPI void onXboxUserBlocked(std::string const &);
     /**
      * @symbol ?onXboxUserUnblocked@ServerNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -378931186
+     * @hash   -195249490
      */
     MCVAPI void onXboxUserUnblocked(std::string const &);
     /**
      * @symbol ?sendServerLegacyParticle@ServerNetworkHandler@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-     * @hash   -1126744411
+     * @hash   -943385611
      */
     MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @symbol ??1ServerNetworkHandler@@UEAA@XZ
-     * @hash   1594259540
+     * @hash   1774819908
      */
     MCVAPI ~ServerNetworkHandler();
 #endif
     /**
-     * @symbol ??0ServerNetworkHandler@@QEAA@AEAVGameCallbacks@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEAVNetworkHandler@@AEAVPrivateKeyManager@@AEAVServerLocator@@AEAVPacketSender@@AEAVAllowList@@PEAVPermissionsFile@@AEBVUUID@mce@@H_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAVMinecraftCommands@@AEAVIMinecraftApp@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@AEAVScheduler@@V?$NonOwnerPointer@VTextFilteringProcessor@@@3@V?$optional_ref@VMinecraftGameTest@@@@@Z
-     * @hash   849421906
+     * @symbol ??0ServerNetworkHandler@@QEAA@AEAVGameCallbacks@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEAVNetworkHandler@@AEAVPrivateKeyManager@@AEAVServerLocator@@AEAVPacketSender@@AEAVAllowList@@PEAVPermissionsFile@@AEBVUUID@mce@@H_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAVMinecraftCommands@@AEAVIMinecraftApp@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@AEAVScheduler@@V?$NonOwnerPointer@VTextFilteringProcessor@@@3@V?$optional_ref@VMinecraftGameTest@@@@V?$ServiceReference@VAppConfigs@@@@V?$ServiceReference@VMultiplayerServiceManager@Social@@@@9@Z
+     * @hash   -569077449
      */
-    MCAPI ServerNetworkHandler(class GameCallbacks &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkHandler &, class PrivateKeyManager &, class ServerLocator &, class PacketSender &, class AllowList &, class PermissionsFile *, class mce::UUID const &, int, bool, std::vector<std::string> const &, std::string, int, class MinecraftCommands &, class IMinecraftApp &, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const &, class Scheduler &, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>, class optional_ref<class MinecraftGameTest>);
+    MCAPI ServerNetworkHandler(class GameCallbacks &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkHandler &, class PrivateKeyManager &, class ServerLocator &, class PacketSender &, class AllowList &, class PermissionsFile *, class mce::UUID const &, int, bool, std::vector<std::string> const &, std::string, int, class MinecraftCommands &, class IMinecraftApp &, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const &, class Scheduler &, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>, class optional_ref<class MinecraftGameTest>, class ServiceReference<class AppConfigs>, class ServiceReference<class Social::MultiplayerServiceManager>, bool);
     /**
      * @symbol ?activateAllowList@ServerNetworkHandler@@QEAAXXZ
-     * @hash   1091842083
+     * @hash   1274401331
      */
     MCAPI void activateAllowList();
     /**
      * @symbol ?addToDenyList@ServerNetworkHandler@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1877953597
+     * @hash   -1695394349
      */
     MCAPI void addToDenyList(class mce::UUID const &, std::string const &);
     /**
      * @symbol ?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   75938923
+     * @hash   258498171
      */
     MCAPI void allowIncomingConnections(std::string const &, bool);
     /**
      * @symbol ?createNewPlayer@ServerNetworkHandler@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVNetworkIdentifier@@AEBVConnectionRequest@@@Z
-     * @hash   1326691079
+     * @hash   1509557847
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createNewPlayer(class NetworkIdentifier const &, class ConnectionRequest const &);
     /**
-     * @symbol ?createSimulatedPlayer@ServerNetworkHandler@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@0@Z
-     * @hash   1055167517
+     * @symbol ?createSimulatedPlayer@ServerNetworkHandler@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -1110582870
      */
-    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>, std::string const &);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, std::string const &);
     /**
      * @symbol ?disallowIncomingConnections@ServerNetworkHandler@@QEAAXXZ
-     * @hash   268463315
+     * @hash   450791923
      */
     MCAPI void disallowIncomingConnections();
     /**
      * @symbol ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   312035780
+     * @hash   494364388
      */
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &, bool);
     /**
      * @symbol ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   664222953
+     * @hash   846551561
      */
     MCAPI void disconnectClient(class NetworkIdentifier const &, enum class SubClientId, std::string const &, bool);
     /**
      * @symbol ?engineCancelResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-     * @hash   907486837
+     * @hash   1089830821
      */
     MCAPI void engineCancelResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     /**
      * @symbol ?engineDownloadingFinishedResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-     * @hash   -1364096237
+     * @hash   -1181767629
      */
     MCAPI void engineDownloadingFinishedResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     /**
      * @symbol ?engineDownloadingResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-     * @hash   -575472225
+     * @hash   -393143617
      */
     MCAPI void engineDownloadingResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     /**
      * @symbol ?fetchConnectionRequest@ServerNetworkHandler@@QEAAAEBVConnectionRequest@@AEBVNetworkIdentifier@@@Z
-     * @hash   -450678363
+     * @hash   -268349755
      */
     MCAPI class ConnectionRequest const & fetchConnectionRequest(class NetworkIdentifier const &);
     /**
      * @symbol ?isDedicatedServer@ServerNetworkHandler@@QEAA_NXZ
-     * @hash   2085978162
+     * @hash   -2025230558
      */
     MCAPI bool isDedicatedServer();
     /**
      * @symbol ?isHost@ServerNetworkHandler@@QEAA_NAEAVServerPlayer@@@Z
-     * @hash   -265227367
+     * @hash   -81468791
      */
     MCAPI bool isHost(class ServerPlayer &);
     /**
      * @symbol ?onReady_ClientGeneration@ServerNetworkHandler@@QEAAXAEAVPlayer@@AEBVNetworkIdentifier@@@Z
-     * @hash   -1852297101
+     * @hash   -1668553901
      */
     MCAPI void onReady_ClientGeneration(class Player &, class NetworkIdentifier const &);
     /**
      * @symbol ?onStartShutdown@ServerNetworkHandler@@QEAAXXZ
-     * @hash   -479588253
+     * @hash   -295829677
      */
     MCAPI void onStartShutdown();
     /**
      * @symbol ?persistPlayerPermissionsToDisk@ServerNetworkHandler@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
-     * @hash   1424764151
+     * @hash   1608445847
      */
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum class PlayerPermissionLevel);
     /**
      * @symbol ?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@@Z
-     * @hash   1267671814
+     * @hash   1450984486
      */
     MCAPI void sendLoginMessageLocal(class NetworkIdentifier const &, class ConnectionRequest const &, class ServerPlayer &);
     /**
      * @symbol ?setAutomationClient@ServerNetworkHandler@@QEAAXV?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@Z
-     * @hash   -751086919
+     * @hash   -567728119
      */
     MCAPI void setAutomationClient(class Bedrock::NonOwnerPointer<class Automation::AutomationClient>);
     /**
      * @symbol ?setMaxNumPlayers@ServerNetworkHandler@@QEAAHH@Z
-     * @hash   -1800883727
+     * @hash   -1617524927
      */
     MCAPI int setMaxNumPlayers(int);
     /**
      * @symbol ?setNewPlayerPermissions@ServerNetworkHandler@@QEAAXAEAVServerPlayer@@@Z
-     * @hash   122681846
+     * @hash   306040646
      */
     MCAPI void setNewPlayerPermissions(class ServerPlayer &);
     /**
      * @symbol ?trytLoadPlayer@ServerNetworkHandler@@QEAA_NAEAVServerPlayer@@AEBVConnectionRequest@@@Z
-     * @hash   -1794624526
+     * @hash   -1611557870
      */
     MCAPI bool trytLoadPlayer(class ServerPlayer &, class ConnectionRequest const &);
     /**
      * @symbol ?updateServerAnnouncement@ServerNetworkHandler@@QEAAXXZ
-     * @hash   428123109
+     * @hash   611189765
      */
     MCAPI void updateServerAnnouncement();
 
 //private:
     /**
      * @symbol ?_buildSubChunkPacketData@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@PEBVServerPlayer@@AEBVSubChunkRequestPacket@@AEAVSubChunkPacket@@I_N@Z
-     * @hash   -1526118644
+     * @hash   -1345035492
      */
     MCAPI void _buildSubChunkPacketData(class NetworkIdentifier const &, class ServerPlayer const *, class SubChunkRequestPacket const &, class SubChunkPacket &, unsigned int, bool);
     /**
      * @symbol ?_createNewPlayer@ServerNetworkHandler@@AEAAAEAVServerPlayer@@AEBVNetworkIdentifier@@AEBVSubClientConnectionRequest@@W4SubClientId@@@Z
-     * @hash   785679058
+     * @hash   966762210
      */
     MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, enum class SubClientId);
     /**
      * @symbol ?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEAUChatEvent@@@Z
-     * @hash   -1557187772
+     * @hash   -1376104620
      */
     MCAPI void _displayGameMessage(class Player const &, struct ChatEvent &);
     /**
      * @symbol ?_getActiveAndInProgressPlayerCount@ServerNetworkHandler@@AEBAHVUUID@mce@@@Z
-     * @hash   -1292057772
+     * @hash   -1110467212
      */
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID) const;
     /**
      * @symbol ?_getDisplayName@ServerNetworkHandler@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@_NAEBV23@@Z
-     * @hash   -1437205142
+     * @hash   -1255614582
      */
     MCAPI std::string _getDisplayName(class Certificate const &, bool, std::string const &) const;
     /**
-     * @symbol ?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   -1018459660
-     */
-    MCAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, enum class SubClientId);
-    /**
      * @symbol ?_handleCommandBlockUpdatePacket@ServerNetworkHandler@@AEAAXAEBVServerPlayer@@AEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z
-     * @hash   255644450
+     * @hash   437204258
      */
     MCAPI void _handleCommandBlockUpdatePacket(class ServerPlayer const &, class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
     /**
      * @symbol ?_handleSetDifficulty@ServerNetworkHandler@@AEBAXAEBVServerPlayer@@AEBVSetDifficultyPacket@@@Z
-     * @hash   1513695585
+     * @hash   1695255393
      */
     MCAPI void _handleSetDifficulty(class ServerPlayer const &, class SetDifficultyPacket const &) const;
     /**
      * @symbol ?_loadNewPlayer@ServerNetworkHandler@@AEAA_NAEAVServerPlayer@@_N@Z
-     * @hash   1928393183
+     * @hash   2109952991
      */
     MCAPI bool _loadNewPlayer(class ServerPlayer &, bool);
     /**
      * @symbol ?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVCertificate@@@Z
-     * @hash   844634195
+     * @hash   1026194003
      */
     MCAPI void _onClientAuthenticated(class NetworkIdentifier const &, class Certificate const &);
     /**
      * @symbol ?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z
-     * @hash   1059161043
+     * @hash   1240889987
      */
     MCAPI void _onPlayerLeft(class ServerPlayer *, bool);
     /**
      * @symbol ?_onSubClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVCertificate@@AEBVSubClientLoginPacket@@@Z
-     * @hash   -1782364700
+     * @hash   -1600635756
      */
     MCAPI void _onSubClientAuthenticated(class NetworkIdentifier const &, class Certificate const &, class SubClientLoginPacket const &);
     /**
      * @symbol ?_sendAdditionalLevelData@ServerNetworkHandler@@AEAAXAEAVServerPlayer@@AEBVNetworkIdentifier@@@Z
-     * @hash   1089549879
+     * @hash   1271401831
      */
     MCAPI void _sendAdditionalLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     /**
      * @symbol ?_sendLevelData@ServerNetworkHandler@@AEAAXAEAVServerPlayer@@AEBVNetworkIdentifier@@@Z
-     * @hash   574723502
+     * @hash   758451326
      */
     MCAPI void _sendLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     /**
      * @symbol ?_updatePermissions@ServerNetworkHandler@@AEAA_NAEBVServerPlayer@@AEBVRequestPermissionsPacket@@AEAVAbilities@@AEAVPermissionsHandler@@PEAVPlayer@@@Z
-     * @hash   -519382533
+     * @hash   -336992421
      */
     MCAPI bool _updatePermissions(class ServerPlayer const &, class RequestPermissionsPacket const &, class Abilities &, class PermissionsHandler &, class Player *);
 

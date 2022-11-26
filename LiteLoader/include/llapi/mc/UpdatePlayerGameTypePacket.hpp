@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdatePlayerGameTypePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   907049440
+     * @hash   833106256
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdatePlayerGameTypePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1375533261
+     * @hash   1301590077
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdatePlayerGameTypePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1568263674
+     * @hash   1494320490
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdatePlayerGameTypePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1016119286
+     * @hash   -1090062470
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdatePlayerGameTypePacket@@QEAA@XZ
-     * @hash   28805178
+     * @hash   -45138006
      */
     MCAPI UpdatePlayerGameTypePacket();
     /**
      * @symbol ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@@Z
-     * @hash   -1692883320
+     * @hash   -1766826504
      */
     MCAPI UpdatePlayerGameTypePacket(enum class GameType, struct ActorUniqueID const &);
 

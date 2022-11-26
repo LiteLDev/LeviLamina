@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ?addSubpackInfo@SubpackInfoCollection@@QEAAX$$QEAUSubpackInfo@@@Z
-     * @hash   1816108412
+     * @hash   2044488140
      */
     MCAPI void addSubpackInfo(struct SubpackInfo &&);
     /**
      * @symbol ?getSubpackContentTier@SubpackInfoCollection@@QEBA?AVContentTierInfo@@H@Z
-     * @hash   1293441093
+     * @hash   1521820821
      */
     MCAPI class ContentTierInfo getSubpackContentTier(int) const;
     /**
      * @symbol ?getSubpackFolderName@SubpackInfoCollection@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1138604837
+     * @hash   1366984565
      */
     MCAPI std::string const & getSubpackFolderName(int) const;
     /**
      * @symbol ?getSubpackInfo@SubpackInfoCollection@@QEBAAEBV?$vector@USubpackInfo@@V?$allocator@USubpackInfo@@@std@@@std@@XZ
-     * @hash   -866111726
+     * @hash   -772840910
      */
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     /**
      * @symbol ?hasSubpacks@SubpackInfoCollection@@QEBA_NXZ
-     * @hash   -684159868
+     * @hash   -622256092
      */
     MCAPI bool hasSubpacks() const;
 

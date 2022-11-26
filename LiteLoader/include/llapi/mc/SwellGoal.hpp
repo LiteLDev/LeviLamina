@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SwellGoal@@UEAA_NXZ
-     * @hash   -1462866708
+     * @hash   -1300526900
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SwellGoal@@UEAAXXZ
-     * @hash   164987701
+     * @hash   327327509
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SwellGoal@@UEAAXXZ
-     * @hash   -1784665771
+     * @hash   -1622325963
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SwellGoal@@UEAAXXZ
-     * @hash   1184475744
+     * @hash   1346815552
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SwellGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -188485948
+     * @hash   -26146140
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SwellGoal@@QEAA@PEAVCreeper@@MM@Z
-     * @hash   1731589306
+     * @hash   1893929114
      */
     MCAPI SwellGoal(class Creeper *, float, float);
 

@@ -38,41 +38,41 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockUnitCubeDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1812548403
+     * @hash   -2003425741
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockUnitCubeDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1684236783
+     * @hash   -1205243631
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
      * @symbol ?initializeFromNetwork@BlockUnitCubeDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -686399467
+     * @hash   -597433931
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockUnitCubeDescription@@UEBA_NXZ
-     * @hash   889600203
+     * @hash   986099979
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockUnitCubeDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   463878221
+     * @hash   942871373
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @symbol ?NameID@BlockUnitCubeDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1290208613
+     * @hash   493638027
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockUnitCubeDescription@@SAXXZ
-     * @hash   -1364747533
+     * @hash   -886077277
      */
     MCAPI static void bindType();
 

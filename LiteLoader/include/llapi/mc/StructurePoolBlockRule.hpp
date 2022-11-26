@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@0PEBVBlock@@@Z
-     * @hash   -1921915721
+     * @hash   -1166969497
      */
     MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, class Block const *);
     /**
      * @symbol ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@00PEBVBlock@@@Z
-     * @hash   77220525
+     * @hash   832166749
      */
     MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, class Block const *);
     /**
      * @symbol ?processRule@StructurePoolBlockRule@@QEBA_NAEBVBlock@@0AEAVRandom@@AEAPEBV2@AEBVBlockPos@@3@Z
-     * @hash   -919244048
+     * @hash   -164297824
      */
     MCAPI bool processRule(class Block const &, class Block const &, class Random &, class Block const *&, class BlockPos const &, class BlockPos const &) const;
 

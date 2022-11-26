@@ -31,89 +31,89 @@ public:
 public:
     /**
      * @symbol ??0CircuitSceneGraph@@QEAA@XZ
-     * @hash   1958494231
+     * @hash   -1767407305
      */
     MCAPI CircuitSceneGraph();
     /**
      * @symbol ?add@CircuitSceneGraph@@QEAAXAEBVBlockPos@@V?$unique_ptr@VBaseCircuitComponent@@U?$default_delete@VBaseCircuitComponent@@@std@@@std@@@Z
-     * @hash   2032914325
+     * @hash   -1693187099
      */
     MCAPI void add(class BlockPos const &, std::unique_ptr<class BaseCircuitComponent>);
     /**
      * @symbol ?getBaseComponent@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@@Z
-     * @hash   1877344568
+     * @hash   -1848925992
      */
     MCAPI class BaseCircuitComponent * getBaseComponent(class BlockPos const &);
     /**
      * @symbol ?getComponent@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
-     * @hash   1050323363
+     * @hash   1619035475
      */
     MCAPI class BaseCircuitComponent * getComponent(class BlockPos const &, enum class CircuitComponentType);
     /**
      * @symbol ?getFromPendingAdd@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@@Z
-     * @hash   -577720418
+     * @hash   -8992930
      */
     MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &);
     /**
      * @symbol ?getFromPendingAdd@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
-     * @hash   1619442177
+     * @hash   -2106797631
      */
     MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &, enum class CircuitComponentType);
     /**
      * @symbol ?invalidatePos@CircuitSceneGraph@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1431001438
+     * @hash   -862273950
      */
     MCAPI void invalidatePos(class BlockPos const &);
     /**
      * @symbol ?preSetupPoweredBlocks@CircuitSceneGraph@@QEAAXAEBVChunkPos@@@Z
-     * @hash   478189730
+     * @hash   1046824962
      */
     MCAPI void preSetupPoweredBlocks(class ChunkPos const &);
     /**
      * @symbol ?remove@CircuitSceneGraph@@QEAAXAEBVBlockPos@@PEAVBaseCircuitComponent@@@Z
-     * @hash   -884206570
+     * @hash   -315555962
      */
     MCAPI void remove(class BlockPos const &, class BaseCircuitComponent *);
     /**
      * @symbol ?update@CircuitSceneGraph@@QEAAXPEAVBlockSource@@@Z
-     * @hash   354862561
+     * @hash   923497793
      */
     MCAPI void update(class BlockSource *);
     /**
      * @symbol ??1CircuitSceneGraph@@QEAA@XZ
-     * @hash   56667959
+     * @hash   625733719
      */
     MCAPI ~CircuitSceneGraph();
 
 //private:
     /**
      * @symbol ?findRelationships@CircuitSceneGraph@@AEAAXAEBVBlockPos@@PEAVBaseCircuitComponent@@PEAVBlockSource@@@Z
-     * @hash   -1850699428
+     * @hash   -1281818180
      */
     MCAPI void findRelationships(class BlockPos const &, class BaseCircuitComponent *, class BlockSource *);
     /**
      * @symbol ?processPendingAdds@CircuitSceneGraph@@AEAAXXZ
-     * @hash   -1930547477
+     * @hash   -1361896869
      */
     MCAPI void processPendingAdds();
     /**
      * @symbol ?processPendingUpdates@CircuitSceneGraph@@AEAAXPEAVBlockSource@@@Z
-     * @hash   -212945699
+     * @hash   355720285
      */
     MCAPI void processPendingUpdates(class BlockSource *);
     /**
      * @symbol ?removeComponent@CircuitSceneGraph@@AEAAXAEBVBlockPos@@@Z
-     * @hash   -1748706456
+     * @hash   -1180040472
      */
     MCAPI void removeComponent(class BlockPos const &);
     /**
      * @symbol ?removeStaleRelationships@CircuitSceneGraph@@AEAAXXZ
-     * @hash   -829685865
+     * @hash   -261019881
      */
     MCAPI void removeStaleRelationships();
     /**
      * @symbol ?scheduleRelationshipUpdate@CircuitSceneGraph@@AEAAXAEBVBlockPos@@PEAVBaseCircuitComponent@@@Z
-     * @hash   818646474
+     * @hash   1387343210
      */
     MCAPI void scheduleRelationshipUpdate(class BlockPos const &, class BaseCircuitComponent *);
 

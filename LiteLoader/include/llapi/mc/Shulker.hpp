@@ -33,354 +33,359 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@Shulker@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1902294511
+     * @hash   -1857242831
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1289953146
      */
     virtual ~Shulker();
     /**
-     * @vftbl  18
+     * @vftbl  21
      * @symbol ?setPos@Shulker@@UEAAXAEBVVec3@@@Z
-     * @hash   -1269884427
+     * @hash   -1224832747
      */
     virtual void setPos(class Vec3 const &);
     /**
-     * @vftbl  40
-     * @hash   -253420496
+     * @vftbl  42
+     * @hash   -155073678
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Shulker@@UEAAXXZ
-     * @hash   -557167073
+     * @hash   -512115393
      */
     virtual void normalTick();
     /**
-     * @vftbl  57
+     * @vftbl  60
      * @symbol ?isInWall@Shulker@@UEBA_NXZ
-     * @hash   -1006018075
+     * @hash   -960966395
      */
     virtual bool isInWall() const;
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@Shulker@@UEBAMXZ
-     * @hash   -1878009334
+     * @hash   -1824101078
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  112
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  115
      * @symbol ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
-     * @hash   1098089293
+     * @hash   1143140973
      */
     virtual bool canAttack(class Actor *, bool) const;
     /**
-     * @vftbl  131
+     * @vftbl  134
      * @symbol ?shouldRender@Shulker@@UEBA_NXZ
-     * @hash   2125507685
+     * @hash   -2072959835
      */
     virtual bool shouldRender() const;
     /**
-     * @vftbl  134
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   273288922
+     * @hash   318340602
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  142
+     * @vftbl  145
      * @symbol ?getPickRadius@Shulker@@UEAAMXZ
-     * @hash   -4347636
+     * @hash   245343228
      */
     virtual float getPickRadius();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
-     * @hash   -1085379205
+     * @hash   -1040281397
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   387007828
+     * @hash   432013380
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1594775115
+     * @hash   1639826795
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   760912706
+     * @hash   805918258
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  282
+     * @vftbl  280
      * @symbol ?_onSizeUpdated@Shulker@@EEAAXXZ
-     * @hash   1433967481
+     * @hash   1478973033
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  294
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  293
      * @symbol ?travel@Shulker@@UEAAXMMM@Z
-     * @hash   -1854928371
+     * @hash   -682025523
      */
     virtual void travel(float, float, float);
     /**
-     * @vftbl  297
+     * @vftbl  295
      * @symbol ?aiStep@Shulker@@UEAAXXZ
-     * @hash   -1900842801
+     * @hash   -1855837249
      */
     virtual void aiStep();
     /**
-     * @vftbl  302
+     * @vftbl  300
      * @symbol ?checkSpawnRules@Shulker@@UEAA_N_N@Z
-     * @hash   1699541419
+     * @hash   1744593099
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  311
+     * @vftbl  309
      * @symbol ?getMaxHeadXRot@Shulker@@UEAAMXZ
-     * @hash   -2060798240
+     * @hash   -2015700432
      */
     virtual float getMaxHeadXRot();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  319
+     * @vftbl  317
      * @symbol ?getArmorValue@Shulker@@UEBAHXZ
-     * @hash   180472151
+     * @hash   225523831
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  353
+     * @vftbl  351
      * @symbol ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
-     * @hash   -2093145823
+     * @hash   -1937556079
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKER
     /**
      * @symbol ?breaksFallingBlocks@Shulker@@UEBA_NXZ
-     * @hash   1346618741
+     * @hash   1443118517
      */
     MCVAPI bool breaksFallingBlocks() const;
     /**
      * @symbol ?isLeashableType@Shulker@@UEAA_NXZ
-     * @hash   -247312044
+     * @hash   -150566252
      */
     MCVAPI bool isLeashableType();
     /**
      * @symbol ?useNewAi@Shulker@@UEBA_NXZ
-     * @hash   -304558371
+     * @hash   -208058595
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Shulker@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   110796824
+     * @hash   155371848
      */
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@Shulker@@QEAAXXZ
-     * @hash   681906667
+     * @hash   726958347
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?COVERED_ARMOR_MODIFIER@Shulker@@2V?$shared_ptr@VAttributeModifier@@@std@@A
-     * @hash   656693558
+     * @hash   1516211958
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
     /**
      * @symbol ?COVERED_ARMOR_MODIFIER_UUID@Shulker@@2VUUID@mce@@B
-     * @hash   -740321801
+     * @hash   119196599
      */
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     /**
      * @symbol ?postSetPosSetShulkerAttachPosAndPeekAmount@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-     * @hash   -1981974255
+     * @hash   -1936922575
      */
     MCAPI static void postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter, class BlockPos const &);
     /**
      * @symbol ?setShulkerAttachPos@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-     * @hash   1152662111
+     * @hash   1197713791
      */
     MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter, class BlockPos const &);
 
 //protected:
     /**
      * @symbol ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
-     * @hash   -1531715776
+     * @hash   -1486710224
      */
     MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
     /**
      * @symbol ?_setPeekAmount@Shulker@@KAXVSynchedActorDataWriter@@H@Z
-     * @hash   1693491187
+     * @hash   1738496739
      */
     MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int);
 
 //private:
     /**
      * @symbol ?_calculateBB@Shulker@@AEAAXXZ
-     * @hash   141272439
+     * @hash   186262615
      */
     MCAPI void _calculateBB();
     /**
      * @symbol ?_isPosOccupiedByOtherShulker@Shulker@@AEBA_NVBlockPos@@@Z
-     * @hash   -635833515
+     * @hash   -590827963
      */
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
     /**
      * @symbol ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
-     * @hash   688269939
+     * @hash   733275491
      */
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
     /**
      * @symbol ?_peekAmountTick@Shulker@@AEAAXXZ
-     * @hash   -844994113
+     * @hash   -799988561
      */
     MCAPI void _peekAmountTick();
     /**
      * @symbol ?_setAttachFace@Shulker@@AEAAXE@Z
-     * @hash   -1671295816
+     * @hash   -1626290264
      */
     MCAPI void _setAttachFace(unsigned char);
     /**
      * @symbol ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
-     * @hash   706201437
+     * @hash   751206989
      */
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     /**
      * @symbol ?_trySpawnShulker@Shulker@@AEAAXXZ
-     * @hash   571222301
+     * @hash   616227853
      */
     MCAPI void _trySpawnShulker();
     /**
      * @symbol ?_tryTeleportSomewhere@Shulker@@AEAA_NXZ
-     * @hash   -666932282
+     * @hash   -621926730
      */
     MCAPI bool _tryTeleportSomewhere();
 

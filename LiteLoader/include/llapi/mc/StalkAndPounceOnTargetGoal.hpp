@@ -38,60 +38,60 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     * @hash   1832590043
+     * @hash   1994699211
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     * @hash   -1261859159
+     * @hash   -1099749991
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     * @hash   -45306973
+     * @hash   116802195
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     * @hash   1306604212
+     * @hash   1468713380
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     * @hash   278054580
+     * @hash   440179124
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     * @hash   1533752975
+     * @hash   1695892895
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StalkAndPounceOnTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1414688475
+     * @hash   -1252579307
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0StalkAndPounceOnTargetGoal@@QEAA@AEAVMob@@AEBVActorFilterGroup@@MMMMMMMM_N@Z
-     * @hash   1274490268
+     * @hash   1436584060
      */
     MCAPI StalkAndPounceOnTargetGoal(class Mob &, class ActorFilterGroup const &, float, float, float, float, float, float, float, float, bool);
 
 //private:
     /**
      * @symbol ?_isStuckBlock@StalkAndPounceOnTargetGoal@@AEBA_NVBlockPos@@@Z
-     * @hash   1136296800
+     * @hash   1298390592
      */
     MCAPI bool _isStuckBlock(class BlockPos) const;
     /**
      * @symbol ?_preparePounce@StalkAndPounceOnTargetGoal@@AEAAXAEBVVec3@@0@Z
-     * @hash   -2070210711
+     * @hash   -1908116919
      */
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
 

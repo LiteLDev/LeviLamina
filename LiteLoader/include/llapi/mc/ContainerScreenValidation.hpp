@@ -38,123 +38,123 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tryCraft@ContainerScreenValidation@@UEAA?AUContainerValidationResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   1653924180
+     * @hash   -2078558284
      */
     virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @vftbl  2
      * @symbol ?getCraftResults@ContainerScreenValidation@@UEAA?AUContainerValidationCraftResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -1795557465
+     * @hash   -1233072633
      */
     virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @vftbl  3
      * @symbol ?tryActivate@ContainerScreenValidation@@UEAA?AUContainerValidationResult@@XZ
-     * @hash   1722470124
+     * @hash   -2010012340
      */
     virtual struct ContainerValidationResult tryActivate();
     /**
      * @symbol ??0ContainerScreenValidation@@QEAA@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@std@@@Z
-     * @hash   2053766952
+     * @hash   -1678838520
      */
     MCAPI ContainerScreenValidation(class ContainerScreenContext const &, enum class ContainerValidationCaller, class std::unordered_map<enum class ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum class ContainerEnumName>, struct std::equal_to<enum class ContainerEnumName>, class std::allocator<struct std::pair<enum class ContainerEnumName const, class std::shared_ptr<class Container>>>>);
     /**
      * @symbol ?getOrCreateSparseContainer@ContainerScreenValidation@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-     * @hash   1515257770
+     * @hash   2077742602
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum class ContainerEnumName);
     /**
      * @symbol ?isCraftingImplemented@ContainerScreenValidation@@QEAA_NXZ
-     * @hash   -955147678
+     * @hash   -392662846
      */
     MCAPI bool isCraftingImplemented();
     /**
      * @symbol ?logServerAuthUntrustedFail@ContainerScreenValidation@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1820274516
+     * @hash   -1912207948
      */
     MCAPI void logServerAuthUntrustedFail(std::string const &) const;
     /**
      * @symbol ?tryCommitActionResults@ContainerScreenValidation@@QEAA_NXZ
-     * @hash   1702222052
+     * @hash   -2030260412
      */
     MCAPI bool tryCommitActionResults();
     /**
      * @symbol ?tryConsume@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@H@Z
-     * @hash   1849292298
+     * @hash   -1883190166
      */
     MCAPI struct ContainerValidationResult tryConsume(struct ContainerValidationSlotData const &, int);
     /**
      * @symbol ?tryDestroy@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@H@Z
-     * @hash   1109305658
+     * @hash   1671790490
      */
     MCAPI struct ContainerValidationResult tryDestroy(struct ContainerValidationSlotData const &, int);
     /**
      * @symbol ?tryDrop@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@H_N@Z
-     * @hash   1352818861
+     * @hash   1915303693
      */
     MCAPI struct ContainerValidationResult tryDrop(struct ContainerValidationSlotData const &, int, bool);
     /**
      * @symbol ?tryPlaceInItemContainer@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@H@Z
-     * @hash   -1370051160
+     * @hash   -807566328
      */
     MCAPI struct ContainerValidationResult tryPlaceInItemContainer(struct ContainerValidationSlotData const &, int);
     /**
      * @symbol ?trySwap@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@0@Z
-     * @hash   -1333341509
+     * @hash   -770856677
      */
     MCAPI struct ContainerValidationResult trySwap(struct ContainerValidationSlotData const &, struct ContainerValidationSlotData const &);
     /**
      * @symbol ?tryTransfer@ContainerScreenValidation@@QEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@0H_N@Z
-     * @hash   1054152413
+     * @hash   1616837133
      */
     MCAPI struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const &, struct ContainerValidationSlotData const &, int, bool);
     /**
      * @symbol ?makeContainerScreenValidation@ContainerScreenValidation@@SA?AV?$unique_ptr@VContainerScreenValidation@@U?$default_delete@VContainerScreenValidation@@@std@@@std@@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@3@@Z
-     * @hash   505171854
+     * @hash   1067656686
      */
     MCAPI static std::unique_ptr<class ContainerScreenValidation> makeContainerScreenValidation(class ContainerScreenContext const &, enum class ContainerValidationCaller, class std::unordered_map<enum class ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum class ContainerEnumName>, struct std::equal_to<enum class ContainerEnumName>, class std::allocator<struct std::pair<enum class ContainerEnumName const, class std::shared_ptr<class Container>>>>);
 
 //protected:
     /**
      * @symbol ?_tryAddItem@ContainerScreenValidation@@IEAAHAEAUContainerValidationSlotInfo@@H_N@Z
-     * @hash   -1945326828
+     * @hash   -1382934252
      */
     MCAPI int _tryAddItem(struct ContainerValidationSlotInfo &, int, bool);
     /**
      * @symbol ?_tryRemoveItem@ContainerScreenValidation@@IEAA?AVItemStack@@AEAUContainerValidationSlotInfo@@H@Z
-     * @hash   52177178
+     * @hash   614569754
      */
     MCAPI class ItemStack _tryRemoveItem(struct ContainerValidationSlotInfo &, int);
     /**
      * @symbol ?_trySetItem@ContainerScreenValidation@@IEAAHAEAUContainerValidationSlotInfo@@AEBVItemStack@@_N2@Z
-     * @hash   -270554170
+     * @hash   291838406
      */
     MCAPI int _trySetItem(struct ContainerValidationSlotInfo &, class ItemStack const &, bool, bool);
     /**
      * @symbol ?_tryTransferSpecial@ContainerScreenValidation@@IEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@HW4ContainerScreenRequestActionType@@@Z
-     * @hash   579809745
+     * @hash   1142202321
      */
     MCAPI struct ContainerValidationResult _tryTransferSpecial(struct ContainerValidationSlotData const &, int, enum class ContainerScreenRequestActionType);
 
 //private:
     /**
      * @symbol ?_commit@ContainerScreenValidation@@AEAAXXZ
-     * @hash   978424652
+     * @hash   1540817228
      */
     MCAPI void _commit();
     /**
      * @symbol ?_createContainerValidatorSlotInfo@ContainerScreenValidation@@AEAA?AUContainerValidationSlotInfo@@AEBUContainerValidationSlotData@@@Z
-     * @hash   -1504463786
+     * @hash   -942071210
      */
     MCAPI struct ContainerValidationSlotInfo _createContainerValidatorSlotInfo(struct ContainerValidationSlotData const &);
     /**
      * @symbol ?_getOrCreateContainerValidator@ContainerScreenValidation@@AEAA?AV?$shared_ptr@$$CBVContainerValidationBase@@@std@@W4ContainerEnumName@@@Z
-     * @hash   1983596420
+     * @hash   -1748978300
      */
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum class ContainerEnumName);
     /**
      * @symbol ?_propagateContainers@ContainerScreenValidation@@AEAA_NXZ
-     * @hash   -2047543396
+     * @hash   -1485150820
      */
     MCAPI bool _propagateContainers();
 

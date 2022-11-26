@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0NameAction@@QEAA@AEBU0@@Z
-     * @hash   710264751
+     * @hash   857905103
      */
     MCAPI NameAction(struct NameAction const &);
     /**
      * @symbol ?addNameFilterByName@NameAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   442531038
+     * @hash   590171390
      */
     MCAPI void addNameFilterByName(std::string const &);
     /**
      * @symbol ??1NameAction@@QEAA@XZ
-     * @hash   -1522555925
+     * @hash   -1374915573
      */
     MCAPI ~NameAction();
 

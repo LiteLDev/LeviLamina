@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@ManagedWanderingTraderDescription@@UEBAPEBDXZ
-     * @hash   435745468
+     * @hash   951856284
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@ManagedWanderingTraderDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   576362177
+     * @hash   665327713
      */
     virtual void serializeData(class Json::Value &) const;
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0SubChunkBrightnessStorage@@QEAA@XZ
-     * @hash   1723945241
+     * @hash   -2028064743
      */
     MCAPI SubChunkBrightnessStorage();
     /**
      * @symbol ?reset@SubChunkBrightnessStorage@@QEAAX_N@Z
-     * @hash   -558507960
+     * @hash   -15550648
      */
     MCAPI void reset(bool);
 

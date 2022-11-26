@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ?createSaveID@DimensionDataSerializer@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-     * @hash   286684713
+     * @hash   755637337
      */
     MCAPI std::string createSaveID(std::string const &, std::string const &);
     /**
      * @symbol ?deleteDataWithID@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@@Z
-     * @hash   1004982811
+     * @hash   1473935435
      */
     MCAPI void deleteDataWithID(std::string const &, class LevelStorage &);
     /**
      * @symbol ?forEachKeyWithDimensionPrefix@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVLevelStorage@@AEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z@3@@Z
-     * @hash   971984976
+     * @hash   1440937600
      */
     MCAPI void forEachKeyWithDimensionPrefix(std::string const &, std::string const &, class LevelStorage &, class std::function<void (std::string const &, class CompoundTag const &)> const &);
     /**
      * @symbol ?saveDataWithID@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVLevelStorage@@@Z
-     * @hash   -147685318
+     * @hash   321221178
      */
     MCAPI void saveDataWithID(std::string const &, class CompoundTag const &, class LevelStorage &);
 
 //protected:
     /**
      * @symbol ?_createLevelStorageID@DimensionDataSerializer@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@00@Z
-     * @hash   385196482
+     * @hash   854149106
      */
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
 

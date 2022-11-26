@@ -49,41 +49,41 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayerListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1184122185
+     * @hash   -1230188681
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   476064100
+     * @hash   429997604
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayerListPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1465854083
+     * @hash   1419925971
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  4
      * @symbol ?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   791656456
+     * @hash   745589960
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  6
      * @symbol ?_read@PlayerListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1425954573
+     * @hash   -1472021069
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerListPacket@@QEAA@XZ
-     * @hash   -157781725
+     * @hash   -203802093
      */
     MCAPI PlayerListPacket();
     /**
      * @symbol ?emplace@PlayerListPacket@@QEAAX$$QEAVPlayerListEntry@@@Z
-     * @hash   1942166796
+     * @hash   1896100300
      */
     MCAPI void emplace(class PlayerListEntry &&);
 

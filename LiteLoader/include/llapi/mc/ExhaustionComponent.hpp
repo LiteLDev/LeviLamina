@@ -30,42 +30,42 @@ public:
 public:
     /**
      * @symbol ?getAttackValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -633359254
+     * @hash   122232762
      */
     MCAPI float getAttackValue() const;
     /**
      * @symbol ?getHealValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   258653450
+     * @hash   437491706
      */
     MCAPI float getHealValue() const;
     /**
      * @symbol ?getJumpValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -1754266226
+     * @hash   -1575427970
      */
     MCAPI float getJumpValue() const;
     /**
      * @symbol ?getMiningValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -1474383430
+     * @hash   -1295575926
      */
     MCAPI float getMiningValue() const;
     /**
      * @symbol ?getSprintJumpValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -946696710
+     * @hash   -767889206
      */
     MCAPI float getSprintJumpValue() const;
     /**
      * @symbol ?getSprintValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -898009578
+     * @hash   -972829194
      */
     MCAPI float getSprintValue() const;
     /**
      * @symbol ?getSwimValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -383712630
+     * @hash   -212454742
      */
     MCAPI float getSwimValue() const;
     /**
      * @symbol ?getWalkValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -984585624
+     * @hash   -997501464
      */
     MCAPI float getWalkValue() const;
 

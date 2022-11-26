@@ -39,75 +39,75 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@LevelContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -1679175098
+     * @hash   -1634461690
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@LevelContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   826897209
+     * @hash   871610617
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@LevelContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   -1550406526
+     * @hash   -1505693118
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@LevelContainerManagerModel@@UEAAXHH@Z
-     * @hash   -1267500934
+     * @hash   -1178535398
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
-     * @hash   1805673136
+     * @hash   1850386544
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@LevelContainerManagerModel@@UEAA_NM@Z
-     * @hash   595134176
+     * @hash   639847584
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@LevelContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   1009206925
+     * @hash   1053920333
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
-     * @hash   -1801665326
+     * @hash   -1756951918
      */
     MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
     /**
      * @symbol ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
-     * @hash   -1771533039
+     * @hash   -1726819631
      */
     MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
     /**
      * @symbol ?getBlockPos@LevelContainerManagerModel@@QEBAAEBVBlockPos@@XZ
-     * @hash   -251355258
+     * @hash   -206641850
      */
     MCAPI class BlockPos const & getBlockPos() const;
     /**
      * @symbol ?getEntityUniqueID@LevelContainerManagerModel@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -49844838
+     * @hash   -5131430
      */
     MCAPI struct ActorUniqueID getEntityUniqueID() const;
 
 //protected:
     /**
      * @symbol ?_getBlockEntity@LevelContainerManagerModel@@IEAAPEAVBlockActor@@XZ
-     * @hash   -727940039
+     * @hash   -683226631
      */
     MCAPI class BlockActor * _getBlockEntity();
     /**
      * @symbol ?_getRawContainer@LevelContainerManagerModel@@IEAAPEAVContainer@@XZ
-     * @hash   -1671655929
+     * @hash   -1626942521
      */
     MCAPI class Container * _getRawContainer();
 

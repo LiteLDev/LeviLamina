@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?create@FinalizeMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1588666104
+     * @hash   1688133448
      */
     MCAPI static struct TickingSystemWithInfo create();
 

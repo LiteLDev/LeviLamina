@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ContainerClosePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -94404225
+     * @hash   -168424289
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ContainerClosePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1124593708
+     * @hash   1050573644
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ContainerClosePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1973107515
+     * @hash   1899087451
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ContainerClosePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1852838437
+     * @hash   -1926858501
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ContainerClosePacket@@QEAA@XZ
-     * @hash   241117579
+     * @hash   167097515
      */
     MCAPI ContainerClosePacket();
     /**
      * @symbol ??0ContainerClosePacket@@QEAA@W4ContainerID@@_N@Z
-     * @hash   -1414098011
+     * @hash   -1488118075
      */
     MCAPI ContainerClosePacket(enum class ContainerID, bool);
 

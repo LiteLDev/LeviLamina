@@ -39,63 +39,63 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@GrindstoneContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   797969795
+     * @hash   953728675
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@GrindstoneContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   1877188380
+     * @hash   2032947260
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@GrindstoneContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   1161493173
+     * @hash   1317252053
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@GrindstoneContainerManagerModel@@UEAAXHH@Z
-     * @hash   -187352089
+     * @hash   -98386553
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@GrindstoneContainerManagerModel@@UEAAXXZ
-     * @hash   128499421
+     * @hash   217464957
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@GrindstoneContainerManagerModel@@UEAA_NM@Z
-     * @hash   -322981165
+     * @hash   -167222285
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@GrindstoneContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   -311610150
+     * @hash   -155851270
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0GrindstoneContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -530157911
+     * @hash   -374399031
      */
     MCAPI GrindstoneContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   -1035680535
+     * @hash   -281849071
      */
     MCAPI static int const ADDITIONAL_SLOT;
     /**
      * @symbol ?INPUT_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   1596640125
+     * @hash   -1944495707
      */
     MCAPI static int const INPUT_SLOT;
     /**
      * @symbol ?RESULT_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   920015745
+     * @hash   1673847209
      */
     MCAPI static int const RESULT_SLOT;
 

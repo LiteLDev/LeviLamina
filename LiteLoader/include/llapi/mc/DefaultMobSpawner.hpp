@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
-     * @hash   -1696891940
+     * @hash   -939577812
      */
     virtual class BlockPos const & getPos();
 

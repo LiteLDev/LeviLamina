@@ -30,19 +30,19 @@ public:
 public:
     /**
      * @symbol ?reader@SynchedActorDataWriter@@QEBA?AVSynchedActorDataReader@@XZ
-     * @hash   -1133811020
+     * @hash   -1077980764
      */
     MCAPI class SynchedActorDataReader reader() const;
     /**
      * @symbol ?setStatusFlag@SynchedActorDataWriter@@QEAAXW4ActorFlags@@_N@Z
-     * @hash   341314871
+     * @hash   397145127
      */
     MCAPI void setStatusFlag(enum class ActorFlags, bool);
 
 //private:
     /**
      * @symbol ?_get@SynchedActorDataWriter@@AEAA?AV?$not_null@PEAVSynchedActorData@@@gsl@@XZ
-     * @hash   -1426642202
+     * @hash   -1371872890
      */
     MCAPI class gsl::not_null<class SynchedActorData *> _get();
 

@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0SendEventData@@QEAA@AEBU0@@Z
-     * @hash   1713795621
+     * @hash   1751543701
      */
     MCAPI SendEventData(struct SendEventData const &);
     /**
      * @symbol ??1SendEventData@@QEAA@XZ
-     * @hash   -1257261400
+     * @hash   -1315367304
      */
     MCAPI ~SendEventData();
 

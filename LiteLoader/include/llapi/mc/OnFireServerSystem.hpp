@@ -37,22 +37,22 @@ public:
     virtual ~OnFireServerSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@OnFireServerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   2141954631
+     * @hash   -2100780393
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
-     * @symbol ?_tickServer@OnFireServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VOnFireComponent@@@@@Z
-     * @hash   -742963626
+     * @symbol ?_tickServer@OnFireServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@UOnFireComponent@@@@@Z
+     * @hash   -1821995189
      */
-    MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent> &);
+    MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct OnFireComponent> &);
 
 private:
 

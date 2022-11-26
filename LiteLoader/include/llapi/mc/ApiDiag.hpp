@@ -22,7 +22,7 @@ namespace ApiDiag {
 #undef AFTER_EXTRA
     /**
      * @symbol ?g_globalApiRefs@ApiDiag@@3U?$atomic@I@std@@A
-     * @hash   1697023083
+     * @hash   -2038134805
      */
     MCAPI extern struct std::atomic<unsigned int> g_globalApiRefs;
 

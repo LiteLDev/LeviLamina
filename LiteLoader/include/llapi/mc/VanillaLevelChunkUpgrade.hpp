@@ -25,122 +25,122 @@ enum class Axis;
 #undef AFTER_EXTRA
     /**
      * @symbol ?_updateBelowZero@VanillaLevelChunkUpgrade@@YA_NAEAVLevelChunk@@0AEAVBlockSource@@@Z
-     * @hash   -25275524
+     * @hash   145920860
      */
     MCAPI bool _updateBelowZero(class LevelChunk &, class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?_upgradeLevelChunkLegacy@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-     * @hash   1487723958
+     * @hash   1658920342
      */
     MCAPI void _upgradeLevelChunkLegacy(class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?_upgradeLevelChunkViaMetaData@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-     * @hash   -1759504401
+     * @hash   -1588415649
      */
     MCAPI void _upgradeLevelChunkViaMetaData(class LevelChunk &, class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?addBiomeSpecificVillageSkins@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   540410171
+     * @hash   711498923
      */
     MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag &, class BlockSource &);
     /**
      * @symbol ?convertOcelotTagToCat@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   -865334442
+     * @hash   -694276442
      */
     MCAPI bool convertOcelotTagToCat(class CompoundTag &);
     /**
      * @symbol ?convertVillagerV1TagToV2@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   -1940780714
+     * @hash   -1769768842
      */
     MCAPI bool convertVillagerV1TagToV2(class CompoundTag &);
     /**
      * @symbol ?convertVillagerV2TagToV1@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   1547793338
+     * @hash   1718805210
      */
     MCAPI bool convertVillagerV2TagToV1(class CompoundTag &);
     /**
      * @symbol ?convertZombieVillagerV1TagToV2@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   -450990590
+     * @hash   -279994094
      */
     MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag &);
     /**
      * @symbol ?convertZombieVillagerV2TagToV1@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   -1258675418
+     * @hash   -1087740426
      */
     MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag &);
     /**
      * @symbol ?fillNegativeSubChunksWithAir@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-     * @hash   -972447116
+     * @hash   -801527500
      */
     MCAPI void fillNegativeSubChunksWithAir(class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?fillNegativeSubChunksWithGeneration@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0@Z
-     * @hash   586209744
+     * @hash   757129360
      */
     MCAPI void fillNegativeSubChunksWithGeneration(class LevelChunk &, class LevelChunk &);
     /**
      * @symbol ?fillNegativeSubChunksWithGenerationOrAir@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-     * @hash   -231178615
+     * @hash   -60258999
      */
     MCAPI void fillNegativeSubChunksWithGenerationOrAir(class LevelChunk &, class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
-     * @hash   834181671
+     * @hash   1005101287
      */
     MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum class VanillaLevelChunkUpgrade::Axis);
     /**
      * @symbol ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
-     * @hash   799739927
+     * @hash   970659543
      */
     MCAPI void fixStemBlockStates(class BlockSource &, class BlockPos, class Block const &);
     /**
      * @symbol ?fixUselessDynamicWater@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-     * @hash   -1623517458
+     * @hash   -1452597842
      */
     MCAPI void fixUselessDynamicWater(class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?fixWallBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@@Z
-     * @hash   310178256
+     * @hash   481097872
      */
     MCAPI void fixWallBlockStates(class BlockSource &, class BlockPos);
     /**
      * @symbol ?fixWallChunk@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-     * @hash   -977985324
+     * @hash   -807065708
      */
     MCAPI void fixWallChunk(class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?getV1CareerFromDefinitionsList@VanillaLevelChunkUpgrade@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVListTag@@@Z
-     * @hash   338599797
+     * @hash   509519413
      */
     MCAPI std::string const & getV1CareerFromDefinitionsList(class ListTag const *);
     /**
      * @symbol ?isWallBlock@VanillaLevelChunkUpgrade@@YA_NAEBVBlock@@@Z
-     * @hash   -791993780
+     * @hash   -621074164
      */
     MCAPI bool isWallBlock(class Block const &);
     /**
      * @symbol ?levelChunkNeedsUpgrade@VanillaLevelChunkUpgrade@@YA_NAEBVLevelChunk@@@Z
-     * @hash   2045515464
+     * @hash   -2078532216
      */
     MCAPI bool levelChunkNeedsUpgrade(class LevelChunk const &);
     /**
      * @symbol ?upgradeArmorStandComponents@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-     * @hash   -1620404596
+     * @hash   -1449484980
      */
     MCAPI bool upgradeArmorStandComponents(class CompoundTag &);
     /**
      * @symbol ?upgradeLevelChunk@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-     * @hash   2132383475
+     * @hash   -1991679581
      */
     MCAPI void upgradeLevelChunk(class LevelChunk &, class LevelChunk &, class BlockSource &);
     /**
      * @symbol ?upgradeOldLimboEntity@VanillaLevelChunkUpgrade@@YAXAEAVCompoundTag@@W4LimboEntitiesVersion@@_N@Z
-     * @hash   615808671
+     * @hash   786712911
      */
     MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion, bool);
     /**
      * @symbol ?upgradeWorldHeight@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-     * @hash   1462160325
+     * @hash   1633064565
      */
     MCAPI void upgradeWorldHeight(class LevelChunk &, class LevelChunk &, class BlockSource &);
 

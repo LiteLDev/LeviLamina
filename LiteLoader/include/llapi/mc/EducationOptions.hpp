@@ -33,62 +33,62 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
     /**
      * @symbol ?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z
-     * @hash   1530681640
+     * @hash   1714009688
      */
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
     /**
      * @symbol ??1EducationOptions@@UEAA@XZ
-     * @hash   -152328220
+     * @hash   30999828
      */
     MCVAPI ~EducationOptions();
 #endif
     /**
      * @symbol ??0EducationOptions@@QEAA@PEAVResourcePackManager@@@Z
-     * @hash   991772792
+     * @hash   1175100840
      */
     MCAPI EducationOptions(class ResourcePackManager *);
     /**
      * @symbol ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
-     * @hash   1531520500
+     * @hash   1714848548
      */
     MCAPI void init(class LevelData const &);
     /**
      * @symbol ?CHEMISTRY_ENABLED@EducationOptions@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
-     * @hash   1389829919
+     * @hash   -2036208865
      */
     MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
     /**
      * @symbol ?isBaseCodeBuilderEnabled@EducationOptions@@SA_NXZ
-     * @hash   366065384
+     * @hash   549393432
      */
     MCAPI static bool isBaseCodeBuilderEnabled();
     /**
      * @symbol ?isChemistryEnabled@EducationOptions@@SA_NXZ
-     * @hash   -802635414
+     * @hash   -619307366
      */
     MCAPI static bool isChemistryEnabled();
     /**
      * @symbol ?isCodeBuilderEnabled@EducationOptions@@SA_NXZ
-     * @hash   1678138214
+     * @hash   1861466262
      */
     MCAPI static bool isCodeBuilderEnabled();
     /**
      * @symbol ?isEducationEnabled@EducationOptions@@SA_NXZ
-     * @hash   -1385344510
+     * @hash   -1202016462
      */
     MCAPI static bool isEducationEnabled();
 
 //private:
     /**
      * @symbol ?_getCurrentOptions@EducationOptions@@CA?AV?$ServiceReference@VEducationOptions@@@@XZ
-     * @hash   -352352219
+     * @hash   -169024171
      */
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
 private:
     /**
      * @symbol ?DEFAULT_OPTION@EducationOptions@@0V1@A
-     * @hash   1038954254
+     * @hash   1907882766
      */
     MCAPI static class EducationOptions DEFAULT_OPTION;
 

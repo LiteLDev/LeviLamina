@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1WorldTemplateManagerProxyCallbacks@@QEAA@XZ
-     * @hash   -1219638341
+     * @hash   -1040461813
      */
     MCAPI ~WorldTemplateManagerProxyCallbacks();
 

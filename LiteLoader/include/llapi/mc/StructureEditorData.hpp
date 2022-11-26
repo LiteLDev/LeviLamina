@@ -30,251 +30,251 @@ public:
 public:
     /**
      * @symbol ??0StructureEditorData@@QEAA@XZ
-     * @hash   -164874010
+     * @hash   592301734
      */
     MCAPI StructureEditorData();
     /**
      * @symbol ??0StructureEditorData@@QEAA@AEBV0@@Z
-     * @hash   1392741761
+     * @hash   1573440513
      */
     MCAPI StructureEditorData(class StructureEditorData const &);
     /**
      * @symbol ?getAnimationModeAsString@StructureEditorData@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -54864726
+     * @hash   702311018
      */
     MCAPI std::string getAnimationModeAsString() const;
     /**
      * @symbol ?getAnimationSeconds@StructureEditorData@@QEBAMXZ
-     * @hash   55569112
+     * @hash   812729480
      */
     MCAPI float getAnimationSeconds() const;
     /**
      * @symbol ?getIgnoreBlocks@StructureEditorData@@QEBA_NXZ
-     * @hash   -1636684614
+     * @hash   -879524246
      */
     MCAPI bool getIgnoreBlocks() const;
     /**
      * @symbol ?getIgnoreEntities@StructureEditorData@@QEBA_NXZ
-     * @hash   130156586
+     * @hash   887316954
      */
     MCAPI bool getIgnoreEntities() const;
     /**
      * @symbol ?getIncludePlayers@StructureEditorData@@QEBA_NXZ
-     * @hash   -204065958
+     * @hash   -33207846
      */
     MCAPI bool getIncludePlayers() const;
     /**
      * @symbol ?getIntegritySeed@StructureEditorData@@QEBAIXZ
-     * @hash   -2002689808
+     * @hash   -1245529440
      */
     MCAPI unsigned int getIntegritySeed() const;
     /**
      * @symbol ?getIntegrityValue@StructureEditorData@@QEBAMXZ
-     * @hash   704341930
+     * @hash   1461502298
      */
     MCAPI float getIntegrityValue() const;
     /**
      * @symbol ?getIsWaterLogged@StructureEditorData@@QEBA_NXZ
-     * @hash   -1805340164
+     * @hash   -1048179796
      */
     MCAPI bool getIsWaterLogged() const;
     /**
      * @symbol ?getMirror@StructureEditorData@@QEBA?AW4Mirror@@XZ
-     * @hash   -1894053708
+     * @hash   -1136893340
      */
     MCAPI enum class Mirror getMirror() const;
     /**
      * @symbol ?getPivot@StructureEditorData@@QEBAAEBVVec3@@XZ
-     * @hash   -1854904278
+     * @hash   -1097743910
      */
     MCAPI class Vec3 const & getPivot() const;
     /**
      * @symbol ?getRedstoneSaveMode@StructureEditorData@@QEBA?AW4StructureRedstoneSaveMode@@XZ
-     * @hash   1129151232
+     * @hash   1886311600
      */
     MCAPI enum class StructureRedstoneSaveMode getRedstoneSaveMode() const;
     /**
      * @symbol ?getRotation@StructureEditorData@@QEBA?AW4Rotation@@XZ
-     * @hash   709390294
+     * @hash   1466550662
      */
     MCAPI enum class Rotation getRotation() const;
     /**
      * @symbol ?getShowBoundingBox@StructureEditorData@@QEBA_NXZ
-     * @hash   -1983105668
+     * @hash   -1225945300
      */
     MCAPI bool getShowBoundingBox() const;
     /**
      * @symbol ?getStructureBlockType@StructureEditorData@@QEBA?AW4StructureBlockType@@XZ
-     * @hash   2120501642
+     * @hash   -1417305286
      */
     MCAPI enum class StructureBlockType getStructureBlockType() const;
     /**
      * @symbol ?getStructureName@StructureEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   955707404
+     * @hash   1048978220
      */
     MCAPI std::string const & getStructureName() const;
     /**
      * @symbol ?getStructureOffset@StructureEditorData@@QEBAAEBVBlockPos@@XZ
-     * @hash   371662826
+     * @hash   1128823194
      */
     MCAPI class BlockPos const & getStructureOffset() const;
     /**
      * @symbol ?getStructureSettings@StructureEditorData@@QEBAAEBVStructureSettings@@XZ
-     * @hash   -1861516700
+     * @hash   -1882043660
      */
     MCAPI class StructureSettings const & getStructureSettings() const;
     /**
      * @symbol ?getStructureSize@StructureEditorData@@QEBAAEBVBlockPos@@XZ
-     * @hash   -770258822
+     * @hash   -13098454
      */
     MCAPI class BlockPos const & getStructureSize() const;
     /**
      * @symbol ?load@StructureEditorData@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1292554359
+     * @hash   2049714727
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@StructureEditorData@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1187490258
+     * @hash   -430329890
      */
     MCAPI void save(class CompoundTag &) const;
     /**
      * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureEditorData@@QEAAX_N@Z
-     * @hash   885139856
+     * @hash   1642223344
      */
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     /**
      * @symbol ?setAnimationMode@StructureEditorData@@QEAAXW4AnimationMode@@@Z
-     * @hash   -509789024
+     * @hash   247294464
      */
     MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @symbol ?setAnimationSeconds@StructureEditorData@@QEAAXM@Z
-     * @hash   -58294182
+     * @hash   698789306
      */
     MCAPI void setAnimationSeconds(float);
     /**
      * @symbol ?setAnimationTicks@StructureEditorData@@QEAAXI@Z
-     * @hash   -340738472
+     * @hash   416345016
      */
     MCAPI void setAnimationTicks(unsigned int);
     /**
      * @symbol ?setIgnoreBlocks@StructureEditorData@@QEAAX_N@Z
-     * @hash   312250770
+     * @hash   1069334258
      */
     MCAPI void setIgnoreBlocks(bool);
     /**
      * @symbol ?setIgnoreEntities@StructureEditorData@@QEAAX_N@Z
-     * @hash   -1096205758
+     * @hash   -339122270
      */
     MCAPI void setIgnoreEntities(bool);
     /**
      * @symbol ?setIntegritySeed@StructureEditorData@@QEAAXI@Z
-     * @hash   1519670938
+     * @hash   -2018212870
      */
     MCAPI void setIntegritySeed(unsigned int);
     /**
      * @symbol ?setIntegrityValue@StructureEditorData@@QEAAXM@Z
-     * @hash   -1964209064
+     * @hash   -1207125576
      */
     MCAPI void setIntegrityValue(float);
     /**
      * @symbol ?setIsWaterLogged@StructureEditorData@@QEAAX_N@Z
-     * @hash   -902181360
+     * @hash   -145097872
      */
     MCAPI void setIsWaterLogged(bool);
     /**
      * @symbol ?setLastTouchedByPlayerID@StructureEditorData@@QEAAXUActorUniqueID@@@Z
-     * @hash   -345206844
+     * @hash   411876644
      */
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     /**
      * @symbol ?setMirror@StructureEditorData@@QEAAXW4Mirror@@@Z
-     * @hash   -14719234
+     * @hash   742364254
      */
     MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setRotation@StructureEditorData@@QEAAXW4Rotation@@@Z
-     * @hash   -1247478864
+     * @hash   -490395376
      */
     MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setShowBoundingBox@StructureEditorData@@QEAAX_N@Z
-     * @hash   51826544
+     * @hash   808910032
      */
     MCAPI void setShowBoundingBox(bool);
     /**
      * @symbol ?setStructureBlockType@StructureEditorData@@QEAAXW4StructureBlockType@@@Z
-     * @hash   -1677079628
+     * @hash   -919996140
      */
     MCAPI void setStructureBlockType(enum class StructureBlockType);
     /**
      * @symbol ?setStructureName@StructureEditorData@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -589414216
+     * @hash   167669272
      */
     MCAPI void setStructureName(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?setStructureOffset@StructureEditorData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   1400121742
+     * @hash   -2137777442
      */
     MCAPI void setStructureOffset(class BlockPos const &);
     /**
      * @symbol ?setStructureSize@StructureEditorData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -2020923106
+     * @hash   -1263854994
      */
     MCAPI void setStructureSize(class BlockPos const &);
     /**
      * @symbol ??1StructureEditorData@@QEAA@XZ
-     * @hash   1095713494
+     * @hash   1276381494
      */
     MCAPI ~StructureEditorData();
     /**
      * @symbol ?DEFAULT_EXPORT_NAME@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1752075297
+     * @hash   13858303
      */
     MCAPI static std::string const DEFAULT_EXPORT_NAME;
     /**
      * @symbol ?DEFAULT_STRUCTURE_NAMESPACE@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1515762719
+     * @hash   -1013270977
      */
     MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
     /**
      * @symbol ?MAX_STRUCTURE_OFFSET@StructureEditorData@@2VBlockPos@@B
-     * @hash   -1261427563
+     * @hash   -398357307
      */
     MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
     /**
      * @symbol ?MIN_STRUCTURE_OFFSET@StructureEditorData@@2VBlockPos@@B
-     * @hash   179511337
+     * @hash   1042581593
      */
     MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
     /**
      * @symbol ?MIN_STRUCTURE_SIZE@StructureEditorData@@2VBlockPos@@B
-     * @hash   -314588059
+     * @hash   466266725
      */
     MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
     /**
      * @symbol ?NAMESPACE_DELIMITER@StructureEditorData@@2DB
-     * @hash   -2128403016
+     * @hash   -1347548232
      */
     MCAPI static char const NAMESPACE_DELIMITER;
     /**
      * @symbol ?getOrientedBounds@StructureEditorData@@SA?AVBlockPos@@AEBV2@W4Rotation@@@Z
-     * @hash   -525830765
+     * @hash   231329603
      */
     MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum class Rotation);
 
 //private:
     /**
      * @symbol ?_setPivotFromStructureSize@StructureEditorData@@AEAAXXZ
-     * @hash   -1601580659
+     * @hash   -844404915
      */
     MCAPI void _setPivotFromStructureSize();
 
 private:
     /**
      * @symbol ?DEFAULT_STRUCTURE_TYPE@StructureEditorData@@0W4StructureBlockType@@B
-     * @hash   1762156943
+     * @hash   -1751955569
      */
     MCAPI static enum class StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 

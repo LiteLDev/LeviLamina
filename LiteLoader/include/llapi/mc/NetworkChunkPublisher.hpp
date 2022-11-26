@@ -39,64 +39,64 @@ public:
 public:
     /**
      * @symbol ??0NetworkChunkPublisher@@QEAA@AEAVLevel@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   1609432608
+     * @hash   1635095152
      */
     MCAPI NetworkChunkPublisher(class Level &, class NetworkIdentifier const &, enum class SubClientId);
     /**
      * @symbol ?addSavedChunk@NetworkChunkPublisher@@QEAAXAEBVChunkPos@@@Z
-     * @hash   2006651302
+     * @hash   2032329222
      */
     MCAPI void addSavedChunk(class ChunkPos const &);
     /**
      * @symbol ?clearRegion@NetworkChunkPublisher@@QEAAXXZ
-     * @hash   1553075127
+     * @hash   1578753047
      */
     MCAPI void clearRegion();
     /**
      * @symbol ?destroyRegion@NetworkChunkPublisher@@QEAAXXZ
-     * @hash   354111809
+     * @hash   379789729
      */
     MCAPI void destroyRegion();
     /**
      * @symbol ?getChunksSentSinceStart@NetworkChunkPublisher@@QEBAHXZ
-     * @hash   -1213789136
+     * @hash   -1188111216
      */
     MCAPI int getChunksSentSinceStart() const;
     /**
      * @symbol ?is2DPositionRelevant@NetworkChunkPublisher@@QEBA_NAEBVBlockPos@@@Z
-     * @hash   -1619878225
+     * @hash   -1594200305
      */
     MCAPI bool is2DPositionRelevant(class BlockPos const &) const;
     /**
      * @symbol ?moveRegion@NetworkChunkPublisher@@QEAAXAEBVBlockPos@@IAEBVVec3@@W4ChunkSourceViewGenerateMode@ChunkSource@@M@Z
-     * @hash   -1287819154
+     * @hash   -1262141234
      */
     MCAPI void moveRegion(class BlockPos const &, unsigned int, class Vec3 const &, enum class ChunkSource::ChunkSourceViewGenerateMode, float);
     /**
      * @symbol ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z
-     * @hash   -924450487
+     * @hash   -898772567
      */
     MCAPI void prepareRegion(class ChunkSource &, class ChunkPos const &);
     /**
      * @symbol ?sendQueuedChunks@NetworkChunkPublisher@@QEAAXXZ
-     * @hash   -2113667179
+     * @hash   -2087989259
      */
     MCAPI void sendQueuedChunks();
     /**
      * @symbol ?setServerSettings@NetworkChunkPublisher@@QEAAXAEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@@Z
-     * @hash   130566809
+     * @hash   156260105
      */
     MCAPI void setServerSettings(class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &);
 
 //private:
     /**
      * @symbol ?_sendQueuedChunk@NetworkChunkPublisher@@AEAA_NAEBVChunkPos@@PEAVTransferBuilder@Server@ClientBlobCache@@@Z
-     * @hash   -258963873
+     * @hash   -233285953
      */
     MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
     /**
      * @symbol ?_serializeAndCache@NetworkChunkPublisher@@AEAAXAEAVLevelChunkPacket@@AEAVTransferBuilder@Server@ClientBlobCache@@$$QEAV?$function@$$A6AXAEAVVarIntDataOutput@@@Z@std@@@Z
-     * @hash   960808012
+     * @hash   986485932
      */
     MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
 

@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0RailMovementComponent@@QEAA@XZ
-     * @hash   1214168968
+     * @hash   1142901208
      */
     MCAPI RailMovementComponent();
     /**
      * @symbol ?comeOffTrack@RailMovementComponent@@QEAAXAEAVActor@@@Z
-     * @hash   498234748
+     * @hash   426997740
      */
     MCAPI void comeOffTrack(class Actor &);
     /**
      * @symbol ?getMaxSpeed@RailMovementComponent@@QEBAMXZ
-     * @hash   -329672168
+     * @hash   -150833912
      */
     MCAPI float getMaxSpeed() const;
     /**
      * @symbol ?moveAlongTrack@RailMovementComponent@@QEAAXAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   1449877421
+     * @hash   1378640413
      */
     MCAPI void moveAlongTrack(class Actor &, class BlockPos const &);
     /**
      * @symbol ??8RailMovementComponent@@QEBA_NAEBV0@@Z
-     * @hash   255462603
+     * @hash   1602461707
      */
     MCAPI bool operator==(class RailMovementComponent const &) const;
 

@@ -39,51 +39,51 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@MendingEnchant@@UEBAHH@Z
-     * @hash   1421816990
+     * @hash   1990390718
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@MendingEnchant@@UEBAHH@Z
-     * @hash   663082860
+     * @hash   1231656588
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@MendingEnchant@@UEBAHXZ
-     * @hash   1765478140
+     * @hash   1867390268
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -338384428
+     * @hash   -241884652
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MENDINGENCHANT
     /**
      * @symbol ?isTreasureOnly@MendingEnchant@@UEBA_NXZ
-     * @hash   652678344
+     * @hash   749178120
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol ??0MendingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   1259605108
+     * @hash   1828178836
      */
     MCAPI MendingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

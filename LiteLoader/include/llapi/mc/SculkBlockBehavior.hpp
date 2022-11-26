@@ -31,44 +31,44 @@ public:
     /**
      * @vftbl  0
      * @symbol ?updateDecayDelay@SculkBlockBehavior@@UEBAHH@Z
-     * @hash   1085644235
+     * @hash   1187556363
      */
     virtual int updateDecayDelay(int) const;
     /**
      * @vftbl  1
      * @symbol ?updateFacingData@SculkBlockBehavior@@UEBAHHAEBVBlock@@@Z
-     * @hash   893400362
+     * @hash   1365566570
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
      * @vftbl  2
      * @symbol ?canChangeBlockOnSpread@SculkBlockBehavior@@UEBA_NXZ
-     * @hash   1138930460
+     * @hash   1235676252
      */
     virtual bool canChangeBlockOnSpread() const;
     /**
      * @vftbl  3
      * @symbol ?attemptSpreadVeins@SculkBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
-     * @hash   -1070786191
+     * @hash   -598619983
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
      * @vftbl  4
      * @symbol ?attemptUseCharge@SculkBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
-     * @hash   -708129551
+     * @hash   -235963343
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onDischarged@SculkBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2046026608
+     * @hash   -1957061072
      */
     virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_placeGrowthAt@SculkBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@@Z
-     * @hash   -647733822
+     * @hash   -175567614
      */
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
 

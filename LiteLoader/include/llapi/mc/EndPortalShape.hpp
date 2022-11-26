@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0EndPortalShape@@QEAA@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -1103508440
+     * @hash   -634878712
      */
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
     /**
      * @symbol ?getOrigin@EndPortalShape@@QEBA?AVBlockPos@@XZ
-     * @hash   676438528
+     * @hash   712818144
      */
     MCAPI class BlockPos getOrigin() const;
     /**
      * @symbol ?isValid@EndPortalShape@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   -892412295
+     * @hash   -423782567
      */
     MCAPI bool isValid(class BlockSource &);
     /**
      * @symbol ??1EndPortalShape@@QEAA@XZ
-     * @hash   -1627508684
+     * @hash   -1037746828
      */
     MCAPI ~EndPortalShape();
 

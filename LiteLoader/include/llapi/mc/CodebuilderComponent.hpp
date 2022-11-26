@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?getCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@XZ
-     * @hash   83085670
+     * @hash   254343558
      */
     MCAPI enum class CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
     /**
      * @symbol ?resetCodeStatus@CodebuilderComponent@@QEAAXXZ
-     * @hash   788603795
+     * @hash   768276723
      */
     MCAPI void resetCodeStatus();
     /**
      * @symbol ?setCodeStatus@CodebuilderComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   760528302
+     * @hash   714769326
      */
     MCAPI void setCodeStatus(std::string const &);
     /**
      * @symbol ?stringToCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1486805649
+     * @hash   -1532564625
      */
     MCAPI enum class CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LakeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   2136728385
+     * @hash   -1986873391
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LakeFeature@@QEAA@AEBVBlock@@V?$optional@VXoroshiroPositionalRandomFactory@@@std@@@Z
-     * @hash   -386405866
+     * @hash   -215040346
      */
     MCAPI LakeFeature(class Block const &, class std::optional<class XoroshiroPositionalRandomFactory>);
 
 //private:
     /**
      * @symbol ?_check@LakeFeature@@AEBA_NAEBVBlockPos@@V?$span@_N$0IAA@@gsl@@@Z
-     * @hash   -377169460
+     * @hash   -205803940
      */
     MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 

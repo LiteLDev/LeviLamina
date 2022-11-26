@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createContext@OnExtractSideBySide@@QEBA?AUExtractionSystemContext@@XZ
-     * @hash   1801344466
+     * @hash   1730092082
      */
     MCAPI struct ExtractionSystemContext createContext() const;
 

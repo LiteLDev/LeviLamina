@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   1005307218
+     * @hash   1059722882
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0AmphibiousMoveControl@@QEAA@XZ
-     * @hash   801881719
+     * @hash   856297383
      */
     MCAPI AmphibiousMoveControl();
 

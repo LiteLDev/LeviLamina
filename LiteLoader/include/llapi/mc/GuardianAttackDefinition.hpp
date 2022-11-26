@@ -38,22 +38,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?validateMobType@GuardianAttackDefinition@@UEAA_NAEAVMob@@@Z
-     * @hash   -412465077
+     * @hash   -251524485
      */
     virtual bool validateMobType(class Mob &);
     /**
      * @symbol ??0GuardianAttackDefinition@@QEAA@XZ
-     * @hash   681322904
+     * @hash   842371128
      */
     MCAPI GuardianAttackDefinition();
     /**
      * @symbol ?initialize@GuardianAttackDefinition@@QEAAXAEAVEntityContext@@AEAVGuardianAttackGoal@@@Z
-     * @hash   -536803949
+     * @hash   -375863357
      */
     MCAPI void initialize(class EntityContext &, class GuardianAttackGoal &);
     /**
      * @symbol ?buildSchema@GuardianAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGuardianAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1936068909
+     * @hash   -1775020685
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>> &);
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0RangedAttackDefinition@@QEAA@XZ
-     * @hash   -423074242
+     * @hash   -261334098
      */
     MCAPI RangedAttackDefinition();
     /**
      * @symbol ?initialize@RangedAttackDefinition@@QEAAXAEAVEntityContext@@AEAVRangedAttackGoal@@@Z
-     * @hash   372542315
+     * @hash   534113323
      */
     MCAPI void initialize(class EntityContext &, class RangedAttackGoal &);
     /**
      * @symbol ?buildSchema@RangedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRangedAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1560795477
+     * @hash   -1399055333
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>> &);
 

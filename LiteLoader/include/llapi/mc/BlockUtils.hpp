@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ?allowsNetherVegetation@BlockUtils@@SA_NAEBVBlockLegacy@@@Z
-     * @hash   -89223395
+     * @hash   -38620979
      */
     MCAPI static bool allowsNetherVegetation(class BlockLegacy const &);
     /**
      * @symbol ?canGrowTreeWithBeehive@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   -310201575
+     * @hash   -259599159
      */
     MCAPI static bool canGrowTreeWithBeehive(class Block const &);
     /**
      * @symbol ?getLiquidBlockHeight@BlockUtils@@SAMAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   713020312
+     * @hash   763622728
      */
     MCAPI static float getLiquidBlockHeight(class Block const &, class BlockPos const &);
     /**
      * @symbol ?isBeehiveBlock@BlockUtils@@SA_NAEBVBlockLegacy@@@Z
-     * @hash   -568637453
+     * @hash   -518035037
      */
     MCAPI static bool isBeehiveBlock(class BlockLegacy const &);
     /**
      * @symbol ?isDownwardFlowingLiquid@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   95002333
+     * @hash   145604749
      */
     MCAPI static bool isDownwardFlowingLiquid(class Block const &);
     /**
      * @symbol ?isFullFlowingLiquid@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   -822286897
+     * @hash   -771684481
      */
     MCAPI static bool isFullFlowingLiquid(class Block const &);
     /**
      * @symbol ?isLiquidSource@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   2042959165
+     * @hash   2093561581
      */
     MCAPI static bool isLiquidSource(class Block const &);
     /**
      * @symbol ?isThinFenceOrWallBlock@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   -1250614805
+     * @hash   -1200012389
      */
     MCAPI static bool isThinFenceOrWallBlock(class Block const &);
     /**
      * @symbol ?isWaterSource@BlockUtils@@SA_NAEBVBlock@@@Z
-     * @hash   -434497203
+     * @hash   -383894787
      */
     MCAPI static bool isWaterSource(class Block const &);
 

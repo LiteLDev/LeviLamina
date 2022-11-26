@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0LevelComponent@@QEAA@V?$unique_ptr@VILevel@@U?$default_delete@VILevel@@@std@@@std@@@Z
-     * @hash   1171686208
+     * @hash   1095744144
      */
     MCAPI LevelComponent(std::unique_ptr<class ILevel>);
     /**
      * @symbol ?getLevel@LevelComponent@@QEAAAEAVILevel@@XZ
-     * @hash   -800096736
+     * @hash   -675305120
      */
     MCAPI class ILevel & getLevel();
     /**
      * @symbol ??1LevelComponent@@QEAA@XZ
-     * @hash   -1160267517
+     * @hash   -1070840701
      */
     MCAPI ~LevelComponent();
 

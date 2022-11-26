@@ -38,24 +38,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?postProcess@WoodlandMansionStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1273035368
+     * @hash   -1101085560
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
 //private:
     /**
      * @symbol ?_create@WoodlandMansionStart@@AEAAXAEAVDimension@@AEAVRandom@@HH@Z
-     * @hash   -38872705
+     * @hash   133077103
      */
     MCAPI void _create(class Dimension &, class Random &, int, int);
     /**
      * @symbol ?_makeStairs@WoodlandMansionStart@@AEAAXAEBVBlockPos@@AEBVBlock@@EEAEAVBlockSource@@AEBVBoundingBox@@@Z
-     * @hash   -1252933888
+     * @hash   -1080984080
      */
     MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
     /**
      * @symbol ?_fillCobblestone@WoodlandMansionStart@@CAXAEBVBlockPos@@AEAVBlockSource@@@Z
-     * @hash   1318592773
+     * @hash   1490542581
      */
     MCAPI static void _fillCobblestone(class BlockPos const &, class BlockSource &);
 

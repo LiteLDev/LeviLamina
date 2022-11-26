@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0WorldGenCache@@QEAA@VChunkLocalNoiseCache@@VSurfaceLevelCache@@@Z
-     * @hash   -992101038
+     * @hash   -820735518
      */
     MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache);
     /**
      * @symbol ?getChunkLocalNoiseCache@WorldGenCache@@QEBAAEBVChunkLocalNoiseCache@@XZ
-     * @hash   -1875849994
+     * @hash   -1782579178
      */
     MCAPI class ChunkLocalNoiseCache const & getChunkLocalNoiseCache() const;
     /**
      * @symbol ?getSurfaceLevelCache@WorldGenCache@@QEBAAEBVSurfaceLevelCache@@XZ
-     * @hash   -2137909644
+     * @hash   -1966544124
      */
     MCAPI class SurfaceLevelCache const & getSurfaceLevelCache() const;
     /**
      * @symbol ??1WorldGenCache@@QEAA@XZ
-     * @hash   -861963008
+     * @hash   -690689744
      */
     MCAPI ~WorldGenCache();
 

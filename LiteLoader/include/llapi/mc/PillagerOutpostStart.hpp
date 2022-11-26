@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?postProcess@PillagerOutpostStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   390678125
+     * @hash   562351165
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 

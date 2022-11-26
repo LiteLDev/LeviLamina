@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0MountTameableDefinition@@QEAA@XZ
-     * @hash   -2034188921
+     * @hash   -1886702329
      */
     MCAPI MountTameableDefinition();
     /**
      * @symbol ?initialize@MountTameableDefinition@@QEAAXAEAVEntityContext@@AEAVMountTamingComponent@@@Z
-     * @hash   1364664523
+     * @hash   1512258747
      */
     MCAPI void initialize(class EntityContext &, class MountTamingComponent &);
     /**
      * @symbol ?buildSchema@MountTameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMountTameableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1035771432
+     * @hash   -888161832
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>> &);
 

@@ -38,71 +38,71 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VRepairableItemComponent@@@@UEBA_NXZ
-     * @hash   668113502
+     * @hash   764613278
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRepairableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -312198976
+     * @hash   281929664
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRepairableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   552678160
+     * @hash   1171639040
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?handleItemRepair@RepairableItemComponent@@QEAAHAEAVItemStackBase@@0@Z
-     * @hash   51544301
+     * @hash   590672989
      */
     MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
     /**
      * @symbol ?isValidRepairItem@RepairableItemComponent@@QEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1070834881
+     * @hash   -531752321
      */
     MCAPI bool isValidRepairItem(class ItemStackBase const &) const;
     /**
      * @symbol ?bindType@RepairableItemComponent@@SAXXZ
-     * @hash   -231494625
+     * @hash   306573119
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RepairableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   812906018
+     * @hash   1352034706
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades@RepairableItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -653660482
+     * @hash   -114454914
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 //private:
     /**
      * @symbol ?_getRepairItemEntry@RepairableItemComponent@@AEBAPEBURepairItemEntry@@AEBVItemStackBase@@@Z
-     * @hash   -2078782286
+     * @hash   -1540714542
      */
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     /**
      * @symbol ?_repairItem@RepairableItemComponent@@AEAAHAEAVItemStackBase@@0VExpressionNode@@@Z
-     * @hash   1996291580
+     * @hash   -1760607972
      */
     MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
 

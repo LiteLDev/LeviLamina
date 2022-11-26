@@ -257,7 +257,7 @@ int Player::clearItem(string typeName) {
     ItemStack* item = getHandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 
@@ -265,7 +265,7 @@ int Player::clearItem(string typeName) {
     item = (ItemStack*)&getOffhandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 

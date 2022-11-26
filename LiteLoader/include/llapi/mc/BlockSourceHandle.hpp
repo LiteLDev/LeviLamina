@@ -38,29 +38,24 @@ public:
     virtual ~BlockSourceHandle();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?onSourceDestroyed@BlockSourceHandle@@UEAAXAEAVBlockSource@@@Z
-     * @hash   617553422
+     * @hash   788811310
      */
     virtual void onSourceDestroyed(class BlockSource &);
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
-    /**
-     * @vftbl  6
-     * @hash   -1400939546
-     */
-    virtual void __unk_vfn_6();
 
 };

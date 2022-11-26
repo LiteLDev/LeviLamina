@@ -39,14 +39,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1768204985
+     * @hash   -1981852247
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -209574530
+     * @hash   335181774
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+
+//private:
+    /**
+     * @symbol ?_applyImpl@SetDataFromColorIndexFunction@@AEAA_NPEBVItem@@PEBVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAH@Z
+     * @hash   995904511
+     */
+    MCAPI bool _applyImpl(class Item const *, class Actor const *, std::string const &, int &);
+
+private:
 
 };

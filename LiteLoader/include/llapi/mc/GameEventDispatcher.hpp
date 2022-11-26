@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
-     * @hash   1611777260
+     * @hash   2129994588
      */
     MCAPI void post(class BlockSource &, class Actor *, class GameEvent const &, class BlockPos const &, class Block const *);
     /**
      * @symbol ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
-     * @hash   -1490286708
+     * @hash   -972069380
      */
     MCAPI void post(class BlockSource &, class Actor *, class GameEvent const &, class Vec3 const &, class Block const *);
 

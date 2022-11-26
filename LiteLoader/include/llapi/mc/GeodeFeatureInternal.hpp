@@ -24,7 +24,7 @@ namespace GeodeFeatureInternal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?geodeInvalidMaterials@GeodeFeatureInternal@@3V?$vector@W4MaterialType@@V?$allocator@W4MaterialType@@@std@@@std@@A
-     * @hash   322765689
+     * @hash   1190717825
      */
     MCAPI extern std::vector<enum MaterialType> geodeInvalidMaterials;
 

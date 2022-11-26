@@ -22,7 +22,7 @@ namespace SculkShriekerBlockActorInternal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_shriek@SculkShriekerBlockActorInternal@@YAXAEAVBlockSource@@VBlockPos@@AEAVPlayer@@@Z
-     * @hash   497957991
+     * @hash   1083291559
      */
     MCAPI void _shriek(class BlockSource &, class BlockPos, class Player &);
 

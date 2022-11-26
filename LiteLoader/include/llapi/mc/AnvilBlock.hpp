@@ -39,304 +39,309 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@AnvilBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1040453505
+     * @hash   1633229057
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  14
      * @symbol ?getLiquidClipVolume@AnvilBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-     * @hash   -1602120615
+     * @hash   -1505374823
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -280202605
+     * @hash   -183702829
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  62
      * @symbol ?canContainLiquid@AnvilBlock@@UEBA_NXZ
-     * @hash   -582232153
+     * @hash   -485732377
      */
     virtual bool canContainLiquid() const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@AnvilBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1993317158
+     * @hash   -1273182198
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1076478631
+     * @hash   -483703079
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@AnvilBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1499011472
+     * @hash   2091787024
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1490330936
+     * @hash   -897555384
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  134
      * @symbol ?isAuxValueRelevantForPicking@AnvilBlock@@UEBA_NXZ
-     * @hash   1704475955
+     * @hash   1800975731
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@AnvilBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   188933921
+     * @hash   781694097
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1558465734
+     * @hash   1647431270
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  156
-     * @hash   1479964130
+     * @hash   1576709922
      */
     virtual void __unk_vfn_156();
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -926004552
+     * @hash   -333229000
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
-     * @vftbl  169
-     * @hash   1461391844
+     * @vftbl  172
+     * @hash   1630274140
      */
-    virtual void __unk_vfn_169();
+    virtual void __unk_vfn_172();
     /**
      * @vftbl  176
-     * @hash   1530011088
+     * @hash   1626510864
      */
     virtual void __unk_vfn_176();
     /**
      * @vftbl  178
      * @symbol ?use@AnvilBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   649329270
+     * @hash   745829046
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl  189
+     * @vftbl  188
      * @symbol ?getResourceItem@AnvilBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   56215007
+     * @hash   648975183
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl  193
+     * @vftbl  192
      * @symbol ?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   -1258870195
+     * @hash   -691711059
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @vftbl  194
+     * @vftbl  193
      * @symbol ?getDustParticleName@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1262352024
+     * @hash   1418049400
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
-     * @vftbl  195
-     * @hash   1586345869
+     * @vftbl  194
+     * @hash   1681922124
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_194();
     /**
-     * @vftbl  196
+     * @vftbl  195
      * @symbol ?onLand@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   692761909
+     * @hash   1285522085
      */
     virtual void onLand(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILBLOCK
     /**
      * @symbol ?canBeSilkTouched@AnvilBlock@@MEBA_NXZ
-     * @hash   -2091855162
+     * @hash   -1995109370
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
      * @symbol ?falling@AnvilBlock@@UEBA_NXZ
-     * @hash   -1927761842
+     * @hash   -1831262066
      */
     MCVAPI bool falling() const;
     /**
      * @symbol ?isCraftingBlock@AnvilBlock@@UEBA_NXZ
-     * @hash   1198504040
+     * @hash   1295003816
      */
     MCVAPI bool isCraftingBlock() const;
     /**
      * @symbol ?isInteractiveBlock@AnvilBlock@@UEBA_NXZ
-     * @hash   2138241372
+     * @hash   -2060226148
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
      * @symbol ??0AnvilBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   989856879
+     * @hash   1582632431
      */
     MCAPI AnvilBlock(std::string const &, int);
 

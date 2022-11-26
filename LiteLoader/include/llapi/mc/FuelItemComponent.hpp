@@ -38,44 +38,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA_NXZ
-     * @hash   -1116075507
+     * @hash   -1019575731
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   301624031
+     * @hash   895752671
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VFuelItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   836324577
+     * @hash   1455285457
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@FuelItemComponent@@SAXXZ
-     * @hash   -906401825
+     * @hash   -363490641
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FuelItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1656825424
+     * @hash   -1113299200
      */
     MCAPI static class HashedString const & getIdentifier();
 

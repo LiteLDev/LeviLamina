@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getItemUseMethodName@ItemUseMethodMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemUseMethod@@@Z
-     * @hash   1909888183
+     * @hash   -1825115945
      */
     MCAPI static std::string const & getItemUseMethodName(enum class ItemUseMethod);
 
@@ -41,7 +41,7 @@ public:
 private:
     /**
      * @symbol ?mMap@ItemUseMethodMap@@0V?$BidirectionalUnorderedMap@W4ItemUseMethod@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
-     * @hash   -15622246
+     * @hash   599802154
      */
     MCAPI static class BidirectionalUnorderedMap<enum class ItemUseMethod, std::string> const mMap;
 

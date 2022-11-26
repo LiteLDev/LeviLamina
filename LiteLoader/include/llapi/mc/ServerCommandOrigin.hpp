@@ -40,101 +40,101 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -677987826
+     * @hash   -575660546
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2038734237
+     * @hash   2076005661
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   -1492706374
+     * @hash   -1456326758
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -144207321
+     * @hash   -106782137
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ServerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   547955142
+     * @hash   585272694
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   -1426505904
+     * @hash   -1389249856
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   -475727664
+     * @hash   -438763760
      */
     virtual class Dimension * getDimension() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   -1949219094
+     * @hash   -1855948278
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -435379378
+     * @hash   -264521266
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   211969508
+     * @hash   248349124
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@ServerCommandOrigin@@UEBA_NXZ
-     * @hash   1416732050
+     * @hash   1513231826
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@ServerCommandOrigin@@UEBA_NXZ
-     * @hash   2040448492
+     * @hash   2136948268
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   1257653043
+     * @hash   1187154083
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   427934602
+     * @hash   465267530
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@ServerCommandOrigin@@UEBA_NXZ
-     * @hash   872047084
+     * @hash   968546860
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0ServerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVServerLevel@@W4CommandPermissionLevel@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1153453180
+     * @hash   -1117150444
      */
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum class CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?load@ServerCommandOrigin@@SA?AV?$unique_ptr@VServerCommandOrigin@@U?$default_delete@VServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     * @hash   -1636772498
+     * @hash   -1599347314
      */
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

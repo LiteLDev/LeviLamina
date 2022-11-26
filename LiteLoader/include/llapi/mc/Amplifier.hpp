@@ -38,19 +38,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getAmount@Amplifier@@UEBAMHM@Z
-     * @hash   418138398
+     * @hash   667829262
      */
     virtual float getAmount(int, float) const;
     /**
      * @vftbl  2
      * @symbol ?shouldBuff@Amplifier@@UEBA_NHH@Z
-     * @hash   -462100771
+     * @hash   -365600995
      */
     virtual bool shouldBuff(int, int) const;
     /**
      * @vftbl  3
      * @symbol ?getTickInterval@Amplifier@@UEBAHH@Z
-     * @hash   1898586843
+     * @hash   2000498971
      */
     virtual int getTickInterval(int) const;
 

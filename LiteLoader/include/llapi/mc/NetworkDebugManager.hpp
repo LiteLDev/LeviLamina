@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
-     * @hash   -1847521403
+     * @hash   -1088823435
      */
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     /**
      * @symbol ?UPDATE_INTERVAL_MILLISECONDS@NetworkDebugManager@@2HB
-     * @hash   1566503123
+     * @hash   -1969766205
      */
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 

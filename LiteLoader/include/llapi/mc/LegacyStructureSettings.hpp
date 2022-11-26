@@ -31,142 +31,142 @@ public:
 public:
     /**
      * @symbol ??0LegacyStructureSettings@@QEAA@XZ
-     * @hash   -17884567
+     * @hash   737738201
      */
     MCAPI LegacyStructureSettings();
     /**
      * @symbol ??0LegacyStructureSettings@@QEAA@W4Mirror@@W4Rotation@@PEBVBlock@@AEBVBoundingBox@@@Z
-     * @hash   -66491366
+     * @hash   689131402
      */
     MCAPI LegacyStructureSettings(enum class Mirror, enum class Rotation, class Block const *, class BoundingBox const &);
     /**
      * @symbol ?addSwapAuxValue@LegacyStructureSettings@@QEAAXHH@Z
-     * @hash   226254623
+     * @hash   981877391
      */
     MCAPI void addSwapAuxValue(int, int);
     /**
      * @symbol ?getBoundingBox@LegacyStructureSettings@@QEAAAEBVBoundingBox@@XZ
-     * @hash   1503914278
+     * @hash   -2035430250
      */
     MCAPI class BoundingBox const & getBoundingBox();
     /**
      * @symbol ?getIgnoreBlock@LegacyStructureSettings@@QEBAPEBVBlock@@XZ
-     * @hash   -208587715
+     * @hash   -171331667
      */
     MCAPI class Block const * getIgnoreBlock() const;
     /**
      * @symbol ?getMirror@LegacyStructureSettings@@QEBAAEBW4Mirror@@XZ
-     * @hash   2111787796
+     * @hash   -2038860364
      */
     MCAPI enum class Mirror const & getMirror() const;
     /**
      * @symbol ?getRefPos@LegacyStructureSettings@@QEBAAEBVBlockPos@@XZ
-     * @hash   1801708306
+     * @hash   1973073826
      */
     MCAPI class BlockPos const & getRefPos() const;
     /**
      * @symbol ?getRotation@LegacyStructureSettings@@QEBAAEBW4Rotation@@XZ
-     * @hash   -10126556
+     * @hash   745496212
      */
     MCAPI enum class Rotation const & getRotation() const;
     /**
      * @symbol ?getSwappedBlock@LegacyStructureSettings@@QEBAAEBVBlock@@AEBVBlockPalette@@AEBV2@@Z
-     * @hash   -520578781
+     * @hash   235043987
      */
     MCAPI class Block const & getSwappedBlock(class BlockPalette const &, class Block const &) const;
     /**
      * @symbol ?isIgnoreJigsawBlocks@LegacyStructureSettings@@QEBA_NXZ
-     * @hash   -785885498
+     * @hash   -806212570
      */
     MCAPI bool isIgnoreJigsawBlocks() const;
     /**
      * @symbol ?isIgnoreStructureBlocks@LegacyStructureSettings@@QEBA_NXZ
-     * @hash   -1604661708
+     * @hash   -1624988780
      */
     MCAPI bool isIgnoreStructureBlocks() const;
     /**
      * @symbol ?isPlacingWaterBelowSeaLevel@LegacyStructureSettings@@QEBA_NXZ
-     * @hash   133658004
+     * @hash   258849396
      */
     MCAPI bool isPlacingWaterBelowSeaLevel() const;
     /**
      * @symbol ?placeWaterBelowSeaLevel@LegacyStructureSettings@@QEAAX_N@Z
-     * @hash   -11015656
+     * @hash   -31542616
      */
     MCAPI void placeWaterBelowSeaLevel(bool);
     /**
      * @symbol ?setBlockRules@LegacyStructureSettings@@QEAAXPEBV?$vector@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@@2@@std@@@Z
-     * @hash   -2038414258
+     * @hash   -1995822738
      */
     MCAPI void setBlockRules(std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *);
     /**
      * @symbol ?setBlockTagRules@LegacyStructureSettings@@QEAAXPEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@std@@@Z
-     * @hash   2009965860
+     * @hash   -1529148028
      */
     MCAPI void setBlockTagRules(std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *);
     /**
      * @symbol ?setBoundingBox@LegacyStructureSettings@@QEAAXAEBVBoundingBox@@@Z
-     * @hash   -291409670
+     * @hash   464443738
      */
     MCAPI void setBoundingBox(class BoundingBox const &);
     /**
      * @symbol ?setIgnoreBlock@LegacyStructureSettings@@QEAAXPEBVBlock@@@Z
-     * @hash   1132866323
+     * @hash   1878971347
      */
     MCAPI void setIgnoreBlock(class Block const *);
     /**
      * @symbol ?setIntegrity@LegacyStructureSettings@@QEAAXM@Z
-     * @hash   1262839632
+     * @hash   2018693040
      */
     MCAPI void setIntegrity(float);
     /**
      * @symbol ?setMirror@LegacyStructureSettings@@QEAAXW4Mirror@@@Z
-     * @hash   -890204332
+     * @hash   -910746668
      */
     MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setProjection@LegacyStructureSettings@@QEAAXW4Projection@@@Z
-     * @hash   1447662356
+     * @hash   1591935364
      */
     MCAPI void setProjection(enum class Projection);
     /**
      * @symbol ?setRefPos@LegacyStructureSettings@@QEAAXAEBVBlockPos@@@Z
-     * @hash   2000478550
+     * @hash   -1538635338
      */
     MCAPI void setRefPos(class BlockPos const &);
     /**
      * @symbol ?setRotation@LegacyStructureSettings@@QEAAXW4Rotation@@@Z
-     * @hash   1922811814
+     * @hash   1902269478
      */
     MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setSeed@LegacyStructureSettings@@QEAAXI@Z
-     * @hash   1276099114
+     * @hash   1423447322
      */
     MCAPI void setSeed(unsigned int);
     /**
      * @symbol ?updateBoundingBoxFromChunkPos@LegacyStructureSettings@@QEAAXXZ
-     * @hash   -550436573
+     * @hash   205416835
      */
     MCAPI void updateBoundingBoxFromChunkPos();
     /**
      * @symbol ??1LegacyStructureSettings@@QEAA@XZ
-     * @hash   -1586444487
+     * @hash   -1430716359
      */
     MCAPI ~LegacyStructureSettings();
     /**
      * @symbol ?INTEGRITY_MAX@LegacyStructureSettings@@2MB
-     * @hash   934117061
+     * @hash   1713518813
      */
     MCAPI static float const INTEGRITY_MAX;
     /**
      * @symbol ?INTEGRITY_MIN@LegacyStructureSettings@@2MB
-     * @hash   -1255042011
+     * @hash   -475640259
      */
     MCAPI static float const INTEGRITY_MIN;
     /**
      * @symbol ?MAX_STRUCTURE_SIZE@LegacyStructureSettings@@2HB
-     * @hash   -121240865
+     * @hash   658160887
      */
     MCAPI static int const MAX_STRUCTURE_SIZE;
 

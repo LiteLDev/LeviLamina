@@ -39,48 +39,48 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@BrewingStandContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -791628344
+     * @hash   -635869464
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@BrewingStandContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   -1256713929
+     * @hash   -1100955049
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@BrewingStandContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   -148985264
+     * @hash   6773616
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@BrewingStandContainerManagerModel@@UEAAXHH@Z
-     * @hash   -1333651828
+     * @hash   -1177892948
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@BrewingStandContainerManagerModel@@UEAAXXZ
-     * @hash   729674274
+     * @hash   885433154
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@BrewingStandContainerManagerModel@@UEAA_NM@Z
-     * @hash   -682136642
+     * @hash   -526377762
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@BrewingStandContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   -2122728049
+     * @hash   -1966969169
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0BrewingStandContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -175290434
+     * @hash   -19531554
      */
     MCAPI BrewingStandContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

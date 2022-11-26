@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?Deserialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
-     * @hash   610355201
+     * @hash   1083566977
      */
     MCAPI void Deserialize(class RakNet::BitStream *);
     /**
      * @symbol ?Serialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
-     * @hash   681875599
+     * @hash   1155087375
      */
     MCAPI void Serialize(class RakNet::BitStream *);
 

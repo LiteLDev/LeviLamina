@@ -23,118 +23,123 @@ namespace CerealHelpers {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?bindBrightness@CerealHelpers@@YAXXZ
+     * @hash   -565134216
+     */
+    MCAPI void bindBrightness();
+    /**
      * @symbol ?bindColor@CerealHelpers@@YAXXZ
-     * @hash   46963578
+     * @hash   72134090
      */
     MCAPI void bindColor();
     /**
      * @symbol ?bindHelpers@CerealHelpers@@YAXXZ
-     * @hash   -818225394
+     * @hash   -791809426
      */
     MCAPI void bindHelpers();
     /**
      * @symbol ?bindIdentifierString@CerealHelpers@@YAXXZ
-     * @hash   -1363841126
+     * @hash   -1337763430
      */
     MCAPI void bindIdentifierString();
     /**
      * @symbol ?bindIntRange@CerealHelpers@@YAXXZ
-     * @hash   -393718222
+     * @hash   -367579022
      */
     MCAPI void bindIntRange();
     /**
      * @symbol ?bindLocIdString@CerealHelpers@@YAXXZ
-     * @hash   1853928700
+     * @hash   1880775196
      */
     MCAPI void bindLocIdString();
     /**
      * @symbol ?bindMceUUID@CerealHelpers@@YAXXZ
-     * @hash   555753320
+     * @hash   582999592
      */
     MCAPI void bindMceUUID();
     /**
      * @symbol ?bindResourcePath@CerealHelpers@@YAXXZ
-     * @hash   966217836
+     * @hash   993464108
      */
     MCAPI void bindResourcePath();
     /**
      * @symbol ?bindVec3@CerealHelpers@@YAXXZ
-     * @hash   1241469876
+     * @hash   1269100548
      */
     MCAPI void bindVec3();
     /**
      * @symbol ?blockPosAsArray@CerealHelpers@@YA?AV?$array@H$02@std@@AEBVBlockPos@@@Z
-     * @hash   -1090284481
+     * @hash   -1061177713
      */
     MCAPI class std::array<int, 3> blockPosAsArray(class BlockPos const &);
     /**
      * @symbol ?blockPosFromArray@CerealHelpers@@YAXAEAVBlockPos@@AEBV?$array@H$02@std@@@Z
-     * @hash   1720611917
+     * @hash   1650112957
      */
     MCAPI void blockPosFromArray(class BlockPos &, class std::array<int, 3> const &);
     /**
      * @symbol ?colorFromFloatArray3@CerealHelpers@@YAXAEAVColor@mce@@AEBV?$array@M$02@std@@@Z
-     * @hash   186592623
+     * @hash   215699391
      */
     MCAPI void colorFromFloatArray3(class mce::Color &, class std::array<float, 3> const &);
     /**
      * @symbol ?colorFromFloatArray4@CerealHelpers@@YAXAEAVColor@mce@@AEBV?$array@M$03@std@@@Z
-     * @hash   -1808843841
+     * @hash   -1779737073
      */
     MCAPI void colorFromFloatArray4(class mce::Color &, class std::array<float, 4> const &);
     /**
      * @symbol ?colorFromHexString@CerealHelpers@@YAXAEAVColor@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   500383680
+     * @hash   529490448
      */
     MCAPI void colorFromHexString(class mce::Color &, std::string const &);
     /**
      * @symbol ?colorFromIntArray3@CerealHelpers@@YAXAEAVColor@mce@@AEBV?$array@H$02@std@@@Z
-     * @hash   -817735897
+     * @hash   -788905897
      */
     MCAPI void colorFromIntArray3(class mce::Color &, class std::array<int, 3> const &);
     /**
      * @symbol ?colorFromIntArray4@CerealHelpers@@YAXAEAVColor@mce@@AEBV?$array@H$03@std@@@Z
-     * @hash   1481825687
+     * @hash   1510655687
      */
     MCAPI void colorFromIntArray4(class mce::Color &, class std::array<int, 4> const &);
     /**
      * @symbol ?colorToFloatArray3@CerealHelpers@@YA?AV?$array@M$02@std@@AEBVColor@mce@@@Z
-     * @hash   -958612201
+     * @hash   -929505433
      */
     MCAPI class std::array<float, 3> colorToFloatArray3(class mce::Color const &);
     /**
      * @symbol ?colorToFloatArray4@CerealHelpers@@YA?AV?$array@M$03@std@@AEBVColor@mce@@@Z
-     * @hash   -838650411
+     * @hash   -809820411
      */
     MCAPI class std::array<float, 4> colorToFloatArray4(class mce::Color const &);
     /**
      * @symbol ?colorToIntArray3@CerealHelpers@@YA?AV?$array@H$02@std@@AEBVColor@mce@@@Z
-     * @hash   1798950057
+     * @hash   1827780057
      */
     MCAPI class std::array<int, 3> colorToIntArray3(class mce::Color const &);
     /**
      * @symbol ?colorToIntArray4@CerealHelpers@@YA?AV?$array@H$03@std@@AEBVColor@mce@@@Z
-     * @hash   1918266055
+     * @hash   1947096055
      */
     MCAPI class std::array<int, 4> colorToIntArray4(class mce::Color const &);
     /**
      * @symbol ?hashedStringFromString@CerealHelpers@@YAXAEAVHashedString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1818433282
+     * @hash   1848847010
      */
     MCAPI void hashedStringFromString(class HashedString &, std::string const &);
     /**
      * @symbol ?identifierStringFromString@CerealHelpers@@YAXAEAUIdentifierString@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1895392200
+     * @hash   1925805928
      */
     MCAPI void identifierStringFromString(struct CerealHelpers::IdentifierString &, std::string const &);
     /**
      * @symbol ?vec3AsArray@CerealHelpers@@YA?AV?$array@M$02@std@@AEBVVec3@@@Z
-     * @hash   24189377
+     * @hash   53296145
      */
     MCAPI class std::array<float, 3> vec3AsArray(class Vec3 const &);
     /**
      * @symbol ?vec3FromArray@CerealHelpers@@YAXAEAVVec3@@V?$array@M$02@std@@@Z
-     * @hash   -1453124987
+     * @hash   -1523623947
      */
     MCAPI void vec3FromArray(class Vec3 &, class std::array<float, 3>);
 

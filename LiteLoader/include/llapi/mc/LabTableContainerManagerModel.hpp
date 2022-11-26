@@ -39,53 +39,53 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@LabTableContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   2080317235
+     * @hash   -2058921933
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@LabTableContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   -1073500020
+     * @hash   -917771892
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@LabTableContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   -1846251147
+     * @hash   -1690523019
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@LabTableContainerManagerModel@@UEAAXHH@Z
-     * @hash   1170314839
+     * @hash   1259280375
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@LabTableContainerManagerModel@@UEAAXXZ
-     * @hash   -1338550963
+     * @hash   -1249585427
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@LabTableContainerManagerModel@@UEAA_NM@Z
-     * @hash   444032275
+     * @hash   599760403
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@LabTableContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   1835337514
+     * @hash   1991065642
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0LabTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -95861719
+     * @hash   59866409
      */
     MCAPI LabTableContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB
-     * @hash   641432157
+     * @hash   1395255933
      */
     MCAPI static int const INPUT_SLOTS;
 

@@ -30,55 +30,55 @@ public:
     /**
      * @vftbl  3
      * @symbol ?GetHandle@TaskQueueImpl@@UEAAPEAUXTaskQueueObject@@XZ
-     * @hash   1500135289
+     * @hash   1644469801
      */
     virtual struct XTaskQueueObject * GetHandle();
     /**
      * @vftbl  4
      * @symbol ?GetPortContext@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAPEAUITaskQueuePortContext@@@Z
-     * @hash   440220526
+     * @hash   952471966
      */
     virtual long GetPortContext(enum class XTaskQueuePort, struct ITaskQueuePortContext **);
     /**
      * @vftbl  5
      * @symbol ?RegisterWaitHandle@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
-     * @hash   1336020305
+     * @hash   1848271745
      */
     virtual long RegisterWaitHandle(enum class XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
     /**
      * @vftbl  6
      * @symbol ?UnregisterWaitHandle@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
-     * @hash   -549822514
+     * @hash   -37571074
      */
     virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
     /**
      * @vftbl  7
      * @symbol ?RegisterSubmitCallback@TaskQueueImpl@@UEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
-     * @hash   -179385088
+     * @hash   332866352
      */
     virtual long RegisterSubmitCallback(void *, void ( *)(void *, struct XTaskQueueObject *, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     /**
      * @vftbl  8
      * @symbol ?UnregisterSubmitCallback@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
-     * @hash   87786814
+     * @hash   600038254
      */
     virtual void UnregisterSubmitCallback(struct XTaskQueueRegistrationToken);
     /**
      * @vftbl  9
      * @symbol ?CanTerminate@TaskQueueImpl@@UEAA_NXZ
-     * @hash   -964602418
+     * @hash   -452350978
      */
     virtual bool CanTerminate();
     /**
      * @vftbl  10
      * @symbol ?CanClose@TaskQueueImpl@@UEAA_NXZ
-     * @hash   -806719307
+     * @hash   -294467867
      */
     virtual bool CanClose();
     /**
      * @vftbl  11
      * @symbol ?Terminate@TaskQueueImpl@@UEAAJ_NPEAXP6AX1@Z@Z
-     * @hash   -1138769176
+     * @hash   -626517736
      */
     virtual long Terminate(bool, void *, void ( *)(void *));
     /**
@@ -89,29 +89,29 @@ public:
     /**
      * @vftbl  14
      * @symbol ?RundownObject@TaskQueueImpl@@MEAAXXZ
-     * @hash   814236816
+     * @hash   1326488256
      */
     virtual void RundownObject();
     /**
      * @symbol ?Initialize@TaskQueueImpl@@QEAAJPEAUXTaskQueuePortObject@@0@Z
-     * @hash   1989345972
+     * @hash   -1793369884
      */
     MCAPI long Initialize(struct XTaskQueuePortObject *, struct XTaskQueuePortObject *);
     /**
      * @symbol ?Initialize@TaskQueueImpl@@QEAAJW4XTaskQueueDispatchMode@@0_N1@Z
-     * @hash   790349473
+     * @hash   1302600913
      */
     MCAPI long Initialize(enum class XTaskQueueDispatchMode, enum class XTaskQueueDispatchMode, bool, bool);
     /**
      * @symbol ??0TaskQueueImpl@@QEAA@XZ
-     * @hash   -1576293976
+     * @hash   -1064042536
      */
     MCAPI TaskQueueImpl();
 
 //private:
     /**
      * @symbol ?OnTerminationCallback@TaskQueueImpl@@CAXPEAX@Z
-     * @hash   -1989411134
+     * @hash   -1477159694
      */
     MCAPI static void OnTerminationCallback(void *);
 

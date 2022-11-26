@@ -38,85 +38,85 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@JumpToBlockGoal@@UEAA_NXZ
-     * @hash   -1374976663
+     * @hash   -1213943815
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@JumpToBlockGoal@@UEAA_NXZ
-     * @hash   -634176281
+     * @hash   -473143433
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@JumpToBlockGoal@@UEAA_NXZ
-     * @hash   272213393
+     * @hash   368959185
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@JumpToBlockGoal@@UEAAXXZ
-     * @hash   1820386882
+     * @hash   1981419730
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@JumpToBlockGoal@@UEAAXXZ
-     * @hash   -1585060046
+     * @hash   -1424027198
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@JumpToBlockGoal@@UEAAXXZ
-     * @hash   -1746420723
+     * @hash   -1585387875
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@JumpToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -19313289
+     * @hash   141658055
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0JumpToBlockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1061991014
+     * @hash   1222962358
      */
     MCAPI JumpToBlockGoal(class Mob &);
     /**
      * @symbol ?resetCooldown@JumpToBlockGoal@@QEAAXXZ
-     * @hash   1775830921
+     * @hash   1936863769
      */
     MCAPI void resetCooldown();
 
 //private:
     /**
      * @symbol ?_calculateJumpCurve@JumpToBlockGoal@@AEAA_NAEBVBlockPos@@AEAUWeightedJumpToBlockPos@1@@Z
-     * @hash   -1170922680
+     * @hash   -1009951336
      */
     MCAPI bool _calculateJumpCurve(class BlockPos const &, struct JumpToBlockGoal::WeightedJumpToBlockPos &);
     /**
      * @symbol ?_clearGoalState@JumpToBlockGoal@@AEAAXXZ
-     * @hash   -487323659
+     * @hash   -326352315
      */
     MCAPI void _clearGoalState();
     /**
      * @symbol ?_findCandidateBlocks@JumpToBlockGoal@@AEAA_NAEAVNavigationComponent@@@Z
-     * @hash   1033874627
+     * @hash   1194845971
      */
     MCAPI bool _findCandidateBlocks(class NavigationComponent &);
     /**
      * @symbol ?_findJumpableBlocks@JumpToBlockGoal@@AEAA_N_N@Z
-     * @hash   -801749985
+     * @hash   -640778641
      */
     MCAPI bool _findJumpableBlocks(bool);
     /**
      * @symbol ?_findTargetBlock@JumpToBlockGoal@@AEAA_NXZ
-     * @hash   1180058051
+     * @hash   1341029395
      */
     MCAPI bool _findTargetBlock();
     /**
      * @symbol ?_validTransition@JumpToBlockGoal@@AEBA_NAEBVVec3@@0@Z
-     * @hash   577353968
+     * @hash   738325312
      */
     MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
 

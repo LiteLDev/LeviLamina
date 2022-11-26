@@ -37,336 +37,336 @@ public:
     virtual ~AppConfigs();
     /**
      * @vftbl  1
-     * @hash   -1355585151
+     * @hash   -1258839359
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1354661630
+     * @hash   -1257915838
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1352814588
+     * @hash   -1256068796
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1350967546
+     * @hash   -1254221754
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -1349120504
+     * @hash   -1252374712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -332096605
+     * @hash   -235350813
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -338384428
+     * @hash   -241884652
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -337460907
+     * @hash   -240961131
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -336537386
+     * @hash   -240037610
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -335613865
+     * @hash   -239114089
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
-     * @hash   -334690344
+     * @hash   -238190568
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -333766823
+     * @hash   -237267047
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  17
-     * @hash   -375603958
+     * @hash   -286638422
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
      * @symbol ?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ
-     * @hash   7492594
+     * @hash   100763410
      */
     virtual enum class EducationEditionOffer getEducationEditionOffering() const;
     /**
      * @vftbl  19
-     * @hash   -330996260
+     * @hash   -234496484
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
      * @symbol ?supports3DExport@AppConfigs@@UEBA_NXZ
-     * @hash   1705482625
+     * @hash   1663752161
      */
     virtual bool supports3DExport() const;
     /**
      * @vftbl  22
-     * @hash   -301620412
+     * @hash   -204874620
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
      * @symbol ?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ
-     * @hash   -727463358
+     * @hash   -769209198
      */
     virtual struct ConnectionDefinition getConnectionDefinition() const;
     /**
      * @vftbl  24
-     * @hash   -349745370
+     * @hash   -260779834
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
-     * @hash   -298849849
+     * @hash   -202104057
      */
     virtual void __unk_vfn_25();
     /**
      * @vftbl  26
-     * @hash   -297926328
+     * @hash   -201180536
      */
     virtual void __unk_vfn_26();
     /**
      * @vftbl  27
-     * @hash   -304214151
+     * @hash   -207714375
      */
     virtual void __unk_vfn_27();
     /**
      * @vftbl  28
-     * @hash   -296079286
+     * @hash   -199333494
      */
     virtual void __unk_vfn_28();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  31
-     * @hash   -273914782
+     * @hash   -177168990
      */
     virtual void __unk_vfn_31();
     /**
      * @vftbl  32
      * @symbol ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
-     * @hash   -84309205
+     * @hash   -126055045
      */
     virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
     /**
      * @vftbl  33
      * @symbol ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   2098949929
+     * @hash   2057219465
      */
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const &) const;
     /**
      * @vftbl  34
      * @symbol ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
-     * @hash   -1668140208
+     * @hash   -1709886048
      */
     virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /**
      * @vftbl  35
      * @symbol ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1319802162
+     * @hash   -1361532626
      */
     virtual std::string getFeedbackURL() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGS
     /**
      * @symbol ?allowGameArguments@AppConfigs@@UEBA_NXZ
-     * @hash   1781472403
+     * @hash   1877972179
      */
     MCVAPI bool allowGameArguments() const;
     /**
      * @symbol ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
-     * @hash   509780410
+     * @hash   598745946
      */
     MCVAPI void applyLevelDataOverride(class LevelData &) const;
     /**
      * @symbol ?areEmotesSupported@AppConfigs@@UEBA_NXZ
-     * @hash   -1661414057
+     * @hash   -1564914281
      */
     MCVAPI bool areEmotesSupported() const;
     /**
      * @symbol ?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ
-     * @hash   -401011610
+     * @hash   -304511834
      */
     MCVAPI bool arePremiumSkinPacksAllowed() const;
     /**
      * @symbol ?areQuizzesSupported@AppConfigs@@UEBA_NXZ
-     * @hash   743058583
+     * @hash   839804375
      */
     MCVAPI bool areQuizzesSupported() const;
     /**
      * @symbol ?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ
-     * @hash   -545626904
+     * @hash   -449127128
      */
     MCVAPI bool areResourcePacksAllowed() const;
     /**
      * @symbol ?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ
-     * @hash   -1025827416
+     * @hash   -929081624
      */
     MCVAPI bool canUseAzureNotebooks() const;
     /**
      * @symbol ?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ
-     * @hash   800383823
+     * @hash   897129615
      */
     MCVAPI enum class AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
     /**
      * @symbol ?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ
-     * @hash   -640227366
+     * @hash   -543481574
      */
     MCVAPI bool gameArgumentsNeedAuthentication() const;
     /**
      * @symbol ?isChatScreenAllowed@AppConfigs@@UEBA_NXZ
-     * @hash   1191245650
+     * @hash   1287745426
      */
     MCVAPI bool isChatScreenAllowed() const;
     /**
      * @symbol ?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ
-     * @hash   -199200763
+     * @hash   -102700987
      */
     MCVAPI bool isCoursesCacheEnabled() const;
     /**
      * @symbol ?isExternalPlayerCommunicationAllowed@AppConfigs@@UEBA_NXZ
-     * @hash   1517700128
+     * @hash   1614199904
      */
     MCVAPI bool isExternalPlayerCommunicationAllowed() const;
     /**
      * @symbol ?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ
-     * @hash   1218343448
+     * @hash   1314843224
      */
     MCVAPI bool isGameTabShownInSettings() const;
     /**
      * @symbol ?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ
-     * @hash   1326184253
+     * @hash   1422930045
      */
     MCVAPI bool isLessonProgressionSupported() const;
     /**
      * @symbol ?isPlayScreenAllowed@AppConfigs@@UEBA_NXZ
-     * @hash   -1580839306
+     * @hash   -1484339530
      */
     MCVAPI bool isPlayScreenAllowed() const;
     /**
      * @symbol ?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z
-     * @hash   -1028568516
+     * @hash   -939602980
      */
     MCVAPI void loadFromData(class IAppConfigData const &);
     /**
      * @symbol ?muteByDefault@AppConfigs@@UEBA_NXZ
-     * @hash   1820681977
+     * @hash   1917427769
      */
     MCVAPI bool muteByDefault() const;
     /**
      * @symbol ?requireEduLevelSettings@AppConfigs@@UEBA_NXZ
-     * @hash   -623574210
+     * @hash   -526828418
      */
     MCVAPI bool requireEduLevelSettings() const;
     /**
      * @symbol ?requireTrustedContent@AppConfigs@@UEBA_NXZ
-     * @hash   -1991424593
+     * @hash   -1894678801
      */
     MCVAPI bool requireTrustedContent() const;
     /**
      * @symbol ?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ
-     * @hash   -210739419
+     * @hash   -113993627
      */
     MCVAPI bool sendPermissionsTelemetry() const;
     /**
      * @symbol ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
-     * @hash   -1105247806
+     * @hash   -1016282270
      */
     MCVAPI void setCanAccessWorldCallback(class IMinecraftGame &);
     /**
      * @symbol ?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ
-     * @hash   308773660
+     * @hash   405519452
      */
     MCVAPI bool shouldPromptBeforeExit() const;
     /**
      * @symbol ?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ
-     * @hash   610550406
+     * @hash   707296198
      */
     MCVAPI bool supportsChangingMultiplayerDuringPlay() const;
     /**
      * @symbol ?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ
-     * @hash   970830351
+     * @hash   1067576143
      */
     MCVAPI bool useEduDemoUpsellDialog() const;
     /**
      * @symbol ?useFullScreenByDefault@AppConfigs@@UEBA_NXZ
-     * @hash   171335760
+     * @hash   268081552
      */
     MCVAPI bool useFullScreenByDefault() const;
     /**
      * @symbol ?useNormalizedFontSize@AppConfigs@@UEBA_NXZ
-     * @hash   -1456995338
+     * @hash   -1360249546
      */
     MCVAPI bool useNormalizedFontSize() const;
     /**
      * @symbol ?webSocketsDisabled@AppConfigs@@UEBA_NXZ
-     * @hash   920121616
+     * @hash   1016867408
      */
     MCVAPI bool webSocketsDisabled() const;
     /**
      * @symbol ?worldBuilderDisabled@AppConfigs@@UEBA_NXZ
-     * @hash   -773095379
+     * @hash   -676349587
      */
     MCVAPI bool worldBuilderDisabled() const;
     /**
      * @symbol ?worldsAreSingleUse@AppConfigs@@UEBA_NXZ
-     * @hash   -2056088460
+     * @hash   -1959342668
      */
     MCVAPI bool worldsAreSingleUse() const;
 #endif
     /**
      * @symbol ??0AppConfigs@@QEAA@XZ
-     * @hash   2009617660
+     * @hash   1967656556
      */
     MCAPI AppConfigs();
 

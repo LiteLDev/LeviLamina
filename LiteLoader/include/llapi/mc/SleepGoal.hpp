@@ -39,80 +39,80 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SleepGoal@@UEAA_NXZ
-     * @hash   1826143494
+     * @hash   1988437174
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SleepGoal@@UEAA_NXZ
-     * @hash   1598001236
+     * @hash   1760279540
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SleepGoal@@UEAAXXZ
-     * @hash   -306032657
+     * @hash   -143738977
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SleepGoal@@UEAAXXZ
-     * @hash   2038758383
+     * @hash   -2093915233
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SleepGoal@@UEAAXXZ
-     * @hash   712917226
+     * @hash   875226282
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2000619542
+     * @hash   -1838341238
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  16
      * @symbol ?_getRepathTime@SleepGoal@@EEBA_KXZ
-     * @hash   746341268
+     * @hash   908619572
      */
     virtual unsigned __int64 _getRepathTime() const;
     /**
      * @symbol ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
-     * @hash   1710991740
+     * @hash   1873270044
      */
     MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int, float);
 
 //private:
     /**
      * @symbol ?_lockPosToBedPos@SleepGoal@@AEAAXXZ
-     * @hash   987273258
+     * @hash   1149551562
      */
     MCAPI void _lockPosToBedPos();
     /**
      * @symbol ?_setSleepVariables@SleepGoal@@AEAAXXZ
-     * @hash   1801539141
+     * @hash   1963817445
      */
     MCAPI void _setSleepVariables();
     /**
      * @symbol ?_wakeUp@SleepGoal@@AEAAXXZ
-     * @hash   997159008
+     * @hash   1159437312
      */
     MCAPI void _wakeUp();
 

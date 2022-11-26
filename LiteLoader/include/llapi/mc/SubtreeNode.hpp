@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@SubtreeNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   -1940984707
+     * @hash   -1859292019
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z
-     * @hash   1142919226
+     * @hash   1224611914
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0SubtreeNode@@QEAA@XZ
-     * @hash   -1881595396
+     * @hash   -1799902708
      */
     MCAPI SubtreeNode();
 

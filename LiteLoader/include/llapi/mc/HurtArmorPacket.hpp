@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@HurtArmorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   2013249942
+     * @hash   1939229878
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@HurtArmorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   958872643
+     * @hash   884852579
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@HurtArmorPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1198668508
+     * @hash   -1272688572
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@HurtArmorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1960442740
+     * @hash   1886422676
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0HurtArmorPacket@@QEAA@XZ
-     * @hash   793338500
+     * @hash   719318436
      */
     MCAPI HurtArmorPacket();
     /**
      * @symbol ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
-     * @hash   696736817
+     * @hash   622716753
      */
     MCAPI HurtArmorPacket(enum class ActorDamageCause, int, class std::bitset<4>);
 

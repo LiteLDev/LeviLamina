@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_rotateMobPassenger@VehicleServerPositionPassengerSystem@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@$$CBUActorHeadRotationComponent@@$$CBUSynchedActorDataComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@UPassengerYRotLimitComponent@@@@V?$OptionalComponentWrapper@VStrictEntityContext@@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@AEBUActorRotationComponent@@@Z
-     * @hash   -1795184857
+     * @hash   -1821462441
      */
     MCAPI static void _rotateMobPassenger(class ViewedEntityContextT<class StrictEntityContext, struct ActorHeadRotationComponent const, struct SynchedActorDataComponent const, struct ActorRotationComponent, struct MobBodyRotationComponent, struct PassengerYRotLimitComponent>, class OptionalComponentWrapper<class StrictEntityContext, class FlagComponent<struct PlayerComponentFlag> const>, struct ActorRotationComponent const &);
     /**
      * @symbol ?createSystem@VehicleServerPositionPassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1248245392
+     * @hash   1222013936
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

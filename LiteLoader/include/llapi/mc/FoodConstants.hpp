@@ -24,72 +24,72 @@ namespace FoodConstants {
 #undef AFTER_EXTRA
     /**
      * @symbol ?FOOD_SATURATION_GOOD@FoodConstants@@3MB
-     * @hash   -1177500003
+     * @hash   -420385763
      */
     MCAPI extern float const FOOD_SATURATION_GOOD;
     /**
      * @symbol ?FOOD_SATURATION_LOW@FoodConstants@@3MB
-     * @hash   1117996405
+     * @hash   1875110645
      */
     MCAPI extern float const FOOD_SATURATION_LOW;
     /**
      * @symbol ?FOOD_SATURATION_MAX@FoodConstants@@3MB
-     * @hash   1529759393
+     * @hash   -2008093663
      */
     MCAPI extern float const FOOD_SATURATION_MAX;
     /**
      * @symbol ?FOOD_SATURATION_NORMAL@FoodConstants@@3MB
-     * @hash   1559502893
+     * @hash   -1978350163
      */
     MCAPI extern float const FOOD_SATURATION_NORMAL;
     /**
      * @symbol ?FOOD_SATURATION_POOR@FoodConstants@@3MB
-     * @hash   -303306405
+     * @hash   453807835
      */
     MCAPI extern float const FOOD_SATURATION_POOR;
     /**
      * @symbol ?FOOD_SATURATION_SUPERNATURAL@FoodConstants@@3MB
-     * @hash   88328647
+     * @hash   845442887
      */
     MCAPI extern float const FOOD_SATURATION_SUPERNATURAL;
     /**
      * @symbol ?FOOD_SPRINT_LEVEL@FoodConstants@@3MB
-     * @hash   -168881251
+     * @hash   588232989
      */
     MCAPI extern float const FOOD_SPRINT_LEVEL;
     /**
      * @symbol ?HEALTH_TICK_COUNT@FoodConstants@@3HB
-     * @hash   1611701421
+     * @hash   -1926151635
      */
     MCAPI extern int const HEALTH_TICK_COUNT;
     /**
      * @symbol ?HEAL_LEVEL@FoodConstants@@3HB
-     * @hash   1856252681
+     * @hash   -1681600375
      */
     MCAPI extern int const HEAL_LEVEL;
     /**
      * @symbol ?MAX_EXHAUSTION@FoodConstants@@3MB
-     * @hash   -26287515
+     * @hash   730826725
      */
     MCAPI extern float const MAX_EXHAUSTION;
     /**
      * @symbol ?MAX_FOOD@FoodConstants@@3HB
-     * @hash   135150873
+     * @hash   892265113
      */
     MCAPI extern int const MAX_FOOD;
     /**
      * @symbol ?MAX_SATURATION@FoodConstants@@3MB
-     * @hash   1707338437
+     * @hash   -1830514619
      */
     MCAPI extern float const MAX_SATURATION;
     /**
      * @symbol ?START_SATURATION@FoodConstants@@3MB
-     * @hash   -319318899
+     * @hash   437795341
      */
     MCAPI extern float const START_SATURATION;
     /**
      * @symbol ?STARVE_LEVEL@FoodConstants@@3HB
-     * @hash   -1494276085
+     * @hash   -737161845
      */
     MCAPI extern int const STARVE_LEVEL;
 

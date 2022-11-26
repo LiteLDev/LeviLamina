@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@FilterTextPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   315919521
+     * @hash   274281313
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@FilterTextPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1802845006
+     * @hash   1761206798
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@FilterTextPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1729409591
+     * @hash   -1546358311
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@FilterTextPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -461177255
+     * @hash   -502815463
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0FilterTextPacket@@QEAA@XZ
-     * @hash   935171545
+     * @hash   893533337
      */
     MCAPI FilterTextPacket();
     /**
      * @symbol ??0FilterTextPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   262228761
+     * @hash   220590553
      */
     MCAPI FilterTextPacket(std::string const &, bool);
 

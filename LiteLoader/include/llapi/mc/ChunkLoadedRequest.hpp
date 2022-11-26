@@ -33,79 +33,79 @@ public:
 public:
     /**
      * @symbol ??0ChunkLoadedRequest@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIRequestAction@@U?$default_delete@VIRequestAction@@@std@@@2@_N@Z
-     * @hash   -39103947
+     * @hash   522350693
      */
     MCAPI ChunkLoadedRequest(std::string const &, std::unique_ptr<class IRequestAction>, bool);
     /**
      * @symbol ??0ChunkLoadedRequest@@QEAA@AEBUBounds@@V?$unique_ptr@VIRequestAction@@U?$default_delete@VIRequestAction@@@std@@@std@@_N2@Z
-     * @hash   436267386
+     * @hash   997722026
      */
     MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
     /**
      * @symbol ??0ChunkLoadedRequest@@QEAA@$$QEAV0@@Z
-     * @hash   2030887731
+     * @hash   2039559795
      */
     MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
     /**
      * @symbol ?areAllChunksLoaded@ChunkLoadedRequest@@QEBA?AW4ChunksLoadedStatus@@AEAVDimension@@UTick@@@Z
-     * @hash   732774066
+     * @hash   1294228706
      */
     MCAPI enum class ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
     /**
      * @symbol ?areaContainsChunk@ChunkLoadedRequest@@QEBA_NAEBVLevelChunk@@@Z
-     * @hash   405216511
+     * @hash   966671151
      */
     MCAPI bool areaContainsChunk(class LevelChunk const &) const;
     /**
      * @symbol ?executeAction@ChunkLoadedRequest@@QEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     * @hash   194903761
+     * @hash   756358401
      */
     MCAPI void executeAction(class ServerLevel &, class Dimension &);
     /**
      * @symbol ?getSerializationId@ChunkLoadedRequest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -814907794
+     * @hash   -689931666
      */
     MCAPI std::string const & getSerializationId() const;
     /**
      * @symbol ?isValid@ChunkLoadedRequest@@QEBA_NXZ
-     * @hash   -608268342
+     * @hash   -46813702
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?serialize@ChunkLoadedRequest@@QEAA?AVCompoundTag@@W4ChunkRequestListType@@@Z
-     * @hash   -1484996497
+     * @hash   -923541857
      */
     MCAPI class CompoundTag serialize(enum class ChunkRequestListType);
     /**
      * @symbol ?setSerializationId@ChunkLoadedRequest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1053968564
+     * @hash   -492544676
      */
     MCAPI void setSerializationId(std::string const &);
     /**
      * @symbol ?tickingAreaMatches@ChunkLoadedRequest@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1799229449
+     * @hash   -1934313959
      */
     MCAPI bool tickingAreaMatches(std::string const &) const;
     /**
      * @symbol ??1ChunkLoadedRequest@@QEAA@XZ
-     * @hash   1132952551
+     * @hash   1141624615
      */
     MCAPI ~ChunkLoadedRequest();
     /**
      * @symbol ?isValidTag@ChunkLoadedRequest@@SA_NAEBVCompoundTag@@@Z
-     * @hash   -320819635
+     * @hash   240635005
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
     /**
      * @symbol ?load@ChunkLoadedRequest@@SA?AUDeserializedChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@0@Z
-     * @hash   -232152219
+     * @hash   329302421
      */
     MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
 
 //private:
     /**
      * @symbol ?_getTickingArea@ChunkLoadedRequest@@AEBAPEBVITickingAreaView@@AEBVDimension@@@Z
-     * @hash   -1630996773
+     * @hash   -1069542133
      */
     MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
 

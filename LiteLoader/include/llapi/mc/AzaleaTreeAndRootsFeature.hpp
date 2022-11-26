@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@AzaleaTreeAndRootsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2049940872
+     * @hash   -1893874472
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isLushGroundReplaceable@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1093252507
+     * @hash   -937232235
      */
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_tryPlaceAzaleaTree@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@I@Z
-     * @hash   1470977263
+     * @hash   1626997535
      */
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
 

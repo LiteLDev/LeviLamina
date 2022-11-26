@@ -36,47 +36,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
-     * @hash   1751163373
+     * @hash   1912211597
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
-     * @hash   -92546773
+     * @hash   68501451
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
-     * @hash   538740534
+     * @hash   699804134
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
-     * @hash   -280449962
+     * @hash   -119478618
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
-     * @hash   386353201
+     * @hash   547416801
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@GoAndGiveItemsToNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1184059795
+     * @hash   1345015763
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0GoAndGiveItemsToNoteblockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1242724826
+     * @hash   1403680794
      */
     MCAPI GoAndGiveItemsToNoteblockGoal(class Mob &);
 

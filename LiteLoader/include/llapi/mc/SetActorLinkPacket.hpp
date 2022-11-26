@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetActorLinkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -420154039
+     * @hash   -495757831
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetActorLinkPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -201972746
+     * @hash   -277576538
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetActorLinkPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1285928719
+     * @hash   -1361532511
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetActorLinkPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -2055813919
+     * @hash   -2131417711
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetActorLinkPacket@@QEAA@XZ
-     * @hash   -762049151
+     * @hash   -837652943
      */
     MCAPI SetActorLinkPacket();
     /**
      * @symbol ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
-     * @hash   -1357572440
+     * @hash   -1433176232
      */
     MCAPI SetActorLinkPacket(struct ActorLink const &);
 

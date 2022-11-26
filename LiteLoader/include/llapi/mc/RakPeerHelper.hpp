@@ -35,69 +35,69 @@ public:
 public:
     /**
      * @symbol ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
-     * @hash   -1675066971
+     * @hash   -1748979403
      */
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
     /**
      * @symbol ?getConnectionIndex@RakPeerHelper@@QEBAHAEBVGameConnectionInfo@Social@@@Z
-     * @hash   -253958873
+     * @hash   -326733481
      */
     MCAPI int getConnectionIndex(class Social::GameConnectionInfo const &) const;
     /**
      * @symbol ?getIPv4BoundPort@RakPeerHelper@@QEBAGXZ
-     * @hash   -1460601443
+     * @hash   -1533376051
      */
     MCAPI unsigned short getIPv4BoundPort() const;
     /**
      * @symbol ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
-     * @hash   -940461592
+     * @hash   -769203704
      */
     MCAPI int getIPv4ConnectionIndex() const;
     /**
      * @symbol ?getIPv6BoundPort@RakPeerHelper@@QEBAGXZ
-     * @hash   -420703943
+     * @hash   -493478551
      */
     MCAPI unsigned short getIPv6BoundPort() const;
     /**
      * @symbol ?getIPv6ConnectionIndex@RakPeerHelper@@QEBAHXZ
-     * @hash   -1650946028
+     * @hash   -1506642268
      */
     MCAPI int getIPv6ConnectionIndex() const;
     /**
      * @symbol ?isIPv4Supported@RakPeerHelper@@QEBA_NXZ
-     * @hash   -986842602
+     * @hash   -1059617210
      */
     MCAPI bool isIPv4Supported() const;
     /**
      * @symbol ?isIPv6Supported@RakPeerHelper@@QEBA_NXZ
-     * @hash   1453017318
+     * @hash   1380242710
      */
     MCAPI bool isIPv6Supported() const;
     /**
-     * @symbol ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@@Z
-     * @hash   -606601311
+     * @symbol ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@W4PeerPurpose@1@@Z
+     * @hash   325856747
      */
-    MCAPI enum class RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
+    MCAPI enum class RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &, enum class RakPeerHelper::PeerPurpose);
     /**
      * @symbol ?reset@RakPeerHelper@@QEAAXXZ
-     * @hash   -1642539773
+     * @hash   -1715422013
      */
     MCAPI void reset();
 
 //private:
     /**
-     * @symbol ?LogIPSupport@RakPeerHelper@@AEAAXXZ
-     * @hash   -1642075068
+     * @symbol ?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose@1@@Z
+     * @hash   346587528
      */
-    MCAPI void LogIPSupport();
+    MCAPI void LogIPSupport(enum class RakPeerHelper::PeerPurpose);
     /**
      * @symbol ?_resetToIPv6Only@RakPeerHelper@@AEAAXV?$span@USocketDescriptor@RakNet@@$01@gsl@@AEAH@Z
-     * @hash   -1348772196
+     * @hash   -1421546804
      */
     MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int &);
     /**
      * @symbol ?_startupInternal@RakPeerHelper@@AEAA?AW4StartupResult@RakNet@@V?$not_null@PEAVRakPeerInterface@RakNet@@@gsl@@AEBUConnectionDefinition@@PEAUSocketDescriptor@3@AEAHH@Z
-     * @hash   -1693059167
+     * @hash   -1765833775
      */
     MCAPI enum class RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
 

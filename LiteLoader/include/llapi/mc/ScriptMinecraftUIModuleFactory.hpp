@@ -37,41 +37,41 @@ public:
     virtual ~ScriptMinecraftUIModuleFactory();
     /**
      * @symbol ??0ScriptMinecraftUIModuleFactory@@QEAA@XZ
-     * @hash   -493369916
+     * @hash   -422286668
      */
     MCAPI ScriptMinecraftUIModuleFactory();
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftUIModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1771893736
+     * @hash   1842500328
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
      * @symbol ?_addVersions@ScriptMinecraftUIModuleFactory@@AEAAXXZ
-     * @hash   530474433
+     * @hash   601388545
      */
     MCAPI void _addVersions();
     /**
      * @symbol ?_generateBindings@ScriptMinecraftUIModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUVersion@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-     * @hash   -1404760602
+     * @hash   -1333861866
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(std::string const &, struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 private:
     /**
      * @symbol ?LegacyModuleName@ScriptMinecraftUIModuleFactory@@0PEBDEB
-     * @hash   748110643
+     * @hash   1608013443
      */
     MCAPI static char const * LegacyModuleName;
     /**
      * @symbol ?ModuleName@ScriptMinecraftUIModuleFactory@@0PEBDEB
-     * @hash   467861490
+     * @hash   1327764290
      */
     MCAPI static char const * ModuleName;
     /**
      * @symbol ?ModuleUUID@ScriptMinecraftUIModuleFactory@@0VUUID@mce@@B
-     * @hash   1395968841
+     * @hash   -2097747407
      */
     MCAPI static class mce::UUID const ModuleUUID;
 

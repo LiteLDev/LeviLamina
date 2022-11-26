@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   854900991
+     * @hash   943866527
      */
     virtual void onLanguageChanged(std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
     /**
      * @symbol ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
-     * @hash   508217854
+     * @hash   653982334
      */
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
     /**
      * @symbol ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
-     * @hash   1456463555
+     * @hash   1602228035
      */
     MCVAPI void onLanguagesLoaded();
 #endif
@@ -57,7 +57,7 @@ public:
 //private:
     /**
      * @symbol ?_loadNpcData@NpcI18nObserver@@AEAAXXZ
-     * @hash   20254957
+     * @hash   166419213
      */
     MCAPI void _loadNpcData();
 

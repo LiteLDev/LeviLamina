@@ -33,115 +33,115 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
     /**
      * @symbol ?getContainer@ChemistryTableBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -1278957107
+     * @hash   -514200995
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   -1706678967
+     * @hash   -941922855
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@ChemistryTableBlockActor@@UEBAHXZ
-     * @hash   -1675610923
+     * @hash   -1717879547
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@ChemistryTableBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   2113097014
+     * @hash   -1417114170
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@ChemistryTableBlockActor@@UEBAHXZ
-     * @hash   1364593748
+     * @hash   1322724900
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?load@ChemistryTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -995003015
+     * @hash   -230246903
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onRemoved@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1289244578
+     * @hash   -524488466
      */
     MCVAPI void onRemoved(class BlockSource &);
     /**
      * @symbol ?save@ChemistryTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -132458520
+     * @hash   632282216
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -211934037
+     * @hash   552806699
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@ChemistryTableBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   1159918047
+     * @hash   1924658783
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1713929074
+     * @hash   1802894610
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1142324718
+     * @hash   -377583982
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   221756210
+     * @hash   986496946
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0ChemistryTableBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1546965851
+     * @hash   -782271243
      */
     MCAPI ChemistryTableBlockActor(class BlockPos const &);
     /**
      * @symbol ?isSameType@ChemistryTableBlockActor@@QEBA_NW4ChemistryTableType@@@Z
-     * @hash   284198901
+     * @hash   1048955013
      */
     MCAPI bool isSameType(enum class ChemistryTableType) const;
     /**
      * @symbol ?playerOpenLabTable@ChemistryTableBlockActor@@QEAAXAEAVPlayer@@@Z
-     * @hash   -1879160890
+     * @hash   -1114404778
      */
     MCAPI void playerOpenLabTable(class Player &);
     /**
      * @symbol ?reset@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -868786410
+     * @hash   -104045674
      */
     MCAPI void reset(class BlockSource &);
     /**
      * @symbol ?serverCombine@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   -1586503107
+     * @hash   -821762371
      */
     MCAPI void serverCombine(class BlockSource &, std::vector<class ItemStack> const &);
     /**
      * @symbol ?serverLabTablePacket_DEPRECATED@ChemistryTableBlockActor@@QEAAXAEBVLabTablePacket@@AEAVBlockSource@@@Z
-     * @hash   -1846090637
+     * @hash   -1081349901
      */
     MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const &, class BlockSource &);
 
 //private:
     /**
      * @symbol ?_createReaction@ChemistryTableBlockActor@@AEAA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@AEAVRandom@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@3@@Z
-     * @hash   418635277
+     * @hash   1183345261
      */
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
     /**
      * @symbol ?_popPendingReactionOutput@ChemistryTableBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -1067774741
+     * @hash   -303064757
      */
     MCAPI void _popPendingReactionOutput(class BlockSource &);
     /**
      * @symbol ?_updateType@ChemistryTableBlockActor@@AEAA?AW4ChemistryTableType@@AEAVBlockSource@@@Z
-     * @hash   -1216751190
+     * @hash   -452041206
      */
     MCAPI enum class ChemistryTableType _updateType(class BlockSource &);
 

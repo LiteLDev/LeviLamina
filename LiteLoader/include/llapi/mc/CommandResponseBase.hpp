@@ -30,36 +30,27 @@ public:
 public:
     /**
      * @symbol ??1CommandResponseBase@@QEAA@XZ
-     * @hash   -1219221319
+     * @hash   -1223096071
      */
     MCAPI ~CommandResponseBase();
     /**
      * @symbol ?NameID@CommandResponseBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1497303445
+     * @hash   279823883
      */
     MCAPI static std::string const NameID;
 
 //protected:
     /**
      * @symbol ?_addCommand@CommandResponseBase@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1758203363
+     * @hash   -1196594963
      */
     MCAPI void _addCommand(std::string const &);
     /**
      * @symbol ?_executeAction@CommandResponseBase@@IEBAXAEAVRenderParams@@@Z
-     * @hash   536270733
+     * @hash   1097448605
      */
     MCAPI void _executeAction(class RenderParams &) const;
 
-//private:
-    /**
-     * @symbol ?_compileCommands@CommandResponseBase@@AEBAXAEAVLevel@@@Z
-     * @hash   -1295393140
-     */
-    MCAPI void _compileCommands(class Level &) const;
-
 protected:
-
-private:
 
 };

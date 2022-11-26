@@ -32,39 +32,39 @@ public:
 public:
     /**
      * @symbol ??8WeakStorageEntity@@QEBA_NAEBV0@@Z
-     * @hash   2023141601
+     * @hash   2002583889
      */
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
 //protected:
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@W4VariadicInit@0@AEBVEntityContext@@@Z
-     * @hash   1793374395
+     * @hash   1772816683
      */
     MCAPI WeakStorageEntity(enum class WeakStorageEntity::VariadicInit, class EntityContext const &);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
-     * @hash   -1530847790
+     * @hash   -1551405502
      */
     MCAPI WeakStorageEntity(enum class WeakStorageEntity::EmptyInit);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
-     * @hash   1905955645
+     * @hash   1885397933
      */
     MCAPI WeakStorageEntity(class StackResultStorageEntity const &);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
-     * @hash   626745835
+     * @hash   606188123
      */
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
     /**
      * @symbol ?_isSet@WeakStorageEntity@@IEBA_NXZ
-     * @hash   -546607281
+     * @hash   -567164993
      */
     MCAPI bool _isSet() const;
     /**
      * @symbol ?_reset@WeakStorageEntity@@IEAAXXZ
-     * @hash   -1549687987
+     * @hash   -1570245699
      */
     MCAPI void _reset();
 

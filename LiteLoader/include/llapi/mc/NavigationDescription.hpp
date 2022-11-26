@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -1603164009
+     * @hash   -1085346457
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@NavigationDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1820467647
+     * @hash   -1302650095
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0NavigationDescription@@QEAA@XZ
-     * @hash   -650969388
+     * @hash   -606594252
      */
     MCAPI NavigationDescription();
 

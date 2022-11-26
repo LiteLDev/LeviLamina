@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0ExpectedAnywhereConsume@@QEAA@AEBVItemStack@@I@Z
-     * @hash   1742077527
+     * @hash   -1990773961
      */
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
 

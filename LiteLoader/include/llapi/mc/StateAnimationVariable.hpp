@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?addKeyFrame@StateAnimationVariable@@QEAAXMM@Z
-     * @hash   154763931
+     * @hash   238655387
      */
     MCAPI void addKeyFrame(float, float);
 

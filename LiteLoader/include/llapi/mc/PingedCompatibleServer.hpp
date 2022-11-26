@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0PingedCompatibleServer@@QEAA@AEBU0@@Z
-     * @hash   1072456607
+     * @hash   1034093487
      */
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
     /**
      * @symbol ??0PingedCompatibleServer@@QEAA@$$QEAU0@@Z
-     * @hash   1195767981
+     * @hash   1157404861
      */
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
     /**
      * @symbol ??4PingedCompatibleServer@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -905509068
+     * @hash   -978083788
      */
     MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     /**
      * @symbol ??1PingedCompatibleServer@@QEAA@XZ
-     * @hash   1449648002
+     * @hash   1411284882
      */
     MCAPI ~PingedCompatibleServer();
 

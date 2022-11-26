@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ?sendPlayerAuthInputApplied@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   1418161814
+     * @hash   1470332582
      */
     MCAPI void sendPlayerAuthInputApplied(class Player &);
     /**
      * @symbol ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   1592505688
+     * @hash   1644676456
      */
     MCAPI void sendPlayerAuthInputReceived(class Player &);
     /**
      * @symbol ?sendPlayerMovementAnomaly@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
-     * @hash   917794409
+     * @hash   969965177
      */
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     /**
      * @symbol ?sendPlayerMovementCorrected@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
-     * @hash   -1692335031
+     * @hash   -1640164263
      */
     MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     /**
      * @symbol ?sendPlayerOnGround@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   353019296
+     * @hash   405190064
      */
     MCAPI void sendPlayerOnGround(class Player &);
 

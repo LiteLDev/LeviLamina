@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RangedAttackGoal@@UEAA_NXZ
-     * @hash   130799422
+     * @hash   292370430
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RangedAttackGoal@@UEAA_NXZ
-     * @hash   574690092
+     * @hash   736261100
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RangedAttackGoal@@UEAAXXZ
-     * @hash   332742615
+     * @hash   494313623
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RangedAttackGoal@@UEAAXXZ
-     * @hash   -1524067433
+     * @hash   -1362481049
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RangedAttackGoal@@UEAAXXZ
-     * @hash   -303287406
+     * @hash   -141685646
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RangedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   127195154
+     * @hash   288935298
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RangedAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1351434635
+     * @hash   1513174779
      */
     MCAPI RangedAttackGoal(class Mob &);
     /**
      * @symbol ?handleAttackBehavior@RangedAttackGoal@@QEAAXPEAVActor@@AEBVVec3@@M_N@Z
-     * @hash   1886851100
+     * @hash   2048422108
      */
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
 

@@ -31,54 +31,54 @@ public:
 public:
     /**
      * @symbol ??0PerlinNoise@@QEAA@IHH@Z
-     * @hash   1408710659
+     * @hash   -2145702349
      */
     MCAPI PerlinNoise(unsigned int, int, int);
     /**
      * @symbol ??0PerlinNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@HH@Z
-     * @hash   187302318
+     * @hash   927856606
      */
     MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
     /**
      * @symbol ??0PerlinNoise@@QEAA@AEAVIRandom@@HH@Z
-     * @hash   1500515935
+     * @hash   -2053897073
      */
     MCAPI PerlinNoise(class IRandom &, int, int);
     /**
      * @symbol ??0PerlinNoise@@QEAA@AEBV0@@Z
-     * @hash   -358786367
+     * @hash   -187497727
      */
     MCAPI PerlinNoise(class PerlinNoise const &);
     /**
      * @symbol ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec2@@HH1M@Z
-     * @hash   1277903018
+     * @hash   2018457306
      */
     MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
     /**
      * @symbol ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
-     * @hash   927970095
+     * @hash   1668524383
      */
     MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
     /**
      * @symbol ?getValue@PerlinNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   300920951
+     * @hash   1041475239
      */
     MCAPI float getValue(class Vec3 const &) const;
     /**
      * @symbol ?getValueNormalized@PerlinNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   1721666855
+     * @hash   -1832746153
      */
     MCAPI float getValueNormalized(class Vec3 const &) const;
     /**
      * @symbol ??1PerlinNoise@@QEAA@XZ
-     * @hash   271494034
+     * @hash   1012048322
      */
     MCAPI ~PerlinNoise();
 
 //private:
     /**
      * @symbol ?_init@PerlinNoise@@AEAAXAEAVIRandom@@UYBlendingBugSettings@@@Z
-     * @hash   -392804904
+     * @hash   347749384
      */
     MCAPI void _init(class IRandom &, struct YBlendingBugSettings);
 

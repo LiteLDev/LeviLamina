@@ -40,25 +40,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorInWeatherTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   -1771062306
+     * @hash   -1774890930
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorInWeatherTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   365573198
+     * @hash   361744574
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@ActorInWeatherTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   1529312228
+     * @hash   1611973604
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorInWeatherTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -1337738029
+     * @hash   -1300881757
      */
     virtual class Json::Value _serializeValue() const;
 

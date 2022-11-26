@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?setEquipmentSlot@SlotDropChance@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1619814908
+     * @hash   1702307148
      */
     MCAPI void setEquipmentSlot(std::string const &);
 

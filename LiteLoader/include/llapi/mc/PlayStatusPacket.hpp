@@ -55,35 +55,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   283865536
+     * @hash   463118944
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -755100563
+     * @hash   -796969411
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -217852614
+     * @hash   -259721462
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlayStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1977396170
+     * @hash   1935527322
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayStatusPacket@@QEAA@XZ
-     * @hash   -934240262
+     * @hash   -976109110
      */
     MCAPI PlayStatusPacket();
     /**
      * @symbol ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-     * @hash   -775785967
+     * @hash   -817654815
      */
     MCAPI PlayStatusPacket(enum class PlayStatus);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSystem@UpdateBoundingBoxSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -919320172
+     * @hash   -939585740
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0HomeDefinition@@QEAA@XZ
-     * @hash   1278164798
+     * @hash   1263111694
      */
     MCAPI HomeDefinition();
     /**
      * @symbol ?initialize@HomeDefinition@@QEAAXAEAVEntityContext@@AEAVHomeComponent@@@Z
-     * @hash   420279225
+     * @hash   405226121
      */
     MCAPI void initialize(class EntityContext &, class HomeComponent &);
     /**
      * @symbol ?buildSchema@HomeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHomeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1488521978
+     * @hash   -1503575082
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>> &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??8OffsetsComponent@@QEBA_NAEBU0@@Z
-     * @hash   740861208
+     * @hash   665841704
      */
     MCAPI bool operator==(struct OffsetsComponent const &) const;
 

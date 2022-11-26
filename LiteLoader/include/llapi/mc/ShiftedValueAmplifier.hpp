@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z
-     * @hash   -195406082
+     * @hash   -179015266
      */
     virtual float getAmount(int, float) const;
     /**
      * @symbol ??0ShiftedValueAmplifier@@QEAA@HM@Z
-     * @hash   -583343309
+     * @hash   -566952493
      */
     MCAPI ShiftedValueAmplifier(int, float);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0BlendedMultiNoiseBiomeProvider@@QEAA@AEBUOverworldNoises3d@@VParameterList@@AEAVSeamlessChunkBlendingAttenuatorFactory@@AEBVBiomeRegistry@@@Z
-     * @hash   -176047114
+     * @hash   -4204938
      */
     MCAPI BlendedMultiNoiseBiomeProvider(struct OverworldNoises3d const &, class ParameterList, class SeamlessChunkBlendingAttenuatorFactory &, class BiomeRegistry const &);
     /**
      * @symbol ?tryGetBiome@BlendedMultiNoiseBiomeProvider@@QEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-     * @hash   673245024
+     * @hash   845087200
      */
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &) const;
     /**
      * @symbol ?tryGetBiome@BlendedMultiNoiseBiomeProvider@@QEBAPEBVBiome@@AEBUGetBiomeOptions@@AEBUCacheEntry@ChunkLocalNoiseCache@@PEAUHint@RTree@@@Z
-     * @hash   -436248693
+     * @hash   -264406517
      */
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     /**
      * @symbol ??1BlendedMultiNoiseBiomeProvider@@QEAA@XZ
-     * @hash   -392661398
+     * @hash   -221372758
      */
     MCAPI ~BlendedMultiNoiseBiomeProvider();
 

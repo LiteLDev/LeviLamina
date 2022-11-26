@@ -32,119 +32,119 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionDiffList@@QEAA@AEAVActorDefinitionGroup@@@Z
-     * @hash   -2080155840
+     * @hash   -2055846384
      */
     MCAPI ActorDefinitionDiffList(class ActorDefinitionGroup &);
     /**
      * @symbol ?addDefinition@ActorDefinitionDiffList@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1557178052
+     * @hash   1581487508
      */
     MCAPI void addDefinition(std::string const &);
     /**
      * @symbol ?addPendingPropertyChange@ActorDefinitionDiffList@@QEAAX_KV?$variant@HM_N_K@std@@@Z
-     * @hash   1575541074
+     * @hash   1599850530
      */
     MCAPI void addPendingPropertyChange(unsigned __int64, class std::variant<int, float, bool, unsigned __int64>);
     /**
      * @symbol ?buildAdditiveDescriptionFrom@ActorDefinitionDiffList@@QEBA?AVActorDefinitionDescriptor@@_K0@Z
-     * @hash   -1127439654
+     * @hash   -1103130198
      */
     MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64) const;
     /**
      * @symbol ?clearChangedDescription@ActorDefinitionDiffList@@QEAAXXZ
-     * @hash   1801841839
+     * @hash   1826151295
      */
     MCAPI void clearChangedDescription();
     /**
      * @symbol ?clearDefinitions@ActorDefinitionDiffList@@QEAAXXZ
-     * @hash   2010408617
+     * @hash   2034718073
      */
     MCAPI void clearDefinitions();
     /**
      * @symbol ?definitionListToString@ActorDefinitionDiffList@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   1883958543
+     * @hash   1908267999
      */
     MCAPI std::string definitionListToString(std::string const &) const;
     /**
      * @symbol ?getAddedDefinitionGroup@ActorDefinitionDiffList@@QEBAAEBVDefinitionInstanceGroup@@XZ
-     * @hash   -1917956328
+     * @hash   -1793164712
      */
     MCAPI class DefinitionInstanceGroup const & getAddedDefinitionGroup() const;
     /**
      * @symbol ?getAddedDefinitionGroupMutable@ActorDefinitionDiffList@@QEAAAEAVDefinitionInstanceGroup@@XZ
-     * @hash   1165722176
+     * @hash   1290513792
      */
     MCAPI class DefinitionInstanceGroup & getAddedDefinitionGroupMutable();
     /**
      * @symbol ?getChangedDescription@ActorDefinitionDiffList@@QEAAAEAVActorDefinitionDescriptor@@XZ
-     * @hash   1120046038
+     * @hash   1245237430
      */
     MCAPI class ActorDefinitionDescriptor & getChangedDescription();
     /**
      * @symbol ?getDefinitionStack@ActorDefinitionDiffList@@QEBAAEBV?$vector@UDiffListPair@@V?$allocator@UDiffListPair@@@std@@@std@@XZ
-     * @hash   -817162302
+     * @hash   -723891486
      */
     MCAPI std::vector<struct DiffListPair> const & getDefinitionStack() const;
     /**
      * @symbol ?getDescription@ActorDefinitionDiffList@@QEAA?AV?$unique_ptr@VActorDefinitionDescriptor@@U?$default_delete@VActorDefinitionDescriptor@@@std@@@std@@_N@Z
-     * @hash   407922107
+     * @hash   432170059
      */
     MCAPI std::unique_ptr<class ActorDefinitionDescriptor> getDescription(bool);
     /**
      * @symbol ?getRemovedDefinitionGroup@ActorDefinitionDiffList@@QEBAAEBVDefinitionInstanceGroup@@XZ
-     * @hash   1157917480
+     * @hash   253511944
      */
     MCAPI class DefinitionInstanceGroup const & getRemovedDefinitionGroup() const;
     /**
      * @symbol ?getRemovedDefinitionGroupMutable@ActorDefinitionDiffList@@QEAAAEAVDefinitionInstanceGroup@@XZ
-     * @hash   724703824
+     * @hash   -179701712
      */
     MCAPI class DefinitionInstanceGroup & getRemovedDefinitionGroupMutable();
     /**
      * @symbol ?hasChanged@ActorDefinitionDiffList@@QEBA_NXZ
-     * @hash   -1811479862
+     * @hash   -1832006822
      */
     MCAPI bool hasChanged() const;
     /**
      * @symbol ?hasDefinition@ActorDefinitionDiffList@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1749054457
+     * @hash   -1724806505
      */
     MCAPI bool hasDefinition(std::string const &) const;
     /**
      * @symbol ?lockChanges@ActorDefinitionDiffList@@QEAAXXZ
-     * @hash   1543177189
+     * @hash   1567425141
      */
     MCAPI void lockChanges();
     /**
      * @symbol ?removeDefinition@ActorDefinitionDiffList@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1092754016
+     * @hash   -1068506064
      */
     MCAPI void removeDefinition(std::string const &);
     /**
      * @symbol ?setDefinitionStack@ActorDefinitionDiffList@@QEAAXAEAV?$vector@UDiffListPair@@V?$allocator@UDiffListPair@@@std@@@std@@@Z
-     * @hash   1247676684
+     * @hash   1271924636
      */
     MCAPI void setDefinitionStack(std::vector<struct DiffListPair> &);
     /**
      * @symbol ?size@ActorDefinitionDiffList@@QEBA_KXZ
-     * @hash   2016557653
+     * @hash   2040805605
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ?unlockChanges@ActorDefinitionDiffList@@QEAAXXZ
-     * @hash   486125763
+     * @hash   510373715
      */
     MCAPI void unlockChanges();
     /**
      * @symbol ??1ActorDefinitionDiffList@@QEAA@XZ
-     * @hash   796367687
+     * @hash   839358983
      */
     MCAPI ~ActorDefinitionDiffList();
 
 //private:
     /**
      * @symbol ?_updateStack@ActorDefinitionDiffList@@AEAAXXZ
-     * @hash   1313879073
+     * @hash   1338188529
      */
     MCAPI void _updateStack();
 

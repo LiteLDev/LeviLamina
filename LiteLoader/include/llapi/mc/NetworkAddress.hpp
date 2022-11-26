@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1NetworkAddress@@QEAA@XZ
-     * @hash   -1916473088
+     * @hash   -1828799136
      */
     MCAPI ~NetworkAddress();
 

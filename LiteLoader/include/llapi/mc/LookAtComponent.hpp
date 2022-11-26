@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0LookAtComponent@@QEAA@XZ
-     * @hash   -10130265
+     * @hash   -86164585
      */
     MCAPI LookAtComponent();
     /**
      * @symbol ?getCoolingTime@LookAtComponent@@QEAAAEAHXZ
-     * @hash   422944463
+     * @hash   567263599
      */
     MCAPI int & getCoolingTime();
     /**
      * @symbol ?getSearchRadius@LookAtComponent@@QEBAMXZ
-     * @hash   -110329418
+     * @hash   68508838
      */
     MCAPI float getSearchRadius() const;
     /**
      * @symbol ?getTarget@LookAtComponent@@QEBA_NXZ
-     * @hash   937239080
+     * @hash   1084710296
      */
     MCAPI bool getTarget() const;
     /**
      * @symbol ?isLookingAtMe@LookAtComponent@@QEAA_NAEAVActor@@0@Z
-     * @hash   1340230892
+     * @hash   1264196572
      */
     MCAPI bool isLookingAtMe(class Actor &, class Actor &);
 

@@ -38,22 +38,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@FunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-     * @hash   929284380
+     * @hash   939109644
      */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ??0FunctionEntry@@QEAA@W4FunctionState@@@Z
-     * @hash   -47454189
+     * @hash   -37628925
      */
     MCAPI FunctionEntry(enum class FunctionState);
     /**
      * @symbol ??0FunctionEntry@@QEAA@$$QEAV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@W4FunctionState@@@Z
-     * @hash   1840173459
+     * @hash   1849998723
      */
     MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum class FunctionState);
     /**
      * @symbol ?getErrorState@FunctionEntry@@QEBA?AW4FunctionState@@XZ
-     * @hash   872098646
+     * @hash   1051305926
      */
     MCAPI enum class FunctionState getErrorState() const;
 

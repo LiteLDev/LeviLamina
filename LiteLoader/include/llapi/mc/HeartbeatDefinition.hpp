@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?initialize@HeartbeatDefinition@@QEAAXAEAVEntityContext@@AEAVHeartbeatServerComponent@@@Z
-     * @hash   -2129004613
+     * @hash   -1610894917
      */
     MCAPI void initialize(class EntityContext &, class HeartbeatServerComponent &);
     /**
      * @symbol ?buildSchema@HeartbeatDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHeartbeatDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   197163344
+     * @hash   715150032
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>> &);
 

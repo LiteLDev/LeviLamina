@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@HoverMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   1056888086
+     * @hash   1110488822
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0HoverMoveControl@@QEAA@XZ
-     * @hash   -406192372
+     * @hash   -352591636
      */
     MCAPI HoverMoveControl();
 

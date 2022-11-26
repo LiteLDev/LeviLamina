@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     * @hash   -35921985
+     * @hash   436244223
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
      * @vftbl  3
      * @symbol ??8TestAction@@UEBA_NAEAVIRequestAction@@@Z
-     * @hash   -1941042875
+     * @hash   -1468876667
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
      * @symbol ??0TestAction@@QEAA@XZ
-     * @hash   1601996628
+     * @hash   2074147460
      */
     MCAPI TestAction();
 

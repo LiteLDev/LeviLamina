@@ -38,55 +38,55 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RollGoal@@UEAA_NXZ
-     * @hash   336588416
+     * @hash   498851344
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RollGoal@@UEAA_NXZ
-     * @hash   -1576626498
+     * @hash   -1414363570
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@RollGoal@@UEAA_NXZ
-     * @hash   -968037544
+     * @hash   -871291752
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@RollGoal@@UEAAXXZ
-     * @hash   40161833
+     * @hash   202424761
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RollGoal@@UEAAXXZ
-     * @hash   -2121614951
+     * @hash   -1959352023
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RollGoal@@UEAAXXZ
-     * @hash   267261220
+     * @hash   429524148
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -780224720
+     * @hash   -617961792
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RollGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   1534870100
+     * @hash   1697133028
      */
     MCAPI RollGoal(class Mob &, float);
 
 //private:
     /**
      * @symbol ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
-     * @hash   1484973565
+     * @hash   1647236493
      */
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?INVALID@ColorChannel@@2V1@B
-     * @hash   606920196
+     * @hash   1166733448
      */
     MCAPI static class ColorChannel const INVALID;
 

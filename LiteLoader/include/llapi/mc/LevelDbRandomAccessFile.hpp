@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
-     * @hash   1426083014
+     * @hash   1389303622
      */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
     /**
      * @symbol ??0LevelDbRandomAccessFile@@QEAA@$$QEAVFile@Core@@@Z
-     * @hash   -1867814730
+     * @hash   -1904594122
      */
     MCAPI LevelDbRandomAccessFile(class Core::File &&);
 

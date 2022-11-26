@@ -37,13 +37,13 @@ public:
     virtual ~DryingOutTimerSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@DryingOutTimerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1741418957
+     * @hash   1899099837
      */
     virtual void tick(class EntityRegistry &);
 

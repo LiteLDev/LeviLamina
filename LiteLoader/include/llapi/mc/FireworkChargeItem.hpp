@@ -41,164 +41,164 @@ public:
     virtual ~FireworkChargeItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  18
      * @symbol ?isDyeable@FireworkChargeItem@@UEBA_NXZ
-     * @hash   -537707334
+     * @hash   -441207558
      */
     virtual bool isDyeable() const;
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@FireworkChargeItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   297607633
+     * @hash   1055167777
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@FireworkChargeItem@@UEBA_NH@Z
-     * @hash   -1182874060
+     * @hash   -425575308
      */
     virtual bool isValidAuxValue(int) const;
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  73
      * @symbol ?getColor@FireworkChargeItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     * @hash   -1521978117
+     * @hash   -764448725
      */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -276670826
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -256353364
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  115
      * @symbol ?isSameItem@FireworkChargeItem@@UEBA_NAEBVItemStackBase@@0@Z
-     * @hash   -853638147
+     * @hash   -96339395
      */
     virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
     /**
      * @symbol ??0FireworkChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -455012900
+     * @hash   302516492
      */
     MCAPI FireworkChargeItem(std::string const &, int);
     /**
      * @symbol ?TAG_EXPLOSION@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   2019509865
+     * @hash   -562032871
      */
     MCAPI static std::string const TAG_EXPLOSION;
     /**
      * @symbol ?TAG_E_COLORS@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1055354427
+     * @hash   658070133
      */
     MCAPI static std::string const TAG_E_COLORS;
     /**
      * @symbol ?TAG_E_FADECOLORS@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -384760995
+     * @hash   1328663565
      */
     MCAPI static std::string const TAG_E_FADECOLORS;
     /**
      * @symbol ?TAG_E_FLICKER@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2068516965
+     * @hash   -355092405
      */
     MCAPI static std::string const TAG_E_FLICKER;
     /**
      * @symbol ?TAG_E_TRAIL@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1075087657
+     * @hash   638336903
      */
     MCAPI static std::string const TAG_E_TRAIL;
     /**
      * @symbol ?TAG_E_TYPE@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1732880377
+     * @hash   -848662359
      */
     MCAPI static std::string const TAG_E_TYPE;
     /**
      * @symbol ?getFormattedHoverText@FireworkChargeItem@@SAXAEBVCompoundTag@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-     * @hash   1198842654
+     * @hash   1956372046
      */
     MCAPI static void getFormattedHoverText(class CompoundTag const &, std::string &, std::string const &);
     /**
      * @symbol ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemInstance@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-     * @hash   -1213932433
+     * @hash   -456633681
      */
     MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemStack@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-     * @hash   -723829330
+     * @hash   33469422
      */
     MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z
-     * @hash   1870865086
+     * @hash   -1666803458
      */
     MCAPI static void setColor(class ItemStackBase &);
 
 //private:
     /**
      * @symbol ?_initFireworkChargeItem@FireworkChargeItem@@CAXAEAVItemStackBase@@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-     * @hash   1688847536
+     * @hash   -1848590368
      */
     MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?appendColors@FireworkChargeItem@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@EV?$allocator@E@std@@@3@@Z
-     * @hash   1925779980
+     * @hash   -1611657924
      */
     MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
 

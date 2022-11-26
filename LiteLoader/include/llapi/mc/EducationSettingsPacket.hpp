@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@EducationSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1149921019
+     * @hash   1108313563
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@EducationSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1413022120
+     * @hash   1371414664
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@EducationSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   751457599
+     * @hash   709819391
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@EducationSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   47145503
+     * @hash   5538047
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EducationSettingsPacket@@QEAA@XZ
-     * @hash   82154399
+     * @hash   40546943
      */
     MCAPI EducationSettingsPacket();
     /**
      * @symbol ??0EducationSettingsPacket@@QEAA@UEducationLevelSettings@@@Z
-     * @hash   -1022718622
+     * @hash   -1064326078
      */
     MCAPI EducationSettingsPacket(struct EducationLevelSettings);
 

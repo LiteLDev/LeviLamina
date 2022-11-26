@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BlockRandomTickingComponent@@QEAA@XZ
-     * @hash   1487071604
+     * @hash   -2042370780
      */
     MCAPI ~BlockRandomTickingComponent();
 

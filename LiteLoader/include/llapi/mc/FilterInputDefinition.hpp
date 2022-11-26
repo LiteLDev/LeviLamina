@@ -30,17 +30,12 @@ public:
 public:
     /**
      * @symbol ??0FilterInputDefinition@@QEAA@VFilterInput@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1667306145
+     * @hash   -1584737025
      */
     MCAPI FilterInputDefinition(class FilterInput, std::string const &);
     /**
-     * @symbol ??0FilterInputDefinition@@QEAA@H@Z
-     * @hash   -2119045046
-     */
-    MCAPI FilterInputDefinition(int);
-    /**
      * @symbol ??1FilterInputDefinition@@QEAA@XZ
-     * @hash   1641460865
+     * @hash   1724014609
      */
     MCAPI ~FilterInputDefinition();
 

@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
     /**
      * @symbol ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
-     * @hash   238604256
+     * @hash   290775024
      */
     MCVAPI bool isValidVibration(class GameEvent const &);
 #endif

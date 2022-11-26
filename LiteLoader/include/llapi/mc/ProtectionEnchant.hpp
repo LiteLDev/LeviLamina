@@ -39,69 +39,69 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@ProtectionEnchant@@UEBAHH@Z
-     * @hash   1719345017
+     * @hash   -2007048551
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@ProtectionEnchant@@UEBAHH@Z
-     * @hash   2014855735
+     * @hash   -1711537833
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@ProtectionEnchant@@UEBAHXZ
-     * @hash   1614063441
+     * @hash   -2112330127
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  6
      * @symbol ?getDamageProtection@ProtectionEnchant@@UEBAHHAEBVActorDamageSource@@@Z
-     * @hash   1581139412
+     * @hash   -2145254156
      */
     virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /**
      * @vftbl  9
      * @symbol ?doPostHurt@ProtectionEnchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
-     * @hash   28714115
+     * @hash   597287843
      */
     virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -337460907
+     * @hash   -240961131
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@ProtectionEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   768297626
+     * @hash   1336871354
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROTECTIONENCHANT
     /**
      * @symbol ?isProtectionEnchant@ProtectionEnchant@@UEBA_NXZ
-     * @hash   -1222772546
+     * @hash   -1126272770
      */
     MCVAPI bool isProtectionEnchant() const;
 #endif
     /**
      * @symbol ??0ProtectionEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   1501300873
+     * @hash   2069874601
      */
     MCAPI ProtectionEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
@@ -110,12 +110,12 @@ public:
 private:
     /**
      * @symbol ?THORNS_CHANCE_PER_LEVEL@ProtectionEnchant@@0MB
-     * @hash   1845387621
+     * @hash   -1664780947
      */
     MCAPI static float const THORNS_CHANCE_PER_LEVEL;
     /**
      * @symbol ?VALID_ENCHANTMENTS@ProtectionEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
-     * @hash   1621528561
+     * @hash   -2028307903
      */
     MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 

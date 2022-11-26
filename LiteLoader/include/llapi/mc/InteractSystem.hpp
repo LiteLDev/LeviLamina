@@ -37,13 +37,13 @@ public:
     virtual ~InteractSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@InteractSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1214338149
+     * @hash   1302750149
      */
     virtual void tick(class EntityRegistry &);
 

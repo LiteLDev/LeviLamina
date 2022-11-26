@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemTag@@QEAA@XZ
-     * @hash   -2083202253
+     * @hash   -1992207085
      */
     MCAPI ~ItemTag();
 

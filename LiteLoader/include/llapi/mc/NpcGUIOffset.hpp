@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0NpcGUIOffset@@QEAA@AEBVValue@Json@@@Z
-     * @hash   -2099492642
+     * @hash   -1951944546
      */
     MCAPI NpcGUIOffset(class Json::Value const &);
 

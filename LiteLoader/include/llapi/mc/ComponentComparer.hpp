@@ -21,9 +21,19 @@ namespace ComponentComparer {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?GETDIFF_NOT_IMPLEMENTED@ComponentComparer@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -417460367
+     */
+    MCAPI extern std::string const GETDIFF_NOT_IMPLEMENTED;
+    /**
      * @symbol ?TOSTRING_NOT_IMPLEMENTED@ComponentComparer@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1149854757
+     * @hash   -299139117
      */
     MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
+    /**
+     * @symbol ?getDiffMessage@ComponentComparer@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDAEBV23@1@Z
+     * @hash   2140778867
+     */
+    MCAPI std::string getDiffMessage(char const *, std::string const &, std::string const &);
 
 };

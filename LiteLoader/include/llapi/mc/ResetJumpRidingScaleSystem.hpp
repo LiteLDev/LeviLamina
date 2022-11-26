@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@ResetJumpRidingScaleSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   2058910308
+     * @hash   2079898548
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doResetJumpRidingScaleSystem@ResetJumpRidingScaleSystem@@CAXAEBVStrictEntityContext@@AEAUJumpRidingScaleComponent@@AEAUVanillaClientGameplayComponent@@@Z
-     * @hash   -1594821147
+     * @hash   -1573832907
      */
     MCAPI static void _doResetJumpRidingScaleSystem(class StrictEntityContext const &, struct JumpRidingScaleComponent &, struct VanillaClientGameplayComponent &);
 

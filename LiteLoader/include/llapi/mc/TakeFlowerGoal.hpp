@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@TakeFlowerGoal@@UEAA_NXZ
-     * @hash   -1298102021
+     * @hash   -628169701
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@TakeFlowerGoal@@UEAA_NXZ
-     * @hash   -1240445687
+     * @hash   -570482615
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@TakeFlowerGoal@@UEAAXXZ
-     * @hash   -1360052764
+     * @hash   -689244012
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@TakeFlowerGoal@@UEAAXXZ
-     * @hash   -104990268
+     * @hash   566218260
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@TakeFlowerGoal@@UEAAXXZ
-     * @hash   -310856273
+     * @hash   360475263
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@TakeFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2067587035
+     * @hash   -1399299947
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0TakeFlowerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   934080824
+     * @hash   1601260840
      */
     MCAPI TakeFlowerGoal(class Mob &);
 

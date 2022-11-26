@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@RemoveVolumeEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1054547781
+     * @hash   980681477
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RemoveVolumeEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   896290290
+     * @hash   822423986
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@RemoveVolumeEntityPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   198664789
+     * @hash   124798485
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@RemoveVolumeEntityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1466781835
+     * @hash   -1540648139
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RemoveVolumeEntityPacket@@QEAA@AEAVEntityContext@@@Z
-     * @hash   1751144524
+     * @hash   1677278220
      */
     MCAPI RemoveVolumeEntityPacket(class EntityContext &);
 

@@ -31,52 +31,52 @@ public:
 public:
     /**
      * @symbol ??0BoostableComponent@@QEAA@XZ
-     * @hash   1756135868
+     * @hash   1683299756
      */
     MCAPI BoostableComponent();
     /**
      * @symbol ?getBoostTime@BoostableComponent@@QEBAHXZ
-     * @hash   1880712600
+     * @hash   2051970488
      */
     MCAPI int getBoostTime() const;
     /**
      * @symbol ?getBoostTimeTotal@BoostableComponent@@QEBAHXZ
-     * @hash   -1655835994
+     * @hash   -1511532234
      */
     MCAPI int getBoostTimeTotal() const;
     /**
      * @symbol ?getIsBoosting@BoostableComponent@@QEBA_NXZ
-     * @hash   -2141478402
+     * @hash   -1994007186
      */
     MCAPI bool getIsBoosting() const;
     /**
      * @symbol ?itemUseText@BoostableComponent@@QEAA_NAEBVPlayer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -843078450
+     * @hash   -915914562
      */
     MCAPI bool itemUseText(class Player const &, std::string &);
     /**
      * @symbol ?onItemInteract@BoostableComponent@@QEAA_NAEAVActor@@AEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -424563905
+     * @hash   -497400017
      */
     MCAPI bool onItemInteract(class Actor &, class ItemStack &, class Player &);
     /**
      * @symbol ?removePassenger@BoostableComponent@@QEAAXAEAVPlayer@@@Z
-     * @hash   -1147398692
+     * @hash   -1220234804
      */
     MCAPI void removePassenger(class Player &);
     /**
      * @symbol ?setBoostTime@BoostableComponent@@QEAAXH@Z
-     * @hash   -2116804218
+     * @hash   -1969456010
      */
     MCAPI void setBoostTime(int);
     /**
      * @symbol ?setIsBoosting@BoostableComponent@@QEAAX_N@Z
-     * @hash   -1394207834
+     * @hash   -1246859626
      */
     MCAPI void setIsBoosting(bool);
     /**
      * @symbol ?getSpeedModifierBoosting@BoostableComponent@@SA?AV?$shared_ptr@VAttributeModifier@@@std@@XZ
-     * @hash   1424082617
+     * @hash   1351246505
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 
@@ -85,12 +85,12 @@ public:
 private:
     /**
      * @symbol ?SPEED_MODIFIER_BOOSTING@BoostableComponent@@0V?$shared_ptr@VAttributeModifier@@@std@@A
-     * @hash   1575241418
+     * @hash   -1856594118
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     /**
      * @symbol ?SPEED_MODIFIER_BOOSTING_UUID@BoostableComponent@@0VUUID@mce@@B
-     * @hash   -387140811
+     * @hash   475990949
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
 

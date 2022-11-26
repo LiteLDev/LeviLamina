@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?getScriptingEventHandler@ScriptingEventCoordinator@@QEAAAEAVScriptingEventHandler@@XZ
-     * @hash   1177881754
+     * @hash   1171377706
      */
     MCAPI class ScriptingEventHandler & getScriptingEventHandler();
     /**
      * @symbol ?registerScriptingEventHandler@ScriptingEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VScriptingEventHandler@@U?$default_delete@VScriptingEventHandler@@@std@@@std@@@Z
-     * @hash   641189792
+     * @hash   815707392
      */
     MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler> &&);
     /**
      * @symbol ?sendEvent@ScriptingEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     * @hash   1226487113
+     * @hash   1310409321
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<enum class CoordinatorResult>>);
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@CommandResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1348137459
+     * @hash   -786621315
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?executeAction@CommandResponse@@UEBAXAEAVRenderParams@@@Z
-     * @hash   801612657
+     * @hash   1363128801
      */
     virtual void executeAction(class RenderParams &) const;
     /**
      * @vftbl  3
      * @symbol ?buildSchema@CommandResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
-     * @hash   547868667
+     * @hash   1109369435
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 

@@ -36,54 +36,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@StayNearNoteblockGoal@@UEAA_NXZ
-     * @hash   1034572739
+     * @hash   1196205251
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@StayNearNoteblockGoal@@UEAA_NXZ
-     * @hash   2125270769
+     * @hash   -2008064015
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@StayNearNoteblockGoal@@UEAAXXZ
-     * @hash   548441148
+     * @hash   710073660
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@StayNearNoteblockGoal@@UEAAXXZ
-     * @hash   -1631286532
+     * @hash   -1470315188
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@StayNearNoteblockGoal@@UEAAXXZ
-     * @hash   -1552351001
+     * @hash   -1390718489
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StayNearNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1153231859
+     * @hash   -991706979
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1783432064
+     * @hash   1944941568
      */
     MCAPI StayNearNoteblockGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_hasLastVibrationAtNoteblock@StayNearNoteblockGoal@@AEAA?BV?$optional@VBlockPos@@@std@@XZ
-     * @hash   -649531690
+     * @hash   -488022186
      */
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 

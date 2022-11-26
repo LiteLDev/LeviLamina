@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@PushThroughDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   432804030
+     * @hash   515296270
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@PushThroughDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UPushThroughDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1908394666
+     * @hash   1990733146
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>> &);
 

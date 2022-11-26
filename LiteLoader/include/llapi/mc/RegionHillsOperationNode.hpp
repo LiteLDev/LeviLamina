@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  3
      * @symbol ?_fillArea@RegionHillsOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1H@Z
-     * @hash   74906582
+     * @hash   832343718
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome *, class Biome *> &, class Pos2d const &, class Pos2d const &, int) const;
     /**
      * @vftbl  4
      * @symbol ?_getAreaRead@RegionHillsOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z
-     * @hash   -1750284316
+     * @hash   -1578995676
      */
     virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const &, class Pos2d const &) const;
     /**
      * @symbol ??0RegionHillsOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@HVPos2d@@@@@2@AEBVBiomeRegistry@@@Z
-     * @hash   -450998697
+     * @hash   306438439
      */
     MCAPI RegionHillsOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<int, class Pos2d>> &, class BiomeRegistry const &);
 

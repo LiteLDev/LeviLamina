@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AnvilDamagePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1787940101
+     * @hash   -1808497813
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AnvilDamagePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1899449768
+     * @hash   1878892056
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AnvilDamagePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -173700609
+     * @hash   -194258321
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AnvilDamagePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1420525295
+     * @hash   1399967583
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AnvilDamagePacket@@QEAA@XZ
-     * @hash   510982223
+     * @hash   490424511
      */
     MCAPI AnvilDamagePacket();
 

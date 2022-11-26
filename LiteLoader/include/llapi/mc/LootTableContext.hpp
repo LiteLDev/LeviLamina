@@ -32,87 +32,87 @@ public:
 public:
     /**
      * @symbol ??0LootTableContext@@QEAA@MPEAVILevel@@UActorUniqueID@@PEAVPlayer@@PEAVActor@@PEBVActorDamageSource@@MV?$AutomaticID@VDimension@@H@@PEBVItemStack@@@Z
-     * @hash   1840492297
+     * @hash   -1699005991
      */
     MCAPI LootTableContext(float, class ILevel *, struct ActorUniqueID, class Player *, class Actor *, class ActorDamageSource const *, float, class AutomaticID<class Dimension, int>, class ItemStack const *);
     /**
      * @symbol ?addVisitedTable@LootTableContext@@QEAA_NPEBVLootTable@@@Z
-     * @hash   1217097854
+     * @hash   1972566862
      */
     MCAPI bool addVisitedTable(class LootTable const *);
     /**
      * @symbol ?getDimensionId@LootTableContext@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   -1565855488
+     * @hash   -810386480
      */
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
      * @symbol ?getEntity@LootTableContext@@QEBAPEAVActor@@W4ActorTarget@@@Z
-     * @hash   199226374
+     * @hash   954695382
      */
     MCAPI class Actor * getEntity(enum class ActorTarget) const;
     /**
      * @symbol ?getExplosionRadius@LootTableContext@@QEBAMXZ
-     * @hash   814694310
+     * @hash   1570163318
      */
     MCAPI float getExplosionRadius() const;
     /**
      * @symbol ?getKilledEntity@LootTableContext@@QEBAPEAVActor@@XZ
-     * @hash   807353927
+     * @hash   932545319
      */
     MCAPI class Actor * getKilledEntity() const;
     /**
      * @symbol ?getKillerEntity@LootTableContext@@QEBAPEAVActor@@XZ
-     * @hash   -115074265
+     * @hash   640394743
      */
     MCAPI class Actor * getKillerEntity() const;
     /**
      * @symbol ?getKillerPet@LootTableContext@@QEBAPEAVActor@@XZ
-     * @hash   1777426857
+     * @hash   -1762071431
      */
     MCAPI class Actor * getKillerPet() const;
     /**
      * @symbol ?getKillerPlayer@LootTableContext@@QEBAPEAVActor@@XZ
-     * @hash   517658215
+     * @hash   554914263
      */
     MCAPI class Actor * getKillerPlayer() const;
     /**
      * @symbol ?getLevel@LootTableContext@@QEBAPEAVLevel@@XZ
-     * @hash   -1361893013
+     * @hash   -1236870757
      */
     MCAPI class Level * getLevel() const;
     /**
      * @symbol ?getLuck@LootTableContext@@QEBAMXZ
-     * @hash   115989444
+     * @hash   294827700
      */
     MCAPI float getLuck() const;
     /**
      * @symbol ?getOriginalItemName@LootTableContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   824090038
+     * @hash   1579559046
      */
     MCAPI std::string getOriginalItemName() const;
     /**
      * @symbol ?getThisEntity@LootTableContext@@QEBAPEAVActor@@XZ
-     * @hash   1500463703
+     * @hash   -2039034585
      */
     MCAPI class Actor * getThisEntity() const;
     /**
      * @symbol ?getTool@LootTableContext@@QEBAPEBVItemStack@@XZ
-     * @hash   -368074157
+     * @hash   387394851
      */
     MCAPI class ItemStack const * getTool() const;
     /**
      * @symbol ?removeVisitedTable@LootTableContext@@QEAAXPEBVLootTable@@@Z
-     * @hash   1731547185
+     * @hash   -1807951103
      */
     MCAPI void removeVisitedTable(class LootTable const *);
     /**
      * @symbol ?setOriginalItemName@LootTableContext@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -353487090
+     * @hash   401981918
      */
     MCAPI void setOriginalItemName(std::string const &);
     /**
      * @symbol ??1LootTableContext@@QEAA@XZ
-     * @hash   439977331
+     * @hash   600026115
      */
     MCAPI ~LootTableContext();
 

@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0DanceComponent@@QEAA@XZ
-     * @hash   -521095770
+     * @hash   -541515098
      */
     MCAPI DanceComponent();
     /**
      * @symbol ?inListenDistance@DanceComponent@@QEBA_NAEBVVec3@@@Z
-     * @hash   -1328984607
+     * @hash   -1349403935
      */
     MCAPI bool inListenDistance(class Vec3 const &) const;
     /**
      * @symbol ?initFromDefinition@DanceComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1662591974
+     * @hash   -1683011302
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?initFromDefinition@DanceComponent@@QEAAXAEAVActor@@M@Z
-     * @hash   703975495
+     * @hash   683556167
      */
     MCAPI void initFromDefinition(class Actor &, float);
 

@@ -40,113 +40,113 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-     * @hash   -1671990959
+     * @hash   -1619589551
      */
     virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
     /**
      * @vftbl  3
      * @symbol ?retainSetItemStackNetIdVariant@ItemStackNetManagerServer@@UEBA_NXZ
-     * @hash   1068271781
+     * @hash   1120919205
      */
     virtual bool retainSetItemStackNetIdVariant() const;
     /**
      * @vftbl  4
      * @symbol ?allowInventoryTransactionManager@ItemStackNetManagerServer@@UEBA_NXZ
-     * @hash   1813523650
+     * @hash   1865925058
      */
     virtual bool allowInventoryTransactionManager() const;
     /**
      * @vftbl  6
      * @symbol ?onContainerScreenOpen@ItemStackNetManagerServer@@UEAAXAEBVContainerScreenContext@@@Z
-     * @hash   -1259203448
+     * @hash   -1206556024
      */
     virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /**
      * @vftbl  10
      * @symbol ?_initScreen@ItemStackNetManagerServer@@EEAAXAEAVItemStackNetManagerScreen@@@Z
-     * @hash   1138859999
+     * @hash   1190784751
      */
     virtual void _initScreen(class ItemStackNetManagerScreen &);
     /**
      * @symbol ??0ItemStackNetManagerServer@@QEAA@AEAVServerPlayer@@_N@Z
-     * @hash   1559493500
+     * @hash   1611049228
      */
     MCAPI ItemStackNetManagerServer(class ServerPlayer &, bool);
     /**
      * @symbol ?_handleLegacyTransactionRequest@ItemStackNetManagerServer@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$vector@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$allocator@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@@std@@@Z
-     * @hash   1977260831
+     * @hash   2028816559
      */
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum class ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
     /**
      * @symbol ?_retainSetItemStackNetIdVariantScope@ItemStackNetManagerServer@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-     * @hash   561936341
+     * @hash   614076357
      */
     MCAPI class gsl::final_action<class std::function<void (void)>> _retainSetItemStackNetIdVariantScope();
     /**
      * @symbol ?handleRequest@ItemStackNetManagerServer@@QEAAXV?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$NonOwnerPointer@VTextFilteringProcessor@@@Bedrock@@@Z
-     * @hash   -2109094808
+     * @hash   -2056693400
      */
     MCAPI void handleRequest(std::unique_ptr<class ItemStackRequestData>, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
     /**
      * @symbol ?handleRequestBatch@ItemStackNetManagerServer@@QEAAXAEBVItemStackRequestBatch@@V?$NonOwnerPointer@VTextFilteringProcessor@@@Bedrock@@@Z
-     * @hash   706226388
+     * @hash   758720052
      */
     MCAPI void handleRequestBatch(class ItemStackRequestBatch const &, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
     /**
      * @symbol ?itemMatches@ItemStackNetManagerServer@@QEAA_NAEBUItemStackRequestSlotInfo@@AEBVItemStack@@@Z
-     * @hash   836992770
+     * @hash   889640194
      */
     MCAPI bool itemMatches(struct ItemStackRequestSlotInfo const &, class ItemStack const &);
     /**
      * @symbol ?normalTick@ItemStackNetManagerServer@@QEAAXXZ
-     * @hash   -1457811109
+     * @hash   -1405163685
      */
     MCAPI void normalTick();
     /**
      * @symbol ?startCrafting@ItemStackNetManagerServer@@QEAAX_NAEBVBlockPos@@@Z
-     * @hash   -149258075
+     * @hash   -96610651
      */
     MCAPI void startCrafting(bool, class BlockPos const &);
     /**
      * @symbol ?tryCloseContainerScreen@ItemStackNetManagerServer@@QEAA?AVCallbackToken@@V?$function@$$A6AXXZ@std@@@Z
-     * @hash   865027441
+     * @hash   917674865
      */
     MCAPI class CallbackToken tryCloseContainerScreen(class std::function<void (void)>);
 
 //private:
     /**
      * @symbol ?_filterStrings@ItemStackNetManagerServer@@AEAAXV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@@Z
-     * @hash   1042357059
+     * @hash   1093912787
      */
     MCAPI void _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string> const &, enum class TextProcessingEventOrigin const &);
     /**
      * @symbol ?_handleRequestData@ItemStackNetManagerServer@@AEAAXAEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@PEBVItemStackRequestData@@@Z
-     * @hash   -282586739
+     * @hash   -230754243
      */
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo> &, class ItemStackRequestData const *);
     /**
      * @symbol ?_processQueue@ItemStackNetManagerServer@@AEAAXXZ
-     * @hash   -2077982923
+     * @hash   -2026058171
      */
     MCAPI void _processQueue();
     /**
      * @symbol ?_queueRequest@ItemStackNetManagerServer@@AEAAXV?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@@Z
-     * @hash   -1011159516
+     * @hash   -959050252
      */
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
     /**
      * @symbol ?_queueRequests@ItemStackNetManagerServer@@AEAAXAEBVItemStackRequestBatch@@@Z
-     * @hash   -587974385
+     * @hash   -535880497
      */
     MCAPI void _queueRequests(class ItemStackRequestBatch const &);
     /**
      * @symbol ?_setTextFilterState@ItemStackNetManagerServer@@AEAAXW4TextFilterState@1@@Z
-     * @hash   -477828869
+     * @hash   -425688853
      */
     MCAPI void _setTextFilterState(enum class ItemStackNetManagerServer::TextFilterState);
     /**
      * @symbol ?_tryFilterText@ItemStackNetManagerServer@@AEAA_NPEBVItemStackRequestData@@@Z
-     * @hash   -802852270
+     * @hash   -750712254
      */
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
 

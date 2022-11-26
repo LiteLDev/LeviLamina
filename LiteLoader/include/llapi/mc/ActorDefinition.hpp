@@ -33,42 +33,42 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinition@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1253876877
+     * @hash   1298252013
      */
     MCAPI ActorDefinition(std::string const &);
     /**
      * @symbol ?parse@ActorDefinition@@QEAAXUDeserializeDataParams@@AEAVActorDefinitionDescriptor@@AEAVActorFactory@@W4LogArea@@@Z
-     * @hash   695224977
+     * @hash   739723121
      */
     MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum class LogArea);
     /**
      * @symbol ?parseAttributes@ActorDefinition@@QEAAXUDeserializeDataParams@@AEAVActorDefinitionDescriptor@@@Z
-     * @hash   -1088041747
+     * @hash   -1043605107
      */
     MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor &);
     /**
      * @symbol ?parseEntityDescription@ActorDefinition@@QEAAXUDeserializeDataParams@@@Z
-     * @hash   1053470596
+     * @hash   1097907236
      */
     MCAPI void parseEntityDescription(struct DeserializeDataParams);
     /**
      * @symbol ?parseEvents@ActorDefinition@@QEAAXAEBVValue@Json@@AEBVSemVersion@@1PEAVActorEventResponseFactory@@@Z
-     * @hash   -1280101780
+     * @hash   -1235665140
      */
     MCAPI void parseEvents(class Json::Value const &, class SemVersion const &, class SemVersion const &, class ActorEventResponseFactory *);
     /**
      * @symbol ?parsePermutations@ActorDefinition@@QEAAXAEAVValue@Json@@AEBVSemVersion@@1AEAVActorFactory@@@Z
-     * @hash   -2058300819
+     * @hash   -2013894931
      */
     MCAPI void parsePermutations(class Json::Value &, class SemVersion const &, class SemVersion const &, class ActorFactory &);
     /**
      * @symbol ?validatePermutationJson@ActorDefinition@@QEAA_NAEAVValue@Json@@@Z
-     * @hash   148432145
+     * @hash   192807281
      */
     MCAPI bool validatePermutationJson(class Json::Value &);
     /**
      * @symbol ??1ActorDefinition@@QEAA@XZ
-     * @hash   1747560260
+     * @hash   1791935396
      */
     MCAPI ~ActorDefinition();
 

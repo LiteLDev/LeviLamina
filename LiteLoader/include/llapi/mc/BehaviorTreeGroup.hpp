@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0BehaviorTreeGroup@@QEAA@AEAVResourcePackManager@@AEAVBehaviorFactory@@@Z
-     * @hash   -17967505
+     * @hash   44689695
      */
     MCAPI BehaviorTreeGroup(class ResourcePackManager &, class BehaviorFactory &);
     /**
      * @symbol ?tryGetDefinition@BehaviorTreeGroup@@QEAA?AVBehaviorTreeDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2082218579
+     * @hash   2144875779
      */
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     /**
      * @symbol ??1BehaviorTreeGroup@@QEAA@XZ
-     * @hash   -1167050005
+     * @hash   -1104392805
      */
     MCAPI ~BehaviorTreeGroup();
 
 //private:
     /**
      * @symbol ?_addRef@BehaviorTreeGroup@@AEAAXAEAVBehaviorTreeDefinitionPtr@@@Z
-     * @hash   243896739
+     * @hash   306553939
      */
     MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
     /**
      * @symbol ?_removeRef@BehaviorTreeGroup@@AEAAXAEAVBehaviorTreeDefinitionPtr@@@Z
-     * @hash   233611828
+     * @hash   296269028
      */
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
 

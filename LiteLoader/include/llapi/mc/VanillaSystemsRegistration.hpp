@@ -25,87 +25,112 @@ namespace VanillaSystemsRegistration {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_registerSideBySideCompare@VanillaSystemsRegistration@@YAXAEBV?$vector@IV?$allocator@I@std@@@std@@AEAVEntitySystems@@W4SideBySideExtractionId@@AEBURegistrationOptions@1@@Z
-     * @hash   -299220545
+     * @hash   -146798257
      */
     MCAPI void _registerSideBySideCompare(std::vector<unsigned int> const &, class EntitySystems &, enum class SideBySideExtractionId, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorMoveSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_NW4ExtractApplyMode@1@@Z
-     * @hash   -1428102582
+     * @symbol ?createControlledByLocalInstanceSystem@VanillaSystemsRegistration@@YA?AV?$vector@UTickingSystemWithInfo@@V?$allocator@UTickingSystemWithInfo@@@std@@@std@@_N@Z
+     * @hash   -393709210
      */
-    MCAPI void registerActorMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool, enum class VanillaSystemsRegistration::ExtractApplyMode);
+    MCAPI std::vector<struct TickingSystemWithInfo> createControlledByLocalInstanceSystem(bool);
     /**
-     * @symbol ?registerActorNormalTick@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_N@Z
-     * @hash   1806900220
+     * @symbol ?registerActorMoveSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@W4ExtractApplyMode@1@@Z
+     * @hash   -121718309
      */
-    MCAPI void registerActorNormalTick(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerActorMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, enum class VanillaSystemsRegistration::ExtractApplyMode);
     /**
-     * @symbol ?registerActorPositionPassenger@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@_N1@Z
-     * @hash   -1251591363
+     * @symbol ?registerActorNormalTick@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -1538578815
      */
-    MCAPI void registerActorPositionPassenger(class IEntitySystems &, bool, bool);
+    MCAPI void registerActorNormalTick(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerEnterMoveSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_N@Z
-     * @hash   -1930284050
+     * @symbol ?registerActorPositionPassenger@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@AEBURegistrationOptions@1@@Z
+     * @hash   -445279847
      */
-    MCAPI void registerEnterMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerActorPositionPassenger(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerEnterMoveSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   1888573331
+     */
+    MCAPI void registerEnterMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerExtractApplyBlock@VanillaSystemsRegistration@@YAXAEAUDependencyInfo@1@W4ExtractApplyMode@1@W4SideBySideExtractionId@@AEAVEntitySystems@@AEBURegistrationOptions@1@AEBV?$function@$$A6AXAEAVIEntitySystems@@@Z@std@@@Z
-     * @hash   1505377210
+     * @hash   1661674250
      */
     MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum class VanillaSystemsRegistration::ExtractApplyMode, enum class SideBySideExtractionId, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
     /**
-     * @symbol ?registerPassengerTick@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_N@Z
-     * @hash   1040669436
+     * @symbol ?registerMobNormalTickPostAIStep@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -1689901149
      */
-    MCAPI void registerPassengerTick(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerMobNormalTickPostAIStep(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerPlayerAIStep@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_N@Z
-     * @hash   321974590
+     * @symbol ?registerMobPreAIStep@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -672849797
      */
-    MCAPI void registerPlayerAIStep(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerMobPreAIStep(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerPlayerPreNormalTickSystems@VanillaSystemsRegistration@@YAXAEAUDependencyInfo@1@AEAVEntitySystems@@AEBURegistrationOptions@1@_N@Z
-     * @hash   1034301524
+     * @symbol ?registerPassengerTick@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -1713517195
      */
-    MCAPI void registerPlayerPreNormalTickSystems(struct VanillaSystemsRegistration::DependencyInfo &, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerPassengerTick(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerPostAiStepSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@_NAEBURegistrationOptions@1@@Z
-     * @hash   -1846403212
+     * @symbol ?registerPlayerAIStep@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -1241038417
      */
-    MCAPI void registerPostAiStepSystems(class EntitySystems &, bool, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerPlayerAIStep(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerPostNormalTickSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@_N@Z
-     * @hash   591437868
+     * @symbol ?registerPlayerPreNormalTickSystems@VanillaSystemsRegistration@@YAXAEAUDependencyInfo@1@AEAVEntitySystems@@AEBURegistrationOptions@1@@Z
+     * @hash   1117420847
      */
-    MCAPI void registerPostNormalTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, bool);
+    MCAPI void registerPlayerPreNormalTickSystems(struct VanillaSystemsRegistration::DependencyInfo &, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerPostAiStepSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   -822838013
+     */
+    MCAPI void registerPostAiStepSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerPostNormalTickSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   1097506755
+     */
+    MCAPI void registerPostNormalTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerPostTravelSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   1341977999
+     */
+    MCAPI void registerPostTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerPreNormalTickSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
-     * @hash   1102057519
+     * @hash   1257985535
      */
     MCAPI void registerPreNormalTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerRemovePassengerSystems@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@_N@Z
-     * @hash   303091158
+     * @symbol ?registerPreTravelSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEAUDependencyInfo@1@AEBURegistrationOptions@1@@Z
+     * @hash   378757035
      */
-    MCAPI void registerRemovePassengerSystems(class IEntitySystems &, bool);
+    MCAPI void registerPreTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerSetPosSystems@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@_N@Z
-     * @hash   950330244
+     * @symbol ?registerRemovePassengerSystems@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@AEBURegistrationOptions@1@@Z
+     * @hash   -1389801607
      */
-    MCAPI void registerSetPosSystems(class IEntitySystems &, bool);
+    MCAPI void registerRemovePassengerSystems(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerSetPosSystems@VanillaSystemsRegistration@@YAXAEAVIEntitySystems@@AEBURegistrationOptions@1@@Z
+     * @hash   -892457593
+     */
+    MCAPI void registerSetPosSystems(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
-     * @hash   1583517599
+     * @hash   1739537871
      */
     MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems &);
     /**
      * @symbol ?registerTickFilterSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
-     * @hash   1205289263
+     * @hash   1361309535
      */
     MCAPI void registerTickFilterSystems(class EntitySystems &);
     /**
      * @symbol ?registerVanillaServerTickingSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@AEBURegistrationOptions@1@@Z
-     * @hash   1388573422
+     * @hash   1544609070
      */
     MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const &);
 

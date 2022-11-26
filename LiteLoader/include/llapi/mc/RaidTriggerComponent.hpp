@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?initFromDefinition@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   92555546
+     * @hash   181521082
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1686798052
+     * @hash   -1170779492
      */
     MCAPI void reloadComponent(class Actor &);
 

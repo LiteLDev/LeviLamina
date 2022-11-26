@@ -22,7 +22,7 @@ namespace SideBySideErrorHandling {
 #undef AFTER_EXTRA
     /**
      * @symbol ?createSideBySideErrorHandlingSystem@SideBySideErrorHandling@@YA?AUTickingSystemWithInfo@@W4ErrorLevel@1@_N@Z
-     * @hash   1974874406
+     * @hash   1987774870
      */
     MCAPI struct TickingSystemWithInfo createSideBySideErrorHandlingSystem(enum SideBySideErrorHandling::ErrorLevel, bool);
 

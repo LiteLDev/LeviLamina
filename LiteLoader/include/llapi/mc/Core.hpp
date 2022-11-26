@@ -132,42 +132,42 @@ enum class FileAccessType;
 #undef AFTER_EXTRA
     /**
      * @symbol ?RESULT_FAILED_MESSAGE@Core@@3PEBDEB
-     * @hash   -2025826640
+     * @hash   -1155437408
      */
     MCAPI extern char const * RESULT_FAILED_MESSAGE;
     /**
      * @symbol ?RESULT_NOT_IMPLEMENTED_MESSAGE@Core@@3PEBDEB
-     * @hash   -2009009414
+     * @hash   -1138620182
      */
     MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
     /**
      * @symbol ?RESULT_SUCCEEDED_MESSAGE@Core@@3PEBDEB
-     * @hash   225129162
+     * @hash   1095518394
      */
     MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
     /**
      * @symbol ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
-     * @hash   -1393122327
+     * @hash   -881885703
      */
     MCAPI unsigned __int64 operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @symbol ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
-     * @hash   1236292979
+     * @hash   1391990355
      */
     MCAPI enum class Core::DirectoryIterationFlags operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @symbol ?sRootStorageArea@Core@@3V?$shared_ptr@VFileStorageArea@Core@@@std@@A
-     * @hash   -392558386
+     * @hash   167005006
      */
     MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
     /**
      * @symbol ?starts_with@Core@@YA_NVStringSpan@1@0@Z
-     * @hash   483497219
+     * @hash   994949107
      */
     MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
     /**
      * @symbol ?transferDirectory@Core@@YA?AVResult@1@PEAVFileSystemImpl@1@AEBVPath@1@01AEBV?$function@$$A6A?AVResult@Core@@AEBVPath@2@0@Z@std@@@Z
-     * @hash   182557888
+     * @hash   694793952
      */
     MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &, class std::function<class Core::Result (class Core::Path const &, class Core::Path const &)> const &);
 

@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0SideBySideLiquidSensingComponent@@QEAA@AEBU0@@Z
-     * @hash   -592932609
+     * @hash   -451273521
      */
     MCAPI SideBySideLiquidSensingComponent(struct SideBySideLiquidSensingComponent const &);
     /**
      * @symbol ??4SideBySideLiquidSensingComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   940007018
+     * @hash   1079175194
      */
     MCAPI struct SideBySideLiquidSensingComponent & operator=(struct SideBySideLiquidSensingComponent &&);
     /**
      * @symbol ??1SideBySideLiquidSensingComponent@@QEAA@XZ
-     * @hash   -552499395
+     * @hash   -413561859
      */
     MCAPI ~SideBySideLiquidSensingComponent();
 

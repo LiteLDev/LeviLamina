@@ -44,116 +44,116 @@ public:
     virtual ~NetherNetServerLocator();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
-     * @hash   -877973696
+     * @hash   -950548416
      */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXXZ
-     * @hash   -1850854300
+     * @hash   -1923429020
      */
     virtual void stopAnnouncingServer();
     /**
      * @vftbl  5
      * @symbol ?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z
-     * @hash   1613589089
+     * @hash   1541014369
      */
     virtual void startServerDiscovery(struct PortPair);
     /**
      * @vftbl  6
      * @symbol ?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ
-     * @hash   654637124
+     * @hash   582062404
      */
     virtual void stopServerDiscovery();
     /**
      * @vftbl  7
-     * @hash   -2135659177
+     * @hash   2086733399
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -2134735656
+     * @hash   2087656920
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
-     * @hash   -1297989936
+     * @hash   -1370564656
      */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /**
      * @vftbl  10
      * @symbol ?clearServerList@NetherNetServerLocator@@UEAAXXZ
-     * @hash   -336113609
+     * @hash   -408688329
      */
     virtual void clearServerList();
     /**
      * @vftbl  11
      * @symbol ?update@NetherNetServerLocator@@UEAAXXZ
-     * @hash   -1632323454
+     * @hash   -1704898174
      */
     virtual void update();
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @symbol ??0NetherNetServerLocator@@QEAA@XZ
-     * @hash   909981658
+     * @hash   837406938
      */
     MCAPI NetherNetServerLocator();
     /**
      * @symbol ?setNetherNetInstance@NetherNetServerLocator@@QEAAXAEBV?$shared_ptr@UNetherNetInstance@@@std@@@Z
-     * @hash   1680746647
+     * @hash   1608171927
      */
     MCAPI void setNetherNetInstance(class std::shared_ptr<struct NetherNetInstance> const &);
 
 //private:
     /**
      * @symbol ?_cacheDiscoveryResponseData@NetherNetServerLocator@@AEAAXAEBUServerData@1@@Z
-     * @hash   -653175051
+     * @hash   -725749771
      */
     MCAPI void _cacheDiscoveryResponseData(struct NetherNetServerLocator::ServerData const &);
     /**
      * @symbol ?_isNetherNetOverLANAllowed@NetherNetServerLocator@@AEBA_NXZ
-     * @hash   -456635802
+     * @hash   -529210522
      */
     MCAPI bool _isNetherNetOverLANAllowed() const;
     /**
      * @symbol ?_onDiscoveryResponse@NetherNetServerLocator@@AEAAX_KV?$span@$$CBD$0?0@gsl@@@Z
-     * @hash   -711203651
+     * @hash   -783778371
      */
     MCAPI void _onDiscoveryResponse(unsigned __int64, class gsl::span<char const, -1>);
     /**
      * @symbol ?_pruneStaleServers@NetherNetServerLocator@@AEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
-     * @hash   1079444223
+     * @hash   1006869503
      */
     MCAPI void _pruneStaleServers(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
     /**
      * @symbol ?_setIsAnnouncing@NetherNetServerLocator@@AEAAX_N@Z
-     * @hash   -1666849949
+     * @hash   -1739424669
      */
     MCAPI void _setIsAnnouncing(bool);
     /**
      * @symbol ?_setIsDiscovering@NetherNetServerLocator@@AEAAX_N@Z
-     * @hash   -340291190
+     * @hash   -412865910
      */
     MCAPI void _setIsDiscovering(bool);
 

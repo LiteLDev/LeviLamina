@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0ControlledByPlayerDefinition@@QEAA@XZ
-     * @hash   1023954341
+     * @hash   1184080005
      */
     MCAPI ControlledByPlayerDefinition();
     /**
      * @symbol ?initialize@ControlledByPlayerDefinition@@QEAAXAEAVEntityContext@@AEAVControlledByPlayerGoal@@@Z
-     * @hash   303066063
+     * @hash   463160975
      */
     MCAPI void initialize(class EntityContext &, class ControlledByPlayerGoal &);
     /**
      * @symbol ?buildSchema@ControlledByPlayerDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VControlledByPlayerDefinition@@@JsonUtil@@@3@@Z
-     * @hash   474231935
+     * @hash   634357599
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition>> &);
 

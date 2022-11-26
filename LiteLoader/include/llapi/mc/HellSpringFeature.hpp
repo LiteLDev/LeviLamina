@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@HellSpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -878639082
+     * @hash   -707227434
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0HellSpringFeature@@QEAA@AEBVBlock@@_N@Z
-     * @hash   -1788481180
+     * @hash   -1617069532
      */
     MCAPI HellSpringFeature(class Block const &, bool);
 

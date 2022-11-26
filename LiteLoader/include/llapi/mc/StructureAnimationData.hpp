@@ -32,97 +32,97 @@ public:
 public:
     /**
      * @symbol ??0StructureAnimationData@@QEAA@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVStructureSettings@@EAEBVBlockPos@@@Z
-     * @hash   -1111604444
+     * @hash   -568078220
      */
     MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, unsigned __int64, std::string const &, class StructureSettings const &, unsigned char, class BlockPos const &);
     /**
      * @symbol ?allBlocksPlaced@StructureAnimationData@@QEBA_NXZ
-     * @hash   -2048127246
+     * @hash   -1504601022
      */
     MCAPI bool allBlocksPlaced() const;
     /**
      * @symbol ?getBlocksExpectedToPlace@StructureAnimationData@@QEBAI_K@Z
-     * @hash   1468443292
+     * @hash   2011969516
      */
     MCAPI unsigned int getBlocksExpectedToPlace(unsigned __int64) const;
     /**
      * @symbol ?getBlocksPlaced@StructureAnimationData@@QEBAIXZ
-     * @hash   -115018752
+     * @hash   -172909392
      */
     MCAPI unsigned int getBlocksPlaced() const;
     /**
      * @symbol ?getPosition@StructureAnimationData@@QEBAAEBVBlockPos@@XZ
-     * @hash   1493785430
+     * @hash   1478870710
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
      * @symbol ?getQueueID@StructureAnimationData@@QEBAIXZ
-     * @hash   978145522
+     * @hash   1698680258
      */
     MCAPI unsigned int getQueueID() const;
     /**
      * @symbol ?getRegion@StructureAnimationData@@QEBAAEAVBlockSource@@XZ
-     * @hash   -151601660
+     * @hash   391924564
      */
     MCAPI class BlockSource & getRegion() const;
     /**
      * @symbol ?getStructureName@StructureAnimationData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   914554526
+     * @hash   1007825342
      */
     MCAPI std::string const & getStructureName() const;
     /**
      * @symbol ?getStructureSettings@StructureAnimationData@@QEBAAEBVStructureSettings@@XZ
-     * @hash   970373622
+     * @hash   1141739142
      */
     MCAPI class StructureSettings const & getStructureSettings() const;
     /**
      * @symbol ?getStructureVersion@StructureAnimationData@@QEBAEXZ
-     * @hash   -218030537
+     * @hash   -275921177
      */
     MCAPI unsigned char getStructureVersion() const;
     /**
      * @symbol ?getTargetDimension@StructureAnimationData@@QEBAAEBV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   834190574
+     * @hash   878888606
      */
     MCAPI class AutomaticID<class Dimension, int> const & getTargetDimension() const;
     /**
      * @symbol ?getTotalBlocks@StructureAnimationData@@QEBAIXZ
-     * @hash   1072697682
+     * @hash   1014807042
      */
     MCAPI unsigned int getTotalBlocks() const;
     /**
      * @symbol ?serialize@StructureAnimationData@@QEAAAEAVCompoundTag@@AEAV2@@Z
-     * @hash   -201770414
+     * @hash   341740434
      */
     MCAPI class CompoundTag & serialize(class CompoundTag &);
     /**
      * @symbol ?setBlocksPlaced@StructureAnimationData@@QEAAXI@Z
-     * @hash   1301148146
+     * @hash   1951414562
      */
     MCAPI void setBlocksPlaced(unsigned int);
     /**
      * @symbol ?setCmdArea@StructureAnimationData@@QEAAXV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@Z
-     * @hash   1984586812
+     * @hash   -1766946516
      */
     MCAPI void setCmdArea(std::unique_ptr<class CommandArea>);
     /**
      * @symbol ?setQueueID@StructureAnimationData@@QEAAXI@Z
-     * @hash   -1134515168
+     * @hash   -591081200
      */
     MCAPI void setQueueID(unsigned int);
     /**
      * @symbol ?setTargetDimension@StructureAnimationData@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   1416846844
+     * @hash   1960280812
      */
     MCAPI void setTargetDimension(class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ??1StructureAnimationData@@QEAA@XZ
-     * @hash   -1985932363
+     * @hash   -1973324043
      */
     MCAPI ~StructureAnimationData();
     /**
      * @symbol ?load@StructureAnimationData@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
-     * @hash   -1178825436
+     * @hash   -635299212
      */
     MCAPI static class StructureAnimationData load(std::string const &, class CompoundTag const &);
 

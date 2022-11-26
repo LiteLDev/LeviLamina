@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?createAppConfigs@AppConfigsFactory@@SA?AV?$unique_ptr@VAppConfigs@@U?$default_delete@VAppConfigs@@@std@@@std@@XZ
-     * @hash   -749376346
+     * @hash   -566048298
      */
     MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
 

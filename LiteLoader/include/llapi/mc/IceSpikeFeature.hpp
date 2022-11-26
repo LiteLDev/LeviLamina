@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@IceSpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -227335291
+     * @hash   -70884491
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isValidPlaceBlock@IceSpikeFeature@@AEBA_NAEBVBlock@@@Z
-     * @hash   -820678393
+     * @hash   -664227593
      */
     MCAPI bool _isValidPlaceBlock(class Block const &) const;
 

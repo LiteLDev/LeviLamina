@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerSmithingTable@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   -1963154096
+     * @hash   -1494293728
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @vftbl  6
      * @symbol ?_getLevelRecipes@CraftHandlerSmithingTable@@EEBAPEBVRecipes@@XZ
-     * @hash   87947265
+     * @hash   556807633
      */
     virtual class Recipes const * _getLevelRecipes() const;
     /**
      * @symbol ??0CraftHandlerSmithingTable@@QEAA@AEAVPlayer@@AEAVItemStackRequestActionCraftHandler@@@Z
-     * @hash   -111120077
+     * @hash   357740291
      */
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
 

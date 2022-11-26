@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z
-     * @hash   -1000777594
+     * @hash   -828920042
      */
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
     /**
      * @symbol ?fitness@ClimateParameters@@QEBA_JAEBUTargetPoint@@@Z
-     * @hash   585510646
+     * @hash   757352822
      */
     MCAPI __int64 fitness(struct TargetPoint const &) const;
 

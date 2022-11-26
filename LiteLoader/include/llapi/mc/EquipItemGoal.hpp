@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@EquipItemGoal@@UEAA_NXZ
-     * @hash   2126795706
+     * @hash   -2007307878
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@EquipItemGoal@@UEAA_NXZ
-     * @hash   -1743190280
+     * @hash   -1583156872
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@EquipItemGoal@@UEAAXXZ
-     * @hash   -407700178
+     * @hash   -246836466
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -271628442
+     * @hash   -110826234
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0EquipItemGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -569082825
+     * @hash   -408280617
      */
     MCAPI EquipItemGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
-     * @hash   797792380
+     * @hash   958594588
      */
     MCAPI void _dropItem(class ItemStack const &) const;
 

@@ -37,48 +37,48 @@ public:
     virtual ~CombatRegenerationListener();
     /**
      * @vftbl  1
-     * @hash   -1154497823
+     * @hash   -1052585695
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1153574302
+     * @hash   -1051662174
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1151727260
+     * @hash   -1049815132
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1150803739
+     * @hash   -1048891611
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1149880218
+     * @hash   -1047968090
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1148956697
+     * @hash   -1047044569
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -1148033176
+     * @hash   -1046121048
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?onActorDeath@CombatRegenerationListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     * @hash   -326640931
+     * @hash   -402582995
      */
     virtual enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
 

@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@DoublePlantFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1635531126
+     * @hash   1791858918
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?place@DoublePlantFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@W4DoublePlantType@@@Z
-     * @hash   18577452
+     * @hash   174905244
      */
     MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum class DoublePlantType) const;
 

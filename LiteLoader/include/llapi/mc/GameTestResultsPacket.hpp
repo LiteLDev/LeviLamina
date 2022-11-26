@@ -36,35 +36,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@GameTestResultsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -70296620
+     * @hash   -143840028
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@GameTestResultsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1323898497
+     * @hash   1250355089
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@GameTestResultsPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1843326042
+     * @hash   -1916869450
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@GameTestResultsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1968272870
+     * @hash   1894729462
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0GameTestResultsPacket@@QEAA@XZ
-     * @hash   -1639658970
+     * @hash   -1713202378
      */
     MCAPI GameTestResultsPacket();
     /**
      * @symbol ??0GameTestResultsPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-     * @hash   1526113358
+     * @hash   1452569950
      */
     MCAPI GameTestResultsPacket(std::string const &, std::string const &, bool);
 

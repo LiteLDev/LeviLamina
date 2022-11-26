@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
     /**
      * @symbol ??1ICerealDefinitionSerializer@@UEAA@XZ
-     * @hash   -1379389992
+     * @hash   -1289963176
      */
     MCVAPI ~ICerealDefinitionSerializer();
 #endif

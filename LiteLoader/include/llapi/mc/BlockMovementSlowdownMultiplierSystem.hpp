@@ -30,52 +30,52 @@ public:
 public:
     /**
      * @symbol ?_adjustFallDistance@BlockMovementSlowdownMultiplierSystem@@SAXAEBVStrictEntityContext@@AEBUBlockMovementSlowdownAppliedComponent@@AEAUFallDistanceComponent@@@Z
-     * @hash   -1896822036
+     * @hash   -1775597652
      */
     MCAPI static void _adjustFallDistance(class StrictEntityContext const &, struct BlockMovementSlowdownAppliedComponent const &, struct FallDistanceComponent &);
     /**
      * @symbol ?_applySlowdownOnMove@BlockMovementSlowdownMultiplierSystem@@SAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEAUMoveRequestComponent@@AEAUStateVectorComponent@@@Z
-     * @hash   904284037
+     * @hash   1025508421
      */
     MCAPI static void _applySlowdownOnMove(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, struct MoveRequestComponent &, struct StateVectorComponent &);
     /**
      * @symbol ?_immunePlayer@BlockMovementSlowdownMultiplierSystem@@SAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUAbilitiesComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UBlockMovementSlowdownAppliedComponent@@@@@Z
-     * @hash   223779524
+     * @hash   345142292
      */
     MCAPI static void _immunePlayer(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, struct AbilitiesComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
     /**
      * @symbol ?_immuneSlowdown@BlockMovementSlowdownMultiplierSystem@@SAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UBlockMovementSlowdownAppliedComponent@@@@@Z
-     * @hash   72545889
+     * @hash   193908657
      */
     MCAPI static void _immuneSlowdown(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
     /**
      * @symbol ?createAdjustFallDistanceSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   487300560
+     * @hash   608663328
      */
     MCAPI static struct TickingSystemWithInfo createAdjustFallDistanceSystem();
     /**
      * @symbol ?createApplySlowdownOnMoveSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1228576834
+     * @hash   -1107214066
      */
     MCAPI static struct TickingSystemWithInfo createApplySlowdownOnMoveSystem();
     /**
      * @symbol ?createCleanupSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -2055528530
+     * @hash   -1934165762
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createImmunePlayerSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   768983472
+     * @hash   890392368
      */
     MCAPI static struct TickingSystemWithInfo createImmunePlayerSystem();
     /**
      * @symbol ?createImmuneSpiderSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   943030144
+     * @hash   1064439040
      */
     MCAPI static struct TickingSystemWithInfo createImmuneSpiderSystem();
     /**
      * @symbol ?createImmuneWitherBossSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   214276464
+     * @hash   335685360
      */
     MCAPI static struct TickingSystemWithInfo createImmuneWitherBossSystem();
 

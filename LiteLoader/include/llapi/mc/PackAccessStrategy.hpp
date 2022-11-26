@@ -110,7 +110,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?forEachInAssetSet@PackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@@Z
-     * @hash   1634919678
+     * @hash   1814126958
      */
     virtual void forEachInAssetSet(class Core::Path const &, class std::function<void (class Core::Path const &)>) const;
     /**
@@ -122,7 +122,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?getSubPath@PackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1657815413
+     * @hash   -1140151621
      */
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
@@ -134,13 +134,13 @@ public:
     /**
      * @vftbl  17
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
-     * @hash   -823822218
+     * @hash   -306066170
      */
     virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @vftbl  18
      * @symbol ?canRecurse@PackAccessStrategy@@UEBA_NXZ
-     * @hash   -307315641
+     * @hash   -210815865
      */
     virtual bool canRecurse() const;
     /**
@@ -152,45 +152,45 @@ public:
     /**
      * @vftbl  20
      * @symbol ?hasUpgradeFiles@PackAccessStrategy@@UEBA_NXZ
-     * @hash   686200525
+     * @hash   1203864317
      */
     virtual bool hasUpgradeFiles() const;
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@PackAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   2051700001
+     * @hash   -1725634255
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0PackAccessStrategy@@QEAA@XZ
-     * @hash   886083708
+     * @hash   1403901260
      */
     MCAPI PackAccessStrategy();
     /**
      * @symbol ?hasGeneratedAssetSet@PackAccessStrategy@@QEBA_NXZ
-     * @hash   25092540
+     * @hash   4765468
      */
     MCAPI bool hasGeneratedAssetSet() const;
     /**
      * @symbol ?PACK_IMPORT_LOCK_FILE@PackAccessStrategy@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
-     * @hash   1022598904
+     * @hash   -1248525456
      */
     MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
 
 //protected:
     /**
      * @symbol ?_addToAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
-     * @hash   -1496174317
+     * @hash   -978372141
      */
     MCAPI void _addToAssetSet(class Core::Path const &);
     /**
      * @symbol ?_deleteFromAssetSet@PackAccessStrategy@@IEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   -367618561
+     * @hash   150183615
      */
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ?_isInAssetSet@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
-     * @hash   -2048035801
+     * @hash   -1530233625
      */
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
 

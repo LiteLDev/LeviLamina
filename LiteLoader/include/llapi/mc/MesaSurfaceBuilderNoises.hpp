@@ -32,19 +32,19 @@ public:
 public:
     /**
      * @symbol ??1MesaSurfaceBuilderNoises@@QEAA@XZ
-     * @hash   1454029287
+     * @hash   1559754663
      */
     MCAPI ~MesaSurfaceBuilderNoises();
     /**
      * @symbol ?make@MesaSurfaceBuilderNoises@@SA?AV1@AEBVXoroshiroPositionalRandomFactory@@@Z
-     * @hash   -1450766833
+     * @hash   -1294961825
      */
     MCAPI static class MesaSurfaceBuilderNoises make(class XoroshiroPositionalRandomFactory const &);
 
 //private:
     /**
      * @symbol ??0MesaSurfaceBuilderNoises@@AEAA@V?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@000@Z
-     * @hash   1742353532
+     * @hash   1898158540
      */
     MCAPI MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
 

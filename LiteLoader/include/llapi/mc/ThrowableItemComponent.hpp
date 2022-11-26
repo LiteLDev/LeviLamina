@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VThrowableItemComponent@@@@UEBA_NXZ
-     * @hash   1059050903
+     * @hash   1155550679
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VThrowableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1751531175
+     * @hash   -1157402535
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VThrowableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1233020151
+     * @hash   1851981031
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?releaseUsing@ThrowableItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   1644635068
+     * @hash   2118292748
      */
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     /**
      * @symbol ?use@ThrowableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -709276312
+     * @hash   -235618632
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?bindType@ThrowableItemComponent@@SAXXZ
-     * @hash   954357171
+     * @hash   1426261987
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ThrowableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -944841356
+     * @hash   -471183676
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
      * @symbol ?_getLaunchPower@ThrowableItemComponent@@AEBAMHHH@Z
-     * @hash   1291559289
+     * @hash   1763464105
      */
     MCAPI float _getLaunchPower(int, int, int) const;
 

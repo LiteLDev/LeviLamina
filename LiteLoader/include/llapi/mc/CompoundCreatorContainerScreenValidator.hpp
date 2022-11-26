@@ -37,7 +37,7 @@ public:
     virtual ~CompoundCreatorContainerScreenValidator();
     /**
      * @symbol ??0CompoundCreatorContainerScreenValidator@@QEAA@XZ
-     * @hash   1620863330
+     * @hash   2093014162
      */
     MCAPI CompoundCreatorContainerScreenValidator();
 

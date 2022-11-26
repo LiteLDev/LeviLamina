@@ -38,66 +38,66 @@ public:
     /**
      * @vftbl  1
      * @symbol ?start@RakTcpProxy@@UEAA_NGGG@Z
-     * @hash   -2084028133
+     * @hash   -2072803653
      */
     virtual bool start(unsigned short, unsigned short, unsigned short);
     /**
      * @vftbl  2
      * @symbol ?connect@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   -1190708495
+     * @hash   -1179484015
      */
     virtual struct RakNet::SystemAddress connect(std::string const &, unsigned short);
     /**
      * @vftbl  3
      * @symbol ?send@RakTcpProxy@@UEAAXPEBDIUSystemAddress@RakNet@@@Z
-     * @hash   155827297
+     * @hash   167051777
      */
     virtual void send(char const *, unsigned int, struct RakNet::SystemAddress);
     /**
      * @vftbl  4
      * @symbol ?close@RakTcpProxy@@UEAAXUSystemAddress@RakNet@@@Z
-     * @hash   1482732700
+     * @hash   1493957180
      */
     virtual void close(struct RakNet::SystemAddress);
     /**
      * @vftbl  5
      * @symbol ?packetsAvailable@RakTcpProxy@@UEAA_NXZ
-     * @hash   -1549397282
+     * @hash   -1538172802
      */
     virtual bool packetsAvailable();
     /**
      * @vftbl  6
      * @symbol ?nextPacket@RakTcpProxy@@UEAAPEAUPacket@RakNet@@XZ
-     * @hash   -1523400757
+     * @hash   -1512176277
      */
     virtual struct RakNet::Packet * nextPacket();
     /**
      * @vftbl  7
      * @symbol ?deallocatePacket@RakTcpProxy@@UEAAXPEAUPacket@RakNet@@@Z
-     * @hash   1584101448
+     * @hash   1595325928
      */
     virtual void deallocatePacket(struct RakNet::Packet *);
     /**
      * @vftbl  8
      * @symbol ?nextCompletedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     * @hash   -954036627
+     * @hash   -942812147
      */
     virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
     /**
      * @vftbl  9
      * @symbol ?nextFailedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     * @hash   415226037
+     * @hash   426450517
      */
     virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
     /**
      * @vftbl  10
      * @symbol ?nextLostConnection@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     * @hash   -1382428597
+     * @hash   -1371204117
      */
     virtual struct RakNet::SystemAddress nextLostConnection();
     /**
      * @symbol ??0RakTcpProxy@@QEAA@XZ
-     * @hash   300261317
+     * @hash   311485797
      */
     MCAPI RakTcpProxy();
 

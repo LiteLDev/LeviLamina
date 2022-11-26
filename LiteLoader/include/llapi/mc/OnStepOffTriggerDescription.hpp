@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnStepOffTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1074437279
+     * @hash   -500850975
      */
     virtual std::string const & getName() const;
     /**
      * @symbol ?NameID@OnStepOffTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -773739931
+     * @hash   1010022141
      */
     MCAPI static std::string const NameID;
 

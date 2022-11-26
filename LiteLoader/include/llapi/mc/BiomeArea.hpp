@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0BiomeArea@@QEAA@AEBVBoundingBox@@I@Z
-     * @hash   -1390458145
+     * @hash   -633205521
      */
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     /**
      * @symbol ??1BiomeArea@@QEAA@XZ
-     * @hash   247533273
+     * @hash   418391385
      */
     MCAPI ~BiomeArea();
 

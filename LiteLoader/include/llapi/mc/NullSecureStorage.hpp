@@ -33,22 +33,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
     /**
      * @symbol ?add@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1695909565
+     * @hash   1792655357
      */
     MCVAPI bool add(std::string const &, std::string const &);
     /**
      * @symbol ?addOrUpdate@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1251834601
+     * @hash   1348580393
      */
     MCVAPI bool addOrUpdate(std::string const &, std::string const &);
     /**
      * @symbol ?get@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
-     * @hash   121744629
+     * @hash   218490421
      */
     MCVAPI bool get(std::string const &, std::string &);
     /**
      * @symbol ?remove@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1965173740
+     * @hash   2061919532
      */
     MCVAPI bool remove(std::string const &);
 #endif

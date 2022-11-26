@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
-     * @hash   -782310125
+     * @hash   -611452013
      */
     virtual float getBaseAmbientValue() const;
 

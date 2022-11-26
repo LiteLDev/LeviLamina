@@ -40,53 +40,53 @@ public:
     /**
      * @vftbl  1
      * @symbol ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   744892660
+     * @hash   1256098532
      */
     virtual void * fopen(class Core::Path const &, std::string const &);
     /**
      * @vftbl  2
      * @symbol ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
-     * @hash   912200874
+     * @hash   1423406746
      */
     virtual int fclose(void *);
     /**
      * @vftbl  3
      * @symbol ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
-     * @hash   -106015612
+     * @hash   405174884
      */
     virtual int fseek(void *, __int64, int);
     /**
      * @vftbl  4
      * @symbol ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
-     * @hash   -1295381909
+     * @hash   -784191413
      */
     virtual __int64 ftell(void *);
     /**
      * @vftbl  5
      * @symbol ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
-     * @hash   -940436181
+     * @hash   -977722981
      */
     virtual class IFileReadAccess const * getReadInterface() const;
     /**
      * @vftbl  6
      * @symbol ?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
-     * @hash   1421763675
+     * @hash   1932938795
      */
     virtual class IFileWriteAccess * getWriteInterface();
     /**
      * @vftbl  7
      * @symbol ?unload@MemoryMappedFileAccess@@UEAAXXZ
-     * @hash   1138788498
+     * @hash   1650071250
      */
     virtual void unload();
     /**
      * @symbol ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
-     * @hash   42602848
+     * @hash   553824096
      */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     /**
      * @symbol ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
-     * @hash   1030875603
+     * @hash   1901049571
      */
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 

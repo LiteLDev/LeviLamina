@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@DeltaFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -578707560
+     * @hash   -422641160
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isValidPlacement@DeltaFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -474503791
+     * @hash   -318437391
      */
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
 

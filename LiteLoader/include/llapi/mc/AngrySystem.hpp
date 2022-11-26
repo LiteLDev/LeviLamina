@@ -37,20 +37,20 @@ public:
     virtual ~AngrySystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AngrySystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   586437136
+     * @hash   718101824
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickComponent@AngrySystem@@AEAAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VAngryComponent@@@@@Z
-     * @hash   55646873
+     * @hash   187311561
      */
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AngryComponent> &);
 

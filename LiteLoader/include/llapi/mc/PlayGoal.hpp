@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@PlayGoal@@UEAA_NXZ
-     * @hash   -1294968023
+     * @hash   -1133596903
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@PlayGoal@@UEAA_NXZ
-     * @hash   1086799735
+     * @hash   1248170855
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@PlayGoal@@UEAAXXZ
-     * @hash   -487972942
+     * @hash   -326647950
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@PlayGoal@@UEAAXXZ
-     * @hash   1645402082
+     * @hash   1806727074
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@PlayGoal@@UEAAXXZ
-     * @hash   -260381523
+     * @hash   -99056531
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PlayGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   807458231
+     * @hash   968921607
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0PlayGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -495985018
+     * @hash   -334521642
      */
     MCAPI PlayGoal(class Mob &);
 

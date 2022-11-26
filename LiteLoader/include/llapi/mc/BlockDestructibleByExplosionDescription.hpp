@@ -36,28 +36,28 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDestructibleByExplosionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -35581786
+     * @hash   433678358
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDestructibleByExplosionDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   82160478
+     * @hash   551420622
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @symbol ?NameID@BlockDestructibleByExplosionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -905000065
+     * @hash   878769695
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByExplosionDescription@@SAXXZ
-     * @hash   -1510671233
+     * @hash   -1041872369
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDestructibleByExplosionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1644480958
+     * @hash   2113741102
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?_onGroundPostTick@MovementInterpolatorSystemImpl@@SAXAEBVStrictEntityContext@@AEBUMovementInterpolatorComponent@@AEAUStateVectorComponent@@@Z
-     * @hash   -200165582
+     * @hash   -147072254
      */
     MCAPI static void _onGroundPostTick(class StrictEntityContext const &, struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
     /**
      * @symbol ?_tickPosition@MovementInterpolatorSystemImpl@@SA?AV?$tuple@VVec3@@M@std@@AEAUMovementInterpolatorComponent@@AEBVVec3@@M@Z
-     * @hash   1859790945
+     * @hash   1912884273
      */
     MCAPI static class std::tuple<class Vec3, float> _tickPosition(struct MovementInterpolatorComponent &, class Vec3 const &, float);
     /**
      * @symbol ?_tickRotation@MovementInterpolatorSystemImpl@@SA?AV?$tuple@VVec2@@V1@@std@@AEAUMovementInterpolatorComponent@@AEBVVec2@@1@Z
-     * @hash   24168676
+     * @hash   77262004
      */
     MCAPI static class std::tuple<class Vec2, class Vec2> _tickRotation(struct MovementInterpolatorComponent &, class Vec2 const &, class Vec2 const &);
 

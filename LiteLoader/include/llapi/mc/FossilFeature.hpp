@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1058952308
+     * @hash   1215495364
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
@@ -48,7 +48,7 @@ public:
 private:
     /**
      * @symbol ?STRUCTURE_LOCATION_FOSSIL@FossilFeature@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -910080588
+     * @hash   504695924
      */
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 

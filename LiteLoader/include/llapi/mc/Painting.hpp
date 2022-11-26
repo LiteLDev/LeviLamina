@@ -33,189 +33,189 @@ public:
 
 public:
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1046369806
      */
     virtual ~Painting();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@Painting@@UEAAXXZ
-     * @hash   -647990137
+     * @hash   -590975929
      */
     virtual void remove();
     /**
-     * @vftbl  18
+     * @vftbl  21
      * @symbol ?setPos@Painting@@UEAAXAEBVVec3@@@Z
-     * @hash   -1911771731
+     * @hash   -1854757523
      */
     virtual void setPos(class Vec3 const &);
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  47
+     * @vftbl  49
      * @symbol ?tryCreateAddActorPacket@Painting@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
-     * @hash   -561480839
+     * @hash   -504466631
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@Painting@@UEBAMXZ
-     * @hash   -1463095086
+     * @hash   -1213404222
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  94
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  97
      * @symbol ?isPickable@Painting@@UEAA_NXZ
-     * @hash   -172277270
+     * @hash   -75777494
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  111
+     * @hash   1450118353
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  113
+     * @hash   1459422755
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_113();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  272
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
+    /**
+     * @vftbl  266
+     * @hash   -1809581902
+     */
+    virtual void __unk_vfn_266();
+    /**
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -213105812
+     * @hash   -156091604
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   2099732049
+     * @hash   -2138221039
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
+    /**
+     * @vftbl  281
+     * @hash   -1807236101
+     */
+    virtual void __unk_vfn_281();
     /**
      * @vftbl  283
-     * @hash   -1894354595
-     */
-    virtual void __unk_vfn_283();
-    /**
-     * @vftbl  285
      * @symbol ?getWidth@Painting@@UEBAHXZ
-     * @hash   2078925575
+     * @hash   2135939783
      */
     virtual int getWidth() const;
     /**
-     * @vftbl  286
+     * @vftbl  284
      * @symbol ?getHeight@Painting@@UEBAHXZ
-     * @hash   -1028296108
+     * @hash   -971281900
      */
     virtual int getHeight() const;
     /**
-     * @vftbl  287
+     * @vftbl  285
      * @symbol ?dropItem@Painting@@UEAAXXZ
-     * @hash   -1515875931
+     * @hash   -1458861723
      */
     virtual void dropItem();
     /**
-     * @vftbl  288
+     * @vftbl  286
      * @symbol ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
-     * @hash   2028225564
+     * @hash   2085239772
      */
     virtual bool placeHangingEntity(class BlockSource &, int);
     /**
      * @symbol ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -786552672
+     * @hash   -729738352
      */
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getCurrentMotive@Painting@@QEBAAEBVMotive@@XZ
-     * @hash   -1413294104
+     * @hash   -1356279896
      */
     MCAPI class Motive const & getCurrentMotive() const;
 

@@ -37,13 +37,13 @@ public:
     virtual ~PeekSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@PeekSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1953913994
+     * @hash   2109057834
      */
     virtual void tick(class EntityRegistry &);
 

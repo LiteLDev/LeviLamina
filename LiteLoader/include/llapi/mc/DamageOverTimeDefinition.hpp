@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@DamageOverTimeDefinition@@QEAAXAEAVEntityContext@@AEAVDamageOverTimeComponent@@@Z
-     * @hash   1503736843
+     * @hash   1427794779
      */
     MCAPI void initialize(class EntityContext &, class DamageOverTimeComponent &);
     /**
      * @symbol ?buildSchema@DamageOverTimeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDamageOverTimeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -988736842
+     * @hash   -1064678906
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>> &);
 

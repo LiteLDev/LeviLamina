@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0OreVeinifier@@QEAA@AEBVOreVeinifierNoises@@@Z
-     * @hash   207262540
+     * @hash   379104716
      */
     MCAPI OreVeinifier(class OreVeinifierNoises const &);
     /**
      * @symbol ?fillNoiseAtPos@OreVeinifier@@QEAAXAEBVVec3@@HM@Z
-     * @hash   -685439588
+     * @hash   -513597412
      */
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     /**
      * @symbol ?getVeinBlockOrFallback@OreVeinifier@@QEBAPEBVBlock@@VVec3@@PEBV2@@Z
-     * @hash   -255766145
+     * @hash   -83923969
      */
     MCAPI class Block const * getVeinBlockOrFallback(class Vec3, class Block const *) const;
     /**
      * @symbol ?resetAndGetInterpolators@OreVeinifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$02@std@@XZ
-     * @hash   454095864
+     * @hash   625938040
      */
     MCAPI class std::array<class NoiseCellInterpolator *, 3> resetAndGetInterpolators();
 

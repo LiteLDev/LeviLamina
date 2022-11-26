@@ -44,326 +44,341 @@ public:
 public:
     /**
      * @symbol ?MINECRAFT_NAMESPACE@ItemRegistry@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
-     * @hash   -1649438175
+     * @hash   -1003922943
      */
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
     /**
-     * @symbol ?_parseItemDefinition@ItemRegistry@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@3@1W4ItemVersion@@W4PackType@@@Z
-     * @hash   -450900920
-     */
-    MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
-    /**
-     * @symbol ?addItemToTagMap@ItemRegistry@@SAXAEBVItem@@@Z
-     * @hash   -741669766
-     */
-    MCAPI static void addItemToTagMap(class Item const &);
-    /**
-     * @symbol ?allowTagUpdate@ItemRegistry@@SA?AVTagUpdateToken@@XZ
-     * @hash   -941967964
-     */
-    MCAPI static class TagUpdateToken allowTagUpdate();
-    /**
-     * @symbol ?finishedRegistration@ItemRegistry@@SAXVItemRegistryRef@@@Z
-     * @hash   -125018624
-     */
-    MCAPI static void finishedRegistration(class ItemRegistryRef);
-    /**
-     * @symbol ?getNameFromAlias@ItemRegistry@@SA?AU?$pair@VHashedString@@H@std@@AEBVHashedString@@H@Z
-     * @hash   -1020844792
-     */
-    MCAPI static struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const &, int);
-    /**
-     * @symbol ?getNameFromLegacyID@ItemRegistry@@SA?AVHashedString@@F@Z
-     * @hash   -2062804158
-     */
-    MCAPI static class HashedString getNameFromLegacyID(short);
-    /**
      * @symbol ?getNameToItemMap@ItemRegistry@@SAAEBV?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@XZ
-     * @hash   -1699428611
+     * @hash   -977925187
      */
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> const & getNameToItemMap();
     /**
-     * @symbol ?initServerData@ItemRegistry@@SAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
-     * @hash   -1067475818
-     */
-    MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemVersion);
-    /**
      * @symbol ?isComponentBasedItemSchema@ItemRegistry@@SA_NAEBVSemVersion@@@Z
-     * @hash   -1852301493
+     * @hash   -1130736565
      */
     MCAPI static bool isComponentBasedItemSchema(class SemVersion const &);
     /**
-     * @symbol ?mCanAddTags@ItemRegistry@@2_NA
-     * @hash   2108807444
+     * @symbol ?mCanAddTags@ItemRegistry@@2V?$shared_ptr@U?$atomic@H@std@@@std@@A
+     * @hash   2048852142
      */
-    MCAPI static bool mCanAddTags;
+    MCAPI static class std::shared_ptr<struct std::atomic<int>> mCanAddTags;
     /**
      * @symbol ?mCheckForItemWorldCompatibility@ItemRegistry@@2_NA
-     * @hash   -1861424283
+     * @hash   -1215925388
      */
     MCAPI static bool mCheckForItemWorldCompatibility;
     /**
      * @symbol ?mCompatibilityCheckLock@ItemRegistry@@2Vmutex@std@@A
-     * @hash   931317477
+     * @hash   1576832709
      */
     MCAPI static class std::mutex mCompatibilityCheckLock;
     /**
      * @symbol ?mDeadItemRegistry@ItemRegistry@@2V?$vector@V?$SharedPtr@VItem@@@@V?$allocator@V?$SharedPtr@VItem@@@@@std@@@std@@A
-     * @hash   1957126817
+     * @hash   -1692340623
      */
     MCAPI static std::vector<class SharedPtr<class Item>> mDeadItemRegistry;
     /**
      * @symbol ?mInternalInstance@ItemRegistry@@2V1@A
-     * @hash   -1422214268
+     * @hash   -776699036
      */
     MCAPI static class ItemRegistry mInternalInstance;
     /**
      * @symbol ?mResponseFactory@ItemRegistry@@2V?$unique_ptr@VItemEventResponseFactory@@U?$default_delete@VItemEventResponseFactory@@@std@@@std@@A
-     * @hash   -454011253
+     * @hash   191503979
      */
     MCAPI static std::unique_ptr<class ItemEventResponseFactory> mResponseFactory;
     /**
      * @symbol ?mServerInitializingCreativeItems@ItemRegistry@@2_NA
-     * @hash   -923518101
+     * @hash   -278018245
      */
     MCAPI static bool mServerInitializingCreativeItems;
     /**
      * @symbol ?mWorldBaseGameVersion@ItemRegistry@@2VBaseGameVersion@@A
-     * @hash   1032293439
+     * @hash   1677808671
      */
     MCAPI static class BaseGameVersion mWorldBaseGameVersion;
     /**
-     * @symbol ?registerLegacyID@ItemRegistry@@SAXAEBVHashedString@@F@Z
-     * @hash   -1851940654
-     */
-    MCAPI static void registerLegacyID(class HashedString const &, short);
-    /**
      * @symbol ?remapToFullLegacyNameByHash@ItemRegistry@@SA_K_K@Z
-     * @hash   1062387473
+     * @hash   1784136913
      */
     MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
     /**
      * @symbol ?remapToLegacyNameByHash@ItemRegistry@@SA_K_K@Z
-     * @hash   -1702618047
+     * @hash   -980868607
      */
     MCAPI static unsigned __int64 remapToLegacyNameByHash(unsigned __int64);
     /**
      * @symbol ?setOwningThreadId@ItemRegistry@@SAXVid@thread@std@@@Z
-     * @hash   -1569171862
+     * @hash   -847422422
      */
     MCAPI static void setOwningThreadId(class std::thread::id);
-    /**
-     * @symbol ?shutdown@ItemRegistry@@SAXXZ
-     * @hash   1831253491
-     */
-    MCAPI static void shutdown();
-    /**
-     * @symbol ?startRegistration@ItemRegistry@@SAXXZ
-     * @hash   2102839297
-     */
-    MCAPI static void startRegistration();
 
 //private:
     /**
+     * @symbol ?_loadItemData@ItemRegistry@@AEAAXAEAVResourcePackManager@@V?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@std@@_NW4ItemVersion@@@Z
+     * @hash   -833746256
+     */
+    MCAPI void _loadItemData(class ResourcePackManager &, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion);
+    /**
+     * @symbol ?_loadItemDefinition@ItemRegistry@@AEAAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@std@@1W4ItemVersion@@W4PackType@@@Z
+     * @hash   2146491385
+     */
+    MCAPI void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
+    /**
+     * @symbol ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@3@1W4ItemVersion@@W4PackType@@@Z
+     * @hash   1047891099
+     */
+    MCAPI std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
+    /**
+     * @symbol ?addItemToTagMap@ItemRegistry@@AEAAXAEBVItem@@@Z
+     * @hash   1210965033
+     */
+    MCAPI void addItemToTagMap(class Item const &);
+    /**
+     * @symbol ?allowTagUpdate@ItemRegistry@@AEAA?AVTagUpdateToken@@XZ
+     * @hash   837048377
+     */
+    MCAPI class TagUpdateToken allowTagUpdate();
+    /**
      * @symbol ?alterAvailableCreativeItems@ItemRegistry@@AEAAXPEAVActorInfoRegistry@@AEAVLevelData@@@Z
-     * @hash   660045840
+     * @hash   1381364752
      */
     MCAPI void alterAvailableCreativeItems(class ActorInfoRegistry *, class LevelData &);
     /**
+     * @symbol ?canAddTags@ItemRegistry@@AEBA_NXZ
+     * @hash   -1509800881
+     */
+    MCAPI bool canAddTags() const;
+    /**
      * @symbol ?clearItemAndCreativeItemRegistry@ItemRegistry@@AEAAXXZ
-     * @hash   -2038804958
+     * @hash   -1317470670
      */
     MCAPI void clearItemAndCreativeItemRegistry();
     /**
      * @symbol ?digestServerItemComponents@ItemRegistry@@AEAAXAEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@@Z
-     * @hash   -597637513
+     * @hash   123712151
      */
     MCAPI void digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
     /**
+     * @symbol ?finishedRegistration@ItemRegistry@@AEAAXXZ
+     * @hash   -828877897
+     */
+    MCAPI void finishedRegistration();
+    /**
      * @symbol ?getItem@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-     * @hash   425303018
+     * @hash   1146806442
      */
     MCAPI class WeakPtr<class Item> getItem(class HashedString const &);
     /**
      * @symbol ?getItem@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@F@Z
-     * @hash   -1781485215
+     * @hash   -1059981791
      */
     MCAPI class WeakPtr<class Item> getItem(short);
     /**
      * @symbol ?getItemCount@ItemRegistry@@AEAAHXZ
-     * @hash   1223045399
+     * @hash   1944548823
      */
     MCAPI int getItemCount();
     /**
      * @symbol ?getItemResponseFactory@ItemRegistry@@AEAAPEAVItemEventResponseFactory@@XZ
-     * @hash   458321816
+     * @hash   1179825240
      */
     MCAPI class ItemEventResponseFactory * getItemResponseFactory();
     /**
+     * @symbol ?getNameFromAlias@ItemRegistry@@AEBA?AU?$pair@VHashedString@@H@std@@AEBVHashedString@@H@Z
+     * @hash   505241602
+     */
+    MCAPI struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const &, int) const;
+    /**
+     * @symbol ?getNameFromLegacyID@ItemRegistry@@AEAA?AVHashedString@@F@Z
+     * @hash   -1485537652
+     */
+    MCAPI class HashedString getNameFromLegacyID(short);
+    /**
+     * @symbol ?getRef@ItemRegistry@@AEAA?AVItemRegistryRef@@XZ
+     * @hash   -175920417
+     */
+    MCAPI class ItemRegistryRef getRef();
+    /**
      * @symbol ?initCreativeItemsServer@ItemRegistry@@AEAAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z
-     * @hash   1016979461
+     * @hash   1738605893
      */
     MCAPI void initCreativeItemsServer(class ActorInfoRegistry *, class BlockDefinitionGroup *, bool, class Experiments const &, class std::function<void (class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &)>);
     /**
+     * @symbol ?initServerData@ItemRegistry@@AEAAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
+     * @hash   1610129199
+     */
+    MCAPI void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemVersion);
+    /**
      * @symbol ?isCreativeItem@ItemRegistry@@AEAA_NAEBVItemInstance@@@Z
-     * @hash   -1235847201
+     * @hash   -514374529
      */
     MCAPI bool isCreativeItem(class ItemInstance const &);
     /**
      * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-     * @hash   1880691931
+     * @hash   -1692802693
      */
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-     * @hash   -1518113266
+     * @hash   -796640594
      */
     MCAPI class WeakPtr<class Item> lookupByName(int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-     * @hash   -1752552074
+     * @hash   -1031079402
      */
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
     /**
      * @symbol ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-     * @hash   1328080655
+     * @hash   2049553327
      */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
     /**
      * @symbol ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-     * @hash   -278448700
+     * @hash   443023972
      */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?lookupByNameNoParsing@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
-     * @hash   -782250992
+     * @hash   -60793696
      */
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
     /**
      * @symbol ?lookupByTag@ItemRegistry@@AEBAAEBV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
-     * @hash   -676696032
+     * @hash   44792016
      */
     MCAPI class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> const & lookupByTag(struct ItemTag const &) const;
     /**
      * @symbol ?lookupByVanillaName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-     * @hash   1761785149
+     * @hash   -1811678723
      */
     MCAPI class WeakPtr<class Item> lookupByVanillaName(class HashedString const &) const;
     /**
      * @symbol ?registerAlias@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-     * @hash   -938274853
+     * @hash   -216786805
      */
     MCAPI void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
     /**
      * @symbol ?registerComplexAlias@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@V?$function@$$A6A?AVHashedString@@F@Z@std@@@Z
-     * @hash   -122842079
+     * @hash   598645969
      */
     MCAPI class WeakPtr<class Item> registerComplexAlias(class HashedString const &, class std::function<class HashedString (short)>);
     /**
      * @symbol ?registerItem@ItemRegistry@@AEAAXV?$SharedPtr@VItem@@@@@Z
-     * @hash   -1701957471
+     * @hash   -980454047
      */
     MCAPI void registerItem(class SharedPtr<class Item>);
     /**
+     * @symbol ?registerLegacyID@ItemRegistry@@AEAAXAEBVHashedString@@F@Z
+     * @hash   2097683610
+     */
+    MCAPI void registerLegacyID(class HashedString const &, short);
+    /**
      * @symbol ?registerLegacyMapping@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-     * @hash   -746471194
+     * @hash   -24706378
      */
     MCAPI void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
     /**
      * @symbol ?setWorldBaseGameVersion@ItemRegistry@@AEAAXAEBVBaseGameVersion@@@Z
-     * @hash   -1585073981
+     * @hash   -863324541
      */
     MCAPI void setWorldBaseGameVersion(class BaseGameVersion const &);
     /**
+     * @symbol ?shutdown@ItemRegistry@@AEAAXXZ
+     * @hash   -503463278
+     */
+    MCAPI void shutdown();
+    /**
+     * @symbol ?startRegistration@ItemRegistry@@AEAAXXZ
+     * @hash   -1808990361
+     */
+    MCAPI void startRegistration();
+    /**
      * @symbol ?unregisterItem@ItemRegistry@@AEAAXAEBVHashedString@@@Z
-     * @hash   1902393344
+     * @hash   -1670809136
      */
     MCAPI void unregisterItem(class HashedString const &);
     /**
      * @symbol ?validateServerItemComponents@ItemRegistry@@AEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@3@@Z
-     * @hash   -1598375938
+     * @hash   -876657250
      */
     MCAPI std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
-    /**
-     * @symbol ?_loadItemDefinition@ItemRegistry@@CAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@std@@1W4ItemVersion@@W4PackType@@@Z
-     * @hash   1091933997
-     */
-    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
 
 private:
     /**
      * @symbol ?mAttachableDefinitions@ItemRegistry@@0V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@A
-     * @hash   -1653003039
+     * @hash   -1007487807
      */
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;
     /**
      * @symbol ?mComplexAliasLookupMap@ItemRegistry@@0V?$unordered_map@VHashedString@@V?$function@$$A6A?AVHashedString@@F@Z@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$function@$$A6A?AVHashedString@@F@Z@std@@@std@@@3@@std@@A
-     * @hash   1515118387
+     * @hash   -2134333677
      */
     MCAPI static class std::unordered_map<class HashedString, class std::function<class HashedString (short)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<class HashedString (short)>>>> mComplexAliasLookupMap;
     /**
      * @symbol ?mEmptyItemSet@ItemRegistry@@0V?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@B
-     * @hash   -1677872769
+     * @hash   -1032357537
      */
     MCAPI static class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> const mEmptyItemSet;
     /**
      * @symbol ?mIdToItemMap@ItemRegistry@@0V?$unordered_map@HV?$WeakPtr@VItem@@@@U?$hash@H@std@@U?$equal_to@H@3@V?$allocator@U?$pair@$$CBHV?$WeakPtr@VItem@@@@@std@@@3@@std@@A
-     * @hash   -1304289420
+     * @hash   -658774188
      */
     MCAPI static class std::unordered_map<int, class WeakPtr<class Item>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class WeakPtr<class Item>>>> mIdToItemMap;
     /**
      * @symbol ?mItemAliasLookupMap@ItemRegistry@@0V?$unordered_map@VHashedString@@UItemAlias@ItemRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UItemAlias@ItemRegistry@@@std@@@5@@std@@A
-     * @hash   1422655862
+     * @hash   2068171094
      */
     MCAPI static class std::unordered_map<class HashedString, struct ItemRegistry::ItemAlias, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct ItemRegistry::ItemAlias>>> mItemAliasLookupMap;
     /**
      * @symbol ?mItemRegistry@ItemRegistry@@0V?$vector@V?$SharedPtr@VItem@@@@V?$allocator@V?$SharedPtr@VItem@@@@@std@@@std@@A
-     * @hash   -405169894
+     * @hash   240329962
      */
     MCAPI static std::vector<class SharedPtr<class Item>> mItemRegistry;
     /**
      * @symbol ?mLegacyIDToNameMap@ItemRegistry@@0V?$unordered_map@FVHashedString@@U?$hash@F@std@@U?$equal_to@F@3@V?$allocator@U?$pair@$$CBFVHashedString@@@std@@@3@@std@@A
-     * @hash   1854289953
+     * @hash   -1795162111
      */
     MCAPI static class std::unordered_map<short, class HashedString, struct std::hash<short>, struct std::equal_to<short>, class std::allocator<struct std::pair<short const, class HashedString>>> mLegacyIDToNameMap;
     /**
      * @symbol ?mMaxItemID@ItemRegistry@@0FA
-     * @hash   1325086307
+     * @hash   -2108025437
      */
     MCAPI static short mMaxItemID;
     /**
      * @symbol ?mNameToItemMap@ItemRegistry@@0V?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@A
-     * @hash   -1433600304
+     * @hash   -788085072
      */
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mNameToItemMap;
     /**
      * @symbol ?mOwnerThread@ItemRegistry@@0Vid@thread@std@@A
-     * @hash   594112707
+     * @hash   1239627939
      */
     MCAPI static class std::thread::id mOwnerThread;
     /**
      * @symbol ?mReverseAliasLookupMap@ItemRegistry@@0V?$unordered_map@_KUItemHashAlias@ItemRegistry@@U?$hash@_K@std@@U?$equal_to@_K@4@V?$allocator@U?$pair@$$CB_KUItemHashAlias@ItemRegistry@@@std@@@4@@std@@A
-     * @hash   247158735
+     * @hash   892673967
      */
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias>>> mReverseAliasLookupMap;
     /**
      * @symbol ?mReverseFullNameAliasLookupMap@ItemRegistry@@0V?$unordered_map@_KUItemHashAlias@ItemRegistry@@U?$hash@_K@std@@U?$equal_to@_K@4@V?$allocator@U?$pair@$$CB_KUItemHashAlias@ItemRegistry@@@std@@@4@@std@@A
-     * @hash   308327209
+     * @hash   953842441
      */
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias>>> mReverseFullNameAliasLookupMap;
     /**
      * @symbol ?mTagToItemsMap@ItemRegistry@@0V?$unordered_map@UItemTag@@V?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@U?$hash@UItemTag@@@3@U?$equal_to@UItemTag@@@3@V?$allocator@U?$pair@$$CBUItemTag@@V?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@@std@@@3@@std@@A
-     * @hash   -924035208
+     * @hash   -278519976
      */
     MCAPI static class std::unordered_map<struct ItemTag, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>, struct std::hash<struct ItemTag>, struct std::equal_to<struct ItemTag>, class std::allocator<struct std::pair<struct ItemTag const, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>>>> mTagToItemsMap;
     /**
      * @symbol ?mTileItemNameToItemMap@ItemRegistry@@0V?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@A
-     * @hash   1165746063
+     * @hash   1811261295
      */
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileItemNameToItemMap;
     /**
      * @symbol ?mTileNamespaceToItemMap@ItemRegistry@@0V?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@A
-     * @hash   2126170760
+     * @hash   -1523281304
      */
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileNamespaceToItemMap;
 

@@ -33,218 +33,223 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@TripodCamera@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   40827230
+     * @hash   89261630
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -790139063
      */
     virtual ~TripodCamera();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@TripodCamera@@UEAAXXZ
-     * @hash   782097628
+     * @hash   830655036
      */
     virtual void remove();
     /**
-     * @vftbl  40
-     * @hash   -253420496
+     * @vftbl  42
+     * @hash   -155073678
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  78
+     * @vftbl  81
      * @symbol ?getShadowHeightOffs@TripodCamera@@UEAAMXZ
-     * @hash   546798033
+     * @hash   796488897
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@TripodCamera@@UEBAMXZ
-     * @hash   1222797799
+     * @hash   1378741191
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -132439245
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  94
+     * @vftbl  90
+     * @hash   -13774965
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  97
      * @symbol ?isPickable@TripodCamera@@UEAA_NXZ
-     * @hash   1636809263
+     * @hash   1689564319
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1338665417
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  111
+     * @hash   1457575713
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  113
+     * @hash   1459422755
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_113();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  266
+     * @vftbl  245
+     * @hash   -1918058621
+     */
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
+    /**
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
-     * @hash   509365431
+     * @hash   558061223
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   760672625
+     * @hash   809353041
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  289
+     * @hash   1042759315
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_289();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  347
+     * @vftbl  312
+     * @hash   -1061460700
+     */
+    virtual void __unk_vfn_312();
+    /**
+     * @vftbl  345
      * @symbol ?canExistWhenDisallowMob@TripodCamera@@UEBA_NXZ
-     * @hash   522349229
+     * @hash   618849005
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERA
     /**
      * @symbol ?breaksFallingBlocks@TripodCamera@@UEBA_NXZ
-     * @hash   954168226
+     * @hash   1050668002
      */
     MCVAPI bool breaksFallingBlocks() const;
     /**
      * @symbol ?interactPreventDefault@TripodCamera@@UEAA_NXZ
-     * @hash   -1193841399
+     * @hash   -1097341623
      */
     MCVAPI bool interactPreventDefault();
     /**
      * @symbol ?isTargetable@TripodCamera@@UEBA_NXZ
-     * @hash   -1146944786
+     * @hash   -1050198994
      */
     MCVAPI bool isTargetable() const;
 #endif
     /**
      * @symbol ??0TripodCamera@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -238133573
+     * @hash   -189453157
      */
     MCAPI TripodCamera(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?interactWithPlayer@TripodCamera@@QEAA_NAEAVPlayer@@@Z
-     * @hash   1630686207
+     * @hash   1679366623
      */
     MCAPI bool interactWithPlayer(class Player &);
     /**
      * @symbol ?isActivated@TripodCamera@@QEBA_NXZ
-     * @hash   -879983408
+     * @hash   -831518256
      */
     MCAPI bool isActivated() const;
     /**
      * @symbol ?startTakingPicture@TripodCamera@@QEAAXAEAVPlayer@@@Z
-     * @hash   -909111752
+     * @hash   -860554344
      */
     MCAPI void startTakingPicture(class Player &);
 

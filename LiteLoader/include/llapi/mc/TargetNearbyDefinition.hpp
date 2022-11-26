@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@TargetNearbyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTargetNearbyDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -767569130
+     * @hash   -842388746
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>> &);
 

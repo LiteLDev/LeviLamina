@@ -37,13 +37,13 @@ public:
     virtual ~HopperSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@HopperSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1561733811
+     * @hash   1717292803
      */
     virtual void tick(class EntityRegistry &);
 

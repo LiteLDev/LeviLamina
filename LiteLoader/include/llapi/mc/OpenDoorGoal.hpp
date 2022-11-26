@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@OpenDoorGoal@@UEAA_NXZ
-     * @hash   -305564251
+     * @hash   -144946555
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@OpenDoorGoal@@UEAA_NXZ
-     * @hash   -243809837
+     * @hash   -83192141
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@OpenDoorGoal@@UEAAXXZ
-     * @hash   938238734
+     * @hash   1098856430
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@OpenDoorGoal@@UEAAXXZ
-     * @hash   1043452638
+     * @hash   1204070334
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@OpenDoorGoal@@UEAAXXZ
-     * @hash   1658447561
+     * @hash   1819065257
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@OpenDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1977742485
+     * @hash   -1817124789
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0OpenDoorGoal@@QEAA@AEAVMob@@_N@Z
-     * @hash   -559693021
+     * @hash   -399075325
      */
     MCAPI OpenDoorGoal(class Mob &, bool);
 

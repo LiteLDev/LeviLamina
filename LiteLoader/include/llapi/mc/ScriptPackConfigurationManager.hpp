@@ -29,22 +29,22 @@ public:
 public:
     /**
      * @symbol ??0ScriptPackConfigurationManager@@QEAA@XZ
-     * @hash   512456839
+     * @hash   614784119
      */
     MCAPI ScriptPackConfigurationManager();
     /**
      * @symbol ??0ScriptPackConfigurationManager@@QEAA@AEBV0@@Z
-     * @hash   1651715281
+     * @hash   1740834577
      */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     /**
      * @symbol ?getPackConfiguration@ScriptPackConfigurationManager@@QEBAAEBVScriptPackConfiguration@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1853915169
+     * @hash   1783892865
      */
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
     /**
      * @symbol ?loadPackConfigs@ScriptPackConfigurationManager@@QEAAXAEBVPath@Core@@@Z
-     * @hash   2061950580
+     * @hash   1991928276
      */
     MCAPI void loadPackConfigs(class Core::Path const &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?sDefaultConfigurationName@ScriptPackConfigurationManager@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1698413843
+     * @hash   -1147680661
      */
     MCAPI static std::string const sDefaultConfigurationName;
 

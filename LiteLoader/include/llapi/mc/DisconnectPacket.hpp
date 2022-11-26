@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@DisconnectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -2006415366
+     * @hash   -1827177334
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@DisconnectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -96990025
+     * @hash   -138858873
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@DisconnectPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -562294416
+     * @hash   -604163264
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@DisconnectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1118392048
+     * @hash   -1160260896
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0DisconnectPacket@@QEAA@XZ
-     * @hash   950309280
+     * @hash   908440432
      */
     MCAPI DisconnectPacket();
     /**
      * @symbol ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1195973602
+     * @hash   1154104754
      */
     MCAPI DisconnectPacket(std::string const &, bool);
 

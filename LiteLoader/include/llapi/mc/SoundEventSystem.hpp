@@ -29,13 +29,18 @@ public:
 
 public:
     /**
+     * @symbol ?_playSound@SoundEventSystem@@SAXAEAVILevel@@AEBUSoundEventRequest@@AEBUSynchronizedPlainData@3@@Z
+     * @hash   -128363701
+     */
+    MCAPI static void _playSound(class ILevel &, struct SoundEventRequest const &, struct SoundEventRequest::SynchronizedPlainData const &);
+    /**
      * @symbol ?_tick@SoundEventSystem@@SAXAEBVStrictEntityContext@@AEAVLevelComponent@@AEAUSoundEventRequestQueueComponent@@@Z
-     * @hash   1705982004
+     * @hash   1703890868
      */
     MCAPI static void _tick(class StrictEntityContext const &, class LevelComponent &, struct SoundEventRequestQueueComponent &);
     /**
      * @symbol ?create@SoundEventSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   794489712
+     * @hash   792321696
      */
     MCAPI static struct TickingSystemWithInfo create();
 

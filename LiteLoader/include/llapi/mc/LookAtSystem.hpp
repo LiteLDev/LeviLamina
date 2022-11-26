@@ -37,18 +37,18 @@ public:
     virtual ~LookAtSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@LookAtSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1338756671
+     * @hash   -1278175231
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?tickLookAtComponent@LookAtSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VLookAtComponent@@@@@Z
-     * @hash   864558863
+     * @hash   925140303
      */
     MCAPI static void tickLookAtComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class LookAtComponent> &);
 

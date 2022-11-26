@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@TwistingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -571536668
+     * @hash   -414163308
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_placeVineString@TwistingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
-     * @hash   -423744042
+     * @hash   -266370682
      */
     MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
 

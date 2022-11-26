@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CraftingDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   473050522
+     * @hash   431181674
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CraftingDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1288831929
+     * @hash   -1330700777
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CraftingDataPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -6317120
+     * @hash   -48185968
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CraftingDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   840039088
+     * @hash   798170240
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CraftingDataPacket@@QEAA@XZ
-     * @hash   -1645485040
+     * @hash   -1687353888
      */
     MCAPI CraftingDataPacket();
     /**
      * @symbol ?prepareFromRecipes@CraftingDataPacket@@SA?AV?$unique_ptr@VCraftingDataPacket@@U?$default_delete@VCraftingDataPacket@@@std@@@std@@AEBVRecipes@@_N@Z
-     * @hash   -275172222
+     * @hash   -317041070
      */
     MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const &, bool);
 

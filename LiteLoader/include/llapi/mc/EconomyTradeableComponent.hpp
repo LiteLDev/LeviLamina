@@ -32,199 +32,199 @@ public:
 public:
     /**
      * @symbol ??0EconomyTradeableComponent@@QEAA@AEAVActor@@@Z
-     * @hash   1892001910
+     * @hash   1953905686
      */
     MCAPI EconomyTradeableComponent(class Actor &);
     /**
      * @symbol ?addAdditionalSaveData@EconomyTradeableComponent@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   -744965224
+     * @hash   -683046072
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     /**
      * @symbol ?createDataPacket@EconomyTradeableComponent@@QEAA?AVUpdateTradePacket@@W4ContainerID@@@Z
-     * @hash   -1487002607
+     * @hash   -1424991199
      */
     MCAPI class UpdateTradePacket createDataPacket(enum class ContainerID);
     /**
      * @symbol ?fixVillagerTierToMatchTradeList@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z
-     * @hash   574399369
+     * @hash   636410777
      */
     MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList *);
     /**
      * @symbol ?getCurrentCuredDiscount@EconomyTradeableComponent@@QEBA?AUIntRange@@XZ
-     * @hash   2138062908
+     * @hash   -2094892980
      */
     MCAPI struct IntRange getCurrentCuredDiscount() const;
     /**
      * @symbol ?getCurrentNearbyCuredDiscount@EconomyTradeableComponent@@QEBAHXZ
-     * @hash   -525476284
+     * @hash   -463464876
      */
     MCAPI int getCurrentNearbyCuredDiscount() const;
     /**
      * @symbol ?getCurrentTradeExp@EconomyTradeableComponent@@QEBAIXZ
-     * @hash   972381656
+     * @hash   1034393064
      */
     MCAPI unsigned int getCurrentTradeExp() const;
     /**
      * @symbol ?getDisplayName@EconomyTradeableComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1563536422
+     * @hash   -1392170902
      */
     MCAPI std::string const & getDisplayName() const;
     /**
      * @symbol ?getInteraction@EconomyTradeableComponent@@QEAA_NAEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -306749886
+     * @hash   -244738478
      */
     MCAPI bool getInteraction(class Player &, class ActorInteraction &);
     /**
      * @symbol ?getOffers@EconomyTradeableComponent@@QEAAPEAVMerchantRecipeList@@XZ
-     * @hash   -1199666523
+     * @hash   -1137608987
      */
     MCAPI class MerchantRecipeList * getOffers();
     /**
      * @symbol ?getRiches@EconomyTradeableComponent@@QEBAHXZ
-     * @hash   -1199087704
+     * @hash   -1137030168
      */
     MCAPI int getRiches() const;
     /**
      * @symbol ?getTradeTier@EconomyTradeableComponent@@QEBAIXZ
-     * @hash   1057860768
+     * @hash   1119918304
      */
     MCAPI unsigned int getTradeTier() const;
     /**
      * @symbol ?hasSupplyRemaining@EconomyTradeableComponent@@QEBA_NXZ
-     * @hash   -462369978
+     * @hash   -400312442
      */
     MCAPI bool hasSupplyRemaining() const;
     /**
      * @symbol ?initFromDefinition@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   -2076179043
+     * @hash   -1987213507
      */
     MCAPI void initFromDefinition();
     /**
      * @symbol ?loadDisplayName@EconomyTradeableComponent@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2046903070
+     * @hash   2108960606
      */
     MCAPI std::string const & loadDisplayName();
     /**
      * @symbol ?loadOffersFromTag@EconomyTradeableComponent@@QEAAXPEBVCompoundTag@@@Z
-     * @hash   1272115961
+     * @hash   1334173497
      */
     MCAPI void loadOffersFromTag(class CompoundTag const *);
     /**
      * @symbol ?matchExpAndTier@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   -836617497
+     * @hash   -774559961
      */
     MCAPI void matchExpAndTier();
     /**
      * @symbol ?newServerAiStep@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   -694049645
+     * @hash   -631992109
      */
     MCAPI void newServerAiStep();
     /**
      * @symbol ?notifyTrade@EconomyTradeableComponent@@QEAAXH@Z
-     * @hash   626489216
+     * @hash   688546752
      */
     MCAPI void notifyTrade(int);
     /**
      * @symbol ?readAdditionalSaveData@EconomyTradeableComponent@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -474954959
+     * @hash   -412897423
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?reloadComponent@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   700442525
+     * @hash   762653821
      */
     MCAPI void reloadComponent();
     /**
      * @symbol ?resupplyTrades@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   -543871067
+     * @hash   -481659771
      */
     MCAPI void resupplyTrades();
     /**
      * @symbol ?setNearbyCuredDiscount@EconomyTradeableComponent@@QEAAXH@Z
-     * @hash   1559051642
+     * @hash   1621262938
      */
     MCAPI void setNearbyCuredDiscount(int);
     /**
      * @symbol ?setOffers@EconomyTradeableComponent@@QEAAXAEAVMerchantRecipeList@@@Z
-     * @hash   740732798
+     * @hash   802944094
      */
     MCAPI void setOffers(class MerchantRecipeList &);
     /**
      * @symbol ?setRiches@EconomyTradeableComponent@@QEAAXH@Z
-     * @hash   -1776955298
+     * @hash   -1714744002
      */
     MCAPI void setRiches(int);
     /**
      * @symbol ?shouldConvertTrades@EconomyTradeableComponent@@QEBA_NXZ
-     * @hash   794418196
+     * @hash   856629492
      */
     MCAPI bool shouldConvertTrades() const;
     /**
      * @symbol ?shouldPersistTrades@EconomyTradeableComponent@@QEBA_NXZ
-     * @hash   1297264740
+     * @hash   1359476036
      */
     MCAPI bool shouldPersistTrades() const;
     /**
      * @symbol ?showTradeScreen@EconomyTradeableComponent@@QEAA_NXZ
-     * @hash   1388039380
+     * @hash   1450250676
      */
     MCAPI bool showTradeScreen();
     /**
      * @symbol ?tickDiscountDegradationTimer@EconomyTradeableComponent@@QEAAXUTick@@@Z
-     * @hash   723422120
+     * @hash   785633416
      */
     MCAPI void tickDiscountDegradationTimer(struct Tick);
     /**
      * @symbol ?tryIncrementCuredDiscount@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   813477197
+     * @hash   875688493
      */
     MCAPI void tryIncrementCuredDiscount();
     /**
      * @symbol ?tryIncrementNearbyCuredDiscount@EconomyTradeableComponent@@QEAAXXZ
-     * @hash   1086524959
+     * @hash   1148736255
      */
     MCAPI void tryIncrementNearbyCuredDiscount();
     /**
      * @symbol ?tryToTransferOldOffers@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z
-     * @hash   1182297271
+     * @hash   1244508567
      */
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList *);
     /**
      * @symbol ?isUseNewTradeScreen@EconomyTradeableComponent@@SA_NAEBVActor@@@Z
-     * @hash   802398481
+     * @hash   864456017
      */
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
 //private:
     /**
      * @symbol ?_generateTrades@EconomyTradeableComponent@@AEAA_NXZ
-     * @hash   352001308
+     * @hash   413920460
      */
     MCAPI bool _generateTrades();
     /**
      * @symbol ?_getTradeTable@EconomyTradeableComponent@@AEAAPEAUTradeTable@@XZ
-     * @hash   2069966321
+     * @hash   2131885473
      */
     MCAPI struct TradeTable * _getTradeTable();
     /**
      * @symbol ?_getTradeTierFromCurrentExp@EconomyTradeableComponent@@AEBAIXZ
-     * @hash   -1111400245
+     * @hash   -1049481093
      */
     MCAPI unsigned int _getTradeTierFromCurrentExp() const;
     /**
      * @symbol ?_rearrangeTradeList@EconomyTradeableComponent@@AEAAXAEAV?$vector@UTrade@@V?$allocator@UTrade@@@std@@@std@@_K@Z
-     * @hash   1748394297
+     * @hash   1810313449
      */
     MCAPI void _rearrangeTradeList(std::vector<struct Trade> &, unsigned __int64);
     /**
      * @symbol ?_setMaxTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-     * @hash   1868862171
+     * @hash   1930781323
      */
     MCAPI void _setMaxTradeTier(int);
     /**
      * @symbol ?_setTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-     * @hash   -748084083
+     * @hash   -686164931
      */
     MCAPI void _setTradeTier(int);
 

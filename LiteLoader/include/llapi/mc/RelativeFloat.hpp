@@ -44,17 +44,17 @@ public:
 public:
     /**
      * @symbol ??0RelativeFloat@@QEAA@XZ
-     * @hash   736758972
+     * @hash   912091500
      */
     MCAPI RelativeFloat();
     /**
      * @symbol ??0RelativeFloat@@QEAA@M_N@Z
-     * @hash   -1284226366
+     * @hash   -1108893838
      */
     MCAPI RelativeFloat(float, bool);
     /**
      * @symbol ?getValue@RelativeFloat@@QEBAMM@Z
-     * @hash   -1557323763
+     * @hash   -1381529955
      */
     MCAPI float getValue(float) const;
 

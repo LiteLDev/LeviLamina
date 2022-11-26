@@ -40,44 +40,44 @@ public:
 public:
     /**
      * @symbol ?archivePack@FileArchiver@@QEAA?AV?$future@UResult@FileArchiver@@@std@@AEBVPath@Core@@0V?$function@$$A6AXAEAUResult@FileArchiver@@@Z@3@@Z
-     * @hash   -1072041363
+     * @hash   -512339587
      */
     MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const &, class Core::Path const &, class std::function<void (struct FileArchiver::Result &)>);
     /**
      * @symbol ?EXTENSION_ADDON@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -572129987
+     * @hash   1204889709
      */
     MCAPI static std::string const EXTENSION_ADDON;
     /**
      * @symbol ?EXTENSION_PROJECT@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   626340975
+     * @hash   -1891760385
      */
     MCAPI static std::string const EXTENSION_PROJECT;
     /**
      * @symbol ?EXTENSION_RESOURCEPACK@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   964704137
+     * @hash   -1553243463
      */
     MCAPI static std::string const EXTENSION_RESOURCEPACK;
     /**
      * @symbol ?EXTENSION_TEMPLATE@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   2080410095
+     * @hash   -437537505
      */
     MCAPI static std::string const EXTENSION_TEMPLATE;
     /**
      * @symbol ?EXTENSION_VANILLA@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1970036659
+     * @hash   -547910941
      */
     MCAPI static std::string const EXTENSION_VANILLA;
     /**
      * @symbol ?IMPORT_LOCK_FILE@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -892799257
+     * @hash   884189687
      */
     MCAPI static std::string const IMPORT_LOCK_FILE;
 
 //private:
     /**
      * @symbol ?_printLevelResultMessage@FileArchiver@@AEAAXAEBUResult@1@@Z
-     * @hash   861028553
+     * @hash   1420730329
      */
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);
 

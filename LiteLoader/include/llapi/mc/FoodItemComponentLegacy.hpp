@@ -39,74 +39,74 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getNutrition@FoodItemComponentLegacy@@UEBAHXZ
-     * @hash   -702225816
+     * @hash   -640168280
      */
     virtual int getNutrition() const;
     /**
      * @vftbl  2
      * @symbol ?getSaturationModifier@FoodItemComponentLegacy@@UEBAMXZ
-     * @hash   836408280
+     * @hash   823492440
      */
     virtual float getSaturationModifier() const;
     /**
      * @vftbl  3
      * @symbol ?canAlwaysEat@FoodItemComponentLegacy@@UEBA_NXZ
-     * @hash   -2113829588
+     * @hash   -1384130756
      */
     virtual bool canAlwaysEat() const;
     /**
      * @vftbl  4
      * @symbol ?eatItem@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
-     * @hash   -295733877
+     * @hash   250252507
      */
     virtual class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /**
      * @vftbl  5
      * @symbol ?use@FoodItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -617491369
+     * @hash   -71474233
      */
     virtual bool use(class ItemStack &, class Player &);
     /**
      * @vftbl  6
      * @symbol ?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-     * @hash   -1410278661
+     * @hash   -864261525
      */
     virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
     /**
      * @symbol ??0FoodItemComponentLegacy@@QEAA@AEAVItem@@@Z
-     * @hash   -1574486382
+     * @hash   -1028315486
      */
     MCAPI FoodItemComponentLegacy(class Item &);
     /**
      * @symbol ?buildNetworkTag@FoodItemComponentLegacy@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   990356616
+     * @hash   1536481384
      */
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @symbol ?init@FoodItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -263710382
+     * @hash   282276002
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     /**
      * @symbol ?initializeFromNetwork@FoodItemComponentLegacy@@SA?AVValue@Json@@AEBVCompoundTag@@@Z
-     * @hash   -583299037
+     * @hash   -37358781
      */
     MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const &);
 
 //private:
     /**
      * @symbol ?_applyEatEffects@FoodItemComponentLegacy@@AEAAXAEBVItemStack@@AEAVActor@@AEAVLevel@@@Z
-     * @hash   1201540389
+     * @hash   1747711285
      */
     MCAPI void _applyEatEffects(class ItemStack const &, class Actor &, class Level &);
     /**
      * @symbol ?_loadEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
-     * @hash   -1009466465
+     * @hash   -463295569
      */
     MCAPI void _loadEffects(class Json::Value &);
     /**
      * @symbol ?_loadRemoveEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
-     * @hash   -1240161341
+     * @hash   -694005821
      */
     MCAPI void _loadRemoveEffects(class Json::Value &);
 

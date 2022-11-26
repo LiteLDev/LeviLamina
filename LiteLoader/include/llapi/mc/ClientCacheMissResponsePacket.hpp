@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ClientCacheMissResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1150361710
+     * @hash   -1192245934
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientCacheMissResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   206920255
+     * @hash   165036031
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ClientCacheMissResponsePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1810135896
+     * @hash   -1852020120
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ClientCacheMissResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   678026104
+     * @hash   636141880
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ClientCacheMissResponsePacket@@QEAA@XZ
-     * @hash   -472091256
+     * @hash   -291807656
      */
     MCAPI ClientCacheMissResponsePacket();
 

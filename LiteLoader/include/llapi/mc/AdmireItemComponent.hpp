@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ??0AdmireItemComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1103627671
+     * @hash   -943594263
      */
     MCAPI AdmireItemComponent(class AdmireItemComponent &&);
     /**
      * @symbol ?getAdmireItem@AdmireItemComponent@@QEBAAEBVItemStack@@XZ
-     * @hash   -1084896546
+     * @hash   -991625730
      */
     MCAPI class ItemStack const & getAdmireItem() const;
     /**
      * @symbol ?getAdmireUntil@AdmireItemComponent@@QEBAAEBUTick@@XZ
-     * @hash   418080432
+     * @hash   403165712
      */
     MCAPI struct Tick const & getAdmireUntil() const;
     /**
      * @symbol ?getItemOwnerRef@AdmireItemComponent@@QEBA?AVWeakEntityRef@@XZ
-     * @hash   853575536
+     * @hash   838660816
      */
     MCAPI class WeakEntityRef getItemOwnerRef() const;
     /**
      * @symbol ?isAdmiring@AdmireItemComponent@@QEBA_NXZ
-     * @hash   526136432
+     * @hash   673607648
      */
     MCAPI bool isAdmiring() const;
     /**
      * @symbol ?onAdmireItemPickedUp@AdmireItemComponent@@QEAAXAEBVActor@@AEBVItemStack@@PEAV2@@Z
-     * @hash   596781986
+     * @hash   581867266
      */
     MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     /**
      * @symbol ?stopAdmiring@AdmireItemComponent@@QEAAXXZ
-     * @hash   502582437
+     * @hash   487667717
      */
     MCAPI void stopAdmiring();
     /**
      * @symbol ??1AdmireItemComponent@@QEAA@XZ
-     * @hash   -1899621596
+     * @hash   -1739588188
      */
     MCAPI ~AdmireItemComponent();
 

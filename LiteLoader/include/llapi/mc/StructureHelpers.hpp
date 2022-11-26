@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?createChest@StructureHelpers@@SA_NAEAVStructurePiece@@AEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@HHHEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1605767046
+     * @hash   -848452918
      */
     MCAPI static bool createChest(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, unsigned char, std::string const &);
     /**
      * @symbol ?createDispenser@StructureHelpers@@SA_NAEAVStructurePiece@@AEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@HHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1465514147
+     * @hash   -2072139021
      */
     MCAPI static bool createDispenser(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
     /**
      * @symbol ?createMinecartChest@StructureHelpers@@SA_NAEAVStructurePiece@@AEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@HHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   337073953
+     * @hash   1094388081
      */
     MCAPI static bool createMinecartChest(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
     /**
      * @symbol ?fillColumnDown@StructureHelpers@@SAXAEAVStructurePiece@@AEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z
-     * @hash   -1118471092
+     * @hash   -361156964
      */
     MCAPI static void fillColumnDown(class StructurePiece &, class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
     /**
      * @symbol ?getDirectionRotation@StructureHelpers@@SAHHG@Z
-     * @hash   -313749201
+     * @hash   443564927
      */
     MCAPI static int getDirectionRotation(int, unsigned short);
     /**
      * @symbol ?getDoorRotation@StructureHelpers@@SAHHG@Z
-     * @hash   1169444893
+     * @hash   1926759021
      */
     MCAPI static int getDoorRotation(int, unsigned short);
     /**
      * @symbol ?getFacingDirectionRotation@StructureHelpers@@SAHHG@Z
-     * @hash   1751686383
+     * @hash   -1785966785
      */
     MCAPI static int getFacingDirectionRotation(int, unsigned short);
     /**
      * @symbol ?getRailRotation@StructureHelpers@@SAHHG@Z
-     * @hash   -1275686035
+     * @hash   -518371907
      */
     MCAPI static int getRailRotation(int, unsigned short);
     /**
      * @symbol ?getTorchRotation@StructureHelpers@@SAHHG@Z
-     * @hash   -1868178641
+     * @hash   -1110864513
      */
     MCAPI static int getTorchRotation(int, unsigned short);
     /**
      * @symbol ?getWeirdoDirectionRotation@StructureHelpers@@SAHHG@Z
-     * @hash   629374255
+     * @hash   1386688383
      */
     MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
 

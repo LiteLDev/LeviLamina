@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemNotificationEvent@@QEAA@XZ
-     * @hash   -1544270584
+     * @hash   -1500787256
      */
     MCAPI ~ItemNotificationEvent();
 

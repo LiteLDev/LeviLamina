@@ -38,27 +38,27 @@ public:
     virtual ~PlayerUIContainer();
     /**
      * @vftbl  22
-     * @hash   -308831756
+     * @hash   -212331980
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -307908235
+     * @hash   -211408459
      */
     virtual void __unk_vfn_23();
     /**
      * @symbol ??0PlayerUIContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
-     * @hash   846684969
+     * @hash   872347513
      */
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     /**
      * @symbol ?load@PlayerUIContainer@@QEAAXAEBVListTag@@AEBVSemVersion@@@Z
-     * @hash   986434867
+     * @hash   1012097411
      */
     MCAPI void load(class ListTag const &, class SemVersion const &);
     /**
      * @symbol ?save@PlayerUIContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -1056977448
+     * @hash   -1031314904
      */
     MCAPI std::unique_ptr<class ListTag> save() const;
 

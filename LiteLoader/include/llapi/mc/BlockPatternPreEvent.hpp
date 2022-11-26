@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BlockPatternPreEvent@@QEAA@XZ
-     * @hash   401796868
+     * @hash   467821412
      */
     MCAPI ~BlockPatternPreEvent();
 

@@ -32,34 +32,34 @@ public:
 public:
     /**
      * @symbol ??0ScopedGameTestTickingArea@@QEAA@AEAVDimension@@AEBVBoundingBox@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1468182179
+     * @hash   -1526042067
      */
     MCAPI ScopedGameTestTickingArea(class Dimension &, class BoundingBox const &, std::string const &);
     /**
      * @symbol ?areChunksLoaded@ScopedGameTestTickingArea@@QEAA_NXZ
-     * @hash   -1930901966
+     * @hash   -1988746478
      */
     MCAPI bool areChunksLoaded();
     /**
      * @symbol ?getTickingArea@ScopedGameTestTickingArea@@QEBA?AV?$shared_ptr@VITickingArea@@@std@@XZ
-     * @hash   577701491
+     * @hash   519856979
      */
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea() const;
     /**
      * @symbol ??1ScopedGameTestTickingArea@@QEAA@XZ
-     * @hash   -965166150
+     * @hash   -1023010662
      */
     MCAPI ~ScopedGameTestTickingArea();
     /**
      * @symbol ?TICKING_AREA_PREFIX@ScopedGameTestTickingArea@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2119875017
+     * @hash   -671817153
      */
     MCAPI static std::string const TICKING_AREA_PREFIX;
 
 //private:
     /**
      * @symbol ?_removeTickingArea@ScopedGameTestTickingArea@@AEAAXXZ
-     * @hash   -1064358979
+     * @hash   -1122203491
      */
     MCAPI void _removeTickingArea();
 

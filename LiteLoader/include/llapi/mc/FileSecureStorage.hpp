@@ -39,59 +39,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?add@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1921756818
+     * @hash   -1861328062
      */
     virtual bool add(std::string const &, std::string const &);
     /**
      * @vftbl  2
      * @symbol ?addOrUpdate@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1478358398
+     * @hash   1990210062
      */
     virtual bool addOrUpdate(std::string const &, std::string const &);
     /**
      * @vftbl  3
      * @symbol ?remove@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1255639367
+     * @hash   1767491031
      */
     virtual bool remove(std::string const &);
     /**
      * @vftbl  4
      * @symbol ?get@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
-     * @hash   2046829690
+     * @hash   -1736285942
      */
     virtual bool get(std::string const &, std::string &);
     /**
      * @symbol ??0FileSecureStorage@@QEAA@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@PEAVISecureStorageKeySystem@@AEBVPath@2@PEAVStorageSystem@0@@Z
-     * @hash   -541778060
+     * @hash   -30695196
      */
     MCAPI FileSecureStorage(class Core::PathBuffer<std::string> const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class ISecureStorageKeySystem *, class Core::Path const &, class FileSecureStorage::StorageSystem *);
 
 //protected:
     /**
      * @symbol ?_init@FileSecureStorage@@IEAA_N_N@Z
-     * @hash   1719572016
+     * @hash   -2064250912
      */
     MCAPI bool _init(bool);
 
 //private:
     /**
      * @symbol ?_contentKeyObfuscator@FileSecureStorage@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-     * @hash   -337691923
+     * @hash   173375565
      */
     MCAPI std::string _contentKeyObfuscator(std::string const &, std::string const &);
     /**
      * @symbol ?_getSecureStorageKey@FileSecureStorage@@AEBA?AVSecureStorageKey@@XZ
-     * @hash   1025484275
+     * @hash   1536490259
      */
     MCAPI class SecureStorageKey _getSecureStorageKey() const;
     /**
      * @symbol ?_initalizeSymmetricEncyrption@FileSecureStorage@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1091441721
+     * @hash   -580128217
      */
     MCAPI void _initalizeSymmetricEncyrption(std::string &, bool);
     /**
      * @symbol ?_rebuildSecureStorageFile@FileSecureStorage@@AEAAXXZ
-     * @hash   -2096181576
+     * @hash   -1584622056
      */
     MCAPI void _rebuildSecureStorageFile();
 

@@ -22,7 +22,7 @@ namespace SlimeSpawnRules {
 #undef AFTER_EXTRA
     /**
      * @symbol ?checkSpawnRulesCallback@SlimeSpawnRules@@YA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
-     * @hash   -277424183
+     * @hash   -230512007
      */
     MCAPI bool checkSpawnRulesCallback(class SpawnConditions const &, class BlockSource &);
 

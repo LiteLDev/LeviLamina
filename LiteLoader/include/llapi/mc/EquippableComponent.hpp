@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ??0EquippableComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1300359105
+     * @hash   -1158700017
      */
     MCAPI EquippableComponent(class EquippableComponent &&);
     /**
      * @symbol ?createDataPacket@EquippableComponent@@QEBA?AVUpdateEquipPacket@@AEAVActor@@W4ContainerID@@@Z
-     * @hash   253441146
+     * @hash   380938938
      */
     MCAPI class UpdateEquipPacket createDataPacket(class Actor &, enum class ContainerID) const;
     /**
      * @symbol ?createTag@EquippableComponent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVActor@@@Z
-     * @hash   472348481
+     * @hash   599846273
      */
     MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor &) const;
     /**
      * @symbol ?getSlotCount@EquippableComponent@@QEBAHXZ
-     * @hash   -1860308372
+     * @hash   -1732872084
      */
     MCAPI int getSlotCount() const;
     /**
      * @symbol ?hasSlotAllowedItems@EquippableComponent@@QEBA_NH@Z
-     * @hash   -1390440111
+     * @hash   -1263003823
      */
     MCAPI bool hasSlotAllowedItems(int) const;
     /**
      * @symbol ?onItemChanged@EquippableComponent@@QEBA_NAEAVActor@@_KAEBVItemStack@@@Z
-     * @hash   -1441144812
+     * @hash   -1313708524
      */
     MCAPI bool onItemChanged(class Actor &, unsigned __int64, class ItemStack const &) const;
     /**
      * @symbol ??4EquippableComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1750127178
+     * @hash   1875164810
      */
     MCAPI class EquippableComponent & operator=(class EquippableComponent &&);
     /**
      * @symbol ?tryGetSlotAllowedItems@EquippableComponent@@QEBAPEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@H@Z
-     * @hash   789071048
+     * @hash   916507336
      */
     MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
     /**
      * @symbol ??1EquippableComponent@@QEAA@XZ
-     * @hash   -1597159569
+     * @hash   -1493340817
      */
     MCAPI ~EquippableComponent();
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AddPaintingPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1550458255
+     * @hash   -1624862719
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AddPaintingPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -91177698
+     * @hash   -165582162
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AddPaintingPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   952902793
+     * @hash   878498329
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AddPaintingPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1266227319
+     * @hash   -1340631783
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddPaintingPacket@@QEAA@XZ
-     * @hash   -89768103
+     * @hash   -164172567
      */
     MCAPI AddPaintingPacket();
     /**
      * @symbol ??0AddPaintingPacket@@QEAA@AEBVPainting@@@Z
-     * @hash   1357250406
+     * @hash   1282845942
      */
     MCAPI AddPaintingPacket(class Painting const &);
 

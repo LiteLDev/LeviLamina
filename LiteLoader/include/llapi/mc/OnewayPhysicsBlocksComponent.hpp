@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnewayPhysicsBlocksComponent@@QEAA@XZ
-     * @hash   -1915812653
+     * @hash   1746155475
      */
     MCAPI ~OnewayPhysicsBlocksComponent();
 

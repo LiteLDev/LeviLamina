@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1CommandOriginIdentity@@QEAA@XZ
-     * @hash   -1450121637
+     * @hash   -1362140165
      */
     MCAPI ~CommandOriginIdentity();
 

@@ -33,7 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
     /**
      * @symbol ??1ScatteredFeaturePiece@@UEAA@XZ
-     * @hash   1288621016
+     * @hash   1459878904
      */
     MCVAPI ~ScatteredFeaturePiece();
 #endif
@@ -41,12 +41,12 @@ public:
 //protected:
     /**
      * @symbol ?updateAverageGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
-     * @hash   -1228964201
+     * @hash   -1057168153
      */
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
     /**
      * @symbol ?updateHeightPositionToLowestGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
-     * @hash   1754304053
+     * @hash   1926100101
      */
     MCAPI bool updateHeightPositionToLowestGroundHeight(class BlockSource &, class BoundingBox const &, int);
 

@@ -33,140 +33,140 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
     /**
      * @symbol ?_getUpdatePacket@HopperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -712942187
+     * @hash   -153025147
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@HopperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   794762093
+     * @hash   1354679133
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?getContainer@HopperBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   1703610531
+     * @hash   -1826600653
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@HopperBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1275888671
+     * @hash   2040644783
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@HopperBlockActor@@UEBAHXZ
-     * @hash   -678365925
+     * @hash   -499127893
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@HopperBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   1092536784
+     * @hash   1652453824
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@HopperBlockActor@@UEBAHXZ
-     * @hash   753040170
+     * @hash   711171322
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@HopperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -16225393
+     * @hash   543691647
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?load@HopperBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -205252493
+     * @hash   354664547
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onMove@HopperBlockActor@@UEAAXXZ
-     * @hash   -2142411493
+     * @hash   -1387050117
      */
     MCVAPI void onMove();
     /**
      * @symbol ?onNeighborChanged@HopperBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -497036236
+     * @hash   62880804
      */
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?save@HopperBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -371278078
+     * @hash   188638962
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@HopperBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -2018917355
+     * @hash   -1459015691
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setContainerChanged@HopperBlockActor@@UEAAXH@Z
-     * @hash   -2015539537
+     * @hash   -1260208913
      */
     MCVAPI void setContainerChanged(int);
     /**
      * @symbol ?setItem@HopperBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   770644533
+     * @hash   1330546197
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@HopperBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   523424988
+     * @hash   612390524
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@HopperBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1546886396
+     * @hash   1635851932
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@HopperBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   2122704316
+     * @hash   -1612361316
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0HopperBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -462356561
+     * @hash   97560479
      */
     MCAPI HopperBlockActor(class BlockPos const &);
     /**
      * @symbol ?checkForSmeltEverythingAchievement@HopperBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   2141959044
+     * @hash   -1593091212
      */
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource &);
     /**
      * @symbol ?getAttachedFurnace@HopperBlockActor@@QEAAPEAVFurnaceBlockActor@@AEAVBlockSource@@@Z
-     * @hash   1615445572
+     * @hash   -2119604684
      */
     MCAPI class FurnaceBlockActor * getAttachedFurnace(class BlockSource &);
     /**
      * @symbol ?isAttachedToChestAndFurnace@HopperBlockActor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   891650143
+     * @hash   1451567183
      */
     MCAPI bool isAttachedToChestAndFurnace(class BlockSource &);
     /**
      * @symbol ?updateCooldownAfterMove@HopperBlockActor@@QEAAXAEBUTick@@H@Z
-     * @hash   -90605087
+     * @hash   469296577
      */
     MCAPI void updateCooldownAfterMove(struct Tick const &, int);
 
 //private:
     /**
      * @symbol ?_ensureTickingOrder@HopperBlockActor@@AEAAXAEAVBlockSource@@H@Z
-     * @hash   603239089
+     * @hash   1163156129
      */
     MCAPI void _ensureTickingOrder(class BlockSource &, int);
     /**
      * @symbol ?_tick@HopperBlockActor@@AEAAXAEAVBlockSource@@H@Z
-     * @hash   2114711063
+     * @hash   -1620339193
      */
     MCAPI void _tick(class BlockSource &, int);
     /**
      * @symbol ?isAttachedToContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
-     * @hash   -691349881
+     * @hash   -131432841
      */
     MCAPI bool isAttachedToContainerType(class BlockSource &, enum class ContainerType);
     /**
      * @symbol ?isSourceOfContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
-     * @hash   410690724
+     * @hash   970607764
      */
     MCAPI bool isSourceOfContainerType(class BlockSource &, enum class ContainerType);
 

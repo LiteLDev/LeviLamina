@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetDefaultGameTypePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -179678053
+     * @hash   -221546901
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetDefaultGameTypePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1189264568
+     * @hash   -1231133416
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetDefaultGameTypePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1010895425
+     * @hash   -1052764273
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetDefaultGameTypePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   930828655
+     * @hash   888959807
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetDefaultGameTypePacket@@QEAA@XZ
-     * @hash   610675487
+     * @hash   568806639
      */
     MCAPI SetDefaultGameTypePacket();
     /**
      * @symbol ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
-     * @hash   -260525718
+     * @hash   -302394566
      */
     MCAPI SetDefaultGameTypePacket(enum class GameType);
 

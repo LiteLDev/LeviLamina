@@ -37,7 +37,7 @@ public:
     virtual ~ElementConstructorContainerScreenValidator();
     /**
      * @symbol ??0ElementConstructorContainerScreenValidator@@QEAA@XZ
-     * @hash   -1603304945
+     * @hash   -1131154113
      */
     MCAPI ElementConstructorContainerScreenValidator();
 

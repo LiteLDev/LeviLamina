@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ItemGroup@@QEAA@AEBVItemInstance@@@Z
-     * @hash   1134918669
+     * @hash   1701508893
      */
     MCAPI ItemGroup(class ItemInstance const &);
     /**
      * @symbol ?isEmpty@ItemGroup@@QEBA_NXZ
-     * @hash   -954587610
+     * @hash   -387997386
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ??4ItemGroup@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   142003452
+     * @hash   191575676
      */
     MCAPI class ItemGroup & operator=(class ItemGroup &&);
     /**
      * @symbol ??1ItemGroup@@QEAA@XZ
-     * @hash   -708565320
+     * @hash   -552760312
      */
     MCAPI ~ItemGroup();
 

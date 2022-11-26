@@ -38,59 +38,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveIndoorsGoal@@UEAA_NXZ
-     * @hash   -2090466690
+     * @hash   -1929403090
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MoveIndoorsGoal@@UEAA_NXZ
-     * @hash   -1349850820
+     * @hash   -1188787220
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MoveIndoorsGoal@@UEAAXXZ
-     * @hash   -1872162105
+     * @hash   -1711098505
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@MoveIndoorsGoal@@UEAAXXZ
-     * @hash   -982810873
+     * @hash   -821747273
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@MoveIndoorsGoal@@UEAAXXZ
-     * @hash   -1144125422
+     * @hash   -983061822
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveIndoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -855141582
+     * @hash   -694124110
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0MoveIndoorsGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1208238027
+     * @hash   1369255499
      */
     MCAPI MoveIndoorsGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_isInside@MoveIndoorsGoal@@AEAA_NAEBVBlockPos@@@Z
-     * @hash   1265791929
+     * @hash   1426809401
      */
     MCAPI bool _isInside(class BlockPos const &);
     /**
      * @symbol ?_startPathfinding@MoveIndoorsGoal@@AEAAXXZ
-     * @hash   -1456268581
+     * @hash   -1295251109
      */
     MCAPI void _startPathfinding();
 

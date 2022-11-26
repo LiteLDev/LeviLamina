@@ -39,49 +39,49 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1773810608
+     * @hash   -1301828912
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@FurnaceFuelContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -707878922
+     * @hash   -235728090
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@FurnaceFuelContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1652446077
+     * @hash   -1180295245
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @vftbl  4
      * @symbol ?isItemAllowedToAdd@FurnaceFuelContainerValidation@@UEBA_NAEBVItemStack@@@Z
-     * @hash   1228629211
+     * @hash   1700780043
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   771785418
+     * @hash   868285194
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1104890221
+     * @hash   -632908525
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   113472487
+     * @hash   585454183
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEFUELCONTAINERVALIDATION
     /**
      * @symbol ?getContainerOffset@FurnaceFuelContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   728101136
+     * @hash   830013264
      */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif

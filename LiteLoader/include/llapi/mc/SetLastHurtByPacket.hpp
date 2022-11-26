@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetLastHurtByPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1235718392
+     * @hash   1161775208
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetLastHurtByPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1368345509
+     * @hash   1294402325
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetLastHurtByPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1451971762
+     * @hash   1410102914
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetLastHurtByPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   348568514
+     * @hash   306699666
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetLastHurtByPacket@@QEAA@XZ
-     * @hash   -1879903214
+     * @hash   -1953846398
      */
     MCAPI SetLastHurtByPacket();
     /**
      * @symbol ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
-     * @hash   2048931003
+     * @hash   1974987819
      */
     MCAPI SetLastHurtByPacket(enum class ActorType);
 

@@ -32,7 +32,7 @@ public:
 //private:
     /**
      * @symbol ?_tickSkeletonView@SkeletonPassengerRotationSystemImpl@@CAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEBV?$FlagComponent@USkeletonFlag@@@@AEAUMobBodyRotationComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@$$CBUMobBodyRotationComponent@@@@@Z
-     * @hash   -1616946006
+     * @hash   -1608965862
      */
     MCAPI static void _tickSkeletonView(class StrictEntityContext &, struct PassengerComponent const &, class FlagComponent<struct SkeletonFlag> const &, struct MobBodyRotationComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct MobBodyRotationComponent const>);
 

@@ -38,37 +38,37 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@ParticleOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -1224862611
+     * @hash   -1300543283
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@ParticleOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   1838347740
+     * @hash   1762713196
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@ParticleOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   1672644055
+     * @hash   1596840375
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@ParticleOnHitSubcomponent@@UEAAPEBDXZ
-     * @hash   -1655595550
+     * @hash   -1731368478
      */
     virtual char const * getName();
     /**
      * @symbol ??0ParticleOnHitSubcomponent@@QEAA@XZ
-     * @hash   1435417191
+     * @hash   1359398247
      */
     MCAPI ParticleOnHitSubcomponent();
 
 //private:
     /**
      * @symbol ?isParticleTypeIconBreak@ParticleOnHitSubcomponent@@AEBA_NXZ
-     * @hash   1105515398
+     * @hash   1029773222
      */
     MCAPI bool isParticleTypeIconBreak() const;
 

@@ -38,42 +38,42 @@ public:
 public:
     /**
      * @symbol ?calculateBlockFloorHeight@VehicleUtils@@SA?AV?$optional@M@std@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
-     * @hash   822719118
+     * @hash   875351166
      */
     MCAPI static class std::optional<float> calculateBlockFloorHeight(class IConstBlockSource const &, class BlockPos const &);
     /**
      * @symbol ?calculateVehicleDirections@VehicleUtils@@SA?AUVehicleDirections@1@AEBVVec3@@0@Z
-     * @hash   -1269684759
+     * @hash   -1217052711
      */
     MCAPI static struct VehicleUtils::VehicleDirections calculateVehicleDirections(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?getActivatorRailExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
-     * @hash   1446196621
+     * @hash   1498828669
      */
-   // MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActivatorRailExitPatternStrategy(class BaseGameVersion const &);
+    //MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActivatorRailExitPatternStrategy(class BaseGameVersion const &);
     /**
      * @symbol ?getActorExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
-     * @hash   -2077340419
+     * @hash   -2024708371
      */
-   // MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActorExitPatternStrategy(class BaseGameVersion const &);
+    //MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActorExitPatternStrategy(class BaseGameVersion const &);
     /**
      * @symbol ?ignoredExitCollisionBlock@VehicleUtils@@SA_NAEBVBlock@@@Z
-     * @hash   -106770567
+     * @hash   -54138519
      */
     MCAPI static bool ignoredExitCollisionBlock(class Block const &);
     /**
      * @symbol ?testPosFollowingEjectPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
-     * @hash   1081907319
+     * @hash   1134539367
      */
     MCAPI static class std::optional<class Vec3> testPosFollowingEjectPattern(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>);
     /**
      * @symbol ?testPosFollowingLegacyActivatorRailPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
-     * @hash   -1405852451
+     * @hash   -1353220403
      */
     MCAPI static class std::optional<class Vec3> testPosFollowingLegacyActivatorRailPattern(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>);
     /**
      * @symbol ?testPosFollowingLegacyActorPattern@VehicleUtils@@SA?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z
-     * @hash   1518679617
+     * @hash   1571311665
      */
     MCAPI static class std::optional<class Vec3> testPosFollowingLegacyActorPattern(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>);
 

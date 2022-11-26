@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0BossDefinition@@QEAA@XZ
-     * @hash   885419612
+     * @hash   864908028
      */
     MCAPI BossDefinition();
     /**
      * @symbol ?initialize@BossDefinition@@QEAAXAEAVEntityContext@@AEAVBossComponent@@@Z
-     * @hash   471527397
+     * @hash   451031189
      */
     MCAPI void initialize(class EntityContext &, class BossComponent &);
     /**
      * @symbol ?buildSchema@BossDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBossDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   776446758
+     * @hash   755935174
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>> &);
 

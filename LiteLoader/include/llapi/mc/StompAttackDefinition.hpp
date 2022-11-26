@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0StompAttackDefinition@@QEAA@XZ
-     * @hash   -1724942712
+     * @hash   -1563171816
      */
     MCAPI StompAttackDefinition();
     /**
      * @symbol ?initialize@StompAttackDefinition@@QEAAXAEAVEntityContext@@AEAVStompAttackGoal@@@Z
-     * @hash   1144670635
+     * @hash   1306702923
      */
     MCAPI void initialize(class EntityContext &, class StompAttackGoal &);
     /**
      * @symbol ?buildSchema@StompAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VStompAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -305376971
+     * @hash   -143298555
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);
 

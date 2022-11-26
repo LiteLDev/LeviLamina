@@ -33,73 +33,73 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
     /**
      * @symbol ?registerTickingSystem@EntitySystems@@UEAAXV?$span@$$CBV?$typeid_t@USystemCategory@@@@$0?0@gsl@@V?$unique_ptr@VITickingSystem@@U?$default_delete@VITickingSystem@@@std@@@std@@AEBUSystemInfo@@@Z
-     * @hash   563245547
+     * @hash   688436939
      */
     MCVAPI void registerTickingSystem(class gsl::span<class typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
     /**
      * @symbol ?tickMovementCatchup@EntitySystems@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -798737100
+     * @hash   -673545708
      */
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     /**
      * @symbol ??1EntitySystems@@UEAA@XZ
-     * @hash   -1248728152
+     * @hash   -1123536760
      */
     MCVAPI ~EntitySystems();
 #endif
     /**
      * @symbol ??0EntitySystems@@QEAA@V?$unique_ptr@UIEntitySystemsCollection@@U?$default_delete@UIEntitySystemsCollection@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
-     * @hash   839997950
+     * @hash   965189342
      */
     MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
     /**
      * @symbol ??0EntitySystems@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1004101338
+     * @hash   -878909946
      */
     MCAPI EntitySystems(std::string);
     /**
      * @symbol ?getPlayerInteractionSystem@EntitySystems@@QEAAAEAVPlayerInteractionSystem@@XZ
-     * @hash   38045306
+     * @hash   163236698
      */
     MCAPI class PlayerInteractionSystem & getPlayerInteractionSystem();
     /**
      * @symbol ?registerEditorOnlyTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
-     * @hash   1181942806
+     * @hash   1307134198
      */
     MCAPI void registerEditorOnlyTickingSystem(struct TickingSystemWithInfo &&);
     /**
      * @symbol ?registerEvents@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1305915860
+     * @hash   -1180724468
      */
     MCAPI void registerEvents(class EntityRegistry &);
     /**
      * @symbol ?registerGameOnlyTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
-     * @hash   1457784672
+     * @hash   1582976064
      */
     MCAPI void registerGameOnlyTickingSystem(struct TickingSystemWithInfo &&);
     /**
      * @symbol ?registerMovementTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
-     * @hash   -933442030
+     * @hash   -808250638
      */
     MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo &&);
     /**
      * @symbol ?registerSystem@EntitySystems@@QEAAXV?$unique_ptr@UISystem@@U?$default_delete@UISystem@@@std@@@std@@AEBUSystemInfo@@@Z
-     * @hash   408598033
+     * @hash   533789425
      */
     MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const &);
     /**
      * @symbol ?registerTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
-     * @hash   284697956
+     * @hash   409889348
      */
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
     /**
      * @symbol ?tick@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1750029524
+     * @hash   -1624838132
      */
     MCAPI void tick(class EntityRegistry &);
     /**
      * @symbol ?tickEditor@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   86756796
+     * @hash   211948188
      */
     MCAPI void tickEditor(class EntityRegistry &);
 

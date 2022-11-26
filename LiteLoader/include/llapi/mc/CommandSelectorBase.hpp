@@ -59,191 +59,191 @@ public:
 public:
     /**
      * @symbol ?addFamilyFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-     * @hash   1061542569
+     * @hash   1106209849
      */
     MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const &);
     /**
      * @symbol ?addFilter@CommandSelectorBase@@QEAAXV?$function@$$A6A_NAEBVCommandOrigin@@AEBVActor@@@Z@std@@@Z
-     * @hash   -508331639
+     * @hash   -463664359
      */
     MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
     /**
      * @symbol ?addGameModeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@W4GameType@@@@@Z
-     * @hash   -890813325
+     * @hash   -846146045
      */
     MCAPI void addGameModeFilter(struct InvertableFilter<enum class GameType> const &);
     /**
-     * @symbol ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVCommandIntegerRange@@W4EquipmentSlot@@1@Z
-     * @hash   1725393595
+     * @symbol ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@H@3@AEBVCommandIntegerRange@@W4EquipmentSlot@@2@Z
+     * @hash   -1052966190
      */
-    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum class EquipmentSlot, class CommandIntegerRange const &);
+    MCAPI void addHasItemFilter(std::string const &, class std::optional<int>, class CommandIntegerRange const &, enum class EquipmentSlot, class CommandIntegerRange const &);
     /**
      * @symbol ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
-     * @hash   835564391
+     * @hash   880216295
      */
     MCAPI void addLevelFilter(struct std::pair<int, int> const &);
     /**
      * @symbol ?addNameFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-     * @hash   755168267
+     * @hash   799820171
      */
     MCAPI void addNameFilter(struct InvertableFilter<std::string> const &);
     /**
      * @symbol ?addScoreFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandIntegerRange@@V?$function@$$A6AHAEA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z@3@@Z
-     * @hash   59604521
+     * @hash   104256425
      */
     MCAPI void addScoreFilter(std::string const &, class CommandIntegerRange const &, class std::function<int (bool &, std::string const &, class Actor const &)>);
     /**
      * @symbol ?addTagFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-     * @hash   1207910899
+     * @hash   1252562803
      */
     MCAPI void addTagFilter(struct InvertableFilter<std::string> const &);
     /**
      * @symbol ?addTypeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-     * @hash   5554253
+     * @hash   50206157
      */
     MCAPI void addTypeFilter(struct InvertableFilter<std::string> const &);
     /**
      * @symbol ?addXRotationFilter@CommandSelectorBase@@QEAAXAEBU?$pair@MM@std@@@Z
-     * @hash   -1181843549
+     * @hash   -1137191645
      */
     MCAPI void addXRotationFilter(struct std::pair<float, float> const &);
     /**
      * @symbol ?addYRotationFilter@CommandSelectorBase@@QEAAXAEBU?$pair@MM@std@@@Z
-     * @hash   529680929
+     * @hash   574332833
      */
     MCAPI void addYRotationFilter(struct std::pair<float, float> const &);
     /**
      * @symbol ?compile@CommandSelectorBase@@QEAA_NAEBVCommandOrigin@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1547028366
+     * @hash   -1502376462
      */
     MCAPI bool compile(class CommandOrigin const &, std::string &);
     /**
      * @symbol ?getName@CommandSelectorBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   243648598
+     * @hash   288300502
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getOrder@CommandSelectorBase@@QEBA?AW4CommandSelectionOrder@@XZ
-     * @hash   -648617570
+     * @hash   -504313810
      */
     MCAPI enum class CommandSelectionOrder getOrder() const;
     /**
      * @symbol ?hasName@CommandSelectorBase@@QEBA_NXZ
-     * @hash   -1840634664
+     * @hash   -1795982760
      */
     MCAPI bool hasName() const;
     /**
      * @symbol ?isExplicitIdSelector@CommandSelectorBase@@QEBA_NXZ
-     * @hash   636940042
+     * @hash   681591946
      */
     MCAPI bool isExplicitIdSelector() const;
     /**
      * @symbol ?setBox@CommandSelectorBase@@QEAAXVBlockPos@@@Z
-     * @hash   160049630
+     * @hash   204732286
      */
     MCAPI void setBox(class BlockPos);
     /**
      * @symbol ?setExcludeAgents@CommandSelectorBase@@QEAAX_N@Z
-     * @hash   -934599038
+     * @hash   -889916382
      */
     MCAPI void setExcludeAgents(bool);
     /**
      * @symbol ?setExplicitIdSelector@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -356656516
+     * @hash   -311973860
      */
     MCAPI void setExplicitIdSelector(std::string const &);
     /**
      * @symbol ?setIncludeDeadPlayers@CommandSelectorBase@@QEAAX_N@Z
-     * @hash   1035359156
+     * @hash   1080041812
      */
     MCAPI void setIncludeDeadPlayers(bool);
     /**
      * @symbol ?setOrder@CommandSelectorBase@@QEAAXW4CommandSelectionOrder@@@Z
-     * @hash   -1203674506
+     * @hash   -1158991850
      */
     MCAPI void setOrder(enum class CommandSelectionOrder);
     /**
      * @symbol ?setPosition@CommandSelectorBase@@QEAAXAEBVCommandPosition@@@Z
-     * @hash   1951232226
+     * @hash   1995914882
      */
     MCAPI void setPosition(class CommandPosition const &);
     /**
      * @symbol ?setRadiusMax@CommandSelectorBase@@QEAAXM@Z
-     * @hash   -939234954
+     * @hash   -894552298
      */
     MCAPI void setRadiusMax(float);
     /**
      * @symbol ?setRadiusMin@CommandSelectorBase@@QEAAXM@Z
-     * @hash   -83762486
+     * @hash   -39079830
      */
     MCAPI void setRadiusMin(float);
     /**
      * @symbol ?setResultCount@CommandSelectorBase@@QEAAX_K_N@Z
-     * @hash   1282257480
+     * @hash   1326940136
      */
     MCAPI void setResultCount(unsigned __int64, bool);
     /**
      * @symbol ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
-     * @hash   -424611608
+     * @hash   -379928952
      */
     MCAPI void setType(enum class CommandSelectionType);
     /**
      * @symbol ?setVersion@CommandSelectorBase@@QEAAXH@Z
-     * @hash   -470742580
+     * @hash   -491054276
      */
     MCAPI void setVersion(int);
     /**
      * @symbol ??1CommandSelectorBase@@QEAA@XZ
-     * @hash   -1172382361
+     * @hash   -1016715737
      */
     MCAPI ~CommandSelectorBase();
 
 //protected:
     /**
      * @symbol ??0CommandSelectorBase@@IEAA@_N@Z
-     * @hash   594001585
+     * @hash   638699617
      */
     MCAPI CommandSelectorBase(bool);
     /**
      * @symbol ?newResults@CommandSelectorBase@@IEBA?AV?$shared_ptr@V?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@@std@@AEBVCommandOrigin@@@Z
-     * @hash   -72865205
+     * @hash   -28213301
      */
     MCAPI class std::shared_ptr<std::vector<class Actor *>> newResults(class CommandOrigin const &) const;
 
 //private:
     /**
      * @symbol ?compareName@CommandSelectorBase@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -96391184
+     * @hash   -51739280
      */
     MCAPI bool compareName(std::string const &) const;
     /**
      * @symbol ?filter@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@AEAVActor@@@Z
-     * @hash   117524081
+     * @hash   162175985
      */
     MCAPI bool filter(class CommandOrigin const &, class Actor &) const;
     /**
      * @symbol ?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@Z
-     * @hash   -1808280663
+     * @hash   -1763628759
      */
     MCAPI bool isExpansionAllowed(class CommandOrigin const &) const;
     /**
      * @symbol ?matchFamily@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-     * @hash   533913471
+     * @hash   578565375
      */
     MCAPI bool matchFamily(class Actor const &) const;
     /**
      * @symbol ?matchName@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-     * @hash   1842574072
+     * @hash   1887225976
      */
     MCAPI bool matchName(class Actor const &) const;
     /**
      * @symbol ?matchTag@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-     * @hash   1571709171
+     * @hash   1616361075
      */
     MCAPI bool matchTag(class Actor const &) const;
     /**
      * @symbol ?matchType@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-     * @hash   -107387111
+     * @hash   -62735207
      */
     MCAPI bool matchType(class Actor const &) const;
 

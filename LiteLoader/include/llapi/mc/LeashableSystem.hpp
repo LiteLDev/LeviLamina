@@ -37,13 +37,13 @@ public:
     virtual ~LeashableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@LeashableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   2102173622
+     * @hash   -2037173178
      */
     virtual void tick(class EntityRegistry &);
 

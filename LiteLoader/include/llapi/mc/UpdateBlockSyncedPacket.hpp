@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateBlockSyncedPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1702372648
+     * @hash   1632165832
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateBlockSyncedPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1843978197
+     * @hash   1773771381
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateBlockSyncedPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   308359634
+     * @hash   238152818
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateBlockSyncedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1112229966
+     * @hash   -1182436782
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateBlockSyncedPacket@@QEAA@XZ
-     * @hash   -226936958
+     * @hash   -297143774
      */
     MCAPI UpdateBlockSyncedPacket();
     /**
      * @symbol ??0UpdateBlockSyncedPacket@@QEAA@AEBVBlockPos@@IIEAEBUActorBlockSyncMessage@@@Z
-     * @hash   945826604
+     * @hash   875619788
      */
     MCAPI UpdateBlockSyncedPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const &);
 

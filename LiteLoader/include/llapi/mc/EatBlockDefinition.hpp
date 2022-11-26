@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0EatBlockDefinition@@QEAA@XZ
-     * @hash   1830032724
+     * @hash   1990957940
      */
     MCAPI EatBlockDefinition();
     /**
      * @symbol ?addSuccessChanceExpressionNode@EatBlockDefinition@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -694189162
+     * @hash   -533310074
      */
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?initialize@EatBlockDefinition@@QEAAXAEAVEntityContext@@AEAVEatBlockGoal@@@Z
-     * @hash   945913843
+     * @hash   1106669923
      */
     MCAPI void initialize(class EntityContext &, class EatBlockGoal &);
     /**
      * @symbol ?buildSchema@EatBlockDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEatBlockDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -566594557
+     * @hash   -405823101
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition>> &);
 

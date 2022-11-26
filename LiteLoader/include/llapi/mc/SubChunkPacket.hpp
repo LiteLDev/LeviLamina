@@ -40,35 +40,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SubChunkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -474924279
+     * @hash   -520852391
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SubChunkPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   672098742
+     * @hash   626170630
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SubChunkPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1821799473
+     * @hash   1775871361
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SubChunkPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   959750545
+     * @hash   913822433
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SubChunkPacket@@QEAA@XZ
-     * @hash   -1675794223
+     * @hash   -1721722335
      */
     MCAPI SubChunkPacket();
     /**
      * @symbol ??0SubChunkPacket@@QEAA@AEBV?$AutomaticID@VDimension@@H@@AEBVSubChunkPos@@_N@Z
-     * @hash   -62046344
+     * @hash   -107974456
      */
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
 

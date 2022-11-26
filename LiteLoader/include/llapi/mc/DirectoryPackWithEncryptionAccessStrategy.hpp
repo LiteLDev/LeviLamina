@@ -41,126 +41,126 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getPackSize@DirectoryPackWithEncryptionAccessStrategy@@UEBA_KXZ
-     * @hash   390219914
+     * @hash   908667882
      */
     virtual unsigned __int64 getPackSize() const;
     /**
      * @vftbl  2
      * @symbol ?getPackLocation@DirectoryPackWithEncryptionAccessStrategy@@UEBAAEBVResourceLocation@@XZ
-     * @hash   2111330104
+     * @hash   668426296
      */
     virtual class ResourceLocation const & getPackLocation() const;
     /**
      * @vftbl  3
      * @symbol ?getPackName@DirectoryPackWithEncryptionAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   628236396
+     * @hash   586367548
      */
     virtual std::string const & getPackName() const;
     /**
      * @vftbl  4
      * @symbol ?isWritable@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NXZ
-     * @hash   1875792108
+     * @hash   1972291884
      */
     virtual bool isWritable() const;
     /**
      * @vftbl  5
      * @symbol ?setIsTrusted@DirectoryPackWithEncryptionAccessStrategy@@UEAAX_N@Z
-     * @hash   -1359481664
+     * @hash   -1270516128
      */
     virtual void setIsTrusted(bool);
     /**
      * @vftbl  6
      * @symbol ?isTrusted@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NXZ
-     * @hash   2022473103
+     * @hash   2118972879
      */
     virtual bool isTrusted() const;
     /**
      * @vftbl  7
      * @symbol ?hasAsset@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
-     * @hash   -160613409
+     * @hash   357819183
      */
     virtual bool hasAsset(class Core::Path const &, bool) const;
     /**
      * @vftbl  8
      * @symbol ?hasFolder@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
-     * @hash   -121650615
+     * @hash   397027993
      */
     virtual bool hasFolder(class Core::Path const &) const;
     /**
      * @vftbl  9
      * @symbol ?getAsset@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -394065468
+     * @hash   124382500
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
      * @vftbl  10
      * @symbol ?deleteAsset@DirectoryPackWithEncryptionAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   -1156853640
+     * @hash   -638359544
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
     /**
      * @vftbl  11
      * @symbol ?writeAsset@DirectoryPackWithEncryptionAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   377867339
+     * @hash   896284555
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &);
     /**
      * @vftbl  12
      * @symbol ?forEachIn@DirectoryPackWithEncryptionAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-     * @hash   -981494380
+     * @hash   -463031036
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     /**
      * @vftbl  14
      * @symbol ?getStrategyType@DirectoryPackWithEncryptionAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
-     * @hash   -1294329101
+     * @hash   -1115075693
      */
     virtual enum class PackAccessStrategyType getStrategyType() const;
     /**
      * @vftbl  16
      * @symbol ?createSubPack@DirectoryPackWithEncryptionAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-     * @hash   656579283
+     * @hash   1175134883
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /**
      * @vftbl  17
      * @symbol ?generateAssetSet@DirectoryPackWithEncryptionAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
-     * @hash   557244304
+     * @hash   1075692272
      */
     virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @vftbl  19
      * @symbol ?unload@DirectoryPackWithEncryptionAccessStrategy@@UEAAXXZ
-     * @hash   1163923536
+     * @hash   1682340752
      */
     virtual void unload();
     /**
      * @vftbl  20
      * @symbol ?hasUpgradeFiles@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NXZ
-     * @hash   -138756985
+     * @hash   379675607
      */
     virtual bool hasUpgradeFiles() const;
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@DirectoryPackWithEncryptionAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   -1058921061
+     * @hash   -540503845
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0DirectoryPackWithEncryptionAccessStrategy@@QEAA@AEBVResourceLocation@@0AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -805171086
+     * @hash   -286538606
      */
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
 //private:
     /**
      * @symbol ?_getUnencryptedAsset@DirectoryPackWithEncryptionAccessStrategy@@AEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2085992539
+     * @hash   -1567406187
      */
     MCAPI bool _getUnencryptedAsset(class Core::Path const &, std::string &) const;
     /**
      * @symbol ?_hasUnencryptedAsset@DirectoryPackWithEncryptionAccessStrategy@@AEBA_NAEBVPath@Core@@@Z
-     * @hash   -101077708
+     * @hash   417493268
      */
     MCAPI bool _hasUnencryptedAsset(class Core::Path const &) const;
 

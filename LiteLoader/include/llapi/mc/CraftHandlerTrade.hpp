@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleConsumedItem@CraftHandlerTrade@@EEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-     * @hash   -1983576819
+     * @hash   -1514716451
      */
     virtual enum class ItemStackNetResult handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const &);
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerTrade@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   762791662
+     * @hash   1231652030
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @vftbl  5
      * @symbol ?_postCraftRequest@CraftHandlerTrade@@EEAAX_N@Z
-     * @hash   -527720689
+     * @hash   -58860321
      */
     virtual void _postCraftRequest(bool);
     /**
      * @symbol ??0CraftHandlerTrade@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionCraftHandler@@@Z
-     * @hash   -2074772116
+     * @hash   -1605911748
      */
     MCAPI CraftHandlerTrade(class ContainerScreenContext const &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**
      * @symbol ?_getMerchantRecipeFromNetId@CraftHandlerTrade@@AEAA?AV?$tuple@W4ItemStackNetResult@@PEBVMerchantRecipe@@@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   -22864293
+     * @hash   445996075
      */
     MCAPI class std::tuple<enum class ItemStackNetResult, class MerchantRecipe const *> _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?_handleTrade1@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-     * @hash   -1838880571
+     * @hash   -1370020203
      */
     MCAPI enum class ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
     /**
      * @symbol ?_initResultItem@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   982651207
+     * @hash   1451511575
      */
     MCAPI enum class ItemStackNetResult _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?_initTrade2Consumes@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@XZ
-     * @hash   -1594789997
+     * @hash   -1125929629
      */
     MCAPI enum class ItemStackNetResult _initTrade2Consumes();
     /**
      * @symbol ?_matchesAuxValueTrade2@CraftHandlerTrade@@AEBA_NAEBVItemStackBase@@0@Z
-     * @hash   -2058513846
+     * @hash   -1589653478
      */
     MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const &, class ItemStackBase const &) const;
 

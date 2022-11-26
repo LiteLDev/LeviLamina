@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0RecipeCraftInputs@@QEAA@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   1551015531
+     * @hash   2113131339
      */
     MCAPI RecipeCraftInputs(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??1RecipeCraftInputs@@QEAA@XZ
-     * @hash   405173239
+     * @hash   544110775
      */
     MCAPI ~RecipeCraftInputs();
 

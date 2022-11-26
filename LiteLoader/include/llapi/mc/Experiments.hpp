@@ -31,72 +31,77 @@ public:
 public:
     /**
      * @symbol ?DataDrivenBiomes@Experiments@@QEBA_NXZ
-     * @hash   1897360404
+     * @hash   -1973229292
      */
     MCAPI bool DataDrivenBiomes() const;
     /**
      * @symbol ?DataDrivenItems@Experiments@@QEBA_NXZ
-     * @hash   -347836766
+     * @hash   76540834
      */
     MCAPI bool DataDrivenItems() const;
     /**
      * @symbol ??0Experiments@@QEAA@XZ
-     * @hash   423060882
+     * @hash   847438482
      */
     MCAPI Experiments();
     /**
      * @symbol ?Gametest@Experiments@@QEBA_NXZ
-     * @hash   1967858772
+     * @hash   -1902730924
      */
     MCAPI bool Gametest() const;
     /**
-     * @symbol ?SpectatorMode@Experiments@@QEBA_NXZ
-     * @hash   -1581854078
+     * @symbol ?NextMajorUpdate@Experiments@@QEBA_NXZ
+     * @hash   1042059426
      */
-    MCAPI bool SpectatorMode() const;
+    MCAPI bool NextMajorUpdate() const;
     /**
      * @symbol ?UpcomingCreatorFeatures@Experiments@@QEBA_NXZ
-     * @hash   -751654926
+     * @hash   -327277326
      */
     MCAPI bool UpcomingCreatorFeatures() const;
     /**
      * @symbol ?getExperimentsActiveAsJSONList@Experiments@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   368376018
+     * @hash   792753618
      */
     MCAPI std::string getExperimentsActiveAsJSONList() const;
     /**
      * @symbol ?getExperimentsActiveForTelemetry@Experiments@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -926936709
+     * @hash   -502559109
      */
     MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const;
     /**
      * @symbol ?getTagData@Experiments@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -687533368
+     * @hash   -263155768
      */
     MCAPI void getTagData(class CompoundTag const &);
     /**
      * @symbol ?isExperimentEnabled@Experiments@@QEBA_NW4AllExperiments@@@Z
-     * @hash   646639567
+     * @hash   1071017167
      */
     MCAPI bool isExperimentEnabled(enum class AllExperiments) const;
     /**
+     * @symbol ?setExperimentEnabled@Experiments@@QEAAXW4AllExperiments@@_N@Z
+     * @hash   1335141867
+     */
+    MCAPI void setExperimentEnabled(enum class AllExperiments, bool);
+    /**
      * @symbol ?setTagData@Experiments@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1136811196
+     * @hash   -712372092
      */
     MCAPI void setTagData(class CompoundTag &) const;
     /**
      * @symbol ??1Experiments@@QEAA@XZ
-     * @hash   1556885586
+     * @hash   1514616962
      */
     MCAPI ~Experiments();
     /**
      * @symbol ?getExperimentTextID@Experiments@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AllExperiments@@@Z
-     * @hash   857996795
+     * @hash   1282374395
      */
     MCAPI static std::string const & getExperimentTextID(enum class AllExperiments);
     /**
      * @symbol ?getToggleNames@Experiments@@SAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   1135588977
+     * @hash   1559966577
      */
     MCAPI static std::vector<std::string> const & getToggleNames();
 

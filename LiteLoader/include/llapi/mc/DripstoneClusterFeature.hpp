@@ -38,24 +38,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@DripstoneClusterFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   732277761
+     * @hash   888344161
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 //private:
     /**
      * @symbol ?_getDripstoneHeight@DripstoneClusterFeature@@CAHAEAVRandom@@HHMH@Z
-     * @hash   1457163345
+     * @hash   1613229745
      */
     MCAPI static int _getDripstoneHeight(class Random &, int, int, float, int);
     /**
      * @symbol ?_placeColumn@DripstoneClusterFeature@@CA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HHMNHM@Z
-     * @hash   428685587
+     * @hash   584751987
      */
     MCAPI static bool _placeColumn(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, int, float, double, int, float);
     /**
      * @symbol ?_replaceBlocksWithDripstoneBlocks@DripstoneClusterFeature@@CAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HE@Z
-     * @hash   -733997323
+     * @hash   -577930923
      */
     MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI &, class BlockPos const &, int, unsigned char);
 

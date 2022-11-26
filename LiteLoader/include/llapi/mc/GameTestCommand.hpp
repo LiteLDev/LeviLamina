@@ -39,59 +39,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@GameTestCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1863722860
+     * @hash   1866951820
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?addGameTestNameEnums@GameTestCommand@@SAXAEAVMinecraftGameTest@@AEAVCommandRegistry@@@Z
-     * @hash   56797903
+     * @hash   60011487
      */
     MCAPI static void addGameTestNameEnums(class MinecraftGameTest &, class CommandRegistry &);
     /**
      * @symbol ?setup@GameTestCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1850057296
+     * @hash   1853409264
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_createTestParameters@GameTestCommand@@AEBA?AUTestParameters@gametest@@AEAVBlockSource@@AEBVCommandOrigin@@@Z
-     * @hash   -1583938443
+     * @hash   -1581432155
      */
     MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource &, class CommandOrigin const &) const;
     /**
      * @symbol ?_handleCreateTest@GameTestCommand@@AEBAXAEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1508295679
+     * @hash   -1505789391
      */
     MCAPI void _handleCreateTest(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleRun@GameTestCommand@@AEBAXAEAVMinecraftGameTest@@AEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   188903049
+     * @hash   191470841
      */
     MCAPI void _handleRun(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleRunNearbyTests@GameTestCommand@@AEBAXAEAVMinecraftGameTest@@AEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   646876499
+     * @hash   649536547
      */
     MCAPI void _handleRunNearbyTests(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleRunSet@GameTestCommand@@AEBAXAEAVMinecraftGameTest@@AEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -388208397
+     * @hash   -385425341
      */
     MCAPI void _handleRunSet(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleRunThis@GameTestCommand@@AEBAXAEAVMinecraftGameTest@@AEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   271272295
+     * @hash   274178359
      */
     MCAPI void _handleRunThis(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_handleShowPosition@GameTestCommand@@AEBAXAEAVBlockSource@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   2144145641
+     * @hash   2147128585
      */
     MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_runTestAt@GameTestCommand@@AEBAXAEAVMinecraftGameTest@@AEAVBlockSource@@PEAVCommandOutput@@AEBVBlockPos@@V?$optional@W4Rotation@@@std@@@Z
-     * @hash   266842115
+     * @hash   270024947
      */
     MCAPI void _runTestAt(class MinecraftGameTest &, class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum class Rotation>) const;
 

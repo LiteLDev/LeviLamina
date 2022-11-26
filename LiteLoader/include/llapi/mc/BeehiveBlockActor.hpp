@@ -45,116 +45,106 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1965835729
+     * @hash   -1742890815
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -761986368
+     * @hash   -175745616
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1275264858
+     * @hash   1861459482
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
+     * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
      * @symbol ??0BeehiveBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   2101930781
+     * @hash   -1607841331
      */
     MCAPI BeehiveBlockActor(class BlockPos const &);
     /**
      * @symbol ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
-     * @hash   1351275687
+     * @hash   1937408807
      */
     MCAPI void disableBeeSpawn();
     /**
      * @symbol ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   -874419325
+     * @hash   -288286205
      */
     MCAPI void evictAll(class BlockSource &, bool);
     /**
      * @symbol ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   412201316
+     * @hash   998442068
      */
     MCAPI void saveUserData(class CompoundTag &) const;
     /**
      * @symbol ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
-     * @hash   1114558067
+     * @hash   1700752691
      */
     MCAPI bool tryAdmit(class Actor &);
     /**
      * @symbol ?MAX_OCCUPANCY@BeehiveBlockActor@@2IB
-     * @hash   1848798625
+     * @hash   -1660332063
      */
     MCAPI static unsigned int const MAX_OCCUPANCY;
-    /**
-     * @symbol ?TypeId@BeehiveBlockActor@@2W4BlockActorType@@B
-     * @hash   -415098761
-     */
-    MCAPI static enum class BlockActorType const TypeId;
-    /**
-     * @symbol ?TypeString@BeehiveBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1157092377
-     */
-    MCAPI static std::string const TypeString;
 
 //private:
     /**
      * @symbol ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
-     * @hash   1172499325
+     * @hash   1758263421
      */
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
     /**
      * @symbol ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
-     * @hash   -2080880551
+     * @hash   -1494808935
      */
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     /**
      * @symbol ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   12935554
+     * @hash   599053298
      */
     MCAPI void _trySpawnBees(class BlockSource &);
 

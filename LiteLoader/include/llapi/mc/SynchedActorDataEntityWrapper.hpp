@@ -34,114 +34,114 @@ public:
 public:
     /**
      * @symbol ??0SynchedActorDataEntityWrapper@@QEAA@AEAVEntityContext@@@Z
-     * @hash   -843905608
+     * @hash   -789981976
      */
     MCAPI SynchedActorDataEntityWrapper(class EntityContext &);
     /**
      * @symbol ?getCompoundTag@SynchedActorDataEntityWrapper@@QEBAAEBVCompoundTag@@G@Z
-     * @hash   -29420716
+     * @hash   25348596
      */
     MCAPI class CompoundTag const & getCompoundTag(unsigned short) const;
     /**
      * @symbol ?getFloat@SynchedActorDataEntityWrapper@@QEBAMG@Z
-     * @hash   1924236536
+     * @hash   1980066792
      */
     MCAPI float getFloat(unsigned short) const;
     /**
      * @symbol ?getInt@SynchedActorDataEntityWrapper@@QEBAHG@Z
-     * @hash   752887984
+     * @hash   808718240
      */
     MCAPI int getInt(unsigned short) const;
     /**
      * @symbol ?getInt64@SynchedActorDataEntityWrapper@@QEBA_JG@Z
-     * @hash   -173282543
+     * @hash   -117452287
      */
     MCAPI __int64 getInt64(unsigned short) const;
     /**
      * @symbol ?getInt8@SynchedActorDataEntityWrapper@@QEBACG@Z
-     * @hash   -893904680
+     * @hash   -838074424
      */
     MCAPI signed char getInt8(unsigned short) const;
     /**
      * @symbol ?getPosition@SynchedActorDataEntityWrapper@@QEBA?AVBlockPos@@G@Z
-     * @hash   -577727720
+     * @hash   -521897464
      */
     MCAPI class BlockPos getPosition(unsigned short) const;
     /**
      * @symbol ?getShort@SynchedActorDataEntityWrapper@@QEBAFG@Z
-     * @hash   2096240721
+     * @hash   -2142896319
      */
     MCAPI short getShort(unsigned short) const;
     /**
      * @symbol ?getStatusFlag@SynchedActorDataEntityWrapper@@QEBA_NW4ActorFlags@@@Z
-     * @hash   -702393023
+     * @hash   -646562767
      */
     MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @symbol ?getString@SynchedActorDataEntityWrapper@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   1709508796
+     * @hash   1765339052
      */
     MCAPI std::string const & getString(unsigned short) const;
     /**
      * @symbol ?getVec3@SynchedActorDataEntityWrapper@@QEBA?AVVec3@@G@Z
-     * @hash   -968015700
+     * @hash   -912185444
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
     /**
      * @symbol ?hasData@SynchedActorDataEntityWrapper@@QEBA_NG@Z
-     * @hash   -182222140
+     * @hash   -126391884
      */
     MCAPI bool hasData(unsigned short) const;
     /**
      * @symbol ?isDirty@SynchedActorDataEntityWrapper@@QEBA_NXZ
-     * @hash   -1010484972
+     * @hash   -954654716
      */
     MCAPI bool isDirty() const;
     /**
      * @symbol ?markDirty@SynchedActorDataEntityWrapper@@QEAAXG@Z
-     * @hash   817410635
+     * @hash   873240891
      */
     MCAPI void markDirty(unsigned short);
     /**
      * @symbol ?packAll@SynchedActorDataEntityWrapper@@QEBA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@XZ
-     * @hash   -296282481
+     * @hash   -240452225
      */
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
     /**
      * @symbol ?packDirty@SynchedActorDataEntityWrapper@@QEAA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@XZ
-     * @hash   -1154035793
+     * @hash   -1098205537
      */
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
     /**
      * @symbol ?reader@SynchedActorDataEntityWrapper@@QEBA?AVSynchedActorDataReader@@XZ
-     * @hash   -2098200232
+     * @hash   -2042369976
      */
     MCAPI class SynchedActorDataReader reader() const;
     /**
      * @symbol ?setStatusFlag@SynchedActorDataEntityWrapper@@QEAAXW4ActorFlags@@_N@Z
-     * @hash   -777777607
+     * @hash   -721947351
      */
     MCAPI void setStatusFlag(enum class ActorFlags, bool);
     /**
      * @symbol ?writer@SynchedActorDataEntityWrapper@@QEAA?AVSynchedActorDataWriter@@XZ
-     * @hash   782580858
+     * @hash   838411114
      */
     MCAPI class SynchedActorDataWriter writer();
     /**
      * @symbol ??1SynchedActorDataEntityWrapper@@QEAA@XZ
-     * @hash   1575314057
+     * @hash   1664279593
      */
     MCAPI ~SynchedActorDataEntityWrapper();
 
 //private:
     /**
      * @symbol ?_get@SynchedActorDataEntityWrapper@@AEAA?AV?$not_null@PEAVSynchedActorData@@@gsl@@XZ
-     * @hash   -792424849
+     * @hash   -737655537
      */
     MCAPI class gsl::not_null<class SynchedActorData *> _get();
     /**
      * @symbol ?_get@SynchedActorDataEntityWrapper@@AEBA?AV?$not_null@PEBVSynchedActorData@@@gsl@@XZ
-     * @hash   1156105489
+     * @hash   1210874801
      */
     MCAPI class gsl::not_null<class SynchedActorData const *> _get() const;
 

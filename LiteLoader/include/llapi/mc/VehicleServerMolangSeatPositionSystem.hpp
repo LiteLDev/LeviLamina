@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?_tickActor@VehicleServerMolangSeatPositionSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAVActorOwnerComponent@@AEAUPositionPassengerRequestComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
-     * @hash   -1171914395
+     * @hash   -1196439115
      */
     MCAPI static void _tickActor(class StrictEntityContext &, struct PassengerComponent const &, class ActorOwnerComponent &, struct PositionPassengerRequestComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
     /**
      * @symbol ?createSideBySideSystem@VehicleServerMolangSeatPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1036027094
+     * @hash   1011502374
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideSystem();
     /**
      * @symbol ?createSystem@VehicleServerMolangSeatPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   17810566
+     * @hash   -6714154
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

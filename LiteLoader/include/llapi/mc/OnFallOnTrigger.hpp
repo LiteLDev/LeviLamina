@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0OnFallOnTrigger@@QEAA@$$QEAV0@@Z
-     * @hash   -1364884537
+     * @hash   -599359625
      */
     MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
     /**
      * @symbol ??1OnFallOnTrigger@@QEAA@XZ
-     * @hash   -1516255765
+     * @hash   -750730853
      */
     MCAPI ~OnFallOnTrigger();
 

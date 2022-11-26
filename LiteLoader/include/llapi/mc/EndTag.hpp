@@ -44,43 +44,43 @@ public:
     /**
      * @vftbl  2
      * @symbol ?write@EndTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   -453720688
+     * @hash   -364755152
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@EndTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   341473647
+     * @hash   430439183
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@EndTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1874778375
+     * @hash   1999508487
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@EndTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   -2125191188
+     * @hash   -2028445396
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@EndTag@@UEBA_NAEBVTag@@@Z
-     * @hash   -1753833307
+     * @hash   -1629041691
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@EndTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   23179705
+     * @hash   147971321
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@EndTag@@UEBA_KXZ
-     * @hash   -544154785
+     * @hash   -450883969
      */
     virtual unsigned __int64 hash() const;
 

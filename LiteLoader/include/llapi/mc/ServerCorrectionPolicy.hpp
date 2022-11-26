@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
-     * @hash   -1835991075
+     * @hash   -1911625619
      */
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
 

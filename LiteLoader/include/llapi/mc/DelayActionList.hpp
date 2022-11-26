@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0DelayActionList@@QEAA@XZ
-     * @hash   -688197869
+     * @hash   -605828637
      */
     MCAPI DelayActionList();
     /**
      * @symbol ?queueRequestOrExecuteAction@DelayActionList@@QEAA?AW4QueueRequestResult@@VDelayRequest@@AEAVServerLevel@@AEAVDimension@@_K_N@Z
-     * @hash   1984510618
+     * @hash   2066879850
      */
     MCAPI enum class QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
     /**
      * @symbol ?tick@DelayActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@_K@Z
-     * @hash   -560578219
+     * @hash   -478208987
      */
     MCAPI void tick(class ServerLevel &, class Dimension &, unsigned __int64);
 

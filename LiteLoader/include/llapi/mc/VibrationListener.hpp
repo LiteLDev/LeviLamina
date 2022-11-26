@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleGameEvent@VibrationListener@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
-     * @hash   432372829
+     * @hash   484543597
      */
     virtual void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     /**
      * @vftbl  2
      * @symbol ?getPositionSource@VibrationListener@@UEBAAEBVPositionSource@GameEvents@@XZ
-     * @hash   1857075946
+     * @hash   1982052074
      */
     virtual class GameEvents::PositionSource const & getPositionSource() const;
     /**
      * @vftbl  3
      * @symbol ?getRange@VibrationListener@@UEBAIXZ
-     * @hash   -2092413385
+     * @hash   -2040242617
      */
     virtual unsigned int getRange() const;
     /**
      * @symbol ??0VibrationListener@@QEAA@$$QEAV?$unique_ptr@VVibrationListenerConfig@@U?$default_delete@VVibrationListenerConfig@@@std@@@std@@VPositionSource@GameEvents@@IW4OwnerType@0@@Z
-     * @hash   -701462504
+     * @hash   -649276360
      */
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum class VibrationListener::OwnerType);
     /**
      * @symbol ?getLatestReceivedVibration@VibrationListener@@QEBAAEBVGameEvent@@XZ
-     * @hash   1360387960
+     * @hash   1405070616
      */
     MCAPI class GameEvent const & getLatestReceivedVibration() const;
     /**
      * @symbol ?load@VibrationListener@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1768919391
+     * @hash   1821090159
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@VibrationListener@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1463788402
+     * @hash   -1411617634
      */
     MCAPI void save(class CompoundTag &) const;
     /**
      * @symbol ?tick@VibrationListener@@QEAAXAEAVBlockSource@@@Z
-     * @hash   467554236
+     * @hash   519725004
      */
     MCAPI void tick(class BlockSource &);
 
 //private:
     /**
      * @symbol ?_requestVibrationParticle@VibrationListener@@AEAAXAEAVBlockSource@@AEBVBlockPos@@M@Z
-     * @hash   660939350
+     * @hash   713125494
      */
     MCAPI void _requestVibrationParticle(class BlockSource &, class BlockPos const &, float);
     /**
      * @symbol ?_isVibrationOccluded@VibrationListener@@CA_NAEAVBlockSource@@AEBVVec3@@1@Z
-     * @hash   -1517326096
+     * @hash   -1465139952
      */
     MCAPI static bool _isVibrationOccluded(class BlockSource &, class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?_shouldIgnoreVibration@VibrationListener@@CA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-     * @hash   378735044
+     * @hash   430905812
      */
     MCAPI static bool _shouldIgnoreVibration(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 

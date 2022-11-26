@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?getInt@SynchedActorDataReader@@QEBAHG@Z
-     * @hash   -2096136640
+     * @hash   -2040306384
      */
     MCAPI int getInt(unsigned short) const;
     /**
      * @symbol ?getPosition@SynchedActorDataReader@@QEBA?AVBlockPos@@G@Z
-     * @hash   570698168
+     * @hash   626528424
      */
     MCAPI class BlockPos getPosition(unsigned short) const;
     /**
      * @symbol ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
-     * @hash   867158763
+     * @hash   922989019
      */
     MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @symbol ?getVec3@SynchedActorDataReader@@QEBA?AVVec3@@G@Z
-     * @hash   -1169959048
+     * @hash   -1114128792
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
 

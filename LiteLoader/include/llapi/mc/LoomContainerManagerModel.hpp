@@ -39,68 +39,68 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@LoomContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -1502945357
+     * @hash   -1347217229
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@LoomContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   -1115465444
+     * @hash   -959737316
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@LoomContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   1385554341
+     * @hash   1541282469
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@LoomContainerManagerModel@@UEAAXHH@Z
-     * @hash   944717495
+     * @hash   1033683031
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ
-     * @hash   939021741
+     * @hash   1027987277
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@LoomContainerManagerModel@@UEAA_NM@Z
-     * @hash   1508094259
+     * @hash   1663822387
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@LoomContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   -297544022
+     * @hash   -141815894
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0LoomContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   461119609
+     * @hash   616847737
      */
     MCAPI LoomContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?BANNER_SLOT@LoomContainerManagerModel@@2HB
-     * @hash   338767363
+     * @hash   1092591139
      */
     MCAPI static int const BANNER_SLOT;
     /**
      * @symbol ?DYE_SLOT@LoomContainerManagerModel@@2HB
-     * @hash   -64297827
+     * @hash   689525949
      */
     MCAPI static int const DYE_SLOT;
     /**
      * @symbol ?MATERIAL_SLOT@LoomContainerManagerModel@@2HB
-     * @hash   -129716459
+     * @hash   624107317
      */
     MCAPI static int const MATERIAL_SLOT;
     /**
      * @symbol ?RESULT_SLOT@LoomContainerManagerModel@@2HB
-     * @hash   -421020947
+     * @hash   332802829
      */
     MCAPI static int const RESULT_SLOT;
 

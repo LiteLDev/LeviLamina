@@ -33,207 +33,207 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@LeashFenceKnotActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -813520940
+     * @hash   -755983948
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1980290471
      */
     virtual ~LeashFenceKnotActor();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@LeashFenceKnotActor@@UEAAXXZ
-     * @hash   680773010
+     * @hash   738310002
      */
     virtual void remove();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  43
+     * @vftbl  45
      * @symbol ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   1435154934
+     * @hash   1492691926
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
-     * @hash   -536521411
+     * @hash   -286830547
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  94
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  97
      * @symbol ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
-     * @hash   -332460331
+     * @hash   -235960555
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  111
+     * @hash   1450118353
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  113
+     * @hash   1459422755
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_113();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  237
+     * @vftbl  222
+     * @hash   -1937633230
+     */
+    virtual void __unk_vfn_222();
+    /**
+     * @vftbl  223
+     * @hash   -1919411709
+     */
+    virtual void __unk_vfn_223();
+    /**
+     * @vftbl  235
      * @symbol ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   -1293180990
+     * @hash   -1235643998
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2137960830
+     * @hash   -2068040930
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   -18700257
+     * @hash   70265279
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  282
+     * @vftbl  280
      * @symbol ?_onSizeUpdated@LeashFenceKnotActor@@EEAAXXZ
-     * @hash   1246937628
+     * @hash   1304474620
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  284
+     * @vftbl  282
      * @symbol ?setDir@LeashFenceKnotActor@@UEAAXH@Z
-     * @hash   -968061610
+     * @hash   -879096074
      */
     virtual void setDir(int);
     /**
-     * @vftbl  285
+     * @vftbl  283
      * @symbol ?getWidth@LeashFenceKnotActor@@UEBAHXZ
-     * @hash   -1638502734
+     * @hash   -1680771358
      */
     virtual int getWidth() const;
     /**
-     * @vftbl  286
+     * @vftbl  284
      * @symbol ?getHeight@LeashFenceKnotActor@@UEBAHXZ
-     * @hash   -2118771105
+     * @hash   2133927567
      */
     virtual int getHeight() const;
     /**
-     * @vftbl  287
+     * @vftbl  285
      * @symbol ?dropItem@LeashFenceKnotActor@@UEAAXXZ
-     * @hash   -848564304
+     * @hash   -759598768
      */
     virtual void dropItem();
     /**
-     * @vftbl  289
+     * @vftbl  287
      * @symbol ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
-     * @hash   -490295097
+     * @hash   -432758105
      */
     virtual bool wouldSurvive(class BlockSource &);
     /**
      * @symbol ??0LeashFenceKnotActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -307016411
+     * @hash   -249479419
      */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
-     * @hash   -598378624
+     * @hash   -540841632
      */
     MCAPI int numberofAnimalsAttached();
 

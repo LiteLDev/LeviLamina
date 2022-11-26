@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1TradeTier@@QEAA@XZ
-     * @hash   1565922434
+     * @hash   1628087602
      */
     MCAPI ~TradeTier();
 

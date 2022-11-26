@@ -28,22 +28,22 @@ public:
 public:
     /**
      * @symbol ??0ScriptPackPermissions@@QEAA@XZ
-     * @hash   -79019924
+     * @hash   96081964
      */
     MCAPI ScriptPackPermissions();
     /**
      * @symbol ??0ScriptPackPermissions@@QEAA@AEBV0@@Z
-     * @hash   -1308282095
+     * @hash   -1219162799
      */
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     /**
      * @symbol ?isModuleAllowed@ScriptPackPermissions@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1041902655
+     * @hash   -866400991
      */
     MCAPI bool isModuleAllowed(std::string const &) const;
     /**
      * @symbol ??4ScriptPackPermissions@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -2145708748
+     * @hash   2079282372
      */
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 
@@ -52,7 +52,7 @@ public:
 private:
     /**
      * @symbol ?sWildCardModuleName@ScriptPackPermissions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   216670583
+     * @hash   1068462543
      */
     MCAPI static std::string const sWildCardModuleName;
 

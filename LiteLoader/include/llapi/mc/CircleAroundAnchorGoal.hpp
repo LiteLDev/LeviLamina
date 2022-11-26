@@ -38,63 +38,63 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@CircleAroundAnchorGoal@@UEAA_NXZ
-     * @hash   1159205179
+     * @hash   1319192459
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@CircleAroundAnchorGoal@@UEAAXXZ
-     * @hash   -68353628
+     * @hash   91633652
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@CircleAroundAnchorGoal@@UEAAXXZ
-     * @hash   -1765927132
+     * @hash   -1605939852
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@CircleAroundAnchorGoal@@UEAAXXZ
-     * @hash   1801386735
+     * @hash   1961374015
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@CircleAroundAnchorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   630749877
+     * @hash   790752533
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0CircleAroundAnchorGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -590803560
+     * @hash   -430800904
      */
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_calculateHeightOffset@CircleAroundAnchorGoal@@AEBAMXZ
-     * @hash   1731593135
+     * @hash   1891595791
      */
     MCAPI float _calculateHeightOffset() const;
     /**
      * @symbol ?_selectNext@CircleAroundAnchorGoal@@AEAAXXZ
-     * @hash   -994243131
+     * @hash   -834240475
      */
     MCAPI void _selectNext();
     /**
      * @symbol ?_setAnchorAboveTarget@CircleAroundAnchorGoal@@AEAAXXZ
-     * @hash   -1661050803
+     * @hash   -1501048147
      */
     MCAPI void _setAnchorAboveTarget();
 

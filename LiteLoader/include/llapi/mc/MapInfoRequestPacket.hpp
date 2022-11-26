@@ -38,50 +38,50 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MapInfoRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1071493665
+     * @hash   1029624817
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MapInfoRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   406937806
+     * @hash   365068958
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MapInfoRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -263892263
+     * @hash   -305761111
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MapInfoRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1006471399
+     * @hash   -1048340247
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MapInfoRequestPacket@@QEAA@XZ
-     * @hash   -697278791
+     * @hash   -739147639
      */
     MCAPI MapInfoRequestPacket();
     /**
      * @symbol ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@AEAVMapItemSavedData@@@Z
-     * @hash   -1784652945
+     * @hash   -1826521793
      */
     MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
     /**
      * @symbol ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@@Z
-     * @hash   626806134
+     * @hash   584937286
      */
     MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     /**
      * @symbol ?getMapId@MapInfoRequestPacket@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -1938010072
+     * @hash   -1979878920
      */
     MCAPI struct ActorUniqueID getMapId() const;
     /**
      * @symbol ?replaceServerPixels@MapInfoRequestPacket@@QEBA_NAEAVMapItemSavedData@@@Z
-     * @hash   1485915247
+     * @hash   1444046399
      */
     MCAPI bool replaceServerPixels(class MapItemSavedData &) const;
 

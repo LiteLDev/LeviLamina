@@ -38,52 +38,52 @@ public:
     virtual ~StompEggGoal();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StompEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1015130025
+     * @hash   -852790217
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  18
      * @symbol ?_createBreakProgressParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -634719637
+     * @hash   -472379829
      */
     virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  19
      * @symbol ?_createDestroyParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   2084171785
+     * @hash   -2048455703
      */
     virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  20
      * @symbol ?_playBreakProgressSound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -889067279
+     * @hash   -726727471
      */
     virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  21
      * @symbol ?_playDestroySound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -2075656225
+     * @hash   -1913316417
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
     /**
      * @symbol ??0StompEggGoal@@QEAA@AEAVMob@@MHHMH@Z
-     * @hash   -1553213491
+     * @hash   -1390919811
      */
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
 

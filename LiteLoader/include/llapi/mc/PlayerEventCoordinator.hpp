@@ -33,67 +33,67 @@ public:
 public:
     /**
      * @symbol ?registerPlayerGameplayHandler@PlayerEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VPlayerGameplayHandler@@U?$default_delete@VPlayerGameplayHandler@@@std@@@std@@@Z
-     * @hash   894944842
+     * @hash   1069462442
      */
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
     /**
      * @symbol ?sendEvent@PlayerEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$PlayerGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     * @hash   -2009385301
+     * @hash   -1957829573
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum class CoordinatorResult>> const &);
     /**
      * @symbol ?sendEvent@PlayerEventCoordinator@@QEAAXAEBV?$EventRef@U?$PlayerGameplayEvent@X@@@@@Z
-     * @hash   -1846323318
+     * @hash   -1794767590
      */
     MCAPI void sendEvent(class EventRef<struct PlayerGameplayEvent<void>> const &);
     /**
      * @symbol ?sendPlayerAwardAchievement@PlayerEventCoordinator@@QEAAXAEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
-     * @hash   204034857
+     * @hash   255590585
      */
     MCAPI void sendPlayerAwardAchievement(class Player &, enum class MinecraftEventing::AchievementIds);
     /**
      * @symbol ?sendPlayerCaravanChanged@PlayerEventCoordinator@@QEAAXAEBVActor@@H@Z
-     * @hash   1206601197
+     * @hash   1258156925
      */
     MCAPI void sendPlayerCaravanChanged(class Actor const &, int);
     /**
      * @symbol ?sendPlayerDestroyedBlock@PlayerEventCoordinator@@QEAAXAEAVPlayer@@HHH@Z
-     * @hash   -142819899
+     * @hash   -91264171
      */
     MCAPI void sendPlayerDestroyedBlock(class Player &, int, int, int);
     /**
      * @symbol ?sendPlayerItemEquipped@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@H@Z
-     * @hash   -1285131478
+     * @hash   -1233575750
      */
     MCAPI void sendPlayerItemEquipped(class Player &, class ItemInstance const &, int);
     /**
      * @symbol ?sendPlayerItemPlaceInteraction@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@@Z
-     * @hash   670402441
+     * @hash   721958169
      */
     MCAPI void sendPlayerItemPlaceInteraction(class Player &, class ItemInstance const &);
     /**
      * @symbol ?sendPlayerItemUseInteraction@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@@Z
-     * @hash   1495915529
+     * @hash   1547471257
      */
     MCAPI void sendPlayerItemUseInteraction(class Player &, class ItemInstance const &);
     /**
      * @symbol ?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   -144044396
+     * @hash   -92488668
      */
     MCAPI void sendPlayerMove(class Player &);
     /**
      * @symbol ?sendPlayerSlide@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   -1243772858
+     * @hash   -1192217130
      */
     MCAPI void sendPlayerSlide(class Player &);
     /**
      * @symbol ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   59535746
+     * @hash   111091474
      */
     MCAPI void sendPlayerTeleported(class Player &);
     /**
      * @symbol ?sendPlayerTick@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-     * @hash   -169166196
+     * @hash   -117610468
      */
     MCAPI void sendPlayerTick(class Player &);
 

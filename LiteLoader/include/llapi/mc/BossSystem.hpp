@@ -37,13 +37,13 @@ public:
     virtual ~BossSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BossSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -149968740
+     * @hash   8019660
      */
     virtual void tick(class EntityRegistry &);
 

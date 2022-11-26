@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@MobEffectChangeDescription@@UEBAPEBDXZ
-     * @hash   -1358705975
+     * @hash   -1343360727
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@MobEffectChangeDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -474990726
+     * @hash   -459645478
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@MobEffectChangeDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   1725714004
+     * @hash   1741059252
      */
     virtual void serializeData(class Json::Value &) const;
 

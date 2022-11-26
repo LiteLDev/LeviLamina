@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0DefinitionModifier@@QEAA@AEBU0@@Z
-     * @hash   716117439
+     * @hash   796672303
      */
     MCAPI DefinitionModifier(struct DefinitionModifier const &);
     /**
      * @symbol ??1DefinitionModifier@@QEAA@XZ
-     * @hash   1021795908
+     * @hash   1102350772
      */
     MCAPI ~DefinitionModifier();
 

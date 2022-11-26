@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?getValue@FloatRange@@QEBAMAEAVRandom@@@Z
-     * @hash   1156009411
+     * @hash   1200430675
      */
     MCAPI float getValue(class Random &) const;
     /**
      * @symbol ?parseJson@FloatRange@@QEAA_NAEBVValue@Json@@MM@Z
-     * @hash   -1060758479
+     * @hash   -1016337215
      */
     MCAPI bool parseJson(class Json::Value const &, float, float);
 

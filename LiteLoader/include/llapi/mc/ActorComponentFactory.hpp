@@ -34,7 +34,7 @@ public:
 //private:
     /**
      * @symbol ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
-     * @hash   -2070739830
+     * @hash   -2047014662
      */
     MCAPI void _initialize(class Experiments const &);
 

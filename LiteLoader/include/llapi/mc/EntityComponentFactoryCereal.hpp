@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0EntityComponentFactoryCereal@@QEAA@XZ
-     * @hash   -1037836660
+     * @hash   -992339076
      */
     MCAPI EntityComponentFactoryCereal();
     /**
      * @symbol ?serializeComponentDefinitions@EntityComponentFactoryCereal@@QEBAXAEAVDefinitionInstanceGroup@@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@AEBVSemVersion@@@Z
-     * @hash   96951787
+     * @hash   614584827
      */
     MCAPI void serializeComponentDefinitions(class DefinitionInstanceGroup &, class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>> const &, class SemVersion const &) const;
     /**
      * @symbol ?tryGetDefinitionSerializer@EntityComponentFactoryCereal@@QEBAPEAVICerealDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   390009048
+     * @hash   907826600
      */
     MCAPI class ICerealDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
 

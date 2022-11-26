@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MolangMemberAccessor@@QEAA@XZ
-     * @hash   -2139778853
+     * @hash   -2048783685
      */
     MCAPI ~MolangMemberAccessor();
 

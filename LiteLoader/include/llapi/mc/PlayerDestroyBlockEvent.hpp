@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerDestroyBlockEvent@@QEAA@XZ
-     * @hash   1299215554
+     * @hash   1389165154
      */
     MCAPI ~PlayerDestroyBlockEvent();
 

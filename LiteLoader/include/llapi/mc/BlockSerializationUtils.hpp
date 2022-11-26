@@ -31,27 +31,27 @@ enum class NBTState;
 #undef AFTER_EXTRA
     /**
      * @symbol ?BLOCK_REPLACE_DATA_MAP@BlockSerializationUtils@@3V?$unordered_map@VHashedString@@V?$function@$$A6AXHAEAVCompoundTag@@@Z@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$function@$$A6AXHAEAVCompoundTag@@@Z@std@@@std@@@3@@std@@A
-     * @hash   1811486756
+     * @hash   -1839379900
      */
     MCAPI extern class std::unordered_map<class HashedString, class std::function<void (int, class CompoundTag &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<void (int, class CompoundTag &)>>>> BLOCK_REPLACE_DATA_MAP;
     /**
      * @symbol ?clearBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
-     * @hash   422360280
+     * @hash   1137790184
      */
     MCAPI void clearBlockReplaceDataMap();
     /**
      * @symbol ?clearNBTToBlockCache@BlockSerializationUtils@@YAXXZ
-     * @hash   1152482722
+     * @hash   1867912626
      */
     MCAPI void clearNBTToBlockCache();
     /**
      * @symbol ?initBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
-     * @hash   1073616164
+     * @hash   1789046068
      */
     MCAPI void initBlockReplaceDataMap();
     /**
      * @symbol ?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z
-     * @hash   1263444928
+     * @hash   1978874832
      */
     MCAPI struct std::pair<enum class BlockSerializationUtils::NBTState, class Block const *> tryGetBlockFromNBT(class CompoundTag const &, struct BlockSerializationUtils::NbtToBlockCache *);
 

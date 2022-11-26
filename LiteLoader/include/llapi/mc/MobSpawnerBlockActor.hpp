@@ -39,87 +39,87 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@MobSpawnerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -476054585
+     * @hash   281259543
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@MobSpawnerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1115291546
+     * @hash   -357977418
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1176821008
+     * @hash   1934135136
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?onRemoved@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1171477876
+     * @hash   -414163748
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@MobSpawnerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -637884327
+     * @hash   -482202327
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@MobSpawnerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   72581305
+     * @hash   828173321
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0MobSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   17302707
+     * @hash   774632211
      */
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     /**
      * @symbol ?getSpawner@MobSpawnerBlockActor@@QEAAAEAVBaseMobSpawner@@XZ
-     * @hash   -603149362
+     * @hash   -671188162
      */
     MCAPI class BaseMobSpawner & getSpawner();
 

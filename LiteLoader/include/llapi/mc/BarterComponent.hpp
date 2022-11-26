@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?onBarterItemPickedUp@BarterComponent@@QEAAXAEBVActor@@UActorUniqueID@@F@Z
-     * @hash   637024345
+     * @hash   624323769
      */
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     /**
      * @symbol ?stopBarter@BarterComponent@@QEAAXXZ
-     * @hash   2051549187
+     * @hash   2038848611
      */
     MCAPI void stopBarter();
 

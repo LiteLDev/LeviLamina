@@ -39,89 +39,89 @@ public:
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@OceanMonumentPiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -2128849070
+     * @hash   -2039883534
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  7
      * @symbol ?getWorldX@OceanMonumentPiece@@UEAAHHH@Z
-     * @hash   -160892305
+     * @hash   10980623
      */
     virtual int getWorldX(int, int);
     /**
      * @vftbl  8
      * @symbol ?getWorldZ@OceanMonumentPiece@@UEAAHHH@Z
-     * @hash   -1704431247
+     * @hash   -1532558319
      */
     virtual int getWorldZ(int, int);
     /**
      * @vftbl  12
      * @symbol ?addHardcodedSpawnAreas@OceanMonumentPiece@@UEBAXAEAVLevelChunk@@@Z
-     * @hash   -124444554
+     * @hash   47428374
      */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
     /**
      * @symbol ??0OceanMonumentPiece@@QEAA@AEAHAEAVBoundingBox@@@Z
-     * @hash   93515584
+     * @hash   265388512
      */
     MCAPI OceanMonumentPiece(int &, class BoundingBox &);
 
 //protected:
     /**
      * @symbol ??0OceanMonumentPiece@@IEAA@HAEAHV?$shared_ptr@VRoomDefinition@@@std@@HHH@Z
-     * @hash   -1750898632
+     * @hash   -1579025704
      */
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);
     /**
      * @symbol ?chunkIntersects@OceanMonumentPiece@@IEAA_NAEBVBoundingBox@@HHHH@Z
-     * @hash   1057396893
+     * @hash   1229269821
      */
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     /**
      * @symbol ?generateDefaultFloor@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HH_N@Z
-     * @hash   -819789796
+     * @hash   -647916868
      */
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     /**
      * @symbol ?spawnElder@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
-     * @hash   1598143832
+     * @hash   1770032136
      */
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
 
 protected:
     /**
      * @symbol ?mGridroomLeftWingConnectIndex@OceanMonumentPiece@@1HA
-     * @hash   60443480
+     * @hash   902448616
      */
     MCAPI static int mGridroomLeftWingConnectIndex;
     /**
      * @symbol ?mGridroomRightWingConnectIndex@OceanMonumentPiece@@1HA
-     * @hash   1435002613
+     * @hash   -2017959547
      */
     MCAPI static int mGridroomRightWingConnectIndex;
     /**
      * @symbol ?mGridroomSourceIndex@OceanMonumentPiece@@1HA
-     * @hash   -1161886991
+     * @hash   -319881855
      */
     MCAPI static int mGridroomSourceIndex;
     /**
      * @symbol ?mGridroomTopConnectIndex@OceanMonumentPiece@@1HA
-     * @hash   -2032489157
+     * @hash   -1190484021
      */
     MCAPI static int mGridroomTopConnectIndex;
     /**
      * @symbol ?mLeftWingIndex@OceanMonumentPiece@@1HB
-     * @hash   -2042092068
+     * @hash   -1286699940
      */
     MCAPI static int const mLeftWingIndex;
     /**
      * @symbol ?mPenthouseIndex@OceanMonumentPiece@@1HB
-     * @hash   -383600181
+     * @hash   371791947
      */
     MCAPI static int const mPenthouseIndex;
     /**
      * @symbol ?mRightWingIndex@OceanMonumentPiece@@1HB
-     * @hash   1466721797
+     * @hash   -2072853371
      */
     MCAPI static int const mRightWingIndex;
 

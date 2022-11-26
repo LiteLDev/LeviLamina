@@ -38,23 +38,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?forBlockPos@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
-     * @hash   869351482
+     * @hash   912035258
      */
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /**
      * @vftbl  2
      * @symbol ?forString@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   332744186
+     * @hash   375427962
      */
     virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
     /**
      * @symbol ??0SimplePositionalRandomFactory@@QEAA@_J@Z
-     * @hash   -1450592825
+     * @hash   -1407909049
      */
     MCAPI SimplePositionalRandomFactory(__int64);
     /**
      * @symbol ?forBlockPosImpl@SimplePositionalRandomFactory@@QEBA?AVSimpleRandom@@AEBVBlockPos@@@Z
-     * @hash   1828471431
+     * @hash   1871155207
      */
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
 

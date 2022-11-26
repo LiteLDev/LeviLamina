@@ -30,24 +30,24 @@ public:
 public:
     /**
      * @symbol ?createFlagResetSystem@LiquidSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -355405104
+     * @hash   -289995600
      */
     MCAPI static struct TickingSystemWithInfo createFlagResetSystem();
     /**
      * @symbol ?createSensingSideBySideSystem@LiquidSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -151279680
+     * @hash   -85870176
      */
     MCAPI static struct TickingSystemWithInfo createSensingSideBySideSystem();
     /**
      * @symbol ?createSensingSystem@LiquidSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   882631728
+     * @hash   948041232
      */
     MCAPI static struct TickingSystemWithInfo createSensingSystem();
 
 //private:
     /**
      * @symbol ?_sensingSideBySide@LiquidSensingSystem@@CAXAEBVStrictEntityContext@@AEBUSideBySideLiquidSensingComponent@@AEAUUpdateWaterStateRequestComponent@@@Z
-     * @hash   1660295452
+     * @hash   1725704956
      */
     MCAPI static void _sensingSideBySide(class StrictEntityContext const &, struct SideBySideLiquidSensingComponent const &, struct UpdateWaterStateRequestComponent &);
 

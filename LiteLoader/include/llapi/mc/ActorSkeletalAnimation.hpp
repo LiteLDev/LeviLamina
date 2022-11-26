@@ -32,102 +32,102 @@ public:
 public:
     /**
      * @symbol ??0ActorSkeletalAnimation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -197366167
+     * @hash   -173179719
      */
     MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
     /**
      * @symbol ?addActorEvent@ActorSkeletalAnimation@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-     * @hash   408635486
+     * @hash   432868062
      */
     MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addBoneAnimation@ActorSkeletalAnimation@@QEAAAEAVBoneAnimation@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1270297673
+     * @hash   1294530249
      */
     MCAPI class BoneAnimation & addBoneAnimation(std::string const &);
     /**
      * @symbol ?addParticleEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorParticleEffectEvent@@M@Z
-     * @hash   185634001
+     * @hash   209866577
      */
     MCAPI class ActorParticleEffectEvent & addParticleEffectEvent(float);
     /**
      * @symbol ?addSoundEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorSoundEffectEvent@@M@Z
-     * @hash   -2035683263
+     * @hash   -2011450687
      */
     MCAPI class ActorSoundEffectEvent & addSoundEffectEvent(float);
     /**
      * @symbol ?calculateAnimationLength@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   143381477
+     * @hash   167614053
      */
     MCAPI void calculateAnimationLength();
     /**
      * @symbol ?getBoneAnimations@ActorSkeletalAnimation@@QEAAAEAV?$vector@VBoneAnimation@@V?$allocator@VBoneAnimation@@@std@@@std@@XZ
-     * @hash   293238356
+     * @hash   317363300
      */
     MCAPI std::vector<class BoneAnimation> & getBoneAnimations();
     /**
      * @symbol ?initPrecomputedInterpolation@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   727850101
+     * @hash   751975045
      */
     MCAPI void initPrecomputedInterpolation();
     /**
      * @symbol ?removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   -1464167597
+     * @hash   -1440042653
      */
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
     /**
      * @symbol ?setAnimTimeUpdate@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -493197266
+     * @hash   -469072322
      */
     MCAPI void setAnimTimeUpdate(class ExpressionNode const &);
     /**
      * @symbol ?setAnimationLength@ActorSkeletalAnimation@@QEAAXM@Z
-     * @hash   -1596799660
+     * @hash   -1572674716
      */
     MCAPI void setAnimationLength(float);
     /**
      * @symbol ?setBlendWeight@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -1370654924
+     * @hash   -1346529980
      */
     MCAPI void setBlendWeight(class ExpressionNode const &);
     /**
      * @symbol ?setLoopDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   116363992
+     * @hash   140442808
      */
     MCAPI void setLoopDelay(class ExpressionNode const &);
     /**
      * @symbol ?setLoopMode@ActorSkeletalAnimation@@QEAAXW4AnimationLoopMode@@@Z
-     * @hash   130665218
+     * @hash   154744034
      */
     MCAPI void setLoopMode(enum class AnimationLoopMode);
     /**
      * @symbol ?setShouldOverridePreviousAnimation@ActorSkeletalAnimation@@QEAAX_N@Z
-     * @hash   1724697730
+     * @hash   1768104178
      */
     MCAPI void setShouldOverridePreviousAnimation(bool);
     /**
      * @symbol ?setStartDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -339100326
+     * @hash   -315021510
      */
     MCAPI void setStartDelay(class ExpressionNode const &);
     /**
      * @symbol ?sortEvents@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   1006983077
+     * @hash   1031061893
      */
     MCAPI void sortEvents();
     /**
      * @symbol ?sortParticleEffectEvents@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   -1618500587
+     * @hash   -1594421771
      */
     MCAPI void sortParticleEffectEvents();
     /**
      * @symbol ?sortSoundEffectEvents@ActorSkeletalAnimation@@QEAAXXZ
-     * @hash   -1812715789
+     * @hash   -1788636973
      */
     MCAPI void sortSoundEffectEvents();
     /**
      * @symbol ??1ActorSkeletalAnimation@@QEAA@XZ
-     * @hash   1834060800
+     * @hash   1830355184
      */
     MCAPI ~ActorSkeletalAnimation();
 

@@ -39,34 +39,39 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@CoralCrustFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   591529338
+     * @hash   747426602
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
+     * @symbol ?_canOverwrite@CoralCrustFeature@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -210216752
+     */
+    MCAPI bool _canOverwrite(class BlockSource const &, class BlockPos const &) const;
+    /**
      * @symbol ?_getCropOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
-     * @hash   33998272
+     * @hash   189818656
      */
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     /**
      * @symbol ?_getOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
-     * @hash   388234032
+     * @hash   544054416
      */
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
     /**
      * @symbol ?_placeCoral@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAV?$vector@U?$pair@VBlockPos@@E@std@@V?$allocator@U?$pair@VBlockPos@@E@std@@@2@@6@H@Z
-     * @hash   -1373309604
+     * @hash   -1217489220
      */
     MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;
     /**
      * @symbol ?_placeCoralBase@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVLegacyStructureTemplate@@AEAVLegacyStructureSettings@@@Z
-     * @hash   -808534469
+     * @hash   -652714085
      */
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
     /**
      * @symbol ?_placeSideDecorations@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@E@Z
-     * @hash   -1900671039
+     * @hash   -1744835279
      */
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
 

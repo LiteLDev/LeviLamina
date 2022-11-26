@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@LookAtActorGoal@@UEAA_NXZ
-     * @hash   -27402822
+     * @hash   133137994
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@LookAtActorGoal@@UEAA_NXZ
-     * @hash   713305304
+     * @hash   873861496
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@LookAtActorGoal@@UEAAXXZ
-     * @hash   1876426243
+     * @hash   2036967059
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@LookAtActorGoal@@UEAAXXZ
-     * @hash   -1552653597
+     * @hash   -1392097405
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@LookAtActorGoal@@UEAAXXZ
-     * @hash   -1690550498
+     * @hash   -1530009682
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@LookAtActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1523561046
+     * @hash   1684117238
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0LookAtActorGoal@@QEAA@AEAVMob@@MMHHHH@Z
-     * @hash   1657112183
+     * @hash   1817668375
      */
     MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
 
 //private:
     /**
      * @symbol ?_withinFieldOfView@LookAtActorGoal@@AEAA_NAEAVActor@@@Z
-     * @hash   -1835534805
+     * @hash   -1674978613
      */
     MCAPI bool _withinFieldOfView(class Actor &);
 

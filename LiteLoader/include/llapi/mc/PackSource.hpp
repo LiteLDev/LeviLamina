@@ -34,28 +34,28 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
     /**
      * @symbol ?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ
-     * @hash   -311366382
+     * @hash   -214620590
      */
     MCVAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackType@PackSource@@UEBA?AW4PackType@@XZ
-     * @hash   1526749010
+     * @hash   1623494802
      */
     MCVAPI enum class PackType getPackType() const;
     /**
      * @symbol ??1PackSource@@UEAA@XZ
-     * @hash   1417812724
+     * @hash   1480100900
      */
     MCVAPI ~PackSource();
 #endif
     /**
      * @symbol ?fetchPack@PackSource@@QEAAPEAVPack@@AEBUPackIdVersion@@@Z
-     * @hash   1761905930
+     * @hash   1824117226
      */
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     /**
      * @symbol ?resolveUpgradeDependencies@PackSource@@QEAAXAEAVPack@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -272712995
+     * @hash   -210532451
      */
     MCAPI void resolveUpgradeDependencies(class Pack &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??1EntitySystemsInfo@@QEAA@XZ
-     * @hash   178993883
+     * @hash   317931419
      */
     MCAPI ~EntitySystemsInfo();
     /**
      * @symbol ?bindType@EntitySystemsInfo@@SAXXZ
-     * @hash   -1648269057
+     * @hash   -1719828961
      */
     MCAPI static void bindType();
 

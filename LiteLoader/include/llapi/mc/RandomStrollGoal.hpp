@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomStrollGoal@@UEAA_NXZ
-     * @hash   579795580
+     * @hash   624324476
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomStrollGoal@@UEAA_NXZ
-     * @hash   1023778506
+     * @hash   1068307402
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@RandomBreachingGoal@@UEAA_NXZ
-     * @hash   -1847347292
+     * @hash   -1750847516
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@RandomStrollGoal@@UEAAXXZ
-     * @hash   121155221
+     * @hash   165684117
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RandomStrollGoal@@UEAAXXZ
-     * @hash   -1735593323
+     * @hash   -1691064427
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RandomStrollGoal@@UEAAXXZ
-     * @hash   -514890176
+     * @hash   -470361280
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -253581628
+     * @hash   -209052732
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
-     * @hash   -704788055
+     * @hash   -660259159
      */
     virtual bool _setWantedPosition();
     /**
      * @symbol ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
-     * @hash   1288161339
+     * @hash   1332690235
      */
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 

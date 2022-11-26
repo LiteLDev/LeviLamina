@@ -33,19 +33,19 @@ public:
 public:
     /**
      * @symbol ?getAllSettings@PackSettings@@QEBAAEBVValue@Json@@XZ
-     * @hash   -2025826722
+     * @hash   -1932555906
      */
     MCAPI class Json::Value const & getAllSettings() const;
     /**
      * @symbol ?loadPackSettings@PackSettings@@QEAAXAEBUPackIdVersion@@AEBVValue@Json@@@Z
-     * @hash   -68962757
+     * @hash   -26340485
      */
     MCAPI void loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 //private:
     /**
      * @symbol ?_initPackSetting@PackSettings@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   596324476
+     * @hash   638946748
      */
     MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 

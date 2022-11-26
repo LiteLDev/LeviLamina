@@ -40,18 +40,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@SetItemLoreFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   310001423
+     * @hash   782090751
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@SetItemLoreFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1283306724
+     * @hash   1755396052
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@SetItemLoreFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   191078815
+     * @hash   663168143
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 

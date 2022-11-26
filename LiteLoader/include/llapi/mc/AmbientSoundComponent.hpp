@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?setAmbientSoundRemainingTime@AmbientSoundComponent@@SAXAEAVActor@@M@Z
-     * @hash   793967751
+     * @hash   722623111
      */
     MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
 

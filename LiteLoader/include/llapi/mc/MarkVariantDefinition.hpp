@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@MarkVariantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UMarkVariantDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1808975884
+     * @hash   -1726637404
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct MarkVariantDefinition>> &);
 

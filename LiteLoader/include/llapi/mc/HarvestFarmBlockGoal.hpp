@@ -39,70 +39,70 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@HarvestFarmBlockGoal@@UEAA_NXZ
-     * @hash   -1710069521
+     * @hash   -1549267313
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@HarvestFarmBlockGoal@@UEAA_NXZ
-     * @hash   1684043037
+     * @hash   1844845245
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@HarvestFarmBlockGoal@@UEAAXXZ
-     * @hash   -237998184
+     * @hash   -77380488
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@HarvestFarmBlockGoal@@UEAAXXZ
-     * @hash   -1709132024
+     * @hash   -1548514328
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@HarvestFarmBlockGoal@@UEAAXXZ
-     * @hash   -9348029
+     * @hash   151715571
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@HarvestFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -182761583
+     * @hash   -21836367
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@HarvestFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1482509530
+     * @hash   1643573130
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1005778164
+     * @hash   -844852948
      */
     MCAPI HarvestFarmBlockGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -299974310
+     * @hash   -138910710
      */
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 

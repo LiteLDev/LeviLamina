@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ServerSettingsRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   2028552045
+     * @hash   1954608861
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ServerSettingsRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1368005146
+     * @hash   1294061962
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ServerSettingsRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1447261123
+     * @hash   -1358295587
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ServerSettingsRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   963635693
+     * @hash   1065547821
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ServerSettingsRequestPacket@@QEAA@XZ
-     * @hash   134579661
+     * @hash   60636477
      */
     MCAPI ServerSettingsRequestPacket();
 

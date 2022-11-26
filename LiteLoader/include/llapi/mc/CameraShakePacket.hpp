@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CameraShakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1353439547
+     * @hash   -1427844011
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CameraShakePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   249397618
+     * @hash   174993154
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CameraShakePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   364270101
+     * @hash   289865637
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CameraShakePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1834334373
+     * @hash   1759929909
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CameraShakePacket@@QEAA@XZ
-     * @hash   -1237183691
+     * @hash   -1311588155
      */
     MCAPI CameraShakePacket();
     /**
      * @symbol ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
-     * @hash   -2023712792
+     * @hash   -2098117256
      */
     MCAPI CameraShakePacket(enum class CameraShakeAction);
     /**
      * @symbol ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
-     * @hash   1286216944
+     * @hash   1211812480
      */
     MCAPI CameraShakePacket(float, float, enum class CameraShakeType);
 

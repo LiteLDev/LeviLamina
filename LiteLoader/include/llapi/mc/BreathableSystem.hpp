@@ -37,13 +37,13 @@ public:
     virtual ~BreathableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BreathableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1829055177
+     * @hash   1939900761
      */
     virtual void tick(class EntityRegistry &);
 

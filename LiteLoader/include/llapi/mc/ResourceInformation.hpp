@@ -33,37 +33,37 @@ public:
 public:
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@W4ResourceType@0@00@Z
-     * @hash   -1790004526
+     * @hash   -1278568014
      */
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, enum class ResourceInformation::ResourceType, std::string const &, std::string const &);
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@000@Z
-     * @hash   1091071221
+     * @hash   1602507733
      */
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV0@@Z
-     * @hash   356573105
+     * @hash   -13178159
      */
     MCAPI ResourceInformation(class ResourceInformation const &);
     /**
      * @symbol ?satisfies@ResourceInformation@@QEBA_NAEBUPackIdVersion@@@Z
-     * @hash   -1488521205
+     * @hash   -977253829
      */
     MCAPI bool satisfies(struct PackIdVersion const &) const;
     /**
      * @symbol ??1ResourceInformation@@QEAA@XZ
-     * @hash   2014651562
+     * @hash   1644869546
      */
     MCAPI ~ResourceInformation();
     /**
      * @symbol ?ResourceTypeFromString@ResourceInformation@@SA?AW4ResourceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   940545044
+     * @hash   1451966180
      */
     MCAPI static enum class ResourceInformation::ResourceType ResourceTypeFromString(std::string const &);
     /**
      * @symbol ?StringFromResourceType@ResourceInformation@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResourceType@1@@Z
-     * @hash   1742221968
+     * @hash   -2041324192
      */
     MCAPI static std::string const & StringFromResourceType(enum class ResourceInformation::ResourceType);
 

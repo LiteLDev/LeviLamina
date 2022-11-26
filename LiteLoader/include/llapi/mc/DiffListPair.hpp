@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0DiffListPair@@QEAA@_NPEAVActorDefinitionDescriptor@@@Z
-     * @hash   2055093310
+     * @hash   2079402766
      */
     MCAPI DiffListPair(bool, class ActorDefinitionDescriptor *);
 

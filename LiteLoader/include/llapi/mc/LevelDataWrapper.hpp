@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0LevelDataWrapper@@QEAA@XZ
-     * @hash   1083789665
+     * @hash   1643921969
      */
     MCAPI LevelDataWrapper();
     /**
      * @symbol ??DLevelDataWrapper@@QEBAAEBVLevelData@@XZ
-     * @hash   266718572
+     * @hash   826850876
      */
     MCAPI class LevelData const & operator*() const;
     /**
      * @symbol ??DLevelDataWrapper@@QEAAAEAVLevelData@@XZ
-     * @hash   -928053198
+     * @hash   -367920894
      */
     MCAPI class LevelData & operator*();
     /**
      * @symbol ??CLevelDataWrapper@@QEBAPEBVLevelData@@XZ
-     * @hash   -1428488313
+     * @hash   -868356009
      */
     MCAPI class LevelData const * operator->() const;
     /**
      * @symbol ??CLevelDataWrapper@@QEAAPEAVLevelData@@XZ
-     * @hash   1671707213
+     * @hash   -2063127779
      */
     MCAPI class LevelData * operator->();
     /**
      * @symbol ?setLevelData@LevelDataWrapper@@QEAAXAEAVLevelData@@@Z
-     * @hash   997186264
+     * @hash   1754300504
      */
     MCAPI void setLevelData(class LevelData &);
     /**
      * @symbol ??1LevelDataWrapper@@QEAA@XZ
-     * @hash   235313503
+     * @hash   959200207
      */
     MCAPI ~LevelDataWrapper();
 

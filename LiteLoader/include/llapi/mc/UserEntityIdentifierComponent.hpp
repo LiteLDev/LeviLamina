@@ -40,32 +40,32 @@ public:
 public:
     /**
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@6@@Z
-     * @hash   -1124203240
+     * @hash   -999011848
      */
     MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
     /**
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -632648251
+     * @hash   -451073067
      */
     MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent &&);
     /**
      * @symbol ?isPrimaryClient@UserEntityIdentifierComponent@@QEBA_NXZ
-     * @hash   1615599714
+     * @hash   1740744978
      */
     MCAPI bool isPrimaryClient() const;
     /**
      * @symbol ??4UserEntityIdentifierComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1903429536
+     * @hash   2085004720
      */
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
     /**
      * @symbol ??1UserEntityIdentifierComponent@@QEAA@XZ
-     * @hash   -1413735246
+     * @hash   -1232160062
      */
     MCAPI ~UserEntityIdentifierComponent();
     /**
      * @symbol ?tryGetFromEntity@UserEntityIdentifierComponent@@SAPEAV1@AEAVEntityContext@@@Z
-     * @hash   1987425395
+     * @hash   2112570659
      */
     MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
 

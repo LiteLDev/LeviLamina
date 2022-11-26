@@ -38,17 +38,17 @@ public:
 public:
     /**
      * @symbol ?addFrame@ActorHistory@@QEAA_NAEAUIActorMovementProxy@@_KAEAVEntityRegistry@@@Z
-     * @hash   -1680737640
+     * @hash   -1628566872
      */
     MCAPI bool addFrame(struct IActorMovementProxy &, unsigned __int64, class EntityRegistry &);
     /**
      * @symbol ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEAUIActorMovementProxy@@AEAVEntityRegistry@@@Z
-     * @hash   -1050917110
+     * @hash   -998746342
      */
     MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy &, class EntityRegistry &) const;
     /**
      * @symbol ??1ActorHistory@@QEAA@XZ
-     * @hash   889999481
+     * @hash   942170249
      */
     MCAPI ~ActorHistory();
 

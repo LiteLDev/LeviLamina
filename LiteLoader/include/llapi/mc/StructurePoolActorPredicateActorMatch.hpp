@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?test@StructurePoolActorPredicateActorMatch@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   378061313
+     * @hash   1133361185
      */
     virtual bool test(std::string const &) const;
     /**
      * @symbol ??0StructurePoolActorPredicateActorMatch@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -97427178
+     * @hash   657872694
      */
     MCAPI StructurePoolActorPredicateActorMatch(std::string);
 

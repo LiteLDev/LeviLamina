@@ -37,59 +37,59 @@ public:
     virtual ~InternalTaskGroup();
     /**
      * @vftbl  1
-     * @hash   -975730255
+     * @hash   -926250287
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -974806734
+     * @hash   -925326766
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1015370653
+     * @hash   -504380045
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1014447132
+     * @hash   -503456524
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ
-     * @hash   799855719
+     * @hash   893126535
      */
     virtual enum class TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     /**
      * @symbol ?processCoroutines@InternalTaskGroup@@UEAAXXZ
-     * @hash   1193072468
+     * @hash   1282038004
      */
     MCVAPI void processCoroutines();
     /**
      * @symbol ?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-     * @hash   -1737399289
+     * @hash   -1226408681
      */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
     /**
      * @symbol ?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-     * @hash   -243509964
+     * @hash   267480644
      */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     /**
      * @symbol ?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-     * @hash   -2044589613
+     * @hash   -1995109645
      */
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-     * @hash   1490284452
+     * @hash   1579249988
      */
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     /**
      * @symbol ?taskRegister@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     * @hash   -918336892
+     * @hash   -868856924
      */
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
 #endif

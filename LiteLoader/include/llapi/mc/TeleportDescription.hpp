@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TeleportDescription@@UEBAPEBDXZ
-     * @hash   2104536035
+     * @hash   2029716419
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   570248416
+     * @hash   495428800
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@TeleportDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   684626618
+     * @hash   609760874
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0TeleportDescription@@QEAA@XZ
-     * @hash   1753569293
+     * @hash   1678749677
      */
     MCAPI TeleportDescription();
 

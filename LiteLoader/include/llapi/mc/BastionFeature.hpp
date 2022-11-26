@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  2
      * @symbol ?shouldPostProcessMobs@BastionFeature@@UEBA_NXZ
-     * @hash   -331758967
+     * @hash   -235259191
      */
     virtual bool shouldPostProcessMobs() const;
     /**
      * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@BastionFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-     * @hash   -738859591
+     * @hash   -567570951
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
      * @vftbl  5
      * @symbol ?isFeatureChunk@BastionFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-     * @hash   -1932597254
+     * @hash   -1761308614
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
      * @vftbl  6
      * @symbol ?createStructureStart@BastionFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -1835290025
+     * @hash   -1664001385
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ??0BastionFeature@@QEAA@IAEBVBaseGameVersion@@@Z
-     * @hash   -31822328
+     * @hash   139466312
      */
     MCAPI BastionFeature(unsigned int, class BaseGameVersion const &);
 

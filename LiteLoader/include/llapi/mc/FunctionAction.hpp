@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     * @hash   2132987609
+     * @hash   -1600740311
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
      * @vftbl  2
      * @symbol ?serialize@FunctionAction@@UEAAXAEAVCompoundTag@@@Z
-     * @hash   1181092244
+     * @hash   1742346996
      */
     virtual void serialize(class CompoundTag &);
     /**
      * @vftbl  3
      * @symbol ??8FunctionAction@@UEBA_NAEAVIRequestAction@@@Z
-     * @hash   -2110708357
+     * @hash   -1549284469
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
      * @symbol ??0FunctionAction@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@@Z
-     * @hash   -19493197
+     * @hash   541930691
      */
     MCAPI FunctionAction(std::string const &, std::unique_ptr<class CommandOrigin>);
     /**
      * @symbol ?isValidTag@FunctionAction@@SA_NAEBVCompoundTag@@@Z
-     * @hash   213459695
+     * @hash   774714447
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
     /**
      * @symbol ?load@FunctionAction@@SA?AV?$unique_ptr@VFunctionAction@@U?$default_delete@VFunctionAction@@@std@@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@@Z
-     * @hash   269694698
+     * @hash   830949450
      */
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const &, class ICommandOriginLoader &);
 
 //private:
     /**
      * @symbol ?_printOriginInvalidError@FunctionAction@@AEAAXAEAVServerLevel@@@Z
-     * @hash   1458621480
+     * @hash   2020029992
      */
     MCAPI void _printOriginInvalidError(class ServerLevel &);
     /**
      * @symbol ?_printOutput@FunctionAction@@AEAAXAEAVServerLevel@@H@Z
-     * @hash   -776241167
+     * @hash   -214848031
      */
     MCAPI void _printOutput(class ServerLevel &, int);
 

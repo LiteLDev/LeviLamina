@@ -38,25 +38,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ
-     * @hash   691495134
+     * @hash   793407262
      */
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
     /**
      * @vftbl  2
      * @symbol ?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ
-     * @hash   2076329179
+     * @hash   -2116725989
      */
     virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /**
      * @vftbl  3
      * @symbol ?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ
-     * @hash   312575409
+     * @hash   414487537
      */
     virtual void registerMolangQueries();
     /**
      * @vftbl  4
      * @symbol ?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z
-     * @hash   850242601
+     * @hash   952154729
      */
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 

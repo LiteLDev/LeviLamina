@@ -37,71 +37,71 @@ public:
 public:
     /**
      * @symbol ??0GeneticsComponent@@QEAA@XZ
-     * @hash   1912486383
+     * @hash   1841249375
      */
     MCAPI GeneticsComponent();
     /**
      * @symbol ?addAdditionalSaveData@GeneticsComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1343496552
+     * @hash   1272259544
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?buildDebugInfo@GeneticsComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   101531404
+     * @hash   30248268
      */
     MCAPI void buildDebugInfo(std::string &) const;
     /**
      * @symbol ?findGene@GeneticsComponent@@QEAAPEAUGene@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1332677794
+     * @hash   1261394658
      */
     MCAPI struct GeneticsComponent::Gene * findGene(std::string const &);
     /**
      * @symbol ?fireGeneEvents@GeneticsComponent@@QEBAXAEAVActor@@@Z
-     * @hash   -836294524
+     * @hash   -907577660
      */
     MCAPI void fireGeneEvents(class Actor &) const;
     /**
      * @symbol ?initializeGenesFromParents@GeneticsComponent@@QEAAXAEAVActor@@00@Z
-     * @hash   353741914
+     * @hash   282458778
      */
     MCAPI void initializeGenesFromParents(class Actor &, class Actor &, class Actor &);
     /**
      * @symbol ??4GeneticsComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1137505894
+     * @hash   -993109878
      */
     MCAPI class GeneticsComponent & operator=(class GeneticsComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@GeneticsComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -489520202
+     * @hash   -560803338
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?INVALID_ALLELE_VALUE@GeneticsComponent@@2HB
-     * @hash   -590757555
+     * @hash   167579077
      */
     MCAPI static int const INVALID_ALLELE_VALUE;
 
 //private:
     /**
      * @symbol ?_crossParentGenes@GeneticsComponent@@AEAA?AUGene@1@AEBUGeneDefinition@@AEAU21@1@Z
-     * @hash   827799006
+     * @hash   756561998
      */
     MCAPI struct GeneticsComponent::Gene _crossParentGenes(struct GeneDefinition const &, struct GeneticsComponent::Gene &, struct GeneticsComponent::Gene &);
 
 private:
     /**
      * @symbol ?GENE_ARRAY@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1738489105
+     * @hash   -290200601
      */
     MCAPI static std::string const GENE_ARRAY;
     /**
      * @symbol ?HIDDEN_ALLELE@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -911950510
+     * @hash   536337994
      */
     MCAPI static std::string const HIDDEN_ALLELE;
     /**
      * @symbol ?MAIN_ALLELE@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1718819869
+     * @hash   -270531365
      */
     MCAPI static std::string const MAIN_ALLELE;
 

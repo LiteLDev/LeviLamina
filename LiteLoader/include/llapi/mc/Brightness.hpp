@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0Brightness@@QEAA@AEBU0@@Z
-     * @hash   389657455
+     * @hash   545354831
      */
     MCAPI Brightness(struct Brightness const &);
     /**
      * @symbol ??0Brightness@@QEAA@AEBE@Z
-     * @hash   340462890
+     * @hash   496160266
      */
     MCAPI Brightness(unsigned char const &);
     /**
      * @symbol ??4Brightness@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -4062442
+     * @hash   151634934
      */
     MCAPI struct Brightness & operator=(struct Brightness const &);
     /**
      * @symbol ??4Brightness@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1067490662
+     * @hash   1223188038
      */
     MCAPI struct Brightness & operator=(struct Brightness &&);
     /**
      * @symbol ?INVALID@Brightness@@2U1@B
-     * @hash   -1186847924
+     * @hash   -325084628
      */
     MCAPI static struct Brightness const INVALID;
     /**
      * @symbol ?MAX@Brightness@@2U1@B
-     * @hash   -474964117
+     * @hash   386799179
      */
     MCAPI static struct Brightness const MAX;
     /**
      * @symbol ?MIN@Brightness@@2U1@B
-     * @hash   -2040471957
+     * @hash   -1397801285
      */
     MCAPI static struct Brightness const MIN;
 

@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@GlideMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-     * @hash   793939982
+     * @hash   847463838
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
      * @vftbl  2
      * @symbol ?tick@GlideMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   -1287030561
+     * @hash   -1233506705
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0GlideMoveControl@@QEAA@XZ
-     * @hash   1252580723
+     * @hash   1306104579
      */
     MCAPI GlideMoveControl();
 

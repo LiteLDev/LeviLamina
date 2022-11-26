@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@OfferFlowerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -12736136
+     * @hash   39465384
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doOfferFlowerTickSystem@OfferFlowerTickSystem@@CAXAEBVStrictEntityContext@@AEAUOfferFlowerTickComponent@@@Z
-     * @hash   302592064
+     * @hash   354793584
      */
     MCAPI static void _doOfferFlowerTickSystem(class StrictEntityContext const &, struct OfferFlowerTickComponent &);
 

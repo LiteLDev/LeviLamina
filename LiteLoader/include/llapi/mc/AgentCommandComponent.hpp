@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0AgentCommandComponent@@QEAA@XZ
-     * @hash   -1921813485
+     * @hash   -1732196653
      */
     MCAPI AgentCommandComponent();
     /**
      * @symbol ?addCommand@AgentCommandComponent@@QEAA_NV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
-     * @hash   41252021
+     * @hash   20709685
      */
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     /**
      * @symbol ?getCurrentCommand@AgentCommandComponent@@QEBAAEBV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@XZ
-     * @hash   -1674893550
+     * @hash   -1581622734
      */
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     /**
      * @symbol ?initFromDefinition@AgentCommandComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -755595694
+     * @hash   -776138030
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?setCurrentCommand@AgentCommandComponent@@QEAAXV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
-     * @hash   -492076352
+     * @hash   -512603312
      */
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
 

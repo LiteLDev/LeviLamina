@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ActorAnimationController@@QEAA@AEBVHashedString@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1668475124
+     * @hash   1752366580
      */
     MCAPI ActorAnimationController(class HashedString const &, class SemVersion const &, std::string const &);
     /**
      * @symbol ?addState@ActorAnimationController@@QEAAAEAV?$shared_ptr@VActorAnimationControllerState@@@std@@AEBVHashedString@@@Z
-     * @hash   -347468850
+     * @hash   -263577394
      */
     MCAPI class std::shared_ptr<class ActorAnimationControllerState> & addState(class HashedString const &);
     /**
      * @symbol ?findStateIndex@ActorAnimationController@@QEBA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N_K@Z
-     * @hash   1465591877
+     * @hash   1549483333
      */
     MCAPI unsigned __int64 findStateIndex(std::string const &, bool, unsigned __int64) const;
     /**
      * @symbol ?resolveTransitionStateIndices@ActorAnimationController@@QEAAXXZ
-     * @hash   1396749875
+     * @hash   1480641331
      */
     MCAPI void resolveTransitionStateIndices();
 

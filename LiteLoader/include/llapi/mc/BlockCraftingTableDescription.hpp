@@ -36,51 +36,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockCraftingTableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1153947356
+     * @hash   1622838476
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   313410024
+     * @hash   782301144
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockCraftingTableDescription@@UEBA_NXZ
-     * @hash   -1302132220
+     * @hash   -1205632444
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockCraftingTableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -643940522
+     * @hash   -175464554
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockCraftingTableDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   960475740
+     * @hash   1429366860
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockCraftingTableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1147873051
+     * @hash   -1363339861
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCraftingTableDescription@@SAXXZ
-     * @hash   2110776047
+     * @hash   -1716806977
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockCraftingTableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   886389826
+     * @hash   1355357826
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

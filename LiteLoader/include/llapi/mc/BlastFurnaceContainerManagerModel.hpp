@@ -38,7 +38,7 @@ public:
     virtual ~BlastFurnaceContainerManagerModel();
     /**
      * @symbol ??0BlastFurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -688663832
+     * @hash   -532904952
      */
     MCAPI BlastFurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

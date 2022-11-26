@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@RemovePassengersWithoutSeatSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1670388480
+     * @hash   1697434864
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?removePassengersWithoutSeat@RemovePassengersWithoutSeatSystem@@SAXAEAVStrictEntityContext@@AEBVRideableComponent@@AEAUVehicleComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@URemovePassengersComponent@@@@@Z
-     * @hash   -51428730
+     * @hash   -24428474
      */
     MCAPI static void removePassengersWithoutSeat(class StrictEntityContext &, class RideableComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RemovePassengersComponent> &);
 

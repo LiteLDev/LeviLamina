@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@PointedDripstoneFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -1124814152
+     * @hash   -967425416
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 

@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     * @hash   628059188
+     * @hash   1149474724
      */
     virtual bool readTransform(std::vector<unsigned char> &) const;
     /**
      * @vftbl  2
      * @symbol ?writeTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     * @hash   1737223453
+     * @hash   1833969245
      */
     virtual bool writeTransform(std::vector<unsigned char> &) const;
     /**
      * @symbol ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   1261737033
+     * @hash   1783214073
      */
     MCAPI EncryptedZipTransforms(class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 

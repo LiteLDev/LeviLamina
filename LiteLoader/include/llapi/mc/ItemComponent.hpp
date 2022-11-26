@@ -37,66 +37,66 @@ public:
     virtual ~ItemComponent();
     /**
      * @vftbl  1
-     * @hash   -1362796495
+     * @hash   -1266296719
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?writeSettings@ItemComponent@@UEAAXXZ
-     * @hash   -389169633
+     * @hash   -300204097
      */
     virtual void writeSettings();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1352814588
+     * @hash   -1256068796
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1579437175
+     * @hash   -1423847431
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
     /**
      * @symbol ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
-     * @hash   1639346840
+     * @hash   1735846616
      */
     MCVAPI bool checkComponentDataForContentErrors() const;
     /**
      * @symbol ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1980504359
+     * @hash   2077004135
      */
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?isNetworkComponent@ItemComponent@@UEBA_NXZ
-     * @hash   1383328967
+     * @hash   1480074759
      */
     MCVAPI bool isNetworkComponent() const;
     /**
      * @symbol ?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   -735704743
+     * @hash   -638958951
      */
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
 #endif
     /**
      * @symbol ??0ItemComponent@@QEAA@PEAVComponentItem@@@Z
-     * @hash   -710214256
+     * @hash   -166149872
      */
     MCAPI ItemComponent(class ComponentItem *);
     /**
      * @symbol ?bindItemComponentType@ItemComponent@@SAXXZ
-     * @hash   -413161471
+     * @hash   130902913
      */
     MCAPI static void bindItemComponentType();
     /**
      * @symbol ?registerVersionUpgrades@ItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -600001380
+     * @hash   -511035844
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -39,50 +39,50 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@SwimEnchant@@UEBAHH@Z
-     * @hash   -677128166
+     * @hash   -108554438
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@SwimEnchant@@UEBAHH@Z
-     * @hash   -1884791032
+     * @hash   -1316217304
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@SwimEnchant@@UEBAHXZ
-     * @hash   1895697424
+     * @hash   -1830696144
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@SwimEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   929818299
+     * @hash   1498392027
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0SwimEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   -59238808
+     * @hash   509334920
      */
     MCAPI SwimEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
@@ -91,7 +91,7 @@ public:
 private:
     /**
      * @symbol ?VALID_ENCHANTMENTS@SwimEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
-     * @hash   2026752280
+     * @hash   -1623084184
      */
     MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 

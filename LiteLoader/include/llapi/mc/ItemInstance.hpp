@@ -32,74 +32,74 @@ public:
     /**
      * @vftbl  1
      * @symbol ?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z
-     * @hash   -396843620
+     * @hash   350722124
      */
     virtual void reinit(class Item const &, int, int);
     /**
      * @vftbl  2
      * @symbol ?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z
-     * @hash   1083802702
+     * @hash   1831368446
      */
     virtual void reinit(class BlockLegacy const &, int);
     /**
      * @vftbl  3
      * @symbol ?reinit@ItemInstance@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@HH@Z
-     * @hash   -1991436559
+     * @hash   -1243870815
      */
     virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
     /**
      * @symbol ??0ItemInstance@@QEAA@XZ
-     * @hash   1365214228
+     * @hash   2112779972
      */
     MCAPI ItemInstance();
     /**
      * @symbol ??0ItemInstance@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HHPEBVCompoundTag@@@Z
-     * @hash   -506219241
+     * @hash   241346503
      */
     MCAPI ItemInstance(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemInstance@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-     * @hash   -1915575031
+     * @hash   -1168009287
      */
     MCAPI ItemInstance(class Item const &, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z
-     * @hash   1999628302
+     * @hash   -1547773250
      */
     MCAPI ItemInstance(class BlockLegacy const &, int);
     /**
      * @symbol ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-     * @hash   1099753360
+     * @hash   1847319104
      */
     MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemInstance@@QEAA@AEBV0@@Z
-     * @hash   -1320236383
+     * @hash   -572670639
      */
     MCAPI ItemInstance(class ItemInstance const &);
     /**
      * @symbol ??0ItemInstance@@QEAA@AEBVItemStackBase@@@Z
-     * @hash   1715745909
+     * @hash   -1831655643
      */
     MCAPI ItemInstance(class ItemStackBase const &);
     /**
      * @symbol ?clone@ItemInstance@@QEBA?AV1@XZ
-     * @hash   -1586075497
+     * @hash   -838509753
      */
     MCAPI class ItemInstance clone() const;
     /**
      * @symbol ??4ItemInstance@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1082894692
+     * @hash   1830460436
      */
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
     /**
      * @symbol ?EMPTY_ITEM@ItemInstance@@2V1@B
-     * @hash   165184762
+     * @hash   802842858
      */
     MCAPI static class ItemInstance const EMPTY_ITEM;
     /**
      * @symbol ?fromTag@ItemInstance@@SA?AV1@AEBVCompoundTag@@@Z
-     * @hash   -1514751996
+     * @hash   -767186252
      */
     MCAPI static class ItemInstance fromTag(class CompoundTag const &);
 

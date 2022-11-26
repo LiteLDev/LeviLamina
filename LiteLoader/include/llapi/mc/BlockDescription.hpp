@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??4BlockDescription@@QEAAAEAU0@AEBU0@@Z
-     * @hash   644191382
+     * @hash   1354024422
      */
     MCAPI struct BlockDescription & operator=(struct BlockDescription const &);
     /**
      * @symbol ??1BlockDescription@@QEAA@XZ
-     * @hash   638904329
+     * @hash   1348752745
      */
     MCAPI ~BlockDescription();
 

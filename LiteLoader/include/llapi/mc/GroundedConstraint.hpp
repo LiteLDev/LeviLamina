@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isSatisfied@GroundedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
-     * @hash   -304244468
+     * @hash   242064812
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
      * @symbol ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
-     * @hash   366788336
+     * @hash   913097616
      */
     MCAPI GroundedConstraint(class StructureTemplate &);
 

@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?registerForUpdates@ChunkBuildOrderPolicyBase@@UEAAIXZ
-     * @hash   -463400325
+     * @hash   -370129509
      */
     virtual unsigned int registerForUpdates();
 

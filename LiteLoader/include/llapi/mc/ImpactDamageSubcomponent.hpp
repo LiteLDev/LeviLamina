@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@ImpactDamageSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   1404749878
+     * @hash   1329069206
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@ImpactDamageSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   720409059
+     * @hash   644774515
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@ImpactDamageSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -413798864
+     * @hash   -489602544
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@ImpactDamageSubcomponent@@UEAAPEBDXZ
-     * @hash   -421085525
+     * @hash   -496858453
      */
     virtual char const * getName();
     /**
      * @symbol ??0ImpactDamageSubcomponent@@QEAA@XZ
-     * @hash   -1182412930
+     * @hash   -1258431874
      */
     MCAPI ImpactDamageSubcomponent();
 

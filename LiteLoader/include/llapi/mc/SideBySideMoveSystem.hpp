@@ -29,13 +29,8 @@ public:
 
 public:
     /**
-     * @symbol ?createFetchCollisionShapesSystem@SideBySideMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   494651132
-     */
-    MCAPI static struct TickingSystemWithInfo createFetchCollisionShapesSystem();
-    /**
      * @symbol ?createSystem@SideBySideMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1685742920
+     * @hash   -1677070856
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

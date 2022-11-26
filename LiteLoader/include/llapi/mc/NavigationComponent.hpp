@@ -30,327 +30,327 @@ public:
 public:
     /**
      * @symbol ??0NavigationComponent@@QEAA@XZ
-     * @hash   562556901
+     * @hash   542229829
      */
     MCAPI NavigationComponent();
     /**
      * @symbol ??0NavigationComponent@@QEAA@AEBV0@@Z
-     * @hash   1460884817
+     * @hash   1440557745
      */
     MCAPI NavigationComponent(class NavigationComponent const &);
     /**
      * @symbol ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEAVActor@@@Z
-     * @hash   1317497148
+     * @hash   1297170076
      */
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
     /**
      * @symbol ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEBVVec3@@@Z
-     * @hash   -1493043200
+     * @hash   -1513370272
      */
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Vec3 const &);
     /**
      * @symbol ?getAvoidDamageBlocks@NavigationComponent@@QEBA_NXZ
-     * @hash   478592878
+     * @hash   626064094
      */
     MCAPI bool getAvoidDamageBlocks() const;
     /**
      * @symbol ?getAvoidPortals@NavigationComponent@@QEBA_NXZ
-     * @hash   -780933828
+     * @hash   -633416484
      */
     MCAPI bool getAvoidPortals() const;
     /**
      * @symbol ?getAvoidSun@NavigationComponent@@QEBA_NXZ
-     * @hash   -538600340
+     * @hash   -558927412
      */
     MCAPI bool getAvoidSun() const;
     /**
      * @symbol ?getAvoidWater@NavigationComponent@@QEBA_NXZ
-     * @hash   1132750300
+     * @hash   1112330972
      */
     MCAPI bool getAvoidWater() const;
     /**
      * @symbol ?getBlocksToAvoid@NavigationComponent@@QEBAAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
-     * @hash   -1320590158
+     * @hash   -1341117118
      */
     MCAPI std::vector<class BlockDescriptor> const & getBlocksToAvoid() const;
     /**
      * @symbol ?getCanBreach@NavigationComponent@@QEBA_NXZ
-     * @hash   -57383266
+     * @hash   -77710338
      */
     MCAPI bool getCanBreach() const;
     /**
      * @symbol ?getCanFloat@NavigationComponent@@QEBA_NXZ
-     * @hash   1170368364
+     * @hash   1150041292
      */
     MCAPI bool getCanFloat() const;
     /**
      * @symbol ?getCanJump@NavigationComponent@@QEBA_NXZ
-     * @hash   1781809374
+     * @hash   1761482302
      */
     MCAPI bool getCanJump() const;
     /**
      * @symbol ?getCanOpenDoors@NavigationComponent@@QEBA_NXZ
-     * @hash   1730922124
+     * @hash   1858343036
      */
     MCAPI bool getCanOpenDoors() const;
     /**
      * @symbol ?getCanOpenIronDoors@NavigationComponent@@QEBA_NXZ
-     * @hash   1526557228
+     * @hash   1506230156
      */
     MCAPI bool getCanOpenIronDoors() const;
     /**
      * @symbol ?getCanPassDoors@NavigationComponent@@QEBA_NXZ
-     * @hash   -1563605732
+     * @hash   -1583932804
      */
     MCAPI bool getCanPassDoors() const;
     /**
      * @symbol ?getCanPathOverLava@NavigationComponent@@QEBA_NXZ
-     * @hash   -1796196050
+     * @hash   -1816523122
      */
     MCAPI bool getCanPathOverLava() const;
     /**
      * @symbol ?getCanSink@NavigationComponent@@QEBA_NXZ
-     * @hash   679045982
+     * @hash   658503646
      */
     MCAPI bool getCanSink() const;
     /**
      * @symbol ?getCanWalkInLava@NavigationComponent@@QEBA_NXZ
-     * @hash   1715519582
+     * @hash   1695192510
      */
     MCAPI bool getCanWalkInLava() const;
     /**
      * @symbol ?getEndPathRadiusSqr@NavigationComponent@@QEBAMXZ
-     * @hash   -2135519178
+     * @hash   -1964261290
      */
     MCAPI float getEndPathRadiusSqr() const;
     /**
      * @symbol ?getHasDestination@NavigationComponent@@QEBA_NXZ
-     * @hash   2071069692
+     * @hash   -2098706212
      */
     MCAPI bool getHasDestination() const;
     /**
      * @symbol ?getHasEndPathRadius@NavigationComponent@@QEBA_NXZ
-     * @hash   -654107316
+     * @hash   -674434388
      */
     MCAPI bool getHasEndPathRadius() const;
     /**
      * @symbol ?getIsAmphibious@NavigationComponent@@QEBA_NXZ
-     * @hash   -1854640596
+     * @hash   -1875182932
      */
     MCAPI bool getIsAmphibious() const;
     /**
      * @symbol ?getIsFollowingRivers@NavigationComponent@@QEBA_NXZ
-     * @hash   -725588482
+     * @hash   -745915554
      */
     MCAPI bool getIsFollowingRivers() const;
     /**
      * @symbol ?getLastStuckCheckPosition@NavigationComponent@@QEBA?AVVec3@@XZ
-     * @hash   -1512413164
+     * @hash   -1532740236
      */
     MCAPI class Vec3 getLastStuckCheckPosition() const;
     /**
      * @symbol ?getMaxDistance@NavigationComponent@@QEBAMAEBVActor@@@Z
-     * @hash   200568799
+     * @hash   180241727
      */
     MCAPI float getMaxDistance(class Actor const &) const;
     /**
      * @symbol ?getPath@NavigationComponent@@QEBAPEAVPath@@XZ
-     * @hash   975619611
+     * @hash   955292539
      */
     MCAPI class Path * getPath() const;
     /**
      * @symbol ?getSpeed@NavigationComponent@@QEBAMXZ
-     * @hash   2097856614
+     * @hash   2077329654
      */
     MCAPI float getSpeed() const;
     /**
      * @symbol ?getTargetOffset@NavigationComponent@@QEBAAEBVVec3@@XZ
-     * @hash   -19614358
+     * @hash   -39941430
      */
     MCAPI class Vec3 const & getTargetOffset() const;
     /**
      * @symbol ?getTerminationThreshold@NavigationComponent@@QEBAMXZ
-     * @hash   1868460288
+     * @hash   1848133216
      */
     MCAPI float getTerminationThreshold() const;
     /**
      * @symbol ?getTickTimeout@NavigationComponent@@QEBAHXZ
-     * @hash   -1699247678
+     * @hash   -1719574750
      */
     MCAPI int getTickTimeout() const;
     /**
      * @symbol ?incrementTick@NavigationComponent@@QEAAXXZ
-     * @hash   -1575276963
+     * @hash   -1595604035
      */
     MCAPI void incrementTick();
     /**
      * @symbol ?initMultiTypeNavigationComponent@NavigationComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-     * @hash   133901785
+     * @hash   113574713
      */
     MCAPI void initMultiTypeNavigationComponent(class Mob &, class ActorDefinitionDescriptor &);
     /**
      * @symbol ?initializeFromDefinition@NavigationComponent@@QEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-     * @hash   -1783579868
+     * @hash   -1804106828
      */
     MCAPI void initializeFromDefinition(class Mob &, struct NavigationDescription *);
     /**
      * @symbol ?isDone@NavigationComponent@@QEBA_NXZ
-     * @hash   665573710
+     * @hash   645046750
      */
     MCAPI bool isDone() const;
     /**
      * @symbol ?isFree@NavigationComponent@@QEAA?AW4NodeType@@AEAVMob@@AEBVBlockPos@@11W4CanJumpIntoNode@@@Z
-     * @hash   1959687555
+     * @hash   1939160595
      */
     MCAPI enum class NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode);
     /**
      * @symbol ?isStuck@NavigationComponent@@QEBA_NH@Z
-     * @hash   -441130019
+     * @hash   -461656979
      */
     MCAPI bool isStuck(int) const;
     /**
      * @symbol ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEAVActor@@M@Z
-     * @hash   1288587877
+     * @hash   1268060917
      */
     MCAPI bool moveTo(class Mob &, class Actor &, float);
     /**
      * @symbol ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
-     * @hash   1098259352
+     * @hash   1077732392
      */
     MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
     /**
      * @symbol ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-     * @hash   1534418685
+     * @hash   1513891725
      */
     MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
     /**
      * @symbol ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
-     * @hash   507970857
+     * @hash   487443897
      */
     MCAPI bool moveTo(class Mob &, std::unique_ptr<class Path>, float);
     /**
      * @symbol ??4NavigationComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1740337754
+     * @hash   -1584701882
      */
     MCAPI class NavigationComponent & operator=(class NavigationComponent &&);
     /**
      * @symbol ?resetPath@NavigationComponent@@QEAAXXZ
-     * @hash   -1262994115
+     * @hash   -1283521075
      */
     MCAPI void resetPath();
     /**
      * @symbol ?setAvoidDamageBlocks@NavigationComponent@@QEAAX_N@Z
-     * @hash   -1801588018
+     * @hash   -1654239810
      */
     MCAPI void setAvoidDamageBlocks(bool);
     /**
      * @symbol ?setAvoidPortals@NavigationComponent@@QEAAX_N@Z
-     * @hash   -2122732960
+     * @hash   -1975384752
      */
     MCAPI void setAvoidPortals(bool);
     /**
      * @symbol ?setAvoidSun@NavigationComponent@@QEAAX_N@Z
-     * @hash   -187006880
+     * @hash   -207533840
      */
     MCAPI void setAvoidSun(bool);
     /**
      * @symbol ?setAvoidWater@NavigationComponent@@QEAAX_N@Z
-     * @hash   1170826880
+     * @hash   1150530560
      */
     MCAPI void setAvoidWater(bool);
     /**
      * @symbol ?setCanFloat@NavigationComponent@@QEAAX_N@Z
-     * @hash   1250477456
+     * @hash   1229950496
      */
     MCAPI void setCanFloat(bool);
     /**
      * @symbol ?setCanJump@NavigationComponent@@QEAAX_N@Z
-     * @hash   -244649602
+     * @hash   -265176562
      */
     MCAPI void setCanJump(bool);
     /**
      * @symbol ?setCanOpenDoors@NavigationComponent@@QEAAX_N@Z
-     * @hash   1967894032
+     * @hash   2095330320
      */
     MCAPI void setCanOpenDoors(bool);
     /**
      * @symbol ?setCanPassDoors@NavigationComponent@@QEAAX_N@Z
-     * @hash   -1708358608
+     * @hash   -1728885568
      */
     MCAPI void setCanPassDoors(bool);
     /**
      * @symbol ?setCanSink@NavigationComponent@@QEAAX_N@Z
-     * @hash   2099038718
+     * @hash   2078496382
      */
     MCAPI void setCanSink(bool);
     /**
      * @symbol ?setEndPathRadius@NavigationComponent@@QEAAXM@Z
-     * @hash   186528710
+     * @hash   166001750
      */
     MCAPI void setEndPathRadius(float);
     /**
      * @symbol ?setHasDestination@NavigationComponent@@QEAAX_N@Z
-     * @hash   1166885392
+     * @hash   1146358432
      */
     MCAPI void setHasDestination(bool);
     /**
      * @symbol ?setHasEndPathRadius@NavigationComponent@@QEAAX_N@Z
-     * @hash   -941304736
+     * @hash   -961831696
      */
     MCAPI void setHasEndPathRadius(bool);
     /**
      * @symbol ?setInternalType@NavigationComponent@@QEAAXV?$unique_ptr@VPathNavigation@@U?$default_delete@VPathNavigation@@@std@@@std@@@Z
-     * @hash   -1099414782
+     * @hash   -1119941742
      */
     MCAPI void setInternalType(std::unique_ptr<class PathNavigation>);
     /**
      * @symbol ?setIsFollowingRivers@NavigationComponent@@QEAAX_N@Z
-     * @hash   -1583481474
+     * @hash   -1604008434
      */
     MCAPI void setIsFollowingRivers(bool);
     /**
      * @symbol ?setPath@NavigationComponent@@QEAAXV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@@Z
-     * @hash   -598147518
+     * @hash   -618674478
      */
     MCAPI void setPath(std::unique_ptr<class Path>);
     /**
      * @symbol ?setSpeed@NavigationComponent@@QEAAXM@Z
-     * @hash   1577191564
+     * @hash   1556664604
      */
     MCAPI void setSpeed(float);
     /**
      * @symbol ?setTargetOffset@NavigationComponent@@QEAAXAEBVVec3@@@Z
-     * @hash   526603166
+     * @hash   506076206
      */
     MCAPI void setTargetOffset(class Vec3 const &);
     /**
      * @symbol ?setTerminationThreshold@NavigationComponent@@QEAAXM@Z
-     * @hash   1904728658
+     * @hash   1884201698
      */
     MCAPI void setTerminationThreshold(float);
     /**
      * @symbol ?stop@NavigationComponent@@QEAAXAEAVMob@@@Z
-     * @hash   1038499362
+     * @hash   1017972402
      */
     MCAPI void stop(class Mob &);
     /**
      * @symbol ?travel@NavigationComponent@@QEAA_NAEAVMob@@AEAM11@Z
-     * @hash   1478689429
+     * @hash   1458162469
      */
     MCAPI bool travel(class Mob &, float &, float &, float &);
     /**
      * @symbol ?update@NavigationComponent@@QEAAXAEAVMob@@@Z
-     * @hash   1597247300
+     * @hash   1576720340
      */
     MCAPI void update(class Mob &);
     /**
      * @symbol ?updateLastStuckCheck@NavigationComponent@@QEAAXAEBVMob@@@Z
-     * @hash   -591474084
+     * @hash   -612001044
      */
     MCAPI void updateLastStuckCheck(class Mob const &);
     /**
      * @symbol ??1NavigationComponent@@QEAA@XZ
-     * @hash   2054616309
+     * @hash   -2084715115
      */
     MCAPI ~NavigationComponent();
 

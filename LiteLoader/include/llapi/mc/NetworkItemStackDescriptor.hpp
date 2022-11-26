@@ -41,54 +41,54 @@ public:
     virtual ~NetworkItemStackDescriptor();
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-     * @hash   -1004122277
+     * @hash   -255803109
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
-     * @hash   -1458594375
+     * @hash   -710275207
      */
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@XZ
-     * @hash   -2106058110
+     * @hash   -1978621822
      */
     MCAPI NetworkItemStackDescriptor();
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@AEBV0@@Z
-     * @hash   -386599487
+     * @hash   -259163199
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
-     * @hash   670974661
+     * @hash   798410949
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     /**
      * @symbol ?read@NetworkItemStackDescriptor@@QEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1535951002
+     * @hash   -787631834
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setIncludeNetIds@NetworkItemStackDescriptor@@QEBAX_N@Z
-     * @hash   -709939306
+     * @hash   38379862
      */
     MCAPI void setIncludeNetIds(bool) const;
     /**
      * @symbol ?tryGetServerNetId@NetworkItemStackDescriptor@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-     * @hash   1006124158
+     * @hash   1754443326
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     /**
      * @symbol ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   -1204977196
+     * @hash   -456658028
      */
     MCAPI void write(class BinaryStream &) const;
 
 //private:
     /**
      * @symbol ?getItemStack@NetworkItemStackDescriptor@@AEBA?AVItemStack@@AEBVBlockPalette@@@Z
-     * @hash   -1565822623
+     * @hash   -817503455
      */
     MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
 

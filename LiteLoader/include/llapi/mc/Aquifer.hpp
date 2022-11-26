@@ -38,46 +38,46 @@ public:
 public:
     /**
      * @symbol ??0Aquifer@@QEAA@AEBVChunkPos@@AEBVAquiferNoises@@AEBUOverworldNoises3d@@AEBVSurfaceLevelCache@@HHH@Z
-     * @hash   -381600128
+     * @hash   -210342240
      */
     MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, struct OverworldNoises3d const &, class SurfaceLevelCache const &, int, int, int);
     /**
      * @symbol ?computeAt@Aquifer@@QEAAXAEBVBlockPos@@@Z
-     * @hash   254572122
+     * @hash   425830010
      */
     MCAPI void computeAt(class BlockPos const &);
     /**
      * @symbol ?getLastBarrier@Aquifer@@QEBAMXZ
-     * @hash   153147834
+     * @hash   324405722
      */
     MCAPI float getLastBarrier() const;
     /**
      * @symbol ?getLastFluidBlockType@Aquifer@@QEBAPEBVBlock@@_N@Z
-     * @hash   -2115805744
+     * @hash   -1944547856
      */
     MCAPI class Block const * getLastFluidBlockType(bool) const;
     /**
      * @symbol ?getLastFluidLevel@Aquifer@@QEBAHXZ
-     * @hash   1857268228
+     * @hash   2028526116
      */
     MCAPI int getLastFluidLevel() const;
     /**
      * @symbol ?shouldScheduleFluidUpdate@Aquifer@@QEBA_NXZ
-     * @hash   1364764608
+     * @hash   1536022496
      */
     MCAPI bool shouldScheduleFluidUpdate() const;
 
 //private:
     /**
      * @symbol ?_computeAquifer@Aquifer@@AEBA?AUFluidSample@1@AEBVBlockPos@@@Z
-     * @hash   884522268
+     * @hash   1055780156
      */
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
 
 private:
     /**
      * @symbol ?chunkOffset@Aquifer@@0V?$array@U?$pair@HH@std@@$0N@@std@@B
-     * @hash   178504219
+     * @hash   933911723
      */
     MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
 

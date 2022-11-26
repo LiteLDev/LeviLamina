@@ -33,22 +33,22 @@ public:
 public:
     /**
      * @symbol ?addBredExpressionNode@ExperienceRewardDefinition@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   359773720
+     * @hash   288536712
      */
     MCAPI void addBredExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?addDeathExpressionNode@ExperienceRewardDefinition@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -2138605132
+     * @hash   2085125156
      */
     MCAPI void addDeathExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?initialize@ExperienceRewardDefinition@@QEAAXAEAVEntityContext@@AEAVExperienceRewardComponent@@@Z
-     * @hash   -736704867
+     * @hash   -807941875
      */
     MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);
     /**
      * @symbol ?buildSchema@ExperienceRewardDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExperienceRewardDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1604119226
+     * @hash   -1675356234
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>> &);
 

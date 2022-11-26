@@ -80,94 +80,100 @@ public:
     /**
      * @vftbl  8
      * @symbol ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
-     * @hash   1813701814
+     * @hash   1985067334
      */
     virtual class mce::UUID const & getId() const;
     /**
      * @vftbl  9
      * @symbol ?isMultiRecipe@Recipe@@UEBA_NXZ
-     * @hash   2134041927
+     * @hash   -2064179577
      */
     virtual bool isMultiRecipe() const;
     /**
      * @vftbl  10
      * @symbol ?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z
-     * @hash   -2018669779
+     * @hash   -1270196851
      */
     virtual bool itemValidForRecipe(class ItemDescriptor const &, class ItemStack const &) const;
     /**
      * @vftbl  11
      * @symbol ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
-     * @hash   -311441241
+     * @hash   437031687
      */
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &) const;
     /**
      * @vftbl  12
      * @symbol ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0PEBVCompoundTag@@@Z
-     * @hash   128482029
+     * @hash   876954957
      */
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  13
+     * @symbol ?getIngredientsHash@Recipe@@UEBA_KXZ
+     * @hash   -1250451460
+     */
+    virtual unsigned __int64 getIngredientsHash() const;
+    /**
+     * @vftbl  14
      * @symbol ?loadResultList@Recipe@@UEBAXAEBVBlockPalette@@@Z
-     * @hash   -2065170616
+     * @hash   -1976205080
      */
     virtual void loadResultList(class BlockPalette const &) const;
     /**
      * @symbol ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
-     * @hash   1007716697
+     * @hash   1756112745
      */
     MCAPI int countQuantityOfIngredient(class ItemInstance const &) const;
     /**
      * @symbol ?getHeight@Recipe@@QEBAHXZ
-     * @hash   1389056406
+     * @hash   1568294438
      */
     MCAPI int getHeight() const;
     /**
      * @symbol ?getIngredients@Recipe@@QEBAAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@XZ
-     * @hash   1629112044
+     * @hash   1608585084
      */
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
     /**
      * @symbol ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-     * @hash   1314228223
+     * @hash   2062701151
      */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getNetId() const;
     /**
      * @symbol ?getPriority@Recipe@@QEBAHXZ
-     * @hash   -1135666906
+     * @hash   -387193978
      */
     MCAPI int getPriority() const;
     /**
      * @symbol ?getRecipeId@Recipe@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1402927792
+     * @hash   1366425168
      */
     MCAPI std::string getRecipeId() const;
     /**
      * @symbol ?getTag@Recipe@@QEBAAEBVHashedString@@XZ
-     * @hash   934907354
+     * @hash   1037234634
      */
     MCAPI class HashedString const & getTag() const;
     /**
      * @symbol ?getWidth@Recipe@@QEBAHXZ
-     * @hash   -1135045688
+     * @hash   -1155572648
      */
     MCAPI int getWidth() const;
     /**
      * @symbol ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   874396909
+     * @hash   1622869837
      */
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   -315579277
+     * @hash   432893651
      */
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);
 
 //protected:
     /**
      * @symbol ??0Recipe@@IEAA@V?$basic_string_span@$$CBD$0?0@gsl@@VHashedString@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@@Z
-     * @hash   -941313622
+     * @hash   -228359254
      */
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const &);
 

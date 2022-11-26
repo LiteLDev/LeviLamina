@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0MobEffectComponent@@QEAA@XZ
-     * @hash   -1267261592
+     * @hash   -1343295912
      */
     MCAPI MobEffectComponent();
     /**
      * @symbol ??0MobEffectComponent@@QEAA@$$QEAV0@@Z
-     * @hash   1976159601
+     * @hash   2028545633
      */
     MCAPI MobEffectComponent(class MobEffectComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@MobEffectComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
-     * @hash   1065864329
+     * @hash   989830009
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     /**
      * @symbol ??4MobEffectComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -751427804
+     * @hash   -699103276
      */
     MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@MobEffectComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2065686738
+     * @hash   1989652418
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tick@MobEffectComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1830769610
+     * @hash   1754735290
      */
     MCAPI void tick(class Actor &);
     /**
      * @symbol ??1MobEffectComponent@@QEAA@XZ
-     * @hash   555417654
+     * @hash   1311778470
      */
     MCAPI ~MobEffectComponent();
 

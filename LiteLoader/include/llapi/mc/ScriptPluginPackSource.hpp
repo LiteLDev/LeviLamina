@@ -37,26 +37,26 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getManifest@ScriptPluginPackSource@@UEAAAEBVPackManifest@@XZ
-     * @hash   -807696199
+     * @hash   -724050759
      */
     virtual class PackManifest const & getManifest();
     /**
      * @vftbl  2
      * @symbol ?loadScripts@ScriptPluginPackSource@@UEAA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1184379213
+     * @hash   1268024653
      */
     virtual class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> loadScripts(std::string const &);
     /**
      * @vftbl  3
      * @symbol ?removeRootFromPath@ScriptPluginPackSource@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   1802375502
+     * @hash   1886020942
      */
     virtual std::string removeRootFromPath(std::string const &);
 
 //private:
     /**
      * @symbol ?_removeRootFromPath@ScriptPluginPackSource@@AEAA?AVPath@Core@@AEBV23@@Z
-     * @hash   -890856142
+     * @hash   -807210702
      */
     MCAPI class Core::Path _removeRootFromPath(class Core::Path const &);
 

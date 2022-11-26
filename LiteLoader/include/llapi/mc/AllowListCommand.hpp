@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   171526223
+     * @hash   273207711
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
-     * @hash   803728611
+     * @hash   905963635
      */
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
@@ -51,7 +51,7 @@ public:
 private:
     /**
      * @symbol ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
-     * @hash   637983863
+     * @hash   1505259455
      */
     MCAPI static class AllowListFile * mAllowListFile;
 

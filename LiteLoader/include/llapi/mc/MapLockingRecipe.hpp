@@ -39,47 +39,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   1987842199
+     * @hash   -1594293737
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
      * @vftbl  2
      * @symbol ?getCraftingSize@MapLockingRecipe@@UEBAHXZ
-     * @hash   1866277851
+     * @hash   1968189979
      */
     virtual int getCraftingSize() const;
     /**
      * @vftbl  3
      * @symbol ?getIngredient@MapLockingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   -1308080564
+     * @hash   -595218452
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   -1707336968
+     * @hash   -1624921608
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@MapLockingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -1671607171
+     * @hash   -958775811
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@MapLockingRecipe@@UEBAHXZ
-     * @hash   -1080523949
+     * @hash   -1122792573
      */
     virtual int size() const;
     /**
      * @symbol ??0MapLockingRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   1949588113
+     * @hash   -1632547823
      */
     MCAPI MapLockingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ?CartographyTableID@MapLockingRecipe@@2VUUID@mce@@B
-     * @hash   1832434491
+     * @hash   -1829026229
      */
     MCAPI static class mce::UUID const CartographyTableID;
 

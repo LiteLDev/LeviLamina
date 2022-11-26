@@ -36,39 +36,39 @@ public:
     virtual ~ItemStackRequestActionDrop();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   2096281682
+     * @hash   -2019447582
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1367561133
+     * @hash   -1274290317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -626382127
+     * @hash   -544489551
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionDrop@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   382882377
+     * @hash   464774953
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionDrop@@QEAA@XZ
-     * @hash   -1517296981
+     * @hash   -1435404405
      */
     MCAPI ItemStackRequestActionDrop();
     /**
      * @symbol ?getRandomly@ItemStackRequestActionDrop@@QEBA_NXZ
-     * @hash   530911102
+     * @hash   612803678
      */
     MCAPI bool getRandomly() const;
 

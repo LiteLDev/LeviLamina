@@ -32,112 +32,112 @@ public:
 public:
     /**
      * @symbol ??0AnimationComponent@@QEAA@W4AnimationComponentGroupType@@AEBVAnimationComponentID@@@Z
-     * @hash   -1092036865
+     * @hash   -1075553793
      */
     MCAPI AnimationComponent(enum class AnimationComponentGroupType, class AnimationComponentID const &);
     /**
      * @symbol ?applyAnimations@AnimationComponent@@QEAAX_N@Z
-     * @hash   1573896820
+     * @hash   1590395268
      */
     MCAPI void applyAnimations(bool);
     /**
      * @symbol ?createAnimationPlayer@AnimationComponent@@QEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@3@@Z
-     * @hash   -98164207
+     * @hash   -81665759
      */
     MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString>> &);
     /**
      * @symbol ?getAllBoneOrientations@AnimationComponent@@QEAAAEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@XZ
-     * @hash   889109877
+     * @hash   905608325
      */
     MCAPI class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> & getAllBoneOrientations();
     /**
      * @symbol ?getAnimationComponentInitFunction@AnimationComponent@@QEBAAEBV?$function@$$A6AXAEAVActorAnimationPlayer@@@Z@std@@XZ
-     * @hash   1069090251
+     * @hash   1085588699
      */
     MCAPI class std::function<void (class ActorAnimationPlayer &)> const & getAnimationComponentInitFunction() const;
     /**
      * @symbol ?getBoneOrientations@AnimationComponent@@QEAAPEAV?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@W4SkeletalHierarchyIndex@@_N@Z
-     * @hash   619820125
+     * @hash   636318573
      */
     MCAPI std::vector<class BoneOrientation> * getBoneOrientations(enum class SkeletalHierarchyIndex, bool);
     /**
      * @symbol ?getCurrentAnimationControllerStatePlayer@AnimationComponent@@QEBA?BV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@XZ
-     * @hash   1927637541
+     * @hash   1851695477
      */
     MCAPI class std::shared_ptr<class ActorAnimationControllerStatePlayer> const getCurrentAnimationControllerStatePlayer() const;
     /**
      * @symbol ?getLocator@AnimationComponent@@QEAAPEAVModelPartLocator@@AEB_K@Z
-     * @hash   -1381177192
+     * @hash   -1364678744
      */
     MCAPI class ModelPartLocator * getLocator(unsigned __int64 const &);
     /**
      * @symbol ?getRenderParams@AnimationComponent@@QEAAAEAVRenderParams@@XZ
-     * @hash   -1395524760
+     * @hash   -1401798168
      */
     MCAPI class RenderParams & getRenderParams();
     /**
      * @symbol ?initInstanceSpecificAnimationData@AnimationComponent@@QEAAXPEAVMolangVariableMap@@@Z
-     * @hash   1894614851
+     * @hash   1911113299
      */
     MCAPI void initInstanceSpecificAnimationData(class MolangVariableMap *);
     /**
      * @symbol ?initializeServerAnimationComponent@AnimationComponent@@QEAAXAEAVActor@@V?$shared_ptr@VCommonResourceDefinitionMap@@@std@@V?$function@$$A6AXAEAVActorAnimationPlayer@@@Z@4@@Z
-     * @hash   -2131242625
+     * @hash   -2114744177
      */
     MCAPI void initializeServerAnimationComponent(class Actor &, class std::shared_ptr<class CommonResourceDefinitionMap>, class std::function<void (class ActorAnimationPlayer &)>);
     /**
      * @symbol ?isInitialized@AnimationComponent@@QEAA_NXZ
-     * @hash   1210442050
+     * @hash   1226940498
      */
     MCAPI bool isInitialized();
     /**
      * @symbol ?serverUpdate@AnimationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -400675334
+     * @hash   -384176886
      */
     MCAPI void serverUpdate(class Actor &);
     /**
      * @symbol ?setCurrentAnimationControllerStatePlayer@AnimationComponent@@QEAAXV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@@Z
-     * @hash   1053082723
+     * @hash   1069581171
      */
     MCAPI void setCurrentAnimationControllerStatePlayer(class std::shared_ptr<class ActorAnimationControllerStatePlayer>);
     /**
      * @symbol ?setDirty@AnimationComponent@@QEAAXXZ
-     * @hash   -490226251
+     * @hash   -473727803
      */
     MCAPI void setDirty();
     /**
      * @symbol ?setLastReloadInitTimeStampClient@AnimationComponent@@QEAAX_K@Z
-     * @hash   1164550187
+     * @hash   1181048635
      */
     MCAPI void setLastReloadInitTimeStampClient(unsigned __int64);
     /**
      * @symbol ?setupDeltaTimeAndLifeTimeParams@AnimationComponent@@QEAAX_N@Z
-     * @hash   -645975742
+     * @hash   -629477294
      */
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
     /**
      * @symbol ?shouldReloadBasedOnLastReloadInitTimeStamp@AnimationComponent@@QEBA_NXZ
-     * @hash   358393214
+     * @hash   374891662
      */
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
     /**
      * @symbol ?usesLastReloadInitTimeStampClient@AnimationComponent@@QEBA_NXZ
-     * @hash   -1216192102
+     * @hash   -1199693654
      */
     MCAPI bool usesLastReloadInitTimeStampClient() const;
     /**
      * @symbol ??1AnimationComponent@@QEAA@XZ
-     * @hash   1560249315
+     * @hash   1576732387
      */
     MCAPI ~AnimationComponent();
     /**
      * @symbol ?getReloadTimeStampClient@AnimationComponent@@SA_KXZ
-     * @hash   665649125
+     * @hash   682147573
      */
     MCAPI static unsigned __int64 getReloadTimeStampClient();
     /**
      * @symbol ?incrementCurrentServerFrameIndex@AnimationComponent@@SAXXZ
-     * @hash   1849620707
+     * @hash   1866119155
      */
     MCAPI static void incrementCurrentServerFrameIndex();
 
@@ -146,17 +146,17 @@ public:
 private:
     /**
      * @symbol ?mClientFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
-     * @hash   -861221235
+     * @hash   -25304995
      */
     MCAPI static struct std::atomic<__int64> mClientFrameIndex;
     /**
      * @symbol ?mReloadTimeStampClient@AnimationComponent@@0U?$atomic@_J@std@@A
-     * @hash   -1535713021
+     * @hash   -699796781
      */
     MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
     /**
      * @symbol ?mServerFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
-     * @hash   56157965
+     * @hash   892074205
      */
     MCAPI static struct std::atomic<__int64> mServerFrameIndex;
 

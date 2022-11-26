@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0ItemStackNetManagerScreen@@QEAA@AEAVEntityRegistry@@@Z
-     * @hash   1133507876
+     * @hash   1215400452
      */
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     /**
      * @symbol ?getEntity@ItemStackNetManagerScreen@@QEAAAEAVEntityContext@@XZ
-     * @hash   -1941855006
+     * @hash   -1859962430
      */
     MCAPI class EntityContext & getEntity();
     /**
      * @symbol ?getEntity@ItemStackNetManagerScreen@@QEBAAEBVEntityContext@@XZ
-     * @hash   -1610645092
+     * @hash   -1528752516
      */
     MCAPI class EntityContext const & getEntity() const;
 

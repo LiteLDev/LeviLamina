@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@CombatRegenerationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCombatRegenerationDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1744227450
+     * @hash   -1820169514
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CombatRegenerationDefinition>> &);
 

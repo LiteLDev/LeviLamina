@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ??0ScriptCommand@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -181397627
+     * @hash   28464805
      */
     MCAPI ScriptCommand(std::string const &);
     /**
      * @symbol ?getMessages@ScriptCommand@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1346350948
+     * @hash   -1136488516
      */
     MCAPI std::string getMessages() const;
     /**
      * @symbol ?getSuccessCount@ScriptCommand@@QEBAHXZ
-     * @hash   1826902028
+     * @hash   1806375068
      */
     MCAPI int getSuccessCount() const;
     /**
      * @symbol ?serializeJsonOutput@ScriptCommand@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1650608548
+     * @hash   -1440746116
      */
     MCAPI std::string serializeJsonOutput() const;
     /**
      * @symbol ?setJsonOutput@ScriptCommand@@QEAAX$$QEAVValue@Json@@@Z
-     * @hash   -1426203580
+     * @hash   -1216341148
      */
     MCAPI void setJsonOutput(class Json::Value &&);
     /**
      * @symbol ?setOutput@ScriptCommand@@QEAAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1577545581
+     * @hash   1787408013
      */
     MCAPI void setOutput(int, std::string &&);
 

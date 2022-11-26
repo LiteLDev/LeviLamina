@@ -29,13 +29,8 @@ public:
 
 public:
     /**
-     * @symbol ?createCleanupSendPacketsComponentsSystem@SendPacketsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -896755078
-     */
-    MCAPI static struct TickingSystemWithInfo createCleanupSendPacketsComponentsSystem();
-    /**
      * @symbol ?createSendPacketsSystem@SendPacketsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1573134424
+     * @hash   -1568060344
      */
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
 

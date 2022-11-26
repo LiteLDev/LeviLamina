@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createPaintingUpdatePositionSystem@PaintingUpdatePositionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -502026108
+     * @hash   -453222684
      */
     MCAPI static struct TickingSystemWithInfo createPaintingUpdatePositionSystem();
 

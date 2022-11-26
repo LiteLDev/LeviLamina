@@ -38,7 +38,7 @@ public:
     virtual ~MineshaftStart();
     /**
      * @symbol ??0MineshaftStart@@QEAA@AEBVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   517508616
+     * @hash   689258536
      */
     MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 

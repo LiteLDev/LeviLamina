@@ -32,97 +32,97 @@ public:
 public:
     /**
      * @symbol ?DEFAULT_DISTANCE_AIR_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   -6696685
+     * @hash   856865603
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_AIR_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   333756879
+     * @hash   1197319167
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_LAVA_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   -55781615
+     * @hash   807780673
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_NETHER_AIR_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   -1511602889
+     * @hash   -648040601
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_NETHER_AIR_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_POWDER_SNOW_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   -1579020655
+     * @hash   -715458367
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_POWDER_SNOW_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_WATER_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   3981773
+     * @hash   867544061
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WATER_SETTING;
     /**
      * @symbol ?DEFAULT_DISTANCE_WEATHER_SETTING@FogDefinition@@2UFogDistanceSetting@@B
-     * @hash   1366956071
+     * @hash   -2064448937
      */
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WEATHER_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_AIR_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   1419029207
+     * @hash   2052289767
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_AIR_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_DEFINITION@FogDefinition@@2U1@B
-     * @hash   -1202578011
+     * @hash   -569317451
      */
     MCAPI static struct FogDefinition const DEFAULT_FOG_DEFINITION;
     /**
      * @symbol ?DEFAULT_FOG_LAVA_RESISTANCE_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   873671811
+     * @hash   1506932371
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_LAVA_RESISTANCE_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_LAVA_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   -157919971
+     * @hash   475340589
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_LAVA_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_NETHER_AIR_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   830326451
+     * @hash   1463587011
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_NETHER_AIR_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_POWDER_SNOW_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   181662837
+     * @hash   814923397
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_POWDER_SNOW_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_WATER_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   1191347745
+     * @hash   1824608305
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_WATER_SETTING;
     /**
      * @symbol ?DEFAULT_FOG_WEATHER_SETTING@FogDefinition@@2UFogSetting@@B
-     * @hash   1667221067
+     * @hash   -1994485669
      */
     MCAPI static struct FogSetting const DEFAULT_FOG_WEATHER_SETTING;
     /**
      * @symbol ?DEFAULT_VOLUME_COEFFICIENT_AIR_SETTING@FogDefinition@@2UFogVolumetricCoefficientSetting@@B
-     * @hash   -1214677515
+     * @hash   -581416955
      */
     MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_AIR_SETTING;
     /**
      * @symbol ?DEFAULT_VOLUME_COEFFICIENT_CLOUD_SETTING@FogDefinition@@2UFogVolumetricCoefficientSetting@@B
-     * @hash   235852117
+     * @hash   869112677
      */
     MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_CLOUD_SETTING;
     /**
      * @symbol ?DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING@FogDefinition@@2UFogVolumetricCoefficientSetting@@B
-     * @hash   -1485217419
+     * @hash   -851956859
      */
     MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
     /**
      * @symbol ?isValidIdentifier@FogDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -994814257
+     * @hash   -281952145
      */
     MCAPI static bool isValidIdentifier(std::string const &);
 

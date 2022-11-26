@@ -39,20 +39,20 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@BuriedTreasurePiece@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   2102758341
+     * @hash   -2020505163
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@BuriedTreasurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1459349293
+     * @hash   -1287645501
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
 //private:
     /**
      * @symbol ?_isCovered@BuriedTreasurePiece@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   445898317
+     * @hash   617602109
      */
     MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
 

@@ -32,57 +32,57 @@ public:
 public:
     /**
      * @symbol ??0KeyFrameTransform@@QEAA@M@Z
-     * @hash   910927391
+     * @hash   935159967
      */
     MCAPI KeyFrameTransform(float);
     /**
      * @symbol ?getLerpMode@KeyFrameTransform@@QEAAAEAVKeyFrameLerpMode@@XZ
-     * @hash   204666864
+     * @hash   167380064
      */
     MCAPI class KeyFrameLerpMode & getLerpMode();
     /**
      * @symbol ??4KeyFrameTransform@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   487562560
+     * @hash   511795136
      */
     MCAPI class KeyFrameTransform & operator=(class KeyFrameTransform &&);
     /**
      * @symbol ?optimizeAndGetDataValues@KeyFrameTransform@@QEAA_NAEAVVec3@@0@Z
-     * @hash   -1621351148
+     * @hash   -1597226204
      */
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -12590894
+     * @hash   11534050
      */
     MCAPI void set(class ExpressionNode const &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@AEBVVec3@@@Z
-     * @hash   1028326291
+     * @hash   1052451235
      */
     MCAPI void set(class ExpressionNode const &, class Vec3 const &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-     * @hash   1181614113
+     * @hash   1205739057
      */
     MCAPI void set(class ExpressionNode const &, int);
     /**
      * @symbol ?setPost@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-     * @hash   -386858895
+     * @hash   -362780079
      */
     MCAPI void setPost(class ExpressionNode const &, int);
     /**
      * @symbol ?setPre@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-     * @hash   2049311987
+     * @hash   2073390803
      */
     MCAPI void setPre(class ExpressionNode const &, int);
     /**
      * @symbol ??1KeyFrameTransform@@QEAA@XZ
-     * @hash   1853537962
+     * @hash   1877770538
      */
     MCAPI ~KeyFrameTransform();
     /**
      * @symbol ?computeCubicPolynomial@KeyFrameTransform@@SAXPEAV1@AEAV1@10@Z
-     * @hash   1568985847
+     * @hash   1593218423
      */
     MCAPI static void computeCubicPolynomial(class KeyFrameTransform *, class KeyFrameTransform &, class KeyFrameTransform &, class KeyFrameTransform *);
 

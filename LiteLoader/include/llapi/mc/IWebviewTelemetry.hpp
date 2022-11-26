@@ -37,55 +37,55 @@ public:
     virtual ~IWebviewTelemetry();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -1777657139
+     * @hash   -1792833251
      */
     virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
      * @vftbl  7
-     * @hash   -1400016025
+     * @hash   -1311050489
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
      * @symbol ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -1463751153
+     * @hash   -1479004145
      */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
      * @vftbl  9
      * @symbol ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -426487313
+     * @hash   -441694177
      */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
      * @symbol ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
-     * @hash   -2140015806
+     * @hash   2139775378
      */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 

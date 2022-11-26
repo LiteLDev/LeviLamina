@@ -32,76 +32,76 @@ public:
 public:
     /**
      * @symbol ?destroy@VanillaBlockUpdater@@SAXXZ
-     * @hash   1332707559
+     * @hash   2101922711
      */
     MCAPI static void destroy();
     /**
      * @symbol ?get@VanillaBlockUpdater@@SAAEAVCompoundTagUpdaterContext@@XZ
-     * @hash   1136599128
+     * @hash   1905814280
      */
     MCAPI static class CompoundTagUpdaterContext & get();
     /**
      * @symbol ?initialize@VanillaBlockUpdater@@SAXXZ
-     * @hash   2142637665
+     * @hash   -1383114479
      */
     MCAPI static void initialize();
 
 //private:
     /**
      * @symbol ?addBaseUpdater@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   959149963
+     * @hash   1729702827
      */
     MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addRailUpdater_1_14_0@VanillaBlockUpdater@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVCompoundTagUpdaterContext@@@Z
-     * @hash   1019102927
+     * @hash   1789594287
      */
     MCAPI static void addRailUpdater_1_14_0(std::string const &, class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_10_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   -1629498416
+     * @hash   -859007056
      */
     MCAPI static void addUpdaters_1_10_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_12_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   216486062
+     * @hash   986608398
      */
     MCAPI static void addUpdaters_1_12_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_13_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   -1014063491
+     * @hash   -243910403
      */
     MCAPI static void addUpdaters_1_13_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_14_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   2058165260
+     * @hash   -1467356244
      */
     MCAPI static void addUpdaters_1_14_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_15_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   827631083
+     * @hash   1597199883
      */
     MCAPI static void addUpdaters_1_15_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_16_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   -403548886
+     * @hash   366004538
      */
     MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_16_210@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   -1219786007
+     * @hash   -450801495
      */
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext &);
     /**
      * @symbol ?addUpdaters_1_18_10@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
-     * @hash   -1456504355
+     * @hash   -687396835
      */
     MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
 
 private:
     /**
      * @symbol ?mContext@VanillaBlockUpdater@@0V?$unique_ptr@VCompoundTagUpdaterContext@@U?$default_delete@VCompoundTagUpdaterContext@@@std@@@std@@A
-     * @hash   -1146155556
+     * @hash   -503392628
      */
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 

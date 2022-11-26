@@ -31,99 +31,99 @@ public:
 public:
     /**
      * @symbol ??0BreedableComponent@@QEAA@XZ
-     * @hash   1910822939
+     * @hash   2055218955
      */
     MCAPI BreedableComponent();
     /**
      * @symbol ?addAdditionalSaveData@BreedableComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1954792
+     * @hash   142318216
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canMate@BreedableComponent@@QEBA_NAEBVActor@@0@Z
-     * @hash   469049089
+     * @hash   613322097
      */
     MCAPI bool canMate(class Actor const &, class Actor const &) const;
     /**
      * @symbol ?decrementBreedCooldown@BreedableComponent@@QEAAXXZ
-     * @hash   1405129589
+     * @hash   1549402597
      */
     MCAPI void decrementBreedCooldown();
     /**
      * @symbol ?decrementLoveTimer@BreedableComponent@@QEAAXXZ
-     * @hash   -577531259
+     * @hash   -433258251
      */
     MCAPI void decrementLoveTimer();
     /**
      * @symbol ?getBreedCooldown@BreedableComponent@@QEBAHXZ
-     * @hash   -392730968
+     * @hash   -221473080
      */
     MCAPI int getBreedCooldown() const;
     /**
      * @symbol ?getInteraction@BreedableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -1839462533
+     * @hash   -1695189525
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?getLoveCause@BreedableComponent@@QEBAPEAVPlayer@@AEBVActor@@@Z
-     * @hash   -2708176
+     * @hash   141595584
      */
     MCAPI class Player * getLoveCause(class Actor const &) const;
     /**
      * @symbol ?getLoveTimer@BreedableComponent@@QEBAHXZ
-     * @hash   1309928776
+     * @hash   1454232536
      */
     MCAPI int getLoveTimer() const;
     /**
      * @symbol ?mate@BreedableComponent@@QEAAXAEAVActor@@0@Z
-     * @hash   -354878327
+     * @hash   -210574567
      */
     MCAPI void mate(class Actor &, class Actor &);
     /**
      * @symbol ?meetsSittingRequirements@BreedableComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   -788362471
+     * @hash   -644058711
      */
     MCAPI bool meetsSittingRequirements(class Actor const &) const;
     /**
      * @symbol ?readAdditionalSaveData@BreedableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1319204728
+     * @hash   1463462360
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?resetLove@BreedableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1465789972
+     * @hash   -1321532340
      */
     MCAPI void resetLove(class Actor &);
     /**
      * @symbol ?setLoveTimer@BreedableComponent@@QEAAXH@Z
-     * @hash   -1331465162
+     * @hash   -1187192154
      */
     MCAPI void setLoveTimer(int);
 
 //private:
     /**
      * @symbol ?_canBreed@BreedableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@AEBVItemStack@@@Z
-     * @hash   280539462
+     * @hash   424935478
      */
     MCAPI bool _canBreed(class Actor &, class Player &, class ItemStack const &);
     /**
      * @symbol ?_handleMate@BreedableComponent@@AEAAXAEAVActor@@0@Z
-     * @hash   1266551529
+     * @hash   1410947545
      */
     MCAPI void _handleMate(class Actor &, class Actor &);
     /**
      * @symbol ?_handlePregnancy@BreedableComponent@@AEAAXAEAVActor@@0@Z
-     * @hash   -1409224157
+     * @hash   -1264812765
      */
     MCAPI void _handlePregnancy(class Actor &, class Actor &);
     /**
      * @symbol ?_meetsEnvironmentRequirements@BreedableComponent@@AEBA_NAEAVActor@@@Z
-     * @hash   -2104439
+     * @hash   142322329
      */
     MCAPI bool _meetsEnvironmentRequirements(class Actor &) const;
     /**
      * @symbol ?_useBreedItem@BreedableComponent@@AEAAXAEAVActor@@AEAVPlayer@@AEBVItemStack@@@Z
-     * @hash   -1673175164
+     * @hash   -1528779148
      */
     MCAPI void _useBreedItem(class Actor &, class Player &, class ItemStack const &);
 

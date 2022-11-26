@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@SAXAEAVPlayer@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@@Z
-     * @hash   1977791972
+     * @hash   1978422388
      */
     MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     /**
      * @symbol ?create@ServerPlayerMovementCorrectionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -564241372
+     * @hash   -563641708
      */
     MCAPI static struct TickingSystemWithInfo create();
 

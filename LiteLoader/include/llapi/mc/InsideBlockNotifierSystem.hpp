@@ -37,13 +37,13 @@ public:
     virtual ~InsideBlockNotifierSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@InsideBlockNotifierSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1763050378
+     * @hash   -1675376426
      */
     virtual void tick(class EntityRegistry &);
 

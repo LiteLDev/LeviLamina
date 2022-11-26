@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0EntityFactory@@QEAA@V?$not_null@PEAVEntityRegistryBase@@@gsl@@@Z
-     * @hash   -1496624789
+     * @hash   -1538170741
      */
     MCAPI EntityFactory(class gsl::not_null<class EntityRegistryBase *>);
     /**
      * @symbol ?create@EntityFactory@@QEAA?AVStrictEntityContextOwner@@XZ
-     * @hash   1844400728
+     * @hash   1773978648
      */
     MCAPI class StrictEntityContextOwner create();
     /**
      * @symbol ?destroy@EntityFactory@@QEAAX$$QEAVStrictEntityContextOwner@@@Z
-     * @hash   1465312960
+     * @hash   1394890880
      */
     MCAPI void destroy(class StrictEntityContextOwner &&);
 

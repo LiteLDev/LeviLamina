@@ -30,44 +30,44 @@ public:
 public:
     /**
      * @symbol ?close@wspp_websocket_impl@@QEAAJW4HCWebSocketCloseStatus@@@Z
-     * @hash   164996584
+     * @hash   677248024
      */
     MCAPI long close(enum class HCWebSocketCloseStatus);
     /**
      * @symbol ?connect@wspp_websocket_impl@@QEAAJPEAUXAsyncBlock@@@Z
-     * @hash   268615751
+     * @hash   780867191
      */
     MCAPI long connect(struct XAsyncBlock *);
     /**
      * @symbol ?send@wspp_websocket_impl@@QEAAJPEAUXAsyncBlock@@PEBD@Z
-     * @hash   1946633095
+     * @hash   -1836082761
      */
     MCAPI long send(struct XAsyncBlock *, char const *);
     /**
      * @symbol ?sendBinary@wspp_websocket_impl@@QEAAJPEAUXAsyncBlock@@PEBEI@Z
-     * @hash   712272482
+     * @hash   1224523922
      */
     MCAPI long sendBinary(struct XAsyncBlock *, unsigned char const *, unsigned int);
     /**
      * @symbol ??0wspp_websocket_impl@@QEAA@PEAUHC_WEBSOCKET@@PEBD1@Z
-     * @hash   1835915697
+     * @hash   -1946800159
      */
     MCAPI wspp_websocket_impl(struct HC_WEBSOCKET *, char const *, char const *);
 
 //private:
     /**
      * @symbol ?send_msg@wspp_websocket_impl@@AEAAJXZ
-     * @hash   180965347
+     * @hash   693216787
      */
     MCAPI long send_msg();
     /**
      * @symbol ?send_msg_do_work@wspp_websocket_impl@@AEAAJAEAUwebsocket_outgoing_message@@@Z
-     * @hash   1888503492
+     * @hash   -1894212364
      */
     MCAPI long send_msg_do_work(struct websocket_outgoing_message &);
     /**
      * @symbol ?send_ping@wspp_websocket_impl@@AEAAXXZ
-     * @hash   -1380533190
+     * @hash   -868281750
      */
     MCAPI void send_ping();
 

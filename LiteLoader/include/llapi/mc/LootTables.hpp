@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?lookupByName@LootTables@@QEAAPEAVLootTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVResourcePackManager@@@Z
-     * @hash   281282845
+     * @hash   1036751853
      */
     MCAPI class LootTable * lookupByName(std::string const &, class ResourcePackManager &);
     /**
      * @symbol ??1LootTables@@QEAA@XZ
-     * @hash   1270836087
+     * @hash   1994722791
      */
     MCAPI ~LootTables();
 

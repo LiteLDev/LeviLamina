@@ -29,263 +29,263 @@ public:
 
 public:
     /**
-     * @symbol ??0MobSpawnRules@@QEAA@XZ
-     * @hash   1778739864
-     */
-    MCAPI MobSpawnRules();
-    /**
      * @symbol ??0MobSpawnRules@@QEAA@$$QEAV0@@Z
-     * @hash   -1775160895
+     * @hash   -1749529103
      */
     MCAPI MobSpawnRules(class MobSpawnRules &&);
     /**
      * @symbol ??0MobSpawnRules@@QEAA@AEBV0@@Z
-     * @hash   967778801
+     * @hash   1139067441
      */
     MCAPI MobSpawnRules(class MobSpawnRules const &);
     /**
+     * @symbol ??0MobSpawnRules@@QEAA@XZ
+     * @hash   -1758467400
+     */
+    MCAPI MobSpawnRules();
+    /**
      * @symbol ?addHerd@MobSpawnRules@@QEAAAEAV1@HHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   491064904
+     * @hash   1248824936
      */
     MCAPI class MobSpawnRules & addHerd(int, int, std::string const &);
     /**
      * @symbol ?addPermutation@MobSpawnRules@@QEAAAEAV1@HHAEBUActorDefinitionIdentifier@@@Z
-     * @hash   -1490136918
+     * @hash   -732392262
      */
     MCAPI class MobSpawnRules & addPermutation(int, int, struct ActorDefinitionIdentifier const &);
     /**
      * @symbol ?canSpawnInConditions@MobSpawnRules@@QEBA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
-     * @hash   -1901959814
+     * @hash   -1144215158
      */
     MCAPI bool canSpawnInConditions(class SpawnConditions const &, class BlockSource &) const;
     /**
      * @symbol ?getAboveBlockDistance@MobSpawnRules@@QEBAHXZ
-     * @hash   559418398
+     * @hash   738671806
      */
     MCAPI int getAboveBlockDistance() const;
     /**
      * @symbol ?getDelayRange@MobSpawnRules@@QEBA?BU?$pair@HH@std@@XZ
-     * @hash   -2023810577
+     * @hash   -1266065921
      */
     MCAPI struct std::pair<int, int> const getDelayRange() const;
     /**
      * @symbol ?getDelaySpawnChance@MobSpawnRules@@QEBAHXZ
-     * @hash   -1383485364
+     * @hash   -625740708
      */
     MCAPI int getDelaySpawnChance() const;
     /**
      * @symbol ?getGuaranteedPermutations@MobSpawnRules@@QEBAAEBV?$vector@VMobSpawnerPermutation@@V?$allocator@VMobSpawnerPermutation@@@std@@@std@@XZ
-     * @hash   1279792342
+     * @hash   2009491174
      */
     MCAPI std::vector<class MobSpawnerPermutation> const & getGuaranteedPermutations() const;
     /**
      * @symbol ?getHerdListMutable@MobSpawnRules@@QEAAAEAV?$vector@UMobSpawnHerdInfo@@V?$allocator@UMobSpawnHerdInfo@@@std@@@std@@XZ
-     * @hash   1064064070
+     * @hash   1049149350
      */
     MCAPI std::vector<struct MobSpawnHerdInfo> & getHerdListMutable();
     /**
      * @symbol ?getMobToDelayId@MobSpawnRules@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   723071808
+     * @hash   1480816464
      */
     MCAPI std::string const getMobToDelayId() const;
     /**
      * @symbol ?getPermutations@MobSpawnRules@@QEBAAEBV?$vector@VMobSpawnerPermutation@@V?$allocator@VMobSpawnerPermutation@@@std@@@std@@XZ
-     * @hash   2130686646
+     * @hash   -1978600074
      */
     MCAPI std::vector<class MobSpawnerPermutation> const & getPermutations() const;
     /**
      * @symbol ?getPersistence@MobSpawnRules@@QEBA_NXZ
-     * @hash   -2105198424
+     * @hash   -1347453768
      */
     MCAPI bool getPersistence() const;
     /**
      * @symbol ?getPopulationCap@MobSpawnRules@@QEBAHAEBVSpawnConditions@@@Z
-     * @hash   -1406186615
+     * @hash   -648441959
      */
     MCAPI int getPopulationCap(class SpawnConditions const &) const;
     /**
      * @symbol ?getSpawnAboveBlockList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   -1321977282
+     * @hash   -1219650002
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnAboveBlockList() const;
     /**
      * @symbol ?getSpawnAboveBlockListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   -1105629530
+     * @hash   -1003302250
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnAboveBlockListMutable();
     /**
      * @symbol ?getSpawnCount@MobSpawnRules@@QEBAHAEBVSpawnConditions@@AEAVBlockSource@@AEAVRandom@@AEBUMobSpawnHerdInfo@@@Z
-     * @hash   -1284133192
+     * @hash   -526388536
      */
     MCAPI int getSpawnCount(class SpawnConditions const &, class BlockSource &, class Random &, struct MobSpawnHerdInfo const &) const;
     /**
      * @symbol ?getSpawnOnBlockList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   -107146984
+     * @hash   -732519656
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnOnBlockList() const;
     /**
      * @symbol ?getSpawnOnBlockListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   -1563692756
+     * @hash   2105901868
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnOnBlockListMutable();
     /**
      * @symbol ?getSpawnOnBlockPreventedList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   -1933227376
+     * @hash   -1175498096
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const & getSpawnOnBlockPreventedList() const;
     /**
      * @symbol ?getSpawnOnBlockPreventedListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-     * @hash   1117244116
+     * @hash   1874973396
      */
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnOnBlockPreventedListMutable();
     /**
      * @symbol ?isLavaSpawner@MobSpawnRules@@QEBA_NXZ
-     * @hash   431000662
+     * @hash   373110022
      */
     MCAPI bool isLavaSpawner() const;
     /**
      * @symbol ?isUnderwaterSpawner@MobSpawnRules@@QEBA_NXZ
-     * @hash   8079894
+     * @hash   765809174
      */
     MCAPI bool isUnderwaterSpawner() const;
     /**
      * @symbol ?selectRandomHerd@MobSpawnRules@@QEBAAEBUMobSpawnHerdInfo@@AEAVRandom@@@Z
-     * @hash   -1480505545
+     * @hash   -722776265
      */
     MCAPI struct MobSpawnHerdInfo const & selectRandomHerd(class Random &) const;
     /**
      * @symbol ?setAboveBlockDistance@MobSpawnRules@@QEAAAEAV1@H@Z
-     * @hash   1148257394
+     * @hash   1905771410
      */
     MCAPI class MobSpawnRules & setAboveBlockDistance(int);
     /**
      * @symbol ?setBrightnessRange@MobSpawnRules@@QEAAAEAV1@HH_N@Z
-     * @hash   -1208235460
+     * @hash   -450721444
      */
     MCAPI class MobSpawnRules & setBrightnessRange(int, int, bool);
     /**
      * @symbol ?setBubbleSpawner@MobSpawnRules@@QEAAAEAV1@_N@Z
-     * @hash   -730754292
+     * @hash   26759724
      */
     MCAPI class MobSpawnRules & setBubbleSpawner(bool);
     /**
      * @symbol ?setDelayRange@MobSpawnRules@@QEAAAEAV1@HHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1630372904
+     * @hash   -1907080376
      */
     MCAPI class MobSpawnRules & setDelayRange(int, int, std::string const &);
     /**
      * @symbol ?setDelaySpawnChance@MobSpawnRules@@QEAAAEAV1@H@Z
-     * @hash   -562947230
+     * @hash   194566786
      */
     MCAPI class MobSpawnRules & setDelaySpawnChance(int);
     /**
      * @symbol ?setDifficultyRange@MobSpawnRules@@QEAAAEAV1@W4Difficulty@@0@Z
-     * @hash   608056921
+     * @hash   1365570937
      */
     MCAPI class MobSpawnRules & setDifficultyRange(enum class Difficulty, enum class Difficulty);
     /**
      * @symbol ?setExperimentalGameplay@MobSpawnRules@@QEAAAEAV1@XZ
-     * @hash   -1804030711
+     * @hash   -1046516695
      */
     MCAPI class MobSpawnRules & setExperimentalGameplay();
     /**
      * @symbol ?setHardcodedSpawnRuleCallback@MobSpawnRules@@QEAAAEAV1@V?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@@Z
-     * @hash   1430255497
+     * @hash   -2107197783
      */
     MCAPI class MobSpawnRules & setHardcodedSpawnRuleCallback(class std::function<bool (class SpawnConditions const &, class BlockSource &)>);
     /**
      * @symbol ?setHeightRange@MobSpawnRules@@QEAAAEAV1@HH@Z
-     * @hash   688982371
+     * @hash   1446496387
      */
     MCAPI class MobSpawnRules & setHeightRange(int, int);
     /**
      * @symbol ?setLavaSpawner@MobSpawnRules@@QEAAAEAV1@XZ
-     * @hash   2138431019
+     * @hash   -1399022261
      */
     MCAPI class MobSpawnRules & setLavaSpawner();
     /**
      * @symbol ?setMobEventType@MobSpawnRules@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1952640488
+     * @hash   -1195126472
      */
     MCAPI class MobSpawnRules & setMobEventType(std::string const &);
     /**
      * @symbol ?setPersistence@MobSpawnRules@@QEAAAEAV1@_N@Z
-     * @hash   -1884836698
+     * @hash   -1127322682
      */
     MCAPI class MobSpawnRules & setPersistence(bool);
     /**
      * @symbol ?setPlayerInVillageBorderTolerance@MobSpawnRules@@QEAAAEAV1@I@Z
-     * @hash   -957095636
+     * @hash   -199581620
      */
     MCAPI class MobSpawnRules & setPlayerInVillageBorderTolerance(unsigned int);
     /**
      * @symbol ?setPlayerInVillageDistance@MobSpawnRules@@QEAAAEAV1@I@Z
-     * @hash   48817434
+     * @hash   806331450
      */
     MCAPI class MobSpawnRules & setPlayerInVillageDistance(unsigned int);
     /**
      * @symbol ?setPopulationCap@MobSpawnRules@@QEAAAEAV1@HH@Z
-     * @hash   -290184045
+     * @hash   467329971
      */
     MCAPI class MobSpawnRules & setPopulationCap(int, int);
     /**
      * @symbol ?setRarity@MobSpawnRules@@QEAAAEAV1@H@Z
-     * @hash   1209401650
+     * @hash   1966915666
      */
     MCAPI class MobSpawnRules & setRarity(int);
     /**
      * @symbol ?setSpawnDistanceCap@MobSpawnRules@@QEAAAEAV1@H@Z
-     * @hash   -5631966
+     * @hash   751882050
      */
     MCAPI class MobSpawnRules & setSpawnDistanceCap(int);
     /**
      * @symbol ?setSpawnDistances@MobSpawnRules@@QEAAAEAV1@HH@Z
-     * @hash   561339233
+     * @hash   1318853249
      */
     MCAPI class MobSpawnRules & setSpawnDistances(int, int);
     /**
      * @symbol ?setSurfaceSpawner@MobSpawnRules@@QEAAAEAV1@XZ
-     * @hash   912323209
+     * @hash   1669837225
      */
     MCAPI class MobSpawnRules & setSurfaceSpawner();
     /**
      * @symbol ?setUndergroundSpawner@MobSpawnRules@@QEAAAEAV1@XZ
-     * @hash   1626759897
+     * @hash   -1910693383
      */
     MCAPI class MobSpawnRules & setUndergroundSpawner();
     /**
      * @symbol ?setUnderwaterSpawner@MobSpawnRules@@QEAAAEAV1@XZ
-     * @hash   -1450287733
+     * @hash   -692773717
      */
     MCAPI class MobSpawnRules & setUnderwaterSpawner();
     /**
      * @symbol ?setWorldAgeRange@MobSpawnRules@@QEAAAEAV1@_K0@Z
-     * @hash   -356692055
+     * @hash   400821961
      */
     MCAPI class MobSpawnRules & setWorldAgeRange(unsigned __int64, unsigned __int64);
     /**
      * @symbol ??1MobSpawnRules@@QEAA@XZ
-     * @hash   815648968
+     * @hash   986937608
      */
     MCAPI ~MobSpawnRules();
     /**
      * @symbol ?LOW_END_MAX_SPAWN_DISTANCE@MobSpawnRules@@2HB
-     * @hash   1212982749
+     * @hash   1993729901
      */
     MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
     /**
      * @symbol ?MAX_DEFAULT_SPAWN_DISTANCE@MobSpawnRules@@2HB
-     * @hash   -154431305
+     * @hash   626315847
      */
     MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
     /**
      * @symbol ?MAX_WORLD_AGE@MobSpawnRules@@2_KB
-     * @hash   1429416092
+     * @hash   -2084804052
      */
     MCAPI static unsigned __int64 const MAX_WORLD_AGE;
     /**
      * @symbol ?MIN_DEFAULT_SPAWN_DISTANCE@MobSpawnRules@@2HB
-     * @hash   283791959
+     * @hash   1064539111
      */
     MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
 

@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@HopperDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UHopperDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   518088090
+     * @hash   607053626
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct HopperDefinition>> &);
 

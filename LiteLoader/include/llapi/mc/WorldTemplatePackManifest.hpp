@@ -37,27 +37,27 @@ public:
     /**
      * @vftbl  1
      * @symbol ?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
-     * @hash   1809810642
+     * @hash   976150082
      */
     virtual std::unique_ptr<class PackManifest> clone() const;
     /**
      * @symbol ??0WorldTemplatePackManifest@@QEAA@XZ
-     * @hash   1108791344
+     * @hash   275745824
      */
     MCAPI WorldTemplatePackManifest();
     /**
      * @symbol ??0WorldTemplatePackManifest@@QEAA@$$QEAVPackManifest@@@Z
-     * @hash   319486637
+     * @hash   -513558883
      */
     MCAPI WorldTemplatePackManifest(class PackManifest &&);
     /**
      * @symbol ?getGameType@WorldTemplatePackManifest@@QEBA?AW4GameType@@XZ
-     * @hash   27593750
+     * @hash   -806374330
      */
     MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?setGameType@WorldTemplatePackManifest@@QEAAXW4GameType@@@Z
-     * @hash   -1742514920
+     * @hash   1718453544
      */
     MCAPI void setGameType(enum class GameType);
 

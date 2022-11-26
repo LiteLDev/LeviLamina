@@ -33,37 +33,37 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
     /**
      * @symbol ?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1115220954
+     * @hash   -1011294570
      */
     MCVAPI enum class EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
     /**
      * @symbol ?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
-     * @hash   292677012
+     * @hash   396603396
      */
     MCVAPI enum class EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
     /**
      * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z
-     * @hash   585633089
+     * @hash   687545217
      */
     MCVAPI enum class EventResult onEvent(struct PlayerDamageEvent const &);
     /**
      * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z
-     * @hash   -1791322185
+     * @hash   -1689410057
      */
     MCVAPI enum class EventResult onEvent(struct ActorHurtEvent const &);
     /**
      * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z
-     * @hash   795715177
+     * @hash   899641561
      */
     MCVAPI enum class EventResult onEvent(struct PlayerOpenContainerEvent const &);
     /**
      * @symbol ?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-     * @hash   -1296278519
+     * @hash   -1192352135
      */
     MCVAPI enum class EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     /**
      * @symbol ?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-     * @hash   -114467073
+     * @hash   -10540689
      */
     MCVAPI enum class EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 #endif

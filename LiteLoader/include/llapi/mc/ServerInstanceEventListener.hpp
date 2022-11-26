@@ -33,37 +33,37 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
     /**
      * @symbol ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   596682489
+     * @hash   698594617
      */
     MCVAPI enum class EventResult onServerInitializeEnd(class ServerInstance &);
     /**
      * @symbol ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   -436928910
+     * @hash   -335016782
      */
     MCVAPI enum class EventResult onServerInitializeStart(class ServerInstance &);
     /**
      * @symbol ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-     * @hash   2870221
+     * @hash   104782349
      */
     MCVAPI enum class EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
     /**
      * @symbol ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   -124807757
+     * @hash   -22895629
      */
     MCVAPI enum class EventResult onServerResume(class ServerInstance &);
     /**
      * @symbol ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   -2114707480
+     * @hash   -2012795352
      */
     MCVAPI enum class EventResult onServerSuspend(class ServerInstance &);
     /**
      * @symbol ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   2127491922
+     * @hash   -2065563246
      */
     MCVAPI enum class EventResult onServerUpdateEnd(class ServerInstance &);
     /**
      * @symbol ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     * @hash   -142659268
+     * @hash   -40747140
      */
     MCVAPI enum class EventResult onStartLeaveGame(class ServerInstance &);
 #endif

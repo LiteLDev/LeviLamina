@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ??0VolumeEntityManagerServer@@QEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
-     * @hash   -357192795
+     * @hash   -294304955
      */
     MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
     /**
      * @symbol ?createVolume@VolumeEntityManagerServer@@QEAA?AU?$pair@W4CreateVolumeResult@VolumeEntityManagerServer@@V?$StackRefResultT@UEntityRefTraits@@@@@std@@AEAVLevelStorage@@AEAVPacketSender@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@3V?$AutomaticID@VDimension@@H@@2@Z
-     * @hash   -152787442
+     * @hash   -89930354
      */
     MCAPI struct std::pair<enum class VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class LevelStorage &, class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
     /**
      * @symbol ?getAllVolumesOverlappingChunkPosition@VolumeEntityManagerServer@@QEBA?AV?$vector@V?$WeakRefT@UEntityRefTraits@@@@V?$allocator@V?$WeakRefT@UEntityRefTraits@@@@@std@@@std@@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1422404894
+     * @hash   -1359547806
      */
     MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const &, class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ?loadVolumeFiles@VolumeEntityManagerServer@@QEAAXAEBVResourcePackManager@@_N@Z
-     * @hash   983835233
+     * @hash   1046692321
      */
     MCAPI void loadVolumeFiles(class ResourcePackManager const &, bool);
     /**
      * @symbol ?loadVolumeInstances@VolumeEntityManagerServer@@QEAAXAEBVLevelStorage@@_N@Z
-     * @hash   -1998053683
+     * @hash   -1935196595
      */
     MCAPI void loadVolumeInstances(class LevelStorage const &, bool);
     /**
      * @symbol ?removeAllVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@AEAVLevelStorage@@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
-     * @hash   -1842051779
+     * @hash   -1779194691
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeAllVolumes(class LevelStorage &, class AutomaticID<class Dimension, int>, class PacketSender &);
     /**
      * @symbol ?removeVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@AEAVLevelStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
-     * @hash   -1382115614
+     * @hash   -1319258526
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     /**
      * @symbol ?removeVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@AEAVLevelStorage@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
-     * @hash   957941418
+     * @hash   1020798506
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     /**
      * @symbol ?sendAllVolumesToClient@VolumeEntityManagerServer@@QEBAXAEBVUserEntityIdentifierComponent@@AEBVNetworkIdentifier@@AEAVPacketSender@@@Z
-     * @hash   -978683148
+     * @hash   -915826060
      */
     MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const &, class NetworkIdentifier const &, class PacketSender &) const;
 

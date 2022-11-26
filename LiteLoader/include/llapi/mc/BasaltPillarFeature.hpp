@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@BasaltPillarFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1371312481
+     * @hash   1527378881
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_growColumn@BasaltPillarFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@M@Z
-     * @hash   -808142323
+     * @hash   -652075923
      */
     MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;
 

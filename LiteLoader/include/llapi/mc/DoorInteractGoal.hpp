@@ -39,60 +39,60 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DoorInteractGoal@@UEAA_NXZ
-     * @hash   39586953
+     * @hash   199620361
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DoorInteractGoal@@UEAA_NXZ
-     * @hash   483554503
+     * @hash   643587911
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DoorInteractGoal@@UEAAXXZ
-     * @hash   1725492546
+     * @hash   1885525954
      */
     virtual void start();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@DoorInteractGoal@@UEAAXXZ
-     * @hash   1089447149
+     * @hash   1249480557
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DoorInteractGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2015227815
+     * @hash   -2119706073
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DoorInteractGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -59166042
+     * @hash   100867366
      */
     MCAPI DoorInteractGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_doorBlocksPath@DoorInteractGoal@@IEBA_NXZ
-     * @hash   1237903469
+     * @hash   1397936877
      */
     MCAPI bool _doorBlocksPath() const;
 
 //private:
     /**
      * @symbol ?_findBlockingDoorAtPos@DoorInteractGoal@@CAPEBVDoorBlock@@AEBVBlockPos@@AEBVMob@@PEAVPath@@AEAW4Type@Direction@@3@Z
-     * @hash   1591795525
+     * @hash   1751828933
      */
     MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum class Direction::Type &, enum class Direction::Type &);
 

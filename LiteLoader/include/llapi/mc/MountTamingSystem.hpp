@@ -37,13 +37,13 @@ public:
     virtual ~MountTamingSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@MountTamingSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1253249766
+     * @hash   -1097583142
      */
     virtual void tick(class EntityRegistry &);
 

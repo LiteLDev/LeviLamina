@@ -34,42 +34,42 @@ struct CarvingParameters {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getCurrentConfiguration@CaveFeatureUtils@@YAAEBUCarverConfiguration@1@_N@Z
-     * @hash   391390775
+     * @hash   547118903
      */
     MCAPI struct CaveFeatureUtils::CarverConfiguration const & getCurrentConfiguration(bool);
     /**
      * @symbol ?getDistance_1_16@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-     * @hash   -507751930
+     * @hash   -414481114
      */
     MCAPI int getDistance_1_16(class Random &);
     /**
      * @symbol ?getDistance_1_18@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-     * @hash   -129117454
+     * @hash   26610674
      */
     MCAPI int getDistance_1_18(class Random &);
     /**
      * @symbol ?getTunnelThickness_1_16@CaveFeatureUtils@@YAMAEAVRandom@@@Z
-     * @hash   12054306
+     * @hash   167782434
      */
     MCAPI float getTunnelThickness_1_16(class Random &);
     /**
      * @symbol ?getTunnelThickness_1_18@CaveFeatureUtils@@YAMAEAVRandom@@@Z
-     * @hash   -959969810
+     * @hash   -804241682
      */
     MCAPI float getTunnelThickness_1_18(class Random &);
     /**
      * @symbol ?isDiggable_1_16@CaveFeatureUtils@@YA_NAEBVBlock@@0@Z
-     * @hash   471050960
+     * @hash   626779088
      */
     MCAPI bool isDiggable_1_16(class Block const &, class Block const &);
     /**
      * @symbol ?isDiggable_1_18@CaveFeatureUtils@@YA_NAEBVBlock@@0@Z
-     * @hash   401060180
+     * @hash   556788308
      */
     MCAPI bool isDiggable_1_18(class Block const &, class Block const &);
     /**
      * @symbol ?sampleFloatRange@CaveFeatureUtils@@YAMAEBUFloatRange@@AEAVRandom@@@Z
-     * @hash   -1435885351
+     * @hash   -1280157223
      */
     MCAPI float sampleFloatRange(struct FloatRange const &, class Random &);
 

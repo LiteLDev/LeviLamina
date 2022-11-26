@@ -34,80 +34,80 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
     /**
      * @symbol ?decorateWorldGenLoadChunk@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
-     * @hash   272848956
+     * @hash   443722444
      */
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
     /**
      * @symbol ?decorateWorldGenPostProcess@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-     * @hash   -1483529932
+     * @hash   -1312656444
      */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     /**
      * @symbol ?findSpawnPosition@NetherGenerator@@UEBA?AVBlockPos@@XZ
-     * @hash   -1729876344
+     * @hash   -1559002856
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
      * @symbol ?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-     * @hash   -455747794
+     * @hash   -284874306
      */
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
      * @symbol ?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ
-     * @hash   1250240244
+     * @hash   1421113732
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
      * @symbol ?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
-     * @hash   -719023678
+     * @hash   -548165566
      */
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
     /**
      * @symbol ?loadChunk@NetherGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-     * @hash   191926692
+     * @hash   362800180
      */
     MCVAPI void loadChunk(class LevelChunk &, bool);
     /**
      * @symbol ?postProcess@NetherGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-     * @hash   1157526754
+     * @hash   1328415618
      */
     MCVAPI bool postProcess(class ChunkViewSource &);
     /**
      * @symbol ?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-     * @hash   367486791
+     * @hash   538514039
      */
     MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
     /**
      * @symbol ?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-     * @hash   1497378486
+     * @hash   1668405734
      */
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
 #endif
     /**
      * @symbol ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-     * @hash   -1094258724
+     * @hash   -923400612
      */
     MCAPI NetherGenerator(class Dimension &, unsigned int, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ?buildSurfaces@NetherGenerator@@QEAAXAEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@@Z
-     * @hash   -1523340628
+     * @hash   -1352436388
      */
     MCAPI void buildSurfaces(class BlockVolume &, class LevelChunk &, class ChunkPos const &);
     /**
      * @symbol ?generateDensityCellsForChunk@NetherGenerator@@QEBA?AV?$MultidimensionalArray@M$04$04$0BB@@Util@@AEBVChunkPos@@@Z
-     * @hash   1153652145
+     * @hash   1324525633
      */
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const &) const;
 
 //private:
     /**
      * @symbol ?_prepareHeights@NetherGenerator@@AEAAXAEAVBlockVolume@@AEBVChunkPos@@_NPEAV?$vector@FV?$allocator@F@std@@@std@@H@Z
-     * @hash   -989401837
+     * @hash   -818497597
      */
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     /**
      * @symbol ?_makeBiomeSource@NetherGenerator@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@AEAVDimension@@@Z
-     * @hash   1616743764
+     * @hash   1787648004
      */
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension &);
 

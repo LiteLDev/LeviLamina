@@ -44,94 +44,94 @@ public:
 public:
     /**
      * @symbol ?RAW_TEXT_ERROR_NOT_ARRAY@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1643243357
+     * @hash   -161043085
      */
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
     /**
      * @symbol ?RAW_TEXT_ERROR_NOT_OBJECT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   586542889
+     * @hash   2068743161
      */
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
     /**
      * @symbol ?RAW_TEXT_ERROR_NO_DATA@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1360833977
+     * @hash   -1451933047
      */
     MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
     /**
      * @symbol ?RAW_TEXT_ERROR_PARSE_FAILED@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1940758981
+     * @hash   -872008043
      */
     MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
     /**
      * @symbol ?RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2039239791
+     * @hash   -557039519
      */
     MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
     /**
      * @symbol ?RAW_TEXT_ERROR_SCORE_NOT_OBJECT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   384110787
+     * @hash   1866311059
      */
     MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
     /**
      * @symbol ?RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1925575245
+     * @hash   -443374973
      */
     MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
     /**
      * @symbol ?RAW_TEXT_ERROR_SELECTOR_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1815099139
+     * @hash   -997667885
      */
     MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
     /**
      * @symbol ?RAW_TEXT_ERROR_TEXT_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1819067865
+     * @hash   -336867593
      */
     MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
     /**
      * @symbol ?RAW_TEXT_ERROR_TRANSLATE_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1329081647
+     * @hash   -1483685377
      */
     MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
     /**
      * @symbol ?RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1949435235
+     * @hash   -467234963
      */
     MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
     /**
      * @symbol ?textObjectFromJsonServer@TextObjectParser@@SA_NAEBVValue@Json@@AEAVTextObjectRoot@@UServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   -140980094
+     * @hash   -87763758
      */
     MCAPI static bool textObjectFromJsonServer(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization &);
     /**
      * @symbol ?textObjectFromJsonString@TextObjectParser@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVTextObjectRoot@@AEAV23@@Z
-     * @hash   1082710001
+     * @hash   1135926337
      */
     MCAPI static bool textObjectFromJsonString(std::string const &, class TextObjectRoot &, std::string &);
 
 //private:
     /**
      * @symbol ?_getObjectsFromTextObject@TextObjectParser@@CA_NAEBVValue@Json@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   1354317996
+     * @hash   1407703468
      */
     MCAPI static bool _getObjectsFromTextObject(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     /**
      * @symbol ?_parseScoreTextObject@TextObjectParser@@CA_NAEAVTextObjectRoot@@AEBVValue@Json@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   564722263
+     * @hash   618000103
      */
     MCAPI static bool _parseScoreTextObject(class TextObjectRoot &, class Json::Value const &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     /**
      * @symbol ?_parseSelectorTextObject@TextObjectParser@@CA_NAEAVTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   -1031897918
+     * @hash   -978666206
      */
     MCAPI static bool _parseSelectorTextObject(class TextObjectRoot &, std::string, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     /**
      * @symbol ?_textObjectFromJson@TextObjectParser@@CA_NAEBVValue@Json@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   1063512998
+     * @hash   1116744710
      */
     MCAPI static bool _textObjectFromJson(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     /**
      * @symbol ?_textObjectFromString@TextObjectParser@@CA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
-     * @hash   -495716109
+     * @hash   -442484397
      */
     MCAPI static bool _textObjectFromString(std::string const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
 

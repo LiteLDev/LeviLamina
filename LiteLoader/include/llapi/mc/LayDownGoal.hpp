@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@LayDownGoal@@UEAA_NXZ
-     * @hash   926534583
+     * @hash   1087075399
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@LayDownGoal@@UEAA_NXZ
-     * @hash   1655036757
+     * @hash   1815577573
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@LayDownGoal@@UEAAXXZ
-     * @hash   879975360
+     * @hash   1040516176
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@LayDownGoal@@UEAAXXZ
-     * @hash   -1631142992
+     * @hash   -1470602176
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@LayDownGoal@@UEAAXXZ
-     * @hash   -681288693
+     * @hash   -592323157
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@LayDownGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1204266311
+     * @hash   -1043725495
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0LayDownGoal@@QEAA@AEAVMob@@HH@Z
-     * @hash   985587220
+     * @hash   1146128036
      */
     MCAPI LayDownGoal(class Mob &, int, int);
 

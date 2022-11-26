@@ -39,7 +39,7 @@ public:
     virtual ~IFileChunkUploader();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
@@ -51,24 +51,24 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
-     * @hash   -593000320
+     * @hash   -599012336
      */
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-     * @hash   -292297488
+     * @hash   -298309504
      */
     virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
     /**
      * @vftbl  6
      * @symbol ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-     * @hash   -845977274
+     * @hash   -851989290
      */
     virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /**
@@ -97,24 +97,24 @@ public:
     /**
      * @vftbl  11
      * @symbol ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-     * @hash   -32347579
+     * @hash   -38359595
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
     /**
      * @symbol ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
-     * @hash   770432936
+     * @hash   859398472
      */
     MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
     /**
      * @symbol ?update@IFileChunkUploader@@UEAAXXZ
-     * @hash   1284458010
+     * @hash   1373423546
      */
     MCVAPI void update();
 #endif
     /**
      * @symbol ??0IFileChunkUploader@@QEAA@XZ
-     * @hash   -223319534
+     * @hash   -229331550
      */
     MCAPI IFileChunkUploader();
 

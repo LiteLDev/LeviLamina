@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?initializeFromCode@GameEventMovementTrackingComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   153893029
+     * @hash   77935589
      */
     MCAPI void initializeFromCode(class Actor &, bool);
     /**
      * @symbol ?shouldEmitEntityMoveGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
-     * @hash   122021470
+     * @hash   46064030
      */
     MCAPI bool shouldEmitEntityMoveGameEvent();
     /**
      * @symbol ?shouldEmitFlapGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
-     * @hash   -917051284
+     * @hash   -993008724
      */
     MCAPI bool shouldEmitFlapGameEvent();
     /**
      * @symbol ?shouldEmitSwimGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
-     * @hash   -857302058
+     * @hash   -933259498
      */
     MCAPI bool shouldEmitSwimGameEvent();
 

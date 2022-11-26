@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
-     * @hash   460668694
+     * @hash   1022784502
      */
     MCAPI ExpectedSlotConsume(enum ContainerEnumName, unsigned char, class ItemStack const &, unsigned char);
 

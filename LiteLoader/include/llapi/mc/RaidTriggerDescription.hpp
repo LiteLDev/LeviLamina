@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@RaidTriggerDescription@@UEBAPEBDXZ
-     * @hash   1264979382
+     * @hash   1780997942
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@RaidTriggerDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   1555515389
+     * @hash   2071533949
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@RaidTriggerDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   2009608519
+     * @hash   -1769340217
      */
     virtual void serializeData(class Json::Value &) const;
 

@@ -38,31 +38,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initFilePick@SystemFilePicker@@UEAAXAEBVPath@Core@@V?$function@$$A6AX_NUFileInfo@@@Z@std@@@Z
-     * @hash   -1497836326
+     * @hash   -1503848342
      */
     virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
     /**
      * @vftbl  2
      * @symbol ?readBytes@SystemFilePicker@@UEAA_KAEBUFileInfo@@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     * @hash   2035610737
+     * @hash   2029583345
      */
     virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
     /**
      * @vftbl  3
      * @symbol ?writeBytes@SystemFilePicker@@UEAA_NAEBUFileInfo@@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
-     * @hash   892612157
+     * @hash   886584765
      */
     virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
     /**
      * @symbol ??0SystemFilePicker@@QEAA@XZ
-     * @hash   -995626715
+     * @hash   -1001638731
      */
     MCAPI SystemFilePicker();
 
 //protected:
     /**
      * @symbol ?_fillFileInfo@SystemFilePicker@@IEAA?AUFileInfo@@AEBVPath@Core@@@Z
-     * @hash   1524998707
+     * @hash   1518986691
      */
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
 

@@ -36,35 +36,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayerStartItemCooldownPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -933998025
+     * @hash   -1007941209
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerStartItemCooldownPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   90565860
+     * @hash   16622676
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayerStartItemCooldownPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1611588989
+     * @hash   -1685532173
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlayerStartItemCooldownPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1446035373
+     * @hash   -1519978557
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerStartItemCooldownPacket@@QEAA@XZ
-     * @hash   163397299
+     * @hash   89454115
      */
     MCAPI PlayerStartItemCooldownPacket();
     /**
      * @symbol ??0PlayerStartItemCooldownPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -519553451
+     * @hash   -593496635
      */
     MCAPI PlayerStartItemCooldownPacket(std::string const &, int);
 

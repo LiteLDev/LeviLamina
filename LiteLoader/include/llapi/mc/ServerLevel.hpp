@@ -34,183 +34,183 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
     /**
      * @symbol ?consolidateLevelChunkMetaData@ServerLevel@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -645327452
+     * @hash   -583039276
      */
     MCVAPI void consolidateLevelChunkMetaData(class LevelChunk &);
     /**
-     * @symbol ?createDimension@ServerLevel@@UEAAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   1712413304
-     */
-    MCVAPI class Dimension * createDimension(class AutomaticID<class Dimension, int>);
-    /**
      * @symbol ?decrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z
-     * @hash   251957938
+     * @hash   313984722
      */
     MCVAPI void decrementTagCache(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
     /**
      * @symbol ?getClientResourcePackManager@ServerLevel@@UEBAPEAVResourcePackManager@@XZ
-     * @hash   1406643250
+     * @hash   1468670034
      */
     MCVAPI class ResourcePackManager * getClientResourcePackManager() const;
     /**
      * @symbol ?getLevelChunkMetaDataDictionary@ServerLevel@@UEBA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
-     * @hash   -382943921
+     * @hash   -320917137
      */
     MCVAPI class std::shared_ptr<class LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
     /**
      * @symbol ?getLevelEventCoordinator@ServerLevel@@UEAAAEAVLevelEventCoordinator@@XZ
-     * @hash   235011794
+     * @hash   297038578
      */
     MCVAPI class LevelEventCoordinator & getLevelEventCoordinator();
     /**
+     * @symbol ?getOrCreateDimension@ServerLevel@@UEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   -1631221869
+     */
+    MCVAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(class AutomaticID<class Dimension, int>);
+    /**
      * @symbol ?getPositionTrackerDBServer@ServerLevel@@UEBAPEAVPositionTrackingDBServer@PositionTrackingDB@@XZ
-     * @hash   -1506291714
+     * @hash   -1443803650
      */
     MCVAPI class PositionTrackingDB::PositionTrackingDBServer * getPositionTrackerDBServer() const;
     /**
      * @symbol ?getServerResourcePackManager@ServerLevel@@UEBAPEAVResourcePackManager@@XZ
-     * @hash   -2086158678
+     * @hash   -2023670614
      */
     MCVAPI class ResourcePackManager * getServerResourcePackManager() const;
     /**
      * @symbol ?getThreadRandom@ServerLevel@@UEBAAEAVRandom@@XZ
-     * @hash   -1671642145
+     * @hash   -1609154081
      */
     MCVAPI class Random & getThreadRandom() const;
     /**
      * @symbol ?getTradeTables@ServerLevel@@UEAAPEAVTradeTables@@XZ
-     * @hash   1043404238
+     * @hash   1105892302
      */
     MCVAPI class TradeTables * getTradeTables();
     /**
      * @symbol ?incrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z
-     * @hash   1842686926
+     * @hash   1905174990
      */
     MCVAPI void incrementTagCache(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
     /**
      * @symbol ?initialize@ServerLevel@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelSettings@@PEAVLevelData@@AEBVExperiments@@PEBV23@@Z
-     * @hash   1358954113
+     * @hash   1421565185
      */
     MCVAPI bool initialize(std::string const &, class LevelSettings const &, class LevelData *, class Experiments const &, std::string const *);
     /**
      * @symbol ?initializeLevelChunkMetaData@ServerLevel@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -1036726195
+     * @hash   -974099747
      */
     MCVAPI void initializeLevelChunkMetaData(class LevelChunk &);
     /**
      * @symbol ?loadFunctionManager@ServerLevel@@UEAAXXZ
-     * @hash   2071188341
+     * @hash   2133814789
      */
     MCVAPI void loadFunctionManager();
     /**
      * @symbol ?onChunkLoaded@ServerLevel@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     * @hash   -534274352
+     * @hash   -471647904
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
      * @symbol ?registerEventCoordinators@ServerLevel@@UEAAXXZ
-     * @hash   -1803792192
+     * @hash   -1741165744
      */
     MCVAPI void registerEventCoordinators();
     /**
      * @symbol ?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
-     * @hash   -188335862
+     * @hash   -125709414
      */
     MCVAPI void runCommand(class Command &, class CommandOrigin &, enum class CommandOriginSystem);
     /**
      * @symbol ?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
-     * @hash   1655320439
+     * @hash   1718039143
      */
     MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CommandOriginSystem, enum class CurrentCmdVersion);
     /**
      * @symbol ?saveAdditionalData@ServerLevel@@UEAAXXZ
-     * @hash   1506332052
+     * @hash   1569066132
      */
     MCVAPI void saveAdditionalData();
     /**
      * @symbol ?saveDynamicProperties@ServerLevel@@UEAAXXZ
-     * @hash   -68190021
+     * @hash   -5455941
      */
     MCVAPI void saveDynamicProperties();
     /**
      * @symbol ?setCommandsEnabled@ServerLevel@@UEAAX_N@Z
-     * @hash   2027987263
+     * @hash   2090721343
      */
     MCVAPI void setCommandsEnabled(bool);
     /**
      * @symbol ?setServerTickOffset@ServerLevel@@UEAAX_J@Z
-     * @hash   1169443598
+     * @hash   1258409134
      */
     MCVAPI void setServerTickOffset(__int64);
     /**
      * @symbol ?setWorldTemplateOptionsUnlocked@ServerLevel@@UEAAXXZ
-     * @hash   701071117
+     * @hash   763805197
      */
     MCVAPI void setWorldTemplateOptionsUnlocked();
     /**
      * @symbol ?tick@ServerLevel@@UEAAXXZ
-     * @hash   -742598509
+     * @hash   -679864429
      */
     MCVAPI void tick();
     /**
      * @symbol ?updateSleepingPlayerList@ServerLevel@@UEAAXXZ
-     * @hash   1693987289
+     * @hash   1756721369
      */
     MCVAPI void updateSleepingPlayerList();
     /**
      * @symbol ??1ServerLevel@@UEAA@XZ
-     * @hash   1382481176
+     * @hash   1444646344
      */
     MCVAPI ~ServerLevel();
 #endif
     /**
      * @symbol ??0ServerLevel@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@V?$unique_ptr@VLevelStorage@@U?$default_delete@VLevelStorage@@@std@@@std@@V?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@4@AEAVIMinecraftEventing@@AEAVResourcePackManager@@4V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@2@AEAVMinecraftCommands@@AEAVScheduler@@AEBV?$not_null@V?$NonOwnerPointer@VIEntityRegistryOwner@@@Bedrock@@@2@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VBlockComponentFactory@@U?$default_delete@VBlockComponentFactory@@@std@@@4@V?$unique_ptr@VBlockDefinitionGroup@@U?$default_delete@VBlockDefinitionGroup@@@std@@@4@VItemRegistryRef@@_NV?$weak_ptr@VBlockTypeRegistry@@@4@@Z
-     * @hash   -1501576654
+     * @hash   -1439411486
      */
     MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, class std::weak_ptr<class BlockTypeRegistry>);
     /**
      * @symbol ?getCommands@ServerLevel@@QEAAAEAVMinecraftCommands@@XZ
-     * @hash   761112650
+     * @hash   823139434
      */
     MCAPI class MinecraftCommands & getCommands();
     /**
      * @symbol ?getDynamicPropertiesDefinition@ServerLevel@@QEAAAEAVDynamicPropertiesDefinition@@XZ
-     * @hash   -2029773238
+     * @hash   -1967746454
      */
     MCAPI class DynamicPropertiesDefinition & getDynamicPropertiesDefinition();
     /**
      * @symbol ?getFunctionManager@ServerLevel@@QEAAAEAVFunctionManager@@XZ
-     * @hash   -1200018182
+     * @hash   -1137991398
      */
     MCAPI class FunctionManager & getFunctionManager();
     /**
      * @symbol ?getMobEvents@ServerLevel@@QEAAAEAVMobEvents@@XZ
-     * @hash   -2066765318
+     * @hash   -2004738534
      */
     MCAPI class MobEvents & getMobEvents();
     /**
      * @symbol ?getMobEvents@ServerLevel@@QEBAAEBVMobEvents@@XZ
-     * @hash   -868564108
+     * @hash   -806537324
      */
     MCAPI class MobEvents const & getMobEvents() const;
     /**
      * @symbol ?getOrAddDynamicProperties@ServerLevel@@QEAAAEAVDynamicProperties@@XZ
-     * @hash   83694280
+     * @hash   145721064
      */
     MCAPI class DynamicProperties & getOrAddDynamicProperties();
     /**
      * @symbol ?setShouldSendSleepMessage@ServerLevel@@QEAAX_N@Z
-     * @hash   977616560
+     * @hash   1040350640
      */
     MCAPI void setShouldSendSleepMessage(bool);
     /**
      * @symbol ?shouldSendSleepMessage@ServerLevel@@QEBA_NXZ
-     * @hash   827792846
+     * @hash   890526926
      */
     MCAPI bool shouldSendSleepMessage() const;
     /**
      * @symbol ?tryGetVolumeEntityManager@ServerLevel@@QEBA?AV?$NonOwnerPointer@VVolumeEntityManagerServer@@@Bedrock@@XZ
-     * @hash   -379965621
+     * @hash   -317231541
      */
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
 

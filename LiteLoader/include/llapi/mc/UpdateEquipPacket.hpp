@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateEquipPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   19059647
+     * @hash   -51331681
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateEquipPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1549149476
+     * @hash   -1393452100
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateEquipPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1845506021
+     * @hash   -1915897349
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateEquipPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1421417467
+     * @hash   1351026139
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateEquipPacket@@QEAA@XZ
-     * @hash   851176299
+     * @hash   780784971
      */
     MCAPI UpdateEquipPacket();
     /**
      * @symbol ??0UpdateEquipPacket@@QEAA@W4ContainerID@@W4ContainerType@@H$$QEAVCompoundTag@@AEBUActorUniqueID@@@Z
-     * @hash   1464714628
+     * @hash   1394323300
      */
     MCAPI UpdateEquipPacket(enum class ContainerID, enum class ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
 

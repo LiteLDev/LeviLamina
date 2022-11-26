@@ -37,18 +37,18 @@ public:
     virtual ~ActorLegacyTickSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1130346442
+     * @hash   1275065354
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?tickActorLegacyTickSystem@ActorLegacyTickSystem@@SAXAEAVEntityContext@@AEAVActor@@AEAVActorTickNeededComponent@@@Z
-     * @hash   1777279678
+     * @hash   1921998590
      */
     MCAPI static void tickActorLegacyTickSystem(class EntityContext &, class Actor &, class ActorTickNeededComponent &);
 

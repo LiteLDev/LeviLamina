@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VRecordItemComponent@@@@UEBA_NXZ
-     * @hash   695710856
+     * @hash   792210632
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRecordItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   724814026
+     * @hash   1318942666
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRecordItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   168934246
+     * @hash   787895126
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getAlias@RecordItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1430596900
+     * @hash   -924987892
      */
     MCAPI std::string getAlias() const;
     /**
      * @symbol ?getComparatorSignal@RecordItemComponent@@QEBAHXZ
-     * @hash   -166830160
+     * @hash   -187157232
      */
     MCAPI int getComparatorSignal() const;
     /**
      * @symbol ?getDuration@RecordItemComponent@@QEBAMXZ
-     * @hash   -1241759126
+     * @hash   -1254674966
      */
     MCAPI float getDuration() const;
     /**
      * @symbol ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -1973558948
+     * @hash   -1911501412
      */
     MCAPI enum class LevelSoundEvent getSound() const;
     /**
      * @symbol ?bindType@RecordItemComponent@@SAXXZ
-     * @hash   3022175
+     * @hash   507877759
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RecordItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -198995082
+     * @hash   306629302
      */
     MCAPI static class HashedString const & getIdentifier();
 

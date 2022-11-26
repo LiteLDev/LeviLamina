@@ -39,42 +39,42 @@ public:
     /**
      * @vftbl  1
      * @symbol ?shouldAddHardcodedSpawnAreas@OceanMonumentFeature@@UEBA_NXZ
-     * @hash   1023337664
+     * @hash   1119837440
      */
     virtual bool shouldAddHardcodedSpawnAreas() const;
     /**
      * @vftbl  2
      * @symbol ?shouldPostProcessMobs@OceanMonumentFeature@@UEBA_NXZ
-     * @hash   -1854869210
+     * @hash   -1758369434
      */
     virtual bool shouldPostProcessMobs() const;
     /**
      * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@OceanMonumentFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-     * @hash   -2094261354
+     * @hash   -1922511434
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
      * @vftbl  4
      * @symbol ?initMobSpawnTypes@OceanMonumentFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
-     * @hash   -1655264409
+     * @hash   -1483514489
      */
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /**
      * @vftbl  5
      * @symbol ?isFeatureChunk@OceanMonumentFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-     * @hash   2064352407
+     * @hash   -2058895721
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
      * @vftbl  6
      * @symbol ?createStructureStart@OceanMonumentFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -616342502
+     * @hash   -444592582
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ??0OceanMonumentFeature@@QEAA@I@Z
-     * @hash   1333219656
+     * @hash   1504969576
      */
     MCAPI OceanMonumentFeature(unsigned int);
 

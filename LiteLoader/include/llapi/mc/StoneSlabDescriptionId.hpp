@@ -22,42 +22,42 @@ namespace StoneSlabDescriptionId {
 #undef AFTER_EXTRA
     /**
      * @symbol ?OldDoubleStoneSlab@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   315496755
+     * @hash   1948212691
      */
     MCAPI extern std::string const OldDoubleStoneSlab;
     /**
      * @symbol ?OldDoubleStoneSlab2@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1516369725
+     * @hash   -1145881635
      */
     MCAPI extern std::string const OldDoubleStoneSlab2;
     /**
      * @symbol ?OldDoubleStoneSlab3@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   547032991
+     * @hash   -2115218369
      */
     MCAPI extern std::string const OldDoubleStoneSlab3;
     /**
      * @symbol ?OldDoubleStoneSlab4@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -422303743
+     * @hash   1210412193
      */
     MCAPI extern std::string const OldDoubleStoneSlab4;
     /**
      * @symbol ?OldStoneSlab@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1444358315
+     * @hash   188357621
      */
     MCAPI extern std::string const OldStoneSlab;
     /**
      * @symbol ?OldStoneSlab2@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1495839653
+     * @hash   136876283
      */
     MCAPI extern std::string const OldStoneSlab2;
     /**
      * @symbol ?OldStoneSlab3@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1829790909
+     * @hash   -832460451
      */
     MCAPI extern std::string const OldStoneSlab3;
     /**
      * @symbol ?OldStoneSlab4@StoneSlabDescriptionId@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   860454175
+     * @hash   -1801797185
      */
     MCAPI extern std::string const OldStoneSlab4;
 

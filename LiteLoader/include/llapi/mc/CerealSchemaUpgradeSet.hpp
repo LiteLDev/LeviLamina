@@ -29,18 +29,18 @@ public:
 
 public:
     /**
-     * @symbol ?findNext@CerealSchemaUpgradeSet@@QEBA?AV?$shared_ptr@VCerealSchemaUpgrade@@@std@@AEBVSemVersion@@@Z
-     * @hash   -868894742
+     * @symbol ?findNext@CerealSchemaUpgradeSet@@QEBA?AU?$pair@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@VSemVersion@@@std@@AEBVSemVersion@@@Z
+     * @hash   512613103
      */
-    MCAPI class std::shared_ptr<class CerealSchemaUpgrade> findNext(class SemVersion const &) const;
+    MCAPI struct std::pair<class std::shared_ptr<class CerealSchemaUpgrade>, class SemVersion> findNext(class SemVersion const &) const;
     /**
      * @symbol ?forEach@CerealSchemaUpgradeSet@@QEAA_NV?$function@$$A6A_NV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z@std@@@Z
-     * @hash   96774013
+     * @hash   616159917
      */
     MCAPI bool forEach(class std::function<bool (class std::shared_ptr<class CerealSchemaUpgrade>)>);
     /**
      * @symbol ??1CerealSchemaUpgradeSet@@QEAA@XZ
-     * @hash   946619425
+     * @hash   1658774241
      */
     MCAPI ~CerealSchemaUpgradeSet();
 

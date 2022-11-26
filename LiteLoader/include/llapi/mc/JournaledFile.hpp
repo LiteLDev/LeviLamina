@@ -33,54 +33,54 @@ public:
 public:
     /**
      * @symbol ??0JournaledFile@@QEAA@$$QEAV?$function@$$A6A?AVResult@Core@@VPath@2@@Z@std@@@Z
-     * @hash   124605138
+     * @hash   643329874
      */
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
     /**
      * @symbol ?open@JournaledFile@@QEAA?AVResult@Core@@VPath@3@VFileOpenMode@3@W4FileBufferingMode@3@@Z
-     * @hash   -1403968803
+     * @hash   -885367075
      */
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
     /**
      * @symbol ?write@JournaledFile@@QEAA?AVResult@Core@@PEBX_K@Z
-     * @hash   -1169590174
+     * @hash   -651080702
      */
     MCAPI class Core::Result write(void const *, unsigned __int64);
     /**
      * @symbol ??1JournaledFile@@QEAA@XZ
-     * @hash   -1432195426
+     * @hash   -913470690
      */
     MCAPI ~JournaledFile();
     /**
      * @symbol ?findBackupPath@JournaledFile@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@VPath@3@@Z
-     * @hash   200079078
+     * @hash   718726934
      */
     MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
     /**
      * @symbol ?findReadPath@JournaledFile@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@VPath@3@@Z
-     * @hash   -1865523178
+     * @hash   -1346890698
      */
     MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
     /**
      * @symbol ?isOldFile@JournaledFile@@SA_NVPath@Core@@@Z
-     * @hash   1965696797
+     * @hash   -1810668771
      */
     MCAPI static bool isOldFile(class Core::Path);
     /**
      * @symbol ?populateImportantFiles@JournaledFile@@SAXVPath@Core@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   1190439882
+     * @hash   1709026234
      */
     MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string> &);
     /**
      * @symbol ?replaceHeadFileWithBackup@JournaledFile@@SA?AVResult@Core@@VPath@3@@Z
-     * @hash   1838283743
+     * @hash   -1938112577
      */
     MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
 
 //private:
     /**
      * @symbol ?_flushFiles@JournaledFile@@AEAAXXZ
-     * @hash   -1312410196
+     * @hash   -793685460
      */
     MCAPI void _flushFiles();
 

@@ -39,70 +39,70 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@NearestAttackableTargetGoal@@UEAA_NXZ
-     * @hash   1017381660
+     * @hash   1033357324
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@NearestAttackableTargetGoal@@UEAA_NXZ
-     * @hash   -1466179206
+     * @hash   -1450203542
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  4
      * @symbol ?start@NearestAttackableTargetGoal@@UEAAXXZ
-     * @hash   832899893
+     * @hash   848860181
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@NearestAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -960647404
+     * @hash   -944610236
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1355408327
+     * @hash   -1258908551
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?_findTarget@NearestAttackableTargetGoal@@MEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
-     * @hash   -1695753119
+     * @hash   -1679731327
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
     /**
      * @symbol ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1964061767
+     * @hash   -1948039975
      */
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_canStartSearching@NearestAttackableTargetGoal@@IEAA_NXZ
-     * @hash   -1190269390
+     * @hash   -1174247598
      */
     MCAPI bool _canStartSearching();
     /**
      * @symbol ?_getNearbyActors@NearestAttackableTargetGoal@@IEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@XZ
-     * @hash   1914449354
+     * @hash   1930471146
      */
     MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     /**
      * @symbol ?_isTargetVisible@NearestAttackableTargetGoal@@IEBA_NAEBVMob@@MM@Z
-     * @hash   -1274160777
+     * @hash   -1258138985
      */
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 //private:
     /**
      * @symbol ?_selectTarget@NearestAttackableTargetGoal@@AEAA_NXZ
-     * @hash   1627480222
+     * @hash   1643517390
      */
     MCAPI bool _selectTarget();
 

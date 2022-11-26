@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@LegacyTreeFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -150550306
+     * @hash   6823054
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0LegacyTreeFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
-     * @hash   918292282
+     * @hash   1075696394
      */
     MCAPI LegacyTreeFeature(enum class LegacyTreeFeature::Type, class FeatureRegistry &);
 

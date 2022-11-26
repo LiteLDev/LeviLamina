@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@OpenDoorAnnotationDescription@@UEBAPEBDXZ
-     * @hash   776963087
+     * @hash   701328543
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@OpenDoorAnnotationDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1433406594
+     * @hash   -1344441058
      */
     virtual void serializeData(class Json::Value &) const;
 

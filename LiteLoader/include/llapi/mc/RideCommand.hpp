@@ -39,39 +39,39 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@RideCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   226332528
+     * @hash   233851392
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@RideCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1769205632
+     * @hash   -1761686768
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?evictPassengers@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1654097810
+     * @hash   1661570546
      */
     MCAPI void evictPassengers(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?startRiding@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   170323591
+     * @hash   177488807
      */
     MCAPI void startRiding(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?stopRiding@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1749683399
+     * @hash   1757279143
      */
     MCAPI void stopRiding(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?summonPassenger@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -165285639
+     * @hash   -157659143
      */
     MCAPI void summonPassenger(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?summonVehicle@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   809820891
+     * @hash   817754907
      */
     MCAPI void summonVehicle(class CommandOrigin const &, class CommandOutput &) const;
 

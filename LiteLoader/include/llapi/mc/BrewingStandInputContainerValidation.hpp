@@ -39,53 +39,53 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -181654
+     * @hash   471800042
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@BrewingStandInputContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -681172980
+     * @hash   -208976020
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   96941033
+     * @hash   568922729
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   724886317
+     * @hash   1196868013
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   1943249025
+     * @hash   -1879736575
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@BrewingStandInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   2033755354
+     * @hash   2127026170
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -683631318
+     * @hash   -581719190
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 

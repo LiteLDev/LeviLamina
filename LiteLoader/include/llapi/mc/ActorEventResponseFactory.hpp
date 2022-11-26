@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?initSchema@ActorEventResponseFactory@@QEAAXXZ
-     * @hash   1331822309
+     * @hash   1327947557
      */
     MCAPI void initSchema();
     /**
      * @symbol ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
-     * @hash   1759246992
+     * @hash   1755418368
      */
     MCAPI void initializeFactory(class Experiments const &);
 

@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0VibrationInfo@@QEAA@AEBVGameEvent@@AEBUGameEventContext@@M@Z
-     * @hash   -232704427
+     * @hash   -245712523
      */
     MCAPI VibrationInfo(class GameEvent const &, struct GameEventContext const &, float);
     /**
      * @symbol ??0VibrationInfo@@QEAA@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1427519630
+     * @hash   -1440527726
      */
     MCAPI VibrationInfo(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?getProjectileOwner@VibrationInfo@@QEBAPEAVActor@@AEAVLevel@@@Z
-     * @hash   89009536
+     * @hash   76001440
      */
     MCAPI class Actor * getProjectileOwner(class Level &) const;
     /**
      * @symbol ?getSource@VibrationInfo@@QEBAPEAVActor@@AEAVLevel@@@Z
-     * @hash   -1290991596
+     * @hash   -1303999692
      */
     MCAPI class Actor * getSource(class Level &) const;
     /**
      * @symbol ?load@VibrationInfo@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1683920043
+     * @hash   1670911947
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@VibrationInfo@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   740574494
+     * @hash   727566398
      */
     MCAPI void save(class CompoundTag &) const;
 

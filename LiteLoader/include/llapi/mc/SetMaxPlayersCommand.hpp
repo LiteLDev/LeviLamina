@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@SetMaxPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1342197576
+     * @hash   -1330604072
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@SetMaxPlayersCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -160860068
+     * @hash   -149051300
      */
     MCAPI static void setup(class CommandRegistry &);
 

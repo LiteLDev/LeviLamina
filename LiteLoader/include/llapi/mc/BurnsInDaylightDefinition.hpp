@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@BurnsInDaylightDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBurnsInDaylightDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -2131439330
+     * @hash   -2042473794
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BurnsInDaylightDefinition>> &);
 

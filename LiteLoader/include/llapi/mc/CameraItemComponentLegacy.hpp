@@ -41,90 +41,90 @@ public:
     /**
      * @vftbl  1
      * @symbol ?blackBarsDuration@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   58908659
+     * @hash   237716163
      */
     virtual float blackBarsDuration() const;
     /**
      * @vftbl  2
      * @symbol ?blackBarsScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   -1532163024
+     * @hash   -1353355520
      */
     virtual float blackBarsScreenRatio() const;
     /**
      * @vftbl  3
      * @symbol ?shutterScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   1747910210
+     * @hash   -1791465070
      */
     virtual float shutterScreenRatio() const;
     /**
      * @vftbl  4
      * @symbol ?shutterDuration@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   235004705
+     * @hash   222088865
      */
     virtual float shutterDuration() const;
     /**
      * @vftbl  5
      * @symbol ?pictureDuration@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   1892015266
+     * @hash   1879099426
      */
     virtual float pictureDuration() const;
     /**
      * @vftbl  6
      * @symbol ?slideAwayDuration@CameraItemComponentLegacy@@UEBAMXZ
-     * @hash   975382995
+     * @hash   900563379
      */
     virtual float slideAwayDuration() const;
     /**
      * @vftbl  7
      * @symbol ?canPlace@CameraItemComponentLegacy@@UEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-     * @hash   1940444375
+     * @hash   -1808336649
      */
     virtual bool canPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  8
      * @symbol ?takePictureNow@CameraItemComponentLegacy@@UEAAXAEAVPlayer@@PEAVActor@@1@Z
-     * @hash   -472196309
+     * @hash   73989963
      */
     virtual void takePictureNow(class Player &, class Actor *, class Actor *);
     /**
      * @vftbl  9
      * @symbol ?registerCallbacks@CameraItemComponentLegacy@@UEAAXPEAVCameraCallbacks@@@Z
-     * @hash   774966747
+     * @hash   1321153019
      */
     virtual void registerCallbacks(class CameraCallbacks *);
     /**
      * @vftbl  10
      * @symbol ?use@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -92058932
+     * @hash   454127340
      */
     virtual void use(class ItemStack &, class Player &);
     /**
      * @vftbl  11
      * @symbol ?releaseUsing@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@H@Z
-     * @hash   214988989
+     * @hash   761175261
      */
     virtual void releaseUsing(class ItemStack &, class Player &, int);
     /**
      * @vftbl  12
      * @symbol ?useOn@CameraItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   1805283454
+     * @hash   -1943497570
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
     /**
      * @symbol ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
-     * @hash   -418357877
+     * @hash   127813019
      */
     MCAPI CameraItemComponentLegacy(class Item &);
     /**
      * @symbol ?init@CameraItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   200859072
+     * @hash   747045344
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
 
 //private:
     /**
      * @symbol ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
-     * @hash   213593858
+     * @hash   759764754
      */
     MCAPI enum class CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 

@@ -38,38 +38,38 @@ public:
     virtual ~PlayerUIContainerModel();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  15
-     * @hash   -327479000
+     * @hash   -230733208
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  21
      * @symbol ?_getContainerOffset@PlayerUIContainerModel@@MEBAHXZ
-     * @hash   1201347236
+     * @hash   1246060644
      */
     virtual int _getContainerOffset() const;
     /**
      * @symbol ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-     * @hash   -1019665149
+     * @hash   -974967117
      */
     MCAPI PlayerUIContainerModel(enum class ContainerEnumName, class Player &);
 

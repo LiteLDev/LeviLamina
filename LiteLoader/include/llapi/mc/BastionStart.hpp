@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isValid@BastionStart@@UEBA_NXZ
-     * @hash   1891956816
+     * @hash   2062814928
      */
     virtual bool isValid() const;
 

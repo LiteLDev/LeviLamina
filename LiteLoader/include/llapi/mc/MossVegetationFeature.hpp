@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@MossVegetationFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   784788176
+     * @hash   942161536
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0MossVegetationFeature@@QEAA@XZ
-     * @hash   174312722
+     * @hash   331686082
      */
     MCAPI MossVegetationFeature();
 

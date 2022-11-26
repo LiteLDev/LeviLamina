@@ -33,34 +33,34 @@ public:
 public:
     /**
      * @symbol ??0LootTable@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -838428485
+     * @hash   -82959477
      */
     MCAPI LootTable(std::string);
     /**
      * @symbol ?deserialize@LootTable@@QEAAXAEBVValue@Json@@@Z
-     * @hash   -2133223562
+     * @hash   -1377754554
      */
     MCAPI void deserialize(class Json::Value const &);
     /**
      * @symbol ?fill@LootTable@@QEAAXAEAVContainer@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   674326362
+     * @hash   1429795370
      */
     MCAPI void fill(class Container &, class Random &, class LootTableContext &);
     /**
      * @symbol ?getRandomItems@LootTable@@QEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1967445194
+     * @hash   -1211976186
      */
     MCAPI std::vector<class ItemStack> getRandomItems(class Random &, class LootTableContext &) const;
 
 //private:
     /**
      * @symbol ?getAvailableSlots@LootTable@@AEAA?AV?$vector@HV?$allocator@H@std@@@std@@AEAVContainer@@AEAVRandom@@@Z
-     * @hash   -1520198993
+     * @hash   -764729985
      */
     MCAPI std::vector<int> getAvailableSlots(class Container &, class Random &);
     /**
      * @symbol ?shuffleAndSplitItems@LootTable@@AEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@HAEAVRandom@@@Z
-     * @hash   487217952
+     * @hash   1242686960
      */
     MCAPI void shuffleAndSplitItems(std::vector<class ItemStack> &, int, class Random &);
 

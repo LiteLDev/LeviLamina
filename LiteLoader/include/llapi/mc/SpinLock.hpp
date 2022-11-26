@@ -31,34 +31,34 @@ public:
 public:
     /**
      * @symbol ??0SpinLock@@QEAA@XZ
-     * @hash   -550727063
+     * @hash   -38629383
      */
     MCAPI SpinLock();
     /**
      * @symbol ?lock@SpinLock@@QEAAXXZ
-     * @hash   1076617125
+     * @hash   1588714805
      */
     MCAPI void lock();
     /**
      * @symbol ?try_lock@SpinLock@@QEAA_NXZ
-     * @hash   -1773686990
+     * @hash   -1261589310
      */
     MCAPI bool try_lock();
     /**
      * @symbol ?unlock@SpinLock@@QEAAXXZ
-     * @hash   -1107348715
+     * @hash   -595251035
      */
     MCAPI void unlock();
     /**
      * @symbol ??1SpinLock@@QEAA@XZ
-     * @hash   1272161591
+     * @hash   1361127127
      */
     MCAPI ~SpinLock();
 
 //private:
     /**
      * @symbol ?_getThreadId@SpinLock@@AEAA_KXZ
-     * @hash   -854297571
+     * @hash   -341969251
      */
     MCAPI unsigned __int64 _getThreadId();
 

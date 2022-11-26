@@ -40,46 +40,46 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -499979073
+     * @hash   -403479297
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   -1601885307
+     * @hash   -1565505691
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
-     * @hash   74386867
+     * @hash   170886643
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
-     * @hash   947774989
+     * @hash   1044274765
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -1691506652
+     * @hash   -1654189100
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@@Z
-     * @hash   1527661235
+     * @hash   1564010099
      */
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level &);
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
-     * @hash   -1571912346
+     * @hash   -1535563482
      */
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     /**
      * @symbol ?load@GameDirectorEntityServerCommandOrigin@@SA?AV?$unique_ptr@VGameDirectorEntityServerCommandOrigin@@U?$default_delete@VGameDirectorEntityServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   966774574
+     * @hash   1004199758
      */
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

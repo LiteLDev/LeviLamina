@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?RAW_TEXT_OBJECT_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -502350695
+     * @hash   979849577
      */
     MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
     /**
      * @symbol ?RAW_TEXT_TEXT_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1410015303
+     * @hash   72184969
      */
     MCAPI static std::string const RAW_TEXT_TEXT_KEY;
     /**
      * @symbol ?RAW_TEXT_TRANSLATE_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -788099621
+     * @hash   694100651
      */
     MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
     /**
      * @symbol ?RAW_TEXT_WITH_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1957867097
+     * @hash   -854899927
      */
     MCAPI static std::string const RAW_TEXT_WITH_KEY;
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1CommandName@@QEAA@XZ
-     * @hash   1200510738
+     * @hash   1288184690
      */
     MCAPI ~CommandName();
 

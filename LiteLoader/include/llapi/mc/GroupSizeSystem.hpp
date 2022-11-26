@@ -37,20 +37,20 @@ public:
     virtual ~GroupSizeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@GroupSizeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1105070047
+     * @hash   1189438159
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickComponent@GroupSizeSystem@@AEAAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VGroupSizeComponent@@@@@Z
-     * @hash   2045207225
+     * @hash   2129575337
      */
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GroupSizeComponent> &);
 

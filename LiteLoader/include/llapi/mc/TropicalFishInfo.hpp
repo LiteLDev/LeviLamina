@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1TropicalFishInfo@@QEAA@XZ
-     * @hash   1703595332
+     * @hash   1713820372
      */
     MCAPI ~TropicalFishInfo();
 

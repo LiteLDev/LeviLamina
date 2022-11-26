@@ -33,7 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
     /**
      * @symbol ??1IUnknownBlockTypeRegistry@@UEAA@XZ
-     * @hash   -1424736344
+     * @hash   -864604040
      */
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif

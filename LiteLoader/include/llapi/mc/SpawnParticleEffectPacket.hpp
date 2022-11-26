@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SpawnParticleEffectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1645725524
+     * @hash   1575549460
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SpawnParticleEffectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -764771839
+     * @hash   -834947903
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SpawnParticleEffectPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -972330010
+     * @hash   -1042506074
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SpawnParticleEffectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   612451622
+     * @hash   542275558
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SpawnParticleEffectPacket@@QEAA@XZ
-     * @hash   -1251323418
+     * @hash   -1321499482
      */
     MCAPI SpawnParticleEffectPacket();
     /**
      * @symbol ??0SpawnParticleEffectPacket@@QEAA@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EV?$optional@VMolangVariableMap@@@3@@Z
-     * @hash   -1771209334
+     * @hash   -1841385398
      */
     MCAPI SpawnParticleEffectPacket(class Vec3 const &, std::string const &, unsigned char, class std::optional<class MolangVariableMap>);
 

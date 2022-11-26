@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ?getPrecomputedCubicCoeffs@KeyFrameLerpMode@@QEBAAEBU?$mat@$03$03M$0A@@glm@@XZ
-     * @hash   -1509565961
+     * @hash   -1485441017
      */
     MCAPI struct glm::mat<4, 4, float, 0> const & getPrecomputedCubicCoeffs() const;
     /**
      * @symbol ??4KeyFrameLerpMode@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1565018916
+     * @hash   1589251492
      */
     MCAPI class KeyFrameLerpMode & operator=(class KeyFrameLerpMode const &);
     /**
      * @symbol ?setLerpStyle@KeyFrameLerpMode@@QEAAXW4KeyFrameLerpStyle@@@Z
-     * @hash   -462554578
+     * @hash   -438429634
      */
     MCAPI void setLerpStyle(enum class KeyFrameLerpStyle);
 

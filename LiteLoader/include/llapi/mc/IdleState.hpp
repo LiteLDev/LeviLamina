@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@IdleState@@UEAAXXZ
-     * @hash   1953887623
+     * @hash   2042853159
      */
     virtual void tick();
     /**
      * @vftbl  2
      * @symbol ?start@IdleState@@UEAAXXZ
-     * @hash   -346533444
+     * @hash   -175275556
      */
     virtual void start();
     /**
      * @vftbl  3
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
-     * @hash   -1751125140
+     * @hash   -1579867252
      */
     virtual void stop();
     /**
      * @symbol ?create@IdleState@@SA?AV?$unique_ptr@VIdleState@@U?$default_delete@VIdleState@@@std@@@std@@AEAVPetSleepWithOwnerGoal@@@Z
-     * @hash   -998247407
+     * @hash   -826989519
      */
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 

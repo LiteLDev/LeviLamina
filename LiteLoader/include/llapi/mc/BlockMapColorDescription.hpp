@@ -38,28 +38,28 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockMapColorDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -873448607
+     * @hash   -396608095
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockMapColorDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1743557277
+     * @hash   -1266716765
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @symbol ?NameID@BlockMapColorDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   631723127
+     * @hash   -1879497473
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMapColorDescription@@SAXXZ
-     * @hash   -552909197
+     * @hash   -76283949
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockMapColorDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1264728798
+     * @hash   1741569310
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

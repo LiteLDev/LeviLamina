@@ -23,27 +23,27 @@ namespace SideBySide {
 #undef AFTER_EXTRA
     /**
      * @symbol ?GLOBAL_MODE@SideBySide@@3W4GlobalMode@SideBySideTrigger@@A
-     * @hash   -795476717
+     * @hash   73628619
      */
     MCAPI extern enum class SideBySideTrigger::GlobalMode GLOBAL_MODE;
     /**
      * @symbol ?_collectVehiclesAndPassengersNotInView@SideBySide@@YAXAEBVStrictEntityContext@@AEBUSideBySideValidationExceptionComponent@@AEBV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UUsesSideBySideComparisonComponent@@USideBySideExceptionVisitedFlagComponent@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUPassengerComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@@@AEAV?$vector@U?$pair@VStrictEntityContext@@USideBySideValidationExceptionComponent@@@std@@V?$allocator@U?$pair@VStrictEntityContext@@USideBySideValidationExceptionComponent@@@std@@@2@@std@@@Z
-     * @hash   -1356946655
+     * @hash   -1349750687
      */
     MCAPI void _collectVehiclesAndPassengersNotInView(class StrictEntityContext const &, struct SideBySideValidationExceptionComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct UsesSideBySideComparisonComponent, struct SideBySideExceptionVisitedFlagComponent>> const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, std::vector<struct std::pair<class StrictEntityContext, struct SideBySideValidationExceptionComponent>> &);
     /**
      * @symbol ?_tryAddFailureComponent@SideBySide@@YAXAEBVStrictEntityContext@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USideBySideValidationFailureComponent@@@@AEBUSideBySideValidationFailure@@@Z
-     * @hash   -646296532
+     * @hash   -639100564
      */
     MCAPI void _tryAddFailureComponent(class StrictEntityContext const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SideBySideValidationFailureComponent> &, struct SideBySideValidationFailure const &);
     /**
      * @symbol ?combineComparison@SideBySide@@YA?AUSideBySidePartialComparison@@AEBU2@0@Z
-     * @hash   -863163110
+     * @hash   -855967142
      */
     MCAPI struct SideBySidePartialComparison combineComparison(struct SideBySidePartialComparison const &, struct SideBySidePartialComparison const &);
     /**
      * @symbol ?tickExceptions@SideBySide@@YAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UUsesSideBySideComparisonComponent@@@@$$CBUSideBySideValidationExceptionComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UUsesSideBySideComparisonComponent@@USideBySideExceptionVisitedFlagComponent@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@USideBySideCopyComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUPassengerComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@USideBySideValidationExceptionComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUSideBySideCopyComponent@@$$CBUVehicleComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USideBySideValidationExceptionComponent@@USideBySideExceptionVisitedFlagComponent@@@@V?$OptionalGlobalT@USideBySideRemappingComponent@@VEntityRegistryBase@@@@@Z
-     * @hash   -1262173688
+     * @hash   -1248135400
      */
     MCAPI void tickExceptions(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct UsesSideBySideComparisonComponent>, struct SideBySideValidationExceptionComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct UsesSideBySideComparisonComponent, struct SideBySideExceptionVisitedFlagComponent>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideCopyComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideValidationExceptionComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideCopyComponent const, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SideBySideValidationExceptionComponent, struct SideBySideExceptionVisitedFlagComponent>, class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
 

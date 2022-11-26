@@ -44,19 +44,19 @@ public:
 public:
     /**
      * @symbol ??1RTree@@QEAA@XZ
-     * @hash   1618521548
+     * @hash   1789810188
      */
     MCAPI ~RTree();
     /**
      * @symbol ?create@RTree@@SA?AV?$optional@VRTree@@@std@@AEBV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@3@@Z
-     * @hash   -1394685532
+     * @hash   -1222843356
      */
     MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const &);
 
 //private:
     /**
      * @symbol ?build@RTree@@CA?AV?$optional@VNode@RTree@@@std@@$$QEAV?$vector@VNode@RTree@@V?$allocator@VNode@RTree@@@std@@@3@@Z
-     * @hash   199277650
+     * @hash   371135202
      */
     MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node> &&);
 

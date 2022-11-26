@@ -30,37 +30,37 @@ public:
 public:
     /**
      * @symbol ?isActive@MovementInterpolatorComponent@@QEBA_NXZ
-     * @hash   1580709522
+     * @hash   1504690578
      */
     MCAPI bool isActive() const;
     /**
      * @symbol ?lerpTo@MovementInterpolatorComponent@@QEAAXAEBVVec3@@AEBVVec2@@H@Z
-     * @hash   -533446176
+     * @hash   -609465120
      */
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int);
     /**
      * @symbol ?lerpToRotation@MovementInterpolatorComponent@@QEAAXAEBVVec2@@H@Z
-     * @hash   -1758129527
+     * @hash   -1834148471
      */
     MCAPI void lerpToRotation(class Vec2 const &, int);
     /**
      * @symbol ?reset@MovementInterpolatorComponent@@QEAAXXZ
-     * @hash   1455612099
+     * @hash   1379593155
      */
     MCAPI void reset();
     /**
      * @symbol ?setHeadYawLerpTarget@MovementInterpolatorComponent@@QEAAXMH@Z
-     * @hash   -396745993
+     * @hash   -472764937
      */
     MCAPI void setHeadYawLerpTarget(float, int);
     /**
      * @symbol ?start@MovementInterpolatorComponent@@QEAAXXZ
-     * @hash   -1489168759
+     * @hash   -1565187703
      */
     MCAPI void start();
     /**
      * @symbol ?stop@MovementInterpolatorComponent@@QEAAXXZ
-     * @hash   2005462391
+     * @hash   1929443447
      */
     MCAPI void stop();
 

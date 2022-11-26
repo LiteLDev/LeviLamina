@@ -25,27 +25,27 @@ namespace BaseGameVersioning {
 #undef AFTER_EXTRA
     /**
      * @symbol ?PATCH_UPGRADE_VERSION@BaseGameVersioning@@3VBaseGameVersion@@B
-     * @hash   -1019802849
+     * @hash   -150874337
      */
     MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
     /**
      * @symbol ?REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT@BaseGameVersioning@@3VBaseGameVersion@@B
-     * @hash   1169155083
+     * @hash   2038083595
      */
     MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
     /**
      * @symbol ?getAvailableBehaviorPackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
-     * @hash   2098965375
+     * @hash   -2070856657
      */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableBehaviorPackBaseGameVersions();
     /**
      * @symbol ?getAvailableResourcePackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
-     * @hash   821713399
+     * @hash   946889415
      */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableResourcePackBaseGameVersions();
     /**
      * @symbol ?upgradeBaseGameVersionFromWorldTemplate@BaseGameVersioning@@YA_NAEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEAVLevelData@@@Z
-     * @hash   2013733169
+     * @hash   -2097906079
      */
     MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class LevelData &);
 

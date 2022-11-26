@@ -38,59 +38,59 @@ public:
 public:
     /**
      * @symbol ?factor@TerrainShaper@@QEBAMMMM@Z
-     * @hash   810305253
+     * @hash   989143509
      */
     MCAPI float factor(float, float, float) const;
     /**
      * @symbol ?jaggedness@TerrainShaper@@QEBAMMMM@Z
-     * @hash   -1418972471
+     * @hash   -1240164967
      */
     MCAPI float jaggedness(float, float, float) const;
     /**
      * @symbol ?offset@TerrainShaper@@QEBAMMMM@Z
-     * @hash   558777837
+     * @hash   737585341
      */
     MCAPI float offset(float, float, float) const;
     /**
      * @symbol ?buildOverworld@TerrainShaper@@SA?AV1@XZ
-     * @hash   1507976857
+     * @hash   1686984249
      */
     MCAPI static class TerrainShaper buildOverworld();
 
 //private:
     /**
      * @symbol ?buildErosionJaggednessSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@MMMM@Z
-     * @hash   -237035778
+     * @hash   -58028386
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionJaggednessSpline(float, float, float, float);
     /**
      * @symbol ?buildErosionOffsetSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMMM_N1@Z
-     * @hash   -1456407380
+     * @hash   -1277399988
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionOffsetSpline(std::string const &, float, float, float, float, float, float, bool, bool);
     /**
      * @symbol ?buildMountainRidgeSplineWithPoints@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@M_N@Z
-     * @hash   -1591335869
+     * @hash   -1412328477
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildMountainRidgeSplineWithPoints(float, bool);
     /**
      * @symbol ?buildRidgeJaggednessSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@MM@Z
-     * @hash   -1351688990
+     * @hash   -1172850734
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildRidgeJaggednessSpline(float, float);
     /**
      * @symbol ?buildWeirdnessJaggednessSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@M@Z
-     * @hash   -1168120325
+     * @hash   -989282069
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildWeirdnessJaggednessSpline(float);
     /**
      * @symbol ?getErosionFactor@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@M_N@Z
-     * @hash   1753484521
+     * @hash   1932322777
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
     /**
      * @symbol ?ridgeSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMMM@Z
-     * @hash   -1736373731
+     * @hash   -1557566227
      */
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(std::string const &, float, float, float, float, float, float);
 

@@ -43,101 +43,101 @@ public:
 public:
     /**
      * @symbol ??0SpatialActorNetworkData@@QEAA@AEAVActor@@@Z
-     * @hash   -1238745204
+     * @hash   -1111308916
      */
     MCAPI SpatialActorNetworkData(class Actor &);
     /**
      * @symbol ?enableAutoSend@SpatialActorNetworkData@@QEAAX_N@Z
-     * @hash   -1116020342
+     * @hash   -988584054
      */
     MCAPI void enableAutoSend(bool);
     /**
      * @symbol ?getLastSentPositionForAddingEntity@SpatialActorNetworkData@@QEAA?AVVec3@@XZ
-     * @hash   -2067520734
+     * @hash   -1940084446
      */
     MCAPI class Vec3 getLastSentPositionForAddingEntity();
     /**
      * @symbol ?getLastSentRotationForAddingEntity@SpatialActorNetworkData@@QEAA?AVVec2@@XZ
-     * @hash   521141434
+     * @hash   648577722
      */
     MCAPI class Vec2 getLastSentRotationForAddingEntity();
     /**
      * @symbol ?getLastSentYBodyRotationForAddingEntity@SpatialActorNetworkData@@QEAAMXZ
-     * @hash   -924993304
+     * @hash   -797557016
      */
     MCAPI float getLastSentYBodyRotationForAddingEntity();
     /**
      * @symbol ?getLastSentYHeadRotationForAddingEntity@SpatialActorNetworkData@@QEAAMXZ
-     * @hash   1669753740
+     * @hash   1797190028
      */
     MCAPI float getLastSentYHeadRotationForAddingEntity();
     /**
      * @symbol ?handleClientData@SpatialActorNetworkData@@QEAAXAEBVMoveActorAbsoluteData@@@Z
-     * @hash   -1609652930
+     * @hash   -1482216642
      */
     MCAPI void handleClientData(class MoveActorAbsoluteData const &);
     /**
      * @symbol ?isAutoSendEnabled@SpatialActorNetworkData@@QEBA_NXZ
-     * @hash   152360112
+     * @hash   279781024
      */
     MCAPI bool isAutoSendEnabled() const;
     /**
      * @symbol ?sendUpdate@SpatialActorNetworkData@@QEAAX_N00@Z
-     * @hash   -1330610902
+     * @hash   -1203205366
      */
     MCAPI void sendUpdate(bool, bool, bool);
     /**
      * @symbol ?shouldSendMotionPredictionHintsPacket@SpatialActorNetworkData@@QEBA_NXZ
-     * @hash   -1771518112
+     * @hash   -1644112576
      */
     MCAPI bool shouldSendMotionPredictionHintsPacket() const;
     /**
      * @symbol ?shouldSendUpdate@SpatialActorNetworkData@@QEBA_N_N0@Z
-     * @hash   -636271583
+     * @hash   -508866047
      */
     MCAPI bool shouldSendUpdate(bool, bool) const;
     /**
      * @symbol ?teleportEntity@SpatialActorNetworkData@@QEAAXAEBVVec3@@AEBVVec2@@M@Z
-     * @hash   -1154884042
+     * @hash   -1027478506
      */
     MCAPI void teleportEntity(class Vec3 const &, class Vec2 const &, float);
     /**
      * @symbol ?getDebugSpatialPacketModifiers@SpatialActorNetworkData@@SAAEAUDebugSpatialPacketModifiers@1@XZ
-     * @hash   -2025993552
+     * @hash   -1898557264
      */
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers & getDebugSpatialPacketModifiers();
 
 //private:
     /**
      * @symbol ?_findRelevantPlayersToSendUpdate@SpatialActorNetworkData@@AEAA?AV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@XZ
-     * @hash   66649395
+     * @hash   194085683
      */
     MCAPI std::vector<struct NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
     /**
      * @symbol ?_getOptimizationScore@SpatialActorNetworkData@@AEBA_KAEAVPlayer@@@Z
-     * @hash   -1888090891
+     * @hash   -1760654603
      */
     MCAPI unsigned __int64 _getOptimizationScore(class Player &) const;
     /**
      * @symbol ?_initializeLastSentValues@SpatialActorNetworkData@@AEAAXXZ
-     * @hash   1055079572
+     * @hash   1182515860
      */
     MCAPI void _initializeLastSentValues();
     /**
      * @symbol ?_shouldUpdateBasedOptimizationOnScore@SpatialActorNetworkData@@AEBA_NAEAVPlayer@@@Z
-     * @hash   1212977549
+     * @hash   1340413837
      */
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(class Player &) const;
 
 private:
     /**
      * @symbol ?mDebugSendRateModifiers@SpatialActorNetworkData@@0UDebugSendRateModifiers@1@A
-     * @hash   -762802131
+     * @hash   105588221
      */
     MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
     /**
      * @symbol ?mDebugSpatialPacketModifiers@SpatialActorNetworkData@@0UDebugSpatialPacketModifiers@1@A
-     * @hash   1948125631
+     * @hash   -1478451313
      */
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
 

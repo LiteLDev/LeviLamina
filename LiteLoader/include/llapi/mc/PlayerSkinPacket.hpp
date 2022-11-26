@@ -38,36 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayerSkinPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1931821480
+     * @hash   1889952632
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerSkinPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   105926741
+     * @hash   64057893
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayerSkinPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1375879230
+     * @hash   -1417748078
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  4
      * @symbol ?readExtended@PlayerSkinPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -937179593
+     * @hash   -979048441
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  6
      * @symbol ?_read@PlayerSkinPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -729375950
+     * @hash   -775442446
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerSkinPacket@@QEAA@XZ
-     * @hash   1423594770
+     * @hash   1381725922
      */
     MCAPI PlayerSkinPacket();
 

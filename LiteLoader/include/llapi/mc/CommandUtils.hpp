@@ -25,142 +25,142 @@ namespace CommandUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?CMD_INPUT_UNICODE_TRANSLATE_MAP@CommandUtils@@3V?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@std@@@2@@std@@B
-     * @hash   844070570
+     * @hash   1704503842
      */
     MCAPI extern std::vector<struct std::pair<std::string, char>> const CMD_INPUT_UNICODE_TRANSLATE_MAP;
     /**
      * @symbol ?addItemInstanceComponents@CommandUtils@@YA_NAEAVItemInstance@@AEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -935284198
+     * @hash   -897290102
      */
     MCAPI bool addItemInstanceComponents(class ItemInstance &, class Json::Value const &, std::string &);
     /**
      * @symbol ?addtoCSVList@CommandUtils@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -1550762022
+     * @hash   -1512767926
      */
     MCAPI void addtoCSVList(std::string &, std::string const &);
     /**
      * @symbol ?alterSpawnableEntities@CommandUtils@@YAXAEAVLevelData@@AEBUActorDefinitionIdentifier@@AEAU3@@Z
-     * @hash   -222302657
+     * @hash   -184308561
      */
     MCAPI void alterSpawnableEntities(class LevelData &, struct ActorDefinitionIdentifier const &, struct ActorDefinitionIdentifier &);
     /**
      * @symbol ?broadcastPlayerSpawnedMobEvent@CommandUtils@@YAXAEBVActor@@AEAV2@@Z
-     * @hash   1951000251
+     * @hash   1988978971
      */
     MCAPI void broadcastPlayerSpawnedMobEvent(class Actor const &, class Actor &);
     /**
      * @symbol ?canBeSummoned@CommandUtils@@YA_NAEBUActorDefinitionIdentifier@@AEBVCommandOrigin@@@Z
-     * @hash   1093222513
+     * @hash   1131201233
      */
     MCAPI bool canBeSummoned(struct ActorDefinitionIdentifier const &, class CommandOrigin const &);
     /**
      * @symbol ?clearBlockEntityContents@CommandUtils@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1334587778
+     * @hash   1372566498
      */
     MCAPI void clearBlockEntityContents(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?clearBlockEntityLootTable@CommandUtils@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   376758208
+     * @hash   414736928
      */
     MCAPI void clearBlockEntityLootTable(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?convertBlockEntityTag@CommandUtils@@YAXAEAVCompoundTag@@AEBVBlockActor@@AEBVBlockPos@@@Z
-     * @hash   -1598401595
+     * @hash   -1560422875
      */
     MCAPI void convertBlockEntityTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
     /**
      * @symbol ?createItemStack@CommandUtils@@YA?AVItemStack@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-     * @hash   949293174
+     * @hash   987241142
      */
     MCAPI class ItemStack createItemStack(std::string const &, int, int);
     /**
      * @symbol ?createItemStacks@CommandUtils@@YA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemInstance@@HAEAH@Z
-     * @hash   -1275130869
+     * @hash   -1237182901
      */
     MCAPI std::vector<class ItemStack> createItemStacks(class ItemInstance const &, int, int &);
     /**
      * @symbol ?createMapData@CommandUtils@@YA_NAEAVActor@@AEAVItemInstance@@AEAVCommandOutput@@@Z
-     * @hash   1928817240
+     * @hash   1966765208
      */
     MCAPI bool createMapData(class Actor &, class ItemInstance &, class CommandOutput &);
     /**
      * @symbol ?displayLocalizableMessage@CommandUtils@@YAX_NAEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   -814503906
+     * @hash   -776432930
      */
     MCAPI void displayLocalizableMessage(bool, class Player &, std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?getActorName@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
-     * @hash   744000458
+     * @hash   782056058
      */
     MCAPI std::string getActorName(class Actor const &);
     /**
      * @symbol ?getFeetBlockPos@CommandUtils@@YA?AVBlockPos@@PEBVActor@@@Z
-     * @hash   1122070961
+     * @hash   1160111185
      */
     MCAPI class BlockPos getFeetBlockPos(class Actor const *);
     /**
      * @symbol ?getFeetPos@CommandUtils@@YA?AVVec3@@PEBVActor@@@Z
-     * @hash   148238463
+     * @hash   186278687
      */
     MCAPI class Vec3 getFeetPos(class Actor const *);
     /**
      * @symbol ?getInvalidCommandEntities@CommandUtils@@YA?AV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@XZ
-     * @hash   -1981748539
+     * @hash   -1943708315
      */
     MCAPI std::vector<enum class ActorType> getInvalidCommandEntities();
     /**
      * @symbol ?getOriginPlayer@CommandUtils@@YAPEBVPlayer@@AEBVCommandOrigin@@@Z
-     * @hash   304687523
+     * @hash   342727747
      */
     MCAPI class Player const * getOriginPlayer(class CommandOrigin const &);
     /**
      * @symbol ?getTelemetryErrorList@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandOutput@@@Z
-     * @hash   1513744856
+     * @hash   1551785080
      */
     MCAPI std::string getTelemetryErrorList(class CommandOutput const &);
     /**
      * @symbol ?isActiveTickingChunk@CommandUtils@@YA_NUTick@@0@Z
-     * @hash   1743304333
+     * @hash   1781344557
      */
     MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
     /**
      * @symbol ?isFunctionValid@CommandUtils@@YA_NAEAVCommandOutput@@AEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1388292280
+     * @hash   -1350252056
      */
     MCAPI bool isFunctionValid(class CommandOutput &, class FunctionEntry &, std::string const &);
     /**
      * @symbol ?isPlayerSpawnedMob@CommandUtils@@YA_NAEBVActor@@0@Z
-     * @hash   -1448388342
+     * @hash   -1410255862
      */
     MCAPI bool isPlayerSpawnedMob(class Actor const &, class Actor const &);
     /**
      * @symbol ?isValidCommandEntity@CommandUtils@@YA_NAEBV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@W4ActorType@@@Z
-     * @hash   -1352070045
+     * @hash   -1313937565
      */
     MCAPI bool isValidCommandEntity(std::vector<enum class ActorType> const &, enum class ActorType);
     /**
      * @symbol ?nameEntity@CommandUtils@@YAXAEAVActor@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -285425481
+     * @hash   -247293001
      */
     MCAPI void nameEntity(class Actor &, bool, std::string const &);
     /**
      * @symbol ?setInitEvent@CommandUtils@@YAXAEAUActorDefinitionIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -892826818
+     * @hash   -854694338
      */
     MCAPI void setInitEvent(struct ActorDefinitionIdentifier &, std::string const &);
     /**
      * @symbol ?spawnEntityAt@CommandUtils@@YAPEAVActor@@AEAVBlockSource@@AEBVVec3@@AEBUActorDefinitionIdentifier@@AEAUActorUniqueID@@PEAV2@@Z
-     * @hash   2047840019
+     * @hash   2085972499
      */
     MCAPI class Actor * spawnEntityAt(class BlockSource &, class Vec3 const &, struct ActorDefinitionIdentifier const &, struct ActorUniqueID &, class Actor *);
     /**
      * @symbol ?toJsonResult@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBVValue@Json@@@Z
-     * @hash   2091136715
+     * @hash   2129269195
      */
     MCAPI std::string toJsonResult(std::string const &, class Json::Value const &);
     /**
      * @symbol ?validatePath@CommandUtils@@YA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVCommandOutput@@AEBVCommandFilePath@@@Z
-     * @hash   2143528471
+     * @hash   -2113306345
      */
     MCAPI std::string const validatePath(class CommandOutput &, class CommandFilePath const &);
 

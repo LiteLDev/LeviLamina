@@ -39,59 +39,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   439572422
+     * @hash   477412758
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
      * @vftbl  2
      * @symbol ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
-     * @hash   -244051364
+     * @hash   469287404
      */
     virtual int getCraftingSize() const;
     /**
      * @vftbl  3
      * @symbol ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   1936431197
+     * @hash   -1646181395
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   13321561
+     * @hash   51161897
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  5
      * @symbol ?isShapeless@ShapelessRecipe@@UEBA_NXZ
-     * @hash   1431154896
+     * @hash   1527654672
      */
     virtual bool isShapeless() const;
     /**
      * @vftbl  6
      * @symbol ?matches@ShapelessRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   967750654
+     * @hash   1681089422
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@ShapelessRecipe@@UEBAHXZ
-     * @hash   95064132
+     * @hash   808402900
      */
     virtual int size() const;
     /**
-     * @vftbl  13
+     * @vftbl  14
      * @symbol ?loadResultList@ShapelessRecipe@@UEBAXAEBVBlockPalette@@@Z
-     * @hash   341138658
+     * @hash   1054492802
      */
     virtual void loadResultList(class BlockPalette const &) const;
     /**
      * @symbol ??0ShapelessRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@4@VHashedString@@HPEBVUUID@mce@@@Z
-     * @hash   -1804195724
+     * @hash   -1090841580
      */
     MCAPI ShapelessRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     /**
      * @symbol ?generateUUID@ShapelessRecipe@@QEAAXXZ
-     * @hash   -1485948445
+     * @hash   -773593741
      */
     MCAPI void generateUUID();
 

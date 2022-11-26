@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@OceanMonumentSimpleTopRoom@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   -223397950
+     * @hash   -51525022
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@OceanMonumentSimpleTopRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1389679094
+     * @hash   1561552022
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 

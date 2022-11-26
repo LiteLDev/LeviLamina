@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ?getDescription@PendingArea@@QEBA?AUTickingAreaDescription@@XZ
-     * @hash   597965444
+     * @hash   1129098612
      */
     MCAPI struct TickingAreaDescription getDescription() const;
     /**
      * @symbol ?isEntityOwned@PendingArea@@QEBA_NXZ
-     * @hash   1755146006
+     * @hash   -2008688122
      */
     MCAPI bool isEntityOwned() const;
     /**
      * @symbol ??4PendingArea@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   631821432
+     * @hash   1342684664
      */
     MCAPI struct PendingArea & operator=(struct PendingArea &&);
     /**
      * @symbol ?serialize@PendingArea@@QEBA?AVCompoundTag@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -685702169
+     * @hash   -154415241
      */
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ??1PendingArea@@QEAA@XZ
-     * @hash   1766863008
+     * @hash   1777088048
      */
     MCAPI ~PendingArea();
     /**
      * @symbol ?createEntityTickingArea@PendingArea@@SA?AU1@VUUID@mce@@UActorUniqueID@@AEBUBounds@@_NM@Z
-     * @hash   1750294886
+     * @hash   -2013539242
      */
     MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const &, bool, float);
     /**
      * @symbol ?createTickingArea@PendingArea@@SA?AU1@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
-     * @hash   -383277696
+     * @hash   147855472
      */
     MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
      * @symbol ?load@PendingArea@@SA?AU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
-     * @hash   -1475677015
+     * @hash   -944543847
      */
     MCAPI static struct PendingArea load(std::string const &, class CompoundTag const &);
     /**
      * @symbol ?validTag@PendingArea@@SA_NAEBVCompoundTag@@@Z
-     * @hash   1664948553
+     * @hash   -2098777943
      */
     MCAPI static bool validTag(class CompoundTag const &);
 

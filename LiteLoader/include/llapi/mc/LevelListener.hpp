@@ -38,164 +38,164 @@ public:
     virtual ~LevelListener();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
+     * @vftbl  7
+     * @hash   -1311050489
+     */
+    virtual void __unk_vfn_7();
+    /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1398168983
+     * @hash   -1309203447
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -382068605
-     */
-    virtual void __unk_vfn_10();
-    /**
-     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-     * @hash   35575535
+     * @hash   128846351
      */
     virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
     /**
      * @symbol ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
-     * @hash   1209019117
+     * @hash   1297984653
      */
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum class ParticleType, struct ResolvedItemIconInfo const &);
     /**
      * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
-     * @hash   173027258
+     * @hash   261992794
      */
     MCVAPI void addParticleEffect(class HashedString const &, class Actor const &, class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     /**
      * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVVec3@@AEBVMolangVariableMap@@@Z
-     * @hash   795075571
+     * @hash   884041107
      */
     MCVAPI void addParticleEffect(class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     /**
      * @symbol ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-     * @hash   1531908012
+     * @hash   1620873548
      */
     MCVAPI void addTerrainParticleEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     /**
      * @symbol ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-     * @hash   -12677681
+     * @hash   76287855
      */
     MCVAPI void addTerrainSlideEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     /**
      * @symbol ?allChanged@LevelListener@@UEAAXXZ
-     * @hash   137279042
+     * @hash   226244578
      */
     MCVAPI void allChanged();
     /**
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-     * @hash   1892749457
+     * @hash   1981714993
      */
     MCVAPI void levelEvent(enum class LevelEvent, class CompoundTag const &);
     /**
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-     * @hash   1051750086
+     * @hash   1140715622
      */
     MCVAPI void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-     * @hash   2136805012
+     * @hash   -2069196748
      */
     MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
     /**
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-     * @hash   528227945
+     * @hash   617193481
      */
     MCVAPI void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     * @hash   -1430654919
+     * @hash   -1341689383
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
      * @symbol ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     * @hash   1824074956
+     * @hash   1913040492
      */
     MCVAPI void onChunkReloaded(class ChunkSource &, class LevelChunk &);
     /**
      * @symbol ?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -404882416
+     * @hash   -315916880
      */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     /**
      * @symbol ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
-     * @hash   -19451062
+     * @hash   69514474
      */
     MCVAPI void onEntityAdded(class Actor &);
     /**
      * @symbol ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
-     * @hash   375194474
+     * @hash   464160010
      */
     MCVAPI void onEntityRemoved(class Actor &);
     /**
      * @symbol ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1365916752
+     * @hash   1454882288
      */
     MCVAPI void onLevelDestruction(std::string const &);
     /**
      * @symbol ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
-     * @hash   -1039001951
+     * @hash   -950036415
      */
     MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
     /**
      * @symbol ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-     * @hash   -1579768138
+     * @hash   -1490802602
      */
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
     /**
      * @symbol ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-     * @hash   -1088483671
+     * @hash   -999518135
      */
     MCVAPI void playStreamingMusic(std::string const &, int, int, int);
     /**
      * @symbol ?playerListChanged@LevelListener@@UEAAXXZ
-     * @hash   1037230468
+     * @hash   1126196004
      */
     MCVAPI void playerListChanged();
     /**
      * @symbol ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-     * @hash   493125804
+     * @hash   582091340
      */
     MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @symbol ?stopAllSounds@LevelListener@@UEAAXXZ
-     * @hash   -810999150
+     * @hash   -722033614
      */
     MCVAPI void stopAllSounds();
     /**
      * @symbol ?stopSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -301278608
+     * @hash   -212313072
      */
     MCVAPI void stopSoundEvent(std::string const &);
     /**
      * @symbol ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
-     * @hash   -1237988272
+     * @hash   -1149022736
      */
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
 #endif

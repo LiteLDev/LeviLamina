@@ -32,34 +32,34 @@ public:
 public:
     /**
      * @symbol ??0AsynchronousIPResolver@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1865955398
+     * @hash   -1803036806
      */
     MCAPI AsynchronousIPResolver(std::string);
     /**
      * @symbol ?getIp@AsynchronousIPResolver@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1933523598
+     * @hash   1996442190
      */
     MCAPI std::string getIp() const;
     /**
      * @symbol ?getOriginalUrl@AsynchronousIPResolver@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1186983614
+     * @hash   1280254430
      */
     MCAPI std::string const & getOriginalUrl() const;
     /**
      * @symbol ?isDone@AsynchronousIPResolver@@QEBA_NXZ
-     * @hash   -748204948
+     * @hash   -685286356
      */
     MCAPI bool isDone() const;
     /**
      * @symbol ??1AsynchronousIPResolver@@QEAA@XZ
-     * @hash   -553080081
+     * @hash   -397321201
      */
     MCAPI ~AsynchronousIPResolver();
 
 //private:
     /**
      * @symbol ?_resolve@AsynchronousIPResolver@@AEAAXXZ
-     * @hash   345453572
+     * @hash   408372164
      */
     MCAPI void _resolve();
 

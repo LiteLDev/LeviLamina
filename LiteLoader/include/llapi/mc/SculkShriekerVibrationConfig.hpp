@@ -36,19 +36,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onSignalReceive@SculkShriekerVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
-     * @hash   1346928429
+     * @hash   1932246621
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
      * @vftbl  2
      * @symbol ?isValidVibration@SculkShriekerVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
-     * @hash   -265997975
+     * @hash   319320217
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
      * @vftbl  3
      * @symbol ?shouldListen@SculkShriekerVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-     * @hash   -1970281784
+     * @hash   -1384963592
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 

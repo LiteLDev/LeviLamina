@@ -23,32 +23,32 @@ struct SystemInfo {
 public:
     /**
      * @symbol ??0SystemInfo@@QEAA@XZ
-     * @hash   323917705
+     * @hash   -1740121191
      */
     MCAPI SystemInfo();
     /**
      * @symbol ??0SystemInfo@@QEAA@AEBU0@@Z
-     * @hash   627302927
+     * @hash   768962015
      */
     MCAPI SystemInfo(struct SystemInfo const &);
     /**
      * @symbol ??4SystemInfo@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -818665866
+     * @hash   -892578298
      */
     MCAPI struct SystemInfo & operator=(struct SystemInfo const &);
     /**
      * @symbol ??4SystemInfo@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1078982238
+     * @hash   -977168770
      */
     MCAPI struct SystemInfo & operator=(struct SystemInfo &&);
     /**
      * @symbol ??1SystemInfo@@QEAA@XZ
-     * @hash   490674055
+     * @hash   593047463
      */
     MCAPI ~SystemInfo();
     /**
      * @symbol ?bindType@SystemInfo@@SAXXZ
-     * @hash   -2057395997
+     * @hash   -2128556125
      */
     MCAPI static void bindType();
 

@@ -13,10 +13,10 @@
 #undef BEFORE_EXTRA
 
 /**
- * @brief MC class OnFireComponent.
+ * @brief MC structure OnFireComponent.
  *
  */
-class OnFireComponent {
+struct OnFireComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,45 +24,33 @@ class OnFireComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRECOMPONENT
 public:
-    class OnFireComponent& operator=(class OnFireComponent const &) = delete;
-    OnFireComponent(class OnFireComponent const &) = delete;
+    struct OnFireComponent& operator=(struct OnFireComponent const &) = delete;
+    OnFireComponent(struct OnFireComponent const &) = delete;
     OnFireComponent() = delete;
 #endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData@OnFireComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -1075366967
+     * @hash   -556426967
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@OnFireComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -385409413
+     * @hash   133530587
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@OnFireComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
-     * @hash   981912802
+     * @hash   1500852802
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@OnFireComponent@@SA_NAEBVCompoundTag@@@Z
-     * @hash   1350960307
+     * @hash   1869900307
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
 //private:
-
-private:
-    /**
-     * @symbol ?LEGACY_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -56151030
-     */
-    MCAPI static std::string const LEGACY_FIRE_TAG;
-    /**
-     * @symbol ?ON_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -610716908
-     */
-    MCAPI static std::string const ON_FIRE_TAG;
 
 };

@@ -38,118 +38,118 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z
-     * @hash   -545323444
+     * @hash   -456357908
      */
     virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?startAnnouncingServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
-     * @hash   -628333431
+     * @hash   -700908151
      */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@StubServerLocator@@UEAAXXZ
-     * @hash   -583887267
+     * @hash   -656461987
      */
     virtual void stopAnnouncingServer();
     /**
      * @vftbl  5
      * @symbol ?startServerDiscovery@StubServerLocator@@UEAAXUPortPair@@@Z
-     * @hash   -1459386520
+     * @hash   -1531961240
      */
     virtual void startServerDiscovery(struct PortPair);
     /**
      * @vftbl  6
      * @symbol ?stopServerDiscovery@StubServerLocator@@UEAAXXZ
-     * @hash   854376829
+     * @hash   781802109
      */
     virtual void stopServerDiscovery();
     /**
      * @vftbl  7
-     * @hash   -2135659177
+     * @hash   2086733399
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -2134735656
+     * @hash   2087656920
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?getServerList@StubServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
-     * @hash   -1053845335
+     * @hash   -898147959
      */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /**
      * @vftbl  10
      * @symbol ?clearServerList@StubServerLocator@@UEAAXXZ
-     * @hash   -1051944688
+     * @hash   -962979152
      */
     virtual void clearServerList();
     /**
      * @vftbl  11
      * @symbol ?update@StubServerLocator@@UEAAXXZ
-     * @hash   -1889230709
+     * @hash   -1800265173
      */
     virtual void update();
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
      * @symbol ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1375483621
+     * @hash   1361199317
      */
     virtual float getPingTimeForGUID(std::string const &);
     /**
      * @vftbl  16
      * @symbol ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-     * @hash   -600883943
+     * @hash   -673458663
      */
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STUBSERVERLOCATOR
     /**
      * @symbol ?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-     * @hash   1433200954
+     * @hash   1360626234
      */
     MCVAPI void addCustomServer(class AsynchronousIPResolver const &, int);
     /**
      * @symbol ?addCustomServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1357565718
+     * @hash   -1430140438
      */
     MCVAPI void addCustomServer(std::string const &, int);
     /**
      * @symbol ?isIPv4Supported@StubServerLocator@@UEBA_NXZ
-     * @hash   -1468268526
+     * @hash   -1371522734
      */
     MCVAPI bool isIPv4Supported() const;
     /**
      * @symbol ?isIPv6Supported@StubServerLocator@@UEBA_NXZ
-     * @hash   -1059144944
+     * @hash   -962399152
      */
     MCVAPI bool isIPv6Supported() const;
 #endif
     /**
      * @symbol ??0StubServerLocator@@QEAA@XZ
-     * @hash   1755224753
+     * @hash   1682650033
      */
     MCAPI StubServerLocator();
 

@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
-     * @hash   1032748139
+     * @hash   1049138955
      */
     virtual float getAmount(int, float) const;
     /**
      * @symbol ??0MultiplyValueAmplifier@@QEAA@M@Z
-     * @hash   -1546658023
+     * @hash   -1530267207
      */
     MCAPI MultiplyValueAmplifier(float);
 

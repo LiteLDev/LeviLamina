@@ -37,13 +37,13 @@ public:
     virtual ~ExplodeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ExplodeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1802403040
+     * @hash   1957931280
      */
     virtual void tick(class EntityRegistry &);
 

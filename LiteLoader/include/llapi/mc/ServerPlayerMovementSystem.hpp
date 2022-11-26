@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?_foreachTransactionPacket@ServerPlayerMovementSystem@@SAXAEBUPlayerActionComponent@@_NAEBV?$function@$$A6AXAEAVInventoryTransactionPacket@@@Z@std@@@Z
-     * @hash   1913404503
+     * @hash   1914388567
      */
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const &, bool, class std::function<void (class InventoryTransactionPacket &)> const &);
     /**
      * @symbol ?create@ServerPlayerMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1298894336
+     * @hash   1299893776
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol ?onPlayerAuthInputPacket@ServerPlayerMovementSystem@@SAXAEAUServerPlayerMovementComponent@@AEBVPlayerAuthInputPacket@@@Z
-     * @hash   -2102135691
+     * @hash   -2101136251
      */
     MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent &, class PlayerAuthInputPacket const &);
 

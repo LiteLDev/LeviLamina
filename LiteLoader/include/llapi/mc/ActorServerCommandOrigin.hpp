@@ -40,46 +40,46 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   31372531
+     * @hash   68690083
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ActorServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   2026588329
+     * @hash   2062967945
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@ActorServerCommandOrigin@@UEBA_NXZ
-     * @hash   -1202093599
+     * @hash   -1105593823
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -76205576
+     * @hash   -146596904
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   -1923833057
+     * @hash   -1886407873
      */
     virtual class CompoundTag serialize() const;
     /**
      * @symbol ?getTargetOther@ActorServerCommandOrigin@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -65346800
+     * @hash   -27921616
      */
     MCAPI struct ActorUniqueID getTargetOther() const;
     /**
      * @symbol ?setTargetOther@ActorServerCommandOrigin@@QEAAXUActorUniqueID@@@Z
-     * @hash   611380522
+     * @hash   648682698
      */
     MCAPI void setTargetOther(struct ActorUniqueID);
     /**
      * @symbol ?load@ActorServerCommandOrigin@@SA?AV?$unique_ptr@VActorServerCommandOrigin@@U?$default_delete@VActorServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   649209124
+     * @hash   686634308
      */
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

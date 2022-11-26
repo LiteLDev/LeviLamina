@@ -47,209 +47,209 @@ public:
     /**
      * @vftbl  1
      * @symbol ?_onDisable@RakNetServerLocator@@EEAAXXZ
-     * @hash   -1588740687
+     * @hash   -1663544927
      */
     virtual void _onDisable();
     /**
      * @vftbl  2
      * @symbol ?_onEnable@RakNetServerLocator@@EEAAXXZ
-     * @hash   640192200
+     * @hash   565434088
      */
     virtual void _onEnable();
     /**
      * @vftbl  3
      * @symbol ?startAnnouncingServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2W4TransportLayer@@@Z
-     * @hash   1528017196
+     * @hash   1454919692
      */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@RakNetServerLocator@@UEAAXXZ
-     * @hash   -157313712
+     * @hash   -230411216
      */
     virtual void stopAnnouncingServer();
     /**
      * @vftbl  5
      * @symbol ?startServerDiscovery@RakNetServerLocator@@UEAAXUPortPair@@@Z
-     * @hash   -2056212891
+     * @hash   -2129310395
      */
     virtual void startServerDiscovery(struct PortPair);
     /**
      * @vftbl  6
      * @symbol ?stopServerDiscovery@RakNetServerLocator@@UEAAXXZ
-     * @hash   1964351792
+     * @hash   1891254288
      */
     virtual void stopServerDiscovery();
     /**
      * @vftbl  7
      * @symbol ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-     * @hash   -137782291
+     * @hash   -211002803
      */
     virtual void addCustomServer(class AsynchronousIPResolver const &, int);
     /**
      * @vftbl  8
      * @symbol ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1420753821
+     * @hash   1347533309
      */
     virtual void addCustomServer(std::string const &, int);
     /**
      * @vftbl  9
      * @symbol ?getServerList@RakNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
-     * @hash   -660618356
+     * @hash   -733838868
      */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /**
      * @vftbl  10
      * @symbol ?clearServerList@RakNetServerLocator@@UEAAXXZ
-     * @hash   -878092733
+     * @hash   -951313245
      */
     virtual void clearServerList();
     /**
      * @vftbl  11
      * @symbol ?update@RakNetServerLocator@@UEAAXXZ
-     * @hash   -680645906
+     * @hash   -753743410
      */
     virtual void update();
     /**
      * @vftbl  12
      * @symbol ?isIPv4Supported@RakNetServerLocator@@UEBA_NXZ
-     * @hash   -747964427
+     * @hash   -821184939
      */
     virtual bool isIPv4Supported() const;
     /**
      * @vftbl  13
      * @symbol ?isIPv6Supported@RakNetServerLocator@@UEBA_NXZ
-     * @hash   1587740419
+     * @hash   1514596787
      */
     virtual bool isIPv6Supported() const;
     /**
      * @vftbl  14
      * @symbol ?setGetHostGUIDFn@RakNetServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z
-     * @hash   -2072360535
+     * @hash   -2145458039
      */
     virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
     /**
      * @vftbl  15
      * @symbol ?getPingTimeForGUID@RakNetServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1516719282
+     * @hash   1443498770
      */
     virtual float getPingTimeForGUID(std::string const &);
     /**
      * @vftbl  16
      * @symbol ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-     * @hash   -2058217370
+     * @hash   -2131437882
      */
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
     /**
-     * @symbol ??0RakNetServerLocator@@QEAA@AEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
-     * @hash   17431637
+     * @symbol ??0RakNetServerLocator@@QEAA@AEAVRakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
+     * @hash   600841028
      */
-    MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
+    MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
     /**
      * @symbol ?parseUnconnectedPongPacketData@RakNetServerLocator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -554206105
+     * @hash   -627272857
      */
     MCAPI static bool parseUnconnectedPongPacketData(std::string const &, std::vector<std::string> &);
 
 //private:
     /**
      * @symbol ?_activate@RakNetServerLocator@@AEAAXXZ
-     * @hash   -48068164
+     * @hash   -121334804
      */
     MCAPI void _activate();
     /**
      * @symbol ?_addCustomServerFromIpResolver@RakNetServerLocator@@AEAAXAEBVAsynchronousIPResolver@@H@Z
-     * @hash   -698666590
+     * @hash   -771902478
      */
     MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const &, int);
     /**
      * @symbol ?_addCustomServerV4@RakNetServerLocator@@AEAA_NAEBVAsynchronousIPResolver@@H@Z
-     * @hash   -862972477
+     * @hash   -936208365
      */
     MCAPI bool _addCustomServerV4(class AsynchronousIPResolver const &, int);
     /**
      * @symbol ?_addCustomServerV6@RakNetServerLocator@@AEAA_NAEBVAsynchronousIPResolver@@H@Z
-     * @hash   -1219026411
+     * @hash   -1292262299
      */
     MCAPI bool _addCustomServerV6(class AsynchronousIPResolver const &, int);
     /**
      * @symbol ?_announceServer@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
-     * @hash   -1268914993
+     * @hash   -1342150881
      */
     MCAPI void _announceServer(struct RakNetServerLocator::AnnounceServerData const &);
     /**
      * @symbol ?_enqueueStateChangeRequest@RakNetServerLocator@@AEAAXW4LocatorStateChangeRequest@@UAnnounceServerData@1@UPortPair@@@Z
-     * @hash   -1454454916
+     * @hash   -1529535924
      */
     MCAPI void _enqueueStateChangeRequest(enum class LocatorStateChangeRequest, struct RakNetServerLocator::AnnounceServerData, struct PortPair);
     /**
      * @symbol ?_getHostGuid@RakNetServerLocator@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@H@Z
-     * @hash   -1955398143
+     * @hash   -2030479151
      */
     MCAPI std::string _getHostGuid(std::string const &, int);
     /**
      * @symbol ?_getServerOriginalAddress@RakNetServerLocator@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -1887523472
+     * @hash   -1962619856
      */
     MCAPI void _getServerOriginalAddress(std::string &, std::string const &);
     /**
      * @symbol ?_handleUnconnectedPong@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUPacket@RakNet@@_N_K@Z
-     * @hash   -14503238
+     * @hash   -89599622
      */
     MCAPI bool _handleUnconnectedPong(std::string const &, struct RakNet::Packet const *, bool, unsigned __int64);
     /**
      * @symbol ?_initializeBroadcastAddresses@RakNetServerLocator@@AEAAXXZ
-     * @hash   -194864998
+     * @hash   -269838374
      */
     MCAPI void _initializeBroadcastAddresses();
     /**
      * @symbol ?_onPongReceive@RakNetServerLocator@@AEAA_NAEAMAEBURakNetGUID@RakNet@@AEBIH@Z
-     * @hash   1666945654
+     * @hash   1592187542
      */
     MCAPI bool _onPongReceive(float &, struct RakNet::RakNetGUID const &, unsigned int const &, int);
     /**
      * @symbol ?_pingServerV4@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -732882727
+     * @hash   -807656215
      */
     MCAPI bool _pingServerV4(std::string const &, int);
     /**
      * @symbol ?_pingServerV6@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   737007739
+     * @hash   662234251
      */
     MCAPI bool _pingServerV6(std::string const &, int);
     /**
-     * @symbol ?_punchHoles@RakNetServerLocator@@AEAAXXZ
-     * @hash   838862542
+     * @symbol ?_setPingResponder@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
+     * @hash   339874749
      */
-    MCAPI void _punchHoles();
+    MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const &);
     /**
      * @symbol ?_startAnnouncingServer@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
-     * @hash   221758542
+     * @hash   148568782
      */
     MCAPI void _startAnnouncingServer(struct RakNetServerLocator::AnnounceServerData const &);
     /**
      * @symbol ?_startServerDiscovery@RakNetServerLocator@@AEAAXAEBUPortPair@@@Z
-     * @hash   435367431
+     * @hash   362177671
      */
     MCAPI void _startServerDiscovery(struct PortPair const &);
     /**
      * @symbol ?_stopAnnouncingServer@RakNetServerLocator@@AEAAXXZ
-     * @hash   -1853040252
+     * @hash   -1926230012
      */
     MCAPI void _stopAnnouncingServer();
     /**
      * @symbol ?_stopServerDiscovery@RakNetServerLocator@@AEAAXXZ
-     * @hash   921420550
+     * @hash   848230790
      */
     MCAPI void _stopServerDiscovery();
     /**
      * @symbol ?_updateNetwork@RakNetServerLocator@@AEAAXXZ
-     * @hash   1131033552
+     * @hash   1057843792
      */
     MCAPI void _updateNetwork();
     /**
      * @symbol ?_updateQueuedPings@RakNetServerLocator@@AEAA_NXZ
-     * @hash   -615641830
+     * @hash   -688862342
      */
     MCAPI bool _updateQueuedPings();
 

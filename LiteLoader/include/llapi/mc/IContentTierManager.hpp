@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
     /**
      * @symbol ??1IContentTierManager@@UEAA@XZ
-     * @hash   -271844136
+     * @hash   -181894536
      */
     MCVAPI ~IContentTierManager();
 #endif

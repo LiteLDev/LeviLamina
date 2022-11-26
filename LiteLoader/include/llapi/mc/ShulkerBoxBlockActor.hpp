@@ -33,112 +33,112 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
     /**
      * @symbol ?_detectEntityObstruction@ShulkerBoxBlockActor@@MEBA_NAEAVBlockSource@@@Z
-     * @hash   -1600159907
+     * @hash   -1503414115
      */
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
     /**
      * @symbol ?_getUpdatePacket@ShulkerBoxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   705322032
+     * @hash   861004032
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@ShulkerBoxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1421105662
+     * @hash   -665513646
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @symbol ?canPushInItem@ShulkerBoxBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     * @hash   -1809591352
+     * @symbol ?canPushInItem@ShulkerBoxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
+     * @hash   1875835487
      */
-    MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?getMaxStackSize@ShulkerBoxBlockActor@@UEBAHXZ
-     * @hash   -1723454369
+     * @hash   -1621542241
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@ShulkerBoxBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2101252972
+     * @hash   -1515965532
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?getObstructionAABB@ShulkerBoxBlockActor@@MEBA?AVAABB@@XZ
-     * @hash   2020798667
+     * @hash   -1688881189
      */
     MCVAPI class AABB getObstructionAABB() const;
     /**
      * @symbol ?load@ShulkerBoxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -861411938
+     * @hash   -276124498
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onPlace@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1661502172
+     * @hash   1750467708
      */
     MCVAPI void onPlace(class BlockSource &);
     /**
      * @symbol ?playCloseSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   257047488
+     * @hash   842334928
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
      * @symbol ?playOpenSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   -320179254
+     * @hash   265108186
      */
     MCVAPI void playOpenSound(class BlockSource &);
     /**
      * @symbol ?save@ShulkerBoxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1592304035
+     * @hash   -1007016595
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?tick@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1628726009
+     * @hash   -1043453945
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
-     * @hash   859617777
+     * @hash   1444935969
      */
     MCAPI ShulkerBoxBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
     /**
      * @symbol ?setFacingDir@ShulkerBoxBlockActor@@QEAAXE@Z
-     * @hash   191646439
+     * @hash   776918503
      */
     MCAPI void setFacingDir(unsigned char);
     /**
      * @symbol ?itemAllowed@ShulkerBoxBlockActor@@SA_NAEBVItemStackBase@@@Z
-     * @hash   -377735001
+     * @hash   207552439
      */
     MCAPI static bool itemAllowed(class ItemStackBase const &);
     /**
      * @symbol ?itemAllowedInSlot@ShulkerBoxBlockActor@@SA_NHAEBVItemStackBase@@H@Z
-     * @hash   -126090059
+     * @hash   459197381
      */
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 
 //private:
     /**
      * @symbol ?_calculateBB@ShulkerBoxBlockActor@@AEAAXXZ
-     * @hash   358151436
+     * @hash   943469628
      */
     MCAPI void _calculateBB();
     /**
      * @symbol ?_calculateMovementWithCollisions@ShulkerBoxBlockActor@@AEBA?AVVec3@@AEAVBlockSource@@PEAVActor@@@Z
-     * @hash   121301194
+     * @hash   706619386
      */
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
     /**
      * @symbol ?_moveCollidedEntities@ShulkerBoxBlockActor@@AEBAXAEAVBlockSource@@@Z
-     * @hash   653866375
+     * @hash   1239184567
      */
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
 private:
     /**
      * @symbol ?ITEMS_SIZE@ShulkerBoxBlockActor@@0HB
-     * @hash   -1893218591
+     * @hash   -1107597247
      */
     MCAPI static int const ITEMS_SIZE;
 

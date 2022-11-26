@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getPreferredPath@PreferredPathComponent@@QEAAAEBUPreferredPathDescription@@AEAVActor@@@Z
-     * @hash   1437996657
+     * @hash   1954322737
      */
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
     /**
      * @symbol ?initFromDefinition@PreferredPathComponent@@QEAAXAEAVActor@@@Z
-     * @hash   592196890
+     * @hash   681162426
      */
     MCAPI void initFromDefinition(class Actor &);
 

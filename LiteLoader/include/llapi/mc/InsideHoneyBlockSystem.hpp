@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createEventsSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -683165046
+     * @hash   -593000182
      */
     MCAPI static struct TickingSystemWithInfo createEventsSystem();
     /**
      * @symbol ?createMovementSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1145909690
+     * @hash   -1055744826
      */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 

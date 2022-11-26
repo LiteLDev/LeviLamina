@@ -38,25 +38,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorHasPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   -1384814306
+     * @hash   -1301445634
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorHasPropertyTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   203500270
+     * @hash   199656270
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@ActorHasPropertyTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   1340339988
+     * @hash   1423001364
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorHasPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   258835427
+     * @hash   295691699
      */
     virtual class Json::Value _serializeValue() const;
 
