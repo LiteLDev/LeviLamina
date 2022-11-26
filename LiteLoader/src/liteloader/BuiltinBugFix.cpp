@@ -235,16 +235,17 @@ TInstanceHook(NetworkPeer::DataStatus,
     return status;
 }
 
-
 THook(void*,
-      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
-      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
-      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
-      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
-    auto res = original(thi, a1, a2, a3, a4, a5, a6);
+      "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
+      "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
+      "Bedrock@@AEAVScheduler@@@Z",
+      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7) {
+    auto res = original(thi, a1, a2, a3, a4, a5, a6,a7);
     connState(thi) = false;
     return res;
 }
+
+
 
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
