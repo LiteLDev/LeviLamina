@@ -224,9 +224,8 @@ nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int
 
 nlohmann::json getCustomCharts() {
     nlohmann::json pluginsJson;
-
     pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", ll::getLoaderVersion().toString(false)));
-    pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1)));
+    pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1)));//bad
     pluginsJson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));
     pluginsJson.emplace_back(addAdvancedPie("player_platform", playerPlatList));
 
@@ -247,8 +246,10 @@ string createJson() {
     return json.dump();
 }
 
+
 void submitTask() {
-    playerAmount = Global<ServerNetworkHandler>->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
+    auto v3 = (ServerNetworkHandler*)((char*)Global<ServerNetworkHandler> - 16);
+    playerAmount = v3->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
     playerPlatList.clear();
     for (auto sp : Level::getAllPlayers()) {
         auto OS = sp->getDeviceName();
@@ -269,7 +270,7 @@ void submitTask() {
             {"Content-Type", "application/json"},
             {"User-Agent", "Metrics-Service/1"}};
         HttpPost(
-            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10);
+            "https://bstats.org/api/v2/sdata/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10);
     });
 
     a.detach();
