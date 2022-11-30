@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?setReplacementItemDescriptor@BoostItem@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   807212192
+     * @hash   807258320
      */
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
     /**
      * @symbol ??1BoostItem@@QEAA@XZ
-     * @hash   1680565506
+     * @hash   1680611634
      */
     MCAPI ~BoostItem();
 

@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
-     * @hash   -1615342272
+     * @hash   -1615296144
      */
     virtual void containerContentChanged(int);
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?postInit@InventoryContainerModel@@UEAAXXZ
-     * @hash   958077667
+     * @hash   958123795
      */
     virtual void postInit();
     /**
      * @vftbl  3
      * @symbol ?releaseResources@InventoryContainerModel@@UEAAXXZ
-     * @hash   -913545423
+     * @hash   -913499295
      */
     virtual void releaseResources();
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getContainerWeakRef@InventoryContainerModel@@UEBA?AVContainerWeakRef@@XZ
-     * @hash   -2069968079
+     * @hash   -2069921951
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
@@ -73,7 +73,7 @@ public:
     /**
      * @vftbl  14
      * @symbol ?isValid@InventoryContainerModel@@UEAA_NXZ
-     * @hash   -1779025849
+     * @hash   -1778979721
      */
     virtual bool isValid();
     /**
@@ -94,31 +94,31 @@ public:
     /**
      * @vftbl  20
      * @symbol ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
-     * @hash   1719718267
+     * @hash   1719764395
      */
     virtual class Container * _getContainer() const;
     /**
      * @vftbl  21
      * @symbol ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
-     * @hash   -1586397443
+     * @hash   -1586351315
      */
     virtual int _getContainerOffset() const;
     /**
      * @vftbl  22
      * @symbol ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
-     * @hash   -642870393
+     * @hash   -642824265
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
-     * @hash   -1908558229
+     * @hash   -1908512101
      */
     MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player &);
 
 //private:
     /**
      * @symbol ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
-     * @hash   1040255229
+     * @hash   1040301357
      */
     MCAPI void _refreshSlot(int);
 

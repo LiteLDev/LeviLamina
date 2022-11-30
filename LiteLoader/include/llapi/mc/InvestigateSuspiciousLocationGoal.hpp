@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
-     * @hash   -105436548
+     * @hash   -105390420
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
-     * @hash   -1580826182
+     * @hash   -1580780054
      */
     virtual bool canContinueToUse();
     /**
@@ -53,30 +53,30 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@InvestigateSuspiciousLocationGoal@@UEAAXXZ
-     * @hash   996337909
+     * @hash   996384037
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@InvestigateSuspiciousLocationGoal@@UEAAXXZ
-     * @hash   2046473589
+     * @hash   2046519717
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@InvestigateSuspiciousLocationGoal@@UEAAXXZ
-     * @hash   1832238816
+     * @hash   1832284944
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@InvestigateSuspiciousLocationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   142167252
+     * @hash   142213380
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0InvestigateSuspiciousLocationGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1886435161
+     * @hash   1886481289
      */
     MCAPI InvestigateSuspiciousLocationGoal(class Mob &);
 

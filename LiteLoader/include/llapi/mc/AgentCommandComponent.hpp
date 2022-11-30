@@ -36,7 +36,7 @@ public:
     MCAPI AgentCommandComponent();
     /**
      * @symbol ?addCommand@AgentCommandComponent@@QEAA_NV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
-     * @hash   20709685
+     * @hash   20755813
      */
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     /**
@@ -46,12 +46,12 @@ public:
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     /**
      * @symbol ?initFromDefinition@AgentCommandComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -776138030
+     * @hash   -776091902
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?setCurrentCommand@AgentCommandComponent@@QEAAXV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
-     * @hash   -512603312
+     * @hash   -512557184
      */
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
 

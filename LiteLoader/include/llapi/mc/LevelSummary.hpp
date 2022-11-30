@@ -53,12 +53,12 @@ public:
     MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
     /**
      * @symbol ?buildCustomIconPath@LevelSummary@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
-     * @hash   614672232
+     * @hash   615502536
      */
     MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const &);
     /**
      * @symbol ?buildWorldIconPath@LevelSummary@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
-     * @hash   1729231942
+     * @hash   1730062246
      */
     MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const &);
 

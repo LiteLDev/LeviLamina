@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?getSeatDescriptionOfPassenger@SeatDescriptionUtility@@SAAEBUSeatDescription@@AEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@AEBUVehicleComponent@@AEBVStrictEntityContext@@@Z
-     * @hash   114343583
+     * @hash   114389711
      */
     MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, struct VehicleComponent const &, class StrictEntityContext const &);
     /**
      * @symbol ?getSeatDescriptionOfPassenger@SeatDescriptionUtility@@SAAEBUSeatDescription@@AEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@HH@Z
-     * @hash   195243669
+     * @hash   195289797
      */
     MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, int, int);
     /**
      * @symbol ?getSeatRidingHeightOffset@SeatDescriptionUtility@@SAMMMM@Z
-     * @hash   -1570772839
+     * @hash   -1570726711
      */
     MCAPI static float getSeatRidingHeightOffset(float, float, float);
     /**
      * @symbol ?setValuesToSynchedActorData@SeatDescriptionUtility@@SAXVSynchedActorDataWriter@@AEBVVec3@@AEBUSeatDescription@@M@Z
-     * @hash   -288649805
+     * @hash   -288603677
      */
     MCAPI static void setValuesToSynchedActorData(class SynchedActorDataWriter, class Vec3 const &, struct SeatDescription const &, float);
 

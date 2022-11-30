@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnPlayerDestroyedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -143342516
+     * @hash   -142512212
      */
     virtual std::string const & getName() const;
     /**

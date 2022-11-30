@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
-     * @hash   -2076705195
+     * @hash   -2075874891
      */
     MCAPI bool getProperty(enum class BlockProperty) const;
     /**
      * @symbol ?hasProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
-     * @hash   -1058879523
+     * @hash   -1058049219
      */
     MCAPI bool hasProperty(enum class BlockProperty) const;
 

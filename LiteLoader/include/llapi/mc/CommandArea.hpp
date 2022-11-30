@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0CommandArea@@QEAA@V?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@@Z
-     * @hash   -1612931621
+     * @hash   -1612885493
      */
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     /**
      * @symbol ??1CommandArea@@QEAA@XZ
-     * @hash   1971501556
+     * @hash   1971547684
      */
     MCAPI ~CommandArea();
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?onProjectileHit@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   -1947269145
+     * @hash   -1946438841
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -570182292
+     * @hash   -569351988
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -228,7 +228,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1355944680
+     * @hash   -1355114376
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   408185778
+     * @hash   409016082
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -254,14 +254,14 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0TargetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1317916154
+     * @hash   1318746458
      */
     MCAPI TargetBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_processHitByProjectileAtPos@TargetBlock@@AEBAXAEBVVec3@@AEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   -389307703
+     * @hash   -388477399
      */
     MCAPI void _processHitByProjectileAtPos(class Vec3 const &, class BlockSource &, class BlockPos const &, class Actor const &) const;
 

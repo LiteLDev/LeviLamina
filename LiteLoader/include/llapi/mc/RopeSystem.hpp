@@ -31,47 +31,47 @@ public:
 public:
     /**
      * @symbol ??0RopeSystem@@QEAA@XZ
-     * @hash   -955834275
+     * @hash   -955003971
      */
     MCAPI RopeSystem();
     /**
      * @symbol ?_initializePins@RopeSystem@@QEAAXAEBVVec3@@0@Z
-     * @hash   1616725700
+     * @hash   1617556004
      */
     MCAPI void _initializePins(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?cutAtPercent@RopeSystem@@QEAAXM@Z
-     * @hash   -1328811468
+     * @hash   -1327981164
      */
     MCAPI void cutAtPercent(float);
     /**
      * @symbol ?initialize@RopeSystem@@QEAAXAEBURopeParams@@@Z
-     * @hash   -467393446
+     * @hash   -466563142
      */
     MCAPI void initialize(struct RopeParams const &);
     /**
      * @symbol ?isCut@RopeSystem@@QEBA_NXZ
-     * @hash   -292261682
+     * @hash   -291431378
      */
     MCAPI bool isCut() const;
     /**
      * @symbol ?isDestroyed@RopeSystem@@QEBA_NXZ
-     * @hash   1760342060
+     * @hash   1761172364
      */
     MCAPI bool isDestroyed() const;
     /**
      * @symbol ?queueTick@RopeSystem@@QEAAXAEAVBlockSource@@AEAV?$shared_ptr@VRopeSystem@@@std@@@Z
-     * @hash   820551916
+     * @hash   821382220
      */
     MCAPI void queueTick(class BlockSource &, class std::shared_ptr<class RopeSystem> &);
     /**
      * @symbol ??1RopeSystem@@QEAA@XZ
-     * @hash   316988443
+     * @hash   317034571
      */
     MCAPI ~RopeSystem();
     /**
      * @symbol ?sBucketLength@RopeSystem@@2MB
-     * @hash   -1883699089
+     * @hash   -1883576081
      */
     MCAPI static float const sBucketLength;
     /**
@@ -81,84 +81,84 @@ public:
     MCAPI static bool sEnabled;
     /**
      * @symbol ?sEpsilon@RopeSystem@@2MB
-     * @hash   -1880509811
+     * @hash   -1880386803
      */
     MCAPI static float const sEpsilon;
 
 //private:
     /**
      * @symbol ?_cacheColliders@RopeSystem@@AEAA_NAEAVBlockSource@@@Z
-     * @hash   2080802899
+     * @hash   2081633203
      */
     MCAPI bool _cacheColliders(class BlockSource &);
     /**
      * @symbol ?_finalizeBucket@RopeSystem@@AEAAXAEAUAABBBucket@@@Z
-     * @hash   1678465853
+     * @hash   1679296157
      */
     MCAPI void _finalizeBucket(struct AABBBucket &);
     /**
      * @symbol ?_initializePins@RopeSystem@@AEAAXXZ
-     * @hash   -740935080
+     * @hash   -740104776
      */
     MCAPI void _initializePins();
     /**
      * @symbol ?_integrate@RopeSystem@@AEAAXXZ
-     * @hash   1685020477
+     * @hash   1685850781
      */
     MCAPI void _integrate();
     /**
      * @symbol ?_prepareAABBBuckets@RopeSystem@@AEAAXXZ
-     * @hash   1437658380
+     * @hash   1438488684
      */
     MCAPI void _prepareAABBBuckets();
     /**
      * @symbol ?_propagateDistanceConstraint@RopeSystem@@AEAAMAEBVVec3@@AEAV2@M@Z
-     * @hash   1014017600
+     * @hash   1014847904
      */
     MCAPI float _propagateDistanceConstraint(class Vec3 const &, class Vec3 &, float);
     /**
      * @symbol ?_pruneDenyList@RopeSystem@@AEAAXXZ
-     * @hash   -1609486864
+     * @hash   -1608656560
      */
     MCAPI void _pruneDenyList();
     /**
      * @symbol ?_pushRange@RopeSystem@@AEAAX_K0@Z
-     * @hash   1945142687
+     * @hash   1945972991
      */
     MCAPI void _pushRange(unsigned __int64, unsigned __int64);
     /**
      * @symbol ?_resizeRope@RopeSystem@@AEAAXXZ
-     * @hash   1790655200
+     * @hash   1791485504
      */
     MCAPI void _resizeRope();
     /**
      * @symbol ?_solveCollisions@RopeSystem@@AEAAM_N@Z
-     * @hash   -1610002224
+     * @hash   -1609171920
      */
     MCAPI float _solveCollisions(bool);
     /**
      * @symbol ?_solveDistanceConstraint@RopeSystem@@AEAAMAEAVVec3@@0M@Z
-     * @hash   -959989619
+     * @hash   -959159315
      */
     MCAPI float _solveDistanceConstraint(class Vec3 &, class Vec3 &, float);
     /**
      * @symbol ?_solveDistanceConstraintBlock@RopeSystem@@AEAAMAEAVVec3@@000M@Z
-     * @hash   -1226468012
+     * @hash   -1225637708
      */
     MCAPI float _solveDistanceConstraintBlock(class Vec3 &, class Vec3 &, class Vec3 &, class Vec3 &, float);
     /**
      * @symbol ?_solveDistanceConstraints3@RopeSystem@@AEAAMXZ
-     * @hash   1803418837
+     * @hash   1804249141
      */
     MCAPI float _solveDistanceConstraints3();
     /**
      * @symbol ?_tick@RopeSystem@@AEAAXXZ
-     * @hash   -349537113
+     * @hash   -348706809
      */
     MCAPI void _tick();
     /**
      * @symbol ?_tickWaves@RopeSystem@@AEAAXXZ
-     * @hash   -106541383
+     * @hash   -105711079
      */
     MCAPI void _tickWaves();
 

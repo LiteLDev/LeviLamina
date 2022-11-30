@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SculkBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1913176095
+     * @hash   -1912345791
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -231,12 +231,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SculkBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1338690135
+     * @hash   1339520439
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0SculkBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1290500800
+     * @hash   1291331104
      */
     MCAPI SculkBlock(std::string const &, int, class Material const &);
 

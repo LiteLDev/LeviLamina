@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@ThrownPotion@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -250619371
+     * @hash   -250573243
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?queryEntityRenderer@ThrownPotion@@UEBAAEBVHashedString@@XZ
-     * @hash   241283826
+     * @hash   241329954
      */
     virtual class HashedString const & queryEntityRenderer() const;
     /**
@@ -132,7 +132,7 @@ public:
     /**
      * @vftbl  237
      * @symbol ?setAuxValue@ThrownPotion@@UEAAXH@Z
-     * @hash   -414112124
+     * @hash   -414065996
      */
     virtual void setAuxValue(int);
     /**
@@ -153,13 +153,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ThrownPotion@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1412512092
+     * @hash   1412558220
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ThrownPotion@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1254648625
+     * @hash   1254694753
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -179,22 +179,22 @@ public:
     virtual void __unk_vfn_283();
     /**
      * @symbol ??0ThrownPotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1925582615
+     * @hash   1925628743
      */
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getPotionId@ThrownPotion@@QEBAFXZ
-     * @hash   414923659
+     * @hash   414969787
      */
     MCAPI short getPotionId() const;
     /**
      * @symbol ?setLinger@ThrownPotion@@QEAAX_N@Z
-     * @hash   -1212005624
+     * @hash   -1211959496
      */
     MCAPI void setLinger(bool);
     /**
      * @symbol ?SPLASH_RANGE@ThrownPotion@@2MB
-     * @hash   2139916193
+     * @hash   2140039201
      */
     MCAPI static float const SPLASH_RANGE;
 

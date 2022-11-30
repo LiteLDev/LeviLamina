@@ -37,7 +37,7 @@ public:
     MCAPI ~LegacyBlendedNoise();
     /**
      * @symbol ?make@LegacyBlendedNoise@@SA?AV1@AEAVIRandom@@@Z
-     * @hash   -631517305
+     * @hash   -630687001
      */
     MCAPI static class LegacyBlendedNoise make(class IRandom &);
 

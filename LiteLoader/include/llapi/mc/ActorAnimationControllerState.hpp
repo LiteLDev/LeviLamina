@@ -32,57 +32,57 @@ public:
 public:
     /**
      * @symbol ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@@Z
-     * @hash   -896078920
+     * @hash   -895986664
      */
     MCAPI void addAnimation(class HashedString const &);
     /**
      * @symbol ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@AEBVExpressionNode@@@Z
-     * @hash   -853037571
+     * @hash   -852945315
      */
     MCAPI void addAnimation(class HashedString const &, class ExpressionNode const &);
     /**
      * @symbol ?addBlendTransitionKeyFrame@ActorAnimationControllerState@@QEAAXMM@Z
-     * @hash   377150209
+     * @hash   377242465
      */
     MCAPI void addBlendTransitionKeyFrame(float, float);
     /**
      * @symbol ?addEntryActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-     * @hash   1786229466
+     * @hash   1786321722
      */
     MCAPI class ActorAnimationEvent & addEntryActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addExitActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-     * @hash   1784279992
+     * @hash   1784372248
      */
     MCAPI class ActorAnimationEvent & addExitActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addParticleEffect@ActorAnimationControllerState@@QEAAAEAVActorParticleEffect@@XZ
-     * @hash   -1580601440
+     * @hash   -1580509184
      */
     MCAPI class ActorParticleEffect & addParticleEffect();
     /**
      * @symbol ?addSoundEffect@ActorAnimationControllerState@@QEAAAEAVActorSoundEffect@@XZ
-     * @hash   -921005044
+     * @hash   -920912788
      */
     MCAPI class ActorSoundEffect & addSoundEffect();
     /**
      * @symbol ?addTransition@ActorAnimationControllerState@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MolangVersion@@_N@Z
-     * @hash   -2123913584
+     * @hash   -2123821328
      */
     MCAPI void addTransition(std::string const &, std::string const &, enum class MolangVersion, bool);
     /**
      * @symbol ?addVariable@ActorAnimationControllerState@@QEAAAEAVStateAnimationVariable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -598905153
+     * @hash   -598812897
      */
     MCAPI class StateAnimationVariable & addVariable(std::string const &);
     /**
      * @symbol ?setBlendTransitionTime@ActorAnimationControllerState@@QEAAXM@Z
-     * @hash   1283151620
+     * @hash   1283243876
      */
     MCAPI void setBlendTransitionTime(float);
     /**
      * @symbol ?setVariables@ActorAnimationControllerState@@QEBAXAEAVRenderParams@@@Z
-     * @hash   -930703380
+     * @hash   -930611124
      */
     MCAPI void setVariables(class RenderParams &) const;
 

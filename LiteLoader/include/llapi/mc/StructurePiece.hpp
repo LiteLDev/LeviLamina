@@ -68,25 +68,25 @@ public:
     /**
      * @vftbl  6
      * @symbol ?isInInvalidLocation@StructurePiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
-     * @hash   -2016227623
+     * @hash   -2015397319
      */
     virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
     /**
      * @vftbl  7
      * @symbol ?getWorldX@StructurePiece@@UEAAHHH@Z
-     * @hash   1401106301
+     * @hash   1401936605
      */
     virtual int getWorldX(int, int);
     /**
      * @vftbl  8
      * @symbol ?getWorldZ@StructurePiece@@UEAAHHH@Z
-     * @hash   294993567
+     * @hash   295823871
      */
     virtual int getWorldZ(int, int);
     /**
      * @vftbl  9
      * @symbol ?placeBlock@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z
-     * @hash   1122916125
+     * @hash   1123746429
      */
     virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
     /**
@@ -98,7 +98,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?generateBox@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@2_N@Z
-     * @hash   -93744436
+     * @hash   -92914132
      */
     virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /**
@@ -109,82 +109,82 @@ public:
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
     /**
      * @symbol ?_getWorldPos@StructurePiece@@QEAA?AVBlockPos@@HHH@Z
-     * @hash   -1761838473
+     * @hash   -1761008169
      */
     MCAPI class BlockPos _getWorldPos(int, int, int);
     /**
      * @symbol ?addTerrainAdjustmentToken@StructurePiece@@QEAAXV?$shared_ptr@_N@std@@@Z
-     * @hash   -989739474
+     * @hash   -988909170
      */
     MCAPI void addTerrainAdjustmentToken(class std::shared_ptr<bool>);
     /**
      * @symbol ?generateAirBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHH@Z
-     * @hash   -828682197
+     * @hash   -827851893
      */
     MCAPI void generateAirBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int);
     /**
      * @symbol ?generateBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHH_NAEAVRandom@@AEBVBlockSelector@@@Z
-     * @hash   1299559202
+     * @hash   1300389506
      */
     MCAPI void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, bool, class Random &, class BlockSelector const &);
     /**
      * @symbol ?generateMaybeBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHHHHAEBVBlock@@3_N4@Z
-     * @hash   -1507480834
+     * @hash   -1506650530
      */
     MCAPI void generateMaybeBox(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int, int, int, int, class Block const &, class Block const &, bool, bool);
     /**
      * @symbol ?generateUpperHalfSphere@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@_N@Z
-     * @hash   1512184923
+     * @hash   1513015227
      */
     MCAPI void generateUpperHalfSphere(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, bool);
     /**
      * @symbol ?getBlock@StructurePiece@@QEAAAEBVBlock@@AEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-     * @hash   26600875
+     * @hash   27431179
      */
     MCAPI class Block const & getBlock(class BlockSource &, int, int, int, class BoundingBox const &);
     /**
      * @symbol ?getOrientationData@StructurePiece@@QEAAGPEBVBlock@@G@Z
-     * @hash   421464835
+     * @hash   422295139
      */
     MCAPI unsigned short getOrientationData(class Block const *, unsigned short);
     /**
      * @symbol ?getWorldY@StructurePiece@@QEAAHH@Z
-     * @hash   1350187331
+     * @hash   1351017635
      */
     MCAPI int getWorldY(int);
     /**
      * @symbol ?isAboveGround@StructurePiece@@QEAA_NHHHAEAVBlockSource@@@Z
-     * @hash   624136052
+     * @hash   624966356
      */
     MCAPI bool isAboveGround(int, int, int, class BlockSource &);
     /**
      * @symbol ?isAir@StructurePiece@@QEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-     * @hash   -1077857429
+     * @hash   -1077027125
      */
     MCAPI bool isAir(class BlockSource &, int, int, int, class BoundingBox const &);
     /**
      * @symbol ?isReplaceableBlock@StructurePiece@@QEAA_NAEBVBlock@@@Z
-     * @hash   -83614047
+     * @hash   -82783743
      */
     MCAPI bool isReplaceableBlock(class Block const &);
     /**
      * @symbol ?maybeGenerateBlock@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHAEBVBlock@@@Z
-     * @hash   1399965747
+     * @hash   1400796051
      */
     MCAPI void maybeGenerateBlock(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int, class Block const &);
     /**
      * @symbol ?maybeGenerateBlockIfNotFloating@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHAEBVBlock@@@Z
-     * @hash   -1445032883
+     * @hash   -1444202579
      */
     MCAPI void maybeGenerateBlockIfNotFloating(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int, class Block const &);
     /**
      * @symbol ?findCollisionPiece@StructurePiece@@SAPEAV1@AEBV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEBVBoundingBox@@@Z
-     * @hash   1100032956
+     * @hash   1100863260
      */
     MCAPI static class StructurePiece * findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const &, class BoundingBox const &);
     /**
      * @symbol ?getTotalWeight@StructurePiece@@SAHAEBV?$vector@VPieceWeight@@V?$allocator@VPieceWeight@@@std@@@std@@@Z
-     * @hash   1015078077
+     * @hash   1015908381
      */
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSendPacketsSystem@SendPacketsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1568060344
+     * @hash   -1568014216
      */
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
 

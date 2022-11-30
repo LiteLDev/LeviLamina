@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Vex@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   745613796
+     * @hash   745659924
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Vex@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1396609655
+     * @hash   1396655783
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -153,13 +153,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Vex@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1612656882
+     * @hash   -1612610754
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Vex@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   2132601663
+     * @hash   2132647791
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -180,7 +180,7 @@ public:
     /**
      * @vftbl  294
      * @symbol ?applyFinalFriction@Vex@@UEAAXM_N@Z
-     * @hash   1321172602
+     * @hash   1321218730
      */
     virtual void applyFinalFriction(float, bool);
     /**
@@ -205,7 +205,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Vex@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   963257109
+     * @hash   963303237
      */
     MCAPI Vex(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

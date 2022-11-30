@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SquidDiveGoal@@UEAA_NXZ
-     * @hash   -1733627433
+     * @hash   -1733581305
      */
     virtual bool canUse();
     /**
@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SquidDiveGoal@@UEAAXXZ
-     * @hash   977147920
+     * @hash   977194048
      */
     virtual void start();
     /**
@@ -71,7 +71,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SquidDiveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1538421095
+     * @hash   -1538374967
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDDIVEGOAL

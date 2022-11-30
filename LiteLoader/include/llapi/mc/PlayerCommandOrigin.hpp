@@ -40,103 +40,103 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@PlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   861395596
+     * @hash   861441724
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   443421963
+     * @hash   443468091
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@PlayerCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   -1200363576
+     * @hash   -1200317448
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@PlayerCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -146988363
+     * @hash   -146942235
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@PlayerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   504463700
+     * @hash   504509828
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@PlayerCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   1278435694
+     * @hash   1278481822
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@PlayerCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   -1224301906
+     * @hash   -1224255778
      */
     virtual class Dimension * getDimension() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@PlayerCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   -140681320
+     * @hash   -140635192
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -564403476
+     * @hash   -564357348
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@PlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   710344946
+     * @hash   710391074
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  11
      * @symbol ?getCursorHitBlockPos@PlayerCommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   1112303463
+     * @hash   1112349591
      */
     virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /**
      * @vftbl  12
      * @symbol ?getCursorHitPos@PlayerCommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ
-     * @hash   2026729550
+     * @hash   2026775678
      */
     virtual class std::optional<class Vec3> getCursorHitPos() const;
     /**
      * @vftbl  15
      * @symbol ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-     * @hash   -2037125651
+     * @hash   -2037079523
      */
     virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ
-     * @hash   -996736550
+     * @hash   -996690422
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  19
      * @symbol ?getSourceId@PlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
-     * @hash   -1520488022
+     * @hash   -1520441894
      */
     virtual class NetworkIdentifier const & getSourceId() const;
     /**
      * @vftbl  20
      * @symbol ?getSourceSubId@PlayerCommandOrigin@@UEBA?AW4SubClientId@@XZ
-     * @hash   -1944405686
+     * @hash   -1944359558
      */
     virtual enum class SubClientId getSourceSubId() const;
     /**
      * @vftbl  22
      * @symbol ?getIdentity@PlayerCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
-     * @hash   1246158975
+     * @hash   1246205103
      */
     virtual struct CommandOriginIdentity getIdentity() const;
     /**
@@ -148,23 +148,23 @@ public:
     /**
      * @vftbl  29
      * @symbol ?serialize@PlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   -1126354152
+     * @hash   -1126308024
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@PlayerCommandOrigin@@UEBA_NXZ
-     * @hash   2130505882
+     * @hash   2130552010
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
-     * @hash   -1027841375
+     * @hash   -1027795247
      */
     MCAPI PlayerCommandOrigin(class Player &);
     /**
      * @symbol ?load@PlayerCommandOrigin@@SA?AV?$unique_ptr@VPlayerCommandOrigin@@U?$default_delete@VPlayerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   -966261332
+     * @hash   -966215204
      */
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const &, class Level &);
 

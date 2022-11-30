@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0Bounds@@QEAA@AEBVChunkPos@@0@Z
-     * @hash   1544039574
+     * @hash   1544085702
      */
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
     /**
      * @symbol ??0Bounds@@QEAA@AEBVBlockPos@@0HW4Option@0@@Z
-     * @hash   -51776221
+     * @hash   -51730093
      */
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum class Bounds::Option);
     /**

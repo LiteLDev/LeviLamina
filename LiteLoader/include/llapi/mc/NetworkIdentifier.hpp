@@ -36,49 +36,49 @@ public:
 public:
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@_K@Z
-     * @hash   1211729783
+     * @hash   1211775911
      */
     MCAPI NetworkIdentifier(unsigned __int64);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
-     * @hash   -1433440730
+     * @hash   -1433394602
      */
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
-     * @hash   -102655704
+     * @hash   -102609576
      */
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
-     * @hash   -1028578868
+     * @hash   -1028532740
      */
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     /**
      * @symbol ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1174580144
+     * @hash   -1174534016
      */
     MCAPI std::string getAddress() const;
     /**
      * @symbol ?getHash@NetworkIdentifier@@QEBA_KXZ
-     * @hash   402027915
+     * @hash   402074043
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
-     * @hash   1828065042
+     * @hash   1828111170
      */
     MCAPI bool isUnassigned() const;
     /**
      * @symbol ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1136063840
+     * @hash   1136109968
      */
     MCAPI std::string toString() const;
 
 //private:
     /**
      * @symbol ?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z
-     * @hash   -871562113
+     * @hash   -871515985
      */
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 

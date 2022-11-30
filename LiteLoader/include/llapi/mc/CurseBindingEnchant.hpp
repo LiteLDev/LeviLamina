@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@CurseBindingEnchant@@UEBAHH@Z
-     * @hash   -390429857
+     * @hash   -390383729
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@CurseBindingEnchant@@UEBAHH@Z
-     * @hash   1108478893
+     * @hash   1108525021
      */
     virtual int getMaxCost(int) const;
     /**
@@ -77,7 +77,7 @@ public:
 #endif
     /**
      * @symbol ??0CurseBindingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -297156492
+     * @hash   -296326188
      */
     MCAPI CurseBindingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

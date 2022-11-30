@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??BRegistryKey@@QEBA_NXZ
-     * @hash   2054577728
+     * @hash   2055408032
      */
     MCAPI operator bool() const;
     /**
      * @symbol ?readValue@RegistryKey@@QEBA_NPEBDAEAK@Z
-     * @hash   -856386989
+     * @hash   -855556685
      */
     MCAPI bool readValue(char const *, unsigned long &) const;
     /**
      * @symbol ?readValue@RegistryKey@@QEBA_NPEBDAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1836750525
+     * @hash   -1835920221
      */
     MCAPI bool readValue(char const *, std::string &) const;
     /**
      * @symbol ??1RegistryKey@@QEAA@XZ
-     * @hash   -946260514
+     * @hash   -945430210
      */
     MCAPI ~RegistryKey();
     /**
      * @symbol ?open@RegistryKey@@SA?AV1@PEAUHKEY__@@PEBDK@Z
-     * @hash   -315551851
+     * @hash   -314721547
      */
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
 

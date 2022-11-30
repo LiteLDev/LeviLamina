@@ -38,43 +38,43 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@ScriptCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1373604042
+     * @hash   -1373557914
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ScriptCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -700295627
+     * @hash   -699465323
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ScriptCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   1551595554
+     * @hash   1551641682
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ScriptCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -1735630129
+     * @hash   -1735584001
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ScriptCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   -1796076034
+     * @hash   -1796029906
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@ScriptCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   2076392264
+     * @hash   2076438392
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@ScriptCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   1156807768
+     * @hash   1156853896
      */
     virtual class Dimension * getDimension() const;
     /**
@@ -92,7 +92,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?clone@ScriptCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   2007810604
+     * @hash   2008640908
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -110,13 +110,13 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ScriptCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   574469691
+     * @hash   575299995
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  26
      * @symbol ?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-     * @hash   559589448
+     * @hash   560419752
      */
     virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
     /**
@@ -127,7 +127,7 @@ public:
     virtual bool isValid() const;
     /**
      * @symbol ??0ScriptCommandOrigin@@QEAA@AEAVServerLevel@@PEAVDimension@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@@Z
-     * @hash   -71975819
+     * @hash   -71145515
      */
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
 

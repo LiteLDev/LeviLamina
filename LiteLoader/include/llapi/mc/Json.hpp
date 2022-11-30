@@ -475,22 +475,22 @@ private:
 #undef AFTER_EXTRA
     /**
      * @symbol ?valueToQuotedString@Json@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
-     * @hash   -2130286235
+     * @hash   -2129455931
      */
     MCAPI std::string valueToQuotedString(char const *);
     /**
      * @symbol ?valueToString@Json@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@N@Z
-     * @hash   -1494373954
+     * @hash   -1493543650
      */
     MCAPI std::string valueToString(double);
     /**
      * @symbol ?valueToString@Json@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
-     * @hash   -2006748117
+     * @hash   -2005917813
      */
     MCAPI std::string valueToString(__int64);
     /**
      * @symbol ?valueToString@Json@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-     * @hash   -1261235035
+     * @hash   -1260404731
      */
     MCAPI std::string valueToString(unsigned __int64);
 

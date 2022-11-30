@@ -76,7 +76,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@FireworksItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1856627808
+     * @hash   -1855797504
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -106,35 +106,35 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@FireworksItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -881114481
+     * @hash   -880284177
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  85
      * @symbol ?dispense@FireworksItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -748788469
+     * @hash   -747958165
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@FireworksItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -816697121
+     * @hash   -815866817
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0FireworksItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -675207635
+     * @hash   -674377331
      */
     MCAPI FireworksItem(std::string const &, int);
     /**
@@ -154,12 +154,12 @@ public:
     MCAPI static std::string const TAG_FIREWORKS;
     /**
      * @symbol ?initFireworksRocketItem@FireworksItem@@SAAEBVItemInstance@@AEAV2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@H@Z
-     * @hash   -769071169
+     * @hash   -768240865
      */
     MCAPI static class ItemInstance const & initFireworksRocketItem(class ItemInstance &, std::vector<class ItemInstance> const &, int);
     /**
      * @symbol ?initFireworksRocketItem@FireworksItem@@SAAEBVItemStack@@AEAV2@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@H@Z
-     * @hash   1837167192
+     * @hash   1837997496
      */
     MCAPI static class ItemStack const & initFireworksRocketItem(class ItemStack &, std::vector<class ItemStack> const &, int);
 

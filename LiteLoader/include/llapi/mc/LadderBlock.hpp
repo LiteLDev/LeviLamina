@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@LadderBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1722768699
+     * @hash   1723599003
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  57
      * @symbol ?sanitizeFillBlock@LadderBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-     * @hash   1295736046
+     * @hash   1296566350
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -189,13 +189,13 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@LadderBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1132616042
+     * @hash   -1131785738
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@LadderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   188084509
+     * @hash   188914813
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -206,7 +206,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@LadderBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   374641850
+     * @hash   375472154
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@LadderBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1890039589
+     * @hash   1890869893
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@LadderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -794933263
+     * @hash   -794102959
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -274,7 +274,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@LadderBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1101402501
+     * @hash   1102232805
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -296,7 +296,7 @@ public:
 #endif
     /**
      * @symbol ??0LadderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   77073273
+     * @hash   77903577
      */
     MCAPI LadderBlock(std::string const &, int);
 

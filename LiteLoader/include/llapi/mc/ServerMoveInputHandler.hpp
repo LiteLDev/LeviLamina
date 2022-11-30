@@ -64,12 +64,12 @@ public:
 #endif
     /**
      * @symbol ??0ServerMoveInputHandler@@QEAA@XZ
-     * @hash   1461399616
+     * @hash   1461445744
      */
     MCAPI ServerMoveInputHandler();
     /**
      * @symbol ?digestPlayerInputPacket@ServerMoveInputHandler@@QEAAXAEBVPlayerAuthInputPacket@@@Z
-     * @hash   1371061824
+     * @hash   1371107952
      */
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 

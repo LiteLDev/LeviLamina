@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@MelonBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   692728193
+     * @hash   693558497
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -225,18 +225,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@MelonBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -249994560
+     * @hash   -249164256
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@MelonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   2076693592
+     * @hash   2077523896
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0MelonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1865567672
+     * @hash   1866397976
      */
     MCAPI MelonBlock(std::string const &, int);
 

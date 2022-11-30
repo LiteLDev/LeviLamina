@@ -38,12 +38,12 @@ public:
     MCVAPI void flush();
     /**
      * @symbol ?isEnabled@WorldSessionEndPoint@@UEBA_NXZ
-     * @hash   495894870
+     * @hash   495940998
      */
     MCVAPI bool isEnabled() const;
     /**
      * @symbol ?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-     * @hash   500683666
+     * @hash   500729794
      */
     MCVAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**
@@ -53,13 +53,13 @@ public:
     MCVAPI bool logOnlyOnce() const;
     /**
      * @symbol ?setEnabled@WorldSessionEndPoint@@UEAAX_N@Z
-     * @hash   1307184143
+     * @hash   1307230271
      */
     MCVAPI void setEnabled(bool);
 #endif
     /**
      * @symbol ??0WorldSessionEndPoint@@QEAA@AEAVIMinecraftEventing@@@Z
-     * @hash   863376628
+     * @hash   863422756
      */
     MCAPI WorldSessionEndPoint(class IMinecraftEventing &);
 

@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Wolf@@UEAAXXZ
-     * @hash   -715935879
+     * @hash   -715889751
      */
     virtual void normalTick();
     /**
      * @vftbl  55
      * @symbol ?addPassenger@Wolf@@UEAAXAEAVActor@@@Z
-     * @hash   1417308441
+     * @hash   1417354569
      */
     virtual void addPassenger(class Actor &);
     /**
@@ -112,25 +112,25 @@ public:
     /**
      * @vftbl  122
      * @symbol ?setSitting@Wolf@@UEAAX_N@Z
-     * @hash   1634676909
+     * @hash   1634723037
      */
     virtual void setSitting(bool);
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   468296482
+     * @hash   468342610
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-     * @hash   667632324
+     * @hash   667678452
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  170
      * @symbol ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   289179433
+     * @hash   289225561
      */
     virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /**
@@ -141,7 +141,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
-     * @hash   1177918698
+     * @hash   1177964826
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1619614030
+     * @hash   1619660158
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -203,7 +203,7 @@ public:
     /**
      * @vftbl  310
      * @symbol ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
-     * @hash   -1784742139
+     * @hash   -1784696011
      */
     virtual bool isAlliedTo(class Mob *);
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  339
      * @symbol ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
-     * @hash   928924397
+     * @hash   928970525
      */
     virtual void onBorn(class Actor &, class Actor &);
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@Wolf@@UEAAXXZ
-     * @hash   -946566580
+     * @hash   -946520452
      */
     virtual void newServerAiStep();
     /**
@@ -235,39 +235,39 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -413869634
+     * @hash   -413823506
      */
     MCAPI Wolf(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getHeadRollAngle@Wolf@@QEAAMM@Z
-     * @hash   1927470177
+     * @hash   1927516305
      */
     MCAPI float getHeadRollAngle(float);
     /**
      * @symbol ?getShakeAnim@Wolf@@QEBAMXZ
-     * @hash   721883238
+     * @hash   721929366
      */
     MCAPI float getShakeAnim() const;
     /**
      * @symbol ?getTailAngle@Wolf@@QEAAMXZ
-     * @hash   -942691336
+     * @hash   -942645208
      */
     MCAPI float getTailAngle();
     /**
      * @symbol ?isShaking@Wolf@@QEBA_NXZ
-     * @hash   1180304142
+     * @hash   1180350270
      */
     MCAPI bool isShaking() const;
     /**
      * @symbol ?postNormalTick@Wolf@@QEAAXXZ
-     * @hash   -851842843
+     * @hash   -851796715
      */
     MCAPI void postNormalTick();
 
 //private:
     /**
      * @symbol ?_avoidSnowBury@Wolf@@AEAAXXZ
-     * @hash   -2132039539
+     * @hash   -2131993411
      */
     MCAPI void _avoidSnowBury();
 

@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ??0MapDecoration@@QEAA@XZ
-     * @hash   -1620903240
+     * @hash   -1620072936
      */
     MCAPI MapDecoration();
     /**
      * @symbol ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-     * @hash   205835524
+     * @hash   206665828
      */
     MCAPI MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
     /**
      * @symbol ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
-     * @hash   774150196
+     * @hash   774980500
      */
     MCAPI class mce::Color const & getColor() const;
     /**
@@ -58,27 +58,27 @@ public:
     MCAPI std::string const & getLabel() const;
     /**
      * @symbol ?getRot@MapDecoration@@QEBACXZ
-     * @hash   -660674142
+     * @hash   -659843838
      */
     MCAPI signed char getRot() const;
     /**
      * @symbol ?getX@MapDecoration@@QEBACXZ
-     * @hash   -881430476
+     * @hash   -880600172
      */
     MCAPI signed char getX() const;
     /**
      * @symbol ?getY@MapDecoration@@QEBACXZ
-     * @hash   1337266374
+     * @hash   1338096678
      */
     MCAPI signed char getY() const;
     /**
      * @symbol ?load@MapDecoration@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -789409416
+     * @hash   -788579112
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?save@MapDecoration@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   1519075150
+     * @hash   1519905454
      */
     MCAPI void save(class CompoundTag &);
     /**

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  16
      * @symbol ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   497810520
+     * @hash   497856648
      */
     virtual void startOpen(class Player &);
     /**
      * @vftbl  17
      * @symbol ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1961236152
+     * @hash   -1961190024
      */
     virtual void stopOpen(class Player &);
     /**
@@ -59,12 +59,12 @@ public:
     virtual void __unk_vfn_23();
     /**
      * @symbol ??0EnderChestContainer@@QEAA@XZ
-     * @hash   -612077820
+     * @hash   -612031692
      */
     MCAPI EnderChestContainer();
     /**
      * @symbol ?ITEMS_SIZE@EnderChestContainer@@2HB
-     * @hash   1563490959
+     * @hash   1563613967
      */
     MCAPI static int const ITEMS_SIZE;
 

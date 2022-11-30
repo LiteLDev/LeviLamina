@@ -40,170 +40,170 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2102900183
+     * @hash   -2102854055
      */
     virtual bool load(class ResourceLocation const &, std::string &) const;
     /**
      * @vftbl  2
      * @symbol ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   977936292
+     * @hash   977982420
      */
     virtual bool load(class ResourceLocation const &, std::string &, std::vector<std::string> const &) const;
     /**
      * @vftbl  3
      * @symbol ?load@ResourcePackManager@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   -1328887542
+     * @hash   -1328841414
      */
     virtual bool load(class ResourceLocationPair const &, std::string &, std::vector<std::string> const &) const;
     /**
      * @vftbl  4
      * @symbol ?loadAllVersionsOf@ResourcePackManager@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
-     * @hash   1692966216
+     * @hash   1693012344
      */
     virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const &) const;
     /**
      * @vftbl  5
      * @symbol ?isInStreamableLocation@ResourcePackManager@@UEBA_NAEBVResourceLocation@@@Z
-     * @hash   -1838333668
+     * @hash   -1838287540
      */
     virtual bool isInStreamableLocation(class ResourceLocation const &) const;
     /**
      * @vftbl  6
      * @symbol ?isInStreamableLocation@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1008541639
+     * @hash   -1008495511
      */
     virtual bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
      * @vftbl  7
      * @symbol ?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
-     * @hash   -2026324935
+     * @hash   -2026278807
      */
     virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const &) const;
     /**
      * @vftbl  8
      * @symbol ?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -141813508
+     * @hash   -141767380
      */
     virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
      * @vftbl  9
      * @symbol ?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
-     * @hash   33712813
+     * @hash   33758941
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &) const;
     /**
      * @vftbl  10
      * @symbol ?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1390778774
+     * @hash   -1390732646
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /**
      * @vftbl  11
      * @symbol ?getPackStackIndexOfResource@ResourcePackManager@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   1065699937
+     * @hash   1065746065
      */
     virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
      * @vftbl  12
      * @symbol ?hasCapability@ResourcePackManager@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -498643459
+     * @hash   -498597331
      */
     virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z
-     * @hash   -1823583146
+     * @hash   -1823537018
      */
     MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string> (void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, bool);
     /**
      * @symbol ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
-     * @hash   -1036281263
+     * @hash   -1036235135
      */
     MCAPI void clearStack(enum class ResourcePackStackType, bool);
     /**
      * @symbol ?composeFullStack@ResourcePackManager@@QEBAHAEAVResourcePackStack@@AEBV2@11@Z
-     * @hash   1987803789
+     * @hash   1987849917
      */
     MCAPI int composeFullStack(class ResourcePackStack &, class ResourcePackStack const &, class ResourcePackStack const &, class ResourcePackStack const &) const;
     /**
      * @symbol ?getFullStackMinEngineVersion@ResourcePackManager@@QEBA?AVSemVersion@@XZ
-     * @hash   2036970946
+     * @hash   2037017074
      */
     MCAPI class SemVersion getFullStackMinEngineVersion() const;
     /**
      * @symbol ?getPackSourceReport@ResourcePackManager@@QEBAPEBVPackSourceReport@@XZ
-     * @hash   938866521
+     * @hash   938912649
      */
     MCAPI class PackSourceReport const * getPackSourceReport() const;
     /**
      * @symbol ?getResourcesOfGroup@ResourcePackManager@@QEBA?AV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   380857377
+     * @hash   380903505
      */
     MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(std::string const &) const;
     /**
      * @symbol ?getResourcesOfGroup@ResourcePackManager@@QEBA?AV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPackInstance@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -352815704
+     * @hash   -352769576
      */
     MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(class PackInstance const &, std::string const &) const;
     /**
      * @symbol ?getStack@ResourcePackManager@@QEBAAEBVResourcePackStack@@W4ResourcePackStackType@@@Z
-     * @hash   984422273
+     * @hash   984468401
      */
     MCAPI class ResourcePackStack const & getStack(enum class ResourcePackStackType) const;
     /**
      * @symbol ?handlePendingStackChanges@ResourcePackManager@@QEAAXXZ
-     * @hash   704588345
+     * @hash   704634473
      */
     MCAPI void handlePendingStackChanges();
     /**
      * @symbol ?hasResource@ResourcePackManager@@QEBA_NAEBVResourceLocation@@@Z
-     * @hash   652304569
+     * @hash   652350697
      */
     MCAPI bool hasResource(class ResourceLocation const &) const;
     /**
      * @symbol ?loadAllVersionsOf@ResourcePackManager@@QEBA_NAEBVResourceLocation@@AEAVResourcePackMergeStrategy@@@Z
-     * @hash   1662146408
+     * @hash   1662192536
      */
     MCAPI bool loadAllVersionsOf(class ResourceLocation const &, class ResourcePackMergeStrategy &) const;
     /**
      * @symbol ?registerResourcePackListener@ResourcePackManager@@QEAAXAEAVResourcePackListener@@@Z
-     * @hash   1912499504
+     * @hash   1912545632
      */
     MCAPI void registerResourcePackListener(class ResourcePackListener &);
     /**
      * @symbol ?setPackSourceReport@ResourcePackManager@@QEAAX$$QEAVPackSourceReport@@@Z
-     * @hash   -1235160706
+     * @hash   -1235114578
      */
     MCAPI void setPackSourceReport(class PackSourceReport &&);
     /**
      * @symbol ?setStack@ResourcePackManager@@QEAA_NV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@W4ResourcePackStackType@@_N@Z
-     * @hash   -737300921
+     * @hash   -737254793
      */
     MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum class ResourcePackStackType, bool);
     /**
      * @symbol ?unRegisterResourcePackListener@ResourcePackManager@@QEAAXAEAVResourcePackListener@@@Z
-     * @hash   -969383440
+     * @hash   -969337312
      */
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener &);
 
 //private:
     /**
      * @symbol ?_calculateMinEngineVersionFromFullStack@ResourcePackManager@@AEAAXXZ
-     * @hash   154016170
+     * @hash   154062298
      */
     MCAPI void _calculateMinEngineVersionFromFullStack();
     /**
      * @symbol ?_composeFullStack@ResourcePackManager@@AEAAXXZ
-     * @hash   643661196
+     * @hash   643707324
      */
     MCAPI void _composeFullStack();
     /**
      * @symbol ?_getResourcesOfGroup@ResourcePackManager@@AEBAXAEBVPackInstance@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@4@@Z
-     * @hash   2093520456
+     * @hash   2093566584
      */
     MCAPI void _getResourcesOfGroup(class PackInstance const &, std::string const &, std::vector<class Core::PathBuffer<std::string>> &) const;
     /**
      * @symbol ?_updateLanguageSubpacks@ResourcePackManager@@AEAAXXZ
-     * @hash   671280976
+     * @hash   671327104
      */
     MCAPI void _updateLanguageSubpacks();
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -2130487904
+     * @hash   -2129657600
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   1937723558
+     * @hash   1938553862
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1177590029
+     * @hash   -1176759725
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   597292810
+     * @hash   598123114
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
@@ -73,7 +73,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   1527607607
+     * @hash   1528437911
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFHANDCONTAINERVALIDATION

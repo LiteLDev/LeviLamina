@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@CoralFanBlockItem@@UEBAHH@Z
-     * @hash   -1292620366
+     * @hash   -1291790062
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -81,7 +81,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@CoralFanBlockItem@@UEBA_NH@Z
-     * @hash   -491397340
+     * @hash   -490567036
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -106,23 +106,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@CoralFanBlockItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1414977492
+     * @hash   -1414147188
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0CoralFanBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1570240884
+     * @hash   -1569410580
      */
     MCAPI CoralFanBlockItem(std::string const &, int);
 

@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?getWasInsideRange@TargetNearbyComponent@@QEBA_NXZ
-     * @hash   -2009281324
+     * @hash   -2009235196
      */
     MCAPI bool getWasInsideRange() const;
     /**
      * @symbol ?getWasOutsideRange@TargetNearbyComponent@@QEBA_NXZ
-     * @hash   -985506458
+     * @hash   -985460330
      */
     MCAPI bool getWasOutsideRange() const;
     /**
      * @symbol ?getWasSeenLastTick@TargetNearbyComponent@@QEBA_NXZ
-     * @hash   -1584692554
+     * @hash   -1584646426
      */
     MCAPI bool getWasSeenLastTick() const;
     /**
      * @symbol ?setPreviousDistance@TargetNearbyComponent@@QEAAXM@Z
-     * @hash   1170789688
+     * @hash   1170835816
      */
     MCAPI void setPreviousDistance(float);
     /**
      * @symbol ?setWasInsideRange@TargetNearbyComponent@@QEAAX_N@Z
-     * @hash   -1216521896
+     * @hash   -1216475768
      */
     MCAPI void setWasInsideRange(bool);
     /**
      * @symbol ?setWasOutsideRange@TargetNearbyComponent@@QEAAX_N@Z
-     * @hash   771662998
+     * @hash   771709126
      */
     MCAPI void setWasOutsideRange(bool);
     /**
      * @symbol ?setWasSeenLastTick@TargetNearbyComponent@@QEAAX_N@Z
-     * @hash   -259238938
+     * @hash   -259192810
      */
     MCAPI void setWasSeenLastTick(bool);
 

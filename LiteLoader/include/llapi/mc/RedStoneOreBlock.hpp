@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   741537691
+     * @hash   742367995
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  109
      * @symbol ?attack@RedStoneOreBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   2040612876
+     * @hash   2041443180
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1047503556
+     * @hash   1048333860
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -213,13 +213,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   2137020534
+     * @hash   2137850838
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  165
      * @symbol ?onStandOn@RedStoneOreBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   -1799552345
+     * @hash   -1798722041
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   562734930
+     * @hash   563565234
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@RedStoneOreBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1118402516
+     * @hash   1119232820
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -267,31 +267,31 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@RedStoneOreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1874825381
+     * @hash   1875655685
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RedStoneOreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2062821843
+     * @hash   -2061991539
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1973670511
+     * @hash   -1972840207
      */
     virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ??0RedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   827021272
+     * @hash   827851576
      */
     MCAPI RedStoneOreBlock(std::string const &, int, bool);
 
 //private:
     /**
      * @symbol ?_poofParticles@RedStoneOreBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -696704862
+     * @hash   -695874558
      */
     MCAPI void _poofParticles(class BlockSource &, class BlockPos const &) const;
 

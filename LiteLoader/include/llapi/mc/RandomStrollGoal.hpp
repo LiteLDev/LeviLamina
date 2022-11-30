@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomStrollGoal@@UEAA_NXZ
-     * @hash   624324476
+     * @hash   624370604
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomStrollGoal@@UEAA_NXZ
-     * @hash   1068307402
+     * @hash   1068353530
      */
     virtual bool canContinueToUse();
     /**
@@ -56,25 +56,25 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@RandomStrollGoal@@UEAAXXZ
-     * @hash   165684117
+     * @hash   165730245
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RandomStrollGoal@@UEAAXXZ
-     * @hash   -1691064427
+     * @hash   -1691018299
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RandomStrollGoal@@UEAAXXZ
-     * @hash   -470361280
+     * @hash   -470315152
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -209052732
+     * @hash   -209006604
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
@@ -90,12 +90,12 @@ public:
     /**
      * @vftbl  10
      * @symbol ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
-     * @hash   -660259159
+     * @hash   -660213031
      */
     virtual bool _setWantedPosition();
     /**
      * @symbol ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
-     * @hash   1332690235
+     * @hash   1332736363
      */
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 

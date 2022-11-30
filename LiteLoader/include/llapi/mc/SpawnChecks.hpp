@@ -45,12 +45,12 @@ public:
     MCAPI static bool canReviveBees(class ILevel const &);
     /**
      * @symbol ?canSpawnBees@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   1437592777
+     * @hash   1437638905
      */
     MCAPI static bool canSpawnBees(class ILevel const &);
     /**
      * @symbol ?canSpawnEnderDragon@SpawnChecks@@SA_NAEBVServerLevel@@@Z
-     * @hash   1271197867
+     * @hash   1271243995
      */
     MCAPI static bool canSpawnEnderDragon(class ServerLevel const &);
     /**
@@ -60,17 +60,17 @@ public:
     MCAPI static bool canSpawnFromMobSpawnerBlock(class ILevel const &);
     /**
      * @symbol ?canSpawnNaturally@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   -366593847
+     * @hash   -366547719
      */
     MCAPI static bool canSpawnNaturally(class ILevel const &);
     /**
      * @symbol ?canSpawnPigZombieFromPortal@SpawnChecks@@SA_NAEBVDimension@@AEBVRandomize@@@Z
-     * @hash   -1636000354
+     * @hash   -1635954226
      */
     MCAPI static bool canSpawnPigZombieFromPortal(class Dimension const &, class Randomize const &);
     /**
      * @symbol ?canSpawnSkeletonTrap@SpawnChecks@@SA_NAEBVILevel@@AEBVRandomize@@@Z
-     * @hash   -746820296
+     * @hash   -746774168
      */
     MCAPI static bool canSpawnSkeletonTrap(class ILevel const &, class Randomize const &);
     /**
@@ -80,32 +80,32 @@ public:
     MCAPI static bool canSpawnTadpoles(class ILevel const &);
     /**
      * @symbol ?canSpawnVillageDwellers@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   -1161793547
+     * @hash   -1161747419
      */
     MCAPI static bool canSpawnVillageDwellers(class ILevel const &);
     /**
      * @symbol ?canSpawnWanderingTrader@SpawnChecks@@SA_NAEBVServerLevel@@@Z
-     * @hash   -267425237
+     * @hash   -267379109
      */
     MCAPI static bool canSpawnWanderingTrader(class ServerLevel const &);
     /**
      * @symbol ?canSpawnWarden@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   2130236657
+     * @hash   2130282785
      */
     MCAPI static bool canSpawnWarden(class ILevel const &);
     /**
      * @symbol ?canSpawnWithWorldGeneration@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   -1056818531
+     * @hash   -1056772403
      */
     MCAPI static bool canSpawnWithWorldGeneration(class ILevel const &);
     /**
      * @symbol ?canTriggerRaid@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   -593947987
+     * @hash   -593901859
      */
     MCAPI static bool canTriggerRaid(class ILevel const &);
     /**
      * @symbol ?shouldAbortRaid@SpawnChecks@@SA_NAEBVILevel@@@Z
-     * @hash   -1307430591
+     * @hash   -1307384463
      */
     MCAPI static bool shouldAbortRaid(class ILevel const &);
     /**

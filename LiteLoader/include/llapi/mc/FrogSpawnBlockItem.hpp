@@ -98,29 +98,29 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@FrogSpawnBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   1191650246
+     * @hash   1192480550
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@FrogSpawnBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1651541559
+     * @hash   -1650711255
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0FrogSpawnBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1393036423
+     * @hash   1393866727
      */
     MCAPI FrogSpawnBlockItem(std::string const &, int);
 

@@ -206,13 +206,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   2033505164
+     * @hash   2033551292
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   935632783
+     * @hash   935678911
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -229,43 +229,43 @@ public:
     /**
      * @vftbl  17
      * @symbol ?resetUserPos@Player@@UEAAX_N@Z
-     * @hash   -168853204
+     * @hash   -168807076
      */
     virtual void resetUserPos(bool);
     /**
      * @vftbl  20
      * @symbol ?remove@Player@@UEAAXXZ
-     * @hash   260790938
+     * @hash   260837066
      */
     virtual void remove();
     /**
      * @vftbl  27
      * @symbol ?getAttachPos@Player@@UEBA?AVVec3@@W4ActorLocation@@M@Z
-     * @hash   354008746
+     * @hash   354054874
      */
     virtual class Vec3 getAttachPos(enum class ActorLocation, float) const;
     /**
      * @vftbl  29
      * @symbol ?move@Player@@UEAAXAEBVVec3@@@Z
-     * @hash   203761035
+     * @hash   203807163
      */
     virtual void move(class Vec3 const &);
     /**
      * @vftbl  30
      * @symbol ?move@Player@@UEBAXAEAUIActorMovementProxy@@AEBVVec3@@@Z
-     * @hash   -595883780
+     * @hash   -595837652
      */
     virtual void move(struct IActorMovementProxy &, class Vec3 const &) const;
     /**
      * @vftbl  37
      * @symbol ?getInterpolatedRidingOffset@Player@@UEBA?AVVec3@@MH@Z
-     * @hash   996853949
+     * @hash   996900077
      */
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
      * @vftbl  41
      * @symbol ?isFireImmune@Player@@UEBA_NXZ
-     * @hash   858303882
+     * @hash   858350010
      */
     virtual bool isFireImmune() const;
     /**
@@ -276,25 +276,25 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@Player@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   805482110
+     * @hash   805528238
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
      * @vftbl  49
      * @symbol ?tryCreateAddActorPacket@Player@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
-     * @hash   -1270266724
+     * @hash   -1270220596
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
      * @vftbl  50
      * @symbol ?normalTick@Player@@UEAAXXZ
-     * @hash   -51920422
+     * @hash   -51874294
      */
     virtual void normalTick();
     /**
      * @vftbl  52
      * @symbol ?passengerTick@Player@@UEAAXXZ
-     * @hash   47805661
+     * @hash   47851789
      */
     virtual void passengerTick();
     /**
@@ -305,7 +305,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?getFormattedNameTag@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1243787550
+     * @hash   -1243741422
      */
     virtual std::string getFormattedNameTag() const;
     /**
@@ -316,19 +316,19 @@ public:
     /**
      * @vftbl  78
      * @symbol ?setBlockMovementSlowdownMultiplier@Player@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
-     * @hash   1831791891
+     * @hash   1831838019
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
      * @vftbl  80
      * @symbol ?getCameraOffset@Player@@UEBAMXZ
-     * @hash   -2070027765
+     * @hash   -2069981637
      */
     virtual float getCameraOffset() const;
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Player@@UEBAMXZ
-     * @hash   489064261
+     * @hash   489110389
      */
     virtual float getShadowRadius() const;
     /**
@@ -338,7 +338,7 @@ public:
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   131111587
+     * @hash   131157715
      */
     virtual void __unk_vfn_87();
     /**
@@ -349,13 +349,13 @@ public:
     /**
      * @vftbl  94
      * @symbol ?isImmobile@Player@@UEBA_NXZ
-     * @hash   -1826144553
+     * @hash   -1826098425
      */
     virtual bool isImmobile() const;
     /**
      * @vftbl  96
      * @symbol ?isSilentObserver@Player@@UEBA_NXZ
-     * @hash   -151809380
+     * @hash   -151763252
      */
     virtual bool isSilentObserver() const;
     /**
@@ -366,13 +366,13 @@ public:
     /**
      * @vftbl  99
      * @symbol ?isSleeping@Player@@UEBA_NXZ
-     * @hash   -1906952804
+     * @hash   -1906906676
      */
     virtual bool isSleeping() const;
     /**
      * @vftbl  100
      * @symbol ?setSleeping@Player@@UEAAX_N@Z
-     * @hash   1140869497
+     * @hash   1140915625
      */
     virtual void setSleeping(bool);
     /**
@@ -383,13 +383,13 @@ public:
     /**
      * @vftbl  103
      * @symbol ?isBlocking@Player@@UEBA_NXZ
-     * @hash   -1130673034
+     * @hash   -1130626906
      */
     virtual bool isBlocking() const;
     /**
      * @vftbl  104
      * @symbol ?isDamageBlocked@Player@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1840290882
+     * @hash   -1840244754
      */
     virtual bool isDamageBlocked(class ActorDamageSource const &) const;
     /**
@@ -415,115 +415,115 @@ public:
     /**
      * @vftbl  118
      * @symbol ?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   -1880174634
+     * @hash   -1880128506
      */
     virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @vftbl  131
      * @symbol ?isJumping@Player@@UEBA_NXZ
-     * @hash   -1410225647
+     * @hash   -1410179519
      */
     virtual bool isJumping() const;
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Player@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1464750193
+     * @hash   -1464704065
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  142
      * @symbol ?onBounceStarted@Player@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   899934331
+     * @hash   899980459
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
      * @vftbl  143
      * @symbol ?feed@Player@@UEAAXH@Z
-     * @hash   579036235
+     * @hash   579082363
      */
     virtual void feed(int);
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
-     * @hash   1559379077
+     * @hash   1559425205
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  146
      * @symbol ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
-     * @hash   -8029077
+     * @hash   -7982949
      */
     virtual class HashedString const & getActorRendererId() const;
     /**
      * @vftbl  154
      * @symbol ?awardKillScore@Player@@UEAAXAEAVActor@@H@Z
-     * @hash   -557974123
+     * @hash   -557927995
      */
     virtual void awardKillScore(class Actor &, int);
     /**
      * @vftbl  155
      * @symbol ?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-     * @hash   839682010
+     * @hash   839728138
      */
     virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl  163
      * @symbol ?setCarriedItem@Player@@UEAAXAEBVItemStack@@@Z
-     * @hash   362089091
+     * @hash   362135219
      */
     virtual void setCarriedItem(class ItemStack const &);
     /**
      * @vftbl  164
      * @symbol ?getCarriedItem@Player@@UEBAAEBVItemStack@@XZ
-     * @hash   -113378330
+     * @hash   -113332202
      */
     virtual class ItemStack const & getCarriedItem() const;
     /**
      * @vftbl  165
      * @symbol ?setOffhandSlot@Player@@UEAAXAEBVItemStack@@@Z
-     * @hash   -395403628
+     * @hash   -395357500
      */
     virtual void setOffhandSlot(class ItemStack const &);
     /**
      * @vftbl  166
      * @symbol ?getEquippedTotem@Player@@UEBAAEBVItemStack@@XZ
-     * @hash   1354028747
+     * @hash   1354074875
      */
     virtual class ItemStack const & getEquippedTotem() const;
     /**
      * @vftbl  167
      * @symbol ?consumeTotem@Player@@UEAA_NXZ
-     * @hash   836706477
+     * @hash   836752605
      */
     virtual bool consumeTotem();
     /**
      * @vftbl  172
      * @symbol ?getEntityTypeId@Player@@UEBA?AW4ActorType@@XZ
-     * @hash   -525158364
+     * @hash   -525112236
      */
     virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  176
      * @symbol ?canFreeze@Player@@UEBA_NXZ
-     * @hash   -303382562
+     * @hash   -303336434
      */
     virtual bool canFreeze() const;
     /**
      * @vftbl  180
      * @symbol ?getPortalCooldown@Player@@UEBAHXZ
-     * @hash   -186744537
+     * @hash   -186698409
      */
     virtual int getPortalCooldown() const;
     /**
      * @vftbl  181
      * @symbol ?getPortalWaitTime@Player@@UEBAHXZ
-     * @hash   -368533170
+     * @hash   -368487042
      */
     virtual int getPortalWaitTime() const;
     /**
      * @vftbl  182
      * @symbol ?canChangeDimensionsUsingPortal@Player@@UEBA_NXZ
-     * @hash   -155543430
+     * @hash   -155497302
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
@@ -534,13 +534,13 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Player@@UEAAXH@Z
-     * @hash   2040446345
+     * @hash   2040492473
      */
     virtual void onSynchedDataUpdate(int);
     /**
      * @vftbl  193
      * @symbol ?canAddPassenger@Player@@UEBA_NAEAVActor@@@Z
-     * @hash   -1585924155
+     * @hash   -1585878027
      */
     virtual bool canAddPassenger(class Actor &) const;
     /**
@@ -563,37 +563,37 @@ public:
     /**
      * @vftbl  202
      * @symbol ?startSwimming@Player@@UEAAXXZ
-     * @hash   1117393301
+     * @hash   1117439429
      */
     virtual void startSwimming();
     /**
      * @vftbl  203
      * @symbol ?stopSwimming@Player@@UEAAXXZ
-     * @hash   -701727147
+     * @hash   -701681019
      */
     virtual void stopSwimming();
     /**
      * @vftbl  205
      * @symbol ?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   872771205
+     * @hash   872817333
      */
     virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @vftbl  217
      * @symbol ?canObstructSpawningAndBlockPlacement@Player@@UEBA_NXZ
-     * @hash   -1303293033
+     * @hash   -1303246905
      */
     virtual bool canObstructSpawningAndBlockPlacement() const;
     /**
      * @vftbl  218
      * @symbol ?getAnimationComponent@Player@@UEAAAEAVAnimationComponent@@XZ
-     * @hash   741264806
+     * @hash   741310934
      */
     virtual class AnimationComponent & getAnimationComponent();
     /**
      * @vftbl  221
      * @symbol ?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
-     * @hash   269848781
+     * @hash   269894909
      */
     virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /**
@@ -609,61 +609,61 @@ public:
     /**
      * @vftbl  225
      * @symbol ?getMapDecorationRotation@Player@@UEBAMXZ
-     * @hash   1121783841
+     * @hash   1121829969
      */
     virtual float getMapDecorationRotation() const;
     /**
      * @vftbl  227
      * @symbol ?isWorldBuilder@Player@@UEBA_NXZ
-     * @hash   1775387194
+     * @hash   1775433322
      */
     virtual bool isWorldBuilder() const;
     /**
      * @vftbl  228
      * @symbol ?isCreative@Player@@UEBA_NXZ
-     * @hash   478021760
+     * @hash   478067888
      */
     virtual bool isCreative() const;
     /**
      * @vftbl  229
      * @symbol ?isAdventure@Player@@UEBA_NXZ
-     * @hash   -1242462227
+     * @hash   -1242416099
      */
     virtual bool isAdventure() const;
     /**
      * @vftbl  230
      * @symbol ?isSurvival@Player@@UEBA_NXZ
-     * @hash   -1018798929
+     * @hash   -1018752801
      */
     virtual bool isSurvival() const;
     /**
      * @vftbl  231
      * @symbol ?isSpectator@Player@@UEBA_NXZ
-     * @hash   1245219388
+     * @hash   1245265516
      */
     virtual bool isSpectator() const;
     /**
      * @vftbl  233
      * @symbol ?add@Player@@UEAA_NAEAVItemStack@@@Z
-     * @hash   547164382
+     * @hash   547210510
      */
     virtual bool add(class ItemStack &);
     /**
      * @vftbl  234
      * @symbol ?drop@Player@@UEAA_NAEBVItemStack@@_N@Z
-     * @hash   -1451722513
+     * @hash   -1451676385
      */
     virtual bool drop(class ItemStack const &, bool);
     /**
      * @vftbl  242
      * @symbol ?startSpinAttack@Player@@UEAAXXZ
-     * @hash   -1892389294
+     * @hash   -1892343166
      */
     virtual void startSpinAttack();
     /**
      * @vftbl  243
      * @symbol ?stopSpinAttack@Player@@UEAAXXZ
-     * @hash   65372946
+     * @hash   65419074
      */
     virtual void stopSpinAttack();
     /**
@@ -679,31 +679,31 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@Player@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -1178214124
+     * @hash   -1178167996
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  251
      * @symbol ?shouldDropDeathLoot@Player@@UEBA_NXZ
-     * @hash   182862929
+     * @hash   182909057
      */
     virtual bool shouldDropDeathLoot() const;
     /**
      * @vftbl  258
      * @symbol ?getLastDeathPos@Player@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   -1358797724
+     * @hash   -1358751596
      */
     virtual class std::optional<class BlockPos> getLastDeathPos() const;
     /**
      * @vftbl  259
      * @symbol ?getLastDeathDimension@Player@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ
-     * @hash   282462624
+     * @hash   282508752
      */
     virtual class std::optional<class AutomaticID<class Dimension, int>> getLastDeathDimension() const;
     /**
      * @vftbl  260
      * @symbol ?hasDiedBefore@Player@@UEBA_NXZ
-     * @hash   -1595677596
+     * @hash   -1595631468
      */
     virtual bool hasDiedBefore() const;
     /**
@@ -715,7 +715,7 @@ public:
     /**
      * @vftbl  263
      * @symbol ?_shouldProvideFeedbackOnArmorSet@Player@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
-     * @hash   783428205
+     * @hash   783474333
      */
     virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const &) const;
     /**
@@ -726,19 +726,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Player@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -2084276673
+     * @hash   -2084230545
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Player@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1549396369
+     * @hash   -1549350241
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Player@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -968817298
+     * @hash   -968771170
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -749,7 +749,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Player@@EEAAXXZ
-     * @hash   -1537085532
+     * @hash   -1537039404
      */
     virtual void _onSizeUpdated();
     /**
@@ -760,13 +760,13 @@ public:
     /**
      * @vftbl  287
      * @symbol ?getSpeed@Player@@UEBAMXZ
-     * @hash   -921735074
+     * @hash   -921688946
      */
     virtual float getSpeed() const;
     /**
      * @vftbl  288
      * @symbol ?setSpeed@Player@@UEAAXM@Z
-     * @hash   -1586865561
+     * @hash   -1586819433
      */
     virtual void setSpeed(float);
     /**
@@ -777,37 +777,37 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@Player@@UEAAXMMM@Z
-     * @hash   44003042
+     * @hash   44049170
      */
     virtual void travel(float, float, float);
     /**
      * @vftbl  295
      * @symbol ?aiStep@Player@@UEAAXXZ
-     * @hash   -471357350
+     * @hash   -471311222
      */
     virtual void aiStep();
     /**
      * @vftbl  296
      * @symbol ?aiStep@Player@@UEBAXAEAUIMobMovementProxy@@@Z
-     * @hash   1565031868
+     * @hash   1565077996
      */
     virtual void aiStep(struct IMobMovementProxy &) const;
     /**
      * @vftbl  303
      * @symbol ?getItemUseDuration@Player@@UEBAHXZ
-     * @hash   1302316044
+     * @hash   1302362172
      */
     virtual int getItemUseDuration() const;
     /**
      * @vftbl  304
      * @symbol ?getItemUseStartupProgress@Player@@UEBAMXZ
-     * @hash   -698745159
+     * @hash   -698699031
      */
     virtual float getItemUseStartupProgress() const;
     /**
      * @vftbl  305
      * @symbol ?getItemUseIntervalProgress@Player@@UEBAMXZ
-     * @hash   270603501
+     * @hash   270649629
      */
     virtual float getItemUseIntervalProgress() const;
     /**
@@ -823,25 +823,25 @@ public:
     /**
      * @vftbl  328
      * @symbol ?getAllHand@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   870156690
+     * @hash   870202818
      */
     virtual std::vector<class ItemStack const *> getAllHand() const;
     /**
      * @vftbl  329
      * @symbol ?getAllEquipment@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   1379290715
+     * @hash   1379336843
      */
     virtual std::vector<class ItemStack const *> getAllEquipment() const;
     /**
      * @vftbl  331
      * @symbol ?dropEquipmentOnDeath@Player@@UEAAXAEBVActorDamageSource@@H@Z
-     * @hash   549861841
+     * @hash   549907969
      */
     virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int);
     /**
      * @vftbl  332
      * @symbol ?dropEquipmentOnDeath@Player@@UEAAXXZ
-     * @hash   -389045076
+     * @hash   -388998948
      */
     virtual void dropEquipmentOnDeath();
     /**
@@ -870,19 +870,19 @@ public:
     /**
      * @vftbl  351
      * @symbol ?initBodyControl@Player@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
-     * @hash   -355227042
+     * @hash   -355180914
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
     /**
      * @vftbl  352
      * @symbol ?jumpFromGround@Player@@UEAAXXZ
-     * @hash   846435973
+     * @hash   846482101
      */
     virtual void jumpFromGround();
     /**
      * @vftbl  353
      * @symbol ?jumpFromGround@Player@@UEBAXAEAUIMobMovementProxy@@@Z
-     * @hash   -1875294543
+     * @hash   -1875248415
      */
     virtual void jumpFromGround(struct IMobMovementProxy &) const;
     /**
@@ -894,7 +894,7 @@ public:
     /**
      * @vftbl  359
      * @symbol ?updateGliding@Player@@MEAAXXZ
-     * @hash   726880936
+     * @hash   726927064
      */
     virtual void updateGliding();
     /**
@@ -905,37 +905,37 @@ public:
     /**
      * @vftbl  362
      * @symbol ?prepareRegion@Player@@UEAAXAEAVChunkSource@@@Z
-     * @hash   2115735203
+     * @hash   2115781331
      */
     virtual void prepareRegion(class ChunkSource &);
     /**
      * @vftbl  363
      * @symbol ?destroyRegion@Player@@UEAAXXZ
-     * @hash   -1914542012
+     * @hash   -1914495884
      */
     virtual void destroyRegion();
     /**
      * @vftbl  364
      * @symbol ?suspendRegion@Player@@UEAAXXZ
-     * @hash   -1671564106
+     * @hash   -1671517978
      */
     virtual void suspendRegion();
     /**
      * @vftbl  365
      * @symbol ?resendAllChunks@Player@@UEAAXXZ
-     * @hash   -1073424814
+     * @hash   -1073378686
      */
     virtual void resendAllChunks();
     /**
      * @vftbl  366
      * @symbol ?_fireWillChangeDimension@Player@@UEAAXXZ
-     * @hash   -563977259
+     * @hash   -563931131
      */
     virtual void _fireWillChangeDimension();
     /**
      * @vftbl  367
      * @symbol ?_fireDimensionChanged@Player@@UEAAXXZ
-     * @hash   -895705143
+     * @hash   -895659015
      */
     virtual void _fireDimensionChanged();
     /**
@@ -947,7 +947,7 @@ public:
     /**
      * @vftbl  369
      * @symbol ?tickWorld@Player@@UEAAXAEBUTick@@@Z
-     * @hash   -29737802
+     * @hash   -29691674
      */
     virtual void tickWorld(struct Tick const &);
     /**
@@ -958,31 +958,31 @@ public:
     /**
      * @vftbl  371
      * @symbol ?getTickingOffsets@Player@@UEBAAEBV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@XZ
-     * @hash   241589851
+     * @hash   241635979
      */
     virtual std::vector<class ChunkPos> const & getTickingOffsets() const;
     /**
      * @vftbl  372
      * @symbol ?moveView@Player@@UEAAXXZ
-     * @hash   -1677403044
+     * @hash   -1677356916
      */
     virtual void moveView();
     /**
      * @vftbl  373
      * @symbol ?moveSpawnView@Player@@UEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -2046509293
+     * @hash   -2046463165
      */
     virtual void moveSpawnView(class Vec3 const &, class AutomaticID<class Dimension, int>);
     /**
      * @vftbl  374
      * @symbol ?setName@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -376801527
+     * @hash   -376755399
      */
     virtual void setName(std::string const &);
     /**
      * @vftbl  375
      * @symbol ?getTravelledMethod@Player@@UEBA?AW4TravelMethod@@XZ
-     * @hash   2075530976
+     * @hash   2075577104
      */
     virtual enum class TravelMethod getTravelledMethod() const;
     /**
@@ -1004,7 +1004,7 @@ public:
     /**
      * @vftbl  379
      * @symbol ?respawn@Player@@UEAAXXZ
-     * @hash   -1520210546
+     * @hash   -1520164418
      */
     virtual void respawn();
     /**
@@ -1020,25 +1020,25 @@ public:
     /**
      * @vftbl  382
      * @symbol ?hasResource@Player@@UEAA_NH@Z
-     * @hash   1528069839
+     * @hash   1528115967
      */
     virtual bool hasResource(int);
     /**
      * @vftbl  383
      * @symbol ?completeUsingItem@Player@@UEAAXXZ
-     * @hash   -621628508
+     * @hash   -621582380
      */
     virtual void completeUsingItem();
     /**
      * @vftbl  384
      * @symbol ?startDestroying@Player@@UEAAXXZ
-     * @hash   1475297312
+     * @hash   1475343440
      */
     virtual void startDestroying();
     /**
      * @vftbl  385
      * @symbol ?stopDestroying@Player@@UEAAXXZ
-     * @hash   -864198768
+     * @hash   -864152640
      */
     virtual void stopDestroying();
     /**
@@ -1060,7 +1060,7 @@ public:
     /**
      * @vftbl  389
      * @symbol ?canOpenContainerScreen@Player@@UEAA_NXZ
-     * @hash   1422297627
+     * @hash   1422343755
      */
     virtual bool canOpenContainerScreen();
     /**
@@ -1071,7 +1071,7 @@ public:
     /**
      * @vftbl  391
      * @symbol ?openNpcInteractScreen@Player@@UEAAXV?$shared_ptr@UINpcDialogueData@@@std@@@Z
-     * @hash   1690861206
+     * @hash   1690907334
      */
     virtual void openNpcInteractScreen(class std::shared_ptr<struct INpcDialogueData>);
     /**
@@ -1117,31 +1117,31 @@ public:
     /**
      * @vftbl  399
      * @symbol ?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
-     * @hash   1441993910
+     * @hash   1442040038
      */
     virtual enum class BedSleepingResult startSleepInBed(class BlockPos const &);
     /**
      * @vftbl  400
      * @symbol ?stopSleepInBed@Player@@UEAAX_N0@Z
-     * @hash   -1012369883
+     * @hash   -1012323755
      */
     virtual void stopSleepInBed(bool, bool);
     /**
      * @vftbl  401
      * @symbol ?canStartSleepInBed@Player@@UEAA_NXZ
-     * @hash   -2076104097
+     * @hash   -2076057969
      */
     virtual bool canStartSleepInBed();
     /**
      * @vftbl  402
      * @symbol ?getSleepTimer@Player@@UEBAHXZ
-     * @hash   230776750
+     * @hash   230822878
      */
     virtual int getSleepTimer() const;
     /**
      * @vftbl  403
      * @symbol ?getPreviousTickSleepTimer@Player@@UEBAHXZ
-     * @hash   32182482
+     * @hash   32228610
      */
     virtual int getPreviousTickSleepTimer() const;
     /**
@@ -1180,37 +1180,37 @@ public:
     /**
      * @vftbl  410
      * @symbol ?registerTrackedBoss@Player@@UEAAXUActorUniqueID@@@Z
-     * @hash   1801823475
+     * @hash   1801869603
      */
     virtual void registerTrackedBoss(struct ActorUniqueID);
     /**
      * @vftbl  411
      * @symbol ?unRegisterTrackedBoss@Player@@UEAAXUActorUniqueID@@@Z
-     * @hash   -792934996
+     * @hash   -792888868
      */
     virtual void unRegisterTrackedBoss(struct ActorUniqueID);
     /**
      * @vftbl  412
      * @symbol ?setPlayerGameType@Player@@UEAAXW4GameType@@@Z
-     * @hash   -1128415853
+     * @hash   -1128369725
      */
     virtual void setPlayerGameType(enum class GameType);
     /**
      * @vftbl  413
      * @symbol ?initHUDContainerManager@Player@@UEAAXXZ
-     * @hash   725163289
+     * @hash   725209417
      */
     virtual void initHUDContainerManager();
     /**
      * @vftbl  414
      * @symbol ?_crit@Player@@UEAAXAEAVActor@@@Z
-     * @hash   1705929192
+     * @hash   1705975320
      */
     virtual void _crit(class Actor &);
     /**
      * @vftbl  415
      * @symbol ?getEventing@Player@@UEBAPEAVIMinecraftEventing@@XZ
-     * @hash   -802581027
+     * @hash   -802534899
      */
     virtual class IMinecraftEventing * getEventing() const;
     /**
@@ -1221,19 +1221,19 @@ public:
     /**
      * @vftbl  417
      * @symbol ?sendEventPacket@Player@@UEBAXAEAVEventPacket@@@Z
-     * @hash   1185644169
+     * @hash   1185690297
      */
     virtual void sendEventPacket(class EventPacket &) const;
     /**
      * @vftbl  418
      * @symbol ?addExperience@Player@@UEAAXH@Z
-     * @hash   1303572670
+     * @hash   1303618798
      */
     virtual void addExperience(int);
     /**
      * @vftbl  419
      * @symbol ?addLevels@Player@@UEAAXH@Z
-     * @hash   195923385
+     * @hash   195969513
      */
     virtual void addLevels(int);
     /**
@@ -1251,7 +1251,7 @@ public:
     /**
      * @vftbl  422
      * @symbol ?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z
-     * @hash   -1481960278
+     * @hash   -1481914150
      */
     virtual void inventoryChanged(class Container &, int, class ItemStack const &, class ItemStack const &, bool);
     /**
@@ -1263,13 +1263,13 @@ public:
     /**
      * @vftbl  424
      * @symbol ?deleteContainerManager@Player@@UEAAXXZ
-     * @hash   -1313854403
+     * @hash   -1313808275
      */
     virtual void deleteContainerManager();
     /**
      * @vftbl  425
      * @symbol ?setFieldOfViewModifier@Player@@UEAAXM@Z
-     * @hash   -468046031
+     * @hash   -467999903
      */
     virtual void setFieldOfViewModifier(float);
     /**
@@ -1299,31 +1299,31 @@ public:
     /**
      * @vftbl  430
      * @symbol ?startCooldown@Player@@UEAAXPEBVItem@@_N@Z
-     * @hash   -303528715
+     * @hash   -303482587
      */
     virtual void startCooldown(class Item const *, bool);
     /**
      * @vftbl  431
      * @symbol ?getItemCooldownLeft@Player@@UEBAHAEBVHashedString@@@Z
-     * @hash   1041602396
+     * @hash   1041648524
      */
     virtual int getItemCooldownLeft(class HashedString const &) const;
     /**
      * @vftbl  432
      * @symbol ?getItemCooldownLeft@Player@@UEBAH_K@Z
-     * @hash   2021890733
+     * @hash   2021936861
      */
     virtual int getItemCooldownLeft(unsigned __int64) const;
     /**
      * @vftbl  433
      * @symbol ?getMaxItemCooldownLeft@Player@@UEBAHXZ
-     * @hash   99787037
+     * @hash   99833165
      */
     virtual int getMaxItemCooldownLeft() const;
     /**
      * @vftbl  434
      * @symbol ?isItemOnCooldown@Player@@UEBA_NAEBVHashedString@@@Z
-     * @hash   -14037357
+     * @hash   -13991229
      */
     virtual bool isItemOnCooldown(class HashedString const &) const;
     /**
@@ -1382,13 +1382,13 @@ public:
     /**
      * @vftbl  444
      * @symbol ?getXuid@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   508972567
+     * @hash   509018695
      */
     virtual std::string getXuid() const;
     /**
      * @vftbl  445
      * @symbol ?getMovementSettings@Player@@UEBAAEBUPlayerMovementSettings@@XZ
-     * @hash   -2012349810
+     * @hash   -2012303682
      */
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
     /**
@@ -1400,19 +1400,19 @@ public:
     /**
      * @vftbl  447
      * @symbol ?onMovePlayerPacketNormal@Player@@MEAAXAEBVVec3@@AEBVVec2@@M@Z
-     * @hash   -1829415150
+     * @hash   -1829369022
      */
     virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /**
      * @vftbl  448
      * @symbol ?_createChunkSource@Player@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
-     * @hash   975646789
+     * @hash   975692917
      */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /**
      * @vftbl  449
      * @symbol ?setAbilities@Player@@UEAAXAEBVLayeredAbilities@@@Z
-     * @hash   -1207684595
+     * @hash   -1207638467
      */
     virtual void setAbilities(class LayeredAbilities const &);
     /**
@@ -1430,7 +1430,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYER
     /**
      * @symbol ?canInteractWithOtherEntitiesInGame@Player@@UEBA_NXZ
-     * @hash   798743027
+     * @hash   798789155
      */
     MCVAPI bool canInteractWithOtherEntitiesInGame() const;
     /**
@@ -1531,692 +1531,692 @@ public:
 #endif
     /**
      * @symbol ??0Player@@QEAA@AEAVLevel@@AEAVPacketSender@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@9@AEAVEntityContext@@66@Z
-     * @hash   1363298856
+     * @hash   1363344984
      */
     MCAPI Player(class Level &, class PacketSender &, enum class GameType, class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, class EntityContext &, std::string const &, std::string const &);
     /**
      * @symbol ?applyExhaustion@Player@@QEAAXAEBVVec3@@@Z
-     * @hash   503138132
+     * @hash   503184260
      */
     MCAPI void applyExhaustion(class Vec3 const &);
     /**
      * @symbol ?broadcastPlayerSpawnedMobEvent@Player@@QEAAXW4ActorType@@W4MobSpawnMethod@@@Z
-     * @hash   -1746750513
+     * @hash   -1746704385
      */
     MCAPI void broadcastPlayerSpawnedMobEvent(enum class ActorType, enum class MobSpawnMethod);
     /**
      * @symbol ?canBeSeenOnMap@Player@@QEBA_NXZ
-     * @hash   -1918828694
+     * @hash   -1918782566
      */
     MCAPI bool canBeSeenOnMap() const;
     /**
      * @symbol ?canDestroy@Player@@QEBA_NAEBVBlock@@@Z
-     * @hash   -841701463
+     * @hash   -841655335
      */
     MCAPI bool canDestroy(class Block const &) const;
     /**
      * @symbol ?canSleep@Player@@QEBA_NXZ
-     * @hash   1417154618
+     * @hash   1417200746
      */
     MCAPI bool canSleep() const;
     /**
      * @symbol ?canStackInOffhand@Player@@QEBA_NAEBVItemStack@@@Z
-     * @hash   1598300041
+     * @hash   1598346169
      */
     MCAPI bool canStackInOffhand(class ItemStack const &) const;
     /**
      * @symbol ?canUseAbility@Player@@QEBA_NW4AbilitiesIndex@@@Z
-     * @hash   -620335061
+     * @hash   -620288933
      */
     MCAPI bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?canUseOperatorBlocks@Player@@QEBA_NXZ
-     * @hash   675812510
+     * @hash   675858638
      */
     MCAPI bool canUseOperatorBlocks() const;
     /**
      * @symbol ?causeFoodExhaustion@Player@@QEAAXM@Z
-     * @hash   -844995914
+     * @hash   -844949786
      */
     MCAPI void causeFoodExhaustion(float);
     /**
      * @symbol ?clearRespawnPosition@Player@@QEAAXXZ
-     * @hash   1496058629
+     * @hash   1496104757
      */
     MCAPI void clearRespawnPosition();
     /**
      * @symbol ?eat@Player@@QEAAXAEBVItemStack@@@Z
-     * @hash   -977873896
+     * @hash   -977827768
      */
     MCAPI void eat(class ItemStack const &);
     /**
      * @symbol ?eat@Player@@QEAAXHM@Z
-     * @hash   -1443627879
+     * @hash   -1443581751
      */
     MCAPI void eat(int, float);
     /**
      * @symbol ?equippedArmorItemCanBeMoved@Player@@QEBA_NAEBVItemStack@@@Z
-     * @hash   186547461
+     * @hash   186593589
      */
     MCAPI bool equippedArmorItemCanBeMoved(class ItemStack const &) const;
     /**
      * @symbol ?fireDimensionChangedEvent@Player@@QEAAXV?$AutomaticID@VDimension@@H@@0@Z
-     * @hash   2092593186
+     * @hash   2092639314
      */
     MCAPI void fireDimensionChangedEvent(class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?forceAllowEating@Player@@QEBA_NXZ
-     * @hash   1803464156
+     * @hash   1803510284
      */
     MCAPI bool forceAllowEating() const;
     /**
      * @symbol ?getAgent@Player@@QEBAPEAVAgent@@XZ
-     * @hash   -944022039
+     * @hash   -943975911
      */
     MCAPI class Agent * getAgent() const;
     /**
      * @symbol ?getAgentID@Player@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -181840302
+     * @hash   -181794174
      */
     MCAPI struct ActorUniqueID getAgentID() const;
     /**
      * @symbol ?getAgentIfAllowed@Player@@QEBAPEAVAgent@@_NUActorUniqueID@@@Z
-     * @hash   396702565
+     * @hash   396748693
      */
     MCAPI class Agent * getAgentIfAllowed(bool, struct ActorUniqueID) const;
     /**
      * @symbol ?getBedPosition@Player@@QEBAAEBVBlockPos@@XZ
-     * @hash   530025858
+     * @hash   530071986
      */
     MCAPI class BlockPos const & getBedPosition() const;
     /**
      * @symbol ?getBlockedUsingDamagedShieldTimeStamp@Player@@QEBA_JXZ
-     * @hash   934988667
+     * @hash   935034795
      */
     MCAPI __int64 getBlockedUsingDamagedShieldTimeStamp() const;
     /**
      * @symbol ?getBlockedUsingShieldTimeStamp@Player@@QEBA_JXZ
-     * @hash   -1368181093
+     * @hash   -1368134965
      */
     MCAPI __int64 getBlockedUsingShieldTimeStamp() const;
     /**
      * @symbol ?getBlockingStartTimeStamp@Player@@QEBA_JXZ
-     * @hash   373285581
+     * @hash   373331709
      */
     MCAPI __int64 getBlockingStartTimeStamp() const;
     /**
      * @symbol ?getCapePos@Player@@QEAA?AVVec3@@M@Z
-     * @hash   -1402039019
+     * @hash   -1401992891
      */
     MCAPI class Vec3 getCapePos(float);
     /**
      * @symbol ?getChunkRadius@Player@@QEBAIXZ
-     * @hash   -1167690334
+     * @hash   -1167644206
      */
     MCAPI unsigned int getChunkRadius() const;
     /**
      * @symbol ?getContainerManager@Player@@QEAA?AV?$weak_ptr@VIContainerManager@@@std@@XZ
-     * @hash   -2028607557
+     * @hash   -2028561429
      */
     MCAPI class std::weak_ptr<class IContainerManager> getContainerManager();
     /**
      * @symbol ?getCurrentActiveShield@Player@@QEBAAEBVItemStack@@XZ
-     * @hash   1816469000
+     * @hash   1816515128
      */
     MCAPI class ItemStack const & getCurrentActiveShield() const;
     /**
      * @symbol ?getDestroyProgress@Player@@QEBAMAEBVBlock@@@Z
-     * @hash   -1024611933
+     * @hash   -1024565805
      */
     MCAPI float getDestroyProgress(class Block const &) const;
     /**
      * @symbol ?getDestroySpeed@Player@@QEBAMAEBVBlock@@@Z
-     * @hash   39870229
+     * @hash   39916357
      */
     MCAPI float getDestroySpeed(class Block const &) const;
     /**
      * @symbol ?getDirection@Player@@QEBAHXZ
-     * @hash   -260659400
+     * @hash   -260613272
      */
     MCAPI int getDirection() const;
     /**
      * @symbol ?getEnchantmentSeed@Player@@QEBAHXZ
-     * @hash   -591068808
+     * @hash   -591022680
      */
     MCAPI int getEnchantmentSeed() const;
     /**
      * @symbol ?getExpectedSpawnDimensionId@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   2108154116
+     * @hash   2108200244
      */
     MCAPI class AutomaticID<class Dimension, int> getExpectedSpawnDimensionId() const;
     /**
      * @symbol ?getExpectedSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ
-     * @hash   2007736086
+     * @hash   2007782214
      */
     MCAPI class BlockPos const & getExpectedSpawnPosition() const;
     /**
      * @symbol ?getInteractText@Player@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -272722402
+     * @hash   -272676274
      */
     MCAPI std::string getInteractText() const;
     /**
      * @symbol ?getInventory@Player@@QEAAAEAVContainer@@XZ
-     * @hash   -508351018
+     * @hash   -508304890
      */
     MCAPI class Container & getInventory();
     /**
      * @symbol ?getItemInUse@Player@@QEBAAEBVItemStack@@XZ
-     * @hash   743377704
+     * @hash   743423832
      */
     MCAPI class ItemStack const & getItemInUse() const;
     /**
      * @symbol ?getItemInteractText@Player@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItem@@@Z
-     * @hash   951018789
+     * @hash   951064917
      */
     MCAPI std::string getItemInteractText(class Item const &) const;
     /**
      * @symbol ?getItemStackNetManager@Player@@QEAAPEAVItemStackNetManagerBase@@XZ
-     * @hash   -1363649191
+     * @hash   -1363603063
      */
     MCAPI class ItemStackNetManagerBase * getItemStackNetManager();
     /**
      * @symbol ?getItemStackNetManager@Player@@QEBAPEBVItemStackNetManagerBase@@XZ
-     * @hash   -1544592365
+     * @hash   -1544546237
      */
     MCAPI class ItemStackNetManagerBase const * getItemStackNetManager() const;
     /**
      * @symbol ?getLuck@Player@@QEAAMXZ
-     * @hash   -1443073530
+     * @hash   -1443027402
      */
     MCAPI float getLuck();
     /**
      * @symbol ?getMapIndex@Player@@QEAAHXZ
-     * @hash   -219682792
+     * @hash   -219636664
      */
     MCAPI int getMapIndex();
     /**
      * @symbol ?getMoveInputHandler@Player@@QEBAPEAVMoveInputHandler@@XZ
-     * @hash   -1623641085
+     * @hash   -1623594957
      */
     MCAPI class MoveInputHandler * getMoveInputHandler() const;
     /**
      * @symbol ?getName@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1470484852
+     * @hash   -1470438724
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getNewEnchantmentSeed@Player@@QEAAXXZ
-     * @hash   -2122995677
+     * @hash   -2122949549
      */
     MCAPI void getNewEnchantmentSeed();
     /**
      * @symbol ?getPickupArea@Player@@QEBA?AVAABB@@XZ
-     * @hash   -893604066
+     * @hash   -893557938
      */
     MCAPI class AABB getPickupArea() const;
     /**
      * @symbol ?getPlatform@Player@@QEBA?AW4BuildPlatform@@XZ
-     * @hash   1712136806
+     * @hash   1712182934
      */
     MCAPI enum class BuildPlatform getPlatform() const;
     /**
      * @symbol ?getPlatformOnlineId@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   889650044
+     * @hash   889696172
      */
     MCAPI std::string const & getPlatformOnlineId() const;
     /**
      * @symbol ?getPlayerGameType@Player@@QEBA?AW4GameType@@XZ
-     * @hash   -197082700
+     * @hash   -197036572
      */
     MCAPI enum class GameType getPlayerGameType() const;
     /**
      * @symbol ?getPlayerIndex@Player@@QEBAHXZ
-     * @hash   -788199800
+     * @hash   -788153672
      */
     MCAPI int getPlayerIndex() const;
     /**
      * @symbol ?getPlayerLevel@Player@@QEBAHXZ
-     * @hash   -752201752
+     * @hash   -752155624
      */
     MCAPI int getPlayerLevel() const;
     /**
      * @symbol ?getPlayerPermissionLevel@Player@@QEBA?AW4PlayerPermissionLevel@@XZ
-     * @hash   1258616114
+     * @hash   1258662242
      */
     MCAPI enum class PlayerPermissionLevel getPlayerPermissionLevel() const;
     /**
      * @symbol ?getPlayerSessionId@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1583049682
+     * @hash   -1583003554
      */
     MCAPI std::string const & getPlayerSessionId() const;
     /**
      * @symbol ?getPlayerUIItem@Player@@QEAAAEBVItemStack@@W4PlayerUISlot@@@Z
-     * @hash   1302668631
+     * @hash   1302714759
      */
     MCAPI class ItemStack const & getPlayerUIItem(enum class PlayerUISlot);
     /**
      * @symbol ?getRespawnAnchorPosition@Player@@QEBAAEBVBlockPos@@XZ
-     * @hash   1533185466
+     * @hash   1533231594
      */
     MCAPI class BlockPos const & getRespawnAnchorPosition() const;
     /**
      * @symbol ?getSelectedItem@Player@@QEBAAEBVItemStack@@XZ
-     * @hash   -104165610
+     * @hash   -104119482
      */
     MCAPI class ItemStack const & getSelectedItem() const;
     /**
      * @symbol ?getSelectedItemSlot@Player@@QEBAHXZ
-     * @hash   769626326
+     * @hash   769672454
      */
     MCAPI int getSelectedItemSlot() const;
     /**
      * @symbol ?getSkin@Player@@QEAAAEAVSerializedSkin@@XZ
-     * @hash   1768876016
+     * @hash   1768922144
      */
     MCAPI class SerializedSkin & getSkin();
     /**
      * @symbol ?getSkin@Player@@QEBAAEBVSerializedSkin@@XZ
-     * @hash   1021856174
+     * @hash   1021902302
      */
     MCAPI class SerializedSkin const & getSkin() const;
     /**
      * @symbol ?getSleepRotation@Player@@QEBAMXZ
-     * @hash   -1601699306
+     * @hash   -1601653178
      */
     MCAPI float getSleepRotation() const;
     /**
      * @symbol ?getSpawnDimension@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   -584902818
+     * @hash   -584856690
      */
     MCAPI class AutomaticID<class Dimension, int> getSpawnDimension() const;
     /**
      * @symbol ?getSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ
-     * @hash   2065823798
+     * @hash   2065869926
      */
     MCAPI class BlockPos const & getSpawnPosition() const;
     /**
      * @symbol ?getSupplies@Player@@QEAAAEAVPlayerInventory@@XZ
-     * @hash   1871263776
+     * @hash   1871309904
      */
     MCAPI class PlayerInventory & getSupplies();
     /**
      * @symbol ?getSupplies@Player@@QEBAAEBVPlayerInventory@@XZ
-     * @hash   421622938
+     * @hash   421669066
      */
     MCAPI class PlayerInventory const & getSupplies() const;
     /**
      * @symbol ?getTrackedBosses@Player@@QEAAAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@XZ
-     * @hash   -1057553610
+     * @hash   -1057507482
      */
     MCAPI std::vector<struct ActorUniqueID> const & getTrackedBosses();
     /**
      * @symbol ?getUnmappedPlayerGameType@Player@@QEBA?AW4GameType@@XZ
-     * @hash   -1977308468
+     * @hash   -1977262340
      */
     MCAPI enum class GameType getUnmappedPlayerGameType() const;
     /**
      * @symbol ?getUsedPotion@Player@@QEAA_NXZ
-     * @hash   -2035208454
+     * @hash   -2035162326
      */
     MCAPI bool getUsedPotion();
     /**
      * @symbol ?getXpNeededForNextLevel@Player@@QEBAHXZ
-     * @hash   -331826458
+     * @hash   -331780330
      */
     MCAPI int getXpNeededForNextLevel() const;
     /**
      * @symbol ?hasBedPosition@Player@@QEBA_NXZ
-     * @hash   -2100435044
+     * @hash   -2100388916
      */
     MCAPI bool hasBedPosition() const;
     /**
      * @symbol ?hasOpenContainer@Player@@QEBA_NXZ
-     * @hash   1223910102
+     * @hash   1223956230
      */
     MCAPI bool hasOpenContainer() const;
     /**
      * @symbol ?hasOpenContainerOfContainerType@Player@@QEBA_NW4ContainerType@@@Z
-     * @hash   -119146697
+     * @hash   -119100569
      */
     MCAPI bool hasOpenContainerOfContainerType(enum class ContainerType) const;
     /**
      * @symbol ?hasOwnedChunkSource@Player@@QEBA_NXZ
-     * @hash   -1451688056
+     * @hash   -1451641928
      */
     MCAPI bool hasOwnedChunkSource() const;
     /**
      * @symbol ?hasResource@Player@@QEAA_NAEBVItemDescriptor@@@Z
-     * @hash   569011613
+     * @hash   569057741
      */
     MCAPI bool hasResource(class ItemDescriptor const &);
     /**
      * @symbol ?hasRespawnAnchorPosition@Player@@QEBA_NXZ
-     * @hash   -1476559468
+     * @hash   -1476513340
      */
     MCAPI bool hasRespawnAnchorPosition() const;
     /**
      * @symbol ?hasRespawnPosition@Player@@QEBA_NXZ
-     * @hash   -1981180870
+     * @hash   -1981134742
      */
     MCAPI bool hasRespawnPosition() const;
     /**
      * @symbol ?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z
-     * @hash   291338014
+     * @hash   291384142
      */
     MCAPI bool interact(class Actor &, class Vec3 const &);
     /**
      * @symbol ?is2DPositionRelevant@Player@@QEAA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
-     * @hash   596962048
+     * @hash   597008176
      */
     MCAPI bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const &);
     /**
      * @symbol ?isFlying@Player@@QEBA_NXZ
-     * @hash   -1456467922
+     * @hash   -1456421794
      */
     MCAPI bool isFlying() const;
     /**
      * @symbol ?isForcedRespawn@Player@@QEBA_NXZ
-     * @hash   -1362263864
+     * @hash   -1362217736
      */
     MCAPI bool isForcedRespawn() const;
     /**
      * @symbol ?isHiddenFrom@Player@@QEBA_NAEAVMob@@@Z
-     * @hash   -2134144353
+     * @hash   -2134098225
      */
     MCAPI bool isHiddenFrom(class Mob &) const;
     /**
      * @symbol ?isHungry@Player@@QEBA_NXZ
-     * @hash   -1227167062
+     * @hash   -1227120934
      */
     MCAPI bool isHungry() const;
     /**
      * @symbol ?isHurt@Player@@QEAA_NXZ
-     * @hash   709446174
+     * @hash   709492302
      */
     MCAPI bool isHurt();
     /**
      * @symbol ?isInCreativeMode@Player@@QEBA_NXZ
-     * @hash   2016556542
+     * @hash   2016602670
      */
     MCAPI bool isInCreativeMode() const;
     /**
      * @symbol ?isInRaid@Player@@QEBA_NXZ
-     * @hash   -511292786
+     * @hash   -511246658
      */
     MCAPI bool isInRaid() const;
     /**
      * @symbol ?isRespawningFromTheEnd@Player@@QEBA_NXZ
-     * @hash   1999487452
+     * @hash   1999533580
      */
     MCAPI bool isRespawningFromTheEnd() const;
     /**
      * @symbol ?isSleepingLongEnough@Player@@QEBA_NXZ
-     * @hash   -868434962
+     * @hash   -868388834
      */
     MCAPI bool isSleepingLongEnough() const;
     /**
      * @symbol ?isSpawned@Player@@QEBA_NXZ
-     * @hash   257052830
+     * @hash   257098958
      */
     MCAPI bool isSpawned() const;
     /**
      * @symbol ?isUsingItem@Player@@QEBA_NXZ
-     * @hash   -1223394360
+     * @hash   -1223348232
      */
     MCAPI bool isUsingItem() const;
     /**
      * @symbol ?loadLastDeathLocation@Player@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -585005724
+     * @hash   -584959596
      */
     MCAPI void loadLastDeathLocation(class CompoundTag const &);
     /**
      * @symbol ?passengerCheckMovementStats@Player@@QEAAXXZ
-     * @hash   1967234147
+     * @hash   1967280275
      */
     MCAPI void passengerCheckMovementStats();
     /**
      * @symbol ?recheckSpawnPosition@Player@@QEAAXXZ
-     * @hash   -1255683467
+     * @hash   -1255637339
      */
     MCAPI void recheckSpawnPosition();
     /**
      * @symbol ?releaseUsingItem@Player@@QEAAXXZ
-     * @hash   -1461294699
+     * @hash   -1461248571
      */
     MCAPI void releaseUsingItem();
     /**
      * @symbol ?resetPlayerLevel@Player@@QEAAXXZ
-     * @hash   -1825345451
+     * @hash   -1825299323
      */
     MCAPI void resetPlayerLevel();
     /**
      * @symbol ?resetToDefaultGameMode@Player@@QEAAXXZ
-     * @hash   -1335839995
+     * @hash   -1335793867
      */
     MCAPI void resetToDefaultGameMode();
     /**
      * @symbol ?setAgent@Player@@QEAAXPEAVAgent@@@Z
-     * @hash   520052471
+     * @hash   520098599
      */
     MCAPI void setAgent(class Agent *);
     /**
      * @symbol ?setAllPlayersSleeping@Player@@QEAAXXZ
-     * @hash   -738834621
+     * @hash   -738788493
      */
     MCAPI void setAllPlayersSleeping();
     /**
      * @symbol ?setBedRespawnPosition@Player@@QEAAXAEBVBlockPos@@@Z
-     * @hash   818770184
+     * @hash   818816312
      */
     MCAPI void setBedRespawnPosition(class BlockPos const &);
     /**
      * @symbol ?setBlockRespawnUntilClientMessage@Player@@QEAAX_N@Z
-     * @hash   -1994670152
+     * @hash   -1994624024
      */
     MCAPI void setBlockRespawnUntilClientMessage(bool);
     /**
      * @symbol ?setChunkRadius@Player@@QEAAXI@Z
-     * @hash   -1162935040
+     * @hash   -1162888912
      */
     MCAPI void setChunkRadius(unsigned int);
     /**
      * @symbol ?setContainerManager@Player@@QEAAXV?$shared_ptr@VIContainerManager@@@std@@@Z
-     * @hash   1229305399
+     * @hash   1229351527
      */
     MCAPI void setContainerManager(class std::shared_ptr<class IContainerManager>);
     /**
      * @symbol ?setCursorSelectedItem@Player@@QEAAXAEBVItemStack@@@Z
-     * @hash   -58719256
+     * @hash   -58673128
      */
     MCAPI void setCursorSelectedItem(class ItemStack const &);
     /**
      * @symbol ?setCursorSelectedItemGroup@Player@@QEAAXAEBVItemGroup@@@Z
-     * @hash   1851405832
+     * @hash   1851451960
      */
     MCAPI void setCursorSelectedItemGroup(class ItemGroup const &);
     /**
      * @symbol ?setEnchantmentSeed@Player@@QEAAXH@Z
-     * @hash   1078209670
+     * @hash   1078255798
      */
     MCAPI void setEnchantmentSeed(int);
     /**
      * @symbol ?setHasDied@Player@@QEAAX_N@Z
-     * @hash   -2089086248
+     * @hash   -2089040120
      */
     MCAPI void setHasDied(bool);
     /**
      * @symbol ?setHasSeenCredits@Player@@QEAAX_N@Z
-     * @hash   -483307616
+     * @hash   -483261488
      */
     MCAPI void setHasSeenCredits(bool);
     /**
      * @symbol ?setMapIndex@Player@@QEAAXH@Z
-     * @hash   -1263550168
+     * @hash   -1263504040
      */
     MCAPI void setMapIndex(int);
     /**
      * @symbol ?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z
-     * @hash   78722546
+     * @hash   78768674
      */
     MCAPI void setPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPlatformOnlineId@Player@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -877902914
+     * @hash   -877856786
      */
     MCAPI void setPlatformOnlineId(std::string const &);
     /**
      * @symbol ?setPlayerIndex@Player@@QEAAXH@Z
-     * @hash   -423051514
+     * @hash   -423005386
      */
     MCAPI void setPlayerIndex(int);
     /**
      * @symbol ?setPlayerUIItem@Player@@QEAAXW4PlayerUISlot@@AEBVItemStack@@@Z
-     * @hash   -1424996059
+     * @hash   -1424949931
      */
     MCAPI void setPlayerUIItem(enum class PlayerUISlot, class ItemStack const &);
     /**
      * @symbol ?setRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1658131327
+     * @hash   -1658085199
      */
     MCAPI void setRespawnPosition(class BlockPos const &, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?setRespawnPositionCandidate@Player@@QEAAXXZ
-     * @hash   2127348931
+     * @hash   2127395059
      */
     MCAPI void setRespawnPositionCandidate();
     /**
      * @symbol ?setRespawnReady@Player@@QEAAXAEBVVec3@@@Z
-     * @hash   -595667038
+     * @hash   -595620910
      */
     MCAPI void setRespawnReady(class Vec3 const &);
     /**
      * @symbol ?setSelectedItem@Player@@QEAAXAEBVItemStack@@@Z
-     * @hash   -1470621784
+     * @hash   -1470575656
      */
     MCAPI void setSelectedItem(class ItemStack const &);
     /**
      * @symbol ?setSelectedSlot@Player@@QEAAAEBVItemStack@@H@Z
-     * @hash   778372099
+     * @hash   778418227
      */
     MCAPI class ItemStack const & setSelectedSlot(int);
     /**
      * @symbol ?setSpawnBlockRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -630642607
+     * @hash   -630596479
      */
     MCAPI void setSpawnBlockRespawnPosition(class BlockPos const &, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?setUsedPotion@Player@@QEAAX_N@Z
-     * @hash   921615866
+     * @hash   921661994
      */
     MCAPI void setUsedPotion(bool);
     /**
      * @symbol ?shouldShowCredits@Player@@QEBA_NXZ
-     * @hash   -40540782
+     * @hash   -40494654
      */
     MCAPI bool shouldShowCredits() const;
     /**
      * @symbol ?spawnExperienceOrb@Player@@QEAAXAEBVVec3@@H@Z
-     * @hash   -510955575
+     * @hash   -510909447
      */
     MCAPI void spawnExperienceOrb(class Vec3 const &, int);
     /**
      * @symbol ?startCooldown@Player@@QEAAXAEBVHashedString@@H_N@Z
-     * @hash   1322233552
+     * @hash   1322279680
      */
     MCAPI void startCooldown(class HashedString const &, int, bool);
     /**
      * @symbol ?startGliding@Player@@QEAAXXZ
-     * @hash   -2099065771
+     * @hash   -2099019643
      */
     MCAPI void startGliding();
     /**
      * @symbol ?startUsingItem@Player@@QEAAXAEBVItemStack@@H@Z
-     * @hash   894041629
+     * @hash   894087757
      */
     MCAPI void startUsingItem(class ItemStack const &, int);
     /**
      * @symbol ?stopGliding@Player@@QEAAXXZ
-     * @hash   1494036243
+     * @hash   1494082371
      */
     MCAPI void stopGliding();
     /**
      * @symbol ?stopUsingItem@Player@@QEAAXXZ
-     * @hash   924571523
+     * @hash   924617651
      */
     MCAPI void stopUsingItem();
     /**
      * @symbol ?take@Player@@QEAA_NAEAVActor@@HH@Z
-     * @hash   1459930245
+     * @hash   1459976373
      */
     MCAPI bool take(class Actor &, int, int);
     /**
      * @symbol ?trySendPlayerTeleported@Player@@QEAAXXZ
-     * @hash   1925961523
+     * @hash   1926007651
      */
     MCAPI void trySendPlayerTeleported();
     /**
      * @symbol ?updateBlockSourceTick@Player@@QEAAXXZ
-     * @hash   108738323
+     * @hash   108784451
      */
     MCAPI void updateBlockSourceTick();
     /**
      * @symbol ?updateInventoryTransactions@Player@@QEAAXXZ
-     * @hash   357940483
+     * @hash   357986611
      */
     MCAPI void updateInventoryTransactions();
     /**
      * @symbol ?updateSkin@Player@@QEAAXAEBVSerializedSkin@@H@Z
-     * @hash   958620261
+     * @hash   958666389
      */
     MCAPI void updateSkin(class SerializedSkin const &, int);
     /**
      * @symbol ?updateSpawnChunkView@Player@@QEAAXXZ
-     * @hash   -1944177787
+     * @hash   -1944131659
      */
     MCAPI void updateSpawnChunkView();
     /**
      * @symbol ?updateTrackedBosses@Player@@QEAAXXZ
-     * @hash   985852067
+     * @hash   985898195
      */
     MCAPI void updateTrackedBosses();
     /**
      * @symbol ?useSelectedItem@Player@@QEAAXW4ItemUseMethod@@_N@Z
-     * @hash   1606434373
+     * @hash   1606480501
      */
     MCAPI void useSelectedItem(enum class ItemUseMethod, bool);
     /**
      * @symbol ?DEFAULT_BB_HEIGHT@Player@@2MB
-     * @hash   -415557249
+     * @hash   -415434241
      */
     MCAPI static float const DEFAULT_BB_HEIGHT;
     /**
      * @symbol ?DEFAULT_BB_WIDTH@Player@@2MB
-     * @hash   1560000317
+     * @hash   1560123325
      */
     MCAPI static float const DEFAULT_BB_WIDTH;
     /**
      * @symbol ?DEFAULT_FLY_SPEED@Player@@2MB
-     * @hash   -1859098793
+     * @hash   -1858975785
      */
     MCAPI static float const DEFAULT_FLY_SPEED;
     /**
      * @symbol ?DEFAULT_PLAYER_HEIGHT_OFFSET@Player@@2MB
-     * @hash   1230211921
+     * @hash   1230334929
      */
     MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
     /**
      * @symbol ?DEFAULT_WALK_SPEED@Player@@2MB
-     * @hash   -207894411
+     * @hash   -207771403
      */
     MCAPI static float const DEFAULT_WALK_SPEED;
     /**
      * @symbol ?DISTANCE_TO_TRANSFORM_EVENT@Player@@2MB
-     * @hash   -162550169
+     * @hash   -162427161
      */
     MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
     /**
      * @symbol ?DISTANCE_TO_TRAVELLED_EVENT@Player@@2MB
-     * @hash   -1291275005
+     * @hash   -1291151997
      */
     MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
     /**
@@ -2231,7 +2231,7 @@ public:
     MCAPI static class Attribute const EXPERIENCE;
     /**
      * @symbol ?GLIDE_STOP_DELAY@Player@@2HB
-     * @hash   -1192370123
+     * @hash   -1192247115
      */
     MCAPI static int const GLIDE_STOP_DELAY;
     /**
@@ -2241,12 +2241,12 @@ public:
     MCAPI static class Attribute const HUNGER;
     /**
      * @symbol ?ITEM_USE_INTERVAL_COUNT@Player@@2HB
-     * @hash   92663595
+     * @hash   92786603
      */
     MCAPI static int const ITEM_USE_INTERVAL_COUNT;
     /**
      * @symbol ?ITEM_USE_INTERVAL_DURATION@Player@@2HB
-     * @hash   504018281
+     * @hash   504141289
      */
     MCAPI static int const ITEM_USE_INTERVAL_DURATION;
     /**
@@ -2256,92 +2256,92 @@ public:
     MCAPI static class Attribute const LEVEL;
     /**
      * @symbol ?MAX_ITEM_USE_DURATION@Player@@2HB
-     * @hash   -2027485853
+     * @hash   -2027362845
      */
     MCAPI static int const MAX_ITEM_USE_DURATION;
     /**
      * @symbol ?PLAYER_ALIVE_HEIGHT@Player@@2MB
-     * @hash   -1456388937
+     * @hash   -1456265929
      */
     MCAPI static float const PLAYER_ALIVE_HEIGHT;
     /**
      * @symbol ?PLAYER_ALIVE_WIDTH@Player@@2MB
-     * @hash   1249360445
+     * @hash   1249483453
      */
     MCAPI static float const PLAYER_ALIVE_WIDTH;
     /**
      * @symbol ?PLAYER_DEAD_HEIGHT@Player@@2MB
-     * @hash   -1954410239
+     * @hash   -1954287231
      */
     MCAPI static float const PLAYER_DEAD_HEIGHT;
     /**
      * @symbol ?PLAYER_DEAD_WIDTH@Player@@2MB
-     * @hash   -1676191293
+     * @hash   -1676068285
      */
     MCAPI static float const PLAYER_DEAD_WIDTH;
     /**
      * @symbol ?PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS@Player@@2HB
-     * @hash   1713340919
+     * @hash   1713463927
      */
     MCAPI static int const PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS;
     /**
      * @symbol ?PLAYER_DOWN_SWIM_SPEED@Player@@2MB
-     * @hash   -1235275095
+     * @hash   -1235152087
      */
     MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
     /**
      * @symbol ?PLAYER_GLIDING_CAMERA_OFFSET@Player@@2MB
-     * @hash   1430007349
+     * @hash   1430130357
      */
     MCAPI static float const PLAYER_GLIDING_CAMERA_OFFSET;
     /**
      * @symbol ?PLAYER_ITEM_USE_DEFAULT_SPEED_MODIFIER@Player@@2MB
-     * @hash   -235380691
+     * @hash   -235257683
      */
     MCAPI static float const PLAYER_ITEM_USE_DEFAULT_SPEED_MODIFIER;
     /**
      * @symbol ?PLAYER_SLEEPING_CAMERA_OFFSET@Player@@2MB
-     * @hash   1088904379
+     * @hash   1089027387
      */
     MCAPI static float const PLAYER_SLEEPING_CAMERA_OFFSET;
     /**
      * @symbol ?PLAYER_SLEEPING_HEIGHT@Player@@2MB
-     * @hash   1239157417
+     * @hash   1239280425
      */
     MCAPI static float const PLAYER_SLEEPING_HEIGHT;
     /**
      * @symbol ?PLAYER_SLEEPING_WIDTH@Player@@2MB
-     * @hash   -1018976213
+     * @hash   -1018853205
      */
     MCAPI static float const PLAYER_SLEEPING_WIDTH;
     /**
      * @symbol ?PLAYER_SNEAK_OFFSET@Player@@2MB
-     * @hash   606863391
+     * @hash   606986399
      */
     MCAPI static float const PLAYER_SNEAK_OFFSET;
     /**
      * @symbol ?PLAYER_SWIMMING_CAMERA_OFFSET@Player@@2MB
-     * @hash   931165687
+     * @hash   931288695
      */
     MCAPI static float const PLAYER_SWIMMING_CAMERA_OFFSET;
     /**
      * @symbol ?PLAYER_SWIM_BREACH_ANGLE@Player@@2MB
-     * @hash   -836628395
+     * @hash   -836505387
      */
     MCAPI static float const PLAYER_SWIM_BREACH_ANGLE;
     /**
      * @symbol ?PLAYER_SWIM_ENTER_THRESHOLD@Player@@2MB
-     * @hash   -222229481
+     * @hash   -222106473
      */
     MCAPI static float const PLAYER_SWIM_ENTER_THRESHOLD;
     /**
      * @symbol ?PLAYER_SWIM_FLY_MULTI@Player@@2MB
-     * @hash   659902319
+     * @hash   660025327
      */
     MCAPI static float const PLAYER_SWIM_FLY_MULTI;
     /**
      * @symbol ?PLAYER_UP_SWIM_SPEED@Player@@2MB
-     * @hash   621226949
+     * @hash   621349957
      */
     MCAPI static float const PLAYER_UP_SWIM_SPEED;
     /**
@@ -2351,161 +2351,161 @@ public:
     MCAPI static class Attribute const SATURATION;
     /**
      * @symbol ?SPAWN_CHUNK_LARGE_JUMP@Player@@2IB
-     * @hash   -1291632631
+     * @hash   -1291509623
      */
     MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
     /**
      * @symbol ?SPAWN_CHUNK_RADIUS@Player@@2IB
-     * @hash   -312680059
+     * @hash   -312557051
      */
     MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
     /**
      * @symbol ?_aiStep@Player@@SAXAEAUIPlayerMovementProxy@@@Z
-     * @hash   -506017532
+     * @hash   -505971404
      */
     MCAPI static void _aiStep(struct IPlayerMovementProxy &);
     /**
      * @symbol ?_travel@Player@@SAXAEAUIPlayerMovementProxy@@MMM@Z
-     * @hash   1865895709
+     * @hash   1865941837
      */
     MCAPI static void _travel(struct IPlayerMovementProxy &, float, float, float);
     /**
      * @symbol ?canJump@Player@@SA_NAEAUIPlayerMovementProxy@@@Z
-     * @hash   -1320879907
+     * @hash   -1320833779
      */
     MCAPI static bool canJump(struct IPlayerMovementProxy &);
     /**
      * @symbol ?checkAndFixSpawnPosition@Player@@SA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@VAABB@@_N33333F@Z
-     * @hash   1162191001
+     * @hash   1162237129
      */
     MCAPI static bool checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, class AABB, bool, bool, bool, bool, bool, bool, short);
     /**
      * @symbol ?checkNeedAutoJump@Player@@SA_NPEAUIPlayerMovementProxy@@MM@Z
-     * @hash   -512785512
+     * @hash   -512739384
      */
     MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy *, float, float);
     /**
      * @symbol ?goDownInWater@Player@@SAXAEAUIActorMovementProxy@@@Z
-     * @hash   1596336568
+     * @hash   1596382696
      */
     MCAPI static void goDownInWater(struct IActorMovementProxy &);
     /**
      * @symbol ?handleJumpEffects@Player@@SAXAEAUIPlayerMovementProxy@@@Z
-     * @hash   1141465714
+     * @hash   1141511842
      */
     MCAPI static void handleJumpEffects(struct IPlayerMovementProxy &);
     /**
      * @symbol ?isDangerousVolume@Player@@SA_NAEAVBlockSource@@AEBVAABB@@_N@Z
-     * @hash   -255627
+     * @hash   -209499
      */
     MCAPI static bool isDangerousVolume(class BlockSource &, class AABB const &, bool);
     /**
      * @symbol ?tryGetFromComponent@Player@@SAPEAV1@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAVActorOwnerComponent@@_N@Z
-     * @hash   -110984357
+     * @hash   -110938229
      */
     MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
     /**
      * @symbol ?tryGetFromEntity@Player@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
-     * @hash   -1487583136
+     * @hash   -1487537008
      */
     MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
     /**
      * @symbol ?tryGetFromEntity@Player@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   5867867
+     * @hash   5913995
      */
     MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
 
 //protected:
     /**
      * @symbol ?_checkAndFixSpawnPosition@Player@@IEBA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@_N2222@Z
-     * @hash   -651509162
+     * @hash   -651463034
      */
     MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
     /**
      * @symbol ?_chooseSpawnArea@Player@@IEAAXXZ
-     * @hash   -622370812
+     * @hash   -622324684
      */
     MCAPI void _chooseSpawnArea();
     /**
      * @symbol ?_chooseSpawnPositionWithinArea@Player@@IEAA_NXZ
-     * @hash   1540196338
+     * @hash   1540242466
      */
     MCAPI bool _chooseSpawnPositionWithinArea();
     /**
      * @symbol ?_registerPlayerAttributes@Player@@IEAAXXZ
-     * @hash   1624584204
+     * @hash   1624630332
      */
     MCAPI void _registerPlayerAttributes();
     /**
      * @symbol ?_setPreDimensionTransferSpawnPosition@Player@@IEAAXVVec3@@@Z
-     * @hash   531045551
+     * @hash   531091679
      */
     MCAPI void _setPreDimensionTransferSpawnPosition(class Vec3);
     /**
      * @symbol ?_updateInteraction@Player@@IEAAXXZ
-     * @hash   -32067188
+     * @hash   -32021060
      */
     MCAPI void _updateInteraction();
     /**
      * @symbol ?_validateSpawnPositionAvailability@Player@@IEBA_NAEBVVec3@@PEAVBlockSource@@QEBV2@@Z
-     * @hash   2055380894
+     * @hash   2055427022
      */
     MCAPI bool _validateSpawnPositionAvailability(class Vec3 const &, class BlockSource *, class Vec3 const *const) const;
     /**
      * @symbol ?checkBed@Player@@IEAA_NPEAVBlockSource@@QEBVVec3@@@Z
-     * @hash   1955017488
+     * @hash   1955063616
      */
     MCAPI bool checkBed(class BlockSource *, class Vec3 const *const);
     /**
      * @symbol ?checkSpawnBlock@Player@@IEBA_NAEBVBlockSource@@@Z
-     * @hash   235320490
+     * @hash   235366618
      */
     MCAPI bool checkSpawnBlock(class BlockSource const &) const;
     /**
      * @symbol ?_isDangerousBlock@Player@@KA_NAEBVBlock@@_N@Z
-     * @hash   2086361780
+     * @hash   2086407908
      */
     MCAPI static bool _isDangerousBlock(class Block const &, bool);
 
 //private:
     /**
      * @symbol ?_addLevels@Player@@AEAAXH@Z
-     * @hash   -46514109
+     * @hash   -46467981
      */
     MCAPI void _addLevels(int);
     /**
      * @symbol ?_blockUsingShield@Player@@AEAA_NAEBVActorDamageSource@@M@Z
-     * @hash   -1185601300
+     * @hash   -1185555172
      */
     MCAPI bool _blockUsingShield(class ActorDamageSource const &, float);
     /**
      * @symbol ?_ensureSafeSpawnPosition@Player@@AEAAXAEAVVec3@@@Z
-     * @hash   -1069563816
+     * @hash   -1069517688
      */
     MCAPI void _ensureSafeSpawnPosition(class Vec3 &);
     /**
      * @symbol ?_findFallbackSpawnPosition@Player@@AEAA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@I@Z
-     * @hash   -1139920649
+     * @hash   -1139874521
      */
     MCAPI bool _findFallbackSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, unsigned int);
     /**
      * @symbol ?_handleCarriedItemInteractText@Player@@AEAAXXZ
-     * @hash   -2132863052
+     * @hash   -2132816924
      */
     MCAPI void _handleCarriedItemInteractText();
     /**
      * @symbol ?_isChunkSourceLoaded@Player@@AEBA_NAEBVVec3@@AEBVBlockSource@@@Z
-     * @hash   1148630175
+     * @hash   1148676303
      */
     MCAPI bool _isChunkSourceLoaded(class Vec3 const &, class BlockSource const &) const;
     /**
      * @symbol ?_registerElytraLoopSound@Player@@AEAAXXZ
-     * @hash   -1812896077
+     * @hash   -1812849949
      */
     MCAPI void _registerElytraLoopSound();
     /**
      * @symbol ?_sendShieldUpdatePacket@Player@@AEAAXAEBVShieldItem@@AEBVItemStack@@1W4ContainerID@@H@Z
-     * @hash   -690423374
+     * @hash   -690377246
      */
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum class ContainerID, int);
 

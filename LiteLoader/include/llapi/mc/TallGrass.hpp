@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@TallGrass@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   -388277330
+     * @hash   -387447026
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@TallGrass@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1671289015
+     * @hash   -1670458711
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@TallGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1648106419
+     * @hash   -1647276115
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  87
      * @symbol ?mayConsumeFertilizer@TallGrass@@UEBA_NAEAVBlockSource@@@Z
-     * @hash   -1935318166
+     * @hash   -1934487862
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@TallGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   772404199
+     * @hash   773234503
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -226,19 +226,19 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@TallGrass@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -753951472
+     * @hash   -753121168
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  135
      * @symbol ?getColor@TallGrass@@UEBAHAEBVBlock@@@Z
-     * @hash   -1911345749
+     * @hash   -1910515445
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@TallGrass@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1442181243
+     * @hash   -1441350939
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@TallGrass@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -2093604563
+     * @hash   -2092774259
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -280,25 +280,25 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@TallGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1269600999
+     * @hash   1270431303
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@TallGrass@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -805804146
+     * @hash   -804973842
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@TallGrass@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1330006718
+     * @hash   -1329176414
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@TallGrass@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -383536595
+     * @hash   -382706291
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -309,7 +309,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TallGrass@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1759049063
+     * @hash   1759879367
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TALLGRASS
@@ -321,7 +321,7 @@ public:
 #endif
     /**
      * @symbol ??0TallGrass@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1403630167
+     * @hash   1404460471
      */
     MCAPI TallGrass(std::string const &, int);
 

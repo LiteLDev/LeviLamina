@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0JigsawEditorData@@QEAA@XZ
-     * @hash   244735028
+     * @hash   245565332
      */
     MCAPI JigsawEditorData();
     /**
      * @symbol ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@@Z
-     * @hash   -2081284910
+     * @hash   -2080454606
      */
     MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum class JigsawJointType);
     /**
      * @symbol ??0JigsawEditorData@@QEAA@$$QEAV0@@Z
-     * @hash   -1290361927
+     * @hash   -1289531623
      */
     MCAPI JigsawEditorData(class JigsawEditorData &&);
     /**
@@ -51,7 +51,7 @@ public:
     MCAPI std::string const & getFinalBlock() const;
     /**
      * @symbol ?getJointType@JigsawEditorData@@QEBAAEBW4JigsawJointType@@XZ
-     * @hash   -80351318
+     * @hash   -80305190
      */
     MCAPI enum class JigsawJointType const & getJointType() const;
     /**
@@ -71,37 +71,37 @@ public:
     MCAPI std::string const & getTargetPool() const;
     /**
      * @symbol ?load@JigsawEditorData@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2028171893
+     * @hash   2029002197
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@JigsawEditorData@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   482191510
+     * @hash   483021814
      */
     MCAPI void save(class CompoundTag &) const;
     /**
      * @symbol ?setFinalBlock@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1125408462
+     * @hash   1126238766
      */
     MCAPI void setFinalBlock(std::string const &);
     /**
      * @symbol ?setJointType@JigsawEditorData@@QEAAXAEBW4JigsawJointType@@@Z
-     * @hash   -5483478
+     * @hash   -4653174
      */
     MCAPI void setJointType(enum class JigsawJointType const &);
     /**
      * @symbol ?setName@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   787755006
+     * @hash   787801134
      */
     MCAPI void setName(std::string const &);
     /**
      * @symbol ?setTarget@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1571889582
+     * @hash   1572719886
      */
     MCAPI void setTarget(std::string const &);
     /**
      * @symbol ?setTargetPool@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   598959310
+     * @hash   599789614
      */
     MCAPI void setTargetPool(std::string const &);
     /**

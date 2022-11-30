@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?uninitialize@SittableDefinition@@QEAAXAEAVEntityContext@@AEAVSitComponent@@@Z
-     * @hash   -556249327
+     * @hash   -556203199
      */
     MCAPI void uninitialize(class EntityContext &, class SitComponent &);
     /**
      * @symbol ?buildSchema@SittableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSittableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   487455254
+     * @hash   487501382
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SittableDefinition>> &);
 

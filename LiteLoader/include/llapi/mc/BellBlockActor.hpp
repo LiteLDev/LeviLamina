@@ -40,19 +40,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BellBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1541091982
+     * @hash   -1540261678
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BellBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1542293025
+     * @hash   1543123329
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BellBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1126898235
+     * @hash   1127728539
      */
     virtual void tick(class BlockSource &);
     /**
@@ -98,33 +98,33 @@ public:
     /**
      * @vftbl  37
      * @symbol ?_getUpdatePacket@BellBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   1971478740
+     * @hash   1972309044
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@BellBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   826330958
+     * @hash   827161262
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0BellBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   858288110
+     * @hash   859118414
      */
     MCAPI BellBlockActor(class BlockPos const &);
     /**
      * @symbol ?ejectItem@BellBlockActor@@QEBAXAEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1264821537
+     * @hash   -1263991233
      */
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?isRinging@BellBlockActor@@QEBA_NXZ
-     * @hash   -1736920214
+     * @hash   -1736089910
      */
     MCAPI bool isRinging() const;
     /**
      * @symbol ?ring@BellBlockActor@@QEAA_NW4Type@Direction@@AEAVBlockSource@@PEAVActor@@_N@Z
-     * @hash   -2112514621
+     * @hash   -2111684317
      */
     MCAPI bool ring(enum class Direction::Type, class BlockSource &, class Actor *, bool);
 

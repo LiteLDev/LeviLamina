@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@NetherWartBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -590006823
+     * @hash   -589176519
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@NetherWartBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1850746065
+     * @hash   -1849915761
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@NetherWartBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1768817599
+     * @hash   -1767987295
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -233,7 +233,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@NetherWartBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1671828820
+     * @hash   -1670998516
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@NetherWartBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   487843847
+     * @hash   488674151
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -255,13 +255,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@NetherWartBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1542329377
+     * @hash   -1541499073
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@NetherWartBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   55196487
+     * @hash   56026791
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERWARTBLOCK
@@ -273,7 +273,7 @@ public:
 #endif
     /**
      * @symbol ??0NetherWartBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -18273129
+     * @hash   -17442825
      */
     MCAPI NetherWartBlock(std::string const &, int);
 
@@ -282,7 +282,7 @@ public:
 private:
     /**
      * @symbol ?MAX_AGE@NetherWartBlock@@0HB
-     * @hash   1769793595
+     * @hash   1769916603
      */
     MCAPI static int const MAX_AGE;
 

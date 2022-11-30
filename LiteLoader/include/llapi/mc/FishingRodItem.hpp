@@ -82,7 +82,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@FishingRodItem@@UEBAHXZ
-     * @hash   -642708004
+     * @hash   -641877700
      */
     virtual int getEnchantSlot() const;
     /**
@@ -118,18 +118,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@FishingRodItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -2130526530
+     * @hash   -2129696226
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
@@ -147,24 +147,24 @@ public:
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@FishingRodItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   366454119
+     * @hash   367284423
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   1854286187
+     * @hash   1855116491
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
      * @vftbl  120
      * @symbol ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     * @hash   -601056267
+     * @hash   -600225963
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
      * @symbol ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1491000942
+     * @hash   1491831246
      */
     MCAPI FishingRodItem(std::string const &, int);
 

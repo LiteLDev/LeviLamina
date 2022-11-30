@@ -26,7 +26,6 @@ public:
     LIAPI int getDespawnTime();
     LIAPI bool setDespawnTime(int);
     LIAPI int getLatestSpawnTime();
-    LIAPI int& despawnTime();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTOR
 public:
@@ -39,7 +38,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1819547781
+     * @hash   -1819501653
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -56,7 +55,7 @@ public:
     /**
      * @vftbl  41
      * @symbol ?isFireImmune@ItemActor@@UEBA_NXZ
-     * @hash   1648222745
+     * @hash   1648268873
      */
     virtual bool isFireImmune() const;
     /**
@@ -67,13 +66,13 @@ public:
     /**
      * @vftbl  49
      * @symbol ?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
-     * @hash   1161472283
+     * @hash   1161518411
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
      * @vftbl  50
      * @symbol ?normalTick@ItemActor@@UEAAXXZ
-     * @hash   1530066777
+     * @hash   1530112905
      */
     virtual void normalTick();
     /**
@@ -104,7 +103,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1675791392
+     * @hash   -1675745264
      */
     virtual void playerTouch(class Player &);
     /**
@@ -140,25 +139,25 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -51104736
+     * @hash   -51058608
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
-     * @hash   2022300676
+     * @hash   2022346804
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -352230236
+     * @hash   -352184108
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
      * @vftbl  178
      * @symbol ?getLiquidAABB@ItemActor@@UEBA?AVAABB@@W4MaterialType@@@Z
-     * @hash   -710818782
+     * @hash   -710772654
      */
     virtual class AABB getLiquidAABB(enum class MaterialType) const;
     /**
@@ -174,7 +173,7 @@ public:
     /**
      * @vftbl  200
      * @symbol ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
-     * @hash   1134003385
+     * @hash   1134049513
      */
     virtual bool canSynchronizeNewEntity() const;
     /**
@@ -205,19 +204,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   2032418974
+     * @hash   2032465102
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1560822722
+     * @hash   -1560776594
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1558325215
+     * @hash   1558371343
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -234,56 +233,56 @@ public:
 #endif
     /**
      * @symbol ??0ItemActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   2114817150
+     * @hash   2114863278
      */
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@ItemActor@@QEAAXXZ
-     * @hash   1385963019
+     * @hash   1386009147
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setSourceEntity@ItemActor@@QEAAXPEBVActor@@@Z
-     * @hash   1906335715
+     * @hash   1906381843
      */
     MCAPI void setSourceEntity(class Actor const *);
     /**
      * @symbol ?getLiquidAABB@ItemActor@@SA?AVAABB@@AEBUAABBShapeComponent@@@Z
-     * @hash   694037593
+     * @hash   694083721
      */
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const &);
     /**
      * @symbol ?tryGetFromEntity@ItemActor@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   1441034824
+     * @hash   1441080952
      */
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
      * @symbol ?_addComponents@ItemActor@@AEAAXXZ
-     * @hash   393130482
+     * @hash   393176610
      */
     MCAPI void _addComponents();
     /**
      * @symbol ?_dropContents@ItemActor@@AEAAXXZ
-     * @hash   -321560014
+     * @hash   -321513886
      */
     MCAPI void _dropContents();
     /**
      * @symbol ?_merge@ItemActor@@AEAA_NPEAV1@@Z
-     * @hash   -44888135
+     * @hash   -44842007
      */
     MCAPI bool _merge(class ItemActor *);
     /**
      * @symbol ?_validateItem@ItemActor@@AEAAXXZ
-     * @hash   1782401394
+     * @hash   1782447522
      */
     MCAPI void _validateItem();
 
 private:
     /**
      * @symbol ?LIFETIME@ItemActor@@0HB
-     * @hash   1581377423
+     * @hash   1581500431
      */
     MCAPI static int const LIFETIME;
 

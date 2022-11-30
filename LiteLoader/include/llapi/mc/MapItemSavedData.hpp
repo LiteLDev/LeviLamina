@@ -40,244 +40,244 @@ public:
 public:
     /**
      * @symbol ??0MapItemSavedData@@QEAA@UActorUniqueID@@_N@Z
-     * @hash   775264506
+     * @hash   776094810
      */
     MCAPI MapItemSavedData(struct ActorUniqueID, bool);
     /**
      * @symbol ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEAVActor@@W4Type@MapDecoration@@@Z
-     * @hash   -1641140221
+     * @hash   -1640309917
      */
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor &, enum class MapDecoration::Type);
     /**
      * @symbol ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEBVBlockPos@@AEAVBlockSource@@W4Type@MapDecoration@@@Z
-     * @hash   2053779192
+     * @hash   2054609496
      */
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class BlockPos const &, class BlockSource &, enum class MapDecoration::Type);
     /**
      * @symbol ?areClientPixelsDirty@MapItemSavedData@@QEBA_NXZ
-     * @hash   695984374
+     * @hash   696030502
      */
     MCAPI bool areClientPixelsDirty() const;
     /**
      * @symbol ?checkNeedsResampling@MapItemSavedData@@QEAAXXZ
-     * @hash   1581802229
+     * @hash   1582632533
      */
     MCAPI void checkNeedsResampling();
     /**
      * @symbol ?copyMapData@MapItemSavedData@@QEAAXAEBV1@@Z
-     * @hash   -148089463
+     * @hash   -147259159
      */
     MCAPI void copyMapData(class MapItemSavedData const &);
     /**
      * @symbol ?deserialize@MapItemSavedData@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   124435652
+     * @hash   125265956
      */
     MCAPI void deserialize(class CompoundTag const &);
     /**
      * @symbol ?enableUnlimitedTracking@MapItemSavedData@@QEAAXXZ
-     * @hash   -1593096413
+     * @hash   -1592266109
      */
     MCAPI void enableUnlimitedTracking();
     /**
      * @symbol ?getClientPixels@MapItemSavedData@@QEAAAEAV?$vector@UClientTerrainPixel@@V?$allocator@UClientTerrainPixel@@@std@@@std@@XZ
-     * @hash   -2119806778
+     * @hash   -2119760650
      */
     MCAPI std::vector<struct ClientTerrainPixel> & getClientPixels();
     /**
      * @symbol ?getClientSamplingLock@MapItemSavedData@@QEAAPEAVSpinLock@@XZ
-     * @hash   -123111167
+     * @hash   -122280863
      */
     MCAPI class SpinLock * getClientSamplingLock();
     /**
      * @symbol ?getFullDataPacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@XZ
-     * @hash   627708890
+     * @hash   628539194
      */
     MCAPI std::unique_ptr<class Packet> getFullDataPacket() const;
     /**
      * @symbol ?getMapId@MapItemSavedData@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -175738434
+     * @hash   -175692306
      */
     MCAPI struct ActorUniqueID getMapId() const;
     /**
      * @symbol ?getParentMapId@MapItemSavedData@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -737831894
+     * @hash   -737785766
      */
     MCAPI struct ActorUniqueID getParentMapId() const;
     /**
      * @symbol ?getPixels@MapItemSavedData@@QEBA?AV?$buffer_span@I@@XZ
-     * @hash   -1422754656
+     * @hash   -1421924352
      */
     MCAPI class buffer_span<unsigned int> getPixels() const;
     /**
      * @symbol ?getTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEAVActor@@@Z
-     * @hash   -232346806
+     * @hash   -231516502
      */
     MCAPI class std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor &);
     /**
      * @symbol ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
-     * @hash   -1087181907
+     * @hash   -1086351603
      */
     MCAPI std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /**
      * @symbol ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEAVLevel@@AEBVBlockPos@@@Z
-     * @hash   -1818500916
+     * @hash   -1817670612
      */
     MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level &, class BlockPos const &) const;
     /**
      * @symbol ?hasParentMap@MapItemSavedData@@QEBA_NXZ
-     * @hash   46215786
+     * @hash   47046090
      */
     MCAPI bool hasParentMap() const;
     /**
      * @symbol ?isAdjacent@MapItemSavedData@@QEBA_NAEBV1@H@Z
-     * @hash   -440807373
+     * @hash   -439977069
      */
     MCAPI bool isAdjacent(class MapItemSavedData const &, int) const;
     /**
      * @symbol ?isChunkAllEmpty@MapItemSavedData@@QEBA_NUChunkBounds@1@@Z
-     * @hash   7257612
+     * @hash   8087916
      */
     MCAPI bool isChunkAllEmpty(struct MapItemSavedData::ChunkBounds) const;
     /**
      * @symbol ?isFullyExplored@MapItemSavedData@@QEBA_NXZ
-     * @hash   780462222
+     * @hash   781292526
      */
     MCAPI bool isFullyExplored() const;
     /**
      * @symbol ?isLocked@MapItemSavedData@@QEBA_NXZ
-     * @hash   1353647634
+     * @hash   1354477938
      */
     MCAPI bool isLocked() const;
     /**
      * @symbol ?needsResampling@MapItemSavedData@@QEBA_NXZ
-     * @hash   137317866
+     * @hash   138148170
      */
     MCAPI bool needsResampling() const;
     /**
      * @symbol ?removeTrackedMapEntity@MapItemSavedData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1554506898
+     * @hash   -1553676594
      */
     MCAPI void removeTrackedMapEntity(class BlockPos const &);
     /**
      * @symbol ?save@MapItemSavedData@@QEAAXAEAVLevelStorage@@@Z
-     * @hash   1869462248
+     * @hash   1870292552
      */
     MCAPI void save(class LevelStorage &);
     /**
      * @symbol ?serialize@MapItemSavedData@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -637323064
+     * @hash   -636492760
      */
     MCAPI void serialize(class CompoundTag &) const;
     /**
      * @symbol ?setClientPixelsDirty@MapItemSavedData@@QEAAX_N@Z
-     * @hash   1977036658
+     * @hash   1977866962
      */
     MCAPI void setClientPixelsDirty(bool);
     /**
      * @symbol ?setDirtyForSaveAndPixelData@MapItemSavedData@@QEAAXXZ
-     * @hash   -904874477
+     * @hash   -904044173
      */
     MCAPI void setDirtyForSaveAndPixelData();
     /**
      * @symbol ?setLocked@MapItemSavedData@@QEAAXXZ
-     * @hash   -194078909
+     * @hash   -193248605
      */
     MCAPI void setLocked();
     /**
      * @symbol ?setMapSection@MapItemSavedData@@QEAAXV?$buffer_span@I@@UChunkBounds@1@@Z
-     * @hash   -2082012938
+     * @hash   -2081182634
      */
     MCAPI void setMapSection(class buffer_span<unsigned int>, struct MapItemSavedData::ChunkBounds);
     /**
      * @symbol ?setOrigin@MapItemSavedData@@QEAAXVVec3@@HV?$AutomaticID@VDimension@@H@@_N2AEBVBlockPos@@@Z
-     * @hash   -32664214
+     * @hash   -31833910
      */
     MCAPI void setOrigin(class Vec3, int, class AutomaticID<class Dimension, int>, bool, bool, class BlockPos const &);
     /**
      * @symbol ?setPixel@MapItemSavedData@@QEAA_NIII@Z
-     * @hash   -402369901
+     * @hash   -401539597
      */
     MCAPI bool setPixel(unsigned int, unsigned int, unsigned int);
     /**
      * @symbol ?setPixelDirty@MapItemSavedData@@QEAAXII@Z
-     * @hash   1900617611
+     * @hash   1901447915
      */
     MCAPI void setPixelDirty(unsigned int, unsigned int);
     /**
      * @symbol ?setScale@MapItemSavedData@@QEAAXH@Z
-     * @hash   -1327464346
+     * @hash   -1326634042
      */
     MCAPI void setScale(int);
     /**
      * @symbol ?setScaleAndParentMapId@MapItemSavedData@@QEAAXHUActorUniqueID@@@Z
-     * @hash   -296845667
+     * @hash   -296015363
      */
     MCAPI void setScaleAndParentMapId(int, struct ActorUniqueID);
     /**
      * @symbol ?tickByBlock@MapItemSavedData@@QEAAXAEBVBlockPos@@AEAVBlockSource@@@Z
-     * @hash   -618074923
+     * @hash   -617244619
      */
     MCAPI void tickByBlock(class BlockPos const &, class BlockSource &);
     /**
      * @symbol ?tickCarriedBy@MapItemSavedData@@QEAAXAEAVActor@@PEBVCompoundTag@@@Z
-     * @hash   -1850332016
+     * @hash   -1849501712
      */
     MCAPI void tickCarriedBy(class Actor &, class CompoundTag const *);
     /**
      * @symbol ?trySave@MapItemSavedData@@QEAAXAEAVLevelStorage@@@Z
-     * @hash   -1828845632
+     * @hash   -1828015328
      */
     MCAPI void trySave(class LevelStorage &);
     /**
      * @symbol ??1MapItemSavedData@@QEAA@XZ
-     * @hash   624978172
+     * @hash   625808476
      */
     MCAPI ~MapItemSavedData();
     /**
      * @symbol ?getSerializationKey@MapItemSavedData@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z
-     * @hash   335019017
+     * @hash   335849321
      */
     MCAPI static std::string getSerializationKey(struct ActorUniqueID);
 
 //private:
     /**
      * @symbol ?_addDecoration@MapItemSavedData@@AEAAXW4Type@MapDecoration@@AEAVLevel@@AEBUUniqueId@MapItemTrackedActor@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-     * @hash   99519485
+     * @hash   100349789
      */
     MCAPI void _addDecoration(enum class MapDecoration::Type, class Level &, struct MapItemTrackedActor::UniqueId const &, class Vec3 const &, std::string const &, class mce::Color const &);
     /**
      * @symbol ?_addTrackedMapEntity@MapItemSavedData@@AEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEBUUniqueId@MapItemTrackedActor@@AEAVBlockSource@@W4Type@MapDecoration@@@Z
-     * @hash   2053991325
+     * @hash   2054821629
      */
     MCAPI class std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &, class BlockSource &, enum class MapDecoration::Type);
     /**
      * @symbol ?_deserializeData@MapItemSavedData@@AEAAXAEBVCompoundTag@@@Z
-     * @hash   993030534
+     * @hash   993860838
      */
     MCAPI void _deserializeData(class CompoundTag const &);
     /**
      * @symbol ?_removeDecoration@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
-     * @hash   1298103241
+     * @hash   1298933545
      */
     MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const &);
     /**
      * @symbol ?_removeTrackedMapEntity@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
-     * @hash   1068881892
+     * @hash   1069712196
      */
     MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &);
     /**
      * @symbol ?_updateTrackedEntityDecoration@MapItemSavedData@@AEAA_NAEAVBlockSource@@V?$shared_ptr@VMapItemTrackedActor@@@std@@@Z
-     * @hash   -1866053481
+     * @hash   -1865223177
      */
     MCAPI bool _updateTrackedEntityDecoration(class BlockSource &, class std::shared_ptr<class MapItemTrackedActor>);
     /**
      * @symbol ?_updateTrackedEntityDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -1917090596
+     * @hash   -1916260292
      */
     MCAPI void _updateTrackedEntityDecorations(class BlockSource &);
     /**
      * @symbol ?_updateTrackedPlayerDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@AEAVPlayer@@AEAVVec3@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVColor@mce@@V?$AutomaticID@VDimension@@H@@AEAW4Type@MapDecoration@@@Z
-     * @hash   1580426666
+     * @hash   1581256970
      */
     MCAPI void _updateTrackedPlayerDecorations(class BlockSource &, class Player &, class Vec3 &, std::string &, class mce::Color &, class AutomaticID<class Dimension, int>, enum class MapDecoration::Type &);
 

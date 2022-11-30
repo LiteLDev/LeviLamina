@@ -42,42 +42,42 @@ public:
     MCAPI enum class BossBarColor getColor();
     /**
      * @symbol ?getHealthPercent@RaidBossComponent@@QEAAMXZ
-     * @hash   -1905349076
+     * @hash   -1905302948
      */
     MCAPI float getHealthPercent();
     /**
      * @symbol ?getName@RaidBossComponent@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -402647584
+     * @hash   -402601456
      */
     MCAPI std::string getName();
     /**
      * @symbol ?getOwnerUniqueID@RaidBossComponent@@QEAA?AUActorUniqueID@@XZ
-     * @hash   1378426198
+     * @hash   1378472326
      */
     MCAPI struct ActorUniqueID getOwnerUniqueID();
     /**
      * @symbol ?getRaidInProgress@RaidBossComponent@@QEAA_NXZ
-     * @hash   872375074
+     * @hash   872421202
      */
     MCAPI bool getRaidInProgress();
     /**
      * @symbol ?getVillage@RaidBossComponent@@QEAA?AV?$shared_ptr@VVillage@@@std@@XZ
-     * @hash   2082307079
+     * @hash   2082353207
      */
     MCAPI class std::shared_ptr<class Village> getVillage();
     /**
      * @symbol ?getWaveStarted@RaidBossComponent@@QEAA_NXZ
-     * @hash   177110004
+     * @hash   177156132
      */
     MCAPI bool getWaveStarted();
     /**
      * @symbol ?initialize@RaidBossComponent@@QEAAXUActorUniqueID@@@Z
-     * @hash   2102852780
+     * @hash   2102898908
      */
     MCAPI void initialize(struct ActorUniqueID);
     /**
      * @symbol ?isWithinRange@RaidBossComponent@@QEAA_NAEBVMob@@@Z
-     * @hash   -1025606269
+     * @hash   -1025560141
      */
     MCAPI bool isWithinRange(class Mob const &);
     /**
@@ -87,52 +87,52 @@ public:
     MCAPI class RaidBossComponent & operator=(class RaidBossComponent &&);
     /**
      * @symbol ?registerPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-     * @hash   -239189777
+     * @hash   -239143649
      */
     MCAPI void registerPlayer(class Player *);
     /**
      * @symbol ?removeBossBar@RaidBossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   2090783990
+     * @hash   2090830118
      */
     MCAPI void removeBossBar(class Actor &);
     /**
      * @symbol ?resendRaidBossEventData@RaidBossComponent@@QEAAXAEAVPlayer@@@Z
-     * @hash   1776013654
+     * @hash   1776059782
      */
     MCAPI void resendRaidBossEventData(class Player &);
     /**
      * @symbol ?sendRegistryMessages@RaidBossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   511727114
+     * @hash   511773242
      */
     MCAPI void sendRegistryMessages(class Actor &);
     /**
      * @symbol ?setVillage@RaidBossComponent@@QEAAXV?$weak_ptr@VVillage@@@std@@@Z
-     * @hash   529822099
+     * @hash   529868227
      */
     MCAPI void setVillage(class std::weak_ptr<class Village>);
     /**
      * @symbol ?setWaveStarted@RaidBossComponent@@QEAAX_N@Z
-     * @hash   331821672
+     * @hash   331867800
      */
     MCAPI void setWaveStarted(bool);
     /**
      * @symbol ?setupBossBarInfo@RaidBossComponent@@QEAAXAEAVActor@@PEAVVillage@@@Z
-     * @hash   -1619100792
+     * @hash   -1619054664
      */
     MCAPI void setupBossBarInfo(class Actor &, class Village *);
     /**
      * @symbol ?tryRemoveBoss@RaidBossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-     * @hash   1342907188
+     * @hash   1342953316
      */
     MCAPI bool tryRemoveBoss(class Actor &, class Player &);
     /**
      * @symbol ?unRegisterPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-     * @hash   -1505163809
+     * @hash   -1505117681
      */
     MCAPI void unRegisterPlayer(class Player *);
     /**
      * @symbol ?updateBossBarStats@RaidBossComponent@@QEAAXAEAVActor@@AEBVRaid@@@Z
-     * @hash   -1836320029
+     * @hash   -1836273901
      */
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
     /**
@@ -144,12 +144,12 @@ public:
 //private:
     /**
      * @symbol ?_broadcastBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVActor@@@Z
-     * @hash   1256701854
+     * @hash   1256747982
      */
     MCAPI void _broadcastBossEvent(enum class BossEventUpdateType, class Actor &);
     /**
      * @symbol ?_sendBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVPlayer@@@Z
-     * @hash   77361357
+     * @hash   77407485
      */
     MCAPI void _sendBossEvent(enum class BossEventUpdateType, class Player &);
 

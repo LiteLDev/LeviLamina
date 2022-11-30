@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@PigZombie@@UEAAXXZ
-     * @hash   1499428359
+     * @hash   1499474487
      */
     virtual void normalTick();
     /**
@@ -141,19 +141,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@PigZombie@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1109946428
+     * @hash   1109992556
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@PigZombie@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   959144284
+     * @hash   959190412
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@PigZombie@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   2109617681
+     * @hash   2109663809
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -174,7 +174,7 @@ public:
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@PigZombie@@UEAA_N_N@Z
-     * @hash   804681459
+     * @hash   804727587
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -205,7 +205,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0PigZombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1931573440
+     * @hash   -1931527312
      */
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

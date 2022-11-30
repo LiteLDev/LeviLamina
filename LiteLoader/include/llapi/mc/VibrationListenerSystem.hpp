@@ -41,7 +41,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@VibrationListenerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -324314059
+     * @hash   -324267931
      */
     virtual void tick(class EntityRegistry &);
 

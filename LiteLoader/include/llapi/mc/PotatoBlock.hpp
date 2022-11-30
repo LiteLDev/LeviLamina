@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@PotatoBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -301441018
+     * @hash   -300610714
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@PotatoBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -2063480376
+     * @hash   -2062650072
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@PotatoBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   743878150
+     * @hash   744708454
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -236,30 +236,30 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @vftbl  192
-     * @hash   1666367482
+     * @hash   1667197786
      */
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
      * @symbol ?getBaseSeed@PotatoBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   1980271814
+     * @hash   1981102118
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
      * @vftbl  194
      * @symbol ?getBaseCrop@PotatoBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   1188149637
+     * @hash   1188979941
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
      * @vftbl  196
      * @symbol ?getCropNum@PotatoBlock@@UEBAHAEAVRandomize@@HH@Z
-     * @hash   -145730892
+     * @hash   -144900588
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
      * @symbol ??0PotatoBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -419943212
+     * @hash   -419112908
      */
     MCAPI PotatoBlock(std::string const &, int);
 

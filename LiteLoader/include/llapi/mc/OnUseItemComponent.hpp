@@ -59,23 +59,23 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -2062965055
+     * @hash   -2062134751
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1824649217
+     * @hash   -1823818913
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@OnUseItemComponent@@SAXXZ
-     * @hash   877264899
+     * @hash   878095203
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@OnUseItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -957699260
+     * @hash   -956868956
      */
     MCAPI static class HashedString const & getIdentifier();
 

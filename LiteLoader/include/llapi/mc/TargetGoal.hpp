@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@TargetGoal@@UEAA_NXZ
-     * @hash   -141879366
+     * @hash   -141833238
      */
     virtual bool canContinueToUse();
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@TargetGoal@@UEAAXXZ
-     * @hash   -1821345707
+     * @hash   -1821299579
      */
     virtual void start();
     /**
@@ -68,13 +68,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?tick@TargetGoal@@UEAAXXZ
-     * @hash   -2026817728
+     * @hash   -2026771600
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@TargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   710044372
+     * @hash   710090500
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
@@ -90,44 +90,44 @@ public:
     /**
      * @vftbl  10
      * @symbol ?_canAttack@TargetGoal@@MEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
-     * @hash   1212268191
+     * @hash   1212314319
      */
     virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
     /**
      * @symbol ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
-     * @hash   81100863
+     * @hash   81146991
      */
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
     /**
      * @symbol ??0TargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_NH2M2H@Z
-     * @hash   1638141242
+     * @hash   1638187370
      */
     MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
 
 //protected:
     /**
      * @symbol ?_canAttack@TargetGoal@@IEAA_NPEAVActor@@_NPEAPEBUMobDescriptor@@@Z
-     * @hash   95289454
+     * @hash   95335582
      */
     MCAPI bool _canAttack(class Actor *, bool, struct MobDescriptor const **);
     /**
      * @symbol ?_canReach@TargetGoal@@IEAA_NAEAVActor@@@Z
-     * @hash   709783628
+     * @hash   709829756
      */
     MCAPI bool _canReach(class Actor &);
     /**
      * @symbol ?_canReachAfterDelay@TargetGoal@@IEAA_NAEAVActor@@@Z
-     * @hash   -1849670475
+     * @hash   -1849624347
      */
     MCAPI bool _canReachAfterDelay(class Actor &);
     /**
      * @symbol ?_matchesTargetTypes@TargetGoal@@IEAA_NPEAVMob@@PEAVActor@@_NPEAPEBUMobDescriptor@@@Z
-     * @hash   1732545685
+     * @hash   1732591813
      */
     MCAPI bool _matchesTargetTypes(class Mob *, class Actor *, bool, struct MobDescriptor const **);
     /**
      * @symbol ?_withinRange@TargetGoal@@IEAA_NAEBVActor@@@Z
-     * @hash   254968392
+     * @hash   255014520
      */
     MCAPI bool _withinRange(class Actor const &);
 

@@ -25,52 +25,52 @@ class GameVersion {
 public:
     /**
      * @symbol ??0GameVersion@@QEAA@AEBV0@@Z
-     * @hash   721337665
+     * @hash   721383793
      */
     MCAPI GameVersion(class GameVersion const &);
     /**
      * @symbol ??0GameVersion@@QEAA@XZ
-     * @hash   -301012766
+     * @hash   -300966638
      */
     MCAPI GameVersion();
     /**
      * @symbol ??0GameVersion@@QEAA@IIIII@Z
-     * @hash   1656369523
+     * @hash   1656415651
      */
     MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
     /**
      * @symbol ??0GameVersion@@QEAA@AEBVListTag@@@Z
-     * @hash   -896741877
+     * @hash   -896695749
      */
     MCAPI GameVersion(class ListTag const &);
     /**
      * @symbol ?asString@GameVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1990839074
+     * @hash   1990885202
      */
     MCAPI std::string const & asString() const;
     /**
      * @symbol ??MGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   1493667042
+     * @hash   1493713170
      */
     MCAPI bool operator<(class GameVersion const &) const;
     /**
      * @symbol ??4GameVersion@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1015996836
+     * @hash   -1015166532
      */
     MCAPI class GameVersion & operator=(class GameVersion const &);
     /**
      * @symbol ??4GameVersion@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1093021904
+     * @hash   -1092975776
      */
     MCAPI class GameVersion & operator=(class GameVersion &&);
     /**
      * @symbol ??PGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1528915414
+     * @hash   -1528869286
      */
     MCAPI bool operator>=(class GameVersion const &) const;
     /**
      * @symbol ?serialize@GameVersion@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   1385263170
+     * @hash   1385309298
      */
     MCAPI std::unique_ptr<class ListTag> serialize() const;
     /**
@@ -80,7 +80,7 @@ public:
     MCAPI ~GameVersion();
     /**
      * @symbol ?current@GameVersion@@SA?AV1@XZ
-     * @hash   -696843971
+     * @hash   -696797843
      */
     MCAPI static class GameVersion current();
 

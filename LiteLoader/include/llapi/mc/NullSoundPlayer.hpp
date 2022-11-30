@@ -98,12 +98,12 @@ public:
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -585176490
+     * @hash   -585130362
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -584252969
+     * @hash   -584206841
      */
     virtual void __unk_vfn_14();
     /**
@@ -120,7 +120,7 @@ public:
     /**
      * @vftbl  17
      * @symbol ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
-     * @hash   -593679503
+     * @hash   -593633375
      */
     virtual unsigned __int64 registerLoop(std::string const &, class std::function<void (struct LoopingSoundState &)>, float, float);
     /**
@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -579635364
+     * @hash   -579589236
      */
     virtual void __unk_vfn_19();
     /**
@@ -146,13 +146,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z
-     * @hash   1705332509
+     * @hash   1705378637
      */
     virtual class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64) const;
     /**
      * @vftbl  23
      * @symbol ?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z
-     * @hash   1925107037
+     * @hash   1925153165
      */
     virtual class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSOUNDPLAYER
@@ -193,12 +193,12 @@ public:
     MCVAPI bool isPlayingSound(unsigned __int64) const;
     /**
      * @symbol ?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-     * @hash   1793988034
+     * @hash   1794034162
      */
     MCVAPI unsigned __int64 play(std::string const &, class Vec3 const &, float, float);
     /**
      * @symbol ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z
-     * @hash   317236170
+     * @hash   317282298
      */
     MCVAPI unsigned __int64 playAttached(std::string const &, class std::function<void (struct SoundInstanceProperties &)> &&);
     /**
@@ -213,7 +213,7 @@ public:
     MCVAPI void playMusic(std::string const &, float);
     /**
      * @symbol ?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
-     * @hash   1548474108
+     * @hash   1548520236
      */
     MCVAPI unsigned __int64 playUI(std::string const &, float, float);
     /**

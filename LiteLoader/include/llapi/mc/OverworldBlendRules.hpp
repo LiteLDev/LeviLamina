@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OverworldBlendRules@@QEAA@XZ
-     * @hash   1921701264
+     * @hash   1922531568
      */
     MCAPI ~OverworldBlendRules();
 

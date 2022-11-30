@@ -37,25 +37,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onMakeObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   1020715576
+     * @hash   1021545880
      */
     virtual void onMakeObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  2
      * @symbol ?onDestroyObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   179518262
+     * @hash   180348566
      */
     virtual void onDestroyObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  3
      * @symbol ?onTrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   -1108961385
+     * @hash   -1108131081
      */
     virtual void onTrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  4
      * @symbol ?onUntrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   2047625406
+     * @hash   2048455710
      */
     virtual void onUntrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
@@ -82,24 +82,24 @@ public:
 #endif
     /**
      * @symbol ??0ScriptPluginHandleCounter@@QEAA@AEAVScriptPlugin@@@Z
-     * @hash   1110867933
+     * @hash   1111698237
      */
     MCAPI ScriptPluginHandleCounter(class ScriptPlugin &);
     /**
      * @symbol ?getName@ScriptPluginHandleCounter@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1809992656
+     * @hash   1810822960
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getScriptPlugin@ScriptPluginHandleCounter@@QEAAAEAVScriptPlugin@@XZ
-     * @hash   -984683548
+     * @hash   -984637420
      */
     MCAPI class ScriptPlugin & getScriptPlugin();
 
 //private:
     /**
      * @symbol ?_getOrMakeStats@ScriptPluginHandleCounter@@AEAAPEAUTypeStats@1@Vmeta_type@entt@@@Z
-     * @hash   1319521455
+     * @hash   1320351759
      */
     MCAPI struct ScriptPluginHandleCounter::TypeStats * _getOrMakeStats(class entt::meta_type);
 

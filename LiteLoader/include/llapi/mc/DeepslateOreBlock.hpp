@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@DeepslateOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   981895702
+     * @hash   982726006
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -231,18 +231,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@DeepslateOreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -97671154
+     * @hash   -96840850
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DeepslateOreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1942696346
+     * @hash   -1941866042
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0DeepslateOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   610122518
+     * @hash   610952822
      */
     MCAPI DeepslateOreBlock(std::string const &, int);
 

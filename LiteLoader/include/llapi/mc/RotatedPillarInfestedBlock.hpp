@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@RotatedPillarInfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -1380657368
+     * @hash   -1379827064
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RotatedPillarInfestedBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   465777716
+     * @hash   466608020
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -236,7 +236,7 @@ public:
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0RotatedPillarInfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1830511885
+     * @hash   1831342189
      */
     MCAPI RotatedPillarInfestedBlock(std::string const &, int, class Material const &);
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@SoulSpeedEnchant@@UEBAHH@Z
-     * @hash   -1729684834
+     * @hash   -1728854530
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@SoulSpeedEnchant@@UEBAHH@Z
-     * @hash   -516731540
+     * @hash   -515901236
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@SoulSpeedEnchant@@UEBAHXZ
-     * @hash   -1955576388
+     * @hash   -1955530260
      */
     virtual int getMaxLevel() const;
     /**
@@ -88,7 +88,7 @@ public:
 #endif
     /**
      * @symbol ??0SoulSpeedEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   1842997844
+     * @hash   1843828148
      */
     MCAPI SoulSpeedEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     /**
@@ -98,22 +98,22 @@ public:
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     /**
      * @symbol ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
-     * @hash   -1385740057
+     * @hash   -1384909753
      */
     MCAPI static int getLevel(class Actor const &);
     /**
      * @symbol ?getSpeedBoost@SoulSpeedEnchant@@SAMH@Z
-     * @hash   -1546950277
+     * @hash   -1546119973
      */
     MCAPI static float getSpeedBoost(int);
     /**
      * @symbol ?isActive@SoulSpeedEnchant@@SA_NAEBVActor@@@Z
-     * @hash   1466726465
+     * @hash   1467556769
      */
     MCAPI static bool isActive(class Actor const &);
     /**
      * @symbol ?shouldSpawnParticles@SoulSpeedEnchant@@SA_NAEBVActor@@@Z
-     * @hash   474452855
+     * @hash   475283159
      */
     MCAPI static bool shouldSpawnParticles(class Actor const &);
 

@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -432853780
+     * @hash   -432023476
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
@@ -49,29 +49,29 @@ public:
     virtual bool isValid() const;
     /**
      * @symbol ?postProcessMobsAt@StructureStart@@QEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -634894380
+     * @hash   -634064076
      */
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 //protected:
     /**
      * @symbol ?calculateBoundingBox@StructureStart@@IEAAXXZ
-     * @hash   -1781183771
+     * @hash   -1780353467
      */
     MCAPI void calculateBoundingBox();
     /**
      * @symbol ?moveBoundingBoxes@StructureStart@@IEAAXH@Z
-     * @hash   1527442695
+     * @hash   1528272999
      */
     MCAPI void moveBoundingBoxes(int);
     /**
      * @symbol ?moveInsideHeights@StructureStart@@IEAAXAEAVRandom@@FF@Z
-     * @hash   1118344150
+     * @hash   1119174454
      */
     MCAPI void moveInsideHeights(class Random &, short, short);
     /**
      * @symbol ?moveToBelowSeaLevel@StructureStart@@IEAAXFFAEAVRandom@@H@Z
-     * @hash   499836596
+     * @hash   500666900
      */
     MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 

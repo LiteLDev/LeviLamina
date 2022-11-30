@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@PrismarineBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -260376490
+     * @hash   -259546186
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@PrismarineBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   508833475
+     * @hash   509663779
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -237,12 +237,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PrismarineBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1034304723
+     * @hash   -1033474419
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0PrismarineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1909811459
+     * @hash   -1908981155
      */
     MCAPI PrismarineBlock(std::string const &, int);
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@TorchBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   678093585
+     * @hash   678923889
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@TorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1301930143
+     * @hash   1302760447
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1672726269
+     * @hash   -1671895965
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@TorchBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -257959824
+     * @hash   -257129520
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -214,19 +214,19 @@ public:
     /**
      * @vftbl  132
      * @symbol ?getIconYOffset@TorchBlock@@UEBAHXZ
-     * @hash   1079939783
+     * @hash   1080770087
      */
     virtual int getIconYOffset() const;
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@TorchBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -919371493
+     * @hash   -918541189
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   608239302
+     * @hash   609069606
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -447027453
+     * @hash   -446197149
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1621867545
+     * @hash   -1621037241
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -274,13 +274,13 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@TorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1823176929
+     * @hash   -1822346625
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@TorchBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1183771398
+     * @hash   -1183725270
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -302,19 +302,19 @@ public:
 #endif
     /**
      * @symbol ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
-     * @hash   300353106
+     * @hash   301183410
      */
     MCAPI TorchBlock(std::string const &, int, enum class MaterialType);
 
 //protected:
     /**
      * @symbol ?_flameParticlePos@TorchBlock@@IEBA?AVVec3@@AEBVBlockPos@@W4TorchFacing@@@Z
-     * @hash   -21603353
+     * @hash   -20773049
      */
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum class TorchFacing) const;
     /**
      * @symbol ?canBePlacedOn@TorchBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   2034869763
+     * @hash   2035700067
      */
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
 
@@ -325,12 +325,12 @@ protected:
 private:
     /**
      * @symbol ?DATA_FROM_FACING@TorchBlock@@0QBW4TorchFacing@@B
-     * @hash   -1680918105
+     * @hash   -1680795097
      */
     MCAPI static enum class TorchFacing const DATA_FROM_FACING[];
     /**
      * @symbol ?FACING_FROM_DATA@TorchBlock@@0QBGB
-     * @hash   366971493
+     * @hash   367094501
      */
     MCAPI static unsigned short const FACING_FROM_DATA[];
 

@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?initialize@IsStunnedDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -863710690
+     * @hash   -863618434
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsStunnedDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   1690204732
+     * @hash   1690296988
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsStunnedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsStunnedDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1368077894
+     * @hash   1368170150
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsStunnedDefinition>> &);
 

@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@CompoundItem@@UEBA_NH@Z
-     * @hash   -1374073916
+     * @hash   -1373243612
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -100,77 +100,77 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@CompoundItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -1268848404
+     * @hash   -1268018100
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@CompoundItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -658048004
+     * @hash   -657217700
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@CompoundItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -978924043
+     * @hash   -978093739
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @symbol ??0CompoundItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVExperiments@@@Z
-     * @hash   -1508234987
+     * @hash   -1507404683
      */
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
     /**
      * @symbol ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
-     * @hash   1377568651
+     * @hash   1378398955
      */
     MCAPI static enum class CompoundType getCompoundType(class ItemDescriptor const &);
     /**
      * @symbol ?getIngredientForCompound@CompoundItem@@SA?AVRecipeIngredient@@W4CompoundType@@@Z
-     * @hash   1122796645
+     * @hash   1123626949
      */
     MCAPI static class RecipeIngredient getIngredientForCompound(enum class CompoundType);
     /**
      * @symbol ?getItemForCompound@CompoundItem@@SA?AVItemInstance@@W4CompoundType@@H@Z
-     * @hash   1418462
+     * @hash   2248766
      */
     MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int);
     /**
      * @symbol ?isCompoundItem@CompoundItem@@SA_NAEBVItemStackBase@@@Z
-     * @hash   80037505
+     * @hash   80867809
      */
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
     /**
      * @symbol ?unregisterSpecialCompounds@CompoundItem@@SAXXZ
-     * @hash   -1726668269
+     * @hash   -1725837965
      */
     MCAPI static void unregisterSpecialCompounds();
 
 //private:
     /**
      * @symbol ?_registerSpecialCompound@CompoundItem@@AEAAXAEBVItemInstance@@W4CompoundType@@@Z
-     * @hash   851214630
+     * @hash   852044934
      */
     MCAPI void _registerSpecialCompound(class ItemInstance const &, enum class CompoundType);
     /**
      * @symbol ?_registerSpecialCompounds@CompoundItem@@AEAAXAEBVExperiments@@@Z
-     * @hash   837385412
+     * @hash   838215716
      */
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     /**
      * @symbol ?_getName@CompoundItem@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CompoundType@@@Z
-     * @hash   314666475
+     * @hash   315496779
      */
     MCAPI static std::string _getName(enum class CompoundType);
 

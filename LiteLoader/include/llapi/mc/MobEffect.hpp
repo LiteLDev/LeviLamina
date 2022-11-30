@@ -77,25 +77,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?applyEffects@MobEffect@@UEBAXPEAVActor@@HH@Z
-     * @hash   1977368488
+     * @hash   1977414616
      */
     virtual void applyEffects(class Actor *, int, int) const;
     /**
      * @vftbl  2
      * @symbol ?removeEffects@MobEffect@@UEAAXPEAVActor@@@Z
-     * @hash   -1141144785
+     * @hash   -1141098657
      */
     virtual void removeEffects(class Actor *);
     /**
      * @vftbl  3
      * @symbol ?updateEffects@MobEffect@@UEAAXPEAVActor@@HH@Z
-     * @hash   -1068660108
+     * @hash   -1068613980
      */
     virtual void updateEffects(class Actor *, int, int);
     /**
      * @vftbl  4
      * @symbol ?applyInstantaneousEffect@MobEffect@@UEBAXPEAVActor@@00HM@Z
-     * @hash   1241945446
+     * @hash   1241991574
      */
     virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
     /**
@@ -107,32 +107,32 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getAttributeModifierValue@MobEffect@@UEBAMHAEBVAttributeModifier@@@Z
-     * @hash   -1917952872
+     * @hash   -1917906744
      */
     virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
     /**
      * @symbol ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01AEBUFactorCalculationData@0@@Z
-     * @hash   -503140005
+     * @hash   -503093877
      */
     MCAPI MobEffect(unsigned int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);
     /**
      * @symbol ?addAttributeBuff@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeBuff@@@std@@@Z
-     * @hash   -1879761956
+     * @hash   -1879715828
      */
     MCAPI void addAttributeBuff(class Attribute const &, class std::shared_ptr<class AttributeBuff>);
     /**
      * @symbol ?addAttributeModifier@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@Z
-     * @hash   -181702500
+     * @hash   -181656372
      */
     MCAPI void addAttributeModifier(class Attribute const &, class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?getColor@MobEffect@@QEBAAEBVColor@mce@@XZ
-     * @hash   -1468515932
+     * @hash   -1468469804
      */
     MCAPI class mce::Color const & getColor() const;
     /**
      * @symbol ?getComponentName@MobEffect@@QEBAAEBVHashedString@@XZ
-     * @hash   2119950542
+     * @hash   2119996670
      */
     MCAPI class HashedString const & getComponentName() const;
     /**
@@ -142,42 +142,42 @@ public:
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ?getDurationModifier@MobEffect@@QEBAMXZ
-     * @hash   1808653976
+     * @hash   1808700104
      */
     MCAPI float getDurationModifier() const;
     /**
      * @symbol ?getFactorCalculationData@MobEffect@@QEBAAEBUFactorCalculationData@1@XZ
-     * @hash   -1538402070
+     * @hash   -1538355942
      */
     MCAPI struct MobEffect::FactorCalculationData const & getFactorCalculationData() const;
     /**
      * @symbol ?getId@MobEffect@@QEBAIXZ
-     * @hash   2127781636
+     * @hash   2127827764
      */
     MCAPI unsigned int getId() const;
     /**
      * @symbol ?getResourceName@MobEffect@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1803803428
+     * @hash   -1803757300
      */
     MCAPI std::string const & getResourceName() const;
     /**
      * @symbol ?isHarmful@MobEffect@@QEBA_NXZ
-     * @hash   1289096300
+     * @hash   1289142428
      */
     MCAPI bool isHarmful() const;
     /**
      * @symbol ?isVisible@MobEffect@@QEBA_NXZ
-     * @hash   1184827420
+     * @hash   1184873548
      */
     MCAPI bool isVisible() const;
     /**
      * @symbol ?setDurationAmplifier@MobEffect@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-     * @hash   220538595
+     * @hash   220584723
      */
     MCAPI void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /**
      * @symbol ?setValueAmplifier@MobEffect@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-     * @hash   -140099563
+     * @hash   -140053435
      */
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     /**
@@ -347,22 +347,22 @@ public:
     MCAPI static class MobEffect * WITHER;
     /**
      * @symbol ?getById@MobEffect@@SAPEAV1@I@Z
-     * @hash   -498177782
+     * @hash   -498131654
      */
     MCAPI static class MobEffect * getById(unsigned int);
     /**
      * @symbol ?getByName@MobEffect@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1412799526
+     * @hash   1412845654
      */
     MCAPI static class MobEffect * getByName(std::string const &);
     /**
      * @symbol ?getNameById@MobEffect@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
-     * @hash   -713444731
+     * @hash   -713398603
      */
     MCAPI static std::string getNameById(unsigned int);
     /**
      * @symbol ?initEffects@MobEffect@@SAXPEAVResourcePackManager@@AEBVExperiments@@@Z
-     * @hash   -324143250
+     * @hash   -324097122
      */
     MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
     /**
@@ -372,31 +372,31 @@ public:
     MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     /**
      * @symbol ?shutdownEffects@MobEffect@@SAXXZ
-     * @hash   1111157451
+     * @hash   1111203579
      */
     MCAPI static void shutdownEffects();
 
 //protected:
     /**
      * @symbol ?_createAttributeModifer@MobEffect@@IEBA?AVAttributeModifier@@AEBV2@H@Z
-     * @hash   -831541173
+     * @hash   -831495045
      */
     MCAPI class AttributeModifier _createAttributeModifer(class AttributeModifier const &, int) const;
     /**
      * @symbol ?_createInstantBuff@MobEffect@@IEBA?AVInstantaneousAttributeBuff@@AEBVAttributeBuff@@HM@Z
-     * @hash   -1411541215
+     * @hash   -1411495087
      */
     MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const &, int, float) const;
     /**
      * @symbol ?_createTemporalBuff@MobEffect@@IEBA?AVTemporalAttributeBuff@@AEBVAttributeBuff@@HH@Z
-     * @hash   -1769118197
+     * @hash   -1769072069
      */
     MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const &, int, int) const;
 
 //private:
     /**
      * @symbol ?darknessEffectFactorUpdate@MobEffect@@CAXAEAUFactorCalculationData@1@H@Z
-     * @hash   34186094
+     * @hash   34232222
      */
     MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
 

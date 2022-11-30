@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@Feature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1359860983
+     * @hash   1360691287
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
@@ -56,19 +56,19 @@ public:
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
     /**
      * @symbol ??0Feature@@QEAA@PEAVActor@@@Z
-     * @hash   -56606710
+     * @hash   -55776406
      */
     MCAPI Feature(class Actor *);
 
 //protected:
     /**
      * @symbol ?_placeBlock@Feature@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -502687647
+     * @hash   -501857343
      */
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?_setManuallyPlaced@Feature@@IEAAXPEAVActor@@@Z
-     * @hash   -1631326621
+     * @hash   -1630496317
      */
     MCAPI void _setManuallyPlaced(class Actor *);
 

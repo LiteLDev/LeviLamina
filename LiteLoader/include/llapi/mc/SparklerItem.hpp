@@ -106,57 +106,57 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@SparklerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   801324859
+     * @hash   802155163
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  101
      * @symbol ?inventoryTick@SparklerItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-     * @hash   1307692671
+     * @hash   1308522975
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@SparklerItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1450216715
+     * @hash   1451047019
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@SparklerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -508834410
+     * @hash   -508004106
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
-     * @hash   -911095846
+     * @hash   -910265542
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @symbol ??0SparklerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1432957069
+     * @hash   1433787373
      */
     MCAPI SparklerItem(std::string const &, int);
     /**
      * @symbol ?COLORS@SparklerItem@@2QBUColorInfo@1@B
-     * @hash   -1337332399
+     * @hash   -1337209391
      */
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     /**
      * @symbol ?MAX_ACTIVE_TICKS@SparklerItem@@2HB
-     * @hash   -293422455
+     * @hash   -293299447
      */
     MCAPI static int const MAX_ACTIVE_TICKS;
 

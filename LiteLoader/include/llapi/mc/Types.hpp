@@ -426,9 +426,6 @@ public:
     };
 };
 
-template <typename T1, typename T2, typename T3>
-class OwnerPtrFactory {};
-
 class ClientBlockPipeline {
 public:
     template <typename T>
@@ -436,16 +433,6 @@ public:
 
     struct BlockSchematic;
 };
-
-template <typename T>
-class WeakStorageSharePtr {
-public:
-    std::weak_ptr<T> mHandle;
-};
-
-template <typename T>
-class WeakRefT : public WeakStorageSharePtr<T> {};
-
 
 struct ISurfaceBuilder {
     struct BuildParameters;
@@ -605,9 +592,11 @@ public:
     }
 };
 
+template <typename T>
+class WeakRefT;
 
 template <typename T>
-struct SharePtrRefTraits {};
+struct SharePtrRefTraits;
 
 template <typename T>
 class SubChunkStorage;

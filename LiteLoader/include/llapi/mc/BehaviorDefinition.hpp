@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BehaviorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-     * @hash   -1091912465
+     * @hash   -1091866337
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
     /**
      * @vftbl  2
      * @symbol ?createNode@BehaviorDefinition@@UEBA?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@AEAVActor@@AEBVBehaviorFactory@@PEAVBehaviorNode@@PEAVBehaviorData@@@Z
-     * @hash   1729250052
+     * @hash   1729342308
      */
     virtual std::unique_ptr<class BehaviorNode> createNode(class Actor &, class BehaviorFactory const &, class BehaviorNode *, class BehaviorData *) const;
     /**
      * @symbol ?getTreeDefinition@BehaviorDefinition@@QEBA?AVBehaviorTreeDefinitionPtr@@XZ
-     * @hash   -562572848
+     * @hash   -562480592
      */
     MCAPI class BehaviorTreeDefinitionPtr getTreeDefinition() const;
 

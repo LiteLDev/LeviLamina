@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@RecordItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1925076171
+     * @hash   1925906475
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -100,18 +100,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@RecordItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -729845258
+     * @hash   -729014954
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
@@ -123,17 +123,17 @@ public:
 #endif
     /**
      * @symbol ??0RecordItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4LevelSoundEvent@@@Z
-     * @hash   1881478899
+     * @hash   1882309203
      */
     MCAPI RecordItem(std::string const &, int, enum class LevelSoundEvent);
     /**
      * @symbol ?getDuration@RecordItem@@QEBAMXZ
-     * @hash   -1515920524
+     * @hash   -1515090220
      */
     MCAPI float getDuration() const;
     /**
      * @symbol ?getSound@RecordItem@@QEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1099198284
+     * @hash   1100028588
      */
     MCAPI enum class LevelSoundEvent getSound() const;
 

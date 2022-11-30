@@ -31,12 +31,12 @@ public:
     /**
      * @vftbl  0
      * @symbol ?doValidate@SemVersionConstraint@@EEBA_NAEBVmeta_any@entt@@AEAVSerializerContext@@@Z
-     * @hash   1101754594
+     * @hash   1102584898
      */
     virtual bool doValidate(class entt::meta_any const &, class SerializerContext &) const;
     /**
      * @symbol ?min@SemVersionConstraint@@QEAAAEAV1@AEBVSemVersion@@@Z
-     * @hash   -919879104
+     * @hash   -919048800
      */
     MCAPI class SemVersionConstraint & min(class SemVersion const &);
 

@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@WallClimberPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   225836757
+     * @hash   225882885
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  4
      * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-     * @hash   -832874490
+     * @hash   -832828362
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
      * @vftbl  5
      * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
-     * @hash   1516510827
+     * @hash   1516556955
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
      * @vftbl  7
      * @symbol ?moveTo@WallClimberPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
-     * @hash   -352903039
+     * @hash   -352856911
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /**
      * @vftbl  11
      * @symbol ?canUpdatePath@WallClimberPathNavigation@@MEBA_NAEBVMob@@@Z
-     * @hash   -500867799
+     * @hash   -500821671
      */
     virtual bool canUpdatePath(class Mob const &) const;
 

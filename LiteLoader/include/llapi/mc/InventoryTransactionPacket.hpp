@@ -44,40 +44,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@InventoryTransactionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1231553388
+     * @hash   -1231507260
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@InventoryTransactionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1624765631
+     * @hash   -1624719503
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@InventoryTransactionPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1116300314
+     * @hash   -1116254186
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@InventoryTransactionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -344094666
+     * @hash   -344048538
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0InventoryTransactionPacket@@QEAA@XZ
-     * @hash   1309039062
+     * @hash   1309085190
      */
     MCAPI InventoryTransactionPacket();
     /**
      * @symbol ??0InventoryTransactionPacket@@QEAA@V?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@_N@Z
-     * @hash   -1948776716
+     * @hash   -1948730588
      */
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     /**
      * @symbol ?postLoadItems@InventoryTransactionPacket@@QEBAXAEAVBlockPalette@@_N@Z
-     * @hash   -1180887927
+     * @hash   -1180841799
      */
     MCAPI void postLoadItems(class BlockPalette &, bool) const;
 

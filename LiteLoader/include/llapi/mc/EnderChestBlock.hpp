@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@EnderChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1875518249
+     * @hash   1876348553
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -231,7 +231,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@EnderChestBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1221144334
+     * @hash   -1220314030
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCK
@@ -243,7 +243,7 @@ public:
 #endif
     /**
      * @symbol ??0EnderChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -24950046
+     * @hash   -24119742
      */
     MCAPI EnderChestBlock(std::string const &, int);
 

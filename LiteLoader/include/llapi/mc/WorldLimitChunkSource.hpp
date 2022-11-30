@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getExistingChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   1834232837
+     * @hash   1835063141
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
      * @vftbl  7
      * @symbol ?createNewChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
-     * @hash   -326256365
+     * @hash   -325426061
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  22
      * @symbol ?isWithinWorldLimit@WorldLimitChunkSource@@UEBA_NAEBVChunkPos@@@Z
-     * @hash   -1486467071
+     * @hash   -1485636767
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
@@ -62,7 +62,7 @@ public:
     virtual bool canCreateViews() const;
     /**
      * @symbol ??0WorldLimitChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEBVBlockPos@@HH@Z
-     * @hash   26945239
+     * @hash   27775543
      */
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 

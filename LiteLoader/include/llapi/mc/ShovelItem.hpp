@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?executeEvent@ShovelItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     * @hash   -827697669
+     * @hash   -826867365
      */
     virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /**
@@ -67,7 +67,7 @@ public:
     /**
      * @vftbl  44
      * @symbol ?canDestroySpecial@ShovelItem@@UEBA_NAEBVBlock@@@Z
-     * @hash   -1580092855
+     * @hash   -1579262551
      */
     virtual bool canDestroySpecial(class Block const &) const;
     /**
@@ -83,7 +83,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@ShovelItem@@UEBAHXZ
-     * @hash   422696054
+     * @hash   423526358
      */
     virtual int getEnchantSlot() const;
     /**
@@ -113,23 +113,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   409782205
+     * @hash   410612509
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0ShovelItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-     * @hash   998721331
+     * @hash   999551635
      */
     MCAPI ShovelItem(std::string const &, int, class Item::Tier const &);
 

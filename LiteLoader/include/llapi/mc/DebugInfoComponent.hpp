@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  30
      * @symbol ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
-     * @hash   241051138
+     * @hash   241097266
      */
     virtual enum class EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
     /**
@@ -198,12 +198,12 @@ public:
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     /**
      * @symbol ?addListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   866450690
+     * @hash   866496818
      */
     MCAPI void addListener(class HashedString const &, class NetworkIdentifier, enum class SubClientId);
     /**
      * @symbol ?listenersEmpty@DebugInfoComponent@@QEBA_NXZ
-     * @hash   715561362
+     * @hash   715607490
      */
     MCAPI bool listenersEmpty() const;
     /**
@@ -213,7 +213,7 @@ public:
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     /**
      * @symbol ?removeListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   1209059264
+     * @hash   1209105392
      */
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, enum class SubClientId);
 

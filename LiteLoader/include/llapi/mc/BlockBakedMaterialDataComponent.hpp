@@ -37,7 +37,7 @@ public:
     MCAPI bool isSolidOpaque() const;
     /**
      * @symbol ??4BlockBakedMaterialDataComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   346497884
+     * @hash   347328188
      */
     MCAPI struct BlockBakedMaterialDataComponent & operator=(struct BlockBakedMaterialDataComponent &&);
 

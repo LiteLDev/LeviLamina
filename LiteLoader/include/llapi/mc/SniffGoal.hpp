@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SniffGoal@@UEAA_NXZ
-     * @hash   -2070598385
+     * @hash   -2070552257
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SniffGoal@@UEAA_NXZ
-     * @hash   1996303533
+     * @hash   1996349661
      */
     virtual bool canContinueToUse();
     /**
@@ -53,13 +53,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SniffGoal@@UEAAXXZ
-     * @hash   -2052185192
+     * @hash   -2052139064
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SniffGoal@@UEAAXXZ
-     * @hash   292651976
+     * @hash   292698104
      */
     virtual void stop();
     /**
@@ -71,24 +71,24 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SniffGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1440851743
+     * @hash   -1440805615
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SniffGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -2112429508
+     * @hash   -2112383380
      */
     MCAPI SniffGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_fetchNearbySniffableActors@SniffGoal@@AEBA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@W4ActorType@@@Z
-     * @hash   1335505484
+     * @hash   1335551612
      */
     MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum class ActorType) const;
     /**
      * @symbol ?_fetchNearestSniffableActor@SniffGoal@@AEBA?AV?$optional@UDistanceSortedActor@@@std@@XZ
-     * @hash   -981940602
+     * @hash   -981894474
      */
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
 

@@ -118,37 +118,37 @@ public:
 private:
     /**
      * @symbol ?CHEW_CHANCE@SnackGoal@@0HB
-     * @hash   -2000024489
+     * @hash   -1999901481
      */
     MCAPI static int const CHEW_CHANCE;
     /**
      * @symbol ?EATING_TIME@SnackGoal@@0HB
-     * @hash   -480111271
+     * @hash   -479988263
      */
     MCAPI static int const EATING_TIME;
     /**
      * @symbol ?PATH_RANGE@SnackGoal@@0MB
-     * @hash   -969721311
+     * @hash   -969598303
      */
     MCAPI static float const PATH_RANGE;
     /**
      * @symbol ?RANDOM_EATING_END@SnackGoal@@0HB
-     * @hash   544286581
+     * @hash   544409589
      */
     MCAPI static int const RANDOM_EATING_END;
     /**
      * @symbol ?RANDOM_EATING_START@SnackGoal@@0HB
-     * @hash   -915801640
+     * @hash   -915678632
      */
     MCAPI static int const RANDOM_EATING_START;
     /**
      * @symbol ?SEARCH_SIZE@SnackGoal@@0MB
-     * @hash   2025743242
+     * @hash   2025866250
      */
     MCAPI static float const SEARCH_SIZE;
     /**
      * @symbol ?STOP_DIST_SQRD@SnackGoal@@0MB
-     * @hash   -926002654
+     * @hash   -925879646
      */
     MCAPI static float const STOP_DIST_SQRD;
 

@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   872844518
+     * @hash   872890646
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -2092194471
+     * @hash   -2092148343
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  48
      * @symbol ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
-     * @hash   1419068949
+     * @hash   1419115077
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
@@ -79,7 +79,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@AbstractArrow@@UEBAMXZ
-     * @hash   -1769551057
+     * @hash   -1769504929
      */
     virtual float getShadowRadius() const;
     /**
@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
-     * @hash   -192842747
+     * @hash   -192796619
      */
     virtual void playerTouch(class Player &);
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
-     * @hash   1057607928
+     * @hash   1057654056
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -183,13 +183,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   719560681
+     * @hash   719606809
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -1340907180
+     * @hash   -1340861052
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -205,13 +205,13 @@ public:
     /**
      * @vftbl  282
      * @symbol ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
-     * @hash   1654590327
+     * @hash   1654636455
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
      * @vftbl  283
      * @symbol ?_playPickupSound@AbstractArrow@@MEAAXXZ
-     * @hash   -1713205575
+     * @hash   -1713159447
      */
     virtual void _playPickupSound();
     /**
@@ -222,29 +222,29 @@ public:
     virtual class ItemStack _getPickupItem() const = 0;
     /**
      * @symbol ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1361672173
+     * @hash   -1361626045
      */
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?isPlayerOwned@AbstractArrow@@QEBA_NXZ
-     * @hash   -1948128480
+     * @hash   -1948082352
      */
     MCAPI bool isPlayerOwned() const;
     /**
      * @symbol ?setFavoredSlot@AbstractArrow@@QEAAXH@Z
-     * @hash   821603462
+     * @hash   821649590
      */
     MCAPI void setFavoredSlot(int);
     /**
      * @symbol ?setIsCreative@AbstractArrow@@QEAAX_N@Z
-     * @hash   -1076859444
+     * @hash   -1076813316
      */
     MCAPI void setIsCreative(bool);
 
 //protected:
     /**
      * @symbol ?_canPickup@AbstractArrow@@IEBA_NAEBVPlayer@@@Z
-     * @hash   389152596
+     * @hash   389198724
      */
     MCAPI bool _canPickup(class Player const &) const;
 

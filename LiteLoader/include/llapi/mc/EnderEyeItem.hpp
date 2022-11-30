@@ -100,23 +100,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@EnderEyeItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   487563170
+     * @hash   488393474
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @symbol ??0EnderEyeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -713716358
+     * @hash   -712886054
      */
     MCAPI EnderEyeItem(std::string const &, int);
 

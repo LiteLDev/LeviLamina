@@ -45,19 +45,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1742890815
+     * @hash   -1742060511
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -175745616
+     * @hash   -174915312
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1861459482
+     * @hash   1862289786
      */
     virtual void tick(class BlockSource &);
     /**
@@ -102,49 +102,49 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0BeehiveBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1607841331
+     * @hash   -1607011027
      */
     MCAPI BeehiveBlockActor(class BlockPos const &);
     /**
      * @symbol ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
-     * @hash   1937408807
+     * @hash   1938239111
      */
     MCAPI void disableBeeSpawn();
     /**
      * @symbol ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   -288286205
+     * @hash   -287455901
      */
     MCAPI void evictAll(class BlockSource &, bool);
     /**
      * @symbol ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   998442068
+     * @hash   999272372
      */
     MCAPI void saveUserData(class CompoundTag &) const;
     /**
      * @symbol ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
-     * @hash   1700752691
+     * @hash   1701582995
      */
     MCAPI bool tryAdmit(class Actor &);
     /**
      * @symbol ?MAX_OCCUPANCY@BeehiveBlockActor@@2IB
-     * @hash   -1660332063
+     * @hash   -1660209055
      */
     MCAPI static unsigned int const MAX_OCCUPANCY;
 
 //private:
     /**
      * @symbol ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
-     * @hash   1758263421
+     * @hash   1759093725
      */
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
     /**
      * @symbol ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
-     * @hash   -1494808935
+     * @hash   -1493978631
      */
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     /**
      * @symbol ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   599053298
+     * @hash   599883602
      */
     MCAPI void _trySpawnBees(class BlockSource &);
 

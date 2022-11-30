@@ -40,43 +40,43 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@ExternalFileLevelStorageSource@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2135430704
+     * @hash   2136261008
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?getLevelData@ExternalFileLevelStorageSource@@UEBA?AVLevelData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -939212734
+     * @hash   -938382430
      */
     virtual class LevelData getLevelData(std::string const &) const;
     /**
      * @vftbl  3
      * @symbol ?getLevelData@ExternalFileLevelStorageSource@@UEBA?AVResult@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
-     * @hash   86864652
+     * @hash   87694956
      */
     virtual class Core::Result getLevelData(std::string const &, class LevelData &) const;
     /**
      * @vftbl  4
      * @symbol ?saveLevelData@ExternalFileLevelStorageSource@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@@Z
-     * @hash   389390542
+     * @hash   390220846
      */
     virtual void saveLevelData(std::string const &, class LevelData const &);
     /**
      * @vftbl  5
      * @symbol ?getLevelList@ExternalFileLevelStorageSource@@UEAAXAEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@@Z
-     * @hash   1503367416
+     * @hash   1504197720
      */
     virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>> &);
     /**
      * @vftbl  6
      * @symbol ?createLevelStorage@ExternalFileLevelStorageSource@@UEAA?AV?$unique_ptr@VLevelStorage@@U?$default_delete@VLevelStorage@@@std@@@std@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@3@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@3@@Z
-     * @hash   -1968443105
+     * @hash   -1967612801
      */
     virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
     /**
      * @vftbl  7
      * @symbol ?createLevelLooseStorage@ExternalFileLevelStorageSource@@UEAA?AV?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -490200552
+     * @hash   -489370248
      */
     virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     /**
@@ -88,25 +88,25 @@ public:
     /**
      * @vftbl  9
      * @symbol ?deleteLevel@ExternalFileLevelStorageSource@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   417640021
+     * @hash   418470325
      */
     virtual void deleteLevel(std::string const &);
     /**
      * @vftbl  10
      * @symbol ?renameLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   149489574
+     * @hash   150319878
      */
     virtual bool renameLevel(std::string const &, std::string const &);
     /**
      * @vftbl  11
      * @symbol ?renameLevel@ExternalFileLevelStorageSource@@UEAAXAEAVLevelData@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1216074945
+     * @hash   1216905249
      */
     virtual void renameLevel(class LevelData &, class Core::Path const &, std::string const &);
     /**
      * @vftbl  12
      * @symbol ?createBackupCopyOfWorld@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-     * @hash   1820088724
+     * @hash   1820919028
      */
     virtual bool createBackupCopyOfWorld(std::string const &, std::string const &, std::string const &);
     /**
@@ -127,37 +127,37 @@ public:
     /**
      * @vftbl  16
      * @symbol ?isLevelMarkedForSync@ExternalFileLevelStorageSource@@UEBA_NAEBVPath@Core@@@Z
-     * @hash   1595326438
+     * @hash   1596156742
      */
     virtual bool isLevelMarkedForSync(class Core::Path const &) const;
     /**
      * @vftbl  17
      * @symbol ?isLevelPartiallyCopied@ExternalFileLevelStorageSource@@UEBA_NAEBVPath@Core@@@Z
-     * @hash   772579068
+     * @hash   773409372
      */
     virtual bool isLevelPartiallyCopied(class Core::Path const &) const;
     /**
      * @vftbl  18
      * @symbol ?getLevelDatFoundPath@ExternalFileLevelStorageSource@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
-     * @hash   -1364505328
+     * @hash   -1363675024
      */
     virtual class Core::PathBuffer<std::string> getLevelDatFoundPath(class Core::Path const &) const;
     /**
      * @vftbl  19
      * @symbol ?getBasePath@ExternalFileLevelStorageSource@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   1234733838
+     * @hash   1235564142
      */
     virtual class Core::PathBuffer<std::string> const getBasePath() const;
     /**
      * @vftbl  20
      * @symbol ?getPathToLevel@ExternalFileLevelStorageSource@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1269965306
+     * @hash   1270795610
      */
     virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const &) const;
     /**
      * @vftbl  21
      * @symbol ?getPathToLevelInfo@ExternalFileLevelStorageSource@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -84373730
+     * @hash   -83543426
      */
     virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALFILELEVELSTORAGESOURCE
@@ -184,7 +184,7 @@ public:
 #endif
     /**
      * @symbol ??0ExternalFileLevelStorageSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VSaveTransactionManager@@@Bedrock@@@2@@Z
-     * @hash   -1928507941
+     * @hash   -1927677637
      */
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
 

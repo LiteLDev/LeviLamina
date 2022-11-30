@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FleeSunGoal@@UEAA_NXZ
-     * @hash   -1678141001
+     * @hash   -1678094873
      */
     virtual bool canUse();
     /**
@@ -55,12 +55,12 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -75356871
+     * @hash   -75310743
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FleeSunGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   -2140314195
+     * @hash   -2140268067
      */
     MCAPI FleeSunGoal(class Mob &, float);
 

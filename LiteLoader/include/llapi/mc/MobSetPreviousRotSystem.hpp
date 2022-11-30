@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@MobSetPreviousRotSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1894968572
+     * @hash   -1894922444
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_setPreviousRotation@MobSetPreviousRotSystem@@CAXAEAVStrictEntityContext@@AEAUActorHeadRotationComponent@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@@Z
-     * @hash   -351248690
+     * @hash   -351202562
      */
     MCAPI static void _setPreviousRotation(class StrictEntityContext &, struct ActorHeadRotationComponent &, struct ActorRotationComponent &, struct MobBodyRotationComponent &);
 

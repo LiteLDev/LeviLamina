@@ -66,7 +66,7 @@ public:
     /**
      * @vftbl  47
      * @symbol ?getMaxDamage@TridentItem@@UEBAFXZ
-     * @hash   -1272276362
+     * @hash   -1271446058
      */
     virtual short getMaxDamage() const;
     /**
@@ -94,13 +94,13 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@TridentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   683807834
+     * @hash   684638138
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@TridentItem@@UEBAHXZ
-     * @hash   2146277671
+     * @hash   2147107975
      */
     virtual int getEnchantSlot() const;
     /**
@@ -136,58 +136,58 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@TridentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -386001015
+     * @hash   -385170711
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  85
      * @symbol ?dispense@TridentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   311023265
+     * @hash   311853569
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  87
      * @symbol ?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   280612999
+     * @hash   281443303
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
      * @vftbl  89
      * @symbol ?hurtActor@TridentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   1809769267
+     * @hash   1810599571
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ??0TridentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1800112893
+     * @hash   -1799282589
      */
     MCAPI TridentItem(std::string const &, int);
     /**
      * @symbol ?CHARGE_THRESHOLD_TIME@TridentItem@@2HB
-     * @hash   398961725
+     * @hash   399084733
      */
     MCAPI static int const CHARGE_THRESHOLD_TIME;
     /**
      * @symbol ?THROW_THRESHOLD_TIME@TridentItem@@2HB
-     * @hash   214948915
+     * @hash   215071923
      */
     MCAPI static int const THROW_THRESHOLD_TIME;
 
 //private:
     /**
      * @symbol ?_setupProjectile@TridentItem@@AEBAPEAVActor@@PEAV2@VItemStack@@_N@Z
-     * @hash   -1971257215
+     * @hash   -1970426911
      */
     MCAPI class Actor * _setupProjectile(class Actor *, class ItemStack, bool) const;
 

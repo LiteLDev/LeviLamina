@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createBoatPaddleInputSystemClient@BoatPaddleInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   2134459502
+     * @hash   2134505630
      */
     MCAPI static struct TickingSystemWithInfo createBoatPaddleInputSystemClient();
 

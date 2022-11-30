@@ -32,59 +32,59 @@ public:
 public:
     /**
      * @symbol ?aisle@BlockPatternBuilder@@QEAAAEAV1@HZZ
-     * @hash   1778950435
+     * @hash   1779780739
      */
     MCAPI class BlockPatternBuilder & aisle(int, ...);
     /**
      * @symbol ?build@BlockPatternBuilder@@QEAAAEAV1@XZ
-     * @hash   -1146279387
+     * @hash   -1145449083
      */
     MCAPI class BlockPatternBuilder & build();
     /**
      * @symbol ?define@BlockPatternBuilder@@QEAAAEAV1@DAEBVBlock@@@Z
-     * @hash   646871666
+     * @hash   647701970
      */
     MCAPI class BlockPatternBuilder & define(char, class Block const &);
     /**
      * @symbol ?define@BlockPatternBuilder@@QEAAAEAV1@DV?$function@$$A6A_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z@std@@@Z
-     * @hash   -663259044
+     * @hash   -662428740
      */
     MCAPI class BlockPatternBuilder & define(char, class std::function<bool (class BlockSource &, class BlockPos const &, class Block const &)>);
     /**
      * @symbol ?isReadyForMatch@BlockPatternBuilder@@QEAA_NXZ
-     * @hash   -1363641762
+     * @hash   -1363595634
      */
     MCAPI bool isReadyForMatch();
     /**
      * @symbol ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@@Z
-     * @hash   -1847407477
+     * @hash   -1846577173
      */
     MCAPI struct BuildMatch match(class BlockPos const &);
     /**
      * @symbol ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@HH@Z
-     * @hash   -1027898565
+     * @hash   -1027068261
      */
     MCAPI struct BuildMatch match(class BlockPos const &, int, int);
     /**
      * @symbol ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@HHEE@Z
-     * @hash   1318571595
+     * @hash   1319401899
      */
     MCAPI struct BuildMatch match(class BlockPos const &, int, int, unsigned char, unsigned char);
     /**
      * @symbol ?replaceBlocks@BlockPatternBuilder@@QEAAXDUBuildMatch@@AEBVBlock@@@Z
-     * @hash   -1231437895
+     * @hash   -1230607591
      */
     MCAPI void replaceBlocks(char, struct BuildMatch, class Block const &);
     /**
      * @symbol ?start@BlockPatternBuilder@@SA?AV?$unique_ptr@VBlockPatternBuilder@@U?$default_delete@VBlockPatternBuilder@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   607410645
+     * @hash   608240949
      */
     MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource &);
 
 //private:
     /**
      * @symbol ?_fitsBlockPatternEntry@BlockPatternBuilder@@AEAA_NHHAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1087851542
+     * @hash   1088681846
      */
     MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
 

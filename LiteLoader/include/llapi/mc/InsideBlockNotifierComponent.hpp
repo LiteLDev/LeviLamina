@@ -37,17 +37,17 @@ public:
     MCAPI std::vector<class InsideBlockEventMap> const & getBlockList() const;
     /**
      * @symbol ?isTrackedBlock@InsideBlockNotifierComponent@@QEBA_NAEBVBlock@@@Z
-     * @hash   -739860531
+     * @hash   -739814403
      */
     MCAPI bool isTrackedBlock(class Block const &) const;
     /**
      * @symbol ?resetBlocksInsideState@InsideBlockNotifierComponent@@QEAAXXZ
-     * @hash   -698234299
+     * @hash   -698188171
      */
     MCAPI void resetBlocksInsideState();
     /**
      * @symbol ?setInsideBlock@InsideBlockNotifierComponent@@QEAAXAEBVBlock@@_N@Z
-     * @hash   -591247655
+     * @hash   -591201527
      */
     MCAPI void setInsideBlock(class Block const &, bool);
 

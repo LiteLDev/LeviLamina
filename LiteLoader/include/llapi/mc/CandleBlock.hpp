@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CandleBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1238792826
+     * @hash   1239623130
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CandleBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   639664890
+     * @hash   640495194
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1507604053
+     * @hash   1508434357
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -237,36 +237,36 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@CandleBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   366637494
+     * @hash   367467798
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CandleBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2127299906
+     * @hash   -2126469602
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
-     * @hash   873906623
+     * @hash   874736927
      */
     virtual int _getNumCandles(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?_iterateCandles@CandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     * @hash   36210582
+     * @hash   37040886
      */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /**
      * @vftbl  194
      * @symbol ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   1058204989
+     * @hash   1059035293
      */
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @vftbl  195
-     * @hash   16059693
+     * @hash   16889997
      */
     virtual void __unk_vfn_195();
     /**
@@ -303,19 +303,19 @@ public:
 #endif
     /**
      * @symbol ??0CandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1117284494
+     * @hash   1118114798
      */
     MCAPI CandleBlock(std::string const &, int);
     /**
      * @symbol ?tryLightFire@CandleBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   1590959116
+     * @hash   1591789420
      */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
 
 //private:
     /**
      * @symbol ?_forEachCandle@CandleBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     * @hash   941103862
+     * @hash   941934166
      */
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 

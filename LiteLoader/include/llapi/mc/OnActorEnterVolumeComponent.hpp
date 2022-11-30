@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnActorEnterVolumeComponent@@QEAA@XZ
-     * @hash   -29561731
+     * @hash   -29515603
      */
     MCAPI ~OnActorEnterVolumeComponent();
 

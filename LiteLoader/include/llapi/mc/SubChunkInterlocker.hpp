@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?tryLock3x3xN@SubChunkInterlocker@@QEAA_NAEBVSubChunkPos@@H@Z
-     * @hash   -1062794082
+     * @hash   -1061963778
      */
     MCAPI bool tryLock3x3xN(class SubChunkPos const &, int);
     /**
      * @symbol ?unlock3x3xN@SubChunkInterlocker@@QEAAXAEBVSubChunkPos@@H@Z
-     * @hash   -1737047471
+     * @hash   -1736217167
      */
     MCAPI void unlock3x3xN(class SubChunkPos const &, int);
 

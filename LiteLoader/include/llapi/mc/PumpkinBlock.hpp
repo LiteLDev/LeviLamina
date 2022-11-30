@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@PumpkinBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   987426188
+     * @hash   988256492
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -155,7 +155,7 @@ public:
     /**
      * @vftbl  71
      * @symbol ?dispense@PumpkinBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1783348559
+     * @hash   -1782518255
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@PumpkinBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1970156373
+     * @hash   -1969326069
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PumpkinBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1759902821
+     * @hash   1760733125
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@PumpkinBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -578280924
+     * @hash   -577450620
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@PumpkinBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   580845461
+     * @hash   581675765
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@PumpkinBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -474945623
+     * @hash   -474115319
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@PumpkinBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -381964625
+     * @hash   -381134321
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PumpkinBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -945383453
+     * @hash   -944553149
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCK
@@ -279,19 +279,19 @@ public:
 #endif
     /**
      * @symbol ??0PumpkinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N1@Z
-     * @hash   674112977
+     * @hash   674943281
      */
     MCAPI PumpkinBlock(std::string const &, int, bool, bool);
 
 //private:
     /**
      * @symbol ?_canDispense@PumpkinBlock@@AEBA_NAEAVBlockSource@@AEBVVec3@@E@Z
-     * @hash   -1182203769
+     * @hash   -1181373465
      */
     MCAPI bool _canDispense(class BlockSource &, class Vec3 const &, unsigned char) const;
     /**
      * @symbol ?_canSpawnGolem@PumpkinBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2069085728
+     * @hash   -2068255424
      */
     MCAPI bool _canSpawnGolem(class BlockSource &, class BlockPos const &) const;
 

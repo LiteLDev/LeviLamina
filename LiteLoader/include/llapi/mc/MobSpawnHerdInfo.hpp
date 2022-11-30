@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0MobSpawnHerdInfo@@QEAA@IIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I0I@Z
-     * @hash   130866565
+     * @hash   131696869
      */
     MCAPI MobSpawnHerdInfo(unsigned int, unsigned int, std::string const &, unsigned int, std::string const &, unsigned int);
     /**

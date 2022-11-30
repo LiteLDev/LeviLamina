@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@RedstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2139867713
+     * @hash   -2139037409
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -228,7 +228,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RedstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -508665573
+     * @hash   -507835269
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -248,7 +248,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0RedstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1164093625
+     * @hash   -1163263321
      */
     MCAPI RedstoneBlock(std::string const &, int);
 

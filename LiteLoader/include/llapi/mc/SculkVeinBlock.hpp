@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SculkVeinBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1048978117
+     * @hash   1049808421
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@SculkVeinBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1609025292
+     * @hash   1609855596
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -243,24 +243,24 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SculkVeinBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1241798109
+     * @hash   -1240967805
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ
-     * @hash   -734496688
+     * @hash   -733666384
      */
     virtual class Block const & getMultifaceBlock() const;
     /**
      * @vftbl  193
      * @symbol ?getMultifaceSpreader@SculkVeinBlock@@UEBAAEBVMultifaceSpreader@@XZ
-     * @hash   -289659702
+     * @hash   -288829398
      */
     virtual class MultifaceSpreader const & getMultifaceSpreader() const;
     /**
      * @symbol ??0SculkVeinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1076844988
+     * @hash   1077675292
      */
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
 

@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@ClientRequestPlaceholderBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   630586112
+     * @hash   631416416
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
@@ -224,7 +224,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ClientRequestPlaceholderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   2039339797
+     * @hash   2040170101
      */
     MCAPI ClientRequestPlaceholderBlock(std::string const &, int, class Material const &);
 

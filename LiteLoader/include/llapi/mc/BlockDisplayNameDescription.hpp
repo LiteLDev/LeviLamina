@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDisplayNameDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   588844109
+     * @hash   589674413
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   936136503
+     * @hash   936966807
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -61,13 +61,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1665328713
+     * @hash   -1664498409
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -149931141
+     * @hash   -149100837
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -77,12 +77,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDisplayNameDescription@@SAXXZ
-     * @hash   505600671
+     * @hash   506430975
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDisplayNameDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1949421136
+     * @hash   -1948590832
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

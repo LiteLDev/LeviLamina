@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -266524114
+     * @hash   -266477986
      */
     virtual std::string readString();
     /**
      * @vftbl  2
      * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1523993974
+     * @hash   -1523947846
      */
     virtual std::string readLongString();
     /**
@@ -86,13 +86,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?readBytes@RakDataInput@@UEAA_NPEAX_K@Z
-     * @hash   1857892362
+     * @hash   1857938490
      */
     virtual bool readBytes(void *, unsigned __int64);
     /**
      * @vftbl  10
      * @symbol ?numBytesLeft@RakDataInput@@UEBA_KXZ
-     * @hash   -442648504
+     * @hash   -442602376
      */
     virtual unsigned __int64 numBytesLeft() const;
 

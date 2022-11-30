@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@LeafBlockItem@@UEBAHH@Z
-     * @hash   -630567818
+     * @hash   -629737514
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -100,30 +100,30 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@LeafBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -340956744
+     * @hash   -340126440
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  105
      * @symbol ?fixupCommon@LeafBlockItem@@UEBAXAEAVItemStackBase@@@Z
-     * @hash   496299877
+     * @hash   497130181
      */
     virtual void fixupCommon(class ItemStackBase &) const;
     /**
      * @vftbl  106
      * @symbol ?fixupCommon@LeafBlockItem@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
-     * @hash   856494897
+     * @hash   857325201
      */
     virtual void fixupCommon(class ItemStackBase &, class Level &) const;
 

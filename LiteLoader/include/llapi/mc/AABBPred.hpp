@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??RAABBPred@@QEBA_NAEBVAABB@@0@Z
-     * @hash   -1677672265
+     * @hash   -1676841961
      */
     MCAPI bool operator()(class AABB const &, class AABB const &) const;
 

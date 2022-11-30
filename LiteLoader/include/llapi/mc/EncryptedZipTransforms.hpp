@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     * @hash   1149474724
+     * @hash   1150305028
      */
     virtual bool readTransform(std::vector<unsigned char> &) const;
     /**
@@ -50,7 +50,7 @@ public:
     virtual bool writeTransform(std::vector<unsigned char> &) const;
     /**
      * @symbol ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   1783214073
+     * @hash   1784044377
      */
     MCAPI EncryptedZipTransforms(class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 

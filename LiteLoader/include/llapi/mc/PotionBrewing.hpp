@@ -46,64 +46,64 @@ public:
 public:
     /**
      * @symbol ?addContainerRecipe@PotionBrewing@@SAXAEBVItem@@AEBVIngredient@1@0@Z
-     * @hash   -1521985305
+     * @hash   -1521155001
      */
     MCAPI static void addContainerRecipe(class Item const &, class PotionBrewing::Ingredient const &, class Item const &);
     /**
      * @symbol ?addPotionMix@PotionBrewing@@SAXAEBVItemDescriptor@@AEBVIngredient@1@0@Z
-     * @hash   2108643466
+     * @hash   2109473770
      */
     MCAPI static void addPotionMix(class ItemDescriptor const &, class PotionBrewing::Ingredient const &, class ItemDescriptor const &);
     /**
      * @symbol ?getFuelValue@PotionBrewing@@SAHAEBVItemDescriptor@@@Z
-     * @hash   1616869379
+     * @hash   1617699683
      */
     MCAPI static int getFuelValue(class ItemDescriptor const &);
     /**
      * @symbol ?hasMix@PotionBrewing@@SA_NAEBVItemInstance@@AEBVItemDescriptor@@@Z
-     * @hash   -1413346012
+     * @hash   -1412515708
      */
     MCAPI static bool hasMix(class ItemInstance const &, class ItemDescriptor const &);
     /**
      * @symbol ?initPotionBrewing@PotionBrewing@@SAXXZ
-     * @hash   -526033603
+     * @hash   -525203299
      */
     MCAPI static void initPotionBrewing();
     /**
      * @symbol ?isFuel@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   -1214471629
+     * @hash   -1213641325
      */
     MCAPI static bool isFuel(class ItemDescriptor const &);
     /**
      * @symbol ?isIngredient@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   583797501
+     * @hash   584627805
      */
     MCAPI static bool isIngredient(class ItemDescriptor const &);
     /**
      * @symbol ?isPotionRecipeInput@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   1797568131
+     * @hash   1798398435
      */
     MCAPI static bool isPotionRecipeInput(class ItemDescriptor const &);
     /**
      * @symbol ?mix@PotionBrewing@@SA?AVItemInstance@@AEBVItemDescriptor@@AEBV2@@Z
-     * @hash   -887375686
+     * @hash   -886545382
      */
     MCAPI static class ItemInstance mix(class ItemDescriptor const &, class ItemInstance const &);
     /**
      * @symbol ?shutdown@PotionBrewing@@SAXXZ
-     * @hash   -1473326659
+     * @hash   -1472496355
      */
     MCAPI static void shutdown();
 
 //private:
     /**
      * @symbol ?addChemistryMix@PotionBrewing@@CAXAEBVItemInstance@@AEBVIngredient@1@0@Z
-     * @hash   1935309263
+     * @hash   1936139567
      */
     MCAPI static void addChemistryMix(class ItemInstance const &, class PotionBrewing::Ingredient const &, class ItemInstance const &);
     /**
      * @symbol ?getChemistryMix@PotionBrewing@@CA?AVItemInstance@@AEBVItemDescriptor@@0@Z
-     * @hash   1079836882
+     * @hash   1080667186
      */
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
 

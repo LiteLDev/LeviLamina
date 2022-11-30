@@ -34,13 +34,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@EnderCrystal@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   152661119
+     * @hash   152707247
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@EnderCrystal@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -954997878
+     * @hash   -954951750
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@EnderCrystal@@UEAAXXZ
-     * @hash   -1818473939
+     * @hash   -1818427811
      */
     virtual void normalTick();
     /**
@@ -129,7 +129,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -497811284
+     * @hash   -497765156
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -170,19 +170,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1878765294
+     * @hash   -1878719166
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1866084487
+     * @hash   -1866038359
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   109072132
+     * @hash   109118260
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -192,22 +192,22 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   742746538
+     * @hash   742792666
      */
     MCAPI EnderCrystal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setBeamTarget@EnderCrystal@@QEAAXAEBVBlockPos@@@Z
-     * @hash   1741266658
+     * @hash   1741312786
      */
     MCAPI void setBeamTarget(class BlockPos const &);
     /**
      * @symbol ?setCrystalDamagedCallback@EnderCrystal@@QEAAXV?$function@$$A6AXAEAVEnderCrystal@@AEBVActorDamageSource@@@Z@std@@@Z
-     * @hash   -1289012264
+     * @hash   -1288966136
      */
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
     /**
      * @symbol ?HEAL_DISTANCE@EnderCrystal@@2MB
-     * @hash   -1220733185
+     * @hash   -1220610177
      */
     MCAPI static float const HEAL_DISTANCE;
 

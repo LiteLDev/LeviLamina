@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@CommandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -951890150
+     * @hash   -951059846
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@CommandBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   632683897
+     * @hash   633514201
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  4
      * @symbol ?saveBlockData@CommandBlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   636944932
+     * @hash   637775236
      */
     virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
     /**
      * @vftbl  5
      * @symbol ?loadBlockData@CommandBlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-     * @hash   1522591143
+     * @hash   1523421447
      */
     virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
     /**
      * @vftbl  6
      * @symbol ?onCustomTagLoadDone@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1377233586
+     * @hash   -1376403282
      */
     virtual void onCustomTagLoadDone(class BlockSource &);
     /**
@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?onPlace@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1949447848
+     * @hash   1950278152
      */
     virtual void onPlace(class BlockSource &);
     /**
@@ -91,19 +91,19 @@ public:
     /**
      * @vftbl  24
      * @symbol ?getCustomName@CommandBlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -467104729
+     * @hash   -466274425
      */
     virtual std::string const & getCustomName() const;
     /**
      * @vftbl  25
      * @symbol ?getFilteredCustomName@CommandBlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUIProfanityContext@@@Z
-     * @hash   402621495
+     * @hash   403451799
      */
     virtual std::string const & getFilteredCustomName(class UIProfanityContext const &);
     /**
      * @vftbl  27
      * @symbol ?setCustomName@CommandBlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1363447318
+     * @hash   -1362617014
      */
     virtual void setCustomName(std::string const &);
     /**
@@ -139,121 +139,121 @@ public:
     /**
      * @vftbl  37
      * @symbol ?_getUpdatePacket@CommandBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1956278804
+     * @hash   -1955448500
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@CommandBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   553815670
+     * @hash   554645974
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @vftbl  39
      * @symbol ?_playerCanUpdate@CommandBlockActor@@MEBA_NAEBVPlayer@@@Z
-     * @hash   818662439
+     * @hash   819492743
      */
     virtual bool _playerCanUpdate(class Player const &) const;
     /**
      * @symbol ??0CommandBlockActor@@QEAA@AEBVBlockPos@@W4CommandBlockMode@@@Z
-     * @hash   523620043
+     * @hash   524450347
      */
     MCAPI CommandBlockActor(class BlockPos const &, enum class CommandBlockMode);
     /**
      * @symbol ?getBaseCommandBlock@CommandBlockActor@@QEAAAEAVBaseCommandBlock@@XZ
-     * @hash   199700928
+     * @hash   199747056
      */
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
     /**
      * @symbol ?getCommand@CommandBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1573618822
+     * @hash   1574449126
      */
     MCAPI std::string const & getCommand() const;
     /**
      * @symbol ?getCommandBlock@CommandBlockActor@@QEBAPEBVCommandBlock@@AEAVBlockSource@@@Z
-     * @hash   579877756
+     * @hash   580708060
      */
     MCAPI class CommandBlock const * getCommandBlock(class BlockSource &) const;
     /**
      * @symbol ?getConditionalMode@CommandBlockActor@@QEBA_NAEAVBlockSource@@@Z
-     * @hash   510601325
+     * @hash   511431629
      */
     MCAPI bool getConditionalMode(class BlockSource &) const;
     /**
      * @symbol ?getDelayOnActivation@CommandBlockActor@@QEBAHXZ
-     * @hash   -1278666806
+     * @hash   -1277836502
      */
     MCAPI int getDelayOnActivation() const;
     /**
      * @symbol ?getMode@CommandBlockActor@@QEBA?AW4CommandBlockMode@@AEAVBlockSource@@@Z
-     * @hash   195661841
+     * @hash   196492145
      */
     MCAPI enum class CommandBlockMode getMode(class BlockSource &) const;
     /**
      * @symbol ?getPowered@CommandBlockActor@@QEBA_NXZ
-     * @hash   720203066
+     * @hash   720249194
      */
     MCAPI bool getPowered() const;
     /**
      * @symbol ?getSuccessCount@CommandBlockActor@@QEBAHXZ
-     * @hash   -1930588708
+     * @hash   -1929758404
      */
     MCAPI int getSuccessCount() const;
     /**
      * @symbol ?getTickDelay@CommandBlockActor@@QEBAHXZ
-     * @hash   2090271910
+     * @hash   2091102214
      */
     MCAPI int getTickDelay() const;
     /**
      * @symbol ?isAutomatic@CommandBlockActor@@QEBA_NXZ
-     * @hash   1901100136
+     * @hash   1901930440
      */
     MCAPI bool isAutomatic() const;
     /**
      * @symbol ?markConditionMet@CommandBlockActor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   -526761153
+     * @hash   -525930849
      */
     MCAPI bool markConditionMet(class BlockSource &);
     /**
      * @symbol ?markForSaving@CommandBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -922388248
+     * @hash   -921557944
      */
     MCAPI void markForSaving(class BlockSource &);
     /**
      * @symbol ?markForSaving@CommandBlockActor@@QEAAXAEAVBlockSource@@H_N@Z
-     * @hash   1658086352
+     * @hash   1658916656
      */
     MCAPI void markForSaving(class BlockSource &, int, bool);
     /**
      * @symbol ?performCommand@CommandBlockActor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   1837643359
+     * @hash   1838473663
      */
     MCAPI bool performCommand(class BlockSource &);
     /**
      * @symbol ?setPowered@CommandBlockActor@@QEAAX_N@Z
-     * @hash   -1988024414
+     * @hash   -1987194110
      */
     MCAPI void setPowered(bool);
     /**
      * @symbol ?setSuccessCount@CommandBlockActor@@QEAAXH@Z
-     * @hash   -431450022
+     * @hash   -430619718
      */
     MCAPI void setSuccessCount(int);
     /**
      * @symbol ?updateBlock@CommandBlockActor@@QEAAXAEAVBlockSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4CommandBlockMode@@_N33H3@Z
-     * @hash   -837096784
+     * @hash   -836266480
      */
     MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum class CommandBlockMode, bool, bool, bool, int, bool);
     /**
      * @symbol ?wasConditionMet@CommandBlockActor@@QEAA_NXZ
-     * @hash   589681816
+     * @hash   590512120
      */
     MCAPI bool wasConditionMet();
 
 //private:
     /**
      * @symbol ?_setAutomatic@CommandBlockActor@@AEAAXAEAVBlockSource@@_NW4CommandBlockMode@@@Z
-     * @hash   -1807186554
+     * @hash   -1806356250
      */
     MCAPI void _setAutomatic(class BlockSource &, bool, enum class CommandBlockMode);
 

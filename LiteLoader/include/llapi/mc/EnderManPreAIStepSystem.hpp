@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@EnderManPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1004223626
+     * @hash   -1004177498
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?doEnderManPreAIStep@EnderManPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAUMobJumpComponent@@@Z
-     * @hash   -819346230
+     * @hash   -819300102
      */
     MCAPI static void doEnderManPreAIStep(class StrictEntityContext const &, struct MobJumpComponent &);
 

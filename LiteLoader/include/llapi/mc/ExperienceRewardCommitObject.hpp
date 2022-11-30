@@ -36,7 +36,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?append@ExperienceRewardCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
-     * @hash   -1341005436
+     * @hash   -1340175132
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
@@ -48,12 +48,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?commit@ExperienceRewardCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
-     * @hash   -1939797904
+     * @hash   -1938967600
      */
     virtual void commit(class ContainerScreenContext const &);
     /**
      * @symbol ??0ExperienceRewardCommitObject@@QEAA@H@Z
-     * @hash   570948176
+     * @hash   571778480
      */
     MCAPI ExperienceRewardCommitObject(int);
 

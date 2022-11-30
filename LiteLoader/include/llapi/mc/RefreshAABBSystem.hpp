@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createRefreshAABBSystem@RefreshAABBSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1989883448
+     * @hash   1989929576
      */
     MCAPI static struct TickingSystemWithInfo createRefreshAABBSystem();
     /**
      * @symbol ?refreshAABB@RefreshAABBSystem@@SA?AVAABB@@MAEBVVec3@@AEBVVec2@@1@Z
-     * @hash   1797362303
+     * @hash   1797408431
      */
     MCAPI static class AABB refreshAABB(float, class Vec3 const &, class Vec2 const &, class Vec2 const &);
 

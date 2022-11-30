@@ -37,42 +37,42 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
-     * @hash   -369532460
+     * @hash   -368702156
      */
     virtual int getChunkRebuildPriority(class ChunkPos const &) const;
     /**
      * @vftbl  2
      * @symbol ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
-     * @hash   -510620180
+     * @hash   -509789876
      */
     virtual unsigned int registerForUpdates();
     /**
      * @vftbl  3
      * @symbol ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
-     * @hash   -697525883
+     * @hash   -696695579
      */
     virtual void unregisterForUpdates(unsigned int);
     /**
      * @vftbl  4
      * @symbol ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
-     * @hash   175088328
+     * @hash   175918632
      */
     virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
     /**
      * @vftbl  5
      * @symbol ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
-     * @hash   522591557
+     * @hash   523421861
      */
     virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /**
      * @vftbl  6
      * @symbol ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
-     * @hash   598971487
+     * @hash   599801791
      */
     virtual void updateInfluences();
     /**
      * @symbol ??0ChunkBuildOrderPolicy@@QEAA@XZ
-     * @hash   -81606725
+     * @hash   -80776421
      */
     MCAPI ChunkBuildOrderPolicy();
 

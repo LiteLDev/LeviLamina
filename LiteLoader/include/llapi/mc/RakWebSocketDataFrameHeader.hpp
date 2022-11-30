@@ -29,47 +29,47 @@ public:
 public:
     /**
      * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@_N0000W4OpCode@@E@Z
-     * @hash   -1723977605
+     * @hash   -1723885349
      */
     MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum class OpCode, unsigned char);
     /**
      * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@XZ
-     * @hash   -1143000527
+     * @hash   -1142954399
      */
     MCAPI RakWebSocketDataFrameHeader();
     /**
      * @symbol ?getFinBit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     * @hash   -270493800
+     * @hash   -270401544
      */
     MCAPI int getFinBit() const;
     /**
      * @symbol ?getMaskBit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     * @hash   -892110612
+     * @hash   -892018356
      */
     MCAPI int getMaskBit() const;
     /**
      * @symbol ?getOpCode@RakWebSocketDataFrameHeader@@QEBA?AW4OpCode@@XZ
-     * @hash   2072621344
+     * @hash   2072713600
      */
     MCAPI enum class OpCode getOpCode() const;
     /**
      * @symbol ?getPayloadLength@RakWebSocketDataFrameHeader@@QEBAEXZ
-     * @hash   -108921053
+     * @hash   -108828797
      */
     MCAPI unsigned char getPayloadLength() const;
     /**
      * @symbol ?getRSV1Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     * @hash   -1184812548
+     * @hash   -1184720292
      */
     MCAPI int getRSV1Bit() const;
     /**
      * @symbol ?getRSV2Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     * @hash   682086410
+     * @hash   682178666
      */
     MCAPI int getRSV2Bit() const;
     /**
      * @symbol ?getRSV3Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     * @hash   -1745981928
+     * @hash   -1745889672
      */
     MCAPI int getRSV3Bit() const;
     /**

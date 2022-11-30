@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  37
      * @symbol ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
-     * @hash   458640296
+     * @hash   458686424
      */
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
@@ -49,7 +49,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Camel@@UEAAXXZ
-     * @hash   -1100053419
+     * @hash   -1100007291
      */
     virtual void normalTick();
     /**
@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   246545436
+     * @hash   246591564
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Camel@@UEAAXXZ
-     * @hash   -200869947
+     * @hash   -200823819
      */
     virtual void aiStep();
     /**
@@ -198,19 +198,19 @@ public:
 #endif
     /**
      * @symbol ??0Camel@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   688052018
+     * @hash   688098146
      */
     MCAPI Camel(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getDashCooldown@Camel@@QEBA?AV?$optional@VExpiringTick@@@std@@XZ
-     * @hash   1347008155
+     * @hash   1347054283
      */
     MCAPI class std::optional<class ExpiringTick> getDashCooldown() const;
 
 //private:
     /**
      * @symbol ?_monitorSitting@Camel@@AEAAXXZ
-     * @hash   -1460430521
+     * @hash   -1460384393
      */
     MCAPI void _monitorSitting();
 

@@ -115,204 +115,204 @@ public:
     /**
      * @vftbl  2
      * @symbol ?write@CompoundTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   554412640
+     * @hash   554458768
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@CompoundTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   -991080865
+     * @hash   -991034737
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@CompoundTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1688428967
+     * @hash   1688475095
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@CompoundTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   575648604
+     * @hash   575694732
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@CompoundTag@@UEBA_NAEBVTag@@@Z
-     * @hash   431572389
+     * @hash   431618517
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  8
      * @symbol ?print@CompoundTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
-     * @hash   -2144695001
+     * @hash   -2144648873
      */
     virtual void print(std::string const &, class PrintStream &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@CompoundTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   -1442188151
+     * @hash   -1442142023
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@CompoundTag@@UEBA_KXZ
-     * @hash   2036900943
+     * @hash   2036947071
      */
     virtual unsigned __int64 hash() const;
     /**
      * @symbol ??0CompoundTag@@QEAA@XZ
-     * @hash   -2098127461
+     * @hash   -2098081333
      */
     MCAPI CompoundTag();
     /**
      * @symbol ??0CompoundTag@@QEAA@$$QEAV0@@Z
-     * @hash   1850460695
+     * @hash   1850506823
      */
     MCAPI CompoundTag(class CompoundTag &&);
     /**
      * @symbol ?append@CompoundTag@@QEAAXAEBV1@@Z
-     * @hash   494684824
+     * @hash   494730952
      */
     MCAPI void append(class CompoundTag const &);
     /**
      * @symbol ?begin@CompoundTag@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@std@@@std@@@std@@XZ
-     * @hash   -1681093726
+     * @hash   -1681047598
      */
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> begin() const;
     /**
      * @symbol ?clear@CompoundTag@@QEAAXXZ
-     * @hash   838190559
+     * @hash   838236687
      */
     MCAPI void clear();
     /**
      * @symbol ?clone@CompoundTag@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1464563204
+     * @hash   1464609332
      */
     MCAPI std::unique_ptr<class CompoundTag> clone() const;
     /**
      * @symbol ?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   336723487
+     * @hash   336769615
      */
     MCAPI bool contains(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@W4Type@Tag@@@Z
-     * @hash   1566834118
+     * @hash   1566880246
      */
     MCAPI bool contains(class gsl::basic_string_span<char const, -1>, enum class Tag::Type) const;
     /**
      * @symbol ?deepCopy@CompoundTag@@QEAAXAEBV1@@Z
-     * @hash   -285622456
+     * @hash   -285576328
      */
     MCAPI void deepCopy(class CompoundTag const &);
     /**
      * @symbol ?end@CompoundTag@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@std@@@std@@@std@@XZ
-     * @hash   -2054193358
+     * @hash   -2054147230
      */
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> end() const;
     /**
      * @symbol ?get@CompoundTag@@QEAAPEAVTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1468475816
+     * @hash   -1468429688
      */
     MCAPI class Tag * get(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?get@CompoundTag@@QEBAPEBVTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1772925832
+     * @hash   -1772879704
      */
     MCAPI class Tag const * get(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getBoolean@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1307279385
+     * @hash   1307325513
      */
     MCAPI bool getBoolean(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getByte@CompoundTag@@QEBAEV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   569242530
+     * @hash   569288658
      */
     MCAPI unsigned char getByte(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getByteArray@CompoundTag@@QEBAAEBUTagMemoryChunk@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1682581811
+     * @hash   -1682535683
      */
     MCAPI struct TagMemoryChunk const & getByteArray(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getByteTag@CompoundTag@@QEAAPEAVByteTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1612628550
+     * @hash   1612674678
      */
     MCAPI class ByteTag * getByteTag(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getCompound@CompoundTag@@QEAAPEAV1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   122750602
+     * @hash   122796730
      */
     MCAPI class CompoundTag * getCompound(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getCompound@CompoundTag@@QEBAPEBV1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1329314350
+     * @hash   1329360478
      */
     MCAPI class CompoundTag const * getCompound(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getFloat@CompoundTag@@QEBAMV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1448898125
+     * @hash   -1448851997
      */
     MCAPI float getFloat(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getInt@CompoundTag@@QEBAHV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -2094731589
+     * @hash   -2094685461
      */
     MCAPI int getInt(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getInt64@CompoundTag@@QEBA_JV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1656597942
+     * @hash   1656644070
      */
     MCAPI __int64 getInt64(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getInt64Tag@CompoundTag@@QEAAPEAVInt64Tag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1639221594
+     * @hash   -1639175466
      */
     MCAPI class Int64Tag * getInt64Tag(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getInt64Tag@CompoundTag@@QEBAPEBVInt64Tag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   883910090
+     * @hash   883956218
      */
     MCAPI class Int64Tag const * getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getIntTag@CompoundTag@@QEAAPEAVIntTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -2081735686
+     * @hash   -2081689558
      */
     MCAPI class IntTag * getIntTag(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getIntTag@CompoundTag@@QEBAPEBVIntTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   583884062
+     * @hash   583930190
      */
     MCAPI class IntTag const * getIntTag(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getList@CompoundTag@@QEAAPEAVListTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1729941480
+     * @hash   1729987608
      */
     MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getList@CompoundTag@@QEBAPEBVListTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   2091429256
+     * @hash   2091475384
      */
     MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getShort@CompoundTag@@QEBAFV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1944241286
+     * @hash   -1944195158
      */
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getShortTag@CompoundTag@@QEBAPEBVShortTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1542372952
+     * @hash   -1542326824
      */
     MCAPI class ShortTag const * getShortTag(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getString@CompoundTag@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -352362839
+     * @hash   -352316711
      */
     MCAPI std::string const & getString(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?getStringTag@CompoundTag@@QEBAPEBVStringTag@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1449777530
+     * @hash   -1449731402
      */
     MCAPI class StringTag const * getStringTag(class gsl::basic_string_span<char const, -1>) const;
     /**
@@ -322,67 +322,67 @@ public:
     MCAPI bool isEmpty() const;
     /**
      * @symbol ??4CompoundTag@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   621734018
+     * @hash   621780146
      */
     MCAPI class CompoundTag & operator=(class CompoundTag &&);
     /**
      * @symbol ?put@CompoundTag@@QEAAAEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
-     * @hash   1600009144
+     * @hash   1600055272
      */
     MCAPI class Tag & put(std::string, class Tag &&);
     /**
      * @symbol ?put@CompoundTag@@QEAAPEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@4@@Z
-     * @hash   -1953112612
+     * @hash   -1953066484
      */
     MCAPI class Tag * put(std::string, std::unique_ptr<class Tag>);
     /**
      * @symbol ?putBoolean@CompoundTag@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1306841477
+     * @hash   -1306795349
      */
     MCAPI void putBoolean(std::string, bool);
     /**
      * @symbol ?putByte@CompoundTag@@QEAAAEAEV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
-     * @hash   -1325160681
+     * @hash   -1325114553
      */
     MCAPI unsigned char & putByte(std::string, unsigned char);
     /**
      * @symbol ?putByteArray@CompoundTag@@QEAAAEAUTagMemoryChunk@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U2@@Z
-     * @hash   -1767465308
+     * @hash   -1767419180
      */
     MCAPI struct TagMemoryChunk & putByteArray(std::string, struct TagMemoryChunk);
     /**
      * @symbol ?putCompound@CompoundTag@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V1@@Z
-     * @hash   -949714994
+     * @hash   -949668866
      */
     MCAPI class CompoundTag & putCompound(std::string, class CompoundTag);
     /**
      * @symbol ?putCompound@CompoundTag@@QEAAPEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z
-     * @hash   -2075540853
+     * @hash   -2075494725
      */
     MCAPI class CompoundTag * putCompound(std::string, std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?putFloat@CompoundTag@@QEAAAEAMV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-     * @hash   1643813243
+     * @hash   1643859371
      */
     MCAPI float & putFloat(std::string, float);
     /**
      * @symbol ?putInt@CompoundTag@@QEAAAEAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1526183573
+     * @hash   -1526137445
      */
     MCAPI int & putInt(std::string, int);
     /**
      * @symbol ?putInt64@CompoundTag@@QEAAAEA_JV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
-     * @hash   1276752435
+     * @hash   1276798563
      */
     MCAPI __int64 & putInt64(std::string, __int64);
     /**
      * @symbol ?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   -438698261
+     * @hash   -438652133
      */
     MCAPI short & putShort(std::string, short);
     /**
      * @symbol ?putString@CompoundTag@@QEAAAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@0@Z
-     * @hash   -885933511
+     * @hash   -885887383
      */
     MCAPI std::string & putString(std::string, std::string);
     /**
@@ -392,17 +392,17 @@ public:
     MCAPI class std::map<std::string, class CompoundTagVariant, struct std::less<void>, class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const & rawView() const;
     /**
      * @symbol ?remove@CompoundTag@@QEAA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1624121893
+     * @hash   1624168021
      */
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?rename@CompoundTag@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   633056979
+     * @hash   633103107
      */
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
     /**
      * @symbol ?size@CompoundTag@@QEBA_KXZ
-     * @hash   -2122210355
+     * @hash   -2122164227
      */
     MCAPI unsigned __int64 size() const;
 

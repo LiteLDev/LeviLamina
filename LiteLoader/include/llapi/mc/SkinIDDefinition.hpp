@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@SkinIDDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USkinIDDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1000364102
+     * @hash   -1000271846
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>> &);
 

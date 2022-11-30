@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getMaxIntensity@CameraShakeComponent@@SAMXZ
-     * @hash   1853150260
+     * @hash   1853196388
      */
     MCAPI static float getMaxIntensity();
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0PackReport@@QEAA@AEBV0@@Z
-     * @hash   1022263041
+     * @hash   1022309169
      */
     MCAPI PackReport(class PackReport const &);
     /**
      * @symbol ??0PackReport@@QEAA@XZ
-     * @hash   -315428727
+     * @hash   -315382599
      */
     MCAPI PackReport();
     /**
@@ -46,7 +46,7 @@ public:
     MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
     /**
      * @symbol ?getIdentity@PackReport@@QEBAAEBUPackIdVersion@@XZ
-     * @hash   -1504389782
+     * @hash   -1504343654
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
     /**
@@ -66,57 +66,57 @@ public:
     MCAPI std::string const & getOriginalVersion() const;
     /**
      * @symbol ?getPackType@PackReport@@QEBA?AW4PackType@@XZ
-     * @hash   634482394
+     * @hash   634528522
      */
     MCAPI enum class PackType getPackType() const;
     /**
      * @symbol ?hasErrors@PackReport@@QEAA_NW4PackErrorType@@@Z
-     * @hash   -812590791
+     * @hash   -812544663
      */
     MCAPI bool hasErrors(enum class PackErrorType);
     /**
      * @symbol ?hasErrors@PackReport@@QEBA_NXZ
-     * @hash   292487088
+     * @hash   292533216
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ?serialize@PackReport@@QEAAXAEAVValue@Json@@@Z
-     * @hash   -1331496748
+     * @hash   -1331450620
      */
     MCAPI void serialize(class Json::Value &);
     /**
      * @symbol ?setAttemptedUpgrade@PackReport@@QEAAXXZ
-     * @hash   -1488947597
+     * @hash   -1488901469
      */
     MCAPI void setAttemptedUpgrade();
     /**
      * @symbol ?setIdentity@PackReport@@QEAAXAEBUPackIdVersion@@@Z
-     * @hash   -1576437700
+     * @hash   -1576391572
      */
     MCAPI void setIdentity(struct PackIdVersion const &);
     /**
      * @symbol ?setLocation@PackReport@@QEAAXAEBVResourceLocation@@@Z
-     * @hash   793986862
+     * @hash   794032990
      */
     MCAPI void setLocation(class ResourceLocation const &);
     /**
      * @symbol ?setOriginalIdentity@PackReport@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -76306726
+     * @hash   -76260598
      */
     MCAPI void setOriginalIdentity(std::string const &, std::string const &);
     /**
      * @symbol ?setPackType@PackReport@@QEAAXW4PackType@@@Z
-     * @hash   1844837648
+     * @hash   1844883776
      */
     MCAPI void setPackType(enum class PackType);
     /**
      * @symbol ?setUpgradeSuccess@PackReport@@QEAAXXZ
-     * @hash   544096435
+     * @hash   544142563
      */
     MCAPI void setUpgradeSuccess();
     /**
      * @symbol ?wasUpgraded@PackReport@@QEBA_NXZ
-     * @hash   -892477576
+     * @hash   -892431448
      */
     MCAPI bool wasUpgraded() const;
     /**

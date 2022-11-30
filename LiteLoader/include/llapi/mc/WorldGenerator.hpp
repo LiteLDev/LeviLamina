@@ -39,63 +39,63 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
     /**
      * @symbol ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -1735191617
+     * @hash   -1734361313
      */
     MCVAPI void addHardcodedSpawnAreas(class LevelChunk &);
     /**
      * @symbol ?debugRender@WorldGenerator@@UEAAXXZ
-     * @hash   -40338817
+     * @hash   -39508513
      */
     MCVAPI void debugRender();
     /**
      * @symbol ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-     * @hash   -74052014
+     * @hash   -73221710
      */
     MCVAPI bool findNearestStructureFeature(enum class StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
      * @symbol ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
-     * @hash   -1554060962
+     * @hash   -1553230658
      */
     MCVAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
      * @symbol ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
-     * @hash   -125719676
+     * @hash   -124889372
      */
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     /**
      * @symbol ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-     * @hash   172368316
+     * @hash   173198620
      */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
      * @symbol ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
-     * @hash   1280227502
+     * @hash   1281057806
      */
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum class StructureFeatureType) const;
     /**
      * @symbol ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-     * @hash   -854755768
+     * @hash   -853925464
      */
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
      * @symbol ??1WorldGenerator@@UEAA@XZ
-     * @hash   -1290073676
+     * @hash   -1289243372
      */
     MCVAPI ~WorldGenerator();
 #endif
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-     * @hash   -865447697
+     * @hash   -864617393
      */
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
-     * @hash   923905696
+     * @hash   924736000
      */
     MCAPI WorldGenerator(class Dimension &);
     /**
      * @symbol ?computeChunkHeightMap@WorldGenerator@@QEAA?AV?$vector@FV?$allocator@F@std@@@std@@AEBVChunkPos@@@Z
-     * @hash   320562569
+     * @hash   321392873
      */
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
     /**
@@ -107,19 +107,19 @@ public:
 //protected:
     /**
      * @symbol ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
-     * @hash   -1859818120
+     * @hash   -1858987816
      */
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     /**
      * @symbol ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -1392297886
+     * @hash   -1391467582
      */
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
 protected:
     /**
      * @symbol ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
-     * @hash   947747037
+     * @hash   947870045
      */
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 

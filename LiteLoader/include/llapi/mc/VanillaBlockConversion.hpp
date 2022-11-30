@@ -24,17 +24,17 @@ namespace VanillaBlockConversion {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getBlockTypeFromLegacyId@VanillaBlockConversion@@YA?AV?$WeakPtr@VBlockLegacy@@@@I@Z
-     * @hash   -498580045
+     * @hash   -497749741
      */
     MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(unsigned int);
     /**
      * @symbol ?getBlockTypeLegacyIdFromName@VanillaBlockConversion@@YAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -228153614
+     * @hash   -227323310
      */
     MCAPI int getBlockTypeLegacyIdFromName(std::string const &);
     /**
      * @symbol ?tryGetLegacyState@VanillaBlockConversion@@YAPEBVBlock@@II@Z
-     * @hash   1493299622
+     * @hash   1494129926
      */
     MCAPI class Block const * tryGetLegacyState(unsigned int, unsigned int);
 

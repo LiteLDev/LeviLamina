@@ -24,17 +24,17 @@ namespace FlockingUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?checkForSteeringCollision@FlockingUtility@@YA_NAEAVActor@@AEBVVec3@@MAEAV3@@Z
-     * @hash   -322038433
+     * @hash   -321208129
      */
     MCAPI bool checkForSteeringCollision(class Actor &, class Vec3 const &, float, class Vec3 &);
     /**
      * @symbol ?chooseRandomDirection@FlockingUtility@@YAXAEAVActor@@AEAVVec3@@@Z
-     * @hash   694968096
+     * @hash   695798400
      */
     MCAPI void chooseRandomDirection(class Actor &, class Vec3 &);
     /**
      * @symbol ?getWaterHeights@FlockingUtility@@YAXAEBVActor@@AEAM1@Z
-     * @hash   -68197950
+     * @hash   -67367646
      */
     MCAPI void getWaterHeights(class Actor const &, float &, float &);
 

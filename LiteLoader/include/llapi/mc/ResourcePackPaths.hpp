@@ -75,42 +75,42 @@ namespace ResourcePackPaths {
     MCAPI extern std::string const TREATMENT_PACK_PATH;
     /**
      * @symbol ?getCachedBehaviorPacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1111660358
+     * @hash   -1111614230
      */
     MCAPI class Core::PathBuffer<std::string> getCachedBehaviorPacksPath();
     /**
      * @symbol ?getCachedResourcePacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   436012418
+     * @hash   436058546
      */
     MCAPI class Core::PathBuffer<std::string> getCachedResourcePacksPath();
     /**
      * @symbol ?getPremiumBehaviorPackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1054406478
+     * @hash   -1054360350
      */
     MCAPI class Core::PathBuffer<std::string> getPremiumBehaviorPackPath();
     /**
      * @symbol ?getPremiumPackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1900166706
+     * @hash   -1900120578
      */
     MCAPI class Core::PathBuffer<std::string> getPremiumPackPath();
     /**
      * @symbol ?getPremiumResourcePackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1281286550
+     * @hash   -1281240422
      */
     MCAPI class Core::PathBuffer<std::string> getPremiumResourcePackPath();
     /**
      * @symbol ?getPremiumWorldTemplatePath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1955897966
+     * @hash   -1955851838
      */
     MCAPI class Core::PathBuffer<std::string> getPremiumWorldTemplatePath();
     /**
      * @symbol ?getTemporaryPremiumBehaviorPacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   336177778
+     * @hash   336223906
      */
     MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumBehaviorPacksPath();
     /**
      * @symbol ?getTemporaryPremiumResourcePacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   1883850554
+     * @hash   1883896682
      */
     MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumResourcePacksPath();
 

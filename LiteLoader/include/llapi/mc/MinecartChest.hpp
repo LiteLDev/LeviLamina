@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@MinecartChest@@UEAAXAEBVActorDamageSource@@_N@Z
-     * @hash   720657781
+     * @hash   720703909
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  284
      * @symbol ?getDefaultDisplayBlock@MinecartChest@@UEBAPEBVBlock@@XZ
-     * @hash   1968661772
+     * @hash   1968707900
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
@@ -168,12 +168,12 @@ public:
     /**
      * @vftbl  287
      * @symbol ?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1004055075
+     * @hash   -1004008947
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
      * @symbol ??0MinecartChest@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1370250438
+     * @hash   -1370204310
      */
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
@@ -182,7 +182,7 @@ public:
 private:
     /**
      * @symbol ?ITEMS_SIZE@MinecartChest@@0HB
-     * @hash   1496032534
+     * @hash   1496155542
      */
     MCAPI static int const ITEMS_SIZE;
 

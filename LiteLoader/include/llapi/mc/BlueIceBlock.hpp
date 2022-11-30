@@ -224,7 +224,7 @@ public:
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0BlueIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -886196390
+     * @hash   -885366086
      */
     MCAPI BlueIceBlock(std::string const &, int);
 

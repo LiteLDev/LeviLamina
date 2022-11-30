@@ -38,36 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@BiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1314103845
+     * @hash   1314149973
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BiomeDefinitionListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   6356178
+     * @hash   6402306
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -833709563
+     * @hash   -833663435
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  4
      * @symbol ?readExtended@BiomeDefinitionListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1974223494
+     * @hash   -1974177366
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  6
      * @symbol ?_read@BiomeDefinitionListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -2141857691
+     * @hash   -2141811563
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BiomeDefinitionListPacket@@QEAA@XZ
-     * @hash   -1371030171
+     * @hash   -1370984043
      */
     MCAPI BiomeDefinitionListPacket();
 

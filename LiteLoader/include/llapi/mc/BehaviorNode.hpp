@@ -47,12 +47,12 @@ public:
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0BehaviorNode@@QEAA@XZ
-     * @hash   -814013088
+     * @hash   -813966960
      */
     MCAPI BehaviorNode();
     /**
      * @symbol ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
-     * @hash   1119517090
+     * @hash   1119563218
      */
     MCAPI class BehaviorData & getBehaviorData();
 

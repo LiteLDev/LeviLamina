@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@InvisibleBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -1671550238
+     * @hash   -1670719934
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
@@ -224,7 +224,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0InvisibleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1869189495
+     * @hash   1870019799
      */
     MCAPI InvisibleBlock(std::string const &, int, class Material const &);
 

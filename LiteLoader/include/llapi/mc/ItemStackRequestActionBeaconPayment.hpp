@@ -52,28 +52,28 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -1924690716
+     * @hash   -1924644588
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionBeaconPayment@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   1298599836
+     * @hash   1298645964
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionBeaconPayment@@QEAA@XZ
-     * @hash   142040254
+     * @hash   142086382
      */
     MCAPI ItemStackRequestActionBeaconPayment();
     /**
      * @symbol ?getPrimaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
-     * @hash   1994520790
+     * @hash   1994566918
      */
     MCAPI int getPrimaryEffectId() const;
     /**
      * @symbol ?getSecondaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
-     * @hash   733721402
+     * @hash   733767530
      */
     MCAPI int getSecondaryEffectId() const;
 

@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Arrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -371263452
+     * @hash   -371217324
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Arrow@@UEAAXXZ
-     * @hash   -1557338894
+     * @hash   -1557292766
      */
     virtual void normalTick();
     /**
@@ -82,7 +82,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
-     * @hash   -388995161
+     * @hash   -388949033
      */
     virtual void playerTouch(class Player &);
     /**
@@ -138,7 +138,7 @@ public:
     /**
      * @vftbl  237
      * @symbol ?setAuxValue@Arrow@@UEAAXH@Z
-     * @hash   -1961547726
+     * @hash   -1961501598
      */
     virtual void setAuxValue(int);
     /**
@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -423335737
+     * @hash   -423289609
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -55791226
+     * @hash   -55745098
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -181,25 +181,25 @@ public:
     /**
      * @vftbl  282
      * @symbol ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
-     * @hash   -1851629227
+     * @hash   -1851583099
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
      * @vftbl  284
      * @symbol ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
-     * @hash   -139920872
+     * @hash   -139874744
      */
     virtual class ItemStack _getPickupItem() const;
     /**
      * @vftbl  285
      * @symbol ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
-     * @hash   -1132186812
+     * @hash   -1132140684
      */
     virtual void applyParticleColor(class Particle *);
     /**
      * @vftbl  286
      * @symbol ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
-     * @hash   -634667008
+     * @hash   -634620880
      */
     virtual class mce::Color getEffectColor();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROW
@@ -211,42 +211,42 @@ public:
 #endif
     /**
      * @symbol ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1669588757
+     * @hash   1669634885
      */
     MCAPI Arrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?addMobEffect@Arrow@@QEAAXVMobEffectInstance@@@Z
-     * @hash   -787267434
+     * @hash   -787221306
      */
     MCAPI void addMobEffect(class MobEffectInstance);
     /**
      * @symbol ?getAuxValue@Arrow@@QEBAHXZ
-     * @hash   2032190462
+     * @hash   2032236590
      */
     MCAPI int getAuxValue() const;
     /**
      * @symbol ?setCritical@Arrow@@QEAAX_N@Z
-     * @hash   453732176
+     * @hash   453778304
      */
     MCAPI void setCritical(bool);
     /**
      * @symbol ?setEnchantFlame@Arrow@@QEAAXH@Z
-     * @hash   -1013244210
+     * @hash   -1013198082
      */
     MCAPI void setEnchantFlame(int);
     /**
      * @symbol ?setEnchantInfinity@Arrow@@QEAAXH@Z
-     * @hash   -1047459766
+     * @hash   -1047413638
      */
     MCAPI void setEnchantInfinity(int);
     /**
      * @symbol ?setEnchantPower@Arrow@@QEAAXH@Z
-     * @hash   1151373530
+     * @hash   1151419658
      */
     MCAPI void setEnchantPower(int);
     /**
      * @symbol ?setEnchantPunch@Arrow@@QEAAXH@Z
-     * @hash   2052209032
+     * @hash   2052255160
      */
     MCAPI void setEnchantPunch(int);
 

@@ -37,13 +37,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@MangrovePropagule@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1314114993
+     * @hash   1314945297
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@MangrovePropagule@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1505695684
+     * @hash   -1504865380
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -175,25 +175,25 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@MangrovePropagule@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1436351878
+     * @hash   -1435521574
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@MangrovePropagule@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1377653775
+     * @hash   -1376823471
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@MangrovePropagule@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -455032125
+     * @hash   -454201821
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@MangrovePropagule@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -2084965346
+     * @hash   -2084135042
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,19 +224,19 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@MangrovePropagule@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1538561558
+     * @hash   1539391862
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@MangrovePropagule@@UEBAHAEBVBlock@@@Z
-     * @hash   -1785816500
+     * @hash   -1784986196
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  152
      * @symbol ?init@MangrovePropagule@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   100897303
+     * @hash   101727607
      */
     virtual class BlockLegacy & init();
     /**
@@ -247,7 +247,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@MangrovePropagule@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1710284835
+     * @hash   1711115139
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -273,7 +273,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@MangrovePropagule@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   801130255
+     * @hash   801960559
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -284,7 +284,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@MangrovePropagule@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1830395468
+     * @hash   -1829565164
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -295,13 +295,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@MangrovePropagule@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1363014434
+     * @hash   1363844738
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@MangrovePropagule@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1574004042
+     * @hash   1574834346
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULE
@@ -313,24 +313,24 @@ public:
 #endif
     /**
      * @symbol ??0MangrovePropagule@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -615872486
+     * @hash   -615042182
      */
     MCAPI MangrovePropagule(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_growTree@MangrovePropagule@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1087879552
+     * @hash   -1087049248
      */
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?_isFullyGrown@MangrovePropagule@@AEBA_NAEBVBlock@@@Z
-     * @hash   2093309863
+     * @hash   2094140167
      */
     MCAPI bool _isFullyGrown(class Block const &) const;
     /**
      * @symbol ?_isHanging@MangrovePropagule@@AEBA_NAEBVBlock@@@Z
-     * @hash   -1703108022
+     * @hash   -1702277718
      */
     MCAPI bool _isHanging(class Block const &) const;
 

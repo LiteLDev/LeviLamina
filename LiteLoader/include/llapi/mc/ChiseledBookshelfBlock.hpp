@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1241403079
+     * @hash   -1240572775
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@ChiseledBookshelfBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -10322699
+     * @hash   -9492395
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ChiseledBookshelfBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1230422799
+     * @hash   -1229592495
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -205,13 +205,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1636352024
+     * @hash   1637182328
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@ChiseledBookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1820999230
+     * @hash   1821829534
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -242,7 +242,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1122534634
+     * @hash   -1121704330
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -259,7 +259,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -852496721
+     * @hash   -851666417
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHISELEDBOOKSHELFBLOCK
@@ -281,19 +281,19 @@ public:
 #endif
     /**
      * @symbol ??0ChiseledBookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -300732593
+     * @hash   -299902289
      */
     MCAPI ChiseledBookshelfBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_addBook@ChiseledBookshelfBlock@@AEBAPEBVBlock@@AEAVPlayer@@VItemStack@@AEAVChiseledBookshelfBlockActor@@AEBV2@@Z
-     * @hash   311034474
+     * @hash   311864778
      */
     MCAPI class Block const * _addBook(class Player &, class ItemStack, class ChiseledBookshelfBlockActor &, class Block const &) const;
     /**
      * @symbol ?_tryUpdateBlock@ChiseledBookshelfBlock@@AEBAXAEAVBlockSource@@AEAVPlayer@@AEBVBlockPos@@PEBVBlock@@@Z
-     * @hash   -1215820545
+     * @hash   -1214990241
      */
     MCAPI void _tryUpdateBlock(class BlockSource &, class Player &, class BlockPos const &, class Block const *) const;
 

@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?matches@ShapedChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -1401923785
+     * @hash   -1401093481
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  8
      * @symbol ?getId@ShapedChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
-     * @hash   -909463531
+     * @hash   -908633227
      */
     virtual class mce::UUID const & getId() const;
     /**

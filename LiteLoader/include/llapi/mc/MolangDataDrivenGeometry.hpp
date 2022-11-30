@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??8MolangDataDrivenGeometry@@QEBA_NAEBU0@@Z
-     * @hash   1004201685
+     * @hash   1004247813
      */
     MCAPI bool operator==(struct MolangDataDrivenGeometry const &) const;
     /**

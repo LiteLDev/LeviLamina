@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@GlowSquid@@UEAAXXZ
-     * @hash   1967340534
+     * @hash   1967386662
      */
     virtual void normalTick();
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1437910143
+     * @hash   -1437864015
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@GlowSquid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1660543781
+     * @hash   -1660497653
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@GlowSquid@@UEAAMAEBVBlockPos@@@Z
-     * @hash   1446524128
+     * @hash   1446570256
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -194,19 +194,19 @@ public:
     /**
      * @vftbl  362
      * @symbol ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -124480535
+     * @hash   -124434407
      */
     virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
      * @symbol ??0GlowSquid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -835435903
+     * @hash   -835389775
      */
     MCAPI GlowSquid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
      * @symbol ?_startGoingDark@GlowSquid@@AEAAXXZ
-     * @hash   -12357532
+     * @hash   -12311404
      */
     MCAPI void _startGoingDark();
 

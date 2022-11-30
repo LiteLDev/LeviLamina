@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@CatchFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -1510782182
+     * @hash   -1510736054
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@CatchFireSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   113718911
+     * @hash   113765039
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@CatchFireSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -1696367148
+     * @hash   -1696321020
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@CatchFireSubcomponent@@UEAAPEBDXZ
-     * @hash   -1061576993
+     * @hash   -1061530865
      */
     virtual char const * getName();
     /**
      * @symbol ??0CatchFireSubcomponent@@QEAA@XZ
-     * @hash   -270598950
+     * @hash   -270552822
      */
     MCAPI CatchFireSubcomponent();
 

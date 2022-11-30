@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@WalkAnimationSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWalkAnimationSpeedDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   933652778
+     * @hash   933745034
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WalkAnimationSpeedDefinition>> &);
 

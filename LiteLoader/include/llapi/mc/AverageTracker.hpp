@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?addSample@AverageTracker@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-     * @hash   -774782329
+     * @hash   -773952025
      */
     MCAPI void addSample(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?tick@SporeBlossomBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1685522262
+     * @hash   1686352566
      */
     virtual void tick(class BlockSource &);
     /**
@@ -84,7 +84,7 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0SporeBlossomBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   129523161
+     * @hash   130353465
      */
     MCAPI SporeBlossomBlockActor(class BlockPos const &);
 

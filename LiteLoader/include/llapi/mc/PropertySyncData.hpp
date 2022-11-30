@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4PropertySyncData@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   602316600
+     * @hash   602362728
      */
     MCAPI struct PropertySyncData & operator=(struct PropertySyncData &&);
     /**
      * @symbol ??1PropertySyncData@@QEAA@XZ
-     * @hash   352848916
+     * @hash   352895044
      */
     MCAPI ~PropertySyncData();
 

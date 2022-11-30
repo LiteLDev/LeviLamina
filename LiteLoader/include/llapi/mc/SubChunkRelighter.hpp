@@ -33,159 +33,159 @@ public:
 public:
     /**
      * @symbol ??0SubChunkRelighter@@QEAA@AEAVBlockSource@@_KAEBVChunkPos@@_N3@Z
-     * @hash   -960557773
+     * @hash   -959727469
      */
     MCAPI SubChunkRelighter(class BlockSource &, unsigned __int64, class ChunkPos const &, bool, bool);
     /**
      * @symbol ?_getAbsorption@SubChunkRelighter@@QEBAPEAUSubChunk@@USubChunkLightIndex@@AEAE@Z
-     * @hash   -19179001
+     * @hash   -18348697
      */
     MCAPI struct SubChunk * _getAbsorption(struct SubChunkLightIndex, unsigned char &) const;
     /**
      * @symbol ?_propagateBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   2047879536
+     * @hash   2048709840
      */
     MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_propagateBlockLight@SubChunkRelighter@@QEAAXXZ
-     * @hash   198665865
+     * @hash   199496169
      */
     MCAPI void _propagateBlockLight();
     /**
      * @symbol ?_propagateSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   -1591227640
+     * @hash   -1590397336
      */
     MCAPI void _propagateSkyLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_propagateSkyLight@SubChunkRelighter@@QEAAXXZ
-     * @hash   412124289
+     * @hash   412954593
      */
     MCAPI void _propagateSkyLight();
     /**
      * @symbol ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   -778152030
+     * @hash   -777321726
      */
     MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXXZ
-     * @hash   1175044347
+     * @hash   1175874651
      */
     MCAPI void _propagateSubtractiveBlockLight();
     /**
      * @symbol ?_propagateSubtractiveSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   716569082
+     * @hash   717399386
      */
     MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_propagateSubtractiveSkyLight@SubChunkRelighter@@QEAAXXZ
-     * @hash   208846259
+     * @hash   209676563
      */
     MCAPI void _propagateSubtractiveSkyLight();
     /**
      * @symbol ?_setLightHelper@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@UBrightness@@111II@Z
-     * @hash   -1039884453
+     * @hash   -1039054149
      */
     MCAPI void _setLightHelper(struct SubChunkLightIndex, struct Brightness, struct Brightness, struct Brightness, struct Brightness, unsigned int, unsigned int);
     /**
      * @symbol ?_setPropagatedBlockLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   184314384
+     * @hash   185144688
      */
     MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_setPropagatedSkyLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-     * @hash   44112984
+     * @hash   44943288
      */
     MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_setSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@UBrightness@@111@Z
-     * @hash   420703983
+     * @hash   421534287
      */
     MCAPI void _setSkyLight(struct SubChunkLightIndex, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     /**
      * @symbol ?getBlock@SubChunkRelighter@@QEAAXAEBVPos@@AEAPEBVBlock@@1@Z
-     * @hash   2075945588
+     * @hash   2076775892
      */
     MCAPI void getBlock(class Pos const &, class Block const *&, class Block const *&);
     /**
      * @symbol ?getCentralSubchunkOrigin@SubChunkRelighter@@QEAA?AVPos@@XZ
-     * @hash   660969508
+     * @hash   661799812
      */
     MCAPI class Pos getCentralSubchunkOrigin();
     /**
      * @symbol ?getLightPair@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@@Z
-     * @hash   -2140551581
+     * @hash   -2139721277
      */
     MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const &) const;
     /**
      * @symbol ?getLightPairWithPlaceholderCheck@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@AEBU23@@Z
-     * @hash   -1651239486
+     * @hash   -1650409182
      */
     MCAPI struct SubChunkBrightnessStorage::LightPair getLightPairWithPlaceholderCheck(class Pos const &, struct SubChunkBrightnessStorage::LightPair const &) const;
     /**
      * @symbol ?getTouchedSubChunks@SubChunkRelighter@@QEAAXAEAV?$vector@VPos@@V?$allocator@VPos@@@std@@@std@@@Z
-     * @hash   1003289290
+     * @hash   1004119594
      */
     MCAPI void getTouchedSubChunks(std::vector<class Pos> &);
     /**
      * @symbol ?setBlockLight@SubChunkRelighter@@QEAAXAEBVPos@@UBrightness@@111@Z
-     * @hash   -416981481
+     * @hash   -416151177
      */
     MCAPI void setBlockLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     /**
      * @symbol ?setSkyLight@SubChunkRelighter@@QEAAXAEBVPos@@UBrightness@@111@Z
-     * @hash   -755798081
+     * @hash   -754967777
      */
     MCAPI void setSkyLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     /**
      * @symbol ?update@SubChunkRelighter@@QEAAXAEBVBlockPos@@_K@Z
-     * @hash   -1346966852
+     * @hash   -1346136548
      */
     MCAPI void update(class BlockPos const &, unsigned __int64);
     /**
      * @symbol ??1SubChunkRelighter@@QEAA@XZ
-     * @hash   1280315023
+     * @hash   1281145327
      */
     MCAPI ~SubChunkRelighter();
     /**
      * @symbol ?computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits@SubChunkRelighter@@SA?AV?$bitset@$0DAAAA@@std@@XZ
-     * @hash   1407397913
+     * @hash   1408228217
      */
     MCAPI static class std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
     /**
      * @symbol ?computeOuterEdgeOfComputationBits@SubChunkRelighter@@SA?AV?$bitset@$0DAAAA@@std@@XZ
-     * @hash   1137100905
+     * @hash   1137931209
      */
     MCAPI static class std::bitset<196608> computeOuterEdgeOfComputationBits();
     /**
      * @symbol ?initializeStatics@SubChunkRelighter@@SAXXZ
-     * @hash   -291570787
+     * @hash   -290740483
      */
     MCAPI static void initializeStatics();
     /**
      * @symbol ?shutdownStatics@SubChunkRelighter@@SAXXZ
-     * @hash   1246536417
+     * @hash   1247366721
      */
     MCAPI static void shutdownStatics();
 
 //private:
     /**
      * @symbol ?_dirtySubChunk@SubChunkRelighter@@AEAAPEAUSubChunk@@USubChunkLightIndex@@AEAI@Z
-     * @hash   -1448480640
+     * @hash   -1447650336
      */
     MCAPI struct SubChunk * _dirtySubChunk(struct SubChunkLightIndex, unsigned int &);
     /**
      * @symbol ?_getBlock@SubChunkRelighter@@AEBAPEAUSubChunk@@USubChunkLightIndex@@AEAPEBVBlock@@1@Z
-     * @hash   456933257
+     * @hash   457763561
      */
     MCAPI struct SubChunk * _getBlock(struct SubChunkLightIndex, class Block const *&, class Block const *&) const;
     /**
      * @symbol ?_getLight@SubChunkRelighter@@AEAAEUSubChunkLightIndex@@@Z
-     * @hash   -1991276756
+     * @hash   -1990446452
      */
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
     /**
      * @symbol ?_getLightPair@SubChunkRelighter@@AEBA?AULightPair@SubChunkBrightnessStorage@@USubChunkLightIndex@@@Z
-     * @hash   729094929
+     * @hash   729925233
      */
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
 

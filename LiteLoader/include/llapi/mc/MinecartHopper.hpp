@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
-     * @hash   1602498252
+     * @hash   1602544380
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  284
      * @symbol ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
-     * @hash   -1660748765
+     * @hash   -1660702637
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
@@ -174,12 +174,12 @@ public:
     /**
      * @vftbl  287
      * @symbol ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -581107082
+     * @hash   -581060954
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
      * @symbol ??0MinecartHopper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -658838221
+     * @hash   -658792093
      */
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

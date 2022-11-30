@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?checkIfValid@MarketplaceSkinValidator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -66012765
+     * @hash   -65966637
      */
     MCAPI static bool checkIfValid(std::string const &);
 

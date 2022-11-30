@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createPostFallDamageFinalizeMoveSystem@PostFallDamageFinalizeMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   705958756
+     * @hash   706004884
      */
     MCAPI static struct TickingSystemWithInfo createPostFallDamageFinalizeMoveSystem();
 

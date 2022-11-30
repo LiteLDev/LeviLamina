@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@TopSnowBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -451074645
+     * @hash   -450244341
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@TopSnowBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -866927227
+     * @hash   -866096923
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@TopSnowBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   959601657
+     * @hash   960431961
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -189,43 +189,43 @@ public:
     /**
      * @vftbl  84
      * @symbol ?isPreservingMediumWhenPlaced@TopSnowBlock@@UEBA_NPEBVBlockLegacy@@@Z
-     * @hash   875138043
+     * @hash   875968347
      */
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -422102197
+     * @hash   -421271893
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  94
      * @symbol ?tryToPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
-     * @hash   -1272486222
+     * @hash   -1271655918
      */
     virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@TopSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -929470938
+     * @hash   -928640634
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@TopSnowBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1575171113
+     * @hash   1576001417
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -364226633
+     * @hash   -363396329
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@TopSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1436647563
+     * @hash   -1435817259
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -236,25 +236,25 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@TopSnowBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   987033716
+     * @hash   987864020
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  114
      * @symbol ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-     * @hash   -1590865441
+     * @hash   -1590035137
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
      * @vftbl  115
      * @symbol ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1414177752
+     * @hash   1415008056
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  122
      * @symbol ?shouldStopFalling@TopSnowBlock@@UEBA_NAEAVActor@@@Z
-     * @hash   856696736
+     * @hash   857527040
      */
     virtual bool shouldStopFalling(class Actor &) const;
     /**
@@ -265,7 +265,7 @@ public:
     /**
      * @vftbl  124
      * @symbol ?calcGroundFriction@TopSnowBlock@@UEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
-     * @hash   1685209045
+     * @hash   1686039349
      */
     virtual float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@TopSnowBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1602665889
+     * @hash   -1601835585
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -297,7 +297,7 @@ public:
     /**
      * @vftbl  164
      * @symbol ?onExploded@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -674056600
+     * @hash   -673226296
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
@@ -324,7 +324,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@TopSnowBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1258670951
+     * @hash   -1257840647
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -335,13 +335,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   112795739
+     * @hash   113626043
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   608878008
+     * @hash   609708312
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -357,25 +357,25 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -976940165
+     * @hash   -976109861
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2023017197
+     * @hash   -2022186893
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   245085777
+     * @hash   245916081
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?getDustParticleName@TopSnowBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   495607196
+     * @hash   496437500
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
@@ -386,13 +386,13 @@ public:
     /**
      * @vftbl  196
      * @symbol ?isFreeToFall@TopSnowBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   817045630
+     * @hash   817875934
      */
     virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  197
      * @symbol ?startFalling@TopSnowBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
-     * @hash   228130565
+     * @hash   228960869
      */
     virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOPSNOWBLOCK
@@ -419,49 +419,49 @@ public:
 #endif
     /**
      * @symbol ??0TopSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   655915011
+     * @hash   656745315
      */
     MCAPI TopSnowBlock(std::string const &, int);
     /**
      * @symbol ?getResourceItemFromFalling@TopSnowBlock@@QEBA?AVItemInstance@@XZ
-     * @hash   -1156460528
+     * @hash   -1155630224
      */
     MCAPI class ItemInstance getResourceItemFromFalling() const;
     /**
      * @symbol ?melt@TopSnowBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -107340187
+     * @hash   -106509883
      */
     MCAPI bool melt(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?startFallingIfLostSupport@TopSnowBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   208799218
+     * @hash   209629522
      */
     MCAPI void startFallingIfLostSupport(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?buildSnowBlock@TopSnowBlock@@SAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -934322342
+     * @hash   -933492038
      */
     MCAPI static class Block const & buildSnowBlock(class BlockSource &, class BlockPos const &, int, bool);
     /**
      * @symbol ?getCoveredBlock@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -935566992
+     * @hash   -934736688
      */
     MCAPI static class Block const & getCoveredBlock(class BlockSource const &, class BlockPos const &);
     /**
      * @symbol ?getSnowBlockToBuild@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -77208692
+     * @hash   -76378388
      */
     MCAPI static class Block const & getSnowBlockToBuild(class BlockSource const &, class BlockPos const &, int, bool);
 
 //private:
     /**
      * @symbol ?_canBeBuiltOver@TopSnowBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@PEBVBlockItem@@@Z
-     * @hash   -121971817
+     * @hash   -121141513
      */
     MCAPI bool _canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const *) const;
     /**
      * @symbol ?_canSurvive@TopSnowBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1175711679
+     * @hash   1176541983
      */
     MCAPI bool _canSurvive(class BlockSource &, class BlockPos const &) const;
 

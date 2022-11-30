@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isEnabled@ItemStackNetManagerBase@@UEBA_NXZ
-     * @hash   -1692627847
+     * @hash   -1692581719
      */
     virtual bool isEnabled() const;
     /**
@@ -62,19 +62,19 @@ public:
     /**
      * @vftbl  5
      * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@MEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-     * @hash   -1893742566
+     * @hash   -1893696438
      */
     virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
     /**
      * @vftbl  6
      * @symbol ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
-     * @hash   -219212570
+     * @hash   -219166442
      */
     virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /**
      * @vftbl  7
      * @symbol ?onContainerScreenClose@ItemStackNetManagerBase@@UEAAXXZ
-     * @hash   -823114037
+     * @hash   -823067909
      */
     virtual void onContainerScreenClose();
     /**
@@ -97,7 +97,7 @@ public:
     virtual void _initScreen(class ItemStackNetManagerScreen &);
     /**
      * @symbol ??0ItemStackNetManagerBase@@QEAA@AEAVPlayer@@_N1@Z
-     * @hash   -1179613115
+     * @hash   -1179566987
      */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     /**
@@ -107,34 +107,34 @@ public:
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
     /**
      * @symbol ?getScreenContext@ItemStackNetManagerBase@@QEBAAEBVContainerScreenContext@@XZ
-     * @hash   2049817692
+     * @hash   2049863820
      */
     MCAPI class ContainerScreenContext const & getScreenContext() const;
     /**
      * @symbol ?isClientSide@ItemStackNetManagerBase@@QEBA_NXZ
-     * @hash   -13812124
+     * @hash   -13765996
      */
     MCAPI bool isClientSide() const;
     /**
      * @symbol ?isScreenOpen@ItemStackNetManagerBase@@QEBA_NXZ
-     * @hash   474025428
+     * @hash   474071556
      */
     MCAPI bool isScreenOpen() const;
     /**
      * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
-     * @hash   1927302089
+     * @hash   1927348217
      */
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
     /**
      * @symbol ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
-     * @hash   831146370
+     * @hash   831192498
      */
     MCAPI static bool setPlayerContainer(class Player &, enum class ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 //protected:
     /**
      * @symbol ?_isRequestActionAllowed@ItemStackNetManagerBase@@IEAA_NAEBVItemStackRequestAction@@@Z
-     * @hash   -616551306
+     * @hash   -616505178
      */
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 

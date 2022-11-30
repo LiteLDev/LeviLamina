@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?createGameTestHelper@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VBaseGameTestHelper@gametest@@U?$default_delete@VBaseGameTestHelper@gametest@@@std@@@std@@AEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   675218198
+     * @hash   675264326
      */
     virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance &);
     /**
      * @vftbl  2
      * @symbol ?clone@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@XZ
-     * @hash   -257443707
+     * @hash   -257397579
      */
     virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 

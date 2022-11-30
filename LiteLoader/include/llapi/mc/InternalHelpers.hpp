@@ -29,7 +29,7 @@ namespace InternalHelpers {
     MCAPI extern class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> lastRenderTime;
     /**
      * @symbol ?toString@InternalHelpers@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MovePredictionType@@@Z
-     * @hash   2140645304
+     * @hash   2140691432
      */
     MCAPI std::string toString(enum MovePredictionType);
 

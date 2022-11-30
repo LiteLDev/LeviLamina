@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@SignBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1230483024
+     * @hash   1231313328
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -172,19 +172,19 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@SignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1622817547
+     * @hash   1623647851
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1756092430
+     * @hash   -1755262126
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SignBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1319260854
+     * @hash   -1318430550
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -215,7 +215,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1322628246
+     * @hash   -1321797942
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -768699690
+     * @hash   -767869386
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -257,13 +257,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@SignBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1647553627
+     * @hash   -1646723323
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -859741936
+     * @hash   -858911632
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -274,30 +274,30 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@SignBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   398963646
+     * @hash   399793950
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /**
      * @vftbl  193
      * @symbol ?_canSurvive@SignBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1983755891
+     * @hash   1984586195
      */
     virtual bool _canSurvive(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  194
      * @symbol ?_getItemInstance@SignBlock@@MEBA?AVItemInstance@@XZ
-     * @hash   -1397545153
+     * @hash   -1396714849
      */
     virtual class ItemInstance _getItemInstance() const;
     /**
      * @vftbl  195
      * @symbol ?_getShape@SignBlock@@MEBAXHAEAVAABB@@@Z
-     * @hash   1876279214
+     * @hash   1877109518
      */
     virtual void _getShape(int, class AABB &) const;
     /**
      * @symbol ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlockActor@@@Z
-     * @hash   2084791826
+     * @hash   2085622130
      */
     MCAPI SignBlock(std::string const &, int, bool, enum class SignBlockActor::SignType);
 

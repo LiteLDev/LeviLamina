@@ -49,7 +49,7 @@ public:
 #endif
     /**
      * @symbol ??0ActorAnimationPlayer@@QEAA@AEBVHashedString@@AEBVExpressionNode@@@Z
-     * @hash   994722704
+     * @hash   994768832
      */
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
 

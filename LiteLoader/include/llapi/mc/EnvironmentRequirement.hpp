@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z
-     * @hash   -112237592
+     * @hash   -112191464
      */
     MCAPI void addBlockDescriptor(class BlockDescriptor const &);
     /**

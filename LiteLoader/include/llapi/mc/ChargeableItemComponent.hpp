@@ -57,38 +57,38 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   271558615
+     * @hash   272388919
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -510249511
+     * @hash   -509419207
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
-     * @hash   -333677122
+     * @hash   -332846818
      */
     MCAPI float getMovementModifier() const;
     /**
      * @symbol ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -2025982168
+     * @hash   -2025151864
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?useTimeDepleted@ChargeableItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-     * @hash   -1597924562
+     * @hash   -1597094258
      */
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
     /**
      * @symbol ?bindType@ChargeableItemComponent@@SAXXZ
-     * @hash   -746172081
+     * @hash   -745341777
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ChargeableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   2075924048
+     * @hash   2076754352
      */
     MCAPI static class HashedString const & getIdentifier();
 

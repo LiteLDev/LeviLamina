@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?generateMessage@SideBySideValidationFailure@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N00AEBV23@AEBVVec3@@@Z
-     * @hash   -137184959
+     * @hash   -137138831
      */
     MCAPI std::string generateMessage(bool, bool, bool, std::string const &, class Vec3 const &) const;
     /**
@@ -40,7 +40,7 @@ public:
     MCAPI ~SideBySideValidationFailure();
     /**
      * @symbol ?toString@SideBySideValidationFailure@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FailureReason@1@@Z
-     * @hash   1912824548
+     * @hash   1912870676
      */
     MCAPI static std::string toString(enum class SideBySideValidationFailure::FailureReason);
 

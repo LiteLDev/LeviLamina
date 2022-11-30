@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?serialize@ITickingArea@@QEBA?AVCompoundTag@@XZ
-     * @hash   -1958714014
+     * @hash   -1957883710
      */
     MCAPI class CompoundTag serialize() const;
 

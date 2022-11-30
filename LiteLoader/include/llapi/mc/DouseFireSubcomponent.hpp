@@ -47,13 +47,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@DouseFireSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -1478852221
+     * @hash   -1478806093
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@DouseFireSubcomponent@@UEAAPEBDXZ
-     * @hash   -1868352690
+     * @hash   -1868306562
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUSEFIRESUBCOMPONENT
@@ -70,12 +70,12 @@ public:
 #endif
     /**
      * @symbol ??0DouseFireSubcomponent@@QEAA@XZ
-     * @hash   -1179204549
+     * @hash   -1179158421
      */
     MCAPI DouseFireSubcomponent();
     /**
      * @symbol ?douseFire@DouseFireSubcomponent@@QEAAXAEAVActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1257154870
+     * @hash   -1257108742
      */
     MCAPI void douseFire(class Actor &, class BlockSource &, class BlockPos const &);
 

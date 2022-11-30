@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?clone@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -1150036308
+     * @hash   -1149206004
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
@@ -51,25 +51,25 @@ public:
     /**
      * @vftbl  6
      * @symbol ?toMap@DeferredDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     * @hash   -1349068910
+     * @hash   -1348238606
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
      * @vftbl  7
      * @symbol ?save@DeferredDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     * @hash   -855244026
+     * @hash   -854413722
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
      * @vftbl  9
      * @symbol ?serialize@DeferredDescriptor@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1912444873
+     * @hash   1913275177
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @vftbl  10
      * @symbol ?getType@DeferredDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
-     * @hash   -1802029759
+     * @hash   -1801983631
      */
     virtual enum class ItemDescriptor::InternalType getType() const;
     /**
@@ -81,7 +81,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?getHash@DeferredDescriptor@@UEBA_KXZ
-     * @hash   -697441882
+     * @hash   -697395754
      */
     virtual unsigned __int64 getHash() const;
     /**
@@ -92,24 +92,24 @@ public:
     /**
      * @vftbl  14
      * @symbol ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -1006757877
+     * @hash   -1005927573
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
     /**
      * @symbol ?deserialize@DeferredDescriptor@@SA?AV?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -400568395
+     * @hash   -399738091
      */
     MCAPI static std::unique_ptr<struct DeferredDescriptor> deserialize(class ReadOnlyBinaryStream &);
 
 //private:
     /**
      * @symbol ?_initFromBlockLegacy@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@AEBVBlockLegacy@@$$QEAV?$WeakPtr@VItem@@@@@Z
-     * @hash   -1925093211
+     * @hash   -1924262907
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item> &&) const;
     /**
      * @symbol ?_initFromItem@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@$$QEAV?$WeakPtr@VItem@@@@F@Z
-     * @hash   -1294153029
+     * @hash   -1293322725
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromItem(class WeakPtr<class Item> &&, short) const;
 

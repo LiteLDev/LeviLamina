@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@SmallDripleafBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1389573981
+     * @hash   -1388743677
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   529819795
+     * @hash   530650099
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1386734077
+     * @hash   1387564381
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1140987684
+     * @hash   -1140157380
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   504919669
+     * @hash   505749973
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@SmallDripleafBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   188879346
+     * @hash   189709650
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  152
      * @symbol ?init@SmallDripleafBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   2104451600
+     * @hash   2105281904
      */
     virtual class BlockLegacy & init();
     /**
@@ -264,13 +264,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1638649521
+     * @hash   1639479825
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@SmallDripleafBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -2071638729
+     * @hash   -2070808425
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -281,7 +281,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1065388057
+     * @hash   1066218361
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1422898381
+     * @hash   1423728685
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -303,7 +303,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SmallDripleafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -930456959
+     * @hash   -929626655
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLDRIPLEAFBLOCK
@@ -320,24 +320,24 @@ public:
 #endif
     /**
      * @symbol ??0SmallDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -2086542271
+     * @hash   -2085711967
      */
     MCAPI SmallDripleafBlock(std::string const &, int);
     /**
      * @symbol ?tryPlaceSmallDripleaf@SmallDripleafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   -1446849398
+     * @hash   -1446019094
      */
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
 
 //private:
     /**
      * @symbol ?_isViablePlacePos@SmallDripleafBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1989675027
+     * @hash   1990505331
      */
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?placeUpperBlock@SmallDripleafBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   703103142
+     * @hash   703933446
      */
     MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);
 

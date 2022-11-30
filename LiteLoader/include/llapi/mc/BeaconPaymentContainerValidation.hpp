@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1297491876
+     * @hash   -1296661572
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@BeaconPaymentContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -228259318
+     * @hash   -227429014
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
@@ -67,7 +67,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   739161503
+     * @hash   739991807
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
@@ -78,7 +78,7 @@ public:
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@BeaconPaymentContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   -1898546452
+     * @hash   -1898500324
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONPAYMENTCONTAINERVALIDATION

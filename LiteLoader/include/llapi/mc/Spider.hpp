@@ -47,7 +47,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Spider@@UEAAXXZ
-     * @hash   -1464618186
+     * @hash   -1464572058
      */
     virtual void normalTick();
     /**
@@ -63,13 +63,13 @@ public:
     /**
      * @vftbl  78
      * @symbol ?setBlockMovementSlowdownMultiplier@Spider@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
-     * @hash   -1538266065
+     * @hash   -1538219937
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Spider@@UEBAMXZ
-     * @hash   -605442559
+     * @hash   -605396431
      */
     virtual float getShadowRadius() const;
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  212
      * @symbol ?canBeAffected@Spider@@UEBA_NI@Z
-     * @hash   -463260274
+     * @hash   -463214146
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1143097395
+     * @hash   -1143051267
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Spider@@UEAAXXZ
-     * @hash   -1844062138
+     * @hash   -1844016010
      */
     virtual void aiStep();
     /**
@@ -232,7 +232,7 @@ public:
 #endif
     /**
      * @symbol ??0Spider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -565250431
+     * @hash   -565204303
      */
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -24,37 +24,37 @@ namespace ActorContainerDiffHelperImpl {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_applyDiff@ActorContainerDiffHelperImpl@@YAXAEAVBaseAttributeMap@@AEBV?$vector@V?$not_null@PEBVAttributeInstance@@@gsl@@V?$allocator@V?$not_null@PEBVAttributeInstance@@@gsl@@@std@@@std@@@Z
-     * @hash   -92166570
+     * @hash   -92120442
      */
     MCAPI void _applyDiff(class BaseAttributeMap &, std::vector<class gsl::not_null<class AttributeInstance const *>> const &);
     /**
      * @symbol ?_createListOfPointers@ActorContainerDiffHelperImpl@@YA?BV?$vector@V?$not_null@PEBVAttributeInstance@@@gsl@@V?$allocator@V?$not_null@PEBVAttributeInstance@@@gsl@@@std@@@std@@AEBVBaseAttributeMap@@@Z
-     * @hash   -1433515758
+     * @hash   -1433469630
      */
     MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _createListOfPointers(class BaseAttributeMap const &);
     /**
      * @symbol ?_createListOfPointers@ActorContainerDiffHelperImpl@@YA?BV?$vector@V?$not_null@PEBVDataItem@@@gsl@@V?$allocator@V?$not_null@PEBVDataItem@@@gsl@@@std@@@std@@AEBVSynchedActorData@@@Z
-     * @hash   671916992
+     * @hash   671963120
      */
     MCAPI std::vector<class gsl::not_null<class DataItem const *>> const _createListOfPointers(class SynchedActorData const &);
     /**
      * @symbol ?_createListOfPointers@ActorContainerDiffHelperImpl@@YA?BV?$vector@V?$not_null@PEBVMobEffectInstance@@@gsl@@V?$allocator@V?$not_null@PEBVMobEffectInstance@@@gsl@@@std@@@std@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@3@@Z
-     * @hash   2079511304
+     * @hash   2079557432
      */
     MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _createListOfPointers(std::vector<class MobEffectInstance> const &);
     /**
      * @symbol ?_getDiff@ActorContainerDiffHelperImpl@@YA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@AEBVSynchedActorData@@0@Z
-     * @hash   -1879341879
+     * @hash   -1879295751
      */
     MCAPI std::vector<std::unique_ptr<class DataItem>> _getDiff(class SynchedActorData const &, class SynchedActorData const &);
     /**
      * @symbol ?_getDiff@ActorContainerDiffHelperImpl@@YA?BV?$vector@V?$not_null@PEBVAttributeInstance@@@gsl@@V?$allocator@V?$not_null@PEBVAttributeInstance@@@gsl@@@std@@@std@@AEBVBaseAttributeMap@@0@Z
-     * @hash   -1446662720
+     * @hash   -1446616592
      */
     MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _getDiff(class BaseAttributeMap const &, class BaseAttributeMap const &);
     /**
      * @symbol ?_getDiff@ActorContainerDiffHelperImpl@@YA?BV?$vector@V?$not_null@PEBVMobEffectInstance@@@gsl@@V?$allocator@V?$not_null@PEBVMobEffectInstance@@@gsl@@@std@@@std@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@3@0@Z
-     * @hash   -235344059
+     * @hash   -235297931
      */
     MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _getDiff(std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSkeletonPassengerRotationSystem@SkeletonPassengerRotationSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -982215480
+     * @hash   -982169352
      */
     MCAPI static struct TickingSystemWithInfo createSkeletonPassengerRotationSystem();
 

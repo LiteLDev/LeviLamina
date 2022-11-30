@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@InfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1112347253
+     * @hash   1113177557
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@InfestedBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -636279913
+     * @hash   -635449609
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -236,12 +236,12 @@ public:
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0InfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -353896752
+     * @hash   -353066448
      */
     MCAPI InfestedBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?spawnSilverfish@InfestedBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1413552997
+     * @hash   -1412722693
      */
     MCAPI static void spawnSilverfish(class BlockSource &, class BlockPos const &);
 

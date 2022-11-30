@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0BlockRotationComponent@@QEAA@AEBVVec3@@@Z
-     * @hash   2060323749
+     * @hash   2061154053
      */
     MCAPI BlockRotationComponent(class Vec3 const &);
     /**
      * @symbol ?setRotationDegrees@BlockRotationComponent@@QEAAXAEBVVec3@@@Z
-     * @hash   169460786
+     * @hash   170291090
      */
     MCAPI void setRotationDegrees(class Vec3 const &);
 

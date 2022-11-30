@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@GlobalActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1573383001
+     * @hash   -1573336873
      */
     virtual void tick(class EntityRegistry &);
 

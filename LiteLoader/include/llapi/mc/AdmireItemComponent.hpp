@@ -42,27 +42,27 @@ public:
     MCAPI class ItemStack const & getAdmireItem() const;
     /**
      * @symbol ?getAdmireUntil@AdmireItemComponent@@QEBAAEBUTick@@XZ
-     * @hash   403165712
+     * @hash   403211840
      */
     MCAPI struct Tick const & getAdmireUntil() const;
     /**
      * @symbol ?getItemOwnerRef@AdmireItemComponent@@QEBA?AVWeakEntityRef@@XZ
-     * @hash   838660816
+     * @hash   838706944
      */
     MCAPI class WeakEntityRef getItemOwnerRef() const;
     /**
      * @symbol ?isAdmiring@AdmireItemComponent@@QEBA_NXZ
-     * @hash   673607648
+     * @hash   673653776
      */
     MCAPI bool isAdmiring() const;
     /**
      * @symbol ?onAdmireItemPickedUp@AdmireItemComponent@@QEAAXAEBVActor@@AEBVItemStack@@PEAV2@@Z
-     * @hash   581867266
+     * @hash   581913394
      */
     MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     /**
      * @symbol ?stopAdmiring@AdmireItemComponent@@QEAAXXZ
-     * @hash   487667717
+     * @hash   487713845
      */
     MCAPI void stopAdmiring();
     /**

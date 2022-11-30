@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ActorAnimationEvent@@QEAA@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-     * @hash   1085390213
+     * @hash   1085436341
      */
     MCAPI ActorAnimationEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ??0ActorAnimationEvent@@QEAA@$$QEAV0@@Z
-     * @hash   -140646865
+     * @hash   -140600737
      */
     MCAPI ActorAnimationEvent(class ActorAnimationEvent &&);
     /**
      * @symbol ?fire@ActorAnimationEvent@@QEBAXAEAVRenderParams@@PEAVActor@@@Z
-     * @hash   -1522118372
+     * @hash   -1522072244
      */
     MCAPI void fire(class RenderParams &, class Actor *) const;
     /**
      * @symbol ??1ActorAnimationEvent@@QEAA@XZ
-     * @hash   -1818685577
+     * @hash   -1818639449
      */
     MCAPI ~ActorAnimationEvent();
 

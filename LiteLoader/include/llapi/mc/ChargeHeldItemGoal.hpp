@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ChargeHeldItemGoal@@UEAA_NXZ
-     * @hash   -1544708303
+     * @hash   -1544662175
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@ChargeHeldItemGoal@@UEAA_NXZ
-     * @hash   732759855
+     * @hash   732805983
      */
     virtual bool canContinueToUse();
     /**
@@ -55,30 +55,30 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@ChargeHeldItemGoal@@UEAAXXZ
-     * @hash   395300442
+     * @hash   395346570
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ChargeHeldItemGoal@@UEAAXXZ
-     * @hash   1650764346
+     * @hash   1650810474
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ChargeHeldItemGoal@@UEAAXXZ
-     * @hash   -525976059
+     * @hash   -525929931
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ChargeHeldItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -878478977
+     * @hash   -878432849
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ChargeHeldItemGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -60656530
+     * @hash   -60610402
      */
     MCAPI ChargeHeldItemGoal(class Mob &);
 

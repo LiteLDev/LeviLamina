@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@MobSpawnerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   281259543
+     * @hash   282089847
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@MobSpawnerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -357977418
+     * @hash   -357147114
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1934135136
+     * @hash   1934965440
      */
     virtual void tick(class BlockSource &);
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?onRemoved@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -414163748
+     * @hash   -413333444
      */
     virtual void onRemoved(class BlockSource &);
     /**
@@ -109,17 +109,17 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@MobSpawnerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   828173321
+     * @hash   829003625
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0MobSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   774632211
+     * @hash   775462515
      */
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     /**
      * @symbol ?getSpawner@MobSpawnerBlockActor@@QEAAAEAVBaseMobSpawner@@XZ
-     * @hash   -671188162
+     * @hash   -671142034
      */
     MCAPI class BaseMobSpawner & getSpawner();
 

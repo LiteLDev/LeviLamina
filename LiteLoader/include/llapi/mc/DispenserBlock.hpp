@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -909425155
+     * @hash   -908594851
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1228239728
+     * @hash   -1227409424
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@DispenserBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   803479186
+     * @hash   804309490
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@DispenserBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1480147961
+     * @hash   -1479317657
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -203,7 +203,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@DispenserBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   130165726
+     * @hash   130996030
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@DispenserBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   371413192
+     * @hash   372243496
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@DispenserBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -1346327306
+     * @hash   -1345497002
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -231,13 +231,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@DispenserBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   934113791
+     * @hash   934944095
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   697528135
+     * @hash   698358439
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -258,7 +258,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1118286220
+     * @hash   1119116524
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -269,7 +269,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1056507454
+     * @hash   1057337758
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@DispenserBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -190157123
+     * @hash   -189326819
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -291,19 +291,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DispenserBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -87241706
+     * @hash   -86411402
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  193
      * @symbol ?getTickDelay@DispenserBlock@@UEBAHXZ
-     * @hash   -262341693
+     * @hash   -262295565
      */
     virtual int getTickDelay() const;
     /**
      * @vftbl  194
      * @symbol ?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   447279620
+     * @hash   448109924
      */
     virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCK
@@ -325,29 +325,29 @@ public:
 #endif
     /**
      * @symbol ??0DispenserBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   355092630
+     * @hash   355922934
      */
     MCAPI DispenserBlock(std::string const &, int);
     /**
      * @symbol ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z
-     * @hash   -705749274
+     * @hash   -704918970
      */
     MCAPI static void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &);
 
 //protected:
     /**
      * @symbol ?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z
-     * @hash   -771767585
+     * @hash   -770937281
      */
     MCAPI void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &, class Container &, int) const;
     /**
      * @symbol ?getDispensePosition@DispenserBlock@@IEBA?AVVec3@@AEAVBlockSource@@AEBV2@@Z
-     * @hash   433460358
+     * @hash   434290662
      */
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
     /**
      * @symbol ?getFacing@DispenserBlock@@IEBAEAEBVBlock@@@Z
-     * @hash   1855119309
+     * @hash   1855949613
      */
     MCAPI unsigned char getFacing(class Block const &) const;
 

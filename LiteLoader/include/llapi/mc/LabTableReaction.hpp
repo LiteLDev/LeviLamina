@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ?addComponent@LabTableReaction@@QEAAXV?$unique_ptr@VLabTableReactionComponent@@U?$default_delete@VLabTableReactionComponent@@@std@@@std@@@Z
-     * @hash   -614225856
+     * @hash   -613395552
      */
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
     /**
      * @symbol ?addResultItem@LabTableReaction@@QEAAXAEBVItemStack@@@Z
-     * @hash   -1641877304
+     * @hash   -1641047000
      */
     MCAPI void addResultItem(class ItemStack const &);
     /**
      * @symbol ?getReactionId@LabTableReaction@@QEAAHXZ
-     * @hash   878775144
+     * @hash   878821272
      */
     MCAPI int getReactionId();
     /**
      * @symbol ?getType@LabTableReaction@@QEAA?AW4LabTableReactionType@@XZ
-     * @hash   1213931564
+     * @hash   1213977692
      */
     MCAPI enum class LabTableReactionType getType();
     /**
      * @symbol ?tick@LabTableReaction@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   -994432651
+     * @hash   -993602347
      */
     MCAPI bool tick(class BlockSource &);
     /**
      * @symbol ?createReaction@LabTableReaction@@SA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@W4LabTableReactionType@@AEBVBlockPos@@_N@Z
-     * @hash   807045837
+     * @hash   807876141
      */
     MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum class LabTableReactionType, class BlockPos const &, bool);
 

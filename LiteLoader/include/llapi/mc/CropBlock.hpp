@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?hasTag@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1612752207
+     * @hash   -1611921903
      */
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@CropBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   493666909
+     * @hash   494497213
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   2057655138
+     * @hash   2058485442
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -189,25 +189,25 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -187963822
+     * @hash   -187133518
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1430611471
+     * @hash   1431441775
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CropBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1846575501
+     * @hash   1847405805
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   296908017
+     * @hash   297738321
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -218,7 +218,7 @@ public:
     /**
      * @vftbl  118
      * @symbol ?executeEvent@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   748162129
+     * @hash   748992433
      */
     virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@CropBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -394892723
+     * @hash   -394062419
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1865874800
+     * @hash   1866705104
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   269112851
+     * @hash   269943155
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -296,31 +296,31 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @vftbl  192
-     * @hash   1666367482
+     * @hash   1667197786
      */
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
      * @symbol ?getBaseSeed@CropBlock@@MEBA?BVItemInstance@@XZ
-     * @hash   -1463125048
+     * @hash   -1462294744
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
      * @vftbl  194
      * @symbol ?getBaseCrop@CropBlock@@MEBA?BVItemInstance@@XZ
-     * @hash   17618919
+     * @hash   18449223
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
      * @vftbl  195
      * @symbol ?getSeedNum@CropBlock@@MEBAHAEAVRandomize@@HH@Z
-     * @hash   -290082685
+     * @hash   -289252381
      */
     virtual int getSeedNum(class Randomize &, int, int) const;
     /**
      * @vftbl  196
      * @symbol ?getCropNum@CropBlock@@MEBAHAEAVRandomize@@HH@Z
-     * @hash   735144402
+     * @hash   735974706
      */
     virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
@@ -332,14 +332,14 @@ public:
 #endif
     /**
      * @symbol ??0CropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1825992213
+     * @hash   -1825161909
      */
     MCAPI CropBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?getGrowthSpeed@CropBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   493672238
+     * @hash   494502542
      */
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
 

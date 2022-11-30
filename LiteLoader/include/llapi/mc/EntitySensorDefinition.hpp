@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0EntitySensorDefinition@@QEAA@XZ
-     * @hash   -266000132
+     * @hash   -265954004
      */
     MCAPI EntitySensorDefinition();
     /**
      * @symbol ?initialize@EntitySensorDefinition@@QEAAXAEAVEntityContext@@AEAVEntitySensorComponent@@@Z
-     * @hash   -1881187531
+     * @hash   -1881141403
      */
     MCAPI void initialize(class EntityContext &, class EntitySensorComponent &);
     /**
      * @symbol ?buildSchema@EntitySensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEntitySensorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -964855626
+     * @hash   -964809498
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
 

@@ -38,17 +38,17 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@LecternBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   237939482
+     * @hash   238769786
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?getContainer@LecternBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -1943252240
+     * @hash   -1942421936
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@LecternBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1923993196
+     * @hash   1924823500
      */
     MCVAPI class Container const * getContainer() const;
     /**
@@ -58,37 +58,37 @@ public:
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@LecternBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   -1683581565
+     * @hash   -1683535437
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@LecternBlockActor@@UEBAHXZ
-     * @hash   -89134537
+     * @hash   -89088409
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?load@LecternBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1309786266
+     * @hash   -1308955962
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onChanged@LecternBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   578111111
+     * @hash   578941415
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
      * @symbol ?save@LecternBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   66150613
+     * @hash   66980917
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@LecternBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   1917090392
+     * @hash   1917920696
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@LecternBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   320378658
+     * @hash   321208962
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
@@ -104,42 +104,42 @@ public:
 #endif
     /**
      * @symbol ??0LecternBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   740984690
+     * @hash   741814994
      */
     MCAPI LecternBlockActor(class BlockPos const &);
     /**
      * @symbol ?dropBook@LecternBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   1935909766
+     * @hash   1936740070
      */
     MCAPI void dropBook(class BlockSource &);
     /**
      * @symbol ?getPage@LecternBlockActor@@QEBAHXZ
-     * @hash   882826466
+     * @hash   883656770
      */
     MCAPI int getPage() const;
     /**
      * @symbol ?getTotalPages@LecternBlockActor@@QEBAHXZ
-     * @hash   -1804499020
+     * @hash   -1803668716
      */
     MCAPI int getTotalPages() const;
     /**
      * @symbol ?hasBook@LecternBlockActor@@QEBA_NXZ
-     * @hash   740951648
+     * @hash   741781952
      */
     MCAPI bool hasBook() const;
     /**
      * @symbol ?setItemFromBlock@LecternBlockActor@@QEAAXHAEBVItemStack@@@Z
-     * @hash   -161551113
+     * @hash   -160720809
      */
     MCAPI void setItemFromBlock(int, class ItemStack const &);
     /**
      * @symbol ?setPageOnServer@LecternBlockActor@@QEAAXHAEAVBlockSource@@@Z
-     * @hash   -106638031
+     * @hash   -105807727
      */
     MCAPI void setPageOnServer(int, class BlockSource &);
     /**
      * @symbol ?setTotalPages@LecternBlockActor@@QEAAXH@Z
-     * @hash   -970749118
+     * @hash   -969918814
      */
     MCAPI void setTotalPages(int);
 

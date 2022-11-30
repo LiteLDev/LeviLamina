@@ -30,74 +30,74 @@ public:
 public:
     /**
      * @symbol ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-     * @hash   -857354298
+     * @hash   -856523994
      */
     MCAPI unsigned int calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
     /**
      * @symbol ?tryAddItemStack@StorageItemComponent@@QEBA_NAEAVItemStack@@0@Z
-     * @hash   1874482164
+     * @hash   1875312468
      */
     MCAPI bool tryAddItemStack(class ItemStack &, class ItemStack &) const;
     /**
      * @symbol ?tryGenerateUserData@StorageItemComponent@@QEBAXAEAVItemStack@@@Z
-     * @hash   1601620956
+     * @hash   1602451260
      */
     MCAPI void tryGenerateUserData(class ItemStack &) const;
     /**
      * @symbol ?tryRemoveItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
-     * @hash   500475170
+     * @hash   501305474
      */
     MCAPI class ItemStack tryRemoveItemStack(class ItemStack &) const;
     /**
      * @symbol ?tryRemoveOneFromItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
-     * @hash   717539876
+     * @hash   718370180
      */
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack &) const;
     /**
      * @symbol ?use@StorageItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   1282488792
+     * @hash   1283319096
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?DEFAULT_MAX_CARRY_WEIGHT@StorageItemComponent@@2IB
-     * @hash   -1060044359
+     * @hash   -1059921351
      */
     MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
     /**
      * @symbol ?bindType@StorageItemComponent@@SAXXZ
-     * @hash   1711070323
+     * @hash   1711900627
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@StorageItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1444611462
+     * @hash   -1443781158
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
      * @symbol ?_calculateAddableCountForBasicStorage@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-     * @hash   910178294
+     * @hash   911008598
      */
     MCAPI unsigned int _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
     /**
      * @symbol ?_getItemListSize@StorageItemComponent@@AEBAIAEAVItemStack@@@Z
-     * @hash   -568200704
+     * @hash   -567370400
      */
     MCAPI unsigned int _getItemListSize(class ItemStack &) const;
     /**
      * @symbol ?_getPerItemCost@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-     * @hash   1887187569
+     * @hash   1888017873
      */
     MCAPI unsigned int _getPerItemCost(class ItemStack const &, class ItemStackBase const &) const;
     /**
      * @symbol ?_storeItemInNewOrExistingSlot@StorageItemComponent@@AEBAXAEAVItemStack@@0I@Z
-     * @hash   1097576282
+     * @hash   1098406586
      */
     MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, unsigned int) const;
     /**
      * @symbol ?_updateRemainingWeight@StorageItemComponent@@AEBAXAEAVItemStack@@AEBV2@H@Z
-     * @hash   -1345295314
+     * @hash   -1344465010
      */
     MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int) const;
 

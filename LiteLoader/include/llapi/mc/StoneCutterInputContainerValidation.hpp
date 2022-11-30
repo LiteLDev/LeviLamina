@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   254409720
+     * @hash   255240024
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   1670288795
+     * @hash   1671119099
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -66,19 +66,19 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   1648037947
+     * @hash   1648868251
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   -1428566641
+     * @hash   -1427736337
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@StoneCutterInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   1391765624
+     * @hash   1391811752
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**

@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@NearestAttackableTargetGoal@@UEAA_NXZ
-     * @hash   1033357324
+     * @hash   1033403452
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@NearestAttackableTargetGoal@@UEAA_NXZ
-     * @hash   -1450203542
+     * @hash   -1450157414
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  4
      * @symbol ?start@NearestAttackableTargetGoal@@UEAAXXZ
-     * @hash   848860181
+     * @hash   848906309
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@NearestAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -944610236
+     * @hash   -944564108
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
@@ -73,36 +73,36 @@ public:
     /**
      * @vftbl  11
      * @symbol ?_findTarget@NearestAttackableTargetGoal@@MEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
-     * @hash   -1679731327
+     * @hash   -1679685199
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
     /**
      * @symbol ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1948039975
+     * @hash   -1947993847
      */
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_canStartSearching@NearestAttackableTargetGoal@@IEAA_NXZ
-     * @hash   -1174247598
+     * @hash   -1174201470
      */
     MCAPI bool _canStartSearching();
     /**
      * @symbol ?_getNearbyActors@NearestAttackableTargetGoal@@IEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@XZ
-     * @hash   1930471146
+     * @hash   1930517274
      */
     MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     /**
      * @symbol ?_isTargetVisible@NearestAttackableTargetGoal@@IEBA_NAEBVMob@@MM@Z
-     * @hash   -1258138985
+     * @hash   -1258092857
      */
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 //private:
     /**
      * @symbol ?_selectTarget@NearestAttackableTargetGoal@@AEAA_NXZ
-     * @hash   1643517390
+     * @hash   1643563518
      */
     MCAPI bool _selectTarget();
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@EffectCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -609560103
+     * @hash   -609513975
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@EffectCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   749437872
+     * @hash   749484000
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?clear@EffectCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -2048271402
+     * @hash   -2048225274
      */
     MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
 

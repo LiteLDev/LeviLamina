@@ -37,7 +37,7 @@ public:
     virtual ~BarrelContainerScreenValidator();
     /**
      * @symbol ??0BarrelContainerScreenValidator@@QEAA@XZ
-     * @hash   -1051592841
+     * @hash   -1050762537
      */
     MCAPI BarrelContainerScreenValidator();
 

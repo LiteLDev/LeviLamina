@@ -59,38 +59,38 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1184726309
+     * @hash   -1183896005
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   127258805
+     * @hash   128089109
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?canDestroySpecial@DiggerItemComponent@@QEBA_NAEBVBlock@@@Z
-     * @hash   -994634709
+     * @hash   -993804405
      */
     MCAPI bool canDestroySpecial(class Block const &) const;
     /**
      * @symbol ?getDestroySpeed@DiggerItemComponent@@QEAAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   569395992
+     * @hash   570226296
      */
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     /**
      * @symbol ?mineBlock@DiggerItemComponent@@QEAA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     * @hash   -13029245
+     * @hash   -12198941
      */
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /**
      * @symbol ?bindType@DiggerItemComponent@@SAXXZ
-     * @hash   1448844351
+     * @hash   1449674655
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DiggerItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -733464344
+     * @hash   -732634040
      */
     MCAPI static class HashedString const & getIdentifier();
 

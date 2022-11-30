@@ -30,37 +30,37 @@ public:
 public:
     /**
      * @symbol ?beginRope@RopePoints@@QEAAXXZ
-     * @hash   -1141335837
+     * @hash   -1140505533
      */
     MCAPI void beginRope();
     /**
      * @symbol ?endRope@RopePoints@@QEAAXXZ
-     * @hash   -689261837
+     * @hash   -688431533
      */
     MCAPI void endRope();
     /**
      * @symbol ?freezeInterpolation@RopePoints@@QEAAXXZ
-     * @hash   -286960317
+     * @hash   -286130013
      */
     MCAPI void freezeInterpolation();
     /**
      * @symbol ?pushBack@RopePoints@@QEAAXAEBVVec3@@@Z
-     * @hash   835534260
+     * @hash   836364564
      */
     MCAPI void pushBack(class Vec3 const &);
     /**
      * @symbol ?reserve@RopePoints@@QEAAX_K@Z
-     * @hash   865576233
+     * @hash   866406537
      */
     MCAPI void reserve(unsigned __int64);
     /**
      * @symbol ?size@RopePoints@@QEBA_KXZ
-     * @hash   -1925174383
+     * @hash   -1925128255
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ??1RopePoints@@QEAA@XZ
-     * @hash   957492175
+     * @hash   957538303
      */
     MCAPI ~RopePoints();
 

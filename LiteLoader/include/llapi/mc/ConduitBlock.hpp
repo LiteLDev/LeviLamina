@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1345939238
+     * @hash   -1345108934
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ConduitBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1207097763
+     * @hash   -1206267459
      */
     MCAPI ConduitBlock(std::string const &, int);
 

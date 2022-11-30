@@ -25,17 +25,17 @@ struct CommandOriginData {
 public:
     /**
      * @symbol ??0CommandOriginData@@QEAA@XZ
-     * @hash   -1622515193
+     * @hash   -1622469065
      */
     MCAPI CommandOriginData();
     /**
      * @symbol ??0CommandOriginData@@QEAA@AEBU0@@Z
-     * @hash   1235353125
+     * @hash   1235399253
      */
     MCAPI CommandOriginData(struct CommandOriginData const &);
     /**
      * @symbol ??4CommandOriginData@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1015512974
+     * @hash   1015559102
      */
     MCAPI struct CommandOriginData & operator=(struct CommandOriginData const &);
     /**

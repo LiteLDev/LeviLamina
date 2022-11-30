@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@EndRodBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -2046600015
+     * @hash   -2045769711
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@EndRodBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -866117328
+     * @hash   -865287024
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@EndRodBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   1976528522
+     * @hash   1977358826
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -206,7 +206,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@EndRodBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1802699600
+     * @hash   1803529904
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@EndRodBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -184917429
+     * @hash   -184087125
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@EndRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1349004650
+     * @hash   -1348174346
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@EndRodBlock@@UEAAXXZ
-     * @hash   1751241679
+     * @hash   1752071983
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -280,13 +280,13 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@EndRodBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1068004113
+     * @hash   -1067173809
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@EndRodBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   39089157
+     * @hash   39919461
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -296,7 +296,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0EndRodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -480236513
+     * @hash   -479406209
      */
     MCAPI EndRodBlock(std::string const &, int);
 

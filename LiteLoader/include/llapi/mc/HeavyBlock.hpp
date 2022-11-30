@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   184347496
+     * @hash   185177800
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   102628171
+     * @hash   103458475
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -216,7 +216,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -142327554
+     * @hash   -141497250
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -227,7 +227,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@HeavyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2128001460
+     * @hash   -2127171156
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -266,13 +266,13 @@ public:
     /**
      * @vftbl  196
      * @symbol ?isFreeToFall@HeavyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -950085708
+     * @hash   -949255404
      */
     virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  197
      * @symbol ?startFalling@HeavyBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
-     * @hash   -1713783116
+     * @hash   -1712952812
      */
     virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
@@ -284,24 +284,24 @@ public:
 #endif
     /**
      * @symbol ??0HeavyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1432886285
+     * @hash   1433716589
      */
     MCAPI HeavyBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?triggerFallCheck@HeavyBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   282296561
+     * @hash   283126865
      */
     MCAPI void triggerFallCheck(class BlockSource &, class BlockPos const &) const;
 
 //protected:
     /**
      * @symbol ?_tickBlocksAround2D@HeavyBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1524624383
+     * @hash   1525454687
      */
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?checkSlide@HeavyBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1396282157
+     * @hash   -1395451853
      */
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
 

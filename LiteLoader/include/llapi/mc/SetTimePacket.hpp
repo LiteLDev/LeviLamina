@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetTimePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1921425705
+     * @hash   -1921379577
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetTimePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1966278268
+     * @hash   -1966232140
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetTimePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -180518861
+     * @hash   -180472733
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetTimePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   549425027
+     * @hash   549471155
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetTimePacket@@QEAA@XZ
-     * @hash   916806419
+     * @hash   916852547
      */
     MCAPI SetTimePacket();
     /**
      * @symbol ??0SetTimePacket@@QEAA@H@Z
-     * @hash   -611220424
+     * @hash   -611174296
      */
     MCAPI SetTimePacket(int);
 

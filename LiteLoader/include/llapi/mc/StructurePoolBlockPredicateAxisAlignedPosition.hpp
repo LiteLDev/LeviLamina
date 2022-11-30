@@ -44,12 +44,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     * @hash   -1610724070
+     * @hash   -1609893766
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
      * @symbol ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
-     * @hash   81191005
+     * @hash   82021309
      */
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
 

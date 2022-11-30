@@ -94,18 +94,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  105
      * @symbol ?fixupCommon@RapidFertilizerItem@@UEBAXAEAVItemStackBase@@@Z
-     * @hash   1147299252
+     * @hash   1148129556
      */
     virtual void fixupCommon(class ItemStackBase &) const;
 

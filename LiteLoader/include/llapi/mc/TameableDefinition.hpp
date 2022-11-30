@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0TameableDefinition@@QEAA@XZ
-     * @hash   1328968862
+     * @hash   1329014990
      */
     MCAPI TameableDefinition();
     /**
      * @symbol ?addTamingItemByName@TameableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1878445810
+     * @hash   -1878399682
      */
     MCAPI void addTamingItemByName(std::string const &);
     /**
      * @symbol ?initialize@TameableDefinition@@QEBAXAEAVEntityContext@@AEAVTameableComponent@@@Z
-     * @hash   -437585145
+     * @hash   -437539017
      */
     MCAPI void initialize(class EntityContext &, class TameableComponent &) const;
     /**
      * @symbol ?buildSchema@TameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTameableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1428910378
+     * @hash   -1428864250
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>> &);
 

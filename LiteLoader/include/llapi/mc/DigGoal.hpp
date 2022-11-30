@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DigGoal@@UEAA_NXZ
-     * @hash   -1201924661
+     * @hash   -1201878533
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DigGoal@@UEAA_NXZ
-     * @hash   -537147047
+     * @hash   -537100919
      */
     virtual bool canContinueToUse();
     /**
@@ -53,13 +53,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@DigGoal@@UEAAXXZ
-     * @hash   398633396
+     * @hash   398679524
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DigGoal@@UEAAXXZ
-     * @hash   1971316660
+     * @hash   1971362788
      */
     virtual void stop();
     /**
@@ -71,12 +71,12 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DigGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1148842139
+     * @hash   -1148796011
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DigGoal@@QEAA@AEAVMob@@@Z
-     * @hash   288616824
+     * @hash   288662952
      */
     MCAPI DigGoal(class Mob &);
 

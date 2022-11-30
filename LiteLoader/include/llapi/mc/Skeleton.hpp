@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Skeleton@@UEAAXXZ
-     * @hash   -425909554
+     * @hash   -425863426
      */
     virtual void normalTick();
     /**
      * @vftbl  52
      * @symbol ?passengerTick@Skeleton@@UEAAXXZ
-     * @hash   735639153
+     * @hash   735685281
      */
     virtual void passengerTick();
     /**
@@ -112,13 +112,13 @@ public:
     /**
      * @vftbl  116
      * @symbol ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
-     * @hash   -2097704986
+     * @hash   -2097658858
      */
     virtual void setTarget(class Actor *);
     /**
      * @vftbl  176
      * @symbol ?canFreeze@Skeleton@@UEBA_NXZ
-     * @hash   -329261646
+     * @hash   -329215518
      */
     virtual bool canFreeze() const;
     /**
@@ -134,7 +134,7 @@ public:
     /**
      * @vftbl  212
      * @symbol ?canBeAffected@Skeleton@@UEBA_NI@Z
-     * @hash   -35780106
+     * @hash   -35733978
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
@@ -150,7 +150,7 @@ public:
     /**
      * @vftbl  224
      * @symbol ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1280743532
+     * @hash   -1280697404
      */
     virtual void getDebugText(std::vector<std::string> &);
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -904661520
+     * @hash   -904615392
      */
     virtual void die(class ActorDamageSource const &);
     /**
@@ -197,7 +197,7 @@ public:
     /**
      * @vftbl  311
      * @symbol ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   -1057812207
+     * @hash   -1057766079
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
@@ -224,12 +224,12 @@ public:
 #endif
     /**
      * @symbol ??0Skeleton@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -568874535
+     * @hash   -568828407
      */
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setWitherParent@Skeleton@@QEAAXPEAVWitherBoss@@@Z
-     * @hash   1815968465
+     * @hash   1816014593
      */
     MCAPI void setWitherParent(class WitherBoss *);
 

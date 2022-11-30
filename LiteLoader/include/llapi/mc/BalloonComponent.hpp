@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0BalloonComponent@@QEAA@XZ
-     * @hash   -1747854870
+     * @hash   -1747808742
      */
     MCAPI BalloonComponent();
     /**
      * @symbol ?addAdditionalSaveData@BalloonComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -973051656
+     * @hash   -973005528
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?computeMaxHeight@BalloonComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -2129707878
+     * @hash   -2129661750
      */
     MCAPI void computeMaxHeight(class Actor &);
     /**
      * @symbol ?detach@BalloonComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -597560390
+     * @hash   -597514262
      */
     MCAPI void detach(class Actor &);
     /**
      * @symbol ?getAttachedActor@BalloonComponent@@QEAAPEAVActor@@AEAV2@@Z
-     * @hash   -741168413
+     * @hash   -741122285
      */
     MCAPI class Actor * getAttachedActor(class Actor &);
     /**
@@ -61,27 +61,27 @@ public:
     MCAPI float getMaxHeight() const;
     /**
      * @symbol ?integrate@BalloonComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1434861196
+     * @hash   1434907324
      */
     MCAPI void integrate(class Actor &);
     /**
      * @symbol ?onRemoved@BalloonComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   1428158429
+     * @hash   1428204557
      */
     MCAPI void onRemoved(class Actor &, bool);
     /**
      * @symbol ?readAdditionalSaveData@BalloonComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1795209110
+     * @hash   1795255238
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setAttachedActor@BalloonComponent@@QEAAXAEAVActor@@0@Z
-     * @hash   1881366297
+     * @hash   1881412425
      */
     MCAPI void setAttachedActor(class Actor &, class Actor &);
     /**
      * @symbol ?shouldPop@BalloonComponent@@QEAA_NAEAVActor@@AEA_N@Z
-     * @hash   1641111371
+     * @hash   1641157499
      */
     MCAPI bool shouldPop(class Actor &, bool &);
     /**
@@ -91,12 +91,12 @@ public:
     MCAPI static std::string const ATTACHED_TAG;
     /**
      * @symbol ?FENCE_BALLOON_RANGE@BalloonComponent@@2MB
-     * @hash   2068762427
+     * @hash   2068885435
      */
     MCAPI static float const FENCE_BALLOON_RANGE;
     /**
      * @symbol ?MAX_BALLOON_RANGE@BalloonComponent@@2MB
-     * @hash   -352968425
+     * @hash   -352845417
      */
     MCAPI static float const MAX_BALLOON_RANGE;
     /**
@@ -111,7 +111,7 @@ public:
     MCAPI static std::string const SHOULD_DROP_TAG;
     /**
      * @symbol ?getBalloonForActor@BalloonComponent@@SAPEAVActor@@AEBV2@@Z
-     * @hash   -1327149577
+     * @hash   -1327103449
      */
     MCAPI static class Actor * getBalloonForActor(class Actor const &);
 

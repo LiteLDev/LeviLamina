@@ -37,7 +37,7 @@ public:
     virtual ~GrindstoneContainerScreenValidator();
     /**
      * @symbol ??0GrindstoneContainerScreenValidator@@QEAA@XZ
-     * @hash   1151518290
+     * @hash   1152348594
      */
     MCAPI GrindstoneContainerScreenValidator();
 

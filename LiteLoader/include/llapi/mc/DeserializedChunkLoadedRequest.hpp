@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1DeserializedChunkLoadedRequest@@QEAA@XZ
-     * @hash   -725710532
+     * @hash   -724880228
      */
     MCAPI ~DeserializedChunkLoadedRequest();
 

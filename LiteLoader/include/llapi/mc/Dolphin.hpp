@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Dolphin@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   106659186
+     * @hash   106705314
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -162,7 +162,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Dolphin@@UEAAXXZ
-     * @hash   -1176285891
+     * @hash   -1176239763
      */
     virtual void aiStep();
     /**
@@ -178,13 +178,13 @@ public:
     /**
      * @vftbl  338
      * @symbol ?createAIGoals@Dolphin@@UEAA_NXZ
-     * @hash   -583536425
+     * @hash   -583490297
      */
     virtual bool createAIGoals();
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -285803831
+     * @hash   -285757703
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -199,7 +199,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Dolphin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   387212890
+     * @hash   387259018
      */
     MCAPI Dolphin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

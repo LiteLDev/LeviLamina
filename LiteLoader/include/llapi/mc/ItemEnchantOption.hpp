@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ItemEnchantOption@@QEAA@$$QEAV0@@Z
-     * @hash   1467017007
+     * @hash   1467063135
      */
     MCAPI ItemEnchantOption(class ItemEnchantOption &&);
     /**
      * @symbol ??1ItemEnchantOption@@QEAA@XZ
-     * @hash   1614399527
+     * @hash   1614445655
      */
     MCAPI ~ItemEnchantOption();
 

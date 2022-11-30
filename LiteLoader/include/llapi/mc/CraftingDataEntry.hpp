@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?fillFromMultiRecipe@CraftingDataEntry@@QEAAXAEBVMultiRecipe@@@Z
-     * @hash   -1578662130
+     * @hash   -1578616002
      */
     MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
     /**
      * @symbol ?fillFromRecipe@CraftingDataEntry@@QEAAXAEBVRecipe@@@Z
-     * @hash   542071624
+     * @hash   542117752
      */
     MCAPI void fillFromRecipe(class Recipe const &);
     /**
      * @symbol ?write@CraftingDataEntry@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   -241440268
+     * @hash   -241394140
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1CraftingDataEntry@@QEAA@XZ
-     * @hash   -631460974
+     * @hash   -631414846
      */
     MCAPI ~CraftingDataEntry();
 

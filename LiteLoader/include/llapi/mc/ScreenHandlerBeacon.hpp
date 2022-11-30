@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-     * @hash   -1763408256
+     * @hash   -1762577952
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
      * @vftbl  2
      * @symbol ?endRequest@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@XZ
-     * @hash   1403404855
+     * @hash   1404235159
      */
     virtual enum class ItemStackNetResult endRequest();
     /**
@@ -55,19 +55,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?postRequest@ScreenHandlerBeacon@@MEAAX_N@Z
-     * @hash   1442032799
+     * @hash   1442863103
      */
     virtual void postRequest(bool);
     /**
      * @symbol ??0ScreenHandlerBeacon@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
-     * @hash   1428580990
+     * @hash   1429411294
      */
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**
      * @symbol ?_handleBeaconPaymentAction@ScreenHandlerBeacon@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionBeaconPayment@@@Z
-     * @hash   1561113439
+     * @hash   1561943743
      */
     MCAPI enum class ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 

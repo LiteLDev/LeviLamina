@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@HopperBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -177246279
+     * @hash   -176415975
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@HopperBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1471195172
+     * @hash   1472025476
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@HopperBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -174654600
+     * @hash   -173824296
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@HopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   966655452
+     * @hash   967485756
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -178,13 +178,13 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@HopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -341826897
+     * @hash   -340996593
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  80
      * @symbol ?getRedstoneProperty@HopperBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1997187472
+     * @hash   -1996357168
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@HopperBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -121590814
+     * @hash   -120760510
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@HopperBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   651669057
+     * @hash   652499361
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@HopperBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1953897608
+     * @hash   -1953067304
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -233,7 +233,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@HopperBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -2074729875
+     * @hash   -2073899571
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@HopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2018503994
+     * @hash   -2017673690
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@HopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   555759819
+     * @hash   556590123
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@HopperBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -393120853
+     * @hash   -392290549
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
@@ -303,7 +303,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@HopperBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   818241767
+     * @hash   819072071
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCK
@@ -325,24 +325,24 @@ public:
 #endif
     /**
      * @symbol ??0HopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   386758967
+     * @hash   387589271
      */
     MCAPI HopperBlock(std::string const &, int);
     /**
      * @symbol ?getAttachedOffset@HopperBlock@@SA?AVBlockPos@@E@Z
-     * @hash   -1245240172
+     * @hash   -1244409868
      */
     MCAPI static class BlockPos getAttachedOffset(unsigned char);
 
 //private:
     /**
      * @symbol ?_getSpoutAABB@HopperBlock@@AEBA?AVAABB@@AEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1751021030
+     * @hash   1751851334
      */
     MCAPI class AABB _getSpoutAABB(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?_installCircuit@HopperBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1899091789
+     * @hash   1899922093
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 

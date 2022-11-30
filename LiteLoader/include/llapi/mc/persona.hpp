@@ -86,7 +86,7 @@ enum class PieceType;
     MCAPI extern class HashedString const ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE;
     /**
      * @symbol ?INVALID_INDEX@persona@@3HB
-     * @hash   -422911195
+     * @hash   -422788187
      */
     MCAPI extern int const INVALID_INDEX;
     /**
@@ -111,12 +111,12 @@ enum class PieceType;
     MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
     /**
      * @symbol ?pieceTypeFromString@persona@@YA?AW4PieceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1573226953
+     * @hash   1573273081
      */
     MCAPI enum class persona::PieceType pieceTypeFromString(std::string const &);
     /**
      * @symbol ?stringFromPieceType@persona@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@1@_N@Z
-     * @hash   -2034992772
+     * @hash   -2034946644
      */
     MCAPI std::string const & stringFromPieceType(enum class persona::PieceType, bool);
 

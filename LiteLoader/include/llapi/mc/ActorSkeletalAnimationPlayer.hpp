@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?applyToPose@ActorSkeletalAnimationPlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
-     * @hash   500538611
+     * @hash   500584739
      */
     virtual void applyToPose(class RenderParams &, class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     /**
      * @vftbl  2
      * @symbol ?resetAnimation@ActorSkeletalAnimationPlayer@@UEAAXXZ
-     * @hash   1242544277
+     * @hash   1242590405
      */
     virtual void resetAnimation();
     /**
@@ -56,19 +56,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?bindParticleEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@@Z
-     * @hash   458869267
+     * @hash   458915395
      */
     virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const &);
     /**
      * @vftbl  5
      * @symbol ?bindSoundEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
-     * @hash   2013505160
+     * @hash   2013551288
      */
     virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
     /**
      * @vftbl  6
      * @symbol ?hasAnimationFinished@ActorSkeletalAnimationPlayer@@UEBA_NXZ
-     * @hash   -1792181171
+     * @hash   -1792135043
      */
     virtual bool hasAnimationFinished() const;
     /**
@@ -86,12 +86,12 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getRawName@ActorSkeletalAnimationPlayer@@UEBAAEBVHashedString@@XZ
-     * @hash   1699683813
+     * @hash   1699729941
      */
     virtual class HashedString const & getRawName() const;
     /**
      * @symbol ??0ActorSkeletalAnimationPlayer@@QEAA@AEBVHashedString@@VActorSkeletalAnimationPtr@@AEAVAnimationComponent@@AEBVExpressionNode@@@Z
-     * @hash   -1741439365
+     * @hash   -1741393237
      */
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
 

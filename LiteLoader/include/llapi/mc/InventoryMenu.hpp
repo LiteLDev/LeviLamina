@@ -38,38 +38,38 @@ public:
     MCVAPI class Container * _getContainer() const;
     /**
      * @symbol ?getItemCopies@InventoryMenu@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   1505169860
+     * @hash   1505215988
      */
     MCVAPI std::vector<class ItemStack> getItemCopies() const;
     /**
      * @symbol ?getSlot@InventoryMenu@@UEBAAEBVItemStack@@H@Z
-     * @hash   -562969452
+     * @hash   -562923324
      */
     MCVAPI class ItemStack const & getSlot(int) const;
     /**
      * @symbol ?removeSlot@InventoryMenu@@UEAAXHH@Z
-     * @hash   -2093529122
+     * @hash   -2093482994
      */
     MCVAPI void removeSlot(int, int);
     /**
      * @symbol ?serverInitItemStackIds@InventoryMenu@@UEAAXXZ
-     * @hash   -56555694
+     * @hash   -56509566
      */
     MCVAPI void serverInitItemStackIds();
     /**
      * @symbol ?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   -1988997125
+     * @hash   -1988950997
      */
     MCVAPI void setSlot(int, class ItemStack const &, bool);
     /**
      * @symbol ??1InventoryMenu@@UEAA@XZ
-     * @hash   -884352456
+     * @hash   -884306328
      */
     MCVAPI ~InventoryMenu();
 #endif
     /**
      * @symbol ??0InventoryMenu@@QEAA@AEAVPlayer@@PEAVContainer@@@Z
-     * @hash   1066400112
+     * @hash   1066446240
      */
     MCAPI InventoryMenu(class Player &, class Container *);
 

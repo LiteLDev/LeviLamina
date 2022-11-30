@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@DimensionTransitionComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -634904696
+     * @hash   -634074392
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@DimensionTransitionComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -43873298
+     * @hash   -43042994
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**

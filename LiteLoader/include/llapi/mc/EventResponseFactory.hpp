@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?getSchema@EventResponseFactory@@QEBAAEBV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@XZ
-     * @hash   1046508164
+     * @hash   1046554292
      */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     /**
      * @symbol ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-     * @hash   1475354451
+     * @hash   1476184755
      */
     MCAPI void initSchema(std::string const &, class SemVersion const &);
 

@@ -37,7 +37,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onBlocked@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@0@Z
-     * @hash   1401107728
+     * @hash   1401938032
      */
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 

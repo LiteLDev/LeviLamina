@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@FenceGateBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   271466321
+     * @hash   272296625
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@FenceGateBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   946557528
+     * @hash   947387832
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -1226510428
+     * @hash   -1225680124
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1136749961
+     * @hash   -1135919657
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  85
      * @symbol ?ignoreEntitiesOnPistonMove@FenceGateBlock@@UEBA_NAEBVBlock@@@Z
-     * @hash   -1560729417
+     * @hash   -1559899113
      */
     virtual bool ignoreEntitiesOnPistonMove(class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -917948621
+     * @hash   -917118317
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@FenceGateBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -422113968
+     * @hash   -421283664
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -258,7 +258,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -728834685
+     * @hash   -728004381
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -269,7 +269,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -118639001
+     * @hash   -117808697
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1237686358
+     * @hash   1238516662
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -302,24 +302,24 @@ public:
 #endif
     /**
      * @symbol ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
-     * @hash   563917926
+     * @hash   564748230
      */
     MCAPI FenceGateBlock(std::string const &, int, enum class WoodType);
     /**
      * @symbol ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -965614163
+     * @hash   -964783859
      */
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_onOpenChanged@FenceGateBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1796477340
+     * @hash   -1795647036
      */
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_setOpen@FenceGateBlock@@AEBAXAEAVBlockSource@@V?$not_null@PEBVBlock@@@gsl@@AEBVBlockPos@@PEAVPlayer@@_N@Z
-     * @hash   406275420
+     * @hash   407105724
      */
     MCAPI void _setOpen(class BlockSource &, class gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;
 

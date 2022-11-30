@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -2146655877
+     * @hash   -2146609749
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,19 +51,19 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   -596190990
+     * @hash   -596144862
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
      * @vftbl  50
      * @symbol ?normalTick@Agent@@UEAAXXZ
-     * @hash   399874358
+     * @hash   399920486
      */
     virtual void normalTick();
     /**
      * @vftbl  61
      * @symbol ?isInvisible@Agent@@UEBA_NXZ
-     * @hash   -442119466
+     * @hash   -442073338
      */
     virtual bool isInvisible() const;
     /**
@@ -80,7 +80,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?getFormattedNameTag@Agent@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   35277646
+     * @hash   35323774
      */
     virtual std::string getFormattedNameTag() const;
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@Agent@@UEAA_NXZ
-     * @hash   -1304365863
+     * @hash   -1304319735
      */
     virtual bool isPickable();
     /**
@@ -142,13 +142,13 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1874930879
+     * @hash   -1874884751
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  163
      * @symbol ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
-     * @hash   1373997031
+     * @hash   1374043159
      */
     virtual void setCarriedItem(class ItemStack const &);
     /**
@@ -186,13 +186,13 @@ public:
     /**
      * @vftbl  227
      * @symbol ?isWorldBuilder@Agent@@UEBA_NXZ
-     * @hash   -69964282
+     * @hash   -69918154
      */
     virtual bool isWorldBuilder() const;
     /**
      * @vftbl  229
      * @symbol ?isAdventure@Agent@@UEBA_NXZ
-     * @hash   -402744391
+     * @hash   -402698263
      */
     virtual bool isAdventure() const;
     /**
@@ -208,13 +208,13 @@ public:
     /**
      * @vftbl  249
      * @symbol ?kill@Agent@@UEAAXXZ
-     * @hash   -983661440
+     * @hash   -983615312
      */
     virtual void kill();
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
-     * @hash   1238047581
+     * @hash   1238093709
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1276430764
+     * @hash   -1276384636
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -252,13 +252,13 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@Agent@@UEAAXMMM@Z
-     * @hash   -674582170
+     * @hash   -674536042
      */
     virtual void travel(float, float, float);
     /**
      * @vftbl  295
      * @symbol ?aiStep@Agent@@UEAAXXZ
-     * @hash   1296905190
+     * @hash   1296951318
      */
     virtual void aiStep();
     /**
@@ -274,7 +274,7 @@ public:
     /**
      * @vftbl  338
      * @symbol ?createAIGoals@Agent@@UEAA_NXZ
-     * @hash   1846834832
+     * @hash   1846880960
      */
     virtual bool createAIGoals();
     /**
@@ -291,7 +291,7 @@ public:
     /**
      * @vftbl  351
      * @symbol ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
-     * @hash   1378506122
+     * @hash   1378552250
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
     /**
@@ -323,72 +323,72 @@ public:
 #endif
     /**
      * @symbol ??0Agent@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1257472017
+     * @hash   1257518145
      */
     MCAPI Agent(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getMoveSpeedScalar@Agent@@QEBAMXZ
-     * @hash   1460268908
+     * @hash   1460315036
      */
     MCAPI float getMoveSpeedScalar() const;
     /**
      * @symbol ?getSelectedSlot@Agent@@QEBAHXZ
-     * @hash   507475894
+     * @hash   507522022
      */
     MCAPI int getSelectedSlot() const;
     /**
      * @symbol ?isValidSlotNum@Agent@@QEAA_NH@Z
-     * @hash   -505385051
+     * @hash   -505338923
      */
     MCAPI bool isValidSlotNum(int);
     /**
      * @symbol ?setMoveTarget@Agent@@QEAAXM@Z
-     * @hash   223324028
+     * @hash   223370156
      */
     MCAPI void setMoveTarget(float);
     /**
      * @symbol ?setMoveTarget@Agent@@QEAAXVVec2@@@Z
-     * @hash   836944040
+     * @hash   836990168
      */
     MCAPI void setMoveTarget(class Vec2);
     /**
      * @symbol ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
-     * @hash   91801330
+     * @hash   91847458
      */
     MCAPI void setNameTagFromOwner(class Player const &);
     /**
      * @symbol ?startCommandMode@Agent@@QEAAXXZ
-     * @hash   -493164133
+     * @hash   -493118005
      */
     MCAPI void startCommandMode();
     /**
      * @symbol ?stopCommandMode@Agent@@QEAAXXZ
-     * @hash   1017124637
+     * @hash   1017170765
      */
     MCAPI void stopCommandMode();
     /**
      * @symbol ?swingAnimationCompleted@Agent@@QEAA_NXZ
-     * @hash   1125790180
+     * @hash   1125836308
      */
     MCAPI bool swingAnimationCompleted();
     /**
      * @symbol ?swingArm@Agent@@QEAAXXZ
-     * @hash   837143247
+     * @hash   837189375
      */
     MCAPI void swingArm();
     /**
      * @symbol ?tryFireCreateEvent@Agent@@QEAAXAEAVPlayer@@@Z
-     * @hash   1734386866
+     * @hash   1734432994
      */
     MCAPI void tryFireCreateEvent(class Player &);
     /**
      * @symbol ?roundTeleportPos@Agent@@SA?AVVec3@@AEBV2@@Z
-     * @hash   -932485142
+     * @hash   -932439014
      */
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const &);
     /**
      * @symbol ?tryGetFromEntity@Agent@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   -1371662027
+     * @hash   -1371615899
      */
     MCAPI static class Agent * tryGetFromEntity(class EntityContext &, bool);
 

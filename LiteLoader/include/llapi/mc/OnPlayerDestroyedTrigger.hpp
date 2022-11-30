@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnPlayerDestroyedTrigger@@QEAA@XZ
-     * @hash   1856442105
+     * @hash   1857272409
      */
     MCAPI ~OnPlayerDestroyedTrigger();
 

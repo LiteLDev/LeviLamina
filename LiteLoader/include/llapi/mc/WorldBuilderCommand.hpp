@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@WorldBuilderCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   2082855585
+     * @hash   2082901713
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setWorldBuilder@WorldBuilderCommand@@SAXAEAVLayeredAbilities@@_N@Z
-     * @hash   -1813805663
+     * @hash   -1813759535
      */
     MCAPI static void setWorldBuilder(class LayeredAbilities &, bool);
     /**
      * @symbol ?setup@WorldBuilderCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -2091519040
+     * @hash   -2091472912
      */
     MCAPI static void setup(class CommandRegistry &);
 

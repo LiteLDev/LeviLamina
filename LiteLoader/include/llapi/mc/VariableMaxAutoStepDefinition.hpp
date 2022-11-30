@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?initialize@VariableMaxAutoStepDefinition@@QEBAXAEAVEntityContext@@AEAUVariableMaxAutoStepComponent@@@Z
-     * @hash   2078954115
+     * @hash   2079000243
      */
     MCAPI void initialize(class EntityContext &, struct VariableMaxAutoStepComponent &) const;
     /**
      * @symbol ?buildSchema@VariableMaxAutoStepDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VVariableMaxAutoStepDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1684092690
+     * @hash   -1683262386
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VariableMaxAutoStepDefinition>> &);
 

@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Squid@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1951623708
+     * @hash   -1951577580
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -979521948
+     * @hash   -979475820
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -142,7 +142,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Squid@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1776659510
+     * @hash   -1776613382
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Squid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   807139230
+     * @hash   807185358
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -174,13 +174,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Squid@@UEAAXXZ
-     * @hash   -1649270871
+     * @hash   -1649224743
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Squid@@UEAA_N_N@Z
-     * @hash   -1029066319
+     * @hash   -1029020191
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -212,29 +212,29 @@ public:
     /**
      * @vftbl  362
      * @symbol ?_getInkSquirtSoundEvent@Squid@@MEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1721928764
+     * @hash   1721974892
      */
     virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
      * @symbol ??0Squid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBVColor@mce@@@Z
-     * @hash   -419385591
+     * @hash   -419339463
      */
     MCAPI Squid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &, class mce::Color const &);
     /**
      * @symbol ?postAiStep@Squid@@QEAAXXZ
-     * @hash   729571115
+     * @hash   729617243
      */
     MCAPI void postAiStep();
     /**
      * @symbol ?spawnInkParticles@Squid@@QEAAXXZ
-     * @hash   1552106969
+     * @hash   1552153097
      */
     MCAPI void spawnInkParticles();
 
 //private:
     /**
      * @symbol ?_randomInkDir@Squid@@AEAA?AVVec3@@XZ
-     * @hash   1899826621
+     * @hash   1899872749
      */
     MCAPI class Vec3 _randomInkDir();
 

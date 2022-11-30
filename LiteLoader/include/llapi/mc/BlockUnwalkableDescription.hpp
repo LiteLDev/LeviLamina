@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockUnwalkableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -248392058
+     * @hash   -247561754
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockUnwalkableDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   484115166
+     * @hash   484945470
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
      * @symbol ?buildSchema@BlockUnwalkableDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-     * @hash   2004287985
+     * @hash   2005118289
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /**
@@ -63,13 +63,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockUnwalkableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   479260880
+     * @hash   480091184
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockUnwalkableDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1796509234
+     * @hash   1797339538
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**

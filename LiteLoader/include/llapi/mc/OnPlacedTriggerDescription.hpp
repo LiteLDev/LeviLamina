@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnPlacedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -505604583
+     * @hash   -504774279
      */
     virtual std::string const & getName() const;
     /**

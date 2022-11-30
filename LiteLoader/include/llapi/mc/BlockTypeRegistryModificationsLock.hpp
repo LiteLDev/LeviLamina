@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ??1BlockTypeRegistryModificationsLock@@QEAA@XZ
-     * @hash   1327900776
+     * @hash   1328731080
      */
     MCAPI ~BlockTypeRegistryModificationsLock();
 
 //private:
     /**
      * @symbol ??0BlockTypeRegistryModificationsLock@@AEAA@V?$shared_ptr@VBlockTypeRegistryRWLock@@@std@@@Z
-     * @hash   -1684068144
+     * @hash   -1683237840
      */
     MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
 

@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-     * @hash   1587928907
+     * @hash   1588759211
      */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
     /**
      * @vftbl  2
      * @symbol ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     * @hash   -260097676
+     * @hash   -259267372
      */
     virtual class leveldb::Status Close();
     /**
      * @vftbl  3
      * @symbol ?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     * @hash   1557165680
+     * @hash   1557995984
      */
     virtual class leveldb::Status Flush();
     /**
      * @vftbl  4
      * @symbol ?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     * @hash   212634071
+     * @hash   213464375
      */
     virtual class leveldb::Status Sync();
     /**
      * @symbol ??0SnapshotWritableFile@@QEAA@$$QEAPEAVWritableFile@leveldb@@AEAVshared_mutex@std@@@Z
-     * @hash   -1990317872
+     * @hash   -1989487568
      */
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 

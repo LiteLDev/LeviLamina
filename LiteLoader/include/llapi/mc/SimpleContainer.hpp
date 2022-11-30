@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -981301480
+     * @hash   -981255352
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @vftbl  5
      * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
-     * @hash   1409769123
+     * @hash   1409815251
      */
     virtual class ItemStack const & getItem(int) const;
     /**
      * @vftbl  9
      * @symbol ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
-     * @hash   1322626274
+     * @hash   1322672402
      */
     virtual void setItem(int, class ItemStack const &);
     /**
      * @vftbl  14
      * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
-     * @hash   131646808
+     * @hash   131692936
      */
     virtual int getContainerSize() const;
     /**
      * @vftbl  15
      * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
-     * @hash   -1758170745
+     * @hash   -1758124617
      */
     virtual int getMaxStackSize() const;
     /**
@@ -90,7 +90,7 @@ public:
     virtual void __unk_vfn_23();
     /**
      * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
-     * @hash   1746468849
+     * @hash   1746514977
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum class ContainerType);
 

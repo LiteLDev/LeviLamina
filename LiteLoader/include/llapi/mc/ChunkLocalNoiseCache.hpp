@@ -37,22 +37,22 @@ public:
 public:
     /**
      * @symbol ??0ChunkLocalNoiseCache@@QEAA@XZ
-     * @hash   -1562840046
+     * @hash   -1562009742
      */
     MCAPI ChunkLocalNoiseCache();
     /**
      * @symbol ??0ChunkLocalNoiseCache@@QEAA@V?$DividedPos2d@$03@@H@Z
-     * @hash   917296710
+     * @hash   918127014
      */
     MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     /**
      * @symbol ?getCacheEntry@ChunkLocalNoiseCache@@QEBAAEBUCacheEntry@1@AEBV?$DividedPos2d@$03@@@Z
-     * @hash   -1064514738
+     * @hash   -1063684434
      */
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;
     /**
      * @symbol ?setCacheEntry@ChunkLocalNoiseCache@@QEAAXAEBV?$DividedPos2d@$03@@AEBUCacheEntry@1@@Z
-     * @hash   1874110518
+     * @hash   1874940822
      */
     MCAPI void setCacheEntry(class DividedPos2d<4> const &, struct ChunkLocalNoiseCache::CacheEntry const &);
     /**

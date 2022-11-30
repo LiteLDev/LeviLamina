@@ -39,37 +39,37 @@ public:
 public:
     /**
      * @symbol ?addAllComponentUpgrades@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
-     * @hash   868136426
+     * @hash   868966730
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
      * @symbol ?bindAllComponentSchemas@CerealItemComponentFactory@@SAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
-     * @hash   1421260711
+     * @hash   1422091015
      */
     MCAPI static void bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
     /**
      * @symbol ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1585237370
+     * @hash   -1584407066
      */
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
     /**
      * @symbol ?getItemContext@CerealItemComponentFactory@@SAPEAVComponentItem@@XZ
-     * @hash   -613339949
+     * @hash   -612509645
      */
     MCAPI static class ComponentItem * getItemContext();
     /**
      * @symbol ?isRegisteredComponent@CerealItemComponentFactory@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1175962615
+     * @hash   -1175132311
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
     /**
      * @symbol ?resetItemContext@CerealItemComponentFactory@@SAXXZ
-     * @hash   -1894739421
+     * @hash   -1893909117
      */
     MCAPI static void resetItemContext();
     /**
      * @symbol ?setItemContext@CerealItemComponentFactory@@SAXPEAVComponentItem@@@Z
-     * @hash   -2071675161
+     * @hash   -2070844857
      */
     MCAPI static void setItemContext(class ComponentItem *);
 
@@ -78,7 +78,7 @@ public:
 private:
     /**
      * @symbol ?mItemContext@CerealItemComponentFactory@@0PEAVComponentItem@@EA
-     * @hash   440385351
+     * @hash   440508359
      */
     MCAPI static class ComponentItem * mItemContext;
     /**

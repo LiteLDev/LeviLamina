@@ -33,77 +33,77 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
     /**
      * @symbol ?_getUpdatePacket@DispenserBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1034972186
+     * @hash   -1034141882
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1384196892
+     * @hash   1385027196
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -1731012142
+     * @hash   -1730181838
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   2136233294
+     * @hash   2137063598
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@DispenserBlockActor@@UEBAHXZ
-     * @hash   -964924262
+     * @hash   -964878134
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   537453153
+     * @hash   538283457
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@DispenserBlockActor@@UEBAHXZ
-     * @hash   1066648953
+     * @hash   1066695081
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@DispenserBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -646866578
+     * @hash   -646036274
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?getRandomSlot@DispenserBlockActor@@UEAAHXZ
-     * @hash   -727525994
+     * @hash   -726695690
      */
     MCVAPI int getRandomSlot();
     /**
      * @symbol ?load@DispenserBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1353886764
+     * @hash   -1353056460
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onMove@DispenserBlockActor@@UEAAXXZ
-     * @hash   -1230842374
+     * @hash   -1230012070
      */
     MCVAPI void onMove();
     /**
      * @symbol ?save@DispenserBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1516617581
+     * @hash   -1515787277
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   861197110
+     * @hash   862027414
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   1017495796
+     * @hash   1018326100
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1297521555
+     * @hash   -1296691251
      */
     MCVAPI void startOpen(class Player &);
     /**
@@ -113,25 +113,25 @@ public:
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ??1DispenserBlockActor@@UEAA@XZ
-     * @hash   611989832
+     * @hash   612820136
      */
     MCVAPI ~DispenserBlockActor();
 #endif
     /**
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
-     * @hash   1678072577
+     * @hash   1678902881
      */
     MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);
     /**
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@@Z
-     * @hash   -1124293302
+     * @hash   -1123462998
      */
     MCAPI DispenserBlockActor(class BlockPos);
 
 //protected:
     /**
      * @symbol ?initItems@DispenserBlockActor@@IEAAXXZ
-     * @hash   1733850198
+     * @hash   1734680502
      */
     MCAPI void initItems();
 

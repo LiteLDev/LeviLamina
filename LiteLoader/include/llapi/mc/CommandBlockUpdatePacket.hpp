@@ -37,30 +37,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CommandBlockUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1577830181
+     * @hash   -1577784053
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CommandBlockUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1962354568
+     * @hash   1962400696
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CommandBlockUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2026038015
+     * @hash   2026084143
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CommandBlockUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -590477057
+     * @hash   -590430929
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CommandBlockUpdatePacket@@QEAA@XZ
-     * @hash   -140166577
+     * @hash   -140120449
      */
     MCAPI CommandBlockUpdatePacket();
     /**

@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TrailDescription@@UEBAPEBDXZ
-     * @hash   -1929922546
+     * @hash   -1929876418
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   70029445
+     * @hash   70075573
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@TrailDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1938295489
+     * @hash   -1938249361
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0TrailDescription@@QEAA@XZ
-     * @hash   -1898568766
+     * @hash   -1898522638
      */
     MCAPI TrailDescription();
 

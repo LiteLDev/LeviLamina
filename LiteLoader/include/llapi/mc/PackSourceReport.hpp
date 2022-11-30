@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0PackSourceReport@@QEAA@XZ
-     * @hash   -145926092
+     * @hash   -145879964
      */
     MCAPI PackSourceReport();
     /**
      * @symbol ??0PackSourceReport@@QEAA@AEBV0@@Z
-     * @hash   -869687199
+     * @hash   -869641071
      */
     MCAPI PackSourceReport(class PackSourceReport const &);
     /**
      * @symbol ?addReport@PackSourceReport@@QEAAXAEBUPackIdVersion@@$$QEAVPackReport@@@Z
-     * @hash   -1132333661
+     * @hash   -1132287533
      */
     MCAPI void addReport(struct PackIdVersion const &, class PackReport &&);
     /**
@@ -50,7 +50,7 @@ public:
     MCAPI class std::unordered_map<struct PackIdVersion, class PackReport, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, class PackReport>>> const & getReports() const;
     /**
      * @symbol ?hasErrors@PackSourceReport@@QEBA_NXZ
-     * @hash   35439626
+     * @hash   35485754
      */
     MCAPI bool hasErrors() const;
     /**

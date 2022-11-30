@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
-     * @hash   920019806
+     * @hash   920065934
      */
     MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> &);
     /**
      * @symbol ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
-     * @hash   1939205185
+     * @hash   1939251313
      */
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
 

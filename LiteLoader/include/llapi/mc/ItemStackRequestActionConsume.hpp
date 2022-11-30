@@ -52,7 +52,7 @@ public:
     virtual void __unk_vfn_3();
     /**
      * @symbol ??0ItemStackRequestActionConsume@@QEAA@XZ
-     * @hash   -1108418840
+     * @hash   -1108326584
      */
     MCAPI ItemStackRequestActionConsume();
 

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SummonActorGoal@@UEAA_NXZ
-     * @hash   -708800471
+     * @hash   -708754343
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SummonActorGoal@@UEAA_NXZ
-     * @hash   31938407
+     * @hash   31984535
      */
     virtual bool canContinueToUse();
     /**
@@ -55,42 +55,42 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SummonActorGoal@@UEAAXXZ
-     * @hash   515769810
+     * @hash   515815938
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SummonActorGoal@@UEAAXXZ
-     * @hash   1405935970
+     * @hash   1405982098
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SummonActorGoal@@UEAAXXZ
-     * @hash   1244682925
+     * @hash   1244729053
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SummonActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -110572569
+     * @hash   -110526441
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SummonActorGoal@@QEAA@AEAVMob@@AEBV?$vector@USummonSpellData@@V?$allocator@USummonSpellData@@@std@@@std@@@Z
-     * @hash   -1745448813
+     * @hash   -1745402685
      */
     MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
 //private:
     /**
      * @symbol ?_createSpellEntity@SummonActorGoal@@AEBAXMMMMMHUActorDefinitionIdentifier@@@Z
-     * @hash   -1293502606
+     * @hash   -1293456478
      */
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     /**
      * @symbol ?_selectBestSpell@SummonActorGoal@@AEBAHAEAVActor@@@Z
-     * @hash   -1369522941
+     * @hash   -1369476813
      */
     MCAPI int _selectBestSpell(class Actor &) const;
 

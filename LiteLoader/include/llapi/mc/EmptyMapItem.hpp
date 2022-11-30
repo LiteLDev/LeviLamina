@@ -100,30 +100,30 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@EmptyMapItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   1429474764
+     * @hash   1430305068
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   192257272
+     * @hash   193087576
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   -592175907
+     * @hash   -591345603
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
@@ -134,22 +134,22 @@ public:
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /**
      * @symbol ??0EmptyMapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   -2059332939
+     * @hash   -2058502635
      */
     MCAPI EmptyMapItem(std::string const &, short);
     /**
      * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStack@@@Z
-     * @hash   -2020409518
+     * @hash   -2019579214
      */
     MCAPI static void addPlayerMarker(class ItemStack &);
     /**
      * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemInstance@@@Z
-     * @hash   1660675424
+     * @hash   1661505728
      */
     MCAPI static void addPlayerMarker(class ItemInstance &);
     /**
      * @symbol ?isLocatorMap@EmptyMapItem@@SA_NAEBVItemStack@@@Z
-     * @hash   1607474779
+     * @hash   1608305083
      */
     MCAPI static bool isLocatorMap(class ItemStack const &);
 

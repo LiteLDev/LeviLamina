@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getParticleName@ParticleTypeMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ParticleType@@@Z
-     * @hash   -1060571551
+     * @hash   -1060525423
      */
     MCAPI static std::string const & getParticleName(enum class ParticleType);
     /**
      * @symbol ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1113657037
+     * @hash   1113703165
      */
     MCAPI static enum class ParticleType getParticleTypeId(std::string const &);
 

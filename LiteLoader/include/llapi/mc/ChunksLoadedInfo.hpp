@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getChunkViewSource@ChunksLoadedInfo@@QEBA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
-     * @hash   -266097098
+     * @hash   -265266794
      */
     MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
     /**
      * @symbol ?getChunksLoadedStatus@ChunksLoadedInfo@@QEBA?AW4ChunksLoadedStatus@@XZ
-     * @hash   851745906
+     * @hash   851792034
      */
     MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
     /**
      * @symbol ?areAllChunksLoadedAndTicking@ChunksLoadedInfo@@SA?AW4ChunksLoadedStatus@@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N@Z
-     * @hash   677815796
+     * @hash   678646100
      */
     MCAPI static enum class ChunksLoadedStatus areAllChunksLoadedAndTicking(class Dimension const &, class ChunkSource &, struct Bounds const &, bool, struct Tick, bool);
     /**
      * @symbol ?calculateChunksLoadedInfo@ChunksLoadedInfo@@SA?AU1@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N55@Z
-     * @hash   1996551618
+     * @hash   1997381922
      */
     MCAPI static struct ChunksLoadedInfo calculateChunksLoadedInfo(class Dimension const &, class ChunkSource &, struct Bounds const &, bool, struct Tick, bool, bool, bool);
 

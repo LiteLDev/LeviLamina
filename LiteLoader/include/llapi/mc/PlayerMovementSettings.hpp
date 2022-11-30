@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?INVALID@PlayerMovementSettings@@2U1@B
-     * @hash   1817177577
+     * @hash   1817300585
      */
     MCAPI static struct PlayerMovementSettings const INVALID;
     /**
      * @symbol ?getDefault@PlayerMovementSettings@@SA?AU1@XZ
-     * @hash   -1992976468
+     * @hash   -1992930340
      */
     MCAPI static struct PlayerMovementSettings getDefault();
 

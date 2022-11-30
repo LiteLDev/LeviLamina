@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   148680677
+     * @hash   148726805
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@Slime@@UEAAXXZ
-     * @hash   1836196435
+     * @hash   1836242563
      */
     virtual void remove();
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Slime@@UEAAXXZ
-     * @hash   -334445693
+     * @hash   -334399565
      */
     virtual void normalTick();
     /**
@@ -73,7 +73,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Slime@@UEBAMXZ
-     * @hash   -1524538370
+     * @hash   -1524492242
      */
     virtual float getShadowRadius() const;
     /**
@@ -129,7 +129,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Slime@@UEAAXH@Z
-     * @hash   1911895616
+     * @hash   1911941744
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1521083384
+     * @hash   1521129512
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -593160155
+     * @hash   -593114027
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -192,13 +192,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Slime@@UEAAXXZ
-     * @hash   247484771
+     * @hash   247530899
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Slime@@UEAA_N_N@Z
-     * @hash   -324582121
+     * @hash   -324535993
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
-     * @hash   -1651235190
+     * @hash   -1651189062
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -230,49 +230,49 @@ public:
     /**
      * @vftbl  363
      * @symbol ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   1546898114
+     * @hash   1546944242
      */
     virtual enum class LevelSoundEvent getSquishSound();
     /**
      * @vftbl  364
      * @symbol ?setSlimeSize@Slime@@MEAAXH@Z
-     * @hash   -2022432240
+     * @hash   -2022386112
      */
     virtual void setSlimeSize(int);
     /**
      * @vftbl  365
      * @symbol ?doPlayJumpSound@Slime@@MEAA_NXZ
-     * @hash   1799302076
+     * @hash   1799348204
      */
     virtual bool doPlayJumpSound();
     /**
      * @vftbl  366
      * @symbol ?doPlayLandSound@Slime@@MEAA_NXZ
-     * @hash   1436645151
+     * @hash   1436691279
      */
     virtual bool doPlayLandSound();
     /**
      * @vftbl  367
      * @symbol ?playJumpSound@Slime@@MEAAXXZ
-     * @hash   667175157
+     * @hash   667221285
      */
     virtual void playJumpSound();
     /**
      * @vftbl  368
      * @symbol ?playLandSound@Slime@@MEAAXXZ
-     * @hash   -66430984
+     * @hash   -66384856
      */
     virtual void playLandSound();
     /**
      * @vftbl  369
      * @symbol ?decreaseSquish@Slime@@MEAAXXZ
-     * @hash   -2143747683
+     * @hash   -2143701555
      */
     virtual void decreaseSquish();
     /**
      * @vftbl  370
      * @symbol ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-     * @hash   5790815
+     * @hash   5836943
      */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
@@ -284,49 +284,49 @@ public:
 #endif
     /**
      * @symbol ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1198371892
+     * @hash   1198418020
      */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getOldSquishValue@Slime@@QEBAMXZ
-     * @hash   -1250484088
+     * @hash   -1250437960
      */
     MCAPI float getOldSquishValue() const;
     /**
      * @symbol ?getSlimeSize@Slime@@QEBAHXZ
-     * @hash   -1461906180
+     * @hash   -1461860052
      */
     MCAPI int getSlimeSize() const;
     /**
      * @symbol ?getSquishValue@Slime@@QEBAMXZ
-     * @hash   -1572892932
+     * @hash   -1572846804
      */
     MCAPI float getSquishValue() const;
     /**
      * @symbol ?postNormalTick@Slime@@QEAAX_N@Z
-     * @hash   -1555176916
+     * @hash   -1555130788
      */
     MCAPI void postNormalTick(bool);
     /**
      * @symbol ?preNormalTick@Slime@@QEAAXXZ
-     * @hash   -1914651629
+     * @hash   -1914605501
      */
     MCAPI void preNormalTick();
     /**
      * @symbol ?getSpawnRulesCallback@Slime@@SA?AV?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@XZ
-     * @hash   144952303
+     * @hash   144998431
      */
     MCAPI static class std::function<bool (class SpawnConditions const &, class BlockSource &)> getSpawnRulesCallback();
 
 //protected:
     /**
      * @symbol ?justJumped@Slime@@IEAAXXZ
-     * @hash   1596598180
+     * @hash   1596644308
      */
     MCAPI void justJumped();
     /**
      * @symbol ?justLanded@Slime@@IEAAXXZ
-     * @hash   -1952813999
+     * @hash   -1952767871
      */
     MCAPI void justLanded();
 

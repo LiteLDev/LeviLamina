@@ -39,35 +39,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetDisplayObjectivePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1331076413
+     * @hash   1331122541
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetDisplayObjectivePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -927533078
+     * @hash   -927486950
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetDisplayObjectivePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -369331715
+     * @hash   -369285587
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetDisplayObjectivePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1956387133
+     * @hash   1956433261
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetDisplayObjectivePacket@@QEAA@XZ
-     * @hash   -1217828419
+     * @hash   -1217782291
      */
     MCAPI SetDisplayObjectivePacket();
     /**
      * @symbol ??0SetDisplayObjectivePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4ObjectiveSortOrder@@@Z
-     * @hash   -1752476735
+     * @hash   -1752430607
      */
     MCAPI SetDisplayObjectivePacket(std::string const &, std::string const &, std::string const &, std::string const &, enum class ObjectiveSortOrder);
 

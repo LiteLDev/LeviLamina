@@ -43,48 +43,48 @@ public:
     /**
      * @vftbl  2
      * @symbol ?clone@DynamicJumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
-     * @hash   689607414
+     * @hash   689653542
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
      * @vftbl  3
      * @symbol ?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
-     * @hash   1139240915
+     * @hash   1139287043
      */
     virtual void tick(class JumpControlComponent &, class Mob &);
     /**
      * @vftbl  4
      * @symbol ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
-     * @hash   -2145279490
+     * @hash   -2145233362
      */
     virtual int getJumpDelay(class JumpControlComponent const &) const;
     /**
      * @vftbl  5
      * @symbol ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-     * @hash   -2126149079
+     * @hash   -2126102951
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
     /**
      * @vftbl  6
      * @symbol ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
-     * @hash   666752914
+     * @hash   666799042
      */
     virtual enum class JumpType getJumpType(class JumpControlComponent const &) const;
     /**
      * @vftbl  7
      * @symbol ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
-     * @hash   -2061778480
+     * @hash   -2061732352
      */
     virtual void setJumpType(class JumpControlComponent &, enum class JumpType);
     /**
      * @vftbl  8
      * @symbol ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
-     * @hash   118734104
+     * @hash   118780232
      */
     virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
     /**
      * @symbol ??0DynamicJumpControl@@QEAA@XZ
-     * @hash   1429041932
+     * @hash   1429088060
      */
     MCAPI DynamicJumpControl();
 

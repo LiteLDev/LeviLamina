@@ -49,54 +49,54 @@ public:
     virtual bool fromJson(class Json::Value const &);
     /**
      * @symbol ?getMode@NpcAction@@QEBA?AW4NpcActionMode@@XZ
-     * @hash   -743377672
+     * @hash   -743331544
      */
     MCAPI enum class NpcActionMode getMode() const;
     /**
      * @symbol ?getText@NpcAction@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   386342516
+     * @hash   386388644
      */
     MCAPI std::string const & getText() const;
     /**
      * @symbol ?getType@NpcAction@@QEBA?AW4NpcActionType@@XZ
-     * @hash   1215643704
+     * @hash   1215689832
      */
     MCAPI enum class NpcActionType getType() const;
     /**
      * @symbol ??9NpcAction@@QEBA_NAEBV0@@Z
-     * @hash   -272311595
+     * @hash   -272265467
      */
     MCAPI bool operator!=(class NpcAction const &) const;
     /**
      * @symbol ??8NpcAction@@QEBA_NAEBV0@@Z
-     * @hash   2141187216
+     * @hash   2141233344
      */
     MCAPI bool operator==(class NpcAction const &) const;
     /**
      * @symbol ?setButtonName@NpcAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   607563518
+     * @hash   607609646
      */
     MCAPI void setButtonName(std::string const &);
     /**
      * @symbol ?setMode@NpcAction@@QEAAXW4NpcActionMode@@@Z
-     * @hash   -1268668408
+     * @hash   -1268622280
      */
     MCAPI void setMode(enum class NpcActionMode);
     /**
      * @symbol ?setText@NpcAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1676091250
+     * @hash   -1676045122
      */
     MCAPI void setText(std::string const &);
     /**
      * @symbol ?read@NpcAction@@SA?AV?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@AEBVValue@Json@@@Z
-     * @hash   -1808769251
+     * @hash   -1808723123
      */
     MCAPI static std::unique_ptr<class NpcAction> read(class Json::Value const &);
 
 //protected:
     /**
      * @symbol ?toJsonBase@NpcAction@@IEAA?AVValue@Json@@AEAV23@@Z
-     * @hash   1609502707
+     * @hash   1609548835
      */
     MCAPI class Json::Value toJsonBase(class Json::Value &);
 
@@ -117,7 +117,7 @@ private:
     MCAPI static std::string const DATA_KEY;
     /**
      * @symbol ?MAX_BUTTON_NAME_LENGTH@NpcAction@@0HB
-     * @hash   2031886077
+     * @hash   2032009085
      */
     MCAPI static int const MAX_BUTTON_NAME_LENGTH;
     /**

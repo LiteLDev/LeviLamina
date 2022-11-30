@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0RenderParams@@QEAA@XZ
-     * @hash   -240514088
+     * @hash   -240467960
      */
     MCAPI RenderParams();
     /**
      * @symbol ??0RenderParams@@QEAA@$$QEAV0@@Z
-     * @hash   248705825
+     * @hash   248751953
      */
     MCAPI RenderParams(class RenderParams &&);
     /**
@@ -45,22 +45,22 @@ public:
     MCAPI RenderParams(class RenderParams const &);
     /**
      * @symbol ?getActorTarget@RenderParams@@QEBAPEAVActor@@W4FilterSubject@@@Z
-     * @hash   1543882088
+     * @hash   1543928216
      */
     MCAPI class Actor * getActorTarget(enum class FilterSubject) const;
     /**
      * @symbol ?init@RenderParams@@QEAAAEAV1@PEAVBaseActorRenderContext@@PEAVActor@@PEAVAnimationComponent@@PEAVMolangVariableMap@@V?$shared_ptr@VDataDrivenModel@@@std@@MM@Z
-     * @hash   -1870174925
+     * @hash   -1870128797
      */
     MCAPI class RenderParams & init(class BaseActorRenderContext *, class Actor *, class AnimationComponent *, class MolangVariableMap *, class std::shared_ptr<class DataDrivenModel>, float, float);
     /**
      * @symbol ??4RenderParams@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -2079703692
+     * @hash   -2079657564
      */
     MCAPI class RenderParams & operator=(class RenderParams &&);
     /**
      * @symbol ??ARenderParams@@QEAAAEAM_K@Z
-     * @hash   -349508634
+     * @hash   -349462506
      */
     MCAPI float & operator[](unsigned __int64);
     /**
@@ -70,7 +70,7 @@ public:
     MCAPI ~RenderParams();
     /**
      * @symbol ?getRenderParams@RenderParams@@SAAEAV1@AEAVActor@@@Z
-     * @hash   -1129270966
+     * @hash   -1129224838
      */
     MCAPI static class RenderParams & getRenderParams(class Actor &);
 

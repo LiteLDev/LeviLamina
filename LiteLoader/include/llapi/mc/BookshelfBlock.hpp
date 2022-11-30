@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@BookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   389660817
+     * @hash   390491121
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -225,18 +225,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@BookshelfBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2133166814
+     * @hash   -2133120686
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BookshelfBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1588574410
+     * @hash   1589404714
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0BookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   994995882
+     * @hash   995826186
      */
     MCAPI BookshelfBlock(std::string const &, int);
 

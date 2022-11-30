@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetDifficultyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1935452249
+     * @hash   1935498377
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetDifficultyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1942946566
+     * @hash   1942992694
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetDifficultyPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1606740449
+     * @hash   1606786577
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetDifficultyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -955941983
+     * @hash   -955895855
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetDifficultyPacket@@QEAA@XZ
-     * @hash   -1015493583
+     * @hash   -1015447455
      */
     MCAPI SetDifficultyPacket();
     /**
      * @symbol ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
-     * @hash   1326381982
+     * @hash   1326428110
      */
     MCAPI SetDifficultyPacket(enum class Difficulty);
     /**
      * @symbol ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
-     * @hash   1883554006
+     * @hash   1883600134
      */
     MCAPI enum class Difficulty getDifficulty() const;
 

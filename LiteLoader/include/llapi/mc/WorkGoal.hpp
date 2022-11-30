@@ -114,12 +114,12 @@ public:
 private:
     /**
      * @symbol ?RAIN_CHECK_MAX_COOLDOWN@WorkGoal@@0HB
-     * @hash   1934342972
+     * @hash   1934465980
      */
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
     /**
      * @symbol ?WORK_TIMESTAMP_UPDATE_INVERVAL@WorkGoal@@0HB
-     * @hash   -2095782022
+     * @hash   -2095659014
      */
     MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 

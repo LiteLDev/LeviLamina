@@ -37,22 +37,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerEvents@SideBySideExtractionSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     * @hash   1215713367
+     * @hash   1215759495
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
      * @symbol ??0SideBySideExtractionSystem@@QEAA@AEBV?$array@V?$vector@IV?$allocator@I@std@@@std@@$0CE@@std@@@Z
-     * @hash   1560156782
+     * @hash   1560202910
      */
     MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 36> const &);
     /**
      * @symbol ?_onSideBySideExtractionRequest@SideBySideExtractionSystem@@SAXAEBUExtractMethods@SideBySide@@AEBUOnExtractSideBySide@@@Z
-     * @hash   607900765
+     * @hash   607946893
      */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
     /**
      * @symbol ?onStoreSideBySideResult@SideBySideExtractionSystem@@SAXAEBUOnStoreSideBySideResult@@@Z
-     * @hash   -1968715374
+     * @hash   -1968669246
      */
     MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
 

@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@NetherReactorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -1108196309
+     * @hash   -1107366005
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0NetherReactorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1376839334
+     * @hash   -1376009030
      */
     MCAPI NetherReactorBlock(std::string const &, int, class Material const &);
 

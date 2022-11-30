@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@FallingBlock@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1674372329
+     * @hash   -1674326201
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,13 +51,13 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@FallingBlock@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   1109871907
+     * @hash   1109918035
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
      * @vftbl  50
      * @symbol ?normalTick@FallingBlock@@UEAAXXZ
-     * @hash   436699685
+     * @hash   436745813
      */
     virtual void normalTick();
     /**
@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@FallingBlock@@UEAA_NXZ
-     * @hash   -1066329064
+     * @hash   -1066282936
      */
     virtual bool isPickable();
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  182
      * @symbol ?canChangeDimensionsUsingPortal@FallingBlock@@UEBA_NXZ
-     * @hash   -153304731
+     * @hash   -153258603
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
@@ -147,13 +147,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?causeFallDamage@FallingBlock@@UEAAXMMVActorDamageSource@@@Z
-     * @hash   2010026488
+     * @hash   2010072616
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@FallingBlock@@UEAAXH@Z
-     * @hash   1823808766
+     * @hash   1823854894
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@FallingBlock@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2067134170
+     * @hash   2067180298
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@FallingBlock@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -1777085549
+     * @hash   -1777039421
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -218,39 +218,39 @@ public:
 #endif
     /**
      * @symbol ??0FallingBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   753590018
+     * @hash   753636146
      */
     MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?breakBlock@FallingBlock@@QEAAXXZ
-     * @hash   -1682660459
+     * @hash   -1682614331
      */
     MCAPI void breakBlock();
     /**
      * @symbol ?doNormalTick@FallingBlock@@QEAAXAEAVITickDelegate@@@Z
-     * @hash   1894158302
+     * @hash   1894204430
      */
     MCAPI void doNormalTick(class ITickDelegate &);
     /**
      * @symbol ?getFallingBlock@FallingBlock@@QEBAAEBVBlock@@XZ
-     * @hash   534041142
+     * @hash   534087270
      */
     MCAPI class Block const & getFallingBlock() const;
     /**
      * @symbol ?setFallDamageAmount@FallingBlock@@QEAAXM@Z
-     * @hash   -944285546
+     * @hash   -944239418
      */
     MCAPI void setFallDamageAmount(float);
     /**
      * @symbol ?setFallingBlock@FallingBlock@@QEAAXAEBVBlock@@_N@Z
-     * @hash   900229853
+     * @hash   900275981
      */
     MCAPI void setFallingBlock(class Block const &, bool);
 
 //private:
     /**
      * @symbol ?_waitRemoval@FallingBlock@@AEAAXXZ
-     * @hash   885507854
+     * @hash   885553982
      */
     MCAPI void _waitRemoval();
 

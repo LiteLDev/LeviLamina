@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Pig@@UEAAXXZ
-     * @hash   114971069
+     * @hash   115017197
      */
     virtual void normalTick();
     /**
@@ -141,13 +141,13 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1817746914
+     * @hash   1817793042
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1187679780
+     * @hash   1187725908
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -194,7 +194,7 @@ public:
 #endif
     /**
      * @symbol ??0Pig@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   386558234
+     * @hash   386604362
      */
     MCAPI Pig(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

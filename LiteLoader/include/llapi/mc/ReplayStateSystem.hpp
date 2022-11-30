@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createAddReplayStateComponentSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1356218042
+     * @hash   1356264170
      */
     MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
     /**
      * @symbol ?createReplayStateSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   319987402
+     * @hash   320033530
      */
     MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
 

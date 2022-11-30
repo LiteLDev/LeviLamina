@@ -63,7 +63,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -1792833251
+     * @hash   -1792787123
      */
     virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
@@ -74,18 +74,18 @@ public:
     /**
      * @vftbl  8
      * @symbol ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -1479004145
+     * @hash   -1478958017
      */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
      * @vftbl  9
      * @symbol ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -441694177
+     * @hash   -441648049
      */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
      * @symbol ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
-     * @hash   2139775378
+     * @hash   2139821506
      */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 

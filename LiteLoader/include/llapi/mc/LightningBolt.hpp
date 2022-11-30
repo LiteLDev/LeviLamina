@@ -34,13 +34,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -426115922
+     * @hash   -426069794
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   310108489
+     * @hash   310154617
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@LightningBolt@@UEAAXXZ
-     * @hash   1681077756
+     * @hash   1681123884
      */
     virtual void normalTick();
     /**
@@ -181,14 +181,14 @@ public:
 #endif
     /**
      * @symbol ??0LightningBolt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1118263221
+     * @hash   -1118217093
      */
     MCAPI LightningBolt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
      * @symbol ?_shouldSetOnFire@LightningBolt@@AEBA_NXZ
-     * @hash   1203117179
+     * @hash   1203163307
      */
     MCAPI bool _shouldSetOnFire() const;
 

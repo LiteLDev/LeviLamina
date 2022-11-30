@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@SheepPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1251906100
+     * @hash   -1251859972
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doSheepPreAIStepSystem@SheepPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   1024256417
+     * @hash   1024302545
      */
     MCAPI static void _doSheepPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?getAttackValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   122232762
+     * @hash   123063066
      */
     MCAPI float getAttackValue() const;
     /**
@@ -55,7 +55,7 @@ public:
     MCAPI float getSprintJumpValue() const;
     /**
      * @symbol ?getSprintValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -972829194
+     * @hash   -972783066
      */
     MCAPI float getSprintValue() const;
     /**
@@ -65,7 +65,7 @@ public:
     MCAPI float getSwimValue() const;
     /**
      * @symbol ?getWalkValue@ExhaustionComponent@@QEBAMXZ
-     * @hash   -997501464
+     * @hash   -997455336
      */
     MCAPI float getWalkValue() const;
 

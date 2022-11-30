@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DeferredScriptCommand@@UEAAXAEAVMinecraftCommands@@@Z
-     * @hash   207985820
+     * @hash   208816124
      */
     virtual void execute(class MinecraftCommands &);
     /**
      * @symbol ??0DeferredScriptCommand@@QEAA@V?$unique_ptr@VScriptCommand@@U?$default_delete@VScriptCommand@@@std@@@std@@V?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@2@VWeakLifetimeScope@Scripting@@V?$Promise@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@@5@@Z
-     * @hash   1497427376
+     * @hash   1498257680
      */
     MCAPI DeferredScriptCommand(std::unique_ptr<class ScriptCommand>, std::unique_ptr<class CommandContext>, class Scripting::WeakLifetimeScope, class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>>);
 

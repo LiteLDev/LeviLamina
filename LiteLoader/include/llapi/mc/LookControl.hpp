@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@LookControl@@UEAAXAEAVMob@@@Z
-     * @hash   -2085195002
+     * @hash   -2085148874
      */
     virtual void tick(class Mob &);
     /**
      * @symbol ??0LookControl@@QEAA@XZ
-     * @hash   -1253455238
+     * @hash   -1253409110
      */
     MCAPI LookControl();
 

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockRandomTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -15167054
+     * @hash   -14336750
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockRandomTickingDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   1434484370
+     * @hash   1435314674
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -54,7 +54,7 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRandomTickingDescription@@SAXXZ
-     * @hash   -178062161
+     * @hash   -177231857
      */
     MCAPI static void bindType();
 

@@ -34,7 +34,7 @@ public:
     MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger &&);
     /**
      * @symbol ?canTrigger@ActorDefinitionTrigger@@QEBA_NAEBVActor@@AEBVVariantParameterList@@@Z
-     * @hash   -1469141352
+     * @hash   -1469095224
      */
     MCAPI bool canTrigger(class Actor const &, class VariantParameterList const &) const;
     /**

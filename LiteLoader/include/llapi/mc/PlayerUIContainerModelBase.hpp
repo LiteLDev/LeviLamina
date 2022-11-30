@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
-     * @hash   -1795827942
+     * @hash   -1795781814
      */
     virtual void containerContentChanged(int);
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
-     * @hash   -511915671
+     * @hash   -511869543
      */
     virtual void postInit();
     /**
      * @vftbl  3
      * @symbol ?releaseResources@PlayerUIContainerModelBase@@UEAAXXZ
-     * @hash   1672414247
+     * @hash   1672460375
      */
     virtual void releaseResources();
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getContainerWeakRef@PlayerUIContainerModelBase@@UEBA?AVContainerWeakRef@@XZ
-     * @hash   -874316153
+     * @hash   -874270025
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
@@ -73,7 +73,7 @@ public:
     /**
      * @vftbl  14
      * @symbol ?isValid@PlayerUIContainerModelBase@@UEAA_NXZ
-     * @hash   215424573
+     * @hash   215470701
      */
     virtual bool isValid();
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?_getContainer@PlayerUIContainerModelBase@@MEBAPEAVContainer@@XZ
-     * @hash   -1866855464
+     * @hash   -1866809336
      */
     virtual class Container * _getContainer() const;
     /**
@@ -106,19 +106,19 @@ public:
     /**
      * @vftbl  22
      * @symbol ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-     * @hash   -523350294
+     * @hash   -523304166
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-     * @hash   306231300
+     * @hash   306277428
      */
     MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player &, int, enum class ContainerCategory);
 
 //protected:
     /**
      * @symbol ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
-     * @hash   648894154
+     * @hash   648940282
      */
     MCAPI void _refreshContainer(bool);
 

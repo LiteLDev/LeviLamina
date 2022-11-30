@@ -101,7 +101,7 @@ public:
 private:
     /**
      * @symbol ?MOB_DETECT_TIME@NapGoal@@0MB
-     * @hash   -1903431523
+     * @hash   -1903308515
      */
     MCAPI static float const MOB_DETECT_TIME;
 

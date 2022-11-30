@@ -31,57 +31,57 @@ struct ActorDefinitionIdentifier {
 public:
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@XZ
-     * @hash   1797377613
+     * @hash   1797423741
      */
     MCAPI ActorDefinitionIdentifier();
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
-     * @hash   -1021348960
+     * @hash   -1021302832
      */
     MCAPI ActorDefinitionIdentifier(enum class ActorType);
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-     * @hash   1940336310
+     * @hash   1940382438
      */
     MCAPI ActorDefinitionIdentifier(std::string, std::string, std::string);
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@PEBD@Z
-     * @hash   1224969761
+     * @hash   1225015889
      */
     MCAPI ActorDefinitionIdentifier(char const *);
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1570374388
+     * @hash   1570420516
      */
     MCAPI ActorDefinitionIdentifier(std::string const &);
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@AEBU0@@Z
-     * @hash   404989589
+     * @hash   405035717
      */
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const &);
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@$$QEAU0@@Z
-     * @hash   143006633
+     * @hash   143052761
      */
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);
     /**
      * @symbol ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
-     * @hash   2140570570
+     * @hash   2140616698
      */
     MCAPI enum class ActorType _getLegacyActorType() const;
     /**
      * @symbol ?clear@ActorDefinitionIdentifier@@QEAAXXZ
-     * @hash   -987706577
+     * @hash   -987660449
      */
     MCAPI void clear();
     /**
      * @symbol ?getCanonicalHash@ActorDefinitionIdentifier@@QEBAAEBVHashedString@@XZ
-     * @hash   189080846
+     * @hash   189126974
      */
     MCAPI class HashedString const & getCanonicalHash() const;
     /**
      * @symbol ?getCanonicalName@ActorDefinitionIdentifier@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1564906094
+     * @hash   1564952222
      */
     MCAPI std::string const & getCanonicalName() const;
     /**
@@ -106,42 +106,42 @@ public:
     MCAPI std::string const & getNamespace() const;
     /**
      * @symbol ?initialize@ActorDefinitionIdentifier@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-     * @hash   1798684382
+     * @hash   1798730510
      */
     MCAPI void initialize(std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?initialize@ActorDefinitionIdentifier@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1887912446
+     * @hash   1887958574
      */
     MCAPI void initialize(std::string const &);
     /**
      * @symbol ?isEmpty@ActorDefinitionIdentifier@@QEBA_NXZ
-     * @hash   45658316
+     * @hash   45704444
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?isVanilla@ActorDefinitionIdentifier@@QEBA_NXZ
-     * @hash   1410409196
+     * @hash   1410455324
      */
     MCAPI bool isVanilla() const;
     /**
      * @symbol ??4ActorDefinitionIdentifier@@QEAAAEAU0@AEBU0@@Z
-     * @hash   700335118
+     * @hash   700381246
      */
     MCAPI struct ActorDefinitionIdentifier & operator=(struct ActorDefinitionIdentifier const &);
     /**
      * @symbol ??8ActorDefinitionIdentifier@@QEBA_NAEBU0@@Z
-     * @hash   -957158918
+     * @hash   -957112790
      */
     MCAPI bool operator==(struct ActorDefinitionIdentifier const &) const;
     /**
      * @symbol ?setIdentifier@ActorDefinitionIdentifier@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   16093878
+     * @hash   16140006
      */
     MCAPI void setIdentifier(std::string const &);
     /**
      * @symbol ?setInitEvent@ActorDefinitionIdentifier@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -320823970
+     * @hash   -320777842
      */
     MCAPI void setInitEvent(std::string const &);
     /**
@@ -168,12 +168,12 @@ public:
 //private:
     /**
      * @symbol ?_initialize@ActorDefinitionIdentifier@@AEAAXXZ
-     * @hash   1761613850
+     * @hash   1761659978
      */
     MCAPI void _initialize();
     /**
      * @symbol ?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z
-     * @hash   -1490500228
+     * @hash   -1490454100
      */
     MCAPI static void _extractIdentifier(std::string const &, struct ActorDefinitionIdentifier &);
 

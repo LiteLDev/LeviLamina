@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?DecrementDwellingUpdateInterval@DwellerComponent@@QEAAXXZ
-     * @hash   -617337565
+     * @hash   -617291437
      */
     MCAPI void DecrementDwellingUpdateInterval();
     /**
      * @symbol ??0DwellerComponent@@QEAA@XZ
-     * @hash   618429530
+     * @hash   618475658
      */
     MCAPI DwellerComponent();
     /**
@@ -48,47 +48,47 @@ public:
     MCAPI DwellerComponent(class DwellerComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DwellerComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
-     * @hash   -1610460839
+     * @hash   -1610414711
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     /**
      * @symbol ?checkandUpdateDwellingStatus@DwellerComponent@@QEAAXAEBVActor@@PEAVVillage@@@Z
-     * @hash   1804647808
+     * @hash   1804693936
      */
     MCAPI void checkandUpdateDwellingStatus(class Actor const &, class Village *);
     /**
      * @symbol ?clearPreferredProfession@DwellerComponent@@QEAAXXZ
-     * @hash   1946874853
+     * @hash   1946920981
      */
     MCAPI void clearPreferredProfession();
     /**
      * @symbol ?fixupProfession@DwellerComponent@@QEAAXAEBVActor@@PEAVVillage@@@Z
-     * @hash   515287870
+     * @hash   515333998
      */
     MCAPI void fixupProfession(class Actor const &, class Village *);
     /**
      * @symbol ?getCanFindPOI@DwellerComponent@@QEBA_NXZ
-     * @hash   68274978
+     * @hash   68321106
      */
     MCAPI bool getCanFindPOI() const;
     /**
      * @symbol ?getDwellerRole@DwellerComponent@@QEBA?AW4DwellerRole@@XZ
-     * @hash   1276181408
+     * @hash   1276227536
      */
     MCAPI enum class DwellerRole getDwellerRole() const;
     /**
      * @symbol ?getDwellingUniqueID@DwellerComponent@@QEBA?AVUUID@mce@@XZ
-     * @hash   -1077690918
+     * @hash   -1077644790
      */
     MCAPI class mce::UUID getDwellingUniqueID() const;
     /**
      * @symbol ?getDwellingUpdateInterval@DwellerComponent@@QEBA_KXZ
-     * @hash   -1335281577
+     * @hash   -1335235449
      */
     MCAPI unsigned __int64 getDwellingUpdateInterval() const;
     /**
      * @symbol ?getFixUpRole@DwellerComponent@@QEBA_NXZ
-     * @hash   489498386
+     * @hash   489544514
      */
     MCAPI bool getFixUpRole() const;
     /**
@@ -108,57 +108,57 @@ public:
     MCAPI int getUpdateIntervalVariant() const;
     /**
      * @symbol ?getVillage@DwellerComponent@@QEBA?BV?$weak_ptr@VVillage@@@std@@AEBVActor@@@Z
-     * @hash   1435593766
+     * @hash   1435639894
      */
     MCAPI class std::weak_ptr<class Village> const getVillage(class Actor const &) const;
     /**
      * @symbol ?getVillageCenter@DwellerComponent@@QEBA?AVBlockPos@@AEBVActor@@@Z
-     * @hash   -1069957113
+     * @hash   -1069910985
      */
     MCAPI class BlockPos getVillageCenter(class Actor const &) const;
     /**
      * @symbol ?hasDwelling@DwellerComponent@@QEBA_NXZ
-     * @hash   -672121880
+     * @hash   -672075752
      */
     MCAPI bool hasDwelling() const;
     /**
      * @symbol ?hasPreferredProfession@DwellerComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   -271767295
+     * @hash   -271721167
      */
     MCAPI bool hasPreferredProfession(class Actor const &) const;
     /**
      * @symbol ?initFromDefinition@DwellerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   305910906
+     * @hash   305957034
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?isWithinRestriction@DwellerComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   1226295575
+     * @hash   1226341703
      */
     MCAPI bool isWithinRestriction(class Actor const &) const;
     /**
      * @symbol ?needsToFixupProfession@DwellerComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   374202447
+     * @hash   374248575
      */
     MCAPI bool needsToFixupProfession(class Actor const &) const;
     /**
      * @symbol ?needsToFixupVillageRole@DwellerComponent@@QEBA_NAEBVActor@@PEAVVillage@@@Z
-     * @hash   626305459
+     * @hash   626351587
      */
     MCAPI bool needsToFixupVillageRole(class Actor const &, class Village *) const;
     /**
      * @symbol ?onDeath@DwellerComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@@Z
-     * @hash   1114108579
+     * @hash   1114154707
      */
     MCAPI void onDeath(class Actor &, class ActorDamageSource const &);
     /**
      * @symbol ?onDimensionChange@DwellerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -387234324
+     * @hash   -387188196
      */
     MCAPI void onDimensionChange(class Actor &);
     /**
      * @symbol ?onRemove@DwellerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -20365942
+     * @hash   -20319814
      */
     MCAPI void onRemove(class Actor &);
     /**
@@ -168,47 +168,47 @@ public:
     MCAPI class DwellerComponent & operator=(class DwellerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@DwellerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -2094120458
+     * @hash   -2094074330
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setDwellingUniqueID@DwellerComponent@@QEAAXAEAVActor@@VUUID@mce@@@Z
-     * @hash   -1289063367
+     * @hash   -1289017239
      */
     MCAPI void setDwellingUniqueID(class Actor &, class mce::UUID);
     /**
      * @symbol ?setDwellingUpdateInterval@DwellerComponent@@QEAAX_K@Z
-     * @hash   -916217869
+     * @hash   -916171741
      */
     MCAPI void setDwellingUpdateInterval(unsigned __int64);
     /**
      * @symbol ?setFixUpRole@DwellerComponent@@QEAAX_N@Z
-     * @hash   -1361667294
+     * @hash   -1361621166
      */
     MCAPI void setFixUpRole(bool);
     /**
      * @symbol ?setLastHurtByMob@DwellerComponent@@QEAAXAEAVActor@@PEAVMob@@@Z
-     * @hash   1323955460
+     * @hash   1324001588
      */
     MCAPI void setLastHurtByMob(class Actor &, class Mob *);
     /**
      * @symbol ?trySetPreferredProfession@DwellerComponent@@QEAA_NAEBVActor@@AEBVHashedString@@@Z
-     * @hash   1994657776
+     * @hash   1994703904
      */
     MCAPI bool trySetPreferredProfession(class Actor const &, class HashedString const &);
     /**
      * @symbol ?tryToFixupRole@DwellerComponent@@QEAA_NAEBVActor@@PEAVVillage@@@Z
-     * @hash   -1740145427
+     * @hash   -1740099299
      */
     MCAPI bool tryToFixupRole(class Actor const &, class Village *);
     /**
      * @symbol ?tryToMigrate@DwellerComponent@@QEAA_NAEAVActor@@PEAVVillage@@1@Z
-     * @hash   -469692812
+     * @hash   -469646684
      */
     MCAPI bool tryToMigrate(class Actor &, class Village *, class Village *);
     /**
      * @symbol ?wantsToMigrate@DwellerComponent@@QEBA_NAEBVActor@@PEAVVillage@@@Z
-     * @hash   -677382777
+     * @hash   -677336649
      */
     MCAPI bool wantsToMigrate(class Actor const &, class Village *) const;
     /**
@@ -220,7 +220,7 @@ public:
 //private:
     /**
      * @symbol ?_isLockedInToProfession@DwellerComponent@@AEBA_NAEBVActor@@@Z
-     * @hash   663939596
+     * @hash   663985724
      */
     MCAPI bool _isLockedInToProfession(class Actor const &) const;
 

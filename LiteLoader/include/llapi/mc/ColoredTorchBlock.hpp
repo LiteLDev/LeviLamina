@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ColoredTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -223835737
+     * @hash   -223005433
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ColoredTorchBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1101403778
+     * @hash   1102234082
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@ColoredTorchBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   2120291482
+     * @hash   2121121786
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ColoredTorchBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1312419805
+     * @hash   -1311589501
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@ColoredTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1601875528
+     * @hash   1602705832
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -261,24 +261,24 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ColoredTorchBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1929829151
+     * @hash   -1928998847
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0ColoredTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ColoredTorchColor@@@Z
-     * @hash   -1291431888
+     * @hash   -1290601584
      */
     MCAPI ColoredTorchBlock(std::string const &, int, enum class ColoredTorchColor);
     /**
      * @symbol ?getItemForColor@ColoredTorchBlock@@SA?AVItemInstance@@W4ColoredTorchColor@@@Z
-     * @hash   2104879383
+     * @hash   2105709687
      */
     MCAPI static class ItemInstance getItemForColor(enum class ColoredTorchColor);
 
 //private:
     /**
      * @symbol ?_getColor@ColoredTorchBlock@@AEBA?AW4ColoredTorchColor@@AEBVBlock@@@Z
-     * @hash   -1547411025
+     * @hash   -1546580721
      */
     MCAPI enum class ColoredTorchColor _getColor(class Block const &) const;
 

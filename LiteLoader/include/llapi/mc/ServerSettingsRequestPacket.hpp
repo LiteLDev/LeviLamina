@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ServerSettingsRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1954608861
+     * @hash   1954654989
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ServerSettingsRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1294061962
+     * @hash   1294108090
      */
     virtual std::string getName() const;
     /**
@@ -61,7 +61,7 @@ public:
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ServerSettingsRequestPacket@@QEAA@XZ
-     * @hash   60636477
+     * @hash   60682605
      */
     MCAPI ServerSettingsRequestPacket();
 

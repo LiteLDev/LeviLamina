@@ -44,29 +44,29 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@DisconnectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -138858873
+     * @hash   -138812745
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@DisconnectPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -604163264
+     * @hash   -604117136
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@DisconnectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1160260896
+     * @hash   -1160214768
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0DisconnectPacket@@QEAA@XZ
-     * @hash   908440432
+     * @hash   908486560
      */
     MCAPI DisconnectPacket();
     /**
      * @symbol ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1154104754
+     * @hash   1154150882
      */
     MCAPI DisconnectPacket(std::string const &, bool);
 

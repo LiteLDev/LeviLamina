@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isCompatibleWith@TridentChannelingEnchant@@UEBA_NW4Type@Enchant@@@Z
-     * @hash   -893899623
+     * @hash   -893069319
      */
     virtual bool isCompatibleWith(enum class Enchant::Type) const;
     /**
      * @vftbl  2
      * @symbol ?getMinCost@TridentChannelingEnchant@@UEBAHH@Z
-     * @hash   -846243743
+     * @hash   -846197615
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z
-     * @hash   477209647
+     * @hash   477255775
      */
     virtual int getMaxCost(int) const;
     /**
@@ -62,7 +62,7 @@ public:
     virtual int getMaxLevel() const;
     /**
      * @symbol ??0TridentChannelingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -420418798
+     * @hash   -419588494
      */
     MCAPI TridentChannelingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

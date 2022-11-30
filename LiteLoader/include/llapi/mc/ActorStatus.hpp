@@ -22,22 +22,22 @@ namespace ActorStatus {
 #undef AFTER_EXTRA
     /**
      * @symbol ?canDash@ActorStatus@@YA_NAEBVActorStatusProvider@@@Z
-     * @hash   1561467128
+     * @hash   1561513256
      */
     MCAPI bool canDash(class ActorStatusProvider const &);
     /**
      * @symbol ?hasDashCooldown@ActorStatus@@YA_NAEBVActorStatusProvider@@@Z
-     * @hash   -1360404360
+     * @hash   -1360358232
      */
     MCAPI bool hasDashCooldown(class ActorStatusProvider const &);
     /**
      * @symbol ?setCanDash@ActorStatus@@YAX_NAEAVActorStatusProvider@@@Z
-     * @hash   2009869432
+     * @hash   2009915560
      */
     MCAPI void setCanDash(bool, class ActorStatusProvider &);
     /**
      * @symbol ?setHasDashCooldown@ActorStatus@@YAX_NAEAVActorStatusProvider@@@Z
-     * @hash   1727971128
+     * @hash   1728017256
      */
     MCAPI void setHasDashCooldown(bool, class ActorStatusProvider &);
 

@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0BeardAndShaverDescription@@QEAA@VBeardingDescriptionCache@@AEBUBeardKernel@@MM@Z
-     * @hash   846276814
+     * @hash   847107118
      */
     MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const &, float, float);
     /**
      * @symbol ?calculateContribution@BeardAndShaverDescription@@QEBAMAEBVBlockPos@@@Z
-     * @hash   -1840832215
+     * @hash   -1840001911
      */
     MCAPI float calculateContribution(class BlockPos const &) const;
     /**

@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1370124443
+     * @hash   1370170571
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
@@ -50,23 +50,23 @@ public:
     /**
      * @vftbl  3
      * @symbol ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2094906591
+     * @hash   2094952719
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateTradePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1358710079
+     * @hash   1358756207
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateTradePacket@@QEAA@XZ
-     * @hash   1555155439
+     * @hash   1555201567
      */
     MCAPI UpdateTradePacket();
     /**
      * @symbol ??0UpdateTradePacket@@QEAA@W4ContainerID@@W4ContainerType@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVCompoundTag@@AEBUActorUniqueID@@4H_N5@Z
-     * @hash   1604047613
+     * @hash   1604093741
      */
     MCAPI UpdateTradePacket(enum class ContainerID, enum class ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
 

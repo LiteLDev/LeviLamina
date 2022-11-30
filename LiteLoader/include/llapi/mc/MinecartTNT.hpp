@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@MinecartTNT@@UEAAXXZ
-     * @hash   1845643012
+     * @hash   1845689140
      */
     virtual void normalTick();
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -973409473
+     * @hash   -973363345
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -117,7 +117,7 @@ public:
     /**
      * @vftbl  187
      * @symbol ?causeFallDamage@MinecartTNT@@MEAAXMMVActorDamageSource@@@Z
-     * @hash   -1031644368
+     * @hash   -1031598240
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   514882697
+     * @hash   514928825
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -169,19 +169,19 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
-     * @hash   478579052
+     * @hash   478625180
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
      * @vftbl  283
      * @symbol ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
-     * @hash   -534048115
+     * @hash   -534001987
      */
     virtual enum class MinecartType getType();
     /**
      * @vftbl  284
      * @symbol ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
-     * @hash   -1415190733
+     * @hash   -1415144605
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
@@ -191,12 +191,12 @@ public:
     virtual void __unk_vfn_285();
     /**
      * @symbol ??0MinecartTNT@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1541944477
+     * @hash   -1541898349
      */
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?primeFuse@MinecartTNT@@QEAAXW4ActorDamageCause@@@Z
-     * @hash   -938920340
+     * @hash   -938874212
      */
     MCAPI void primeFuse(enum class ActorDamageCause);
 
@@ -205,7 +205,7 @@ public:
 private:
     /**
      * @symbol ?DEFAULT_FUSE_LENGTH@MinecartTNT@@0HB
-     * @hash   -819338649
+     * @hash   -819215641
      */
     MCAPI static int const DEFAULT_FUSE_LENGTH;
 

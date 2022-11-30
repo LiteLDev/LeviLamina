@@ -37,31 +37,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?placeRoots@MangroveTreeRoots@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
-     * @hash   1147204907
+     * @hash   1148035211
      */
     virtual class std::optional<class BlockPos> placeRoots(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &) const;
 
 //private:
     /**
      * @symbol ?_placeRoot@MangroveTreeRoots@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1191751106
+     * @hash   -1190920802
      */
     MCAPI void _placeRoot(class IBlockWorldGenAPI &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?_potentialRootPositions@MangroveTreeRoots@@AEBA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@EAEAVRandom@@0@Z
-     * @hash   -112737739
+     * @hash   -111907435
      */
     MCAPI std::vector<class BlockPos> _potentialRootPositions(class BlockPos const &, unsigned char, class Random &, class BlockPos const &) const;
     /**
      * @symbol ?_simulateRoots@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@2EPEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@HAEBUTreeParams@TreeHelper@@@Z
-     * @hash   1436463022
+     * @hash   1437293326
      */
     MCAPI bool _simulateRoots(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, class BlockPos const &, unsigned char, std::vector<class BlockPos> *, int, struct TreeHelper::TreeParams const &) const;
 
 private:
     /**
      * @symbol ?RANDOM_SKEW_CHANCE@MangroveTreeRoots@@0MB
-     * @hash   -889770922
+     * @hash   -889647914
      */
     MCAPI static float const RANDOM_SKEW_CHANCE;
 

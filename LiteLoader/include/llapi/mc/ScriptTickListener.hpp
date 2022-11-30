@@ -52,7 +52,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-     * @hash   15255915
+     * @hash   15348171
      */
     virtual enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
@@ -68,12 +68,12 @@ public:
     /**
      * @vftbl  7
      * @symbol ?onLevelScriptTick@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -1047005945
+     * @hash   -1046913689
      */
     virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
      * @symbol ??0ScriptTickListener@@QEAA@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptDeferredActionManager@@@Z
-     * @hash   -1104912399
+     * @hash   -1104820143
      */
     MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptDeferredActionManager &);
 

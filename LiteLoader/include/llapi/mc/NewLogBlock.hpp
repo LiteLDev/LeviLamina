@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@NewLogBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1258683105
+     * @hash   1259513409
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,13 +190,13 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@NewLogBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   371714336
+     * @hash   372544640
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@NewLogBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -175550039
+     * @hash   -174719735
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@NewLogBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -108644400
+     * @hash   -107814096
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -238,13 +238,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@NewLogBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   806914494
+     * @hash   807744798
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@NewLogBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1905529981
+     * @hash   1906360285
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -255,12 +255,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@NewLogBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   864495847
+     * @hash   865326151
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0NewLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1125854553
+     * @hash   -1125024249
      */
     MCAPI NewLogBlock(std::string const &, int);
 

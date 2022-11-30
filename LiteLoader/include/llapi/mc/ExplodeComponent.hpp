@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0ExplodeComponent@@QEAA@XZ
-     * @hash   -2008664488
+     * @hash   -2008618360
      */
     MCAPI ExplodeComponent();
     /**
      * @symbol ?addAdditionalSaveData@ExplodeComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1658784552
+     * @hash   1658830680
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?explode@ExplodeComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
-     * @hash   1893049119
+     * @hash   1893095247
      */
     MCAPI void explode(class Actor &, class Vec3 const &);
     /**
@@ -56,37 +56,37 @@ public:
     MCAPI int getInitialFuseLength() const;
     /**
      * @symbol ?getIsFuseLit@ExplodeComponent@@QEBA_NXZ
-     * @hash   -1409269790
+     * @hash   -1409223662
      */
     MCAPI bool getIsFuseLit() const;
     /**
      * @symbol ?isFuseLit@ExplodeComponent@@QEBA_NXZ
-     * @hash   1202223920
+     * @hash   1202270048
      */
     MCAPI bool isFuseLit() const;
     /**
      * @symbol ?readAdditionalSaveData@ExplodeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1043726254
+     * @hash   -1043680126
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?requiresTntExplodeGameRuleEnabled@ExplodeComponent@@QEBA_NXZ
-     * @hash   -464087116
+     * @hash   -464040988
      */
     MCAPI bool requiresTntExplodeGameRuleEnabled() const;
     /**
      * @symbol ?setAllowUnderwater@ExplodeComponent@@QEAAX_N@Z
-     * @hash   2003056794
+     * @hash   2003102922
      */
     MCAPI void setAllowUnderwater(bool);
     /**
      * @symbol ?setFuseLength@ExplodeComponent@@QEAAXH@Z
-     * @hash   1714823848
+     * @hash   1714869976
      */
     MCAPI void setFuseLength(int);
     /**
      * @symbol ?setTntExpodeGameRuleRequired@ExplodeComponent@@QEAAXXZ
-     * @hash   -782331819
+     * @hash   -782285691
      */
     MCAPI void setTntExpodeGameRuleRequired();
 

@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@PowderSnowBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -309686441
+     * @hash   -308856137
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@PowderSnowBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1794899503
+     * @hash   -1794069199
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -78,7 +78,7 @@ public:
     /**
      * @vftbl  31
      * @symbol ?isClimbable@PowderSnowBlock@@UEBA_NAEBUIActorMovementProxy@@@Z
-     * @hash   1814236619
+     * @hash   1815066923
      */
     virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  53
      * @symbol ?canBeAscendedByJumping@PowderSnowBlock@@UEBA_NAEBVActor@@AEBVBlockPos@@@Z
-     * @hash   1398395838
+     * @hash   1399226142
      */
     virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /**
@@ -207,13 +207,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1940215078
+     * @hash   -1939384774
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   713352953
+     * @hash   714183257
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1347554971
+     * @hash   1348385275
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   1100609071
+     * @hash   1101439375
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -297,7 +297,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PowderSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1389529247
+     * @hash   1390359551
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
@@ -319,22 +319,22 @@ public:
 #endif
     /**
      * @symbol ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1279015016
+     * @hash   1279845320
      */
     MCAPI PowderSnowBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?canWalkOnTop@PowderSnowBlock@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   381438109
+     * @hash   382268413
      */
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
     /**
      * @symbol ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
-     * @hash   -881238251
+     * @hash   -880407947
      */
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);
     /**
      * @symbol ?clearFire@PowderSnowBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2123207804
+     * @hash   2124038108
      */
     MCAPI static void clearFire(class BlockSource &, class BlockPos const &, class Block const &);
 

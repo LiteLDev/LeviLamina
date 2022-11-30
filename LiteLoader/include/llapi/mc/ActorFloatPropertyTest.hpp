@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorFloatPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   -180540948
+     * @hash   -180494820
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorFloatPropertyTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   1420972272
+     * @hash   1421018400
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
@@ -55,19 +55,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getName@ActorFloatPropertyTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   -808884206
+     * @hash   -808838078
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  5
      * @symbol ?_serializeDomain@ActorFloatPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   1078840806
+     * @hash   1078886934
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorFloatPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -499366783
+     * @hash   -499320655
      */
     virtual class Json::Value _serializeValue() const;
 

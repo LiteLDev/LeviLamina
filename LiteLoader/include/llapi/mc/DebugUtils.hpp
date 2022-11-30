@@ -24,12 +24,12 @@ namespace DebugUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?DEFAULT_ASSERT_HANDLER@DebugUtils@@YA_NAEBUAssertHandlerContext@@@Z
-     * @hash   -1424363230
+     * @hash   -1423532926
      */
     MCAPI bool DEFAULT_ASSERT_HANDLER(struct AssertHandlerContext const &);
     /**
      * @symbol ?SET_THREAD_NAME@DebugUtils@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1991485223
+     * @hash   -1990654919
      */
     MCAPI void SET_THREAD_NAME(std::string const &);
     /**
@@ -79,7 +79,7 @@ namespace DebugUtils {
     MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &)> gp_assert_handler;
     /**
      * @symbol ?isDebuggerAttached@DebugUtils@@YA_NXZ
-     * @hash   -1823555423
+     * @hash   -1822725119
      */
     MCAPI bool isDebuggerAttached();
 

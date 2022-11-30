@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ToastRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1461187662
+     * @hash   1461233790
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ToastRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1464712453
+     * @hash   -1464666325
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ToastRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   233688300
+     * @hash   233734428
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ToastRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1719007244
+     * @hash   1719053372
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ToastRequestPacket@@QEAA@XZ
-     * @hash   -634769636
+     * @hash   -634723508
      */
     MCAPI ToastRequestPacket();
     /**
      * @symbol ??0ToastRequestPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   386568643
+     * @hash   386614771
      */
     MCAPI ToastRequestPacket(std::string const &, std::string const &);
 

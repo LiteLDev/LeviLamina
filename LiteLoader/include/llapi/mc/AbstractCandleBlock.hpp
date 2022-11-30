@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1609361024
+     * @hash   1610191328
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -446357704
+     * @hash   -445527400
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -208,13 +208,13 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   789605859
+     * @hash   790436163
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@AbstractCandleBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   1916238710
+     * @hash   1917069014
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1186022660
+     * @hash   1186852964
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  193
      * @symbol ?_iterateCandles@AbstractCandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     * @hash   419618468
+     * @hash   419664596
      */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /**
@@ -283,22 +283,22 @@ public:
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   1536147390
+     * @hash   1536977694
      */
     virtual void __unk_vfn_196();
     /**
      * @vftbl  197
-     * @hash   1536671135
+     * @hash   1537501439
      */
     virtual void __unk_vfn_197();
     /**
      * @vftbl  198
-     * @hash   1537533152
+     * @hash   1538363456
      */
     virtual void __unk_vfn_198();
     /**
      * @vftbl  199
-     * @hash   1538456673
+     * @hash   1539286977
      */
     virtual void __unk_vfn_199();
     /**
@@ -325,29 +325,29 @@ public:
 #endif
     /**
      * @symbol ??0AbstractCandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1565948795
+     * @hash   -1565118491
      */
     MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
 
 //protected:
     /**
      * @symbol ?_checkForWaterlogging@AbstractCandleBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -785176758
+     * @hash   -784346454
      */
     MCAPI void _checkForWaterlogging(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_extinguish@AbstractCandleBlock@@IEBAXPEAVActor@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1669333372
+     * @hash   -1668503068
      */
     MCAPI void _extinguish(class Actor *, class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_canBeLit@AbstractCandleBlock@@KA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -964939352
+     * @hash   -964109048
      */
     MCAPI static bool _canBeLit(class Block const &, class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_isLit@AbstractCandleBlock@@KA_NAEBVBlock@@@Z
-     * @hash   1690677295
+     * @hash   1691507599
      */
     MCAPI static bool _isLit(class Block const &);
 

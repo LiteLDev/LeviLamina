@@ -54,38 +54,38 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -1203519764
+     * @hash   -1203473636
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionMineBlock@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   1739857860
+     * @hash   1739903988
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionMineBlock@@QEAA@XZ
-     * @hash   -2134458170
+     * @hash   -2134412042
      */
     MCAPI ItemStackRequestActionMineBlock();
     /**
      * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
-     * @hash   -1006260257
+     * @hash   -1006214129
      */
     MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
      * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
-     * @hash   1164181500
+     * @hash   1164227628
      */
     MCAPI int getPredictedDurability() const;
     /**
      * @symbol ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
-     * @hash   2000571100
+     * @hash   2000617228
      */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     /**
      * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
-     * @hash   547600115
+     * @hash   547646243
      */
     MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
 

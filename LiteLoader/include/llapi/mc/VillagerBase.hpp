@@ -36,7 +36,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?reloadComponents@VillagerBase@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   2055989362
+     * @hash   2056035490
      */
     virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -107,13 +107,13 @@ public:
     /**
      * @vftbl  141
      * @symbol ?onLightningHit@VillagerBase@@UEAAXXZ
-     * @hash   847782744
+     * @hash   847828872
      */
     virtual void onLightningHit();
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
-     * @hash   2111371151
+     * @hash   2111417279
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -154,13 +154,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1715113840
+     * @hash   -1715067712
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1395240749
+     * @hash   1395286877
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@VillagerBase@@EEAAXXZ
-     * @hash   1361405646
+     * @hash   1361451774
      */
     virtual void _onSizeUpdated();
     /**
@@ -224,54 +224,54 @@ public:
 #endif
     /**
      * @symbol ??0VillagerBase@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1497951453
+     * @hash   -1497905325
      */
     MCAPI VillagerBase(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?consumeLoveFood@VillagerBase@@QEAAXXZ
-     * @hash   1647605075
+     * @hash   1647651203
      */
     MCAPI void consumeLoveFood();
     /**
      * @symbol ?getBreedingStackIndex@VillagerBase@@QEBAHXZ
-     * @hash   390544662
+     * @hash   390590790
      */
     MCAPI int getBreedingStackIndex() const;
     /**
      * @symbol ?isChasing@VillagerBase@@QEBA_NXZ
-     * @hash   97872228
+     * @hash   97918356
      */
     MCAPI bool isChasing() const;
     /**
      * @symbol ?isWillingToBreed@VillagerBase@@QEAA_N_N@Z
-     * @hash   -1406831293
+     * @hash   -1406785165
      */
     MCAPI bool isWillingToBreed(bool);
     /**
      * @symbol ?setChasing@VillagerBase@@QEAAX_N@Z
-     * @hash   -106364390
+     * @hash   -106318262
      */
     MCAPI void setChasing(bool);
     /**
      * @symbol ?setWillingToBreed@VillagerBase@@QEAAX_N@Z
-     * @hash   1055534340
+     * @hash   1055580468
      */
     MCAPI void setWillingToBreed(bool);
     /**
      * @symbol ?stopGoals@VillagerBase@@QEAAXXZ
-     * @hash   -1027236637
+     * @hash   -1027190509
      */
     MCAPI void stopGoals();
     /**
      * @symbol ?BiomeStrToEnum@VillagerBase@@SA?AW4BiomeType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -508902813
+     * @hash   -508856685
      */
     MCAPI static enum class VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
 //private:
     /**
      * @symbol ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
-     * @hash   997106755
+     * @hash   997152883
      */
     MCAPI void _addParticlesAroundSelf(enum class ParticleType);
 

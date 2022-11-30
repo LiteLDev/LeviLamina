@@ -59,38 +59,38 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VProjectileItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1123094354
+     * @hash   1123924658
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VProjectileItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1890006946
+     * @hash   -1889176642
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?dispense@ProjectileItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   1762447266
+     * @hash   1763277570
      */
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @symbol ?getShootDir@ProjectileItemComponent@@QEBA?AVVec3@@AEBVPlayer@@M@Z
-     * @hash   -334213700
+     * @hash   -333383396
      */
     MCAPI class Vec3 getShootDir(class Player const &, float) const;
     /**
      * @symbol ?shootProjectile@ProjectileItemComponent@@QEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1MPEAVPlayer@@@Z
-     * @hash   1103117157
+     * @hash   1103947461
      */
     MCAPI class Actor * shootProjectile(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Player *) const;
     /**
      * @symbol ?bindType@ProjectileItemComponent@@SAXXZ
-     * @hash   -1280420465
+     * @hash   -1279590161
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ProjectileItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   909843046
+     * @hash   910673350
      */
     MCAPI static class HashedString const & getIdentifier();
 

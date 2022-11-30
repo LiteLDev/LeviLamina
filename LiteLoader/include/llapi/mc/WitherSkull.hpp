@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@WitherSkull@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1702978294
+     * @hash   1703024422
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -138,7 +138,7 @@ public:
     /**
      * @vftbl  236
      * @symbol ?canDestroyBlock@WitherSkull@@UEBA_NAEBVBlock@@@Z
-     * @hash   1377715721
+     * @hash   1377761849
      */
     virtual bool canDestroyBlock(class Block const &) const;
     /**
@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@WitherSkull@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1973800922
+     * @hash   -1973754794
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -175,7 +175,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?getInertia@WitherSkull@@MEAAMXZ
-     * @hash   -598562702
+     * @hash   -598516574
      */
     virtual float getInertia();
     /**
@@ -192,7 +192,7 @@ public:
 #endif
     /**
      * @symbol ??0WitherSkull@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -2093447050
+     * @hash   -2093400922
      */
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?deserialize@RandomValueBounds@@QEAAXAEBVValue@Json@@@Z
-     * @hash   -959315216
+     * @hash   -958484912
      */
     MCAPI void deserialize(class Json::Value const &);
     /**
      * @symbol ?getFloat@RandomValueBounds@@QEBAMAEAVRandom@@@Z
-     * @hash   -98340885
+     * @hash   -98294757
      */
     MCAPI float getFloat(class Random &) const;
     /**
      * @symbol ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
-     * @hash   -116114973
+     * @hash   -115284669
      */
     MCAPI int getInt(class Random &) const;
     /**

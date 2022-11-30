@@ -33,22 +33,22 @@ public:
 public:
     /**
      * @symbol ??0SkinData@@QEAA@AEBVValue@Json@@@Z
-     * @hash   1202450328
+     * @hash   1202496456
      */
     MCAPI SkinData(class Json::Value const &);
     /**
      * @symbol ??0SkinData@@QEAA@AEBVActor@@@Z
-     * @hash   -464076600
+     * @hash   -464030472
      */
     MCAPI SkinData(class Actor const &);
     /**
      * @symbol ?applyToActor@SkinData@@QEBAXAEAVActor@@@Z
-     * @hash   -929200246
+     * @hash   -929154118
      */
     MCAPI void applyToActor(class Actor &) const;
     /**
      * @symbol ?softMatch@SkinData@@QEBA_NAEBU1@AEA_N@Z
-     * @hash   -1003379345
+     * @hash   -1003333217
      */
     MCAPI bool softMatch(struct SkinData const &, bool &) const;
 

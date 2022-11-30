@@ -32,64 +32,64 @@ public:
 public:
     /**
      * @symbol ?getPos@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHHW4SolidityCheckType@@@Z
-     * @hash   -1607740488
+     * @hash   -1607694360
      */
     MCAPI static bool getPos(class Vec3 &, class Mob &, int, int, int, enum class SolidityCheckType);
     /**
      * @symbol ?getPosAvoid@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@W4SolidityCheckType@@H@Z
-     * @hash   2032774854
+     * @hash   2032820982
      */
     MCAPI static bool getPosAvoid(class Vec3 &, class Mob &, int, int, class Vec3 const &, enum class SolidityCheckType, int);
     /**
      * @symbol ?getPosInDirection@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHH_N2PEAV2@AEBUIntRange@@HW4SolidityCheckType@@@Z
-     * @hash   165353308
+     * @hash   165399436
      */
     MCAPI static bool getPosInDirection(class Vec3 &, class Mob &, int, int, int, bool, bool, class Vec3 *, struct IntRange const &, int, enum class SolidityCheckType);
     /**
      * @symbol ?getPosTowards@RandomPos@@SA_NAEAVRandom@@AEAVVec3@@AEAVMob@@HHAEBV3@@Z
-     * @hash   -739094702
+     * @hash   -739048574
      */
     MCAPI static bool getPosTowards(class Random &, class Vec3 &, class Mob &, int, int, class Vec3 const &);
     /**
      * @symbol ?getPosTowards@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@@Z
-     * @hash   -321465144
+     * @hash   -321419016
      */
     MCAPI static bool getPosTowards(class Vec3 &, class Mob &, int, int, class Vec3 const &);
     /**
      * @symbol ?getSpawnPos@RandomPos@@SA_NAEAVBlockSource@@AEAVRandom@@AEAVVec3@@HHH@Z
-     * @hash   2136245200
+     * @hash   2136291328
      */
     MCAPI static bool getSpawnPos(class BlockSource &, class Random &, class Vec3 &, int, int, int);
 
 //private:
     /**
      * @symbol ?generateRandomPos@RandomPos@@CA_NAEAVRandomize@@AEAVVec3@@AEAVMob@@HHHPEBV3@_N4AEBUIntRange@@HW4SolidityCheckType@@@Z
-     * @hash   -1172572936
+     * @hash   -1172526808
      */
     MCAPI static bool generateRandomPos(class Randomize &, class Vec3 &, class Mob &, int, int, int, class Vec3 const *, bool, bool, struct IntRange const &, int, enum class SolidityCheckType);
     /**
      * @symbol ?generateRandomPos@RandomPos@@CA_NAEAVVec3@@AEAVMob@@HHPEBV2@_N3HW4SolidityCheckType@@@Z
-     * @hash   -978421070
+     * @hash   -978374942
      */
     MCAPI static bool generateRandomPos(class Vec3 &, class Mob &, int, int, class Vec3 const *, bool, bool, int, enum class SolidityCheckType);
     /**
      * @symbol ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@AEAVMob@@HAEBUIntRange@@W4SolidityCheckType@@@Z
-     * @hash   1773825674
+     * @hash   1773871802
      */
     MCAPI static bool snapToGround(class BlockPos &, class Mob &, int, struct IntRange const &, enum class SolidityCheckType);
     /**
      * @symbol ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z
-     * @hash   24258203
+     * @hash   24304331
      */
     MCAPI static bool snapToGround(class BlockPos &, int, int, int, class std::function<bool (class BlockPos &)>);
     /**
      * @symbol ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z
-     * @hash   1381931526
+     * @hash   1381977654
      */
     MCAPI static bool snapToGround(class BlockPos &, int, int, class std::function<bool (class BlockPos &)>);
     /**
      * @symbol ?spawnSnapToGround@RandomPos@@CA_NAEAVBlockSource@@AEAVBlockPos@@MH@Z
-     * @hash   -1785696466
+     * @hash   -1785650338
      */
     MCAPI static bool spawnSnapToGround(class BlockSource &, class BlockPos &, float, int);
 

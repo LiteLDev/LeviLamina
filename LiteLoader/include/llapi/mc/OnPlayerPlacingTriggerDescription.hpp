@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnPlayerPlacingTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -200139599
+     * @hash   -199309295
      */
     virtual std::string const & getName() const;
     /**
@@ -51,13 +51,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@OnPlayerPlacingTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1722979813
+     * @hash   -1722149509
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@OnPlayerPlacingTriggerDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1839549335
+     * @hash   1840379639
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**

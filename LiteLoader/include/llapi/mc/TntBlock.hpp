@@ -149,19 +149,19 @@ public:
     /**
      * @vftbl  70
      * @symbol ?shouldDispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@@Z
-     * @hash   -375196484
+     * @hash   -374366180
      */
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
     /**
      * @vftbl  71
      * @symbol ?dispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -237096897
+     * @hash   -236266593
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   1884382978
+     * @hash   1885213282
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -923405291
+     * @hash   -922574987
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?destroy@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-     * @hash   1384762970
+     * @hash   1385593274
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
@@ -220,19 +220,19 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@TntBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -946969510
+     * @hash   -946139206
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  134
      * @symbol ?isAuxValueRelevantForPicking@TntBlock@@UEBA_NXZ
-     * @hash   -1145987439
+     * @hash   -1145157135
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@TntBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   2029143203
+     * @hash   2029973507
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  164
      * @symbol ?onExploded@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   692423414
+     * @hash   693253718
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   6777841
+     * @hash   7608145
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@TntBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   393060424
+     * @hash   393890728
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -291,27 +291,27 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TntBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1878604433
+     * @hash   1879434737
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0TntBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -31461343
+     * @hash   -30631039
      */
     MCAPI TntBlock(std::string const &, int);
     /**
      * @symbol ?_setAllowUnderwater@TntBlock@@QEBAXPEAVActor@@@Z
-     * @hash   -1290905511
+     * @hash   -1290075207
      */
     MCAPI void _setAllowUnderwater(class Actor *) const;
     /**
      * @symbol ?_shouldAllowUnderwater@TntBlock@@QEBA_NAEBVBlock@@@Z
-     * @hash   300936437
+     * @hash   301766741
      */
     MCAPI bool _shouldAllowUnderwater(class Block const &) const;
     /**
      * @symbol ?tryLightTnt@TntBlock@@SA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1730436136
+     * @hash   -1729605832
      */
     MCAPI static bool tryLightTnt(class Player &, class BlockPos const &);
 

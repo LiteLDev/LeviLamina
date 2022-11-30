@@ -59,43 +59,43 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -266472251
+     * @hash   -265641947
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   715697131
+     * @hash   716527435
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?appendFormattedHovertext@WeaponItemComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -886957078
+     * @hash   -886126774
      */
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     /**
      * @symbol ?hitActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   1004158866
+     * @hash   1004989170
      */
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ?hitBlock@WeaponItemComponent@@QEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
-     * @hash   1734904361
+     * @hash   1735734665
      */
     MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
     /**
      * @symbol ?hurtActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   71742248
+     * @hash   72572552
      */
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ?bindType@WeaponItemComponent@@SAXXZ
-     * @hash   1710663279
+     * @hash   1711493583
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@WeaponItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   103950908
+     * @hash   104781212
      */
     MCAPI static class HashedString const & getIdentifier();
 

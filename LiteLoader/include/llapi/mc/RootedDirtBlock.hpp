@@ -165,19 +165,19 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@RootedDirtBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1263034207
+     * @hash   -1262203903
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@RootedDirtBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1330083366
+     * @hash   -1329253062
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  95
      * @symbol ?tryToTill@RootedDirtBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
-     * @hash   329412164
+     * @hash   330242468
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@RootedDirtBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1958580282
+     * @hash   1959410586
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -249,12 +249,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RootedDirtBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -476869917
+     * @hash   -476039613
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0RootedDirtBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   6271811
+     * @hash   7102115
      */
     MCAPI RootedDirtBlock(std::string const &, int);
 

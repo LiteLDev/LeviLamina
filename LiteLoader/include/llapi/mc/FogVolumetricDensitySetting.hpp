@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?UNIFORM_MAX_DENSITY_HEIGHT@FogVolumetricDensitySetting@@2MB
-     * @hash   -2063451409
+     * @hash   -2063328401
      */
     MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
     /**
      * @symbol ?UNIFORM_ZERO_DENSITY_HEIGHT@FogVolumetricDensitySetting@@2MB
-     * @hash   -1912970591
+     * @hash   -1912847583
      */
     MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
     /**

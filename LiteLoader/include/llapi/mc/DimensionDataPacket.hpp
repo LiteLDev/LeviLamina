@@ -37,30 +37,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@DimensionDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -2027579962
+     * @hash   -2027533834
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@DimensionDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1754656653
+     * @hash   -1754610525
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@DimensionDataPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1797968084
+     * @hash   1798014212
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@DimensionDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1644021348
+     * @hash   1644067476
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0DimensionDataPacket@@QEAA@AEBVDimensionDefinitionGroup@@@Z
-     * @hash   -377957411
+     * @hash   -377911283
      */
     MCAPI DimensionDataPacket(class DimensionDefinitionGroup const &);
 

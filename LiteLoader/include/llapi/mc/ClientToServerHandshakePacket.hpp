@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ClientToServerHandshakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1077800552
+     * @hash   1077846680
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientToServerHandshakePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1794386197
+     * @hash   1794432325
      */
     virtual std::string getName() const;
     /**
@@ -61,7 +61,7 @@ public:
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ClientToServerHandshakePacket@@QEAA@XZ
-     * @hash   665228402
+     * @hash   665274530
      */
     MCAPI ClientToServerHandshakePacket();
 

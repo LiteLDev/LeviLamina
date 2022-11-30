@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??4ItemInUseComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1200732864
+     * @hash   -1200686736
      */
     MCAPI struct ItemInUseComponent & operator=(struct ItemInUseComponent &&);
     /**

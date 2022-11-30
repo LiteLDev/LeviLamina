@@ -64,12 +64,12 @@ public:
     /**
      * @vftbl  21
      * @symbol ?_getContainerOffset@PlayerUIContainerModel@@MEBAHXZ
-     * @hash   1246060644
+     * @hash   1246106772
      */
     virtual int _getContainerOffset() const;
     /**
      * @symbol ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-     * @hash   -974967117
+     * @hash   -974920989
      */
     MCAPI PlayerUIContainerModel(enum class ContainerEnumName, class Player &);
 

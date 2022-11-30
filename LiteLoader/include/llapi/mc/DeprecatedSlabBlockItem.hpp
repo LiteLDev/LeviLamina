@@ -94,36 +94,36 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   -1000604996
+     * @hash   -999774692
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   871937587
+     * @hash   872767891
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 
 //private:
     /**
      * @symbol ?_canConvertToDoubleSlab@DeprecatedSlabBlockItem@@AEBA?AV?$optional@H@std@@AEAVItemStackBase@@AEBVActor@@AEBEAEBVBlock@@@Z
-     * @hash   -1400918613
+     * @hash   -1400088309
      */
     MCAPI class std::optional<int> _canConvertToDoubleSlab(class ItemStackBase &, class Actor const &, unsigned char const &, class Block const &) const;
     /**
      * @symbol ?_findSlabType@DeprecatedSlabBlockItem@@AEBAHAEBVBlock@@@Z
-     * @hash   -2134117023
+     * @hash   -2133286719
      */
     MCAPI int _findSlabType(class Block const &) const;
 

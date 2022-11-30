@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@WitherBossPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -607186766
+     * @hash   -607140638
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doWitherBossPreAIStepSystem@WitherBossPreAIStepSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UWitherBossPreAIStepResultComponent@@@@@Z
-     * @hash   -352928781
+     * @hash   -352882653
      */
     MCAPI static void _doWitherBossPreAIStepSystem(class StrictEntityContext &, class ActorOwnerComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct WitherBossPreAIStepResultComponent>);
 

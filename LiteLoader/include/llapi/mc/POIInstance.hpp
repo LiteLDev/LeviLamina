@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0POIInstance@@QEAA@AEBVBlockPos@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_K4222@Z
-     * @hash   -227694230
+     * @hash   -227648102
      */
     MCAPI POIInstance(class BlockPos const &, bool, std::string, enum class POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     /**
      * @symbol ?decreaseOwnerCount@POIInstance@@QEAAX_K@Z
-     * @hash   -936130203
+     * @hash   -936084075
      */
     MCAPI void decreaseOwnerCount(unsigned __int64);
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI class HashedString const & getEndEvent() const;
     /**
      * @symbol ?getInitEvent@POIInstance@@QEBAAEBVHashedString@@XZ
-     * @hash   -232702046
+     * @hash   -232655918
      */
     MCAPI class HashedString const & getInitEvent() const;
     /**
@@ -57,7 +57,7 @@ public:
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getOwnerCapacity@POIInstance@@QEBA_KXZ
-     * @hash   1737987485
+     * @hash   1738033613
      */
     MCAPI unsigned __int64 getOwnerCapacity() const;
     /**
@@ -67,77 +67,77 @@ public:
     MCAPI unsigned __int64 getOwnerCount() const;
     /**
      * @symbol ?getPosition@POIInstance@@QEBAAEBVBlockPos@@XZ
-     * @hash   -1822450530
+     * @hash   -1822404402
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
      * @symbol ?getRadius@POIInstance@@QEBAMXZ
-     * @hash   2061234022
+     * @hash   2061280150
      */
     MCAPI float getRadius() const;
     /**
      * @symbol ?getSecondBlockFullAABB@POIInstance@@QEAA?AVAABB@@AEAVBlockSource@@@Z
-     * @hash   -720480907
+     * @hash   -720434779
      */
     MCAPI class AABB getSecondBlockFullAABB(class BlockSource &);
     /**
      * @symbol ?getSoundEvent@POIInstance@@QEBAAEBVHashedString@@XZ
-     * @hash   -905950576
+     * @hash   -905904448
      */
     MCAPI class HashedString const & getSoundEvent() const;
     /**
      * @symbol ?getType@POIInstance@@QEBA?AW4POIType@@XZ
-     * @hash   -825166654
+     * @hash   -825120526
      */
     MCAPI enum class POIType getType() const;
     /**
      * @symbol ?getTypeName@POIInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -238260482
+     * @hash   -238214354
      */
     MCAPI std::string getTypeName() const;
     /**
      * @symbol ?getWeight@POIInstance@@QEBA_KXZ
-     * @hash   -50445413
+     * @hash   -50399285
      */
     MCAPI unsigned __int64 getWeight() const;
     /**
      * @symbol ?increaseOwnerCount@POIInstance@@QEAAX_K@Z
-     * @hash   210118373
+     * @hash   210164501
      */
     MCAPI void increaseOwnerCount(unsigned __int64);
     /**
      * @symbol ?incrementArrivalFailureCount@POIInstance@@QEAAXXZ
-     * @hash   -1019597663
+     * @hash   -1019551535
      */
     MCAPI void incrementArrivalFailureCount();
     /**
      * @symbol ?isFull@POIInstance@@QEBA_NXZ
-     * @hash   356572354
+     * @hash   356618482
      */
     MCAPI bool isFull() const;
     /**
      * @symbol ?isPathable@POIInstance@@QEBA_NXZ
-     * @hash   -1086732702
+     * @hash   -1086686574
      */
     MCAPI bool isPathable() const;
     /**
      * @symbol ?resetArrivalFailureCount@POIInstance@@QEAAXXZ
-     * @hash   190746785
+     * @hash   190792913
      */
     MCAPI void resetArrivalFailureCount();
     /**
      * @symbol ?setVillage@POIInstance@@QEAAXPEAVVillage@@@Z
-     * @hash   -766115273
+     * @hash   -766069145
      */
     MCAPI void setVillage(class Village *);
     /**
      * @symbol ?trySpawnParticles@POIInstance@@QEBAXAEAVBlockSource@@AEAVRandom@@H@Z
-     * @hash   -1256066894
+     * @hash   -1256020766
      */
     MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     /**
      * @symbol ?useBoundingBox@POIInstance@@QEBA_NXZ
-     * @hash   -1021352286
+     * @hash   -1021306158
      */
     MCAPI bool useBoundingBox() const;
 

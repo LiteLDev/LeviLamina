@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ??0ExpiringTick@@QEAA@UTick@@G@Z
-     * @hash   2146462034
+     * @hash   2146508162
      */
     MCAPI ExpiringTick(struct Tick, unsigned short);
     /**
      * @symbol ?getExpireAtTick@ExpiringTick@@QEBA?AUTick@@XZ
-     * @hash   885449330
+     * @hash   885495458
      */
     MCAPI struct Tick getExpireAtTick() const;
     /**
      * @symbol ?getNormalizedElapsedTime@ExpiringTick@@QEBAMAEBUTick@@@Z
-     * @hash   -1149515463
+     * @hash   -1149469335
      */
     MCAPI float getNormalizedElapsedTime(struct Tick const &) const;
     /**
      * @symbol ?isActive@ExpiringTick@@QEBA_NUTick@@@Z
-     * @hash   1266527943
+     * @hash   1266574071
      */
     MCAPI bool isActive(struct Tick) const;
     /**
      * @symbol ?isExpired@ExpiringTick@@QEBA_NUTick@@@Z
-     * @hash   1100229407
+     * @hash   1100275535
      */
     MCAPI bool isExpired(struct Tick) const;
 

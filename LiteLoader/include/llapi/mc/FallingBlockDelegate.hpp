@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onLand@FallingBlockDelegate@@UEAAXAEBVHeavyBlock@@AEAVIBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1497752982
+     * @hash   -1497706854
      */
     virtual void onLand(class HeavyBlock const &, class IBlockSource &, class BlockPos const &);
     /**
      * @vftbl  2
      * @symbol ?breakBlock@FallingBlockDelegate@@UEAAXAEAVFallingBlock@@@Z
-     * @hash   1468757380
+     * @hash   1468803508
      */
     virtual void breakBlock(class FallingBlock &);
 

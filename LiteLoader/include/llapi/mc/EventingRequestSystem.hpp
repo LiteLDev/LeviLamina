@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@EventingRequestSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   591666962
+     * @hash   591713090
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_eventingRequestSystem@EventingRequestSystem@@CAXAEBVStrictEntityContext@@AEAUEventingRequestQueueComponent@@AEAVLevelComponent@@@Z
-     * @hash   1345025792
+     * @hash   1345071920
      */
     MCAPI static void _eventingRequestSystem(class StrictEntityContext const &, struct EventingRequestQueueComponent &, class LevelComponent &);
 

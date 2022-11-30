@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@DamageOverTimeComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1869295496
+     * @hash   -1869249368
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getDamageTime@DamageOverTimeComponent@@QEBAHXZ
-     * @hash   -458481316
+     * @hash   -458435188
      */
     MCAPI int getDamageTime() const;
     /**
@@ -52,12 +52,12 @@ public:
     MCAPI int getHurtValue() const;
     /**
      * @symbol ?readAdditionalSaveData@DamageOverTimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1553267382
+     * @hash   -1553221254
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setDamageTime@DamageOverTimeComponent@@QEAAXH@Z
-     * @hash   -1230401526
+     * @hash   -1230355398
      */
     MCAPI void setDamageTime(int);
 

@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??4BlockMaterialInstance@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1118140626
+     * @hash   -1117310322
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     /**
      * @symbol ??4BlockMaterialInstance@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -66066670
+     * @hash   -65236366
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
     /**
      * @symbol ??1BlockMaterialInstance@@QEAA@XZ
-     * @hash   -2098615259
+     * @hash   -2097784955
      */
     MCAPI ~BlockMaterialInstance();
     /**

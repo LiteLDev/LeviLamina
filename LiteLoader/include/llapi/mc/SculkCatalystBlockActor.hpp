@@ -38,43 +38,43 @@ public:
     MCVAPI enum class GameEventListener::DeliveryMode getDeliveryMode() const;
     /**
      * @symbol ?getPositionSource@SculkCatalystBlockActor@@UEBAAEBVPositionSource@GameEvents@@XZ
-     * @hash   635757451
+     * @hash   635803579
      */
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
     /**
      * @symbol ?getRange@SculkCatalystBlockActor@@UEBAIXZ
-     * @hash   1201611592
+     * @hash   1201657720
      */
     MCVAPI unsigned int getRange() const;
     /**
      * @symbol ?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
-     * @hash   -1850981060
+     * @hash   -1850150756
      */
     MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     /**
      * @symbol ?load@SculkCatalystBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1548185148
+     * @hash   1549015452
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onRemoved@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   811076961
+     * @hash   811907265
      */
     MCVAPI void onRemoved(class BlockSource &);
     /**
      * @symbol ?save@SculkCatalystBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1742173509
+     * @hash   -1741343205
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?tick@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   779459221
+     * @hash   780289525
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0SculkCatalystBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -378677976
+     * @hash   -377847672
      */
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
     /**
@@ -84,7 +84,7 @@ public:
     MCAPI class SculkSpreader & getSculkSpreader();
     /**
      * @symbol ?TypeId@SculkCatalystBlockActor@@2W4BlockActorType@@B
-     * @hash   -65313063
+     * @hash   -65190055
      */
     MCAPI static enum class BlockActorType const TypeId;
     /**
@@ -96,7 +96,7 @@ public:
 //private:
     /**
      * @symbol ?_tryConsumeOnDeathExperience@SculkCatalystBlockActor@@AEAAXAEAVLevel@@AEAVActor@@@Z
-     * @hash   691488517
+     * @hash   692318821
      */
     MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
 

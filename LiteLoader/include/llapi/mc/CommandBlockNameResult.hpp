@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0CommandBlockNameResult@@QEAA@AEBVHashedString@@PEBVBlock@@_N@Z
-     * @hash   -1277336632
+     * @hash   -1277290504
      */
     MCAPI CommandBlockNameResult(class HashedString const &, class Block const *, bool);
     /**
      * @symbol ?getBlock@CommandBlockNameResult@@QEBAPEBVBlock@@XZ
-     * @hash   297565253
+     * @hash   297611381
      */
     MCAPI class Block const * getBlock() const;
     /**
      * @symbol ?getResult@CommandBlockNameResult@@QEBA?AW4Result@1@XZ
-     * @hash   -1242823007
+     * @hash   -1242776879
      */
     MCAPI enum class CommandBlockNameResult::Result getResult() const;
     /**
      * @symbol ?isComplexAlias@CommandBlockNameResult@@QEBA_NXZ
-     * @hash   -2001364626
+     * @hash   -2001318498
      */
     MCAPI bool isComplexAlias() const;
     /**
      * @symbol ?isSameBlock@CommandBlockNameResult@@QEBA_NAEBVBlock@@_N@Z
-     * @hash   -1759117042
+     * @hash   -1759070914
      */
     MCAPI bool isSameBlock(class Block const &, bool) const;
     /**
      * @symbol ??1CommandBlockNameResult@@QEAA@XZ
-     * @hash   740366788
+     * @hash   740412916
      */
     MCAPI ~CommandBlockNameResult();
 

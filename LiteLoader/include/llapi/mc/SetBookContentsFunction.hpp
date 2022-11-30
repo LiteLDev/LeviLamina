@@ -40,30 +40,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@SetBookContentsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1946572041
+     * @hash   1947402345
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@SetBookContentsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   923477086
+     * @hash   924307390
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ??0SetBookContentsFunction@@QEAA@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@1AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@Z
-     * @hash   -55277249
+     * @hash   -54446945
      */
     MCAPI SetBookContentsFunction(std::vector<std::unique_ptr<class LootItemCondition>> &, std::string const &, std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?deserialize@SetBookContentsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   1664710879
+     * @hash   1665541183
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
      * @symbol ?_fillUserData@SetBookContentsFunction@@AEAAXAEAVCompoundTag@@@Z
-     * @hash   -1984820105
+     * @hash   -1983989801
      */
     MCAPI void _fillUserData(class CompoundTag &);
 

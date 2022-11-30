@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?resetAll@DBStoragePerformanceData@@QEAAXXZ
-     * @hash   -1101950283
+     * @hash   -1101119979
      */
     MCAPI void resetAll();
     /**

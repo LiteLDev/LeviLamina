@@ -44,201 +44,201 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   655352695
+     * @hash   655398823
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  3
      * @symbol ?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ
-     * @hash   -344782695
+     * @hash   -344736567
      */
     virtual struct ActorUniqueID const & getEntityId() const;
     /**
      * @vftbl  4
      * @symbol ?isEntityOwned@TickingArea@@UEBA_NXZ
-     * @hash   20155982
+     * @hash   20986286
      */
     virtual bool isEntityOwned() const;
     /**
      * @vftbl  5
-     * @hash   729939461
+     * @hash   730769765
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   730862982
+     * @hash   731693286
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?getBounds@TickingArea@@UEBAAEBUBounds@@XZ
-     * @hash   192369054
+     * @hash   193199358
      */
     virtual struct Bounds const & getBounds() const;
     /**
      * @vftbl  8
      * @symbol ?isAlwaysActive@TickingArea@@UEBA_NXZ
-     * @hash   1926118053
+     * @hash   1926948357
      */
     virtual bool isAlwaysActive() const;
     /**
      * @vftbl  9
      * @symbol ?getMaxDistToPlayers@TickingArea@@UEBAMXZ
-     * @hash   493245151
+     * @hash   494075455
      */
     virtual float getMaxDistToPlayers() const;
     /**
      * @vftbl  10
-     * @hash   239467859
+     * @hash   240298163
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   240391380
+     * @hash   241221684
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
      * @symbol ?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ
-     * @hash   39743830
+     * @hash   40574134
      */
     virtual struct TickingAreaDescription getDescription() const;
     /**
      * @vftbl  13
      * @symbol ?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ
-     * @hash   -1250794488
+     * @hash   -1250748360
      */
     virtual enum class TickingAreaLoadMode getLoadMode() const;
     /**
      * @vftbl  14
      * @symbol ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-     * @hash   307214926
+     * @hash   308045230
      */
     virtual void setLoadMode(enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @vftbl  15
      * @symbol ?isPreloadDone@TickingArea@@UEBA_NXZ
-     * @hash   1351946151
+     * @hash   1352776455
      */
     virtual bool isPreloadDone() const;
     /**
      * @vftbl  16
      * @symbol ?tick@TickingArea@@UEAAXAEBUTick@@_N@Z
-     * @hash   -342659987
+     * @hash   -341829683
      */
     virtual void tick(struct Tick const &, bool);
     /**
      * @vftbl  17
      * @symbol ?tickSeasons@TickingArea@@UEAAXAEAVRandom@@@Z
-     * @hash   204015705
+     * @hash   204846009
      */
     virtual void tickSeasons(class Random &);
     /**
      * @vftbl  18
      * @symbol ?updatePosition@TickingArea@@UEAAXAEBVVec3@@@Z
-     * @hash   -2046190341
+     * @hash   -2045360037
      */
     virtual void updatePosition(class Vec3 const &);
     /**
      * @vftbl  19
      * @symbol ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
-     * @hash   1741396798
+     * @hash   1742227102
      */
     virtual void updateAndCenter(class LevelStorage &, struct Tick);
     /**
      * @vftbl  20
      * @symbol ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
-     * @hash   1409663219
+     * @hash   1410493523
      */
     virtual class Actor * findOwner(unsigned char &);
     /**
      * @vftbl  21
      * @symbol ?entityHasBeenFound@TickingArea@@UEBA_NXZ
-     * @hash   -1195420891
+     * @hash   -1194590587
      */
     virtual bool entityHasBeenFound() const;
     /**
      * @vftbl  22
      * @symbol ?setEntityFound@TickingArea@@UEAAXXZ
-     * @hash   448105202
+     * @hash   448935506
      */
     virtual void setEntityFound();
     /**
      * @vftbl  23
      * @symbol ?isRemoved@TickingArea@@UEAA_NXZ
-     * @hash   1567905309
+     * @hash   1568735613
      */
     virtual bool isRemoved();
     /**
      * @vftbl  24
      * @symbol ?remove@TickingArea@@UEAAXAEAVLevelStorage@@@Z
-     * @hash   -533658796
+     * @hash   -532828492
      */
     virtual void remove(class LevelStorage &);
     /**
      * @vftbl  25
      * @symbol ?onComponentChanged@TickingArea@@UEAAXIM_NAEAVLevelStorage@@@Z
-     * @hash   -1999835660
+     * @hash   -1999005356
      */
     virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
     /**
      * @vftbl  26
      * @symbol ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
-     * @hash   -287212363
+     * @hash   -286382059
      */
     virtual void updateBlockSourceCurrentTick(struct Tick const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREA
     /**
      * @symbol ?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ
-     * @hash   -508995199
+     * @hash   -508164895
      */
     MCVAPI class BlockSource & getBlockSource();
     /**
      * @symbol ?getBlockSource@TickingArea@@UEBAAEBVBlockSource@@XZ
-     * @hash   -941810115
+     * @hash   -940979811
      */
     MCVAPI class BlockSource const & getBlockSource() const;
     /**
      * @symbol ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
-     * @hash   -1044408340
+     * @hash   -1043578036
      */
     MCVAPI class ITickingAreaView & getView();
     /**
      * @symbol ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
-     * @hash   227058856
+     * @hash   227889160
      */
     MCVAPI class ITickingAreaView const & getView() const;
 #endif
     /**
      * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
-     * @hash   1095469122
+     * @hash   1096299426
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
      * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBUBounds@@UActorUniqueID@@M@Z
-     * @hash   1376807679
+     * @hash   1377637983
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
     /**
      * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBUBounds@@UActorUniqueID@@@Z
-     * @hash   449965186
+     * @hash   450795490
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
 
 //private:
     /**
      * @symbol ??0TickingArea@@AEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@AEBUBounds@@_NM5W4TickingAreaLoadMode@@@Z
-     * @hash   -1180739358
+     * @hash   -1179909054
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum class TickingAreaLoadMode);
     /**
      * @symbol ?_center@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-     * @hash   -1625929625
+     * @hash   -1625099321
      */
     MCAPI void _center(class LevelStorage &);
     /**
      * @symbol ?_save@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-     * @hash   2091163039
+     * @hash   2091993343
      */
     MCAPI void _save(class LevelStorage &);
 

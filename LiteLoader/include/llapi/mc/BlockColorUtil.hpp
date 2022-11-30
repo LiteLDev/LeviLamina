@@ -29,37 +29,37 @@ namespace BlockColorUtil {
     MCAPI extern class std::array<enum class BlockColor, 16> RAINBOW;
     /**
      * @symbol ?fromInt@BlockColorUtil@@YA?AW4BlockColor@@H@Z
-     * @hash   1957985544
+     * @hash   1958815848
      */
     MCAPI enum class BlockColor fromInt(int);
     /**
      * @symbol ?fromItemColor@BlockColorUtil@@YA?AW4BlockColor@@W4ItemColor@@@Z
-     * @hash   1145501078
+     * @hash   1146331382
      */
     MCAPI enum class BlockColor fromItemColor(enum class ItemColor);
     /**
      * @symbol ?getColor@BlockColorUtil@@YA?AVColor@mce@@W4BlockColor@@@Z
-     * @hash   1012130082
+     * @hash   1012960386
      */
     MCAPI class mce::Color getColor(enum class BlockColor);
     /**
      * @symbol ?getName@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
-     * @hash   1088016786
+     * @hash   1088847090
      */
     MCAPI std::string const & getName(enum class BlockColor);
     /**
      * @symbol ?getNameMixedCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
-     * @hash   -15164350
+     * @hash   -14334046
      */
     MCAPI std::string const & getNameMixedCase(enum class BlockColor);
     /**
      * @symbol ?getNameSnakeCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
-     * @hash   -761171304
+     * @hash   -760341000
      */
     MCAPI std::string const & getNameSnakeCase(enum class BlockColor);
     /**
      * @symbol ?getRGBColor@BlockColorUtil@@YAHW4BlockColor@@@Z
-     * @hash   -2018789952
+     * @hash   -2017959648
      */
     MCAPI int getRGBColor(enum class BlockColor);
 

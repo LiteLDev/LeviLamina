@@ -157,19 +157,19 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@MangroveLeafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -812994944
+     * @hash   -812164640
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@MangroveLeafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   788010379
+     * @hash   788840683
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@MangroveLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -2049738860
+     * @hash   -2048908556
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -205,7 +205,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@MangroveLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1027330755
+     * @hash   -1026500451
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -241,12 +241,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@MangroveLeafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   271714436
+     * @hash   272544740
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0MangroveLeafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   1646397968
+     * @hash   1647228272
      */
     MCAPI MangroveLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 

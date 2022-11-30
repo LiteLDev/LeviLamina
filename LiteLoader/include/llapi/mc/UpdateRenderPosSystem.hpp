@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@UpdateRenderPosSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   172349174
+     * @hash   172395302
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doUpdateRenderPosSystem@UpdateRenderPosSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAURenderPositionComponent@@@Z
-     * @hash   186542280
+     * @hash   186588408
      */
     MCAPI static void _doUpdateRenderPosSystem(class StrictEntityContext const &, struct StateVectorComponent const &, struct RenderPositionComponent &);
 

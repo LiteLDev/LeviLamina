@@ -60,13 +60,13 @@ public:
     /**
      * @vftbl  44
      * @symbol ?canDestroySpecial@WeaponItem@@UEBA_NAEBVBlock@@@Z
-     * @hash   107437122
+     * @hash   108267426
      */
     virtual bool canDestroySpecial(class Block const &) const;
     /**
      * @vftbl  48
      * @symbol ?getAttackDamage@WeaponItem@@UEBAHXZ
-     * @hash   629266425
+     * @hash   630096729
      */
     virtual int getAttackDamage() const;
     /**
@@ -94,25 +94,25 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@WeaponItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   818014192
+     * @hash   818844496
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  61
      * @symbol ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-     * @hash   -1210766569
+     * @hash   -1209936265
      */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@WeaponItem@@UEBAHXZ
-     * @hash   1605341453
+     * @hash   1606171757
      */
     virtual int getEnchantSlot() const;
     /**
      * @vftbl  63
      * @symbol ?getEnchantValue@WeaponItem@@UEBAHXZ
-     * @hash   -414584294
+     * @hash   -413753990
      */
     virtual int getEnchantValue() const;
     /**
@@ -142,12 +142,12 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
@@ -159,18 +159,18 @@ public:
     /**
      * @vftbl  88
      * @symbol ?getDestroySpeed@WeaponItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   -39434437
+     * @hash   -38604133
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
      * @vftbl  89
      * @symbol ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   203186141
+     * @hash   204016445
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ??0WeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-     * @hash   -459751062
+     * @hash   -458920758
      */
     MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
 

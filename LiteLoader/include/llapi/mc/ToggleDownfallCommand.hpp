@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ToggleDownfallCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   917018041
+     * @hash   917064169
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ToggleDownfallCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1127264
+     * @hash   1173392
      */
     MCAPI static void setup(class CommandRegistry &);
 

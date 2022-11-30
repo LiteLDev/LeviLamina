@@ -40,26 +40,26 @@ public:
     /**
      * @vftbl  2
      * @symbol ?evaluate@FilterTestBiomeHasTag@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   -271545992
+     * @hash   -271499864
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  3
      * @symbol ?finalizeParsedValue@FilterTestBiomeHasTag@@UEAAXAEAVIWorldRegistriesProvider@@@Z
-     * @hash   1391638924
+     * @hash   1391685052
      */
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /**
      * @vftbl  4
      * @symbol ?getName@FilterTestBiomeHasTag@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   296749626
+     * @hash   296795754
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 
 //private:
     /**
      * @symbol ?_evalBiome@FilterTestBiomeHasTag@@AEBA_NAEBVBiome@@AEBUFilterContext@@@Z
-     * @hash   1029164592
+     * @hash   1029210720
      */
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
 

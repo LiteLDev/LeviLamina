@@ -40,32 +40,32 @@ public:
 public:
     /**
      * @symbol ??0PlayerListEntry@@QEAA@VUUID@mce@@@Z
-     * @hash   1880171598
+     * @hash   1880217726
      */
     MCAPI PlayerListEntry(class mce::UUID);
     /**
      * @symbol ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z
-     * @hash   -448293054
+     * @hash   -448246926
      */
     MCAPI PlayerListEntry(class Player const &);
     /**
      * @symbol ?clone@PlayerListEntry@@QEBA?AV1@XZ
-     * @hash   1074390088
+     * @hash   1074436216
      */
     MCAPI class PlayerListEntry clone() const;
     /**
      * @symbol ?read@PlayerListEntry@@QEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   2056387537
+     * @hash   2056433665
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@PlayerListEntry@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   -1269159474
+     * @hash   -1269113346
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1PlayerListEntry@@QEAA@XZ
-     * @hash   -1810057601
+     * @hash   -1810011473
      */
     MCAPI ~PlayerListEntry();
 

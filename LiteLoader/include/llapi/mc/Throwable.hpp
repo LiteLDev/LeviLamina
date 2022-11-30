@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   764868912
+     * @hash   764915040
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  48
      * @symbol ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
-     * @hash   -330860050
+     * @hash   -330813922
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
@@ -118,7 +118,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -981019146
+     * @hash   -980973018
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -573020176
+     * @hash   -572974048
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1583389501
+     * @hash   1583435629
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -181,7 +181,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?getThrowPower@Throwable@@UEAAMXZ
-     * @hash   -1568458332
+     * @hash   -1568412204
      */
     virtual float getThrowPower();
     /**
@@ -198,13 +198,13 @@ public:
     /**
      * @vftbl  285
      * @symbol ?getGravity@Throwable@@MEAAMXZ
-     * @hash   1705039952
+     * @hash   1705086080
      */
     virtual float getGravity();
     /**
      * @vftbl  286
      * @symbol ?getParticleType@Throwable@@MEAA?AW4ParticleType@@XZ
-     * @hash   825582544
+     * @hash   825628672
      */
     virtual enum class ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
@@ -226,17 +226,17 @@ public:
 #endif
     /**
      * @symbol ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1724236756
+     * @hash   -1724190628
      */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?shoot@Throwable@@QEAAXAEAVMob@@@Z
-     * @hash   -2046823930
+     * @hash   -2046777802
      */
     MCAPI void shoot(class Mob &);
     /**
      * @symbol ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
-     * @hash   245547946
+     * @hash   245594074
      */
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);
 

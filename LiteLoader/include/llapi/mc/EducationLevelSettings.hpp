@@ -25,7 +25,7 @@ struct EducationLevelSettings {
 public:
     /**
      * @symbol ??0EducationLevelSettings@@QEAA@XZ
-     * @hash   -925474053
+     * @hash   -925427925
      */
     MCAPI EducationLevelSettings();
     /**
@@ -35,17 +35,17 @@ public:
     MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     /**
      * @symbol ?getCommandOverrideFunctor@EducationLevelSettings@@QEBA?AV?$function@$$A6AXAEAUCommandFlag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@XZ
-     * @hash   -1774068026
+     * @hash   -1773237722
      */
     MCAPI class std::function<void (struct CommandFlag &, std::string const &)> getCommandOverrideFunctor() const;
     /**
      * @symbol ??4EducationLevelSettings@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1833558310
+     * @hash   1833604438
      */
     MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
     /**
      * @symbol ?save@EducationLevelSettings@@QEAAXAEBVLevelLooseFileStorage@@@Z
-     * @hash   1367518070
+     * @hash   1368348374
      */
     MCAPI void save(class LevelLooseFileStorage const &);
     /**

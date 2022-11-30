@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0ActorPermutationEventHandler@@QEAA@AEAVActor@@@Z
-     * @hash   1934140882
+     * @hash   1934187010
      */
     MCAPI ActorPermutationEventHandler(class Actor &);
     /**
      * @symbol ?checkActiveComponents@ActorPermutationEventHandler@@QEAAXV?$shared_ptr@VActorPermutation@@@std@@@Z
-     * @hash   -1136921941
+     * @hash   -1136875813
      */
     MCAPI void checkActiveComponents(class std::shared_ptr<class ActorPermutation>);
     /**
      * @symbol ?getPermutationDescriptor@ActorPermutationEventHandler@@QEAAPEAVActorDefinitionDescriptor@@XZ
-     * @hash   356080599
+     * @hash   356126727
      */
     MCAPI class ActorDefinitionDescriptor * getPermutationDescriptor();
     /**
      * @symbol ?hasChanged@ActorPermutationEventHandler@@QEAA_NXZ
-     * @hash   744500688
+     * @hash   744546816
      */
     MCAPI bool hasChanged();
     /**
      * @symbol ?initPermutations@ActorPermutationEventHandler@@QEAAXAEAV?$vector@V?$shared_ptr@VActorPermutation@@@std@@V?$allocator@V?$shared_ptr@VActorPermutation@@@std@@@2@@std@@@Z
-     * @hash   -896981541
+     * @hash   -896935413
      */
     MCAPI void initPermutations(std::vector<class std::shared_ptr<class ActorPermutation>> &);
     /**
      * @symbol ?reload@ActorPermutationEventHandler@@QEAAXAEAVRenderParams@@@Z
-     * @hash   -846639692
+     * @hash   -846593564
      */
     MCAPI void reload(class RenderParams &);
     /**
      * @symbol ??1ActorPermutationEventHandler@@QEAA@XZ
-     * @hash   1234821979
+     * @hash   1234868107
      */
     MCAPI ~ActorPermutationEventHandler();
 

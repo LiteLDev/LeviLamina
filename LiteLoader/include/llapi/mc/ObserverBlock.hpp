@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
-     * @hash   -1547023683
+     * @hash   -1546193379
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -161,7 +161,7 @@ public:
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -260741136
+     * @hash   -259910832
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -178,13 +178,13 @@ public:
     /**
      * @vftbl  76
      * @symbol ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1418242168
+     * @hash   -1417411864
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -730985791
+     * @hash   -730155487
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -426908567
+     * @hash   -426078263
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ObserverBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1244453779
+     * @hash   1245284083
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1200541383
+     * @hash   1201371687
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -218,7 +218,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ObserverBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1919929782
+     * @hash   1920760086
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -244,19 +244,19 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1042925097
+     * @hash   -1042094793
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   1793163991
+     * @hash   1793994295
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  150
      * @symbol ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     * @hash   717939563
+     * @hash   718769867
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
@@ -282,7 +282,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1777503267
+     * @hash   -1776672963
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -293,7 +293,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1786494259
+     * @hash   -1785663955
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -308,19 +308,19 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -2034110747
+     * @hash   -2033280443
      */
     MCAPI ObserverBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_installCircuit@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     * @hash   75305551
+     * @hash   76135855
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     /**
      * @symbol ?_updateState@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVPulseCapacitor@@_N@Z
-     * @hash   -1793770884
+     * @hash   -1792940580
      */
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
 

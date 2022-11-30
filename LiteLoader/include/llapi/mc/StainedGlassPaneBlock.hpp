@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@StainedGlassPaneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1422702308
+     * @hash   1423532612
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@StainedGlassPaneBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1040672668
+     * @hash   -1039842364
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@StainedGlassPaneBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -644218895
+     * @hash   -643388591
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -242,7 +242,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0StainedGlassPaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
-     * @hash   -1665119025
+     * @hash   -1664288721
      */
     MCAPI StainedGlassPaneBlock(std::string const &, int, class Material const &, bool, bool, bool);
 

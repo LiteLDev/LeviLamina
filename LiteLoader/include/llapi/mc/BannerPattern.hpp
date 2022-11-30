@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getIgnoreAux@BannerPattern@@QEBA_NXZ
-     * @hash   -517445496
+     * @hash   -516615192
      */
     MCAPI bool getIgnoreAux() const;
     /**
      * @symbol ?getIngredientItem@BannerPattern@@QEBAAEBVItemStack@@XZ
-     * @hash   814744908
+     * @hash   814791036
      */
     MCAPI class ItemStack const & getIngredientItem() const;
     /**
      * @symbol ?getName@BannerPattern@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -6033728
+     * @hash   -5987600
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getNameID@BannerPattern@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1197438518
+     * @hash   1198268822
      */
     MCAPI std::string const & getNameID() const;
     /**
@@ -57,42 +57,42 @@ public:
     MCAPI std::vector<std::string> const & getPattern() const;
     /**
      * @symbol ?hasPattern@BannerPattern@@QEBA_NXZ
-     * @hash   -871280728
+     * @hash   -870450424
      */
     MCAPI bool hasPattern() const;
     /**
      * @symbol ?matchesPatternItem@BannerPattern@@QEBA_NAEBVItemStackBase@@@Z
-     * @hash   -17383713
+     * @hash   -16553409
      */
     MCAPI bool matchesPatternItem(class ItemStackBase const &) const;
     /**
      * @symbol ?requiresIngredientItem@BannerPattern@@QEBA_NXZ
-     * @hash   1156660808
+     * @hash   1157491112
      */
     MCAPI bool requiresIngredientItem() const;
     /**
      * @symbol ?requiresPatternItem@BannerPattern@@QEBA_NXZ
-     * @hash   -1801733594
+     * @hash   -1800903290
      */
     MCAPI bool requiresPatternItem() const;
     /**
      * @symbol ?findPatternIndexByNameID@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -310461080
+     * @hash   -309630776
      */
     MCAPI static class std::optional<unsigned char> findPatternIndexByNameID(std::string const &);
     /**
      * @symbol ?getPatternIndexFromName@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   672352682
+     * @hash   673182986
      */
     MCAPI static class std::optional<unsigned char> getPatternIndexFromName(std::string const &);
     /**
      * @symbol ?getPatternIndexFromNameID@BannerPattern@@SAEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1362324204
+     * @hash   1363154508
      */
     MCAPI static unsigned char getPatternIndexFromNameID(std::string const &);
     /**
      * @symbol ?initPatterns@BannerPattern@@SAXXZ
-     * @hash   -428978377
+     * @hash   -428148073
      */
     MCAPI static void initPatterns();
     /**

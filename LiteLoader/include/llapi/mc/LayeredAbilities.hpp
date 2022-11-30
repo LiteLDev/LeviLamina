@@ -25,67 +25,67 @@ private:
 public:
     /**
      * @symbol ??0LayeredAbilities@@QEAA@XZ
-     * @hash   -1885627788
+     * @hash   -1885581660
      */
     MCAPI LayeredAbilities();
     /**
      * @symbol ??0LayeredAbilities@@QEAA@AEBV0@@Z
-     * @hash   258811121
+     * @hash   258857249
      */
     MCAPI LayeredAbilities(class LayeredAbilities const &);
     /**
      * @symbol ?addSaveData@LayeredAbilities@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1272331704
+     * @hash   1272377832
      */
     MCAPI void addSaveData(class CompoundTag &) const;
     /**
      * @symbol ?forEachAbility@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@PEBD@Z@std@@W4Options@Ability@@@Z
-     * @hash   -1154891392
+     * @hash   -1154845264
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, char const *)> const &, enum class Ability::Options) const;
     /**
      * @symbol ?forEachAbility@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-     * @hash   -213769790
+     * @hash   -213723662
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
     /**
      * @symbol ?forEachLayer@LayeredAbilities@@QEAAXAEBV?$function@$$A6AXW4AbilitiesLayer@@AEAVAbilities@@@Z@std@@@Z
-     * @hash   1740869353
+     * @hash   1740915481
      */
     MCAPI void forEachLayer(class std::function<void (enum class AbilitiesLayer, class Abilities &)> const &);
     /**
      * @symbol ?forEachLayer@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXW4AbilitiesLayer@@AEBVAbilities@@@Z@std@@@Z
-     * @hash   1379916899
+     * @hash   1379963027
      */
     MCAPI void forEachLayer(class std::function<void (enum class AbilitiesLayer, class Abilities const &)> const &) const;
     /**
      * @symbol ?getAbility@LayeredAbilities@@QEAAAEAVAbility@@W4AbilitiesLayer@@W4AbilitiesIndex@@@Z
-     * @hash   1425197758
+     * @hash   1425243886
      */
     MCAPI class Ability & getAbility(enum class AbilitiesLayer, enum class AbilitiesIndex);
     /**
      * @symbol ?getAbility@LayeredAbilities@@QEBAAEBVAbility@@W4AbilitiesIndex@@@Z
-     * @hash   -141269125
+     * @hash   -141222997
      */
     MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBool@LayeredAbilities@@QEBA_NW4AbilitiesIndex@@@Z
-     * @hash   1103006107
+     * @hash   1103052235
      */
     MCAPI bool getBool(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getCommandPermissions@LayeredAbilities@@QEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -851350942
+     * @hash   -851304814
      */
     MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getFloat@LayeredAbilities@@QEBAMW4AbilitiesIndex@@@Z
-     * @hash   283894313
+     * @hash   283940441
      */
     MCAPI float getFloat(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getLayer@LayeredAbilities@@QEAAAEAVAbilities@@W4AbilitiesLayer@@@Z
-     * @hash   -1630431073
+     * @hash   -1630384945
      */
     MCAPI class Abilities & getLayer(enum class AbilitiesLayer);
     /**
@@ -95,42 +95,42 @@ public:
     MCAPI class PermissionsHandler & getPermissionsHandler();
     /**
      * @symbol ?getPlayerPermissions@LayeredAbilities@@QEBA?AW4PlayerPermissionLevel@@XZ
-     * @hash   1325833746
+     * @hash   1325879874
      */
     MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ?loadSaveData@LayeredAbilities@@QEAA_NAEBVCompoundTag@@@Z
-     * @hash   -2246113
+     * @hash   -2199985
      */
     MCAPI bool loadSaveData(class CompoundTag const &);
     /**
      * @symbol ??4LayeredAbilities@@QEAAAEAV0@AEBV0@@Z
-     * @hash   172445076
+     * @hash   172491204
      */
     MCAPI class LayeredAbilities & operator=(class LayeredAbilities const &);
     /**
      * @symbol ?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@M@Z
-     * @hash   2023022205
+     * @hash   2023068333
      */
     MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@_N@Z
-     * @hash   88426953
+     * @hash   88473081
      */
     MCAPI void setAbility(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z
-     * @hash   2121087100
+     * @hash   2121133228
      */
     MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPermissions@LayeredAbilities@@QEAAXAEBVPermissionsHandler@@@Z
-     * @hash   847412186
+     * @hash   847458314
      */
     MCAPI void setPermissions(class PermissionsHandler const &);
     /**
      * @symbol ?setPlayerPermissions@LayeredAbilities@@QEAAXW4PlayerPermissionLevel@@@Z
-     * @hash   -47607890
+     * @hash   -47561762
      */
     MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
@@ -140,14 +140,14 @@ public:
     MCAPI static std::string const DIFF_LAYER_AT;
     /**
      * @symbol ?getDiff@LayeredAbilities@@SA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@0@Z
-     * @hash   793900828
+     * @hash   793946956
      */
     MCAPI static class std::optional<std::string> getDiff(class LayeredAbilities const &, class LayeredAbilities const &);
 
 //private:
     /**
      * @symbol ?_handlePlayerPermissionsChange@LayeredAbilities@@AEAAXW4PlayerPermissionLevel@@0@Z
-     * @hash   -1542751776
+     * @hash   -1542705648
      */
     MCAPI void _handlePlayerPermissionsChange(enum class PlayerPermissionLevel, enum class PlayerPermissionLevel);
 

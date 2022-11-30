@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@NyliumBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   2009998633
+     * @hash   2010828937
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@NyliumBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2136983442
+     * @hash   2137813746
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@NyliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2095620480
+     * @hash   -2094790176
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -237,39 +237,39 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@NyliumBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1293750987
+     * @hash   1294581291
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0NyliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1025440331
+     * @hash   1026270635
      */
     MCAPI NyliumBlock(std::string const &, int);
     /**
      * @symbol ?canBeNylium@NyliumBlock@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1297297156
+     * @hash   1298127460
      */
     MCAPI bool canBeNylium(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?crimsonBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
-     * @hash   -2120467645
+     * @hash   -2119637341
      */
     MCAPI static class Block const & crimsonBlockProvider(class Randomize const &);
     /**
      * @symbol ?netherSproutBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
-     * @hash   280191141
+     * @hash   281021445
      */
     MCAPI static class Block const & netherSproutBlockProvider(class Randomize const &);
     /**
      * @symbol ?warpedBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
-     * @hash   11628689
+     * @hash   12458993
      */
     MCAPI static class Block const & warpedBlockProvider(class Randomize const &);
 
 //private:
     /**
      * @symbol ?_scatterVegetation@NyliumBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@V?$function@$$A6AAEBVBlock@@AEBVRandomize@@@Z@std@@@Z
-     * @hash   -1534587301
+     * @hash   -1533756997
      */
     MCAPI bool _scatterVegetation(class BlockSource &, class BlockPos const &, class Random &, class std::function<class Block const & (class Randomize const &)>) const;
 

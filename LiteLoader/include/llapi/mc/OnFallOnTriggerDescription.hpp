@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnFallOnTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   152987452
+     * @hash   153817756
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@OnFallOnTriggerDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -774962744
+     * @hash   -774132440
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
      * @symbol ?buildSchema@OnFallOnTriggerDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-     * @hash   615886567
+     * @hash   616716871
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /**

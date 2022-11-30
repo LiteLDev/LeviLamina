@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?applyToPose@ActorAnimationControllerStatePlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
-     * @hash   1005416483
+     * @hash   1005508739
      */
     virtual void applyToPose(class RenderParams &, class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     /**
      * @vftbl  2
      * @symbol ?resetAnimation@ActorAnimationControllerStatePlayer@@UEAAXXZ
-     * @hash   -726655387
+     * @hash   -726563131
      */
     virtual void resetAnimation();
     /**
@@ -65,13 +65,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?hasAnimationFinished@ActorAnimationControllerStatePlayer@@UEBA_NXZ
-     * @hash   -793475715
+     * @hash   -793429587
      */
     virtual bool hasAnimationFinished() const;
     /**
      * @vftbl  7
      * @symbol ?findAnimation@ActorAnimationControllerStatePlayer@@UEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@@Z
-     * @hash   539890912
+     * @hash   539983168
      */
     virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const &);
     /**
@@ -83,7 +83,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getRawName@ActorAnimationControllerStatePlayer@@UEBAAEBVHashedString@@XZ
-     * @hash   -2080384395
+     * @hash   -2080338267
      */
     virtual class HashedString const & getRawName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATEPLAYER
@@ -100,17 +100,17 @@ public:
 #endif
     /**
      * @symbol ??0ActorAnimationControllerStatePlayer@@QEAA@AEBVHashedString@@AEAVActorAnimationControllerPlayer@@V?$shared_ptr@VActorAnimationControllerState@@@std@@AEAVAnimationComponent@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@4@@Z
-     * @hash   -1735531040
+     * @hash   -1735438784
      */
     MCAPI ActorAnimationControllerStatePlayer(class HashedString const &, class ActorAnimationControllerPlayer &, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent &, class ExpressionNode const &, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString>> &);
     /**
      * @symbol ?allAnimationsFinished@ActorAnimationControllerStatePlayer@@QEBA_NXZ
-     * @hash   390952128
+     * @hash   391044384
      */
     MCAPI bool allAnimationsFinished() const;
     /**
      * @symbol ?anyAnimationsFinished@ActorAnimationControllerStatePlayer@@QEBA_NXZ
-     * @hash   -272391104
+     * @hash   -272298848
      */
     MCAPI bool anyAnimationsFinished() const;
 

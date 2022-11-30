@@ -43,79 +43,79 @@ public:
     /**
      * @vftbl  1
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z
-     * @hash   -1642974607
+     * @hash   -1642144303
      */
     virtual void putKey(std::string const &, class gsl::basic_string_span<char const, -1>, enum class DBHelpers::Category);
     /**
      * @vftbl  2
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
-     * @hash   574178360
+     * @hash   575008664
      */
     virtual void putKey(std::string const &, std::string const &, enum class DBHelpers::Category);
     /**
      * @vftbl  3
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z
-     * @hash   -2009137627
+     * @hash   -2008307323
      */
     virtual void putKey(std::string const &, std::string &&, enum class DBHelpers::Category);
     /**
      * @vftbl  4
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
-     * @hash   -1503396827
+     * @hash   -1502566523
      */
     virtual void putKey(std::string const &, class std::shared_ptr<std::string>, enum class DBHelpers::Category);
     /**
      * @vftbl  5
      * @symbol ?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
-     * @hash   -1653716742
+     * @hash   -1652886438
      */
     virtual void deleteKey(std::string const &, enum class DBHelpers::Category);
     /**
      * @vftbl  6
      * @symbol ?flush@LevelStorageWriteBatch@@UEAAXAEAVLevelStorage@@@Z
-     * @hash   -846075852
+     * @hash   -845245548
      */
     virtual void flush(class LevelStorage &);
     /**
      * @symbol ??0LevelStorageWriteBatch@@QEAA@$$QEAV0@@Z
-     * @hash   124927869
+     * @hash   125758173
      */
     MCAPI LevelStorageWriteBatch(class LevelStorageWriteBatch &&);
     /**
      * @symbol ??0LevelStorageWriteBatch@@QEAA@XZ
-     * @hash   397743966
+     * @hash   398574270
      */
     MCAPI LevelStorageWriteBatch();
     /**
      * @symbol ?addFlushCallback@LevelStorageWriteBatch@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -2009152820
+     * @hash   -2008322516
      */
     MCAPI void addFlushCallback(class std::function<void (void)>);
     /**
      * @symbol ?clear@LevelStorageWriteBatch@@QEAAXXZ
-     * @hash   -1946413837
+     * @hash   -1945583533
      */
     MCAPI void clear();
     /**
      * @symbol ?erase@LevelStorageWriteBatch@@QEAAXAEBV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@@Z
-     * @hash   2125066660
+     * @hash   2125896964
      */
     MCAPI void erase(class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const &);
     /**
      * @symbol ?find@LevelStorageWriteBatch@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1789703
+     * @hash   2620007
      */
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &) const;
     /**
      * @symbol ?find@LevelStorageWriteBatch@@QEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1558114239
+     * @hash   -1557283935
      */
     MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &);
 
 //private:
     /**
      * @symbol ?_writeKey@LevelStorageWriteBatch@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
-     * @hash   -357101150
+     * @hash   -356270846
      */
     MCAPI void _writeKey(std::string const &, class std::shared_ptr<std::string> &&, enum class DBHelpers::Category);
 

@@ -59,33 +59,33 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWearableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1180173362
+     * @hash   1181003666
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWearableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1985790322
+     * @hash   -1984960018
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@@XZ
-     * @hash   -1914648262
+     * @hash   -1914602134
      */
     MCAPI enum class EquipmentSlot getSlot() const;
     /**
      * @symbol ?use@WearableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -1263324088
+     * @hash   -1262493784
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?bindType@WearableItemComponent@@SAXXZ
-     * @hash   1201053167
+     * @hash   1201883471
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@WearableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   312196982
+     * @hash   313027286
      */
     MCAPI static class HashedString const & getIdentifier();
 

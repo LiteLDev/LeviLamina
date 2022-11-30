@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@Sapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1605527170
+     * @hash   -1604696866
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@Sapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   866211160
+     * @hash   867041464
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@Sapling@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   918305394
+     * @hash   919135698
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@Sapling@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -110878865
+     * @hash   -110048561
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@Sapling@@UEBAHAEBVBlock@@@Z
-     * @hash   -1940011240
+     * @hash   -1939180936
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@Sapling@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -356575777
+     * @hash   -355745473
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@Sapling@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   894178715
+     * @hash   895009019
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -274,13 +274,13 @@ public:
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@Sapling@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -994615041
+     * @hash   -993784737
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@Sapling@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1197511153
+     * @hash   1198341457
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -291,56 +291,56 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@Sapling@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   338882198
+     * @hash   339712502
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0Sapling@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -253098714
+     * @hash   -252268410
      */
     MCAPI Sapling(std::string const &, int);
 
 //protected:
     /**
      * @symbol ?advanceTree@Sapling@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
-     * @hash   1939983788
+     * @hash   1940814092
      */
     MCAPI bool advanceTree(class BlockSource &, class BlockPos const &, class Random &, class Actor *) const;
 
 //private:
     /**
      * @symbol ?_generateJungleTree@Sapling@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-     * @hash   560940353
+     * @hash   561770657
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     /**
      * @symbol ?_generateOakTree@Sapling@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBVFeatureRegistry@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@_N@Z
-     * @hash   -1280493018
+     * @hash   -1279662714
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateOakTree(class FeatureRegistry const &, class BlockPos const &, class BlockSource &, class Random &, bool) const;
     /**
      * @symbol ?_generateRedwoodTree@Sapling@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-     * @hash   -726886454
+     * @hash   -726056150
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     /**
      * @symbol ?_generateRoofTree@Sapling@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-     * @hash   -1808494952
+     * @hash   -1807664648
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     /**
      * @symbol ?_growTree@Sapling@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-     * @hash   809460806
+     * @hash   810291110
      */
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &, bool) const;
     /**
      * @symbol ?_isNearFlowerBlock@Sapling@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -824161460
+     * @hash   -823331156
      */
     MCAPI bool _isNearFlowerBlock(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_shouldContainBeehive@Sapling@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   607591628
+     * @hash   608421932
      */
     MCAPI bool _shouldContainBeehive(class BlockSource &, class BlockPos const &, class Random &) const;
 

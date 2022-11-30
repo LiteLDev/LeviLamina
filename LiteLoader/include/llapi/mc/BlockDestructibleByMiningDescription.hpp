@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDestructibleByMiningDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   743041929
+     * @hash   743872233
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDestructibleByMiningDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   719021371
+     * @hash   719851675
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -59,13 +59,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockDestructibleByMiningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   857174691
+     * @hash   858004995
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockDestructibleByMiningDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1936193647
+     * @hash   1937023951
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -75,12 +75,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByMiningDescription@@SAXXZ
-     * @hash   298240179
+     * @hash   299070483
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDestructibleByMiningDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -2007898514
+     * @hash   -2007068210
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

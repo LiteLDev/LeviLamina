@@ -58,22 +58,22 @@ public:
     virtual bool isInstantaneous() const;
     /**
      * @symbol ??0AttributeModifier@@QEAA@XZ
-     * @hash   183370895
+     * @hash   183417023
      */
     MCAPI AttributeModifier();
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
-     * @hash   656536407
+     * @hash   656582535
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
-     * @hash   112970001
+     * @hash   113016129
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@AEBV0@@Z
-     * @hash   -1543434463
+     * @hash   -1543388335
      */
     MCAPI AttributeModifier(class AttributeModifier const &);
     /**
@@ -83,17 +83,17 @@ public:
     MCAPI float getAmount() const;
     /**
      * @symbol ?getId@AttributeModifier@@QEBAAEBVUUID@mce@@XZ
-     * @hash   -804647792
+     * @hash   -804601664
      */
     MCAPI class mce::UUID const & getId() const;
     /**
      * @symbol ?getName@AttributeModifier@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1386270816
+     * @hash   1386316944
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getOperand@AttributeModifier@@QEBAHXZ
-     * @hash   -642472148
+     * @hash   -642426020
      */
     MCAPI int getOperand() const;
     /**
@@ -103,17 +103,17 @@ public:
     MCAPI int getOperation() const;
     /**
      * @symbol ?isSerializable@AttributeModifier@@QEBA_NXZ
-     * @hash   94250682
+     * @hash   94296810
      */
     MCAPI bool isSerializable() const;
     /**
      * @symbol ??4AttributeModifier@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -832556292
+     * @hash   -832510164
      */
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     /**
      * @symbol ??8AttributeModifier@@QEBA_NAEBV0@@Z
-     * @hash   -1737017596
+     * @hash   -1736971468
      */
     MCAPI bool operator==(class AttributeModifier const &) const;
 

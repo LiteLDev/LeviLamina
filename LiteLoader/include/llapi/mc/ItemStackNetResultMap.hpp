@@ -36,7 +36,7 @@ public:
 public:
     /**
      * @symbol ?getItemStackNetResultName@ItemStackNetResultMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackNetResult@@@Z
-     * @hash   1478654445
+     * @hash   1478700573
      */
     MCAPI static std::string const & getItemStackNetResultName(enum class ItemStackNetResult);
 

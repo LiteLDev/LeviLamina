@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?rotateTowardsControllingPassenger@DesiredMoveDirectionSystem@@SAX_NAEAVVec2@@1AEAM2AEBV2@@Z
-     * @hash   -2068346637
+     * @hash   -2067516333
      */
     MCAPI static void rotateTowardsControllingPassenger(bool, class Vec2 &, class Vec2 &, float &, float &, class Vec2 const &);
     /**
      * @symbol ?updateLocalMoveVelocity@DesiredMoveDirectionSystem@@SAXAEAM00MMM@Z
-     * @hash   579945942
+     * @hash   580776246
      */
     MCAPI static void updateLocalMoveVelocity(float &, float &, float &, float, float, float);
 

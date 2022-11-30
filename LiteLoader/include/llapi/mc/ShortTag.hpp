@@ -47,53 +47,53 @@ public:
     /**
      * @vftbl  2
      * @symbol ?write@ShortTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   -1162335633
+     * @hash   -1162289505
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@ShortTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   1458895998
+     * @hash   1458942126
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@ShortTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1292005560
+     * @hash   -1291959432
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@ShortTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   -391369603
+     * @hash   -391323475
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@ShortTag@@UEBA_NAEBVTag@@@Z
-     * @hash   283092580
+     * @hash   283138708
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@ShortTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   265814986
+     * @hash   265861114
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@ShortTag@@UEBA_KXZ
-     * @hash   1877553200
+     * @hash   1877599328
      */
     virtual unsigned __int64 hash() const;
     /**
      * @symbol ??0ShortTag@@QEAA@XZ
-     * @hash   816481594
+     * @hash   816527722
      */
     MCAPI ShortTag();
     /**
      * @symbol ??0ShortTag@@QEAA@F@Z
-     * @hash   -2022860666
+     * @hash   -2022814538
      */
     MCAPI ShortTag(short);
 

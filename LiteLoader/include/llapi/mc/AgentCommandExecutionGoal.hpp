@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@AgentCommandExecutionGoal@@UEAA_NXZ
-     * @hash   -1577454469
+     * @hash   -1577408341
      */
     virtual bool canUse();
     /**
@@ -55,13 +55,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@AgentCommandExecutionGoal@@UEAAXXZ
-     * @hash   1575936356
+     * @hash   1575982484
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@AgentCommandExecutionGoal@@UEAAXXZ
-     * @hash   413762948
+     * @hash   413809076
      */
     virtual void stop();
     /**
@@ -72,12 +72,12 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@AgentCommandExecutionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2021361877
+     * @hash   2021408005
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0AgentCommandExecutionGoal@@QEAA@AEAVMob@@@Z
-     * @hash   399372248
+     * @hash   399418376
      */
     MCAPI AgentCommandExecutionGoal(class Mob &);
 

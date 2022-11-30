@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getLocalIp@Connector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -425878998
+     * @hash   -425832870
      */
     virtual std::string getLocalIp();
     /**
@@ -72,7 +72,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getConnectedGameInfo@Connector@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     * @hash   -1626901920
+     * @hash   -1626855792
      */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
@@ -83,7 +83,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getNatPunchInfo@Connector@@UEBA?AUNatPunchInfo@1@XZ
-     * @hash   295955830
+     * @hash   296001958
      */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTOR
@@ -145,7 +145,7 @@ public:
 #endif
     /**
      * @symbol ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
-     * @hash   1862529195
+     * @hash   1862575323
      */
     MCAPI Connector(struct Connector::ConnectionCallbacks &);
 

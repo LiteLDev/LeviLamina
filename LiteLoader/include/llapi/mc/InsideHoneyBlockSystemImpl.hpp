@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?isSlidingDown@InsideHoneyBlockSystemImpl@@SA_NAEBVBlockPos@@AEBVVec3@@1AEBVVec2@@@Z
-     * @hash   -1527703374
+     * @hash   -1527657246
      */
     MCAPI static bool isSlidingDown(class BlockPos const &, class Vec3 const &, class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?movementSystem@InsideHoneyBlockSystemImpl@@SAXAEBVStrictEntityContext@@AEBU?$InsideBlockWithPosAndBlockComponent@UHoneyBlockFlag@@@@AEBUAABBShapeComponent@@AEAUStateVectorComponent@@AEAUFallDistanceComponent@@@Z
-     * @hash   -1570612931
+     * @hash   -1570566803
      */
     MCAPI static void movementSystem(class StrictEntityContext const &, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag> const &, struct AABBShapeComponent const &, struct StateVectorComponent &, struct FallDistanceComponent &);
 

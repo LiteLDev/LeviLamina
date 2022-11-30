@@ -40,31 +40,31 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   1778385265
+     * @hash   1778431393
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@MinecartBlockCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   563145054
+     * @hash   563191182
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@MinecartBlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   955498717
+     * @hash   955544845
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@MinecartBlockCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   154168257
+     * @hash   154214385
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  10
      * @symbol ?clone@MinecartBlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   978849931
+     * @hash   978896059
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -76,25 +76,25 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -1153608342
+     * @hash   -1153562214
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@MinecartBlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   1339811025
+     * @hash   1339857153
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ
-     * @hash   -1667070029
+     * @hash   -1667023901
      */
     virtual bool isValid() const;
     /**
      * @vftbl  32
      * @symbol ?_getBaseCommandBlock@MinecartBlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
-     * @hash   -512561235
+     * @hash   -512515107
      */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /**
@@ -105,12 +105,12 @@ public:
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
     /**
      * @symbol ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
-     * @hash   -1736917497
+     * @hash   -1736871369
      */
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     /**
      * @symbol ?load@MinecartBlockCommandOrigin@@SA?AV?$unique_ptr@VMinecartBlockCommandOrigin@@U?$default_delete@VMinecartBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   765135160
+     * @hash   765181288
      */
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 

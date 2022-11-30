@@ -66,13 +66,13 @@ public:
     /**
      * @vftbl  20
      * @symbol ?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ
-     * @hash   1474177972
+     * @hash   1475008276
      */
     virtual enum class ItemColor getItemColor() const;
     /**
      * @vftbl  21
      * @symbol ?isFertilizer@DyePowderItem@@UEBA_NXZ
-     * @hash   3690424
+     * @hash   4520728
      */
     virtual bool isFertilizer() const;
     /**
@@ -93,7 +93,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@DyePowderItem@@UEBA_NH@Z
-     * @hash   -125472142
+     * @hash   -124641838
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -118,41 +118,41 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@DyePowderItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   1231660024
+     * @hash   1232490328
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@DyePowderItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -924320978
+     * @hash   -923490674
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1214829602
+     * @hash   -1213999298
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  132
      * @symbol ?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -463189894
+     * @hash   -462359590
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@_N2@Z
-     * @hash   -1551414470
+     * @hash   -1550584166
      */
     MCAPI DyePowderItem(std::string const &, int, enum class ItemColor, bool, bool);
 

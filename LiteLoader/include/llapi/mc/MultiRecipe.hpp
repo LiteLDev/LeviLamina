@@ -50,7 +50,7 @@ public:
     virtual bool isMultiRecipe() const;
     /**
      * @symbol ??0MultiRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@VHashedString@@@Z
-     * @hash   1032606697
+     * @hash   1033437001
      */
     MCAPI MultiRecipe(class gsl::basic_string_span<char const, -1>, class HashedString);
 

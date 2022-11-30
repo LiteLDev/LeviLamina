@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1CommandResponseBase@@QEAA@XZ
-     * @hash   -1223096071
+     * @hash   -1223049943
      */
     MCAPI ~CommandResponseBase();
     /**
@@ -42,12 +42,12 @@ public:
 //protected:
     /**
      * @symbol ?_addCommand@CommandResponseBase@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1196594963
+     * @hash   -1195764659
      */
     MCAPI void _addCommand(std::string const &);
     /**
      * @symbol ?_executeAction@CommandResponseBase@@IEBAXAEAVRenderParams@@@Z
-     * @hash   1097448605
+     * @hash   1098278909
      */
     MCAPI void _executeAction(class RenderParams &) const;
 

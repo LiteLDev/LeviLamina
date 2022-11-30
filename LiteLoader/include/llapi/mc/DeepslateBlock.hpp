@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@DeepslateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -616047993
+     * @hash   -615217689
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  160
      * @symbol ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   2071194479
+     * @hash   2072024783
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
@@ -237,12 +237,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DeepslateBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2130513778
+     * @hash   -2129683474
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -979044530
+     * @hash   -978214226
      */
     MCAPI DeepslateBlock(std::string const &, int);
 

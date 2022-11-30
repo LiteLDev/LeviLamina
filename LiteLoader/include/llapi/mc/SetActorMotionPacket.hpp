@@ -44,29 +44,29 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@SetActorMotionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1319114218
+     * @hash   1319160346
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetActorMotionPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   956290397
+     * @hash   956336525
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetActorMotionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1476127837
+     * @hash   1476173965
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetActorMotionPacket@@QEAA@XZ
-     * @hash   -754200819
+     * @hash   -754154691
      */
     MCAPI SetActorMotionPacket();
     /**
      * @symbol ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
-     * @hash   944674542
+     * @hash   944720670
      */
     MCAPI SetActorMotionPacket(class Actor const &);
 

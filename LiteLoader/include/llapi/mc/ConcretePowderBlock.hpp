@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@ConcretePowderBlock@@UEBA_NH@Z
-     * @hash   -1676178603
+     * @hash   -1675348299
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ConcretePowderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1586909103
+     * @hash   -1586078799
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  122
      * @symbol ?shouldStopFalling@ConcretePowderBlock@@UEBA_NAEAVActor@@@Z
-     * @hash   1410053434
+     * @hash   1410883738
      */
     virtual bool shouldStopFalling(class Actor &) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@ConcretePowderBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1364044870
+     * @hash   1364875174
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@ConcretePowderBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1035770630
+     * @hash   1036600934
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ConcretePowderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   18251077
+     * @hash   19081381
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@ConcretePowderBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1466477075
+     * @hash   1467307379
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -267,19 +267,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ConcretePowderBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1156766115
+     * @hash   -1155935811
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getDustColor@ConcretePowderBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   -2109557093
+     * @hash   -2108726789
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?getDustParticleName@ConcretePowderBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1913197338
+     * @hash   -1912367034
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
@@ -289,14 +289,14 @@ public:
     virtual void __unk_vfn_194();
     /**
      * @symbol ??0ConcretePowderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -366099251
+     * @hash   -365268947
      */
     MCAPI ConcretePowderBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_tryTouchWater@ConcretePowderBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@V?$optional@W4BlockColor@@@std@@@Z
-     * @hash   423619431
+     * @hash   424449735
      */
     MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum class BlockColor>) const;
 

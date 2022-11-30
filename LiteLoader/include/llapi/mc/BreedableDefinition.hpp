@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0BreedableDefinition@@QEAA@XZ
-     * @hash   -1275524867
+     * @hash   -1275478739
      */
     MCAPI BreedableDefinition();
     /**
      * @symbol ?addBreedItem@BreedableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   28712502
+     * @hash   28758630
      */
     MCAPI void addBreedItem(class ItemDescriptor const &);
     /**
      * @symbol ?addBreedableType@BreedableDefinition@@QEAAXAEBUBreedableType@@@Z
-     * @hash   1238679526
+     * @hash   1238725654
      */
     MCAPI void addBreedableType(struct BreedableType const &);
     /**
      * @symbol ?addEnvironmentRequirement@BreedableDefinition@@QEAAXAEBUEnvironmentRequirement@@@Z
-     * @hash   1188430282
+     * @hash   1188476410
      */
     MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const &);
     /**
      * @symbol ?initialize@BreedableDefinition@@QEAAXAEAVEntityContext@@AEAVBreedableComponent@@@Z
-     * @hash   -1567083115
+     * @hash   -1567036987
      */
     MCAPI void initialize(class EntityContext &, class BreedableComponent &);
     /**
      * @symbol ??1BreedableDefinition@@QEAA@XZ
-     * @hash   -924609075
+     * @hash   -924562947
      */
     MCAPI ~BreedableDefinition();
     /**
      * @symbol ?buildSchema@BreedableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreedableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1043488932
+     * @hash   1043535060
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>> &);
 

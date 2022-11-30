@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0BossComponent@@QEAA@XZ
-     * @hash   -1793616772
+     * @hash   -1793570644
      */
     MCAPI BossComponent();
     /**
@@ -41,62 +41,62 @@ public:
     MCAPI BossComponent(class BossComponent &&);
     /**
      * @symbol ?addPlayerToParty@BossComponent@@QEAAXVUUID@mce@@H@Z
-     * @hash   612974283
+     * @hash   613020411
      */
     MCAPI void addPlayerToParty(class mce::UUID, int);
     /**
      * @symbol ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
-     * @hash   -481958993
+     * @hash   -481912865
      */
     MCAPI void broadcastBossEvent(class Actor &, enum class BossEventUpdateType);
     /**
      * @symbol ?getColor@BossComponent@@QEBA?AW4BossBarColor@@XZ
-     * @hash   2031248750
+     * @hash   2031294878
      */
     MCAPI enum class BossBarColor getColor() const;
     /**
      * @symbol ?getCreateWorldFog@BossComponent@@QEBA_NXZ
-     * @hash   -446530258
+     * @hash   -446484130
      */
     MCAPI bool getCreateWorldFog() const;
     /**
      * @symbol ?getHealthPercent@BossComponent@@QEBAMXZ
-     * @hash   -662534502
+     * @hash   -662488374
      */
     MCAPI float getHealthPercent() const;
     /**
      * @symbol ?getLastHealth@BossComponent@@QEBAHXZ
-     * @hash   -1389853656
+     * @hash   -1389807528
      */
     MCAPI int getLastHealth() const;
     /**
      * @symbol ?getLastPlayerUpdate@BossComponent@@QEBA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@XZ
-     * @hash   1141092953
+     * @hash   1141139081
      */
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getLastPlayerUpdate() const;
     /**
      * @symbol ?getName@BossComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1634398148
+     * @hash   -1634352020
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getOverlay@BossComponent@@QEBA?AW4BossBarOverlay@@XZ
-     * @hash   -641939740
+     * @hash   -641893612
      */
     MCAPI enum class BossBarOverlay getOverlay() const;
     /**
      * @symbol ?getPlayerParty@BossComponent@@QEBAAEBV?$unordered_map@VUUID@mce@@HU?$hash@VUUID@mce@@@std@@U?$equal_to@VUUID@mce@@@4@V?$allocator@U?$pair@$$CBVUUID@mce@@H@std@@@4@@std@@XZ
-     * @hash   -75768221
+     * @hash   -75722093
      */
     MCAPI class std::unordered_map<class mce::UUID, int, struct std::hash<class mce::UUID>, struct std::equal_to<class mce::UUID>, class std::allocator<struct std::pair<class mce::UUID const, int>>> const & getPlayerParty() const;
     /**
      * @symbol ?getShouldDarkenSky@BossComponent@@QEBA_NXZ
-     * @hash   626287984
+     * @hash   626334112
      */
     MCAPI bool getShouldDarkenSky() const;
     /**
      * @symbol ?handleRegisterPlayers@BossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -669244036
+     * @hash   -669197908
      */
     MCAPI void handleRegisterPlayers(class Actor &);
     /**
@@ -106,57 +106,57 @@ public:
     MCAPI class BossComponent & operator=(class BossComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@BossComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   266746000
+     * @hash   266792128
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?registerPlayer@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-     * @hash   -1518885474
+     * @hash   -1518839346
      */
     MCAPI void registerPlayer(class Actor &, class Player *);
     /**
      * @symbol ?resendBossEventData@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-     * @hash   1461946764
+     * @hash   1461992892
      */
     MCAPI void resendBossEventData(class Actor &, class Player *);
     /**
      * @symbol ?sendDeathTelemetry@BossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1424380366
+     * @hash   -1424334238
      */
     MCAPI void sendDeathTelemetry(class Actor &);
     /**
      * @symbol ?setHealthBarVisible@BossComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   -1110812187
+     * @hash   -1110766059
      */
     MCAPI void setHealthBarVisible(class Actor &, bool);
     /**
      * @symbol ?setHealthPercent@BossComponent@@QEAAXAEAVActor@@M@Z
-     * @hash   380938579
+     * @hash   380984707
      */
     MCAPI void setHealthPercent(class Actor &, float);
     /**
      * @symbol ?setLastHealth@BossComponent@@QEAAXH@Z
-     * @hash   1016764574
+     * @hash   1016810702
      */
     MCAPI void setLastHealth(int);
     /**
      * @symbol ?setLastPlayerUpdate@BossComponent@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-     * @hash   -904537941
+     * @hash   -904491813
      */
     MCAPI void setLastPlayerUpdate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     /**
      * @symbol ?setName@BossComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1319913081
+     * @hash   1319959209
      */
     MCAPI void setName(class Actor &, std::string const &);
     /**
      * @symbol ?tryRemoveBoss@BossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-     * @hash   577008980
+     * @hash   577055108
      */
     MCAPI bool tryRemoveBoss(class Actor &, class Player &);
     /**
      * @symbol ?unRegisterPlayer@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-     * @hash   -379857650
+     * @hash   -379811522
      */
     MCAPI void unRegisterPlayer(class Actor &, class Player *);
     /**
@@ -168,7 +168,7 @@ public:
 //private:
     /**
      * @symbol ?_sendBossEvent@BossComponent@@AEAAXAEAVActor@@W4BossEventUpdateType@@PEAVPlayer@@@Z
-     * @hash   -736593246
+     * @hash   -736547118
      */
     MCAPI void _sendBossEvent(class Actor &, enum class BossEventUpdateType, class Player *);
 

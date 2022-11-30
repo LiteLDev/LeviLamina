@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Bat@@UEAAXXZ
-     * @hash   1644773654
+     * @hash   1644819782
      */
     virtual void normalTick();
     /**
@@ -111,7 +111,7 @@ public:
     /**
      * @vftbl  186
      * @symbol ?checkFallDamage@Bat@@MEAAXM_N@Z
-     * @hash   345433943
+     * @hash   345480071
      */
     virtual void checkFallDamage(float, bool);
     /**
@@ -147,19 +147,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Bat@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1893033035
+     * @hash   1893079163
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Bat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   311617650
+     * @hash   311663778
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Bat@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   290306827
+     * @hash   290352955
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@Bat@@MEAAXXZ
-     * @hash   -2130708830
+     * @hash   -2130662702
      */
     virtual void newServerAiStep();
     /**
@@ -218,17 +218,17 @@ public:
 #endif
     /**
      * @symbol ??0Bat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -364053455
+     * @hash   -364007327
      */
     MCAPI Bat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@Bat@@QEAAXXZ
-     * @hash   639513195
+     * @hash   639559323
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?hasRestingBlockAbove@Bat@@SA_NAEBVVec3@@AEBVBlockSource@@@Z
-     * @hash   -1282447136
+     * @hash   -1282401008
      */
     MCAPI static bool hasRestingBlockAbove(class Vec3 const &, class BlockSource const &);
 

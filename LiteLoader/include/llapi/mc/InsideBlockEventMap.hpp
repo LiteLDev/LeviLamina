@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0InsideBlockEventMap@@QEAA@AEBVBlock@@_N11AEBVActorDefinitionTrigger@@2@Z
-     * @hash   -1686682599
+     * @hash   -1686636471
      */
     MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
     /**
      * @symbol ??0InsideBlockEventMap@@QEAA@AEBV0@@Z
-     * @hash   -1329720751
+     * @hash   -1329674623
      */
     MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     /**
      * @symbol ?getBlock@InsideBlockEventMap@@QEBA?AV?$not_null@PEBVBlock@@@gsl@@XZ
-     * @hash   460055643
+     * @hash   460101771
      */
     MCAPI class gsl::not_null<class Block const *> getBlock() const;
     /**
@@ -51,47 +51,47 @@ public:
     MCAPI class ActorDefinitionTrigger const & getEnteredEvent() const;
     /**
      * @symbol ?getExitedEvent@InsideBlockEventMap@@QEBAAEBVActorDefinitionTrigger@@XZ
-     * @hash   -1426412378
+     * @hash   -1426366250
      */
     MCAPI class ActorDefinitionTrigger const & getExitedEvent() const;
     /**
      * @symbol ?isActorCurrentlyInside@InsideBlockEventMap@@QEBA_NXZ
-     * @hash   1249529178
+     * @hash   1249575306
      */
     MCAPI bool isActorCurrentlyInside() const;
     /**
      * @symbol ?isIgnoringStates@InsideBlockEventMap@@QEBA_NXZ
-     * @hash   1315101610
+     * @hash   1315147738
      */
     MCAPI bool isIgnoringStates() const;
     /**
      * @symbol ?isWatchingIfActorEnters@InsideBlockEventMap@@QEBA_NXZ
-     * @hash   -684188680
+     * @hash   -684142552
      */
     MCAPI bool isWatchingIfActorEnters() const;
     /**
      * @symbol ?isWatchingIfActorExits@InsideBlockEventMap@@QEBA_NXZ
-     * @hash   -1179848790
+     * @hash   -1179802662
      */
     MCAPI bool isWatchingIfActorExits() const;
     /**
      * @symbol ?setCurrentlyInside@InsideBlockEventMap@@QEAAX_N@Z
-     * @hash   -1589038638
+     * @hash   -1588992510
      */
     MCAPI void setCurrentlyInside(bool);
     /**
      * @symbol ?setWasInside@InsideBlockEventMap@@QEAAX_N@Z
-     * @hash   -766856446
+     * @hash   -766810318
      */
     MCAPI void setWasInside(bool);
     /**
      * @symbol ?wasActorInsideLastTick@InsideBlockEventMap@@QEBA_NXZ
-     * @hash   2048892730
+     * @hash   2048938858
      */
     MCAPI bool wasActorInsideLastTick() const;
     /**
      * @symbol ??1InsideBlockEventMap@@QEAA@XZ
-     * @hash   -1644565137
+     * @hash   -1644519009
      */
     MCAPI ~InsideBlockEventMap();
 

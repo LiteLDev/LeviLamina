@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  48
      * @symbol ?getAttackDamage@DiggerItem@@UEBAHXZ
-     * @hash   -455587341
+     * @hash   -454757037
      */
     virtual int getAttackDamage() const;
     /**
@@ -82,19 +82,19 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@DiggerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1555307786
+     * @hash   1556138090
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  61
      * @symbol ?isValidRepairItem@DiggerItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-     * @hash   906347725
+     * @hash   907178029
      */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /**
      * @vftbl  63
      * @symbol ?getEnchantValue@DiggerItem@@UEBAHXZ
-     * @hash   1102585508
+     * @hash   1103415812
      */
     virtual int getEnchantValue() const;
     /**
@@ -124,36 +124,36 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  88
      * @symbol ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   2109963621
+     * @hash   2110793925
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
      * @vftbl  93
      * @symbol ?mineBlock@DiggerItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     * @hash   -299626618
+     * @hash   -298796314
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
      * @symbol ?setBlocks@DiggerItem@@QEAAXAEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@@Z
-     * @hash   39846278
+     * @hash   40676582
      */
     MCAPI void setBlocks(std::vector<class Block const *> const &);
 
 //protected:
     /**
      * @symbol ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
-     * @hash   -1409954440
+     * @hash   -1409124136
      */
     MCAPI DiggerItem(std::string const &, int, int, class Item::Tier const &, std::vector<class Block const *> const &);
 

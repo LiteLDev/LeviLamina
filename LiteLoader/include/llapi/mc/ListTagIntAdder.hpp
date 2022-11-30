@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??RListTagIntAdder@@QEAAAEAV0@H@Z
-     * @hash   -307752357
+     * @hash   -307706229
      */
     MCAPI class ListTagIntAdder & operator()(int);
     /**

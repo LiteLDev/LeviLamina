@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@TellCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1297092327
+     * @hash   -1297046199
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@TellCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -673755504
+     * @hash   -673709376
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_sendMessageToPlayers@TellCommand@@AEBAXAEBV?$CommandSelectorResults@VPlayer@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-     * @hash   333664885
+     * @hash   333711013
      */
     MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
 

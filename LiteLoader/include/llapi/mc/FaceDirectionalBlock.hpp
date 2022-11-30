@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@FaceDirectionalBlock@@UEBA_NH@Z
-     * @hash   -1361200618
+     * @hash   -1360370314
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   962449151
+     * @hash   963279455
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -196,19 +196,19 @@ public:
     /**
      * @vftbl  148
      * @symbol ?getRenderBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@XZ
-     * @hash   -532209831
+     * @hash   -531379527
      */
     virtual class Block const & getRenderBlock() const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@FaceDirectionalBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   14676638
+     * @hash   15506942
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  150
      * @symbol ?getFaceFlip@FaceDirectionalBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     * @hash   -555294142
+     * @hash   -554463838
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
@@ -248,22 +248,22 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
-     * @hash   889850655
+     * @hash   890680959
      */
     MCAPI FaceDirectionalBlock(std::string const &, int, class Material const &, bool, float);
     /**
      * @symbol ?getFaceFlipStatic@FaceDirectionalBlock@@SA?AW4Flip@@EAEBVBlock@@_N@Z
-     * @hash   138222516
+     * @hash   139052820
      */
     MCAPI static enum class Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     /**
      * @symbol ?getFacingDirection@FaceDirectionalBlock@@SAEAEBVBlock@@_N@Z
-     * @hash   -1749472561
+     * @hash   -1748642257
      */
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);
     /**
      * @symbol ?getMappedFaceStatic@FaceDirectionalBlock@@SAEEAEBVBlock@@_N@Z
-     * @hash   -866049521
+     * @hash   -865219217
      */
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);
 

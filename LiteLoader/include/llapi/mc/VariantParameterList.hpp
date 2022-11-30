@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@@@Z
-     * @hash   -1592554775
+     * @hash   -1592508647
      */
     MCAPI bool hasParameter(enum FilterSubject) const;
 

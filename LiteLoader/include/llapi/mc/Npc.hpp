@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Npc@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1642662204
+     * @hash   1642708332
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Npc@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1977906961
+     * @hash   -1977860833
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -68,7 +68,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?getFormattedNameTag@Npc@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -380732158
+     * @hash   -380686030
      */
     virtual std::string getFormattedNameTag() const;
     /**
@@ -140,7 +140,7 @@ public:
     /**
      * @vftbl  204
      * @symbol ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1555146869
+     * @hash   1555192997
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   432770015
+     * @hash   432816143
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Npc@@EEAAXXZ
-     * @hash   -225407308
+     * @hash   -225361180
      */
     virtual void _onSizeUpdated();
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@Npc@@UEAAXXZ
-     * @hash   -1553715363
+     * @hash   -1553669235
      */
     virtual void newServerAiStep();
     /**
@@ -280,7 +280,7 @@ public:
 #endif
     /**
      * @symbol ??0Npc@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -529379
+     * @hash   -483251
      */
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**

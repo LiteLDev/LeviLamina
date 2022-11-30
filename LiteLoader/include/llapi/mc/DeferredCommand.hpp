@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DeferredCommand@@UEAAXAEAVMinecraftCommands@@@Z
-     * @hash   2055182855
+     * @hash   2055228983
      */
     virtual void execute(class MinecraftCommands &);
     /**
      * @symbol ??0DeferredCommand@@QEAA@V?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@_N1V?$function@$$A6AXUMCRESULT@@@Z@2@@Z
-     * @hash   1007748975
+     * @hash   1007795103
      */
     MCAPI DeferredCommand(std::unique_ptr<class CommandContext>, bool, bool, class std::function<void (struct MCRESULT)>);
 

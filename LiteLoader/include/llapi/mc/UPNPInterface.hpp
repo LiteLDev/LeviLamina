@@ -34,7 +34,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
     /**
      * @symbol ?_onDisable@UPNPInterface@@EEAAXXZ
-     * @hash   391220295
+     * @hash   391266423
      */
     MCVAPI void _onDisable();
     /**
@@ -45,17 +45,17 @@ public:
 #endif
     /**
      * @symbol ??0UPNPInterface@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-     * @hash   -815228018
+     * @hash   -815181890
      */
     MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
      * @symbol ?reset@UPNPInterface@@QEAAXXZ
-     * @hash   -1973905149
+     * @hash   -1973859021
      */
     MCAPI void reset();
     /**
      * @symbol ?tick@UPNPInterface@@QEAAXXZ
-     * @hash   1434474605
+     * @hash   1434520733
      */
     MCAPI void tick();
 

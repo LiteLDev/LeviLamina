@@ -61,7 +61,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getConnectedGameInfo@LocalConnector@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     * @hash   -1138007989
+     * @hash   -1137961861
      */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
@@ -72,7 +72,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getNatPunchInfo@LocalConnector@@UEBA?AUNatPunchInfo@Connector@@XZ
-     * @hash   -1366815079
+     * @hash   -1366768951
      */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALCONNECTOR
@@ -134,22 +134,22 @@ public:
 #endif
     /**
      * @symbol ??0LocalConnector@@QEAA@AEAUConnectionCallbacks@Connector@@AEBVNetworkIdentifier@@@Z
-     * @hash   95378104
+     * @hash   95424232
      */
     MCAPI LocalConnector(struct Connector::ConnectionCallbacks &, class NetworkIdentifier const &);
     /**
      * @symbol ?disconnect@LocalConnector@@QEAAXXZ
-     * @hash   -1508824763
+     * @hash   -1508778635
      */
     MCAPI void disconnect();
     /**
      * @symbol ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
-     * @hash   2060160130
+     * @hash   2060206258
      */
     MCAPI void host(class NetworkIdentifier const &);
     /**
      * @symbol ?runEvents@LocalConnector@@QEAAXXZ
-     * @hash   231609235
+     * @hash   231655363
      */
     MCAPI void runEvents();
 

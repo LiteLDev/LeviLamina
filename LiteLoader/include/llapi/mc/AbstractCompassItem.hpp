@@ -68,7 +68,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@AbstractCompassItem@@UEBAHXZ
-     * @hash   -228383543
+     * @hash   -227553239
      */
     virtual int getEnchantSlot() const;
     /**
@@ -98,29 +98,29 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@AbstractCompassItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -770727798
+     * @hash   -769897494
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  120
      * @symbol ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     * @hash   -1243359246
+     * @hash   -1242528942
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
      * @symbol ??0AbstractCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6A?AVCompassSpriteCalculator@@PEAVMob@@@Z@2@@Z
-     * @hash   -1463923283
+     * @hash   -1463092979
      */
     MCAPI AbstractCompassItem(std::string const &, int, class std::function<class CompassSpriteCalculator (class Mob *)>);
 

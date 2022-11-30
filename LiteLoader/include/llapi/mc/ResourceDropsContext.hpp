@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEBVBlockSource@@@Z
-     * @hash   -1651894946
+     * @hash   -1651064642
      */
     MCAPI ResourceDropsContext(float, class ItemStack const &, class BlockSource const &);
     /**
      * @symbol ?getRandom@ResourceDropsContext@@QEBAAEAVRandom@@XZ
-     * @hash   -1004966440
+     * @hash   -1004136136
      */
     MCAPI class Random & getRandom() const;
 

@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@StoneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -479599281
+     * @hash   -478768977
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -207,13 +207,13 @@ public:
     /**
      * @vftbl  160
      * @symbol ?tryGetInfested@StoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   1708869751
+     * @hash   1709700055
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@StoneBlock@@UEAAXXZ
-     * @hash   -213316024
+     * @hash   -212485720
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@StoneBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1332105460
+     * @hash   -1331275156
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -255,12 +255,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@StoneBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1667791562
+     * @hash   -1666961258
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0StoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1305325158
+     * @hash   1306155462
      */
     MCAPI StoneBlock(std::string const &, int);
 

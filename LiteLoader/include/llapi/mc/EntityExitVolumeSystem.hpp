@@ -44,19 +44,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@EntityExitVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   780570218
+     * @hash   780616346
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ??0EntityExitVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-     * @hash   557787015
+     * @hash   557833143
      */
     MCAPI EntityExitVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 //private:
     /**
      * @symbol ?_tick@EntityExitVolumeSystem@@AEBAXAEAVEntityContext@@AEAVVolumeBoundsComponent@@AEAVEntitiesInsideVolumeComponent@@@Z
-     * @hash   -581879111
+     * @hash   -581832983
      */
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &, class EntitiesInsideVolumeComponent &) const;
 

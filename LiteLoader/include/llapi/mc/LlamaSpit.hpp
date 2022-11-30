@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@LlamaSpit@@UEAAXXZ
-     * @hash   613838654
+     * @hash   613884782
      */
     virtual void normalTick();
     /**
@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
-     * @hash   1209974121
+     * @hash   1210020249
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -175,7 +175,7 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0LlamaSpit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -2054524087
+     * @hash   -2054477959
      */
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -36,12 +36,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?placeCanopy@MangroveTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
-     * @hash   1607108455
+     * @hash   1607938759
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
     /**
      * @symbol ??0MangroveTreeCanopy@@QEAA@XZ
-     * @hash   2041173435
+     * @hash   2042003739
      */
     MCAPI MangroveTreeCanopy();
 

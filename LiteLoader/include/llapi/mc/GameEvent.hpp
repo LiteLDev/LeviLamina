@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getRadius@GameEvent@@QEBAMXZ
-     * @hash   -1615535354
+     * @hash   -1615489226
      */
     MCAPI float getRadius() const;
     /**
      * @symbol ?getRadiusSqrd@GameEvent@@QEBAMXZ
-     * @hash   208433398
+     * @hash   208479526
      */
     MCAPI float getRadiusSqrd() const;
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI enum class GameEventConfig::GameEventType const getType() const;
     /**
      * @symbol ?isCategory@GameEvent@@QEBA_NW4GameEventCategory@GameEventConfig@@@Z
-     * @hash   -1132471729
+     * @hash   -1132425601
      */
     MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
 

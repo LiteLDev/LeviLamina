@@ -37,19 +37,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@SwiftSneakEnchant@@UEBAHH@Z
-     * @hash   1001958705
+     * @hash   1002789009
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@SwiftSneakEnchant@@UEBAHH@Z
-     * @hash   1297607807
+     * @hash   1298438111
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@SwiftSneakEnchant@@UEBAHXZ
-     * @hash   333417737
+     * @hash   333463865
      */
     virtual int getMaxLevel() const;
     /**
@@ -86,17 +86,17 @@ public:
 #endif
     /**
      * @symbol ??0SwiftSneakEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   -917747071
+     * @hash   -916916767
      */
     MCAPI SwiftSneakEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     /**
      * @symbol ?getExtraSneakingMovementFactor@SwiftSneakEnchant@@SAMAEBVActor@@@Z
-     * @hash   1046474047
+     * @hash   1047304351
      */
     MCAPI static float getExtraSneakingMovementFactor(class Actor const &);
     /**
      * @symbol ?getLevel@SwiftSneakEnchant@@SAHAEBVActor@@@Z
-     * @hash   -2007528099
+     * @hash   -2006697795
      */
     MCAPI static int getLevel(class Actor const &);
 

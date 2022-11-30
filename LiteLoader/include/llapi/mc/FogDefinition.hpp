@@ -122,7 +122,7 @@ public:
     MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
     /**
      * @symbol ?isValidIdentifier@FogDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -281952145
+     * @hash   -281121841
      */
     MCAPI static bool isValidIdentifier(std::string const &);
 

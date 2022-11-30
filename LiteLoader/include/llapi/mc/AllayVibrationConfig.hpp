@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onSignalReceive@AllayVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
-     * @hash   196173939
+     * @hash   197004243
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
      * @vftbl  2
      * @symbol ?isValidVibration@AllayVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
-     * @hash   -395633197
+     * @hash   -394802893
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
@@ -53,7 +53,7 @@ public:
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
     /**
      * @symbol ??0AllayVibrationConfig@@QEAA@AEAVActor@@G@Z
-     * @hash   433009290
+     * @hash   433839594
      */
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
 

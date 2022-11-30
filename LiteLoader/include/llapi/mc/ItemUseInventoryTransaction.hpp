@@ -38,56 +38,56 @@ public:
     /**
      * @vftbl  1
      * @symbol ?read@ItemUseInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1030522022
+     * @hash   -1029691718
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  2
      * @symbol ?write@ItemUseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1737768802
+     * @hash   1738599106
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  3
      * @symbol ?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-     * @hash   1295366385
+     * @hash   1295412513
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
      * @vftbl  4
      * @symbol ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     * @hash   561555403
+     * @hash   562385707
      */
     virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-     * @hash   -569947318
+     * @hash   -569117014
      */
     virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
     /**
      * @symbol ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
-     * @hash   -1752600191
+     * @hash   -1752554063
      */
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const &);
     /**
      * @symbol ??4ItemUseInventoryTransaction@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1922359372
+     * @hash   1922405500
      */
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
     /**
      * @symbol ?resendBlocksAroundArea@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1705971099
+     * @hash   -1705140795
      */
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
-     * @hash   -970188732
+     * @hash   -969358428
      */
     MCAPI void resendPlayerState(class Player &) const;
     /**
      * @symbol ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
-     * @hash   -269860640
+     * @hash   -269814512
      */
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
 

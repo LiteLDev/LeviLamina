@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@IllagerBeastPostAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1333485126
+     * @hash   1333531254
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doIllagerBeastPostAIStepSystem@IllagerBeastPostAIStepSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUSubBBsComponent@@@Z
-     * @hash   -246252296
+     * @hash   -246206168
      */
     MCAPI static void _doIllagerBeastPostAIStepSystem(class StrictEntityContext const &, struct StateVectorComponent const &, struct SubBBsComponent &);
 

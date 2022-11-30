@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0GameTestClearTask@@QEAA@AEAVDimension@@AEBVBoundingBox@@@Z
-     * @hash   1421618236
+     * @hash   1421664364
      */
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     /**
      * @symbol ?isDone@GameTestClearTask@@QEBA_NXZ
-     * @hash   1258758548
+     * @hash   1258804676
      */
     MCAPI bool isDone() const;
     /**
      * @symbol ?tick@GameTestClearTask@@QEAAXXZ
-     * @hash   1929861965
+     * @hash   1929908093
      */
     MCAPI void tick();
 

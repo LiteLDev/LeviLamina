@@ -31,102 +31,102 @@ public:
 public:
     /**
      * @symbol ??0Abilities@@QEAA@_N@Z
-     * @hash   -538722067
+     * @hash   -538675939
      */
     MCAPI Abilities(bool);
     /**
      * @symbol ??0Abilities@@QEAA@AEBV0@@Z
-     * @hash   1270570897
+     * @hash   1270617025
      */
     MCAPI Abilities(class Abilities const &);
     /**
      * @symbol ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1456675834
+     * @hash   -1456629706
      */
     MCAPI void addSaveData(class CompoundTag &) const;
     /**
      * @symbol ?forEachAbility@Abilities@@QEAAXAEBV?$function@$$A6AXAEAVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-     * @hash   2119942598
+     * @hash   2119988726
      */
     MCAPI void forEachAbility(class std::function<void (class Ability &, enum class AbilitiesIndex)> const &, enum class Ability::Options);
     /**
      * @symbol ?forEachAbility@Abilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-     * @hash   -1477336700
+     * @hash   -1477290572
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
     /**
      * @symbol ?getAbility@Abilities@@QEAAAEAVAbility@@W4AbilitiesIndex@@@Z
-     * @hash   396770257
+     * @hash   396816385
      */
     MCAPI class Ability & getAbility(enum class AbilitiesIndex);
     /**
      * @symbol ?getAbility@Abilities@@QEBAAEBVAbility@@W4AbilitiesIndex@@@Z
-     * @hash   1066437233
+     * @hash   1066483361
      */
     MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z
-     * @hash   -1044100231
+     * @hash   -1044054103
      */
     MCAPI bool getBool(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getFloat@Abilities@@QEBAMW4AbilitiesIndex@@@Z
-     * @hash   600210099
+     * @hash   600256227
      */
     MCAPI float getFloat(enum class AbilitiesIndex) const;
     /**
      * @symbol ?isAnyAbilitySet@Abilities@@QEBA_NXZ
-     * @hash   -1450090578
+     * @hash   -1450044450
      */
     MCAPI bool isAnyAbilitySet() const;
     /**
      * @symbol ?loadSaveData@Abilities@@QEAA_NAEBVCompoundTag@@@Z
-     * @hash   9570727
+     * @hash   9616855
      */
     MCAPI bool loadSaveData(class CompoundTag const &);
     /**
      * @symbol ??4Abilities@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1798288364
+     * @hash   1798334492
      */
     MCAPI class Abilities & operator=(class Abilities const &);
     /**
      * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@AEBVAbility@@@Z
-     * @hash   -919059513
+     * @hash   -919013385
      */
     MCAPI void setAbility(enum class AbilitiesIndex, class Ability const &);
     /**
      * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@M@Z
-     * @hash   928508703
+     * @hash   928554831
      */
     MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@_N@Z
-     * @hash   -1391580217
+     * @hash   -1391534089
      */
     MCAPI void setAbility(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbilityDiff@Abilities@@QEAAXW4AbilitiesIndex@@_NAEA_N@Z
-     * @hash   1005960089
+     * @hash   1006006217
      */
     MCAPI void setAbilityDiff(enum class AbilitiesIndex, bool, bool &);
     /**
      * @symbol ?setDefault@Abilities@@QEAAXXZ
-     * @hash   1849031745
+     * @hash   1849077873
      */
     MCAPI void setDefault();
     /**
      * @symbol ?setFromPermissions@Abilities@@QEAAXW4PlayerPermissionLevel@@@Z
-     * @hash   -613354816
+     * @hash   -613308688
      */
     MCAPI void setFromPermissions(enum class PlayerPermissionLevel);
     /**
      * @symbol ?unSet@Abilities@@QEAAXW4AbilitiesIndex@@@Z
-     * @hash   -802858332
+     * @hash   -802812204
      */
     MCAPI void unSet(enum class AbilitiesIndex);
     /**
      * @symbol ?unSet@Abilities@@QEAAXXZ
-     * @hash   -60269481
+     * @hash   -60223353
      */
     MCAPI void unSet();
     /**
@@ -146,22 +146,22 @@ public:
     MCAPI static std::string const SERIALIZATION_TAG;
     /**
      * @symbol ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
-     * @hash   -433046440
+     * @hash   -433000312
      */
     MCAPI static char const * getAbilityName(enum class AbilitiesIndex);
     /**
      * @symbol ?getDefault@Abilities@@SAAEBVAbility@@W4AbilitiesIndex@@@Z
-     * @hash   83390877
+     * @hash   83437005
      */
     MCAPI static class Ability const & getDefault(enum class AbilitiesIndex);
     /**
      * @symbol ?getDiff@Abilities@@SA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@0@Z
-     * @hash   -815174604
+     * @hash   -815128476
      */
     MCAPI static class std::optional<std::string> getDiff(class Abilities const &, class Abilities const &);
     /**
      * @symbol ?nameToAbilityIndex@Abilities@@SA?AW4AbilitiesIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1513954567
+     * @hash   1514000695
      */
     MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const &);
 

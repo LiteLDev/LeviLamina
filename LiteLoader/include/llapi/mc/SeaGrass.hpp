@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@SeaGrass@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   -96307460
+     * @hash   -95477156
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@SeaGrass@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1353296473
+     * @hash   -1352466169
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -151,7 +151,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@SeaGrass@@UEBA_NH@Z
-     * @hash   217504701
+     * @hash   218335005
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@SeaGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   743932559
+     * @hash   744762863
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@SeaGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1177802183
+     * @hash   -1176971879
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SeaGrass@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   229023593
+     * @hash   229853897
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SeaGrass@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1889568195
+     * @hash   1890398499
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -238,19 +238,19 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@SeaGrass@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -815631666
+     * @hash   -814801362
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  135
      * @symbol ?getColor@SeaGrass@@UEBAHAEBVBlock@@@Z
-     * @hash   617071049
+     * @hash   617901353
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@SeaGrass@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1636324701
+     * @hash   -1635494397
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -276,13 +276,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@SeaGrass@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1827965155
+     * @hash   -1827134851
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@SeaGrass@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1543756267
+     * @hash   1544586571
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -293,7 +293,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SeaGrass@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1302852851
+     * @hash   -1302022547
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -304,13 +304,13 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SeaGrass@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -644748711
+     * @hash   -643918407
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@SeaGrass@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -945878453
+     * @hash   -945048149
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -338,12 +338,12 @@ public:
 #endif
     /**
      * @symbol ??0SeaGrass@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1022531195
+     * @hash   -1021700891
      */
     MCAPI SeaGrass(std::string const &, int);
     /**
      * @symbol ?trySpawnSeaGrass@SeaGrass@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1838205108
+     * @hash   -1837374804
      */
     MCAPI static bool trySpawnSeaGrass(class BlockSource &, class BlockPos const &);
 

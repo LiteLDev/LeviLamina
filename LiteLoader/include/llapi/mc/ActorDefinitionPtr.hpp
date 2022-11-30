@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEBV0@@Z
-     * @hash   -1764956799
+     * @hash   -1764910671
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEAVActorDefinitionGroup@@AEAVActorDefinition@@@Z
-     * @hash   -219833082
+     * @hash   -219786954
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     /**
@@ -45,12 +45,12 @@ public:
     MCAPI ActorDefinitionPtr();
     /**
      * @symbol ??4ActorDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1179979048
+     * @hash   1180025176
      */
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     /**
      * @symbol ??1ActorDefinitionPtr@@QEAA@XZ
-     * @hash   -1109004144
+     * @hash   -1108958016
      */
     MCAPI ~ActorDefinitionPtr();
     /**

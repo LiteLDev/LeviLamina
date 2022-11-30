@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@TeleportSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1195528342
+     * @hash   -1195482214
      */
     virtual void tick(class EntityRegistry &);
 

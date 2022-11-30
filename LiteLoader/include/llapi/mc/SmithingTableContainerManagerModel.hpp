@@ -85,17 +85,17 @@ public:
     MCAPI SmithingTableContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?INPUT_SLOT@SmithingTableContainerManagerModel@@2HB
-     * @hash   -2080390211
+     * @hash   -2080267203
      */
     MCAPI static int const INPUT_SLOT;
     /**
      * @symbol ?MATERIAL_SLOT@SmithingTableContainerManagerModel@@2HB
-     * @hash   1920113215
+     * @hash   1920236223
      */
     MCAPI static int const MATERIAL_SLOT;
     /**
      * @symbol ?RESULT_SLOT@SmithingTableContainerManagerModel@@2HB
-     * @hash   537334595
+     * @hash   537457603
      */
     MCAPI static int const RESULT_SLOT;
 

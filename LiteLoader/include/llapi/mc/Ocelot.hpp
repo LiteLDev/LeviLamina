@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Ocelot@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1448148520
+     * @hash   -1448102392
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  356
      * @symbol ?_serverAiMobStep@Ocelot@@UEAAXXZ
-     * @hash   336021033
+     * @hash   336067161
      */
     virtual void _serverAiMobStep();
     /**
@@ -181,17 +181,17 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Ocelot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1269490956
+     * @hash   1269537084
      */
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?SNEAK_SPEED_MOD@Ocelot@@2MB
-     * @hash   -1313448513
+     * @hash   -1313325505
      */
     MCAPI static float const SNEAK_SPEED_MOD;
     /**
      * @symbol ?SPRINT_SPEED_MOD@Ocelot@@2MB
-     * @hash   1706182629
+     * @hash   1706305637
      */
     MCAPI static float const SPRINT_SPEED_MOD;
 

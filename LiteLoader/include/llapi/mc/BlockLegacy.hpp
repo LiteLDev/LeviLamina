@@ -47,19 +47,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStateFromLegacyData@BlockLegacy@@UEBAAEBVBlock@@G@Z
-     * @hash   -652772495
+     * @hash   -651942191
      */
     virtual class Block const & getStateFromLegacyData(unsigned short) const;
     /**
      * @vftbl  2
      * @symbol ?newBlockEntity@BlockLegacy@@UEBA?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1557132498
+     * @hash   1557962802
      */
     virtual class std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  3
      * @symbol ?getNextBlockPermutation@BlockLegacy@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   2096545922
+     * @hash   2097376226
      */
     virtual class Block const * getNextBlockPermutation(class Block const &) const;
     /**
@@ -71,61 +71,61 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@BlockLegacy@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1025839124
+     * @hash   -1025008820
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  6
      * @symbol ?isObstructingChests@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   988196960
+     * @hash   989027264
      */
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  7
      * @symbol ?randomlyModifyPosition@BlockLegacy@@UEBA?AVVec3@@AEBVBlockPos@@AEAH@Z
-     * @hash   -1729677168
+     * @hash   -1728846864
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@BlockLegacy@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   617759019
+     * @hash   618589323
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  9
      * @symbol ?addAABBs@BlockLegacy@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   1374717302
+     * @hash   1375547606
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@BlockLegacy@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1893309898
+     * @hash   -1892479594
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@BlockLegacy@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   680254791
+     * @hash   681085095
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  12
      * @symbol ?updateTallestCollisionShape@BlockLegacy@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVAABB@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@AEAV5@AEBVVec3@@AEAM@Z
-     * @hash   -692448381
+     * @hash   -691618077
      */
     virtual bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     /**
      * @vftbl  13
      * @symbol ?getOutline@BlockLegacy@@UEBAAEBVAABB@@AEAVBlockSource@@AEBVBlockPos@@AEAV2@@Z
-     * @hash   -617263095
+     * @hash   -616432791
      */
     virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl  14
      * @symbol ?getLiquidClipVolume@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-     * @hash   1418497502
+     * @hash   1419327806
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  18
      * @symbol ?isSolid@BlockLegacy@@UEBA_NXZ
-     * @hash   -1869636669
+     * @hash   -1868806365
      */
     virtual bool isSolid() const;
     /**
@@ -172,37 +172,37 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@BlockLegacy@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -2022024747
+     * @hash   -2021194443
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  23
      * @symbol ?canProvideFullSupport@BlockLegacy@@UEBA_NAEBVBlock@@E@Z
-     * @hash   -372448334
+     * @hash   -371618030
      */
     virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
     /**
      * @vftbl  24
      * @symbol ?canProvideMultifaceSupport@BlockLegacy@@UEBA_NAEBVBlock@@E@Z
-     * @hash   -384133907
+     * @hash   -383303603
      */
     virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@BlockLegacy@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   2005056941
+     * @hash   2005887245
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
      * @vftbl  26
      * @symbol ?getConnectedDirections@BlockLegacy@@UEBAXAEBVBlock@@AEBVBlockPos@@AEBVIConstBlockSource@@AEA_N333@Z
-     * @hash   -1125601068
+     * @hash   -1124770764
      */
     virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
     /**
      * @vftbl  27
      * @symbol ?isAir@BlockLegacy@@UEBA_NXZ
-     * @hash   1157113698
+     * @hash   1157944002
      */
     virtual bool isAir() const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  31
      * @symbol ?isClimbable@BlockLegacy@@UEBA_NAEBUIActorMovementProxy@@@Z
-     * @hash   -812785376
+     * @hash   -811955072
      */
     virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  35
      * @symbol ?isWaterBlocking@BlockLegacy@@UEBA_NXZ
-     * @hash   21826948
+     * @hash   22657252
      */
     virtual bool isWaterBlocking() const;
     /**
@@ -322,7 +322,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?canHurtAndBreakItem@BlockLegacy@@UEBA_NXZ
-     * @hash   -1301927844
+     * @hash   -1301097540
      */
     virtual bool canHurtAndBreakItem() const;
     /**
@@ -334,7 +334,7 @@ public:
     /**
      * @vftbl  52
      * @symbol ?canBeOriginalSurface@BlockLegacy@@UEBA_NXZ
-     * @hash   196240507
+     * @hash   197070811
      */
     virtual bool canBeOriginalSurface() const;
     /**
@@ -391,13 +391,13 @@ public:
     /**
      * @vftbl  62
      * @symbol ?canContainLiquid@BlockLegacy@@UEBA_NXZ
-     * @hash   1025336530
+     * @hash   1026166834
      */
     virtual bool canContainLiquid() const;
     /**
      * @vftbl  63
      * @symbol ?getRequiredMedium@BlockLegacy@@UEBA?AV?$optional@VHashedString@@@std@@XZ
-     * @hash   -493772844
+     * @hash   -492942540
      */
     virtual class std::optional<class HashedString> getRequiredMedium() const;
     /**
@@ -415,13 +415,13 @@ public:
     /**
      * @vftbl  66
      * @symbol ?canBeUsedInCommands@BlockLegacy@@UEBA_NAEBVBaseGameVersion@@@Z
-     * @hash   -290135789
+     * @hash   -289305485
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
      * @vftbl  67
      * @symbol ?getThickness@BlockLegacy@@UEBAMXZ
-     * @hash   -819820730
+     * @hash   -818990426
      */
     virtual float getThickness() const;
     /**
@@ -433,7 +433,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@BlockLegacy@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   1020568778
+     * @hash   1021399082
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -504,7 +504,7 @@ public:
     /**
      * @vftbl  81
      * @symbol ?updateEntityAfterFallOn@BlockLegacy@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   -434550446
+     * @hash   -433720142
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
@@ -557,19 +557,19 @@ public:
     /**
      * @vftbl  90
      * @symbol ?mayPick@BlockLegacy@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-     * @hash   -2051124441
+     * @hash   -2050294137
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
      * @vftbl  91
      * @symbol ?mayPlace@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   2090956785
+     * @hash   2091002913
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -985183782
+     * @hash   -984353478
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -581,7 +581,7 @@ public:
     /**
      * @vftbl  94
      * @symbol ?tryToPlace@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
-     * @hash   1105243553
+     * @hash   1106073857
      */
     virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
     /**
@@ -593,7 +593,7 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@BlockLegacy@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1464163851
+     * @hash   -1463333547
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -605,7 +605,7 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1066865002
+     * @hash   1067695306
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -629,19 +629,19 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BlockLegacy@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1445819388
+     * @hash   -1444989084
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -382978648
+     * @hash   -382148344
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
      * @vftbl  104
      * @symbol ?trySpawnResourcesOnExplosion@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@M@Z
-     * @hash   1185551978
+     * @hash   1186382282
      */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float) const;
     /**
@@ -652,13 +652,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@BlockLegacy@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1439859621
+     * @hash   1440689925
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  107
      * @symbol ?calcVariant@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
-     * @hash   -1552788632
+     * @hash   -1551958328
      */
     virtual int calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
     /**
@@ -682,13 +682,13 @@ public:
     /**
      * @vftbl  111
      * @symbol ?shouldTriggerOnStandOn@BlockLegacy@@UEBA_NAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   314797446
+     * @hash   315627750
      */
     virtual bool shouldTriggerOnStandOn(class Actor &, class BlockPos const &) const;
     /**
      * @vftbl  112
      * @symbol ?shouldTriggerEntityInside@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   453604521
+     * @hash   454434825
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -700,13 +700,13 @@ public:
     /**
      * @vftbl  114
      * @symbol ?canBeBuiltOver@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-     * @hash   -455363984
+     * @hash   -454533680
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
      * @vftbl  115
      * @symbol ?canBeBuiltOver@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   47568903
+     * @hash   48399207
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
     /**
@@ -718,37 +718,37 @@ public:
     /**
      * @vftbl  117
      * @symbol ?executeEvent@BlockLegacy@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     * @hash   -144941071
+     * @hash   -144110767
      */
     virtual void executeEvent(std::string const &, class RenderParams &) const;
     /**
      * @vftbl  118
      * @symbol ?executeEvent@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   172780122
+     * @hash   173610426
      */
     virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
     /**
      * @vftbl  119
      * @symbol ?executeTrigger@BlockLegacy@@UEBA_NAEBVDefinitionTrigger@@AEAVRenderParams@@@Z
-     * @hash   -1912207559
+     * @hash   -1911377255
      */
     virtual bool executeTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /**
      * @vftbl  120
      * @symbol ?forceExecuteTrigger@BlockLegacy@@UEBAXAEBVDefinitionTrigger@@AEAVRenderParams@@@Z
-     * @hash   1226059410
+     * @hash   1226889714
      */
     virtual void forceExecuteTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /**
      * @vftbl  121
      * @symbol ?getMobToSpawn@BlockLegacy@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
-     * @hash   -948450299
+     * @hash   -947619995
      */
     virtual class MobSpawnerData const * getMobToSpawn(class SpawnConditions const &, class BlockSource &) const;
     /**
      * @vftbl  122
      * @symbol ?shouldStopFalling@BlockLegacy@@UEBA_NAEAVActor@@@Z
-     * @hash   -1005779135
+     * @hash   -1004948831
      */
     virtual bool shouldStopFalling(class Actor &) const;
     /**
@@ -759,7 +759,7 @@ public:
     /**
      * @vftbl  124
      * @symbol ?calcGroundFriction@BlockLegacy@@UEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
-     * @hash   -156423964
+     * @hash   -155593660
      */
     virtual float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /**
@@ -781,7 +781,7 @@ public:
     /**
      * @vftbl  128
      * @symbol ?canSlide@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1836001319
+     * @hash   -1835171015
      */
     virtual bool canSlide(class BlockSource &, class BlockPos const &) const;
     /**
@@ -810,7 +810,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@BlockLegacy@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -2143028083
+     * @hash   -2142197779
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -840,7 +840,7 @@ public:
     /**
      * @vftbl  138
      * @symbol ?getColorForParticle@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1713216813
+     * @hash   1714047117
      */
     virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -852,43 +852,43 @@ public:
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@BlockLegacy@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   822908034
+     * @hash   823738338
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
      * @vftbl  141
      * @symbol ?getShadeBrightness@BlockLegacy@@UEBAMAEBVBlock@@@Z
-     * @hash   8566218
+     * @hash   9396522
      */
     virtual float getShadeBrightness(class Block const &) const;
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@BlockLegacy@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   1535993768
+     * @hash   1536824072
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@BlockLegacy@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -810569168
+     * @hash   -809738864
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  144
      * @symbol ?getUIShape@BlockLegacy@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
-     * @hash   -146050970
+     * @hash   -145220666
      */
     virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
     /**
      * @vftbl  145
      * @symbol ?telemetryVariant@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1112619977
+     * @hash   -1111789673
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@BlockLegacy@@UEBAHAEBVBlock@@@Z
-     * @hash   -282568698
+     * @hash   -281738394
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -900,13 +900,13 @@ public:
     /**
      * @vftbl  148
      * @symbol ?getRenderBlock@BlockLegacy@@UEBAAEBVBlock@@XZ
-     * @hash   -273188237
+     * @hash   -272357933
      */
     virtual class Block const & getRenderBlock() const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@BlockLegacy@@UEBAEEAEBVBlock@@@Z
-     * @hash   765539352
+     * @hash   765585480
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -924,25 +924,25 @@ public:
     /**
      * @vftbl  152
      * @symbol ?init@BlockLegacy@@UEAAAEAV1@XZ
-     * @hash   133549109
+     * @hash   134379413
      */
     virtual class BlockLegacy & init();
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@BlockLegacy@@MEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   1768654037
+     * @hash   1769484341
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
      * @vftbl  154
      * @symbol ?addState@BlockLegacy@@UEAAAEAV1@AEBVItemState@@@Z
-     * @hash   1998625030
+     * @hash   1999455334
      */
     virtual class BlockLegacy & addState(class ItemState const &);
     /**
      * @vftbl  155
      * @symbol ?addState@BlockLegacy@@UEAAAEAV1@AEBVItemState@@_K@Z
-     * @hash   -1093274226
+     * @hash   -1092443922
      */
     virtual class BlockLegacy & addState(class ItemState const &, unsigned __int64);
     /**
@@ -953,7 +953,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BlockLegacy@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1057478861
+     * @hash   1058309165
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -989,7 +989,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1477022750
+     * @hash   -1476192446
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -1028,13 +1028,13 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   640514675
+     * @hash   641344979
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@BlockLegacy@@MEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1393336145
+     * @hash   1394166449
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -1051,7 +1051,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1769892112
+     * @hash   -1769061808
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -1068,7 +1068,7 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@BlockLegacy@@MEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   43206703
+     * @hash   44037007
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
@@ -1086,13 +1086,13 @@ public:
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@BlockLegacy@@MEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -1375088950
+     * @hash   -1374258646
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@BlockLegacy@@MEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1223788810
+     * @hash   -1222958506
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -1104,19 +1104,19 @@ public:
     /**
      * @vftbl  183
      * @symbol ?getExplosionResistance@BlockLegacy@@MEBAMPEAVActor@@@Z
-     * @hash   1290018168
+     * @hash   1290848472
      */
     virtual float getExplosionResistance(class Actor *) const;
     /**
      * @vftbl  184
      * @symbol ?getEmissiveBrightness@BlockLegacy@@MEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   2022284014
+     * @hash   2023114318
      */
     virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@BlockLegacy@@MEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -2053261599
+     * @hash   -2052431295
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -1133,25 +1133,25 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BlockLegacy@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1615881371
+     * @hash   1616711675
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  189
      * @symbol ?_executeEvent@BlockLegacy@@EEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@3@AEAVRenderParams@@@Z
-     * @hash   462577818
+     * @hash   463408122
      */
     virtual void _executeEvent(std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /**
      * @vftbl  190
      * @symbol ?_executeTrigger@BlockLegacy@@EEBA_NAEBVDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEAVRenderParams@@@Z
-     * @hash   1084506714
+     * @hash   1085337018
      */
     virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /**
      * @vftbl  191
      * @symbol ?_forceExecuteTrigger@BlockLegacy@@EEBAXAEBVDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEAVRenderParams@@@Z
-     * @hash   -1428651073
+     * @hash   -1427820769
      */
     virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACY
@@ -1343,57 +1343,57 @@ public:
 #endif
     /**
      * @symbol ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   255165405
+     * @hash   255995709
      */
     MCAPI BlockLegacy(std::string const &, int, class Material const &);
     /**
      * @symbol ?_isDataDrivingVanillaBlocksAndItems@BlockLegacy@@QEBA_NXZ
-     * @hash   2037309698
+     * @hash   2038140002
      */
     MCAPI bool _isDataDrivingVanillaBlocksAndItems() const;
     /**
      * @symbol ?addAABB@BlockLegacy@@QEBA_NAEBVAABB@@PEBV2@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   1095123400
+     * @hash   1095953704
      */
     MCAPI bool addAABB(class AABB const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @symbol ?addBlockProperties@BlockLegacy@@QEAAAEAV1@W4BlockProperty@@@Z
-     * @hash   369207658
+     * @hash   370037962
      */
     MCAPI class BlockLegacy & addBlockProperties(enum class BlockProperty);
     /**
      * @symbol ?addTag@BlockLegacy@@QEAAAEAV1@AEBVHashedString@@@Z
-     * @hash   55905080
+     * @hash   56735384
      */
     MCAPI class BlockLegacy & addTag(class HashedString const &);
     /**
      * @symbol ?buildDescriptionName@BlockLegacy@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   991886343
+     * @hash   992716647
      */
     MCAPI std::string buildDescriptionName(class Block const &) const;
     /**
      * @symbol ?canInstatick@BlockLegacy@@QEBA_NXZ
-     * @hash   -1692894828
+     * @hash   -1692064524
      */
     MCAPI bool canInstatick() const;
     /**
      * @symbol ?createBlockPermutations@BlockLegacy@@QEAAXI@Z
-     * @hash   246684580
+     * @hash   247514884
      */
     MCAPI void createBlockPermutations(unsigned int);
     /**
      * @symbol ?createWeakPtr@BlockLegacy@@QEBA?AV?$WeakPtr@VBlockLegacy@@@@XZ
-     * @hash   -1184968497
+     * @hash   -1184138193
      */
     MCAPI class WeakPtr<class BlockLegacy> createWeakPtr() const;
     /**
      * @symbol ?forEachBlockPermutation@BlockLegacy@@QEBAXV?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
-     * @hash   1870910754
+     * @hash   1871741058
      */
     MCAPI void forEachBlockPermutation(class std::function<bool (class Block const &)>) const;
     /**
      * @symbol ?forEachItemStateInstance@BlockLegacy@@QEBAXV?$function@$$A6A_NAEBVItemStateInstance@@@Z@std@@@Z
-     * @hash   -1114757676
+     * @hash   -1113927372
      */
     MCAPI void forEachItemStateInstance(class std::function<bool (class ItemStateInstance const &)>) const;
     /**
@@ -1403,42 +1403,42 @@ public:
     MCAPI bool getAllowsRunes() const;
     /**
      * @symbol ?getBlockEntityType@BlockLegacy@@QEBA?AW4BlockActorType@@XZ
-     * @hash   -1475255736
+     * @hash   -1474425432
      */
     MCAPI enum class BlockActorType getBlockEntityType() const;
     /**
      * @symbol ?getBlockItemId@BlockLegacy@@QEBAFXZ
-     * @hash   1929932101
+     * @hash   1930762405
      */
     MCAPI short getBlockItemId() const;
     /**
      * @symbol ?getBlockState@BlockLegacy@@QEBAPEBVItemState@@AEBVHashedString@@@Z
-     * @hash   -1975293058
+     * @hash   -1974462754
      */
     MCAPI class ItemState const * getBlockState(class HashedString const &) const;
     /**
      * @symbol ?getBlockStateGroup@BlockLegacy@@QEAAPEAVBlockStateGroup@@XZ
-     * @hash   376207959
+     * @hash   377038263
      */
     MCAPI class BlockStateGroup * getBlockStateGroup();
     /**
      * @symbol ?getCommandNames@BlockLegacy@@QEBA?AV?$vector@UCommandName@@V?$allocator@UCommandName@@@std@@@std@@XZ
-     * @hash   1897950710
+     * @hash   1898781014
      */
     MCAPI std::vector<struct CommandName> getCommandNames() const;
     /**
      * @symbol ?getCreativeCategory@BlockLegacy@@QEBA?AW4CreativeItemCategory@@XZ
-     * @hash   676153306
+     * @hash   676199434
      */
     MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @symbol ?getDebugText@BlockLegacy@@QEBAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-     * @hash   863688994
+     * @hash   864519298
      */
     MCAPI void getDebugText(std::vector<std::string> &, class BlockPos const &) const;
     /**
      * @symbol ?getDefaultState@BlockLegacy@@QEBAAEBVBlock@@XZ
-     * @hash   2126757300
+     * @hash   2127587604
      */
     MCAPI class Block const & getDefaultState() const;
     /**
@@ -1448,32 +1448,32 @@ public:
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ?getEntity@BlockLegacy@@QEBAAEBVEntityContext@@XZ
-     * @hash   -1903582388
+     * @hash   -1902752084
      */
     MCAPI class EntityContext const & getEntity() const;
     /**
      * @symbol ?getEntityForModification@BlockLegacy@@QEBAAEAVEntityContext@@XZ
-     * @hash   581956628
+     * @hash   582786932
      */
     MCAPI class EntityContext & getEntityForModification() const;
     /**
      * @symbol ?getEntityNoCheck@BlockLegacy@@QEBAAEBVEntityContext@@XZ
-     * @hash   1971791124
+     * @hash   1972621428
      */
     MCAPI class EntityContext const & getEntityNoCheck() const;
     /**
      * @symbol ?getExperienceDrop@BlockLegacy@@QEBAHAEAVRandom@@@Z
-     * @hash   -1008007429
+     * @hash   -1007177125
      */
     MCAPI int getExperienceDrop(class Random &) const;
     /**
      * @symbol ?getMaterial@BlockLegacy@@QEBAAEBVMaterial@@XZ
-     * @hash   2010900304
+     * @hash   2011730608
      */
     MCAPI class Material const & getMaterial() const;
     /**
      * @symbol ?getNamespace@BlockLegacy@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1803045974
+     * @hash   1803092102
      */
     MCAPI std::string const & getNamespace() const;
     /**
@@ -1483,62 +1483,62 @@ public:
     MCAPI class HashedString const & getRawNameHash() const;
     /**
      * @symbol ?getRawNameId@BlockLegacy@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -303648164
+     * @hash   -302817860
      */
     MCAPI std::string const & getRawNameId() const;
     /**
      * @symbol ?getRequiredBaseGameVersion@BlockLegacy@@QEBAAEBVBaseGameVersion@@XZ
-     * @hash   1260196310
+     * @hash   1260242438
      */
     MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     /**
      * @symbol ?getResourceDrops@BlockLegacy@@QEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
-     * @hash   -1356894795
+     * @hash   -1356064491
      */
     MCAPI std::vector<class ItemStack> getResourceDrops(class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
      * @symbol ?hasBlockEntity@BlockLegacy@@QEBA_NXZ
-     * @hash   -1648664812
+     * @hash   -1647834508
      */
     MCAPI bool hasBlockEntity() const;
     /**
      * @symbol ?hasProperty@BlockLegacy@@QEBA_NW4BlockProperty@@@Z
-     * @hash   1175767459
+     * @hash   1176597763
      */
     MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
      * @symbol ?hasState@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
-     * @hash   -375959817
+     * @hash   -375129513
      */
     MCAPI bool hasState(class HashedString const &) const;
     /**
      * @symbol ?hasState@BlockLegacy@@QEBA_NAEBVItemState@@@Z
-     * @hash   -98337053
+     * @hash   -97506749
      */
     MCAPI bool hasState(class ItemState const &) const;
     /**
      * @symbol ?hasTag@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
-     * @hash   -119038267
+     * @hash   -118207963
      */
     MCAPI bool hasTag(class HashedString const &) const;
     /**
      * @symbol ?hasTag@BlockLegacy@@QEBA_NAEB_K@Z
-     * @hash   -1292055085
+     * @hash   -1291224781
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?initEntity@BlockLegacy@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1424207322
+     * @hash   -1423377018
      */
     MCAPI void initEntity(class EntityRegistry &);
     /**
      * @symbol ?initializeBlockStateGroup@BlockLegacy@@QEAAXXZ
-     * @hash   -518202645
+     * @hash   -517372341
      */
     MCAPI void initializeBlockStateGroup();
     /**
      * @symbol ?isEmpty@BlockLegacy@@QEBA_NXZ
-     * @hash   -333276606
+     * @hash   -332446302
      */
     MCAPI bool isEmpty() const;
     /**
@@ -1548,27 +1548,27 @@ public:
     MCAPI bool isFullAndOpaque() const;
     /**
      * @symbol ?isHeavy@BlockLegacy@@QEBA_NXZ
-     * @hash   1214429234
+     * @hash   1215259538
      */
     MCAPI bool isHeavy() const;
     /**
      * @symbol ?isMotionBlockingBlock@BlockLegacy@@QEBA_NXZ
-     * @hash   -1978776014
+     * @hash   -1977945710
      */
     MCAPI bool isMotionBlockingBlock() const;
     /**
      * @symbol ?isSolidBlockingBlock@BlockLegacy@@QEBA_NXZ
-     * @hash   346908884
+     * @hash   347739188
      */
     MCAPI bool isSolidBlockingBlock() const;
     /**
      * @symbol ?isVanilla@BlockLegacy@@QEBA_NXZ
-     * @hash   961622194
+     * @hash   962452498
      */
     MCAPI bool isVanilla() const;
     /**
      * @symbol ?matchesStates@BlockLegacy@@QEBA_NAEBV1@@Z
-     * @hash   -2070280336
+     * @hash   -2069450032
      */
     MCAPI bool matchesStates(class BlockLegacy const &) const;
     /**
@@ -1578,157 +1578,157 @@ public:
     MCAPI bool operator==(class HashedString const &) const;
     /**
      * @symbol ?overrideBlockProperties@BlockLegacy@@QEAAAEAV1@W4BlockProperty@@@Z
-     * @hash   -145555828
+     * @hash   -144725524
      */
     MCAPI class BlockLegacy & overrideBlockProperties(enum class BlockProperty);
     /**
      * @symbol ?setAllowsRunes@BlockLegacy@@QEAAAEAV1@_N@Z
-     * @hash   1797063392
+     * @hash   1797893696
      */
     MCAPI class BlockLegacy & setAllowsRunes(bool);
     /**
      * @symbol ?setBlockTintType@BlockLegacy@@QEAAAEAV1@W4BlockTintType@@@Z
-     * @hash   -2081998678
+     * @hash   -2081168374
      */
     MCAPI class BlockLegacy & setBlockTintType(enum class BlockTintType);
     /**
      * @symbol ?setCanBeExtraBlock@BlockLegacy@@QEAAAEAV1@_N@Z
-     * @hash   402304894
+     * @hash   403135198
      */
     MCAPI class BlockLegacy & setCanBeExtraBlock(bool);
     /**
      * @symbol ?setCanBeOriginalSurface@BlockLegacy@@QEAAAEAV1@_N@Z
-     * @hash   547801906
+     * @hash   548632210
      */
     MCAPI class BlockLegacy & setCanBeOriginalSurface(bool);
     /**
      * @symbol ?setCategory@BlockLegacy@@QEAAAEAV1@W4CreativeItemCategory@@@Z
-     * @hash   1844139458
+     * @hash   1844969762
      */
     MCAPI class BlockLegacy & setCategory(enum class CreativeItemCategory);
     /**
      * @symbol ?setCreativeEnumState@BlockLegacy@@QEAAAEAV1@AEBVItemState@@@Z
-     * @hash   1197885324
+     * @hash   1198715628
      */
     MCAPI class BlockLegacy & setCreativeEnumState(class ItemState const &);
     /**
      * @symbol ?setCreativeGroup@BlockLegacy@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1071878172
+     * @hash   -1071047868
      */
     MCAPI class BlockLegacy & setCreativeGroup(std::string const &);
     /**
      * @symbol ?setDefaultState@BlockLegacy@@QEAAXAEBVBlock@@@Z
-     * @hash   863840162
+     * @hash   864670466
      */
     MCAPI void setDefaultState(class Block const &);
     /**
      * @symbol ?setDestroyTime@BlockLegacy@@QEAAAEAV1@M@Z
-     * @hash   850334172
+     * @hash   851164476
      */
     MCAPI class BlockLegacy & setDestroyTime(float);
     /**
      * @symbol ?setExperienceDrop@BlockLegacy@@QEAAAEAV1@UIntRange@@@Z
-     * @hash   -172067672
+     * @hash   -171237368
      */
     MCAPI class BlockLegacy & setExperienceDrop(struct IntRange);
     /**
      * @symbol ?setExplodeable@BlockLegacy@@QEAAAEAV1@M@Z
-     * @hash   1635188892
+     * @hash   1636019196
      */
     MCAPI class BlockLegacy & setExplodeable(float);
     /**
      * @symbol ?setFlammable@BlockLegacy@@QEAAAEAV1@W4FlameOdds@@W4BurnOdds@@W4LavaFlammable@@@Z
-     * @hash   752989856
+     * @hash   753820160
      */
     MCAPI class BlockLegacy & setFlammable(enum class FlameOdds, enum class BurnOdds, enum class LavaFlammable);
     /**
      * @symbol ?setIgnoreBlockForInsideCubeRenderer@BlockLegacy@@QEAAX_N@Z
-     * @hash   711011994
+     * @hash   711842298
      */
     MCAPI void setIgnoreBlockForInsideCubeRenderer(bool);
     /**
      * @symbol ?setIsHiddenInCommands@BlockLegacy@@QEAAAEAV1@_N@Z
-     * @hash   151089106
+     * @hash   151919410
      */
     MCAPI class BlockLegacy & setIsHiddenInCommands(bool);
     /**
      * @symbol ?setIsInteraction@BlockLegacy@@QEAAX_N@Z
-     * @hash   2101549784
+     * @hash   2102380088
      */
     MCAPI void setIsInteraction(bool);
     /**
      * @symbol ?setIsVanillaBlock@BlockLegacy@@QEAAX_N@Z
-     * @hash   1701835594
+     * @hash   1702665898
      */
     MCAPI void setIsVanillaBlock(bool);
     /**
      * @symbol ?setLightBlock@BlockLegacy@@QEAAAEAV1@UBrightness@@@Z
-     * @hash   -1963259086
+     * @hash   -1962428782
      */
     MCAPI class BlockLegacy & setLightBlock(struct Brightness);
     /**
      * @symbol ?setLightEmission@BlockLegacy@@QEAAAEAV1@UBrightness@@@Z
-     * @hash   40351904
+     * @hash   41182208
      */
     MCAPI class BlockLegacy & setLightEmission(struct Brightness);
     /**
      * @symbol ?setMapColor@BlockLegacy@@QEAAAEAV1@AEBVColor@mce@@@Z
-     * @hash   1165671716
+     * @hash   1166502020
      */
     MCAPI class BlockLegacy & setMapColor(class mce::Color const &);
     /**
      * @symbol ?setMinRequiredBaseGameVersion@BlockLegacy@@QEAAAEAV1@AEBVBaseGameVersion@@@Z
-     * @hash   -306675488
+     * @hash   -305845184
      */
     MCAPI class BlockLegacy & setMinRequiredBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setNameId@BlockLegacy@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   421431174
+     * @hash   422261478
      */
     MCAPI class BlockLegacy & setNameId(std::string const &);
     /**
      * @symbol ?setOnlyPermutationandDefaultState@BlockLegacy@@QEAAXV?$unique_ptr@VBlock@@U?$default_delete@VBlock@@@std@@@std@@@Z
-     * @hash   -1512267640
+     * @hash   -1511437336
      */
     MCAPI void setOnlyPermutationandDefaultState(std::unique_ptr<class Block>);
     /**
      * @symbol ?setPushesOutItems@BlockLegacy@@QEAAX_N@Z
-     * @hash   -1109305654
+     * @hash   -1108475350
      */
     MCAPI void setPushesOutItems(bool);
     /**
      * @symbol ?setRandomTicking@BlockLegacy@@QEBAX_N@Z
-     * @hash   -603742522
+     * @hash   -603696394
      */
     MCAPI void setRandomTicking(bool) const;
     /**
      * @symbol ?setRandomTickingExtraLayer@BlockLegacy@@QEBAX_N@Z
-     * @hash   -763302890
+     * @hash   -762472586
      */
     MCAPI void setRandomTickingExtraLayer(bool) const;
     /**
      * @symbol ?setReturnDefaultBlockOnUnidentifiedBlockState@BlockLegacy@@QEAAAEAV1@XZ
-     * @hash   448153899
+     * @hash   448984203
      */
     MCAPI class BlockLegacy & setReturnDefaultBlockOnUnidentifiedBlockState();
     /**
      * @symbol ?setSolid@BlockLegacy@@QEAAX_N@Z
-     * @hash   588870072
+     * @hash   589700376
      */
     MCAPI void setSolid(bool);
     /**
      * @symbol ?setVisualShape@BlockLegacy@@QEAAXAEBVAABB@@@Z
-     * @hash   -1950794620
+     * @hash   -1949964316
      */
     MCAPI void setVisualShape(class AABB const &);
     /**
      * @symbol ?setVisualShape@BlockLegacy@@QEAAXAEBVVec3@@0@Z
-     * @hash   -615665728
+     * @hash   -614835424
      */
     MCAPI void setVisualShape(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z
-     * @hash   -996537747
+     * @hash   -995707443
      */
     MCAPI class Block const * tryGetStateFromLegacyData(unsigned short) const;
     /**
@@ -1738,42 +1738,42 @@ public:
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
     /**
      * @symbol ?SIZE_OFFSET@BlockLegacy@@2MB
-     * @hash   1705602003
+     * @hash   1705725011
      */
     MCAPI static float const SIZE_OFFSET;
     /**
      * @symbol ?buildDescriptionIdFromNameInfo@BlockLegacy@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUNameInfo@1@@Z
-     * @hash   1349240602
+     * @hash   1350070906
      */
     MCAPI static std::string buildDescriptionIdFromNameInfo(struct BlockLegacy::NameInfo const &);
     /**
      * @symbol ?extractBlockNameInfo@BlockLegacy@@SA?AUNameInfo@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1292894408
+     * @hash   -1292064104
      */
     MCAPI static struct BlockLegacy::NameInfo extractBlockNameInfo(std::string const &);
     /**
      * @symbol ?getPlacementFacingAll@BlockLegacy@@SAEAEAVActor@@AEBVBlockPos@@M@Z
-     * @hash   -334106876
+     * @hash   -333276572
      */
     MCAPI static unsigned char getPlacementFacingAll(class Actor &, class BlockPos const &, float);
     /**
      * @symbol ?getPlacementFacingAllExceptAxisY@BlockLegacy@@SAEAEAVActor@@AEBVBlockPos@@M@Z
-     * @hash   964756866
+     * @hash   965587170
      */
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor &, class BlockPos const &, float);
     /**
      * @symbol ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z
-     * @hash   -1867082800
+     * @hash   -1866252496
      */
     MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &);
     /**
      * @symbol ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemStack@@@Z
-     * @hash   -64833846
+     * @hash   -64003542
      */
     MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemStack const &);
     /**
      * @symbol ?spawnResources@BlockLegacy@@SAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@M@Z
-     * @hash   -717257039
+     * @hash   -716426735
      */
     MCAPI static void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, std::vector<class Item const *> *, float);
 
@@ -1785,54 +1785,54 @@ public:
     MCAPI enum class BlockShape _getBlockShape() const;
     /**
      * @symbol ?clip@BlockLegacy@@IEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_NAEBVAABB@@@Z
-     * @hash   -650936501
+     * @hash   -650106197
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     /**
      * @symbol ?forEachBlockPermutationMutable@BlockLegacy@@IEAA_NV?$function@$$A6A_NAEAVBlock@@@Z@std@@@Z
-     * @hash   1595723596
+     * @hash   1596553900
      */
     MCAPI bool forEachBlockPermutationMutable(class std::function<bool (class Block &)>);
     /**
      * @symbol ?getBurnOdds@BlockLegacy@@IEBAHXZ
-     * @hash   889527738
+     * @hash   890358042
      */
     MCAPI int getBurnOdds() const;
     /**
      * @symbol ?getDestroySpeed@BlockLegacy@@IEBAMXZ
-     * @hash   -1305803689
+     * @hash   -1304973385
      */
     MCAPI float getDestroySpeed() const;
     /**
      * @symbol ?getFlameOdds@BlockLegacy@@IEBAHXZ
-     * @hash   320207362
+     * @hash   321037666
      */
     MCAPI int getFlameOdds() const;
     /**
      * @symbol ?getFriction@BlockLegacy@@IEBAMXZ
-     * @hash   -173352972
+     * @hash   -172522668
      */
     MCAPI float getFriction() const;
     /**
      * @symbol ?getLight@BlockLegacy@@IEBA?AUBrightness@@XZ
-     * @hash   1175714641
+     * @hash   1176544945
      */
     MCAPI struct Brightness getLight() const;
     /**
      * @symbol ?isLavaFlammable@BlockLegacy@@IEBA_NXZ
-     * @hash   576795425
+     * @hash   577625729
      */
     MCAPI bool isLavaFlammable() const;
     /**
      * @symbol ?createAABBWithPixelCoordinates@BlockLegacy@@KA?AVAABB@@MMMMMM@Z
-     * @hash   -738452751
+     * @hash   -737622447
      */
     MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
 
 //private:
     /**
      * @symbol ?initParams@BlockLegacy@@AEBAXAEAVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   2084155440
+     * @hash   2084985744
      */
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
 

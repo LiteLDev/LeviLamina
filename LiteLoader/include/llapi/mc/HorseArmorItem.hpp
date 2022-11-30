@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  18
      * @symbol ?isDyeable@HorseArmorItem@@UEBA_NXZ
-     * @hash   168612691
+     * @hash   169442995
      */
     virtual bool isDyeable() const;
     /**
@@ -78,13 +78,13 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -625571766
+     * @hash   -624741462
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  64
      * @symbol ?getArmorValue@HorseArmorItem@@UEBAHXZ
-     * @hash   -449657186
+     * @hash   -448826882
      */
     virtual int getArmorValue() const;
     /**
@@ -110,13 +110,13 @@ public:
     /**
      * @vftbl  73
      * @symbol ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     * @hash   1270276132
+     * @hash   1271106436
      */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /**
      * @vftbl  74
      * @symbol ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
-     * @hash   1817246185
+     * @hash   1818076489
      */
     virtual bool hasCustomColor(class CompoundTag const *) const;
     /**
@@ -127,44 +127,44 @@ public:
     /**
      * @vftbl  77
      * @symbol ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
-     * @hash   -1891379824
+     * @hash   -1890549520
      */
     virtual void clearColor(class CompoundTag *) const;
     /**
      * @vftbl  78
      * @symbol ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-     * @hash   1678610897
+     * @hash   1679441201
      */
     virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -350683647
+     * @hash   -349853343
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @symbol ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
-     * @hash   1523325232
+     * @hash   1524155536
      */
     MCAPI HorseArmorItem(std::string const &, int, int, enum class HorseArmorItem::Tier);
     /**
      * @symbol ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
-     * @hash   18596278
+     * @hash   19426582
      */
     MCAPI enum class HorseArmorItem::Tier getTier() const;
     /**
      * @symbol ?mHealthPerTier@HorseArmorItem@@2QBHB
-     * @hash   -1074790530
+     * @hash   -1074667522
      */
     MCAPI static int const mHealthPerTier[];
 

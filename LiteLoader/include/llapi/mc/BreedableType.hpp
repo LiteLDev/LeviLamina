@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0BreedableType@@QEAA@AEBU0@@Z
-     * @hash   -1210152731
+     * @hash   -1210106603
      */
     MCAPI BreedableType(struct BreedableType const &);
     /**
      * @symbol ??1BreedableType@@QEAA@XZ
-     * @hash   11457140
+     * @hash   11503268
      */
     MCAPI ~BreedableType();
 

@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@RailBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   1437838731
+     * @hash   1438669035
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -224,7 +224,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0RailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1034186423
+     * @hash   -1033356119
      */
     MCAPI RailBlock(std::string const &, int);
 

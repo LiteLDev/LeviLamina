@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@EnvironmentSensorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1690499556
+     * @hash   -1690453428
      */
     virtual void tick(class EntityRegistry &);
 

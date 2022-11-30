@@ -37,13 +37,13 @@ public:
     MCVAPI void log(char const *);
     /**
      * @symbol ??1ContentLogEndPoint@@UEAA@XZ
-     * @hash   -2023039516
+     * @hash   -2022209212
      */
     MCVAPI ~ContentLogEndPoint();
 #endif
     /**
      * @symbol ??0ContentLogEndPoint@@QEAA@XZ
-     * @hash   -416826452
+     * @hash   -415996148
      */
     MCAPI ContentLogEndPoint();
 

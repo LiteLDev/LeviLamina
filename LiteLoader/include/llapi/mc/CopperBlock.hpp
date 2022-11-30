@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  16
      * @symbol ?onLightningHit@CopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2086471168
+     * @hash   -2085640864
      */
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  28
      * @symbol ?tryGetCopperBehavior@CopperBlock@@UEBAPEBVCopperBehavior@@XZ
-     * @hash   509368960
+     * @hash   510199264
      */
     virtual class CopperBehavior const * tryGetCopperBehavior() const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@CopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   590810007
+     * @hash   591640311
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CopperBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   865149097
+     * @hash   865979401
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -247,22 +247,22 @@ public:
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
-     * @hash   51407195
+     * @hash   52237499
      */
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   52315340
+     * @hash   53145644
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   53223485
+     * @hash   54053789
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   54147006
+     * @hash   54977310
      */
     virtual void __unk_vfn_196();
     /**
@@ -272,12 +272,12 @@ public:
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@@Z
-     * @hash   470730222
+     * @hash   471560526
      */
     MCAPI CopperBlock(std::string const &, int, enum class CopperType, class HashedString const &);
     /**
      * @symbol ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@22@Z
-     * @hash   1795109918
+     * @hash   1795940222
      */
     MCAPI CopperBlock(std::string const &, int, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 

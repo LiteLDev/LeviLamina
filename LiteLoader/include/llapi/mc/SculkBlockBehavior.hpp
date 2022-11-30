@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?updateFacingData@SculkBlockBehavior@@UEBAHHAEBVBlock@@@Z
-     * @hash   1365566570
+     * @hash   1366396874
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
@@ -49,13 +49,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?attemptSpreadVeins@SculkBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
-     * @hash   -598619983
+     * @hash   -597789679
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
      * @vftbl  4
      * @symbol ?attemptUseCharge@SculkBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
-     * @hash   -235963343
+     * @hash   -235133039
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**
@@ -68,7 +68,7 @@ public:
 //private:
     /**
      * @symbol ?_placeGrowthAt@SculkBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@@Z
-     * @hash   -175567614
+     * @hash   -174737310
      */
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
 

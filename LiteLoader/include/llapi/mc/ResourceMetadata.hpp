@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ResourceMetadata@@QEAA@XZ
-     * @hash   679738055
+     * @hash   679784183
      */
     MCAPI ~ResourceMetadata();
 

@@ -105,7 +105,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Rabbit@@UEAAXH@Z
-     * @hash   1410215586
+     * @hash   1410261714
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Rabbit@@MEAAXAEAVRenderParams@@@Z
-     * @hash   -544329239
+     * @hash   -544283111
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -147,13 +147,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Rabbit@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1829076934
+     * @hash   1829123062
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Rabbit@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -1872102025
+     * @hash   -1872055897
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@Rabbit@@UEAAXXZ
-     * @hash   -384396620
+     * @hash   -384350492
      */
     virtual void newServerAiStep();
     /**
@@ -199,7 +199,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Rabbit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -865194346
+     * @hash   -865148218
      */
     MCAPI Rabbit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

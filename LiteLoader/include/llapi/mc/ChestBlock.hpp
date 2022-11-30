@@ -134,7 +134,7 @@ public:
     /**
      * @vftbl  51
      * @symbol ?isSignalSource@ChestBlock@@UEBA_NXZ
-     * @hash   780680137
+     * @hash   781510441
      */
     virtual bool isSignalSource() const;
     /**
@@ -155,13 +155,13 @@ public:
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   958075429
+     * @hash   958905733
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @vftbl  74
      * @symbol ?onMove@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1066135440
+     * @hash   -1065305136
      */
     virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1357501732
+     * @hash   -1356671428
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -183,13 +183,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@ChestBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -846278833
+     * @hash   -845448529
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@ChestBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   1444280489
+     * @hash   1445110793
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
@@ -200,7 +200,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ChestBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   54492955
+     * @hash   55323259
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@ChestBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -813549142
+     * @hash   -812718838
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@ChestBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   725283650
+     * @hash   726113954
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  152
      * @symbol ?init@ChestBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   349918903
+     * @hash   350749207
      */
     virtual class BlockLegacy & init();
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1327642931
+     * @hash   1328473235
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1368284584
+     * @hash   -1367454280
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ChestBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1635565999
+     * @hash   -1634735695
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -318,12 +318,12 @@ public:
 #endif
     /**
      * @symbol ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z
-     * @hash   277333242
+     * @hash   278163546
      */
     MCAPI ChestBlock(std::string const &, int, enum class ChestBlock::ChestType, enum class MaterialType);
     /**
      * @symbol ?updateSignalStrength@ChestBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -402640654
+     * @hash   -401810350
      */
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;
 

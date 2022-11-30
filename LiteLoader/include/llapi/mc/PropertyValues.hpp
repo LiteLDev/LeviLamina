@@ -29,22 +29,22 @@ public:
 public:
     /**
      * @symbol ??0PropertyValues@@QEAA@AEBU0@@Z
-     * @hash   -1273566913
+     * @hash   -1273520785
      */
     MCAPI PropertyValues(struct PropertyValues const &);
     /**
      * @symbol ??4PropertyValues@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   288884082
+     * @hash   288930210
      */
     MCAPI struct PropertyValues & operator=(struct PropertyValues &&);
     /**
      * @symbol ?resize@PropertyValues@@QEAAX_K000@Z
-     * @hash   2072517273
+     * @hash   2072563401
      */
     MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     /**
      * @symbol ??1PropertyValues@@QEAA@XZ
-     * @hash   -1078565279
+     * @hash   -1078519151
      */
     MCAPI ~PropertyValues();
 

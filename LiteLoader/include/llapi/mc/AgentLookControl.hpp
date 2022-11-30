@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
-     * @hash   -1456595583
+     * @hash   -1456549455
      */
     virtual void initializeInternal(class Mob &);
     /**
      * @vftbl  2
      * @symbol ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
-     * @hash   -1820183919
+     * @hash   -1820137791
      */
     virtual void tick(class Mob &);
     /**
      * @symbol ??0AgentLookControl@@QEAA@XZ
-     * @hash   -680288827
+     * @hash   -680242699
      */
     MCAPI AgentLookControl();
     /**

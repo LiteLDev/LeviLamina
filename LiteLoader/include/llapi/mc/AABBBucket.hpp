@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0AABBBucket@@QEAA@XZ
-     * @hash   1137429286
+     * @hash   1138259590
      */
     MCAPI AABBBucket();
     /**
      * @symbol ?clearDirty@AABBBucket@@QEAAXXZ
-     * @hash   755645957
+     * @hash   756476261
      */
     MCAPI void clearDirty();
     /**
      * @symbol ?clearNeedsFinalize@AABBBucket@@QEAAXXZ
-     * @hash   238308405
+     * @hash   239138709
      */
     MCAPI void clearNeedsFinalize();
     /**
      * @symbol ?isDirty@AABBBucket@@QEAA_NXZ
-     * @hash   475480684
+     * @hash   476310988
      */
     MCAPI bool isDirty();
     /**
      * @symbol ?markDirty@AABBBucket@@QEAAXXZ
-     * @hash   -856786669
+     * @hash   -856740541
      */
     MCAPI void markDirty();
     /**
      * @symbol ?mergeAABBs@AABBBucket@@QEAAXXZ
-     * @hash   -905664507
+     * @hash   -904834203
      */
     MCAPI void mergeAABBs();
     /**
      * @symbol ?needsFinalize@AABBBucket@@QEBA_NXZ
-     * @hash   -1005731598
+     * @hash   -1004901294
      */
     MCAPI bool needsFinalize() const;
 

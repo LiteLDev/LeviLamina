@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@SquidPostAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   274458948
+     * @hash   274505076
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doSquidPostAIStepSystem@SquidPostAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   2076084653
+     * @hash   2076130781
      */
     MCAPI static void _doSquidPostAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

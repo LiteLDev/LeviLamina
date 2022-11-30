@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??4EducationEditionOfferValue@@QEAAAEAV0@W4EducationEditionOffer@@@Z
-     * @hash   1204519969
+     * @hash   1205350273
      */
     MCAPI class EducationEditionOfferValue & operator=(enum EducationEditionOffer);
 

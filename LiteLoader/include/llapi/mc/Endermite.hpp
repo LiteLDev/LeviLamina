@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Endermite@@UEAAXXZ
-     * @hash   -627061930
+     * @hash   -627015802
      */
     virtual void normalTick();
     /**
@@ -141,13 +141,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Endermite@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1049094162
+     * @hash   1049140290
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Endermite@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   -17580261
+     * @hash   -17534133
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Endermite@@EEAAXXZ
-     * @hash   1002861920
+     * @hash   1002908048
      */
     virtual void _onSizeUpdated();
     /**
@@ -174,13 +174,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Endermite@@UEAAXXZ
-     * @hash   -1107591738
+     * @hash   -1107545610
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Endermite@@UEAA_N_N@Z
-     * @hash   -1740014540
+     * @hash   -1739968412
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -205,7 +205,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Endermite@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -682781663
+     * @hash   -682735535
      */
     MCAPI Endermite(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

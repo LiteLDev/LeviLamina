@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@DeadBush@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1276247853
+     * @hash   -1275417549
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
@@ -210,7 +210,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@DeadBush@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   715123536
+     * @hash   715953840
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -231,18 +231,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@DeadBush@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   186330898
+     * @hash   187161202
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DeadBush@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -585746294
+     * @hash   -584915990
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0DeadBush@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1231906058
+     * @hash   1232736362
      */
     MCAPI DeadBush(std::string const &, int);
 

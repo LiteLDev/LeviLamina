@@ -22,12 +22,12 @@ namespace ExecuteCommandHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?handleResult@ExecuteCommandHelpers@@YAXAEBVCommand@@AEBV?$vector@PEBVActor@@V?$allocator@PEBVActor@@@std@@@std@@AEAVCommandOutput@@@Z
-     * @hash   2098965777
+     * @hash   2099058033
      */
     MCAPI void handleResult(class Command const &, std::vector<class Actor const *> const &, class CommandOutput &);
     /**
      * @symbol ?runCommand@ExecuteCommandHelpers@@YAXAEBVCommand@@AEBVCommandOrigin@@AEBVActor@@AEAV?$vector@PEBVActor@@V?$allocator@PEBVActor@@@std@@@std@@AEAVCommandOutput@@@Z
-     * @hash   -196692369
+     * @hash   -196600113
      */
     MCAPI void runCommand(class Command const &, class CommandOrigin const &, class Actor const &, std::vector<class Actor const *> &, class CommandOutput &);
 

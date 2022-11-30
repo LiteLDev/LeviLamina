@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0CommandWildcardInt@@QEAA@XZ
-     * @hash   -50556234
+     * @hash   -50510106
      */
     MCAPI CommandWildcardInt();
     /**
@@ -41,7 +41,7 @@ public:
     MCAPI int getValue() const;
     /**
      * @symbol ?isWildcard@CommandWildcardInt@@QEBA_NXZ
-     * @hash   -1514707646
+     * @hash   -1514661518
      */
     MCAPI bool isWildcard() const;
 

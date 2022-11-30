@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0ClockSpriteCalculator@@QEAA@XZ
-     * @hash   -295464415
+     * @hash   -295418287
      */
     MCAPI ClockSpriteCalculator();
     /**
@@ -41,12 +41,12 @@ public:
     MCAPI int getFrame() const;
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-     * @hash   -522133742
+     * @hash   -521303438
      */
     MCAPI int update(class Actor &, bool);
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEBVBlockSource@@AEBVVec3@@_N@Z
-     * @hash   772716879
+     * @hash   773547183
      */
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
 

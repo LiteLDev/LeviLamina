@@ -31,47 +31,47 @@ public:
 public:
     /**
      * @symbol ??0WardenSpawnTrackerComponent@@QEAA@XZ
-     * @hash   49869479
+     * @hash   49915607
      */
     MCAPI WardenSpawnTrackerComponent();
     /**
      * @symbol ?addAdditionalSaveData@WardenSpawnTrackerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1298505096
+     * @hash   -1298458968
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEBA_NXZ
-     * @hash   -1419041062
+     * @hash   -1418994934
      */
     MCAPI bool canIncreaseThreatLevel() const;
     /**
      * @symbol ?copyDataFrom@WardenSpawnTrackerComponent@@QEAAXAEBV1@@Z
-     * @hash   -1443696572
+     * @hash   -1443650444
      */
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const &);
     /**
      * @symbol ?readAdditionalSaveData@WardenSpawnTrackerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1133497190
+     * @hash   1133543318
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tick@WardenSpawnTrackerComponent@@QEAAXXZ
-     * @hash   330817101
+     * @hash   330863229
      */
     MCAPI void tick();
     /**
      * @symbol ?tryIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEAAHXZ
-     * @hash   -801969838
+     * @hash   -801923710
      */
     MCAPI int tryIncreaseThreatLevel();
     /**
      * @symbol ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@@@std@@H@Z
-     * @hash   176114138
+     * @hash   176160266
      */
     MCAPI static class std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
     /**
      * @symbol ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1957186488
+     * @hash   1957232616
      */
     MCAPI static bool hasNearbyWarden(class BlockSource &, class BlockPos const &);
 

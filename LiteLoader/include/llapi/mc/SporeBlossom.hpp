@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@SporeBlossom@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1697493502
+     * @hash   1698323806
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@SporeBlossom@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1277985742
+     * @hash   -1277155438
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SporeBlossom@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1045211840
+     * @hash   -1044381536
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@SporeBlossom@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2126892605
+     * @hash   -2126062301
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SporeBlossom@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -781379836
+     * @hash   -780549532
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SporeBlossom@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1522322274
+     * @hash   1522368402
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -267,7 +267,7 @@ public:
 #endif
     /**
      * @symbol ??0SporeBlossom@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -240815524
+     * @hash   -239985220
      */
     MCAPI SporeBlossom(std::string const &, int);
 

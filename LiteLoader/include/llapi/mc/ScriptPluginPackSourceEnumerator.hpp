@@ -47,7 +47,7 @@ public:
     virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const & getPluginSources() const;
     /**
      * @symbol ??0ScriptPluginPackSourceEnumerator@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@2@1@Z
-     * @hash   1321887185
+     * @hash   1321979441
      */
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
 

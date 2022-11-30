@@ -42,7 +42,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@MangroveRootBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   -51325831
+     * @hash   -50495527
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -228,7 +228,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0MangroveRootBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   464489657
+     * @hash   465319961
      */
     MCAPI MangroveRootBlock(std::string const &, int, class Material const &);
 

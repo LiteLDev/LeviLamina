@@ -52,23 +52,23 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftLoom@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -2079432372
+     * @hash   -2078602068
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftLoom@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1824473372
+     * @hash   -1823643068
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
-     * @hash   -700374147
+     * @hash   -699543843
      */
     MCAPI ItemStackRequestActionCraftLoom();
     /**
      * @symbol ?getPatternNameId@ItemStackRequestActionCraftLoom@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   595160748
+     * @hash   595206876
      */
     MCAPI std::string const & getPatternNameId() const;
 

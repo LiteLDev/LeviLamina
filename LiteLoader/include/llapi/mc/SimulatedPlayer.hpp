@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -263950977
+     * @hash   -263904849
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   1425146814
+     * @hash   1425192942
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
@@ -82,7 +82,7 @@ public:
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   131111587
+     * @hash   131157715
      */
     virtual void __unk_vfn_87();
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@SimulatedPlayer@@UEAAXXZ
-     * @hash   277798842
+     * @hash   277844970
      */
     virtual void aiStep();
     /**
@@ -280,19 +280,19 @@ public:
     /**
      * @vftbl  444
      * @symbol ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1323755001
+     * @hash   -1323708873
      */
     virtual std::string getXuid() const;
     /**
      * @vftbl  445
      * @symbol ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
-     * @hash   -1032961282
+     * @hash   -1032915154
      */
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
     /**
      * @vftbl  448
      * @symbol ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
-     * @hash   -1183908139
+     * @hash   -1183862011
      */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /**
@@ -321,214 +321,214 @@ public:
 #endif
     /**
      * @symbol ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
-     * @hash   -608723864
+     * @hash   -608677736
      */
     MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum class GameType, class NetworkIdentifier const &, enum class SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     /**
      * @symbol ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ
-     * @hash   -1850212931
+     * @hash   -1850166803
      */
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
     /**
      * @symbol ?postAiStep@SimulatedPlayer@@QEAAXXZ
-     * @hash   498333435
+     * @hash   498379563
      */
     MCAPI void postAiStep();
     /**
      * @symbol ?preAiStep@SimulatedPlayer@@QEAAXXZ
-     * @hash   768025219
+     * @hash   768071347
      */
     MCAPI void preAiStep();
     /**
      * @symbol ?setGameTestHelper@SimulatedPlayer@@QEAAXV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@@Z
-     * @hash   -1604517327
+     * @hash   -1604471199
      */
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);
     /**
      * @symbol ?setXuid@SimulatedPlayer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1407234456
+     * @hash   -1407188328
      */
     MCAPI void setXuid(std::string const &);
     /**
      * @symbol ?simulateAttack@SimulatedPlayer@@QEAA_NPEAVActor@@@Z
-     * @hash   350690510
+     * @hash   350736638
      */
     MCAPI bool simulateAttack(class Actor *);
     /**
      * @symbol ?simulateAttack@SimulatedPlayer@@QEAA_NXZ
-     * @hash   -531908946
+     * @hash   -531862818
      */
     MCAPI bool simulateAttack();
     /**
      * @symbol ?simulateDestroyBlock@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
-     * @hash   118867772
+     * @hash   118913900
      */
     MCAPI bool simulateDestroyBlock(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @symbol ?simulateDisconnect@SimulatedPlayer@@QEAAXXZ
-     * @hash   -1635015901
+     * @hash   -1634969773
      */
     MCAPI void simulateDisconnect();
     /**
      * @symbol ?simulateGiveItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_N@Z
-     * @hash   2110267278
+     * @hash   2110313406
      */
     MCAPI bool simulateGiveItem(class ItemStack &, bool);
     /**
      * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NAEAVActor@@@Z
-     * @hash   1388412289
+     * @hash   1388458417
      */
     MCAPI bool simulateInteract(class Actor &);
     /**
      * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
-     * @hash   1588024732
+     * @hash   1588070860
      */
     MCAPI bool simulateInteract(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NXZ
-     * @hash   -1202681922
+     * @hash   -1202635794
      */
     MCAPI bool simulateInteract();
     /**
      * @symbol ?simulateJump@SimulatedPlayer@@QEAA_NXZ
-     * @hash   -2001831922
+     * @hash   -2001785794
      */
     MCAPI bool simulateJump();
     /**
      * @symbol ?simulateLocalMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
-     * @hash   -2043926445
+     * @hash   -2043880317
      */
     MCAPI void simulateLocalMove(class Vec3 const &, float);
     /**
      * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEAVActor@@@Z
-     * @hash   -2101233840
+     * @hash   -2101187712
      */
     MCAPI void simulateLookAt(class Actor &);
     /**
      * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1867258180
+     * @hash   -1867212052
      */
     MCAPI void simulateLookAt(class BlockPos const &);
     /**
      * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVVec3@@@Z
-     * @hash   1554395324
+     * @hash   1554441452
      */
     MCAPI void simulateLookAt(class Vec3 const &);
     /**
      * @symbol ?simulateMoveToLocation@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
-     * @hash   589345413
+     * @hash   589391541
      */
     MCAPI void simulateMoveToLocation(class Vec3 const &, float);
     /**
      * @symbol ?simulateNavigateToEntity@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVActor@@M@Z
-     * @hash   -513574392
+     * @hash   -513528264
      */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToEntity(class Actor &, float);
     /**
      * @symbol ?simulateNavigateToLocation@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEBVVec3@@M@Z
-     * @hash   1461997964
+     * @hash   1462044092
      */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToLocation(class Vec3 const &, float);
     /**
      * @symbol ?simulateNavigateToLocations@SimulatedPlayer@@QEAAX$$QEAV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@M@Z
-     * @hash   -1470643421
+     * @hash   -1470597293
      */
     MCAPI void simulateNavigateToLocations(std::vector<class Vec3> &&, float);
     /**
      * @symbol ?simulateSetBodyRotation@SimulatedPlayer@@QEAAXM@Z
-     * @hash   -1044437480
+     * @hash   -1044391352
      */
     MCAPI void simulateSetBodyRotation(float);
     /**
      * @symbol ?simulateSetItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_NH@Z
-     * @hash   -404153903
+     * @hash   -404107775
      */
     MCAPI bool simulateSetItem(class ItemStack &, bool, int);
     /**
      * @symbol ?simulateStopDestroyingBlock@SimulatedPlayer@@QEAAXXZ
-     * @hash   609033283
+     * @hash   609079411
      */
     MCAPI void simulateStopDestroyingBlock();
     /**
      * @symbol ?simulateStopInteracting@SimulatedPlayer@@QEAAXXZ
-     * @hash   1342255425
+     * @hash   1342301553
      */
     MCAPI void simulateStopInteracting();
     /**
      * @symbol ?simulateStopMoving@SimulatedPlayer@@QEAAXXZ
-     * @hash   -1780230693
+     * @hash   -1780184565
      */
     MCAPI void simulateStopMoving();
     /**
      * @symbol ?simulateStopUsingItem@SimulatedPlayer@@QEAAXXZ
-     * @hash   -145742249
+     * @hash   -145696121
      */
     MCAPI void simulateStopUsingItem();
     /**
      * @symbol ?simulateUseItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@@Z
-     * @hash   1870778691
+     * @hash   1870824819
      */
     MCAPI bool simulateUseItem(class ItemStack &);
     /**
      * @symbol ?simulateUseItemInSlot@SimulatedPlayer@@QEAA_NH@Z
-     * @hash   -1692094481
+     * @hash   -1692048353
      */
     MCAPI bool simulateUseItemInSlot(int);
     /**
      * @symbol ?simulateUseItemInSlotOnBlock@SimulatedPlayer@@QEAA_NHAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
-     * @hash   -76577874
+     * @hash   -76531746
      */
     MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
     /**
      * @symbol ?simulateUseItemOnBlock@SimulatedPlayer@@QEAA_NAEAVItemStack@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
-     * @hash   1348225080
+     * @hash   1348271208
      */
     MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
     /**
      * @symbol ?simulateWorldMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
-     * @hash   211688995
+     * @hash   211735123
      */
     MCAPI void simulateWorldMove(class Vec3 const &, float);
     /**
      * @symbol ?create@SimulatedPlayer@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@0@Z
-     * @hash   698440551
+     * @hash   698486679
      */
     MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const &);
     /**
      * @symbol ?tryGetFromEntity@SimulatedPlayer@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   1644919289
+     * @hash   1644965417
      */
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
      * @symbol ?_addMoveComponent@SimulatedPlayer@@AEAAXXZ
-     * @hash   -2144357915
+     * @hash   -2144311787
      */
     MCAPI void _addMoveComponent();
     /**
      * @symbol ?_createNavigationResult@SimulatedPlayer@@AEBA?AUScriptNavigationResult@ScriptModuleMinecraft@@PEAVNavigationComponent@@@Z
-     * @hash   -629259155
+     * @hash   -629213027
      */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
     /**
      * @symbol ?_getInputSpeed@SimulatedPlayer@@AEAAMXZ
-     * @hash   -1589063513
+     * @hash   -1589017385
      */
     MCAPI float _getInputSpeed();
     /**
      * @symbol ?_startCooldown@SimulatedPlayer@@AEAAXXZ
-     * @hash   -675451927
+     * @hash   -675405799
      */
     MCAPI void _startCooldown();
     /**
      * @symbol ?_trySwing@SimulatedPlayer@@AEAA_NXZ
-     * @hash   1987319687
+     * @hash   1987365815
      */
     MCAPI bool _trySwing();
     /**
      * @symbol ?_updateMovement@SimulatedPlayer@@AEAAXXZ
-     * @hash   -1814788638
+     * @hash   -1814742510
      */
     MCAPI void _updateMovement();
 

@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getUnknownBlock@MockUnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
-     * @hash   466290652
+     * @hash   467120956
      */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
 

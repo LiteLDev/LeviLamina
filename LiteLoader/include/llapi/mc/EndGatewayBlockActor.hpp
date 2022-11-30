@@ -150,17 +150,17 @@ public:
     MCAPI void teleportEntity(class Actor &);
     /**
      * @symbol ?COOLDOWN_TIME@EndGatewayBlockActor@@2HB
-     * @hash   -1479299265
+     * @hash   -1479176257
      */
     MCAPI static int const COOLDOWN_TIME;
     /**
      * @symbol ?EVENT_COOLDOWN@EndGatewayBlockActor@@2HB
-     * @hash   403939013
+     * @hash   404062021
      */
     MCAPI static int const EVENT_COOLDOWN;
     /**
      * @symbol ?SPAWN_TIME@EndGatewayBlockActor@@2HB
-     * @hash   -65059811
+     * @hash   -64936803
      */
     MCAPI static int const SPAWN_TIME;
     /**

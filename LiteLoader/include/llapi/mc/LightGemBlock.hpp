@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  71
      * @symbol ?dispense@LightGemBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -131531312
+     * @hash   -130701008
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
@@ -225,18 +225,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@LightGemBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   443239850
+     * @hash   444070154
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@LightGemBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1276879554
+     * @hash   1277709858
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0LightGemBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   875916827
+     * @hash   876747131
      */
     MCAPI LightGemBlock(std::string const &, int, class Material const &);
 

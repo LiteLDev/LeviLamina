@@ -34,7 +34,7 @@ public:
     MCAPI CommandFilePath();
     /**
      * @symbol ?findInvalidCharacter@CommandFilePath@@QEBAHXZ
-     * @hash   -71643924
+     * @hash   -71597796
      */
     MCAPI int findInvalidCharacter() const;
     /**

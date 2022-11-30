@@ -32,49 +32,49 @@ public:
 public:
     /**
      * @symbol ?registerHardCodedItemTags@VanillaItems@@SAXVItemRegistryRef@@@Z
-     * @hash   -653974204
+     * @hash   -653143900
      */
     MCAPI static void registerHardCodedItemTags(class ItemRegistryRef);
     /**
      * @symbol ?registerItems@VanillaItems@@SAXVItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@_N@Z
-     * @hash   -1964737679
+     * @hash   -1963907375
      */
     MCAPI static void registerItems(class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &, bool);
     /**
      * @symbol ?serverInitCreativeItemsCallback@VanillaItems@@SAXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   378774087
+     * @hash   379604391
      */
     MCAPI static void serverInitCreativeItemsCallback(class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?unregisterItems@VanillaItems@@SAXVItemRegistryRef@@@Z
-     * @hash   1600979366
+     * @hash   1601809670
      */
     MCAPI static void unregisterItems(class ItemRegistryRef);
 
 //private:
     /**
      * @symbol ?_addCommandOnlyCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   270937668
+     * @hash   271767972
      */
     MCAPI static void _addCommandOnlyCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?_addConstructionCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   -1754056462
+     * @hash   -1753226158
      */
     MCAPI static void _addConstructionCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?_addEquipmentCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   -72612037
+     * @hash   -71781733
      */
     MCAPI static void _addEquipmentCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?_addItemsCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   1780177693
+     * @hash   1781007997
      */
     MCAPI static void _addItemsCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?_addNatureCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   -2131473240
+     * @hash   -2130642936
      */
     MCAPI static void _addNatureCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &);
 

@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@GlazedTerracottaBlock@@UEBA_NH@Z
-     * @hash   -1533406559
+     * @hash   -1532576255
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@GlazedTerracottaBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1526137722
+     * @hash   1526968026
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0GlazedTerracottaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   771360825
+     * @hash   772191129
      */
     MCAPI GlazedTerracottaBlock(std::string const &, int);
 

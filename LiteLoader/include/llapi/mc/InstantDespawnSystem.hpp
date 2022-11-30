@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@InstantDespawnSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1576334616
+     * @hash   1576380744
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?createInstantDespawningPlayerCleanupSystem@InstantDespawnSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1335163386
+     * @hash   -1335117258
      */
     MCAPI static struct TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
 

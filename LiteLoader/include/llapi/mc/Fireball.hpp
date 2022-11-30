@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Fireball@@UEAAXXZ
-     * @hash   1587216710
+     * @hash   1587262838
      */
     virtual void normalTick();
     /**
@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -775747439
+     * @hash   -775701311
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -636964853
+     * @hash   -636918725
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   307843698
+     * @hash   307889826
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -199,7 +199,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?getInertia@Fireball@@MEAAMXZ
-     * @hash   -1970479753
+     * @hash   -1970433625
      */
     virtual float getInertia();
     /**
@@ -232,7 +232,7 @@ public:
 #endif
     /**
      * @symbol ??0Fireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1810929169
+     * @hash   1810975297
      */
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

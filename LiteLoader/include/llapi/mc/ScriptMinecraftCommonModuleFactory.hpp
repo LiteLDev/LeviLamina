@@ -35,7 +35,7 @@ public:
     MCAPI ScriptMinecraftCommonModuleFactory();
     /**
      * @symbol ?addCommon@ScriptMinecraftCommonModuleFactory@@QEAAXAEAVModuleBindingBuilder@Scripting@@@Z
-     * @hash   1205337138
+     * @hash   1205706162
      */
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
     /**

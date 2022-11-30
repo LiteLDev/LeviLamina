@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@CoralFan@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   -1202099513
+     * @hash   -1201269209
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@CoralFan@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1709176258
+     * @hash   1710006562
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@CoralFan@@UEBA_NH@Z
-     * @hash   403968712
+     * @hash   404799016
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -179,7 +179,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@CoralFan@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -574247530
+     * @hash   -573417226
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -201,25 +201,25 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@CoralFan@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   418557430
+     * @hash   419387734
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CoralFan@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -117586332
+     * @hash   -116756028
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CoralFan@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1594060520
+     * @hash   1594890824
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@CoralFan@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1884559916
+     * @hash   1885390220
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@CoralFan@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1659129223
+     * @hash   -1658298919
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -274,7 +274,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@CoralFan@@UEBAHAEBVBlock@@@Z
-     * @hash   1847259442
+     * @hash   1848089746
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -285,7 +285,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@CoralFan@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1754148521
+     * @hash   1754978825
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -306,13 +306,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CoralFan@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1755551675
+     * @hash   1756381979
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@CoralFan@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   482104262
+     * @hash   482934566
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -328,7 +328,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@CoralFan@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2051888422
+     * @hash   2052718726
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -345,18 +345,18 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CoralFan@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   711109072
+     * @hash   711939376
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?checkAlive@CoralFan@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1243341608
+     * @hash   1244171912
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ??0CoralFan@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   764138128
+     * @hash   764968432
      */
     MCAPI CoralFan(std::string const &, int);
     /**
@@ -366,7 +366,7 @@ public:
     MCAPI static std::string const CORAL_FAN_NAMES[];
     /**
      * @symbol ?CORAL_FAN_NAMES_COUNT@CoralFan@@2HB
-     * @hash   -740165713
+     * @hash   -740042705
      */
     MCAPI static int const CORAL_FAN_NAMES_COUNT;
 

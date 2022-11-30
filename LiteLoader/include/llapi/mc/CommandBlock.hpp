@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -1091080013
+     * @hash   -1090249709
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -737183002
+     * @hash   -736352698
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -60775292
+     * @hash   -59944988
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CommandBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1264417672
+     * @hash   -1263587368
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@CommandBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   73980577
+     * @hash   74810881
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -209,7 +209,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@CommandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -885536876
+     * @hash   -884706572
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -220,13 +220,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@CommandBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1936621230
+     * @hash   -1935790926
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@CommandBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -391886004
+     * @hash   -391055700
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -168531294
+     * @hash   -167700990
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1182208760
+     * @hash   1183039064
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -289,22 +289,22 @@ public:
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   -655595700
+     * @hash   -654765396
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   -654733683
+     * @hash   -653903379
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   -653840914
+     * @hash   -653010610
      */
     virtual void __unk_vfn_196();
     /**
      * @vftbl  197
-     * @hash   -652917393
+     * @hash   -652087089
      */
     virtual void __unk_vfn_197();
     /**
@@ -326,49 +326,49 @@ public:
 #endif
     /**
      * @symbol ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
-     * @hash   1498971931
+     * @hash   1499802235
      */
     MCAPI CommandBlock(std::string const &, int, enum class CommandBlockMode);
     /**
      * @symbol ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1401384133
+     * @hash   -1400553829
      */
     MCAPI void execute(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?getMode@CommandBlock@@QEBA?AW4CommandBlockMode@@XZ
-     * @hash   1456657964
+     * @hash   1457488268
      */
     MCAPI enum class CommandBlockMode getMode() const;
     /**
      * @symbol ?updateBlock@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@W4CommandBlockMode@@_N@Z
-     * @hash   -984237819
+     * @hash   -983407515
      */
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum class CommandBlockMode, bool) const;
     /**
      * @symbol ?_getCommandBlockActor@CommandBlock@@SAPEAVCommandBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1426895263
+     * @hash   1427725567
      */
     MCAPI static class CommandBlockActor * _getCommandBlockActor(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_execute@CommandBlock@@AEBAXAEAVBlockSource@@AEAVCommandBlockActor@@AEBVBlockPos@@_N@Z
-     * @hash   1477394374
+     * @hash   1478224678
      */
     MCAPI void _execute(class BlockSource &, class CommandBlockActor &, class BlockPos const &, bool) const;
     /**
      * @symbol ?_executeChain@CommandBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -852624094
+     * @hash   -851793790
      */
     MCAPI void _executeChain(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_executeChainBlock@CommandBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVCommandBlockActor@@_N@Z
-     * @hash   -1937637010
+     * @hash   -1936806706
      */
     MCAPI bool _executeChainBlock(class BlockSource &, class BlockPos const &, class CommandBlockActor &, bool) const;
     /**
      * @symbol ?_installCircuit@CommandBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -1500785842
+     * @hash   -1499955538
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
 

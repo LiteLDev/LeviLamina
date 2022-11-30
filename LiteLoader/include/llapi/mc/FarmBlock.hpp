@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@FarmBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -896020569
+     * @hash   -895190265
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -161,7 +161,7 @@ public:
     /**
      * @vftbl  72
      * @symbol ?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
-     * @hash   -305307974
+     * @hash   -304477670
      */
     virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1790955529
+     * @hash   1791785833
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@FarmBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -976960269
+     * @hash   -976129965
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@FarmBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1237278201
+     * @hash   -1236447897
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -245,13 +245,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   429587101
+     * @hash   430417405
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -627777542
+     * @hash   -626947238
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@FarmBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1301581273
+     * @hash   1302411577
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -273,7 +273,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@FarmBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   580287941
+     * @hash   581118245
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FARMBLOCK
@@ -285,7 +285,7 @@ public:
 #endif
     /**
      * @symbol ??0FarmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   600575813
+     * @hash   601406117
      */
     MCAPI FarmBlock(std::string const &, int);
     /**

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PersonaAnimationDefinition@@QEAA@XZ
-     * @hash   -1087202331
+     * @hash   -1087156203
      */
     MCAPI ~PersonaAnimationDefinition();
     /**

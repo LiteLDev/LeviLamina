@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0AsynchronousIPResolver@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1803036806
+     * @hash   -1802990678
      */
     MCAPI AsynchronousIPResolver(std::string);
     /**
      * @symbol ?getIp@AsynchronousIPResolver@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1996442190
+     * @hash   1996488318
      */
     MCAPI std::string getIp() const;
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI std::string const & getOriginalUrl() const;
     /**
      * @symbol ?isDone@AsynchronousIPResolver@@QEBA_NXZ
-     * @hash   -685286356
+     * @hash   -685240228
      */
     MCAPI bool isDone() const;
     /**
@@ -59,7 +59,7 @@ public:
 //private:
     /**
      * @symbol ?_resolve@AsynchronousIPResolver@@AEAAXXZ
-     * @hash   408372164
+     * @hash   408418292
      */
     MCAPI void _resolve();
 

@@ -95,41 +95,41 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   -320036831
+     * @hash   -319206527
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@SignItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1059328114
+     * @hash   -1058497810
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @vftbl  133
      * @symbol ?getBlockToPlace@SignItem@@MEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
-     * @hash   395612081
+     * @hash   396442385
      */
     virtual class Block const * getBlockToPlace(unsigned char, class Actor const &, class BlockPos) const;
     /**
      * @vftbl  134
      * @symbol ?_initializeTags@SignItem@@EEAAXXZ
-     * @hash   1029920593
+     * @hash   1030750897
      */
     virtual void _initializeTags();
     /**
      * @symbol ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlockActor@@@Z
-     * @hash   -1851496099
+     * @hash   -1850665795
      */
     MCAPI SignItem(std::string const &, int, enum class SignBlockActor::SignType);
 

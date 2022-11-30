@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?outOfWorld@ThrownTrident@@UEAAXXZ
-     * @hash   -535041158
+     * @hash   -534995030
      */
     virtual void outOfWorld();
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ThrownTrident@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -61264061
+     * @hash   -61217933
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@ThrownTrident@@UEAAXXZ
-     * @hash   1422676481
+     * @hash   1422722609
      */
     virtual void normalTick();
     /**
@@ -88,7 +88,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?playerTouch@ThrownTrident@@UEAAXAEAVPlayer@@@Z
-     * @hash   -156041912
+     * @hash   -155995784
      */
     virtual void playerTouch(class Player &);
     /**
@@ -124,13 +124,13 @@ public:
     /**
      * @vftbl  132
      * @symbol ?isEnchanted@ThrownTrident@@UEBA_NXZ
-     * @hash   -1179464276
+     * @hash   -1179418148
      */
     virtual bool isEnchanted() const;
     /**
      * @vftbl  152
      * @symbol ?despawn@ThrownTrident@@UEAAXXZ
-     * @hash   -1465399321
+     * @hash   -1465353193
      */
     virtual void despawn();
     /**
@@ -171,19 +171,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@ThrownTrident@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   810378374
+     * @hash   810424502
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ThrownTrident@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1037747686
+     * @hash   1037793814
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ThrownTrident@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1567841159
+     * @hash   1567887287
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -199,33 +199,33 @@ public:
     /**
      * @vftbl  282
      * @symbol ?shoot@ThrownTrident@@UEAAXAEBVVec3@@MM0@Z
-     * @hash   -1604537932
+     * @hash   -1604491804
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
      * @vftbl  284
      * @symbol ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
-     * @hash   40509287
+     * @hash   40555415
      */
     virtual class ItemStack _getPickupItem() const;
     /**
      * @symbol ??0ThrownTrident@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -2013449162
+     * @hash   -2013403034
      */
     MCAPI ThrownTrident(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getPickupItem@ThrownTrident@@QEBA?AVItemStack@@XZ
-     * @hash   -948254670
+     * @hash   -948208542
      */
     MCAPI class ItemStack getPickupItem() const;
     /**
      * @symbol ?returnWithLoyalty@ThrownTrident@@QEAAXH@Z
-     * @hash   -86854650
+     * @hash   -86808522
      */
     MCAPI void returnWithLoyalty(int);
     /**
      * @symbol ?setTridentItem@ThrownTrident@@QEAAXAEBVItemStack@@@Z
-     * @hash   526518930
+     * @hash   526565058
      */
     MCAPI void setTridentItem(class ItemStack const &);
 

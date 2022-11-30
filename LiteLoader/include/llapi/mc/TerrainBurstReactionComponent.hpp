@@ -48,7 +48,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?_onEnd@TerrainBurstReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     * @hash   -1629018875
+     * @hash   -1628188571
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0EntityContextBase@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
-     * @hash   -235515393
+     * @hash   -235469265
      */
     MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ?isValid@EntityContextBase@@QEBA_NXZ
-     * @hash   -394968332
+     * @hash   -394922204
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??8EntityContextBase@@QEBA_NAEBV0@@Z
-     * @hash   312821338
+     * @hash   312867466
      */
     MCAPI bool operator==(class EntityContextBase const &) const;
 
@@ -54,22 +54,22 @@ public:
     MCAPI void _assertValid() const;
     /**
      * @symbol ?_enttRegistry@EntityContextBase@@IEAAAEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@XZ
-     * @hash   -909951606
+     * @hash   -909905478
      */
     MCAPI class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> & _enttRegistry();
     /**
      * @symbol ?_enttRegistry@EntityContextBase@@IEBAAEBV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@XZ
-     * @hash   -1843553658
+     * @hash   -1843507530
      */
     MCAPI class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> const & _enttRegistry() const;
     /**
      * @symbol ?_getEntityId@EntityContextBase@@IEBA?AVEntityId@@XZ
-     * @hash   -1847783323
+     * @hash   -1847737195
      */
     MCAPI class EntityId _getEntityId() const;
     /**
      * @symbol ?_getRegistryId@EntityContextBase@@IEBAIXZ
-     * @hash   -1889261308
+     * @hash   -1889215180
      */
     MCAPI unsigned int _getRegistryId() const;
 

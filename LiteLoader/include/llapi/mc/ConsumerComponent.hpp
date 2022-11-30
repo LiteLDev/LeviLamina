@@ -44,19 +44,19 @@ public:
     /**
      * @vftbl  11
      * @symbol ?addSource@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -654352715
+     * @hash   -653522411
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -1762691977
+     * @hash   -1761861673
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   207474113
+     * @hash   208304417
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
@@ -72,7 +72,7 @@ public:
     /**
      * @vftbl  21
      * @symbol ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
-     * @hash   -958461461
+     * @hash   -957631157
      */
     virtual bool isSecondaryPowered() const;
     /**
@@ -83,7 +83,7 @@ public:
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0ConsumerComponent@@QEAA@XZ
-     * @hash   1665272387
+     * @hash   1666102691
      */
     MCAPI ConsumerComponent();
 

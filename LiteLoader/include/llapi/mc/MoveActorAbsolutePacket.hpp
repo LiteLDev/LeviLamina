@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MoveActorAbsolutePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   873733915
+     * @hash   873780043
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MoveActorAbsolutePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   657504712
+     * @hash   657550840
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MoveActorAbsolutePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -702109729
+     * @hash   -702063601
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MoveActorAbsolutePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1214485457
+     * @hash   -1214439329
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MoveActorAbsolutePacket@@QEAA@XZ
-     * @hash   1005779375
+     * @hash   1005825503
      */
     MCAPI MoveActorAbsolutePacket();
     /**
      * @symbol ??0MoveActorAbsolutePacket@@QEAA@AEBVMoveActorAbsoluteData@@@Z
-     * @hash   -421409588
+     * @hash   -421363460
      */
     MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const &);
 

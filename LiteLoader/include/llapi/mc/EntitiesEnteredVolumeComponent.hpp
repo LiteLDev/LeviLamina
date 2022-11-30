@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1EntitiesEnteredVolumeComponent@@QEAA@XZ
-     * @hash   -1931487417
+     * @hash   -1931441289
      */
     MCAPI ~EntitiesEnteredVolumeComponent();
 

@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@HugeMushroomBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -2015855568
+     * @hash   -2015025264
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@HugeMushroomBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1889192143
+     * @hash   -1888361839
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@HugeMushroomBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   261842657
+     * @hash   262672961
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -243,25 +243,25 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@HugeMushroomBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   250990848
+     * @hash   251821152
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@HugeMushroomBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1351891432
+     * @hash   -1351061128
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0HugeMushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Type@0@@Z
-     * @hash   1110356712
+     * @hash   1111187016
      */
     MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum class HugeMushroomBlock::Type);
 
 //private:
     /**
      * @symbol ?_getBlockItemWithState@HugeMushroomBlock@@AEBA?AVItemInstance@@AEBVBlock@@W4MushroomOuterType@@@Z
-     * @hash   1776352517
+     * @hash   1777182821
      */
     MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum class MushroomOuterType) const;
 

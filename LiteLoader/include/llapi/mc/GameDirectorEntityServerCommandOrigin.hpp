@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   -1565505691
+     * @hash   -1565459563
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -64,22 +64,22 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -1654189100
+     * @hash   -1654142972
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@@Z
-     * @hash   1564010099
+     * @hash   1564056227
      */
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level &);
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
-     * @hash   -1535563482
+     * @hash   -1535517354
      */
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     /**
      * @symbol ?load@GameDirectorEntityServerCommandOrigin@@SA?AV?$unique_ptr@VGameDirectorEntityServerCommandOrigin@@U?$default_delete@VGameDirectorEntityServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   1004199758
+     * @hash   1004245886
      */
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

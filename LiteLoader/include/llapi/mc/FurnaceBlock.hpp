@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@FurnaceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   948921605
+     * @hash   949751909
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@FurnaceBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -78585884
+     * @hash   -77755580
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -191,7 +191,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@FurnaceBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -1595569519
+     * @hash   -1594739215
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -202,13 +202,13 @@ public:
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@FurnaceBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   1241590953
+     * @hash   1242421257
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@FurnaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -820006294
+     * @hash   -819175990
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -219,13 +219,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@FurnaceBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1254931036
+     * @hash   1255761340
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@FurnaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1255581162
+     * @hash   1256411466
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@FurnaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1278507935
+     * @hash   1279338239
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@FurnaceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -598284838
+     * @hash   -597454534
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -273,7 +273,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@FurnaceBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1304060579
+     * @hash   1304890883
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCK
@@ -300,12 +300,12 @@ public:
 #endif
     /**
      * @symbol ??0FurnaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   355386158
+     * @hash   356216462
      */
     MCAPI FurnaceBlock(std::string const &, int, bool);
     /**
      * @symbol ?setLit@FurnaceBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@W4BlockActorType@@AEBVBlock@@4@Z
-     * @hash   -868983432
+     * @hash   -868153128
      */
     MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, enum class BlockActorType, class Block const &, class Block const &);
 

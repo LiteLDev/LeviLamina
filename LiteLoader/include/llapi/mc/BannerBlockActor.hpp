@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BannerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -907449637
+     * @hash   -906619333
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BannerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   402230794
+     * @hash   403061098
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -763260700
+     * @hash   -762430396
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  11
      * @symbol ?onPlace@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -685580791
+     * @hash   -684750487
      */
     virtual void onPlace(class BlockSource &);
     /**
@@ -109,27 +109,27 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@BannerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1777172955
+     * @hash   -1776342651
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0BannerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -700103865
+     * @hash   -699273561
      */
     MCAPI BannerBlockActor(class BlockPos const &);
     /**
      * @symbol ?getBaseColorInt@BannerBlockActor@@QEBAEXZ
-     * @hash   -1326209225
+     * @hash   -1325378921
      */
     MCAPI unsigned char getBaseColorInt() const;
     /**
      * @symbol ?setItemValues@BannerBlockActor@@QEAAXAEBVItemStackBase@@@Z
-     * @hash   430044182
+     * @hash   430874486
      */
     MCAPI void setItemValues(class ItemStackBase const &);
     /**
      * @symbol ?MAX_PATTERNS@BannerBlockActor@@2HB
-     * @hash   -1921623423
+     * @hash   -1921500415
      */
     MCAPI static int const MAX_PATTERNS;
     /**
@@ -159,27 +159,27 @@ public:
     MCAPI static std::string const TAG_TYPE;
     /**
      * @symbol ?getBannerType@BannerBlockActor@@SA?AW4BannerBlockType@@PEBVCompoundTag@@@Z
-     * @hash   515609894
+     * @hash   516440198
      */
     MCAPI static enum class BannerBlockType getBannerType(class CompoundTag const *);
     /**
      * @symbol ?getBaseColor@BannerBlockActor@@SAHAEBVItemStack@@@Z
-     * @hash   -1463954905
+     * @hash   -1463124601
      */
     MCAPI static int getBaseColor(class ItemStack const &);
     /**
      * @symbol ?getPatternCount@BannerBlockActor@@SAHPEBVCompoundTag@@@Z
-     * @hash   -1497400206
+     * @hash   -1496569902
      */
     MCAPI static int getPatternCount(class CompoundTag const *);
     /**
      * @symbol ?isDefaultBanner@BannerBlockActor@@SA_NAEBVItemStackBase@@@Z
-     * @hash   644515877
+     * @hash   645346181
      */
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);
     /**
      * @symbol ?removeLastPattern@BannerBlockActor@@SA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -2106697576
+     * @hash   -2105867272
      */
     MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
 

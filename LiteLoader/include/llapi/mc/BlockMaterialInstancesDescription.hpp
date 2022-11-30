@@ -37,13 +37,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockMaterialInstancesDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   507793015
+     * @hash   508623319
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockMaterialInstancesDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   2048652141
+     * @hash   2049482445
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -60,18 +60,18 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockMaterialInstancesDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -248033311
+     * @hash   -247203007
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -1503802831
+     * @hash   -1502972527
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ??0BlockMaterialInstancesDescription@@QEAA@XZ
-     * @hash   -1059478434
+     * @hash   -1058648130
      */
     MCAPI BlockMaterialInstancesDescription();
     /**
@@ -81,7 +81,7 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMaterialInstancesDescription@@SAXXZ
-     * @hash   646239823
+     * @hash   647070127
      */
     MCAPI static void bindType();
 

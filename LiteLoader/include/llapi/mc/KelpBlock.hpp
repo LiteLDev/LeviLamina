@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@KelpBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2031884193
+     * @hash   -2031053889
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1043517785
+     * @hash   -1042687481
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1767773055
+     * @hash   -1766942751
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   557750929
+     * @hash   558581233
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@KelpBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1159834021
+     * @hash   -1159003717
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@KelpBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -835335247
+     * @hash   -834504943
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@KelpBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -1656201909
+     * @hash   -1655371605
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   715880197
+     * @hash   716710501
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   661553301
+     * @hash   662383605
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2073798993
+     * @hash   2073845121
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -297,7 +297,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@KelpBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   811316205
+     * @hash   812146509
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KELPBLOCK
@@ -314,24 +314,24 @@ public:
 #endif
     /**
      * @symbol ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   548287485
+     * @hash   549117789
      */
     MCAPI KelpBlock(std::string const &, int);
     /**
      * @symbol ?shouldGrow@KelpBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1460217606
+     * @hash   1461047910
      */
     MCAPI bool shouldGrow(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_getAge@KelpBlock@@AEBAHAEBVBlock@@@Z
-     * @hash   1046912593
+     * @hash   1047742897
      */
     MCAPI int _getAge(class Block const &) const;
     /**
      * @symbol ?_tryGrow@KelpBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   101289876
+     * @hash   102120180
      */
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
 

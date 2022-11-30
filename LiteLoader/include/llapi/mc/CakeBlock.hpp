@@ -165,19 +165,19 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1176196928
+     * @hash   -1175366624
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1180809047
+     * @hash   1181639351
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CakeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -937113435
+     * @hash   -936283131
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -203,7 +203,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@CakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   1687337345
+     * @hash   1688167649
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CakeBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   102353887
+     * @hash   103184191
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -333942651
+     * @hash   -333112347
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   993118235
+     * @hash   993948539
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -222171718
+     * @hash   -221341414
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -513160293
+     * @hash   -512329989
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -296,17 +296,17 @@ public:
 #endif
     /**
      * @symbol ??0CakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1615396643
+     * @hash   1616226947
      */
     MCAPI CakeBlock(std::string const &, int);
     /**
      * @symbol ?getComparatorSignalFromBites@CakeBlock@@SAHH@Z
-     * @hash   1707340703
+     * @hash   1708171007
      */
     MCAPI static int getComparatorSignalFromBites(int);
     /**
      * @symbol ?removeCakeSlice@CakeBlock@@SAXAEAVPlayer@@AEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@@Z
-     * @hash   -1955009722
+     * @hash   -1954179418
      */
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);
 

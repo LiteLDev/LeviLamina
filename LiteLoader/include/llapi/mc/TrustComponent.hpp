@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0TrustComponent@@QEAA@XZ
-     * @hash   -372861263
+     * @hash   -372815135
      */
     MCAPI TrustComponent();
     /**
      * @symbol ??0TrustComponent@@QEAA@$$QEAV0@@Z
-     * @hash   1806239475
+     * @hash   1806285603
      */
     MCAPI TrustComponent(class TrustComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@TrustComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -890194936
+     * @hash   -890148808
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?assignTrustedPlayer@TrustComponent@@QEAAXUActorUniqueID@@@Z
-     * @hash   -1824836856
+     * @hash   -1824790728
      */
     MCAPI void assignTrustedPlayer(struct ActorUniqueID);
     /**
@@ -66,7 +66,7 @@ public:
     MCAPI class TrustComponent & operator=(class TrustComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@TrustComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1273926724
+     * @hash   1273972852
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

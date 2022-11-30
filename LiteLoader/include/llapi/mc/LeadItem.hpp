@@ -94,33 +94,33 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@LeadItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   665462301
+     * @hash   666292605
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0LeadItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1702916205
+     * @hash   1703746509
      */
     MCAPI LeadItem(std::string const &, int);
     /**
      * @symbol ?bindPlayerMobs@LeadItem@@SA_NAEAVActor@@HHHPEAVItemInstance@@@Z
-     * @hash   1214937486
+     * @hash   1215767790
      */
     MCAPI static bool bindPlayerMobs(class Actor &, int, int, int, class ItemInstance *);
     /**
      * @symbol ?canBindPlayerMobs@LeadItem@@SA_NAEBVActor@@AEBVBlockPos@@@Z
-     * @hash   1581654876
+     * @hash   1582485180
      */
     MCAPI static bool canBindPlayerMobs(class Actor const &, class BlockPos const &);
 

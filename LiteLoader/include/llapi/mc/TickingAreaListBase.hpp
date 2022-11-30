@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?removeDistantEntityAreasAndCheckForRemoved@TickingAreaListBase@@UEAA_NAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@V?$function@$$A6AXAEBVITickingArea@@@Z@3@AEAVLevelStorage@@@Z
-     * @hash   -478595425
+     * @hash   -477765121
      */
     virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
     /**
      * @symbol ?add@TickingAreaListBase@@QEAAXV?$unique_ptr@VITickingArea@@U?$default_delete@VITickingArea@@@std@@@std@@@Z
-     * @hash   61398146
+     * @hash   62228450
      */
     MCAPI void add(std::unique_ptr<class ITickingArea>);
     /**
      * @symbol ?countEntityTickingAreas@TickingAreaListBase@@QEBAIXZ
-     * @hash   -1069995496
+     * @hash   -1069165192
      */
     MCAPI unsigned int countEntityTickingAreas() const;
     /**
      * @symbol ?countStandaloneTickingAreas@TickingAreaListBase@@QEBAIXZ
-     * @hash   9761100
+     * @hash   10591404
      */
     MCAPI unsigned int countStandaloneTickingAreas() const;
     /**
      * @symbol ?destroyAreas@TickingAreaListBase@@QEAAXXZ
-     * @hash   -1795394293
+     * @hash   -1794563989
      */
     MCAPI void destroyAreas();
     /**
      * @symbol ?empty@TickingAreaListBase@@QEBA_NXZ
-     * @hash   236958476
+     * @hash   237004604
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?findStandaloneAreasContaining@TickingAreaListBase@@QEAA?AV?$vector@V?$shared_ptr@VITickingArea@@@std@@V?$allocator@V?$shared_ptr@VITickingArea@@@std@@@2@@std@@AEBVBlockPos@@@Z
-     * @hash   1545755892
+     * @hash   1546586196
      */
     MCAPI std::vector<class std::shared_ptr<class ITickingArea>> findStandaloneAreasContaining(class BlockPos const &);
     /**
      * @symbol ?findStandaloneAreasNamed@TickingAreaListBase@@QEBA?AV?$vector@V?$shared_ptr@VITickingArea@@@std@@V?$allocator@V?$shared_ptr@VITickingArea@@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   725175224
+     * @hash   726005528
      */
     MCAPI std::vector<class std::shared_ptr<class ITickingArea>> findStandaloneAreasNamed(std::string const &) const;
     /**
      * @symbol ?getAreaFor@TickingAreaListBase@@QEBA?AV?$shared_ptr@VITickingArea@@@std@@AEBUActorUniqueID@@@Z
-     * @hash   1419063820
+     * @hash   1419894124
      */
     MCAPI class std::shared_ptr<class ITickingArea> getAreaFor(struct ActorUniqueID const &) const;
     /**
@@ -88,59 +88,59 @@ public:
     MCAPI std::vector<class std::shared_ptr<class ITickingArea>> const & getAreas() const;
     /**
      * @symbol ?getStandaloneTickingAreaDescriptions@TickingAreaListBase@@QEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@XZ
-     * @hash   -1857956862
+     * @hash   -1857126558
      */
     MCAPI std::vector<struct TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
     /**
      * @symbol ?hasTickingAreaNamed@TickingAreaListBase@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2068695181
+     * @hash   -2067864877
      */
     MCAPI bool hasTickingAreaNamed(std::string const &) const;
     /**
      * @symbol ?isPreloadDone@TickingAreaListBase@@QEBA_NXZ
-     * @hash   -890668724
+     * @hash   -889838420
      */
     MCAPI bool isPreloadDone() const;
     /**
      * @symbol ?processRemoves@TickingAreaListBase@@QEAAXXZ
-     * @hash   1217628707
+     * @hash   1218459011
      */
     MCAPI void processRemoves();
     /**
      * @symbol ?processUpdates@TickingAreaListBase@@QEAAXAEAVLevelStorage@@UTick@@@Z
-     * @hash   1745911279
+     * @hash   1746741583
      */
     MCAPI void processUpdates(class LevelStorage &, struct Tick);
     /**
      * @symbol ?removeAllStandaloneAreas@TickingAreaListBase@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@AEAVLevelStorage@@@Z
-     * @hash   -890296279
+     * @hash   -889465975
      */
     MCAPI std::vector<struct TickingAreaDescription> removeAllStandaloneAreas(class LevelStorage &);
     /**
      * @symbol ?removeAreas@TickingAreaListBase@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@AEBV?$vector@V?$shared_ptr@VITickingArea@@@std@@V?$allocator@V?$shared_ptr@VITickingArea@@@std@@@2@@3@AEAVLevelStorage@@@Z
-     * @hash   -586664221
+     * @hash   -585833917
      */
     MCAPI std::vector<struct TickingAreaDescription> removeAreas(std::vector<class std::shared_ptr<class ITickingArea>> const &, class LevelStorage &);
     /**
      * @symbol ?tick@TickingAreaListBase@@QEAAXAEBUTick@@@Z
-     * @hash   1124054990
+     * @hash   1124885294
      */
     MCAPI void tick(struct Tick const &);
     /**
      * @symbol ?tickSeasons@TickingAreaListBase@@QEAAXAEAVRandom@@@Z
-     * @hash   891101416
+     * @hash   891931720
      */
     MCAPI void tickSeasons(class Random &);
     /**
      * @symbol ?updateBlockSourceCurrentTick@TickingAreaListBase@@QEAAXAEBUTick@@@Z
-     * @hash   -1159324098
+     * @hash   -1158493794
      */
     MCAPI void updateBlockSourceCurrentTick(struct Tick const &);
 
 //protected:
     /**
      * @symbol ?_shouldRemoveArea@TickingAreaListBase@@IEBA_NIAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
-     * @hash   -804172725
+     * @hash   -803342421
      */
     MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;
 

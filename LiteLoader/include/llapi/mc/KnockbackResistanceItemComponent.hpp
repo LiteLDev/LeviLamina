@@ -59,28 +59,28 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VKnockbackResistanceItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1970445219
+     * @hash   -1969614915
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VKnockbackResistanceItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   981225843
+     * @hash   982056147
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getProtectionValue@KnockbackResistanceItemComponent@@QEBAMXZ
-     * @hash   1205328150
+     * @hash   1206158454
      */
     MCAPI float getProtectionValue() const;
     /**
      * @symbol ?bindType@KnockbackResistanceItemComponent@@SAXXZ
-     * @hash   846257619
+     * @hash   847087923
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@KnockbackResistanceItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   2049068332
+     * @hash   2049898636
      */
     MCAPI static class HashedString const & getIdentifier();
 

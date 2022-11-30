@@ -128,7 +128,7 @@ public:
 private:
     /**
      * @symbol ?mThreadLocalRandom@Random@@0V?$ThreadLocalObject@VRandom@@V?$allocator@VRandom@@@std@@@Threading@Bedrock@@A
-     * @hash   -173245475
+     * @hash   -173122467
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
 

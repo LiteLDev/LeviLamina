@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@PolarBear@@UEAAXXZ
-     * @hash   -2113114071
+     * @hash   -2113067943
      */
     virtual void normalTick();
     /**
@@ -181,12 +181,12 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   173507886
+     * @hash   173554014
      */
     MCAPI PolarBear(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getStandingAnimationScale@PolarBear@@QEAAMM@Z
-     * @hash   -477851295
+     * @hash   -477805167
      */
     MCAPI float getStandingAnimationScale(float);
 
@@ -195,7 +195,7 @@ public:
 private:
     /**
      * @symbol ?STAND_ANIMATION_TICKS@PolarBear@@0MB
-     * @hash   437112775
+     * @hash   437235783
      */
     MCAPI static float const STAND_ANIMATION_TICKS;
 

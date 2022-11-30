@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -722575551
+     * @hash   -721745247
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -197,7 +197,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@JukeboxBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   475365599
+     * @hash   476195903
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -176543096
+     * @hash   -175712792
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -234,7 +234,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -153431811
+     * @hash   -152601507
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@JukeboxBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1359607972
+     * @hash   -1358777668
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -267,19 +267,19 @@ public:
 #endif
     /**
      * @symbol ??0JukeboxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1533778987
+     * @hash   -1532948683
      */
     MCAPI JukeboxBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_dropRecording@JukeboxBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1788673691
+     * @hash   -1787843387
      */
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_installCircuit@JukeboxBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   230816895
+     * @hash   231647199
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 

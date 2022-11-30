@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getPackSettings@PackSettingsFactory@@QEAAPEAVPackSettings@@AEBVPackManifest@@@Z
-     * @hash   -549753748
+     * @hash   -549707620
      */
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
 

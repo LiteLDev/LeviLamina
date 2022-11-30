@@ -69,7 +69,7 @@ public:
     /**
      * @vftbl  35
      * @symbol ?isWaterBlocking@UnderwaterTorchBlock@@UEBA_NXZ
-     * @hash   -1595919286
+     * @hash   -1595088982
      */
     virtual bool isWaterBlocking() const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@UnderwaterTorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1746869248
+     * @hash   -1746038944
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@UnderwaterTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -340906523
+     * @hash   -340076219
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -248,7 +248,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0UnderwaterTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1950687758
+     * @hash   1951518062
      */
     MCAPI UnderwaterTorchBlock(std::string const &, int);
 

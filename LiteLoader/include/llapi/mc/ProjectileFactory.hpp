@@ -33,27 +33,27 @@ public:
 public:
     /**
      * @symbol ??0ProjectileFactory@@QEAA@AEAVLevel@@@Z
-     * @hash   1260027908
+     * @hash   1260074036
      */
     MCAPI ProjectileFactory(class Level &);
     /**
      * @symbol ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@@Z
-     * @hash   1399388573
+     * @hash   1399434701
      */
     MCAPI class Actor * shootProjectileFromDefinition(struct ActorDefinitionIdentifier const &, class Mob *, class Vec3);
     /**
      * @symbol ?createSubcomponent@ProjectileFactory@@SA?AV?$unique_ptr@VOnHitSubcomponent@@U?$default_delete@VOnHitSubcomponent@@@std@@@std@@AEAVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -683713469
+     * @hash   -683667341
      */
     MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value &, class SemVersion const &, std::string const &);
     /**
      * @symbol ?initFactory@ProjectileFactory@@SAXXZ
-     * @hash   -225983785
+     * @hash   -225937657
      */
     MCAPI static void initFactory();
     /**
      * @symbol ?shutdown@ProjectileFactory@@SAXXZ
-     * @hash   1263736685
+     * @hash   1263782813
      */
     MCAPI static void shutdown();
 

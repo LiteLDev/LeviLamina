@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RotatedPillarBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1060412608
+     * @hash   1061242912
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@RotatedPillarBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1893306137
+     * @hash   1894136441
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@RotatedPillarBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   800668244
+     * @hash   801498548
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -237,12 +237,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RotatedPillarBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1997489640
+     * @hash   1998319944
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0RotatedPillarBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1705646383
+     * @hash   -1704816079
      */
     MCAPI RotatedPillarBlock(std::string const &, int, class Material const &);
 
@@ -251,12 +251,12 @@ public:
 private:
     /**
      * @symbol ?mRotatedX@RotatedPillarBlock@@0QBHB
-     * @hash   -901287936
+     * @hash   -901164928
      */
     MCAPI static int const mRotatedX[];
     /**
      * @symbol ?mRotatedZ@RotatedPillarBlock@@0QBHB
-     * @hash   -2007469862
+     * @hash   -2007346854
      */
     MCAPI static int const mRotatedZ[];
 

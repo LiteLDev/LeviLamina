@@ -122,7 +122,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?getSubPath@PackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1140151621
+     * @hash   -1139321317
      */
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
@@ -134,7 +134,7 @@ public:
     /**
      * @vftbl  17
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
-     * @hash   -306066170
+     * @hash   -305235866
      */
     virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
@@ -152,23 +152,23 @@ public:
     /**
      * @vftbl  20
      * @symbol ?hasUpgradeFiles@PackAccessStrategy@@UEBA_NXZ
-     * @hash   1203864317
+     * @hash   1204694621
      */
     virtual bool hasUpgradeFiles() const;
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@PackAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   -1725634255
+     * @hash   -1724803951
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0PackAccessStrategy@@QEAA@XZ
-     * @hash   1403901260
+     * @hash   1404731564
      */
     MCAPI PackAccessStrategy();
     /**
      * @symbol ?hasGeneratedAssetSet@PackAccessStrategy@@QEBA_NXZ
-     * @hash   4765468
+     * @hash   4811596
      */
     MCAPI bool hasGeneratedAssetSet() const;
     /**
@@ -180,17 +180,17 @@ public:
 //protected:
     /**
      * @symbol ?_addToAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
-     * @hash   -978372141
+     * @hash   -977541837
      */
     MCAPI void _addToAssetSet(class Core::Path const &);
     /**
      * @symbol ?_deleteFromAssetSet@PackAccessStrategy@@IEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   150183615
+     * @hash   151013919
      */
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ?_isInAssetSet@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
-     * @hash   -1530233625
+     * @hash   -1529403321
      */
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@ButtonBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   2121179537
+     * @hash   2122009841
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1009969821
+     * @hash   1010800125
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,25 +195,25 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -722354090
+     * @hash   -721523786
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   345682101
+     * @hash   346512405
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1827850691
+     * @hash   -1827020387
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ButtonBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -637584785
+     * @hash   -636754481
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,19 +224,19 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1908567690
+     * @hash   1909397994
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  108
      * @symbol ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -541725345
+     * @hash   -540895041
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   2039638661
+     * @hash   2040468965
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   809668853
+     * @hash   810499157
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  144
      * @symbol ?getUIShape@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
-     * @hash   1472847953
+     * @hash   1473678257
      */
     virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
     /**
@@ -306,7 +306,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1908202329
+     * @hash   1909032633
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -317,7 +317,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   327931489
+     * @hash   328761793
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -328,13 +328,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1678007792
+     * @hash   1678838096
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@ButtonBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1562169682
+     * @hash   -1561339378
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -345,7 +345,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ButtonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   578883801
+     * @hash   579714105
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONBLOCK
@@ -367,36 +367,36 @@ public:
 #endif
     /**
      * @symbol ?buttonPressed@ButtonBlock@@QEBAXAEAVBlockSource@@AEBVBlock@@AEBVVec3@@PEAVActor@@@Z
-     * @hash   1235178080
+     * @hash   1236008384
      */
     MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     /**
      * @symbol ?canAttachTo@ButtonBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1313485372
+     * @hash   1314315676
      */
     MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, unsigned char);
 
 //protected:
     /**
      * @symbol ??0ButtonBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N@Z
-     * @hash   1329513768
+     * @hash   1330344072
      */
     MCAPI ButtonBlock(std::string const &, int, class Material const &, bool);
 
 //private:
     /**
      * @symbol ?_buttonUnpressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlock@@AEBVVec3@@PEAVActor@@@Z
-     * @hash   1056689721
+     * @hash   1057520025
      */
     MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     /**
      * @symbol ?_checkPressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1820797847
+     * @hash   1821628151
      */
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_getShape@ButtonBlock@@AEBAXAEAVAABB@@_NE1@Z
-     * @hash   -489439063
+     * @hash   -488608759
      */
     MCAPI void _getShape(class AABB &, bool, unsigned char, bool) const;
 

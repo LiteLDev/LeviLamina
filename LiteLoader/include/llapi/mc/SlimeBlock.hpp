@@ -154,7 +154,7 @@ public:
     /**
      * @vftbl  81
      * @symbol ?updateEntityAfterFallOn@SlimeBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   -902422285
+     * @hash   -901591981
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  165
      * @symbol ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   852791713
+     * @hash   853622017
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
@@ -216,7 +216,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@SlimeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   2084373243
+     * @hash   2085203547
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -249,7 +249,7 @@ public:
 #endif
     /**
      * @symbol ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1300740220
+     * @hash   1301570524
      */
     MCAPI SlimeBlock(std::string const &, int, class Material const &);
 

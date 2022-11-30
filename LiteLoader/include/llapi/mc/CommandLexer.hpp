@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0CommandLexer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1340949532
+     * @hash   -1340903404
      */
     MCAPI CommandLexer(std::string const &);
     /**
@@ -42,17 +42,17 @@ public:
     MCAPI struct CommandLexer::Token const & next() const;
     /**
      * @symbol ?step@CommandLexer@@QEAAXXZ
-     * @hash   1304910997
+     * @hash   1304957125
      */
     MCAPI void step();
     /**
      * @symbol ?isDigit@CommandLexer@@SA_ND@Z
-     * @hash   -1144204578
+     * @hash   -1144158450
      */
     MCAPI static bool isDigit(char);
     /**
      * @symbol ?isFilePathCharacter@CommandLexer@@SA_ND@Z
-     * @hash   -293771480
+     * @hash   -293725352
      */
     MCAPI static bool isFilePathCharacter(char);
 

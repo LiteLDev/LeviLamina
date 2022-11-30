@@ -39,23 +39,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     * @hash   1876077915
+     * @hash   1876124043
      */
     virtual void serialize(class Json::Value &);
     /**
      * @vftbl  2
      * @symbol ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     * @hash   -197081156
+     * @hash   -197035028
      */
     virtual void deserialize(class Json::Value &);
     /**
      * @symbol ??0AllowList@@QEAA@V?$function@$$A6AXXZ@std@@@Z
-     * @hash   -51209530
+     * @hash   -51163402
      */
     MCAPI AllowList(class std::function<void (void)>);
     /**
      * @symbol ?addEntry@AllowList@@QEAA_NAEBVAllowListEntry@@@Z
-     * @hash   378607657
+     * @hash   378653785
      */
     MCAPI bool addEntry(class AllowListEntry const &);
     /**
@@ -65,22 +65,22 @@ public:
     MCAPI std::vector<class AllowListEntry> const & getEntries() const;
     /**
      * @symbol ?isAllowed@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   519485416
+     * @hash   519531544
      */
     MCAPI bool isAllowed(class mce::UUID const &, std::string const &) const;
     /**
      * @symbol ?isIgnoringPlayerLimit@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -732064274
+     * @hash   -732018146
      */
     MCAPI bool isIgnoringPlayerLimit(class mce::UUID const &, std::string const &) const;
     /**
      * @symbol ?removeByName@AllowList@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -362635153
+     * @hash   -362589025
      */
     MCAPI bool removeByName(std::string const &);
     /**
      * @symbol ?tryUpdateEntries@AllowList@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -455221952
+     * @hash   -455175824
      */
     MCAPI void tryUpdateEntries(class mce::UUID const &, std::string const &, std::string const &);
 

@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@NpcSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1301837664
+     * @hash   1301883792
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?tickCountdown@NpcSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@ULeaveMenuCountdown@NpcComponents@@@@@Z
-     * @hash   1351084085
+     * @hash   1351130213
      */
     MCAPI static void tickCountdown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct NpcComponents::LeaveMenuCountdown> &);
 

@@ -35,22 +35,22 @@ public:
     MCAPI SeatDescription(struct SeatDescription const &);
     /**
      * @symbol ?addRotationExpressionNode@SeatDescription@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -1813417612
+     * @hash   -1813371484
      */
     MCAPI void addRotationExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ??4SeatDescription@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -796666434
+     * @hash   -796620306
      */
     MCAPI struct SeatDescription & operator=(struct SeatDescription const &);
     /**
      * @symbol ??4SeatDescription@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -392561938
+     * @hash   -392515810
      */
     MCAPI struct SeatDescription & operator=(struct SeatDescription &&);
     /**
      * @symbol ??8SeatDescription@@QEBA_NAEBU0@@Z
-     * @hash   -1221651996
+     * @hash   -1221605868
      */
     MCAPI bool operator==(struct SeatDescription const &) const;
     /**

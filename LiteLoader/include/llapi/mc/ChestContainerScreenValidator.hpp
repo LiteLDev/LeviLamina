@@ -37,7 +37,7 @@ public:
     virtual ~ChestContainerScreenValidator();
     /**
      * @symbol ??0ChestContainerScreenValidator@@QEAA@XZ
-     * @hash   -1014356302
+     * @hash   -1013525998
      */
     MCAPI ChestContainerScreenValidator();
 

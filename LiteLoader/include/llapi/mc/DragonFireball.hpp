@@ -174,7 +174,7 @@ public:
 #endif
     /**
      * @symbol ??0DragonFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   575664068
+     * @hash   575710196
      */
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**

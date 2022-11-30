@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1075832941
+     * @hash   1075879069
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -579772952
+     * @hash   -579726824
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -52,13 +52,13 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@WitherBoss@@UEAAXXZ
-     * @hash   1132082843
+     * @hash   1132128971
      */
     virtual void remove();
     /**
      * @vftbl  28
      * @symbol ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
-     * @hash   -1542067781
+     * @hash   -1542021653
      */
     virtual class Vec3 getFiringPos() const;
     /**
@@ -136,13 +136,13 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1953954050
+     * @hash   -1953907922
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -439052058
+     * @hash   -439005930
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -170,13 +170,13 @@ public:
     /**
      * @vftbl  212
      * @symbol ?canBeAffected@WitherBoss@@UEBA_NI@Z
-     * @hash   -140371847
+     * @hash   -140325719
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
      * @vftbl  213
      * @symbol ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
-     * @hash   -1701850434
+     * @hash   -1701804306
      */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   97324515
+     * @hash   97370643
      */
     virtual void die(class ActorDamageSource const &);
     /**
@@ -213,19 +213,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1042365824
+     * @hash   -1042319696
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2094899831
+     * @hash   2094945959
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1096071734
+     * @hash   1096117862
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -246,13 +246,13 @@ public:
     /**
      * @vftbl  290
      * @symbol ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     * @hash   -707834950
+     * @hash   -707788822
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  295
      * @symbol ?aiStep@WitherBoss@@UEAAXXZ
-     * @hash   -1266753605
+     * @hash   -1266707477
      */
     virtual void aiStep();
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@WitherBoss@@UEBAHXZ
-     * @hash   -2056030845
+     * @hash   -2055984717
      */
     virtual int getArmorValue() const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@WitherBoss@@UEAAXXZ
-     * @hash   1851719710
+     * @hash   1851765838
      */
     virtual void newServerAiStep();
     /**
@@ -289,87 +289,87 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1821688908
+     * @hash   1821735036
      */
     MCAPI WitherBoss(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?awardSpawnWitherAchievement@WitherBoss@@QEBAXXZ
-     * @hash   376716561
+     * @hash   376762689
      */
     MCAPI void awardSpawnWitherAchievement() const;
     /**
      * @symbol ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
-     * @hash   26758007
+     * @hash   26804135
      */
     MCAPI class Vec3 getHeadPos(int) const;
     /**
      * @symbol ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-     * @hash   -1062946267
+     * @hash   -1062900139
      */
     MCAPI class Vec2 getHeadRot(int);
     /**
      * @symbol ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
-     * @hash   114367032
+     * @hash   114413160
      */
     MCAPI int getInvulnerableTicks() const;
     /**
      * @symbol ?getOverlayAlpha@WitherBoss@@QEAAMXZ
-     * @hash   1270481510
+     * @hash   1270527638
      */
     MCAPI float getOverlayAlpha();
     /**
      * @symbol ?getSwellAmount@WitherBoss@@QEBAMM@Z
-     * @hash   617337697
+     * @hash   617383825
      */
     MCAPI float getSwellAmount(float) const;
     /**
      * @symbol ?hasAerialAttack@WitherBoss@@QEBA_NXZ
-     * @hash   -1809245344
+     * @hash   -1809199216
      */
     MCAPI bool hasAerialAttack() const;
     /**
      * @symbol ?postAiStep@WitherBoss@@QEAAXXZ
-     * @hash   -1783954155
+     * @hash   -1783908027
      */
     MCAPI void postAiStep();
     /**
      * @symbol ?preAiStep@WitherBoss@@QEAA?AW4WitherBossPreAIStepResult@@XZ
-     * @hash   1389505282
+     * @hash   1389551410
      */
     MCAPI enum class WitherBossPreAIStepResult preAiStep();
     /**
      * @symbol ?removeSkeleton@WitherBoss@@QEAAXXZ
-     * @hash   -483833627
+     * @hash   -483787499
      */
     MCAPI void removeSkeleton();
     /**
      * @symbol ?setAerialAttack@WitherBoss@@QEAAX_N@Z
-     * @hash   -1340540532
+     * @hash   -1340494404
      */
     MCAPI void setAerialAttack(bool);
     /**
      * @symbol ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
-     * @hash   1729659581
+     * @hash   1729705709
      */
     MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
     /**
      * @symbol ?setIsPathing@WitherBoss@@QEAAX_N@Z
-     * @hash   1902194636
+     * @hash   1902240764
      */
     MCAPI void setIsPathing(bool);
     /**
      * @symbol ?setShotDelay@WitherBoss@@QEAAXH@Z
-     * @hash   -294700730
+     * @hash   -294654602
      */
     MCAPI void setShotDelay(int);
     /**
      * @symbol ?setWantsToMove@WitherBoss@@QEAAX_N@Z
-     * @hash   1713295476
+     * @hash   1713341604
      */
     MCAPI void setWantsToMove(bool);
     /**
      * @symbol ?wantsToMove@WitherBoss@@QEAA_NXZ
-     * @hash   1193893614
+     * @hash   1193939742
      */
     MCAPI bool wantsToMove();
     /**
@@ -379,36 +379,36 @@ public:
     MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
     /**
      * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
-     * @hash   1136157815
+     * @hash   1136203943
      */
     MCAPI static bool canDestroy(class Block const &, enum class WitherBoss::WitherAttackType);
 
 //private:
     /**
      * @symbol ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
-     * @hash   1742281230
+     * @hash   1742327358
      */
     MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum class WitherBoss::WitherAttackType);
     /**
      * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
-     * @hash   18122725
+     * @hash   18168853
      */
     MCAPI void _performRangedAttack(int, class Actor &);
     /**
      * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
-     * @hash   1325119516
+     * @hash   1325165644
      */
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
     /**
      * @symbol ?canShoot@WitherBoss@@AEAA_NXZ
-     * @hash   1085928501
+     * @hash   1085974629
      */
     MCAPI bool canShoot();
 
 private:
     /**
      * @symbol ?TIME_BEFORE_MOVING@WitherBoss@@0HB
-     * @hash   1651495140
+     * @hash   1651618148
      */
     MCAPI static int const TIME_BEFORE_MOVING;
 

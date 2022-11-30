@@ -37,12 +37,12 @@ public:
     MCVAPI bool canAlwaysEat() const;
     /**
      * @symbol ?eatItem@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
-     * @hash   -2014009502
+     * @hash   -2013179198
      */
     MCVAPI class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /**
      * @symbol ?getNutrition@FoodItemComponent@@UEBAHXZ
-     * @hash   -1867431007
+     * @hash   -1867384879
      */
     MCVAPI int getNutrition() const;
     /**
@@ -52,38 +52,38 @@ public:
     MCVAPI float getSaturationModifier() const;
     /**
      * @symbol ?use@FoodItemComponent@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   968047696
+     * @hash   968878000
      */
     MCVAPI bool use(class ItemStack &, class Player &);
     /**
      * @symbol ?useTimeDepleted@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-     * @hash   736853954
+     * @hash   737684258
      */
     MCVAPI class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #endif
     /**
      * @symbol ?getUsingConvertsToItemDescriptor@FoodItemComponent@@QEBA?AVItemDescriptor@@XZ
-     * @hash   -885479328
+     * @hash   -884649024
      */
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
     /**
      * @symbol ??4FoodItemComponent@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -3268916
+     * @hash   -2438612
      */
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     /**
      * @symbol ?bindType@FoodItemComponent@@SAXXZ
-     * @hash   -989120561
+     * @hash   -988290257
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FoodItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1572757792
+     * @hash   -1571927488
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades@FoodItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -544950432
+     * @hash   -544120128
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

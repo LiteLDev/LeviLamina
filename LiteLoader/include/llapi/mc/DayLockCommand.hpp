@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DayLockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1350519023
+     * @hash   1350565151
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@DayLockCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -609058324
+     * @hash   -609012196
      */
     MCAPI static void setup(class CommandRegistry &);
 

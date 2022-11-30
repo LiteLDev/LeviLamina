@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?_addPauseTickNeeded@EditorTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVActorTickNeededComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UEditorActorPauseTickNeededComponent@@@@@Z
-     * @hash   1007874683
+     * @hash   1007920811
      */
     MCAPI static void _addPauseTickNeeded(class StrictEntityContext &, class ActorTickNeededComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EditorActorPauseTickNeededComponent> &);
     /**
      * @symbol ?createAddPauseTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   73925248
+     * @hash   73971376
      */
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
     /**
      * @symbol ?createRemoveActorTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   114317946
+     * @hash   114364074
      */
     MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
 

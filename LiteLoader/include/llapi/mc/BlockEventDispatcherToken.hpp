@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??4BlockEventDispatcherToken@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1332355634
+     * @hash   -1332309506
      */
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     /**
      * @symbol ??1BlockEventDispatcherToken@@QEAA@XZ
-     * @hash   1973374817
+     * @hash   1973420945
      */
     MCAPI ~BlockEventDispatcherToken();
 

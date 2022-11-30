@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@BucketableDescription@@UEBAPEBDXZ
-     * @hash   -1003544708
+     * @hash   -1003498580
      */
     virtual char const * getJsonName() const;
     /**

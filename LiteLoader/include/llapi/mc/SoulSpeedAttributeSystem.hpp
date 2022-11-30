@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_tryProcessSoulSpeed@SoulSpeedAttributeSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   142203603
+     * @hash   142249731
      */
     MCAPI static void _tryProcessSoulSpeed(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
      * @symbol ?createSystem@SoulSpeedAttributeSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -586046044
+     * @hash   -585999916
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

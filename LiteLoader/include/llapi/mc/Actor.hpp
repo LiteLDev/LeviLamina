@@ -97,61 +97,61 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getStatusFlag@Actor@@UEBA_NW4ActorFlags@@@Z
-     * @hash   658160793
+     * @hash   658206921
      */
     virtual bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @vftbl  1
      * @symbol ?setStatusFlag@Actor@@UEAAXW4ActorFlags@@_N@Z
-     * @hash   -371317268
+     * @hash   -371271140
      */
     virtual void setStatusFlag(enum class ActorFlags, bool);
     /**
      * @vftbl  2
      * @symbol ?hasComponent@Actor@@UEBA_NAEBVHashedString@@@Z
-     * @hash   -1329382677
+     * @hash   -1329336549
      */
     virtual bool hasComponent(class HashedString const &) const;
     /**
      * @vftbl  3
      * @symbol ?getLastHurtByMob@Actor@@UEAAPEAVMob@@XZ
-     * @hash   -164764386
+     * @hash   -164718258
      */
     virtual class Mob * getLastHurtByMob();
     /**
      * @vftbl  4
      * @symbol ?setLastHurtByMob@Actor@@UEAAXPEAVMob@@@Z
-     * @hash   -1643760284
+     * @hash   -1643714156
      */
     virtual void setLastHurtByMob(class Mob *);
     /**
      * @vftbl  5
      * @symbol ?getLastHurtByPlayer@Actor@@UEAAPEAVPlayer@@XZ
-     * @hash   1670936074
+     * @hash   1670982202
      */
     virtual class Player * getLastHurtByPlayer();
     /**
      * @vftbl  6
      * @symbol ?setLastHurtByPlayer@Actor@@UEAAXPEAVPlayer@@@Z
-     * @hash   1715806366
+     * @hash   1715852494
      */
     virtual void setLastHurtByPlayer(class Player *);
     /**
      * @vftbl  7
      * @symbol ?getLastHurtMob@Actor@@UEAAPEAVMob@@XZ
-     * @hash   -1199961931
+     * @hash   -1199915803
      */
     virtual class Mob * getLastHurtMob();
     /**
      * @vftbl  8
      * @symbol ?setLastHurtMob@Actor@@UEAAXPEAV1@@Z
-     * @hash   281200384
+     * @hash   281246512
      */
     virtual void setLastHurtMob(class Actor *);
     /**
      * @vftbl  9
      * @symbol ?outOfWorld@Actor@@UEAAXXZ
-     * @hash   979319423
+     * @hash   979365551
      */
     virtual void outOfWorld();
     /**
@@ -163,31 +163,31 @@ public:
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
-     * @hash   1416166356
+     * @hash   1416212484
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
-     * @hash   131014668
+     * @hash   131060796
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  13
      * @symbol ?reloadComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
-     * @hash   -691543659
+     * @hash   -691497531
      */
     virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol ?_serverInitItemStackIds@Actor@@MEAAXXZ
-     * @hash   264441312
+     * @hash   264487440
      */
     virtual void _serverInitItemStackIds();
     /**
      * @vftbl  15
      * @symbol ?_doInitialMove@Actor@@MEAAXXZ
-     * @hash   1099392694
+     * @hash   1099438822
      */
     virtual void _doInitialMove();
     /**
@@ -204,25 +204,25 @@ public:
     /**
      * @vftbl  18
      * @symbol ?getDimensionId@Actor@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   10205858
+     * @hash   10251986
      */
     virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
      * @vftbl  19
      * @symbol ?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ
-     * @hash   -1382840563
+     * @hash   -1382794435
      */
     virtual enum class ActorType getOwnerEntityType();
     /**
      * @vftbl  20
      * @symbol ?remove@Actor@@UEAAXXZ
-     * @hash   330140374
+     * @hash   330186502
      */
     virtual void remove();
     /**
      * @vftbl  21
      * @symbol ?setPos@Actor@@UEAAXAEBVVec3@@@Z
-     * @hash   1958135790
+     * @hash   1958181918
      */
     virtual void setPos(class Vec3 const &);
     /**
@@ -234,61 +234,61 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getPredictedMovementValues@Actor@@UEBAAEBUPredictedMovementValues@@XZ
-     * @hash   327065357
+     * @hash   327111485
      */
     virtual struct PredictedMovementValues const & getPredictedMovementValues() const;
     /**
      * @vftbl  24
      * @symbol ?getPosition@Actor@@UEBAAEBVVec3@@XZ
-     * @hash   1187019704
+     * @hash   1187065832
      */
     virtual class Vec3 const & getPosition() const;
     /**
      * @vftbl  25
      * @symbol ?getPosPrev@Actor@@UEBAAEBVVec3@@XZ
-     * @hash   -1781556182
+     * @hash   -1781510054
      */
     virtual class Vec3 const & getPosPrev() const;
     /**
      * @vftbl  26
      * @symbol ?getPosExtrapolated@Actor@@UEBA?BVVec3@@M@Z
-     * @hash   1344377275
+     * @hash   1344423403
      */
     virtual class Vec3 const getPosExtrapolated(float) const;
     /**
      * @vftbl  27
      * @symbol ?getAttachPos@Actor@@UEBA?AVVec3@@W4ActorLocation@@M@Z
-     * @hash   1038088326
+     * @hash   1038134454
      */
     virtual class Vec3 getAttachPos(enum class ActorLocation, float) const;
     /**
      * @vftbl  28
      * @symbol ?getFiringPos@Actor@@UEBA?AVVec3@@XZ
-     * @hash   -233610426
+     * @hash   -233564298
      */
     virtual class Vec3 getFiringPos() const;
     /**
      * @vftbl  29
      * @symbol ?move@Actor@@UEAAXAEBVVec3@@@Z
-     * @hash   -1144519761
+     * @hash   -1144473633
      */
     virtual void move(class Vec3 const &);
     /**
      * @vftbl  30
      * @symbol ?move@Actor@@UEBAXAEAUIActorMovementProxy@@AEBVVec3@@@Z
-     * @hash   -1253125432
+     * @hash   -1253079304
      */
     virtual void move(struct IActorMovementProxy &, class Vec3 const &) const;
     /**
      * @vftbl  31
      * @symbol ?getInterpolatedRidingPosition@Actor@@UEBA?AVVec3@@M@Z
-     * @hash   -740479762
+     * @hash   -740433634
      */
     virtual class Vec3 getInterpolatedRidingPosition(float) const;
     /**
      * @vftbl  32
      * @symbol ?getInterpolatedBodyRot@Actor@@UEBAMM@Z
-     * @hash   -660435125
+     * @hash   -660388997
      */
     virtual float getInterpolatedBodyRot(float) const;
     /**
@@ -306,43 +306,43 @@ public:
     /**
      * @vftbl  35
      * @symbol ?getYawSpeedInDegreesPerSecond@Actor@@UEBAMXZ
-     * @hash   1666994822
+     * @hash   1667040950
      */
     virtual float getYawSpeedInDegreesPerSecond() const;
     /**
      * @vftbl  36
      * @symbol ?getInterpolatedWalkAnimSpeed@Actor@@UEBAMM@Z
-     * @hash   -1648766317
+     * @hash   -1648720189
      */
     virtual float getInterpolatedWalkAnimSpeed(float) const;
     /**
      * @vftbl  37
      * @symbol ?getInterpolatedRidingOffset@Actor@@UEBA?AVVec3@@MH@Z
-     * @hash   202262953
+     * @hash   202309081
      */
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
      * @vftbl  38
      * @symbol ?resetInterpolated@Actor@@UEAAXXZ
-     * @hash   847349284
+     * @hash   847395412
      */
     virtual void resetInterpolated();
     /**
      * @vftbl  39
      * @symbol ?updateEntityInside@Actor@@UEAAXAEBVAABB@@@Z
-     * @hash   226279783
+     * @hash   226325911
      */
     virtual void updateEntityInside(class AABB const &);
     /**
      * @vftbl  40
      * @symbol ?updateEntityInside@Actor@@UEAAXXZ
-     * @hash   -638385718
+     * @hash   -638339590
      */
     virtual void updateEntityInside();
     /**
      * @vftbl  41
      * @symbol ?isFireImmune@Actor@@UEBA_NXZ
-     * @hash   1854559174
+     * @hash   1854605302
      */
     virtual bool isFireImmune() const;
     /**
@@ -353,121 +353,121 @@ public:
     /**
      * @vftbl  43
      * @symbol ?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z
-     * @hash   -1128409373
+     * @hash   -1128363245
      */
     virtual void blockedByShield(class ActorDamageSource const &, class Actor &);
     /**
      * @vftbl  44
      * @symbol ?canDisableShield@Actor@@UEAA_NXZ
-     * @hash   -582275339
+     * @hash   -582229211
      */
     virtual bool canDisableShield();
     /**
      * @vftbl  45
      * @symbol ?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   988788082
+     * @hash   988834210
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
      * @vftbl  46
      * @symbol ?tryTeleportTo@Actor@@UEAA_NAEBVVec3@@_N1HH@Z
-     * @hash   1479025845
+     * @hash   1479071973
      */
     virtual bool tryTeleportTo(class Vec3 const &, bool, bool, int, int);
     /**
      * @vftbl  47
      * @symbol ?chorusFruitTeleport@Actor@@UEAAXAEBVVec3@@@Z
-     * @hash   -1496355897
+     * @hash   -1496309769
      */
     virtual void chorusFruitTeleport(class Vec3 const &);
     /**
      * @vftbl  48
      * @symbol ?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z
-     * @hash   2118969811
+     * @hash   2119015939
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
      * @vftbl  49
      * @symbol ?tryCreateAddActorPacket@Actor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
-     * @hash   1154015976
+     * @hash   1154062104
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
      * @vftbl  50
      * @symbol ?normalTick@Actor@@UEAAXXZ
-     * @hash   -1858676186
+     * @hash   -1858630058
      */
     virtual void normalTick();
     /**
      * @vftbl  51
      * @symbol ?baseTick@Actor@@UEAAXXZ
-     * @hash   190515136
+     * @hash   190561264
      */
     virtual void baseTick();
     /**
      * @vftbl  52
      * @symbol ?passengerTick@Actor@@UEAAXXZ
-     * @hash   -591147767
+     * @hash   -591101639
      */
     virtual void passengerTick();
     /**
      * @vftbl  53
      * @symbol ?positionPassenger@Actor@@UEAAXAEAV1@M@Z
-     * @hash   -426968666
+     * @hash   -426922538
      */
     virtual void positionPassenger(class Actor &, float);
     /**
      * @vftbl  54
      * @symbol ?startRiding@Actor@@UEAA_NAEAV1@@Z
-     * @hash   1310190500
+     * @hash   1310236628
      */
     virtual bool startRiding(class Actor &);
     /**
      * @vftbl  55
      * @symbol ?addPassenger@Actor@@UEAAXAEAV1@@Z
-     * @hash   1108335716
+     * @hash   1108381844
      */
     virtual void addPassenger(class Actor &);
     /**
      * @vftbl  56
      * @symbol ?flagPassengerToRemove@Actor@@UEAAXAEAV1@@Z
-     * @hash   -41158832
+     * @hash   -41112704
      */
     virtual void flagPassengerToRemove(class Actor &);
     /**
      * @vftbl  57
      * @symbol ?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
-     * @hash   -1408776739
+     * @hash   -1408730611
      */
     virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /**
      * @vftbl  58
      * @symbol ?getEntityLocNameString@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1979078616
+     * @hash   -1979032488
      */
     virtual std::string getEntityLocNameString() const;
     /**
      * @vftbl  59
      * @symbol ?intersects@Actor@@UEBA_NAEBVVec3@@0@Z
-     * @hash   -44346545
+     * @hash   -44300417
      */
     virtual bool intersects(class Vec3 const &, class Vec3 const &) const;
     /**
      * @vftbl  60
      * @symbol ?isInWall@Actor@@UEBA_NXZ
-     * @hash   1665292668
+     * @hash   1665338796
      */
     virtual bool isInWall() const;
     /**
      * @vftbl  61
      * @symbol ?isInvisible@Actor@@UEBA_NXZ
-     * @hash   -1413841274
+     * @hash   -1413795146
      */
     virtual bool isInvisible() const;
     /**
      * @vftbl  62
      * @symbol ?canShowNameTag@Actor@@UEBA_NXZ
-     * @hash   -1658035483
+     * @hash   -1657989355
      */
     virtual bool canShowNameTag() const;
     /**
@@ -478,13 +478,13 @@ public:
     /**
      * @vftbl  64
      * @symbol ?setNameTagVisible@Actor@@UEAAX_N@Z
-     * @hash   439928837
+     * @hash   439974965
      */
     virtual void setNameTagVisible(bool);
     /**
      * @vftbl  65
      * @symbol ?getNameTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2143449716
+     * @hash   -2143403588
      */
     virtual std::string const & getNameTag() const;
     /**
@@ -496,19 +496,19 @@ public:
     /**
      * @vftbl  67
      * @symbol ?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   686055870
+     * @hash   686101998
      */
     virtual std::string getFormattedNameTag() const;
     /**
      * @vftbl  68
      * @symbol ?filterFormattedNameTag@Actor@@UEAAXAEBVUIProfanityContext@@@Z
-     * @hash   1524826201
+     * @hash   1524872329
      */
     virtual void filterFormattedNameTag(class UIProfanityContext const &);
     /**
      * @vftbl  69
      * @symbol ?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1921038451
+     * @hash   -1920992323
      */
     virtual void setNameTag(std::string const &);
     /**
@@ -519,55 +519,55 @@ public:
     /**
      * @vftbl  71
      * @symbol ?setScoreTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1497600736
+     * @hash   -1497554608
      */
     virtual void setScoreTag(std::string const &);
     /**
      * @vftbl  72
      * @symbol ?getScoreTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2070772961
+     * @hash   2070819089
      */
     virtual std::string const & getScoreTag() const;
     /**
      * @vftbl  73
      * @symbol ?isInWater@Actor@@UEBA_NXZ
-     * @hash   2133674235
+     * @hash   2133720363
      */
     virtual bool isInWater() const;
     /**
      * @vftbl  74
      * @symbol ?hasEnteredWater@Actor@@UEBA_NXZ
-     * @hash   742906573
+     * @hash   742952701
      */
     virtual bool hasEnteredWater() const;
     /**
      * @vftbl  75
      * @symbol ?isInLava@Actor@@UEBA_NAEBVIConstBlockSource@@@Z
-     * @hash   439518135
+     * @hash   439564263
      */
     virtual bool isInLava(class IConstBlockSource const &) const;
     /**
      * @vftbl  76
      * @symbol ?isUnderLiquid@Actor@@UEBA_NW4MaterialType@@@Z
-     * @hash   -165682428
+     * @hash   -165636300
      */
     virtual bool isUnderLiquid(enum class MaterialType) const;
     /**
      * @vftbl  77
      * @symbol ?isOverWater@Actor@@UEBA_NXZ
-     * @hash   1469823516
+     * @hash   1469869644
      */
     virtual bool isOverWater() const;
     /**
      * @vftbl  78
      * @symbol ?setBlockMovementSlowdownMultiplier@Actor@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
-     * @hash   -1578400145
+     * @hash   -1578354017
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
      * @vftbl  79
      * @symbol ?resetBlockMovementSlowdownMultiplier@Actor@@UEAAXXZ
-     * @hash   -866807213
+     * @hash   -866761085
      */
     virtual void resetBlockMovementSlowdownMultiplier();
     /**
@@ -579,19 +579,19 @@ public:
     /**
      * @vftbl  81
      * @symbol ?getShadowHeightOffs@Actor@@UEAAMXZ
-     * @hash   -132292453
+     * @hash   -132246325
      */
     virtual float getShadowHeightOffs();
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Actor@@UEBAMXZ
-     * @hash   1203683793
+     * @hash   1203729921
      */
     virtual float getShadowRadius() const;
     /**
      * @vftbl  83
      * @symbol ?getHeadLookVector@Actor@@UEBA?AVVec3@@M@Z
-     * @hash   -1446061731
+     * @hash   -1446015603
      */
     virtual class Vec3 getHeadLookVector(float) const;
     /**
@@ -602,13 +602,13 @@ public:
     /**
      * @vftbl  85
      * @symbol ?canSee@Actor@@UEBA_NAEBV1@@Z
-     * @hash   -1354897996
+     * @hash   -1354851868
      */
     virtual bool canSee(class Actor const &) const;
     /**
      * @vftbl  86
      * @symbol ?canSee@Actor@@UEBA_NAEBVVec3@@@Z
-     * @hash   -847296070
+     * @hash   -847249942
      */
     virtual bool canSee(class Vec3 const &) const;
     /**
@@ -619,13 +619,13 @@ public:
     /**
      * @vftbl  88
      * @symbol ?isSkyLit@Actor@@UEAA_NM@Z
-     * @hash   302970686
+     * @hash   303016814
      */
     virtual bool isSkyLit(float);
     /**
      * @vftbl  89
      * @symbol ?getBrightness@Actor@@UEBAMM@Z
-     * @hash   -1436675888
+     * @hash   -1436629760
      */
     virtual float getBrightness(float) const;
     /**
@@ -642,25 +642,25 @@ public:
     /**
      * @vftbl  92
      * @symbol ?onAboveBubbleColumn@Actor@@UEAAX_N@Z
-     * @hash   -2124681990
+     * @hash   -2124635862
      */
     virtual void onAboveBubbleColumn(bool);
     /**
      * @vftbl  93
      * @symbol ?onInsideBubbleColumn@Actor@@UEAAX_N@Z
-     * @hash   -377240387
+     * @hash   -377194259
      */
     virtual void onInsideBubbleColumn(bool);
     /**
      * @vftbl  94
      * @symbol ?isImmobile@Actor@@UEBA_NXZ
-     * @hash   1995818163
+     * @hash   1995864291
      */
     virtual bool isImmobile() const;
     /**
      * @vftbl  95
      * @symbol ?isSilent@Actor@@UEBA_NXZ
-     * @hash   1506988130
+     * @hash   1507034258
      */
     virtual bool isSilent() const;
     /**
@@ -700,7 +700,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?setSneaking@Actor@@UEAAX_N@Z
-     * @hash   1922707850
+     * @hash   1922753978
      */
     virtual void setSneaking(bool);
     /**
@@ -718,19 +718,19 @@ public:
     /**
      * @vftbl  105
      * @symbol ?isAlive@Actor@@UEBA_NXZ
-     * @hash   531271222
+     * @hash   531317350
      */
     virtual bool isAlive() const;
     /**
      * @vftbl  106
      * @symbol ?isOnFire@Actor@@UEBA_NXZ
-     * @hash   398137954
+     * @hash   398184082
      */
     virtual bool isOnFire() const;
     /**
      * @vftbl  107
      * @symbol ?isOnHotBlock@Actor@@UEBA_NXZ
-     * @hash   -1023260484
+     * @hash   -1023214356
      */
     virtual bool isOnHotBlock() const;
     /**
@@ -757,7 +757,7 @@ public:
     /**
      * @vftbl  112
      * @symbol ?isRemotePlayer@Actor@@UEBA_NXZ
-     * @hash   747346580
+     * @hash   747392708
      */
     virtual bool isRemotePlayer() const;
     /**
@@ -768,19 +768,19 @@ public:
     /**
      * @vftbl  114
      * @symbol ?isAffectedByWaterBottle@Actor@@UEBA_NXZ
-     * @hash   -428062133
+     * @hash   -428016005
      */
     virtual bool isAffectedByWaterBottle() const;
     /**
      * @vftbl  115
      * @symbol ?canAttack@Actor@@UEBA_NPEAV1@_N@Z
-     * @hash   650064572
+     * @hash   650110700
      */
     virtual bool canAttack(class Actor *, bool) const;
     /**
      * @vftbl  116
      * @symbol ?setTarget@Actor@@UEAAXPEAV1@@Z
-     * @hash   -1794287082
+     * @hash   -1794240954
      */
     virtual void setTarget(class Actor *);
     /**
@@ -792,31 +792,31 @@ public:
     /**
      * @vftbl  118
      * @symbol ?attack@Actor@@UEAA_NAEAV1@AEBW4ActorDamageCause@@@Z
-     * @hash   -264153078
+     * @hash   -264106950
      */
     virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @vftbl  119
      * @symbol ?performRangedAttack@Actor@@UEAAXAEAV1@M@Z
-     * @hash   1496828453
+     * @hash   1496874581
      */
     virtual void performRangedAttack(class Actor &, float);
     /**
      * @vftbl  120
      * @symbol ?getEquipmentCount@Actor@@UEBAHXZ
-     * @hash   -2020907091
+     * @hash   -2020860963
      */
     virtual int getEquipmentCount() const;
     /**
      * @vftbl  121
      * @symbol ?setOwner@Actor@@UEAAXUActorUniqueID@@@Z
-     * @hash   -220524934
+     * @hash   -220478806
      */
     virtual void setOwner(struct ActorUniqueID);
     /**
      * @vftbl  122
      * @symbol ?setSitting@Actor@@UEAAX_N@Z
-     * @hash   497215808
+     * @hash   497261936
      */
     virtual void setSitting(bool);
     /**
@@ -834,37 +834,37 @@ public:
     /**
      * @vftbl  125
      * @symbol ?getInventorySize@Actor@@UEBAHXZ
-     * @hash   -623191203
+     * @hash   -623145075
      */
     virtual int getInventorySize() const;
     /**
      * @vftbl  126
      * @symbol ?getEquipSlots@Actor@@UEBAHXZ
-     * @hash   547143601
+     * @hash   547189729
      */
     virtual int getEquipSlots() const;
     /**
      * @vftbl  127
      * @symbol ?getChestSlots@Actor@@UEBAHXZ
-     * @hash   -1552365776
+     * @hash   -1552319648
      */
     virtual int getChestSlots() const;
     /**
      * @vftbl  128
      * @symbol ?setStanding@Actor@@UEAAX_N@Z
-     * @hash   585487628
+     * @hash   585533756
      */
     virtual void setStanding(bool);
     /**
      * @vftbl  129
      * @symbol ?canPowerJump@Actor@@UEBA_NXZ
-     * @hash   1145572774
+     * @hash   1145618902
      */
     virtual bool canPowerJump() const;
     /**
      * @vftbl  130
      * @symbol ?setCanPowerJump@Actor@@UEAAX_N@Z
-     * @hash   -198330763
+     * @hash   -198284635
      */
     virtual void setCanPowerJump(bool);
     /**
@@ -876,7 +876,7 @@ public:
     /**
      * @vftbl  132
      * @symbol ?isEnchanted@Actor@@UEBA_NXZ
-     * @hash   801341777
+     * @hash   801387905
      */
     virtual bool isEnchanted() const;
     /**
@@ -888,31 +888,31 @@ public:
     /**
      * @vftbl  134
      * @symbol ?shouldRender@Actor@@UEBA_NXZ
-     * @hash   271392652
+     * @hash   271438780
      */
     virtual bool shouldRender() const;
     /**
      * @vftbl  135
      * @symbol ?playAmbientSound@Actor@@UEAAXXZ
-     * @hash   1894901181
+     * @hash   1894947309
      */
     virtual void playAmbientSound();
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Actor@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -833774465
+     * @hash   -833728337
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   1015063923
+     * @hash   1015110051
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  138
      * @symbol ?getBlockDamageCause@Actor@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
-     * @hash   1774657985
+     * @hash   1774704113
      */
     virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /**
@@ -924,13 +924,13 @@ public:
     /**
      * @vftbl  140
      * @symbol ?doFireHurt@Actor@@UEAA_NH@Z
-     * @hash   -1885470885
+     * @hash   -1885424757
      */
     virtual bool doFireHurt(int);
     /**
      * @vftbl  141
      * @symbol ?onLightningHit@Actor@@UEAAXXZ
-     * @hash   2047644074
+     * @hash   2047690202
      */
     virtual void onLightningHit();
     /**
@@ -942,13 +942,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?feed@Actor@@UEAAXH@Z
-     * @hash   1553828351
+     * @hash   1553874479
      */
     virtual void feed(int);
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
-     * @hash   1522085681
+     * @hash   1522131809
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -960,49 +960,49 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ
-     * @hash   1213239015
+     * @hash   1213285143
      */
     virtual class HashedString const & getActorRendererId() const;
     /**
      * @vftbl  147
      * @symbol ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HH@Z
-     * @hash   495102513
+     * @hash   495148641
      */
     virtual class ItemActor * spawnAtLocation(int, int);
     /**
      * @vftbl  148
      * @symbol ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HHM@Z
-     * @hash   -190407023
+     * @hash   -190360895
      */
     virtual class ItemActor * spawnAtLocation(int, int, float);
     /**
      * @vftbl  149
      * @symbol ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@H@Z
-     * @hash   1374778628
+     * @hash   1374824756
      */
     virtual class ItemActor * spawnAtLocation(class Block const &, int);
     /**
      * @vftbl  150
      * @symbol ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@HM@Z
-     * @hash   1325432286
+     * @hash   1325478414
      */
     virtual class ItemActor * spawnAtLocation(class Block const &, int, float);
     /**
      * @vftbl  151
      * @symbol ?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVItemStack@@M@Z
-     * @hash   756337247
+     * @hash   756383375
      */
     virtual class ItemActor * spawnAtLocation(class ItemStack const &, float);
     /**
      * @vftbl  152
      * @symbol ?despawn@Actor@@UEAAXXZ
-     * @hash   -1904498916
+     * @hash   -1904452788
      */
     virtual void despawn();
     /**
      * @vftbl  153
      * @symbol ?killed@Actor@@UEAAXAEAV1@@Z
-     * @hash   -871465232
+     * @hash   -871419104
      */
     virtual void killed(class Actor &);
     /**
@@ -1014,19 +1014,19 @@ public:
     /**
      * @vftbl  155
      * @symbol ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-     * @hash   -2002690186
+     * @hash   -2002644058
      */
     virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl  156
      * @symbol ?getArmor@Actor@@UEBAAEBVItemStack@@W4ArmorSlot@@@Z
-     * @hash   -1720610201
+     * @hash   -1720564073
      */
     virtual class ItemStack const & getArmor(enum class ArmorSlot) const;
     /**
      * @vftbl  157
      * @symbol ?getAllArmor@Actor@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   -2068555336
+     * @hash   -2068509208
      */
     virtual std::vector<class ItemStack const *> getAllArmor() const;
     /**
@@ -1050,7 +1050,7 @@ public:
     /**
      * @vftbl  161
      * @symbol ?getEquippedSlot@Actor@@UEBAAEBVItemStack@@W4EquipmentSlot@@@Z
-     * @hash   -558073810
+     * @hash   -558027682
      */
     virtual class ItemStack const & getEquippedSlot(enum class EquipmentSlot) const;
     /**
@@ -1062,79 +1062,79 @@ public:
     /**
      * @vftbl  163
      * @symbol ?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z
-     * @hash   1011392103
+     * @hash   1011438231
      */
     virtual void setCarriedItem(class ItemStack const &);
     /**
      * @vftbl  164
      * @symbol ?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ
-     * @hash   -804896830
+     * @hash   -804850702
      */
     virtual class ItemStack const & getCarriedItem() const;
     /**
      * @vftbl  165
      * @symbol ?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z
-     * @hash   -1044947496
+     * @hash   -1044901368
      */
     virtual void setOffhandSlot(class ItemStack const &);
     /**
      * @vftbl  166
      * @symbol ?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ
-     * @hash   982410823
+     * @hash   982456951
      */
     virtual class ItemStack const & getEquippedTotem() const;
     /**
      * @vftbl  167
      * @symbol ?consumeTotem@Actor@@UEAA_NXZ
-     * @hash   -1100681223
+     * @hash   -1100635095
      */
     virtual bool consumeTotem();
     /**
      * @vftbl  168
      * @symbol ?save@Actor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1774450587
+     * @hash   1774496715
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  169
      * @symbol ?saveWithoutId@Actor@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   -1532074764
+     * @hash   -1532028636
      */
     virtual void saveWithoutId(class CompoundTag &) const;
     /**
      * @vftbl  170
      * @symbol ?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1641153686
+     * @hash   1641199814
      */
     virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  171
      * @symbol ?loadLinks@Actor@@UEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z
-     * @hash   -1773071495
+     * @hash   -1773025367
      */
     virtual void loadLinks(class CompoundTag const &, std::vector<struct ActorLink> &, class DataLoadHelper &);
     /**
      * @vftbl  172
      * @symbol ?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ
-     * @hash   -1538677024
+     * @hash   -1538630896
      */
     virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  173
      * @symbol ?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ
-     * @hash   -698673480
+     * @hash   -698627352
      */
     virtual class HashedString const & queryEntityRenderer() const;
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -297906447
+     * @hash   -297860319
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
      * @vftbl  175
      * @symbol ?thawFreezeEffect@Actor@@UEAAXXZ
-     * @hash   -1974388908
+     * @hash   -1974342780
      */
     virtual void thawFreezeEffect();
     /**
@@ -1146,25 +1146,25 @@ public:
     /**
      * @vftbl  177
      * @symbol ?isWearingLeatherArmor@Actor@@UEBA?B_NXZ
-     * @hash   -1987446609
+     * @hash   -1987400481
      */
     virtual bool const isWearingLeatherArmor() const;
     /**
      * @vftbl  178
      * @symbol ?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z
-     * @hash   -200162267
+     * @hash   -200116139
      */
     virtual class AABB getLiquidAABB(enum class MaterialType) const;
     /**
      * @vftbl  179
      * @symbol ?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z
-     * @hash   358734136
+     * @hash   358780264
      */
     virtual void handleInsidePortal(class BlockPos const &);
     /**
      * @vftbl  180
      * @symbol ?getPortalCooldown@Actor@@UEBAHXZ
-     * @hash   -1426283597
+     * @hash   -1426237469
      */
     virtual int getPortalCooldown() const;
     /**
@@ -1187,61 +1187,61 @@ public:
     /**
      * @vftbl  184
      * @symbol ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -461985336
+     * @hash   -461939208
      */
     virtual void changeDimension(class AutomaticID<class Dimension, int>);
     /**
      * @vftbl  185
      * @symbol ?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1592468910
+     * @hash   -1592422782
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
      * @vftbl  186
      * @symbol ?checkFallDamage@Actor@@UEAAXM_N@Z
-     * @hash   939412254
+     * @hash   939458382
      */
     virtual void checkFallDamage(float, bool);
     /**
      * @vftbl  187
      * @symbol ?causeFallDamage@Actor@@UEAAXMMVActorDamageSource@@@Z
-     * @hash   1910911783
+     * @hash   1910957911
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
      * @vftbl  188
      * @symbol ?handleFallDistanceOnServer@Actor@@UEAAXMM_N@Z
-     * @hash   314912048
+     * @hash   314958176
      */
     virtual void handleFallDistanceOnServer(float, float, bool);
     /**
      * @vftbl  189
      * @symbol ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z
-     * @hash   1284764768
+     * @hash   1284810896
      */
     virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &, bool);
     /**
      * @vftbl  190
      * @symbol ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z
-     * @hash   877534365
+     * @hash   877580493
      */
     virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, int, bool);
     /**
      * @vftbl  191
      * @symbol ?onSynchedFlagUpdate@Actor@@UEAAXH_J0@Z
-     * @hash   -1808376333
+     * @hash   -1808330205
      */
     virtual void onSynchedFlagUpdate(int, __int64, __int64);
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Actor@@UEAAXH@Z
-     * @hash   -1565968851
+     * @hash   -1565922723
      */
     virtual void onSynchedDataUpdate(int);
     /**
      * @vftbl  193
      * @symbol ?canAddPassenger@Actor@@UEBA_NAEAV1@@Z
-     * @hash   1065280545
+     * @hash   1065326673
      */
     virtual bool canAddPassenger(class Actor &) const;
     /**
@@ -1270,13 +1270,13 @@ public:
     /**
      * @vftbl  198
      * @symbol ?tickLeash@Actor@@UEAAXXZ
-     * @hash   -1719150926
+     * @hash   -1719104798
      */
     virtual void tickLeash();
     /**
      * @vftbl  199
      * @symbol ?sendMotionPacketIfNeeded@Actor@@UEAAXXZ
-     * @hash   1679679210
+     * @hash   1679725338
      */
     virtual void sendMotionPacketIfNeeded();
     /**
@@ -1288,19 +1288,19 @@ public:
     /**
      * @vftbl  201
      * @symbol ?stopRiding@Actor@@UEAAX_N00@Z
-     * @hash   970861843
+     * @hash   970907971
      */
     virtual void stopRiding(bool, bool, bool);
     /**
      * @vftbl  202
      * @symbol ?startSwimming@Actor@@UEAAXXZ
-     * @hash   981194305
+     * @hash   981240433
      */
     virtual void startSwimming();
     /**
      * @vftbl  203
      * @symbol ?stopSwimming@Actor@@UEAAXXZ
-     * @hash   1804670209
+     * @hash   1804716337
      */
     virtual void stopSwimming();
     /**
@@ -1312,25 +1312,25 @@ public:
     /**
      * @vftbl  205
      * @symbol ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -1958563087
+     * @hash   -1958516959
      */
     virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @vftbl  206
      * @symbol ?isClientSide@Actor@@UEBA_NXZ
-     * @hash   507445935
+     * @hash   507492063
      */
     virtual bool isClientSide() const;
     /**
      * @vftbl  207
      * @symbol ?getMutableAttribute@Actor@@UEAAPEAVAttributeInstance@@AEBVAttribute@@@Z
-     * @hash   -703786830
+     * @hash   -703740702
      */
     virtual class AttributeInstance * getMutableAttribute(class Attribute const &);
     /**
      * @vftbl  208
      * @symbol ?getAttribute@Actor@@UEBAAEBVAttributeInstance@@AEBVAttribute@@@Z
-     * @hash   1851094774
+     * @hash   1851140902
      */
     virtual class AttributeInstance const & getAttribute(class Attribute const &) const;
     /**
@@ -1342,61 +1342,61 @@ public:
     /**
      * @vftbl  210
      * @symbol ?heal@Actor@@UEAAXH@Z
-     * @hash   175051525
+     * @hash   175097653
      */
     virtual void heal(int);
     /**
      * @vftbl  211
      * @symbol ?isInvertedHealAndHarm@Actor@@UEBA_NXZ
-     * @hash   -1525482249
+     * @hash   -1525436121
      */
     virtual bool isInvertedHealAndHarm() const;
     /**
      * @vftbl  212
      * @symbol ?canBeAffected@Actor@@UEBA_NI@Z
-     * @hash   40807134
+     * @hash   40853262
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
      * @vftbl  213
      * @symbol ?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
-     * @hash   7259491
+     * @hash   7305619
      */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
      * @vftbl  214
      * @symbol ?onEffectAdded@Actor@@UEAAXAEAVMobEffectInstance@@@Z
-     * @hash   -2034705836
+     * @hash   -2034659708
      */
     virtual void onEffectAdded(class MobEffectInstance &);
     /**
      * @vftbl  215
      * @symbol ?onEffectUpdated@Actor@@UEAAXAEAVMobEffectInstance@@@Z
-     * @hash   992572457
+     * @hash   992618585
      */
     virtual void onEffectUpdated(class MobEffectInstance &);
     /**
      * @vftbl  216
      * @symbol ?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z
-     * @hash   1102334196
+     * @hash   1102380324
      */
     virtual void onEffectRemoved(class MobEffectInstance &);
     /**
      * @vftbl  217
      * @symbol ?canObstructSpawningAndBlockPlacement@Actor@@UEBA_NXZ
-     * @hash   -348066269
+     * @hash   -348020141
      */
     virtual bool canObstructSpawningAndBlockPlacement() const;
     /**
      * @vftbl  218
      * @symbol ?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ
-     * @hash   1718911330
+     * @hash   1718957458
      */
     virtual class AnimationComponent & getAnimationComponent();
     /**
      * @vftbl  219
      * @symbol ?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z
-     * @hash   524328603
+     * @hash   524374731
      */
     virtual void openContainerComponent(class Player &);
     /**
@@ -1408,7 +1408,7 @@ public:
     /**
      * @vftbl  221
      * @symbol ?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
-     * @hash   1012636657
+     * @hash   1012682785
      */
     virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /**
@@ -1424,19 +1424,19 @@ public:
     /**
      * @vftbl  224
      * @symbol ?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   1931444702
+     * @hash   1931490830
      */
     virtual void getDebugText(std::vector<std::string> &);
     /**
      * @vftbl  225
      * @symbol ?getMapDecorationRotation@Actor@@UEBAMXZ
-     * @hash   -1196734131
+     * @hash   -1196688003
      */
     virtual float getMapDecorationRotation() const;
     /**
      * @vftbl  226
      * @symbol ?getPassengerYRotation@Actor@@UEBAMAEBV1@@Z
-     * @hash   18299486
+     * @hash   18345614
      */
     virtual float getPassengerYRotation(class Actor const &) const;
     /**
@@ -1472,25 +1472,25 @@ public:
     /**
      * @vftbl  232
      * @symbol ?isAttackableGamemode@Actor@@UEBA_NXZ
-     * @hash   -1961159100
+     * @hash   -1961112972
      */
     virtual bool isAttackableGamemode() const;
     /**
      * @vftbl  233
      * @symbol ?add@Actor@@UEAA_NAEAVItemStack@@@Z
-     * @hash   555357666
+     * @hash   555403794
      */
     virtual bool add(class ItemStack &);
     /**
      * @vftbl  234
      * @symbol ?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z
-     * @hash   -984955077
+     * @hash   -984908949
      */
     virtual bool drop(class ItemStack const &, bool);
     /**
      * @vftbl  235
      * @symbol ?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   1574233582
+     * @hash   1574279710
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
@@ -1508,31 +1508,31 @@ public:
     /**
      * @vftbl  238
      * @symbol ?setSize@Actor@@UEAAXMM@Z
-     * @hash   1560886341
+     * @hash   1560932469
      */
     virtual void setSize(float, float);
     /**
      * @vftbl  239
      * @symbol ?onOrphan@Actor@@UEAAXXZ
-     * @hash   -455296279
+     * @hash   -455250151
      */
     virtual void onOrphan();
     /**
      * @vftbl  240
      * @symbol ?wobble@Actor@@UEAAXXZ
-     * @hash   -854876461
+     * @hash   -854830333
      */
     virtual void wobble();
     /**
      * @vftbl  241
      * @symbol ?wasHurt@Actor@@UEAA_NXZ
-     * @hash   -1226061380
+     * @hash   -1226015252
      */
     virtual bool wasHurt();
     /**
      * @vftbl  242
      * @symbol ?startSpinAttack@Actor@@UEAAXXZ
-     * @hash   -490780770
+     * @hash   -490734642
      */
     virtual void startSpinAttack();
     /**
@@ -1544,7 +1544,7 @@ public:
     /**
      * @vftbl  244
      * @symbol ?setDamageNearbyMobs@Actor@@UEAAX_N@Z
-     * @hash   959758103
+     * @hash   959804231
      */
     virtual void setDamageNearbyMobs(bool);
     /**
@@ -1555,13 +1555,13 @@ public:
     /**
      * @vftbl  246
      * @symbol ?reloadLootTable@Actor@@UEAAXXZ
-     * @hash   791317647
+     * @hash   791363775
      */
     virtual void reloadLootTable();
     /**
      * @vftbl  247
      * @symbol ?reloadLootTable@Actor@@UEAAXAEBUEquipmentTableDefinition@@@Z
-     * @hash   512520524
+     * @hash   512566652
      */
     virtual void reloadLootTable(struct EquipmentTableDefinition const &);
     /**
@@ -1572,49 +1572,49 @@ public:
     /**
      * @vftbl  249
      * @symbol ?kill@Actor@@UEAAXXZ
-     * @hash   1035057536
+     * @hash   1035103664
      */
     virtual void kill();
     /**
      * @vftbl  250
      * @symbol ?die@Actor@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -269699336
+     * @hash   -269653208
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  251
      * @symbol ?shouldDropDeathLoot@Actor@@UEBA_NXZ
-     * @hash   -1191616979
+     * @hash   -1191570851
      */
     virtual bool shouldDropDeathLoot() const;
     /**
      * @vftbl  252
      * @symbol ?shouldTick@Actor@@UEBA_NXZ
-     * @hash   1816626643
+     * @hash   1816672771
      */
     virtual bool shouldTick() const;
     /**
      * @vftbl  253
      * @symbol ?applySnapshot@Actor@@UEAAXAEBVEntityContext@@0@Z
-     * @hash   -860260236
+     * @hash   -860214108
      */
     virtual void applySnapshot(class EntityContext const &, class EntityContext const &);
     /**
      * @vftbl  254
      * @symbol ?getNextStep@Actor@@UEAAMM@Z
-     * @hash   1166051267
+     * @hash   1166097395
      */
     virtual float getNextStep(float);
     /**
      * @vftbl  255
      * @symbol ?getLootTable@Actor@@UEAAPEAVLootTable@@XZ
-     * @hash   -1386652966
+     * @hash   -1386606838
      */
     virtual class LootTable * getLootTable();
     /**
      * @vftbl  256
      * @symbol ?interpolatorTick@Actor@@UEAAXXZ
-     * @hash   -2031392666
+     * @hash   -2031346538
      */
     virtual void interpolatorTick();
     /**
@@ -1626,7 +1626,7 @@ public:
     /**
      * @vftbl  258
      * @symbol ?getLastDeathPos@Actor@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   2104175344
+     * @hash   2104221472
      */
     virtual class std::optional<class BlockPos> getLastDeathPos() const;
     /**
@@ -1644,19 +1644,19 @@ public:
     /**
      * @vftbl  261
      * @symbol ?doWaterSplashEffect@Actor@@UEAAXXZ
-     * @hash   -1071810650
+     * @hash   -1071764522
      */
     virtual void doWaterSplashEffect();
     /**
      * @vftbl  262
      * @symbol ?_shouldProvideFeedbackOnHandContainerItemSet@Actor@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
-     * @hash   -2107714231
+     * @hash   -2107668103
      */
     virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum class HandSlot, class ItemStack const &) const;
     /**
      * @vftbl  263
      * @symbol ?_shouldProvideFeedbackOnArmorSet@Actor@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
-     * @hash   -534563367
+     * @hash   -534517239
      */
     virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const &) const;
     /**
@@ -1668,7 +1668,7 @@ public:
     /**
      * @vftbl  265
      * @symbol ?shouldTryMakeStepSound@Actor@@MEAA_NXZ
-     * @hash   -1344059830
+     * @hash   -1344013702
      */
     virtual bool shouldTryMakeStepSound();
     /**
@@ -1679,43 +1679,43 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Actor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1728756619
+     * @hash   1728802747
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  268
      * @symbol ?markHurt@Actor@@MEAAXXZ
-     * @hash   2115514103
+     * @hash   2115560231
      */
     virtual void markHurt();
     /**
      * @vftbl  269
      * @symbol ?_getAnimationComponent@Actor@@MEAAAEAVAnimationComponent@@AEAV?$shared_ptr@VAnimationComponent@@@std@@W4AnimationComponentGroupType@@@Z
-     * @hash   -1796347270
+     * @hash   -1796301142
      */
     virtual class AnimationComponent & _getAnimationComponent(class std::shared_ptr<class AnimationComponent> &, enum class AnimationComponentGroupType);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   893354891
+     * @hash   893401019
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Actor@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -761786302
+     * @hash   -761740174
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   715684429
+     * @hash   715730557
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
      * @vftbl  273
      * @symbol ?_playFlySound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   978456700
+     * @hash   978502828
      */
     virtual void _playFlySound(class BlockPos const &, class Block const &);
     /**
@@ -1726,31 +1726,31 @@ public:
     /**
      * @vftbl  275
      * @symbol ?checkInsideBlocks@Actor@@MEAAXM@Z
-     * @hash   989859501
+     * @hash   989905629
      */
     virtual void checkInsideBlocks(float);
     /**
      * @vftbl  276
      * @symbol ?pushOutOfBlocks@Actor@@MEAAXAEBVVec3@@@Z
-     * @hash   -958370826
+     * @hash   -958324698
      */
     virtual void pushOutOfBlocks(class Vec3 const &);
     /**
      * @vftbl  277
      * @symbol ?spawnTrailBubbles@Actor@@MEAAXXZ
-     * @hash   210717143
+     * @hash   210763271
      */
     virtual void spawnTrailBubbles();
     /**
      * @vftbl  278
      * @symbol ?updateInsideBlock@Actor@@MEAAXXZ
-     * @hash   657785347
+     * @hash   657831475
      */
     virtual void updateInsideBlock();
     /**
      * @vftbl  279
      * @symbol ?_removePassenger@Actor@@MEAAXAEBUActorUniqueID@@_N11@Z
-     * @hash   879492755
+     * @hash   879538883
      */
     virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /**
@@ -1868,887 +1868,887 @@ public:
 #endif
     /**
      * @symbol ??0Actor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -2071902767
+     * @hash   -2071856639
      */
     MCAPI Actor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
-     * @hash   -1424817081
+     * @hash   -1424770953
      */
     MCAPI Actor(class ILevel &, class EntityContext &);
     /**
      * @symbol ?_sendDirtyActorData@Actor@@QEAAXXZ
-     * @hash   1711613981
+     * @hash   1711660109
      */
     MCAPI void _sendDirtyActorData();
     /**
      * @symbol ?_setActorTypeId@Actor@@QEAAXW4ActorType@@@Z
-     * @hash   93100650
+     * @hash   93146778
      */
     MCAPI void _setActorTypeId(enum class ActorType);
     /**
      * @symbol ?_setLevelPtr@Actor@@QEAAXPEAVLevel@@@Z
-     * @hash   -301791423
+     * @hash   -301745295
      */
     MCAPI void _setLevelPtr(class Level *);
     /**
      * @symbol ?addCategory@Actor@@QEAAXAEBW4ActorCategory@@@Z
-     * @hash   1002269032
+     * @hash   1002315160
      */
     MCAPI void addCategory(enum class ActorCategory const &);
     /**
      * @symbol ?addDefinitionGroup@Actor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1204722600
+     * @hash   -1204676472
      */
     MCAPI void addDefinitionGroup(std::string const &);
     /**
      * @symbol ?addEffect@Actor@@QEAAXAEBVMobEffectInstance@@@Z
-     * @hash   2106307712
+     * @hash   2106353840
      */
     MCAPI void addEffect(class MobEffectInstance const &);
     /**
      * @symbol ?addTag@Actor@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1085934229
+     * @hash   -1085888101
      */
     MCAPI bool addTag(std::string const &);
     /**
      * @symbol ?buildDebugGroupInfo@Actor@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1010822768
+     * @hash   1010868896
      */
     MCAPI void buildDebugGroupInfo(std::string &) const;
     /**
      * @symbol ?buildForward@Actor@@QEBA?AVVec3@@XZ
-     * @hash   248083246
+     * @hash   248129374
      */
     MCAPI class Vec3 buildForward() const;
     /**
      * @symbol ?burn@Actor@@QEAAXH_N@Z
-     * @hash   -1606805175
+     * @hash   -1606759047
      */
     MCAPI void burn(int, bool);
     /**
      * @symbol ?cacheComponentData@Actor@@QEAAXXZ
-     * @hash   214155677
+     * @hash   214201805
      */
     MCAPI void cacheComponentData();
     /**
      * @symbol ?calcCenterPos@Actor@@QEBA?AVVec3@@XZ
-     * @hash   -1360490010
+     * @hash   -1360443882
      */
     MCAPI class Vec3 calcCenterPos() const;
     /**
      * @symbol ?calculateAttackDamage@Actor@@QEAAMAEAV1@@Z
-     * @hash   -148710779
+     * @hash   -148664651
      */
     MCAPI float calculateAttackDamage(class Actor &);
     /**
      * @symbol ?canAscendCurrentBlockByJumping@Actor@@QEBA_NXZ
-     * @hash   -1100070618
+     * @hash   -1100024490
      */
     MCAPI bool canAscendCurrentBlockByJumping() const;
     /**
      * @symbol ?canBeginOrContinueClimbingLadder@Actor@@QEBA_NXZ
-     * @hash   -777053322
+     * @hash   -777007194
      */
     MCAPI bool canBeginOrContinueClimbingLadder() const;
     /**
      * @symbol ?canCurrentlySwim@Actor@@QEBA_NXZ
-     * @hash   -1539381242
+     * @hash   -1539335114
      */
     MCAPI bool canCurrentlySwim() const;
     /**
      * @symbol ?canDescendBlockBelowByCrouching@Actor@@QEBA_NXZ
-     * @hash   1959116052
+     * @hash   1959162180
      */
     MCAPI bool canDescendBlockBelowByCrouching() const;
     /**
      * @symbol ?canFly@Actor@@QEBA_NXZ
-     * @hash   -233339386
+     * @hash   -233293258
      */
     MCAPI bool canFly() const;
     /**
      * @symbol ?canMate@Actor@@QEBA_NAEBV1@@Z
-     * @hash   -330684783
+     * @hash   -330638655
      */
     MCAPI bool canMate(class Actor const &) const;
     /**
      * @symbol ?canReceiveMobEffectsFromGameplay@Actor@@QEBA_NXZ
-     * @hash   2040892102
+     * @hash   2040938230
      */
     MCAPI bool canReceiveMobEffectsFromGameplay() const;
     /**
      * @symbol ?canSeeDaylight@Actor@@QEBA_NXZ
-     * @hash   -1245535562
+     * @hash   -1245489434
      */
     MCAPI bool canSeeDaylight() const;
     /**
      * @symbol ?celebrateHunt@Actor@@QEAAXH_N@Z
-     * @hash   42721511
+     * @hash   42767639
      */
     MCAPI void celebrateHunt(int, bool);
     /**
      * @symbol ?checkInsideCauldron@Actor@@QEAAXXZ
-     * @hash   -1029268559
+     * @hash   -1029222431
      */
     MCAPI void checkInsideCauldron();
     /**
      * @symbol ?clearFishingHookID@Actor@@QEAAXXZ
-     * @hash   932949001
+     * @hash   932995129
      */
     MCAPI void clearFishingHookID();
     /**
      * @symbol ?closerThan@Actor@@QEBA_NAEBV1@M@Z
-     * @hash   1636622728
+     * @hash   1636668856
      */
     MCAPI bool closerThan(class Actor const &, float) const;
     /**
      * @symbol ?closerThan@Actor@@QEBA_NAEBV1@MM@Z
-     * @hash   108294343
+     * @hash   108340471
      */
     MCAPI bool closerThan(class Actor const &, float, float) const;
     /**
      * @symbol ?consumeItem@Actor@@QEAAXAEAVItemActor@@H@Z
-     * @hash   646693969
+     * @hash   646740097
      */
     MCAPI void consumeItem(class ItemActor &, int);
     /**
      * @symbol ?createUpdateEquipPacket@Actor@@QEAA?AVUpdateEquipPacket@@H@Z
-     * @hash   -820518909
+     * @hash   -820472781
      */
     MCAPI class UpdateEquipPacket createUpdateEquipPacket(int);
     /**
      * @symbol ?createUpdateTradePacket@Actor@@QEAA?AVUpdateTradePacket@@H@Z
-     * @hash   -1401261205
+     * @hash   -1401215077
      */
     MCAPI class UpdateTradePacket createUpdateTradePacket(int);
     /**
      * @symbol ?damageSensorComponentHurt@Actor@@QEAA_NAEAMAEBVActorDamageSource@@_N@Z
-     * @hash   -2144845700
+     * @hash   -2144799572
      */
     MCAPI bool damageSensorComponentHurt(float &, class ActorDamageSource const &, bool);
     /**
      * @symbol ?deregisterTagsFromLevelCache@Actor@@QEAAXXZ
-     * @hash   -145825059
+     * @hash   -145778931
      */
     MCAPI void deregisterTagsFromLevelCache();
     /**
      * @symbol ?distanceSqrToBlockPosCenter@Actor@@QEBAMAEBVBlockPos@@@Z
-     * @hash   480453015
+     * @hash   480499143
      */
     MCAPI float distanceSqrToBlockPosCenter(class BlockPos const &) const;
     /**
      * @symbol ?distanceTo@Actor@@QEBAMAEBV1@@Z
-     * @hash   -1293667073
+     * @hash   -1293620945
      */
     MCAPI float distanceTo(class Actor const &) const;
     /**
      * @symbol ?distanceTo@Actor@@QEBAMAEBVVec3@@@Z
-     * @hash   -1186875467
+     * @hash   -1186829339
      */
     MCAPI float distanceTo(class Vec3 const &) const;
     /**
      * @symbol ?distanceToSqr@Actor@@QEBAMAEBV1@@Z
-     * @hash   552394369
+     * @hash   552440497
      */
     MCAPI float distanceToSqr(class Actor const &) const;
     /**
      * @symbol ?distanceToSqr@Actor@@QEBAMAEBVVec3@@@Z
-     * @hash   -272852441
+     * @hash   -272806313
      */
     MCAPI float distanceToSqr(class Vec3 const &) const;
     /**
      * @symbol ?dropLeash@Actor@@QEAAX_N0@Z
-     * @hash   -832205672
+     * @hash   -832159544
      */
     MCAPI void dropLeash(bool, bool);
     /**
      * @symbol ?dropTowards@Actor@@QEAAXAEBVItemStack@@VVec3@@@Z
-     * @hash   1133030223
+     * @hash   1133076351
      */
     MCAPI void dropTowards(class ItemStack const &, class Vec3);
     /**
      * @symbol ?evaluateSeatRotation@Actor@@QEAAMAEBVRideableComponent@@@Z
-     * @hash   -475203007
+     * @hash   -475156879
      */
     MCAPI float evaluateSeatRotation(class RideableComponent const &);
     /**
      * @symbol ?executeEvent@Actor@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVariantParameterList@@@Z
-     * @hash   -1924876680
+     * @hash   -1924830552
      */
     MCAPI bool executeEvent(std::string const &, class VariantParameterList const &);
     /**
      * @symbol ?exitVehicle@Actor@@QEAAXAEBV1@P6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@VehicleUtils@@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@Z@Z
-     * @hash   805412965
+     * @hash   805459093
      */
     MCAPI void exitVehicle(class Actor const &, class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>));
     /**
      * @symbol ?fetchFishingHook@Actor@@QEAAPEAVFishingHook@@XZ
-     * @hash   -773259617
+     * @hash   -773213489
      */
     MCAPI class FishingHook * fetchFishingHook();
     /**
      * @symbol ?fetchNearbyActorsSorted@Actor@@QEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@AEBVVec3@@W4ActorType@@@Z
-     * @hash   -1180120672
+     * @hash   -1180074544
      */
     MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum class ActorType);
     /**
      * @symbol ?forEachLeashedActor@Actor@@QEAAXV?$function@$$A6AXV?$not_null@PEAVActor@@@gsl@@@Z@std@@@Z
-     * @hash   -524086379
+     * @hash   -524040251
      */
     MCAPI void forEachLeashedActor(class std::function<void (class gsl::not_null<class Actor *>)>);
     /**
      * @symbol ?getAABB@Actor@@QEBAAEBVAABB@@XZ
-     * @hash   1912800864
+     * @hash   1912846992
      */
     MCAPI class AABB const & getAABB() const;
     /**
      * @symbol ?getAABBDim@Actor@@QEBAAEBVVec2@@XZ
-     * @hash   -80920426
+     * @hash   -80874298
      */
     MCAPI class Vec2 const & getAABBDim() const;
     /**
      * @symbol ?getActiveEffectCount@Actor@@QEBAHXZ
-     * @hash   1266785930
+     * @hash   1266832058
      */
     MCAPI int getActiveEffectCount() const;
     /**
      * @symbol ?getActorIdentifier@Actor@@QEBAAEBUActorDefinitionIdentifier@@XZ
-     * @hash   762321872
+     * @hash   762368000
      */
     MCAPI struct ActorDefinitionIdentifier const & getActorIdentifier() const;
     /**
      * @symbol ?getAllEffects@Actor@@QEBAAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@XZ
-     * @hash   1329952676
+     * @hash   1329998804
      */
     MCAPI std::vector<class MobEffectInstance> const & getAllEffects() const;
     /**
      * @symbol ?getArmorContainer@Actor@@QEAAAEAVSimpleContainer@@XZ
-     * @hash   1173030986
+     * @hash   1173077114
      */
     MCAPI class SimpleContainer & getArmorContainer();
     /**
      * @symbol ?getArmorContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
-     * @hash   -1781412924
+     * @hash   -1781366796
      */
     MCAPI class SimpleContainer const & getArmorContainer() const;
     /**
      * @symbol ?getAttributes@Actor@@QEAA?AV?$not_null@PEAVBaseAttributeMap@@@gsl@@XZ
-     * @hash   275803473
+     * @hash   275849601
      */
     MCAPI class gsl::not_null<class BaseAttributeMap *> getAttributes();
     /**
      * @symbol ?getAttributes@Actor@@QEBA?AV?$not_null@PEBVBaseAttributeMap@@@gsl@@XZ
-     * @hash   -2103552635
+     * @hash   -2103506507
      */
     MCAPI class gsl::not_null<class BaseAttributeMap const *> getAttributes() const;
     /**
      * @symbol ?getBlockMovementSlowdownMultiplier@Actor@@QEBAAEBVVec3@@XZ
-     * @hash   2054020372
+     * @hash   2054066500
      */
     MCAPI class Vec3 const & getBlockMovementSlowdownMultiplier() const;
     /**
      * @symbol ?getBlockPosCurrentlyStandingOn@Actor@@QEBA?AVBlockPos@@PEBV1@@Z
-     * @hash   -1493646702
+     * @hash   -1493600574
      */
     MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const *) const;
     /**
      * @symbol ?getBlockTarget@Actor@@QEBA?AVBlockPos@@XZ
-     * @hash   -1415156624
+     * @hash   -1415110496
      */
     MCAPI class BlockPos getBlockTarget() const;
     /**
      * @symbol ?getCanPickupItems@Actor@@QEBA_NXZ
-     * @hash   1850248436
+     * @hash   1850294564
      */
     MCAPI bool getCanPickupItems() const;
     /**
      * @symbol ?getCarriedItemInSlotPreferredBy@Actor@@QEBAAEBVItemStack@@AEBV2@@Z
-     * @hash   -1248667296
+     * @hash   -1248621168
      */
     MCAPI class ItemStack const & getCarriedItemInSlotPreferredBy(class ItemStack const &) const;
     /**
      * @symbol ?getCategories@Actor@@QEBA?AW4ActorCategory@@XZ
-     * @hash   1218660840
+     * @hash   1218706968
      */
     MCAPI enum class ActorCategory getCategories() const;
     /**
      * @symbol ?getChainedDamageEffects@Actor@@QEBA_NXZ
-     * @hash   -899086172
+     * @hash   -899040044
      */
     MCAPI bool getChainedDamageEffects() const;
     /**
      * @symbol ?getCollidableMobNear@Actor@@QEBA_NXZ
-     * @hash   1147998342
+     * @hash   1148044470
      */
     MCAPI bool getCollidableMobNear() const;
     /**
      * @symbol ?getColor@Actor@@QEBA?AW4PaletteColor@@XZ
-     * @hash   -1694584562
+     * @hash   -1694538434
      */
     MCAPI enum class PaletteColor getColor() const;
     /**
      * @symbol ?getColor2@Actor@@QEBA?AW4PaletteColor@@XZ
-     * @hash   1105419964
+     * @hash   1105466092
      */
     MCAPI enum class PaletteColor getColor2() const;
     /**
      * @symbol ?getControllingSeat@Actor@@QEBAHXZ
-     * @hash   848155274
+     * @hash   848201402
      */
     MCAPI int getControllingSeat() const;
     /**
      * @symbol ?getCurrentSwimAmount@Actor@@QEBAMXZ
-     * @hash   907632186
+     * @hash   907678314
      */
     MCAPI float getCurrentSwimAmount() const;
     /**
      * @symbol ?getDamageNearbyMobs@Actor@@QEBA_NXZ
-     * @hash   -241773132
+     * @hash   -241727004
      */
     MCAPI bool getDamageNearbyMobs() const;
     /**
      * @symbol ?getDiffList@Actor@@QEBAPEBVActorDefinitionDiffList@@XZ
-     * @hash   807650363
+     * @hash   807696491
      */
     MCAPI class ActorDefinitionDiffList const * getDiffList() const;
     /**
      * @symbol ?getDiffListNonConst@Actor@@QEAAPEAVActorDefinitionDiffList@@XZ
-     * @hash   796967981
+     * @hash   797014109
      */
     MCAPI class ActorDefinitionDiffList * getDiffListNonConst();
     /**
      * @symbol ?getDimension@Actor@@QEBAAEAVDimension@@XZ
-     * @hash   1911664792
+     * @hash   1911710920
      */
     MCAPI class Dimension & getDimension() const;
     /**
      * @symbol ?getDimensionConst@Actor@@QEBAAEBVDimension@@XZ
-     * @hash   -1141962628
+     * @hash   -1141916500
      */
     MCAPI class Dimension const & getDimensionConst() const;
     /**
      * @symbol ?getEconomyTradeableComponent@Actor@@QEBAPEAVEconomyTradeableComponent@@XZ
-     * @hash   -651511195
+     * @hash   -651465067
      */
     MCAPI class EconomyTradeableComponent * getEconomyTradeableComponent() const;
     /**
      * @symbol ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@AEBVMobEffect@@@Z
-     * @hash   1011996112
+     * @hash   1012042240
      */
     MCAPI class MobEffectInstance const * getEffect(class MobEffect const &) const;
     /**
      * @symbol ?getEntityData@Actor@@QEAAAEAVSynchedActorDataEntityWrapper@@XZ
-     * @hash   347136148
+     * @hash   347182276
      */
     MCAPI class SynchedActorDataEntityWrapper & getEntityData();
     /**
      * @symbol ?getEntityData@Actor@@QEBAAEBVSynchedActorDataEntityWrapper@@XZ
-     * @hash   569530894
+     * @hash   569577022
      */
     MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
     /**
      * @symbol ?getEntityRegistry@Actor@@QEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
-     * @hash   -157651183
+     * @hash   -157605055
      */
     MCAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     /**
      * @symbol ?getEntityTerrainInterlockData@Actor@@QEAAAEAVActorTerrainInterlockData@@XZ
-     * @hash   -657793312
+     * @hash   -657747184
      */
     MCAPI class ActorTerrainInterlockData & getEntityTerrainInterlockData();
     /**
      * @symbol ?getEquipmentSlotForItem@Actor@@QEBA?AW4EquipmentSlot@@AEBVItemStack@@@Z
-     * @hash   -1192588421
+     * @hash   -1192542293
      */
     MCAPI enum class EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     /**
      * @symbol ?getFallDistance@Actor@@QEBAMXZ
-     * @hash   2120485666
+     * @hash   2120531794
      */
     MCAPI float getFallDistance() const;
     /**
      * @symbol ?getFirstAvailableSeatPos@Actor@@QEBA_NAEAV1@AEAVVec3@@@Z
-     * @hash   1749993876
+     * @hash   1750040004
      */
     MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     /**
      * @symbol ?getFirstPassenger@Actor@@QEBAPEAV1@XZ
-     * @hash   -1657650167
+     * @hash   -1657604039
      */
     MCAPI class Actor * getFirstPassenger() const;
     /**
      * @symbol ?getHandContainer@Actor@@QEAAAEAVSimpleContainer@@XZ
-     * @hash   1863381952
+     * @hash   1863428080
      */
     MCAPI class SimpleContainer & getHandContainer();
     /**
      * @symbol ?getHandContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
-     * @hash   -1091061958
+     * @hash   -1091015830
      */
     MCAPI class SimpleContainer const & getHandContainer() const;
     /**
      * @symbol ?getHealth@Actor@@QEBAHXZ
-     * @hash   -1680945796
+     * @hash   -1680899668
      */
     MCAPI int getHealth() const;
     /**
      * @symbol ?getHurtDir@Actor@@QEBAHXZ
-     * @hash   -1087922538
+     * @hash   -1087876410
      */
     MCAPI int getHurtDir() const;
     /**
      * @symbol ?getHurtTime@Actor@@QEBAHXZ
-     * @hash   -481012500
+     * @hash   -480966372
      */
     MCAPI int getHurtTime() const;
     /**
      * @symbol ?getInitializationMethod@Actor@@QEAA?AW4InitializationMethod@1@XZ
-     * @hash   1832274838
+     * @hash   1832320966
      */
     MCAPI enum class Actor::InitializationMethod getInitializationMethod();
     /**
      * @symbol ?getInterpolatedPosition@Actor@@QEBA?AVVec3@@M@Z
-     * @hash   -1639054591
+     * @hash   -1639008463
      */
     MCAPI class Vec3 getInterpolatedPosition(float) const;
     /**
      * @symbol ?getInterpolatedRotation@Actor@@QEBA?AVVec2@@M@Z
-     * @hash   -1342207611
+     * @hash   -1342161483
      */
     MCAPI class Vec2 getInterpolatedRotation(float) const;
     /**
      * @symbol ?getIsExperienceDropEnabled@Actor@@QEBA_NXZ
-     * @hash   -1951885722
+     * @hash   -1951839594
      */
     MCAPI bool getIsExperienceDropEnabled() const;
     /**
      * @symbol ?getJumpDuration@Actor@@QEBAHXZ
-     * @hash   -401572504
+     * @hash   -401526376
      */
     MCAPI int getJumpDuration() const;
     /**
      * @symbol ?getLastHurtByMobTime@Actor@@QEAAHXZ
-     * @hash   -1842937154
+     * @hash   -1842891026
      */
     MCAPI int getLastHurtByMobTime();
     /**
      * @symbol ?getLastHurtByMobTimestamp@Actor@@QEAAHXZ
-     * @hash   -858797302
+     * @hash   -858751174
      */
     MCAPI int getLastHurtByMobTimestamp();
     /**
      * @symbol ?getLastHurtCause@Actor@@QEBA?AW4ActorDamageCause@@XZ
-     * @hash   830617604
+     * @hash   830663732
      */
     MCAPI enum class ActorDamageCause getLastHurtCause() const;
     /**
      * @symbol ?getLastHurtDamage@Actor@@QEBAMXZ
-     * @hash   1734847562
+     * @hash   1734893690
      */
     MCAPI float getLastHurtDamage() const;
     /**
      * @symbol ?getLastHurtMobTimestamp@Actor@@QEAAHXZ
-     * @hash   -448579796
+     * @hash   -448533668
      */
     MCAPI int getLastHurtMobTimestamp();
     /**
      * @symbol ?getLastHurtTimestamp@Actor@@QEBA_KXZ
-     * @hash   -215276143
+     * @hash   -215230015
      */
     MCAPI unsigned __int64 getLastHurtTimestamp() const;
     /**
      * @symbol ?getLeashHolder@Actor@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -1554668104
+     * @hash   -1554621976
      */
     MCAPI struct ActorUniqueID getLeashHolder() const;
     /**
      * @symbol ?getLevel@Actor@@QEAAAEAVLevel@@XZ
-     * @hash   1205594682
+     * @hash   1205640810
      */
     MCAPI class Level & getLevel();
     /**
      * @symbol ?getLevel@Actor@@QEBAAEBVLevel@@XZ
-     * @hash   -1067127052
+     * @hash   -1067080924
      */
     MCAPI class Level const & getLevel() const;
     /**
      * @symbol ?getLevelTimeStamp@Actor@@QEBA_KXZ
-     * @hash   1274668143
+     * @hash   1274714271
      */
     MCAPI unsigned __int64 getLevelTimeStamp() const;
     /**
      * @symbol ?getLimitedLifetimeTicks@Actor@@QEBAHXZ
-     * @hash   2049439098
+     * @hash   2049485226
      */
     MCAPI int getLimitedLifetimeTicks() const;
     /**
      * @symbol ?getLinks@Actor@@QEBA?AV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@XZ
-     * @hash   1593826900
+     * @hash   1593873028
      */
     MCAPI std::vector<struct ActorLink> getLinks() const;
     /**
      * @symbol ?getMarkVariant@Actor@@QEBAHXZ
-     * @hash   901685802
+     * @hash   901731930
      */
     MCAPI int getMarkVariant() const;
     /**
      * @symbol ?getMaxAutoStep@Actor@@QEBAMXZ
-     * @hash   -1129692378
+     * @hash   -1129646250
      */
     MCAPI float getMaxAutoStep() const;
     /**
      * @symbol ?getMaxHealth@Actor@@QEBAHXZ
-     * @hash   -18722982
+     * @hash   -18676854
      */
     MCAPI int getMaxHealth() const;
     /**
      * @symbol ?getMolangVariables@Actor@@QEAAAEAVMolangVariableMap@@XZ
-     * @hash   1369477016
+     * @hash   1369523144
      */
     MCAPI class MolangVariableMap & getMolangVariables();
     /**
      * @symbol ?getMovementProxy@Actor@@QEAA?AV?$not_null@V?$shared_ptr@UIActorMovementProxy@@@std@@@gsl@@XZ
-     * @hash   -1788205104
+     * @hash   -1788158976
      */
     MCAPI class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>> getMovementProxy();
     /**
      * @symbol ?getMovementProxy@Actor@@QEBA?AV?$not_null@V?$shared_ptr@$$CBUIActorMovementProxy@@@std@@@gsl@@XZ
-     * @hash   -1269922146
+     * @hash   -1269876018
      */
     MCAPI class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy const>> getMovementProxy() const;
     /**
      * @symbol ?getOffhandSlot@Actor@@QEBAAEBVItemStack@@XZ
-     * @hash   -206322638
+     * @hash   -206276510
      */
     MCAPI class ItemStack const & getOffhandSlot() const;
     /**
      * @symbol ?getOnDeathExperience@Actor@@QEAAHXZ
-     * @hash   -1491200598
+     * @hash   -1491154470
      */
     MCAPI int getOnDeathExperience();
     /**
      * @symbol ?getOnewayPhysicsBlocks@Actor@@QEBAAEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@XZ
-     * @hash   2062342310
+     * @hash   2062388438
      */
     MCAPI std::vector<class AABB> const & getOnewayPhysicsBlocks() const;
     /**
      * @symbol ?getOrAddDynamicProperties@Actor@@QEAAAEAVDynamicProperties@@XZ
-     * @hash   607574456
+     * @hash   607620584
      */
     MCAPI class DynamicProperties & getOrAddDynamicProperties();
     /**
      * @symbol ?getOwner@Actor@@QEBAPEAVMob@@XZ
-     * @hash   -76118117
+     * @hash   -76071989
      */
     MCAPI class Mob * getOwner() const;
     /**
      * @symbol ?getOwnerId@Actor@@QEBA?BUActorUniqueID@@XZ
-     * @hash   472870292
+     * @hash   472916420
      */
     MCAPI struct ActorUniqueID const getOwnerId() const;
     /**
      * @symbol ?getPassengerIndex@Actor@@QEBAHAEBV1@@Z
-     * @hash   963929385
+     * @hash   963975513
      */
     MCAPI int getPassengerIndex(class Actor const &) const;
     /**
      * @symbol ?getPersistingTradeOffers@Actor@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   386833338
+     * @hash   386879466
      */
     MCAPI std::unique_ptr<class CompoundTag> getPersistingTradeOffers();
     /**
      * @symbol ?getPersistingTradeRiches@Actor@@QEAAHXZ
-     * @hash   1374050300
+     * @hash   1374096428
      */
     MCAPI int getPersistingTradeRiches();
     /**
      * @symbol ?getPlayerOwner@Actor@@QEBAPEAVPlayer@@XZ
-     * @hash   1200473229
+     * @hash   1200519357
      */
     MCAPI class Player * getPlayerOwner() const;
     /**
      * @symbol ?getPosDelta@Actor@@QEBAAEBVVec3@@XZ
-     * @hash   -1659914286
+     * @hash   -1659868158
      */
     MCAPI class Vec3 const & getPosDelta() const;
     /**
      * @symbol ?getPosDeltaNonConst@Actor@@QEAAAEAVVec3@@XZ
-     * @hash   -452086828
+     * @hash   -452040700
      */
     MCAPI class Vec3 & getPosDeltaNonConst();
     /**
      * @symbol ?getRadius@Actor@@QEBAMXZ
-     * @hash   492716070
+     * @hash   492762198
      */
     MCAPI float getRadius() const;
     /**
      * @symbol ?getRandom@Actor@@QEBAAEAVRandom@@XZ
-     * @hash   -1606069412
+     * @hash   -1606023284
      */
     MCAPI class Random & getRandom() const;
     /**
      * @symbol ?getRegion@Actor@@QEBAAEAVBlockSource@@XZ
-     * @hash   1162683338
+     * @hash   1162729466
      */
     MCAPI class BlockSource & getRegion() const;
     /**
      * @symbol ?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ
-     * @hash   1088879938
+     * @hash   1088926066
      */
     MCAPI class BlockSource const & getRegionConst() const;
     /**
      * @symbol ?getRenderParams@Actor@@QEAAAEAVRenderParams@@XZ
-     * @hash   1187698794
+     * @hash   1187744922
      */
     MCAPI class RenderParams & getRenderParams();
     /**
      * @symbol ?getRidingHeight@Actor@@QEBAMXZ
-     * @hash   1388920906
+     * @hash   1388967034
      */
     MCAPI float getRidingHeight() const;
     /**
      * @symbol ?getRotation@Actor@@QEBAAEBVVec2@@XZ
-     * @hash   -1345447260
+     * @hash   -1345401132
      */
     MCAPI class Vec2 const & getRotation() const;
     /**
      * @symbol ?getRotationPrev@Actor@@QEBAAEBVVec2@@XZ
-     * @hash   -547803868
+     * @hash   -547757740
      */
     MCAPI class Vec2 const & getRotationPrev() const;
     /**
      * @symbol ?getRuntimeID@Actor@@QEBA?AVActorRuntimeID@@XZ
-     * @hash   -1505694660
+     * @hash   -1505648532
      */
     MCAPI class ActorRuntimeID getRuntimeID() const;
     /**
      * @symbol ?getShakeTime@Actor@@QEBAHXZ
-     * @hash   420564336
+     * @hash   420610464
      */
     MCAPI int getShakeTime() const;
     /**
      * @symbol ?getSkinID@Actor@@QEBAHXZ
-     * @hash   -2116930556
+     * @hash   -2116884428
      */
     MCAPI int getSkinID() const;
     /**
      * @symbol ?getSpatialNetworkData@Actor@@QEAAAEAVSpatialActorNetworkData@@XZ
-     * @hash   -417885106
+     * @hash   -417838978
      */
     MCAPI class SpatialActorNetworkData & getSpatialNetworkData();
     /**
      * @symbol ?getSpatialNetworkData@Actor@@QEBAAEBVSpatialActorNetworkData@@XZ
-     * @hash   -1808641080
+     * @hash   -1808594952
      */
     MCAPI class SpatialActorNetworkData const & getSpatialNetworkData() const;
     /**
      * @symbol ?getSpeedInMetersPerSecond@Actor@@QEBAMXZ
-     * @hash   1723618856
+     * @hash   1723664984
      */
     MCAPI float getSpeedInMetersPerSecond() const;
     /**
      * @symbol ?getStrength@Actor@@QEBAHXZ
-     * @hash   749833510
+     * @hash   749879638
      */
     MCAPI int getStrength() const;
     /**
      * @symbol ?getStrengthMax@Actor@@QEBAHXZ
-     * @hash   881650384
+     * @hash   881696512
      */
     MCAPI int getStrengthMax() const;
     /**
      * @symbol ?getStructuralIntegrity@Actor@@QEBAHXZ
-     * @hash   -719285622
+     * @hash   -719239494
      */
     MCAPI int getStructuralIntegrity() const;
     /**
      * @symbol ?getSwimAmount@Actor@@QEBAMM@Z
-     * @hash   1457770165
+     * @hash   1457816293
      */
     MCAPI float getSwimAmount(float) const;
     /**
      * @symbol ?getTags@Actor@@QEBA?BV?$span@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$0?0@gsl@@XZ
-     * @hash   1348868596
+     * @hash   1348914724
      */
     MCAPI class gsl::span<std::string, -1> const getTags() const;
     /**
      * @symbol ?getTarget@Actor@@QEBAPEAV1@XZ
-     * @hash   -717191671
+     * @hash   -717145543
      */
     MCAPI class Actor * getTarget() const;
     /**
      * @symbol ?getTargetId@Actor@@QEBA?AUActorUniqueID@@XZ
-     * @hash   -2116615082
+     * @hash   -2116568954
      */
     MCAPI struct ActorUniqueID getTargetId() const;
     /**
      * @symbol ?getTradeInterest@Actor@@QEBA_NXZ
-     * @hash   1394990022
+     * @hash   1395036150
      */
     MCAPI bool getTradeInterest() const;
     /**
      * @symbol ?getTradeOffers@Actor@@QEAAPEAVMerchantRecipeList@@XZ
-     * @hash   -515843321
+     * @hash   -515797193
      */
     MCAPI class MerchantRecipeList * getTradeOffers();
     /**
      * @symbol ?getTradingPlayer@Actor@@QEBAPEAVPlayer@@XZ
-     * @hash   -209176931
+     * @hash   -209130803
      */
     MCAPI class Player * getTradingPlayer() const;
     /**
      * @symbol ?getUniqueID@Actor@@QEBAAEBUActorUniqueID@@XZ
-     * @hash   2002301606
+     * @hash   2002347734
      */
     MCAPI struct ActorUniqueID const & getUniqueID() const;
     /**
      * @symbol ?getVariant@Actor@@QEBAHXZ
-     * @hash   -1152628012
+     * @hash   -1152581884
      */
     MCAPI int getVariant() const;
     /**
      * @symbol ?getVehicle@Actor@@QEBAPEAV1@XZ
-     * @hash   363695339
+     * @hash   363741467
      */
     MCAPI class Actor * getVehicle() const;
     /**
      * @symbol ?getVehicleRoot@Actor@@QEBAPEAV1@XZ
-     * @hash   -1454748453
+     * @hash   -1454702325
      */
     MCAPI class Actor * getVehicleRoot() const;
     /**
      * @symbol ?getVehicleRuntimeID@Actor@@QEBA?AVActorRuntimeID@@XZ
-     * @hash   2061175150
+     * @hash   2061221278
      */
     MCAPI class ActorRuntimeID getVehicleRuntimeID() const;
     /**
      * @symbol ?getVerticalSpeedInMetersPerSecond@Actor@@QEBAMXZ
-     * @hash   -677883596
+     * @hash   -677837468
      */
     MCAPI float getVerticalSpeedInMetersPerSecond() const;
     /**
      * @symbol ?getViewVector@Actor@@QEBA?AVVec3@@M@Z
-     * @hash   -1609867799
+     * @hash   -1609821671
      */
     MCAPI class Vec3 getViewVector(float) const;
     /**
      * @symbol ?getYHeadRot@Actor@@QEBAMXZ
-     * @hash   -687448994
+     * @hash   -687402866
      */
     MCAPI float getYHeadRot() const;
     /**
      * @symbol ?getYHeadRotationsNewOld@Actor@@QEBA?AUInterpolationPair@@XZ
-     * @hash   -386028388
+     * @hash   -385982260
      */
     MCAPI struct InterpolationPair getYHeadRotationsNewOld() const;
     /**
      * @symbol ?hasAnyEffects@Actor@@QEBA_NXZ
-     * @hash   1776574740
+     * @hash   1776620868
      */
     MCAPI bool hasAnyEffects() const;
     /**
      * @symbol ?hasAnyVisibleEffects@Actor@@QEBA_NXZ
-     * @hash   835017174
+     * @hash   835063302
      */
     MCAPI bool hasAnyVisibleEffects() const;
     /**
      * @symbol ?hasBeenHurtByMobInLastTicks@Actor@@QEBA_NH@Z
-     * @hash   384162277
+     * @hash   384208405
      */
     MCAPI bool hasBeenHurtByMobInLastTicks(int) const;
     /**
      * @symbol ?hasCategory@Actor@@QEBA_NW4ActorCategory@@@Z
-     * @hash   898631871
+     * @hash   898677999
      */
     MCAPI bool hasCategory(enum class ActorCategory) const;
     /**
      * @symbol ?hasDefinitionGroup@Actor@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   101587305
+     * @hash   101633433
      */
     MCAPI bool hasDefinitionGroup(std::string const &) const;
     /**
      * @symbol ?hasDimension@Actor@@QEBA_NXZ
-     * @hash   -208240618
+     * @hash   -208194490
      */
     MCAPI bool hasDimension() const;
     /**
      * @symbol ?hasEffect@Actor@@QEBA_NAEBVMobEffect@@@Z
-     * @hash   -848166579
+     * @hash   -848120451
      */
     MCAPI bool hasEffect(class MobEffect const &) const;
     /**
      * @symbol ?hasFamily@Actor@@QEBA_NAEBVHashedString@@@Z
-     * @hash   844631911
+     * @hash   844678039
      */
     MCAPI bool hasFamily(class HashedString const &) const;
     /**
      * @symbol ?hasFishingHook@Actor@@QEBA_NXZ
-     * @hash   -1788571034
+     * @hash   -1788524906
      */
     MCAPI bool hasFishingHook() const;
     /**
      * @symbol ?hasLevel@Actor@@QEBA_NXZ
-     * @hash   1853148310
+     * @hash   1853194438
      */
     MCAPI bool hasLevel() const;
     /**
      * @symbol ?hasPassenger@Actor@@QEBA_NXZ
-     * @hash   826375174
+     * @hash   826421302
      */
     MCAPI bool hasPassenger() const;
     /**
      * @symbol ?hasPersistingTrade@Actor@@QEBA_NXZ
-     * @hash   977022182
+     * @hash   977068310
      */
     MCAPI bool hasPersistingTrade() const;
     /**
      * @symbol ?hasPlayerPassenger@Actor@@QEBA_NXZ
-     * @hash   -1012073002
+     * @hash   -1012026874
      */
     MCAPI bool hasPlayerPassenger() const;
     /**
      * @symbol ?hasPriorityAmmunition@Actor@@QEBA_NXZ
-     * @hash   -1829207228
+     * @hash   -1829161100
      */
     MCAPI bool hasPriorityAmmunition() const;
     /**
      * @symbol ?hasRuntimeID@Actor@@QEBA_NXZ
-     * @hash   605452758
+     * @hash   605498886
      */
     MCAPI bool hasRuntimeID() const;
     /**
      * @symbol ?hasSaddle@Actor@@QEBA_NXZ
-     * @hash   1339868740
+     * @hash   1339914868
      */
     MCAPI bool hasSaddle() const;
     /**
      * @symbol ?hasTag@Actor@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1552200071
+     * @hash   -1552153943
      */
     MCAPI bool hasTag(std::string const &) const;
     /**
      * @symbol ?hasTags@Actor@@QEBA_NXZ
-     * @hash   1080387684
+     * @hash   1080433812
      */
     MCAPI bool hasTags() const;
     /**
      * @symbol ?hasTeleported@Actor@@QEBA_NXZ
-     * @hash   -2101512924
+     * @hash   -2101466796
      */
     MCAPI bool hasTeleported() const;
     /**
      * @symbol ?hasTotemEquipped@Actor@@QEBA_NXZ
-     * @hash   1825660950
+     * @hash   1825707078
      */
     MCAPI bool hasTotemEquipped() const;
     /**
      * @symbol ?hasType@Actor@@QEBA_NW4ActorType@@@Z
-     * @hash   -1580944377
+     * @hash   -1580898249
      */
     MCAPI bool hasType(enum class ActorType) const;
     /**
      * @symbol ?hasUniqueID@Actor@@QEBA_NXZ
-     * @hash   612380836
+     * @hash   612426964
      */
     MCAPI bool hasUniqueID() const;
     /**
@@ -2758,1346 +2758,1346 @@ public:
     MCAPI void healEffects(int);
     /**
      * @symbol ?hurt@Actor@@QEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -979086138
+     * @hash   -979040010
      */
     MCAPI bool hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @symbol ?inDownwardFlowingLiquid@Actor@@QEBA_NXZ
-     * @hash   991763124
+     * @hash   991809252
      */
     MCAPI bool inDownwardFlowingLiquid() const;
     /**
      * @symbol ?initActorProperties@Actor@@QEAAXXZ
-     * @hash   1059177845
+     * @hash   1059223973
      */
     MCAPI void initActorProperties();
     /**
      * @symbol ?initParams@Actor@@QEAAXAEAVRenderParams@@@Z
-     * @hash   483008684
+     * @hash   483054812
      */
     MCAPI void initParams(class RenderParams &);
     /**
      * @symbol ?initParams@Actor@@QEAAXAEAVVariantParameterList@@@Z
-     * @hash   -1120642176
+     * @hash   -1120596048
      */
     MCAPI void initParams(class VariantParameterList &);
     /**
      * @symbol ?isActorLocationInMaterial@Actor@@QEBA_NW4ActorLocation@@W4MaterialType@@@Z
-     * @hash   -10362076
+     * @hash   -10315948
      */
     MCAPI bool isActorLocationInMaterial(enum class ActorLocation, enum class MaterialType) const;
     /**
      * @symbol ?isAngry@Actor@@QEBA_NXZ
-     * @hash   -10116860
+     * @hash   -10070732
      */
     MCAPI bool isAngry() const;
     /**
      * @symbol ?isAutonomous@Actor@@QEBA_NXZ
-     * @hash   117743414
+     * @hash   117789542
      */
     MCAPI bool isAutonomous() const;
     /**
      * @symbol ?isBaby@Actor@@QEBA_NXZ
-     * @hash   838962630
+     * @hash   839008758
      */
     MCAPI bool isBaby() const;
     /**
      * @symbol ?isBreakingObstruction@Actor@@QEBA_NXZ
-     * @hash   -533260060
+     * @hash   -533213932
      */
     MCAPI bool isBreakingObstruction() const;
     /**
      * @symbol ?isBribed@Actor@@QEBA_NXZ
-     * @hash   -1580174586
+     * @hash   -1580128458
      */
     MCAPI bool isBribed() const;
     /**
      * @symbol ?isCharged@Actor@@QEBA_NXZ
-     * @hash   1335547524
+     * @hash   1335593652
      */
     MCAPI bool isCharged() const;
     /**
      * @symbol ?isChested@Actor@@QEBA_NXZ
-     * @hash   -1574503260
+     * @hash   -1574457132
      */
     MCAPI bool isChested() const;
     /**
      * @symbol ?isClimbing@Actor@@QEBA_NXZ
-     * @hash   101497750
+     * @hash   101543878
      */
     MCAPI bool isClimbing() const;
     /**
      * @symbol ?isControlledByLocalInstance@Actor@@QEBA_NXZ
-     * @hash   1864379364
+     * @hash   1864425492
      */
     MCAPI bool isControlledByLocalInstance() const;
     /**
      * @symbol ?isDancing@Actor@@QEBA_NXZ
-     * @hash   -2054125436
+     * @hash   -2054079308
      */
     MCAPI bool isDancing() const;
     /**
      * @symbol ?isDead@Actor@@QEBA_NXZ
-     * @hash   -1666954250
+     * @hash   -1666908122
      */
     MCAPI bool isDead() const;
     /**
      * @symbol ?isDoorBreaker@Actor@@QEBA_NXZ
-     * @hash   287372516
+     * @hash   287418644
      */
     MCAPI bool isDoorBreaker() const;
     /**
      * @symbol ?isDoorOpener@Actor@@QEBA_NXZ
-     * @hash   -1128982266
+     * @hash   -1128936138
      */
     MCAPI bool isDoorOpener() const;
     /**
      * @symbol ?isGlobal@Actor@@QEBA_NXZ
-     * @hash   -605292650
+     * @hash   -605246522
      */
     MCAPI bool isGlobal() const;
     /**
      * @symbol ?isIgnited@Actor@@QEBA_NXZ
-     * @hash   762887028
+     * @hash   762933156
      */
     MCAPI bool isIgnited() const;
     /**
      * @symbol ?isImmersedInWater@Actor@@QEBA_NXZ
-     * @hash   587564580
+     * @hash   587610708
      */
     MCAPI bool isImmersedInWater() const;
     /**
      * @symbol ?isInClouds@Actor@@QEBA_NXZ
-     * @hash   1821104614
+     * @hash   1821150742
      */
     MCAPI bool isInClouds() const;
     /**
      * @symbol ?isInContactWithWater@Actor@@QEBA_NXZ
-     * @hash   -1325744890
+     * @hash   -1325698762
      */
     MCAPI bool isInContactWithWater() const;
     /**
      * @symbol ?isInLava@Actor@@QEBA_NXZ
-     * @hash   356428774
+     * @hash   356474902
      */
     MCAPI bool isInLava() const;
     /**
      * @symbol ?isInLove@Actor@@QEBA_NXZ
-     * @hash   -1221098682
+     * @hash   -1221052554
      */
     MCAPI bool isInLove() const;
     /**
      * @symbol ?isInPrecipitation@Actor@@QEBA_NXZ
-     * @hash   933058084
+     * @hash   933104212
      */
     MCAPI bool isInPrecipitation() const;
     /**
      * @symbol ?isInRain@Actor@@QEBA_NXZ
-     * @hash   1148128006
+     * @hash   1148174134
      */
     MCAPI bool isInRain() const;
     /**
      * @symbol ?isInScaffolding@Actor@@QEBA_NXZ
-     * @hash   775056708
+     * @hash   775102836
      */
     MCAPI bool isInScaffolding() const;
     /**
      * @symbol ?isInSnow@Actor@@QEBA_NXZ
-     * @hash   -240029562
+     * @hash   -239983434
      */
     MCAPI bool isInSnow() const;
     /**
      * @symbol ?isInThunderstorm@Actor@@QEBA_NXZ
-     * @hash   189455142
+     * @hash   189501270
      */
     MCAPI bool isInThunderstorm() const;
     /**
      * @symbol ?isInWaterOrRain@Actor@@QEBA_NXZ
-     * @hash   1213992708
+     * @hash   1214038836
      */
     MCAPI bool isInWaterOrRain() const;
     /**
      * @symbol ?isInWorld@Actor@@QEBA_NXZ
-     * @hash   -1472346732
+     * @hash   -1472300604
      */
     MCAPI bool isInWorld() const;
     /**
      * @symbol ?isInsideBorderBlock@Actor@@QEBA_NM@Z
-     * @hash   -1816125581
+     * @hash   -1816079453
      */
     MCAPI bool isInsideBorderBlock(float) const;
     /**
      * @symbol ?isInsidePortal@Actor@@QEBA_NXZ
-     * @hash   -557075146
+     * @hash   -557029018
      */
     MCAPI bool isInsidePortal() const;
     /**
      * @symbol ?isLayingDown@Actor@@QEBA_NXZ
-     * @hash   182616678
+     * @hash   182662806
      */
     MCAPI bool isLayingDown() const;
     /**
      * @symbol ?isLeashed@Actor@@QEBA_NXZ
-     * @hash   1033017060
+     * @hash   1033063188
      */
     MCAPI bool isLeashed() const;
     /**
      * @symbol ?isMovedToLimbo@Actor@@QEBA_NXZ
-     * @hash   1784036038
+     * @hash   1784082166
      */
     MCAPI bool isMovedToLimbo() const;
     /**
      * @symbol ?isMovedToUnloadedChunk@Actor@@QEBA_NXZ
-     * @hash   -395592938
+     * @hash   -395546810
      */
     MCAPI bool isMovedToUnloadedChunk() const;
     /**
      * @symbol ?isMoving@Actor@@QEBA_NXZ
-     * @hash   1261462022
+     * @hash   1261508150
      */
     MCAPI bool isMoving() const;
     /**
      * @symbol ?isOrphan@Actor@@QEBA_NXZ
-     * @hash   430752006
+     * @hash   430798134
      */
     MCAPI bool isOrphan() const;
     /**
      * @symbol ?isOutOfControl@Actor@@QEBA_NXZ
-     * @hash   856403558
+     * @hash   856449686
      */
     MCAPI bool isOutOfControl() const;
     /**
      * @symbol ?isOverScaffolding@Actor@@QEBA_NXZ
-     * @hash   1026624196
+     * @hash   1026670324
      */
     MCAPI bool isOverScaffolding() const;
     /**
      * @symbol ?isPacified@Actor@@QEBA_NXZ
-     * @hash   1050410502
+     * @hash   1050456630
      */
     MCAPI bool isPacified() const;
     /**
      * @symbol ?isPassenger@Actor@@QEBA_NAEBV1@@Z
-     * @hash   -491643029
+     * @hash   -491596901
      */
     MCAPI bool isPassenger(class Actor const &) const;
     /**
      * @symbol ?isPersistent@Actor@@QEBA_NXZ
-     * @hash   587063190
+     * @hash   587109318
      */
     MCAPI bool isPersistent() const;
     /**
      * @symbol ?isPlayingDead@Actor@@QEBA_NXZ
-     * @hash   1637149444
+     * @hash   1637195572
      */
     MCAPI bool isPlayingDead() const;
     /**
      * @symbol ?isPowered@Actor@@QEBA_NXZ
-     * @hash   -32805916
+     * @hash   -32759788
      */
     MCAPI bool isPowered() const;
     /**
      * @symbol ?isRegionValid@Actor@@QEBA_NXZ
-     * @hash   791990164
+     * @hash   792036292
      */
     MCAPI bool isRegionValid() const;
     /**
      * @symbol ?isRemoved@Actor@@QEBA_NXZ
-     * @hash   -1576126812
+     * @hash   -1576080684
      */
     MCAPI bool isRemoved() const;
     /**
      * @symbol ?isResting@Actor@@QEBA_NXZ
-     * @hash   -1367462540
+     * @hash   -1367416412
      */
     MCAPI bool isResting() const;
     /**
      * @symbol ?isRiding@Actor@@QEBA_NPEAV1@@Z
-     * @hash   2039131916
+     * @hash   2039178044
      */
     MCAPI bool isRiding(class Actor *) const;
     /**
      * @symbol ?isRiding@Actor@@QEBA_NXZ
-     * @hash   -1302677658
+     * @hash   -1302631530
      */
     MCAPI bool isRiding() const;
     /**
      * @symbol ?isSafeToSleepNear@Actor@@QEBA_NXZ
-     * @hash   343586388
+     * @hash   343632516
      */
     MCAPI bool isSafeToSleepNear() const;
     /**
      * @symbol ?isSheared@Actor@@QEBA_NXZ
-     * @hash   1196116996
+     * @hash   1196163124
      */
     MCAPI bool isSheared() const;
     /**
      * @symbol ?isSitting@Actor@@QEBA_NXZ
-     * @hash   1411424196
+     * @hash   1411470324
      */
     MCAPI bool isSitting() const;
     /**
      * @symbol ?isSneaking@Actor@@QEBA_NXZ
-     * @hash   -1018552794
+     * @hash   -1018506666
      */
     MCAPI bool isSneaking() const;
     /**
      * @symbol ?isStackable@Actor@@QEBA_NXZ
-     * @hash   241803716
+     * @hash   241849844
      */
     MCAPI bool isStackable() const;
     /**
      * @symbol ?isStanding@Actor@@QEBA_NXZ
-     * @hash   1538396998
+     * @hash   1538443126
      */
     MCAPI bool isStanding() const;
     /**
      * @symbol ?isSwimmer@Actor@@QEBA_NXZ
-     * @hash   59188388
+     * @hash   59234516
      */
     MCAPI bool isSwimmer() const;
     /**
      * @symbol ?isSwimming@Actor@@QEBA_NXZ
-     * @hash   -4003802
+     * @hash   -3957674
      */
     MCAPI bool isSwimming() const;
     /**
      * @symbol ?isTame@Actor@@QEBA_NXZ
-     * @hash   -274288186
+     * @hash   -274242058
      */
     MCAPI bool isTame() const;
     /**
      * @symbol ?isTickingEntity@Actor@@QEBA_NXZ
-     * @hash   1516252580
+     * @hash   1516298708
      */
     MCAPI bool isTickingEntity() const;
     /**
      * @symbol ?isTouchingDamageBlock@Actor@@QEBA_NXZ
-     * @hash   -129049148
+     * @hash   -129003020
      */
     MCAPI bool isTouchingDamageBlock() const;
     /**
      * @symbol ?isTrading@Actor@@QEBA_NXZ
-     * @hash   -758067004
+     * @hash   -758020876
      */
     MCAPI bool isTrading() const;
     /**
      * @symbol ?isTrusting@Actor@@QEBA_NXZ
-     * @hash   1963754790
+     * @hash   1963800918
      */
     MCAPI bool isTrusting() const;
     /**
      * @symbol ?isType@Actor@@QEBA_NW4ActorType@@@Z
-     * @hash   -1299641003
+     * @hash   -1299594875
      */
     MCAPI bool isType(enum class ActorType) const;
     /**
      * @symbol ?isUseNewTradeScreen@Actor@@QEBA_NXZ
-     * @hash   -781195484
+     * @hash   -781149356
      */
     MCAPI bool isUseNewTradeScreen() const;
     /**
      * @symbol ?isWASDControlled@Actor@@QEBA_NXZ
-     * @hash   -662866842
+     * @hash   -662820714
      */
     MCAPI bool isWASDControlled() const;
     /**
      * @symbol ?isWalker@Actor@@QEBA_NXZ
-     * @hash   435987110
+     * @hash   436033238
      */
     MCAPI bool isWalker() const;
     /**
      * @symbol ?lerpTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@H@Z
-     * @hash   1297611328
+     * @hash   1297657456
      */
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int);
     /**
      * @symbol ?lerpTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@MH@Z
-     * @hash   557086677
+     * @hash   557132805
      */
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int);
     /**
      * @symbol ?lerpToRotation@Actor@@QEAAXAEBVVec2@@H@Z
-     * @hash   -621561875
+     * @hash   -621515747
      */
     MCAPI void lerpToRotation(class Vec2 const &, int);
     /**
      * @symbol ?loadEntityFlags@Actor@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -107335825
+     * @hash   -107289697
      */
     MCAPI void loadEntityFlags(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?lovePartnerId@Actor@@QEBAAEBUActorUniqueID@@XZ
-     * @hash   -1012066204
+     * @hash   -1012020076
      */
     MCAPI struct ActorUniqueID const & lovePartnerId() const;
     /**
      * @symbol ?migrateUniqueID@Actor@@QEAAXUActorUniqueID@@@Z
-     * @hash   1773841596
+     * @hash   1773887724
      */
     MCAPI void migrateUniqueID(struct ActorUniqueID);
     /**
      * @symbol ?moveBBs@Actor@@QEAAXAEBVVec3@@@Z
-     * @hash   1200192198
+     * @hash   1200238326
      */
     MCAPI void moveBBs(class Vec3 const &);
     /**
      * @symbol ?moveRelative@Actor@@QEAAXMMMM@Z
-     * @hash   1885922869
+     * @hash   1885968997
      */
     MCAPI void moveRelative(float, float, float, float);
     /**
      * @symbol ?moveTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@@Z
-     * @hash   -1116472953
+     * @hash   -1116426825
      */
     MCAPI void moveTo(class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?onAffectedByWaterBottle@Actor@@QEAAXXZ
-     * @hash   1508479771
+     * @hash   1508525899
      */
     MCAPI void onAffectedByWaterBottle();
     /**
      * @symbol ?onClimbableBlock@Actor@@QEBA_NXZ
-     * @hash   1669268742
+     * @hash   1669314870
      */
     MCAPI bool onClimbableBlock() const;
     /**
      * @symbol ?onHoverableBlock@Actor@@QEBA_NXZ
-     * @hash   -2113057962
+     * @hash   -2113011834
      */
     MCAPI bool onHoverableBlock() const;
     /**
      * @symbol ?onOnewayCollision@Actor@@QEAAXAEBVAABB@@@Z
-     * @hash   1387682116
+     * @hash   1387728244
      */
     MCAPI void onOnewayCollision(class AABB const &);
     /**
      * @symbol ??9Actor@@QEBA_NAEBV0@@Z
-     * @hash   -1725913001
+     * @hash   -1725866873
      */
     MCAPI bool operator!=(class Actor const &) const;
     /**
      * @symbol ??8Actor@@QEBA_NAEBV0@@Z
-     * @hash   404558354
+     * @hash   404604482
      */
     MCAPI bool operator==(class Actor const &) const;
     /**
      * @symbol ?pickUpItem@Actor@@QEAAXAEAVItemActor@@H@Z
-     * @hash   -675799601
+     * @hash   -675753473
      */
     MCAPI void pickUpItem(class ItemActor &, int);
     /**
      * @symbol ?playSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@@Z
-     * @hash   1815841428
+     * @hash   1815887556
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &);
     /**
      * @symbol ?playSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@H@Z
-     * @hash   1434073044
+     * @hash   1434119172
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int);
     /**
      * @symbol ?positionAllPassengers@Actor@@QEAAX_N@Z
-     * @hash   691030936
+     * @hash   691077064
      */
     MCAPI void positionAllPassengers(bool);
     /**
      * @symbol ?postSplashGameEvent@Actor@@QEAAXXZ
-     * @hash   1422889159
+     * @hash   1422935287
      */
     MCAPI void postSplashGameEvent();
     /**
      * @symbol ?pullInEntity@Actor@@QEAA_NAEAV1@@Z
-     * @hash   1005012229
+     * @hash   1005058357
      */
     MCAPI bool pullInEntity(class Actor &);
     /**
      * @symbol ?pushBackActionEventToActionQueue@Actor@@QEAAXVActionEvent@@@Z
-     * @hash   -1092482990
+     * @hash   -1092436862
      */
     MCAPI void pushBackActionEventToActionQueue(class ActionEvent);
     /**
      * @symbol ?queueBBUpdateFromDefinition@Actor@@QEAAXXZ
-     * @hash   -192864029
+     * @hash   -192817901
      */
     MCAPI void queueBBUpdateFromDefinition();
     /**
      * @symbol ?queueBBUpdateFromValue@Actor@@QEAAXAEBVVec2@@@Z
-     * @hash   2134030070
+     * @hash   2134076198
      */
     MCAPI void queueBBUpdateFromValue(class Vec2 const &);
     /**
      * @symbol ?refreshComponents@Actor@@QEAAXXZ
-     * @hash   1626703687
+     * @hash   1626749815
      */
     MCAPI void refreshComponents();
     /**
      * @symbol ?reload@Actor@@QEAAXXZ
-     * @hash   1338864309
+     * @hash   1338910437
      */
     MCAPI void reload();
     /**
      * @symbol ?removeAllEffects@Actor@@QEAAXXZ
-     * @hash   171130829
+     * @hash   171176957
      */
     MCAPI void removeAllEffects();
     /**
      * @symbol ?removeAllPassengers@Actor@@QEAAX_N0@Z
-     * @hash   -1311217752
+     * @hash   -1311171624
      */
     MCAPI void removeAllPassengers(bool, bool);
     /**
      * @symbol ?removeDefinitionGroup@Actor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1876064980
+     * @hash   -1876018852
      */
     MCAPI void removeDefinitionGroup(std::string const &);
     /**
      * @symbol ?removeEffect@Actor@@QEAAXH@Z
-     * @hash   -1658091778
+     * @hash   -1658045650
      */
     MCAPI void removeEffect(int);
     /**
      * @symbol ?removePersistingTrade@Actor@@QEAAXXZ
-     * @hash   -380921591
+     * @hash   -380875463
      */
     MCAPI void removePersistingTrade();
     /**
      * @symbol ?removeTag@Actor@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   131690557
+     * @hash   131736685
      */
     MCAPI bool removeTag(std::string const &);
     /**
      * @symbol ?resetClientAnimations@Actor@@QEAAXXZ
-     * @hash   295083399
+     * @hash   295129527
      */
     MCAPI void resetClientAnimations();
     /**
      * @symbol ?resetRegion@Actor@@QEAAXXZ
-     * @hash   -855308613
+     * @hash   -855262485
      */
     MCAPI void resetRegion();
     /**
      * @symbol ?saveEntityFlags@Actor@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   906862472
+     * @hash   906908600
      */
     MCAPI void saveEntityFlags(class CompoundTag &) const;
     /**
      * @symbol ?saveLinks@Actor@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -1735303484
+     * @hash   -1735257356
      */
     MCAPI std::unique_ptr<class ListTag> saveLinks() const;
     /**
      * @symbol ?savePersistingTrade@Actor@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@H@Z
-     * @hash   -1434398395
+     * @hash   -1434352267
      */
     MCAPI void savePersistingTrade(std::unique_ptr<class CompoundTag>, int);
     /**
      * @symbol ?sendActorDefinitionEventTriggered@Actor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   281139938
+     * @hash   281186066
      */
     MCAPI void sendActorDefinitionEventTriggered(std::string const &);
     /**
      * @symbol ?sendMotionToServer@Actor@@QEAAXXZ
-     * @hash   -529120117
+     * @hash   -529073989
      */
     MCAPI void sendMotionToServer();
     /**
      * @symbol ?serializationSetHealth@Actor@@QEAAXH@Z
-     * @hash   -527769588
+     * @hash   -527723460
      */
     MCAPI void serializationSetHealth(int);
     /**
      * @symbol ?setAABB@Actor@@QEAAXAEBVAABB@@@Z
-     * @hash   957860452
+     * @hash   957906580
      */
     MCAPI void setAABB(class AABB const &);
     /**
      * @symbol ?setAABBDim@Actor@@QEAAXAEBVVec2@@@Z
-     * @hash   1404118806
+     * @hash   1404164934
      */
     MCAPI void setAABBDim(class Vec2 const &);
     /**
      * @symbol ?setActorRendererId@Actor@@QEAAXVHashedString@@@Z
-     * @hash   -68537120
+     * @hash   -68490992
      */
     MCAPI void setActorRendererId(class HashedString);
     /**
      * @symbol ?setAutonomous@Actor@@QEAAX_N@Z
-     * @hash   397471000
+     * @hash   397517128
      */
     MCAPI void setAutonomous(bool);
     /**
      * @symbol ?setBaseDefinition@Actor@@QEAAXAEBUActorDefinitionIdentifier@@_N1@Z
-     * @hash   -374005130
+     * @hash   -373959002
      */
     MCAPI void setBaseDefinition(struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?setBlockTarget@Actor@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1320529292
+     * @hash   -1320483164
      */
     MCAPI void setBlockTarget(class BlockPos const &);
     /**
      * @symbol ?setBreakingObstruction@Actor@@QEAAX_N@Z
-     * @hash   1436327590
+     * @hash   1436373718
      */
     MCAPI void setBreakingObstruction(bool);
     /**
      * @symbol ?setCanClimb@Actor@@QEAAX_N@Z
-     * @hash   1794207272
+     * @hash   1794253400
      */
     MCAPI void setCanClimb(bool);
     /**
      * @symbol ?setCanFly@Actor@@QEAAX_N@Z
-     * @hash   653352392
+     * @hash   653398520
      */
     MCAPI void setCanFly(bool);
     /**
      * @symbol ?setChainedDamageEffects@Actor@@QEAAX_N@Z
-     * @hash   135490136
+     * @hash   135536264
      */
     MCAPI void setChainedDamageEffects(bool);
     /**
      * @symbol ?setCharged@Actor@@QEAAX_N@Z
-     * @hash   31617766
+     * @hash   31663894
      */
     MCAPI void setCharged(bool);
     /**
      * @symbol ?setClimbing@Actor@@QEAAX_N@Z
-     * @hash   -153603640
+     * @hash   -153557512
      */
     MCAPI void setClimbing(bool);
     /**
      * @symbol ?setCollidableMob@Actor@@QEAAX_N@Z
-     * @hash   1408671622
+     * @hash   1408717750
      */
     MCAPI void setCollidableMob(bool);
     /**
      * @symbol ?setCollidableMobNear@Actor@@QEAAX_N@Z
-     * @hash   -1359856858
+     * @hash   -1359810730
      */
     MCAPI void setCollidableMobNear(bool);
     /**
      * @symbol ?setColor@Actor@@QEAAXW4PaletteColor@@@Z
-     * @hash   -904293664
+     * @hash   -904247536
      */
     MCAPI void setColor(enum class PaletteColor);
     /**
      * @symbol ?setControllingSeat@Actor@@QEAAXH@Z
-     * @hash   -1235193844
+     * @hash   -1235147716
      */
     MCAPI void setControllingSeat(int);
     /**
      * @symbol ?setDancing@Actor@@QEAAX_N@Z
-     * @hash   -1984020490
+     * @hash   -1983974362
      */
     MCAPI void setDancing(bool);
     /**
      * @symbol ?setDead@Actor@@QEAAX_N@Z
-     * @hash   475119096
+     * @hash   475165224
      */
     MCAPI void setDead(bool);
     /**
      * @symbol ?setDimension@Actor@@QEAAXV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@@Z
-     * @hash   1086906868
+     * @hash   1086952996
      */
     MCAPI void setDimension(class WeakRefT<struct SharePtrRefTraits<class Dimension>>);
     /**
      * @symbol ?setDoorBreaker@Actor@@QEAAX_N@Z
-     * @hash   1783054102
+     * @hash   1783100230
      */
     MCAPI void setDoorBreaker(bool);
     /**
      * @symbol ?setDoorOpener@Actor@@QEAAX_N@Z
-     * @hash   378018040
+     * @hash   378064168
      */
     MCAPI void setDoorOpener(bool);
     /**
      * @symbol ?setEnchanted@Actor@@QEAAX_N@Z
-     * @hash   258902230
+     * @hash   258948358
      */
     MCAPI void setEnchanted(bool);
     /**
      * @symbol ?setFallDistance@Actor@@QEAAXM@Z
-     * @hash   208800080
+     * @hash   208846208
      */
     MCAPI void setFallDistance(float);
     /**
      * @symbol ?setFishingHookID@Actor@@QEAAXUActorUniqueID@@@Z
-     * @hash   -1170198662
+     * @hash   -1170152534
      */
     MCAPI void setFishingHookID(struct ActorUniqueID);
     /**
      * @symbol ?setGlobal@Actor@@QEAAX_N@Z
-     * @hash   811238888
+     * @hash   811285016
      */
     MCAPI void setGlobal(bool);
     /**
      * @symbol ?setHurtDir@Actor@@QEAAXH@Z
-     * @hash   1186926672
+     * @hash   1186972800
      */
     MCAPI void setHurtDir(int);
     /**
      * @symbol ?setHurtTime@Actor@@QEAAXH@Z
-     * @hash   -1633138726
+     * @hash   -1633092598
      */
     MCAPI void setHurtTime(int);
     /**
      * @symbol ?setInLove@Actor@@QEAAXPEAV1@@Z
-     * @hash   -840831203
+     * @hash   -840785075
      */
     MCAPI void setInLove(class Actor *);
     /**
      * @symbol ?setInterpolation@Actor@@QEAAX_N@Z
-     * @hash   1218426006
+     * @hash   1218472134
      */
     MCAPI void setInterpolation(bool);
     /**
      * @symbol ?setInvisible@Actor@@QEAAX_N@Z
-     * @hash   -1273648714
+     * @hash   -1273602586
      */
     MCAPI void setInvisible(bool);
     /**
      * @symbol ?setIsExperienceDropEnabled@Actor@@QEAAX_N@Z
-     * @hash   -1769486186
+     * @hash   -1769440058
      */
     MCAPI void setIsExperienceDropEnabled(bool);
     /**
      * @symbol ?setJumpDuration@Actor@@QEAAXH@Z
-     * @hash   -1904078818
+     * @hash   -1904032690
      */
     MCAPI void setJumpDuration(int);
     /**
      * @symbol ?setLastHitBB@Actor@@QEAAXAEBVVec3@@0@Z
-     * @hash   -920368638
+     * @hash   -920322510
      */
     MCAPI void setLastHitBB(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?setLayingDown@Actor@@QEAAX_N@Z
-     * @hash   -2042968168
+     * @hash   -2042922040
      */
     MCAPI void setLayingDown(bool);
     /**
      * @symbol ?setLeashHolder@Actor@@QEAAXUActorUniqueID@@@Z
-     * @hash   730020186
+     * @hash   730066314
      */
     MCAPI void setLeashHolder(struct ActorUniqueID);
     /**
      * @symbol ?setLimitedLifetimeTicks@Actor@@QEAAXH@Z
-     * @hash   1609321740
+     * @hash   1609367868
      */
     MCAPI void setLimitedLifetimeTicks(int);
     /**
      * @symbol ?setMarkVariant@Actor@@QEAAXH@Z
-     * @hash   1420518860
+     * @hash   1420564988
      */
     MCAPI void setMarkVariant(int);
     /**
      * @symbol ?setMovedToLimbo@Actor@@QEAAX_N@Z
-     * @hash   1767313672
+     * @hash   1767359800
      */
     MCAPI void setMovedToLimbo(bool);
     /**
      * @symbol ?setMovedToUnloadedChunk@Actor@@QEAAX_N@Z
-     * @hash   -1661399336
+     * @hash   -1661353208
      */
     MCAPI void setMovedToUnloadedChunk(bool);
     /**
      * @symbol ?setMoving@Actor@@QEAAX_N@Z
-     * @hash   -1572393080
+     * @hash   -1572346952
      */
     MCAPI void setMoving(bool);
     /**
      * @symbol ?setPersistent@Actor@@QEAAXXZ
-     * @hash   -153946937
+     * @hash   -153900809
      */
     MCAPI void setPersistent();
     /**
      * @symbol ?setPosDirectLegacy@Actor@@QEAAXAEBVVec3@@@Z
-     * @hash   -533689788
+     * @hash   -533643660
      */
     MCAPI void setPosDirectLegacy(class Vec3 const &);
     /**
      * @symbol ?setPosPrev@Actor@@QEAAXAEBVVec3@@@Z
-     * @hash   -1213129996
+     * @hash   -1213083868
      */
     MCAPI void setPosPrev(class Vec3 const &);
     /**
      * @symbol ?setPrevPosRotSetThisTick@Actor@@QEAAX_N@Z
-     * @hash   1726220710
+     * @hash   1726266838
      */
     MCAPI void setPrevPosRotSetThisTick(bool);
     /**
      * @symbol ?setPreviousPosRot@Actor@@QEAAXAEBVVec3@@AEBVVec2@@@Z
-     * @hash   571454729
+     * @hash   571500857
      */
     MCAPI void setPreviousPosRot(class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?setRegion@Actor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   1957511688
+     * @hash   1957557816
      */
     MCAPI void setRegion(class BlockSource &);
     /**
      * @symbol ?setResting@Actor@@QEAAX_N@Z
-     * @hash   1943129926
+     * @hash   1943176054
      */
     MCAPI void setResting(bool);
     /**
      * @symbol ?setRotationDirectly@Actor@@QEAAXAEBVVec2@@@Z
-     * @hash   -1538099560
+     * @hash   -1538053432
      */
     MCAPI void setRotationDirectly(class Vec2 const &);
     /**
      * @symbol ?setRotationPrev@Actor@@QEAAXAEBVVec2@@@Z
-     * @hash   -1722252488
+     * @hash   -1722206360
      */
     MCAPI void setRotationPrev(class Vec2 const &);
     /**
      * @symbol ?setRotationPrevY@Actor@@QEAAXM@Z
-     * @hash   169622970
+     * @hash   169669098
      */
     MCAPI void setRotationPrevY(float);
     /**
      * @symbol ?setRotationWrapped@Actor@@QEAAXAEBVVec2@@@Z
-     * @hash   -471998602
+     * @hash   -471952474
      */
     MCAPI void setRotationWrapped(class Vec2 const &);
     /**
      * @symbol ?setRotationX@Actor@@QEAAXM@Z
-     * @hash   -1864068058
+     * @hash   -1864021930
      */
     MCAPI void setRotationX(float);
     /**
      * @symbol ?setRotationY@Actor@@QEAAXM@Z
-     * @hash   1462486788
+     * @hash   1462532916
      */
     MCAPI void setRotationY(float);
     /**
      * @symbol ?setRuntimeID@Actor@@QEAAXVActorRuntimeID@@@Z
-     * @hash   739189200
+     * @hash   739235328
      */
     MCAPI void setRuntimeID(class ActorRuntimeID);
     /**
      * @symbol ?setSaddle@Actor@@QEAAX_N@Z
-     * @hash   -1666880968
+     * @hash   -1666834840
      */
     MCAPI void setSaddle(bool);
     /**
      * @symbol ?setScared@Actor@@QEAAX_N@Z
-     * @hash   -1865177672
+     * @hash   -1865131544
      */
     MCAPI void setScared(bool);
     /**
      * @symbol ?setSeatDescription@Actor@@QEAAXAEBVVec3@@AEBUSeatDescription@@@Z
-     * @hash   688497965
+     * @hash   688544093
      */
     MCAPI void setSeatDescription(class Vec3 const &, struct SeatDescription const &);
     /**
      * @symbol ?setShakeTime@Actor@@QEAAXH@Z
-     * @hash   -298287674
+     * @hash   -298241546
      */
     MCAPI void setShakeTime(int);
     /**
      * @symbol ?setSkinID@Actor@@QEAAXH@Z
-     * @hash   -1837849470
+     * @hash   -1837803342
      */
     MCAPI void setSkinID(int);
     /**
      * @symbol ?setStrength@Actor@@QEAAXH@Z
-     * @hash   1930879472
+     * @hash   1930925600
      */
     MCAPI void setStrength(int);
     /**
      * @symbol ?setStrengthMax@Actor@@QEAAXH@Z
-     * @hash   685576998
+     * @hash   685623126
      */
     MCAPI void setStrengthMax(int);
     /**
      * @symbol ?setStructuralIntegrity@Actor@@QEAAXH@Z
-     * @hash   396555004
+     * @hash   396601132
      */
     MCAPI void setStructuralIntegrity(int);
     /**
      * @symbol ?setStunned@Actor@@QEAAX_N@Z
-     * @hash   821972310
+     * @hash   822018438
      */
     MCAPI void setStunned(bool);
     /**
      * @symbol ?setSwimmer@Actor@@QEAAX_N@Z
-     * @hash   -1109374026
+     * @hash   -1109327898
      */
     MCAPI void setSwimmer(bool);
     /**
      * @symbol ?setTempted@Actor@@QEAAX_N@Z
-     * @hash   1007995046
+     * @hash   1008041174
      */
     MCAPI void setTempted(bool);
     /**
      * @symbol ?setTradeInterest@Actor@@QEAAX_N@Z
-     * @hash   166068534
+     * @hash   166114662
      */
     MCAPI void setTradeInterest(bool);
     /**
      * @symbol ?setTradingPlayer@Actor@@QEAAXPEAVPlayer@@@Z
-     * @hash   -1450245219
+     * @hash   -1450199091
      */
     MCAPI void setTradingPlayer(class Player *);
     /**
      * @symbol ?setUniqueID@Actor@@QEAAXUActorUniqueID@@@Z
-     * @hash   -765697124
+     * @hash   -765650996
      */
     MCAPI void setUniqueID(struct ActorUniqueID);
     /**
      * @symbol ?setVariant@Actor@@QEAAXH@Z
-     * @hash   -1091251982
+     * @hash   -1091205854
      */
     MCAPI void setVariant(int);
     /**
      * @symbol ?setVelocity@Actor@@QEAAXAEBVVec3@@@Z
-     * @hash   882060294
+     * @hash   882106422
      */
     MCAPI void setVelocity(class Vec3 const &);
     /**
      * @symbol ?setWASDControlled@Actor@@QEAAX_N@Z
-     * @hash   -1155498344
+     * @hash   -1155452216
      */
     MCAPI void setWASDControlled(bool);
     /**
      * @symbol ?setWalker@Actor@@QEAAX_N@Z
-     * @hash   -1506524504
+     * @hash   -1506478376
      */
     MCAPI void setWalker(bool);
     /**
      * @symbol ?setYHeadRot@Actor@@QEAAXM@Z
-     * @hash   1393822868
+     * @hash   1393868996
      */
     MCAPI void setYHeadRot(float);
     /**
      * @symbol ?setYHeadRotO@Actor@@QEAAXM@Z
-     * @hash   274223208
+     * @hash   274269336
      */
     MCAPI void setYHeadRotO(float);
     /**
      * @symbol ?setYHeadRotations@Actor@@QEAAXMM@Z
-     * @hash   -368409271
+     * @hash   -368363143
      */
     MCAPI void setYHeadRotations(float, float);
     /**
      * @symbol ?shouldOrphan@Actor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   160206803
+     * @hash   160252931
      */
     MCAPI bool shouldOrphan(class BlockSource &);
     /**
      * @symbol ?shouldUpdateEffects@Actor@@QEBA_NXZ
-     * @hash   -224028460
+     * @hash   -223982332
      */
     MCAPI bool shouldUpdateEffects() const;
     /**
      * @symbol ?spawnEatParticles@Actor@@QEAAXAEBVItemStack@@H@Z
-     * @hash   266023661
+     * @hash   266069789
      */
     MCAPI void spawnEatParticles(class ItemStack const &, int);
     /**
      * @symbol ?spinAttack@Actor@@QEAAXXZ
-     * @hash   154867399
+     * @hash   154913527
      */
     MCAPI void spinAttack();
     /**
      * @symbol ?teleportPassengersTo@Actor@@QEAAXAEBVVec3@@HH@Z
-     * @hash   -140317052
+     * @hash   -140270924
      */
     MCAPI void teleportPassengersTo(class Vec3 const &, int, int);
     /**
      * @symbol ?testForEntityStacking@Actor@@QEAAXAEAVBlockSource@@AEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   118614290
+     * @hash   118660418
      */
     MCAPI void testForEntityStacking(class BlockSource &, class AABB const &, std::vector<class AABB> &);
     /**
      * @symbol ?tick@Actor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   -1218170285
+     * @hash   -1218124157
      */
     MCAPI bool tick(class BlockSource &);
     /**
      * @symbol ?transferTickingArea@Actor@@QEAAXAEAVDimension@@@Z
-     * @hash   -1634471670
+     * @hash   -1634425542
      */
     MCAPI void transferTickingArea(class Dimension &);
     /**
      * @symbol ?tryGetEquippableSlotAllowedItems@Actor@@QEBAPEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@H@Z
-     * @hash   938991324
+     * @hash   939037452
      */
     MCAPI std::vector<class ItemDescriptor> const * tryGetEquippableSlotAllowedItems(int) const;
     /**
      * @symbol ?updateAnimationComponentOnServer@Actor@@QEAAXXZ
-     * @hash   1765524539
+     * @hash   1765570667
      */
     MCAPI void updateAnimationComponentOnServer();
     /**
      * @symbol ?updateBBFromDefinition@Actor@@QEAAXXZ
-     * @hash   -1733809025
+     * @hash   -1733762897
      */
     MCAPI void updateBBFromDefinition();
     /**
      * @symbol ?updateDescription@Actor@@QEAAXXZ
-     * @hash   275449851
+     * @hash   275495979
      */
     MCAPI void updateDescription();
     /**
      * @symbol ?updateInvisibilityStatus@Actor@@QEAAXXZ
-     * @hash   2038127623
+     * @hash   2038173751
      */
     MCAPI void updateInvisibilityStatus();
     /**
      * @symbol ?updateMolangVariables@Actor@@QEAAXAEAVRenderParams@@@Z
-     * @hash   -957477586
+     * @hash   -957431458
      */
     MCAPI void updateMolangVariables(class RenderParams &);
     /**
      * @symbol ?updateTickingData@Actor@@QEAAXXZ
-     * @hash   1946694481
+     * @hash   1946740609
      */
     MCAPI void updateTickingData();
     /**
      * @symbol ?useSaddle@Actor@@QEAA_NAEAVItemStackBase@@PEAVPlayer@@@Z
-     * @hash   -709029149
+     * @hash   -708983021
      */
     MCAPI bool useSaddle(class ItemStackBase &, class Player *);
     /**
      * @symbol ?wasLastHitByPlayer@Actor@@QEAA_NXZ
-     * @hash   1862351478
+     * @hash   1862397606
      */
     MCAPI bool wasLastHitByPlayer();
     /**
      * @symbol ?wasLoadedFromNBTThisFrame@Actor@@QEBA_NXZ
-     * @hash   -759628764
+     * @hash   -759582636
      */
     MCAPI bool wasLoadedFromNBTThisFrame() const;
     /**
      * @symbol ?_move@Actor@@SAXAEAUIActorMovementProxy@@AEBVVec3@@@Z
-     * @hash   -1346298113
+     * @hash   -1346251985
      */
     MCAPI static void _move(struct IActorMovementProxy &, class Vec3 const &);
     /**
      * @symbol ?buildForward@Actor@@SA?AVVec3@@AEBUIActorMovementProxy@@@Z
-     * @hash   -1073611289
+     * @hash   -1073565161
      */
     MCAPI static class Vec3 buildForward(struct IActorMovementProxy const &);
     /**
      * @symbol ?canBeginOrContinueClimbingLadder@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   1469243525
+     * @hash   1469289653
      */
     MCAPI static bool canBeginOrContinueClimbingLadder(struct IActorMovementProxy const &);
     /**
      * @symbol ?canBeginOrContinueClimbingLadder@Actor@@SA_NAEBUIActorMovementProxy@@AEBVIConstBlockSource@@@Z
-     * @hash   -1014589008
+     * @hash   -1014542880
      */
     MCAPI static bool canBeginOrContinueClimbingLadder(struct IActorMovementProxy const &, class IConstBlockSource const &);
     /**
      * @symbol ?getBlockPosCurrentlyStandingOn@Actor@@SA?AVBlockPos@@AEBUIActorMovementProxy@@PEBU3@@Z
-     * @hash   2009352405
+     * @hash   2009398533
      */
     MCAPI static class BlockPos getBlockPosCurrentlyStandingOn(struct IActorMovementProxy const &, struct IActorMovementProxy const *);
     /**
      * @symbol ?getBlockPosCurrentlyStandingOn@Actor@@SA?AVBlockPos@@AEBVVec3@@VAABB@@AEBVIConstBlockSource@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -411363871
+     * @hash   -411317743
      */
     MCAPI static class BlockPos getBlockPosCurrentlyStandingOn(class Vec3 const &, class AABB, class IConstBlockSource const &, class optional_ref<class GetCollisionShapeInterface const>);
     /**
      * @symbol ?getEffect@Actor@@SAPEBVMobEffectInstance@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@AEBVMobEffect@@@Z
-     * @hash   -148571753
+     * @hash   -148525625
      */
     MCAPI static class MobEffectInstance const * getEffect(std::vector<class MobEffectInstance> const &, class MobEffect const &);
     /**
      * @symbol ?getInterpolatedRotation@Actor@@SA?AVVec2@@AEBV2@0M@Z
-     * @hash   -864384105
+     * @hash   -864337977
      */
     MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const &, class Vec2 const &, float);
     /**
      * @symbol ?getLiquidAABB@Actor@@SA?AVAABB@@AEBV2@W4MaterialType@@@Z
-     * @hash   -1167617334
+     * @hash   -1167571206
      */
     MCAPI static class AABB getLiquidAABB(class AABB const &, enum class MaterialType);
     /**
      * @symbol ?getLiquidFlowStrength@Actor@@SAMW4MaterialType@@@Z
-     * @hash   2110036301
+     * @hash   2110082429
      */
     MCAPI static float getLiquidFlowStrength(enum class MaterialType);
     /**
      * @symbol ?getStatusFlag@Actor@@SA_NAEBVSynchedActorData@@W4ActorFlags@@@Z
-     * @hash   -70681840
+     * @hash   -70635712
      */
     MCAPI static bool getStatusFlag(class SynchedActorData const &, enum class ActorFlags);
     /**
      * @symbol ?getViewVector@Actor@@SA?AVVec3@@AEBUIActorMovementProxy@@M@Z
-     * @hash   -935964658
+     * @hash   -935918530
      */
     MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const &, float);
     /**
      * @symbol ?getViewVector@Actor@@SA?AVVec3@@AEBVVec2@@0M@Z
-     * @hash   2117199751
+     * @hash   2117245879
      */
     MCAPI static class Vec3 getViewVector(class Vec2 const &, class Vec2 const &, float);
     /**
      * @symbol ?hasSubBBIn@Actor@@SA_NAEBVIConstBlockSource@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@W4MaterialType@@@Z
-     * @hash   -695359455
+     * @hash   -695313327
      */
     MCAPI static bool hasSubBBIn(class IConstBlockSource const &, std::vector<class AABB> const &, enum class MaterialType);
     /**
      * @symbol ?isFree@Actor@@SA_NAEAUIActorMovementProxy@@AEBVVec3@@M@Z
-     * @hash   719002035
+     * @hash   719048163
      */
     MCAPI static bool isFree(struct IActorMovementProxy &, class Vec3 const &, float);
     /**
      * @symbol ?isImmersedInWater@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   1292909095
+     * @hash   1292955223
      */
     MCAPI static bool isImmersedInWater(struct IActorMovementProxy const &);
     /**
      * @symbol ?isImmobile@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   -305109211
+     * @hash   -305063083
      */
     MCAPI static bool isImmobile(struct IActorMovementProxy const &);
     /**
      * @symbol ?isInLava@Actor@@SA_NAEBUIActorMovementProxy@@AEBVIConstBlockSource@@@Z
-     * @hash   -1598204128
+     * @hash   -1598158000
      */
     MCAPI static bool isInLava(struct IActorMovementProxy const &, class IConstBlockSource const &);
     /**
      * @symbol ?isInLiquid@Actor@@SA_NW4MaterialType@@AEBVIConstBlockSource@@AEBVAABB@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   200314076
+     * @hash   200360204
      */
     MCAPI static bool isInLiquid(enum class MaterialType, class IConstBlockSource const &, class AABB const &, std::vector<class AABB> const &);
     /**
      * @symbol ?isInScaffolding@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   528951255
+     * @hash   528997383
      */
     MCAPI static bool isInScaffolding(struct IActorMovementProxy const &);
     /**
      * @symbol ?isSitting@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   774319575
+     * @hash   774365703
      */
     MCAPI static bool isSitting(struct IActorMovementProxy const &);
     /**
      * @symbol ?isStanding@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   -171136683
+     * @hash   -171090555
      */
     MCAPI static bool isStanding(struct IActorMovementProxy const &);
     /**
      * @symbol ?moveRelative@Actor@@SAXAEAUIActorMovementProxy@@MMMM@Z
-     * @hash   -918795154
+     * @hash   -918749026
      */
     MCAPI static void moveRelative(struct IActorMovementProxy &, float, float, float, float);
     /**
      * @symbol ?onClimbableBlock@Actor@@SA_NAEBUIActorMovementProxy@@@Z
-     * @hash   382109637
+     * @hash   382155765
      */
     MCAPI static bool onClimbableBlock(struct IActorMovementProxy const &);
     /**
      * @symbol ?testForCollidableMobs@Actor@@SAXAEBUIActorMovementProxy@@AEAVBlockSource@@AEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -866577169
+     * @hash   -866531041
      */
     MCAPI static void testForCollidableMobs(struct IActorMovementProxy const &, class BlockSource &, class AABB const &, std::vector<class AABB> &);
     /**
      * @symbol ?tryGetFromComponent@Actor@@SAPEAV1@AEAVActorOwnerComponent@@_N@Z
-     * @hash   -721717545
+     * @hash   -721671417
      */
     MCAPI static class Actor * tryGetFromComponent(class ActorOwnerComponent &, bool);
     /**
      * @symbol ?tryGetFromComponent@Actor@@SAPEBV1@AEBVActorOwnerComponent@@_N@Z
-     * @hash   1071986677
+     * @hash   1072032805
      */
     MCAPI static class Actor const * tryGetFromComponent(class ActorOwnerComponent const &, bool);
     /**
      * @symbol ?tryGetFromEntity@Actor@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   992139237
+     * @hash   992185365
      */
     MCAPI static class Actor * tryGetFromEntity(class EntityContext &, bool);
     /**
      * @symbol ?tryGetFromEntity@Actor@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
-     * @hash   -2008129046
+     * @hash   -2008082918
      */
     MCAPI static class Actor * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
 //protected:
     /**
      * @symbol ?_assignActorMovementProxy@Actor@@IEAAXV?$not_null@V?$shared_ptr@UIActorMovementProxy@@@std@@@gsl@@@Z
-     * @hash   -841634993
+     * @hash   -841588865
      */
     MCAPI void _assignActorMovementProxy(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     /**
      * @symbol ?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z
-     * @hash   -1134829723
+     * @hash   -1134783595
      */
     MCAPI class ItemActor const * _drop(class ItemStack const &, bool);
     /**
      * @symbol ?_initializeMaxAutoStep@Actor@@IEAAXM@Z
-     * @hash   304891300
+     * @hash   304937428
      */
     MCAPI void _initializeMaxAutoStep(float);
     /**
      * @symbol ?_isHeadInWater@Actor@@IEBA_NXZ
-     * @hash   1980258112
+     * @hash   1980304240
      */
     MCAPI bool _isHeadInWater() const;
     /**
      * @symbol ?_playMovementSound@Actor@@IEAAX_N@Z
-     * @hash   670750873
+     * @hash   670797001
      */
     MCAPI void _playMovementSound(bool);
     /**
      * @symbol ?_refreshAABB@Actor@@IEAAXXZ
-     * @hash   681980602
+     * @hash   682026730
      */
     MCAPI void _refreshAABB();
     /**
      * @symbol ?_setArmorContainer@Actor@@IEAAXV?$unique_ptr@VSimpleContainer@@U?$default_delete@VSimpleContainer@@@std@@@std@@@Z
-     * @hash   1784671986
+     * @hash   1784718114
      */
     MCAPI void _setArmorContainer(std::unique_ptr<class SimpleContainer>);
     /**
      * @symbol ?_setDimensionTransitionComponent@Actor@@IEAAXV?$AutomaticID@VDimension@@H@@0H@Z
-     * @hash   -719494004
+     * @hash   -719447876
      */
     MCAPI void _setDimensionTransitionComponent(class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, int);
     /**
      * @symbol ?_setHandContainer@Actor@@IEAAXV?$unique_ptr@VSimpleContainer@@U?$default_delete@VSimpleContainer@@@std@@@std@@@Z
-     * @hash   1190112552
+     * @hash   1190158680
      */
     MCAPI void _setHandContainer(std::unique_ptr<class SimpleContainer>);
     /**
      * @symbol ?_setHandContainerItem@Actor@@IEAAXAEBVItemStack@@W4HandSlot@@@Z
-     * @hash   897580203
+     * @hash   897626331
      */
     MCAPI void _setHandContainerItem(class ItemStack const &, enum class HandSlot);
     /**
      * @symbol ?_setHeightOffset@Actor@@IEAAXM@Z
-     * @hash   -615620729
+     * @hash   -615574601
      */
     MCAPI void _setHeightOffset(float);
     /**
      * @symbol ?_setPos@Actor@@IEAAXAEBVVec3@@@Z
-     * @hash   1579121435
+     * @hash   1579167563
      */
     MCAPI void _setPos(class Vec3 const &);
     /**
      * @symbol ?_setPosPrev@Actor@@IEAAXAEBVVec3@@@Z
-     * @hash   585514776
+     * @hash   585560904
      */
     MCAPI void _setPosPrev(class Vec3 const &);
     /**
      * @symbol ?enableAutoSendPosRot@Actor@@IEAAX_N@Z
-     * @hash   -1856477783
+     * @hash   -1856431655
      */
     MCAPI void enableAutoSendPosRot(bool);
     /**
      * @symbol ?updateWaterState@Actor@@IEAA_NXZ
-     * @hash   -1276104853
+     * @hash   -1276058725
      */
     MCAPI bool updateWaterState();
     /**
      * @symbol ?getBlockWhenClimbing@Actor@@KAAEBVBlock@@AEBUIActorMovementProxy@@@Z
-     * @hash   1039065035
+     * @hash   1039111163
      */
     MCAPI static class Block const & getBlockWhenClimbing(struct IActorMovementProxy const &);
     /**
      * @symbol ?getBlockWhenClimbing@Actor@@KAAEBVBlock@@AEBUIActorMovementProxy@@AEBVIConstBlockSource@@@Z
-     * @hash   -368369084
+     * @hash   -368322956
      */
     MCAPI static class Block const & getBlockWhenClimbing(struct IActorMovementProxy const &, class IConstBlockSource const &);
 
 //private:
     /**
      * @symbol ?_addActorBuiltInComponents@Actor@@AEAA?AUBuiltInActorComponents@@XZ
-     * @hash   -656366645
+     * @hash   -656320517
      */
     MCAPI struct BuiltInActorComponents _addActorBuiltInComponents();
     /**
      * @symbol ?_addActorNonBuiltInComponents@Actor@@AEAAXXZ
-     * @hash   -1465845386
+     * @hash   -1465799258
      */
     MCAPI void _addActorNonBuiltInComponents();
     /**
      * @symbol ?_convertOldSave@Actor@@AEAAXAEBVCompoundTag@@@Z
-     * @hash   -485853021
+     * @hash   -485806893
      */
     MCAPI void _convertOldSave(class CompoundTag const &);
     /**
      * @symbol ?_damageNearbyMobs@Actor@@AEAAXXZ
-     * @hash   -1263562249
+     * @hash   -1263516121
      */
     MCAPI void _damageNearbyMobs();
     /**
      * @symbol ?_defaultInitEquipmentDropChances@Actor@@AEAAXXZ
-     * @hash   -1474501605
+     * @hash   -1474455477
      */
     MCAPI void _defaultInitEquipmentDropChances();
     /**
      * @symbol ?_initializeLeashRopeSystem@Actor@@AEAAXPEAV1@@Z
-     * @hash   -2004587971
+     * @hash   -2004541843
      */
     MCAPI void _initializeLeashRopeSystem(class Actor *);
     /**
      * @symbol ?_isItemStackNetManagerEnabled@Actor@@AEBA_NXZ
-     * @hash   1691147477
+     * @hash   1691193605
      */
     MCAPI bool _isItemStackNetManagerEnabled() const;
     /**
      * @symbol ?_managePassengers@Actor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -277135424
+     * @hash   -277089296
      */
     MCAPI void _managePassengers(class BlockSource &);
     /**
      * @symbol ?_managePassengersServerSide@Actor@@AEAAX_N@Z
-     * @hash   -760573018
+     * @hash   -760526890
      */
     MCAPI void _managePassengersServerSide(bool);
     /**
      * @symbol ?_onVibrationDetected@Actor@@AEAAXXZ
-     * @hash   -1474554611
+     * @hash   -1474508483
      */
     MCAPI void _onVibrationDetected();
     /**
      * @symbol ?_removeAllPassengersSystems@Actor@@AEAAXXZ
-     * @hash   -2007055804
+     * @hash   -2007009676
      */
     MCAPI void _removeAllPassengersSystems();
     /**
      * @symbol ?_removePassengersWithoutSeatSystem@Actor@@AEAAXXZ
-     * @hash   734603223
+     * @hash   734649351
      */
     MCAPI void _removePassengersWithoutSeatSystem();
     /**
      * @symbol ?_sendLinkPacket@Actor@@AEBAXAEBUActorLink@@@Z
-     * @hash   -1547448692
+     * @hash   -1547402564
      */
     MCAPI void _sendLinkPacket(struct ActorLink const &) const;
     /**
      * @symbol ?_serializeComponents@Actor@@AEBAXAEAVCompoundTag@@@Z
-     * @hash   1084140766
+     * @hash   1084186894
      */
     MCAPI void _serializeComponents(class CompoundTag &) const;
     /**
      * @symbol ?_setupServerAnimationComponent@Actor@@AEAAXXZ
-     * @hash   -518313615
+     * @hash   -518267487
      */
     MCAPI void _setupServerAnimationComponent();
     /**
      * @symbol ?_tryPlantWitherRose@Actor@@AEAAXXZ
-     * @hash   1571419944
+     * @hash   1571466072
      */
     MCAPI void _tryPlantWitherRose();
     /**
      * @symbol ?_updateComposition@Actor@@AEAAX_N@Z
-     * @hash   1793536763
+     * @hash   1793582891
      */
     MCAPI void _updateComposition(bool);
     /**
      * @symbol ?_updateOwnerChunk@Actor@@AEAAXXZ
-     * @hash   -200323751
+     * @hash   -200277623
      */
     MCAPI void _updateOwnerChunk();
     /**
      * @symbol ?_containsSneakCollisionShapes@Actor@@CA_NAEAUIActorMovementProxy@@AEBVIConstBlockSource@@AEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -1837962381
+     * @hash   -1837916253
      */
     MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class IConstBlockSource const &, class AABB const &, std::vector<class AABB> &);
     /**
@@ -4111,17 +4111,17 @@ protected:
 private:
     /**
      * @symbol ?DAMAGE_NEARBY_MOBS_DURATION@Actor@@0HB
-     * @hash   -1061683989
+     * @hash   -1061560981
      */
     MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
     /**
      * @symbol ?DEFAULT_MAX_DISTANCE_OPTIMIZATION@Actor@@0MB
-     * @hash   220669296
+     * @hash   220792304
      */
     MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
     /**
      * @symbol ?DEFAULT_MAX_TICK_DELAY_OPTIMIZATION@Actor@@0_KB
-     * @hash   -415093762
+     * @hash   -414970754
      */
     MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0TradeResupplyComponent@@QEAA@XZ
-     * @hash   597951907
+     * @hash   597998035
      */
     MCAPI TradeResupplyComponent();
     /**
      * @symbol ?addAdditionalSaveData@TradeResupplyComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -910665560
+     * @hash   -909835256
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -46,12 +46,12 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?readAdditionalSaveData@TradeResupplyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1521722344
+     * @hash   -1520892040
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?reloadComponent@TradeResupplyComponent@@QEAAXAEAVActor@@@Z
-     * @hash   804400652
+     * @hash   805230956
      */
     MCAPI void reloadComponent(class Actor &);
 

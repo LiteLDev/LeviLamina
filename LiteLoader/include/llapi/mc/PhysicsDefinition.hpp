@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0PhysicsDefinition@@QEAA@XZ
-     * @hash   819605430
+     * @hash   820435734
      */
     MCAPI PhysicsDefinition();
     /**
      * @symbol ?initialize@PhysicsDefinition@@QEAAXAEAVEntityContext@@AEAVPhysicsComponent@@@Z
-     * @hash   324275045
+     * @hash   325105349
      */
     MCAPI void initialize(class EntityContext &, class PhysicsComponent &);
     /**
      * @symbol ?buildSchema@PhysicsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VPhysicsDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   216168070
+     * @hash   216998374
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>> &);
 

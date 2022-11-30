@@ -50,12 +50,12 @@ public:
     virtual bool isSerializable() const;
     /**
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
-     * @hash   1771208397
+     * @hash   1771254525
      */
     MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
     /**
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MAEBVActorDamageSource@@@Z
-     * @hash   -1585470949
+     * @hash   -1585424821
      */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
 

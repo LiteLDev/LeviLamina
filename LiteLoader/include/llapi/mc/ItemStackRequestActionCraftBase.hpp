@@ -43,7 +43,7 @@ public:
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
     /**
      * @symbol ??1ItemStackRequestActionCraftBase@@UEAA@XZ
-     * @hash   544662920
+     * @hash   545493224
      */
     MCVAPI ~ItemStackRequestActionCraftBase();
 #endif

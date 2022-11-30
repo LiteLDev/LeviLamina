@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Blaze@@UEAAXXZ
-     * @hash   1859207145
+     * @hash   1859253273
      */
     virtual void normalTick();
     /**
@@ -92,7 +92,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?isOnFire@Blaze@@UEBA_NXZ
-     * @hash   1756451045
+     * @hash   1756497173
      */
     virtual bool isOnFire() const;
     /**
@@ -168,13 +168,13 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@Blaze@@UEAAXMMM@Z
-     * @hash   263855411
+     * @hash   263901539
      */
     virtual void travel(float, float, float);
     /**
      * @vftbl  295
      * @symbol ?aiStep@Blaze@@UEAAXXZ
-     * @hash   -1536069271
+     * @hash   -1536023143
      */
     virtual void aiStep();
     /**
@@ -212,7 +212,7 @@ public:
 #endif
     /**
      * @symbol ??0Blaze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   565161742
+     * @hash   565207870
      */
     MCAPI Blaze(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

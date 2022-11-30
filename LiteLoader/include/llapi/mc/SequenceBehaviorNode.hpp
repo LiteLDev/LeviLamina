@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@SequenceBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   1558233026
+     * @hash   1558325282
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
@@ -48,7 +48,7 @@ public:
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0SequenceBehaviorNode@@QEAA@XZ
-     * @hash   -1564546943
+     * @hash   -1564454687
      */
     MCAPI SequenceBehaviorNode();
 

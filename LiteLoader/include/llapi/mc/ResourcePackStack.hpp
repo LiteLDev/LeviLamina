@@ -41,65 +41,65 @@ public:
     /**
      * @vftbl  1
      * @symbol ?loadAllVersionsOf@ResourcePackStack@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
-     * @hash   -905065997
+     * @hash   -905019869
      */
     virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const &) const;
     /**
      * @vftbl  2
      * @symbol ?loadAllVersionsOf@ResourcePackStack@@UEBA_NAEBVResourceLocation@@AEAVResourcePackMergeStrategy@@@Z
-     * @hash   -2047243858
+     * @hash   -2047197730
      */
     virtual bool loadAllVersionsOf(class ResourceLocation const &, class ResourcePackMergeStrategy &) const;
     /**
      * @symbol ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBVIResourcePackRepository@@_N@Z
-     * @hash   1907684408
+     * @hash   1907730536
      */
     MCAPI void add(class PackInstance, class IResourcePackRepository const &, bool);
     /**
      * @symbol ?generateAssetSet@ResourcePackStack@@QEAAXXZ
-     * @hash   1413684145
+     * @hash   1413730273
      */
     MCAPI void generateAssetSet();
     /**
      * @symbol ?getSplitStacks@ResourcePackStack@@QEBAXAEAV1@0@Z
-     * @hash   1805451643
+     * @hash   1805497771
      */
     MCAPI void getSplitStacks(class ResourcePackStack &, class ResourcePackStack &) const;
     /**
      * @symbol ?hasCapabilityInStack@ResourcePackStack@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1082202709
+     * @hash   -1082156581
      */
     MCAPI bool hasCapabilityInStack(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?hasPlatformLockedContent@ResourcePackStack@@QEBA_NXZ
-     * @hash   -2053034338
+     * @hash   -2052988210
      */
     MCAPI bool hasPlatformLockedContent() const;
     /**
      * @symbol ?removeDuplicates@ResourcePackStack@@QEAAXXZ
-     * @hash   -817221637
+     * @hash   -817175509
      */
     MCAPI void removeDuplicates();
     /**
      * @symbol ?removeIf@ResourcePackStack@@QEAAXAEBV?$function@$$A6A_NAEBVPackInstance@@@Z@std@@@Z
-     * @hash   934162152
+     * @hash   934208280
      */
     MCAPI void removeIf(class std::function<bool (class PackInstance const &)> const &);
     /**
      * @symbol ?removeInvalidPacks@ResourcePackStack@@QEAAXXZ
-     * @hash   2130823425
+     * @hash   2130869553
      */
     MCAPI void removeInvalidPacks();
     /**
      * @symbol ?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBVIResourcePackRepository@@@Z
-     * @hash   683691306
+     * @hash   683737434
      */
     MCAPI static std::unique_ptr<class ResourcePackStack> deserialize(class std::basic_istream<char, struct std::char_traits<char>> &, class IResourcePackRepository const &);
 
 //private:
     /**
      * @symbol ?_populateDependencies@ResourcePackStack@@CAXAEAV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@AEAVPackInstance@@AEBVIResourcePackRepository@@_N@Z
-     * @hash   -784825686
+     * @hash   -784779558
      */
     MCAPI static void _populateDependencies(std::vector<class PackInstance> &, class PackInstance &, class IResourcePackRepository const &, bool);
 

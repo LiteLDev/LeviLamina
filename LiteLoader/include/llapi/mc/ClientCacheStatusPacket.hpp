@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ClientCacheStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1991503021
+     * @hash   1991549149
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientCacheStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1640744794
+     * @hash   1640790922
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ClientCacheStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   138691549
+     * @hash   138737677
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ClientCacheStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1735821469
+     * @hash   1735867597
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ClientCacheStatusPacket@@QEAA@XZ
-     * @hash   -1032519875
+     * @hash   -1032473747
      */
     MCAPI ClientCacheStatusPacket();
 

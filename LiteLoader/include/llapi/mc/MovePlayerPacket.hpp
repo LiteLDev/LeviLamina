@@ -62,40 +62,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MovePlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   769578660
+     * @hash   769624788
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MovePlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -854235823
+     * @hash   -854189695
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MovePlayerPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -106779594
+     * @hash   -106733466
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MovePlayerPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   80978134
+     * @hash   81024262
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MovePlayerPacket@@QEAA@XZ
-     * @hash   -1197929962
+     * @hash   -1197883834
      */
     MCAPI MovePlayerPacket();
     /**
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@1@HH@Z
-     * @hash   -354235284
+     * @hash   -354189156
      */
     MCAPI MovePlayerPacket(class Player const &, enum class Player::PositionMode, int, int);
     /**
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@AEBVVec3@@@Z
-     * @hash   914457760
+     * @hash   914503888
      */
     MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
 

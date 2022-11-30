@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?client@MinecraftScheduler@@SAAEAVScheduler@@XZ
-     * @hash   -1859190976
+     * @hash   -1859144848
      */
     MCAPI static class Scheduler & client();
     /**
      * @symbol ?destroyClientSingleton@MinecraftScheduler@@SAXXZ
-     * @hash   -646730237
+     * @hash   -646684109
      */
     MCAPI static void destroyClientSingleton();
 

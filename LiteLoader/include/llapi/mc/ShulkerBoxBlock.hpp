@@ -190,13 +190,13 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -405542416
+     * @hash   -404712112
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  138
      * @symbol ?getColorForParticle@ShulkerBoxBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -2095120251
+     * @hash   -2094289947
      */
     virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@ShulkerBoxBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1821495758
+     * @hash   -1820665454
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -242,7 +242,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1707449780
+     * @hash   -1706619476
      */
     MCAPI ShulkerBoxBlock(std::string const &, int);
 

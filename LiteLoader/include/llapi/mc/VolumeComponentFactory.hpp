@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
-     * @hash   664044220
+     * @hash   664090348
      */
     MCAPI void registerVolumeComponentDefinitions(bool);
 

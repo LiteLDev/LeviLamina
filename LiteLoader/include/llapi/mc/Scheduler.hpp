@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0Scheduler@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
-     * @hash   -1292466291
+     * @hash   -1291635987
      */
     MCAPI Scheduler(std::string, unsigned int);
     /**
      * @symbol ?changeThread@Scheduler@@QEAAXVid@thread@std@@@Z
-     * @hash   813929084
+     * @hash   814759388
      */
     MCAPI void changeThread(class std::thread::id);
     /**
      * @symbol ?getCoroutinePool@Scheduler@@QEAAAEAVWorkerPool@@XZ
-     * @hash   -105899180
+     * @hash   -105853052
      */
     MCAPI class WorkerPool & getCoroutinePool();
     /**
      * @symbol ?processCoroutines@Scheduler@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@0@Z
-     * @hash   -893384044
+     * @hash   -892553740
      */
     MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     /**
      * @symbol ?queueCallback@Scheduler@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     * @hash   120388813
+     * @hash   121219117
      */
     MCAPI void queueCallback(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @symbol ?setTargetFPS@Scheduler@@QEAAXI@Z
-     * @hash   1391700470
+     * @hash   1392530774
      */
     MCAPI void setTargetFPS(unsigned int);
     /**
      * @symbol ?AVERAGE_TASK_TOLERANCE@Scheduler@@2MB
-     * @hash   -2009379319
+     * @hash   -2009256311
      */
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 

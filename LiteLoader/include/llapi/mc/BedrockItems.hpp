@@ -37,12 +37,12 @@ public:
     MCAPI static class WeakPtr<class Item> mAir;
     /**
      * @symbol ?registerItems@BedrockItems@@SAXVItemRegistryRef@@@Z
-     * @hash   1074493710
+     * @hash   1075324014
      */
     MCAPI static void registerItems(class ItemRegistryRef);
     /**
      * @symbol ?unregisterItems@BedrockItems@@SAXVItemRegistryRef@@@Z
-     * @hash   -2074443184
+     * @hash   -2073612880
      */
     MCAPI static void unregisterItems(class ItemRegistryRef);
 

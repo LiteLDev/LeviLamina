@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createStoreWasAutoJumpingClientSystem@StoreWasAutoJumpingClientSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -673402978
+     * @hash   -673356850
      */
     MCAPI static struct TickingSystemWithInfo createStoreWasAutoJumpingClientSystem();
 

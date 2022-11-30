@@ -36,7 +36,7 @@ public:
     MCAPI BucketableComponent();
     /**
      * @symbol ?getInteraction@BucketableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   1186932629
+     * @hash   1186978757
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
@@ -46,7 +46,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z
-     * @hash   -169667511
+     * @hash   -169621383
      */
     MCAPI static void implInteraction(class Actor &, class Player &);
 

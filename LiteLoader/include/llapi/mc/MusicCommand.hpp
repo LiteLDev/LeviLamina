@@ -39,29 +39,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@MusicCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1896918477
+     * @hash   1896964605
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@MusicCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   297956796
+     * @hash   298002924
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_handleActionQueueOrPlay@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     * @hash   -525111181
+     * @hash   -525065053
      */
     MCAPI void _handleActionQueueOrPlay(class CompoundTag &, class CommandOutput &) const;
     /**
      * @symbol ?_handleActionStop@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     * @hash   -1127635497
+     * @hash   -1127589369
      */
     MCAPI void _handleActionStop(class CompoundTag &, class CommandOutput &) const;
     /**
      * @symbol ?_handleActionVolume@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     * @hash   575468687
+     * @hash   575514815
      */
     MCAPI void _handleActionVolume(class CompoundTag &, class CommandOutput &) const;
 

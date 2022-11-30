@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@$$QEAU0@@Z
-     * @hash   1123114805
+     * @hash   1123160933
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent &&);
     /**
      * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@AEBU0@@Z
-     * @hash   1379683279
+     * @hash   1379729407
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
 

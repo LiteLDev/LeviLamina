@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@ProjectileSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1119544408
+     * @hash   1119590536
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?_tickProjectileComponent@ProjectileSystem@@SAXPEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -244356976
+     * @hash   -244310848
      */
     MCAPI static void _tickProjectileComponent(class Actor *, class ProjectileComponent &);
 

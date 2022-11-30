@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@CarrotBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -811342182
+     * @hash   -810511878
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   242957690
+     * @hash   243787994
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -226,13 +226,13 @@ public:
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   750434045
+     * @hash   751264349
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   914264723
+     * @hash   915095027
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -243,35 +243,35 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@CarrotBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1021623888
+     * @hash   1022454192
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
-     * @hash   1666367482
+     * @hash   1667197786
      */
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
      * @symbol ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   341438114
+     * @hash   342268418
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
      * @vftbl  194
      * @symbol ?getBaseCrop@CarrotBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   -450684063
+     * @hash   -449853759
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
      * @vftbl  196
      * @symbol ?getCropNum@CarrotBlock@@UEBAHAEAVRandomize@@HH@Z
-     * @hash   207601496
+     * @hash   208431800
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
      * @symbol ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -709907944
+     * @hash   -709077640
      */
     MCAPI CarrotBlock(std::string const &, int);
 

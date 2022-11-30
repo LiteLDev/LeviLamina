@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?empty@SurfaceMaterialAdjustmentEvaluated@@QEBA_NXZ
-     * @hash   -1397675098
+     * @hash   -1396844794
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?makeAdjustments@SurfaceMaterialAdjustmentEvaluated@@QEBAXAEAUSurfaceMaterialBlocks@@H@Z
-     * @hash   -1338330627
+     * @hash   -1337500323
      */
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks &, int) const;
     /**
      * @symbol ??1SurfaceMaterialAdjustmentEvaluated@@QEAA@XZ
-     * @hash   -388064876
+     * @hash   -387234572
      */
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 

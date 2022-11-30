@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@FishingEnchant@@UEBAHH@Z
-     * @hash   1758294328
+     * @hash   1759124632
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@FishingEnchant@@UEBAHH@Z
-     * @hash   999329558
+     * @hash   1000159862
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@FishingEnchant@@UEBAHXZ
-     * @hash   -1761178638
+     * @hash   -1761132510
      */
     virtual int getMaxLevel() const;
     /**
@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_13();
     /**
      * @symbol ??0FishingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   -672660902
+     * @hash   -671830598
      */
     MCAPI FishingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

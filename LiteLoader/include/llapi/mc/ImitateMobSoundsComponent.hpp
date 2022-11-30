@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getRandomImitatedSound@ImitateMobSoundsComponent@@SA?AW4LevelSoundEvent@@AEBVRandomize@@@Z
-     * @hash   643168675
+     * @hash   643214803
      */
     MCAPI static enum class LevelSoundEvent getRandomImitatedSound(class Randomize const &);
     /**
      * @symbol ?imitateNearbyMobs@ImitateMobSoundsComponent@@SA_NAEAVActor@@AEBVRandomize@@@Z
-     * @hash   385451724
+     * @hash   385497852
      */
     MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
 

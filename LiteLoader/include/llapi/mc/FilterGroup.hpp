@@ -47,7 +47,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?_setupContext@FilterGroup@@MEBA_NAEBVFilterTest@@AEAUFilterContext@@@Z
-     * @hash   -1170977236
+     * @hash   -1170931108
      */
     virtual bool _setupContext(class FilterTest const &, struct FilterContext &) const;
     /**
@@ -63,27 +63,27 @@ public:
     MCAPI FilterGroup(class FilterGroup const &);
     /**
      * @symbol ?addFilterTest@FilterGroup@@QEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   1519136344
+     * @hash   1519182472
      */
     MCAPI bool addFilterTest(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @symbol ?addFilterTest@FilterGroup@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFilterInputs@@@Z
-     * @hash   1499634646
+     * @hash   1499680774
      */
     MCAPI bool addFilterTest(std::string const &, struct FilterInputs const &);
     /**
      * @symbol ?empty@FilterGroup@@QEBA_NXZ
-     * @hash   -1755036592
+     * @hash   -1754990464
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?evaluate@FilterGroup@@QEBA_NAEAV?$array@UFilterContext@@$09@std@@@Z
-     * @hash   286537002
+     * @hash   286583130
      */
     MCAPI bool evaluate(class std::array<struct FilterContext, 10> &) const;
     /**
      * @symbol ?getChildren@FilterGroup@@QEBAAEBV?$vector@V?$shared_ptr@VFilterGroup@@@std@@V?$allocator@V?$shared_ptr@VFilterGroup@@@std@@@2@@std@@XZ
-     * @hash   -1848550511
+     * @hash   -1848504383
      */
     MCAPI std::vector<class std::shared_ptr<class FilterGroup>> const & getChildren() const;
     /**
@@ -93,39 +93,39 @@ public:
     MCAPI std::vector<class std::shared_ptr<class FilterTest>> const & getMembers() const;
     /**
      * @symbol ?parse@FilterGroup@@QEAA_NAEBVValue@Json@@@Z
-     * @hash   -618684343
+     * @hash   -618638215
      */
     MCAPI bool parse(class Json::Value const &);
     /**
      * @symbol ?serialize@FilterGroup@@QEBAXAEAVValue@Json@@@Z
-     * @hash   1446694120
+     * @hash   1446740248
      */
     MCAPI void serialize(class Json::Value &) const;
 
 //protected:
     /**
      * @symbol ?_parseFilterInputs@FilterGroup@@IEAA_NAEBVValue@Json@@AEBUDefinition@FilterTest@@AEAUFilterInputs@@@Z
-     * @hash   -936069692
+     * @hash   -936023564
      */
     MCAPI bool _parseFilterInputs(class Json::Value const &, struct FilterTest::Definition const &, struct FilterInputs &);
     /**
      * @symbol ?_parseFilterParam@FilterGroup@@IEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVValue@Json@@AEBUFilterParamDefinition@@AEAVFilterInput@@@Z
-     * @hash   -1493690769
+     * @hash   -1493644641
      */
     MCAPI bool _parseFilterParam(std::string const &, std::string const &, class Json::Value const &, struct FilterParamDefinition const &, class FilterInput &);
     /**
      * @symbol ?_parseMember@FilterGroup@@IEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   1014321336
+     * @hash   1014367464
      */
     MCAPI bool _parseMember(std::string const &, class Json::Value const &);
     /**
      * @symbol ?_parseObject@FilterGroup@@IEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   -936286787
+     * @hash   -936240659
      */
     MCAPI bool _parseObject(std::string const &, class Json::Value const &);
     /**
      * @symbol ?_parseTest@FilterGroup@@IEAA_NAEBVValue@Json@@@Z
-     * @hash   -861614748
+     * @hash   -861568620
      */
     MCAPI bool _parseTest(class Json::Value const &);
 

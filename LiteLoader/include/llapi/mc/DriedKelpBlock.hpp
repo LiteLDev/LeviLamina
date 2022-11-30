@@ -218,7 +218,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0DriedKelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1562194740
+     * @hash   -1561364436
      */
     MCAPI DriedKelpBlock(std::string const &, int, class Material const &);
 

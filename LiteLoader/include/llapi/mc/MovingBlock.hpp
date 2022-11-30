@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@MovingBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   85786693
+     * @hash   86616997
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  81
      * @symbol ?updateEntityAfterFallOn@MovingBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   1068317081
+     * @hash   1069147385
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@MovingBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1096239363
+     * @hash   1097069667
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@MovingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1052951685
+     * @hash   -1052121381
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@MovingBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   -1049206815
+     * @hash   -1048376511
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@MovingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   -1562050127
+     * @hash   -1561219823
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -267,7 +267,7 @@ public:
 #endif
     /**
      * @symbol ??0MovingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1881639037
+     * @hash   1882469341
      */
     MCAPI MovingBlock(std::string const &, int);
 

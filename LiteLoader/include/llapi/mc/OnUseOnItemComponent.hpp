@@ -49,7 +49,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?useOn@OnUseOnItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   2100755522
+     * @hash   2101585826
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
@@ -60,23 +60,23 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VOnUseOnItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1929625136
+     * @hash   1930455440
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VOnUseOnItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1634319072
+     * @hash   1635149376
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@OnUseOnItemComponent@@SAXXZ
-     * @hash   1809203603
+     * @hash   1810033907
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@OnUseOnItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1675738446
+     * @hash   -1674908142
      */
     MCAPI static class HashedString const & getIdentifier();
 

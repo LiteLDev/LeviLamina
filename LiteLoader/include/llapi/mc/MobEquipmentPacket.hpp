@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MobEquipmentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   733205192
+     * @hash   733251320
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MobEquipmentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1388208501
+     * @hash   1388254629
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MobEquipmentPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1553260142
+     * @hash   -1553214014
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MobEquipmentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1171333346
+     * @hash   1171379474
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MobEquipmentPacket@@QEAA@XZ
-     * @hash   1263856722
+     * @hash   1263902850
      */
     MCAPI MobEquipmentPacket();
     /**
      * @symbol ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVNetworkItemStackDescriptor@@HHW4ContainerID@@@Z
-     * @hash   260655385
+     * @hash   260701513
      */
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, enum class ContainerID);
     /**
      * @symbol ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
-     * @hash   204894395
+     * @hash   204940523
      */
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, enum class ContainerID);
 

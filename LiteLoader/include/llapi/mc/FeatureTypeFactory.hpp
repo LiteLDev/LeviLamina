@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0FeatureTypeFactory@@QEAA@XZ
-     * @hash   448777878
+     * @hash   449608182
      */
     MCAPI FeatureTypeFactory();
     /**
      * @symbol ?processFeature@FeatureTypeFactory@@QEBAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   222304866
+     * @hash   223135170
      */
     MCAPI void processFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, class Json::Value &, class SemVersion const &) const;
 

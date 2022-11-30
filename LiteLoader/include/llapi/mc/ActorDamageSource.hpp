@@ -97,43 +97,43 @@ public:
     /**
      * @vftbl  4
      * @symbol ?isFire@ActorDamageSource@@UEBA_NXZ
-     * @hash   116673273
+     * @hash   116719401
      */
     virtual bool isFire() const;
     /**
      * @vftbl  5
      * @symbol ?isReducedByResistanceEffect@ActorDamageSource@@UEBA_NXZ
-     * @hash   1358310718
+     * @hash   1358356846
      */
     virtual bool isReducedByResistanceEffect() const;
     /**
      * @vftbl  6
      * @symbol ?isReducedByEnchantReduction@ActorDamageSource@@UEBA_NXZ
-     * @hash   -129990114
+     * @hash   -129943986
      */
     virtual bool isReducedByEnchantReduction() const;
     /**
      * @vftbl  7
      * @symbol ?isReducedByArmorReduction@ActorDamageSource@@UEBA_NXZ
-     * @hash   320943288
+     * @hash   320989416
      */
     virtual bool isReducedByArmorReduction() const;
     /**
      * @vftbl  8
      * @symbol ?isFallingBlockDamage@ActorDamageSource@@UEBA_NXZ
-     * @hash   -1818740520
+     * @hash   -1818694392
      */
     virtual bool isFallingBlockDamage() const;
     /**
      * @vftbl  9
      * @symbol ?isFallDamage@ActorDamageSource@@UEBA_NXZ
-     * @hash   -1203282867
+     * @hash   -1203236739
      */
     virtual bool isFallDamage() const;
     /**
      * @vftbl  10
      * @symbol ?getDeathMessage@ActorDamageSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
-     * @hash   1769964279
+     * @hash   1770010407
      */
     virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /**
@@ -151,7 +151,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?getEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
-     * @hash   434721327
+     * @hash   434767455
      */
     virtual struct ActorUniqueID getEntityUniqueID() const;
     /**
@@ -181,7 +181,7 @@ public:
     /**
      * @vftbl  18
      * @symbol ?getDamagingEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1360572613
+     * @hash   -1360526485
      */
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /**
@@ -199,42 +199,42 @@ public:
     /**
      * @vftbl  21
      * @symbol ?clone@ActorDamageSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
-     * @hash   -1666177833
+     * @hash   -1666131705
      */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /**
      * @symbol ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
-     * @hash   614616660
+     * @hash   614662788
      */
     MCAPI ActorDamageSource(enum class ActorDamageCause);
     /**
      * @symbol ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
-     * @hash   1321539632
+     * @hash   1321585760
      */
     MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @symbol ?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z
-     * @hash   2082393050
+     * @hash   2082439178
      */
     MCAPI void setCause(enum class ActorDamageCause);
     /**
      * @symbol ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@XZ
-     * @hash   1543457753
+     * @hash   1543503881
      */
     MCAPI static std::vector<struct std::pair<std::string, enum class ActorDamageCause>> generateDamageCauseCommandEnum();
     /**
      * @symbol ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
-     * @hash   1157658127
+     * @hash   1157704255
      */
     MCAPI static bool isDamageCausedByMob(enum class ActorDamageCause);
     /**
      * @symbol ?lookupCause@ActorDamageSource@@SA?AW4ActorDamageCause@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -661087603
+     * @hash   -661041475
      */
     MCAPI static enum class ActorDamageCause lookupCause(std::string const &);
     /**
      * @symbol ?lookupCauseName@ActorDamageSource@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@Z
-     * @hash   877233661
+     * @hash   877279789
      */
     MCAPI static std::string const & lookupCauseName(enum class ActorDamageCause);
 

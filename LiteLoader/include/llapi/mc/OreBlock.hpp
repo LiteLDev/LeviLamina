@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  103
      * @symbol ?spawnResources@OreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -706414157
+     * @hash   -705583853
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -231,18 +231,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@OreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1555130529
+     * @hash   1555960833
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@OreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1975657607
+     * @hash   -1974827303
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0OreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   474422089
+     * @hash   475252393
      */
     MCAPI OreBlock(std::string const &, int);
 

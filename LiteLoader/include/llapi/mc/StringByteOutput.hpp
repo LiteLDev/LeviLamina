@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -883251450
+     * @hash   -883205322
      */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
     /**
      * @vftbl  2
      * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -129205606
+     * @hash   -129159478
      */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**

@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@PistonArmBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1724462125
+     * @hash   -1723631821
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@PistonArmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1091316599
+     * @hash   -1090486295
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -184,31 +184,31 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@PistonArmBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -627537471
+     * @hash   -626707167
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@PistonArmBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1440694546
+     * @hash   -1439864242
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1048520684
+     * @hash   1049350988
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@PistonArmBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1048150841
+     * @hash   -1047320537
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PistonArmBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -395261328
+     * @hash   -394431024
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1791349872
+     * @hash   1792180176
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -281,13 +281,13 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@PistonArmBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   1519513164
+     * @hash   1520343468
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@PistonArmBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1371324054
+     * @hash   1372154358
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -298,7 +298,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PistonArmBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -346185512
+     * @hash   -345355208
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
@@ -310,14 +310,14 @@ public:
 #endif
     /**
      * @symbol ??0PistonArmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@PistonBlock@@@Z
-     * @hash   -1005578433
+     * @hash   -1004748129
      */
     MCAPI PistonArmBlock(std::string const &, int, enum class PistonBlock::Type);
 
 //private:
     /**
      * @symbol ?_getCollisions@PistonArmBlock@@AEBAXAEAVAABB@@00E@Z
-     * @hash   -1430304742
+     * @hash   -1429474438
      */
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
 

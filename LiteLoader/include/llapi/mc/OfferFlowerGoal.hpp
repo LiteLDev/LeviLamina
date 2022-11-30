@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@OfferFlowerGoal@@UEAA_NXZ
-     * @hash   1757028614
+     * @hash   1757074742
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@OfferFlowerGoal@@UEAA_NXZ
-     * @hash   -1797138300
+     * @hash   -1797092172
      */
     virtual bool canContinueToUse();
     /**
@@ -55,35 +55,35 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@OfferFlowerGoal@@UEAAXXZ
-     * @hash   -2043986897
+     * @hash   -2043940769
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@OfferFlowerGoal@@UEAAXXZ
-     * @hash   -1154651041
+     * @hash   -1154604913
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@OfferFlowerGoal@@UEAAXXZ
-     * @hash   -1315827206
+     * @hash   -1315781078
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   266979722
+     * @hash   267025850
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   950910275
+     * @hash   950956403
      */
     MCAPI OfferFlowerGoal(class Mob &);
     /**
      * @symbol ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
-     * @hash   581731112
+     * @hash   581777240
      */
     MCAPI int getMaxOfferFlowerDurationTicks() const;
 

@@ -36,40 +36,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@GameTestRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -637954117
+     * @hash   -637907989
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@GameTestRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   717337192
+     * @hash   717383320
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@GameTestRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   447452863
+     * @hash   447498991
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@GameTestRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -287617265
+     * @hash   -287571137
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0GameTestRequestPacket@@QEAA@XZ
-     * @hash   -1011399745
+     * @hash   -1011353617
      */
     MCAPI GameTestRequestPacket();
     /**
      * @symbol ?getParams@GameTestRequestPacket@@QEBAAEBUTestParameters@gametest@@XZ
-     * @hash   -1253133810
+     * @hash   -1253087682
      */
     MCAPI struct gametest::TestParameters const & getParams() const;
     /**
      * @symbol ?getTestName@GameTestRequestPacket@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1394737750
+     * @hash   1394783878
      */
     MCAPI std::string getTestName() const;
 

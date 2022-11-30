@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AddVolumeEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -608672504
+     * @hash   -608626376
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AddVolumeEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -335634507
+     * @hash   -335588379
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AddVolumeEntityPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   389733970
+     * @hash   389780098
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AddVolumeEntityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1313644018
+     * @hash   1313690146
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddVolumeEntityPacket@@QEAA@AEBVEntityContext@@VCompoundTag@@AEBVSemVersion@@@Z
-     * @hash   1876385797
+     * @hash   1876431925
      */
     MCAPI AddVolumeEntityPacket(class EntityContext const &, class CompoundTag, class SemVersion const &);
 

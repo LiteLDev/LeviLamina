@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@PortalBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1852720337
+     * @hash   1853550641
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,19 +177,19 @@ public:
     /**
      * @vftbl  90
      * @symbol ?mayPick@PortalBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-     * @hash   -888692430
+     * @hash   -887862126
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1710542819
+     * @hash   1711373123
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PortalBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -497052967
+     * @hash   -496222663
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -200,7 +200,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1249590789
+     * @hash   -1248760485
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -226,13 +226,13 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@PortalBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   1128085379
+     * @hash   1128915683
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1167932502
+     * @hash   1168762806
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1357915938
+     * @hash   -1357085634
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1216809155
+     * @hash   1217639459
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   885465319
+     * @hash   886295623
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -303,17 +303,17 @@ public:
 #endif
     /**
      * @symbol ??0PortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -391168689
+     * @hash   -390338385
      */
     MCAPI PortalBlock(std::string const &, int);
     /**
      * @symbol ?tryMatchPortalRecordToFrameBlocksContainingPos@PortalBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1409527187
+     * @hash   1410357491
      */
     MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?trySpawnPortal@PortalBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1772195458
+     * @hash   1773025762
      */
     MCAPI static bool trySpawnPortal(class BlockSource &, class BlockPos const &);
 

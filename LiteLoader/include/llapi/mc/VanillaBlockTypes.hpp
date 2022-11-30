@@ -1204,12 +1204,12 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mWoodenSlab;
     /**
      * @symbol ?registerBlocks@VanillaBlockTypes@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   1321275268
+     * @hash   1322105572
      */
     MCAPI void registerBlocks(class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?unregisterBlocks@VanillaBlockTypes@@YAXXZ
-     * @hash   1976556352
+     * @hash   1977386656
      */
     MCAPI void unregisterBlocks();
 

@@ -94,28 +94,28 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@ArmorStandItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1137965670
+     * @hash   -1137135366
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0ArmorStandItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   1094557325
+     * @hash   1095387629
      */
     MCAPI ArmorStandItem(std::string const &, short);
     /**
      * @symbol ?_shouldRemove@ArmorStandItem@@QEBA_NAEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -271015638
+     * @hash   -270185334
      */
     MCAPI bool _shouldRemove(class BlockSource &, class BlockPos) const;
 

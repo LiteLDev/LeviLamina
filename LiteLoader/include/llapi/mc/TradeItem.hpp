@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4TradeItem@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   675848046
+     * @hash   675894174
      */
     MCAPI struct TradeItem & operator=(struct TradeItem &&);
     /**
      * @symbol ??1TradeItem@@QEAA@XZ
-     * @hash   -1892390093
+     * @hash   -1892343965
      */
     MCAPI ~TradeItem();
 

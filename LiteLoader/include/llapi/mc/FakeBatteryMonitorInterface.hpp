@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
-     * @hash   192160180
+     * @hash   192206308
      */
     virtual float getBatteryLevel() const;
     /**
      * @symbol ??0FakeBatteryMonitorInterface@@QEAA@XZ
-     * @hash   -1552534221
+     * @hash   -1552488093
      */
     MCAPI FakeBatteryMonitorInterface();
 

@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0LeverActionEvent@@QEAA@AEBU0@@Z
-     * @hash   831333167
+     * @hash   831379295
      */
     MCAPI LeverActionEvent(struct LeverActionEvent const &);
     /**
      * @symbol ??1LeverActionEvent@@QEAA@XZ
-     * @hash   803049972
+     * @hash   803096100
      */
     MCAPI ~LeverActionEvent();
 

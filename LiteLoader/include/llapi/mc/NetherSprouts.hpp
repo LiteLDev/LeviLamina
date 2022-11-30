@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@NetherSprouts@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1028838663
+     * @hash   1029668967
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@NetherSprouts@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -310241086
+     * @hash   -309410782
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,25 +177,25 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@NetherSprouts@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1167424242
+     * @hash   -1166593938
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@NetherSprouts@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1784358541
+     * @hash   1785188845
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@NetherSprouts@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -452062620
+     * @hash   -451232316
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@NetherSprouts@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   907158984
+     * @hash   907989288
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@NetherSprouts@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1001687510
+     * @hash   1002517814
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@NetherSprouts@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1484752664
+     * @hash   -1483922360
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@NetherSprouts@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1311560062
+     * @hash   1312390366
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@NetherSprouts@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -429299120
+     * @hash   -428468816
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERSPROUTS
@@ -291,7 +291,7 @@ public:
 #endif
     /**
      * @symbol ??0NetherSprouts@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -363239424
+     * @hash   -362409120
      */
     MCAPI NetherSprouts(std::string const &, int);
 

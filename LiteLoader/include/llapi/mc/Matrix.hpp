@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0Matrix@@QEAA@AEBU?$qua@M$0A@@glm@@@Z
-     * @hash   277570485
+     * @hash   277662741
      */
     MCAPI Matrix(struct glm::qua<float, 0> const &);
     /**

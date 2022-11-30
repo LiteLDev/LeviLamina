@@ -37,14 +37,14 @@ public:
 #endif
     /**
      * @symbol ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
-     * @hash   -1233667754
+     * @hash   -1233621626
      */
     MCAPI static void setup(class Minecraft &);
 
 //protected:
     /**
      * @symbol ?tryToSIFTText@ServerCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z@5@@Z
-     * @hash   2071057879
+     * @hash   2071104007
      */
     MCAPI bool tryToSIFTText(class CommandOrigin const &, class CommandOutput &, std::vector<std::string> const &, enum class TextProcessingEventOrigin const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>) const;
 

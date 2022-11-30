@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?toNBT@BlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
-     * @hash   -1213313972
+     * @hash   -1212483668
      */
     virtual void toNBT(class CompoundTag &, int) const;
     /**
      * @vftbl  2
      * @symbol ?fromNBT@BlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
-     * @hash   -371648528
+     * @hash   -370818224
      */
     virtual bool fromNBT(class CompoundTag const &, int &) const;
 

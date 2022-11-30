@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@RedStoneWireBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1409287604
+     * @hash   1410117908
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -2019989391
+     * @hash   -2019159087
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   486757156
+     * @hash   487587460
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@RedStoneWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   110750012
+     * @hash   111580316
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1161857530
+     * @hash   -1161027226
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RedStoneWireBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   167721638
+     * @hash   168551942
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@RedStoneWireBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   488393718
+     * @hash   489224022
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@RedStoneWireBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1641073680
+     * @hash   -1640243376
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1702363177
+     * @hash   1703193481
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -261,7 +261,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RedStoneWireBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   620000523
+     * @hash   620830827
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -282,7 +282,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -109387984
+     * @hash   -108557680
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -293,7 +293,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1538160326
+     * @hash   -1537330022
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -304,7 +304,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@RedStoneWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   867171180
+     * @hash   868001484
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -315,7 +315,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RedStoneWireBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1834108062
+     * @hash   -1833277758
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEWIREBLOCK
@@ -327,7 +327,7 @@ public:
 #endif
     /**
      * @symbol ??0RedStoneWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1933494098
+     * @hash   1934324402
      */
     MCAPI RedStoneWireBlock(std::string const &, int);
 

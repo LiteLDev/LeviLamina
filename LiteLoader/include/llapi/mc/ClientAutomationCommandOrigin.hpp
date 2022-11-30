@@ -40,31 +40,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@ClientAutomationCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1698820659
+     * @hash   -1698774531
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientAutomationCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   539461068
+     * @hash   539507196
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ClientAutomationCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   1381155257
+     * @hash   1381201385
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ClientAutomationCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -71211930
+     * @hash   -71165802
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ClientAutomationCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   1705721749
+     * @hash   1705767877
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
@@ -88,13 +88,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ClientAutomationCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   55007197
+     * @hash   55053325
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ClientAutomationCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   454139987
+     * @hash   454186115
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -112,19 +112,19 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ClientAutomationCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   884180402
+     * @hash   884226530
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@ClientAutomationCommandOrigin@@UEBA?AUCommandOriginData@@XZ
-     * @hash   258656160
+     * @hash   258702288
      */
     virtual struct CommandOriginData toCommandOriginData() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ClientAutomationCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   -1422762375
+     * @hash   -1422716247
      */
     virtual class CompoundTag serialize() const;
     /**
@@ -135,7 +135,7 @@ public:
     virtual bool isValid() const;
     /**
      * @symbol ??0ClientAutomationCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -166367994
+     * @hash   -166321866
      */
     MCAPI ClientAutomationCommandOrigin(std::string const &);
 

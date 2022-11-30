@@ -38,17 +38,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@CommandOriginLoader@@UEAA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@@Z
-     * @hash   -690580638
+     * @hash   -690534510
      */
     virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
     /**
      * @symbol ??0CommandOriginLoader@@QEAA@AEAVServerLevel@@@Z
-     * @hash   1862832839
+     * @hash   1862878967
      */
     MCAPI CommandOriginLoader(class ServerLevel &);
     /**
      * @symbol ?load@CommandOriginLoader@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     * @hash   -745849050
+     * @hash   -745802922
      */
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

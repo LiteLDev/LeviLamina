@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@WorkbenchBlock@@UEAAXXZ
-     * @hash   -599207646
+     * @hash   -598377342
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@WorkbenchBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1091061027
+     * @hash   1091891331
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -237,7 +237,7 @@ public:
 #endif
     /**
      * @symbol ??0WorkbenchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1328698180
+     * @hash   -1327867876
      */
     MCAPI WorkbenchBlock(std::string const &, int);
 

@@ -44,7 +44,7 @@ public:
 public:
     /**
      * @symbol ??0PackInfoData@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVContentIdentity@@_N5@Z
-     * @hash   -2046389302
+     * @hash   -2046343174
      */
     MCAPI PackInfoData(class mce::UUID const &, class SemVersion const &, unsigned __int64, std::string const &, std::string const &, class ContentIdentity const &, bool, bool);
     /**

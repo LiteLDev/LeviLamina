@@ -33,22 +33,22 @@ public:
 public:
     /**
      * @symbol ?createItem@LootPoolEntry@@QEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1074352984
+     * @hash   -1073522680
      */
     MCAPI void createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /**
      * @symbol ?getConditions@LootPoolEntry@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
-     * @hash   1424861283
+     * @hash   1424907411
      */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     /**
      * @symbol ?getWeight@LootPoolEntry@@QEBAHM@Z
-     * @hash   1896960867
+     * @hash   1897791171
      */
     MCAPI int getWeight(float) const;
     /**
      * @symbol ?deserialize@LootPoolEntry@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@AEBVValue@Json@@@Z
-     * @hash   1603195881
+     * @hash   1604026185
      */
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &);
 

@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @symbol ??0AdventureSettings@@QEAA@XZ
-     * @hash   -643690897
+     * @hash   -643644769
      */
     MCAPI AdventureSettings();
 

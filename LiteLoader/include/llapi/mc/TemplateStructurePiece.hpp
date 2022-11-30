@@ -39,32 +39,32 @@ public:
     /**
      * @vftbl  1
      * @symbol ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
-     * @hash   -737205369
+     * @hash   -736375065
      */
     virtual void moveBoundingBox(int, int, int);
     /**
      * @vftbl  4
      * @symbol ?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -772733918
+     * @hash   -771903614
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ??0TemplateStructurePiece@@QEAA@H@Z
-     * @hash   -2027146502
+     * @hash   -2026316198
      */
     MCAPI TemplateStructurePiece(int);
 
 //protected:
     /**
      * @symbol ?_setup@TemplateStructurePiece@@IEAAXAEAVLegacyStructureTemplate@@AEBVLegacyStructureSettings@@AEBVBlockPos@@@Z
-     * @hash   -209436446
+     * @hash   -208606142
      */
     MCAPI void _setup(class LegacyStructureTemplate &, class LegacyStructureSettings const &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_setBoundingBoxFromTemplate@TemplateStructurePiece@@AEAAXXZ
-     * @hash   -793714721
+     * @hash   -792884417
      */
     MCAPI void _setBoundingBoxFromTemplate();
 

@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@ConditionalListFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -1098878309
+     * @hash   -1098048005
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0ConditionalListFeature@@QEAA@XZ
-     * @hash   844516718
+     * @hash   845347022
      */
     MCAPI ConditionalListFeature();
 

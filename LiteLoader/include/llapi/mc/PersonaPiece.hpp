@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0PersonaPiece@@QEAA@XZ
-     * @hash   194345470
+     * @hash   194391598
      */
     MCAPI PersonaPiece();
     /**
      * @symbol ??1PersonaPiece@@QEAA@XZ
-     * @hash   1900834556
+     * @hash   1900880684
      */
     MCAPI ~PersonaPiece();
     /**

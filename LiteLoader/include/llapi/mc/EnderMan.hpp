@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@EnderMan@@UEAAXXZ
-     * @hash   1456785753
+     * @hash   1456831881
      */
     virtual void normalTick();
     /**
@@ -112,7 +112,7 @@ public:
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -1686688638
+     * @hash   -1686642510
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
@@ -159,19 +159,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1653275874
+     * @hash   -1653229746
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -370239234
+     * @hash   -370193106
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1027932255
+     * @hash   1027978383
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -192,13 +192,13 @@ public:
     /**
      * @vftbl  290
      * @symbol ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1858186120
+     * @hash   -1858139992
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  295
      * @symbol ?aiStep@EnderMan@@UEAAXXZ
-     * @hash   273318921
+     * @hash   273365049
      */
     virtual void aiStep();
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@EnderMan@@UEAAXXZ
-     * @hash   554598524
+     * @hash   554644652
      */
     virtual void newServerAiStep();
     /**
@@ -229,17 +229,17 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0EnderMan@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   6936270
+     * @hash   6982398
      */
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getCarryingBlock@EnderMan@@QEBAAEBVBlock@@XZ
-     * @hash   -149805832
+     * @hash   -149759704
      */
     MCAPI class Block const & getCarryingBlock() const;
     /**
      * @symbol ?setCarryingBlock@EnderMan@@QEAAXAEBVBlock@@@Z
-     * @hash   -1468208730
+     * @hash   -1468162602
      */
     MCAPI void setCarryingBlock(class Block const &);
     /**
@@ -259,7 +259,7 @@ public:
     MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
     /**
      * @symbol ?shutdown@EnderMan@@SAXXZ
-     * @hash   1848410083
+     * @hash   1848456211
      */
     MCAPI static void shutdown();
 

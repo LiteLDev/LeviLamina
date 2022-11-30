@@ -85,17 +85,17 @@ public:
     MCAPI GrindstoneContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   -281849071
+     * @hash   -281726063
      */
     MCAPI static int const ADDITIONAL_SLOT;
     /**
      * @symbol ?INPUT_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   -1944495707
+     * @hash   -1944372699
      */
     MCAPI static int const INPUT_SLOT;
     /**
      * @symbol ?RESULT_SLOT@GrindstoneContainerManagerModel@@2HB
-     * @hash   1673847209
+     * @hash   1673970217
      */
     MCAPI static int const RESULT_SLOT;
 

@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockDestructibleByExplosionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   433678358
+     * @hash   434508662
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockDestructibleByExplosionDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   551420622
+     * @hash   552250926
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -52,12 +52,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByExplosionDescription@@SAXXZ
-     * @hash   -1041872369
+     * @hash   -1041042065
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDestructibleByExplosionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   2113741102
+     * @hash   2114571406
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

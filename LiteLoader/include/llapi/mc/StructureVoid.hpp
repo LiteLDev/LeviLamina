@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@StructureVoid@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -357068329
+     * @hash   -356238025
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -260,7 +260,7 @@ public:
 #endif
     /**
      * @symbol ??0StructureVoid@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -769531419
+     * @hash   -768701115
      */
     MCAPI StructureVoid(std::string const &, int);
 

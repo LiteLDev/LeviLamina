@@ -38,25 +38,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@GetInteractionPositionForBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   -2051143128
+     * @hash   -2051050872
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@GetInteractionPositionForBlockNode@@EEAAXAEAVActor@@@Z
-     * @hash   -721101828
+     * @hash   -721009572
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0GetInteractionPositionForBlockNode@@QEAA@XZ
-     * @hash   -343137353
+     * @hash   -343045097
      */
     MCAPI GetInteractionPositionForBlockNode();
 
 //private:
     /**
      * @symbol ?parseFacingNameFromString@GetInteractionPositionForBlockNode@@AEAA?AW4Name@Facing@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1807219995
+     * @hash   -1807127739
      */
     MCAPI enum class Facing::Name parseFacingNameFromString(std::string);
 

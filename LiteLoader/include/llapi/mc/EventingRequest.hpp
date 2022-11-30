@@ -35,12 +35,12 @@ public:
     MCAPI ~EventingRequest();
     /**
      * @symbol ?addPersonaEmotePlayed@EventingRequest@@SA?AU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
-     * @hash   1110630111
+     * @hash   1110676239
      */
     MCAPI static struct EventingRequest addPersonaEmotePlayed(std::string const &, bool, int);
     /**
      * @symbol ?addPlayerBounced@EventingRequest@@SA?AU1@AEBUActorUniqueID@@AEBVBlock@@H@Z
-     * @hash   -1483322727
+     * @hash   -1483276599
      */
     MCAPI static struct EventingRequest addPlayerBounced(struct ActorUniqueID const &, class Block const &, int);
 

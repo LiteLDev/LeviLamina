@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_sendPlayerOnGround@ServerPlayerSendPlayerOnGroundSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   2067996881
+     * @hash   2068043009
      */
     MCAPI static void _sendPlayerOnGround(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
      * @symbol ?createSystem@ServerPlayerSendPlayerOnGroundSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   77542766
+     * @hash   77588894
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

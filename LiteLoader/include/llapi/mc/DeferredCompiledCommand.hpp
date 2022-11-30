@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DeferredCompiledCommand@@UEAAXAEAVMinecraftCommands@@@Z
-     * @hash   -1907960042
+     * @hash   -1907913914
      */
     virtual void execute(class MinecraftCommands &);
     /**
      * @symbol ??0DeferredCompiledCommand@@QEAA@V?$not_null@PEAVCommand@@@gsl@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@@Z
-     * @hash   516591676
+     * @hash   516637804
      */
     MCAPI DeferredCompiledCommand(class gsl::not_null<class Command *>, std::unique_ptr<class CommandOrigin>);
 

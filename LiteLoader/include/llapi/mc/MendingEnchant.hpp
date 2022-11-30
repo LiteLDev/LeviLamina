@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@MendingEnchant@@UEBAHH@Z
-     * @hash   1990390718
+     * @hash   1991221022
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@MendingEnchant@@UEBAHH@Z
-     * @hash   1231656588
+     * @hash   1232486892
      */
     virtual int getMaxCost(int) const;
     /**
@@ -83,7 +83,7 @@ public:
 #endif
     /**
      * @symbol ??0MendingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   1828178836
+     * @hash   1829009140
      */
     MCAPI MendingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

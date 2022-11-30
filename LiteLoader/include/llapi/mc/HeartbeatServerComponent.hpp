@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0HeartbeatServerComponent@@QEAA@$$QEAV0@@Z
-     * @hash   937620805
+     * @hash   937666933
      */
     MCAPI HeartbeatServerComponent(class HeartbeatServerComponent &&);
     /**
      * @symbol ??1HeartbeatServerComponent@@QEAA@XZ
-     * @hash   -1021107272
+     * @hash   -1021061144
      */
     MCAPI ~HeartbeatServerComponent();
 

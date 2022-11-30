@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@MushroomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1414132063
+     * @hash   -1413301759
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@MushroomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -847348240
+     * @hash   -846517936
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@MushroomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -370938182
+     * @hash   -370107878
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@MushroomBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   37316168
+     * @hash   38146472
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -250,19 +250,19 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@MushroomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -849933189
+     * @hash   -849102885
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@MushroomBlock@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -1180212606
+     * @hash   -1179382302
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@MushroomBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -766330674
+     * @hash   -765500370
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -272,7 +272,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0MushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   871244851
+     * @hash   872075155
      */
     MCAPI MushroomBlock(std::string const &, int);
 

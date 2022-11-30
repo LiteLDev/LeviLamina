@@ -94,39 +94,39 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  120
      * @symbol ?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     * @hash   1794014065
+     * @hash   1794844369
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@LodestoneCompassItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -850457646
+     * @hash   -849627342
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0LodestoneCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1103220254
+     * @hash   -1102389950
      */
     MCAPI LodestoneCompassItem(std::string const &, int);
     /**
      * @symbol ?getPositionTrackingId@LodestoneCompassItem@@SA?AVPositionTrackingId@@AEBVItemStackBase@@@Z
-     * @hash   46330629
+     * @hash   47160933
      */
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     /**
      * @symbol ?linkCompassToLodestone@LodestoneCompassItem@@SA_NAEAVItemStack@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   1185092657
+     * @hash   1185922961
      */
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
 

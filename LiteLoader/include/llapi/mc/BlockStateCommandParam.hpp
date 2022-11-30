@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0BlockStateCommandParam@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Type@0@@Z
-     * @hash   -1594465912
+     * @hash   -1594419784
      */
     MCAPI BlockStateCommandParam(std::string, std::string, enum class BlockStateCommandParam::Type);
     /**
      * @symbol ?getNameAndValue@BlockStateCommandParam@@QEBA?AV?$optional@U?$pair@VHashedString@@H@std@@@std@@AEAVCommandOutput@@@Z
-     * @hash   -1651295512
+     * @hash   -1651249384
      */
     MCAPI class std::optional<struct std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &) const;
     /**
      * @symbol ?setBlockState@BlockStateCommandParam@@QEBA_NPEAPEBVBlock@@AEAVCommandOutput@@@Z
-     * @hash   1419721933
+     * @hash   1419768061
      */
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     /**
@@ -54,7 +54,7 @@ public:
 //private:
     /**
      * @symbol ?_createCompoundTag@BlockStateCommandParam@@AEBA_NAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     * @hash   -1312035482
+     * @hash   -1311989354
      */
     MCAPI bool _createCompoundTag(class CompoundTag &, class CommandOutput &) const;
 

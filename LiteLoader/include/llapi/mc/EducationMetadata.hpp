@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ??0EducationMetadata@@QEAA@XZ
-     * @hash   -1804928941
+     * @hash   -1804098637
      */
     MCAPI EducationMetadata();
     /**
      * @symbol ??1EducationMetadata@@QEAA@XZ
-     * @hash   235632611
+     * @hash   235678739
      */
     MCAPI ~EducationMetadata();
     /**

@@ -46,12 +46,12 @@ public:
     MCAPI CommandMessage();
     /**
      * @symbol ?getMessage@CommandMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandOrigin@@@Z
-     * @hash   1017867739
+     * @hash   1017913867
      */
     MCAPI std::string getMessage(class CommandOrigin const &) const;
     /**
      * @symbol ??1CommandMessage@@QEAA@XZ
-     * @hash   417114742
+     * @hash   417160870
      */
     MCAPI ~CommandMessage();
 

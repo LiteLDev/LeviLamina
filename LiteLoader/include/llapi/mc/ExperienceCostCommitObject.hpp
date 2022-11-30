@@ -36,24 +36,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
-     * @hash   271779170
+     * @hash   272609474
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
      * @vftbl  2
      * @symbol ?canCommit@ExperienceCostCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   2089757947
+     * @hash   2090588251
      */
     virtual bool canCommit(class ContainerScreenContext const &) const;
     /**
      * @vftbl  3
      * @symbol ?commit@ExperienceCostCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
-     * @hash   1413022670
+     * @hash   1413852974
      */
     virtual void commit(class ContainerScreenContext const &);
     /**
      * @symbol ??0ExperienceCostCommitObject@@QEAA@H@Z
-     * @hash   1972190610
+     * @hash   1973020914
      */
     MCAPI ExperienceCostCommitObject(int);
 

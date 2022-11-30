@@ -92,29 +92,29 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@ChestBoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -601598714
+     * @hash   -600768410
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  133
      * @symbol ?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ
-     * @hash   1847283133
+     * @hash   1848113437
      */
     virtual enum class ActorType _getActorType() const;
     /**
      * @symbol ??0ChestBoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-     * @hash   -414850703
+     * @hash   -414020399
      */
     MCAPI ChestBoatItem(std::string const &, int, int);
 

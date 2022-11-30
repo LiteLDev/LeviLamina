@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createMoveHitboxSystem@MoveHitboxSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -2092990956
+     * @hash   -2092944828
      */
     MCAPI static struct TickingSystemWithInfo createMoveHitboxSystem();
     /**
      * @symbol ?moveHitboxTo@MoveHitboxSystem@@SAXAEBVVec3@@AEAV?$vector@UHitbox@@V?$allocator@UHitbox@@@std@@@std@@@Z
-     * @hash   1384670125
+     * @hash   1384716253
      */
     MCAPI static void moveHitboxTo(class Vec3 const &, std::vector<struct Hitbox> &);
 

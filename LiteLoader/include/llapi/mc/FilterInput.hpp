@@ -36,12 +36,12 @@ public:
     MCAPI FilterInput(int);
     /**
      * @symbol ??4FilterInput@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1800931116
+     * @hash   1800977244
      */
     MCAPI class FilterInput & operator=(class FilterInput const &);
     /**
      * @symbol ??4FilterInput@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1308197016
+     * @hash   1308243144
      */
     MCAPI class FilterInput & operator=(class FilterInput &&);
     /**

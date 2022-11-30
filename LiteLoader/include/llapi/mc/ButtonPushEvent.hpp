@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ButtonPushEvent@@QEAA@XZ
-     * @hash   328055978
+     * @hash   328102106
      */
     MCAPI ~ButtonPushEvent();
 

@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  172
      * @symbol ?getEntityTypeId@WanderingTrader@@UEBA?AW4ActorType@@XZ
-     * @hash   -536617406
+     * @hash   -536571278
      */
     virtual enum class ActorType getEntityTypeId() const;
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
-     * @hash   1001442267
+     * @hash   1001488395
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -188,7 +188,7 @@ public:
 #endif
     /**
      * @symbol ??0WanderingTrader@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   560498911
+     * @hash   560545039
      */
     MCAPI WanderingTrader(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -22,57 +22,57 @@ namespace SculkUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?canSpreadIntoBlock@SculkUtils@@YA_NAEBVBlock@@@Z
-     * @hash   1358170518
+     * @hash   1359000822
      */
     MCAPI bool canSpreadIntoBlock(class Block const &);
     /**
      * @symbol ?generateSculkReplaceableBlocks@SculkUtils@@YA?BV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@XZ
-     * @hash   -112766894
+     * @hash   -111936590
      */
     MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const generateSculkReplaceableBlocks();
     /**
      * @symbol ?generateSculkReplaceableBlocksWorldgen@SculkUtils@@YA?BV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@XZ
-     * @hash   -536413266
+     * @hash   -535582962
      */
     MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const generateSculkReplaceableBlocksWorldgen();
     /**
      * @symbol ?isPosInTickingRange@SculkUtils@@YA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -819394939
+     * @hash   -818564635
      */
     MCAPI bool isPosInTickingRange(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?isSculk@SculkUtils@@YA_NAEBVBlock@@@Z
-     * @hash   -1949648764
+     * @hash   -1948818460
      */
     MCAPI bool isSculk(class Block const &);
     /**
      * @symbol ?isSculkOrSculkVein@SculkUtils@@YA_NAEBVBlock@@@Z
-     * @hash   -1875730396
+     * @hash   -1874900092
      */
     MCAPI bool isSculkOrSculkVein(class Block const &);
     /**
      * @symbol ?isSculkReplaceable@SculkUtils@@YA_NAEBVBlock@@AEBV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@@Z
-     * @hash   93840580
+     * @hash   94670884
      */
     MCAPI bool isSculkReplaceable(class Block const &, class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &);
     /**
      * @symbol ?isSculkVein@SculkUtils@@YA_NAEBVBlock@@@Z
-     * @hash   -1706761876
+     * @hash   -1705931572
      */
     MCAPI bool isSculkVein(class Block const &);
     /**
      * @symbol ?isSculkVeinWithSubstrateAccess@SculkUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@AEAVSculkSpreader@@@Z
-     * @hash   529051135
+     * @hash   529881439
      */
     MCAPI bool isSculkVeinWithSubstrateAccess(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, class SculkSpreader &);
     /**
      * @symbol ?requestChargeEffects@SculkUtils@@YAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   -1606725024
+     * @hash   -1605894720
      */
     MCAPI void requestChargeEffects(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, int, int);
     /**
      * @symbol ?requestChargePopEffects@SculkUtils@@YAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   817102276
+     * @hash   817932580
      */
     MCAPI void requestChargePopEffects(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
 

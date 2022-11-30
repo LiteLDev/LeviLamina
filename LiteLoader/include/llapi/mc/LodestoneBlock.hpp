@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@LodestoneBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   124363648
+     * @hash   125193952
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -224,12 +224,12 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0LodestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -828182301
+     * @hash   -827351997
      */
     MCAPI LodestoneBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?getBlockActor@LodestoneBlock@@SAPEAVLodestoneBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1386585039
+     * @hash   1387415343
      */
     MCAPI static class LodestoneBlockActor * getBlockActor(class BlockSource &, class BlockPos const &);
 

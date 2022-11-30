@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getId@LevelSoundEventMap@@SA?AW4LevelSoundEvent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -231010965
+     * @hash   -230180661
      */
     MCAPI static enum class LevelSoundEvent getId(std::string const &);
     /**
      * @symbol ?getName@LevelSoundEventMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@@@Z
-     * @hash   -1783404155
+     * @hash   -1782573851
      */
     MCAPI static std::string const & getName(enum class LevelSoundEvent);
     /**

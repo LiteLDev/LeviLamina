@@ -61,27 +61,27 @@ public:
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
     /**
      * @symbol ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
-     * @hash   -1541974405
+     * @hash   -1541928277
      */
     MCAPI ItemStackRequestAction(enum class ItemStackRequestActionType);
     /**
      * @symbol ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
-     * @hash   1201724208
+     * @hash   1201770336
      */
     MCAPI enum class ItemStackRequestActionType getActionType() const;
     /**
      * @symbol ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   564079080
+     * @hash   564125208
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
-     * @hash   -298864787
+     * @hash   -298818659
      */
     MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     /**
      * @symbol ?read@ItemStackRequestAction@@SA?AV?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1092921231
+     * @hash   1092967359
      */
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 

@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?registerBlockReduction@ExternalRecipeStore@@QEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   -1877475509
+     * @hash   -1876645205
      */
     MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
     /**
      * @symbol ?setBlockReducer@ExternalRecipeStore@@QEAAXPEAVBlockReducer@@@Z
-     * @hash   -1285415607
+     * @hash   -1284585303
      */
     MCAPI void setBlockReducer(class BlockReducer *);
 

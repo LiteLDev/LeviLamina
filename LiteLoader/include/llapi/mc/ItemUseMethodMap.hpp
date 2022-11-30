@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getItemUseMethodName@ItemUseMethodMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemUseMethod@@@Z
-     * @hash   -1825115945
+     * @hash   -1824285641
      */
     MCAPI static std::string const & getItemUseMethodName(enum class ItemUseMethod);
 

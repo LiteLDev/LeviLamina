@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Goat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1089923003
+     * @hash   -1089876875
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -106,13 +106,13 @@ public:
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1728662345
+     * @hash   1728708473
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
-     * @hash   1330199227
+     * @hash   1330245355
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -148,7 +148,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
-     * @hash   104732371
+     * @hash   104778499
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1691599244
+     * @hash   1691645372
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   543163089
+     * @hash   543209217
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -181,13 +181,13 @@ public:
     /**
      * @vftbl  285
      * @symbol ?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   -240639001
+     * @hash   -240592873
      */
     virtual enum class LevelSoundEvent getHurtSound();
     /**
      * @vftbl  286
      * @symbol ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
-     * @hash   1028199582
+     * @hash   1028245710
      */
     virtual enum class LevelSoundEvent getDeathSound();
     /**
@@ -217,22 +217,22 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Goat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1529344423
+     * @hash   1529390551
      */
     MCAPI Goat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getHornCount@Goat@@QEBAHXZ
-     * @hash   406867192
+     * @hash   406913320
      */
     MCAPI int getHornCount() const;
     /**
      * @symbol ?isScreaming@Goat@@QEAA_NXZ
-     * @hash   -1082454788
+     * @hash   -1082408660
      */
     MCAPI bool isScreaming();
     /**
      * @symbol ?reduceHornCount@Goat@@QEAAXXZ
-     * @hash   121175619
+     * @hash   121221747
      */
     MCAPI void reduceHornCount();
 

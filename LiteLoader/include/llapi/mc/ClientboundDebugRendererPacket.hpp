@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ClientboundDebugRendererPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1002135891
+     * @hash   1002182019
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientboundDebugRendererPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1339830272
+     * @hash   -1339784144
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ClientboundDebugRendererPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1287087513
+     * @hash   -1287041385
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ClientboundDebugRendererPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1764469367
+     * @hash   1764515495
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@XZ
-     * @hash   -1117401129
+     * @hash   -1117355001
      */
     MCAPI ClientboundDebugRendererPacket();
     /**
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@W4Type@0@@Z
-     * @hash   -1258667397
+     * @hash   -1258621269
      */
     MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type);
     /**
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@AEBVVec3@@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@2@@Z
-     * @hash   1353134768
+     * @hash   1353180896
      */
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
 

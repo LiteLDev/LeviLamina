@@ -33,61 +33,61 @@ public:
     /**
      * @vftbl  0
      * @symbol ?clone@MolangDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -542599365
+     * @hash   -541769061
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
      * @vftbl  1
      * @symbol ?sameItems@MolangDescriptor@@UEBA_NAEBUBaseDescriptor@ItemDescriptor@@_N@Z
-     * @hash   1247198123
+     * @hash   1248028427
      */
     virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const &, bool) const;
     /**
      * @vftbl  2
      * @symbol ?sameItem@MolangDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
-     * @hash   -544103609
+     * @hash   -543273305
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
      * @vftbl  3
      * @symbol ?getFullName@MolangDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -878979975
+     * @hash   -878149671
      */
     virtual std::string const & getFullName() const;
     /**
      * @vftbl  6
      * @symbol ?toMap@MolangDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     * @hash   1359256225
+     * @hash   1360086529
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
      * @vftbl  7
      * @symbol ?save@MolangDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     * @hash   1467060837
+     * @hash   1467891141
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
      * @vftbl  8
      * @symbol ?serialize@MolangDescriptor@@UEBAXAEAVValue@Json@@@Z
-     * @hash   339676050
+     * @hash   340506354
      */
     virtual void serialize(class Json::Value &) const;
     /**
      * @vftbl  9
      * @symbol ?serialize@MolangDescriptor@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   872954090
+     * @hash   873784394
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @vftbl  10
      * @symbol ?getType@MolangDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
-     * @hash   -837958192
+     * @hash   -837912064
      */
     virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  12
      * @symbol ?getHash@MolangDescriptor@@UEBA_KXZ
-     * @hash   -382754155
+     * @hash   -381923851
      */
     virtual unsigned __int64 getHash() const;
     /**
@@ -97,7 +97,7 @@ public:
     virtual void __unk_vfn_13();
     /**
      * @symbol ?fromExpressionTag@MolangDescriptor@@SA?AV?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@@Z
-     * @hash   -2027404366
+     * @hash   -2026574062
      */
     MCAPI static std::unique_ptr<struct MolangDescriptor> fromExpressionTag(std::string const &, enum class MolangVersion);
 

@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@DropperBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   313413387
+     * @hash   314243691
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@DropperBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   111987750
+     * @hash   112818054
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -231,23 +231,23 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DropperBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1704933251
+     * @hash   -1704102947
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  194
      * @symbol ?dispenseFrom@DropperBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1209263485
+     * @hash   1210093789
      */
     virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ??0DropperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1442633917
+     * @hash   1443464221
      */
     MCAPI DropperBlock(std::string const &, int);
     /**
      * @symbol ?getAttachedFace@DropperBlock@@SAHH@Z
-     * @hash   -597905511
+     * @hash   -597075207
      */
     MCAPI static int getAttachedFace(int);
 

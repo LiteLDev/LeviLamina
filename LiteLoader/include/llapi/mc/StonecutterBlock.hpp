@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@StonecutterBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   414114185
+     * @hash   414944489
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@StonecutterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   222670189
+     * @hash   223500493
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@StonecutterBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   201383624
+     * @hash   202213928
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@StonecutterBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   595967795
+     * @hash   596798099
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@StonecutterBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1782153824
+     * @hash   -1781323520
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@StonecutterBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1920933875
+     * @hash   -1920103571
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -278,7 +278,7 @@ public:
 #endif
     /**
      * @symbol ??0StonecutterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -988940953
+     * @hash   -988110649
      */
     MCAPI StonecutterBlock(std::string const &, int);
 

@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@ExperienceRewardComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -11262040
+     * @hash   -11215912
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getIsExperienceDropEnabled@ExperienceRewardComponent@@QEBA_NXZ
-     * @hash   703303208
+     * @hash   703349336
      */
     MCAPI bool getIsExperienceDropEnabled() const;
     /**
      * @symbol ?getOnBredExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
-     * @hash   -1306967079
+     * @hash   -1306920951
      */
     MCAPI int getOnBredExperience(class Actor &) const;
     /**
      * @symbol ?getOnDeathExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
-     * @hash   1700777109
+     * @hash   1700823237
      */
     MCAPI int getOnDeathExperience(class Actor &) const;
     /**
      * @symbol ??4ExperienceRewardComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1613232260
+     * @hash   -1613186132
      */
     MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@ExperienceRewardComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   827539448
+     * @hash   827585576
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setIsExperienceDropEnabled@ExperienceRewardComponent@@QEAAX_N@Z
-     * @hash   1518285636
+     * @hash   1518331764
      */
     MCAPI void setIsExperienceDropEnabled(bool);
 

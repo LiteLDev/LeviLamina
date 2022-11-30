@@ -71,13 +71,13 @@ public:
     /**
      * @vftbl  7
      * @symbol ?setJumping@MoveInput@@UEAAX_N@Z
-     * @hash   1957106316
+     * @hash   1957152444
      */
     virtual void setJumping(bool);
     /**
      * @vftbl  8
      * @symbol ?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z
-     * @hash   -1344076801
+     * @hash   -1344030673
      */
     virtual void setAutoJumpingInWater(bool);
     /**
@@ -89,7 +89,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?setSneakDown@MoveInput@@UEAAX_N@Z
-     * @hash   797748794
+     * @hash   797794922
      */
     virtual void setSneakDown(bool);
     /**
@@ -101,13 +101,13 @@ public:
     /**
      * @vftbl  12
      * @symbol ?extractInputComponent@MoveInput@@UEBA?AUMoveInputComponent@@XZ
-     * @hash   -180218429
+     * @hash   -180172301
      */
     virtual struct MoveInputComponent extractInputComponent() const;
     /**
      * @vftbl  13
      * @symbol ?applyInputComponent@MoveInput@@UEAAXAEBUMoveInputComponent@@@Z
-     * @hash   -239361333
+     * @hash   -239315205
      */
     virtual void applyInputComponent(struct MoveInputComponent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT

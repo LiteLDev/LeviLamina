@@ -52,65 +52,65 @@ public:
     /**
      * @vftbl  3
      * @symbol ?load@Option@@UEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
-     * @hash   1123640620
+     * @hash   1123686748
      */
     virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     /**
      * @vftbl  4
      * @symbol ?load@Option@@UEAAXAEBVValue@Json@@@Z
-     * @hash   1093325088
+     * @hash   1093371216
      */
     virtual void load(class Json::Value const &);
     /**
      * @symbol ??0Option@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3W4OptionType@@@Z
-     * @hash   -619126957
+     * @hash   -619080829
      */
     MCAPI Option(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, enum class OptionType);
     /**
      * @symbol ?canModify@Option@@QEBA_NXZ
-     * @hash   1745245322
+     * @hash   1745291450
      */
     MCAPI bool canModify() const;
     /**
      * @symbol ?getBool@Option@@QEBA_NXZ
-     * @hash   1697271558
+     * @hash   1697317686
      */
     MCAPI bool getBool() const;
     /**
      * @symbol ?hasOverrideSource@Option@@QEBA_NXZ
-     * @hash   -1644619528
+     * @hash   -1644573400
      */
     MCAPI bool hasOverrideSource() const;
     /**
      * @symbol ?notifyOptionValueChanged@Option@@QEAAX_N@Z
-     * @hash   -434483050
+     * @hash   -434436922
      */
     MCAPI void notifyOptionValueChanged(bool);
     /**
      * @symbol ?registerLock@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEA_N@Z@std@@@Z
-     * @hash   -2021678683
+     * @hash   -2021632555
      */
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool &)>);
     /**
      * @symbol ?registerObserver@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVOption@@@Z@std@@@Z
-     * @hash   1209258820
+     * @hash   1209304948
      */
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);
     /**
      * @symbol ?setRequestSaveCallback@Option@@QEAAXV?$function@$$A6AX_N@Z@std@@@Z
-     * @hash   -1615480873
+     * @hash   -1615434745
      */
     MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     /**
      * @symbol ?read@Option@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_N@Z
-     * @hash   -172688941
+     * @hash   -172642813
      */
     MCAPI static bool read(std::string const &, bool &);
 
 //private:
     /**
      * @symbol ?_updatePropertyVector@Option@@AEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -1120705863
+     * @hash   -1120659735
      */
     MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string>> &, std::string const &);
 

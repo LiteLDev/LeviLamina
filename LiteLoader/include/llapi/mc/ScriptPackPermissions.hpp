@@ -28,7 +28,7 @@ public:
 public:
     /**
      * @symbol ??0ScriptPackPermissions@@QEAA@XZ
-     * @hash   96081964
+     * @hash   96128092
      */
     MCAPI ScriptPackPermissions();
     /**
@@ -38,12 +38,12 @@ public:
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     /**
      * @symbol ?isModuleAllowed@ScriptPackPermissions@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -866400991
+     * @hash   -866354863
      */
     MCAPI bool isModuleAllowed(std::string const &) const;
     /**
      * @symbol ??4ScriptPackPermissions@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   2079282372
+     * @hash   2079328500
      */
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 

@@ -59,40 +59,40 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VThrowableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1157402535
+     * @hash   -1156572231
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VThrowableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1851981031
+     * @hash   1852811335
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?releaseUsing@ThrowableItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   2118292748
+     * @hash   2119123052
      */
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     /**
      * @symbol ?use@ThrowableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -235618632
+     * @hash   -234788328
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?bindType@ThrowableItemComponent@@SAXXZ
-     * @hash   1426261987
+     * @hash   1427092291
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ThrowableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -471183676
+     * @hash   -470353372
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
      * @symbol ?_getLaunchPower@ThrowableItemComponent@@AEBAMHHH@Z
-     * @hash   1763464105
+     * @hash   1764294409
      */
     MCAPI float _getLaunchPower(int, int, int) const;
 

@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TripodCameraDescription@@UEBAPEBDXZ
-     * @hash   1206789287
+     * @hash   1206835415
      */
     virtual char const * getJsonName() const;
     /**

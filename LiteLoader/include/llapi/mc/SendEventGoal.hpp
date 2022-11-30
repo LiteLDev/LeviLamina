@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SendEventGoal@@UEAA_NXZ
-     * @hash   1172984267
+     * @hash   1173030395
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SendEventGoal@@UEAA_NXZ
-     * @hash   2039825689
+     * @hash   2039871817
      */
     virtual bool canContinueToUse();
     /**
@@ -55,37 +55,37 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SendEventGoal@@UEAAXXZ
-     * @hash   2030080740
+     * @hash   2030126868
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SendEventGoal@@UEAAXXZ
-     * @hash   1634894180
+     * @hash   1634940308
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SendEventGoal@@UEAAXXZ
-     * @hash   1150541503
+     * @hash   1150587631
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SendEventGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2122200853
+     * @hash   2122246981
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SendEventGoal@@QEAA@AEAVMob@@AEBV?$vector@USendEventData@@V?$allocator@USendEventData@@@std@@@std@@@Z
-     * @hash   -483145867
+     * @hash   -483099739
      */
     MCAPI SendEventGoal(class Mob &, std::vector<struct SendEventData> const &);
 
 //private:
     /**
      * @symbol ?_selectBestSpell@SendEventGoal@@AEAAHXZ
-     * @hash   271696501
+     * @hash   271742629
      */
     MCAPI int _selectBestSpell();
 

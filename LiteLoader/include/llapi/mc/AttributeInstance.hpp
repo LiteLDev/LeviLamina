@@ -36,249 +36,249 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@AttributeInstance@@UEAAXXZ
-     * @hash   174956739
+     * @hash   175002867
      */
     virtual void tick();
     /**
      * @symbol ??0AttributeInstance@@QEAA@XZ
-     * @hash   1347346733
+     * @hash   1347392861
      */
     MCAPI AttributeInstance();
     /**
      * @symbol ??0AttributeInstance@@QEAA@AEBV0@@Z
-     * @hash   1399588129
+     * @hash   1399634257
      */
     MCAPI AttributeInstance(class AttributeInstance const &);
     /**
      * @symbol ?addBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
-     * @hash   -259793958
+     * @hash   -259747830
      */
     MCAPI void addBuff(class AttributeBuff const &);
     /**
      * @symbol ?addModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
-     * @hash   -2139818390
+     * @hash   -2139772262
      */
     MCAPI void addModifier(class AttributeModifier const &);
     /**
      * @symbol ?addModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
-     * @hash   -586332107
+     * @hash   -586285979
      */
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?getAttribute@AttributeInstance@@QEBAPEBVAttribute@@XZ
-     * @hash   -308033439
+     * @hash   -307987311
      */
     MCAPI class Attribute const * getAttribute() const;
     /**
      * @symbol ?getBuffs@AttributeInstance@@QEBAAEBV?$vector@VTemporalAttributeBuff@@V?$allocator@VTemporalAttributeBuff@@@std@@@std@@XZ
-     * @hash   1725423376
+     * @hash   1725469504
      */
     MCAPI std::vector<class TemporalAttributeBuff> const & getBuffs() const;
     /**
      * @symbol ?getCurrentValue@AttributeInstance@@QEBAMXZ
-     * @hash   -1271091422
+     * @hash   -1271045294
      */
     MCAPI float getCurrentValue() const;
     /**
      * @symbol ?getDefaultValue@AttributeInstance@@QEBAMH@Z
-     * @hash   -1208834713
+     * @hash   -1208788585
      */
     MCAPI float getDefaultValue(int) const;
     /**
      * @symbol ?getHandle@AttributeInstance@@QEBA?AVAttributeInstanceHandle@@XZ
-     * @hash   730604812
+     * @hash   730650940
      */
     MCAPI class AttributeInstanceHandle getHandle() const;
     /**
      * @symbol ?getListeners@AttributeInstance@@QEBAAEBV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ
-     * @hash   2031431224
+     * @hash   2031477352
      */
     MCAPI std::vector<class AttributeInstanceHandle> const & getListeners() const;
     /**
      * @symbol ?getMaxValue@AttributeInstance@@QEBAMXZ
-     * @hash   -1396271124
+     * @hash   -1396224996
      */
     MCAPI float getMaxValue() const;
     /**
      * @symbol ?getMinValue@AttributeInstance@@QEBAMXZ
-     * @hash   -1667869792
+     * @hash   -1667823664
      */
     MCAPI float getMinValue() const;
     /**
      * @symbol ?getModifier@AttributeInstance@@QEBA?AVAttributeModifier@@AEBVUUID@mce@@@Z
-     * @hash   -798481291
+     * @hash   -798435163
      */
     MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
     /**
      * @symbol ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@XZ
-     * @hash   348046004
+     * @hash   348092132
      */
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
     /**
      * @symbol ?hasModifier@AttributeInstance@@QEBA_NAEBVUUID@mce@@@Z
-     * @hash   1535645721
+     * @hash   1535691849
      */
     MCAPI bool hasModifier(class mce::UUID const &) const;
     /**
      * @symbol ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
-     * @hash   -1362408666
+     * @hash   -1362362538
      */
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     /**
      * @symbol ?hasModifiers@AttributeInstance@@QEBA_NXZ
-     * @hash   445145982
+     * @hash   445192110
      */
     MCAPI bool hasModifiers() const;
     /**
      * @symbol ?hasTemporalBuffs@AttributeInstance@@QEBA_NXZ
-     * @hash   -1287060114
+     * @hash   -1287013986
      */
     MCAPI bool hasTemporalBuffs() const;
     /**
      * @symbol ?inheritFrom@AttributeInstance@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
-     * @hash   1615516116
+     * @hash   1615562244
      */
     MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
     /**
      * @symbol ?isValid@AttributeInstance@@QEBA_NXZ
-     * @hash   2032536860
+     * @hash   2032582988
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?notify@AttributeInstance@@QEAAX_J@Z
-     * @hash   1341106559
+     * @hash   1341152687
      */
     MCAPI void notify(__int64);
     /**
      * @symbol ??8AttributeInstance@@QEBA_NAEBV0@@Z
-     * @hash   1358390230
+     * @hash   1358436358
      */
     MCAPI bool operator==(class AttributeInstance const &) const;
     /**
      * @symbol ?recalculateModifiers@AttributeInstance@@QEAAXXZ
-     * @hash   -1296769195
+     * @hash   -1296723067
      */
     MCAPI void recalculateModifiers();
     /**
      * @symbol ?registerListener@AttributeInstance@@QEAAXAEBV1@@Z
-     * @hash   -1338913638
+     * @hash   -1338867510
      */
     MCAPI void registerListener(class AttributeInstance const &);
     /**
      * @symbol ?removeBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
-     * @hash   1376795014
+     * @hash   1376841142
      */
     MCAPI void removeBuff(class AttributeBuff const &);
     /**
      * @symbol ?removeBuff@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeBuff@@@std@@@Z
-     * @hash   774762291
+     * @hash   774808419
      */
     MCAPI void removeBuff(class std::shared_ptr<class AttributeBuff>);
     /**
      * @symbol ?removeBuffs@AttributeInstance@@QEAAXXZ
-     * @hash   757589069
+     * @hash   757635197
      */
     MCAPI void removeBuffs();
     /**
      * @symbol ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
-     * @hash   609900342
+     * @hash   609946470
      */
     MCAPI void removeModifier(class AttributeModifier const &);
     /**
      * @symbol ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
-     * @hash   2104715075
+     * @hash   2104761203
      */
     MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
-     * @hash   389491319
+     * @hash   389537447
      */
     MCAPI bool removeModifier(class mce::UUID const &);
     /**
      * @symbol ?removeModifiers@AttributeInstance@@QEAAXXZ
-     * @hash   496082501
+     * @hash   496128629
      */
     MCAPI void removeModifiers();
     /**
      * @symbol ?resetToDefaultValue@AttributeInstance@@QEAAXXZ
-     * @hash   -1718675447
+     * @hash   -1718629319
      */
     MCAPI void resetToDefaultValue();
     /**
      * @symbol ?resetToMaxValue@AttributeInstance@@QEAAXXZ
-     * @hash   1183153187
+     * @hash   1183199315
      */
     MCAPI void resetToMaxValue();
     /**
      * @symbol ?resetToMinValue@AttributeInstance@@QEAAXXZ
-     * @hash   911569895
+     * @hash   911616023
      */
     MCAPI void resetToMinValue();
     /**
      * @symbol ?serializationSetRange@AttributeInstance@@QEAAXMMM@Z
-     * @hash   183499950
+     * @hash   183546078
      */
     MCAPI void serializationSetRange(float, float, float);
     /**
      * @symbol ?serializationSetValue@AttributeInstance@@QEAAXMHM@Z
-     * @hash   -2108060
+     * @hash   -2061932
      */
     MCAPI void serializationSetValue(float, int, float);
     /**
      * @symbol ?setCurrentValue@AttributeInstance@@QEAAXM@Z
-     * @hash   1651047840
+     * @hash   1651093968
      */
     MCAPI void setCurrentValue(float);
     /**
      * @symbol ?setDefaultValue@AttributeInstance@@QEAAXMH@Z
-     * @hash   -1827707869
+     * @hash   -1827661741
      */
     MCAPI void setDefaultValue(float, int);
     /**
      * @symbol ?setDefaultValueOnly@AttributeInstance@@QEAAXM@Z
-     * @hash   -542546584
+     * @hash   -542500456
      */
     MCAPI void setDefaultValueOnly(float);
     /**
      * @symbol ?setDelegate@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeInstanceDelegate@@@std@@@Z
-     * @hash   -315039611
+     * @hash   -314993483
      */
     MCAPI void setDelegate(class std::shared_ptr<class AttributeInstanceDelegate>);
     /**
      * @symbol ?setMaxValue@AttributeInstance@@QEAAXM@Z
-     * @hash   612888502
+     * @hash   612934630
      */
     MCAPI void setMaxValue(float);
     /**
      * @symbol ?setRange@AttributeInstance@@QEAAXMMM@Z
-     * @hash   -1143615776
+     * @hash   -1143569648
      */
     MCAPI void setRange(float, float, float);
     /**
      * @symbol ?updateModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
-     * @hash   1461389228
+     * @hash   1461435356
      */
     MCAPI void updateModifier(class AttributeModifier const &);
 
 //private:
     /**
      * @symbol ??0AttributeInstance@@AEAA@PEAVBaseAttributeMap@@PEBVAttribute@@@Z
-     * @hash   1953819166
+     * @hash   1953865294
      */
     MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
     /**
      * @symbol ?_calculateValue@AttributeInstance@@AEAAMAEBVAttributeBuff@@@Z
-     * @hash   1713285389
+     * @hash   1713331517
      */
     MCAPI float _calculateValue(class AttributeBuff const &);
     /**
      * @symbol ?_calculateValue@AttributeInstance@@AEAAMXZ
-     * @hash   1809982493
+     * @hash   1810028621
      */
     MCAPI float _calculateValue();
     /**
      * @symbol ?_sanitizeValue@AttributeInstance@@AEAAMM@Z
-     * @hash   -515860394
+     * @hash   -515814266
      */
     MCAPI float _sanitizeValue(float);
 

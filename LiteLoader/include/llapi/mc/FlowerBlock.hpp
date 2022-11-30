@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@FlowerBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1051359847
+     * @hash   1052190151
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@FlowerBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1288153326
+     * @hash   -1287323022
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,25 +177,25 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   565948356
+     * @hash   566778660
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -810104969
+     * @hash   -809274665
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1769642174
+     * @hash   1770472478
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@FlowerBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2126194902
+     * @hash   2127025206
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@FlowerBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1935373719
+     * @hash   -1934543415
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -243,13 +243,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@FlowerBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -100562384
+     * @hash   -99732080
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@FlowerBlock@@UEAAXXZ
-     * @hash   -912358418
+     * @hash   -911528114
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -280,19 +280,19 @@ public:
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -1906903963
+     * @hash   -1906073659
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1741202613
+     * @hash   -1740372309
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@FlowerBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -448935146
+     * @hash   -448104842
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -303,12 +303,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@FlowerBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2066023161
+     * @hash   -2065192857
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0FlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@AEBVMaterial@@@Z
-     * @hash   842351458
+     * @hash   843181762
      */
     MCAPI FlowerBlock(std::string const &, int, enum class FlowerBlock::Type, class Material const &);
 

@@ -37,7 +37,7 @@ public:
     virtual ~EnchantingContainerScreenValidator();
     /**
      * @symbol ??0EnchantingContainerScreenValidator@@QEAA@XZ
-     * @hash   -1357854166
+     * @hash   -1357023862
      */
     MCAPI EnchantingContainerScreenValidator();
 

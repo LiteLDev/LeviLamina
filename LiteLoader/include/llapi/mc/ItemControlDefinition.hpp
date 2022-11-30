@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?addItemByName@ItemControlDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   822309792
+     * @hash   822402048
      */
     MCAPI void addItemByName(std::string const &);
     /**
      * @symbol ?buildSchema@ItemControlDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UItemControlDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1535014152
+     * @hash   1535106408
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ItemControlDefinition>> &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?moveTowardsClosestSpace@MoveTowardsClosestSpaceSystem@@SAXAEBVAABB@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVIConstBlockSource@@AEBVGetCollisionShapeInterface@@AEAVVec3@@@Z
-     * @hash   1876049722
+     * @hash   1876095850
      */
     MCAPI static void moveTowardsClosestSpace(class AABB const &, std::vector<class AABB> const &, class IConstBlockSource const &, class GetCollisionShapeInterface const &, class Vec3 &);
 

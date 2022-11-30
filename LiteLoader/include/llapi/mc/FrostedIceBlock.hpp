@@ -159,19 +159,19 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@FrostedIceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1440832602
+     * @hash   -1440002298
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@FrostedIceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -679977687
+     * @hash   -679147383
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@FrostedIceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   496213525
+     * @hash   497043829
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -222,13 +222,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   437332255
+     * @hash   438162559
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@FrostedIceBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1727774409
+     * @hash   1728604713
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1289498213
+     * @hash   -1288667909
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -267,12 +267,12 @@ public:
 #endif
     /**
      * @symbol ??0FrostedIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   1516467342
+     * @hash   1517297646
      */
     MCAPI FrostedIceBlock(std::string const &, int, bool);
     /**
      * @symbol ?_slightlyMelt@FrostedIceBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-     * @hash   1205007561
+     * @hash   1205837865
      */
     MCAPI void _slightlyMelt(class BlockSource &, class BlockPos const &, class Random &, bool) const;
 
@@ -281,12 +281,12 @@ public:
 private:
     /**
      * @symbol ?MAX_AGE@FrostedIceBlock@@0HB
-     * @hash   1155875539
+     * @hash   1155998547
      */
     MCAPI static int const MAX_AGE;
     /**
      * @symbol ?MIN_NEIGHBORS@FrostedIceBlock@@0HB
-     * @hash   -2081475521
+     * @hash   -2081352513
      */
     MCAPI static int const MIN_NEIGHBORS;
 

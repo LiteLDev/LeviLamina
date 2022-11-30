@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BeetrootBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1558267609
+     * @hash   1559097913
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@BeetrootBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   926425129
+     * @hash   927255433
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -230,30 +230,30 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @vftbl  192
-     * @hash   1666367482
+     * @hash   1667197786
      */
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
      * @symbol ?getBaseSeed@BeetrootBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   -850853949
+     * @hash   -850023645
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
      * @vftbl  194
      * @symbol ?getBaseCrop@BeetrootBlock@@UEBA?BVItemInstance@@XZ
-     * @hash   123096034
+     * @hash   123926338
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
      * @vftbl  196
      * @symbol ?getCropNum@BeetrootBlock@@UEBAHAEAVRandomize@@HH@Z
-     * @hash   772571127
+     * @hash   773401431
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
      * @symbol ??0BeetrootBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   2095871639
+     * @hash   2096701943
      */
     MCAPI BeetrootBlock(std::string const &, int);
 

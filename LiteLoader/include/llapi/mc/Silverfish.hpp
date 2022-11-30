@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Silverfish@@UEAAXXZ
-     * @hash   2002710326
+     * @hash   2002756454
      */
     virtual void normalTick();
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1631370735
+     * @hash   -1631324607
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1801327565
+     * @hash   1801373693
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -163,7 +163,7 @@ public:
     /**
      * @vftbl  283
      * @symbol ?spawnAnim@Silverfish@@UEAAXXZ
-     * @hash   -2146874994
+     * @hash   -2146828866
      */
     virtual void spawnAnim();
     /**
@@ -174,13 +174,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Silverfish@@UEAAXXZ
-     * @hash   1809454150
+     * @hash   1809500278
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
-     * @hash   635456116
+     * @hash   635502244
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -1536215536
+     * @hash   -1536169408
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -224,7 +224,7 @@ public:
 #endif
     /**
      * @symbol ??0Silverfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1672642127
+     * @hash   -1672595999
      */
     MCAPI Silverfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -44,13 +44,13 @@ public:
     /**
      * @vftbl  20
      * @symbol ?isStrippable@WoodBlock@@UEBA_NAEBVBlock@@@Z
-     * @hash   320561526
+     * @hash   321391830
      */
     virtual bool isStrippable(class Block const &) const;
     /**
      * @vftbl  21
      * @symbol ?getStrippedBlock@WoodBlock@@UEBAAEBVBlock@@AEBV2@@Z
-     * @hash   -1672765846
+     * @hash   -1671935542
      */
     virtual class Block const & getStrippedBlock(class Block const &) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@WoodBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1744297242
+     * @hash   1745127546
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@WoodBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   783179031
+     * @hash   784009335
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@WoodBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   876127008
+     * @hash   876957312
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@WoodBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1745738135
+     * @hash   1746568439
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -256,13 +256,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@WoodBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1096804469
+     * @hash   1097634773
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@WoodBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -426541468
+     * @hash   -425711164
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -273,19 +273,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WoodBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1602871422
+     * @hash   1603701726
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0WoodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1701652942
+     * @hash   1702483246
      */
     MCAPI WoodBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_createBlockWithStates@WoodBlock@@AEBAAEBVBlock@@AEBV2@@Z
-     * @hash   1584850659
+     * @hash   1585680963
      */
     MCAPI class Block const & _createBlockWithStates(class Block const &) const;
 

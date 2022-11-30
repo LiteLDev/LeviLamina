@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?createBlockEntity@BlockActorFactory@@SA?AV?$shared_ptr@VBlockActor@@@std@@W4BlockActorType@@AEBVBlockPos@@AEBVBlockLegacy@@@Z
-     * @hash   -1910348738
+     * @hash   -1909518434
      */
     MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum class BlockActorType, class BlockPos const &, class BlockLegacy const &);
     /**
      * @symbol ?flushCustomBlockEntityCreationCallbacks@BlockActorFactory@@SAXXZ
-     * @hash   2037795435
+     * @hash   2038625739
      */
     MCAPI static void flushCustomBlockEntityCreationCallbacks();
 

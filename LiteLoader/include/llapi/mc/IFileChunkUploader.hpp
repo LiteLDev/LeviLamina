@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
-     * @hash   -599012336
+     * @hash   -598966208
      */
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /**
@@ -62,13 +62,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-     * @hash   -298309504
+     * @hash   -298263376
      */
     virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
     /**
      * @vftbl  6
      * @symbol ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-     * @hash   -851989290
+     * @hash   -851943162
      */
     virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /**
@@ -97,7 +97,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-     * @hash   -38359595
+     * @hash   -38313467
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
@@ -114,7 +114,7 @@ public:
 #endif
     /**
      * @symbol ??0IFileChunkUploader@@QEAA@XZ
-     * @hash   -229331550
+     * @hash   -229285422
      */
     MCAPI IFileChunkUploader();
 

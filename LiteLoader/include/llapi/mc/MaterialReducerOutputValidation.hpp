@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   1864746211
+     * @hash   1865576515
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   198214480
+     * @hash   199044784
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -66,7 +66,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   769267686
+     * @hash   770097990
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
@@ -77,13 +77,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   -1308523789
+     * @hash   -1308477661
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -835523887
+     * @hash   -835477759
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCEROUTPUTVALIDATION

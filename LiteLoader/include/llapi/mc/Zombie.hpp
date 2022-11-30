@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Zombie@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -276290585
+     * @hash   -276244457
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -113,7 +113,7 @@ public:
     /**
      * @vftbl  194
      * @symbol ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
-     * @hash   -482747439
+     * @hash   -482701311
      */
     virtual bool canPickupItem(class ItemStack const &) const;
     /**
@@ -164,7 +164,7 @@ public:
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Zombie@@UEAA_N_N@Z
-     * @hash   1669166117
+     * @hash   1669212245
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -180,7 +180,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@Zombie@@MEBAHXZ
-     * @hash   1778557638
+     * @hash   1778603766
      */
     virtual int getArmorValue() const;
     /**
@@ -202,12 +202,12 @@ public:
 #endif
     /**
      * @symbol ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   2107840674
+     * @hash   2107886802
      */
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
-     * @hash   -707564555
+     * @hash   -707518427
      */
     MCAPI void setZombieType(enum class Zombie::ZombieType);
 

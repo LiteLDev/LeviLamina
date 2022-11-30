@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@ItemFrameBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1955266579
+     * @hash   1956096883
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,37 +177,37 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@ItemFrameBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1816717902
+     * @hash   1817548206
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@ItemFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1135995321
+     * @hash   -1135165017
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  99
      * @symbol ?getIgnoresDestroyPermissions@ItemFrameBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@@Z
-     * @hash   -1574679491
+     * @hash   -1573849187
      */
     virtual bool getIgnoresDestroyPermissions(class Actor &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1365191541
+     * @hash   1366021845
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ItemFrameBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1150804153
+     * @hash   -1149973849
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -1622958517
+     * @hash   -1622128213
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -218,13 +218,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ItemFrameBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1033431586
+     * @hash   1034261890
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  109
      * @symbol ?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1142280312
+     * @hash   1143110616
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@ItemFrameBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -1698712701
+     * @hash   -1697882397
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@ItemFrameBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2061851507
+     * @hash   -2061021203
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1943249428
+     * @hash   -1942419124
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -288,7 +288,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   833296369
+     * @hash   834126673
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -299,7 +299,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1579164473
+     * @hash   1579994777
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -310,13 +310,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ItemFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1650580552
+     * @hash   -1649750248
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@ItemFrameBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1750305075
+     * @hash   -1749474771
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -327,44 +327,44 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ItemFrameBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2070712735
+     * @hash   -2069882431
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@ItemFrameBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   -756824799
+     * @hash   -755994495
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /**
      * @vftbl  193
      * @symbol ?getSpawnedItemName@ItemFrameBlock@@UEBA?AVHashedString@@XZ
-     * @hash   1424201648
+     * @hash   1425031952
      */
     virtual class HashedString getSpawnedItemName() const;
     /**
      * @vftbl  194
-     * @hash   1817210956
+     * @hash   1817257084
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   151691389
+     * @hash   152521693
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   152292014
+     * @hash   153122318
      */
     virtual void __unk_vfn_196();
     /**
      * @vftbl  197
-     * @hash   153169407
+     * @hash   153999711
      */
     virtual void __unk_vfn_197();
     /**
      * @vftbl  198
-     * @hash   154092928
+     * @hash   154923232
      */
     virtual void __unk_vfn_198();
     /**
@@ -391,19 +391,19 @@ public:
 #endif
     /**
      * @symbol ??0ItemFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1107307535
+     * @hash   -1106477231
      */
     MCAPI ItemFrameBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_checkAchievements@ItemFrameBlock@@AEBAXAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1228758212
+     * @hash   -1227927908
      */
     MCAPI void _checkAchievements(class Player &, class BlockPos const &) const;
     /**
      * @symbol ?getShape@ItemFrameBlock@@AEBAXHAEAVAABB@@_N@Z
-     * @hash   238826226
+     * @hash   239656530
      */
     MCAPI void getShape(int, class AABB &, bool) const;
 

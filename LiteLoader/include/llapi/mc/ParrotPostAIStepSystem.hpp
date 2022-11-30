@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@ParrotPostAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -136787280
+     * @hash   -136741152
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doParrotPostAIStepSystem@ParrotPostAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   -1338514463
+     * @hash   -1338468335
      */
     MCAPI static void _doParrotPostAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

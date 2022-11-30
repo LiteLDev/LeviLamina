@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@MobEffectSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   978618176
+     * @hash   978664304
      */
     virtual void tick(class EntityRegistry &);
 

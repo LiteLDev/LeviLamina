@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@VariableMaxAutoStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -119602918
+     * @hash   -119556790
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_tickEntity@VariableMaxAutoStepSystem@@CAXAEBVStrictEntityContext@@AEBUVariableMaxAutoStepComponent@@AEAUMaxAutoStepComponent@@AEBUAABBShapeComponent@@AEBUStateVectorComponent@@AEBVActorMovementProxyComponent@@@Z
-     * @hash   192424619
+     * @hash   192470747
      */
     MCAPI static void _tickEntity(class StrictEntityContext const &, struct VariableMaxAutoStepComponent const &, struct MaxAutoStepComponent &, struct AABBShapeComponent const &, struct StateVectorComponent const &, class ActorMovementProxyComponent const &);
 

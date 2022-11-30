@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@InsideBlockNotifierSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1675376426
+     * @hash   -1675330298
      */
     virtual void tick(class EntityRegistry &);
 

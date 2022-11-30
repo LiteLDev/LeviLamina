@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createAutoStepFilterSystem@AutoStepFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1369612
+     * @hash   -1323484
      */
     MCAPI static struct TickingSystemWithInfo createAutoStepFilterSystem();
 

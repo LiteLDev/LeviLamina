@@ -93,22 +93,22 @@ public:
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
     /**
      * @symbol ?configureMainThread@MinecraftWorkerPool@@SAXXZ
-     * @hash   -1507462091
+     * @hash   -1507415963
      */
     MCAPI static void configureMainThread();
     /**
      * @symbol ?configureServerThread@MinecraftWorkerPool@@SAXXZ
-     * @hash   -455874231
+     * @hash   -455828103
      */
     MCAPI static void configureServerThread();
     /**
      * @symbol ?createSingletons@MinecraftWorkerPool@@SAXXZ
-     * @hash   -2092034295
+     * @hash   -2091988167
      */
     MCAPI static void createSingletons();
     /**
      * @symbol ?destroySingletons@MinecraftWorkerPool@@SAXXZ
-     * @hash   -1206069385
+     * @hash   -1206023257
      */
     MCAPI static void destroySingletons();
     /**
@@ -118,7 +118,7 @@ public:
     MCAPI static void initializeDefaults();
     /**
      * @symbol ?loadWorkerConfigurations@MinecraftWorkerPool@@SAXII@Z
-     * @hash   1327710587
+     * @hash   1327756715
      */
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 

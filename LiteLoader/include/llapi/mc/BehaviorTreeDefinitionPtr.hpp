@@ -25,17 +25,17 @@ class BehaviorTreeDefinitionPtr {
 public:
     /**
      * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@AEBV0@@Z
-     * @hash   161184609
+     * @hash   161230737
      */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &);
     /**
      * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@AEAVBehaviorTreeGroup@@AEAVBehaviorTreeDefinition@@@Z
-     * @hash   842431963
+     * @hash   842478091
      */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeGroup &, class BehaviorTreeDefinition &);
     /**
      * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@$$QEAV0@@Z
-     * @hash   849459407
+     * @hash   849505535
      */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
     /**
@@ -45,17 +45,17 @@ public:
     MCAPI BehaviorTreeDefinitionPtr();
     /**
      * @symbol ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1917465332
+     * @hash   -1917419204
      */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
     /**
      * @symbol ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -515142966
+     * @hash   -515096838
      */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);
     /**
      * @symbol ??1BehaviorTreeDefinitionPtr@@QEAA@XZ
-     * @hash   1885417383
+     * @hash   1885463511
      */
     MCAPI ~BehaviorTreeDefinitionPtr();
     /**

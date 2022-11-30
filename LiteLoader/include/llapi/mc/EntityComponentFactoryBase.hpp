@@ -39,12 +39,12 @@ public:
 #endif
     /**
      * @symbol ?addComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
-     * @hash   -710627505
+     * @hash   -709797201
      */
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
     /**
      * @symbol ?removeComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
-     * @hash   584893505
+     * @hash   585723809
      */
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
 

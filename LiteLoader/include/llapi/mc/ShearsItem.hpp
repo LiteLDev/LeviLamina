@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  44
      * @symbol ?canDestroySpecial@ShearsItem@@UEBA_NAEBVBlock@@@Z
-     * @hash   -1381811304
+     * @hash   -1380981000
      */
     virtual bool canDestroySpecial(class Block const &) const;
     /**
@@ -106,24 +106,24 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@ShearsItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -438275679
+     * @hash   -437445375
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  88
      * @symbol ?getDestroySpeed@ShearsItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   797952949
+     * @hash   798783253
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
@@ -135,13 +135,13 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mineBlock@ShearsItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     * @hash   277746278
+     * @hash   278576582
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@ShearsItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1445822091
+     * @hash   -1444991787
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 

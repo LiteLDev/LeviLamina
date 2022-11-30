@@ -70,13 +70,13 @@ public:
     /**
      * @vftbl  56
      * @symbol ?isDestructive@BucketItem@@UEBA_NH@Z
-     * @hash   1160543770
+     * @hash   1161374074
      */
     virtual bool isDestructive(int) const;
     /**
      * @vftbl  57
      * @symbol ?isLiquidClipItem@BucketItem@@UEBA_NH@Z
-     * @hash   1576780025
+     * @hash   1577610329
      */
     virtual bool isLiquidClipItem(int) const;
     /**
@@ -87,7 +87,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@BucketItem@@UEBA_NH@Z
-     * @hash   -330612237
+     * @hash   -329781933
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -112,84 +112,84 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  83
      * @symbol ?canUseOnSimTick@BucketItem@@UEBA_NXZ
-     * @hash   -351702183
+     * @hash   -350871879
      */
     virtual bool canUseOnSimTick() const;
     /**
      * @vftbl  84
      * @symbol ?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -2072312207
+     * @hash   -2071481903
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  85
      * @symbol ?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   61296697
+     * @hash   62127001
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  86
      * @symbol ?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   -1694381811
+     * @hash   -1693551507
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @vftbl  87
      * @symbol ?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   1709260303
+     * @hash   1710090607
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   761274845
+     * @hash   762105149
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  100
      * @symbol ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
-     * @hash   1577884886
+     * @hash   1578715190
      */
     virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
     /**
      * @vftbl  111
      * @symbol ?validFishInteraction@BucketItem@@UEBA_NH@Z
-     * @hash   -1228598428
+     * @hash   -1227768124
      */
     virtual bool validFishInteraction(int) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   308391549
+     * @hash   309221853
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
-     * @hash   1175579176
+     * @hash   1176409480
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @vftbl  129
      * @symbol ?getAuxValuesDescription@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -697261271
+     * @hash   -697215143
      */
     virtual std::string getAuxValuesDescription() const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BucketItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   187013387
+     * @hash   187843691
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
@@ -206,56 +206,56 @@ public:
 #endif
     /**
      * @symbol ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BucketFillType@@@Z
-     * @hash   -1891242158
+     * @hash   -1890411854
      */
     MCAPI BucketItem(std::string const &, int, enum class BucketFillType);
     /**
      * @symbol ?DRINK_DURATION@BucketItem@@2HB
-     * @hash   290076381
+     * @hash   290199389
      */
     MCAPI static int const DRINK_DURATION;
 
 //protected:
     /**
      * @symbol ?addBucketEntitySaveData@BucketItem@@IEBAXAEAVActor@@AEAVItemStack@@@Z
-     * @hash   2055703290
+     * @hash   2056533594
      */
     MCAPI void addBucketEntitySaveData(class Actor &, class ItemStack &) const;
     /**
      * @symbol ?readBucketEntitySaveData@BucketItem@@IEBA_NAEAVBlockSource@@PEAVActor@@EVBlockPos@@AEBVItemInstance@@@Z
-     * @hash   2096961480
+     * @hash   2097791784
      */
     MCAPI bool readBucketEntitySaveData(class BlockSource &, class Actor *, unsigned char, class BlockPos, class ItemInstance const &) const;
 
 //private:
     /**
      * @symbol ?_canEmptyBucketIntoBlock@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@2@Z
-     * @hash   2127729229
+     * @hash   2128559533
      */
     MCAPI bool _canEmptyBucketIntoBlock(class BlockSource &, class BlockPos const &, class Block const &, class Block const &) const;
     /**
      * @symbol ?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z
-     * @hash   -1150711934
+     * @hash   -1149881630
      */
     MCAPI bool _emptyBucket(class BlockSource &, class Block const &, class BlockPos const &, class Actor *, class ItemStack const &, unsigned char) const;
     /**
      * @symbol ?_removeBubbleColumn@BucketItem@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   153775681
+     * @hash   154605985
      */
     MCAPI void _removeBubbleColumn(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
-     * @hash   24757110
+     * @hash   25587414
      */
     MCAPI bool _takeLiquid(class ItemStack &, class Actor &, class BlockPos const &) const;
     /**
      * @symbol ?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
-     * @hash   123225766
+     * @hash   124056070
      */
     MCAPI bool _takePowderSnow(class ItemStack &, class Actor &, class BlockPos const &) const;
     /**
      * @symbol ?_tryGetBlock@BucketItem@@AEBAPEBVBlockLegacy@@W4BucketFillType@@@Z
-     * @hash   -649617315
+     * @hash   -648787011
      */
     MCAPI class BlockLegacy const * _tryGetBlock(enum class BucketFillType) const;
 

@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@MyceliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   155267631
+     * @hash   156097935
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -215,7 +215,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@MyceliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   227614733
+     * @hash   228445037
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -231,12 +231,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@MyceliumBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -94949928
+     * @hash   -94119624
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0MyceliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1734502728
+     * @hash   1735333032
      */
     MCAPI MyceliumBlock(std::string const &, int);
     /**
@@ -253,7 +253,7 @@ public:
 //private:
     /**
      * @symbol ?_canSpreadToBlock@MyceliumBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1549280666
+     * @hash   1550110970
      */
     MCAPI bool _canSpreadToBlock(class BlockSource const &, class BlockPos const &) const;
 

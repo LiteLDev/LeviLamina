@@ -40,7 +40,7 @@ public:
 public:
     /**
      * @symbol ?archivePack@FileArchiver@@QEAA?AV?$future@UResult@FileArchiver@@@std@@AEBVPath@Core@@0V?$function@$$A6AXAEAUResult@FileArchiver@@@Z@3@@Z
-     * @hash   -512339587
+     * @hash   -511509283
      */
     MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const &, class Core::Path const &, class std::function<void (struct FileArchiver::Result &)>);
     /**
@@ -77,7 +77,7 @@ public:
 //private:
     /**
      * @symbol ?_printLevelResultMessage@FileArchiver@@AEAAXAEBUResult@1@@Z
-     * @hash   1420730329
+     * @hash   1421560633
      */
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);
 

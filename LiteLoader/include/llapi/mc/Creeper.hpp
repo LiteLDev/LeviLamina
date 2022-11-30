@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Creeper@@UEAAXXZ
-     * @hash   2015976077
+     * @hash   2016022205
      */
     virtual void normalTick();
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@Creeper@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -965356255
+     * @hash   -965310127
      */
     virtual void die(class ActorDamageSource const &);
     /**
@@ -152,7 +152,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Creeper@@EEAAXXZ
-     * @hash   -285181241
+     * @hash   -285135113
      */
     virtual void _onSizeUpdated();
     /**
@@ -194,29 +194,29 @@ public:
 #endif
     /**
      * @symbol ??0Creeper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1330834006
+     * @hash   -1330787878
      */
     MCAPI Creeper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getSwellDir@Creeper@@QEAAHXZ
-     * @hash   1756617422
+     * @hash   1756663550
      */
     MCAPI int getSwellDir();
     /**
      * @symbol ?getSwelling@Creeper@@QEBAMM@Z
-     * @hash   -1794966173
+     * @hash   -1794920045
      */
     MCAPI float getSwelling(float) const;
     /**
      * @symbol ?tryGetFromEntity@Creeper@@SAPEAV1@AEAVEntityContext@@_N@Z
-     * @hash   -498314964
+     * @hash   -498268836
      */
     MCAPI static class Creeper * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
      * @symbol ?_setSwellDir@Creeper@@AEAAXH@Z
-     * @hash   187524082
+     * @hash   187570210
      */
     MCAPI void _setSwellDir(int);
 

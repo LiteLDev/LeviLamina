@@ -29,22 +29,22 @@ public:
 public:
     /**
      * @symbol ??0AttributesComponent@@QEAA@$$QEAU0@@Z
-     * @hash   1951636707
+     * @hash   1951682835
      */
     MCAPI AttributesComponent(struct AttributesComponent &&);
     /**
      * @symbol ??0AttributesComponent@@QEAA@AEBU0@@Z
-     * @hash   965639413
+     * @hash   965685541
      */
     MCAPI AttributesComponent(struct AttributesComponent const &);
     /**
      * @symbol ??4AttributesComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -139509796
+     * @hash   -139463668
      */
     MCAPI struct AttributesComponent & operator=(struct AttributesComponent &&);
     /**
      * @symbol ??1AttributesComponent@@QEAA@XZ
-     * @hash   82091426
+     * @hash   82137554
      */
     MCAPI ~AttributesComponent();
 

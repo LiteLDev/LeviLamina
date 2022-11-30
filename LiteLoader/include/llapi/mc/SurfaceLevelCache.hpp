@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-     * @hash   1140029334
+     * @hash   1140859638
      */
     virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
      * @symbol ??0SurfaceLevelCache@@QEAA@V?$DividedPos2d@$03@@AEBVIPreliminarySurfaceProvider@@_K@Z
-     * @hash   1324226063
+     * @hash   1325056367
      */
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 

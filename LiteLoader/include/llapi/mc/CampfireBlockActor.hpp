@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@CampfireBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   395018246
+     * @hash   395848550
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@CampfireBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -538002859
+     * @hash   -537172555
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@CampfireBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -796441201
+     * @hash   -795610897
      */
     virtual void tick(class BlockSource &);
     /**
@@ -115,54 +115,54 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@CampfireBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1485218842
+     * @hash   1486049146
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0CampfireBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1725078174
+     * @hash   -1724247870
      */
     MCAPI CampfireBlockActor(class BlockPos const &);
     /**
      * @symbol ?dropAllItems@CampfireBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   1942560628
+     * @hash   1943390932
      */
     MCAPI void dropAllItems(class BlockSource &);
     /**
      * @symbol ?getCampfireTag@CampfireBlockActor@@QEBAAEBVHashedString@@AEBVBlockSource@@@Z
-     * @hash   508115705
+     * @hash   508946009
      */
     MCAPI class HashedString const & getCampfireTag(class BlockSource const &) const;
     /**
      * @symbol ?getCookingItem@CampfireBlockActor@@QEAAAEBVItemInstance@@H@Z
-     * @hash   -1664530463
+     * @hash   -1663700159
      */
     MCAPI class ItemInstance const & getCookingItem(int);
     /**
      * @symbol ?setItem@CampfireBlockActor@@QEAA_NAEAVBlockSource@@AEBVItemInstance@@@Z
-     * @hash   201969418
+     * @hash   202799722
      */
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
     /**
      * @symbol ?MAX_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
-     * @hash   -741205661
+     * @hash   -741082653
      */
     MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
     /**
      * @symbol ?MIN_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
-     * @hash   -405738721
+     * @hash   -405615713
      */
     MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
 //private:
     /**
      * @symbol ?_finishCooking@CampfireBlockActor@@AEAAXAEAVBlockSource@@H@Z
-     * @hash   1739197376
+     * @hash   1740027680
      */
     MCAPI void _finishCooking(class BlockSource &, int);
     /**
      * @symbol ?_removeItem@CampfireBlockActor@@AEAAXH@Z
-     * @hash   906641180
+     * @hash   907471484
      */
     MCAPI void _removeItem(int);
 

@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@SoundVolumeDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -1129657730
+     * @hash   -1129565474
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@SoundVolumeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USoundVolumeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   2076606630
+     * @hash   2076698886
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SoundVolumeDefinition>> &);
 

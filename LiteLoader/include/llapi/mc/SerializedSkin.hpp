@@ -26,22 +26,22 @@ class SerializedSkin {
 public:
     /**
      * @symbol ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
-     * @hash   975238550
+     * @hash   975284678
      */
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
     /**
      * @symbol ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
-     * @hash   -2032806186
+     * @hash   -2032760058
      */
     MCAPI SerializedSkin(class ConnectionRequest const &);
     /**
      * @symbol ??0SerializedSkin@@QEAA@AEBV0@@Z
-     * @hash   -924795567
+     * @hash   -924749439
      */
     MCAPI SerializedSkin(class SerializedSkin const &);
     /**
      * @symbol ??0SerializedSkin@@QEAA@$$QEAV0@@Z
-     * @hash   -1645748261
+     * @hash   -1645702133
      */
     MCAPI SerializedSkin(class SerializedSkin &&);
     /**
@@ -51,7 +51,7 @@ public:
     MCAPI SerializedSkin();
     /**
      * @symbol ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
-     * @hash   -2037719791
+     * @hash   -2037673663
      */
     MCAPI float getAnimationFrames(enum class persona::AnimatedTextureType) const;
     /**
@@ -61,37 +61,37 @@ public:
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?isTrustedSkin@SerializedSkin@@QEBA_NXZ
-     * @hash   701836786
+     * @hash   701882914
      */
     MCAPI bool isTrustedSkin() const;
     /**
      * @symbol ??4SerializedSkin@@QEAAAEAV0@AEBV0@@Z
-     * @hash   816371732
+     * @hash   816417860
      */
     MCAPI class SerializedSkin & operator=(class SerializedSkin const &);
     /**
      * @symbol ?read@SerializedSkin@@QEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1662963221
+     * @hash   -1662917093
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setIsTrustedSkin@SerializedSkin@@QEAAX_N@Z
-     * @hash   1865960656
+     * @hash   1866006784
      */
     MCAPI void setIsTrustedSkin(bool);
     /**
      * @symbol ?updateGeometryName@SerializedSkin@@QEAAXXZ
-     * @hash   -746834667
+     * @hash   -746788539
      */
     MCAPI void updateGeometryName();
     /**
      * @symbol ?useBlinkingAnimation@SerializedSkin@@QEBA_NXZ
-     * @hash   1375828922
+     * @hash   1375875050
      */
     MCAPI bool useBlinkingAnimation() const;
     /**
      * @symbol ?write@SerializedSkin@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   453630506
+     * @hash   453676634
      */
     MCAPI void write(class BinaryStream &) const;
     /**
@@ -101,12 +101,12 @@ public:
     MCAPI ~SerializedSkin();
     /**
      * @symbol ?createTrustedDefaultSerializedSkin@SerializedSkin@@SA?AV1@XZ
-     * @hash   1094736944
+     * @hash   1094783072
      */
     MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
     /**
      * @symbol ?isSkinDisabled@SerializedSkin@@SA_NAEBV1@AEBVLevelData@@@Z
-     * @hash   -1520292400
+     * @hash   -1520246272
      */
     MCAPI static bool isSkinDisabled(class SerializedSkin const &, class LevelData const &);
 

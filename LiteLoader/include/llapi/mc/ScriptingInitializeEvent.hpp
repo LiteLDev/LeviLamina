@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ScriptingInitializeEvent@@QEAA@XZ
-     * @hash   -1060779107
+     * @hash   -1060732979
      */
     MCAPI ~ScriptingInitializeEvent();
 

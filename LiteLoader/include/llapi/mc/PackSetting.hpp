@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?set@PackSetting@@QEAAXAEBVValue@Json@@@Z
-     * @hash   -322312648
+     * @hash   -322266520
      */
     MCAPI void set(class Json::Value const &);
     /**
      * @symbol ??1PackSetting@@QEAA@XZ
-     * @hash   1620450067
+     * @hash   1620496195
      */
     MCAPI ~PackSetting();
 

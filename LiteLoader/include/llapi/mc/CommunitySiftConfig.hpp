@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0CommunitySiftConfig@@QEAA@XZ
-     * @hash   1102404475
+     * @hash   1102450603
      */
     MCAPI CommunitySiftConfig();
     /**
      * @symbol ??1CommunitySiftConfig@@QEAA@XZ
-     * @hash   -1289461397
+     * @hash   -1289415269
      */
     MCAPI ~CommunitySiftConfig();
 

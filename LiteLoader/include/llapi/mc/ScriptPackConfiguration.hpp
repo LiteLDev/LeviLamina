@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0ScriptPackConfiguration@@QEAA@$$QEAV0@@Z
-     * @hash   53107021
+     * @hash   53153149
      */
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
     /**
@@ -44,12 +44,12 @@ public:
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
     /**
      * @symbol ?getPermissions@ScriptPackConfiguration@@QEAAAEAVScriptPackPermissions@@XZ
-     * @hash   -847603214
+     * @hash   -847557086
      */
     MCAPI class ScriptPackPermissions & getPermissions();
     /**
      * @symbol ?getPermissions@ScriptPackConfiguration@@QEBAAEBVScriptPackPermissions@@XZ
-     * @hash   -557852756
+     * @hash   -557806628
      */
     MCAPI class ScriptPackPermissions const & getPermissions() const;
     /**
@@ -74,7 +74,7 @@ public:
     MCAPI class std::unordered_map<std::string, class Json::Value, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Json::Value>>> const & getVariables() const;
     /**
      * @symbol ??4ScriptPackConfiguration@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1743692568
+     * @hash   1743738696
      */
     MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration &&);
     /**

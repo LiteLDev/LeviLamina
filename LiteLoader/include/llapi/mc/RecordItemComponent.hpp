@@ -59,43 +59,43 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRecordItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1318942666
+     * @hash   1319772970
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRecordItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   787895126
+     * @hash   788725430
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getAlias@RecordItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -924987892
+     * @hash   -924157588
      */
     MCAPI std::string getAlias() const;
     /**
      * @symbol ?getComparatorSignal@RecordItemComponent@@QEBAHXZ
-     * @hash   -187157232
+     * @hash   -187111104
      */
     MCAPI int getComparatorSignal() const;
     /**
      * @symbol ?getDuration@RecordItemComponent@@QEBAMXZ
-     * @hash   -1254674966
+     * @hash   -1254628838
      */
     MCAPI float getDuration() const;
     /**
      * @symbol ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -1911501412
+     * @hash   -1911455284
      */
     MCAPI enum class LevelSoundEvent getSound() const;
     /**
      * @symbol ?bindType@RecordItemComponent@@SAXXZ
-     * @hash   507877759
+     * @hash   508708063
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RecordItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   306629302
+     * @hash   307459606
      */
     MCAPI static class HashedString const & getIdentifier();
 

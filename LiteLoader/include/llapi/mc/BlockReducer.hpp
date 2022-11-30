@@ -37,17 +37,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerBlock@BlockReducer@@UEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   -1078860508
+     * @hash   -1078814380
      */
     virtual void registerBlock(class ItemStack const &, std::vector<class ItemStack> &&);
     /**
      * @symbol ??0BlockReducer@@QEAA@XZ
-     * @hash   964275995
+     * @hash   964322123
      */
     MCAPI BlockReducer();
     /**
      * @symbol ?getReduction@BlockReducer@@QEBAPEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStackBase@@@Z
-     * @hash   -1313998112
+     * @hash   -1313951984
      */
     MCAPI std::vector<class ItemStack> const * getReduction(class ItemStackBase const &) const;
     /**
@@ -57,7 +57,7 @@ public:
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
     /**
      * @symbol ?tryGetItemDescriptorFromKey@BlockReducer@@QEBA?AVItemDescriptor@@H@Z
-     * @hash   732890687
+     * @hash   732936815
      */
     MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int) const;
 

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockQueuedTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   276176914
+     * @hash   277007218
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   214956114
+     * @hash   215786418
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -54,12 +54,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockQueuedTickingDescription@@SAXXZ
-     * @hash   391744623
+     * @hash   392574927
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockQueuedTickingDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -95548266
+     * @hash   -94717962
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

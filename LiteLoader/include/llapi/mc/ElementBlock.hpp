@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  66
      * @symbol ?canBeUsedInCommands@ElementBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-     * @hash   -718395090
+     * @hash   -717564786
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@ElementBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1448731416
+     * @hash   1449561720
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  158
      * @symbol ?tryLegacyUpgrade@ElementBlock@@UEBAPEBVBlock@@G@Z
-     * @hash   -1177099392
+     * @hash   -1176269088
      */
     virtual class Block const * tryLegacyUpgrade(unsigned short) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@ElementBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1859444629
+     * @hash   1860274933
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -242,42 +242,42 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-     * @hash   1616224584
+     * @hash   1617054888
      */
     MCAPI ElementBlock(std::string const &, int, enum class ElementType);
     /**
      * @symbol ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
-     * @hash   -189281691
+     * @hash   -188451387
      */
     MCAPI static struct ElementInfo getElementInfo(enum class ElementType);
     /**
      * @symbol ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
-     * @hash   -324884732
+     * @hash   -324054428
      */
     MCAPI static class RecipeIngredient getIngredientForElement(enum class ElementType, int);
     /**
      * @symbol ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
-     * @hash   978914994
+     * @hash   979745298
      */
     MCAPI static class ItemInstance getItemForElement(enum class ElementType, int);
     /**
      * @symbol ?initElements@ElementBlock@@SAXXZ
-     * @hash   1827283683
+     * @hash   1828113987
      */
     MCAPI static void initElements();
     /**
      * @symbol ?isElement@ElementBlock@@SA_NAEBVItemStackBase@@@Z
-     * @hash   -141100143
+     * @hash   -140269839
      */
     MCAPI static bool isElement(class ItemStackBase const &);
     /**
      * @symbol ?shutdownElements@ElementBlock@@SAXXZ
-     * @hash   -29121389
+     * @hash   -28291085
      */
     MCAPI static void shutdownElements();
     /**
      * @symbol ?tryGetBlockLegacyForElement@ElementBlock@@SAPEBVBlockLegacy@@W4ElementType@@@Z
-     * @hash   -1011288894
+     * @hash   -1010458590
      */
     MCAPI static class BlockLegacy const * tryGetBlockLegacyForElement(enum class ElementType);
 

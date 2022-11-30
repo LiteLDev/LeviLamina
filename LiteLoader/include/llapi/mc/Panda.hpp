@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Panda@@UEAAXXZ
-     * @hash   1361164241
+     * @hash   1361210369
      */
     virtual void normalTick();
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   555130586
+     * @hash   555176714
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1604022669
+     * @hash   1604068797
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Panda@@UEAAXXZ
-     * @hash   3761033
+     * @hash   3807161
      */
     virtual void _onSizeUpdated();
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  341
      * @symbol ?setTransitioningSitting@Panda@@UEAAX_N@Z
-     * @hash   1418120094
+     * @hash   1418166222
      */
     virtual void setTransitioningSitting(bool);
     /**
@@ -199,22 +199,22 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   964368838
+     * @hash   964414966
      */
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getLieOnBackAmount@Panda@@QEBAMM@Z
-     * @hash   232298307
+     * @hash   232344435
      */
     MCAPI float getLieOnBackAmount(float) const;
     /**
      * @symbol ?getSitAmount@Panda@@QEBAMM@Z
-     * @hash   -1443267597
+     * @hash   -1443221469
      */
     MCAPI float getSitAmount(float) const;
     /**
      * @symbol ?getSneezeCounter@Panda@@QEBAHXZ
-     * @hash   656080710
+     * @hash   656126838
      */
     MCAPI int getSneezeCounter() const;
     /**
@@ -224,7 +224,7 @@ public:
     MCAPI int getUnhappyCounter() const;
     /**
      * @symbol ?postNormalTick@Panda@@QEAAXXZ
-     * @hash   -49857717
+     * @hash   -49811589
      */
     MCAPI void postNormalTick();
 

@@ -22,7 +22,7 @@ namespace Achievements {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getIndexForFroglight@Achievements@@YAHAEBVItemStack@@@Z
-     * @hash   -1412276532
+     * @hash   -1412230404
      */
     MCAPI int getIndexForFroglight(class ItemStack const &);
 

@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0PlayerShootArrowEvent@@QEAA@AEBU0@@Z
-     * @hash   1480359045
+     * @hash   1480405173
      */
     MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const &);
     /**

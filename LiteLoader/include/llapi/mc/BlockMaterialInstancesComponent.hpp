@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0BlockMaterialInstancesComponent@@QEAA@$$QEAU0@@Z
-     * @hash   -91128291
+     * @hash   -90297987
      */
     MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent &&);
     /**
      * @symbol ?getRenderLayer@BlockMaterialInstancesComponent@@QEBA?AW4BlockRenderLayer@@XZ
-     * @hash   -1069908058
+     * @hash   -1069077754
      */
     MCAPI enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??4BlockMaterialInstancesComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -932815546
+     * @hash   -931985242
      */
     MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
     /**
      * @symbol ??1BlockMaterialInstancesComponent@@QEAA@XZ
-     * @hash   -1132933617
+     * @hash   -1132103313
      */
     MCAPI ~BlockMaterialInstancesComponent();
 

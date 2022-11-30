@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@HelpCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   161115753
+     * @hash   161161881
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@HelpCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1331180384
+     * @hash   -1331134256
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?getCommandHelp@HelpCommand@@AEBAXAEBVCommandRegistry@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -765425056
+     * @hash   -765378928
      */
     MCAPI void getCommandHelp(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?getHelpPage@HelpCommand@@AEBAXAEBVCommandRegistry@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1890436800
+     * @hash   1890482928
      */
     MCAPI void getHelpPage(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   -1318418600
+     * @hash   -1317588296
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
@@ -51,30 +51,30 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getIngredient@MapExtendingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   736002811
+     * @hash   736833115
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   756397255
+     * @hash   756489511
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@MapExtendingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   603716108
+     * @hash   604546412
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@MapExtendingRecipe@@UEBAHXZ
-     * @hash   -1182304750
+     * @hash   -1182258622
      */
     virtual int size() const;
     /**
      * @symbol ??0MapExtendingRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   1716025506
+     * @hash   1716855810
      */
     MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
@@ -91,7 +91,7 @@ public:
 //private:
     /**
      * @symbol ?_updateMapInstance@MapExtendingRecipe@@AEBAXAEAVItemInstance@@@Z
-     * @hash   -714037992
+     * @hash   -713207688
      */
     MCAPI void _updateMapInstance(class ItemInstance &) const;
 

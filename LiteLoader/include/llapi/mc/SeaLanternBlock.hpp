@@ -219,18 +219,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@SeaLanternBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -301228324
+     * @hash   -300398020
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SeaLanternBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -62208028
+     * @hash   -61377724
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0SeaLanternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   340246244
+     * @hash   341076548
      */
     MCAPI SeaLanternBlock(std::string const &, int);
 

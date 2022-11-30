@@ -47,13 +47,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@IgniteSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   813820283
+     * @hash   813866411
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@IgniteSubcomponent@@UEAAPEBDXZ
-     * @hash   1663794854
+     * @hash   1663840982
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
@@ -70,7 +70,7 @@ public:
 #endif
     /**
      * @symbol ??0IgniteSubcomponent@@QEAA@XZ
-     * @hash   -1528720765
+     * @hash   -1528674637
      */
     MCAPI IgniteSubcomponent();
 

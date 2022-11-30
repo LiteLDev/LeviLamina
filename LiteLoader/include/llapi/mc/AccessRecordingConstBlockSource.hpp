@@ -36,119 +36,119 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getBlock@AccessRecordingConstBlockSource@@UEBAAEBVBlock@@HHH@Z
-     * @hash   -1466142368
+     * @hash   -1466096240
      */
     virtual class Block const & getBlock(int, int, int) const;
     /**
      * @vftbl  2
      * @symbol ?getBlock@AccessRecordingConstBlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1769504779
+     * @hash   1769550907
      */
     virtual class Block const & getBlock(class BlockPos const &) const;
     /**
      * @vftbl  3
      * @symbol ?getBlock@AccessRecordingConstBlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@I@Z
-     * @hash   1137961213
+     * @hash   1138007341
      */
     virtual class Block const & getBlock(class BlockPos const &, unsigned int) const;
     /**
      * @vftbl  4
      * @symbol ?getBlockEntity@AccessRecordingConstBlockSource@@UEBAPEBVBlockActor@@AEBVBlockPos@@@Z
-     * @hash   -1281518097
+     * @hash   -1281471969
      */
     virtual class BlockActor const * getBlockEntity(class BlockPos const &) const;
     /**
      * @vftbl  5
      * @symbol ?getExtraBlock@AccessRecordingConstBlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -1355601601
+     * @hash   -1355555473
      */
     virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /**
      * @vftbl  6
      * @symbol ?getLiquidBlock@AccessRecordingConstBlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -1587061257
+     * @hash   -1587015129
      */
     virtual class Block const & getLiquidBlock(class BlockPos const &) const;
     /**
      * @vftbl  7
      * @symbol ?hasBlock@AccessRecordingConstBlockSource@@UEBA_NAEBVBlockPos@@@Z
-     * @hash   1290786975
+     * @hash   1290833103
      */
     virtual bool hasBlock(class BlockPos const &) const;
     /**
      * @vftbl  8
      * @symbol ?containsAnyLiquid@AccessRecordingConstBlockSource@@UEBA_NAEBVAABB@@@Z
-     * @hash   1854668832
+     * @hash   1854714960
      */
     virtual bool containsAnyLiquid(class AABB const &) const;
     /**
      * @vftbl  9
      * @symbol ?containsMaterial@AccessRecordingConstBlockSource@@UEBA_NAEBVAABB@@W4MaterialType@@@Z
-     * @hash   -123590914
+     * @hash   -123544786
      */
     virtual bool containsMaterial(class AABB const &, enum class MaterialType) const;
     /**
      * @vftbl  10
      * @symbol ?getMaterial@AccessRecordingConstBlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z
-     * @hash   857560151
+     * @hash   857606279
      */
     virtual class Material const & getMaterial(class BlockPos const &) const;
     /**
      * @vftbl  11
      * @symbol ?getMaterial@AccessRecordingConstBlockSource@@UEBAAEBVMaterial@@HHH@Z
-     * @hash   -1801959556
+     * @hash   -1801913428
      */
     virtual class Material const & getMaterial(int, int, int) const;
     /**
      * @vftbl  12
      * @symbol ?hasChunksAt@AccessRecordingConstBlockSource@@UEBA_NAEBUBounds@@_N@Z
-     * @hash   1455734636
+     * @hash   1455780764
      */
     virtual bool hasChunksAt(struct Bounds const &, bool) const;
     /**
      * @vftbl  13
      * @symbol ?hasChunksAt@AccessRecordingConstBlockSource@@UEBA_NAEBVBlockPos@@H_N@Z
-     * @hash   1490425564
+     * @hash   1490471692
      */
     virtual bool hasChunksAt(class BlockPos const &, int, bool) const;
     /**
      * @vftbl  14
      * @symbol ?hasChunksAt@AccessRecordingConstBlockSource@@UEBA_NAEBVAABB@@_N@Z
-     * @hash   -488401756
+     * @hash   -488355628
      */
     virtual bool hasChunksAt(class AABB const &, bool) const;
     /**
      * @vftbl  15
      * @symbol ?getDimensionId@AccessRecordingConstBlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   2008314021
+     * @hash   2008360149
      */
     virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
      * @vftbl  16
      * @symbol ?fetchAABBs@AccessRecordingConstBlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_N@Z
-     * @hash   -317561858
+     * @hash   -317515730
      */
     virtual void fetchAABBs(std::vector<class AABB> &, class AABB const &, bool) const;
     /**
      * @vftbl  17
      * @symbol ?fetchCollisionShapes@AccessRecordingConstBlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@PEAM_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1821069549
+     * @hash   1821115677
      */
     virtual void fetchCollisionShapes(std::vector<class AABB> &, class AABB const &, float *, bool, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  18
      * @symbol ?getTallestCollisionShape@AccessRecordingConstBlockSource@@UEBA?AVAABB@@AEBV2@PEAM_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   387879914
+     * @hash   387926042
      */
     virtual class AABB getTallestCollisionShape(class AABB const &, float *, bool, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @symbol ??0AccessRecordingConstBlockSource@@QEAA@V?$not_null@PEBVIConstBlockSource@@@gsl@@@Z
-     * @hash   -2066355102
+     * @hash   -2066308974
      */
     MCAPI AccessRecordingConstBlockSource(class gsl::not_null<class IConstBlockSource const *>);
     /**
      * @symbol ?takeAccessedBlocks@AccessRecordingConstBlockSource@@QEHAA?AUAccessedBlockSourceBlocks@@XZ
-     * @hash   -449093844
+     * @hash   -449047716
      */
     MCAPI struct AccessedBlockSourceBlocks takeAccessedBlocks();
 

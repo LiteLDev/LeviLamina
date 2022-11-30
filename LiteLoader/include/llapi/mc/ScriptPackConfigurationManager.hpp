@@ -39,12 +39,12 @@ public:
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     /**
      * @symbol ?getPackConfiguration@ScriptPackConfigurationManager@@QEBAAEBVScriptPackConfiguration@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1783892865
+     * @hash   1783938993
      */
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
     /**
      * @symbol ?loadPackConfigs@ScriptPackConfigurationManager@@QEAAXAEBVPath@Core@@@Z
-     * @hash   1991928276
+     * @hash   1991974404
      */
     MCAPI void loadPackConfigs(class Core::Path const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_tickInsideEndPortalBlockSystem@InsideEndPortalBlockSystemImpl@@SAXAEAVStrictEntityContext@@AEBU?$InsideBlockWithPosAndBlockComponent@UEndPortalBlockFlag@@@@AEAVActorOwnerComponent@@@Z
-     * @hash   198306399
+     * @hash   198352527
      */
     MCAPI static void _tickInsideEndPortalBlockSystem(class StrictEntityContext &, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const &, class ActorOwnerComponent &);
 

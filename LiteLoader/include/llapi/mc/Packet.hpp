@@ -111,17 +111,17 @@ public:
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
     /**
      * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
-     * @hash   -1820065603
+     * @hash   -1820019475
      */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     /**
      * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
-     * @hash   1229489567
+     * @hash   1229535695
      */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
      * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
-     * @hash   -515947843
+     * @hash   -515901715
      */
     MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;
 

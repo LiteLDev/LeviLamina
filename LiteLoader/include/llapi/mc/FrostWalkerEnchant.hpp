@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@FrostWalkerEnchant@@UEBAHH@Z
-     * @hash   1901397400
+     * @hash   1902227704
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@FrostWalkerEnchant@@UEBAHH@Z
-     * @hash   -469579674
+     * @hash   -468749370
      */
     virtual int getMaxCost(int) const;
     /**
@@ -83,7 +83,7 @@ public:
 #endif
     /**
      * @symbol ??0FrostWalkerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   -1889208742
+     * @hash   -1888378438
      */
     MCAPI FrostWalkerEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

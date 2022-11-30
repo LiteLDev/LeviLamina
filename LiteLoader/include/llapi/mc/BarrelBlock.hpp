@@ -185,7 +185,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@BarrelBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   954151535
+     * @hash   954981839
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -196,13 +196,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@BarrelBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   318411463
+     * @hash   319241767
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  150
      * @symbol ?getFaceFlip@BarrelBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     * @hash   -1754804885
+     * @hash   -1753974581
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@BarrelBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   53035672
+     * @hash   53865976
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@BarrelBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   16580636
+     * @hash   17410940
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -276,12 +276,12 @@ public:
 #endif
     /**
      * @symbol ??0BarrelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1584991262
+     * @hash   1585821566
      */
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?setOpen@BarrelBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1964315616
+     * @hash   -1963485312
      */
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);
 

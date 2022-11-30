@@ -87,7 +87,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@BoatItem@@UEBA_NH@Z
-     * @hash   -1062518007
+     * @hash   -1061687703
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -112,47 +112,47 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@BoatItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1620103345
+     * @hash   -1619273041
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -56857993
+     * @hash   -56027689
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@BoatItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -579732774
+     * @hash   -578902470
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BoatItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -215541711
+     * @hash   -214711407
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @vftbl  133
      * @symbol ?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ
-     * @hash   1224475662
+     * @hash   1224521790
      */
     virtual enum class ActorType _getActorType() const;
     /**
      * @symbol ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-     * @hash   36535570
+     * @hash   37365874
      */
     MCAPI BoatItem(std::string const &, int, int);
 

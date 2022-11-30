@@ -34,27 +34,27 @@ public:
     MCAPI StructureFeatureRegistry();
     /**
      * @symbol ?findNearestStructureFeature@StructureFeatureRegistry@@QEAA_NAEAVDimension@@AEAVIPreliminarySurfaceProvider@@W4StructureFeatureType@@AEBVBlockPos@@AEAV5@AEBVBiomeSource@@_N@Z
-     * @hash   -1175426531
+     * @hash   -1174596227
      */
     MCAPI bool findNearestStructureFeature(class Dimension &, class IPreliminarySurfaceProvider &, enum class StructureFeatureType, class BlockPos const &, class BlockPos &, class BiomeSource const &, bool);
     /**
      * @symbol ?findStructureFeatureTypeAt@StructureFeatureRegistry@@QEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
-     * @hash   -953753623
+     * @hash   -952923319
      */
     MCAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
      * @symbol ?getStructureFeatureOfType@StructureFeatureRegistry@@QEBAPEAVStructureFeature@@W4StructureFeatureType@@@Z
-     * @hash   -68603962
+     * @hash   -67773658
      */
     MCAPI class StructureFeature * getStructureFeatureOfType(enum class StructureFeatureType) const;
     /**
      * @symbol ?isStructureFeatureTypeAt@StructureFeatureRegistry@@QEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
-     * @hash   626055438
+     * @hash   626885742
      */
     MCAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum class StructureFeatureType) const;
     /**
      * @symbol ??1StructureFeatureRegistry@@QEAA@XZ
-     * @hash   613115018
+     * @hash   613161146
      */
     MCAPI ~StructureFeatureRegistry();
 

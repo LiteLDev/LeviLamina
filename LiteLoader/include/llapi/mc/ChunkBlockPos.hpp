@@ -55,27 +55,27 @@ public:
 public:
     /**
      * @symbol ??0ChunkBlockPos@@QEAA@EVChunkLocalHeight@@E@Z
-     * @hash   -425231855
+     * @hash   -424401551
      */
     MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
     /**
      * @symbol ??0ChunkBlockPos@@QEAA@AEBVBlockPos@@F@Z
-     * @hash   -989934575
+     * @hash   -989104271
      */
     MCAPI ChunkBlockPos(class BlockPos const &, short);
     /**
      * @symbol ?toPos@ChunkBlockPos@@QEBA?AVPos@@XZ
-     * @hash   2001035536
+     * @hash   2001865840
      */
     MCAPI class Pos toPos() const;
     /**
      * @symbol ?from2D@ChunkBlockPos@@SA?AV1@EE@Z
-     * @hash   -1423952485
+     * @hash   -1423122181
      */
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
     /**
      * @symbol ?fromLegacyIndex@ChunkBlockPos@@SA?AV1@G@Z
-     * @hash   -494771133
+     * @hash   -493940829
      */
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
 

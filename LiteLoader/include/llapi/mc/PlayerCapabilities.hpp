@@ -29,7 +29,7 @@ struct ISharedController {
 #undef AFTER_EXTRA
     /**
      * @symbol ?createController@PlayerCapabilities@@YA?AV?$unique_ptr@UISharedController@PlayerCapabilities@@U?$default_delete@UISharedController@PlayerCapabilities@@@std@@@std@@AEBVLevel@@@Z
-     * @hash   580175504
+     * @hash   581005808
      */
     MCAPI std::unique_ptr<struct PlayerCapabilities::ISharedController> createController(class Level const &);
 

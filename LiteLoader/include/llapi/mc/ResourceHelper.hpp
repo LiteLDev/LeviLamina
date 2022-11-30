@@ -25,12 +25,12 @@ namespace ResourceHelper {
 #undef AFTER_EXTRA
     /**
      * @symbol ?deserializePackStackEntry@ResourceHelper@@YA_NAEBVValue@Json@@AEAUPackInstanceId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   351829912
+     * @hash   352660216
      */
     MCAPI bool deserializePackStackEntry(class Json::Value const &, struct PackInstanceId &, std::string const &);
     /**
      * @symbol ?stringifyResourceMetadataGeneratedWith@ResourceHelper@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceMetadata@@@Z
-     * @hash   266676474
+     * @hash   267506778
      */
     MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const &);
 

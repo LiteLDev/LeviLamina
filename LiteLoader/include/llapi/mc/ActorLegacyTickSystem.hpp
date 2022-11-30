@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@ActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1275065354
+     * @hash   1275111482
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?tickActorLegacyTickSystem@ActorLegacyTickSystem@@SAXAEAVEntityContext@@AEAVActor@@AEAVActorTickNeededComponent@@@Z
-     * @hash   1921998590
+     * @hash   1922044718
      */
     MCAPI static void tickActorLegacyTickSystem(class EntityContext &, class Actor &, class ActorTickNeededComponent &);
 

@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@ScatterFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1466537861
+     * @hash   1467368165
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0ScatterFeature@@QEAA@XZ
-     * @hash   -141539612
+     * @hash   -140709308
      */
     MCAPI ScatterFeature();
 

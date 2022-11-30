@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BlastFurnaceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1568055315
+     * @hash   -1567225011
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BlastFurnaceBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -399643676
+     * @hash   -398813372
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@BlastFurnaceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   140527794
+     * @hash   141358098
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -237,12 +237,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BlastFurnaceBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   654121115
+     * @hash   654951419
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0BlastFurnaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   1892439846
+     * @hash   1893270150
      */
     MCAPI BlastFurnaceBlock(std::string const &, int, bool);
 

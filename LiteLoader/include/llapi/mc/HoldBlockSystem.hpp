@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     * @hash   -1199214071
+     * @hash   -1199167943
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
@@ -51,7 +51,7 @@ public:
 //private:
     /**
      * @symbol ?_holdBlockSystemOnActorDie@HoldBlockSystem@@CAXAEAUActorDieEvent@@@Z
-     * @hash   -1819299223
+     * @hash   -1819253095
      */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 

@@ -24,12 +24,12 @@ namespace VanillaBlocks {
 #undef AFTER_EXTRA
     /**
      * @symbol ?addHardCodedComponentForBlocks@VanillaBlocks@@YAXXZ
-     * @hash   457787414
+     * @hash   458617718
      */
     MCAPI void addHardCodedComponentForBlocks();
     /**
      * @symbol ?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z
-     * @hash   291990919
+     * @hash   292821223
      */
     MCAPI void assignBlocks(class Experiments const &);
     /**
@@ -1169,7 +1169,7 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mWoodenSlab;
     /**
      * @symbol ?unassignBlocks@VanillaBlocks@@YAXXZ
-     * @hash   -971297352
+     * @hash   -970467048
      */
     MCAPI void unassignBlocks();
 

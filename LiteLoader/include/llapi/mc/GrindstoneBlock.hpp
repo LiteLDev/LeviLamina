@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@GrindstoneBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   218424284
+     * @hash   219254588
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@GrindstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1260448590
+     * @hash   1261278894
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@GrindstoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   916433582
+     * @hash   917263886
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@GrindstoneBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1500022021
+     * @hash   -1499191717
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@GrindstoneBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1535289654
+     * @hash   1536119958
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@GrindstoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -372645789
+     * @hash   -371815485
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@GrindstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1053650750
+     * @hash   -1052820446
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@GrindstoneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1536030660
+     * @hash   1536860964
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,14 +285,14 @@ public:
 #endif
     /**
      * @symbol ??0GrindstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1720797210
+     * @hash   1721627514
      */
     MCAPI GrindstoneBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_getShape@GrindstoneBlock@@AEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
-     * @hash   -1975744824
+     * @hash   -1974914520
      */
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
 

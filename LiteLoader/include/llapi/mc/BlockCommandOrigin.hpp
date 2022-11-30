@@ -40,43 +40,43 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -338724040
+     * @hash   -338677912
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BlockCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -316850537
+     * @hash   -316804409
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@BlockCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   971335428
+     * @hash   971381556
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@BlockCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -148461871
+     * @hash   -148415743
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@BlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   619427472
+     * @hash   619473600
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   -1117047350
+     * @hash   -1117001222
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@BlockCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   -2129485894
+     * @hash   -2129439766
      */
     virtual class Dimension * getDimension() const;
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?clone@BlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   1870648094
+     * @hash   1870694222
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -118,7 +118,7 @@ public:
     /**
      * @vftbl  29
      * @symbol ?serialize@BlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   -1828347564
+     * @hash   -1828301436
      */
     virtual class CompoundTag serialize() const;
     /**
@@ -130,35 +130,35 @@ public:
     /**
      * @vftbl  32
      * @symbol ?_getBaseCommandBlock@BlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
-     * @hash   -1960904502
+     * @hash   -1960858374
      */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /**
      * @vftbl  33
      * @symbol ?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
-     * @hash   -1205099021
+     * @hash   -1205052893
      */
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
     /**
      * @symbol ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
-     * @hash   1149503198
+     * @hash   1149549326
      */
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
     /**
      * @symbol ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1825068232
+     * @hash   -1825022104
      */
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?load@BlockCommandOrigin@@SA?AV?$unique_ptr@VBlockCommandOrigin@@U?$default_delete@VBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   1644890286
+     * @hash   1644936414
      */
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 //protected:
     /**
      * @symbol ?_getName@BlockCommandOrigin@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
-     * @hash   217154022
+     * @hash   217200150
      */
     MCAPI std::string _getName(class BlockSource &) const;
 

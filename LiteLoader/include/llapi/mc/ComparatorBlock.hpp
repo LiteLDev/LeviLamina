@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  59
      * @symbol ?getDirectSignal@ComparatorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1241094324
+     * @hash   -1240264020
      */
     virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -911516322
+     * @hash   -910686018
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   431102913
+     * @hash   431933217
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@ComparatorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1354653641
+     * @hash   1355483945
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   573119753
+     * @hash   573950057
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ComparatorBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1101214275
+     * @hash   1102044579
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -212,13 +212,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ComparatorBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -157045642
+     * @hash   -156215338
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  116
      * @symbol ?triggerEvent@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   -541053193
+     * @hash   -540222889
      */
     virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ComparatorBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -534708809
+     * @hash   -533878505
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -276,7 +276,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1298171827
+     * @hash   -1297341523
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -287,7 +287,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1600314659
+     * @hash   -1599484355
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -298,13 +298,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ComparatorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -181057572
+     * @hash   -180227268
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@ComparatorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   908461241
+     * @hash   909291545
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -315,7 +315,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ComparatorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -862155291
+     * @hash   -861324987
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCK
@@ -327,19 +327,19 @@ public:
 #endif
     /**
      * @symbol ??0ComparatorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   -1611317856
+     * @hash   -1610487552
      */
     MCAPI ComparatorBlock(std::string const &, int, bool);
 
 //private:
     /**
      * @symbol ?_installCircuit@ComparatorBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -1602538013
+     * @hash   -1601707709
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
     /**
      * @symbol ?_refreshOutputState@ComparatorBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -642787257
+     * @hash   -641956953
      */
     MCAPI void _refreshOutputState(class BlockSource &, class BlockPos const &, int) const;
 

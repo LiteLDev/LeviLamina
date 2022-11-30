@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
-     * @hash   -517338215
+     * @hash   -517292087
      */
     virtual void applyEffects(class Actor *, int, int) const;
     /**
      * @vftbl  2
      * @symbol ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
-     * @hash   1760616976
+     * @hash   1760663104
      */
     virtual void removeEffects(class Actor *);
     /**
      * @symbol ??0AbsorptionMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-     * @hash   -1677412905
+     * @hash   -1677366777
      */
     MCAPI AbsorptionMobEffect(int, std::string const &, std::string const &, bool, int, int);
 

@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?_doInitialMove@PredictableProjectile@@MEAAXXZ
-     * @hash   996534031
+     * @hash   996580159
      */
     virtual void _doInitialMove();
     /**
@@ -144,7 +144,7 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0PredictableProjectile@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1822303208
+     * @hash   1822349336
      */
     MCAPI PredictableProjectile(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

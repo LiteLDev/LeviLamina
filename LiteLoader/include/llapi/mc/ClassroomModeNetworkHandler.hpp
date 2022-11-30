@@ -38,20 +38,20 @@ public:
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     /**
      * @symbol ?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-     * @hash   2024945233
+     * @hash   2024991361
      */
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
 #endif
     /**
      * @symbol ??0ClassroomModeNetworkHandler@@QEAA@_N@Z
-     * @hash   -199540713
+     * @hash   -199494585
      */
     MCAPI ClassroomModeNetworkHandler(bool);
 
 //private:
     /**
      * @symbol ?_connect@ClassroomModeNetworkHandler@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -159522217
+     * @hash   -159476089
      */
     MCAPI void _connect(std::string const &);
 

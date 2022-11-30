@@ -78,7 +78,7 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0EndPortalBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   1217523810
+     * @hash   1218354114
      */
     MCAPI EndPortalBlockActor(class BlockPos const &);
 

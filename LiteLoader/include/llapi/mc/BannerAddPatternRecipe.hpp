@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   588086663
+     * @hash   588916967
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
@@ -52,40 +52,40 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   1578883532
+     * @hash   1579713836
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   -1714670632
+     * @hash   -1714578376
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@BannerAddPatternRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -1292604723
+     * @hash   -1291774419
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@BannerAddPatternRecipe@@UEBAHXZ
-     * @hash   -398608909
+     * @hash   -398562781
      */
     virtual int size() const;
     /**
      * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   2058456209
+     * @hash   2059286513
      */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   121230838
+     * @hash   122061142
      */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEAVCraftingContainer@@@Z
-     * @hash   -1036769016
+     * @hash   -1035938712
      */
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
     /**

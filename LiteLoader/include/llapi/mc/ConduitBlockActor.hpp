@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ConduitBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -263109043
+     * @hash   -262278739
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ConduitBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   831335260
+     * @hash   832165564
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@ConduitBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -178391050
+     * @hash   -177560746
      */
     virtual void tick(class BlockSource &);
     /**
@@ -109,29 +109,29 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@ConduitBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   806964371
+     * @hash   807794675
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0ConduitBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   939406073
+     * @hash   940236377
      */
     MCAPI ConduitBlockActor(class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_animateTick@ConduitBlockActor@@AEBAXAEAVBlockSource@@@Z
-     * @hash   -906824882
+     * @hash   -905994578
      */
     MCAPI void _animateTick(class BlockSource &) const;
     /**
      * @symbol ?_checkShape@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -1387654250
+     * @hash   -1386823946
      */
     MCAPI void _checkShape(class BlockSource &);
     /**
      * @symbol ?_updateTarget@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -172209195
+     * @hash   -171378891
      */
     MCAPI void _updateTarget(class BlockSource &);
 

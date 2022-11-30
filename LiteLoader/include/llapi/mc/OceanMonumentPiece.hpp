@@ -111,17 +111,17 @@ protected:
     MCAPI static int mGridroomTopConnectIndex;
     /**
      * @symbol ?mLeftWingIndex@OceanMonumentPiece@@1HB
-     * @hash   -1286699940
+     * @hash   -1286576932
      */
     MCAPI static int const mLeftWingIndex;
     /**
      * @symbol ?mPenthouseIndex@OceanMonumentPiece@@1HB
-     * @hash   371791947
+     * @hash   371914955
      */
     MCAPI static int const mPenthouseIndex;
     /**
      * @symbol ?mRightWingIndex@OceanMonumentPiece@@1HB
-     * @hash   -2072853371
+     * @hash   -2072730363
      */
     MCAPI static int const mRightWingIndex;
 

@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getIdentity@ExtendedCertificate@@SA?AVUUID@mce@@AEBVCertificate@@@Z
-     * @hash   507369911
+     * @hash   507416039
      */
     MCAPI static class mce::UUID getIdentity(class Certificate const &);
     /**
      * @symbol ?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
-     * @hash   -1403059007
+     * @hash   -1403012879
      */
     MCAPI static std::string getIdentityName(class Certificate const &);
     /**

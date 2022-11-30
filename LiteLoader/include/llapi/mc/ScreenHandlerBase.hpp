@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-     * @hash   41062
+     * @hash   87190
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
@@ -61,14 +61,14 @@ public:
 #endif
     /**
      * @symbol ??0ScreenHandlerBase@@QEAA@AEAVItemStackRequestActionHandler@@@Z
-     * @hash   -1276172518
+     * @hash   -1275342214
      */
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 //protected:
     /**
      * @symbol ?_tryGetSparseContainer@ScreenHandlerBase@@IEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-     * @hash   1153646133
+     * @hash   1154476437
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
 

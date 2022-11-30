@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1983181266
+     * @hash   -1982350962
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -225,30 +225,30 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PressurePlateBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -587567606
+     * @hash   -586737302
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  193
      * @symbol ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1294164349
+     * @hash   1294994653
      */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  194
      * @symbol ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
-     * @hash   580754288
+     * @hash   581584592
      */
     virtual int getSignalForData(int) const;
     /**
      * @vftbl  195
      * @symbol ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
-     * @hash   -1989292285
+     * @hash   -1988461981
      */
     virtual int getRedstoneSignal(int) const;
     /**
      * @symbol ??0PressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Sensitivity@0@@Z
-     * @hash   1345659650
+     * @hash   1346489954
      */
     MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum class PressurePlateBlock::Sensitivity);
 

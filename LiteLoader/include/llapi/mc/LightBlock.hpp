@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@LightBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   575914743
+     * @hash   576745047
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -183,25 +183,25 @@ public:
     /**
      * @vftbl  83
      * @symbol ?isFilteredOut@LightBlock@@UEBA_NW4BlockRenderLayer@@@Z
-     * @hash   -1586275498
+     * @hash   -1585445194
      */
     virtual bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @vftbl  91
      * @symbol ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -650797038
+     * @hash   -649966734
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1669844281
+     * @hash   1670674585
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  94
      * @symbol ?tryToPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
-     * @hash   1153178944
+     * @hash   1154009248
      */
     virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
     /**
@@ -212,13 +212,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -476779466
+     * @hash   -475949162
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  114
      * @symbol ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-     * @hash   252961281
+     * @hash   253791585
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
@@ -250,13 +250,13 @@ public:
     /**
      * @vftbl  152
      * @symbol ?init@LightBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   789266332
+     * @hash   790096636
      */
     virtual class BlockLegacy & init();
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@LightBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   -106236913
+     * @hash   -105406609
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@LightBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   469573315
+     * @hash   470403619
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -302,7 +302,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -424870162
+     * @hash   -424039858
      */
     MCAPI LightBlock(std::string const &, int, class Material const &);
 

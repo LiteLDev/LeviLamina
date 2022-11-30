@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0CompassSpriteCalculator@@QEAA@V?$function@$$A6A?AVBlockPos@@PEBVBlockSource@@PEAVActor@@@Z@std@@V?$function@$$A6A_NPEBVBlockSource@@PEAVActor@@@Z@2@MM@Z
-     * @hash   49531555
+     * @hash   50361859
      */
     MCAPI CompassSpriteCalculator(class std::function<class BlockPos (class BlockSource const *, class Actor *)>, class std::function<bool (class BlockSource const *, class Actor *)>, float, float);
     /**
@@ -42,42 +42,42 @@ public:
     MCAPI int getFrame() const;
     /**
      * @symbol ?update@CompassSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-     * @hash   -230954822
+     * @hash   -230124518
      */
     MCAPI int update(class Actor &, bool);
     /**
      * @symbol ?updateFromPosition@CompassSpriteCalculator@@QEAAHPEBVBlockSource@@AEBVBlockPos@@MMM_N22@Z
-     * @hash   -427875823
+     * @hash   -427045519
      */
     MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool);
     /**
      * @symbol ?updateFromPosition@CompassSpriteCalculator@@QEAAHPEBVBlockSource@@PEAVActor@@MMM_N2@Z
-     * @hash   1634281950
+     * @hash   1635112254
      */
     MCAPI int updateFromPosition(class BlockSource const *, class Actor *, float, float, float, bool, bool);
     /**
      * @symbol ??1CompassSpriteCalculator@@QEAA@XZ
-     * @hash   -411112091
+     * @hash   -411065963
      */
     MCAPI ~CompassSpriteCalculator();
     /**
      * @symbol ?isInLastDeathDimension@CompassSpriteCalculator@@SA?AV?$function@$$A6A_NPEBVBlockSource@@PEAVActor@@@Z@std@@XZ
-     * @hash   -1148381475
+     * @hash   -1147551171
      */
     MCAPI static class std::function<bool (class BlockSource const *, class Actor *)> isInLastDeathDimension();
     /**
      * @symbol ?isInOverworldDimension@CompassSpriteCalculator@@SA?AV?$function@$$A6A_NPEBVBlockSource@@PEAVActor@@@Z@std@@XZ
-     * @hash   1635357565
+     * @hash   1636187869
      */
     MCAPI static class std::function<bool (class BlockSource const *, class Actor *)> isInOverworldDimension();
     /**
      * @symbol ?pointTowardsLastDeathLocation@CompassSpriteCalculator@@SA?AV?$function@$$A6A?AVBlockPos@@PEBVBlockSource@@PEAVActor@@@Z@std@@XZ
-     * @hash   261289194
+     * @hash   262119498
      */
     MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsLastDeathLocation();
     /**
      * @symbol ?pointTowardsSpawnPoint@CompassSpriteCalculator@@SA?AV?$function@$$A6A?AVBlockPos@@PEBVBlockSource@@PEAVActor@@@Z@std@@XZ
-     * @hash   -1098972628
+     * @hash   -1098142324
      */
     MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsSpawnPoint();
 

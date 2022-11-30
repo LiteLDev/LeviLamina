@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@MultifaceBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   111536791
+     * @hash   112367095
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -151,7 +151,7 @@ public:
     /**
      * @vftbl  57
      * @symbol ?sanitizeFillBlock@MultifaceBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-     * @hash   2093792810
+     * @hash   2094623114
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   827813794
+     * @hash   828644098
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1073935303
+     * @hash   -1073104999
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@MultifaceBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   132248918
+     * @hash   133079222
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@MultifaceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   -44860087
+     * @hash   -44029783
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1082288557
+     * @hash   1083118861
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@MultifaceBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -813931991
+     * @hash   -813101687
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   515190009
+     * @hash   516020313
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -297,12 +297,12 @@ public:
 #endif
     /**
      * @symbol ??0MultifaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1606775998
+     * @hash   1607606302
      */
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?removeFace@MultifaceBlock@@QEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@E_N@Z
-     * @hash   -764187995
+     * @hash   -763357691
      */
     MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, unsigned char, bool) const;
     /**
@@ -347,46 +347,46 @@ public:
     MCAPI static int const MULTIFACE_WEST;
     /**
      * @symbol ?convertOldMultifaceToNewMultifaceValue@MultifaceBlock@@SAHH@Z
-     * @hash   2140958567
+     * @hash   2141788871
      */
     MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
     /**
      * @symbol ?getBlockForPlacement@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -589491074
+     * @hash   -588660770
      */
     MCAPI static class Block const & getBlockForPlacement(class Block const &, class Block const &, class BlockSource &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?getBlockForPlacementWorldGen@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVIBlockWorldGenAPI@@AEBVBlockPos@@E@Z
-     * @hash   801506670
+     * @hash   802336974
      */
     MCAPI static class Block const & getBlockForPlacementWorldGen(class Block const &, class Block const &, class IBlockWorldGenAPI &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?getMultifaceValueFromFace@MultifaceBlock@@SAHE@Z
-     * @hash   -646471718
+     * @hash   -645641414
      */
     MCAPI static int getMultifaceValueFromFace(unsigned char);
     /**
      * @symbol ?hasFace@MultifaceBlock@@SA_NAEBVBlock@@E@Z
-     * @hash   -687728749
+     * @hash   -686898445
      */
     MCAPI static bool hasFace(class Block const &, unsigned char);
 
 //protected:
     /**
      * @symbol ?_canSpread@MultifaceBlock@@IEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
-     * @hash   -480407652
+     * @hash   -479577348
      */
     MCAPI bool _canSpread(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?_getNumSides@MultifaceBlock@@IEBAHAEBVBlock@@@Z
-     * @hash   -1375880723
+     * @hash   -1375050419
      */
     MCAPI int _getNumSides(class Block const &) const;
 
 //private:
     /**
      * @symbol ?_removeBlock@MultifaceBlock@@AEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -1791322308
+     * @hash   -1790492004
      */
     MCAPI void _removeBlock(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, bool) const;
 

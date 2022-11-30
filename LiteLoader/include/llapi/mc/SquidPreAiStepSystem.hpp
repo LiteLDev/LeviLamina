@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@SquidPreAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   160144954
+     * @hash   160191082
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doSquidPreAiStepSystem@SquidPreAiStepSystem@@CAXAEBVStrictEntityContext@@AEAULocalMoveVelocityComponent@@@Z
-     * @hash   449219369
+     * @hash   449265497
      */
     MCAPI static void _doSquidPreAiStepSystem(class StrictEntityContext const &, struct LocalMoveVelocityComponent &);
 

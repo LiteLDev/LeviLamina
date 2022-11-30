@@ -33,49 +33,49 @@ public:
 public:
     /**
      * @symbol ?addItemLockMode@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-     * @hash   843127208
+     * @hash   843957512
      */
     MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
     /**
      * @symbol ?addKeepOnDeath@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-     * @hash   -928923286
+     * @hash   -928092982
      */
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
     /**
      * @symbol ?canMoveItemSlots@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
-     * @hash   277738104
+     * @hash   278568408
      */
     MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);
     /**
      * @symbol ?getItemLockMode@ItemLockHelper@@SA?AW4ItemLockMode@@AEBVItemStackBase@@@Z
-     * @hash   -64730985
+     * @hash   -63900681
      */
     MCAPI static enum class ItemLockMode getItemLockMode(class ItemStackBase const &);
     /**
      * @symbol ?isItemLocked@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
-     * @hash   -1707778609
+     * @hash   -1706948305
      */
     MCAPI static bool isItemLocked(class ItemStackBase const &);
     /**
      * @symbol ?isItemLockedInSlot@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
-     * @hash   -1825351703
+     * @hash   -1824521399
      */
     MCAPI static bool isItemLockedInSlot(class ItemStackBase const &);
     /**
      * @symbol ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
-     * @hash   1897909570
+     * @hash   1898739874
      */
     MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
     /**
      * @symbol ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
-     * @hash   -287781631
+     * @hash   -286951327
      */
     MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
 
 //private:
     /**
      * @symbol ?_parseItemLockMode@ItemLockHelper@@CA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-     * @hash   1288492813
+     * @hash   1289323117
      */
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
 

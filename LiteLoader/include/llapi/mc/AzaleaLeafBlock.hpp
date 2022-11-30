@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AzaleaLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -85859077
+     * @hash   -85028773
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -196,13 +196,13 @@ public:
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@AzaleaLeafBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -1926681237
+     * @hash   -1925850933
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
      * @vftbl  146
      * @symbol ?getVariant@AzaleaLeafBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1197814017
+     * @hash   -1196983713
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@AzaleaLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1705115958
+     * @hash   1705946262
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -244,13 +244,13 @@ public:
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@AzaleaLeafBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1019932648
+     * @hash   -1019102344
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@AzaleaLeafBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   803753027
+     * @hash   804583331
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -261,12 +261,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@AzaleaLeafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1065819325
+     * @hash   1066649629
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0AzaleaLeafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   1065026615
+     * @hash   1065856919
      */
     MCAPI AzaleaLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 

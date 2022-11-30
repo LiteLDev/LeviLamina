@@ -40,35 +40,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@RandomBlockStateFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1838244891
+     * @hash   1839075195
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@RandomBlockStateFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1127316480
+     * @hash   1128146784
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@RandomBlockStateFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   -52361185
+     * @hash   -51530881
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
      * @symbol ?_remapComplexAliasBlock@RandomBlockStateFunction@@AEAA?AW4RemapComplexAliasBlockResult@1@HAEAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2054429517
+     * @hash   -2053599213
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult _remapComplexAliasBlock(int, class Block const *&, std::string const &);
     /**
      * @symbol ?_tryRemapComplexAliasBlock@RandomBlockStateFunction@@AEAA?AW4RemapComplexAliasBlockResult@1@AEAVItemInstance@@HAEAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1990072048
+     * @hash   1990902352
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(class ItemInstance &, int, class Block const *&, std::string const &);
     /**
      * @symbol ?_tryRemapComplexAliasBlock@RandomBlockStateFunction@@AEAA?AW4RemapComplexAliasBlockResult@1@AEAVItemStack@@HAEAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   455081821
+     * @hash   455912125
      */
     MCAPI enum class RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(class ItemStack &, int, class Block const *&, std::string const &);
 

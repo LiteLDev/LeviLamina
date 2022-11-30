@@ -171,31 +171,31 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1633839259
+     * @hash   1634669563
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1820298512
+     * @hash   -1819468208
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1661779666
+     * @hash   1662609970
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AmethystClusterBlock@@EEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1195329532
+     * @hash   1196159836
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1849239022
+     * @hash   1850069326
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -206,7 +206,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@AmethystClusterBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -2119233585
+     * @hash   -2118403281
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@AmethystClusterBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1497233718
+     * @hash   -1496403414
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  152
      * @symbol ?init@AmethystClusterBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   -2014693085
+     * @hash   -2013862781
      */
     virtual class BlockLegacy & init();
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@AmethystClusterBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   392361223
+     * @hash   393191527
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@AmethystClusterBlock@@EEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   288060642
+     * @hash   288890946
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -281,7 +281,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -346296282
+     * @hash   -345465978
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   240557088
+     * @hash   241387392
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -303,19 +303,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@AmethystClusterBlock@@EEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -837056468
+     * @hash   -836226164
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0AmethystClusterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-     * @hash   1883436782
+     * @hash   1884267086
      */
     MCAPI AmethystClusterBlock(std::string const &, int, int, int);
 
 //private:
     /**
      * @symbol ?_shapeFromDirection@AmethystClusterBlock@@AEBA?AVAABB@@H@Z
-     * @hash   1921202214
+     * @hash   1922032518
      */
     MCAPI class AABB _shapeFromDirection(int) const;
 

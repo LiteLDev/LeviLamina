@@ -82,7 +82,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@WarpedFungusOnAStickItem@@UEBAHXZ
-     * @hash   -1168712002
+     * @hash   -1167881698
      */
     virtual int getEnchantSlot() const;
     /**
@@ -118,12 +118,12 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
@@ -134,7 +134,7 @@ public:
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
      * @symbol ??0WarpedFungusOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1562289620
+     * @hash   -1561459316
      */
     MCAPI WarpedFungusOnAStickItem(std::string const &, int);
 

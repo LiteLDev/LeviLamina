@@ -35,17 +35,17 @@ namespace BaseGameVersioning {
     MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
     /**
      * @symbol ?getAvailableBehaviorPackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
-     * @hash   -2070856657
+     * @hash   -2070810529
      */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableBehaviorPackBaseGameVersions();
     /**
      * @symbol ?getAvailableResourcePackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
-     * @hash   946889415
+     * @hash   946935543
      */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableResourcePackBaseGameVersions();
     /**
      * @symbol ?upgradeBaseGameVersionFromWorldTemplate@BaseGameVersioning@@YA_NAEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEAVLevelData@@@Z
-     * @hash   -2097906079
+     * @hash   -2097859951
      */
     MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class LevelData &);
 

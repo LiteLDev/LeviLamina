@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  134
      * @symbol ?isAuxValueRelevantForPicking@WoolCarpetBlock@@UEBA_NXZ
-     * @hash   2044428407
+     * @hash   2045258711
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@WoolCarpetBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1945808708
+     * @hash   1946639012
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@WoolCarpetBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2065079425
+     * @hash   2065909729
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WoolCarpetBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -715037925
+     * @hash   -714207621
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOOLCARPETBLOCK
@@ -249,7 +249,7 @@ public:
 #endif
     /**
      * @symbol ??0WoolCarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1969983547
+     * @hash   1970813851
      */
     MCAPI WoolCarpetBlock(std::string const &, int);
 

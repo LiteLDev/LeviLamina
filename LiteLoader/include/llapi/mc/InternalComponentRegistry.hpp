@@ -38,17 +38,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerComponents@InternalComponentRegistry@@UEAAXXZ
-     * @hash   597172531
+     * @hash   597218659
      */
     virtual void registerComponents();
     /**
      * @symbol ?addComponentSaveData@InternalComponentRegistry@@QEAAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -1477173279
+     * @hash   -1477127151
      */
     MCAPI void addComponentSaveData(class Actor const &, class CompoundTag &);
     /**
      * @symbol ?initializeComponents@InternalComponentRegistry@@QEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1996873256
+     * @hash   -1996827128
      */
     MCAPI void initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
@@ -60,17 +60,17 @@ public:
 //protected:
     /**
      * @symbol ?_initializeComponents@InternalComponentRegistry@@IEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1259678385
+     * @hash   -1259632257
      */
     MCAPI void _initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
      * @symbol ?_getComponentScope@InternalComponentRegistry@@KAPEBVCompoundTag@@AEBV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1091128762
+     * @hash   -1091082634
      */
     MCAPI static class CompoundTag const * _getComponentScope(class CompoundTag const &, std::string const &);
     /**
      * @symbol ?_getOrCreateComponentScope@InternalComponentRegistry@@KAAEAVCompoundTag@@AEAV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1871159335
+     * @hash   -1871113207
      */
     MCAPI static class CompoundTag & _getOrCreateComponentScope(class CompoundTag &, std::string const &);
 

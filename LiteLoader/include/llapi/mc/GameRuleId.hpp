@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0GameRuleId@@QEAA@H@Z
-     * @hash   2113618742
+     * @hash   2113664870
      */
     MCAPI GameRuleId(int);
 

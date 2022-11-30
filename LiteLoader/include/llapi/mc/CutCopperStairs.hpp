@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  16
      * @symbol ?onLightningHit@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   217735311
+     * @hash   218565615
      */
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  28
      * @symbol ?tryGetCopperBehavior@CutCopperStairs@@UEBAPEBVCopperBehavior@@XZ
-     * @hash   578481375
+     * @hash   579311679
      */
     virtual class CopperBehavior const * tryGetCopperBehavior() const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1435586376
+     * @hash   -1434756072
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CutCopperStairs@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   595135882
+     * @hash   595966186
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -247,22 +247,22 @@ public:
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
-     * @hash   66844699
+     * @hash   67675003
      */
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   67752844
+     * @hash   68583148
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   68660989
+     * @hash   69491293
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   69584510
+     * @hash   70414814
      */
     virtual void __unk_vfn_196();
     /**
@@ -272,12 +272,12 @@ public:
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@@Z
-     * @hash   -1418735078
+     * @hash   -1417904774
      */
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class HashedString const &);
     /**
      * @symbol ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@33@Z
-     * @hash   1446458714
+     * @hash   1447289018
      */
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 

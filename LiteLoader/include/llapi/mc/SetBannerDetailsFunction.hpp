@@ -40,30 +40,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1734229624
+     * @hash   -1733399320
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1520707741
+     * @hash   1521538045
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@SetBannerDetailsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   1053112799
+     * @hash   1053943103
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
      * @symbol ?_apply@SetBannerDetailsFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -657311456
+     * @hash   -656481152
      */
     MCAPI void _apply(class ItemStackBase &, class Random &, class LootTableContext &) const;
     /**
      * @symbol ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
-     * @hash   1745220190
+     * @hash   1746050494
      */
     MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum class ItemColor>> &, class Json::Value const &);
 

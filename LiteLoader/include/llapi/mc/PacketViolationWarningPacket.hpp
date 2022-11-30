@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PacketViolationWarningPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1742756121
+     * @hash   -1742709993
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PacketViolationWarningPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -739437164
+     * @hash   -739391036
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PacketViolationWarningPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -467308941
+     * @hash   -467262813
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PacketViolationWarningPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1551142221
+     * @hash   -1551096093
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PacketViolationWarningPacket@@QEAA@XZ
-     * @hash   -1764549229
+     * @hash   -1764503101
      */
     MCAPI PacketViolationWarningPacket();
     /**
      * @symbol ??0PacketViolationWarningPacket@@QEAA@W4StreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   575992243
+     * @hash   576038371
      */
     MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
 

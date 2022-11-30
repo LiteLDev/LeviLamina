@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@SculkSensorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1654497011
+     * @hash   -1653666707
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@SculkSensorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1717620476
+     * @hash   1718450780
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -474567530
+     * @hash   -473737226
      */
     virtual void tick(class BlockSource &);
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?onRemoved@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1547396354
+     * @hash   1548226658
      */
     virtual void onRemoved(class BlockSource &);
     /**
@@ -102,22 +102,22 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -424151847
+     * @hash   -423321543
      */
     MCAPI SculkSensorBlockActor(class BlockPos const &);
     /**
      * @symbol ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
-     * @hash   888796088
+     * @hash   889626392
      */
     MCAPI int getLatestReceivedVibrationFrequency() const;
     /**
      * @symbol ?onStepOn@SculkSensorBlockActor@@QEAAXAEAVBlockSource@@AEAVActor@@@Z
-     * @hash   22622981
+     * @hash   23453285
      */
     MCAPI void onStepOn(class BlockSource &, class Actor &);
     /**
      * @symbol ?TypeId@SculkSensorBlockActor@@2W4BlockActorType@@B
-     * @hash   -728631129
+     * @hash   -728508121
      */
     MCAPI static enum class BlockActorType const TypeId;
     /**
@@ -127,7 +127,7 @@ public:
     MCAPI static std::string const TypeString;
     /**
      * @symbol ?tryGet@SculkSensorBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1222475432
+     * @hash   -1221645128
      */
     MCAPI static class SculkSensorBlockActor * tryGet(class BlockSource &, class BlockPos const &);
 

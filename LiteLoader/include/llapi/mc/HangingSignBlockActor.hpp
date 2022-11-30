@@ -82,7 +82,7 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0HangingSignBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1053013464
+     * @hash   -1052183160
      */
     MCAPI HangingSignBlockActor(class BlockPos const &);
 

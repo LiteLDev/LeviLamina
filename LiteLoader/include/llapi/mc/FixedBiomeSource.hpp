@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?fillBiomes@FixedBiomeSource@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z
-     * @hash   1922044309
+     * @hash   1922874613
      */
     virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
     /**
      * @vftbl  2
      * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-     * @hash   1718879730
+     * @hash   1719710034
      */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
      * @vftbl  3
      * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
-     * @hash   -1511646284
+     * @hash   -1510815980
      */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int, struct GetBiomeOptions const &) const;
     /**
      * @vftbl  4
      * @symbol ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CB_K$0?0@gsl@@@Z
-     * @hash   1137335950
+     * @hash   1138166254
      */
     virtual bool containsOnly(int, int, int, int, class gsl::span<unsigned __int64 const, -1>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
     /**
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-     * @hash   -1693797596
+     * @hash   -1693751468
      */
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
     /**
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-     * @hash   1672728466
+     * @hash   1672774594
      */
     MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
     /**
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
-     * @hash   1494974953
+     * @hash   1495021081
      */
     MCVAPI class Biome const * getBiome(int, int, int) const;
 #endif
     /**
      * @symbol ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
-     * @hash   -1235756814
+     * @hash   -1234926510
      */
     MCAPI FixedBiomeSource(class Biome const &);
 

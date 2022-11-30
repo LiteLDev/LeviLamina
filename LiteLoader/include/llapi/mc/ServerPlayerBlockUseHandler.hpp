@@ -26,42 +26,42 @@ enum class PredictionValidationError;
 #undef AFTER_EXTRA
     /**
      * @symbol ?getErrorForRejectedRequest@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@AEBVItemStackRequestActionMineBlock@@@Z
-     * @hash   908399950
+     * @hash   908446078
      */
     MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer &, class ItemStackRequestActionMineBlock const &);
     /**
      * @symbol ?onAbortDestroyBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
-     * @hash   1391952555
+     * @hash   1391998683
      */
     MCAPI void onAbortDestroyBlock(class ServerPlayer &, class BlockPos const &, int);
     /**
      * @symbol ?onBeforeMovementSimulation@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVPlayerBlockActions@@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$NonOwnerPointer@VTextFilteringProcessor@@@Bedrock@@@Z
-     * @hash   543121955
+     * @hash   543168083
      */
     MCAPI void onBeforeMovementSimulation(class ServerPlayer &, class PlayerBlockActions const &, std::unique_ptr<class ItemStackRequestData>, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
     /**
      * @symbol ?onCrackBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
-     * @hash   1549306273
+     * @hash   1549352401
      */
     MCAPI void onCrackBlock(class ServerPlayer &, class BlockPos const &, int);
     /**
      * @symbol ?onStartDestroyBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
-     * @hash   -882949689
+     * @hash   -882903561
      */
     MCAPI void onStartDestroyBlock(class ServerPlayer &, class BlockPos const &, int);
     /**
      * @symbol ?onStopDestroyBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@@Z
-     * @hash   370823645
+     * @hash   370869773
      */
     MCAPI void onStopDestroyBlock(class ServerPlayer &);
     /**
      * @symbol ?serverTickBlockBreaking@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
-     * @hash   1504901779
+     * @hash   1504947907
      */
     MCAPI void serverTickBlockBreaking(class ServerPlayer &, class BlockPos const &, int);
     /**
      * @symbol ?validateClientBlockBreakPrediction@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@PEBVItemStackRequestActionMineBlock@@AEBVBlockPos@@AEBVItemStack@@3PEBUPlayerBlockActionData@@@Z
-     * @hash   1193785512
+     * @hash   1193831640
      */
     MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer &, class ItemStackRequestActionMineBlock const *, class BlockPos const &, class ItemStack const &, class ItemStack const &, struct PlayerBlockActionData const *);
 

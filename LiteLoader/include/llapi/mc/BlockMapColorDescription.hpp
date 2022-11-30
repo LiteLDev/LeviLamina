@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockMapColorDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -396608095
+     * @hash   -395777791
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockMapColorDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1266716765
+     * @hash   -1265886461
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -54,12 +54,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMapColorDescription@@SAXXZ
-     * @hash   -76283949
+     * @hash   -75453645
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockMapColorDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1741569310
+     * @hash   1742399614
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

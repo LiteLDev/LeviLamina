@@ -118,12 +118,12 @@ public:
 #endif
     /**
      * @symbol ??0AppPlatformListener@@QEAA@XZ
-     * @hash   -1710391564
+     * @hash   -1710345436
      */
     MCAPI AppPlatformListener();
     /**
      * @symbol ?terminate@AppPlatformListener@@QEAAXXZ
-     * @hash   -1037025993
+     * @hash   -1036979865
      */
     MCAPI void terminate();
 

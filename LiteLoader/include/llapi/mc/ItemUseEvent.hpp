@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ItemUseEvent@@QEAA@AEBU0@@Z
-     * @hash   1580542543
+     * @hash   1580588671
      */
     MCAPI ItemUseEvent(struct ItemUseEvent const &);
     /**
      * @symbol ??0ItemUseEvent@@QEAA@$$QEAU0@@Z
-     * @hash   -72729799
+     * @hash   -72683671
      */
     MCAPI ItemUseEvent(struct ItemUseEvent &&);
     /**

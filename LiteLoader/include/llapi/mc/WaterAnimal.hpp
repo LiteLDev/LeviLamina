@@ -150,13 +150,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@WaterAnimal@@UEAAXXZ
-     * @hash   1359017432
+     * @hash   1359063560
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
-     * @hash   1366066146
+     * @hash   1366112274
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  363
      * @symbol ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
-     * @hash   1490140888
+     * @hash   1490187016
      */
     virtual float getFlopHorizontalVelocityFactor() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERANIMAL
@@ -200,12 +200,12 @@ public:
 #endif
     /**
      * @symbol ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1756303439
+     * @hash   1756349567
      */
     MCAPI WaterAnimal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?preAiStep@WaterAnimal@@QEAAXXZ
-     * @hash   -531954749
+     * @hash   -531908621
      */
     MCAPI void preAiStep();
 

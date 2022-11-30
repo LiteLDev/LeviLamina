@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BushBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1616188635
+     * @hash   -1615358331
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@BushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1148919645
+     * @hash   -1148089341
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1746094217
+     * @hash   -1745263913
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -227,7 +227,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   572937163
+     * @hash   573767467
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1565801835
+     * @hash   1566632139
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?checkAlive@BushBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   354957269
+     * @hash   355787573
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUSHBLOCK
@@ -261,12 +261,12 @@ public:
 #endif
     /**
      * @symbol ??0BushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1424633068
+     * @hash   1425463372
      */
     MCAPI BushBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?growCrops@BushBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4FertilizerType@@@Z
-     * @hash   1302322617
+     * @hash   1303152921
      */
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum class FertilizerType) const;
 

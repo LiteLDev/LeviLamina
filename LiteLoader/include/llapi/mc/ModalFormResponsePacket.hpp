@@ -40,30 +40,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ModalFormResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1140659188
+     * @hash   1140705316
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ModalFormResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   684281505
+     * @hash   684327633
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ModalFormResponsePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1656663750
+     * @hash   1656709878
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ModalFormResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   247969382
+     * @hash   248015510
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ModalFormResponsePacket@@QEAA@XZ
-     * @hash   839783446
+     * @hash   839829574
      */
     MCAPI ModalFormResponsePacket();
 

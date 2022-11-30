@@ -59,28 +59,28 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDyePowderItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   496288802
+     * @hash   497119106
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDyePowderItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -2120956898
+     * @hash   -2120126594
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?isValidAuxValue@DyePowderItemComponent@@QEBA_NH@Z
-     * @hash   1902213261
+     * @hash   1903043565
      */
     MCAPI bool isValidAuxValue(int) const;
     /**
      * @symbol ?bindType@DyePowderItemComponent@@SAXXZ
-     * @hash   -1464620605
+     * @hash   -1463790301
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DyePowderItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -2042738154
+     * @hash   -2041907850
      */
     MCAPI static class HashedString const & getIdentifier();
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getNextBlockPermutation@BeehiveBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   -253559305
+     * @hash   -252729001
      */
     virtual class Block const * getNextBlockPermutation(class Block const &) const;
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@BeehiveBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -767757665
+     * @hash   -766927361
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BeehiveBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -815118417
+     * @hash   -814288113
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  118
      * @symbol ?executeEvent@BeehiveBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   -665576785
+     * @hash   -664746481
      */
     virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
     /**
@@ -203,7 +203,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@BeehiveBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   283113131
+     * @hash   283943435
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -214,19 +214,19 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@BeehiveBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   2065638539
+     * @hash   2066468843
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@BeehiveBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -1295901341
+     * @hash   -1295071037
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@BeehiveBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   348822816
+     * @hash   349653120
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@BeehiveBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1280050896
+     * @hash   -1279220592
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -273,7 +273,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BeehiveBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1821278055
+     * @hash   -1820447751
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCK
@@ -290,44 +290,44 @@ public:
 #endif
     /**
      * @symbol ??0BeehiveBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   691965065
+     * @hash   692795369
      */
     MCAPI BeehiveBlock(std::string const &, int);
     /**
      * @symbol ?emitHoneyComb@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   512776609
+     * @hash   513606913
      */
     MCAPI void emitHoneyComb(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?evictAll@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   724494968
+     * @hash   725325272
      */
     MCAPI void evictAll(class BlockSource &, class BlockPos const &, bool) const;
     /**
      * @symbol ?onPlayerPlace@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1672113037
+     * @hash   1672943341
      */
     MCAPI void onPlayerPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?deliverNectar@BeehiveBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -2117118416
+     * @hash   -2116288112
      */
     MCAPI static void deliverNectar(class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?hasHoneyToHarvest@BeehiveBlock@@SA_NAEBVBlock@@@Z
-     * @hash   699766929
+     * @hash   700597233
      */
     MCAPI static bool hasHoneyToHarvest(class Block const &);
     /**
      * @symbol ?resetHoneyLevel@BeehiveBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   580080620
+     * @hash   580910924
      */
     MCAPI static void resetHoneyLevel(class BlockSource &, class Block const &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_fillHoneyBottle@BeehiveBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   714104568
+     * @hash   714934872
      */
     MCAPI void _fillHoneyBottle(class Player &, class ItemStack &, class ItemStack &, class BlockSource &, class BlockPos const &) const;
 

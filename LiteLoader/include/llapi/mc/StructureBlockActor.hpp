@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@StructureBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   990281858
+     * @hash   991112162
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@StructureBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   902923009
+     * @hash   903753313
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  8
      * @symbol ?onChanged@StructureBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1034793859
+     * @hash   1035624163
      */
     virtual void onChanged(class BlockSource &);
     /**
@@ -103,37 +103,37 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@StructureBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1032556770
+     * @hash   -1031726466
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0StructureBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   709676078
+     * @hash   710506382
      */
     MCAPI StructureBlockActor(class BlockPos const &);
     /**
      * @symbol ?getStructureData@StructureBlockActor@@QEBAAEBVStructureEditorData@@XZ
-     * @hash   -1000666038
+     * @hash   -1000619910
      */
     MCAPI class StructureEditorData const & getStructureData() const;
     /**
      * @symbol ?setIsWaterlogged@StructureBlockActor@@QEAAX_N@Z
-     * @hash   1406763970
+     * @hash   1407594274
      */
     MCAPI void setIsWaterlogged(bool);
     /**
      * @symbol ?setPowered@StructureBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     * @hash   -1556313816
+     * @hash   -1555483512
      */
     MCAPI void setPowered(class BlockSource &, class BlockPos const &, bool, bool);
     /**
      * @symbol ?setStructureData@StructureBlockActor@@QEAAXAEBVStructureEditorData@@@Z
-     * @hash   -1404549752
+     * @hash   -1403719448
      */
     MCAPI void setStructureData(class StructureEditorData const &);
     /**
      * @symbol ?MAX_WIREFRAME_RENDER_DISTANCE@StructureBlockActor@@2MB
-     * @hash   -415742215
+     * @hash   -415619207
      */
     MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
     /**
@@ -155,17 +155,17 @@ public:
 //private:
     /**
      * @symbol ?_loadStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@@Z
-     * @hash   -1353990691
+     * @hash   -1353160387
      */
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
     /**
      * @symbol ?_saveStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   325979860
+     * @hash   326810164
      */
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     /**
      * @symbol ?_trigger@StructureBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@_N@Z
-     * @hash   53524984
+     * @hash   54355288
      */
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
 

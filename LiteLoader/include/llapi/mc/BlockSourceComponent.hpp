@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0BlockSourceComponent@@QEAA@AEAVLevel@@AEAVDimension@@AEAVChunkSource@@_N@Z
-     * @hash   -1339302359
+     * @hash   -1339256231
      */
     MCAPI BlockSourceComponent(class Level &, class Dimension &, class ChunkSource &, bool);
     /**
      * @symbol ?tryGetBlockSource@BlockSourceComponent@@QEBA?AV?$StackRefResultT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
-     * @hash   -1772425130
+     * @hash   -1772379002
      */
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getVerboseInfo@NetworkStatistics@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2043904724
+     * @hash   -2043858596
      */
     MCAPI std::string getVerboseInfo() const;
 

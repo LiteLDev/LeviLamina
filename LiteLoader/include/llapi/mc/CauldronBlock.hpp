@@ -40,13 +40,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@CauldronBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   1618984507
+     * @hash   1619814811
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@CauldronBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1819642478
+     * @hash   -1818812174
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@CauldronBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1505511958
+     * @hash   -1504681654
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -174,7 +174,7 @@ public:
     /**
      * @vftbl  65
      * @symbol ?handlePrecipitation@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
-     * @hash   -1240022740
+     * @hash   -1239192436
      */
     virtual void handlePrecipitation(class BlockSource &, class BlockPos const &, float, float) const;
     /**
@@ -190,19 +190,19 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@CauldronBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1517289008
+     * @hash   -1516458704
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1594246579
+     * @hash   -1593416275
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1924044975
+     * @hash   1924875279
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  110
      * @symbol ?handleEntityInside@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@AEAVVec3@@@Z
-     * @hash   -474878742
+     * @hash   -474048438
      */
     virtual void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
     /**
@@ -234,7 +234,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@CauldronBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   11912219
+     * @hash   12742523
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1177353936
+     * @hash   1178184240
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1086146914
+     * @hash   1086977218
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -277,7 +277,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1899492969
+     * @hash   1900323273
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -288,7 +288,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   173221569
+     * @hash   174051873
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -299,13 +299,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1750185824
+     * @hash   1751016128
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  182
      * @symbol ?getExtraRenderLayers@CauldronBlock@@UEBAHXZ
-     * @hash   878281810
+     * @hash   878327938
      */
     virtual int getExtraRenderLayers() const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CauldronBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   990423993
+     * @hash   991254297
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCK
@@ -333,76 +333,76 @@ public:
 #endif
     /**
      * @symbol ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -767339767
+     * @hash   -766509463
      */
     MCAPI CauldronBlock(std::string const &, int);
     /**
      * @symbol ?getLiquidLevel@CauldronBlock@@QEBAHH@Z
-     * @hash   57413375
+     * @hash   58243679
      */
     MCAPI int getLiquidLevel(int) const;
     /**
      * @symbol ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
-     * @hash   -697082103
+     * @hash   -696251799
      */
     MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum class CauldronLiquidType) const;
     /**
      * @symbol ?FILL_LEVEL_PER_DRIP@CauldronBlock@@2HB
-     * @hash   -39557835
+     * @hash   -39434827
      */
     MCAPI static int const FILL_LEVEL_PER_DRIP;
     /**
      * @symbol ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
-     * @hash   -2128823339
+     * @hash   -2127993035
      */
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, enum class MaterialType);
     /**
      * @symbol ?spawnPotionParticles@CauldronBlock@@SAXAEAVLevel@@AEBVVec3@@AEAVRandom@@HH@Z
-     * @hash   -1198619998
+     * @hash   -1197789694
      */
     MCAPI static void spawnPotionParticles(class Level &, class Vec3 const &, class Random &, int, int);
 
 //private:
     /**
      * @symbol ?_checkForStalactiteDrip@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1103266889
+     * @hash   -1102436585
      */
     MCAPI void _checkForStalactiteDrip(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_explodeCauldronContents@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@G@Z
-     * @hash   -157426993
+     * @hash   -156596689
      */
     MCAPI void _explodeCauldronContents(class BlockSource &, class BlockPos const &, unsigned short) const;
     /**
      * @symbol ?_mayUpdateLiquidLevel@CauldronBlock@@AEBA?B_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   968446542
+     * @hash   969276846
      */
     MCAPI bool const _mayUpdateLiquidLevel(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-     * @hash   -683977726
+     * @hash   -683147422
      */
     MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     /**
      * @symbol ?_spawnCauldronEvent@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@W4LevelEvent@@@Z
-     * @hash   1130396378
+     * @hash   1131226682
      */
     MCAPI void _spawnCauldronEvent(class BlockSource &, class BlockPos const &, enum class LevelEvent) const;
     /**
      * @symbol ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z
-     * @hash   36909742
+     * @hash   37740046
      */
     MCAPI bool _useDyeableComponent(class ItemStack &, class Player &, class BlockPos const &, class CauldronBlockActor &, class BlockSource &, int, bool, bool, bool) const;
     /**
      * @symbol ?_useInventory@CauldronBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1H@Z
-     * @hash   1385543336
+     * @hash   1386373640
      */
     MCAPI void _useInventory(class Player &, class ItemStack &, class ItemStack &, int) const;
 
 private:
     /**
      * @symbol ?BASE_WATER_PIXEL@CauldronBlock@@0HB
-     * @hash   506093489
+     * @hash   506216497
      */
     MCAPI static int const BASE_WATER_PIXEL;
     /**
@@ -412,7 +412,7 @@ private:
     MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     /**
      * @symbol ?PIXEL_PER_LEVEL@CauldronBlock@@0HB
-     * @hash   68834606
+     * @hash   68957614
      */
     MCAPI static int const PIXEL_PER_LEVEL;
 

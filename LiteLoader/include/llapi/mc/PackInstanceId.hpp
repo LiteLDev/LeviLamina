@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0PackInstanceId@@QEAA@AEBUPackIdVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1316664913
+     * @hash   -1315834609
      */
     MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
     /**

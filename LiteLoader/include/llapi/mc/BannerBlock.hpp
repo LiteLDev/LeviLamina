@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BannerBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   2050075473
+     * @hash   2050905777
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,19 +171,19 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@BannerBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   11336453
+     * @hash   12166757
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   876529859
+     * @hash   877360163
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BannerBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   2137163001
+     * @hash   2137993305
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@BannerBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1233255579
+     * @hash   1234085883
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -895507917
+     * @hash   -894677613
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -491957273
+     * @hash   -491126969
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BannerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   563598639
+     * @hash   564428943
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -279,12 +279,12 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@BannerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   -1665384721
+     * @hash   -1664554417
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /**
      * @symbol ??0BannerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   285244250
+     * @hash   286074554
      */
     MCAPI BannerBlock(std::string const &, int, bool);
     /**
@@ -316,7 +316,7 @@ public:
 //private:
     /**
      * @symbol ?_itemInstanceFromBlockEntity@BannerBlock@@AEBA?AVItemInstance@@V?$not_null@PEBVBannerBlockActor@@@gsl@@@Z
-     * @hash   1267637483
+     * @hash   1268467787
      */
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 

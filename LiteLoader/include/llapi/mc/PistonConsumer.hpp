@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1998522467
+     * @hash   -1997692163
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
@@ -66,17 +66,17 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -1928899097
+     * @hash   -1928852969
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0PistonConsumer@@QEAA@XZ
-     * @hash   -786083925
+     * @hash   -785253621
      */
     MCAPI PistonConsumer();
     /**
      * @symbol ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
-     * @hash   -7667975
+     * @hash   -6837671
      */
     MCAPI void setBlockPowerFace(unsigned char);
 

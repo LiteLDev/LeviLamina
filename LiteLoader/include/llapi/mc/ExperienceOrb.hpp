@@ -36,7 +36,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ExperienceOrb@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1376652120
+     * @hash   1376698248
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -52,7 +52,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@ExperienceOrb@@UEAAXXZ
-     * @hash   1975814806
+     * @hash   1975860934
      */
     virtual void normalTick();
     /**
@@ -89,7 +89,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
-     * @hash   717060579
+     * @hash   717106707
      */
     virtual void playerTouch(class Player &);
     /**
@@ -125,7 +125,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   593164019
+     * @hash   593210147
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -172,19 +172,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   741485147
+     * @hash   741531275
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1602725966
+     * @hash   -1602679838
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   406390507
+     * @hash   406436635
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -200,46 +200,46 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -834984671
+     * @hash   -834938543
      */
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getIconIndex@ExperienceOrb@@QEBAHXZ
-     * @hash   1011515548
+     * @hash   1011561676
      */
     MCAPI int getIconIndex() const;
     /**
      * @symbol ?postNormalTick@ExperienceOrb@@QEAAXXZ
-     * @hash   -1358370053
+     * @hash   -1358323925
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setValue@ExperienceOrb@@QEAAXH@Z
-     * @hash   2033315722
+     * @hash   2033361850
      */
     MCAPI void setValue(int);
     /**
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
-     * @hash   -1063070420
+     * @hash   -1063024292
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum class ExperienceOrb::DropType, class Player *);
     /**
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
-     * @hash   1661657593
+     * @hash   1661703721
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum class ExperienceOrb::DropType, class Player *);
 
 //private:
     /**
      * @symbol ?_handleMending@ExperienceOrb@@AEAAXAEAVPlayer@@@Z
-     * @hash   -121602841
+     * @hash   -121556713
      */
     MCAPI void _handleMending(class Player &);
 
 private:
     /**
      * @symbol ?LIFETIME@ExperienceOrb@@0HB
-     * @hash   956670444
+     * @hash   956793452
      */
     MCAPI static int const LIFETIME;
 

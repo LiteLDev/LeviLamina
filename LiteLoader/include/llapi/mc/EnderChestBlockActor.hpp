@@ -43,23 +43,23 @@ public:
     MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?getName@EnderChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1773227242
+     * @hash   1774057546
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?playCloseSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   199398682
+     * @hash   200228986
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
      * @symbol ?playOpenSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   -377828060
+     * @hash   -376997756
      */
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
     /**
      * @symbol ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
-     * @hash   1312507271
+     * @hash   1313337575
      */
     MCAPI EnderChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
 
@@ -68,7 +68,7 @@ public:
 private:
     /**
      * @symbol ?ITEMS_SIZE@EnderChestBlockActor@@0HB
-     * @hash   1378390707
+     * @hash   1378513715
      */
     MCAPI static int const ITEMS_SIZE;
 

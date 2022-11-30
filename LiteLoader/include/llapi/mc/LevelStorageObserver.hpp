@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?onSave@LevelStorageObserver@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   560320140
+     * @hash   560366268
      */
     MCAPI void onSave(std::string const &);
 

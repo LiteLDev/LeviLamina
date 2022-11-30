@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@PistonBlock@@UEBA_NH@Z
-     * @hash   1705368170
+     * @hash   1706198474
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@PistonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   919973293
+     * @hash   920803597
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1996311252
+     * @hash   1997141556
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,25 +195,25 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@PistonBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   852285591
+     * @hash   853115895
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1620910582
+     * @hash   1621740886
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@PistonBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1921164783
+     * @hash   -1920334479
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PistonBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   2134721878
+     * @hash   2135552182
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@PistonBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1825773395
+     * @hash   1826603699
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@PistonBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   93434874
+     * @hash   94265178
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -282,7 +282,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   405046352
+     * @hash   405876656
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -293,7 +293,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   286101786
+     * @hash   286932090
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -304,7 +304,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@PistonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -215708996
+     * @hash   -214878692
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -315,7 +315,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PistonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1763566866
+     * @hash   1764397170
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
@@ -327,7 +327,7 @@ public:
 #endif
     /**
      * @symbol ??0PistonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-     * @hash   1248798429
+     * @hash   1249628733
      */
     MCAPI PistonBlock(std::string const &, int, enum class PistonBlock::Type);
 

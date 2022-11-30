@@ -32,27 +32,27 @@ public:
 //protected:
     /**
      * @symbol ??0OwnerStorageFeature@@IEAA@W4VariadicInit@0@AEAVFeatureRegistry@@@Z
-     * @hash   54220479
+     * @hash   55050783
      */
     MCAPI OwnerStorageFeature(enum class OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     /**
      * @symbol ??0OwnerStorageFeature@@IEAA@$$QEAV0@@Z
-     * @hash   321033853
+     * @hash   321864157
      */
     MCAPI OwnerStorageFeature(class OwnerStorageFeature &&);
     /**
      * @symbol ?_getStackRef@OwnerStorageFeature@@IEBAAEAVIFeature@@XZ
-     * @hash   -250516581
+     * @hash   -249686277
      */
     MCAPI class IFeature & _getStackRef() const;
     /**
      * @symbol ?_hasValue@OwnerStorageFeature@@IEBA_NXZ
-     * @hash   -1492472828
+     * @hash   -1491642524
      */
     MCAPI bool _hasValue() const;
     /**
      * @symbol ??1OwnerStorageFeature@@IEAA@XZ
-     * @hash   -1213628796
+     * @hash   -1212798492
      */
     MCAPI ~OwnerStorageFeature();
 

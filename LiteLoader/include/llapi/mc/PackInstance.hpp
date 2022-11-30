@@ -34,127 +34,127 @@ public:
 public:
     /**
      * @symbol ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z
-     * @hash   -55030609
+     * @hash   -54984481
      */
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
     /**
      * @symbol ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NPEAVPackSettings@@@Z
-     * @hash   -192379883
+     * @hash   -192333755
      */
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     /**
      * @symbol ??0PackInstance@@QEAA@AEBV0@@Z
-     * @hash   890717169
+     * @hash   890763297
      */
     MCAPI PackInstance(class PackInstance const &);
     /**
      * @symbol ??0PackInstance@@QEAA@$$QEAV0@@Z
-     * @hash   -1331688635
+     * @hash   -1331642507
      */
     MCAPI PackInstance(class PackInstance &&);
     /**
      * @symbol ?forEachIn@PackInstance@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-     * @hash   -1658441651
+     * @hash   -1658395523
      */
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     /**
      * @symbol ?getLoadTime@PackInstance@@QEBANXZ
-     * @hash   -1306052178
+     * @hash   -1306006050
      */
     MCAPI double getLoadTime() const;
     /**
      * @symbol ?getManifest@PackInstance@@QEAAAEAVPackManifest@@XZ
-     * @hash   -598073956
+     * @hash   -598027828
      */
     MCAPI class PackManifest & getManifest();
     /**
      * @symbol ?getManifest@PackInstance@@QEBAAEBVPackManifest@@XZ
-     * @hash   616895066
+     * @hash   616941194
      */
     MCAPI class PackManifest const & getManifest() const;
     /**
      * @symbol ?getPackCategory@PackInstance@@QEBA?AW4PackCategory@@XZ
-     * @hash   -1127518920
+     * @hash   -1127472792
      */
     MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackId@PackInstance@@QEBA?BVUUID@mce@@XZ
-     * @hash   -428514312
+     * @hash   -428468184
      */
     MCAPI class mce::UUID const getPackId() const;
     /**
      * @symbol ?getPackOrigin@PackInstance@@QEBA?AW4PackOrigin@@XZ
-     * @hash   484766696
+     * @hash   484812824
      */
     MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackStats@PackInstance@@QEAAAEAVPackStats@@XZ
-     * @hash   -942750980
+     * @hash   -942704852
      */
     MCAPI class PackStats & getPackStats();
     /**
      * @symbol ?getPackStats@PackInstance@@QEBAAEBVPackStats@@XZ
-     * @hash   -279924170
+     * @hash   -279878042
      */
     MCAPI class PackStats const & getPackStats() const;
     /**
      * @symbol ?getResource@PackInstance@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   151823362
+     * @hash   151869490
      */
     MCAPI bool getResource(class Core::Path const &, std::string &) const;
     /**
      * @symbol ?getResourceLocation@PackInstance@@QEBAAEBVResourceLocation@@XZ
-     * @hash   -128248452
+     * @hash   -128202324
      */
     MCAPI class ResourceLocation const & getResourceLocation() const;
     /**
      * @symbol ?getSubpackFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   87827422
+     * @hash   87873550
      */
     MCAPI std::string const & getSubpackFolderName() const;
     /**
      * @symbol ?getSubpackIndex@PackInstance@@QEBAHXZ
-     * @hash   -1280556682
+     * @hash   -1280510554
      */
     MCAPI int getSubpackIndex() const;
     /**
      * @symbol ?getTierInfo@PackInstance@@QEBA?AVContentTierInfo@@XZ
-     * @hash   205395744
+     * @hash   205441872
      */
     MCAPI class ContentTierInfo getTierInfo() const;
     /**
      * @symbol ?getVersion@PackInstance@@QEBAAEBVSemVersion@@XZ
-     * @hash   -1812755112
+     * @hash   -1812708984
      */
     MCAPI class SemVersion const & getVersion() const;
     /**
      * @symbol ?hasResource@PackInstance@@QEBA_NAEBVPath@Core@@@Z
-     * @hash   1059514433
+     * @hash   1059560561
      */
     MCAPI bool hasResource(class Core::Path const &) const;
     /**
      * @symbol ?isBaseGamePack@PackInstance@@QEBA_NXZ
-     * @hash   1869270254
+     * @hash   1869316382
      */
     MCAPI bool isBaseGamePack() const;
     /**
      * @symbol ?isSlicePack@PackInstance@@QEBA_NXZ
-     * @hash   -937301930
+     * @hash   -937255802
      */
     MCAPI bool isSlicePack() const;
     /**
      * @symbol ?isZipped@PackInstance@@QEBA_NXZ
-     * @hash   1315659826
+     * @hash   1315705954
      */
     MCAPI bool isZipped() const;
     /**
      * @symbol ??8PackInstance@@QEBA_NAEBV0@@Z
-     * @hash   -1466375943
+     * @hash   -1466329815
      */
     MCAPI bool operator==(class PackInstance const &) const;
     /**
      * @symbol ?setLocale@PackInstance@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2023031182
+     * @hash   2023077310
      */
     MCAPI void setLocale(std::string const &);
     /**
@@ -166,7 +166,7 @@ public:
 //private:
     /**
      * @symbol ?_isPackPointerValid@PackInstance@@AEBA_NXZ
-     * @hash   -1360461512
+     * @hash   -1360415384
      */
     MCAPI bool _isPackPointerValid() const;
 

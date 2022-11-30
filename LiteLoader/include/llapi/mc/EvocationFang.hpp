@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@EvocationFang@@UEAAXXZ
-     * @hash   -577831209
+     * @hash   -577785081
      */
     virtual void normalTick();
     /**
@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@EvocationFang@@UEBAMXZ
-     * @hash   315848386
+     * @hash   315894514
      */
     virtual float getShadowRadius() const;
     /**
@@ -111,13 +111,13 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
-     * @hash   360359234
+     * @hash   360405362
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
-     * @hash   530200866
+     * @hash   530246994
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -162,14 +162,14 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0EvocationFang@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -865693744
+     * @hash   -865647616
      */
     MCAPI EvocationFang(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
      * @symbol ?_dealDamageTo@EvocationFang@@AEAAXAEAVMob@@@Z
-     * @hash   1776418223
+     * @hash   1776464351
      */
     MCAPI void _dealDamageTo(class Mob &);
 

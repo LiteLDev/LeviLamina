@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DefendTrustedTargetGoal@@UEAA_NXZ
-     * @hash   -1434415349
+     * @hash   -1434369221
      */
     virtual bool canUse();
     /**
      * @vftbl  4
      * @symbol ?start@DefendTrustedTargetGoal@@UEAAXXZ
-     * @hash   -1272512348
+     * @hash   -1272466220
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1794322011
+     * @hash   -1794275883
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
@@ -66,14 +66,14 @@ public:
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@@AEBVActorDefinitionTrigger@@@Z
-     * @hash   1659336223
+     * @hash   1659382351
      */
     MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum class LevelSoundEvent, class ActorDefinitionTrigger const &);
 
 //private:
     /**
      * @symbol ?_findTrustedTarget@DefendTrustedTargetGoal@@AEAA?AUActorUniqueID@@AEBVTrustComponent@@@Z
-     * @hash   -465327694
+     * @hash   -465281566
      */
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 

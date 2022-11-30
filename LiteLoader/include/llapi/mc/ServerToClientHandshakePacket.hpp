@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ServerToClientHandshakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1201487336
+     * @hash   1201533464
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ServerToClientHandshakePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2024572779
+     * @hash   -2024526651
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ServerToClientHandshakePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   487528882
+     * @hash   487575010
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ServerToClientHandshakePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   381894498
+     * @hash   381940626
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ServerToClientHandshakePacket@@QEAA@XZ
-     * @hash   935107282
+     * @hash   935153410
      */
     MCAPI ServerToClientHandshakePacket();
     /**
      * @symbol ??0ServerToClientHandshakePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2106639375
+     * @hash   2106685503
      */
     MCAPI ServerToClientHandshakePacket(std::string const &);
 

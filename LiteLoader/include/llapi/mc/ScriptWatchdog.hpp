@@ -23,7 +23,7 @@ namespace ScriptWatchdog {
 #undef AFTER_EXTRA
     /**
      * @symbol ?initialize@ScriptWatchdog@@YAXPEAVIWatchdog@Scripting@@AEAVServerLevel@@PEAVScriptPluginManager@@VWeakLifetimeScope@3@PEAVServerInstance@@@Z
-     * @hash   67482186
+     * @hash   67574442
      */
     MCAPI void initialize(class Scripting::IWatchdog *, class ServerLevel &, class ScriptPluginManager *, class Scripting::WeakLifetimeScope, class ServerInstance *);
 

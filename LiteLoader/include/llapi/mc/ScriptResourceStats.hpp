@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?serialize@ScriptResourceStats@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1120478816
+     * @hash   -1120432688
      */
     MCAPI std::string serialize() const;
     /**
      * @symbol ??1ScriptResourceStats@@QEAA@XZ
-     * @hash   -1202955006
+     * @hash   -1202908878
      */
     MCAPI ~ScriptResourceStats();
     /**
      * @symbol ?bindType@ScriptResourceStats@@SAXXZ
-     * @hash   1221916959
+     * @hash   1221963087
      */
     MCAPI static void bindType();
 

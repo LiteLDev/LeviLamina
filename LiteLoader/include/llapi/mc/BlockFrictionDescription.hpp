@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockFrictionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1016596988
+     * @hash   -1015766684
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockFrictionDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1151656320
+     * @hash   -1150826016
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -61,13 +61,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockFrictionDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -147825362
+     * @hash   -146995058
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockFrictionDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -2108921724
+     * @hash   -2108091420
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -77,12 +77,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockFrictionDescription@@SAXXZ
-     * @hash   1936362275
+     * @hash   1937192579
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockFrictionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -786377528
+     * @hash   -785547224
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

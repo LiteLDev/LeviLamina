@@ -34,57 +34,57 @@ public:
 public:
     /**
      * @symbol ??0Ability@@QEAA@_NW4Options@0@@Z
-     * @hash   1076921364
+     * @hash   1076967492
      */
     MCAPI Ability(bool, enum class Ability::Options);
     /**
      * @symbol ??0Ability@@QEAA@XZ
-     * @hash   -1083664682
+     * @hash   -1083618554
      */
     MCAPI Ability();
     /**
      * @symbol ?getBool@Ability@@QEBA_NXZ
-     * @hash   1929940570
+     * @hash   1929986698
      */
     MCAPI bool getBool() const;
     /**
      * @symbol ?getFloat@Ability@@QEBAMXZ
-     * @hash   374480832
+     * @hash   374526960
      */
     MCAPI float getFloat() const;
     /**
      * @symbol ?getType@Ability@@QEBA?AW4Type@1@XZ
-     * @hash   -753918591
+     * @hash   -753872463
      */
     MCAPI enum class Ability::Type getType() const;
     /**
      * @symbol ?hasOption@Ability@@QEBA_NW4Options@1@@Z
-     * @hash   -195617702
+     * @hash   -195571574
      */
     MCAPI bool hasOption(enum class Ability::Options) const;
     /**
      * @symbol ?isSet@Ability@@QEBA_NXZ
-     * @hash   -1026788246
+     * @hash   -1026742118
      */
     MCAPI bool isSet() const;
     /**
      * @symbol ??9Ability@@QEBA_NAEBV0@@Z
-     * @hash   -1981207630
+     * @hash   -1981161502
      */
     MCAPI bool operator!=(class Ability const &) const;
     /**
      * @symbol ?setBool@Ability@@QEAAX_N@Z
-     * @hash   -1140443166
+     * @hash   -1140397038
      */
     MCAPI void setBool(bool);
     /**
      * @symbol ?setFloat@Ability@@QEAAXM@Z
-     * @hash   1037378354
+     * @hash   1037424482
      */
     MCAPI void setFloat(float);
     /**
      * @symbol ?unSet@Ability@@QEAAXXZ
-     * @hash   738264967
+     * @hash   738311095
      */
     MCAPI void unSet();
 

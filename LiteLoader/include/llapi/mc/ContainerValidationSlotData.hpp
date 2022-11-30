@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0ContainerValidationSlotData@@QEAA@XZ
-     * @hash   893539662
+     * @hash   894369966
      */
     MCAPI ContainerValidationSlotData();
     /**
      * @symbol ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
-     * @hash   898706096
+     * @hash   899536400
      */
     MCAPI ContainerValidationSlotData(enum class ContainerEnumName, int);
     /**
      * @symbol ?matches@ContainerValidationSlotData@@QEBA_NAEBU1@@Z
-     * @hash   -1997218772
+     * @hash   -1996388468
      */
     MCAPI bool matches(struct ContainerValidationSlotData const &) const;
     /**

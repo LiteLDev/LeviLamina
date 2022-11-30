@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0RecipeOptionalCraftInputs@@QEAA@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   1395107001
+     * @hash   1395937305
      */
     MCAPI RecipeOptionalCraftInputs(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &, std::string const &, std::string const &);
 

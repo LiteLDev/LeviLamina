@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createGlideInputSystem@GlideInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1631730364
+     * @hash   -1631684236
      */
     MCAPI static struct TickingSystemWithInfo createGlideInputSystem();
 

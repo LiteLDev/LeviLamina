@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0MountTamingComponent@@QEAA@XZ
-     * @hash   -1605301762
+     * @hash   -1605255634
      */
     MCAPI MountTamingComponent();
     /**
      * @symbol ?addAdditionalSaveData@MountTamingComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1040840088
+     * @hash   1040886216
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?becomeTame@MountTamingComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   325786681
+     * @hash   325832809
      */
     MCAPI void becomeTame(class Actor &, bool);
     /**
      * @symbol ?getCounter@MountTamingComponent@@QEAAAEAHXZ
-     * @hash   -854493669
+     * @hash   -854447541
      */
     MCAPI int & getCounter();
     /**
      * @symbol ?getInteraction@MountTamingComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   1635629473
+     * @hash   1635675601
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
@@ -61,7 +61,7 @@ public:
     MCAPI int & getTemper();
     /**
      * @symbol ?getTemperMod@MountTamingComponent@@QEBAHXZ
-     * @hash   -1172892104
+     * @hash   -1172845976
      */
     MCAPI int getTemperMod() const;
     /**
@@ -71,24 +71,24 @@ public:
     MCAPI int getWaitCount() const;
     /**
      * @symbol ?readAdditionalSaveData@MountTamingComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1796983010
+     * @hash   -1796936882
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tameToPlayer@MountTamingComponent@@QEAAXAEAVActor@@AEAVPlayer@@_N@Z
-     * @hash   1515832442
+     * @hash   1515878570
      */
     MCAPI void tameToPlayer(class Actor &, class Player &, bool);
 
 //private:
     /**
      * @symbol ?_feedItem@MountTamingComponent@@AEAAXAEAVActor@@AEAVPlayer@@H@Z
-     * @hash   -610270175
+     * @hash   -610224047
      */
     MCAPI void _feedItem(class Actor &, class Player &, int);
     /**
      * @symbol ?_autoReject@MountTamingComponent@@CA_NAEBVItemStack@@PEBVMountTameableDefinition@@@Z
-     * @hash   422908235
+     * @hash   422954363
      */
     MCAPI static bool _autoReject(class ItemStack const &, class MountTameableDefinition const *);
 

@@ -40,13 +40,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorOnGroundTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   1535736527
+     * @hash   1535782655
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@ActorOnGroundTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   -686259117
+     * @hash   -686212989
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 

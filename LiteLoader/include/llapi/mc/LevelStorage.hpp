@@ -118,7 +118,7 @@ public:
     /**
      * @vftbl  14
      * @symbol ?clonePlayerData@LevelStorage@@UEAA_NV?$basic_string_span@$$CBD$0?0@gsl@@0@Z
-     * @hash   1079265730
+     * @hash   1080096034
      */
     virtual bool clonePlayerData(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
     /**
@@ -223,37 +223,37 @@ public:
     virtual void corruptLevel();
     /**
      * @symbol ?getServerId@LevelStorage@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUPlayerStorageIds@@@Z
-     * @hash   -79719027
+     * @hash   -78888723
      */
     MCAPI std::string getServerId(struct PlayerStorageIds const &);
     /**
      * @symbol ?getServerId@LevelStorage@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@_N@Z
-     * @hash   1295458916
+     * @hash   1296289220
      */
     MCAPI std::string getServerId(class Player const &, bool);
     /**
      * @symbol ?loadAllPlayerIDs@LevelStorage@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z
-     * @hash   -1773795600
+     * @hash   -1772965296
      */
     MCAPI std::vector<std::string> loadAllPlayerIDs(bool) const;
     /**
      * @symbol ?loadPlayerDataFromTag@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1443164495
+     * @hash   1443994799
      */
     MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z
-     * @hash   726768248
+     * @hash   727598552
      */
     MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const &, bool);
     /**
      * @symbol ?save@LevelStorage@@QEAAXAEAVActor@@@Z
-     * @hash   1734081482
+     * @hash   1734911786
      */
     MCAPI void save(class Actor &);
     /**
      * @symbol ?saveData@LevelStorage@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCompoundTag@@W4Category@DBHelpers@@@Z
-     * @hash   -477809313
+     * @hash   -476979009
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, class CompoundTag const &, enum class DBHelpers::Category);
     /**

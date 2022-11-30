@@ -38,12 +38,12 @@ public:
 public:
     /**
      * @symbol ?getVolumeInstanceCount@VolumeEntityManager@@QEBA_KXZ
-     * @hash   -219967237
+     * @hash   -219921109
      */
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
     /**
      * @symbol ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -676149875
+     * @hash   -676103747
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
     /**
@@ -53,19 +53,19 @@ public:
     MCAPI static bool isTriggerVolumesEnabled;
     /**
      * @symbol ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@@Z
-     * @hash   -644438542
+     * @hash   -644392414
      */
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
 
 //protected:
     /**
      * @symbol ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
-     * @hash   -1861643633
+     * @hash   -1861597505
      */
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     /**
      * @symbol ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z
-     * @hash   -1932465265
+     * @hash   -1932419137
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 

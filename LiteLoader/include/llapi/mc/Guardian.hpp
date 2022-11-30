@@ -35,13 +35,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1555653108
+     * @hash   -1555606980
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -915040809
+     * @hash   -914994681
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -112,7 +112,7 @@ public:
     /**
      * @vftbl  116
      * @symbol ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
-     * @hash   1336555178
+     * @hash   1336601306
      */
     virtual void setTarget(class Actor *);
     /**
@@ -153,19 +153,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -258016705
+     * @hash   -257970577
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1459305407
+     * @hash   1459351535
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -849947330
+     * @hash   -849901202
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Guardian@@EEAAXXZ
-     * @hash   785515620
+     * @hash   785561748
      */
     virtual void _onSizeUpdated();
     /**
@@ -192,13 +192,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Guardian@@UEAAXXZ
-     * @hash   -1305111766
+     * @hash   -1305065638
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Guardian@@UEAA_N_N@Z
-     * @hash   1486737712
+     * @hash   1486783840
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -209,7 +209,7 @@ public:
     /**
      * @vftbl  309
      * @symbol ?getMaxHeadXRot@Guardian@@UEAAMXZ
-     * @hash   -105895669
+     * @hash   -105849541
      */
     virtual float getMaxHeadXRot();
     /**
@@ -242,54 +242,54 @@ public:
 #endif
     /**
      * @symbol ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1036313501
+     * @hash   1036359629
      */
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getAttackDuration@Guardian@@QEAAHXZ
-     * @hash   -477934824
+     * @hash   -477888696
      */
     MCAPI int getAttackDuration();
     /**
      * @symbol ?getMoveEyeVector@Guardian@@QEAA?AVVec3@@XZ
-     * @hash   1427732772
+     * @hash   1427778900
      */
     MCAPI class Vec3 getMoveEyeVector();
     /**
      * @symbol ?getTargetEntity@Guardian@@QEBAPEAVActor@@XZ
-     * @hash   -1818497785
+     * @hash   -1818451657
      */
     MCAPI class Actor * getTargetEntity() const;
     /**
      * @symbol ?isElder@Guardian@@QEBA_NXZ
-     * @hash   -1783253490
+     * @hash   -1783207362
      */
     MCAPI bool isElder() const;
     /**
      * @symbol ?isElderGhost@Guardian@@QEBA_NXZ
-     * @hash   291683818
+     * @hash   291729946
      */
     MCAPI bool isElderGhost() const;
     /**
      * @symbol ?preAiStep@Guardian@@QEAAXXZ
-     * @hash   2063065907
+     * @hash   2063112035
      */
     MCAPI void preAiStep();
     /**
      * @symbol ?setAttackTime@Guardian@@QEAAXH@Z
-     * @hash   -1467152856
+     * @hash   -1467106728
      */
     MCAPI void setAttackTime(int);
     /**
      * @symbol ?setElder@Guardian@@QEAAX_N@Z
-     * @hash   -1271469184
+     * @hash   -1271423056
      */
     MCAPI void setElder(bool);
 
 //protected:
     /**
      * @symbol ?registerLoopingSounds@Guardian@@IEAAXXZ
-     * @hash   -1756123823
+     * @hash   -1756077695
      */
     MCAPI void registerLoopingSounds();
 
@@ -300,12 +300,12 @@ protected:
 private:
     /**
      * @symbol ?ATTACK_TIME@Guardian@@0HB
-     * @hash   -846169653
+     * @hash   -846046645
      */
     MCAPI static int const ATTACK_TIME;
     /**
      * @symbol ?FIRST_DAMAGE_TIME@Guardian@@0HB
-     * @hash   -431845095
+     * @hash   -431722087
      */
     MCAPI static int const FIRST_DAMAGE_TIME;
 

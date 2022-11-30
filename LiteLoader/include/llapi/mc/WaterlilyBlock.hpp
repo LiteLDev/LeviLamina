@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@WaterlilyBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -699669636
+     * @hash   -698839332
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   13376339
+     * @hash   14206643
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@WaterlilyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -2068591546
+     * @hash   -2067761242
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@WaterlilyBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1772543106
+     * @hash   -1771712802
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  137
      * @symbol ?getColorAtPos@WaterlilyBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2136480647
+     * @hash   -2135650343
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   278921508
+     * @hash   279751812
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -266,7 +266,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0WaterlilyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   386544666
+     * @hash   387374970
      */
     MCAPI WaterlilyBlock(std::string const &, int);
 

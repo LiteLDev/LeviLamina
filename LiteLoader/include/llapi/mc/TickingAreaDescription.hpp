@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?asString@TickingAreaDescription@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   575547662
+     * @hash   576377966
      */
     MCAPI std::string asString() const;
     /**
      * @symbol ??1TickingAreaDescription@@QEAA@XZ
-     * @hash   662275060
+     * @hash   662321188
      */
     MCAPI ~TickingAreaDescription();
 

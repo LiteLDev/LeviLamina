@@ -39,125 +39,125 @@ public:
     /**
      * @vftbl  1
      * @symbol ?queue@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-     * @hash   -2032755484
+     * @hash   -2031925180
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
     /**
      * @vftbl  2
      * @symbol ?queueSync@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-     * @hash   776445431
+     * @hash   777275735
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     /**
      * @vftbl  3
      * @symbol ?taskRegister@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     * @hash   -2061787599
+     * @hash   -2060957295
      */
     virtual void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @vftbl  4
      * @symbol ?requeueTask@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-     * @hash   -1291639818
+     * @hash   -1290809514
      */
     virtual void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @vftbl  5
      * @symbol ?getState@TaskGroup@@UEBA?AW4TaskGroupState@@XZ
-     * @hash   -1119669798
+     * @hash   -1118839494
      */
     virtual enum class TaskGroupState getState() const;
     /**
      * @vftbl  6
      * @symbol ?processCoroutines@TaskGroup@@UEAAXXZ
-     * @hash   2097944983
+     * @hash   2098775287
      */
     virtual void processCoroutines();
     /**
      * @vftbl  7
      * @symbol ?taskComplete@TaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-     * @hash   -786963151
+     * @hash   -786132847
      */
     virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     /**
      * @symbol ??0TaskGroup@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   717248837
+     * @hash   718079141
      */
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     /**
      * @symbol ?disableOwnerThreadChecks@TaskGroup@@QEAAXXZ
-     * @hash   -158946605
+     * @hash   -158116301
      */
     MCAPI void disableOwnerThreadChecks();
     /**
      * @symbol ?flush@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   814518796
+     * @hash   815349100
      */
     MCAPI void flush(class std::function<void (void)>);
     /**
      * @symbol ?getName@TaskGroup@@QEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   2094706880
+     * @hash   2095537184
      */
     MCAPI class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @symbol ?getScheduler@TaskGroup@@QEAAAEAVScheduler@@XZ
-     * @hash   -2134190726
+     * @hash   -2133360422
      */
     MCAPI class Scheduler & getScheduler();
     /**
      * @symbol ?isEmpty@TaskGroup@@QEBA_NXZ
-     * @hash   -1203292902
+     * @hash   -1202462598
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?pause@TaskGroup@@QEAAXXZ
-     * @hash   1886620257
+     * @hash   1887450561
      */
     MCAPI void pause();
     /**
      * @symbol ?queue@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-     * @hash   1865866759
+     * @hash   1866697063
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(class gsl::basic_string_span<char const, -1>, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
     /**
      * @symbol ?queueSync@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-     * @hash   1232913778
+     * @hash   1233744082
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(class gsl::basic_string_span<char const, -1>, class std::function<class TaskResult (void)> &&);
     /**
      * @symbol ?sync_DEPRECATED_ASK_TOMMO@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -390895972
+     * @hash   -390065668
      */
     MCAPI void sync_DEPRECATED_ASK_TOMMO(class std::function<void (void)>);
     /**
      * @symbol ?queueChildSync_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-     * @hash   343026855
+     * @hash   343857159
      */
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     /**
      * @symbol ?queueChild_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-     * @hash   -1666838196
+     * @hash   -1666007892
      */
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
 
 //private:
     /**
      * @symbol ?_forAllTasks@TaskGroup@@AEAAXAEAV?$UniqueLock@Vmutex@std@@@Threading@Bedrock@@V?$function@$$A6AXAEBV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z@std@@@Z
-     * @hash   -1309515898
+     * @hash   -1308685594
      */
     MCAPI void _forAllTasks(class Bedrock::Threading::UniqueLock<class std::mutex> &, class std::function<void (class std::shared_ptr<class BackgroundTaskBase> const &)>);
     /**
      * @symbol ?_isEmptyInternal@TaskGroup@@AEBA_NXZ
-     * @hash   -226600676
+     * @hash   -225770372
      */
     MCAPI bool _isEmptyInternal() const;
     /**
      * @symbol ?_queueInternal@TaskGroup@@AEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     * @hash   -1159765851
+     * @hash   -1158935547
      */
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @symbol ?getCurrentTaskGroup@TaskGroup@@CAPEAVIBackgroundTaskOwner@@XZ
-     * @hash   1632334836
+     * @hash   1633165140
      */
     MCAPI static class IBackgroundTaskOwner * getCurrentTaskGroup();
 

@@ -34,17 +34,17 @@ public:
 public:
     /**
      * @symbol ??0DBStorageEnvironmentChain@@QEAA@AEBUDBStorageConfig@@AEBVPath@Core@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
-     * @hash   149074410
+     * @hash   149904714
      */
     MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const &, class Core::Path const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     /**
      * @symbol ?getCompactionListenerEnv@DBStorageEnvironmentChain@@QEBAPEAVCompactionListenerEnv@@XZ
-     * @hash   479831973
+     * @hash   479878101
      */
     MCAPI class CompactionListenerEnv * getCompactionListenerEnv() const;
     /**
      * @symbol ?getFlushableEnv@DBStorageEnvironmentChain@@QEBAPEAVFlushableEnv@@XZ
-     * @hash   1043872547
+     * @hash   1043918675
      */
     MCAPI class FlushableEnv * getFlushableEnv() const;
     /**
@@ -54,34 +54,34 @@ public:
     MCAPI class leveldb::Env * getRootEnv() const;
     /**
      * @symbol ?getSnapshotEnv@DBStorageEnvironmentChain@@QEBAPEAVSnapshotEnv@@XZ
-     * @hash   -1605155179
+     * @hash   -1605109051
      */
     MCAPI class SnapshotEnv * getSnapshotEnv() const;
     /**
      * @symbol ?isChainValid@DBStorageEnvironmentChain@@QEBA?AVResult@Core@@_N@Z
-     * @hash   1405645241
+     * @hash   1406475545
      */
     MCAPI class Core::Result isChainValid(bool) const;
     /**
      * @symbol ?onFlush@DBStorageEnvironmentChain@@QEAAXXZ
-     * @hash   -1632886769
+     * @hash   -1632056465
      */
     MCAPI void onFlush();
     /**
      * @symbol ??1DBStorageEnvironmentChain@@QEAA@XZ
-     * @hash   -2087486425
+     * @hash   -2086656121
      */
     MCAPI ~DBStorageEnvironmentChain();
     /**
      * @symbol ?isContentKeyValid@DBStorageEnvironmentChain@@SA_NPEAVEnv@leveldb@@AEBVPath@Core@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VFileStorageArea@Core@@@8@@Z
-     * @hash   1349886210
+     * @hash   1350716514
      */
     MCAPI static bool isContentKeyValid(class leveldb::Env *, class Core::Path const &, class ContentIdentity const &, std::string const &, class std::shared_ptr<class Core::FileStorageArea>);
 
 //private:
     /**
      * @symbol ?createFlushableEnv@DBStorageEnvironmentChain@@CA?AV?$unique_ptr@VFlushableEnv@@U?$default_delete@VFlushableEnv@@@std@@@std@@PEAVEnv@leveldb@@V?$shared_ptr@VFileStorageArea@Core@@@3@AEBVPath@Core@@@Z
-     * @hash   -1708932026
+     * @hash   -1708101722
      */
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const &);
 

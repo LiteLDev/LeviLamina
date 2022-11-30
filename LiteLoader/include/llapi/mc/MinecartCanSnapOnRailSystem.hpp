@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?_checkCanSnapOnRail@MinecartCanSnapOnRailSystem@@SAXAEAVStrictEntityContext@@AEBUConstBlockSourceComponent@@AEBUStateVectorComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USnapOnRailComponent@@@@@Z
-     * @hash   -227423870
+     * @hash   -227377742
      */
     MCAPI static void _checkCanSnapOnRail(class StrictEntityContext &, struct ConstBlockSourceComponent const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SnapOnRailComponent>);
     /**
      * @symbol ?createSystem@MinecartCanSnapOnRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   949618976
+     * @hash   949665104
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?getSnapOnRailBlockPos@MinecartCanSnapOnRailSystem@@SA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEBVVec3@@AEBVIConstBlockSource@@@Z
-     * @hash   -252370954
+     * @hash   -252324826
      */
     MCAPI static class std::optional<class BlockPos> getSnapOnRailBlockPos(class BlockPos const &, class Vec3 const &, class IConstBlockSource const &);
 

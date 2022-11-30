@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SummonSpellStage@@QEAA@XZ
-     * @hash   -282279695
+     * @hash   -282233567
      */
     MCAPI ~SummonSpellStage();
 

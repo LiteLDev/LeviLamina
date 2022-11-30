@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@SeaPickleBlockItem@@UEBAHH@Z
-     * @hash   -2016129781
+     * @hash   -2015299477
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -100,23 +100,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@SeaPickleBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1035818569
+     * @hash   -1034988265
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0SeaPickleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   900594981
+     * @hash   901425285
      */
     MCAPI SeaPickleBlockItem(std::string const &, int);
 

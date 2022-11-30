@@ -120,7 +120,7 @@ public:
     /**
      * @vftbl  224
      * @symbol ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   358941737
+     * @hash   358987865
      */
     virtual void getDebugText(std::vector<std::string> &);
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  363
      * @symbol ?getModelScale@CaveSpider@@UEBAMXZ
-     * @hash   -1016805325
+     * @hash   -1016759197
      */
     virtual float getModelScale() const;
     /**
@@ -187,7 +187,7 @@ public:
     virtual enum class Spider::Type getSpiderType() const;
     /**
      * @symbol ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   988199646
+     * @hash   988245774
      */
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4SideBySideResultComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   174194246
+     * @hash   174240374
      */
     MCAPI struct SideBySideResultComponent & operator=(struct SideBySideResultComponent &&);
     /**
      * @symbol ??1SideBySideResultComponent@@QEAA@XZ
-     * @hash   -1313834585
+     * @hash   -1313788457
      */
     MCAPI ~SideBySideResultComponent();
 

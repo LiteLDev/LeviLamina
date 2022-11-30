@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@ClayBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   942949514
+     * @hash   943779818
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@ClayBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -971746047
+     * @hash   -970915743
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -243,18 +243,18 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@ClayBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   306427490
+     * @hash   306473618
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ClayBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1096457994
+     * @hash   1097288298
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0ClayBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1041303274
+     * @hash   1042133578
      */
     MCAPI ClayBlock(std::string const &, int);
 

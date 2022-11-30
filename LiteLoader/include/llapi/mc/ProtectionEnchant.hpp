@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@ProtectionEnchant@@UEBAHH@Z
-     * @hash   -2007048551
+     * @hash   -2006218247
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@ProtectionEnchant@@UEBAHH@Z
-     * @hash   -1711537833
+     * @hash   -1710707529
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@ProtectionEnchant@@UEBAHXZ
-     * @hash   -2112330127
+     * @hash   -2111499823
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  6
      * @symbol ?getDamageProtection@ProtectionEnchant@@UEBAHHAEBVActorDamageSource@@@Z
-     * @hash   -2145254156
+     * @hash   -2144423852
      */
     virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /**
      * @vftbl  9
      * @symbol ?doPostHurt@ProtectionEnchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
-     * @hash   597287843
+     * @hash   598118147
      */
     virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /**
@@ -89,7 +89,7 @@ public:
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@ProtectionEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   1336871354
+     * @hash   1337701658
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROTECTIONENCHANT
@@ -101,7 +101,7 @@ public:
 #endif
     /**
      * @symbol ??0ProtectionEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   2069874601
+     * @hash   2070704905
      */
     MCAPI ProtectionEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
@@ -110,7 +110,7 @@ public:
 private:
     /**
      * @symbol ?THORNS_CHANCE_PER_LEVEL@ProtectionEnchant@@0MB
-     * @hash   -1664780947
+     * @hash   -1664657939
      */
     MCAPI static float const THORNS_CHANCE_PER_LEVEL;
     /**

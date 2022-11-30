@@ -52,18 +52,18 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1895269128
+     * @hash   1896099432
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -961049712
+     * @hash   -960219408
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftRecipeAuto@@QEAA@XZ
-     * @hash   -1386513863
+     * @hash   -1385683559
      */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     /**
@@ -73,7 +73,7 @@ public:
     MCAPI std::vector<class RecipeIngredient> const * getIngredients() const;
     /**
      * @symbol ?getNumCrafts@ItemStackRequestActionCraftRecipeAuto@@QEBAEXZ
-     * @hash   321724509
+     * @hash   321770637
      */
     MCAPI unsigned char getNumCrafts() const;
 

@@ -95,28 +95,28 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -223704369
+     * @hash   -222874065
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
-     * @hash   -2046838124
+     * @hash   -2046007820
      */
     MCAPI DoorItem(std::string const &, int, enum class DoorBlock::DoorType);
     /**
      * @symbol ?place@DoorItem@@SA_NPEAVBlockSource@@HHHHPEBVBlock@@@Z
-     * @hash   -1153431008
+     * @hash   -1152600704
      */
     MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0TrailComponent@@QEAA@XZ
-     * @hash   1643009523
+     * @hash   1643055651
      */
     MCAPI TrailComponent();
     /**
      * @symbol ?initFromDefinition@TrailComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1339674438
+     * @hash   -1339628310
      */
     MCAPI void initFromDefinition(class Actor &);
 

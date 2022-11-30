@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  7
      * @symbol ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   1033011542
+     * @hash   1033057670
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   1238818223
+     * @hash   1238864351
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
@@ -63,18 +63,18 @@ public:
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
-     * @hash   77477923
+     * @hash   77524051
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  17
      * @symbol ?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   1606536256
+     * @hash   1606582384
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-     * @hash   1687965386
+     * @hash   1688011514
      */
     MCAPI HudContainerManagerModel(enum class ContainerID, class Player &);
 

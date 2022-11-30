@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ShooterDefinition@@QEAA@XZ
-     * @hash   119498667
+     * @hash   119544795
      */
     MCAPI ShooterDefinition();
     /**
      * @symbol ?initialize@ShooterDefinition@@QEBAXAEAVEntityContext@@AEAVShooterComponent@@@Z
-     * @hash   1868354341
+     * @hash   1868400469
      */
     MCAPI void initialize(class EntityContext &, class ShooterComponent &) const;
     /**
      * @symbol ?setActorDefByName@ShooterDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1905178660
+     * @hash   1905224788
      */
     MCAPI void setActorDefByName(std::string const &);
     /**
      * @symbol ?buildSchema@ShooterDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VShooterDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -401514000
+     * @hash   -401467872
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition>> &);
 

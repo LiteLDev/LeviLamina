@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@VibrationListenerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   7008136
+     * @hash   7838440
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@VibrationListenerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   214959048
+     * @hash   215789352
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**

@@ -218,7 +218,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0WoodButtonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1894209244
+     * @hash   1895039548
      */
     MCAPI WoodButtonBlock(std::string const &, int);
 

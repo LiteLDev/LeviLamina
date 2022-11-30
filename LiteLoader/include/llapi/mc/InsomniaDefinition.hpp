@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@InsomniaDefinition@@QEAAXAEAVEntityContext@@AEAVInsomniaComponent@@@Z
-     * @hash   1514335039
+     * @hash   1514381167
      */
     MCAPI void initialize(class EntityContext &, class InsomniaComponent &);
     /**
      * @symbol ?buildSchema@InsomniaDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInsomniaDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   2091779078
+     * @hash   2091825206
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>> &);
 

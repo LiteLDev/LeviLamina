@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@JumpControlSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1266858162
+     * @hash   -1266812034
      */
     virtual void tick(class EntityRegistry &);
 

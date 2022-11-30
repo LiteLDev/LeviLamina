@@ -242,7 +242,7 @@ public:
 #endif
     /**
      * @symbol ??0EnchantingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1806714458
+     * @hash   -1805884154
      */
     MCAPI EnchantingTableBlock(std::string const &, int);
 

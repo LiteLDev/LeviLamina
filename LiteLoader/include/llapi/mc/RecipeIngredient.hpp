@@ -45,47 +45,47 @@ public:
     virtual ~RecipeIngredient();
     /**
      * @symbol ??0RecipeIngredient@@QEAA@XZ
-     * @hash   923905579
+     * @hash   924735883
      */
     MCAPI RecipeIngredient();
     /**
      * @symbol ??0RecipeIngredient@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HG@Z
-     * @hash   -957484501
+     * @hash   -956654197
      */
     MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVItem@@HG@Z
-     * @hash   1716750937
+     * @hash   1717581241
      */
     MCAPI RecipeIngredient(class Item const &, int, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVBlockLegacy@@G@Z
-     * @hash   -828544076
+     * @hash   -827713772
      */
     MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVBlock@@G@Z
-     * @hash   -1209790478
+     * @hash   -1208960174
      */
     MCAPI RecipeIngredient(class Block const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBUItemTag@@G@Z
-     * @hash   -362041100
+     * @hash   -361210796
      */
     MCAPI RecipeIngredient(struct ItemTag const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1398566020
+     * @hash   -1397735716
      */
     MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@$$QEAV0@@Z
-     * @hash   841105783
+     * @hash   841936087
      */
     MCAPI RecipeIngredient(class RecipeIngredient &&);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBV0@@Z
-     * @hash   -440447039
+     * @hash   -439616735
      */
     MCAPI RecipeIngredient(class RecipeIngredient const &);
     /**

@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@EndermanLeaveBlockGoal@@UEAA_NXZ
-     * @hash   1105680325
+     * @hash   1105726453
      */
     virtual bool canUse();
     /**
@@ -64,18 +64,18 @@ public:
     /**
      * @vftbl  6
      * @symbol ?tick@EndermanLeaveBlockGoal@@UEAAXXZ
-     * @hash   1814426873
+     * @hash   1814473001
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@EndermanLeaveBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1169496181
+     * @hash   -1169450053
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0EndermanLeaveBlockGoal@@QEAA@AEAVEnderMan@@@Z
-     * @hash   -764629894
+     * @hash   -764583766
      */
     MCAPI EndermanLeaveBlockGoal(class EnderMan &);
 

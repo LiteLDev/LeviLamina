@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@GuiDataPickItemPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1417709315
+     * @hash   -1417663187
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@GuiDataPickItemPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1903088554
+     * @hash   1903134682
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@GuiDataPickItemPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1816330627
+     * @hash   -1816284499
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@GuiDataPickItemPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -618140035
+     * @hash   -618093907
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0GuiDataPickItemPacket@@QEAA@XZ
-     * @hash   -179960819
+     * @hash   -179914691
      */
     MCAPI GuiDataPickItemPacket();
     /**
      * @symbol ??0GuiDataPickItemPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBH@Z
-     * @hash   -1830900552
+     * @hash   -1830854424
      */
     MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
 

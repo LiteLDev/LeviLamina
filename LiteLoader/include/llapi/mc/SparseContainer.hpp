@@ -32,34 +32,34 @@ public:
 public:
     /**
      * @symbol ?_isSlotInRange@SparseContainer@@QEBA_NH@Z
-     * @hash   -1339034325
+     * @hash   -1338204021
      */
     MCAPI bool _isSlotInRange(int) const;
     /**
      * @symbol ?addItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@V?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
-     * @hash   -559314485
+     * @hash   -558484181
      */
     MCAPI void addItemNetworkChangedCallback(enum class ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
     /**
      * @symbol ?isUsingLegacyScreenTransactions@SparseContainer@@QEBA_NXZ
-     * @hash   -985204500
+     * @hash   -984374196
      */
     MCAPI bool isUsingLegacyScreenTransactions() const;
     /**
      * @symbol ?removeItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@@Z
-     * @hash   1114238074
+     * @hash   1115068378
      */
     MCAPI void removeItemNetworkChangedCallback(enum class ContainerEnumName);
 
 //protected:
     /**
      * @symbol ?_onItemNetworkChanged@SparseContainer@@IEAAXHAEBVItemStack@@0@Z
-     * @hash   1435237734
+     * @hash   1436068038
      */
     MCAPI void _onItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?_setBackingContainerSlot@SparseContainer@@IEAAXHAEBVItemStack@@@Z
-     * @hash   -906053874
+     * @hash   -905223570
      */
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 

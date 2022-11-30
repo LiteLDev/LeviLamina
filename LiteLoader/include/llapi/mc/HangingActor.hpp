@@ -34,13 +34,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@HangingActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1287291528
+     * @hash   1287337656
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@HangingActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   179601779
+     * @hash   179647907
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  29
      * @symbol ?move@HangingActor@@UEAAXAEBVVec3@@@Z
-     * @hash   -1942000097
+     * @hash   -1941953969
      */
     virtual void move(class Vec3 const &);
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@HangingActor@@UEAAXXZ
-     * @hash   -1268233530
+     * @hash   -1268187402
      */
     virtual void normalTick();
     /**
@@ -88,7 +88,7 @@ public:
     /**
      * @vftbl  89
      * @symbol ?getBrightness@HangingActor@@UEBAMM@Z
-     * @hash   -1286104976
+     * @hash   -1286058848
      */
     virtual float getBrightness(float) const;
     /**
@@ -135,7 +135,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@HangingActor@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   171461475
+     * @hash   171507603
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -182,19 +182,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@HangingActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -422636389
+     * @hash   -422590261
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@HangingActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1864831371
+     * @hash   1864877499
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@HangingActor@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1516663458
+     * @hash   1516709586
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -210,7 +210,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?setDir@HangingActor@@UEAAXH@Z
-     * @hash   -896620798
+     * @hash   -896574670
      */
     virtual void setDir(int);
     /**
@@ -240,51 +240,51 @@ public:
     /**
      * @vftbl  287
      * @symbol ?wouldSurvive@HangingActor@@UEAA_NAEAVBlockSource@@@Z
-     * @hash   1213959539
+     * @hash   1214005667
      */
     virtual bool wouldSurvive(class BlockSource &);
     /**
      * @symbol ??0HangingActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   2127121441
+     * @hash   2127167569
      */
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getDirection@HangingActor@@QEBAHXZ
-     * @hash   1449316360
+     * @hash   1449362488
      */
     MCAPI int getDirection() const;
 
 //protected:
     /**
      * @symbol ?_calculateAABB@HangingActor@@IEAAXXZ
-     * @hash   257208101
+     * @hash   257254229
      */
     MCAPI void _calculateAABB();
     /**
      * @symbol ?_calculateActorPositionFromPlacementPosition@HangingActor@@IEAAXAEBVBlockPos@@@Z
-     * @hash   -429112057
+     * @hash   -429065929
      */
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const &);
     /**
      * @symbol ?_wouldSurvive@HangingActor@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   1211506386
+     * @hash   1211552514
      */
     MCAPI bool _wouldSurvive(class BlockSource &, class BlockPos const &, bool);
 
 //private:
     /**
      * @symbol ?_blockContainsObstruction@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -250147980
+     * @hash   -250101852
      */
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?_blockIsObstruction@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1626581657
+     * @hash   1626627785
      */
     MCAPI bool _blockIsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?_canSurviveOnBlock@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   105198292
+     * @hash   105244420
      */
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
 
@@ -293,7 +293,7 @@ protected:
 private:
     /**
      * @symbol ?HANGING_OFFSET@HangingActor@@0MB
-     * @hash   959627056
+     * @hash   959750064
      */
     MCAPI static float const HANGING_OFFSET;
 

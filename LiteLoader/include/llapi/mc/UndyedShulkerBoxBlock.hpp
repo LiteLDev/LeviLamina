@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@UndyedShulkerBoxBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   764648769
+     * @hash   765479073
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -155,7 +155,7 @@ public:
     /**
      * @vftbl  71
      * @symbol ?dispense@UndyedShulkerBoxBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1130845475
+     * @hash   -1130015171
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
@@ -177,25 +177,25 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@UndyedShulkerBoxBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1462274278
+     * @hash   -1461443974
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@UndyedShulkerBoxBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   57267621
+     * @hash   58097925
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@UndyedShulkerBoxBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1337718809
+     * @hash   1338549113
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@UndyedShulkerBoxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -1242691187
+     * @hash   -1241860883
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -206,7 +206,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@UndyedShulkerBoxBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1051789424
+     * @hash   -1050959120
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@UndyedShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   2101753299
+     * @hash   2102583603
      */
     virtual int getColor(class Block const &) const;
     /**
@@ -273,19 +273,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@UndyedShulkerBoxBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1651916785
+     * @hash   -1651086481
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0UndyedShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1948100145
+     * @hash   -1947269841
      */
     MCAPI UndyedShulkerBoxBlock(std::string const &, int);
 
 //protected:
     /**
      * @symbol ?spawnBoxInstance@UndyedShulkerBoxBlock@@IEBAXAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@7@H@Z
-     * @hash   -526263792
+     * @hash   -525433488
      */
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
 

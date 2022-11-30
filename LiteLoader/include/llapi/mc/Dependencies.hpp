@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??4Dependencies@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1293636998
+     * @hash   1293683126
      */
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
     /**
@@ -44,7 +44,7 @@ public:
     MCAPI ~Dependencies();
     /**
      * @symbol ?bindType@Dependencies@@SAXXZ
-     * @hash   -1161483469
+     * @hash   -1161437341
      */
     MCAPI static void bindType();
 

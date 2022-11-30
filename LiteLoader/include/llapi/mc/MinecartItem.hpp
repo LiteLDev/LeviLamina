@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  56
      * @symbol ?isDestructive@MinecartItem@@UEBA_NH@Z
-     * @hash   958261155
+     * @hash   959091459
      */
     virtual bool isDestructive(int) const;
     /**
@@ -100,29 +100,29 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1735207534
+     * @hash   -1734377230
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@MinecartItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -128098620
+     * @hash   -127268316
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0MinecartItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MinecartType@@@Z
-     * @hash   169593663
+     * @hash   170423967
      */
     MCAPI MinecartItem(std::string const &, int, enum class MinecartType);
 

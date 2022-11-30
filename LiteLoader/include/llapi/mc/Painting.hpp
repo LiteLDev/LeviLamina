@@ -40,13 +40,13 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@Painting@@UEAAXXZ
-     * @hash   -590975929
+     * @hash   -590929801
      */
     virtual void remove();
     /**
      * @vftbl  21
      * @symbol ?setPos@Painting@@UEAAXAEBVVec3@@@Z
-     * @hash   -1854757523
+     * @hash   -1854711395
      */
     virtual void setPos(class Vec3 const &);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  49
      * @symbol ?tryCreateAddActorPacket@Painting@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
-     * @hash   -504466631
+     * @hash   -504420503
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -156091604
+     * @hash   -156045476
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -2138221039
+     * @hash   -2138174911
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -187,35 +187,35 @@ public:
     /**
      * @vftbl  283
      * @symbol ?getWidth@Painting@@UEBAHXZ
-     * @hash   2135939783
+     * @hash   2135985911
      */
     virtual int getWidth() const;
     /**
      * @vftbl  284
      * @symbol ?getHeight@Painting@@UEBAHXZ
-     * @hash   -971281900
+     * @hash   -971235772
      */
     virtual int getHeight() const;
     /**
      * @vftbl  285
      * @symbol ?dropItem@Painting@@UEAAXXZ
-     * @hash   -1458861723
+     * @hash   -1458815595
      */
     virtual void dropItem();
     /**
      * @vftbl  286
      * @symbol ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
-     * @hash   2085239772
+     * @hash   2085285900
      */
     virtual bool placeHangingEntity(class BlockSource &, int);
     /**
      * @symbol ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -729738352
+     * @hash   -729692224
      */
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getCurrentMotive@Painting@@QEBAAEBVMotive@@XZ
-     * @hash   -1356279896
+     * @hash   -1356233768
      */
     MCAPI class Motive const & getCurrentMotive() const;
 

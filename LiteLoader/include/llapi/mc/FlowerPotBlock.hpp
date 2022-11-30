@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@FlowerPotBlock@@UEBA_NH@Z
-     * @hash   -1887842999
+     * @hash   -1887012695
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -171,31 +171,31 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1905831234
+     * @hash   -1905000930
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1359152285
+     * @hash   1359982589
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@FlowerPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -730510425
+     * @hash   -729680121
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1267247125
+     * @hash   1268077429
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@FlowerPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -2039470521
+     * @hash   -2038640217
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -231,7 +231,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -520039908
+     * @hash   -519209604
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -801018359
+     * @hash   -800188055
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,13 +268,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@FlowerPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1605362664
+     * @hash   1606192968
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2071670941
+     * @hash   2072501245
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,7 +285,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@FlowerPotBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1358304801
+     * @hash   1359135105
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERPOTBLOCK
@@ -302,29 +302,29 @@ public:
 #endif
     /**
      * @symbol ??0FlowerPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -705038447
+     * @hash   -704208143
      */
     MCAPI FlowerPotBlock(std::string const &, int);
     /**
      * @symbol ?isSupportedBlock@FlowerPotBlock@@SA_NAEBVBlock@@@Z
-     * @hash   819417595
+     * @hash   820247899
      */
     MCAPI static bool isSupportedBlock(class Block const &);
 
 //private:
     /**
      * @symbol ?_tryPlaceFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -11100241
+     * @hash   -10269937
      */
     MCAPI bool _tryPlaceFlower(class Player &, class BlockPos const &) const;
     /**
      * @symbol ?_tryTakeFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1991470809
+     * @hash   -1990640505
      */
     MCAPI bool _tryTakeFlower(class Player &, class BlockPos const &) const;
     /**
      * @symbol ?_updateFlowerPotEntity@FlowerPotBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVFlowerPotBlockActor@@PEBVBlock@@AEAVActor@@@Z
-     * @hash   -1405226712
+     * @hash   -1404396408
      */
     MCAPI void _updateFlowerPotEntity(class BlockSource &, class BlockPos const &, class FlowerPotBlockActor *, class Block const *, class Actor &) const;
 

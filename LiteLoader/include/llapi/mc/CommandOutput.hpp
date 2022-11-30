@@ -105,52 +105,52 @@ public:
 public:
     /**
      * @symbol ??0CommandOutput@@QEAA@W4CommandOutputType@@@Z
-     * @hash   1673562775
+     * @hash   1673608903
      */
     MCAPI CommandOutput(enum class CommandOutputType);
     /**
      * @symbol ??0CommandOutput@@QEAA@AEBV0@@Z
-     * @hash   -2133051647
+     * @hash   -2133005519
      */
     MCAPI CommandOutput(class CommandOutput const &);
     /**
      * @symbol ?addToResultList@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   910785146
+     * @hash   910831274
      */
     MCAPI void addToResultList(std::string const &, std::string const &);
     /**
      * @symbol ?addToResultList@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
-     * @hash   1560316965
+     * @hash   1560363093
      */
     MCAPI void addToResultList(std::string const &, class Actor const &);
     /**
      * @symbol ?empty@CommandOutput@@QEBA_NXZ
-     * @hash   1399910198
+     * @hash   1399956326
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?error@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-     * @hash   705204803
+     * @hash   705250931
      */
     MCAPI void error(std::string const &, std::vector<class CommandOutputParameter> const &);
     /**
      * @symbol ?forceOutput@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-     * @hash   316860203
+     * @hash   316906331
      */
     MCAPI void forceOutput(std::string const &, std::vector<class CommandOutputParameter> const &);
     /**
      * @symbol ?getData@CommandOutput@@QEBAAEBVCommandPropertyBag@@XZ
-     * @hash   -1213832478
+     * @hash   -1213786350
      */
     MCAPI class CommandPropertyBag const & getData() const;
     /**
      * @symbol ?getMessages@CommandOutput@@QEBAAEBV?$vector@VCommandOutputMessage@@V?$allocator@VCommandOutputMessage@@@std@@@std@@XZ
-     * @hash   549496432
+     * @hash   549542560
      */
     MCAPI std::vector<class CommandOutputMessage> const & getMessages() const;
     /**
      * @symbol ?getSuccessCount@CommandOutput@@QEBAHXZ
-     * @hash   435090300
+     * @hash   435136428
      */
     MCAPI int getSuccessCount() const;
     /**
@@ -160,49 +160,49 @@ public:
     MCAPI enum class CommandOutputType getType() const;
     /**
      * @symbol ?hasErrorMessage@CommandOutput@@QEBA_NXZ
-     * @hash   -1982847882
+     * @hash   -1982801754
      */
     MCAPI bool hasErrorMessage() const;
     /**
      * @symbol ?hasPlayerText@CommandOutput@@QEBA_NXZ
-     * @hash   896541638
+     * @hash   896587766
      */
     MCAPI bool hasPlayerText() const;
     /**
      * @symbol ?load@CommandOutput@@QEAAXW4CommandOutputType@@H$$QEAV?$vector@VCommandOutputMessage@@V?$allocator@VCommandOutputMessage@@@std@@@std@@$$QEAV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@4@@Z
-     * @hash   132422130
+     * @hash   132468258
      */
     MCAPI void load(enum class CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
     /**
      * @symbol ?setHasPlayerText@CommandOutput@@QEAAXXZ
-     * @hash   619221295
+     * @hash   619267423
      */
     MCAPI void setHasPlayerText();
     /**
      * @symbol ?success@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-     * @hash   1065645993
+     * @hash   1065692121
      */
     MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
     /**
      * @symbol ?success@CommandOutput@@QEAAXXZ
-     * @hash   -551444037
+     * @hash   -551397909
      */
     MCAPI void success();
     /**
      * @symbol ?wantsData@CommandOutput@@QEBA_NXZ
-     * @hash   -1981319754
+     * @hash   -1981273626
      */
     MCAPI bool wantsData() const;
     /**
      * @symbol ??1CommandOutput@@QEAA@XZ
-     * @hash   -1178559496
+     * @hash   -1178513368
      */
     MCAPI ~CommandOutput();
 
 //private:
     /**
      * @symbol ?addMessage@CommandOutput@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@W4CommandOutputMessageType@@@Z
-     * @hash   1455575510
+     * @hash   1455621638
      */
     MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum class CommandOutputMessageType);
 

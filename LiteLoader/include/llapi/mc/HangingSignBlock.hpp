@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@HangingSignBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   290497958
+     * @hash   291328262
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@HangingSignBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1314453456
+     * @hash   -1313623152
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@HangingSignBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -2102564321
+     * @hash   -2101734017
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@HangingSignBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -1585062076
+     * @hash   -1584231772
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1790049349
+     * @hash   -1789219045
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@HangingSignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -853941750
+     * @hash   -853111446
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -708524256
+     * @hash   -707693952
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -260,42 +260,42 @@ public:
     /**
      * @vftbl  194
      * @symbol ?_getItemInstance@HangingSignBlock@@MEBA?AVItemInstance@@XZ
-     * @hash   -518389009
+     * @hash   -517558705
      */
     virtual class ItemInstance _getItemInstance() const;
     /**
      * @vftbl  195
      * @symbol ?_getShape@HangingSignBlock@@MEBAXHAEAVAABB@@@Z
-     * @hash   682722590
+     * @hash   683552894
      */
     virtual void _getShape(int, class AABB &) const;
     /**
      * @symbol ??0HangingSignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlockActor@@@Z
-     * @hash   374413458
+     * @hash   375243762
      */
     MCAPI HangingSignBlock(std::string const &, int, bool, enum class SignBlockActor::SignType);
     /**
      * @symbol ?isDoubleChainHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
-     * @hash   666755833
+     * @hash   667586137
      */
     MCAPI static bool isDoubleChainHangingSign(class Block const &);
     /**
      * @symbol ?isSideAttachedHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
-     * @hash   718076965
+     * @hash   718907269
      */
     MCAPI static bool isSideAttachedHangingSign(class Block const &);
 
 //protected:
     /**
      * @symbol ?_canAttachTo@HangingSignBlock@@IEBA_NAEAVBlockSource@@VBlockPos@@EE@Z
-     * @hash   1253063477
+     * @hash   1253893781
      */
     MCAPI bool _canAttachTo(class BlockSource &, class BlockPos, unsigned char, unsigned char) const;
 
 //private:
     /**
      * @symbol ?_isHangingSign@HangingSignBlock@@CA_NAEBVBlock@@@Z
-     * @hash   -1393412350
+     * @hash   -1392582046
      */
     MCAPI static bool _isHangingSign(class Block const &);
 

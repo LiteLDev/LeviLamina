@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@ChainBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1746299861
+     * @hash   -1745469557
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ChainBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1700538686
+     * @hash   1701368990
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@ChainBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1840700794
+     * @hash   -1839870490
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@ChainBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1309862125
+     * @hash   -1309031821
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -255,12 +255,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ChainBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1160686550
+     * @hash   -1159856246
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0ChainBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1811855901
+     * @hash   -1811025597
      */
     MCAPI ChainBlock(std::string const &, int, class Material const &);
 

@@ -111,7 +111,7 @@ public:
 #endif
     /**
      * @symbol ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
-     * @hash   1210320405
+     * @hash   1211150709
      */
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
 

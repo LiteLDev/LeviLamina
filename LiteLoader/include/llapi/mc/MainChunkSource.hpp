@@ -39,49 +39,49 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getExistingChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   1403873909
+     * @hash   1404704213
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
      * @vftbl  4
      * @symbol ?getRandomChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
-     * @hash   396968788
+     * @hash   397799092
      */
     virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /**
      * @vftbl  5
      * @symbol ?isChunkKnown@MainChunkSource@@UEAA_NAEBVChunkPos@@@Z
-     * @hash   -1550027920
+     * @hash   -1549197616
      */
     virtual bool isChunkKnown(class ChunkPos const &);
     /**
      * @vftbl  7
      * @symbol ?createNewChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
-     * @hash   434788755
+     * @hash   435619059
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  18
      * @symbol ?acquireDiscarded@MainChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-     * @hash   -1645889467
+     * @hash   -1645059163
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
      * @vftbl  23
      * @symbol ?getChunkMap@MainChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
-     * @hash   1794663001
+     * @hash   1794709129
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /**
      * @vftbl  24
      * @symbol ?getStorage@MainChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
-     * @hash   -1484778020
+     * @hash   -1484731892
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /**
      * @vftbl  25
      * @symbol ?clearDeletedEntities@MainChunkSource@@UEAAXXZ
-     * @hash   -1439801291
+     * @hash   -1438970987
      */
     virtual void clearDeletedEntities();
     /**
@@ -92,7 +92,7 @@ public:
     virtual bool canCreateViews() const;
     /**
      * @symbol ??0MainChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
-     * @hash   854799590
+     * @hash   855629894
      */
     MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
 

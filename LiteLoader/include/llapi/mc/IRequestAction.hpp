@@ -46,23 +46,23 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serialize@IRequestAction@@UEAAXAEAVCompoundTag@@@Z
-     * @hash   -902394638
+     * @hash   -901564334
      */
     virtual void serialize(class CompoundTag &);
     /**
      * @vftbl  3
      * @symbol ??8IRequestAction@@UEBA_NAEAV0@@Z
-     * @hash   1824614985
+     * @hash   1824661113
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
      * @symbol ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
-     * @hash   -1399852179
+     * @hash   -1399021875
      */
     MCAPI IRequestAction(enum class IRequestAction::RequestActionType const &);
     /**
      * @symbol ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
-     * @hash   1166181691
+     * @hash   1167011995
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
 

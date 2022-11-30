@@ -37,66 +37,66 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@MoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-     * @hash   -700660151
+     * @hash   -700614023
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
      * @vftbl  2
      * @symbol ?tick@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   1400422378
+     * @hash   1400468506
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @vftbl  3
      * @symbol ?setWantedPosition@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-     * @hash   714659191
+     * @hash   714705319
      */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
     /**
      * @symbol ??0MoveControl@@QEAA@XZ
-     * @hash   -1660043448
+     * @hash   -1659997320
      */
     MCAPI MoveControl();
     /**
      * @symbol ?MIN_DELTA_TO_JUMP@MoveControl@@2MB
-     * @hash   -46417327
+     * @hash   -46294319
      */
     MCAPI static float const MIN_DELTA_TO_JUMP;
     /**
      * @symbol ?MIN_DELTA_TO_JUMP_UNDERWATER@MoveControl@@2MB
-     * @hash   -1073408841
+     * @hash   -1073285833
      */
     MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
     /**
      * @symbol ?MIN_DELTA_TO_MOVE@MoveControl@@2MB
-     * @hash   -1668010413
+     * @hash   -1667887405
      */
     MCAPI static float const MIN_DELTA_TO_MOVE;
     /**
      * @symbol ?MIN_SPEED@MoveControl@@2MB
-     * @hash   -2034064387
+     * @hash   -2033941379
      */
     MCAPI static float const MIN_SPEED;
     /**
      * @symbol ?MIN_SPEED_SQR@MoveControl@@2MB
-     * @hash   -1697166165
+     * @hash   -1697043157
      */
     MCAPI static float const MIN_SPEED_SQR;
     /**
      * @symbol ?getDiffVector@MoveControl@@SA?AVVec3@@AEBV2@AEBVMob@@@Z
-     * @hash   -1479263193
+     * @hash   -1479217065
      */
     MCAPI static class Vec3 getDiffVector(class Vec3 const &, class Mob const &);
 
 //protected:
     /**
      * @symbol ?calculateMoveSpeed@MoveControl@@IEAAMAEBVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-     * @hash   -315753669
+     * @hash   -315707541
      */
     MCAPI float calculateMoveSpeed(class MoveControlComponent const &, class Mob &, class Vec3 const &, float);
     /**
      * @symbol ?calculateYRotation@MoveControl@@IEAAMAEBVMoveControlComponent@@AEBVMob@@AEBVVec3@@M@Z
-     * @hash   -1157122247
+     * @hash   -1157076119
      */
     MCAPI float calculateYRotation(class MoveControlComponent const &, class Mob const &, class Vec3 const &, float);
 

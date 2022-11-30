@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0BlockDefinition@@QEAA@XZ
-     * @hash   -1312088916
+     * @hash   -1311258612
      */
     MCAPI BlockDefinition();
     /**
      * @symbol ??0BlockDefinition@@QEAA@AEBU0@@Z
-     * @hash   519726181
+     * @hash   520556485
      */
     MCAPI BlockDefinition(struct BlockDefinition const &);
     /**
      * @symbol ??1BlockDefinition@@QEAA@XZ
-     * @hash   492940652
+     * @hash   493770956
      */
     MCAPI ~BlockDefinition();
     /**
      * @symbol ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@reflection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2042075781
+     * @hash   2042906085
      */
     MCAPI static struct reflection::Schema createBlockAbstractCerealSchema(std::string const &);
     /**
      * @symbol ?registerBlockDefinitionTypes@BlockDefinition@@SAXXZ
-     * @hash   1632911097
+     * @hash   1633741401
      */
     MCAPI static void registerBlockDefinitionTypes();
     /**
      * @symbol ?upgradeJson@BlockDefinition@@SA?AU?$pair@_NVSemVersion@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
-     * @hash   366614188
+     * @hash   367444492
      */
     MCAPI static struct std::pair<bool, class SemVersion> upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 

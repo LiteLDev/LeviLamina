@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@WolfPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1696384312
+     * @hash   1696430440
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doWolfPostNormalTickSystem@WolfPostNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   835068609
+     * @hash   835114737
      */
     MCAPI static void _doWolfPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

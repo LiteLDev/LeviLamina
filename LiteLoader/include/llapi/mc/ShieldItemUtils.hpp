@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
-     * @hash   309644491
+     * @hash   310474795
      */
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 

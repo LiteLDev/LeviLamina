@@ -100,24 +100,24 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@EnderpearlItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   1464963405
+     * @hash   1465793709
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  103
      * @symbol ?getCooldownType@EnderpearlItem@@UEBAAEBVHashedString@@XZ
-     * @hash   1963410361
+     * @hash   1964240665
      */
     virtual class HashedString const & getCooldownType() const;
     /**
@@ -128,7 +128,7 @@ public:
     virtual int getCooldownTime() const;
     /**
      * @symbol ??0EnderpearlItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -685814321
+     * @hash   -684984017
      */
     MCAPI EnderpearlItem(std::string const &, int);
     /**

@@ -35,7 +35,7 @@ public:
     MCAPI ~EntitySystemsInfo();
     /**
      * @symbol ?bindType@EntitySystemsInfo@@SAXXZ
-     * @hash   -1719828961
+     * @hash   -1719782833
      */
     MCAPI static void bindType();
 

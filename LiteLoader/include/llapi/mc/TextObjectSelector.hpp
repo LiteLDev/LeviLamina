@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectSelector@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1116791858
+     * @hash   1116837986
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectSelector@@UEBA?AVValue@Json@@XZ
-     * @hash   1648417762
+     * @hash   1648463890
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectSelector@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   -31121059
+     * @hash   -31074931
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectSelector@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1093422544
+     * @hash   1093468672
      */
     MCAPI TextObjectSelector(std::string);
     /**

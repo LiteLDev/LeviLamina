@@ -41,7 +41,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@HeartbeatServerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1539278018
+     * @hash   -1539231890
      */
     virtual void tick(class EntityRegistry &);
 

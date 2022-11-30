@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0CommandPropertyBag@@QEAA@XZ
-     * @hash   -1288790684
+     * @hash   -1288744556
      */
     MCAPI CommandPropertyBag();
     /**
      * @symbol ??0CommandPropertyBag@@QEAA@AEBVValue@Json@@@Z
-     * @hash   -1515169671
+     * @hash   -1515123543
      */
     MCAPI CommandPropertyBag(class Json::Value const &);
     /**
      * @symbol ?addToResultList@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   2142380202
+     * @hash   2142426330
      */
     MCAPI void addToResultList(std::string const &, std::string const &);
     /**
      * @symbol ?clone@CommandPropertyBag@@QEBA?AV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@std@@XZ
-     * @hash   1102975050
+     * @hash   1103021178
      */
     MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     /**
      * @symbol ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
-     * @hash   519324449
+     * @hash   519370577
      */
     MCAPI void set(std::string const &, class BlockPos const &);
     /**
      * @symbol ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   -1902057425
+     * @hash   -1902011297
      */
     MCAPI void set(std::string const &, class Json::Value const &);
     /**
      * @symbol ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@Z
-     * @hash   820308861
+     * @hash   820354989
      */
     MCAPI void set(std::string const &, class Vec3);
 

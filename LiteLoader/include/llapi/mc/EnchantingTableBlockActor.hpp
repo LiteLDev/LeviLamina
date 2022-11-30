@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@EnchantingTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -799416316
+     * @hash   -798586012
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@EnchantingTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1377686637
+     * @hash   -1376856333
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@EnchantingTableBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1362464269
+     * @hash   1363294573
      */
     virtual void tick(class BlockSource &);
     /**
@@ -67,7 +67,7 @@ public:
     /**
      * @vftbl  26
      * @symbol ?getName@EnchantingTableBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1408651630
+     * @hash   1409481934
      */
     virtual std::string getName() const;
     /**
@@ -109,12 +109,12 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@EnchantingTableBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -694985684
+     * @hash   -694155380
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0EnchantingTableBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1840264112
+     * @hash   -1839433808
      */
     MCAPI EnchantingTableBlockActor(class BlockPos const &);
 

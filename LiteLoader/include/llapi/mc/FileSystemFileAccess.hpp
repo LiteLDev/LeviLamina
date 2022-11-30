@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1980964595
+     * @hash   -1980134291
      */
     virtual void * fopen(class Core::Path const &, std::string const &);
     /**
      * @vftbl  2
      * @symbol ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
-     * @hash   -1476149919
+     * @hash   -1475319615
      */
     virtual int fclose(void *);
     /**
      * @vftbl  3
      * @symbol ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
-     * @hash   1178131643
+     * @hash   1178961947
      */
     virtual int fseek(void *, __int64, int);
     /**
      * @vftbl  4
      * @symbol ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
-     * @hash   1880314098
+     * @hash   1881144402
      */
     virtual __int64 ftell(void *);
     /**
@@ -69,7 +69,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getWriteInterface@FileSystemFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
-     * @hash   2061201380
+     * @hash   2062031684
      */
     virtual class IFileWriteAccess * getWriteInterface();
     /**
@@ -80,7 +80,7 @@ public:
     virtual void unload();
     /**
      * @symbol ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
-     * @hash   -1007985698
+     * @hash   -1007155394
      */
     MCAPI FileSystemFileAccess(enum class FileSystemMode);
 

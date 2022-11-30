@@ -223,7 +223,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ReinforcedDeepslateBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1151393535
+     * @hash   1152223839
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REINFORCEDDEEPSLATEBLOCK
@@ -235,7 +235,7 @@ public:
 #endif
     /**
      * @symbol ??0ReinforcedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1052861169
+     * @hash   -1052030865
      */
     MCAPI ReinforcedDeepslateBlock(std::string const &, int);
 

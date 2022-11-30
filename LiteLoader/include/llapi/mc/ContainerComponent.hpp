@@ -32,17 +32,17 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@ContainerComponent@@UEAAXH@Z
-     * @hash   -1677701080
+     * @hash   -1677654952
      */
     virtual void containerContentChanged(int);
     /**
      * @symbol ??0ContainerComponent@@QEAA@XZ
-     * @hash   466970952
+     * @hash   467017080
      */
     MCAPI ContainerComponent();
     /**
      * @symbol ??0ContainerComponent@@QEAA@$$QEAV0@@Z
-     * @hash   534252913
+     * @hash   534299041
      */
     MCAPI ContainerComponent(class ContainerComponent &&);
     /**
@@ -52,22 +52,22 @@ public:
     MCAPI class FillingContainer * _getRawContainerPtr();
     /**
      * @symbol ?addAdditionalSaveData@ContainerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -496690664
+     * @hash   -496644536
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z
-     * @hash   -513691803
+     * @hash   -513645675
      */
     MCAPI bool addItem(class ItemActor &);
     /**
      * @symbol ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@@Z
-     * @hash   746782559
+     * @hash   746828687
      */
     MCAPI bool addItem(class ItemStack &);
     /**
      * @symbol ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
-     * @hash   710898207
+     * @hash   710944335
      */
     MCAPI bool addItem(class ItemStack &, int, int);
     /**
@@ -77,27 +77,27 @@ public:
     MCAPI bool canBeSiphonedFrom() const;
     /**
      * @symbol ?canOpenContainer@ContainerComponent@@QEBA_NAEBVActor@@AEAVPlayer@@@Z
-     * @hash   -1943579620
+     * @hash   -1943533492
      */
     MCAPI bool canOpenContainer(class Actor const &, class Player &) const;
     /**
      * @symbol ?countItemsOfType@ContainerComponent@@QEBAHAEBVItemStack@@@Z
-     * @hash   -590776511
+     * @hash   -590730383
      */
     MCAPI int countItemsOfType(class ItemStack const &) const;
     /**
      * @symbol ?dropContents@ContainerComponent@@QEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
-     * @hash   -773412568
+     * @hash   -773366440
      */
     MCAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
     /**
      * @symbol ?findFirstSlotForItem@ContainerComponent@@QEBAHAEBVItemStack@@@Z
-     * @hash   1473703457
+     * @hash   1473749585
      */
     MCAPI int findFirstSlotForItem(class ItemStack const &) const;
     /**
      * @symbol ?getContainerSize@ContainerComponent@@QEBAHXZ
-     * @hash   -801219016
+     * @hash   -801172888
      */
     MCAPI int getContainerSize() const;
     /**
@@ -107,27 +107,27 @@ public:
     MCAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getSlots@ContainerComponent@@QEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
-     * @hash   -1430921726
+     * @hash   -1430875598
      */
     MCAPI std::vector<class ItemStack const *> const getSlots() const;
     /**
      * @symbol ?hasRoomForItem@ContainerComponent@@QEAA_NAEBVItemActor@@@Z
-     * @hash   -420693827
+     * @hash   -420647699
      */
     MCAPI bool hasRoomForItem(class ItemActor const &);
     /**
      * @symbol ?hasRoomForItem@ContainerComponent@@QEAA_NAEBVItemStack@@@Z
-     * @hash   -1131664777
+     * @hash   -1131618649
      */
     MCAPI bool hasRoomForItem(class ItemStack const &);
     /**
      * @symbol ?initFromDefinition@ContainerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1207445050
+     * @hash   1207491178
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?isEmpty@ContainerComponent@@QEBA_NXZ
-     * @hash   1824134110
+     * @hash   1824180238
      */
     MCAPI bool isEmpty() const;
     /**
@@ -137,57 +137,57 @@ public:
     MCAPI bool isPrivate() const;
     /**
      * @symbol ?openContainer@ContainerComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-     * @hash   1203426474
+     * @hash   1203472602
      */
     MCAPI bool openContainer(class Actor &, class Player &);
     /**
      * @symbol ??4ContainerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1758343012
+     * @hash   1758389140
      */
     MCAPI class ContainerComponent & operator=(class ContainerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@ContainerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1345933442
+     * @hash   1345979570
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?rebuildContainer@ContainerComponent@@QEAAXAEAVActor@@W4ContainerType@@H_NH2@Z
-     * @hash   1513309354
+     * @hash   1513355482
      */
     MCAPI void rebuildContainer(class Actor &, enum class ContainerType, int, bool, int, bool);
     /**
      * @symbol ?removeItem@ContainerComponent@@QEAAXHH@Z
-     * @hash   -2057847667
+     * @hash   -2057801539
      */
     MCAPI void removeItem(int, int);
     /**
      * @symbol ?removeItemsOfType@ContainerComponent@@QEAAXAEBVItemStack@@H@Z
-     * @hash   -1165104549
+     * @hash   -1165058421
      */
     MCAPI void removeItemsOfType(class ItemStack const &, int);
     /**
      * @symbol ?serverInitItemStackIds@ContainerComponent@@QEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   1145014184
+     * @hash   1145060312
      */
     MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setCustomName@ContainerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1742060398
+     * @hash   1742106526
      */
     MCAPI void setCustomName(std::string const &);
     /**
      * @symbol ?setItem@ContainerComponent@@QEAA_NHAEBVItemStack@@@Z
-     * @hash   373638106
+     * @hash   373684234
      */
     MCAPI bool setItem(int, class ItemStack const &);
     /**
      * @symbol ?setLootTable@ContainerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -252468153
+     * @hash   -252422025
      */
     MCAPI void setLootTable(std::string const &, int);
     /**
      * @symbol ?unpackLootTable@ContainerComponent@@QEAAXAEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1611129897
+     * @hash   -1611083769
      */
     MCAPI void unpackLootTable(class Level &, class AutomaticID<class Dimension, int>);
 

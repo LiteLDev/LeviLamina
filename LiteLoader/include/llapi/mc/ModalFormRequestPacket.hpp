@@ -47,29 +47,29 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@ModalFormRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   942655621
+     * @hash   942701749
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ModalFormRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1545876034
+     * @hash   1545922162
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ModalFormRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2103333474
+     * @hash   2103379602
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ModalFormRequestPacket@@QEAA@XZ
-     * @hash   719471234
+     * @hash   719517362
      */
     MCAPI ModalFormRequestPacket();
     /**
      * @symbol ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1636860346
+     * @hash   -1636814218
      */
     MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
 

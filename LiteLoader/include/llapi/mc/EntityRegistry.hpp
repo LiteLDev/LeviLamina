@@ -30,31 +30,31 @@ public:
 public:
     /**
      * @symbol ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRefT@UEntityRegistryRefTraits@@@@XZ
-     * @hash   -844739177
+     * @hash   -844693049
      */
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     /**
      * @symbol ??1EntityRegistry@@QEAA@XZ
-     * @hash   -939601350
+     * @hash   -939555222
      */
     MCAPI ~EntityRegistry();
 
 //protected:
     /**
      * @symbol ??0EntityRegistry@@IEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1303073331
+     * @hash   1303119459
      */
     MCAPI EntityRegistry(std::string);
 
 //private:
     /**
      * @symbol ?_createEntity@EntityRegistry@@AEAA?AVEntityContext@@XZ
-     * @hash   -1397573625
+     * @hash   -1397527497
      */
     MCAPI class EntityContext _createEntity();
     /**
      * @symbol ?_destroyEntity@EntityRegistry@@AEAAXVEntityContext@@@Z
-     * @hash   1441759453
+     * @hash   1441805581
      */
     MCAPI void _destroyEntity(class EntityContext);
 

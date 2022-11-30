@@ -31,42 +31,42 @@ public:
 public:
     /**
      * @symbol ??0MoveControlComponent@@QEAA@XZ
-     * @hash   -400429667
+     * @hash   -400383539
      */
     MCAPI MoveControlComponent();
     /**
      * @symbol ?getHasWantedPosition@MoveControlComponent@@QEBA_NXZ
-     * @hash   -1178417372
+     * @hash   -1178371244
      */
     MCAPI bool getHasWantedPosition() const;
     /**
      * @symbol ?getMaxTurn@MoveControlComponent@@QEBAMXZ
-     * @hash   1345442038
+     * @hash   1345488166
      */
     MCAPI float getMaxTurn() const;
     /**
      * @symbol ?getShouldBreach@MoveControlComponent@@QEBA_NXZ
-     * @hash   650538978
+     * @hash   650585106
      */
     MCAPI bool getShouldBreach() const;
     /**
      * @symbol ?getSpeedModifier@MoveControlComponent@@QEBAMXZ
-     * @hash   -1968352730
+     * @hash   -1968306602
      */
     MCAPI float getSpeedModifier() const;
     /**
      * @symbol ?getWantedPosition@MoveControlComponent@@QEBAAEBVVec3@@XZ
-     * @hash   -1190052344
+     * @hash   -1190006216
      */
     MCAPI class Vec3 const & getWantedPosition() const;
     /**
      * @symbol ?initMultiTypeMovementComponent@MoveControlComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-     * @hash   1228681231
+     * @hash   1228727359
      */
     MCAPI void initMultiTypeMovementComponent(class Mob &, class ActorDefinitionDescriptor &);
     /**
      * @symbol ?initializeFromDefinition@MoveControlComponent@@QEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-     * @hash   -477118492
+     * @hash   -477072364
      */
     MCAPI void initializeFromDefinition(class Mob &, struct MoveControlDescription *);
     /**
@@ -76,44 +76,44 @@ public:
     MCAPI class MoveControlComponent & operator=(class MoveControlComponent &&);
     /**
      * @symbol ?setHasWantedPosition@MoveControlComponent@@QEAAX_N@Z
-     * @hash   264708048
+     * @hash   264754176
      */
     MCAPI void setHasWantedPosition(bool);
     /**
      * @symbol ?setInternalType@MoveControlComponent@@QEAAXV?$unique_ptr@VMoveControl@@U?$default_delete@VMoveControl@@@std@@@std@@@Z
-     * @hash   -830085698
+     * @hash   -830039570
      */
     MCAPI void setInternalType(std::unique_ptr<class MoveControl>);
     /**
      * @symbol ?setMaxTurn@MoveControlComponent@@QEAAXM@Z
-     * @hash   1688486020
+     * @hash   1688532148
      */
     MCAPI void setMaxTurn(float);
     /**
      * @symbol ?setShouldBreach@MoveControlComponent@@QEAAX_N@Z
-     * @hash   1687711682
+     * @hash   1687757810
      */
     MCAPI void setShouldBreach(bool);
     /**
      * @symbol ?setSpeedModifier@MoveControlComponent@@QEAAXM@Z
-     * @hash   926251892
+     * @hash   926298020
      */
     MCAPI void setSpeedModifier(float);
     /**
      * @symbol ?setWantedPosition@MoveControlComponent@@QEAAXAEAVMob@@AEBVVec3@@M@Z
-     * @hash   -1838540070
+     * @hash   -1838493942
      */
     MCAPI void setWantedPosition(class Mob &, class Vec3 const &, float);
     /**
      * @symbol ?update@MoveControlComponent@@QEAAXAEAVMob@@@Z
-     * @hash   252711412
+     * @hash   252757540
      */
     MCAPI void update(class Mob &);
 
 //private:
     /**
      * @symbol ?_setWantedPosition@MoveControlComponent@@AEAAXAEBVVec3@@@Z
-     * @hash   882005220
+     * @hash   882051348
      */
     MCAPI void _setWantedPosition(class Vec3 const &);
 

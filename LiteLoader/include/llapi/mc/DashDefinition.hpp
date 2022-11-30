@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ?initialize@DashDefinition@@QEAAXAEAVEntityContext@@AEAVDashComponent@@@Z
-     * @hash   336423743
+     * @hash   337254047
      */
     MCAPI void initialize(class EntityContext &, class DashComponent &);
     /**
      * @symbol ?uninitialize@DashDefinition@@QEAAXAEAVEntityContext@@AEAVDashComponent@@@Z
-     * @hash   1355022719
+     * @hash   1355853023
      */
     MCAPI void uninitialize(class EntityContext &, class DashComponent &);
     /**
      * @symbol ?buildSchema@DashDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDashDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1868203286
+     * @hash   1869033590
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>> &);
 

@@ -218,7 +218,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0StoneButtonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -470427052
+     * @hash   -469596748
      */
     MCAPI StoneButtonBlock(std::string const &, int);
 

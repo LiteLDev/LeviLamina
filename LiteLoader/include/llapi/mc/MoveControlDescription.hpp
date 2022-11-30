@@ -33,12 +33,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLDESCRIPTION
     /**
      * @symbol ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -2060291985
+     * @hash   -2059461681
      */
     MCVAPI void deserializeData(struct DeserializeDataParams);
     /**
      * @symbol ?serializeData@MoveControlDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   1135856377
+     * @hash   1136686681
      */
     MCVAPI void serializeData(class Json::Value &) const;
 #endif

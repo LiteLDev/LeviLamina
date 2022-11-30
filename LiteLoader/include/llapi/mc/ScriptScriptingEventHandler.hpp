@@ -37,20 +37,20 @@ public:
     virtual ~ScriptScriptingEventHandler();
     /**
      * @vftbl  1
-     * @hash   1152046753
+     * @hash   1152092881
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?handleEvent@ScriptScriptingEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBeforeWatchdogTerminateEvent@@@Z
-     * @hash   1441126272
+     * @hash   1441172400
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent &);
 
 //private:
     /**
      * @symbol ?_handleWatchdogTerminateEvent@ScriptScriptingEventHandler@@AEBA_NAEAUBeforeWatchdogTerminateEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   -1996496522
+     * @hash   -1996450394
      */
     MCAPI bool _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemEvents>) const;
 

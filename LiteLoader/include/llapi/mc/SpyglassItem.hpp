@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?getViewDamping@SpyglassItem@@UEBAMXZ
-     * @hash   423018562
+     * @hash   423064690
      */
     virtual float getViewDamping() const;
     /**
@@ -100,35 +100,35 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@SpyglassItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   545525323
+     * @hash   546355627
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  86
      * @symbol ?useTimeDepleted@SpyglassItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   -1495202317
+     * @hash   -1494372013
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @vftbl  87
      * @symbol ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   -1360832139
+     * @hash   -1360001835
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
      * @symbol ??0SpyglassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   941162454
+     * @hash   941992758
      */
     MCAPI SpyglassItem(std::string const &, short);
 

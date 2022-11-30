@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ??0WorldTemplateInfo@@QEAA@AEBVWorldTemplatePackManifest@@@Z
-     * @hash   -821351577
+     * @hash   -821305449
      */
     MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const &);
     /**
      * @symbol ?addWorldTemplatePackSource@WorldTemplateInfo@@QEAAXAEAVWorldTemplatePackSource@@@Z
-     * @hash   1259048264
+     * @hash   1259094392
      */
     MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource &);
     /**
      * @symbol ?getPackManifest@WorldTemplateInfo@@QEBAAEBVWorldTemplatePackManifest@@XZ
-     * @hash   127677238
+     * @hash   127723366
      */
     MCAPI class WorldTemplatePackManifest const & getPackManifest() const;
     /**
@@ -53,17 +53,17 @@ public:
     MCAPI std::string const & getWorldName() const;
     /**
      * @symbol ?getWorldPath@WorldTemplateInfo@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   910479359
+     * @hash   910525487
      */
     MCAPI class Core::PathBuffer<std::string> const & getWorldPath() const;
     /**
      * @symbol ?isVirtualCatalogItem@WorldTemplateInfo@@QEBA_NXZ
-     * @hash   -1572939444
+     * @hash   -1572893316
      */
     MCAPI bool isVirtualCatalogItem() const;
     /**
      * @symbol ??1WorldTemplateInfo@@QEAA@XZ
-     * @hash   613670646
+     * @hash   613716774
      */
     MCAPI ~WorldTemplateInfo();
 

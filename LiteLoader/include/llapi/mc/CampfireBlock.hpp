@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@CampfireBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   822913350
+     * @hash   823743654
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@CampfireBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1573017323
+     * @hash   -1572187019
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@CampfireBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   914327130
+     * @hash   915157434
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@CampfireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1174996614
+     * @hash   -1174166310
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1996554440
+     * @hash   1997384744
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CampfireBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1839230012
+     * @hash   -1838399708
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -212,13 +212,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@CampfireBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1346740517
+     * @hash   1347570821
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1838657360
+     * @hash   1839487664
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CampfireBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   2056541120
+     * @hash   2057371424
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -256,13 +256,13 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -549420837
+     * @hash   -548590533
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@CampfireBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   -855661090
+     * @hash   -854830786
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
@@ -273,13 +273,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@CampfireBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -747965059
+     * @hash   -747134755
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1738952345
+     * @hash   1739782649
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -300,7 +300,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -30951746
+     * @hash   -30121442
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CampfireBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1772606635
+     * @hash   1773436939
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -327,13 +327,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@CampfireBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1518895148
+     * @hash   1519725452
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CampfireBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -734474908
+     * @hash   -733644604
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCK
@@ -355,22 +355,22 @@ public:
 #endif
     /**
      * @symbol ??0CampfireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   377358863
+     * @hash   378189167
      */
     MCAPI CampfireBlock(std::string const &, int, bool);
     /**
      * @symbol ?isLit@CampfireBlock@@SA_NAEBVBlock@@@Z
-     * @hash   625020115
+     * @hash   625850419
      */
     MCAPI static bool isLit(class Block const &);
     /**
      * @symbol ?tryDouseFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@_N@Z
-     * @hash   1894857401
+     * @hash   1895687705
      */
     MCAPI static bool tryDouseFire(class BlockSource &, class BlockPos const &, class Actor *, bool);
     /**
      * @symbol ?tryLightFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -468357956
+     * @hash   -467527652
      */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
 

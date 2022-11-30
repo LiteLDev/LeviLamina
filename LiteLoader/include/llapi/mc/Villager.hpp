@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Villager@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -2003416761
+     * @hash   -2003370633
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -116,7 +116,7 @@ public:
     /**
      * @vftbl  204
      * @symbol ?buildDebugInfo@Villager@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1440239750
+     * @hash   -1440193622
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Villager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -830100478
+     * @hash   -830054350
      */
     MCAPI Villager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

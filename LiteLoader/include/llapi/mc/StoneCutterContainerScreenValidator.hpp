@@ -48,12 +48,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@StoneCutterContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -1246899848
+     * @hash   -1246069544
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ??0StoneCutterContainerScreenValidator@@QEAA@XZ
-     * @hash   -1704197147
+     * @hash   -1703366843
      */
     MCAPI StoneCutterContainerScreenValidator();
 

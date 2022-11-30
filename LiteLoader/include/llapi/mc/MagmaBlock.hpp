@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1845715768
+     * @hash   -1844885464
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1367829851
+     * @hash   1368660155
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -227,13 +227,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -863876100
+     * @hash   -863045796
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -721367687
+     * @hash   -720537383
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  184
      * @symbol ?getEmissiveBrightness@MagmaBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   -586455241
+     * @hash   -585624937
      */
     virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /**
@@ -261,14 +261,14 @@ public:
 #endif
     /**
      * @symbol ??0MagmaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1064024484
+     * @hash   1064854788
      */
     MCAPI MagmaBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?addToTickQueue@MagmaBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1856473876
+     * @hash   -1855643572
      */
     MCAPI void addToTickQueue(class BlockSource &, class BlockPos const &, class Random &) const;
 

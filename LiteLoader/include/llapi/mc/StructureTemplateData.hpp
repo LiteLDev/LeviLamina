@@ -40,27 +40,27 @@ public:
 public:
     /**
      * @symbol ??0StructureTemplateData@@QEAA@XZ
-     * @hash   -624567709
+     * @hash   -623737405
      */
     MCAPI StructureTemplateData();
     /**
      * @symbol ?addEntityData@StructureTemplateData@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
-     * @hash   1935261810
+     * @hash   1936092114
      */
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?addPalette@StructureTemplateData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VStructureBlockPalette@@@Z
-     * @hash   427863203
+     * @hash   428693507
      */
     MCAPI void addPalette(std::string const &, class StructureBlockPalette);
     /**
      * @symbol ?clear@StructureTemplateData@@QEAAXXZ
-     * @hash   1113438959
+     * @hash   1114269263
      */
     MCAPI void clear();
     /**
      * @symbol ?getAllPalettes@StructureTemplateData@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VStructureBlockPalette@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VStructureBlockPalette@@@std@@@2@@std@@XZ
-     * @hash   -561761020
+     * @hash   -561714892
      */
     MCAPI class std::unordered_map<std::string, class StructureBlockPalette, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class StructureBlockPalette>>> const & getAllPalettes() const;
     /**
@@ -70,7 +70,7 @@ public:
     MCAPI std::vector<int> const & getBlockIndices() const;
     /**
      * @symbol ?getEntityData@StructureTemplateData@@QEBAAEBV?$vector@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$allocator@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@2@@std@@XZ
-     * @hash   -1460221855
+     * @hash   -1460175727
      */
     MCAPI std::vector<std::unique_ptr<class CompoundTag>> const & getEntityData() const;
     /**
@@ -80,47 +80,47 @@ public:
     MCAPI std::vector<int> const & getExtraBlockIndices() const;
     /**
      * @symbol ?getPalette@StructureTemplateData@@QEBAPEBVStructureBlockPalette@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -154376710
+     * @hash   -153546406
      */
     MCAPI class StructureBlockPalette const * getPalette(std::string const &) const;
     /**
      * @symbol ?getSize@StructureTemplateData@@QEBAAEBVBlockPos@@XZ
-     * @hash   -389591266
+     * @hash   -389545138
      */
     MCAPI class BlockPos const & getSize() const;
     /**
      * @symbol ?getStructureWorldOrigin@StructureTemplateData@@QEBAAEBVBlockPos@@XZ
-     * @hash   -1260741554
+     * @hash   -1260695426
      */
     MCAPI class BlockPos const & getStructureWorldOrigin() const;
     /**
      * @symbol ?load@StructureTemplateData@@QEAA_NAEBVCompoundTag@@@Z
-     * @hash   -313343275
+     * @hash   -312512971
      */
     MCAPI bool load(class CompoundTag const &);
     /**
      * @symbol ?save@StructureTemplateData@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1626694890
+     * @hash   -1625864586
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ?setBlockIndices@StructureTemplateData@@QEAAXV?$vector@HV?$allocator@H@std@@@std@@@Z
-     * @hash   496481462
+     * @hash   497311766
      */
     MCAPI void setBlockIndices(std::vector<int>);
     /**
      * @symbol ?setExtraBlockIndices@StructureTemplateData@@QEAAXV?$vector@HV?$allocator@H@std@@@std@@@Z
-     * @hash   -692630224
+     * @hash   -691799920
      */
     MCAPI void setExtraBlockIndices(std::vector<int>);
     /**
      * @symbol ?setSize@StructureTemplateData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -70724086
+     * @hash   -69893782
      */
     MCAPI void setSize(class BlockPos const &);
     /**
      * @symbol ?setStructureWorldOrigin@StructureTemplateData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1386311782
+     * @hash   -1385481478
      */
     MCAPI void setStructureWorldOrigin(class BlockPos const &);
     /**
@@ -132,49 +132,49 @@ public:
 //protected:
     /**
      * @symbol ?_parseBlockIndices@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
-     * @hash   1783421446
+     * @hash   1784251750
      */
     MCAPI enum class StructureLoadResult _parseBlockIndices(class CompoundTag const &);
     /**
      * @symbol ?_parseEntities@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
-     * @hash   -1488594913
+     * @hash   -1487764609
      */
     MCAPI enum class StructureLoadResult _parseEntities(class CompoundTag const &);
     /**
      * @symbol ?_parseFormatVersion@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
-     * @hash   1935825623
+     * @hash   1936655927
      */
     MCAPI enum class StructureLoadResult _parseFormatVersion(class CompoundTag const &);
     /**
      * @symbol ?_parsePalettes@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
-     * @hash   -1267054536
+     * @hash   -1266224232
      */
     MCAPI enum class StructureLoadResult _parsePalettes(class CompoundTag const &);
     /**
      * @symbol ?_parseSize@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
-     * @hash   1417530911
+     * @hash   1418361215
      */
     MCAPI enum class StructureLoadResult _parseSize(class CompoundTag const &);
     /**
      * @symbol ?_saveBlockIndices@StructureTemplateData@@IEBAXAEAVCompoundTag@@@Z
-     * @hash   -226359702
+     * @hash   -225529398
      */
     MCAPI void _saveBlockIndices(class CompoundTag &) const;
     /**
      * @symbol ?_savePalettes@StructureTemplateData@@IEBAXAEAVCompoundTag@@@Z
-     * @hash   -1757796884
+     * @hash   -1756966580
      */
     MCAPI void _savePalettes(class CompoundTag &) const;
     /**
      * @symbol ?_saveStructureTag@StructureTemplateData@@IEBAXAEAVCompoundTag@@@Z
-     * @hash   1551268157
+     * @hash   1552098461
      */
     MCAPI void _saveStructureTag(class CompoundTag &) const;
 
 //private:
     /**
      * @symbol ?_contentErrorMissingField@StructureTemplateData@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   338074020
+     * @hash   338904324
      */
     MCAPI void _contentErrorMissingField(std::string const &) const;
 

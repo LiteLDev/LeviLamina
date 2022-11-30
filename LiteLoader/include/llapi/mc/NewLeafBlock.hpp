@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@NewLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   2145766427
+     * @hash   2146596731
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,13 +190,13 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@NewLeafBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -600405722
+     * @hash   -599575418
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@NewLeafBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   144216735
+     * @hash   145047039
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@NewLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1135428758
+     * @hash   1136259062
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -243,18 +243,18 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@NewLeafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   2011501821
+     * @hash   2012332125
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getExtraResourceItem@NewLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1121815863
+     * @hash   1122646167
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
      * @symbol ??0NewLeafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   -1401080905
+     * @hash   -1400250601
      */
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 

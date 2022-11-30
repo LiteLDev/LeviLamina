@@ -67,137 +67,137 @@ public:
 public:
     /**
      * @symbol ??0ResourcePack@@QEAA@AEAVPack@@@Z
-     * @hash   -1068577944
+     * @hash   -1068531816
      */
     MCAPI ResourcePack(class Pack &);
     /**
      * @symbol ?areKnownFilesValid@ResourcePack@@QEAA_NXZ
-     * @hash   -334869256
+     * @hash   -334823128
      */
     MCAPI bool areKnownFilesValid();
     /**
      * @symbol ?forEachIn@ResourcePack@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@H_N@Z
-     * @hash   -1007948770
+     * @hash   -1007902642
      */
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;
     /**
      * @symbol ?generateAssetSet@ResourcePack@@QEAAXXZ
-     * @hash   689654917
+     * @hash   689701045
      */
     MCAPI void generateAssetSet();
     /**
      * @symbol ?getFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -21641828
+     * @hash   -21595700
      */
     MCAPI std::string const & getFolderName() const;
     /**
      * @symbol ?getLoadTime@ResourcePack@@QEBANXZ
-     * @hash   1697663214
+     * @hash   1697709342
      */
     MCAPI double getLoadTime() const;
     /**
      * @symbol ?getManifest@ResourcePack@@QEAAAEAVPackManifest@@XZ
-     * @hash   -1269720886
+     * @hash   -1269674758
      */
     MCAPI class PackManifest & getManifest();
     /**
      * @symbol ?getPackCategory@ResourcePack@@QEBA?AW4PackCategory@@XZ
-     * @hash   -1799627130
+     * @hash   -1799581002
      */
     MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackId@ResourcePack@@QEBAAEBVUUID@mce@@XZ
-     * @hash   174283566
+     * @hash   174329694
      */
     MCAPI class mce::UUID const & getPackId() const;
     /**
      * @symbol ?getPackOrigin@ResourcePack@@QEBA?AW4PackOrigin@@XZ
-     * @hash   -1516255578
+     * @hash   -1516209450
      */
     MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1996513345
+     * @hash   1996559473
      */
     MCAPI bool getResource(class Core::Path const &, std::string &, int) const;
     /**
      * @symbol ?getResourceLocation@ResourcePack@@QEBAAEBVResourceLocation@@XZ
-     * @hash   56428314
+     * @hash   56474442
      */
     MCAPI class ResourceLocation const & getResourceLocation() const;
     /**
      * @symbol ?getSubpackCount@ResourcePack@@QEBAHXZ
-     * @hash   1356746022
+     * @hash   1356792150
      */
     MCAPI int getSubpackCount() const;
     /**
      * @symbol ?getSubpackFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1098272923
+     * @hash   1098319051
      */
     MCAPI std::string const & getSubpackFolderName(int) const;
     /**
      * @symbol ?getSubpackIndex@ResourcePack@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1529396711
+     * @hash   -1529350583
      */
     MCAPI int getSubpackIndex(std::string const &) const;
     /**
      * @symbol ?getSubpackInfoStack@ResourcePack@@QEBAAEBVSubpackInfoCollection@@XZ
-     * @hash   -1463925114
+     * @hash   -1463878986
      */
     MCAPI class SubpackInfoCollection const & getSubpackInfoStack() const;
     /**
      * @symbol ?getVersion@ResourcePack@@QEBAAEBVSemVersion@@XZ
-     * @hash   481266790
+     * @hash   481312918
      */
     MCAPI class SemVersion const & getVersion() const;
     /**
      * @symbol ?hasResource@ResourcePack@@QEBA_NAEBVPath@Core@@H@Z
-     * @hash   1795622142
+     * @hash   1795668270
      */
     MCAPI bool hasResource(class Core::Path const &, int) const;
     /**
      * @symbol ?isBaseGamePack@ResourcePack@@QEBA_NXZ
-     * @hash   548834476
+     * @hash   548880604
      */
     MCAPI bool isBaseGamePack() const;
     /**
      * @symbol ?isSlicePack@ResourcePack@@QEBA_NXZ
-     * @hash   2037045076
+     * @hash   2037091204
      */
     MCAPI bool isSlicePack() const;
     /**
      * @symbol ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
-     * @hash   1343510487
+     * @hash   1343556615
      */
     MCAPI bool isType(enum class PackType) const;
     /**
      * @symbol ?isZipped@ResourcePack@@QEBA_NXZ
-     * @hash   -4975840
+     * @hash   -4929712
      */
     MCAPI bool isZipped() const;
     /**
      * @symbol ?setAsSlicePack@ResourcePack@@QEAAXXZ
-     * @hash   -890339499
+     * @hash   -890293371
      */
     MCAPI void setAsSlicePack();
     /**
      * @symbol ?setError@ResourcePack@@QEAAXXZ
-     * @hash   -438710331
+     * @hash   -438664203
      */
     MCAPI void setError();
     /**
      * @symbol ?setLoadTime@ResourcePack@@QEAAXN@Z
-     * @hash   -2012534768
+     * @hash   -2012488640
      */
     MCAPI void setLoadTime(double);
     /**
      * @symbol ?setLocale@ResourcePack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1893460606
+     * @hash   1893506734
      */
     MCAPI void setLocale(std::string const &);
     /**
      * @symbol ?unregisterDeleteCallback@ResourcePack@@QEAAXPEAX@Z
-     * @hash   -544065809
+     * @hash   -544019681
      */
     MCAPI void unregisterDeleteCallback(void *);
     /**
@@ -219,17 +219,17 @@ public:
 //private:
     /**
      * @symbol ?_createSubpack@ResourcePack@@AEAAXAEBUSubpackInfo@@@Z
-     * @hash   811907474
+     * @hash   811953602
      */
     MCAPI void _createSubpack(struct SubpackInfo const &);
     /**
      * @symbol ?_createSubpacks@ResourcePack@@AEAAXXZ
-     * @hash   381293722
+     * @hash   381339850
      */
     MCAPI void _createSubpacks();
     /**
      * @symbol ?_generateIconPath@ResourcePack@@AEAAXXZ
-     * @hash   -489286569
+     * @hash   -489240441
      */
     MCAPI void _generateIconPath();
 

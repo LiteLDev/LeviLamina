@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Turtle@@UEBAMXZ
-     * @hash   -1353144662
+     * @hash   -1353098534
      */
     virtual float getShadowRadius() const;
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@Turtle@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   770288447
+     * @hash   770334575
      */
     virtual void die(class ActorDamageSource const &);
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Turtle@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -1099098953
+     * @hash   -1099052825
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -187,7 +187,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Turtle@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -193890488
+     * @hash   -193844360
      */
     MCAPI Turtle(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

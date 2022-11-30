@@ -33,32 +33,32 @@ public:
 public:
     /**
      * @symbol ??0MingleComponent@@QEAA@XZ
-     * @hash   1889660699
+     * @hash   1889706827
      */
     MCAPI MingleComponent();
     /**
      * @symbol ?clearPreviousPartnerId@MingleComponent@@QEAAAEAV1@XZ
-     * @hash   -615599134
+     * @hash   -615553006
      */
     MCAPI class MingleComponent & clearPreviousPartnerId();
     /**
      * @symbol ?fetchCurrentPartner@MingleComponent@@QEBAPEAVActor@@AEBV2@@Z
-     * @hash   -600693481
+     * @hash   -600647353
      */
     MCAPI class Actor * fetchCurrentPartner(class Actor const &) const;
     /**
      * @symbol ?resetState@MingleComponent@@QEAAXXZ
-     * @hash   -1909049065
+     * @hash   -1909002937
      */
     MCAPI void resetState();
     /**
      * @symbol ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
-     * @hash   1267000187
+     * @hash   1267046315
      */
     MCAPI class MingleComponent & setMingleState(enum class MingleComponent::MingleState);
     /**
      * @symbol ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z
-     * @hash   778732421
+     * @hash   778778549
      */
     MCAPI class MingleComponent & setPartnerId(struct ActorUniqueID);
 

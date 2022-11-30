@@ -30,57 +30,57 @@ public:
 public:
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@XZ
-     * @hash   -578504944
+     * @hash   -578458816
      */
     MCAPI SpawnActorParameters();
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@AEBU0@@Z
-     * @hash   2043316015
+     * @hash   2043362143
      */
     MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@$$QEAU0@@Z
-     * @hash   -1860157995
+     * @hash   -1860111867
      */
     MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
     /**
      * @symbol ?setItem@SpawnActorParameters@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   1704104802
+     * @hash   1704150930
      */
     MCAPI void setItem(class ItemDescriptor const &);
     /**
      * @symbol ?setSpawnEntity@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -285882820
+     * @hash   -285836692
      */
     MCAPI void setSpawnEntity(std::string const &);
     /**
      * @symbol ?setSpawnEvent@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1203931374
+     * @hash   1203977502
      */
     MCAPI void setSpawnEvent(std::string const &);
     /**
      * @symbol ?setSpawnSound@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1146315554
+     * @hash   -1146269426
      */
     MCAPI void setSpawnSound(std::string const &);
     /**
      * @symbol ?setSpawnTimeMax@SpawnActorParameters@@QEAAXAEBH@Z
-     * @hash   -1967355045
+     * @hash   -1967308917
      */
     MCAPI void setSpawnTimeMax(int const &);
     /**
      * @symbol ?setSpawnTimeMin@SpawnActorParameters@@QEAAXAEBH@Z
-     * @hash   866439071
+     * @hash   866485199
      */
     MCAPI void setSpawnTimeMin(int const &);
     /**
      * @symbol ?spawnsItemStack@SpawnActorParameters@@QEBA_NXZ
-     * @hash   643930994
+     * @hash   643977122
      */
     MCAPI bool spawnsItemStack() const;
     /**
      * @symbol ??1SpawnActorParameters@@QEAA@XZ
-     * @hash   519777598
+     * @hash   519823726
      */
     MCAPI ~SpawnActorParameters();
 

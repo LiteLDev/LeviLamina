@@ -33,27 +33,27 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKACTOR
     /**
      * @symbol ?_canOpenThis@ChestBlockActor@@MEBA_NAEAVBlockSource@@@Z
-     * @hash   1171036193
+     * @hash   1171866497
      */
     MCVAPI bool _canOpenThis(class BlockSource &) const;
     /**
      * @symbol ?_detectEntityObstruction@ChestBlockActor@@MEBA_NAEAVBlockSource@@@Z
-     * @hash   -1918244849
+     * @hash   -1917414545
      */
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
     /**
      * @symbol ?_getUpdatePacket@ChestBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -2038245918
+     * @hash   -2037415614
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@ChestBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -619923056
+     * @hash   -619092752
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?addContentChangeListener@ChestBlockActor@@UEAAXPEAVContainerContentChangeListener@@@Z
-     * @hash   556691818
+     * @hash   557522122
      */
     MCVAPI void addContentChangeListener(class ContainerContentChangeListener *);
     /**
@@ -68,87 +68,87 @@ public:
     MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?clearCache@ChestBlockActor@@UEAAXXZ
-     * @hash   1721448147
+     * @hash   1722278451
      */
     MCVAPI void clearCache();
     /**
      * @symbol ?clearInventory@ChestBlockActor@@UEAAHH@Z
-     * @hash   -766929843
+     * @hash   -766099539
      */
     MCVAPI int clearInventory(int);
     /**
      * @symbol ?eraseLootTable@ChestBlockActor@@UEAAXXZ
-     * @hash   1027928446
+     * @hash   1028758750
      */
     MCVAPI void eraseLootTable();
     /**
      * @symbol ?getContainer@ChestBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -847211898
+     * @hash   -846381594
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   -1274933758
+     * @hash   -1274103454
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@ChestBlockActor@@UEBAHXZ
-     * @hash   1056202062
+     * @hash   1057032366
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getCrackEntity@ChestBlockActor@@UEAAPEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1759379207
+     * @hash   -1758548903
      */
     MCVAPI class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?getDebugText@ChestBlockActor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-     * @hash   -704540936
+     * @hash   -703710632
      */
     MCVAPI void getDebugText(std::vector<std::string> &, class BlockPos const &);
     /**
      * @symbol ?getItem@ChestBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   -1345263459
+     * @hash   -1344433155
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@ChestBlockActor@@UEBAHXZ
-     * @hash   1919532589
+     * @hash   1919578717
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@ChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1922698834
+     * @hash   1923529138
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?getObstructionAABB@ChestBlockActor@@MEBA?AVAABB@@XZ
-     * @hash   1367456617
+     * @hash   1368286921
      */
     MCVAPI class AABB getObstructionAABB() const;
     /**
      * @symbol ?initializeContainerContents@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -921377653
+     * @hash   -920547349
      */
     MCVAPI void initializeContainerContents(class BlockSource &);
     /**
      * @symbol ?load@ChestBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -245896960
+     * @hash   -245066656
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?loadItems@ChestBlockActor@@UEAAXAEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   904911558
+     * @hash   905741862
      */
     MCVAPI void loadItems(class CompoundTag const &, class Level &);
     /**
      * @symbol ?onChanged@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   379692241
+     * @hash   380522545
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
      * @symbol ?onMove@ChestBlockActor@@UEAAXXZ
-     * @hash   -1716347218
+     * @hash   -1715516914
      */
     MCVAPI void onMove();
     /**
@@ -158,187 +158,187 @@ public:
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?onPlace@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   158634430
+     * @hash   159464734
      */
     MCVAPI void onPlace(class BlockSource &);
     /**
      * @symbol ?onRemoved@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1293472203
+     * @hash   -1292641899
      */
     MCVAPI void onRemoved(class BlockSource &);
     /**
      * @symbol ?playCloseSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   -1746619038
+     * @hash   -1745788734
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
      * @symbol ?playOpenSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   1237958540
+     * @hash   1238788844
      */
     MCVAPI void playOpenSound(class BlockSource &);
     /**
      * @symbol ?removeContentChangeListener@ChestBlockActor@@UEAAXPEAVContainerContentChangeListener@@@Z
-     * @hash   -26741203
+     * @hash   -25910899
      */
     MCVAPI void removeContentChangeListener(class ContainerContentChangeListener *);
     /**
      * @symbol ?save@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1365803663
+     * @hash   1366633967
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?saveItemInstanceData@ChestBlockActor@@UEAA_NAEAVCompoundTag@@@Z
-     * @hash   2104281326
+     * @hash   2105111630
      */
     MCVAPI bool saveItemInstanceData(class CompoundTag &);
     /**
      * @symbol ?saveItems@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   968845289
+     * @hash   969675593
      */
     MCVAPI bool saveItems(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@ChestBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -843874494
+     * @hash   -843044190
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setContainerChanged@ChestBlockActor@@UEAAXH@Z
-     * @hash   -1676175604
+     * @hash   -1675345300
      */
     MCVAPI void setContainerChanged(int);
     /**
      * @symbol ?setItem@ChestBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -1561039432
+     * @hash   -1560209128
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?setItemWithForceBalance@ChestBlockActor@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   782677293
+     * @hash   782723421
      */
     MCVAPI void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
      * @symbol ?startOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   496606425
+     * @hash   497436729
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   34464489
+     * @hash   35294793
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1682705257
+     * @hash   1683535561
      */
     MCVAPI void tick(class BlockSource &);
     /**
      * @symbol ?triggerEvent@ChestBlockActor@@UEAAXHH@Z
-     * @hash   -693371264
+     * @hash   -692540960
      */
     MCVAPI void triggerEvent(int, int);
     /**
      * @symbol ??1ChestBlockActor@@UEAA@XZ
-     * @hash   -6367432
+     * @hash   -5537128
      */
     MCVAPI ~ChestBlockActor();
 #endif
     /**
      * @symbol ??0ChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@_N@Z
-     * @hash   -1827161116
+     * @hash   -1826330812
      */
     MCAPI ChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &, bool);
     /**
      * @symbol ?canOpen@ChestBlockActor@@QEBA_NAEAVBlockSource@@@Z
-     * @hash   280326491
+     * @hash   281156795
      */
     MCAPI bool canOpen(class BlockSource &) const;
     /**
      * @symbol ?canPairWith@ChestBlockActor@@QEAA_NPEAVBlockActor@@AEAVBlockSource@@@Z
-     * @hash   -790953899
+     * @hash   -790123595
      */
     MCAPI bool canPairWith(class BlockActor *, class BlockSource &);
     /**
      * @symbol ?forceCloseChest@ChestBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   1779395388
+     * @hash   1780225692
      */
     MCAPI void forceCloseChest(class BlockSource &);
     /**
      * @symbol ?getOpenCount@ChestBlockActor@@QEBAHXZ
-     * @hash   1484902804
+     * @hash   1485733108
      */
     MCAPI int getOpenCount() const;
     /**
      * @symbol ?getOpenness@ChestBlockActor@@QEBAMXZ
-     * @hash   1417784932
+     * @hash   1418615236
      */
     MCAPI float getOpenness() const;
     /**
      * @symbol ?getPairedChestPosition@ChestBlockActor@@QEAAAEBVBlockPos@@XZ
-     * @hash   1985247436
+     * @hash   1986077740
      */
     MCAPI class BlockPos const & getPairedChestPosition();
     /**
      * @symbol ?isFindable@ChestBlockActor@@QEBA_NXZ
-     * @hash   361235582
+     * @hash   362065886
      */
     MCAPI bool isFindable() const;
     /**
      * @symbol ?isLargeChest@ChestBlockActor@@QEBA_NXZ
-     * @hash   -559219986
+     * @hash   -558389682
      */
     MCAPI bool isLargeChest() const;
     /**
      * @symbol ?onMove@ChestBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -522691910
+     * @hash   -521861606
      */
     MCAPI void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?openBy@ChestBlockActor@@QEAAXAEAVPlayer@@@Z
-     * @hash   508049114
+     * @hash   508879418
      */
     MCAPI void openBy(class Player &);
     /**
      * @symbol ?pairWith@ChestBlockActor@@QEAAXPEAV1@_N@Z
-     * @hash   -397871240
+     * @hash   -397040936
      */
     MCAPI void pairWith(class ChestBlockActor *, bool);
     /**
      * @symbol ?setFindable@ChestBlockActor@@QEAAX_N@Z
-     * @hash   -1335899040
+     * @hash   -1335068736
      */
     MCAPI void setFindable(bool);
     /**
      * @symbol ?unpair@ChestBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -1505499344
+     * @hash   -1504669040
      */
     MCAPI void unpair(class BlockSource &);
 
 //protected:
     /**
      * @symbol ?_getCenter@ChestBlockActor@@IEAAXAEAM00@Z
-     * @hash   -1014371278
+     * @hash   -1013540974
      */
     MCAPI void _getCenter(float &, float &, float &);
 
 //private:
     /**
      * @symbol ?_closeChest@ChestBlockActor@@AEAAXAEAVBlockSource@@PEAVPlayer@@@Z
-     * @hash   -2003965538
+     * @hash   -2003135234
      */
     MCAPI void _closeChest(class BlockSource &, class Player *);
     /**
      * @symbol ?_saveClientSideState@ChestBlockActor@@AEBA_NAEAVCompoundTag@@@Z
-     * @hash   1546872172
+     * @hash   1547702476
      */
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
     /**
      * @symbol ?_tryToPairWith@ChestBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1907565560
+     * @hash   1908395864
      */
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_unpair@ChestBlockActor@@AEAAXXZ
-     * @hash   1820427413
+     * @hash   1821257717
      */
     MCAPI void _unpair();
 

@@ -36,7 +36,7 @@ public:
 public:
     /**
      * @symbol ??0InventoryTransaction@@QEAA@AEBV0@@Z
-     * @hash   -1322365231
+     * @hash   -1322319103
      */
     MCAPI InventoryTransaction(class InventoryTransaction const &);
     /**
@@ -46,84 +46,84 @@ public:
     MCAPI void _logTransaction(bool) const;
     /**
      * @symbol ?addAction@InventoryTransaction@@QEAAXAEBVInventoryAction@@@Z
-     * @hash   -297470706
+     * @hash   -296640402
      */
     MCAPI void addAction(class InventoryAction const &);
     /**
      * @symbol ?executeFull@InventoryTransaction@@QEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     * @hash   1045529172
+     * @hash   1046359476
      */
     MCAPI enum class InventoryTransactionError executeFull(class Player &, bool) const;
     /**
      * @symbol ?forceBalanceTransaction@InventoryTransaction@@QEAAXXZ
-     * @hash   -1742207645
+     * @hash   -1741377341
      */
     MCAPI void forceBalanceTransaction();
     /**
      * @symbol ?getActions@InventoryTransaction@@QEBAAEBV?$vector@VInventoryAction@@V?$allocator@VInventoryAction@@@std@@@std@@AEBVInventorySource@@@Z
-     * @hash   -114211931
+     * @hash   -113381627
      */
     MCAPI std::vector<class InventoryAction> const & getActions(class InventorySource const &) const;
     /**
      * @symbol ?getVerifyFunction@InventoryTransaction@@QEBA?AV?$function@$$A6A?AW4InventoryTransactionError@@AEAVPlayer@@AEBVInventoryAction@@_N@Z@std@@AEBVInventorySource@@@Z
-     * @hash   723683480
+     * @hash   724513784
      */
     MCAPI class std::function<enum class InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
     /**
      * @symbol ?postLoadItems@InventoryTransaction@@QEAAXAEAVBlockPalette@@_N@Z
-     * @hash   1358219595
+     * @hash   1359049899
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**
      * @symbol ?recalculateBalance@InventoryTransaction@@QEAAXXZ
-     * @hash   -1330003307
+     * @hash   -1329173003
      */
     MCAPI void recalculateBalance();
     /**
      * @symbol ?serialize@InventoryTransaction@@QEBAXAEAVBinaryStream@@_N@Z
-     * @hash   -2034444983
+     * @hash   -2033614679
      */
     MCAPI void serialize(class BinaryStream &, bool) const;
     /**
      * @symbol ?verifyBalance@InventoryTransaction@@QEBA_NXZ
-     * @hash   1236170226
+     * @hash   1237000530
      */
     MCAPI bool verifyBalance() const;
     /**
      * @symbol ?verifyFull@InventoryTransaction@@QEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     * @hash   -1548014282
+     * @hash   -1547183978
      */
     MCAPI enum class InventoryTransactionError verifyFull(class Player &, bool) const;
     /**
      * @symbol ??1InventoryTransaction@@QEAA@XZ
-     * @hash   -1304364580
+     * @hash   -1304318452
      */
     MCAPI ~InventoryTransaction();
     /**
      * @symbol ?checkTransactionItemsMatch@InventoryTransaction@@SA_NAEBVItemStack@@0@Z
-     * @hash   -1259497121
+     * @hash   -1258666817
      */
     MCAPI static bool checkTransactionItemsMatch(class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?deserialize@InventoryTransaction@@SA?AV1@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -187089806
+     * @hash   -186259502
      */
     MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getInventoryTransactionErrorName@InventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InventoryTransactionError@@@Z
-     * @hash   -216605745
+     * @hash   -215775441
      */
     MCAPI static std::string const getInventoryTransactionErrorName(enum class InventoryTransactionError);
 
 //private:
     /**
      * @symbol ?_dropCreatedItems@InventoryTransaction@@AEBAXAEAVPlayer@@@Z
-     * @hash   -2036452710
+     * @hash   -2035622406
      */
     MCAPI void _dropCreatedItems(class Player &) const;
     /**
      * @symbol ?addItemToContent@InventoryTransaction@@AEAAXAEBVItemStack@@H@Z
-     * @hash   -1965054593
+     * @hash   -1964224289
      */
     MCAPI void addItemToContent(class ItemStack const &, int);
 

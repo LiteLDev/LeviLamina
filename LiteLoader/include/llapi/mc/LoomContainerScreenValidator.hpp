@@ -37,7 +37,7 @@ public:
     virtual ~LoomContainerScreenValidator();
     /**
      * @symbol ??0LoomContainerScreenValidator@@QEAA@XZ
-     * @hash   -1355126750
+     * @hash   -1354296446
      */
     MCAPI LoomContainerScreenValidator();
 

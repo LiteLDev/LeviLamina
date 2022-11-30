@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@DamageResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -622195335
+     * @hash   -621365031
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?executeAction@DamageResponse@@UEBAXAEAVRenderParams@@@Z
-     * @hash   1397099301
+     * @hash   1397929605
      */
     virtual void executeAction(class RenderParams &) const;
     /**
      * @vftbl  3
      * @symbol ?buildSchema@DamageResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
-     * @hash   1850023575
+     * @hash   1850853879
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     /**
@@ -63,7 +63,7 @@ public:
 //private:
     /**
      * @symbol ?repairOrHurtItem@DamageResponse@@AEBAXAEBHAEAVRenderParams@@@Z
-     * @hash   2021715835
+     * @hash   2022546139
      */
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 

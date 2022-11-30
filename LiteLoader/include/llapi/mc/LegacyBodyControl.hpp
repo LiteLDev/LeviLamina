@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z
-     * @hash   1393978287
+     * @hash   1394024415
      */
     virtual void clientTick(class Mob &);
     /**
      * @symbol ??0LegacyBodyControl@@QEAA@XZ
-     * @hash   1354147630
+     * @hash   1354193758
      */
     MCAPI LegacyBodyControl();
 

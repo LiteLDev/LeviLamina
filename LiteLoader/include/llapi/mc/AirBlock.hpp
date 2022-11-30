@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@AirBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   147797427
+     * @hash   148627731
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -268,13 +268,13 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   483550069
+     * @hash   484380373
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   695240141
+     * @hash   696070445
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -338,7 +338,7 @@ public:
 #endif
     /**
      * @symbol ??0AirBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1290097014
+     * @hash   -1289266710
      */
     MCAPI AirBlock(std::string const &, int, class Material const &);
 

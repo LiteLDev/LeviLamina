@@ -38,36 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?read@ItemUseOnActorInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1742158728
+     * @hash   -1741328424
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  2
      * @symbol ?write@ItemUseOnActorInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   759277792
+     * @hash   760108096
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  3
      * @symbol ?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-     * @hash   -1259578589
+     * @hash   -1259532461
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
      * @vftbl  4
      * @symbol ?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     * @hash   239367021
+     * @hash   240197325
      */
     virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-     * @hash   1836935356
+     * @hash   1836981484
      */
     virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
     /**
      * @symbol ?setSelectedItem@ItemUseOnActorInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
-     * @hash   -1105100056
+     * @hash   -1105053928
      */
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 

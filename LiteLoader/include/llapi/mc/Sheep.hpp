@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1377226341
+     * @hash   -1377180213
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -156,7 +156,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Sheep@@UEAAXXZ
-     * @hash   2084468880
+     * @hash   2084515008
      */
     virtual void aiStep();
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  352
      * @symbol ?jumpFromGround@Sheep@@MEAAXXZ
-     * @hash   -1100015676
+     * @hash   -1099969548
      */
     virtual void jumpFromGround();
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@Sheep@@MEAAXXZ
-     * @hash   1983386092
+     * @hash   1983432220
      */
     virtual void newServerAiStep();
     /**
@@ -200,17 +200,17 @@ public:
 #endif
     /**
      * @symbol ??0Sheep@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1684039383
+     * @hash   1684085511
      */
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?isGrazing@Sheep@@QEBA_NXZ
-     * @hash   -1986656632
+     * @hash   -1986610504
      */
     MCAPI bool isGrazing() const;
     /**
      * @symbol ?preAiStep@Sheep@@QEAAXXZ
-     * @hash   -572054173
+     * @hash   -572008045
      */
     MCAPI void preAiStep();
 
@@ -219,7 +219,7 @@ public:
 private:
     /**
      * @symbol ?EAT_ANIMATION_TICKS@Sheep@@0HB
-     * @hash   1592443873
+     * @hash   1592566881
      */
     MCAPI static int const EAT_ANIMATION_TICKS;
 

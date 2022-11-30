@@ -53,28 +53,28 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -1225274546
+     * @hash   -1225182290
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1466381722
+     * @hash   -1466289466
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getAmount@ItemStackRequestActionTransferBase@@QEBAEXZ
-     * @hash   -1475600489
+     * @hash   -1475508233
      */
     MCAPI unsigned char getAmount() const;
     /**
      * @symbol ?getDst@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     * @hash   1138460114
+     * @hash   1138506242
      */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     /**
      * @symbol ?getSrc@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     * @hash   -1037030176
+     * @hash   -1036984048
      */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 

@@ -33,22 +33,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
     /**
      * @symbol ?canPullOutItem@BrewingStandBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-     * @hash   -2024361428
+     * @hash   -2023531124
      */
     MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?canPushInItem@BrewingStandBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-     * @hash   -107461994
+     * @hash   -106631690
      */
     MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?getContainer@BrewingStandBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -1987359535
+     * @hash   -1986529231
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@BrewingStandBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1879885901
+     * @hash   1880716205
      */
     MCVAPI class Container const * getContainer() const;
     /**
@@ -58,52 +58,52 @@ public:
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@BrewingStandBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   -840154526
+     * @hash   -839324222
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@BrewingStandBlockActor@@UEBAHXZ
-     * @hash   -461471592
+     * @hash   -461425464
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@BrewingStandBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -317622243
+     * @hash   -316791939
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?load@BrewingStandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1883647205
+     * @hash   1884477509
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onChanged@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   993120582
+     * @hash   993950886
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
      * @symbol ?onMove@BrewingStandBlockActor@@UEAAXXZ
-     * @hash   -1811486951
+     * @hash   -1810656647
      */
     MCVAPI void onMove();
     /**
      * @symbol ?save@BrewingStandBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -201726700
+     * @hash   -200896396
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@BrewingStandBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   1972689415
+     * @hash   1973519719
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setContainerChanged@BrewingStandBlockActor@@UEAAXH@Z
-     * @hash   881573137
+     * @hash   882403441
      */
     MCVAPI void setContainerChanged(int);
     /**
      * @symbol ?setItem@BrewingStandBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   1816736083
+     * @hash   1817566387
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
@@ -118,60 +118,60 @@ public:
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1778511618
+     * @hash   -1777681314
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0BrewingStandBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1595094335
+     * @hash   -1594264031
      */
     MCAPI BrewingStandBlockActor(class BlockPos const &);
     /**
      * @symbol ?brew@BrewingStandBlockActor@@QEAAXXZ
-     * @hash   -1009982651
+     * @hash   -1009152347
      */
     MCAPI void brew();
     /**
      * @symbol ?getBrewTime@BrewingStandBlockActor@@QEBAHXZ
-     * @hash   -372471690
+     * @hash   -371641386
      */
     MCAPI int getBrewTime() const;
     /**
      * @symbol ?getFuelAmount@BrewingStandBlockActor@@QEBAHXZ
-     * @hash   -1540225786
+     * @hash   -1539395482
      */
     MCAPI int getFuelAmount() const;
     /**
      * @symbol ?getFuelTotal@BrewingStandBlockActor@@QEBAHXZ
-     * @hash   -1265294184
+     * @hash   -1265248056
      */
     MCAPI int getFuelTotal() const;
     /**
      * @symbol ?setBrewTime@BrewingStandBlockActor@@QEAAXH@Z
-     * @hash   566378344
+     * @hash   567208648
      */
     MCAPI void setBrewTime(int);
     /**
      * @symbol ?setFuelAmount@BrewingStandBlockActor@@QEAAXH@Z
-     * @hash   -1706803528
+     * @hash   -1705973224
      */
     MCAPI void setFuelAmount(int);
     /**
      * @symbol ?setFuelTotal@BrewingStandBlockActor@@QEAAXH@Z
-     * @hash   1018142086
+     * @hash   1018972390
      */
     MCAPI void setFuelTotal(int);
     /**
      * @symbol ?isFuel@BrewingStandBlockActor@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   956706193
+     * @hash   957536497
      */
     MCAPI static bool isFuel(class ItemDescriptor const &);
 
 //private:
     /**
      * @symbol ?canBrew@BrewingStandBlockActor@@AEAA_NXZ
-     * @hash   -1794019574
+     * @hash   -1793189270
      */
     MCAPI bool canBrew();
 

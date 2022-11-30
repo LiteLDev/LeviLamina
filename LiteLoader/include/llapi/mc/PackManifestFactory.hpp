@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
-     * @hash   1255802826
+     * @hash   1255848954
      */
     virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
     /**
      * @symbol ??0PackManifestFactory@@QEAA@AEAVIPackTelemetry@@@Z
-     * @hash   -1500846841
+     * @hash   -1500800713
      */
     MCAPI PackManifestFactory(class IPackTelemetry &);
     /**
@@ -79,7 +79,7 @@ public:
     MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
     /**
      * @symbol ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -496427991
+     * @hash   -496381863
      */
     MCAPI static std::string contentKeyLookup(std::string const &);
     /**

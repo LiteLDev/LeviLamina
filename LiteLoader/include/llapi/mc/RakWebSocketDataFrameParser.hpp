@@ -33,29 +33,29 @@ public:
 public:
     /**
      * @symbol ??0RakWebSocketDataFrameParser@@QEAA@_N@Z
-     * @hash   -40330436
+     * @hash   -40238180
      */
     MCAPI RakWebSocketDataFrameParser(bool);
     /**
      * @symbol ?readFrame@RakWebSocketDataFrameParser@@QEAA?AV?$shared_ptr@VRakWebSocketDataFrame@@@std@@AEAVBitStream@RakNet@@@Z
-     * @hash   1341000718
+     * @hash   1341092974
      */
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream &);
     /**
      * @symbol ?setOnFailHandler@RakWebSocketDataFrameParser@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CloseStatusCode@@@Z@std@@@Z
-     * @hash   1666458923
+     * @hash   1666505051
      */
     MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum class CloseStatusCode)>);
     /**
      * @symbol ??1RakWebSocketDataFrameParser@@QEAA@XZ
-     * @hash   -146362013
+     * @hash   -146269757
      */
     MCAPI ~RakWebSocketDataFrameParser();
 
 //private:
     /**
      * @symbol ?_failReadFrame@RakWebSocketDataFrameParser@@AEAA?AV?$shared_ptr@VRakWebSocketDataFrame@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4CloseStatusCode@@@Z
-     * @hash   912662268
+     * @hash   912754524
      */
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const &, enum class CloseStatusCode);
 

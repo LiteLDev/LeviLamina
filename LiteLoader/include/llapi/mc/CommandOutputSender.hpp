@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
-     * @hash   1522718819
+     * @hash   1522764947
      */
     virtual void send(class CommandOrigin const &, class CommandOutput const &);
     /**
@@ -49,24 +49,24 @@ public:
     virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
     /**
      * @symbol ??0CommandOutputSender@@QEAA@XZ
-     * @hash   7911117
+     * @hash   7957245
      */
     MCAPI CommandOutputSender();
     /**
      * @symbol ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z
-     * @hash   -1707582668
+     * @hash   -1707536540
      */
     MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum class CommandPermissionLevel);
     /**
      * @symbol ?translate@CommandOutputSender@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV23@@Z
-     * @hash   2099734491
+     * @hash   2099780619
      */
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const &);
 
 //protected:
     /**
      * @symbol ?_toJson@CommandOutputSender@@IEBA?AVValue@Json@@AEBVCommandOutput@@@Z
-     * @hash   -543074392
+     * @hash   -543028264
      */
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
 

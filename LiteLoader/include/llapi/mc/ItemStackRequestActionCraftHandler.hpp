@@ -32,89 +32,89 @@ public:
 public:
     /**
      * @symbol ??0ItemStackRequestActionCraftHandler@@QEAA@AEAVItemStackRequestActionHandler@@AEAVPlayer@@@Z
-     * @hash   1819850096
+     * @hash   1820680400
      */
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
     /**
      * @symbol ?_getOrInitSparseContainer@ItemStackRequestActionCraftHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-     * @hash   50228932
+     * @hash   51059236
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum class ContainerEnumName);
     /**
      * @symbol ?_initCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@E@Z
-     * @hash   1644732727
+     * @hash   1645563031
      */
     MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
     /**
      * @symbol ?_initSingleCraftResult@ItemStackRequestActionCraftHandler@@QEAAPEAVItemInstance@@AEBV2@@Z
-     * @hash   238749818
+     * @hash   239580122
      */
     MCAPI class ItemInstance * _initSingleCraftResult(class ItemInstance const &);
     /**
      * @symbol ?_validateRequestSlot@ItemStackRequestActionCraftHandler@@QEAA?AUItemStackRequestHandlerSlotInfo@@AEBUItemStackRequestSlotInfo@@@Z
-     * @hash   -1171952703
+     * @hash   -1171122399
      */
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &);
     /**
      * @symbol ?endRequest@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W42@@Z
-     * @hash   -2132127598
+     * @hash   -2131297294
      */
     MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
     /**
      * @symbol ?endRequestBatch@ItemStackRequestActionCraftHandler@@QEAAXXZ
-     * @hash   -1864691757
+     * @hash   -1863861453
      */
     MCAPI void endRequestBatch();
     /**
      * @symbol ?handleConsume@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionConsume@@@Z
-     * @hash   749776571
+     * @hash   750606875
      */
     MCAPI enum class ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
     /**
      * @symbol ?handleCraftAction@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   1283619597
+     * @hash   1284449901
      */
     MCAPI enum class ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @symbol ?handleCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@@Z
-     * @hash   -1277134805
+     * @hash   -1276304501
      */
     MCAPI enum class ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
     /**
      * @symbol ?handleCreate@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCreate@@@Z
-     * @hash   316927535
+     * @hash   317757839
      */
     MCAPI enum class ItemStackNetResult handleCreate(class ItemStackRequestActionCreate const &);
     /**
      * @symbol ?isCraftRequest@ItemStackRequestActionCraftHandler@@QEBA_NXZ
-     * @hash   376637388
+     * @hash   377467692
      */
     MCAPI bool isCraftRequest() const;
     /**
      * @symbol ?onContainerScreenOpen@ItemStackRequestActionCraftHandler@@QEAAXAEBVContainerScreenContext@@@Z
-     * @hash   -662701736
+     * @hash   -661871432
      */
     MCAPI void onContainerScreenOpen(class ContainerScreenContext const &);
     /**
      * @symbol ?postRequest@ItemStackRequestActionCraftHandler@@QEAAX_N@Z
-     * @hash   -1461700222
+     * @hash   -1460869918
      */
     MCAPI void postRequest(bool);
     /**
      * @symbol ?preHandleAction@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
-     * @hash   -909603229
+     * @hash   -908772925
      */
     MCAPI enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
 
 //private:
     /**
      * @symbol ?_createCraftInputs@ItemStackRequestActionCraftHandler@@AEAA?AV?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   1533710323
+     * @hash   1534540627
      */
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
     /**
      * @symbol ?_setCreatedItemOutputSlot@ItemStackRequestActionCraftHandler@@AEAA?AW4ItemStackNetResult@@E@Z
-     * @hash   -1242528665
+     * @hash   -1241698361
      */
     MCAPI enum class ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 

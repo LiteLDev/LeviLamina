@@ -27,57 +27,57 @@ public:
 public:
     /**
      * @symbol ??0ScoreboardId@@QEAA@_J@Z
-     * @hash   -1789738091
+     * @hash   -1788907787
      */
     MCAPI ScoreboardId(__int64);
     /**
      * @symbol ??0ScoreboardId@@QEAA@XZ
-     * @hash   -157336581
+     * @hash   -156506277
      */
     MCAPI ScoreboardId();
     /**
      * @symbol ??0ScoreboardId@@QEAA@AEBU0@@Z
-     * @hash   1966273615
+     * @hash   1967103919
      */
     MCAPI ScoreboardId(struct ScoreboardId const &);
     /**
      * @symbol ?getHash@ScoreboardId@@QEBA_KXZ
-     * @hash   -33249707
+     * @hash   -32419403
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ?getIdentityDef@ScoreboardId@@QEBAAEBVIdentityDefinition@@XZ
-     * @hash   -1954026388
+     * @hash   -1953196084
      */
     MCAPI class IdentityDefinition const & getIdentityDef() const;
     /**
      * @symbol ?isValid@ScoreboardId@@QEBA_NXZ
-     * @hash   1872742950
+     * @hash   1873573254
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??BScoreboardId@@QEBA_NXZ
-     * @hash   1699842434
+     * @hash   1700672738
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??9ScoreboardId@@QEBA_NAEBU0@@Z
-     * @hash   -147733159
+     * @hash   -146902855
      */
     MCAPI bool operator!=(struct ScoreboardId const &) const;
     /**
      * @symbol ??EScoreboardId@@QEAAAEAU0@XZ
-     * @hash   447235786
+     * @hash   448066090
      */
     MCAPI struct ScoreboardId & operator++();
     /**
      * @symbol ??4ScoreboardId@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1270305530
+     * @hash   -1269475226
      */
     MCAPI struct ScoreboardId & operator=(struct ScoreboardId const &);
     /**
      * @symbol ??8ScoreboardId@@QEBA_NAEBU0@@Z
-     * @hash   -1078765370
+     * @hash   -1077935066
      */
     MCAPI bool operator==(struct ScoreboardId const &) const;
     /**

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createLocalPlayerPreMoveJumpSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   354821946
+     * @hash   354868074
      */
     MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem();
     /**
      * @symbol ?createPlayerPostMoveSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -230572790
+     * @hash   -230526662
      */
     MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();
 

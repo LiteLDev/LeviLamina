@@ -38,14 +38,14 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@SingleBlockFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1407061244
+     * @hash   1407891548
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 //private:
     /**
      * @symbol ?_mayAttach@SingleBlockFeature@@AEBAPEBVBlock@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   2007937905
+     * @hash   2008768209
      */
     MCAPI class Block const * _mayAttach(class IBlockWorldGenAPI &, class BlockPos const &) const;
 

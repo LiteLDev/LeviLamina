@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0CallbackToken@@QEAA@V?$weak_ptr@VCallbackTokenCancelState@@@std@@@Z
-     * @hash   1460525048
+     * @hash   1460571176
      */
     MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
     /**
      * @symbol ??0CallbackToken@@QEAA@$$QEAV0@@Z
-     * @hash   118314769
+     * @hash   118360897
      */
     MCAPI CallbackToken(class CallbackToken &&);
     /**
@@ -46,17 +46,17 @@ public:
     MCAPI CallbackToken();
     /**
      * @symbol ?cancelCallback@CallbackToken@@QEAAXXZ
-     * @hash   2032910769
+     * @hash   2032956897
      */
     MCAPI void cancelCallback();
     /**
      * @symbol ??4CallbackToken@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   892014940
+     * @hash   892061068
      */
     MCAPI class CallbackToken & operator=(class CallbackToken &&);
     /**
      * @symbol ?release@CallbackToken@@QEAAXXZ
-     * @hash   -1695023181
+     * @hash   -1694977053
      */
     MCAPI void release();
     /**

@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@Coral@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1136472438
+     * @hash   1137302742
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@Coral@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   907189617
+     * @hash   908019921
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@Coral@@UEBA_NH@Z
-     * @hash   2144639127
+     * @hash   2145469431
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@Coral@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -257949755
+     * @hash   -257119451
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@Coral@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1954708055
+     * @hash   1955538359
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@Coral@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   735133715
+     * @hash   735964019
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@Coral@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   191616413
+     * @hash   192446717
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@Coral@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1541918904
+     * @hash   -1541088600
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@Coral@@UEBAHAEBVBlock@@@Z
-     * @hash   983454081
+     * @hash   984284385
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -288,13 +288,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@Coral@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1330447373
+     * @hash   -1329617069
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@Coral@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1227982859
+     * @hash   -1227152555
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -305,7 +305,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@Coral@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1795750343
+     * @hash   1796580647
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -316,13 +316,13 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@Coral@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1213944385
+     * @hash   -1213114081
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@Coral@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   505545301
+     * @hash   506375605
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -345,14 +345,14 @@ public:
 #endif
     /**
      * @symbol ??0Coral@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   822596703
+     * @hash   823427007
      */
     MCAPI Coral(std::string const &, int);
 
 //protected:
     /**
      * @symbol ?checkAlive@Coral@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1763915540
+     * @hash   1764745844
      */
     MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
 

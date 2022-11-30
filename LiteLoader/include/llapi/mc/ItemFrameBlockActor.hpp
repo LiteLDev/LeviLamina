@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ItemFrameBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1477038151
+     * @hash   -1476207847
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ItemFrameBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1432738984
+     * @hash   -1431908680
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -396245502
+     * @hash   -395415198
      */
     virtual void tick(class BlockSource &);
     /**
@@ -68,7 +68,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?onRemoved@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -392796034
+     * @hash   -391965730
      */
     virtual void onRemoved(class BlockSource &);
     /**
@@ -121,69 +121,69 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   940057719
+     * @hash   940888023
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1442348211
+     * @hash   -1441517907
      */
     MCAPI ItemFrameBlockActor(class BlockPos, enum class BlockActorType, std::string const &);
     /**
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-     * @hash   -573358955
+     * @hash   -572528651
      */
     MCAPI ItemFrameBlockActor(class BlockPos);
     /**
      * @symbol ?actuallyDropItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   985263923
+     * @hash   986094227
      */
     MCAPI void actuallyDropItem(class BlockSource &, bool);
     /**
      * @symbol ?dropFramedItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   1061504067
+     * @hash   1062334371
      */
     MCAPI void dropFramedItem(class BlockSource &, bool);
     /**
      * @symbol ?getFramedItem@ItemFrameBlockActor@@QEBAAEBVItemInstance@@XZ
-     * @hash   -1907229482
+     * @hash   -1906399178
      */
     MCAPI class ItemInstance const & getFramedItem() const;
     /**
      * @symbol ?getRotation@ItemFrameBlockActor@@QEAAMXZ
-     * @hash   -680029568
+     * @hash   -679199264
      */
     MCAPI float getRotation();
     /**
      * @symbol ?rotateFramedItem@ItemFrameBlockActor@@QEAAXXZ
-     * @hash   809452029
+     * @hash   810282333
      */
     MCAPI void rotateFramedItem();
     /**
      * @symbol ?setItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@AEBVItemInstance@@@Z
-     * @hash   -408362467
+     * @hash   -407532163
      */
     MCAPI void setItem(class BlockSource &, class ItemInstance const &);
     /**
      * @symbol ?updateNameTag@ItemFrameBlockActor@@QEAAXXZ
-     * @hash   2112768721
+     * @hash   2113599025
      */
     MCAPI void updateNameTag();
     /**
      * @symbol ?ROTATION_DEGREES@ItemFrameBlockActor@@2MB
-     * @hash   1138852683
+     * @hash   1138975691
      */
     MCAPI static float const ROTATION_DEGREES;
 
 //private:
     /**
      * @symbol ?_checkMapRemoval@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEAVItemInstance@@@Z
-     * @hash   1252955779
+     * @hash   1253786083
      */
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     /**
      * @symbol ?_updateBit@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEBV?$ItemStateVariant@_N@@AEBVHashedString@@@Z
-     * @hash   -775917882
+     * @hash   -775087578
      */
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 

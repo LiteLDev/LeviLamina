@@ -59,23 +59,23 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   895752671
+     * @hash   896582975
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VFuelItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1455285457
+     * @hash   1456115761
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@FuelItemComponent@@SAXXZ
-     * @hash   -363490641
+     * @hash   -362660337
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FuelItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1113299200
+     * @hash   -1112468896
      */
     MCAPI static class HashedString const & getIdentifier();
 

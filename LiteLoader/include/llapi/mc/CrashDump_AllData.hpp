@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0CrashDump_AllData@@QEAA@XZ
-     * @hash   -821982205
+     * @hash   -821151901
      */
     MCAPI CrashDump_AllData();
 

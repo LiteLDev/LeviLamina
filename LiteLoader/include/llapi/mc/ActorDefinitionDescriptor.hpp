@@ -25,104 +25,104 @@ class ActorDefinitionDescriptor {
 public:
     /**
      * @symbol ??0ActorDefinitionDescriptor@@QEAA@AEBV0@@Z
-     * @hash   -419850127
+     * @hash   -419803999
      */
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ??0ActorDefinitionDescriptor@@QEAA@$$QEAV0@@Z
-     * @hash   1721522743
+     * @hash   1721568871
      */
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
     /**
      * @symbol ??0ActorDefinitionDescriptor@@QEAA@XZ
-     * @hash   -907846413
+     * @hash   -907800285
      */
     MCAPI ActorDefinitionDescriptor();
     /**
      * @symbol ?combine@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
-     * @hash   2111673089
+     * @hash   2111719217
      */
     MCAPI class ActorDefinitionDescriptor & combine(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ?contains@ActorDefinitionDescriptor@@QEBA_NAEBV1@@Z
-     * @hash   2045951901
+     * @hash   2045998029
      */
     MCAPI bool contains(class ActorDefinitionDescriptor const &) const;
     /**
      * @symbol ?hasComponent@ActorDefinitionDescriptor@@QEBA_NAEBVHashedString@@@Z
-     * @hash   1471562223
+     * @hash   1471608351
      */
     MCAPI bool hasComponent(class HashedString const &) const;
     /**
      * @symbol ?hasJumpSubComponent@ActorDefinitionDescriptor@@QEAA_NXZ
-     * @hash   1191079328
+     * @hash   1191125456
      */
     MCAPI bool hasJumpSubComponent();
     /**
      * @symbol ?hasMovementSubComponent@ActorDefinitionDescriptor@@QEAA_NXZ
-     * @hash   698917472
+     * @hash   698963600
      */
     MCAPI bool hasMovementSubComponent();
     /**
      * @symbol ?hasNavigationSubComponent@ActorDefinitionDescriptor@@QEAA_NXZ
-     * @hash   -1866546256
+     * @hash   -1866500128
      */
     MCAPI bool hasNavigationSubComponent();
     /**
      * @symbol ??4ActorDefinitionDescriptor@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1103653122
+     * @hash   1103699250
      */
     MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor &&);
     /**
      * @symbol ??4ActorDefinitionDescriptor@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1288839140
+     * @hash   -1288793012
      */
     MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ?overlaps@ActorDefinitionDescriptor@@QEBA_NAEBV1@@Z
-     * @hash   263519971
+     * @hash   263566099
      */
     MCAPI bool overlaps(class ActorDefinitionDescriptor const &) const;
     /**
      * @symbol ?subtract@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
-     * @hash   -714969879
+     * @hash   -714923751
      */
     MCAPI class ActorDefinitionDescriptor & subtract(class ActorDefinitionDescriptor const &);
     /**
      * @symbol ??1ActorDefinitionDescriptor@@QEAA@XZ
-     * @hash   -1258059357
+     * @hash   -1258013229
      */
     MCAPI ~ActorDefinitionDescriptor();
     /**
      * @symbol ?executeEvent@ActorDefinitionDescriptor@@SA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVariantParameterList@@@Z
-     * @hash   1417561761
+     * @hash   1417607889
      */
     MCAPI static bool executeEvent(class Actor &, std::string const &, class VariantParameterList const &);
     /**
      * @symbol ?executeTrigger@ActorDefinitionDescriptor@@SA_NAEAVActor@@AEBVActorDefinitionTrigger@@AEBVVariantParameterList@@@Z
-     * @hash   -2097276365
+     * @hash   -2097230237
      */
     MCAPI static bool executeTrigger(class Actor &, class ActorDefinitionTrigger const &, class VariantParameterList const &);
     /**
      * @symbol ?forceExecuteTrigger@ActorDefinitionDescriptor@@SAXAEAVActor@@AEBVActorDefinitionTrigger@@AEBVVariantParameterList@@@Z
-     * @hash   41681440
+     * @hash   41727568
      */
     MCAPI static void forceExecuteTrigger(class Actor &, class ActorDefinitionTrigger const &, class VariantParameterList const &);
     /**
      * @symbol ?forceExecuteTriggerChain@ActorDefinitionDescriptor@@SAXAEAVActor@@AEBVActorDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEBVVariantParameterList@@@Z
-     * @hash   345536520
+     * @hash   345582648
      */
     MCAPI static void forceExecuteTriggerChain(class Actor &, class ActorDefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
 
 //private:
     /**
      * @symbol ?_executeEvent@ActorDefinitionDescriptor@@CA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@4@AEBVVariantParameterList@@@Z
-     * @hash   -224649095
+     * @hash   -224602967
      */
     MCAPI static bool _executeEvent(class Actor &, std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
     /**
      * @symbol ?_forceExecuteTrigger@ActorDefinitionDescriptor@@CAXAEAVActor@@AEBVActorDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEBVVariantParameterList@@@Z
-     * @hash   854940471
+     * @hash   854986599
      */
     MCAPI static void _forceExecuteTrigger(class Actor &, class ActorDefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
 

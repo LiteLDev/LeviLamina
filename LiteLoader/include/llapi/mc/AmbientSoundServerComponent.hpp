@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4AmbientSoundServerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   99897146
+     * @hash   99943274
      */
     MCAPI class AmbientSoundServerComponent & operator=(class AmbientSoundServerComponent &&);
     /**
      * @symbol ??1AmbientSoundServerComponent@@QEAA@XZ
-     * @hash   1351394799
+     * @hash   1351440927
      */
     MCAPI ~AmbientSoundServerComponent();
 

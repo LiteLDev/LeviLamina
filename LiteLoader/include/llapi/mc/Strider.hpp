@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Strider@@MEAAXXZ
-     * @hash   345367547
+     * @hash   345413675
      */
     virtual void normalTick();
     /**
@@ -136,13 +136,13 @@ public:
     /**
      * @vftbl  254
      * @symbol ?getNextStep@Strider@@MEAAMM@Z
-     * @hash   371770958
+     * @hash   371817086
      */
     virtual float getNextStep(float);
     /**
      * @vftbl  265
      * @symbol ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
-     * @hash   -1572691178
+     * @hash   -1572645050
      */
     virtual bool shouldTryMakeStepSound();
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -158864503
+     * @hash   -158818375
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -1156333644
+     * @hash   -1156287516
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -199,7 +199,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Strider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1551573429
+     * @hash   1551619557
      */
     MCAPI Strider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

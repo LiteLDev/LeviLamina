@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorIntPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   -435465495
+     * @hash   -435419367
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorIntPropertyTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   2114270755
+     * @hash   2114316883
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
@@ -55,19 +55,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getName@ActorIntPropertyTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   -1638551121
+     * @hash   -1638504993
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  5
      * @symbol ?_serializeDomain@ActorIntPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -1478831213
+     * @hash   -1478785085
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorIntPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -764568946
+     * @hash   -764522818
      */
     virtual class Json::Value _serializeValue() const;
 

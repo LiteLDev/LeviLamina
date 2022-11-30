@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ
-     * @hash   1116550255
+     * @hash   1116596383
      */
     virtual class ContentTierInfo getContentTierInfo() const;
     /**
      * @symbol ??0ContentTierManager@@QEAA@XZ
-     * @hash   -984588386
+     * @hash   -984542258
      */
     MCAPI ContentTierManager();
 

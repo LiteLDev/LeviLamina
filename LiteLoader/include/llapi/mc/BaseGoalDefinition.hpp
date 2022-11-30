@@ -44,7 +44,7 @@ public:
 #endif
     /**
      * @symbol ?initialize@BaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVGoal@@@Z
-     * @hash   -419413873
+     * @hash   -419367745
      */
     MCAPI void initialize(class EntityContext &, class Goal &);
 

@@ -93,47 +93,47 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@HangingSignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   -1296851679
+     * @hash   -1296021375
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  133
      * @symbol ?getBlockToPlace@HangingSignItem@@MEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
-     * @hash   446367825
+     * @hash   447198129
      */
     virtual class Block const * getBlockToPlace(unsigned char, class Actor const &, class BlockPos) const;
     /**
      * @vftbl  134
      * @symbol ?_initializeTags@HangingSignItem@@EEAAXXZ
-     * @hash   2112493617
+     * @hash   2113323921
      */
     virtual void _initializeTags();
     /**
      * @symbol ??0HangingSignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlockActor@@@Z
-     * @hash   1522666957
+     * @hash   1523497261
      */
     MCAPI HangingSignItem(std::string const &, int, enum class SignBlockActor::SignType);
 
 //private:
     /**
      * @symbol ?_getCeilingHangingSignBlock@HangingSignItem@@AEBAPEBVBlock@@AEBVActor@@AEBEAEBVBlockPos@@@Z
-     * @hash   -789721179
+     * @hash   -788890875
      */
     MCAPI class Block const * _getCeilingHangingSignBlock(class Actor const &, unsigned char const &, class BlockPos const &) const;
     /**
      * @symbol ?_getWallHangingSignBlock@HangingSignItem@@AEBAPEBVBlock@@AEBVActor@@AEBEAEBVBlockPos@@@Z
-     * @hash   824338826
+     * @hash   825169130
      */
     MCAPI class Block const * _getWallHangingSignBlock(class Actor const &, unsigned char const &, class BlockPos const &) const;
 

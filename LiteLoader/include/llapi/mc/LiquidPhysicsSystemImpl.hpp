@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?_applyFlow@LiquidPhysicsSystemImpl@@SAXAEAUStateVectorComponent@@VVec3@@W4MaterialType@@@Z
-     * @hash   -1390664286
+     * @hash   -1390618158
      */
     MCAPI static void _applyFlow(struct StateVectorComponent &, class Vec3, enum class MaterialType);
     /**
      * @symbol ?_getLiquidBlocksInAABB@LiquidPhysicsSystemImpl@@SAXAEAV?$vector@ULiquidBlockEntry@@V?$allocator@ULiquidBlockEntry@@@std@@@std@@AEBVIConstBlockSource@@AEBVAABB@@W4MaterialType@@@Z
-     * @hash   -1941700515
+     * @hash   -1941654387
      */
     MCAPI static void _getLiquidBlocksInAABB(std::vector<struct LiquidBlockEntry> &, class IConstBlockSource const &, class AABB const &, enum class MaterialType);
     /**
      * @symbol ?_hasAdjacentFlowingBlock@LiquidPhysicsSystemImpl@@SA_NAEBV?$vector@ULiquidBlockEntry@@V?$allocator@ULiquidBlockEntry@@@std@@@std@@AEBVIConstBlockSource@@W4MaterialType@@@Z
-     * @hash   -854612001
+     * @hash   -854565873
      */
     MCAPI static bool _hasAdjacentFlowingBlock(std::vector<struct LiquidBlockEntry> const &, class IConstBlockSource const &, enum class MaterialType);
     /**
      * @symbol ?_hasFlowingBlock@LiquidPhysicsSystemImpl@@SA_NAEBV?$vector@ULiquidBlockEntry@@V?$allocator@ULiquidBlockEntry@@@std@@@std@@@Z
-     * @hash   152402459
+     * @hash   152448587
      */
     MCAPI static bool _hasFlowingBlock(std::vector<struct LiquidBlockEntry> const &);
 

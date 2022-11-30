@@ -159,19 +159,19 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@ActorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1590957004
+     * @hash   1591787308
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -503294422
+     * @hash   -502464118
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1685297574
+     * @hash   1686127878
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  116
      * @symbol ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   750290870
+     * @hash   751121174
      */
     virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@ActorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   -554750234
+     * @hash   -553919930
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORBLOCK
@@ -257,7 +257,7 @@ public:
 //protected:
     /**
      * @symbol ??0ActorBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   2035702348
+     * @hash   2036532652
      */
     MCAPI ActorBlock(std::string const &, int, class Material const &);
 

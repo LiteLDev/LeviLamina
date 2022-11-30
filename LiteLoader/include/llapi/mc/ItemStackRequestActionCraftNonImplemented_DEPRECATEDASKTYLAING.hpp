@@ -63,7 +63,7 @@ public:
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@QEAA@XZ
-     * @hash   21108888
+     * @hash   21939192
      */
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 

@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0SlotData@@QEAA@XZ
-     * @hash   1980390308
+     * @hash   1980436436
      */
     MCAPI SlotData();
     /**

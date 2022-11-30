@@ -100,24 +100,24 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   168051672
+     * @hash   168881976
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  87
      * @symbol ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     * @hash   -353350344
+     * @hash   -352520040
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
@@ -135,17 +135,17 @@ public:
     /**
      * @vftbl  120
      * @symbol ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     * @hash   -471224625
+     * @hash   -470394321
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
      * @symbol ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -579253564
+     * @hash   -578423260
      */
     MCAPI RangedWeaponItem(std::string const &, int);
     /**
      * @symbol ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
-     * @hash   -1553152253
+     * @hash   -1552321949
      */
     MCAPI float getLaunchPower(int, int, int) const;
 

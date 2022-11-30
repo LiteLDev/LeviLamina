@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0OpenDoorAnnotationComponent@@QEAA@XZ
-     * @hash   -1914972878
+     * @hash   -1914926750
      */
     MCAPI OpenDoorAnnotationComponent();
     /**
@@ -41,24 +41,24 @@ public:
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     /**
      * @symbol ?checkPath@OpenDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
-     * @hash   -1243662038
+     * @hash   -1243615910
      */
     MCAPI void checkPath(class Mob &);
     /**
      * @symbol ?initFromDefinition@OpenDoorAnnotationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   232466898
+     * @hash   232513026
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onComponentRemoved@OpenDoorAnnotationComponent@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -1530938934
+     * @hash   -1530892806
      */
     MCAPI void onComponentRemoved(class EntityContext &);
 
 //private:
     /**
      * @symbol ?_cleanUp@OpenDoorAnnotationComponent@@AEAAXAEAVMob@@@Z
-     * @hash   1049570561
+     * @hash   1049616689
      */
     MCAPI void _cleanUp(class Mob &);
 

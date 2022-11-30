@@ -48,7 +48,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?_fillArea@OceanMixerOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1HV?$OperationGraphResult@W4BiomeTemperatureCategory@@@@@Z
-     * @hash   -1101576575
+     * @hash   -1100746271
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome *, class Biome *> &, class Pos2d const &, class Pos2d const &, int, class OperationGraphResult<enum class BiomeTemperatureCategory>) const;
     /**
@@ -59,7 +59,7 @@ public:
     virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const &, class Pos2d const &) const;
     /**
      * @symbol ??0OceanMixerOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@W4BiomeTemperatureCategory@@VPos2d@@@@@2@AEBVBiomeRegistry@@AEAVBiome@@3@Z
-     * @hash   1633994083
+     * @hash   1634824387
      */
     MCAPI OceanMixerOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<enum class BiomeTemperatureCategory, class Pos2d>> &, class BiomeRegistry const &, class Biome &, class Biome &);
 

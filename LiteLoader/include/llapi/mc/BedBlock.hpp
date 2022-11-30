@@ -145,19 +145,19 @@ public:
     /**
      * @vftbl  56
      * @symbol ?canFillAtPos@BedBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1797217702
+     * @hash   -1796387398
      */
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  57
      * @symbol ?sanitizeFillBlock@BedBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-     * @hash   -605368817
+     * @hash   -604538513
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  58
      * @symbol ?onFillBlock@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1184235903
+     * @hash   1185066207
      */
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@BedBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   116798032
+     * @hash   117628336
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  81
      * @symbol ?updateEntityAfterFallOn@BedBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   590554636
+     * @hash   591384940
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
@@ -195,31 +195,31 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@BedBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -2043388000
+     * @hash   -2042557696
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -420038034
+     * @hash   -419207730
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@BedBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1539243255
+     * @hash   -1538412951
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1098751326
+     * @hash   1099581630
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   2073197106
+     * @hash   2074027410
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -256,19 +256,19 @@ public:
     /**
      * @vftbl  145
      * @symbol ?telemetryVariant@BedBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -989727135
+     * @hash   -988896831
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@BedBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   507425932
+     * @hash   508256236
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@BedBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   132589762
+     * @hash   133420066
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -294,13 +294,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1210174872
+     * @hash   -1209344568
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  170
      * @symbol ?onFallOn@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   -1759039916
+     * @hash   -1758209612
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@BedBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1494992815
+     * @hash   -1494162511
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -343,37 +343,37 @@ public:
 #endif
     /**
      * @symbol ??0BedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1631395734
+     * @hash   -1630565430
      */
     MCAPI BedBlock(std::string const &, int);
     /**
      * @symbol ?HEAD_PIECE_DATA@BedBlock@@2GB
-     * @hash   -1765467060
+     * @hash   -1765344052
      */
     MCAPI static unsigned short const HEAD_PIECE_DATA;
     /**
      * @symbol ?OCCUPIED_DATA@BedBlock@@2GB
-     * @hash   -851071376
+     * @hash   -850948368
      */
     MCAPI static unsigned short const OCCUPIED_DATA;
     /**
      * @symbol ?findWakeupPosition@BedBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@_NAEBV?$optional@VVec3@@@3@@Z
-     * @hash   -1763453916
+     * @hash   -1762623612
      */
     MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, bool, class std::optional<class Vec3> const &);
     /**
      * @symbol ?isDangerousSpawnBlock@BedBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1746500554
+     * @hash   1747330858
      */
     MCAPI static bool isDangerousSpawnBlock(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?isValidStandUpPosition@BedBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -313068356
+     * @hash   -312238052
      */
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?setOccupied@BedBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   913453168
+     * @hash   914283472
      */
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@ChorusPlantBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -943656296
+     * @hash   -942825992
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -189,13 +189,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@ChorusPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2078906904
+     * @hash   -2078076600
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ChorusPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1028672326
+     * @hash   -1027842022
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ChorusPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -267845266
+     * @hash   -267014962
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@ChorusPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1959236136
+     * @hash   -1958405832
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -273,13 +273,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@ChorusPlantBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   929973822
+     * @hash   930804126
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ChorusPlantBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   2029785014
+     * @hash   2030615318
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSPLANTBLOCK
@@ -296,27 +296,27 @@ public:
 #endif
     /**
      * @symbol ??0ChorusPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1406365718
+     * @hash   1407196022
      */
     MCAPI ChorusPlantBlock(std::string const &, int);
     /**
      * @symbol ?PLANT_HEIGHT@ChorusPlantBlock@@2MB
-     * @hash   -1759457355
+     * @hash   -1759334347
      */
     MCAPI static float const PLANT_HEIGHT;
     /**
      * @symbol ?PLANT_ITEM_DIMENSION@ChorusPlantBlock@@2MB
-     * @hash   -1725121831
+     * @hash   -1724998823
      */
     MCAPI static float const PLANT_ITEM_DIMENSION;
     /**
      * @symbol ?PLANT_WIDTH@ChorusPlantBlock@@2MB
-     * @hash   -664443793
+     * @hash   -664320785
      */
     MCAPI static float const PLANT_WIDTH;
     /**
      * @symbol ?canGrowChorus@ChorusPlantBlock@@SA_NAEBVBlock@@@Z
-     * @hash   -1070075869
+     * @hash   -1069245565
      */
     MCAPI static bool canGrowChorus(class Block const &);
 

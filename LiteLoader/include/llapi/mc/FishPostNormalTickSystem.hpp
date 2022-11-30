@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@FishPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   346753244
+     * @hash   346799372
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doFishPostNormalTickSystem@FishPostNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   1939281073
+     * @hash   1939327201
      */
     MCAPI static void _doFishPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

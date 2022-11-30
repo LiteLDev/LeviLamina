@@ -159,7 +159,7 @@ public:
     MCAPI TheEndDimension(class Level &, class Scheduler &);
     /**
      * @symbol ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
-     * @hash   -1649508089
+     * @hash   -1649385081
      */
     MCAPI static float const AMBIENT_MULTIPLIER;
 

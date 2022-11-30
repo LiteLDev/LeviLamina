@@ -168,7 +168,7 @@ public:
 private:
     /**
      * @symbol ?ARENA_SIZE_CHUNKS@EndDragonFight@@0HB
-     * @hash   -1931892726
+     * @hash   -1931769718
      */
     MCAPI static int const ARENA_SIZE_CHUNKS;
     /**
@@ -178,37 +178,37 @@ private:
     MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
     /**
      * @symbol ?GATEWAY_CHUNK_RADIUS@EndDragonFight@@0HB
-     * @hash   -747455391
+     * @hash   -747332383
      */
     MCAPI static int const GATEWAY_CHUNK_RADIUS;
     /**
      * @symbol ?GATEWAY_COUNT@EndDragonFight@@0HB
-     * @hash   443184602
+     * @hash   443307610
      */
     MCAPI static int const GATEWAY_COUNT;
     /**
      * @symbol ?GATEWAY_DISTANCE@EndDragonFight@@0HB
-     * @hash   1983246010
+     * @hash   1983369018
      */
     MCAPI static int const GATEWAY_DISTANCE;
     /**
      * @symbol ?GATEWAY_HEIGHT@EndDragonFight@@0HB
-     * @hash   -474364176
+     * @hash   -474241168
      */
     MCAPI static int const GATEWAY_HEIGHT;
     /**
      * @symbol ?TIME_BETWEEN_CRYSTAL_SCANS@EndDragonFight@@0HB
-     * @hash   -6454122
+     * @hash   -6331114
      */
     MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PLAYER_SCANS@EndDragonFight@@0HB
-     * @hash   -671700553
+     * @hash   -671577545
      */
     MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
     /**
      * @symbol ?TIME_BETWEEN_PORTAL_SCANS@EndDragonFight@@0HB
-     * @hash   -1349898778
+     * @hash   -1349775770
      */
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
 

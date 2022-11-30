@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@CarpetBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1850483784
+     * @hash   1851314088
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@CarpetBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1821462098
+     * @hash   -1820631794
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CarpetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   335984084
+     * @hash   336814388
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CarpetBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1145277540
+     * @hash   -1144447236
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -234,7 +234,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CarpetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1706036574
+     * @hash   -1705206270
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CarpetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2133635464
+     * @hash   -2132805160
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CarpetBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1150269138
+     * @hash   -1149438834
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -273,7 +273,7 @@ public:
 #endif
     /**
      * @symbol ??0CarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -837917239
+     * @hash   -837086935
      */
     MCAPI CarpetBlock(std::string const &, int, class Material const &);
 

@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@CocoaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   1868885874
+     * @hash   1869716178
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CocoaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   619038358
+     * @hash   619868662
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CocoaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1574102730
+     * @hash   -1573272426
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@CocoaBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1394950893
+     * @hash   -1394120589
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CocoaBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -983551538
+     * @hash   -982721234
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -245,13 +245,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CocoaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   965169738
+     * @hash   966000042
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@CocoaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -518753593
+     * @hash   -517923289
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CocoaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1078369004
+     * @hash   1079199308
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -273,13 +273,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@CocoaBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   537618618
+     * @hash   538448922
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CocoaBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2062743662
+     * @hash   -2061913358
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COCOABLOCK
@@ -291,12 +291,12 @@ public:
 #endif
     /**
      * @symbol ??0CocoaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1205085198
+     * @hash   -1204254894
      */
     MCAPI CocoaBlock(std::string const &, int);
     /**
      * @symbol ?isSupportedBy@CocoaBlock@@SA_NAEBVBlock@@@Z
-     * @hash   1993582231
+     * @hash   1994412535
      */
     MCAPI static bool isSupportedBy(class Block const &);
 

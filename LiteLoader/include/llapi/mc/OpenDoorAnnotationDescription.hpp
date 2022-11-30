@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@OpenDoorAnnotationDescription@@UEBAPEBDXZ
-     * @hash   701328543
+     * @hash   701374671
      */
     virtual char const * getJsonName() const;
     /**

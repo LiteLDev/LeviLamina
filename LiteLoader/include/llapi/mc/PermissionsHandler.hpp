@@ -30,42 +30,42 @@ public:
 public:
     /**
      * @symbol ??0PermissionsHandler@@QEAA@XZ
-     * @hash   -755948318
+     * @hash   -755902190
      */
     MCAPI PermissionsHandler();
     /**
      * @symbol ??0PermissionsHandler@@QEAA@AEBV0@@Z
-     * @hash   14557137
+     * @hash   14603265
      */
     MCAPI PermissionsHandler(class PermissionsHandler const &);
     /**
      * @symbol ?addSaveData@PermissionsHandler@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1169700360
+     * @hash   1169746488
      */
     MCAPI void addSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   1301349686
+     * @hash   1301395814
      */
     MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
-     * @hash   -1363494126
+     * @hash   -1363447998
      */
     MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
-     * @hash   1887397051
+     * @hash   1887443179
      */
     MCAPI bool loadSaveData(class CompoundTag const &);
     /**
      * @symbol ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
-     * @hash   -2101321192
+     * @hash   -2101275064
      */
     MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
-     * @hash   766273982
+     * @hash   766320110
      */
     MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
@@ -80,17 +80,17 @@ public:
     MCAPI static std::string const DIFF_PLAYER_PERMISSION;
     /**
      * @symbol ?getDiff@PermissionsHandler@@SA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@0@Z
-     * @hash   1612254124
+     * @hash   1612300252
      */
     MCAPI static class std::optional<std::string> getDiff(class PermissionsHandler const &, class PermissionsHandler const &);
     /**
      * @symbol ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   541705765
+     * @hash   541751893
      */
     MCAPI static enum class PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     /**
      * @symbol ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z
-     * @hash   1907481779
+     * @hash   1907527907
      */
     MCAPI static std::string playerPermissionLevelToString(enum class PlayerPermissionLevel const &);
 

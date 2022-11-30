@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@WallBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2095654637
+     * @hash   -2094824333
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -56,13 +56,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1403757918
+     * @hash   -1402927614
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@WallBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   -1483579302
+     * @hash   -1482748998
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -184,13 +184,13 @@ public:
     /**
      * @vftbl  77
      * @symbol ?onStructureBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1932647657
+     * @hash   -1931817353
      */
     virtual void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  78
      * @symbol ?onStructureNeighborBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1970608007
+     * @hash   -1969777703
      */
     virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -201,19 +201,19 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@WallBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   1233551624
+     * @hash   1234381928
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1381348005
+     * @hash   1382178309
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@WallBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -563556761
+     * @hash   -562726457
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@WallBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1686338110
+     * @hash   -1685507806
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@WallBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -113126614
+     * @hash   -112296310
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@WallBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   177621509
+     * @hash   178451813
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@WallBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1461494637
+     * @hash   -1460664333
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -294,7 +294,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1013665007
+     * @hash   -1012834703
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -305,7 +305,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1814184487
+     * @hash   -1813354183
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@WallBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1245231513
+     * @hash   -1244401209
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -327,7 +327,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WallBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1663376015
+     * @hash   -1662545711
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLBLOCK
@@ -344,17 +344,17 @@ public:
 #endif
     /**
      * @symbol ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -155989222
+     * @hash   -155158918
      */
     MCAPI WallBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-     * @hash   261607424
+     * @hash   262437728
      */
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     /**
      * @symbol ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1986160110
+     * @hash   -1985329806
      */
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -364,12 +364,12 @@ public:
     MCAPI static float const POST_HEIGHT;
     /**
      * @symbol ?POST_WIDTH@WallBlock@@2MB
-     * @hash   -1468886035
+     * @hash   -1468763027
      */
     MCAPI static float const POST_WIDTH;
     /**
      * @symbol ?WALL_HEIGHT@WallBlock@@2MB
-     * @hash   -837105355
+     * @hash   -836982347
      */
     MCAPI static float const WALL_HEIGHT;
     /**
@@ -379,34 +379,34 @@ public:
     MCAPI static class std::array<std::string, 14> const WALL_NAMES;
     /**
      * @symbol ?WALL_WIDTH@WallBlock@@2MB
-     * @hash   -1978867655
+     * @hash   -1978744647
      */
     MCAPI static float const WALL_WIDTH;
 
 //private:
     /**
      * @symbol ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -261370563
+     * @hash   -260540259
      */
     MCAPI enum class WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?_getItemInstance@WallBlock@@AEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -386913374
+     * @hash   -386083070
      */
     MCAPI class ItemInstance _getItemInstance(class Block const &) const;
     /**
      * @symbol ?_isCovered@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVAABB@@@Z
-     * @hash   212830122
+     * @hash   213660426
      */
     MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
     /**
      * @symbol ?_shouldBePost@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1433581669
+     * @hash   1434411973
      */
     MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?_tryAddToTickingQueue@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   284872060
+     * @hash   285702364
      */
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
 

@@ -39,20 +39,20 @@ public:
     virtual ~ScriptServerNetworkEventHandler();
     /**
      * @vftbl  1
-     * @hash   1152046753
+     * @hash   1152092881
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?handleEvent@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z
-     * @hash   1169441525
+     * @hash   1169487653
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ChatEvent &);
 
 //private:
     /**
      * @symbol ?_handleChat@ScriptServerNetworkEventHandler@@AEBA_NAEAUChatEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   481303168
+     * @hash   481349296
      */
     MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 

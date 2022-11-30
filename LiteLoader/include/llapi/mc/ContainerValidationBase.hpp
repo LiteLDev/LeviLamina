@@ -33,17 +33,17 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
     /**
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   813325030
+     * @hash   814155334
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -405037678
+     * @hash   -404207374
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1845513436
+     * @hash   -1844683132
      */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -73,7 +73,7 @@ public:
     MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1361277041
+     * @hash   -1360446737
      */
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif

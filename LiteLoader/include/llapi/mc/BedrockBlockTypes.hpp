@@ -39,12 +39,12 @@ namespace BedrockBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
      * @symbol ?registerBlocks@BedrockBlockTypes@@YAXXZ
-     * @hash   -33793378
+     * @hash   -32963074
      */
     MCAPI void registerBlocks();
     /**
      * @symbol ?unregisterBlocks@BedrockBlockTypes@@YAXXZ
-     * @hash   -671150160
+     * @hash   -670319856
      */
     MCAPI void unregisterBlocks();
 

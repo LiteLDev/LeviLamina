@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SoulTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1748832550
+     * @hash   1749662854
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@SoulTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1854708119
+     * @hash   -1853877815
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -231,12 +231,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SoulTorchBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   147805954
+     * @hash   148636258
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0SoulTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1618952354
+     * @hash   1619782658
      */
     MCAPI SoulTorchBlock(std::string const &, int);
 

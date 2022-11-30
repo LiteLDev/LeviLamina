@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   929735448
+     * @hash   929827704
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
@@ -51,13 +51,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getIngredient@FireworksRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   -1570560325
+     * @hash   -1569730021
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   1663431751
+     * @hash   1663524007
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
@@ -69,7 +69,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?matches@FireworksRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -1503955348
+     * @hash   -1503125044
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
@@ -80,7 +80,7 @@ public:
     virtual int size() const;
     /**
      * @symbol ??0FireworksRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@PEBVUUID@mce@@@Z
-     * @hash   -543653155
+     * @hash   -542822851
      */
     MCAPI FireworksRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
     /**

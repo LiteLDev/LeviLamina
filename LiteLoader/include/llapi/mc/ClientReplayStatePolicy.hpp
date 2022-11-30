@@ -38,41 +38,41 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
-     * @hash   68097229
+     * @hash   68143357
      */
     virtual bool isReplayNeeded(enum class AdvanceFrameResult) const;
     /**
      * @vftbl  2
      * @symbol ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAUIActorMovementProxy@@_K1@Z
-     * @hash   -14382763
+     * @hash   -14336635
      */
     virtual bool canRewindToFrame(struct IActorMovementProxy &, unsigned __int64, unsigned __int64);
     /**
      * @vftbl  3
      * @symbol ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
-     * @hash   2127529771
+     * @hash   2127575899
      */
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
     /**
      * @vftbl  4
      * @symbol ?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z
-     * @hash   1020365974
+     * @hash   1020412102
      */
     virtual void flagUnsupportedMovement(unsigned __int64);
     /**
      * @vftbl  5
      * @symbol ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAUIActorMovementProxy@@@Z
-     * @hash   900438167
+     * @hash   900484295
      */
     virtual void storeCurrentFrameSupported(unsigned __int64, struct IActorMovementProxy &);
     /**
      * @symbol ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAUIActorMovementProxy@@@Z
-     * @hash   695964821
+     * @hash   696010949
      */
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     /**
      * @symbol ?_isSupportedMovementMode@ClientReplayStatePolicy@@QEBA_NAEBUIMobMovementProxy@@@Z
-     * @hash   -1791058473
+     * @hash   -1791012345
      */
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
 

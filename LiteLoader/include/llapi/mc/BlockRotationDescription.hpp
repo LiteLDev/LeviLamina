@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockRotationDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2098008264
+     * @hash   2098838568
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockRotationDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1350576196
+     * @hash   -1349745892
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -61,13 +61,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockRotationDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1889207842
+     * @hash   1890038146
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockRotationDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   634339200
+     * @hash   635169504
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -77,7 +77,7 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRotationDescription@@SAXXZ
-     * @hash   2050300739
+     * @hash   2051131043
      */
     MCAPI static void bindType();
 

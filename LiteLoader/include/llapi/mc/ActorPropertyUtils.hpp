@@ -22,27 +22,27 @@ namespace ActorPropertyUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_checkAndQueueBoolValue@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_KPEAVActorDefinitionDiffList@@_N@Z
-     * @hash   -705157659
+     * @hash   -704327355
      */
     MCAPI bool _checkAndQueueBoolValue(class PropertyGroup const &, unsigned __int64, class ActorDefinitionDiffList *, bool);
     /**
      * @symbol ?_checkAndQueueEnumIndexValueByHash@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_K1PEAVActorDefinitionDiffList@@1@Z
-     * @hash   932504532
+     * @hash   933334836
      */
     MCAPI bool _checkAndQueueEnumIndexValueByHash(class PropertyGroup const &, unsigned __int64, unsigned __int64, class ActorDefinitionDiffList *, unsigned __int64);
     /**
      * @symbol ?_checkAndQueueFloatValue@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_K1PEAVActorDefinitionDiffList@@M@Z
-     * @hash   -1447119170
+     * @hash   -1446288866
      */
     MCAPI bool _checkAndQueueFloatValue(class PropertyGroup const &, unsigned __int64, unsigned __int64, class ActorDefinitionDiffList *, float);
     /**
      * @symbol ?_checkAndQueueIntValue@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_K1PEAVActorDefinitionDiffList@@H@Z
-     * @hash   -212767776
+     * @hash   -211937472
      */
     MCAPI bool _checkAndQueueIntValue(class PropertyGroup const &, unsigned __int64, unsigned __int64, class ActorDefinitionDiffList *, int);
     /**
      * @symbol ?addPendingEventResponseChange@ActorPropertyUtils@@YAXAEBVPropertyComponent@@AEAVActor@@AEBVHashedString@@AEBUMolangScriptArg@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1588546479
+     * @hash   -1587716175
      */
     MCAPI void addPendingEventResponseChange(class PropertyComponent const &, class Actor &, class HashedString const &, struct MolangScriptArg const &, std::string const &);
 

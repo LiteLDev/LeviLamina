@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@LavaSlime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1681007317
+     * @hash   1681053445
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -174,7 +174,7 @@ public:
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
-     * @hash   343709879
+     * @hash   343756007
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@LavaSlime@@UEBAHXZ
-     * @hash   2068623179
+     * @hash   2068669307
      */
     virtual int getArmorValue() const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  352
      * @symbol ?jumpFromGround@LavaSlime@@MEAAXXZ
-     * @hash   1129644743
+     * @hash   1129690871
      */
     virtual void jumpFromGround();
     /**
@@ -224,18 +224,18 @@ public:
     /**
      * @vftbl  369
      * @symbol ?decreaseSquish@LavaSlime@@MEAAXXZ
-     * @hash   476181421
+     * @hash   476227549
      */
     virtual void decreaseSquish();
     /**
      * @vftbl  370
      * @symbol ?createChild@LavaSlime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-     * @hash   1142591599
+     * @hash   1142637727
      */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /**
      * @symbol ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -946835932
+     * @hash   -946789804
      */
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

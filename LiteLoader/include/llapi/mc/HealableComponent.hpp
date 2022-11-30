@@ -32,19 +32,19 @@ public:
 public:
     /**
      * @symbol ?getInteraction@HealableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   606098265
+     * @hash   606144393
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 //private:
     /**
      * @symbol ?_useFeedItem@HealableComponent@@AEAAXAEAVActor@@AEAVPlayer@@AEBUFeedItem@@@Z
-     * @hash   -593933817
+     * @hash   -593887689
      */
     MCAPI void _useFeedItem(class Actor &, class Player &, struct FeedItem const &);
     /**
      * @symbol ?_canHeal@HealableComponent@@CA_NAEAVActor@@AEBVItemStack@@PEBVHealableDefinition@@@Z
-     * @hash   -359188001
+     * @hash   -359141873
      */
     MCAPI static bool _canHeal(class Actor &, class ItemStack const &, class HealableDefinition const *);
 

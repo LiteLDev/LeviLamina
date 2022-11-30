@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@NetherFungusBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   558308559
+     * @hash   559138863
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -778614137
+     * @hash   -777783833
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -183,19 +183,19 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   2074390394
+     * @hash   2075220698
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -411869792
+     * @hash   -411039488
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@NetherFungusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1085071759
+     * @hash   -1084241455
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@NetherFungusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -256189387
+     * @hash   -255359083
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1786202943
+     * @hash   -1785372639
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -279,7 +279,7 @@ public:
 #endif
     /**
      * @symbol ??0NetherFungusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1255075523
+     * @hash   -1254245219
      */
     MCAPI NetherFungusBlock(std::string const &, int);
 

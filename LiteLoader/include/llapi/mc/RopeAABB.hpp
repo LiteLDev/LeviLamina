@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getContactPoint@RopeAABB@@QEBA_NAEBVVec3@@MAEAUAABBContactPoint@@@Z
-     * @hash   749829261
+     * @hash   750659565
      */
     MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
 

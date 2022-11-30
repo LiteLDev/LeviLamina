@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@JigsawBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   799059646
+     * @hash   799889950
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@JigsawBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -2004254853
+     * @hash   -2003424549
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -202,19 +202,19 @@ public:
     /**
      * @vftbl  148
      * @symbol ?getRenderBlock@JigsawBlock@@UEBAAEBVBlock@@XZ
-     * @hash   -906840003
+     * @hash   -906009699
      */
     virtual class Block const & getRenderBlock() const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@JigsawBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   1048845170
+     * @hash   1049675474
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  150
      * @symbol ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     * @hash   915316630
+     * @hash   916146934
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
@@ -273,12 +273,12 @@ public:
 #endif
     /**
      * @symbol ??0JigsawBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   642194426
+     * @hash   643024730
      */
     MCAPI JigsawBlock(std::string const &, int);
     /**
      * @symbol ?canAttach@JigsawBlock@@SA_NAEBVJigsawBlockInfo@@0@Z
-     * @hash   496523818
+     * @hash   497354122
      */
     MCAPI static bool canAttach(class JigsawBlockInfo const &, class JigsawBlockInfo const &);
 

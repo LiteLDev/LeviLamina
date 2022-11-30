@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@InstantDespawnDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInstantDespawnDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1370319754
+     * @hash   -1370273626
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition>> &);
 

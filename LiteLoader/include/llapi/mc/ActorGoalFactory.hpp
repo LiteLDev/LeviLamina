@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_initializeBedrock@ActorGoalFactory@@QEAAXXZ
-     * @hash   -2029758155
+     * @hash   -2029712027
      */
     MCAPI void _initializeBedrock();
 

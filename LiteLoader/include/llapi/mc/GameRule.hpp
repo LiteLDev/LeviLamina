@@ -40,12 +40,12 @@ public:
 public:
     /**
      * @symbol ??0GameRule@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1336101640
+     * @hash   -1335271336
      */
     MCAPI GameRule(std::string const &, bool);
     /**
      * @symbol ??0GameRule@@QEAA@$$QEAV0@@Z
-     * @hash   855383621
+     * @hash   855429749
      */
     MCAPI GameRule(class GameRule &&);
     /**
@@ -55,17 +55,17 @@ public:
     MCAPI GameRule(class GameRule const &);
     /**
      * @symbol ?allowUseInCommand@GameRule@@QEBA_NXZ
-     * @hash   1905581220
+     * @hash   1905627348
      */
     MCAPI bool allowUseInCommand() const;
     /**
      * @symbol ?canBeModifiedByPlayer@GameRule@@QEBA_NXZ
-     * @hash   482434764
+     * @hash   483265068
      */
     MCAPI bool canBeModifiedByPlayer() const;
     /**
      * @symbol ?getBool@GameRule@@QEBA_NXZ
-     * @hash   966684436
+     * @hash   966730564
      */
     MCAPI bool getBool() const;
     /**
@@ -85,52 +85,52 @@ public:
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getType@GameRule@@QEBA?AW4Type@1@XZ
-     * @hash   217330205
+     * @hash   217376333
      */
     MCAPI enum class GameRule::Type getType() const;
     /**
      * @symbol ?getValue@GameRule@@QEBAAEBTValue@1@XZ
-     * @hash   219927326
+     * @hash   219973454
      */
     MCAPI union GameRule::Value const & getValue() const;
     /**
      * @symbol ??4GameRule@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   347256488
+     * @hash   348086792
      */
     MCAPI class GameRule & operator=(class GameRule &&);
     /**
      * @symbol ?requiresCheats@GameRule@@QEBA_NXZ
-     * @hash   -695099650
+     * @hash   -694269346
      */
     MCAPI bool requiresCheats() const;
     /**
      * @symbol ?resetType@GameRule@@QEAAXW4Type@1@@Z
-     * @hash   1433369741
+     * @hash   1434200045
      */
     MCAPI void resetType(enum class GameRule::Type);
     /**
      * @symbol ?setBool@GameRule@@QEAA_N_NPEA_NPEAVValidationError@1@@Z
-     * @hash   -1604867513
+     * @hash   -1604037209
      */
     MCAPI bool setBool(bool, bool *, class GameRule::ValidationError *);
     /**
      * @symbol ?setFloat@GameRule@@QEAA_NMPEA_NPEAVValidationError@1@@Z
-     * @hash   -862387383
+     * @hash   -861557079
      */
     MCAPI bool setFloat(float, bool *, class GameRule::ValidationError *);
     /**
      * @symbol ?setInt@GameRule@@QEAA_NHPEA_NPEAVValidationError@1@@Z
-     * @hash   -2104219759
+     * @hash   -2103389455
      */
     MCAPI bool setInt(int, bool *, class GameRule::ValidationError *);
     /**
      * @symbol ?setTagDataNotFoundCallback@GameRule@@QEAAAEAV1@V?$function@$$A6AXAEAVGameRule@@@Z@std@@@Z
-     * @hash   42868387
+     * @hash   43698691
      */
     MCAPI class GameRule & setTagDataNotFoundCallback(class std::function<void (class GameRule &)>);
     /**
      * @symbol ?setValidateValueCallback@GameRule@@QEAAAEAV1@V?$function@$$A6A_NAEBTValue@GameRule@@PEAVValidationError@2@@Z@std@@@Z
-     * @hash   -1061053723
+     * @hash   -1060223419
      */
     MCAPI class GameRule & setValidateValueCallback(class std::function<bool (union GameRule::Value const &, class GameRule::ValidationError *)>);
     /**
@@ -142,19 +142,19 @@ public:
 //protected:
     /**
      * @symbol ?_setDefaultValue@GameRule@@IEAAAEAV1@H@Z
-     * @hash   -1927777901
+     * @hash   -1926947597
      */
     MCAPI class GameRule & _setDefaultValue(int);
     /**
      * @symbol ?_setDefaultValue@GameRule@@IEAAAEAV1@_N@Z
-     * @hash   -519644680
+     * @hash   -518814376
      */
     MCAPI class GameRule & _setDefaultValue(bool);
 
 //private:
     /**
      * @symbol ?_set@GameRule@@AEAA_NAEBTValue@1@PEA_NPEAVValidationError@1@@Z
-     * @hash   57693685
+     * @hash   58523989
      */
     MCAPI bool _set(union GameRule::Value const &, bool *, class GameRule::ValidationError *);
 

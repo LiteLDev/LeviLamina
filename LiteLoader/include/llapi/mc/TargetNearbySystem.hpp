@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@TargetNearbySystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1867913201
+     * @hash   -1867867073
      */
     virtual void tick(class EntityRegistry &);
 

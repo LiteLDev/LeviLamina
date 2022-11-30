@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@ObsidianBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1359898423
+     * @hash   1360728727
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -224,12 +224,12 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ObsidianBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   680839323
+     * @hash   681669627
      */
     MCAPI ObsidianBlock(std::string const &, int, bool);
     /**
      * @symbol ?poofParticles@ObsidianBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1629485023
+     * @hash   1630315327
      */
     MCAPI void poofParticles(class BlockSource &, class BlockPos const &) const;
 

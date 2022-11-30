@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@BreakBlocksSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1015116748
+     * @hash   -1015070620
      */
     virtual void tick(class EntityRegistry &);
 

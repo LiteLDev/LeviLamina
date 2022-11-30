@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@USettingsScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
-     * @hash   -1462455474
+     * @hash   -1462409346
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
     /**
      * @symbol ??0SettingsScreenCapabilities@@QEAA@AEBU0@@Z
-     * @hash   1206390655
+     * @hash   1206436783
      */
     MCAPI SettingsScreenCapabilities(struct SettingsScreenCapabilities const &);
 

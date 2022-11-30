@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BlueFireBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1502093315
+     * @hash   -1501263011
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BlueFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1255498157
+     * @hash   -1254667853
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BlueFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   947806751
+     * @hash   948637055
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@BlueFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1931383703
+     * @hash   1932214007
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@BlueFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -290062942
+     * @hash   -289232638
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BlueFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   927490039
+     * @hash   928320343
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BlueFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1297116749
+     * @hash   -1296286445
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BlueFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1001164563
+     * @hash   1001994867
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -296,12 +296,12 @@ public:
 #endif
     /**
      * @symbol ??0BlueFireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1196302261
+     * @hash   -1195471957
      */
     MCAPI BlueFireBlock(std::string const &, int);
     /**
      * @symbol ?isValidBlueFireFuel@BlueFireBlock@@SA_NAEBVBlockLegacy@@@Z
-     * @hash   793892847
+     * @hash   794723151
      */
     MCAPI static bool isValidBlueFireFuel(class BlockLegacy const &);
 

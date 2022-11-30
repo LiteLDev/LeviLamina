@@ -37,19 +37,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   2096466762
+     * @hash   2097297066
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@Trade1Ingredient2ContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -630276836
+     * @hash   -629446532
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   759878665
+     * @hash   760708969
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -65,19 +65,19 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   233196557
+     * @hash   234026861
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   1451559265
+     * @hash   1452389569
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@Trade1Ingredient2ContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   1761961274
+     * @hash   1762007402
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
@@ -88,7 +88,7 @@ public:
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /**
      * @symbol ??0Trade1Ingredient2ContainerValidation@@QEAA@_N@Z
-     * @hash   1276316651
+     * @hash   1277146955
      */
     MCAPI Trade1Ingredient2ContainerValidation(bool);
 

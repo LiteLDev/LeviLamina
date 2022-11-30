@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0LegacyPackIdVersion@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1598295246
+     * @hash   1599125550
      */
     MCAPI LegacyPackIdVersion(std::string const &, std::string const &);
     /**
      * @symbol ?getUpgradedPackId@LegacyPackIdVersion@@QEBA?AUPackIdVersion@@XZ
-     * @hash   -653991948
+     * @hash   -653161644
      */
     MCAPI struct PackIdVersion getUpgradedPackId() const;
     /**

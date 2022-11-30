@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ??0PhotoStorage@@QEAA@AEBVPath@Core@@@Z
-     * @hash   -602015998
+     * @hash   -601185694
      */
     MCAPI PhotoStorage(class Core::Path const &);
     /**
      * @symbol ??1PhotoStorage@@QEAA@XZ
-     * @hash   478172659
+     * @hash   479002963
      */
     MCAPI ~PhotoStorage();
     /**
@@ -65,7 +65,7 @@ public:
 //private:
     /**
      * @symbol ?_readManifest@PhotoStorage@@AEAAXXZ
-     * @hash   905468903
+     * @hash   906299207
      */
     MCAPI void _readManifest();
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@SplashPotionEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   1377025472
+     * @hash   1377071600
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@SplashPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   1202365689
+     * @hash   1202411817
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@SplashPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   407136250
+     * @hash   407182378
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@SplashPotionEffectSubcomponent@@UEAAPEBDXZ
-     * @hash   1672090485
+     * @hash   1672136613
      */
     virtual char const * getName();
     /**
      * @symbol ??0SplashPotionEffectSubcomponent@@QEAA@XZ
-     * @hash   1572416452
+     * @hash   1572462580
      */
     MCAPI SplashPotionEffectSubcomponent();
     /**
      * @symbol ?applyMobEffects@SplashPotionEffectSubcomponent@@QEAAXAEBVMobEffectInstance@@AEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@AEAVActor@@AEBV?$shared_ptr@$$CBVPotion@@@4@MPEAVMobEffect@@AEAVHitResult@@H@Z
-     * @hash   69354416
+     * @hash   69400544
      */
     MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
 

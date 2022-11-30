@@ -37,17 +37,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@OreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -646518887
+     * @hash   -645688583
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0OreFeature@@QEAA@XZ
-     * @hash   472355584
+     * @hash   473185888
      */
     MCAPI OreFeature();
     /**
      * @symbol ??0OreFeature@@QEAA@H$$QEAV?$vector@UReplaceRule@@V?$allocator@UReplaceRule@@@std@@@std@@@Z
-     * @hash   1796378382
+     * @hash   1797208686
      */
     MCAPI OreFeature(int, std::vector<struct ReplaceRule> &&);
 

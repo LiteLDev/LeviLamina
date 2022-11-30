@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Snowball@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   478953355
+     * @hash   478999483
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -155,7 +155,7 @@ public:
     virtual void __unk_vfn_283();
     /**
      * @symbol ??0Snowball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -536072738
+     * @hash   -536026610
      */
     MCAPI Snowball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

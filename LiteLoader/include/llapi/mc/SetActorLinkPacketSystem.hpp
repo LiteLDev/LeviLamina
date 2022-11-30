@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSetActorLinkPacketSystem@SetActorLinkPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1861684324
+     * @hash   1861730452
      */
     MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
 

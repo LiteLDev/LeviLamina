@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?updateFacingData@SculkVeinBlockBehavior@@UEBAHHAEBVBlock@@@Z
-     * @hash   -390446290
+     * @hash   -389615986
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
@@ -49,31 +49,31 @@ public:
     /**
      * @vftbl  3
      * @symbol ?attemptSpreadVeins@SculkVeinBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
-     * @hash   -990627459
+     * @hash   -989797155
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
      * @vftbl  4
      * @symbol ?attemptUseCharge@SculkVeinBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
-     * @hash   258693117
+     * @hash   259523421
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onDischarged@SculkVeinBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   680185004
+     * @hash   681015308
      */
     virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_attemptPlaceSculk@SculkVeinBlockBehavior@@CA_NAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVSculkSpreader@@AEAVRandom@@@Z
-     * @hash   1520372749
+     * @hash   1521203053
      */
     MCAPI static bool _attemptPlaceSculk(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class SculkSpreader &, class Random &);
     /**
      * @symbol ?_cleanUpVeinsWithSculkSubstrate@SculkVeinBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   435486100
+     * @hash   436316404
      */
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
 

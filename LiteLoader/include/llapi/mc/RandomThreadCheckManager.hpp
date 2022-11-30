@@ -63,7 +63,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?onAppResumed@RandomThreadCheckManager@@UEAAXXZ
-     * @hash   -1865614630
+     * @hash   -1865568502
      */
     virtual void onAppResumed();
 

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?packetSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-     * @hash   1527898799
+     * @hash   1527944927
      */
     virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /**
      * @vftbl  2
      * @symbol ?packetReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-     * @hash   -517721209
+     * @hash   -517675081
      */
     virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /**
@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?reset@PacketObserver@@UEAAXXZ
-     * @hash   -949340216
+     * @hash   -949294088
      */
     virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER

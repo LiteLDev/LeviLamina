@@ -36,12 +36,12 @@ public:
 public:
     /**
      * @symbol ?getItemInstance@InventoryTransactionItemGroup@@QEBA?AVItemStack@@XZ
-     * @hash   -861140910
+     * @hash   -860310606
      */
     MCAPI class ItemStack getItemInstance() const;
     /**
      * @symbol ??1InventoryTransactionItemGroup@@QEAA@XZ
-     * @hash   -1032295162
+     * @hash   -1032249034
      */
     MCAPI ~InventoryTransactionItemGroup();
 

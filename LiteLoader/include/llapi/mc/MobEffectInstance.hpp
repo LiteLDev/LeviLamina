@@ -33,67 +33,67 @@ public:
 public:
     /**
      * @symbol ??0MobEffectInstance@@QEAA@IHH_N00@Z
-     * @hash   -1246802952
+     * @hash   -1246756824
      */
     MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
-     * @hash   1238930519
+     * @hash   1238976647
      */
     MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@IHH@Z
-     * @hash   1005310899
+     * @hash   1005357027
      */
     MCAPI MobEffectInstance(unsigned int, int, int);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@IH@Z
-     * @hash   1059699376
+     * @hash   1059745504
      */
     MCAPI MobEffectInstance(unsigned int, int);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@I@Z
-     * @hash   1061349683
+     * @hash   1061395811
      */
     MCAPI MobEffectInstance(unsigned int);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
-     * @hash   -1691441227
+     * @hash   -1691395099
      */
     MCAPI MobEffectInstance(class MobEffectInstance &&);
     /**
      * @symbol ??0MobEffectInstance@@QEAA@AEBV0@@Z
-     * @hash   -1781289231
+     * @hash   -1781243103
      */
     MCAPI MobEffectInstance(class MobEffectInstance const &);
     /**
      * @symbol ?applyEffects@MobEffectInstance@@QEAAXPEAVActor@@@Z
-     * @hash   -1575328079
+     * @hash   -1575281951
      */
     MCAPI void applyEffects(class Actor *);
     /**
      * @symbol ?displaysOnScreenTextureAnimation@MobEffectInstance@@QEBA_NXZ
-     * @hash   1223525364
+     * @hash   1223571492
      */
     MCAPI bool displaysOnScreenTextureAnimation() const;
     /**
      * @symbol ?getAmplifier@MobEffectInstance@@QEBAHXZ
-     * @hash   -987217252
+     * @hash   -987171124
      */
     MCAPI int getAmplifier() const;
     /**
      * @symbol ?getComponentName@MobEffectInstance@@QEBAAEBVHashedString@@XZ
-     * @hash   -1202005756
+     * @hash   -1201959628
      */
     MCAPI class HashedString const & getComponentName() const;
     /**
      * @symbol ?getDifficulityDuration@MobEffectInstance@@QEBAHW4Difficulty@@@Z
-     * @hash   1731044293
+     * @hash   1731090421
      */
     MCAPI int getDifficulityDuration(enum class Difficulty) const;
     /**
      * @symbol ?getDisplayName@MobEffectInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -161171470
+     * @hash   -161125342
      */
     MCAPI std::string getDisplayName() const;
     /**
@@ -108,87 +108,87 @@ public:
     MCAPI unsigned int getId() const;
     /**
      * @symbol ?getLingerDuration@MobEffectInstance@@QEBAHXZ
-     * @hash   1293668978
+     * @hash   1293715106
      */
     MCAPI int getLingerDuration() const;
     /**
      * @symbol ?getSplashDuration@MobEffectInstance@@QEBAHXZ
-     * @hash   1112758554
+     * @hash   1112804682
      */
     MCAPI int getSplashDuration() const;
     /**
      * @symbol ?getSplashEffect@MobEffectInstance@@QEBA?AV1@XZ
-     * @hash   -1358555081
+     * @hash   -1358508953
      */
     MCAPI class MobEffectInstance getSplashEffect() const;
     /**
      * @symbol ?isAmbient@MobEffectInstance@@QEBA_NXZ
-     * @hash   -170194286
+     * @hash   -170148158
      */
     MCAPI bool isAmbient() const;
     /**
      * @symbol ?isEffectVisible@MobEffectInstance@@QEBA_NXZ
-     * @hash   -1121355902
+     * @hash   -1121309774
      */
     MCAPI bool isEffectVisible() const;
     /**
      * @symbol ??9MobEffectInstance@@QEBA_NAEBV0@@Z
-     * @hash   1443109734
+     * @hash   1443155862
      */
     MCAPI bool operator!=(class MobEffectInstance const &) const;
     /**
      * @symbol ??4MobEffectInstance@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1483986496
+     * @hash   1484032624
      */
     MCAPI class MobEffectInstance & operator=(class MobEffectInstance &&);
     /**
      * @symbol ??4MobEffectInstance@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -653316996
+     * @hash   -653270868
      */
     MCAPI class MobEffectInstance & operator=(class MobEffectInstance const &);
     /**
      * @symbol ??8MobEffectInstance@@QEBA_NAEBV0@@Z
-     * @hash   -1202164127
+     * @hash   -1202117999
      */
     MCAPI bool operator==(class MobEffectInstance const &) const;
     /**
      * @symbol ?removeEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
-     * @hash   572124507
+     * @hash   572170635
      */
     MCAPI void removeEffects(class Actor *) const;
     /**
      * @symbol ?save@MobEffectInstance@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   9803384
+     * @hash   9849512
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ?setDifficulityDuration@MobEffectInstance@@QEAAXW4Difficulty@@H@Z
-     * @hash   -1068721305
+     * @hash   -1068675177
      */
     MCAPI void setDifficulityDuration(enum class Difficulty, int);
     /**
      * @symbol ?setDuration@MobEffectInstance@@QEAAXH@Z
-     * @hash   1912631690
+     * @hash   1912677818
      */
     MCAPI void setDuration(int);
     /**
      * @symbol ?tick@MobEffectInstance@@QEAA_NPEAVActor@@@Z
-     * @hash   176831544
+     * @hash   176877672
      */
     MCAPI bool tick(class Actor *);
     /**
      * @symbol ?tryInitializeMobEffectData@MobEffectInstance@@QEAAXXZ
-     * @hash   -449777613
+     * @hash   -449731485
      */
     MCAPI void tryInitializeMobEffectData();
     /**
      * @symbol ?update@MobEffectInstance@@QEAAXAEBV1@@Z
-     * @hash   -1779956897
+     * @hash   -1779910769
      */
     MCAPI void update(class MobEffectInstance const &);
     /**
      * @symbol ?updateEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
-     * @hash   -809298347
+     * @hash   -809252219
      */
     MCAPI void updateEffects(class Actor *) const;
     /**
@@ -198,7 +198,7 @@ public:
     MCAPI ~MobEffectInstance();
     /**
      * @symbol ?MAX_AMPLIFIER_COUNT@MobEffectInstance@@2HB
-     * @hash   1116097269
+     * @hash   1116220277
      */
     MCAPI static int const MAX_AMPLIFIER_COUNT;
     /**
@@ -208,17 +208,17 @@ public:
     MCAPI static class MobEffectInstance const NO_EFFECT;
     /**
      * @symbol ?areAllEffectsAmbient@MobEffectInstance@@SA_NAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-     * @hash   1124962773
+     * @hash   1125008901
      */
     MCAPI static bool areAllEffectsAmbient(std::vector<class MobEffectInstance> const &);
     /**
      * @symbol ?getColorValue@MobEffectInstance@@SA?AVColor@mce@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-     * @hash   949660455
+     * @hash   949706583
      */
     MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const &);
     /**
      * @symbol ?load@MobEffectInstance@@SA?AV1@AEBVCompoundTag@@@Z
-     * @hash   -1589369322
+     * @hash   -1589323194
      */
     MCAPI static class MobEffectInstance load(class CompoundTag const &);
 

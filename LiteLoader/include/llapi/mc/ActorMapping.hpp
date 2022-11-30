@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ActorMapping@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -247980196
+     * @hash   -247934068
      */
     MCAPI ActorMapping(std::string const &, std::string const &);
     /**
      * @symbol ??0ActorMapping@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-     * @hash   339468092
+     * @hash   339514220
      */
     MCAPI ActorMapping(std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?getMappingName@ActorMapping@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorTypeNamespaceRules@@@Z
-     * @hash   -1596109053
+     * @hash   -1596062925
      */
     MCAPI std::string getMappingName(enum class ActorTypeNamespaceRules) const;
     /**
      * @symbol ??1ActorMapping@@QEAA@XZ
-     * @hash   2024867603
+     * @hash   2024913731
      */
     MCAPI ~ActorMapping();
 

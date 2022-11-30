@@ -34,7 +34,7 @@ namespace CopperUtil {
     MCAPI extern class mce::Color const WAX_ON_COLOR;
     /**
      * @symbol ?trySendWaxingTelemetryEventToClient@CopperUtil@@YAXAEAVPlayer@@AEBVBlockLegacy@@@Z
-     * @hash   1725337024
+     * @hash   1726167328
      */
     MCAPI void trySendWaxingTelemetryEventToClient(class Player &, class BlockLegacy const &);
 

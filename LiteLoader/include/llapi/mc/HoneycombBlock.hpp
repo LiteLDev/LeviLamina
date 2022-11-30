@@ -218,7 +218,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0HoneycombBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1220925176
+     * @hash   -1220094872
      */
     MCAPI HoneycombBlock(std::string const &, int, class Material const &);
 

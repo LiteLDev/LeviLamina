@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnInteractTrigger@@QEAA@XZ
-     * @hash   591265183
+     * @hash   592095487
      */
     MCAPI ~OnInteractTrigger();
 

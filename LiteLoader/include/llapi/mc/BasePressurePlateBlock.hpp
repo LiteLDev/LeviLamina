@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1636153571
+     * @hash   -1635323267
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   993071803
+     * @hash   993902107
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -189,13 +189,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   604158259
+     * @hash   604988563
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -190868545
+     * @hash   -190038241
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -206,19 +206,19 @@ public:
     /**
      * @vftbl  108
      * @symbol ?isAttachedTo@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   1523980561
+     * @hash   1524810865
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  112
      * @symbol ?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   977997680
+     * @hash   978827984
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -2080762985
+     * @hash   -2079932681
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1948659895
+     * @hash   1949490199
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BasePressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1351043596
+     * @hash   -1350213292
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -288,7 +288,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -810918617
+     * @hash   -810088313
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -299,7 +299,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   328045491
+     * @hash   328875795
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -310,7 +310,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BasePressurePlateBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1446805892
+     * @hash   -1446759764
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -345,7 +345,7 @@ public:
     /**
      * @vftbl  196
      * @symbol ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
-     * @hash   -635561488
+     * @hash   -634731184
      */
     virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
@@ -359,19 +359,19 @@ public:
 //protected:
     /**
      * @symbol ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -998283668
+     * @hash   -997453364
      */
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
-     * @hash   453590628
+     * @hash   454420932
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int, int) const;
 
 //private:
     /**
      * @symbol ?isEntityInsideTriggerable@BasePressurePlateBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1903121725
+     * @hash   -1902291421
      */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
 

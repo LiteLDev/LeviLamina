@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1935632785
+     * @hash   1936463089
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1696059833
+     * @hash   1696890137
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1712553842
+     * @hash   1713384146
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -236,14 +236,14 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0LiquidBlockStatic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1656274262
+     * @hash   1657104566
      */
     MCAPI LiquidBlockStatic(std::string const &, int, class Material const &);
 
 //private:
     /**
      * @symbol ?_setDynamic@LiquidBlockStatic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -426980922
+     * @hash   -426150618
      */
     MCAPI void _setDynamic(class BlockSource &, class BlockPos const &) const;
 

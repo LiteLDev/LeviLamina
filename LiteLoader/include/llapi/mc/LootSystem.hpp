@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     * @hash   1076634147
+     * @hash   1076680275
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**

@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@SandStoneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1166157053
+     * @hash   -1165326749
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@SandStoneBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1500468250
+     * @hash   1501298554
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -243,12 +243,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SandStoneBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1586074929
+     * @hash   1586905233
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0SandStoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   874066275
+     * @hash   874896579
      */
     MCAPI SandStoneBlock(std::string const &, int, class Material const &);
 

@@ -42,12 +42,12 @@ public:
     MCAPI PostprocessingManager();
     /**
      * @symbol ?tryLock@PostprocessingManager@@QEAA?AV?$optional@V?$vector@ULockedChunk@PostprocessingManager@@V?$allocator@ULockedChunk@PostprocessingManager@@@std@@@std@@@std@@AEBVChunkPos@@AEAVChunkSource@@@Z
-     * @hash   -125757603
+     * @hash   -124927299
      */
     MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk>> tryLock(class ChunkPos const &, class ChunkSource &);
     /**
      * @symbol ??1PostprocessingManager@@QEAA@XZ
-     * @hash   1490657542
+     * @hash   1491487846
      */
     MCAPI ~PostprocessingManager();
 

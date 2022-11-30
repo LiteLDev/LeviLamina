@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?onDespawn@InstantDespawnComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1198848476
+     * @hash   -1198802348
      */
     MCAPI void onDespawn(class Actor &);
     /**
      * @symbol ?tick@InstantDespawnComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1955603502
+     * @hash   -1955557374
      */
     MCAPI void tick(class Actor &);
 

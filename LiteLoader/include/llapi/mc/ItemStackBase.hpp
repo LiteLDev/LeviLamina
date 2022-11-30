@@ -57,474 +57,474 @@ public:
     /**
      * @vftbl  4
      * @symbol ?setNull@ItemStackBase@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
-     * @hash   -1795483727
+     * @hash   -1794653423
      */
     virtual void setNull(class std::optional<std::string>);
     /**
      * @vftbl  5
      * @symbol ?toString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   964667344
+     * @hash   965497648
      */
     virtual std::string toString() const;
     /**
      * @vftbl  6
      * @symbol ?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1251210653
+     * @hash   1252040957
      */
     virtual std::string toDebugString() const;
     /**
      * @symbol ?add@ItemStackBase@@QEAAXH@Z
-     * @hash   752784772
+     * @hash   753615076
      */
     MCAPI void add(int);
     /**
      * @symbol ?addComponents@ItemStackBase@@QEAA_NAEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   561879164
+     * @hash   562709468
      */
     MCAPI bool addComponents(class Json::Value const &, std::string &);
     /**
      * @symbol ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
-     * @hash   1681775417
+     * @hash   1682605721
      */
     MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
     /**
      * @symbol ?addCustomUserData@ItemStackBase@@QEAAXAEAVContainerComponent@@@Z
-     * @hash   2041237632
+     * @hash   2042067936
      */
     MCAPI void addCustomUserData(class ContainerComponent &);
     /**
      * @symbol ?canBeCharged@ItemStackBase@@QEBA_NXZ
-     * @hash   1549794340
+     * @hash   1550624644
      */
     MCAPI bool canBeCharged() const;
     /**
      * @symbol ?canDestroy@ItemStackBase@@QEBA_NPEBVBlock@@@Z
-     * @hash   29006178
+     * @hash   29836482
      */
     MCAPI bool canDestroy(class Block const *) const;
     /**
      * @symbol ?canDestroySpecial@ItemStackBase@@QEBA_NAEBVBlock@@@Z
-     * @hash   -465823081
+     * @hash   -464992777
      */
     MCAPI bool canDestroySpecial(class Block const &) const;
     /**
      * @symbol ?canPlaceOn@ItemStackBase@@QEBA_NPEBVBlock@@@Z
-     * @hash   -2086718622
+     * @hash   -2085888318
      */
     MCAPI bool canPlaceOn(class Block const *) const;
     /**
      * @symbol ?clearChargedItem@ItemStackBase@@QEAAXXZ
-     * @hash   823901119
+     * @hash   824731423
      */
     MCAPI void clearChargedItem();
     /**
      * @symbol ?componentsMatch@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   88412348
+     * @hash   89242652
      */
     MCAPI bool componentsMatch(class ItemStackBase const &) const;
     /**
      * @symbol ?constructItemEnchantsFromUserData@ItemStackBase@@QEBA?AVItemEnchants@@XZ
-     * @hash   1516420844
+     * @hash   1517251148
      */
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
     /**
      * @symbol ?deserializeComponents@ItemStackBase@@QEAAXAEAVIDataInput@@@Z
-     * @hash   -1774984230
+     * @hash   -1774153926
      */
     MCAPI void deserializeComponents(class IDataInput &);
     /**
      * @symbol ?executeEvent@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     * @hash   -1836062279
+     * @hash   -1835231975
      */
     MCAPI void executeEvent(std::string const &, class RenderParams &);
     /**
      * @symbol ?getArmorSlot@ItemStackBase@@QEBA?AW4ArmorSlot@@XZ
-     * @hash   253418556
+     * @hash   254248860
      */
     MCAPI enum class ArmorSlot getArmorSlot() const;
     /**
      * @symbol ?getAttackDamage@ItemStackBase@@QEBAHXZ
-     * @hash   -760588158
+     * @hash   -759757854
      */
     MCAPI int getAttackDamage() const;
     /**
      * @symbol ?getAuxValue@ItemStackBase@@QEBAFXZ
-     * @hash   -2108362061
+     * @hash   -2107531757
      */
     MCAPI short getAuxValue() const;
     /**
      * @symbol ?getBaseRepairCost@ItemStackBase@@QEBAHXZ
-     * @hash   -1119867590
+     * @hash   -1119037286
      */
     MCAPI int getBaseRepairCost() const;
     /**
      * @symbol ?getBlock@ItemStackBase@@QEBAPEBVBlock@@XZ
-     * @hash   1668418545
+     * @hash   1668464673
      */
     MCAPI class Block const * getBlock() const;
     /**
      * @symbol ?getBlockingTick@ItemStackBase@@QEBAAEBUTick@@XZ
-     * @hash   1720580946
+     * @hash   1721411250
      */
     MCAPI struct Tick const & getBlockingTick() const;
     /**
      * @symbol ?getCategoryName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   111247760
+     * @hash   112078064
      */
     MCAPI std::string getCategoryName() const;
     /**
      * @symbol ?getChargedItem@ItemStackBase@@QEBAAEBVItemInstance@@XZ
-     * @hash   1631494880
+     * @hash   1632325184
      */
     MCAPI class ItemInstance const & getChargedItem() const;
     /**
      * @symbol ?getColor@ItemStackBase@@QEBA?AVColor@mce@@XZ
-     * @hash   1471406912
+     * @hash   1472237216
      */
     MCAPI class mce::Color getColor() const;
     /**
      * @symbol ?getComponent@ItemStackBase@@QEBAPEBVItemComponent@@AEBVHashedString@@@Z
-     * @hash   -1730830612
+     * @hash   -1730000308
      */
     MCAPI class ItemComponent const * getComponent(class HashedString const &) const;
     /**
      * @symbol ?getComponentItem@ItemStackBase@@QEBAPEBVComponentItem@@XZ
-     * @hash   27428545
+     * @hash   28258849
      */
     MCAPI class ComponentItem const * getComponentItem() const;
     /**
      * @symbol ?getCustomLore@ItemStackBase@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   681886665
+     * @hash   682716969
      */
     MCAPI std::vector<std::string> getCustomLore() const;
     /**
      * @symbol ?getCustomName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1498229920
+     * @hash   -1497399616
      */
     MCAPI std::string getCustomName() const;
     /**
      * @symbol ?getDamageValue@ItemStackBase@@QEBAFXZ
-     * @hash   -843831149
+     * @hash   -843000845
      */
     MCAPI short getDamageValue() const;
     /**
      * @symbol ?getDescriptionId@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -809703502
+     * @hash   -808873198
      */
     MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ?getDescriptor@ItemStackBase@@QEBA?AVItemDescriptor@@XZ
-     * @hash   1406076310
+     * @hash   1406906614
      */
     MCAPI class ItemDescriptor getDescriptor() const;
     /**
      * @symbol ?getEffectName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   601716000
+     * @hash   602546304
      */
     MCAPI std::string getEffectName() const;
     /**
      * @symbol ?getEnchantSlot@ItemStackBase@@QEBAHXZ
-     * @hash   -2109404616
+     * @hash   -2108574312
      */
     MCAPI int getEnchantSlot() const;
     /**
      * @symbol ?getEnchantValue@ItemStackBase@@QEBAHXZ
-     * @hash   -104752284
+     * @hash   -103921980
      */
     MCAPI int getEnchantValue() const;
     /**
      * @symbol ?getFullNameHash@ItemStackBase@@QEBAAEBVHashedString@@XZ
-     * @hash   -1683235230
+     * @hash   -1682404926
      */
     MCAPI class HashedString const & getFullNameHash() const;
     /**
      * @symbol ?getHoverName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -465164494
+     * @hash   -464334190
      */
     MCAPI std::string getHoverName() const;
     /**
      * @symbol ?getId@ItemStackBase@@QEBAFXZ
-     * @hash   -1981450481
+     * @hash   -1980620177
      */
     MCAPI short getId() const;
     /**
      * @symbol ?getIdAux@ItemStackBase@@QEBAHXZ
-     * @hash   -1464805364
+     * @hash   -1463975060
      */
     MCAPI int getIdAux() const;
     /**
      * @symbol ?getItem@ItemStackBase@@QEBAPEBVItem@@XZ
-     * @hash   1669942531
+     * @hash   1670772835
      */
     MCAPI class Item const * getItem() const;
     /**
      * @symbol ?getLegacyBlock@ItemStackBase@@QEBAAEBV?$WeakPtr@VBlockLegacy@@@@XZ
-     * @hash   -1540757973
+     * @hash   -1539927669
      */
     MCAPI class WeakPtr<class BlockLegacy> const & getLegacyBlock() const;
     /**
      * @symbol ?getMaxDamage@ItemStackBase@@QEBAFXZ
-     * @hash   -1454672091
+     * @hash   -1453841787
      */
     MCAPI short getMaxDamage() const;
     /**
      * @symbol ?getMaxStackSize@ItemStackBase@@QEBAEXZ
-     * @hash   1329579279
+     * @hash   1330409583
      */
     MCAPI unsigned char getMaxStackSize() const;
     /**
      * @symbol ?getName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2130070880
+     * @hash   2130901184
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getNetworkUserData@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   232104232
+     * @hash   232934536
      */
     MCAPI std::unique_ptr<class CompoundTag> getNetworkUserData() const;
     /**
      * @symbol ?getRawNameHash@ItemStackBase@@QEBAAEBVHashedString@@XZ
-     * @hash   1746666532
+     * @hash   1747496836
      */
     MCAPI class HashedString const & getRawNameHash() const;
     /**
      * @symbol ?getRawNameId@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1114191826
+     * @hash   1115022130
      */
     MCAPI std::string getRawNameId() const;
     /**
      * @symbol ?getRequiredBaseGameVersion@ItemStackBase@@QEBAAEBVBaseGameVersion@@XZ
-     * @hash   -1533656810
+     * @hash   -1532826506
      */
     MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     /**
      * @symbol ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@@XZ
-     * @hash   1148276576
+     * @hash   1149106880
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
     /**
      * @symbol ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ
-     * @hash   1596698125
+     * @hash   1596744253
      */
     MCAPI class CompoundTag * getUserData();
     /**
      * @symbol ?getUserData@ItemStackBase@@QEBAPEBVCompoundTag@@XZ
-     * @hash   491077767
+     * @hash   491123895
      */
     MCAPI class CompoundTag const * getUserData() const;
     /**
      * @symbol ?getWasPickedUp@ItemStackBase@@QEBA_NXZ
-     * @hash   -2090655372
+     * @hash   -2089825068
      */
     MCAPI bool getWasPickedUp() const;
     /**
      * @symbol ?hasChargedItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -874396572
+     * @hash   -873566268
      */
     MCAPI bool hasChargedItem() const;
     /**
      * @symbol ?hasCompoundTextUserData@ItemStackBase@@QEBA_NXZ
-     * @hash   -581934414
+     * @hash   -581104110
      */
     MCAPI bool hasCompoundTextUserData() const;
     /**
      * @symbol ?hasContainerData@ItemStackBase@@QEBA_NXZ
-     * @hash   -1092761148
+     * @hash   -1091930844
      */
     MCAPI bool hasContainerData() const;
     /**
      * @symbol ?hasCustomHoverName@ItemStackBase@@QEBA_NXZ
-     * @hash   -472974412
+     * @hash   -472144108
      */
     MCAPI bool hasCustomHoverName() const;
     /**
      * @symbol ?hasDamageValue@ItemStackBase@@QEBA_NXZ
-     * @hash   -1251877516
+     * @hash   -1251047212
      */
     MCAPI bool hasDamageValue() const;
     /**
      * @symbol ?hasSameAuxValue@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   -830659360
+     * @hash   -829829056
      */
     MCAPI bool hasSameAuxValue(class ItemStackBase const &) const;
     /**
      * @symbol ?hasSameUserData@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   -609954656
+     * @hash   -609124352
      */
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     /**
      * @symbol ?hasTag@ItemStackBase@@QEBA_NAEBUItemTag@@@Z
-     * @hash   -279821789
+     * @hash   -278991485
      */
     MCAPI bool hasTag(struct ItemTag const &) const;
     /**
      * @symbol ?hasTag@ItemStackBase@@QEBA_NAEB_K@Z
-     * @hash   -647144141
+     * @hash   -646313837
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?hasUserData@ItemStackBase@@QEBA_NXZ
-     * @hash   2000055698
+     * @hash   2000101826
      */
     MCAPI bool hasUserData() const;
     /**
      * @symbol ?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z
-     * @hash   1803046029
+     * @hash   1803876333
      */
     MCAPI bool hurtAndBreak(int, class Actor *);
     /**
      * @symbol ?initParams@ItemStackBase@@QEAAXAEAVRenderParams@@PEAVActor@@@Z
-     * @hash   -915463754
+     * @hash   -914633450
      */
     MCAPI void initParams(class RenderParams &, class Actor *);
     /**
      * @symbol ?isArmorItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -2015465006
+     * @hash   -2014634702
      */
     MCAPI bool isArmorItem() const;
     /**
      * @symbol ?isBlock@ItemStackBase@@QEBA_NXZ
-     * @hash   1371596914
+     * @hash   1372427218
      */
     MCAPI bool isBlock() const;
     /**
      * @symbol ?isBlockInstance@ItemStackBase@@QEBA_NAEBVHashedString@@@Z
-     * @hash   907748083
+     * @hash   908578387
      */
     MCAPI bool isBlockInstance(class HashedString const &) const;
     /**
      * @symbol ?isDamageableItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -1385174140
+     * @hash   -1384343836
      */
     MCAPI bool isDamageableItem() const;
     /**
      * @symbol ?isDamaged@ItemStackBase@@QEBA_NXZ
-     * @hash   -1269621054
+     * @hash   -1268790750
      */
     MCAPI bool isDamaged() const;
     /**
      * @symbol ?isEnchanted@ItemStackBase@@QEBA_NXZ
-     * @hash   -1005872302
+     * @hash   -1005041998
      */
     MCAPI bool isEnchanted() const;
     /**
      * @symbol ?isEnchantingBook@ItemStackBase@@QEBA_NXZ
-     * @hash   -1370399084
+     * @hash   -1369568780
      */
     MCAPI bool isEnchantingBook() const;
     /**
      * @symbol ?isExplodable@ItemStackBase@@QEBA_NXZ
-     * @hash   -870380812
+     * @hash   -869550508
      */
     MCAPI bool isExplodable() const;
     /**
      * @symbol ?isFireResistant@ItemStackBase@@QEBA_NXZ
-     * @hash   1645467730
+     * @hash   1646298034
      */
     MCAPI bool isFireResistant() const;
     /**
      * @symbol ?isFullStack@ItemStackBase@@QEBA_NXZ
-     * @hash   -845199566
+     * @hash   -844369262
      */
     MCAPI bool isFullStack() const;
     /**
      * @symbol ?isGlint@ItemStackBase@@QEBA_NXZ
-     * @hash   -224825486
+     * @hash   -223995182
      */
     MCAPI bool isGlint() const;
     /**
      * @symbol ?isHorseArmorItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -48515228
+     * @hash   -47684924
      */
     MCAPI bool isHorseArmorItem() const;
     /**
      * @symbol ?isInstance@ItemStackBase@@QEBA_NAEBVHashedString@@_N@Z
-     * @hash   445622784
+     * @hash   446453088
      */
     MCAPI bool isInstance(class HashedString const &, bool) const;
     /**
      * @symbol ?isLiquidClipItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -969044076
+     * @hash   -968213772
      */
     MCAPI bool isLiquidClipItem() const;
     /**
      * @symbol ?isMusicDiscItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -1850833198
+     * @hash   -1850002894
      */
     MCAPI bool isMusicDiscItem() const;
     /**
      * @symbol ?isNull@ItemStackBase@@QEBA_NXZ
-     * @hash   165607028
+     * @hash   166437332
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ?isOffhandItem@ItemStackBase@@QEBA_NXZ
-     * @hash   1043454402
+     * @hash   1044284706
      */
     MCAPI bool isOffhandItem() const;
     /**
      * @symbol ?isOneOfInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@_N@Z
-     * @hash   -1215648517
+     * @hash   -1214818213
      */
     MCAPI bool isOneOfInstances(class std::initializer_list<class HashedString const>, bool) const;
     /**
      * @symbol ?isPattern@ItemStackBase@@QEBA_NXZ
-     * @hash   -1316340782
+     * @hash   -1315510478
      */
     MCAPI bool isPattern() const;
     /**
      * @symbol ?isPotionItem@ItemStackBase@@QEBA_NXZ
-     * @hash   1878856932
+     * @hash   1879687236
      */
     MCAPI bool isPotionItem() const;
     /**
      * @symbol ?isStackable@ItemStackBase@@QEBA_NXZ
-     * @hash   1245767170
+     * @hash   1246597474
      */
     MCAPI bool isStackable() const;
     /**
      * @symbol ?isStackable@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   232376298
+     * @hash   233206602
      */
     MCAPI bool isStackable(class ItemStackBase const &) const;
     /**
      * @symbol ?isStackedByData@ItemStackBase@@QEBA_NXZ
-     * @hash   1589337826
+     * @hash   1590168130
      */
     MCAPI bool isStackedByData() const;
     /**
      * @symbol ?isValidAuxValue@ItemStackBase@@QEBA_NH@Z
-     * @hash   -1788128729
+     * @hash   -1787298425
      */
     MCAPI bool isValidAuxValue(int) const;
     /**
      * @symbol ?isWearableItem@ItemStackBase@@QEBA_NXZ
-     * @hash   -1184156540
+     * @hash   -1183326236
      */
     MCAPI bool isWearableItem() const;
     /**
      * @symbol ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -753990488
+     * @hash   -753160184
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   -129460671
+     * @hash   -128630367
      */
     MCAPI void load(class CompoundTag const &, class Level &);
     /**
      * @symbol ?matches@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   625123956
+     * @hash   625954260
      */
     MCAPI bool matches(class ItemStackBase const &) const;
     /**
      * @symbol ?matchesEitherWearableCase@ItemStackBase@@QEBA_NPEBVCompoundTag@@@Z
-     * @hash   -1477000944
+     * @hash   -1476170640
      */
     MCAPI bool matchesEitherWearableCase(class CompoundTag const *) const;
     /**
      * @symbol ?matchesItem@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   -1785573730
+     * @hash   -1784743426
      */
     MCAPI bool matchesItem(class ItemStackBase const &) const;
     /**
@@ -534,37 +534,37 @@ public:
     MCAPI operator bool() const;
     /**
      * @symbol ??9ItemStackBase@@QEBA_NAEBV0@@Z
-     * @hash   -186605242
+     * @hash   -185774938
      */
     MCAPI bool operator!=(class ItemStackBase const &) const;
     /**
      * @symbol ??8ItemStackBase@@QEBA_NAEBV0@@Z
-     * @hash   -1457121263
+     * @hash   -1456290959
      */
     MCAPI bool operator==(class ItemStackBase const &) const;
     /**
      * @symbol ?refreshedInContainer@ItemStackBase@@QEBAXAEAVLevel@@@Z
-     * @hash   -943019094
+     * @hash   -942188790
      */
     MCAPI void refreshedInContainer(class Level &) const;
     /**
      * @symbol ?remove@ItemStackBase@@QEAAXH@Z
-     * @hash   522910432
+     * @hash   523740736
      */
     MCAPI void remove(int);
     /**
      * @symbol ?removeDamageValue@ItemStackBase@@QEAAXXZ
-     * @hash   401892849
+     * @hash   402723153
      */
     MCAPI void removeDamageValue();
     /**
      * @symbol ?removeEnchants@ItemStackBase@@QEAAXXZ
-     * @hash   -51215377
+     * @hash   -50385073
      */
     MCAPI void removeEnchants();
     /**
      * @symbol ?resetHoverName@ItemStackBase@@QEAAXXZ
-     * @hash   -1385439117
+     * @hash   -1384608813
      */
     MCAPI void resetHoverName();
     /**
@@ -574,122 +574,122 @@ public:
     MCAPI bool sameItem(int, int) const;
     /**
      * @symbol ?sameItem@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   1759317658
+     * @hash   1760147962
      */
     MCAPI bool sameItem(class ItemStackBase const &) const;
     /**
      * @symbol ?sameItemAndAux@ItemStackBase@@QEBA_NAEBV1@@Z
-     * @hash   -2067973376
+     * @hash   -2067143072
      */
     MCAPI bool sameItemAndAux(class ItemStackBase const &) const;
     /**
      * @symbol ?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   880265256
+     * @hash   881095560
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ?saveEnchantsToUserData@ItemStackBase@@QEAAXAEBVItemEnchants@@@Z
-     * @hash   -344914646
+     * @hash   -344084342
      */
     MCAPI void saveEnchantsToUserData(class ItemEnchants const &);
     /**
      * @symbol ?sendEventTriggered@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRenderParams@@@Z
-     * @hash   -1125855212
+     * @hash   -1125024908
      */
     MCAPI bool sendEventTriggered(std::string const &, class RenderParams const &);
     /**
      * @symbol ?serializeComponents@ItemStackBase@@QEBAXAEAVIDataOutput@@@Z
-     * @hash   170517856
+     * @hash   171348160
      */
     MCAPI void serializeComponents(class IDataOutput &) const;
     /**
      * @symbol ?set@ItemStackBase@@QEAAXH@Z
-     * @hash   299614802
+     * @hash   300445106
      */
     MCAPI void set(int);
     /**
      * @symbol ?setAuxValue@ItemStackBase@@QEAAXF@Z
-     * @hash   -691136243
+     * @hash   -690305939
      */
     MCAPI void setAuxValue(short);
     /**
      * @symbol ?setBlock@ItemStackBase@@QEAAXPEBVBlock@@@Z
-     * @hash   940921103
+     * @hash   941751407
      */
     MCAPI void setBlock(class Block const *);
     /**
      * @symbol ?setBlockingTick@ItemStackBase@@QEAAXUTick@@@Z
-     * @hash   1130212072
+     * @hash   1131042376
      */
     MCAPI void setBlockingTick(struct Tick);
     /**
      * @symbol ?setChargedItem@ItemStackBase@@QEAAXAEBVItemInstance@@_N@Z
-     * @hash   -833230287
+     * @hash   -832399983
      */
     MCAPI void setChargedItem(class ItemInstance const &, bool);
     /**
      * @symbol ?setCustomLore@ItemStackBase@@QEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   1605726963
+     * @hash   1606557267
      */
     MCAPI void setCustomLore(std::vector<std::string> const &);
     /**
      * @symbol ?setCustomName@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1874219824
+     * @hash   -1873389520
      */
     MCAPI void setCustomName(std::string const &);
     /**
      * @symbol ?setDamageValue@ItemStackBase@@QEAAXF@Z
-     * @hash   -38361683
+     * @hash   -37531379
      */
     MCAPI void setDamageValue(short);
     /**
      * @symbol ?setJustBrewed@ItemStackBase@@QEAAX_N@Z
-     * @hash   1461101098
+     * @hash   1461931402
      */
     MCAPI void setJustBrewed(bool);
     /**
      * @symbol ?setPickupTime@ItemStackBase@@QEAAXXZ
-     * @hash   1266130155
+     * @hash   1266960459
      */
     MCAPI void setPickupTime();
     /**
      * @symbol ?setRepairCost@ItemStackBase@@QEAAXH@Z
-     * @hash   -1204700434
+     * @hash   -1203870130
      */
     MCAPI void setRepairCost(int);
     /**
      * @symbol ?setShowPickUp@ItemStackBase@@QEAAX_N@Z
-     * @hash   964087242
+     * @hash   964133370
      */
     MCAPI void setShowPickUp(bool);
     /**
      * @symbol ?setUserData@ItemStackBase@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
-     * @hash   -697755936
+     * @hash   -696925632
      */
     MCAPI void setUserData(std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?setWasPickedUp@ItemStackBase@@QEAAX_N@Z
-     * @hash   1354974488
+     * @hash   1355804792
      */
     MCAPI void setWasPickedUp(bool);
     /**
      * @symbol ?shouldInteractionWithBlockBypassLiquid@ItemStackBase@@QEBA_NAEBVBlock@@@Z
-     * @hash   2042811877
+     * @hash   2043642181
      */
     MCAPI bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
     /**
      * @symbol ?shouldVanish@ItemStackBase@@QEBA_NXZ
-     * @hash   1471896772
+     * @hash   1472727076
      */
     MCAPI bool shouldVanish() const;
     /**
      * @symbol ?startCoolDown@ItemStackBase@@QEBAXPEAVPlayer@@@Z
-     * @hash   -1494023201
+     * @hash   -1493192897
      */
     MCAPI void startCoolDown(class Player *) const;
     /**
      * @symbol ?updateComponent@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   -1528088132
+     * @hash   -1527257828
      */
     MCAPI bool updateComponent(std::string const &, class Json::Value const &);
     /**
@@ -731,109 +731,109 @@ public:
 //protected:
     /**
      * @symbol ??0ItemStackBase@@IEAA@XZ
-     * @hash   -1680150941
+     * @hash   -1679320637
      */
     MCAPI ItemStackBase();
     /**
      * @symbol ??0ItemStackBase@@IEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HHPEBVCompoundTag@@@Z
-     * @hash   370558238
+     * @hash   371388542
      */
     MCAPI ItemStackBase(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase@@IEAA@AEBVRecipeIngredient@@@Z
-     * @hash   908625159
+     * @hash   909455463
      */
     MCAPI ItemStackBase(class RecipeIngredient const &);
     /**
      * @symbol ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-     * @hash   565236979
+     * @hash   566067283
      */
     MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
-     * @hash   -983601953
+     * @hash   -982771649
      */
     MCAPI ItemStackBase(class BlockLegacy const &, int);
     /**
      * @symbol ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-     * @hash   -1178076928
+     * @hash   -1177246624
      */
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase@@IEAA@AEBV0@@Z
-     * @hash   -391308544
+     * @hash   -390478240
      */
     MCAPI ItemStackBase(class ItemStackBase const &);
     /**
      * @symbol ?_getHoverFormattingPrefix@ItemStackBase@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -650729788
+     * @hash   -649899484
      */
     MCAPI std::string _getHoverFormattingPrefix() const;
     /**
      * @symbol ?_setItem@ItemStackBase@@IEAA_NH_N@Z
-     * @hash   67671522
+     * @hash   68501826
      */
     MCAPI bool _setItem(int, bool);
     /**
      * @symbol ?init@ItemStackBase@@IEAAXAEBVBlockLegacy@@H@Z
-     * @hash   324011785
+     * @hash   324842089
      */
     MCAPI void init(class BlockLegacy const &, int);
     /**
      * @symbol ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
-     * @hash   -1185485833
+     * @hash   -1184655529
      */
     MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
     /**
      * @symbol ?init@ItemStackBase@@IEAAXHHH_N@Z
-     * @hash   552319314
+     * @hash   553149618
      */
     MCAPI void init(int, int, int, bool);
     /**
      * @symbol ??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z
-     * @hash   -1379628924
+     * @hash   -1378798620
      */
     MCAPI class ItemStackBase & operator=(class ItemStackBase const &);
 
 //private:
     /**
      * @symbol ?_addCustomUserDataCommon@ItemStackBase@@AEAAX$$QEAV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
-     * @hash   -839720265
+     * @hash   -838889961
      */
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
     /**
      * @symbol ?_checkForItemWorldCompatibility@ItemStackBase@@AEAAXXZ
-     * @hash   -1558645801
+     * @hash   -1557815497
      */
     MCAPI void _checkForItemWorldCompatibility();
     /**
      * @symbol ?_cloneComponents@ItemStackBase@@AEAAXAEBV1@@Z
-     * @hash   750004809
+     * @hash   750835113
      */
     MCAPI void _cloneComponents(class ItemStackBase const &);
     /**
      * @symbol ?_isInstance@ItemStackBase@@AEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   683344796
+     * @hash   684175100
      */
     MCAPI bool _isInstance(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?_loadComponents@ItemStackBase@@AEAAXAEBVCompoundTag@@@Z
-     * @hash   -7848311
+     * @hash   -7018007
      */
     MCAPI void _loadComponents(class CompoundTag const &);
     /**
      * @symbol ?_loadItem@ItemStackBase@@AEAAXAEBVCompoundTag@@@Z
-     * @hash   1528584892
+     * @hash   1529415196
      */
     MCAPI void _loadItem(class CompoundTag const &);
     /**
      * @symbol ?_setChargedItem@ItemStackBase@@AEAAXAEBVItemInstance@@@Z
-     * @hash   466148683
+     * @hash   466978987
      */
     MCAPI void _setChargedItem(class ItemInstance const &);
     /**
      * @symbol ?_updateCompareHashes@ItemStackBase@@AEAAXXZ
-     * @hash   1738023567
+     * @hash   1738853871
      */
     MCAPI void _updateCompareHashes();
 
@@ -857,7 +857,7 @@ protected:
 private:
     /**
      * @symbol ?MAX_STACK_SIZE@ItemStackBase@@0HB
-     * @hash   1142058469
+     * @hash   1142181477
      */
     MCAPI static int const MAX_STACK_SIZE;
 

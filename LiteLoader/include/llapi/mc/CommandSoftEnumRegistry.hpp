@@ -34,12 +34,12 @@ public:
 public:
     /**
      * @symbol ??0CommandSoftEnumRegistry@@QEAA@PEAVCommandRegistry@@@Z
-     * @hash   -2034863721
+     * @hash   -2034817593
      */
     MCAPI CommandSoftEnumRegistry(class CommandRegistry *);
     /**
      * @symbol ?updateSoftEnum@CommandSoftEnumRegistry@@QEAAXW4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   -213390296
+     * @hash   -213344168
      */
     MCAPI void updateSoftEnum(enum class SoftEnumUpdateType, std::string const &, std::vector<std::string>);
     /**

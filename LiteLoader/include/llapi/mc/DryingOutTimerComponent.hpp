@@ -37,12 +37,12 @@ public:
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DryingOutTimerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1934983752
+     * @hash   -1934937624
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canBeAffectedByWaterBottle@DryingOutTimerComponent@@QEBA_NXZ
-     * @hash   -1748005502
+     * @hash   -1747959374
      */
     MCAPI bool canBeAffectedByWaterBottle() const;
     /**
@@ -52,12 +52,12 @@ public:
     MCAPI class DryingOutTimerComponent & operator=(class DryingOutTimerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@DryingOutTimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -280951618
+     * @hash   -280905490
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?refillTimeWithWaterBottle@DryingOutTimerComponent@@QEAAXUTick@@@Z
-     * @hash   174714824
+     * @hash   174760952
      */
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     /**

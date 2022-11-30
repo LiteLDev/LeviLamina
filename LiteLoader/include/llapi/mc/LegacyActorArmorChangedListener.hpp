@@ -31,17 +31,17 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@LegacyActorArmorChangedListener@@UEAAXH@Z
-     * @hash   -1383234607
+     * @hash   -1383188479
      */
     virtual void containerContentChanged(int);
     /**
      * @symbol ?containerContentChanged@LegacyActorArmorChangedListener@@SAXAEAVActor@@@Z
-     * @hash   1905579768
+     * @hash   1905625896
      */
     MCAPI static void containerContentChanged(class Actor &);
     /**
      * @symbol ?initializeEntity@LegacyActorArmorChangedListener@@SAXAEAVEntityContext@@@Z
-     * @hash   -1004200338
+     * @hash   -1004154210
      */
     MCAPI static void initializeEntity(class EntityContext &);
 

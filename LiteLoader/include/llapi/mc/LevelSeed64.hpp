@@ -35,7 +35,7 @@ public:
     MCAPI unsigned int to32BitRandomSeed() const;
     /**
      * @symbol ?fromUnsigned32@LevelSeed64@@SA?AV1@I@Z
-     * @hash   -1201749967
+     * @hash   -1200919663
      */
     MCAPI static class LevelSeed64 fromUnsigned32(unsigned int);
 

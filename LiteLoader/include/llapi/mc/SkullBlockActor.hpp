@@ -41,25 +41,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@SkullBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2034265020
+     * @hash   2035095324
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@SkullBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1356549509
+     * @hash   -1355719205
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@SkullBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1349111685
+     * @hash   1349941989
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  8
      * @symbol ?onChanged@SkullBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   50188685
+     * @hash   51018989
      */
     virtual void onChanged(class BlockSource &);
     /**
@@ -105,33 +105,33 @@ public:
     /**
      * @vftbl  37
      * @symbol ?_getUpdatePacket@SkullBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1674412146
+     * @hash   -1673581842
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@SkullBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   942084404
+     * @hash   942914708
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0SkullBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1853863400
+     * @hash   -1853033096
      */
     MCAPI SkullBlockActor(class BlockPos const &);
     /**
      * @symbol ?getSkullType@SkullBlockActor@@QEBA?AW4SkullType@1@XZ
-     * @hash   -816352812
+     * @hash   -815522508
      */
     MCAPI enum class SkullBlockActor::SkullType getSkullType() const;
     /**
      * @symbol ?setRotation@SkullBlockActor@@QEAAXM@Z
-     * @hash   -1581877916
+     * @hash   -1581047612
      */
     MCAPI void setRotation(float);
     /**
      * @symbol ?setSkullType@SkullBlockActor@@QEAAXH@Z
-     * @hash   440285150
+     * @hash   441115454
      */
     MCAPI void setSkullType(int);
 

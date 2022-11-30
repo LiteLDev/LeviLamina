@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  58
      * @symbol ?getEntityLocNameString@ChestBoat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -302590612
+     * @hash   -302544484
      */
     virtual std::string getEntityLocNameString() const;
     /**
@@ -134,7 +134,7 @@ public:
     /**
      * @vftbl  249
      * @symbol ?kill@ChestBoat@@UEAAXXZ
-     * @hash   781171396
+     * @hash   781217524
      */
     virtual void kill();
     /**
@@ -155,19 +155,19 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@ChestBoat@@UEAAXPEAVActor@@@Z
-     * @hash   418883987
+     * @hash   418930115
      */
     virtual void destroy(class Actor *);
     /**
      * @symbol ??0ChestBoat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1754738051
+     * @hash   -1754691923
      */
     MCAPI ChestBoat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
      * @symbol ?_dropChestContents@ChestBoat@@AEAAXAEBVVec3@@@Z
-     * @hash   1190137554
+     * @hash   1190183682
      */
     MCAPI void _dropChestContents(class Vec3 const &);
 

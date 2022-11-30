@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -2113031605
+     * @hash   -2112985477
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
@@ -56,7 +56,7 @@ public:
     virtual void serializeData(class Json::Value &) const = 0;
     /**
      * @symbol ?parseDescription@Description@@QEAAPEAU1@UDeserializeDataParams@@@Z
-     * @hash   -954065801
+     * @hash   -954019673
      */
     MCAPI struct Description * parseDescription(struct DeserializeDataParams);
 

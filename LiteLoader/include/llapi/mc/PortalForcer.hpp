@@ -38,58 +38,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?deserialize@PortalForcer@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1681652551
+     * @hash   1682482855
      */
     virtual void deserialize(class CompoundTag const &);
     /**
      * @vftbl  2
      * @symbol ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1080576888
+     * @hash   1081407192
      */
     virtual void serialize(class CompoundTag &) const;
     /**
      * @symbol ??0PortalForcer@@QEAA@AEAVLevel@@@Z
-     * @hash   -969820014
+     * @hash   -968989710
      */
     MCAPI PortalForcer(class Level &);
     /**
      * @symbol ?addPortalRecord@PortalForcer@@QEAAAEBVPortalRecord@@V?$AutomaticID@VDimension@@H@@AEBVPortalShape@@@Z
-     * @hash   -56857956
+     * @hash   -56027652
      */
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const &);
     /**
      * @symbol ?addPortalRecord@PortalForcer@@QEAAAEBVPortalRecord@@V?$AutomaticID@VDimension@@H@@V2@@Z
-     * @hash   -186279433
+     * @hash   -185449129
      */
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);
     /**
      * @symbol ?createPortal@PortalForcer@@QEAAAEBVPortalRecord@@AEBVActor@@H@Z
-     * @hash   2143620274
+     * @hash   2144450578
      */
     MCAPI class PortalRecord const & createPortal(class Actor const &, int);
     /**
      * @symbol ?findPortal@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV3@@Z
-     * @hash   -305312880
+     * @hash   -304482576
      */
     MCAPI bool findPortal(class AutomaticID<class Dimension, int>, class BlockPos const &, int, class BlockPos &) const;
     /**
      * @symbol ?force@PortalForcer@@QEAAXAEAVActor@@AEBUDimensionTransitionComponent@@@Z
-     * @hash   -179555891
+     * @hash   -178725587
      */
     MCAPI void force(class Actor &, struct DimensionTransitionComponent const &);
     /**
      * @symbol ?portalRecordExists@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVPortalRecord@@@Z
-     * @hash   1662783742
+     * @hash   1663614046
      */
     MCAPI bool portalRecordExists(class AutomaticID<class Dimension, int>, class PortalRecord const &) const;
     /**
      * @symbol ?removeMisalignedPortalRecords@PortalForcer@@QEAAXAEAVBlockSource@@AEBVPortalShape@@AEBVPortalRecord@@@Z
-     * @hash   861848444
+     * @hash   862678748
      */
     MCAPI void removeMisalignedPortalRecords(class BlockSource &, class PortalShape const &, class PortalRecord const &);
     /**
      * @symbol ?removePortalRecord@PortalForcer@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   202842863
+     * @hash   203673167
      */
     MCAPI void removePortalRecord(class BlockSource &, class BlockPos const &);
     /**
@@ -101,7 +101,7 @@ public:
 //private:
     /**
      * @symbol ?_findPortal@PortalForcer@@AEBA?AV?$optional@VPortalRecord@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV5@@Z
-     * @hash   -111333035
+     * @hash   -110502731
      */
     MCAPI class std::optional<class PortalRecord> _findPortal(class AutomaticID<class Dimension, int>, class BlockPos const &, int, class BlockPos &) const;
 

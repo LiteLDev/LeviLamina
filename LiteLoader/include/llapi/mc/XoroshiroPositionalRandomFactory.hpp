@@ -60,7 +60,7 @@ public:
 private:
     /**
      * @symbol ?mThreadLocalDigest@XoroshiroPositionalRandomFactory@@0V?$ThreadLocalObject@Vmd5@Hash@Crypto@@V?$allocator@Vmd5@Hash@Crypto@@@std@@@Threading@Bedrock@@A
-     * @hash   1063604957
+     * @hash   1063727965
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
 

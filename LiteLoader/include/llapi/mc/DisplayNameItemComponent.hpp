@@ -59,28 +59,28 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDisplayNameItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -170411610
+     * @hash   -169581306
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDisplayNameItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1478305338
+     * @hash   1479135642
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getDescriptionId@DisplayNameItemComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -653532306
+     * @hash   -653486178
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ?bindType@DisplayNameItemComponent@@SAXXZ
-     * @hash   1658594835
+     * @hash   1659425139
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DisplayNameItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   537251454
+     * @hash   538081758
      */
     MCAPI static class HashedString const & getIdentifier();
 

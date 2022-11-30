@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?addRule@GameRulesChangedPacketData@@QEAAXAEBVGameRule@@@Z
-     * @hash   -936572076
+     * @hash   -936525948
      */
     MCAPI void addRule(class GameRule const &);
     /**
@@ -42,12 +42,12 @@ public:
     MCAPI std::vector<class GameRule> const & getRules() const;
     /**
      * @symbol ?setRules@GameRulesChangedPacketData@@QEAAXV?$vector@VGameRule@@V?$allocator@VGameRule@@@std@@@std@@@Z
-     * @hash   -1617161116
+     * @hash   -1617114988
      */
     MCAPI void setRules(std::vector<class GameRule>);
     /**
      * @symbol ??1GameRulesChangedPacketData@@QEAA@XZ
-     * @hash   -714661701
+     * @hash   -714615573
      */
     MCAPI ~GameRulesChangedPacketData();
 

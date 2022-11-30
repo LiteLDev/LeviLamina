@@ -34,37 +34,37 @@ public:
 public:
     /**
      * @symbol ??0HttpHeaders@@QEAA@XZ
-     * @hash   1465824666
+     * @hash   1465916922
      */
     MCAPI HttpHeaders();
     /**
      * @symbol ?clear@HttpHeaders@@QEAAXXZ
-     * @hash   806196175
+     * @hash   806288431
      */
     MCAPI void clear();
     /**
      * @symbol ?getHeader@HttpHeaders@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
-     * @hash   -1141382634
+     * @hash   -1141290378
      */
     MCAPI bool getHeader(std::string const &, std::string &) const;
     /**
      * @symbol ?getState@HttpHeaders@@QEAA?AW4ParseState@1@XZ
-     * @hash   -1566408925
+     * @hash   -1566362797
      */
     MCAPI enum class HttpHeaders::ParseState getState();
     /**
      * @symbol ?getStatusCode@HttpHeaders@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   767764304
+     * @hash   767856560
      */
     MCAPI std::string getStatusCode() const;
     /**
      * @symbol ?parse@HttpHeaders@@QEAA?AW4ParseState@1@AEAVBitStream@RakNet@@@Z
-     * @hash   425909562
+     * @hash   426001818
      */
     MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream &);
     /**
      * @symbol ??1HttpHeaders@@QEAA@XZ
-     * @hash   1268135498
+     * @hash   1268227754
      */
     MCAPI ~HttpHeaders();
 

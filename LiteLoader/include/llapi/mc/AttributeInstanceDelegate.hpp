@@ -56,30 +56,30 @@ public:
     /**
      * @vftbl  4
      * @symbol ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-     * @hash   1160377009
+     * @hash   1160469265
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
      * @vftbl  5
      * @symbol ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
-     * @hash   -1771621790
+     * @hash   -1771529534
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /**
      * @symbol ??0AttributeInstanceDelegate@@QEAA@AEBVAttributeInstance@@@Z
-     * @hash   1989360289
+     * @hash   1989452545
      */
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 //protected:
     /**
      * @symbol ?_getInstance@AttributeInstanceDelegate@@IEBAAEBVAttributeInstance@@XZ
-     * @hash   1518297382
+     * @hash   1518389638
      */
     MCAPI class AttributeInstance const & _getInstance() const;
     /**
      * @symbol ?_getMutableInstance@AttributeInstanceDelegate@@IEBAPEAVAttributeInstance@@XZ
-     * @hash   979382861
+     * @hash   979475117
      */
     MCAPI class AttributeInstance * _getMutableInstance() const;
 

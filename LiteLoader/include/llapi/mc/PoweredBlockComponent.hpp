@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@PoweredBlockComponent@@UEBAHXZ
-     * @hash   -424124642
+     * @hash   -423294338
      */
     virtual int getStrength() const;
     /**
@@ -51,13 +51,13 @@ public:
     /**
      * @vftbl  11
      * @symbol ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1553766632
+     * @hash   -1552936328
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   450609764
+     * @hash   451440068
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
@@ -91,7 +91,7 @@ public:
 #endif
     /**
      * @symbol ??0PoweredBlockComponent@@QEAA@E@Z
-     * @hash   1204950492
+     * @hash   1205780796
      */
     MCAPI PoweredBlockComponent(unsigned char);
 

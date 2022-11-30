@@ -68,7 +68,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?onLevelScriptTick@GameTestLevelListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -1005980177
+     * @hash   -1005149873
      */
     virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
@@ -84,12 +84,12 @@ public:
     /**
      * @vftbl  10
      * @symbol ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-     * @hash   1042407580
+     * @hash   1043237884
      */
     virtual enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
      * @symbol ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z
-     * @hash   -584563775
+     * @hash   -583733471
      */
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 

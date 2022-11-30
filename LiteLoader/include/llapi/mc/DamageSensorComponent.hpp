@@ -31,54 +31,54 @@ public:
 public:
     /**
      * @symbol ??0DamageSensorComponent@@QEAA@XZ
-     * @hash   803989216
+     * @hash   804819520
      */
     MCAPI DamageSensorComponent();
     /**
      * @symbol ?getCause@DamageSensorComponent@@QEBA?AW4ActorDamageCause@@XZ
-     * @hash   -411956282
+     * @hash   -411910154
      */
     MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @symbol ?getDamageModifier@DamageSensorComponent@@QEAAMXZ
-     * @hash   -1503535408
+     * @hash   -1502705104
      */
     MCAPI float getDamageModifier();
     /**
      * @symbol ?getDamageMultipler@DamageSensorComponent@@QEAAMXZ
-     * @hash   1103381280
+     * @hash   1103427408
      */
     MCAPI float getDamageMultipler();
     /**
      * @symbol ?isFatal@DamageSensorComponent@@QEBA_NXZ
-     * @hash   1188926118
+     * @hash   1188972246
      */
     MCAPI bool isFatal() const;
     /**
      * @symbol ??4DamageSensorComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1154990100
+     * @hash   -1154943972
      */
     MCAPI class DamageSensorComponent & operator=(class DamageSensorComponent &&);
     /**
      * @symbol ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@AEBVActorDamageSource@@H_NVVariantParameterList@@2@Z
-     * @hash   -987740623
+     * @hash   -986910319
      */
     MCAPI bool recordDamage(class Actor &, class ActorDamageSource const &, int, bool, class VariantParameterList, bool);
     /**
      * @symbol ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@H_NVBlockPos@@@Z
-     * @hash   -1122948116
+     * @hash   -1122117812
      */
     MCAPI bool recordDamage(class Actor &, class Actor *, enum class ActorDamageCause, int, bool, class BlockPos);
     /**
      * @symbol ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@H_NVVariantParameterList@@@Z
-     * @hash   -2080085962
+     * @hash   -2079255658
      */
     MCAPI bool recordDamage(class Actor &, class Actor *, enum class ActorDamageCause, int, bool, class VariantParameterList);
 
 //private:
     /**
      * @symbol ?_recordDamage@DamageSensorComponent@@AEAA_NAEAVActor@@PEAV2@AEBW4ActorDamageCause@@1H_NVVariantParameterList@@3@Z
-     * @hash   -1201527189
+     * @hash   -1200696885
      */
     MCAPI bool _recordDamage(class Actor &, class Actor *, enum class ActorDamageCause const &, class Actor *, int, bool, class VariantParameterList, bool);
 

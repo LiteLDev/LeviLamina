@@ -60,42 +60,42 @@ namespace RakNet {
 #undef AFTER_EXTRA
     /**
      * @symbol ?ConnectionAttemptLoop@RakNet@@YAIPEAX@Z
-     * @hash   1477267029
+     * @hash   1478097333
      */
     MCAPI unsigned int ConnectionAttemptLoop(void *);
     /**
      * @symbol ?GetTime@RakNet@@YA_KXZ
-     * @hash   -940839008
+     * @hash   -940008704
      */
     MCAPI unsigned __int64 GetTime();
     /**
      * @symbol ?GetTimeMS@RakNet@@YAIXZ
-     * @hash   -1948985397
+     * @hash   -1948155093
      */
     MCAPI unsigned int GetTimeMS();
     /**
      * @symbol ?GetTimeUS@RakNet@@YA_KXZ
-     * @hash   420737100
+     * @hash   421567404
      */
     MCAPI unsigned __int64 GetTimeUS();
     /**
      * @symbol ?NonNumericHostString@RakNet@@YA_NPEBD@Z
-     * @hash   -46135623
+     * @hash   -45305319
      */
     MCAPI bool NonNumericHostString(char const *);
     /**
      * @symbol ?ProcessNetworkPacket@RakNet@@YAXUSystemAddress@1@PEBDHPEAVRakPeer@1@PEAVRakNetSocket2@1@_KAEAVBitStream@1@@Z
-     * @hash   888664223
+     * @hash   889494527
      */
     MCAPI void ProcessNetworkPacket(struct RakNet::SystemAddress, char const *, int, class RakNet::RakPeer *, class RakNet::RakNetSocket2 *, unsigned __int64, class RakNet::BitStream &);
     /**
      * @symbol ?ProcessOfflineNetworkPacket@RakNet@@YA_NUSystemAddress@1@PEBDHPEAVRakPeer@1@PEAVRakNetSocket2@1@PEA_N_K@Z
-     * @hash   892520310
+     * @hash   893350614
      */
     MCAPI bool ProcessOfflineNetworkPacket(struct RakNet::SystemAddress, char const *, int, class RakNet::RakPeer *, class RakNet::RakNetSocket2 *, bool *, unsigned __int64);
     /**
      * @symbol ?SplitPacketChannelComp@RakNet@@YAHAEBGAEBQEAUSplitPacketChannel@1@@Z
-     * @hash   -457295374
+     * @hash   -456465070
      */
     MCAPI int SplitPacketChannelComp(unsigned short const &, struct RakNet::SplitPacketChannel *const &);
     /**
@@ -110,12 +110,12 @@ namespace RakNet {
     MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
     /**
      * @symbol ?UpdateNetworkLoop@RakNet@@YAIPEAX@Z
-     * @hash   1188865321
+     * @hash   1189695625
      */
     MCAPI unsigned int UpdateNetworkLoop(void *);
     /**
      * @symbol ?UpdateTCPInterfaceLoop@RakNet@@YAIPEAX@Z
-     * @hash   -1754394909
+     * @hash   -1753564605
      */
     MCAPI unsigned int UpdateTCPInterfaceLoop(void *);
     /**
@@ -135,32 +135,32 @@ namespace RakNet {
     MCAPI int _DLMallocMUnmap(void *, unsigned __int64);
     /**
      * @symbol ?_RakFree@RakNet@@YAXPEAX@Z
-     * @hash   1432671356
+     * @hash   1433501660
      */
     MCAPI void _RakFree(void *);
     /**
      * @symbol ?_RakFree_Ex@RakNet@@YAXPEAXPEBDI@Z
-     * @hash   463256229
+     * @hash   464086533
      */
     MCAPI void _RakFree_Ex(void *, char const *, unsigned int);
     /**
      * @symbol ?_RakMalloc@RakNet@@YAPEAX_K@Z
-     * @hash   -1854569868
+     * @hash   -1853739564
      */
     MCAPI void * _RakMalloc(unsigned __int64);
     /**
      * @symbol ?_RakMalloc_Ex@RakNet@@YAPEAX_KPEBDI@Z
-     * @hash   1700755837
+     * @hash   1701586141
      */
     MCAPI void * _RakMalloc_Ex(unsigned __int64, char const *, unsigned int);
     /**
      * @symbol ?_RakRealloc@RakNet@@YAPEAXPEAX_K@Z
-     * @hash   -845193644
+     * @hash   -844363340
      */
     MCAPI void * _RakRealloc(void *, unsigned __int64);
     /**
      * @symbol ?_RakRealloc_Ex@RakNet@@YAPEAXPEAX_KPEBDI@Z
-     * @hash   -2096734971
+     * @hash   -2095904667
      */
     MCAPI void * _RakRealloc_Ex(void *, unsigned __int64, char const *, unsigned int);
 

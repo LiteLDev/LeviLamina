@@ -113,17 +113,17 @@ public:
 private:
     /**
      * @symbol ?FIND_PARTNER_INTERVAL_TICKS@MingleGoal@@0HB
-     * @hash   -1278206012
+     * @hash   -1278083004
      */
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     /**
      * @symbol ?SPEAK_INTERVAL_TICKS_MAX@MingleGoal@@0HB
-     * @hash   1057745953
+     * @hash   1057868961
      */
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     /**
      * @symbol ?SPEAK_INTERVAL_TICKS_MIN@MingleGoal@@0HB
-     * @hash   162682059
+     * @hash   162805067
      */
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 

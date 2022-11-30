@@ -44,12 +44,12 @@ public:
     MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
     /**
      * @symbol ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
-     * @hash   -2139740738
+     * @hash   -2139694610
      */
     MCAPI enum class WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     /**
      * @symbol ??1WorldPacksHistoryFile@@QEAA@XZ
-     * @hash   -1010134556
+     * @hash   -1010088428
      */
     MCAPI ~WorldPacksHistoryFile();
 

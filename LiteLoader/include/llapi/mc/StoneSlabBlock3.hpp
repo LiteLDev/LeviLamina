@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@StoneSlabBlock3@@UEBA_NH@Z
-     * @hash   -1285506901
+     * @hash   -1284676597
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1978906517
+     * @hash   1979736821
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -196,13 +196,13 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@StoneSlabBlock3@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   762102396
+     * @hash   762932700
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@StoneSlabBlock3@@UEBAHAEBVBlock@@@Z
-     * @hash   634075941
+     * @hash   634906245
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   397502460
+     * @hash   398332764
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@StoneSlabBlock3@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   313467161
+     * @hash   314297465
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -255,12 +255,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@StoneSlabBlock3@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1018773533
+     * @hash   -1017943229
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0StoneSlabBlock3@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   -1278241578
+     * @hash   -1277411274
      */
     MCAPI StoneSlabBlock3(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
     /**

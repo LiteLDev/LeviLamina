@@ -65,7 +65,7 @@ public:
     /**
      * @vftbl  52
      * @symbol ?getPatternIndex@BannerPatternItem@@UEBAHXZ
-     * @hash   -414227332
+     * @hash   -413397028
      */
     virtual int getPatternIndex() const;
     /**
@@ -76,7 +76,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@BannerPatternItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   923843256
+     * @hash   924673560
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -106,18 +106,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BannerPatternItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -2094542477
+     * @hash   -2093712173
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERNITEM
@@ -129,7 +129,7 @@ public:
 #endif
     /**
      * @symbol ??0BannerPatternItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-     * @hash   593712151
+     * @hash   594542455
      */
     MCAPI BannerPatternItem(std::string const &, int, enum class BannerPatternItem::Type);
 

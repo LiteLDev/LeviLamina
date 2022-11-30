@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@LeafBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   1717656476
+     * @hash   1718486780
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1664216959
+     * @hash   1665047263
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@LeafBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   585091614
+     * @hash   585921918
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -220,19 +220,19 @@ public:
     /**
      * @vftbl  136
      * @symbol ?getColor@LeafBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   958880427
+     * @hash   959710731
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  139
      * @symbol ?isSeasonTinted@LeafBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   63735504
+     * @hash   64565808
      */
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@LeafBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -2020108485
+     * @hash   -2019278181
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   284724000
+     * @hash   285554304
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@LeafBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -564227821
+     * @hash   -563397517
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   128979490
+     * @hash   129809794
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -286,13 +286,13 @@ public:
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@LeafBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1524854024
+     * @hash   -1524023720
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@LeafBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -456024669
+     * @hash   -455194365
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -303,40 +303,40 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@LeafBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   80815893
+     * @hash   81646197
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getExtraResourceItem@LeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1643256281
+     * @hash   -1642425977
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
      * @symbol ??0LeafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   -1375265033
+     * @hash   -1374434729
      */
     MCAPI LeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
     /**
      * @symbol ?getSeasonsColor@LeafBlock@@QEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   2062794600
+     * @hash   2063624904
      */
     MCAPI class mce::Color getSeasonsColor(class BlockSource &, class BlockPos const &, int, int) const;
     /**
      * @symbol ?runDecay@LeafBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1980313706
+     * @hash   -1979483402
      */
     MCAPI static void runDecay(class BlockSource &, class BlockPos const &, int);
 
 //protected:
     /**
      * @symbol ?getSapling@LeafBlock@@IEBAAEBVBlock@@XZ
-     * @hash   -466489497
+     * @hash   -465659193
      */
     MCAPI class Block const & getSapling() const;
     /**
      * @symbol ?_isTransparent@LeafBlock@@KA_NAEBVBlock@@AEBW4BlockProperty@@@Z
-     * @hash   1654455901
+     * @hash   1655286205
      */
     MCAPI static bool _isTransparent(class Block const &, enum class BlockProperty const &);
 

@@ -47,13 +47,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@RemoveOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   2066118229
+     * @hash   2066164357
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@RemoveOnHitSubcomponent@@UEAAPEBDXZ
-     * @hash   -1898386000
+     * @hash   -1898339872
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEONHITSUBCOMPONENT
@@ -70,7 +70,7 @@ public:
 #endif
     /**
      * @symbol ??0RemoveOnHitSubcomponent@@QEAA@XZ
-     * @hash   706107705
+     * @hash   706153833
      */
     MCAPI RemoveOnHitSubcomponent();
 

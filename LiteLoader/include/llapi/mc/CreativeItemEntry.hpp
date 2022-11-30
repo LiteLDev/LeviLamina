@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0CreativeItemEntry@@QEAA@PEAVCreativeItemRegistry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@I@Z
-     * @hash   -908920970
+     * @hash   -908090666
      */
     MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
     /**
      * @symbol ??0CreativeItemEntry@@QEAA@$$QEAV0@@Z
-     * @hash   728104313
+     * @hash   728934617
      */
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
     /**
      * @symbol ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
-     * @hash   -1368452893
+     * @hash   -1367622589
      */
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const & getCreativeNetId() const;
     /**
      * @symbol ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
-     * @hash   1685527575
+     * @hash   1686357879
      */
     MCAPI class CreativeGroupInfo * getGroup() const;
     /**
      * @symbol ?getIndex@CreativeItemEntry@@QEBAIXZ
-     * @hash   -1210112600
+     * @hash   -1210066472
      */
     MCAPI unsigned int getIndex() const;
     /**
@@ -64,7 +64,7 @@ public:
 //private:
     /**
      * @symbol ?_setGroup@CreativeItemEntry@@AEAAXPEAVCreativeGroupInfo@@@Z
-     * @hash   1149355858
+     * @hash   1150186162
      */
     MCAPI void _setGroup(class CreativeGroupInfo *);
 

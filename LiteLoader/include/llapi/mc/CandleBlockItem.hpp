@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@CandleBlockItem@@UEBAHH@Z
-     * @hash   1390088967
+     * @hash   1390919271
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -100,18 +100,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@CandleBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   1020896835
+     * @hash   1021727139
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCKITEM
@@ -123,7 +123,7 @@ public:
 #endif
     /**
      * @symbol ??0CandleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1501803153
+     * @hash   1502633457
      */
     MCAPI CandleBlockItem(std::string const &, int);
 

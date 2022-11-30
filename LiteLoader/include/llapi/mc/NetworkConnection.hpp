@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z
-     * @hash   -1360112505
+     * @hash   -1360066377
      */
     MCAPI NetworkConnection(class NetworkIdentifier const &, class std::shared_ptr<class NetworkPeer>, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>, bool, class Bedrock::NonOwnerPointer<class IPacketObserver>, class Scheduler &);
     /**
      * @symbol ?disconnect@NetworkConnection@@QEAAXXZ
-     * @hash   1182953739
+     * @hash   1182999867
      */
     MCAPI void disconnect();
     /**
      * @symbol ?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-     * @hash   -369399745
+     * @hash   -369353617
      */
     MCAPI enum class NetworkPeer::DataStatus receivePacket(std::string &, class NetworkHandler &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
      * @symbol ?update@NetworkConnection@@QEAAXXZ
-     * @hash   1970646165
+     * @hash   1970692293
      */
     MCAPI void update();
     /**

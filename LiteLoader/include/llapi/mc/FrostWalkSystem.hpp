@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_tryFrostWalk@FrostWalkSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   1316255653
+     * @hash   1316301781
      */
     MCAPI static void _tryFrostWalk(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
      * @symbol ?createSystem@FrostWalkSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1594354854
+     * @hash   1594400982
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

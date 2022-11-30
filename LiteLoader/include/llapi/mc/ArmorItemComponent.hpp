@@ -59,33 +59,33 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VArmorItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1755024008
+     * @hash   1755854312
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VArmorItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1031672904
+     * @hash   1032503208
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getArmorTextureType@ArmorItemComponent@@QEBA?AW4ArmorTextureType@@XZ
-     * @hash   1203048990
+     * @hash   1203095118
      */
     MCAPI enum class ArmorTextureType getArmorTextureType() const;
     /**
      * @symbol ?getArmorValue@ArmorItemComponent@@QEBAHXZ
-     * @hash   24615174
+     * @hash   24661302
      */
     MCAPI int getArmorValue() const;
     /**
      * @symbol ?bindType@ArmorItemComponent@@SAXXZ
-     * @hash   466649251
+     * @hash   467479555
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ArmorItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   119519794
+     * @hash   120350098
      */
     MCAPI static class HashedString const & getIdentifier();
 

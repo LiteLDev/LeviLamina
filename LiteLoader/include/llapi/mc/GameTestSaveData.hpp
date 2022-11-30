@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1GameTestSaveData@@QEAA@XZ
-     * @hash   -1132395691
+     * @hash   -1132349563
      */
     MCAPI ~GameTestSaveData();
 

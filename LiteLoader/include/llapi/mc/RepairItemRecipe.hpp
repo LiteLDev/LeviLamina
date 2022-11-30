@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@RepairItemRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   -327341044
+     * @hash   -326510740
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
@@ -51,30 +51,30 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getIngredient@RepairItemRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   1372947015
+     * @hash   1373777319
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@RepairItemRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   -785694957
+     * @hash   -785602701
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@RepairItemRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -873236920
+     * @hash   -872406616
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@RepairItemRecipe@@UEBAHXZ
-     * @hash   -23003618
+     * @hash   -22957490
      */
     virtual int size() const;
     /**
      * @symbol ??0RepairItemRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@PEBVUUID@mce@@@Z
-     * @hash   1089693121
+     * @hash   1090523425
      */
     MCAPI RepairItemRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
     /**

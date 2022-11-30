@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
-     * @hash   617183309
+     * @hash   617229437
      */
     MCAPI Attribute(class HashedString const &, enum class RedefinitionMode, bool);
     /**
@@ -47,22 +47,22 @@ public:
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getRedefinitionMode@Attribute@@QEBA?AW4RedefinitionMode@@XZ
-     * @hash   -1064398356
+     * @hash   -1064352228
      */
     MCAPI enum class RedefinitionMode getRedefinitionMode() const;
     /**
      * @symbol ?isClientSyncable@Attribute@@QEBA_NXZ
-     * @hash   516801432
+     * @hash   516847560
      */
     MCAPI bool isClientSyncable() const;
     /**
      * @symbol ??8Attribute@@QEBA_NAEBV0@@Z
-     * @hash   -815110581
+     * @hash   -815064453
      */
     MCAPI bool operator==(class Attribute const &) const;
     /**
      * @symbol ?getByName@Attribute@@SAAEAV1@AEBVHashedString@@@Z
-     * @hash   2036665876
+     * @hash   2036712004
      */
     MCAPI static class Attribute & getByName(class HashedString const &);
 

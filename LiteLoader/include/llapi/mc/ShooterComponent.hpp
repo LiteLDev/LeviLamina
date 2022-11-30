@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0ShooterComponent@@QEAA@XZ
-     * @hash   -1428036579
+     * @hash   -1427990451
      */
     MCAPI ShooterComponent();
     /**
      * @symbol ?getAuxValue@ShooterComponent@@QEAAHXZ
-     * @hash   416145608
+     * @hash   416191736
      */
     MCAPI int getAuxValue();
     /**
      * @symbol ?onShoot@ShooterComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1630778500
+     * @hash   -1630732372
      */
     MCAPI void onShoot(class Actor &);
     /**

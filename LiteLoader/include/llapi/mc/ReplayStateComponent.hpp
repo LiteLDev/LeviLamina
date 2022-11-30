@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0ReplayStateComponent@@QEAA@V?$unique_ptr@VActorHistory@@U?$default_delete@VActorHistory@@@std@@@std@@V?$unique_ptr@UIReplayStatePolicy@@U?$default_delete@UIReplayStatePolicy@@@std@@@2@@Z
-     * @hash   1406099862
+     * @hash   1406145990
      */
     MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
     /**
      * @symbol ??0ReplayStateComponent@@QEAA@$$QEAV0@@Z
-     * @hash   898894031
+     * @hash   898940159
      */
     MCAPI ReplayStateComponent(class ReplayStateComponent &&);
     /**
      * @symbol ?getCurrentTick@ReplayStateComponent@@QEBA_KXZ
-     * @hash   111271555
+     * @hash   111317683
      */
     MCAPI unsigned __int64 getCurrentTick() const;
     /**
      * @symbol ??4ReplayStateComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1074196398
+     * @hash   -1074150270
      */
     MCAPI class ReplayStateComponent & operator=(class ReplayStateComponent &&);
     /**
      * @symbol ?shouldSendCorrectionToClient@ReplayStateComponent@@QEBA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@@Z
-     * @hash   -2078588726
+     * @hash   -2078542598
      */
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy &, class PlayerAuthInputPacket const &) const;
     /**
      * @symbol ?tick@ReplayStateComponent@@QEAAXPEAUIActorMovementProxy@@_KPEAVEntityRegistry@@@Z
-     * @hash   -442568621
+     * @hash   -442522493
      */
     MCAPI void tick(struct IActorMovementProxy *, unsigned __int64, class EntityRegistry *);
     /**
      * @symbol ??1ReplayStateComponent@@QEAA@XZ
-     * @hash   397967197
+     * @hash   398013325
      */
     MCAPI ~ReplayStateComponent();
 

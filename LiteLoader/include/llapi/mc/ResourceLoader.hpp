@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getPath@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
-     * @hash   -1263453308
+     * @hash   -1262623004
      */
     virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const &) const;
     /**
@@ -82,19 +82,19 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getPathContainingResource@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
-     * @hash   -825906936
+     * @hash   -825076632
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &) const;
     /**
      * @vftbl  10
      * @symbol ?getPathContainingResource@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   2013743215
+     * @hash   2014573519
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /**
      * @vftbl  11
      * @symbol ?getPackStackIndexOfResource@ResourceLoader@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   558470294
+     * @hash   559300598
      */
     virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER

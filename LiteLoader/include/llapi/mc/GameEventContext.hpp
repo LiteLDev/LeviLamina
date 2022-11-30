@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0GameEventContext@@QEAA@AEBVVec3@@PEAVActor@@PEBVBlock@@@Z
-     * @hash   -1045655210
+     * @hash   -1045609082
      */
     MCAPI GameEventContext(class Vec3 const &, class Actor *, class Block const *);
 

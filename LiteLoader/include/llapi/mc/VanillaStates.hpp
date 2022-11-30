@@ -669,22 +669,22 @@ struct CachedItemStateMapPtr {
     MCAPI extern class ItemStateVariant<enum class WoodType> const WoodType;
     /**
      * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@@Z
-     * @hash   1566186895
+     * @hash   1567017199
      */
     MCAPI class ItemState const * getState(class HashedString const &);
     /**
      * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@AEAUCachedItemStateMapPtr@1@@Z
-     * @hash   -1011345912
+     * @hash   -1010515608
      */
     MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
     /**
      * @symbol ?registerStates@VanillaStates@@YAXXZ
-     * @hash   1890076070
+     * @hash   1890906374
      */
     MCAPI void registerStates();
     /**
      * @symbol ?unregisterStates@VanillaStates@@YAXXZ
-     * @hash   990129176
+     * @hash   990959480
      */
     MCAPI void unregisterStates();
 

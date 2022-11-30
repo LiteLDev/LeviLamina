@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Pillager@@UEAAXAEAVRenderParams@@@Z
-     * @hash   442421844
+     * @hash   442467972
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -141,7 +141,7 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Pillager@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1856333957
+     * @hash   -1856287829
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Pillager@@UEAAMAEBVBlockPos@@@Z
-     * @hash   1585531815
+     * @hash   1585577943
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -193,7 +193,7 @@ public:
     virtual bool isDarkEnoughToSpawn() const;
     /**
      * @symbol ??0Pillager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1958602744
+     * @hash   -1958556616
      */
     MCAPI Pillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

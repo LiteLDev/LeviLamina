@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@EyeOfEnder@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -2134208451
+     * @hash   -2134162323
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -50,13 +50,13 @@ public:
     /**
      * @vftbl  48
      * @symbol ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
-     * @hash   -227478690
+     * @hash   -227432562
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
      * @vftbl  50
      * @symbol ?normalTick@EyeOfEnder@@UEAAXXZ
-     * @hash   -1385476949
+     * @hash   -1385430821
      */
     virtual void normalTick();
     /**
@@ -162,17 +162,17 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0EyeOfEnder@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -321244660
+     * @hash   -321198532
      */
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?preNormalTick@EyeOfEnder@@QEAAXXZ
-     * @hash   685923171
+     * @hash   685969299
      */
     MCAPI void preNormalTick();
     /**
      * @symbol ?signalTo@EyeOfEnder@@QEAAXAEBVPlayer@@AEAVBlockPos@@@Z
-     * @hash   1042167217
+     * @hash   1042213345
      */
     MCAPI void signalTo(class Player const &, class BlockPos &);
 

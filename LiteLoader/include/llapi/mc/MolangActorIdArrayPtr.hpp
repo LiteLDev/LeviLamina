@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z
-     * @hash   -437050384
+     * @hash   -437004256
      */
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
     /**

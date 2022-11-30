@@ -40,52 +40,52 @@ public:
 public:
     /**
      * @symbol ??0HashedString@@QEAA@_KPEBD@Z
-     * @hash   803296650
+     * @hash   804126954
      */
     MCAPI HashedString(unsigned __int64, char const *);
     /**
      * @symbol ??0HashedString@@QEAA@PEBD@Z
-     * @hash   -1217154242
+     * @hash   -1216323938
      */
     MCAPI HashedString(char const *);
     /**
      * @symbol ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   645006727
+     * @hash   645837031
      */
     MCAPI HashedString(std::string const &);
     /**
      * @symbol ??0HashedString@@QEAA@AEBV0@@Z
-     * @hash   1095838177
+     * @hash   1096668481
      */
     MCAPI HashedString(class HashedString const &);
     /**
      * @symbol ??0HashedString@@QEAA@$$T@Z
-     * @hash   -1246455477
+     * @hash   -1245625173
      */
     MCAPI HashedString(std::nullptr_t);
     /**
      * @symbol ??0HashedString@@QEAA@$$QEAV0@@Z
-     * @hash   -1250488763
+     * @hash   -1249658459
      */
     MCAPI HashedString(class HashedString &&);
     /**
      * @symbol ?c_str@HashedString@@QEBAPEBDXZ
-     * @hash   801118137
+     * @hash   801948441
      */
     MCAPI char const * c_str() const;
     /**
      * @symbol ?clear@HashedString@@QEAAXXZ
-     * @hash   709454595
+     * @hash   710284899
      */
     MCAPI void clear();
     /**
      * @symbol ?empty@HashedString@@QEBA_NXZ
-     * @hash   -2070787586
+     * @hash   -2069957282
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?getHash@HashedString@@QEBA_KXZ
-     * @hash   -212079129
+     * @hash   -212033001
      */
     MCAPI unsigned __int64 getHash() const;
     /**
@@ -95,7 +95,7 @@ public:
     MCAPI std::string const & getString() const;
     /**
      * @symbol ?isEmpty@HashedString@@QEBA_NXZ
-     * @hash   -616582486
+     * @hash   -615752182
      */
     MCAPI bool isEmpty() const;
     /**
@@ -105,27 +105,27 @@ public:
     MCAPI operator class gsl::basic_string_span<char const, -1>() const;
     /**
      * @symbol ??9HashedString@@QEBA_NAEBV0@@Z
-     * @hash   532133196
+     * @hash   532963500
      */
     MCAPI bool operator!=(class HashedString const &) const;
     /**
      * @symbol ??MHashedString@@QEBA_NAEBV0@@Z
-     * @hash   1533301968
+     * @hash   1534132272
      */
     MCAPI bool operator<(class HashedString const &) const;
     /**
      * @symbol ??4HashedString@@QEAAAEAV0@AEBV0@@Z
-     * @hash   965494340
+     * @hash   966324644
      */
     MCAPI class HashedString & operator=(class HashedString const &);
     /**
      * @symbol ??4HashedString@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1292385064
+     * @hash   1293215368
      */
     MCAPI class HashedString & operator=(class HashedString &&);
     /**
      * @symbol ??8HashedString@@QEBA_NAEBV0@@Z
-     * @hash   -399006647
+     * @hash   -398176343
      */
     MCAPI bool operator==(class HashedString const &) const;
     /**
@@ -135,17 +135,17 @@ public:
     MCAPI ~HashedString();
     /**
      * @symbol ?bindType@HashedString@@SAXXZ
-     * @hash   -793662877
+     * @hash   -792832573
      */
     MCAPI static void bindType();
     /**
      * @symbol ?computeHash@HashedString@@SA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1232325458
+     * @hash   1233155762
      */
     MCAPI static unsigned __int64 computeHash(std::string const &);
     /**
      * @symbol ?computeHash@HashedString@@SA_KPEBD@Z
-     * @hash   727472001
+     * @hash   728302305
      */
     MCAPI static unsigned __int64 computeHash(char const *);
     /**
@@ -155,7 +155,7 @@ public:
     MCAPI static class HashedString defaultErrorValue;
     /**
      * @symbol ?getEmptyString@HashedString@@SAAEBV1@XZ
-     * @hash   -1335329605
+     * @hash   -1334499301
      */
     MCAPI static class HashedString const & getEmptyString();
 

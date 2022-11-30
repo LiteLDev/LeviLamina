@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0BlockLootComponent@@QEAA@XZ
-     * @hash   -1249913324
+     * @hash   -1249083020
      */
     MCAPI BlockLootComponent();
     /**

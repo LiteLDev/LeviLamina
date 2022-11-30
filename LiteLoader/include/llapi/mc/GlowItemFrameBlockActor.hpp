@@ -78,7 +78,7 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0GlowItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-     * @hash   -2040317678
+     * @hash   -2039487374
      */
     MCAPI GlowItemFrameBlockActor(class BlockPos);
 

@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?getStructure@ImportStructureMetaData@@QEAAPEBVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1806531266
+     * @hash   1807361570
      */
     MCAPI class StructureTemplate const * getStructure(std::string const &);
     /**
      * @symbol ?isSpecificStructureDirty@ImportStructureMetaData@@QEAA?B_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -630754223
+     * @hash   -629923919
      */
     MCAPI bool const isSpecificStructureDirty(std::string const &);
     /**
      * @symbol ?setSpecificStructureDirty@ImportStructureMetaData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1872111021
+     * @hash   -1871280717
      */
     MCAPI void setSpecificStructureDirty(std::string const &, bool);
 

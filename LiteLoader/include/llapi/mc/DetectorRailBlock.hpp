@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@DetectorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1706766387
+     * @hash   1707596691
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@DetectorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   234047743
+     * @hash   234878047
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -209,7 +209,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@DetectorRailBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   1187514321
+     * @hash   1188344625
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@DetectorRailBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1419171835
+     * @hash   -1418341531
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@DetectorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2017071173
+     * @hash   -2016240869
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -273,14 +273,14 @@ public:
 #endif
     /**
      * @symbol ??0DetectorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   2100581155
+     * @hash   2101411459
      */
     MCAPI DetectorRailBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?checkPressed@DetectorRailBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   648987166
+     * @hash   649817470
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
 

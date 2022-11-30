@@ -36,35 +36,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@DeathInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -197459692
+     * @hash   -197413564
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@DeathInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1929692223
+     * @hash   -1929646095
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@DeathInfoPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1336399354
+     * @hash   -1336353226
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@DeathInfoPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   219970646
+     * @hash   220016774
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0DeathInfoPacket@@QEAA@XZ
-     * @hash   -1656930922
+     * @hash   -1656884794
      */
     MCAPI DeathInfoPacket();
     /**
      * @symbol ??0DeathInfoPacket@@QEAA@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@Z
-     * @hash   -1588079394
+     * @hash   -1588033266
      */
     MCAPI DeathInfoPacket(struct std::pair<std::string, std::vector<std::string>> const &);
 

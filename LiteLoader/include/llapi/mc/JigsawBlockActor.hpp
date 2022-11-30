@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@JigsawBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   688058336
+     * @hash   688888640
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@JigsawBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1055189711
+     * @hash   1056020015
      */
     virtual bool save(class CompoundTag &) const;
     /**
@@ -97,12 +97,12 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@JigsawBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1716921232
+     * @hash   -1716090928
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0JigsawBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -2032038580
+     * @hash   -2031208276
      */
     MCAPI JigsawBlockActor(class BlockPos const &);
 

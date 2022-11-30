@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SquidIdleGoal@@UEAA_NXZ
-     * @hash   -997930697
+     * @hash   -997884569
      */
     virtual bool canUse();
     /**
@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SquidIdleGoal@@UEAAXXZ
-     * @hash   136690528
+     * @hash   136736656
      */
     virtual void start();
     /**
@@ -67,13 +67,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?tick@SquidIdleGoal@@UEAAXXZ
-     * @hash   -742571941
+     * @hash   -742525813
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SquidIdleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1963727495
+     * @hash   -1963681367
      */
     virtual void appendDebugInfo(std::string &) const;
 

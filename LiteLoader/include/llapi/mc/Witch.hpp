@@ -106,13 +106,13 @@ public:
     /**
      * @vftbl  119
      * @symbol ?performRangedAttack@Witch@@UEAAXAEAVActor@@M@Z
-     * @hash   1705545179
+     * @hash   1705591307
      */
     virtual void performRangedAttack(class Actor &, float);
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -479615697
+     * @hash   -479569569
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -148,7 +148,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1336832065
+     * @hash   -1336785937
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -164,7 +164,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Witch@@EEAAXXZ
-     * @hash   1404920046
+     * @hash   1404966174
      */
     virtual void _onSizeUpdated();
     /**
@@ -180,7 +180,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Witch@@UEAAXXZ
-     * @hash   801827156
+     * @hash   801873284
      */
     virtual void aiStep();
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  335
      * @symbol ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
-     * @hash   -89032487
+     * @hash   -88986359
      */
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const &, float) const;
     /**
@@ -211,12 +211,12 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Witch@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1242134893
+     * @hash   -1242088765
      */
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?preAiStep@Witch@@QEAAXXZ
-     * @hash   1951007939
+     * @hash   1951054067
      */
     MCAPI void preAiStep();
 

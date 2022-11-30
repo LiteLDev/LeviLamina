@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@ComposterBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -221353905
+     * @hash   -220523601
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@ComposterBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1584085374
+     * @hash   1584915678
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -486015410
+     * @hash   -485185106
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -179,7 +179,7 @@ public:
     /**
      * @vftbl  74
      * @symbol ?onMove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -808304781
+     * @hash   -807474477
      */
     virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@ComposterBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -2116816436
+     * @hash   -2115986132
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@ComposterBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   557537303
+     * @hash   558367607
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1669797840
+     * @hash   1670628144
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   151314837
+     * @hash   152145141
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   177450309
+     * @hash   178280613
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@ComposterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   629189972
+     * @hash   630020276
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -301,22 +301,22 @@ public:
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
-     * @hash   2114486587
+     * @hash   2115316891
      */
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   2115363980
+     * @hash   2116194284
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   2116256749
+     * @hash   2117087053
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   2117180270
+     * @hash   2118010574
      */
     virtual void __unk_vfn_196();
     /**
@@ -333,54 +333,54 @@ public:
 #endif
     /**
      * @symbol ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1324255389
+     * @hash   1325085693
      */
     MCAPI ComposterBlock(std::string const &, int);
     /**
      * @symbol ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -607677920
+     * @hash   -606847616
      */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?addItems@ComposterBlock@@SAHAEBVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   970400957
+     * @hash   971231261
      */
     MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?addItems@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1063319825
+     * @hash   1064150129
      */
     MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?empty@ComposterBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -1047960070
+     * @hash   -1047129766
      */
     MCAPI static void empty(class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?extractItem@ComposterBlock@@SA?AVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -832289889
+     * @hash   -831459585
      */
     MCAPI static class ItemStack extractItem(class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?getComposterAt@ComposterBlock@@SAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2022916159
+     * @hash   2023746463
      */
     MCAPI static class Block const * getComposterAt(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_emitBoneMeal@ComposterBlock@@AEBAXAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1561781759
+     * @hash   1562612063
      */
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-     * @hash   25518600
+     * @hash   26348904
      */
     MCAPI void _notifyClientComposterUsed(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     /**
      * @symbol ?_getCompostableItems@ComposterBlock@@CAAEBV?$vector@U?$pair@HC@std@@V?$allocator@U?$pair@HC@std@@@2@@std@@AEBVExperiments@@@Z
-     * @hash   280602925
+     * @hash   281433229
      */
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
@@ -392,7 +392,7 @@ private:
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     /**
      * @symbol ?PARTICLE_OFFSET@ComposterBlock@@0VVec3@@B
-     * @hash   1258227682
+     * @hash   1258350690
      */
     MCAPI static class Vec3 const PARTICLE_OFFSET;
 

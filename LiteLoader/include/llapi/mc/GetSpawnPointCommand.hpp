@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@GetSpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1457699811
+     * @hash   1457745939
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@GetSpawnPointCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -847458036
+     * @hash   -847411908
      */
     MCAPI static void setup(class CommandRegistry &);
 

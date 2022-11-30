@@ -31,44 +31,44 @@ public:
 public:
     /**
      * @symbol ??0BreakDoorAnnotationComponent@@QEAA@XZ
-     * @hash   -1229418003
+     * @hash   -1229371875
      */
     MCAPI BreakDoorAnnotationComponent();
     /**
      * @symbol ?canMobBreakDoor@BreakDoorAnnotationComponent@@QEBA_NAEAVMob@@AEBVPath@@@Z
-     * @hash   -1150001698
+     * @hash   -1149955570
      */
     MCAPI bool canMobBreakDoor(class Mob &, class Path const &) const;
     /**
      * @symbol ?clearProgress@BreakDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
-     * @hash   732397654
+     * @hash   732443782
      */
     MCAPI void clearProgress(class Mob &);
     /**
      * @symbol ?initFromDefinition@BreakDoorAnnotationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1517872810
+     * @hash   1517918938
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?obstructionCheck@BreakDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
-     * @hash   1513138180
+     * @hash   1513184308
      */
     MCAPI void obstructionCheck(class Mob &);
     /**
      * @symbol ?onComponentRemoved@BreakDoorAnnotationComponent@@QEAAXAEAVEntityContext@@@Z
-     * @hash   35638188
+     * @hash   35684316
      */
     MCAPI void onComponentRemoved(class EntityContext &);
 
 //private:
     /**
      * @symbol ?_cleanUp@BreakDoorAnnotationComponent@@AEAAXAEAVMob@@@Z
-     * @hash   -1359492228
+     * @hash   -1359446100
      */
     MCAPI void _cleanUp(class Mob &);
     /**
      * @symbol ?_shouldBreakDoor@BreakDoorAnnotationComponent@@AEAA_NAEAVMob@@@Z
-     * @hash   -268338820
+     * @hash   -268292692
      */
     MCAPI bool _shouldBreakDoor(class Mob &);
 

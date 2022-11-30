@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1042571479
+     * @hash   1042617607
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectScore@@UEBA?AVValue@Json@@XZ
-     * @hash   271199399
+     * @hash   271245527
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectScore@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   -1891631736
+     * @hash   -1891585608
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectScore@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -460466953
+     * @hash   -460420825
      */
     MCAPI TextObjectScore(std::string, std::string);
     /**

@@ -24,17 +24,17 @@ namespace EntityEnterVolumeSystemUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_addActor@EntityEnterVolumeSystemUtil@@YAXAEBVActor@@AEAVEntitiesEnteredVolumeComponent@@AEAVEntitiesInsideVolumeComponent@@@Z
-     * @hash   629875485
+     * @hash   629921613
      */
     MCAPI void _addActor(class Actor const &, class EntitiesEnteredVolumeComponent &, class EntitiesInsideVolumeComponent &);
     /**
      * @symbol ?_boundsContainsActor@EntityEnterVolumeSystemUtil@@YA_NAEBVActor@@AEBVVolumeBoundsComponent@@AEBVDimension@@@Z
-     * @hash   -344419362
+     * @hash   -344373234
      */
     MCAPI bool _boundsContainsActor(class Actor const &, class VolumeBoundsComponent const &, class Dimension const &);
     /**
      * @symbol ?_removeEmptyComponents@EntityEnterVolumeSystemUtil@@YAXAEAVEntityContext@@AEAVEntitiesEnteredVolumeComponent@@AEAVEntitiesInsideVolumeComponent@@@Z
-     * @hash   -1512259635
+     * @hash   -1512213507
      */
     MCAPI void _removeEmptyComponents(class EntityContext &, class EntitiesEnteredVolumeComponent &, class EntitiesInsideVolumeComponent &);
 

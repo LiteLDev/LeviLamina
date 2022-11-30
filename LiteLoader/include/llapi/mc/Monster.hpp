@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Monster@@UEAAXXZ
-     * @hash   1846060049
+     * @hash   1846106177
      */
     virtual void normalTick();
     /**
@@ -141,19 +141,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Monster@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1462867126
+     * @hash   1462913254
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Monster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1285345894
+     * @hash   1285392022
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Monster@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   2015593623
+     * @hash   2015639751
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -174,13 +174,13 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Monster@@UEAAXXZ
-     * @hash   502630337
+     * @hash   502676465
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Monster@@UEAA_N_N@Z
-     * @hash   -246469191
+     * @hash   -246423063
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z
-     * @hash   556176645
+     * @hash   556222773
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  362
      * @symbol ?isDarkEnoughToSpawn@Monster@@UEBA_NXZ
-     * @hash   180208414
+     * @hash   180254542
      */
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTER
@@ -224,7 +224,7 @@ public:
 #endif
     /**
      * @symbol ??0Monster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   296192278
+     * @hash   296238406
      */
     MCAPI Monster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

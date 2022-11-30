@@ -40,19 +40,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ReplaceItemCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1255678305
+     * @hash   -1255632177
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ReplaceItemCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -608191556
+     * @hash   -608145428
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_outputError@ReplaceItemCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   707376705
+     * @hash   707422833
      */
     MCAPI void _outputError(class CommandOutput &, struct Util::ReplacementResults, std::string const &) const;
 

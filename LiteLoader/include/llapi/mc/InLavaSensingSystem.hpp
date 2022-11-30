@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@InLavaSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   488133412
+     * @hash   488179540
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?doInLavaSensing@InLavaSensingSystem@@SAXAEAVStrictEntityContext@@AEBUUpdateWaterStateRequestComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UInLavaFlag@@@@@@@Z
-     * @hash   -1282092068
+     * @hash   -1282045940
      */
     MCAPI static void doInLavaSensing(class StrictEntityContext &, struct UpdateWaterStateRequestComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct InLavaFlag>>);
 

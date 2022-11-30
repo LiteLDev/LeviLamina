@@ -50,13 +50,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?removeSource@SidePoweredComponent@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
-     * @hash   1244663574
+     * @hash   1245493878
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@SidePoweredComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   1174584672
+     * @hash   1175414976
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
@@ -72,18 +72,18 @@ public:
     /**
      * @vftbl  22
      * @symbol ?removeFromAnySourceList@SidePoweredComponent@@MEAA_NPEBVBaseCircuitComponent@@@Z
-     * @hash   1289873679
+     * @hash   1290703983
      */
     virtual bool removeFromAnySourceList(class BaseCircuitComponent const *);
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
-     * @hash   -1326152615
+     * @hash   -1325322311
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ?addToSideComponents@SidePoweredComponent@@QEAAXAEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VItem@CircuitComponentList@@@std@@@std@@@std@@PEAVBaseCircuitComponent@@@Z
-     * @hash   -426571359
+     * @hash   -425741055
      */
     MCAPI void addToSideComponents(class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>> &, class BaseCircuitComponent *);
 

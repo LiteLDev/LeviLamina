@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockBreathabilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1041326842
+     * @hash   1042157146
      */
     virtual std::string const & getName() const;
     /**
@@ -60,13 +60,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockBreathabilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -2096320364
+     * @hash   -2095490060
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockBreathabilityDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   265846526
+     * @hash   266676830
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -76,12 +76,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockBreathabilityDescription@@SAXXZ
-     * @hash   -1202636417
+     * @hash   -1201806113
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockBreathabilityDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -846151642
+     * @hash   -845321338
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

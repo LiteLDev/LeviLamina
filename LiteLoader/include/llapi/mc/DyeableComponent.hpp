@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ?appendFormattedHovertext@DyeableComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1566945640
+     * @hash   -1566115336
      */
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     /**
      * @symbol ?clearColor@DyeableComponent@@QEBAXAEAVItemStackBase@@@Z
-     * @hash   1455245288
+     * @hash   1456075592
      */
     MCAPI void clearColor(class ItemStackBase &) const;
     /**
      * @symbol ?getColor@DyeableComponent@@QEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     * @hash   -591928217
+     * @hash   -591097913
      */
     MCAPI class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /**
      * @symbol ?hasCustomColor@DyeableComponent@@QEBA_NAEBVItemStackBase@@@Z
-     * @hash   1009623807
+     * @hash   1010454111
      */
     MCAPI bool hasCustomColor(class ItemStackBase const &) const;
     /**
      * @symbol ?setColor@DyeableComponent@@QEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-     * @hash   2096736509
+     * @hash   2097566813
      */
     MCAPI void setColor(class ItemStackBase &, class mce::Color const &) const;
     /**
@@ -67,12 +67,12 @@ public:
     MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
     /**
      * @symbol ?ResetDefaultLeatherColor@DyeableComponent@@SAXXZ
-     * @hash   34263395
+     * @hash   35093699
      */
     MCAPI static void ResetDefaultLeatherColor();
     /**
      * @symbol ?getIdentifier@DyeableComponent@@SAAEBVHashedString@@XZ
-     * @hash   895775106
+     * @hash   896605410
      */
     MCAPI static class HashedString const & getIdentifier();
 

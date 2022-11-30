@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0AngryDefinition@@QEAA@XZ
-     * @hash   -1613198048
+     * @hash   -1613151920
      */
     MCAPI AngryDefinition();
     /**
      * @symbol ?addBroadcastTargetByName@AngryDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1016949704
+     * @hash   1016995832
      */
     MCAPI void addBroadcastTargetByName(std::string const &);
     /**
      * @symbol ?initialize@AngryDefinition@@QEBAXAEAVEntityContext@@AEAVAngryComponent@@@Z
-     * @hash   312364165
+     * @hash   312410293
      */
     MCAPI void initialize(class EntityContext &, class AngryComponent &) const;
     /**
      * @symbol ?uninitialize@AngryDefinition@@QEBAXAEAVEntityContext@@AEAVAngryComponent@@@Z
-     * @hash   977704805
+     * @hash   977750933
      */
     MCAPI void uninitialize(class EntityContext &, class AngryComponent &) const;
     /**
      * @symbol ?buildSchema@AngryDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAngryDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   281445258
+     * @hash   281491386
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition>> &);
 

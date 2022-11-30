@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@SeaPickle@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1981497943
+     * @hash   -1980667639
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@SeaPickle@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -123158899
+     * @hash   -122328595
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@SeaPickle@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1022436545
+     * @hash   -1021606241
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SeaPickle@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -768978741
+     * @hash   -768148437
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SeaPickle@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1013284255
+     * @hash   -1012453951
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@SeaPickle@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -275892912
+     * @hash   -275062608
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@SeaPickle@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   376450113
+     * @hash   377280417
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
@@ -282,13 +282,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@SeaPickle@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2142497877
+     * @hash   -2141667573
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@SeaPickle@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -644839843
+     * @hash   -644009539
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -299,13 +299,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SeaPickle@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -652580561
+     * @hash   -651750257
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@SeaPickle@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1709668436
+     * @hash   -1708838132
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SeaPickle@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2060663143
+     * @hash   2061493447
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -327,13 +327,13 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SeaPickle@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -503432697
+     * @hash   -502602393
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?checkAlive@SeaPickle@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1901599535
+     * @hash   -1900769231
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAPICKLE
@@ -355,7 +355,7 @@ public:
 #endif
     /**
      * @symbol ??0SeaPickle@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   960194103
+     * @hash   961024407
      */
     MCAPI SeaPickle(std::string const &, int);
 

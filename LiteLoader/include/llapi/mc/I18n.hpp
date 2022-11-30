@@ -44,7 +44,7 @@ public:
 public:
     /**
      * @symbol ?NeutralLangCode@I18n@@2QBDB
-     * @hash   -1741009375
+     * @hash   -1740886367
      */
     MCAPI static char const NeutralLangCode[];
     /**

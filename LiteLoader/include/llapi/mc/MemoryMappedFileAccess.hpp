@@ -40,48 +40,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1256098532
+     * @hash   1256928836
      */
     virtual void * fopen(class Core::Path const &, std::string const &);
     /**
      * @vftbl  2
      * @symbol ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
-     * @hash   1423406746
+     * @hash   1424237050
      */
     virtual int fclose(void *);
     /**
      * @vftbl  3
      * @symbol ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
-     * @hash   405174884
+     * @hash   406005188
      */
     virtual int fseek(void *, __int64, int);
     /**
      * @vftbl  4
      * @symbol ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
-     * @hash   -784191413
+     * @hash   -783361109
      */
     virtual __int64 ftell(void *);
     /**
      * @vftbl  5
      * @symbol ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
-     * @hash   -977722981
+     * @hash   -977676853
      */
     virtual class IFileReadAccess const * getReadInterface() const;
     /**
      * @vftbl  6
      * @symbol ?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
-     * @hash   1932938795
+     * @hash   1933769099
      */
     virtual class IFileWriteAccess * getWriteInterface();
     /**
      * @vftbl  7
      * @symbol ?unload@MemoryMappedFileAccess@@UEAAXXZ
-     * @hash   1650071250
+     * @hash   1650901554
      */
     virtual void unload();
     /**
      * @symbol ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
-     * @hash   553824096
+     * @hash   554654400
      */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     /**

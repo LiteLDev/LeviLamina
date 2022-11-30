@@ -22,22 +22,22 @@ namespace BlockDescriptorSerializer {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_validateAndCreateFromString@BlockDescriptorSerializer@@YA?AVBlockDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -282527210
+     * @hash   -281696906
      */
     MCAPI class BlockDescriptor _validateAndCreateFromString(std::string const &);
     /**
      * @symbol ?fromProxy@BlockDescriptorSerializer@@YAXAEAVBlockDescriptor@@AEAUBlockDescriptorProxy@1@@Z
-     * @hash   732732987
+     * @hash   733563291
      */
     MCAPI void fromProxy(class BlockDescriptor &, struct BlockDescriptorSerializer::BlockDescriptorProxy &);
     /**
      * @symbol ?fromString@BlockDescriptorSerializer@@YAXAEAVBlockDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   820045578
+     * @hash   820875882
      */
     MCAPI void fromString(class BlockDescriptor &, std::string const &);
     /**
      * @symbol ?toProxy@BlockDescriptorSerializer@@YA?AUBlockDescriptorProxy@1@AEBVBlockDescriptor@@@Z
-     * @hash   583998199
+     * @hash   584828503
      */
     MCAPI struct BlockDescriptorSerializer::BlockDescriptorProxy toProxy(class BlockDescriptor const &);
 

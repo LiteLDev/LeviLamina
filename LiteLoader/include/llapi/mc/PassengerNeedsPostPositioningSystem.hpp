@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_addPositionPassengerRequestComponent@PassengerNeedsPostPositioningSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UVehicleComponent@@@@$$CBUPendingRemovePassengersComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBV?$FlagComponent@ULocalPlayerComponentFlag@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBV?$FlagComponent@UServerPlayerComponentFlag@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UBoatFlag@@@@@@$$CBUVehicleComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUVehicleComponent@@$$CBUSynchedActorDataComponent@@@@3V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPositionPassengerRequestComponent@@@@@Z
-     * @hash   -1570499847
+     * @hash   -1570453719
      */
     MCAPI static void _addPositionPassengerRequestComponent(class StrictEntityContext &, struct PassengerComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>, struct PendingRemovePassengersComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct LocalPlayerComponentFlag> const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct ServerPlayerComponentFlag> const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct BoatFlag>>, struct VehicleComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct HorseFlag>>, struct VehicleComponent const, struct SynchedActorDataComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct LocalPlayerComponentFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
     /**
      * @symbol ?createSystem@PassengerNeedsPostPositioningSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1748297532
+     * @hash   -1748251404
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

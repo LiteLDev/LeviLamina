@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@GetChunksCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   2051212116
+     * @hash   2051258244
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@GetChunksCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   769754444
+     * @hash   769800572
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0DimensionDefinitionGroup@@QEAA@QEAVResourcePackManager@@_N@Z
-     * @hash   -35784865
+     * @hash   -34954561
      */
     MCAPI DimensionDefinitionGroup(class ResourcePackManager *const, bool);
     /**
      * @symbol ?getDimensionDefinition@DimensionDefinitionGroup@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -605877802
+     * @hash   -605047498
      */
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     /**
      * @symbol ?isEmpty@DimensionDefinitionGroup@@QEBA_NXZ
-     * @hash   1320342682
+     * @hash   1321172986
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?tryAddDimensionDefinitionByString@DimensionDefinitionGroup@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -600396745
+     * @hash   -599566441
      */
     MCAPI bool tryAddDimensionDefinitionByString(std::string const &);
     /**

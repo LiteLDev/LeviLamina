@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ?getHeight@Motive@@QEBAHXZ
-     * @hash   20664150
+     * @hash   20710278
      */
     MCAPI int getHeight() const;
     /**
      * @symbol ?getName@Motive@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1833123312
+     * @hash   -1833077184
      */
     MCAPI std::string const getName() const;
     /**
      * @symbol ?getWidth@Motive@@QEBAHXZ
-     * @hash   -1319358344
+     * @hash   -1319312216
      */
     MCAPI int getWidth() const;
     /**
      * @symbol ?isPublic@Motive@@QEBA_NXZ
-     * @hash   -937645464
+     * @hash   -937599336
      */
     MCAPI bool isPublic() const;
     /**
      * @symbol ?getAllMotivesAsList@Motive@@SA?AV?$vector@PEBVMotive@@V?$allocator@PEBVMotive@@@std@@@std@@XZ
-     * @hash   913125406
+     * @hash   913171534
      */
     MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
     /**
      * @symbol ?getMotiveByName@Motive@@SAAEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   85604756
+     * @hash   85650884
      */
     MCAPI static class Motive const & getMotiveByName(std::string const &);
     /**

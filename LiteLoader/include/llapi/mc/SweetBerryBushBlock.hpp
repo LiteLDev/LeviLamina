@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?hasTag@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2013614223
+     * @hash   2014444527
      */
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@SweetBerryBushBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   971807231
+     * @hash   972637535
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@SweetBerryBushBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -1219544205
+     * @hash   -1218713901
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   1005264304
+     * @hash   1006094608
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -195,25 +195,25 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -643070639
+     * @hash   -642240335
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1154478649
+     * @hash   1155308953
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SweetBerryBushBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1572559493
+     * @hash   -1571729189
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -1259897281
+     * @hash   -1259066977
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -224,19 +224,19 @@ public:
     /**
      * @vftbl  109
      * @symbol ?attack@SweetBerryBushBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   496560492
+     * @hash   497390796
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1985394679
+     * @hash   -1984564375
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @vftbl  118
      * @symbol ?executeEvent@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   978293875
+     * @hash   979124179
      */
     virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@SweetBerryBushBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   139174697
+     * @hash   140005001
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@SweetBerryBushBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1987310385
+     * @hash   -1986480081
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  159
      * @symbol ?dealsContactDamage@SweetBerryBushBlock@@UEBA_NAEBVActor@@AEBVBlock@@_N@Z
-     * @hash   1186704177
+     * @hash   1187534481
      */
     virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
     /**
@@ -305,7 +305,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1816650942
+     * @hash   -1815820638
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -316,25 +316,25 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@SweetBerryBushBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   417736260
+     * @hash   418566564
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1640440913
+     * @hash   1641271217
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  180
      * @symbol ?getRenderLayer@SweetBerryBushBlock@@UEBA?AW4BlockRenderLayer@@XZ
-     * @hash   698280808
+     * @hash   699111112
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@SweetBerryBushBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -467213432
+     * @hash   -466383128
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
@@ -345,7 +345,7 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@SweetBerryBushBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1752666779
+     * @hash   -1751836475
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWEETBERRYBUSHBLOCK
@@ -362,29 +362,29 @@ public:
 #endif
     /**
      * @symbol ??0SweetBerryBushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -388743891
+     * @hash   -387913587
      */
     MCAPI SweetBerryBushBlock(std::string const &, int);
     /**
      * @symbol ?SLOWDOWN_MULTIPLIER@SweetBerryBushBlock@@2VVec3@@B
-     * @hash   -858891979
+     * @hash   -858768971
      */
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
 //private:
     /**
      * @symbol ?_growBush@SweetBerryBushBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1957386722
+     * @hash   -1956556418
      */
     MCAPI bool _growBush(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_pickBerries@SweetBerryBushBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2063197250
+     * @hash   2064027554
      */
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?_popBerries@SweetBerryBushBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEBHPEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -505258560
+     * @hash   -504428256
      */
     MCAPI void _popBerries(class BlockSource &, class BlockPos const &, int const &, std::vector<class Item const *> *) const;
 

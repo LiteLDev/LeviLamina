@@ -40,72 +40,72 @@ public:
 public:
     /**
      * @symbol ??0Biome@@QEAA@H@Z
-     * @hash   -1369840129
+     * @hash   -1369009825
      */
     MCAPI Biome(int);
     /**
      * @symbol ?addTag@Biome@@QEAAAEAV1@VHashedString@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-     * @hash   -1962335242
+     * @hash   -1961504938
      */
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     /**
      * @symbol ?cacheClientComponentData@Biome@@QEAAXXZ
-     * @hash   -1108428505
+     * @hash   -1107598201
      */
     MCAPI void cacheClientComponentData();
     /**
      * @symbol ?canHaveSnowfall@Biome@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1914734794
+     * @hash   1915565098
      */
     MCAPI bool canHaveSnowfall(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?getBiomeType@Biome@@QEBA?AW4VanillaBiomeTypes@@XZ
-     * @hash   -636903640
+     * @hash   -636073336
      */
     MCAPI enum class VanillaBiomeTypes getBiomeType() const;
     /**
      * @symbol ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   -662231853
+     * @hash   -661401549
      */
     MCAPI int getBirchFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getDefaultBiomeTemperature@Biome@@QEBAMXZ
-     * @hash   -1824972750
+     * @hash   -1824142446
      */
     MCAPI float getDefaultBiomeTemperature() const;
     /**
      * @symbol ?getDownfall@Biome@@QEBAMXZ
-     * @hash   2025263964
+     * @hash   2025310092
      */
     MCAPI float getDownfall() const;
     /**
      * @symbol ?getEvergreenFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   1945248755
+     * @hash   1946079059
      */
     MCAPI int getEvergreenFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   -1336893083
+     * @hash   -1336062779
      */
     MCAPI int getFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getMapBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   -1954753979
+     * @hash   -1953923675
      */
     MCAPI int getMapBirchFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getMapEvergreenFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   897741909
+     * @hash   898572213
      */
     MCAPI int getMapEvergreenFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getMapFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   272856131
+     * @hash   273686435
      */
     MCAPI int getMapFoliageColor(class BlockPos const &) const;
     /**
      * @symbol ?getMapGrassColor@Biome@@QEBAHAEBVBlockPos@@@Z
-     * @hash   679140243
+     * @hash   679970547
      */
     MCAPI int getMapGrassColor(class BlockPos const &) const;
     /**
@@ -120,102 +120,102 @@ public:
     MCAPI std::vector<class MobSpawnerData> & getMobsMutable();
     /**
      * @symbol ?getSnowAccumulationLayers@Biome@@QEBAHXZ
-     * @hash   96040984
+     * @hash   96871288
      */
     MCAPI int getSnowAccumulationLayers() const;
     /**
      * @symbol ?getTemperature@Biome@@QEBAMAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   253870692
+     * @hash   254700996
      */
     MCAPI float getTemperature(class BlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?getTemperatureCategory@Biome@@QEBA?AW4BiomeTempCategory@1@XZ
-     * @hash   1106428153
+     * @hash   1107258457
      */
     MCAPI enum class Biome::BiomeTempCategory getTemperatureCategory() const;
     /**
      * @symbol ?getTemperatureWorldGen@Biome@@QEBAMAEBVBlockPos@@F@Z
-     * @hash   -1218369781
+     * @hash   -1217539477
      */
     MCAPI float getTemperatureWorldGen(class BlockPos const &, short) const;
     /**
      * @symbol ?hasTag@Biome@@QEBA_NAEBU?$IDType@UBiomeTagIDType@@@@AEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-     * @hash   840002458
+     * @hash   840832762
      */
     MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     /**
      * @symbol ?hasTag@Biome@@QEBA_NAEBVWellKnownTagID@@@Z
-     * @hash   833425265
+     * @hash   834255569
      */
     MCAPI bool hasTag(class WellKnownTagID const &) const;
     /**
      * @symbol ?hasTag@Biome@@QEBA_N_KAEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-     * @hash   1376785158
+     * @hash   1377615462
      */
     MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     /**
      * @symbol ?initEntity@Biome@@QEAAXAEAVEntityRegistry@@@Z
-     * @hash   1292902410
+     * @hash   1293732714
      */
     MCAPI void initEntity(class EntityRegistry &);
     /**
      * @symbol ?isHumid@Biome@@QEBA_NXZ
-     * @hash   859373470
+     * @hash   860203774
      */
     MCAPI bool isHumid() const;
     /**
      * @symbol ?isSnowCovered@Biome@@QEBA_NXZ
-     * @hash   -1872022482
+     * @hash   -1871192178
      */
     MCAPI bool isSnowCovered() const;
     /**
      * @symbol ?setColor@Biome@@QEAAAEAV1@H@Z
-     * @hash   -2004444212
+     * @hash   -2003613908
      */
     MCAPI class Biome & setColor(int);
     /**
      * @symbol ?setColor@Biome@@QEAAAEAV1@H_N@Z
-     * @hash   755159453
+     * @hash   755989757
      */
     MCAPI class Biome & setColor(int, bool);
     /**
      * @symbol ?setDepthAndScale@Biome@@QEAAAEAV1@AEBUBiomeHeight@@@Z
-     * @hash   -544435350
+     * @hash   -543605046
      */
     MCAPI class Biome & setDepthAndScale(struct BiomeHeight const &);
     /**
      * @symbol ?setMapWaterColor@Biome@@QEAAAEAV1@H@Z
-     * @hash   -86158676
+     * @hash   -85328372
      */
     MCAPI class Biome & setMapWaterColor(int);
     /**
      * @symbol ?setName@Biome@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -190711356
+     * @hash   -189881052
      */
     MCAPI class Biome & setName(std::string const &);
     /**
      * @symbol ?setNoRain@Biome@@QEAAAEAV1@XZ
-     * @hash   -245026339
+     * @hash   -244196035
      */
     MCAPI class Biome & setNoRain();
     /**
      * @symbol ?setOceanRuinConfig@Biome@@QEAAAEAV1@AEBUOceanRuinConfiguration@@@Z
-     * @hash   564709650
+     * @hash   565539954
      */
     MCAPI class Biome & setOceanRuinConfig(struct OceanRuinConfiguration const &);
     /**
      * @symbol ?setOddColor@Biome@@QEAAAEAV1@H@Z
-     * @hash   470223998
+     * @hash   471054302
      */
     MCAPI class Biome & setOddColor(int);
     /**
      * @symbol ?setSnowAccumulation@Biome@@QEAAAEAV1@MM@Z
-     * @hash   -2016692091
+     * @hash   -2015861787
      */
     MCAPI class Biome & setSnowAccumulation(float, float);
     /**
      * @symbol ?writePacketData@Biome@@QEAAXAEAVCompoundTag@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-     * @hash   467262600
+     * @hash   468092904
      */
     MCAPI void writePacketData(class CompoundTag &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     /**
@@ -245,12 +245,12 @@ public:
     MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
     /**
      * @symbol ?RAIN_TEMP_THRESHOLD@Biome@@2MB
-     * @hash   514658539
+     * @hash   514781547
      */
     MCAPI static float const RAIN_TEMP_THRESHOLD;
     /**
      * @symbol ?buildCachedTemperatureNoise@Biome@@SAXAEAVLevelChunk@@@Z
-     * @hash   976263124
+     * @hash   977093428
      */
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk &);
 

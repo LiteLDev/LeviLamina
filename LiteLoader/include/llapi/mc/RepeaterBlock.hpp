@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  64
      * @symbol ?shouldConnectToRedstone@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1443354034
+     * @hash   -1442523730
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1452014835
+     * @hash   1452845139
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -171,19 +171,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -147392725
+     * @hash   -146562421
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -547495465
+     * @hash   -546665161
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RepeaterBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1209775147
+     * @hash   -1208944843
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1534393350
+     * @hash   -1533563046
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2081776986
+     * @hash   2082607290
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1224204881
+     * @hash   -1223374577
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1754642587
+     * @hash   1755472891
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,13 +268,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@RepeaterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1523461350
+     * @hash   -1522631046
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1944878389
+     * @hash   -1944048085
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,37 +285,37 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RepeaterBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1720969645
+     * @hash   -1720139341
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  193
      * @symbol ?isLocked@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1752006403
+     * @hash   -1751176099
      */
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  199
      * @symbol ?isAlternateInput@RepeaterBlock@@MEBA_NAEBVBlock@@@Z
-     * @hash   1184362836
+     * @hash   1185193140
      */
     virtual bool isAlternateInput(class Block const &) const;
     /**
      * @vftbl  203
      * @symbol ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
-     * @hash   -1244523830
+     * @hash   -1243693526
      */
     virtual int getTurnOnDelay(class Block const &) const;
     /**
      * @vftbl  204
      * @symbol ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-     * @hash   -1170019090
+     * @hash   -1169188786
      */
     virtual class Block const * getOnBlock(class Block const *) const;
     /**
      * @vftbl  205
      * @symbol ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-     * @hash   -2006018590
+     * @hash   -2005188286
      */
     virtual class Block const * getOffBlock(class Block const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATERBLOCK
@@ -332,17 +332,17 @@ public:
 #endif
     /**
      * @symbol ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   -1426598322
+     * @hash   -1425768018
      */
     MCAPI RepeaterBlock(std::string const &, int, bool);
     /**
      * @symbol ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   1102122532
+     * @hash   1102952836
      */
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
     /**
      * @symbol ?DELAY_RENDER_OFFSETS@RepeaterBlock@@2QBMB
-     * @hash   -1667648462
+     * @hash   -1667525454
      */
     MCAPI static float const DELAY_RENDER_OFFSETS[];
 
@@ -351,7 +351,7 @@ public:
 private:
     /**
      * @symbol ?DELAYS@RepeaterBlock@@0QBHB
-     * @hash   -1564958415
+     * @hash   -1564835407
      */
     MCAPI static int const DELAYS[];
 

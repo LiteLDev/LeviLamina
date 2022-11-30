@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@SoulSandBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1275122660
+     * @hash   -1274292356
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@SoulSandBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   758147990
+     * @hash   758978294
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@SoulSandBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1749173339
+     * @hash   -1748343035
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1258001320
+     * @hash   -1257171016
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -193,7 +193,7 @@ public:
     /**
      * @vftbl  124
      * @symbol ?calcGroundFriction@SoulSandBlock@@UEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
-     * @hash   -1498707820
+     * @hash   -1497877516
      */
     virtual float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /**
@@ -234,7 +234,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1141505186
+     * @hash   -1140674882
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -245,13 +245,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1047476276
+     * @hash   -1046645972
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   32370537
+     * @hash   33200841
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -266,7 +266,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0SoulSandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1435645148
+     * @hash   -1434814844
      */
     MCAPI SoulSandBlock(std::string const &, int);
     /**

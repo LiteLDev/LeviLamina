@@ -44,17 +44,17 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@RemoveEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1212006548
+     * @hash   -1211960420
      */
     virtual std::string getName() const;
     /**
      * @symbol ??0RemoveEntityPacket@@QEAA@XZ
-     * @hash   379288059
+     * @hash   379334187
      */
     MCAPI RemoveEntityPacket();
     /**
      * @symbol ??0RemoveEntityPacket@@QEAA@AEAVEntityContext@@@Z
-     * @hash   163452614
+     * @hash   163498742
      */
     MCAPI RemoveEntityPacket(class EntityContext &);
 

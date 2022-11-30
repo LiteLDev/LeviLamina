@@ -48,7 +48,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?_fillArea@IslandOperationNode@@EEBAXAEAV?$WorkingData@W4Terrain@OperationNodeValues@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
-     * @hash   -2030729374
+     * @hash   -2029899070
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
 

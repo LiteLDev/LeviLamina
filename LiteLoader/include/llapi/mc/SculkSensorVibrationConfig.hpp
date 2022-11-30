@@ -37,19 +37,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onSignalReceive@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
-     * @hash   -1649766152
+     * @hash   -1648935848
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
      * @vftbl  2
      * @symbol ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
-     * @hash   -522844994
+     * @hash   -522798866
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
      * @vftbl  3
      * @symbol ?shouldListen@SculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-     * @hash   -663244051
+     * @hash   -662413747
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 

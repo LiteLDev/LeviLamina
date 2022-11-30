@@ -65,30 +65,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CraftingEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1341689010
+     * @hash   -1341642882
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CraftingEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1084297733
+     * @hash   -1084251605
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CraftingEventPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -2051009300
+     * @hash   -2050963172
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CraftingEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1526114164
+     * @hash   -1526068036
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CraftingEventPacket@@QEAA@XZ
-     * @hash   1360826972
+     * @hash   1360873100
      */
     MCAPI CraftingEventPacket();
 

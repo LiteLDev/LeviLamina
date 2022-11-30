@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@EyeOfEnderPreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -578581614
+     * @hash   -578535486
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doEyeOfEnderPreNormalTickSystem@EyeOfEnderPreNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   31694109
+     * @hash   31740237
      */
     MCAPI static void _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??4ScriptPluginStats@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1297901618
+     * @hash   -1297855490
      */
     MCAPI struct ScriptPluginStats & operator=(struct ScriptPluginStats const &);
     /**
      * @symbol ??4ScriptPluginStats@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1747906590
+     * @hash   -1747860462
      */
     MCAPI struct ScriptPluginStats & operator=(struct ScriptPluginStats &&);
     /**
      * @symbol ??1ScriptPluginStats@@QEAA@XZ
-     * @hash   1650051117
+     * @hash   1650097245
      */
     MCAPI ~ScriptPluginStats();
 

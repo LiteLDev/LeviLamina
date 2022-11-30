@@ -111,25 +111,25 @@ public:
     /**
      * @vftbl  11
      * @symbol ?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   713308790
+     * @hash   713354918
      */
     virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /**
      * @vftbl  12
      * @symbol ?getCursorHitPos@CommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ
-     * @hash   730627789
+     * @hash   730673917
      */
     virtual class std::optional<class Vec3> getCursorHitPos() const;
     /**
      * @vftbl  13
      * @symbol ?hasChatPerms@CommandOrigin@@UEBA_NXZ
-     * @hash   -1562104744
+     * @hash   -1562058616
      */
     virtual bool hasChatPerms() const;
     /**
      * @vftbl  14
      * @symbol ?hasTellPerms@CommandOrigin@@UEBA_NXZ
-     * @hash   -1848857169
+     * @hash   -1848811041
      */
     virtual bool hasTellPerms() const;
     /**
@@ -141,7 +141,7 @@ public:
     /**
      * @vftbl  16
      * @symbol ?isWorldBuilder@CommandOrigin@@UEBA_NXZ
-     * @hash   1359919386
+     * @hash   1359965514
      */
     virtual bool isWorldBuilder() const;
     /**
@@ -153,13 +153,13 @@ public:
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@CommandOrigin@@UEBA_NXZ
-     * @hash   -1911699975
+     * @hash   -1911653847
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  19
      * @symbol ?getSourceId@CommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
-     * @hash   248767673
+     * @hash   248813801
      */
     virtual class NetworkIdentifier const & getSourceId() const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
-     * @hash   350151582
+     * @hash   350197710
      */
     virtual struct CommandOriginIdentity getIdentity() const;
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ
-     * @hash   -272225922
+     * @hash   -272179794
      */
     virtual struct CommandOriginData toCommandOriginData() const;
     /**
@@ -213,13 +213,13 @@ public:
     /**
      * @vftbl  28
      * @symbol ?getExecutePosition@CommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-     * @hash   -1804149890
+     * @hash   -1804103762
      */
     virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /**
      * @vftbl  29
      * @symbol ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   400959863
+     * @hash   401005991
      */
     virtual class CompoundTag serialize() const;
     /**
@@ -231,42 +231,42 @@ public:
     /**
      * @vftbl  31
      * @symbol ?_setUUID@CommandOrigin@@MEAAXAEBVUUID@mce@@@Z
-     * @hash   -1642734982
+     * @hash   -1642688854
      */
     virtual void _setUUID(class mce::UUID const &);
     /**
      * @symbol ??0CommandOrigin@@QEAA@XZ
-     * @hash   611391357
+     * @hash   611437485
      */
     MCAPI CommandOrigin();
     /**
      * @symbol ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     * @hash   279310595
+     * @hash   279356723
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-     * @hash   586010474
+     * @hash   586056602
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
     /**
      * @symbol ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     * @hash   -667245645
+     * @hash   -667199517
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-     * @hash   2006403430
+     * @hash   2006449558
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
     /**
      * @symbol ?isEditorWorld@CommandOrigin@@QEBA_NXZ
-     * @hash   -546551796
+     * @hash   -546505668
      */
     MCAPI bool isEditorWorld() const;
     /**
      * @symbol ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   438998077
+     * @hash   439044205
      */
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum class SubClientId);
 

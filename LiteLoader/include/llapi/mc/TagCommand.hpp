@@ -39,34 +39,34 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@TagCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   2032694674
+     * @hash   2032740802
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@TagCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   2000722924
+     * @hash   2000769052
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_addTag@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
-     * @hash   -1078151641
+     * @hash   -1078105513
      */
     MCAPI void _addTag(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
     /**
      * @symbol ?_getSelectorResults@TagCommand@@AEBA?AV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1222198057
+     * @hash   -1222151929
      */
     MCAPI std::vector<class std::reference_wrapper<class Actor>> _getSelectorResults(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_listTags@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
-     * @hash   130511765
+     * @hash   130557893
      */
     MCAPI void _listTags(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
     /**
      * @symbol ?_removeTag@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
-     * @hash   1923661190
+     * @hash   1923707318
      */
     MCAPI void _removeTag(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
 

@@ -46,19 +46,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?tick@UnderWaterSensingSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UUsesECSMovementFlag@@@@UUpdateWaterStateRequestComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UConstBlockSourceComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@UAABBShapeComponent@@UActorHeadRotationComponent@@UActorRotationComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UActorHeadInWaterFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   1401839545
+     * @hash   1401885673
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, struct UpdateWaterStateRequestComponent, class FlagComponent<struct HorseFlag>, class FlagComponent<struct MobFlag>, class FlagComponent<struct ParrotFlag>, struct VehicleComponent, class FlagComponent<struct PlayerComponentFlag>>, struct Read<struct ConstBlockSourceComponent, struct MobBodyRotationComponent, struct PassengerComponent, struct RenderRotationComponent, struct StandAnimationComponent, struct StateVectorComponent, struct AABBShapeComponent, struct ActorHeadRotationComponent, struct ActorRotationComponent, struct OffsetsComponent, struct SynchedActorDataComponent>, struct Write<>, struct AddRemove<class FlagComponent<struct ActorHeadInWaterFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
      * @symbol ?createSystem@UnderWaterSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1589326216
+     * @hash   -1589280088
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?doUnderWaterSensing@UnderWaterSensingSystem@@CAXAEAVStrictEntityContext@@AEBUConstBlockSourceComponent@@AEBUStateVectorComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorHeadInWaterFlag@@@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UUsesECSMovementFlag@@@@UUpdateWaterStateRequestComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UConstBlockSourceComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@UAABBShapeComponent@@UActorHeadRotationComponent@@UActorRotationComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UActorHeadInWaterFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   1944251034
+     * @hash   1944297162
      */
     MCAPI static void doUnderWaterSensing(class StrictEntityContext &, struct ConstBlockSourceComponent const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorHeadInWaterFlag>>, class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, struct UpdateWaterStateRequestComponent, class FlagComponent<struct HorseFlag>, class FlagComponent<struct MobFlag>, class FlagComponent<struct ParrotFlag>, struct VehicleComponent, class FlagComponent<struct PlayerComponentFlag>>, struct Read<struct ConstBlockSourceComponent, struct MobBodyRotationComponent, struct PassengerComponent, struct RenderRotationComponent, struct StandAnimationComponent, struct StateVectorComponent, struct AABBShapeComponent, struct ActorHeadRotationComponent, struct ActorRotationComponent, struct OffsetsComponent, struct SynchedActorDataComponent>, struct Write<>, struct AddRemove<class FlagComponent<struct ActorHeadInWaterFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
 

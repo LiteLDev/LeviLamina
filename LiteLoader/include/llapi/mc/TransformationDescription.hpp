@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TransformationDescription@@UEBAPEBDXZ
-     * @hash   -1522513631
+     * @hash   -1522467503
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@TransformationDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   57085058
+     * @hash   57131186
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@TransformationDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   380749820
+     * @hash   380795948
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0TransformationDescription@@QEAA@XZ
-     * @hash   -2010473713
+     * @hash   -2010427585
      */
     MCAPI TransformationDescription();
 

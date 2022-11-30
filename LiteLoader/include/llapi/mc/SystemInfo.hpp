@@ -33,7 +33,7 @@ public:
     MCAPI SystemInfo(struct SystemInfo const &);
     /**
      * @symbol ??4SystemInfo@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -892578298
+     * @hash   -892532170
      */
     MCAPI struct SystemInfo & operator=(struct SystemInfo const &);
     /**
@@ -48,7 +48,7 @@ public:
     MCAPI ~SystemInfo();
     /**
      * @symbol ?bindType@SystemInfo@@SAXXZ
-     * @hash   -2128556125
+     * @hash   -2128509997
      */
     MCAPI static void bindType();
 

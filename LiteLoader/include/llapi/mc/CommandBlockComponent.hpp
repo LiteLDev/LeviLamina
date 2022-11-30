@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0CommandBlockComponent@@QEAA@XZ
-     * @hash   -1768706969
+     * @hash   -1768660841
      */
     MCAPI CommandBlockComponent();
     /**
@@ -41,12 +41,12 @@ public:
     MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@CommandBlockComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1755889752
+     * @hash   1755935880
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?decrementTickCount@CommandBlockComponent@@QEAAHXZ
-     * @hash   672444950
+     * @hash   672491078
      */
     MCAPI int decrementTickCount();
     /**
@@ -61,17 +61,17 @@ public:
     MCAPI int getCurrentTickCount() const;
     /**
      * @symbol ?getTicking@CommandBlockComponent@@QEBA_NXZ
-     * @hash   1451252042
+     * @hash   1451298170
      */
     MCAPI bool getTicking() const;
     /**
      * @symbol ?initFromDefinition@CommandBlockComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1429305890
+     * @hash   1429352018
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onCommandBlockUpdate@CommandBlockComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NV34@H2@Z
-     * @hash   975194694
+     * @hash   975240822
      */
     MCAPI void onCommandBlockUpdate(class Actor &, std::string const &, bool, std::string, int, bool);
     /**
@@ -81,22 +81,22 @@ public:
     MCAPI class CommandBlockComponent & operator=(class CommandBlockComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@CommandBlockComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1207427290
+     * @hash   -1207381162
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?resetCurrentTick@CommandBlockComponent@@QEAAXXZ
-     * @hash   -1331872351
+     * @hash   -1331826223
      */
     MCAPI void resetCurrentTick();
     /**
      * @symbol ?setLastOutput@CommandBlockComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1985316639
+     * @hash   -1985270511
      */
     MCAPI void setLastOutput(class Actor &, std::string const &);
     /**
      * @symbol ?setTicking@CommandBlockComponent@@QEAAX_N@Z
-     * @hash   1809431842
+     * @hash   1809477970
      */
     MCAPI void setTicking(bool);
 

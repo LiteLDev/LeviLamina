@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getAsJsonString@ResolvedTextObject@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1289469960
+     * @hash   -1289423832
      */
     MCAPI std::string getAsJsonString() const;
     /**
      * @symbol ??1ResolvedTextObject@@QEAA@XZ
-     * @hash   912340286
+     * @hash   912386414
      */
     MCAPI ~ResolvedTextObject();
 

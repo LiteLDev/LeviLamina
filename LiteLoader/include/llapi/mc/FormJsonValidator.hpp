@@ -33,42 +33,42 @@ public:
 public:
     /**
      * @symbol ?getContentItemProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@AEBV23@00000@Z
-     * @hash   -258796219
+     * @hash   -258750091
      */
     MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &);
     /**
      * @symbol ?getControlLockedProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@XZ
-     * @hash   -984650180
+     * @hash   -984604052
      */
     MCAPI static class JsonValidator::Property getControlLockedProperty();
     /**
      * @symbol ?getDropdownProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
-     * @hash   -1558924881
+     * @hash   -1558878753
      */
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);
     /**
      * @symbol ?getLabelProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@XZ
-     * @hash   -1682560810
+     * @hash   -1682514682
      */
     MCAPI static class JsonValidator::Property getLabelProperty();
     /**
      * @symbol ?getSliderProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
-     * @hash   -167362833
+     * @hash   -167316705
      */
     MCAPI static class JsonValidator::Property getSliderProperty(bool);
     /**
      * @symbol ?getStepSliderProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
-     * @hash   -248674641
+     * @hash   -248628513
      */
     MCAPI static class JsonValidator::Property getStepSliderProperty(bool);
     /**
      * @symbol ?getTextInputProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
-     * @hash   1732076957
+     * @hash   1732123085
      */
     MCAPI static class JsonValidator::Property getTextInputProperty(bool);
     /**
      * @symbol ?getToggleProperty@FormJsonValidator@@SA?AVProperty@JsonValidator@@_N@Z
-     * @hash   1823015087
+     * @hash   1823061215
      */
     MCAPI static class JsonValidator::Property getToggleProperty(bool);
 

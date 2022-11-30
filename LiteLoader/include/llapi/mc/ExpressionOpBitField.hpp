@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000000@Z
-     * @hash   -913457182
+     * @hash   -913411054
      */
     MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@00000@Z
-     * @hash   1340598274
+     * @hash   1340644402
      */
     MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000@Z
-     * @hash   594094699
+     * @hash   594140827
      */
     MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@000@Z
-     * @hash   16016562
+     * @hash   16062690
      */
     MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@00@Z
-     * @hash   -1249394421
+     * @hash   -1249348293
      */
     MCAPI bool areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp) const;
 

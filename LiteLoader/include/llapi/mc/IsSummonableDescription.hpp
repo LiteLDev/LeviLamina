@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ
-     * @hash   -2039619171
+     * @hash   -2039573043
      */
     virtual char const * getJsonName() const;
     /**
      * @symbol ?parse@IsSummonableDescription@@QEAAXAEBVValue@Json@@@Z
-     * @hash   784818024
+     * @hash   784864152
      */
     MCAPI void parse(class Json::Value const &);
 

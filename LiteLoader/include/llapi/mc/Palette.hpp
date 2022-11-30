@@ -112,12 +112,12 @@ public:
     MCAPI static class mce::Color const YELLOW;
     /**
      * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
-     * @hash   -928344188
+     * @hash   -928298060
      */
     MCAPI static enum class PaletteColor fromByte(unsigned char);
     /**
      * @symbol ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
-     * @hash   -1167719175
+     * @hash   -1167673047
      */
     MCAPI static class mce::Color const & getColor(enum class PaletteColor);
 

@@ -52,23 +52,23 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCreate@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   1385483854
+     * @hash   1385576110
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCreate@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   404429046
+     * @hash   404521302
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCreate@@QEAA@XZ
-     * @hash   47634008
+     * @hash   47726264
      */
     MCAPI ItemStackRequestActionCreate();
     /**
      * @symbol ?getResultsIndex@ItemStackRequestActionCreate@@QEBAEXZ
-     * @hash   749925863
+     * @hash   749971991
      */
     MCAPI unsigned char getResultsIndex() const;
 

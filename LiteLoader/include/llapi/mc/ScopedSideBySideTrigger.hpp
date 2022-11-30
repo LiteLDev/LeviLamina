@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?end@ScopedSideBySideTrigger@@QEAA_NXZ
-     * @hash   -2005793304
+     * @hash   -2005747176
      */
     MCAPI bool end();
     /**
      * @symbol ??1ScopedSideBySideTrigger@@QEAA@XZ
-     * @hash   -1054327345
+     * @hash   -1054281217
      */
     MCAPI ~ScopedSideBySideTrigger();
     /**
      * @symbol ?tryTriggerIf@ScopedSideBySideTrigger@@SA?AV1@_NAEAUIActorMovementProxy@@W4SideBySideExtractionId@@@Z
-     * @hash   -1658417195
+     * @hash   -1658371067
      */
     MCAPI static class ScopedSideBySideTrigger tryTriggerIf(bool, struct IActorMovementProxy &, enum class SideBySideExtractionId);
 

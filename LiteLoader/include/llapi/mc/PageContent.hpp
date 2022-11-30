@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?createTag@PageContent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   177866110
+     * @hash   178696414
      */
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     /**
      * @symbol ??4PageContent@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -200270946
+     * @hash   -199440642
      */
     MCAPI struct PageContent & operator=(struct PageContent const &);
     /**
@@ -51,12 +51,12 @@ public:
     MCAPI static struct PageContent const BLANK_PAGE;
     /**
      * @symbol ?read@PageContent@@SA?AU1@AEBVCompoundTag@@@Z
-     * @hash   -1635538778
+     * @hash   -1634708474
      */
     MCAPI static struct PageContent read(class CompoundTag const &);
     /**
      * @symbol ?write@PageContent@@SAXAEBU1@AEAVCompoundTag@@@Z
-     * @hash   -1409977756
+     * @hash   -1409147452
      */
     MCAPI static void write(struct PageContent const &, class CompoundTag &);
 

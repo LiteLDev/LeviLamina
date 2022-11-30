@@ -24,7 +24,7 @@ namespace LightningRodUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?emitLightningRodParticles@LightningRodUtil@@YAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   613603637
+     * @hash   614433941
      */
     MCAPI void emitLightningRodParticles(class BlockSource &, class BlockPos const &, int);
 

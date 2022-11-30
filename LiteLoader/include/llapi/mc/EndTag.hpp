@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?toString@EndTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1999508487
+     * @hash   1999554615
      */
     virtual std::string toString() const;
     /**
@@ -68,13 +68,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?equals@EndTag@@UEBA_NAEBVTag@@@Z
-     * @hash   -1629041691
+     * @hash   -1628995563
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@EndTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   147971321
+     * @hash   148017449
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**

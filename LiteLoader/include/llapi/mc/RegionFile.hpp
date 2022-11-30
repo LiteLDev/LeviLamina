@@ -34,17 +34,17 @@ public:
 public:
     /**
      * @symbol ??0RegionFile@@QEAA@AEBVPath@Core@@@Z
-     * @hash   2142488203
+     * @hash   2143318507
      */
     MCAPI RegionFile(class Core::Path const &);
     /**
      * @symbol ?open@RegionFile@@QEAA_NXZ
-     * @hash   -1890642542
+     * @hash   -1889812238
      */
     MCAPI bool open();
     /**
      * @symbol ?readChunk@RegionFile@@QEAA_NHHPEAPEAVBitStream@RakNet@@@Z
-     * @hash   1198593482
+     * @hash   1199423786
      */
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);
 

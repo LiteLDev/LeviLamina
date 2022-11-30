@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@EnderDragon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -115619678
+     * @hash   -115573550
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@EnderDragon@@UEAAXXZ
-     * @hash   817413440
+     * @hash   817459568
      */
     virtual void remove();
     /**
@@ -67,13 +67,13 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@EnderDragon@@UEBAMXZ
-     * @hash   -1165596613
+     * @hash   -1165550485
      */
     virtual float getShadowRadius() const;
     /**
      * @vftbl  83
      * @symbol ?getHeadLookVector@EnderDragon@@UEBA?AVVec3@@M@Z
-     * @hash   2100496403
+     * @hash   2100542531
      */
     virtual class Vec3 getHeadLookVector(float) const;
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  94
      * @symbol ?isImmobile@EnderDragon@@UEBA_NXZ
-     * @hash   378447229
+     * @hash   378493357
      */
     virtual bool isImmobile() const;
     /**
@@ -130,19 +130,19 @@ public:
     /**
      * @vftbl  122
      * @symbol ?setSitting@EnderDragon@@UEAAX_N@Z
-     * @hash   -460387658
+     * @hash   -460341530
      */
     virtual void setSitting(bool);
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   1140618713
+     * @hash   1140664841
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1660281989
+     * @hash   -1660235861
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -196,13 +196,13 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -1457667170
+     * @hash   -1457621042
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1273768733
+     * @hash   -1273722605
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1144402347
+     * @hash   -1144356219
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@EnderDragon@@EEAAXXZ
-     * @hash   117531274
+     * @hash   117577402
      */
     virtual void _onSizeUpdated();
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@EnderDragon@@UEAAXXZ
-     * @hash   -93830000
+     * @hash   -93783872
      */
     virtual void aiStep();
     /**
@@ -261,7 +261,7 @@ public:
     /**
      * @vftbl  358
      * @symbol ?tickDeath@EnderDragon@@MEAAXXZ
-     * @hash   -1520502516
+     * @hash   -1520456388
      */
     virtual void tickDeath();
     /**
@@ -283,141 +283,141 @@ public:
 #endif
     /**
      * @symbol ??0EnderDragon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   549872263
+     * @hash   549918391
      */
     MCAPI EnderDragon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?dieNaturally@EnderDragon@@QEAAXXZ
-     * @hash   895582975
+     * @hash   895629103
      */
     MCAPI void dieNaturally();
     /**
      * @symbol ?findClosestNode@EnderDragon@@QEAAHAEBVVec3@@@Z
-     * @hash   -997819059
+     * @hash   -997772931
      */
     MCAPI int findClosestNode(class Vec3 const &);
     /**
      * @symbol ?findClosestNode@EnderDragon@@QEAAHXZ
-     * @hash   -46517554
+     * @hash   -46471426
      */
     MCAPI int findClosestNode();
     /**
      * @symbol ?findPath@EnderDragon@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@HHPEAVPathfinderNode@@@Z
-     * @hash   -616917274
+     * @hash   -616871146
      */
     MCAPI std::unique_ptr<class Path> findPath(int, int, class PathfinderNode *);
     /**
      * @symbol ?getFlameCount@EnderDragon@@QEBAHXZ
-     * @hash   -499623060
+     * @hash   -499576932
      */
     MCAPI int getFlameCount() const;
     /**
      * @symbol ?getFlapTime@EnderDragon@@QEBAMXZ
-     * @hash   903915158
+     * @hash   903961286
      */
     MCAPI float getFlapTime() const;
     /**
      * @symbol ?getHeadPos@EnderDragon@@QEBA?AVBlockPos@@XZ
-     * @hash   -353421316
+     * @hash   -353375188
      */
     MCAPI class BlockPos getHeadPos() const;
     /**
      * @symbol ?getLatencyPos@EnderDragon@@QEBA?BV?$vector@MV?$allocator@M@std@@@std@@HM@Z
-     * @hash   1698099706
+     * @hash   1698145834
      */
     MCAPI std::vector<float> const getLatencyPos(int, float) const;
     /**
      * @symbol ?getNumCrystalsAlive@EnderDragon@@QEAAHXZ
-     * @hash   -1250015078
+     * @hash   -1249968950
      */
     MCAPI int getNumCrystalsAlive();
     /**
      * @symbol ?getTargetPos@EnderDragon@@QEBA?AVVec3@@XZ
-     * @hash   -2067120950
+     * @hash   -2067074822
      */
     MCAPI class Vec3 getTargetPos() const;
     /**
      * @symbol ?incrementFlameCount@EnderDragon@@QEAAXXZ
-     * @hash   974765595
+     * @hash   974811723
      */
     MCAPI void incrementFlameCount();
     /**
      * @symbol ?onCrystalDestroyed@EnderDragon@@QEAAXAEBVEnderCrystal@@VBlockPos@@AEBVActorDamageSource@@@Z
-     * @hash   -505347994
+     * @hash   -505301866
      */
     MCAPI void onCrystalDestroyed(class EnderCrystal const &, class BlockPos, class ActorDamageSource const &);
     /**
      * @symbol ?postAiStep@EnderDragon@@QEAAXXZ
-     * @hash   -1353906965
+     * @hash   -1353860837
      */
     MCAPI void postAiStep();
     /**
      * @symbol ?resetFlameCount@EnderDragon@@QEAAXXZ
-     * @hash   -1950901845
+     * @hash   -1950855717
      */
     MCAPI void resetFlameCount();
     /**
      * @symbol ?setDragonKilledCallback@EnderDragon@@QEAAXV?$function@$$A6AXAEAVEnderDragon@@@Z@std@@@Z
-     * @hash   152153261
+     * @hash   152199389
      */
     MCAPI void setDragonKilledCallback(class std::function<void (class EnderDragon &)>);
     /**
      * @symbol ?setHasDragonPreviouslyBeenKilled@EnderDragon@@QEAAX_N@Z
-     * @hash   -1373376078
+     * @hash   -1373329950
      */
     MCAPI void setHasDragonPreviouslyBeenKilled(bool);
     /**
      * @symbol ?setNumCrystalsAlive@EnderDragon@@QEAAXH@Z
-     * @hash   -1721322914
+     * @hash   -1721276786
      */
     MCAPI void setNumCrystalsAlive(int);
     /**
      * @symbol ?setTargetPos@EnderDragon@@QEAAXVVec3@@@Z
-     * @hash   -729571842
+     * @hash   -729525714
      */
     MCAPI void setTargetPos(class Vec3);
     /**
      * @symbol ?setTurnSpeed@EnderDragon@@QEAAXM@Z
-     * @hash   -2073461258
+     * @hash   -2073415130
      */
     MCAPI void setTurnSpeed(float);
 
 //protected:
     /**
      * @symbol ?_hurt@EnderDragon@@IEAA_NPEAVAABB@@AEBVActorDamageSource@@M@Z
-     * @hash   -2064714432
+     * @hash   -2064668304
      */
     MCAPI bool _hurt(class AABB *, class ActorDamageSource const &, float);
 
 //private:
     /**
      * @symbol ?_checkCrystals@EnderDragon@@AEAAXXZ
-     * @hash   -1649032521
+     * @hash   -1648986393
      */
     MCAPI void _checkCrystals();
     /**
      * @symbol ?_checkWalls@EnderDragon@@AEAA_NVAABB@@@Z
-     * @hash   -1591255880
+     * @hash   -1591209752
      */
     MCAPI bool _checkWalls(class AABB);
     /**
      * @symbol ?_hurtEntities@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-     * @hash   -254524426
+     * @hash   -254478298
      */
     MCAPI void _hurtEntities(class gsl::span<class gsl::not_null<class Actor *>, -1>) const;
     /**
      * @symbol ?_knockBack@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-     * @hash   2144365993
+     * @hash   2144412121
      */
     MCAPI void _knockBack(class gsl::span<class gsl::not_null<class Actor *>, -1>) const;
     /**
      * @symbol ?_reconstructPath@EnderDragon@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVPathfinderNode@@0W4PathCompletionType@@@Z
-     * @hash   -1481634165
+     * @hash   -1481588037
      */
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode &, class PathfinderNode &, enum class PathCompletionType);
     /**
      * @symbol ?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z
-     * @hash   134974346
+     * @hash   135020474
      */
     MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const &);
 

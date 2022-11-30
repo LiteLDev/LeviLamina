@@ -38,19 +38,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   2047864143
+     * @hash   2047910271
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
      * @vftbl  2
      * @symbol ?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   -1100767915
+     * @hash   -1100721787
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
      * @vftbl  3
      * @symbol ?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   -1698332120
+     * @hash   -1698285992
      */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 

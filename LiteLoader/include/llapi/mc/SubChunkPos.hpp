@@ -39,12 +39,12 @@ public:
 public:
     /**
      * @symbol ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -354003910
+     * @hash   -353173606
      */
     MCAPI SubChunkPos(class BlockPos const &);
     /**
      * @symbol ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
-     * @hash   -872409209
+     * @hash   -871578905
      */
     MCAPI operator class BlockPos() const;
     /**

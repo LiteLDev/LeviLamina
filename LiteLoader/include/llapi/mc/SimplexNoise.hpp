@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0SimplexNoise@@QEAA@AEAVIRandom@@_N@Z
-     * @hash   -2095448582
+     * @hash   -2094618278
      */
     MCAPI SimplexNoise(class IRandom &, bool);
     /**
      * @symbol ?_add@SimplexNoise@@QEBAXPEAMMMHHMMM@Z
-     * @hash   948447153
+     * @hash   949277457
      */
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     /**
      * @symbol ?_getValue@SimplexNoise@@QEBAMAEBVVec2@@@Z
-     * @hash   1087424849
+     * @hash   1088255153
      */
     MCAPI float _getValue(class Vec2 const &) const;
     /**
      * @symbol ?_getValue@SimplexNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   611156543
+     * @hash   611986847
      */
     MCAPI float _getValue(class Vec3 const &) const;
 

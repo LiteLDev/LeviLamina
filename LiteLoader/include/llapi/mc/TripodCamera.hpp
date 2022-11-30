@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@TripodCamera@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   89261630
+     * @hash   89307758
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@TripodCamera@@UEAAXXZ
-     * @hash   830655036
+     * @hash   830701164
      */
     virtual void remove();
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@TripodCamera@@UEAA_NXZ
-     * @hash   1689564319
+     * @hash   1689610447
      */
     virtual bool isPickable();
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
-     * @hash   558061223
+     * @hash   558107351
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   809353041
+     * @hash   809399169
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -234,22 +234,22 @@ public:
 #endif
     /**
      * @symbol ??0TripodCamera@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -189453157
+     * @hash   -189407029
      */
     MCAPI TripodCamera(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?interactWithPlayer@TripodCamera@@QEAA_NAEAVPlayer@@@Z
-     * @hash   1679366623
+     * @hash   1679412751
      */
     MCAPI bool interactWithPlayer(class Player &);
     /**
      * @symbol ?isActivated@TripodCamera@@QEBA_NXZ
-     * @hash   -831518256
+     * @hash   -831472128
      */
     MCAPI bool isActivated() const;
     /**
      * @symbol ?startTakingPicture@TripodCamera@@QEAAXAEAVPlayer@@@Z
-     * @hash   -860554344
+     * @hash   -860508216
      */
     MCAPI void startTakingPicture(class Player &);
 

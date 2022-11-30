@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -689291950
+     * @hash   -689245822
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  37
      * @symbol ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@MH@Z
-     * @hash   -976386495
+     * @hash   -976340367
      */
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
@@ -57,13 +57,13 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Horse@@UEAAXXZ
-     * @hash   984142142
+     * @hash   984188270
      */
     virtual void normalTick();
     /**
      * @vftbl  53
      * @symbol ?positionPassenger@Horse@@UEAAXAEAVActor@@M@Z
-     * @hash   -331255498
+     * @hash   -331209370
      */
     virtual void positionPassenger(class Actor &, float);
     /**
@@ -79,7 +79,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Horse@@UEBAMXZ
-     * @hash   -206411815
+     * @hash   -206365687
      */
     virtual float getShadowRadius() const;
     /**
@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  94
      * @symbol ?isImmobile@Horse@@MEBA_NXZ
-     * @hash   -806376732
+     * @hash   -806330604
      */
     virtual bool isImmobile() const;
     /**
@@ -136,31 +136,31 @@ public:
     /**
      * @vftbl  124
      * @symbol ?onFailedTame@Horse@@UEAAXXZ
-     * @hash   543829883
+     * @hash   543876011
      */
     virtual void onFailedTame();
     /**
      * @vftbl  128
      * @symbol ?setStanding@Horse@@UEAAX_N@Z
-     * @hash   89107908
+     * @hash   89154036
      */
     virtual void setStanding(bool);
     /**
      * @vftbl  143
      * @symbol ?feed@Horse@@UEAAXH@Z
-     * @hash   -2081680969
+     * @hash   -2081634841
      */
     virtual void feed(int);
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -26641351
+     * @hash   -26595223
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  176
      * @symbol ?canFreeze@Horse@@UEBA_NXZ
-     * @hash   1807926994
+     * @hash   1807973122
      */
     virtual bool canFreeze() const;
     /**
@@ -171,25 +171,25 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1740573462
+     * @hash   -1740527334
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
      * @vftbl  187
      * @symbol ?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z
-     * @hash   -236578586
+     * @hash   -236532458
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
      * @vftbl  188
      * @symbol ?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z
-     * @hash   -2054029441
+     * @hash   -2053983313
      */
     virtual void handleFallDistanceOnServer(float, float, bool);
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Horse@@UEAAXH@Z
-     * @hash   -1397774075
+     * @hash   -1397727947
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -200,7 +200,7 @@ public:
     /**
      * @vftbl  219
      * @symbol ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
-     * @hash   -152901549
+     * @hash   -152855421
      */
     virtual void openContainerComponent(class Player &);
     /**
@@ -226,13 +226,13 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   1396639712
+     * @hash   1396685840
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -610092523
+     * @hash   -610046395
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -243,13 +243,13 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -971511181
+     * @hash   -971465053
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1700413659
+     * @hash   -1700367531
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -270,13 +270,13 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@Horse@@UEAAXMMM@Z
-     * @hash   1381801470
+     * @hash   1381847598
      */
     virtual void travel(float, float, float);
     /**
      * @vftbl  295
      * @symbol ?aiStep@Horse@@UEAAXXZ
-     * @hash   1881019214
+     * @hash   1881065342
      */
     virtual void aiStep();
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@Horse@@UEBAHXZ
-     * @hash   -141692410
+     * @hash   -141646282
      */
     virtual int getArmorValue() const;
     /**
@@ -308,61 +308,61 @@ public:
     /**
      * @vftbl  362
      * @symbol ?setType@Horse@@UEAAXH@Z
-     * @hash   -1618317431
+     * @hash   -1618271303
      */
     virtual void setType(int);
     /**
      * @vftbl  363
      * @symbol ?getType@Horse@@UEBAHXZ
-     * @hash   345405678
+     * @hash   345451806
      */
     virtual int getType() const;
     /**
      * @vftbl  364
      * @symbol ?setHorseEating@Horse@@UEAAX_N@Z
-     * @hash   -2022899443
+     * @hash   -2022853315
      */
     virtual void setHorseEating(bool);
     /**
      * @vftbl  365
      * @symbol ?getStandAnim@Horse@@UEBAMM@Z
-     * @hash   408861150
+     * @hash   408907278
      */
     virtual float getStandAnim(float) const;
     /**
      * @vftbl  366
      * @symbol ?isAdult@Horse@@UEBA_NXZ
-     * @hash   402925707
+     * @hash   402971835
      */
     virtual bool isAdult() const;
     /**
      * @vftbl  367
      * @symbol ?isHorseEating@Horse@@UEBA_NXZ
-     * @hash   -684852904
+     * @hash   -684806776
      */
     virtual bool isHorseEating() const;
     /**
      * @vftbl  368
      * @symbol ?isMouthOpen@Horse@@UEBA_NXZ
-     * @hash   2132265106
+     * @hash   2132311234
      */
     virtual bool isMouthOpen() const;
     /**
      * @vftbl  369
      * @symbol ?isTailMoving@Horse@@UEBA_NXZ
-     * @hash   -836502541
+     * @hash   -836456413
      */
     virtual bool isTailMoving() const;
     /**
      * @vftbl  370
      * @symbol ?makeMad@Horse@@UEAAXXZ
-     * @hash   -1377433876
+     * @hash   -1377387748
      */
     virtual void makeMad();
     /**
      * @vftbl  371
      * @symbol ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
-     * @hash   1762387270
+     * @hash   1762433398
      */
     virtual bool tameToPlayer(class Player &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSE
@@ -374,54 +374,54 @@ public:
 #endif
     /**
      * @symbol ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   724397241
+     * @hash   724443369
      */
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postAiStep@Horse@@QEAAXXZ
-     * @hash   -511915941
+     * @hash   -511869813
      */
     MCAPI void postAiStep();
     /**
      * @symbol ?postNormalTick@Horse@@QEAAXXZ
-     * @hash   1092481915
+     * @hash   1092528043
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?postTravel@Horse@@QEAAXPEAVActor@@_NW4HorsePostTravelType@@@Z
-     * @hash   29193311
+     * @hash   29239439
      */
     MCAPI void postTravel(class Actor *, bool, enum class HorsePostTravelType);
     /**
      * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@M@Z
-     * @hash   518774661
+     * @hash   518820789
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(struct RenderRotationComponent const &, struct StandAnimationComponent const &, float);
     /**
      * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBVVec2@@MMM@Z
-     * @hash   327788696
+     * @hash   327834824
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
     /**
      * @symbol ?getNewPassengerPos@Horse@@SA?AVVec3@@AEBURenderPositionComponent@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@MM@Z
-     * @hash   1423793739
+     * @hash   1423839867
      */
     MCAPI static class Vec3 getNewPassengerPos(struct RenderPositionComponent const &, struct RenderRotationComponent const &, struct StandAnimationComponent const &, float, float);
     /**
      * @symbol ?setHorseFlag@Horse@@SAXVSynchedActorDataWriter@@W4HorseFlags@@_N@Z
-     * @hash   83762102
+     * @hash   83808230
      */
     MCAPI static void setHorseFlag(class SynchedActorDataWriter, enum class HorseFlags, bool);
 
 //private:
     /**
      * @symbol ?_setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
-     * @hash   850159399
+     * @hash   850205527
      */
     MCAPI void _setHorseFlag(enum class HorseFlags, bool);
     /**
      * @symbol ?_setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
-     * @hash   -1569996089
+     * @hash   -1569949961
      */
     MCAPI bool _setHorseType(enum class ActorType &);
 

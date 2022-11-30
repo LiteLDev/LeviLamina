@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ??0PlayerRespawnTelemetryData@@QEAA@XZ
-     * @hash   -778123864
+     * @hash   -778077736
      */
     MCAPI PlayerRespawnTelemetryData();
     /**
      * @symbol ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
-     * @hash   -931678334
+     * @hash   -931632206
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
      * @symbol ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
-     * @hash   87725500
+     * @hash   87771628
      */
     MCAPI void setChangedDimension(bool);
     /**
      * @symbol ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
-     * @hash   529686176
+     * @hash   529732304
      */
     MCAPI void setJumpDistance(double);
     /**
      * @symbol ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   1851835392
+     * @hash   1851881520
      */
     MCAPI void setLongJumpCount(unsigned int);
     /**
      * @symbol ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   917562402
+     * @hash   917608530
      */
     MCAPI void setPositionSourceType(unsigned int);
     /**
      * @symbol ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
-     * @hash   1846145216
+     * @hash   1846191344
      */
     MCAPI void setSearchTime(double);
     /**
      * @symbol ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   -1103920238
+     * @hash   -1103874110
      */
     MCAPI void setShortJumpCount(unsigned int);
 

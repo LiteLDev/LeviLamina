@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@LevelSoundEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1865555929
+     * @hash   -1865509801
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LevelSoundEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1071117044
+     * @hash   1071163172
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LevelSoundEventPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1772622477
+     * @hash   -1772576349
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@LevelSoundEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1212956851
+     * @hash   1213002979
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LevelSoundEventPacket@@QEAA@XZ
-     * @hash   862178867
+     * @hash   862224995
      */
     MCAPI LevelSoundEventPacket();
     /**
      * @symbol ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
-     * @hash   -114400685
+     * @hash   -114354557
      */
     MCAPI LevelSoundEventPacket(enum class LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
 

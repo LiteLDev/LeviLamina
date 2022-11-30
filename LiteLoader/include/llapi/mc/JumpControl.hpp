@@ -42,13 +42,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?clone@JumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
-     * @hash   -656614617
+     * @hash   -656568489
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
      * @vftbl  3
      * @symbol ?tick@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
-     * @hash   -1838439772
+     * @hash   -1838393644
      */
     virtual void tick(class JumpControlComponent &, class Mob &);
     /**
@@ -59,7 +59,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-     * @hash   753033048
+     * @hash   753079176
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
@@ -91,7 +91,7 @@ public:
 #endif
     /**
      * @symbol ??0JumpControl@@QEAA@XZ
-     * @hash   288755227
+     * @hash   288801355
      */
     MCAPI JumpControl();
 

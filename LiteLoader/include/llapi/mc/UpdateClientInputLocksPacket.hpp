@@ -36,30 +36,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateClientInputLocksPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1086080076
+     * @hash   -1086033948
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateClientInputLocksPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2059094625
+     * @hash   2059140753
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateClientInputLocksPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1803596474
+     * @hash   -1803550346
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateClientInputLocksPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -309330314
+     * @hash   -309284186
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateClientInputLocksPacket@@QEAA@XZ
-     * @hash   313890966
+     * @hash   313937094
      */
     MCAPI UpdateClientInputLocksPacket();
 

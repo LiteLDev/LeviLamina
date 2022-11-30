@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@VillagerV2@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1862451669
+     * @hash   -1862405541
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,13 +46,13 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@VillagerV2@@UEAAXXZ
-     * @hash   -2067474071
+     * @hash   -2067427943
      */
     virtual void remove();
     /**
      * @vftbl  22
      * @symbol ?isRuntimePredictedMovementEnabled@VillagerV2@@UEBA_NXZ
-     * @hash   -974509586
+     * @hash   -974463458
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
@@ -128,7 +128,7 @@ public:
     /**
      * @vftbl  204
      * @symbol ?buildDebugInfo@VillagerV2@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   491733318
+     * @hash   491779446
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
@@ -144,7 +144,7 @@ public:
     /**
      * @vftbl  235
      * @symbol ?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   1001756491
+     * @hash   1001802619
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
@@ -160,13 +160,13 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   333761189
+     * @hash   333807317
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z
-     * @hash   1521562874
+     * @hash   1521609002
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -192,7 +192,7 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@VillagerV2@@UEAAXMMM@Z
-     * @hash   1377014035
+     * @hash   1377060163
      */
     virtual void travel(float, float, float);
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  355
      * @symbol ?newServerAiStep@VillagerV2@@UEAAXXZ
-     * @hash   -1177594132
+     * @hash   -1177548004
      */
     virtual void newServerAiStep();
     /**
@@ -223,7 +223,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0VillagerV2@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   71057022
+     * @hash   71103150
      */
     MCAPI VillagerV2(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

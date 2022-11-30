@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?init@Inventory@@UEAAXXZ
-     * @hash   -971175525
+     * @hash   -971129397
      */
     virtual void init();
     /**
      * @vftbl  9
      * @symbol ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
-     * @hash   591394677
+     * @hash   591440805
      */
     virtual void setItem(int, class ItemStack const &);
     /**
      * @vftbl  10
      * @symbol ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   1586408400
+     * @hash   1586454528
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
@@ -67,56 +67,56 @@ public:
     /**
      * @vftbl  33
      * @symbol ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
-     * @hash   2052927001
+     * @hash   2052973129
      */
     virtual bool add(class ItemStack &);
     /**
      * @vftbl  34
      * @symbol ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
-     * @hash   1970687637
+     * @hash   1970733765
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
      * @vftbl  38
      * @symbol ?getEmptySlotsCount@Inventory@@UEBAHXZ
-     * @hash   1886818752
+     * @hash   1886864880
      */
     virtual int getEmptySlotsCount() const;
     /**
      * @vftbl  39
      * @symbol ?getFirstEmptySlot@Inventory@@UEBAHXZ
-     * @hash   -1965798416
+     * @hash   -1965752288
      */
     virtual int getFirstEmptySlot() const;
     /**
      * @vftbl  40
      * @symbol ?setContainerSize@Inventory@@UEAAXH@Z
-     * @hash   -1985289980
+     * @hash   -1985243852
      */
     virtual void setContainerSize(int);
     /**
      * @symbol ??0Inventory@@QEAA@PEAVPlayer@@@Z
-     * @hash   1800899304
+     * @hash   1800945432
      */
     MCAPI Inventory(class Player *);
     /**
      * @symbol ?dropSlot@Inventory@@QEAAXH_N00@Z
-     * @hash   416791179
+     * @hash   416837307
      */
     MCAPI void dropSlot(int, bool, bool, bool);
     /**
      * @symbol ?getComplexItems@Inventory@@QEAA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   1710736916
+     * @hash   1710783044
      */
     MCAPI std::vector<class ItemStack> getComplexItems();
     /**
      * @symbol ?setupDefault@Inventory@@QEAAXXZ
-     * @hash   781942411
+     * @hash   781988539
      */
     MCAPI void setupDefault();
     /**
      * @symbol ?tick@Inventory@@QEAAXH@Z
-     * @hash   768340702
+     * @hash   768386830
      */
     MCAPI void tick(int);
 

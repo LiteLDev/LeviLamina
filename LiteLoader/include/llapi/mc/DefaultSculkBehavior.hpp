@@ -31,13 +31,13 @@ public:
     /**
      * @vftbl  0
      * @symbol ?updateDecayDelay@DefaultSculkBehavior@@UEBAHH@Z
-     * @hash   -531446123
+     * @hash   -530615819
      */
     virtual int updateDecayDelay(int) const;
     /**
      * @vftbl  1
      * @symbol ?updateFacingData@DefaultSculkBehavior@@UEBAHHAEBVBlock@@@Z
-     * @hash   1240233152
+     * @hash   1241063456
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
@@ -49,13 +49,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?attemptSpreadVeins@DefaultSculkBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
-     * @hash   1538983659
+     * @hash   1539813963
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
      * @vftbl  4
      * @symbol ?attemptUseCharge@DefaultSculkBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
-     * @hash   156271995
+     * @hash   157102299
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**

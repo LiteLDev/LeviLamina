@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ComparatorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   779354485
+     * @hash   780184789
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ComparatorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   435262916
+     * @hash   436093220
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@ComparatorBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1833774562
+     * @hash   -1832944258
      */
     virtual void tick(class BlockSource &);
     /**
@@ -97,18 +97,18 @@ public:
     /**
      * @vftbl  40
      * @symbol ?getOutputSignal@ComparatorBlockActor@@UEAAHXZ
-     * @hash   -1318227075
+     * @hash   -1317396771
      */
     virtual int getOutputSignal();
     /**
      * @vftbl  41
      * @symbol ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
-     * @hash   -2048295717
+     * @hash   -2047465413
      */
     virtual void setOutputSignal(int);
     /**
      * @symbol ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -973111391
+     * @hash   -972281087
      */
     MCAPI ComparatorBlockActor(class BlockPos const &);
 

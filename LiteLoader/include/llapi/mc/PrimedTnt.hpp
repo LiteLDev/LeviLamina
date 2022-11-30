@@ -35,19 +35,19 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -337676584
+     * @hash   -337630456
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1244798557
+     * @hash   -1244752429
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -316461669
+     * @hash   -316415541
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -58,7 +58,7 @@ public:
     /**
      * @vftbl  19
      * @symbol ?getOwnerEntityType@PrimedTnt@@UEAA?AW4ActorType@@XZ
-     * @hash   1798277629
+     * @hash   1798323757
      */
     virtual enum class ActorType getOwnerEntityType();
     /**
@@ -69,13 +69,13 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@PrimedTnt@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   571742258
+     * @hash   571788386
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
      * @vftbl  50
      * @symbol ?normalTick@PrimedTnt@@UEAAXXZ
-     * @hash   257075334
+     * @hash   257121462
      */
     virtual void normalTick();
     /**
@@ -118,7 +118,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@PrimedTnt@@UEAA_NXZ
-     * @hash   1098826153
+     * @hash   1098872281
      */
     virtual bool isPickable();
     /**
@@ -154,7 +154,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@PrimedTnt@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -354482575
+     * @hash   -354436447
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@PrimedTnt@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   2094106011
+     * @hash   2094152139
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -217,12 +217,12 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0PrimedTnt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1564399457
+     * @hash   1564445585
      */
     MCAPI PrimedTnt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@PrimedTnt@@QEAAXXZ
-     * @hash   -1298283429
+     * @hash   -1298237301
      */
     MCAPI void postNormalTick();
 

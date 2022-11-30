@@ -34,12 +34,12 @@ public:
 public:
     /**
      * @symbol ??0PackIdVersion@@QEAA@XZ
-     * @hash   1745373216
+     * @hash   1746203520
      */
     MCAPI PackIdVersion();
     /**
      * @symbol ??0PackIdVersion@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@W4PackType@@@Z
-     * @hash   -75238679
+     * @hash   -74408375
      */
     MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
     /**
@@ -49,32 +49,32 @@ public:
     MCAPI PackIdVersion(struct PackIdVersion const &);
     /**
      * @symbol ?asString@PackIdVersion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -745603898
+     * @hash   -744773594
      */
     MCAPI std::string asString() const;
     /**
      * @symbol ??9PackIdVersion@@QEBA_NAEBU0@@Z
-     * @hash   -223604084
+     * @hash   -222773780
      */
     MCAPI bool operator!=(struct PackIdVersion const &) const;
     /**
      * @symbol ??MPackIdVersion@@QEBA_NAEBU0@@Z
-     * @hash   -1022709080
+     * @hash   -1021878776
      */
     MCAPI bool operator<(struct PackIdVersion const &) const;
     /**
      * @symbol ??4PackIdVersion@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1489372424
+     * @hash   -1489326296
      */
     MCAPI struct PackIdVersion & operator=(struct PackIdVersion &&);
     /**
      * @symbol ??8PackIdVersion@@QEBA_NAEBU0@@Z
-     * @hash   -1494166233
+     * @hash   -1493335929
      */
     MCAPI bool operator==(struct PackIdVersion const &) const;
     /**
      * @symbol ?satisfies@PackIdVersion@@QEBA_NAEBU1@@Z
-     * @hash   -1183097490
+     * @hash   -1182267186
      */
     MCAPI bool satisfies(struct PackIdVersion const &) const;
     /**

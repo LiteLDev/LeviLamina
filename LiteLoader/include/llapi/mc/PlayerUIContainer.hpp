@@ -48,17 +48,17 @@ public:
     virtual void __unk_vfn_23();
     /**
      * @symbol ??0PlayerUIContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
-     * @hash   872347513
+     * @hash   872393641
      */
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     /**
      * @symbol ?load@PlayerUIContainer@@QEAAXAEBVListTag@@AEBVSemVersion@@@Z
-     * @hash   1012097411
+     * @hash   1012143539
      */
     MCAPI void load(class ListTag const &, class SemVersion const &);
     /**
      * @symbol ?save@PlayerUIContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -1031314904
+     * @hash   -1031268776
      */
     MCAPI std::unique_ptr<class ListTag> save() const;
 

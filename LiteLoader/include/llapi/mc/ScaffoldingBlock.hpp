@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@ScaffoldingBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1790466935
+     * @hash   1791297239
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@ScaffoldingBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -720043423
+     * @hash   -719213119
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -152,7 +152,7 @@ public:
     /**
      * @vftbl  53
      * @symbol ?canBeAscendedByJumping@ScaffoldingBlock@@UEBA_NAEBVActor@@AEBVBlockPos@@@Z
-     * @hash   1959942270
+     * @hash   1960772574
      */
     virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /**
@@ -179,7 +179,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@ScaffoldingBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -1949007499
+     * @hash   -1948177195
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@ScaffoldingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -812427617
+     * @hash   -811597313
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@ScaffoldingBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1955391638
+     * @hash   -1954561334
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ScaffoldingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -710954701
+     * @hash   -710124397
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -218,7 +218,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ScaffoldingBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -462817840
+     * @hash   -461987536
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  128
      * @symbol ?canSlide@ScaffoldingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2077858878
+     * @hash   2078689182
      */
     virtual bool canSlide(class BlockSource &, class BlockPos const &) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@ScaffoldingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -106098458
+     * @hash   -105268154
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -276,7 +276,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ScaffoldingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1339527363
+     * @hash   1340357667
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -287,7 +287,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ScaffoldingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1450340519
+     * @hash   1451170823
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -298,7 +298,7 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@ScaffoldingBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -166195293
+     * @hash   -165364989
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
@@ -309,13 +309,13 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getDustColor@ScaffoldingBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   1852771261
+     * @hash   1853601565
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?getDustParticleName@ScaffoldingBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1742309896
+     * @hash   -1741479592
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
@@ -332,26 +332,26 @@ public:
 #endif
     /**
      * @symbol ??0ScaffoldingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   83253087
+     * @hash   84083391
      */
     MCAPI ScaffoldingBlock(std::string const &, int);
     /**
      * @symbol ?MAX_STABILITY@ScaffoldingBlock@@2HB
-     * @hash   -2138904825
+     * @hash   -2138781817
      */
     MCAPI static int const MAX_STABILITY;
 
 //protected:
     /**
      * @symbol ?calculateStability@ScaffoldingBlock@@IEBAHAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   234349642
+     * @hash   235179946
      */
     MCAPI int calculateStability(class BlockSource const &, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_updateBlockStability@ScaffoldingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   734068198
+     * @hash   734898502
      */
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;
 

@@ -32,7 +32,7 @@ namespace ComponentComparer {
     MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
     /**
      * @symbol ?getDiffMessage@ComponentComparer@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDAEBV23@1@Z
-     * @hash   2140778867
+     * @hash   2140824995
      */
     MCAPI std::string getDiffMessage(char const *, std::string const &, std::string const &);
 

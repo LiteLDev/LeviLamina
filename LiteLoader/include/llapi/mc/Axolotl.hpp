@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Axolotl@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   348693149
+     * @hash   348739277
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Axolotl@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -1361225906
+     * @hash   -1361179778
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -182,12 +182,12 @@ public:
     /**
      * @vftbl  361
      * @symbol ?_getAdjustedAABBForSpawnCheck@Axolotl@@UEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
-     * @hash   433112942
+     * @hash   433159070
      */
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
     /**
      * @symbol ??0Axolotl@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1246238913
+     * @hash   -1246192785
      */
     MCAPI Axolotl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -38,43 +38,43 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@RepeaterCapacitor@@UEBAHXZ
-     * @hash   -1636115976
+     * @hash   -1635285672
      */
     virtual int getStrength() const;
     /**
      * @vftbl  3
      * @symbol ?setStrength@RepeaterCapacitor@@UEAAXH@Z
-     * @hash   -1092719105
+     * @hash   -1091888801
      */
     virtual void setStrength(int);
     /**
      * @vftbl  11
      * @symbol ?addSource@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   12392978
+     * @hash   13223282
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  13
      * @symbol ?checkLock@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -795841994
+     * @hash   -795011690
      */
     virtual void checkLock(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@RepeaterCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   422408350
+     * @hash   423238654
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?cacheValues@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1168310345
+     * @hash   -1167480041
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  16
      * @symbol ?updateDependencies@RepeaterCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-     * @hash   334976744
+     * @hash   335807048
      */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /**
@@ -90,17 +90,17 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@RepeaterCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   1629421308
+     * @hash   1629467436
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0RepeaterCapacitor@@QEAA@XZ
-     * @hash   -800625786
+     * @hash   -799795482
      */
     MCAPI RepeaterCapacitor();
     /**
      * @symbol ?setDelay@RepeaterCapacitor@@QEAAXH@Z
-     * @hash   812292966
+     * @hash   813123270
      */
     MCAPI void setDelay(int);
 

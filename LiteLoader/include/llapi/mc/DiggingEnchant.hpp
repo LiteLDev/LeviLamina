@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@DiggingEnchant@@UEBAHH@Z
-     * @hash   -1242815003
+     * @hash   -1241984699
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@DiggingEnchant@@UEBAHH@Z
-     * @hash   -2001595261
+     * @hash   -2000764957
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@DiggingEnchant@@UEBAHXZ
-     * @hash   -704541979
+     * @hash   -703711675
      */
     virtual int getMaxLevel() const;
     /**
@@ -77,12 +77,12 @@ public:
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@DiggingEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   775938230
+     * @hash   776768534
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0DiggingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   780336525
+     * @hash   781166829
      */
     MCAPI DiggingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

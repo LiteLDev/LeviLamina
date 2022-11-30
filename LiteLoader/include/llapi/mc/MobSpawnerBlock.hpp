@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@MobSpawnerBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1154663739
+     * @hash   -1153833435
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@MobSpawnerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -981820221
+     * @hash   -980989917
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCK
@@ -255,7 +255,7 @@ public:
 #endif
     /**
      * @symbol ??0MobSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1683334429
+     * @hash   -1682504125
      */
     MCAPI MobSpawnerBlock(std::string const &, int);
 

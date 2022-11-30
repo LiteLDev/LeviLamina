@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0PlayerArmorExchangeEvent@@QEAA@AEBU0@@Z
-     * @hash   -138389777
+     * @hash   -138343649
      */
     MCAPI PlayerArmorExchangeEvent(struct PlayerArmorExchangeEvent const &);
     /**

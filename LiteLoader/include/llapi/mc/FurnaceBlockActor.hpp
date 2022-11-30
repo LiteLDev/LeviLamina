@@ -33,252 +33,252 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCKACTOR
     /**
      * @symbol ?_getUpdatePacket@FurnaceBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   1782488217
+     * @hash   1783318521
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@FurnaceBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   808178217
+     * @hash   809008521
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?canPullOutItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-     * @hash   -1762274050
+     * @hash   -1761443746
      */
     MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?canPushInItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-     * @hash   910651304
+     * @hash   911481608
      */
     MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?fixupOnLoad@FurnaceBlockActor@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   1867049519
+     * @hash   1867879823
      */
     MCVAPI void fixupOnLoad(class LevelChunk &);
     /**
      * @symbol ?getContainer@FurnaceBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -478494513
+     * @hash   -477664209
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@FurnaceBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   -906216373
+     * @hash   -905386069
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@FurnaceBlockActor@@UEBAHXZ
-     * @hash   93452663
+     * @hash   93498791
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@FurnaceBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   212551332
+     * @hash   213381636
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@FurnaceBlockActor@@UEBAHXZ
-     * @hash   114794518
+     * @hash   114840646
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@FurnaceBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1098312747
+     * @hash   1099143051
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?load@FurnaceBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1760531769
+     * @hash   -1759701465
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onCustomTagLoadDone@FurnaceBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1799701451
+     * @hash   1800531755
      */
     MCVAPI void onCustomTagLoadDone(class BlockSource &);
     /**
      * @symbol ?onMove@FurnaceBlockActor@@UEAAXXZ
-     * @hash   -1612073513
+     * @hash   -1611243209
      */
     MCVAPI void onMove();
     /**
      * @symbol ?onNeighborChanged@FurnaceBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   682765824
+     * @hash   683596128
      */
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?save@FurnaceBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -110497306
+     * @hash   -109667002
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@FurnaceBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   2047073465
+     * @hash   2047903769
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@FurnaceBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -1822836143
+     * @hash   -1822005839
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@FurnaceBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1647487792
+     * @hash   1648318096
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@FurnaceBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1491021824
+     * @hash   1491852128
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@FurnaceBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1641520320
+     * @hash   -1640690016
      */
     MCVAPI void tick(class BlockSource &);
     /**
      * @symbol ??1FurnaceBlockActor@@UEAA@XZ
-     * @hash   -823431560
+     * @hash   -822601256
      */
     MCVAPI ~FurnaceBlockActor();
 #endif
     /**
      * @symbol ??0FurnaceBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -378106589
+     * @hash   -377276285
      */
     MCAPI FurnaceBlockActor(class BlockPos const &);
     /**
      * @symbol ?checkForAlternativeFuelAchievement@FurnaceBlockActor@@QEAAXAEAVBlockSource@@AEBVItemStack@@@Z
-     * @hash   -617705465
+     * @hash   -616875161
      */
     MCAPI void checkForAlternativeFuelAchievement(class BlockSource &, class ItemStack const &);
     /**
      * @symbol ?checkForSmeltEverythingAchievement@FurnaceBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   1241664290
+     * @hash   1242494594
      */
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource &);
     /**
      * @symbol ?getLitDuration@FurnaceBlockActor@@QEBAHXZ
-     * @hash   839728240
+     * @hash   840558544
      */
     MCAPI int getLitDuration() const;
     /**
      * @symbol ?getLitTime@FurnaceBlockActor@@QEBAHXZ
-     * @hash   999163762
+     * @hash   999994066
      */
     MCAPI int getLitTime() const;
     /**
      * @symbol ?getStoredXP@FurnaceBlockActor@@QEBAHXZ
-     * @hash   514961578
+     * @hash   515791882
      */
     MCAPI int getStoredXP() const;
     /**
      * @symbol ?getTickCount@FurnaceBlockActor@@QEBAHXZ
-     * @hash   1599721582
+     * @hash   1599767710
      */
     MCAPI int getTickCount() const;
     /**
      * @symbol ?isEmptiedByHopper@FurnaceBlockActor@@QEAA_NAEAVBlockSource@@@Z
-     * @hash   -1253136933
+     * @hash   -1252306629
      */
     MCAPI bool isEmptiedByHopper(class BlockSource &);
     /**
      * @symbol ?onFurnaceBlockRemoved@FurnaceBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -1485580244
+     * @hash   -1484749940
      */
     MCAPI void onFurnaceBlockRemoved(class BlockSource &);
     /**
      * @symbol ?setLitDuration@FurnaceBlockActor@@QEAAXH@Z
-     * @hash   1917670950
+     * @hash   1918501254
      */
     MCAPI void setLitDuration(int);
     /**
      * @symbol ?setLitTime@FurnaceBlockActor@@QEAAXH@Z
-     * @hash   -668619388
+     * @hash   -667789084
      */
     MCAPI void setLitTime(int);
     /**
      * @symbol ?setStoredXP@FurnaceBlockActor@@QEAAXH@Z
-     * @hash   1597778044
+     * @hash   1598608348
      */
     MCAPI void setStoredXP(int);
     /**
      * @symbol ?setTickCount@FurnaceBlockActor@@QEAAXH@Z
-     * @hash   -798503672
+     * @hash   -797673368
      */
     MCAPI void setTickCount(int);
     /**
      * @symbol ?storeXPRewardForRemovingWithHopper@FurnaceBlockActor@@QEAAXAEBVItemStackBase@@H@Z
-     * @hash   1431891861
+     * @hash   1432722165
      */
     MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const &, int);
     /**
      * @symbol ?withdrawStoredXPReward@FurnaceBlockActor@@QEAAHXZ
-     * @hash   1530150928
+     * @hash   1530981232
      */
     MCAPI int withdrawStoredXPReward();
     /**
      * @symbol ?BURN_INTERVAL@FurnaceBlockActor@@2HB
-     * @hash   2038638927
+     * @hash   2038761935
      */
     MCAPI static int const BURN_INTERVAL;
     /**
      * @symbol ?DEFAULT_SMELTING_TIME@FurnaceBlockActor@@2MB
-     * @hash   -1470779817
+     * @hash   -1470656809
      */
     MCAPI static float const DEFAULT_SMELTING_TIME;
     /**
      * @symbol ?getAvailableFuelSetCount@FurnaceBlockActor@@SAHHAEBVItemStackBase@@@Z
-     * @hash   -691890920
+     * @hash   -691060616
      */
     MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const &);
     /**
      * @symbol ?getBurnDuration@FurnaceBlockActor@@SAMAEBVItemStackBase@@M@Z
-     * @hash   4984192
+     * @hash   5814496
      */
     MCAPI static float getBurnDuration(class ItemStackBase const &, float);
     /**
      * @symbol ?getXPRewardFromSmeltingItems@FurnaceBlockActor@@SAHAEBVItemStackBase@@H@Z
-     * @hash   833655140
+     * @hash   834485444
      */
     MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);
     /**
      * @symbol ?isItemAllowedInFuelSlot@FurnaceBlockActor@@SA_NHAEBVItemStackBase@@H@Z
-     * @hash   354012745
+     * @hash   354843049
      */
     MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const &, int);
 
 //protected:
     /**
      * @symbol ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@@W4ContainerType@@HAEBVBlock@@5@Z
-     * @hash   -164752053
+     * @hash   -163921749
      */
     MCAPI FurnaceBlockActor(enum class BlockActorType, class BlockPos const &, class HashedString const &, enum class LevelSoundEvent, enum class ContainerType, int, class Block const &, class Block const &);
 
 //private:
     /**
      * @symbol ?_refreshFurnaceBlockLitState@FurnaceBlockActor@@AEAAXAEAVBlockSource@@@Z
-     * @hash   -902795203
+     * @hash   -901964899
      */
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource &);
     /**
      * @symbol ?burn@FurnaceBlockActor@@AEAAXAEBVRecipes@@@Z
-     * @hash   -369255223
+     * @hash   -368424919
      */
     MCAPI void burn(class Recipes const &);
     /**
      * @symbol ?canBurn@FurnaceBlockActor@@AEAA_NAEBVRecipes@@@Z
-     * @hash   -1513744177
+     * @hash   -1512913873
      */
     MCAPI bool canBurn(class Recipes const &);
     /**
      * @symbol ?_getXPRewardMultiplier@FurnaceBlockActor@@CAMAEBVItemStackBase@@@Z
-     * @hash   1659547632
+     * @hash   1660377936
      */
     MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
     /**
      * @symbol ?_roundXPReward@FurnaceBlockActor@@CAHM@Z
-     * @hash   188977163
+     * @hash   189807467
      */
     MCAPI static int _roundXPReward(float);
 

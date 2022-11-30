@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0GeneticsDefinition@@QEAA@XZ
-     * @hash   -660715671
+     * @hash   -660669543
      */
     MCAPI GeneticsDefinition();
     /**
      * @symbol ?addGeneDefinition@GeneticsDefinition@@QEAAXAEBUGeneDefinition@@@Z
-     * @hash   -602991874
+     * @hash   -602945746
      */
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
     /**
      * @symbol ?initialize@GeneticsDefinition@@QEAAXAEAVEntityContext@@AEAVGeneticsComponent@@@Z
-     * @hash   877233327
+     * @hash   877279455
      */
     MCAPI void initialize(class EntityContext &, class GeneticsComponent &);
     /**
      * @symbol ?buildSchema@GeneticsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGeneticsDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   441756662
+     * @hash   441802790
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>> &);
 
@@ -56,7 +56,7 @@ public:
 private:
     /**
      * @symbol ?DEFAULT_MUTATION_RATE@GeneticsDefinition@@0MB
-     * @hash   -1474955746
+     * @hash   -1474832738
      */
     MCAPI static float const DEFAULT_MUTATION_RATE;
 

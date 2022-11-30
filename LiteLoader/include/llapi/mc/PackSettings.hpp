@@ -38,14 +38,14 @@ public:
     MCAPI class Json::Value const & getAllSettings() const;
     /**
      * @symbol ?loadPackSettings@PackSettings@@QEAAXAEBUPackIdVersion@@AEBVValue@Json@@@Z
-     * @hash   -26340485
+     * @hash   -26294357
      */
     MCAPI void loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 //private:
     /**
      * @symbol ?_initPackSetting@PackSettings@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   638946748
+     * @hash   638992876
      */
     MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 

@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0LevelChunkGarbageCollector@@QEAA@AEAVDimension@@@Z
-     * @hash   -1072146944
+     * @hash   -1071316640
      */
     MCAPI LevelChunkGarbageCollector(class Dimension &);
     /**
      * @symbol ?acquireDiscardedChunk@LevelChunkGarbageCollector@@QEAAXV?$unique_ptr@VLevelChunk@@U?$default_delete@VLevelChunk@@@std@@@std@@@Z
-     * @hash   -908811052
+     * @hash   -907980748
      */
     MCAPI void acquireDiscardedChunk(std::unique_ptr<class LevelChunk>);
     /**
      * @symbol ?getPendingDeletesCount@LevelChunkGarbageCollector@@QEBA_KXZ
-     * @hash   -1076587353
+     * @hash   -1075757049
      */
     MCAPI unsigned __int64 getPendingDeletesCount() const;
     /**
      * @symbol ??1LevelChunkGarbageCollector@@QEAA@XZ
-     * @hash   -955282325
+     * @hash   -954452021
      */
     MCAPI ~LevelChunkGarbageCollector();
 
 //protected:
     /**
      * @symbol ?flush@LevelChunkGarbageCollector@@IEAAXXZ
-     * @hash   1166461142
+     * @hash   1167291446
      */
     MCAPI void flush();
 

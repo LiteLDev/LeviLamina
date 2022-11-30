@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  160
      * @symbol ?tryGetInfested@CobblestoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   -985681620
+     * @hash   -984851316
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
@@ -224,7 +224,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0CobblestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1380677020
+     * @hash   -1379846716
      */
     MCAPI CobblestoneBlock(std::string const &, int, class Material const &);
 

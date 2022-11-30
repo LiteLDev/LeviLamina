@@ -67,7 +67,7 @@ public:
     MCAPI StrongholdFeature(class VillageFeature *, unsigned int);
     /**
      * @symbol ?START_OFFSET@StrongholdFeature@@2VBlockPos@@B
-     * @hash   1350895793
+     * @hash   1351018801
      */
     MCAPI static class BlockPos const START_OFFSET;
 

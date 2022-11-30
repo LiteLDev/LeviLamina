@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  16
      * @symbol ?onLightningHit@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1318422015
+     * @hash   1319252319
      */
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  28
      * @symbol ?tryGetCopperBehavior@CutCopperSlab@@UEBAPEBVCopperBehavior@@XZ
-     * @hash   553129551
+     * @hash   553959855
      */
     virtual class CopperBehavior const * tryGetCopperBehavior() const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1672972920
+     * @hash   -1672142616
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@CutCopperSlab@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1515409830
+     * @hash   -1514579526
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -247,22 +247,22 @@ public:
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
-     * @hash   65399355
+     * @hash   66229659
      */
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   66307500
+     * @hash   67137804
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   67215645
+     * @hash   68045949
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   68139166
+     * @hash   68969470
      */
     virtual void __unk_vfn_196();
     /**
@@ -272,12 +272,12 @@ public:
     MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@2@Z
-     * @hash   -981518897
+     * @hash   -980688593
      */
     MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, enum class CopperType, class HashedString const &);
     /**
      * @symbol ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@222@Z
-     * @hash   1958049679
+     * @hash   1958879983
      */
     MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 

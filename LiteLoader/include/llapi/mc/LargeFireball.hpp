@@ -149,7 +149,7 @@ public:
     virtual void __unk_vfn_283();
     /**
      * @symbol ??0LargeFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -312935444
+     * @hash   -312889316
      */
     MCAPI LargeFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

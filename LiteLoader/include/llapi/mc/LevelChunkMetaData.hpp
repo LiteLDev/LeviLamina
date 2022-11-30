@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEBV0@@Z
-     * @hash   -768347951
+     * @hash   -767517647
      */
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEAVIDataInput@@@Z
-     * @hash   1808523101
+     * @hash   1809353405
      */
     MCAPI LevelChunkMetaData(class IDataInput &);
     /**
      * @symbol ?getCurrentHash@LevelChunkMetaData@@QEBA_KXZ
-     * @hash   1901393755
+     * @hash   1902224059
      */
     MCAPI unsigned __int64 getCurrentHash() const;
     /**
@@ -49,19 +49,19 @@ public:
     MCAPI void serialize(class IDataOutput &) const;
     /**
      * @symbol ??1LevelChunkMetaData@@QEAA@XZ
-     * @hash   1015517074
+     * @hash   1015563202
      */
     MCAPI ~LevelChunkMetaData();
     /**
      * @symbol ?INVALID_META_DATA@LevelChunkMetaData@@2_KB
-     * @hash   2144864046
+     * @hash   2144987054
      */
     MCAPI static unsigned __int64 const INVALID_META_DATA;
 
 //protected:
     /**
      * @symbol ?_recomputeHash@LevelChunkMetaData@@IEBAXXZ
-     * @hash   -1398919715
+     * @hash   -1398089411
      */
     MCAPI void _recomputeHash() const;
 

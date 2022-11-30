@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0AsyncBlockInternalGuard@@QEAA@PEAUXAsyncBlock@@@Z
-     * @hash   565178963
+     * @hash   566009267
      */
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock *);
 

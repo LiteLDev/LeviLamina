@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@GrantXPSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   774721095
+     * @hash   774767223
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@GrantXPSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   2110413538
+     * @hash   2110459666
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@GrantXPSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   1322943841
+     * @hash   1322989969
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@GrantXPSubcomponent@@UEAAPEBDXZ
-     * @hash   442573884
+     * @hash   442620012
      */
     virtual char const * getName();
     /**
      * @symbol ??0GrantXPSubcomponent@@QEAA@XZ
-     * @hash   -1764334931
+     * @hash   -1764288803
      */
     MCAPI GrantXPSubcomponent();
 

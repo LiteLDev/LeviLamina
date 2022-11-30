@@ -66,27 +66,27 @@ public:
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
     /**
      * @symbol ??0Command@@QEAA@XZ
-     * @hash   1642406119
+     * @hash   1642452247
      */
     MCAPI Command();
     /**
      * @symbol ?getCommandName@Command@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1757856824
+     * @hash   -1757810696
      */
     MCAPI std::string getCommandName() const;
     /**
      * @symbol ?getVersion@Command@@QEBAHXZ
-     * @hash   -839115750
+     * @hash   -839069622
      */
     MCAPI int getVersion() const;
     /**
      * @symbol ?hasFlag@Command@@QEBA_NUCommandFlag@@@Z
-     * @hash   542707279
+     * @hash   542753407
      */
     MCAPI bool hasFlag(struct CommandFlag) const;
     /**
      * @symbol ?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -2032147953
+     * @hash   -2032101825
      */
     MCAPI void run(class CommandOrigin const &, class CommandOutput &) const;
     /**
@@ -96,49 +96,49 @@ public:
     MCAPI static std::string const WILDCARD_TOKEN;
     /**
      * @symbol ?validRange@Command@@SA_NHHHAEAVCommandOutput@@@Z
-     * @hash   -223642638
+     * @hash   -223596510
      */
     MCAPI static bool validRange(int, int, int, class CommandOutput &);
     /**
      * @symbol ?validRange@Command@@SA_NMMMAEAVCommandOutput@@@Z
-     * @hash   -331754492
+     * @hash   -331708364
      */
     MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
 //protected:
     /**
      * @symbol ?getRegistry@Command@@IEBAAEBVCommandRegistry@@XZ
-     * @hash   -1977257087
+     * @hash   -1977210959
      */
     MCAPI class CommandRegistry const & getRegistry() const;
     /**
      * @symbol ?sendTelemetry@Command@@IEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1684348976
+     * @hash   1684395104
      */
     MCAPI void sendTelemetry(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?shouldSendTelemetry@Command@@IEBA_NAEBVCommandOrigin@@@Z
-     * @hash   -1590608537
+     * @hash   -1590562409
      */
     MCAPI bool shouldSendTelemetry(class CommandOrigin const &) const;
     /**
      * @symbol ?getPlayerFromOrigin@Command@@KAPEAVPlayer@@AEBVCommandOrigin@@@Z
-     * @hash   -90999204
+     * @hash   -90953076
      */
     MCAPI static class Player * getPlayerFromOrigin(class CommandOrigin const &);
     /**
      * @symbol ?isTemplateLockedAction@Command@@KA_NAEBVCommandOrigin@@@Z
-     * @hash   1398539634
+     * @hash   1398585762
      */
     MCAPI static bool isTemplateLockedAction(class CommandOrigin const &);
     /**
      * @symbol ?isWildcard@Command@@KA_NAEBVCommandSelectorBase@@@Z
-     * @hash   -609140056
+     * @hash   -609093928
      */
     MCAPI static bool isWildcard(class CommandSelectorBase const &);
     /**
      * @symbol ?validData@Command@@KA_NHAEAGAEAVCommandOutput@@@Z
-     * @hash   1206105348
+     * @hash   1206151476
      */
     MCAPI static bool validData(int, unsigned short &, class CommandOutput &);
 

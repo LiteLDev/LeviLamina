@@ -161,7 +161,7 @@ public:
     /**
      * @vftbl  72
      * @symbol ?transformOnFall@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
-     * @hash   -2119345859
+     * @hash   -2118515555
      */
     virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /**
@@ -177,19 +177,19 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@TurtleEggBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -1864797617
+     * @hash   -1863967313
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@TurtleEggBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1106731576
+     * @hash   1107561880
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@TurtleEggBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   2091721862
+     * @hash   2092552166
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -200,7 +200,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -333668178
+     * @hash   -332837874
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@TurtleEggBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   623553099
+     * @hash   624383403
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@TurtleEggBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1774822171
+     * @hash   1775652475
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1942730048
+     * @hash   -1941899744
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -275,7 +275,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1515042074
+     * @hash   1515872378
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -286,7 +286,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@TurtleEggBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1681552649
+     * @hash   1682382953
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -303,7 +303,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TurtleEggBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   137254818
+     * @hash   138085122
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TURTLEEGGBLOCK
@@ -315,19 +315,19 @@ public:
 #endif
     /**
      * @symbol ??0TurtleEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -739574302
+     * @hash   -738743998
      */
     MCAPI TurtleEggBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_decreaseEggs@TurtleEggBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@I_N@Z
-     * @hash   -149601105
+     * @hash   -148770801
      */
     MCAPI static void _decreaseEggs(class BlockSource &, class BlockPos const &, unsigned int, bool);
     /**
      * @symbol ?_destroyEgg@TurtleEggBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@H_N@Z
-     * @hash   -452155540
+     * @hash   -451325236
      */
     MCAPI static void _destroyEgg(class BlockSource &, class BlockPos const &, class Actor &, int, bool);
 

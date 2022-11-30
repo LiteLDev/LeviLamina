@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0PropertyBag@@QEAA@XZ
-     * @hash   1051751951
+     * @hash   1052582255
      */
     MCAPI PropertyBag();
     /**
      * @symbol ??0PropertyBag@@QEAA@AEBVValue@Json@@@Z
-     * @hash   -808370060
+     * @hash   -807539756
      */
     MCAPI PropertyBag(class Json::Value const &);
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI class Json::Value const & toJsonValue() const;
     /**
      * @symbol ?toString@PropertyBag@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -250535768
+     * @hash   -249705464
      */
     MCAPI std::string toString() const;
     /**

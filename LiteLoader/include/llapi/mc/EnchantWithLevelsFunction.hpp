@@ -34,28 +34,28 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
     /**
      * @symbol ?apply@EnchantWithLevelsFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   -1065814671
+     * @hash   -1064984367
      */
     MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantWithLevelsFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   1303668988
+     * @hash   1304499292
      */
     MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantWithLevelsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1007162190
+     * @hash   -1006331886
      */
     MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantWithLevelsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -1574793785
+     * @hash   -1573963481
      */
     MCVAPI void apply(class ItemInstance &, class Random &, class LootTableContext &);
 #endif
     /**
      * @symbol ?deserialize@EnchantWithLevelsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   823337375
+     * @hash   824167679
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 

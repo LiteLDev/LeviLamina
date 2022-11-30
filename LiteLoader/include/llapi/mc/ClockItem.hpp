@@ -94,29 +94,29 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@ClockItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   1316808232
+     * @hash   1317638536
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  120
      * @symbol ?getAnimationFrameFor@ClockItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     * @hash   -12241612
+     * @hash   -11411308
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
      * @symbol ??0ClockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1209722913
+     * @hash   -1208892609
      */
     MCAPI ClockItem(std::string const &, int);
 

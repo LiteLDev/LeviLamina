@@ -39,73 +39,73 @@ public:
     virtual ~Minecraft();
     /**
      * @vftbl  1
-     * @hash   -1657871119
+     * @hash   -1657824991
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1656947598
+     * @hash   -1656901470
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?setSimTimePause@Minecraft@@UEAAX_N@Z
-     * @hash   -852432338
+     * @hash   -852386210
      */
     virtual void setSimTimePause(bool);
     /**
      * @vftbl  4
      * @symbol ?setSimTimeScale@Minecraft@@UEAAXM@Z
-     * @hash   514048288
+     * @hash   514094416
      */
     virtual void setSimTimeScale(float);
     /**
      * @vftbl  5
      * @symbol ?getSimPaused@Minecraft@@UEBA_NXZ
-     * @hash   -124253030
+     * @hash   -124206902
      */
     virtual bool getSimPaused() const;
     /**
      * @vftbl  6
      * @symbol ?isOnlineClient@Minecraft@@UEBA_NXZ
-     * @hash   -1204210157
+     * @hash   -1204164029
      */
     virtual bool isOnlineClient() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
     /**
      * @symbol ?getEntityRegistry@Minecraft@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ
-     * @hash   -1027220398
+     * @hash   -1027174270
      */
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
     /**
      * @symbol ?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
-     * @hash   -1561019000
+     * @hash   -1560972872
      */
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
 #endif
     /**
      * @symbol ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@AEAVNetworkHandler@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z
-     * @hash   1310217159
+     * @hash   1310263287
      */
     MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing &, class NetworkHandler &, class PacketSender &, enum class SubClientId, class Timer &, class Timer &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ServerMetrics *);
     /**
      * @symbol ?activateAllowList@Minecraft@@QEAAXXZ
-     * @hash   -1979602019
+     * @hash   -1979555891
      */
     MCAPI void activateAllowList();
     /**
      * @symbol ?configureGameTest@Minecraft@@QEAAXAEAVLevel@@AEBVExperiments@@@Z
-     * @hash   1075670345
+     * @hash   1075716473
      */
     MCAPI void configureGameTest(class Level &, class Experiments const &);
     /**
      * @symbol ?disconnectClient@Minecraft@@QEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1476821021
+     * @hash   -1476774893
      */
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
     /**
      * @symbol ?getCommands@Minecraft@@QEAAAEAVMinecraftCommands@@XZ
-     * @hash   -400928086
+     * @hash   -400881958
      */
     MCAPI class MinecraftCommands & getCommands();
     /**
@@ -115,84 +115,84 @@ public:
     MCAPI class GameModuleServer & getGameModuleServer();
     /**
      * @symbol ?getGameTest@Minecraft@@QEAA?AV?$optional_ref@VMinecraftGameTest@@@@XZ
-     * @hash   1509712631
+     * @hash   1509758759
      */
     MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
     /**
      * @symbol ?getLastTimestep@Minecraft@@QEAANXZ
-     * @hash   -1241339604
+     * @hash   -1241293476
      */
     MCAPI double getLastTimestep();
     /**
      * @symbol ?getLevel@Minecraft@@QEBAPEAVLevel@@XZ
-     * @hash   27961973
+     * @hash   28008101
      */
     MCAPI class Level * getLevel() const;
     /**
      * @symbol ?getNetworkHandler@Minecraft@@QEAAAEAVNetworkHandler@@XZ
-     * @hash   1450375850
+     * @hash   1450421978
      */
     MCAPI class NetworkHandler & getNetworkHandler();
     /**
      * @symbol ?getResourceLoader@Minecraft@@QEAAAEAVResourcePackManager@@XZ
-     * @hash   162536714
+     * @hash   162582842
      */
     MCAPI class ResourcePackManager & getResourceLoader();
     /**
      * @symbol ?getServerNetworkHandler@Minecraft@@QEAA?AV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@XZ
-     * @hash   1653815853
+     * @hash   1653861981
      */
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
     /**
      * @symbol ?getStructureManager@Minecraft@@QEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
-     * @hash   -457566256
+     * @hash   -457520128
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
     /**
      * @symbol ?hostMultiplayer@Minecraft@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@3@PEAVPlayer@@AEBVUUID@mce@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@H_N5AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V23@AEBUConnectionDefinition@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@3@AEAVScheduler@@PEAVTextFilteringProcessor@@@Z
-     * @hash   1202166618
+     * @hash   1202212746
      */
     MCAPI bool hostMultiplayer(std::string const &, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player *, class mce::UUID const &, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const &, std::string, struct ConnectionDefinition const &, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const &, class Scheduler &, class TextFilteringProcessor *);
     /**
      * @symbol ?init@Minecraft@@QEAAXXZ
-     * @hash   -1924733373
+     * @hash   -1924687245
      */
     MCAPI void init();
     /**
      * @symbol ?initAsDedicatedServer@Minecraft@@QEAAXXZ
-     * @hash   1192954917
+     * @hash   1193001045
      */
     MCAPI void initAsDedicatedServer();
     /**
      * @symbol ?isLeaveGameDone@Minecraft@@QEBA_NXZ
-     * @hash   1837515476
+     * @hash   1837561604
      */
     MCAPI bool isLeaveGameDone() const;
     /**
      * @symbol ?requestResourceReload@Minecraft@@QEAAXXZ
-     * @hash   -1647894943
+     * @hash   -1647848815
      */
     MCAPI void requestResourceReload();
     /**
      * @symbol ?requestServerShutdown@Minecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1085257812
+     * @hash   -1085211684
      */
     MCAPI void requestServerShutdown(std::string const &);
     /**
      * @symbol ?startLeaveGame@Minecraft@@QEAAX_N@Z
-     * @hash   655947430
+     * @hash   655993558
      */
     MCAPI void startLeaveGame(bool);
     /**
      * @symbol ?update@Minecraft@@QEAA_NXZ
-     * @hash   -678942074
+     * @hash   -678895946
      */
     MCAPI bool update();
 
 //private:
     /**
      * @symbol ?_tryCatchupMovementTicks@Minecraft@@AEAAXXZ
-     * @hash   1207811500
+     * @hash   1207857628
      */
     MCAPI void _tryCatchupMovementTicks();
 

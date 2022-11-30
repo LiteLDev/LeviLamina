@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@MoveControlSwayDescription@@UEBAPEBDXZ
-     * @hash   -1539688336
+     * @hash   -1538858032
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@MoveControlSwayDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   892127283
+     * @hash   892957587
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@MoveControlSwayDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -418521459
+     * @hash   -417691155
      */
     virtual void serializeData(class Json::Value &) const;
 

@@ -32,22 +32,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMWINDOWS
     /**
      * @symbol ?_getCurrentStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1559039521
+     * @hash   -1558209217
      */
     MCVAPI class Core::PathBuffer<std::string> _getCurrentStoragePath() const;
     /**
      * @symbol ?_getExternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   423040383
+     * @hash   423870687
      */
     MCVAPI class Core::PathBuffer<std::string> _getExternalStoragePath() const;
     /**
      * @symbol ?_getInternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1150640579
+     * @hash   -1149810275
      */
     MCVAPI class Core::PathBuffer<std::string> _getInternalStoragePath() const;
     /**
      * @symbol ?_getUserdataPath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -1720816110
+     * @hash   -1719985806
      */
     MCVAPI class Core::PathBuffer<std::string> _getUserdataPath() const;
     /**
@@ -57,7 +57,7 @@ public:
     MCVAPI bool allowContentLogWriteToDisk();
     /**
      * @symbol ?calculateAvailableDiskFreeSpace@AppPlatformWindows@@UEAA_KAEBVPath@Core@@@Z
-     * @hash   -1086422359
+     * @hash   -1085592055
      */
     MCVAPI unsigned __int64 calculateAvailableDiskFreeSpace(class Core::Path const &);
     /**
@@ -72,22 +72,22 @@ public:
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     /**
      * @symbol ?getHighPerformanceThreadsCount@AppPlatformWindows@@UEBA_KXZ
-     * @hash   -97697281
+     * @hash   -96866977
      */
     MCVAPI unsigned __int64 getHighPerformanceThreadsCount() const;
     /**
      * @symbol ?getMainThreadQueue@AppPlatformWindows@@UEAAAEAV?$MPMCQueue@V?$function@$$A6AXXZ@std@@@@XZ
-     * @hash   470603342
+     * @hash   471433646
      */
     MCVAPI class MPMCQueue<class std::function<void (void)>> & getMainThreadQueue();
     /**
      * @symbol ?getPackagedShaderCachePath@AppPlatformWindows@@MEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   207171591
+     * @hash   208001895
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
     /**
      * @symbol ?getPlatformTTSEnabled@AppPlatformWindows@@UEBA_NXZ
-     * @hash   -1254608240
+     * @hash   -1253777936
      */
     MCVAPI bool getPlatformTTSEnabled() const;
     /**
@@ -97,33 +97,33 @@ public:
     MCVAPI bool getPlatformTTSExists() const;
     /**
      * @symbol ?getPlatformTempPath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   -995486303
+     * @hash   -994655999
      */
     MCVAPI class Core::PathBuffer<std::string> getPlatformTempPath() const;
     /**
      * @symbol ?getTotalHardwareThreadsCount@AppPlatformWindows@@UEBA_KXZ
-     * @hash   14917085
+     * @hash   15747389
      */
     MCVAPI unsigned __int64 getTotalHardwareThreadsCount() const;
     /**
      * @symbol ?queueForMainThread_DEPRECATED@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   1607613158
+     * @hash   1608443462
      */
     MCVAPI void queueForMainThread_DEPRECATED(class std::function<void (void)>);
     /**
      * @symbol ?registerExperimentsActiveCrashDump@AppPlatformWindows@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -31175572
+     * @hash   -30345268
      */
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
      * @symbol ??1AppPlatformWindows@@UEAA@XZ
-     * @hash   61494420
+     * @hash   62324724
      */
     MCVAPI ~AppPlatformWindows();
 #endif
     /**
      * @symbol ??0AppPlatformWindows@@QEAA@XZ
-     * @hash   1461486971
+     * @hash   1462317275
      */
     MCAPI AppPlatformWindows();
     /**
@@ -135,7 +135,7 @@ public:
 //protected:
     /**
      * @symbol ?_findHighPerformanceThreadsCount@AppPlatformWindows@@IEBA_KXZ
-     * @hash   -1808384287
+     * @hash   -1807553983
      */
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 

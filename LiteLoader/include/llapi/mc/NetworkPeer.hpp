@@ -91,25 +91,25 @@ public:
     /**
      * @vftbl  4
      * @symbol ?update@NetworkPeer@@UEAAXXZ
-     * @hash   1999330016
+     * @hash   1999376144
      */
     virtual void update();
     /**
      * @vftbl  5
      * @symbol ?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -215437699
+     * @hash   -215391571
      */
     virtual void flush(class std::function<void (void)> &&);
     /**
      * @vftbl  6
      * @symbol ?isLocal@NetworkPeer@@UEBA_NXZ
-     * @hash   -1596899559
+     * @hash   -1596853431
      */
     virtual bool isLocal() const;
     /**
      * @vftbl  7
      * @symbol ?isEncrypted@NetworkPeer@@UEBA_NXZ
-     * @hash   1785079026
+     * @hash   1785125154
      */
     virtual bool isEncrypted() const;
 

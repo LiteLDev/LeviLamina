@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SonicBoomGoal@@UEAA_NXZ
-     * @hash   1323215878
+     * @hash   1323262006
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SonicBoomGoal@@UEAA_NXZ
-     * @hash   -2104894620
+     * @hash   -2104848492
      */
     virtual bool canContinueToUse();
     /**
@@ -53,30 +53,30 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@SonicBoomGoal@@UEAAXXZ
-     * @hash   1354108303
+     * @hash   1354154431
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SonicBoomGoal@@UEAAXXZ
-     * @hash   959029375
+     * @hash   959075503
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SonicBoomGoal@@UEAAXXZ
-     * @hash   474799706
+     * @hash   474845834
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SonicBoomGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   907923978
+     * @hash   907970106
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SonicBoomGoal@@QEAA@AEAVMob@@@Z
-     * @hash   679387555
+     * @hash   679433683
      */
     MCAPI SonicBoomGoal(class Mob &);
 

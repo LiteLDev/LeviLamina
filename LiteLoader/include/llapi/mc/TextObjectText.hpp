@@ -39,29 +39,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1829573268
+     * @hash   1829619396
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectText@@UEBA?AVValue@Json@@XZ
-     * @hash   1509308004
+     * @hash   1509354132
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   764640299
+     * @hash   764686427
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1509764082
+     * @hash   -1509717954
      */
     MCAPI TextObjectText(std::string);
     /**
      * @symbol ?asJsonValue@TextObjectText@@SA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1311299289
+     * @hash   -1311253161
      */
     MCAPI static class Json::Value asJsonValue(std::string const &);
 

@@ -37,12 +37,12 @@ struct ItemStackNetIdVariant {
 public:
     /**
      * @symbol ??0ItemStackNetIdVariant@@QEAA@$$QEAU0@@Z
-     * @hash   -1315149461
+     * @hash   -1315103333
      */
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
     /**
      * @symbol ??0ItemStackNetIdVariant@@QEAA@AEBU0@@Z
-     * @hash   -1730134011
+     * @hash   -1730087883
      */
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
     /**
@@ -52,67 +52,67 @@ public:
     MCAPI ItemStackNetIdVariant();
     /**
      * @symbol ?deserialize@ItemStackNetIdVariant@@QEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -232188326
+     * @hash   -232142198
      */
     MCAPI void deserialize(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?hasServerNetId@ItemStackNetIdVariant@@QEBA_NXZ
-     * @hash   70191628
+     * @hash   70237756
      */
     MCAPI bool hasServerNetId() const;
     /**
      * @symbol ?isValid@ItemStackNetIdVariant@@QEBA_NXZ
-     * @hash   1638367546
+     * @hash   1638413674
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-     * @hash   -859554213
+     * @hash   -859508085
      */
     MCAPI struct ItemStackNetIdVariant & operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
     /**
      * @symbol ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-     * @hash   -1757535911
+     * @hash   -1757489783
      */
     MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     /**
      * @symbol ??4ItemStackNetIdVariant@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -140990092
+     * @hash   -140943964
      */
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant &&);
     /**
      * @symbol ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBU0@@Z
-     * @hash   2008527886
+     * @hash   2008574014
      */
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant const &);
     /**
      * @symbol ??8ItemStackNetIdVariant@@QEBA_NAEBU0@@Z
-     * @hash   -212935399
+     * @hash   -212889271
      */
     MCAPI bool operator==(struct ItemStackNetIdVariant const &) const;
     /**
      * @symbol ?serialize@ItemStackNetIdVariant@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   94886940
+     * @hash   94933068
      */
     MCAPI void serialize(class BinaryStream &) const;
     /**
      * @symbol ?toString@ItemStackNetIdVariant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1822011702
+     * @hash   -1821965574
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?tryGetLegacyRequestId@ItemStackNetIdVariant@@QEBAPEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@XZ
-     * @hash   498786654
+     * @hash   498832782
      */
     MCAPI class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const * tryGetLegacyRequestId() const;
     /**
      * @symbol ?tryGetRequestId@ItemStackNetIdVariant@@QEBAPEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-     * @hash   -556294644
+     * @hash   -556248516
      */
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const * tryGetRequestId() const;
     /**
      * @symbol ?tryGetServerNetId@ItemStackNetIdVariant@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-     * @hash   1453582880
+     * @hash   1453629008
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     /**

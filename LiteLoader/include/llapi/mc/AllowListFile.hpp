@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?getAllowList@AllowListFile@@QEBAAEAVAllowList@@XZ
-     * @hash   629930072
+     * @hash   629976200
      */
     MCAPI class AllowList & getAllowList() const;
     /**
      * @symbol ?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ
-     * @hash   227399156
+     * @hash   227445284
      */
     MCAPI enum class FileReadResult reload();
     /**
      * @symbol ?syncToDisc@AllowListFile@@QEAAXXZ
-     * @hash   -1368552919
+     * @hash   -1368506791
      */
     MCAPI void syncToDisc();
     /**
@@ -53,7 +53,7 @@ public:
     MCAPI ~AllowListFile();
     /**
      * @symbol ?loadFromDefaultLocations@AllowListFile@@SA?AV1@AEAVIFileSystem@Core@@@Z
-     * @hash   -1556942087
+     * @hash   -1556895959
      */
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
 

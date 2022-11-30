@@ -49,7 +49,7 @@ public:
     MCVAPI bool findNearestStructureFeature(enum class StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
      * @symbol ?findSpawnPosition@FlatWorldGenerator@@UEBA?AVBlockPos@@XZ
-     * @hash   524004857
+     * @hash   524835161
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
@@ -64,17 +64,17 @@ public:
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     /**
      * @symbol ?getBiomeArea@FlatWorldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-     * @hash   1010744927
+     * @hash   1011575231
      */
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
      * @symbol ?getBiomeSource@FlatWorldGenerator@@UEBAAEBVBiomeSource@@XZ
-     * @hash   2005406741
+     * @hash   2005452869
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
      * @symbol ?getBlockVolumeDimensions@FlatWorldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
-     * @hash   726355379
+     * @hash   727185683
      */
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
     /**
@@ -84,12 +84,12 @@ public:
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum class StructureFeatureType) const;
     /**
      * @symbol ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-     * @hash   1328237797
+     * @hash   1329068101
      */
     MCVAPI void loadChunk(class LevelChunk &, bool);
     /**
      * @symbol ?postProcess@FlatWorldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-     * @hash   1246216673
+     * @hash   1247046977
      */
     MCVAPI bool postProcess(class ChunkViewSource &);
     /**
@@ -105,14 +105,14 @@ public:
 #endif
     /**
      * @symbol ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
-     * @hash   2050921787
+     * @hash   2051752091
      */
     MCAPI FlatWorldGenerator(class Dimension &, unsigned int, class Json::Value const &);
 
 //private:
     /**
      * @symbol ?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z
-     * @hash   1701928544
+     * @hash   1702758848
      */
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const &, short);
 

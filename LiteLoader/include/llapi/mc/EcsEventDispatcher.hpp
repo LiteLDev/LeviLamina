@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?update@EcsEventDispatcher@@QEAAXXZ
-     * @hash   1010898661
+     * @hash   1010944789
      */
     MCAPI void update();
 

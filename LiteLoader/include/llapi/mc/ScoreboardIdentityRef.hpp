@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0ScoreboardIdentityRef@@QEAA@XZ
-     * @hash   1065833245
+     * @hash   1066663549
      */
     MCAPI ScoreboardIdentityRef();
     /**
      * @symbol ??0ScoreboardIdentityRef@@QEAA@AEBUScoreboardId@@@Z
-     * @hash   -1579568670
+     * @hash   -1578738366
      */
     MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
     /**
      * @symbol ?getEntityId@ScoreboardIdentityRef@@QEBAAEBUActorUniqueID@@XZ
-     * @hash   -347223846
+     * @hash   -346393542
      */
     MCAPI struct ActorUniqueID const & getEntityId() const;
     /**
      * @symbol ?getFakePlayerName@ScoreboardIdentityRef@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -567229204
+     * @hash   -566398900
      */
     MCAPI std::string const & getFakePlayerName() const;
     /**
      * @symbol ?getIdentityType@ScoreboardIdentityRef@@QEBA?AW4Type@IdentityDefinition@@XZ
-     * @hash   -195750986
+     * @hash   -194920682
      */
     MCAPI enum class IdentityDefinition::Type getIdentityType() const;
     /**
      * @symbol ?getName@ScoreboardIdentityRef@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@3@@Z
-     * @hash   -1233805554
+     * @hash   -1232975250
      */
     MCAPI std::string const & getName(class std::function<std::string const & (struct ActorUniqueID)> const &) const;
     /**
      * @symbol ?getPlayerId@ScoreboardIdentityRef@@QEBAAEBUPlayerScoreboardId@@XZ
-     * @hash   1469572950
+     * @hash   1470403254
      */
     MCAPI struct PlayerScoreboardId const & getPlayerId() const;
     /**
@@ -72,17 +72,17 @@ public:
     MCAPI struct ScoreboardId const & getScoreboardId() const;
     /**
      * @symbol ?isPlayerType@ScoreboardIdentityRef@@QEBA_NXZ
-     * @hash   1042635390
+     * @hash   1043465694
      */
     MCAPI bool isPlayerType() const;
     /**
      * @symbol ?modifyScoreInObjective@ScoreboardIdentityRef@@QEAA_NAEAHAEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-     * @hash   -330376705
+     * @hash   -329546401
      */
     MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum class PlayerScoreSetFunction);
     /**
      * @symbol ?removeFromObjective@ScoreboardIdentityRef@@QEAA_NAEAVScoreboard@@AEAVObjective@@@Z
-     * @hash   371698332
+     * @hash   372528636
      */
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
     /**
@@ -92,7 +92,7 @@ public:
     MCAPI static class ScoreboardIdentityRef const Undefined;
     /**
      * @symbol ?serialize@ScoreboardIdentityRef@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
-     * @hash   2040843607
+     * @hash   2041673911
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);
 

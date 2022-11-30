@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Ghast@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1801588165
+     * @hash   1801634293
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Ghast@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1478935063
+     * @hash   -1478888935
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Ghast@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1778622913
+     * @hash   -1778576785
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Ghast@@UEAAMAEBVBlockPos@@@Z
-     * @hash   -574677316
+     * @hash   -574631188
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -206,7 +206,7 @@ public:
 #endif
     /**
      * @symbol ??0Ghast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1360897213
+     * @hash   1360943341
      */
     MCAPI Ghast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

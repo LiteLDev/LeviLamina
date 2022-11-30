@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockCraftingTableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1622838476
+     * @hash   1623668780
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   782301144
+     * @hash   783131448
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
@@ -59,13 +59,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockCraftingTableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -175464554
+     * @hash   -174634250
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockCraftingTableDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1429366860
+     * @hash   1430197164
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
@@ -75,12 +75,12 @@ public:
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCraftingTableDescription@@SAXXZ
-     * @hash   -1716806977
+     * @hash   -1715976673
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockCraftingTableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1355357826
+     * @hash   1356188130
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -22,12 +22,12 @@ namespace LegacyBlockIdMappingUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?addLegacyBlockIdMapping@LegacyBlockIdMappingUtils@@YAXAEBVBlockLegacy@@_K@Z
-     * @hash   2121684607
+     * @hash   2122514911
      */
     MCAPI void addLegacyBlockIdMapping(class BlockLegacy const &, unsigned __int64);
     /**
      * @symbol ?addLegacyBlockIdMappings@LegacyBlockIdMappingUtils@@YAXXZ
-     * @hash   -1149967598
+     * @hash   -1149137294
      */
     MCAPI void addLegacyBlockIdMappings();
     /**

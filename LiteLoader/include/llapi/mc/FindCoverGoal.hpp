@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FindCoverGoal@@UEAA_NXZ
-     * @hash   411374127
+     * @hash   411420255
      */
     virtual bool canUse();
     /**
@@ -55,13 +55,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@FindCoverGoal@@UEAAXXZ
-     * @hash   -1755657432
+     * @hash   -1755611304
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FindCoverGoal@@UEAAXXZ
-     * @hash   2143539016
+     * @hash   2143585144
      */
     virtual void stop();
     /**
@@ -72,12 +72,12 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FindCoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1489601887
+     * @hash   -1489555759
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FindCoverGoal@@QEAA@AEAVMob@@MM@Z
-     * @hash   3666044
+     * @hash   3712172
      */
     MCAPI FindCoverGoal(class Mob &, float, float);
     /**
@@ -89,7 +89,7 @@ public:
 //private:
     /**
      * @symbol ?getHidePos@FindCoverGoal@@AEBA_NAEAVVec3@@@Z
-     * @hash   1692810539
+     * @hash   1692856667
      */
     MCAPI bool getHidePos(class Vec3 &) const;
 

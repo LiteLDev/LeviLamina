@@ -145,13 +145,13 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@ChemistryTableBlock@@UEBA_NH@Z
-     * @hash   250244345
+     * @hash   251074649
      */
     virtual bool isValidAuxValue(int) const;
     /**
      * @vftbl  58
      * @symbol ?onFillBlock@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   912260422
+     * @hash   913090726
      */
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  66
      * @symbol ?canBeUsedInCommands@ChemistryTableBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-     * @hash   2035851232
+     * @hash   2036681536
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ChemistryTableBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1258894345
+     * @hash   -1258064041
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@ChemistryTableBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -787817454
+     * @hash   -786987150
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@ChemistryTableBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -759319318
+     * @hash   -758489014
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -232,13 +232,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ChemistryTableBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   603350579
+     * @hash   604180883
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@ChemistryTableBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -862963797
+     * @hash   -862133493
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1113305348
+     * @hash   -1112475044
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -291,7 +291,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@ChemistryTableBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   -1514023439
+     * @hash   -1513193135
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK
@@ -308,17 +308,17 @@ public:
 #endif
     /**
      * @symbol ??0ChemistryTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1264100641
+     * @hash   1264930945
      */
     MCAPI ChemistryTableBlock(std::string const &, int);
     /**
      * @symbol ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
-     * @hash   -1239634690
+     * @hash   -1238804386
      */
     MCAPI static class ItemInstance getItemForType(enum class ChemistryTableType, int);
     /**
      * @symbol ?isUIValidForPlayer@ChemistryTableBlock@@SA_NAEBVBlockPos@@AEAVPlayer@@MW4ChemistryTableType@@@Z
-     * @hash   -851607348
+     * @hash   -850777044
      */
     MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum class ChemistryTableType);
 

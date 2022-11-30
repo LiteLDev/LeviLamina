@@ -31,99 +31,99 @@ public:
 public:
     /**
      * @symbol ??0PropertyContainer@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
-     * @hash   49143182
+     * @hash   49189310
      */
     MCAPI PropertyContainer(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
     /**
      * @symbol ?addAdditionalSaveDataToCompoundTag@PropertyContainer@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1234954014
+     * @hash   1235000142
      */
     MCAPI void addAdditionalSaveDataToCompoundTag(class CompoundTag &) const;
     /**
      * @symbol ?addEntryToSyncData@PropertyContainer@@QEBAXAEBVPropertyMetadata@@AEAUPropertySyncData@@@Z
-     * @hash   223307095
+     * @hash   223353223
      */
     MCAPI void addEntryToSyncData(class PropertyMetadata const &, struct PropertySyncData &) const;
     /**
      * @symbol ?getBoolValue@PropertyContainer@@QEBA?AV?$optional@_N@std@@_K@Z
-     * @hash   983818112
+     * @hash   983864240
      */
     MCAPI class std::optional<bool> getBoolValue(unsigned __int64) const;
     /**
      * @symbol ?getEnumIndexValue@PropertyContainer@@QEBA?AV?$optional@_K@std@@_K@Z
-     * @hash   -1270355729
+     * @hash   -1270309601
      */
     MCAPI class std::optional<unsigned __int64> getEnumIndexValue(unsigned __int64) const;
     /**
      * @symbol ?getFloatValue@PropertyContainer@@QEBA?AV?$optional@M@std@@_K@Z
-     * @hash   -1508869104
+     * @hash   -1508822976
      */
     MCAPI class std::optional<float> getFloatValue(unsigned __int64) const;
     /**
      * @symbol ?getIntValue@PropertyContainer@@QEBA?AV?$optional@H@std@@_K@Z
-     * @hash   329327810
+     * @hash   329373938
      */
     MCAPI class std::optional<int> getIntValue(unsigned __int64) const;
     /**
      * @symbol ?getMolangValue@PropertyContainer@@QEBA_N_KAEAUMolangScriptArg@@@Z
-     * @hash   1858911697
+     * @hash   1858957825
      */
     MCAPI bool getMolangValue(unsigned __int64, struct MolangScriptArg &) const;
     /**
      * @symbol ?readLoadedProperties@PropertyContainer@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -1349754392
+     * @hash   -1349708264
      */
     MCAPI void readLoadedProperties(class CompoundTag const &);
     /**
      * @symbol ?setAliasProperties@PropertyContainer@@QEAAXAEBV?$unordered_map@VHashedString@@V?$shared_ptr@VTag@@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$shared_ptr@VTag@@@std@@@std@@@3@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@1@Z
-     * @hash   1820977497
+     * @hash   1821023625
      */
     MCAPI void setAliasProperties(class std::unordered_map<class HashedString, class std::shared_ptr<class Tag>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<class Tag>>>> const &, std::string const &, std::string const &);
     /**
      * @symbol ?setBoolValue@PropertyContainer@@QEAAX_K_N@Z
-     * @hash   -1440112926
+     * @hash   -1440066798
      */
     MCAPI void setBoolValue(unsigned __int64, bool);
     /**
      * @symbol ?setEnumIndexValue@PropertyContainer@@QEAAX_K0@Z
-     * @hash   816120215
+     * @hash   816166343
      */
     MCAPI void setEnumIndexValue(unsigned __int64, unsigned __int64);
     /**
      * @symbol ?setFloatValue@PropertyContainer@@QEAAX_KM@Z
-     * @hash   1627925584
+     * @hash   1627971712
      */
     MCAPI void setFloatValue(unsigned __int64, float);
     /**
      * @symbol ?setIntValue@PropertyContainer@@QEAAX_KH@Z
-     * @hash   1632827906
+     * @hash   1632874034
      */
     MCAPI void setIntValue(unsigned __int64, int);
     /**
      * @symbol ??1PropertyContainer@@QEAA@XZ
-     * @hash   1421994472
+     * @hash   1422040600
      */
     MCAPI ~PropertyContainer();
 
 //private:
     /**
      * @symbol ?_addDataToCompoundTag@PropertyContainer@@AEBAXAEAVCompoundTag@@AEBVPropertyMetadata@@@Z
-     * @hash   1435461343
+     * @hash   1435507471
      */
     MCAPI void _addDataToCompoundTag(class CompoundTag &, class PropertyMetadata const &) const;
     /**
      * @symbol ?_getPropertyTypeArrayIndex@PropertyContainer@@AEBA?AV?$optional@_K@std@@_KW4ContainedType@PropertyMetadata@@@Z
-     * @hash   1546924633
+     * @hash   1546970761
      */
     MCAPI class std::optional<unsigned __int64> _getPropertyTypeArrayIndex(unsigned __int64, enum class PropertyMetadata::ContainedType) const;
     /**
      * @symbol ?_readValueFromTag@PropertyContainer@@AEAA_NAEBVPropertyMetadata@@AEBVTag@@@Z
-     * @hash   1672852616
+     * @hash   1672898744
      */
     MCAPI bool _readValueFromTag(class PropertyMetadata const &, class Tag const &);
     /**
      * @symbol ?_trySetEnumIndexByString@PropertyContainer@@AEAA_N_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1925620611
+     * @hash   -1925574483
      */
     MCAPI bool _trySetEnumIndexByString(unsigned __int64, std::string const &);
 

@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@WaitTicksDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-     * @hash   1952052560
+     * @hash   1952144816
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

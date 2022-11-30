@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@TradeContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -1868138026
+     * @hash   -1868091898
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@TradeContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   1344078921
+     * @hash   1344125049
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@TradeContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   -591187710
+     * @hash   -591141582
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
@@ -63,23 +63,23 @@ public:
     /**
      * @vftbl  16
      * @symbol ?isValid@TradeContainerManagerModel@@UEAA_NM@Z
-     * @hash   -200580128
+     * @hash   -200534000
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@TradeContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   1569879549
+     * @hash   1569925677
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0TradeContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-     * @hash   1301078246
+     * @hash   1301124374
      */
     MCAPI TradeContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
     /**
      * @symbol ?getEntity@TradeContainerManagerModel@@QEBAPEAVActor@@XZ
-     * @hash   -1012133609
+     * @hash   -1012087481
      */
     MCAPI class Actor * getEntity() const;
 

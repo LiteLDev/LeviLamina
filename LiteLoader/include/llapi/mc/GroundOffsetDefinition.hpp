@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@GroundOffsetDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -1870020564
+     * @hash   -1869928308
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@GroundOffsetDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UGroundOffsetDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   2062727834
+     * @hash   2062820090
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct GroundOffsetDefinition>> &);
 

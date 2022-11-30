@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?create@VRRotateControlSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   485039764
+     * @hash   485085892
      */
     MCAPI static struct TickingSystemWithInfo create();
 

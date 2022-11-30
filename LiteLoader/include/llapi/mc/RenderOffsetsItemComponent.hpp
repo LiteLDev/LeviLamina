@@ -70,23 +70,23 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   106928115
+     * @hash   107758419
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1336433469
+     * @hash   1337263773
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@RenderOffsetsItemComponent@@SAXXZ
-     * @hash   790779587
+     * @hash   791609891
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RenderOffsetsItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1583775224
+     * @hash   -1582944920
      */
     MCAPI static class HashedString const & getIdentifier();
 

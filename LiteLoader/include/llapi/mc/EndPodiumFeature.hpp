@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2076110455
+     * @hash   -2075280151
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0EndPodiumFeature@@QEAA@_N@Z
-     * @hash   -839996764
+     * @hash   -839166460
      */
     MCAPI EndPodiumFeature(bool);
     /**
      * @symbol ?CORNER_ROUNDING@EndPodiumFeature@@2MB
-     * @hash   830128635
+     * @hash   830251643
      */
     MCAPI static float const CORNER_ROUNDING;
     /**
@@ -59,22 +59,22 @@ public:
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
     /**
      * @symbol ?END_PODIUM_LOCATION@EndPodiumFeature@@2VBlockPos@@B
-     * @hash   -462491543
+     * @hash   -462368535
      */
     MCAPI static class BlockPos const END_PODIUM_LOCATION;
     /**
      * @symbol ?PODIUM_PILLAR_HEIGHT@EndPodiumFeature@@2HB
-     * @hash   1220540413
+     * @hash   1220663421
      */
     MCAPI static int const PODIUM_PILLAR_HEIGHT;
     /**
      * @symbol ?PODIUM_RADIUS@EndPodiumFeature@@2HB
-     * @hash   -941757993
+     * @hash   -941634985
      */
     MCAPI static int const PODIUM_RADIUS;
     /**
      * @symbol ?RIM_RADIUS@EndPodiumFeature@@2HB
-     * @hash   -857296639
+     * @hash   -857173631
      */
     MCAPI static int const RIM_RADIUS;
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
-     * @hash   -485628580
+     * @hash   -484798276
      */
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
     /**

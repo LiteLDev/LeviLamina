@@ -34,13 +34,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1062626614
+     * @hash   -1062580486
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -422183451
+     * @hash   -422137323
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  34
      * @symbol ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
-     * @hash   -338814063
+     * @hash   -338767935
      */
     virtual float getInterpolatedBodyYaw(float) const;
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Minecart@@UEAAXXZ
-     * @hash   -2032551144
+     * @hash   -2032505016
      */
     virtual void normalTick();
     /**
@@ -105,7 +105,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@Minecart@@UEAA_NXZ
-     * @hash   -236141013
+     * @hash   -236094885
      */
     virtual bool isPickable();
     /**
@@ -141,13 +141,13 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1419249807
+     * @hash   -1419203679
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
      * @vftbl  142
      * @symbol ?onBounceStarted@Minecart@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2042745072
+     * @hash   2042791200
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1136605868
+     * @hash   -1136559740
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
@@ -189,13 +189,13 @@ public:
     /**
      * @vftbl  249
      * @symbol ?kill@Minecart@@MEAAXXZ
-     * @hash   -1135550213
+     * @hash   -1135504085
      */
     virtual void kill();
     /**
      * @vftbl  256
      * @symbol ?interpolatorTick@Minecart@@UEAAXXZ
-     * @hash   -376229352
+     * @hash   -376183224
      */
     virtual void interpolatorTick();
     /**
@@ -206,19 +206,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1984194595
+     * @hash   -1984148467
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -2141123283
+     * @hash   -2141077155
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1024791584
+     * @hash   1024837712
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -229,7 +229,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Minecart@@EEAAXXZ
-     * @hash   -1126021006
+     * @hash   -1125974878
      */
     virtual void _onSizeUpdated();
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
-     * @hash   198353728
+     * @hash   198399856
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
@@ -263,19 +263,19 @@ public:
     /**
      * @vftbl  286
      * @symbol ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
-     * @hash   -1479506206
+     * @hash   -1479460078
      */
     virtual int getDefaultDisplayOffset() const;
     /**
      * @vftbl  287
      * @symbol ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
-     * @hash   471984057
+     * @hash   472030185
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
      * @vftbl  288
      * @symbol ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
-     * @hash   904374724
+     * @hash   904420852
      */
     virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
@@ -292,39 +292,39 @@ public:
 #endif
     /**
      * @symbol ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -774674129
+     * @hash   -774628001
      */
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?dropMinecartWithContentsAndRemove@Minecart@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@_N@Z
-     * @hash   -2100665529
+     * @hash   -2100619401
      */
     MCAPI void dropMinecartWithContentsAndRemove(class gsl::basic_string_span<char const, -1>, bool);
     /**
      * @symbol ?postNormalTick@Minecart@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1562712198
+     * @hash   -1562666070
      */
     MCAPI void postNormalTick(class BlockPos const &);
     /**
      * @symbol ?preNormalTick@Minecart@@QEAA?AVBlockPos@@XZ
-     * @hash   1077831554
+     * @hash   1077877682
      */
     MCAPI class BlockPos preNormalTick();
     /**
      * @symbol ?setCustomDisplay@Minecart@@QEAAX_N@Z
-     * @hash   274204806
+     * @hash   274250934
      */
     MCAPI void setCustomDisplay(bool);
     /**
      * @symbol ?setDisplayBlock@Minecart@@QEAAXAEBVBlock@@@Z
-     * @hash   -2600584
+     * @hash   -2554456
      */
     MCAPI void setDisplayBlock(class Block const &);
 
 //private:
     /**
      * @symbol ?_registerLoopingSounds@Minecart@@AEAAXXZ
-     * @hash   253637017
+     * @hash   253683145
      */
     MCAPI void _registerLoopingSounds();
 

@@ -62,32 +62,32 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?bindBlockLocation@ScriptModuleMinecraft@@YA?AV?$ClassBindingBuilder@VBlockPos@@@Scripting@@XZ
-     * @hash   -1665749426
+     * @hash   -1664919122
      */
     MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();
     /**
      * @symbol ?bindFacingEnumV010@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptFacing@ScriptModuleMinecraft@@W412@@Scripting@@XZ
-     * @hash   -112463686
+     * @hash   -111633382
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptFacing, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV010();
     /**
      * @symbol ?bindFacingEnumV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFacing@ScriptModuleMinecraft@@@Scripting@@XZ
-     * @hash   1813419608
+     * @hash   1814249912
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
     /**
      * @symbol ?bindMessageSourceTypeV010@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptMessageSourceType@ScriptModuleMinecraft@@W412@@Scripting@@XZ
-     * @hash   -1852265506
+     * @hash   -1851435202
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptMessageSourceType, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV010();
     /**
      * @symbol ?bindMessageSourceTypeV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptMessageSourceType@ScriptModuleMinecraft@@@Scripting@@XZ
-     * @hash   1831835592
+     * @hash   1832665896
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV1();
     /**
      * @symbol ?bindTimeOfDay@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptTimeOfDay@ScriptModuleMinecraft@@W412@@Scripting@@XZ
-     * @hash   1353962442
+     * @hash   1354792746
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptTimeOfDay, enum class ScriptModuleMinecraft::ScriptTimeOfDay> bindTimeOfDay();
 

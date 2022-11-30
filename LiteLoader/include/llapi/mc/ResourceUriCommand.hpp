@@ -39,29 +39,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ResourceUriCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -377324330
+     * @hash   -377278202
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ResourceUriCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -779229572
+     * @hash   -779183444
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_executeClear@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-     * @hash   764121786
+     * @hash   764167914
      */
     MCAPI void _executeClear(class Level &, class Player *, class CommandOutput &) const;
     /**
      * @symbol ?_executeNamed@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-     * @hash   -1168148178
+     * @hash   -1168102050
      */
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
     /**
      * @symbol ?_executeUriOnly@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-     * @hash   968336831
+     * @hash   968382959
      */
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
 

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorEnumPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   -866879427
+     * @hash   -866833299
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorEnumPropertyTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   2023917871
+     * @hash   2023963999
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
@@ -55,19 +55,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getName@ActorEnumPropertyTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   447873811
+     * @hash   447919939
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  5
      * @symbol ?_serializeDomain@ActorEnumPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -1674049497
+     * @hash   -1674003369
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorEnumPropertyTest@@MEBA?AVValue@Json@@XZ
-     * @hash   713314178
+     * @hash   713360306
      */
     virtual class Json::Value _serializeValue() const;
 

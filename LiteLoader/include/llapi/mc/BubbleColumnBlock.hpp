@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@BubbleColumnBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1935112379
+     * @hash   1935942683
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -179,7 +179,7 @@ public:
     /**
      * @vftbl  63
      * @symbol ?getRequiredMedium@BubbleColumnBlock@@UEBA?AV?$optional@VHashedString@@@std@@XZ
-     * @hash   -2141970977
+     * @hash   -2141140673
      */
     virtual class std::optional<class HashedString> getRequiredMedium() const;
     /**
@@ -201,19 +201,19 @@ public:
     /**
      * @vftbl  84
      * @symbol ?isPreservingMediumWhenPlaced@BubbleColumnBlock@@UEBA_NPEBVBlockLegacy@@@Z
-     * @hash   1083527169
+     * @hash   1084357473
      */
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /**
      * @vftbl  90
      * @symbol ?mayPick@BubbleColumnBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-     * @hash   941194908
+     * @hash   942025212
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1393641117
+     * @hash   1394471421
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1968393179
+     * @hash   -1967562875
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -250,13 +250,13 @@ public:
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@BubbleColumnBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -451828105
+     * @hash   -450997801
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
      * @vftbl  151
      * @symbol ?animateTick@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   990865408
+     * @hash   991695712
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -282,7 +282,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1050606375
+     * @hash   -1049776071
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -293,7 +293,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   2047000561
+     * @hash   2047830865
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -304,7 +304,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BubbleColumnBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2013496709
+     * @hash   2014327013
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -327,34 +327,34 @@ public:
 #endif
     /**
      * @symbol ??0BubbleColumnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1309701689
+     * @hash   1310531993
      */
     MCAPI BubbleColumnBlock(std::string const &, int);
     /**
      * @symbol ?addBubbleColumnSegment@BubbleColumnBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   350714666
+     * @hash   351544970
      */
     MCAPI static bool addBubbleColumnSegment(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?shouldDragDown@BubbleColumnBlock@@SA_NAEBVBlock@@@Z
-     * @hash   -109873637
+     * @hash   -109043333
      */
     MCAPI static bool shouldDragDown(class Block const &);
     /**
      * @symbol ?spawnBubbles@BubbleColumnBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -607182551
+     * @hash   -606352247
      */
     MCAPI static void spawnBubbles(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?createParticles@BubbleColumnBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-     * @hash   -259807921
+     * @hash   -258977617
      */
     MCAPI static void createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
     /**
      * @symbol ?getFlowDownward@BubbleColumnBlock@@CA_NAEBVBlock@@@Z
-     * @hash   -62241361
+     * @hash   -61411057
      */
     MCAPI static bool getFlowDownward(class Block const &);
 

@@ -100,7 +100,7 @@ public:
     /**
      * @vftbl  124
      * @symbol ?onFailedTame@Llama@@UEAAXXZ
-     * @hash   1602234467
+     * @hash   1602280595
      */
     virtual void onFailedTame();
     /**
@@ -111,7 +111,7 @@ public:
     /**
      * @vftbl  187
      * @symbol ?causeFallDamage@Llama@@MEAAXMMVActorDamageSource@@@Z
-     * @hash   -656818498
+     * @hash   -656772370
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
@@ -142,7 +142,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Llama@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1525687699
+     * @hash   -1525641571
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Llama@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1040737917
+     * @hash   1040784045
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -206,7 +206,7 @@ public:
 #endif
     /**
      * @symbol ??0Llama@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -560436863
+     * @hash   -560390735
      */
     MCAPI Llama(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

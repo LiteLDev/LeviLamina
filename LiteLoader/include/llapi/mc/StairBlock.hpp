@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@StairBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   617601348
+     * @hash   618431652
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@StairBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1026192359
+     * @hash   -1025362055
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  13
      * @symbol ?getOutline@StairBlock@@UEBAAEBVAABB@@AEAVBlockSource@@AEBVBlockPos@@AEAV2@@Z
-     * @hash   890605975
+     * @hash   891436279
      */
     virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl  14
      * @symbol ?getLiquidClipVolume@StairBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-     * @hash   -1032431524
+     * @hash   -1031601220
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl  17
      * @symbol ?liquidCanFlowIntoFromDirection@StairBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-     * @hash   -1056410521
+     * @hash   -1055580217
      */
     virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /**
@@ -74,13 +74,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@StairBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1193358397
+     * @hash   -1192528093
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@StairBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   -197412133
+     * @hash   -196581829
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  80
      * @symbol ?getRedstoneProperty@StairBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -945747323
+     * @hash   -944917019
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
@@ -207,37 +207,37 @@ public:
     /**
      * @vftbl  89
      * @symbol ?mayPick@StairBlock@@UEBA_NXZ
-     * @hash   1840878154
+     * @hash   1841708458
      */
     virtual bool mayPick() const;
     /**
      * @vftbl  90
      * @symbol ?mayPick@StairBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-     * @hash   2039880725
+     * @hash   2040711029
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
      * @vftbl  91
      * @symbol ?mayPlace@StairBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -558277617
+     * @hash   -557447313
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@StairBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   2101218103
+     * @hash   2102048407
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  97
      * @symbol ?destroy@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-     * @hash   -1957400391
+     * @hash   -1956570087
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@StairBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1623288154
+     * @hash   -1622457850
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -248,19 +248,19 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@StairBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   288167651
+     * @hash   288997955
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  109
      * @symbol ?attack@StairBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -350213145
+     * @hash   -349382841
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
      * @vftbl  110
      * @symbol ?handleEntityInside@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@AEAVVec3@@@Z
-     * @hash   -10869583
+     * @hash   -10039279
      */
     virtual void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1894361465
+     * @hash   1895191769
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -303,19 +303,19 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -58448405
+     * @hash   -57618101
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  164
      * @symbol ?onExploded@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   58737319
+     * @hash   59567623
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
      * @vftbl  165
      * @symbol ?onStandOn@StairBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   -1631314398
+     * @hash   -1630484094
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
@@ -336,7 +336,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -449452016
+     * @hash   -448621712
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -347,7 +347,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -329917878
+     * @hash   -329087574
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -358,13 +358,13 @@ public:
     /**
      * @vftbl  177
      * @symbol ?clip@StairBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
-     * @hash   -1446341050
+     * @hash   -1445510746
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @vftbl  178
      * @symbol ?use@StairBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1672857481
+     * @hash   1673687785
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -375,13 +375,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@StairBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1564067018
+     * @hash   1564897322
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@StairBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   901714306
+     * @hash   902544610
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
@@ -398,29 +398,29 @@ public:
 #endif
     /**
      * @symbol ??0StairBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@H@Z
-     * @hash   -934753436
+     * @hash   -933923132
      */
     MCAPI StairBlock(std::string const &, int, class BlockLegacy const &, int);
     /**
      * @symbol ?setInnerPieceShape@StairBlock@@QEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEAVAABB@@_N@Z
-     * @hash   455059521
+     * @hash   455889825
      */
     MCAPI bool setInnerPieceShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @symbol ?setStepShape@StairBlock@@QEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEAVAABB@@_N@Z
-     * @hash   -62170287
+     * @hash   -61339983
      */
     MCAPI bool setStepShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @symbol ?stairDirectionToFacing@StairBlock@@SAEH@Z
-     * @hash   1658676534
+     * @hash   1659506838
      */
     MCAPI static unsigned char stairDirectionToFacing(int);
 
 //protected:
     /**
      * @symbol ?shapeZFightShrink@StairBlock@@IEBAXAEAVAABB@@@Z
-     * @hash   -1647257700
+     * @hash   -1646427396
      */
     MCAPI void shapeZFightShrink(class AABB &) const;
 

@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z
-     * @hash   621939638
+     * @hash   621985766
      */
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ??4ConditionalBandwidthOptimization@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -987033612
+     * @hash   -986987484
      */
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization &&);
     /**
      * @symbol ??1ConditionalBandwidthOptimization@@QEAA@XZ
-     * @hash   -938362606
+     * @hash   -938316478
      */
     MCAPI ~ConditionalBandwidthOptimization();
 

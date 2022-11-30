@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?onProjectileHit@AmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   -837363141
+     * @hash   -836532837
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -55408918
+     * @hash   -54578614
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -231,7 +231,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@AmethystBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -958121730
+     * @hash   -957291426
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMETHYSTBLOCK
@@ -243,7 +243,7 @@ public:
 #endif
     /**
      * @symbol ??0AmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -155731161
+     * @hash   -154900857
      */
     MCAPI AmethystBlock(std::string const &, int, class Material const &);
 

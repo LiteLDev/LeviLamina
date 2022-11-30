@@ -20,14 +20,6 @@ namespace Social {
 
 #define AFTER_EXTRA
 // Add Member There
-class MultiplayerServiceManager {
-public:
-    MultiplayerServiceManager() = delete;
-    MultiplayerServiceManager(MultiplayerServiceManager const&) = delete;
-    MultiplayerServiceManager(MultiplayerServiceManager const&&) = delete;
-};
-
-
 namespace Events {
 class AchievementEventing {
 public:
@@ -35,7 +27,6 @@ public:
     AchievementEventing(AchievementEventing const&) = delete;
     AchievementEventing(AchievementEventing const&&) = delete;
 };
-
 class Event {
 public:
     Event() = delete;

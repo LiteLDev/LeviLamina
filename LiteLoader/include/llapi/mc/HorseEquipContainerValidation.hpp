@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   225876043
+     * @hash   226706347
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@HorseEquipContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -957725173
+     * @hash   -956894869
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
@@ -69,13 +69,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1046960818
+     * @hash   -1046130514
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   171401890
+     * @hash   172232194
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
@@ -86,12 +86,12 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@HorseEquipContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -1905452807
+     * @hash   -1904622503
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /**
      * @symbol ??0HorseEquipContainerValidation@@QEAA@AEBVContainerScreenContext@@@Z
-     * @hash   1123216772
+     * @hash   1124047076
      */
     MCAPI HorseEquipContainerValidation(class ContainerScreenContext const &);
 

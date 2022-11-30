@@ -165,19 +165,19 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -1284392449
+     * @hash   -1283562145
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -378342852
+     * @hash   -377512548
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  95
      * @symbol ?tryToTill@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
-     * @hash   -326204158
+     * @hash   -325373854
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  107
      * @symbol ?calcVariant@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
-     * @hash   -515732247
+     * @hash   -514901943
      */
     virtual int calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
     /**
@@ -214,13 +214,13 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@GrassBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   1901779929
+     * @hash   1902610233
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1891563245
+     * @hash   -1890732941
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1797868650
+     * @hash   1798698954
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,13 +262,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@GrassBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   200921852
+     * @hash   201752156
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@GrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1525898725
+     * @hash   -1525068421
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@GrassBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   255493061
+     * @hash   256323365
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
@@ -291,12 +291,12 @@ public:
 #endif
     /**
      * @symbol ??0GrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -419030539
+     * @hash   -418200235
      */
     MCAPI GrassBlock(std::string const &, int);
     /**
      * @symbol ?fertilize@GrassBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
-     * @hash   1337295507
+     * @hash   1338125811
      */
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
     /**
@@ -308,7 +308,7 @@ public:
 //private:
     /**
      * @symbol ?_canBeGrass@GrassBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1679663471
+     * @hash   -1678833167
      */
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;
 

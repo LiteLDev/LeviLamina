@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@LeashFenceKnotActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -755983948
+     * @hash   -755937820
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@LeashFenceKnotActor@@UEAAXXZ
-     * @hash   738310002
+     * @hash   738356130
      */
     virtual void remove();
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
-     * @hash   1492691926
+     * @hash   1492738054
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
@@ -150,7 +150,7 @@ public:
     /**
      * @vftbl  235
      * @symbol ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   -1235643998
+     * @hash   -1235597870
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@LeashFenceKnotActor@@EEAAXXZ
-     * @hash   1304474620
+     * @hash   1304520748
      */
     virtual void _onSizeUpdated();
     /**
@@ -205,13 +205,13 @@ public:
     /**
      * @vftbl  283
      * @symbol ?getWidth@LeashFenceKnotActor@@UEBAHXZ
-     * @hash   -1680771358
+     * @hash   -1680725230
      */
     virtual int getWidth() const;
     /**
      * @vftbl  284
      * @symbol ?getHeight@LeashFenceKnotActor@@UEBAHXZ
-     * @hash   2133927567
+     * @hash   2133973695
      */
     virtual int getHeight() const;
     /**
@@ -223,17 +223,17 @@ public:
     /**
      * @vftbl  287
      * @symbol ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
-     * @hash   -432758105
+     * @hash   -432711977
      */
     virtual bool wouldSurvive(class BlockSource &);
     /**
      * @symbol ??0LeashFenceKnotActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -249479419
+     * @hash   -249433291
      */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
-     * @hash   -540841632
+     * @hash   -540795504
      */
     MCAPI int numberofAnimalsAttached();
 

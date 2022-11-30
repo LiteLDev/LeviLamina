@@ -41,13 +41,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@SignBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1567412540
+     * @hash   1568242844
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@SignBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -477431269
+     * @hash   -476600965
      */
     virtual bool save(class CompoundTag &) const;
     /**
@@ -69,13 +69,13 @@ public:
     /**
      * @vftbl  19
      * @symbol ?getShadowRadius@SignBlockActor@@UEBAMAEAVBlockSource@@@Z
-     * @hash   -958965519
+     * @hash   -958135215
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
      * @vftbl  28
      * @symbol ?getImmersiveReaderText@SignBlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
-     * @hash   1475937977
+     * @hash   1476768281
      */
     virtual std::string getImmersiveReaderText(class BlockSource &);
     /**
@@ -117,52 +117,52 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@SignBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1386693268
+     * @hash   1387523572
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0SignBlockActor@@QEAA@AEBVBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1205877478
+     * @hash   1206707782
      */
     MCAPI SignBlockActor(class BlockPos const &, enum class BlockActorType, std::string const &);
     /**
      * @symbol ?getMessage@SignBlockActor@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -650831808
+     * @hash   -650001504
      */
     MCAPI std::string const & getMessage();
     /**
      * @symbol ?getSignTextColor@SignBlockActor@@QEBAAEBVColor@mce@@XZ
-     * @hash   -1605473620
+     * @hash   -1604643316
      */
     MCAPI class mce::Color const & getSignTextColor() const;
     /**
      * @symbol ?isBug471852Resolved@SignBlockActor@@QEBA_NXZ
-     * @hash   1458806520
+     * @hash   1459636824
      */
     MCAPI bool isBug471852Resolved() const;
     /**
      * @symbol ?resolveBug471852@SignBlockActor@@QEAAXXZ
-     * @hash   -913818571
+     * @hash   -912988267
      */
     MCAPI void resolveBug471852();
     /**
      * @symbol ?setMessage@SignBlockActor@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -1988059964
+     * @hash   -1987229660
      */
     MCAPI void setMessage(std::string, std::string);
     /**
      * @symbol ?setMessage@SignBlockActor@@QEAAXVTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1723698271
+     * @hash   1724528575
      */
     MCAPI void setMessage(class TextObjectRoot, std::string);
     /**
      * @symbol ?setSignTextColor@SignBlockActor@@QEAAXAEBVColor@mce@@@Z
-     * @hash   1886991194
+     * @hash   1887821498
      */
     MCAPI void setSignTextColor(class mce::Color const &);
     /**
      * @symbol ?setType@SignBlockActor@@QEAAXW4SignType@1@@Z
-     * @hash   2058468374
+     * @hash   2059298678
      */
     MCAPI void setType(enum class SignBlockActor::SignType);
 

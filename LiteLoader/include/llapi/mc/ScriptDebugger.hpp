@@ -34,59 +34,59 @@ public:
     /**
      * @vftbl  0
      * @symbol ?listen@ScriptDebugger@@UEAA_NG@Z
-     * @hash   -521333111
+     * @hash   -521286983
      */
     virtual bool listen(unsigned short);
     /**
      * @vftbl  1
      * @symbol ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     * @hash   -1327635336
+     * @hash   -1327589208
      */
     virtual bool connect(std::string const &, unsigned short);
     /**
      * @vftbl  2
      * @symbol ?close@ScriptDebugger@@UEAAXXZ
-     * @hash   936516227
+     * @hash   936562355
      */
     virtual void close();
     /**
      * @vftbl  3
      * @symbol ?startProfiler@ScriptDebugger@@UEAAXXZ
-     * @hash   1118995078
+     * @hash   1119041206
      */
     virtual void startProfiler();
     /**
      * @vftbl  4
      * @symbol ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   251684406
+     * @hash   251730534
      */
     virtual void stopProfiler(std::string const &);
     /**
      * @vftbl  5
      * @symbol ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
-     * @hash   215452883
+     * @hash   215499011
      */
     virtual struct ScriptResourceStats getResourceStats() const;
     /**
      * @symbol ??0ScriptDebugger@@QEAA@AEAVScriptEngine@Scripting@@AEAVScriptPluginManager@@AEAVIScriptDebuggerWatchdog@@V?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
-     * @hash   737253202
+     * @hash   737299330
      */
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class ScriptPluginManager &, class IScriptDebuggerWatchdog &, std::unique_ptr<class IScriptTelemetryLogger>);
     /**
      * @symbol ?checkConnections@ScriptDebugger@@QEAAXXZ
-     * @hash   -520732907
+     * @hash   -520686779
      */
     MCAPI void checkConnections();
 
 //private:
     /**
      * @symbol ?_createController@ScriptDebugger@@AEAAPEAVIDebuggerController@Scripting@@XZ
-     * @hash   -1451395066
+     * @hash   -1451348938
      */
     MCAPI class Scripting::IDebuggerController * _createController();
     /**
      * @symbol ?_releaseController@ScriptDebugger@@AEAAXXZ
-     * @hash   1133113236
+     * @hash   1133159364
      */
     MCAPI void _releaseController();
 

@@ -78,7 +78,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?onActorDeath@CombatRegenerationListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     * @hash   -402582995
+     * @hash   -402536867
      */
     virtual enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
 

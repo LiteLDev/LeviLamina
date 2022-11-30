@@ -41,7 +41,7 @@ public:
 public:
     /**
      * @symbol ??0StructureSettings@@QEAA@XZ
-     * @hash   -688208206
+     * @hash   -687377902
      */
     MCAPI StructureSettings();
     /**
@@ -51,22 +51,22 @@ public:
     MCAPI StructureSettings(class StructureSettings &&);
     /**
      * @symbol ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
-     * @hash   -1682398980
+     * @hash   -1681568676
      */
     MCAPI enum class AnimationMode getAnimationMode() const;
     /**
      * @symbol ?getAnimationSeconds@StructureSettings@@QEBAMXZ
-     * @hash   -1592988664
+     * @hash   -1592158360
      */
     MCAPI float getAnimationSeconds() const;
     /**
      * @symbol ?getAnimationTicks@StructureSettings@@QEBAIXZ
-     * @hash   1048653026
+     * @hash   1049483330
      */
     MCAPI unsigned int getAnimationTicks() const;
     /**
      * @symbol ?getIgnoreBlocks@StructureSettings@@QEBA_NXZ
-     * @hash   -1144534798
+     * @hash   -1143704494
      */
     MCAPI bool getIgnoreBlocks() const;
     /**
@@ -76,32 +76,32 @@ public:
     MCAPI bool getIgnoreEntities() const;
     /**
      * @symbol ?getIgnoreJigsawBlocks@StructureSettings@@QEBA_NXZ
-     * @hash   -2094839598
+     * @hash   -2094009294
      */
     MCAPI bool getIgnoreJigsawBlocks() const;
     /**
      * @symbol ?getIntegritySeed@StructureSettings@@QEBAIXZ
-     * @hash   -1509280816
+     * @hash   -1509234688
      */
     MCAPI unsigned int getIntegritySeed() const;
     /**
      * @symbol ?getIntegrityValue@StructureSettings@@QEBAMXZ
-     * @hash   -855698790
+     * @hash   -855652662
      */
     MCAPI float getIntegrityValue() const;
     /**
      * @symbol ?getIsWaterLogged@StructureSettings@@QEBA_NXZ
-     * @hash   -196040812
+     * @hash   -195210508
      */
     MCAPI bool getIsWaterLogged() const;
     /**
      * @symbol ?getLastTouchedByPlayerID@StructureSettings@@QEBA?AUActorUniqueID@@XZ
-     * @hash   1877999750
+     * @hash   1878830054
      */
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
     /**
      * @symbol ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
-     * @hash   -1266873860
+     * @hash   -1266043556
      */
     MCAPI enum class Mirror getMirror() const;
     /**
@@ -116,17 +116,17 @@ public:
     MCAPI class Vec3 const & getPivot() const;
     /**
      * @symbol ?getReloadActorEquipment@StructureSettings@@QEBA_NXZ
-     * @hash   -1403203806
+     * @hash   -1402373502
      */
     MCAPI bool getReloadActorEquipment() const;
     /**
      * @symbol ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
-     * @hash   892697870
+     * @hash   892790126
      */
     MCAPI enum class Rotation getRotation() const;
     /**
      * @symbol ?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ
-     * @hash   1659984210
+     * @hash   1660814514
      */
     MCAPI class BlockPos const & getStructureOffset() const;
     /**
@@ -136,42 +136,42 @@ public:
     MCAPI class BlockPos const & getStructureSize() const;
     /**
      * @symbol ?isAnimated@StructureSettings@@QEBA_NXZ
-     * @hash   -1885253836
+     * @hash   -1884423532
      */
     MCAPI bool isAnimated() const;
     /**
      * @symbol ??4StructureSettings@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1395511124
+     * @hash   -1394680820
      */
     MCAPI class StructureSettings & operator=(class StructureSettings const &);
     /**
      * @symbol ??4StructureSettings@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -2005530432
+     * @hash   -2005484304
      */
     MCAPI class StructureSettings & operator=(class StructureSettings &&);
     /**
      * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
-     * @hash   -68697320
+     * @hash   -67867016
      */
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     /**
      * @symbol ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
-     * @hash   75802448
+     * @hash   76632752
      */
     MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @symbol ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
-     * @hash   -1730573174
+     * @hash   -1729742870
      */
     MCAPI void setAnimationSeconds(float);
     /**
      * @symbol ?setAnimationTicks@StructureSettings@@QEAAXI@Z
-     * @hash   1754927304
+     * @hash   1755757608
      */
     MCAPI void setAnimationTicks(unsigned int);
     /**
      * @symbol ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
-     * @hash   1490139626
+     * @hash   1490969930
      */
     MCAPI void setIgnoreBlocks(bool);
     /**
@@ -181,62 +181,62 @@ public:
     MCAPI void setIgnoreEntities(bool);
     /**
      * @symbol ?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z
-     * @hash   -934645222
+     * @hash   -933814918
      */
     MCAPI void setIgnoreJigsawBlocks(bool);
     /**
      * @symbol ?setIntegritySeed@StructureSettings@@QEAAXI@Z
-     * @hash   1630262170
+     * @hash   1631092474
      */
     MCAPI void setIntegritySeed(unsigned int);
     /**
      * @symbol ?setIntegrityValue@StructureSettings@@QEAAXM@Z
-     * @hash   620133976
+     * @hash   620964280
      */
     MCAPI void setIntegrityValue(float);
     /**
      * @symbol ?setIsWaterLogged@StructureSettings@@QEAAX_N@Z
-     * @hash   1595630264
+     * @hash   1596460568
      */
     MCAPI void setIsWaterLogged(bool);
     /**
      * @symbol ?setLastTouchedByPlayerID@StructureSettings@@QEAAXUActorUniqueID@@@Z
-     * @hash   87013996
+     * @hash   87844300
      */
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     /**
      * @symbol ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
-     * @hash   1346024742
+     * @hash   1346855046
      */
     MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setPaletteName@StructureSettings@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1020893912
+     * @hash   1021724216
      */
     MCAPI void setPaletteName(std::string);
     /**
      * @symbol ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
-     * @hash   926601238
+     * @hash   927431542
      */
     MCAPI void setPivot(class Vec3 const &);
     /**
      * @symbol ?setReloadActorEquipment@StructureSettings@@QEAAX_N@Z
-     * @hash   668116842
+     * @hash   668947146
      */
     MCAPI void setReloadActorEquipment(bool);
     /**
      * @symbol ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
-     * @hash   -5005352
+     * @hash   -4175048
      */
     MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z
-     * @hash   375706022
+     * @hash   376536326
      */
     MCAPI void setStructureOffset(class BlockPos const &);
     /**
      * @symbol ?setStructureSize@StructureSettings@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -778812090
+     * @hash   -777981786
      */
     MCAPI void setStructureSize(class BlockPos const &);
     /**
@@ -251,12 +251,12 @@ public:
     MCAPI ~StructureSettings();
     /**
      * @symbol ?DEFAULT_STRUCTURE_OFFSET@StructureSettings@@2VBlockPos@@B
-     * @hash   -337731405
+     * @hash   -337608397
      */
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     /**
      * @symbol ?DEFAULT_STRUCTURE_SIZE@StructureSettings@@2VBlockPos@@B
-     * @hash   1706158527
+     * @hash   1706281535
      */
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
 

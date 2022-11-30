@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ??0BlockPosIterator@@QEAA@AEBVBlockPos@@0@Z
-     * @hash   -1311378474
+     * @hash   -1310548170
      */
     MCAPI BlockPosIterator(class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?begin@BlockPosIterator@@QEBA?AV1@XZ
-     * @hash   -531628374
+     * @hash   -530798070
      */
     MCAPI class BlockPosIterator begin() const;
     /**
      * @symbol ?end@BlockPosIterator@@QEBA?AV1@XZ
-     * @hash   -823349430
+     * @hash   -822519126
      */
     MCAPI class BlockPosIterator end() const;
     /**
      * @symbol ??9BlockPosIterator@@QEBA_NAEBV0@@Z
-     * @hash   -1357441867
+     * @hash   -1356611563
      */
     MCAPI bool operator!=(class BlockPosIterator const &) const;
     /**
      * @symbol ??DBlockPosIterator@@QEAAAEBVBlockPos@@XZ
-     * @hash   -783260014
+     * @hash   -783213886
      */
     MCAPI class BlockPos const & operator*();
     /**
      * @symbol ??EBlockPosIterator@@QEAAAEAV0@XZ
-     * @hash   -1931575926
+     * @hash   -1930745622
      */
     MCAPI class BlockPosIterator & operator++();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1LevelNotificationEvent@@QEAA@XZ
-     * @hash   -897087659
+     * @hash   -897041531
      */
     MCAPI ~LevelNotificationEvent();
 

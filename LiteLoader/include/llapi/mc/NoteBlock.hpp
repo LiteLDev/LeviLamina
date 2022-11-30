@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -809333750
+     * @hash   -808503446
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   168054317
+     * @hash   168884621
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -176,13 +176,13 @@ public:
     /**
      * @vftbl  109
      * @symbol ?attack@NoteBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1857021360
+     * @hash   -1856191056
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
      * @vftbl  116
      * @symbol ?triggerEvent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-     * @hash   1192332675
+     * @hash   1193162979
      */
     virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /**
@@ -228,7 +228,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   381446697
+     * @hash   382277001
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@NoteBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -605609936
+     * @hash   -604779632
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -261,7 +261,7 @@ public:
 #endif
     /**
      * @symbol ??0NoteBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1266226281
+     * @hash   1267056585
      */
     MCAPI NoteBlock(std::string const &, int);
 

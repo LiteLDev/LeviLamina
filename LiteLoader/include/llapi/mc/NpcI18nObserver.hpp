@@ -44,12 +44,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
     /**
      * @symbol ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
-     * @hash   653982334
+     * @hash   654028462
      */
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
     /**
      * @symbol ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
-     * @hash   1602228035
+     * @hash   1602274163
      */
     MCVAPI void onLanguagesLoaded();
 #endif
@@ -57,7 +57,7 @@ public:
 //private:
     /**
      * @symbol ?_loadNpcData@NpcI18nObserver@@AEAAXXZ
-     * @hash   166419213
+     * @hash   166465341
      */
     MCAPI void _loadNpcData();
 

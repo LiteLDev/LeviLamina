@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@PointedDripstoneBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   259092417
+     * @hash   259922721
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@PointedDripstoneBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   2123242572
+     * @hash   2124072876
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  15
      * @symbol ?onProjectileHit@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   -1292891497
+     * @hash   -1292061193
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
@@ -177,19 +177,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@PointedDripstoneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -553012108
+     * @hash   -552181804
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -16411890
+     * @hash   -15581586
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@PointedDripstoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1466942654
+     * @hash   1467772958
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -200,7 +200,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@PointedDripstoneBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1533891445
+     * @hash   -1533061141
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -226,25 +226,25 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@PointedDripstoneBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1042950346
+     * @hash   -1042120042
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@PointedDripstoneBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1623928996
+     * @hash   -1623098692
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1548187841
+     * @hash   1549018145
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  152
      * @symbol ?init@PointedDripstoneBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   812009191
+     * @hash   812839495
      */
     virtual class BlockLegacy & init();
     /**
@@ -255,7 +255,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@PointedDripstoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -844128173
+     * @hash   -843297869
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -276,7 +276,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   -1095502652
+     * @hash   -1094672348
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -287,13 +287,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1944975934
+     * @hash   -1944145630
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1587858257
+     * @hash   -1587027953
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -304,7 +304,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@PointedDripstoneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1098690532
+     * @hash   1099520836
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -315,19 +315,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PointedDripstoneBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1877602474
+     * @hash   1878432778
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getDustColor@PointedDripstoneBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   -1086417160
+     * @hash   -1085586856
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?getDustParticleName@PointedDripstoneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1688618701
+     * @hash   -1687788397
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
@@ -338,13 +338,13 @@ public:
     /**
      * @vftbl  195
      * @symbol ?onLand@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   132706650
+     * @hash   133536954
      */
     virtual void onLand(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  197
      * @symbol ?startFalling@PointedDripstoneBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
-     * @hash   1232320286
+     * @hash   1233150590
      */
     virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POINTEDDRIPSTONEBLOCK
@@ -356,139 +356,139 @@ public:
 #endif
     /**
      * @symbol ??0PointedDripstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -676544582
+     * @hash   -675714278
      */
     MCAPI PointedDripstoneBlock(std::string const &, int);
     /**
      * @symbol ?addDripParticle@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@W4ParticleType@@@Z
-     * @hash   -2014571872
+     * @hash   -2013741568
      */
     MCAPI static void addDripParticle(class BlockSource &, class BlockPos const &, enum class ParticleType);
     /**
      * @symbol ?canGrow@PointedDripstoneBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -2141745281
+     * @hash   -2140914977
      */
     MCAPI static bool canGrow(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?fillCauldron@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1511424071
+     * @hash   1512254375
      */
     MCAPI static void fillCauldron(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?findStalactiteTipAboveCauldron@PointedDripstoneBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   667170763
+     * @hash   668001067
      */
     MCAPI static class std::optional<class BlockPos> findStalactiteTipAboveCauldron(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?getCauldronFillLiquidType@PointedDripstoneBlock@@SA?AV?$optional@W4MaterialType@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2103958689
+     * @hash   -2103128385
      */
     MCAPI static class std::optional<enum class MaterialType> getCauldronFillLiquidType(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?getStalactiteTipBelowFillSource@PointedDripstoneBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1653752985
+     * @hash   1654583289
      */
     MCAPI static class std::optional<class BlockPos> getStalactiteTipBelowFillSource(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?growStalactite@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1906306807
+     * @hash   1907137111
      */
     MCAPI static void growStalactite(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?growStalagmite@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1615554777
+     * @hash   -1614724473
      */
     MCAPI static void growStalagmite(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_updateBlockThickness@PointedDripstoneBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1522787756
+     * @hash   1523618060
      */
     MCAPI void _updateBlockThickness(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_calculateDripstoneThickness@PointedDripstoneBlock@@CA?AW4DripstoneThickness@@AEAVBlockSource@@AEBVBlockPos@@E_N@Z
-     * @hash   2134032594
+     * @hash   2134862898
      */
     MCAPI static enum class DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, unsigned char, bool);
     /**
      * @symbol ?_canDrip@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -346543230
+     * @hash   -345712926
      */
     MCAPI static bool _canDrip(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_canFillCauldron@PointedDripstoneBlock@@CA_NAEBVBlock@@@Z
-     * @hash   -1163857988
+     * @hash   -1163027684
      */
     MCAPI static bool _canFillCauldron(class Block const &);
     /**
      * @symbol ?_canTipGrow@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   930103897
+     * @hash   930934201
      */
     MCAPI static bool _canTipGrow(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_createDripstone@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@EW4DripstoneThickness@@@Z
-     * @hash   238139634
+     * @hash   238969938
      */
     MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, unsigned char, enum class DripstoneThickness);
     /**
      * @symbol ?_findBlockVertically@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@EV?$function@$$A6A_NAEAVBlockSource@@AEBVBlockPos@@@Z@3@2H@Z
-     * @hash   630465327
+     * @hash   631295631
      */
     MCAPI static class std::optional<class BlockPos> _findBlockVertically(class BlockSource &, class BlockPos const &, unsigned char, class std::function<bool (class BlockSource &, class BlockPos const &)>, class std::function<bool (class BlockSource &, class BlockPos const &)>, int);
     /**
      * @symbol ?_findRootBlock@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -1841359029
+     * @hash   -1840528725
      */
     MCAPI static class std::optional<class BlockPos> _findRootBlock(class BlockSource &, class BlockPos const &, int);
     /**
      * @symbol ?_findTip@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@EH_N@Z
-     * @hash   -1074555410
+     * @hash   -1073725106
      */
     MCAPI static class std::optional<class BlockPos> _findTip(class BlockSource &, class BlockPos const &, unsigned char, int, bool);
     /**
      * @symbol ?_getBlockAboveStalactiteRoot@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   198060610
+     * @hash   198890914
      */
     MCAPI static class std::optional<class BlockPos> _getBlockAboveStalactiteRoot(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_getRandomBlockPositionOffset@PointedDripstoneBlock@@CA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   780282169
+     * @hash   781112473
      */
     MCAPI static class Vec3 _getRandomBlockPositionOffset(class BlockPos const &);
     /**
      * @symbol ?_grow@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -705754291
+     * @hash   -704923987
      */
     MCAPI static void _grow(class BlockSource &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?_growStalagmiteBelow@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2106663826
+     * @hash   2107494130
      */
     MCAPI static void _growStalagmiteBelow(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_isStalactiteBase@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -131943446
+     * @hash   -131113142
      */
     MCAPI static bool _isStalactiteBase(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_isTip@PointedDripstoneBlock@@CA_NAEBVBlock@@E_N@Z
-     * @hash   930757479
+     * @hash   931587783
      */
     MCAPI static bool _isTip(class Block const &, unsigned char, bool);
     /**
      * @symbol ?_isValidPointedDripstonePlacement@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -1953787525
+     * @hash   -1952957221
      */
     MCAPI static bool _isValidPointedDripstonePlacement(class BlockSource &, class BlockPos const &, bool);
     /**
      * @symbol ?_mayPlaceHanging@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   566276603
+     * @hash   567106907
      */
     MCAPI static bool _mayPlaceHanging(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?_mayPlaceStanding@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -307284855
+     * @hash   -306454551
      */
     MCAPI static bool _mayPlaceStanding(class BlockSource &, class BlockPos const &);
 

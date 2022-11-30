@@ -37,12 +37,12 @@ namespace BedrockBlockNames {
     MCAPI extern class HashedString const Unknown;
     /**
      * @symbol ?cleanupBedrockBlockNames@BedrockBlockNames@@YAXXZ
-     * @hash   583045030
+     * @hash   583875334
      */
     MCAPI void cleanupBedrockBlockNames();
     /**
      * @symbol ?initBedrockBlockNames@BedrockBlockNames@@YAXXZ
-     * @hash   -599664032
+     * @hash   -598833728
      */
     MCAPI void initBedrockBlockNames();
 

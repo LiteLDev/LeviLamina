@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@DeferredCommandBlockCommand@@UEAAXAEAVMinecraftCommands@@@Z
-     * @hash   -1714902475
+     * @hash   -1714856347
      */
     virtual void execute(class MinecraftCommands &);
     /**
      * @symbol ??0DeferredCommandBlockCommand@@QEAA@VBlockPos@@AEAVBlockSource@@@Z
-     * @hash   1880786996
+     * @hash   1880833124
      */
     MCAPI DeferredCommandBlockCommand(class BlockPos, class BlockSource &);
 

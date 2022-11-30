@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0ResourcePackTransmissionManager@@QEAA@AEAVScheduler@@@Z
-     * @hash   387709429
+     * @hash   387755557
      */
     MCAPI ResourcePackTransmissionManager(class Scheduler &);
     /**
      * @symbol ?cleanupResourcePackManager@ResourcePackTransmissionManager@@QEAAXAEBVNetworkIdentifier@@@Z
-     * @hash   -368868496
+     * @hash   -368822368
      */
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const &);
     /**
      * @symbol ?getResourcePackUploadManager@ResourcePackTransmissionManager@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -194846019
+     * @hash   -194799891
      */
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     /**
      * @symbol ?update@ResourcePackTransmissionManager@@QEAAXXZ
-     * @hash   1670352661
+     * @hash   1670398789
      */
     MCAPI void update();
     /**
      * @symbol ??1ResourcePackTransmissionManager@@QEAA@XZ
-     * @hash   1714972366
+     * @hash   1715018494
      */
     MCAPI ~ResourcePackTransmissionManager();
 

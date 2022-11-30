@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@AreaEffectCloud@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   501269254
+     * @hash   501315382
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@AreaEffectCloud@@UEAAXXZ
-     * @hash   -1314746764
+     * @hash   -1314700636
      */
     virtual void normalTick();
     /**
@@ -117,7 +117,7 @@ public:
     /**
      * @vftbl  121
      * @symbol ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
-     * @hash   554560972
+     * @hash   554607100
      */
     virtual void setOwner(struct ActorUniqueID);
     /**
@@ -158,13 +158,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   369512057
+     * @hash   369558185
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   1795669652
+     * @hash   1795715780
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -174,99 +174,99 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   2070467571
+     * @hash   2070513699
      */
     MCAPI AreaEffectCloud(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?addAreaEffect@AreaEffectCloud@@QEAAXVMobEffectInstance@@@Z
-     * @hash   -1343493340
+     * @hash   -1343447212
      */
     MCAPI void addAreaEffect(class MobEffectInstance);
     /**
      * @symbol ?getDuration@AreaEffectCloud@@QEBAHXZ
-     * @hash   942789756
+     * @hash   942835884
      */
     MCAPI int getDuration() const;
     /**
      * @symbol ?getEffectiveRadius@AreaEffectCloud@@QEBAMXZ
-     * @hash   1330934778
+     * @hash   1330980906
      */
     MCAPI float getEffectiveRadius() const;
     /**
      * @symbol ?getParticle@AreaEffectCloud@@QEBA?AW4ParticleType@@XZ
-     * @hash   125421352
+     * @hash   125467480
      */
     MCAPI enum class ParticleType getParticle() const;
     /**
      * @symbol ?notifyPickup@AreaEffectCloud@@QEAAXXZ
-     * @hash   1513283981
+     * @hash   1513330109
      */
     MCAPI void notifyPickup();
     /**
      * @symbol ?setAffectOwner@AreaEffectCloud@@QEAAX_N@Z
-     * @hash   355875306
+     * @hash   355921434
      */
     MCAPI void setAffectOwner(bool);
     /**
      * @symbol ?setDuration@AreaEffectCloud@@QEAAXH@Z
-     * @hash   -1051228726
+     * @hash   -1051182598
      */
     MCAPI void setDuration(int);
     /**
      * @symbol ?setInitialRadius@AreaEffectCloud@@QEAAXM@Z
-     * @hash   256311214
+     * @hash   256357342
      */
     MCAPI void setInitialRadius(float);
     /**
      * @symbol ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
-     * @hash   -1455213498
+     * @hash   -1455167370
      */
     MCAPI void setParticle(enum class ParticleType);
     /**
      * @symbol ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
-     * @hash   -1871666438
+     * @hash   -1871620310
      */
     MCAPI void setParticleColor(class mce::Color &);
     /**
      * @symbol ?setPotion@AreaEffectCloud@@QEAAXF@Z
-     * @hash   -768479151
+     * @hash   -768433023
      */
     MCAPI void setPotion(short);
     /**
      * @symbol ?setRadiusChangeOnPickup@AreaEffectCloud@@QEAAXM@Z
-     * @hash   -567845722
+     * @hash   -567799594
      */
     MCAPI void setRadiusChangeOnPickup(float);
     /**
      * @symbol ?setRadiusOnUse@AreaEffectCloud@@QEAAXM@Z
-     * @hash   -1675219826
+     * @hash   -1675173698
      */
     MCAPI void setRadiusOnUse(float);
     /**
      * @symbol ?setRadiusPerTick@AreaEffectCloud@@QEAAXM@Z
-     * @hash   467388410
+     * @hash   467434538
      */
     MCAPI void setRadiusPerTick(float);
     /**
      * @symbol ?setReapplicationDelay@AreaEffectCloud@@QEAAXH@Z
-     * @hash   -369523658
+     * @hash   -369477530
      */
     MCAPI void setReapplicationDelay(int);
 
 //private:
     /**
      * @symbol ?_getTicksAlive@AreaEffectCloud@@AEBA_JXZ
-     * @hash   -1662986103
+     * @hash   -1662939975
      */
     MCAPI __int64 _getTicksAlive() const;
     /**
      * @symbol ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
-     * @hash   1493577127
+     * @hash   1493623255
      */
     MCAPI void _setSpawnTick(__int64);
     /**
      * @symbol ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
-     * @hash   1003970587
+     * @hash   1004016715
      */
     MCAPI void _spawnParticles(class Random &, unsigned int, float);
 

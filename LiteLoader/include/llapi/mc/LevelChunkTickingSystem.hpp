@@ -41,24 +41,24 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@LevelChunkTickingSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   600925451
+     * @hash   600971579
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_determineLevelChunksToTick@LevelChunkTickingSystem@@CAXAEBVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@AEAV?$vector@V?$shared_ptr@VLevelChunk@@@std@@V?$allocator@V?$shared_ptr@VLevelChunk@@@std@@@2@@std@@3AEBUTick@@@Z
-     * @hash   758355554
+     * @hash   758401682
      */
     MCAPI static void _determineLevelChunksToTick(class Actor const &, class BlockSource &, class LoadedChunksComponent &, std::vector<class std::shared_ptr<class LevelChunk>> &, std::vector<class std::shared_ptr<class LevelChunk>> &, struct Tick const &);
     /**
      * @symbol ?_tickLevelChunksAroundActor@LevelChunkTickingSystem@@CAXAEAVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@@Z
-     * @hash   691827234
+     * @hash   691873362
      */
     MCAPI static void _tickLevelChunksAroundActor(class Actor &, class BlockSource &, class LoadedChunksComponent &);
     /**
      * @symbol ?_tickLevelChunksAroundActorView@LevelChunkTickingSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorFlag@@@@VBlockSourceComponent@@VLoadedChunksComponent@@@@@Z
-     * @hash   -1723934490
+     * @hash   -1723888362
      */
     MCAPI static void _tickLevelChunksAroundActorView(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorFlag>, class BlockSourceComponent, class LoadedChunksComponent> &);
 

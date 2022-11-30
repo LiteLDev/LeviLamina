@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0EntityStorageKeyComponent@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   108865247
+     * @hash   109695551
      */
     MCAPI EntityStorageKeyComponent(std::string const &);
     /**
      * @symbol ?addAdditionalSaveData@EntityStorageKeyComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   1327129049
+     * @hash   1327959353
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@EntityStorageKeyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1250970885
+     * @hash   -1250140581
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**

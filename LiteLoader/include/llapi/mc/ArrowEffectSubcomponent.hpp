@@ -46,13 +46,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@ArrowEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -1679290757
+     * @hash   -1679244629
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@ArrowEffectSubcomponent@@UEAAPEBDXZ
-     * @hash   1239536230
+     * @hash   1239582358
      */
     virtual char const * getName();
 

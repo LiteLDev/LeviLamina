@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@LecternUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1934870362
+     * @hash   -1934824234
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LecternUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   993702739
+     * @hash   993748867
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LecternUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   751594388
+     * @hash   751640516
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@LecternUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   624016804
+     * @hash   624062932
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LecternUpdatePacket@@QEAA@XZ
-     * @hash   -1168153484
+     * @hash   -1168107356
      */
     MCAPI LecternUpdatePacket();
 

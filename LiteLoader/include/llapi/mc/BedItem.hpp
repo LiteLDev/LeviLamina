@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@BedItem@@UEBA_NH@Z
-     * @hash   1588422810
+     * @hash   1589253114
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -100,43 +100,43 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BedItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -771329658
+     * @hash   -770499354
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -1357658197
+     * @hash   -1356827893
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  130
      * @symbol ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
-     * @hash   -873548130
+     * @hash   -872717826
      */
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BedItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -600928926
+     * @hash   -600098622
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 
 //private:
     /**
      * @symbol ?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   1620536267
+     * @hash   1621366571
      */
     MCAPI bool _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 

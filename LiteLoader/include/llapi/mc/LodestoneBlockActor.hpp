@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@LodestoneBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2112832816
+     * @hash   2113663120
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@LodestoneBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -639011953
+     * @hash   -638181649
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   54992105
+     * @hash   55822409
      */
     virtual void tick(class BlockSource &);
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  13
      * @symbol ?onRemoved@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1279572741
+     * @hash   1280403045
      */
     virtual void onRemoved(class BlockSource &);
     /**
@@ -109,27 +109,27 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@LodestoneBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1909755152
+     * @hash   -1908924848
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0LodestoneBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   1168400348
+     * @hash   1169230652
      */
     MCAPI LodestoneBlockActor(class BlockPos const &);
     /**
      * @symbol ?getTrackingHandle@LodestoneBlockActor@@QEBAAEBVPositionTrackingId@@XZ
-     * @hash   -579623550
+     * @hash   -579577422
      */
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
     /**
      * @symbol ?hasTrackingHandle@LodestoneBlockActor@@QEBA_NXZ
-     * @hash   -2129070852
+     * @hash   -2128240548
      */
     MCAPI bool hasTrackingHandle() const;
     /**
      * @symbol ?setTrackingHandle@LodestoneBlockActor@@QEAA_NAEBVPositionTrackingId@@@Z
-     * @hash   -1212519881
+     * @hash   -1211689577
      */
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
 

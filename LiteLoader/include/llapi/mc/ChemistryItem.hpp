@@ -94,23 +94,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  105
      * @symbol ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
-     * @hash   2011323834
+     * @hash   2012154138
      */
     virtual void fixupCommon(class ItemStackBase &) const;
     /**
      * @symbol ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z
-     * @hash   285130692
+     * @hash   285960996
      */
     MCAPI static void validate(class ItemStackBase &);
 

@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  30
      * @symbol ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
-     * @hash   -539172977
+     * @hash   -538342673
      */
     virtual class Item & setMaxDamage(int);
     /**
@@ -106,24 +106,24 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@ChemistryStickItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -535756913
+     * @hash   -534926609
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  86
      * @symbol ?useTimeDepleted@ChemistryStickItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   1433166159
+     * @hash   1433996463
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
@@ -141,13 +141,13 @@ public:
     /**
      * @vftbl  101
      * @symbol ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-     * @hash   -454510337
+     * @hash   -453680033
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
      * @vftbl  105
      * @symbol ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
-     * @hash   1372451506
+     * @hash   1373281810
      */
     virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
@@ -164,41 +164,41 @@ public:
 #endif
     /**
      * @symbol ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -533237043
+     * @hash   -532406739
      */
     MCAPI ChemistryStickItem(std::string const &, int);
     /**
      * @symbol ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
-     * @hash   302621701
+     * @hash   303452005
      */
     MCAPI static enum class ItemColor getColorType(int);
     /**
      * @symbol ?isActive@ChemistryStickItem@@SA_NH@Z
-     * @hash   1767956389
+     * @hash   1768786693
      */
     MCAPI static bool isActive(int);
     /**
      * @symbol ?isChemistryStick@ChemistryStickItem@@SA_NAEBVItemStackBase@@@Z
-     * @hash   15822455
+     * @hash   16652759
      */
     MCAPI static bool isChemistryStick(class ItemStackBase const &);
 
 //protected:
     /**
      * @symbol ?_getColorName@ChemistryStickItem@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   450896839
+     * @hash   451727143
      */
     MCAPI std::string _getColorName(int) const;
     /**
      * @symbol ?_tick@ChemistryStickItem@@IEBA_NAEAVItemStack@@_K@Z
-     * @hash   -793644546
+     * @hash   -792814242
      */
     MCAPI bool _tick(class ItemStack &, unsigned __int64) const;
 
 //private:
     /**
      * @symbol ?_storeActivationTimestamp@ChemistryStickItem@@AEBAXAEAVItemStack@@_KH@Z
-     * @hash   1038348974
+     * @hash   1039179278
      */
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
 
@@ -212,32 +212,32 @@ private:
     MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
     /**
      * @symbol ?ACTIVE_BIT@ChemistryStickItem@@0HB
-     * @hash   289148005
+     * @hash   289271013
      */
     MCAPI static int const ACTIVE_BIT;
     /**
      * @symbol ?COLOR_BITS@ChemistryStickItem@@0HB
-     * @hash   -295181973
+     * @hash   -295058965
      */
     MCAPI static int const COLOR_BITS;
     /**
      * @symbol ?COLOR_MASK@ChemistryStickItem@@0HB
-     * @hash   513764373
+     * @hash   513887381
      */
     MCAPI static int const COLOR_MASK;
     /**
      * @symbol ?DAMAGE_BITS@ChemistryStickItem@@0HB
-     * @hash   -2144793201
+     * @hash   -2144670193
      */
     MCAPI static int const DAMAGE_BITS;
     /**
      * @symbol ?DAMAGE_MASK@ChemistryStickItem@@0HB
-     * @hash   -1335846855
+     * @hash   -1335723847
      */
     MCAPI static int const DAMAGE_MASK;
     /**
      * @symbol ?DAMAGE_START_BIT@ChemistryStickItem@@0HB
-     * @hash   1045070165
+     * @hash   1045193173
      */
     MCAPI static int const DAMAGE_START_BIT;
 

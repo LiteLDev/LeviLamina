@@ -41,7 +41,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@AngerLevelSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1113616372
+     * @hash   -1113570244
      */
     virtual void tick(class EntityRegistry &);
 

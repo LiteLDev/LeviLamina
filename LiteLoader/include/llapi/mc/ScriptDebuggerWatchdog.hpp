@@ -38,29 +38,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ
-     * @hash   1325208754
+     * @hash   1325254882
      */
     virtual bool requireClose() const;
     /**
      * @vftbl  2
      * @symbol ?startListenTimeout@ScriptDebuggerWatchdog@@UEAAXXZ
-     * @hash   -1605453626
+     * @hash   -1605407498
      */
     virtual void startListenTimeout();
     /**
      * @vftbl  3
      * @symbol ?listenTimeoutExpired@ScriptDebuggerWatchdog@@UEBA_NXZ
-     * @hash   1313056554
+     * @hash   1313102682
      */
     virtual bool listenTimeoutExpired() const;
     /**
      * @symbol ??0ScriptDebuggerWatchdog@@QEAA@V?$duration@HU?$ratio@$0DM@$00@std@@@chrono@std@@@Z
-     * @hash   -1935956633
+     * @hash   -1935910505
      */
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     /**
      * @symbol ?startLeaveGame@ScriptDebuggerWatchdog@@QEAAXXZ
-     * @hash   90446645
+     * @hash   90492773
      */
     MCAPI void startLeaveGame();
 

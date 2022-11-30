@@ -32,34 +32,34 @@ public:
 public:
     /**
      * @symbol ?clearAllTests@GameTestRunner@@SAXAEAVBlockSource@@AEAVGameTestTicker@gametest@@AEBV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@@Z
-     * @hash   122660318
+     * @hash   122706446
      */
     MCAPI static void clearAllTests(class BlockSource &, class gametest::GameTestTicker &, std::vector<class BoundingBox> const &);
     /**
      * @symbol ?clearMarkers@GameTestRunner@@SAXAEAVLevel@@@Z
-     * @hash   702782002
+     * @hash   702828130
      */
     MCAPI static void clearMarkers(class Level &);
     /**
      * @symbol ?groupTestsIntoBatches@GameTestRunner@@SA?AV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestRegistry@gametest@@AEBV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@H@Z
-     * @hash   803468280
+     * @hash   803514408
      */
     MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int);
     /**
      * @symbol ?runTest@GameTestRunner@@SAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
-     * @hash   -1118571418
+     * @hash   -1118525290
      */
     MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
     /**
      * @symbol ?runTests@GameTestRunner@@SA?AV?$unique_ptr@VBaseGameTestBatchRunner@gametest@@U?$default_delete@VBaseGameTestBatchRunner@gametest@@@std@@@std@@AEAVDimension@@AEAVGameTestRegistry@gametest@@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@3@AEAVGameTestTicker@6@$$QEAUTestParameters@6@@Z
-     * @hash   -244041627
+     * @hash   -243995499
      */
     MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(class Dimension &, class gametest::GameTestRegistry &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker &, struct gametest::TestParameters &&);
 
 //private:
     /**
      * @symbol ?_subdivideBatch@GameTestRunner@@CA?AV?$vector@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@V?$allocator@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@@2@@std@@AEAV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@H@Z
-     * @hash   1557575908
+     * @hash   1557622036
      */
     MCAPI static std::vector<class std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>, class std::allocator<class std::shared_ptr<class gametest::BaseGameTestFunction>>>> _subdivideBatch(std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> &, int);
 

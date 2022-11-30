@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   -1529337452
+     * @hash   -1528507148
      */
     virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
@@ -57,7 +57,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   723426495
+     * @hash   724256799
      */
     virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
     /**
@@ -67,7 +67,7 @@ public:
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     /**
      * @symbol ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z
-     * @hash   877182515
+     * @hash   878012819
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 

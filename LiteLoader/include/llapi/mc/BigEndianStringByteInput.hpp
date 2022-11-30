@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  3
      * @symbol ?readFloat@BigEndianStringByteInput@@UEAAMXZ
-     * @hash   1695072815
+     * @hash   1695903119
      */
     virtual float readFloat();
     /**
      * @vftbl  4
      * @symbol ?readDouble@BigEndianStringByteInput@@UEAANXZ
-     * @hash   1470523627
+     * @hash   1471353931
      */
     virtual double readDouble();
     /**
      * @vftbl  6
      * @symbol ?readShort@BigEndianStringByteInput@@UEAAFXZ
-     * @hash   1369017919
+     * @hash   1369848223
      */
     virtual short readShort();
     /**
      * @vftbl  7
      * @symbol ?readInt@BigEndianStringByteInput@@UEAAHXZ
-     * @hash   -785783329
+     * @hash   -784953025
      */
     virtual int readInt();
     /**
      * @vftbl  8
      * @symbol ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-     * @hash   928793006
+     * @hash   929623310
      */
     virtual __int64 readLongLong();
     /**
@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
-     * @hash   555167593
+     * @hash   555997897
      */
     virtual bool readBigEndianBytes(void *, unsigned __int64);
 

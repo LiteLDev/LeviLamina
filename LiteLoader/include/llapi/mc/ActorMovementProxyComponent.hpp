@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0ActorMovementProxyComponent@@QEAA@V?$not_null@V?$shared_ptr@UIActorMovementProxy@@@std@@@gsl@@@Z
-     * @hash   -1598200524
+     * @hash   -1598154396
      */
     MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     /**
      * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEAA?AV?$shared_ptr@UIActorMovementProxy@@@std@@XZ
-     * @hash   1290631491
+     * @hash   1290677619
      */
     MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
     /**
      * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEBA?AV?$shared_ptr@$$CBUIActorMovementProxy@@@std@@XZ
-     * @hash   1325019719
+     * @hash   1325065847
      */
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
 

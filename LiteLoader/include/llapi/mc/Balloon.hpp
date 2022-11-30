@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@Balloon@@UEAAXXZ
-     * @hash   -1487203268
+     * @hash   -1487157140
      */
     virtual void remove();
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Balloon@@UEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1984602248
+     * @hash   -1984556120
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -163,12 +163,12 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0Balloon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -906149205
+     * @hash   -906103077
      */
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?remove@Balloon@@QEAAX_N@Z
-     * @hash   -1773081286
+     * @hash   -1773035158
      */
     MCAPI void remove(bool);
 

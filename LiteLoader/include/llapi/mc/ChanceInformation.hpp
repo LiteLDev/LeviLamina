@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?isValid@ChanceInformation@@QEBA_NXZ
-     * @hash   1562723838
+     * @hash   1562769966
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?roll@ChanceInformation@@QEBA_NAEAVRandom@@@Z
-     * @hash   -1186233597
+     * @hash   -1186187469
      */
     MCAPI bool roll(class Random &) const;
     /**
      * @symbol ?set@ChanceInformation@@QEAAXII@Z
-     * @hash   -1444929487
+     * @hash   -1444883359
      */
     MCAPI void set(unsigned int, unsigned int);
     /**
      * @symbol ?set@ChanceInformation@@QEAAXM@Z
-     * @hash   1353134464
+     * @hash   1353180592
      */
     MCAPI void set(float);
 

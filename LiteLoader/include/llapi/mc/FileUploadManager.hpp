@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getUploadProgress@FileUploadManager@@UEBAMXZ
-     * @hash   459456642
+     * @hash   459502770
      */
     virtual float getUploadProgress() const;
     /**
@@ -51,59 +51,59 @@ public:
     virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &) = 0;
     /**
      * @symbol ??0FileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
-     * @hash   1568552157
+     * @hash   1568598285
      */
     MCAPI FileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     /**
      * @symbol ?addCallbackQueue@FileUploadManager@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     * @hash   92769670
+     * @hash   92815798
      */
     MCAPI void addCallbackQueue(class std::function<void (void)>);
     /**
      * @symbol ?setFailed@FileUploadManager@@QEAAXW4UploadError@@@Z
-     * @hash   -1161874486
+     * @hash   -1161828358
      */
     MCAPI void setFailed(enum class UploadError);
     /**
      * @symbol ?setUseStream@FileUploadManager@@QEAAX_N@Z
-     * @hash   -2009217108
+     * @hash   -2009170980
      */
     MCAPI void setUseStream(bool);
     /**
      * @symbol ?update@FileUploadManager@@QEAAXXZ
-     * @hash   143602261
+     * @hash   143648389
      */
     MCAPI void update();
     /**
      * @symbol ?uploadChunk@FileUploadManager@@QEAAXH@Z
-     * @hash   401610830
+     * @hash   401656958
      */
     MCAPI void uploadChunk(int);
     /**
      * @symbol ?uploadFile@FileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@_NAEBVValue@Json@@@Z
-     * @hash   846435145
+     * @hash   846481273
      */
     MCAPI void uploadFile(std::string const &, class Core::Path const &, bool, class Json::Value const &);
 
 //protected:
     /**
      * @symbol ?_generateMultiPartHelper@FileUploadManager@@IEAAXXZ
-     * @hash   -429624183
+     * @hash   -429578055
      */
     MCAPI void _generateMultiPartHelper();
     /**
      * @symbol ?_resumeUpload@FileUploadManager@@IEAAXXZ
-     * @hash   351159264
+     * @hash   351205392
      */
     MCAPI void _resumeUpload();
     /**
      * @symbol ?_uploadChunk@FileUploadManager@@IEAAXAEBUFileChunkInfo@@@Z
-     * @hash   -1917690531
+     * @hash   -1917644403
      */
     MCAPI void _uploadChunk(struct FileChunkInfo const &);
     /**
      * @symbol ?_uploadStream@FileUploadManager@@IEAAXXZ
-     * @hash   -222341917
+     * @hash   -222295789
      */
     MCAPI void _uploadStream();
 
@@ -112,7 +112,7 @@ public:
 protected:
     /**
      * @symbol ?CHUNK_UPLOAD_SIZE@FileUploadManager@@1HB
-     * @hash   47964675
+     * @hash   48087683
      */
     MCAPI static int const CHUNK_UPLOAD_SIZE;
 

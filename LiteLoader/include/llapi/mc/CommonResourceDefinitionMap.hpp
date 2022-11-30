@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0CommonResourceDefinitionMap@@QEAA@XZ
-     * @hash   -1790423892
+     * @hash   -1790377764
      */
     MCAPI CommonResourceDefinitionMap();
     /**
      * @symbol ?getAnimateScriptArray@CommonResourceDefinitionMap@@QEBAAEBV?$vector@UNamedMolangScript@@V?$allocator@UNamedMolangScript@@@std@@@std@@XZ
-     * @hash   -2031348278
+     * @hash   -2031302150
      */
     MCAPI std::vector<struct NamedMolangScript> const & getAnimateScriptArray() const;
     /**
@@ -51,34 +51,34 @@ public:
     MCAPI class std::unordered_map<class HashedString, class ActorSkeletalAnimationPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorSkeletalAnimationPtr>>> const & getAnimations() const;
     /**
      * @symbol ?getVariableSettings@CommonResourceDefinitionMap@@QEBAAEBV?$vector@UMolangVariableSettings@@V?$allocator@UMolangVariableSettings@@@std@@@std@@XZ
-     * @hash   -1143937746
+     * @hash   -1143891618
      */
     MCAPI std::vector<struct MolangVariableSettings> const & getVariableSettings() const;
     /**
      * @symbol ?isCommonResourceDefinitionMapEmpty@CommonResourceDefinitionMap@@QEBA_NXZ
-     * @hash   -1248030064
+     * @hash   -1247983936
      */
     MCAPI bool isCommonResourceDefinitionMapEmpty() const;
     /**
      * @symbol ?mergeActorAnimateScriptArray@CommonResourceDefinitionMap@@QEAAXAEBV?$vector@UNamedMolangScript@@V?$allocator@UNamedMolangScript@@@std@@@std@@@Z
-     * @hash   -1784491112
+     * @hash   -1784444984
      */
     MCAPI void mergeActorAnimateScriptArray(std::vector<struct NamedMolangScript> const &);
     /**
      * @symbol ?mergeAnimation@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorSkeletalAnimationPtr@@@Z
-     * @hash   416034331
+     * @hash   416080459
      */
     MCAPI void mergeAnimation(class HashedString const &, class ActorSkeletalAnimationPtr);
     /**
      * @symbol ?mergeAnimationController@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorAnimationControllerPtr@@@Z
-     * @hash   -640808163
+     * @hash   -640762035
      */
     MCAPI void mergeAnimationController(class HashedString const &, class ActorAnimationControllerPtr);
 
 //private:
     /**
      * @symbol ?_getAnimationResourceDefinitionLock@CommonResourceDefinitionMap@@CAAEAVrecursive_mutex@std@@XZ
-     * @hash   -2024975444
+     * @hash   -2024929316
      */
     MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
 

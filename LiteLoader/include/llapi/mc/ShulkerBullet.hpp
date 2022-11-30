@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ShulkerBullet@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   2050649759
+     * @hash   2050695887
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@ShulkerBullet@@UEAAXXZ
-     * @hash   -715252611
+     * @hash   -715206483
      */
     virtual void normalTick();
     /**
@@ -124,7 +124,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@ShulkerBullet@@UEBA?AUActorUniqueID@@XZ
-     * @hash   779556088
+     * @hash   779602216
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0ShulkerBullet@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1924695894
+     * @hash   -1924649766
      */
     MCAPI ShulkerBullet(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

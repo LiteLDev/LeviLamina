@@ -32,24 +32,24 @@ public:
 public:
     /**
      * @symbol ?getCooldownCounter@InteractComponent@@QEBAFXZ
-     * @hash   1224048705
+     * @hash   1224094833
      */
     MCAPI short getCooldownCounter() const;
     /**
      * @symbol ?getInteraction@InteractComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   625726337
+     * @hash   625772465
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?setCooldownCounter@InteractComponent@@QEAAXF@Z
-     * @hash   100150911
+     * @hash   100197039
      */
     MCAPI void setCooldownCounter(short);
 
 //private:
     /**
      * @symbol ?_runInteraction@InteractComponent@@AEAA_NAEAVActor@@AEBUInteraction@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -1138154372
+     * @hash   -1138108244
      */
     MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
 

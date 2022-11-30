@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getDescription@PendingArea@@QEBA?AUTickingAreaDescription@@XZ
-     * @hash   1129098612
+     * @hash   1129928916
      */
     MCAPI struct TickingAreaDescription getDescription() const;
     /**
      * @symbol ?isEntityOwned@PendingArea@@QEBA_NXZ
-     * @hash   -2008688122
+     * @hash   -2007857818
      */
     MCAPI bool isEntityOwned() const;
     /**
      * @symbol ??4PendingArea@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1342684664
+     * @hash   1343514968
      */
     MCAPI struct PendingArea & operator=(struct PendingArea &&);
     /**
      * @symbol ?serialize@PendingArea@@QEBA?AVCompoundTag@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -154415241
+     * @hash   -153584937
      */
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     /**
@@ -57,22 +57,22 @@ public:
     MCAPI ~PendingArea();
     /**
      * @symbol ?createEntityTickingArea@PendingArea@@SA?AU1@VUUID@mce@@UActorUniqueID@@AEBUBounds@@_NM@Z
-     * @hash   -2013539242
+     * @hash   -2012708938
      */
     MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const &, bool, float);
     /**
      * @symbol ?createTickingArea@PendingArea@@SA?AU1@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
-     * @hash   147855472
+     * @hash   148685776
      */
     MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
      * @symbol ?load@PendingArea@@SA?AU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
-     * @hash   -944543847
+     * @hash   -943713543
      */
     MCAPI static struct PendingArea load(std::string const &, class CompoundTag const &);
     /**
      * @symbol ?validTag@PendingArea@@SA_NAEBVCompoundTag@@@Z
-     * @hash   -2098777943
+     * @hash   -2097947639
      */
     MCAPI static bool validTag(class CompoundTag const &);
 

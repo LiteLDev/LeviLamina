@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@SculkShriekerBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -906952151
+     * @hash   -906121847
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -197823010
+     * @hash   -196992706
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SculkShriekerBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   417901248
+     * @hash   418731552
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -202,13 +202,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@SculkShriekerBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   1980530890
+     * @hash   1981361194
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  152
      * @symbol ?init@SculkShriekerBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   -1571221943
+     * @hash   -1570391639
      */
     virtual class BlockLegacy & init();
     /**
@@ -219,19 +219,19 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@SculkShriekerBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -761273199
+     * @hash   -760442895
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -283374699
+     * @hash   -282544395
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  165
      * @symbol ?onStandOn@SculkShriekerBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   -1962241956
+     * @hash   -1961411652
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1228104262
+     * @hash   -1227273958
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -482681504
+     * @hash   -481851200
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -285,7 +285,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SculkShriekerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1063960680
+     * @hash   -1063130376
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERBLOCK
@@ -297,7 +297,7 @@ public:
 #endif
     /**
      * @symbol ??0SculkShriekerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -512384927
+     * @hash   -511554623
      */
     MCAPI SculkShriekerBlock(std::string const &, int, class Material const &);
 

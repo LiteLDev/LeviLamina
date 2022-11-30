@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@AnvilBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1633229057
+     * @hash   1634059361
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@AnvilBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1273182198
+     * @hash   -1272351894
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -483703079
+     * @hash   -482872775
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@AnvilBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   2091787024
+     * @hash   2092617328
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -897555384
+     * @hash   -896725080
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@AnvilBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   781694097
+     * @hash   782524401
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@AnvilBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -333229000
+     * @hash   -332398696
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -291,13 +291,13 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@AnvilBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   648975183
+     * @hash   649805487
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   -691711059
+     * @hash   -690880755
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
@@ -314,7 +314,7 @@ public:
     /**
      * @vftbl  195
      * @symbol ?onLand@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1285522085
+     * @hash   1286352389
      */
     virtual void onLand(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILBLOCK
@@ -341,7 +341,7 @@ public:
 #endif
     /**
      * @symbol ??0AnvilBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1582632431
+     * @hash   1583462735
      */
     MCAPI AnvilBlock(std::string const &, int);
 

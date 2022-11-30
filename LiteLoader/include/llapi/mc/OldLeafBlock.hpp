@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@OldLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -2032177022
+     * @hash   -2031346718
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@OldLeafBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1914042719
+     * @hash   1914873023
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -202,13 +202,13 @@ public:
     /**
      * @vftbl  136
      * @symbol ?getColor@OldLeafBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1566122308
+     * @hash   1566952612
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@OldLeafBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -64197400
+     * @hash   -63367096
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@OldLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   131632911
+     * @hash   132463215
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -250,13 +250,13 @@ public:
     /**
      * @vftbl  181
      * @symbol ?getRenderLayer@OldLeafBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -100829951
+     * @hash   -99999647
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@OldLeafBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -213390020
+     * @hash   -212559716
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -267,18 +267,18 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@OldLeafBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   699425885
+     * @hash   700256189
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?getExtraResourceItem@OldLeafBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -996915993
+     * @hash   -996085689
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
      * @symbol ??0OldLeafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   1470298590
+     * @hash   1471128894
      */
     MCAPI OldLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 

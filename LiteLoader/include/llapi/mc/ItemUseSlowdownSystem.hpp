@@ -30,34 +30,34 @@ public:
 public:
     /**
      * @symbol ?createItemUseSlowdownRequestSystem@ItemUseSlowdownSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1237030046
+     * @hash   -1236983918
      */
     MCAPI static struct TickingSystemWithInfo createItemUseSlowdownRequestSystem();
     /**
      * @symbol ?createItemUseSlowdownSystem@ItemUseSlowdownSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   307134000
+     * @hash   307180128
      */
     MCAPI static struct TickingSystemWithInfo createItemUseSlowdownSystem();
     /**
      * @symbol ?createResetSprintTriggerTimeSystem@ItemUseSlowdownSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   465991042
+     * @hash   466037170
      */
     MCAPI static struct TickingSystemWithInfo createResetSprintTriggerTimeSystem();
 
 //private:
     /**
      * @symbol ?doItemUseSlowdownRequestSystem@ItemUseSlowdownSystem@@CAXAEBVStrictEntityContext@@AEBUSlowdownByItemInUseRequestComponent@@AEAUMoveInputComponent@@@Z
-     * @hash   1349303834
+     * @hash   1349349962
      */
     MCAPI static void doItemUseSlowdownRequestSystem(class StrictEntityContext const &, struct SlowdownByItemInUseRequestComponent const &, struct MoveInputComponent &);
     /**
      * @symbol ?doItemUseSlowdownSystem@ItemUseSlowdownSystem@@CAXAEBVStrictEntityContext@@V?$Optional@$$CBUItemInUseComponent@@@@AEAUMoveInputComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USlowdownByItemInUseRequestComponent@@@@@Z
-     * @hash   779692220
+     * @hash   779738348
      */
     MCAPI static void doItemUseSlowdownSystem(class StrictEntityContext const &, class Optional<struct ItemInUseComponent const>, struct MoveInputComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SlowdownByItemInUseRequestComponent>);
     /**
      * @symbol ?doResetSprintTriggerTimeSystem@ItemUseSlowdownSystem@@CAXAEBVStrictEntityContext@@AEAUVanillaClientGameplayComponent@@@Z
-     * @hash   -1558649262
+     * @hash   -1558603134
      */
     MCAPI static void doResetSprintTriggerTimeSystem(class StrictEntityContext const &, struct VanillaClientGameplayComponent &);
 

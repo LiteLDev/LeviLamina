@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  21
      * @symbol ?supports3DExport@AppConfigs@@UEBA_NXZ
-     * @hash   1663752161
+     * @hash   1663798289
      */
     virtual bool supports3DExport() const;
     /**
@@ -150,7 +150,7 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ
-     * @hash   -769209198
+     * @hash   -769163070
      */
     virtual struct ConnectionDefinition getConnectionDefinition() const;
     /**
@@ -196,25 +196,25 @@ public:
     /**
      * @vftbl  32
      * @symbol ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
-     * @hash   -126055045
+     * @hash   -126008917
      */
     virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
     /**
      * @vftbl  33
      * @symbol ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   2057219465
+     * @hash   2057265593
      */
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const &) const;
     /**
      * @vftbl  34
      * @symbol ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
-     * @hash   -1709886048
+     * @hash   -1709839920
      */
     virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /**
      * @vftbl  35
      * @symbol ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1361532626
+     * @hash   -1361486498
      */
     virtual std::string getFeedbackURL() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGS
@@ -366,7 +366,7 @@ public:
 #endif
     /**
      * @symbol ??0AppConfigs@@QEAA@XZ
-     * @hash   1967656556
+     * @hash   1967702684
      */
     MCAPI AppConfigs();
 

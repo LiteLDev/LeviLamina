@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0DimensionConversionData@@QEAA@AEBVVec3@@H@Z
-     * @hash   1826111866
+     * @hash   1826942170
      */
     MCAPI DimensionConversionData(class Vec3 const &, int);
     /**

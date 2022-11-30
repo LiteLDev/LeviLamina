@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0PortalRecord@@QEAA@AEBVBlockPos@@HHH@Z
-     * @hash   1516825347
+     * @hash   1517655651
      */
     MCAPI PortalRecord(class BlockPos const &, int, int, int);
     /**
      * @symbol ??0PortalRecord@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1348915728
+     * @hash   -1348085424
      */
     MCAPI PortalRecord(class BlockPos const &);
     /**
      * @symbol ?closestBlockPosTo@PortalRecord@@QEBA?AVBlockPos@@AEBVActor@@@Z
-     * @hash   1484555769
+     * @hash   1485386073
      */
     MCAPI class BlockPos closestBlockPosTo(class Actor const &) const;
     /**
      * @symbol ?hashCode@PortalRecord@@QEBA_KXZ
-     * @hash   -1893264907
+     * @hash   -1892434603
      */
     MCAPI unsigned __int64 hashCode() const;
     /**

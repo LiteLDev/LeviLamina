@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BedrockBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1297220515
+     * @hash   1298050819
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BedrockBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1765040498
+     * @hash   -1764210194
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -236,7 +236,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0BedrockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   2372517
+     * @hash   3202821
      */
     MCAPI BedrockBlock(std::string const &, int);
 

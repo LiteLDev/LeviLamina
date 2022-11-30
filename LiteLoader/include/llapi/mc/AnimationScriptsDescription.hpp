@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@AnimationScriptsDescription@@UEBAPEBDXZ
-     * @hash   1716750812
+     * @hash   1716796940
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@AnimationScriptsDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   1509899335
+     * @hash   1509945463
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@AnimationScriptsDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   923779201
+     * @hash   923825329
      */
     virtual void serializeData(class Json::Value &) const;
 

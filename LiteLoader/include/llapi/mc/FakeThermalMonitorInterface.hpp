@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getThermalValueCelsius@FakeThermalMonitorInterface@@UEBAMXZ
-     * @hash   -844438805
+     * @hash   -844392677
      */
     virtual float getThermalValueCelsius() const;
     /**
@@ -54,7 +54,7 @@ public:
     virtual bool isLowBatteryModeEnabled() const;
     /**
      * @symbol ??0FakeThermalMonitorInterface@@QEAA@XZ
-     * @hash   -185700451
+     * @hash   -185654323
      */
     MCAPI FakeThermalMonitorInterface();
 

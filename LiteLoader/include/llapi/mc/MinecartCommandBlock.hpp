@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@MinecartCommandBlock@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   751706331
+     * @hash   751752459
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -147,13 +147,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@MinecartCommandBlock@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1937251442
+     * @hash   1937297570
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@MinecartCommandBlock@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   740053467
+     * @hash   740099595
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -169,13 +169,13 @@ public:
     /**
      * @vftbl  283
      * @symbol ?getType@MinecartCommandBlock@@UEAA?AW4MinecartType@@XZ
-     * @hash   877520767
+     * @hash   877566895
      */
     virtual enum class MinecartType getType();
     /**
      * @vftbl  284
      * @symbol ?getDefaultDisplayBlock@MinecartCommandBlock@@UEBAPEBVBlock@@XZ
-     * @hash   -1492298683
+     * @hash   -1492252555
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
@@ -186,18 +186,18 @@ public:
     /**
      * @vftbl  287
      * @symbol ?applyNaturalSlowdown@MinecartCommandBlock@@MEAAXAEAVBlockSource@@@Z
-     * @hash   1892376667
+     * @hash   1892422795
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
      * @vftbl  288
      * @symbol ?_lazyInitDisplayBlock@MinecartCommandBlock@@EEAAXXZ
-     * @hash   519359410
+     * @hash   519405538
      */
     virtual void _lazyInitDisplayBlock();
     /**
      * @symbol ??0MinecartCommandBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1333913137
+     * @hash   1333959265
      */
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

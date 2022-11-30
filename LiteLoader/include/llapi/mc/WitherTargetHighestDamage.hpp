@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@WitherTargetHighestDamage@@UEAA_NXZ
-     * @hash   -247983055
+     * @hash   -247936927
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@WitherTargetHighestDamage@@UEAA_NXZ
-     * @hash   240161743
+     * @hash   240207871
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  4
      * @symbol ?start@WitherTargetHighestDamage@@UEAAXXZ
-     * @hash   -819146630
+     * @hash   -819100502
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@WitherTargetHighestDamage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -118686689
+     * @hash   -118640561
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
@@ -73,19 +73,19 @@ public:
     /**
      * @vftbl  10
      * @symbol ?_canAttack@WitherTargetHighestDamage@@EEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
-     * @hash   -1325467855
+     * @hash   -1325421727
      */
     virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
     /**
      * @symbol ??0WitherTargetHighestDamage@@QEAA@AEAVWitherBoss@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
-     * @hash   -906859073
+     * @hash   -906812945
      */
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
 //private:
     /**
      * @symbol ?getHighestDamageTarget@WitherTargetHighestDamage@@AEAAPEAVPlayer@@XZ
-     * @hash   -1156909624
+     * @hash   -1156863496
      */
     MCAPI class Player * getHighestDamageTarget();
 

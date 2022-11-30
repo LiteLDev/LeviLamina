@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@MovingBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1505610419
+     * @hash   -1504780115
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@MovingBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -508799396
+     * @hash   -507969092
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@MovingBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   722385942
+     * @hash   723216246
      */
     virtual void tick(class BlockSource &);
     /**
@@ -62,13 +62,13 @@ public:
     /**
      * @vftbl  14
      * @symbol ?isPreserved@MovingBlockActor@@UEBA_NAEAVBlockSource@@@Z
-     * @hash   347264882
+     * @hash   348095186
      */
     virtual bool isPreserved(class BlockSource &) const;
     /**
      * @vftbl  15
      * @symbol ?shouldPreserve@MovingBlockActor@@UEAA_NAEAVBlockSource@@@Z
-     * @hash   2133428978
+     * @hash   2134259282
      */
     virtual bool shouldPreserve(class BlockSource &);
     /**
@@ -79,13 +79,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?getCollisionShape@MovingBlockActor@@UEBA?AVAABB@@AEBVIConstBlockSource@@@Z
-     * @hash   -1878134933
+     * @hash   -1877304629
      */
     virtual class AABB getCollisionShape(class IConstBlockSource const &) const;
     /**
      * @vftbl  30
      * @symbol ?getOwningPiston@MovingBlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-     * @hash   -63506221
+     * @hash   -62675917
      */
     virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /**
@@ -127,62 +127,62 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@MovingBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1380095491
+     * @hash   1380925795
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0MovingBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -127445895
+     * @hash   -126615591
      */
     MCAPI MovingBlockActor(class BlockPos const &);
     /**
      * @symbol ?_validPistonPos@MovingBlockActor@@QEBA_NAEBVIConstBlockSource@@@Z
-     * @hash   -612315865
+     * @hash   -611485561
      */
     MCAPI bool _validPistonPos(class IConstBlockSource const &) const;
     /**
      * @symbol ?aquireWrappedBlockActor@MovingBlockActor@@QEAA?AV?$shared_ptr@VBlockActor@@@std@@XZ
-     * @hash   -858315731
+     * @hash   -857485427
      */
     MCAPI class std::shared_ptr<class BlockActor> aquireWrappedBlockActor();
     /**
      * @symbol ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
-     * @hash   438371210
+     * @hash   439201514
      */
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const &, float) const;
     /**
      * @symbol ?getWrappedBlock@MovingBlockActor@@QEBAAEBVBlock@@XZ
-     * @hash   2004479574
+     * @hash   2004525702
      */
     MCAPI class Block const & getWrappedBlock() const;
     /**
      * @symbol ?getWrappedExtraBlock@MovingBlockActor@@QEAAAEBVBlock@@XZ
-     * @hash   547956426
+     * @hash   548786730
      */
     MCAPI class Block const & getWrappedExtraBlock();
     /**
      * @symbol ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
-     * @hash   766766731
+     * @hash   767597035
      */
     MCAPI void moveCollidedEntities(class PistonBlockActor &, class BlockSource &);
     /**
      * @symbol ?registerPiston@MovingBlockActor@@QEAAXAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2120239679
+     * @hash   -2119409375
      */
     MCAPI void registerPiston(class BlockSource const &, class BlockPos const &);
     /**
      * @symbol ?setWrappedBlock@MovingBlockActor@@QEAAXAEBVBlock@@@Z
-     * @hash   -1785908136
+     * @hash   -1785077832
      */
     MCAPI void setWrappedBlock(class Block const &);
     /**
      * @symbol ?setWrappedBlockActor@MovingBlockActor@@QEAAXV?$shared_ptr@VBlockActor@@@std@@@Z
-     * @hash   1099470089
+     * @hash   1100300393
      */
     MCAPI void setWrappedBlockActor(class std::shared_ptr<class BlockActor>);
     /**
      * @symbol ?setWrappedExtraBlock@MovingBlockActor@@QEAAXAEBVBlock@@@Z
-     * @hash   -209953466
+     * @hash   -209123162
      */
     MCAPI void setWrappedExtraBlock(class Block const &);
 

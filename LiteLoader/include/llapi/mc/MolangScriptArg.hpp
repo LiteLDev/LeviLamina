@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0MolangScriptArg@@QEAA@H@Z
-     * @hash   -1154915548
+     * @hash   -1154869420
      */
     MCAPI MolangScriptArg(int);
     /**
@@ -45,12 +45,12 @@ public:
     MCAPI MolangScriptArg(float);
     /**
      * @symbol ?clear@MolangScriptArg@@QEAAXXZ
-     * @hash   -2085540193
+     * @hash   -2085494065
      */
     MCAPI void clear();
     /**
      * @symbol ??4MolangScriptArg@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   479571926
+     * @hash   479618054
      */
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
     /**

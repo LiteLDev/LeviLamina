@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0JigsawJunction@@QEAA@HHHHW4Projection@@0@Z
-     * @hash   -209032429
+     * @hash   -208202125
      */
     MCAPI JigsawJunction(int, int, int, int, enum Projection, enum Projection);
     /**
      * @symbol ?getDeltaTargetY@JigsawJunction@@QEBAHXZ
-     * @hash   -1772530362
+     * @hash   -1772484234
      */
     MCAPI int getDeltaTargetY() const;
 

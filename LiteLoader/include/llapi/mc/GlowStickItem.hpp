@@ -75,7 +75,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
-     * @hash   526732636
+     * @hash   527562940
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -100,39 +100,39 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@GlowStickItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -1017060172
+     * @hash   -1016229868
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
-     * @hash   1400103457
+     * @hash   1400933761
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @symbol ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -970453788
+     * @hash   -969623484
      */
     MCAPI GlowStickItem(std::string const &, int);
     /**
      * @symbol ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
-     * @hash   1612227429
+     * @hash   1612350437
      */
     MCAPI static enum class ItemColor const COLORS[];
     /**
      * @symbol ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
-     * @hash   -707211769
+     * @hash   -707088761
      */
     MCAPI static int const MAX_ACTIVE_TICKS;
 

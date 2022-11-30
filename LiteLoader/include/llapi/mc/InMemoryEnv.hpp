@@ -40,67 +40,67 @@ public:
     /**
      * @vftbl  1
      * @symbol ?NewSequentialFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
-     * @hash   1984037419
+     * @hash   1984867723
      */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
      * @vftbl  2
      * @symbol ?NewRandomAccessFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
-     * @hash   -1210308517
+     * @hash   -1209478213
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
      * @vftbl  3
      * @symbol ?NewWritableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     * @hash   -886098291
+     * @hash   -885267987
      */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @vftbl  4
      * @symbol ?NewAppendableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     * @hash   -617227567
+     * @hash   -616397263
      */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @vftbl  5
      * @symbol ?FileExists@InMemoryEnv@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -162777918
+     * @hash   -161947614
      */
     virtual bool FileExists(std::string const &);
     /**
      * @vftbl  6
      * @symbol ?GetChildren@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-     * @hash   375565100
+     * @hash   376395404
      */
     virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
     /**
      * @vftbl  7
      * @symbol ?DeleteFileA@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1996905651
+     * @hash   -1996075347
      */
     virtual class leveldb::Status DeleteFileA(std::string const &);
     /**
      * @vftbl  11
      * @symbol ?RenameFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   1218860559
+     * @hash   1219690863
      */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /**
      * @vftbl  20
      * @symbol ?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ
-     * @hash   657612444
+     * @hash   658442748
      */
     virtual void flushToPermanentStorage();
     /**
      * @symbol ??0InMemoryEnv@@QEAA@PEAVEnv@leveldb@@AEBVPath@Core@@@Z
-     * @hash   -680461178
+     * @hash   -679630874
      */
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
 //private:
     /**
      * @symbol ?_flushWithTransaction@InMemoryEnv@@AEAAXXZ
-     * @hash   -1102279064
+     * @hash   -1101448760
      */
     MCAPI void _flushWithTransaction();
 

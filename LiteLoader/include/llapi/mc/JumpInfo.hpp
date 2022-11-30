@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0JumpInfo@@QEAA@MMHH@Z
-     * @hash   623804240
+     * @hash   623850368
      */
     MCAPI JumpInfo(float, float, int, int);
     /**

@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   1872480642
+     * @hash   1873310946
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -177,19 +177,19 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   235385899
+     * @hash   236216203
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@StemBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1776770982
+     * @hash   1777601286
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@StemBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -785151914
+     * @hash   -784321610
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -220,25 +220,25 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@StemBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1248823962
+     * @hash   -1247993658
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1385895456
+     * @hash   1386725760
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  137
      * @symbol ?getColorAtPos@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1008599759
+     * @hash   -1007769455
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@StemBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2110280082
+     * @hash   -2109449778
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -269,7 +269,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@StemBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1229549719
+     * @hash   1230380023
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -285,13 +285,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@StemBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   255360170
+     * @hash   256190474
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@StemBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1858428414
+     * @hash   -1857598110
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STEMBLOCK
@@ -308,19 +308,19 @@ public:
 #endif
     /**
      * @symbol ??0StemBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-     * @hash   1795556399
+     * @hash   1796386703
      */
     MCAPI StemBlock(std::string const &, int, class BlockLegacy const &);
     /**
      * @symbol ?getFruitBlock@StemBlock@@QEBAAEBVBlockLegacy@@XZ
-     * @hash   -166535244
+     * @hash   -165704940
      */
     MCAPI class BlockLegacy const & getFruitBlock() const;
 
 //private:
     /**
      * @symbol ?getGrowthSpeed@StemBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -254759193
+     * @hash   -253928889
      */
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
 

@@ -46,13 +46,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@DoorBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1012407761
+     * @hash   -1011577457
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  14
      * @symbol ?getLiquidClipVolume@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-     * @hash   1582961415
+     * @hash   1583791719
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
@@ -158,13 +158,13 @@ public:
     /**
      * @vftbl  56
      * @symbol ?canFillAtPos@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -798063427
+     * @hash   -797233123
      */
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  58
      * @symbol ?onFillBlock@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -866944206
+     * @hash   -866113902
      */
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -180,13 +180,13 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@DoorBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -27071661
+     * @hash   -26241357
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -1651106426
+     * @hash   -1650276122
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -197,7 +197,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -256891367
+     * @hash   -256061063
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -208,25 +208,25 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -506946543
+     * @hash   -506116239
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -24642463
+     * @hash   -23812159
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@DoorBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   -1642645188
+     * @hash   -1641814884
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@DoorBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -520641061
+     * @hash   -519810757
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -257,13 +257,13 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@DoorBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   1262882641
+     * @hash   1263712945
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@DoorBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   2004032559
+     * @hash   2004862863
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -274,7 +274,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@DoorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1072211766
+     * @hash   1073042070
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -295,7 +295,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2075534235
+     * @hash   -2074703931
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -306,7 +306,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -895737243
+     * @hash   -894906939
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -317,13 +317,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -1176741452
+     * @hash   -1175911148
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -91626943
+     * @hash   -90796639
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -334,13 +334,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@DoorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1043249397
+     * @hash   1044079701
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@DoorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -388682227
+     * @hash   -387851923
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORBLOCK
@@ -362,42 +362,42 @@ public:
 #endif
     /**
      * @symbol ??0DoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4DoorType@0@@Z
-     * @hash   -1568892210
+     * @hash   -1568061906
      */
     MCAPI DoorBlock(std::string const &, int, class Material const &, enum class DoorBlock::DoorType);
     /**
      * @symbol ?getBlockedDirection@DoorBlock@@QEBA?AW4Type@Direction@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1993821162
+     * @hash   -1992990858
      */
     MCAPI enum class Direction::Type getBlockedDirection(class IConstBlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?getDir@DoorBlock@@QEBAHAEBVIConstBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -16531810
+     * @hash   -15701506
      */
     MCAPI int getDir(class IConstBlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?getDoorBlocks@DoorBlock@@QEBAXAEBVIConstBlockSource@@AEBVBlockPos@@AEAPEBVBlock@@2@Z
-     * @hash   888854896
+     * @hash   889685200
      */
     MCAPI void getDoorBlocks(class IConstBlockSource const &, class BlockPos const &, class Block const *&, class Block const *&) const;
     /**
      * @symbol ?getDoorThickness@DoorBlock@@QEBAMXZ
-     * @hash   -28219436
+     * @hash   -27389132
      */
     MCAPI float getDoorThickness() const;
     /**
      * @symbol ?isToggled@DoorBlock@@QEBA_NAEBVIConstBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1650444410
+     * @hash   1651274714
      */
     MCAPI bool isToggled(class IConstBlockSource const &, class BlockPos const &) const;
     /**
      * @symbol ?setToggled@DoorBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@_N@Z
-     * @hash   25286712
+     * @hash   26117016
      */
     MCAPI void setToggled(class BlockSource &, class BlockPos const &, class Actor *, bool) const;
     /**
      * @symbol ?getDoorFacing@DoorBlock@@SAEH@Z
-     * @hash   -580556214
+     * @hash   -579725910
      */
     MCAPI static unsigned char getDoorFacing(int);
 

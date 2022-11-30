@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@BreakDoorAnnotationDescription@@UEBAPEBDXZ
-     * @hash   1738715092
+     * @hash   1738761220
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@BreakDoorAnnotationDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   325123823
+     * @hash   325169951
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@BreakDoorAnnotationDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   822117977
+     * @hash   822164105
      */
     virtual void serializeData(class Json::Value &) const;
 

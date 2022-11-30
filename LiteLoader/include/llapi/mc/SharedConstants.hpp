@@ -25,17 +25,17 @@ namespace SharedConstants {
 #undef AFTER_EXTRA
     /**
      * @symbol ?CodeBuilderProtocolVersion@SharedConstants@@3W4ProtocolVersion@CodeBuilder@@B
-     * @hash   1517360639
+     * @hash   1517483647
      */
     MCAPI extern enum class CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
     /**
      * @symbol ?CurrentActorDigestFormat@SharedConstants@@3W4ActorDigestFormat@@B
-     * @hash   -1100768339
+     * @hash   -1100645331
      */
     MCAPI extern enum class ActorDigestFormat const CurrentActorDigestFormat;
     /**
      * @symbol ?CurrentBlendVersion@SharedConstants@@3W4BlendVersion@@B
-     * @hash   1193758158
+     * @hash   1193881166
      */
     MCAPI extern enum class BlendVersion const CurrentBlendVersion;
     /**
@@ -45,72 +45,72 @@ namespace SharedConstants {
     MCAPI extern class SemVersion const CurrentGameSemVersion;
     /**
      * @symbol ?CurrentLevelChunkFormat@SharedConstants@@3W4LevelChunkFormat@@B
-     * @hash   993604492
+     * @hash   993727500
      */
     MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat;
     /**
      * @symbol ?CurrentStorageVersion@SharedConstants@@3W4StorageVersion@@B
-     * @hash   2124859491
+     * @hash   2124982499
      */
     MCAPI extern enum class StorageVersion const CurrentStorageVersion;
     /**
      * @symbol ?CurrentSubChunkFormat@SharedConstants@@3W4SubChunkFormat@@B
-     * @hash   1384315367
+     * @hash   1384438375
      */
     MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat;
     /**
      * @symbol ?DevInitiallyMuteMusic@SharedConstants@@3_NB
-     * @hash   -1301660542
+     * @hash   -1301537534
      */
     MCAPI extern bool const DevInitiallyMuteMusic;
     /**
      * @symbol ?EduDiscoveryProtocolVersion@SharedConstants@@3HB
-     * @hash   -1753671039
+     * @hash   -1753548031
      */
     MCAPI extern int const EduDiscoveryProtocolVersion;
     /**
      * @symbol ?IsAnyBeta@SharedConstants@@3_NB
-     * @hash   573515556
+     * @hash   573638564
      */
     MCAPI extern bool const IsAnyBeta;
     /**
      * @symbol ?IsBeta@SharedConstants@@3_NB
-     * @hash   1115989699
+     * @hash   1116112707
      */
     MCAPI extern bool const IsBeta;
     /**
      * @symbol ?IsDevBuild@SharedConstants@@3_NB
-     * @hash   -748586329
+     * @hash   -748463321
      */
     MCAPI extern bool const IsDevBuild;
     /**
      * @symbol ?IsPlaytest@SharedConstants@@3_NB
-     * @hash   1504610821
+     * @hash   1504733829
      */
     MCAPI extern bool const IsPlaytest;
     /**
      * @symbol ?IsPreviewApp@SharedConstants@@3_NB
-     * @hash   -249884892
+     * @hash   -249761884
      */
     MCAPI extern bool const IsPreviewApp;
     /**
      * @symbol ?LevelDBCompressorID@SharedConstants@@3HB
-     * @hash   -1073377855
+     * @hash   -1073254847
      */
     MCAPI extern int const LevelDBCompressorID;
     /**
      * @symbol ?MajorVersion@SharedConstants@@3HB
-     * @hash   -93885455
+     * @hash   -93762447
      */
     MCAPI extern int const MajorVersion;
     /**
      * @symbol ?MaxChatLength@SharedConstants@@3HB
-     * @hash   -1614447683
+     * @hash   -1614324675
      */
     MCAPI extern int const MaxChatLength;
     /**
      * @symbol ?MinTickingChunksRadius@SharedConstants@@3IB
-     * @hash   -1337075683
+     * @hash   -1336952675
      */
     MCAPI extern unsigned int const MinTickingChunksRadius;
     /**
@@ -120,47 +120,47 @@ namespace SharedConstants {
     MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;
     /**
      * @symbol ?MinorVersion@SharedConstants@@3HB
-     * @hash   1614336765
+     * @hash   1614459773
      */
     MCAPI extern int const MinorVersion;
     /**
      * @symbol ?NetworkDefaultGamePort@SharedConstants@@3GB
-     * @hash   1337497748
+     * @hash   1337620756
      */
     MCAPI extern unsigned short const NetworkDefaultGamePort;
     /**
      * @symbol ?NetworkDefaultGamePortv6@SharedConstants@@3GB
-     * @hash   395034072
+     * @hash   395157080
      */
     MCAPI extern unsigned short const NetworkDefaultGamePortv6;
     /**
      * @symbol ?NetworkDefaultMaxConnections@SharedConstants@@3HB
-     * @hash   -1172639745
+     * @hash   -1172516737
      */
     MCAPI extern int const NetworkDefaultMaxConnections;
     /**
      * @symbol ?NetworkEphemeralPort@SharedConstants@@3GB
-     * @hash   -1453434768
+     * @hash   -1453311760
      */
     MCAPI extern unsigned short const NetworkEphemeralPort;
     /**
      * @symbol ?NetworkProtocolVersion@SharedConstants@@3HB
-     * @hash   204823795
+     * @hash   204946803
      */
     MCAPI extern int const NetworkProtocolVersion;
     /**
      * @symbol ?PatchVersion@SharedConstants@@3HB
-     * @hash   -28576805
+     * @hash   -28453797
      */
     MCAPI extern int const PatchVersion;
     /**
      * @symbol ?RevisionVersion@SharedConstants@@3HB
-     * @hash   -974305061
+     * @hash   -974182053
      */
     MCAPI extern int const RevisionVersion;
     /**
      * @symbol ?StoreVersion@SharedConstants@@3HB
-     * @hash   1688004537
+     * @hash   1688127545
      */
     MCAPI extern int const StoreVersion;
 

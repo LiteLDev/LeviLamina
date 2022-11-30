@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z
-     * @hash   1978344599
+     * @hash   1979174903
      */
     virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
 

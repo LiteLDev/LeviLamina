@@ -30,67 +30,67 @@ public:
 public:
     /**
      * @symbol ??0BlockDescriptor@@QEAA@XZ
-     * @hash   -992528440
+     * @hash   -991698136
      */
     MCAPI BlockDescriptor();
     /**
      * @symbol ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
-     * @hash   -784373471
+     * @hash   -783543167
      */
     MCAPI BlockDescriptor(class HashedString const &);
     /**
      * @symbol ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEBV?$vector@VBlockState@BlockDescriptor@@V?$allocator@VBlockState@BlockDescriptor@@@std@@@2@@Z
-     * @hash   -2078044405
+     * @hash   -2077214101
      */
     MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::BlockState> const &&);
     /**
      * @symbol ??0BlockDescriptor@@QEAA@AEBV0@@Z
-     * @hash   134150577
+     * @hash   134980881
      */
     MCAPI BlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ??0BlockDescriptor@@QEAA@$$QEAV0@@Z
-     * @hash   1017751329
+     * @hash   1018581633
      */
     MCAPI BlockDescriptor(class BlockDescriptor &&);
     /**
      * @symbol ?getBlockOrUnknownBlock@BlockDescriptor@@QEBAAEBVBlock@@XZ
-     * @hash   -1410986192
+     * @hash   -1410155888
      */
     MCAPI class Block const & getBlockOrUnknownBlock() const;
     /**
      * @symbol ?getTagExpression@BlockDescriptor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   878548868
+     * @hash   879379172
      */
     MCAPI std::string const & getTagExpression() const;
     /**
      * @symbol ?isValid@BlockDescriptor@@QEBA_NXZ
-     * @hash   -679948154
+     * @hash   -679117850
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?matches@BlockDescriptor@@QEBA_NAEBVBlock@@@Z
-     * @hash   281704339
+     * @hash   282534643
      */
     MCAPI bool matches(class Block const &) const;
     /**
      * @symbol ??4BlockDescriptor@@QEAAXAEBV0@@Z
-     * @hash   487405195
+     * @hash   488235499
      */
     MCAPI void operator=(class BlockDescriptor const &);
     /**
      * @symbol ??4BlockDescriptor@@QEAAX$$QEAV0@@Z
-     * @hash   -147245429
+     * @hash   -146415125
      */
     MCAPI void operator=(class BlockDescriptor &&);
     /**
      * @symbol ?toCompoundTag@BlockDescriptor@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1946281418
+     * @hash   1947111722
      */
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     /**
      * @symbol ?tryGetBlock@BlockDescriptor@@QEBAPEBVBlock@@XZ
-     * @hash   1488344537
+     * @hash   1489174841
      */
     MCAPI class Block const * tryGetBlock() const;
     /**
@@ -100,54 +100,54 @@ public:
     MCAPI ~BlockDescriptor();
     /**
      * @symbol ?JSON_NAME_FIELD@BlockDescriptor@@2QBDB
-     * @hash   1627895229
+     * @hash   1628018237
      */
     MCAPI static char const JSON_NAME_FIELD[];
     /**
      * @symbol ?JSON_STATES_FIELD@BlockDescriptor@@2QBDB
-     * @hash   400033331
+     * @hash   400156339
      */
     MCAPI static char const JSON_STATES_FIELD[];
     /**
      * @symbol ?JSON_TAGS_FIELD@BlockDescriptor@@2QBDB
-     * @hash   -859670191
+     * @hash   -859547183
      */
     MCAPI static char const JSON_TAGS_FIELD[];
     /**
      * @symbol ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
-     * @hash   634460571
+     * @hash   635290875
      */
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
     /**
      * @symbol ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
-     * @hash   637920042
+     * @hash   638750346
      */
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class Block const &);
     /**
      * @symbol ?bindType@BlockDescriptor@@SAXXZ
-     * @hash   -1347346945
+     * @hash   -1346516641
      */
     MCAPI static void bindType();
     /**
      * @symbol ?fromCompoundTag@BlockDescriptor@@SA?AV1@AEBVCompoundTag@@@Z
-     * @hash   -665250820
+     * @hash   -664420516
      */
     MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const &);
     /**
      * @symbol ?fromTagExpression@BlockDescriptor@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@@Z
-     * @hash   1554889831
+     * @hash   1555720135
      */
     MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum class MolangVersion);
 
 //private:
     /**
      * @symbol ?_anyTagsMatch@BlockDescriptor@@AEBA_NAEBVBlock@@@Z
-     * @hash   -1246822462
+     * @hash   -1245992158
      */
     MCAPI bool _anyTagsMatch(class Block const &) const;
     /**
      * @symbol ?_resolveImpl@BlockDescriptor@@AEBAXXZ
-     * @hash   401779548
+     * @hash   402609852
      */
     MCAPI void _resolveImpl() const;
 

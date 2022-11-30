@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   934795150
+     * @hash   935625454
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1632899259
+     * @hash   -1632068955
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
@@ -61,7 +61,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@CombinedHotbarAndInventoryContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   -2004450596
+     * @hash   -2003620292
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
@@ -72,7 +72,7 @@ public:
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   2067109541
+     * @hash   2067939845
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
@@ -83,7 +83,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@CombinedHotbarAndInventoryContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -1448897562
+     * @hash   -1448067258
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBINEDHOTBARANDINVENTORYCONTAINERVALIDATION

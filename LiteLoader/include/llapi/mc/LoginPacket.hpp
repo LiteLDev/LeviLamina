@@ -46,13 +46,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@LoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1491306198
+     * @hash   -1491260070
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1923090909
+     * @hash   1923137037
      */
     virtual void write(class BinaryStream &) const;
     /**
@@ -64,12 +64,12 @@ public:
     /**
      * @vftbl  6
      * @symbol ?_read@LoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1964622467
+     * @hash   -1964576339
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LoginPacket@@QEAA@XZ
-     * @hash   1956766621
+     * @hash   1956812749
      */
     MCAPI LoginPacket();
 

@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0TransformationComponent@@QEAA@XZ
-     * @hash   951093408
+     * @hash   951139536
      */
     MCAPI TransformationComponent();
     /**
@@ -41,27 +41,27 @@ public:
     MCAPI int getDelayTicks() const;
     /**
      * @symbol ?initFromDefinition@TransformationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1136226354
+     * @hash   1136272482
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z
-     * @hash   -614409380
+     * @hash   -614363252
      */
     MCAPI void maintainOldData(class Actor &, class Actor &, struct TransformationDescription const &, struct ActorUniqueID const &, class Level const &);
     /**
      * @symbol ?reloadComponent@TransformationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   164795250
+     * @hash   164841378
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ?setDelayTicks@TransformationComponent@@QEAAXH@Z
-     * @hash   988710716
+     * @hash   988756844
      */
     MCAPI void setDelayTicks(int);
     /**
      * @symbol ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   -962546451
+     * @hash   -962500323
      */
     MCAPI void transformIfAble(class Actor &, bool);
 

@@ -43,14 +43,14 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@SaveSurroundingChunksSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   298852012
+     * @hash   298898140
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickSaveSurroundingChunks@SaveSurroundingChunksSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@V?$FlagComponent@USaveSurroundingChunksFlag@@@@@@@Z
-     * @hash   1050726358
+     * @hash   1050772486
      */
     MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag>> &);
 

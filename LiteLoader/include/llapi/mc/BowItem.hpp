@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@BowItem@@UEBAHXZ
-     * @hash   -1867219569
+     * @hash   -1867173441
      */
     virtual int getEnchantSlot() const;
     /**
@@ -100,35 +100,35 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  112
      * @symbol ?enchantProjectile@BowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
-     * @hash   -1869973473
+     * @hash   -1869143169
      */
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@BowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1070443629
+     * @hash   1071273933
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@BowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -1846473804
+     * @hash   -1845643500
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @symbol ??0BowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1777846571
+     * @hash   1778676875
      */
     MCAPI BowItem(std::string const &, int);
 

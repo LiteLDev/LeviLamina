@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@ActorMotionSyncSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1673679115
+     * @hash   -1673632987
      */
     virtual void tick(class EntityRegistry &);
 

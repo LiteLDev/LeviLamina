@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ?DecrementMerchantTimer@LegacyTradeableComponent@@QEAAXXZ
-     * @hash   134430405
+     * @hash   134476533
      */
     MCAPI void DecrementMerchantTimer();
     /**
      * @symbol ?IncrementTradeTier@LegacyTradeableComponent@@QEAAXXZ
-     * @hash   1048314757
+     * @hash   1048360885
      */
     MCAPI void IncrementTradeTier();
     /**
      * @symbol ??0LegacyTradeableComponent@@QEAA@XZ
-     * @hash   1272584132
+     * @hash   1272630260
      */
     MCAPI LegacyTradeableComponent();
     /**
      * @symbol ?addAdditionalSaveData@LegacyTradeableComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1298247016
+     * @hash   -1298200888
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?createDataPacket@LegacyTradeableComponent@@QEAA?AVUpdateTradePacket@@AEAVActor@@W4ContainerID@@@Z
-     * @hash   -242118638
+     * @hash   -242072510
      */
     MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum class ContainerID);
     /**
      * @symbol ?getAddRecipeOnUpdate@LegacyTradeableComponent@@QEBA_NXZ
-     * @hash   1038072768
+     * @hash   1038118896
      */
     MCAPI bool getAddRecipeOnUpdate() const;
     /**
@@ -66,22 +66,22 @@ public:
     MCAPI std::string const & getDisplayName() const;
     /**
      * @symbol ?getInteraction@LegacyTradeableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   939545773
+     * @hash   939591901
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?getLastPlayerTradeName@LegacyTradeableComponent@@QEBAPEBVPlayer@@XZ
-     * @hash   1431750999
+     * @hash   1431797127
      */
     MCAPI class Player const * getLastPlayerTradeName() const;
     /**
      * @symbol ?getOffers@LegacyTradeableComponent@@QEAAPEAVMerchantRecipeList@@AEAVActor@@@Z
-     * @hash   -1936661724
+     * @hash   -1936615596
      */
     MCAPI class MerchantRecipeList * getOffers(class Actor &);
     /**
      * @symbol ?getResetLockedOnFirstTrade@LegacyTradeableComponent@@QEBA_NXZ
-     * @hash   -1780650678
+     * @hash   -1780604550
      */
     MCAPI bool getResetLockedOnFirstTrade() const;
     /**
@@ -91,7 +91,7 @@ public:
     MCAPI int getRiches() const;
     /**
      * @symbol ?getTradeTier@LegacyTradeableComponent@@QEBAHXZ
-     * @hash   407743192
+     * @hash   407789320
      */
     MCAPI int getTradeTier() const;
     /**
@@ -101,17 +101,17 @@ public:
     MCAPI int getUpdateMerchantTimer() const;
     /**
      * @symbol ?loadDisplayName@LegacyTradeableComponent@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-     * @hash   1015677201
+     * @hash   1015723329
      */
     MCAPI std::string const & loadDisplayName(class Actor &);
     /**
      * @symbol ?loadOffersFromTag@LegacyTradeableComponent@@QEAAXPEBVCompoundTag@@@Z
-     * @hash   2125628081
+     * @hash   2125674209
      */
     MCAPI void loadOffersFromTag(class CompoundTag const *);
     /**
      * @symbol ?notifyTrade@LegacyTradeableComponent@@QEAAXAEAVActor@@H@Z
-     * @hash   -1635431289
+     * @hash   -1635385161
      */
     MCAPI void notifyTrade(class Actor &, int);
     /**
@@ -121,57 +121,57 @@ public:
     MCAPI class LegacyTradeableComponent & operator=(class LegacyTradeableComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@LegacyTradeableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1828527418
+     * @hash   1828573546
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?reloadComponent@LegacyTradeableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1076259164
+     * @hash   1076305292
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ?restockAllRecipes@LegacyTradeableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   602411580
+     * @hash   602457708
      */
     MCAPI void restockAllRecipes(class Actor &);
     /**
      * @symbol ?setAddRecipeOnUpdate@LegacyTradeableComponent@@QEAAX_N@Z
-     * @hash   863557812
+     * @hash   863603940
      */
     MCAPI void setAddRecipeOnUpdate(bool);
     /**
      * @symbol ?setOffers@LegacyTradeableComponent@@QEAAXAEAVMerchantRecipeList@@@Z
-     * @hash   -261942736
+     * @hash   -261896608
      */
     MCAPI void setOffers(class MerchantRecipeList &);
     /**
      * @symbol ?setResetLockedOnFirstTrade@LegacyTradeableComponent@@QEAAX_N@Z
-     * @hash   1254766906
+     * @hash   1254813034
      */
     MCAPI void setResetLockedOnFirstTrade(bool);
     /**
      * @symbol ?setRiches@LegacyTradeableComponent@@QEAAXH@Z
-     * @hash   1620510552
+     * @hash   1620556680
      */
     MCAPI void setRiches(int);
     /**
      * @symbol ?setTradeTier@LegacyTradeableComponent@@QEAAXH@Z
-     * @hash   -2007432026
+     * @hash   -2007385898
      */
     MCAPI void setTradeTier(int);
     /**
      * @symbol ?shouldConvertTrades@LegacyTradeableComponent@@QEBA_NAEAVActor@@@Z
-     * @hash   171770975
+     * @hash   171817103
      */
     MCAPI bool shouldConvertTrades(class Actor &) const;
     /**
      * @symbol ?shouldPersistTrades@LegacyTradeableComponent@@QEBA_NAEAVActor@@@Z
-     * @hash   1710252125
+     * @hash   1710298253
      */
     MCAPI bool shouldPersistTrades(class Actor &) const;
     /**
      * @symbol ?updateTradeTier@LegacyTradeableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   405541916
+     * @hash   405588044
      */
     MCAPI void updateTradeTier(class Actor &);
     /**
@@ -181,24 +181,24 @@ public:
     MCAPI ~LegacyTradeableComponent();
     /**
      * @symbol ?isUseNewTradeScreen@LegacyTradeableComponent@@SA_NAEBVActor@@@Z
-     * @hash   -1758213045
+     * @hash   -1758166917
      */
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
 //private:
     /**
      * @symbol ?_getTradeTable@LegacyTradeableComponent@@AEAAPEAUTradeTable@@AEAVActor@@@Z
-     * @hash   146062657
+     * @hash   146108785
      */
     MCAPI struct TradeTable * _getTradeTable(class Actor &);
     /**
      * @symbol ?_rearrangeTradeList@LegacyTradeableComponent@@AEAAXAEAVActor@@AEAV?$vector@UTrade@@V?$allocator@UTrade@@@std@@@std@@_K@Z
-     * @hash   -139204547
+     * @hash   -139158419
      */
     MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, unsigned __int64);
     /**
      * @symbol ?_refreshTrades@LegacyTradeableComponent@@AEAA_NAEAVActor@@@Z
-     * @hash   686706526
+     * @hash   686752654
      */
     MCAPI bool _refreshTrades(class Actor &);
 

@@ -47,13 +47,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@TeleportToSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -296351857
+     * @hash   -296305729
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@TeleportToSubcomponent@@UEAAPEBDXZ
-     * @hash   -425941318
+     * @hash   -425895190
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTTOSUBCOMPONENT
@@ -70,7 +70,7 @@ public:
 #endif
     /**
      * @symbol ??0TeleportToSubcomponent@@QEAA@XZ
-     * @hash   1128472351
+     * @hash   1128518479
      */
     MCAPI TeleportToSubcomponent();
 

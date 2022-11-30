@@ -34,12 +34,12 @@ public:
 public:
     /**
      * @symbol ??0PermissionsFile@@QEAA@AEBVPath@Core@@@Z
-     * @hash   -975462917
+     * @hash   -975416789
      */
     MCAPI PermissionsFile(class Core::Path const &);
     /**
      * @symbol ?applyPlayerPermissionsFromDisk@PermissionsFile@@QEAAXAEAVPlayer@@AEBVUserEntityIdentifierComponent@@W4CommandPermissionLevel@@@Z
-     * @hash   -364329800
+     * @hash   -364283672
      */
     MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum class CommandPermissionLevel);
     /**
@@ -49,39 +49,39 @@ public:
     MCAPI class std::unordered_map<std::string, enum class PlayerPermissionLevel, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class PlayerPermissionLevel>>> const & getPermissions() const;
     /**
      * @symbol ?getXUIDsByPermission@PermissionsFile@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@W4PlayerPermissionLevel@@@Z
-     * @hash   -849006710
+     * @hash   -848960582
      */
     MCAPI std::vector<std::string> getXUIDsByPermission(enum class PlayerPermissionLevel) const;
     /**
      * @symbol ?isPermissionsSet@PermissionsFile@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
-     * @hash   -962335910
+     * @hash   -962289782
      */
     MCAPI bool isPermissionsSet(std::string const &, enum class PlayerPermissionLevel) const;
     /**
      * @symbol ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
-     * @hash   713642475
+     * @hash   713688603
      */
     MCAPI void persistPlayerPermissionsToDisk(std::string const &, enum class PlayerPermissionLevel);
     /**
      * @symbol ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
-     * @hash   -95902765
+     * @hash   -95856637
      */
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum class PlayerPermissionLevel);
     /**
      * @symbol ?reload@PermissionsFile@@QEAA?AW4FileReadResult@@XZ
-     * @hash   -797947078
+     * @hash   -797900950
      */
     MCAPI enum class FileReadResult reload();
 
 //private:
     /**
      * @symbol ?readPermissionFile@PermissionsFile@@AEAA?AV?$tuple@W4FileReadResult@@VValue@Json@@@std@@XZ
-     * @hash   2131115006
+     * @hash   2131161134
      */
     MCAPI class std::tuple<enum class FileReadResult, class Json::Value> readPermissionFile();
     /**
      * @symbol ?setDefaultPlayerPermission@PermissionsFile@@AEAAXAEAVPlayer@@W4CommandPermissionLevel@@@Z
-     * @hash   -502652238
+     * @hash   -502606110
      */
     MCAPI void setDefaultPlayerPermission(class Player &, enum class CommandPermissionLevel);
 

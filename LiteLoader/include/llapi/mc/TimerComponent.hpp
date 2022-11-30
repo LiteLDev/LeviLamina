@@ -31,54 +31,54 @@ public:
 public:
     /**
      * @symbol ??0TimerComponent@@QEAA@XZ
-     * @hash   -1609995356
+     * @hash   -1609949228
      */
     MCAPI TimerComponent();
     /**
      * @symbol ?addAdditionalSaveData@TimerComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   2068490520
+     * @hash   2068536648
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getHasExecuted@TimerComponent@@QEBA_NXZ
-     * @hash   1775484452
+     * @hash   1775530580
      */
     MCAPI bool getHasExecuted() const;
     /**
      * @symbol ?getLooping@TimerComponent@@QEBA_NXZ
-     * @hash   -1296074626
+     * @hash   -1296028498
      */
     MCAPI bool getLooping() const;
     /**
      * @symbol ?getTimeStamp@TimerComponent@@QEAA_KAEBVLevel@@@Z
-     * @hash   2136803236
+     * @hash   2136849364
      */
     MCAPI unsigned __int64 getTimeStamp(class Level const &);
     /**
      * @symbol ??4TimerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1268358332
+     * @hash   1268404460
      */
     MCAPI class TimerComponent & operator=(class TimerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@TimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1266462486
+     * @hash   -1266416358
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?restartTimer@TimerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1002382966
+     * @hash   -1002336838
      */
     MCAPI void restartTimer(class Actor &);
     /**
      * @symbol ?setHasExecuted@TimerComponent@@QEAAX_N@Z
-     * @hash   765321200
+     * @hash   765367328
      */
     MCAPI void setHasExecuted(bool);
 
 //private:
     /**
      * @symbol ?getRandomTime@TimerComponent@@AEAAHAEAVActor@@@Z
-     * @hash   1359668408
+     * @hash   1359714536
      */
     MCAPI int getRandomTime(class Actor &);
 

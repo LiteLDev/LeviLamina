@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0ExplodeDefinition@@QEAA@XZ
-     * @hash   -2063584096
+     * @hash   -2063537968
      */
     MCAPI ExplodeDefinition();
     /**
      * @symbol ?initialize@ExplodeDefinition@@QEBAXAEAVEntityContext@@AEAVExplodeComponent@@@Z
-     * @hash   620585797
+     * @hash   620631925
      */
     MCAPI void initialize(class EntityContext &, class ExplodeComponent &) const;
     /**
      * @symbol ?uninitialize@ExplodeDefinition@@QEBAXAEAVEntityContext@@@Z
-     * @hash   -857187332
+     * @hash   -857141204
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
      * @symbol ?buildSchema@ExplodeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExplodeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1259639910
+     * @hash   -1259593782
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExplodeDefinition>> &);
 

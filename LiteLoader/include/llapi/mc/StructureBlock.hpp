@@ -155,7 +155,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@StructureBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -1482136677
+     * @hash   -1481306373
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@StructureBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   141716622
+     * @hash   142546926
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@StructureBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   2132071568
+     * @hash   2132901872
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -228,7 +228,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@StructureBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2013870198
+     * @hash   -2013039894
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -267,7 +267,7 @@ public:
 #endif
     /**
      * @symbol ??0StructureBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   645808552
+     * @hash   646638856
      */
     MCAPI StructureBlock(std::string const &, int);
 

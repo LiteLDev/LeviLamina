@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@PlayerMovementRateSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -413987025
+     * @hash   -413940897
      */
     virtual void tick(class EntityRegistry &);
 

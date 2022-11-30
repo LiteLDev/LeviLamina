@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@PushActorsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1890905228
+     * @hash   -1890859100
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?pushActors@PushActorsSystem@@SAXAEAVStrictEntityContext@@AEAVActorMovementProxyComponent@@@Z
-     * @hash   -1229253141
+     * @hash   -1229207013
      */
     MCAPI static void pushActors(class StrictEntityContext &, class ActorMovementProxyComponent &);
 

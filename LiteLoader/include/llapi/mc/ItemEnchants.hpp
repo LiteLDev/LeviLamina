@@ -33,47 +33,47 @@ public:
 public:
     /**
      * @symbol ??0ItemEnchants@@QEAA@HAEBVListTag@@@Z
-     * @hash   2063857859
+     * @hash   2064688163
      */
     MCAPI ItemEnchants(int, class ListTag const &);
     /**
      * @symbol ??0ItemEnchants@@QEAA@H@Z
-     * @hash   1052133714
+     * @hash   1052964018
      */
     MCAPI ItemEnchants(int);
     /**
      * @symbol ?addEnchant@ItemEnchants@@QEAA_NVEnchantmentInstance@@_N@Z
-     * @hash   965020996
+     * @hash   965851300
      */
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
     /**
      * @symbol ?addEnchants@ItemEnchants@@QEAAHAEBV1@_N@Z
-     * @hash   690331138
+     * @hash   691161442
      */
     MCAPI int addEnchants(class ItemEnchants const &, bool);
     /**
      * @symbol ?canEnchant@ItemEnchants@@QEAA?AUEnchantResult@@VEnchantmentInstance@@_N@Z
-     * @hash   1400504638
+     * @hash   1401334942
      */
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);
     /**
      * @symbol ?getAllEnchants@ItemEnchants@@QEBA?AV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@XZ
-     * @hash   1187358888
+     * @hash   1188189192
      */
     MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
     /**
      * @symbol ?getEnchantNames@ItemEnchants@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -313314585
+     * @hash   -312484281
      */
     MCAPI std::vector<std::string> getEnchantNames() const;
     /**
      * @symbol ?getEnchantment@ItemEnchants@@QEAA?AVEnchantmentInstance@@W4Type@Enchant@@@Z
-     * @hash   1809687577
+     * @hash   1810517881
      */
     MCAPI class EnchantmentInstance getEnchantment(enum class Enchant::Type);
     /**
      * @symbol ?getEnchants@ItemEnchants@@QEBAAEBV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@H@Z
-     * @hash   1731262111
+     * @hash   1732092415
      */
     MCAPI std::vector<class EnchantmentInstance> const & getEnchants(int) const;
     /**
@@ -83,27 +83,27 @@ public:
     MCAPI int getSlot() const;
     /**
      * @symbol ?getTotalValue@ItemEnchants@@QEBAH_N@Z
-     * @hash   1827526825
+     * @hash   1828357129
      */
     MCAPI int getTotalValue(bool) const;
     /**
      * @symbol ?hasEnchant@ItemEnchants@@QEBAHW4Type@Enchant@@@Z
-     * @hash   -2063683867
+     * @hash   -2062853563
      */
     MCAPI int hasEnchant(enum class Enchant::Type) const;
     /**
      * @symbol ?isEmpty@ItemEnchants@@QEBA_NXZ
-     * @hash   1071325756
+     * @hash   1072156060
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?read@ItemEnchants@@QEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   752570500
+     * @hash   753400804
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?removeEnchantment@ItemEnchants@@QEAAXW4Type@Enchant@@@Z
-     * @hash   -1362828958
+     * @hash   -1361998654
      */
     MCAPI void removeEnchantment(enum class Enchant::Type);
     /**
@@ -115,12 +115,12 @@ public:
 //private:
     /**
      * @symbol ?_fromList@ItemEnchants@@AEAAXAEBVListTag@@@Z
-     * @hash   1892624007
+     * @hash   1893454311
      */
     MCAPI void _fromList(class ListTag const &);
     /**
      * @symbol ?_toList@ItemEnchants@@AEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   -837251593
+     * @hash   -836421289
      */
     MCAPI std::unique_ptr<class ListTag> _toList() const;
 

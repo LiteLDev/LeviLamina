@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0ConditionalRecordingConstBlockSource@@QEAA@V?$variant@PEBVIConstBlockSource@@VAccessRecordingConstBlockSource@@@std@@@Z
-     * @hash   -2069545804
+     * @hash   -2069499676
      */
     MCAPI ConditionalRecordingConstBlockSource(class std::variant<class IConstBlockSource const *, class AccessRecordingConstBlockSource>);
     /**
      * @symbol ?get@ConditionalRecordingConstBlockSource@@QEAA?AV?$not_null@PEBVIConstBlockSource@@@gsl@@XZ
-     * @hash   1201997711
+     * @hash   1202043839
      */
     MCAPI class gsl::not_null<class IConstBlockSource const *> get();
     /**
      * @symbol ?takeAccessedBlocks@ConditionalRecordingConstBlockSource@@QEHAA?AUAccessedBlockSourceBlocks@@XZ
-     * @hash   1348086510
+     * @hash   1348132638
      */
     MCAPI struct AccessedBlockSourceBlocks takeAccessedBlocks();
     /**
      * @symbol ??1ConditionalRecordingConstBlockSource@@QEAA@XZ
-     * @hash   23538874
+     * @hash   23585002
      */
     MCAPI ~ConditionalRecordingConstBlockSource();
 

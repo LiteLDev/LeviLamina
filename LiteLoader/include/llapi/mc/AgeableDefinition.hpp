@@ -33,37 +33,37 @@ public:
 public:
     /**
      * @symbol ?addDropItem@AgeableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   8751086
+     * @hash   8797214
      */
     MCAPI void addDropItem(class ItemDescriptor const &);
     /**
      * @symbol ?addFeedItem@AgeableDefinition@@QEAAXAEBUActorDefinitionFeedItem@@@Z
-     * @hash   1796385004
+     * @hash   1796431132
      */
     MCAPI void addFeedItem(struct ActorDefinitionFeedItem const &);
     /**
      * @symbol ?addFeedItemByName@AgeableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1340965476
+     * @hash   1341011604
      */
     MCAPI void addFeedItemByName(std::string const &);
     /**
      * @symbol ?canGrowUp@AgeableDefinition@@QEBA_NXZ
-     * @hash   -1379415258
+     * @hash   -1379369130
      */
     MCAPI bool canGrowUp() const;
     /**
      * @symbol ?getTicksAsBaby@AgeableDefinition@@QEBAHXZ
-     * @hash   -1656837450
+     * @hash   -1656791322
      */
     MCAPI int getTicksAsBaby() const;
     /**
      * @symbol ?initialize@AgeableDefinition@@QEAAXAEAVEntityContext@@AEAVAgeableComponent@@@Z
-     * @hash   623003381
+     * @hash   623049509
      */
     MCAPI void initialize(class EntityContext &, class AgeableComponent &);
     /**
      * @symbol ?buildSchema@AgeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAgeableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1943155814
+     * @hash   -1943109686
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
 

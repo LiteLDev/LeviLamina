@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  48
      * @symbol ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
-     * @hash   -2012365117
+     * @hash   -2012318989
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
      * @vftbl  50
      * @symbol ?normalTick@FireworksRocketActor@@UEAAXXZ
-     * @hash   -1452115242
+     * @hash   -1452069114
      */
     virtual void normalTick();
     /**
@@ -118,7 +118,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -1813339903
+     * @hash   -1813293775
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -129,7 +129,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
-     * @hash   1366354381
+     * @hash   1366400509
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1213180283
+     * @hash   1213226411
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -1579602270
+     * @hash   -1579556142
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -181,44 +181,44 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0FireworksRocketActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1730042655
+     * @hash   -1729996527
      */
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?init@FireworksRocketActor@@QEAAXAEAVLevel@@AEBVVec3@@AEBVCompoundTag@@1UActorUniqueID@@_N@Z
-     * @hash   -218531037
+     * @hash   -218484909
      */
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
     /**
      * @symbol ?isAttachedToEntity@FireworksRocketActor@@QEBA_NXZ
-     * @hash   831148572
+     * @hash   831194700
      */
     MCAPI bool isAttachedToEntity() const;
     /**
      * @symbol ?postNormalTick@FireworksRocketActor@@QEAAXXZ
-     * @hash   -2117925579
+     * @hash   -2117879451
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setDispensed@FireworksRocketActor@@QEAAX_N@Z
-     * @hash   712392830
+     * @hash   712438958
      */
     MCAPI void setDispensed(bool);
 
 //private:
     /**
      * @symbol ?checkAchievement@FireworksRocketActor@@AEBAXXZ
-     * @hash   -1916828723
+     * @hash   -1916782595
      */
     MCAPI void checkAchievement() const;
     /**
      * @symbol ?dealExplosionDamage@FireworksRocketActor@@AEAAXXZ
-     * @hash   1047965039
+     * @hash   1048011167
      */
     MCAPI void dealExplosionDamage();
     /**
      * @symbol ?initTagData@FireworksRocketActor@@AEAAXAEAVRandom@@@Z
-     * @hash   297115102
+     * @hash   297161230
      */
     MCAPI void initTagData(class Random &);
 

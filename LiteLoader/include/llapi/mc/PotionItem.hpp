@@ -61,7 +61,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?isGlint@PotionItem@@MEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1141966202
+     * @hash   -1141135898
      */
     virtual bool isGlint(class ItemStackBase const &) const;
     /**
@@ -77,13 +77,13 @@ public:
     /**
      * @vftbl  56
      * @symbol ?isDestructive@PotionItem@@UEBA_NH@Z
-     * @hash   739154451
+     * @hash   739984755
      */
     virtual bool isDestructive(int) const;
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@PotionItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   363122729
+     * @hash   363953033
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@PotionItem@@UEBA_NH@Z
-     * @hash   -34280628
+     * @hash   -33450324
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -119,60 +119,60 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   453786968
+     * @hash   454617272
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  85
      * @symbol ?dispense@PotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1170958222
+     * @hash   -1170127918
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  86
      * @symbol ?useTimeDepleted@PotionItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   629438966
+     * @hash   630269270
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@PotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   1482059460
+     * @hash   1482889764
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  96
      * @symbol ?buildEffectDescriptionName@PotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
-     * @hash   -505252235
+     * @hash   -504421931
      */
     virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@PotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -2108229836
+     * @hash   -2107399532
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@PotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -739377011
+     * @hash   -738546707
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@PotionItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   1380132148
+     * @hash   1380962452
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
@@ -190,17 +190,17 @@ public:
 #endif
     /**
      * @symbol ??0PotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   740147140
+     * @hash   740977444
      */
     MCAPI PotionItem(std::string const &, int);
     /**
      * @symbol ?applyEffect@PotionItem@@SAXPEAVThrownPotion@@AEBVItemStack@@@Z
-     * @hash   1052419840
+     * @hash   1053250144
      */
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     /**
      * @symbol ?isDestructivePotion@PotionItem@@SA_NW4PotionVariant@Potion@@@Z
-     * @hash   2097027827
+     * @hash   2097858131
      */
     MCAPI static bool isDestructivePotion(enum class Potion::PotionVariant);
 

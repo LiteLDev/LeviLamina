@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?tryGetDefinitionSerializer@EntityGoalFactory@@QEAAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1088138138
+     * @hash   1088184266
      */
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
     /**
      * @symbol ??1EntityGoalFactory@@QEAA@XZ
-     * @hash   -420358352
+     * @hash   -420312224
      */
     MCAPI ~EntityGoalFactory();
     /**
      * @symbol ?addGoals@EntityGoalFactory@@SAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
-     * @hash   -131090883
+     * @hash   -130260579
      */
     MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
 

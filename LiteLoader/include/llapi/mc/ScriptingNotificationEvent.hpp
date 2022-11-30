@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ScriptingNotificationEvent@@QEAA@XZ
-     * @hash   -561878430
+     * @hash   -561786174
      */
     MCAPI ~ScriptingNotificationEvent();
 

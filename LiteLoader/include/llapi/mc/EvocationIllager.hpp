@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@EvocationIllager@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1281362065
+     * @hash   1281408193
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -1056683377
+     * @hash   -1056637249
      */
     virtual void die(class ActorDamageSource const &);
     /**
@@ -162,7 +162,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@EvocationIllager@@UEAAXXZ
-     * @hash   1834897951
+     * @hash   1834944079
      */
     virtual void aiStep();
     /**
@@ -173,7 +173,7 @@ public:
     /**
      * @vftbl  310
      * @symbol ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
-     * @hash   -1105806865
+     * @hash   -1105760737
      */
     virtual bool isAlliedTo(class Mob *);
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@EvocationIllager@@MEBAHXZ
-     * @hash   -715149472
+     * @hash   -715103344
      */
     virtual int getArmorValue() const;
     /**
@@ -211,7 +211,7 @@ public:
 #endif
     /**
      * @symbol ??0EvocationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   991546296
+     * @hash   991592424
      */
     MCAPI EvocationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

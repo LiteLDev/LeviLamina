@@ -46,18 +46,18 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   443069435
+     * @hash   443899739
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ
-     * @hash   -1301761682
+     * @hash   -1301715554
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0CapacitorComponent@@QEAA@XZ
-     * @hash   1460979735
+     * @hash   1461810039
      */
     MCAPI CapacitorComponent();
 

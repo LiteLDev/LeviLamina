@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0BedrockLoadContext@@QEAA@AEBVSemVersion@@@Z
-     * @hash   -1873232726
+     * @hash   -1872402422
      */
     MCAPI BedrockLoadContext(class SemVersion const &);
     /**

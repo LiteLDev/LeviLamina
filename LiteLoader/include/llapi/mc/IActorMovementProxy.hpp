@@ -42,7 +42,7 @@ public:
 #endif
     /**
      * @symbol ?getRegionAsConstBlockSource@IActorMovementProxy@@QEBAAEBVIConstBlockSource@@XZ
-     * @hash   -1582329288
+     * @hash   -1582283160
      */
     MCAPI class IConstBlockSource const & getRegionAsConstBlockSource() const;
 

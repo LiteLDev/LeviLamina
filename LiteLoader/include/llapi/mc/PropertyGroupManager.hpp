@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0PropertyGroupManager@@QEAA@XZ
-     * @hash   541173071
+     * @hash   541219199
      */
     MCAPI PropertyGroupManager();
     /**
      * @symbol ?getActorPropertyDataTag@PropertyGroupManager@@QEBA?AVCompoundTag@@AEBVHashedString@@@Z
-     * @hash   -1067300743
+     * @hash   -1067254615
      */
     MCAPI class CompoundTag getActorPropertyDataTag(class HashedString const &) const;
     /**
      * @symbol ?registerGroup@PropertyGroupManager@@QEAAXAEBVHashedString@@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@Z
-     * @hash   -1853810136
+     * @hash   -1853764008
      */
     MCAPI void registerGroup(class HashedString const &, class std::shared_ptr<class PropertyGroup const>);
     /**
      * @symbol ?tryInitPropertiesOnActor@PropertyGroupManager@@QEBAXAEAVActor@@@Z
-     * @hash   425175818
+     * @hash   425221946
      */
     MCAPI void tryInitPropertiesOnActor(class Actor &) const;
     /**
      * @symbol ??1PropertyGroupManager@@QEAA@XZ
-     * @hash   -1395156339
+     * @hash   -1395110211
      */
     MCAPI ~PropertyGroupManager();
 

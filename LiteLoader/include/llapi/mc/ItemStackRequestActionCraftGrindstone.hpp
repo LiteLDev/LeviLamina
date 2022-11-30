@@ -52,29 +52,29 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1292271180
+     * @hash   1293101484
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftGrindstone@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -600529148
+     * @hash   -599698844
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  6
      * @symbol ?getRecipeNetId@ItemStackRequestActionCraftGrindstone@@UEBAAEBUItemStackNetIdVariant@@XZ
-     * @hash   1236558569
+     * @hash   1236604697
      */
     virtual struct ItemStackNetIdVariant const & getRecipeNetId() const;
     /**
      * @symbol ??0ItemStackRequestActionCraftGrindstone@@QEAA@XZ
-     * @hash   826331229
+     * @hash   827161533
      */
     MCAPI ItemStackRequestActionCraftGrindstone();
     /**
      * @symbol ?getRepairCost@ItemStackRequestActionCraftGrindstone@@QEBAHXZ
-     * @hash   -1401001480
+     * @hash   -1400955352
      */
     MCAPI int getRepairCost() const;
 

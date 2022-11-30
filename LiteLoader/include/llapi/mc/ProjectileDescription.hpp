@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@ProjectileDescription@@UEBAPEBDXZ
-     * @hash   -244013999
+     * @hash   -243967871
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@ProjectileDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -1698783982
+     * @hash   -1698737854
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@ProjectileDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   1635415164
+     * @hash   1635461292
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0ProjectileDescription@@QEAA@XZ
-     * @hash   2017042703
+     * @hash   2017088831
      */
     MCAPI ProjectileDescription();
 

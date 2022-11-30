@@ -56,37 +56,37 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@BaseCircuitComponent@@UEBAHXZ
-     * @hash   1858967965
+     * @hash   1859014093
      */
     virtual int getStrength() const;
     /**
      * @vftbl  2
      * @symbol ?getDirection@BaseCircuitComponent@@UEBAHXZ
-     * @hash   -1732968225
+     * @hash   -1732137921
      */
     virtual int getDirection() const;
     /**
      * @vftbl  3
      * @symbol ?setStrength@BaseCircuitComponent@@UEAAXH@Z
-     * @hash   -935686614
+     * @hash   -935640486
      */
     virtual void setStrength(int);
     /**
      * @vftbl  4
      * @symbol ?setDirection@BaseCircuitComponent@@UEAAXE@Z
-     * @hash   -1062334770
+     * @hash   -1061504466
      */
     virtual void setDirection(unsigned char);
     /**
      * @vftbl  5
      * @symbol ?setConsumePowerAnyDirection@BaseCircuitComponent@@UEAAX_N@Z
-     * @hash   822443212
+     * @hash   823273516
      */
     virtual void setConsumePowerAnyDirection(bool);
     /**
      * @vftbl  6
      * @symbol ?canConsumePowerAnyDirection@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -348058785
+     * @hash   -347966529
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
@@ -110,7 +110,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?removeSource@BaseCircuitComponent@@UEAA_NAEBVBlockPos@@PEBV1@@Z
-     * @hash   1749930001
+     * @hash   1750760305
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
@@ -163,7 +163,7 @@ public:
     /**
      * @vftbl  19
      * @symbol ?hasSource@BaseCircuitComponent@@UEAA_NAEAV1@@Z
-     * @hash   -1836007578
+     * @hash   -1835177274
      */
     virtual bool hasSource(class BaseCircuitComponent &);
     /**
@@ -180,7 +180,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?removeFromAnySourceList@BaseCircuitComponent@@MEAA_NPEBV1@@Z
-     * @hash   -1997155756
+     * @hash   -1996325452
      */
     virtual bool removeFromAnySourceList(class BaseCircuitComponent const *);
     /**
@@ -192,7 +192,7 @@ public:
     /**
      * @vftbl  24
      * @symbol ?getCircuitComponentGroupType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -1465624340
+     * @hash   -1464794036
      */
     virtual enum class CircuitComponentType getCircuitComponentGroupType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
@@ -209,39 +209,39 @@ public:
 #endif
     /**
      * @symbol ??0BaseCircuitComponent@@QEAA@XZ
-     * @hash   1568424081
+     * @hash   1569254385
      */
     MCAPI BaseCircuitComponent();
     /**
      * @symbol ?addSourceItem@BaseCircuitComponent@@QEAAXAEBVItem@CircuitComponentList@@@Z
-     * @hash   1493397726
+     * @hash   1494228030
      */
     MCAPI void addSourceItem(class CircuitComponentList::Item const &);
     /**
      * @symbol ?hasDirectPower@BaseCircuitComponent@@QEAA_NXZ
-     * @hash   -319137688
+     * @hash   -318307384
      */
     MCAPI bool hasDirectPower();
     /**
      * @symbol ?isRemoved@BaseCircuitComponent@@QEBA_NXZ
-     * @hash   2095941586
+     * @hash   2096771890
      */
     MCAPI bool isRemoved() const;
     /**
      * @symbol ?removeFromSourceAndDestinationList@BaseCircuitComponent@@QEAA?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VItem@CircuitComponentList@@@std@@@std@@@std@@V23@@Z
-     * @hash   -1306505038
+     * @hash   -1305674734
      */
     MCAPI class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>> removeFromSourceAndDestinationList(class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>>);
     /**
      * @symbol ?setRemoved@BaseCircuitComponent@@QEAAXXZ
-     * @hash   -752034875
+     * @hash   -751204571
      */
     MCAPI void setRemoved();
 
 //protected:
     /**
      * @symbol ?trackPowerSource@BaseCircuitComponent@@IEAA_NAEBVCircuitTrackingInfo@@H_NH1@Z
-     * @hash   -1566171384
+     * @hash   -1565341080
      */
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int, bool);
 

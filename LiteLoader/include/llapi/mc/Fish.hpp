@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@Fish@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1346729368
+     * @hash   -1346683240
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Fish@@UEAAXXZ
-     * @hash   -1032390477
+     * @hash   -1032344349
      */
     virtual void normalTick();
     /**
@@ -148,7 +148,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Fish@@UEAAXAEAVRenderParams@@@Z
-     * @hash   145539696
+     * @hash   145585824
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  338
      * @symbol ?createAIGoals@Fish@@UEAA_NXZ
-     * @hash   -473963251
+     * @hash   -473917123
      */
     virtual bool createAIGoals();
     /**
@@ -199,12 +199,12 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Fish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1599025828
+     * @hash   1599071956
      */
     MCAPI Fish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@Fish@@QEAAXXZ
-     * @hash   -999977195
+     * @hash   -999931067
      */
     MCAPI void postNormalTick();
 

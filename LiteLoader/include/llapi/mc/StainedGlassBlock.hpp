@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@StainedGlassBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   1157502460
+     * @hash   1158332764
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -155,7 +155,7 @@ public:
     /**
      * @vftbl  66
      * @symbol ?canBeUsedInCommands@StainedGlassBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-     * @hash   169652754
+     * @hash   170483058
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@StainedGlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -219131162
+     * @hash   -218300858
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@StainedGlassBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   201274988
+     * @hash   202105292
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -219,7 +219,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@StainedGlassBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -850982420
+     * @hash   -850152116
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -250,7 +250,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@StainedGlassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1199316857
+     * @hash   1200147161
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -261,12 +261,12 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@StainedGlassBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1067935451
+     * @hash   1068765755
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0StainedGlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N2@Z
-     * @hash   -1704623705
+     * @hash   -1703793401
      */
     MCAPI StainedGlassBlock(std::string const &, int, class Material const &, bool, bool);
 

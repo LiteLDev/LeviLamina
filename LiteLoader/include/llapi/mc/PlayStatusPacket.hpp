@@ -61,29 +61,29 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@PlayStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -796969411
+     * @hash   -796923283
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -259721462
+     * @hash   -259675334
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlayStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1935527322
+     * @hash   1935573450
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayStatusPacket@@QEAA@XZ
-     * @hash   -976109110
+     * @hash   -976062982
      */
     MCAPI PlayStatusPacket();
     /**
      * @symbol ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-     * @hash   -817654815
+     * @hash   -817608687
      */
     MCAPI PlayStatusPacket(enum class PlayStatus);
 

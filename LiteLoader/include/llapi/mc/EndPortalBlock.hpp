@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@EndPortalBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1096199180
+     * @hash   1097029484
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@EndPortalBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1007877018
+     * @hash   -1007046714
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@EndPortalBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   259127143
+     * @hash   259957447
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@EndPortalBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   588791092
+     * @hash   589621396
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -206,7 +206,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@EndPortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   624473728
+     * @hash   625304032
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@EndPortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -66476165
+     * @hash   -65645861
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -258,7 +258,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@EndPortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   387425402
+     * @hash   388255706
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -285,7 +285,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getEntityResourceItem@EndPortalBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-     * @hash   -856852460
+     * @hash   -856022156
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCK
@@ -297,7 +297,7 @@ public:
 #endif
     /**
      * @symbol ??0EndPortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -815362060
+     * @hash   -814531756
      */
     MCAPI EndPortalBlock(std::string const &, int);
 

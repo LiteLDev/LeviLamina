@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@PlayAnimationCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1812463608
+     * @hash   1812509736
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@PlayAnimationCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1330515676
+     * @hash   1330561804
      */
     MCAPI static void setup(class CommandRegistry &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
-     * @hash   -1368960383
+     * @hash   -1368837375
      */
     MCAPI static enum class MolangVersion const mStopExpressionVersion;
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0RideableComponent@@QEAA@XZ
-     * @hash   -1618043209
+     * @hash   -1617997081
      */
     MCAPI RideableComponent();
     /**
@@ -45,22 +45,22 @@ public:
     MCAPI RideableComponent(class RideableComponent &&);
     /**
      * @symbol ?areSeatsFull@RideableComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   -395937009
+     * @hash   -395890881
      */
     MCAPI bool areSeatsFull(class Actor const &) const;
     /**
      * @symbol ?canAddPassenger@RideableComponent@@QEBA_NAEBVActor@@AEAV2@@Z
-     * @hash   981208781
+     * @hash   981254909
      */
     MCAPI bool canAddPassenger(class Actor const &, class Actor &) const;
     /**
      * @symbol ?getFirstAvailableSeatPosition@RideableComponent@@QEBA_NAEBVActor@@AEAV2@AEAVVec3@@@Z
-     * @hash   2053312328
+     * @hash   2053358456
      */
     MCAPI bool getFirstAvailableSeatPosition(class Actor const &, class Actor &, class Vec3 &) const;
     /**
      * @symbol ?getInteraction@RideableComponent@@QEBA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -2112789561
+     * @hash   -2112743433
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &) const;
     /**
@@ -70,7 +70,7 @@ public:
     MCAPI int getSeatCount() const;
     /**
      * @symbol ?getSeats@RideableComponent@@QEBAAEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@XZ
-     * @hash   -1419307850
+     * @hash   -1419261722
      */
     MCAPI std::vector<struct SeatDescription> const & getSeats() const;
     /**
@@ -80,12 +80,12 @@ public:
     MCAPI class RideableComponent & operator=(class RideableComponent &&);
     /**
      * @symbol ?positionPassenger@RideableComponent@@QEBAXAEAVActor@@0@Z
-     * @hash   169255609
+     * @hash   169301737
      */
     MCAPI void positionPassenger(class Actor &, class Actor &) const;
     /**
      * @symbol ?pullInEntity@RideableComponent@@QEBA_NAEAVActor@@0@Z
-     * @hash   920381038
+     * @hash   920427166
      */
     MCAPI bool pullInEntity(class Actor &, class Actor &) const;
     /**
@@ -97,7 +97,7 @@ public:
 //private:
     /**
      * @symbol ?_setCanPlayerRide@RideableComponent@@AEBAXAEAVPlayer@@_N@Z
-     * @hash   983537599
+     * @hash   983583727
      */
     MCAPI void _setCanPlayerRide(class Player &, bool) const;
 

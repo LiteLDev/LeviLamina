@@ -219,12 +219,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PodzolBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1904272841
+     * @hash   1905103145
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0PodzolBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -933209287
+     * @hash   -932378983
      */
     MCAPI PodzolBlock(std::string const &, int);
 

@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0BoostableComponent@@QEAA@XZ
-     * @hash   1683299756
+     * @hash   1683345884
      */
     MCAPI BoostableComponent();
     /**
@@ -41,42 +41,42 @@ public:
     MCAPI int getBoostTime() const;
     /**
      * @symbol ?getBoostTimeTotal@BoostableComponent@@QEBAHXZ
-     * @hash   -1511532234
+     * @hash   -1511486106
      */
     MCAPI int getBoostTimeTotal() const;
     /**
      * @symbol ?getIsBoosting@BoostableComponent@@QEBA_NXZ
-     * @hash   -1994007186
+     * @hash   -1993961058
      */
     MCAPI bool getIsBoosting() const;
     /**
      * @symbol ?itemUseText@BoostableComponent@@QEAA_NAEBVPlayer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -915914562
+     * @hash   -915868434
      */
     MCAPI bool itemUseText(class Player const &, std::string &);
     /**
      * @symbol ?onItemInteract@BoostableComponent@@QEAA_NAEAVActor@@AEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   -497400017
+     * @hash   -497353889
      */
     MCAPI bool onItemInteract(class Actor &, class ItemStack &, class Player &);
     /**
      * @symbol ?removePassenger@BoostableComponent@@QEAAXAEAVPlayer@@@Z
-     * @hash   -1220234804
+     * @hash   -1220188676
      */
     MCAPI void removePassenger(class Player &);
     /**
      * @symbol ?setBoostTime@BoostableComponent@@QEAAXH@Z
-     * @hash   -1969456010
+     * @hash   -1969409882
      */
     MCAPI void setBoostTime(int);
     /**
      * @symbol ?setIsBoosting@BoostableComponent@@QEAAX_N@Z
-     * @hash   -1246859626
+     * @hash   -1246813498
      */
     MCAPI void setIsBoosting(bool);
     /**
      * @symbol ?getSpeedModifierBoosting@BoostableComponent@@SA?AV?$shared_ptr@VAttributeModifier@@@std@@XZ
-     * @hash   1351246505
+     * @hash   1351292633
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 

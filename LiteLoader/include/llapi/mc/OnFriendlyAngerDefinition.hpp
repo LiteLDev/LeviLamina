@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@OnFriendlyAngerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnFriendlyAngerDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -686092578
+     * @hash   -686000322
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnFriendlyAngerDefinition>> &);
 

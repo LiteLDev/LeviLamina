@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0ItemStartUseOnEvent@@QEAA@AEBU0@@Z
-     * @hash   1426309877
+     * @hash   1426356005
      */
     MCAPI ItemStartUseOnEvent(struct ItemStartUseOnEvent const &);
     /**

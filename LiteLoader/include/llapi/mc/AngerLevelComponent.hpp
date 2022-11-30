@@ -29,104 +29,104 @@ public:
 public:
     /**
      * @symbol ??0AngerLevelComponent@@QEAA@AEBV0@@Z
-     * @hash   1004237777
+     * @hash   1004283905
      */
     MCAPI AngerLevelComponent(class AngerLevelComponent const &);
     /**
      * @symbol ??0AngerLevelComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1092597543
+     * @hash   -1092551415
      */
     MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@AngerLevelComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   186068312
+     * @hash   186114440
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?belowAngryThreshold@AngerLevelComponent@@QEBA_NUActorUniqueID@@@Z
-     * @hash   -1864503263
+     * @hash   -1864457135
      */
     MCAPI bool belowAngryThreshold(struct ActorUniqueID) const;
     /**
      * @symbol ?canBeNuisance@AngerLevelComponent@@QEBA_NPEAVActor@@0@Z
-     * @hash   -1496949855
+     * @hash   -1496903727
      */
     MCAPI bool canBeNuisance(class Actor *, class Actor *) const;
     /**
      * @symbol ?getAngerForAnimations@AngerLevelComponent@@QEBAHAEAVActor@@@Z
-     * @hash   -1793743881
+     * @hash   -1793697753
      */
     MCAPI int getAngerForAnimations(class Actor &) const;
     /**
      * @symbol ?getTopActiveNuisance@AngerLevelComponent@@QEBA?AV?$optional@U?$pair@PEAVActor@@H@std@@@std@@PEAVActor@@AEBVILevel@@@Z
-     * @hash   -1321385070
+     * @hash   -1321338942
      */
     MCAPI class std::optional<struct std::pair<class Actor *, int>> getTopActiveNuisance(class Actor *, class ILevel const &) const;
     /**
      * @symbol ?isAngry@AngerLevelComponent@@QEBA_NXZ
-     * @hash   1977807230
+     * @hash   1977853358
      */
     MCAPI bool isAngry() const;
     /**
      * @symbol ??4AngerLevelComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1493753500
+     * @hash   -1493707372
      */
     MCAPI class AngerLevelComponent & operator=(class AngerLevelComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@AngerLevelComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1176244496
+     * @hash   -1176198368
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tick@AngerLevelComponent@@QEAAXPEAVActor@@AEBVILevel@@@Z
-     * @hash   2094176466
+     * @hash   2094222594
      */
     MCAPI void tick(class Actor *, class ILevel const &);
     /**
      * @symbol ?tryIncreaseAngerAt@AngerLevelComponent@@QEAAXAEAVActor@@0H_N@Z
-     * @hash   -1784137801
+     * @hash   -1784091673
      */
     MCAPI void tryIncreaseAngerAt(class Actor &, class Actor &, int, bool);
     /**
      * @symbol ??1AngerLevelComponent@@QEAA@XZ
-     * @hash   61443468
+     * @hash   61489596
      */
     MCAPI ~AngerLevelComponent();
     /**
      * @symbol ?DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS@AngerLevelComponent@@2MB
-     * @hash   1120029741
+     * @hash   1120152749
      */
     MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
     /**
      * @symbol ?DEFAULT_ANGRY_BOOST@AngerLevelComponent@@2HB
-     * @hash   390962919
+     * @hash   391085927
      */
     MCAPI static int const DEFAULT_ANGRY_BOOST;
     /**
      * @symbol ?DEFAULT_ANGRY_THRESHOLD@AngerLevelComponent@@2HB
-     * @hash   -82040849
+     * @hash   -81917841
      */
     MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
     /**
      * @symbol ?DEFAULT_MAX_ANGER_LEVEL@AngerLevelComponent@@2HB
-     * @hash   1334317299
+     * @hash   1334440307
      */
     MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
     /**
      * @symbol ?DEFAULT_SHOULD_REMOVE_TARGET@AngerLevelComponent@@2_NB
-     * @hash   938876773
+     * @hash   938999781
      */
     MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
 
 //private:
     /**
      * @symbol ?_createOrModifyAngerLevel@AngerLevelComponent@@AEAAXAEBVActor@@AEBV?$function@$$A6AHH@Z@std@@@Z
-     * @hash   -424801640
+     * @hash   -424755512
      */
     MCAPI void _createOrModifyAngerLevel(class Actor const &, class std::function<int (int)> const &);
     /**
      * @symbol ?_getListeningSoundEvent@AngerLevelComponent@@AEBA?AV?$optional@W4LevelSoundEvent@@@std@@AEAVActor@@@Z
-     * @hash   719225463
+     * @hash   719271591
      */
     MCAPI class std::optional<enum class LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
 

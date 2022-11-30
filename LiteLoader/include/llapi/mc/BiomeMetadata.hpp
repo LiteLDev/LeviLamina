@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BiomeMetadata@@QEAA@XZ
-     * @hash   724526699
+     * @hash   724572827
      */
     MCAPI ~BiomeMetadata();
 

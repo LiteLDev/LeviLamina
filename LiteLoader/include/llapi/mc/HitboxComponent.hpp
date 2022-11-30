@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0HitboxComponent@@QEAA@AEBV0@@Z
-     * @hash   462701761
+     * @hash   462747889
      */
     MCAPI HitboxComponent(class HitboxComponent const &);
     /**
      * @symbol ?fromCompoundTag@HitboxComponent@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   985735992
+     * @hash   986566296
      */
     MCAPI void fromCompoundTag(class CompoundTag const &);
     /**
      * @symbol ??4HitboxComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -452491570
+     * @hash   -452445442
      */
     MCAPI class HitboxComponent & operator=(class HitboxComponent &&);
     /**
      * @symbol ?toCompoundTag@HitboxComponent@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   -706646258
+     * @hash   -705815954
      */
     MCAPI void toCompoundTag(class CompoundTag &);
     /**
      * @symbol ??1HitboxComponent@@QEAA@XZ
-     * @hash   1368208865
+     * @hash   1368254993
      */
     MCAPI ~HitboxComponent();
 

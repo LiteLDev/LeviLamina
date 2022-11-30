@@ -129,7 +129,7 @@ public:
     /**
      * @vftbl  21
      * @symbol ?onChunkLoaded@BlockActorLevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     * @hash   1865632625
+     * @hash   1866462929
      */
     virtual void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
@@ -145,12 +145,12 @@ public:
     /**
      * @vftbl  24
      * @symbol ?onChunkUnloaded@BlockActorLevelListener@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -1908982376
+     * @hash   -1908152072
      */
     virtual void onChunkUnloaded(class LevelChunk &);
     /**
      * @symbol ??0BlockActorLevelListener@@QEAA@XZ
-     * @hash   -311104836
+     * @hash   -310274532
      */
     MCAPI BlockActorLevelListener();
 

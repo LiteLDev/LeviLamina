@@ -43,7 +43,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@DamageOverTimeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   493922527
+     * @hash   493968655
      */
     virtual void tick(class EntityRegistry &);
 

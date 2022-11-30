@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@PulseCapacitor@@UEBAHXZ
-     * @hash   1776737657
+     * @hash   1776783785
      */
     virtual int getStrength() const;
     /**
      * @vftbl  3
      * @symbol ?setStrength@PulseCapacitor@@UEAAXH@Z
-     * @hash   14522606
+     * @hash   15352910
      */
     virtual void setStrength(int);
     /**
@@ -62,13 +62,13 @@ public:
     /**
      * @vftbl  12
      * @symbol ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   1836161785
+     * @hash   1836992089
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -759184833
+     * @hash   -758354529
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
@@ -84,18 +84,18 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -1917106867
+     * @hash   -1916276563
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
-     * @hash   -116301024
+     * @hash   -115470720
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0PulseCapacitor@@QEAA@XZ
-     * @hash   462463717
+     * @hash   463294021
      */
     MCAPI PulseCapacitor();
 

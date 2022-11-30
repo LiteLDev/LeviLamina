@@ -43,12 +43,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@BlockPosTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1851414368
+     * @hash   1851460496
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?_tickBlockPosTrackerComponent@BlockPosTrackerSystem@@SAXAEAVActor@@AEAVBlockPosTrackerComponent@@@Z
-     * @hash   -1933808651
+     * @hash   -1933762523
      */
     MCAPI static void _tickBlockPosTrackerComponent(class Actor &, class BlockPosTrackerComponent &);
 

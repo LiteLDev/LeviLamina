@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -65140351
+     * @hash   -65094223
      */
     virtual std::string readString();
     /**
      * @vftbl  2
      * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1322610211
+     * @hash   -1322564083
      */
     virtual std::string readLongString();
     /**

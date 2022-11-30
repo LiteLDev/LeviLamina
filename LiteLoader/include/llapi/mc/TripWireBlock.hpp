@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@TripWireBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   79604259
+     * @hash   80434563
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@TripWireBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   105430279
+     * @hash   106260583
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@TripWireBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   387178871
+     * @hash   388009175
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -182,13 +182,13 @@ public:
     /**
      * @vftbl  112
      * @symbol ?shouldTriggerEntityInside@TripWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1101511818
+     * @hash   -1100681514
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @vftbl  113
      * @symbol ?entityInside@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -780735635
+     * @hash   -779905331
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@TripWireBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   217372477
+     * @hash   218202781
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -225,13 +225,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@TripWireBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1895055846
+     * @hash   -1894225542
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  163
      * @symbol ?onRemove@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   597008604
+     * @hash   597838908
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1015260735
+     * @hash   -1014430431
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1357328007
+     * @hash   -1356497703
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -279,29 +279,29 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TripWireBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -538587983
+     * @hash   -537757679
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0TripWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -895743791
+     * @hash   -894913487
      */
     MCAPI TripWireBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?checkPressed@TripWireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -103896208
+     * @hash   -103065904
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isEntityInsideTriggerable@TripWireBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1288253543
+     * @hash   -1287423239
      */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?updateSource@TripWireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -695879008
+     * @hash   -695048704
      */
     MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;
 

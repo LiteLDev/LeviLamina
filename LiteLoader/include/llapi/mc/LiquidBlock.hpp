@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@LiquidBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1261727743
+     * @hash   -1260897439
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -161,7 +161,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@LiquidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   145744869
+     * @hash   146575173
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  90
      * @symbol ?mayPick@LiquidBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-     * @hash   -2029956430
+     * @hash   -2029126126
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1406581075
+     * @hash   1407411379
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -194,7 +194,7 @@ public:
     /**
      * @vftbl  110
      * @symbol ?handleEntityInside@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@AEAVVec3@@@Z
-     * @hash   1210335588
+     * @hash   1211165892
      */
     virtual void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
     /**
@@ -220,25 +220,25 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@LiquidBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -448210861
+     * @hash   -447380557
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  137
      * @symbol ?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   475766372
+     * @hash   476596676
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@LiquidBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -842868115
+     * @hash   -842037811
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
      * @vftbl  151
      * @symbol ?animateTick@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -9059482
+     * @hash   -8229178
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1567185901
+     * @hash   -1566355597
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@LiquidBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -527089003
+     * @hash   -526258699
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -303,61 +303,61 @@ public:
 #endif
     /**
      * @symbol ??0LiquidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1450223832
+     * @hash   1451054136
      */
     MCAPI LiquidBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?getTickDelay@LiquidBlock@@QEBAHAEAVBlockSource@@@Z
-     * @hash   1910185521
+     * @hash   1911015825
      */
     MCAPI int getTickDelay(class BlockSource &) const;
     /**
      * @symbol ?getHeightFromDepth@LiquidBlock@@SAMH@Z
-     * @hash   2086428403
+     * @hash   2087258707
      */
     MCAPI static float getHeightFromDepth(int);
     /**
      * @symbol ?handleEntityInside@LiquidBlock@@SAXAEBVIConstBlockSource@@AEBVBlockPos@@AEAVVec3@@AEBVMaterial@@@Z
-     * @hash   -833125859
+     * @hash   -832295555
      */
     MCAPI static void handleEntityInside(class IConstBlockSource const &, class BlockPos const &, class Vec3 &, class Material const &);
 
 //protected:
     /**
      * @symbol ?emitFizzParticle@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -859495445
+     * @hash   -858665141
      */
     MCAPI void emitFizzParticle(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?solidify@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1024751024
+     * @hash   -1023920720
      */
     MCAPI void solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @symbol ?trySpreadFire@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -849496892
+     * @hash   -848666588
      */
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?getDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-     * @hash   564365383
+     * @hash   565195687
      */
     MCAPI static int getDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
     /**
      * @symbol ?getRenderedDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-     * @hash   990429948
+     * @hash   991260252
      */
     MCAPI static int getRenderedDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 
 //private:
     /**
      * @symbol ?_solidify@LiquidBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -897943528
+     * @hash   -897113224
      */
     MCAPI void _solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @symbol ?_getFlow@LiquidBlock@@CA?AVVec3@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-     * @hash   411922337
+     * @hash   412752641
      */
     MCAPI static class Vec3 _getFlow(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 

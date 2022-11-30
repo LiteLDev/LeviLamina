@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ModuleIdentifier@@QEAA@XZ
-     * @hash   -2120479105
+     * @hash   -2120432977
      */
     MCAPI ~ModuleIdentifier();
 

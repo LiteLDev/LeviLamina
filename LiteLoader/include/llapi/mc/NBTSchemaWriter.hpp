@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1174084504
+     * @hash   1174914808
      */
     virtual bool write(std::string const &);
     /**
@@ -46,42 +46,42 @@ public:
     /**
      * @vftbl  3
      * @symbol ?write@NBTSchemaWriter@@UEAA_NM@Z
-     * @hash   1695272558
+     * @hash   1696102862
      */
     virtual bool write(float);
     /**
      * @vftbl  4
-     * @hash   -1744042924
+     * @hash   -1743212620
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1743119403
+     * @hash   -1742289099
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1742195882
+     * @hash   -1741365578
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1741180105
+     * @hash   -1740349801
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -1740256584
+     * @hash   -1739426280
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1739240807
+     * @hash   -1738410503
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -723140429
+     * @hash   -722310125
      */
     virtual void __unk_vfn_10();
     /**
@@ -97,31 +97,31 @@ public:
     /**
      * @vftbl  13
      * @symbol ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   13298435
+     * @hash   14128739
      */
     virtual bool pushMember(std::string const &);
     /**
      * @vftbl  14
      * @symbol ?popMember@NBTSchemaWriter@@UEAAXXZ
-     * @hash   -1050218562
+     * @hash   -1049388258
      */
     virtual void popMember();
     /**
      * @vftbl  15
      * @symbol ?openObject@NBTSchemaWriter@@UEAA_NXZ
-     * @hash   -109968594
+     * @hash   -109138290
      */
     virtual bool openObject();
     /**
      * @vftbl  16
      * @symbol ?openArray@NBTSchemaWriter@@UEAA_NXZ
-     * @hash   -661330940
+     * @hash   -660500636
      */
     virtual bool openArray();
     /**
      * @vftbl  17
      * @symbol ?close@NBTSchemaWriter@@UEAAXXZ
-     * @hash   28342939
+     * @hash   29173243
      */
     virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
@@ -142,50 +142,50 @@ public:
     MCVAPI bool write(__int64);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_N_N@Z
-     * @hash   -1661409784
+     * @hash   -1660579480
      */
     MCVAPI bool write(bool);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NE@Z
-     * @hash   -971437015
+     * @hash   -970606711
      */
     MCVAPI bool write(unsigned char);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NC@Z
-     * @hash   1181638480
+     * @hash   1182468784
      */
     MCVAPI bool write(signed char);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NF@Z
-     * @hash   -17258834
+     * @hash   -16428530
      */
     MCVAPI bool write(short);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NG@Z
-     * @hash   569021657
+     * @hash   569851961
      */
     MCVAPI bool write(unsigned short);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NH@Z
-     * @hash   -1018160197
+     * @hash   -1017329893
      */
     MCVAPI bool write(int);
     /**
      * @symbol ?write@NBTSchemaWriter@@UEAA_NI@Z
-     * @hash   -2018635610
+     * @hash   -2017805306
      */
     MCVAPI bool write(unsigned int);
 #endif
     /**
      * @symbol ??0NBTSchemaWriter@@QEAA@XZ
-     * @hash   903025456
+     * @hash   903855760
      */
     MCAPI NBTSchemaWriter();
 
 //private:
     /**
      * @symbol ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
-     * @hash   1083257524
+     * @hash   1084087828
      */
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 

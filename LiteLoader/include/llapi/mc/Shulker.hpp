@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Shulker@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1857242831
+     * @hash   -1857196703
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  21
      * @symbol ?setPos@Shulker@@UEAAXAEBVVec3@@@Z
-     * @hash   -1224832747
+     * @hash   -1224786619
      */
     virtual void setPos(class Vec3 const &);
     /**
@@ -57,13 +57,13 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Shulker@@UEAAXXZ
-     * @hash   -512115393
+     * @hash   -512069265
      */
     virtual void normalTick();
     /**
      * @vftbl  60
      * @symbol ?isInWall@Shulker@@UEBA_NXZ
-     * @hash   -960966395
+     * @hash   -960920267
      */
     virtual bool isInWall() const;
     /**
@@ -79,7 +79,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Shulker@@UEBAMXZ
-     * @hash   -1824101078
+     * @hash   -1824054950
      */
     virtual float getShadowRadius() const;
     /**
@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  115
      * @symbol ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
-     * @hash   1143140973
+     * @hash   1143187101
      */
     virtual bool canAttack(class Actor *, bool) const;
     /**
@@ -142,7 +142,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   318340602
+     * @hash   318386730
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
-     * @hash   -1040281397
+     * @hash   -1040235269
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -195,19 +195,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   432013380
+     * @hash   432059508
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1639826795
+     * @hash   1639872923
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   805918258
+     * @hash   805964386
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -218,7 +218,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Shulker@@EEAAXXZ
-     * @hash   1478973033
+     * @hash   1479019161
      */
     virtual void _onSizeUpdated();
     /**
@@ -234,19 +234,19 @@ public:
     /**
      * @vftbl  293
      * @symbol ?travel@Shulker@@UEAAXMMM@Z
-     * @hash   -682025523
+     * @hash   -681979395
      */
     virtual void travel(float, float, float);
     /**
      * @vftbl  295
      * @symbol ?aiStep@Shulker@@UEAAXXZ
-     * @hash   -1855837249
+     * @hash   -1855791121
      */
     virtual void aiStep();
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Shulker@@UEAA_N_N@Z
-     * @hash   1744593099
+     * @hash   1744639227
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -257,7 +257,7 @@ public:
     /**
      * @vftbl  309
      * @symbol ?getMaxHeadXRot@Shulker@@UEAAMXZ
-     * @hash   -2015700432
+     * @hash   -2015654304
      */
     virtual float getMaxHeadXRot();
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  317
      * @symbol ?getArmorValue@Shulker@@UEBAHXZ
-     * @hash   225523831
+     * @hash   225569959
      */
     virtual int getArmorValue() const;
     /**
@@ -306,12 +306,12 @@ public:
 #endif
     /**
      * @symbol ??0Shulker@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   155371848
+     * @hash   155417976
      */
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@Shulker@@QEAAXXZ
-     * @hash   726958347
+     * @hash   727004475
      */
     MCAPI void postNormalTick();
     /**
@@ -326,66 +326,66 @@ public:
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     /**
      * @symbol ?postSetPosSetShulkerAttachPosAndPeekAmount@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-     * @hash   -1936922575
+     * @hash   -1936876447
      */
     MCAPI static void postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter, class BlockPos const &);
     /**
      * @symbol ?setShulkerAttachPos@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-     * @hash   1197713791
+     * @hash   1197759919
      */
     MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter, class BlockPos const &);
 
 //protected:
     /**
      * @symbol ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
-     * @hash   -1486710224
+     * @hash   -1486664096
      */
     MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
     /**
      * @symbol ?_setPeekAmount@Shulker@@KAXVSynchedActorDataWriter@@H@Z
-     * @hash   1738496739
+     * @hash   1738542867
      */
     MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int);
 
 //private:
     /**
      * @symbol ?_calculateBB@Shulker@@AEAAXXZ
-     * @hash   186262615
+     * @hash   186308743
      */
     MCAPI void _calculateBB();
     /**
      * @symbol ?_isPosOccupiedByOtherShulker@Shulker@@AEBA_NVBlockPos@@@Z
-     * @hash   -590827963
+     * @hash   -590781835
      */
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
     /**
      * @symbol ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
-     * @hash   733275491
+     * @hash   733321619
      */
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
     /**
      * @symbol ?_peekAmountTick@Shulker@@AEAAXXZ
-     * @hash   -799988561
+     * @hash   -799942433
      */
     MCAPI void _peekAmountTick();
     /**
      * @symbol ?_setAttachFace@Shulker@@AEAAXE@Z
-     * @hash   -1626290264
+     * @hash   -1626244136
      */
     MCAPI void _setAttachFace(unsigned char);
     /**
      * @symbol ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
-     * @hash   751206989
+     * @hash   751253117
      */
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     /**
      * @symbol ?_trySpawnShulker@Shulker@@AEAAXXZ
-     * @hash   616227853
+     * @hash   616273981
      */
     MCAPI void _trySpawnShulker();
     /**
      * @symbol ?_tryTeleportSomewhere@Shulker@@AEAA_NXZ
-     * @hash   -621926730
+     * @hash   -621880602
      */
     MCAPI bool _tryTeleportSomewhere();
 

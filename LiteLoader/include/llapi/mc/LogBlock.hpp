@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -869040458
+     * @hash   -868210154
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1036452025
+     * @hash   -1035621721
      */
     MCAPI LogBlock(std::string const &, int);
 

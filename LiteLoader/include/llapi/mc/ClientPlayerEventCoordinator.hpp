@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@@Z
-     * @hash   1402100127
+     * @hash   1402146255
      */
     MCAPI void sendPlayerDestroyedBlock(class Player &, class Block const &);
     /**
      * @symbol ?sendPlayerInput@ClientPlayerEventCoordinator@@QEAAXAEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z
-     * @hash   640461643
+     * @hash   640507771
      */
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
     /**
      * @symbol ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
-     * @hash   554817532
+     * @hash   554863660
      */
     MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 

@@ -179,19 +179,19 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@RespawnAnchorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -1175141722
+     * @hash   -1174311418
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
      * @vftbl  129
      * @symbol ?canSpawnAt@RespawnAnchorBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1800031665
+     * @hash   -1799201361
      */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /**
      * @vftbl  130
      * @symbol ?notifySpawnedAt@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1254659328
+     * @hash   -1253829024
      */
     virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
     /**
@@ -202,19 +202,19 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@RespawnAnchorBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   536347952
+     * @hash   537178256
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -485483611
+     * @hash   -484653307
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@RespawnAnchorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-     * @hash   190408904
+     * @hash   191239208
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RespawnAnchorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -2079868905
+     * @hash   -2079038601
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -246,13 +246,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   816520420
+     * @hash   817350724
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@RespawnAnchorBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -803179132
+     * @hash   -802348828
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -480058331
+     * @hash   -479228027
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RespawnAnchorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   62175134
+     * @hash   63005438
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
@@ -296,34 +296,34 @@ public:
 #endif
     /**
      * @symbol ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   144739838
+     * @hash   145570142
      */
     MCAPI RespawnAnchorBlock(std::string const &, int);
     /**
      * @symbol ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1783552128
+     * @hash   1784382432
      */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?getChargeLevel@RespawnAnchorBlock@@SAHAEBVBlock@@@Z
-     * @hash   -768153929
+     * @hash   -767323625
      */
     MCAPI static int getChargeLevel(class Block const &);
 
 //private:
     /**
      * @symbol ?bumpCharge@RespawnAnchorBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@F@Z
-     * @hash   -1315973900
+     * @hash   -1315143596
      */
     MCAPI static bool bumpCharge(class BlockSource &, class BlockPos const &, short);
     /**
      * @symbol ?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
-     * @hash   1332563260
+     * @hash   1333393564
      */
     MCAPI static void explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);
     /**
      * @symbol ?trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
-     * @hash   -1392062103
+     * @hash   -1391231799
      */
     MCAPI static bool trySetSpawn(class Player &, class BlockPos const &, class BlockSource &, class Level &);
 

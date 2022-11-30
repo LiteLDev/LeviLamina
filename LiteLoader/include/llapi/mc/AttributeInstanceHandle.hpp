@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ?getAttributeID@AttributeInstanceHandle@@QEBA?BIXZ
-     * @hash   874894466
+     * @hash   874940594
      */
     MCAPI unsigned int const getAttributeID() const;
     /**
      * @symbol ?getInstance@AttributeInstanceHandle@@QEBAAEBVAttributeInstance@@XZ
-     * @hash   -464946570
+     * @hash   -464900442
      */
     MCAPI class AttributeInstance const & getInstance() const;
     /**
      * @symbol ?getMutableInstance@AttributeInstanceHandle@@QEBAPEAVAttributeInstance@@XZ
-     * @hash   1586143593
+     * @hash   1586189721
      */
     MCAPI class AttributeInstance * getMutableInstance() const;
     /**
      * @symbol ?inheritFrom@AttributeInstanceHandle@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
-     * @hash   -170067460
+     * @hash   -170021332
      */
     MCAPI void inheritFrom(class AttributeInstanceHandle const &, class BaseAttributeMap *);
     /**
      * @symbol ??8AttributeInstanceHandle@@QEBA_NAEBV0@@Z
-     * @hash   -1066892578
+     * @hash   -1066846450
      */
     MCAPI bool operator==(class AttributeInstanceHandle const &) const;
 

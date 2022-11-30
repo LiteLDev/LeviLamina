@@ -70,13 +70,13 @@ public:
     /**
      * @vftbl  54
      * @symbol ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
-     * @hash   -386050521
+     * @hash   -385220217
      */
     virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@BannerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -750441136
+     * @hash   -749610832
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -87,7 +87,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@BannerItem@@UEBA_NH@Z
-     * @hash   -179729307
+     * @hash   -178899003
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -112,34 +112,34 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BannerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   320552411
+     * @hash   321382715
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   540488287
+     * @hash   541318591
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0BannerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   921508749
+     * @hash   922339053
      */
     MCAPI BannerItem(std::string const &, int);
     /**
      * @symbol ?getPatternAndColorPairsFromItemStack@BannerItem@@SA?AV?$vector@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@V?$allocator@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@@2@@std@@AEBVItemStackBase@@@Z
-     * @hash   -1702412548
+     * @hash   -1701582244
      */
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum class ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0SavedDataStorage@@QEAA@PEAVLevelStorage@@@Z
-     * @hash   -650533638
+     * @hash   -649703334
      */
     MCAPI SavedDataStorage(class LevelStorage *);
     /**
      * @symbol ?loadAndSet@SavedDataStorage@@QEAA_NAEAVSavedData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2096575150
+     * @hash   2097405454
      */
     MCAPI bool loadAndSet(class SavedData &, std::string const &);
     /**
      * @symbol ?save@SavedDataStorage@@QEAAXXZ
-     * @hash   1572281349
+     * @hash   1573111653
      */
     MCAPI void save();
     /**
      * @symbol ?set@SavedDataStorage@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVSavedData@@@Z
-     * @hash   -943550479
+     * @hash   -942720175
      */
     MCAPI void set(std::string const &, class SavedData &);
 

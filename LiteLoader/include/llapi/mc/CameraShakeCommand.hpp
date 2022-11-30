@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@CameraShakeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -884732967
+     * @hash   -884686839
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@CameraShakeCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1640679588
+     * @hash   -1640633460
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_executeAdd@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -636939292
+     * @hash   -636893164
      */
     MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_executeStop@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1199763823
+     * @hash   -1199717695
      */
     MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
 

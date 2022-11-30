@@ -82,7 +82,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@CarrotOnAStickItem@@UEBAHXZ
-     * @hash   204090264
+     * @hash   204920568
      */
     virtual int getEnchantSlot() const;
     /**
@@ -118,12 +118,12 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
@@ -140,7 +140,7 @@ public:
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
      * @symbol ??0CarrotOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1661778958
+     * @hash   -1660948654
      */
     MCAPI CarrotOnAStickItem(std::string const &, int);
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getPreferredPath@PreferredPathComponent@@QEAAAEBUPreferredPathDescription@@AEAVActor@@@Z
-     * @hash   1954322737
+     * @hash   1955153041
      */
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
     /**

@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@GildedBlackstone@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1615594550
+     * @hash   1616424854
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -225,12 +225,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@GildedBlackstone@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   307018445
+     * @hash   307848749
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0GildedBlackstone@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -263351898
+     * @hash   -262521594
      */
     MCAPI GildedBlackstone(std::string const &, int, class Material const &);
 

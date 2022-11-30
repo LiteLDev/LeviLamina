@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@HayBlockBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   592964570
+     * @hash   593794874
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -216,7 +216,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@HayBlockBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   -1960254288
+     * @hash   -1959423984
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -236,7 +236,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0HayBlockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1390099698
+     * @hash   -1389269394
      */
     MCAPI HayBlockBlock(std::string const &, int);
 

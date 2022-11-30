@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ZombieVillager@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1750068705
+     * @hash   1750114833
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z
-     * @hash   113873402
+     * @hash   113919530
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -147,13 +147,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ZombieVillager@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1825612116
+     * @hash   1825658244
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ZombieVillager@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   271384873
+     * @hash   271431001
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -193,7 +193,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0ZombieVillager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1738285480
+     * @hash   1738331608
      */
     MCAPI ZombieVillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createResetPositionModeSystem@ResetPositionModeSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   234571960
+     * @hash   234618088
      */
     MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem();
 

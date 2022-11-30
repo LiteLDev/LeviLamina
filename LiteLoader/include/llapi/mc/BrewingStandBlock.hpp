@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@BrewingStandBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   1518817047
+     * @hash   1519647351
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@BrewingStandBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1892627529
+     * @hash   -1891797225
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@BrewingStandBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   1498028102
+     * @hash   1498858406
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BrewingStandBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   910831491
+     * @hash   911661795
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -209,7 +209,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@BrewingStandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   271850127
+     * @hash   272680431
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -220,13 +220,13 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@BrewingStandBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1120666478
+     * @hash   1121496782
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@BrewingStandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1833748444
+     * @hash   1834578748
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@BrewingStandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1227601032
+     * @hash   1228431336
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BrewingStandBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1699386203
+     * @hash   -1698555899
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCK
@@ -306,7 +306,7 @@ public:
 #endif
     /**
      * @symbol ??0BrewingStandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1781632981
+     * @hash   1782463285
      */
     MCAPI BrewingStandBlock(std::string const &, int);
 

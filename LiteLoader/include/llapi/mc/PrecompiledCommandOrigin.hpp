@@ -40,7 +40,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -281960433
+     * @hash   -281914305
      */
     virtual std::string const & getRequestId() const;
     /**
@@ -52,19 +52,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   628185067
+     * @hash   628231195
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   1068599256
+     * @hash   1068645384
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@PrecompiledCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   -619521209
+     * @hash   -619475081
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   1401989669
+     * @hash   1402035797
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -136,13 +136,13 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -655814188
+     * @hash   -655768060
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   368001067
+     * @hash   368047195
      */
     virtual class CompoundTag serialize() const;
     /**

@@ -33,7 +33,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@BreakBlocksDescription@@UEBAPEBDXZ
-     * @hash   -255701987
+     * @hash   -255655859
      */
     virtual char const * getJsonName() const;
     /**
@@ -44,18 +44,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
-     * @hash   -1346027834
+     * @hash   -1345981706
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @vftbl  3
      * @symbol ?serializeData@BreakBlocksDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1933654496
+     * @hash   -1933608368
      */
     virtual void serializeData(class Json::Value &) const;
     /**
      * @symbol ??0BreakBlocksDescription@@QEAA@XZ
-     * @hash   -485179629
+     * @hash   -485133501
      */
     MCAPI BreakBlocksDescription();
 

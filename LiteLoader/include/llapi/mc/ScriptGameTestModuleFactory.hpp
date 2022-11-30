@@ -40,24 +40,24 @@ public:
     virtual ~ScriptGameTestModuleFactory();
     /**
      * @symbol ??0ScriptGameTestModuleFactory@@QEAA@AEAVGameTestRegistry@gametest@@@Z
-     * @hash   -303629674
+     * @hash   -303583546
      */
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1552151432
+     * @hash   -1552105304
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
      * @symbol ?_addVersions@ScriptGameTestModuleFactory@@AEAAXXZ
-     * @hash   -2030582150
+     * @hash   -2030536022
      */
     MCAPI void _addVersions();
     /**
      * @symbol ?_generateBindings@ScriptGameTestModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1196398123
+     * @hash   -1196351995
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 

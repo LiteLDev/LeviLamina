@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@PlanksBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -795635997
+     * @hash   -794805693
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@PlanksBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1099671462
+     * @hash   -1098841158
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@PlanksBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -909717312
+     * @hash   -908887008
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -243,12 +243,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@PlanksBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1179391823
+     * @hash   -1178561519
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0PlanksBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   2095113994
+     * @hash   2095944298
      */
     MCAPI PlanksBlock(std::string const &, int);
     /**
@@ -258,7 +258,7 @@ public:
     MCAPI static class std::array<std::string, 8> const WOOD_NAMES;
     /**
      * @symbol ?isValidWoodMaterial@PlanksBlock@@SA_NH@Z
-     * @hash   54362063
+     * @hash   55192367
      */
     MCAPI static bool isValidWoodMaterial(int);
 

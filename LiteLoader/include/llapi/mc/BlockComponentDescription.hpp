@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1323999251
+     * @hash   -1323953123
      */
     virtual std::string const & getName() const;
     /**
@@ -87,7 +87,7 @@ public:
 #endif
     /**
      * @symbol ?bindType@BlockComponentDescription@@SAXXZ
-     * @hash   1880219599
+     * @hash   1881049903
      */
     MCAPI static void bindType();
     /**

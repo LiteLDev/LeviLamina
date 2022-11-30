@@ -33,42 +33,42 @@ public:
 public:
     /**
      * @symbol ??0NetworkEnableDisableListener@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-     * @hash   1439754829
+     * @hash   1439800957
      */
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
      * @symbol ?disable@NetworkEnableDisableListener@@QEAAXXZ
-     * @hash   953777475
+     * @hash   953823603
      */
     MCAPI void disable();
     /**
      * @symbol ?isDisabled@NetworkEnableDisableListener@@QEBA_NXZ
-     * @hash   -1893153772
+     * @hash   -1893107644
      */
     MCAPI bool isDisabled() const;
     /**
      * @symbol ?isEnabled@NetworkEnableDisableListener@@QEBA_NXZ
-     * @hash   -2057892952
+     * @hash   -2057846824
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ?isNetworkAllowed@NetworkEnableDisableListener@@QEBA_NXZ
-     * @hash   558634800
+     * @hash   558680928
      */
     MCAPI bool isNetworkAllowed() const;
     /**
      * @symbol ?isUninitialized@NetworkEnableDisableListener@@QEBA_NXZ
-     * @hash   -253852196
+     * @hash   -253806068
      */
     MCAPI bool isUninitialized() const;
     /**
      * @symbol ?tryEnable@NetworkEnableDisableListener@@QEAAXXZ
-     * @hash   -737682861
+     * @hash   -737636733
      */
     MCAPI void tryEnable();
     /**
      * @symbol ?uninitialize@NetworkEnableDisableListener@@QEAAXXZ
-     * @hash   -1597235723
+     * @hash   -1597189595
      */
     MCAPI void uninitialize();
 

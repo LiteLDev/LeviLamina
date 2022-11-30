@@ -101,27 +101,27 @@ public:
 #endif
     /**
      * @symbol ??0Goal@@QEAA@XZ
-     * @hash   -1018956897
+     * @hash   -1018910769
      */
     MCAPI Goal();
     /**
      * @symbol ?getRequiredControlFlags@Goal@@QEBAHXZ
-     * @hash   592048054
+     * @hash   592094182
      */
     MCAPI int getRequiredControlFlags() const;
     /**
      * @symbol ?getTypeId@Goal@@QEBAGXZ
-     * @hash   286127685
+     * @hash   286173813
      */
     MCAPI unsigned short getTypeId() const;
     /**
      * @symbol ?setRequiredControlFlags@Goal@@QEAAXH@Z
-     * @hash   356994184
+     * @hash   357040312
      */
     MCAPI void setRequiredControlFlags(int);
     /**
      * @symbol ?setTypeId@Goal@@QEAAXG@Z
-     * @hash   -1587733849
+     * @hash   -1587687721
      */
     MCAPI void setTypeId(unsigned short);
 

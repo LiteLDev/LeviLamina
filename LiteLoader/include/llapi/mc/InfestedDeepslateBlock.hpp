@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  161
      * @symbol ?tryGetUninfested@InfestedDeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   -1886230374
+     * @hash   -1885400070
      */
     virtual class Block const * tryGetUninfested(class Block const &) const;
     /**
@@ -224,7 +224,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0InfestedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1131195285
+     * @hash   -1130364981
      */
     MCAPI InfestedDeepslateBlock(std::string const &, int, class Material const &);
 

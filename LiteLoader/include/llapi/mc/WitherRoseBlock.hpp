@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@WitherRoseBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   335084205
+     * @hash   335914509
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   1876206869
+     * @hash   1877037173
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -208,7 +208,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@WitherRoseBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -311811550
+     * @hash   -310981246
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -220,13 +220,13 @@ public:
     /**
      * @vftbl  147
      * @symbol ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
-     * @hash   840338298
+     * @hash   841168602
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -2089438880
+     * @hash   -2088608576
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@WitherRoseBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1579955065
+     * @hash   1580785369
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -273,12 +273,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WitherRoseBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1237226448
+     * @hash   -1236396144
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0WitherRoseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1654902423
+     * @hash   -1654072119
      */
     MCAPI WitherRoseBlock(std::string const &, int);
 

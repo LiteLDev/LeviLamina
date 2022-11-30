@@ -30,29 +30,29 @@ public:
 public:
     /**
      * @symbol ??0BlockStateDefinition@@QEAA@AEBU0@@Z
-     * @hash   -2105313969
+     * @hash   -2104483665
      */
     MCAPI BlockStateDefinition(struct BlockStateDefinition const &);
     /**
      * @symbol ??4BlockStateDefinition@@QEAAAEAU0@AEBU0@@Z
-     * @hash   625339878
+     * @hash   626170182
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
     /**
      * @symbol ??4BlockStateDefinition@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1857574754
+     * @hash   1858405058
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
     /**
      * @symbol ??1BlockStateDefinition@@QEAA@XZ
-     * @hash   -1486025135
+     * @hash   -1485194831
      */
     MCAPI ~BlockStateDefinition();
 
 //private:
     /**
      * @symbol ?_copy@BlockStateDefinition@@AEAAXAEBU1@@Z
-     * @hash   1534515718
+     * @hash   1535346022
      */
     MCAPI void _copy(struct BlockStateDefinition const &);
 

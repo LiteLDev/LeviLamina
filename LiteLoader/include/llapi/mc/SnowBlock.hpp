@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@SnowBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -607602320
+     * @hash   -606772016
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -175,7 +175,7 @@ public:
     /**
      * @vftbl  124
      * @symbol ?calcGroundFriction@SnowBlock@@UEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
-     * @hash   252200064
+     * @hash   253030368
      */
     virtual float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /**
@@ -231,13 +231,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@SnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1545433664
+     * @hash   1545479792
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1949083208
+     * @hash   1949913512
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBLOCK
@@ -249,7 +249,7 @@ public:
 #endif
     /**
      * @symbol ??0SnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -849339944
+     * @hash   -848509640
      */
     MCAPI SnowBlock(std::string const &, int);
 

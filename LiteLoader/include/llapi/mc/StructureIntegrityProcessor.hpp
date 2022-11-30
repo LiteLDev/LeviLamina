@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0StructureIntegrityProcessor@@QEAA@MI@Z
-     * @hash   -874914792
+     * @hash   -874084488
      */
     MCAPI StructureIntegrityProcessor(float, unsigned int);
     /**
      * @symbol ?generateFlagsForIndices@StructureIntegrityProcessor@@QEBA?AV?$vector@_NV?$allocator@_N@std@@@std@@HH@Z
-     * @hash   -2032205480
+     * @hash   -2031375176
      */
     MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
 

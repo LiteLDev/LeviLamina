@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0CommandSyntaxInformation@@QEAA@XZ
-     * @hash   855415754
+     * @hash   855461882
      */
     MCAPI CommandSyntaxInformation();
     /**
      * @symbol ??1CommandSyntaxInformation@@QEAA@XZ
-     * @hash   -1071527688
+     * @hash   -1071481560
      */
     MCAPI ~CommandSyntaxInformation();
 

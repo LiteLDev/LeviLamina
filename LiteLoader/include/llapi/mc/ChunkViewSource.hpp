@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getExistingChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   -413540621
+     * @hash   -412710317
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
      * @vftbl  4
      * @symbol ?getRandomChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
-     * @hash   1776824370
+     * @hash   1777654674
      */
     virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /**
@@ -56,73 +56,73 @@ public:
     /**
      * @vftbl  18
      * @symbol ?acquireDiscarded@ChunkViewSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-     * @hash   83141539
+     * @hash   83971843
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
      * @vftbl  22
      * @symbol ?isWithinWorldLimit@ChunkViewSource@@UEBA_NAEBVChunkPos@@@Z
-     * @hash   -1252240417
+     * @hash   -1251410113
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
      * @symbol ??0ChunkViewSource@@QEAA@AEBV0@@Z
-     * @hash   171205185
+     * @hash   172035489
      */
     MCAPI ChunkViewSource(class ChunkViewSource const &);
     /**
      * @symbol ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
-     * @hash   782678220
+     * @hash   783508524
      */
     MCAPI ChunkViewSource(class ChunkSource &, enum class ChunkSource::LoadMode);
     /**
      * @symbol ??0ChunkViewSource@@QEAA@AEAVChunkSource@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@AEBUBounds@@@Z
-     * @hash   -741083078
+     * @hash   -740252774
      */
     MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
     /**
      * @symbol ?clear@ChunkViewSource@@QEAAXXZ
-     * @hash   -1803798609
+     * @hash   -1802968305
      */
     MCAPI void clear();
     /**
      * @symbol ?clearEntryAtChunkPos@ChunkViewSource@@QEAAXAEBVChunkPos@@@Z
-     * @hash   -419603356
+     * @hash   -418773052
      */
     MCAPI void clearEntryAtChunkPos(class ChunkPos const &);
     /**
      * @symbol ?enableBlockEntityAccess@ChunkViewSource@@QEAA?AV?$vector@VLevelChunkBlockActorAccessToken@@V?$allocator@VLevelChunkBlockActorAccessToken@@@std@@@std@@XZ
-     * @hash   165360380
+     * @hash   166190684
      */
     MCAPI std::vector<class LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
     /**
      * @symbol ?getArea@ChunkViewSource@@QEAAAEAV?$GridArea@V?$shared_ptr@VLevelChunk@@@std@@@@XZ
-     * @hash   -989305310
+     * @hash   -989259182
      */
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> & getArea();
     /**
      * @symbol ?move@ChunkViewSource@@QEAAXAEBUBounds@@_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z
-     * @hash   -1304511398
+     * @hash   -1303681094
      */
     MCAPI void move(struct Bounds const &, bool, enum class ChunkSource::ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, struct ActorUniqueID);
     /**
      * @symbol ?move@ChunkViewSource@@QEAAXAEBVBlockPos@@0_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z
-     * @hash   560659020
+     * @hash   561489324
      */
     MCAPI void move(class BlockPos const &, class BlockPos const &, bool, enum class ChunkSource::ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, struct ActorUniqueID);
     /**
      * @symbol ?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z
-     * @hash   -1418493983
+     * @hash   -1417663679
      */
     MCAPI void move(class BlockPos const &, int, bool, enum class ChunkSource::ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, struct ActorUniqueID);
     /**
      * @symbol ?rebuildSpecificArea@ChunkViewSource@@QEAAXAEBUBounds@@_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z
-     * @hash   739951784
+     * @hash   740782088
      */
     MCAPI void rebuildSpecificArea(struct Bounds const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     /**
      * @symbol ?getGenerateMode@ChunkViewSource@@SA?AW4ChunkSourceViewGenerateMode@ChunkSource@@_N0@Z
-     * @hash   581887949
+     * @hash   582718253
      */
     MCAPI static enum class ChunkSource::ChunkSourceViewGenerateMode getGenerateMode(bool, bool);
 

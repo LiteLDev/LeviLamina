@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0PlayerScore@@QEAA@AEBUScoreboardId@@H@Z
-     * @hash   343359153
+     * @hash   344189457
      */
     MCAPI PlayerScore(struct ScoreboardId const &, int);
     /**

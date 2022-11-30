@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@WoodSlabBlockItem@@UEBAHH@Z
-     * @hash   2075457293
+     * @hash   2076287597
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -100,12 +100,12 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
 

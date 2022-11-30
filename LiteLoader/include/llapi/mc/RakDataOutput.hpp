@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1139519373
+     * @hash   -1139473245
      */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
     /**
      * @vftbl  2
      * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -385473529
+     * @hash   -385427401
      */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**
@@ -86,7 +86,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
-     * @hash   98611263
+     * @hash   99441567
      */
     virtual void writeBytes(void const *, unsigned __int64);
 

@@ -38,19 +38,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -290642855
+     * @hash   -289812551
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  2
      * @symbol ?load@BaseMobSpawner@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   821268390
+     * @hash   822098694
      */
     virtual void load(class CompoundTag const &);
     /**
      * @vftbl  3
      * @symbol ?save@BaseMobSpawner@@UEAAXAEAVCompoundTag@@@Z
-     * @hash   -366616398
+     * @hash   -365786094
      */
     virtual void save(class CompoundTag &);
     /**
@@ -61,29 +61,29 @@ public:
     virtual class BlockPos const & getPos() = 0;
     /**
      * @symbol ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
-     * @hash   1410240498
+     * @hash   1411070802
      */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     /**
      * @symbol ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
-     * @hash   -1931171389
+     * @hash   -1930341085
      */
     MCAPI void removeDisplayEntity();
     /**
      * @symbol ?setEntityId@BaseMobSpawner@@QEAAXUActorDefinitionIdentifier@@@Z
-     * @hash   -1318878366
+     * @hash   -1318048062
      */
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
     /**
      * @symbol ?setNextSpawnData@BaseMobSpawner@@QEAAXV?$unique_ptr@VSpawnData@@U?$default_delete@VSpawnData@@@std@@@std@@@Z
-     * @hash   50035662
+     * @hash   50865966
      */
     MCAPI void setNextSpawnData(std::unique_ptr<class SpawnData>);
 
 //protected:
     /**
      * @symbol ?_delay@BaseMobSpawner@@IEAAXAEAVBlockSource@@@Z
-     * @hash   -474043258
+     * @hash   -473212954
      */
     MCAPI void _delay(class BlockSource &);
 

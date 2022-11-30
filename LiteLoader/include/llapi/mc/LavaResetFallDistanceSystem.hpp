@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createLavaResetFallDistanceSystem@LavaResetFallDistanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1915013056
+     * @hash   -1914966928
      */
     MCAPI static struct TickingSystemWithInfo createLavaResetFallDistanceSystem();
     /**
      * @symbol ?createSideBySideLavaResetFallDistanceSystem@LavaResetFallDistanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1932981808
+     * @hash   1933027936
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideLavaResetFallDistanceSystem();
 

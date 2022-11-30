@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@FenceBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -742786596
+     * @hash   -741956292
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@FenceBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   39750625
+     * @hash   40580929
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -62,13 +62,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@FenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -1007893701
+     * @hash   -1007063397
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@FenceBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   13440179
+     * @hash   14270483
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -888992380
+     * @hash   -888162076
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -1537017201
+     * @hash   -1536186897
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@FenceBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -1354582013
+     * @hash   -1353751709
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@FenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   1431563534
+     * @hash   1432393838
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -722502767
+     * @hash   -721672463
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -291,7 +291,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@FenceBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -507967046
+     * @hash   -507136742
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEBLOCK
@@ -308,12 +308,12 @@ public:
 #endif
     /**
      * @symbol ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1945546451
+     * @hash   1946376755
      */
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?fetchPathableNeighbors@FenceBlock@@QEBAXAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVVec3@@@Z
-     * @hash   -1950531287
+     * @hash   -1949700983
      */
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
 

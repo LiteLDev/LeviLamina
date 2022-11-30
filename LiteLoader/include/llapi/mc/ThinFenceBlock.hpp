@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  9
      * @symbol ?addAABBs@ThinFenceBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-     * @hash   -936370699
+     * @hash   -935540395
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@ThinFenceBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1070527451
+     * @hash   -1069697147
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  11
      * @symbol ?addCollisionShapes@ThinFenceBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   2094040520
+     * @hash   2094870824
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -68,13 +68,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@ThinFenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -995450668
+     * @hash   -994620364
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@ThinFenceBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   -1948198900
+     * @hash   -1947368596
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -191,7 +191,7 @@ public:
     /**
      * @vftbl  66
      * @symbol ?canBeUsedInCommands@ThinFenceBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-     * @hash   1883379698
+     * @hash   1884210002
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@ThinFenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -439554778
+     * @hash   -438724474
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@ThinFenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   375551607
+     * @hash   376381911
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@ThinFenceBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   207202635
+     * @hash   208032939
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THINFENCEBLOCK
@@ -291,7 +291,7 @@ public:
 #endif
     /**
      * @symbol ??0ThinFenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
-     * @hash   -1123785401
+     * @hash   -1122955097
      */
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
 

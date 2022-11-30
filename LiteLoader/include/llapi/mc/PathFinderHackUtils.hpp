@@ -22,7 +22,7 @@ namespace PathFinderHackUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?canUseFreeStartNodeCheck@PathFinderHackUtils@@YA_NW4ActorType@@@Z
-     * @hash   -1225310966
+     * @hash   -1224480662
      */
     MCAPI bool canUseFreeStartNodeCheck(enum ActorType);
 

@@ -82,7 +82,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@WrittenBookItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1650187004
+     * @hash   1651017308
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -112,55 +112,55 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@WrittenBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   1255958379
+     * @hash   1256788683
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   1282939687
+     * @hash   1283769991
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   1514342478
+     * @hash   1515172782
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
      * @symbol ??0WrittenBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   532344369
+     * @hash   533174673
      */
     MCAPI WrittenBookItem(std::string const &, int);
     /**
      * @symbol ?MAX_GENERATION@WrittenBookItem@@2HB
-     * @hash   -362563895
+     * @hash   -362440887
      */
     MCAPI static int const MAX_GENERATION;
     /**
      * @symbol ?MAX_PAGES@WrittenBookItem@@2HB
-     * @hash   -1608003757
+     * @hash   -1607880749
      */
     MCAPI static int const MAX_PAGES;
     /**
      * @symbol ?MAX_PAGE_LENGTH@WrittenBookItem@@2HB
-     * @hash   -2043207821
+     * @hash   -2043084813
      */
     MCAPI static int const MAX_PAGE_LENGTH;
     /**
      * @symbol ?MAX_TITLE_LENGTH@WrittenBookItem@@2HB
-     * @hash   1136976807
+     * @hash   1137099815
      */
     MCAPI static int const MAX_TITLE_LENGTH;
     /**
@@ -210,22 +210,22 @@ public:
     MCAPI static class gsl::basic_string_span<char const, -1> const TAG_XUID;
     /**
      * @symbol ?canBeCopied@WrittenBookItem@@SA_NPEBVCompoundTag@@@Z
-     * @hash   -1424172282
+     * @hash   -1423341978
      */
     MCAPI static bool canBeCopied(class CompoundTag const *);
     /**
      * @symbol ?getGeneration@WrittenBookItem@@SAHPEBVCompoundTag@@@Z
-     * @hash   -341624668
+     * @hash   -340794364
      */
     MCAPI static int getGeneration(class CompoundTag const *);
     /**
      * @symbol ?getPageCount@WrittenBookItem@@SAHAEBVItemStack@@@Z
-     * @hash   511143397
+     * @hash   511973701
      */
     MCAPI static int getPageCount(class ItemStack const &);
     /**
      * @symbol ?getPages@WrittenBookItem@@SA?AV?$vector@UPageContent@@V?$allocator@UPageContent@@@std@@@std@@AEBVItemStack@@@Z
-     * @hash   710203285
+     * @hash   711033589
      */
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
 

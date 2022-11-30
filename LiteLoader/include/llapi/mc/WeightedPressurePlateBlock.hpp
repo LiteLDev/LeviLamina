@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@WeightedPressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -852714937
+     * @hash   -851884633
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -225,40 +225,40 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getTickDelay@WeightedPressurePlateBlock@@UEBAHXZ
-     * @hash   1506308408
+     * @hash   1506354536
      */
     virtual int getTickDelay() const;
     /**
      * @vftbl  193
      * @symbol ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1167654330
+     * @hash   -1166824026
      */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  194
      * @symbol ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
-     * @hash   -638713081
+     * @hash   -637882777
      */
     virtual int getSignalForData(int) const;
     /**
      * @vftbl  195
      * @symbol ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
-     * @hash   -2025827670
+     * @hash   -2024997366
      */
     virtual int getRedstoneSignal(int) const;
     /**
      * @symbol ??0WeightedPressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@H@Z
-     * @hash   361632057
+     * @hash   362462361
      */
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
     /**
      * @symbol ?MAX_WEIGHT_HEAVY@WeightedPressurePlateBlock@@2HB
-     * @hash   -1697037415
+     * @hash   -1696914407
      */
     MCAPI static int const MAX_WEIGHT_HEAVY;
     /**
      * @symbol ?MAX_WEIGHT_LIGHT@WeightedPressurePlateBlock@@2HB
-     * @hash   1821801205
+     * @hash   1821924213
      */
     MCAPI static int const MAX_WEIGHT_LIGHT;
 

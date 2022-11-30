@@ -149,7 +149,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@ActivatorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   1965846223
+     * @hash   1966676527
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@ActivatorRailBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -58055226
+     * @hash   -57224922
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ActivatorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1963928732
+     * @hash   -1963098428
      */
     MCAPI ActivatorRailBlock(std::string const &, int);
 

@@ -32,39 +32,39 @@ public:
 public:
     /**
      * @symbol ??0JigsawPlacement@@QEAA@_K0AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VPoolElementStructurePiece@@U?$default_delete@VPoolElementStructurePiece@@@std@@@std@@AEBVStructurePoolElement@@AEBVBlockPos@@AEBW4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z@2@AEAVRandom@@AEBVJigsawStructureRegistry@@AEAVDimension@@@Z
-     * @hash   -232359182
+     * @hash   -231528878
      */
     MCAPI JigsawPlacement(unsigned __int64, unsigned __int64, std::vector<std::unique_ptr<class StructurePiece>> &, class std::function<std::unique_ptr<class PoolElementStructurePiece> (class StructurePoolElement const &, class BlockPos const &, enum class Rotation const &, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos const &)>, class Random &, class JigsawStructureRegistry const &, class Dimension &);
     /**
      * @symbol ?addPieces@JigsawPlacement@@QEAAXAEBVStructurePoolElement@@AEBVBlockPos@@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-     * @hash   -1451106193
+     * @hash   -1450275889
      */
     MCAPI void addPieces(class StructurePoolElement const &, class BlockPos const &, enum class Rotation const &, class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol ??1JigsawPlacement@@QEAA@XZ
-     * @hash   -663118816
+     * @hash   -662288512
      */
     MCAPI ~JigsawPlacement();
 
 //private:
     /**
      * @symbol ?_addPiece@JigsawPlacement@@AEAAXAEBVPoolElementStructurePiece@@AEBVBlockPos@@AEBW4Rotation@@1_K@Z
-     * @hash   1469104886
+     * @hash   1469935190
      */
     MCAPI void _addPiece(class PoolElementStructurePiece const &, class BlockPos const &, enum class Rotation const &, class BlockPos const &, unsigned __int64);
     /**
      * @symbol ?_findLocalAnchorOffset@JigsawPlacement@@AEBA?AVBlockPos@@AEBVStructurePoolElement@@AEBV2@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-     * @hash   -535599738
+     * @hash   -534769434
      */
     MCAPI class BlockPos _findLocalAnchorOffset(class StructurePoolElement const &, class BlockPos const &, enum class Rotation const &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?_setTerrainAdjustment@JigsawPlacement@@AEBA?AV?$shared_ptr@_N@std@@W4AdjustmentEffect@@AEBVBoundingBox@@AEBUJigsawJunction@@@Z
-     * @hash   -1566367557
+     * @hash   -1565537253
      */
     MCAPI class std::shared_ptr<bool> _setTerrainAdjustment(enum class AdjustmentEffect, class BoundingBox const &, struct JigsawJunction const &) const;
     /**
      * @symbol ?_tryPlacingPiece@JigsawPlacement@@AEAA_NAEBVPoolElementStructurePiece@@AEBVBoundingBox@@AEBVJigsawBlockInfo@@AEBVBlockPos@@PEBVStructureTemplatePool@@3_K@Z
-     * @hash   1369942871
+     * @hash   1370773175
      */
     MCAPI bool _tryPlacingPiece(class PoolElementStructurePiece const &, class BoundingBox const &, class JigsawBlockInfo const &, class BlockPos const &, class StructureTemplatePool const *, class BlockPos const &, unsigned __int64);
 

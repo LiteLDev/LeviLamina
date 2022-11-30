@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@HangingRoots@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1462486918
+     * @hash   1463317222
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@HangingRoots@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2133038783
+     * @hash   -2132208479
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,19 +177,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@HangingRoots@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1192245999
+     * @hash   1193076303
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@HangingRoots@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -374476445
+     * @hash   -373646141
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@HangingRoots@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -225450263
+     * @hash   -224619959
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -240,7 +240,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@HangingRoots@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1037921563
+     * @hash   -1037091259
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -251,7 +251,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@HangingRoots@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   603273191
+     * @hash   604103495
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -262,7 +262,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@HangingRoots@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -302413281
+     * @hash   -302367153
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -273,12 +273,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@HangingRoots@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1293981105
+     * @hash   -1293150801
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0HangingRoots@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -965826769
+     * @hash   -964996465
      */
     MCAPI HangingRoots(std::string const &, int);
 

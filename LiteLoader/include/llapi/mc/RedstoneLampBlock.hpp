@@ -155,7 +155,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@RedstoneLampBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   1489060564
+     * @hash   1489890868
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -166,7 +166,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@RedstoneLampBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -710291865
+     * @hash   -709461561
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -177,7 +177,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RedstoneLampBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1608935863
+     * @hash   -1608105559
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RedstoneLampBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -651899800
+     * @hash   -651069496
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -234,7 +234,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RedstoneLampBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   724183651
+     * @hash   725013955
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -245,7 +245,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@RedstoneLampBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1863068073
+     * @hash   -1862237769
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -261,12 +261,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RedstoneLampBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   2140625791
+     * @hash   2141456095
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0RedstoneLampBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   1401156186
+     * @hash   1401986490
      */
     MCAPI RedstoneLampBlock(std::string const &, int, bool);
 

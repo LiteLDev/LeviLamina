@@ -43,7 +43,7 @@ public:
 #endif
     /**
      * @symbol ??0StructurePoolBlockPredicateAlwaysTrue@@QEAA@XZ
-     * @hash   833361138
+     * @hash   834191442
      */
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 

@@ -100,54 +100,54 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   485530194
+     * @hash   486360498
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@WritableBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   -702246233
+     * @hash   -701415929
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
      * @symbol ??0WritableBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1674566026
+     * @hash   1675396330
      */
     MCAPI WritableBookItem(std::string const &, int);
     /**
      * @symbol ?addPageAt@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-     * @hash   99977962
+     * @hash   100808266
      */
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
     /**
      * @symbol ?deletePage@WritableBookItem@@SA?AUPageContent@@AEAVItemStack@@H@Z
-     * @hash   -510853560
+     * @hash   -510023256
      */
     MCAPI static struct PageContent deletePage(class ItemStack &, int);
     /**
      * @symbol ?replacePage@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-     * @hash   604000266
+     * @hash   604830570
      */
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
     /**
      * @symbol ?signBook@WritableBookItem@@SAXAEAVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11@Z
-     * @hash   -920346909
+     * @hash   -919516605
      */
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     /**
      * @symbol ?swapPages@WritableBookItem@@SAXAEAVItemStack@@HH@Z
-     * @hash   -1409594366
+     * @hash   -1408764062
      */
     MCAPI static void swapPages(class ItemStack &, int, int);
 

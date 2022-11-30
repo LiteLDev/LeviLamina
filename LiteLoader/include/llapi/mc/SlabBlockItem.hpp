@@ -94,36 +94,36 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@SlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   631636025
+     * @hash   632466329
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@SlabBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   -1539404346
+     * @hash   -1538574042
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0SlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1259767900
+     * @hash   -1258937596
      */
     MCAPI SlabBlockItem(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_canConvertToDoubleBlock@SlabBlockItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEBVBlock@@@Z
-     * @hash   -1599668520
+     * @hash   -1598838216
      */
     MCAPI bool _canConvertToDoubleBlock(class ItemStackBase &, class Actor &, unsigned char &, class Block const &) const;
 

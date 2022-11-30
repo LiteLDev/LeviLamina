@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0BreathableDefinition@@QEAA@XZ
-     * @hash   1655090745
+     * @hash   1655136873
      */
     MCAPI BreathableDefinition();
     /**
      * @symbol ?addBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
-     * @hash   1111703304
+     * @hash   1111749432
      */
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?addNonBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
-     * @hash   1540268810
+     * @hash   1540314938
      */
     MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?initialize@BreathableDefinition@@QEAAXAEAVEntityContext@@AEAVBreathableComponent@@@Z
-     * @hash   529701119
+     * @hash   529747247
      */
     MCAPI void initialize(class EntityContext &, class BreathableComponent &);
     /**
      * @symbol ?buildSchema@BreathableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreathableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1707288202
+     * @hash   -1707242074
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>> &);
 

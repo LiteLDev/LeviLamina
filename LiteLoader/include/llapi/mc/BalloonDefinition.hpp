@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@BalloonDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBalloonDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -468825274
+     * @hash   -468779146
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonDefinition>> &);
 

@@ -49,7 +49,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?useOn@PlanterItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   -2015601983
+     * @hash   -2014771679
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
@@ -60,28 +60,28 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   227993617
+     * @hash   228823921
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1328139889
+     * @hash   -1327309585
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   1671154886
+     * @hash   1671985190
      */
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @symbol ?bindType@PlanterItemComponent@@SAXXZ
-     * @hash   -340990669
+     * @hash   -340160365
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@PlanterItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   1795695156
+     * @hash   1796525460
      */
     MCAPI static class HashedString const & getIdentifier();
 

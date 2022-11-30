@@ -45,13 +45,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?initFileUploader@ServerFileChunkUploader@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFileInfo@@HAEBVValue@Json@@V?$function@$$A6AX_N@Z@3@@Z
-     * @hash   1420915937
+     * @hash   1420962065
      */
     virtual void initFileUploader(std::string const &, struct FileInfo const &, int, class Json::Value const &, class std::function<void (bool)>);
     /**
      * @vftbl  3
      * @symbol ?getServerMissingChunks@ServerFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
-     * @hash   -1880659046
+     * @hash   -1880612918
      */
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /**
@@ -62,7 +62,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?uploadChunk@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-     * @hash   2038726890
+     * @hash   2038773018
      */
     virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
     /**
@@ -79,7 +79,7 @@ public:
     /**
      * @vftbl  9
      * @symbol ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
-     * @hash   -1522751886
+     * @hash   -1522705758
      */
     virtual enum class UploadError getInitErrorCode() const;
     /**
@@ -91,7 +91,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?getChunkInfo@ServerFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-     * @hash   -692914721
+     * @hash   -692868593
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERFILECHUNKUPLOADER
@@ -113,7 +113,7 @@ public:
 #endif
     /**
      * @symbol ??0ServerFileChunkUploader@@QEAA@AEAVPacketSender@@AEBVNetworkIdentifier@@@Z
-     * @hash   850292042
+     * @hash   850338170
      */
     MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
 

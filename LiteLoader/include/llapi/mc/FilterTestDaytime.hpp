@@ -40,13 +40,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?evaluate@FilterTestDaytime@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   1710387777
+     * @hash   1710433905
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@FilterTestDaytime@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   667729537
+     * @hash   667775665
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 

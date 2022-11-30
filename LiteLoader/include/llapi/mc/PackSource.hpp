@@ -44,18 +44,18 @@ public:
     MCVAPI enum class PackType getPackType() const;
     /**
      * @symbol ??1PackSource@@UEAA@XZ
-     * @hash   1480100900
+     * @hash   1480147028
      */
     MCVAPI ~PackSource();
 #endif
     /**
      * @symbol ?fetchPack@PackSource@@QEAAPEAVPack@@AEBUPackIdVersion@@@Z
-     * @hash   1824117226
+     * @hash   1824163354
      */
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     /**
      * @symbol ?resolveUpgradeDependencies@PackSource@@QEAAXAEAVPack@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   -210532451
+     * @hash   -210486323
      */
     MCAPI void resolveUpgradeDependencies(class Pack &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 

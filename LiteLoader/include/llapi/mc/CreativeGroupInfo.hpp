@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ??0CreativeGroupInfo@@QEAA@PEAVCreativeItemRegistry@@W4CreativeItemCategory@@AEBVHashedString@@IAEBVItemInstance@@@Z
-     * @hash   1069310236
+     * @hash   1070140540
      */
     MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum class CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
     /**
      * @symbol ??0CreativeGroupInfo@@QEAA@AEBV0@@Z
-     * @hash   -1129006015
+     * @hash   -1128175711
      */
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
     /**
      * @symbol ?addCreativeItem@CreativeGroupInfo@@QEAAXPEAVCreativeItemEntry@@@Z
-     * @hash   -653561557
+     * @hash   -652731253
      */
     MCAPI void addCreativeItem(class CreativeItemEntry *);
     /**
      * @symbol ?getIcon@CreativeGroupInfo@@QEBA?BVItemInstance@@XZ
-     * @hash   471363532
+     * @hash   472193836
      */
     MCAPI class ItemInstance const getIcon() const;
     /**
      * @symbol ?getIndex@CreativeGroupInfo@@QEBAIXZ
-     * @hash   -1726147448
+     * @hash   -1726101320
      */
     MCAPI unsigned int getIndex() const;
     /**
      * @symbol ?getName@CreativeGroupInfo@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1681530916
+     * @hash   -1680700612
      */
     MCAPI std::string const getName() const;
 

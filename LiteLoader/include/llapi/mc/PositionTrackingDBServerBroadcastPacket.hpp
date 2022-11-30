@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PositionTrackingDBServerBroadcastPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1313433450
+     * @hash   -1313387322
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PositionTrackingDBServerBroadcastPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2095452995
+     * @hash   2095499123
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PositionTrackingDBServerBroadcastPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -890786812
+     * @hash   -890740684
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PositionTrackingDBServerBroadcastPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1595835932
+     * @hash   -1595789804
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PositionTrackingDBServerBroadcastPacket@@QEAA@XZ
-     * @hash   666288212
+     * @hash   666334340
      */
     MCAPI PositionTrackingDBServerBroadcastPacket();
 

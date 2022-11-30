@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@VineBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -334512509
+     * @hash   -333682205
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -165,13 +165,13 @@ public:
     /**
      * @vftbl  91
      * @symbol ?mayPlace@VineBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   740787790
+     * @hash   741618094
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -2119653627
+     * @hash   -2118823323
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -182,7 +182,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@VineBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   797383042
+     * @hash   798213346
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -208,19 +208,19 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@VineBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   620938789
+     * @hash   621769093
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@VineBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -601241073
+     * @hash   -600410769
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  142
      * @symbol ?getVisualShapeInWorld@VineBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
-     * @hash   1938902021
+     * @hash   1939732325
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
@@ -246,7 +246,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@VineBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -829357433
+     * @hash   -828527129
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -257,13 +257,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1221940329
+     * @hash   1222770633
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   455335846
+     * @hash   456166150
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -274,13 +274,13 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@VineBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1949382442
+     * @hash   -1948552138
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@VineBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1486695927
+     * @hash   1487526231
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -303,22 +303,22 @@ public:
 #endif
     /**
      * @symbol ??0VineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1759982449
+     * @hash   1760812753
      */
     MCAPI VineBlock(std::string const &, int);
     /**
      * @symbol ?growDown@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   1099071714
+     * @hash   1099902018
      */
     MCAPI void growDown(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?growSideways@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   -837582270
+     * @hash   -836751966
      */
     MCAPI void growSideways(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?growUp@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   167013074
+     * @hash   167843378
      */
     MCAPI void growUp(class BlockSource &, class BlockPos const &, int) const;
     /**
@@ -348,34 +348,34 @@ public:
     MCAPI static int const VINE_WEST;
     /**
      * @symbol ?getBlockForFace@VineBlock@@SAAEBVBlock@@E@Z
-     * @hash   -1095592134
+     * @hash   -1094761830
      */
     MCAPI static class Block const & getBlockForFace(unsigned char);
     /**
      * @symbol ?isAcceptableNeighbour@VineBlock@@SA_NAEBVBlock@@@Z
-     * @hash   -526645283
+     * @hash   -525814979
      */
     MCAPI static bool isAcceptableNeighbour(class Block const &);
 
 //private:
     /**
      * @symbol ?_canGrowDown@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1203065850
+     * @hash   -1202235546
      */
     MCAPI bool _canGrowDown(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_canGrowUp@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2024110625
+     * @hash   -2023280321
      */
     MCAPI bool _canGrowUp(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_canSideSpread@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -269066005
+     * @hash   -268235701
      */
     MCAPI bool _canSideSpread(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_nextVineDirections@VineBlock@@AEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1267756741
+     * @hash   -1266926437
      */
     MCAPI int _nextVineDirections(class BlockSource &, class BlockPos const &) const;
 

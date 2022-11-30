@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@FrogSpawnBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   34461590
+     * @hash   35291894
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -175,19 +175,19 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@FrogSpawnBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1003711271
+     * @hash   -1002880967
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@FrogSpawnBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   552784234
+     * @hash   553614538
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@FrogSpawnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   230920808
+     * @hash   231751112
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -198,7 +198,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@FrogSpawnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   287587504
+     * @hash   288417808
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@FrogSpawnBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1768694333
+     * @hash   1769524637
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@FrogSpawnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   274788414
+     * @hash   275618718
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@FrogSpawnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   516644156
+     * @hash   517474460
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -278,7 +278,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@FrogSpawnBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -738258358
+     * @hash   -737428054
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -301,7 +301,7 @@ public:
 #endif
     /**
      * @symbol ??0FrogSpawnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1669857900
+     * @hash   -1669027596
      */
     MCAPI FrogSpawnBlock(std::string const &, int);
 

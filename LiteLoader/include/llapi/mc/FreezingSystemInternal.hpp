@@ -24,12 +24,12 @@ namespace FreezingSystemInternal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?processFreezeEffect@FreezingSystemInternal@@YAXAEAVActor@@AEBVFreezingComponent@@@Z
-     * @hash   1580583320
+     * @hash   1580629448
      */
     MCAPI void processFreezeEffect(class Actor &, class FreezingComponent const &);
     /**
      * @symbol ?tickFreezeComponent@FreezingSystemInternal@@YAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VFreezingComponent@@@@@Z
-     * @hash   617936068
+     * @hash   617982196
      */
     MCAPI void tickFreezeComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FreezingComponent> &);
 

@@ -40,13 +40,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   1789631807
+     * @hash   1789677935
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@ActorHasEquipmentTest@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   -1388713443
+     * @hash   -1388667315
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
@@ -57,19 +57,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getName@ActorHasEquipmentTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   -172431275
+     * @hash   -172385147
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
      * @vftbl  5
      * @symbol ?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
-     * @hash   -1756485575
+     * @hash   -1756439447
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl  6
      * @symbol ?_serializeValue@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
-     * @hash   54857796
+     * @hash   54903924
      */
     virtual class Json::Value _serializeValue() const;
 

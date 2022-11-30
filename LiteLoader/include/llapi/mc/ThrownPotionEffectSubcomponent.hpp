@@ -46,13 +46,13 @@ public:
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   34622905
+     * @hash   34669033
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ
-     * @hash   1393684948
+     * @hash   1393731076
      */
     virtual char const * getName();
 

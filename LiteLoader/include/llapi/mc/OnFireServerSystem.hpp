@@ -43,14 +43,14 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@OnFireServerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -2100780393
+     * @hash   -2100734265
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickServer@OnFireServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@UOnFireComponent@@@@@Z
-     * @hash   -1821995189
+     * @hash   -1821949061
      */
     MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct OnFireComponent> &);
 

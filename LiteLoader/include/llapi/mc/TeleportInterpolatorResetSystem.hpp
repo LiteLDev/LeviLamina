@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createTeleportInterpolatorResetSystem@TeleportInterpolatorResetSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1430506684
+     * @hash   -1430460556
      */
     MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem();
 

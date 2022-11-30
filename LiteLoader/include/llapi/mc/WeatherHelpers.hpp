@@ -24,17 +24,17 @@ namespace WeatherHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getTopRainBlockPos@WeatherHelpers@@YA?BVBlockPos@@PEAVLevelChunk@@AEBV2@@Z
-     * @hash   223412557
+     * @hash   224242861
      */
     MCAPI class BlockPos const getTopRainBlockPos(class LevelChunk *, class BlockPos const &);
     /**
      * @symbol ?shouldFreeze@WeatherHelpers@@YA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -1346691344
+     * @hash   -1345861040
      */
     MCAPI bool shouldFreeze(class BlockSource &, class BlockPos const &, bool);
     /**
      * @symbol ?shouldSnow@WeatherHelpers@@YA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1387558281
+     * @hash   -1386727977
      */
     MCAPI bool shouldSnow(class BlockSource &, class BlockPos const &);
 

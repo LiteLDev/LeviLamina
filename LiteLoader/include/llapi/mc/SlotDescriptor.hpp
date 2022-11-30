@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0SlotDescriptor@@QEAA@XZ
-     * @hash   -644269911
+     * @hash   -644223783
      */
     MCAPI SlotDescriptor();
     /**
      * @symbol ??0SlotDescriptor@@QEAA@AEBU0@@Z
-     * @hash   -1557154577
+     * @hash   -1557108449
      */
     MCAPI SlotDescriptor(struct SlotDescriptor const &);
     /**
      * @symbol ?addAcceptedItem@SlotDescriptor@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   -2131817768
+     * @hash   -2131771640
      */
     MCAPI void addAcceptedItem(class ItemDescriptor const &);
     /**

@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  6
      * @symbol ?isObstructingChests@SlabBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -221626163
+     * @hash   -220795859
      */
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  17
      * @symbol ?liquidCanFlowIntoFromDirection@SlabBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-     * @hash   1639712134
+     * @hash   1640542438
      */
     virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /**
@@ -116,7 +116,7 @@ public:
     /**
      * @vftbl  43
      * @symbol ?isDoubleSlabBlock@SlabBlock@@UEBA_NXZ
-     * @hash   -1461146483
+     * @hash   -1460316179
      */
     virtual bool isDoubleSlabBlock() const;
     /**
@@ -167,7 +167,7 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@SlabBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   1851482679
+     * @hash   1852312983
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -178,7 +178,7 @@ public:
     /**
      * @vftbl  80
      * @symbol ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1850079258
+     * @hash   -1849248954
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
@@ -189,13 +189,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   1854513272
+     * @hash   1855343576
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1775330889
+     * @hash   -1774500585
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -206,13 +206,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@SlabBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1047530286
+     * @hash   -1046699982
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  121
      * @symbol ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
-     * @hash   -340828840
+     * @hash   -339998536
      */
     virtual class MobSpawnerData const * getMobToSpawn(class SpawnConditions const &, class BlockSource &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@SlabBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2007368819
+     * @hash   -2006538515
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -285,13 +285,13 @@ public:
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@SlabBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1375239319
+     * @hash   -1374409015
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SlabBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1014198511
+     * @hash   -1013368207
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCK
@@ -308,14 +308,14 @@ public:
 #endif
     /**
      * @symbol ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   1371798211
+     * @hash   1372628515
      */
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
 
 //protected:
     /**
      * @symbol ?getBaseSlab@SlabBlock@@IEBAAEBVBlock@@XZ
-     * @hash   2091993970
+     * @hash   2092824274
      */
     MCAPI class Block const & getBaseSlab() const;
 

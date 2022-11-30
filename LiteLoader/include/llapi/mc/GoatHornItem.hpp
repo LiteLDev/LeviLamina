@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@GoatHornItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   736113230
+     * @hash   736943534
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -100,30 +100,30 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   -625759763
+     * @hash   -624929459
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  103
      * @symbol ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
-     * @hash   1273445465
+     * @hash   1274275769
      */
     virtual class HashedString const & getCooldownType() const;
     /**
      * @vftbl  104
      * @symbol ?getCooldownTime@GoatHornItem@@UEBAHXZ
-     * @hash   1525112776
+     * @hash   1525158904
      */
     virtual int getCooldownTime() const;
     /**
@@ -134,12 +134,12 @@ public:
     virtual bool canBeCharged() const;
     /**
      * @symbol ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   294970671
+     * @hash   295800975
      */
     MCAPI GoatHornItem(std::string const &, int);
     /**
      * @symbol ?addGoatHornVarationSaveData@GoatHornItem@@SAXAEAVGoat@@AEAVItemStack@@@Z
-     * @hash   -1908955805
+     * @hash   -1908125501
      */
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);
 

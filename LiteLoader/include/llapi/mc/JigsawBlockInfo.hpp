@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0JigsawBlockInfo@@QEAA@AEBVBlockPos@@PEBVBlock@@1VJigsawEditorData@@@Z
-     * @hash   -1646760839
+     * @hash   -1645930535
      */
     MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
     /**
      * @symbol ??4JigsawBlockInfo@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   432109656
+     * @hash   432939960
      */
     MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
 

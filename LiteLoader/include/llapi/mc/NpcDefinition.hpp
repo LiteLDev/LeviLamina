@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@NpcDefinition@@QEAAXAEAVEntityContext@@AEAVNpcComponent@@@Z
-     * @hash   45410709
+     * @hash   45456837
      */
     MCAPI void initialize(class EntityContext &, class NpcComponent &);
     /**
      * @symbol ?buildSchema@NpcDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNpcDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   949647738
+     * @hash   949693866
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NpcDefinition>> &);
 

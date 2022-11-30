@@ -46,25 +46,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?placeTrunk@FancyTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
-     * @hash   129343081
+     * @hash   130173385
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
      * @vftbl  2
      * @symbol ?getTreeHeight@FancyTreeTrunk@@UEBAHAEAVRandom@@@Z
-     * @hash   299580470
+     * @hash   300410774
      */
     virtual int getTreeHeight(class Random &) const;
 
 //private:
     /**
      * @symbol ?_checkLine@FancyTreeTrunk@@AEBAHAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEBUTreeParams@TreeHelper@@@Z
-     * @hash   753524114
+     * @hash   754354418
      */
     MCAPI int _checkLine(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, struct TreeHelper::TreeParams const &) const;
     /**
      * @symbol ?_placeLimb@FancyTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1@Z
-     * @hash   631302506
+     * @hash   632132810
      */
     MCAPI void _placeLimb(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &) const;
 

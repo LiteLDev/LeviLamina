@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?initialize@VolumeFogDefinition@@QEBAXAEAVEntityContext@@AEAVVolumeFogComponent@@@Z
-     * @hash   -1887574139
+     * @hash   -1887528011
      */
     MCAPI void initialize(class EntityContext &, class VolumeFogComponent &) const;
     /**
@@ -47,7 +47,7 @@ public:
     MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeFogDefinition@@SAXXZ
-     * @hash   -1703400833
+     * @hash   -1703354705
      */
     MCAPI static void bindType();
 

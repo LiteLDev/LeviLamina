@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetLocalPlayerAsInitializedPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1780591074
+     * @hash   -1780544946
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetLocalPlayerAsInitializedPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   310333643
+     * @hash   310379771
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetLocalPlayerAsInitializedPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -602779204
+     * @hash   -602733076
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetLocalPlayerAsInitializedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1880076740
+     * @hash   -1880030612
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetLocalPlayerAsInitializedPacket@@QEAA@XZ
-     * @hash   -1730292404
+     * @hash   -1730246276
      */
     MCAPI SetLocalPlayerAsInitializedPacket();
 

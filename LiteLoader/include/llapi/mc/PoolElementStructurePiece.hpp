@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?moveBoundingBox@PoolElementStructurePiece@@UEAAXHHH@Z
-     * @hash   -1664711891
+     * @hash   -1663881587
      */
     virtual void moveBoundingBox(int, int, int);
     /**
      * @vftbl  4
      * @symbol ?postProcess@PoolElementStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   934892024
+     * @hash   935722328
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@PoolElementStructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1994548996
+     * @hash   1995379300
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
@@ -86,7 +86,7 @@ public:
     virtual bool _needsPostProcessing(class BlockSource &);
     /**
      * @symbol ??0PoolElementStructurePiece@@QEAA@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z
-     * @hash   -776215836
+     * @hash   -775385532
      */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     /**
@@ -96,12 +96,12 @@ public:
     MCAPI class StructurePoolElement const & getElement() const;
     /**
      * @symbol ?getPosition@PoolElementStructurePiece@@QEBAAEBVBlockPos@@XZ
-     * @hash   -64831482
+     * @hash   -64785354
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
      * @symbol ?setReferencePosition@PoolElementStructurePiece@@QEAAXAEBVBlockPos@@@Z
-     * @hash   731637744
+     * @hash   732468048
      */
     MCAPI void setReferencePosition(class BlockPos const &);
 

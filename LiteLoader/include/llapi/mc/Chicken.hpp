@@ -130,7 +130,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Chicken@@UEAAXAEAVRenderParams@@@Z
-     * @hash   252991309
+     * @hash   253037437
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -141,7 +141,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Chicken@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   816100605
+     * @hash   816146733
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -162,7 +162,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Chicken@@UEAAXXZ
-     * @hash   -214804330
+     * @hash   -214758202
      */
     virtual void aiStep();
     /**
@@ -194,12 +194,12 @@ public:
 #endif
     /**
      * @symbol ??0Chicken@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -241885311
+     * @hash   -241839183
      */
     MCAPI Chicken(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postAIStep@Chicken@@QEAAXXZ
-     * @hash   -337523845
+     * @hash   -337477717
      */
     MCAPI void postAIStep();
 

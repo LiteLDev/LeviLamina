@@ -31,39 +31,39 @@ public:
 public:
     /**
      * @symbol ??0VolumeDefinitionGroup@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVVolumeComponentFactory@@@Bedrock@@@gsl@@@Z
-     * @hash   -1029518249
+     * @hash   -1029472121
      */
     MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     /**
      * @symbol ?loadDefinitions@VolumeDefinitionGroup@@QEAAXAEBVResourcePackManager@@_N@Z
-     * @hash   1124501187
+     * @hash   1124547315
      */
     MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
     /**
      * @symbol ?tryGetVolumeDefinition@VolumeDefinitionGroup@@QEBAPEBUVolumeDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   292287096
+     * @hash   292333224
      */
     MCAPI struct VolumeDefinition const * tryGetVolumeDefinition(std::string const &) const;
     /**
      * @symbol ??1VolumeDefinitionGroup@@QEAA@XZ
-     * @hash   -1478901218
+     * @hash   -1478855090
      */
     MCAPI ~VolumeDefinitionGroup();
     /**
      * @symbol ?bindVolumeDefinitions@VolumeDefinitionGroup@@SAXXZ
-     * @hash   1221604437
+     * @hash   1221650565
      */
     MCAPI static void bindVolumeDefinitions();
 
 //private:
     /**
      * @symbol ?_parseAndRegisterDefinition@VolumeDefinitionGroup@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@0@Z
-     * @hash   -1019204801
+     * @hash   -1019158673
      */
     MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
     /**
      * @symbol ?_registerDefinition@VolumeDefinitionGroup@@AEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1559981413
+     * @hash   1560027541
      */
     MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
 

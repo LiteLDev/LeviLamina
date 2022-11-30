@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createJumpInputSystem@JumpInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1802849482
+     * @hash   -1802803354
      */
     MCAPI static struct TickingSystemWithInfo createJumpInputSystem();
 

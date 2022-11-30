@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0TeleportComponent@@QEAA@XZ
-     * @hash   -1656992578
+     * @hash   -1656946450
      */
     MCAPI TeleportComponent();
     /**
      * @symbol ?getDarkTeleportChance@TeleportComponent@@QEAAMXZ
-     * @hash   -2064027474
+     * @hash   -2063981346
      */
     MCAPI float getDarkTeleportChance();
     /**
@@ -46,7 +46,7 @@ public:
     MCAPI float getLightTeleportChance();
     /**
      * @symbol ?getMaxTeleportTime@TeleportComponent@@QEAAHXZ
-     * @hash   -393483004
+     * @hash   -393436876
      */
     MCAPI int getMaxTeleportTime();
     /**
@@ -56,47 +56,47 @@ public:
     MCAPI int getMinTeleportTime();
     /**
      * @symbol ?getRandomTeleports@TeleportComponent@@QEAA_NXZ
-     * @hash   -1498250356
+     * @hash   -1498204228
      */
     MCAPI bool getRandomTeleports();
     /**
      * @symbol ?getTargetDistance@TeleportComponent@@QEAAMXZ
-     * @hash   -2095266688
+     * @hash   -2095220560
      */
     MCAPI float getTargetDistance();
     /**
      * @symbol ?getTargetTeleportChance@TeleportComponent@@QEAAMXZ
-     * @hash   -775513660
+     * @hash   -775467532
      */
     MCAPI float getTargetTeleportChance();
     /**
      * @symbol ?getTeleportTime@TeleportComponent@@QEAAHXZ
-     * @hash   -1892159274
+     * @hash   -1892113146
      */
     MCAPI int getTeleportTime();
     /**
      * @symbol ?initFromDefinition@TeleportComponent@@QEAAXAEAVActor@@@Z
-     * @hash   984956498
+     * @hash   985002626
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?randomTeleport@TeleportComponent@@QEAA_NAEAVActor@@@Z
-     * @hash   -1202332125
+     * @hash   -1202285997
      */
     MCAPI bool randomTeleport(class Actor &);
     /**
      * @symbol ?setTeleportTime@TeleportComponent@@QEAAXH@Z
-     * @hash   -943371422
+     * @hash   -943325294
      */
     MCAPI void setTeleportTime(int);
     /**
      * @symbol ?teleport@TeleportComponent@@QEAA_NAEAVActor@@AEBVVec3@@@Z
-     * @hash   507638210
+     * @hash   507684338
      */
     MCAPI bool teleport(class Actor &, class Vec3 const &);
     /**
      * @symbol ?teleportTowards@TeleportComponent@@QEAA_NAEAVActor@@AEBV2@@Z
-     * @hash   1695184123
+     * @hash   1695230251
      */
     MCAPI bool teleportTowards(class Actor &, class Actor const &);
 

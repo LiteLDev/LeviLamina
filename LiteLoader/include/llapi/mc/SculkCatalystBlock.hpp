@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@SculkCatalystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   129359322
+     * @hash   130189626
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@SculkCatalystBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -980142496
+     * @hash   -979312192
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@SculkCatalystBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -820250697
+     * @hash   -819420393
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -227,7 +227,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@SculkCatalystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   736644726
+     * @hash   737475030
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@SculkCatalystBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   156487998
+     * @hash   157318302
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCK
@@ -261,12 +261,12 @@ public:
 #endif
     /**
      * @symbol ??0SculkCatalystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -47248297
+     * @hash   -46417993
      */
     MCAPI SculkCatalystBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?bloom@SculkCatalystBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
-     * @hash   -1703867103
+     * @hash   -1703036799
      */
     MCAPI static void bloom(class BlockSource &, class BlockPos const &, class Block const &, class Random &);
 

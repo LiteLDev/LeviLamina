@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @symbol ?_networkUpdateItem@SparseContainerClient@@QEAAXHAEBVItemStack@@@Z
-     * @hash   2120400065
+     * @hash   2121230369
      */
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
 

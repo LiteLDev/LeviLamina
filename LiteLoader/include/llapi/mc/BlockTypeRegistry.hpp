@@ -37,104 +37,104 @@ public:
 public:
     /**
      * @symbol ?computeBlockTypeRegistryChecksum@BlockTypeRegistry@@SA_KAEBVBaseGameVersion@@@Z
-     * @hash   2054878674
+     * @hash   2055708978
      */
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     /**
      * @symbol ?forEachBlock@BlockTypeRegistry@@SAXV?$function@$$A6A_NAEBVBlockLegacy@@@Z@std@@@Z
-     * @hash   2116362550
+     * @hash   2117192854
      */
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
     /**
      * @symbol ?getBlockNameFromNameHash@BlockTypeRegistry@@SAAEBVHashedString@@_K@Z
-     * @hash   1054782990
+     * @hash   1055613294
      */
     MCAPI static class HashedString const & getBlockNameFromNameHash(unsigned __int64);
     /**
      * @symbol ?getComplexAliasPostSplitBlockNames@BlockTypeRegistry@@SA?AV?$optional@V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@std@@AEBVHashedString@@@Z
-     * @hash   -1508706670
+     * @hash   -1507876366
      */
     MCAPI static class std::optional<std::vector<class HashedString>> getComplexAliasPostSplitBlockNames(class HashedString const &);
     /**
      * @symbol ?getDefaultBlockState@BlockTypeRegistry@@SAAEBVBlock@@AEBVHashedString@@_N@Z
-     * @hash   354472656
+     * @hash   355302960
      */
     MCAPI static class Block const & getDefaultBlockState(class HashedString const &, bool);
     /**
      * @symbol ?getEntityRegistry@BlockTypeRegistry@@SA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
-     * @hash   -492082113
+     * @hash   -491251809
      */
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     /**
      * @symbol ?initBlockEntities@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
-     * @hash   1529501406
+     * @hash   1530331710
      */
     MCAPI static void initBlockEntities(class Experiments const &);
     /**
      * @symbol ?initEntityRegistry@BlockTypeRegistry@@SAXXZ
-     * @hash   1651986289
+     * @hash   1652816593
      */
     MCAPI static void initEntityRegistry();
     /**
      * @symbol ?isComplexAliasBlock@BlockTypeRegistry@@SA_NAEBVHashedString@@@Z
-     * @hash   1927356659
+     * @hash   1928186963
      */
     MCAPI static bool isComplexAliasBlock(class HashedString const &);
     /**
      * @symbol ?lockAgainstRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryReadLock@@XZ
-     * @hash   1571237546
+     * @hash   1572067850
      */
     MCAPI static class BlockTypeRegistryReadLock lockAgainstRegistryModifications();
     /**
      * @symbol ?lockForRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryModificationsLock@@XZ
-     * @hash   2017861386
+     * @hash   2018691690
      */
     MCAPI static class BlockTypeRegistryModificationsLock lockForRegistryModifications();
     /**
      * @symbol ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
-     * @hash   -1113873907
+     * @hash   -1113043603
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
      * @symbol ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
-     * @hash   -1142213700
+     * @hash   -1141383396
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
     /**
      * @symbol ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z
-     * @hash   -162001844
+     * @hash   -161171540
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
     /**
      * @symbol ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
-     * @hash   1360483868
+     * @hash   1361314172
      */
     MCAPI static void prepareBlocks(unsigned int);
     /**
      * @symbol ?registerAlias@BlockTypeRegistry@@SAXAEBVHashedString@@0@Z
-     * @hash   444518363
+     * @hash   445348667
      */
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
     /**
      * @symbol ?unregisterBlock@BlockTypeRegistry@@SAXAEBVHashedString@@@Z
-     * @hash   -1259240816
+     * @hash   -1258410512
      */
     MCAPI static void unregisterBlock(class HashedString const &);
     /**
      * @symbol ?unregisterBlocks@BlockTypeRegistry@@SAXXZ
-     * @hash   -1961864475
+     * @hash   -1961034171
      */
     MCAPI static void unregisterBlocks();
 
 //private:
     /**
      * @symbol ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@V?$optional@V?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@@std@@V?$optional@H@5@_N@Z
-     * @hash   1964256077
+     * @hash   1965086381
      */
     MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(class HashedString const &, class std::optional<std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState>>, class std::optional<int>, bool);
     /**
      * @symbol ?_lookupByNameImplSetNewBlockStates@BlockTypeRegistry@@CAPEBVBlock@@AEBULookupByNameImplReturnType@1@@Z
-     * @hash   1490527558
+     * @hash   1491357862
      */
     MCAPI static class Block const * _lookupByNameImplSetNewBlockStates(struct BlockTypeRegistry::LookupByNameImplReturnType const &);
 

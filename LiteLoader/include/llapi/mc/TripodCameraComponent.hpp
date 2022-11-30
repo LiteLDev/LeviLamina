@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getInteraction@TripodCameraComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -662663793
+     * @hash   -662617665
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 

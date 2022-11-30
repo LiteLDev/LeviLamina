@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@HumanoidMonster@@UEAAXXZ
-     * @hash   1040208814
+     * @hash   1040254942
      */
     virtual void normalTick();
     /**
@@ -141,13 +141,13 @@ public:
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -935235117
+     * @hash   -935188989
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -1020134454
+     * @hash   -1020088326
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -168,7 +168,7 @@ public:
     /**
      * @vftbl  303
      * @symbol ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
-     * @hash   -1144175664
+     * @hash   -1144129536
      */
     virtual int getItemUseDuration() const;
     /**
@@ -179,7 +179,7 @@ public:
     /**
      * @vftbl  311
      * @symbol ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   2093172209
+     * @hash   2093218337
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
@@ -199,7 +199,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0HumanoidMonster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1358192121
+     * @hash   1358238249
      */
     MCAPI HumanoidMonster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
@@ -208,22 +208,22 @@ public:
 private:
     /**
      * @symbol ?MAX_ENCHANTED_ARMOR_CHANCE@HumanoidMonster@@0MB
-     * @hash   427773696
+     * @hash   427896704
      */
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     /**
      * @symbol ?MAX_ENCHANTED_WEAPON_CHANCE@HumanoidMonster@@0MB
-     * @hash   -923583549
+     * @hash   -923460541
      */
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     /**
      * @symbol ?MAX_PICKUP_LOOT_CHANCE@HumanoidMonster@@0MB
-     * @hash   -740857815
+     * @hash   -740734807
      */
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
     /**
      * @symbol ?MAX_WEARING_ARMOR_CHANCE@HumanoidMonster@@0MB
-     * @hash   679846701
+     * @hash   679969709
      */
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
 

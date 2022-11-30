@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@OnWakeWithOwnerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnWakeWithOwnerDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   967175896
+     * @hash   967268152
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnWakeWithOwnerDefinition>> &);
 

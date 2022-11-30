@@ -33,62 +33,62 @@ public:
 public:
     /**
      * @symbol ??0FeatureRegistry@@QEAA@XZ
-     * @hash   864985311
+     * @hash   865815615
      */
     MCAPI FeatureRegistry();
     /**
      * @symbol ?forEachFeature@FeatureRegistry@@QEBAXV?$function@$$A6AXAEBVHashedString@@V?$WeakRefT@UFeatureRefTraits@@@@@Z@std@@@Z
-     * @hash   -955197326
+     * @hash   -954367022
      */
     MCAPI void forEachFeature(class std::function<void (class HashedString const &, class WeakRefT<struct FeatureRefTraits>)>) const;
     /**
      * @symbol ?getLargeFeaturePasses@FeatureRegistry@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -1821321553
+     * @hash   -1820491249
      */
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;
     /**
      * @symbol ?getSmallFeaturePasses@FeatureRegistry@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   1968698975
+     * @hash   1969529279
      */
     MCAPI std::vector<std::string> getSmallFeaturePasses() const;
     /**
      * @symbol ?isFeaturePassDefined@FeatureRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -752258779
+     * @hash   -751428475
      */
     MCAPI bool isFeaturePassDefined(std::string const &) const;
     /**
      * @symbol ?loadFromDefinitions@FeatureRegistry@@QEAAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBVExperiments@@_N@Z
-     * @hash   608094125
+     * @hash   608924429
      */
     MCAPI void loadFromDefinitions(class IWorldRegistriesProvider &, class ResourcePackManager const &, class Experiments const &, bool);
     /**
      * @symbol ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2029215810
+     * @hash   2030046114
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const &) const;
     /**
      * @symbol ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   537448828
+     * @hash   538279132
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const &);
     /**
      * @symbol ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   48024710
+     * @hash   48855014
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const &);
     /**
      * @symbol ?reverseLookupString@FeatureRegistry@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIFeature@@@Z
-     * @hash   -424220675
+     * @hash   -423390371
      */
     MCAPI std::string const & reverseLookupString(class IFeature const &);
     /**
      * @symbol ?setLargeFeaturePasses@FeatureRegistry@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   879602685
+     * @hash   880432989
      */
     MCAPI void setLargeFeaturePasses(std::vector<std::string>);
     /**
      * @symbol ?setSmallFeaturePasses@FeatureRegistry@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1666945539
+     * @hash   -1666115235
      */
     MCAPI void setSmallFeaturePasses(std::vector<std::string>);
     /**
@@ -155,17 +155,17 @@ public:
 //private:
     /**
      * @symbol ?_featureNamespaceFromInput@FeatureRegistry@@AEAA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-     * @hash   -51219826
+     * @hash   -50389522
      */
     MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
     /**
      * @symbol ?_registerFeature@FeatureRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIFeature@@U?$default_delete@VIFeature@@@std@@@3@@Z
-     * @hash   2140868598
+     * @hash   2141698902
      */
     MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
     /**
      * @symbol ?_setupFeature@FeatureRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBV23@2AEBVSemVersion@@@Z
-     * @hash   -2038701757
+     * @hash   -2037871453
      */
     MCAPI std::string _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
 

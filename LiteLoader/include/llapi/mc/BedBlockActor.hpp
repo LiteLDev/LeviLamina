@@ -39,37 +39,37 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BedBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1580774448
+     * @hash   1581604752
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BedBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -1177085457
+     * @hash   -1176255153
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  3
      * @symbol ?saveItemInstanceData@BedBlockActor@@UEAA_NAEAVCompoundTag@@@Z
-     * @hash   1773164590
+     * @hash   1773994894
      */
     virtual bool saveItemInstanceData(class CompoundTag &);
     /**
      * @vftbl  7
      * @symbol ?tick@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1445346135
+     * @hash   -1444515831
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  8
      * @symbol ?onChanged@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -246357375
+     * @hash   -245527071
      */
     virtual void onChanged(class BlockSource &);
     /**
      * @vftbl  11
      * @symbol ?onPlace@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1682688466
+     * @hash   -1681858162
      */
     virtual void onPlace(class BlockSource &);
     /**
@@ -85,13 +85,13 @@ public:
     /**
      * @vftbl  21
      * @symbol ?getCrackEntity@BedBlockActor@@UEAAPEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   656182793
+     * @hash   657013097
      */
     virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /**
      * @vftbl  26
      * @symbol ?getName@BedBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2015029506
+     * @hash   2015859810
      */
     virtual std::string getName() const;
     /**
@@ -133,27 +133,27 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@BedBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1168233456
+     * @hash   -1167403152
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0BedBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   917777740
+     * @hash   918608044
      */
     MCAPI BedBlockActor(class BlockPos const &);
     /**
      * @symbol ?claimPetSleepOnBed@BedBlockActor@@QEAA_NUActorUniqueID@@@Z
-     * @hash   1922882701
+     * @hash   1923713005
      */
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     /**
      * @symbol ?startSleepingOn@BedBlockActor@@QEAAXXZ
-     * @hash   -499867699
+     * @hash   -499037395
      */
     MCAPI void startSleepingOn();
     /**
      * @symbol ?stopSleepingOn@BedBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     * @hash   1748448277
+     * @hash   1749278581
      */
     MCAPI void stopSleepingOn(class BlockSource &, bool);
 

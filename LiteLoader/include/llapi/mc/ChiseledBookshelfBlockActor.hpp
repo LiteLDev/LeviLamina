@@ -37,13 +37,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ChiseledBookshelfBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -410556837
+     * @hash   -409726533
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ChiseledBookshelfBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1702307290
+     * @hash   1703137594
      */
     virtual bool save(class CompoundTag &) const;
     /**
@@ -101,57 +101,57 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@ChiseledBookshelfBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -155228539
+     * @hash   -154398235
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0ChiseledBookshelfBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1766018217
+     * @hash   -1765187913
      */
     MCAPI ChiseledBookshelfBlockActor(class BlockPos const &);
     /**
      * @symbol ?addBook@ChiseledBookshelfBlockActor@@QEAAXAEBVItemStack@@@Z
-     * @hash   -275988078
+     * @hash   -275157774
      */
     MCAPI void addBook(class ItemStack const &);
     /**
      * @symbol ?clearInventory@ChiseledBookshelfBlockActor@@QEAAXXZ
-     * @hash   548647633
+     * @hash   549477937
      */
     MCAPI void clearInventory();
     /**
      * @symbol ?dropAllItems@ChiseledBookshelfBlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -1341998486
+     * @hash   -1341168182
      */
     MCAPI void dropAllItems(class BlockSource &);
     /**
      * @symbol ?hasBooks@ChiseledBookshelfBlockActor@@QEBA_NXZ
-     * @hash   -1409689704
+     * @hash   -1408859400
      */
     MCAPI bool hasBooks() const;
     /**
      * @symbol ?isFull@ChiseledBookshelfBlockActor@@QEBA_NXZ
-     * @hash   -480830632
+     * @hash   -480000328
      */
     MCAPI bool isFull() const;
     /**
      * @symbol ?loadItems@ChiseledBookshelfBlockActor@@QEAAXAEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   87765371
+     * @hash   88595675
      */
     MCAPI void loadItems(class CompoundTag const &, class Level &);
     /**
      * @symbol ?numberOfBooksStored@ChiseledBookshelfBlockActor@@QEBAHXZ
-     * @hash   -808843150
+     * @hash   -808012846
      */
     MCAPI int numberOfBooksStored() const;
     /**
      * @symbol ?popBookItem@ChiseledBookshelfBlockActor@@QEAA?AVItemStack@@XZ
-     * @hash   437072718
+     * @hash   437903022
      */
     MCAPI class ItemStack popBookItem();
     /**
      * @symbol ?allowedItem@ChiseledBookshelfBlockActor@@SA_NAEBVItemStack@@@Z
-     * @hash   -1085152849
+     * @hash   -1084322545
      */
     MCAPI static bool allowedItem(class ItemStack const &);
 

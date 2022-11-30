@@ -39,24 +39,24 @@ public:
     virtual ~ScriptMinecraftServerAdminModuleFactory();
     /**
      * @symbol ??0ScriptMinecraftServerAdminModuleFactory@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@@Z
-     * @hash   -536099772
+     * @hash   -536007516
      */
     MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftServerAdminModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   58512014
+     * @hash   58604270
      */
     MCAPI static std::string getModuleUUIDAsString();
     /**
      * @symbol ?makeModuleDescriptorFor@ScriptMinecraftServerAdminModuleFactory@@SA?AUModuleDescriptor@Scripting@@UVersion@3@@Z
-     * @hash   1586905933
+     * @hash   1586998189
      */
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
     /**
      * @symbol ?_generateBindings@ScriptMinecraftServerAdminModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@V?$optional@UContextConfig@Scripting@@@std@@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@Z
-     * @hash   647672013
+     * @hash   647764269
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, class std::optional<struct Scripting::ContextConfig>, bool, std::vector<std::string> const &);
 

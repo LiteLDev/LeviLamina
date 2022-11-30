@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1242020793
+     * @hash   1242066921
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@FishingHook@@UEAAXXZ
-     * @hash   390350846
+     * @hash   390396974
      */
     virtual void remove();
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@FishingHook@@UEAAXXZ
-     * @hash   -647120674
+     * @hash   -647074546
      */
     virtual void normalTick();
     /**
@@ -123,7 +123,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -632622983
+     * @hash   -632576855
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -135,7 +135,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
-     * @hash   1492949177
+     * @hash   1492995305
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
@@ -192,79 +192,79 @@ public:
     virtual void __unk_vfn_274();
     /**
      * @symbol ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -780641879
+     * @hash   -780595751
      */
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getOwner@FishingHook@@QEAAPEAVActor@@XZ
-     * @hash   -561756925
+     * @hash   -561710797
      */
     MCAPI class Actor * getOwner();
     /**
      * @symbol ?postNormalTick@FishingHook@@QEAAXXZ
-     * @hash   -1631546965
+     * @hash   -1631500837
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?retrieve@FishingHook@@QEAAHXZ
-     * @hash   -170620752
+     * @hash   -170574624
      */
     MCAPI int retrieve();
     /**
      * @symbol ?BOBBER_SIZE@FishingHook@@2MB
-     * @hash   -777465531
+     * @hash   -777342523
      */
     MCAPI static float const BOBBER_SIZE;
 
 //protected:
     /**
      * @symbol ?_fishPosEvent@FishingHook@@IEAAXXZ
-     * @hash   1284270227
+     * @hash   1284316355
      */
     MCAPI void _fishPosEvent();
     /**
      * @symbol ?_fishTeaseEvent@FishingHook@@IEAAXXZ
-     * @hash   -1644138635
+     * @hash   -1644092507
      */
     MCAPI void _fishTeaseEvent();
     /**
      * @symbol ?_fishhookEvent@FishingHook@@IEAAXXZ
-     * @hash   -189760058
+     * @hash   -189713930
      */
     MCAPI void _fishhookEvent();
     /**
      * @symbol ?_getWaterPercentage@FishingHook@@IEAAMXZ
-     * @hash   -1252605288
+     * @hash   -1252559160
      */
     MCAPI float _getWaterPercentage();
     /**
      * @symbol ?_hitCheck@FishingHook@@IEAA?AVHitResult@@XZ
-     * @hash   -223597725
+     * @hash   -223551597
      */
     MCAPI class HitResult _hitCheck();
     /**
      * @symbol ?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z
-     * @hash   -1120027233
+     * @hash   -1119981105
      */
     MCAPI void _pullCloser(class Actor &, float);
     /**
      * @symbol ?_serverHooked@FishingHook@@IEAA_NXZ
-     * @hash   1402508084
+     * @hash   1402554212
      */
     MCAPI bool _serverHooked();
     /**
      * @symbol ?_serverLured@FishingHook@@IEAA_NXZ
-     * @hash   -739896426
+     * @hash   -739850298
      */
     MCAPI bool _serverLured();
     /**
      * @symbol ?_updateGravity@FishingHook@@IEAAXXZ
-     * @hash   2138079164
+     * @hash   2138125292
      */
     MCAPI void _updateGravity();
     /**
      * @symbol ?_updateServer@FishingHook@@IEAAXXZ
-     * @hash   -132775199
+     * @hash   -132729071
      */
     MCAPI void _updateServer();
 

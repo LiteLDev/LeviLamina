@@ -34,13 +34,13 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1924006403
+     * @hash   -1923960275
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -670575352
+     * @hash   -670529224
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  20
      * @symbol ?remove@Boat@@UEAAXXZ
-     * @hash   227772811
+     * @hash   227818939
      */
     virtual void remove();
     /**
@@ -62,13 +62,13 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Boat@@UEAAXXZ
-     * @hash   765669035
+     * @hash   765715163
      */
     virtual void normalTick();
     /**
      * @vftbl  57
      * @symbol ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
-     * @hash   -2119803774
+     * @hash   -2119757646
      */
     virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /**
@@ -111,13 +111,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?onAboveBubbleColumn@Boat@@UEAAX_N@Z
-     * @hash   1187374405
+     * @hash   1187420533
      */
     virtual void onAboveBubbleColumn(bool);
     /**
      * @vftbl  97
      * @symbol ?isPickable@Boat@@UEAA_NXZ
-     * @hash   -183868258
+     * @hash   -183822130
      */
     virtual bool isPickable();
     /**
@@ -153,7 +153,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -522719394
+     * @hash   -522673266
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -164,13 +164,13 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
-     * @hash   1641636823
+     * @hash   1641682951
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
      * @vftbl  193
      * @symbol ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
-     * @hash   -655394972
+     * @hash   -655348844
      */
     virtual bool canAddPassenger(class Actor &) const;
     /**
@@ -191,7 +191,7 @@ public:
     /**
      * @vftbl  226
      * @symbol ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
-     * @hash   1522838753
+     * @hash   1522884881
      */
     virtual float getPassengerYRotation(class Actor const &) const;
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -555213719
+     * @hash   -555167591
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -228,54 +228,54 @@ public:
     /**
      * @vftbl  282
      * @symbol ?destroy@Boat@@UEAAXPEAVActor@@@Z
-     * @hash   -1155028574
+     * @hash   -1154982446
      */
     virtual void destroy(class Actor *);
     /**
      * @symbol ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   926113932
+     * @hash   926160060
      */
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getRowingTime@Boat@@QEBAMW4Side@@@Z
-     * @hash   952068691
+     * @hash   952114819
      */
     MCAPI float getRowingTime(enum class Side) const;
     /**
      * @symbol ?getWoodID@Boat@@QEBAEXZ
-     * @hash   836368983
+     * @hash   836415111
      */
     MCAPI unsigned char getWoodID() const;
     /**
      * @symbol ?postNormalTick@Boat@@QEAAXXZ
-     * @hash   -1071064155
+     * @hash   -1071018027
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setPaddleState@Boat@@QEAA_NW4Side@@_N@Z
-     * @hash   333086892
+     * @hash   333133020
      */
     MCAPI bool setPaddleState(enum class Side, bool);
     /**
      * @symbol ?setRowingTime@Boat@@QEAAXW4Side@@M@Z
-     * @hash   217756903
+     * @hash   217803031
      */
     MCAPI void setRowingTime(enum class Side, float);
 
 //private:
     /**
      * @symbol ?_control@Boat@@AEAAXXZ
-     * @hash   -1391332838
+     * @hash   -1391286710
      */
     MCAPI void _control();
     /**
      * @symbol ?_move@Boat@@AEAAXXZ
-     * @hash   -1375573652
+     * @hash   -1375527524
      */
     MCAPI void _move();
     /**
      * @symbol ?_paddleControl@Boat@@AEAAXW4Side@@AEAVVec3@@1@Z
-     * @hash   397332965
+     * @hash   397379093
      */
     MCAPI void _paddleControl(enum class Side, class Vec3 &, class Vec3 &);
 

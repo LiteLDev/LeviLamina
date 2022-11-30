@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createTeleportPositionModeEventSystem@TeleportPositionModeEventSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1986734984
+     * @hash   -1986688856
      */
     MCAPI static struct TickingSystemWithInfo createTeleportPositionModeEventSystem();
 

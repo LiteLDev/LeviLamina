@@ -49,47 +49,47 @@ public:
     /**
      * @vftbl  3
      * @symbol ?tryGetLiquidBlock@BlockVolumeTarget@@UEBAPEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1065353942
+     * @hash   1066184246
      */
     virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
     /**
      * @vftbl  4
-     * @hash   -587466396
+     * @hash   -586636092
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -586542875
+     * @hash   -585712571
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?getExtraBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1365307237
+     * @hash   1366137541
      */
     virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /**
      * @vftbl  7
      * @symbol ?fetchBlocksInBox@BlockVolumeTarget@@UEAA?AV?$span@$$CBV?$BlockDataFetchResult@VBlock@@@@$0?0@gsl@@AEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
-     * @hash   -1014016633
+     * @hash   -1013186329
      */
     virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
     /**
      * @vftbl  8
      * @symbol ?hasBiomeTag@BlockVolumeTarget@@UEBA_N_KAEBVBlockPos@@@Z
-     * @hash   -1627569526
+     * @hash   -1626739222
      */
     virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /**
      * @vftbl  9
      * @symbol ?setBlock@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
-     * @hash   -869190095
+     * @hash   -868359791
      */
     virtual bool setBlock(class BlockPos const &, class Block const &, int);
     /**
      * @vftbl  10
      * @symbol ?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -462522592
+     * @hash   -461692288
      */
     virtual bool setBlockSimple(class BlockPos const &, class Block const &);
     /**
@@ -115,7 +115,7 @@ public:
     /**
      * @vftbl  15
      * @symbol ?getMaxHeight@BlockVolumeTarget@@UEBAFXZ
-     * @hash   -859007093
+     * @hash   -858176789
      */
     virtual short getMaxHeight() const;
     /**
@@ -131,37 +131,37 @@ public:
     /**
      * @vftbl  18
      * @symbol ?getHeightmap@BlockVolumeTarget@@UEAAFHH@Z
-     * @hash   79812838
+     * @hash   80643142
      */
     virtual short getHeightmap(int, int);
     /**
      * @vftbl  19
      * @symbol ?isLegacyLevel@BlockVolumeTarget@@UEAA_NXZ
-     * @hash   -750065262
+     * @hash   -749234958
      */
     virtual bool isLegacyLevel();
     /**
      * @vftbl  20
      * @symbol ?getBiome@BlockVolumeTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-     * @hash   1853276245
+     * @hash   1854106549
      */
     virtual class Biome const * getBiome(class BlockPos const &) const;
     /**
      * @vftbl  21
      * @symbol ?isInBounds@BlockVolumeTarget@@UEBA_NAEBVPos@@@Z
-     * @hash   2101388575
+     * @hash   2102218879
      */
     virtual bool isInBounds(class Pos const &) const;
     /**
      * @vftbl  22
      * @symbol ?getLocalWaterLevel@BlockVolumeTarget@@UEBAFAEBVBlockPos@@@Z
-     * @hash   -49503680
+     * @hash   -48673376
      */
     virtual short getLocalWaterLevel(class BlockPos const &) const;
     /**
      * @vftbl  23
      * @symbol ?getLevelData@BlockVolumeTarget@@UEBAAEBVLevelData@@XZ
-     * @hash   -925619721
+     * @hash   -924789417
      */
     virtual class LevelData const & getLevelData() const;
     /**
@@ -189,12 +189,12 @@ public:
     MCVAPI bool canSurvive(class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -923129615
+     * @hash   -922299311
      */
     MCVAPI class Block const & getBlock(class BlockPos const &) const;
     /**
      * @symbol ?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   1735198797
+     * @hash   1736029101
      */
     MCVAPI class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
     /**
@@ -215,7 +215,7 @@ public:
 #endif
     /**
      * @symbol ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z
-     * @hash   -1847164235
+     * @hash   -1846333931
      */
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);
 

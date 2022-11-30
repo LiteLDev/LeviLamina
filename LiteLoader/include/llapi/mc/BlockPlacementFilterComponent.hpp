@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1599240686
+     * @hash   1600070990
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   -2073508012
+     * @hash   -2072677708
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ??4BlockPlacementFilterComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   381932010
+     * @hash   382762314
      */
     MCAPI struct BlockPlacementFilterComponent & operator=(struct BlockPlacementFilterComponent &&);
     /**
      * @symbol ??1BlockPlacementFilterComponent@@QEAA@XZ
-     * @hash   -1144426119
+     * @hash   -1143595815
      */
     MCAPI ~BlockPlacementFilterComponent();
 

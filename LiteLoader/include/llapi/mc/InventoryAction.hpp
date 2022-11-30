@@ -51,12 +51,12 @@ public:
 public:
     /**
      * @symbol ??0InventoryAction@@QEAA@AEBV0@@Z
-     * @hash   -158431743
+     * @hash   -158385615
      */
     MCAPI InventoryAction(class InventoryAction const &);
     /**
      * @symbol ?postLoadItems@InventoryAction@@QEAAXAEAVBlockPalette@@_N@Z
-     * @hash   -126397999
+     * @hash   -125567695
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**

@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?areKnownFilesValid@ResourceSignature@@QEAA_NAEBVPackAccessStrategy@@@Z
-     * @hash   -979825015
+     * @hash   -979778887
      */
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     /**
@@ -50,17 +50,17 @@ public:
 //private:
     /**
      * @symbol ?_areKnownFilesValid@ResourceSignature@@AEAA_NAEBVPackAccessStrategy@@_N@Z
-     * @hash   -789478998
+     * @hash   -789432870
      */
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
     /**
      * @symbol ?_checkSignedFiles@ResourceSignature@@AEBA_NAEBVPackAccessStrategy@@@Z
-     * @hash   1621228778
+     * @hash   1621274906
      */
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
     /**
      * @symbol ?_loadSignaturesFile@ResourceSignature@@AEAAXAEBVPath@Core@@AEBVPackAccessStrategy@@@Z
-     * @hash   -1427540862
+     * @hash   -1427494734
      */
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
 

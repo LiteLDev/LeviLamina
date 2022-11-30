@@ -33,54 +33,54 @@ public:
 public:
     /**
      * @symbol ??0JournaledFile@@QEAA@$$QEAV?$function@$$A6A?AVResult@Core@@VPath@2@@Z@std@@@Z
-     * @hash   643329874
+     * @hash   644160178
      */
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
     /**
      * @symbol ?open@JournaledFile@@QEAA?AVResult@Core@@VPath@3@VFileOpenMode@3@W4FileBufferingMode@3@@Z
-     * @hash   -885367075
+     * @hash   -884536771
      */
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
     /**
      * @symbol ?write@JournaledFile@@QEAA?AVResult@Core@@PEBX_K@Z
-     * @hash   -651080702
+     * @hash   -650250398
      */
     MCAPI class Core::Result write(void const *, unsigned __int64);
     /**
      * @symbol ??1JournaledFile@@QEAA@XZ
-     * @hash   -913470690
+     * @hash   -912640386
      */
     MCAPI ~JournaledFile();
     /**
      * @symbol ?findBackupPath@JournaledFile@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@VPath@3@@Z
-     * @hash   718726934
+     * @hash   719557238
      */
     MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
     /**
      * @symbol ?findReadPath@JournaledFile@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@VPath@3@@Z
-     * @hash   -1346890698
+     * @hash   -1346060394
      */
     MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
     /**
      * @symbol ?isOldFile@JournaledFile@@SA_NVPath@Core@@@Z
-     * @hash   -1810668771
+     * @hash   -1809838467
      */
     MCAPI static bool isOldFile(class Core::Path);
     /**
      * @symbol ?populateImportantFiles@JournaledFile@@SAXVPath@Core@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   1709026234
+     * @hash   1709856538
      */
     MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string> &);
     /**
      * @symbol ?replaceHeadFileWithBackup@JournaledFile@@SA?AVResult@Core@@VPath@3@@Z
-     * @hash   -1938112577
+     * @hash   -1937282273
      */
     MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
 
 //private:
     /**
      * @symbol ?_flushFiles@JournaledFile@@AEAAXXZ
-     * @hash   -793685460
+     * @hash   -792855156
      */
     MCAPI void _flushFiles();
 

@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  25
      * @symbol ?canConnect@BarrierBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   1196426845
+     * @hash   1197257149
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -236,7 +236,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0BarrierBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1524125556
+     * @hash   1524955860
      */
     MCAPI BarrierBlock(std::string const &, int);
 

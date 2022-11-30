@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_tickMovementSystem@InsideWaterlilyBlockSystemImpl@@SAXAEBVStrictEntityContext@@AEBU?$InsideBlockWithPosComponent@UWaterlilyBlockFlag@@@@AEAUStateVectorComponent@@@Z
-     * @hash   -672313685
+     * @hash   -672267557
      */
     MCAPI static void _tickMovementSystem(class StrictEntityContext const &, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const &, struct StateVectorComponent &);
 

@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@FlowerPotBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1862119
+     * @hash   -1031815
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@FlowerPotBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -672282472
+     * @hash   -671452168
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  8
      * @symbol ?onChanged@FlowerPotBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1867397574
+     * @hash   -1866567270
      */
     virtual void onChanged(class BlockSource &);
     /**
@@ -103,22 +103,22 @@ public:
     /**
      * @vftbl  38
      * @symbol ?_onUpdatePacket@FlowerPotBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -30623593
+     * @hash   -29793289
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0FlowerPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -102525275
+     * @hash   -101694971
      */
     MCAPI FlowerPotBlockActor(class BlockPos const &);
     /**
      * @symbol ?getPlantItem@FlowerPotBlockActor@@QEBAPEBVBlock@@XZ
-     * @hash   -1744873933
+     * @hash   -1744827805
      */
     MCAPI class Block const * getPlantItem() const;
     /**
      * @symbol ?setPlantItem@FlowerPotBlockActor@@QEAAXPEBVBlock@@@Z
-     * @hash   536502445
+     * @hash   537332749
      */
     MCAPI void setPlantItem(class Block const *);
 

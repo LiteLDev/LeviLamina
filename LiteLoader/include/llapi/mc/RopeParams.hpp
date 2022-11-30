@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0RopeParams@@QEAA@XZ
-     * @hash   -1836033836
+     * @hash   -1835203532
      */
     MCAPI RopeParams();
     /**
      * @symbol ??0RopeParams@@QEAA@AEBVVec3@@0M@Z
-     * @hash   2106012534
+     * @hash   2106842838
      */
     MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     /**
      * @symbol ?leadInit@RopeParams@@QEAAXXZ
-     * @hash   1515950245
+     * @hash   1516780549
      */
     MCAPI void leadInit();
 

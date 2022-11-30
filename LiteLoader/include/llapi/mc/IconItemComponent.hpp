@@ -59,33 +59,33 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -368878958
+     * @hash   -368048654
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VIconItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1473454354
+     * @hash   -1472624050
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ??0IconItemComponent@@QEAA@PEAVComponentItem@@@Z
-     * @hash   249839961
+     * @hash   250670265
      */
     MCAPI IconItemComponent(class ComponentItem *);
     /**
      * @symbol ?setOwnerIcon@IconItemComponent@@QEAAXXZ
-     * @hash   -1918605417
+     * @hash   -1917775113
      */
     MCAPI void setOwnerIcon();
     /**
      * @symbol ?bindType@IconItemComponent@@SAXXZ
-     * @hash   536961087
+     * @hash   537791391
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@IconItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   1477052486
+     * @hash   1477882790
      */
     MCAPI static class HashedString const & getIdentifier();
 

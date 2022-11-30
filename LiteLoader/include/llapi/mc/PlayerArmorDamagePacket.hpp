@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PlayerArmorDamagePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1305132999
+     * @hash   -1305086871
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerArmorDamagePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -614541578
+     * @hash   -614495450
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PlayerArmorDamagePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2027305473
+     * @hash   2027351601
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PlayerArmorDamagePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   505302081
+     * @hash   505348209
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 

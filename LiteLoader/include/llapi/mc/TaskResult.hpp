@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ??0TaskResult@@QEAA@XZ
-     * @hash   722701598
+     * @hash   723531902
      */
     MCAPI TaskResult();
     /**
      * @symbol ?getRunAtTime@TaskResult@@QEBA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@XZ
-     * @hash   177165087
+     * @hash   177211215
      */
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getRunAtTime() const;
     /**
      * @symbol ?getWaitingOperation@TaskResult@@QEBA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@XZ
-     * @hash   1199419456
+     * @hash   1200249760
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> getWaitingOperation() const;
     /**
      * @symbol ?hasDelay@TaskResult@@QEBA_NXZ
-     * @hash   1736629772
+     * @hash   1737460076
      */
     MCAPI bool hasDelay() const;
     /**
      * @symbol ?isDone@TaskResult@@QEBA_NXZ
-     * @hash   1227103714
+     * @hash   1227149842
      */
     MCAPI bool isDone() const;
     /**
      * @symbol ?isWaiting@TaskResult@@QEBA_NXZ
-     * @hash   -1789167262
+     * @hash   -1789121134
      */
     MCAPI bool isWaiting() const;
     /**
@@ -82,7 +82,7 @@ public:
     MCAPI static class TaskResult const Requeue;
     /**
      * @symbol ?requeueAfter@TaskResult@@SA?AV1@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-     * @hash   -44745383
+     * @hash   -43915079
      */
     MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 

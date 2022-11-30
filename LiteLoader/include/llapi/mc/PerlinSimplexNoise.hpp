@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0PerlinSimplexNoise@@QEAA@IH@Z
-     * @hash   -889931854
+     * @hash   -889101550
      */
     MCAPI PerlinSimplexNoise(unsigned int, int);
     /**
      * @symbol ??0PerlinSimplexNoise@@QEAA@AEAVIRandom@@H_N@Z
-     * @hash   899261161
+     * @hash   900091465
      */
     MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
     /**
@@ -46,39 +46,39 @@ public:
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
     /**
      * @symbol ?getRegion@PerlinSimplexNoise@@QEBAPEAMPEAMAEBVVec2@@HH1MM@Z
-     * @hash   -712099158
+     * @hash   -711268854
      */
     MCAPI float * getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float, float) const;
     /**
      * @symbol ?getValue@PerlinSimplexNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   1075669479
+     * @hash   1076499783
      */
     MCAPI float getValue(class Vec3 const &) const;
     /**
      * @symbol ?getValue@PerlinSimplexNoise@@QEBAMMM@Z
-     * @hash   1325738638
+     * @hash   1326568942
      */
     MCAPI float getValue(float, float) const;
     /**
      * @symbol ?getValueNormalized@PerlinSimplexNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   1096807961
+     * @hash   1097638265
      */
     MCAPI float getValueNormalized(class Vec3 const &) const;
     /**
      * @symbol ?getValueNormalized@PerlinSimplexNoise@@QEBAMMM@Z
-     * @hash   700569294
+     * @hash   701399598
      */
     MCAPI float getValueNormalized(float, float) const;
     /**
      * @symbol ??1PerlinSimplexNoise@@QEAA@XZ
-     * @hash   2021678866
+     * @hash   2022509170
      */
     MCAPI ~PerlinSimplexNoise();
 
 //private:
     /**
      * @symbol ?_init@PerlinSimplexNoise@@AEAAXAEAVIRandom@@_N@Z
-     * @hash   932931127
+     * @hash   933761431
      */
     MCAPI void _init(class IRandom &, bool);
 

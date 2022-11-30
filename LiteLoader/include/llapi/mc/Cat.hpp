@@ -100,13 +100,13 @@ public:
     /**
      * @vftbl  123
      * @symbol ?onTame@Cat@@UEAAXXZ
-     * @hash   813170261
+     * @hash   813216389
      */
     virtual void onTame();
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1082485742
+     * @hash   1082531870
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
@@ -142,7 +142,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
-     * @hash   1086422654
+     * @hash   1086468782
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -168,7 +168,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Cat@@UEAAXXZ
-     * @hash   -56471211
+     * @hash   -56425083
      */
     virtual void aiStep();
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  356
      * @symbol ?_serverAiMobStep@Cat@@UEAAXXZ
-     * @hash   1919498739
+     * @hash   1919544867
      */
     virtual void _serverAiMobStep();
     /**
@@ -199,24 +199,24 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Cat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1553942690
+     * @hash   1553988818
      */
     MCAPI Cat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?SNEAK_SPEED_MOD@Cat@@2MB
-     * @hash   -1899178229
+     * @hash   -1899055221
      */
     MCAPI static float const SNEAK_SPEED_MOD;
     /**
      * @symbol ?SPRINT_SPEED_MOD@Cat@@2MB
-     * @hash   1135130041
+     * @hash   1135253049
      */
     MCAPI static float const SPRINT_SPEED_MOD;
 
 //private:
     /**
      * @symbol ?getLieOnPlayer@Cat@@AEAAMXZ
-     * @hash   1694261664
+     * @hash   1694307792
      */
     MCAPI float getLieOnPlayer();
 

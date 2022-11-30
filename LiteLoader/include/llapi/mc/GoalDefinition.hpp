@@ -25,52 +25,52 @@ struct GoalDefinition {
 public:
     /**
      * @symbol ??0GoalDefinition@@QEAA@XZ
-     * @hash   -1007656318
+     * @hash   -1007610190
      */
     MCAPI GoalDefinition();
     /**
      * @symbol ??0GoalDefinition@@QEAA@AEBU0@@Z
-     * @hash   1241402735
+     * @hash   1241448863
      */
     MCAPI GoalDefinition(struct GoalDefinition const &);
     /**
      * @symbol ??0GoalDefinition@@QEAA@$$QEAU0@@Z
-     * @hash   1035251865
+     * @hash   1035297993
      */
     MCAPI GoalDefinition(struct GoalDefinition &&);
     /**
      * @symbol ?_getPOITypeFromString@GoalDefinition@@QEAA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -970063729
+     * @hash   -970017601
      */
     MCAPI enum class POIType _getPOITypeFromString(std::string);
     /**
      * @symbol ??4GoalDefinition@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1974653190
+     * @hash   1974699318
      */
     MCAPI struct GoalDefinition & operator=(struct GoalDefinition const &);
     /**
      * @symbol ??4GoalDefinition@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -2038342960
+     * @hash   -2038296832
      */
     MCAPI struct GoalDefinition & operator=(struct GoalDefinition &&);
     /**
      * @symbol ?parse@GoalDefinition@@QEAA_NAEBUConstDeserializeDataParams@@H@Z
-     * @hash   -691705396
+     * @hash   -691659268
      */
     MCAPI bool parse(struct ConstDeserializeDataParams const &, int);
     /**
      * @symbol ??1GoalDefinition@@QEAA@XZ
-     * @hash   1302676416
+     * @hash   1302722544
      */
     MCAPI ~GoalDefinition();
     /**
      * @symbol ?CreateGoal@GoalDefinition@@SA?AV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@AEAVMob@@AEBU1@@Z
-     * @hash   833810581
+     * @hash   833856709
      */
     MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob &, struct GoalDefinition const &);
     /**
      * @symbol ?GoalExists@GoalDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1503318619
+     * @hash   1503364747
      */
     MCAPI static bool GoalExists(std::string const &);
     /**
@@ -85,7 +85,7 @@ public:
     MCAPI static class std::unordered_map<std::string, class std::function<std::unique_ptr<class Goal> (class Mob &, struct GoalDefinition const &)>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::function<std::unique_ptr<class Goal> (class Mob &, struct GoalDefinition const &)>>>> mGoalMap;
     /**
      * @symbol ?shutdown@GoalDefinition@@SAXXZ
-     * @hash   -200648157
+     * @hash   -200602029
      */
     MCAPI static void shutdown();
 

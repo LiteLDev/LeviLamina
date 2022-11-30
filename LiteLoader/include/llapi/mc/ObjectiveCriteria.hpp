@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0ObjectiveCriteria@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4ObjectiveRenderType@@@Z
-     * @hash   -1329616717
+     * @hash   -1328786413
      */
     MCAPI ObjectiveCriteria(std::string const &, bool, enum class ObjectiveRenderType);
     /**
@@ -47,12 +47,12 @@ public:
     MCAPI bool isReadOnly() const;
     /**
      * @symbol ?deserialize@ObjectiveCriteria@@SA?AV?$unique_ptr@VObjectiveCriteria@@U?$default_delete@VObjectiveCriteria@@@std@@@std@@AEBVCompoundTag@@@Z
-     * @hash   -1554056637
+     * @hash   -1553226333
      */
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const &);
     /**
      * @symbol ?serialize@ObjectiveCriteria@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
-     * @hash   -1655950640
+     * @hash   -1655120336
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const &);
 

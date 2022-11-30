@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ??0ActorTickNeededComponent@@QEAA@AEAVBlockSource@@@Z
-     * @hash   880609687
+     * @hash   880655815
      */
     MCAPI ActorTickNeededComponent(class BlockSource &);
     /**
@@ -43,12 +43,12 @@ public:
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
     /**
      * @symbol ?getBlockSource@ActorTickNeededComponent@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
-     * @hash   2063436092
+     * @hash   2063482220
      */
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
     /**
      * @symbol ??4ActorTickNeededComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1192495608
+     * @hash   1192541736
      */
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     /**

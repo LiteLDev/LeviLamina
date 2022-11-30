@@ -36,31 +36,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isInWater@PathBlockSource@@UEBA_NXZ
-     * @hash   -24882467
+     * @hash   -24052163
      */
     virtual bool isInWater() const;
     /**
      * @vftbl  2
      * @symbol ?isInLava@PathBlockSource@@UEBA_NXZ
-     * @hash   612766964
+     * @hash   613597268
      */
     virtual bool isInLava() const;
     /**
      * @vftbl  3
      * @symbol ?isWaterBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-     * @hash   -1257002877
+     * @hash   -1256172573
      */
     virtual bool isWaterBlock(class BlockPos const &) const;
     /**
      * @vftbl  4
      * @symbol ?isLavaBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-     * @hash   133327168
+     * @hash   134157472
      */
     virtual bool isLavaBlock(class BlockPos const &) const;
     /**
      * @vftbl  5
      * @symbol ?isSolidBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-     * @hash   -349779353
+     * @hash   -348949049
      */
     virtual bool isSolidBlock(class BlockPos const &) const;
 

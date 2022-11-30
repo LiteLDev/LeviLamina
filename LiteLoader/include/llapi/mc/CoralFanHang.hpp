@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@CoralFanHang@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   2510249
+     * @hash   3340553
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@CoralFanHang@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   268428212
+     * @hash   269258516
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,19 +171,19 @@ public:
     /**
      * @vftbl  93
      * @symbol ?mayPlaceOn@CoralFanHang@@EEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1888098269
+     * @hash   1888928573
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CoralFanHang@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1163408102
+     * @hash   1164238406
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CoralFanHang@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   459602214
+     * @hash   460432518
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@CoralFanHang@@UEBAHAEBVBlock@@@Z
-     * @hash   703999380
+     * @hash   704829684
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -231,7 +231,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@CoralFanHang@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1069906181
+     * @hash   -1069075877
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@CoralFanHang@@EEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2121068610
+     * @hash   2121898914
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CoralFanHang@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -593524580
+     * @hash   -592694276
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,23 +285,23 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@CoralFanHang@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -103481886
+     * @hash   -102651582
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @vftbl  192
      * @symbol ?checkAlive@CoralFanHang@@EEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1356045361
+     * @hash   -1355215057
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ??0CoralFanHang@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -2010584558
+     * @hash   -2009754254
      */
     MCAPI CoralFanHang(std::string const &, int);
     /**
      * @symbol ?hasSupport@CoralFanHang@@SA_NAEBVBlock@@E@Z
-     * @hash   -1762721325
+     * @hash   -1761891021
      */
     MCAPI static bool hasSupport(class Block const &, unsigned char);
 

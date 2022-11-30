@@ -38,22 +38,22 @@ public:
 public:
     /**
      * @symbol ?getFilteredDefinitionsForServer@ComponentNetRelevancyRegistry@@QEBA?AVDefinitionInstanceGroup@@AEBV2@@Z
-     * @hash   -1256951844
+     * @hash   -1256121540
      */
     MCAPI class DefinitionInstanceGroup getFilteredDefinitionsForServer(class DefinitionInstanceGroup const &) const;
     /**
      * @symbol ?registerNetSerialization@ComponentNetRelevancyRegistry@@QEAAAEAUNetSerializationCallbacks@1@AEBVHashedString@@V?$function@$$A6A_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z@std@@@Z
-     * @hash   -417564196
+     * @hash   -416733892
      */
     MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks & registerNetSerialization(class HashedString const &, class std::function<bool (class DefinitionInstanceGroup const &, class CompoundTag &)>);
     /**
      * @symbol ?serializeComponentDefinitionsForClient@ComponentNetRelevancyRegistry@@QEBA_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z
-     * @hash   607382104
+     * @hash   608212408
      */
     MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const &, class CompoundTag &) const;
     /**
      * @symbol ??1ComponentNetRelevancyRegistry@@QEAA@XZ
-     * @hash   -510949386
+     * @hash   -510903258
      */
     MCAPI ~ComponentNetRelevancyRegistry();
 

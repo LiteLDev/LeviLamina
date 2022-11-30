@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@ShulkerBoxBlockItem@@UEBAHH@Z
-     * @hash   1191664405
+     * @hash   1192494709
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -76,7 +76,7 @@ public:
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@ShulkerBoxBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   799588766
+     * @hash   800419070
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
@@ -106,36 +106,36 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@ShulkerBoxBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   1160179833
+     * @hash   1161010137
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  96
      * @symbol ?buildEffectDescriptionName@ShulkerBoxBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
-     * @hash   -20264016
+     * @hash   -19433712
      */
     virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /**
      * @symbol ??0ShulkerBoxBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
-     * @hash   607421505
+     * @hash   608251809
      */
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);
 
 //private:
     /**
      * @symbol ?buildContainedItemList@ShulkerBoxBlockItem@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
-     * @hash   616854664
+     * @hash   617684968
      */
     MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
 

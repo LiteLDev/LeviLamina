@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@StoneBrickBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -222462552
+     * @hash   -221632248
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -201,13 +201,13 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@StoneBrickBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1347096735
+     * @hash   1347927039
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
      * @vftbl  160
      * @symbol ?tryGetInfested@StoneBrickBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   2084369920
+     * @hash   2085200224
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
@@ -243,12 +243,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@StoneBrickBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1838336074
+     * @hash   -1837505770
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0StoneBrickBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -391171352
+     * @hash   -390341048
      */
     MCAPI StoneBrickBlock(std::string const &, int, class Material const &);
 

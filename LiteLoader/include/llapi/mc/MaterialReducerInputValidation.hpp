@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -741703806
+     * @hash   -740873502
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -149597772
+     * @hash   -148767468
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
@@ -67,7 +67,7 @@ public:
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -279253435
+     * @hash   -278423131
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
@@ -95,7 +95,7 @@ public:
 #endif
     /**
      * @symbol ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
-     * @hash   1289379307
+     * @hash   1290209611
      */
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 

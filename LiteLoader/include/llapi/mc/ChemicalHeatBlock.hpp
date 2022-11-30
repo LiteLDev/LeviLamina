@@ -210,7 +210,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1501131079
+     * @hash   -1500300775
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -221,7 +221,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1602441455
+     * @hash   -1601611151
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -242,14 +242,14 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0ChemicalHeatBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1312027545
+     * @hash   1312857849
      */
     MCAPI ChemicalHeatBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_queueTick@ChemicalHeatBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   672321002
+     * @hash   673151306
      */
     MCAPI void _queueTick(class BlockSource &, class BlockPos const &, class Random &) const;
 

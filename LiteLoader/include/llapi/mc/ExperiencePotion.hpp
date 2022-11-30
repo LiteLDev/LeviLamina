@@ -156,18 +156,18 @@ public:
     /**
      * @vftbl  284
      * @symbol ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
-     * @hash   1706363238
+     * @hash   1706409366
      */
     virtual float getThrowUpAngleOffset();
     /**
      * @vftbl  285
      * @symbol ?getGravity@ExperiencePotion@@MEAAMXZ
-     * @hash   -2075200013
+     * @hash   -2075153885
      */
     virtual float getGravity();
     /**
      * @symbol ??0ExperiencePotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1699514583
+     * @hash   -1699468455
      */
     MCAPI ExperiencePotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

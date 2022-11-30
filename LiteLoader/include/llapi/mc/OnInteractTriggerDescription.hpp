@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnInteractTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -652047216
+     * @hash   -651216912
      */
     virtual std::string const & getName() const;
     /**
@@ -51,13 +51,13 @@ public:
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@OnInteractTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1055411414
+     * @hash   -1054581110
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@OnInteractTriggerDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1727750312
+     * @hash   1728580616
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**

@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomHoverGoal@@UEAA_NXZ
-     * @hash   -2126307788
+     * @hash   -2126261660
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomHoverGoal@@UEAA_NXZ
-     * @hash   -1385461278
+     * @hash   -1385415150
      */
     virtual bool canContinueToUse();
     /**
@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@RandomHoverGoal@@UEAAXXZ
-     * @hash   1483018605
+     * @hash   1483064733
      */
     virtual void start();
     /**
@@ -66,35 +66,35 @@ public:
     /**
      * @vftbl  6
      * @symbol ?tick@RandomHoverGoal@@UEAAXXZ
-     * @hash   -2084065768
+     * @hash   -2084019640
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomHoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   779582412
+     * @hash   779628540
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RandomHoverGoal@@QEAA@AEAVMob@@MHMMMUIntRange@@@Z
-     * @hash   -1007081779
+     * @hash   -1007035651
      */
     MCAPI RandomHoverGoal(class Mob &, float, int, float, float, float, struct IntRange);
 
 //protected:
     /**
      * @symbol ?_computeNewTarget@RandomHoverGoal@@IEAA_NXZ
-     * @hash   -1198297014
+     * @hash   -1198250886
      */
     MCAPI bool _computeNewTarget();
     /**
      * @symbol ?_mobMeetsPreconditions@RandomHoverGoal@@IEBA_NXZ
-     * @hash   796167792
+     * @hash   796213920
      */
     MCAPI bool _mobMeetsPreconditions() const;
     /**
      * @symbol ?_moveToTarget@RandomHoverGoal@@IEAAXXZ
-     * @hash   -779118525
+     * @hash   -779072397
      */
     MCAPI void _moveToTarget();
 

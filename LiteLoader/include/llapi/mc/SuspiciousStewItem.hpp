@@ -94,18 +94,18 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  86
      * @symbol ?useTimeDepleted@SuspiciousStewItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   666547219
+     * @hash   667377523
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
@@ -117,12 +117,12 @@ public:
 #endif
     /**
      * @symbol ??0SuspiciousStewItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   1286587174
+     * @hash   1287417478
      */
     MCAPI SuspiciousStewItem(std::string const &, short);
     /**
      * @symbol ?applyStewEffect@SuspiciousStewItem@@SAXAEBVItemStack@@AEAVActor@@@Z
-     * @hash   796194013
+     * @hash   797024317
      */
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
 

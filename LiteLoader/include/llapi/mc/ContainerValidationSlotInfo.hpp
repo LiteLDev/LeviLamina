@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0ContainerValidationSlotInfo@@QEAA@AEBUContainerValidationSlotData@@V?$shared_ptr@VSimpleSparseContainer@@@std@@V?$shared_ptr@$$CBVContainerValidationBase@@@3@@Z
-     * @hash   -729040177
+     * @hash   -728209873
      */
     MCAPI ContainerValidationSlotInfo(struct ContainerValidationSlotData const &, class std::shared_ptr<class SimpleSparseContainer>, class std::shared_ptr<class ContainerValidationBase const>);
     /**
      * @symbol ?getItem@ContainerValidationSlotInfo@@QEBAAEBVItemStack@@XZ
-     * @hash   1185493002
+     * @hash   1186323306
      */
     MCAPI class ItemStack const & getItem() const;
     /**
      * @symbol ??BContainerValidationSlotInfo@@QEBA_NXZ
-     * @hash   -1017337896
+     * @hash   -1016507592
      */
     MCAPI operator bool() const;
     /**
      * @symbol ?setItem@ContainerValidationSlotInfo@@QEAAXAEBVItemStack@@@Z
-     * @hash   1448936460
+     * @hash   1449766764
      */
     MCAPI void setItem(class ItemStack const &);
     /**

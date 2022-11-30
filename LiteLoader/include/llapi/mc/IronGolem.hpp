@@ -55,7 +55,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@IronGolem@@UEBAMXZ
-     * @hash   1220151314
+     * @hash   1220197442
      */
     virtual float getShadowRadius() const;
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  144
      * @symbol ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
-     * @hash   1518547938
+     * @hash   1518594066
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
@@ -142,13 +142,13 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -1015367865
+     * @hash   -1015321737
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1253703636
+     * @hash   -1253657508
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   159394158
+     * @hash   159440286
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -180,13 +180,13 @@ public:
     /**
      * @vftbl  290
      * @symbol ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     * @hash   1189014822
+     * @hash   1189060950
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  295
      * @symbol ?aiStep@IronGolem@@UEAAXXZ
-     * @hash   1231794215
+     * @hash   1231840343
      */
     virtual void aiStep();
     /**
@@ -197,7 +197,7 @@ public:
     /**
      * @vftbl  311
      * @symbol ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   -1833428742
+     * @hash   -1833382614
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
@@ -224,7 +224,7 @@ public:
 #endif
     /**
      * @symbol ??0IronGolem@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   246152960
+     * @hash   246199088
      */
     MCAPI IronGolem(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

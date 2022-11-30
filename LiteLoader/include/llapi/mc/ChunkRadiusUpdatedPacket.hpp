@@ -44,29 +44,29 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@ChunkRadiusUpdatedPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   354156007
+     * @hash   354202135
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ChunkRadiusUpdatedPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1285962592
+     * @hash   1286008720
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ChunkRadiusUpdatedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1413969008
+     * @hash   1414015136
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ChunkRadiusUpdatedPacket@@QEAA@XZ
-     * @hash   -1471011968
+     * @hash   -1470965840
      */
     MCAPI ChunkRadiusUpdatedPacket();
     /**
      * @symbol ??0ChunkRadiusUpdatedPacket@@QEAA@H@Z
-     * @hash   -2136745685
+     * @hash   -2136699557
      */
     MCAPI ChunkRadiusUpdatedPacket(int);
 

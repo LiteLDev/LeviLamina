@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0CameraPresets@@QEAA@XZ
-     * @hash   1508584475
+     * @hash   1509414779
      */
     MCAPI CameraPresets();
 

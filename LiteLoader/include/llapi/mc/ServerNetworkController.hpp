@@ -38,24 +38,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isDedicatedServer@ServerNetworkController@@UEBA_NXZ
-     * @hash   948619545
+     * @hash   948665673
      */
     virtual bool isDedicatedServer() const;
     /**
      * @vftbl  2
      * @symbol ?isHost@ServerNetworkController@@UEBA_NAEBVUUID@mce@@@Z
-     * @hash   -1796104750
+     * @hash   -1796058622
      */
     virtual bool isHost(class mce::UUID const &) const;
     /**
      * @vftbl  3
      * @symbol ?canChangePermission@ServerNetworkController@@UEBA_NAEBVUUID@mce@@AEBVServerPlayer@@@Z
-     * @hash   1949277318
+     * @hash   1949323446
      */
     virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
     /**
      * @symbol ??0ServerNetworkController@@QEAA@_NAEBVUUID@mce@@V?$function@$$A6A_NAEBVServerPlayer@@W4AbilitiesIndex@@@Z@std@@@Z
-     * @hash   -673191478
+     * @hash   -673145350
      */
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum class AbilitiesIndex)>);
 

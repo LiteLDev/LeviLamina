@@ -42,7 +42,7 @@ public:
     MCAPI unsigned int getOffsetEditCount() const;
     /**
      * @symbol ?getRotationEditCount@StructureTelemetryClientData@@QEBAIXZ
-     * @hash   1705440322
+     * @hash   1705486450
      */
     MCAPI unsigned int getRotationEditCount() const;
     /**

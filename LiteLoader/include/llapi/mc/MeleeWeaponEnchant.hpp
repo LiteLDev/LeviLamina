@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@MeleeWeaponEnchant@@UEBAHH@Z
-     * @hash   -1879654430
+     * @hash   -1878824126
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@MeleeWeaponEnchant@@UEBAHH@Z
-     * @hash   44258912
+     * @hash   45089216
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@MeleeWeaponEnchant@@UEBAHXZ
-     * @hash   861790312
+     * @hash   862620616
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDamageBonus@MeleeWeaponEnchant@@UEBAMHAEBVActor@@@Z
-     * @hash   -1629810108
+     * @hash   -1628979804
      */
     virtual float getDamageBonus(int, class Actor const &) const;
     /**
      * @vftbl  8
      * @symbol ?doPostAttack@MeleeWeaponEnchant@@UEBAXAEAVActor@@0H@Z
-     * @hash   1490764205
+     * @hash   1491594509
      */
     virtual void doPostAttack(class Actor &, class Actor &, int) const;
     /**
@@ -89,7 +89,7 @@ public:
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@MeleeWeaponEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   1640749107
+     * @hash   1641579411
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEWEAPONENCHANT
@@ -101,7 +101,7 @@ public:
 #endif
     /**
      * @symbol ??0MeleeWeaponEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   340794384
+     * @hash   341624688
      */
     MCAPI MeleeWeaponEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

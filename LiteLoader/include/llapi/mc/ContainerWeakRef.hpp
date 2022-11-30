@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@XZ
-     * @hash   -1282284522
+     * @hash   -1282238394
      */
     MCAPI ContainerWeakRef();
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@AEBVBlockPos@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-     * @hash   1909014245
+     * @hash   1909060373
      */
     MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-     * @hash   151573054
+     * @hash   151619182
      */
     MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??BContainerWeakRef@@QEBA_NXZ
-     * @hash   -1638646404
+     * @hash   -1638600276
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??1ContainerWeakRef@@QEAA@XZ
-     * @hash   -441783964
+     * @hash   -441737836
      */
     MCAPI ~ContainerWeakRef();
 

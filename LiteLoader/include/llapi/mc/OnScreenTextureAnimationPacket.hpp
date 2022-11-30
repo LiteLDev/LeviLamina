@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@OnScreenTextureAnimationPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1901664610
+     * @hash   1901710738
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@OnScreenTextureAnimationPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1961158671
+     * @hash   1961204799
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@OnScreenTextureAnimationPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1046848392
+     * @hash   -1046802264
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@OnScreenTextureAnimationPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1347425672
+     * @hash   -1347379544
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0OnScreenTextureAnimationPacket@@QEAA@XZ
-     * @hash   910334888
+     * @hash   910381016
      */
     MCAPI OnScreenTextureAnimationPacket();
     /**
      * @symbol ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
-     * @hash   329816141
+     * @hash   329862269
      */
     MCAPI OnScreenTextureAnimationPacket(unsigned int);
 

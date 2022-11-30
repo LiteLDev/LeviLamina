@@ -33,7 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
     /**
      * @symbol ?getName@BarrelBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1213220595
+     * @hash   -1212390291
      */
     MCVAPI std::string getName() const;
     /**
@@ -43,28 +43,28 @@ public:
     MCVAPI void onPlace(class BlockSource &);
     /**
      * @symbol ?playCloseSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   2071965408
+     * @hash   2072795712
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
      * @symbol ?playOpenSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1191274218
+     * @hash   1192104522
      */
     MCVAPI void playOpenSound(class BlockSource &);
     /**
      * @symbol ?startOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   273935566
+     * @hash   274765870
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1297519982
+     * @hash   1298350286
      */
     MCVAPI void stopOpen(class Player &);
 #endif
     /**
      * @symbol ??0BarrelBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   782572641
+     * @hash   783402945
      */
     MCAPI BarrelBlockActor(class BlockPos const &);
 

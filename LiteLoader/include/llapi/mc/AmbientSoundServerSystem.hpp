@@ -41,14 +41,14 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@AmbientSoundServerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   805786633
+     * @hash   805832761
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickAmbientSoundComponent@AmbientSoundServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VAmbientSoundServerComponent@@@@@Z
-     * @hash   188607320
+     * @hash   188653448
      */
     MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
 

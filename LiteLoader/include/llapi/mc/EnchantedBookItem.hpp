@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?isGlint@EnchantedBookItem@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -2126641859
+     * @hash   -2126595731
      */
     virtual bool isGlint(class ItemStackBase const &) const;
     /**
@@ -112,17 +112,17 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @symbol ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   838419645
+     * @hash   839249949
      */
     MCAPI EnchantedBookItem(std::string const &, int, bool);
 

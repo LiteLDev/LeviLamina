@@ -53,13 +53,13 @@ public:
     /**
      * @vftbl  7
      * @symbol ?hasAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
-     * @hash   662327758
+     * @hash   663158062
      */
     virtual bool hasAsset(class Core::Path const &, bool) const;
     /**
      * @vftbl  9
      * @symbol ?getAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -275233803
+     * @hash   -274403499
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
@@ -77,48 +77,48 @@ public:
     /**
      * @vftbl  16
      * @symbol ?createSubPack@EncryptedFileAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-     * @hash   585606292
+     * @hash   586436596
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /**
      * @vftbl  17
      * @symbol ?generateAssetSet@EncryptedFileAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
-     * @hash   1392141167
+     * @hash   1392971471
      */
     virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @vftbl  21
      * @symbol ?readContentIdentity@EncryptedFileAccessStrategy@@UEBA?AVContentIdentity@@XZ
-     * @hash   -1108372086
+     * @hash   -1107541782
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
      * @symbol ??0EncryptedFileAccessStrategy@@QEAA@AEBVResourceLocation@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@_NV?$optional@V?$unordered_map@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@U?$equal_to@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@V?$allocator@U?$pair@$$CBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@@std@@@Z
-     * @hash   -1699662265
+     * @hash   -1698831961
      */
     MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
     /**
      * @symbol ?isValidEncryptedPack@EncryptedFileAccessStrategy@@SA_NAEBVPath@Core@@AEAVContentIdentity@@@Z
-     * @hash   837696200
+     * @hash   838526504
      */
     MCAPI static bool isValidEncryptedPack(class Core::Path const &, class ContentIdentity &);
 
 //protected:
     /**
      * @symbol ?_getContentsFile@EncryptedFileAccessStrategy@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   740214485
+     * @hash   741044789
      */
     MCAPI std::string _getContentsFile();
 
 //private:
     /**
      * @symbol ?_getContentIdentityFromEncryptedStream@EncryptedFileAccessStrategy@@CA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVContentIdentity@@@Z
-     * @hash   -1065069069
+     * @hash   -1064238765
      */
     MCAPI static bool _getContentIdentityFromEncryptedStream(std::string &, class ContentIdentity &);
     /**
      * @symbol ?_transformStream@EncryptedFileAccessStrategy@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_K@Z
-     * @hash   1929941629
+     * @hash   1930771933
      */
     MCAPI static void _transformStream(std::string &, std::string const &, unsigned __int64);
 

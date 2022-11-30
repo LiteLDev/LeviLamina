@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getBlocksMotion@Material@@QEBA_NXZ
-     * @hash   -1286807386
+     * @hash   -1286761258
      */
     MCAPI bool getBlocksMotion() const;
     /**
      * @symbol ?getBlocksPrecipitation@Material@@QEBA_NXZ
-     * @hash   1616347614
+     * @hash   1616393742
      */
     MCAPI bool getBlocksPrecipitation() const;
     /**
@@ -47,79 +47,79 @@ public:
     MCAPI float getTranslucency() const;
     /**
      * @symbol ?isAlwaysDestroyable@Material@@QEBA_NXZ
-     * @hash   142692136
+     * @hash   142738264
      */
     MCAPI bool isAlwaysDestroyable() const;
     /**
      * @symbol ?isLiquid@Material@@QEBA_NXZ
-     * @hash   409616364
+     * @hash   409662492
      */
     MCAPI bool isLiquid() const;
     /**
      * @symbol ?isReplaceable@Material@@QEBA_NXZ
-     * @hash   -1826615110
+     * @hash   -1826568982
      */
     MCAPI bool isReplaceable() const;
     /**
      * @symbol ?isSolid@Material@@QEBA_NXZ
-     * @hash   1529322724
+     * @hash   1529368852
      */
     MCAPI bool isSolid() const;
     /**
      * @symbol ?isSolidBlocking@Material@@QEBA_NXZ
-     * @hash   -1353948626
+     * @hash   -1353118322
      */
     MCAPI bool isSolidBlocking() const;
     /**
      * @symbol ?isSuperHot@Material@@QEBA_NXZ
-     * @hash   911748200
+     * @hash   911794328
      */
     MCAPI bool isSuperHot() const;
     /**
      * @symbol ?isTopSolid@Material@@QEBA_N_N0@Z
-     * @hash   -1309021813
+     * @hash   -1308191509
      */
     MCAPI bool isTopSolid(bool, bool) const;
     /**
      * @symbol ?isType@Material@@QEBA_NW4MaterialType@@@Z
-     * @hash   1813256331
+     * @hash   1814086635
      */
     MCAPI bool isType(enum class MaterialType) const;
     /**
      * @symbol ??9Material@@QEBA_NAEBV0@@Z
-     * @hash   -1253889373
+     * @hash   -1253059069
      */
     MCAPI bool operator!=(class Material const &) const;
     /**
      * @symbol ??8Material@@QEBA_NAEBV0@@Z
-     * @hash   2090342032
+     * @hash   2091172336
      */
     MCAPI bool operator==(class Material const &) const;
     /**
      * @symbol ?addMaterial@Material@@SAXV?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@@Z
-     * @hash   1675601686
+     * @hash   1676431990
      */
     MCAPI static void addMaterial(std::unique_ptr<class Material>);
     /**
      * @symbol ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
-     * @hash   -1492642563
+     * @hash   -1491812259
      */
     MCAPI static class Material const & getMaterial(enum class MaterialType);
     /**
      * @symbol ?initMaterials@Material@@SAXXZ
-     * @hash   -686519103
+     * @hash   -685688799
      */
     MCAPI static void initMaterials();
     /**
      * @symbol ?teardownMaterials@Material@@SAXXZ
-     * @hash   -1194528415
+     * @hash   -1193698111
      */
     MCAPI static void teardownMaterials();
 
 //private:
     /**
      * @symbol ?_setupSurfaceMaterials@Material@@CAXXZ
-     * @hash   1386520998
+     * @hash   1387351302
      */
     MCAPI static void _setupSurfaceMaterials();
 

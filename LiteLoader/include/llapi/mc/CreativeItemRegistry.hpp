@@ -31,77 +31,77 @@ public:
 public:
     /**
      * @symbol ??0CreativeItemRegistry@@QEAA@XZ
-     * @hash   -1330043461
+     * @hash   -1329997333
      */
     MCAPI CreativeItemRegistry();
     /**
      * @symbol ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
-     * @hash   -1988805409
+     * @hash   -1987975105
      */
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
-     * @hash   -1649112708
+     * @hash   -1648282404
      */
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
     /**
      * @symbol ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
-     * @hash   -1223379806
+     * @hash   -1222549502
      */
     MCAPI class CreativeItemGroupCategory * getCreativeCategory(enum class CreativeItemCategory);
     /**
      * @symbol ?getCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@I@Z
-     * @hash   1890570124
+     * @hash   1891400428
      */
     MCAPI class CreativeGroupInfo * getCreativeGroup(unsigned int);
     /**
      * @symbol ?getCreativeItemEntries@CreativeItemRegistry@@QEAAAEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@XZ
-     * @hash   -517836628
+     * @hash   -517790500
      */
     MCAPI std::vector<class CreativeItemEntry> const & getCreativeItemEntries();
     /**
      * @symbol ?getItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@I@Z
-     * @hash   -1140082176
+     * @hash   -1139251872
      */
     MCAPI class CreativeItemEntry * getItemEntry(unsigned int);
     /**
      * @symbol ?newCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
-     * @hash   369177505
+     * @hash   370007809
      */
     MCAPI class CreativeItemGroupCategory * newCreativeCategory(std::string const &, enum class CreativeItemCategory);
     /**
      * @symbol ?newCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@W4CreativeItemCategory@@AEBVHashedString@@AEBVItemInstance@@@Z
-     * @hash   -1046080886
+     * @hash   -1045250582
      */
     MCAPI class CreativeGroupInfo * newCreativeGroup(enum class CreativeItemCategory, class HashedString const &, class ItemInstance const &);
     /**
      * @symbol ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-     * @hash   1521070044
+     * @hash   1521900348
      */
     MCAPI class CreativeItemEntry * newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &);
     /**
      * @symbol ?resetGroups@CreativeItemRegistry@@QEAAXXZ
-     * @hash   -404478221
+     * @hash   -403647917
      */
     MCAPI void resetGroups();
     /**
      * @symbol ?updateItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@IAEBVItemInstance@@@Z
-     * @hash   -1117857075
+     * @hash   -1117026771
      */
     MCAPI class CreativeItemEntry * updateItemEntry(unsigned int, class ItemInstance const &);
     /**
      * @symbol ?updateNetIdMap@CreativeItemRegistry@@QEAAXXZ
-     * @hash   722913941
+     * @hash   723744245
      */
     MCAPI void updateNetIdMap();
     /**
      * @symbol ?current@CreativeItemRegistry@@SAPEAV1@XZ
-     * @hash   -1964573463
+     * @hash   -1963743159
      */
     MCAPI static class CreativeItemRegistry * current();
     /**
      * @symbol ?forEachCreativeItemInstance@CreativeItemRegistry@@SAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
-     * @hash   350300720
+     * @hash   351131024
      */
     MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
     /**
@@ -111,19 +111,19 @@ public:
     MCAPI static class std::mutex mCreativeListMutex;
     /**
      * @symbol ?reset@CreativeItemRegistry@@SAXXZ
-     * @hash   130237281
+     * @hash   131067585
      */
     MCAPI static void reset();
     /**
      * @symbol ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
-     * @hash   -411513702
+     * @hash   -410683398
      */
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry> &&);
 
 //private:
     /**
      * @symbol ?_forEachCreativeItemInstance@CreativeItemRegistry@@AEAAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
-     * @hash   1701799142
+     * @hash   1702629446
      */
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
 

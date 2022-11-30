@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@CurseVanishingEnchant@@UEBAHH@Z
-     * @hash   1741584605
+     * @hash   1741630733
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@CurseVanishingEnchant@@UEBAHH@Z
-     * @hash   -1332055765
+     * @hash   -1332009637
      */
     virtual int getMaxCost(int) const;
     /**
@@ -77,7 +77,7 @@ public:
 #endif
     /**
      * @symbol ??0CurseVanishingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -701481930
+     * @hash   -700651626
      */
     MCAPI CurseVanishingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

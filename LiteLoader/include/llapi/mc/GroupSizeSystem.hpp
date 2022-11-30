@@ -43,14 +43,14 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@GroupSizeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1189438159
+     * @hash   1189484287
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickComponent@GroupSizeSystem@@AEAAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VGroupSizeComponent@@@@@Z
-     * @hash   2129575337
+     * @hash   2129621465
      */
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GroupSizeComponent> &);
 

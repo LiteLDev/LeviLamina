@@ -49,7 +49,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Warden@@UEAAXXZ
-     * @hash   -131967498
+     * @hash   -131921370
      */
     virtual void normalTick();
     /**
@@ -110,13 +110,13 @@ public:
     /**
      * @vftbl  116
      * @symbol ?setTarget@Warden@@UEAAXPEAVActor@@@Z
-     * @hash   1513436366
+     * @hash   1513482494
      */
     virtual void setTarget(class Actor *);
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   1614359139
+     * @hash   1614405267
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -127,7 +127,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Warden@@UEAAXH@Z
-     * @hash   -1002235827
+     * @hash   -1002189699
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * @vftbl  257
      * @symbol ?onPush@Warden@@UEAAXAEAVActor@@@Z
-     * @hash   710564124
+     * @hash   710610252
      */
     virtual void onPush(class Actor &);
     /**
@@ -169,7 +169,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   592852987
+     * @hash   592899115
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  301
      * @symbol ?checkSpawnObstruction@Warden@@UEBA_NXZ
-     * @hash   423741600
+     * @hash   423787728
      */
     virtual bool checkSpawnObstruction() const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  311
      * @symbol ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-     * @hash   1496853858
+     * @hash   1496899986
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
@@ -227,7 +227,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Warden@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1322630353
+     * @hash   1322676481
      */
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@WebBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1613673065
+     * @hash   1614503369
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@WebBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1056852381
+     * @hash   -1056022077
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@WebBlock@@UEAAXXZ
-     * @hash   1317467239
+     * @hash   1318297543
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -222,7 +222,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@WebBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1553794131
+     * @hash   -1552963827
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WebBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1781615847
+     * @hash   1782446151
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBBLOCK
@@ -255,7 +255,7 @@ public:
 #endif
     /**
      * @symbol ??0WebBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1143835065
+     * @hash   -1143004761
      */
     MCAPI WebBlock(std::string const &, int);
 

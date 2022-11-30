@@ -34,12 +34,12 @@ public:
 public:
     /**
      * @symbol ??0PerfTimer@@QEAA@Vid@thread@std@@@Z
-     * @hash   -1746868757
+     * @hash   -1746822629
      */
     MCAPI PerfTimer(class std::thread::id);
     /**
      * @symbol ??1PerfTimer@@QEAA@XZ
-     * @hash   -443158184
+     * @hash   -443112056
      */
     MCAPI ~PerfTimer();
     /**
@@ -49,7 +49,7 @@ public:
     MCAPI static bool mEnabled;
     /**
      * @symbol ?test@PerfTimer@@2V?$ThreadLocalObject@VPerfTimer@@V?$allocator@VPerfTimer@@@std@@@Threading@Bedrock@@A
-     * @hash   1270582337
+     * @hash   1270705345
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
@@ -58,7 +58,7 @@ public:
 protected:
     /**
      * @symbol ?MultiplyDeBruijnBitPosition@PerfTimer@@1QBHB
-     * @hash   1871804185
+     * @hash   1871927193
      */
     MCAPI static int const MultiplyDeBruijnBitPosition[];
     /**

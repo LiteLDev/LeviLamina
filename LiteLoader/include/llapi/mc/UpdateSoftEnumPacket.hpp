@@ -44,35 +44,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateSoftEnumPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   103754338
+     * @hash   103800466
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateSoftEnumPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1744271631
+     * @hash   1744317759
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateSoftEnumPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1276742136
+     * @hash   1276788264
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateSoftEnumPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   193029944
+     * @hash   193076072
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@XZ
-     * @hash   -424285464
+     * @hash   -424239336
      */
     MCAPI UpdateSoftEnumPacket();
     /**
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@W4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -1540340462
+     * @hash   -1540294334
      */
     MCAPI UpdateSoftEnumPacket(enum class SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
 

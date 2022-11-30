@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@SayCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1132295197
+     * @hash   -1132249069
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@SayCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   125842028
+     * @hash   125888156
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_sendMessage@SayCommand@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-     * @hash   366636278
+     * @hash   366682406
      */
     MCAPI void _sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
     /**
      * @symbol ?_trySendSayCommandEvent@SayCommand@@AEBA_NAEBVPlayer@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1851161263
+     * @hash   1851207391
      */
     MCAPI bool _trySendSayCommandEvent(class Player const &, class Level &, std::string const &) const;
 

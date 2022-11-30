@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getAttachPos@GetAttachPosSystem@@SA?AV?$optional@VVec3@@@std@@AEBVStrictEntityContext@@W4ActorLocation@@AEBVVec3@@AEBUAABBShapeComponent@@AEBUActorRotationComponent@@AEBUOffsetsComponent@@AEBUSynchedActorDataComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@M@Z
-     * @hash   -894984605
+     * @hash   -894938477
      */
     MCAPI static class std::optional<class Vec3> getAttachPos(class StrictEntityContext const &, enum class ActorLocation, class Vec3 const &, struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct OffsetsComponent const &, struct SynchedActorDataComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>>, float);
     /**
      * @symbol ?getBaseAttachPoint@GetAttachPosSystem@@SA?AV?$optional@VVec3@@@std@@AEBUAABBShapeComponent@@AEBUActorRotationComponent@@AEBUOffsetsComponent@@MAEAUGetAttachPosRequestData@@@Z
-     * @hash   -212986296
+     * @hash   -212940168
      */
     MCAPI static class std::optional<class Vec3> getBaseAttachPoint(struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct OffsetsComponent const &, float, struct GetAttachPosRequestData &);
 

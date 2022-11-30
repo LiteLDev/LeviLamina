@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??4ComponentInfo@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1462258334
+     * @hash   1462304462
      */
     MCAPI struct ComponentInfo & operator=(struct ComponentInfo const &);
     /**
      * @symbol ??4ComponentInfo@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -23562314
+     * @hash   -23516186
      */
     MCAPI struct ComponentInfo & operator=(struct ComponentInfo &&);
     /**
@@ -44,7 +44,7 @@ public:
     MCAPI ~ComponentInfo();
     /**
      * @symbol ?bindType@ComponentInfo@@SAXXZ
-     * @hash   1488463503
+     * @hash   1488509631
      */
     MCAPI static void bindType();
 

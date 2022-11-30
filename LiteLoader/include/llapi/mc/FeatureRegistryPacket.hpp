@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@FeatureRegistryPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -548124285
+     * @hash   -548078157
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@FeatureRegistryPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   724001840
+     * @hash   724047968
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@FeatureRegistryPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1810394487
+     * @hash   1810440615
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@FeatureRegistryPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1906941047
+     * @hash   1906987175
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0FeatureRegistryPacket@@QEAA@AEBV?$vector@UFeatureBinaryJsonFormat@FeatureRegistry@@V?$allocator@UFeatureBinaryJsonFormat@FeatureRegistry@@@std@@@std@@@Z
-     * @hash   -122767568
+     * @hash   -122721440
      */
     MCAPI FeatureRegistryPacket(std::vector<struct FeatureRegistry::FeatureBinaryJsonFormat> const &);
 

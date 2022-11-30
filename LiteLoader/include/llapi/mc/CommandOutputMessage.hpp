@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@W4CommandOutputMessageType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -501334865
+     * @hash   -501288737
      */
     MCAPI CommandOutputMessage(enum class CommandOutputMessageType, std::string const &, std::vector<std::string> &&);
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@AEBV0@@Z
-     * @hash   -469508015
+     * @hash   -469461887
      */
     MCAPI CommandOutputMessage(class CommandOutputMessage const &);
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@$$QEAV0@@Z
-     * @hash   -2000882529
+     * @hash   -2000836401
      */
     MCAPI CommandOutputMessage(class CommandOutputMessage &&);
     /**
@@ -61,12 +61,12 @@ public:
     MCAPI enum class CommandOutputMessageType getType() const;
     /**
      * @symbol ?getUserMessage@CommandOutputMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1577646466
+     * @hash   1577692594
      */
     MCAPI std::string getUserMessage() const;
     /**
      * @symbol ??1CommandOutputMessage@@QEAA@XZ
-     * @hash   310447333
+     * @hash   310493461
      */
     MCAPI ~CommandOutputMessage();
 

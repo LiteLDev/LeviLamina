@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0EntitySensorComponent@@QEAA@XZ
-     * @hash   -525218452
+     * @hash   -525172324
      */
     MCAPI EntitySensorComponent();
     /**
      * @symbol ??0EntitySensorComponent@@QEAA@$$QEAV0@@Z
-     * @hash   336773545
+     * @hash   336819673
      */
     MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     /**
      * @symbol ?evaluateActor@EntitySensorComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -671312926
+     * @hash   -671266798
      */
     MCAPI void evaluateActor(class Actor &);
     /**
      * @symbol ??4EntitySensorComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1372038900
+     * @hash   1372085028
      */
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     /**
      * @symbol ??1EntitySensorComponent@@QEAA@XZ
-     * @hash   737024380
+     * @hash   737070508
      */
     MCAPI ~EntitySensorComponent();
 
@@ -60,7 +60,7 @@ public:
 private:
     /**
      * @symbol ?NO_MAX_COUNT@EntitySensorComponent@@0HB
-     * @hash   -1187948494
+     * @hash   -1187825486
      */
     MCAPI static int const NO_MAX_COUNT;
 

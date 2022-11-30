@@ -40,17 +40,17 @@ public:
 public:
     /**
      * @symbol ??0WebToken@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -448223878
+     * @hash   -448177750
      */
     MCAPI WebToken(std::string);
     /**
      * @symbol ?toString@WebToken@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1310154426
+     * @hash   1310200554
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?verifyWithIncludedKey@WebToken@@QEBA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1847637126
+     * @hash   -1847590998
      */
     MCAPI bool verifyWithIncludedKey(std::vector<std::string> const &) const;
     /**
@@ -60,24 +60,24 @@ public:
     MCAPI ~WebToken();
     /**
      * @symbol ?createFromData@WebToken@@SA?AV?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBVValue@Json@@AEBVPrivateKeyManager@@@Z
-     * @hash   631224828
+     * @hash   631270956
      */
     MCAPI static std::unique_ptr<class WebToken> createFromData(class Json::Value const &, class PrivateKeyManager const &);
 
 //private:
     /**
      * @symbol ?_parse@WebToken@@AEAAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   693977860
+     * @hash   694023988
      */
     MCAPI void _parse(class Json::Value &, std::string const &);
     /**
      * @symbol ?_signatureToDER@WebToken@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2060835935
+     * @hash   2060882063
      */
     MCAPI std::string _signatureToDER() const;
     /**
      * @symbol ?_DERToBinary@WebToken@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@H@Z
-     * @hash   279259832
+     * @hash   279305960
      */
     MCAPI static std::string _DERToBinary(std::string const &, int);
 

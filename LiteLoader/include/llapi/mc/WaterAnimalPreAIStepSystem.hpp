@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@WaterAnimalPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   764300332
+     * @hash   764346460
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doWaterAnimalPreAIStepSystem@WaterAnimalPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   769099729
+     * @hash   769145857
      */
     MCAPI static void _doWaterAnimalPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

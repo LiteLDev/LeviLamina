@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0DirtyTicksCounter@@QEAA@XZ
-     * @hash   -1135612924
+     * @hash   -1134782620
      */
     MCAPI DirtyTicksCounter();
     /**
      * @symbol ?getTicksSinceLastChange@DirtyTicksCounter@@QEBAHXZ
-     * @hash   -502310408
+     * @hash   -501480104
      */
     MCAPI int getTicksSinceLastChange() const;
     /**
@@ -46,22 +46,22 @@ public:
     MCAPI int getTotalDirtyTicks() const;
     /**
      * @symbol ??EDirtyTicksCounter@@QEAAAEAU0@XZ
-     * @hash   -1462492465
+     * @hash   -1461662161
      */
     MCAPI struct DirtyTicksCounter & operator++();
     /**
      * @symbol ?reset@DirtyTicksCounter@@QEAAXXZ
-     * @hash   -2094924045
+     * @hash   -2094093741
      */
     MCAPI void reset();
     /**
      * @symbol ?touch@DirtyTicksCounter@@QEAAXXZ
-     * @hash   -1501823261
+     * @hash   -1500992957
      */
     MCAPI void touch();
     /**
      * @symbol ?max@DirtyTicksCounter@@SA?AU1@XZ
-     * @hash   -2017536539
+     * @hash   -2016706235
      */
     MCAPI static struct DirtyTicksCounter max();
 

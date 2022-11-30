@@ -38,41 +38,41 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AvailableActorIdentifiersPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   251968648
+     * @hash   252014776
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AvailableActorIdentifiersPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   222787381
+     * @hash   222833509
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AvailableActorIdentifiersPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -160957406
+     * @hash   -160911278
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  4
      * @symbol ?readExtended@AvailableActorIdentifiersPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1564594729
+     * @hash   -1564548601
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  6
      * @symbol ?_read@AvailableActorIdentifiersPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1214006830
+     * @hash   -1213960702
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AvailableActorIdentifiersPacket@@QEAA@XZ
-     * @hash   2124148114
+     * @hash   2124194242
      */
     MCAPI AvailableActorIdentifiersPacket();
     /**
      * @symbol ??0AvailableActorIdentifiersPacket@@QEAA@AEBV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@@Z
-     * @hash   -384756521
+     * @hash   -384710393
      */
     MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0VolumeDefinition@@QEAA@XZ
-     * @hash   117732249
+     * @hash   117778377
      */
     MCAPI VolumeDefinition();
     /**
      * @symbol ??1VolumeDefinition@@QEAA@XZ
-     * @hash   -1481804601
+     * @hash   -1481758473
      */
     MCAPI ~VolumeDefinition();
     /**
@@ -46,17 +46,17 @@ public:
     MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeDefinition@@SAXXZ
-     * @hash   -1171883949
+     * @hash   -1171837821
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     * @hash   -295346736
+     * @hash   -295300608
      */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
     /**
      * @symbol ?getMinSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     * @hash   -1808124228
+     * @hash   -1808078100
      */
     MCAPI static class SemVersion const & getMinSupportedVersion();
 

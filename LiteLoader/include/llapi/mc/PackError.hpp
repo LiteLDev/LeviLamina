@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getLocErrorMessage@PackError@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   309599300
+     * @hash   309645428
      */
     virtual std::string getLocErrorMessage() const;
     /**
@@ -55,12 +55,12 @@ public:
     virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getEventErrorMessageMap() const = 0;
     /**
      * @symbol ??0PackError@@QEAA@AEBV0@@Z
-     * @hash   1011476497
+     * @hash   1011522625
      */
     MCAPI PackError(class PackError const &);
     /**
      * @symbol ??0PackError@@QEAA@W4PackErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   1315481812
+     * @hash   1315527940
      */
     MCAPI PackError(enum class PackErrorType, std::vector<std::string> const &);
     /**
@@ -70,12 +70,12 @@ public:
     MCAPI std::vector<std::string> const & getErrorParameters() const;
     /**
      * @symbol ?getEventErrorMessage@PackError@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   908758144
+     * @hash   908804272
      */
     MCAPI std::string getEventErrorMessage() const;
     /**
      * @symbol ?serialize@PackError@@QEAAXAEAVValue@Json@@@Z
-     * @hash   1244221962
+     * @hash   1244268090
      */
     MCAPI void serialize(class Json::Value &);
 

@@ -38,31 +38,31 @@ public:
     /**
      * @vftbl  3
      * @symbol ?setStrength@ProducerComponent@@UEAAXH@Z
-     * @hash   -226732112
+     * @hash   -225901808
      */
     virtual void setStrength(int);
     /**
      * @vftbl  8
      * @symbol ?canStopPower@ProducerComponent@@UEBA_NXZ
-     * @hash   -256842448
+     * @hash   -256012144
      */
     virtual bool canStopPower() const;
     /**
      * @vftbl  9
      * @symbol ?setStopPower@ProducerComponent@@UEAAX_N@Z
-     * @hash   -912421313
+     * @hash   -911591009
      */
     virtual void setStopPower(bool);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   112246235
+     * @hash   113076539
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   201986749
+     * @hash   202817053
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
@@ -84,17 +84,17 @@ public:
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
-     * @hash   -1316622834
+     * @hash   -1316499826
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0ProducerComponent@@QEAA@XZ
-     * @hash   1587382615
+     * @hash   1588212919
      */
     MCAPI ProducerComponent();
     /**
      * @symbol ?allowAttachments@ProducerComponent@@QEAAX_N@Z
-     * @hash   154557874
+     * @hash   155388178
      */
     MCAPI void allowAttachments(bool);
 

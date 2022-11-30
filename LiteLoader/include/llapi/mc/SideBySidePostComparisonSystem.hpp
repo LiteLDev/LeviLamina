@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createSideBySideCleanupCopyComponentSystem@SideBySidePostComparisonSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1290337110
+     * @hash   -1290290982
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideCleanupCopyComponentSystem();
 

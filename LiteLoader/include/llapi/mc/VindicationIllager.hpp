@@ -160,7 +160,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z
-     * @hash   648431909
+     * @hash   648478037
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -187,7 +187,7 @@ public:
 #endif
     /**
      * @symbol ??0VindicationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1264168746
+     * @hash   -1264122618
      */
     MCAPI VindicationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

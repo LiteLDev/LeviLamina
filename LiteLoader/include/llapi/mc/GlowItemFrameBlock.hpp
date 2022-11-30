@@ -219,12 +219,12 @@ public:
     /**
      * @vftbl  193
      * @symbol ?getSpawnedItemName@GlowItemFrameBlock@@UEBA?AVHashedString@@XZ
-     * @hash   1447710579
+     * @hash   1448540883
      */
     virtual class HashedString getSpawnedItemName() const;
     /**
      * @symbol ??0GlowItemFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   572794702
+     * @hash   573625006
      */
     MCAPI GlowItemFrameBlock(std::string const &, int);
 

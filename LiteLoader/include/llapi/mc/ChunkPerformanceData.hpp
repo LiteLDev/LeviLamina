@@ -36,12 +36,12 @@ public:
     MCAPI ChunkPerformanceData();
     /**
      * @symbol ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
-     * @hash   -2138153230
+     * @hash   -2137322926
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
      * @symbol ?resetAll@ChunkPerformanceData@@QEAAXXZ
-     * @hash   1436323605
+     * @hash   1437153909
      */
     MCAPI void resetAll();
 

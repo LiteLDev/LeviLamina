@@ -44,25 +44,25 @@ public:
     /**
      * @vftbl  11
      * @symbol ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1418847707
+     * @hash   -1418017403
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -561084697
+     * @hash   -560254393
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1076052559
+     * @hash   -1075222255
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -574745158
+     * @hash   -573914854
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
@@ -83,7 +83,7 @@ public:
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0TransporterComponent@@QEAA@XZ
-     * @hash   542078339
+     * @hash   542908643
      */
     MCAPI TransporterComponent();
 

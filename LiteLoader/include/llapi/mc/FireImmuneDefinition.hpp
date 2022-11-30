@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?initialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   422249644
+     * @hash   422341900
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
-     * @hash   -804835572
+     * @hash   -804743316
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@FireImmuneDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFireImmuneDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1836537574
+     * @hash   -1836445318
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FireImmuneDefinition>> &);
 

@@ -38,22 +38,22 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     * @hash   554298290
+     * @hash   554344418
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
      * @symbol ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
-     * @hash   2989287
+     * @hash   3035415
      */
     MCAPI GameTestInstanceLedger(class LevelStorage &);
     /**
      * @symbol ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -715689754
+     * @hash   -715643626
      */
     MCAPI void clear(class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?getBoundingBoxes@GameTestInstanceLedger@@QEBA?AV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   1519623423
+     * @hash   1519669551
      */
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
 

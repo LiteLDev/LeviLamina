@@ -44,7 +44,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@LecternBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   -2112855979
+     * @hash   -2112025675
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -120969438
+     * @hash   -120139134
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,7 +195,7 @@ public:
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@LecternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1681251642
+     * @hash   1682081946
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -206,13 +206,13 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@LecternBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   110171477
+     * @hash   111001781
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  109
      * @symbol ?attack@LecternBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1397049749
+     * @hash   1397880053
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
@@ -233,7 +233,7 @@ public:
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@LecternBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   470750192
+     * @hash   471580496
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  162
      * @symbol ?_addHardCodedBlockComponents@LecternBlock@@UEAAXXZ
-     * @hash   1671036058
+     * @hash   1671866362
      */
     virtual void _addHardCodedBlockComponents();
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1105693506
+     * @hash   -1104863202
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -281,7 +281,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -222368196
+     * @hash   -221537892
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@LecternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   799792395
+     * @hash   800622699
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -314,19 +314,19 @@ public:
 #endif
     /**
      * @symbol ??0LecternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1466181492
+     * @hash   1467011796
      */
     MCAPI LecternBlock(std::string const &, int);
     /**
      * @symbol ?emitRedstonePulse@LecternBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1117285955
+     * @hash   -1116455651
      */
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_dropBook@LecternBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -194756115
+     * @hash   -193925811
      */
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
 

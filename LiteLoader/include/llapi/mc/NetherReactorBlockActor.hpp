@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@NetherReactorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1330001833
+     * @hash   1330832137
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@NetherReactorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -157568024
+     * @hash   -156737720
      */
     virtual bool save(class CompoundTag &) const;
     /**
@@ -90,7 +90,7 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @symbol ??0NetherReactorBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   1174660197
+     * @hash   1175490501
      */
     MCAPI NetherReactorBlockActor(class BlockPos const &);
 

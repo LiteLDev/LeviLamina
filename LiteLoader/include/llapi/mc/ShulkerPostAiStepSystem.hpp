@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@ShulkerPostAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   630113968
+     * @hash   630160096
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doShulkerPostAiStepSystem@ShulkerPostAiStepSystem@@CAXAEBVStrictEntityContext@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@AEAUStateVectorComponent@@@Z
-     * @hash   -1952847709
+     * @hash   -1952801581
      */
     MCAPI static void _doShulkerPostAiStepSystem(class StrictEntityContext const &, struct ActorRotationComponent &, struct MobBodyRotationComponent &, struct StateVectorComponent &);
 

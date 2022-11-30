@@ -38,37 +38,37 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readfromJSON@MobEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -200406006
+     * @hash   -200359878
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@MobEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -440624737
+     * @hash   -440578609
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@MobEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   1396781140
+     * @hash   1396827268
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@MobEffectSubcomponent@@UEAAPEBDXZ
-     * @hash   -1131280865
+     * @hash   -1131234737
      */
     virtual char const * getName();
     /**
      * @symbol ??0MobEffectSubcomponent@@QEAA@XZ
-     * @hash   164799418
+     * @hash   164845546
      */
     MCAPI MobEffectSubcomponent();
 
 //private:
     /**
      * @symbol ?_addEffectFromJSON@MobEffectSubcomponent@@AEAAXAEAVValue@Json@@@Z
-     * @hash   515826592
+     * @hash   515872720
      */
     MCAPI void _addEffectFromJSON(class Json::Value &);
 

@@ -36,20 +36,20 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tryCraft@ContainerScreenValidationCrafting@@UEAA?AUContainerValidationResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   71190214
+     * @hash   72020518
      */
     virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @vftbl  2
      * @symbol ?getCraftResults@ContainerScreenValidationCrafting@@UEAA?AUContainerValidationCraftResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -278862663
+     * @hash   -278032359
      */
     virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
 
 //private:
     /**
      * @symbol ?_appendCraftResult@ContainerScreenValidationCrafting@@AEAAXAEAUContainerValidationCraftResult@@@Z
-     * @hash   -1463291906
+     * @hash   -1462461602
      */
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
 

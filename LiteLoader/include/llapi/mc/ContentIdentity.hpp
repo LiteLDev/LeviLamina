@@ -27,27 +27,27 @@ public:
 public:
     /**
      * @symbol ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
-     * @hash   -1116019452
+     * @hash   -1115189148
      */
     MCAPI ContentIdentity(class mce::UUID const &);
     /**
      * @symbol ??0ContentIdentity@@QEAA@$$QEAV0@@Z
-     * @hash   -815819097
+     * @hash   -814988793
      */
     MCAPI ContentIdentity(class ContentIdentity &&);
     /**
      * @symbol ??0ContentIdentity@@QEAA@AEBV0@@Z
-     * @hash   -1191585455
+     * @hash   -1190755151
      */
     MCAPI ContentIdentity(class ContentIdentity const &);
     /**
      * @symbol ??0ContentIdentity@@QEAA@XZ
-     * @hash   779719363
+     * @hash   780549667
      */
     MCAPI ContentIdentity();
     /**
      * @symbol ?asString@ContentIdentity@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   560111248
+     * @hash   560941552
      */
     MCAPI std::string asString() const;
     /**
@@ -57,27 +57,27 @@ public:
     MCAPI class mce::UUID const & getAsUUID() const;
     /**
      * @symbol ?isValid@ContentIdentity@@QEBA_NXZ
-     * @hash   1823657728
+     * @hash   1823703856
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??9ContentIdentity@@QEBA_NAEBV0@@Z
-     * @hash   -2016400715
+     * @hash   -2015570411
      */
     MCAPI bool operator!=(class ContentIdentity const &) const;
     /**
      * @symbol ??4ContentIdentity@@QEAAAEAV0@AEBV0@@Z
-     * @hash   2105035404
+     * @hash   2105865708
      */
     MCAPI class ContentIdentity & operator=(class ContentIdentity const &);
     /**
      * @symbol ??4ContentIdentity@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1240915294
+     * @hash   -1240084990
      */
     MCAPI class ContentIdentity & operator=(class ContentIdentity &&);
     /**
      * @symbol ??8ContentIdentity@@QEBA_NAEBV0@@Z
-     * @hash   -752455248
+     * @hash   -751624944
      */
     MCAPI bool operator==(class ContentIdentity const &) const;
     /**
@@ -87,7 +87,7 @@ public:
     MCAPI static class ContentIdentity EMPTY;
     /**
      * @symbol ?fromString@ContentIdentity@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -476878729
+     * @hash   -476048425
      */
     MCAPI static class ContentIdentity fromString(std::string const &);
 

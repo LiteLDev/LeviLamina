@@ -85,17 +85,17 @@ public:
     MCAPI AnvilContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?INPUT_SLOT@AnvilContainerManagerModel@@2HB
-     * @hash   -810745763
+     * @hash   -810622755
      */
     MCAPI static int const INPUT_SLOT;
     /**
      * @symbol ?MATERIAL_SLOT@AnvilContainerManagerModel@@2HB
-     * @hash   426205663
+     * @hash   426328671
      */
     MCAPI static int const MATERIAL_SLOT;
     /**
      * @symbol ?RESULT_SLOT@AnvilContainerManagerModel@@2HB
-     * @hash   1738436835
+     * @hash   1738559843
      */
     MCAPI static int const RESULT_SLOT;
 

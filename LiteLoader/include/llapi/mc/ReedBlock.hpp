@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@ReedBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1809082965
+     * @hash   -1808252661
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@ReedBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   832739771
+     * @hash   833570075
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -183,19 +183,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@ReedBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   387821845
+     * @hash   388652149
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@ReedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   2019530957
+     * @hash   2020361261
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@ReedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1281111745
+     * @hash   -1280281441
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -226,25 +226,25 @@ public:
     /**
      * @vftbl  135
      * @symbol ?getColor@ReedBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -1706467587
+     * @hash   -1705637283
      */
     virtual int getColor(class Block const &) const;
     /**
      * @vftbl  136
      * @symbol ?getColor@ReedBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   146322071
+     * @hash   147152375
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  137
      * @symbol ?getColorAtPos@ReedBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -867360406
+     * @hash   -866530102
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@ReedBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -1707446889
+     * @hash   -1706616585
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
@@ -275,13 +275,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@ReedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   2041876737
+     * @hash   2042707041
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@ReedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   984312206
+     * @hash   985142510
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -292,7 +292,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@ReedBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -145866875
+     * @hash   -145820747
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -303,7 +303,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ReedBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -2103927319
+     * @hash   -2103097015
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
@@ -320,14 +320,14 @@ public:
 #endif
     /**
      * @symbol ??0ReedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -887202327
+     * @hash   -886372023
      */
     MCAPI ReedBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?checkAlive@ReedBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -2072748285
+     * @hash   -2071917981
      */
     MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
 

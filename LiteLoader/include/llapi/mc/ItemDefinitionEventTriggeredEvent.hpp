@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@AEBU0@@Z
-     * @hash   -549240731
+     * @hash   -549194603
      */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@$$QEAU0@@Z
-     * @hash   -278187883
+     * @hash   -278141755
      */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
     /**

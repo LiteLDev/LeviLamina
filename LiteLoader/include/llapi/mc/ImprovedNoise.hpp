@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0ImprovedNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@@Z
-     * @hash   1690759926
+     * @hash   1691590230
      */
     MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
     /**
      * @symbol ?_getValue@ImprovedNoise@@QEBAMAEBVVec3@@@Z
-     * @hash   -352337479
+     * @hash   -351507175
      */
     MCAPI float _getValue(class Vec3 const &) const;
     /**
      * @symbol ?_readArea@ImprovedNoise@@QEBAXPEAMAEBVVec3@@HHH1M@Z
-     * @hash   1554540032
+     * @hash   1555370336
      */
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;
 
 //private:
     /**
      * @symbol ?_blendCubeCorners@ImprovedNoise@@AEBAXAEBVVec3@@HHHMAEAM111@Z
-     * @hash   1552086151
+     * @hash   1552916455
      */
     MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
     /**
      * @symbol ?_init@ImprovedNoise@@AEAAXAEBVVec3@@AEAVIRandom@@UYBlendingBugSettings@@@Z
-     * @hash   375159248
+     * @hash   375989552
      */
     MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
 

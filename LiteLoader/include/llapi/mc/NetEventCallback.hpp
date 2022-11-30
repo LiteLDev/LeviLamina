@@ -73,7 +73,7 @@ public:
     /**
      * @vftbl  8
      * @symbol ?onWebsocketRequest@NetEventCallback@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-     * @hash   -1463735343
+     * @hash   -1463689215
      */
     virtual void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
     /**
@@ -250,7 +250,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
     /**
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z
-     * @hash   -600528009
+     * @hash   -600481881
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     /**
@@ -410,7 +410,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateAbilitiesPacket const &);
     /**
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VLevelChunkPacket@@@std@@@Z
-     * @hash   -2014865298
+     * @hash   -2014819170
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
     /**
@@ -430,7 +430,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class ServerStatsPacket const &);
     /**
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VClientCacheMissResponsePacket@@@std@@@Z
-     * @hash   496532535
+     * @hash   496578663
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
     /**
@@ -510,7 +510,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
     /**
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockPacket@@@std@@@Z
-     * @hash   -2091396985
+     * @hash   -2091350857
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
     /**
@@ -585,7 +585,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
     /**
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockSyncedPacket@@@std@@@Z
-     * @hash   847217441
+     * @hash   847263569
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
     /**

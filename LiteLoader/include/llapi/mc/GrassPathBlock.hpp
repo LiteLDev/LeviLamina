@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@GrassPathBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   337744962
+     * @hash   338575266
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -177,13 +177,13 @@ public:
     /**
      * @vftbl  95
      * @symbol ?tryToTill@GrassPathBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
-     * @hash   -1140719257
+     * @hash   -1139888953
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@GrassPathBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   270681364
+     * @hash   271511668
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -239,7 +239,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@GrassPathBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -665557864
+     * @hash   -664727560
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -250,13 +250,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@GrassPathBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -125464969
+     * @hash   -124634665
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@GrassPathBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   103152990
+     * @hash   103983294
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -267,12 +267,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@GrassPathBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -458806784
+     * @hash   -457976480
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0GrassPathBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -509462256
+     * @hash   -508631952
      */
     MCAPI GrassPathBlock(std::string const &, int);
     /**

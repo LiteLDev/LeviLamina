@@ -42,18 +42,18 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -599801470
+     * @hash   -599755342
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -598877949
+     * @hash   -598831821
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SquidMoveAwayFromGroundGoal@@UEAAXXZ
-     * @hash   2041340212
+     * @hash   2041386340
      */
     virtual void start();
     /**
@@ -69,18 +69,18 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SquidMoveAwayFromGroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2050686133
+     * @hash   2050732261
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDMOVEAWAYFROMGROUNDGOAL
     /**
      * @symbol ?canContinueToUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
-     * @hash   92624985
+     * @hash   92671113
      */
     MCVAPI bool canContinueToUse();
     /**
      * @symbol ?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
-     * @hash   -1719150469
+     * @hash   -1719104341
      */
     MCVAPI bool canUse();
     /**

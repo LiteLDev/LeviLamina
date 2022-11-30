@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TrustDescription@@UEBAPEBDXZ
-     * @hash   -600629120
+     * @hash   -600582992
      */
     virtual char const * getJsonName() const;
     /**

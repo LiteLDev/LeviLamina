@@ -86,12 +86,12 @@ public:
 #endif
     /**
      * @symbol ??0ItemComponent@@QEAA@PEAVComponentItem@@@Z
-     * @hash   -166149872
+     * @hash   -165319568
      */
     MCAPI ItemComponent(class ComponentItem *);
     /**
      * @symbol ?bindItemComponentType@ItemComponent@@SAXXZ
-     * @hash   130902913
+     * @hash   131733217
      */
     MCAPI static void bindItemComponentType();
     /**

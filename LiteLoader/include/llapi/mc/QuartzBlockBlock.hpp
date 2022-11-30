@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@QuartzBlockBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   298678031
+     * @hash   299508335
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@QuartzBlockBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   2141500618
+     * @hash   2142330922
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@QuartzBlockBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1421971314
+     * @hash   1422801618
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -208,13 +208,13 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@QuartzBlockBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   757211883
+     * @hash   758042187
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@QuartzBlockBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   536151699
+     * @hash   536982003
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
@@ -225,7 +225,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@QuartzBlockBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1586157817
+     * @hash   1586988121
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -261,12 +261,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@QuartzBlockBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   268728960
+     * @hash   269559264
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0QuartzBlockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1253914567
+     * @hash   -1253084263
      */
     MCAPI QuartzBlockBlock(std::string const &, int);
 

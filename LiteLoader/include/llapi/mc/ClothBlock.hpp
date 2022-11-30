@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@ClothBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1964587018
+     * @hash   1965417322
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -201,7 +201,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@ClothBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1597447713
+     * @hash   1598278017
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@ClothBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1530008663
+     * @hash   1530838967
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -243,7 +243,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@ClothBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -633845384
+     * @hash   -633015080
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOTHBLOCK
@@ -260,7 +260,7 @@ public:
 #endif
     /**
      * @symbol ??0ClothBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1682981201
+     * @hash   1683811505
      */
     MCAPI ClothBlock(std::string const &, int);
 

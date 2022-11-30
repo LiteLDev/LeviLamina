@@ -32,62 +32,62 @@ public:
 public:
     /**
      * @symbol ??0MobEvents@@QEAA@AEAVLevelStorage@@@Z
-     * @hash   -772580178
+     * @hash   -771749874
      */
     MCAPI MobEvents(class LevelStorage &);
     /**
      * @symbol ?areEventsEnabled@MobEvents@@QEBA_NXZ
-     * @hash   -1662299730
+     * @hash   -1661469426
      */
     MCAPI bool areEventsEnabled() const;
     /**
      * @symbol ?deserialize@MobEvents@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -1894807452
+     * @hash   -1893977148
      */
     MCAPI void deserialize(class CompoundTag const &);
     /**
      * @symbol ?getEvent@MobEvents@@QEBAAEBVMobEvent@@W4MobEventsIndex@@@Z
-     * @hash   1909575239
+     * @hash   1910405543
      */
     MCAPI class MobEvent const & getEvent(enum class MobEventsIndex) const;
     /**
      * @symbol ?getIndexFromName@MobEvents@@QEBA?AW4MobEventsIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2096178357
+     * @hash   -2095348053
      */
     MCAPI enum class MobEventsIndex getIndexFromName(std::string const &) const;
     /**
      * @symbol ?isEnabled@MobEvents@@QEBA_NW4MobEventsIndex@@@Z
-     * @hash   526002237
+     * @hash   526832541
      */
     MCAPI bool isEnabled(enum class MobEventsIndex) const;
     /**
      * @symbol ?serialize@MobEvents@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -276821184
+     * @hash   -275990880
      */
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
     /**
      * @symbol ?setEnabled@MobEvents@@QEAAXW4MobEventsIndex@@_N@Z
-     * @hash   527657397
+     * @hash   528487701
      */
     MCAPI void setEnabled(enum class MobEventsIndex, bool);
     /**
      * @symbol ?setEventsEnabled@MobEvents@@QEAAX_N@Z
-     * @hash   -1398062274
+     * @hash   -1397231970
      */
     MCAPI void setEventsEnabled(bool);
     /**
      * @symbol ?setMarketplaceDefaults@MobEvents@@QEAAXXZ
-     * @hash   -1769560903
+     * @hash   -1768730599
      */
     MCAPI void setMarketplaceDefaults();
     /**
      * @symbol ?tick@MobEvents@@QEAAXXZ
-     * @hash   1768362045
+     * @hash   1769192349
      */
     MCAPI void tick();
     /**
      * @symbol ?writeToLevelStorage@MobEvents@@QEAAXXZ
-     * @hash   -33469785
+     * @hash   -32639481
      */
     MCAPI void writeToLevelStorage();
     /**

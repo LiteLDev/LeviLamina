@@ -39,31 +39,31 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -921788136
+     * @hash   -921742008
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @vftbl  5
      * @symbol ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
-     * @hash   -1681834861
+     * @hash   -1681788733
      */
     virtual class ItemStack const & getItem(int) const;
     /**
      * @vftbl  9
      * @symbol ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
-     * @hash   -674587390
+     * @hash   -674541262
      */
     virtual void setItem(int, class ItemStack const &);
     /**
      * @vftbl  14
      * @symbol ?getContainerSize@CraftingContainer@@UEBAHXZ
-     * @hash   2129475864
+     * @hash   2129521992
      */
     virtual int getContainerSize() const;
     /**
      * @vftbl  15
      * @symbol ?getMaxStackSize@CraftingContainer@@UEBAHXZ
-     * @hash   -693157993
+     * @hash   -693111865
      */
     virtual int getMaxStackSize() const;
     /**
@@ -96,12 +96,12 @@ public:
     virtual void setContainerChanged(int);
     /**
      * @symbol ??0CraftingContainer@@QEAA@HH@Z
-     * @hash   127933267
+     * @hash   127979395
      */
     MCAPI CraftingContainer(int, int);
     /**
      * @symbol ?getItem@CraftingContainer@@QEBAAEBVItemStack@@HH@Z
-     * @hash   -1108339886
+     * @hash   -1108293758
      */
     MCAPI class ItemStack const & getItem(int, int) const;
 

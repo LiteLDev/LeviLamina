@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0AngryComponent@@QEAA@XZ
-     * @hash   32066840
+     * @hash   32112968
      */
     MCAPI AngryComponent();
     /**
@@ -41,47 +41,47 @@ public:
     MCAPI AngryComponent(class AngryComponent &&);
     /**
      * @symbol ?canGetAngry@AngryComponent@@QEBA_NAEAVMob@@PEAV2@PEAVActor@@_N3@Z
-     * @hash   1321267555
+     * @hash   1321313683
      */
     MCAPI bool canGetAngry(class Mob &, class Mob *, class Actor *, bool, bool) const;
     /**
      * @symbol ?getAngrySound@AngryComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
-     * @hash   138718779
+     * @hash   138764907
      */
     MCAPI enum class LevelSoundEvent const getAngrySound(class Mob const &) const;
     /**
      * @symbol ?getBroadcastAnger@AngryComponent@@QEBA_NXZ
-     * @hash   -632849856
+     * @hash   -632803728
      */
     MCAPI bool getBroadcastAnger() const;
     /**
      * @symbol ?getBroadcastAngerOnAttack@AngryComponent@@QEBA_NXZ
-     * @hash   1984050574
+     * @hash   1984096702
      */
     MCAPI bool getBroadcastAngerOnAttack() const;
     /**
      * @symbol ?getBroadcastAngerOnBeingAttacked@AngryComponent@@QEBA_NXZ
-     * @hash   200252300
+     * @hash   200298428
      */
     MCAPI bool getBroadcastAngerOnBeingAttacked() const;
     /**
      * @symbol ?getBroadcastFilter@AngryComponent@@QEBAAEBVActorFilterGroup@@XZ
-     * @hash   1390943492
+     * @hash   1390989620
      */
     MCAPI class ActorFilterGroup const & getBroadcastFilter() const;
     /**
      * @symbol ?getBroadcastRange@AngryComponent@@QEBAHXZ
-     * @hash   648172342
+     * @hash   648218470
      */
     MCAPI int getBroadcastRange() const;
     /**
      * @symbol ?getHasTicked@AngryComponent@@QEBA_NXZ
-     * @hash   -118292650
+     * @hash   -118246522
      */
     MCAPI bool getHasTicked() const;
     /**
      * @symbol ?getNextSoundEventTick@AngryComponent@@QEBA?BUTick@@XZ
-     * @hash   1021454832
+     * @hash   1021500960
      */
     MCAPI struct Tick const getNextSoundEventTick() const;
     /**
@@ -91,22 +91,22 @@ public:
     MCAPI class AngryComponent & operator=(class AngryComponent &&);
     /**
      * @symbol ?restartTimer@AngryComponent@@QEAAXAEAVMob@@@Z
-     * @hash   1593620884
+     * @hash   1593667012
      */
     MCAPI void restartTimer(class Mob &);
     /**
      * @symbol ?setAngry@AngryComponent@@QEAAXAEAVMob@@_N@Z
-     * @hash   581704651
+     * @hash   581750779
      */
     MCAPI void setAngry(class Mob &, bool);
     /**
      * @symbol ?setHasTicked@AngryComponent@@QEAAX_N@Z
-     * @hash   150300750
+     * @hash   150346878
      */
     MCAPI void setHasTicked(bool);
     /**
      * @symbol ?setNextSoundEventTick@AngryComponent@@QEAAXAEBVMob@@@Z
-     * @hash   -26353070
+     * @hash   -26306942
      */
     MCAPI void setNextSoundEventTick(class Mob const &);
     /**

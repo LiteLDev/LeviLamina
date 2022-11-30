@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?onEquipItemPickedUp@EquipItemComponent@@QEAAXVItemStack@@H@Z
-     * @hash   -150012969
+     * @hash   -149966841
      */
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
     /**

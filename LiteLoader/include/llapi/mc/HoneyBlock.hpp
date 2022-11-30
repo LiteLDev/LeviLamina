@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  5
      * @symbol ?getCollisionShape@HoneyBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -242644040
+     * @hash   -241813736
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@HoneyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -630746132
+     * @hash   -629915828
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@HoneyBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1126131700
+     * @hash   -1125301396
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -207,7 +207,7 @@ public:
     /**
      * @vftbl  165
      * @symbol ?onStandOn@HoneyBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-     * @hash   -1956525260
+     * @hash   -1955694956
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /**
@@ -228,7 +228,7 @@ public:
     /**
      * @vftbl  170
      * @symbol ?onFallOn@HoneyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   -2075710674
+     * @hash   -2074880370
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
@@ -254,12 +254,12 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0HoneyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   2100700585
+     * @hash   2101530889
      */
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?triggerSlidingDownEffects@HoneyBlock@@SAXAEAVActor@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1440143784
+     * @hash   -1439313480
      */
     MCAPI static void triggerSlidingDownEffects(class Actor &, class BlockPos const &, class Block const &);
 

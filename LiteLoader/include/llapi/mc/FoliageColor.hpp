@@ -34,52 +34,52 @@ public:
 public:
     /**
      * @symbol ?getBirchColor@FoliageColor@@SAHMM@Z
-     * @hash   -1389623474
+     * @hash   -1388793170
      */
     MCAPI static int getBirchColor(float, float);
     /**
      * @symbol ?getDefaultColor@FoliageColor@@SAHXZ
-     * @hash   531487974
+     * @hash   532318278
      */
     MCAPI static int getDefaultColor();
     /**
      * @symbol ?getEvergreenColor@FoliageColor@@SAHMM@Z
-     * @hash   1025875902
+     * @hash   1026706206
      */
     MCAPI static int getEvergreenColor(float, float);
     /**
      * @symbol ?getFoliageColor@FoliageColor@@SAHMM@Z
-     * @hash   1809344894
+     * @hash   1810175198
      */
     MCAPI static int getFoliageColor(float, float);
     /**
      * @symbol ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
-     * @hash   951226232
+     * @hash   952056536
      */
     MCAPI static int getFoliageColor(enum class FoliageColor::PaletteName, float, float);
     /**
      * @symbol ?getMapBirchColor@FoliageColor@@SAHMM@Z
-     * @hash   -348292736
+     * @hash   -347462432
      */
     MCAPI static int getMapBirchColor(float, float);
     /**
      * @symbol ?getMapEvergreenColor@FoliageColor@@SAHMM@Z
-     * @hash   958025840
+     * @hash   958856144
      */
     MCAPI static int getMapEvergreenColor(float, float);
     /**
      * @symbol ?getMapFoliageColor@FoliageColor@@SAHMM@Z
-     * @hash   1313461824
+     * @hash   1314292128
      */
     MCAPI static int getMapFoliageColor(float, float);
     /**
      * @symbol ?getMapGrassColor@FoliageColor@@SAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1965589276
+     * @hash   -1964758972
      */
     MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?getMapGrassColor@FoliageColor@@SAHMM@Z
-     * @hash   1705274736
+     * @hash   1706105040
      */
     MCAPI static int getMapGrassColor(float, float);
 

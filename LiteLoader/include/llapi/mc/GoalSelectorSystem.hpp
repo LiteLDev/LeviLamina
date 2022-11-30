@@ -43,14 +43,14 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@GoalSelectorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1460113697
+     * @hash   1460159825
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickGoalSelectorComponent@GoalSelectorSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VGoalSelectorComponent@@@@@Z
-     * @hash   -384530109
+     * @hash   -384483981
      */
     MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent> &);
 

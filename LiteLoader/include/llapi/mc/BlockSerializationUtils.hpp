@@ -36,22 +36,22 @@ enum class NBTState;
     MCAPI extern class std::unordered_map<class HashedString, class std::function<void (int, class CompoundTag &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<void (int, class CompoundTag &)>>>> BLOCK_REPLACE_DATA_MAP;
     /**
      * @symbol ?clearBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
-     * @hash   1137790184
+     * @hash   1138620488
      */
     MCAPI void clearBlockReplaceDataMap();
     /**
      * @symbol ?clearNBTToBlockCache@BlockSerializationUtils@@YAXXZ
-     * @hash   1867912626
+     * @hash   1868742930
      */
     MCAPI void clearNBTToBlockCache();
     /**
      * @symbol ?initBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
-     * @hash   1789046068
+     * @hash   1789876372
      */
     MCAPI void initBlockReplaceDataMap();
     /**
      * @symbol ?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z
-     * @hash   1978874832
+     * @hash   1979705136
      */
     MCAPI struct std::pair<enum class BlockSerializationUtils::NBTState, class Block const *> tryGetBlockFromNBT(class CompoundTag const &, struct BlockSerializationUtils::NbtToBlockCache *);
 

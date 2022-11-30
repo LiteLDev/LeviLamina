@@ -120,7 +120,7 @@ public:
     /**
      * @vftbl  235
      * @symbol ?getInteraction@Piglin@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   1489902956
+     * @hash   1489949084
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
@@ -136,7 +136,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@Piglin@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -152613781
+     * @hash   -152567653
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -188,7 +188,7 @@ public:
 #endif
     /**
      * @symbol ??0Piglin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1600484529
+     * @hash   -1600438401
      */
     MCAPI Piglin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

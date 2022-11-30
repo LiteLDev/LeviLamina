@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createShulkerUpdatePositionSystem@ShulkerUpdatePositionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1859893582
+     * @hash   -1859847454
      */
     MCAPI static struct TickingSystemWithInfo createShulkerUpdatePositionSystem();
 

@@ -159,7 +159,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@OldLogBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -668008742
+     * @hash   -667178438
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@OldLogBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   -646357241
+     * @hash   -645526937
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
@@ -202,7 +202,7 @@ public:
     /**
      * @vftbl  146
      * @symbol ?getVariant@OldLogBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -588672608
+     * @hash   -587842304
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@OldLogBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -2071491721
+     * @hash   -2070661417
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -244,13 +244,13 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@OldLogBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -369381835
+     * @hash   -368551531
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  185
      * @symbol ?getMapColor@OldLogBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2139871876
+     * @hash   2140702180
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -261,12 +261,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@OldLogBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1235619042
+     * @hash   -1234788738
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0OldLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   2023400718
+     * @hash   2024231022
      */
     MCAPI OldLogBlock(std::string const &, int);
 

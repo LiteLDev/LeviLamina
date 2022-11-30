@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@CurrentSwimAmountSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   813387774
+     * @hash   813433902
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doCurrentSwimAmountSystem@CurrentSwimAmountSystem@@CAXAEBVStrictEntityContext@@AEAUCurrentSwimAmountComponent@@AEBUSynchedActorDataComponent@@@Z
-     * @hash   8644289
+     * @hash   8690417
      */
     MCAPI static void _doCurrentSwimAmountSystem(class StrictEntityContext const &, struct CurrentSwimAmountComponent &, struct SynchedActorDataComponent const &);
 

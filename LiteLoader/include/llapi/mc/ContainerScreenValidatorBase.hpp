@@ -50,12 +50,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@ContainerScreenValidatorBase@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   698047189
+     * @hash   698877493
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ?isValidContainerForScreen@ContainerScreenValidatorBase@@QEBA_NW4ContainerEnumName@@@Z
-     * @hash   -945724065
+     * @hash   -944893761
      */
     MCAPI bool isValidContainerForScreen(enum class ContainerEnumName) const;
 

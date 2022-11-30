@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@PersonaEmoteInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -854372428
+     * @hash   -854326300
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_personaEmoteInputSystem@PersonaEmoteInputSystem@@CAXAEBVStrictEntityContext@@AEBUEventingDispatcherComponent@@AEAUMoveInputComponent@@AEAUSynchedActorDataComponent@@AEAUVanillaClientGameplayComponent@@V?$Optional@UEmotePlayedTelemetryDataComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UEmotePlayedTelemetryDataComponent@@@@@Z
-     * @hash   628265455
+     * @hash   628311583
      */
     MCAPI static void _personaEmoteInputSystem(class StrictEntityContext const &, struct EventingDispatcherComponent const &, struct MoveInputComponent &, struct SynchedActorDataComponent &, struct VanillaClientGameplayComponent &, class Optional<struct EmotePlayedTelemetryDataComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EmotePlayedTelemetryDataComponent>);
 

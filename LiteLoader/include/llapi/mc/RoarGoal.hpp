@@ -36,13 +36,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RoarGoal@@UEAA_NXZ
-     * @hash   1560349423
+     * @hash   1560395551
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RoarGoal@@UEAA_NXZ
-     * @hash   -352911619
+     * @hash   -352865491
      */
     virtual bool canContinueToUse();
     /**
@@ -53,30 +53,30 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@RoarGoal@@UEAAXXZ
-     * @hash   -403271480
+     * @hash   -403225352
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RoarGoal@@UEAAXXZ
-     * @hash   1729980536
+     * @hash   1730026664
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RoarGoal@@UEAAXXZ
-     * @hash   -176002957
+     * @hash   -175956829
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RoarGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -482409647
+     * @hash   -482363519
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RoarGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -641843380
+     * @hash   -641797252
      */
     MCAPI RoarGoal(class Mob &);
 

@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Phantom@@UEAAXXZ
-     * @hash   -82358338
+     * @hash   -82312210
      */
     virtual void normalTick();
     /**
@@ -162,7 +162,7 @@ public:
     /**
      * @vftbl  300
      * @symbol ?checkSpawnRules@Phantom@@UEAA_N_N@Z
-     * @hash   412734620
+     * @hash   412780748
      */
     virtual bool checkSpawnRules(bool);
     /**
@@ -187,7 +187,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Phantom@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1253222039
+     * @hash   -1253175911
      */
     MCAPI Phantom(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -39,23 +39,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?serialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
-     * @hash   -16794849
+     * @hash   -16748721
      */
     virtual void serialize(class Json::Value &);
     /**
      * @vftbl  2
      * @symbol ?deserialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
-     * @hash   -905705088
+     * @hash   -905658960
      */
     virtual void deserialize(class Json::Value &);
     /**
      * @symbol ??0AllowListEntry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   171341888
+     * @hash   171388016
      */
     MCAPI AllowListEntry(std::string);
     /**
      * @symbol ??0AllowListEntry@@QEAA@AEAVValue@Json@@@Z
-     * @hash   -1530243074
+     * @hash   -1530196946
      */
     MCAPI AllowListEntry(class Json::Value &);
 

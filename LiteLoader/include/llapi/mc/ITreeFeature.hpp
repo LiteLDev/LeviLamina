@@ -41,7 +41,7 @@ public:
 //protected:
     /**
      * @symbol ?_place@ITreeFeature@@IEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   458421875
+     * @hash   459252179
      */
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 

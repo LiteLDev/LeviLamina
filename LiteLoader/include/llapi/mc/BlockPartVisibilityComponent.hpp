@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4BlockPartVisibilityComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   771727242
+     * @hash   772557546
      */
     MCAPI struct BlockPartVisibilityComponent & operator=(struct BlockPartVisibilityComponent &&);
     /**
      * @symbol ??1BlockPartVisibilityComponent@@QEAA@XZ
-     * @hash   1324720741
+     * @hash   1325551045
      */
     MCAPI ~BlockPartVisibilityComponent();
 

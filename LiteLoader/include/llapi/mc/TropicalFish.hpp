@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  12
      * @symbol ?initializeComponents@TropicalFish@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -476610380
+     * @hash   -476564252
      */
     virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@TropicalFish@@UEAAXXZ
-     * @hash   -1874993041
+     * @hash   -1874946913
      */
     virtual void normalTick();
     /**
@@ -123,7 +123,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@TropicalFish@@UEAAXH@Z
-     * @hash   201486388
+     * @hash   201532516
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -154,7 +154,7 @@ public:
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@TropicalFish@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -663810556
+     * @hash   -663764428
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -190,7 +190,7 @@ public:
     /**
      * @vftbl  338
      * @symbol ?createAIGoals@TropicalFish@@UEAA_NXZ
-     * @hash   1732966633
+     * @hash   1733012761
      */
     virtual bool createAIGoals();
     /**
@@ -205,12 +205,12 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0TropicalFish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -162941816
+     * @hash   -162895688
      */
     MCAPI TropicalFish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@TropicalFish@@QEAAXXZ
-     * @hash   473368469
+     * @hash   473414597
      */
     MCAPI void postNormalTick();
 

@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   191373249
+     * @hash   192203553
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1115783994
+     * @hash   1116614298
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  152
      * @symbol ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   1635736862
+     * @hash   1636567166
      */
     virtual class BlockLegacy & init();
     /**
@@ -222,7 +222,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@GlowLichenBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1732583879
+     * @hash   -1731753575
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -249,13 +249,13 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
-     * @hash   431806336
+     * @hash   432636640
      */
     virtual class Block const & getMultifaceBlock() const;
     /**
      * @vftbl  193
      * @symbol ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
-     * @hash   1508260794
+     * @hash   1509091098
      */
     virtual class MultifaceSpreader const & getMultifaceSpreader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWLICHENBLOCK
@@ -267,7 +267,7 @@ public:
 #endif
     /**
      * @symbol ??0GlowLichenBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -61330372
+     * @hash   -60500068
      */
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
 

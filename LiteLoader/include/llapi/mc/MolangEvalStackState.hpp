@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0MolangEvalStackState@@QEAA@AEAUMolangEvalParams@@@Z
-     * @hash   -1805012158
+     * @hash   -1804966030
      */
     MCAPI MolangEvalStackState(struct MolangEvalParams &);
 

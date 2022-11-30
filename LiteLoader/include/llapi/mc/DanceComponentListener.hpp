@@ -170,7 +170,7 @@ public:
     /**
      * @vftbl  29
      * @symbol ?levelSoundEvent@DanceComponentListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-     * @hash   1270827571
+     * @hash   1270873699
      */
     virtual void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 

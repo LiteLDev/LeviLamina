@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
-     * @hash   -2070480164
+     * @hash   -2069649860
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
      * @symbol ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
-     * @hash   -1707926272
+     * @hash   -1707095968
      */
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
 

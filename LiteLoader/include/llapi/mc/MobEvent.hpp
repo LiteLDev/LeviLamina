@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0MobEvent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-     * @hash   -1377151804
+     * @hash   -1376321500
      */
     MCAPI MobEvent(std::string, std::string, bool);
     /**
      * @symbol ??0MobEvent@@QEAA@AEBV0@@Z
-     * @hash   148174545
+     * @hash   149004849
      */
     MCAPI MobEvent(class MobEvent const &);
     /**

@@ -46,7 +46,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?executeEvent@HatchetItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     * @hash   -223267401
+     * @hash   -222437097
      */
     virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /**
@@ -77,7 +77,7 @@ public:
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@HatchetItem@@UEBAHXZ
-     * @hash   -181364278
+     * @hash   -180533974
      */
     virtual int getEnchantSlot() const;
     /**
@@ -107,23 +107,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  88
      * @symbol ?getDestroySpeed@HatchetItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-     * @hash   229996568
+     * @hash   230826872
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
      * @symbol ??0HatchetItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-     * @hash   1796528423
+     * @hash   1797358727
      */
     MCAPI HatchetItem(std::string const &, int, class Item::Tier const &);
 

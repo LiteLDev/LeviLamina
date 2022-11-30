@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@CactusBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1909299152
+     * @hash   -1908468848
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@CactusBlock@@UEBA_NH@Z
-     * @hash   1108674374
+     * @hash   1109504678
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -171,13 +171,13 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@CactusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -196172544
+     * @hash   -195342240
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CactusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   686260722
+     * @hash   687091026
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
@@ -188,7 +188,7 @@ public:
     /**
      * @vftbl  113
      * @symbol ?entityInside@CactusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     * @hash   827473882
+     * @hash   828304186
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
@@ -214,7 +214,7 @@ public:
     /**
      * @vftbl  140
      * @symbol ?onGraphicsModeChanged@CactusBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-     * @hash   -1479760484
+     * @hash   -1478930180
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
@@ -251,13 +251,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@CactusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1638690714
+     * @hash   -1637860410
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@CactusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -322221389
+     * @hash   -321391085
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -268,7 +268,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CactusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1498919712
+     * @hash   -1498089408
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,7 +285,7 @@ public:
 #endif
     /**
      * @symbol ??0CactusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1147402238
+     * @hash   1148232542
      */
     MCAPI CactusBlock(std::string const &, int);
 

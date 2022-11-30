@@ -40,89 +40,89 @@ public:
     /**
      * @vftbl  1
      * @symbol ?loadPosition@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   1104925635
+     * @hash   1105755939
      */
     virtual class Vec3 loadPosition(class Vec3 const &);
     /**
      * @vftbl  2
      * @symbol ?loadBlockPosition@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   151652130
+     * @hash   152482434
      */
     virtual class BlockPos loadBlockPosition(class BlockPos const &);
     /**
      * @vftbl  3
      * @symbol ?loadBlockPositionOffset@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-     * @hash   632561775
+     * @hash   633392079
      */
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
      * @vftbl  4
-     * @hash   -1688397180
+     * @hash   -1687566876
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
-     * @hash   -1392032290
+     * @hash   -1391201986
      */
     virtual float loadRotationDegreesY(float);
     /**
      * @vftbl  6
-     * @hash   -1686550138
+     * @hash   -1685719834
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
-     * @hash   -499561463
+     * @hash   -498731159
      */
     virtual float loadRotationRadiansY(float);
     /**
      * @vftbl  8
      * @symbol ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
-     * @hash   796598345
+     * @hash   797428649
      */
     virtual unsigned char loadFacingID(unsigned char);
     /**
      * @vftbl  9
      * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-     * @hash   -1598823191
+     * @hash   -1597992887
      */
     virtual class Vec3 loadDirection(class Vec3 const &);
     /**
      * @vftbl  10
      * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-     * @hash   -1024278749
+     * @hash   -1023448445
      */
     virtual enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @vftbl  11
      * @symbol ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-     * @hash   971232224
+     * @hash   972062528
      */
     virtual enum class Rotation loadRotation(enum class Rotation);
     /**
      * @vftbl  12
      * @symbol ?loadMirror@StructureDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-     * @hash   484892095
+     * @hash   485722399
      */
     virtual enum class Mirror loadMirror(enum class Mirror);
     /**
      * @vftbl  13
      * @symbol ?loadActorUniqueID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   -1642582767
+     * @hash   -1641752463
      */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
      * @vftbl  14
      * @symbol ?loadOwnerID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-     * @hash   927491860
+     * @hash   928322164
      */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
      * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@StructureDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-     * @hash   -307356557
+     * @hash   -306526253
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
@@ -140,24 +140,24 @@ public:
     /**
      * @vftbl  18
      * @symbol ?_generateNewID@StructureDataLoadHelper@@MEAA?AUActorUniqueID@@XZ
-     * @hash   1547208121
+     * @hash   1548038425
      */
     virtual struct ActorUniqueID _generateNewID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
     /**
      * @symbol ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
-     * @hash   -801506049
+     * @hash   -800675745
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
      * @symbol ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
-     * @hash   90841770
+     * @hash   91672074
      */
     MCVAPI float loadRotationRadiansX(float);
 #endif
     /**
      * @symbol ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z
-     * @hash   1456845791
+     * @hash   1457676095
      */
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum class Rotation, enum class Mirror, class Level &);
 

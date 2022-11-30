@@ -46,37 +46,37 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2076005661
+     * @hash   2076051789
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   -1456326758
+     * @hash   -1456280630
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -106782137
+     * @hash   -106736009
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ServerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   585272694
+     * @hash   585318822
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   -1389249856
+     * @hash   -1389203728
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   -438763760
+     * @hash   -438717632
      */
     virtual class Dimension * getDimension() const;
     /**
@@ -94,7 +94,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?clone@ServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   248349124
+     * @hash   248395252
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
@@ -112,13 +112,13 @@ public:
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   1187154083
+     * @hash   1187200211
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   465267530
+     * @hash   465313658
      */
     virtual class CompoundTag serialize() const;
     /**
@@ -129,12 +129,12 @@ public:
     virtual bool isValid() const;
     /**
      * @symbol ??0ServerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVServerLevel@@W4CommandPermissionLevel@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1117150444
+     * @hash   -1117104316
      */
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum class CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?load@ServerCommandOrigin@@SA?AV?$unique_ptr@VServerCommandOrigin@@U?$default_delete@VServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     * @hash   -1599347314
+     * @hash   -1599301186
      */
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

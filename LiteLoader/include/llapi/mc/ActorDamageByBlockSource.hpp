@@ -45,18 +45,18 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getDeathMessage@ActorDamageByBlockSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
-     * @hash   -532151143
+     * @hash   -532105015
      */
     virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /**
      * @vftbl  21
      * @symbol ?clone@ActorDamageByBlockSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
-     * @hash   -1121419671
+     * @hash   -1121373543
      */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /**
      * @symbol ??0ActorDamageByBlockSource@@QEAA@AEBVBlock@@W4ActorDamageCause@@@Z
-     * @hash   654835075
+     * @hash   654881203
      */
     MCAPI ActorDamageByBlockSource(class Block const &, enum class ActorDamageCause);
 

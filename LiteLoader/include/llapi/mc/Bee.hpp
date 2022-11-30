@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Bee@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1035623850
+     * @hash   -1035577722
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@Bee@@UEAAXXZ
-     * @hash   -1044034279
+     * @hash   -1043988151
      */
     virtual void normalTick();
     /**
@@ -117,7 +117,7 @@ public:
     /**
      * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Bee@@UEAAXH@Z
-     * @hash   813748714
+     * @hash   813794842
      */
     virtual void onSynchedDataUpdate(int);
     /**
@@ -187,19 +187,19 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Bee@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1832207090
+     * @hash   -1832160962
      */
     MCAPI Bee(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@Bee@@QEAAXXZ
-     * @hash   -2104205301
+     * @hash   -2104159173
      */
     MCAPI void postNormalTick();
 
 //protected:
     /**
      * @symbol ?_registerLoopingSounds@Bee@@IEAAXXZ
-     * @hash   -174862719
+     * @hash   -174816591
      */
     MCAPI void _registerLoopingSounds();
 

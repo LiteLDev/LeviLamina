@@ -77,7 +77,7 @@ public:
 private:
     /**
      * @symbol ?chunkOffset@Aquifer@@0V?$array@U?$pair@HH@std@@$0N@@std@@B
-     * @hash   933911723
+     * @hash   934034731
      */
     MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
 

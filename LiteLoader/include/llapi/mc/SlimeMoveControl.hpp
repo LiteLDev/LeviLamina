@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   -1577554094
+     * @hash   -1577507966
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0SlimeMoveControl@@QEAA@XZ
-     * @hash   837036208
+     * @hash   837082336
      */
     MCAPI SlimeMoveControl();
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0CrashDumpKeyValueData@@QEAA@W4CrashDumpLogStringID@@0H_K@Z
-     * @hash   829032594
+     * @hash   829862898
      */
     MCAPI CrashDumpKeyValueData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, int, unsigned __int64);
     /**

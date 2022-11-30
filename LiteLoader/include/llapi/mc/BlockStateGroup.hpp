@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ??0BlockStateGroup@@QEAA@XZ
-     * @hash   447158199
+     * @hash   447988503
      */
     MCAPI BlockStateGroup();
     /**
      * @symbol ?getBlockStateFromHash@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEB_K@Z
-     * @hash   981297210
+     * @hash   982127514
      */
     MCAPI class BlockStateMeta const * getBlockStateFromHash(unsigned __int64 const &) const;
     /**
      * @symbol ?getBlockStateFromName@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1110318638
+     * @hash   -1109488334
      */
     MCAPI class BlockStateMeta const * getBlockStateFromName(std::string const &) const;
     /**
      * @symbol ?registerBlockStateDefinition@BlockStateGroup@@QEAAXAEBUBlockStateDefinition@@@Z
-     * @hash   -924070114
+     * @hash   -923239810
      */
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const &);
     /**
      * @symbol ?registerToBlock@BlockStateGroup@@QEAAXAEAVBlockLegacy@@@Z
-     * @hash   -1270681910
+     * @hash   -1269851606
      */
     MCAPI void registerToBlock(class BlockLegacy &);
     /**
      * @symbol ?MAX_ENUM_SIZE@BlockStateGroup@@2HB
-     * @hash   410768313
+     * @hash   410891321
      */
     MCAPI static int const MAX_ENUM_SIZE;
     /**
      * @symbol ?loadBlockStateFromJson@BlockStateGroup@@SA_NAEAUBlockStateDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   1340720283
+     * @hash   1341550587
      */
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
 

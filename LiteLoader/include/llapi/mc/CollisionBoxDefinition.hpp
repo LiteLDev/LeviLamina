@@ -33,22 +33,22 @@ public:
 public:
     /**
      * @symbol ?setHeight@CollisionBoxDefinition@@QEAAXAEBM@Z
-     * @hash   1909931603
+     * @hash   1910023859
      */
     MCAPI void setHeight(float const &);
     /**
      * @symbol ?setWidth@CollisionBoxDefinition@@QEAAXAEBM@Z
-     * @hash   1192249247
+     * @hash   1192341503
      */
     MCAPI void setWidth(float const &);
     /**
      * @symbol ?buildSchema@CollisionBoxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCollisionBoxDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1113537766
+     * @hash   -1113445510
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition>> &);
     /**
      * @symbol ?mBoxEpsilon@CollisionBoxDefinition@@2MB
-     * @hash   738830279
+     * @hash   738953287
      */
     MCAPI static float const mBoxEpsilon;
 

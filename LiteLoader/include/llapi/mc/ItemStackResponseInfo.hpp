@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ItemStackResponseInfo@@QEAA@XZ
-     * @hash   671230608
+     * @hash   671276736
      */
     MCAPI ItemStackResponseInfo();
     /**
      * @symbol ??1ItemStackResponseInfo@@QEAA@XZ
-     * @hash   18126656
+     * @hash   18172784
      */
     MCAPI ~ItemStackResponseInfo();
 

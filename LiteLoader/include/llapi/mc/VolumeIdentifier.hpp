@@ -37,7 +37,7 @@ public:
     MCAPI bool operator==(struct VolumeIdentifier const &) const;
     /**
      * @symbol ?bindType@VolumeIdentifier@@SAXXZ
-     * @hash   883353139
+     * @hash   883399267
      */
     MCAPI static void bindType();
 

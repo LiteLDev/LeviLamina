@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@TrapDoorBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1318935330
+     * @hash   1319765634
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -50,13 +50,13 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@TrapDoorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   1385297665
+     * @hash   1386127969
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@TrapDoorBlock@@UEBA_NAEBVBlock@@E0@Z
-     * @hash   354180969
+     * @hash   355011273
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
@@ -167,13 +167,13 @@ public:
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@TrapDoorBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -648457018
+     * @hash   -647626714
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   435681539
+     * @hash   436511843
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -334138506
+     * @hash   -333308202
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -195,13 +195,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@TrapDoorBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   523480729
+     * @hash   524311033
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@TrapDoorBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1614465112
+     * @hash   -1613634808
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -212,7 +212,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@TrapDoorBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1166527137
+     * @hash   1167357441
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -238,7 +238,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@TrapDoorBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   2057947388
+     * @hash   2058777692
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -264,7 +264,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1380932750
+     * @hash   -1380102446
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -280,7 +280,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@TrapDoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   1773782263
+     * @hash   1774612567
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -291,7 +291,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@TrapDoorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   51017056
+     * @hash   51847360
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAPDOORBLOCK
@@ -308,14 +308,14 @@ public:
 #endif
     /**
      * @symbol ??0TrapDoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   803433097
+     * @hash   804263401
      */
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
 
 //private:
     /**
      * @symbol ?_toggleOpen@TrapDoorBlock@@AEBAXAEAVBlockSource@@PEAVActor@@AEBVBlockPos@@@Z
-     * @hash   1727305547
+     * @hash   1728135851
      */
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
 

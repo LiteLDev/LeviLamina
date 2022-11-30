@@ -139,7 +139,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@WoodSlabBlock@@UEBA_NH@Z
-     * @hash   2106980988
+     * @hash   2107811292
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -165,7 +165,7 @@ public:
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@WoodSlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1303054620
+     * @hash   -1302224316
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -196,13 +196,13 @@ public:
     /**
      * @vftbl  133
      * @symbol ?buildDescriptionId@WoodSlabBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   796496061
+     * @hash   797326365
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@WoodSlabBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   1247338838
+     * @hash   1248169142
      */
     virtual int getVariant(class Block const &) const;
     /**
@@ -213,7 +213,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@WoodSlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   875737917
+     * @hash   876568221
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -244,7 +244,7 @@ public:
     /**
      * @vftbl  185
      * @symbol ?getMapColor@WoodSlabBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   549514170
+     * @hash   550344474
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
@@ -255,12 +255,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WoodSlabBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   1824801940
+     * @hash   1825632244
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0WoodSlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-     * @hash   1268764309
+     * @hash   1269594613
      */
     MCAPI WoodSlabBlock(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
 

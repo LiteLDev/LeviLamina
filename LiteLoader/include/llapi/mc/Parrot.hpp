@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  11
      * @symbol ?reloadHardcodedClient@Parrot@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1811210251
+     * @hash   1811256379
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -61,7 +61,7 @@ public:
     /**
      * @vftbl  82
      * @symbol ?getShadowRadius@Parrot@@UEBAMXZ
-     * @hash   -1991064880
+     * @hash   -1991018752
      */
     virtual float getShadowRadius() const;
     /**
@@ -112,31 +112,31 @@ public:
     /**
      * @vftbl  122
      * @symbol ?setSitting@Parrot@@UEAAX_N@Z
-     * @hash   676759281
+     * @hash   676805409
      */
     virtual void setSitting(bool);
     /**
      * @vftbl  133
      * @symbol ?vehicleLanded@Parrot@@UEAAXAEBVVec3@@0@Z
-     * @hash   -1438189393
+     * @hash   -1438143265
      */
     virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /**
      * @vftbl  135
      * @symbol ?playAmbientSound@Parrot@@UEAAXXZ
-     * @hash   -381500676
+     * @hash   -381454548
      */
     virtual void playAmbientSound();
     /**
      * @vftbl  136
      * @symbol ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   1673844782
+     * @hash   1673890910
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   331988516
+     * @hash   332034644
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  195
      * @symbol ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
-     * @hash   -1248617785
+     * @hash   -1248571657
      */
     virtual bool canBePulledIntoVehicle() const;
     /**
@@ -183,7 +183,7 @@ public:
     /**
      * @vftbl  272
      * @symbol ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   171436572
+     * @hash   171482700
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
@@ -204,7 +204,7 @@ public:
     /**
      * @vftbl  295
      * @symbol ?aiStep@Parrot@@UEAAXXZ
-     * @hash   1369696885
+     * @hash   1369743013
      */
     virtual void aiStep();
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
-     * @hash   310489665
+     * @hash   310535793
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -247,22 +247,22 @@ public:
 #endif
     /**
      * @symbol ??0Parrot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   456022946
+     * @hash   456069074
      */
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getFlap@Parrot@@QEBAMXZ
-     * @hash   -287108252
+     * @hash   -287062124
      */
     MCAPI float getFlap() const;
     /**
      * @symbol ?getFlapSpeed@Parrot@@QEBAMXZ
-     * @hash   -1504886794
+     * @hash   -1504840666
      */
     MCAPI float getFlapSpeed() const;
     /**
      * @symbol ?postAiStep@Parrot@@QEAAXXZ
-     * @hash   -139694795
+     * @hash   -139648667
      */
     MCAPI void postAiStep();
 

@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?logEvent@CrashDumpLog@@SAXAEBUCrashDumpEventData@@@Z
-     * @hash   -1305265098
+     * @hash   -1304434794
      */
     MCAPI static void logEvent(struct CrashDumpEventData const &);
     /**
      * @symbol ?logFrame@CrashDumpLog@@SAXAEBUCrashDumpFrameData@@@Z
-     * @hash   -1484608054
+     * @hash   -1483777750
      */
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
     /**
      * @symbol ?logKeyValue@CrashDumpLog@@SAXAEBUCrashDumpKeyValueData@@@Z
-     * @hash   -1547803588
+     * @hash   -1546973284
      */
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);
     /**
      * @symbol ?setAssertMessage@CrashDumpLog@@SAXPEBDH00@Z
-     * @hash   -1914305376
+     * @hash   -1913475072
      */
     MCAPI static void setAssertMessage(char const *, int, char const *, char const *);
     /**
      * @symbol ?setDeviceSessionID@CrashDumpLog@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1089461859
+     * @hash   -1088631555
      */
     MCAPI static bool setDeviceSessionID(std::string const &);
     /**
      * @symbol ?setGameVersion@CrashDumpLog@@SAXPEBD@Z
-     * @hash   1051497741
+     * @hash   1052328045
      */
     MCAPI static void setGameVersion(char const *);
     /**
      * @symbol ?setPlatform@CrashDumpLog@@SAXPEBD@Z
-     * @hash   -1600949591
+     * @hash   -1600119287
      */
     MCAPI static void setPlatform(char const *);
     /**
      * @symbol ?setTotalMemory@CrashDumpLog@@SAX_K@Z
-     * @hash   -181883665
+     * @hash   -181053361
      */
     MCAPI static void setTotalMemory(unsigned __int64);
     /**
      * @symbol ?startCrashDumpLogThread@CrashDumpLog@@SA_NXZ
-     * @hash   -2076292318
+     * @hash   -2075462014
      */
     MCAPI static bool startCrashDumpLogThread();
     /**
      * @symbol ?stopCrashDumpLogThread@CrashDumpLog@@SAXXZ
-     * @hash   -1560464509
+     * @hash   -1559634205
      */
     MCAPI static void stopCrashDumpLogThread();
 
@@ -86,7 +86,7 @@ public:
 //private:
     /**
      * @symbol ?crashDumpLogThreadRoutine@CrashDumpLog@@CAXXZ
-     * @hash   1633009144
+     * @hash   1633839448
      */
     MCAPI static void crashDumpLogThreadRoutine();
 

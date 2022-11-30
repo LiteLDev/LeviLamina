@@ -161,7 +161,7 @@ public:
     /**
      * @vftbl  73
      * @symbol ?onRedstoneUpdate@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     * @hash   -643761440
+     * @hash   -642931136
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
@@ -172,7 +172,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1841066467
+     * @hash   1841896771
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -183,13 +183,13 @@ public:
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -121382793
+     * @hash   -120552489
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@RedstoneTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -763802555
+     * @hash   -762972251
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -226,7 +226,7 @@ public:
     /**
      * @vftbl  151
      * @symbol ?animateTick@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -649856214
+     * @hash   -649025910
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -237,7 +237,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@RedstoneTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -1494071316
+     * @hash   -1493241012
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -258,7 +258,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1692029903
+     * @hash   1692860207
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -279,7 +279,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@RedstoneTorchBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -103273789
+     * @hash   -102443485
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
@@ -290,14 +290,14 @@ public:
     virtual int getTickDelay();
     /**
      * @symbol ??0RedstoneTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-     * @hash   -223880610
+     * @hash   -223050306
      */
     MCAPI RedstoneTorchBlock(std::string const &, int, bool);
 
 //private:
     /**
      * @symbol ?_installCircuit@RedstoneTorchBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1689318049
+     * @hash   1690148353
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 

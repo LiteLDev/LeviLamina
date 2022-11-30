@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0LookControlComponent@@QEAA@XZ
-     * @hash   -429193605
+     * @hash   -429147477
      */
     MCAPI LookControlComponent();
     /**
      * @symbol ?getHasWantedPosition@LookControlComponent@@QEBA_NXZ
-     * @hash   -1004024440
+     * @hash   -1003978312
      */
     MCAPI bool getHasWantedPosition() const;
     /**
      * @symbol ?getHasWantedRotation@LookControlComponent@@QEBA_NXZ
-     * @hash   -1744306798
+     * @hash   -1744260670
      */
     MCAPI bool getHasWantedRotation() const;
     /**
      * @symbol ?getWantedPosition@LookControlComponent@@QEBA?AVVec3@@XZ
-     * @hash   1384063360
+     * @hash   1384109488
      */
     MCAPI class Vec3 getWantedPosition() const;
     /**
      * @symbol ?getWantedRotation@LookControlComponent@@QEBA?AVVec3@@XZ
-     * @hash   633665264
+     * @hash   633711392
      */
     MCAPI class Vec3 getWantedRotation() const;
     /**
@@ -66,7 +66,7 @@ public:
     MCAPI float getYMax() const;
     /**
      * @symbol ?initialize@LookControlComponent@@QEAAXAEAVMob@@@Z
-     * @hash   -1768027276
+     * @hash   -1767981148
      */
     MCAPI void initialize(class Mob &);
     /**
@@ -76,42 +76,42 @@ public:
     MCAPI class LookControlComponent & operator=(class LookControlComponent &&);
     /**
      * @symbol ?setHasWantedPosition@LookControlComponent@@QEAAX_N@Z
-     * @hash   1375921644
+     * @hash   1375967772
      */
     MCAPI void setHasWantedPosition(bool);
     /**
      * @symbol ?setHasWantedRotation@LookControlComponent@@QEAAX_N@Z
-     * @hash   -112064014
+     * @hash   -112017886
      */
     MCAPI void setHasWantedRotation(bool);
     /**
      * @symbol ?setInternalType@LookControlComponent@@QEAAXV?$unique_ptr@VLookControl@@U?$default_delete@VLookControl@@@std@@@std@@@Z
-     * @hash   -1547546190
+     * @hash   -1547500062
      */
     MCAPI void setInternalType(std::unique_ptr<class LookControl>);
     /**
      * @symbol ?setLookAtPosition@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
-     * @hash   36741518
+     * @hash   36787646
      */
     MCAPI void setLookAtPosition(class Vec3 const &, float, float);
     /**
      * @symbol ?setLookAtPosition@LookControlComponent@@QEAAXPEBVActor@@MM@Z
-     * @hash   1793367669
+     * @hash   1793413797
      */
     MCAPI void setLookAtPosition(class Actor const *, float, float);
     /**
      * @symbol ?setLookAtRotation@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
-     * @hash   522998084
+     * @hash   523044212
      */
     MCAPI void setLookAtRotation(class Vec3 const &, float, float);
     /**
      * @symbol ?setYMax@LookControlComponent@@QEAAXM@Z
-     * @hash   -725232938
+     * @hash   -725186810
      */
     MCAPI void setYMax(float);
     /**
      * @symbol ?update@LookControlComponent@@QEAAXAEAVMob@@@Z
-     * @hash   1282573268
+     * @hash   1282619396
      */
     MCAPI void update(class Mob &);
 

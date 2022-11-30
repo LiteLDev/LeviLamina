@@ -43,60 +43,60 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
-     * @hash   1285107092
+     * @hash   1285153220
      */
     virtual bool isSerializable() const;
     /**
      * @vftbl  3
      * @symbol ?setDurationAmplifier@TemporalAttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-     * @hash   977008364
+     * @hash   977054492
      */
     virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /**
      * @vftbl  4
      * @symbol ?shouldBuff@TemporalAttributeBuff@@UEBA_NXZ
-     * @hash   2119308049
+     * @hash   2119354177
      */
     virtual bool shouldBuff() const;
     /**
      * @vftbl  5
      * @symbol ?isComplete@TemporalAttributeBuff@@UEBA_NXZ
-     * @hash   -1935218434
+     * @hash   -1935172306
      */
     virtual bool isComplete() const;
     /**
      * @symbol ??0TemporalAttributeBuff@@QEAA@MHW4AttributeBuffType@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1103787498
+     * @hash   1103833626
      */
     MCAPI TemporalAttributeBuff(float, int, enum class AttributeBuffType, bool, std::string const &);
     /**
      * @symbol ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z
-     * @hash   -391753999
+     * @hash   -391707871
      */
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     /**
      * @symbol ?getBaseAmount@TemporalAttributeBuff@@QEBAMXZ
-     * @hash   -244782204
+     * @hash   -244736076
      */
     MCAPI float getBaseAmount() const;
     /**
      * @symbol ?getDuration@TemporalAttributeBuff@@QEBAHXZ
-     * @hash   -1207269220
+     * @hash   -1207223092
      */
     MCAPI int getDuration() const;
     /**
      * @symbol ?getLifeTimer@TemporalAttributeBuff@@QEBAHXZ
-     * @hash   -1467460020
+     * @hash   -1467413892
      */
     MCAPI int getLifeTimer() const;
     /**
      * @symbol ?serializationSetLifeTime@TemporalAttributeBuff@@QEAAXH@Z
-     * @hash   1559774722
+     * @hash   1559820850
      */
     MCAPI void serializationSetLifeTime(int);
     /**
      * @symbol ?tick@TemporalAttributeBuff@@QEAAXXZ
-     * @hash   -65432339
+     * @hash   -65386211
      */
     MCAPI void tick();
 

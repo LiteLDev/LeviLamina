@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   1030218458
+     * @hash   1031048762
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
@@ -51,30 +51,30 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getIngredient@MapCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   306310441
+     * @hash   307140745
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   1083992693
+     * @hash   1084084949
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@MapCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   1873644666
+     * @hash   1874474970
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@MapCloningRecipe@@UEBAHXZ
-     * @hash   87414592
+     * @hash   87460720
      */
     virtual int size() const;
     /**
      * @symbol ??0MapCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   -403068684
+     * @hash   -402238380
      */
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**

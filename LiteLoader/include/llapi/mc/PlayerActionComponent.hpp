@@ -31,42 +31,42 @@ public:
 public:
     /**
      * @symbol ??0PlayerActionComponent@@QEAA@XZ
-     * @hash   -294022174
+     * @hash   -293976046
      */
     MCAPI PlayerActionComponent();
     /**
      * @symbol ??0PlayerActionComponent@@QEAA@$$QEAU0@@Z
-     * @hash   2079993763
+     * @hash   2080039891
      */
     MCAPI PlayerActionComponent(struct PlayerActionComponent &&);
     /**
      * @symbol ?addAbortDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   -126005235
+     * @hash   -125959107
      */
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addContinueDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   -1155244581
+     * @hash   -1155198453
      */
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStartDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
-     * @hash   -595347347
+     * @hash   -595301219
      */
     MCAPI void addStartDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStopDestroyBlock@PlayerActionComponent@@QEAAXXZ
-     * @hash   -1512228367
+     * @hash   -1512182239
      */
     MCAPI void addStopDestroyBlock();
     /**
      * @symbol ??4PlayerActionComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1500846740
+     * @hash   -1500800612
      */
     MCAPI struct PlayerActionComponent & operator=(struct PlayerActionComponent &&);
     /**
      * @symbol ??1PlayerActionComponent@@QEAA@XZ
-     * @hash   -947741166
+     * @hash   -947695038
      */
     MCAPI ~PlayerActionComponent();
 

@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@HideDescription@@UEBAPEBDXZ
-     * @hash   567419786
+     * @hash   567465914
      */
     virtual char const * getJsonName() const;
     /**

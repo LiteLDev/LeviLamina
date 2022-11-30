@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0JigsawStructureRegistry@@QEAA@XZ
-     * @hash   1270012635
+     * @hash   1270842939
      */
     MCAPI JigsawStructureRegistry();
     /**
@@ -46,27 +46,27 @@ public:
     MCAPI class JigsawStructureBlockRulesRegistry & getJigsawStructureBlockRulesRegistry();
     /**
      * @symbol ?getJigsawStructureBlockTagRulesRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureBlockTagRulesRegistry@@XZ
-     * @hash   789916260
+     * @hash   789962388
      */
     MCAPI class JigsawStructureBlockTagRulesRegistry & getJigsawStructureBlockTagRulesRegistry();
     /**
      * @symbol ?getJigsawStructureElementRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureElementRegistry@@XZ
-     * @hash   -1794552592
+     * @hash   -1793722288
      */
     MCAPI class JigsawStructureElementRegistry & getJigsawStructureElementRegistry();
     /**
      * @symbol ?lookupByName@JigsawStructureRegistry@@QEBAPEBVStructureTemplatePool@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1030721298
+     * @hash   -1029890994
      */
     MCAPI class StructureTemplatePool const * lookupByName(std::string) const;
     /**
      * @symbol ?registerPool@JigsawStructureRegistry@@QEAAX$$QEAV?$unique_ptr@VStructureTemplatePool@@U?$default_delete@VStructureTemplatePool@@@std@@@std@@@Z
-     * @hash   -1434149108
+     * @hash   -1433318804
      */
     MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool> &&);
     /**
      * @symbol ??1JigsawStructureRegistry@@QEAA@XZ
-     * @hash   -186217813
+     * @hash   -185387509
      */
     MCAPI ~JigsawStructureRegistry();
 

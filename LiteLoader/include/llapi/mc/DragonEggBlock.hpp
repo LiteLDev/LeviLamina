@@ -159,13 +159,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@DragonEggBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   -509667344
+     * @hash   -508837040
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@DragonEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   -908299277
+     * @hash   -907468973
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
@@ -176,7 +176,7 @@ public:
     /**
      * @vftbl  109
      * @symbol ?attack@DragonEggBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1986976544
+     * @hash   1987806848
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
@@ -232,7 +232,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@DragonEggBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   690858352
+     * @hash   691688656
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -243,13 +243,13 @@ public:
     /**
      * @vftbl  192
      * @symbol ?getDustColor@DragonEggBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-     * @hash   878846087
+     * @hash   879676391
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
      * @vftbl  193
      * @symbol ?getDustParticleName@DragonEggBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     * @hash   1033759906
+     * @hash   1034590210
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
@@ -259,14 +259,14 @@ public:
     virtual void __unk_vfn_194();
     /**
      * @symbol ??0DragonEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   792609177
+     * @hash   793439481
      */
     MCAPI DragonEggBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_teleport@DragonEggBlock@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@@Z
-     * @hash   -237993071
+     * @hash   -237162767
      */
     MCAPI void _teleport(class BlockSource &, class Random &, class BlockPos const &) const;
 

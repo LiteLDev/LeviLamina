@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@FungusStem@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1795285014
+     * @hash   1796115318
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -220,7 +220,7 @@ public:
     /**
      * @vftbl  178
      * @symbol ?use@FungusStem@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   226773332
+     * @hash   227603636
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
@@ -230,7 +230,7 @@ public:
     virtual void __unk_vfn_186();
     /**
      * @symbol ??0FungusStem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   1074602278
+     * @hash   1075432582
      */
     MCAPI FungusStem(std::string const &, int, class Material const &);
 

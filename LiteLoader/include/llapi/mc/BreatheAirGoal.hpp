@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BreatheAirGoal@@UEAA_NXZ
-     * @hash   1225045816
+     * @hash   1225091944
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BreatheAirGoal@@UEAA_NXZ
-     * @hash   1282732902
+     * @hash   1282779030
      */
     virtual bool canContinueToUse();
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  4
      * @symbol ?start@BreatheAirGoal@@UEAAXXZ
-     * @hash   -1622200799
+     * @hash   -1622154671
      */
     virtual void start();
     /**
@@ -67,30 +67,30 @@ public:
     /**
      * @vftbl  6
      * @symbol ?tick@BreatheAirGoal@@UEAAXXZ
-     * @hash   -573188820
+     * @hash   -573142692
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@BreatheAirGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2058282472
+     * @hash   2058328600
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0BreatheAirGoal@@QEAA@AEAVMob@@@Z
-     * @hash   476159013
+     * @hash   476205141
      */
     MCAPI BreatheAirGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_determineApproximateDepth@BreatheAirGoal@@AEAAHXZ
-     * @hash   1471133196
+     * @hash   1471179324
      */
     MCAPI int _determineApproximateDepth();
     /**
      * @symbol ?_findAirPosition@BreatheAirGoal@@AEAAXXZ
-     * @hash   -222706689
+     * @hash   -222660561
      */
     MCAPI void _findAirPosition();
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
-     * @hash   2096016811
+     * @hash   2096062939
      */
     MCAPI bool canTrigger(class RenderParams &) const;
     /**
      * @symbol ??1DefinitionTrigger@@QEAA@XZ
-     * @hash   337759425
+     * @hash   337805553
      */
     MCAPI ~DefinitionTrigger();
     /**
      * @symbol ?bindType@DefinitionTrigger@@SAXXZ
-     * @hash   -289594257
+     * @hash   -289548129
      */
     MCAPI static void bindType();
 

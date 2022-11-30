@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0GossipTypeManager@@QEAA@AEBVLevelData@@@Z
-     * @hash   2104163993
+     * @hash   2104210121
      */
     MCAPI GossipTypeManager(class LevelData const &);
     /**
      * @symbol ?readGossipData@GossipTypeManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   535729168
+     * @hash   535775296
      */
     MCAPI void readGossipData(std::string const &);
     /**
      * @symbol ?shouldUseGossip@GossipTypeManager@@QEBA_NXZ
-     * @hash   1561412166
+     * @hash   1561458294
      */
     MCAPI bool shouldUseGossip() const;
     /**

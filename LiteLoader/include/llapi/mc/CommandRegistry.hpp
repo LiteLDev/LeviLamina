@@ -429,7 +429,7 @@ public:
              "??$parse@VCommandRawText@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(class Block const*).name(),
          dlsym_real(
-             "?getReturnPolicy@?$MemberPropertyGetter@VScriptMovementSkipComponent@ScriptModuleMinecraft@@$0A@$MP8MovementScriptActorComponent@2@EBA?AV?$Result@M@Scripting@@XZ1??_932@$B7AA@Reflection@Scripting@@UEBA?AW4ReturnPolicy@23@XZ")},
+             "??$parse@PEBVBlock@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(class MobEffect const*).name(),
          dlsym_real(
              "??$parse@PEBVMobEffect@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
@@ -554,127 +554,127 @@ public:
 public:
     /**
      * @symbol ??0CommandRegistry@@QEAA@XZ
-     * @hash   594635556
+     * @hash   594681684
      */
     MCAPI CommandRegistry();
     /**
      * @symbol ?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z
-     * @hash   -658852095
+     * @hash   -658805967
      */
     MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum class SemanticConstraint);
     /**
      * @symbol ?addEnumValues@CommandRegistry@@QEAAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   1521162837
+     * @hash   1521208965
      */
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);
     /**
      * @symbol ?addSoftEnum@CommandRegistry@@QEAAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -1526695167
+     * @hash   -1526649039
      */
     MCAPI int addSoftEnum(std::string const &, std::vector<std::string>);
     /**
      * @symbol ?addSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   1865848112
+     * @hash   1865894240
      */
     MCAPI void addSoftEnumValues(std::string const &, std::vector<std::string>);
     /**
      * @symbol ?buildSelector@CommandRegistry@@QEBA_NAEBUActorSelectorArgs@@PEAVCommandSelectorBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1864762746
+     * @hash   1864808874
      */
     MCAPI bool buildSelector(struct ActorSelectorArgs const &, class CommandSelectorBase *, std::string &) const;
     /**
      * @symbol ?enabledInEditor@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1746209215
+     * @hash   -1746163087
      */
     MCAPI bool enabledInEditor(std::string const &) const;
     /**
      * @symbol ?generateDocumentationMetadata@CommandRegistry@@QEBA?AVValue@Json@@_N@Z
-     * @hash   -266441847
+     * @hash   -266395719
      */
     MCAPI class Json::Value generateDocumentationMetadata(bool) const;
     /**
      * @symbol ?getAliases@CommandRegistry@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   451622952
+     * @hash   451669080
      */
     MCAPI std::vector<std::string> getAliases(std::string const &) const;
     /**
      * @symbol ?getAlphabeticalLookup@CommandRegistry@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVCommandOrigin@@@Z
-     * @hash   666138556
+     * @hash   666184684
      */
     MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const &) const;
     /**
      * @symbol ?getCommandName@CommandRegistry@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -985886311
+     * @hash   -985840183
      */
     MCAPI std::string getCommandName(std::string const &) const;
     /**
      * @symbol ?getCommandOverloadSyntaxInformation@CommandRegistry@@QEBA?AUCommandSyntaxInformation@@AEBVCommandOrigin@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   477834300
+     * @hash   477880428
      */
     MCAPI struct CommandSyntaxInformation getCommandOverloadSyntaxInformation(class CommandOrigin const &, std::string const &) const;
     /**
      * @symbol ?getCommandStatus@CommandRegistry@@QEBA?AW4CommandStatus@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -761159245
+     * @hash   -761113117
      */
     MCAPI enum class CommandStatus getCommandStatus(std::string const &) const;
     /**
      * @symbol ?isCommandOfType@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandTypeFlag@@@Z
-     * @hash   -1577630434
+     * @hash   -1577584306
      */
     MCAPI bool isCommandOfType(std::string const &, enum class CommandTypeFlag) const;
     /**
      * @symbol ?isValidCommand@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -685344737
+     * @hash   -685298609
      */
     MCAPI bool isValidCommand(std::string const &) const;
     /**
      * @symbol ?registerAlias@CommandRegistry@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   2131659748
+     * @hash   2131705876
      */
     MCAPI void registerAlias(std::string, std::string);
     /**
      * @symbol ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
-     * @hash   -822992468
+     * @hash   -822946340
      */
     MCAPI void registerCommand(std::string const &, char const *, enum class CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
     /**
      * @symbol ?removeSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -1315774972
+     * @hash   -1315728844
      */
     MCAPI void removeSoftEnumValues(std::string const &, std::vector<std::string>);
     /**
      * @symbol ?requiresCheatsEnabled@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1247199297
+     * @hash   1247245425
      */
     MCAPI bool requiresCheatsEnabled(std::string const &) const;
     /**
      * @symbol ?serializeAvailableCommands@CommandRegistry@@QEBA?AVAvailableCommandsPacket@@XZ
-     * @hash   1233664576
+     * @hash   1233710704
      */
     MCAPI class AvailableCommandsPacket serializeAvailableCommands() const;
     /**
      * @symbol ?setCommandRegistrationOverride@CommandRegistry@@QEAAXV?$function@$$A6AXAEAUCommandFlag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
-     * @hash   1118461838
+     * @hash   1118507966
      */
     MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag &, std::string const &)>);
     /**
      * @symbol ?setNetworkUpdateCallback@CommandRegistry@@QEAAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
-     * @hash   1822058329
+     * @hash   1822104457
      */
     MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const &)>);
     /**
      * @symbol ?setScoreCallback@CommandRegistry@@QEAAXV?$function@$$A6AHAEA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z@std@@@Z
-     * @hash   -487380531
+     * @hash   -487334403
      */
     MCAPI void setScoreCallback(class std::function<int (bool &, std::string const &, class Actor const &)>);
     /**
      * @symbol ?setSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   690409042
+     * @hash   690455170
      */
     MCAPI void setSoftEnumValues(std::string const &, std::vector<std::string>);
     /**
      * @symbol ??1CommandRegistry@@QEAA@XZ
-     * @hash   -1783733916
+     * @hash   -1783687788
      */
     MCAPI ~CommandRegistry();
     /**
@@ -721,72 +721,72 @@ public:
 //private:
     /**
      * @symbol ?_addEnumValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z@Z
-     * @hash   214686968
+     * @hash   214733096
      */
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<std::string, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     /**
      * @symbol ?_addEnumValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z@Z
-     * @hash   -1886552520
+     * @hash   -1886506392
      */
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     /**
      * @symbol ?_addFunctionSoftEnum@CommandRegistry@@AEAA?AVSymbol@1@XZ
-     * @hash   1100616674
+     * @hash   1100662802
      */
     MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();
     /**
      * @symbol ?_getConstrainedParamEnumSymbol@CommandRegistry@@AEBA?AVSymbol@1@V21@@Z
-     * @hash   164934270
+     * @hash   164980398
      */
     MCAPI class CommandRegistry::Symbol _getConstrainedParamEnumSymbol(class CommandRegistry::Symbol) const;
     /**
      * @symbol ?_isCommandElementValid@CommandRegistry@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   413191963
+     * @hash   413238091
      */
     MCAPI bool _isCommandElementValid(std::string const &) const;
     /**
      * @symbol ?_matchesEnumConstraintsSet@CommandRegistry@@AEBA_NAEBVSymbol@1@AEBVCommandOrigin@@0W4SemanticConstraint@@@Z
-     * @hash   -1727305763
+     * @hash   -1727259635
      */
     MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum class SemanticConstraint) const;
     /**
      * @symbol ?addEnumValuesToExisting@CommandRegistry@@AEAAXIAEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@std@@@Z
-     * @hash   2000220651
+     * @hash   2000266779
      */
     MCAPI void addEnumValuesToExisting(unsigned int, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &);
     /**
      * @symbol ?addPostfix@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -537368357
+     * @hash   -537322229
      */
     MCAPI class CommandRegistry::Symbol addPostfix(std::string const &);
     /**
      * @symbol ?addRule@CommandRegistry@@AEAAXVSymbol@1@$$QEAV?$vector@VSymbol@CommandRegistry@@V?$allocator@VSymbol@CommandRegistry@@@std@@@std@@V?$function@$$A6APEAUParseToken@CommandRegistry@@AEAU12@VSymbol@2@@Z@4@VCommandVersion@@@Z
-     * @hash   -940726593
+     * @hash   -940680465
      */
     MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol> &&, class std::function<struct CommandRegistry::ParseToken * (struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol)>, class CommandVersion);
     /**
      * @symbol ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
-     * @hash   52368833
+     * @hash   52414961
      */
     MCAPI void addSemanticConstraint(enum class SemanticConstraint);
     /**
      * @symbol ?addSoftTerminal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   900987896
+     * @hash   901034024
      */
     MCAPI class CommandRegistry::Symbol addSoftTerminal(std::string const &);
     /**
      * @symbol ?buildFirstSet@CommandRegistry@@AEBAXAEAUParseTable@1@VSymbol@1@I@Z
-     * @hash   500318606
+     * @hash   500364734
      */
     MCAPI void buildFirstSet(struct CommandRegistry::ParseTable &, class CommandRegistry::Symbol, unsigned int) const;
     /**
      * @symbol ?buildFollowSet@CommandRegistry@@AEBAXAEAUParseTable@1@VSymbol@1@IAEAV?$set@VSymbol@CommandRegistry@@U?$less@VSymbol@CommandRegistry@@@std@@V?$allocator@VSymbol@CommandRegistry@@@4@@std@@@Z
-     * @hash   -165225923
+     * @hash   -165179795
      */
     MCAPI void buildFollowSet(struct CommandRegistry::ParseTable &, class CommandRegistry::Symbol, unsigned int, class std::set<class CommandRegistry::Symbol, struct std::less<class CommandRegistry::Symbol>, class std::allocator<class CommandRegistry::Symbol>> &) const;
     /**
      * @symbol ?buildOptionalRuleChain@CommandRegistry@@AEAA?AVSymbol@1@AEBUSignature@1@AEBV?$vector@VCommandParameterData@@V?$allocator@VCommandParameterData@@@std@@@std@@AEBV?$vector@VSymbol@CommandRegistry@@V?$allocator@VSymbol@CommandRegistry@@@std@@@5@@Z
-     * @hash   1305918882
+     * @hash   1305965010
      */
     MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, std::vector<class CommandRegistry::Symbol> const &);
     /**
@@ -796,127 +796,127 @@ public:
     MCAPI void buildOverload(struct CommandRegistry::Overload &);
     /**
      * @symbol ?buildParseTable@CommandRegistry@@AEBAXI@Z
-     * @hash   855137244
+     * @hash   855183372
      */
     MCAPI void buildParseTable(unsigned int) const;
     /**
      * @symbol ?buildRules@CommandRegistry@@AEAA?AVSymbol@1@AEAUSignature@1@AEBV?$vector@PEAUOverload@CommandRegistry@@V?$allocator@PEAUOverload@CommandRegistry@@@std@@@std@@_K@Z
-     * @hash   463294744
+     * @hash   463340872
      */
     MCAPI class CommandRegistry::Symbol buildRules(struct CommandRegistry::Signature &, std::vector<struct CommandRegistry::Overload *> const &, unsigned __int64);
     /**
      * @symbol ?checkOriginCommandFlags@CommandRegistry@@AEBA_NAEBVCommandOrigin@@UCommandFlag@@W4CommandPermissionLevel@@@Z
-     * @hash   1209496706
+     * @hash   1209542834
      */
     MCAPI bool checkOriginCommandFlags(class CommandOrigin const &, struct CommandFlag, enum class CommandPermissionLevel) const;
     /**
      * @symbol ?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   1874433369
+     * @hash   1874479497
      */
     MCAPI std::unique_ptr<class Command> createCommand(struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const;
     /**
      * @symbol ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSignature@1@AEBV23@AEBUOverload@1@IPEAI3@Z
-     * @hash   -1207278128
+     * @hash   -1207232000
      */
     MCAPI std::string describe(struct CommandRegistry::Signature const &, std::string const &, struct CommandRegistry::Overload const &, unsigned int, unsigned int *, unsigned int *) const;
     /**
      * @symbol ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandParameterData@@@Z
-     * @hash   931029173
+     * @hash   931075301
      */
     MCAPI std::string describe(class CommandParameterData const &) const;
     /**
      * @symbol ?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSymbol@1@@Z
-     * @hash   -1641790441
+     * @hash   -1641744313
      */
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
     /**
      * @symbol ?findCommand@CommandRegistry@@AEAAPEAUSignature@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1195503445
+     * @hash   -1195457317
      */
     MCAPI struct CommandRegistry::Signature * findCommand(std::string const &);
     /**
      * @symbol ?findCommand@CommandRegistry@@AEBAPEBUSignature@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1434570611
+     * @hash   -1434524483
      */
     MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
     /**
      * @symbol ?findEnumValue@CommandRegistry@@AEBA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   406282919
+     * @hash   406329047
      */
     MCAPI class CommandRegistry::Symbol findEnumValue(std::string const &) const;
     /**
      * @symbol ?findIdentifierInfo@CommandRegistry@@AEBA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   846185486
+     * @hash   846231614
      */
     MCAPI class CommandRegistry::Symbol findIdentifierInfo(std::string const &) const;
     /**
      * @symbol ?findPostfix@CommandRegistry@@AEBA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -936387678
+     * @hash   -936341550
      */
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const &) const;
     /**
      * @symbol ?first@CommandRegistry@@AEBA?AV?$vector@VSymbol@CommandRegistry@@V?$allocator@VSymbol@CommandRegistry@@@std@@@std@@AEAUParseTable@1@AEBV23@@Z
-     * @hash   -1269944475
+     * @hash   -1269898347
      */
     MCAPI std::vector<class CommandRegistry::Symbol> first(struct CommandRegistry::ParseTable &, std::vector<class CommandRegistry::Symbol> const &) const;
     /**
      * @symbol ?forEachNonTerminal@CommandRegistry@@AEBAXV?$function@$$A6AXVSymbol@CommandRegistry@@@Z@std@@@Z
-     * @hash   -239863153
+     * @hash   -239817025
      */
     MCAPI void forEachNonTerminal(class std::function<void (class CommandRegistry::Symbol)>) const;
     /**
      * @symbol ?getEnumData@CommandRegistry@@AEBA_KAEBUParseToken@1@@Z
-     * @hash   814656710
+     * @hash   814702838
      */
     MCAPI unsigned __int64 getEnumData(struct CommandRegistry::ParseToken const &) const;
     /**
      * @symbol ?getInvertableFilter@CommandRegistry@@AEBA?AU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@AEBUParseToken@1@@Z
-     * @hash   -587544662
+     * @hash   -587498534
      */
     MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const &) const;
     /**
      * @symbol ?isValid@CommandRegistry@@AEBA_NVSymbol@1@@Z
-     * @hash   -290075358
+     * @hash   -290029230
      */
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     /**
      * @symbol ?originCanRun@CommandRegistry@@AEBA_NAEBVCommandOrigin@@AEBUOverload@1@@Z
-     * @hash   287235968
+     * @hash   287282096
      */
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Overload const &) const;
     /**
      * @symbol ?originCanRun@CommandRegistry@@AEBA_NAEBVCommandOrigin@@AEBUSignature@1@@Z
-     * @hash   710862252
+     * @hash   710908380
      */
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
     /**
      * @symbol ?parseSelector@CommandRegistry@@AEBA_NAEAUActorSelectorArgs@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@Z
-     * @hash   -561289439
+     * @hash   -561243311
      */
     MCAPI bool parseSelector(struct ActorSelectorArgs &, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const;
     /**
      * @symbol ?parseSelector@CommandRegistry@@AEBA_NPEAVCommandSelectorBase@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@_N@Z
-     * @hash   621685424
+     * @hash   621731552
      */
     MCAPI bool parseSelector(class CommandSelectorBase *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &, bool) const;
     /**
      * @symbol ?registerOverloadInternal@CommandRegistry@@AEAAXAEAUSignature@1@AEAUOverload@1@@Z
-     * @hash   1414107858
+     * @hash   1414153986
      */
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
     /**
      * @symbol ?setupOverloadRules@CommandRegistry@@AEAAXAEAUSignature@1@AEAUOverload@1@@Z
-     * @hash   1015596792
+     * @hash   1015642920
      */
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
     /**
      * @symbol ?symbolToString@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSymbol@1@@Z
-     * @hash   735654670
+     * @hash   735700798
      */
     MCAPI std::string symbolToString(class CommandRegistry::Symbol) const;
     /**
      * @symbol ?_removeStringQuotes@CommandRegistry@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -1826595919
+     * @hash   -1826549791
      */
     MCAPI static std::string _removeStringQuotes(std::string const &);
     /**
@@ -926,42 +926,42 @@ public:
     MCAPI static struct CommandRegistry::ParseToken * collapse(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol);
     /**
      * @symbol ?collapseOn@CommandRegistry@@CAPEAUParseToken@1@AEAU21@VSymbol@1@1@Z
-     * @hash   -352516994
+     * @hash   -352470866
      */
     MCAPI static struct CommandRegistry::ParseToken * collapseOn(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
     /**
      * @symbol ?expand@CommandRegistry@@CAPEAUParseToken@1@AEAU21@VSymbol@1@@Z
-     * @hash   614487895
+     * @hash   614534023
      */
     MCAPI static struct CommandRegistry::ParseToken * expand(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol);
     /**
      * @symbol ?expandExcept@CommandRegistry@@CAPEAUParseToken@1@AEAU21@VSymbol@1@1@Z
-     * @hash   -279996377
+     * @hash   -279950249
      */
     MCAPI static struct CommandRegistry::ParseToken * expandExcept(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
     /**
      * @symbol ?fold@CommandRegistry@@CAPEAUParseToken@1@AEAU21@VSymbol@1@1@Z
-     * @hash   324097241
+     * @hash   324143369
      */
     MCAPI static struct CommandRegistry::ParseToken * fold(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
     /**
      * @symbol ?kill@CommandRegistry@@CAPEAUParseToken@1@AEAU21@VSymbol@1@@Z
-     * @hash   751145355
+     * @hash   751191483
      */
     MCAPI static struct CommandRegistry::ParseToken * kill(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol);
     /**
      * @symbol ?readFloat@CommandRegistry@@CA_NAEAMAEBUParseToken@1@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   1013040217
+     * @hash   1013086345
      */
     MCAPI static bool readFloat(float &, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &);
     /**
      * @symbol ?readInt@CommandRegistry@@CA_NAEAHAEBUParseToken@1@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   1014998751
+     * @hash   1015044879
      */
     MCAPI static bool readInt(int &, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &);
     /**
      * @symbol ?readRelativeCoordinate@CommandRegistry@@CA_NAEA_NAEAMAEBUParseToken@1@_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   1313682971
+     * @hash   1313729099
      */
     MCAPI static bool readRelativeCoordinate(bool &, float &, struct CommandRegistry::ParseToken const &, bool, std::string &, std::vector<std::string> &);
 

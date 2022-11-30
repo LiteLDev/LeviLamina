@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Animal@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1634470326
+     * @hash   -1634424198
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -106,7 +106,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@Animal@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   910667178
+     * @hash   910713306
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -147,7 +147,7 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@Animal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   297869428
+     * @hash   297915556
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
@@ -158,7 +158,7 @@ public:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Animal@@EEAAXXZ
-     * @hash   -1802552295
+     * @hash   -1802506167
      */
     virtual void _onSizeUpdated();
     /**
@@ -184,7 +184,7 @@ public:
     /**
      * @vftbl  344
      * @symbol ?_getWalkTargetValue@Animal@@MEAAMAEBVBlockPos@@@Z
-     * @hash   1960162894
+     * @hash   1960209022
      */
     virtual float _getWalkTargetValue(class BlockPos const &);
     /**
@@ -199,7 +199,7 @@ public:
     virtual void __unk_vfn_360();
     /**
      * @symbol ??0Animal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   332841128
+     * @hash   332887256
      */
     MCAPI Animal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

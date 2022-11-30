@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  15
      * @symbol ?onProjectileHit@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     * @hash   1355753976
+     * @hash   1356584280
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
      * @vftbl  16
      * @symbol ?onLightningHit@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1918381593
+     * @hash   -1917551289
      */
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
@@ -56,7 +56,7 @@ public:
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@LightningRod@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   199787212
+     * @hash   200617516
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
@@ -196,7 +196,7 @@ public:
     /**
      * @vftbl  79
      * @symbol ?setupRedstoneComponent@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1205508891
+     * @hash   1206339195
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
@@ -207,13 +207,13 @@ public:
     /**
      * @vftbl  96
      * @symbol ?breaksFallingBlocks@LightningRod@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     * @hash   37698958
+     * @hash   38529262
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@LightningRod@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1946775501
+     * @hash   1947605805
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -224,7 +224,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@LightningRod@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   -1854679316
+     * @hash   -1853849012
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -250,13 +250,13 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@LightningRod@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   5956631
+     * @hash   6786935
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  151
      * @symbol ?animateTick@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -71915086
+     * @hash   -71084782
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -267,7 +267,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@LightningRod@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   1269928612
+     * @hash   1270758916
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -288,7 +288,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   215310967
+     * @hash   216141271
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -299,7 +299,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@LightningRod@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -108478669
+     * @hash   -107648365
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -315,12 +315,12 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@LightningRod@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1340516485
+     * @hash   -1339686181
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0LightningRod@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -371667276
+     * @hash   -370836972
      */
     MCAPI LightningRod(std::string const &, int, class Material const &);
 

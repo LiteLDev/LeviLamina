@@ -32,59 +32,59 @@ public:
 public:
     /**
      * @symbol ?getCountToPickUp@ShareableComponent@@QEBAHAEBVActor@@AEBVItemActor@@@Z
-     * @hash   -1719915962
+     * @hash   -1719869834
      */
     MCAPI int getCountToPickUp(class Actor const &, class ItemActor const &) const;
     /**
      * @symbol ?getCountToPickUp@ShareableComponent@@QEBAHAEBVActor@@AEBVItemStack@@@Z
-     * @hash   1864065008
+     * @hash   1864111136
      */
     MCAPI int getCountToPickUp(class Actor const &, class ItemStack const &) const;
     /**
      * @symbol ?getSlotToSwap@ShareableComponent@@QEBAHAEAVActor@@AEBVItemActor@@@Z
-     * @hash   1032027424
+     * @hash   1032073552
      */
     MCAPI int getSlotToSwap(class Actor &, class ItemActor const &) const;
     /**
      * @symbol ?hasSurplus@ShareableComponent@@QEBAHAEAVActor@@AEBVItemStack@@AEAV3@_N@Z
-     * @hash   -471874988
+     * @hash   -471828860
      */
     MCAPI int hasSurplus(class Actor &, class ItemStack const &, class ItemStack &, bool) const;
     /**
      * @symbol ?hasSurplus@ShareableComponent@@QEBAHAEAVActor@@AEBVItemStack@@_N@Z
-     * @hash   -540729375
+     * @hash   -540683247
      */
     MCAPI int hasSurplus(class Actor &, class ItemStack const &, bool) const;
     /**
      * @symbol ?itemBelongsInInventory@ShareableComponent@@QEBA_NAEAVActor@@AEBVItemStack@@_N@Z
-     * @hash   1004268293
+     * @hash   1004314421
      */
     MCAPI bool itemBelongsInInventory(class Actor &, class ItemStack const &, bool) const;
     /**
      * @symbol ?wantsMore@ShareableComponent@@QEBAHAEBVActor@@AEBVItemStack@@@Z
-     * @hash   1102013886
+     * @hash   1102060014
      */
     MCAPI int wantsMore(class Actor const &, class ItemStack const &) const;
     /**
      * @symbol ?willPickup@ShareableComponent@@QEBA_NAEAVActor@@AEBVItemStack@@_N2@Z
-     * @hash   1988773495
+     * @hash   1988819623
      */
     MCAPI bool willPickup(class Actor &, class ItemStack const &, bool, bool) const;
 
 //private:
     /**
      * @symbol ?_getItemPriority@ShareableComponent@@AEBAHAEBVShareableDefinition@@AEBVItemStack@@@Z
-     * @hash   -1323010095
+     * @hash   -1322963967
      */
     MCAPI int _getItemPriority(class ShareableDefinition const &, class ItemStack const &) const;
     /**
      * @symbol ?_shouldReplaceItem@ShareableComponent@@AEBA_NAEBVItemStack@@0AEBVShareableDefinition@@_N@Z
-     * @hash   -1162888851
+     * @hash   -1162842723
      */
     MCAPI bool _shouldReplaceItem(class ItemStack const &, class ItemStack const &, class ShareableDefinition const &, bool) const;
     /**
      * @symbol ?_useLegacySurplusRules@ShareableComponent@@CA_NAEBVLevel@@@Z
-     * @hash   1635662437
+     * @hash   1635708565
      */
     MCAPI static bool _useLegacySurplusRules(class Level const &);
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
-     * @hash   -1885642551
+     * @hash   -1885596423
      */
     MCAPI ReplayStateConfig(enum ReplayStateMode);
     /**
      * @symbol ?usesUnsupportedThresholds@ReplayStateConfig@@QEBA_NXZ
-     * @hash   923936854
+     * @hash   923982982
      */
     MCAPI bool usesUnsupportedThresholds() const;
 

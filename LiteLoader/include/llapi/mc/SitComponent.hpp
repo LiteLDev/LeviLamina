@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getInteraction@SitComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   -1237030709
+     * @hash   -1236984581
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 

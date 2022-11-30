@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0SideBySidePlaybackBlocksComponent@@QEAA@AEBU0@@Z
-     * @hash   -132798251
+     * @hash   -132752123
      */
     MCAPI SideBySidePlaybackBlocksComponent(struct SideBySidePlaybackBlocksComponent const &);
     /**
      * @symbol ??4SideBySidePlaybackBlocksComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   482859070
+     * @hash   482905198
      */
     MCAPI struct SideBySidePlaybackBlocksComponent & operator=(struct SideBySidePlaybackBlocksComponent &&);
     /**
      * @symbol ??1SideBySidePlaybackBlocksComponent@@QEAA@XZ
-     * @hash   -1558969149
+     * @hash   -1558923021
      */
     MCAPI ~SideBySidePlaybackBlocksComponent();
 

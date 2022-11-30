@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0CommandBlockName@@QEAA@_K@Z
-     * @hash   -281105235
+     * @hash   -281059107
      */
     MCAPI CommandBlockName(unsigned __int64);
     /**
      * @symbol ?getDescriptionId@CommandBlockName@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -410531676
+     * @hash   -410485548
      */
     MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ??BCommandBlockName@@QEBA_KXZ
-     * @hash   1546137593
+     * @hash   1546183721
      */
     MCAPI operator unsigned __int64() const;
     /**
      * @symbol ?resolveBlock@CommandBlockName@@QEBA?AVCommandBlockNameResult@@AEBV?$vector@VBlockStateCommandParam@@V?$allocator@VBlockStateCommandParam@@@std@@@std@@AEAVCommandOutput@@@Z
-     * @hash   87982740
+     * @hash   88028868
      */
     MCAPI class CommandBlockNameResult resolveBlock(std::vector<class BlockStateCommandParam> const &, class CommandOutput &) const;
     /**
      * @symbol ?resolveBlock@CommandBlockName@@QEBA?AVCommandBlockNameResult@@AEBV?$vector@VBlockStateCommandParam@@V?$allocator@VBlockStateCommandParam@@@std@@@std@@HAEAVCommandOutput@@@Z
-     * @hash   -439426903
+     * @hash   -439380775
      */
     MCAPI class CommandBlockNameResult resolveBlock(std::vector<class BlockStateCommandParam> const &, int, class CommandOutput &) const;
     /**
      * @symbol ?resolveBlock@CommandBlockName@@QEBA?AVCommandBlockNameResult@@H@Z
-     * @hash   -980199763
+     * @hash   -980153635
      */
     MCAPI class CommandBlockNameResult resolveBlock(int) const;
 

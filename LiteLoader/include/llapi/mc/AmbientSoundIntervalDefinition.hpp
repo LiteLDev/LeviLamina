@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?addDynamic@AmbientSoundIntervalDefinition@@QEAAXAEBUDynamicAmbientSound@@@Z
-     * @hash   238601094
+     * @hash   238693350
      */
     MCAPI void addDynamic(struct DynamicAmbientSound const &);
     /**
      * @symbol ?initialize@AmbientSoundIntervalDefinition@@QEAAXAEAVEntityContext@@AEAVAmbientSoundServerComponent@@@Z
-     * @hash   -295138561
+     * @hash   -295046305
      */
     MCAPI void initialize(class EntityContext &, class AmbientSoundServerComponent &);
     /**
      * @symbol ?buildSchema@AmbientSoundIntervalDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UAmbientSoundIntervalDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1665339434
+     * @hash   1665431690
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct AmbientSoundIntervalDefinition>> &);
 

@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@BambooBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1978839086
+     * @hash   1979669390
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
      * @vftbl  10
      * @symbol ?getAABB@BambooBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -1449606215
+     * @hash   -1448775911
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -157,7 +157,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@BambooBlock@@UEBA_NH@Z
-     * @hash   -85782145
+     * @hash   -84951841
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -189,7 +189,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@BambooBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   81520861
+     * @hash   82351165
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -207,19 +207,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BambooBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   898765392
+     * @hash   899595696
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BambooBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   684832731
+     * @hash   685663035
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BambooBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   1357393649
+     * @hash   1358223953
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -230,7 +230,7 @@ public:
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@BambooBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   783226760
+     * @hash   784057064
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
@@ -256,7 +256,7 @@ public:
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@BambooBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   554622179
+     * @hash   555452483
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
@@ -282,13 +282,13 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@BambooBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1277708613
+     * @hash   -1276878309
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@BambooBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -1894229363
+     * @hash   -1893399059
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -299,13 +299,13 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@BambooBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1843920865
+     * @hash   -1843090561
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  174
      * @symbol ?randomTick@BambooBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1127564188
+     * @hash   1128394492
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -316,7 +316,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@BambooBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2122952103
+     * @hash   2122998231
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -327,7 +327,7 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BambooBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -366455785
+     * @hash   -365625481
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
@@ -337,22 +337,22 @@ public:
     virtual void __unk_vfn_192();
     /**
      * @vftbl  193
-     * @hash   1667521643
+     * @hash   1668351947
      */
     virtual void __unk_vfn_193();
     /**
      * @vftbl  194
-     * @hash   1668337532
+     * @hash   1669167836
      */
     virtual void __unk_vfn_194();
     /**
      * @vftbl  195
-     * @hash   1669230301
+     * @hash   1670060605
      */
     virtual void __unk_vfn_195();
     /**
      * @vftbl  196
-     * @hash   1670153822
+     * @hash   1670984126
      */
     virtual void __unk_vfn_196();
     /**
@@ -369,29 +369,29 @@ public:
 #endif
     /**
      * @symbol ??0BambooBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -19358857
+     * @hash   -18528553
      */
     MCAPI BambooBlock(std::string const &, int);
     /**
      * @symbol ?getMaxHeight@BambooBlock@@SAHAEBVBlockPos@@@Z
-     * @hash   -220374671
+     * @hash   -219544367
      */
     MCAPI static int getMaxHeight(class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_determineNewBlockState@BambooBlock@@AEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -219149182
+     * @hash   -218318878
      */
     MCAPI class Block const & _determineNewBlockState(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_getLeafSize@BambooBlock@@AEBA?AW4LeafSize@@AEBVBlock@@@Z
-     * @hash   -1936526161
+     * @hash   -1935695857
      */
     MCAPI enum class LeafSize _getLeafSize(class Block const &) const;
     /**
      * @symbol ?_getStalkThickness@BambooBlock@@AEBA?AW4StalkThickness@@AEBVBlock@@@Z
-     * @hash   2118516111
+     * @hash   2119346415
      */
     MCAPI enum class StalkThickness _getStalkThickness(class Block const &) const;
 

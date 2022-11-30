@@ -236,7 +236,7 @@ public:
 #endif
     /**
      * @symbol ??0SmithingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     * @hash   -1106856379
+     * @hash   -1106026075
      */
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
 

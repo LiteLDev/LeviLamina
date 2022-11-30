@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0SpawnData@@QEAA@AEBVCompoundTag@@@Z
-     * @hash   1952408310
+     * @hash   1953238614
      */
     MCAPI SpawnData(class CompoundTag const &);
     /**
      * @symbol ??0SpawnData@@QEAA@AEBV0@@Z
-     * @hash   1744757425
+     * @hash   1745587729
      */
     MCAPI SpawnData(class SpawnData const &);
     /**
      * @symbol ?save@SpawnData@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -393756790
+     * @hash   -392926486
      */
     MCAPI std::unique_ptr<class CompoundTag> save();
 

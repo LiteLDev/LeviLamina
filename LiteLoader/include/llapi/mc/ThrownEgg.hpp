@@ -35,7 +35,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@ThrownEgg@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1352725392
+     * @hash   -1352679264
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
@@ -155,7 +155,7 @@ public:
     virtual void __unk_vfn_283();
     /**
      * @symbol ??0ThrownEgg@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   526517241
+     * @hash   526563369
      */
     MCAPI ThrownEgg(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

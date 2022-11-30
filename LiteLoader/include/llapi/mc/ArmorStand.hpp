@@ -51,7 +51,7 @@ public:
     /**
      * @vftbl  50
      * @symbol ?normalTick@ArmorStand@@UEAAXXZ
-     * @hash   80929060
+     * @hash   80975188
      */
     virtual void normalTick();
     /**
@@ -88,7 +88,7 @@ public:
     /**
      * @vftbl  97
      * @symbol ?isPickable@ArmorStand@@UEAA_NXZ
-     * @hash   -1913893657
+     * @hash   -1913847529
      */
     virtual bool isPickable();
     /**
@@ -124,7 +124,7 @@ public:
     /**
      * @vftbl  137
      * @symbol ?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1969085483
+     * @hash   -1969039355
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
@@ -150,7 +150,7 @@ public:
     /**
      * @vftbl  235
      * @symbol ?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   -1466183856
+     * @hash   -1466137728
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
@@ -166,13 +166,13 @@ public:
     /**
      * @vftbl  250
      * @symbol ?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -668776086
+     * @hash   -668729958
      */
     virtual void die(class ActorDamageSource const &);
     /**
      * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1019333825
+     * @hash   -1019287697
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
@@ -183,19 +183,19 @@ public:
     /**
      * @vftbl  267
      * @symbol ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -647393088
+     * @hash   -647346960
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl  270
      * @symbol ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1904452528
+     * @hash   -1904406400
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  271
      * @symbol ?addAdditionalSaveData@ArmorStand@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   201082685
+     * @hash   201128813
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
@@ -216,7 +216,7 @@ public:
     /**
      * @vftbl  297
      * @symbol ?pushActors@ArmorStand@@UEAAXXZ
-     * @hash   -454395672
+     * @hash   -454349544
      */
     virtual void pushActors();
     /**
@@ -248,44 +248,44 @@ public:
 #endif
     /**
      * @symbol ??0ArmorStand@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   893856915
+     * @hash   893903043
      */
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setPoseIndex@ArmorStand@@QEAAXH@Z
-     * @hash   1568187942
+     * @hash   1568234070
      */
     MCAPI void setPoseIndex(int);
 
 //private:
     /**
      * @symbol ?_causeDamage@ArmorStand@@AEAAXM@Z
-     * @hash   -1183204796
+     * @hash   -1183158668
      */
     MCAPI void _causeDamage(float);
     /**
      * @symbol ?_destroyWithEffects@ArmorStand@@AEAAXAEBVVec3@@@Z
-     * @hash   1879353988
+     * @hash   1879400116
      */
     MCAPI void _destroyWithEffects(class Vec3 const &);
     /**
      * @symbol ?_dropHeldItems@ArmorStand@@AEAAXXZ
-     * @hash   1818112882
+     * @hash   1818159010
      */
     MCAPI void _dropHeldItems();
     /**
      * @symbol ?_dropHeldItemsAndResource@ArmorStand@@AEAAXXZ
-     * @hash   -103192131
+     * @hash   -103146003
      */
     MCAPI void _dropHeldItemsAndResource();
     /**
      * @symbol ?_dropItem@ArmorStand@@AEAAXAEBVItemStack@@@Z
-     * @hash   -1226546610
+     * @hash   -1226500482
      */
     MCAPI void _dropItem(class ItemStack const &);
     /**
      * @symbol ?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z
-     * @hash   -543612876
+     * @hash   -543566748
      */
     MCAPI bool _trySwapItem(class Player &, enum class EquipmentSlot);
 

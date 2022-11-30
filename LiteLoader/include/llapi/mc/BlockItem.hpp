@@ -70,7 +70,7 @@ public:
     /**
      * @vftbl  56
      * @symbol ?isDestructive@BlockItem@@UEBA_NH@Z
-     * @hash   -1323871219
+     * @hash   -1323040915
      */
     virtual bool isDestructive(int) const;
     /**
@@ -81,7 +81,7 @@ public:
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@BlockItem@@UEBA_NH@Z
-     * @hash   -1202018714
+     * @hash   -1201188410
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -106,53 +106,53 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -276670826
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -256353364
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@BlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -744769382
+     * @hash   -743939078
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@BlockItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   708578135
+     * @hash   709408439
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@BlockItem@@UEBA?AUBrightness@@H@Z
-     * @hash   2006977675
+     * @hash   2007807979
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @vftbl  123
      * @symbol ?getIconYOffset@BlockItem@@UEBAHXZ
-     * @hash   -1578147672
+     * @hash   -1577317368
      */
     virtual int getIconYOffset() const;
     /**
      * @vftbl  131
      * @symbol ?_calculatePlacePos@BlockItem@@MEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   1687134344
+     * @hash   1687964648
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   1415258247
+     * @hash   1416088551
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1126518322
+     * @hash   -1125688018
      */
     MCAPI BlockItem(std::string const &, int);
 

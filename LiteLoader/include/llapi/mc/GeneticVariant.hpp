@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0GeneticVariant@@QEAA@AEBU0@@Z
-     * @hash   -1943622193
+     * @hash   -1943576065
      */
     MCAPI GeneticVariant(struct GeneticVariant const &);
     /**
      * @symbol ??1GeneticVariant@@QEAA@XZ
-     * @hash   1178839558
+     * @hash   1178885686
      */
     MCAPI ~GeneticVariant();
 

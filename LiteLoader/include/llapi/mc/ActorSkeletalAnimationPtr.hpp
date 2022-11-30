@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0ActorSkeletalAnimationPtr@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VActorAnimationGroup@@@Bedrock@@@gsl@@AEBVHashedString@@@Z
-     * @hash   -589817998
+     * @hash   -589771870
      */
     MCAPI ActorSkeletalAnimationPtr(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> const &, class HashedString const &);
     /**
      * @symbol ?getName@ActorSkeletalAnimationPtr@@QEBAAEBVHashedString@@XZ
-     * @hash   -458104930
+     * @hash   -458058802
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?isNull@ActorSkeletalAnimationPtr@@QEBA_NXZ
-     * @hash   -460359376
+     * @hash   -460313248
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ??CActorSkeletalAnimationPtr@@QEBAPEBVActorSkeletalAnimation@@XZ
-     * @hash   -863367329
+     * @hash   -863321201
      */
     MCAPI class ActorSkeletalAnimation const * operator->() const;
     /**
      * @symbol ??CActorSkeletalAnimationPtr@@QEAAPEAVActorSkeletalAnimation@@XZ
-     * @hash   107394017
+     * @hash   107440145
      */
     MCAPI class ActorSkeletalAnimation * operator->();
     /**

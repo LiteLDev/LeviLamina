@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?getAABB@WeepingVinesBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   1689152173
+     * @hash   1689982477
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
@@ -171,7 +171,7 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@WeepingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   -2002069175
+     * @hash   -2001238871
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
@@ -183,19 +183,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@WeepingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1960541821
+     * @hash   -1959711517
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@WeepingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -132125489
+     * @hash   -131295185
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@WeepingVinesBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1531184451
+     * @hash   -1530354147
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -231,7 +231,7 @@ public:
     /**
      * @vftbl  163
      * @symbol ?onRemove@WeepingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1152586622
+     * @hash   -1151756318
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
@@ -252,7 +252,7 @@ public:
     /**
      * @vftbl  169
      * @symbol ?onPlace@WeepingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   2026362839
+     * @hash   2027193143
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
@@ -263,7 +263,7 @@ public:
     /**
      * @vftbl  173
      * @symbol ?tick@WeepingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1604850317
+     * @hash   -1604020013
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -274,7 +274,7 @@ public:
     /**
      * @vftbl  179
      * @symbol ?canSurvive@WeepingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   220556403
+     * @hash   220602531
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
@@ -285,29 +285,29 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@WeepingVinesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1897938117
+     * @hash   -1897107813
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0WeepingVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1208316875
+     * @hash   1209147179
      */
     MCAPI WeepingVinesBlock(std::string const &, int);
     /**
      * @symbol ?placeVineString@WeepingVinesBlock@@SAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
-     * @hash   -1324802845
+     * @hash   -1323972541
      */
     MCAPI static void placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int);
 
 //private:
     /**
      * @symbol ?_getAge@WeepingVinesBlock@@AEBAHAEBVBlock@@@Z
-     * @hash   -266075073
+     * @hash   -265244769
      */
     MCAPI int _getAge(class Block const &) const;
     /**
      * @symbol ?_tryGrow@WeepingVinesBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     * @hash   720688770
+     * @hash   721519074
      */
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
 
