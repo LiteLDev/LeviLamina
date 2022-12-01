@@ -1,23 +1,19 @@
 #ifndef ENTT_RESOURCE_FWD_HPP
 #define ENTT_RESOURCE_FWD_HPP
 
+#include <memory>
 
 namespace entt {
 
+template<typename>
+struct resource_loader;
+
+template<typename Type, typename = resource_loader<Type>, typename = std::allocator<Type>>
+class resource_cache;
 
 template<typename>
-struct resource_cache;
+class resource;
 
-
-template<typename>
-class resource_handle;
-
-
-template<typename, typename>
-class resource_loader;
-
-
-}
-
+} // namespace entt
 
 #endif
