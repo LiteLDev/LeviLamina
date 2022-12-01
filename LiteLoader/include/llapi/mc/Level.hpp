@@ -827,12 +827,12 @@ public:
      * @symbol ?getDimensionFactory@Level@@UEAAAEAV?$OwnerPtrFactory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ
      * @hash   530668353
      */
-    MCVAPI class OwnerPtrFactory<class Dimension, class Level &, class Scheduler &> & getDimensionFactory();
+    // MCVAPI class OwnerPtrFactory<class Dimension, class Level &, class Scheduler &> & getDimensionFactory();
     /**
      * @symbol ?getDimensionFactory@Level@@UEBAAEBV?$OwnerPtrFactory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ
      * @hash   -835197443
      */
-    MCVAPI class OwnerPtrFactory<class Dimension, class Level &, class Scheduler &> const & getDimensionFactory() const;
+    // MCVAPI class OwnerPtrFactory<class Dimension, class Level &, class Scheduler &> const & getDimensionFactory() const;
     /**
      * @symbol ?getDisablePlayerInteractions@Level@@UEBA_NXZ
      * @hash   -1899849448

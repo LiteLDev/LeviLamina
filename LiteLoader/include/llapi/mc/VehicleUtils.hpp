@@ -50,12 +50,12 @@ public:
      * @symbol ?getActivatorRailExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
      * @hash   1498874797
      */
-    MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActivatorRailExitPatternStrategy(class BaseGameVersion const &);
+    MCAPI static __int64 getActivatorRailExitPatternStrategy(class BaseGameVersion const &);
     /**
      * @symbol ?getActorExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
      * @hash   -2024662243
      */
-    MCAPI static class std::optional<class Vec3> ( *)(struct VehicleUtils::VehicleDirections const &, class std::function<bool (class Vec3 const &, class Vec3 const &)>) getActorExitPatternStrategy(class BaseGameVersion const &);
+    MCAPI static __int64 getActorExitPatternStrategy(class BaseGameVersion const &);
     /**
      * @symbol ?ignoredExitCollisionBlock@VehicleUtils@@SA_NAEBVBlock@@@Z
      * @hash   -54092391
