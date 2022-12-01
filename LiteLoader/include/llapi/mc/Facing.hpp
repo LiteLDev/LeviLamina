@@ -28,6 +28,7 @@ class Facing {
 public:
 enum class Rotation : unsigned int;
 enum class Name : unsigned char;
+enum class Axis : int;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACING
