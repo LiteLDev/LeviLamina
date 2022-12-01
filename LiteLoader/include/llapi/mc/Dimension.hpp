@@ -25,7 +25,7 @@ class Dimension {
 
 #define AFTER_EXTRA
 // Add Member There
-
+#define ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSION
 public:
