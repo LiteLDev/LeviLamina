@@ -14,9 +14,9 @@ bool ItemActor::setDespawnTime(int a1) {
     return true;
 }
 
-int& ItemActor::despawnTime() {
+/*int& ItemActor::despawnTime() {
     return *((int*)this + 411*4);
-}
+}*/
 
 
 int ItemActor::getLatestSpawnTime() {

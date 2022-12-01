@@ -29,7 +29,8 @@ public:
             return {0};
         try
         {
-            return Global<MinecraftCommands>->executeCommand(std::make_shared<CommandContext>(cmd, std::unique_ptr<CommandOrigin>((CommandOrigin*)origin)), false);
+            CommandContext context = CommandContext(cmd, std::unique_ptr<CommandOrigin>((CommandOrigin*)origin));
+            return Global<MinecraftCommands>->executeCommand(context, false);
         }
         catch (...)
         {
@@ -42,7 +43,8 @@ public:
             return {0};
         try
         {
-            return Global<MinecraftCommands>->executeCommand(std::make_shared<CommandContext>(cmd, std::move(origin)), false);
+            CommandContext context = CommandContext(cmd, std::move(origin));
+            return Global<MinecraftCommands>->executeCommand(context, false);
         }
         catch (...)
         {

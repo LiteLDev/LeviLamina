@@ -118,11 +118,6 @@ public:
      */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
     /**
-     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -481664832
-     */
-    MCAPI std::string const & getName() const;
-    /**
      * @symbol ?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ
      * @hash   -1867869726
      */
