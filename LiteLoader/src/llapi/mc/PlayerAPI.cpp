@@ -137,6 +137,7 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
+    // std::cout << Global<ServerNetworkHandler> << " " << getNetworkIdentifier() << &Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()) << "\n";
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
