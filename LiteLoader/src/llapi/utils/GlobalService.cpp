@@ -22,8 +22,9 @@ TInstanceHook(void, "?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$
     static bool initd = false;
     if (!initd) {
         initd = true;
-        auto v3 = (ServerNetworkHandler*)((char*)this + 16);
-        Global<ServerNetworkHandler> = v3;
+        // auto v3 = (ServerNetworkHandler*)((char*)this + 16);
+        // +16 cause fetchConnectionRequest returns nullptr
+        Global<ServerNetworkHandler> = this;
     }
     original(this, a1, a2);
 }
