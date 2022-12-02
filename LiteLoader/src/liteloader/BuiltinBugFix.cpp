@@ -423,7 +423,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     if (ll::globalConfig.enableFixAbility) {
         auto index = pkt.getAbility();
         if (index == AbilitiesIndex::Flying) {
-            auto sp = _getServerPlayer(nid, (SubClientId)pkt.clientSubId);
+            auto sp = getServerPlayer(nid, (SubClientId)pkt.clientSubId);
             if (!sp)
                 return;
             if (!sp->getUserEntityIdentifierComponent())
@@ -438,11 +438,11 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket pkt(sp->getUniqueID(), *abilities);
+            UpdateAbilitiesPacket packet(sp->getUniqueID(), *abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
             abilities->setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
-            sp->sendNetworkPacket(pkt);
+            sp->sendNetworkPacket(packet);
         }
     }
 }

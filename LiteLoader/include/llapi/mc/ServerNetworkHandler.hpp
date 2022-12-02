@@ -30,9 +30,10 @@ public:
     {
        return _onClientAuthenticated(a0, a1);
     }
-
+    // Do not use _getServerPlayer directly
     inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
-        return _getServerPlayer(a0, (SubClientId)a1);
+        auto v3 = (ServerNetworkHandler*)((char*)this - 16);
+        return v3->_getServerPlayer(a0, (SubClientId)a1);
     }
 
     inline int getActiveAndInProgressPlayerCount(class mce::UUID a1)
