@@ -423,7 +423,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     if (ll::globalConfig.enableFixAbility) {
         auto index = pkt.getAbility();
         if (index == AbilitiesIndex::Flying) {
-            auto sp = getServerPlayer(nid, (SubClientId)pkt.clientSubId);
+            auto sp = getServerPlayer(nid, pkt.clientSubId);
             if (!sp)
                 return;
             if (!sp->getUserEntityIdentifierComponent())
