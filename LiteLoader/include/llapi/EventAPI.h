@@ -328,7 +328,13 @@ class PlayerEatEvent : public EventTemplate<PlayerEatEvent> {
 public:
     Player* mPlayer;
     ItemStack* mFoodItem;
-};
+}; 
+
+class PlayerAteEvent : public EventTemplate<PlayerAteEvent> {
+public:
+    Player* mPlayer;
+    ItemStack* mFoodItem;
+}; 
 
 class PlayerConsumeTotemEvent : public EventTemplate<PlayerConsumeTotemEvent> {
 public:

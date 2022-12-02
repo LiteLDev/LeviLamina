@@ -238,6 +238,7 @@ DECLARE_EVENT_DATA(PlayerDieEvent);
 DECLARE_EVENT_DATA(PlayerPickupItemEvent);
 DECLARE_EVENT_DATA(PlayerDropItemEvent);
 DECLARE_EVENT_DATA(PlayerEatEvent);
+DECLARE_EVENT_DATA(PlayerAteEvent);
 DECLARE_EVENT_DATA(PlayerConsumeTotemEvent);
 DECLARE_EVENT_DATA(PlayerCmdEvent);
 DECLARE_EVENT_DATA(PlayerDestroyBlockEvent);
@@ -1537,6 +1538,19 @@ TClasslessInstanceHook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AE
     }
     IF_LISTENED_END(PlayerEatEvent)
     return original(this, a1, a2);
+}
+
+/////////////////// PlayerAte ////////////////////
+#include "llapi/mc/FoodItemComponentLegacy.hpp"
+THook(Item*, "?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z", FoodItemComponentLegacy* _this, ItemStack* a, Player* b, Level* c) {
+    IF_LISTENED(PlayerAteEvent) {
+        PlayerAteEvent ev{};
+        ev.mPlayer = b;
+        ev.mFoodItem = a;
+        ev.call();
+    }
+    IF_LISTENED_END(PlayerAteEvent)
+    return original(_this, a, b, c);
 }
 
 /////////////////// MobDie ///////////////////
