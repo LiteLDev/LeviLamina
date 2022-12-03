@@ -248,8 +248,7 @@ string createJson() {
 
 
 void submitTask() {
-    auto v3 = (ServerNetworkHandler*)((char*)Global<ServerNetworkHandler> - 16);
-    playerAmount = v3->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
+    playerAmount = Global<ServerNetworkHandler>->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
     playerPlatList.clear();
     for (auto sp : Level::getAllPlayers()) {
         auto OS = sp->getDeviceName();

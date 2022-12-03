@@ -216,7 +216,7 @@ bool EventManager<EVENT>::callToPlugin(std::string pluginName, EVENT& ev) {
 /////////////////////////////// Event Declare ///////////////////////////////
 
 #define DECLARE_EVENT_DATA(EVENT)                                                                    \
-    template class EventManager<EVENT>;                                                              \
+    template class Event::EventManager<EVENT>;                                                              \
     /*********************** For Compatibility ***********************/                              \
     std::list<std::pair<string, std::function<bool(const EVENT&)>>> EventTemplate<EVENT>::listeners; \
     std::list<std::pair<string, std::function<bool(EVENT&)>>> EventTemplate<EVENT>::listenersNoConst;
