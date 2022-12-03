@@ -762,11 +762,11 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED(EVENT_TYPES::onCmdBlockExecute) {
                     if (ev.mIsMinecart) {
                         CallEvent(EVENT_TYPES::onCmdBlockExecute, String::newString(ev.mCommand),
-                                  FloatPos::newPos(ev.mMinecart->getPosition(), ev.mMinecart->getDimensionId()), true);
+                                  FloatPos::newPos(ev.mMinecart->getPosition(), ev.mMinecart->getDimensionId()), ev.mIsMinecart);
                     } else {
                         BlockInstance bl = ev.mBlockInstance;
                         CallEvent(EVENT_TYPES::onCmdBlockExecute, String::newString(ev.mCommand),
-                                  FloatPos::newPos(bl.getPosition().toVec3(), bl.getDimensionId()), true);
+                                  FloatPos::newPos(bl.getPosition().toVec3(), bl.getDimensionId()), ev.mIsMinecart);
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onCmdBlockExecute);
