@@ -36,30 +36,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CodeBuilderSourcePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -334867635
+     * @hash   -409225971
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CodeBuilderSourcePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -754569734
+     * @hash   -828928070
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CodeBuilderSourcePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -601664211
+     * @hash   -676022547
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CodeBuilderSourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1646710141
+     * @hash   1572351805
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CodeBuilderSourcePacket@@QEAA@XZ
-     * @hash   -168209411
+     * @hash   -242567747
      */
     MCAPI CodeBuilderSourcePacket();
 

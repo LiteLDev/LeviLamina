@@ -24,63 +24,73 @@ namespace VanillaGameVersions {
 #undef AFTER_EXTRA
     /**
      * @symbol ?BeeUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   52457595
+     * @hash   920847947
      */
     MCAPI extern class BaseGameVersion const BeeUpdate;
     /**
      * @symbol ?CavesAndCliffsUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   -976755107
+     * @hash   -108364755
      */
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
     /**
      * @symbol ?CavesAndCliffsUpdate_U1@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   -555301797
+     * @hash   313088555
      */
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U1;
     /**
      * @symbol ?CavesAndCliffsUpdate_U3@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   1692247707
+     * @hash   -1734329237
      */
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U3;
     /**
      * @symbol ?CavesAndCliffs_Part1@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   728025117
+     * @hash   1596415469
      */
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
     /**
      * @symbol ?CavesAndCliffs_Part1_U1@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   967366555
+     * @hash   1835756907
      */
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
     /**
      * @symbol ?LastLegacyGeneratorUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   1648579771
+     * @hash   -1777997173
      */
     MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
     /**
      * @symbol ?NetherUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   42510941
+     * @hash   910901293
      */
     MCAPI extern class BaseGameVersion const NetherUpdate;
     /**
      * @symbol ?NetherUpdate_U3@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   -1924616933
+     * @hash   -1056226581
      */
     MCAPI extern class BaseGameVersion const NetherUpdate_U3;
     /**
+     * @symbol ?NextMajorUpdateVersion@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -35318803
+     */
+    MCAPI extern class BaseGameVersion const NextMajorUpdateVersion;
+    /**
      * @symbol ?WildUpdateVersion@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   348674235
+     * @hash   1217064587
      */
     MCAPI extern class BaseGameVersion const WildUpdateVersion;
     /**
      * @symbol ?WildUpdateVersion_U1@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   -727416771
+     * @hash   140973581
      */
     MCAPI extern class BaseGameVersion const WildUpdateVersion_U1;
     /**
      * @symbol ?WildUpdateVersion_U3@VanillaGameVersions@@3VBaseGameVersion@@B
-     * @hash   1520132733
+     * @hash   -1906444211
      */
     MCAPI extern class BaseGameVersion const WildUpdateVersion_U3;
+    /**
+     * @symbol ?WildUpdateVersion_U4@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   1364875693
+     */
+    MCAPI extern class BaseGameVersion const WildUpdateVersion_U4;
 
 };

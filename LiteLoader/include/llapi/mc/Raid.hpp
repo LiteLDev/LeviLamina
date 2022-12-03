@@ -32,81 +32,81 @@ public:
 public:
     /**
      * @symbol ??0Raid@@QEAA@HHHHW4Difficulty@@E$$QEAV?$function@$$A6A_N_KAEAVVec3@@@Z@std@@$$QEAV?$function@$$A6A_N_KVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z@3@$$QEAV?$function@$$A6A_NAEBUActorUniqueID@@@Z@3@$$QEAV?$function@$$A6A_NXZ@3@@Z
-     * @hash   1039171816
+     * @hash   1092972440
      */
     MCAPI Raid(int, int, int, int, enum class Difficulty, unsigned char, class std::function<bool (unsigned __int64, class Vec3 &)> &&, class std::function<bool (unsigned __int64, class Vec3, unsigned char, class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> &)> &&, class std::function<bool (struct ActorUniqueID const &)> &&, class std::function<bool (void)> &&);
     /**
      * @symbol ?addAdditionalSaveData@Raid@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1599553832
+     * @hash   -1545753208
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?addPlayerToHeroList@Raid@@QEAAXAEBVActor@@@Z
-     * @hash   696442216
+     * @hash   750196712
      */
     MCAPI void addPlayerToHeroList(class Actor const &);
     /**
      * @symbol ?appendDebugInfo@Raid@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   42224210
+     * @hash   95978706
      */
     MCAPI void appendDebugInfo(std::string &) const;
     /**
      * @symbol ?getBossBarFilledFraction@Raid@@QEBAMXZ
-     * @hash   -676833322
+     * @hash   -623078826
      */
     MCAPI float getBossBarFilledFraction() const;
     /**
      * @symbol ?getRemainingRaiders@Raid@@QEBA_KXZ
-     * @hash   684785135
+     * @hash   678327215
      */
     MCAPI unsigned __int64 getRemainingRaiders() const;
     /**
      * @symbol ?readAdditionalSaveData@Raid@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -135611806
+     * @hash   -81857310
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     /**
      * @symbol ?tick@Raid@@QEAAXUTick@@@Z
-     * @hash   -901783776
+     * @hash   -848029280
      */
     MCAPI void tick(struct Tick);
     /**
      * @symbol ??1Raid@@QEAA@XZ
-     * @hash   -791112988
+     * @hash   -747383644
      */
     MCAPI ~Raid();
     /**
      * @symbol ?INVALID_SPAWN_POINT@Raid@@2VVec3@@B
-     * @hash   -242934335
+     * @hash   612417169
      */
     MCAPI static class Vec3 const INVALID_SPAWN_POINT;
 
 //private:
     /**
      * @symbol ?_getTotalRaiderHealth@Raid@@AEBAMXZ
-     * @hash   -1882915623
+     * @hash   -1829114999
      */
     MCAPI float _getTotalRaiderHealth() const;
     /**
      * @symbol ?_tickGroupInPlay@Raid@@AEAAXXZ
-     * @hash   1380216830
+     * @hash   1434017454
      */
     MCAPI void _tickGroupInPlay();
 
 private:
     /**
      * @symbol ?NUM_GROUPS_ON_EASY@Raid@@0EB
-     * @hash   -152090828
+     * @hash   607929476
      */
     MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
     /**
      * @symbol ?NUM_GROUPS_ON_HARD@Raid@@0EB
-     * @hash   274187327
+     * @hash   1034207631
      */
     MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
     /**
      * @symbol ?NUM_GROUPS_ON_NORMAL@Raid@@0EB
-     * @hash   80039546
+     * @hash   840059850
      */
     MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
 

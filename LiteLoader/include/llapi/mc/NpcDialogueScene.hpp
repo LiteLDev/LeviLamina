@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ??1NpcDialogueScene@@QEAA@XZ
-     * @hash   -797796339
+     * @hash   -744533875
      */
     MCAPI ~NpcDialogueScene();
     /**
      * @symbol ?parse@NpcDialogueScene@@SA?AU1@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1333740335
+     * @hash   1387018175
      */
     MCAPI static struct NpcDialogueScene parse(class Json::Value const &, std::string const &, int);
 

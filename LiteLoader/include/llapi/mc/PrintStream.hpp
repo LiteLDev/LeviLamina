@@ -38,13 +38,8 @@ public:
     /**
      * @vftbl  1
      * @symbol ?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -399412347
+     * @hash   -310446811
      */
     virtual void print(std::string const &);
-    /**
-     * @symbol ?println@PrintStream@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   899572670
-     */
-    MCAPI void println(std::string const &);
 
 };

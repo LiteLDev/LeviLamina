@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SystemTiming@@QEAA@XZ
-     * @hash   745296083
+     * @hash   832970035
      */
     MCAPI ~SystemTiming();
 

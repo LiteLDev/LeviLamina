@@ -40,19 +40,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?writetoJSON@ArrowEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     * @hash   263017896
+     * @hash   351983432
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
      * @vftbl  3
      * @symbol ?doOnHitEffect@ArrowEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -1603471701
+     * @hash   -1679244629
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
      * @vftbl  4
      * @symbol ?getName@ArrowEffectSubcomponent@@UEAAPEBDXZ
-     * @hash   1201388374
+     * @hash   1239582358
      */
     virtual char const * getName();
 

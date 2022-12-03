@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?bindType@Easing@@SAXXZ
-     * @hash   -158221805
+     * @hash   -138048493
      */
     MCAPI static void bindType();
 
@@ -39,7 +39,7 @@ public:
 private:
     /**
      * @symbol ?mEasingFuncs@Easing@@0V?$vector@V?$function@$$A6AMMMM@Z@std@@V?$allocator@V?$function@$$A6AMMMM@Z@std@@@2@@std@@A
-     * @hash   1459189941
+     * @hash   -1998815547
      */
     MCAPI static std::vector<class std::function<float (float, float, float)>> mEasingFuncs;
 

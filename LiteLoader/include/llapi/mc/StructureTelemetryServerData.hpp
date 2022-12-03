@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0StructureTelemetryServerData@@QEAA@XZ
-     * @hash   -198121793
+     * @hash   559776623
      */
     MCAPI StructureTelemetryServerData();
     /**
      * @symbol ?hasBeenActivatedByRedstone@StructureTelemetryServerData@@QEAA_NXZ
-     * @hash   -218031548
+     * @hash   -70514204
      */
     MCAPI bool hasBeenActivatedByRedstone();
     /**
      * @symbol ?setHasBeenActivedByRedstone@StructureTelemetryServerData@@QEAAXXZ
-     * @hash   163444739
+     * @hash   150344387
      */
     MCAPI void setHasBeenActivedByRedstone();
 

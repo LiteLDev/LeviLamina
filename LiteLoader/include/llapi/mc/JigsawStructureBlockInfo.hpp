@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0JigsawStructureBlockInfo@@QEAA@AEBVBlockPos@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVBlock@@@Z
-     * @hash   -1937524148
+     * @hash   -1393690404
      */
     MCAPI JigsawStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &);
     /**
      * @symbol ??0JigsawStructureBlockInfo@@QEAA@$$QEAV0@@Z
-     * @hash   -307284853
+     * @hash   236548891
      */
     MCAPI JigsawStructureBlockInfo(class JigsawStructureBlockInfo &&);
     /**
      * @symbol ?getNonEmptyTag@JigsawStructureBlockInfo@@QEAAPEAVCompoundTag@@XZ
-     * @hash   -2050377033
+     * @hash   -1506543289
      */
     MCAPI class CompoundTag * getNonEmptyTag();
 

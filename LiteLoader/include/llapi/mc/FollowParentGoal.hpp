@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FollowParentGoal@@UEAA_NXZ
-     * @hash   590344962
+     * @hash   750916530
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FollowParentGoal@@UEAA_NXZ
-     * @hash   1034235632
+     * @hash   1194807200
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@FollowParentGoal@@UEAAXXZ
-     * @hash   268932475
+     * @hash   429073515
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FollowParentGoal@@UEAAXXZ
-     * @hash   -1587954453
+     * @hash   -1427813413
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FollowParentGoal@@UEAAXXZ
-     * @hash   -358148714
+     * @hash   -197561770
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FollowParentGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2116526750
+     * @hash   -2017868978
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FollowParentGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   1261218306
+     * @hash   1421789874
      */
     MCAPI FollowParentGoal(class Mob &, float);
 

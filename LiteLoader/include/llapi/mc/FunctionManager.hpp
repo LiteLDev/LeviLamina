@@ -33,71 +33,71 @@ public:
 public:
     /**
      * @symbol ??0FunctionManager@@QEAA@V?$unique_ptr@VICommandDispatcher@@U?$default_delete@VICommandDispatcher@@@std@@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@PEBVGameRule@@@Z
-     * @hash   -1394236414
+     * @hash   -1377830222
      */
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const *);
     /**
      * @symbol ?execute@FunctionManager@@QEAAHAEAVFunctionEntry@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-     * @hash   -1964162555
+     * @hash   -1947817867
      */
     MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ?getCommandDispatcher@FunctionManager@@QEAAAEAVICommandDispatcher@@XZ
-     * @hash   399850178
+     * @hash   416194866
      */
     MCAPI class ICommandDispatcher & getCommandDispatcher();
     /**
      * @symbol ?getFunction@FunctionManager@@QEAAPEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1903941508
+     * @hash   1920286196
      */
     MCAPI class FunctionEntry * getFunction(std::string const &);
     /**
      * @symbol ?load@FunctionManager@@QEAAXAEAVResourcePackManager@@AEAVCommandRegistry@@@Z
-     * @hash   -963958637
+     * @hash   -947613949
      */
     MCAPI void load(class ResourcePackManager &, class CommandRegistry &);
     /**
      * @symbol ?queueCommands@FunctionManager@@QEAAXAEBV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-     * @hash   -352580349
+     * @hash   -336251037
      */
     MCAPI void queueCommands(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ?tick@FunctionManager@@QEAAXXZ
-     * @hash   -506026435
+     * @hash   -489697123
      */
     MCAPI void tick();
     /**
      * @symbol ?getQueueOrderForCommandVersion@FunctionManager@@SA?AW4FunctionQueueOrder@@W4CurrentCmdVersion@@@Z
-     * @hash   -1666506989
+     * @hash   -1650162301
      */
     MCAPI static enum class FunctionQueueOrder getQueueOrderForCommandVersion(enum class CurrentCmdVersion);
 
 //protected:
     /**
      * @symbol ?_addTickFunctionsFromJson@FunctionManager@@IEAAXAEBVValue@Json@@W4CurrentCmdVersion@@@Z
-     * @hash   1025023839
+     * @hash   1041260895
      */
     MCAPI void _addTickFunctionsFromJson(class Json::Value const &, enum class CurrentCmdVersion);
     /**
      * @symbol ?_processFunctionEntry@FunctionManager@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAV43@W4CurrentCmdVersion@@AEBVCommandRegistry@@@Z
-     * @hash   1162031093
+     * @hash   1178268149
      */
     MCAPI void _processFunctionEntry(std::string const &, std::vector<std::string> const &, std::vector<std::string> &, enum class CurrentCmdVersion, class CommandRegistry const &);
 
 //private:
     /**
      * @symbol ?_addOriginReference@FunctionManager@@AEAAAEBVCommandOrigin@@AEBV2@I@Z
-     * @hash   1567274570
+     * @hash   1583511626
      */
     MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, unsigned int);
     /**
      * @symbol ?_queueCommandsAfterCaller@FunctionManager@@AEAAXAEBV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@AEBVCommandOrigin@@@Z
-     * @hash   -657327279
+     * @hash   -640982591
      */
     MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &);
     /**
      * @symbol ?_removeOriginReference@FunctionManager@@AEAAXAEBVCommandOrigin@@I@Z
-     * @hash   1640507643
+     * @hash   1656852331
      */
     MCAPI void _removeOriginReference(class CommandOrigin const &, unsigned int);
 

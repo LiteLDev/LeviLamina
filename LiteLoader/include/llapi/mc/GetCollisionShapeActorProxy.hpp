@@ -36,67 +36,67 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getFeetAttachPosY@GetCollisionShapeActorProxy@@UEBAMXZ
-     * @hash   166497422
+     * @hash   210026878
      */
     virtual float getFeetAttachPosY() const;
     /**
      * @vftbl  2
      * @symbol ?canDescendThroughBlock@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   -1046534212
+     * @hash   -1003004756
      */
     virtual bool canDescendThroughBlock() const;
     /**
      * @vftbl  3
      * @symbol ?getFallDistance@GetCollisionShapeActorProxy@@UEBAMXZ
-     * @hash   1203005126
+     * @hash   1246534582
      */
     virtual float getFallDistance() const;
     /**
      * @vftbl  4
      * @symbol ?getEntityTypeId@GetCollisionShapeActorProxy@@UEBA?AW4ActorType@@XZ
-     * @hash   -1937171449
+     * @hash   -1893641993
      */
     virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  5
      * @symbol ?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   2024059515
+     * @hash   2067588971
      */
     virtual bool isWearingLeatherBoots() const;
     /**
      * @vftbl  6
      * @symbol ?hasLightWeightFamilyTag@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   753401804
+     * @hash   796931260
      */
     virtual bool hasLightWeightFamilyTag() const;
     /**
      * @vftbl  7
      * @symbol ?getAABB@GetCollisionShapeActorProxy@@UEBAAEBVAABB@@XZ
-     * @hash   -733538987
+     * @hash   -690009531
      */
     virtual class AABB const & getAABB() const;
     /**
      * @vftbl  8
      * @symbol ?isWorldBuilder@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   285001821
+     * @hash   328531277
      */
     virtual bool isWorldBuilder() const;
     /**
      * @vftbl  9
      * @symbol ?isRiding@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   -114790615
+     * @hash   -71261159
      */
     virtual bool isRiding() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCOLLISIONSHAPEACTORPROXY
     /**
      * @symbol ?hasPassenger@GetCollisionShapeActorProxy@@UEBA_NXZ
-     * @hash   -401604534
+     * @hash   -358075078
      */
     MCVAPI bool hasPassenger() const;
 #endif
     /**
      * @symbol ??0GetCollisionShapeActorProxy@@QEAA@AEBUIActorMovementProxy@@@Z
-     * @hash   1310406903
+     * @hash   1353936359
      */
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
 

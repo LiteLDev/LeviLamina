@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ServerInstanceLeaveGameDoneEvent@@QEAA@XZ
-     * @hash   1896435393
+     * @hash   1985862209
      */
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 

@@ -37,13 +37,13 @@ public:
     virtual ~GrowCropSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@GrowCropSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1337701486
+     * @hash   -1253825406
      */
     virtual void tick(class EntityRegistry &);
 

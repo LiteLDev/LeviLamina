@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AutomationClientConnectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   364159310
+     * @hash   290339134
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AutomationClientConnectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   832478203
+     * @hash   758658027
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AutomationClientConnectPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   30286492
+     * @hash   -11936004
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AutomationClientConnectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1244825292
+     * @hash   1202602796
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AutomationClientConnectPacket@@QEAA@XZ
-     * @hash   1071777292
+     * @hash   997957116
      */
     MCAPI AutomationClientConnectPacket();
     /**
      * @symbol ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
-     * @hash   -1445052871
+     * @hash   -1518873047
      */
     MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
 

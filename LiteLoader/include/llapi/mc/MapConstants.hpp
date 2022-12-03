@@ -24,247 +24,247 @@ namespace MapConstants {
 #undef AFTER_EXTRA
     /**
      * @symbol ?DEFAULT_SCALE@MapConstants@@3HB
-     * @hash   -142269741
+     * @hash   641099019
      */
     MCAPI extern int const DEFAULT_SCALE;
     /**
      * @symbol ?DEFAULT_SCALE_LEGACY_STARTING_MAP@MapConstants@@3HB
-     * @hash   -1659769637
+     * @hash   -876400877
      */
     MCAPI extern int const DEFAULT_SCALE_LEGACY_STARTING_MAP;
     /**
      * @symbol ?DEFAULT_SCALE_STARTING_MAP@MapConstants@@3HB
-     * @hash   225910585
+     * @hash   1009279345
      */
     MCAPI extern int const DEFAULT_SCALE_STARTING_MAP;
     /**
      * @symbol ?HALF_MAP_SIZE@MapConstants@@3HB
-     * @hash   456898635
+     * @hash   1240267395
      */
     MCAPI extern int const HALF_MAP_SIZE;
     /**
      * @symbol ?MAP_BORDER@MapConstants@@3MB
-     * @hash   517657117
+     * @hash   1301025877
      */
     MCAPI extern float const MAP_BORDER;
     /**
      * @symbol ?MAP_FINAL_SCALE@MapConstants@@3MB
-     * @hash   1832287883
+     * @hash   -1679310653
      */
     MCAPI extern float const MAP_FINAL_SCALE;
     /**
      * @symbol ?MAP_GLOBAL_POS@MapConstants@@3VVec3@@B
-     * @hash   -967880293
+     * @hash   -184511533
      */
     MCAPI extern class Vec3 const MAP_GLOBAL_POS;
     /**
      * @symbol ?MAP_GLOBAL_ROT@MapConstants@@3VVec3@@B
-     * @hash   329612683
+     * @hash   1112981443
      */
     MCAPI extern class Vec3 const MAP_GLOBAL_ROT;
     /**
      * @symbol ?MAP_HANDS_HEIGHT_SCALE@MapConstants@@3MB
-     * @hash   -1906703291
+     * @hash   -1123334531
      */
     MCAPI extern float const MAP_HANDS_HEIGHT_SCALE;
     /**
      * @symbol ?MAP_HANDS_POS@MapConstants@@3VVec3@@B
-     * @hash   2115862545
+     * @hash   -1395735991
      */
     MCAPI extern class Vec3 const MAP_HANDS_POS;
     /**
      * @symbol ?MAP_HANDS_ROT@MapConstants@@3VVec3@@B
-     * @hash   -881604087
+     * @hash   -98235327
      */
     MCAPI extern class Vec3 const MAP_HANDS_ROT;
     /**
      * @symbol ?MAP_HANDS_TILT_SCALE@MapConstants@@3MB
-     * @hash   169170389
+     * @hash   952539149
      */
     MCAPI extern float const MAP_HANDS_TILT_SCALE;
     /**
      * @symbol ?MAP_HEIGHT@MapConstants@@3MB
-     * @hash   954058957
+     * @hash   1737427717
      */
     MCAPI extern float const MAP_HEIGHT;
     /**
      * @symbol ?MAP_LEFTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   1473295115
+     * @hash   -2038303421
      */
     MCAPI extern class Vec3 const MAP_LEFTHAND_POS;
     /**
      * @symbol ?MAP_LEFTHAND_ROT@MapConstants@@3VVec3@@B
-     * @hash   -1524209957
+     * @hash   -740841197
      */
     MCAPI extern class Vec3 const MAP_LEFTHAND_ROT;
     /**
      * @symbol ?MAP_NORMAL@MapConstants@@3VVec3@@B
-     * @hash   -795387493
+     * @hash   -12018733
      */
     MCAPI extern class Vec3 const MAP_NORMAL;
     /**
      * @symbol ?MAP_PLAYER_PITCH_SCALE@MapConstants@@3MB
-     * @hash   884918105
+     * @hash   1668286865
      */
     MCAPI extern float const MAP_PLAYER_PITCH_SCALE;
     /**
      * @symbol ?MAP_PRE_ROT_SCALE@MapConstants@@3MB
-     * @hash   1671548955
+     * @hash   -1840049581
      */
     MCAPI extern float const MAP_PRE_ROT_SCALE;
     /**
      * @symbol ?MAP_RIGHTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   953665833
+     * @hash   1737034593
      */
     MCAPI extern class Vec3 const MAP_RIGHTHAND_POS;
     /**
      * @symbol ?MAP_RIGHTHAND_ROT@MapConstants@@3VVec3@@B
-     * @hash   -2043839239
+     * @hash   -1260470479
      */
     MCAPI extern class Vec3 const MAP_RIGHTHAND_ROT;
     /**
      * @symbol ?MAP_SIZE@MapConstants@@3HB
-     * @hash   84106985
+     * @hash   867475745
      */
     MCAPI extern int const MAP_SIZE;
     /**
      * @symbol ?MAP_SWING_POS_SCALE@MapConstants@@3VVec3@@B
-     * @hash   -1873443359
+     * @hash   -1090074599
      */
     MCAPI extern class Vec3 const MAP_SWING_POS_SCALE;
     /**
      * @symbol ?MAP_SWING_ROT@MapConstants@@3VVec3@@B
-     * @hash   -192772439
+     * @hash   590596321
      */
     MCAPI extern class Vec3 const MAP_SWING_ROT;
     /**
      * @symbol ?MAP_WIDTH@MapConstants@@3MB
-     * @hash   1156568923
+     * @hash   1939937683
      */
     MCAPI extern float const MAP_WIDTH;
     /**
      * @symbol ?MAX_SCALE@MapConstants@@3HB
-     * @hash   511899887
+     * @hash   1295268647
      */
     MCAPI extern int const MAX_SCALE;
     /**
      * @symbol ?MINI_MAP_BORDER@MapConstants@@3MB
-     * @hash   1720618411
+     * @hash   -1790980125
      */
     MCAPI extern float const MINI_MAP_BORDER;
     /**
      * @symbol ?MINI_MAP_FINAL_SCALE@MapConstants@@3MB
-     * @hash   -1883699619
+     * @hash   -1100330859
      */
     MCAPI extern float const MINI_MAP_FINAL_SCALE;
     /**
      * @symbol ?MINI_MAP_HANDS_HEIGHT_SCALE@MapConstants@@3MB
-     * @hash   182019403
+     * @hash   965388163
      */
     MCAPI extern float const MINI_MAP_HANDS_HEIGHT_SCALE;
     /**
      * @symbol ?MINI_MAP_HANDS_POS@MapConstants@@3VVec3@@B
-     * @hash   -1876002965
+     * @hash   -1092634205
      */
     MCAPI extern class Vec3 const MINI_MAP_HANDS_POS;
     /**
      * @symbol ?MINI_MAP_HANDS_ROT@MapConstants@@3VVec3@@B
-     * @hash   -578509989
+     * @hash   204858771
      */
     MCAPI extern class Vec3 const MINI_MAP_HANDS_ROT;
     /**
      * @symbol ?MINI_MAP_HANDS_TILT_SCALE@MapConstants@@3MB
-     * @hash   2062005851
+     * @hash   -1449592685
      */
     MCAPI extern float const MINI_MAP_HANDS_TILT_SCALE;
     /**
      * @symbol ?MINI_MAP_HEIGHT@MapConstants@@3MB
-     * @hash   -2137947045
+     * @hash   -1354578285
      */
     MCAPI extern float const MINI_MAP_HEIGHT;
     /**
      * @symbol ?MINI_MAP_LEFTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   352514137
+     * @hash   1135882897
      */
     MCAPI extern class Vec3 const MINI_MAP_LEFTHAND_POS;
     /**
      * @symbol ?MINI_MAP_LEFTHAND_ROT@MapConstants@@3VVec3@@B
-     * @hash   1649976361
+     * @hash   -1861622175
      */
     MCAPI extern class Vec3 const MINI_MAP_LEFTHAND_ROT;
     /**
      * @symbol ?MINI_MAP_MAINHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   -1507650791
+     * @hash   -724282031
      */
     MCAPI extern class Vec3 const MINI_MAP_MAINHAND_POS;
     /**
      * @symbol ?MINI_MAP_NORMAL@MapConstants@@3VVec3@@B
-     * @hash   -472390487
+     * @hash   310978273
      */
     MCAPI extern class Vec3 const MINI_MAP_NORMAL;
     /**
      * @symbol ?MINI_MAP_OFFHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   -890414293
+     * @hash   -107045533
      */
     MCAPI extern class Vec3 const MINI_MAP_OFFHAND_POS;
     /**
      * @symbol ?MINI_MAP_PLAYER_PITCH_SCALE@MapConstants@@3MB
-     * @hash   -1321314965
+     * @hash   -537946205
      */
     MCAPI extern float const MINI_MAP_PLAYER_PITCH_SCALE;
     /**
      * @symbol ?MINI_MAP_RIGHTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   562274683
+     * @hash   1345643443
      */
     MCAPI extern class Vec3 const MINI_MAP_RIGHTHAND_POS;
     /**
      * @symbol ?MINI_MAP_RIGHTHAND_ROT@MapConstants@@3VVec3@@B
-     * @hash   1859736907
+     * @hash   -1651861629
      */
     MCAPI extern class Vec3 const MINI_MAP_RIGHTHAND_ROT;
     /**
      * @symbol ?MINI_MAP_SWING_POS_SCALE@MapConstants@@3VVec3@@B
-     * @hash   -264623173
+     * @hash   518745587
      */
     MCAPI extern class Vec3 const MINI_MAP_SWING_POS_SCALE;
     /**
      * @symbol ?MINI_MAP_WIDTH@MapConstants@@3MB
-     * @hash   87040109
+     * @hash   870408869
      */
     MCAPI extern float const MINI_MAP_WIDTH;
     /**
      * @symbol ?SPLIT_SCREEN_ADJUST@MapConstants@@3VVec3@@B
-     * @hash   608148889
+     * @hash   1391517649
      */
     MCAPI extern class Vec3 const SPLIT_SCREEN_ADJUST;
     /**
      * @symbol ?VERT_MAINHAND_MAP_POS@MapConstants@@3VVec3@@B
-     * @hash   1760183289
+     * @hash   -1751415247
      */
     MCAPI extern class Vec3 const VERT_MAINHAND_MAP_POS;
     /**
      * @symbol ?VERT_MAP_LEFTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   -1150835655
+     * @hash   -367466895
      */
     MCAPI extern class Vec3 const VERT_MAP_LEFTHAND_POS;
     /**
      * @symbol ?VERT_MAP_RIGHTHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   1202164203
+     * @hash   1985532963
      */
     MCAPI extern class Vec3 const VERT_MAP_RIGHTHAND_POS;
     /**
      * @symbol ?VERT_MINI_MAP_OFFHAND_POS@MapConstants@@3VVec3@@B
-     * @hash   -2054168311
+     * @hash   -1270799551
      */
     MCAPI extern class Vec3 const VERT_MINI_MAP_OFFHAND_POS;
     /**
      * @symbol ?VERT_OFFHAND_MAP_POS@MapConstants@@3VVec3@@B
-     * @hash   128344139
+     * @hash   911712899
      */
     MCAPI extern class Vec3 const VERT_OFFHAND_MAP_POS;
     /**
      * @symbol ?VERT_SPLIT_SCREEN_OFFSET@MapConstants@@3VVec3@@B
-     * @hash   -1903832997
+     * @hash   -1120464237
      */
     MCAPI extern class Vec3 const VERT_SPLIT_SCREEN_OFFSET;
 

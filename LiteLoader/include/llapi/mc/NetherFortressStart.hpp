@@ -38,7 +38,7 @@ public:
     virtual ~NetherFortressStart();
     /**
      * @symbol ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
-     * @hash   6562095
+     * @hash   177850735
      */
     MCAPI NetherFortressStart(class Random &, short, int, int);
 

@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DragonScanningGoal@@UEAA_NXZ
-     * @hash   -1686784647
+     * @hash   -1526643607
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DragonScanningGoal@@UEAA_NXZ
-     * @hash   590345239
+     * @hash   750486279
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DragonScanningGoal@@UEAAXXZ
-     * @hash   118807570
+     * @hash   278948610
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DragonScanningGoal@@UEAAXXZ
-     * @hash   1374256098
+     * @hash   1534397138
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DragonScanningGoal@@UEAAXXZ
-     * @hash   -802515059
+     * @hash   -642374019
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DragonScanningGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1301027511
+     * @hash   1461168551
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DragonScanningGoal@@QEAA@AEAVEnderDragon@@@Z
-     * @hash   -1735530624
+     * @hash   -1575389584
      */
     MCAPI DragonScanningGoal(class EnderDragon &);
 
@@ -87,17 +87,17 @@ public:
 private:
     /**
      * @symbol ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
-     * @hash   490170810
+     * @hash   1327832226
      */
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     /**
      * @symbol ?SITTING_CHARGE_VIEW_RANGE@DragonScanningGoal@@0MA
-     * @hash   -1426267822
+     * @hash   -588606406
      */
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
     /**
      * @symbol ?SITTING_SCANNING_IDLE_TICKS@DragonScanningGoal@@0HA
-     * @hash   693594274
+     * @hash   1531255690
      */
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
 

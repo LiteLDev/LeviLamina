@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockPlacementFilterDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1276909283
+     * @hash   -706413555
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockPlacementFilterDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   422685799
+     * @hash   993181527
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockPlacementFilterDescription@@UEBA_NXZ
-     * @hash   -928374603
+     * @hash   -831874827
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockPlacementFilterDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1881219687
+     * @hash   -1844681849
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockPlacementFilterDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1944908171
+     * @hash   -1779563397
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockPlacementFilterDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2138552171
+     * @hash   -356835107
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockPlacementFilterDescription@@SAXXZ
-     * @hash   -1151310337
+     * @hash   -583074881
      */
     MCAPI static void bindType();
 

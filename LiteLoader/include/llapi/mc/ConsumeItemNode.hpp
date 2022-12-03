@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   1275912302
+     * @hash   1358235406
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @symbol ??0ConsumeItemNode@@QEAA@XZ
-     * @hash   1602247837
+     * @hash   1684570941
      */
     MCAPI ConsumeItemNode();
 

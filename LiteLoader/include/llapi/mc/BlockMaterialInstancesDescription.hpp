@@ -37,56 +37,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockMaterialInstancesDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -72404969
+     * @hash   508623319
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockMaterialInstancesDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   1468454157
+     * @hash   2049482445
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockMaterialInstancesDescription@@UEBA_NXZ
-     * @hash   1868030735
+     * @hash   1964530511
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockMaterialInstancesDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -827001215
+     * @hash   -247203007
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -2084000815
+     * @hash   -1502972527
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ??0BlockMaterialInstancesDescription@@QEAA@XZ
-     * @hash   -1626514562
+     * @hash   -1058648130
      */
     MCAPI BlockMaterialInstancesDescription();
     /**
-     * @symbol ??4BlockMaterialInstancesDescription@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1610256740
-     */
-    MCAPI struct BlockMaterialInstancesDescription & operator=(struct BlockMaterialInstancesDescription &&);
-    /**
      * @symbol ?NameID@BlockMaterialInstancesDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   27250089
+     * @hash   1808567377
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMaterialInstancesDescription@@SAXXZ
-     * @hash   68425119
+     * @hash   647070127
      */
     MCAPI static void bindType();
 

@@ -40,115 +40,115 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -319277985
+     * @hash   -281914305
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -831482690
+     * @hash   -735029042
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   591805451
+     * @hash   628231195
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   1031174072
+     * @hash   1068645384
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@PrecompiledCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   -656838761
+     * @hash   -619475081
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@PrecompiledCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   -1181262335
+     * @hash   -1087991519
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@PrecompiledCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   487603393
+     * @hash   580874209
      */
     virtual class Dimension * getDimension() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@PrecompiledCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   1690657275
+     * @hash   1783928091
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@PrecompiledCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -1499955409
+     * @hash   -1403455633
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   1365610053
+     * @hash   1402035797
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  13
      * @symbol ?hasChatPerms@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   -1051746564
+     * @hash   -955246788
      */
     virtual bool hasChatPerms() const;
     /**
      * @vftbl  14
      * @symbol ?hasTellPerms@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   222997987
+     * @hash   319497763
      */
     virtual bool hasTellPerms() const;
     /**
      * @vftbl  15
      * @symbol ?canUseAbility@PrecompiledCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-     * @hash   1708024458
+     * @hash   1804524234
      */
     virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  16
      * @symbol ?isWorldBuilder@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   885202462
+     * @hash   981702238
      */
     virtual bool isWorldBuilder() const;
     /**
      * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   709662755
+     * @hash   806162531
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   -1086725635
+     * @hash   -990225859
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -693131740
+     * @hash   -655768060
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   330575883
+     * @hash   368047195
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@PrecompiledCommandOrigin@@UEBA_NXZ
-     * @hash   -369017475
+     * @hash   -272517699
      */
     virtual bool isValid() const;
 

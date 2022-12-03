@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MetaDataTypeVisitor_Get@@QEAA@XZ
-     * @hash   -987070472
+     * @hash   -897643656
      */
     MCAPI ~MetaDataTypeVisitor_Get();
 

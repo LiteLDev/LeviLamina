@@ -1,13 +1,10 @@
 #ifndef ENTT_CORE_MONOSTATE_HPP
 #define ENTT_CORE_MONOSTATE_HPP
 
-
 #include "../config/config.h"
 #include "fwd.hpp"
 
-
 namespace entt {
-
 
 /**
  * @brief Minimal implementation of the monostate pattern.
@@ -28,7 +25,7 @@ struct monostate {
      * @param val User data to assign to the given key.
      */
     template<typename Type>
-    void operator=(Type val) const ENTT_NOEXCEPT {
+    void operator=(Type val) const noexcept {
         value<Type> = val;
     }
 
@@ -38,7 +35,7 @@ struct monostate {
      * @return Stored value, if any.
      */
     template<typename Type>
-    operator Type() const ENTT_NOEXCEPT {
+    operator Type() const noexcept {
         return value<Type>;
     }
 
@@ -47,7 +44,6 @@ private:
     inline static ENTT_MAYBE_ATOMIC(Type) value{};
 };
 
-
 /**
  * @brief Helper variable template.
  * @tparam Value Value used to differentiate between different variables.
@@ -55,8 +51,6 @@ private:
 template<id_type Value>
 inline monostate<Value> monostate_v = {};
 
-
-}
-
+} // namespace entt
 
 #endif

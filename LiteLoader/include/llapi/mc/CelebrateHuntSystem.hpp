@@ -37,13 +37,13 @@ public:
     virtual ~CelebrateHuntSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@CelebrateHuntSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1480515801
+     * @hash   1590884729
      */
     virtual void tick(class EntityRegistry &);
 

@@ -38,44 +38,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SilverfishWakeUpFriendsGoal@@UEAA_NXZ
-     * @hash   -1452693396
+     * @hash   -1408456644
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   578565733
+     * @hash   738599141
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@SilverfishWakeUpFriendsGoal@@UEAAXXZ
-     * @hash   -1904623568
+     * @hash   -1860386816
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SilverfishWakeUpFriendsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1472104700
+     * @hash   -1427867948
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SilverfishWakeUpFriendsGoal@@QEAA@AEAVSilverfish@@@Z
-     * @hash   -343829891
+     * @hash   -299593139
      */
     MCAPI SilverfishWakeUpFriendsGoal(class Silverfish &);
 

@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z
-     * @hash   -1098450206
+     * @hash   -995938414
      */
     virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum class PackType) const;
 

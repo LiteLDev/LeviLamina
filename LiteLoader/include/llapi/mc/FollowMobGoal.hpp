@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FollowMobGoal@@UEAA_NXZ
-     * @hash   -589987570
+     * @hash   -429846530
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FollowMobGoal@@UEAA_NXZ
-     * @hash   276853852
+     * @hash   436994892
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@FollowMobGoal@@UEAAXXZ
-     * @hash   -204470489
+     * @hash   -44329449
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FollowMobGoal@@UEAAXXZ
-     * @hash   -600287465
+     * @hash   -440146425
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FollowMobGoal@@UEAAXXZ
-     * @hash   -1084717022
+     * @hash   -924575982
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FollowMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   206178482
+     * @hash   366319522
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FollowMobGoal@@QEAA@AEAVMob@@MMH@Z
-     * @hash   -169651112
+     * @hash   -9510072
      */
     MCAPI FollowMobGoal(class Mob &, float, float, int);
 
 //private:
     /**
      * @symbol ?_setWantedMob@FollowMobGoal@@AEAA_NXZ
-     * @hash   -1110923918
+     * @hash   -950782878
      */
     MCAPI bool _setWantedMob();
 

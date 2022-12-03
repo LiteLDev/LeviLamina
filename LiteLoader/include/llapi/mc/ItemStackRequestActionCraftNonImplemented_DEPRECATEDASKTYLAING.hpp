@@ -36,34 +36,34 @@ public:
     virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     /**
      * @vftbl  1
-     * @hash   2095358161
+     * @hash   -2020371103
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1368469278
+     * @hash   -1275198462
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -54489074
+     * @hash   34476462
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1896855946
+     * @hash   -1800356170
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@QEAA@XZ
-     * @hash   -541006920
+     * @hash   21939192
      */
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 

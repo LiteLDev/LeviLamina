@@ -37,18 +37,18 @@ public:
     virtual ~IslandOperationNode();
     /**
      * @vftbl  1
-     * @hash   1486514689
+     * @hash   1657787953
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1382589266
+     * @hash   1553462754
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_fillArea@IslandOperationNode@@EEBAXAEAV?$WorkingData@W4Terrain@OperationNodeValues@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
-     * @hash   1506800786
+     * @hash   -2029899070
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
 

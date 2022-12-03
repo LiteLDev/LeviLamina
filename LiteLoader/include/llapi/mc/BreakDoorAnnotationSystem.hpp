@@ -37,13 +37,13 @@ public:
     virtual ~BreakDoorAnnotationSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BreakDoorAnnotationSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -920902373
+     * @hash   -809472501
      */
     virtual void tick(class EntityRegistry &);
 

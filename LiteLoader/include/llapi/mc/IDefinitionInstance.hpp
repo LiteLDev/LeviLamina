@@ -37,12 +37,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
-     * @hash   -1855599649
+     * @hash   -1700071409
      */
     virtual unsigned short getRuntimeTypeId() const;
     /**
      * @symbol ??4IDefinitionInstance@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1114912676
+     * @hash   -1095093012
      */
     MCAPI class IDefinitionInstance & operator=(class IDefinitionInstance const &);
 

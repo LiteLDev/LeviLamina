@@ -36,45 +36,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ScriptMessagePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1496524294
+     * @hash   -1538347014
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ScriptMessagePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1222774967
+     * @hash   1180952247
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ScriptMessagePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   631519408
+     * @hash   589696688
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ScriptMessagePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -658671264
+     * @hash   -700493984
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ScriptMessagePacket@@QEAA@XZ
-     * @hash   -905387664
+     * @hash   -947210384
      */
     MCAPI ScriptMessagePacket();
     /**
      * @symbol ??0ScriptMessagePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -1845168361
+     * @hash   -1886991081
      */
     MCAPI ScriptMessagePacket(std::string const &, std::string const &);
     /**
      * @symbol ?getMessageId@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -293204540
+     * @hash   -168366796
      */
     MCAPI std::string const & getMessageId() const;
     /**
      * @symbol ?getMessageValue@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1971747534
+     * @hash   1929924814
      */
     MCAPI std::string const & getMessageValue() const;
 

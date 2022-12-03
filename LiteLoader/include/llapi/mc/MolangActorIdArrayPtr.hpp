@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z
-     * @hash   -472107664
+     * @hash   -437004256
      */
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
     /**
      * @symbol ??1MolangActorIdArrayPtr@@QEAA@XZ
-     * @hash   1899824257
+     * @hash   1687220305
      */
     MCAPI ~MolangActorIdArrayPtr();
 

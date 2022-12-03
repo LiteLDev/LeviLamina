@@ -39,50 +39,50 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@TridentImpalerEnchant@@UEBAHH@Z
-     * @hash   297623024
+     * @hash   867027056
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@TridentImpalerEnchant@@UEBAHH@Z
-     * @hash   882998590
+     * @hash   1452402622
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ
-     * @hash   1616979258
+     * @hash   1796217290
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@@Z
-     * @hash   33278022
+     * @hash   602682054
      */
     virtual float getDamageBonus(int, class Actor const &) const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @symbol ??0TridentImpalerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -1499972077
+     * @hash   -930568045
      */
     MCAPI TridentImpalerEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

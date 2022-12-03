@@ -38,90 +38,90 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeInternal@PathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-     * @hash   1873354610
+     * @hash   1927109106
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
      * @vftbl  2
      * @symbol ?tick@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   296671693
+     * @hash   350426189
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  3
      * @symbol ?getTempMobPos@PathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
-     * @hash   -1546940023
+     * @hash   -1493185527
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
      * @vftbl  4
      * @symbol ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-     * @hash   1573666430
+     * @hash   1627420926
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
      * @vftbl  5
      * @symbol ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
-     * @hash   -2008172685
+     * @hash   -1954418189
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
      * @vftbl  6
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEBVVec3@@M@Z
-     * @hash   2028751518
+     * @hash   2082506014
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Vec3 const &, float);
     /**
      * @vftbl  7
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
-     * @hash   -1071855559
+     * @hash   -1018101063
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /**
      * @vftbl  8
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
-     * @hash   1453756787
+     * @hash   1507511283
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, std::unique_ptr<class Path>, float);
     /**
      * @vftbl  9
      * @symbol ?stop@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   -1264449342
+     * @hash   -1210694846
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
      * @vftbl  10
      * @symbol ?travel@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
-     * @hash   1608471060
+     * @hash   1704970836
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /**
      * @vftbl  11
      * @symbol ?canUpdatePath@PathNavigation@@MEBA_NAEBVMob@@@Z
-     * @hash   -1059642447
+     * @hash   -1005887951
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
      * @vftbl  12
      * @symbol ?updatePath@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     * @hash   -1169951506
+     * @hash   -1116197010
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 
 //protected:
     /**
      * @symbol ?_getHighestBlockHeight@PathNavigation@@IEBAMAEAVBlockSource@@AEAVMob@@AEBVVec3@@AEBVVec2@@@Z
-     * @hash   763562817
+     * @hash   817317313
      */
     MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;
     /**
      * @symbol ?_isPositionOnlyInAir@PathNavigation@@IEBA_NAEBVBlockSource@@AEBVVec3@@AEBVVec2@@@Z
-     * @hash   -544745082
+     * @hash   -490990586
      */
     MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
     /**
      * @symbol ?isFree@PathNavigation@@IEAA?AW4NodeType@@AEAVNavigationComponent@@AEAVMob@@AEBVBlockPos@@22W4CanJumpIntoNode@@@Z
-     * @hash   44927431
+     * @hash   98681927
      */
     MCAPI enum class NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode);
 

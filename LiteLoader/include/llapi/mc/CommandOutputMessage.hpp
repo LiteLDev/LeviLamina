@@ -31,42 +31,42 @@ public:
 public:
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@W4CommandOutputMessageType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -539328961
+     * @hash   -501288737
      */
     MCAPI CommandOutputMessage(enum class CommandOutputMessageType, std::string const &, std::vector<std::string> &&);
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@AEBV0@@Z
-     * @hash   -507502111
+     * @hash   -469461887
      */
     MCAPI CommandOutputMessage(class CommandOutputMessage const &);
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@$$QEAV0@@Z
-     * @hash   -2038876625
+     * @hash   -2000836401
      */
     MCAPI CommandOutputMessage(class CommandOutputMessage &&);
     /**
      * @symbol ?getMessageId@CommandOutputMessage@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1166029090
+     * @hash   -1072758274
      */
     MCAPI std::string const & getMessageId() const;
     /**
      * @symbol ?getParams@CommandOutputMessage@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -385539931
+     * @hash   -214174411
      */
     MCAPI std::vector<std::string> const & getParams() const;
     /**
      * @symbol ?getType@CommandOutputMessage@@QEBA?AW4CommandOutputMessageType@@XZ
-     * @hash   2068751752
+     * @hash   -2054957656
      */
     MCAPI enum class CommandOutputMessageType getType() const;
     /**
      * @symbol ?getUserMessage@CommandOutputMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1539698498
+     * @hash   1577692594
      */
     MCAPI std::string getUserMessage() const;
     /**
      * @symbol ??1CommandOutputMessage@@QEAA@XZ
-     * @hash   1530906549
+     * @hash   310493461
      */
     MCAPI ~CommandOutputMessage();
 

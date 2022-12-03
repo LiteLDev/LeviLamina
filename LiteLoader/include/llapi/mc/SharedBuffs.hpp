@@ -32,52 +32,52 @@ public:
 public:
     /**
      * @symbol ?ABSORPTION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -2054390952
+     * @hash   -1194641912
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
     /**
      * @symbol ?FATAL_POISON@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -156651064
+     * @hash   703097976
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
     /**
      * @symbol ?FOOD_POSIONING@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -2145935800
+     * @hash   -1286186760
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
     /**
      * @symbol ?HARM@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -1908672888
+     * @hash   -1048923848
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
     /**
      * @symbol ?HEAL@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   1894304024
+     * @hash   -1540914232
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
     /**
      * @symbol ?POISON@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   493123864
+     * @hash   1352872904
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
     /**
      * @symbol ?PUFFER_POSIONING@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   1860284568
+     * @hash   -1574933688
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
     /**
      * @symbol ?REGENERATION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -1127532840
+     * @hash   -267783800
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
     /**
      * @symbol ?SATURATION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   1982701992
+     * @hash   -1452516264
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
     /**
      * @symbol ?WITHER@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
-     * @hash   -196113304
+     * @hash   663635736
      */
     MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
 

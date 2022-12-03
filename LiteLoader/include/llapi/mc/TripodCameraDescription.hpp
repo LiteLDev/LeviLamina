@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TripodCameraDescription@@UEBAPEBDXZ
-     * @hash   1060824919
+     * @hash   1206835415
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@TripodCameraDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1688267930
+     * @hash   -1599302394
      */
     virtual void serializeData(class Json::Value &) const;
 

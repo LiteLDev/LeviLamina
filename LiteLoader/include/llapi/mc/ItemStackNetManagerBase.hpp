@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isEnabled@ItemStackNetManagerBase@@UEBA_NXZ
-     * @hash   -1672300775
+     * @hash   -1692581719
      */
     virtual bool isEnabled() const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ
-     * @hash   -866504601
+     * @hash   -769758809
      */
     virtual bool retainSetItemStackNetIdVariant() const;
     /**
@@ -62,79 +62,79 @@ public:
     /**
      * @vftbl  5
      * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@MEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-     * @hash   -1919512742
+     * @hash   -1893696438
      */
     virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
     /**
      * @vftbl  6
      * @symbol ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
-     * @hash   -244982746
+     * @hash   -219166442
      */
     virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /**
      * @vftbl  7
      * @symbol ?onContainerScreenClose@ItemStackNetManagerBase@@UEAAXXZ
-     * @hash   -848884213
+     * @hash   -823067909
      */
     virtual void onContainerScreenClose();
     /**
      * @vftbl  8
      * @symbol ?initOpenContainer@ItemStackNetManagerBase@@UEAAPEAVSparseContainer@@AEAVBlockSource@@W4ContainerEnumName@@AEBVContainerWeakRef@@@Z
-     * @hash   -1410753095
+     * @hash   -1317482279
      */
     virtual class SparseContainer * initOpenContainer(class BlockSource &, enum class ContainerEnumName, class ContainerWeakRef const &);
     /**
      * @vftbl  9
      * @symbol ?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z
-     * @hash   1427890538
+     * @hash   1516856074
      */
     virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum class ContainerType, int);
     /**
      * @vftbl  10
      * @symbol ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
-     * @hash   -1508713242
+     * @hash   -1419747706
      */
     virtual void _initScreen(class ItemStackNetManagerScreen &);
     /**
      * @symbol ??0ItemStackNetManagerBase@@QEAA@AEAVPlayer@@_N1@Z
-     * @hash   -1205383291
+     * @hash   -1179566987
      */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     /**
      * @symbol ?_getScreenStack@ItemStackNetManagerBase@@QEAAAEAVItemStackNetManagerScreenStack@@XZ
-     * @hash   1960102626
+     * @hash   2121196978
      */
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
     /**
      * @symbol ?getScreenContext@ItemStackNetManagerBase@@QEBAAEBVContainerScreenContext@@XZ
-     * @hash   2024047516
+     * @hash   2049863820
      */
     MCAPI class ContainerScreenContext const & getScreenContext() const;
     /**
      * @symbol ?isClientSide@ItemStackNetManagerBase@@QEBA_NXZ
-     * @hash   -141233036
+     * @hash   -13765996
      */
     MCAPI bool isClientSide() const;
     /**
      * @symbol ?isScreenOpen@ItemStackNetManagerBase@@QEBA_NXZ
-     * @hash   448255252
+     * @hash   474071556
      */
     MCAPI bool isScreenOpen() const;
     /**
      * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
-     * @hash   1901531913
+     * @hash   1927348217
      */
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
     /**
      * @symbol ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
-     * @hash   805483826
+     * @hash   831192498
      */
     MCAPI static bool setPlayerContainer(class Player &, enum class ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 //protected:
     /**
      * @symbol ?_isRequestActionAllowed@ItemStackNetManagerBase@@IEAA_NAEBVItemStackRequestAction@@@Z
-     * @hash   -642321482
+     * @hash   -616505178
      */
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 

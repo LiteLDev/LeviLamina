@@ -31,47 +31,47 @@ public:
 public:
     /**
      * @symbol ??0HideComponent@@QEAA@XZ
-     * @hash   1546626823
+     * @hash   1533541847
      */
     MCAPI HideComponent();
     /**
      * @symbol ?addAdditionalSaveData@HideComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1958165528
+     * @hash   1945080552
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?initFromDefinition@HideComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -791946494
+     * @hash   -702980958
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?isInRaid@HideComponent@@QEAA_NXZ
-     * @hash   132635402
+     * @hash   280152746
      */
     MCAPI bool isInRaid();
     /**
      * @symbol ?isReactingToBell@HideComponent@@QEAA_NXZ
-     * @hash   -1975172358
+     * @hash   -1827608886
      */
     MCAPI bool isReactingToBell();
     /**
      * @symbol ?readAdditionalSaveData@HideComponent@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1341711077
+     * @hash   1328610725
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setInRaid@HideComponent@@QEAAXXZ
-     * @hash   2629351
+     * @hash   -10471001
      */
     MCAPI void setInRaid();
     /**
      * @symbol ?setNotHiding@HideComponent@@QEAAXXZ
-     * @hash   69672147
+     * @hash   56571795
      */
     MCAPI void setNotHiding();
     /**
      * @symbol ?setReactingToBell@HideComponent@@QEAAXXZ
-     * @hash   1105318507
+     * @hash   1092218155
      */
     MCAPI void setReactingToBell();
 

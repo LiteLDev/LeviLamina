@@ -33,58 +33,58 @@ public:
 public:
     /**
      * @symbol ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@_N@Z
-     * @hash   -904623958
+     * @hash   -392695414
      */
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
     /**
      * @symbol ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVScheduler@@@Z
-     * @hash   820932140
+     * @hash   1332860684
      */
     MCAPI WorkerPool(std::string, class Scheduler &);
     /**
      * @symbol ?queue@WorkerPool@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-     * @hash   -626283994
+     * @hash   -114355450
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?resortPriorityQueue@WorkerPool@@QEAAXXZ
-     * @hash   52121651
+     * @hash   564050195
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?size@WorkerPool@@QEBA_KXZ
-     * @hash   1468459655
+     * @hash   1980388199
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ?tryPop@WorkerPool@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@H@Z
-     * @hash   2099804076
+     * @hash   -1683234676
      */
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
 
 //protected:
     /**
      * @symbol ?_registerPool@WorkerPool@@KAXAEAV1@@Z
-     * @hash   -52768981
+     * @hash   459159563
      */
     MCAPI static void _registerPool(class WorkerPool &);
 
 //private:
     /**
      * @symbol ?_checkPendingWork@WorkerPool@@AEAA_NXZ
-     * @hash   1293668027
+     * @hash   1805596571
      */
     MCAPI bool _checkPendingWork();
 
 protected:
     /**
      * @symbol ?sAllPools@WorkerPool@@1V?$SmallSet@PEAVWorkerPool@@@@A
-     * @hash   -310159967
+     * @hash   249587937
      */
     MCAPI static class SmallSet<class WorkerPool *> sAllPools;
     /**
      * @symbol ?sAllPoolsMutex@WorkerPool@@1Vmutex@std@@A
-     * @hash   -2082499165
+     * @hash   -1522751261
      */
     MCAPI static class std::mutex sAllPoolsMutex;
 

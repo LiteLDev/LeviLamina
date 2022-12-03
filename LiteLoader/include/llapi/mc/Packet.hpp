@@ -94,13 +94,13 @@ public:
     /**
      * @vftbl  4
      * @symbol ?readExtended@Packet@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   295698921
+     * @hash   399594553
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
      * @vftbl  5
      * @symbol ?disallowBatching@Packet@@UEBA_NXZ
-     * @hash   1135722675
+     * @hash   1232468467
      */
     virtual bool disallowBatching() const;
     /**
@@ -111,17 +111,17 @@ public:
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
     /**
      * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
-     * @hash   -1774752531
+     * @hash   -1820019475
      */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     /**
      * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
-     * @hash   1274802639
+     * @hash   1229535695
      */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
      * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
-     * @hash   -470634771
+     * @hash   -515901715
      */
     MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;
 

@@ -28,22 +28,22 @@ public:
 public:
     /**
      * @symbol ??0ConstBlockSourceComponent@@QEAA@V?$not_null@PEBVIConstBlockSource@@@gsl@@@Z
-     * @hash   989894140
+     * @hash   919518188
      */
     MCAPI ConstBlockSourceComponent(class gsl::not_null<class IConstBlockSource const *>);
     /**
      * @symbol ??0ConstBlockSourceComponent@@QEAA@AEBU0@@Z
-     * @hash   1471042133
+     * @hash   1400666181
      */
     MCAPI ConstBlockSourceComponent(struct ConstBlockSourceComponent const &);
     /**
      * @symbol ?getBlockSource@ConstBlockSourceComponent@@QEBAAEBVIConstBlockSource@@XZ
-     * @hash   -581321432
+     * @hash   -477456552
      */
     MCAPI class IConstBlockSource const & getBlockSource() const;
     /**
      * @symbol ??4ConstBlockSourceComponent@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1856724530
+     * @hash   -1927100482
      */
     MCAPI struct ConstBlockSourceComponent & operator=(struct ConstBlockSourceComponent const &);
 

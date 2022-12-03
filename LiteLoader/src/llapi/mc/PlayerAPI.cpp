@@ -73,7 +73,7 @@ Certificate* Player::getCertificate() {
 
 enum class AbilitiesLayer;
 LayeredAbilities* Player::getAbilities() {
-    return &dAccess<LayeredAbilities>(this, 2196); // AbilityCommand::execute
+    return &dAccess<LayeredAbilities>(this, 2124); // AbilityCommand::execute
 }
 
 //From https://github.com/dreamguxiang/BETweaker
@@ -109,7 +109,7 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
 
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2160);
+        return getName();
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -137,6 +137,7 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
+    // std::cout << Global<ServerNetworkHandler> << " " << getNetworkIdentifier() << &Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()) << "\n";
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
@@ -257,7 +258,7 @@ int Player::clearItem(string typeName) {
     ItemStack* item = getHandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 
@@ -265,7 +266,7 @@ int Player::clearItem(string typeName) {
     item = (ItemStack*)&getOffhandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull();
+        item->setNull({});
         res += out;
     }
 
@@ -305,7 +306,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 5328); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {
@@ -799,7 +800,8 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
+    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    handler->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 

@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0FertilizeFarmBlockDefinition@@QEAA@XZ
-     * @hash   391391638
+     * @hash   552439862
      */
     MCAPI FertilizeFarmBlockDefinition();
     /**
      * @symbol ?initialize@FertilizeFarmBlockDefinition@@QEAAXAEAVEntityContext@@AEAVFertilizeFarmBlockGoal@@@Z
-     * @hash   -794974197
+     * @hash   -634033605
      */
     MCAPI void initialize(class EntityContext &, class FertilizeFarmBlockGoal &);
     /**
      * @symbol ?buildSchema@FertilizeFarmBlockDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VFertilizeFarmBlockDefinition@@@JsonUtil@@@3@@Z
-     * @hash   513651755
+     * @hash   674699979
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FertilizeFarmBlockDefinition>> &);
 

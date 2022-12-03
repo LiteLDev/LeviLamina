@@ -29,32 +29,32 @@ public:
 public:
     /**
      * @symbol ??0GameEventListenerComponent@@QEAA@$$QEAV0@@Z
-     * @hash   2077940827
+     * @hash   1677565163
      */
     MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
     /**
      * @symbol ??0GameEventListenerComponent@@QEAA@XZ
-     * @hash   -42673571
+     * @hash   146943261
      */
     MCAPI GameEventListenerComponent();
     /**
      * @symbol ?initialize@GameEventListenerComponent@@QEAA_NV?$unique_ptr@VGameEventDynamicRegistration@@U?$default_delete@VGameEventDynamicRegistration@@@std@@@std@@@Z
-     * @hash   -829689803
+     * @hash   -312871691
      */
     MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
     /**
      * @symbol ??4GameEventListenerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -218001922
+     * @hash   298816190
      */
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     /**
      * @symbol ?tryGetListenerRegistration@GameEventListenerComponent@@QEBAPEAVGameEventDynamicRegistration@@XZ
-     * @hash   -39389819
+     * @hash   85447925
      */
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     /**
      * @symbol ??1GameEventListenerComponent@@QEAA@XZ
-     * @hash   -1362485637
+     * @hash   -845667525
      */
     MCAPI ~GameEventListenerComponent();
 

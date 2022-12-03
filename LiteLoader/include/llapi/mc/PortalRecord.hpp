@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ??0PortalRecord@@QEAA@AEBVBlockPos@@HHH@Z
-     * @hash   971669267
+     * @hash   1517655651
      */
     MCAPI PortalRecord(class BlockPos const &, int, int, int);
     /**
      * @symbol ??0PortalRecord@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1894071808
+     * @hash   -1348085424
      */
     MCAPI PortalRecord(class BlockPos const &);
     /**
      * @symbol ?closestBlockPosTo@PortalRecord@@QEBA?AVBlockPos@@AEBVActor@@@Z
-     * @hash   939399689
+     * @hash   1485386073
      */
     MCAPI class BlockPos closestBlockPosTo(class Actor const &) const;
     /**
      * @symbol ?hashCode@PortalRecord@@QEBA_KXZ
-     * @hash   1856546309
+     * @hash   -1892434603
      */
     MCAPI unsigned __int64 hashCode() const;
     /**
      * @symbol ??8PortalRecord@@QEBA_NAEBV0@@Z
-     * @hash   -945414086
+     * @hash   -789732086
      */
     MCAPI bool operator==(class PortalRecord const &) const;
 

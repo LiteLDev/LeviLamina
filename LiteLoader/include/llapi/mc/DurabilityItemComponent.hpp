@@ -36,69 +36,69 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VDurabilityItemComponent@@@@UEBA_NXZ
-     * @hash   -1526513856
+     * @hash   -1430014080
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDurabilityItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -252492846
+     * @hash   342466098
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDurabilityItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   734105742
+     * @hash   1353896926
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getDamageChance@DurabilityItemComponent@@QEBAHH@Z
-     * @hash   -2001981249
+     * @hash   -1439142769
      */
     MCAPI int getDamageChance(int) const;
     /**
      * @symbol ?getDamageChanceRange@DurabilityItemComponent@@QEBA?AUIntRange@@XZ
-     * @hash   -1155622680
+     * @hash   -592784200
      */
     MCAPI struct IntRange getDamageChanceRange() const;
     /**
      * @symbol ?getMaxDamage@DurabilityItemComponent@@QEBAHXZ
-     * @hash   1550012096
+     * @hash   1612115760
      */
     MCAPI int getMaxDamage() const;
     /**
      * @symbol ?setMaxDamage@DurabilityItemComponent@@QEAAXH@Z
-     * @hash   1869078646
+     * @hash   1931336070
      */
     MCAPI void setMaxDamage(int);
     /**
      * @symbol ?bindType@DurabilityItemComponent@@SAXXZ
-     * @hash   -198471649
+     * @hash   363213631
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DurabilityItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   161758822
+     * @hash   724597302
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades@DurabilityItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   347203082
+     * @hash   910072314
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

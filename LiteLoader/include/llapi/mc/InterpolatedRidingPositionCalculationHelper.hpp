@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ?getInterpolatedBodyRot@InterpolatedRidingPositionCalculationHelper@@SAMAEBVStrictEntityContext@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorRotationComponent@@$$CBURenderRotationComponent@@$$CBUStateVectorComponent@@$$CBUSynchedActorDataComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUMobBodyRotationComponent@@@@M@Z
-     * @hash   1856889540
+     * @hash   1782777220
      */
     MCAPI static float getInterpolatedBodyRot(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorRotationComponent const, struct RenderRotationComponent const, struct StateVectorComponent const, struct SynchedActorDataComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct MobFlag>>, struct MobBodyRotationComponent const>, float);
     /**
      * @symbol ?getInterpolatedPosition@InterpolatedRidingPositionCalculationHelper@@SA?AVVec3@@AEBVStrictEntityContext@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorRotationComponent@@$$CBURenderRotationComponent@@$$CBUStateVectorComponent@@$$CBUSynchedActorDataComponent@@@@M@Z
-     * @hash   867733150
+     * @hash   793620830
      */
     MCAPI static class Vec3 getInterpolatedPosition(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorRotationComponent const, struct RenderRotationComponent const, struct StateVectorComponent const, struct SynchedActorDataComponent const>, float);
     /**
      * @symbol ?getInterpolatedRidingOffset@InterpolatedRidingPositionCalculationHelper@@SA?AVVec3@@AEBVStrictEntityContext@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUStandAnimationComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorRotationComponent@@$$CBURenderRotationComponent@@$$CBUStateVectorComponent@@$$CBUSynchedActorDataComponent@@@@M@Z
-     * @hash   -1598240536
+     * @hash   -1672352856
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct HorseFlag>>, struct StandAnimationComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorRotationComponent const, struct RenderRotationComponent const, struct StateVectorComponent const, struct SynchedActorDataComponent const>, float);
 

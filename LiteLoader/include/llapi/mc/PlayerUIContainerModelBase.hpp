@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
-     * @hash   -1810711910
+     * @hash   -1795781814
      */
     virtual void containerContentChanged(int);
     /**
@@ -45,80 +45,80 @@ public:
     /**
      * @vftbl  2
      * @symbol ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
-     * @hash   -526799639
+     * @hash   -511869543
      */
     virtual void postInit();
     /**
      * @vftbl  3
      * @symbol ?releaseResources@PlayerUIContainerModelBase@@UEAAXXZ
-     * @hash   1627700839
+     * @hash   1672460375
      */
     virtual void releaseResources();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?getContainerWeakRef@PlayerUIContainerModelBase@@UEBA?AVContainerWeakRef@@XZ
-     * @hash   -889200121
+     * @hash   -874270025
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  14
      * @symbol ?isValid@PlayerUIContainerModelBase@@UEAA_NXZ
-     * @hash   170711165
+     * @hash   215470701
      */
     virtual bool isValid();
     /**
      * @vftbl  15
-     * @hash   -327479000
+     * @hash   -230733208
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
      * @symbol ?_getContainer@PlayerUIContainerModelBase@@MEBAPEAVContainer@@XZ
-     * @hash   -1881739432
+     * @hash   -1866809336
      */
     virtual class Container * _getContainer() const;
     /**
      * @vftbl  21
      * @symbol ?_getContainerOffset@PlayerUIContainerModelBase@@MEBAHXZ
-     * @hash   -294297613
+     * @hash   -201026797
      */
     virtual int _getContainerOffset() const;
     /**
      * @vftbl  22
      * @symbol ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-     * @hash   -538234262
+     * @hash   -523304166
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-     * @hash   291347332
+     * @hash   306277428
      */
     MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player &, int, enum class ContainerCategory);
 
 //protected:
     /**
      * @symbol ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
-     * @hash   634010186
+     * @hash   648940282
      */
     MCAPI void _refreshContainer(bool);
 

@@ -40,44 +40,44 @@ public:
 public:
     /**
      * @symbol ??0WebToken@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -402295766
+     * @hash   -448177750
      */
     MCAPI WebToken(std::string);
     /**
      * @symbol ?toString@WebToken@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1355974906
+     * @hash   1310200554
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?verifyWithIncludedKey@WebToken@@QEBA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1801816646
+     * @hash   -1847590998
      */
     MCAPI bool verifyWithIncludedKey(std::vector<std::string> const &) const;
     /**
      * @symbol ??1WebToken@@QEAA@XZ
-     * @hash   1557749151
+     * @hash   1739324335
      */
     MCAPI ~WebToken();
     /**
      * @symbol ?createFromData@WebToken@@SA?AV?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBVValue@Json@@AEBVPrivateKeyManager@@@Z
-     * @hash   677014556
+     * @hash   631270956
      */
     MCAPI static std::unique_ptr<class WebToken> createFromData(class Json::Value const &, class PrivateKeyManager const &);
 
 //private:
     /**
      * @symbol ?_parse@WebToken@@AEAAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   739752212
+     * @hash   694023988
      */
     MCAPI void _parse(class Json::Value &, std::string const &);
     /**
      * @symbol ?_signatureToDER@WebToken@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2106610287
+     * @hash   2060882063
      */
     MCAPI std::string _signatureToDER() const;
     /**
      * @symbol ?_DERToBinary@WebToken@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@H@Z
-     * @hash   325018808
+     * @hash   279305960
      */
     MCAPI static std::string _DERToBinary(std::string const &, int);
 

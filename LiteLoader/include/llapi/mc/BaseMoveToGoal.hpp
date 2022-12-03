@@ -38,36 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BaseMoveToGoal@@UEAA_NXZ
-     * @hash   319489392
+     * @hash   490747280
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BaseMoveToGoal@@UEAA_NXZ
-     * @hash   377084222
+     * @hash   548342110
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@BaseMoveToGoal@@UEAAXXZ
-     * @hash   43182793
+     * @hash   214440681
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@BaseMoveToGoal@@UEAAXXZ
-     * @hash   1298214537
+     * @hash   1469472425
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@BaseMoveToGoal@@UEAAXXZ
-     * @hash   1092302404
+     * @hash   1263560292
      */
     virtual void tick();
     /**
@@ -78,18 +78,18 @@ public:
     virtual void appendDebugInfo(std::string &) const = 0;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
-     * @hash   -1710681887
+     * @hash   -1539423999
      */
     virtual bool hasReachedTarget() const;
     /**
@@ -101,13 +101,13 @@ public:
     /**
      * @vftbl  12
      * @symbol ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
-     * @hash   1326517426
+     * @hash   1497775314
      */
     virtual int _nextStartTick();
     /**
      * @vftbl  13
      * @symbol ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
-     * @hash   2107667686
+     * @hash   -2016041722
      */
     virtual bool _canReach(class BlockPos const &);
     /**
@@ -119,45 +119,45 @@ public:
     /**
      * @vftbl  15
      * @symbol ?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ
-     * @hash   -678070790
+     * @hash   -506812902
      */
     virtual class Vec3 _getTargetPosition() const;
     /**
      * @vftbl  16
      * @symbol ?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ
-     * @hash   -1466434267
+     * @hash   -1295176379
      */
     virtual unsigned __int64 _getRepathTime() const;
     /**
      * @symbol ??0BaseMoveToGoal@@QEAA@AEAVMob@@MMMHH@Z
-     * @hash   -1487599724
+     * @hash   -1316341836
      */
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
     /**
      * @symbol ?setTargetPositionOffset@BaseMoveToGoal@@QEAAXAEBVVec3@@@Z
-     * @hash   -835539092
+     * @hash   -664281204
      */
     MCAPI void setTargetPositionOffset(class Vec3 const &);
 
 //protected:
     /**
      * @symbol ?_blockAboveTarget@BaseMoveToGoal@@IEBA?AVBlockPos@@XZ
-     * @hash   -1584220220
+     * @hash   -1412962332
      */
     MCAPI class BlockPos _blockAboveTarget() const;
     /**
      * @symbol ?_checkIfStuck@BaseMoveToGoal@@IEAAXXZ
-     * @hash   221855785
+     * @hash   393113673
      */
     MCAPI void _checkIfStuck();
     /**
      * @symbol ?_isCooldownActive@BaseMoveToGoal@@IEBA_NXZ
-     * @hash   591392678
+     * @hash   762650566
      */
     MCAPI bool _isCooldownActive() const;
     /**
      * @symbol ?setInterval@BaseMoveToGoal@@IEAAXH@Z
-     * @hash   -114410075
+     * @hash   56847813
      */
     MCAPI void setInterval(int);
 

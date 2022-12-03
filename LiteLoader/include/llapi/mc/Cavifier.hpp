@@ -32,19 +32,19 @@ public:
 public:
     /**
      * @symbol ??0Cavifier@@QEAA@AEBVCavifierNoises@@MM@Z
-     * @hash   377546926
+     * @hash   549112334
      */
     MCAPI Cavifier(class CavifierNoises const &, float, float);
     /**
      * @symbol ?cavify@Cavifier@@QEBAMVVec3@@HM@Z
-     * @hash   -2009905415
+     * @hash   -1838340007
      */
     MCAPI float cavify(class Vec3, int, float) const;
 
 //private:
     /**
      * @symbol ?_getSpaghetti2d@Cavifier@@AEBAMVVec3@@@Z
-     * @hash   -1921457972
+     * @hash   -1749892564
      */
     MCAPI float _getSpaghetti2d(class Vec3) const;
 

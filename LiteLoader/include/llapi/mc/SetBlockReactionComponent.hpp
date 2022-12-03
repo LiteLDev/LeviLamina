@@ -37,18 +37,18 @@ public:
     virtual ~SetBlockReactionComponent();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_onEnd@SetBlockReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     * @hash   -1469547899
+     * @hash   -922408315
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?IS_VALID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -360410229
+     * @hash   502813787
      */
     MCAPI static std::string const IS_VALID_FIELD;
     /**
      * @symbol ?JWT_EXPIRATION_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   138741419
+     * @hash   1001965435
      */
     MCAPI static std::string const JWT_EXPIRATION_FIELD;
     /**
      * @symbol ?JWT_REQUEST_ID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1890022645
+     * @hash   -1026798629
      */
     MCAPI static std::string const JWT_REQUEST_ID_FIELD;
     /**
      * @symbol ?PAYLOAD_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1190247991
+     * @hash   -327023975
      */
     MCAPI static std::string const PAYLOAD_FIELD;
     /**
      * @symbol ?PUBLIC_KEY@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1023804267
+     * @hash   1887028283
      */
     MCAPI static std::string const PUBLIC_KEY;
     /**
      * @symbol ?REQUEST_ID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   56465003
+     * @hash   919689019
      */
     MCAPI static std::string const REQUEST_ID_FIELD;
     /**
      * @symbol ?RESPONSE_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   547457451
+     * @hash   1410681467
      */
     MCAPI static std::string const RESPONSE_FIELD;
 
@@ -71,7 +71,7 @@ public:
 private:
     /**
      * @symbol ?mCachedServiceEndpoint@ActiveDirectoryIdentity@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
-     * @hash   1605630396
+     * @hash   -1826112884
      */
     MCAPI static std::string mCachedServiceEndpoint;
 

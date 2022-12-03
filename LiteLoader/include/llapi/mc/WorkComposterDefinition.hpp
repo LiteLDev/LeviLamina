@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0WorkComposterDefinition@@QEAA@XZ
-     * @hash   1768496780
+     * @hash   1939877676
      */
     MCAPI WorkComposterDefinition();
     /**
      * @symbol ?initialize@WorkComposterDefinition@@QEAAXAEAVEntityContext@@AEAVWorkComposterGoal@@@Z
-     * @hash   602647811
+     * @hash   773828819
      */
     MCAPI void initialize(class EntityContext &, class WorkComposterGoal &);
     /**
      * @symbol ?buildSchema@WorkComposterDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VWorkComposterDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1278355123
+     * @hash   -1107081859
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkComposterDefinition>> &);
 

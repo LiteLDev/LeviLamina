@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?logLevelChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVChunkPos@@PEBD_N@Z
-     * @hash   604838879
+     * @hash   1356617647
      */
     MCAPI static void logLevelChunkEvent(class ChunkPos const &, char const *, bool);
     /**
      * @symbol ?logSubChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVSubChunkPos@@PEBD_N@Z
-     * @hash   20778831
+     * @hash   772542223
      */
     MCAPI static void logSubChunkEvent(class SubChunkPos const &, char const *, bool);
 

@@ -39,52 +39,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   -533859381
+     * @hash   179833035
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
      * @vftbl  2
      * @symbol ?getCraftingSize@BannerDuplicateRecipe@@UEBAHXZ
-     * @hash   -1242248281
+     * @hash   -1148977465
      */
     virtual int getCraftingSize() const;
     /**
      * @vftbl  3
      * @symbol ?getIngredient@BannerDuplicateRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   1817585192
+     * @hash   -1763689688
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   240262548
+     * @hash   322770164
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@BannerDuplicateRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   -1353112599
+     * @hash   -639420183
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@BannerDuplicateRecipe@@UEBAHXZ
-     * @hash   -143949041
+     * @hash   35304367
      */
     virtual int size() const;
     /**
      * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   1571217253
+     * @hash   -2009949995
      */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -2104830262
+     * @hash   -1391030214
      */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?ID@BannerDuplicateRecipe@@2VUUID@mce@@B
-     * @hash   866923199
+     * @hash   1500429775
      */
     MCAPI static class mce::UUID const ID;
 

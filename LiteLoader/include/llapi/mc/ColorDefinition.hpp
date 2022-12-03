@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?setColorChoice@ColorDefinition@@QEAAXAEBH@Z
-     * @hash   841282875
+     * @hash   898174075
      */
     MCAPI void setColorChoice(int const &);
     /**
      * @symbol ?buildSchema@ColorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UColorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1462251962
+     * @hash   1544713450
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>> &);
 

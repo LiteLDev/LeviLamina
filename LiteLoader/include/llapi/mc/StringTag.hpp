@@ -47,53 +47,53 @@ public:
     /**
      * @vftbl  2
      * @symbol ?write@StringTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   -1656484694
+     * @hash   -1670707494
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@StringTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   -939185671
+     * @hash   -953408471
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@StringTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -985874627
+     * @hash   -1000097427
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@StringTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   -798173854
+     * @hash   -812396654
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@StringTag@@UEBA_NAEBVTag@@@Z
-     * @hash   -1589990065
+     * @hash   -1604212865
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@StringTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   -1542865713
+     * @hash   -1557088513
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@StringTag@@UEBA_KXZ
-     * @hash   -2043765803
+     * @hash   -2057988603
      */
     virtual unsigned __int64 hash() const;
     /**
      * @symbol ??0StringTag@@QEAA@XZ
-     * @hash   1249656325
+     * @hash   1235433525
      */
     MCAPI StringTag();
     /**
      * @symbol ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   175243198
+     * @hash   161020398
      */
     MCAPI StringTag(std::string);
 

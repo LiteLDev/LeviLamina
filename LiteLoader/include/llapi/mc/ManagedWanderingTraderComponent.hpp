@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?initFromDefinition@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -340552126
+     * @hash   -251586590
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1326738270
+     * @hash   -809797150
      */
     MCAPI void reloadComponent(class Actor &);
 

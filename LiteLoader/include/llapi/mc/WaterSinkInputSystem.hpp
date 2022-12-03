@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createWaterSinkInputSystem@WaterSinkInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   663496228
+     * @hash   634235700
      */
     MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createResetActionStopSystem@ResetActionStopSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1474069008
+     * @hash   -1448667856
      */
     MCAPI static struct TickingSystemWithInfo createResetActionStopSystem();
 

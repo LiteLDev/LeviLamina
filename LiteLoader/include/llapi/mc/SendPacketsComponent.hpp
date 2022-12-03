@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4SendPacketsComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -235581784
+     * @hash   -96413608
      */
     MCAPI struct SendPacketsComponent & operator=(struct SendPacketsComponent &&);
     /**
      * @symbol ??1SendPacketsComponent@@QEAA@XZ
-     * @hash   -1582395628
+     * @hash   -1490693164
      */
     MCAPI ~SendPacketsComponent();
 

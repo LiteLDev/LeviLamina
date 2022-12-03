@@ -39,20 +39,20 @@ public:
     /**
      * @vftbl  1
      * @symbol ?placeTrunk@MegaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
-     * @hash   -330685376
+     * @hash   424814384
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
      * @vftbl  2
      * @symbol ?getTreeHeight@MegaTreeTrunk@@UEBAHAEAVRandom@@@Z
-     * @hash   1682139917
+     * @hash   -1857327619
      */
     virtual int getTreeHeight(class Random &) const;
 
 //private:
     /**
      * @symbol ?_prepareSpawn@MegaTreeTrunk@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBUTreeParams@TreeHelper@@@Z
-     * @hash   -2143278263
+     * @hash   -1387778503
      */
     MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
 

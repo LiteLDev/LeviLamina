@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0ChatEvent@@QEAA@AEBU0@@Z
-     * @hash   -1392249579
+     * @hash   -1326178907
      */
     MCAPI ChatEvent(struct ChatEvent const &);
     /**
      * @symbol ??0ChatEvent@@QEAA@$$QEAU0@@Z
-     * @hash   -822404645
+     * @hash   -642121045
      */
     MCAPI ChatEvent(struct ChatEvent &&);
     /**
      * @symbol ??1ChatEvent@@QEAA@XZ
-     * @hash   450921326
+     * @hash   631358686
      */
     MCAPI ~ChatEvent();
 

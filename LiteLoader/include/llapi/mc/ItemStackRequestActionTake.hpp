@@ -37,22 +37,22 @@ public:
     virtual ~ItemStackRequestActionTake();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   2096281682
+     * @hash   -2019447582
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1367561133
+     * @hash   -1274290317
      */
     virtual void __unk_vfn_3();
     /**
      * @symbol ??0ItemStackRequestActionTake@@QEAA@XZ
-     * @hash   -747335933
+     * @hash   -665351101
      */
     MCAPI ItemStackRequestActionTake();
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0GrowsCropDefinition@@QEAA@XZ
-     * @hash   -930097201
+     * @hash   -1006008513
      */
     MCAPI GrowsCropDefinition();
     /**
      * @symbol ?initialize@GrowsCropDefinition@@QEAAXAEAVEntityContext@@AEAVGrowsCropComponent@@@Z
-     * @hash   827230309
+     * @hash   756039429
      */
     MCAPI void initialize(class EntityContext &, class GrowsCropComponent &);
     /**
      * @symbol ?buildSchema@GrowsCropDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGrowsCropDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -974711320
+     * @hash   -1050622632
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>> &);
 

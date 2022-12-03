@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  7
      * @symbol ?canConsumerPower@ConsumerComponent@@UEBA_NXZ
-     * @hash   824552832
+     * @hash   921052608
      */
     virtual bool canConsumerPower() const;
     /**
      * @vftbl  11
      * @symbol ?addSource@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1197340779
+     * @hash   -653522411
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   1989287255
+     * @hash   -1761861673
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -335513951
+     * @hash   208304417
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
      * @symbol ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
-     * @hash   -1688160293
+     * @hash   -957631157
      */
     virtual bool isSecondaryPowered() const;
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@ConsumerComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   765931807
+     * @hash   955379503
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0ConsumerComponent@@QEAA@XZ
-     * @hash   1122284323
+     * @hash   1666102691
      */
     MCAPI ConsumerComponent();
 

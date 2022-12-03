@@ -37,21 +37,26 @@ public:
     /**
      * @vftbl  1
      * @symbol ?clientTick@BodyControl@@UEAAXAEAVMob@@@Z
-     * @hash   2116067544
+     * @hash   2132704376
      */
     virtual void clientTick(class Mob &);
     /**
      * @symbol ??0BodyControl@@QEAA@XZ
-     * @hash   1348873143
+     * @hash   1365371591
      */
     MCAPI BodyControl();
 
 //private:
+    /**
+     * @symbol ?_allowUpdateBodyRotation@BodyControl@@AEBA_NAEBVMob@@@Z
+     * @hash   1876403930
+     */
+    MCAPI bool _allowUpdateBodyRotation(class Mob const &) const;
 
 private:
     /**
      * @symbol ?MAX_CLAMP_ANGLE@BodyControl@@0MB
-     * @hash   1717284524
+     * @hash   -1812019476
      */
     MCAPI static float const MAX_CLAMP_ANGLE;
 

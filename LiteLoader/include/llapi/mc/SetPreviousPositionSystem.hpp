@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@SetPreviousPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   903895084
+     * @hash   894531100
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doSetPreviousPositionSystem@SetPreviousPositionSystem@@CAXAEBVStrictEntityContext@@AEAUStateVectorComponent@@@Z
-     * @hash   585911712
+     * @hash   576547728
      */
     MCAPI static void _doSetPreviousPositionSystem(class StrictEntityContext const &, struct StateVectorComponent &);
 

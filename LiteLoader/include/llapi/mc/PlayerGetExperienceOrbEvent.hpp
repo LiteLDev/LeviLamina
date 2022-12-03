@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerGetExperienceOrbEvent@@QEAA@XZ
-     * @hash   -2119253738
+     * @hash   -2029304138
      */
     MCAPI ~PlayerGetExperienceOrbEvent();
 

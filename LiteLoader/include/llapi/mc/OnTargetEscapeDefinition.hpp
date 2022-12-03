@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@OnTargetEscapeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnTargetEscapeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1245559782
+     * @hash   -1163113670
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnTargetEscapeDefinition>> &);
 

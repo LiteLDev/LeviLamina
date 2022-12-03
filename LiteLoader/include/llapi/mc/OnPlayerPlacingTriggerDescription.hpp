@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnPlayerPlacingTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -773725903
+     * @hash   -199309295
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@OnPlayerPlacingTriggerDescription@@UEBA_NXZ
-     * @hash   -233465703
+     * @hash   -136965927
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@OnPlayerPlacingTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   2099452251
+     * @hash   -1722149509
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@OnPlayerPlacingTriggerDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1367029479
+     * @hash   1840379639
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@OnPlayerPlacingTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1487242531
+     * @hash   296335029
      */
     MCAPI static std::string const NameID;
 

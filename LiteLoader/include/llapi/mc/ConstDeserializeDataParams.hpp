@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ConstDeserializeDataParams@@QEAA@XZ
-     * @hash   -1740437098
+     * @hash   -1760964058
      */
     MCAPI ~ConstDeserializeDataParams();
 

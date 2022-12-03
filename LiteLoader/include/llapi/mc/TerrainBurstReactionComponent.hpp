@@ -37,18 +37,18 @@ public:
     virtual ~TerrainBurstReactionComponent();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_onEnd@TerrainBurstReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     * @hash   2119639141
+     * @hash   -1628188571
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

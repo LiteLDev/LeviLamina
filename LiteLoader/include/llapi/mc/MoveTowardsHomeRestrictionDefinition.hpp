@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0MoveTowardsHomeRestrictionDefinition@@QEAA@XZ
-     * @hash   -719815727
+     * @hash   -558613743
      */
     MCAPI MoveTowardsHomeRestrictionDefinition();
     /**
      * @symbol ?buildSchema@MoveTowardsHomeRestrictionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveTowardsHomeRestrictionDefinition@@@JsonUtil@@@3@@Z
-     * @hash   1999859711
+     * @hash   -2133797969
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsHomeRestrictionDefinition>> &);
 

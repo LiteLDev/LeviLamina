@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0JumpInfo@@QEAA@MMHH@Z
-     * @hash   569542336
+     * @hash   623850368
      */
     MCAPI JumpInfo(float, float, int, int);
     /**
      * @symbol ?getAnimDuration@JumpInfo@@QEBAHXZ
-     * @hash   1451967302
+     * @hash   1623225190
      */
     MCAPI int getAnimDuration() const;
     /**
      * @symbol ?getDistanceScale@JumpInfo@@QEBAMXZ
-     * @hash   -500137226
+     * @hash   -321329722
      */
     MCAPI float getDistanceScale() const;
     /**
      * @symbol ?getHeight@JumpInfo@@QEBAMXZ
-     * @hash   1979256740
+     * @hash   -2136903052
      */
     MCAPI float getHeight() const;
     /**
      * @symbol ?getJumpDelay@JumpInfo@@QEBAHXZ
-     * @hash   2035154488
+     * @hash   -2088554920
      */
     MCAPI int getJumpDelay() const;
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0SlimeKeepOnJumpingDefinition@@QEAA@XZ
-     * @hash   448002519
+     * @hash   609588903
      */
     MCAPI SlimeKeepOnJumpingDefinition();
     /**
      * @symbol ?initialize@SlimeKeepOnJumpingDefinition@@QEAAXAEAVEntityContext@@AEAVSlimeKeepOnJumpingGoal@@@Z
-     * @hash   693032471
+     * @hash   854126823
      */
     MCAPI void initialize(class EntityContext &, class SlimeKeepOnJumpingGoal &);
     /**
      * @symbol ?buildSchema@SlimeKeepOnJumpingDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeKeepOnJumpingDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -2032041417
+     * @hash   -1870455033
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition>> &);
 

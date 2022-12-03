@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BodyControlComponent@@QEAA@XZ
-     * @hash   -1158064212
+     * @hash   -1068637396
      */
     MCAPI ~BodyControlComponent();
 

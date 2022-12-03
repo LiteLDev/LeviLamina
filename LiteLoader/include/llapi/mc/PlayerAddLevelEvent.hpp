@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerAddLevelEvent@@QEAA@XZ
-     * @hash   962769426
+     * @hash   1052719026
      */
     MCAPI ~PlayerAddLevelEvent();
 

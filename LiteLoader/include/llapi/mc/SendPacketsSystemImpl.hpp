@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_sendPacketsSystem@SendPacketsSystemImpl@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@$$CBVActorOwnerComponent@@USendPacketsComponent@@@@@Z
-     * @hash   -1034906677
+     * @hash   -1029094549
      */
     MCAPI static void _sendPacketsSystem(class ViewedEntityContextT<class StrictEntityContext, class ActorOwnerComponent const, struct SendPacketsComponent>);
 

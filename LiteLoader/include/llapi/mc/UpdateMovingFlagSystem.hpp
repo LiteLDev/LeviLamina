@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createUpdateMovingFlagSystem@UpdateMovingFlagSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   680622420
+     * @hash   660433732
      */
     MCAPI static struct TickingSystemWithInfo createUpdateMovingFlagSystem();
 

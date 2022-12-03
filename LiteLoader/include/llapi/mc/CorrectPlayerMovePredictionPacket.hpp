@@ -39,25 +39,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CorrectPlayerMovePredictionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   976168363
+     * @hash   900610699
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CorrectPlayerMovePredictionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -662814632
+     * @hash   -738372296
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CorrectPlayerMovePredictionPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -425766897
+     * @hash   -501324561
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CorrectPlayerMovePredictionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1957117761
+     * @hash   -2032675425
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 

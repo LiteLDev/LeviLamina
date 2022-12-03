@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1DrinkPotionData@@QEAA@XZ
-     * @hash   1951207857
+     * @hash   1893148081
      */
     MCAPI ~DrinkPotionData();
 

@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ??0ActorOwnerComponent@@QEAA@V?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@@Z
-     * @hash   -888885742
+     * @hash   -1289261406
      */
     MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
     /**
      * @symbol ??0ActorOwnerComponent@@QEAA@$$QEAV0@@Z
-     * @hash   1382007783
+     * @hash   981632119
      */
     MCAPI ActorOwnerComponent(class ActorOwnerComponent &&);
     /**
      * @symbol ?getActor@ActorOwnerComponent@@QEBAAEAVActor@@XZ
-     * @hash   1917339240
+     * @hash   2042176984
      */
     MCAPI class Actor & getActor() const;
     /**
      * @symbol ?getActor@ActorOwnerComponent@@QEAAAEAVActor@@XZ
-     * @hash   -1867123670
+     * @hash   -1742285926
      */
     MCAPI class Actor & getActor();
     /**
      * @symbol ??4ActorOwnerComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1607528530
+     * @hash   1207152866
      */
     MCAPI class ActorOwnerComponent & operator=(class ActorOwnerComponent &&);
     /**
      * @symbol ??1ActorOwnerComponent@@QEAA@XZ
-     * @hash   1143165995
+     * @hash   1081446731
      */
     MCAPI ~ActorOwnerComponent();
 

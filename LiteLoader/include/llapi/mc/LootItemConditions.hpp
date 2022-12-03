@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?allApply@LootItemConditions@@SA_NAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1367750894
+     * @hash   1836626638
      */
     MCAPI static bool allApply(std::vector<std::unique_ptr<class LootItemCondition>> const &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@LootItemConditions@@SA?AV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@VValue@Json@@@Z
-     * @hash   40956108
+     * @hash   509831852
      */
     MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value);
 

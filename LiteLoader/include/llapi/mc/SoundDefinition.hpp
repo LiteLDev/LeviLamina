@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SoundDefinition@@QEAA@XZ
-     * @hash   1087191134
+     * @hash   1011802606
      */
     MCAPI ~SoundDefinition();
 

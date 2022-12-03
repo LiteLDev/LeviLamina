@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?applies@LootItemRandomChanceWithLootingCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -34567866
+     * @hash   439489590
      */
     virtual bool applies(class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@LootItemRandomChanceWithLootingCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-     * @hash   -204765969
+     * @hash   269291487
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

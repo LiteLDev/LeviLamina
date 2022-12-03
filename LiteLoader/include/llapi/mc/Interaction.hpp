@@ -30,57 +30,57 @@ public:
 public:
     /**
      * @symbol ??0Interaction@@QEAA@XZ
-     * @hash   -143969874
+     * @hash   902798
      */
     MCAPI Interaction();
     /**
      * @symbol ??0Interaction@@QEAA@AEBU0@@Z
-     * @hash   -1659257291
+     * @hash   -1514384619
      */
     MCAPI Interaction(struct Interaction const &);
     /**
      * @symbol ??0Interaction@@QEAA@$$QEAU0@@Z
-     * @hash   -573865765
+     * @hash   -428993093
      */
     MCAPI Interaction(struct Interaction &&);
     /**
      * @symbol ?addActorDefinitionIdentifierByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   462694122
+     * @hash   610026954
      */
     MCAPI void addActorDefinitionIdentifierByName(std::string const &);
     /**
      * @symbol ?addLevelSoundEventByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1915545182
+     * @hash   2062878014
      */
     MCAPI void addLevelSoundEventByName(std::string const &);
     /**
      * @symbol ?addVibrationByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1884775864
+     * @hash   2032108696
      */
     MCAPI void addVibrationByName(std::string const &);
     /**
      * @symbol ?setCooldown@Interaction@@QEAAXAEBM@Z
-     * @hash   1255426371
+     * @hash   1402759203
      */
     MCAPI void setCooldown(float const &);
     /**
      * @symbol ?setCooldownAfterBeingAttacked@Interaction@@QEAAXAEBM@Z
-     * @hash   1972585699
+     * @hash   2119918531
      */
     MCAPI void setCooldownAfterBeingAttacked(float const &);
     /**
      * @symbol ?setParticleType@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   178211432
+     * @hash   325544264
      */
     MCAPI void setParticleType(std::string const &);
     /**
      * @symbol ?setTransformItem@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1655784204
+     * @hash   -1508451372
      */
     MCAPI void setTransformItem(std::string const &);
     /**
      * @symbol ??1Interaction@@QEAA@XZ
-     * @hash   -341597538
+     * @hash   -196724866
      */
     MCAPI ~Interaction();
 

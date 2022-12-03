@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0PropertyBag@@QEAA@XZ
-     * @hash   540745967
+     * @hash   1052582255
      */
     MCAPI PropertyBag();
     /**
      * @symbol ??0PropertyBag@@QEAA@AEBVValue@Json@@@Z
-     * @hash   -1319376044
+     * @hash   -807539756
      */
     MCAPI PropertyBag(class Json::Value const &);
     /**
      * @symbol ?toJsonValue@PropertyBag@@QEBAAEBVValue@Json@@XZ
-     * @hash   270357460
+     * @hash   363628276
      */
     MCAPI class Json::Value const & toJsonValue() const;
     /**
      * @symbol ?toString@PropertyBag@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -761541752
+     * @hash   -249705464
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?EMPTY@PropertyBag@@2V1@A
-     * @hash   357411693
+     * @hash   917159597
      */
     MCAPI static class PropertyBag EMPTY;
 

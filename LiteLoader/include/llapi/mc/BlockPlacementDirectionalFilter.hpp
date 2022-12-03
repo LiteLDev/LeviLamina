@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?fromStringVector@BlockPlacementDirectionalFilter@@SAXAEAU1@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -159513257
+     * @hash   411043975
      */
     MCAPI static void fromStringVector(struct BlockPlacementDirectionalFilter &, std::vector<std::string>);
 

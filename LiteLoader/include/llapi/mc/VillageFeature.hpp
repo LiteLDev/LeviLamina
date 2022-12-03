@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  2
      * @symbol ?shouldPostProcessMobs@VillageFeature@@UEBA_NXZ
-     * @hash   397327245
+     * @hash   493827021
      */
     virtual bool shouldPostProcessMobs() const;
     /**
      * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@VillageFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-     * @hash   199277741
+     * @hash   371227549
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
      * @vftbl  5
      * @symbol ?isFeatureChunk@VillageFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-     * @hash   1007234542
+     * @hash   1179184350
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
      * @vftbl  6
      * @symbol ?createStructureStart@VillageFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   29186131
+     * @hash   201135939
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ??0VillageFeature@@QEAA@IHH@Z
-     * @hash   -1509833921
+     * @hash   -1337884113
      */
     MCAPI VillageFeature(unsigned int, int, int);
 

@@ -32,80 +32,80 @@ public:
     /**
      * @vftbl  0
      * @symbol ?clone@InternalItemDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     * @hash   -2036982581
+     * @hash   -1267413781
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
      * @vftbl  1
-     * @hash   1533808273
+     * @hash   -1993681359
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?sameItem@InternalItemDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
-     * @hash   -836571017
+     * @hash   -69093353
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
      * @vftbl  3
      * @symbol ?getFullName@InternalItemDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   938860665
+     * @hash   1707952809
      */
     virtual std::string const & getFullName() const;
     /**
      * @vftbl  4
      * @symbol ?getItem@InternalItemDescriptor@@UEBA?AUItemEntry@ItemDescriptor@@XZ
-     * @hash   469790783
+     * @hash   1238882927
      */
     virtual struct ItemDescriptor::ItemEntry getItem() const;
     /**
      * @vftbl  5
-     * @hash   1527461829
+     * @hash   -1998105803
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?toMap@InternalItemDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     * @hash   1741975185
+     * @hash   -1785545199
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
      * @vftbl  7
      * @symbol ?save@InternalItemDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     * @hash   1230246501
+     * @hash   1997708789
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
      * @vftbl  8
      * @symbol ?serialize@InternalItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -2085644374
+     * @hash   -1318182086
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @vftbl  9
-     * @hash   1542795545
+     * @hash   -1984709463
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
-     * @hash   -317783664
+     * @hash   -221283888
      */
     virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  11
-     * @hash   -338384428
+     * @hash   -241884652
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
      * @symbol ?getHash@InternalItemDescriptor@@UEBA_KXZ
-     * @hash   -1285068347
+     * @hash   -515976203
      */
     virtual unsigned __int64 getHash() const;
     /**
      * @symbol ?deserialize@InternalItemDescriptor@@SA?AV?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1816981145
+     * @hash   -1047412345
      */
     MCAPI static std::unique_ptr<struct InternalItemDescriptor> deserialize(class ReadOnlyBinaryStream &);
 

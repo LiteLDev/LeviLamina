@@ -33,70 +33,70 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
     /**
      * @symbol ?getDeliveryMode@SculkCatalystBlockActor@@UEBA?AW4DeliveryMode@GameEventListener@@XZ
-     * @hash   -1254665117
+     * @hash   -1152752989
      */
     MCVAPI enum class GameEventListener::DeliveryMode getDeliveryMode() const;
     /**
      * @symbol ?getPositionSource@SculkCatalystBlockActor@@UEBAAEBVPositionSource@GameEvents@@XZ
-     * @hash   510781323
+     * @hash   635803579
      */
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
     /**
      * @symbol ?getRange@SculkCatalystBlockActor@@UEBAIXZ
-     * @hash   1243480440
+     * @hash   1201657720
      */
     MCVAPI unsigned int getRange() const;
     /**
      * @symbol ?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
-     * @hash   1883115884
+     * @hash   -1850150756
      */
     MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     /**
      * @symbol ?load@SculkCatalystBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   987314796
+     * @hash   1549015452
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onRemoved@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   250206609
+     * @hash   811907265
      */
     MCVAPI void onRemoved(class BlockSource &);
     /**
      * @symbol ?save@SculkCatalystBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1991923435
+     * @hash   -1741343205
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?tick@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   218588869
+     * @hash   780289525
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0SculkCatalystBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -939548328
+     * @hash   -377847672
      */
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
     /**
      * @symbol ?getSculkSpreader@SculkCatalystBlockActor@@QEAAAEAVSculkSpreader@@XZ
-     * @hash   -1368781990
+     * @hash   -1266454710
      */
     MCAPI class SculkSpreader & getSculkSpreader();
     /**
      * @symbol ?TypeId@SculkCatalystBlockActor@@2W4BlockActorType@@B
-     * @hash   -848597255
+     * @hash   -65190055
      */
     MCAPI static enum class BlockActorType const TypeId;
     /**
      * @symbol ?TypeString@SculkCatalystBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1286875653
+     * @hash   490374683
      */
     MCAPI static std::string const TypeString;
 
 //private:
     /**
      * @symbol ?_tryConsumeOnDeathExperience@SculkCatalystBlockActor@@AEAAXAEAVLevel@@AEAVActor@@@Z
-     * @hash   130618165
+     * @hash   692318821
      */
     MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
 

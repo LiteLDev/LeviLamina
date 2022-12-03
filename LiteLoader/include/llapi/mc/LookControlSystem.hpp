@@ -37,13 +37,13 @@ public:
     virtual ~LookControlSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@LookControlSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1871533555
+     * @hash   -1810875235
      */
     virtual void tick(class EntityRegistry &);
 

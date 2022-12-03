@@ -39,97 +39,97 @@ public:
     /**
      * @vftbl  1
      * @symbol ?startDestroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
-     * @hash   -154255718
+     * @hash   -128485542
      */
     virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
     /**
      * @vftbl  2
      * @symbol ?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z
-     * @hash   1418653854
+     * @hash   1444424030
      */
     virtual bool destroyBlock(class BlockPos const &, unsigned char);
     /**
      * @vftbl  5
      * @symbol ?startBuildBlock@SurvivalMode@@UEAAXAEBVBlockPos@@E@Z
-     * @hash   1989038794
+     * @hash   2014808970
      */
     virtual void startBuildBlock(class BlockPos const &, unsigned char);
     /**
      * @vftbl  6
      * @symbol ?buildBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E_N@Z
-     * @hash   1417047874
+     * @hash   1442818050
      */
     virtual bool buildBlock(class BlockPos const &, unsigned char, bool);
     /**
      * @vftbl  9
      * @symbol ?tick@SurvivalMode@@UEAAXXZ
-     * @hash   1847492579
+     * @hash   1873262755
      */
     virtual void tick();
     /**
      * @vftbl  11
      * @symbol ?useItem@SurvivalMode@@UEAA_NAEAVItemStack@@@Z
-     * @hash   -57140603
+     * @hash   -31339675
      */
     virtual bool useItem(class ItemStack &);
     /**
      * @vftbl  12
      * @symbol ?useItemOn@SurvivalMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
-     * @hash   -447054529
+     * @hash   -421253601
      */
     virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
     /**
      * @vftbl  13
      * @symbol ?interact@SurvivalMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
-     * @hash   2001674105
+     * @hash   2027444281
      */
     virtual bool interact(class Actor &, class Vec3 const &);
     /**
      * @vftbl  14
      * @symbol ?attack@SurvivalMode@@UEAA_NAEAVActor@@@Z
-     * @hash   1497370311
+     * @hash   1523140487
      */
     virtual bool attack(class Actor &);
     /**
      * @vftbl  16
      * @symbol ?setTrialMode@SurvivalMode@@UEAAX_N@Z
-     * @hash   1028593679
+     * @hash   1207800959
      */
     virtual void setTrialMode(bool);
     /**
      * @vftbl  17
      * @symbol ?isInTrialMode@SurvivalMode@@UEAA_NXZ
-     * @hash   1807514626
+     * @hash   1986768034
      */
     virtual bool isInTrialMode();
     /**
      * @vftbl  18
      * @symbol ?registerUpsellScreenCallback@SurvivalMode@@UEAAXV?$function@$$A6AX_N@Z@std@@@Z
-     * @hash   -890658904
+     * @hash   -864888728
      */
     virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
     /**
      * @symbol ??0SurvivalMode@@QEAA@AEAVPlayer@@@Z
-     * @hash   1923352354
+     * @hash   1949107154
      */
     MCAPI SurvivalMode(class Player &);
 
 //private:
     /**
      * @symbol ?_messagePlayers@SurvivalMode@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1452212671
+     * @hash   -1426457871
      */
     MCAPI void _messagePlayers(std::string);
     /**
      * @symbol ?_showTrialReminder@SurvivalMode@@AEAAX_N@Z
-     * @hash   -1553089283
+     * @hash   -1527334483
      */
     MCAPI void _showTrialReminder(bool);
 
 private:
     /**
      * @symbol ?mTrialHasEnded@SurvivalMode@@0_NA
-     * @hash   229057388
+     * @hash   1065127388
      */
     MCAPI static bool mTrialHasEnded;
 

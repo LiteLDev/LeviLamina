@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0StructurePoolBlockTagRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockTagPredicate@@U?$default_delete@VIStructurePoolBlockTagPredicate@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@1@Z
-     * @hash   1160377320
+     * @hash   1916507496
      */
     MCAPI StructurePoolBlockTagRule(std::unique_ptr<class IStructurePoolBlockTagPredicate> &&, std::string, std::string);
     /**
      * @symbol ?processRule@StructurePoolBlockTagRule@@QEBA_NAEBVBlock@@AEAVCompoundTag@@@Z
-     * @hash   -1757325834
+     * @hash   -1001195658
      */
     MCAPI bool processRule(class Block const &, class CompoundTag &) const;
 

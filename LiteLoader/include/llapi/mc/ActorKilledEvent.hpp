@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorKilledEvent@@QEAA@XZ
-     * @hash   -904635166
+     * @hash   -814685566
      */
     MCAPI ~ActorKilledEvent();
 

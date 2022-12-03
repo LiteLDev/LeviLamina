@@ -7,7 +7,8 @@
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
 ](https://github.com/LiteLDev/LiteLoader/releases/latest)  
-QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
+QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group
+2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### English | [简体中文](README_zh-cn.md)
 
@@ -16,9 +17,13 @@ QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [85051
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
 
-`LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
+`LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development
+infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and
+functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn,
+and the development approach is flexible.
 
-Writing plugins in **C++, Golang, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
+Writing plugins in **C++, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and
+customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -83,33 +88,40 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages              | `C++`, `Go`, `JavaScript(NodeJs)`, `Lua`, `.NET` |
-| -------------------------------- | ------------------------------------------------ |
-| **Upcoming supported languages** | `Python`, `Ruby`, `TypeScript`                   |
+| Supported languages              | `C++`, `JavaScript(NodeJs)`, `Lua`, `.NET` |
+| -------------------------------- |--------------------------------------------|
+| **Upcoming supported languages** | `Python`, `Ruby`, `TypeScript`, `Go`        |
 
 - 📕 Smooth development experience with great compatibility
-  - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
-  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system...... Many tools to help you write every line of code more efficiently
-  - When a version is updated, the API is guaranteed to be largely **backward compatible** and the plugin requires little or no code changes with the version update. With the `LiteLoader` series' unique symbol lookup technology, cross-version **auto-adaptation** is no longer a dream
+    - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving
+      features
+    - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading
+      system...... Many tools to help you write every line of code more efficiently
+    - When a version is updated, the API is guaranteed to be largely **backward compatible** and the plugin requires
+      little or no code changes with the version update. With the `LiteLoader` series' unique symbol lookup technology,
+      cross-version **auto-adaptation** is no longer a dream
 
 - 📋 Well documented and explained in detail
-  - Welcome to 👉[LiteLoader documentation](https://docs.litebds.com/)👈 to see more
+    - Welcome to 👉[LiteLoader documentation](https://docs.litebds.com/)👈 to see more
 
 - 🎈 Numerous well-packaged interfaces
-  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems......
-  - Up to **50+** game events to listen to, no matter what happens,  the first to respond
+    - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems......
+    - Up to **50+** game events to listen to, no matter what happens, the first to respond
 
 - 🛡 Secure, stable and versatile
-  - Fixes a number of vulnerabilities in BDS to ensure the stability and security of your server
-  - Extensive use of the seh exception protection framework to minimise the risk of server crashes
-  - Supports running on Linux, MacOS platforms via **Wine**, bringing a free plugin experience to other platforms as well: write once, **share on multiple platforms**.
+    - Fixes a number of vulnerabilities in BDS to ensure the stability and security of your server
+    - Extensive use of the seh exception protection framework to minimise the risk of server crashes
+    - Supports running on Linux, MacOS platforms via **Wine**, bringing a free plugin experience to other platforms as
+      well: write once, **share on multiple platforms**.
 
 - 🏆 Sound app ecosystem
-  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to official forum](https://forum.litebds.com/)👈 to find and download your favorite LL plugins
+    - A large number of existing plugins, mature publishing platform, instantly
+      👉[Go to official forum](https://www.litebds.com/)👈 to find and download your favorite LL plugins
 
 - 🏃 Open Source & Community Building
-  - The project is licensed under the `LGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
-  - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!
+    - The project is licensed under the `LGPL-3.0` open source license and will **never** be charged for or released as
+      a commercial version.
+    - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!
 
 ------
 
@@ -117,8 +129,11 @@ mc.listen("onServerStarted", () => {
 
 ### For Windows
 
-1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
-2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
+1. Download the latest <code>LiteLoader-<i>version</i>.zip</code>
+   from [Releases](https://github.com/LiteLDev/LiteLoader/releases)
+   or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
+2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the
+   decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.
    Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)
 4. When the console output `Press any key to continue . . .` , press any key to close the window
@@ -151,7 +166,7 @@ The first boot takes a little while to download the Bedrock Dedicated Server and
 Start server: `docker container start llbds -a`  
 Force stop server(not recommended): `docker container stop llbds`  
 Enter console: `docker attach llbds`  
-Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.  
+Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
@@ -161,7 +176,7 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 
 `LiteLoader` main plugin distribution channels.
 
-- [Official Forum](https://forum.litebds.com/)
+- [Official Forum](https://www.litebds.com/)
 - [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
 
 ### Plugin installation
@@ -170,7 +185,8 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 2. Place all the obtained contents directly into the `plugins` directory
 3. Run `bedrock_server_mod.exe` to start the service
 
-For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈 to view
+For more **installation and usage guides**, come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)
+👈 to view
 
 ------
 
@@ -178,13 +194,15 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 
 ### Developing plugins with C++
 
-1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
+1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project
+   templates, or create your own project repository based on the templates and download the code locally
 2. Open the Template.sln project file
 3. Start writing the plugin code in Plugin.cpp
 4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
 5. Copy the plugin to the plugins directory for testing
 
-For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈  
+For plugins development examples and guidance, please come to
+👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈  
 If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
@@ -193,7 +211,8 @@ If you have a revision request or need to add an API, please contact the author 
 2. Write the code
 3. Copy the plugin to the plugins directory for testing
 
-Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.
+Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Development/)👈 for detailed **API
+documentation** and **plugin development tutorial**.
 If you have a revision request or need to add an API, please feel free to contact the author or post an Issue
 
 ### Example Plugins
@@ -225,20 +244,26 @@ View related installation and usage instructions
 
 > Go to [`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions) to get the latest build artifact
 >
-> Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
+> Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project
+> yourself by following these instructions
 
-1. Install the latest version of **Microsoft Visual Studio** and the standard C++ desktop development suite (or you can just install the full **msbuild** compiler suite and configure the compilation environment)
+1. Install the latest version of **Microsoft Visual Studio** and the standard C++ desktop development suite (or you can
+   just install the full **msbuild** compiler suite and configure the compilation environment)
 2. Install the latest **Windows SDK**.
 3. Use your familiar IDE (VS / VSCode / CLion, etc.) to open the project directory and compile the cmake project.
-4. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.
-5. After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
-6. If you need extra debugging symbols of LL, execute another `PackReleaseWithPDB.cmd` script, and the `RELEASE` folder will be filled with all necessary debugging symbols for easy debugging
+4. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the
+   Scripts folder.
+5. After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader`
+   environment and all dependencies.
+6. If you need extra debugging symbols of LL, execute another `PackReleaseWithPDB.cmd` script, and the `RELEASE` folder
+   will be filled with all necessary debugging symbols for easy debugging
 
 <br/>
 
 ## 🎬 Participate in contribution
 
-It's highly appreciated if you're interested in developing this project and follow the method to contribute to the LiteLoaderBDS project
+It's highly appreciated if you're interested in developing this project and follow the method to contribute to the
+LiteLoaderBDS project
 
 1. Contribute code, maintain projects and symbols, add new APIs and events and infrastructure
 2. Help us modify and optimize the development documentation and usage documentation
@@ -247,7 +272,9 @@ It's highly appreciated if you're interested in developing this project and foll
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
-If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**
+If you are interested in contributing to LiteLoaderBDS, feel free to come to
+👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Maintenance/)👈 to view **Project Maintenance and Support
+Documentation**
 
 ------
 
@@ -288,7 +315,8 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 ### Extra Restrictions & Exceptions
 
 If you provide a server hosting service,you can use this framework for free, but you SHOULD NOT make PRIVATE changes to
-this framework or as a selling point. If you fixed or tweaked the code, please pull request, instead of making it private
+this framework or as a selling point. If you fixed or tweaked the code, please pull request, instead of making it
+private
 or using it for commercial propose.
 > Do not do evil.
 

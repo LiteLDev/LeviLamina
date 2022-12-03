@@ -30,37 +30,37 @@ public:
 public:
     /**
      * @symbol ??0BlockComponentGroupDescription@@QEAA@XZ
-     * @hash   2042735993
+     * @hash   -1541506455
      */
     MCAPI BlockComponentGroupDescription();
     /**
      * @symbol ??0BlockComponentGroupDescription@@QEAA@AEBU0@@Z
-     * @hash   622830671
+     * @hash   1333555519
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     /**
      * @symbol ??0BlockComponentGroupDescription@@QEAA@$$QEAU0@@Z
-     * @hash   -305561129
+     * @hash   405163719
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     /**
      * @symbol ?foreachDescription@BlockComponentGroupDescription@@QEBAXV?$function@$$A6AXAEBUBlockComponentDescription@@@Z@std@@@Z
-     * @hash   397392781
+     * @hash   1164163149
      */
     MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const &)>) const;
     /**
      * @symbol ?getComponentDescription@BlockComponentGroupDescription@@QEBAPEAUBlockComponentDescription@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1037525244
+     * @hash   -467429292
      */
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
     /**
      * @symbol ??4BlockComponentGroupDescription@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -279378978
+     * @hash   431284366
      */
     MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription &&);
     /**
      * @symbol ??1BlockComponentGroupDescription@@QEAA@XZ
-     * @hash   221375367
+     * @hash   932054087
      */
     MCAPI ~BlockComponentGroupDescription();
 

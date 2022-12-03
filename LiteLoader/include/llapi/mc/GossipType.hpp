@@ -31,47 +31,47 @@ public:
 public:
     /**
      * @symbol ??0GossipType@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHH@Z
-     * @hash   325326983
+     * @hash   407188807
      */
     MCAPI GossipType(std::string const &, int, int, int, int, int);
     /**
      * @symbol ??1GossipType@@QEAA@XZ
-     * @hash   -1400855677
+     * @hash   -1313181725
      */
     MCAPI ~GossipType();
     /**
      * @symbol ?MAJOR_NEGATIVE@GossipType@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   444156239
+     * @hash   1304397311
      */
     MCAPI static std::string const MAJOR_NEGATIVE;
     /**
      * @symbol ?MAJOR_POSITIVE@GossipType@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1723165591
+     * @hash   -1711560633
      */
     MCAPI static std::string const MAJOR_POSITIVE;
     /**
      * @symbol ?MINOR_NEGATIVE@GossipType@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   925297463
+     * @hash   1785538535
      */
     MCAPI static std::string const MINOR_NEGATIVE;
     /**
      * @symbol ?MINOR_POSITIVE@GossipType@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2090660481
+     * @hash   -1230419409
      */
     MCAPI static std::string const MINOR_POSITIVE;
     /**
      * @symbol ?TRADING@GossipType@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -656732387
+     * @hash   203508685
      */
     MCAPI static std::string const TRADING;
     /**
      * @symbol ?UNRECOGNIZED@GossipType@@2V1@B
-     * @hash   363115241
+     * @hash   516191009
      */
     MCAPI static class GossipType const UNRECOGNIZED;
     /**
      * @symbol ?tryCreateFromJSON@GossipType@@SA?AV1@AEBVValue@Json@@@Z
-     * @hash   1439890471
+     * @hash   1521752295
      */
     MCAPI static class GossipType tryCreateFromJSON(class Json::Value const &);
 

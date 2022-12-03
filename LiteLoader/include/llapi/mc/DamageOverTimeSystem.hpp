@@ -37,13 +37,13 @@ public:
     virtual ~DamageOverTimeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@DamageOverTimeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   384660671
+     * @hash   493968655
      */
     virtual void tick(class EntityRegistry &);
 

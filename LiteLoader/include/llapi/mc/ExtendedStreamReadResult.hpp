@@ -29,13 +29,8 @@ public:
 
 public:
     /**
-     * @symbol ??0ExtendedStreamReadResult@@QEAA@W4StreamReadResult@@@Z
-     * @hash   -2042310971
-     */
-    MCAPI ExtendedStreamReadResult(enum StreamReadResult);
-    /**
      * @symbol ??1ExtendedStreamReadResult@@QEAA@XZ
-     * @hash   1049440902
+     * @hash   1138867718
      */
     MCAPI ~ExtendedStreamReadResult();
 

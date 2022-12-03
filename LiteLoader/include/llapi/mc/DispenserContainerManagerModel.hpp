@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  17
      * @symbol ?_postInit@DispenserContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   -1010946850
+     * @hash   -855187970
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   1159491885
+     * @hash   1315250765
      */
     MCAPI DispenserContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

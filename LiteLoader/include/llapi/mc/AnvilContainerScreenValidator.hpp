@@ -36,24 +36,24 @@ public:
     virtual ~AnvilContainerScreenValidator();
     /**
      * @vftbl  1
-     * @hash   2095050641
+     * @hash   -2020663247
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?isCraftingImplemented@AnvilContainerScreenValidator@@UEAA_NXZ
-     * @hash   783045422
+     * @hash   879545198
      */
     virtual bool isCraftingImplemented();
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@AnvilContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -868413264
+     * @hash   -395601264
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ??0AnvilContainerScreenValidator@@QEAA@XZ
-     * @hash   -557806883
+     * @hash   -84994883
      */
     MCAPI AnvilContainerScreenValidator();
 

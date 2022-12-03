@@ -24,32 +24,32 @@ namespace TickUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?chunkBoundsToGridBounds@TickUtil@@YA?AU?$pair@VBlockPos@@V1@@std@@AEBVPos@@0@Z
-     * @hash   124695010
+     * @hash   686733938
      */
     MCAPI struct std::pair<class BlockPos, class BlockPos> chunkBoundsToGridBounds(class Pos const &, class Pos const &);
     /**
      * @symbol ?forRandomOffset@TickUtil@@YAXEEAEAVRandom@@V?$function@$$A6AXAEBVPos@@@Z@std@@@Z
-     * @hash   339541695
+     * @hash   901580623
      */
     MCAPI void forRandomOffset(unsigned char, unsigned char, class Random &, class std::function<void (class Pos const &)>);
     /**
      * @symbol ?getDeterministicBounds@TickUtil@@YA?AUBounds@@AEBU2@@Z
-     * @hash   -327975773
+     * @hash   234063155
      */
     MCAPI struct Bounds getDeterministicBounds(struct Bounds const &);
     /**
      * @symbol ?getLoadedChunkNeighborBounds@TickUtil@@YA?AUBounds@@AEBU2@@Z
-     * @hash   1903116627
+     * @hash   -1829811741
      */
     MCAPI struct Bounds getLoadedChunkNeighborBounds(struct Bounds const &);
     /**
      * @symbol ?getLoadedChunkNeighborPos@TickUtil@@YA?AVChunkPos@@AEBVPos@@_N1@Z
-     * @hash   -451469950
+     * @hash   110568978
      */
     MCAPI class ChunkPos getLoadedChunkNeighborPos(class Pos const &, bool, bool);
     /**
      * @symbol ?getRandomInBounds@TickUtil@@YA?AVChunkPos@@AEBUBounds@@AEAVRandom@@@Z
-     * @hash   -286460365
+     * @hash   275578563
      */
     MCAPI class ChunkPos getRandomInBounds(struct Bounds const &, class Random &);
 

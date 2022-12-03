@@ -30,42 +30,42 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@DimensionTransitionComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1150923256
+     * @hash   -634074392
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@DimensionTransitionComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -559891858
+     * @hash   -43042994
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?AXIS_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1933347895
+     * @hash   -337745713
      */
     MCAPI static std::string const AXIS_TAG;
     /**
      * @symbol ?COMPONENT_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -973326095
+     * @hash   1050547593
      */
     MCAPI static std::string const COMPONENT_TAG;
     /**
      * @symbol ?DIMENSION_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   944912579
+     * @hash   -1326181029
      */
     MCAPI static std::string const DIMENSION_TAG;
     /**
      * @symbol ?POSITION_X_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2025445063
+     * @hash   -1571375
      */
     MCAPI static std::string const POSITION_X_TAG;
     /**
      * @symbol ?POSITION_Y_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1956010971
+     * @hash   -315082637
      */
     MCAPI static std::string const POSITION_Y_TAG;
     /**
      * @symbol ?POSITION_Z_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1642499709
+     * @hash   -628593899
      */
     MCAPI static std::string const POSITION_Z_TAG;
 

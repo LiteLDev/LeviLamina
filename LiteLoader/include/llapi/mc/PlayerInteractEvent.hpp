@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0PlayerInteractEvent@@QEAA@AEBU0@@Z
-     * @hash   -1962255227
+     * @hash   -1781971627
      */
     MCAPI PlayerInteractEvent(struct PlayerInteractEvent const &);
     /**
      * @symbol ??1PlayerInteractEvent@@QEAA@XZ
-     * @hash   1954667279
+     * @hash   2135304527
      */
     MCAPI ~PlayerInteractEvent();
 

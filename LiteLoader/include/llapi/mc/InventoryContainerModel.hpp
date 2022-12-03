@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
-     * @hash   -1660055680
+     * @hash   -1615296144
      */
     virtual void containerContentChanged(int);
     /**
@@ -45,80 +45,80 @@ public:
     /**
      * @vftbl  2
      * @symbol ?postInit@InventoryContainerModel@@UEAAXXZ
-     * @hash   913364259
+     * @hash   958123795
      */
     virtual void postInit();
     /**
      * @vftbl  3
      * @symbol ?releaseResources@InventoryContainerModel@@UEAAXXZ
-     * @hash   -958258831
+     * @hash   -913499295
      */
     virtual void releaseResources();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?getContainerWeakRef@InventoryContainerModel@@UEBA?AVContainerWeakRef@@XZ
-     * @hash   -2114681487
+     * @hash   -2069921951
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  14
      * @symbol ?isValid@InventoryContainerModel@@UEAA_NXZ
-     * @hash   -1823739257
+     * @hash   -1778979721
      */
     virtual bool isValid();
     /**
      * @vftbl  15
-     * @hash   -327479000
+     * @hash   -230733208
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
      * @symbol ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
-     * @hash   1675004859
+     * @hash   1719764395
      */
     virtual class Container * _getContainer() const;
     /**
      * @vftbl  21
      * @symbol ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
-     * @hash   -1631110851
+     * @hash   -1586351315
      */
     virtual int _getContainerOffset() const;
     /**
      * @vftbl  22
      * @symbol ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
-     * @hash   -687583801
+     * @hash   -642824265
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
-     * @hash   -1953271637
+     * @hash   -1908512101
      */
     MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player &);
 
 //private:
     /**
      * @symbol ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
-     * @hash   995541821
+     * @hash   1040301357
      */
     MCAPI void _refreshSlot(int);
 

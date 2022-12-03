@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?_serverGetEntityNetId@EntityNetId@@SA?AV1@AEBVEntityContext@@@Z
-     * @hash   -1907956813
+     * @hash   -1949548893
      */
     MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
 

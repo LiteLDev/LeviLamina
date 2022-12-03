@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@AvoidBlockGoal@@UEAA_NXZ
-     * @hash   1042662789
+     * @hash   1202865333
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@AvoidBlockGoal@@UEAA_NXZ
-     * @hash   1100334499
+     * @hash   1260537043
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@AvoidBlockGoal@@UEAAXXZ
-     * @hash   1317270750
+     * @hash   1477473294
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@AvoidBlockGoal@@UEAAXXZ
-     * @hash   -1722618674
+     * @hash   -1562416130
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@AvoidBlockGoal@@UEAAXXZ
-     * @hash   -1928146407
+     * @hash   -1767943863
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@AvoidBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1238744987
+     * @hash   1398240235
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0AvoidBlockGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -882090542
+     * @hash   -722549166
      */
     MCAPI AvoidBlockGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_isValidTarget@AvoidBlockGoal@@AEBA_NAEBVBlock@@@Z
-     * @hash   1011566380
+     * @hash   1171107756
      */
     MCAPI bool _isValidTarget(class Block const &) const;
 

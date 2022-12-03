@@ -38,85 +38,85 @@ public:
     virtual ~ScriptPlugin();
     /**
      * @vftbl  1
-     * @symbol ?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   495354746
+     * @symbol ?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$optional@V?$vector@UModuleBinding@Scripting@@V?$allocator@UModuleBinding@Scripting@@@std@@@std@@@3@@Z
+     * @hash   1262648606
      */
-    virtual class std::optional<std::string> onLoadScript(std::string const &);
+    virtual class std::optional<std::string> onLoadScript(std::string const &, class std::optional<std::vector<struct Scripting::ModuleBinding>>);
     /**
      * @symbol ??0ScriptPlugin@@QEAA@$$QEAUModuleDescriptor@Scripting@@$$QEAV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@$$QEAUCapabilities@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@33$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@4@@Z
-     * @hash   -1349848384
+     * @hash   -1267725168
      */
     MCAPI ScriptPlugin(struct Scripting::ModuleDescriptor &&, std::vector<struct Scripting::ModuleDescriptor> &&, struct Scripting::Capabilities &&, std::string const &, std::string const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &&);
     /**
      * @symbol ??0ScriptPlugin@@QEAA@$$QEAV0@@Z
-     * @hash   726488565
+     * @hash   805459701
      */
     MCAPI ScriptPlugin(class ScriptPlugin &&);
     /**
      * @symbol ?getCapabilities@ScriptPlugin@@QEBAAEBUCapabilities@Scripting@@XZ
-     * @hash   -1321158894
+     * @hash   -1175348286
      */
     MCAPI struct Scripting::Capabilities const & getCapabilities() const;
     /**
      * @symbol ?getEngineVersion@ScriptPlugin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -618255474
+     * @hash   -535747858
      */
     MCAPI std::string const & getEngineVersion() const;
     /**
      * @symbol ?getModuleDependencies@ScriptPlugin@@QEBAAEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@XZ
-     * @hash   1396949544
+     * @hash   -45908136
      */
     MCAPI std::vector<struct Scripting::ModuleDescriptor> const & getModuleDependencies() const;
     /**
      * @symbol ?getModuleDescriptor@ScriptPlugin@@QEBAAEBUModuleDescriptor@Scripting@@XZ
-     * @hash   729114242
+     * @hash   822385058
      */
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     /**
      * @symbol ?getRuntimeName@ScriptPlugin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1339851294
+     * @hash   1442178574
      */
     MCAPI std::string const & getRuntimeName() const;
     /**
      * @symbol ?getScriptContext@ScriptPlugin@@QEAAAEAVScriptContext@Scripting@@XZ
-     * @hash   -1092432560
+     * @hash   -990105280
      */
     MCAPI class Scripting::ScriptContext & getScriptContext();
     /**
      * @symbol ?getScriptContext@ScriptPlugin@@QEBAAEBVScriptContext@Scripting@@XZ
-     * @hash   563299658
+     * @hash   665626938
      */
     MCAPI class Scripting::ScriptContext const & getScriptContext() const;
     /**
      * @symbol ?getScriptMainName@ScriptPlugin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   996510716
+     * @hash   1041270252
      */
     MCAPI std::string const & getScriptMainName() const;
     /**
      * @symbol ?hasErrors@ScriptPlugin@@QEBA_NXZ
-     * @hash   938964446
+     * @hash   1021472062
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ?loadScriptMain@ScriptPlugin@@QEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@XZ
-     * @hash   330109977
+     * @hash   412617593
      */
     MCAPI class std::optional<std::string> loadScriptMain();
     /**
      * @symbol ?reportErrors@ScriptPlugin@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -2019554857
+     * @hash   -1936370697
      */
     MCAPI std::vector<std::string> reportErrors() const;
     /**
      * @symbol ?setScriptContext@ScriptPlugin@@QEAAX$$QEAVScriptContext@Scripting@@@Z
-     * @hash   1452477052
+     * @hash   1536245500
      */
     MCAPI void setScriptContext(class Scripting::ScriptContext &&);
 
 //private:
     /**
      * @symbol ?_loadScript@ScriptPlugin@@AEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   902584085
+     * @hash   985091701
      */
     MCAPI class std::optional<std::string> _loadScript(std::string const &);
 

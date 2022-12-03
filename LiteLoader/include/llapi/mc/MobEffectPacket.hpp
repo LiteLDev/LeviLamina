@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MobEffectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1492536661
+     * @hash   1418562725
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MobEffectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   145958914
+     * @hash   71984978
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MobEffectPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1844137403
+     * @hash   -1918034459
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MobEffectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   923731125
+     * @hash   849757189
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MobEffectPacket@@QEAA@XZ
-     * @hash   19526469
+     * @hash   -54447467
      */
     MCAPI MobEffectPacket();
     /**
      * @symbol ??0MobEffectPacket@@QEAA@VActorRuntimeID@@W4Event@0@HHH_N@Z
-     * @hash   -786986296
+     * @hash   -860960232
      */
     MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int, int, int, bool);
 

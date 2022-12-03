@@ -31,36 +31,36 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getPosDeltaNonConst@UpdateEntityAfterFallOnActorProxy@@UEAAAEAVVec3@@XZ
-     * @hash   -875478433
+     * @hash   -849831265
      */
     virtual class Vec3 & getPosDeltaNonConst();
     /**
      * @vftbl  1
      * @symbol ?isSneaking@UpdateEntityAfterFallOnActorProxy@@UEBA_NXZ
-     * @hash   194052845
+     * @hash   219761517
      */
     virtual bool isSneaking() const;
     /**
      * @vftbl  2
      * @symbol ?onBounceStarted@UpdateEntityAfterFallOnActorProxy@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   2116130032
+     * @hash   2141838704
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
      * @vftbl  3
      * @symbol ?getPosition@UpdateEntityAfterFallOnActorProxy@@UEBA?AVVec3@@XZ
-     * @hash   -1437868180
+     * @hash   -1412221012
      */
     virtual class Vec3 getPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getRegion@UpdateEntityAfterFallOnActorProxy@@UEBAAEBVIConstBlockSource@@XZ
-     * @hash   -668633570
+     * @hash   -642986402
      */
     virtual class IConstBlockSource const & getRegion() const;
     /**
      * @symbol ??0UpdateEntityAfterFallOnActorProxy@@QEAA@AEAUIActorMovementProxy@@@Z
-     * @hash   1377765894
+     * @hash   1403413062
      */
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
 

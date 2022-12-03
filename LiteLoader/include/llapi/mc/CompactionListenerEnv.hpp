@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  14
      * @symbol ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z
-     * @hash   1413230570
+     * @hash   1883198010
      */
     virtual void Schedule(void ( *)(void *), void *);
     /**
      * @symbol ??0CompactionListenerEnv@@QEAA@PEAVEnv@leveldb@@@Z
-     * @hash   715783580
+     * @hash   1185751020
      */
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     /**
      * @symbol ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
-     * @hash   961636700
+     * @hash   1431604140
      */
     MCAPI void setCompactionCallback(class std::function<void (enum class CompactionStatus)>);
 

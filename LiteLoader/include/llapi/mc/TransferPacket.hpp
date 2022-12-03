@@ -39,35 +39,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@TransferPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -456117749
+     * @hash   -498340245
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@TransferPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1912102728
+     * @hash   -1954325224
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@TransferPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   2048462127
+     * @hash   2006239631
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@TransferPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -195637121
+     * @hash   -237859617
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0TransferPacket@@QEAA@XZ
-     * @hash   -1572306401
+     * @hash   -1614528897
      */
     MCAPI TransferPacket();
     /**
      * @symbol ??0TransferPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   437866177
+     * @hash   395643681
      */
     MCAPI TransferPacket(std::string const &, int);
 

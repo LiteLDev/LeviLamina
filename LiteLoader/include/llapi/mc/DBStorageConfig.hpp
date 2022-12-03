@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1DBStorageConfig@@QEAA@XZ
-     * @hash   379297131
+     * @hash   1109795515
      */
     MCAPI ~DBStorageConfig();
 

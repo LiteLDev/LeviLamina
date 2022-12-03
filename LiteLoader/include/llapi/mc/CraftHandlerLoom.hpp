@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   -455261121
+     * @hash   14429551
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @symbol ??0CraftHandlerLoom@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
-     * @hash   -637949654
+     * @hash   -168258982
      */
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 

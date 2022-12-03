@@ -30,12 +30,17 @@ public:
 public:
     /**
      * @symbol ??0ServerPlayerMovementComponent@@QEAA@$$QEAU0@@Z
-     * @hash   -1557321253
+     * @hash   1585702283
      */
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
     /**
+     * @symbol ??4ServerPlayerMovementComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1038071124
+     */
+    MCAPI struct ServerPlayerMovementComponent & operator=(struct ServerPlayerMovementComponent &&);
+    /**
      * @symbol ??1ServerPlayerMovementComponent@@QEAA@XZ
-     * @hash   665548758
+     * @hash   846216758
      */
     MCAPI ~ServerPlayerMovementComponent();
 

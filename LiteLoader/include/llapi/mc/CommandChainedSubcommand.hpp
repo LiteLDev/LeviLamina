@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getCommand@CommandChainedSubcommand@@QEBAPEAVCommand@@XZ
-     * @hash   -1391881379
+     * @hash   -1266812995
      */
     MCAPI class Command * getCommand() const;
     /**
      * @symbol ?setCommand@CommandChainedSubcommand@@QEAAXV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
-     * @hash   1473824754
+     * @hash   886968962
      */
     MCAPI void setCommand(std::unique_ptr<class Command>);
 

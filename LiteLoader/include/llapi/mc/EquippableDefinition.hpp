@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@EquippableDefinition@@QEAAXAEAVEntityContext@@AEAVEquippableComponent@@@Z
-     * @hash   -898155969
+     * @hash   -770673553
      */
     MCAPI void initialize(class EntityContext &, class EquippableComponent &);
     /**
      * @symbol ?buildSchema@EquippableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEquippableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -870902346
+     * @hash   -743373802
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>> &);
 

@@ -33,34 +33,34 @@ public:
 public:
     /**
      * @symbol ??0BuoyancyDefinition@@QEAA@XZ
-     * @hash   1415678271
+     * @hash   1342888287
      */
     MCAPI BuoyancyDefinition();
     /**
      * @symbol ?initialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
-     * @hash   -449959799
+     * @hash   -522734407
      */
     MCAPI void initialize(class EntityContext &, class BuoyancyComponent &) const;
     /**
      * @symbol ?uninitialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
-     * @hash   989061497
+     * @hash   916271513
      */
     MCAPI void uninitialize(class EntityContext &, class BuoyancyComponent &) const;
     /**
      * @symbol ?buildSchema@BuoyancyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBuoyancyDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   653056742
+     * @hash   580266758
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>> &);
 
 //private:
     /**
      * @symbol ?_addLiquidBlockDescriptor@BuoyancyDefinition@@AEAAXAEBVBlockDescriptor@@@Z
-     * @hash   -1733811274
+     * @hash   -1806601258
      */
     MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?_serialize@BuoyancyDefinition@@AEBA?AVValue@Json@@XZ
-     * @hash   1936119305
+     * @hash   1863329321
      */
     MCAPI class Json::Value _serialize() const;
 

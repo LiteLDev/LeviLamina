@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4ItemInUseComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1333858272
+     * @hash   -1200686736
      */
     MCAPI struct ItemInUseComponent & operator=(struct ItemInUseComponent &&);
     /**
      * @symbol ??1ItemInUseComponent@@QEAA@XZ
-     * @hash   -1359389528
+     * @hash   -1257492776
      */
     MCAPI ~ItemInUseComponent();
 

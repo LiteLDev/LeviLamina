@@ -37,57 +37,57 @@ public:
     virtual ~MoveThroughVillageGoal();
     /**
      * @vftbl  1
-     * @hash   -1362796495
+     * @hash   -1266296719
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1354661630
+     * @hash   -1257915838
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MoveThroughVillageGoal@@UEAAXXZ
-     * @hash   1317232542
+     * @hash   1477804110
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@MoveThroughVillageGoal@@UEAAXXZ
-     * @hash   1833392478
+     * @hash   1922358014
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveThroughVillageGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1292985127
+     * @hash   -1132413559
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETHROUGHVILLAGEGOAL
     /**
      * @symbol ?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ
-     * @hash   -1798506461
+     * @hash   -1701760669
      */
     MCVAPI bool canContinueToUse();
     /**
      * @symbol ?canUse@MoveThroughVillageGoal@@UEAA_NXZ
-     * @hash   -206813243
+     * @hash   -110067451
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0MoveThroughVillageGoal@@QEAA@AEAVMob@@M_N@Z
-     * @hash   -475781004
+     * @hash   -315209436
      */
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
 

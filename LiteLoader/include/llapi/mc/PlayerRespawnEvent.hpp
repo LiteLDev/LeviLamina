@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerRespawnEvent@@QEAA@XZ
-     * @hash   133513645
+     * @hash   223463245
      */
     MCAPI ~PlayerRespawnEvent();
 

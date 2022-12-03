@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?registerFeatureTypes@VanillaFeatures@@SAXAEAVFeatureTypeFactory@@@Z
-     * @hash   666455232
+     * @hash   774425504
      */
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory &);
     /**
      * @symbol ?registerFeatures@VanillaFeatures@@SAXAEAVFeatureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   281180676
+     * @hash   389765988
      */
     MCAPI static void registerFeatures(class FeatureRegistry &, class BaseGameVersion const &, class Experiments const &);
 

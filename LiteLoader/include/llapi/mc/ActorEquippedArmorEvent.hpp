@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorEquippedArmorEvent@@QEAA@XZ
-     * @hash   464310507
+     * @hash   620115515
      */
     MCAPI ~ActorEquippedArmorEvent();
 

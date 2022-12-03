@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ?appendFormattedHovertext@DyeableComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -2128769304
+     * @hash   -1566115336
      */
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     /**
      * @symbol ?clearColor@DyeableComponent@@QEBAXAEAVItemStackBase@@@Z
-     * @hash   699960792
+     * @hash   1456075592
      */
     MCAPI void clearColor(class ItemStackBase &) const;
     /**
      * @symbol ?getColor@DyeableComponent@@QEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     * @hash   -1154120905
+     * @hash   -591097913
      */
     MCAPI class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /**
      * @symbol ?hasCustomColor@DyeableComponent@@QEBA_NAEBVItemStackBase@@@Z
-     * @hash   447431119
+     * @hash   1010454111
      */
     MCAPI bool hasCustomColor(class ItemStackBase const &) const;
     /**
      * @symbol ?setColor@DyeableComponent@@QEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-     * @hash   1341129117
+     * @hash   2097566813
      */
     MCAPI void setColor(class ItemStackBase &, class mce::Color const &) const;
     /**
      * @symbol ?DEFAULT_HORSE_LEATHER_COLOR@DyeableComponent@@2VColor@mce@@A
-     * @hash   -1048948487
+     * @hash   -184986423
      */
     MCAPI static class mce::Color DEFAULT_HORSE_LEATHER_COLOR;
     /**
      * @symbol ?DEFAULT_LEATHER_COLOR@DyeableComponent@@2VColor@mce@@A
-     * @hash   -596318931
+     * @hash   267643133
      */
     MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
     /**
      * @symbol ?ResetDefaultLeatherColor@DyeableComponent@@SAXXZ
-     * @hash   -527560269
+     * @hash   35093699
      */
     MCAPI static void ResetDefaultLeatherColor();
     /**
      * @symbol ?getIdentifier@DyeableComponent@@SAAEBVHashedString@@XZ
-     * @hash   333582418
+     * @hash   896605410
      */
     MCAPI static class HashedString const & getIdentifier();
 

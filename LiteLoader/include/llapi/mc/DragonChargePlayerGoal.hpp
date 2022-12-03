@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DragonChargePlayerGoal@@UEAA_NXZ
-     * @hash   -613859675
+     * @hash   -453088219
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DragonChargePlayerGoal@@UEAA_NXZ
-     * @hash   2089306771
+     * @hash   -2044889069
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DragonChargePlayerGoal@@UEAAXXZ
-     * @hash   582898814
+     * @hash   743670270
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DragonChargePlayerGoal@@UEAAXXZ
-     * @hash   -1115028338
+     * @hash   -954256882
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DragonChargePlayerGoal@@UEAAXXZ
-     * @hash   -1842666391
+     * @hash   -1681894935
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DragonChargePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -432333541
+     * @hash   -271531333
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DragonChargePlayerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   534997538
+     * @hash   695799746
      */
     MCAPI DragonChargePlayerGoal(class Mob &);
 

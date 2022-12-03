@@ -41,46 +41,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@SaveCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   41981701
+     * @hash   144678005
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@SaveCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   686884320
+     * @hash   789826640
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?saveHold@SaveCommand@@CAXAEAVCommandOutput@@@Z
-     * @hash   14156486
+     * @hash   116852790
      */
     MCAPI static void saveHold(class CommandOutput &);
     /**
      * @symbol ?saveResume@SaveCommand@@CAXAEAVCommandOutput@@@Z
-     * @hash   -805489896
+     * @hash   -702670584
      */
     MCAPI static void saveResume(class CommandOutput &);
     /**
      * @symbol ?saveState@SaveCommand@@CAXAEAVCommandOutput@@@Z
-     * @hash   -780327506
+     * @hash   -677446690
      */
     MCAPI static void saveState(class CommandOutput &);
 
 private:
     /**
      * @symbol ?mSaveAllFileList@SaveCommand@@0V?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@A
-     * @hash   1071104784
+     * @hash   1938534136
      */
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
     /**
      * @symbol ?mSaveAllMutex@SaveCommand@@0Vmutex@std@@A
-     * @hash   1229764177
+     * @hash   2097093585
      */
     MCAPI static class std::mutex mSaveAllMutex;
     /**
      * @symbol ?mState@SaveCommand@@0W4State@1@A
-     * @hash   -267360305
+     * @hash   599922975
      */
     MCAPI static enum class SaveCommand::State mState;
 

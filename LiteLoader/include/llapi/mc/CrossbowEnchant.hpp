@@ -39,81 +39,81 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isCompatibleWith@CrossbowEnchant@@UEBA_NW4Type@Enchant@@@Z
-     * @hash   -1089289344
+     * @hash   -519900688
      */
     virtual bool isCompatibleWith(enum class Enchant::Type) const;
     /**
      * @vftbl  2
      * @symbol ?getMinCost@CrossbowEnchant@@UEBAHH@Z
-     * @hash   92375576
+     * @hash   661764232
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@CrossbowEnchant@@UEBAHH@Z
-     * @hash   -604820202
+     * @hash   -35431546
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  4
-     * @hash   -1151727260
+     * @hash   -1049815132
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@CrossbowEnchant@@UEBAHXZ
-     * @hash   -869648814
+     * @hash   -300260158
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  6
-     * @hash   -1358178890
+     * @hash   -1261679114
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   -1349120504
+     * @hash   -1252374712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -382068605
+     * @hash   -293103069
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -381145084
+     * @hash   -292179548
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   863281685
+     * @hash   1112972549
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -343149066
+     * @hash   -249878250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@CrossbowEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   1374704841
+     * @hash   1944093497
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0CrossbowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   1718313323
+     * @hash   -2007265317
      */
     MCAPI CrossbowEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
@@ -122,7 +122,7 @@ public:
 private:
     /**
      * @symbol ?VALID_ENCHANTMENTS@CrossbowEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
-     * @hash   325032186
+     * @hash   970163018
      */
     MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 

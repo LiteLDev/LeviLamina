@@ -33,39 +33,39 @@ public:
 public:
     /**
      * @symbol ??0PhotoStorage@@QEAA@AEBVPath@Core@@@Z
-     * @hash   -1171312398
+     * @hash   -601185694
      */
     MCAPI PhotoStorage(class Core::Path const &);
     /**
      * @symbol ??1PhotoStorage@@QEAA@XZ
-     * @hash   -245714045
+     * @hash   479002963
      */
     MCAPI ~PhotoStorage();
     /**
      * @symbol ?BOOKS_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1186965629
+     * @hash   591499411
      */
     MCAPI static std::string const BOOKS_DIR;
     /**
      * @symbol ?MANIFEST_NAME@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1811287415
+     * @hash   -32822375
      */
     MCAPI static std::string const MANIFEST_NAME;
     /**
      * @symbol ?PHOTOITEM_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -6159399
+     * @hash   1772305641
      */
     MCAPI static std::string const PHOTOITEM_DIR;
     /**
      * @symbol ?PHOTO_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1962588787
+     * @hash   -553913469
      */
     MCAPI static std::string const PHOTO_DIR;
 
 //private:
     /**
      * @symbol ?_readManifest@PhotoStorage@@AEAAXXZ
-     * @hash   336172503
+     * @hash   906299207
      */
     MCAPI void _readManifest();
 

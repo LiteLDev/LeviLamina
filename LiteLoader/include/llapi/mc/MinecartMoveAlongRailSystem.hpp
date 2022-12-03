@@ -30,54 +30,54 @@ public:
 public:
     /**
      * @symbol ?createCleanupSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -621519224
+     * @hash   -566396264
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createExtractCurrentRailBlockDataSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1666074056
+     * @hash   1721227768
      */
     MCAPI static struct TickingSystemWithInfo createExtractCurrentRailBlockDataSystem();
     /**
      * @symbol ?createPostRailMovementPositionSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   283076250
+     * @hash   338229962
      */
     MCAPI static struct TickingSystemWithInfo createPostRailMovementPositionSystem();
     /**
      * @symbol ?createPreRailMovementPositionSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1657274856
+     * @hash   1712428568
      */
     MCAPI static struct TickingSystemWithInfo createPreRailMovementPositionSystem();
     /**
      * @symbol ?createRailMovementSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1730437274
+     * @hash   1785590986
      */
     MCAPI static struct TickingSystemWithInfo createRailMovementSystem();
 
 //private:
     /**
      * @symbol ?_calculateRailMovementSystem@MinecartMoveAlongRailSystem@@CAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEBUCurrentRailBlockDataComponent@@AEAUSnapOnRailComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBUVehicleComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@$$CBUActorRotationComponent@@$$CBULocalMoveVelocityComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UMoveRequestComponent@@@@@Z
-     * @hash   -1297269061
+     * @hash   -1242207605
      */
     MCAPI static void _calculateRailMovementSystem(class StrictEntityContext &, class RailMovementComponent const &, struct CurrentRailBlockDataComponent const &, struct SnapOnRailComponent &, struct StateVectorComponent &, class Optional<struct VehicleComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
     /**
      * @symbol ?_extractSideBySideRailBlockData@MinecartMoveAlongRailSystem@@CAXAEAVStrictEntityContext@@AEBUConstBlockSourceComponent@@AEBUSnapOnRailComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UCurrentRailBlockDataComponent@@@@@Z
-     * @hash   -42575248
+     * @hash   12486208
      */
     MCAPI static void _extractSideBySideRailBlockData(class StrictEntityContext &, struct ConstBlockSourceComponent const &, struct SnapOnRailComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct CurrentRailBlockDataComponent>);
     /**
      * @symbol ?_postRailMovementCalculateMinecartPositionSystem@MinecartMoveAlongRailSystem@@CAXAEAVStrictEntityContext@@AEBUConstBlockSourceComponent@@AEBUSnapOnRailComponent@@AEAUStateVectorComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UActorSetPositionRequestComponent@@@@@Z
-     * @hash   -1006010400
+     * @hash   -950964320
      */
     MCAPI static void _postRailMovementCalculateMinecartPositionSystem(class StrictEntityContext &, struct ConstBlockSourceComponent const &, struct SnapOnRailComponent const &, struct StateVectorComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ActorSetPositionRequestComponent>);
     /**
      * @symbol ?_preRailMovementCalculateMinecartPositionSystem@MinecartMoveAlongRailSystem@@CAXAEAVStrictEntityContext@@AEBUConstBlockSourceComponent@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@AEAUFallDistanceComponent@@AEAUSnapOnRailComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UActorSetPositionRequestComponent@@@@@Z
-     * @hash   357483612
+     * @hash   412529692
      */
     MCAPI static void _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext &, struct ConstBlockSourceComponent const &, struct OffsetsComponent const &, struct StateVectorComponent const &, struct FallDistanceComponent &, struct SnapOnRailComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ActorSetPositionRequestComponent>);
     /**
      * @symbol ?_tickPreRailMovementCalculateMinecartPositionSystem@MinecartMoveAlongRailSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@VRailMovementComponent@@@@$$CBUConstBlockSourceComponent@@$$CBUOffsetsComponent@@$$CBUStateVectorComponent@@UFallDistanceComponent@@USnapOnRailComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UActorSetPositionRequestComponent@@@@@Z
-     * @hash   -846066301
+     * @hash   -791020221
      */
     MCAPI static void _tickPreRailMovementCalculateMinecartPositionSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class RailMovementComponent>, struct ConstBlockSourceComponent const, struct OffsetsComponent const, struct StateVectorComponent const, struct FallDistanceComponent, struct SnapOnRailComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ActorSetPositionRequestComponent>);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?evaluateAdjustments@SurfaceMaterialAdjustmentAttributes@@QEBA?AUSurfaceMaterialAdjustmentEvaluated@@AEAVRenderParams@@V?$not_null@PEAVPerlinSimplexNoise@@@gsl@@AEBVBlockPos@@HH@Z
-     * @hash   -581769960
+     * @hash   159630008
      */
     MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams &, class gsl::not_null<class PerlinSimplexNoise *>, class BlockPos const &, int, int) const;
     /**
      * @symbol ??4SurfaceMaterialAdjustmentAttributes@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   297372928
+     * @hash   403098304
      */
     MCAPI struct SurfaceMaterialAdjustmentAttributes & operator=(struct SurfaceMaterialAdjustmentAttributes &&);
     /**
      * @symbol ?parseExpressionNodeFloat@SurfaceMaterialAdjustmentAttributes@@QEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z
-     * @hash   -1207373488
+     * @hash   -465973520
      */
     MCAPI void parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
     /**
      * @symbol ??1SurfaceMaterialAdjustmentAttributes@@QEAA@XZ
-     * @hash   -1568776732
+     * @hash   -1463051356
      */
     MCAPI ~SurfaceMaterialAdjustmentAttributes();
 

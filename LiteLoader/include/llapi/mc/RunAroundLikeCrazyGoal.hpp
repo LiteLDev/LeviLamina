@@ -38,45 +38,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
-     * @hash   -1110648709
+     * @hash   -948385781
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
-     * @hash   1592563865
+     * @hash   1754826793
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RunAroundLikeCrazyGoal@@UEAAXXZ
-     * @hash   -1830087516
+     * @hash   -1667824588
      */
     virtual void start();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RunAroundLikeCrazyGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   464818165
+     * @hash   627081093
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RunAroundLikeCrazyGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   1891146713
+     * @hash   2053409641
      */
     MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
 

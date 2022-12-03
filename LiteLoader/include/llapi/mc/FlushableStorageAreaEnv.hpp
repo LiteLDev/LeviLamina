@@ -40,12 +40,12 @@ public:
     /**
      * @vftbl  20
      * @symbol ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
-     * @hash   -2116883984
+     * @hash   1892009840
      */
     virtual void flushToPermanentStorage();
     /**
      * @symbol ??0FlushableStorageAreaEnv@@QEAA@PEAVEnv@leveldb@@V?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
-     * @hash   561006009
+     * @hash   1034632937
      */
     MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
 

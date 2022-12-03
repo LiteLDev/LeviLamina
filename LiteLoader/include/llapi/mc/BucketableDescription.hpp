@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@BucketableDescription@@UEBAPEBDXZ
-     * @hash   -1147909972
+     * @hash   -1003498580
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@BucketableDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1320407839
+     * @hash   -1231442303
      */
     virtual void serializeData(class Json::Value &) const;
 

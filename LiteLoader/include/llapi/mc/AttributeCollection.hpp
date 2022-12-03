@@ -32,14 +32,14 @@ public:
 public:
     /**
      * @symbol ?hasAttribute@AttributeCollection@@SA_NAEBVHashedString@@@Z
-     * @hash   1845307271
+     * @hash   1899230903
      */
     MCAPI static bool hasAttribute(class HashedString const &);
 
 //private:
     /**
      * @symbol ?instance@AttributeCollection@@CAAEAV1@XZ
-     * @hash   -701624813
+     * @hash   -647701181
      */
     MCAPI static class AttributeCollection & instance();
 

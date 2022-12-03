@@ -37,13 +37,13 @@ public:
     virtual ~ScaleByAgeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ScaleByAgeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1073276285
+     * @hash   1227943469
      */
     virtual void tick(class EntityRegistry &);
 

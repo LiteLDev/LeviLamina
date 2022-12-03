@@ -37,12 +37,12 @@ public:
 public:
     /**
      * @symbol ?getFullCode@MCRESULT@@QEBAHXZ
-     * @hash   1844545318
+     * @hash   -1938585690
      */
     MCAPI int getFullCode() const;
     /**
      * @symbol ?isSuccess@MCRESULT@@QEBA_NXZ
-     * @hash   1248685580
+     * @hash   1396202924
      */
     MCAPI bool isSuccess() const;
 

@@ -37,18 +37,18 @@ public:
     virtual ~InstantDespawnSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@InstantDespawnSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1487968744
+     * @hash   1576380744
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?createInstantDespawningPlayerCleanupSystem@InstantDespawnSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1423560010
+     * @hash   -1335117258
      */
     MCAPI static struct TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
 

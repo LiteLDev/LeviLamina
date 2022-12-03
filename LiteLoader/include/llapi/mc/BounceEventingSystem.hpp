@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@BounceEventingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   967042484
+     * @hash   1079148900
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doBounceEventingSystem@BounceEventingSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEBUActorUniqueIDComponent@@AEBUEventingDispatcherComponent@@AEAUBounceComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@@@@Z
-     * @hash   -1830225929
+     * @hash   -1718119513
      */
     MCAPI static void _doBounceEventingSystem(class StrictEntityContext const &, struct StateVectorComponent const &, struct ActorUniqueIDComponent const &, struct EventingDispatcherComponent const &, struct BounceComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>);
 

@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ?getActions@ItemStackRequestData@@QEBAAEBV?$vector@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@@2@@std@@XZ
-     * @hash   -684072245
+     * @hash   -559234501
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
     /**
      * @symbol ?getRequestId@ItemStackRequestData@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-     * @hash   297565333
+     * @hash   390836149
      */
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
     /**
      * @symbol ?getStringsToFilter@ItemStackRequestData@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -1837058921
+     * @hash   -1692678281
      */
     MCAPI std::vector<std::string> const & getStringsToFilter() const;
     /**
      * @symbol ?getStringsToFilterOrigin@ItemStackRequestData@@QEBAAEBW4TextProcessingEventOrigin@@XZ
-     * @hash   -445048170
+     * @hash   -273682650
      */
     MCAPI enum class TextProcessingEventOrigin const & getStringsToFilterOrigin() const;
     /**
      * @symbol ?postLoadItems@ItemStackRequestData@@QEAAXAEAVBlockPalette@@_N@Z
-     * @hash   -592080741
+     * @hash   -539018165
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**
      * @symbol ?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z
-     * @hash   2058877200
+     * @hash   2111939776
      */
     MCAPI class ItemStackRequestAction const * tryFindAction(enum class ItemStackRequestActionType) const;
     /**
      * @symbol ?write@ItemStackRequestData@@QEBAXAEAVBinaryStream@@@Z
-     * @hash   1702553920
+     * @hash   1755616496
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1ItemStackRequestData@@QEAA@XZ
-     * @hash   -1993500322
+     * @hash   -1940437746
      */
     MCAPI ~ItemStackRequestData();
     /**
      * @symbol ?read@ItemStackRequestData@@SA?AV?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1839484977
+     * @hash   -1786422401
      */
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
 

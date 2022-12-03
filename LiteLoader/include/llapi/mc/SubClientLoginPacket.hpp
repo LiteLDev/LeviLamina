@@ -38,36 +38,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SubClientLoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   614476824
+     * @hash   544346888
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SubClientLoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1980351803
+     * @hash   -2050481739
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SubClientLoginPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1670028286
+     * @hash   -1740158222
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?disallowBatching@SubClientLoginPacket@@UEBA_NXZ
-     * @hash   -1235743675
+     * @hash   -1139243899
      */
     virtual bool disallowBatching() const;
     /**
      * @vftbl  6
      * @symbol ?_read@SubClientLoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1630457998
+     * @hash   -1700587934
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SubClientLoginPacket@@QEAA@XZ
-     * @hash   -187540686
+     * @hash   -257670622
      */
     MCAPI SubClientLoginPacket();
 

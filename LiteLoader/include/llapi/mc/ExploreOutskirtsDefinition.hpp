@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0ExploreOutskirtsDefinition@@QEAA@XZ
-     * @hash   817334170
+     * @hash   978351642
      */
     MCAPI ExploreOutskirtsDefinition();
     /**
      * @symbol ?initialize@ExploreOutskirtsDefinition@@QEAAXAEAVEntityContext@@AEAVExploreOutskirtsGoal@@@Z
-     * @hash   675829403
+     * @hash   836693115
      */
     MCAPI void initialize(class EntityContext &, class ExploreOutskirtsGoal &);
     /**
      * @symbol ?buildSchema@ExploreOutskirtsDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExploreOutskirtsDefinition@@@JsonUtil@@@3@@Z
-     * @hash   435258123
+     * @hash   596275595
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExploreOutskirtsDefinition>> &);
 

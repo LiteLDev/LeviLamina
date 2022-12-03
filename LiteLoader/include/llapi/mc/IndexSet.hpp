@@ -25,57 +25,57 @@ class IndexSet {
 public:
     /**
      * @symbol ??0IndexSet@@QEAA@AEBV0@@Z
-     * @hash   -861072943
+     * @hash   -836947999
      */
     MCAPI IndexSet(class IndexSet const &);
     /**
      * @symbol ??0IndexSet@@QEAA@$$QEAV0@@Z
-     * @hash   1598121929
+     * @hash   1735860137
      */
     MCAPI IndexSet(class IndexSet &&);
     /**
      * @symbol ??0IndexSet@@QEAA@XZ
-     * @hash   672607692
+     * @hash   797860588
      */
     MCAPI IndexSet();
     /**
      * @symbol ?clear@IndexSet@@QEAAXXZ
-     * @hash   -473347437
+     * @hash   -449222493
      */
     MCAPI void clear();
     /**
      * @symbol ?contains@IndexSet@@QEBA_N_K@Z
-     * @hash   939315086
+     * @hash   963440030
      */
     MCAPI bool contains(unsigned __int64) const;
     /**
      * @symbol ?getPacked@IndexSet@@QEBAAEBV?$vector@_KV?$allocator@_K@std@@@std@@XZ
-     * @hash   -619041928
+     * @hash   -525771112
      */
     MCAPI std::vector<unsigned __int64> const & getPacked() const;
     /**
      * @symbol ?insert@IndexSet@@QEAAX_K@Z
-     * @hash   1512015175
+     * @hash   1536140119
      */
     MCAPI void insert(unsigned __int64);
     /**
      * @symbol ??4IndexSet@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1191743380
+     * @hash   1215868324
      */
     MCAPI class IndexSet & operator=(class IndexSet const &);
     /**
      * @symbol ??8IndexSet@@QEBA_NAEBV0@@Z
-     * @hash   -1877909609
+     * @hash   -1853784665
      */
     MCAPI bool operator==(class IndexSet const &) const;
     /**
      * @symbol ?remove@IndexSet@@QEAAX_K@Z
-     * @hash   1205630481
+     * @hash   1229755425
      */
     MCAPI void remove(unsigned __int64);
     /**
      * @symbol ??1IndexSet@@QEAA@XZ
-     * @hash   -770013798
+     * @hash   -636857638
      */
     MCAPI ~IndexSet();
 

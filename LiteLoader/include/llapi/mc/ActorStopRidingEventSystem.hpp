@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@ActorStopRidingEventSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1156206104
+     * @hash   -1019113688
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?tickSendEvent@ActorStopRidingEventSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$Optional@$$CBV?$FlagComponent@ULocalPlayerComponentFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UActorIsBeingDestroyedFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UExitFromPassengerFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@USwitchingVehiclesFlag@@@@@@@Z
-     * @hash   74128175
+     * @hash   211620367
      */
     MCAPI static void tickSendEvent(class StrictEntityContext &, class ActorOwnerComponent &, class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const>, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const>, class Optional<class FlagComponent<struct ExitFromPassengerFlag> const>, class Optional<class FlagComponent<struct SwitchingVehiclesFlag> const>);
 

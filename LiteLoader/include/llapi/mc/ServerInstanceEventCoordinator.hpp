@@ -33,57 +33,57 @@ public:
 public:
     /**
      * @symbol ?registerServerInstanceEventHandler@ServerInstanceEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerInstanceEventHandler@@U?$default_delete@VServerInstanceEventHandler@@@std@@@std@@@Z
-     * @hash   -711472940
+     * @hash   -536909212
      */
     MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler> &&);
     /**
      * @symbol ?sendEvent@ServerInstanceEventCoordinator@@QEAAXAEBV?$EventRef@U?$ServerInstanceGameplayEvent@X@@@@@Z
-     * @hash   1153562650
+     * @hash   1328126378
      */
     MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const &);
     /**
      * @symbol ?sendServerInitializeEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   1867181878
+     * @hash   2041745606
      */
     MCAPI void sendServerInitializeEnd(class ServerInstance &);
     /**
      * @symbol ?sendServerInitializeStart@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   2014473432
+     * @hash   -2105930136
      */
     MCAPI void sendServerInitializeStart(class ServerInstance &);
     /**
      * @symbol ?sendServerLevelInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEAVLevel@@@Z
-     * @hash   273559911
+     * @hash   448123639
      */
     MCAPI void sendServerLevelInitialized(class ServerInstance &, class Level &);
     /**
      * @symbol ?sendServerMinecraftInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-     * @hash   -639105467
+     * @hash   -464541739
      */
     MCAPI void sendServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
     /**
      * @symbol ?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   427864894
+     * @hash   602428622
      */
     MCAPI void sendServerThreadStarted(class ServerInstance &);
     /**
      * @symbol ?sendServerThreadStopped@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   -418482218
+     * @hash   -243918490
      */
     MCAPI void sendServerThreadStopped(class ServerInstance &);
     /**
      * @symbol ?sendServerUpdateEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   1771592808
+     * @hash   1946156536
      */
     MCAPI void sendServerUpdateEnd(class ServerInstance &);
     /**
      * @symbol ?sendServerUpdateStart@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   52471178
+     * @hash   227034906
      */
     MCAPI void sendServerUpdateStart(class ServerInstance &);
     /**
      * @symbol ?sendStartLeaveGame@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-     * @hash   -1645912486
+     * @hash   -1471348758
      */
     MCAPI void sendStartLeaveGame(class ServerInstance &);
 

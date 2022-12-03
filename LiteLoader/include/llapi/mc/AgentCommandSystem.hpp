@@ -37,33 +37,33 @@ public:
     virtual ~AgentCommandSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -376002523
+     * @hash   -218352395
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
-     * @hash   1726687713
+     * @hash   1884383969
      */
     MCAPI static void cleanUp(class EntityContext &, float);
     /**
      * @symbol ?initialize@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@V?$FlagComponent@ULegacyCommandFlag@AgentComponents@@@@@@@Z
-     * @hash   -393107426
+     * @hash   -235411170
      */
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct AgentComponents::InitializingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
     /**
      * @symbol ?tickAgentCooldown@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VCommandCooldown@AgentComponents@@VActionQueue@4@@@@Z
-     * @hash   -1485450173
+     * @hash   -1327800045
      */
     MCAPI static void tickAgentCooldown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::CommandCooldown, class AgentComponents::ActionQueue> &);
     /**
      * @symbol ?tickLegacy@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgentCommandComponent@@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@V?$FlagComponent@ULegacyCommandFlag@AgentComponents@@@@@@@Z
-     * @hash   -1568676576
+     * @hash   -1411026448
      */
     MCAPI static void tickLegacy(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentCommandComponent, class FlagComponent<struct AgentComponents::ExecutingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
 

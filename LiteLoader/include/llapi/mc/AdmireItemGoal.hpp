@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@AdmireItemGoal@@UEAA_NXZ
-     * @hash   -31310424
+     * @hash   128722984
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@AdmireItemGoal@@UEAA_NXZ
-     * @hash   26407414
+     * @hash   186440822
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@AdmireItemGoal@@UEAAXXZ
-     * @hash   1261505441
+     * @hash   1421523473
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@AdmireItemGoal@@UEAAXXZ
-     * @hash   -1777938079
+     * @hash   -1617904671
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@AdmireItemGoal@@UEAAXXZ
-     * @hash   -1982912276
+     * @hash   -1822863492
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -905854808
+     * @hash   -745821400
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
-     * @hash   -1432754328
+     * @hash   -1272720920
      */
     MCAPI AdmireItemGoal(class Mob &, enum class LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
 
 //private:
     /**
      * @symbol ?_tryPlaceItemInInventory@AdmireItemGoal@@AEAAXAEAVContainerComponent@@AEBVShareableComponent@@@Z
-     * @hash   655585170
+     * @hash   815618578
      */
     MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
 

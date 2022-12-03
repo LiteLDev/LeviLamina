@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@RepeatUntilSuccessNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   -505351185
+     * @hash   -423473985
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@RepeatUntilSuccessNode@@MEAAXAEAVActor@@@Z
-     * @hash   -1518388180
+     * @hash   -1436510980
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0RepeatUntilSuccessNode@@QEAA@XZ
-     * @hash   1663744830
+     * @hash   1745622030
      */
     MCAPI RepeatUntilSuccessNode();
 

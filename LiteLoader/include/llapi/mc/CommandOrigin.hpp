@@ -111,73 +111,73 @@ public:
     /**
      * @vftbl  11
      * @symbol ?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   676929174
+     * @hash   713354918
      */
     virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /**
      * @vftbl  12
      * @symbol ?getCursorHitPos@CommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ
-     * @hash   694248173
+     * @hash   730673917
      */
     virtual class std::optional<class Vec3> getCursorHitPos() const;
     /**
      * @vftbl  13
      * @symbol ?hasChatPerms@CommandOrigin@@UEBA_NXZ
-     * @hash   -1599529928
+     * @hash   -1562058616
      */
     virtual bool hasChatPerms() const;
     /**
      * @vftbl  14
      * @symbol ?hasTellPerms@CommandOrigin@@UEBA_NXZ
-     * @hash   -1886282353
+     * @hash   -1848811041
      */
     virtual bool hasTellPerms() const;
     /**
      * @vftbl  15
      * @symbol ?canUseAbility@CommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-     * @hash   916813470
+     * @hash   1013313246
      */
     virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  16
      * @symbol ?isWorldBuilder@CommandOrigin@@UEBA_NXZ
-     * @hash   1322494202
+     * @hash   1359965514
      */
     virtual bool isWorldBuilder() const;
     /**
      * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@CommandOrigin@@UEBA_NXZ
-     * @hash   -1145536865
+     * @hash   -1048791073
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@CommandOrigin@@UEBA_NXZ
-     * @hash   -1949125159
+     * @hash   -1911653847
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  19
      * @symbol ?getSourceId@CommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
-     * @hash   211342489
+     * @hash   248813801
      */
     virtual class NetworkIdentifier const & getSourceId() const;
     /**
      * @vftbl  20
      * @symbol ?getSourceSubId@CommandOrigin@@UEBA?AW4SubClientId@@XZ
-     * @hash   1951955353
+     * @hash   2048701145
      */
     virtual enum class SubClientId getSourceSubId() const;
     /**
      * @vftbl  21
      * @symbol ?getOutputReceiver@CommandOrigin@@UEBAAEBV1@XZ
-     * @hash   148821073
+     * @hash   242091889
      */
     virtual class CommandOrigin const & getOutputReceiver() const;
     /**
      * @vftbl  22
      * @symbol ?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
-     * @hash   312895534
+     * @hash   350197710
      */
     virtual struct CommandOriginIdentity getIdentity() const;
     /**
@@ -189,37 +189,37 @@ public:
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ
-     * @hash   -309528098
+     * @hash   -272179794
      */
     virtual struct CommandOriginData toCommandOriginData() const;
     /**
      * @vftbl  25
      * @symbol ?getUUID@CommandOrigin@@UEBAAEBVUUID@mce@@XZ
-     * @hash   -1217697725
+     * @hash   -1124426909
      */
     virtual class mce::UUID const & getUUID() const;
     /**
      * @vftbl  26
      * @symbol ?handleCommandOutputCallback@CommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-     * @hash   -1883238989
+     * @hash   -1794273453
      */
     virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
     /**
      * @vftbl  27
      * @symbol ?updateValues@CommandOrigin@@UEAAXXZ
-     * @hash   1337742145
+     * @hash   1426707681
      */
     virtual void updateValues();
     /**
      * @vftbl  28
      * @symbol ?getExecutePosition@CommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-     * @hash   -1841405938
+     * @hash   -1804103762
      */
     virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /**
      * @vftbl  29
      * @symbol ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   363550055
+     * @hash   401005991
      */
     virtual class CompoundTag serialize() const;
     /**
@@ -231,42 +231,42 @@ public:
     /**
      * @vftbl  31
      * @symbol ?_setUUID@CommandOrigin@@MEAAXAEBVUUID@mce@@@Z
-     * @hash   -1679114598
+     * @hash   -1642688854
      */
     virtual void _setUUID(class mce::UUID const &);
     /**
      * @symbol ??0CommandOrigin@@QEAA@XZ
-     * @hash   575042493
+     * @hash   611437485
      */
     MCAPI CommandOrigin();
     /**
      * @symbol ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     * @hash   242930979
+     * @hash   279356723
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-     * @hash   549630858
+     * @hash   586056602
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
     /**
      * @symbol ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     * @hash   -703625261
+     * @hash   -667199517
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-     * @hash   1970023814
+     * @hash   2006449558
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
     /**
      * @symbol ?isEditorWorld@CommandOrigin@@QEBA_NXZ
-     * @hash   -583976980
+     * @hash   -546505668
      */
     MCAPI bool isEditorWorld() const;
     /**
      * @symbol ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-     * @hash   402618461
+     * @hash   439044205
      */
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum class SubClientId);
 
@@ -275,7 +275,7 @@ public:
 protected:
     /**
      * @symbol ?sUnknownSource@CommandOrigin@@1VNetworkIdentifier@@A
-     * @hash   -1045756675
+     * @hash   -184623795
      */
     MCAPI static class NetworkIdentifier sUnknownSource;
 

@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@PassengerPositionSelfSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   676280386
+     * @hash   721470450
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doPassengerPositionSelfSystem@PassengerPositionSelfSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPositionPassengerRequestComponent@@@@@Z
-     * @hash   -460800694
+     * @hash   -415610630
      */
     MCAPI static void _doPassengerPositionSelfSystem(class StrictEntityContext const &, struct PassengerComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
 

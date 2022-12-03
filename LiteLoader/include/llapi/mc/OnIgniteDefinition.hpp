@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@OnIgniteDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnIgniteDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1632954842
+     * @hash   1715400954
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnIgniteDefinition>> &);
 

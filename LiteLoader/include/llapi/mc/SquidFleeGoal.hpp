@@ -38,42 +38,42 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SquidFleeGoal@@UEAA_NXZ
-     * @hash   -1255480443
+     * @hash   -1211259067
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SquidFleeGoal@@UEAA_NXZ
-     * @hash   831040611
+     * @hash   991074019
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SquidFleeGoal@@UEAAXXZ
-     * @hash   2037831006
+     * @hash   -2096380210
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SquidFleeGoal@@UEAAXXZ
-     * @hash   -767912578
+     * @hash   -678947042
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SquidFleeGoal@@UEAAXXZ
-     * @hash   -486503511
+     * @hash   -442266759
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SquidFleeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -490186437
+     * @hash   -445965061
      */
     virtual void appendDebugInfo(std::string &) const;
 

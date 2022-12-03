@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-     * @hash   1043027182
+     * @hash   1574990654
      */
     virtual void initializeFactory(class Experiments const &);
     /**
      * @vftbl  2
      * @symbol ?initSchema@BlockEventResponseFactory@@UEAAXXZ
-     * @hash   -1230477764
+     * @hash   -698545044
      */
     virtual void initSchema();
 

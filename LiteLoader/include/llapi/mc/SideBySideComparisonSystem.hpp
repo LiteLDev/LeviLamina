@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSideBySideComparisonSystem@SideBySideComparisonSystem@@SA?AUTickingSystemWithInfo@@W4SideBySideExtractionId@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
-     * @hash   -1943497694
+     * @hash   -1939054030
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(enum class SideBySideExtractionId, std::vector<unsigned int> const &);
     /**
      * @symbol ?createSideBySideExceptionSystems@SideBySideComparisonSystem@@SA?AV?$array@UTickingSystemWithInfo@@$01@std@@XZ
-     * @hash   -171124080
+     * @hash   -166834176
      */
     MCAPI static class std::array<struct TickingSystemWithInfo, 2> createSideBySideExceptionSystems();
 

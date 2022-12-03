@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ?deserialize@LootPoolTiers@@SA?AV?$unique_ptr@VLootPoolTiers@@U?$default_delete@VLootPoolTiers@@@std@@@std@@VValue@Json@@@Z
-     * @hash   419629387
+     * @hash   888535883
      */
     MCAPI static std::unique_ptr<class LootPoolTiers> deserialize(class Json::Value);
 

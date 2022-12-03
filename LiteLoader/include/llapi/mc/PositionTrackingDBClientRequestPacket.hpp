@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PositionTrackingDBClientRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1751981056
+     * @hash   1678068624
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PositionTrackingDBClientRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1650611885
+     * @hash   1576699453
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PositionTrackingDBClientRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   890694842
+     * @hash   816782410
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PositionTrackingDBClientRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   976219258
+     * @hash   902306826
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PositionTrackingDBClientRequestPacket@@QEAA@XZ
-     * @hash   1513190538
+     * @hash   1439278106
      */
     MCAPI PositionTrackingDBClientRequestPacket();
 

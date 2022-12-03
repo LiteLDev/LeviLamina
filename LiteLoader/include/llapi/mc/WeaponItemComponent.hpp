@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEBA_NXZ
-     * @hash   263577651
+     * @hash   360077427
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -860600891
+     * @hash   -265641947
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   96736251
+     * @hash   716527435
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?appendFormattedHovertext@WeaponItemComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1445428774
+     * @hash   -886126774
      */
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     /**
      * @symbol ?hitActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   444257202
+     * @hash   1004989170
      */
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ?hitBlock@WeaponItemComponent@@QEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
-     * @hash   1175002697
+     * @hash   1735734665
      */
     MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
     /**
      * @symbol ?hurtActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   -488159416
+     * @hash   72572552
      */
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @symbol ?bindType@WeaponItemComponent@@SAXXZ
-     * @hash   1152145455
+     * @hash   1711493583
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@WeaponItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -455950756
+     * @hash   104781212
      */
     MCAPI static class HashedString const & getIdentifier();
 

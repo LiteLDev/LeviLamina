@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ?createClearPrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -88283742
+     * @hash   45210690
      */
     MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
     /**
      * @symbol ?createClearRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1286292178
+     * @hash   1419786610
      */
     MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
     /**
      * @symbol ?createUpdatePrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1011964636
+     * @hash   -878470204
      */
     MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
     /**
      * @symbol ?tickClearRidingID@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPassengerComponent@@@@@Z
-     * @hash   1142679515
+     * @hash   1276097067
      */
     MCAPI static void tickClearRidingID(class StrictEntityContext &, struct PassengerComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PassengerComponent> &);
     /**
      * @symbol ?tickClearRidingPrevIDAfterRemovePassenger@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAURidingPrevIDComponent@@@Z
-     * @hash   -1774633318
+     * @hash   -1641215766
      */
     MCAPI static void tickClearRidingPrevIDAfterRemovePassenger(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &);
     /**
      * @symbol ?tickUpdateRidingPrevID@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAURidingPrevIDComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@@@@Z
-     * @hash   -152297548
+     * @hash   -18879996
      */
     MCAPI static void tickUpdateRidingPrevID(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>);
 

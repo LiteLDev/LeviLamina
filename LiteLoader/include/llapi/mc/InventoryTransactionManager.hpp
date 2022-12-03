@@ -32,37 +32,37 @@ public:
 public:
     /**
      * @symbol ?_createServerSideAction@InventoryTransactionManager@@QEAAXAEBVItemStack@@0@Z
-     * @hash   26812608
+     * @hash   75985056
      */
     MCAPI void _createServerSideAction(class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?_logExpectedActions@InventoryTransactionManager@@QEBAXXZ
-     * @hash   178713763
+     * @hash   267679299
      */
     MCAPI void _logExpectedActions() const;
     /**
      * @symbol ?addAction@InventoryTransactionManager@@QEAAXAEBVInventoryAction@@_N@Z
-     * @hash   -1624407727
+     * @hash   -875165999
      */
     MCAPI void addAction(class InventoryAction const &, bool);
     /**
      * @symbol ?addExpectedAction@InventoryTransactionManager@@QEAAXAEBVInventoryAction@@@Z
-     * @hash   449100542
+     * @hash   1198342270
      */
     MCAPI void addExpectedAction(class InventoryAction const &);
     /**
      * @symbol ?checkActionExpected@InventoryTransactionManager@@QEAA_NAEBVInventoryAction@@@Z
-     * @hash   1722048617
+     * @hash   -1823676951
      */
     MCAPI bool checkActionExpected(class InventoryAction const &);
     /**
      * @symbol ?forceBalanceTransaction@InventoryTransactionManager@@QEAAXXZ
-     * @hash   -822055233
+     * @hash   -72813505
      */
     MCAPI void forceBalanceTransaction();
     /**
      * @symbol ??1InventoryTransactionManager@@QEAA@XZ
-     * @hash   -284482393
+     * @hash   -234864041
      */
     MCAPI ~InventoryTransactionManager();
 

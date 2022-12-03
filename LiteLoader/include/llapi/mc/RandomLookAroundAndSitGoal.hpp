@@ -38,48 +38,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomLookAroundAndSitGoal@@UEAA_NXZ
-     * @hash   416391047
+     * @hash   578361831
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomLookAroundAndSitGoal@@UEAA_NXZ
-     * @hash   1616955269
+     * @hash   1778895301
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RandomLookAroundAndSitGoal@@UEAAXXZ
-     * @hash   -414549568
+     * @hash   -252409648
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RandomLookAroundAndSitGoal@@UEAAXXZ
-     * @hash   -1443129952
+     * @hash   -1280990032
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RandomLookAroundAndSitGoal@@UEAAXXZ
-     * @hash   -187508437
+     * @hash   -25291637
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomLookAroundAndSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1180930743
+     * @hash   -1018990711
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@HHHHM@Z
-     * @hash   1373696877
+     * @symbol ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@_NHHMMHHMH@Z
+     * @hash   1026628391
      */
-    MCAPI RandomLookAroundAndSitGoal(class Mob &, int, int, int, int, float);
+    MCAPI RandomLookAroundAndSitGoal(class Mob &, bool, int, int, float, float, int, int, float, int);
 
 };

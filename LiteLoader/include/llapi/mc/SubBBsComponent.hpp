@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SubBBsComponent@@QEAA@XZ
-     * @hash   1992001094
+     * @hash   1359001926
      */
     MCAPI ~SubBBsComponent();
 

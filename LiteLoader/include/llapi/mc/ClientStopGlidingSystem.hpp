@@ -35,23 +35,23 @@ public:
     virtual ~ClientStopGlidingSystem();
     /**
      * @vftbl  1
-     * @hash   -407916143
+     * @hash   -253879375
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?tick@ClientStopGlidingSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UUsesECSMovementFlag@@@@@@U?$Read@UStateVectorComponent@@UCollisionBoxDefinitionComponent@@@@U?$Write@UAABBShapeComponent@@UOffsetsComponent@@UPlayerActionComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UStopGlidingRequestFlag@@@@V?$FlagComponent@UWasPenetratingLastFrameFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   167151162
+     * @hash   161708058
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct UsesECSMovementFlag>>, struct Read<struct StateVectorComponent, struct CollisionBoxDefinitionComponent>, struct Write<struct AABBShapeComponent, struct OffsetsComponent, struct PlayerActionComponent, struct SynchedActorDataComponent>, struct AddRemove<class FlagComponent<struct StopGlidingRequestFlag>, class FlagComponent<struct WasPenetratingLastFrameFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
      * @symbol ?createClientStopGlidingSystem@ClientStopGlidingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   2009755796
+     * @hash   2004312692
      */
     MCAPI static struct TickingSystemWithInfo createClientStopGlidingSystem();
 

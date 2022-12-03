@@ -30,8 +30,13 @@ public:
 public:
     /**
      * @symbol ?createLadderResetFallDamageSystem@LadderResetFallDamageSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -203161104
+     * @hash   -126127344
      */
     MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem();
+    /**
+     * @symbol ?createSideBySideLadderResetFallDamageSystem@LadderResetFallDamageSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -573099776
+     */
+    MCAPI static struct TickingSystemWithInfo createSideBySideLadderResetFallDamageSystem();
 
 };

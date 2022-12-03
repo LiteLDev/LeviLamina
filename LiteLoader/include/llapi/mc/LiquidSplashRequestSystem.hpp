@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@LiquidSplashRequestSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1376601528
+     * @hash   -1314497864
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_liquidSplashRequest@LiquidSplashRequestSystem@@CAXAEAVStrictEntityContext@@AEBUUpdateWaterStateRequestComponent@@V?$Optional@$$CBUPlayerGameTypeComponent@@@@V?$Optional@$$CBV?$FlagComponent@UInLavaFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UPostSplashGameEventRequestFlag@@@@V?$FlagComponent@UWaterSplashEffectRequestFlag@@@@@@@Z
-     * @hash   437146473
+     * @hash   499019497
      */
     MCAPI static void _liquidSplashRequest(class StrictEntityContext &, struct UpdateWaterStateRequestComponent const &, class Optional<struct PlayerGameTypeComponent const>, class Optional<class FlagComponent<struct InLavaFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PostSplashGameEventRequestFlag>, class FlagComponent<struct WaterSplashEffectRequestFlag>>);
 

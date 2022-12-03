@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?test@StructurePoolBlockTagPredicateBlockTagStringMatches@@UEBA_NAEBVBlock@@AEBVCompoundTag@@@Z
-     * @hash   295105902
+     * @hash   1051236078
      */
     virtual bool test(class Block const &, class CompoundTag const &) const;
     /**
      * @symbol ??0StructurePoolBlockTagPredicateBlockTagStringMatches@@QEAA@AEBVBlock@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     * @hash   -259353429
+     * @hash   496776747
      */
     MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const &, std::string, std::string);
 

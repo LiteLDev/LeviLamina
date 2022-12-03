@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0AvoidMobTypeDefinition@@QEAA@XZ
-     * @hash   -704528620
+     * @hash   -544833484
      */
     MCAPI AvoidMobTypeDefinition();
     /**
      * @symbol ?initialize@AvoidMobTypeDefinition@@QEAAXAEAVEntityContext@@AEAVAvoidMobTypeGoal@@@Z
-     * @hash   -1143438765
+     * @hash   -983912765
      */
     MCAPI void initialize(class EntityContext &, class AvoidMobTypeGoal &);
     /**
      * @symbol ?buildSchema@AvoidMobTypeDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAvoidMobTypeDefinition@@@JsonUtil@@@3@@Z
-     * @hash   1712626723
+     * @hash   1872291107
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>> &);
 

@@ -36,46 +36,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@CroakGoal@@UEAA_NXZ
-     * @hash   478318691
+     * @hash   638505859
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@CroakGoal@@UEAA_NXZ
-     * @hash   250130305
+     * @hash   410317473
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@CroakGoal@@UEAAXXZ
-     * @hash   -601512356
+     * @hash   -441325188
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@CroakGoal@@UEAAXXZ
-     * @hash   1743432444
+     * @hash   1903619612
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@CroakGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1183851459
+     * @hash   -1023725795
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0CroakGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -172771968
+     * @hash   -12646304
      */
     MCAPI CroakGoal(class Mob &);
 

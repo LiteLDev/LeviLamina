@@ -35,23 +35,23 @@ public:
     virtual ~StartGlidingSystem();
     /**
      * @vftbl  1
-     * @hash   -407916143
+     * @hash   -253879375
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?tick@StartGlidingSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@UPlayerInputRequestComponent@@V?$FlagComponent@UUsesECSMovementFlag@@@@@@U?$Read@UAbilitiesComponent@@V?$FlagComponent@UArmorFlyEnabledFlag@@@@UCollisionBoxDefinitionComponent@@UMoveInputComponent@@V?$FlagComponent@UOnGroundFlag@@@@UPassengerComponent@@UStateVectorComponent@@UVanillaClientGameplayComponent@@@@U?$Write@UAABBShapeComponent@@UOffsetsComponent@@UPlayerActionComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UWasPenetratingLastFrameFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   717534630
+     * @hash   714121158
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct PlayerComponentFlag>, struct PlayerInputRequestComponent, class FlagComponent<struct UsesECSMovementFlag>>, struct Read<struct AbilitiesComponent, class FlagComponent<struct ArmorFlyEnabledFlag>, struct CollisionBoxDefinitionComponent, struct MoveInputComponent, class FlagComponent<struct OnGroundFlag>, struct PassengerComponent, struct StateVectorComponent, struct VanillaClientGameplayComponent>, struct Write<struct AABBShapeComponent, struct OffsetsComponent, struct PlayerActionComponent, struct SynchedActorDataComponent>, struct AddRemove<class FlagComponent<struct WasPenetratingLastFrameFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
      * @symbol ?createStartGlidingSystem@StartGlidingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1486966644
+     * @hash   1483553172
      */
     MCAPI static struct TickingSystemWithInfo createStartGlidingSystem();
 

@@ -30,17 +30,17 @@ public:
 public:
     /**
      * @symbol ??0OnStoreSideBySideResult@@QEAA@V?$optional@W4SideBySideExtractionId@@@std@@AEBVStrictEntityContext@@V?$not_null@PEAVEntityRegistryBase@@@gsl@@USideBySideResult@@@Z
-     * @hash   365490462
+     * @hash   344348462
      */
     MCAPI OnStoreSideBySideResult(class std::optional<enum class SideBySideExtractionId>, class StrictEntityContext const &, class gsl::not_null<class EntityRegistryBase *>, struct SideBySideResult);
     /**
      * @symbol ?createContext@OnStoreSideBySideResult@@QEBA?AUSideBySideResultSystemContext@@XZ
-     * @hash   -737769266
+     * @hash   -808975522
      */
     MCAPI struct SideBySideResultSystemContext createContext() const;
     /**
      * @symbol ??1OnStoreSideBySideResult@@QEAA@XZ
-     * @hash   -194106416
+     * @hash   -60934880
      */
     MCAPI ~OnStoreSideBySideResult();
 

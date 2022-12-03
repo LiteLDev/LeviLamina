@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_storePreviousRideStats@StorePreviousRideStatsSystem@@SAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUVanillaClientGameplayComponent@@@Z
-     * @hash   -1527705340
+     * @hash   -1537515228
      */
     MCAPI static void _storePreviousRideStats(class StrictEntityContext const &, struct StateVectorComponent const &, struct VanillaClientGameplayComponent &);
     /**
      * @symbol ?createSystem@StorePreviousRideStatsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   745172342
+     * @hash   735362454
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?addEnvironmentTrigger@EnvironmentSensorDefinition@@QEAAXAEBVActorDefinitionTrigger@@@Z
-     * @hash   -1115227190
+     * @hash   -955024646
      */
     MCAPI void addEnvironmentTrigger(class ActorDefinitionTrigger const &);
     /**
      * @symbol ?buildSchema@EnvironmentSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEnvironmentSensorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1670522638
+     * @hash   -1151782526
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>> &);
 

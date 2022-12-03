@@ -32,34 +32,34 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCKACTOR
     /**
-     * @symbol ?canPullOutItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     * @hash   -553553016
+     * @symbol ?canPullOutItem@EnderChestBlockActor@@UEBA_NHHAEBVItemStack@@@Z
+     * @hash   1129252559
      */
-    MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
     /**
-     * @symbol ?canPushInItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     * @hash   1564691070
+     * @symbol ?canPushInItem@EnderChestBlockActor@@UEBA_NHHAEBVItemStack@@@Z
+     * @hash   -149627111
      */
-    MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
     /**
      * @symbol ?getName@EnderChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1188201194
+     * @hash   1774057546
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?playCloseSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   -385627366
+     * @hash   200228986
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
      * @symbol ?playOpenSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     * @hash   -962854108
+     * @hash   -376997756
      */
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
     /**
      * @symbol ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
-     * @hash   727481223
+     * @hash   1313337575
      */
     MCAPI EnderChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
 
@@ -68,7 +68,7 @@ public:
 private:
     /**
      * @symbol ?ITEMS_SIZE@EnderChestBlockActor@@0HB
-     * @hash   593153763
+     * @hash   1378513715
      */
     MCAPI static int const ITEMS_SIZE;
 

@@ -36,51 +36,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockLightDampeningDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -38108371
+     * @hash   434918893
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockLightDampeningDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1305668233
+     * @hash   -832640969
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockLightDampeningDescription@@UEBA_NXZ
-     * @hash   976267573
+     * @hash   1072767349
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockLightDampeningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -1099986889
+     * @hash   -627344025
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockLightDampeningDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   2022957227
+     * @hash   -1798982805
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockLightDampeningDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1798016879
+     * @hash   -713142217
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockLightDampeningDescription@@SAXXZ
-     * @hash   -1615449677
+     * @hash   -1143037453
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockLightDampeningDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1453425978
+     * @hash   -980383338
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

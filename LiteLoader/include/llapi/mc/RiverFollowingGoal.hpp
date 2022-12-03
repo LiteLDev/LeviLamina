@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RiverFollowingGoal@@UEAA_NXZ
-     * @hash   -1279376296
+     * @hash   -1264599960
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RiverFollowingGoal@@UEAA_NXZ
-     * @hash   998091862
+     * @hash   1012868198
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RiverFollowingGoal@@UEAAXXZ
-     * @hash   -1262394671
+     * @hash   -1247741343
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RiverFollowingGoal@@UEAAXXZ
-     * @hash   -6992271
+     * @hash   7661057
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RiverFollowingGoal@@UEAAXXZ
-     * @hash   2111203868
+     * @hash   2125857196
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RiverFollowingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   581677208
+     * @hash   596453544
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RiverFollowingGoal@@QEAA@AEAVMob@@MM@Z
-     * @hash   140068213
+     * @hash   154844549
      */
     MCAPI RiverFollowingGoal(class Mob &, float, float);
 
 //protected:
     /**
      * @symbol ?determineSteerDirection@RiverFollowingGoal@@IEAAXXZ
-     * @hash   94139644
+     * @hash   108915980
      */
     MCAPI void determineSteerDirection();
 

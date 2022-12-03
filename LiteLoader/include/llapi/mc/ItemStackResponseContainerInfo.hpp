@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
-     * @hash   -341244436
+     * @hash   -415218372
      */
     MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
     /**
      * @symbol ??1ItemStackResponseContainerInfo@@QEAA@XZ
-     * @hash   -228569181
+     * @hash   -302543117
      */
     MCAPI ~ItemStackResponseContainerInfo();
 

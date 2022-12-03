@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PieceWeight@@QEAA@XZ
-     * @hash   708400034
+     * @hash   796073986
      */
     MCAPI ~PieceWeight();
 

@@ -38,44 +38,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEBA_NXZ
-     * @hash   49685631
+     * @hash   146185407
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1637873601
+     * @hash   -2062134751
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   1851357199
+     * @hash   -1823818913
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?bindType@OnUseItemComponent@@SAXXZ
-     * @hash   362507171
+     * @hash   878095203
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@OnUseItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -1472810636
+     * @hash   -956868956
      */
     MCAPI static class HashedString const & getIdentifier();
 

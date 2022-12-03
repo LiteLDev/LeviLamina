@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0GameTestResult@@QEAA@AEBU0@@Z
-     * @hash   1485508863
+     * @hash   1574597407
      */
     MCAPI GameTestResult(struct GameTestResult const &);
     /**
      * @symbol ??4GameTestResult@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1176030230
+     * @hash   1267886454
      */
     MCAPI struct GameTestResult & operator=(struct GameTestResult const &);
     /**
      * @symbol ??4GameTestResult@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   304534038
+     * @hash   396390262
      */
     MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
     /**
      * @symbol ??8GameTestResult@@QEBA_NAEBU0@@Z
-     * @hash   -1696935916
+     * @hash   -1604541532
      */
     MCAPI bool operator==(struct GameTestResult const &) const;
     /**
      * @symbol ??1GameTestResult@@QEAA@XZ
-     * @hash   1205905003
+     * @hash   1158331659
      */
     MCAPI ~GameTestResult();
     /**
      * @symbol ?bindType@GameTestResult@@SAXXZ
-     * @hash   -539551517
+     * @hash   -442713469
      */
     MCAPI static void bindType();
 

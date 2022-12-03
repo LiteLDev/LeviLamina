@@ -31,67 +31,67 @@ public:
 public:
     /**
      * @symbol ??0TickWorldComponent@@QEAA@XZ
-     * @hash   1802638020
+     * @hash   1726726708
      */
     MCAPI TickWorldComponent();
     /**
      * @symbol ??0TickWorldComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1930866599
+     * @hash   -2006777911
      */
     MCAPI TickWorldComponent(class TickWorldComponent &&);
     /**
      * @symbol ?getChunkRadius@TickWorldComponent@@QEBAIXZ
-     * @hash   464626066
+     * @hash   635883954
      */
     MCAPI unsigned int getChunkRadius() const;
     /**
      * @symbol ?getMaxDistToPlayers@TickWorldComponent@@QEBAMXZ
-     * @hash   1761366900
+     * @hash   1940205156
      */
     MCAPI float getMaxDistToPlayers() const;
     /**
      * @symbol ?getTickingArea@TickWorldComponent@@QEAA?AV?$shared_ptr@VITickingArea@@@std@@XZ
-     * @hash   -1836325649
+     * @hash   -1912236961
      */
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea();
     /**
      * @symbol ?hasTickingArea@TickWorldComponent@@QEBA_NXZ
-     * @hash   -1299861362
+     * @hash   -1375772674
      */
     MCAPI bool hasTickingArea() const;
     /**
      * @symbol ?initFromDefinition@TickWorldComponent@@QEAAXAEAVActor@@@Z
-     * @hash   454395802
+     * @hash   378484490
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?isAlwaysActive@TickWorldComponent@@QEBA_NXZ
-     * @hash   -1353217988
+     * @hash   -1373498932
      */
     MCAPI bool isAlwaysActive() const;
     /**
      * @symbol ??4TickWorldComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1915165932
+     * @hash   1839254620
      */
     MCAPI class TickWorldComponent & operator=(class TickWorldComponent &&);
     /**
      * @symbol ?removeArea@TickWorldComponent@@QEAAXXZ
-     * @hash   -1154164027
+     * @hash   -1230075339
      */
     MCAPI void removeArea();
     /**
      * @symbol ?setTickingArea@TickWorldComponent@@QEAAXAEAVActor@@V?$shared_ptr@VITickingArea@@@std@@@Z
-     * @hash   -855499236
+     * @hash   -931410548
      */
     MCAPI void setTickingArea(class Actor &, class std::shared_ptr<class ITickingArea>);
     /**
      * @symbol ?updateArea@TickWorldComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -420230454
+     * @hash   -496141766
      */
     MCAPI void updateArea(class Actor &);
     /**
      * @symbol ??1TickWorldComponent@@QEAA@XZ
-     * @hash   -2129805710
+     * @hash   2089250274
      */
     MCAPI ~TickWorldComponent();
 

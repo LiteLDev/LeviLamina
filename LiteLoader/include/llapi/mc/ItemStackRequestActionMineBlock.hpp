@@ -38,54 +38,54 @@ public:
     virtual ~ItemStackRequestActionMineBlock();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   2096281682
+     * @hash   -2019447582
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1367561133
+     * @hash   -1274290317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -1257381892
+     * @hash   -1203473636
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionMineBlock@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   1685995732
+     * @hash   1739903988
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionMineBlock@@QEAA@XZ
-     * @hash   2106646998
+     * @hash   -2134412042
      */
     MCAPI ItemStackRequestActionMineBlock();
     /**
      * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
-     * @hash   -935023249
+     * @hash   -1006214129
      */
     MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
      * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
-     * @hash   1102123964
+     * @hash   1164227628
      */
     MCAPI int getPredictedDurability() const;
     /**
      * @symbol ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
-     * @hash   1946708972
+     * @hash   2000617228
      */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     /**
      * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
-     * @hash   618837123
+     * @hash   547646243
      */
     MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
 

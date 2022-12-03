@@ -37,13 +37,13 @@ public:
     virtual ~BribeableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BribeableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -158879563
+     * @hash   -768155
      */
     virtual void tick(class EntityRegistry &);
 

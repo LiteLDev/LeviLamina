@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerDropItemEvent@@QEAA@XZ
-     * @hash   1155840563
+     * @hash   1259659315
      */
     MCAPI ~PlayerDropItemEvent();
 

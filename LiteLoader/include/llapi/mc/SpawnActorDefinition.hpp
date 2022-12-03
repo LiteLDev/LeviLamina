@@ -33,12 +33,12 @@ public:
 public:
     /**
      * @symbol ?initialize@SpawnActorDefinition@@QEBAXAEAVEntityContext@@AEAVSpawnActorComponent@@@Z
-     * @hash   1913647453
+     * @hash   1838643325
      */
     MCAPI void initialize(class EntityContext &, class SpawnActorComponent &) const;
     /**
      * @symbol ?buildSchema@SpawnActorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSpawnActorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   632686326
+     * @hash   557682198
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>> &);
 

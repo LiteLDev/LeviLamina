@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@PlayDeadGoal@@UEAA_NXZ
-     * @hash   -58728443
+     * @hash   102488917
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@PlayDeadGoal@@UEAA_NXZ
-     * @hash   3010595
+     * @hash   164227955
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@PlayDeadGoal@@UEAAXXZ
-     * @hash   1473457246
+     * @hash   1634674606
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@PlayDeadGoal@@UEAAXXZ
-     * @hash   1578932542
+     * @hash   1740149902
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PlayDeadGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   449284715
+     * @hash   610409819
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0PlayDeadGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1503739998
+     * @hash   -1342614894
      */
     MCAPI PlayDeadGoal(class Mob &);
 

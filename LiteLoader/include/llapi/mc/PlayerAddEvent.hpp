@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerAddEvent@@QEAA@XZ
-     * @hash   -134426124
+     * @hash   -44476524
      */
     MCAPI ~PlayerAddEvent();
 

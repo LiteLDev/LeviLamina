@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?getDataValues@ChannelTransform@@QEBA_NAEAVVec3@@0@Z
-     * @hash   -203108414
+     * @hash   -178937342
      */
     MCAPI bool getDataValues(class Vec3 &, class Vec3 &) const;
 

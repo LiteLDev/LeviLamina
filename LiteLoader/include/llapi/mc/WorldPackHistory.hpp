@@ -32,62 +32,62 @@ public:
 public:
     /**
      * @symbol ??0WorldPackHistory@@QEAA@AEBV0@@Z
-     * @hash   -1846947103
+     * @hash   -1775833103
      */
     MCAPI WorldPackHistory(class WorldPackHistory const &);
     /**
      * @symbol ??0WorldPackHistory@@QEAA@$$QEAV0@@Z
-     * @hash   -1300859957
+     * @hash   -1229745957
      */
     MCAPI WorldPackHistory(class WorldPackHistory &&);
     /**
      * @symbol ?getCanBeRedownloaded@WorldPackHistory@@QEBA_NXZ
-     * @hash   414645578
+     * @hash   485759578
      */
     MCAPI bool getCanBeRedownloaded() const;
     /**
      * @symbol ?getLocalizedNames@WorldPackHistory@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     * @hash   -732527496
+     * @hash   -747396088
      */
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const & getLocalizedNames() const;
     /**
      * @symbol ?getPackIdVersion@WorldPackHistory@@QEBAAEBUPackIdVersion@@XZ
-     * @hash   2087224780
+     * @hash   -2114471700
      */
     MCAPI struct PackIdVersion const & getPackIdVersion() const;
     /**
      * @symbol ?getSourceUUID@WorldPackHistory@@QEBAAEBVUUID@mce@@XZ
-     * @hash   2098010014
+     * @hash   -2094630002
      */
     MCAPI class mce::UUID const & getSourceUUID() const;
     /**
      * @symbol ?getSubpackCount@WorldPackHistory@@QEBAHXZ
-     * @hash   366062310
+     * @hash   437176310
      */
     MCAPI int getSubpackCount() const;
     /**
      * @symbol ?getUnlocalizedName@WorldPackHistory@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2007391346
+     * @hash   -1861580738
      */
     MCAPI std::string const & getUnlocalizedName() const;
     /**
      * @symbol ?hasLocalizedNames@WorldPackHistory@@QEBA_NXZ
-     * @hash   -522585236
+     * @hash   -451471236
      */
     MCAPI bool hasLocalizedNames() const;
     /**
      * @symbol ?hasSourceUUID@WorldPackHistory@@QEBA_NXZ
-     * @hash   -923266674
+     * @hash   -852152674
      */
     MCAPI bool hasSourceUUID() const;
     /**
      * @symbol ?hasSubpacks@WorldPackHistory@@QEBA_NXZ
-     * @hash   -2097778490
+     * @hash   -2026664490
      */
     MCAPI bool hasSubpacks() const;
     /**
      * @symbol ?initializeFromJson@WorldPackHistory@@QEAA_NAEBVValue@Json@@@Z
-     * @hash   -1525570481
+     * @hash   -1454456481
      */
     MCAPI bool initializeFromJson(class Json::Value const &);
 

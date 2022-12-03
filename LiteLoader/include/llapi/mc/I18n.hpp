@@ -44,196 +44,196 @@ public:
 public:
     /**
      * @symbol ?NeutralLangCode@I18n@@2QBDB
-     * @hash   1798319777
+     * @hash   -1740886367
      */
     MCAPI static char const NeutralLangCode[];
     /**
      * @symbol ?addI18nObserver@I18n@@SAXAEAVI18nObserver@@@Z
-     * @hash   -37243426
+     * @hash   152404158
      */
     MCAPI static void addI18nObserver(class I18nObserver &);
     /**
      * @symbol ?appendLanguageStringsFromPack@I18n@@SAXAEBVPackManifest@@AEBV?$multimap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@@std@@@2@@std@@@Z
-     * @hash   -1425443995
+     * @hash   -1235796411
      */
     MCAPI static void appendLanguageStringsFromPack(class PackManifest const &, class std::multimap<std::string, struct std::pair<std::string, std::string>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct std::pair<std::string, std::string>>>> const &);
     /**
      * @symbol ?chooseLanguage@I18n@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1841289710
+     * @hash   -1651642126
      */
     MCAPI static void chooseLanguage(std::string const &);
     /**
      * @symbol ?chooseLanguage@I18n@@SAXAEBVLocalization@@@Z
-     * @hash   -488617136
+     * @hash   -298969552
      */
     MCAPI static void chooseLanguage(class Localization const &);
     /**
      * @symbol ?findAvailableLanguageNames@I18n@@SA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEAVResourcePackManager@@@Z
-     * @hash   -1389251495
+     * @hash   -1199603911
      */
     MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> findAvailableLanguageNames(class ResourcePackManager &);
     /**
      * @symbol ?findAvailableLanguages@I18n@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVResourcePackManager@@@Z
-     * @hash   2052685416
+     * @hash   -2052649672
      */
     MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager &);
     /**
      * @symbol ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@PEBVLocalization@@@Z
-     * @hash   1543174953
+     * @hash   1732807161
      */
     MCAPI static std::string get(std::string const &, std::vector<std::string> const &, class Localization const *);
     /**
      * @symbol ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@PEBVLocalization@@@Z
-     * @hash   1186195543
+     * @hash   1375843127
      */
     MCAPI static std::string get(std::string const &, class Localization const *);
     /**
      * @symbol ?getCurrentLanguage@I18n@@SA?AV?$optional_ref@$$CBVLocalization@@@@XZ
-     * @hash   578223253
+     * @hash   767870837
      */
     MCAPI static class optional_ref<class Localization const> getCurrentLanguage();
     /**
      * @symbol ?getLanguageCodesFromPack@I18n@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVPackAccessStrategy@@@Z
-     * @hash   -278859182
+     * @hash   -89211598
      */
     MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const &);
     /**
      * @symbol ?getLocaleFor@I18n@@SAAEBVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2036544733
+     * @hash   -2068790355
      */
     MCAPI static class Localization const & getLocaleFor(std::string const &);
     /**
      * @symbol ?getPackKeywordValue@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
-     * @hash   522091396
+     * @hash   711723604
      */
     MCAPI static std::string getPackKeywordValue(class PackManifest const &, std::string const &);
     /**
      * @symbol ?getPackKeywordValueForTelemetry@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
-     * @hash   -2008238780
+     * @hash   -1818591196
      */
     MCAPI static std::string getPackKeywordValueForTelemetry(class PackManifest const &, std::string const &);
     /**
      * @symbol ?isPackKeyword@I18n@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   649041371
+     * @hash   838688955
      */
     MCAPI static bool isPackKeyword(std::string const &);
     /**
      * @symbol ?loadAllLanguages@I18n@@SAXAEAVResourcePackManager@@@Z
-     * @hash   1849221262
+     * @hash   2038838094
      */
     MCAPI static void loadAllLanguages(class ResourcePackManager &);
     /**
      * @symbol ?loadLanguageKeywordsFromPack@I18n@@SAXAEBVPackManifest@@AEBVPackAccessStrategy@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -21160181
+     * @hash   168456651
      */
     MCAPI static void loadLanguageKeywordsFromPack(class PackManifest const &, class PackAccessStrategy const &, std::vector<std::string> const &);
 
 //private:
     /**
      * @symbol ?_findAvailableLanguageNames@I18n@@CAXAEBVValue@Json@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
-     * @hash   1947931460
+     * @hash   2137655924
      */
     MCAPI static void _findAvailableLanguageNames(class Json::Value const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     /**
      * @symbol ?_findAvailableLanguages@I18n@@CAXAEBVValue@Json@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1347584922
+     * @hash   -1157921962
      */
     MCAPI static void _findAvailableLanguages(class Json::Value const &, std::vector<std::string> &);
     /**
      * @symbol ?_findLocaleFor@I18n@@CAPEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -757565838
+     * @hash   -567918254
      */
     MCAPI static class Localization * _findLocaleFor(std::string const &);
     /**
      * @symbol ?_generatePackKeyPrefix@I18n@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@@Z
-     * @hash   991765043
+     * @hash   1181412627
      */
     MCAPI static std::string _generatePackKeyPrefix(class PackManifest const &);
     /**
      * @symbol ?_getAdditionalTranslationsBackupLocale@I18n@@CAPEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   566477659
+     * @hash   756125243
      */
     MCAPI static class Localization * _getAdditionalTranslationsBackupLocale(std::string const &, bool);
     /**
      * @symbol ?_getLocaleCodeFor@I18n@@CAAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   1032804606
+     * @hash   1222452190
      */
     MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     /**
      * @symbol ?_getPackKeywordLocale@I18n@@CAAEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -908068414
+     * @hash   -718420830
      */
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
 
 private:
     /**
      * @symbol ?mAdditionalTranslationsBackup@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-     * @hash   -704717929
+     * @hash   164225959
      */
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
     /**
      * @symbol ?mAdditionalTranslationsBackupMutex@I18n@@0Vmutex@std@@A
-     * @hash   496758064
+     * @hash   1365701952
      */
     MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
     /**
      * @symbol ?mCurrentLanguage@I18n@@0PEBVLocalization@@EB
-     * @hash   -1314568746
+     * @hash   -445624858
      */
     MCAPI static class Localization const * mCurrentLanguage;
     /**
      * @symbol ?mCurrentPackMetaLanguage@I18n@@0PEBVLocalization@@EB
-     * @hash   356733564
+     * @hash   1225677452
      */
     MCAPI static class Localization const * mCurrentPackMetaLanguage;
     /**
      * @symbol ?mEmptyLanguage@I18n@@0VLocalization@@B
-     * @hash   -808207323
+     * @hash   60736565
      */
     MCAPI static class Localization const mEmptyLanguage;
     /**
      * @symbol ?mFormatDictionary@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@2@@std@@A
-     * @hash   280392424
+     * @hash   1149397816
      */
     MCAPI static class std::unordered_map<std::string, std::vector<std::string>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<std::string>>>> mFormatDictionary;
     /**
      * @symbol ?mLanguageCodes@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
-     * @hash   721802884
+     * @hash   1590746772
      */
     MCAPI static std::vector<std::string> mLanguageCodes;
     /**
      * @symbol ?mLanguageNames@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@A
-     * @hash   -1673323293
+     * @hash   -804317901
      */
     MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> mLanguageNames;
     /**
      * @symbol ?mLanguageSupportsHypenSplitting@I18n@@0_NA
-     * @hash   -1101725985
+     * @hash   -259151937
      */
     MCAPI static bool mLanguageSupportsHypenSplitting;
     /**
      * @symbol ?mLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-     * @hash   1162006509
+     * @hash   2030950397
      */
     MCAPI static std::vector<std::unique_ptr<class Localization>> mLanguages;
     /**
      * @symbol ?mPackKeywordLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-     * @hash   -1995919193
+     * @hash   -1126975305
      */
     MCAPI static std::vector<std::unique_ptr<class Localization>> mPackKeywordLanguages;
     /**
      * @symbol ?mPackReservedKeys@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B
-     * @hash   -516887166
+     * @hash   352056722
      */
     MCAPI static std::vector<std::string> const mPackReservedKeys;
     /**
      * @symbol ?mResourcePackManager@I18n@@0PEAVResourcePackManager@@EA
-     * @hash   133517277
+     * @hash   1002461165
      */
     MCAPI static class ResourcePackManager * mResourcePackManager;
     /**
      * @symbol ?mSubject@I18n@@0V?$Subject@VI18nObserver@@VSingleThreadedLock@Core@@@Core@@A
-     * @hash   1831080004
+     * @hash   -1594943404
      */
     MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
 

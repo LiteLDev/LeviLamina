@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0LegacyTradeableDefinition@@QEAA@XZ
-     * @hash   1109420388
+     * @hash   1257168372
      */
     MCAPI LegacyTradeableDefinition();
     /**
      * @symbol ?initialize@LegacyTradeableDefinition@@QEAAXAEAVEntityContext@@AEAVLegacyTradeableComponent@@@Z
-     * @hash   -1979473963
+     * @hash   -1831910491
      */
     MCAPI void initialize(class EntityContext &, class LegacyTradeableComponent &);
     /**
      * @symbol ?buildSchema@LegacyTradeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLegacyTradeableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   473472642
+     * @hash   620989986
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>> &);
 

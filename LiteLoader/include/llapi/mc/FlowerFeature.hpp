@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@FlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1831238187
+     * @hash   -1674695131
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
-     * @hash   1049570372
+     * @hash   1206113428
      */
     MCAPI FlowerFeature(class Block const &);
 
 //private:
     /**
      * @symbol ?_placeMushroom@FlowerFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
-     * @hash   -1955550395
+     * @hash   -1799007339
      */
     MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 

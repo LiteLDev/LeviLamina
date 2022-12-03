@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?_checkInsideCauldron@ServerStandInCauldronSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   -2086266513
+     * @hash   -2088526785
      */
     MCAPI static void _checkInsideCauldron(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
      * @symbol ?createSystem@ServerStandInCauldronSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1801627772
+     * @hash   1799367500
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

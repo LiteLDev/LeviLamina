@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0BasicTimer@@QEAA@NV?$function@$$A6ANXZ@std@@@Z
-     * @hash   580534646
+     * @hash   1093216614
      */
     MCAPI BasicTimer(double, class std::function<double (void)>);
     /**
      * @symbol ?isFinished@BasicTimer@@QEBA_NXZ
-     * @hash   -1689045688
+     * @hash   -1176363720
      */
     MCAPI bool isFinished() const;
     /**
      * @symbol ?resetTime@BasicTimer@@QEAAXXZ
-     * @hash   373707091
+     * @hash   886389059
      */
     MCAPI void resetTime();
     /**
      * @symbol ??1BasicTimer@@QEAA@XZ
-     * @hash   -1059185567
+     * @hash   -903380559
      */
     MCAPI ~BasicTimer();
 

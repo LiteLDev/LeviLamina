@@ -24,22 +24,22 @@ namespace PlayerMovement {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getControllingPassengerID@PlayerMovement@@YA?AUActorUniqueID@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-     * @hash   1749184059
+     * @hash   1673626395
      */
     MCAPI struct ActorUniqueID getControllingPassengerID(std::vector<struct ActorUniqueID> const &, int);
     /**
      * @symbol ?updatePlayerOnInput@PlayerMovement@@YAXAEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@AEAVVec3@@@Z
-     * @hash   -439861105
+     * @hash   -515418769
      */
     MCAPI void updatePlayerOnInput(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);
     /**
      * @symbol ?updatePlayerRiding@PlayerMovement@@YAXAEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z
-     * @hash   867933910
+     * @hash   792376246
      */
     MCAPI void updatePlayerRiding(struct IPlayerMovementProxy &, class MoveInputHandler &);
     /**
      * @symbol ?updateSwimTravel@PlayerMovement@@YAXAEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@AEAVVec3@@@Z
-     * @hash   -455652179
+     * @hash   -531225219
      */
     MCAPI void updateSwimTravel(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);
 

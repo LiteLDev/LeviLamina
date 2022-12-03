@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0FilterInput@@QEAA@H@Z
-     * @hash   -2105573027
+     * @hash   -1954749843
      */
     MCAPI FilterInput(int);
     /**
      * @symbol ??4FilterInput@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1764013340
+     * @hash   1800977244
      */
     MCAPI class FilterInput & operator=(class FilterInput const &);
     /**
      * @symbol ??4FilterInput@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1271279240
+     * @hash   1308243144
      */
     MCAPI class FilterInput & operator=(class FilterInput &&);
     /**
      * @symbol ??1FilterInput@@QEAA@XZ
-     * @hash   -107159826
+     * @hash   -17733010
      */
     MCAPI ~FilterInput();
 

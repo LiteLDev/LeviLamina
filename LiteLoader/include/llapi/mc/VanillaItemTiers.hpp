@@ -33,37 +33,37 @@ public:
 public:
     /**
      * @symbol ?DIAMOND@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   2122962377
+     * @hash   -1560193879
      */
     MCAPI static class Item::Tier const DIAMOND;
     /**
      * @symbol ?GOLD@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   1784368023
+     * @hash   -1898788233
      */
     MCAPI static class Item::Tier const GOLD;
     /**
      * @symbol ?IRON@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   1028452919
+     * @hash   1640263959
      */
     MCAPI static class Item::Tier const IRON;
     /**
      * @symbol ?NETHERITE@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   -484513003
+     * @hash   127298037
      */
     MCAPI static class Item::Tier const NETHERITE;
     /**
      * @symbol ?STONE@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   728500027
+     * @hash   1340311067
      */
     MCAPI static class Item::Tier const STONE;
     /**
      * @symbol ?WOOD@VanillaItemTiers@@2VTier@Item@@B
-     * @hash   1601351185
+     * @hash   -2081805071
      */
     MCAPI static class Item::Tier const WOOD;
     /**
      * @symbol ?getTierItems@VanillaItemTiers@@SA?BV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVTier@Item@@AEBVBaseGameVersion@@@Z
-     * @hash   -1413159288
+     * @hash   -819215160
      */
     MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
 

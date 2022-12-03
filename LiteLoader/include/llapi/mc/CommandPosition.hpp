@@ -39,42 +39,42 @@ public:
 public:
     /**
      * @symbol ??0CommandPosition@@QEAA@XZ
-     * @hash   -1520253456
+     * @hash   -1344874800
      */
     MCAPI CommandPosition();
     /**
      * @symbol ??0CommandPosition@@QEAA@AEBVVec3@@@Z
-     * @hash   -1343391577
+     * @hash   -1168012921
      */
     MCAPI CommandPosition(class Vec3 const &);
     /**
      * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVVec3@@0@Z
-     * @hash   1907878663
+     * @hash   2083503335
      */
     MCAPI class BlockPos getBlockPos(class Vec3 const &, class Vec3 const &) const;
     /**
      * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@HAEBVCommandOrigin@@AEBVVec3@@@Z
-     * @hash   248723507
+     * @hash   424348179
      */
     MCAPI class BlockPos getBlockPos(int, class CommandOrigin const &, class Vec3 const &) const;
     /**
      * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@AEBV2@0@Z
-     * @hash   1515561462
+     * @hash   1691401398
      */
     MCAPI class Vec3 getPosition(class Vec3 const &, class Vec3 const &) const;
     /**
      * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@HAEBVCommandOrigin@@AEBV2@@Z
-     * @hash   -1682277452
+     * @hash   -1506437516
      */
     MCAPI class Vec3 getPosition(int, class CommandOrigin const &, class Vec3 const &) const;
     /**
      * @symbol ?load@CommandPosition@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   1323355672
+     * @hash   1499349368
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?serialize@CommandPosition@@QEBA?AVCompoundTag@@XZ
-     * @hash   561671658
+     * @hash   738818554
      */
     MCAPI class CompoundTag serialize() const;
 

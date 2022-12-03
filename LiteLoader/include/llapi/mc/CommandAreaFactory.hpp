@@ -32,44 +32,44 @@ public:
 public:
     /**
      * @symbol ??0CommandAreaFactory@@QEAA@AEAVDimension@@@Z
-     * @hash   1942493615
+     * @hash   1900993791
      */
     MCAPI CommandAreaFactory(class Dimension &);
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N1@Z
-     * @hash   -655821936
+     * @hash   -584692560
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool, bool) const;
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0_N11@Z
-     * @hash   -1987997696
+     * @hash   -1916868320
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool, bool) const;
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N1@Z
-     * @hash   -2049926398
+     * @hash   -1978797022
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, int, bool, bool) const;
     /**
      * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N1@Z
-     * @hash   -250362700
+     * @hash   -179233324
      */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, class BlockPos const &, int, bool, bool) const;
     /**
      * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N1@Z
-     * @hash   -96243010
+     * @hash   -25113634
      */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, int, bool, bool) const;
     /**
      * @symbol ?shouldAllowNonTickingPlayerAndTickingAreaChunks@CommandAreaFactory@@SA_NH@Z
-     * @hash   1629235561
+     * @hash   1700364937
      */
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
 //private:
     /**
      * @symbol ?_getArea@CommandAreaFactory@@AEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBUBounds@@_N11@Z
-     * @hash   -37832071
+     * @hash   33297305
      */
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool, bool) const;
 

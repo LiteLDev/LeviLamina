@@ -39,91 +39,91 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MingleGoal@@UEAA_NXZ
-     * @hash   787934767
+     * @hash   948521711
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MingleGoal@@UEAA_NXZ
-     * @hash   1260389485
+     * @hash   1420976429
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MingleGoal@@UEAAXXZ
-     * @hash   -1225276856
+     * @hash   -1064689912
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@MingleGoal@@UEAAXXZ
-     * @hash   -911157688
+     * @hash   -750570744
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@MingleGoal@@UEAAXXZ
-     * @hash   -1430441357
+     * @hash   -1269854413
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MingleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -925120703
+     * @hash   -764533759
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0MingleGoal@@QEAA@AEAVMob@@MMMUActorDefinitionIdentifier@@M@Z
-     * @hash   -330948221
+     * @hash   -170361277
      */
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
 //private:
     /**
      * @symbol ?_findNewPartner@MingleGoal@@AEAAXUActorUniqueID@@@Z
-     * @hash   -2135840278
+     * @hash   -1975253334
      */
     MCAPI void _findNewPartner(struct ActorUniqueID);
     /**
      * @symbol ?_isWithinInteractRange@MingleGoal@@AEBA_NAEAVActor@@@Z
-     * @hash   414887006
+     * @hash   575473950
      */
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     /**
      * @symbol ?_lookAt@MingleGoal@@AEAAXPEAVActor@@@Z
-     * @hash   596826855
+     * @hash   757413799
      */
     MCAPI void _lookAt(class Actor *);
 
 private:
     /**
      * @symbol ?FIND_PARTNER_INTERVAL_TICKS@MingleGoal@@0HB
-     * @hash   -2032752460
+     * @hash   -1278083004
      */
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     /**
      * @symbol ?SPEAK_INTERVAL_TICKS_MAX@MingleGoal@@0HB
-     * @hash   303199505
+     * @hash   1057868961
      */
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     /**
      * @symbol ?SPEAK_INTERVAL_TICKS_MIN@MingleGoal@@0HB
-     * @hash   -591864389
+     * @hash   162805067
      */
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 

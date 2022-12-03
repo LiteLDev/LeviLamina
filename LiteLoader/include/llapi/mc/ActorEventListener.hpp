@@ -33,77 +33,77 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
     /**
      * @symbol ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     * @hash   -993528145
+     * @hash   -891616017
      */
     MCVAPI enum class EventResult onActorAttackedActor(class Actor &, class Actor &);
     /**
      * @symbol ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     * @hash   -666231762
+     * @hash   -564319634
      */
     MCVAPI enum class EventResult onActorCreated(class Actor &);
     /**
      * @symbol ?onActorDeath@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     * @hash   -1324930509
+     * @hash   -1223018381
      */
     MCVAPI enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
     /**
      * @symbol ?onActorDefinitionEvent@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@5@@Z
-     * @hash   -681958067
+     * @hash   -580045939
      */
     MCVAPI enum class EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);
     /**
      * @symbol ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
-     * @hash   -1503396994
+     * @hash   -1401484866
      */
     MCVAPI enum class EventResult onActorMobInteraction(class Actor &, enum class MinecraftEventing::InteractionType, enum class ActorType);
     /**
      * @symbol ?onActorMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVVec3@@@Z
-     * @hash   1623522185
+     * @hash   1725434313
      */
     MCVAPI enum class EventResult onActorMove(class Actor &, class Vec3 const &);
     /**
      * @symbol ?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-     * @hash   115679317
+     * @hash   217591445
      */
     MCVAPI enum class EventResult onActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
     /**
      * @symbol ?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z
-     * @hash   1789268050
+     * @hash   1891180178
      */
     MCVAPI enum class EventResult onActorSneakChanged(class Actor &, bool);
     /**
      * @symbol ?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     * @hash   -1165451016
+     * @hash   -1063538888
      */
     MCVAPI enum class EventResult onActorStartRiding(class Actor &, class Actor &);
     /**
      * @symbol ?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z
-     * @hash   -565989559
+     * @hash   -464077431
      */
     MCVAPI enum class EventResult onActorStopRiding(class Actor &, bool, bool, bool);
     /**
      * @symbol ?onActorTargetAcquired@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     * @hash   -221533396
+     * @hash   -119621268
      */
     MCVAPI enum class EventResult onActorTargetAcquired(class Actor &, class Actor &);
     /**
      * @symbol ?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     * @hash   -1561289568
+     * @hash   -1459377440
      */
     MCVAPI enum class EventResult onActorTeleported(class Actor &);
     /**
      * @symbol ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     * @hash   -1898296051
+     * @hash   -1796383923
      */
     MCVAPI enum class EventResult onActorTick(class Actor &);
     /**
      * @symbol ?onActorUseItemOn@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z
-     * @hash   1510843082
+     * @hash   1612755210
      */
     MCVAPI enum class EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?onEvent@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-     * @hash   76551042
+     * @hash   178463170
      */
     MCVAPI enum class EventResult onEvent(struct ActorNotificationEvent const &);
 #endif

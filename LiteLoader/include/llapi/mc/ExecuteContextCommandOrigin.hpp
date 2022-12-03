@@ -38,141 +38,141 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@ExecuteContextCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   317412181
+     * @hash   354775861
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ExecuteContextCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -653235404
+     * @hash   -615902476
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ExecuteContextCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   1525664817
+     * @hash   1562090561
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ExecuteContextCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   -950748610
+     * @hash   -971029554
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ExecuteContextCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   -786293315
+     * @hash   -749867571
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@ExecuteContextCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   1888594871
+     * @hash   1925897047
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@ExecuteContextCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   -613052217
+     * @hash   -576334329
      */
     virtual class Dimension * getDimension() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@ExecuteContextCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   672655361
+     * @hash   709957537
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ExecuteContextCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   -970285947
+     * @hash   -873540155
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ExecuteContextCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   2310491
+     * @hash   38736235
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ExecuteContextCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   1836062730
+     * @hash   1873426410
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  27
      * @symbol ?updateValues@ExecuteContextCommandOrigin@@UEAAXXZ
-     * @hash   345545515
+     * @hash   382893819
      */
     virtual void updateValues();
     /**
      * @vftbl  28
      * @symbol ?getExecutePosition@ExecuteContextCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-     * @hash   -218525272
+     * @hash   -181223096
      */
     virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ExecuteContextCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   1268168945
+     * @hash   1305609505
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@ExecuteContextCommandOrigin@@UEBA_NXZ
-     * @hash   254959363
+     * @hash   292430675
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0ExecuteContextCommandOrigin@@QEAA@UActorUniqueID@@AEBVVec3@@AEBV?$optional@VVec2@@@std@@00W4ActorLocation@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@@Z
-     * @hash   1254934404
+     * @hash   1291329396
      */
     MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum class ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
     /**
      * @symbol ?getPositionEntity@ExecuteContextCommandOrigin@@QEAAPEBVActor@@XZ
-     * @hash   -184294533
+     * @hash   -146930853
      */
     MCAPI class Actor const * getPositionEntity();
     /**
      * @symbol ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1696624154
+     * @hash   -1659275850
      */
     MCAPI void setDimension(class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBVDimension@@@Z
-     * @hash   1113872110
+     * @hash   1151220414
      */
     MCAPI void setDimension(class Dimension const &);
     /**
      * @symbol ?setExecutionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     * @hash   2056003414
+     * @hash   2093351718
      */
     MCAPI void setExecutionEntity(class Actor const &);
     /**
      * @symbol ?setPosition@ExecuteContextCommandOrigin@@QEAAXAEBVVec3@@@Z
-     * @hash   2135133754
+     * @hash   -2122485238
      */
     MCAPI void setPosition(class Vec3 const &);
     /**
      * @symbol ?setPositionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     * @hash   -1154252726
+     * @hash   -1116904422
      */
     MCAPI void setPositionEntity(class Actor const &);
     /**
      * @symbol ?setRotation@ExecuteContextCommandOrigin@@QEAAXAEBVVec2@@@Z
-     * @hash   503556956
+     * @hash   540905260
      */
     MCAPI void setRotation(class Vec2 const &);
     /**
      * @symbol ?setRotationEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     * @hash   203059488
+     * @hash   240407792
      */
     MCAPI void setRotationEntity(class Actor const &);
     /**
      * @symbol ?load@ExecuteContextCommandOrigin@@SA?AV?$unique_ptr@VExecuteContextCommandOrigin@@U?$default_delete@VExecuteContextCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     * @hash   -1133945128
+     * @hash   -1096473816
      */
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

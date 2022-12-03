@@ -29,22 +29,22 @@ public:
 public:
     /**
      * @symbol ??0CommandFilePath@@QEAA@XZ
-     * @hash   -1734964936
+     * @hash   -1632468520
      */
     MCAPI CommandFilePath();
     /**
      * @symbol ?findInvalidCharacter@CommandFilePath@@QEBAHXZ
-     * @hash   -247222468
+     * @hash   -71597796
      */
     MCAPI int findInvalidCharacter() const;
     /**
      * @symbol ?getText@CommandFilePath@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -749163356
+     * @hash   -655892540
      */
     MCAPI std::string const & getText() const;
     /**
      * @symbol ??1CommandFilePath@@QEAA@XZ
-     * @hash   -263640696
+     * @hash   -175966744
      */
     MCAPI ~CommandFilePath();
 

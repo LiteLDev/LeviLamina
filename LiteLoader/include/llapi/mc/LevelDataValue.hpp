@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1LevelDataValue@@QEAA@XZ
-     * @hash   2142942109
+     * @hash   2069875357
      */
     MCAPI ~LevelDataValue();
 

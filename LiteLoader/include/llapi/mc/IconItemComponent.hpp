@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA_NXZ
-     * @hash   -650121808
+     * @hash   -553622032
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -963007598
+     * @hash   -368048654
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VIconItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -2092415234
+     * @hash   -1472624050
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ??0IconItemComponent@@QEAA@PEAVComponentItem@@@Z
-     * @hash   -257014503
+     * @hash   250670265
      */
     MCAPI IconItemComponent(class ComponentItem *);
     /**
      * @symbol ?setOwnerIcon@IconItemComponent@@QEAAXXZ
-     * @hash   1867923687
+     * @hash   -1917775113
      */
     MCAPI void setOwnerIcon();
     /**
      * @symbol ?bindType@IconItemComponent@@SAXXZ
-     * @hash   30121999
+     * @hash   537791391
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@IconItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   968614294
+     * @hash   1477882790
      */
     MCAPI static class HashedString const & getIdentifier();
 

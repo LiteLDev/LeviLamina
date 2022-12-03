@@ -38,45 +38,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@VexRandomMoveGoal@@UEAA_NXZ
-     * @hash   -884850944
+     * @hash   -725278816
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@VexRandomMoveGoal@@UEAA_NXZ
-     * @hash   1111148606
+     * @hash   1207894398
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@VexRandomMoveGoal@@UEAAXXZ
-     * @hash   -111250988
+     * @hash   48321140
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@VexRandomMoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1027545680
+     * @hash   1187117808
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0VexRandomMoveGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1904427741
+     * @hash   2063999869
      */
     MCAPI VexRandomMoveGoal(class Mob &);
 

@@ -32,71 +32,66 @@ public:
 public:
     /**
      * @symbol ??0FeatureToggles@@QEAA@AEAVAppPlatform@@@Z
-     * @hash   -1862920628
+     * @hash   -1737621604
      */
     MCAPI FeatureToggles(class AppPlatform &);
     /**
      * @symbol ?get@FeatureToggles@@QEAAPEAVOption@@W4FeatureOptionID@@@Z
-     * @hash   -1293037450
+     * @hash   -1168276586
      */
     MCAPI class Option * get(enum class FeatureOptionID);
     /**
      * @symbol ?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z
-     * @hash   -1052936735
+     * @hash   -928175871
      */
     MCAPI bool isEnabled(enum class FeatureOptionID) const;
 
 //private:
     /**
      * @symbol ?_getDisableIfOtherOptionDisabledSetupCallback@FeatureToggles@@AEBA?AV?$function@$$A6AXAEAVOption@@@Z@std@@W4FeatureOptionID@@@Z
-     * @hash   1672320605
+     * @hash   1797573501
      */
     MCAPI class std::function<void (class Option &)> _getDisableIfOtherOptionDisabledSetupCallback(enum class FeatureOptionID) const;
     /**
      * @symbol ?_getDisabledIfOptionExpectationsNotMetSetupCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z
-     * @hash   -9077868
+     * @hash   116175028
      */
     MCAPI class std::function<void (class Option &)> _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<enum class FeatureOptionID>, std::vector<enum class FeatureOptionID>);
     /**
      * @symbol ?_getDisabledIfOtherOptionsEnabledSetupCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@@Z
-     * @hash   614275099
+     * @hash   739527995
      */
     MCAPI class std::function<void (class Option &)> _getDisabledIfOtherOptionsEnabledSetupCallback(std::vector<enum class FeatureOptionID>);
     /**
      * @symbol ?_getLockIfInGameOrOptionExpectationsNotMetLockCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEA_N@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z
-     * @hash   -2020488056
+     * @hash   -1895235160
      */
     MCAPI class std::function<void (bool &)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(std::vector<enum class FeatureOptionID>, std::vector<enum class FeatureOptionID>);
     /**
-     * @symbol ?_getLockIfOtherOptionDisabledLockCallback@FeatureToggles@@AEBA?AV?$function@$$A6AXAEA_N@Z@std@@W4FeatureOptionID@@@Z
-     * @hash   1553211111
-     */
-    MCAPI class std::function<void (bool &)> _getLockIfOtherOptionDisabledLockCallback(enum class FeatureOptionID) const;
-    /**
      * @symbol ?_initialize@FeatureToggles@@AEAAXAEAVAppPlatform@@@Z
-     * @hash   -1702661610
+     * @hash   -1577470218
      */
     MCAPI void _initialize(class AppPlatform &);
     /**
      * @symbol ?_registerFeature@FeatureToggles@@AEAAXW4FeatureOptionTabID@@W4FeatureOptionID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2_N1V?$function@$$A6AXAEAVOption@@@Z@5@V?$function@$$A6AXAEA_N@Z@5@@Z
-     * @hash   -232172553
+     * @hash   -106981161
      */
     MCAPI void _registerFeature(enum class FeatureOptionTabID, enum class FeatureOptionID, std::string const &, std::string const &, bool, enum class FeatureOptionID, class std::function<void (class Option &)>, class std::function<void (bool &)>);
     /**
      * @symbol ?_registerFeatures@FeatureToggles@@AEAAXXZ
-     * @hash   -119188270
+     * @hash   6003122
      */
     MCAPI void _registerFeatures();
     /**
      * @symbol ?_setupDependencies@FeatureToggles@@AEAAXXZ
-     * @hash   1405576266
+     * @hash   1530337130
      */
     MCAPI void _setupDependencies();
 
 private:
     /**
      * @symbol ?mFeatureToggles@FeatureToggles@@0V?$unique_ptr@VFeatureToggles@@U?$default_delete@VFeatureToggles@@@std@@@std@@A
-     * @hash   -523841238
+     * @hash   344549114
      */
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
 

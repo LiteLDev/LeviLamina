@@ -31,39 +31,39 @@ public:
 public:
     /**
      * @symbol ??0CSHA1@@QEAA@XZ
-     * @hash   -987113772
+     * @hash   -513025564
      */
     MCAPI CSHA1();
     /**
      * @symbol ?Final@CSHA1@@QEAAXXZ
-     * @hash   -1396109343
+     * @hash   -922021135
      */
     MCAPI void Final();
     /**
      * @symbol ?GetHash@CSHA1@@QEBAPEAEXZ
-     * @hash   -1958065249
+     * @hash   -1855737969
      */
     MCAPI unsigned char * GetHash() const;
     /**
      * @symbol ?Reset@CSHA1@@QEAAXXZ
-     * @hash   -1530221341
+     * @hash   -1056133133
      */
     MCAPI void Reset();
     /**
      * @symbol ?Update@CSHA1@@QEAAXPEBEI@Z
-     * @hash   -1180673870
+     * @hash   -706585662
      */
     MCAPI void Update(unsigned char const *, unsigned int);
     /**
      * @symbol ??1CSHA1@@QEAA@XZ
-     * @hash   1254326036
+     * @hash   1728414244
      */
     MCAPI ~CSHA1();
 
 //private:
     /**
      * @symbol ?Transform@CSHA1@@AEAAXPEAIPEBE@Z
-     * @hash   -2094059856
+     * @hash   -1619971648
      */
     MCAPI void Transform(unsigned int *, unsigned char const *);
 

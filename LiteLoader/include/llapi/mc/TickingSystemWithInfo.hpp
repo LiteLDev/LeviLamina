@@ -30,12 +30,17 @@ public:
 public:
     /**
      * @symbol ??0TickingSystemWithInfo@@QEAA@$$QEAU0@@Z
-     * @hash   47983511
+     * @hash   189765607
      */
     MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo &&);
     /**
+     * @symbol ??4TickingSystemWithInfo@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1266237136
+     */
+    MCAPI struct TickingSystemWithInfo & operator=(struct TickingSystemWithInfo &&);
+    /**
      * @symbol ??1TickingSystemWithInfo@@QEAA@XZ
-     * @hash   -1407618220
+     * @hash   -1305244812
      */
     MCAPI ~TickingSystemWithInfo();
 

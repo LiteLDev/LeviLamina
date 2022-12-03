@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0_ProfilerLiteTimer@@QEAA@AEAUScopedData@ProfilerLite@@Vid@thread@std@@@Z
-     * @hash   1694085679
+     * @hash   1783204975
      */
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
     /**
      * @symbol ??1_ProfilerLiteTimer@@QEAA@XZ
-     * @hash   -39295175
+     * @hash   51669241
      */
     MCAPI ~_ProfilerLiteTimer();
 

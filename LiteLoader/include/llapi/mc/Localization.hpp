@@ -33,89 +33,89 @@ public:
 public:
     /**
      * @symbol ??0Localization@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV0@@Z
-     * @hash   1780130413
+     * @hash   1743504781
      */
     MCAPI Localization(std::string const &, class Localization *);
     /**
      * @symbol ??0Localization@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -736069236
+     * @hash   -772694868
      */
     MCAPI Localization(std::string const &);
     /**
      * @symbol ?appendTranslations@Localization@@QEAAXAEBV1@@Z
-     * @hash   -1085550036
+     * @hash   -1122006532
      */
     MCAPI void appendTranslations(class Localization const &);
     /**
      * @symbol ?appendTranslations@Localization@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@10@Z
-     * @hash   -1561257028
+     * @hash   -1597713524
      */
     MCAPI void appendTranslations(std::string const &, std::vector<std::string> const &, std::vector<std::string> const &, std::string const &);
     /**
      * @symbol ?get@Localization@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   210663326
+     * @hash   174206830
      */
     MCAPI bool get(std::string const &, std::string &, std::vector<std::string> const &) const;
     /**
      * @symbol ?getFullLanguageCode@Localization@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1300616112
+     * @hash   1264159616
      */
     MCAPI std::string getFullLanguageCode() const;
     /**
      * @symbol ?getStringIdExists@Localization@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1883312523
+     * @hash   -1919769019
      */
     MCAPI bool getStringIdExists(std::string const &) const;
     /**
      * @symbol ?loadFromPack@Localization@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackAccessStrategy@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   1810396195
+     * @hash   1773908947
      */
     MCAPI void loadFromPack(std::string const &, class PackAccessStrategy const &, std::vector<std::string> const &);
     /**
      * @symbol ?loadFromResourcePackManager@Localization@@QEAAXAEAVResourcePackManager@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   239262152
+     * @hash   202774904
      */
     MCAPI void loadFromResourcePackManager(class ResourcePackManager &, std::vector<std::string> const &);
     /**
      * @symbol ??1Localization@@QEAA@XZ
-     * @hash   -654655549
+     * @hash   -464931085
      */
     MCAPI ~Localization();
     /**
      * @symbol ?getLanguageCode@Localization@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   546115377
+     * @hash   509658881
      */
     MCAPI static std::string getLanguageCode(std::string const &);
 
 //protected:
     /**
      * @symbol ?_get@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-     * @hash   -1528782032
+     * @hash   -1565407664
      */
     MCAPI struct OptionalString _get(std::string const &, std::vector<std::string> const &) const;
     /**
      * @symbol ?_getLangFilePath@Localization@@IEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1614109124
+     * @hash   1577621876
      */
     MCAPI class Core::PathBuffer<std::string> _getLangFilePath(std::string const &);
     /**
      * @symbol ?_getSimple@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   878278675
+     * @hash   841806803
      */
     MCAPI struct OptionalString _getSimple(std::string const &) const;
     /**
      * @symbol ?_parseFormattedString@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1804705747
+     * @hash   1768233875
      */
     MCAPI struct OptionalString _parseFormattedString(std::string const &) const;
     /**
      * @symbol ?_replaceTokens@Localization@@IEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -668465728
+     * @hash   -704952976
      */
     MCAPI void _replaceTokens(std::string &, std::vector<std::string> const &) const;
     /**
      * @symbol ?_isCommaSeperatedLanguage@Localization@@KA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   881478127
+     * @hash   845006255
      */
     MCAPI static bool _isCommaSeperatedLanguage(std::string const &);
 

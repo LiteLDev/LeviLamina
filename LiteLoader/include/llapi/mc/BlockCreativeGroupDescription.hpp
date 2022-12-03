@@ -38,17 +38,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockCreativeGroupDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1947376976
+     * @hash   -1478547360
      */
     virtual std::string const & getName() const;
     /**
      * @symbol ?NameID@BlockCreativeGroupDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -140103717
+     * @hash   1643750611
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?registerVersionUpgrades@BlockCreativeGroupDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1664134182
+     * @hash   -1195073926
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

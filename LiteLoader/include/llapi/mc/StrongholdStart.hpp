@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isValid@StrongholdStart@@UEBA_NXZ
-     * @hash   -1197027138
+     * @hash   -1026169026
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0StrongholdStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-     * @hash   -27287606
+     * @hash   144539194
      */
     MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
 //private:
     /**
      * @symbol ?_initializePieceSet@StrongholdStart@@AEAAXAEAVRandom@@@Z
-     * @hash   2000250566
+     * @hash   -2122889930
      */
     MCAPI void _initializePieceSet(class Random &);
 

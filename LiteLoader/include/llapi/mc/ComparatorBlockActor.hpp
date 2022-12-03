@@ -39,76 +39,76 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@ComparatorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   194113173
+     * @hash   780184789
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@ComparatorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -149978396
+     * @hash   436093220
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@ComparatorBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1875966798
+     * @hash   -1832944258
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  38
+     * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  40
      * @symbol ?getOutputSignal@ComparatorBlockActor@@UEAAHXZ
-     * @hash   -1878205619
+     * @hash   -1317396771
      */
     virtual int getOutputSignal();
     /**
-     * @vftbl  39
+     * @vftbl  41
      * @symbol ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
-     * @hash   1661445643
+     * @hash   -2047465413
      */
     virtual void setOutputSignal(int);
     /**
      * @symbol ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1558383455
+     * @hash   -972281087
      */
     MCAPI ComparatorBlockActor(class BlockPos const &);
 

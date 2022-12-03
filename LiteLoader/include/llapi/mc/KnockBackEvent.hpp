@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1KnockBackEvent@@QEAA@XZ
-     * @hash   1653083993
+     * @hash   1743033593
      */
     MCAPI ~KnockBackEvent();
 

@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@CoralHangFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1049140189
+     * @hash   1205437229
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 

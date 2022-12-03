@@ -29,18 +29,48 @@ public:
 
 public:
     /**
+     * @symbol ?createCalculateControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -741457862
+     */
+    MCAPI static struct TickingSystemWithInfo createCalculateControlledByLocalInstanceSystemClient();
+    /**
+     * @symbol ?createCalculateControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   450802746
+     */
+    MCAPI static struct TickingSystemWithInfo createCalculateControlledByLocalInstanceSystemServer();
+    /**
+     * @symbol ?createCalculateVehicleControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -95445544
+     */
+    MCAPI static struct TickingSystemWithInfo createCalculateVehicleControlledByLocalInstanceSystemClient();
+    /**
+     * @symbol ?createCalculateVehicleControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1096815064
+     */
+    MCAPI static struct TickingSystemWithInfo createCalculateVehicleControlledByLocalInstanceSystemServer();
+    /**
      * @symbol ?createRecalculateControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   46884122
+     * @hash   153101530
      */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemClient();
     /**
      * @symbol ?createRecalculateControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1239144730
+     * @hash   1345362138
      */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemServer();
     /**
+     * @symbol ?createRecalculateVehicleControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1428435656
+     */
+    MCAPI static struct TickingSystemWithInfo createRecalculateVehicleControlledByLocalInstanceSystemClient();
+    /**
+     * @symbol ?createRecalculateVehicleControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -236175048
+     */
+    MCAPI static struct TickingSystemWithInfo createRecalculateVehicleControlledByLocalInstanceSystemServer();
+    /**
      * @symbol ?createWasControlledByLocalInstanceSystem@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1088144070
+     * @hash   -981434630
      */
     MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();
 

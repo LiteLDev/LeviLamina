@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OptionalString@@QEAA@XZ
-     * @hash   1387255531
+     * @hash   1476682347
      */
     MCAPI ~OptionalString();
 

@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@BlockClimberDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockClimberDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -489817674
+     * @hash   -400852138
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockClimberDefinition>> &);
 

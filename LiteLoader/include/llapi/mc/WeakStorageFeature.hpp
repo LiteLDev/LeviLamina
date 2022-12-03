@@ -34,27 +34,27 @@ public:
 //protected:
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
-     * @hash   87754301
+     * @hash   829753933
      */
     MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@AEBVOwnerStorageFeature@@@Z
-     * @hash   -417184936
+     * @hash   324814696
      */
     MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@$$QEAV0@@Z
-     * @hash   73576002
+     * @hash   815575634
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
     /**
      * @symbol ?_isSet@WeakStorageFeature@@IEBA_NXZ
-     * @hash   -444848110
+     * @hash   -465129054
      */
     MCAPI bool _isSet() const;
     /**
      * @symbol ??4WeakStorageFeature@@IEAAAEAV0@$$QEAV0@@Z
-     * @hash   425716000
+     * @hash   1167715632
      */
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);
 

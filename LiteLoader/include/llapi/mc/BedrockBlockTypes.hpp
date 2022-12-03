@@ -24,27 +24,27 @@ namespace BedrockBlockTypes {
 #undef AFTER_EXTRA
     /**
      * @symbol ?mAir@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1117794072
+     * @hash   -472217336
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAir;
     /**
      * @symbol ?mClientRequestPlaceholderBlock@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   165177240
+     * @hash   810753976
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
     /**
      * @symbol ?mUnknown@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-     * @hash   -1962411912
+     * @hash   -1316835176
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
      * @symbol ?registerBlocks@BedrockBlockTypes@@YAXXZ
-     * @hash   -759540578
+     * @hash   -32963074
      */
     MCAPI void registerBlocks();
     /**
      * @symbol ?unregisterBlocks@BedrockBlockTypes@@YAXXZ
-     * @hash   -1396897360
+     * @hash   -670319856
      */
     MCAPI void unregisterBlocks();
 

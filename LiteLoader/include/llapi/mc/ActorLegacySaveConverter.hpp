@@ -32,129 +32,129 @@ public:
 public:
     /**
      * @symbol ?convertSave@ActorLegacySaveConverter@@SAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1589342817
+     * @hash   1614620961
      */
     MCAPI static void convertSave(class Actor &, class CompoundTag const &);
 
 //private:
     /**
      * @symbol ?convertBoat@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -2066866479
+     * @hash   -2042572399
      */
     MCAPI static void convertBoat(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertChicken@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1537002736
+     * @hash   1561296816
      */
     MCAPI static void convertChicken(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertCow@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1764574490
+     * @hash   -1740172778
      */
     MCAPI static void convertCow(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertCreeper@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -554120247
+     * @hash   -529641655
      */
     MCAPI static void convertCreeper(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertEnderman@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1130147571
+     * @hash   1154672291
      */
     MCAPI static void convertEnderman(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertHorse@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1099608616
+     * @hash   1124225592
      */
     MCAPI static void convertHorse(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertIronGolem@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1938399873
+     * @hash   -1913844401
      */
     MCAPI static void convertIronGolem(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertMinecart@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   922745588
+     * @hash   947377940
      */
     MCAPI static void convertMinecart(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertMinecartHopper@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   849254104
+     * @hash   873932584
      */
     MCAPI static void convertMinecartHopper(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertMinecartTNT@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1627274466
+     * @hash   1652014450
      */
     MCAPI static void convertMinecartTNT(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertOcelot@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   2062089201
+     * @hash   2086859937
      */
     MCAPI static void convertOcelot(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertPig@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   271455577
+     * @hash   296549209
      */
     MCAPI static void convertPig(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertRabbit@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1395176053
+     * @hash   -1369913285
      */
     MCAPI static void convertRabbit(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSheep@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -2018430730
+     * @hash   -1993152586
      */
     MCAPI static void convertSheep(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSilverfish@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -950876378
+     * @hash   -925413722
      */
     MCAPI static void convertSilverfish(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSkeleton@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   328685790
+     * @hash   354194574
      */
     MCAPI static void convertSkeleton(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSlime@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   2015054931
+     * @hash   2040563715
      */
     MCAPI static void convertSlime(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSnowgolem@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1277540532
+     * @hash   1303187700
      */
     MCAPI static void convertSnowgolem(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSpider@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   76607254
+     * @hash   102300550
      */
     MCAPI static void convertSpider(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertSquid@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1113665693
+     * @hash   1139451245
      */
     MCAPI static void convertSquid(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertVillager@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   332765815
+     * @hash   358582119
      */
     MCAPI static void convertVillager(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertWolf@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   1754967651
+     * @hash   1780384179
      */
     MCAPI static void convertWolf(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertZombie@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -593779529
+     * @hash   -568163113
      */
     MCAPI static void convertZombie(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertZombieVillager@ActorLegacySaveConverter@@CAXAEAVActor@@AEBVCompoundTag@@@Z
-     * @hash   -1035064755
+     * @hash   -1009417587
      */
     MCAPI static void convertZombieVillager(class Actor &, class CompoundTag const &);
 

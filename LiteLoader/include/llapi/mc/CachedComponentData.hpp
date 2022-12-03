@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?cacheComponentData@CachedComponentData@@QEAAXAEBVBlock@@@Z
-     * @hash   1814877822
+     * @hash   -1713380610
      */
     MCAPI void cacheComponentData(class Block const &);
 

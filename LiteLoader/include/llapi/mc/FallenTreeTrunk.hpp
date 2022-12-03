@@ -39,13 +39,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?placeTrunk@FallenTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
-     * @hash   526956350
+     * @hash   1282456110
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
      * @vftbl  2
      * @symbol ?getTreeHeight@FallenTreeTrunk@@UEBAHAEAVRandom@@@Z
-     * @hash   -707475221
+     * @hash   48024539
      */
     virtual int getTreeHeight(class Random &) const;
 

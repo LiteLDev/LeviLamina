@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0Token@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2138129068
+     * @hash   -2103145236
      */
     MCAPI Token(std::string const &);
     /**
      * @symbol ?getText@Token@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -2132406413
+     * @hash   -2078482781
      */
     MCAPI std::string const & getText(std::string const &) const;
     /**
      * @symbol ??1Token@@QEAA@XZ
-     * @hash   1566319093
+     * @hash   1653993045
      */
     MCAPI ~Token();
     /**
      * @symbol ?tokenize@Token@@SA?AV?$vector@UToken@@V?$allocator@UToken@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1679338845
+     * @hash   1733262477
      */
     MCAPI static std::vector<struct Token> tokenize(std::string const &);
 
 //protected:
     /**
      * @symbol ?_parseRandom@Token@@IEAA_NXZ
-     * @hash   -898861429
+     * @hash   -845168437
      */
     MCAPI bool _parseRandom();
 

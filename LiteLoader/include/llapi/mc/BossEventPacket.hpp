@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@BossEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   2020530713
+     * @hash   1946372265
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BossEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -249154362
+     * @hash   -323312810
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@BossEventPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1672456321
+     * @hash   1598297873
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@BossEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1716201295
+     * @hash   -1790359743
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BossEventPacket@@QEAA@XZ
-     * @hash   3348609
+     * @hash   -70809839
      */
     MCAPI BossEventPacket();
     /**
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
-     * @hash   -266699074
+     * @hash   -340857522
      */
     MCAPI BossEventPacket(enum class BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     /**
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
-     * @hash   -464015653
+     * @hash   -538174101
      */
     MCAPI BossEventPacket(enum class BossEventUpdateType, class RaidBossComponent &);
 

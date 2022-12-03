@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?getListeners@GameEventListenerRegistry@@QEBA?AV?$vector@V?$reference_wrapper@VGameEventListener@@@std@@V?$allocator@V?$reference_wrapper@VGameEventListener@@@std@@@2@@std@@XZ
-     * @hash   -23436821
+     * @hash   58548011
      */
     MCAPI std::vector<class std::reference_wrapper<class GameEventListener>> getListeners() const;
     /**
      * @symbol ?registerListener@GameEventListenerRegistry@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@AEAVGameEventListener@@@Z
-     * @hash   -1208230514
+     * @hash   -1126245682
      */
     MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
 

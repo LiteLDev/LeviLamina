@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MotionPredictionHintsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   795750543
+     * @hash   721853487
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MotionPredictionHintsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   184306492
+     * @hash   110409436
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MotionPredictionHintsPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1104852267
+     * @hash   1030955211
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MotionPredictionHintsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -765161205
+     * @hash   -839058261
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MotionPredictionHintsPacket@@QEAA@XZ
-     * @hash   -674239333
+     * @hash   -748136389
      */
     MCAPI MotionPredictionHintsPacket();
     /**
      * @symbol ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
-     * @hash   770637504
+     * @hash   696740448
      */
     MCAPI MotionPredictionHintsPacket(class Actor const &);
 

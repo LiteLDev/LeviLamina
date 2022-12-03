@@ -38,64 +38,64 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@PulseCapacitor@@UEBAHXZ
-     * @hash   1723505945
+     * @hash   1776783785
      */
     virtual int getStrength() const;
     /**
      * @vftbl  3
      * @symbol ?setStrength@PulseCapacitor@@UEAAXH@Z
-     * @hash   -454153250
+     * @hash   15352910
      */
     virtual void setStrength(int);
     /**
      * @vftbl  6
      * @symbol ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
-     * @hash   695428827
+     * @hash   792174619
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
      * @vftbl  7
      * @symbol ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
-     * @hash   1656623118
+     * @hash   1753368910
      */
     virtual bool canConsumerPower() const;
     /**
      * @vftbl  12
      * @symbol ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   1345159977
+     * @hash   1836992089
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1227860689
+     * @hash   -758354529
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   1622883453
+     * @hash   -1916276563
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  25
      * @symbol ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
-     * @hash   -584976880
+     * @hash   -115470720
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0PulseCapacitor@@QEAA@XZ
-     * @hash   -6166011
+     * @hash   463294021
      */
     MCAPI PulseCapacitor();
 

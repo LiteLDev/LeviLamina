@@ -22,22 +22,22 @@ namespace LevelChunkMetaDataInitializer {
 #undef AFTER_EXTRA
     /**
      * @symbol ?inferInitialMetaDataAfterDeserialization@LevelChunkMetaDataInitializer@@YAXAEAVLevelChunk@@AEAVLevelChunkMetaData@@@Z
-     * @hash   297685746
+     * @hash   858602226
      */
     MCAPI void inferInitialMetaDataAfterDeserialization(class LevelChunk &, class LevelChunkMetaData &);
     /**
      * @symbol ?inferTargetMetaData@LevelChunkMetaDataInitializer@@YAXAEBVBaseGameVersion@@V?$AutomaticID@VDimension@@H@@AEAVLevelChunkMetaData@@@Z
-     * @hash   752890541
+     * @hash   1313837773
      */
     MCAPI void inferTargetMetaData(class BaseGameVersion const &, class AutomaticID<class Dimension, int>, class LevelChunkMetaData &);
     /**
      * @symbol ?setupInitialMetaData@LevelChunkMetaDataInitializer@@YAXAEAVLevelChunk@@AEAVLevelChunkMetaData@@@Z
-     * @hash   2069845054
+     * @hash   -1664175010
      */
     MCAPI void setupInitialMetaData(class LevelChunk &, class LevelChunkMetaData &);
     /**
      * @symbol ?updateLevelChunkMetaDataForSaving@LevelChunkMetaDataInitializer@@YAXAEAVLevelChunk@@@Z
-     * @hash   1659171025
+     * @hash   -2074833663
      */
     MCAPI void updateLevelChunkMetaDataForSaving(class LevelChunk &);
 

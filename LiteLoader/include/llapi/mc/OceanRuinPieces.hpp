@@ -33,101 +33,101 @@ public:
 public:
     /**
      * @symbol ?addPieces@OceanRuinPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@@Z
-     * @hash   1777498300
+     * @hash   1949294348
      */
     MCAPI static void addPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &);
 
 //private:
     /**
      * @symbol ?_addClusterRuins@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEBUOceanRuinConfiguration@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@@Z
-     * @hash   -2088712592
+     * @hash   -1916824288
      */
     MCAPI static void _addClusterRuins(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum class Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
     /**
      * @symbol ?_addPiece@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@_NM@Z
-     * @hash   -2067998543
+     * @hash   -1896110239
      */
     MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
     /**
      * @symbol ?_allPositions@OceanRuinPieces@@CA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVRandom@@HHH@Z
-     * @hash   1923275946
+     * @hash   2095087370
      */
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
 
 private:
     /**
      * @symbol ?BIG_RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   515382144
+     * @hash   1384787312
      */
     MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
     /**
      * @symbol ?RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   -60096305
+     * @hash   809216607
      */
     MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;
     /**
      * @symbol ?STRUCTURE_BIG_RUIN1_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   1308595152
+     * @hash   -2117520512
      */
     MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN1_BRICK;
     /**
      * @symbol ?STRUCTURE_BIG_RUIN8_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   2111411559
+     * @hash   -1315042377
      */
     MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN8_BRICK;
     /**
      * @symbol ?STRUCTURE_RUIN_2_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   962214825
+     * @hash   1831051081
      */
     MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_2_BRICK;
     /**
      * @symbol ?STRUCTURE_RUIN_3_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   1076883114
+     * @hash   1945703994
      */
     MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_3_BRICK;
     /**
      * @symbol ?bigRuinsBrick@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   -164134041
+     * @hash   705932295
      */
     MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsBrick[];
     /**
      * @symbol ?bigRuinsCracked@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   -2110967601
+     * @hash   -1241347169
      */
     MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsCracked[];
     /**
      * @symbol ?bigRuinsMossy@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   1396723997
+     * @hash   -2028668995
      */
     MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsMossy[];
     /**
      * @symbol ?bigWarmRuins@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   69945767
+     * @hash   940027479
      */
     MCAPI static class gsl::basic_string_span<char const, -1> bigWarmRuins[];
     /**
      * @symbol ?mSettings@OceanRuinPieces@@0VLegacyStructureSettings@@A
-     * @hash   1492748027
+     * @hash   -1932183685
      */
     MCAPI static class LegacyStructureSettings mSettings;
     /**
      * @symbol ?ruinsBrick@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   345832327
+     * @hash   1215052983
      */
     MCAPI static class gsl::basic_string_span<char const, -1> ruinsBrick[];
     /**
      * @symbol ?ruinsCracked@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   -2014022625
+     * @hash   -1144971105
      */
     MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
     /**
      * @symbol ?ruinsMossy@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   1905783181
+     * @hash   -1519394547
      */
     MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
     /**
      * @symbol ?warmRuins@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
-     * @hash   87276199
+     * @hash   955927943
      */
     MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1DynamicAmbientSound@@QEAA@XZ
-     * @hash   1571286530
+     * @hash   1703335618
      */
     MCAPI ~DynamicAmbientSound();
 

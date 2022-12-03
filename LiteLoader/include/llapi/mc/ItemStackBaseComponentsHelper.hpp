@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?isValidComponent@ItemStackBaseComponentsHelper@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -235477169
+     * @hash   311662415
      */
     MCAPI static bool isValidComponent(std::string const &);
     /**
      * @symbol ?updateComponent@ItemStackBaseComponentsHelper@@SA_NAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   -664555643
+     * @hash   -117416059
      */
     MCAPI static bool updateComponent(class ItemStackBase &, std::string const &, class Json::Value const &);
 

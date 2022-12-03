@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MessageEvent@@QEAA@XZ
-     * @hash   -1501566467
+     * @hash   -1762809299
      */
     MCAPI ~MessageEvent();
 

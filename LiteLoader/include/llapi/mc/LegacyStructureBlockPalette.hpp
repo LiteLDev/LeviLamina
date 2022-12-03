@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0LegacyStructureBlockPalette@@QEAA@XZ
-     * @hash   1341294836
+     * @hash   2097747908
      */
     MCAPI LegacyStructureBlockPalette();
     /**
      * @symbol ?addMapping@LegacyStructureBlockPalette@@QEAAXHAEBVBlock@@@Z
-     * @hash   1534232549
+     * @hash   -2004281675
      */
     MCAPI void addMapping(int, class Block const &);
     /**
      * @symbol ?clearMap@LegacyStructureBlockPalette@@QEAAXXZ
-     * @hash   -1154635087
+     * @hash   -398182015
      */
     MCAPI void clearMap();
     /**
      * @symbol ?getBlock@LegacyStructureBlockPalette@@QEAAAEBVBlock@@H@Z
-     * @hash   -943629147
+     * @hash   -187176075
      */
     MCAPI class Block const & getBlock(int);
     /**
      * @symbol ??1LegacyStructureBlockPalette@@QEAA@XZ
-     * @hash   1307543348
+     * @hash   1397877348
      */
     MCAPI ~LegacyStructureBlockPalette();
 

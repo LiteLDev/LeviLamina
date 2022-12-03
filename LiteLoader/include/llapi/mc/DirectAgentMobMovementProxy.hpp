@@ -31,22 +31,22 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTAGENTMOBMOVEMENTPROXY
     /**
      * @symbol ?getSlideOffset@DirectAgentMobMovementProxy@@UEBA?AVVec2@@XZ
-     * @hash   757549252
+     * @hash   801293972
      */
     MCVAPI class Vec2 getSlideOffset() const;
     /**
      * @symbol ?isFlying@DirectAgentMobMovementProxy@@UEBA_NXZ
-     * @hash   -255616714
+     * @hash   -270700570
      */
     MCVAPI bool isFlying() const;
     /**
      * @symbol ?setIsFlying@DirectAgentMobMovementProxy@@UEAAX_N@Z
-     * @hash   728639925
+     * @hash   772092501
      */
     MCVAPI void setIsFlying(bool);
     /**
      * @symbol ?setSlideOffset@DirectAgentMobMovementProxy@@UEAAXAEBVVec2@@@Z
-     * @hash   2073865413
+     * @hash   -2132136347
      */
     MCVAPI void setSlideOffset(class Vec2 const &);
 #endif

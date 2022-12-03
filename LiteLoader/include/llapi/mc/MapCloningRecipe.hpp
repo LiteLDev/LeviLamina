@@ -39,52 +39,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   317387098
+     * @hash   1031048762
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
      * @vftbl  2
      * @symbol ?getCraftingSize@MapCloningRecipe@@UEBAHXZ
-     * @hash   -1433392632
+     * @hash   -1340121816
      */
     virtual int getCraftingSize() const;
     /**
      * @vftbl  3
      * @symbol ?getIngredient@MapCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   -406551671
+     * @hash   307140745
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   1001577333
+     * @hash   1084084949
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  6
      * @symbol ?matches@MapCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   1160813306
+     * @hash   1874474970
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@MapCloningRecipe@@UEBAHXZ
-     * @hash   129683216
+     * @hash   87460720
      */
     virtual int size() const;
     /**
      * @symbol ??0MapCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     * @hash   -1115915420
+     * @hash   -402238380
      */
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ?CartographyTableID@MapCloningRecipe@@2VUUID@mce@@B
-     * @hash   -1583824149
+     * @hash   -950317573
      */
     MCAPI static class mce::UUID const CartographyTableID;
     /**
      * @symbol ?CraftingTableID@MapCloningRecipe@@2VUUID@mce@@B
-     * @hash   1231753913
+     * @hash   1865260489
      */
     MCAPI static class mce::UUID const CraftingTableID;
 

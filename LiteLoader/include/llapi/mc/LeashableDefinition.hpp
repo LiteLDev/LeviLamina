@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0LeashableDefinition@@QEAA@XZ
-     * @hash   1638697350
+     * @hash   1786030182
      */
     MCAPI LeashableDefinition();
     /**
      * @symbol ?buildSchema@LeashableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLeashableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   585622982
+     * @hash   732955814
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>> &);
 

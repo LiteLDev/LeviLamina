@@ -36,47 +36,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@EmergeGoal@@UEAA_NXZ
-     * @hash   -1484705206
+     * @hash   -1435117606
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@EmergeGoal@@UEAA_NXZ
-     * @hash   -1011789208
+     * @hash   -962201608
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@EmergeGoal@@UEAAXXZ
-     * @hash   281357715
+     * @hash   330945315
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@EmergeGoal@@UEAAXXZ
-     * @hash   595400003
+     * @hash   645002979
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@EmergeGoal@@UEAAXXZ
-     * @hash   -800690882
+     * @hash   -711725346
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@EmergeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   713177206
+     * @hash   762795558
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0EmergeGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -496228441
+     * @hash   -446610089
      */
     MCAPI EmergeGoal(class Mob &);
 

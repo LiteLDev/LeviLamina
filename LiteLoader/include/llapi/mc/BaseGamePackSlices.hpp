@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0BaseGamePackSlices@@QEAA@XZ
-     * @hash   646664281
+     * @hash   771917177
      */
     MCAPI BaseGamePackSlices();
     /**
      * @symbol ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBVIResourcePackRepository@@AEBVUUID@mce@@@Z
-     * @hash   1056216464
+     * @hash   1181469360
      */
     MCAPI void addFromVersions(std::vector<class BaseGameVersion> const &, class IResourcePackRepository const &, class mce::UUID const &);
     /**
      * @symbol ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBVIResourcePackRepository@@AEAVResourcePackStack@@@Z
-     * @hash   -580659538
+     * @hash   -455406642
      */
     MCAPI void applyPackSlices(class BaseGameVersion const &, class IResourcePackRepository const &, class ResourcePackStack &) const;
     /**
      * @symbol ??1BaseGamePackSlices@@QEAA@XZ
-     * @hash   1547813719
+     * @hash   1650187127
      */
     MCAPI ~BaseGamePackSlices();
 

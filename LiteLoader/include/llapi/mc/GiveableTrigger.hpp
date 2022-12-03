@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0GiveableTrigger@@QEAA@AEBU0@@Z
-     * @hash   -879306587
+     * @hash   -734895195
      */
     MCAPI GiveableTrigger(struct GiveableTrigger const &);
     /**
      * @symbol ?addItem@GiveableTrigger@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   1848358592
+     * @hash   1992769984
      */
     MCAPI void addItem(class ItemDescriptor const &);
     /**
      * @symbol ??1GiveableTrigger@@QEAA@XZ
-     * @hash   263190617
+     * @hash   407602009
      */
     MCAPI ~GiveableTrigger();
 

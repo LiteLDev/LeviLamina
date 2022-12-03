@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??RListTagFloatAdder@@QEAAAEAV0@M@Z
-     * @hash   1614043570
+     * @hash   1741479858
      */
     MCAPI class ListTagFloatAdder & operator()(float);
     /**
      * @symbol ??1ListTagFloatAdder@@QEAA@XZ
-     * @hash   1562834842
+     * @hash   1652261658
      */
     MCAPI ~ListTagFloatAdder();
 

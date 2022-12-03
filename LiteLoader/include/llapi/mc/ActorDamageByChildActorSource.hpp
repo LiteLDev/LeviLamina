@@ -39,54 +39,54 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ
-     * @hash   -1445962679
+     * @hash   -1349462903
      */
     virtual bool isChildEntitySource() const;
     /**
      * @vftbl  10
      * @symbol ?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
-     * @hash   427791751
+     * @hash   470567783
      */
     virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /**
      * @vftbl  16
      * @symbol ?getDamagingEntityIsCreative@ActorDamageByChildActorSource@@UEBA_NXZ
-     * @hash   -986497193
+     * @hash   -943705785
      */
     virtual bool getDamagingEntityIsCreative() const;
     /**
      * @vftbl  17
      * @symbol ?getDamagingEntityIsWorldBuilder@ActorDamageByChildActorSource@@UEBA_NXZ
-     * @hash   1877980961
+     * @hash   1836158241
      */
     virtual bool getDamagingEntityIsWorldBuilder() const;
     /**
      * @vftbl  18
      * @symbol ?getDamagingEntityUniqueID@ActorDamageByChildActorSource@@UEBA?AUActorUniqueID@@XZ
-     * @hash   -1140624805
+     * @hash   -1097833397
      */
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /**
      * @vftbl  19
      * @symbol ?getDamagingEntityType@ActorDamageByChildActorSource@@UEBA?AW4ActorType@@XZ
-     * @hash   2101976391
+     * @hash   2144767799
      */
     virtual enum class ActorType getDamagingEntityType() const;
     /**
      * @vftbl  20
      * @symbol ?getDamagingEntityCategories@ActorDamageByChildActorSource@@UEBA?AW4ActorCategory@@XZ
-     * @hash   -1895095739
+     * @hash   -1852304331
      */
     virtual enum class ActorCategory getDamagingEntityCategories() const;
     /**
      * @vftbl  21
      * @symbol ?clone@ActorDamageByChildActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
-     * @hash   138615335
+     * @hash   181406743
      */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /**
      * @symbol ??0ActorDamageByChildActorSource@@QEAA@AEAVActor@@0W4ActorDamageCause@@@Z
-     * @hash   547558736
+     * @hash   590350144
      */
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum class ActorDamageCause);
 

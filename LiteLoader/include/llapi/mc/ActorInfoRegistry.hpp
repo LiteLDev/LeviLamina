@@ -31,42 +31,42 @@ public:
 public:
     /**
      * @symbol ??0ActorInfoRegistry@@QEAA@XZ
-     * @hash   -1673076596
+     * @hash   -948005940
      */
     MCAPI ActorInfoRegistry();
     /**
      * @symbol ?getActorInfo@ActorInfoRegistry@@QEBAAEBUActorInfo@@I@Z
-     * @hash   1093656205
+     * @hash   1156021261
      */
     MCAPI struct ActorInfo const & getActorInfo(unsigned int) const;
     /**
      * @symbol ?getActorInfoId@ActorInfoRegistry@@QEBAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   40974863
+     * @hash   103339919
      */
     MCAPI unsigned int getActorInfoId(std::string const &) const;
     /**
      * @symbol ?getActorInfoId@ActorInfoRegistry@@QEBAIAEB_K@Z
-     * @hash   -744176761
+     * @hash   -681811705
      */
     MCAPI unsigned int getActorInfoId(unsigned __int64 const &) const;
     /**
      * @symbol ?getActorInfoList@ActorInfoRegistry@@QEBA?AV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@XZ
-     * @hash   -867918892
+     * @hash   -805553836
      */
     MCAPI std::vector<struct ActorInfo> getActorInfoList() const;
     /**
      * @symbol ?isSpawnEggAvailable@ActorInfoRegistry@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1767527143
+     * @hash   -1705162087
      */
     MCAPI bool isSpawnEggAvailable(std::string);
     /**
      * @symbol ?registerActorInfo@ActorInfoRegistry@@QEAAXAEBUActorInfo@@@Z
-     * @hash   1985258556
+     * @hash   2047623612
      */
     MCAPI void registerActorInfo(struct ActorInfo const &);
     /**
      * @symbol ?setSpawnEggAvailable@ActorInfoRegistry@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -432926317
+     * @hash   -370576637
      */
     MCAPI void setSpawnEggAvailable(std::string, bool);
 

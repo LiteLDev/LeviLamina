@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ServerInstanceRequestResourceReload@@QEAA@XZ
-     * @hash   -824098630
+     * @hash   -734671814
      */
     MCAPI ~ServerInstanceRequestResourceReload();
 

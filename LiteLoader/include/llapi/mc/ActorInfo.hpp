@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ??0ActorInfo@@QEAA@AEBU0@@Z
-     * @hash   2006447381
+     * @hash   1964670789
      */
     MCAPI ActorInfo(struct ActorInfo const &);
     /**
      * @symbol ?load@ActorInfo@@QEAAXPEBVCompoundTag@@@Z
-     * @hash   754988581
+     * @hash   817353637
      */
     MCAPI void load(class CompoundTag const *);
     /**
      * @symbol ??4ActorInfo@@QEAAAEAU0@AEBU0@@Z
-     * @hash   749063294
+     * @hash   811428350
      */
     MCAPI struct ActorInfo & operator=(struct ActorInfo const &);
     /**
      * @symbol ?save@ActorInfo@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   956995262
+     * @hash   1019360318
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ??1ActorInfo@@QEAA@XZ
-     * @hash   -2034250209
+     * @hash   -1853812849
      */
     MCAPI ~ActorInfo();
 

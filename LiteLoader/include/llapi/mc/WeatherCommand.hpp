@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@WeatherCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1643189724
+     * @hash   1659426780
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@WeatherCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1535331940
+     * @hash   -1519064132
      */
     MCAPI static void setup(class CommandRegistry &);
 

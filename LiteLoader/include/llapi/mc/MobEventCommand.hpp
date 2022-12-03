@@ -45,12 +45,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@MobEventCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -474829422
+     * @hash   -469278686
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@MobEventCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
-     * @hash   839117697
+     * @hash   845068209
      */
     MCAPI static void setup(class CommandRegistry &, struct MobEventCommand::InitProxy &&);
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0DefendVillageTargetDefinition@@QEAA@XZ
-     * @hash   94567494
+     * @hash   254846918
      */
     MCAPI DefendVillageTargetDefinition();
     /**
      * @symbol ?initialize@DefendVillageTargetDefinition@@QEAAXAEAVEntityContext@@AEAVDefendVillageTargetGoal@@@Z
-     * @hash   -153768753
+     * @hash   6495295
      */
     MCAPI void initialize(class EntityContext &, class DefendVillageTargetGoal &);
     /**
      * @symbol ?buildSchema@DefendVillageTargetDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefendVillageTargetDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1651872711
+     * @hash   -1491593287
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>> &);
 

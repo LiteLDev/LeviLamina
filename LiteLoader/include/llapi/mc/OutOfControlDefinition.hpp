@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?initialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
-     * @hash   -1101227671
+     * @hash   -582287671
      */
     MCAPI void initialize(class EntityContext &, class OutOfControlComponent &) const;
     /**
      * @symbol ?uninitialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
-     * @hash   -550695559
+     * @hash   -31740183
      */
     MCAPI void uninitialize(class EntityContext &, class OutOfControlComponent &) const;
     /**
      * @symbol ?buildSchema@OutOfControlDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VOutOfControlDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1523627942
+     * @hash   1606089430
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OutOfControlDefinition>> &);
 

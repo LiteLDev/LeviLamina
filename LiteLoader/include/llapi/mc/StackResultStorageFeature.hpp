@@ -34,17 +34,17 @@ public:
 //protected:
     /**
      * @symbol ??0StackResultStorageFeature@@IEAA@AEBVWeakStorageFeature@@@Z
-     * @hash   1361127651
+     * @hash   2103127283
      */
     MCAPI StackResultStorageFeature(class WeakStorageFeature const &);
     /**
      * @symbol ?_getStackRef@StackResultStorageFeature@@IEBAAEAVIFeature@@XZ
-     * @hash   1241930201
+     * @hash   1983929833
      */
     MCAPI class IFeature & _getStackRef() const;
     /**
      * @symbol ?_hasValue@StackResultStorageFeature@@IEBA_NXZ
-     * @hash   521288034
+     * @hash   501007090
      */
     MCAPI bool _hasValue() const;
 

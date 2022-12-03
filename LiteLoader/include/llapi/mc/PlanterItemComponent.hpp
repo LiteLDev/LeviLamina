@@ -38,50 +38,50 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA_NXZ
-     * @hash   -121646161
+     * @hash   -25146385
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?useOn@PlanterItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   1769727793
+     * @hash   -2014771679
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -366135023
+     * @hash   228823921
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1947100769
+     * @hash   -1327309585
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-     * @hash   1081331526
+     * @hash   1671985190
      */
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @symbol ?bindType@PlanterItemComponent@@SAXXZ
-     * @hash   -849428861
+     * @hash   -340160365
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@PlanterItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   1286134516
+     * @hash   1796525460
      */
     MCAPI static class HashedString const & getIdentifier();
 

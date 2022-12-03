@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?next@MossStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
-     * @hash   -453239245
+     * @hash   -281550829
      */
     virtual class Block const & next(class Random &, int, int, int, bool) const;
 

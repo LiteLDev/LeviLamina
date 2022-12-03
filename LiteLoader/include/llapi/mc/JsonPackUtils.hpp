@@ -25,42 +25,42 @@ namespace JsonPackUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?readBoolAndReport@JsonPackUtils@@YA_NAEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@AEAVPackReport@@_N4@Z
-     * @hash   420972983
+     * @hash   621106999
      */
     MCAPI bool readBoolAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool, bool);
     /**
      * @symbol ?readIntAndReport@JsonPackUtils@@YAHAEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@AEAVPackReport@@_NH@Z
-     * @hash   -840621308
+     * @hash   -640487292
      */
     MCAPI int readIntAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool, int);
     /**
      * @symbol ?readRequiredValue@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@@Z
-     * @hash   -1851166722
+     * @hash   -1651032706
      */
     MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum class Json::ValueType);
     /**
      * @symbol ?readStringAndReport@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@AEBV23@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
-     * @hash   -1258914015
+     * @hash   -1058795375
      */
     MCAPI std::string readStringAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
     /**
      * @symbol ?readStringArrayAndReport@JsonPackUtils@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV23@AEAVPackReport@@_N@Z
-     * @hash   -622633048
+     * @hash   -422545160
      */
     MCAPI std::vector<std::string> readStringArrayAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
     /**
      * @symbol ?readValue@JsonPackUtils@@YA?AU?$pair@PEBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1022899812
+     * @hash   1222972324
      */
     MCAPI struct std::pair<class Json::Value const *, enum class PackParseErrorType> readValue(class Json::Value const &, std::string const &);
     /**
      * @symbol ?readValueAndReportErrors@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
-     * @hash   1421985992
+     * @hash   1622058504
      */
     MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum class Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
     /**
      * @symbol ?stringizePath@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-     * @hash   -1320594965
+     * @hash   -1120522453
      */
     MCAPI std::string stringizePath(std::vector<std::string> const &);
 

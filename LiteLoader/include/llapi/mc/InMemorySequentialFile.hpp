@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?Read@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z
-     * @hash   1144565477
+     * @hash   1618730565
      */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /**
      * @vftbl  2
      * @symbol ?Skip@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
-     * @hash   549173306
+     * @hash   1023338394
      */
     virtual class leveldb::Status Skip(unsigned __int64);
     /**
      * @symbol ??0InMemorySequentialFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-     * @hash   966631121
+     * @hash   1440796209
      */
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 

@@ -32,18 +32,18 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
     /**
      * @symbol ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     * @hash   1805325597
+     * @hash   1901825373
      */
     MCVAPI bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
      * @symbol ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-     * @hash   -152617693
+     * @hash   -56117917
      */
     MCVAPI bool test(class Block const &, class Randomize &) const;
 #endif
     /**
      * @symbol ??0StructurePoolBlockPredicateAlwaysTrue@@QEAA@XZ
-     * @hash   78399538
+     * @hash   834191442
      */
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 

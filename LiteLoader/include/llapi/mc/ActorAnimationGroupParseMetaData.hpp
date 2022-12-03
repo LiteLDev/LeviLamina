@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorAnimationGroupParseMetaData@@QEAA@XZ
-     * @hash   -147852628
+     * @hash   -58425812
      */
     MCAPI ~ActorAnimationGroupParseMetaData();
 

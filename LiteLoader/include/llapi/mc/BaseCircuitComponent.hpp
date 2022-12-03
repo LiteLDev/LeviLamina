@@ -56,192 +56,192 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@BaseCircuitComponent@@UEBAHXZ
-     * @hash   1805736253
+     * @hash   1859014093
      */
     virtual int getStrength() const;
     /**
      * @vftbl  2
      * @symbol ?getDirection@BaseCircuitComponent@@UEBAHXZ
-     * @hash   2018995631
+     * @hash   -1732137921
      */
     virtual int getDirection() const;
     /**
      * @vftbl  3
      * @symbol ?setStrength@BaseCircuitComponent@@UEAAXH@Z
-     * @hash   -988918326
+     * @hash   -935640486
      */
     virtual void setStrength(int);
     /**
      * @vftbl  4
      * @symbol ?setDirection@BaseCircuitComponent@@UEAAXE@Z
-     * @hash   -1605322834
+     * @hash   -1061504466
      */
     virtual void setDirection(unsigned char);
     /**
      * @vftbl  5
      * @symbol ?setConsumePowerAnyDirection@BaseCircuitComponent@@UEAAX_N@Z
-     * @hash   67143340
+     * @hash   823273516
      */
     virtual void setConsumePowerAnyDirection(bool);
     /**
      * @vftbl  6
      * @symbol ?canConsumePowerAnyDirection@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -429951361
+     * @hash   -347966529
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
      * @vftbl  7
      * @symbol ?canConsumerPower@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -527105230
+     * @hash   -430359438
      */
     virtual bool canConsumerPower() const;
     /**
      * @vftbl  8
      * @symbol ?canStopPower@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -9656794
+     * @hash   87088998
      */
     virtual bool canStopPower() const;
     /**
      * @vftbl  9
      * @symbol ?setStopPower@BaseCircuitComponent@@UEAAX_N@Z
-     * @hash   -181682263
+     * @hash   -92716727
      */
     virtual void setStopPower(bool);
     /**
      * @vftbl  10
      * @symbol ?removeSource@BaseCircuitComponent@@UEAA_NAEBVBlockPos@@PEBV1@@Z
-     * @hash   1206941937
+     * @hash   1750760305
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
      * @vftbl  11
      * @symbol ?addSource@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   1611357703
+     * @hash   1708103495
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   569588981
+     * @hash   666088757
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  13
      * @symbol ?checkLock@BaseCircuitComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1769620229
+     * @hash   -1680654693
      */
     virtual void checkLock(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@BaseCircuitComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   192643619
+     * @hash   289389411
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?cacheValues@BaseCircuitComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   1978130188
+     * @hash   2067095724
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  16
      * @symbol ?updateDependencies@BaseCircuitComponent@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-     * @hash   984128301
+     * @hash   1073093837
      */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
      * @symbol ?isHalfPulse@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -2075142865
+     * @hash   -1978397073
      */
     virtual bool isHalfPulse() const;
     /**
      * @vftbl  19
      * @symbol ?hasSource@BaseCircuitComponent@@UEAA_NAEAV1@@Z
-     * @hash   1915956278
+     * @hash   -1835177274
      */
     virtual bool hasSource(class BaseCircuitComponent &);
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
      * @symbol ?isSecondaryPowered@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -913273043
+     * @hash   -816527251
      */
     virtual bool isSecondaryPowered() const;
     /**
      * @vftbl  22
      * @symbol ?removeFromAnySourceList@BaseCircuitComponent@@MEAA_NPEBV1@@Z
-     * @hash   1754823476
+     * @hash   -1996325452
      */
     virtual bool removeFromAnySourceList(class BaseCircuitComponent const *);
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   694210897
+     * @hash   790664545
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  24
      * @symbol ?getCircuitComponentGroupType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   2074043084
+     * @hash   -1464794036
      */
     virtual enum class CircuitComponentType getCircuitComponentGroupType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
     /**
      * @symbol ?allowIndirect@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   315304682
+     * @hash   412050474
      */
     MCVAPI bool allowIndirect() const;
     /**
      * @symbol ?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ
-     * @hash   -1303426745
+     * @hash   -1206680953
      */
     MCVAPI bool hasChildrenSource() const;
 #endif
     /**
      * @symbol ??0BaseCircuitComponent@@QEAA@XZ
-     * @hash   1025420641
+     * @hash   1569254385
      */
     MCAPI BaseCircuitComponent();
     /**
      * @symbol ?addSourceItem@BaseCircuitComponent@@QEAAXAEBVItem@CircuitComponentList@@@Z
-     * @hash   950394286
+     * @hash   1494228030
      */
     MCAPI void addSourceItem(class CircuitComponentList::Item const &);
     /**
      * @symbol ?hasDirectPower@BaseCircuitComponent@@QEAA_NXZ
-     * @hash   -862141128
+     * @hash   -318307384
      */
     MCAPI bool hasDirectPower();
     /**
      * @symbol ?isRemoved@BaseCircuitComponent@@QEBA_NXZ
-     * @hash   1552953522
+     * @hash   2096771890
      */
     MCAPI bool isRemoved() const;
     /**
      * @symbol ?removeFromSourceAndDestinationList@BaseCircuitComponent@@QEAA?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VItem@CircuitComponentList@@@std@@@std@@@std@@V23@@Z
-     * @hash   -1849493102
+     * @hash   -1305674734
      */
     MCAPI class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>> removeFromSourceAndDestinationList(class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>>);
     /**
      * @symbol ?setRemoved@BaseCircuitComponent@@QEAAXXZ
-     * @hash   -1295022939
+     * @hash   -751204571
      */
     MCAPI void setRemoved();
 
 //protected:
     /**
      * @symbol ?trackPowerSource@BaseCircuitComponent@@IEAA_NAEBVCircuitTrackingInfo@@H_NH1@Z
-     * @hash   -2109159448
+     * @hash   -1565341080
      */
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int, bool);
 

@@ -39,44 +39,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1116483911
+     * @hash   1042617607
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectScore@@UEBA?AVValue@Json@@XZ
-     * @hash   284176743
+     * @hash   271245527
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectScore@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   -1878654392
+     * @hash   -1891585608
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectScore@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -447489609
+     * @hash   -460420825
      */
     MCAPI TextObjectScore(std::string, std::string);
     /**
      * @symbol ?RAW_TEXT_SCORE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   202024497
+     * @hash   1702552961
      */
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     /**
      * @symbol ?RAW_TEXT_SCORE_NAME_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1676128559
+     * @hash   -1118310273
      */
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
     /**
      * @symbol ?RAW_TEXT_SCORE_OBJECTIVE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -180379151
+     * @hash   1320149313
      */
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
     /**
      * @symbol ?RAW_TEXT_SCORE_STAR@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   761559567
+     * @hash   -2032879265
      */
     MCAPI static std::string const RAW_TEXT_SCORE_STAR;
 

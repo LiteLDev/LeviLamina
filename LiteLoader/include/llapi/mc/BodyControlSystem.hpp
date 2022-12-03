@@ -37,13 +37,13 @@ public:
     virtual ~BodyControlSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BodyControlSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   28005370
+     * @hash   145724026
      */
     virtual void tick(class EntityRegistry &);
 

@@ -38,31 +38,31 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ
-     * @hash   1011722403
+     * @hash   991241571
      */
     virtual enum class ContainerID getContainerId() const;
     /**
      * @vftbl  2
      * @symbol ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-     * @hash   2006463274
+     * @hash   2057111818
      */
     virtual void setContainerId(enum class ContainerID);
     /**
      * @vftbl  3
      * @symbol ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
-     * @hash   -288692637
+     * @hash   -309173469
      */
     virtual enum class ContainerType getContainerType() const;
     /**
      * @vftbl  4
      * @symbol ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
-     * @hash   567403676
+     * @hash   618052220
      */
     virtual void setContainerType(enum class ContainerType);
     /**
      * @vftbl  5
      * @symbol ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
-     * @hash   -644429040
+     * @hash   -593780496
      */
     virtual void serverInitItemStackIds();
     /**
@@ -98,37 +98,37 @@ public:
     /**
      * @vftbl  11
      * @symbol ?tick@ContainerManagerModel@@MEAA_NXZ
-     * @hash   -1418669390
+     * @hash   -1321923598
      */
     virtual bool tick();
     /**
      * @vftbl  12
      * @symbol ?debitPlayerLevels@ContainerManagerModel@@UEAAXH@Z
-     * @hash   -844876615
+     * @hash   -794228071
      */
     virtual void debitPlayerLevels(int);
     /**
      * @vftbl  13
      * @symbol ?isCreativeMode@ContainerManagerModel@@UEBA_NXZ
-     * @hash   1962597223
+     * @hash   2013245767
      */
     virtual bool isCreativeMode() const;
     /**
      * @vftbl  14
      * @symbol ?isClientSide@ContainerManagerModel@@UEBA_NXZ
-     * @hash   -1838725753
+     * @hash   -1788077209
      */
     virtual bool isClientSide() const;
     /**
      * @vftbl  15
      * @symbol ?isServerAuthoritative@ContainerManagerModel@@UEBA_NXZ
-     * @hash   1146054349
+     * @hash   1196702893
      */
     virtual bool isServerAuthoritative() const;
     /**
      * @vftbl  16
      * @symbol ?isValid@ContainerManagerModel@@UEAA_NM@Z
-     * @hash   -1051871724
+     * @hash   -1001223180
      */
     virtual bool isValid(float);
     /**
@@ -139,49 +139,49 @@ public:
     virtual class ContainerScreenContext _postInit() = 0;
     /**
      * @symbol ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-     * @hash   977956355
+     * @hash   1028604899
      */
     MCAPI ContainerManagerModel(enum class ContainerID, class Player &);
     /**
      * @symbol ?getPlayer@ContainerManagerModel@@QEBAAEAVPlayer@@XZ
-     * @hash   1308543264
+     * @hash   1433611648
      */
     MCAPI class Player & getPlayer() const;
     /**
      * @symbol ?postInit@ContainerManagerModel@@QEAAXXZ
-     * @hash   -1078949597
+     * @hash   -1028301053
      */
     MCAPI void postInit();
 
 //protected:
     /**
      * @symbol ?_addContainer@ContainerManagerModel@@IEAAXV?$shared_ptr@VContainerModel@@@std@@@Z
-     * @hash   -168349867
+     * @hash   -117701323
      */
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);
     /**
      * @symbol ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
-     * @hash   -2099850796
+     * @hash   -2049202252
      */
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
     /**
      * @symbol ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@UActorUniqueID@@@Z
-     * @hash   1163023175
+     * @hash   1213671719
      */
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
     /**
      * @symbol ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
-     * @hash   1025471196
+     * @hash   1076119740
      */
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum class ContainerEnumName) const;
     /**
      * @symbol ?_isPlayerInRangeOfPosition@ContainerManagerModel@@IEBA_NAEBVBlockPos@@M@Z
-     * @hash   -1738639027
+     * @hash   -1687990483
      */
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
     /**
      * @symbol ?_appendCopies@ContainerManagerModel@@KAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV23@@Z
-     * @hash   45887107
+     * @hash   96535651
      */
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
 

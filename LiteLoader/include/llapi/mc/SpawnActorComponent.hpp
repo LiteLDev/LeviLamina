@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@SpawnActorComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -487123112
+     * @hash   -562127240
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getSpawnEntries@SpawnActorComponent@@QEAAAEAV?$vector@USpawnActorEntry@@V?$allocator@USpawnActorEntry@@@std@@@std@@XZ
-     * @hash   1851038902
+     * @hash   1944309718
      */
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     /**
      * @symbol ?readAdditionalSaveData@SpawnActorComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1579880746
+     * @hash   -1654884874
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

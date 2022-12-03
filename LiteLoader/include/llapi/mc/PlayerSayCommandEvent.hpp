@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerSayCommandEvent@@QEAA@XZ
-     * @hash   -1669137787
+     * @hash   -1488500539
      */
     MCAPI ~PlayerSayCommandEvent();
 

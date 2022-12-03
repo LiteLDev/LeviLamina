@@ -78,117 +78,117 @@ public:
     /**
      * @vftbl  1
      * @symbol ?read@ReadOnlyBinaryStream@@EEAA_NPEAX_K@Z
-     * @hash   -105088610
+     * @hash   406916814
      */
     virtual bool read(void *, unsigned __int64);
     /**
      * @symbol ??0ReadOnlyBinaryStream@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   1847572019
+     * @hash   -1935374477
      */
     MCAPI ReadOnlyBinaryStream(std::string const &, bool);
     /**
      * @symbol ??0ReadOnlyBinaryStream@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1225739354
+     * @hash   -713718554
      */
     MCAPI ReadOnlyBinaryStream(std::string &&);
     /**
      * @symbol ?canReadBool@ReadOnlyBinaryStream@@QEBA_NXZ
-     * @hash   1860216650
+     * @hash   -1922745222
      */
     MCAPI bool canReadBool() const;
     /**
      * @symbol ?getBool@ReadOnlyBinaryStream@@QEAA_NXZ
-     * @hash   822348874
+     * @hash   1334354298
      */
     MCAPI bool getBool();
     /**
      * @symbol ?getByte@ReadOnlyBinaryStream@@QEAAEXZ
-     * @hash   -1979302919
+     * @hash   -1467297495
      */
     MCAPI unsigned char getByte();
     /**
      * @symbol ?getDouble@ReadOnlyBinaryStream@@QEAANXZ
-     * @hash   1770545680
+     * @hash   -2012416192
      */
     MCAPI double getDouble();
     /**
      * @symbol ?getFloat@ReadOnlyBinaryStream@@QEAAMXZ
-     * @hash   132988760
+     * @hash   644994184
      */
     MCAPI float getFloat();
     /**
      * @symbol ?getReadCompleteResult@ReadOnlyBinaryStream@@QEBA?AW4StreamReadResult@@XZ
-     * @hash   -1883149040
+     * @hash   -1371143616
      */
     MCAPI enum class StreamReadResult getReadCompleteResult() const;
     /**
      * @symbol ?getSignedBigEndianInt@ReadOnlyBinaryStream@@QEAAHXZ
-     * @hash   36822232
+     * @hash   548827656
      */
     MCAPI int getSignedBigEndianInt();
     /**
      * @symbol ?getSignedInt@ReadOnlyBinaryStream@@QEAAHXZ
-     * @hash   -74430758
+     * @hash   437574666
      */
     MCAPI int getSignedInt();
     /**
      * @symbol ?getSignedInt64@ReadOnlyBinaryStream@@QEAA_JXZ
-     * @hash   -1167343121
+     * @hash   -655337697
      */
     MCAPI __int64 getSignedInt64();
     /**
      * @symbol ?getSignedShort@ReadOnlyBinaryStream@@QEAAFXZ
-     * @hash   61903071
+     * @hash   573908495
      */
     MCAPI short getSignedShort();
     /**
      * @symbol ?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -709301178
+     * @hash   -197295754
      */
     MCAPI std::string getString();
     /**
      * @symbol ?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1273974771
+     * @hash   -761969347
      */
     MCAPI bool getString(std::string &);
     /**
      * @symbol ?getUnsignedChar@ReadOnlyBinaryStream@@QEAAEXZ
-     * @hash   -1538275559
+     * @hash   -1026270135
      */
     MCAPI unsigned char getUnsignedChar();
     /**
      * @symbol ?getUnsignedInt@ReadOnlyBinaryStream@@QEAAIXZ
-     * @hash   -196697948
+     * @hash   315307476
      */
     MCAPI unsigned int getUnsignedInt();
     /**
      * @symbol ?getUnsignedInt64@ReadOnlyBinaryStream@@QEAA_KXZ
-     * @hash   547311143
+     * @hash   1059316567
      */
     MCAPI unsigned __int64 getUnsignedInt64();
     /**
      * @symbol ?getUnsignedShort@ReadOnlyBinaryStream@@QEAAGXZ
-     * @hash   -1501348887
+     * @hash   -989343463
      */
     MCAPI unsigned short getUnsignedShort();
     /**
      * @symbol ?getUnsignedVarInt@ReadOnlyBinaryStream@@QEAAIXZ
-     * @hash   866778786
+     * @hash   1378784210
      */
     MCAPI unsigned int getUnsignedVarInt();
     /**
      * @symbol ?getUnsignedVarInt64@ReadOnlyBinaryStream@@QEAA_KXZ
-     * @hash   -539415193
+     * @hash   -27409769
      */
     MCAPI unsigned __int64 getUnsignedVarInt64();
     /**
      * @symbol ?getVarInt@ReadOnlyBinaryStream@@QEAAHXZ
-     * @hash   1281217928
+     * @hash   1793223352
      */
     MCAPI int getVarInt();
     /**
      * @symbol ?getVarInt64@ReadOnlyBinaryStream@@QEAA_JXZ
-     * @hash   -1818316557
+     * @hash   -1306311133
      */
     MCAPI __int64 getVarInt64();
 

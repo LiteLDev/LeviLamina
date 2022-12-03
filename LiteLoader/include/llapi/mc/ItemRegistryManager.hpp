@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ?getItemRegistry@ItemRegistryManager@@SA?AVItemRegistryRef@@XZ
-     * @hash   -1345185958
+     * @hash   -620269062
      */
     MCAPI static class ItemRegistryRef getItemRegistry();
     /**
      * @symbol ?resetItemRegistry@ItemRegistryManager@@SAXXZ
-     * @hash   -255633455
+     * @hash   469283441
      */
     MCAPI static void resetItemRegistry();
     /**
      * @symbol ?setItemRegistry@ItemRegistryManager@@SAXVItemRegistryRef@@@Z
-     * @hash   780090608
+     * @hash   1505007504
      */
     MCAPI static void setItemRegistry(class ItemRegistryRef);
 
@@ -50,7 +50,7 @@ public:
 private:
     /**
      * @symbol ?mThreadLocalRegistry@ItemRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VItemRegistry@@@std@@V?$allocator@V?$weak_ptr@VItemRegistry@@@std@@@2@@Threading@Bedrock@@A
-     * @hash   -1045930295
+     * @hash   -184090119
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class std::weak_ptr<class ItemRegistry>, class std::allocator<class std::weak_ptr<class ItemRegistry>>> mThreadLocalRegistry;
 

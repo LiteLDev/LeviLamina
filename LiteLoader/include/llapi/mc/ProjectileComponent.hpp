@@ -27,219 +27,219 @@ enum class EAxis;
 public:
     /**
      * @symbol ??0ProjectileComponent@@QEAA@XZ
-     * @hash   127719776
+     * @hash   51746960
      */
     MCAPI ProjectileComponent();
     /**
      * @symbol ??0ProjectileComponent@@QEAA@AEBV0@@Z
-     * @hash   440314337
+     * @hash   493346161
      */
     MCAPI ProjectileComponent(class ProjectileComponent const &);
     /**
      * @symbol ?addAdditionalSaveData@ProjectileComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   545940056
+     * @hash   470136376
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getAnchor@ProjectileComponent@@QEAA?AW4ProjectileAnchor@@XZ
-     * @hash   1728159762
+     * @hash   1652432962
      */
     MCAPI enum class ProjectileAnchor getAnchor();
     /**
      * @symbol ?getCatchFire@ProjectileComponent@@QEBA_NXZ
-     * @hash   -1120535464
+     * @hash   -1196262264
      */
     MCAPI bool getCatchFire() const;
     /**
      * @symbol ?getEnchantChanneling@ProjectileComponent@@QEBA_NXZ
-     * @hash   -1744378104
+     * @hash   -1820104904
      */
     MCAPI bool getEnchantChanneling() const;
     /**
      * @symbol ?getGravity@ProjectileComponent@@QEAAMXZ
-     * @hash   -809291098
+     * @hash   -885017898
      */
     MCAPI float getGravity();
     /**
      * @symbol ?getIsDangerous@ProjectileComponent@@QEAA_NXZ
-     * @hash   -266717368
+     * @hash   -342444168
      */
     MCAPI bool getIsDangerous();
     /**
      * @symbol ?getKnockbackForce@ProjectileComponent@@QEBAMXZ
-     * @hash   -1686391150
+     * @hash   -1762117950
      */
     MCAPI float getKnockbackForce() const;
     /**
      * @symbol ?getNoPhysics@ProjectileComponent@@QEBA_NXZ
-     * @hash   -663095544
+     * @hash   -515532072
      */
     MCAPI bool getNoPhysics() const;
     /**
      * @symbol ?getOffset@ProjectileComponent@@QEAA?AVVec3@@XZ
-     * @hash   -906711850
+     * @hash   -982438650
      */
     MCAPI class Vec3 getOffset();
     /**
      * @symbol ?getShootSound@ProjectileComponent@@QEAA?AW4LevelSoundEvent@@XZ
-     * @hash   -1836802486
+     * @hash   -1912529286
      */
     MCAPI enum class LevelSoundEvent getShootSound();
     /**
      * @symbol ?getShootTarget@ProjectileComponent@@QEAA_NXZ
-     * @hash   614740632
+     * @hash   539013832
      */
     MCAPI bool getShootTarget();
     /**
      * @symbol ?getShooterAngle@ProjectileComponent@@QEBA?AVVec3@@AEAVActor@@@Z
-     * @hash   932166561
+     * @hash   856439761
      */
     MCAPI class Vec3 getShooterAngle(class Actor &) const;
     /**
      * @symbol ?getThrowPower@ProjectileComponent@@QEBAMXZ
-     * @hash   -1558187232
+     * @hash   -1633914032
      */
     MCAPI float getThrowPower() const;
     /**
      * @symbol ?getUncertainty@ProjectileComponent@@QEBAMW4Difficulty@@@Z
-     * @hash   -566350903
+     * @hash   -642077703
      */
     MCAPI float getUncertainty(enum class Difficulty) const;
     /**
      * @symbol ?getUncertaintyBase@ProjectileComponent@@QEBAMXZ
-     * @hash   1333712550
+     * @hash   1257985750
      */
     MCAPI float getUncertaintyBase() const;
     /**
      * @symbol ?getUncertaintyMultiplier@ProjectileComponent@@QEBAMXZ
-     * @hash   861893974
+     * @hash   786167174
      */
     MCAPI float getUncertaintyMultiplier() const;
     /**
      * @symbol ?handleMovementGravity@ProjectileComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1426882332
+     * @hash   1351155532
      */
     MCAPI void handleMovementGravity(class Actor &);
     /**
      * @symbol ?handleMovementHoming@ProjectileComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1411529142
+     * @hash   1335833094
      */
     MCAPI void handleMovementHoming(class Actor &);
     /**
      * @symbol ?hurt@ProjectileComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@@Z
-     * @hash   213426337
+     * @hash   137730289
      */
     MCAPI void hurt(class Actor &, class ActorDamageSource const &);
     /**
      * @symbol ?incrementFlightTime@ProjectileComponent@@QEAAHXZ
-     * @hash   -1596256686
+     * @hash   -1671952734
      */
     MCAPI int incrementFlightTime();
     /**
      * @symbol ?incrementLife@ProjectileComponent@@QEAAHXZ
-     * @hash   -2015558368
+     * @hash   -2091254416
      */
     MCAPI int incrementLife();
     /**
      * @symbol ?incrementOnGroundTime@ProjectileComponent@@QEAAHXZ
-     * @hash   -1441575202
+     * @hash   -1517271250
      */
     MCAPI int incrementOnGroundTime();
     /**
      * @symbol ?initFromDefinition@ProjectileComponent@@QEAAXAEAVActor@@@Z
-     * @hash   253999474
+     * @hash   178303426
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?lerpMotion@ProjectileComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
-     * @hash   -1860687731
+     * @hash   -1936383779
      */
     MCAPI void lerpMotion(class Actor &, class Vec3 const &);
     /**
      * @symbol ?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z
-     * @hash   2019061563
+     * @hash   1943427019
      */
     MCAPI void onHit(class Actor &, class HitResult const &);
     /**
      * @symbol ??4ProjectileComponent@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -2132072196
+     * @hash   -2079163380
      */
     MCAPI class ProjectileComponent & operator=(class ProjectileComponent const &);
     /**
      * @symbol ?readAdditionalSaveData@ProjectileComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1343252776
+     * @hash   1267618232
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setActiveTarget@ProjectileComponent@@QEAAXAEAVActor@@PEAV2@@Z
-     * @hash   1290964531
+     * @hash   1215329987
      */
     MCAPI void setActiveTarget(class Actor &, class Actor *);
     /**
      * @symbol ?setChanneling@ProjectileComponent@@QEAAXXZ
-     * @hash   -864979097
+     * @hash   -940613641
      */
     MCAPI void setChanneling();
     /**
      * @symbol ?setEnchantImpaler@ProjectileComponent@@QEAAXAEBH@Z
-     * @hash   233195769
+     * @hash   157561225
      */
     MCAPI void setEnchantImpaler(int const &);
     /**
      * @symbol ?setKnockbackForce@ProjectileComponent@@QEAAXM@Z
-     * @hash   957534416
+     * @hash   881899872
      */
     MCAPI void setKnockbackForce(float);
     /**
      * @symbol ?setNoPhysics@ProjectileComponent@@QEAAX_N@Z
-     * @hash   -386837740
+     * @hash   -239443404
      */
     MCAPI void setNoPhysics(bool);
     /**
      * @symbol ?setOwnerId@ProjectileComponent@@QEAAXUActorUniqueID@@@Z
-     * @hash   194175352
+     * @hash   118540808
      */
     MCAPI void setOwnerId(struct ActorUniqueID);
     /**
      * @symbol ?setPotionEffect@ProjectileComponent@@QEAAXH@Z
-     * @hash   -1867473926
+     * @hash   -1943108470
      */
     MCAPI void setPotionEffect(int);
     /**
      * @symbol ?setSplashRange@ProjectileComponent@@QEAAXM@Z
-     * @hash   -23906018
+     * @hash   -99540562
      */
     MCAPI void setSplashRange(float);
     /**
      * @symbol ?shoot@ProjectileComponent@@QEAAXAEAVActor@@0@Z
-     * @hash   -1765445641
+     * @hash   -1841080185
      */
     MCAPI void shoot(class Actor &, class Actor &);
     /**
      * @symbol ?shoot@ProjectileComponent@@QEAAXAEAVActor@@AEBVVec3@@MM1PEAV2@@Z
-     * @hash   1071918593
+     * @hash   996299425
      */
     MCAPI void shoot(class Actor &, class Vec3 const &, float, float, class Vec3 const &, class Actor *);
     /**
      * @symbol ??1ProjectileComponent@@QEAA@XZ
-     * @hash   -62928720
+     * @hash   -10019904
      */
     MCAPI ~ProjectileComponent();
     /**
      * @symbol ?DELAY_ON_HIT@ProjectileComponent@@2IB
-     * @hash   -1724860215
+     * @hash   -966365979
      */
     MCAPI static unsigned int const DELAY_ON_HIT;
 
 //private:
     /**
      * @symbol ?_handleLightningOnHit@ProjectileComponent@@AEAAXAEAVActor@@@Z
-     * @hash   -1036415250
+     * @hash   -1112388066
      */
     MCAPI void _handleLightningOnHit(class Actor &);
     /**
      * @symbol ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
-     * @hash   -1009690453
+     * @hash   -1085494133
      */
     MCAPI void _selectNextMoveDirection(class Actor &, enum class ProjectileComponent::EAxis);
 

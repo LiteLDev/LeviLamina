@@ -31,27 +31,27 @@ public:
 
 public:
     /**
-     * @symbol ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@@entt@@@Z
-     * @hash   867258023
+     * @symbol ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
+     * @hash   920065934
      */
-    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId> &);
+    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> &);
     /**
      * @symbol ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
-     * @hash   1996173265
+     * @hash   1939251313
      */
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
 
 //protected:
     /**
      * @symbol ?_assertValidRegistry@EntityRegistryBase@@IEBAXAEBVEntityContextBase@@@Z
-     * @hash   -719370795
+     * @hash   -630405259
      */
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
 
 protected:
     /**
      * @symbol ?mRegistryCount@EntityRegistryBase@@1U?$atomic@I@std@@A
-     * @hash   1258286928
+     * @hash   2108256832
      */
     MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 

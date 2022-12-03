@@ -33,39 +33,39 @@ public:
 public:
     /**
      * @symbol ?sendBandwidthMetric@ServerCommunicationInterface@@QEAAX_K000AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1277053698
+     * @hash   1458874898
      */
     MCAPI void sendBandwidthMetric(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64, std::string const &);
     /**
      * @symbol ?sendChunkLoadTelemtryData@ServerCommunicationInterface@@QEAAXAEBUChunkLoadTelemetryData@@@Z
-     * @hash   688220296
+     * @hash   870072248
      */
     MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const &);
     /**
      * @symbol ?sendServerStarted@ServerCommunicationInterface@@QEAAXXZ
-     * @hash   634285635
+     * @hash   816183715
      */
     MCAPI void sendServerStarted();
     /**
      * @symbol ?sendServerTickTime@ServerCommunicationInterface@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-     * @hash   -1912338869
+     * @hash   -1730440789
      */
     MCAPI void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     /**
      * @symbol ??1ServerCommunicationInterface@@QEAA@XZ
-     * @hash   -1750501488
+     * @hash   -1568680288
      */
     MCAPI ~ServerCommunicationInterface();
     /**
      * @symbol ?create@ServerCommunicationInterface@@SA?AV?$unique_ptr@VServerCommunicationInterface@@U?$default_delete@VServerCommunicationInterface@@@std@@@std@@AEBUNetworkAddress@@@Z
-     * @hash   1619091493
+     * @hash   1800912693
      */
     MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const &);
 
 //private:
     /**
      * @symbol ?communicate@ServerCommunicationInterface@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-     * @hash   -586062963
+     * @hash   -404241763
      */
     MCAPI void communicate(std::string const &, class Json::Value const &);
 

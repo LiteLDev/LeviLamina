@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0TransformationComponent@@QEAA@XZ
-     * @hash   971435856
+     * @hash   951139536
      */
     MCAPI TransformationComponent();
     /**
      * @symbol ?getDelayTicks@TransformationComponent@@QEBAHXZ
-     * @hash   -1934997222
+     * @hash   -1763739334
      */
     MCAPI int getDelayTicks() const;
     /**
      * @symbol ?initFromDefinition@TransformationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1156568802
+     * @hash   1136272482
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z
-     * @hash   -594066932
+     * @hash   -614363252
      */
     MCAPI void maintainOldData(class Actor &, class Actor &, struct TransformationDescription const &, struct ActorUniqueID const &, class Level const &);
     /**
      * @symbol ?reloadComponent@TransformationComponent@@QEAAXAEAVActor@@@Z
-     * @hash   185137698
+     * @hash   164841378
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ?setDelayTicks@TransformationComponent@@QEAAXH@Z
-     * @hash   1009022412
+     * @hash   988756844
      */
     MCAPI void setDelayTicks(int);
     /**
      * @symbol ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
-     * @hash   -942204003
+     * @hash   -962500323
      */
     MCAPI void transformIfAble(class Actor &, bool);
 

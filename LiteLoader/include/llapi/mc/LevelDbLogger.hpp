@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z
-     * @hash   -241345636
+     * @hash   -152380100
      */
     virtual void Logv(char const *, char *);
 

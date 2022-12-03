@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0TaskStatus@@QEAA@XZ
-     * @hash   844940867
+     * @hash   1356761779
      */
     MCAPI TaskStatus();
     /**
      * @symbol ?isComplete@TaskStatus@@QEBA_NXZ
-     * @hash   -931145754
+     * @hash   -419324842
      */
     MCAPI bool isComplete() const;
     /**
      * @symbol ??BTaskStatus@@QEBA?AW4Value@0@XZ
-     * @hash   831533808
+     * @hash   1002791696
      */
     MCAPI operator enum class TaskStatus::Value() const;
     /**
      * @symbol ?toAsyncStatus@TaskStatus@@QEBA?AW4AsyncStatus@Threading@Bedrock@@XZ
-     * @hash   -339089120
+     * @hash   172731792
      */
     MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     /**
      * @symbol ?toErrorCode@TaskStatus@@QEBA?AVerror_code@std@@XZ
-     * @hash   1401784448
+     * @hash   1913605360
      */
     MCAPI class std::error_code toErrorCode() const;
 

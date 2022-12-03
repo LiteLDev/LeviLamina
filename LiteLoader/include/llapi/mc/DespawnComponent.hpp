@@ -32,19 +32,19 @@ public:
 public:
     /**
      * @symbol ?onDespawn@DespawnComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1701785652
+     * @hash   -1777681588
      */
     MCAPI void onDespawn(class Actor &);
     /**
      * @symbol ?tick@DespawnComponent@@QEAAXAEAVActor@@@Z
-     * @hash   91791274
+     * @hash   15895338
      */
     MCAPI void tick(class Actor &);
 
 //private:
     /**
      * @symbol ?_tryStandardDespawnRules@DespawnComponent@@AEBA_NAEAVActor@@AEBVDespawnDefinition@@AEAVIWorldAccessor@1@@Z
-     * @hash   814191578
+     * @hash   738295642
      */
     MCAPI bool _tryStandardDespawnRules(class Actor &, class DespawnDefinition const &, class DespawnComponent::IWorldAccessor &) const;
 

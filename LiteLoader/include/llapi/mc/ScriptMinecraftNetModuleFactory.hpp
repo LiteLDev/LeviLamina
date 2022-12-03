@@ -39,31 +39,31 @@ public:
     virtual ~ScriptMinecraftNetModuleFactory();
     /**
      * @symbol ??0ScriptMinecraftNetModuleFactory@@QEAA@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
-     * @hash   -691139117
+     * @hash   -621793357
      */
     MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftNetModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2092356096
+     * @hash   -2132988672
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
      * @symbol ?_generateBindings@ScriptMinecraftNetModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@V?$optional@UContextConfig@Scripting@@@std@@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@Z
-     * @hash   1194548846
+     * @hash   1263802350
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, class std::optional<struct Scripting::ContextConfig>, bool, std::vector<std::string> const &);
 
 private:
     /**
      * @symbol ?ModuleName@ScriptMinecraftNetModuleFactory@@0PEBDEB
-     * @hash   1211220479
+     * @hash   2071123279
      */
     MCAPI static char const * ModuleName;
     /**
      * @symbol ?ModuleUUID@ScriptMinecraftNetModuleFactory@@0VUUID@mce@@B
-     * @hash   1684981118
+     * @hash   -1808089338
      */
     MCAPI static class mce::UUID const ModuleUUID;
 

@@ -34,22 +34,22 @@ public:
 public:
     /**
      * @symbol ??0SpawnGroupData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVMobSpawnRules@@@Z
-     * @hash   212606914
+     * @hash   732484850
      */
     MCAPI SpawnGroupData(std::string const &, class MobSpawnRules &);
     /**
      * @symbol ?addSpawnRules@SpawnGroupData@@QEAAXAEAVMobSpawnRules@@@Z
-     * @hash   591030990
+     * @hash   1110908926
      */
     MCAPI void addSpawnRules(class MobSpawnRules &);
     /**
      * @symbol ?getIdentifier@SpawnGroupData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1086872220
+     * @hash   1180143036
      */
     MCAPI std::string const & getIdentifier() const;
     /**
      * @symbol ?getSpawnRules@SpawnGroupData@@QEBAAEBV?$vector@VMobSpawnRules@@V?$allocator@VMobSpawnRules@@@std@@@std@@XZ
-     * @hash   -813652276
+     * @hash   -711324996
      */
     MCAPI std::vector<class MobSpawnRules> const & getSpawnRules() const;
 

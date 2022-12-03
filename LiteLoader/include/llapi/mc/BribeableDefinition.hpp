@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?addBribeItem@BribeableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-     * @hash   -604947882
+     * @hash   -477419338
      */
     MCAPI void addBribeItem(class ItemDescriptor const &);
     /**
      * @symbol ?initialize@BribeableDefinition@@QEAAXAEAVEntityContext@@AEAVBribeableComponent@@@Z
-     * @hash   -915841099
+     * @hash   -771445083
      */
     MCAPI void initialize(class EntityContext &, class BribeableComponent &);
     /**
      * @symbol ?buildSchema@BribeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBribeableDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -1070041180
+     * @hash   -925706668
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>> &);
 

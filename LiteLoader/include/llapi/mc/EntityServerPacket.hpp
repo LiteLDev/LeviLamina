@@ -38,23 +38,23 @@ public:
     /**
      * @vftbl  3
      * @symbol ?write@EntityServerPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   545887482
+     * @hash   504064762
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@EntityServerPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   888817763
+     * @hash   846995043
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EntityServerPacket@@QEAA@XZ
-     * @hash   441514474
+     * @hash   370954010
      */
     MCAPI EntityServerPacket();
     /**
      * @symbol ??0EntityServerPacket@@QEAA@AEBVEntityContext@@@Z
-     * @hash   1261762099
+     * @hash   1191201635
      */
     MCAPI EntityServerPacket(class EntityContext const &);
 

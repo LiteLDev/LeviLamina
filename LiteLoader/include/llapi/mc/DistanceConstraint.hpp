@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0DistanceConstraint@@QEAA@MMM@Z
-     * @hash   -1502972501
+     * @hash   -789280085
      */
     MCAPI DistanceConstraint(float, float, float);
     /**
      * @symbol ?setup@DistanceConstraint@@QEAAMAEBVVec3@@0MM@Z
-     * @hash   -2117626113
+     * @hash   -1403933697
      */
     MCAPI float setup(class Vec3 const &, class Vec3 const &, float, float);
     /**
      * @symbol ?solve@DistanceConstraint@@QEAAXAEAVVec3@@0@Z
-     * @hash   1519343335
+     * @hash   -2061931545
      */
     MCAPI void solve(class Vec3 &, class Vec3 &);
 

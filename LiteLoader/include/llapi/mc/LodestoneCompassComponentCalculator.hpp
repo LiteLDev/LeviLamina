@@ -36,7 +36,7 @@ public:
 private:
     /**
      * @symbol ?COOLDOWN_TIME_SECONDS@LodestoneCompassComponentCalculator@@0MA
-     * @hash   -1223049439
+     * @hash   -351975975
      */
     MCAPI static float COOLDOWN_TIME_SECONDS;
 

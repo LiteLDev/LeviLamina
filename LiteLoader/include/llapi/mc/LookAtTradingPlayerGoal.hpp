@@ -39,29 +39,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@LookAtTradingPlayerGoal@@UEAA_NXZ
-     * @hash   -334363091
+     * @hash   -173837651
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@LookAtTradingPlayerGoal@@UEAA_NXZ
-     * @hash   813733195
+     * @hash   974258635
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@LookAtTradingPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   507747011
+     * @hash   668272451
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0LookAtTradingPlayerGoal@@QEAA@AEAVMob@@MMHHHH@Z
-     * @hash   1858610906
+     * @hash   2019136346
      */
     MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
 

@@ -38,139 +38,139 @@ public:
     virtual ~DanceComponentListener();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
+     * @vftbl  7
+     * @hash   -1311050489
+     */
+    virtual void __unk_vfn_7();
+    /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1398168983
+     * @hash   -1309203447
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -382068605
-     */
-    virtual void __unk_vfn_10();
-    /**
-     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-     * @hash   -468800023
+     * @hash   -375529207
      */
     virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
+     * @vftbl  11
+     * @hash   -292179548
+     */
+    virtual void __unk_vfn_11();
+    /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -379298042
+     * @hash   -290332506
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -378374521
+     * @hash   -289408985
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
-     * @hash   -377451000
+     * @hash   -288485464
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -376527479
+     * @hash   -287561943
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  17
-     * @hash   -375603958
+     * @hash   -286638422
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
-     * @hash   -374680437
+     * @hash   -285714901
      */
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -353439454
+     * @hash   -264473918
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
-     * @hash   -352515933
+     * @hash   -263550397
      */
     virtual void __unk_vfn_21();
     /**
      * @vftbl  22
-     * @hash   -351592412
+     * @hash   -262626876
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -350668891
+     * @hash   -261703355
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  24
-     * @hash   -349745370
+     * @hash   -260779834
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
-     * @hash   -348821849
+     * @hash   -259856313
      */
     virtual void __unk_vfn_25();
     /**
      * @vftbl  26
-     * @hash   -347898328
+     * @hash   -258932792
      */
     virtual void __unk_vfn_26();
     /**
      * @vftbl  27
-     * @hash   -346974807
+     * @hash   -258009271
      */
     virtual void __unk_vfn_27();
     /**
      * @vftbl  28
-     * @hash   -346051286
+     * @hash   -257085750
      */
     virtual void __unk_vfn_28();
     /**
      * @vftbl  29
-     * @hash   -345127765
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
      * @symbol ?levelSoundEvent@DanceComponentListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-     * @hash   1291246899
+     * @hash   1270873699
      */
     virtual void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 

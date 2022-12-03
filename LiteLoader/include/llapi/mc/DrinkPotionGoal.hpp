@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DrinkPotionGoal@@UEAA_NXZ
-     * @hash   840417858
+     * @hash   886146082
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DrinkPotionGoal@@UEAA_NXZ
-     * @hash   1581295120
+     * @hash   1627023344
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DrinkPotionGoal@@UEAAXXZ
-     * @hash   -292155253
+     * @hash   -203189717
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DrinkPotionGoal@@UEAAXXZ
-     * @hash   1333712571
+     * @hash   1379440795
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DrinkPotionGoal@@UEAAXXZ
-     * @hash   1172398022
+     * @hash   1218126246
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DrinkPotionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1569980066
+     * @hash   -1524251842
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DrinkPotionGoal@@QEAA@AEAVMob@@MAEBV?$vector@UDrinkPotionData@@V?$allocator@UDrinkPotionData@@@std@@@std@@@Z
-     * @hash   -192057661
+     * @hash   -146360189
      */
     MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
 
@@ -87,12 +87,12 @@ public:
 private:
     /**
      * @symbol ?SPEED_MODIFIER_DRINKING_UUID@DrinkPotionGoal@@0VUUID@mce@@B
-     * @hash   62019788
+     * @hash   921292172
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
     /**
      * @symbol ?THROTTLE_COOLDOWN@DrinkPotionGoal@@0HB
-     * @hash   1553419954
+     * @hash   -1981803806
      */
     MCAPI static int const THROTTLE_COOLDOWN;
 

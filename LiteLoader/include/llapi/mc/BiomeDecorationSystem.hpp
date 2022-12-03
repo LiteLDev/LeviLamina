@@ -24,27 +24,27 @@ namespace BiomeDecorationSystem {
 #undef AFTER_EXTRA
     /**
      * @symbol ?consolidateDecorationFeatures@BiomeDecorationSystem@@YAXAEAVBiomeRegistry@@@Z
-     * @hash   666981929
+     * @hash   1425049481
      */
     MCAPI void consolidateDecorationFeatures(class BiomeRegistry &);
     /**
      * @symbol ?decorate@BiomeDecorationSystem@@YAXAEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@AEAV?$vector@PEBVBiome@@V?$allocator@PEBVBiome@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -881927323
+     * @hash   -123859771
      */
     MCAPI void decorate(class LevelChunk &, class BlockSource &, class Random &, std::vector<class Biome const *> &, std::string const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ?decorateBiome@BiomeDecorationSystem@@YA_NAEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@V?$span@UBiomeDecorationFeature@@$0?0@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBiome@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   1512796117
+     * @hash   -2024103627
      */
     MCAPI bool decorateBiome(class LevelChunk &, class BlockSource &, class Random &, class gsl::span<struct BiomeDecorationFeature, -1>, std::string const &, class Biome const *, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ?decorateLargeFeature@BiomeDecorationSystem@@YAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1347931504
+     * @hash   -589863952
      */
     MCAPI void decorateLargeFeature(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &, std::string const &);
     /**
      * @symbol ?decorateLargeFeature@BiomeDecorationSystem@@YA_NAEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@V?$span@UBiomeDecorationFeature@@$0?0@gsl@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1687040167
+     * @hash   -1849859577
      */
     MCAPI bool decorateLargeFeature(class LevelChunk &, class BlockVolumeTarget &, class Random &, class gsl::span<struct BiomeDecorationFeature, -1>, class ChunkPos const &, std::string const &);
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4MobEffectsComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1580507046
+     * @hash   1713678582
      */
     MCAPI struct MobEffectsComponent & operator=(struct MobEffectsComponent &&);
     /**
      * @symbol ??1MobEffectsComponent@@QEAA@XZ
-     * @hash   1463548087
+     * @hash   1596704247
      */
     MCAPI ~MobEffectsComponent();
 

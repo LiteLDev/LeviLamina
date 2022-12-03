@@ -38,48 +38,53 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@OfferFlowerGoal@@UEAA_NXZ
-     * @hash   1567811558
+     * @hash   1757074742
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@OfferFlowerGoal@@UEAA_NXZ
-     * @hash   -1986309228
+     * @hash   -1797092172
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@OfferFlowerGoal@@UEAAXXZ
-     * @hash   2061255935
+     * @hash   -2043940769
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@OfferFlowerGoal@@UEAAXXZ
-     * @hash   -1344421633
+     * @hash   -1154604913
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@OfferFlowerGoal@@UEAAXXZ
-     * @hash   -1505720806
+     * @hash   -1315781078
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   79008122
+     * @hash   267025850
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol ??0OfferFlowerGoal@@QEAA@AEAVIronGolem@@@Z
-     * @hash   -979755141
+     * @symbol ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
+     * @hash   950956403
      */
-    MCAPI OfferFlowerGoal(class IronGolem &);
+    MCAPI OfferFlowerGoal(class Mob &);
+    /**
+     * @symbol ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
+     * @hash   581777240
+     */
+    MCAPI int getMaxOfferFlowerDurationTicks() const;
 
 };

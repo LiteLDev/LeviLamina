@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@IcePatchFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   897484755
+     * @hash   1053935555
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0IcePatchFeature@@QEAA@H@Z
-     * @hash   1307140902
+     * @hash   1463591702
      */
     MCAPI IcePatchFeature(int);
 

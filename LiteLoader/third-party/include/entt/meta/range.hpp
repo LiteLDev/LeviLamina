@@ -1,100 +1,150 @@
 #ifndef ENTT_META_RANGE_HPP
 #define ENTT_META_RANGE_HPP
 
-
 #include <cstddef>
 #include <iterator>
-
+#include <utility>
+#include "../core/fwd.hpp"
+#include "../core/iterator.hpp"
+#include "context.hpp"
 
 namespace entt {
 
+/**
+ * @cond TURN_OFF_DOXYGEN
+ * Internal details not to be documented.
+ */
+
+namespace internal {
+
+template<typename Type, typename It>
+struct meta_range_iterator final {
+    using difference_type = std::ptrdiff_t;
+    using value_type = std::pair<id_type, Type>;
+    using pointer = input_iterator_pointer<value_type>;
+    using reference = value_type;
+    using iterator_category = std::input_iterator_tag;
+
+    meta_range_iterator() noexcept
+        : it{},
+          ctx{} {}
+
+    meta_range_iterator(const meta_ctx &area, const It iter) noexcept
+        : it{iter},
+          ctx{&area} {}
+
+    meta_range_iterator &operator++() noexcept {
+        return ++it, *this;
+    }
+
+    meta_range_iterator operator++(int) noexcept {
+        meta_range_iterator orig = *this;
+        return ++(*this), orig;
+    }
+
+    constexpr meta_range_iterator &operator--() noexcept {
+        return --it, *this;
+    }
+
+    constexpr meta_range_iterator operator--(int) noexcept {
+        meta_range_iterator orig = *this;
+        return operator--(), orig;
+    }
+
+    constexpr meta_range_iterator &operator+=(const difference_type value) noexcept {
+        it += value;
+        return *this;
+    }
+
+    constexpr meta_range_iterator operator+(const difference_type value) const noexcept {
+        meta_range_iterator copy = *this;
+        return (copy += value);
+    }
+
+    constexpr meta_range_iterator &operator-=(const difference_type value) noexcept {
+        return (*this += -value);
+    }
+
+    constexpr meta_range_iterator operator-(const difference_type value) const noexcept {
+        return (*this + -value);
+    }
+
+    [[nodiscard]] constexpr reference operator[](const difference_type value) const noexcept {
+        return {it[value].first, Type{*ctx, it[value].second}};
+    }
+
+    [[nodiscard]] constexpr pointer operator->() const noexcept {
+        return operator*();
+    }
+
+    [[nodiscard]] constexpr reference operator*() const noexcept {
+        return {it->first, Type{*ctx, it->second}};
+    }
+
+    template<typename... Args>
+    friend constexpr std::ptrdiff_t operator-(const meta_range_iterator<Args...> &, const meta_range_iterator<Args...> &) noexcept;
+
+    template<typename... Args>
+    friend constexpr bool operator==(const meta_range_iterator<Args...> &, const meta_range_iterator<Args...> &) noexcept;
+
+    template<typename... Args>
+    friend constexpr bool operator<(const meta_range_iterator<Args...> &, const meta_range_iterator<Args...> &) noexcept;
+
+private:
+    It it;
+    const meta_ctx *ctx;
+};
+
+template<typename... Args>
+[[nodiscard]] constexpr std::ptrdiff_t operator-(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return lhs.it - rhs.it;
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator==(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return lhs.it == rhs.it;
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator!=(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return !(lhs == rhs);
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator<(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return lhs.it < rhs.it;
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator>(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return rhs < lhs;
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator<=(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return !(lhs > rhs);
+}
+
+template<typename... Args>
+[[nodiscard]] constexpr bool operator>=(const meta_range_iterator<Args...> &lhs, const meta_range_iterator<Args...> &rhs) noexcept {
+    return !(lhs < rhs);
+}
+
+} // namespace internal
+
+/**
+ * Internal details not to be documented.
+ * @endcond
+ */
 
 /**
  * @brief Iterable range to use to iterate all types of meta objects.
  * @tparam Type Type of meta objects returned.
- * @tparam Node Type of meta nodes iterated.
+ * @tparam It Type of forward iterator.
  */
-template<typename Type, typename Node = typename Type::node_type>
-class meta_range {
-    struct range_iterator {
-        using difference_type = std::ptrdiff_t;
-        using value_type = Type;
-        using pointer = void;
-        using reference = value_type;
-        using iterator_category = std::input_iterator_tag;
-        using node_type = Node;
+template<typename Type, typename It>
+using meta_range = iterable_adaptor<internal::meta_range_iterator<Type, It>>;
 
-        range_iterator() ENTT_NOEXCEPT = default;
-
-        range_iterator(node_type *head) ENTT_NOEXCEPT
-            : it{head}
-        {}
-
-        range_iterator & operator++() ENTT_NOEXCEPT {
-            return (it = it->next), *this;
-        }
-
-        range_iterator operator++(int) ENTT_NOEXCEPT {
-            range_iterator orig = *this;
-            return ++(*this), orig;
-        }
-
-        [[nodiscard]] reference operator*() const ENTT_NOEXCEPT {
-            return it;
-        }
-
-        [[nodiscard]] bool operator==(const range_iterator &other) const ENTT_NOEXCEPT {
-            return other.it == it;
-        }
-
-        [[nodiscard]] bool operator!=(const range_iterator &other) const ENTT_NOEXCEPT {
-            return !(*this == other);
-        }
-
-    private:
-        node_type *it{};
-    };
-
-public:
-    /*! @brief Node type. */
-    using node_type = Node;
-    /*! @brief Input iterator type. */
-    using iterator = range_iterator;
-
-    /*! @brief Default constructor. */
-    meta_range() ENTT_NOEXCEPT = default;
-
-    /**
-     * @brief Constructs a meta range from a given node.
-     * @param head The underlying node with which to construct the range.
-     */
-    meta_range(node_type *head)
-        : node{head}
-    {}
-
-    /**
-     * @brief Returns an iterator to the beginning.
-     * @return An iterator to the first meta object of the range.
-     */
-    [[nodiscard]] iterator begin() const ENTT_NOEXCEPT {
-        return iterator{node};
-    }
-
-    /**
-     * @brief Returns an iterator to the end.
-     * @return An iterator to the element following the last meta object of the
-     * range.
-     */
-    [[nodiscard]] iterator end() const ENTT_NOEXCEPT {
-        return iterator{};
-    }
-
-private:
-    node_type *node{nullptr};
-};
-
-
-}
-
+} // namespace entt
 
 #endif

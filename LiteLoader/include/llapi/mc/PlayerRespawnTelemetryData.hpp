@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ??0PlayerRespawnTelemetryData@@QEAA@XZ
-     * @hash   -840335160
+     * @hash   -778077736
      */
     MCAPI PlayerRespawnTelemetryData();
     /**
      * @symbol ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
-     * @hash   -993889630
+     * @hash   -931632206
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
      * @symbol ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
-     * @hash   25514204
+     * @hash   87771628
      */
     MCAPI void setChangedDimension(bool);
     /**
      * @symbol ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
-     * @hash   467474880
+     * @hash   529732304
      */
     MCAPI void setJumpDistance(double);
     /**
      * @symbol ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   1704487184
+     * @hash   1851881520
      */
     MCAPI void setLongJumpCount(unsigned int);
     /**
      * @symbol ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   855351106
+     * @hash   917608530
      */
     MCAPI void setPositionSourceType(unsigned int);
     /**
      * @symbol ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
-     * @hash   1783933920
+     * @hash   1846191344
      */
     MCAPI void setSearchTime(double);
     /**
      * @symbol ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-     * @hash   -1248193246
+     * @hash   -1103874110
      */
     MCAPI void setShortJumpCount(unsigned int);
 
@@ -76,7 +76,7 @@ public:
 private:
     /**
      * @symbol ?mEventName@PlayerRespawnTelemetryData@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   902385055
+     * @hash   -1912580737
      */
     MCAPI static std::string const mEventName;
 

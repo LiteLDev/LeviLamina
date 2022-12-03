@@ -38,47 +38,56 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RandomLookAroundGoal@@UEAA_NXZ
-     * @hash   1375247230
+     * @hash   1536095566
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RandomLookAroundGoal@@UEAA_NXZ
-     * @hash   474423244
+     * @hash   635271580
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RandomLookAroundGoal@@UEAAXXZ
-     * @hash   979318631
+     * @hash   1140166967
      */
     virtual void start();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?tick@RandomLookAroundGoal@@UEAAXXZ
-     * @hash   828858130
+     * @hash   989798722
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RandomLookAroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1286874466
+     * @hash   1447722802
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol ??0RandomLookAroundGoal@@QEAA@AEAVMob@@HHM@Z
-     * @hash   -2088478074
+     * @symbol ??0RandomLookAroundGoal@@QEAA@AEAVMob@@HHMMM@Z
+     * @hash   1685165574
      */
-    MCAPI RandomLookAroundGoal(class Mob &, int, int, float);
+    MCAPI RandomLookAroundGoal(class Mob &, int, int, float, float, float);
+
+//protected:
+    /**
+     * @symbol ?_setRandomLook@RandomLookAroundGoal@@IEAAXXZ
+     * @hash   -625559242
+     */
+    MCAPI void _setRandomLook();
+
+protected:
 
 };

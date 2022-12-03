@@ -24,17 +24,17 @@ namespace GoalSelectorUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?canUseInSystem@GoalSelectorUtility@@YA_NAEAVPrioritizedGoal@@AEAV?$vector@U?$pair@GVPrioritizedGoal@@@std@@V?$allocator@U?$pair@GVPrioritizedGoal@@@std@@@2@@std@@@Z
-     * @hash   1505821520
+     * @hash   1587052928
      */
     MCAPI bool canUseInSystem(class PrioritizedGoal &, std::vector<struct std::pair<unsigned short, class PrioritizedGoal>> &);
     /**
      * @symbol ?tickGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
-     * @hash   1606438930
+     * @hash   1687670338
      */
     MCAPI void tickGoals(class Mob &, bool);
     /**
      * @symbol ?tryStartGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
-     * @hash   -103323278
+     * @hash   -22091870
      */
     MCAPI void tryStartGoals(class Mob &, bool);
 

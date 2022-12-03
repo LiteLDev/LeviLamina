@@ -39,28 +39,28 @@ public:
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@NearestPrioritizedAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1374850147
+     * @hash   -1330275123
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1355408327
+     * @hash   -1258908551
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?_findTarget@NearestPrioritizedAttackableTargetGoal@@EEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
-     * @hash   -607498575
+     * @hash   -562923551
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
     /**
      * @symbol ??0NearestPrioritizedAttackableTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NH22HM2H2@Z
-     * @hash   -2105062888
+     * @hash   -2060487864
      */
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
 

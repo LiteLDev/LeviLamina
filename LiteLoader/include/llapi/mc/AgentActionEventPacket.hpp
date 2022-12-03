@@ -37,35 +37,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AgentActionEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -363119225
+     * @hash   -383600057
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AgentActionEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   530328628
+     * @hash   509847796
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AgentActionEventPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1746937283
+     * @hash   1726333443
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AgentActionEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1910369933
+     * @hash   -1930850765
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AgentActionEventPacket@@QEAA@XZ
-     * @hash   1005918291
+     * @hash   985437459
      */
     MCAPI AgentActionEventPacket();
     /**
      * @symbol ??0AgentActionEventPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AgentActionType@@AEBVValue@Json@@@Z
-     * @hash   -1690193850
+     * @hash   -1710674682
      */
     MCAPI AgentActionEventPacket(std::string const &, enum class AgentActionType, class Json::Value const &);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0NoodleCavifier@@QEAA@AEBVNoodleCavifierNoises@@F@Z
-     * @hash   -726622919
+     * @hash   -554780743
      */
     MCAPI NoodleCavifier(class NoodleCavifierNoises const &, short);
     /**
      * @symbol ?cavify@NoodleCavifier@@QEBAMMAEBVBlockPos@@@Z
-     * @hash   1953955068
+     * @hash   2125797244
      */
     MCAPI float cavify(float, class BlockPos const &) const;
     /**
      * @symbol ?fillNoiseAtPos@NoodleCavifier@@QEAAXAEBVVec3@@HM@Z
-     * @hash   -1371299978
+     * @hash   -1199457802
      */
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     /**
      * @symbol ?getInterpolators@NoodleCavifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$03@std@@HH@Z
-     * @hash   -1708834688
+     * @hash   -1536992512
      */
     MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
 

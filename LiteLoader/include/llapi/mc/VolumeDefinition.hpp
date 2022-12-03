@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ??0VolumeDefinition@@QEAA@XZ
-     * @hash   101602825
+     * @hash   117778377
      */
     MCAPI VolumeDefinition();
     /**
      * @symbol ??1VolumeDefinition@@QEAA@XZ
-     * @hash   -1544692441
+     * @hash   -1481758473
      */
     MCAPI ~VolumeDefinition();
     /**
      * @symbol ?NAME@VolumeDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2063485353
+     * @hash   -563126025
      */
     MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeDefinition@@SAXXZ
-     * @hash   -1175589565
+     * @hash   -1171837821
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     * @hash   -300466944
+     * @hash   -295300608
      */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
     /**
      * @symbol ?getMinSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     * @hash   -1813244436
+     * @hash   -1808078100
      */
     MCAPI static class SemVersion const & getMinSupportedVersion();
 

@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0Matrix@@QEAA@AEBU?$qua@M$0A@@glm@@@Z
-     * @hash   193648277
+     * @hash   277662741
      */
     MCAPI Matrix(struct glm::qua<float, 0> const &);
     /**
      * @symbol ?transform3@Matrix@@QEBAXAEAU?$vec@$02M$0A@@glm@@AEAM@Z
-     * @hash   -799209704
+     * @hash   -637592568
      */
     MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;
 

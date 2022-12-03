@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?toString@BlockLegacyPtr@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -196912076
+     * @hash   380595108
      */
     MCAPI std::string toString() const;
 

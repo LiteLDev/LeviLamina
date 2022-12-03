@@ -33,52 +33,52 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
     /**
      * @symbol ?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-     * @hash   590037730
+     * @hash   691949858
      */
     MCVAPI enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
      * @symbol ?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-     * @hash   -936631203
+     * @hash   -834719075
      */
     MCVAPI enum class EventResult onLevelAddedPlayer(class Level &, class Player &);
     /**
      * @symbol ?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVIWorldRegistriesProvider@@@Z
-     * @hash   -1760250817
+     * @hash   -1658338689
      */
     MCVAPI enum class EventResult onLevelBiomesRegistered(class IWorldRegistriesProvider &);
     /**
      * @symbol ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -875616685
+     * @hash   -773704557
      */
     MCVAPI enum class EventResult onLevelInitialized(class Level &);
     /**
      * @symbol ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
-     * @hash   2142380079
+     * @hash   -2050675089
      */
     MCVAPI enum class EventResult onLevelRemovedActor(class Level &, class Actor &);
     /**
      * @symbol ?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-     * @hash   -1052920579
+     * @hash   -951008451
      */
     MCVAPI enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @symbol ?onLevelSaveData@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVCompoundTag@@@Z
-     * @hash   701405127
+     * @hash   803317255
      */
     MCVAPI enum class EventResult onLevelSaveData(class Level &, class CompoundTag &);
     /**
      * @symbol ?onLevelScriptTick@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -758939147
+     * @hash   -657027019
      */
     MCVAPI enum class EventResult onLevelScriptTick(class Level &);
     /**
      * @symbol ?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   1606191136
+     * @hash   1708103264
      */
     MCVAPI enum class EventResult onLevelTick(class Level &);
     /**
      * @symbol ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-     * @hash   851505279
+     * @hash   953417407
      */
     MCVAPI enum class EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif

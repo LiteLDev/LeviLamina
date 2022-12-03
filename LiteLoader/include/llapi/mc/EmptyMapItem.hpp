@@ -39,117 +39,117 @@ public:
     virtual ~EmptyMapItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  59
      * @symbol ?requiresInteract@EmptyMapItem@@UEBA_NXZ
-     * @hash   -1932534966
+     * @hash   -1836035190
      */
     virtual bool requiresInteract() const;
     /**
      * @vftbl  66
-     * @hash   -190621068
+     * @hash   -94121292
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  84
      * @symbol ?use@EmptyMapItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   862223372
+     * @hash   1430305068
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   -374994120
+     * @hash   193087576
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  119
      * @symbol ?getInteractText@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     * @hash   -1159427299
+     * @hash   -591345603
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
      * @vftbl  133
      * @symbol ?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
-     * @hash   -975600029
+     * @hash   -820010285
      */
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /**
      * @symbol ??0EmptyMapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-     * @hash   1668382965
+     * @hash   -2058502635
      */
     MCAPI EmptyMapItem(std::string const &, short);
     /**
      * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStack@@@Z
-     * @hash   1707306386
+     * @hash   -2019579214
      */
     MCAPI static void addPlayerMarker(class ItemStack &);
     /**
      * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemInstance@@@Z
-     * @hash   1093424032
+     * @hash   1661505728
      */
     MCAPI static void addPlayerMarker(class ItemInstance &);
     /**
      * @symbol ?isLocatorMap@EmptyMapItem@@SA_NAEBVItemStack@@@Z
-     * @hash   1040223387
+     * @hash   1608305083
      */
     MCAPI static bool isLocatorMap(class ItemStack const &);
 

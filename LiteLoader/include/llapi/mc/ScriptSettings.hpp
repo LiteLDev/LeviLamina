@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ScriptSettings@@QEAA@$$QEAU0@@Z
-     * @hash   -415616023
+     * @hash   -326496727
      */
     MCAPI ScriptSettings(struct ScriptSettings &&);
     /**
      * @symbol ??1ScriptSettings@@QEAA@XZ
-     * @hash   1859631208
+     * @hash   1950380360
      */
     MCAPI ~ScriptSettings();
 

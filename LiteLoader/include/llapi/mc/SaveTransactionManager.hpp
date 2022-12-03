@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0SaveTransactionManager@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$function@$$A6AX_N@Z@std@@@Z
-     * @hash   -723641376
+     * @hash   -546186960
      */
     MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     /**
      * @symbol ?onBeginCompaction@SaveTransactionManager@@QEAAXXZ
-     * @hash   1622085843
+     * @hash   1799540259
      */
     MCAPI void onBeginCompaction();
     /**
      * @symbol ?onEndCompaction@SaveTransactionManager@@QEAAXXZ
-     * @hash   1602264547
+     * @hash   1779718963
      */
     MCAPI void onEndCompaction();
 
 //private:
     /**
      * @symbol ?_hideGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
-     * @hash   -1500055302
+     * @hash   -1322600886
      */
     MCAPI void _hideGlobalSaveIcon();
     /**
      * @symbol ?_showGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
-     * @hash   -315033803
+     * @hash   -137579387
      */
     MCAPI void _showGlobalSaveIcon();
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0MoveTowardsRestrictionDefinition@@QEAA@XZ
-     * @hash   997294576
+     * @hash   1158388928
      */
     MCAPI MoveTowardsRestrictionDefinition();
     /**
      * @symbol ?initialize@MoveTowardsRestrictionDefinition@@QEAAXAEAVEntityContext@@AEAVMoveTowardsRestrictionGoal@@@Z
-     * @hash   1971642035
+     * @hash   2132736387
      */
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 

@@ -36,35 +36,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateAbilitiesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1289860951
+     * @hash   1247638455
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateAbilitiesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2141105660
+     * @hash   2111639140
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateAbilitiesPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1868019747
+     * @hash   1825797251
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateAbilitiesPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -138733245
+     * @hash   -180955741
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateAbilitiesPacket@@QEAA@XZ
-     * @hash   -1104939917
+     * @hash   -1147162413
      */
     MCAPI UpdateAbilitiesPacket();
     /**
      * @symbol ??0UpdateAbilitiesPacket@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
-     * @hash   -688216293
+     * @hash   -730438789
      */
     MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);
 

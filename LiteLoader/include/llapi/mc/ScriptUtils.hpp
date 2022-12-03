@@ -23,17 +23,17 @@ namespace ScriptUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?functionError@ScriptUtils@@YA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1086293940
+     * @hash   1743433428
      */
     MCAPI struct Scripting::Error functionError(std::string const &);
     /**
      * @symbol ?getPropertyError@ScriptUtils@@YA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -819370622
+     * @hash   -162231134
      */
     MCAPI struct Scripting::Error getPropertyError(std::string const &);
     /**
      * @symbol ?setPropertyError@ScriptUtils@@YA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -543865198
+     * @hash   113274290
      */
     MCAPI struct Scripting::Error setPropertyError(std::string const &);
 

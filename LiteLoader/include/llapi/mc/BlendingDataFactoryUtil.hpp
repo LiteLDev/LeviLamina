@@ -23,37 +23,37 @@ namespace BlendingDataFactoryUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_deduceBlockTypeFromBlock@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEBVBlock@@0@Z
-     * @hash   2057268228
+     * @hash   -1479600764
      */
     MCAPI enum class BlendingBlockType _deduceBlockTypeFromBlock(class Block const &, class Block const &);
     /**
      * @symbol ?_processBlockTypeFromCellEntry@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEAV?$vector@W4BlendingBlockType@@V?$allocator@W4BlendingBlockType@@@std@@@std@@@Z
-     * @hash   638242004
+     * @hash   1396340308
      */
     MCAPI enum class BlendingBlockType _processBlockTypeFromCellEntry(std::vector<enum class BlendingBlockType> &);
     /**
      * @symbol ?calculateSurfaceDensity@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_K@Z
-     * @hash   1787799251
+     * @hash   -1749069741
      */
     MCAPI void calculateSurfaceDensity(class BlendingData &, unsigned __int64);
     /**
      * @symbol ?iterateDownCellColumnUntil@BlendingDataFactoryUtil@@YAXVChunkLocalHeight@@AEAV?$vector@UBorderCellEntry@BlendingDataFactoryUtil@@V?$allocator@UBorderCellEntry@BlendingDataFactoryUtil@@@std@@@std@@HV?$function@$$A6AAEAUSubChunk@@H@Z@4@V?$function@$$A6A_NAEBUSubChunk@@AEAUBorderCellEntry@BlendingDataFactoryUtil@@VChunkLocalHeight@@GH@Z@4@@Z
-     * @hash   -1469094635
+     * @hash   -710996331
      */
     MCAPI void iterateDownCellColumnUntil(class ChunkLocalHeight, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry> &, int, class std::function<struct SubChunk & (int)>, class std::function<bool (struct SubChunk const &, struct BlendingDataFactoryUtil::BorderCellEntry &, class ChunkLocalHeight, unsigned short, int)>);
     /**
      * @symbol ?processBorderCells@BlendingDataFactoryUtil@@YAXVNeighbors@LevelChunk@@V?$function@$$A6AX_KHH0@Z@std@@@Z
-     * @hash   -1646192572
+     * @hash   -888094268
      */
     MCAPI void processBorderCells(class LevelChunk::Neighbors, class std::function<void (unsigned __int64, int, int, unsigned __int64)>);
     /**
      * @symbol ?setBiome@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_KHE@Z
-     * @hash   1991673900
+     * @hash   -1545195092
      */
     MCAPI void setBiome(class BlendingData &, unsigned __int64, int, unsigned char);
     /**
      * @symbol ?setDensity@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_KHM@Z
-     * @hash   1508933833
+     * @hash   -2027935159
      */
     MCAPI void setDensity(class BlendingData &, unsigned __int64, int, float);
 

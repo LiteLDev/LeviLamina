@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   -281428461
+     * @hash   -227827725
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @vftbl  3
      * @symbol ?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-     * @hash   -239350464
+     * @hash   -185749728
      */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
     /**
      * @symbol ??0HopMoveControl@@QEAA@XZ
-     * @hash   -1445089041
+     * @hash   -1391488305
      */
     MCAPI HopMoveControl();
 

@@ -25,27 +25,27 @@ struct RepairItemEntry {
 public:
     /**
      * @symbol ??0RepairItemEntry@@QEAA@XZ
-     * @hash   2016446494
+     * @hash   -1739592002
      */
     MCAPI RepairItemEntry();
     /**
      * @symbol ??0RepairItemEntry@@QEAA@AEBU0@@Z
-     * @hash   -914158187
+     * @hash   -320813723
      */
     MCAPI RepairItemEntry(struct RepairItemEntry const &);
     /**
      * @symbol ??4RepairItemEntry@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   1653316772
+     * @hash   -2102706348
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry &&);
     /**
      * @symbol ??4RepairItemEntry@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -1553421938
+     * @hash   -959892962
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     /**
      * @symbol ??1RepairItemEntry@@QEAA@XZ
-     * @hash   1867570862
+     * @hash   -1833882834
      */
     MCAPI ~RepairItemEntry();
 

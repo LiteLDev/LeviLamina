@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@SetCommandsEnabledPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1806567839
+     * @hash   1764745119
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetCommandsEnabledPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   62224460
+     * @hash   20401740
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@SetCommandsEnabledPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -138843877
+     * @hash   -180666597
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@SetCommandsEnabledPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   342207451
+     * @hash   300384731
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetCommandsEnabledPacket@@QEAA@_N@Z
-     * @hash   -1384317244
+     * @hash   -1426139964
      */
     MCAPI SetCommandsEnabledPacket(bool);
     /**
      * @symbol ??0SetCommandsEnabledPacket@@QEAA@XZ
-     * @hash   -1666023605
+     * @hash   -1707846325
      */
     MCAPI SetCommandsEnabledPacket();
 

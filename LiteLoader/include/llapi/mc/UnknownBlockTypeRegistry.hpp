@@ -38,14 +38,14 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
-     * @hash   -955388462
+     * @hash   -394425854
      */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
 
 //private:
     /**
      * @symbol ?_registerBlock@UnknownBlockTypeRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-     * @hash   6229197
+     * @hash   567191805
      */
     MCAPI void _registerBlock(std::string const &, unsigned __int64);
 

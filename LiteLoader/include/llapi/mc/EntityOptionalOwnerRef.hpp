@@ -31,27 +31,27 @@ public:
 public:
     /**
      * @symbol ??0EntityOptionalOwnerRef@@QEAA@XZ
-     * @hash   -1302944113
+     * @hash   -783173809
      */
     MCAPI EntityOptionalOwnerRef();
     /**
      * @symbol ?isSet@EntityOptionalOwnerRef@@QEBA_NXZ
-     * @hash   -149699830
+     * @hash   370070474
      */
     MCAPI bool isSet() const;
     /**
      * @symbol ?setOwnedRef@EntityOptionalOwnerRef@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-     * @hash   169794817
+     * @hash   689565121
      */
     MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
     /**
      * @symbol ?setWeakRef@EntityOptionalOwnerRef@@QEAAXV?$WeakRefT@UEntityRefTraits@@@@@Z
-     * @hash   2035737427
+     * @hash   -1739459565
      */
     MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
     /**
      * @symbol ?tryGet@EntityOptionalOwnerRef@@QEBA?AV?$StackRefResultT@UEntityRefTraits@@@@XZ
-     * @hash   -653112733
+     * @hash   -133342429
      */
     MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;
 

@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?addObjective@SubscribedObjectives@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -167296756
+     * @hash   353011708
      */
     MCAPI void addObjective(std::string const &);
     /**
      * @symbol ?removeObjective@SubscribedObjectives@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1007399186
+     * @hash   -487090722
      */
     MCAPI void removeObjective(std::string const &);
     /**
      * @symbol ?sendEvent@SubscribedObjectives@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   688902291
+     * @hash   1209210755
      */
     MCAPI void sendEvent(std::string const &, int) const;
 

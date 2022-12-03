@@ -72,39 +72,45 @@ public:
     virtual ~NetworkPeer();
     /**
      * @vftbl  1
-     * @symbol ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
-     * @hash   1543914360
+     * @symbol ?sendPacket@EncryptedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
+     * @hash   197197016
      */
     virtual void sendPacket(std::string const &, enum class NetworkPeer::Reliability, enum class Compressibility) = 0;
     /**
      * @vftbl  2
-     * @symbol ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-     * @hash   -1824418398
+     * @symbol ?receivePacket@EncryptedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     * @hash   189117314
      */
     virtual enum class NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &) = 0;
     /**
      * @vftbl  3
-     * @symbol ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
-     * @hash   -691078743
+     * @symbol ?getNetworkStatus@EncryptedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     * @hash   1135697033
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /**
      * @vftbl  4
      * @symbol ?update@NetworkPeer@@UEAAXXZ
-     * @hash   2040983600
+     * @hash   1999376144
      */
     virtual void update();
     /**
      * @vftbl  5
      * @symbol ?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-     * @hash   -173722611
+     * @hash   -215391571
      */
     virtual void flush(class std::function<void (void)> &&);
     /**
      * @vftbl  6
      * @symbol ?isLocal@NetworkPeer@@UEBA_NXZ
-     * @hash   168197545
+     * @hash   -1596853431
      */
     virtual bool isLocal() const;
+    /**
+     * @vftbl  7
+     * @symbol ?isEncrypted@NetworkPeer@@UEBA_NXZ
+     * @hash   1785125154
+     */
+    virtual bool isEncrypted() const;
 
 };

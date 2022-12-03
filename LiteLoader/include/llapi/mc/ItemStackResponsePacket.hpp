@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ItemStackResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1299514080
+     * @hash   1225540144
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ItemStackResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1000521101
+     * @hash   926547165
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ItemStackResponsePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   566386682
+     * @hash   492412746
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ItemStackResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   763509690
+     * @hash   689535754
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackResponsePacket@@QEAA@XZ
-     * @hash   -492475110
+     * @hash   -566449046
      */
     MCAPI ItemStackResponsePacket();
     /**
      * @symbol ??0ItemStackResponsePacket@@QEAA@$$QEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@@Z
-     * @hash   1324260331
+     * @hash   1250286395
      */
     MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     /**
      * @symbol ?getResponses@ItemStackResponsePacket@@QEBAAEBV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@XZ
-     * @hash   -1915425808
+     * @hash   -1790588064
      */
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
 

@@ -39,51 +39,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveToLiquidGoal@@UEAA_NXZ
-     * @hash   -1595565179
+     * @hash   -1434993611
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MoveToLiquidGoal@@UEAA_NXZ
-     * @hash   -1151720637
+     * @hash   -991149069
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToLiquidGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   89737643
+     * @hash   250309211
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@MoveToLiquidGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   408831575
+     * @hash   569403143
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @vftbl  17
      * @symbol ?findTargetBlock@MoveToLiquidGoal@@UEAA_NXZ
-     * @hash   2008885969
+     * @hash   -2125509759
      */
     virtual bool findTargetBlock();
     /**
      * @symbol ??0MoveToLiquidGoal@@QEAA@AEAVMob@@MHHHW4MaterialType@@M@Z
-     * @hash   1473486782
+     * @hash   1634058350
      */
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum class MaterialType, float);
 

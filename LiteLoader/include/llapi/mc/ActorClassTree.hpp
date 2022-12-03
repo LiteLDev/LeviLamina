@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ?getEntityTypeIdLegacy@ActorClassTree@@SA?AW4ActorType@@W42@@Z
-     * @hash   712982588
+     * @hash   758680060
      */
     MCAPI static enum class ActorType getEntityTypeIdLegacy(enum class ActorType);
     /**
      * @symbol ?hasCategory@ActorClassTree@@SA_NAEBW4ActorCategory@@W42@@Z
-     * @hash   31024439
+     * @hash   76721911
      */
     MCAPI static bool hasCategory(enum class ActorCategory const &, enum class ActorCategory);
     /**
      * @symbol ?isHangingEntity@ActorClassTree@@SA_NAEBVActor@@@Z
-     * @hash   -605633467
+     * @hash   -559935995
      */
     MCAPI static bool isHangingEntity(class Actor const &);
     /**
      * @symbol ?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z
-     * @hash   1679266588
+     * @hash   1724964060
      */
     MCAPI static bool isInstanceOf(class Actor const &, enum class ActorType);
     /**
      * @symbol ?isMob@ActorClassTree@@SA_NW4ActorType@@@Z
-     * @hash   944129085
+     * @hash   989826557
      */
     MCAPI static bool isMob(enum class ActorType);
     /**
      * @symbol ?isMobLegacy@ActorClassTree@@SA_NW4ActorType@@@Z
-     * @hash   -2135024261
+     * @hash   -2089326789
      */
     MCAPI static bool isMobLegacy(enum class ActorType);
     /**
      * @symbol ?isOfType@ActorClassTree@@SA_NW4ActorType@@0@Z
-     * @hash   1008680438
+     * @hash   1054377910
      */
     MCAPI static bool isOfType(enum class ActorType, enum class ActorType);
     /**
      * @symbol ?isTypeInstanceOf@ActorClassTree@@SA_NW4ActorType@@0@Z
-     * @hash   589668464
+     * @hash   635365936
      */
     MCAPI static bool isTypeInstanceOf(enum class ActorType, enum class ActorType);
 

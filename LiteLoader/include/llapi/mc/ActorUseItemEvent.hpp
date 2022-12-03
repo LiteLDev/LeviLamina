@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorUseItemEvent@@QEAA@XZ
-     * @hash   -1678783439
+     * @hash   -1522978431
      */
     MCAPI ~ActorUseItemEvent();
 

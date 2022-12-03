@@ -33,140 +33,140 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDDIMENSION
     /**
      * @symbol ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-     * @hash   -438876720
+     * @hash   -282871824
      */
     MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion);
     /**
      * @symbol ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-     * @hash   179425033
+     * @hash   335429929
      */
     MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion);
     /**
      * @symbol ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-     * @hash   1277493653
+     * @hash   1433498549
      */
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
     /**
      * @symbol ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -1576916576
+     * @hash   -1420911680
      */
     MCVAPI void deserialize(class CompoundTag const &);
     /**
      * @symbol ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     * @hash   1370946704
+     * @hash   1526951600
      */
     MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
     /**
      * @symbol ?getCloudHeight@TheEndDimension@@UEBAFXZ
-     * @hash   37707976
+     * @hash   193712872
      */
     MCVAPI short getCloudHeight() const;
     /**
      * @symbol ?getDefaultBiome@TheEndDimension@@UEBA?AVHashedString@@XZ
-     * @hash   -1862726486
+     * @hash   -1706721590
      */
     MCVAPI class HashedString getDefaultBiome() const;
     /**
      * @symbol ?getSpawnPos@TheEndDimension@@UEBA?AVBlockPos@@XZ
-     * @hash   1755602603
+     * @hash   1911607499
      */
     MCVAPI class BlockPos getSpawnPos() const;
     /**
      * @symbol ?getSpawnYPosition@TheEndDimension@@UEBAHXZ
-     * @hash   -630248964
+     * @hash   -474244068
      */
     MCVAPI int getSpawnYPosition() const;
     /**
      * @symbol ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
-     * @hash   -1738338607
+     * @hash   -1488647743
      */
     MCVAPI float getSunIntensity(float, class Vec3 const &, float) const;
     /**
      * @symbol ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
-     * @hash   1516401191
+     * @hash   1766092055
      */
     MCVAPI float getTimeOfDay(int, float) const;
     /**
      * @symbol ?hasGround@TheEndDimension@@UEBA_NXZ
-     * @hash   -1771475491
+     * @hash   -1674729699
      */
     MCVAPI bool hasGround() const;
     /**
      * @symbol ?init@TheEndDimension@@UEAAXXZ
-     * @hash   545685307
+     * @hash   701705579
      */
     MCVAPI void init();
     /**
      * @symbol ?isDay@TheEndDimension@@UEBA_NXZ
-     * @hash   2111088846
+     * @hash   -2087132658
      */
     MCVAPI bool isDay() const;
     /**
      * @symbol ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-     * @hash   -461920907
+     * @hash   -365175115
      */
     MCVAPI bool isFoggyAt(int, int) const;
     /**
      * @symbol ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
-     * @hash   1558692643
+     * @hash   1655438435
      */
     MCVAPI bool isNaturalDimension() const;
     /**
      * @symbol ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
-     * @hash   -1699183899
+     * @hash   -1602438107
      */
     MCVAPI bool isValidSpawn(int, int) const;
     /**
      * @symbol ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-     * @hash   -796738638
+     * @hash   -640702990
      */
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
     /**
      * @symbol ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
-     * @hash   1551871090
+     * @hash   1648616882
      */
     MCVAPI bool mayRespawnViaBed() const;
     /**
      * @symbol ?serialize@TheEndDimension@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1086398689
+     * @hash   1242342081
      */
     MCVAPI void serialize(class CompoundTag &) const;
     /**
      * @symbol ?startLeaveGame@TheEndDimension@@UEAAXXZ
-     * @hash   497546642
+     * @hash   653490034
      */
     MCVAPI void startLeaveGame();
     /**
      * @symbol ?tick@TheEndDimension@@UEAAXXZ
-     * @hash   -1107894088
+     * @hash   -951950696
      */
     MCVAPI void tick();
     /**
      * @symbol ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1294465261
+     * @hash   -1138521869
      */
     MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-     * @hash   224433180
+     * @hash   380376572
      */
     MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
 #endif
     /**
      * @symbol ??0TheEndDimension@@QEAA@AEAVLevel@@AEAVScheduler@@@Z
-     * @hash   -1373298862
+     * @hash   -1217278590
      */
     MCAPI TheEndDimension(class Level &, class Scheduler &);
     /**
      * @symbol ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
-     * @hash   1891635431
+     * @hash   -1649385081
      */
     MCAPI static float const AMBIENT_MULTIPLIER;
 
 //private:
     /**
      * @symbol ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-     * @hash   -1144873915
+     * @hash   -988838267
      */
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, unsigned int);
 

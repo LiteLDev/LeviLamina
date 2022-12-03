@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?initialize@TargetGoalDefinition@@QEAAXAEAVEntityContext@@AEAVTargetGoal@@@Z
-     * @hash   583072781
+     * @hash   625864189
      */
     MCAPI void initialize(class EntityContext &, class TargetGoal &);
 

@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@TradeResupplyDescription@@UEBAPEBDXZ
-     * @hash   1199577598
+     * @hash   1716733982
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@TradeResupplyDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   613404735
+     * @hash   702370271
      */
     virtual void serializeData(class Json::Value &) const;
 

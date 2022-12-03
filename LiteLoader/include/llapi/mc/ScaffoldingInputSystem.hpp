@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createScaffoldingInputSystem@ScaffoldingInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   210221044
+     * @hash   221014996
      */
     MCAPI static struct TickingSystemWithInfo createScaffoldingInputSystem();
 

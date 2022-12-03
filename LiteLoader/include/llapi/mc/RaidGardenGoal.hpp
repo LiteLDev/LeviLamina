@@ -39,57 +39,57 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RaidGardenGoal@@UEAA_NXZ
-     * @hash   -904354754
+     * @hash   -742168706
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RaidGardenGoal@@UEAA_NXZ
-     * @hash   -846667668
+     * @hash   -684481620
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RaidGardenGoal@@UEAAXXZ
-     * @hash   -133628505
+     * @hash   28603671
      */
     virtual void start();
     /**
      * @vftbl  6
      * @symbol ?tick@RaidGardenGoal@@UEAAXXZ
-     * @hash   915414226
+     * @hash   1077646402
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RaidGardenGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   60906466
+     * @hash   223092514
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@RaidGardenGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1855132336
+     * @hash   -1692946288
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ??0RaidGardenGoal@@QEAA@AEAVMob@@MHHHMHHHHAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-     * @hash   821970007
+     * @hash   984156055
      */
     MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
 

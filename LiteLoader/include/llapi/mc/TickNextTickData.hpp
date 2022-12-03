@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0TickNextTickData@@QEAA@AEBVBlockPos@@AEBVBlock@@AEBUTick@@H@Z
-     * @hash   684636861
+     * @hash   1228424477
      */
     MCAPI TickNextTickData(class BlockPos const &, class Block const &, struct Tick const &, int);
     /**
      * @symbol ??8TickNextTickData@@QEBA_NAEBV0@@Z
-     * @hash   -1321516240
+     * @hash   -777728624
      */
     MCAPI bool operator==(class TickNextTickData const &) const;
     /**
      * @symbol ??OTickNextTickData@@QEBA_NAEBV0@@Z
-     * @hash   -1753198797
+     * @hash   -1209411181
      */
     MCAPI bool operator>(class TickNextTickData const &) const;
 

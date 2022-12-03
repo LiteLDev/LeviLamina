@@ -39,32 +39,32 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   332109043
+     * @hash   503735955
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@ShipwreckPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1919033909
+     * @hash   2090660821
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
 //private:
     /**
      * @symbol ?_calculateTargetPos@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
-     * @hash   259774748
+     * @hash   431401660
      */
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum class Rotation, class BlockPos);
     /**
      * @symbol ?_calculateTargetPosLegacy@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
-     * @hash   -2006581195
+     * @hash   -1834954283
      */
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum class Rotation, class BlockPos);
 
 private:
     /**
      * @symbol ?STRUCTURE_SHIPWRECK_TYPES@ShipwreckPiece@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -804783936
+     * @hash   617050160
      */
     MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 

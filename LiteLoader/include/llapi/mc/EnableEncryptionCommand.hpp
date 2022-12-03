@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@EnableEncryptionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -463979410
+     * @hash   -291368434
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@EnableEncryptionCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-     * @hash   -2047678309
+     * @hash   -1875005829
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?mApp@EnableEncryptionCommand@@0PEAVIMinecraftApp@@EA
-     * @hash   639614642
+     * @hash   1501008914
      */
     MCAPI static class IMinecraftApp * mApp;
 

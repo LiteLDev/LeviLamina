@@ -33,47 +33,47 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
     /**
      * @symbol ?onDownloadBegin@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   -964469565
+     * @hash   -875504029
      */
     MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
      * @symbol ?onDownloadCanceled@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   1784128293
+     * @hash   1873093829
      */
     MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
      * @symbol ?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   1817603717
+     * @hash   1906569253
      */
     MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
      * @symbol ?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
-     * @hash   560258357
+     * @hash   649223893
      */
     MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const &);
     /**
      * @symbol ?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z
-     * @hash   -1574195298
+     * @hash   -1485229762
      */
     MCVAPI void onError(struct WebviewError const &);
     /**
      * @symbol ?onLoadingBegin@WebviewObserver@@UEAAXXZ
-     * @hash   -531184892
+     * @hash   -442219356
      */
     MCVAPI void onLoadingBegin();
     /**
      * @symbol ?onLoadingEnd@WebviewObserver@@UEAAXXZ
-     * @hash   1570310326
+     * @hash   1659275862
      */
     MCVAPI void onLoadingEnd();
     /**
      * @symbol ?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1323676067
+     * @hash   1412641603
      */
     MCVAPI void onMessageRecieved(std::string const &);
     /**
      * @symbol ?onWebviewChanged@WebviewObserver@@UEAAXXZ
-     * @hash   545464882
+     * @hash   634430418
      */
     MCVAPI void onWebviewChanged();
 #endif

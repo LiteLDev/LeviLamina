@@ -31,82 +31,82 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTLISTENER
     /**
      * @symbol ?onEvent@ItemEventListener@@UEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
-     * @hash   -671382848
+     * @hash   -569470720
      */
     MCVAPI enum class EventResult onEvent(struct ItemNotificationEvent const &);
     /**
      * @symbol ?onInventoryItemClosed@ItemEventListener@@UEAA?AW4EventResult@@XZ
-     * @hash   -344790767
+     * @hash   -242878639
      */
     MCVAPI enum class EventResult onInventoryItemClosed();
     /**
      * @symbol ?onInventoryItemCraftedAutomaticallyByRecipe@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
-     * @hash   981054709
+     * @hash   1082966837
      */
     MCVAPI enum class EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const &);
     /**
      * @symbol ?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z
-     * @hash   57209406
+     * @hash   159121534
      */
     MCVAPI enum class EventResult onInventoryItemOpened(bool);
     /**
      * @symbol ?onInventoryLayoutSelected@ItemEventListener@@UEAA?AW4EventResult@@HH@Z
-     * @hash   -1863915657
+     * @hash   -1762003529
      */
     MCVAPI enum class EventResult onInventoryLayoutSelected(int, int);
     /**
      * @symbol ?onItemDefinitionEventTriggered@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   51614016
+     * @hash   153526144
      */
     MCVAPI enum class EventResult onItemDefinitionEventTriggered(class ItemStackBase const &, std::string const &);
     /**
      * @symbol ?onItemModifiedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
-     * @hash   -271731808
+     * @hash   -169819680
      */
     MCVAPI enum class EventResult onItemModifiedActor(class ItemStackBase const &, class Actor const &);
     /**
      * @symbol ?onItemSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
-     * @hash   -1026795391
+     * @hash   -924883263
      */
     MCVAPI enum class EventResult onItemSelected(class ItemStackBase const &);
     /**
      * @symbol ?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z
-     * @hash   1100211727
+     * @hash   1202123855
      */
     MCVAPI enum class EventResult onItemSelectedSlot(int);
     /**
      * @symbol ?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z
-     * @hash   1003024518
+     * @hash   1104936646
      */
     MCVAPI enum class EventResult onItemSmelted(class Player &, class ItemDescriptor const &, class ItemDescriptor const &);
     /**
      * @symbol ?onItemSpawnedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
-     * @hash   -1424020877
+     * @hash   -1322108749
      */
     MCVAPI enum class EventResult onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
     /**
      * @symbol ?onItemSpawningActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVActor@@@Z
-     * @hash   -1002718461
+     * @hash   -900806333
      */
     MCVAPI enum class EventResult onItemSpawningActor(class Actor const &);
     /**
      * @symbol ?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -786350559
+     * @hash   -684438431
      */
     MCVAPI enum class EventResult onItemTransferredFromContainer(class ItemStackBase const &, std::string const &);
     /**
      * @symbol ?onItemTransferredToContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1024852048
+     * @hash   1126764176
      */
     MCVAPI enum class EventResult onItemTransferredToContainer(class ItemStackBase const &, std::string const &);
     /**
      * @symbol ?onPreviewItemPopulatedInContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1130578748
+     * @hash   1232490876
      */
     MCVAPI enum class EventResult onPreviewItemPopulatedInContainer(class ItemStackBase const &, std::string const &);
     /**
      * @symbol ?onRecipeSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
-     * @hash   1811710214
+     * @hash   1913622342
      */
     MCVAPI enum class EventResult onRecipeSelected(class ItemStackBase const &);
 #endif

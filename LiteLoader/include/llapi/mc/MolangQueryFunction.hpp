@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MolangQueryFunction@@QEAA@XZ
-     * @hash   -451296324
+     * @hash   -440087220
      */
     MCAPI ~MolangQueryFunction();
 

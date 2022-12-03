@@ -39,57 +39,57 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1769473572
+     * @hash   -1296661572
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@BeaconPaymentContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -700456278
+     * @hash   -227429014
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isItemAllowedToAdd@BeaconPaymentContainerValidation@@UEBA_NAEBVItemStack@@@Z
-     * @hash   1292632503
+     * @hash   1389378295
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
      * @vftbl  5
-     * @hash   -1359102411
+     * @hash   -1262602635
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   267179807
+     * @hash   739991807
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @vftbl  7
-     * @hash   -1357255369
+     * @hash   -1260755593
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
      * @symbol ?getContainerOffset@BeaconPaymentContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   -1883462596
+     * @hash   -1898500324
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONPAYMENTCONTAINERVALIDATION
     /**
      * @symbol ?canDestroy@BeaconPaymentContainerValidation@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   -1310676861
+     * @hash   -1214177085
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @symbol ?getAvailableSetCount@BeaconPaymentContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   1751581511
+     * @hash   1853493639
      */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif

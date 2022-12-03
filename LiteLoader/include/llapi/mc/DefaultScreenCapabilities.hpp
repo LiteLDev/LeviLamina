@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@UDefaultScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
-     * @hash   1841584556
+     * @hash   1768517804
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 

@@ -37,69 +37,69 @@ public:
     /**
      * @vftbl  1
      * @symbol ?onMakeObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   380766456
+     * @hash   1021545880
      */
     virtual void onMakeObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  2
      * @symbol ?onDestroyObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   -460184842
+     * @hash   180348566
      */
     virtual void onDestroyObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  3
      * @symbol ?onTrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   -1749171897
+     * @hash   -1108131081
      */
     virtual void onTrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
     /**
      * @vftbl  4
      * @symbol ?onUntrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@Vmeta_type@entt@@I@Z
-     * @hash   1407153502
+     * @hash   2048455710
      */
     virtual void onUntrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
     /**
      * @symbol ?onObjectPromotedToMultipleOwners@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
-     * @hash   -852565209
+     * @hash   -763599673
      */
     MCVAPI void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle);
     /**
      * @symbol ?onObjectReducedToSingleOwner@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
-     * @hash   -81203254
+     * @hash   7762282
      */
     MCVAPI void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle);
     /**
      * @symbol ?onPostLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
-     * @hash   256091304
+     * @hash   345056840
      */
     MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry &);
     /**
      * @symbol ?onPreLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
-     * @hash   -42071485
+     * @hash   46894051
      */
     MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry &);
 #endif
     /**
      * @symbol ??0ScriptPluginHandleCounter@@QEAA@AEAVScriptPlugin@@@Z
-     * @hash   471180205
+     * @hash   1111698237
      */
     MCAPI ScriptPluginHandleCounter(class ScriptPlugin &);
     /**
      * @symbol ?getName@ScriptPluginHandleCounter@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1170289552
+     * @hash   1810822960
      */
     MCAPI std::string getName() const;
     /**
      * @symbol ?getScriptPlugin@ScriptPluginHandleCounter@@QEAAAEAVScriptPlugin@@XZ
-     * @hash   -1109705804
+     * @hash   -984637420
      */
     MCAPI class ScriptPlugin & getScriptPlugin();
 
 //private:
     /**
      * @symbol ?_getOrMakeStats@ScriptPluginHandleCounter@@AEAAPEAUTypeStats@1@Vmeta_type@entt@@@Z
-     * @hash   679787599
+     * @hash   1320351759
      */
     MCAPI struct ScriptPluginHandleCounter::TypeStats * _getOrMakeStats(class entt::meta_type);
 

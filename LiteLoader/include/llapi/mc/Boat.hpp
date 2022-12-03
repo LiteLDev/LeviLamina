@@ -32,250 +32,250 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1976761459
+     * @hash   -1923960275
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  9
+     * @vftbl  11
      * @symbol ?reloadHardcodedClient@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -723330408
+     * @hash   -670529224
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -137357942
      */
     virtual ~Boat();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@Boat@@UEAAXXZ
-     * @hash   175017755
+     * @hash   227818939
      */
     virtual void remove();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Boat@@UEAAXXZ
-     * @hash   712913979
+     * @hash   765715163
      */
     virtual void normalTick();
     /**
-     * @vftbl  55
+     * @vftbl  57
      * @symbol ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
-     * @hash   2122577602
+     * @hash   -2119757646
      */
     virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  78
+     * @vftbl  81
      * @symbol ?getShadowHeightOffs@Boat@@UEAAMXZ
-     * @hash   -347699824
+     * @hash   -98008960
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@Boat@@UEBAMXZ
-     * @hash   949457238
+     * @hash   1105154614
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  89
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  92
      * @symbol ?onAboveBubbleColumn@Boat@@UEAAX_N@Z
-     * @hash   1134619349
+     * @hash   1187420533
      */
     virtual void onAboveBubbleColumn(bool);
     /**
-     * @vftbl  94
+     * @vftbl  97
      * @symbol ?isPickable@Boat@@UEAA_NXZ
-     * @hash   -236623314
+     * @hash   -183822130
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  134
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -580702290
+     * @hash   -522673266
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
-     */
-    virtual void __unk_vfn_181();
-    /**
      * @vftbl  183
+     * @hash   1602074556
+     */
+    virtual void __unk_vfn_183();
+    /**
+     * @vftbl  185
      * @symbol ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
-     * @hash   1589050903
+     * @hash   1641682951
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl  191
+     * @vftbl  193
      * @symbol ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
-     * @hash   -707811756
+     * @hash   -655348844
      */
     virtual bool canAddPassenger(class Actor &) const;
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  224
+     * @vftbl  226
      * @symbol ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
-     * @hash   1470068321
+     * @hash   1522884881
      */
     virtual float getPassengerYRotation(class Actor const &) const;
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -607630503
+     * @hash   -555167591
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  284
+     * @vftbl  282
      * @symbol ?destroy@Boat@@UEAAXPEAVActor@@@Z
-     * @hash   -1207445358
+     * @hash   -1154982446
      */
     virtual void destroy(class Actor *);
     /**
      * @symbol ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   873820156
+     * @hash   926160060
      */
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getRowingTime@Boat@@QEBAMW4Side@@@Z
-     * @hash   899313635
+     * @hash   952114819
      */
     MCAPI float getRowingTime(enum class Side) const;
     /**
      * @symbol ?getWoodID@Boat@@QEBAEXZ
-     * @hash   783613927
+     * @hash   836415111
      */
     MCAPI unsigned char getWoodID() const;
     /**
      * @symbol ?postNormalTick@Boat@@QEAAXXZ
-     * @hash   -1123819211
+     * @hash   -1071018027
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setPaddleState@Boat@@QEAA_NW4Side@@_N@Z
-     * @hash   280331836
+     * @hash   333133020
      */
     MCAPI bool setPaddleState(enum class Side, bool);
     /**
      * @symbol ?setRowingTime@Boat@@QEAAXW4Side@@M@Z
-     * @hash   165001847
+     * @hash   217803031
      */
     MCAPI void setRowingTime(enum class Side, float);
 
 //private:
     /**
      * @symbol ?_control@Boat@@AEAAXXZ
-     * @hash   -1443718870
+     * @hash   -1391286710
      */
     MCAPI void _control();
     /**
      * @symbol ?_move@Boat@@AEAAXXZ
-     * @hash   -1427990436
+     * @hash   -1375527524
      */
     MCAPI void _move();
     /**
      * @symbol ?_paddleControl@Boat@@AEAAXW4Side@@AEAVVec3@@1@Z
-     * @hash   344916181
+     * @hash   397379093
      */
     MCAPI void _paddleControl(enum class Side, class Vec3 &, class Vec3 &);
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@InventorySlotPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   483904636
+     * @hash   409930700
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@InventorySlotPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   863635241
+     * @hash   789661305
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@InventorySlotPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   506672862
+     * @hash   432698926
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@InventorySlotPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1345181970
+     * @hash   -1419155906
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0InventorySlotPacket@@QEAA@XZ
-     * @hash   -1470297010
+     * @hash   -1544270946
      */
     MCAPI InventorySlotPacket();
     /**
      * @symbol ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
-     * @hash   655629675
+     * @hash   581655739
      */
     MCAPI InventorySlotPacket(enum class ContainerID, unsigned int, class ItemStack const &);
 

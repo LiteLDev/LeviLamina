@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PassengerJumpPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -2004499890
+     * @hash   -1842221586
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PassengerJumpPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -146707509
+     * @hash   -222295925
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PassengerJumpPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1419437916
+     * @hash   1377615196
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PassengerJumpPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1352118508
+     * @hash   1310295788
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PassengerJumpPacket@@QEAA@XZ
-     * @hash   1593778268
+     * @hash   1518189852
      */
     MCAPI PassengerJumpPacket();
     /**
      * @symbol ??0PassengerJumpPacket@@QEAA@H@Z
-     * @hash   -1386427601
+     * @hash   -1462016017
      */
     MCAPI PassengerJumpPacket(int);
 

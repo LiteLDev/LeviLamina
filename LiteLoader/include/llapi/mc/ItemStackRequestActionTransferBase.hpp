@@ -37,44 +37,44 @@ public:
     virtual ~ItemStackRequestActionTransferBase();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   2096281682
+     * @hash   -2019447582
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1367561133
+     * @hash   -1274290317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z
-     * @hash   -1307167122
+     * @hash   -1225182290
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1548274298
+     * @hash   -1466289466
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getAmount@ItemStackRequestActionTransferBase@@QEBAEXZ
-     * @hash   -1557493065
+     * @hash   -1475508233
      */
     MCAPI unsigned char getAmount() const;
     /**
      * @symbol ?getDst@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     * @hash   1158787186
+     * @hash   1138506242
      */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     /**
      * @symbol ?getSrc@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     * @hash   -999743376
+     * @hash   -1036984048
      */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 

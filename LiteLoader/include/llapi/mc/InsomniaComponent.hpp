@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@InsomniaComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -1583282408
+     * @hash   -1603547976
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getInsomniaTimerTicks@InsomniaComponent@@QEBAHXZ
-     * @hash   -394874646
+     * @hash   -223616758
      */
     MCAPI int getInsomniaTimerTicks() const;
     /**
      * @symbol ?getTicksUntilInsomnia@InsomniaComponent@@QEBAHXZ
-     * @hash   865538648
+     * @hash   1009888536
      */
     MCAPI int getTicksUntilInsomnia() const;
     /**
      * @symbol ?incrementTimeSinceRest@InsomniaComponent@@QEAAHXZ
-     * @hash   1081339788
+     * @hash   1061058844
      */
     MCAPI int incrementTimeSinceRest();
     /**
      * @symbol ?readAdditionalSaveData@InsomniaComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1431036278
+     * @hash   1410755334
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?restartTimer@InsomniaComponent@@QEAAXXZ
-     * @hash   1445051263
+     * @hash   1424770319
      */
     MCAPI void restartTimer();
 

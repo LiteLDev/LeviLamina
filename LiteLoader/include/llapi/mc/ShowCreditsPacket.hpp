@@ -51,35 +51,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ShowCreditsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -389073431
+     * @hash   -462847479
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ShowCreditsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1134358378
+     * @hash   -1208132426
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ShowCreditsPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   511110577
+     * @hash   437336529
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ShowCreditsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1785102161
+     * @hash   1711328113
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ShowCreditsPacket@@QEAA@XZ
-     * @hash   1807760353
+     * @hash   1733986305
      */
     MCAPI ShowCreditsPacket();
     /**
      * @symbol ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
-     * @hash   -1970210198
+     * @hash   -2043984246
      */
     MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
 

@@ -32,47 +32,47 @@ public:
 public:
     /**
      * @symbol ?addAdditionalSaveData@FreezingComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   324658152
+     * @hash   248762216
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?decreaseFreezingEffect@FreezingComponent@@QEAAXXZ
-     * @hash   -1636763447
+     * @hash   -1712659383
      */
     MCAPI void decreaseFreezingEffect();
     /**
      * @symbol ?getFreezingEffectStrength@FreezingComponent@@QEBAMXZ
-     * @hash   -869305090
+     * @hash   -690466834
      */
     MCAPI float getFreezingEffectStrength() const;
     /**
      * @symbol ?increaseFreezingEffect@FreezingComponent@@QEAAXXZ
-     * @hash   25783857
+     * @hash   -50112079
      */
     MCAPI void increaseFreezingEffect();
     /**
      * @symbol ?isFullyFrozen@FreezingComponent@@QEBA_NXZ
-     * @hash   -856868196
+     * @hash   -932764132
      */
     MCAPI bool isFullyFrozen() const;
     /**
      * @symbol ?isFullyUnfrozen@FreezingComponent@@QEBA_NXZ
-     * @hash   -1254648548
+     * @hash   -1330544484
      */
     MCAPI bool isFullyUnfrozen() const;
     /**
      * @symbol ??8FreezingComponent@@QEBA_NAEBV0@@Z
-     * @hash   2086493598
+     * @hash   -861428466
      */
     MCAPI bool operator==(class FreezingComponent const &) const;
     /**
      * @symbol ?readAdditionalSaveData@FreezingComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   36639906
+     * @hash   -39256030
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?resetFreezingEffect@FreezingComponent@@QEAAXXZ
-     * @hash   1018658637
+     * @hash   942762701
      */
     MCAPI void resetFreezingEffect();
 

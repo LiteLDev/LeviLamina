@@ -37,18 +37,18 @@ public:
     virtual ~PlaySoundReactionComponent();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_onEnd@PlaySoundReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     * @hash   1850986837
+     * @hash   -1896840875
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

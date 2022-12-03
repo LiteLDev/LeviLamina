@@ -46,32 +46,32 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@SpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1213504486
+     * @hash   -1042246598
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0SpikeFeature@@QEAA@AEBVEndSpike@0@@Z
-     * @hash   492024489
+     * @hash   663282377
      */
     MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
     /**
      * @symbol ?placeManually@SpikeFeature@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
-     * @hash   1336856851
+     * @hash   1508114739
      */
     MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
     /**
      * @symbol ?postProcessMobsAt@SpikeFeature@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -533064206
+     * @hash   -361806318
      */
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?setCrystalBeamTarget@SpikeFeature@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -595843916
+     * @hash   -424570652
      */
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
     /**
      * @symbol ?setCrystalInvulnerable@SpikeFeature@@QEAAX_N@Z
-     * @hash   -14759076
+     * @hash   156514188
      */
     MCAPI void setCrystalInvulnerable(bool);
 

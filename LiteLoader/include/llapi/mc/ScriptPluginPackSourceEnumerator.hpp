@@ -36,18 +36,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getFullPackStack@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@XZ
-     * @hash   -976209825
+     * @hash   -873882545
      */
     virtual std::vector<struct PackIdVersion> const & getFullPackStack() const;
     /**
      * @vftbl  2
      * @symbol ?getPluginSources@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@V?$allocator@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@@2@@std@@XZ
-     * @hash   1862664468
+     * @hash   1955935284
      */
     virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const & getPluginSources() const;
     /**
      * @symbol ??0ScriptPluginPackSourceEnumerator@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@2@1@Z
-     * @hash   1238210993
+     * @hash   1321979441
      */
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
 

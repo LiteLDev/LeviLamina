@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@VibrationDamperDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UVibrationDamperDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -966150286
+     * @hash   -877184750
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VibrationDamperDefinition>> &);
 

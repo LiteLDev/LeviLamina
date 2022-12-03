@@ -83,7 +83,7 @@ public:
     /**
      * @vftbl  10
      * @symbol ?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
-     * @hash   2071697508
+     * @hash   -2067680044
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 

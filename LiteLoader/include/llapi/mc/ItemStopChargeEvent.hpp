@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemStopChargeEvent@@QEAA@XZ
-     * @hash   -948311395
+     * @hash   -767874035
      */
     MCAPI ~ItemStopChargeEvent();
 

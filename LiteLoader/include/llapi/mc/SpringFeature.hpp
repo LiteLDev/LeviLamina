@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@SpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1569606045
+     * @hash   -1412217309
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0SpringFeature@@QEAA@AEBVBlock@@@Z
-     * @hash   1190639670
+     * @hash   1348028406
      */
     MCAPI SpringFeature(class Block const &);
 
 //private:
     /**
      * @symbol ?isValidSpringBorderBlock@SpringFeature@@AEBA_NAEBVBlockLegacy@@AEAVBlockSource@@@Z
-     * @hash   -1201043473
+     * @hash   -1043654737
      */
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
 

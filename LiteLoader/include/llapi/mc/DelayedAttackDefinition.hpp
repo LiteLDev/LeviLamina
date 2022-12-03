@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0DelayedAttackDefinition@@QEAA@XZ
-     * @hash   1469784393
+     * @hash   1630663481
      */
     MCAPI DelayedAttackDefinition();
     /**
      * @symbol ?initialize@DelayedAttackDefinition@@QEAAXAEAVEntityContext@@AEAVDelayedAttackGoal@@@Z
-     * @hash   -1840430263
+     * @hash   -1679581927
      */
     MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &);
     /**
      * @symbol ?buildSchema@DelayedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDelayedAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -752502349
+     * @hash   -591577133
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
 

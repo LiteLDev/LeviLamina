@@ -38,329 +38,334 @@ public:
     virtual ~CandleCakeBlock();
     /**
      * @vftbl  19
-     * @hash   -330996260
+     * @hash   -234496484
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -248802891
+     * @hash   -152303115
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@CandleCakeBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   2111656812
+     * @hash   -2086810708
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  91
      * @symbol ?mayPlace@CandleCakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   504332307
+     * @hash   1097446131
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@CandleCakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -2074475446
+     * @hash   -1481561510
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@CandleCakeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   -1082553166
+     * @hash   -489439342
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1385941812
+     * @hash   1482441588
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@CandleCakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     * @hash   -438295458
+     * @hash   154618478
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@CandleCakeBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -693375918
+     * @hash   -100461982
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  156
-     * @hash   1479964130
+     * @hash   1576709922
      */
     virtual void __unk_vfn_156();
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
-     * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  172
+     * @vftbl  171
      * @symbol ?playerDestroy@CandleCakeBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1750621356
+     * @hash   -1951432004
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  176
-     * @hash   1530011088
+     * @hash   1626510864
      */
     virtual void __unk_vfn_176();
     /**
      * @vftbl  178
      * @symbol ?use@CandleCakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   -196254947
+     * @hash   396658989
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  179
      * @symbol ?canSurvive@CandleCakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1343078680
+     * @hash   -749964856
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl  189
+     * @vftbl  188
      * @symbol ?getResourceItem@CandleCakeBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1145460186
+     * @hash   -552546250
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl  193
+     * @vftbl  192
      * @symbol ?_getNumCandles@CandleCakeBlock@@MEBAHAEBVBlock@@@Z
-     * @hash   1851748055
+     * @hash   1953660183
      */
     virtual int _getNumCandles(class Block const &) const;
     /**
-     * @vftbl  194
+     * @vftbl  193
      * @symbol ?_iterateCandles@CandleCakeBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     * @hash   -38690418
+     * @hash   554223518
      */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /**
-     * @vftbl  195
+     * @vftbl  194
      * @symbol ?_tryLightOnFire@CandleCakeBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -1585400699
+     * @hash   -992486763
      */
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
+     * @vftbl  195
+     * @hash   1670421837
+     */
+    virtual void __unk_vfn_195();
+    /**
      * @vftbl  196
-     * @hash   1577859278
+     * @hash   21719022
      */
     virtual void __unk_vfn_196();
     /**
      * @vftbl  197
-     * @hash   -570286769
+     * @hash   18798543
      */
     virtual void __unk_vfn_197();
     /**
      * @vftbl  198
-     * @hash   -573191872
+     * @hash   23519936
      */
     virtual void __unk_vfn_198();
     /**
      * @vftbl  199
-     * @hash   -568501231
+     * @hash   24443457
      */
     virtual void __unk_vfn_199();
-    /**
-     * @vftbl  200
-     * @hash   53028402
-     */
-    virtual void __unk_vfn_200();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLECAKEBLOCK
     /**
      * @symbol ?canBeSilkTouched@CandleCakeBlock@@EEBA_NXZ
-     * @hash   1629615864
+     * @hash   1726361656
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
      * @symbol ?hasComparatorSignal@CandleCakeBlock@@UEBA_NXZ
-     * @hash   1157121848
+     * @hash   1253621624
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
      * @symbol ?isCandleCakeBlock@CandleCakeBlock@@UEBA_NXZ
-     * @hash   -280707778
+     * @hash   -184208002
      */
     MCVAPI bool isCandleCakeBlock() const;
 #endif
     /**
      * @symbol ??0CandleCakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -764341930
+     * @hash   -171427994
      */
     MCAPI CandleCakeBlock(std::string const &, int);
     /**
      * @symbol ?getCandleCakeFromCandle@CandleCakeBlock@@SAAEBVBlock@@AEBV2@@Z
-     * @hash   -963217094
+     * @hash   -370303158
      */
     MCAPI static class Block const & getCandleCakeFromCandle(class Block const &);
     /**
      * @symbol ?getCandleFromCandleCake@CandleCakeBlock@@SAAEBVBlock@@AEBV2@@Z
-     * @hash   -1514134310
+     * @hash   -921220374
      */
     MCAPI static class Block const & getCandleFromCandleCake(class Block const &);
     /**
      * @symbol ?tryLightFire@CandleCakeBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     * @hash   -1423895284
+     * @hash   -830981348
      */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
 
 //private:
     /**
      * @symbol ?_popCandle@CandleCakeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   756257408
+     * @hash   1349171344
      */
     MCAPI void _popCandle(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_forEachCandle@CandleCakeBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     * @hash   -1447400226
+     * @hash   -854486290
      */
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 

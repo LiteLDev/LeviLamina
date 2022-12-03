@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1361316803
+     * @hash   -1323953123
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockComponentDescription@@UEBA_NXZ
-     * @hash   1014417029
+     * @hash   1111162821
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockComponentDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   355908935
+     * @hash   511498679
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTDESCRIPTION
     /**
      * @symbol ?buildSchema@BlockComponentDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-     * @hash   -289182872
+     * @hash   -200217336
      */
     MCVAPI void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /**
      * @symbol ?handleVersionBasedInitialization@BlockComponentDescription@@UEAAXAEBVSemVersion@@@Z
-     * @hash   1741818742
+     * @hash   1830784278
      */
     MCVAPI void handleVersionBasedInitialization(class SemVersion const &);
     /**
      * @symbol ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -693951049
+     * @hash   -604985513
      */
     MCVAPI void initializeComponent(class EntityContext &) const;
     /**
      * @symbol ?initializeFromNetwork@BlockComponentDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -1313923669
+     * @hash   -1224958133
      */
     MCVAPI void initializeFromNetwork(class CompoundTag const &);
 #endif
     /**
      * @symbol ?bindType@BlockComponentDescription@@SAXXZ
-     * @hash   1407838127
+     * @hash   1881049903
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockComponentDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -554916320
+     * @hash   -465950784
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

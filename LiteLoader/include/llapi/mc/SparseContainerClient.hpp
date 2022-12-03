@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @symbol ?_networkUpdateItem@SparseContainerClient@@QEAAXHAEBVItemStack@@@Z
-     * @hash   1560436897
+     * @hash   2121230369
      */
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
 
@@ -43,7 +43,7 @@ public:
 private:
     /**
      * @symbol ?pushSlotPredictionResultMap@SparseContainerClient@@0V?$BidirectionalUnorderedMap@W4PushSlotPredictionResult@SparseContainerClient@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
-     * @hash   -602266755
+     * @hash   13157645
      */
     MCAPI static class BidirectionalUnorderedMap<enum class SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
 

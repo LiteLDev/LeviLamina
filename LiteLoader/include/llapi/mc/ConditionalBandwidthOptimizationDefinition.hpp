@@ -33,27 +33,27 @@ public:
 public:
     /**
      * @symbol ?addConditionalBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
-     * @hash   681655290
+     * @hash   611279338
      */
     MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ?addDefaultBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
-     * @hash   -1482770272
+     * @hash   -1553146224
      */
     MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ?initialize@ConditionalBandwidthOptimizationDefinition@@QEBAXAEAVEntityContext@@AEAVConditionalBandwidthOptimizationComponent@@@Z
-     * @hash   -1555531831
+     * @hash   -1625907783
      */
     MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;
     /**
      * @symbol ??1ConditionalBandwidthOptimizationDefinition@@QEAA@XZ
-     * @hash   -496129131
+     * @hash   -446956683
      */
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
     /**
      * @symbol ?buildSchema@ConditionalBandwidthOptimizationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VConditionalBandwidthOptimizationDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   852114646
+     * @hash   781738694
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition>> &);
 

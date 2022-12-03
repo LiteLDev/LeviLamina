@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@GeodeFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   1125205993
+     * @hash   1281656793
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ?canSupportGeode@GeodeFeature@@SA_NAEBVBlock@@@Z
-     * @hash   -1339705209
+     * @hash   -1183254409
      */
     MCAPI static bool canSupportGeode(class Block const &);
 

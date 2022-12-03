@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z
-     * @hash   694701092
+     * @hash   623464084
      */
     MCAPI void addGeneticVariant(struct GeneticVariant const &);
     /**
      * @symbol ??1GeneDefinition@@QEAA@XZ
-     * @hash   238956802
+     * @hash   167765922
      */
     MCAPI ~GeneDefinition();
 

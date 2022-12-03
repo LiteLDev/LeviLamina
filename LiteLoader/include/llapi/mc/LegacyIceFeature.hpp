@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LegacyIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1112778254
+     * @hash   1269782590
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
-     * @hash   -948721745
+     * @hash   -791825041
      */
     MCAPI LegacyIceFeature(class FeatureRegistry const &);
 

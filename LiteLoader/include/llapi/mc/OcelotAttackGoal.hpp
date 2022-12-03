@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@OcelotAttackGoal@@UEAA_NXZ
-     * @hash   444023077
+     * @hash   605163557
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@OcelotAttackGoal@@UEAA_NXZ
-     * @hash   887852243
+     * @hash   1048992723
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?stop@OcelotAttackGoal@@UEAAXXZ
-     * @hash   867962606
+     * @hash   1029103086
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@OcelotAttackGoal@@UEAAXXZ
-     * @hash   2088711881
+     * @hash   -2045114935
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@OcelotAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1175908949
+     * @hash   -1014614709
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0OcelotAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1309254082
+     * @hash   1470548322
      */
     MCAPI OcelotAttackGoal(class Mob &);
 

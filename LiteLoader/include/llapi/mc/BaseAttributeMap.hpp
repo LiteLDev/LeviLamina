@@ -31,111 +31,136 @@ public:
 public:
     /**
      * @symbol ??0BaseAttributeMap@@QEAA@XZ
-     * @hash   -185964067
+     * @hash   -48225859
      */
     MCAPI BaseAttributeMap();
     /**
      * @symbol ?begin@BaseAttributeMap@@QEBA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-     * @hash   351790755
+     * @hash   476628499
      */
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin() const;
     /**
      * @symbol ?begin@BaseAttributeMap@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-     * @hash   -2090774901
+     * @hash   -1965937157
      */
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin();
     /**
      * @symbol ?clearDirtyAttributes@BaseAttributeMap@@QEAAXXZ
-     * @hash   1590896949
+     * @hash   1653400389
      */
     MCAPI void clearDirtyAttributes();
     /**
      * @symbol ?end@BaseAttributeMap@@QEBA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-     * @hash   -1852125481
+     * @hash   -1727287737
      */
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> end() const;
     /**
      * @symbol ?end@BaseAttributeMap@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-     * @hash   1241117759
+     * @hash   1365955503
      */
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> end();
     /**
-     * @symbol ?getDirtyAttributes@BaseAttributeMap@@QEAAAEBV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ
-     * @hash   973347964
+     * @symbol ?getDirtyAttributes@BaseAttributeMap@@QEBAAEBV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ
+     * @hash   1751397644
      */
-    MCAPI std::vector<class AttributeInstanceHandle> const & getDirtyAttributes();
+    MCAPI std::vector<class AttributeInstanceHandle> const & getDirtyAttributes() const;
     /**
      * @symbol ?getInstance@BaseAttributeMap@@QEBAAEBVAttributeInstance@@AEBVAttribute@@@Z
-     * @hash   -117809539
+     * @hash   -52492291
      */
     MCAPI class AttributeInstance const & getInstance(class Attribute const &) const;
     /**
      * @symbol ?getInstance@BaseAttributeMap@@QEBAAEBVAttributeInstance@@I@Z
-     * @hash   -1194317307
+     * @hash   -1129000059
      */
     MCAPI class AttributeInstance const & getInstance(unsigned int) const;
     /**
      * @symbol ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVAttribute@@@Z
-     * @hash   669942314
+     * @hash   735259562
      */
     MCAPI class AttributeInstance * getMutableInstance(class Attribute const &);
     /**
      * @symbol ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVHashedString@@@Z
-     * @hash   -716003814
+     * @hash   -650686566
      */
     MCAPI class AttributeInstance * getMutableInstance(class HashedString const &);
     /**
      * @symbol ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@I@Z
-     * @hash   -17789278
+     * @hash   47527970
      */
     MCAPI class AttributeInstance * getMutableInstance(unsigned int);
     /**
      * @symbol ?getSyncableAttributes@BaseAttributeMap@@QEBA?AV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ
-     * @hash   212332972
+     * @hash   277650220
      */
     MCAPI std::vector<class AttributeInstanceHandle> getSyncableAttributes() const;
     /**
      * @symbol ?inheritFrom@BaseAttributeMap@@QEAAXAEBV1@@Z
-     * @hash   656195376
+     * @hash   721512624
      */
     MCAPI void inheritFrom(class BaseAttributeMap const &);
     /**
      * @symbol ?onAttributeModified@BaseAttributeMap@@QEAAXAEBVAttributeInstance@@@Z
-     * @hash   2115241520
+     * @hash   -2114408528
      */
     MCAPI void onAttributeModified(class AttributeInstance const &);
     /**
-     * @symbol ??8BaseAttributeMap@@QEBA_NAEBV0@@Z
-     * @hash   752911830
-     */
-    MCAPI bool operator==(class BaseAttributeMap const &) const;
-    /**
      * @symbol ?registerAttribute@BaseAttributeMap@@QEAAAEAVAttributeInstance@@AEBVAttribute@@@Z
-     * @hash   -466311607
+     * @hash   -400994359
      */
     MCAPI class AttributeInstance & registerAttribute(class Attribute const &);
     /**
      * @symbol ?size@BaseAttributeMap@@QEBA_KXZ
-     * @hash   1907986137
+     * @hash   2033054521
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ?updateAttribute@BaseAttributeMap@@QEAAXAEBVHashedString@@MMMMAEBV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@@Z
-     * @hash   -208729595
+     * @hash   -143412347
      */
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float, std::vector<class AttributeModifier> const &);
     /**
      * @symbol ??1BaseAttributeMap@@QEAA@XZ
-     * @hash   -909161173
+     * @hash   -776005013
      */
     MCAPI ~BaseAttributeMap();
+    /**
+     * @symbol ?DIFF_ATTRIBUTES@BaseAttributeMap@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -231950331
+     */
+    MCAPI static std::string const DIFF_ATTRIBUTES;
+    /**
+     * @symbol ?DIFF_ATTRIBUTES_SIZE@BaseAttributeMap@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1304171649
+     */
+    MCAPI static std::string const DIFF_ATTRIBUTES_SIZE;
+    /**
+     * @symbol ?DIFF_DIRTY_ATTRIBUTES@BaseAttributeMap@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1344816385
+     */
+    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES;
+    /**
+     * @symbol ?DIFF_DIRTY_ATTRIBUTES_SIZE@BaseAttributeMap@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -413775483
+     */
+    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES_SIZE;
+    /**
+     * @symbol ?DIFF_NO_ATTRIBUTES@BaseAttributeMap@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1946757161
+     */
+    MCAPI static std::string const DIFF_NO_ATTRIBUTES;
+    /**
+     * @symbol ?getDiff@BaseAttributeMap@@SA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@0@Z
+     * @hash   -1289834356
+     */
+    MCAPI static class std::optional<std::string> getDiff(class BaseAttributeMap const &, class BaseAttributeMap const &);
 
 //private:
 
 private:
     /**
      * @symbol ?mInvalidInstance@BaseAttributeMap@@0VAttributeInstance@@A
-     * @hash   -1251098768
+     * @hash   -390842320
      */
     MCAPI static class AttributeInstance mInvalidInstance;
 

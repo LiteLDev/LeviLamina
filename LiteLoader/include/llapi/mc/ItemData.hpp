@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemData@@QEAA@XZ
-     * @hash   -474247801
+     * @hash   -383252633
      */
     MCAPI ~ItemData();
 

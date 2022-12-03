@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@WaitNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   706456500
+     * @hash   788748852
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@WaitNode@@EEAAXAEAVActor@@@Z
-     * @hash   164329304
+     * @hash   246621656
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0WaitNode@@QEAA@XZ
-     * @hash   -1101265613
+     * @hash   -1018973261
      */
     MCAPI WaitNode();
 

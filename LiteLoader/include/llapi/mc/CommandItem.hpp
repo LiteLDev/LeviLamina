@@ -34,37 +34,37 @@ public:
 public:
     /**
      * @symbol ??0CommandItem@@QEAA@XZ
-     * @hash   62881242
+     * @hash   238259898
      */
     MCAPI CommandItem();
     /**
      * @symbol ??0CommandItem@@QEAA@HF_N@Z
-     * @hash   2008938034
+     * @hash   -2110650606
      */
     MCAPI CommandItem(int, short, bool);
     /**
      * @symbol ??0CommandItem@@QEAA@_K@Z
-     * @hash   445382238
+     * @hash   403882414
      */
     MCAPI CommandItem(unsigned __int64);
     /**
      * @symbol ?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHPEAVCommandOutput@@_N@Z
-     * @hash   305112950
+     * @hash   480476230
      */
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
     /**
      * @symbol ?getId@CommandItem@@QEBAHXZ
-     * @hash   -613796422
+     * @hash   -442538534
      */
     MCAPI int getId() const;
     /**
      * @symbol ??BCommandItem@@QEBA_NXZ
-     * @hash   -317331976
+     * @hash   -141968696
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??BCommandItem@@QEBA_KXZ
-     * @hash   -493466341
+     * @hash   -368628597
      */
     MCAPI operator unsigned __int64() const;
 

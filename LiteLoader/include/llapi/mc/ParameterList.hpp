@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0ParameterList@@QEAA@AEBV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@@Z
-     * @hash   216853116
+     * @hash   388710668
      */
     MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
     /**
      * @symbol ??0ParameterList@@QEAA@$$QEAV0@@Z
-     * @hash   552119879
+     * @hash   723408519
      */
     MCAPI ParameterList(class ParameterList &&);
     /**
      * @symbol ?findTarget@ParameterList@@QEBAPEAVBiome@@AEBUTargetPoint@@PEAUHint@RTree@@@Z
-     * @hash   -1560730654
+     * @hash   -1388888478
      */
     MCAPI class Biome * findTarget(struct TargetPoint const &, struct RTree::Hint *) const;
     /**
      * @symbol ??1ParameterList@@QEAA@XZ
-     * @hash   1331648179
+     * @hash   1502936819
      */
     MCAPI ~ParameterList();
 

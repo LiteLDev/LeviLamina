@@ -34,7 +34,7 @@ public:
 private:
     /**
      * @symbol ?mChunksNeededForLoadOffsets@LoadingProgressTickingSystem@@0V?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@B
-     * @hash   -934295296
+     * @hash   -65259152
      */
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
 

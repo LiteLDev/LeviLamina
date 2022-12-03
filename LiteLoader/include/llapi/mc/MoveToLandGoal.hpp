@@ -39,51 +39,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveToLandGoal@@UEAA_NXZ
-     * @hash   -345745850
+     * @hash   -185174282
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MoveToLandGoal@@UEAA_NXZ
-     * @hash   -288074140
+     * @hash   -127502572
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2085634186
+     * @hash   -2048761542
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1421752056
+     * @hash   1582323624
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @vftbl  14
      * @symbol ?_moveToBlock@MoveToLandGoal@@MEAAXXZ
-     * @hash   -1495916488
+     * @hash   -1335344920
      */
     virtual void _moveToBlock();
     /**
      * @symbol ??0MoveToLandGoal@@QEAA@AEAVMob@@MHHHM@Z
-     * @hash   753286748
+     * @hash   913858316
      */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 

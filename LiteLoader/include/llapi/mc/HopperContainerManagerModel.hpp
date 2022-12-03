@@ -39,17 +39,17 @@ public:
     /**
      * @vftbl  17
      * @symbol ?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   739943613
+     * @hash   895702493
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1721194132
+     * @hash   -1565435252
      */
     MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-     * @hash   552236294
+     * @hash   707995174
      */
     MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?getNewPassengerPosition@PositionPassengerUtility@@SA?AVVec3@@VSynchedActorDataReader@@AEBV2@AEBVVec2@@@Z
-     * @hash   1988072462
+     * @hash   1913498862
      */
     MCAPI static class Vec3 getNewPassengerPosition(class SynchedActorDataReader, class Vec3 const &, class Vec2 const &);
 

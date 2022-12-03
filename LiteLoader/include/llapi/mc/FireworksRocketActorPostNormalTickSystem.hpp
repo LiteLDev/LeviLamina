@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@FireworksRocketActorPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1229718590
+     * @hash   -1124838894
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doFireworksRocketActorPostNormalTickSystem@FireworksRocketActorPostNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   1309488497
+     * @hash   1414368193
      */
     MCAPI static void _doFireworksRocketActorPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

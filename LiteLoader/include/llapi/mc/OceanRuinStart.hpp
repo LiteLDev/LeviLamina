@@ -38,7 +38,7 @@ public:
     virtual ~OceanRuinStart();
     /**
      * @symbol ?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
-     * @hash   -1666161427
+     * @hash   -1494442259
      */
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
 

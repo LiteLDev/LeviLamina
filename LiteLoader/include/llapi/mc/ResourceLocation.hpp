@@ -33,52 +33,52 @@ public:
 public:
     /**
      * @symbol ??0ResourceLocation@@QEAA@XZ
-     * @hash   -1394887377
+     * @hash   -882620561
      */
     MCAPI ResourceLocation();
     /**
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@W4ResourceFileSystem@@@Z
-     * @hash   1731770239
+     * @hash   -2050930241
      */
     MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
     /**
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@@Z
-     * @hash   1045735368
+     * @hash   1558002184
      */
     MCAPI ResourceLocation(class Core::Path const &);
     /**
      * @symbol ?getFullPath@ResourceLocation@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   837290245
+     * @hash   1349418677
      */
     MCAPI class Core::PathBuffer<std::string> getFullPath() const;
     /**
      * @symbol ?getRelativePath@ResourceLocation@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     * @hash   1164893883
+     * @hash   1258164699
      */
     MCAPI class Core::PathBuffer<std::string> const & getRelativePath() const;
     /**
      * @symbol ??8ResourceLocation@@QEBA_NAEBV0@@Z
-     * @hash   584648340
+     * @hash   516332772
      */
     MCAPI bool operator==(class ResourceLocation const &) const;
     /**
      * @symbol ?serialize@ResourceLocation@@QEBAXAEAVValue@Json@@@Z
-     * @hash   -359430242
+     * @hash   152667438
      */
     MCAPI void serialize(class Json::Value &) const;
     /**
      * @symbol ?setRelativePath@ResourceLocation@@QEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-     * @hash   -2031379873
+     * @hash   -1519282193
      */
     MCAPI void setRelativePath(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ??1ResourceLocation@@QEAA@XZ
-     * @hash   1858350397
+     * @hash   1947777213
      */
     MCAPI ~ResourceLocation();
     /**
      * @symbol ?getEmptyLocation@ResourceLocation@@SAAEBV1@XZ
-     * @hash   734404148
+     * @hash   1246563332
      */
     MCAPI static class ResourceLocation const & getEmptyLocation();
 

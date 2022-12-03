@@ -43,44 +43,44 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@TeleportCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -645960173
+     * @hash   -632475421
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?applyTarget@TeleportCommand@@SAXAEAVActor@@VTeleportTarget@@_N@Z
-     * @hash   -1294107214
+     * @hash   -1280622462
      */
     MCAPI static void applyTarget(class Actor &, class TeleportTarget, bool);
     /**
      * @symbol ?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@AEBV?$optional@VRotationData@RotationCommandUtils@@@std@@H@Z
-     * @hash   -1718732827
+     * @hash   -1705248075
      */
     MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, class AutomaticID<class Dimension, int>, class std::optional<class RotationCommandUtils::RotationData> const &, int);
     /**
      * @symbol ?setup@TeleportCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1252311408
+     * @hash   -1239026544
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?getFacingDirection@TeleportCommand@@AEBA?AW4FacingResult@RotationCommandUtils@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@PEAVActor@@@Z
-     * @hash   2033742143
+     * @hash   2046965503
      */
     MCAPI enum class RotationCommandUtils::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
     /**
      * @symbol ?actorToLocationTeleportAnalysis@TeleportCommand@@CA?AW4TeleportAnalysis@1@AEBVCommandOrigin@@AEBVCommandArea@@AEAV4@AEBVActor@@VVec3@@@Z
-     * @hash   -1501723574
+     * @hash   -1488238822
      */
     MCAPI static enum class TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
     /**
      * @symbol ?getCommandAreaForTargets@TeleportCommand@@CA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVCommandOrigin@@AEBV?$CommandSelectorResults@VActor@@@@VVec3@@H_N@Z
-     * @hash   -305833655
+     * @hash   -292610295
      */
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int, bool);
     /**
      * @symbol ?getSafetyAABB@TeleportCommand@@CA?AVAABB@@AEBVActor@@VVec3@@@Z
-     * @hash   969693393
+     * @hash   982978257
      */
     MCAPI static class AABB getSafetyAABB(class Actor const &, class Vec3);
 

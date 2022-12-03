@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BreakDoorGoal@@UEAA_NXZ
-     * @hash   1482359408
+     * @hash   1642392816
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BreakDoorGoal@@UEAA_NXZ
-     * @hash   -1945781842
+     * @hash   -1785748434
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@BreakDoorGoal@@UEAAXXZ
-     * @hash   -351369991
+     * @hash   -191336583
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@BreakDoorGoal@@UEAAXXZ
-     * @hash   -746987079
+     * @hash   -586953671
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@BreakDoorGoal@@UEAAXXZ
-     * @hash   -1231309004
+     * @hash   -1071275596
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@BreakDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1476394432
+     * @hash   -1316361024
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0BreakDoorGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1164550493
+     * @hash   1324583901
      */
     MCAPI BreakDoorGoal(class Mob &);
 

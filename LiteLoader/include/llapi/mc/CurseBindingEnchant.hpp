@@ -39,45 +39,45 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@CurseBindingEnchant@@UEBAHH@Z
-     * @hash   -348561009
+     * @hash   -390383729
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@CurseBindingEnchant@@UEBAHH@Z
-     * @hash   1182498957
+     * @hash   1108525021
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -338384428
+     * @hash   -241884652
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSEBINDINGENCHANT
     /**
      * @symbol ?isTreasureOnly@CurseBindingEnchant@@UEBA_NXZ
-     * @hash   1519164775
+     * @hash   1615664551
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol ??0CurseBindingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     * @hash   -865714844
+     * @hash   -296326188
      */
     MCAPI CurseBindingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

@@ -37,13 +37,13 @@ public:
     virtual ~CommandBlockSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@CommandBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -355499423
+     * @hash   -260122095
      */
     virtual void tick(class EntityRegistry &);
 

@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?setCraftInto@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   853358770
+     * @hash   840489058
      */
     MCAPI void setCraftInto(std::string const &);
     /**
      * @symbol ?setItem@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1095273730
+     * @hash   1082404018
      */
     MCAPI void setItem(std::string const &);
 

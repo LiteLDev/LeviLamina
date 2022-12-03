@@ -24,52 +24,52 @@ namespace LevelDataKeys {
 #undef AFTER_EXTRA
     /**
      * @symbol ?EDUCATION_OID@LevelDataKeys@@3VHashedString@@A
-     * @hash   1739001709
+     * @hash   -1910588739
      */
     MCAPI extern class HashedString EDUCATION_OID;
     /**
      * @symbol ?EDUCATION_SHARED_RESOURCE@LevelDataKeys@@3VHashedString@@A
-     * @hash   -1585964199
+     * @hash   -940587351
      */
     MCAPI extern class HashedString EDUCATION_SHARED_RESOURCE;
     /**
      * @symbol ?FLAT_WORLD_VERSION@LevelDataKeys@@3VHashedString@@A
-     * @hash   1995351759
+     * @hash   -1654238689
      */
     MCAPI extern class HashedString FLAT_WORLD_VERSION;
     /**
      * @symbol ?GAME_TYPE@LevelDataKeys@@3VHashedString@@A
-     * @hash   -1324434779
+     * @hash   -679057931
      */
     MCAPI extern class HashedString GAME_TYPE;
     /**
      * @symbol ?GENERATOR@LevelDataKeys@@3VHashedString@@A
-     * @hash   -1131542563
+     * @hash   -486165715
      */
     MCAPI extern class HashedString GENERATOR;
     /**
      * @symbol ?LIMITED_WORLD_DEPTH@LevelDataKeys@@3VHashedString@@A
-     * @hash   -1305961303
+     * @hash   -660584455
      */
     MCAPI extern class HashedString LIMITED_WORLD_DEPTH;
     /**
      * @symbol ?LIMITED_WORLD_WIDTH@LevelDataKeys@@3VHashedString@@A
-     * @hash   1551168575
+     * @hash   -2098421873
      */
     MCAPI extern class HashedString LIMITED_WORLD_WIDTH;
     /**
      * @symbol ?LOADED_PLAYER_TAG@LevelDataKeys@@3VHashedString@@A
-     * @hash   1810897699
+     * @hash   -1838692749
      */
     MCAPI extern class HashedString LOADED_PLAYER_TAG;
     /**
      * @symbol ?SEED@LevelDataKeys@@3VHashedString@@A
-     * @hash   -1366558905
+     * @hash   -721182057
      */
     MCAPI extern class HashedString SEED;
     /**
      * @symbol ?SPAWN_POS@LevelDataKeys@@3VHashedString@@A
-     * @hash   1290973255
+     * @hash   1936350103
      */
     MCAPI extern class HashedString SPAWN_POS;
 

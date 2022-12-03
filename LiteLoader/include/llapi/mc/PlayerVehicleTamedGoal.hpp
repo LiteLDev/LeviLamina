@@ -37,65 +37,65 @@ public:
     virtual ~PlayerVehicleTamedGoal();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   716273189
+     * @hash   878366981
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   717196710
+     * @hash   879290502
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@PlayerVehicleTamedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1294475495
+     * @hash   1456569287
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERVEHICLETAMEDGOAL
     /**
      * @symbol ?canContinueToUse@PlayerVehicleTamedGoal@@UEAA_NXZ
-     * @hash   -332782553
+     * @hash   -170688761
      */
     MCVAPI bool canContinueToUse();
     /**
      * @symbol ?canUse@PlayerVehicleTamedGoal@@UEAA_NXZ
-     * @hash   1258910665
+     * @hash   1421004457
      */
     MCVAPI bool canUse();
     /**
      * @symbol ?start@PlayerVehicleTamedGoal@@UEAAXXZ
-     * @hash   1712071778
+     * @hash   1801037314
      */
     MCVAPI void start();
     /**
      * @symbol ?tick@PlayerVehicleTamedGoal@@UEAAXXZ
-     * @hash   -713754819
+     * @hash   -624789283
      */
     MCVAPI void tick();
 #endif
     /**
      * @symbol ??0PlayerVehicleTamedGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -37181178
+     * @hash   124912614
      */
     MCAPI PlayerVehicleTamedGoal(class Mob &);
 

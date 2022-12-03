@@ -39,42 +39,42 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   -1578726343
+     * @hash   -1423028967
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   1007302870
+     * @hash   1033057670
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   1213109551
+     * @hash   1238864351
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@HudContainerManagerModel@@UEAAXHH@Z
-     * @hash   489072077
+     * @hash   578037613
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
-     * @hash   51769251
+     * @hash   77524051
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  17
      * @symbol ?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   1580827584
+     * @hash   1606582384
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-     * @hash   1662256714
+     * @hash   1688011514
      */
     MCAPI HudContainerManagerModel(enum class ContainerID, class Player &);
 

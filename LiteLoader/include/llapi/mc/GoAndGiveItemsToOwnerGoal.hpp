@@ -36,54 +36,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
-     * @hash   345648485
+     * @hash   506604453
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
-     * @hash   833747155
+     * @hash   994703123
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
-     * @hash   -461714770
+     * @hash   -300743426
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
-     * @hash   -1623842050
+     * @hash   -1462870706
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
-     * @hash   -675681303
+     * @hash   -514709959
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@GoAndGiveItemsToOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1305628603
+     * @hash   1466507691
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0GoAndGiveItemsToOwnerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   940452562
+     * @hash   1101331650
      */
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_attemptToGiveItem@GoAndGiveItemsToOwnerGoal@@AEAA_NXZ
-     * @hash   294031176
+     * @hash   454910264
      */
     MCAPI bool _attemptToGiveItem();
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -808223508
+     * @hash   -41714532
      */
     MCAPI struct BlockCraftingTableComponent & operator=(struct BlockCraftingTableComponent &&);
     /**
      * @symbol ??1BlockCraftingTableComponent@@QEAA@XZ
-     * @hash   110996202
+     * @hash   202698666
      */
     MCAPI ~BlockCraftingTableComponent();
 

@@ -39,14 +39,14 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@SeagrassFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1971332057
+     * @hash   2128751545
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isNotIce@SeagrassFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1844505093
+     * @hash   2001924581
      */
     MCAPI bool _isNotIce(class BlockSource &, class BlockPos const &) const;
 

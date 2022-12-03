@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getNextPosition@PlayerRespawnBlockRadiusRandomizer@@QEAA_NAEAVVec3@@_N@Z
-     * @hash   1234091914
+     * @hash   1283833274
      */
     MCAPI bool getNextPosition(class Vec3 &, bool);
     /**
      * @symbol ?init@PlayerRespawnBlockRadiusRandomizer@@QEAAXIAEAVRandom@@@Z
-     * @hash   318351259
+     * @hash   368415515
      */
     MCAPI void init(unsigned int, class Random &);
 

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createApplySystem@LegacyActorExtractApplySystem@@SA?AUTickingSystemWithInfo@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
-     * @hash   -1834773247
+     * @hash   -1763659247
      */
     MCAPI static struct TickingSystemWithInfo createApplySystem(std::vector<unsigned int> const &);
     /**
      * @symbol ?createExtractSystem@LegacyActorExtractApplySystem@@SA?AUTickingSystemWithInfo@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
-     * @hash   -1268828085
+     * @hash   -1197714085
      */
     MCAPI static struct TickingSystemWithInfo createExtractSystem(std::vector<unsigned int> const &);
 

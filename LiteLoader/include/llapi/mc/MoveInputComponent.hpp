@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??4MoveInputComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1251299956
+     * @hash   -1118128420
      */
     MCAPI struct MoveInputComponent & operator=(struct MoveInputComponent &&);
 

@@ -32,57 +32,62 @@ public:
 public:
     /**
      * @symbol ??0TransportInterfaceComposite@@QEAA@XZ
-     * @hash   -218412397
+     * @hash   -256652509
      */
     MCAPI TransportInterfaceComposite();
     /**
      * @symbol ?disable@TransportInterfaceComposite@@QEAAXXZ
-     * @hash   -1697301451
+     * @hash   -1735541563
      */
     MCAPI void disable();
     /**
      * @symbol ?getActiveInstance@TransportInterfaceComposite@@QEBA?AV?$shared_ptr@VTransportInterface@@@std@@XZ
-     * @hash   -2083670929
+     * @hash   -2121911041
      */
     MCAPI class std::shared_ptr<class TransportInterface> getActiveInstance() const;
     /**
      * @symbol ?getNetherNetInstance@TransportInterfaceComposite@@QEAA?AV?$shared_ptr@UNetherNetInstance@@@std@@W4TransportLayer@@@Z
-     * @hash   -926953322
+     * @hash   -965193434
      */
     MCAPI class std::shared_ptr<struct NetherNetInstance> getNetherNetInstance(enum class TransportLayer);
     /**
      * @symbol ?getRakNetInstance@TransportInterfaceComposite@@QEAA?AV?$shared_ptr@VRakNetInstance@@@std@@XZ
-     * @hash   86120263
+     * @hash   47880151
      */
     MCAPI class std::shared_ptr<class RakNetInstance> getRakNetInstance();
     /**
      * @symbol ?hasNetherNetInstance@TransportInterfaceComposite@@QEAA_NW4TransportLayer@@@Z
-     * @hash   986999855
+     * @hash   948759743
      */
     MCAPI bool hasNetherNetInstance(enum class TransportLayer);
     /**
      * @symbol ?initializeRakNetInstance@TransportInterfaceComposite@@QEAAXAEAUConnectionCallbacks@RakNetInstance@@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-     * @hash   1642630009
+     * @hash   1604389897
      */
     MCAPI void initializeRakNetInstance(struct RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
+     * @symbol ?isActiveTransportInterfaceSet@TransportInterfaceComposite@@QEBA_NXZ
+     * @hash   307219216
+     */
+    MCAPI bool isActiveTransportInterfaceSet() const;
+    /**
      * @symbol ?setActiveTransportLayer@TransportInterfaceComposite@@QEAAXW4TransportLayer@@@Z
-     * @hash   -1254220474
+     * @hash   -1292445210
      */
     MCAPI void setActiveTransportLayer(enum class TransportLayer);
     /**
      * @symbol ?tryEnable@TransportInterfaceComposite@@QEAAXXZ
-     * @hash   1160289425
+     * @hash   1122064689
      */
     MCAPI void tryEnable();
     /**
      * @symbol ?update@TransportInterfaceComposite@@QEAAXXZ
-     * @hash   -255989179
+     * @hash   -294213915
      */
     MCAPI void update();
     /**
      * @symbol ??1TransportInterfaceComposite@@QEAA@XZ
-     * @hash   -1007701981
+     * @hash   -1045942093
      */
     MCAPI ~TransportInterfaceComposite();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1KeyOrNameResult@@QEAA@XZ
-     * @hash   -996501402
+     * @hash   -908827450
      */
     MCAPI ~KeyOrNameResult();
 

@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@Igloo@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   -2000533651
+     * @hash   -1828845235
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@Igloo@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1822297467
+     * @hash   1993862875
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@Igloo@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1042091017
+     * @hash   -870279593
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ??0Igloo@@QEAA@FHH@Z
-     * @hash   -1567012970
+     * @hash   -1395324554
      */
     MCAPI Igloo(short, int, int);
 
@@ -65,22 +65,22 @@ public:
 private:
     /**
      * @symbol ?STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1745127009
+     * @hash   -321463169
      */
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
     /**
      * @symbol ?STRUCTURE_LOCATION_IGLOO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -251585345
+     * @hash   1172078495
      */
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
     /**
      * @symbol ?STRUCTURE_LOCATION_LABORATORY@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1899762950
+     * @hash   -971540506
      */
     MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
     /**
      * @symbol ?STRUCTURE_LOCATION_LADDER@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -705468747
+     * @hash   718195093
      */
     MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
 

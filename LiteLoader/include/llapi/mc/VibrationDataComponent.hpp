@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?clearLastVibrationPos@VibrationDataComponent@@QEAAXXZ
-     * @hash   -1661916333
+     * @hash   -1675001309
      */
     MCAPI void clearLastVibrationPos();
     /**
      * @symbol ?getLastVibrationPos@VibrationDataComponent@@QEBAAEBV?$optional@VBlockPos@@@std@@XZ
-     * @hash   1973129819
+     * @hash   2066400635
      */
     MCAPI class std::optional<class BlockPos> const & getLastVibrationPos() const;
     /**
      * @symbol ?getTicksSinceLastVibration@VibrationDataComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
-     * @hash   1824202582
+     * @hash   1811117606
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     /**
      * @symbol ?setLastVibrationPos@VibrationDataComponent@@QEAAXVBlockPos@@UTick@@@Z
-     * @hash   -2091023843
+     * @hash   -2104108819
      */
     MCAPI void setLastVibrationPos(class BlockPos, struct Tick);
 

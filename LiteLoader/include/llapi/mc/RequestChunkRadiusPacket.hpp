@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@RequestChunkRadiusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   426773894
+     * @hash   352953718
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RequestChunkRadiusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -684073933
+     * @hash   -757894109
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@RequestChunkRadiusPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -583483900
+     * @hash   -625306620
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@RequestChunkRadiusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2133722132
+     * @hash   2091899412
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RequestChunkRadiusPacket@@QEAA@XZ
-     * @hash   -1920171996
+     * @hash   -1993992172
      */
     MCAPI RequestChunkRadiusPacket();
 

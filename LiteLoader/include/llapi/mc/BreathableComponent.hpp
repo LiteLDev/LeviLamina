@@ -32,82 +32,82 @@ public:
 public:
     /**
      * @symbol ??0BreathableComponent@@QEAA@XZ
-     * @hash   1129860367
+     * @hash   1058807871
      */
     MCAPI BreathableComponent();
     /**
      * @symbol ??0BreathableComponent@@QEAA@AEBV0@@Z
-     * @hash   -1214093023
+     * @hash   -1076354815
      */
     MCAPI BreathableComponent(class BreathableComponent const &);
     /**
      * @symbol ?addAdditionalSaveData@BreathableComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1074038696
+     * @hash   1002986200
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canBreathe@BreathableComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   1341220175
+     * @hash   1270167679
      */
     MCAPI bool canBreathe(class Actor const &) const;
     /**
      * @symbol ?generatesBubbles@BreathableComponent@@QEBA_NXZ
-     * @hash   -2071343606
+     * @hash   -1946106086
      */
     MCAPI bool generatesBubbles() const;
     /**
      * @symbol ?getAirRegenPerTick@BreathableComponent@@QEBAHXZ
-     * @hash   1923068968
+     * @hash   2067418856
      */
     MCAPI int getAirRegenPerTick() const;
     /**
      * @symbol ?getAirSupply@BreathableComponent@@QEBAFXZ
-     * @hash   -234217327
+     * @hash   -305269823
      */
     MCAPI short getAirSupply() const;
     /**
      * @symbol ?getBreathableState@BreathableComponent@@QEAAAEAW4BreathableState@1@XZ
-     * @hash   -1849502638
+     * @hash   -1869983470
      */
     MCAPI enum class BreathableComponent::BreathableState & getBreathableState();
     /**
      * @symbol ?getInhaleTime@BreathableComponent@@QEBAMXZ
-     * @hash   -1750595894
+     * @hash   -1571757638
      */
     MCAPI float getInhaleTime() const;
     /**
      * @symbol ?getMaxAirSupply@BreathableComponent@@QEBAFXZ
-     * @hash   -1510816877
+     * @hash   -1581869373
      */
     MCAPI short getMaxAirSupply() const;
     /**
      * @symbol ?getSuffocateTime@BreathableComponent@@QEBAHXZ
-     * @hash   -616091476
+     * @hash   -444833588
      */
     MCAPI int getSuffocateTime() const;
     /**
      * @symbol ??4BreathableComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -835814630
+     * @hash   -702643094
      */
     MCAPI class BreathableComponent & operator=(class BreathableComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@BreathableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1674858602
+     * @hash   -1745911098
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setAirSupply@BreathableComponent@@QEAAXF@Z
-     * @hash   369128367
+     * @hash   298075871
      */
     MCAPI void setAirSupply(short);
     /**
      * @symbol ?updateBreathableState@BreathableComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -714574642
+     * @hash   -785627138
      */
     MCAPI void updateBreathableState(class Actor &);
     /**
      * @symbol ??1BreathableComponent@@QEAA@XZ
-     * @hash   -60827793
+     * @hash   72328367
      */
     MCAPI ~BreathableComponent();
 

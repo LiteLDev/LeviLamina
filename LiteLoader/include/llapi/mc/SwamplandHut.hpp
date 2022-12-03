@@ -39,37 +39,37 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@SwamplandHut@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   780944575
+     * @hash   952632991
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@SwamplandHut@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1891562151
+     * @hash   -1719735351
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@SwamplandHut@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   2018089445
+     * @hash   -2105066427
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  12
      * @symbol ?addHardcodedSpawnAreas@SwamplandHut@@UEBAXAEAVLevelChunk@@@Z
-     * @hash   464979529
+     * @hash   636667945
      */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
     /**
      * @symbol ??0SwamplandHut@@QEAA@FHH@Z
-     * @hash   1813870152
+     * @hash   1985558568
      */
     MCAPI SwamplandHut(short, int, int);
 
 //protected:
     /**
      * @symbol ?placeCauldron@SwamplandHut@@IEAAXAEAVBlockSource@@AEAVRandom@@HHHAEBVBoundingBox@@@Z
-     * @hash   -717721720
+     * @hash   -546033304
      */
     MCAPI void placeCauldron(class BlockSource &, class Random &, int, int, int, class BoundingBox const &);
 

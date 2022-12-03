@@ -42,57 +42,57 @@ public:
     /**
      * @vftbl  2
      * @symbol ?serialize@ItemDescriptorCount@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -590625000
+     * @hash   167273416
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@XZ
-     * @hash   -1391628711
+     * @hash   -633730295
      */
     MCAPI ItemDescriptorCount();
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HG@Z
-     * @hash   -1881835447
+     * @hash   -1123937031
      */
     MCAPI ItemDescriptorCount(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
-     * @hash   -1745958584
+     * @hash   -988060168
      */
     MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
-     * @hash   -1165815385
+     * @hash   -407916969
      */
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
-     * @hash   1619130354
+     * @hash   -1917938526
      */
     MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
-     * @hash   432179872
+     * @hash   1190078288
      */
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
-     * @hash   -1059345390
+     * @hash   -301446974
      */
     MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1200031226
+     * @hash   1957929642
      */
     MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getStackSize@ItemDescriptorCount@@QEBAFXZ
-     * @hash   -28557151
+     * @hash   729341265
      */
     MCAPI short getStackSize() const;
     /**
      * @symbol ?setStackSize@ItemDescriptorCount@@QEAAXF@Z
-     * @hash   508046207
+     * @hash   1265944623
      */
     MCAPI void setStackSize(short);
 
