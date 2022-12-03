@@ -52,7 +52,7 @@ Container* BlockInstance::getContainer() {
     auto be = getBlockEntity();
     if (!be)
         return nullptr;
-    return (Container*)be; // Before 1.19.50: IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    return SymCall("?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
 }
 
 bool BlockInstance::breakNaturally(bool isCreativeMode) {
