@@ -1,5 +1,5 @@
 ﻿#include <bitset>
-#include <magic_enum/magic_enum.hpp>
+#include "magic_enum/magic_enum.hpp"
 
 #include "llapi/mc/Minecraft.hpp"
 
@@ -55,6 +55,11 @@
 #include "llapi/mc/Biome.hpp"
 #include "llapi/mc/BlockSource.hpp"
 #include "llapi/mc/ChunkPos.hpp"
+
+#include "llapi/Global.h"
+#include "llapi/mc/BlockInstance.hpp"
+#include "llapi/mc/DBStorage.hpp"
+#include "llapi/mc/StringTag.hpp"
 
 using ll::logger;
 
@@ -137,7 +142,6 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
-    // std::cout << Global<ServerNetworkHandler> << " " << getNetworkIdentifier() << &Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()) << "\n";
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
@@ -935,6 +939,168 @@ bool Player::sendCustomFormPacket(const std::string& data, std::function<void(st
         }
     });
 }
+
+inline class Player* getOfflinePlayer(class mce::UUID const& uuid) {
+    class Player* (Level:: * rv)(class mce::UUID const&);
+    *((void**)&rv) = dlsym("?getPlayer@Level@@UEBAPEAVPlayer@@AEBVUUID@mce@@@Z");
+    return (Global<Level>->*rv)(std::forward<class mce::UUID const&>(uuid));
+}
+
+DBHelpers::Category const playerCategory = (DBHelpers::Category)7;
+std::string const PLAYER_KEY_SERVER_ID = "ServerId";
+std::string const PLAYER_KEY_MSA_ID = "MsaId";
+std::string const PLAYER_KEY_SELF_SIGNED_ID = "SelfSignedId";
+
+void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view const& uuid)> callback) {
+    static size_t count;
+    count = 0;
+    Global<DBStorage>->forEachKeyWithPrefix("player_", playerCategory, [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
+        if(key_left.size() == 36) {
+            auto tag = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
+            auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
+            if(!msaId.empty()) {
+                if (msaId == key_left) {
+                    count++;
+                    callback(msaId);
+                }
+                return;
+            }
+            if (!includeSelfSignedId) {
+                return;
+            }
+            auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
+            if(!selfSignedId.empty()) {
+                if(selfSignedId == key_left) {
+                    count++;
+                    callback(selfSignedId);
+                }
+                return;
+            }
+        }
+    });
+}
+
+std::vector<string> getAllUuid(bool includeSelfSignedId) {
+    std::vector<std::string> uuids;
+    forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) {
+        uuids.push_back(std::string(uuid));
+    });
+    return uuids;
+}
+
+std::unique_ptr<CompoundTag> getPlayerIdsTag(mce::UUID const& uuid) {
+    auto& dbStorage = *Global<DBStorage>;
+    auto playerKey = "player_" + uuid.asString();
+    if (dbStorage.hasKey(playerKey, playerCategory)) {
+        return dbStorage.getCompoundTag(playerKey, playerCategory);
+    }
+    return {};
+}
+
+std::string getServerId(mce::UUID const& uuid) {
+    auto tag = getPlayerIdsTag(uuid);
+    if (!tag) {
+        return "";
+    }
+    return tag->getString(PLAYER_KEY_SERVER_ID);
+}
+
+bool Player::deletePlayerNbt(mce::UUID const& uuid) {
+    try{
+        auto& dbStorage = *Global<DBStorage>;
+        auto serverId = getServerId(uuid);
+        if (serverId.empty())
+            return false;
+        if (!dbStorage.hasKey(serverId, playerCategory)) {
+            logger.warn("Fail to find key {} while trying to delete player {}`s nbt", serverId, uuid.asString());
+            return false;
+        }
+        auto res = dbStorage.deleteData(serverId, playerCategory);
+        return true;
+    }
+    catch (const std::exception& exc) {
+        logger.error("Fail to delete player nbt!\n{}", exc.what());
+    }
+    return false;
+}
+
+std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
+    auto serverId = getServerId(uuid);
+    if(serverId.empty()) {
+        return {};
+    }
+    if(!Global<DBStorage>->hasKey(serverId, playerCategory)) {
+        return {};
+    }
+    return Global<DBStorage>->getCompoundTag(serverId, playerCategory);
+}
+
+std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
+    if(auto player = getOfflinePlayer(uuid)) {
+        return player->getNbt();
+    }
+    return getOfflineNbt(uuid);
+}
+
+bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag& nbt) {
+    try{
+        auto serverId = getServerId(uuid);
+        if(serverId.empty()) {
+            return false;
+        }
+        Global<DBStorage>->saveData(serverId, nbt.toBinaryNBT(), playerCategory);
+        return true;
+    }
+    catch (const std::exception& exc) {
+        logger.error("Fail to set player nbt!\n{}",exc.what());
+    }
+    return false;
+}
+
+bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<string> tags) {
+    try{
+        auto serverId = getServerId(uuid);
+        if(serverId.empty()) {
+            return false;
+        }
+        bool res = true;
+        if(auto pl = getOfflinePlayer(uuid)) {
+            auto playerTag = pl->getNbt();
+            for(int i = 0; i <= tags.size()-1; i++) {
+                if(data.get(tags[i]) == nullptr) {
+                    continue;
+                }
+                else{
+                    res = res && (*playerTag).put(tags[i], data.get(tags[i])->copy());
+                }
+            }
+            res = res && pl->setNbt(playerTag.get());
+            pl->refreshInventory();
+            data.destroy();
+            return res;
+        }
+        else{
+            auto oridata = getOfflineNbt(uuid);
+            CompoundTag& olddata = *oridata;
+            for(int i = 0; i <= tags.size()-1; i++) {
+                if(data.get(tags[i]) == nullptr) {
+                    continue;
+                }
+                else{
+                    res = res && olddata.put(tags[i], data.get(tags[i])->copy());
+                }
+            }
+            res = res && setPlayerNbt(uuid, olddata);
+            data.destroy();
+            olddata.destroy();
+            return res;
+        }
+    }
+    catch (const std::exception& exc) {
+        logger.error("Fail to set player nbt tag!\n{}", exc.what());
+    }
+    return false;
+}   
 
 #ifdef DEBUG
 

@@ -256,6 +256,62 @@ Player* PlayerClass::extract(Local<Value> v) {
 }
 
 //公用API
+Local<Value> McClass::getPlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        return NbtCompoundClass::pack(Player::getPlayerNbt(uuid));
+    }
+    CATCH("Fail in getPlayerNbt!")
+}
+
+Local<Value> McClass::setPlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto nbt = NbtCompoundClass::extract(args[1]);
+        auto &data = *nbt;
+        Player::setPlayerNbt(uuid, data);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setPlayerNbt!")
+}
+
+Local<Value> McClass::setPlayerNbtTags(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kArray);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto nbt = NbtCompoundClass::extract(args[1]);
+        auto &data = *nbt;
+        auto arr = args[2].asArray();
+        std::vector<std::string> tags;
+        for (int i = 0; i < arr.size(); ++i) {
+            auto value = arr.get(i);
+            if (value.getKind() == ValueKind::kString) {
+                tags.push_back(value.asString().toString());
+            }
+        }
+        Player::setPlayerNbtTags(uuid, data, tags);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setPlayerNbtTags!")
+}
+
+Local<Value> McClass::deletePlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        Player::deletePlayerNbt(uuid);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in deletePlayerNbt!")
+}
+
 Local<Value> McClass::getPlayer(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)

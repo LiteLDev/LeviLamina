@@ -38,6 +38,10 @@ ClassDefine<void> McClassBuilder =
         .function("setStructure", &McClass::setStructure)
         .function("getStructure", &McClass::getStructure)
         .function("newParticleSpawner", &McClass::newParticleSpawner)
+        .function("getPlayerNbt", &McClass::getPlayerNbt)
+        .function("setPlayerNbt", &McClass::setPlayerNbt)
+        .function("setPlayerNbtTags", &McClass::setPlayerNbtTags)
+        .function("deletePlayerNbt", &McClass::deletePlayerNbt)
 
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)

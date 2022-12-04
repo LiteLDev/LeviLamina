@@ -64,6 +64,7 @@ enum class EVENT_TYPES : int {
     onTakeItem,
     onDropItem,
     onEat,
+    onAte,
     onConsumeTotem,
     onEffectAdded,
     onEffectUpdated,
@@ -649,6 +650,15 @@ void EnableEventListener(int eventId) {
                     CallEvent(EVENT_TYPES::onEat, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mFoodItem));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onEat);
+            });
+            break;
+
+        case EVENT_TYPES::onAte:
+            Event::PlayerAteEvent::subscribe([](const PlayerAteEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onAte) {
+                    CallEvent(EVENT_TYPES::onAte, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mFoodItem));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onAte);
             });
             break;
 
