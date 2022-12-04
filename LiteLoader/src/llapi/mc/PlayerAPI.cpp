@@ -56,11 +56,8 @@
 #include "llapi/mc/BlockSource.hpp"
 #include "llapi/mc/ChunkPos.hpp"
 
-#include <iostream>
 #include "llapi/Global.h"
-#include "llapi/utils/PluginOwnData.h"
 #include "llapi/mc/BlockInstance.hpp"
-#include "llapi/LLAPI.h"
 #include "llapi/mc/DBStorage.hpp"
 #include "llapi/mc/StringTag.hpp"
 
@@ -117,7 +114,7 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
 
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2088);
+        return getName();
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -807,7 +804,8 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
+    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    handler->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
