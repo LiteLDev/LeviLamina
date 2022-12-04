@@ -605,7 +605,7 @@ public:
 };
 
 template <typename T>
-struct SharePtrRefTraits;
+struct SharePtrRefTraits {};
 
 template <typename T>
 class SubChunkStorage;

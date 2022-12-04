@@ -17,6 +17,8 @@ add_subdirectory(Tools/ScriptX/CMake/ScriptX-Lua)
 add_subdirectory(Tools/ScriptX/CMake/ScriptX-QuickJs)
 add_subdirectory(Tools/ScriptX/CMake/ScriptX-NodeJs)
 add_subdirectory(Tools/SymDBHelper)
+add_subdirectory(ParticleAPI)
+add_subdirectory(PermissionAPI/PermissionAPI)
 
 include(${CMAKE_SOURCE_DIR}/CMake/PackOutput.cmake)
 include(${CMAKE_SOURCE_DIR}/CMake/PackSDK.cmake)
