@@ -42,6 +42,13 @@ public:
         HEAD_ROTATION,
     };
 
+    enum class NbtDataType :int {
+        Snbt,
+        Binary,
+        Json,
+        Unknown,
+    };
+    
     LIAPI std::string getName();
 
     /**
@@ -2515,7 +2522,6 @@ public:
      * @hash   -690377246
      */
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum class ContainerID, int);
-
 protected:
 
 private:
