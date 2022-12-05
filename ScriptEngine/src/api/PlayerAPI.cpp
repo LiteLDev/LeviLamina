@@ -430,11 +430,14 @@ Local<Value> PlayerClass::getBlockPos() {
 Local<Value> PlayerClass::getLastDeathPos() {
     try {
         Player* player = get();
-        if (!player || player->hasDiedBefore()) {
+        if (!player) {
             return Local<Value>();
         }
-
-        return IntPos::newPos(player->getLastDeathPos().value(), player->getLastDeathDimension().value());
+        auto pos = player->getLastDeathPosition();
+        if (pos.second == -1) {
+            return Local<Value>();
+        }
+        return IntPos::newPos(pos.first, pos.second);
     }
     CATCH("Fail in getLastDeathPos!")
 }
