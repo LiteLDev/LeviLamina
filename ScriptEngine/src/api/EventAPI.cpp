@@ -678,7 +678,7 @@ void EnableEventListener(int eventId) {
                 if (ev.mEventType == PlayerEffectChangedEvent::EventType::Add) {
                     IF_LISTENED(EVENT_TYPES::onEffectAdded) {
                         CallEvent(EVENT_TYPES::onEffectAdded, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectAdded);
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Remove) {
@@ -690,7 +690,7 @@ void EnableEventListener(int eventId) {
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Update) {
                     IF_LISTENED(EVENT_TYPES::onEffectUpdated) {
                         CallEvent(EVENT_TYPES::onEffectUpdated, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectUpdated);
                 }
