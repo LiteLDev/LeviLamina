@@ -7,4 +7,5 @@
 namespace PlayerDeathPositions {
     std::pair<Vec3, int> makeDeathPos(Vec3 vec3, int dim);
     std::unordered_map<std::string, std::pair<Vec3, int>> getDeathPositions();
+    void deathEventListener();
 }

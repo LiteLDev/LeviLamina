@@ -1102,8 +1102,8 @@ std::pair<Vec3, int> Player::getLastDeathPosition() {
         if (pos.first == getUuid()) {
             return pos.second;
         }
-        return std::pair<Vec3, int>{Vec3(0, 0, 0), -1};
     }
+    return std::pair<Vec3, int>{Vec3(0, 0, 0), -1};
 }
 
 #ifdef DEBUG
