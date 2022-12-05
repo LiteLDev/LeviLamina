@@ -207,6 +207,7 @@ public:
     LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
     LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
     LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
+    LIAPI std::pair<Vec3, int> getLastDeathPosition();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER

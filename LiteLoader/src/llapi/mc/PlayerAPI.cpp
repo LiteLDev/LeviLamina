@@ -60,6 +60,7 @@
 #include "llapi/mc/BlockInstance.hpp"
 #include "llapi/mc/DBStorage.hpp"
 #include "llapi/mc/StringTag.hpp"
+#include "liteloader/PlayerDeathPositions.h"
 
 using ll::logger;
 
@@ -1095,6 +1096,15 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<s
     }
     return false;
 }   
+
+std::pair<Vec3, int> Player::getLastDeathPosition() {
+    for (auto pos : PlayerDeathPositions::getDeathPositions()) {
+        if (pos.first == getUuid()) {
+            return pos.second;
+        }
+        return std::pair<Vec3, int>{Vec3(0, 0, 0), -1};
+    }
+}
 
 #ifdef DEBUG
 
