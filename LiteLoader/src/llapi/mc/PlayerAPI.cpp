@@ -940,12 +940,6 @@ bool Player::sendCustomFormPacket(const std::string& data, std::function<void(st
     });
 }
 
-inline class Player* getOfflinePlayer(class mce::UUID const& uuid) {
-    class Player* (Level:: * rv)(class mce::UUID const&);
-    *((void**)&rv) = dlsym("?getPlayer@Level@@UEBAPEAVPlayer@@AEBVUUID@mce@@@Z");
-    return (Global<Level>->*rv)(std::forward<class mce::UUID const&>(uuid));
-}
-
 DBHelpers::Category const playerCategory = (DBHelpers::Category)7;
 std::string const PLAYER_KEY_SERVER_ID = "ServerId";
 std::string const PLAYER_KEY_MSA_ID = "MsaId";
@@ -1036,7 +1030,7 @@ std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
 }
 
 std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
-    if(auto player = getOfflinePlayer(uuid)) {
+    if(auto player = Global<Level>->getPlayer(uuid)) {
         return player->getNbt();
     }
     return getOfflineNbt(uuid);
@@ -1064,7 +1058,7 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<s
             return false;
         }
         bool res = true;
-        if(auto pl = getOfflinePlayer(uuid)) {
+        if(auto pl = Global<Level>->getPlayer(uuid)) {
             auto playerTag = pl->getNbt();
             for(int i = 0; i <= tags.size()-1; i++) {
                 if(data.get(tags[i]) == nullptr) {
