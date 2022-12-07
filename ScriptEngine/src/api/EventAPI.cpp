@@ -64,6 +64,7 @@ enum class EVENT_TYPES : int {
     onTakeItem,
     onDropItem,
     onEat,
+    onAte,
     onConsumeTotem,
     onEffectAdded,
     onEffectUpdated,
@@ -652,6 +653,15 @@ void EnableEventListener(int eventId) {
             });
             break;
 
+        case EVENT_TYPES::onAte:
+            Event::PlayerAteEvent::subscribe([](const PlayerAteEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onAte) {
+                    CallEvent(EVENT_TYPES::onAte, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mFoodItem));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onAte);
+            });
+            break;
+
         case EVENT_TYPES::onConsumeTotem:
             Event::PlayerConsumeTotemEvent::subscribe([](const PlayerConsumeTotemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onConsumeTotem) {
@@ -668,7 +678,7 @@ void EnableEventListener(int eventId) {
                 if (ev.mEventType == PlayerEffectChangedEvent::EventType::Add) {
                     IF_LISTENED(EVENT_TYPES::onEffectAdded) {
                         CallEvent(EVENT_TYPES::onEffectAdded, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectAdded);
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Remove) {
@@ -680,7 +690,7 @@ void EnableEventListener(int eventId) {
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Update) {
                     IF_LISTENED(EVENT_TYPES::onEffectUpdated) {
                         CallEvent(EVENT_TYPES::onEffectUpdated, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectUpdated);
                 }

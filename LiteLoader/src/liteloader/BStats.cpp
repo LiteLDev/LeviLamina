@@ -269,7 +269,7 @@ void submitTask() {
             {"Content-Type", "application/json"},
             {"User-Agent", "Metrics-Service/1"}};
         HttpPost(
-            "https://bstats.org/api/v2/sdata/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10);
+            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10);
     });
 
     a.detach();

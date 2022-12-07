@@ -15,7 +15,7 @@
 class ServerPlayer;
 class Player;
 class NetworkIdentifier;
-class Certificate;
+class Certificate; 
 class Container;
 class CompoundTag;
 class LayeredAbilities;
@@ -42,6 +42,13 @@ public:
         HEAD_ROTATION,
     };
 
+    enum class NbtDataType :int {
+        Snbt,
+        Binary,
+        Json,
+        Unknown,
+    };
+    
     LIAPI std::string getName();
 
     /**
@@ -132,8 +139,15 @@ public:
     LIAPI bool transferServer(const string& address, unsigned short port);
     LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
     LIAPI bool removeSidebar();
+
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+
+    LIAPI static bool setPlayerNbt(mce::UUID const& uuid, CompoundTag& nbt);
+    LIAPI static bool setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<string> tags);
+    LIAPI static bool deletePlayerNbt(mce::UUID const& uuid);
+    LIAPI static std::unique_ptr<CompoundTag> getPlayerNbt(mce::UUID const& uuid);
+
     LIAPI bool refreshAttribute(class Attribute const& attribute);
     LIAPI bool refreshAttributes(std::vector<Attribute const*> const& attributes);
     LIAPI void addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
@@ -193,6 +207,7 @@ public:
     LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
     LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
     LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
+    LIAPI std::pair<Vec3, int> getLastDeathPosition();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER
@@ -2508,7 +2523,6 @@ public:
      * @hash   -690377246
      */
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum class ContainerID, int);
-
 protected:
 
 private:
