@@ -261,7 +261,13 @@ Local<Value> McClass::getPlayerNbt(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
-        return NbtCompoundClass::pack(Player::getPlayerNbt(uuid));
+        auto nbt = Player::getPlayerNbt(uuid);
+        if (nbt != nullptr) {
+            return NbtCompoundClass::pack(Player::getPlayerNbt(uuid));
+        }
+        else {
+            return Local<Value>();
+        }
     }
     CATCH("Fail in getPlayerNbt!")
 }
@@ -272,8 +278,7 @@ Local<Value> McClass::setPlayerNbt(const Arguments& args) {
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
         auto nbt = NbtCompoundClass::extract(args[1]);
-        auto &data = *nbt;
-        Player::setPlayerNbt(uuid, data);
+        Player::setPlayerNbt(uuid, nbt);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setPlayerNbt!")
@@ -286,7 +291,6 @@ Local<Value> McClass::setPlayerNbtTags(const Arguments& args) {
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
         auto nbt = NbtCompoundClass::extract(args[1]);
-        auto &data = *nbt;
         auto arr = args[2].asArray();
         std::vector<std::string> tags;
         for (int i = 0; i < arr.size(); ++i) {
@@ -295,7 +299,7 @@ Local<Value> McClass::setPlayerNbtTags(const Arguments& args) {
                 tags.push_back(value.asString().toString());
             }
         }
-        Player::setPlayerNbtTags(uuid, data, tags);
+        Player::setPlayerNbtTags(uuid, nbt, tags);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setPlayerNbtTags!")
