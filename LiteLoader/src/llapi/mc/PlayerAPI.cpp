@@ -950,10 +950,10 @@ void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view c
     static size_t count;
     count = 0;
     Global<DBStorage>->forEachKeyWithPrefix("player_", playerCategory, [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
-        if(key_left.size() == 36) {
+        if (key_left.size() == 36) {
             auto tag = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
             auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
-            if(!msaId.empty()) {
+            if (!msaId.empty()) {
                 if (msaId == key_left) {
                     count++;
                     callback(msaId);
@@ -964,7 +964,7 @@ void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view c
                 return;
             }
             auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
-            if(!selfSignedId.empty()) {
+            if (!selfSignedId.empty()) {
                 if(selfSignedId == key_left) {
                     count++;
                     callback(selfSignedId);
@@ -975,7 +975,7 @@ void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view c
     });
 }
 
-std::vector<string> getAllUuid(bool includeSelfSignedId) {
+std::vector<string> Player::getAllUuid(bool includeSelfSignedId) {
     std::vector<std::string> uuids;
     forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) {
         uuids.push_back(std::string(uuid));
@@ -1021,48 +1021,71 @@ bool Player::deletePlayerNbt(mce::UUID const& uuid) {
 
 std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
     auto serverId = getServerId(uuid);
-    if(serverId.empty()) {
-        return {};
+    if (serverId.empty()) {
+        return nullptr;
     }
-    if(!Global<DBStorage>->hasKey(serverId, playerCategory)) {
-        return {};
+    if (!Global<DBStorage>->hasKey(serverId, playerCategory)) {
+        return nullptr;
     }
     return Global<DBStorage>->getCompoundTag(serverId, playerCategory);
 }
 
+
+
 std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
-    if(auto player = Global<Level>->getPlayer(uuid)) {
+    if (auto player = Global<Level>->getPlayer(uuid)) {
         return player->getNbt();
     }
     return getOfflineNbt(uuid);
 }
 
-bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag& nbt) {
-    try{
+bool setOfflineNbt(mce::UUID const& uuid, CompoundTag* nbt) {
+    try {
+        auto &data = *nbt;
         auto serverId = getServerId(uuid);
-        if(serverId.empty()) {
+        if (serverId.empty()) {
             return false;
         }
-        Global<DBStorage>->saveData(serverId, nbt.toBinaryNBT(), playerCategory);
+        Global<DBStorage>->saveData(serverId, data.toBinaryNBT(), playerCategory);
         return true;
     }
     catch (const std::exception& exc) {
-        logger.error("Fail to set player nbt!\n{}",exc.what());
+        logger.error("Fail to set offline player nbt!\n{}",exc.what());
     }
     return false;
 }
 
-bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<string> tags) {
-    try{
+bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
+    try {
         auto serverId = getServerId(uuid);
-        if(serverId.empty()) {
+        if (serverId.empty()) {
             return false;
         }
         bool res = true;
-        if(auto pl = Global<Level>->getPlayer(uuid)) {
+        if (auto pl = Global<Level>->getPlayer(uuid)) {
+            return pl->setNbt(nbt);
+        }
+        else {
+            return setOfflineNbt(uuid, nbt);
+        }
+    }
+    catch (const std::exception& exc) {
+        logger.error("Fail to set player nbt!\n{}",exc.what());
+    }
+}
+
+bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, vector<string> tags) {
+    try {
+        auto &data = *nbt;
+        auto serverId = getServerId(uuid);
+        if (serverId.empty()) {
+            return false;
+        }
+        bool res = true;
+        if (auto pl = Global<Level>->getPlayer(uuid)) {
             auto playerTag = pl->getNbt();
-            for(int i = 0; i <= tags.size()-1; i++) {
-                if(data.get(tags[i]) == nullptr) {
+            for (int i = 0; i <= tags.size()-1; i++) {
+                if (data.get(tags[i]) == nullptr) {
                     continue;
                 }
                 else{
@@ -1074,18 +1097,18 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag& data, vector<s
             data.destroy();
             return res;
         }
-        else{
+        else {
             auto oridata = getOfflineNbt(uuid);
             CompoundTag& olddata = *oridata;
-            for(int i = 0; i <= tags.size()-1; i++) {
-                if(data.get(tags[i]) == nullptr) {
+            for (int i = 0; i <= tags.size()-1; i++) {
+                if (data.get(tags[i]) == nullptr) {
                     continue;
                 }
                 else{
                     res = res && olddata.put(tags[i], data.get(tags[i])->copy());
                 }
             }
-            res = res && setPlayerNbt(uuid, olddata);
+            res = res && setOfflineNbt(uuid, oridata.get());
             data.destroy();
             olddata.destroy();
             return res;
