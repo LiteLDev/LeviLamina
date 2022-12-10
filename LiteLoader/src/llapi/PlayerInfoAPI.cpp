@@ -106,6 +106,11 @@ std::string getUUID(std::string name) {
     return res.has_value() ? res.value().uuid : "";
 }
 
+std::string getUUIDByXuid(xuid_t xuid) {
+    auto res = findByXuid(xuid);
+    return res.has_value() ? res.value().uuid : "";
+}
+
 std::string fromXuid(std::string xuid) {
     auto res = findByXuid(xuid);
     return res.has_value() ? res.value().name : "";
