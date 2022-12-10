@@ -1074,7 +1074,7 @@ bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     }
 }
 
-bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, vector<string> tags) {
+bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags) {
     try {
         auto &data = *nbt;
         auto serverId = getServerId(uuid);
