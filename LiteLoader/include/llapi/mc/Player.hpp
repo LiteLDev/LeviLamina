@@ -144,7 +144,7 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt);
 
     LIAPI static bool setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt);
-    LIAPI static bool setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, vector<string> tags);
+    LIAPI static bool setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags);
     LIAPI static bool deletePlayerNbt(mce::UUID const& uuid);
     LIAPI static std::unique_ptr<CompoundTag> getPlayerNbt(mce::UUID const& uuid);
     LIAPI static std::vector<string> getAllUuid(bool includeSelfSignedId);
