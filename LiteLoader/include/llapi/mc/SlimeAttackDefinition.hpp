@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0SlimeAttackDefinition@@QEAA@XZ
-     * @hash   715066031
+     * @hash   876775423
      */
     MCAPI SlimeAttackDefinition();
     /**
      * @symbol ?initialize@SlimeAttackDefinition@@QEAAXAEAVEntityContext@@AEAVSlimeAttackGoal@@@Z
-     * @hash   -1180714755
+     * @hash   -1019066867
      */
     MCAPI void initialize(class EntityContext &, class SlimeAttackGoal &);
     /**
      * @symbol ?buildSchema@SlimeAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -21118985
+     * @hash   140590407
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>> &);
 

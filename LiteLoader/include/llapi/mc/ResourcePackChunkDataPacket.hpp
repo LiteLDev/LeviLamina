@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ResourcePackChunkDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -391561562
+     * @hash   -465381738
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ResourcePackChunkDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -90689165
+     * @hash   -164509341
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ResourcePackChunkDataPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1254736300
+     * @hash   -1328556476
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ResourcePackChunkDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   94525508
+     * @hash   20705332
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ResourcePackChunkDataPacket@@QEAA@XZ
-     * @hash   -2013697164
+     * @hash   -2087517340
      */
     MCAPI ResourcePackChunkDataPacket();
     /**
      * @symbol ??0ResourcePackChunkDataPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KAEBV?$vector@EV?$allocator@E@std@@@2@@Z
-     * @hash   1149103236
+     * @hash   1075283060
      */
     MCAPI ResourcePackChunkDataPacket(std::string const &, int, unsigned __int64, std::vector<unsigned char> const &);
 

@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@InteractActionNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   -1829825749
+     * @hash   -1747471893
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@InteractActionNode@@EEAAXAEAVActor@@@Z
-     * @hash   -432945649
+     * @hash   -350622545
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0InteractActionNode@@QEAA@XZ
-     * @hash   -860896326
+     * @hash   -778542470
      */
     MCAPI InteractActionNode();
 

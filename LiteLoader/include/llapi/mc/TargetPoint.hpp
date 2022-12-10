@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0TargetPoint@@QEAA@MMMMMM@Z
-     * @hash   1013422275
+     * @hash   1185279827
      */
     MCAPI TargetPoint(float, float, float, float, float, float);
 

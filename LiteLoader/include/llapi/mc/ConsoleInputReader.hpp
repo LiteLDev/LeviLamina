@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0ConsoleInputReader@@QEAA@XZ
-     * @hash   1861401298
+     * @hash   1949075250
      */
     MCAPI ConsoleInputReader();
     /**
      * @symbol ?getLine@ConsoleInputReader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -646505059
+     * @hash   -558769603
      */
     MCAPI bool getLine(std::string &);
     /**
      * @symbol ?unblockReading@ConsoleInputReader@@QEAAXXZ
-     * @hash   1817127605
+     * @hash   1904863061
      */
     MCAPI void unblockReading();
     /**
      * @symbol ??1ConsoleInputReader@@QEAA@XZ
-     * @hash   -2070304384
+     * @hash   -1982630432
      */
     MCAPI ~ConsoleInputReader();
 

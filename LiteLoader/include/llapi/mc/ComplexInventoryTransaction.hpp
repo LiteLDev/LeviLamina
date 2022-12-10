@@ -47,80 +47,71 @@ public:
     virtual ~ComplexInventoryTransaction();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?postLoadItems@ComplexInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-     * @hash   1874140213
+     * @hash   2019950821
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
      * @vftbl  4
      * @symbol ?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     * @hash   -62190449
+     * @hash   656207023
      */
     virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-     * @hash   2035956942
+     * @hash   2086620862
      */
     virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXINVENTORYTRANSACTION
     /**
      * @symbol ?read@ComplexInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
-     * @hash   780859142
+     * @hash   869824678
      */
     MCVAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@ComplexInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   668858110
+     * @hash   757823646
      */
     MCVAPI void write(class BinaryStream &) const;
 #endif
     /**
      * @symbol ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
-     * @hash   1895693643
+     * @hash   1824118363
      */
     MCAPI ComplexInventoryTransaction(enum class ComplexInventoryTransaction::Type);
     /**
      * @symbol ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@@Z
-     * @hash   -2118201152
+     * @hash   -1399803680
      */
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum class ComplexInventoryTransaction::Type);
     /**
      * @symbol ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@AEBVInventoryTransaction@@@Z
-     * @hash   284638599
+     * @hash   1003036071
      */
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum class ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     /**
      * @symbol ?getTransactionTypeName@ComplexInventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
-     * @hash   521271454
+     * @hash   1239668926
      */
     MCAPI static std::string const getTransactionTypeName(enum class ComplexInventoryTransaction::Type);
 
-//protected:
-    /**
-     * @symbol ?_checkTransactionItemsMatch@ComplexInventoryTransaction@@IEBA_NAEBVPlayer@@AEAVItemStackBase@@H@Z
-     * @hash   -807461253
-     */
-    MCAPI bool _checkTransactionItemsMatch(class Player const &, class ItemStackBase &, int) const;
-
 //private:
-
-protected:
 
 private:
     /**
      * @symbol ?transactionTypeMap@ComplexInventoryTransaction@@0V?$BidirectionalUnorderedMap@W4Type@ComplexInventoryTransaction@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
-     * @hash   -699696881
+     * @hash   -65052481
      */
     MCAPI static class BidirectionalUnorderedMap<enum class ComplexInventoryTransaction::Type, std::string> const transactionTypeMap;
 

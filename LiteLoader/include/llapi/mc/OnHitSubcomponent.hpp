@@ -52,19 +52,19 @@ public:
     /**
      * @vftbl  4
      * @symbol ?getName@OnHitSubcomponent@@UEAAPEBDXZ
-     * @hash   -1897132948
+     * @hash   -1972859748
      */
     virtual char const * getName();
     /**
      * @symbol ??0OnHitSubcomponent@@QEAA@XZ
-     * @hash   -832809603
+     * @hash   -908782419
      */
     MCAPI OnHitSubcomponent();
 
 //protected:
     /**
      * @symbol ?_canAttack@OnHitSubcomponent@@IEBA_NPEAVActor@@0@Z
-     * @hash   445787908
+     * @hash   369815092
      */
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 

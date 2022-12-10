@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0BlockBreakSensorDefinition@@QEAA@XZ
-     * @hash   -1723036917
+     * @hash   -1794735205
      */
     MCAPI BlockBreakSensorDefinition();
     /**
      * @symbol ?initialize@BlockBreakSensorDefinition@@QEAAXAEAVEntityContext@@AEAVBlockBreakSensorComponent@@@Z
-     * @hash   -1545979901
+     * @hash   -1617708941
      */
     MCAPI void initialize(class EntityContext &, class BlockBreakSensorComponent &);
     /**
      * @symbol ?buildSchema@BlockBreakSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockBreakSensorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   -35713706
+     * @hash   -107442746
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>> &);
 

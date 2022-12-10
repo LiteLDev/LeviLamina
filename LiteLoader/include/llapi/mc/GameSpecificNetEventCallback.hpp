@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-     * @hash   1295623869
+     * @hash   1384589405
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 

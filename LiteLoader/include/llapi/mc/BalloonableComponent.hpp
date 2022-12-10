@@ -32,14 +32,14 @@ public:
 public:
     /**
      * @symbol ?getInteraction@BalloonableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   1786741589
+     * @hash   1931091477
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 //private:
     /**
      * @symbol ?attach@BalloonableComponent@@AEAA_NAEAVActor@@0AEAVItemStack@@@Z
-     * @hash   -87117040
+     * @hash   57248224
      */
     MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
 

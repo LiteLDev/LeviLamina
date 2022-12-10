@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LegacySpringsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -318437005
+     * @hash   -161232781
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LegacySpringsFeature@@QEAA@AEBVFeatureRegistry@@AEBVBaseGameVersion@@@Z
-     * @hash   39157273
+     * @hash   196253865
      */
     MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
 

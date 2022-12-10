@@ -24,7 +24,7 @@ namespace StateSerializationUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?fromJavaNbtString@StateSerializationUtils@@YA?AW4WallConnectionType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1138783754
+     * @hash   -594873130
      */
     MCAPI enum WallConnectionType fromJavaNbtString(std::string const &);
 

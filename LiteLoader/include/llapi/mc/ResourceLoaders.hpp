@@ -24,47 +24,47 @@ namespace ResourceLoaders {
 #undef AFTER_EXTRA
     /**
      * @symbol ?EMPTY_STRING@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1985722989
+     * @hash   -197509565
      */
     MCAPI extern std::string const EMPTY_STRING;
     /**
      * @symbol ?IMGEXT_JPEG@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1677644977
+     * @hash   -829108895
      */
     MCAPI extern std::string const IMGEXT_JPEG;
     /**
      * @symbol ?IMGEXT_JPG@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   655178707
+     * @hash   -1851575165
      */
     MCAPI extern std::string const IMGEXT_JPG;
     /**
      * @symbol ?IMGEXT_PNG@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1829295437
+     * @hash   -41082013
      */
     MCAPI extern std::string const IMGEXT_PNG;
     /**
      * @symbol ?IMGEXT_TARGA@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -752670829
+     * @hash   1035542595
      */
     MCAPI extern std::string const IMGEXT_TARGA;
     /**
      * @symbol ?IMGEXT_TEXTURESET@ResourceLoaders@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1210880945
+     * @hash   -1295872927
      */
     MCAPI extern std::string const IMGEXT_TEXTURESET;
     /**
      * @symbol ?backCompatGroup@ResourceLoaders@@3VBackwardsCompatTextureGroup@@A
-     * @hash   2072316539
+     * @hash   -1662902853
      */
     MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
     /**
      * @symbol ?loaders@ResourceLoaders@@3V?$map@W4ResourceFileSystem@@V?$unique_ptr@VResourceLoader@@U?$default_delete@VResourceLoader@@@std@@@std@@U?$less@W4ResourceFileSystem@@@3@V?$allocator@U?$pair@$$CBW4ResourceFileSystem@@V?$unique_ptr@VResourceLoader@@U?$default_delete@VResourceLoader@@@std@@@std@@@std@@@3@@std@@A
-     * @hash   -398883903
+     * @hash   160864001
      */
     MCAPI extern class std::map<enum class ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum class ResourceFileSystem>, class std::allocator<struct std::pair<enum class ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
     /**
      * @symbol ?supportedImageExtensions@ResourceLoaders@@3V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B
-     * @hash   -2059019984
+     * @hash   -1499272080
      */
     MCAPI extern std::vector<std::string> const supportedImageExtensions;
 

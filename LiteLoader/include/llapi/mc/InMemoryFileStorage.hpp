@@ -33,37 +33,37 @@ public:
 public:
     /**
      * @symbol ??0InMemoryFileStorage@@QEAA@PEAVEnv@leveldb@@@Z
-     * @hash   -88599465
+     * @hash   385611751
      */
     MCAPI InMemoryFileStorage(class leveldb::Env *);
     /**
      * @symbol ?createFile@InMemoryFileStorage@@QEAA?AV?$shared_ptr@VInMemoryFile@@@std@@AEBVPath@Core@@@Z
-     * @hash   -687543110
+     * @hash   -213331894
      */
     MCAPI class std::shared_ptr<class InMemoryFile> createFile(class Core::Path const &);
     /**
      * @symbol ?deleteFile@InMemoryFileStorage@@QEAA_NAEBVPath@Core@@@Z
-     * @hash   -300710615
+     * @hash   173500601
      */
     MCAPI bool deleteFile(class Core::Path const &);
     /**
      * @symbol ?findFile@InMemoryFileStorage@@QEAA_NAEBVPath@Core@@AEAV?$shared_ptr@VInMemoryFile@@@std@@@Z
-     * @hash   96963903
+     * @hash   571175119
      */
     MCAPI bool findFile(class Core::Path const &, class std::shared_ptr<class InMemoryFile> &);
     /**
      * @symbol ?flushToDisk@InMemoryFileStorage@@QEAAXXZ
-     * @hash   2101952829
+     * @hash   -1718803251
      */
     MCAPI void flushToDisk();
     /**
      * @symbol ?populateFileList@InMemoryFileStorage@@QEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   931003731
+     * @hash   1405199571
      */
     MCAPI void populateFileList(std::vector<std::string> &);
     /**
      * @symbol ??1InMemoryFileStorage@@QEAA@XZ
-     * @hash   265044533
+     * @hash   739255749
      */
     MCAPI ~InMemoryFileStorage();
 

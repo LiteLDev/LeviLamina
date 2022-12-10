@@ -51,69 +51,69 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@CaveFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -116977324
+     * @hash   38750804
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @vftbl  2
      * @symbol ?isValidPlacement@CaveFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1106673511
+     * @hash   -950945383
      */
     virtual bool isValidPlacement(std::string const &);
     /**
      * @vftbl  3
      * @symbol ?addRoom@CaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@AEAVRenderParams@@AEBUCarvingParameters@4@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z
-     * @hash   -747718702
+     * @hash   -591959822
      */
     virtual void addRoom(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class RenderParams &, struct CaveFeatureUtils::CarvingParameters const &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
     /**
      * @vftbl  4
      * @symbol ?addTunnel@CaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@MMMHHMAEAVRenderParams@@AEBUCarvingParameters@4@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z
-     * @hash   -1078886961
+     * @hash   -923128081
      */
     virtual void addTunnel(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, float, int, int, float, class RenderParams &, struct CaveFeatureUtils::CarvingParameters const &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
     /**
      * @vftbl  5
      * @symbol ?carveEllipsoidVolume@CaveFeature@@MEBA_NAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@AEBVBoundingBox@@MMAEBUCarvingParameters@4@@Z
-     * @hash   2037222260
+     * @hash   -2102016908
      */
     virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     /**
      * @vftbl  6
      * @symbol ?addFeature@CaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBVChunkPos@@AEAVRandom@@1AEAVRenderParams@@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z
-     * @hash   -102417812
+     * @hash   53341068
      */
     virtual void addFeature(class IBlockWorldGenAPI &, class ChunkPos const &, class Random &, class ChunkPos const &, class RenderParams &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
     /**
      * @symbol ??0CaveFeature@@QEAA@XZ
-     * @hash   252370101
+     * @hash   408390373
      */
     MCAPI CaveFeature();
     /**
      * @symbol ?getWidthModifier@CaveFeature@@QEBAMAEAVRenderParams@@@Z
-     * @hash   -1372506427
+     * @hash   -1216778299
      */
     MCAPI float getWidthModifier(class RenderParams &) const;
 
 //protected:
     /**
      * @symbol ?carveBlock@CaveFeature@@IEBA_NAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@VBlockPos@@PEA_N_NAEBVVec3@@HV5@@Z
-     * @hash   -1425667389
+     * @hash   -1269908509
      */
     MCAPI bool carveBlock(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class BlockPos, bool *, bool, class Vec3 const &, int, class BlockPos) const;
     /**
      * @symbol ?carveEllipsoid@CaveFeature@@IEBA_NAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@MMAEBUCarvingParameters@4@@Z
-     * @hash   -206897515
+     * @hash   -51138635
      */
     MCAPI bool carveEllipsoid(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     /**
      * @symbol ?detectWater@CaveFeature@@IEBA_NAEAVIBlockWorldGenAPI@@AEBVBoundingBox@@@Z
-     * @hash   1675814069
+     * @hash   1831542197
      */
     MCAPI bool detectWater(class IBlockWorldGenAPI &, class BoundingBox const &) const;
     /**
      * @symbol ?shouldSkipCarving@CaveFeature@@KA_NMMMMM@Z
-     * @hash   -1902562144
+     * @hash   -1746834016
      */
     MCAPI static bool shouldSkipCarving(float, float, float, float, float);
 

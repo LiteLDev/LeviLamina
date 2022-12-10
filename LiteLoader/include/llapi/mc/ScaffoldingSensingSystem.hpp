@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createScaffoldingSensingSystem@ScaffoldingSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1928399220
+     * @hash   1936010340
      */
     MCAPI static struct TickingSystemWithInfo createScaffoldingSensingSystem();
 

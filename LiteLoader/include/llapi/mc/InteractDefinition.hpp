@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?addInteraction@InteractDefinition@@QEAAXAEBUInteraction@@@Z
-     * @hash   -237699378
+     * @hash   -90366546
      */
     MCAPI void addInteraction(struct Interaction const &);
     /**
      * @symbol ?initialize@InteractDefinition@@QEBAXAEAVEntityContext@@AEAVInteractComponent@@@Z
-     * @hash   636016213
+     * @hash   783349045
      */
     MCAPI void initialize(class EntityContext &, class InteractComponent &) const;
     /**
      * @symbol ?buildSchema@InteractDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInteractDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1810776790
+     * @hash   1958109622
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>> &);
 

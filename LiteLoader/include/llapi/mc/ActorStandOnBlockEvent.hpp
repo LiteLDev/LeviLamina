@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorStandOnBlockEvent@@QEAA@XZ
-     * @hash   -1736137161
+     * @hash   -1670066489
      */
     MCAPI ~ActorStandOnBlockEvent();
 

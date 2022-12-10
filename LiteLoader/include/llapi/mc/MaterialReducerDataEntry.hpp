@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MaterialReducerDataEntry@@QEAA@XZ
-     * @hash   2021656589
+     * @hash   -2102452595
      */
     MCAPI ~MaterialReducerDataEntry();
 

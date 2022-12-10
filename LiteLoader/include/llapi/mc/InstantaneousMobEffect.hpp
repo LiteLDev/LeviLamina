@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  5
      * @symbol ?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ
-     * @hash   -729623015
+     * @hash   -633123239
      */
     virtual bool isInstantaneous() const;
     /**
      * @vftbl  7
      * @symbol ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
-     * @hash   1397565449
+     * @hash   1434683113
      */
     virtual bool isDurationEffectTick(int, int) const;
     /**
      * @symbol ??0InstantaneousMobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-     * @hash   -869737598
+     * @hash   -831758878
      */
     MCAPI InstantaneousMobEffect(unsigned int, std::string const &, std::string const &, bool, int, int);
 

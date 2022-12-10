@@ -39,61 +39,61 @@ public:
     virtual ~ScriptBlockGameplayHandler();
     /**
      * @vftbl  1
-     * @hash   1095601457
+     * @hash   1151431713
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1096386594
+     * @hash   1152216850
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   1097156355
+     * @hash   1152986611
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   1098756420
+     * @hash   1154586676
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUExplosionStartedEvent@@@Z
-     * @hash   -1473408053
+     * @hash   -1461138005
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ExplosionStartedEvent &);
     /**
      * @vftbl  6
-     * @hash   1099604022
+     * @hash   1155434278
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   1100527543
+     * @hash   1156357799
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   1101481816
+     * @hash   1157312072
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUPistonActionEvent@@@Z
-     * @hash   -1028551717
+     * @hash   -1016281669
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct PistonActionEvent const &);
 
 //private:
     /**
      * @symbol ?_handleExplosionStartedEvent@ScriptBlockGameplayHandler@@AEBA_NAEAUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   728760382
+     * @hash   741030430
      */
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
     /**
      * @symbol ?_handlePistonActionEvent@ScriptBlockGameplayHandler@@AEBA_NAEBUPistonActionEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   -1873631183
+     * @hash   -1861361135
      */
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 

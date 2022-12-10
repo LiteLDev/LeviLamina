@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MountainAttributes@@QEAA@XZ
-     * @hash   105931790
+     * @hash   211657166
      */
     MCAPI ~MountainAttributes();
 

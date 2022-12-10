@@ -32,64 +32,64 @@ public:
 public:
     /**
      * @symbol ?SWAMP_WATER_COLOR@VanillaBiomes@@2VColor@mce@@B
-     * @hash   -759126573
+     * @hash   75375075
      */
     MCAPI static class mce::Color const SWAMP_WATER_COLOR;
     /**
      * @symbol ?WATER_FOG_COLOR_SWAMP@VanillaBiomes@@2VColor@mce@@B
-     * @hash   -479930621
+     * @hash   354571027
      */
     MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     /**
      * @symbol ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
-     * @hash   -766478668
+     * @hash   -659338700
      */
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);
     /**
      * @symbol ?initBiomeDimensionComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-     * @hash   360521714
+     * @hash   467769314
      */
     MCAPI static void initBiomeDimensionComponent(class BiomeRegistry &);
     /**
      * @symbol ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   -1653978679
+     * @hash   -1546731079
      */
     MCAPI static void initBiomes(class BiomeRegistry &, struct SpawnSettings const &, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-     * @hash   1865743624
+     * @hash   1972376184
      */
     MCAPI static void initClientOnlyComponents(class BiomeRegistry &);
     /**
      * @symbol ?initDefaultWorldGenComponents@VanillaBiomes@@SAXAEAVIWorldRegistriesProvider@@@Z
-     * @hash   -295763368
+     * @hash   -189130808
      */
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider &);
     /**
      * @symbol ?initSurfaceBuilders@VanillaBiomes@@SAXAEAVSurfaceBuilderRegistry@@AEBVBaseGameVersion@@@Z
-     * @hash   352517611
+     * @hash   460103483
      */
     MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry &, class BaseGameVersion const &);
     /**
      * @symbol ?initVanillaBiomeTypeComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-     * @hash   1821290308
+     * @hash   1928876180
      */
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry &);
     /**
      * @symbol ?mPlayerValidSpawns@VanillaBiomes@@2V?$set@HU?$less@H@std@@V?$allocator@H@2@@std@@A
-     * @hash   2113064240
+     * @hash   -1314220000
      */
     MCAPI static class std::set<int, struct std::less<int>, class std::allocator<int>> mPlayerValidSpawns;
     /**
      * @symbol ?shutdownBiomes@VanillaBiomes@@SAXXZ
-     * @hash   -1517353725
+     * @hash   -1409952365
      */
     MCAPI static void shutdownBiomes();
 
 //private:
     /**
      * @symbol ?addBiomeDimensionAttributeComponentHelper@VanillaBiomes@@CAXAEAVBiomeRegistry@@AEBVHashedString@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1998149368
+     * @hash   -1890994024
      */
     MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, class HashedString const &, class AutomaticID<class Dimension, int>);
 

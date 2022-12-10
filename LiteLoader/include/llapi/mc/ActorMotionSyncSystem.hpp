@@ -37,13 +37,13 @@ public:
     virtual ~ActorMotionSyncSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ActorMotionSyncSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1818413403
+     * @hash   -1673632987
      */
     virtual void tick(class EntityRegistry &);
 

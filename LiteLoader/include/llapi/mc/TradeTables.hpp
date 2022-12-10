@@ -33,24 +33,24 @@ public:
 public:
     /**
      * @symbol ?fetchTable@TradeTables@@QEAAPEAUTradeTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1266341840
+     * @hash   -547682976
      */
     MCAPI struct TradeTable * fetchTable(std::string const &);
     /**
      * @symbol ?reload@TradeTables@@QEAAXAEAVLevel@@@Z
-     * @hash   678669628
+     * @hash   1397251612
      */
     MCAPI void reload(class Level &);
     /**
      * @symbol ??1TradeTables@@QEAA@XZ
-     * @hash   -1073830827
+     * @hash   -1011619531
      */
     MCAPI ~TradeTables();
 
 //private:
     /**
      * @symbol ?_parseAndStoreTradeTable@TradeTables@@AEAAXVItemRegistryRef@@PEAVResourcePackManager@@AEBVPath@Core@@@Z
-     * @hash   -1483062232
+     * @hash   -764326488
      */
     MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager *, class Core::Path const &);
 

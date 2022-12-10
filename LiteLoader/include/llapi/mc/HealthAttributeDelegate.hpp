@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@HealthAttributeDelegate@@UEAAXXZ
-     * @hash   -182292289
+     * @hash   -165593953
      */
     virtual void tick();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?willChange@HealthAttributeDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-     * @hash   930935332
+     * @hash   947633668
      */
     virtual bool willChange(float, float, class AttributeBuff const &);
     /**
      * @vftbl  4
      * @symbol ?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-     * @hash   980253136
+     * @hash   996951472
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
      * @vftbl  5
      * @symbol ?getBuffValueWithModifiers@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z
-     * @hash   -1023145455
+     * @hash   -1006447119
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /**
      * @symbol ??0HealthAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVMob@@@Z
-     * @hash   -708085940
+     * @hash   -691387604
      */
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 

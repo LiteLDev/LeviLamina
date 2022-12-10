@@ -37,13 +37,13 @@ public:
     virtual ~DanceSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@DanceSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1161744994
+     * @hash   1319348994
      */
     virtual void tick(class EntityRegistry &);
 

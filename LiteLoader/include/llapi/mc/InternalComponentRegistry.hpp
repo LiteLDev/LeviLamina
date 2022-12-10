@@ -38,39 +38,39 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerComponents@InternalComponentRegistry@@UEAAXXZ
-     * @hash   572970707
+     * @hash   597218659
      */
     virtual void registerComponents();
     /**
      * @symbol ?addComponentSaveData@InternalComponentRegistry@@QEAAXAEBVActor@@AEAVCompoundTag@@@Z
-     * @hash   -1501405855
+     * @hash   -1477127151
      */
     MCAPI void addComponentSaveData(class Actor const &, class CompoundTag &);
     /**
      * @symbol ?initializeComponents@InternalComponentRegistry@@QEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -2021105832
+     * @hash   -1996827128
      */
     MCAPI void initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
      * @symbol ?INTERNAL_COMPONENTS@InternalComponentRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1694339543
+     * @hash   -198239367
      */
     MCAPI static std::string const INTERNAL_COMPONENTS;
 
 //protected:
     /**
      * @symbol ?_initializeComponents@InternalComponentRegistry@@IEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1283910961
+     * @hash   -1259632257
      */
     MCAPI void _initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
      * @symbol ?_getComponentScope@InternalComponentRegistry@@KAPEBVCompoundTag@@AEBV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1115361338
+     * @hash   -1091082634
      */
     MCAPI static class CompoundTag const * _getComponentScope(class CompoundTag const &, std::string const &);
     /**
      * @symbol ?_getOrCreateComponentScope@InternalComponentRegistry@@KAAEAVCompoundTag@@AEAV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1895391911
+     * @hash   -1871113207
      */
     MCAPI static class CompoundTag & _getOrCreateComponentScope(class CompoundTag &, std::string const &);
 

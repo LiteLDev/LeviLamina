@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ControlledByPlayerGoal@@UEAA_NXZ
-     * @hash   1985496055
+     * @hash   2145590967
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@ControlledByPlayerGoal@@UEAAXXZ
-     * @hash   566001664
+     * @hash   726096576
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ControlledByPlayerGoal@@UEAAXXZ
-     * @hash   -1131971616
+     * @hash   -971876704
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ControlledByPlayerGoal@@UEAAXXZ
-     * @hash   -1859671173
+     * @hash   -1699576261
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ControlledByPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   675034617
+     * @hash   835160281
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ControlledByPlayerGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -2084115724
+     * @hash   -1923990060
      */
     MCAPI ControlledByPlayerGoal(class Mob &);
 

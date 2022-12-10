@@ -39,51 +39,51 @@ public:
 public:
     /**
      * @symbol ?addAllComponentUpgrades@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
-     * @hash   324195050
+     * @hash   868966730
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
+     * @symbol ?bindAllComponentSchemas@CerealItemComponentFactory@@SAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
+     * @hash   1422091015
+     */
+    MCAPI static void bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
+    /**
      * @symbol ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   -2129747658
+     * @hash   -1584407066
      */
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
     /**
      * @symbol ?getItemContext@CerealItemComponentFactory@@SAPEAVComponentItem@@XZ
-     * @hash   -1158265389
+     * @hash   -612509645
      */
     MCAPI static class ComponentItem * getItemContext();
     /**
      * @symbol ?isRegisteredComponent@CerealItemComponentFactory@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1720888055
+     * @hash   -1175132311
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
     /**
      * @symbol ?resetItemContext@CerealItemComponentFactory@@SAXXZ
-     * @hash   1855302435
+     * @hash   -1893909117
      */
     MCAPI static void resetItemContext();
     /**
      * @symbol ?setItemContext@CerealItemComponentFactory@@SAXPEAVComponentItem@@@Z
-     * @hash   1678366695
+     * @hash   -2070844857
      */
     MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
-    /**
-     * @symbol ?_bindAllComponentSchemas@CerealItemComponentFactory@@CAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
-     * @hash   903741480
-     */
-    MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
 private:
     /**
      * @symbol ?mItemContext@CerealItemComponentFactory@@0PEAVComponentItem@@EA
-     * @hash   -421331817
+     * @hash   440508359
      */
     MCAPI static class ComponentItem * mItemContext;
     /**
      * @symbol ?mRegisteredComponents@CerealItemComponentFactory@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@CerealItemComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@CerealItemComponentFactory@@@std@@@2@@std@@A
-     * @hash   362208087
+     * @hash   965915975
      */
     MCAPI static class std::unordered_map<std::string, struct CerealItemComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
 

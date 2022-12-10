@@ -39,105 +39,105 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@StompBlockGoal@@UEAA_NXZ
-     * @hash   1281218849
+     * @hash   1452476737
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@StompBlockGoal@@UEAA_NXZ
-     * @hash   1338936687
+     * @hash   1510194575
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@StompBlockGoal@@UEAAXXZ
-     * @hash   -989478486
+     * @hash   -818220598
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@StompBlockGoal@@UEAAXXZ
-     * @hash   -658129190
+     * @hash   -497511494
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@StompBlockGoal@@UEAAXXZ
-     * @hash   59518117
+     * @hash   230776005
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StompBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1669328705
+     * @hash   -1498070817
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@StompBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1185755011
+     * @hash   1357012899
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @vftbl  13
      * @symbol ?_canReach@StompBlockGoal@@MEAA_NAEBVBlockPos@@@Z
-     * @hash   -2021451851
+     * @hash   -1850193963
      */
     virtual bool _canReach(class BlockPos const &);
     /**
      * @vftbl  14
      * @symbol ?_moveToBlock@StompBlockGoal@@MEAAXXZ
-     * @hash   -216643789
+     * @hash   -45385901
      */
     virtual void _moveToBlock();
     /**
      * @vftbl  17
      * @symbol ?findTargetBlock@StompBlockGoal@@UEAA_NXZ
-     * @hash   1509901373
+     * @hash   1681159261
      */
     virtual bool findTargetBlock();
     /**
      * @vftbl  18
      * @symbol ?_createBreakProgressParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -623474205
+     * @hash   -534508669
      */
     virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  19
      * @symbol ?_createDestroyParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -721849583
+     * @hash   -632884047
      */
     virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  20
      * @symbol ?_playBreakProgressSound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   1218447241
+     * @hash   1307412777
      */
     virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /**
      * @vftbl  21
      * @symbol ?_playDestroySound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   949018039
+     * @hash   1037983575
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
     /**
      * @symbol ??0StompBlockGoal@@QEAA@PEBVBlock@@AEAVMob@@MHHMH@Z
-     * @hash   -529652289
+     * @hash   -358394401
      */
     MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
 

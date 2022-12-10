@@ -33,57 +33,57 @@ public:
 public:
     /**
      * @symbol ??0MapDecoration@@QEAA@XZ
-     * @hash   1961386456
+     * @hash   -1620072936
      */
     MCAPI MapDecoration();
     /**
      * @symbol ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-     * @hash   -506842076
+     * @hash   206665828
      */
     MCAPI MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
     /**
      * @symbol ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
-     * @hash   61487972
+     * @hash   774980500
      */
     MCAPI class mce::Color const & getColor() const;
     /**
      * @symbol ?getImg@MapDecoration@@QEBA?AW4Type@1@XZ
-     * @hash   1982223015
+     * @hash   -2133537001
      */
     MCAPI enum class MapDecoration::Type getImg() const;
     /**
      * @symbol ?getLabel@MapDecoration@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   892525240
+     * @hash   985796056
      */
     MCAPI std::string const & getLabel() const;
     /**
      * @symbol ?getRot@MapDecoration@@QEBACXZ
-     * @hash   -1373336366
+     * @hash   -659843838
      */
     MCAPI signed char getRot() const;
     /**
      * @symbol ?getX@MapDecoration@@QEBACXZ
-     * @hash   -1594092700
+     * @hash   -880600172
      */
     MCAPI signed char getX() const;
     /**
      * @symbol ?getY@MapDecoration@@QEBACXZ
-     * @hash   624604150
+     * @hash   1338096678
      */
     MCAPI signed char getY() const;
     /**
      * @symbol ?load@MapDecoration@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -1502071640
+     * @hash   -788579112
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?save@MapDecoration@@QEAAXAEAVCompoundTag@@@Z
-     * @hash   806412926
+     * @hash   1519905454
      */
     MCAPI void save(class CompoundTag &);
     /**
      * @symbol ??1MapDecoration@@QEAA@XZ
-     * @hash   2055876808
+     * @hash   2143550760
      */
     MCAPI ~MapDecoration();
 

@@ -40,95 +40,95 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -833529872
+     * @hash   -796166192
      */
     virtual std::string const & getRequestId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -440456497
+     * @hash   -403154321
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
-     * @hash   -178183348
+     * @hash   -141757604
      */
     virtual class BlockPos getBlockPosition() const;
     /**
      * @vftbl  4
      * @symbol ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
-     * @hash   1179709145
+     * @hash   1217180457
      */
     virtual class Vec3 getWorldPosition() const;
     /**
      * @vftbl  5
      * @symbol ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     * @hash   -355002568
+     * @hash   -317638888
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
      * @vftbl  6
      * @symbol ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
-     * @hash   1493642274
+     * @hash   1618879794
      */
     virtual class Level * getLevel() const;
     /**
      * @vftbl  7
      * @symbol ?getDimension@ActorCommandOrigin@@UEBAPEAVDimension@@XZ
-     * @hash   1843862530
+     * @hash   1880288274
      */
     virtual class Dimension * getDimension() const;
     /**
      * @vftbl  8
      * @symbol ?getEntity@ActorCommandOrigin@@UEBAPEAVActor@@XZ
-     * @hash   -768763332
+     * @hash   -731461156
      */
     virtual class Actor * getEntity() const;
     /**
      * @vftbl  9
      * @symbol ?getPermissionsLevel@ActorCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     * @hash   734389280
+     * @hash   771752960
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     * @hash   1768346470
+     * @hash   1804772214
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@ActorCommandOrigin@@UEBA_NXZ
-     * @hash   -1401946930
+     * @hash   -1364475618
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
      * @vftbl  23
      * @symbol ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     * @hash   -434777131
+     * @hash   -448999931
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ActorCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     * @hash   1102479884
+     * @hash   1139951196
      */
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl  30
      * @symbol ?isValid@ActorCommandOrigin@@UEBA_NXZ
-     * @hash   -2061272306
+     * @hash   -2023800994
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
-     * @hash   497283911
+     * @hash   533678903
      */
     MCAPI ActorCommandOrigin(class Actor &);
     /**
      * @symbol ?load@ActorCommandOrigin@@SA?AV?$unique_ptr@VActorCommandOrigin@@U?$default_delete@VActorCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   2090657102
+     * @hash   2128128414
      */
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const &, class Level &);
 

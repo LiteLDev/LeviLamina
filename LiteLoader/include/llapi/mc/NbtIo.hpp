@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?read@NbtIo@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVIDataInput@@@Z
-     * @hash   -985763631
+     * @hash   -814844015
      */
     MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput &);
     /**
      * @symbol ?write@NbtIo@@SAXPEBVCompoundTag@@AEAVIDataOutput@@@Z
-     * @hash   653488326
+     * @hash   824392566
      */
     MCAPI static void write(class CompoundTag const *, class IDataOutput &);
 

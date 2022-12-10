@@ -39,34 +39,34 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ
-     * @hash   -197177161
+     * @hash   -152602137
      */
     virtual bool canUse();
     /**
      * @vftbl  4
      * @symbol ?start@VexCopyOwnerTargetGoal@@UEAAXXZ
-     * @hash   -1090189552
+     * @hash   -1045614528
      */
     virtual void start();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@VexCopyOwnerTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -468465607
+     * @hash   -423890583
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1355408327
+     * @hash   -1258908551
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0VexCopyOwnerTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
-     * @hash   1295015681
+     * @hash   1339590705
      */
     MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 

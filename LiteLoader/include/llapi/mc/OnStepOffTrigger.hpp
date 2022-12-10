@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnStepOffTrigger@@QEAA@XZ
-     * @hash   -286738306
+     * @hash   479616910
      */
     MCAPI ~OnStepOffTrigger();
 

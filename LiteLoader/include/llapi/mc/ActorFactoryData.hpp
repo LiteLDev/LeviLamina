@@ -22,15 +22,19 @@ struct ActorFactoryData {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORYDATA
 public:
-    struct ActorFactoryData& operator=(struct ActorFactoryData const &) = delete;
     ActorFactoryData(struct ActorFactoryData const &) = delete;
     ActorFactoryData() = delete;
 #endif
 
 public:
     /**
+     * @symbol ??4ActorFactoryData@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -2099543946
+     */
+    MCAPI struct ActorFactoryData & operator=(struct ActorFactoryData const &);
+    /**
      * @symbol ??1ActorFactoryData@@QEAA@XZ
-     * @hash   1693937369
+     * @hash   1730962777
      */
     MCAPI ~ActorFactoryData();
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MobArmorEquipmentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1304199943
+     * @hash   1230226007
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MobArmorEquipmentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1342661196
+     * @hash   -1416635132
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MobArmorEquipmentPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   992362803
+     * @hash   918388867
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MobArmorEquipmentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   866134819
+     * @hash   792160883
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MobArmorEquipmentPacket@@QEAA@XZ
-     * @hash   1720995043
+     * @hash   1647021107
      */
     MCAPI MobArmorEquipmentPacket();
     /**
      * @symbol ??0MobArmorEquipmentPacket@@QEAA@AEBVActor@@@Z
-     * @hash   943074376
+     * @hash   869100440
      */
     MCAPI MobArmorEquipmentPacket(class Actor const &);
 

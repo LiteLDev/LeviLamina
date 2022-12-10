@@ -39,50 +39,50 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getMinCost@BowEnchant@@UEBAHH@Z
-     * @hash   601542312
+     * @hash   1170930968
      */
     virtual int getMinCost(int) const;
     /**
      * @vftbl  3
      * @symbol ?getMaxCost@BowEnchant@@UEBAHH@Z
-     * @hash   103329030
+     * @hash   672717686
      */
     virtual int getMaxCost(int) const;
     /**
      * @vftbl  5
      * @symbol ?getMaxLevel@BowEnchant@@UEBAHXZ
-     * @hash   1271451298
+     * @hash   1840839954
      */
     virtual int getMaxLevel() const;
     /**
      * @vftbl  10
-     * @hash   -339307949
+     * @hash   -242808173
      */
     virtual void __unk_vfn_10();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
-     * @hash   -330249563
+     * @hash   -233503771
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -329326042
+     * @hash   -232580250
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z
-     * @hash   -1569531591
+     * @hash   -1000142935
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0BowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     * @hash   -2123086454
+     * @hash   -1553697798
      */
     MCAPI BowEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
@@ -91,7 +91,7 @@ public:
 private:
     /**
      * @symbol ?VALID_ENCHANTMENTS@BowEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
-     * @hash   542712418
+     * @hash   1187843250
      */
     MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 

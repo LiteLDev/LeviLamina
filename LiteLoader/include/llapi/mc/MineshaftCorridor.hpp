@@ -39,47 +39,47 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@MineshaftCorridor@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   831206346
+     * @hash   1002925514
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@MineshaftCorridor@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-     * @hash   1850570214
+     * @hash   2022274006
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
      * @vftbl  4
      * @symbol ?postProcess@MineshaftCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1631589586
+     * @hash   -1459870418
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@MineshaftCorridor@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   102811386
+     * @hash   274530554
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?_placeCobWeb@MineshaftCorridor@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHH@Z
-     * @hash   350079994
+     * @hash   521783786
      */
     MCAPI void _placeCobWeb(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int);
     /**
      * @symbol ?_placeSupport@MineshaftCorridor@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHAEAVRandom@@@Z
-     * @hash   602334981
+     * @hash   774038773
      */
     MCAPI void _placeSupport(class BlockSource &, class BoundingBox const &, int, int, int, int, int, class Random &);
 
 //private:
     /**
      * @symbol ?_fillPillarDownOrChainUp@MineshaftCorridor@@AEAAXAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-     * @hash   -744175103
+     * @hash   -572471311
      */
     MCAPI void _fillPillarDownOrChainUp(class BlockSource &, int, int, int, class BoundingBox const &);
     /**
      * @symbol ?_placeDoubleLowerOrUpperSupport@MineshaftCorridor@@AEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
-     * @hash   1991277470
+     * @hash   -2131986034
      */
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource &, class BoundingBox const &, int, int, int);
 

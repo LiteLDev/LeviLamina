@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??4BlockGeometryComponent@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -1372105360
+     * @hash   -605596384
      */
     MCAPI struct BlockGeometryComponent & operator=(struct BlockGeometryComponent &&);
     /**
      * @symbol ??1BlockGeometryComponent@@QEAA@XZ
-     * @hash   69798664
+     * @hash   112789960
      */
     MCAPI ~BlockGeometryComponent();
 

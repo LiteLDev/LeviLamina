@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?nextInt@XoroshiroRandom@@UEAAHXZ
-     * @hash   -1057148856
+     * @hash   -901128584
      */
     virtual int nextInt();
     /**
      * @vftbl  2
      * @symbol ?nextInt@XoroshiroRandom@@UEAAHH@Z
-     * @hash   -661489945
+     * @hash   -505469673
      */
     virtual int nextInt(int);
     /**
      * @vftbl  3
      * @symbol ?nextLong@XoroshiroRandom@@UEAA_JXZ
-     * @hash   2104225301
+     * @hash   -2034721723
      */
     virtual __int64 nextLong();
     /**
      * @vftbl  4
      * @symbol ?nextBoolean@XoroshiroRandom@@UEAA_NXZ
-     * @hash   -1486145570
+     * @hash   -1330125298
      */
     virtual bool nextBoolean();
     /**
      * @vftbl  5
      * @symbol ?nextFloat@XoroshiroRandom@@UEAAMXZ
-     * @hash   -772487560
+     * @hash   -616467288
      */
     virtual float nextFloat();
     /**
      * @vftbl  6
      * @symbol ?nextDouble@XoroshiroRandom@@UEAANXZ
-     * @hash   1900841982
+     * @hash   2056862254
      */
     virtual double nextDouble();
     /**
      * @vftbl  7
      * @symbol ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
-     * @hash   -1582057799
+     * @hash   -1426037527
      */
     virtual double nextGaussianDouble();
     /**
      * @vftbl  8
      * @symbol ?consumeCount@XoroshiroRandom@@UEAAXI@Z
-     * @hash   -56826544
+     * @hash   98978464
      */
     virtual void consumeCount(unsigned int);
     /**
      * @vftbl  9
      * @symbol ?fork@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-     * @hash   -1661351166
+     * @hash   -1505546158
      */
     virtual std::unique_ptr<class IRandom> fork();
     /**
      * @vftbl  10
      * @symbol ?forkPositional@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
-     * @hash   1322032272
+     * @hash   1477837280
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 

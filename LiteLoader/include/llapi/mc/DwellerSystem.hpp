@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerEvents@DwellerSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     * @hash   -1997611670
+     * @hash   -1841775910
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
      * @vftbl  2
      * @symbol ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -443358338
+     * @hash   -287876226
      */
     virtual void tick(class EntityRegistry &);
 

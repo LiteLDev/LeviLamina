@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?initState@ItemStateInstance@@QEAAXAEAIIIAEBVItemState@@@Z
-     * @hash   -1892777074
+     * @hash   -1331076418
      */
     MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
     /**
      * @symbol ?isValidData@ItemStateInstance@@QEBA_NI@Z
-     * @hash   -1132847941
+     * @hash   -571147285
      */
     MCAPI bool isValidData(unsigned int) const;
 

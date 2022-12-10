@@ -31,44 +31,44 @@ public:
 public:
     /**
      * @symbol ??0BinaryHeap@@QEAA@XZ
-     * @hash   -640724247
+     * @hash   -79930775
      */
     MCAPI BinaryHeap();
     /**
      * @symbol ?changeCost@BinaryHeap@@QEAAXPEAVPathfinderNode@@M@Z
-     * @hash   2050020276
+     * @hash   -1684153548
      */
     MCAPI void changeCost(class PathfinderNode *, float);
     /**
      * @symbol ?clear@BinaryHeap@@QEAAXXZ
-     * @hash   1956806963
+     * @hash   -1777366861
      */
     MCAPI void clear();
     /**
      * @symbol ?insert@BinaryHeap@@QEAAPEAVPathfinderNode@@PEAV2@@Z
-     * @hash   -5437582
+     * @hash   555355890
      */
     MCAPI class PathfinderNode * insert(class PathfinderNode *);
     /**
      * @symbol ?isEmpty@BinaryHeap@@QEAA_NXZ
-     * @hash   1281665180
+     * @hash   1842458652
      */
     MCAPI bool isEmpty();
     /**
      * @symbol ?pop@BinaryHeap@@QEAAPEAVPathfinderNode@@XZ
-     * @hash   1080970743
+     * @hash   1641764215
      */
     MCAPI class PathfinderNode * pop();
     /**
      * @symbol ??1BinaryHeap@@QEAA@XZ
-     * @hash   1174465303
+     * @hash   961861351
      */
     MCAPI ~BinaryHeap();
 
 //private:
     /**
      * @symbol ?downHeap@BinaryHeap@@AEAAXH@Z
-     * @hash   -933934478
+     * @hash   -373141006
      */
     MCAPI void downHeap(int);
 

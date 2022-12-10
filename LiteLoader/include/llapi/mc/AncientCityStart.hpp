@@ -37,7 +37,7 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isValid@AncientCityStart@@UEBA_NXZ
-     * @hash   1687384651
+     * @hash   1858242763
      */
     virtual bool isValid() const;
 

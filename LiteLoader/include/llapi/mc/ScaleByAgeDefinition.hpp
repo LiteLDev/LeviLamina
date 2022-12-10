@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0ScaleByAgeDefinition@@QEAA@XZ
-     * @hash   2051182621
+     * @hash   2030886301
      */
     MCAPI ScaleByAgeDefinition();
     /**
      * @symbol ?initialize@ScaleByAgeDefinition@@QEAAXAEAVEntityContext@@AEAVScaleByAgeComponent@@@Z
-     * @hash   -309956937
+     * @hash   -330253257
      */
     MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &);
     /**
      * @symbol ?buildSchema@ScaleByAgeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VScaleByAgeDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   191502022
+     * @hash   171205702
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);
 

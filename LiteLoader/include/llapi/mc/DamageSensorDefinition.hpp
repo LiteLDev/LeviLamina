@@ -33,22 +33,22 @@ public:
 public:
     /**
      * @symbol ?addDamageSensorTrigger@DamageSensorDefinition@@QEAAXAEBUDamageSensorTrigger@@@Z
-     * @hash   -735674460
+     * @hash   -219209996
      */
     MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const &);
     /**
      * @symbol ?initialize@DamageSensorDefinition@@QEBAXAEAVEntityContext@@AEAVDamageSensorComponent@@@Z
-     * @hash   -1965306037
+     * @hash   -1448841573
      */
     MCAPI void initialize(class EntityContext &, class DamageSensorComponent &) const;
     /**
      * @symbol ?uninitialize@DamageSensorDefinition@@QEBAXAEAVEntityContext@@AEAVDamageSensorComponent@@@Z
-     * @hash   -1413144069
+     * @hash   -896664229
      */
     MCAPI void uninitialize(class EntityContext &, class DamageSensorComponent &) const;
     /**
      * @symbol ?buildSchema@DamageSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDamageSensorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   904468726
+     * @hash   1420933190
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition>> &);
 

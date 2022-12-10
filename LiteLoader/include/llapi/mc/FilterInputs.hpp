@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1FilterInputs@@QEAA@XZ
-     * @hash   -1353288357
+     * @hash   -1202465173
      */
     MCAPI ~FilterInputs();
 

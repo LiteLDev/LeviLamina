@@ -37,13 +37,13 @@ public:
     virtual ~BlockBreakSensorSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BlockBreakSensorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -97667749
+     * @hash   26862475
      */
     virtual void tick(class EntityRegistry &);
 

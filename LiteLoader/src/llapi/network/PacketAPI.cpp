@@ -201,6 +201,7 @@ using ll::logger;
 #include "llapi/mc/RequestNetworkSettingsPacket.hpp"
 #include "llapi/mc/GameTestRequestPacket.hpp"
 #include "llapi/mc/GameTestResultsPacket.hpp"
+#include "llapi/mc/UpdateClientInputLocksPacket.hpp"
 
 #endif INCLUDE_ALL_PACKET
 
@@ -396,8 +397,8 @@ using ll::logger;
     Func(ServerStatsPacket);                       \
     Func(RequestNetworkSettingsPacket);            \
     Func(GameTestRequestPacket);                   \
-    Func(GameTestResultsPacket);                   
-
+    Func(GameTestResultsPacket);                   \
+    Func(UpdateClientInputLocksPacket);
 
 #define DeclearClass(packet) class packet;
 
@@ -718,7 +719,7 @@ static_assert(sizeof(AddBehaviorTreePacket) == 0x50, "size of AddBehaviorTreePac
 static_assert(sizeof(StructureBlockUpdatePacket) == 0xF8, "size of StructureBlockUpdatePacket should be 248");
 static_assert(sizeof(ShowStoreOfferPacket) == 0x78, "size of ShowStoreOfferPacket should be 120");
 static_assert(sizeof(PurchaseReceiptPacket) == 0x48, "size of PurchaseReceiptPacket should be 72");
-static_assert(sizeof(PlayerSkinPacket) == 0x2E8, "size of PlayerSkinPacket should be 744");
+static_assert(sizeof(PlayerSkinPacket) == 0x2D0, "size of PlayerSkinPacket should be 720");
 static_assert(sizeof(SubClientLoginPacket) == 0x38, "size of SubClientLoginPacket should be 56");
 static_assert(sizeof(AutomationClientConnectPacket) == 0x50, "size of AutomationClientConnectPacket should be 80");
 static_assert(sizeof(SetLastHurtByPacket) == 0x38, "size of SetLastHurtByPacket should be 56");
@@ -817,6 +818,7 @@ static_assert(sizeof(ServerStatsPacket) == 0x38, "size of ServerStatsPacket shou
 static_assert(sizeof(RequestNetworkSettingsPacket) == 0x38, "size of RequestNetworkSettingsPacket should be 56");
 static_assert(sizeof(GameTestRequestPacket) == 0x90, "size of GameTestRequestPacket should be 144");
 static_assert(sizeof(GameTestResultsPacket) == 0x78, "size of GameTestResultsPacket should be 120");
+static_assert(sizeof(UpdateClientInputLocksPacket) == 0x40, "size of UpdateClientInputLocksPacket should be 64");
 
 #endif // SIZE_STATIC_ASSERT
 
@@ -911,7 +913,7 @@ static_assert(sizeof(AddBehaviorTreePacket) == 0x50 || sizeof(AddBehaviorTreePac
 static_assert(sizeof(StructureBlockUpdatePacket) == 0xF8 || sizeof(StructureBlockUpdatePacket) == 48, "size of StructureBlockUpdatePacket should be 248 or 48(default)");
 static_assert(sizeof(ShowStoreOfferPacket) == 0x78 || sizeof(ShowStoreOfferPacket) == 48, "size of ShowStoreOfferPacket should be 120 or 48(default)");
 static_assert(sizeof(PurchaseReceiptPacket) == 0x48 || sizeof(PurchaseReceiptPacket) == 48, "size of PurchaseReceiptPacket should be 72 or 48(default)");
-static_assert(sizeof(PlayerSkinPacket) == 0x2E8 || sizeof(PlayerSkinPacket) == 48, "size of PlayerSkinPacket should be 744 or 48(default)");
+static_assert(sizeof(PlayerSkinPacket) == 0x2D0 || sizeof(PlayerSkinPacket) == 48, "size of PlayerSkinPacket should be 720 or 48(default)");
 static_assert(sizeof(SubClientLoginPacket) == 0x38 || sizeof(SubClientLoginPacket) == 48, "size of SubClientLoginPacket should be 56 or 48(default)");
 static_assert(sizeof(AutomationClientConnectPacket) == 0x50 || sizeof(AutomationClientConnectPacket) == 48, "size of AutomationClientConnectPacket should be 80 or 48(default)");
 static_assert(sizeof(SetLastHurtByPacket) == 0x38 || sizeof(SetLastHurtByPacket) == 48, "size of SetLastHurtByPacket should be 56 or 48(default)");
@@ -1010,5 +1012,6 @@ static_assert(sizeof(ServerStatsPacket) == 0x38 || sizeof(ServerStatsPacket) == 
 static_assert(sizeof(RequestNetworkSettingsPacket) == 0x38 || sizeof(RequestNetworkSettingsPacket) == 48, "size of RequestNetworkSettingsPacket should be 56 or 48(default)");
 static_assert(sizeof(GameTestRequestPacket) == 0x90 || sizeof(GameTestRequestPacket) == 48, "size of GameTestRequestPacket should be 144 or 48(default)");
 static_assert(sizeof(GameTestResultsPacket) == 0x78 || sizeof(GameTestResultsPacket) == 48, "size of GameTestResultsPacket should be 120 or 48(default)");
+static_assert(sizeof(UpdateClientInputLocksPacket) == 0x40 || sizeof(UpdateClientInputLocksPacket) == 48, "size of UpdateClientInputLocksPacket should be 64 or 48(default)");
 
 #endif // SIZE_STATIC_ASSERT_IF_DEFINE

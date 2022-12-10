@@ -22,42 +22,42 @@ namespace SculkConsts {
 #undef AFTER_EXTRA
     /**
      * @symbol ?CHARGE_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -361587681
+     * @hash   1420590663
      */
     MCAPI extern std::string const CHARGE_TAG;
     /**
      * @symbol ?CURSORS_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1302442019
+     * @hash   479736325
      */
     MCAPI extern std::string const CURSORS_TAG;
     /**
      * @symbol ?DECAY_DELAY_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1071981187
+     * @hash   710197157
      */
     MCAPI extern std::string const DECAY_DELAY_TAG;
     /**
      * @symbol ?FACING_DATA_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   363429117
+     * @hash   2145607461
      */
     MCAPI extern std::string const FACING_DATA_TAG;
     /**
      * @symbol ?POS_X_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1146722115
+     * @hash   635456229
      */
     MCAPI extern std::string const POS_X_TAG;
     /**
      * @symbol ?POS_Y_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1746227651
+     * @hash   35950693
      */
     MCAPI extern std::string const POS_Y_TAG;
     /**
      * @symbol ?POS_Z_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1949234109
+     * @hash   -563554843
      */
     MCAPI extern std::string const POS_Z_TAG;
     /**
      * @symbol ?UPDATE_DELAY_TAG@SculkConsts@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2064162337
+     * @hash   -281983993
      */
     MCAPI extern std::string const UPDATE_DELAY_TAG;
 

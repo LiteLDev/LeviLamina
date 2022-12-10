@@ -38,46 +38,46 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@HoverGoal@@UEAA_NXZ
-     * @hash   -1244843535
+     * @hash   -1084318095
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@HoverGoal@@UEAAXXZ
-     * @hash   787639546
+     * @hash   948164986
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@HoverGoal@@UEAAXXZ
-     * @hash   1078566010
+     * @hash   1167531546
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@HoverGoal@@UEAAXXZ
-     * @hash   1806558677
+     * @hash   1967084117
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@HoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1359744671
+     * @hash   1520270111
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0HoverGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   -1298738093
+     * @hash   -1138212653
      */
     MCAPI HoverGoal(class Mob &, float);
 

@@ -38,25 +38,25 @@ public:
     virtual ~EntityEnterVolumeSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@EntityEnterVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1938013102
+     * @hash   1995027310
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ??0EntityEnterVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-     * @hash   587137627
+     * @hash   643106267
      */
     MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 //private:
     /**
      * @symbol ?_tick@EntityEnterVolumeSystem@@AEBAXAEAVEntityContext@@AEAVVolumeBoundsComponent@@@Z
-     * @hash   -1457356633
+     * @hash   -1400526937
      */
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &) const;
 

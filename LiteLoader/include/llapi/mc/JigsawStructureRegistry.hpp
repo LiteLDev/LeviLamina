@@ -31,42 +31,42 @@ public:
 public:
     /**
      * @symbol ??0JigsawStructureRegistry@@QEAA@XZ
-     * @hash   545772283
+     * @hash   1270842939
      */
     MCAPI JigsawStructureRegistry();
     /**
      * @symbol ?getJigsawStructureActorRulesRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureActorRulesRegistry@@XZ
-     * @hash   -247446534
+     * @hash   -145119254
      */
     MCAPI class JigsawStructureActorRulesRegistry & getJigsawStructureActorRulesRegistry();
     /**
      * @symbol ?getJigsawStructureBlockRulesRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureBlockRulesRegistry@@XZ
-     * @hash   -285927910
+     * @hash   -183600630
      */
     MCAPI class JigsawStructureBlockRulesRegistry & getJigsawStructureBlockRulesRegistry();
     /**
      * @symbol ?getJigsawStructureBlockTagRulesRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureBlockTagRulesRegistry@@XZ
-     * @hash   752075924
+     * @hash   789962388
      */
     MCAPI class JigsawStructureBlockTagRulesRegistry & getJigsawStructureBlockTagRulesRegistry();
     /**
      * @symbol ?getJigsawStructureElementRegistry@JigsawStructureRegistry@@QEAAAEAVJigsawStructureElementRegistry@@XZ
-     * @hash   1770715872
+     * @hash   -1793722288
      */
     MCAPI class JigsawStructureElementRegistry & getJigsawStructureElementRegistry();
     /**
      * @symbol ?lookupByName@JigsawStructureRegistry@@QEBAPEBVStructureTemplatePool@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1776826322
+     * @hash   -1029890994
      */
     MCAPI class StructureTemplatePool const * lookupByName(std::string) const;
     /**
      * @symbol ?registerPool@JigsawStructureRegistry@@QEAAX$$QEAV?$unique_ptr@VStructureTemplatePool@@U?$default_delete@VStructureTemplatePool@@@std@@@std@@@Z
-     * @hash   2114713164
+     * @hash   -1433318804
      */
     MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool> &&);
     /**
      * @symbol ??1JigsawStructureRegistry@@QEAA@XZ
-     * @hash   -932322837
+     * @hash   -185387509
      */
     MCAPI ~JigsawStructureRegistry();
 

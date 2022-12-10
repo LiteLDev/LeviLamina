@@ -32,62 +32,62 @@ public:
 public:
     /**
      * @symbol ??0ScriptPluginResult@@QEAA@AEBV0@@Z
-     * @hash   -193926271
+     * @hash   -114955135
      */
     MCAPI ScriptPluginResult(class ScriptPluginResult const &);
     /**
      * @symbol ??0ScriptPluginResult@@QEAA@AEBUModuleDescriptor@Scripting@@@Z
-     * @hash   1786790220
+     * @hash   1848709372
      */
     MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
     /**
      * @symbol ?addError@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   157836748
+     * @hash   219755900
      */
     MCAPI void addError(std::string const &);
     /**
      * @symbol ?addErrors@ScriptPluginResult@@QEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   44138983
+     * @hash   106058135
      */
     MCAPI void addErrors(std::vector<std::string> const &);
     /**
      * @symbol ?addInfo@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1607196974
+     * @hash   1669146878
      */
     MCAPI void addInfo(std::string const &);
     /**
      * @symbol ?addWarning@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1583585684
+     * @hash   -1521635780
      */
     MCAPI void addWarning(std::string const &);
     /**
      * @symbol ?getErrors@ScriptPluginResult@@QEBAAEBV?$vector@UError@ScriptPluginResult@@V?$allocator@UError@ScriptPluginResult@@@std@@@std@@XZ
-     * @hash   -260814184
+     * @hash   -167543368
      */
     MCAPI std::vector<struct ScriptPluginResult::Error> const & getErrors() const;
     /**
      * @symbol ?getInfos@ScriptPluginResult@@QEBAAEBV?$vector@UInfo@ScriptPluginResult@@V?$allocator@UInfo@ScriptPluginResult@@@std@@@std@@XZ
-     * @hash   700442810
+     * @hash   825280554
      */
     MCAPI std::vector<struct ScriptPluginResult::Info> const & getInfos() const;
     /**
      * @symbol ?getModuleDescriptor@ScriptPluginResult@@QEBAAEBUModuleDescriptor@Scripting@@XZ
-     * @hash   -774153048
+     * @hash   -794633880
      */
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     /**
      * @symbol ?getWarnings@ScriptPluginResult@@QEBAAEBV?$vector@UWarning@ScriptPluginResult@@V?$allocator@UWarning@ScriptPluginResult@@@std@@@std@@XZ
-     * @hash   1411609544
+     * @hash   1374368872
      */
     MCAPI std::vector<struct ScriptPluginResult::Warning> const & getWarnings() const;
     /**
      * @symbol ?hasErrors@ScriptPluginResult@@QEBA_NXZ
-     * @hash   509090372
+     * @hash   571040276
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ??1ScriptPluginResult@@QEAA@XZ
-     * @hash   1189387893
+     * @hash   1245033637
      */
     MCAPI ~ScriptPluginResult();
 

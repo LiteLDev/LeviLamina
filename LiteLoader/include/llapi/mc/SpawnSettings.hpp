@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SpawnSettings@@QEAA@XZ
-     * @hash   -855442758
+     * @hash   -766015942
      */
     MCAPI ~SpawnSettings();
 

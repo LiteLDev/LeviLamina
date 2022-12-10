@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ActorGriefingBlockEvent@@QEAA@AEBU0@@Z
-     * @hash   -1383359307
+     * @hash   -1212101419
      */
     MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const &);
     /**
      * @symbol ??1ActorGriefingBlockEvent@@QEAA@XZ
-     * @hash   1836591697
+     * @hash   2007849585
      */
     MCAPI ~ActorGriefingBlockEvent();
 

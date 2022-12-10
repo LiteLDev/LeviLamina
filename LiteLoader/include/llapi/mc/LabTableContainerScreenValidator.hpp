@@ -37,7 +37,7 @@ public:
     virtual ~LabTableContainerScreenValidator();
     /**
      * @symbol ??0LabTableContainerScreenValidator@@QEAA@XZ
-     * @hash   2032027362
+     * @hash   -1789958798
      */
     MCAPI LabTableContainerScreenValidator();
 

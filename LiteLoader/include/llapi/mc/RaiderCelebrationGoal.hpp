@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RaiderCelebrationGoal@@UEAA_NXZ
-     * @hash   982036138
+     * @hash   1143438010
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RaiderCelebrationGoal@@UEAA_NXZ
-     * @hash   2072872552
+     * @hash   -2060692872
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RaiderCelebrationGoal@@UEAAXXZ
-     * @hash   -497192973
+     * @hash   -335791101
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RaiderCelebrationGoal@@UEAAXXZ
-     * @hash   1782769731
+     * @hash   1944171603
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RaiderCelebrationGoal@@UEAAXXZ
-     * @hash   1697305070
+     * @hash   1858722318
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RaiderCelebrationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2056934986
+     * @hash   -1895625370
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RaiderCelebrationGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1938429337
+     * @hash   -1777119721
      */
     MCAPI RaiderCelebrationGoal(class Mob &);
 

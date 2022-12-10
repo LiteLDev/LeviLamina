@@ -45,29 +45,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@ScheduleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -260615233
+     * @hash   -251312753
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@ScheduleCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1265160016
+     * @hash   1274462496
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_delay@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1272951923
+     * @hash   1281670115
      */
     MCAPI void _delay(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_onAreaLoaded@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1905189871
+     * @hash   1914061823
      */
     MCAPI void _onAreaLoaded(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_tryGetFunction@ScheduleCommand@@AEBA?AUFunctionInfo@1@AEAVFunctionManager@@AEAVCommandOutput@@@Z
-     * @hash   1071683780
+     * @hash   1080924756
      */
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager &, class CommandOutput &) const;
 

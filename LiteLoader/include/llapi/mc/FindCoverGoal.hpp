@@ -38,58 +38,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FindCoverGoal@@UEAA_NXZ
-     * @hash   365722783
+     * @hash   411420255
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FindCoverGoal@@UEAA_NXZ
-     * @hash   -1707168643
+     * @hash   -1546550947
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@FindCoverGoal@@UEAAXXZ
-     * @hash   -1801308776
+     * @hash   -1755611304
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FindCoverGoal@@UEAAXXZ
-     * @hash   2097887672
+     * @hash   2143585144
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FindCoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1535253231
+     * @hash   -1489555759
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FindCoverGoal@@QEAA@AEAVMob@@MM@Z
-     * @hash   -41985300
+     * @hash   3712172
      */
     MCAPI FindCoverGoal(class Mob &, float, float);
     /**
      * @symbol ?getMob@FindCoverGoal@@QEBAAEBVMob@@XZ
-     * @hash   1231624596
+     * @hash   1392718948
      */
     MCAPI class Mob const & getMob() const;
 
 //private:
     /**
      * @symbol ?getHidePos@FindCoverGoal@@AEBA_NAEAVVec3@@@Z
-     * @hash   1647159195
+     * @hash   1692856667
      */
     MCAPI bool getHidePos(class Vec3 &) const;
 

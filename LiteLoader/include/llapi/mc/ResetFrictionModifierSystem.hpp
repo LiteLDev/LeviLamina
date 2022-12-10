@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createResetFrictionModifierSystem@ResetFrictionModifierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -966856530
+     * @hash   -944284562
      */
     MCAPI static struct TickingSystemWithInfo createResetFrictionModifierSystem();
 

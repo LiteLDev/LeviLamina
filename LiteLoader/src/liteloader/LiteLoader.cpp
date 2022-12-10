@@ -23,6 +23,7 @@
 #include "liteloader/AddonsHelper.h"
 #include "liteloader/Version.h"
 #include "liteloader/SimpleServerLogger.h"
+#include "liteloader/PlayerDeathPositions.h"
 
 #include <windows.h>
 #include <TlHelp32.h>
@@ -372,6 +373,9 @@ void liteloaderMain() {
         EndScheduleSystem();
         return true;
     });
+
+    // Initialize PlayerDeathPosition counter
+    PlayerDeathPositions::deathEventListener();
 }
 
 // Call LLMain

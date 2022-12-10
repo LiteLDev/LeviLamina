@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   125339601
+     * @hash   281359873
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  4
      * @symbol ?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z
-     * @hash   -95852880
+     * @hash   60167392
      */
     virtual class Block const & getBlockToPlace(class Random &) const;
     /**
      * @symbol ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
-     * @hash   -645438136
+     * @hash   -489371736
      */
     MCAPI BlockPileFeature(class Block const &);
 

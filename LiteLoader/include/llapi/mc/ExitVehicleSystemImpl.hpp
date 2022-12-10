@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?tryPlaceAt@ExitVehicleSystemImpl@@SA_NAEBVVec3@@AEBVAABB@@AEBVIConstBlockSource@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     * @hash   -1448288299
+     * @hash   -1336766171
      */
     MCAPI static bool tryPlaceAt(class Vec3 const &, class AABB const &, class IConstBlockSource const &, class optional_ref<class GetCollisionShapeInterface const>);
 

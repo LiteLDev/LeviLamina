@@ -23,2118 +23,1153 @@ namespace VanillaBlocks {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?addHardCodedComponentForBlocks@VanillaBlocks@@YAXXZ
+     * @hash   458617718
+     */
+    MCAPI void addHardCodedComponentForBlocks();
+    /**
      * @symbol ?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z
-     * @hash   -433848537
+     * @hash   292821223
      */
     MCAPI void assignBlocks(class Experiments const &);
     /**
-     * @symbol ?mAcaciaStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   338997760
-     */
-    MCAPI extern class Block const * mAcaciaStairs;
-    /**
-     * @symbol ?mAllow@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -758420966
-     */
-    MCAPI extern class Block const * mAllow;
-    /**
      * @symbol ?mAmethystBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -559540030
+     * @hash   84560610
      */
     MCAPI extern class Block const * mAmethystBlock;
     /**
      * @symbol ?mAmethystCluster@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1316924302
+     * @hash   -672823662
      */
     MCAPI extern class Block const * mAmethystCluster;
     /**
-     * @symbol ?mAncientDebris@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2147204626
-     */
-    MCAPI extern class Block const * mAncientDebris;
-    /**
-     * @symbol ?mAndesiteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -515835128
-     */
-    MCAPI extern class Block const * mAndesiteStairs;
-    /**
      * @symbol ?mAnvil@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   210330674
+     * @hash   855776714
      */
     MCAPI extern class Block const * mAnvil;
     /**
      * @symbol ?mAzalea@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   560643600
+     * @hash   1204805744
      */
     MCAPI extern class Block const * mAzalea;
     /**
      * @symbol ?mBambooBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -856270038
+     * @hash   -211908006
      */
     MCAPI extern class Block const * mBambooBlock;
     /**
      * @symbol ?mBambooSapling@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2107545106
+     * @hash   -1543060158
      */
     MCAPI extern class Block const * mBambooSapling;
     /**
      * @symbol ?mBasalt@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1866294528
+     * @hash   -1222040128
      */
     MCAPI extern class Block const * mBasalt;
     /**
      * @symbol ?mBeacon@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1524575336
+     * @hash   -2124907480
      */
     MCAPI extern class Block const * mBeacon;
     /**
      * @symbol ?mBeeNest@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1497265710
+     * @hash   -853011310
      */
     MCAPI extern class Block const * mBeeNest;
     /**
      * @symbol ?mBeehive@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -256226086
+     * @hash   388028314
      */
     MCAPI extern class Block const * mBeehive;
     /**
      * @symbol ?mBigDripleaf@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1213577642
+     * @hash   1857739786
      */
     MCAPI extern class Block const * mBigDripleaf;
     /**
-     * @symbol ?mBirchStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1434186694
-     */
-    MCAPI extern class Block const * mBirchStairs;
-    /**
      * @symbol ?mBlackstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   745602904
+     * @hash   1389834240
      */
     MCAPI extern class Block const * mBlackstone;
     /**
      * @symbol ?mBlackstoneDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   602792424
+     * @hash   1247008384
      */
     MCAPI extern class Block const * mBlackstoneDoubleSlab;
     /**
      * @symbol ?mBlackstoneSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1090722368
+     * @hash   -446506408
      */
     MCAPI extern class Block const * mBlackstoneSlab;
     /**
-     * @symbol ?mBlackstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1238578664
-     */
-    MCAPI extern class Block const * mBlackstoneStairs;
-    /**
      * @symbol ?mBoneBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1152989222
+     * @hash   -507543182
      */
     MCAPI extern class Block const * mBoneBlock;
     /**
      * @symbol ?mBookshelf@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1511498446
+     * @hash   -865952462
      */
     MCAPI extern class Block const * mBookshelf;
     /**
      * @symbol ?mBrewingStand@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1932639312
+     * @hash   -1287131768
      */
     MCAPI extern class Block const * mBrewingStand;
     /**
-     * @symbol ?mBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -51507358
-     */
-    MCAPI extern class Block const * mBrickStairs;
-    /**
-     * @symbol ?mBubbleColumn@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1893451104
-     */
-    MCAPI extern class Block const * mBubbleColumn;
-    /**
      * @symbol ?mBuddingAmethyst@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   57125130
+     * @hash   701225770
      */
     MCAPI extern class Block const * mBuddingAmethyst;
     /**
      * @symbol ?mButtonAcacia@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   226813128
+     * @hash   871190536
      */
     MCAPI extern class Block const * mButtonAcacia;
     /**
      * @symbol ?mButtonBirch@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1274667442
+     * @hash   1919044850
      */
     MCAPI extern class Block const * mButtonBirch;
     /**
      * @symbol ?mButtonDarkOak@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1974085734
+     * @hash   -1329708326
      */
     MCAPI extern class Block const * mButtonDarkOak;
     /**
      * @symbol ?mButtonJungle@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -714438080
+     * @hash   -70060672
      */
     MCAPI extern class Block const * mButtonJungle;
     /**
      * @symbol ?mButtonSpruce@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -308396760
+     * @hash   335980648
      */
     MCAPI extern class Block const * mButtonSpruce;
     /**
      * @symbol ?mCalcite@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -99028838
+     * @hash   545071802
      */
     MCAPI extern class Block const * mCalcite;
     /**
-     * @symbol ?mCameraBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   330362106
-     */
-    MCAPI extern class Block const * mCameraBlock;
-    /**
-     * @symbol ?mCarvedPumpkin@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1724958050
-     */
-    MCAPI extern class Block const * mCarvedPumpkin;
-    /**
      * @symbol ?mCauldron@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   602851768
+     * @hash   1248359312
      */
     MCAPI extern class Block const * mCauldron;
     /**
      * @symbol ?mCaveVines@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1444787762
+     * @hash   2088949906
      */
     MCAPI extern class Block const * mCaveVines;
     /**
      * @symbol ?mCaveVinesBodyWithBerries@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1398750184
+     * @hash   -754588040
      */
     MCAPI extern class Block const * mCaveVinesBodyWithBerries;
     /**
      * @symbol ?mCaveVinesHeadWithBerries@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1789267744
+     * @hash   -1145105600
      */
     MCAPI extern class Block const * mCaveVinesHeadWithBerries;
     /**
-     * @symbol ?mChain@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -78625118
-     */
-    MCAPI extern class Block const * mChain;
-    /**
-     * @symbol ?mChalkboard@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -880422912
-     */
-    MCAPI extern class Block const * mChalkboard;
-    /**
-     * @symbol ?mChemicalHeat@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   697486456
-     */
-    MCAPI extern class Block const * mChemicalHeat;
-    /**
-     * @symbol ?mChemistryTable@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1905379728
-     */
-    MCAPI extern class Block const * mChemistryTable;
-    /**
      * @symbol ?mChest@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -264558630
+     * @hash   380979666
      */
     MCAPI extern class Block const * mChest;
     /**
      * @symbol ?mChiseledDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1110014198
+     * @hash   -465913558
      */
     MCAPI extern class Block const * mChiseledDeepslate;
     /**
      * @symbol ?mChiseledPolishedBlackstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   588609616
+     * @hash   1232825576
      */
     MCAPI extern class Block const * mChiseledPolishedBlackstone;
     /**
      * @symbol ?mChorusPlantBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1933770760
+     * @hash   -1288340096
      */
     MCAPI extern class Block const * mChorusPlantBlock;
     /**
      * @symbol ?mCobbledDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -933076144
+     * @hash   -288944752
      */
     MCAPI extern class Block const * mCobbledDeepslate;
     /**
      * @symbol ?mCobbledDeepslateDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1029748208
+     * @hash   -385647568
      */
     MCAPI extern class Block const * mCobbledDeepslateDoubleSlab;
     /**
      * @symbol ?mCobbledDeepslateSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   476049816
+     * @hash   1120181208
      */
     MCAPI extern class Block const * mCobbledDeepslateSlab;
     /**
-     * @symbol ?mCobbledDeepslateStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1121334816
-     */
-    MCAPI extern class Block const * mCobbledDeepslateStairs;
-    /**
      * @symbol ?mCobblestone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1771459306
+     * @hash   -1877931254
      */
     MCAPI extern class Block const * mCobblestone;
     /**
-     * @symbol ?mCobblestoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -452842926
-     */
-    MCAPI extern class Block const * mCobblestoneStairs;
-    /**
      * @symbol ?mConduitBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1135109040
+     * @hash   -489624560
      */
     MCAPI extern class Block const * mConduitBlock;
     /**
      * @symbol ?mCopperBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -311132054
+     * @hash   333060842
      */
     MCAPI extern class Block const * mCopperBlock;
     /**
-     * @symbol ?mCoral@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   668126298
-     */
-    MCAPI extern class Block const * mCoral;
-    /**
-     * @symbol ?mCoralBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   42187168
-     */
-    MCAPI extern class Block const * mCoralBlock;
-    /**
-     * @symbol ?mCoralFan@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   144164776
-     */
-    MCAPI extern class Block const * mCoralFan;
-    /**
-     * @symbol ?mCoralFanDead@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   188607408
-     */
-    MCAPI extern class Block const * mCoralFanDead;
-    /**
-     * @symbol ?mCoralFanHang@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1863560968
-     */
-    MCAPI extern class Block const * mCoralFanHang;
-    /**
-     * @symbol ?mCoralFanHang2@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -619779742
-     */
-    MCAPI extern class Block const * mCoralFanHang2;
-    /**
-     * @symbol ?mCoralFanHang3@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1666014922
-     */
-    MCAPI extern class Block const * mCoralFanHang3;
-    /**
      * @symbol ?mCrackedDeepslateTiles@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   369510674
+     * @hash   1013611314
      */
     MCAPI extern class Block const * mCrackedDeepslateTiles;
     /**
      * @symbol ?mCrimsonButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -676430078
+     * @hash   -32175678
      */
     MCAPI extern class Block const * mCrimsonButton;
     /**
      * @symbol ?mCrimsonDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   292693778
+     * @hash   936948178
      */
     MCAPI extern class Block const * mCrimsonDoubleSlab;
     /**
      * @symbol ?mCrimsonFungus@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -80907254
+     * @hash   564638730
      */
     MCAPI extern class Block const * mCrimsonFungus;
     /**
      * @symbol ?mCrimsonNylium@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1913087506
+     * @hash   -1737625390
      */
     MCAPI extern class Block const * mCrimsonNylium;
     /**
      * @symbol ?mCrimsonPressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   989922000
+     * @hash   1634176400
      */
     MCAPI extern class Block const * mCrimsonPressurePlate;
     /**
      * @symbol ?mCrimsonSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1706776162
+     * @hash   -1943936734
      */
     MCAPI extern class Block const * mCrimsonSlab;
     /**
-     * @symbol ?mCrimsonStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1073758274
-     */
-    MCAPI extern class Block const * mCrimsonStairs;
-    /**
      * @symbol ?mCryingObsidian@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -313537480
+     * @hash   330663104
      */
     MCAPI extern class Block const * mCryingObsidian;
     /**
      * @symbol ?mCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2125125526
+     * @hash   -1480932630
      */
     MCAPI extern class Block const * mCutCopper;
     /**
      * @symbol ?mCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1234532330
+     * @hash   1878694474
      */
     MCAPI extern class Block const * mCutCopperSlab;
     /**
-     * @symbol ?mCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2083659382
-     */
-    MCAPI extern class Block const * mCutCopperStairs;
-    /**
-     * @symbol ?mDarkOakStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1766928310
-     */
-    MCAPI extern class Block const * mDarkOakStairs;
-    /**
-     * @symbol ?mDarkPrismarineStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1497340296
-     */
-    MCAPI extern class Block const * mDarkPrismarineStairs;
-    /**
      * @symbol ?mDaylightDetector@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1443276096
+     * @hash   -797830056
      */
     MCAPI extern class Block const * mDaylightDetector;
     /**
      * @symbol ?mDaylightDetectorInverted@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -417882872
+     * @hash   227547792
      */
     MCAPI extern class Block const * mDaylightDetectorInverted;
     /**
      * @symbol ?mDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2061247114
+     * @hash   -1589588790
      */
     MCAPI extern class Block const * mDeepslate;
     /**
      * @symbol ?mDeepslateBrickDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1958931496
+     * @hash   -1691935160
      */
     MCAPI extern class Block const * mDeepslateBrickDoubleSlab;
     /**
      * @symbol ?mDeepslateBrickSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -593876520
+     * @hash   50231808
      */
     MCAPI extern class Block const * mDeepslateBrickSlab;
     /**
-     * @symbol ?mDeepslateBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1412563488
-     */
-    MCAPI extern class Block const * mDeepslateBrickStairs;
-    /**
      * @symbol ?mDeepslateTileDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   419962786
+     * @hash   1064063426
      */
     MCAPI extern class Block const * mDeepslateTileDoubleSlab;
     /**
      * @symbol ?mDeepslateTileSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   764610762
+     * @hash   1408726778
      */
     MCAPI extern class Block const * mDeepslateTileSlab;
     /**
-     * @symbol ?mDeepslateTileStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1263544466
-     */
-    MCAPI extern class Block const * mDeepslateTileStairs;
-    /**
      * @symbol ?mDeepslateTiles@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -732515072
+     * @hash   -88399056
      */
     MCAPI extern class Block const * mDeepslateTiles;
     /**
-     * @symbol ?mDeny@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -261899360
-     */
-    MCAPI extern class Block const * mDeny;
-    /**
-     * @symbol ?mDioriteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2036316994
-     */
-    MCAPI extern class Block const * mDioriteStairs;
-    /**
      * @symbol ?mDispenser@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -786639302
+     * @hash   -141085630
      */
     MCAPI extern class Block const * mDispenser;
     /**
      * @symbol ?mDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -600347630
+     * @hash   43814514
      */
     MCAPI extern class Block const * mDoubleCutCopperSlab;
     /**
      * @symbol ?mDoubleStoneSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1650118202
+     * @hash   -1999303110
      */
     MCAPI extern class Block const * mDoubleStoneSlab;
     /**
      * @symbol ?mDoubleStoneSlab2@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   951833792
+     * @hash   1597256768
      */
     MCAPI extern class Block const * mDoubleStoneSlab2;
     /**
      * @symbol ?mDoubleStoneSlab3@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1056062632
+     * @hash   -411700600
      */
     MCAPI extern class Block const * mDoubleStoneSlab3;
     /**
      * @symbol ?mDoubleStoneSlab4@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1229739720
+     * @hash   1874101752
      */
     MCAPI extern class Block const * mDoubleStoneSlab4;
     /**
      * @symbol ?mDoubleWoodenSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1601889696
+     * @hash   -956459032
      */
     MCAPI extern class Block const * mDoubleWoodenSlab;
     /**
      * @symbol ?mDragonEgg@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1937030470
+     * @hash   -1291607494
      */
     MCAPI extern class Block const * mDragonEgg;
     /**
-     * @symbol ?mDriedKelpBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   497911456
-     */
-    MCAPI extern class Block const * mDriedKelpBlock;
-    /**
      * @symbol ?mDripstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1583516382
+     * @hash   -939323486
      */
     MCAPI extern class Block const * mDripstone;
     /**
      * @symbol ?mDropper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1606266742
+     * @hash   -960813014
      */
     MCAPI extern class Block const * mDropper;
     /**
-     * @symbol ?mElement0@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1752434368
-     */
-    MCAPI extern class Block const * mElement0;
-    /**
-     * @symbol ?mElement1@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -256738264
-     */
-    MCAPI extern class Block const * mElement1;
-    /**
-     * @symbol ?mElement10@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1668232274
-     */
-    MCAPI extern class Block const * mElement10;
-    /**
-     * @symbol ?mElement100@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1211323776
-     */
-    MCAPI extern class Block const * mElement100;
-    /**
-     * @symbol ?mElement101@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -797848856
-     */
-    MCAPI extern class Block const * mElement101;
-    /**
-     * @symbol ?mElement102@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1487945808
-     */
-    MCAPI extern class Block const * mElement102;
-    /**
-     * @symbol ?mElement103@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -521226824
-     */
-    MCAPI extern class Block const * mElement103;
-    /**
-     * @symbol ?mElement104@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1764567840
-     */
-    MCAPI extern class Block const * mElement104;
-    /**
-     * @symbol ?mElement105@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -244604792
-     */
-    MCAPI extern class Block const * mElement105;
-    /**
-     * @symbol ?mElement106@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2041189872
-     */
-    MCAPI extern class Block const * mElement106;
-    /**
-     * @symbol ?mElement107@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   32017240
-     */
-    MCAPI extern class Block const * mElement107;
-    /**
-     * @symbol ?mElement108@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1977155392
-     */
-    MCAPI extern class Block const * mElement108;
-    /**
-     * @symbol ?mElement109@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   308639272
-     */
-    MCAPI extern class Block const * mElement109;
-    /**
-     * @symbol ?mElement11@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -340940358
-     */
-    MCAPI extern class Block const * mElement11;
-    /**
-     * @symbol ?mElement110@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -943647120
-     */
-    MCAPI extern class Block const * mElement110;
-    /**
-     * @symbol ?mElement111@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1342147544
-     */
-    MCAPI extern class Block const * mElement111;
-    /**
-     * @symbol ?mElement112@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -667025088
-     */
-    MCAPI extern class Block const * mElement112;
-    /**
-     * @symbol ?mElement113@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1618769576
-     */
-    MCAPI extern class Block const * mElement113;
-    /**
-     * @symbol ?mElement114@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -390403056
-     */
-    MCAPI extern class Block const * mElement114;
-    /**
-     * @symbol ?mElement115@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1895391608
-     */
-    MCAPI extern class Block const * mElement115;
-    /**
-     * @symbol ?mElement116@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -113781024
-     */
-    MCAPI extern class Block const * mElement116;
-    /**
-     * @symbol ?mElement117@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2122953656
-     */
-    MCAPI extern class Block const * mElement117;
-    /**
-     * @symbol ?mElement118@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   162841008
-     */
-    MCAPI extern class Block const * mElement118;
-    /**
-     * @symbol ?mElement12@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1944854306
-     */
-    MCAPI extern class Block const * mElement12;
-    /**
-     * @symbol ?mElement13@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -64318326
-     */
-    MCAPI extern class Block const * mElement13;
-    /**
-     * @symbol ?mElement14@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2073490958
-     */
-    MCAPI extern class Block const * mElement14;
-    /**
-     * @symbol ?mElement15@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   212303706
-     */
-    MCAPI extern class Block const * mElement15;
-    /**
-     * @symbol ?mElement16@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1796868926
-     */
-    MCAPI extern class Block const * mElement16;
-    /**
-     * @symbol ?mElement17@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   488925738
-     */
-    MCAPI extern class Block const * mElement17;
-    /**
-     * @symbol ?mElement18@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1520246894
-     */
-    MCAPI extern class Block const * mElement18;
-    /**
-     * @symbol ?mElement19@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   765547770
-     */
-    MCAPI extern class Block const * mElement19;
-    /**
-     * @symbol ?mElement2@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2029056400
-     */
-    MCAPI extern class Block const * mElement2;
-    /**
-     * @symbol ?mElement20@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -486738622
-     */
-    MCAPI extern class Block const * mElement20;
-    /**
-     * @symbol ?mElement21@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1799056042
-     */
-    MCAPI extern class Block const * mElement21;
-    /**
-     * @symbol ?mElement22@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -210116590
-     */
-    MCAPI extern class Block const * mElement22;
-    /**
-     * @symbol ?mElement23@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2075678074
-     */
-    MCAPI extern class Block const * mElement23;
-    /**
-     * @symbol ?mElement24@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   66505442
-     */
-    MCAPI extern class Block const * mElement24;
-    /**
-     * @symbol ?mElement25@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1942667190
-     */
-    MCAPI extern class Block const * mElement25;
-    /**
-     * @symbol ?mElement26@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   343127474
-     */
-    MCAPI extern class Block const * mElement26;
-    /**
-     * @symbol ?mElement27@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1666045158
-     */
-    MCAPI extern class Block const * mElement27;
-    /**
-     * @symbol ?mElement28@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   619749506
-     */
-    MCAPI extern class Block const * mElement28;
-    /**
-     * @symbol ?mElement29@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1389423126
-     */
-    MCAPI extern class Block const * mElement29;
-    /**
-     * @symbol ?mElement3@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   19883768
-     */
-    MCAPI extern class Block const * mElement3;
-    /**
-     * @symbol ?mElement30@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1653257778
-     */
-    MCAPI extern class Block const * mElement30;
-    /**
-     * @symbol ?mElement31@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -355914854
-     */
-    MCAPI extern class Block const * mElement31;
-    /**
-     * @symbol ?mElement32@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1929879810
-     */
-    MCAPI extern class Block const * mElement32;
-    /**
-     * @symbol ?mElement33@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -79292822
-     */
-    MCAPI extern class Block const * mElement33;
-    /**
-     * @symbol ?mElement34@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2088465454
-     */
-    MCAPI extern class Block const * mElement34;
-    /**
-     * @symbol ?mElement35@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   197329210
-     */
-    MCAPI extern class Block const * mElement35;
-    /**
-     * @symbol ?mElement36@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1811843422
-     */
-    MCAPI extern class Block const * mElement36;
-    /**
-     * @symbol ?mElement37@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   473951242
-     */
-    MCAPI extern class Block const * mElement37;
-    /**
-     * @symbol ?mElement38@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1535221390
-     */
-    MCAPI extern class Block const * mElement38;
-    /**
-     * @symbol ?mElement39@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   750573274
-     */
-    MCAPI extern class Block const * mElement39;
-    /**
-     * @symbol ?mElement4@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1989288864
-     */
-    MCAPI extern class Block const * mElement4;
-    /**
-     * @symbol ?mElement40@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -501713118
-     */
-    MCAPI extern class Block const * mElement40;
-    /**
-     * @symbol ?mElement41@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1784081546
-     */
-    MCAPI extern class Block const * mElement41;
-    /**
-     * @symbol ?mElement42@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -225091086
-     */
-    MCAPI extern class Block const * mElement42;
-    /**
-     * @symbol ?mElement43@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2060703578
-     */
-    MCAPI extern class Block const * mElement43;
-    /**
-     * @symbol ?mElement44@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   51530946
-     */
-    MCAPI extern class Block const * mElement44;
-    /**
-     * @symbol ?mElement45@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1957641686
-     */
-    MCAPI extern class Block const * mElement45;
-    /**
-     * @symbol ?mElement46@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   328152978
-     */
-    MCAPI extern class Block const * mElement46;
-    /**
-     * @symbol ?mElement47@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1681019654
-     */
-    MCAPI extern class Block const * mElement47;
-    /**
-     * @symbol ?mElement48@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   604775010
-     */
-    MCAPI extern class Block const * mElement48;
-    /**
-     * @symbol ?mElement49@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1404397622
-     */
-    MCAPI extern class Block const * mElement49;
-    /**
-     * @symbol ?mElement5@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   296505800
-     */
-    MCAPI extern class Block const * mElement5;
-    /**
-     * @symbol ?mElement50@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1638283282
-     */
-    MCAPI extern class Block const * mElement50;
-    /**
-     * @symbol ?mElement51@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -370889350
-     */
-    MCAPI extern class Block const * mElement51;
-    /**
-     * @symbol ?mElement52@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1914905314
-     */
-    MCAPI extern class Block const * mElement52;
-    /**
-     * @symbol ?mElement53@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -94267318
-     */
-    MCAPI extern class Block const * mElement53;
-    /**
-     * @symbol ?mElement54@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2103439950
-     */
-    MCAPI extern class Block const * mElement54;
-    /**
-     * @symbol ?mElement55@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   182354714
-     */
-    MCAPI extern class Block const * mElement55;
-    /**
-     * @symbol ?mElement56@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1826817918
-     */
-    MCAPI extern class Block const * mElement56;
-    /**
-     * @symbol ?mElement57@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   458976746
-     */
-    MCAPI extern class Block const * mElement57;
-    /**
-     * @symbol ?mElement58@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1550195886
-     */
-    MCAPI extern class Block const * mElement58;
-    /**
-     * @symbol ?mElement59@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   735598778
-     */
-    MCAPI extern class Block const * mElement59;
-    /**
-     * @symbol ?mElement6@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1712666832
-     */
-    MCAPI extern class Block const * mElement6;
-    /**
-     * @symbol ?mElement60@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -516687614
-     */
-    MCAPI extern class Block const * mElement60;
-    /**
-     * @symbol ?mElement61@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1769107050
-     */
-    MCAPI extern class Block const * mElement61;
-    /**
-     * @symbol ?mElement62@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -240065582
-     */
-    MCAPI extern class Block const * mElement62;
-    /**
-     * @symbol ?mElement63@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2045729082
-     */
-    MCAPI extern class Block const * mElement63;
-    /**
-     * @symbol ?mElement64@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   36556450
-     */
-    MCAPI extern class Block const * mElement64;
-    /**
-     * @symbol ?mElement65@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1972616182
-     */
-    MCAPI extern class Block const * mElement65;
-    /**
-     * @symbol ?mElement66@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   313178482
-     */
-    MCAPI extern class Block const * mElement66;
-    /**
-     * @symbol ?mElement67@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1695994150
-     */
-    MCAPI extern class Block const * mElement67;
-    /**
-     * @symbol ?mElement68@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   589800514
-     */
-    MCAPI extern class Block const * mElement68;
-    /**
-     * @symbol ?mElement69@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1419372118
-     */
-    MCAPI extern class Block const * mElement69;
-    /**
-     * @symbol ?mElement7@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   573127832
-     */
-    MCAPI extern class Block const * mElement7;
-    /**
-     * @symbol ?mElement70@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1623308786
-     */
-    MCAPI extern class Block const * mElement70;
-    /**
-     * @symbol ?mElement71@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -385863846
-     */
-    MCAPI extern class Block const * mElement71;
-    /**
-     * @symbol ?mElement72@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1899930818
-     */
-    MCAPI extern class Block const * mElement72;
-    /**
-     * @symbol ?mElement73@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -109241814
-     */
-    MCAPI extern class Block const * mElement73;
-    /**
-     * @symbol ?mElement74@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2118414446
-     */
-    MCAPI extern class Block const * mElement74;
-    /**
-     * @symbol ?mElement75@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   167380218
-     */
-    MCAPI extern class Block const * mElement75;
-    /**
-     * @symbol ?mElement76@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1841792414
-     */
-    MCAPI extern class Block const * mElement76;
-    /**
-     * @symbol ?mElement77@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   444002250
-     */
-    MCAPI extern class Block const * mElement77;
-    /**
-     * @symbol ?mElement78@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1565170382
-     */
-    MCAPI extern class Block const * mElement78;
-    /**
-     * @symbol ?mElement79@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   720624282
-     */
-    MCAPI extern class Block const * mElement79;
-    /**
-     * @symbol ?mElement8@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1436044800
-     */
-    MCAPI extern class Block const * mElement8;
-    /**
-     * @symbol ?mElement80@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -531662110
-     */
-    MCAPI extern class Block const * mElement80;
-    /**
-     * @symbol ?mElement81@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1754132554
-     */
-    MCAPI extern class Block const * mElement81;
-    /**
-     * @symbol ?mElement82@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -255040078
-     */
-    MCAPI extern class Block const * mElement82;
-    /**
-     * @symbol ?mElement83@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2030754586
-     */
-    MCAPI extern class Block const * mElement83;
-    /**
-     * @symbol ?mElement84@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   21581954
-     */
-    MCAPI extern class Block const * mElement84;
-    /**
-     * @symbol ?mElement85@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1987590678
-     */
-    MCAPI extern class Block const * mElement85;
-    /**
-     * @symbol ?mElement86@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   298203986
-     */
-    MCAPI extern class Block const * mElement86;
-    /**
-     * @symbol ?mElement87@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1710968646
-     */
-    MCAPI extern class Block const * mElement87;
-    /**
-     * @symbol ?mElement88@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   574826018
-     */
-    MCAPI extern class Block const * mElement88;
-    /**
-     * @symbol ?mElement89@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1434346614
-     */
-    MCAPI extern class Block const * mElement89;
-    /**
-     * @symbol ?mElement9@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   849749864
-     */
-    MCAPI extern class Block const * mElement9;
-    /**
-     * @symbol ?mElement90@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1608334290
-     */
-    MCAPI extern class Block const * mElement90;
-    /**
-     * @symbol ?mElement91@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -400838342
-     */
-    MCAPI extern class Block const * mElement91;
-    /**
-     * @symbol ?mElement92@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1884956322
-     */
-    MCAPI extern class Block const * mElement92;
-    /**
-     * @symbol ?mElement93@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -124216310
-     */
-    MCAPI extern class Block const * mElement93;
-    /**
-     * @symbol ?mElement94@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2133388942
-     */
-    MCAPI extern class Block const * mElement94;
-    /**
-     * @symbol ?mElement95@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   152405722
-     */
-    MCAPI extern class Block const * mElement95;
-    /**
-     * @symbol ?mElement96@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1856766910
-     */
-    MCAPI extern class Block const * mElement96;
-    /**
-     * @symbol ?mElement97@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   429027754
-     */
-    MCAPI extern class Block const * mElement97;
-    /**
-     * @symbol ?mElement98@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1580144878
-     */
-    MCAPI extern class Block const * mElement98;
-    /**
-     * @symbol ?mElement99@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   705649786
-     */
-    MCAPI extern class Block const * mElement99;
-    /**
      * @symbol ?mEnchantingTable@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1198413022
+     * @hash   -552959294
      */
     MCAPI extern class Block const * mEnchantingTable;
     /**
-     * @symbol ?mEndBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1926752608
-     */
-    MCAPI extern class Block const * mEndBrickStairs;
-    /**
      * @symbol ?mExposedCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1606884114
+     * @hash   -2043890286
      */
     MCAPI extern class Block const * mExposedCopper;
     /**
      * @symbol ?mExposedCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -328038960
+     * @hash   316153936
      */
     MCAPI extern class Block const * mExposedCutCopper;
     /**
      * @symbol ?mExposedCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1529345616
+     * @hash   -2121459536
      */
     MCAPI extern class Block const * mExposedCutCopperSlab;
     /**
-     * @symbol ?mExposedCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2051653744
-     */
-    MCAPI extern class Block const * mExposedCutCopperStairs;
-    /**
      * @symbol ?mExposedDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1156855296
+     * @hash   -512693152
      */
     MCAPI extern class Block const * mExposedDoubleCutCopperSlab;
     /**
      * @symbol ?mFrogSpawn@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1764552138
+     * @hash   -1886329894
      */
     MCAPI extern class Block const * mFrogSpawn;
     /**
      * @symbol ?mGildedBlackstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1301101416
+     * @hash   -656885456
      */
     MCAPI extern class Block const * mGildedBlackstone;
     /**
      * @symbol ?mGlass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -52908974
+     * @hash   592644698
      */
     MCAPI extern class Block const * mGlass;
     /**
      * @symbol ?mGlassPane@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1513084942
+     * @hash   -867569710
      */
     MCAPI extern class Block const * mGlassPane;
     /**
      * @symbol ?mGlowLichen@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   627464728
+     * @hash   1271603808
      */
     MCAPI extern class Block const * mGlowLichen;
     /**
      * @symbol ?mGlowingObsidian@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1234699586
+     * @hash   1880122562
      */
     MCAPI extern class Block const * mGlowingObsidian;
     /**
-     * @symbol ?mGraniteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1508926662
-     */
-    MCAPI extern class Block const * mGraniteStairs;
-    /**
      * @symbol ?mGrass@VanillaBlocks@@3PEAVBlock@@EA
-     * @hash   -322552185
+     * @hash   323024551
      */
     MCAPI extern class Block * mGrass;
     /**
      * @symbol ?mGrassPathBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1527659472
+     * @hash   -2121884848
      */
     MCAPI extern class Block const * mGrassPathBlock;
     /**
      * @symbol ?mHardGlass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -315424742
+     * @hash   329890602
      */
     MCAPI extern class Block const * mHardGlass;
     /**
      * @symbol ?mHardGlassPane@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1167740586
+     * @hash   1813055930
      */
     MCAPI extern class Block const * mHardGlassPane;
     /**
      * @symbol ?mHardStainedGlass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -781140416
+     * @hash   -135825072
      */
     MCAPI extern class Block const * mHardStainedGlass;
     /**
      * @symbol ?mHardStainedGlassPane@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1817260592
+     * @hash   -1171945248
      */
     MCAPI extern class Block const * mHardStainedGlassPane;
     /**
      * @symbol ?mHeavyWeightedPressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -16428536
+     * @hash   629017504
      */
     MCAPI extern class Block const * mHeavyWeightedPressurePlate;
     /**
      * @symbol ?mHopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -329503472
+     * @hash   315942568
      */
     MCAPI extern class Block const * mHopper;
     /**
      * @symbol ?mInfestedDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   293436146
+     * @hash   937536786
      */
     MCAPI extern class Block const * mInfestedDeepslate;
     /**
      * @symbol ?mInfoReserved6@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1011005850
+     * @hash   1656428826
      */
     MCAPI extern class Block const * mInfoReserved6;
     /**
      * @symbol ?mInfoUpdateGame1@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -244234166
+     * @hash   401188810
      */
     MCAPI extern class Block const * mInfoUpdateGame1;
     /**
      * @symbol ?mInfoUpdateGame2@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2041560498
+     * @hash   -1607983822
      */
     MCAPI extern class Block const * mInfoUpdateGame2;
     /**
-     * @symbol ?mJukebox@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1777535162
-     */
-    MCAPI extern class Block const * mJukebox;
-    /**
-     * @symbol ?mJungleStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -435454656
-     */
-    MCAPI extern class Block const * mJungleStairs;
-    /**
-     * @symbol ?mKelp@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -833975880
-     */
-    MCAPI extern class Block const * mKelp;
-    /**
      * @symbol ?mLargeAmethystBud@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1041528552
+     * @hash   -397427912
      */
     MCAPI extern class Block const * mLargeAmethystBud;
     /**
      * @symbol ?mLavaCauldron@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2011521872
+     * @hash   -1639191024
      */
     MCAPI extern class Block const * mLavaCauldron;
     /**
      * @symbol ?mLever@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1491584082
+     * @hash   2137114690
      */
     MCAPI extern class Block const * mLever;
     /**
      * @symbol ?mLightWeightedPressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2085805728
+     * @hash   -1440359688
      */
     MCAPI extern class Block const * mLightWeightedPressurePlate;
     /**
-     * @symbol ?mLightningRod@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -307585576
-     */
-    MCAPI extern class Block const * mLightningRod;
-    /**
      * @symbol ?mLitRedStoneLamp@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1462182390
+     * @hash   -816674846
      */
     MCAPI extern class Block const * mLitRedStoneLamp;
     /**
      * @symbol ?mLodestoneBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1452787072
+     * @hash   2097041472
      */
     MCAPI extern class Block const * mLodestoneBlock;
     /**
      * @symbol ?mMagmaBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1070867304
+     * @hash   -425436640
      */
     MCAPI extern class Block const * mMagmaBlock;
     /**
      * @symbol ?mMangroveButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1278151216
+     * @hash   1922244168
      */
     MCAPI extern class Block const * mMangroveButton;
     /**
      * @symbol ?mMangroveDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1099551552
+     * @hash   1743636816
      */
     MCAPI extern class Block const * mMangroveDoubleSlab;
     /**
      * @symbol ?mMangrovePressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1281576842
+     * @hash   1925662106
      */
     MCAPI extern class Block const * mMangrovePressurePlate;
     /**
      * @symbol ?mMangrovePropagule@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   438184794
+     * @hash   1082277746
      */
     MCAPI extern class Block const * mMangrovePropagule;
     /**
      * @symbol ?mMangroveRoots@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -231757214
+     * @hash   412335738
      */
     MCAPI extern class Block const * mMangroveRoots;
     /**
      * @symbol ?mMangroveSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1034872064
+     * @hash   1678957328
      */
     MCAPI extern class Block const * mMangroveSlab;
     /**
-     * @symbol ?mMangroveStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1266681544
-     */
-    MCAPI extern class Block const * mMangroveStairs;
-    /**
      * @symbol ?mMangroveWood@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -657088208
+     * @hash   -13002944
      */
     MCAPI extern class Block const * mMangroveWood;
     /**
      * @symbol ?mMediumAmethystBud@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1024375554
+     * @hash   1668476194
      */
     MCAPI extern class Block const * mMediumAmethystBud;
     /**
      * @symbol ?mMobSpawner@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   565213576
+     * @hash   1210759560
      */
     MCAPI extern class Block const * mMobSpawner;
     /**
      * @symbol ?mMonsterStoneEgg@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1397378922
+     * @hash   2042894154
      */
     MCAPI extern class Block const * mMonsterStoneEgg;
     /**
      * @symbol ?mMossyCobblestone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -939870824
+     * @hash   -294324840
      */
     MCAPI extern class Block const * mMossyCobblestone;
     /**
-     * @symbol ?mMossyCobblestoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   277144520
-     */
-    MCAPI extern class Block const * mMossyCobblestoneStairs;
-    /**
-     * @symbol ?mMossyStoneBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1079726134
-     */
-    MCAPI extern class Block const * mMossyStoneBrickStairs;
-    /**
      * @symbol ?mMovingBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -145870854
+     * @hash   499675130
      */
     MCAPI extern class Block const * mMovingBlock;
     /**
      * @symbol ?mMudBrickDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1499445912
+     * @hash   -855345272
      */
     MCAPI extern class Block const * mMudBrickDoubleSlab;
     /**
      * @symbol ?mMudBrickSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1282216256
+     * @hash   1926316896
      */
     MCAPI extern class Block const * mMudBrickSlab;
     /**
-     * @symbol ?mMudBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   266952592
-     */
-    MCAPI extern class Block const * mMudBrickStairs;
-    /**
      * @symbol ?mMuddyMangroveRoots@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2046114008
+     * @hash   -1402021056
      */
     MCAPI extern class Block const * mMuddyMangroveRoots;
     /**
-     * @symbol ?mNetherBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1154062362
-     */
-    MCAPI extern class Block const * mNetherBrickStairs;
-    /**
-     * @symbol ?mNote@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -800050680
-     */
-    MCAPI extern class Block const * mNote;
-    /**
-     * @symbol ?mOakStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1070678034
-     */
-    MCAPI extern class Block const * mOakStairs;
-    /**
      * @symbol ?mObserver@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -758895040
+     * @hash   -113349056
      */
     MCAPI extern class Block const * mObserver;
     /**
      * @symbol ?mObsidian@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1120984224
+     * @hash   -475438240
      */
     MCAPI extern class Block const * mObsidian;
     /**
      * @symbol ?mOchreFroglight@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   811047552
+     * @hash   1455132816
      */
     MCAPI extern class Block const * mOchreFroglight;
     /**
      * @symbol ?mOxidizedCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   132698688
+     * @hash   776891584
      */
     MCAPI extern class Block const * mOxidizedCopper;
     /**
      * @symbol ?mOxidizedCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2091452930
+     * @hash   -1559321470
      */
     MCAPI extern class Block const * mOxidizedCutCopper;
     /**
      * @symbol ?mOxidizedCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -656828030
+     * @hash   -12665886
      */
     MCAPI extern class Block const * mOxidizedCutCopperSlab;
     /**
-     * @symbol ?mOxidizedCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1363026722
-     */
-    MCAPI extern class Block const * mOxidizedCutCopperStairs;
-    /**
      * @symbol ?mOxidizedDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   409479610
+     * @hash   1053641754
      */
     MCAPI extern class Block const * mOxidizedDoubleCutCopperSlab;
     /**
      * @symbol ?mPearlescentFroglight@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2048539568
+     * @hash   -1404454304
      */
     MCAPI extern class Block const * mPearlescentFroglight;
     /**
      * @symbol ?mPiston@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   127088120
+     * @hash   772634104
      */
     MCAPI extern class Block const * mPiston;
     /**
      * @symbol ?mPistonArm@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   357741994
+     * @hash   1003287978
      */
     MCAPI extern class Block const * mPistonArm;
     /**
      * @symbol ?mPointedDripstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1704415176
+     * @hash   -1946351536
      */
     MCAPI extern class Block const * mPointedDripstone;
     /**
-     * @symbol ?mPolishedAndesiteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1161737184
-     */
-    MCAPI extern class Block const * mPolishedAndesiteStairs;
-    /**
      * @symbol ?mPolishedBasalt@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   690597896
+     * @hash   1334852296
      */
     MCAPI extern class Block const * mPolishedBasalt;
     /**
      * @symbol ?mPolishedBlackstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1165647192
+     * @hash   -521438920
      */
     MCAPI extern class Block const * mPolishedBlackstone;
     /**
      * @symbol ?mPolishedBlackstoneBrickDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1115668486
+     * @hash   -471452526
      */
     MCAPI extern class Block const * mPolishedBlackstoneBrickDoubleSlab;
     /**
      * @symbol ?mPolishedBlackstoneBrickSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -246846126
+     * @hash   397369834
      */
     MCAPI extern class Block const * mPolishedBlackstoneBrickSlab;
     /**
-     * @symbol ?mPolishedBlackstoneBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   440044258
-     */
-    MCAPI extern class Block const * mPolishedBlackstoneBrickStairs;
-    /**
      * @symbol ?mPolishedBlackstoneButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1524769360
+     * @hash   -2125997352
      */
     MCAPI extern class Block const * mPolishedBlackstoneButton;
     /**
      * @symbol ?mPolishedBlackstoneDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -983995616
+     * @hash   -339795032
      */
     MCAPI extern class Block const * mPolishedBlackstoneDoubleSlab;
     /**
      * @symbol ?mPolishedBlackstonePressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -755862198
+     * @hash   -111661614
      */
     MCAPI extern class Block const * mPolishedBlackstonePressurePlate;
     /**
      * @symbol ?mPolishedBlackstoneSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1736593672
+     * @hash   -1092393088
      */
     MCAPI extern class Block const * mPolishedBlackstoneSlab;
     /**
-     * @symbol ?mPolishedBlackstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1020101840
-     */
-    MCAPI extern class Block const * mPolishedBlackstoneStairs;
-    /**
      * @symbol ?mPolishedDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1325513814
+     * @hash   -681390110
      */
     MCAPI extern class Block const * mPolishedDeepslate;
     /**
      * @symbol ?mPolishedDeepslateDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -33455142
+     * @hash   610645498
      */
     MCAPI extern class Block const * mPolishedDeepslateDoubleSlab;
     /**
      * @symbol ?mPolishedDeepslateSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1553276686
+     * @hash   -909152982
      */
     MCAPI extern class Block const * mPolishedDeepslateSlab;
     /**
-     * @symbol ?mPolishedDeepslateStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1411092294
-     */
-    MCAPI extern class Block const * mPolishedDeepslateStairs;
-    /**
-     * @symbol ?mPolishedDioriteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   75841114
-     */
-    MCAPI extern class Block const * mPolishedDioriteStairs;
-    /**
-     * @symbol ?mPolishedGraniteStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   825564754
-     */
-    MCAPI extern class Block const * mPolishedGraniteStairs;
-    /**
      * @symbol ?mPortal@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1640337648
+     * @hash   -2009114416
      */
     MCAPI extern class Block const * mPortal;
     /**
      * @symbol ?mPoweredComparator@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1227929626
+     * @hash   1873375666
      */
     MCAPI extern class Block const * mPoweredComparator;
     /**
      * @symbol ?mPoweredRepeater@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   893547042
+     * @hash   1539062274
      */
     MCAPI extern class Block const * mPoweredRepeater;
     /**
      * @symbol ?mPressurePlateAcacia@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -588862606
+     * @hash   55514802
      */
     MCAPI extern class Block const * mPressurePlateAcacia;
     /**
      * @symbol ?mPressurePlateBirch@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -414175464
+     * @hash   230201944
      */
     MCAPI extern class Block const * mPressurePlateBirch;
     /**
      * @symbol ?mPressurePlateDarkOak@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1491382912
+     * @hash   -847005504
      */
     MCAPI extern class Block const * mPressurePlateDarkOak;
     /**
      * @symbol ?mPressurePlateJungle@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1530113814
+     * @hash   -885736406
      */
     MCAPI extern class Block const * mPressurePlateJungle;
     /**
      * @symbol ?mPressurePlateSpruce@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1124072494
+     * @hash   -479695086
      */
     MCAPI extern class Block const * mPressurePlateSpruce;
     /**
      * @symbol ?mPrismarine@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -283811312
+     * @hash   361611664
      */
     MCAPI extern class Block const * mPrismarine;
     /**
-     * @symbol ?mPrismarineBricksStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2006458960
-     */
-    MCAPI extern class Block const * mPrismarineBricksStairs;
-    /**
-     * @symbol ?mPrismarineStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -144518976
-     */
-    MCAPI extern class Block const * mPrismarineStairs;
-    /**
      * @symbol ?mPurpurBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1665833258
+     * @hash   -1983695686
      */
     MCAPI extern class Block const * mPurpurBlock;
     /**
-     * @symbol ?mPurpurStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1833343952
-     */
-    MCAPI extern class Block const * mPurpurStairs;
-    /**
      * @symbol ?mQuartzBricks@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   609985984
+     * @hash   1254186568
      */
     MCAPI extern class Block const * mQuartzBricks;
     /**
-     * @symbol ?mQuartzStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1870201664
-     */
-    MCAPI extern class Block const * mQuartzStairs;
-    /**
      * @symbol ?mRawCopperBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   372992728
+     * @hash   1017093368
      */
     MCAPI extern class Block const * mRawCopperBlock;
     /**
-     * @symbol ?mRedNetherBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1654376384
-     */
-    MCAPI extern class Block const * mRedNetherBrickStairs;
-    /**
      * @symbol ?mRedSandstone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   138244272
+     * @hash   783674936
      */
     MCAPI extern class Block const * mRedSandstone;
     /**
-     * @symbol ?mRedSandstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -749401800
-     */
-    MCAPI extern class Block const * mRedSandstoneStairs;
-    /**
      * @symbol ?mRedStoneDust@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1231635168
+     * @hash   -586096872
      */
     MCAPI extern class Block const * mRedStoneDust;
     /**
      * @symbol ?mRedstoneBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -75706038
+     * @hash   569740002
      */
     MCAPI extern class Block const * mRedstoneBlock;
     /**
      * @symbol ?mReeds@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   38401554
+     * @hash   683932162
      */
     MCAPI extern class Block const * mReeds;
     /**
      * @symbol ?mReinforcedDeepslate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   679497978
+     * @hash   1323598618
      */
     MCAPI extern class Block const * mReinforcedDeepslate;
     /**
      * @symbol ?mSand@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   403911824
+     * @hash   1049488560
      */
     MCAPI extern class Block const * mSand;
     /**
      * @symbol ?mSandStone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   962288834
+     * @hash   1607842506
      */
     MCAPI extern class Block const * mSandStone;
     /**
-     * @symbol ?mSandstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2141081742
-     */
-    MCAPI extern class Block const * mSandstoneStairs;
-    /**
      * @symbol ?mSculk@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1213625754
+     * @hash   1857726394
      */
     MCAPI extern class Block const * mSculk;
     /**
      * @symbol ?mSculkCatalyst@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -712255222
+     * @hash   -68154582
      */
     MCAPI extern class Block const * mSculkCatalyst;
     /**
      * @symbol ?mSculkSensor@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2316270
+     * @hash   641884314
      */
     MCAPI extern class Block const * mSculkSensor;
     /**
      * @symbol ?mSculkShrieker@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -488808622
+     * @hash   155292018
      */
     MCAPI extern class Block const * mSculkShrieker;
     /**
      * @symbol ?mSculkVein@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1086327458
+     * @hash   1730428098
      */
     MCAPI extern class Block const * mSculkVein;
     /**
-     * @symbol ?mSeaGrass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1857365928
-     */
-    MCAPI extern class Block const * mSeaGrass;
-    /**
      * @symbol ?mShulkerBox@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -560892016
+     * @hash   84515584
      */
     MCAPI extern class Block const * mShulkerBox;
     /**
      * @symbol ?mSkull@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1178403722
+     * @hash   1823849762
      */
     MCAPI extern class Block const * mSkull;
     /**
      * @symbol ?mSlimeBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   372533040
+     * @hash   1017963704
      */
     MCAPI extern class Block const * mSlimeBlock;
     /**
      * @symbol ?mSmallAmethystBud@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   580940968
+     * @hash   1225041608
      */
     MCAPI extern class Block const * mSmallAmethystBud;
     /**
      * @symbol ?mSmallDripleaf@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1162812698
+     * @hash   1806974842
      */
     MCAPI extern class Block const * mSmallDripleaf;
     /**
      * @symbol ?mSmoothBasalt@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   946321544
+     * @hash   1590422184
      */
     MCAPI extern class Block const * mSmoothBasalt;
     /**
-     * @symbol ?mSmoothQuartzStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1529676952
-     */
-    MCAPI extern class Block const * mSmoothQuartzStairs;
-    /**
-     * @symbol ?mSmoothRedSandstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1779950800
-     */
-    MCAPI extern class Block const * mSmoothRedSandstoneStairs;
-    /**
-     * @symbol ?mSmoothSandstoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1879482406
-     */
-    MCAPI extern class Block const * mSmoothSandstoneStairs;
-    /**
      * @symbol ?mSmoothStone@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2082204922
+     * @hash   -1568492598
      */
     MCAPI extern class Block const * mSmoothStone;
     /**
      * @symbol ?mSoulSand@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2023549880
+     * @hash   -1378034648
      */
     MCAPI extern class Block const * mSoulSand;
     /**
-     * @symbol ?mSponge@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1386316504
-     */
-    MCAPI extern class Block const * mSponge;
-    /**
      * @symbol ?mSporeBlossom@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -193055288
+     * @hash   451106856
      */
     MCAPI extern class Block const * mSporeBlossom;
     /**
-     * @symbol ?mSpruceStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   800304656
-     */
-    MCAPI extern class Block const * mSpruceStairs;
-    /**
      * @symbol ?mStainedGlass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -340108288
+     * @hash   305314688
      */
     MCAPI extern class Block const * mStainedGlass;
     /**
      * @symbol ?mStainedGlassPane@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   542514568
+     * @hash   1187937544
      */
     MCAPI extern class Block const * mStainedGlassPane;
     /**
      * @symbol ?mStickyPiston@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2133525728
+     * @hash   -1487979744
      */
     MCAPI extern class Block const * mStickyPiston;
     /**
      * @symbol ?mStickyPistonArm@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -731228014
+     * @hash   -85682030
      */
     MCAPI extern class Block const * mStickyPistonArm;
     /**
-     * @symbol ?mStoneBrickStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -966318448
-     */
-    MCAPI extern class Block const * mStoneBrickStairs;
-    /**
      * @symbol ?mStoneButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1157030518
+     * @hash   -511499910
      */
     MCAPI extern class Block const * mStoneButton;
     /**
      * @symbol ?mStonePressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1864923080
+     * @hash   -1219392472
      */
     MCAPI extern class Block const * mStonePressurePlate;
     /**
      * @symbol ?mStoneSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2036591006
+     * @hash   -1391045022
      */
     MCAPI extern class Block const * mStoneSlab;
     /**
      * @symbol ?mStoneSlab2@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1667232600
+     * @hash   -1021809624
      */
     MCAPI extern class Block const * mStoneSlab2;
     /**
      * @symbol ?mStoneSlab3@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   619838272
+     * @hash   1264200304
      */
     MCAPI extern class Block const * mStoneSlab3;
     /**
      * @symbol ?mStoneSlab4@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1389326672
+     * @hash   -744964640
      */
     MCAPI extern class Block const * mStoneSlab4;
     /**
-     * @symbol ?mStoneStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   593065578
-     */
-    MCAPI extern class Block const * mStoneStairs;
-    /**
      * @symbol ?mStrippedMangroveWood@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1609382360
+     * @hash   -2041499672
      */
     MCAPI extern class Block const * mStrippedMangroveWood;
     /**
      * @symbol ?mSweetBerryBushBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -842222302
+     * @hash   -197967902
      */
     MCAPI extern class Block const * mSweetBerryBushBlock;
     /**
      * @symbol ?mTNT@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -60488630
+     * @hash   585057354
      */
     MCAPI extern class Block const * mTNT;
     /**
      * @symbol ?mTarget@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2144078016
+     * @hash   -1498647352
      */
     MCAPI extern class Block const * mTarget;
     /**
      * @symbol ?mTintedGlass@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1025850370
+     * @hash   1669951010
      */
     MCAPI extern class Block const * mTintedGlass;
     /**
      * @symbol ?mTrappedChest@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1815413944
+     * @hash   -1834107312
      */
     MCAPI extern class Block const * mTrappedChest;
     /**
      * @symbol ?mTripwire@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   641997632
+     * @hash   1287443672
      */
     MCAPI extern class Block const * mTripwire;
     /**
      * @symbol ?mTripwireHook@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -752045096
+     * @hash   -106599056
      */
     MCAPI extern class Block const * mTripwireHook;
     /**
      * @symbol ?mTuff@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -477422928
+     * @hash   166677712
      */
     MCAPI extern class Block const * mTuff;
     /**
-     * @symbol ?mTurtleEgg@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1147286182
-     */
-    MCAPI extern class Block const * mTurtleEgg;
-    /**
      * @symbol ?mTwistingVinesBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -12770216
+     * @hash   631484184
      */
     MCAPI extern class Block const * mTwistingVinesBlock;
     /**
      * @symbol ?mUndyedShulkerBox@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1048389080
+     * @hash   -402981480
      */
     MCAPI extern class Block const * mUndyedShulkerBox;
     /**
      * @symbol ?mUnlitRedStoneLamp@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1649606814
+     * @hash   -1004099270
      */
     MCAPI extern class Block const * mUnlitRedStoneLamp;
     /**
      * @symbol ?mUnpoweredComparator@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1509065074
+     * @hash   -2140456182
      */
     MCAPI extern class Block const * mUnpoweredComparator;
     /**
      * @symbol ?mUnpoweredRepeater@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   706122618
+     * @hash   1351637850
      */
     MCAPI extern class Block const * mUnpoweredRepeater;
     /**
      * @symbol ?mVerdantFroglight@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -855746536
+     * @hash   -211661272
      */
     MCAPI extern class Block const * mVerdantFroglight;
     /**
      * @symbol ?mVine@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1665917928
+     * @hash   -1020402696
      */
     MCAPI extern class Block const * mVine;
     /**
      * @symbol ?mWarpedButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2131482472
+     * @hash   -1519230424
      */
     MCAPI extern class Block const * mWarpedButton;
     /**
      * @symbol ?mWarpedDoubleSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -120643464
+     * @hash   523610936
      */
     MCAPI extern class Block const * mWarpedDoubleSlab;
     /**
      * @symbol ?mWarpedFungus@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1567962000
+     * @hash   -922416016
      */
     MCAPI extern class Block const * mWarpedFungus;
     /**
      * @symbol ?mWarpedNylium@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   426032760
+     * @hash   1070287160
      */
     MCAPI extern class Block const * mWarpedNylium;
     /**
      * @symbol ?mWarpedPressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   702357690
+     * @hash   1346612090
      */
     MCAPI extern class Block const * mWarpedPressurePlate;
     /**
      * @symbol ?mWarpedSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -583029176
+     * @hash   61225224
      */
     MCAPI extern class Block const * mWarpedSlab;
     /**
-     * @symbol ?mWarpedStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -413296472
-     */
-    MCAPI extern class Block const * mWarpedStairs;
-    /**
      * @symbol ?mWarpedWartBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1814654230
+     * @hash   -1170399830
      */
     MCAPI extern class Block const * mWarpedWartBlock;
     /**
      * @symbol ?mWaterlily@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1461436438
+     * @hash   -815928894
      */
     MCAPI extern class Block const * mWaterlily;
     /**
      * @symbol ?mWaxedCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   710443010
+     * @hash   1354605154
      */
     MCAPI extern class Block const * mWaxedCopper;
     /**
      * @symbol ?mWaxedCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1758025608
+     * @hash   -1113863464
      */
     MCAPI extern class Block const * mWaxedCutCopper;
     /**
      * @symbol ?mWaxedCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1737560856
+     * @hash   -1093421776
      */
     MCAPI extern class Block const * mWaxedCutCopperSlab;
     /**
-     * @symbol ?mWaxedCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2005884176
-     */
-    MCAPI extern class Block const * mWaxedCutCopperStairs;
-    /**
      * @symbol ?mWaxedDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2142796192
+     * @hash   -1498657112
      */
     MCAPI extern class Block const * mWaxedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedExposedCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1365186008
+     * @hash   -721023864
      */
     MCAPI extern class Block const * mWaxedExposedCopper;
     /**
      * @symbol ?mWaxedExposedCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1888001442
+     * @hash   -1762803710
      */
     MCAPI extern class Block const * mWaxedExposedCutCopper;
     /**
      * @symbol ?mWaxedExposedCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   953975058
+     * @hash   1598114138
      */
     MCAPI extern class Block const * mWaxedExposedCutCopperSlab;
     /**
-     * @symbol ?mWaxedExposedCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1300762438
-     */
-    MCAPI extern class Block const * mWaxedExposedCutCopperStairs;
-    /**
      * @symbol ?mWaxedExposedDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2133296886
+     * @hash   -1489157806
      */
     MCAPI extern class Block const * mWaxedExposedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedOxidizedCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1813289214
+     * @hash   -1169150134
      */
     MCAPI extern class Block const * mWaxedOxidizedCopper;
     /**
      * @symbol ?mWaxedOxidizedCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   2063316584
+     * @hash   -1587511632
      */
     MCAPI extern class Block const * mWaxedOxidizedCutCopper;
     /**
      * @symbol ?mWaxedOxidizedCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1318927688
+     * @hash   -674796296
      */
     MCAPI extern class Block const * mWaxedOxidizedCutCopperSlab;
     /**
-     * @symbol ?mWaxedOxidizedCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   511643376
-     */
-    MCAPI extern class Block const * mWaxedOxidizedCutCopperStairs;
-    /**
      * @symbol ?mWaxedOxidizedDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   200671264
+     * @hash   844802656
      */
     MCAPI extern class Block const * mWaxedOxidizedDoubleCutCopperSlab;
     /**
      * @symbol ?mWaxedWeatheredCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -395719536
+     * @hash   248442608
      */
     MCAPI extern class Block const * mWaxedWeatheredCopper;
     /**
      * @symbol ?mWaxedWeatheredCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -620422326
+     * @hash   23739818
      */
     MCAPI extern class Block const * mWaxedWeatheredCutCopper;
     /**
      * @symbol ?mWaxedWeatheredCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1222651578
+     * @hash   1866790658
      */
     MCAPI extern class Block const * mWaxedWeatheredCutCopperSlab;
     /**
-     * @symbol ?mWaxedWeatheredCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -808044958
-     */
-    MCAPI extern class Block const * mWaxedWeatheredCutCopperStairs;
-    /**
      * @symbol ?mWaxedWeatheredDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -308678990
+     * @hash   335460090
      */
     MCAPI extern class Block const * mWaxedWeatheredDoubleCutCopperSlab;
     /**
      * @symbol ?mWeatheredCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -190311174
+     * @hash   453881722
      */
     MCAPI extern class Block const * mWeatheredCopper;
     /**
      * @symbol ?mWeatheredCutCopper@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   260422648
+     * @hash   904615544
      */
     MCAPI extern class Block const * mWeatheredCutCopper;
     /**
      * @symbol ?mWeatheredCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   280108152
+     * @hash   924270296
      */
     MCAPI extern class Block const * mWeatheredCutCopperSlab;
     /**
-     * @symbol ?mWeatheredCutCopperStairs@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -177054056
-     */
-    MCAPI extern class Block const * mWeatheredCutCopperStairs;
-    /**
      * @symbol ?mWeatheredDoubleCutCopperSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1874286632
+     * @hash   -1776518520
      */
     MCAPI extern class Block const * mWeatheredDoubleCutCopperSlab;
     /**
      * @symbol ?mWeb@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   998234546
+     * @hash   1643780530
      */
     MCAPI extern class Block const * mWeb;
     /**
      * @symbol ?mWeepingVines@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -2044559120
+     * @hash   -1400304720
      */
     MCAPI extern class Block const * mWeepingVines;
     /**
      * @symbol ?mWitherRose@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1994852056
+     * @hash   -1350597656
      */
     MCAPI extern class Block const * mWitherRose;
     /**
      * @symbol ?mWoodBlock@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   1608029114
+     * @hash   -2042683782
      */
     MCAPI extern class Block const * mWoodBlock;
     /**
      * @symbol ?mWoodButton@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1127797736
+     * @hash   -482313256
      */
     MCAPI extern class Block const * mWoodButton;
     /**
      * @symbol ?mWoodPressurePlate@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   -1170803038
+     * @hash   -525272430
      */
     MCAPI extern class Block const * mWoodPressurePlate;
     /**
      * @symbol ?mWoodenSlab@VanillaBlocks@@3PEBVBlock@@EB
-     * @hash   74011208
+     * @hash   719441872
      */
     MCAPI extern class Block const * mWoodenSlab;
     /**
      * @symbol ?unassignBlocks@VanillaBlocks@@YAXXZ
-     * @hash   -1689725576
+     * @hash   -970467048
      */
     MCAPI void unassignBlocks();
 

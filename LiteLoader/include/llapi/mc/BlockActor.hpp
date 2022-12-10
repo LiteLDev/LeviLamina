@@ -49,361 +49,373 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -195231377
+     * @hash   522966207
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   1595369246
+     * @hash   -1981400466
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  3
      * @symbol ?saveItemInstanceData@BlockActor@@UEAA_NAEAVCompoundTag@@@Z
-     * @hash   1748317053
+     * @hash   -1828483411
      */
     virtual bool saveItemInstanceData(class CompoundTag &);
     /**
      * @vftbl  4
      * @symbol ?saveBlockData@BlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   2112655071
+     * @hash   -2093346689
      */
     virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
     /**
      * @vftbl  5
      * @symbol ?loadBlockData@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-     * @hash   -494137284
+     * @hash   -405171748
      */
     virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
     /**
      * @vftbl  6
      * @symbol ?onCustomTagLoadDone@BlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   354109011
+     * @hash   443074547
      */
     virtual void onCustomTagLoadDone(class BlockSource &);
     /**
      * @vftbl  7
      * @symbol ?tick@BlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -412929480
+     * @hash   305237352
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  8
      * @symbol ?onChanged@BlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1097671952
+     * @hash   -1008706416
      */
     virtual void onChanged(class BlockSource &);
     /**
      * @vftbl  9
      * @symbol ?isMovable@BlockActor@@UEAA_NAEAVBlockSource@@@Z
-     * @hash   634935327
+     * @hash   1353132911
      */
     virtual bool isMovable(class BlockSource &);
     /**
      * @vftbl  10
      * @symbol ?isCustomNameSaved@BlockActor@@UEAA_NXZ
-     * @hash   1949118130
+     * @hash   -1627651582
      */
     virtual bool isCustomNameSaved();
     /**
      * @vftbl  11
      * @symbol ?onPlace@BlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1226615331
+     * @hash   -1137649795
      */
     virtual void onPlace(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?onRemoved@BlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   401181508
+     * @hash   490147044
      */
     virtual void onRemoved(class BlockSource &);
     /**
      * @vftbl  14
+     * @symbol ?isPreserved@BlockActor@@UEBA_NAEAVBlockSource@@@Z
+     * @hash   -1148914620
+     */
+    virtual bool isPreserved(class BlockSource &) const;
+    /**
+     * @vftbl  15
+     * @symbol ?shouldPreserve@BlockActor@@UEAA_NAEAVBlockSource@@@Z
+     * @hash   1995571380
+     */
+    virtual bool shouldPreserve(class BlockSource &);
+    /**
+     * @vftbl  16
      * @symbol ?triggerEvent@BlockActor@@UEAAXHH@Z
-     * @hash   1605134945
+     * @hash   1694100481
      */
     virtual void triggerEvent(int, int);
     /**
-     * @vftbl  15
+     * @vftbl  17
      * @symbol ?clearCache@BlockActor@@UEAAXXZ
-     * @hash   1784875220
+     * @hash   -1792079004
      */
     virtual void clearCache();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  17
+     * @vftbl  19
      * @symbol ?getShadowRadius@BlockActor@@UEBAMAEAVBlockSource@@@Z
-     * @hash   -884641548
+     * @hash   -634950684
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
-     * @vftbl  18
+     * @vftbl  20
      * @symbol ?hasAlphaLayer@BlockActor@@UEBA_NXZ
-     * @hash   -1369048291
+     * @hash   -1272302499
      */
     virtual bool hasAlphaLayer() const;
     /**
-     * @vftbl  19
+     * @vftbl  21
      * @symbol ?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -797187686
+     * @hash   -703916870
      */
     virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /**
-     * @vftbl  20
+     * @vftbl  22
+     * @symbol ?getCollisionShape@BlockActor@@UEBA?AVAABB@@AEBVIConstBlockSource@@@Z
+     * @hash   -1376905219
+     */
+    virtual class AABB getCollisionShape(class IConstBlockSource const &) const;
+    /**
+     * @vftbl  23
      * @symbol ?getDebugText@BlockActor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-     * @hash   239346089
+     * @hash   957543673
      */
     virtual void getDebugText(std::vector<std::string> &, class BlockPos const &);
     /**
-     * @vftbl  21
+     * @vftbl  24
      * @symbol ?getCustomName@BlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1926474110
+     * @hash   -1801451854
      */
     virtual std::string const & getCustomName() const;
     /**
-     * @vftbl  22
+     * @vftbl  25
      * @symbol ?getFilteredCustomName@BlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUIProfanityContext@@@Z
-     * @hash   726349036
+     * @hash   1444546620
      */
     virtual std::string const & getFilteredCustomName(class UIProfanityContext const &);
     /**
-     * @vftbl  23
+     * @vftbl  26
      * @symbol ?getName@BlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1499639315
+     * @hash   1596092963
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  24
+     * @vftbl  27
      * @symbol ?setCustomName@BlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2090333169
+     * @hash   -1372166337
      */
     virtual void setCustomName(std::string const &);
     /**
-     * @vftbl  25
+     * @vftbl  28
      * @symbol ?getImmersiveReaderText@BlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
-     * @hash   -1565750932
+     * @hash   -1639617236
      */
     virtual std::string getImmersiveReaderText(class BlockSource &);
     /**
-     * @vftbl  26
+     * @vftbl  29
      * @symbol ?getRepairCost@BlockActor@@UEBAHXZ
-     * @hash   1259111283
+     * @hash   1448558979
      */
     virtual int getRepairCost() const;
     /**
-     * @vftbl  27
+     * @vftbl  30
      * @symbol ?getOwningPiston@BlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-     * @hash   1182875733
+     * @hash   1276146549
      */
     virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /**
-     * @vftbl  28
-     * @hash   -346051286
-     */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
-    /**
      * @vftbl  31
-     * @symbol ?getDeletionDelayTimeSeconds@BlockActor@@UEBAMXZ
-     * @hash   -122324327
+     * @hash   -234921246
      */
-    virtual float getDeletionDelayTimeSeconds() const;
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@BlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1309185487
+     * @hash   -1153595743
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@BlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1688976737
+     * @hash   1777942273
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vftbl  37
+     * @vftbl  39
      * @symbol ?_playerCanUpdate@BlockActor@@MEBA_NAEBVPlayer@@@Z
-     * @hash   1202178716
+     * @hash   1298678492
      */
     virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
     /**
      * @symbol ?eraseLootTable@BlockActor@@UEAAXXZ
-     * @hash   -314966849
+     * @hash   -226001313
      */
     MCVAPI void eraseLootTable();
     /**
      * @symbol ?fixupOnLoad@BlockActor@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   1828221495
+     * @hash   1917187031
      */
     MCVAPI void fixupOnLoad(class LevelChunk &);
     /**
      * @symbol ?getContainer@BlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   1671856759
+     * @hash   1765127575
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@BlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1244134899
+     * @hash   1337405715
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?onChunkLoaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   -1982564295
+     * @hash   -1893598759
      */
     MCVAPI void onChunkLoaded(class LevelChunk &);
     /**
      * @symbol ?onChunkUnloaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z
-     * @hash   228517536
+     * @hash   317483072
      */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     /**
      * @symbol ?onMove@BlockActor@@UEAAXXZ
-     * @hash   -197042417
+     * @hash   -108076881
      */
     MCVAPI void onMove();
     /**
      * @symbol ?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1874519464
+     * @hash   -1785553928
      */
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
 #endif
     /**
      * @symbol ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -122653885
+     * @hash   595313059
      */
     MCAPI BlockActor(enum class BlockActorType, class BlockPos const &, std::string const &);
     /**
      * @symbol ?assignBlockIfNotAssigned@BlockActor@@QEAAXAEAVBlockSource@@@Z
-     * @hash   678114484
+     * @hash   1396127556
      */
     MCAPI void assignBlockIfNotAssigned(class BlockSource &);
     /**
      * @symbol ?getAABB@BlockActor@@QEBAAEBVAABB@@XZ
-     * @hash   1165828024
+     * @hash   1145547080
      */
     MCAPI class AABB const & getAABB() const;
     /**
      * @symbol ?getBlock@BlockActor@@QEBAPEBVBlock@@XZ
-     * @hash   -416718107
+     * @hash   -291649723
      */
     MCAPI class Block const * getBlock() const;
     /**
      * @symbol ?getPosition@BlockActor@@QEBAAEBVBlockPos@@XZ
-     * @hash   -542129028
+     * @hash   176068556
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
      * @symbol ?getServerUpdatePacket@BlockActor@@QEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   2087351445
+     * @hash   -1489418267
      */
     MCAPI std::unique_ptr<class BlockActorDataPacket> getServerUpdatePacket(class BlockSource &);
     /**
      * @symbol ?getType@BlockActor@@QEBAAEBW4BlockActorType@@XZ
-     * @hash   -921484990
+     * @hash   -963307710
      */
     MCAPI enum class BlockActorType const & getType() const;
     /**
      * @symbol ?ignoreLighting@BlockActor@@QEBA?B_NXZ
-     * @hash   -1136555036
+     * @hash   -418357452
      */
     MCAPI bool const ignoreLighting() const;
     /**
      * @symbol ?isType@BlockActor@@QEBA_NW4BlockActorType@@@Z
-     * @hash   -724309287
+     * @hash   -6111703
      */
     MCAPI bool isType(enum class BlockActorType) const;
     /**
      * @symbol ?moveTo@BlockActor@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -134698060
+     * @hash   583499524
      */
     MCAPI void moveTo(class BlockPos const &);
     /**
      * @symbol ?onUpdatePacket@BlockActor@@QEAA_NAEBVCompoundTag@@AEAVBlockSource@@PEBVPlayer@@@Z
-     * @hash   1447705782
+     * @hash   -2129063930
      */
     MCAPI bool onUpdatePacket(class CompoundTag const &, class BlockSource &, class Player const *);
     /**
      * @symbol ?setBB@BlockActor@@QEAAXVAABB@@@Z
-     * @hash   -1728318098
+     * @hash   -1010151266
      */
     MCAPI void setBB(class AABB);
     /**
      * @symbol ?setChanged@BlockActor@@QEAAXXZ
-     * @hash   -374046731
+     * @hash   344120101
      */
     MCAPI void setChanged();
     /**
      * @symbol ?setCustomNameSaved@BlockActor@@QEAAX_N@Z
-     * @hash   2018925212
+     * @hash   -1557875252
      */
     MCAPI void setCustomNameSaved(bool);
     /**
      * @symbol ?setIgnoreLighting@BlockActor@@QEAAX_N@Z
-     * @hash   -1662203684
+     * @hash   -944036852
      */
     MCAPI void setIgnoreLighting(bool);
     /**
      * @symbol ?setMovable@BlockActor@@QEAAX_N@Z
-     * @hash   1025332726
+     * @hash   1743499558
      */
     MCAPI void setMovable(bool);
     /**
      * @symbol ?isType@BlockActor@@SA_NAEAV1@W4BlockActorType@@@Z
-     * @hash   -1318432921
+     * @hash   -600235337
      */
     MCAPI static bool isType(class BlockActor &, enum class BlockActorType);
     /**
      * @symbol ?loadStatic@BlockActor@@SA?AV?$shared_ptr@VBlockActor@@@std@@AEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   859817214
+     * @hash   1578014798
      */
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level &, class CompoundTag const &, class DataLoadHelper &);
 
 //protected:
     /**
      * @symbol ?_resetAABB@BlockActor@@IEAAXXZ
-     * @hash   556497675
+     * @hash   1274510747
      */
     MCAPI void _resetAABB();
 
 //private:
     /**
      * @symbol ?_createIdClassMap@BlockActor@@CA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@@std@@@2@@std@@XZ
-     * @hash   -639348599
+     * @hash   78664473
      */
     MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> _createIdClassMap();
 
@@ -412,12 +424,12 @@ protected:
 private:
     /**
      * @symbol ?mClassIdMap@BlockActor@@0V?$map@W4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4BlockActorType@@@3@V?$allocator@U?$pair@$$CBW4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
-     * @hash   -1333743730
+     * @hash   -689658466
      */
     MCAPI static class std::map<enum class BlockActorType, std::string, struct std::less<enum class BlockActorType>, class std::allocator<struct std::pair<enum class BlockActorType const, std::string>>> const mClassIdMap;
     /**
      * @symbol ?mIdClassMap@BlockActor@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@@std@@@2@@std@@B
-     * @hash   -1797589742
+     * @hash   -1153504478
      */
     MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> const mIdClassMap;
 

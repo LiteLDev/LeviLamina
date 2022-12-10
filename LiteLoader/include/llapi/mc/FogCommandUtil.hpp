@@ -24,17 +24,17 @@ namespace FogCommandUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?pop@FogCommandUtil@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVCommandOutput@@AEAVPlayer@@AEAVFogCommandComponent@@@Z
-     * @hash   -610833679
+     * @hash   -608773295
      */
     MCAPI bool pop(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
     /**
      * @symbol ?push@FogCommandUtil@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVCommandOutput@@AEAVPlayer@@AEAVFogCommandComponent@@@Z
-     * @hash   841357743
+     * @hash   843495007
      */
     MCAPI bool push(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
     /**
      * @symbol ?remove@FogCommandUtil@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVCommandOutput@@AEAVPlayer@@AEAVFogCommandComponent@@@Z
-     * @hash   1067083199
+     * @hash   1069297343
      */
     MCAPI bool remove(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
 

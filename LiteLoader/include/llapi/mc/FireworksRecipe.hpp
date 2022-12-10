@@ -39,53 +39,53 @@ public:
     /**
      * @vftbl  1
      * @symbol ?assemble@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     * @hash   847320088
+     * @hash   929827704
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
      * @vftbl  2
      * @symbol ?getCraftingSize@FireworksRecipe@@UEBAHXZ
-     * @hash   -1090569190
+     * @hash   -997298374
      */
     virtual int getCraftingSize() const;
     /**
      * @vftbl  3
      * @symbol ?getIngredient@FireworksRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     * @hash   2011544859
+     * @hash   -1569730021
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
      * @vftbl  4
      * @symbol ?getResultItem@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     * @hash   1581016391
+     * @hash   1663524007
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl  5
      * @symbol ?isShapeless@FireworksRecipe@@UEBA_NXZ
-     * @hash   523359614
+     * @hash   619859390
      */
     virtual bool isShapeless() const;
     /**
      * @vftbl  6
      * @symbol ?matches@FireworksRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     * @hash   2077688556
+     * @hash   -1503125044
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
      * @vftbl  7
      * @symbol ?size@FireworksRecipe@@UEBAHXZ
-     * @hash   -537035374
+     * @hash   -435123246
      */
     virtual int size() const;
     /**
      * @symbol ??0FireworksRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@PEBVUUID@mce@@@Z
-     * @hash   -1256991923
+     * @hash   -542822851
      */
     MCAPI FireworksRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
     /**
      * @symbol ?ID@FireworksRecipe@@2VUUID@mce@@A
-     * @hash   42912915
+     * @hash   906382947
      */
     MCAPI static class mce::UUID ID;
 

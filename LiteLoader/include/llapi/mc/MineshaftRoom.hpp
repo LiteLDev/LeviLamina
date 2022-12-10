@@ -39,30 +39,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
-     * @hash   780176372
+     * @hash   951895540
      */
     virtual void moveBoundingBox(int, int, int);
     /**
      * @vftbl  2
      * @symbol ?getType@MineshaftRoom@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   1080591929
+     * @hash   1252311097
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@MineshaftRoom@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-     * @hash   981984343
+     * @hash   1153688135
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
      * @vftbl  4
      * @symbol ?postProcess@MineshaftRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1968356335
+     * @hash   2140075503
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ??0MineshaftRoom@@QEAA@AEAUMineshaftData@@HAEAVRandom@@HH@Z
-     * @hash   -630851649
+     * @hash   -459147857
      */
     MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
 

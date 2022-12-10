@@ -32,58 +32,58 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENT
     /**
      * @symbol ?canAlwaysEat@FoodItemComponent@@UEBA_NXZ
-     * @hash   1997961717
+     * @hash   -2117798299
      */
     MCVAPI bool canAlwaysEat() const;
     /**
      * @symbol ?eatItem@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
-     * @hash   1726053330
+     * @hash   -2013179198
      */
     MCVAPI class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /**
      * @symbol ?getNutrition@FoodItemComponent@@UEBAHXZ
-     * @hash   -2011734767
+     * @hash   -1867384879
      */
     MCVAPI int getNutrition() const;
     /**
      * @symbol ?getSaturationModifier@FoodItemComponent@@UEBAMXZ
-     * @hash   -1441136399
+     * @hash   -1262328895
      */
     MCVAPI float getSaturationModifier() const;
     /**
      * @symbol ?use@FoodItemComponent@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   413281616
+     * @hash   968878000
      */
     MCVAPI bool use(class ItemStack &, class Player &);
     /**
      * @symbol ?useTimeDepleted@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-     * @hash   182087874
+     * @hash   737684258
      */
     MCVAPI class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #endif
     /**
      * @symbol ?getUsingConvertsToItemDescriptor@FoodItemComponent@@QEBA?AVItemDescriptor@@XZ
-     * @hash   -1440414544
+     * @hash   -884649024
      */
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
     /**
      * @symbol ??4FoodItemComponent@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -595967588
+     * @hash   -2438612
      */
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     /**
      * @symbol ?bindType@FoodItemComponent@@SAXXZ
-     * @hash   -1542964081
+     * @hash   -988290257
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FoodItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   -2127554624
+     * @hash   -1571927488
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades@FoodItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1099885648
+     * @hash   -544120128
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

@@ -37,58 +37,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
-     * @hash   748636021
+     * @hash   909730373
      */
     virtual bool canUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MoveOutdoorsGoal@@UEAAXXZ
-     * @hash   -2078247474
+     * @hash   -1917153122
      */
     virtual void start();
     /**
      * @vftbl  6
      * @symbol ?tick@MoveOutdoorsGoal@@UEAAXXZ
-     * @hash   1580505289
+     * @hash   1741599641
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveOutdoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   552103451
+     * @hash   713151675
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  11
      * @symbol ?isValidTarget@MoveOutdoorsGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1305320599
+     * @hash   1466414951
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
-     * @hash   48361042
+     * @hash   209409266
      */
     MCAPI MoveOutdoorsGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_setNextTargetTick@MoveOutdoorsGoal@@AEAAXXZ
-     * @hash   1947543541
+     * @hash   2108591765
      */
     MCAPI void _setNextTargetTick();
 

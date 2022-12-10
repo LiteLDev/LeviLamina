@@ -38,49 +38,49 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VKnockbackResistanceItemComponent@@@@UEBA_NXZ
-     * @hash   534460203
+     * @hash   630959979
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VKnockbackResistanceItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1730393437
+     * @hash   -1969614915
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VKnockbackResistanceItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   362264963
+     * @hash   982056147
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getProtectionValue@KnockbackResistanceItemComponent@@QEBAMXZ
-     * @hash   449736134
+     * @hash   1206158454
      */
     MCAPI float getProtectionValue() const;
     /**
      * @symbol ?bindType@KnockbackResistanceItemComponent@@SAXXZ
-     * @hash   330362067
+     * @hash   847087923
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@KnockbackResistanceItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   1533019020
+     * @hash   2049898636
      */
     MCAPI static class HashedString const & getIdentifier();
 

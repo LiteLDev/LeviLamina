@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerEatFoodEvent@@QEAA@XZ
-     * @hash   1921221887
+     * @hash   2025040639
      */
     MCAPI ~PlayerEatFoodEvent();
 

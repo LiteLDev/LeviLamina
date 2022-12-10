@@ -37,77 +37,77 @@ public:
     virtual ~ScriptItemGameplayHandler();
     /**
      * @vftbl  1
-     * @hash   1094986417
+     * @hash   1150816673
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1095909938
+     * @hash   1151740194
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   1096833459
+     * @hash   1152663715
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   1097756980
+     * @hash   1153587236
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   1098680501
+     * @hash   1154510757
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   1099604022
+     * @hash   1155434278
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   1101265591
+     * @hash   1157095847
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  8
-     * @hash   1102588888
+     * @hash   1158419144
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemDefinitionEventTriggeredEvent@@@Z
-     * @hash   463101974
+     * @hash   475079878
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent &);
     /**
      * @vftbl  10
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseOnEvent@@@Z
-     * @hash   -236581832
+     * @hash   -224603928
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseOnEvent &);
     /**
      * @vftbl  11
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseEvent@@@Z
-     * @hash   -389689527
+     * @hash   -377711623
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseEvent &);
 
 //private:
     /**
      * @symbol ?_handleItemDefinitionEventTriggered@ScriptItemGameplayHandler@@AEAA_NAEAUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   131515895
+     * @hash   143493799
      */
     MCAPI bool _handleItemDefinitionEventTriggered(struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
     /**
      * @symbol ?_handleItemUseEvent@ScriptItemGameplayHandler@@AEAA_NAEAUItemUseEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   -1487804513
+     * @hash   -1475826609
      */
     MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
     /**
      * @symbol ?_handleItemUseOnEvent@ScriptItemGameplayHandler@@AEAA_NAEAUItemUseOnEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptWorldEvents@ScriptModuleMinecraft@@@4@@Z
-     * @hash   -2047655363
+     * @hash   -2035677459
      */
     MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
 

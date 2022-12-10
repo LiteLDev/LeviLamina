@@ -34,212 +34,212 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@ExperienceOrb@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1324081576
+     * @hash   1376698248
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1038951581
      */
     virtual ~ExperienceOrb();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@ExperienceOrb@@UEAAXXZ
-     * @hash   1923244262
+     * @hash   1975860934
      */
     virtual void normalTick();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@ExperienceOrb@@UEBAMXZ
-     * @hash   -1133534975
+     * @hash   -883844111
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  88
+     * @vftbl  90
+     * @hash   -6317605
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  91
      * @symbol ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
-     * @hash   664490035
+     * @hash   717106707
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  134
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   540593475
+     * @hash   593210147
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  263
+     * @vftbl  261
      * @symbol ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
-     * @hash   873814943
+     * @hash   962780479
      */
     virtual void doWaterSplashEffect();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   688899227
+     * @hash   741531275
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1655296510
+     * @hash   -1602679838
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   353804587
+     * @hash   406436635
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  274
+     * @vftbl  272
      * @symbol ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1398077677
+     * @hash   1487043213
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
      * @symbol ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -887370703
+     * @hash   -834938543
      */
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getIconIndex@ExperienceOrb@@QEBAHXZ
-     * @hash   958945004
+     * @hash   1011561676
      */
     MCAPI int getIconIndex() const;
     /**
      * @symbol ?postNormalTick@ExperienceOrb@@QEAAXXZ
-     * @hash   -1410940597
+     * @hash   -1358323925
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setValue@ExperienceOrb@@QEAAXH@Z
-     * @hash   1980745178
+     * @hash   2033361850
      */
     MCAPI void setValue(int);
     /**
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
-     * @hash   -1115640964
+     * @hash   -1063024292
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum class ExperienceOrb::DropType, class Player *);
     /**
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
-     * @hash   1609087049
+     * @hash   1661703721
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum class ExperienceOrb::DropType, class Player *);
 
 //private:
     /**
      * @symbol ?_handleMending@ExperienceOrb@@AEAAXAEAVPlayer@@@Z
-     * @hash   -174188761
+     * @hash   -121556713
      */
     MCAPI void _handleMending(class Player &);
 
 private:
     /**
      * @symbol ?LIFETIME@ExperienceOrb@@0HB
-     * @hash   196611700
+     * @hash   956793452
      */
     MCAPI static int const LIFETIME;
 

@@ -33,24 +33,24 @@ public:
 public:
     /**
      * @symbol ??0FlatWorldGeneratorOptions@@QEAA@AEBVValue@Json@@AEBVBlockPalette@@AEBVLevelData@@@Z
-     * @hash   -23274285
+     * @hash   527586291
      */
     MCAPI FlatWorldGeneratorOptions(class Json::Value const &, class BlockPalette const &, class LevelData const &);
     /**
      * @symbol ??1FlatWorldGeneratorOptions@@QEAA@XZ
-     * @hash   -2010289008
+     * @hash   -1254143456
      */
     MCAPI ~FlatWorldGeneratorOptions();
     /**
      * @symbol ?getLayers@FlatWorldGeneratorOptions@@SA?AVValue@Json@@AEBVLevelData@@@Z
-     * @hash   1298622093
+     * @hash   1849436541
      */
     MCAPI static class Json::Value getLayers(class LevelData const &);
 
 //protected:
     /**
      * @symbol ?_load@FlatWorldGeneratorOptions@@IEAA_NAEBVValue@Json@@AEBVBlockPalette@@AEBVLevelData@@@Z
-     * @hash   767965170
+     * @hash   1318825746
      */
     MCAPI bool _load(class Json::Value const &, class BlockPalette const &, class LevelData const &);
 

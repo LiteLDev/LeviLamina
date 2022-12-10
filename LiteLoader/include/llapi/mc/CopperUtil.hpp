@@ -24,17 +24,17 @@ namespace CopperUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?WAX_OFF_COLOR@CopperUtil@@3VColor@mce@@B
-     * @hash   -1153241583
+     * @hash   -289125759
      */
     MCAPI extern class mce::Color const WAX_OFF_COLOR;
     /**
      * @symbol ?WAX_ON_COLOR@CopperUtil@@3VColor@mce@@B
-     * @hash   -1817617725
+     * @hash   -953501901
      */
     MCAPI extern class mce::Color const WAX_ON_COLOR;
     /**
      * @symbol ?trySendWaxingTelemetryEventToClient@CopperUtil@@YAXAEAVPlayer@@AEBVBlockLegacy@@@Z
-     * @hash   1165373856
+     * @hash   1726167328
      */
     MCAPI void trySendWaxingTelemetryEventToClient(class Player &, class BlockLegacy const &);
 

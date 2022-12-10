@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@AddBehaviorTreePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1154574917
+     * @hash   1080216581
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AddBehaviorTreePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -506870542
+     * @hash   -581228878
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@AddBehaviorTreePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   524667269
+     * @hash   482444773
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@AddBehaviorTreePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   571831285
+     * @hash   529608789
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddBehaviorTreePacket@@QEAA@XZ
-     * @hash   1558359861
+     * @hash   1484001525
      */
     MCAPI AddBehaviorTreePacket();
 

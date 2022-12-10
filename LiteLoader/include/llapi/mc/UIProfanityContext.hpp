@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?filterProfanityFromString@UIProfanityContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfanityFilterContext@@AEBV23@_N@Z
-     * @hash   -188952289
+     * @hash   -164596705
      */
     MCAPI std::string filterProfanityFromString(enum ProfanityFilterContext, std::string const &, bool) const;
 

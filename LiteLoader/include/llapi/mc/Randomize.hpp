@@ -32,57 +32,57 @@ public:
 public:
     /**
      * @symbol ??0Randomize@@QEAA@AEAVRandom@@@Z
-     * @hash   -1327921538
+     * @hash   -1274858962
      */
     MCAPI Randomize(class Random &);
     /**
      * @symbol ?chance@Randomize@@QEBA_NHH@Z
-     * @hash   290987606
+     * @hash   344050182
      */
     MCAPI bool chance(int, int) const;
     /**
      * @symbol ?chanceAllButOneIn@Randomize@@QEBA_NH@Z
-     * @hash   1934057101
+     * @hash   1987119677
      */
     MCAPI bool chanceAllButOneIn(int) const;
     /**
      * @symbol ?chanceFloatGreaterThan@Randomize@@QEBA_NM@Z
-     * @hash   940419561
+     * @hash   993482137
      */
     MCAPI bool chanceFloatGreaterThan(float) const;
     /**
      * @symbol ?chanceFloatLessOrEqual@Randomize@@QEBA_NM@Z
-     * @hash   34335913
+     * @hash   87398489
      */
     MCAPI bool chanceFloatLessOrEqual(float) const;
     /**
      * @symbol ?chanceFloatLessThan@Randomize@@QEBA_NM@Z
-     * @hash   -804302933
+     * @hash   -751240357
      */
     MCAPI bool chanceFloatLessThan(float) const;
     /**
      * @symbol ?chanceOneIn@Randomize@@QEBA_NH@Z
-     * @hash   -1096584995
+     * @hash   -1043522419
      */
     MCAPI bool chanceOneIn(int) const;
     /**
      * @symbol ?nextFloat@Randomize@@QEBAMXZ
-     * @hash   -1188764408
+     * @hash   -1135701832
      */
     MCAPI float nextFloat() const;
     /**
      * @symbol ?nextIntInclusive@Randomize@@QEBAHHH@Z
-     * @hash   1650690782
+     * @hash   1703753358
      */
     MCAPI int nextIntInclusive(int, int) const;
     /**
      * @symbol ??1Randomize@@QEAA@XZ
-     * @hash   1516900013
+     * @hash   1606326829
      */
     MCAPI ~Randomize();
     /**
      * @symbol ?ChanceFloatGreaterThan_MinExcessiveImprobability@Randomize@@2MB
-     * @hash   -1859564385
+     * @hash   -997893345
      */
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 

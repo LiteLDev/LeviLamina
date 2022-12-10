@@ -39,67 +39,67 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getItemCopies@FurnaceContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     * @hash   1159377402
+     * @hash   1315136282
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl  7
      * @symbol ?setSlot@FurnaceContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     * @hash   -547933691
+     * @hash   -392174811
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
      * @vftbl  8
      * @symbol ?getSlot@FurnaceContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     * @hash   795038910
+     * @hash   950797790
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
      * @vftbl  9
      * @symbol ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
-     * @hash   -1985006082
+     * @hash   -1829247202
      */
     virtual void setData(int, int);
     /**
      * @vftbl  10
      * @symbol ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
-     * @hash   1882282628
+     * @hash   2038041508
      */
     virtual void broadcastChanges();
     /**
      * @vftbl  16
      * @symbol ?isValid@FurnaceContainerManagerModel@@UEAA_NM@Z
-     * @hash   -1824607076
+     * @hash   -1668848196
      */
     virtual bool isValid(float);
     /**
      * @vftbl  17
      * @symbol ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     * @hash   4444817
+     * @hash   160203697
      */
     virtual class ContainerScreenContext _postInit();
     /**
      * @symbol ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -1669405456
+     * @hash   -1513646576
      */
     MCAPI FurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 //protected:
     /**
      * @symbol ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     * @hash   -706664478
+     * @hash   -550905598
      */
     MCAPI FurnaceContainerManagerModel(class HashedString const &, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_getFurnaceEntity@FurnaceContainerManagerModel@@AEAAPEAVFurnaceBlockActor@@XZ
-     * @hash   -504649767
+     * @hash   -348890887
      */
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     /**
      * @symbol ?_updateResultSlotInfo@FurnaceContainerManagerModel@@AEAAXXZ
-     * @hash   -390013848
+     * @hash   -234254968
      */
     MCAPI void _updateResultSlotInfo();
 

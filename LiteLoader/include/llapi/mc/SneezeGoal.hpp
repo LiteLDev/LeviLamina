@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SneezeGoal@@UEAA_NXZ
-     * @hash   528479511
+     * @hash   690757815
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SneezeGoal@@UEAA_NXZ
-     * @hash   1001441637
+     * @hash   1163719941
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SneezeGoal@@UEAAXXZ
-     * @hash   710171472
+     * @hash   872449776
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SneezeGoal@@UEAAXXZ
-     * @hash   1024290640
+     * @hash   1186568944
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SneezeGoal@@UEAAXXZ
-     * @hash   504883963
+     * @hash   667162267
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SneezeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -411683639
+     * @hash   -249405335
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SneezeGoal@@QEAA@AEAVMob@@MMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11MAEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@3@M@Z
-     * @hash   1012743469
+     * @hash   1175021773
      */
     MCAPI SneezeGoal(class Mob &, float, float, float, std::string const &, std::string const &, std::string const &, float, std::vector<struct MobDescriptor> const &, float);
 

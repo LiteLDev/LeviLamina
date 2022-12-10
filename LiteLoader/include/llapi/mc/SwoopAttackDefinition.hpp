@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0SwoopAttackDefinition@@QEAA@XZ
-     * @hash   -1595414749
+     * @hash   -1434028253
      */
     MCAPI SwoopAttackDefinition();
     /**
      * @symbol ?initialize@SwoopAttackDefinition@@QEAAXAEAVEntityContext@@AEAVSwoopAttackGoal@@@Z
-     * @hash   -1452459563
+     * @hash   -1291088443
      */
     MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &);
     /**
      * @symbol ?buildSchema@SwoopAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwoopAttackDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1419021745
+     * @hash   -1257635249
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);
 

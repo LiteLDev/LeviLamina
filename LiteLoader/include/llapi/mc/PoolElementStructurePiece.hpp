@@ -39,19 +39,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?moveBoundingBox@PoolElementStructurePiece@@UEAAXHHH@Z
-     * @hash   2087298093
+     * @hash   -1663881587
      */
     virtual void moveBoundingBox(int, int, int);
     /**
      * @vftbl  4
      * @symbol ?postProcess@PoolElementStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   391934712
+     * @hash   935722328
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@PoolElementStructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1451591684
+     * @hash   1995379300
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
@@ -81,27 +81,27 @@ public:
     /**
      * @vftbl  17
      * @symbol ?_needsPostProcessing@PoolElementStructurePiece@@MEAA_NAEAVBlockSource@@@Z
-     * @hash   -1029571028
+     * @hash   -933071252
      */
     virtual bool _needsPostProcessing(class BlockSource &);
     /**
      * @symbol ??0PoolElementStructurePiece@@QEAA@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z
-     * @hash   -1319173148
+     * @hash   -775385532
      */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     /**
      * @symbol ?getElement@PoolElementStructurePiece@@QEBAAEBVStructurePoolElement@@XZ
-     * @hash   -352988276
+     * @hash   -256534628
      */
     MCAPI class StructurePoolElement const & getElement() const;
     /**
      * @symbol ?getPosition@PoolElementStructurePiece@@QEBAAEBVBlockPos@@XZ
-     * @hash   6789926
+     * @hash   -64785354
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
      * @symbol ?setReferencePosition@PoolElementStructurePiece@@QEAAXAEBVBlockPos@@@Z
-     * @hash   188680432
+     * @hash   732468048
      */
     MCAPI void setReferencePosition(class BlockPos const &);
 

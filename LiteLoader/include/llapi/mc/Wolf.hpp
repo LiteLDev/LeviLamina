@@ -33,236 +33,241 @@ public:
 
 public:
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1891055204
      */
     virtual ~Wolf();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@Wolf@@UEAAXXZ
-     * @hash   -771981399
+     * @hash   -715889751
      */
     virtual void normalTick();
     /**
-     * @vftbl  53
+     * @vftbl  55
      * @symbol ?addPassenger@Wolf@@UEAAXAEAVActor@@@Z
-     * @hash   1361262921
+     * @hash   1417354569
      */
     virtual void addPassenger(class Actor &);
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  119
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  122
      * @symbol ?setSitting@Wolf@@UEAAX_N@Z
-     * @hash   1578616013
+     * @hash   1634723037
      */
     virtual void setSitting(bool);
     /**
-     * @vftbl  133
+     * @vftbl  136
      * @symbol ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   412250962
+     * @hash   468342610
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @vftbl  141
+     * @vftbl  144
      * @symbol ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-     * @hash   611586804
+     * @hash   667678452
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  167
+     * @vftbl  170
      * @symbol ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   233133913
+     * @hash   289225561
      */
     virtual bool load(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  190
+     * @vftbl  192
      * @symbol ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
-     * @hash   1121873178
+     * @hash   1177964826
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   1563568510
+     * @hash   1619660158
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
+    /**
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  308
+     * @hash   -1142300981
+     */
+    virtual void __unk_vfn_308();
     /**
      * @vftbl  310
-     * @hash   -1210025534
-     */
-    virtual void __unk_vfn_310();
-    /**
-     * @vftbl  312
      * @symbol ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
-     * @hash   -1840787659
+     * @hash   -1784696011
      */
     virtual bool isAlliedTo(class Mob *);
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  341
+     * @vftbl  339
      * @symbol ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
-     * @hash   872878877
+     * @hash   928970525
      */
     virtual void onBorn(class Actor &, class Actor &);
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  357
+     * @vftbl  355
      * @symbol ?newServerAiStep@Wolf@@UEAAXXZ
-     * @hash   -1002612100
+     * @hash   -946520452
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
     /**
      * @symbol ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -469699890
+     * @hash   -413823506
      */
     MCAPI Wolf(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getHeadRollAngle@Wolf@@QEAAMM@Z
-     * @hash   1871424657
+     * @hash   1927516305
      */
     MCAPI float getHeadRollAngle(float);
     /**
      * @symbol ?getShakeAnim@Wolf@@QEBAMXZ
-     * @hash   665837718
+     * @hash   721929366
      */
     MCAPI float getShakeAnim() const;
     /**
      * @symbol ?getTailAngle@Wolf@@QEAAMXZ
-     * @hash   -998736856
+     * @hash   -942645208
      */
     MCAPI float getTailAngle();
     /**
      * @symbol ?isShaking@Wolf@@QEBA_NXZ
-     * @hash   1124258622
+     * @hash   1180350270
      */
     MCAPI bool isShaking() const;
     /**
      * @symbol ?postNormalTick@Wolf@@QEAAXXZ
-     * @hash   -907888363
+     * @hash   -851796715
      */
     MCAPI void postNormalTick();
 
 //private:
     /**
      * @symbol ?_avoidSnowBury@Wolf@@AEAAXXZ
-     * @hash   2106882237
+     * @hash   -2131993411
      */
     MCAPI void _avoidSnowBury();
 

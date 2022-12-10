@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@BlockPickRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   2005948901
+     * @hash   1931590565
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BlockPickRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1533544594
+     * @hash   1459186258
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@BlockPickRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -429789899
+     * @hash   -504148235
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@BlockPickRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1991909851
+     * @hash   -2066268187
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BlockPickRequestPacket@@QEAA@XZ
-     * @hash   1543696597
+     * @hash   1469338261
      */
     MCAPI BlockPickRequestPacket();
 

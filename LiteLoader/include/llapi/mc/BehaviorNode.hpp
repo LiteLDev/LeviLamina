@@ -42,17 +42,17 @@ public:
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
-     * @hash   -1229202578
+     * @hash   -1140237042
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0BehaviorNode@@QEAA@XZ
-     * @hash   -876670288
+     * @hash   -813966960
      */
     MCAPI BehaviorNode();
     /**
      * @symbol ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
-     * @hash   1161385938
+     * @hash   1119563218
      */
     MCAPI class BehaviorData & getBehaviorData();
 

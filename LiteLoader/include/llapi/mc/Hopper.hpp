@@ -32,99 +32,99 @@ public:
 public:
     /**
      * @symbol ??0Hopper@@QEAA@H_N@Z
-     * @hash   996519846
+     * @hash   1039849414
      */
     MCAPI Hopper(int, bool);
     /**
      * @symbol ?getCooldownTime@Hopper@@QEBAHXZ
-     * @hash   205250598
+     * @hash   376508486
      */
     MCAPI int getCooldownTime() const;
     /**
      * @symbol ?isOnCooldown@Hopper@@QEBA_NXZ
-     * @hash   -1319337634
+     * @hash   -1269457890
      */
     MCAPI bool isOnCooldown() const;
     /**
      * @symbol ?setCooldownTime@Hopper@@QEAAXH@Z
-     * @hash   -2078118696
+     * @hash   -2098384264
      */
     MCAPI void setCooldownTime(int);
 
 //protected:
     /**
      * @symbol ?_addItem@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEAVItemStack@@HH@Z
-     * @hash   -1018822526
+     * @hash   -975492958
      */
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int, int);
     /**
      * @symbol ?_addItem@Hopper@@IEAA_NAEAVContainer@@AEAVItemActor@@@Z
-     * @hash   768465149
+     * @hash   811763965
      */
     MCAPI bool _addItem(class Container &, class ItemActor &);
     /**
      * @symbol ?_getAttachedContainerInBlock@Hopper@@IEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@H@Z
-     * @hash   -1625732949
+     * @hash   -1582434133
      */
     MCAPI class Container * _getAttachedContainerInBlock(class BlockSource &, class Vec3 const &, int);
     /**
      * @symbol ?_getAttachedContainers@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@H@Z
-     * @hash   1185568716
+     * @hash   1228867532
      */
     MCAPI std::vector<class Container *> _getAttachedContainers(class BlockSource &, class Vec3 const &, int);
     /**
      * @symbol ?_getContainerInBlock@Hopper@@IEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z
-     * @hash   -432599360
+     * @hash   -389300544
      */
     MCAPI class Container * _getContainerInBlock(class BlockSource &, class Vec3 const &);
     /**
      * @symbol ?_getContainersAt@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-     * @hash   -701631662
+     * @hash   -658332846
      */
     MCAPI std::vector<class Container *> _getContainersAt(class BlockSource &, class Vec3 const &);
     /**
      * @symbol ?_getItemAt@Hopper@@IEAAPEAVItemActor@@AEAVBlockSource@@AEBVVec3@@@Z
-     * @hash   -92115346
+     * @hash   -48816530
      */
     MCAPI class ItemActor * _getItemAt(class BlockSource &, class Vec3 const &);
     /**
      * @symbol ?_getSourceContainers@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-     * @hash   2067958618
+     * @hash   2111257434
      */
     MCAPI std::vector<class Container *> _getSourceContainers(class BlockSource &, class Vec3 const &);
     /**
      * @symbol ?_isEmptyContainer@Hopper@@IEAA_NAEAVContainer@@H@Z
-     * @hash   -874270838
+     * @hash   -830972022
      */
     MCAPI bool _isEmptyContainer(class Container &, int);
     /**
-     * @symbol ?_isFullContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@H@Z
-     * @hash   -1196800186
+     * @symbol ?_isFullContainer@Hopper@@IEAA_NAEAVContainer@@H@Z
+     * @hash   -67521178
      */
-    MCAPI bool _isFullContainer(class BlockSource &, class Container &, int);
+    MCAPI bool _isFullContainer(class Container &, int);
     /**
      * @symbol ?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z
-     * @hash   -751320368
+     * @hash   -708113808
      */
     MCAPI bool _pushOutItems(class BlockSource &, class Container &, class Vec3 const &, int);
     /**
      * @symbol ?_tryMoveItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H_N@Z
-     * @hash   -1935699268
+     * @hash   -1892492708
      */
     MCAPI bool _tryMoveItems(class BlockSource &, class Container &, class Vec3 const &, int, bool);
     /**
      * @symbol ?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z
-     * @hash   -2129242142
+     * @hash   -2086035582
      */
     MCAPI bool _tryPullInItemsFromAboveContainer(class BlockSource &, class Container &, class Vec3 const &);
     /**
      * @symbol ?_tryPushToComposter@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@VBlockPos@@H@Z
-     * @hash   -1132758528
+     * @hash   -1089551968
      */
     MCAPI bool _tryPushToComposter(class BlockSource &, class Container &, class BlockPos, int);
     /**
      * @symbol ?_tryTakeInItemFromSlot@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@1HH@Z
-     * @hash   -1134579928
+     * @hash   -1091373368
      */
     MCAPI bool _tryTakeInItemFromSlot(class BlockSource &, class Container &, class Container &, int, int);
 

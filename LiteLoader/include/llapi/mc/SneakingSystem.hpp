@@ -35,23 +35,23 @@ public:
     virtual ~SneakingSystem();
     /**
      * @vftbl  1
-     * @hash   -407916143
+     * @hash   -253879375
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?tick@SneakingSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorTickedFlag@@@@@@U?$Read@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Write@USneakingComponent@@VActorOwnerComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   -1596221468
+     * @hash   -1591823932
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorTickedFlag>>, struct Read<class FlagComponent<struct PlayerComponentFlag>>, struct Write<struct SneakingComponent, class ActorOwnerComponent>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
      * @symbol ?_tickSneakingSystem@SneakingSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAUSneakingComponent@@AEAVActorOwnerComponent@@@Z
-     * @hash   115607942
+     * @hash   120005478
      */
     MCAPI static void _tickSneakingSystem(class StrictEntityContext &, class FlagComponent<struct PlayerComponentFlag> const &, struct SneakingComponent &, class ActorOwnerComponent &);
 

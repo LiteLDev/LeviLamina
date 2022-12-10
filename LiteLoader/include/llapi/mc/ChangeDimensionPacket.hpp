@@ -46,35 +46,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ChangeDimensionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -748749984
+     * @hash   -823108320
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ChangeDimensionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -238930419
+     * @hash   -313288755
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ChangeDimensionPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -701212038
+     * @hash   -775570374
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ChangeDimensionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2037346826
+     * @hash   1962988490
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ChangeDimensionPacket@@QEAA@XZ
-     * @hash   154338826
+     * @hash   79980490
      */
     MCAPI ChangeDimensionPacket();
     /**
      * @symbol ??0ChangeDimensionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@VVec3@@_N@Z
-     * @hash   523194849
+     * @hash   448836513
      */
     MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
 

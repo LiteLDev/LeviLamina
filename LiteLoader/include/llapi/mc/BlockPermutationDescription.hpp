@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1BlockPermutationDescription@@QEAA@XZ
-     * @hash   -1680897377
+     * @hash   -970218657
      */
     MCAPI ~BlockPermutationDescription();
 

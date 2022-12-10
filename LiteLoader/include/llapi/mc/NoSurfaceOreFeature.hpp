@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@NoSurfaceOreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   881837501
+     * @hash   1039210861
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
      * @symbol ??0NoSurfaceOreFeature@@QEAA@UIntRange@@AEBVBlockDescriptor@@11@Z
-     * @hash   -2089432978
+     * @hash   -1932059618
      */
     MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
 

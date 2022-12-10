@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?breakNearbyBlocks@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1609135700
+     * @hash   -1681894932
      */
     MCAPI void breakNearbyBlocks(class Actor &);
     /**
      * @symbol ?initFromDefinition@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1932999174
+     * @hash   -1844033638
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?isBreakable@BreakBlocksComponent@@QEBA_NAEAVActor@@AEBVBlockLegacy@@@Z
-     * @hash   1543993344
+     * @hash   1471203360
      */
     MCAPI bool isBreakable(class Actor &, class BlockLegacy const &) const;
 

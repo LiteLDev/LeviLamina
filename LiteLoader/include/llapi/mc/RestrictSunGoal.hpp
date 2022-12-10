@@ -38,45 +38,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RestrictSunGoal@@UEAA_NXZ
-     * @hash   -1379950115
+     * @hash   -1217671811
      */
     virtual bool canUse();
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   576718691
+     * @hash   736752099
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RestrictSunGoal@@UEAAXXZ
-     * @hash   238774310
+     * @hash   401052614
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RestrictSunGoal@@UEAAXXZ
-     * @hash   1128079414
+     * @hash   1290357718
      */
     virtual void stop();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RestrictSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1922831475
+     * @hash   2085109779
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RestrictSunGoal@@QEAA@AEAVMob@@@Z
-     * @hash   732740170
+     * @hash   895018474
      */
     MCAPI RestrictSunGoal(class Mob &);
 

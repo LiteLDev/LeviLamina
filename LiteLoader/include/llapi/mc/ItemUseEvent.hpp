@@ -29,17 +29,17 @@ public:
 public:
     /**
      * @symbol ??0ItemUseEvent@@QEAA@AEBU0@@Z
-     * @hash   1537059215
+     * @hash   1580588671
      */
     MCAPI ItemUseEvent(struct ItemUseEvent const &);
     /**
      * @symbol ??0ItemUseEvent@@QEAA@$$QEAU0@@Z
-     * @hash   -116213127
+     * @hash   -72683671
      */
     MCAPI ItemUseEvent(struct ItemUseEvent &&);
     /**
      * @symbol ??1ItemUseEvent@@QEAA@XZ
-     * @hash   -1678493584
+     * @hash   -1498056224
      */
     MCAPI ~ItemUseEvent();
 

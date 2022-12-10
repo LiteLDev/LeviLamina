@@ -34,35 +34,35 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTBOOKFORTRADINGFUNCTION
     /**
      * @symbol ?apply@EnchantBookForTradingFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   712480533
+     * @hash   1181356277
      */
     MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantBookForTradingFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     * @hash   -865067616
+     * @hash   -396191872
      */
     MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -51657485
+     * @hash   417218259
      */
     MCVAPI void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1070814
+     * @hash   469946558
      */
     MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
 #endif
     /**
      * @symbol ?deserialize@EnchantBookForTradingFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   169009071
+     * @hash   637884815
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
      * @symbol ?_getRandomEnchantAndCalculateCost@EnchantBookForTradingFunction@@AEBA?AVEnchantmentInstance@@AEAVItemStackBase@@AEAVRandom@@AEAH@Z
-     * @hash   1308206719
+     * @hash   1777082463
      */
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase &, class Random &, int &) const;
 

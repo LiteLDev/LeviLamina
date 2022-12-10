@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0ActionQueue@@QEAA@XZ
-     * @hash   1539257431
+     * @hash   1563382375
      */
     MCAPI ActionQueue();
     /**
      * @symbol ?pushBackActionEvent@ActionQueue@@QEAAXVActionEvent@@@Z
-     * @hash   -2016531472
+     * @hash   -1992406528
      */
     MCAPI void pushBackActionEvent(class ActionEvent);
 

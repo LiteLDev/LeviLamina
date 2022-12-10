@@ -33,17 +33,17 @@ public:
 public:
     /**
      * @symbol ?loadJSON@BlockListSerializer@@SAXVValue@Json@@AEBVSemVersion@@AEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-     * @hash   -411628590
+     * @hash   -396806126
      */
     MCAPI static void loadJSON(class Json::Value, class SemVersion const &, std::vector<class BlockDescriptor> &);
     /**
      * @symbol ?loadJSON@BlockListSerializer@@SAXVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
-     * @hash   -60621256
+     * @hash   -45798792
      */
     MCAPI static void loadJSON(class Json::Value, class SemVersion const &, class BlockDescriptor &);
     /**
      * @symbol ?saveJSON@BlockListSerializer@@SAXAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEAVValue@Json@@@Z
-     * @hash   1922064769
+     * @hash   1936887233
      */
     MCAPI static void saveJSON(std::vector<class BlockDescriptor> const &, class Json::Value &);
 

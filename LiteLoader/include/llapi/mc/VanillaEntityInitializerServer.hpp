@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol ?commonInitECSMovement@VanillaEntityInitializerServer@@SAXAEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBV3@@Z
-     * @hash   921047799
-     */
-    MCAPI static void commonInitECSMovement(struct ActorDefinitionIdentifier const &, class EntityContext &, class EntityContext const &);
-    /**
-     * @symbol ?commonInitSideBySideComparison@VanillaEntityInitializerServer@@SAXAEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBV3@@Z
-     * @hash   1271825721
-     */
-    MCAPI static void commonInitSideBySideComparison(struct ActorDefinitionIdentifier const &, class EntityContext &, class EntityContext const &);
-    /**
      * @symbol ?create@VanillaEntityInitializerServer@@SA?AV?$unique_ptr@VIEntityInitializer@@U?$default_delete@VIEntityInitializer@@@std@@@std@@AEBURegistrationOptions@VanillaSystemsRegistration@@@Z
-     * @hash   -1997095097
+     * @hash   -1846210409
      */
     MCAPI static std::unique_ptr<class IEntityInitializer> create(struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?initECSMovement@VanillaEntityInitializerServer@@SAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@AEBV4@@Z
+     * @hash   1752134844
+     */
+    MCAPI static void initECSMovement(std::unique_ptr<class Actor>, class EntityContext &, class EntityContext const &);
+    /**
+     * @symbol ?initSideBySideComparison@VanillaEntityInitializerServer@@SAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@AEBV4@@Z
+     * @hash   -1470332054
+     */
+    MCAPI static void initSideBySideComparison(std::unique_ptr<class Actor>, class EntityContext &, class EntityContext const &);
 
 };

@@ -38,47 +38,47 @@ public:
     virtual ~InPackagePackSource();
     /**
      * @vftbl  1
-     * @hash   348758385
+     * @hash   411015809
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   349681906
+     * @hash   411939330
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
-     * @hash   2120926593
+     * @hash   2050581393
      */
     virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @vftbl  4
      * @symbol ?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ
-     * @hash   -318625407
+     * @hash   -193787663
      */
     virtual enum class PackType getPackType() const;
     /**
      * @vftbl  5
      * @symbol ?load@InPackagePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-     * @hash   1771791838
+     * @hash   1834033886
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPACKAGEPACKSOURCE
     /**
      * @symbol ?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-     * @hash   -2141275075
+     * @hash   -2079017651
      */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     /**
      * @symbol ?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
-     * @hash   -756968932
+     * @hash   -694711508
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     /**
      * @symbol ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
-     * @hash   -2075036862
+     * @hash   -2012687182
      */
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum class PackType);
 

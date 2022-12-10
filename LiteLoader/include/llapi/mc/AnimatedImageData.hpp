@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0AnimatedImageData@@QEAA@W4AnimatedTextureType@persona@@W4AnimationExpression@2@AEBUImage@mce@@M@Z
-     * @hash   -287063362
+     * @hash   -224821314
      */
     MCAPI AnimatedImageData(enum class persona::AnimatedTextureType, enum class persona::AnimationExpression, struct mce::Image const &, float);
     /**
      * @symbol ??0AnimatedImageData@@QEAA@AEBV0@@Z
-     * @hash   -528211375
+     * @hash   -465969327
      */
     MCAPI AnimatedImageData(class AnimatedImageData const &);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ItemReleaseChargeEvent@@QEAA@XZ
-     * @hash   1797419228
+     * @hash   1977856588
      */
     MCAPI ~ItemReleaseChargeEvent();
 

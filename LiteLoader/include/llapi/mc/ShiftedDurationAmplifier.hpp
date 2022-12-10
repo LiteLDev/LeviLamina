@@ -37,24 +37,24 @@ public:
     virtual ~ShiftedDurationAmplifier();
     /**
      * @vftbl  1
-     * @hash   -162053903
+     * @hash   87636961
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?shouldBuff@ShiftedDurationAmplifier@@UEBA_NHH@Z
-     * @hash   -1070418462
+     * @hash   -1053981518
      */
     virtual bool shouldBuff(int, int) const;
     /**
      * @vftbl  3
      * @symbol ?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z
-     * @hash   1424754950
+     * @hash   1441191894
      */
     virtual int getTickInterval(int) const;
     /**
      * @symbol ??0ShiftedDurationAmplifier@@QEAA@H@Z
-     * @hash   -160531373
+     * @hash   -144094429
      */
     MCAPI ShiftedDurationAmplifier(int);
 

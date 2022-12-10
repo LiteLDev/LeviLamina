@@ -39,39 +39,39 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@IcebergFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1594015421
+     * @hash   1750466221
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isIcebergBlock@IcebergFeature@@AEBA_NAEBVBlock@@@Z
-     * @hash   -155688059
+     * @hash   762741
      */
     MCAPI bool _isIcebergBlock(class Block const &) const;
     /**
      * @symbol ?carve@IcebergFeature@@AEBAXHHAEBVBlockPos@@AEAVBlockSource@@_NM0HH@Z
-     * @hash   -1384706827
+     * @hash   -1228256027
      */
     MCAPI void carve(int, int, class BlockPos const &, class BlockSource &, bool, float, class BlockPos const &, int, int) const;
     /**
      * @symbol ?generateIcebergBlock@IcebergFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHHHHH_N3MHAEBVBlock@@@Z
-     * @hash   1005070073
+     * @hash   1161520873
      */
     MCAPI void generateIcebergBlock(class BlockSource &, class Random &, class BlockPos const &, int, int, int, int, int, int, bool, bool, float, int, class Block const &) const;
     /**
      * @symbol ?heightDependentRadiusRound@IcebergFeature@@AEBAHAEAVRandom@@HHH@Z
-     * @hash   -470970937
+     * @hash   -314520137
      */
     MCAPI int heightDependentRadiusRound(class Random &, int, int, int) const;
     /**
      * @symbol ?setIcebergBlock@IcebergFeature@@AEBAXAEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@HH_N3AEBVBlock@@@Z
-     * @hash   -503296839
+     * @hash   -346846039
      */
     MCAPI void setIcebergBlock(class BlockPos const &, class BlockSource &, class Random &, int, int, bool, bool, class Block const &) const;
     /**
      * @symbol ?signedDistanceEllipse@IcebergFeature@@AEBAMHHAEBVBlockPos@@HHM@Z
-     * @hash   -1967698323
+     * @hash   -1811247523
      */
     MCAPI float signedDistanceEllipse(int, int, class BlockPos const &, int, int, float) const;
 

@@ -39,58 +39,67 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@StompAttackGoal@@UEAA_NXZ
-     * @hash   -1799042636
+     * @hash   -1638194300
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@StompAttackGoal@@UEAA_NXZ
-     * @hash   -752567374
+     * @hash   -590535086
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@StompAttackGoal@@UEAAXXZ
-     * @hash   -1120582387
+     * @hash   -959734051
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@StompAttackGoal@@UEAAXXZ
-     * @hash   74213085
+     * @hash   236245373
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@StompAttackGoal@@UEAAXXZ
-     * @hash   -87132216
+     * @hash   74900072
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@StompAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2113695036
+     * @hash   -2019193844
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @symbol ??0StompAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   1848130177
+     * @hash   2009901073
      */
     MCAPI StompAttackGoal(class Mob &);
+
+//protected:
+    /**
+     * @symbol ?_attemptAttack@StompAttackGoal@@IEAAXAEAVActor@@@Z
+     * @hash   -1593380678
+     */
+    MCAPI void _attemptAttack(class Actor &);
+
+protected:
 
 };

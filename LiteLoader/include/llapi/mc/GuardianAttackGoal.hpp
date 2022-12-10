@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@GuardianAttackGoal@@UEAA_NXZ
-     * @hash   176926996
+     * @hash   337867588
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@GuardianAttackGoal@@UEAA_NXZ
-     * @hash   -1840664398
+     * @hash   -1679723806
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@GuardianAttackGoal@@UEAAXXZ
-     * @hash   29125437
+     * @hash   190066029
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@GuardianAttackGoal@@UEAAXXZ
-     * @hash   1284620093
+     * @hash   1445560685
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@GuardianAttackGoal@@UEAAXXZ
-     * @hash   -892120312
+     * @hash   -731179720
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@GuardianAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   732556460
+     * @hash   893604684
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0GuardianAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1042209407
+     * @hash   -881161183
      */
     MCAPI GuardianAttackGoal(class Mob &);
 

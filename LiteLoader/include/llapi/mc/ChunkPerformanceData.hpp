@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0ChunkPerformanceData@@QEAA@XZ
-     * @hash   -1436892215
+     * @hash   -1347772919
      */
     MCAPI ChunkPerformanceData();
     /**
      * @symbol ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
-     * @hash   1433972930
+     * @hash   -2137322926
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
      * @symbol ?resetAll@ChunkPerformanceData@@QEAAXXZ
-     * @hash   713482469
+     * @hash   1437153909
      */
     MCAPI void resetAll();
 

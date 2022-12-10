@@ -33,14 +33,14 @@ public:
 public:
     /**
      * @symbol ?get@DecoratorDefinition@@QEBAPEBVBehaviorDefinition@@XZ
-     * @hash   -737966849
+     * @hash   -576872497
      */
     MCAPI class BehaviorDefinition const * get() const;
 
 //protected:
     /**
      * @symbol ?_decoratorLoadChildBehavior@DecoratorDefinition@@KA?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@VValue@Json@@AEBVBehaviorFactory@@VBehaviorTreeDefinitionPtr@@@Z
-     * @hash   -2063688283
+     * @hash   -1981857211
      */
     MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 

@@ -38,25 +38,25 @@ public:
     /**
      * @vftbl  1
      * @symbol ?shouldAddHardcodedSpawnAreas@StructureFeature@@UEBA_NXZ
-     * @hash   875141598
+     * @hash   971887390
      */
     virtual bool shouldAddHardcodedSpawnAreas() const;
     /**
      * @vftbl  2
      * @symbol ?shouldPostProcessMobs@StructureFeature@@UEBA_NXZ
-     * @hash   -511236540
+     * @hash   -414490748
      */
     virtual bool shouldPostProcessMobs() const;
     /**
      * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@StructureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-     * @hash   401291156
+     * @hash   1157436708
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
      * @vftbl  4
      * @symbol ?initMobSpawnTypes@StructureFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
-     * @hash   608497705
+     * @hash   697463241
      */
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /**
@@ -74,94 +74,94 @@ public:
     /**
      * @vftbl  7
      * @symbol ?getStructureAt@StructureFeature@@MEAAPEAVStructureStart@@HHH@Z
-     * @hash   -39793957
+     * @hash   716351595
      */
     virtual class StructureStart * getStructureAt(int, int, int);
     /**
      * @symbol ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
-     * @hash   -879708021
+     * @hash   -123562469
      */
     MCAPI StructureFeature(unsigned int, enum class StructureFeatureType);
     /**
      * @symbol ?addHardcodedSpawnAreas@StructureFeature@@QEAAXAEAVLevelChunk@@@Z
-     * @hash   -1438175180
+     * @hash   -682029628
      */
     MCAPI void addHardcodedSpawnAreas(class LevelChunk &);
     /**
      * @symbol ?chunkStartAtSurfaceLevel@StructureFeature@@QEAA?AVBlockPos@@AEBVIPreliminarySurfaceProvider@@VChunkPos@@H@Z
-     * @hash   -2044661001
+     * @hash   -1288515449
      */
     MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const &, class ChunkPos, int);
     /**
      * @symbol ?createBlueprints@StructureFeature@@QEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -1482303351
+     * @hash   -726157799
      */
     MCAPI void createBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ?debugRender@StructureFeature@@QEAAXXZ
-     * @hash   37501459
+     * @hash   793647011
      */
     MCAPI void debugRender();
     /**
      * @symbol ?findFarAwayStructures@StructureFeature@@QEAA?AV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@V?$buffer_span@VChunkPos@@@@I@Z
-     * @hash   302866359
+     * @hash   1059011911
      */
     MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, unsigned int);
     /**
      * @symbol ?foreachIntersectingStructureStart@StructureFeature@@QEAAXAEBVBoundingBox@@V?$function@$$A6AXAEAVStructureStart@@@Z@std@@@Z
-     * @hash   -271849140
+     * @hash   484296412
      */
     MCAPI void foreachIntersectingStructureStart(class BoundingBox const &, class std::function<void (class StructureStart &)>);
     /**
      * @symbol ?garbageCollectBlueprints@StructureFeature@@QEAAXV?$buffer_span@VChunkPos@@@@I@Z
-     * @hash   -983692724
+     * @hash   -227547172
      */
     MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, unsigned int);
     /**
      * @symbol ?getType@StructureFeature@@QEBA?AW4StructureFeatureType@@XZ
-     * @hash   -823604008
+     * @hash   -843884952
      */
     MCAPI enum class StructureFeatureType getType() const;
     /**
      * @symbol ?isInsideBoundingFeature@StructureFeature@@QEAA_NHHH@Z
-     * @hash   -1949141943
+     * @hash   -1192996391
      */
     MCAPI bool isInsideBoundingFeature(int, int, int);
     /**
      * @symbol ?postProcess@StructureFeature@@QEAA_NAEAVBlockSource@@AEAVRandom@@HH@Z
-     * @hash   -1155223002
+     * @hash   -399077450
      */
     MCAPI bool postProcess(class BlockSource &, class Random &, int, int);
     /**
      * @symbol ?postProcessMobsAt@StructureFeature@@QEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-     * @hash   -217311901
+     * @hash   538833651
      */
     MCAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
      * @symbol ?waitForFeatureBlueprints@StructureFeature@@QEAAXXZ
-     * @hash   -1968616859
+     * @hash   -1212471307
      */
     MCAPI void waitForFeatureBlueprints();
     /**
      * @symbol ?findNearestFeaturePositionBySpacing@StructureFeature@@SA_NAEAVDimension@@AEBVIPreliminarySurfaceProvider@@AEAV1@AEBVBiomeSource@@AEBVBlockPos@@AEAV5@HHH_NH6@Z
-     * @hash   459296529
+     * @hash   1215442081
      */
     MCAPI static bool findNearestFeaturePositionBySpacing(class Dimension &, class IPreliminarySurfaceProvider const &, class StructureFeature &, class BiomeSource const &, class BlockPos const &, class BlockPos &, int, int, int, bool, int, bool);
     /**
      * @symbol ?getChunkPosInSpace@StructureFeature@@SA?AVChunkPos@@AEBV2@AEAVRandom@@IHHH_N@Z
-     * @hash   -44194092
+     * @hash   711951460
      */
     MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const &, class Random &, unsigned int, int, int, int, bool);
     /**
      * @symbol ?setRandomSeedFor@StructureFeature@@SAXAEAVRandom@@HHHI@Z
-     * @hash   -770121222
+     * @hash   -13975670
      */
     MCAPI static void setRandomSeedFor(class Random &, int, int, int, unsigned int);
 
 //protected:
     /**
      * @symbol ?addFeature@StructureFeature@@IEAAXAEAVDimension@@AEAVRandom@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   1014610708
+     * @hash   1770756260
      */
     MCAPI void addFeature(class Dimension &, class Random &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 

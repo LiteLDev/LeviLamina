@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?buildSchema@RailActivatorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRailActivatorDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   917977630
+     * @hash   897681310
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailActivatorDefinition>> &);
 

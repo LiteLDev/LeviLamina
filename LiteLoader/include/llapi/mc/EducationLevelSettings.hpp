@@ -25,37 +25,37 @@ struct EducationLevelSettings {
 public:
     /**
      * @symbol ??0EducationLevelSettings@@QEAA@XZ
-     * @hash   -883866597
+     * @hash   -925427925
      */
     MCAPI EducationLevelSettings();
     /**
      * @symbol ??0EducationLevelSettings@@QEAA@AEBU0@@Z
-     * @hash   -1869239361
+     * @hash   -1780120065
      */
     MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     /**
      * @symbol ?getCommandOverrideFunctor@EducationLevelSettings@@QEBA?AV?$function@$$A6AXAEAUCommandFlag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@XZ
-     * @hash   1808037158
+     * @hash   -1773237722
      */
     MCAPI class std::function<void (struct CommandFlag &, std::string const &)> getCommandOverrideFunctor() const;
     /**
      * @symbol ??4EducationLevelSettings@@QEAAAEAU0@AEBU0@@Z
-     * @hash   1875165766
+     * @hash   1833604438
      */
     MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
     /**
      * @symbol ?save@EducationLevelSettings@@QEAAXAEBVLevelLooseFileStorage@@@Z
-     * @hash   654825094
+     * @hash   1368348374
      */
     MCAPI void save(class LevelLooseFileStorage const &);
     /**
      * @symbol ??1EducationLevelSettings@@QEAA@XZ
-     * @hash   1130796361
+     * @hash   1220745961
      */
     MCAPI ~EducationLevelSettings();
     /**
      * @symbol ?DEFAULT_BORDER_PATH@EducationLevelSettings@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -871133037
+     * @hash   897706627
      */
     MCAPI static std::string const DEFAULT_BORDER_PATH;
 

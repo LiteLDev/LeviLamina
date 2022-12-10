@@ -38,30 +38,30 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@PhotoTransferPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1259719641
+     * @hash   1185899465
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PhotoTransferPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1879562618
+     * @hash   -1953382794
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@PhotoTransferPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1828147809
+     * @hash   1754327633
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@PhotoTransferPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1952552319
+     * @hash   -2026372495
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PhotoTransferPacket@@QEAA@XZ
-     * @hash   -966245151
+     * @hash   -1040065327
      */
     MCAPI PhotoTransferPacket();
 

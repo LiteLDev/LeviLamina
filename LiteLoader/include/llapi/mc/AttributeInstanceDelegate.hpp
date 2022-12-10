@@ -38,48 +38,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@AttributeInstanceDelegate@@UEAAXXZ
-     * @hash   -1220120786
+     * @hash   -1131155250
      */
     virtual void tick();
     /**
      * @vftbl  2
      * @symbol ?notify@AttributeInstanceDelegate@@UEAAX_J@Z
-     * @hash   807112271
+     * @hash   896077807
      */
     virtual void notify(__int64);
     /**
      * @vftbl  3
      * @symbol ?willChange@AttributeInstanceDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-     * @hash   -380260635
+     * @hash   -283760859
      */
     virtual bool willChange(float, float, class AttributeBuff const &);
     /**
      * @vftbl  4
      * @symbol ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-     * @hash   1078484433
+     * @hash   1160469265
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
      * @vftbl  5
      * @symbol ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
-     * @hash   -1853514366
+     * @hash   -1771529534
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /**
      * @symbol ??0AttributeInstanceDelegate@@QEAA@AEBVAttributeInstance@@@Z
-     * @hash   1907467713
+     * @hash   1989452545
      */
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 //protected:
     /**
      * @symbol ?_getInstance@AttributeInstanceDelegate@@IEBAAEBVAttributeInstance@@XZ
-     * @hash   1436404806
+     * @hash   1518389638
      */
     MCAPI class AttributeInstance const & _getInstance() const;
     /**
      * @symbol ?_getMutableInstance@AttributeInstanceDelegate@@IEBAPEAVAttributeInstance@@XZ
-     * @hash   897490285
+     * @hash   979475117
      */
     MCAPI class AttributeInstance * _getMutableInstance() const;
 

@@ -38,39 +38,39 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@StructureAnimationAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     * @hash   -1897438976
+     * @hash   -1353174704
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
      * @vftbl  2
      * @symbol ?serialize@StructureAnimationAction@@UEAAXAEAVCompoundTag@@@Z
-     * @hash   375020541
+     * @hash   919284813
      */
     virtual void serialize(class CompoundTag &);
     /**
      * @vftbl  3
      * @symbol ??8StructureAnimationAction@@UEBA_NAEAVIRequestAction@@@Z
-     * @hash   -313820588
+     * @hash   -217074796
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
      * @symbol ??0StructureAnimationAction@@QEAA@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1784053411
+     * @hash   -1239789139
      */
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ??0StructureAnimationAction@@QEAA@AEBVStructureSettings@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1493318395
+     * @hash   2037582667
      */
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
     /**
      * @symbol ?isValidTag@StructureAnimationAction@@SA_NAEBVCompoundTag@@@Z
-     * @hash   281783489
+     * @hash   826047761
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
     /**
      * @symbol ?load@StructureAnimationAction@@SA?AV?$unique_ptr@VStructureAnimationAction@@U?$default_delete@VStructureAnimationAction@@@std@@@std@@AEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   646887144
+     * @hash   1191151416
      */
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const &, std::string const &);
 

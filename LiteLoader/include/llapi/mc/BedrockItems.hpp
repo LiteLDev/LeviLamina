@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ?mAir@BedrockItems@@2V?$WeakPtr@VItem@@@@A
-     * @hash   349071240
+     * @hash   993156504
      */
     MCAPI static class WeakPtr<class Item> mAir;
     /**
      * @symbol ?registerItems@BedrockItems@@SAXVItemRegistryRef@@@Z
-     * @hash   357157182
+     * @hash   1075324014
      */
     MCAPI static void registerItems(class ItemRegistryRef);
     /**
      * @symbol ?unregisterItems@BedrockItems@@SAXVItemRegistryRef@@@Z
-     * @hash   1503187584
+     * @hash   -2073612880
      */
     MCAPI static void unregisterItems(class ItemRegistryRef);
 

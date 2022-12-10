@@ -40,19 +40,38 @@ public:
     /**
      * @vftbl  1
      * @symbol ?apply@SetItemDataFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   -401767965
+     * @hash   72058851
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
      * @vftbl  3
      * @symbol ?apply@SetItemDataFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     * @hash   1651280984
+     * @hash   2126091864
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@SetItemDataFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     * @hash   -1819745953
+     * @hash   -1346918577
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
+
+//private:
+    /**
+     * @symbol ?_applyImplForComplexAliasBlock@SetItemDataFunction@@AEAA?AW4ApplyForComplexAliasBlockResult@1@AEAPEBVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@AEAH@Z
+     * @hash   1642979166
+     */
+    MCAPI enum class SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(class Item const *&, std::string const &, class Random &, int &);
+    /**
+     * @symbol ?_applyImplForItem@SetItemDataFunction@@AEAA?AW4ApplyForItemResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVRandom@@AEAHAEAV?$WeakPtr@VItem@@@@@Z
+     * @hash   1622861283
+     */
+    MCAPI enum class SetItemDataFunction::ApplyForItemResult _applyImplForItem(std::string const &, std::string const &, class Random &, int &, class WeakPtr<class Item> &);
+    /**
+     * @symbol ?_applyImplForNormalBlock@SetItemDataFunction@@AEAAXAEAPEBVBlock@@AEAVRandom@@@Z
+     * @hash   -1816581996
+     */
+    MCAPI void _applyImplForNormalBlock(class Block const *&, class Random &);
+
+private:
 
 };

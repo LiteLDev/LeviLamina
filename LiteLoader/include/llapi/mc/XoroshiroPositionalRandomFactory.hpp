@@ -40,18 +40,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
-     * @hash   -1177917249
+     * @hash   -1022112241
      */
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /**
      * @vftbl  2
      * @symbol ?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1205395343
+     * @hash   1361200351
      */
     virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
     /**
      * @symbol ?forStringImpl@XoroshiroPositionalRandomFactory@@QEBA?AVXoroshiroRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -412326667
+     * @hash   -256521659
      */
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
 
@@ -60,7 +60,7 @@ public:
 private:
     /**
      * @symbol ?mThreadLocalDigest@XoroshiroPositionalRandomFactory@@0V?$ThreadLocalObject@Vmd5@Hash@Crypto@@V?$allocator@Vmd5@Hash@Crypto@@@std@@@Threading@Bedrock@@A
-     * @hash   201887789
+     * @hash   1063727965
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
 

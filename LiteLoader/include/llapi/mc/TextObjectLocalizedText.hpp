@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectLocalizedText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1902620481
+     * @hash   1956052081
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectLocalizedText@@UEBA?AVValue@Json@@XZ
-     * @hash   -1933944591
+     * @hash   -1880512991
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectLocalizedText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   -294897138
+     * @hash   -241465538
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectLocalizedText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   572175169
+     * @hash   625606769
      */
     MCAPI TextObjectLocalizedText(std::string);
 

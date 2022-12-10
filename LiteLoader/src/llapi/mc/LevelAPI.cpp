@@ -38,7 +38,7 @@ Actor* Level::getEntity(ActorUniqueID uniqueId) {
 
 BlockSource* Level::getBlockSource(int dimID) {
     // auto dim = Global<Level>->createDimension(dimID);
-    auto dim = Global<Level>->getDimension(dimID);
+    auto dim = (Dimension*)Global<Level>->getDimension(dimID).mHandle.lock().get();
     return &dim->getBlockSourceFromMainChunkSource();
     // return dAccess<BlockSource*>(dim, 96);
 }
@@ -66,7 +66,7 @@ Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
 
 // Return nullptr when failing to get block
 Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
-    auto dim = Global<Level>->getDimension(dimId);
+    auto dim = (Dimension*)Global<Level>->getDimension(dimId).mHandle.lock().get();
     if (!dim)
         return nullptr;
 
@@ -217,7 +217,7 @@ std::vector<Player*> Level::getAllPlayers() {
 std::vector<Actor*> Level::getAllEntities(int dimId) {
     try {
         Level* lv = Global<Level>;
-        Dimension* dim = lv->getDimension(dimId);
+        Dimension* dim = (Dimension*)lv->getDimension(dimId).mHandle.lock().get();
         if (!dim)
             return {};
         auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 440); // IDA Dimension::registerEntity

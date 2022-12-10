@@ -39,22 +39,22 @@ public:
     /**
      * @vftbl  6
      * @symbol ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
-     * @hash   -124723985
+     * @hash   -100537537
      */
     virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
     /**
      * @symbol ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-     * @hash   143157071
+     * @hash   167328143
      */
     MCAPI AttackDamageMobEffect(int, std::string const &, std::string const &, bool, int, int);
     /**
      * @symbol ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
-     * @hash   919714202
+     * @hash   943900650
      */
     MCAPI static float getDamageAfterDamageBoost(float, int);
     /**
      * @symbol ?getDamageAfterWeakness@AttackDamageMobEffect@@SAMMH@Z
-     * @hash   465274746
+     * @hash   489461194
      */
     MCAPI static float getDamageAfterWeakness(float, int);
 

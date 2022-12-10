@@ -38,39 +38,39 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@DolphinMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   1716244248
+     * @hash   1769752728
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0DolphinMoveControl@@QEAA@XZ
-     * @hash   2099215050
+     * @hash   -2142259142
      */
     MCAPI DolphinMoveControl();
 
 //private:
     /**
      * @symbol ?_calcRotX@DolphinMoveControl@@AEAAMMMM@Z
-     * @hash   1714831271
+     * @hash   1768324375
      */
     MCAPI float _calcRotX(float, float, float);
     /**
      * @symbol ?_calcRotY@DolphinMoveControl@@AEAAMMM@Z
-     * @hash   -608968756
+     * @hash   -555475652
      */
     MCAPI float _calcRotY(float, float);
     /**
      * @symbol ?_clearOfObstacles@DolphinMoveControl@@AEBA_NAEBVMob@@MMH@Z
-     * @hash   1717580284
+     * @hash   1771073388
      */
     MCAPI bool _clearOfObstacles(class Mob const &, float, float, int) const;
     /**
      * @symbol ?_isInWater@DolphinMoveControl@@AEBA_NAEBVMob@@@Z
-     * @hash   1508191879
+     * @hash   1561684983
      */
     MCAPI bool _isInWater(class Mob const &) const;
     /**
      * @symbol ?_setupBreach@DolphinMoveControl@@AEAAXAEAVMob@@@Z
-     * @hash   398195615
+     * @hash   451688719
      */
     MCAPI void _setupBreach(class Mob &);
 

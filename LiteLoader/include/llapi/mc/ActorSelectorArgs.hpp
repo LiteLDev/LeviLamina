@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0ActorSelectorArgs@@QEAA@XZ
-     * @hash   -2062096979
+     * @hash   2109170397
      */
     MCAPI ActorSelectorArgs();
     /**
      * @symbol ??1ActorSelectorArgs@@QEAA@XZ
-     * @hash   363256765
+     * @hash   240525533
      */
     MCAPI ~ActorSelectorArgs();
     /**
      * @symbol ?DEFAULT_LEVEL@ActorSelectorArgs@@2U?$pair@HH@std@@B
-     * @hash   1732880132
+     * @hash   -1810608228
      */
     MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
     /**
      * @symbol ?DEFAULT_X_ROTATION@ActorSelectorArgs@@2U?$pair@MM@std@@B
-     * @hash   -439344386
+     * @hash   336636206
      */
     MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;
     /**
      * @symbol ?DEFAULT_Y_ROTATION@ActorSelectorArgs@@2U?$pair@MM@std@@B
-     * @hash   -952654682
+     * @hash   -176674090
      */
     MCAPI static struct std::pair<float, float> const DEFAULT_Y_ROTATION;
 

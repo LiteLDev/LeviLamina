@@ -37,33 +37,33 @@ public:
     virtual ~RandomThreadCheckManager();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?onAppResumed@RandomThreadCheckManager@@UEAAXXZ
-     * @hash   -2048004742
+     * @hash   -1865568502
      */
     virtual void onAppResumed();
 
@@ -72,12 +72,12 @@ public:
 private:
     /**
      * @symbol ?mInstance@RandomThreadCheckManager@@0V?$unique_ptr@VRandomThreadCheckManager@@U?$default_delete@VRandomThreadCheckManager@@@std@@@std@@A
-     * @hash   -32721131
+     * @hash   527088277
      */
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     /**
      * @symbol ?mMutex@RandomThreadCheckManager@@0Vrecursive_mutex@std@@A
-     * @hash   -582792380
+     * @hash   -22982972
      */
     MCAPI static class std::recursive_mutex mMutex;
 

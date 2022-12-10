@@ -46,29 +46,29 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@GameRuleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -544958938
+     * @hash   -542575658
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@GameRuleCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
-     * @hash   -1991881555
+     * @hash   -1989267635
      */
     MCAPI static void setup(class CommandRegistry &, struct GameRuleCommand::InitProxy &&);
 
 //private:
     /**
      * @symbol ?getGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1472288854
+     * @hash   -1469905574
      */
     MCAPI void getGameRule(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   432972742
+     * @hash   435417526
      */
     MCAPI void setGameRule(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?createJsonIndex@GameRuleCommand@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVGameRule@@AEAVValue@Json@@PEAV23@@Z
-     * @hash   -1019320520
+     * @hash   -1016937240
      */
     MCAPI static void createJsonIndex(std::string const &, class GameRule const &, class Json::Value &, std::string *);
 

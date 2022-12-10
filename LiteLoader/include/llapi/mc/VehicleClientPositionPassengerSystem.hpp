@@ -30,27 +30,27 @@ public:
 public:
     /**
      * @symbol ?_setPositionRequest@VehicleClientPositionPassengerSystem@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@@@V?$ViewedEntityContextT@VStrictEntityContext@@$$CBURenderPositionComponent@@$$CBURenderRotationComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UActorSetPositionRequestComponent@@@@@Z
-     * @hash   758703015
+     * @hash   735685143
      */
     MCAPI static void _setPositionRequest(class ViewedEntityContextT<class StrictEntityContext, struct SynchedActorDataComponent const>, class ViewedEntityContextT<class StrictEntityContext, struct RenderPositionComponent const, struct RenderRotationComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ActorSetPositionRequestComponent>);
     /**
      * @symbol ?_setRotationLock@VehicleClientPositionPassengerSystem@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@$$CBUActorHeadRotationComponent@@UMobBodyRotationComponent@@UPassengerYRotLimitComponent@@@@V?$ViewedEntityContextT@VStrictEntityContext@@$$CBURenderRotationComponent@@@@@Z
-     * @hash   1768000189
+     * @hash   1744982317
      */
     MCAPI static void _setRotationLock(class ViewedEntityContextT<class StrictEntityContext, struct SynchedActorDataComponent const, struct ActorHeadRotationComponent const, struct MobBodyRotationComponent, struct PassengerYRotLimitComponent>, class ViewedEntityContextT<class StrictEntityContext, struct RenderRotationComponent const>);
     /**
      * @symbol ?createSetPositionRequestSystem@VehicleClientPositionPassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1128830632
+     * @hash   -1151417976
      */
     MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
     /**
      * @symbol ?createSetPreviousPosRotSystem@VehicleClientPositionPassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   518050698
+     * @hash   495463354
      */
     MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
     /**
      * @symbol ?createSetRotationLock@VehicleClientPositionPassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1298858486
+     * @hash   -1321445830
      */
     MCAPI static struct TickingSystemWithInfo createSetRotationLock();
 

@@ -39,47 +39,43 @@ public:
 public:
     /**
      * @symbol ??0BlockComponentFactory@@QEAA@AEBVExperiments@@@Z
-     * @hash   -1756578813
+     * @hash   -1188712381
      */
     MCAPI BlockComponentFactory(class Experiments const &);
     /**
      * @symbol ?createDescription@BlockComponentFactory@@QEBA?AV?$unique_ptr@UBlockComponentDescription@@U?$default_delete@UBlockComponentDescription@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   527836079
+     * @hash   1100715087
      */
     MCAPI std::unique_ptr<struct BlockComponentDescription> createDescription(std::string const &) const;
     /**
      * @symbol ?initializeFactory@BlockComponentFactory@@QEAAXAEBVExperiments@@@Z
-     * @hash   -519984784
+     * @hash   54431824
      */
     MCAPI void initializeFactory(class Experiments const &);
     /**
      * @symbol ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
-     * @hash   -729223864
+     * @hash   -157605688
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
+     * @symbol ?bindAllComponentSchemas@BlockComponentFactory@@SAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
+     * @hash   -899134661
+     */
+    MCAPI static void bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
+    /**
      * @symbol ?mRegisteredCerealComponents@BlockComponentFactory@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@@std@@@2@@std@@A
-     * @hash   -1591495035
+     * @hash   -967675339
      */
     MCAPI static class std::unordered_map<std::string, struct BlockComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>> mRegisteredCerealComponents;
     /**
      * @symbol ?registerAllCerealDescriptions@BlockComponentFactory@@SAXXZ
-     * @hash   -1768030099
+     * @hash   -1193490483
      */
     MCAPI static void registerAllCerealDescriptions();
     /**
      * @symbol ?registerComponentUpgrade@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
-     * @hash   886250514
+     * @hash   1462558370
      */
     MCAPI static void registerComponentUpgrade(class CerealDocumentUpgrader &, class std::shared_ptr<class CerealSchemaUpgrade>);
-
-//private:
-    /**
-     * @symbol ?_bindAllComponentSchemas@BlockComponentFactory@@CAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
-     * @hash   1747847982
-     */
-    MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
-
-private:
 
 };

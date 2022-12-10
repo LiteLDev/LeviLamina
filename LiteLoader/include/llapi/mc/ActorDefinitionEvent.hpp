@@ -28,34 +28,34 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionEvent@@QEAA@$$QEAV0@@Z
-     * @hash   -148460099
+     * @hash   -133714515
      */
     MCAPI ActorDefinitionEvent(class ActorDefinitionEvent &&);
     /**
      * @symbol ??0ActorDefinitionEvent@@QEAA@AEBV0@@Z
-     * @hash   -306584575
+     * @hash   -262163311
      */
     MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const &);
     /**
      * @symbol ?evaluateGroups@ActorDefinitionEvent@@QEBAXAEAVActor@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@AEBVVariantParameterList@@@Z
-     * @hash   -1650940058
+     * @hash   -1597616090
      */
     MCAPI void evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
     /**
      * @symbol ??4ActorDefinitionEvent@@QEAAAEAV0@AEBV0@@Z
-     * @hash   764309268
+     * @hash   808730532
      */
     MCAPI class ActorDefinitionEvent & operator=(class ActorDefinitionEvent const &);
     /**
      * @symbol ??1ActorDefinitionEvent@@QEAA@XZ
-     * @hash   -204179156
+     * @hash   -161141732
      */
     MCAPI ~ActorDefinitionEvent();
 
 //private:
     /**
      * @symbol ?_evaluateGroups@ActorDefinitionEvent@@AEBAXAEAVActor@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@AEBVVariantParameterList@@@Z
-     * @hash   1771766429
+     * @hash   1825090397
      */
     MCAPI void _evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
 

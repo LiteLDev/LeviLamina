@@ -38,7 +38,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-     * @hash   -1779688409
+     * @hash   -1216619289
      */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
 

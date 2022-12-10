@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0DirtyTicksCounter@@QEAA@XZ
-     * @hash   -1678647116
+     * @hash   -1134782620
      */
     MCAPI DirtyTicksCounter();
     /**
      * @symbol ?getTicksSinceLastChange@DirtyTicksCounter@@QEBAHXZ
-     * @hash   -1045344600
+     * @hash   -501480104
      */
     MCAPI int getTicksSinceLastChange() const;
     /**
      * @symbol ?getTotalDirtyTicks@DirtyTicksCounter@@QEBAHXZ
-     * @hash   888679434
+     * @hash   1059937322
      */
     MCAPI int getTotalDirtyTicks() const;
     /**
      * @symbol ??EDirtyTicksCounter@@QEAAAEAU0@XZ
-     * @hash   -2005526657
+     * @hash   -1461662161
      */
     MCAPI struct DirtyTicksCounter & operator++();
     /**
      * @symbol ?reset@DirtyTicksCounter@@QEAAXXZ
-     * @hash   1657009059
+     * @hash   -2094093741
      */
     MCAPI void reset();
     /**
      * @symbol ?touch@DirtyTicksCounter@@QEAAXXZ
-     * @hash   -2044857453
+     * @hash   -1500992957
      */
     MCAPI void touch();
     /**
      * @symbol ?max@DirtyTicksCounter@@SA?AU1@XZ
-     * @hash   1734396565
+     * @hash   -2016706235
      */
     MCAPI static struct DirtyTicksCounter max();
 

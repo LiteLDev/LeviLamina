@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0DelayRequest@@QEAA@V?$unique_ptr@VIRequestAction@@U?$default_delete@VIRequestAction@@@std@@@std@@_K@Z
-     * @hash   -1081560451
+     * @hash   -999098963
      */
     MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, unsigned __int64);
     /**
      * @symbol ?executeAction@DelayRequest@@QEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     * @hash   -1207739647
+     * @hash   -1125278159
      */
     MCAPI void executeAction(class ServerLevel &, class Dimension &);
     /**
      * @symbol ?getAction@DelayRequest@@QEBA?AV?$not_null@PEAVIRequestAction@@@gsl@@XZ
-     * @hash   829247021
+     * @hash   911708509
      */
     MCAPI class gsl::not_null<class IRequestAction *> getAction() const;
     /**
      * @symbol ?getTickToExecuteOn@DelayRequest@@QEBA_KXZ
-     * @hash   -2086574035
+     * @hash   -1961736291
      */
     MCAPI unsigned __int64 getTickToExecuteOn() const;
     /**
      * @symbol ??ODelayRequest@@QEBA_NAEBV0@@Z
-     * @hash   -266447234
+     * @hash   -183985746
      */
     MCAPI bool operator>(class DelayRequest const &) const;
     /**
      * @symbol ??1DelayRequest@@QEAA@XZ
-     * @hash   2039849190
+     * @hash   -2109307498
      */
     MCAPI ~DelayRequest();
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?initialize@OnActorLeaveVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorLeaveVolumeComponent@@@Z
-     * @hash   -1081756369
+     * @hash   -1058108081
      */
     MCAPI void initialize(class EntityContext &, class OnActorLeaveVolumeComponent &) const;
     /**
      * @symbol ??1OnActorLeaveVolumeDefinition@@QEAA@XZ
-     * @hash   1790850264
+     * @hash   1836393976
      */
     MCAPI ~OnActorLeaveVolumeDefinition();
     /**
      * @symbol ?NAME@OnActorLeaveVolumeDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1658922733
+     * @hash   -1137107515
      */
     MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@OnActorLeaveVolumeDefinition@@SAXXZ
-     * @hash   1039679331
+     * @hash   1061005843
      */
     MCAPI static void bindType();
 

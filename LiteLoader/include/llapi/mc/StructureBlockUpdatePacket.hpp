@@ -37,35 +37,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@StructureBlockUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1959316957
+     * @hash   -2001170429
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@StructureBlockUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1748459312
+     * @hash   -1790312784
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@StructureBlockUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1198509447
+     * @hash   1156655975
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@StructureBlockUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   794230615
+     * @hash   752377143
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0StructureBlockUpdatePacket@@QEAA@XZ
-     * @hash   -847684553
+     * @hash   -889538025
      */
     MCAPI StructureBlockUpdatePacket();
     /**
      * @symbol ??0StructureBlockUpdatePacket@@QEAA@AEBV0@@Z
-     * @hash   -1100763471
+     * @hash   -920064719
      */
     MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
 

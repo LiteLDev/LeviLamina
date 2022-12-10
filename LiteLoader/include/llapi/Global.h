@@ -1,5 +1,6 @@
-﻿#pragma once
+#pragma once
 #pragma warning(disable : 4250)
+#pragma warning(disable : 4949)
 
 #ifndef LIAPI
 #ifdef LITELOADER_EXPORTS
@@ -62,7 +63,9 @@
 // windows types
 #include <minwindef.h>
 
+#pragma unmanaged
 #include <entt/entt.hpp>
+#pragma managed
 #include <gsl/gsl>
 #include <FMT/chrono.h>
 #include <FMT/color.h>

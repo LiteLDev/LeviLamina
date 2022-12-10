@@ -34,22 +34,22 @@ public:
 public:
     /**
      * @symbol ??0WorldPacksHistoryFile@@QEAA@XZ
-     * @hash   1870811812
+     * @hash   1968618548
      */
     MCAPI WorldPacksHistoryFile();
     /**
      * @symbol ?getPacks@WorldPacksHistoryFile@@QEBAAEBV?$vector@VWorldPackHistory@@V?$allocator@VWorldPackHistory@@@std@@@std@@XZ
-     * @hash   -571203794
+     * @hash   -477932978
      */
     MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
     /**
      * @symbol ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
-     * @hash   2084235566
+     * @hash   -2139694610
      */
     MCAPI enum class WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     /**
      * @symbol ??1WorldPacksHistoryFile@@QEAA@XZ
-     * @hash   -1073037772
+     * @hash   -1010088428
      */
     MCAPI ~WorldPacksHistoryFile();
 

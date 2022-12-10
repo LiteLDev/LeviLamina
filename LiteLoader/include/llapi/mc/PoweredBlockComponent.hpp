@@ -39,59 +39,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getStrength@PoweredBlockComponent@@UEBAHXZ
-     * @hash   -893384786
+     * @hash   -423294338
      */
     virtual int getStrength() const;
     /**
      * @vftbl  7
      * @symbol ?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ
-     * @hash   219814003
+     * @hash   316313779
      */
     virtual bool canConsumerPower() const;
     /**
      * @vftbl  11
      * @symbol ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -2023026776
+     * @hash   -1552936328
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -18650380
+     * @hash   451440068
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@PoweredBlockComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   1039747892
+     * @hash   1136493684
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  20
-     * @hash   -310678798
+     * @hash   -214179022
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@PoweredBlockComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   -1454814190
+     * @hash   -1265366494
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
     /**
      * @symbol ?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ
-     * @hash   594866248
+     * @hash   691366024
      */
     MCVAPI bool hasChildrenSource() const;
 #endif
     /**
      * @symbol ??0PoweredBlockComponent@@QEAA@E@Z
-     * @hash   735690348
+     * @hash   1205780796
      */
     MCAPI PoweredBlockComponent(unsigned char);
 

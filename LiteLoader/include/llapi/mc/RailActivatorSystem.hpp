@@ -37,20 +37,20 @@ public:
     virtual ~RailActivatorSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@RailActivatorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   419701634
+     * @hash   574338066
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickComponent@RailActivatorSystem@@AEAAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VRailActivatorComponent@@@@@Z
-     * @hash   -808216359
+     * @hash   -653564551
      */
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class RailActivatorComponent> &);
 

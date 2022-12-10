@@ -31,24 +31,24 @@ public:
 public:
     /**
      * @symbol ??0AquiferNoises@@QEAA@AEBV0@@Z
-     * @hash   1823284001
+     * @hash   1994572641
      */
     MCAPI AquiferNoises(class AquiferNoises const &);
     /**
      * @symbol ??1AquiferNoises@@QEAA@XZ
-     * @hash   -750233628
+     * @hash   -644508252
      */
     MCAPI ~AquiferNoises();
     /**
      * @symbol ?make@AquiferNoises@@SA?AV1@AEBVXoroshiroPositionalRandomFactory@@@Z
-     * @hash   2043809962
+     * @hash   -2079868694
      */
     MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);
 
 //private:
     /**
      * @symbol ??0AquiferNoises@@AEAA@V?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@000VXoroshiroPositionalRandomFactory@@@Z
-     * @hash   -1996935823
+     * @hash   -1825647183
      */
     MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PendingRemovePassengersComponent@@QEAA@XZ
-     * @hash   -1024704077
+     * @hash   -1237308029
      */
     MCAPI ~PendingRemovePassengersComponent();
 

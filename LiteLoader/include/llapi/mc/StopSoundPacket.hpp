@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@StopSoundPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -2112204871
+     * @hash   2112632489
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@StopSoundPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   695315046
+     * @hash   625185110
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@StopSoundPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1473763825
+     * @hash   1656861233
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@StopSoundPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -2131827967
+     * @hash   -1949929887
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0StopSoundPacket@@QEAA@XZ
-     * @hash   -53799295
+     * @hash   -123929231
      */
     MCAPI StopSoundPacket();
     /**
      * @symbol ??0StopSoundPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -985081423
+     * @hash   -1055211359
      */
     MCAPI StopSoundPacket(std::string const &, bool);
 

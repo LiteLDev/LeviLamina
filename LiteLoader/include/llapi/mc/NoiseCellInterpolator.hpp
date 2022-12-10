@@ -32,32 +32,32 @@ public:
 public:
     /**
      * @symbol ??0NoiseCellInterpolator@@QEAA@V?$span@$$CBM$0?0@gsl@@HH@Z
-     * @hash   726099663
+     * @hash   897511311
      */
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     /**
      * @symbol ??0NoiseCellInterpolator@@QEAA@V?$span@$$CBM$0?0@gsl@@@Z
-     * @hash   366985199
+     * @hash   538396847
      */
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     /**
      * @symbol ?getLerpedValue@NoiseCellInterpolator@@QEBAMXZ
-     * @hash   -1279730866
+     * @hash   -1108319218
      */
     MCAPI float getLerpedValue() const;
     /**
      * @symbol ?selectCellXZ@NoiseCellInterpolator@@QEAAXHHHH@Z
-     * @hash   1874475163
+     * @hash   2045886811
      */
     MCAPI void selectCellXZ(int, int, int, int);
     /**
      * @symbol ?updateForX@NoiseCellInterpolator@@QEAAXE@Z
-     * @hash   -559970759
+     * @hash   -388559111
      */
     MCAPI void updateForX(unsigned char);
     /**
      * @symbol ?updateForZ@NoiseCellInterpolator@@QEAAXE@Z
-     * @hash   1548333045
+     * @hash   1719744693
      */
     MCAPI void updateForZ(unsigned char);
 

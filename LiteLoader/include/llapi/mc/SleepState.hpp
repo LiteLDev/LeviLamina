@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@SleepState@@UEAAXXZ
-     * @hash   2111819754
+     * @hash   -2094182006
      */
     virtual void tick();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?stop@SleepState@@UEAAXXZ
-     * @hash   1350185775
+     * @hash   1521443663
      */
     virtual void stop();
 

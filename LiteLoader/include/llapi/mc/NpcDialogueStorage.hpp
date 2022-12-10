@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getScene@NpcDialogueStorage@@QEAAPEAUNpcDialogueScene@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1614440090
+     * @hash   1667687178
      */
     MCAPI struct NpcDialogueScene * getScene(std::string const &);
     /**
      * @symbol ?getScene@NpcDialogueStorage@@QEBAPEBUNpcDialogueScene@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1492291130
+     * @hash   1545538218
      */
     MCAPI struct NpcDialogueScene const * getScene(std::string const &) const;
     /**
      * @symbol ?init@NpcDialogueStorage@@QEAAXAEAVResourcePackManager@@@Z
-     * @hash   -869244536
+     * @hash   -815997448
      */
     MCAPI void init(class ResourcePackManager &);
     /**
      * @symbol ?parseFile@NpcDialogueStorage@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4CurrentCmdVersion@@@Z
-     * @hash   -1316544220
+     * @hash   -1263481644
      */
     MCAPI bool parseFile(std::string const &, std::string const &, enum class CurrentCmdVersion);
 

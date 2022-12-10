@@ -39,133 +39,133 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@StructureBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   261797730
+     * @hash   991112162
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@StructureBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   174438881
+     * @hash   903753313
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  8
      * @symbol ?onChanged@StructureBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   306309731
+     * @hash   1035624163
      */
     virtual void onChanged(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@StructureBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -451078620
+     * @hash   -295396620
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@StructureBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   -1788148786
+     * @hash   -1031726466
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0StructureBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -18131506
+     * @hash   710506382
      */
     MCAPI StructureBlockActor(class BlockPos const &);
     /**
      * @symbol ?getStructureData@StructureBlockActor@@QEBAAEBVStructureEditorData@@XZ
-     * @hash   -96260502
+     * @hash   -1000619910
      */
     MCAPI class StructureEditorData const & getStructureData() const;
     /**
      * @symbol ?setIsWaterlogged@StructureBlockActor@@QEAAX_N@Z
-     * @hash   678279842
+     * @hash   1407594274
      */
     MCAPI void setIsWaterlogged(bool);
     /**
      * @symbol ?setPowered@StructureBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     * @hash   2010169352
+     * @hash   -1555483512
      */
     MCAPI void setPowered(class BlockSource &, class BlockPos const &, bool, bool);
     /**
      * @symbol ?setStructureData@StructureBlockActor@@QEAAXAEBVStructureEditorData@@@Z
-     * @hash   -2133033880
+     * @hash   -1403719448
      */
     MCAPI void setStructureData(class StructureEditorData const &);
     /**
      * @symbol ?MAX_WIREFRAME_RENDER_DISTANCE@StructureBlockActor@@2MB
-     * @hash   -1196581623
+     * @hash   -415619207
      */
     MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
     /**
      * @symbol ?X_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
-     * @hash   -198107661
+     * @hash   664993347
      */
     MCAPI static class mce::Color const X_AXIS_COLOR;
     /**
      * @symbol ?Y_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
-     * @hash   -716385821
+     * @hash   146715187
      */
     MCAPI static class mce::Color const Y_AXIS_COLOR;
     /**
      * @symbol ?Z_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
-     * @hash   -1234663981
+     * @hash   -371562973
      */
     MCAPI static class mce::Color const Z_AXIS_COLOR;
 
 //private:
     /**
      * @symbol ?_loadStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@@Z
-     * @hash   -2081782899
+     * @hash   -1353160387
      */
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
     /**
      * @symbol ?_saveStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   -402504268
+     * @hash   326810164
      */
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     /**
      * @symbol ?_trigger@StructureBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@_N@Z
-     * @hash   -674959144
+     * @hash   54355288
      */
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@CreativeContentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1655691196
+     * @hash   1613868476
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CreativeContentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1169517975
+     * @hash   -1211340695
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@CreativeContentPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1444910914
+     * @hash   -1486733634
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@CreativeContentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -687238162
+     * @hash   -729060882
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CreativeContentPacket@@QEAA@XZ
-     * @hash   530115438
+     * @hash   488292718
      */
     MCAPI CreativeContentPacket();
     /**
      * @symbol ??0CreativeContentPacket@@QEAA@AEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@@Z
-     * @hash   -1927282653
+     * @hash   -1969105373
      */
     MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
 

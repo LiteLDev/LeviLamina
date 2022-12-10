@@ -37,13 +37,13 @@ public:
     virtual ~TargetNearbySystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@TargetNearbySystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1856150561
+     * @hash   -1867867073
      */
     virtual void tick(class EntityRegistry &);
 

@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0GrowsCropComponent@@QEAA@XZ
-     * @hash   -1435823655
+     * @hash   -1511734967
      */
     MCAPI GrowsCropComponent();
     /**
      * @symbol ?readAdditionalSaveData@GrowsCropComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1284817156
+     * @hash   1208905844
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

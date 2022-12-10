@@ -29,7 +29,7 @@ public:
 public:
     /**
      * @symbol ??0AllWorkerConfigurations@@QEAA@XZ
-     * @hash   720805944
+     * @hash   904180120
      */
     MCAPI AllWorkerConfigurations();
 

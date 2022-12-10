@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createSystem@CollidableMobNotifierSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1043252310
+     * @hash   1138921782
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?tickNotifier@CollidableMobNotifierSystem@@SAXAEAVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUSpatialEntityFetcherComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UCollidableMobNearFlag@@@@@@@Z
-     * @hash   4276265
+     * @hash   99945737
      */
     MCAPI static void tickNotifier(class StrictEntityContext &, struct AABBShapeComponent const &, struct SpatialEntityFetcherComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct MobFlag>>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct FallingBlockFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct CollidableMobNearFlag>>);
 

@@ -33,258 +33,263 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1600873924
+     * @hash   -1555606980
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  9
+     * @vftbl  11
      * @symbol ?reloadHardcodedClient@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -960261625
+     * @hash   -914994681
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1243314597
      */
     virtual ~Guardian();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -188950850
+     * @vftbl  63
+     * @hash   -89434495
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -137980371
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -38710032
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
      * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  116
      * @symbol ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
-     * @hash   1288274538
+     * @hash   1336601306
      */
     virtual void setTarget(class Actor *);
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -303099137
+     * @hash   -257970577
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   1414130719
+     * @hash   1459351535
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
-     * @hash   -895029762
+     * @hash   -849901202
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  282
+     * @vftbl  280
      * @symbol ?_onSizeUpdated@Guardian@@EEAAXXZ
-     * @hash   740433188
+     * @hash   785561748
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  297
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  295
      * @symbol ?aiStep@Guardian@@UEAAXXZ
-     * @hash   -1350194198
+     * @hash   -1305065638
      */
     virtual void aiStep();
     /**
-     * @vftbl  302
+     * @vftbl  300
      * @symbol ?checkSpawnRules@Guardian@@UEAA_N_N@Z
-     * @hash   1441639904
+     * @hash   1486783840
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  311
+     * @vftbl  309
      * @symbol ?getMaxHeadXRot@Guardian@@UEAAMXZ
-     * @hash   -150993477
+     * @hash   -105849541
      */
     virtual float getMaxHeadXRot();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
+    /**
+     * @vftbl  360
+     * @hash   -927619347
+     */
+    virtual void __unk_vfn_360();
     /**
      * @vftbl  362
-     * @hash   -1022272081
-     */
-    virtual void __unk_vfn_362();
-    /**
-     * @vftbl  364
      * @symbol ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
-     * @hash   -589504768
+     * @hash   -493004992
      */
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
     /**
      * @symbol ?canSeeInvisible@Guardian@@UEBA_NXZ
-     * @hash   2062217729
+     * @hash   -2136249791
      */
     MCVAPI bool canSeeInvisible() const;
 #endif
     /**
      * @symbol ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   991430957
+     * @hash   1036359629
      */
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getAttackDuration@Guardian@@QEAAHXZ
-     * @hash   -523032632
+     * @hash   -477888696
      */
     MCAPI int getAttackDuration();
     /**
      * @symbol ?getMoveEyeVector@Guardian@@QEAA?AVVec3@@XZ
-     * @hash   1382634964
+     * @hash   1427778900
      */
     MCAPI class Vec3 getMoveEyeVector();
     /**
      * @symbol ?getTargetEntity@Guardian@@QEBAPEAVActor@@XZ
-     * @hash   -1863595593
+     * @hash   -1818451657
      */
     MCAPI class Actor * getTargetEntity() const;
     /**
      * @symbol ?isElder@Guardian@@QEBA_NXZ
-     * @hash   -1828351298
+     * @hash   -1783207362
      */
     MCAPI bool isElder() const;
     /**
      * @symbol ?isElderGhost@Guardian@@QEBA_NXZ
-     * @hash   246570634
+     * @hash   291729946
      */
     MCAPI bool isElderGhost() const;
     /**
      * @symbol ?preAiStep@Guardian@@QEAAXXZ
-     * @hash   2017952723
+     * @hash   2063112035
      */
     MCAPI void preAiStep();
     /**
      * @symbol ?setAttackTime@Guardian@@QEAAXH@Z
-     * @hash   -1512373672
+     * @hash   -1467106728
      */
     MCAPI void setAttackTime(int);
     /**
      * @symbol ?setElder@Guardian@@QEAAX_N@Z
-     * @hash   -1316690000
+     * @hash   -1271423056
      */
     MCAPI void setElder(bool);
 
 //protected:
     /**
      * @symbol ?registerLoopingSounds@Guardian@@IEAAXXZ
-     * @hash   -1801313887
+     * @hash   -1756077695
      */
     MCAPI void registerLoopingSounds();
 
@@ -295,12 +300,12 @@ protected:
 private:
     /**
      * @symbol ?ATTACK_TIME@Guardian@@0HB
-     * @hash   -1605828621
+     * @hash   -846046645
      */
     MCAPI static int const ATTACK_TIME;
     /**
      * @symbol ?FIRST_DAMAGE_TIME@Guardian@@0HB
-     * @hash   -1191504063
+     * @hash   -431722087
      */
     MCAPI static int const FIRST_DAMAGE_TIME;
 

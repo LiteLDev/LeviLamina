@@ -38,48 +38,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FindUnderwaterTreasureGoal@@UEAA_NXZ
-     * @hash   -1224054266
+     * @hash   -1063913226
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FindUnderwaterTreasureGoal@@UEAA_NXZ
-     * @hash   -23474668
+     * @hash   136666372
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@FindUnderwaterTreasureGoal@@UEAA_NXZ
-     * @hash   -771452498
+     * @hash   -674706706
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@FindUnderwaterTreasureGoal@@UEAAXXZ
-     * @hash   -724251457
+     * @hash   -564110417
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FindUnderwaterTreasureGoal@@UEAAXXZ
-     * @hash   -1751663265
+     * @hash   -1591522225
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FindUnderwaterTreasureGoal@@UEAAXXZ
-     * @hash   -495980246
+     * @hash   -335839206
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FindUnderwaterTreasureGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -242389222
+     * @hash   -82248182
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FindUnderwaterTreasureGoal@@QEAA@AEAVMob@@MHH@Z
-     * @hash   -1035295650
+     * @hash   -875154610
      */
     MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
 

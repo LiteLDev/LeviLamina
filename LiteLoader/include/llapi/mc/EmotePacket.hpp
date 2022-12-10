@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@EmotePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   992845470
+     * @hash   951253390
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@EmotePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   191568203
+     * @hash   149976123
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@EmotePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1196177244
+     * @hash   1154585164
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@EmotePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   982075212
+     * @hash   940483132
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EmotePacket@@QEAA@XZ
-     * @hash   -1379195316
+     * @hash   -1420787396
      */
     MCAPI EmotePacket();
     /**
      * @symbol ?isServerSide@EmotePacket@@QEBA_NXZ
-     * @hash   -632225952
+     * @hash   -673818032
      */
     MCAPI bool isServerSide() const;
     /**
      * @symbol ?setServerSide@EmotePacket@@QEAAXXZ
-     * @hash   -1355097571
+     * @hash   -1396689651
      */
     MCAPI void setServerSide();
 

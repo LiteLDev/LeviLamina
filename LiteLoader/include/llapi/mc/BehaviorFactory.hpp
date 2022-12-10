@@ -32,29 +32,29 @@ public:
 public:
     /**
      * @symbol ??0BehaviorFactory@@QEAA@XZ
-     * @hash   -1073851052
+     * @hash   -1086813020
      */
     MCAPI BehaviorFactory();
     /**
      * @symbol ?loadNodeDefinition@BehaviorFactory@@QEBA?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@VValue@Json@@AEAVBehaviorTreeDefinitionPtr@@@Z
-     * @hash   -1426669003
+     * @hash   -1439415707
      */
     MCAPI std::unique_ptr<class BehaviorDefinition> loadNodeDefinition(std::string const &, class Json::Value, class BehaviorTreeDefinitionPtr &) const;
     /**
      * @symbol ?registerNodePair@BehaviorFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@XZ@3@V?$function@$$A6A?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@XZ@3@@Z
-     * @hash   2070417512
+     * @hash   2057670808
      */
     MCAPI void registerNodePair(std::string const &, class std::function<std::unique_ptr<class BehaviorDefinition> (void)>, class std::function<std::unique_ptr<class BehaviorNode> (void)>);
     /**
      * @symbol ?tryGetNode@BehaviorFactory@@QEBA?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     * @hash   1973515487
+     * @hash   1960768783
      */
     MCAPI std::unique_ptr<class BehaviorNode> tryGetNode(std::string const &) const;
 
 //private:
     /**
      * @symbol ?_initNodes@BehaviorFactory@@AEAAXXZ
-     * @hash   -606944474
+     * @hash   -619906442
      */
     MCAPI void _initNodes();
 

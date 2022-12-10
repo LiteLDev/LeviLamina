@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getCurrentEventIndex@SchedulerComponent@@QEBAHXZ
-     * @hash   1624577640
+     * @hash   1795835528
      */
     MCAPI int getCurrentEventIndex() const;
     /**
      * @symbol ?setCurrentEventIndex@SchedulerComponent@@QEAAXH@Z
-     * @hash   -2026600490
+     * @hash   -2046866058
      */
     MCAPI void setCurrentEventIndex(int);
 

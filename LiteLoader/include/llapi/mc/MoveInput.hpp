@@ -38,92 +38,92 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@MoveInput@@UEAAXAEAUIPlayerMovementProxy@@@Z
-     * @hash   952175825
+     * @hash   1041141361
      */
     virtual void tick(struct IPlayerMovementProxy &);
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?clearInputState@MoveInput@@UEAAXXZ
-     * @hash   -438813950
+     * @hash   -349848414
      */
     virtual void clearInputState();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
      * @symbol ?allowPicking@MoveInput@@UEAA_NMM@Z
-     * @hash   -1849885272
+     * @hash   -1753385496
      */
     virtual bool allowPicking(float, float);
     /**
      * @vftbl  7
      * @symbol ?setJumping@MoveInput@@UEAAX_N@Z
-     * @hash   1922310428
+     * @hash   1957152444
      */
     virtual void setJumping(bool);
     /**
      * @vftbl  8
      * @symbol ?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z
-     * @hash   -1378903441
+     * @hash   -1344030673
      */
     virtual void setAutoJumpingInWater(bool);
     /**
      * @vftbl  9
      * @symbol ?isChangeHeight@MoveInput@@UEBA_NXZ
-     * @hash   -209645248
+     * @hash   -112899456
      */
     virtual bool isChangeHeight() const;
     /**
      * @vftbl  10
      * @symbol ?setSneakDown@MoveInput@@UEAAX_N@Z
-     * @hash   762952906
+     * @hash   797794922
      */
     virtual void setSneakDown(bool);
     /**
      * @vftbl  11
      * @symbol ?isPlayerMoving@MoveInput@@UEBA_NXZ
-     * @hash   940469720
+     * @hash   1037215512
      */
     virtual bool isPlayerMoving() const;
     /**
      * @vftbl  12
-     * @symbol ?getGazeDirection@MoveInput@@UEBAAEBVVec3@@XZ
-     * @hash   102498873
-     */
-    virtual class Vec3 const & getGazeDirection() const;
-    /**
-     * @vftbl  13
      * @symbol ?extractInputComponent@MoveInput@@UEBA?AUMoveInputComponent@@XZ
-     * @hash   -448929405
+     * @hash   -180172301
      */
     virtual struct MoveInputComponent extractInputComponent() const;
+    /**
+     * @vftbl  13
+     * @symbol ?applyInputComponent@MoveInput@@UEAAXAEBUMoveInputComponent@@@Z
+     * @hash   -239315205
+     */
+    virtual void applyInputComponent(struct MoveInputComponent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
     /**
      * @symbol ?clearMovementState@MoveInput@@UEAAXXZ
-     * @hash   880828771
+     * @hash   969794307
      */
     MCVAPI void clearMovementState();
     /**
      * @symbol ?render@MoveInput@@UEAAXM@Z
-     * @hash   -1397939522
+     * @hash   -1308973986
      */
     MCVAPI void render(float);
     /**
      * @symbol ?setKey@MoveInput@@UEAAXH_N@Z
-     * @hash   -9449256
+     * @hash   79516280
      */
     MCVAPI void setKey(int, bool);
 #endif

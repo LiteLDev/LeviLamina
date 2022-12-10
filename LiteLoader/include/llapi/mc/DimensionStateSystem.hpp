@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ?isDimensionReady@DimensionStateSystem@@SA_NAEBVEntityContext@@@Z
-     * @hash   876214143
+     * @hash   830639679
      */
     MCAPI static bool isDimensionReady(class EntityContext const &);
     /**
      * @symbol ?setDimensionState@DimensionStateSystem@@SAXAEAVEntityContext@@W4DimensionState@DimensionStateComponent@@@Z
-     * @hash   -66517835
+     * @hash   -112092299
      */
     MCAPI static void setDimensionState(class EntityContext &, enum class DimensionStateComponent::DimensionState);
 

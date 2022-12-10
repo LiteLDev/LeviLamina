@@ -37,53 +37,28 @@ public:
     /**
      * @vftbl  1
      * @symbol ?registerBlock@BlockReducer@@UEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   -1144131628
+     * @hash   -1078814380
      */
     virtual void registerBlock(class ItemStack const &, std::vector<class ItemStack> &&);
     /**
-     * @vftbl  2
-     * @hash   -1093289598
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl  3
-     * @hash   471998947
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl  4
-     * @hash   472107540
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl  5
-     * @hash   471754853
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl  6
-     * @hash   472678374
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @symbol ?getReductionMap@BlockReducer@@QEBAAEBV?$unordered_map@HV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@@2@@std@@XZ
-     * @hash   2008426314
-     */
-    MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
-    /**
      * @symbol ??0BlockReducer@@QEAA@XZ
-     * @hash   899004875
+     * @hash   964322123
      */
     MCAPI BlockReducer();
     /**
      * @symbol ?getReduction@BlockReducer@@QEBAPEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStackBase@@@Z
-     * @hash   -1379269232
+     * @hash   -1313951984
      */
     MCAPI std::vector<class ItemStack> const * getReduction(class ItemStackBase const &) const;
     /**
      * @symbol ?getReductionMap@BlockReducer@@QEBAAEBV?$unordered_map@HV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@@2@@std@@XZ
-     * @hash   2008426314
+     * @hash   2101697130
      */
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
+    /**
+     * @symbol ?tryGetItemDescriptorFromKey@BlockReducer@@QEBA?AVItemDescriptor@@H@Z
+     * @hash   732936815
+     */
+    MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int) const;
 
 };

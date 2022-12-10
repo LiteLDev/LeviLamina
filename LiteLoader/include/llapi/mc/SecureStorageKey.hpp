@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1SecureStorageKey@@QEAA@XZ
-     * @hash   1967114357
+     * @hash   2054788309
      */
     MCAPI ~SecureStorageKey();
 

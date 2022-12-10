@@ -30,74 +30,74 @@ public:
 public:
     /**
      * @symbol ??0RideableComponent@@QEAA@XZ
-     * @hash   -1762131705
+     * @hash   -1617997081
      */
     MCAPI RideableComponent();
     /**
      * @symbol ??0RideableComponent@@QEAA@AEBV0@@Z
-     * @hash   -1988112863
+     * @hash   -1846453775
      */
     MCAPI RideableComponent(class RideableComponent const &);
     /**
      * @symbol ??0RideableComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -108185105
+     * @hash   33473983
      */
     MCAPI RideableComponent(class RideableComponent &&);
     /**
      * @symbol ?areSeatsFull@RideableComponent@@QEBA_NAEBVActor@@@Z
-     * @hash   -540025505
+     * @hash   -395890881
      */
     MCAPI bool areSeatsFull(class Actor const &) const;
     /**
      * @symbol ?canAddPassenger@RideableComponent@@QEBA_NAEBVActor@@AEAV2@@Z
-     * @hash   836889645
+     * @hash   981254909
      */
     MCAPI bool canAddPassenger(class Actor const &, class Actor &) const;
     /**
      * @symbol ?getFirstAvailableSeatPosition@RideableComponent@@QEBA_NAEBVActor@@AEAV2@AEAVVec3@@@Z
-     * @hash   1908993192
+     * @hash   2053358456
      */
     MCAPI bool getFirstAvailableSeatPosition(class Actor const &, class Actor &, class Vec3 &) const;
     /**
      * @symbol ?getInteraction@RideableComponent@@QEBA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     * @hash   2037843223
+     * @hash   -2112743433
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &) const;
     /**
      * @symbol ?getSeatCount@RideableComponent@@QEBAHXZ
-     * @hash   -1115888082
+     * @hash   -944630194
      */
     MCAPI int getSeatCount() const;
     /**
      * @symbol ?getSeats@RideableComponent@@QEBAAEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@XZ
-     * @hash   -1563642362
+     * @hash   -1419261722
      */
     MCAPI std::vector<struct SeatDescription> const & getSeats() const;
     /**
      * @symbol ??4RideableComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1353222778
+     * @hash   1492390954
      */
     MCAPI class RideableComponent & operator=(class RideableComponent &&);
     /**
      * @symbol ?positionPassenger@RideableComponent@@QEBAXAEAVActor@@0@Z
-     * @hash   24921097
+     * @hash   169301737
      */
     MCAPI void positionPassenger(class Actor &, class Actor &) const;
     /**
      * @symbol ?pullInEntity@RideableComponent@@QEBA_NAEAVActor@@0@Z
-     * @hash   776061902
+     * @hash   920427166
      */
     MCAPI bool pullInEntity(class Actor &, class Actor &) const;
     /**
      * @symbol ??1RideableComponent@@QEAA@XZ
-     * @hash   1365832951
+     * @hash   1504770487
      */
     MCAPI ~RideableComponent();
 
 //private:
     /**
      * @symbol ?_setCanPlayerRide@RideableComponent@@AEBAXAEAVPlayer@@_N@Z
-     * @hash   839449103
+     * @hash   983583727
      */
     MCAPI void _setCanPlayerRide(class Player &, bool) const;
 

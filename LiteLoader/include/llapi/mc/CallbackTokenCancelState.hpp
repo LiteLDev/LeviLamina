@@ -31,12 +31,12 @@ public:
 public:
     /**
      * @symbol ??0CallbackTokenCancelState@@QEAA@XZ
-     * @hash   585784063
+     * @hash   648026111
      */
     MCAPI CallbackTokenCancelState();
     /**
      * @symbol ?wasCanceled@CallbackTokenCancelState@@QEBA_NXZ
-     * @hash   -317223906
+     * @hash   -254981858
      */
     MCAPI bool wasCanceled() const;
 

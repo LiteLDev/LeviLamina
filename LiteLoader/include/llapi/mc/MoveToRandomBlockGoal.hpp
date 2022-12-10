@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@MoveToRandomBlockGoal@@UEAA_NXZ
-     * @hash   829112175
+     * @hash   989683743
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MoveToRandomBlockGoal@@UEAA_NXZ
-     * @hash   1919794829
+     * @hash   2080366397
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MoveToRandomBlockGoal@@UEAAXXZ
-     * @hash   1307637416
+     * @hash   1468208984
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@MoveToRandomBlockGoal@@UEAAXXZ
-     * @hash   -707321048
+     * @hash   -546749480
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@MoveToRandomBlockGoal@@UEAAXXZ
-     * @hash   -792939469
+     * @hash   -632367901
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToRandomBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -817615967
+     * @hash   -657044399
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0MoveToRandomBlockGoal@@QEAA@AEAVMob@@MMM@Z
-     * @hash   -1517562011
+     * @hash   -1356990443
      */
     MCAPI MoveToRandomBlockGoal(class Mob &, float, float, float);
 
 //private:
     /**
      * @symbol ?_isValidDestinationBlock@MoveToRandomBlockGoal@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -417188379
+     * @hash   -256616811
      */
     MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
 

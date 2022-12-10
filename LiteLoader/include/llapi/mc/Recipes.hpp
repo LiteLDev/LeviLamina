@@ -53,131 +53,136 @@ public:
 public:
     /**
      * @symbol ??0Recipes@@QEAA@PEAVLevel@@@Z
-     * @hash   -1983351395
+     * @hash   -1231434243
      */
     MCAPI Recipes(class Level *);
     /**
+     * @symbol ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z
+     * @hash   507390982
+     */
+    MCAPI void addFurnaceRecipeAuxData(class ItemInstance const &, class ItemInstance const &, std::vector<class HashedString> const &);
+    /**
      * @symbol ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   1818041026
+     * @hash   -1720550078
      */
     MCAPI void addShapedRecipe(std::string, std::vector<class ItemInstance> const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   -1411100633
+     * @hash   -654724441
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::string const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   2006096541
+     * @hash   -1532494563
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   1146971559
+     * @hash   1903347751
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   887641636
+     * @hash   1644017828
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShapelessRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapelessRecipe@@U?$default_delete@VShapelessRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@@Z@3@@Z
-     * @hash   1635417968
+     * @hash   -1903219264
      */
     MCAPI void addShapelessRecipe(std::string, class ItemInstance const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapelessRecipe> (std::string, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
     /**
      * @symbol ?addShulkerBoxRecipe@Recipes@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@@Z
-     * @hash   -552618359
+     * @hash   203711705
      */
     MCAPI void addShulkerBoxRecipe(std::string &, class ItemInstance const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &);
     /**
      * @symbol ?clearRecipes@Recipes@@QEAAXXZ
-     * @hash   1495550627
+     * @hash   -2043086605
      */
     MCAPI void clearRecipes();
     /**
      * @symbol ?extractRecipeObjInfo@Recipes@@QEAA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVValue@Json@@@Z
-     * @hash   -624953640
+     * @hash   131376424
      */
     MCAPI struct std::pair<std::string, class Json::Value> extractRecipeObjInfo(class Json::Value const &);
     /**
      * @symbol ?getFurnaceRecipeResult@Recipes@@QEBA?AVItemInstance@@AEBVItemStackBase@@AEBVHashedString@@@Z
-     * @hash   -1467215532
+     * @hash   -710885468
      */
     MCAPI class ItemInstance getFurnaceRecipeResult(class ItemStackBase const &, class HashedString const &) const;
     /**
      * @symbol ?getRecipeByNetId@Recipes@@QEBAPEBVRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     * @hash   1769335455
+     * @hash   -1769301777
      */
     MCAPI class Recipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     /**
      * @symbol ?getRecipeFor@Recipes@@QEBAPEAVRecipe@@AEBVItemInstance@@AEBVHashedString@@@Z
-     * @hash   1531483615
+     * @hash   -2007153617
      */
     MCAPI class Recipe * getRecipeFor(class ItemInstance const &, class HashedString const &) const;
     /**
      * @symbol ?getRecipesAllTags@Recipes@@QEBAAEBV?$map@VHashedString@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@@std@@@2@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@@std@@@2@@std@@@std@@@3@@std@@XZ
-     * @hash   -994975880
+     * @hash   -850595240
      */
     MCAPI class std::map<class HashedString, class std::map<std::string, class std::shared_ptr<class Recipe>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, class std::shared_ptr<class Recipe>>>>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::map<std::string, class std::shared_ptr<class Recipe>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, class std::shared_ptr<class Recipe>>>>>>> const & getRecipesAllTags() const;
     /**
      * @symbol ?init@Recipes@@QEAAXAEAVResourcePackManager@@AEAVExternalRecipeStore@@@Z
-     * @hash   1171616359
+     * @hash   1927946423
      */
     MCAPI void init(class ResourcePackManager &, class ExternalRecipeStore &);
     /**
      * @symbol ?loadRecipe@Recipes@@QEAA_NAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVSemVersion@@@Z
-     * @hash   707345151
+     * @hash   1463675215
      */
     MCAPI bool loadRecipe(struct std::pair<std::string, class Json::Value> const &, class SemVersion const &);
     /**
      * @symbol ??1Recipes@@QEAA@XZ
-     * @hash   1792162577
+     * @hash   -1750503167
      */
     MCAPI ~Recipes();
 
 //protected:
     /**
      * @symbol ?_loadDataDrivenRecipes@Recipes@@IEAAXAEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@@Z
-     * @hash   -1494198057
+     * @hash   -739113449
      */
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const &);
     /**
      * @symbol ?_normalizeRectangularRecipe@Recipes@@KA?AUNormalizedRectangularRecipeResults@1@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -2122093035
+     * @hash   -1366408763
      */
     MCAPI static struct Recipes::NormalizedRectangularRecipeResults _normalizeRectangularRecipe(std::vector<std::string> const &);
 
 //private:
     /**
      * @symbol ?_addItemRecipe@Recipes@@AEAAXV?$unique_ptr@VRecipe@@U?$default_delete@VRecipe@@@std@@@std@@@Z
-     * @hash   818611275
+     * @hash   1570851323
      */
     MCAPI void _addItemRecipe(std::unique_ptr<class Recipe>);
     /**
      * @symbol ?_addMapRecipes@Recipes@@AEAAXXZ
-     * @hash   1586632690
+     * @hash   -1956094558
      */
     MCAPI void _addMapRecipes();
     /**
      * @symbol ?_isRecipeValidToAdd@Recipes@@AEAA_NAEBVRecipe@@@Z
-     * @hash   1548044393
+     * @hash   -1994682855
      */
     MCAPI bool _isRecipeValidToAdd(class Recipe const &);
     /**
      * @symbol ?_loadBrewingMix@Recipes@@AEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   1843819358
+     * @hash   -1696001826
      */
     MCAPI bool _loadBrewingMix(class Json::Value const &, class SemVersion const &);
     /**
      * @symbol ?_loadHardcodedRecipes@Recipes@@AEAAXXZ
-     * @hash   -1332626043
+     * @hash   -577479931
      */
     MCAPI void _loadHardcodedRecipes();
     /**
      * @symbol ?_loadIngredientFromJson@Recipes@@AEBA?BVRecipeIngredient@@AEBVValue@Json@@AEBVSemVersion@@_N2@Z
-     * @hash   1151361569
+     * @hash   1907307233
      */
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const &, class SemVersion const &, bool, bool) const;
 

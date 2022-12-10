@@ -38,55 +38,55 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SwimWithEntityGoal@@UEAA_NXZ
-     * @hash   2023056092
+     * @hash   -2110478580
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SwimWithEntityGoal@@UEAA_NXZ
-     * @hash   5280186
+     * @hash   166743562
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@SwimWithEntityGoal@@UEAA_NXZ
-     * @hash   1032024724
+     * @hash   1128524500
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@SwimWithEntityGoal@@UEAAXXZ
-     * @hash   1042235205
+     * @hash   1203667829
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SwimWithEntityGoal@@UEAAXXZ
-     * @hash   1668528565
+     * @hash   1828669605
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SwimWithEntityGoal@@UEAAXXZ
-     * @hash   120774192
+     * @hash   282206816
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SwimWithEntityGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   968727988
+     * @hash   1130329748
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SwimWithEntityGoal@@QEAA@AEAVMob@@@Z
-     * @hash   2056788841
+     * @hash   -2076576695
      */
     MCAPI SwimWithEntityGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_setWantedMob@SwimWithEntityGoal@@AEAA_NXZ
-     * @hash   2100378832
+     * @hash   -2032986704
      */
     MCAPI bool _setWantedMob();
 

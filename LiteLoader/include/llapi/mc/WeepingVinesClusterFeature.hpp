@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -78052970
+     * @hash   79320390
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
      * @symbol ?_isInvalidPlacementLocation@WeepingVinesClusterFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1350281853
+     * @hash   -1192908493
      */
     MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_placeRoofNetherWart@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -264049894
+     * @hash   -106676534
      */
     MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?_placeRoofWeepingVines@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   307783134
+     * @hash   465156494
      */
     MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;
 

@@ -22,13 +22,18 @@ namespace SideBySideExtractionIdExt {
 #undef AFTER_EXTRA
     /**
      * @symbol ?isIdOutOfOrder@SideBySideExtractionIdExt@@YA_NAEBW4SideBySideExtractionId@@@Z
-     * @hash   -749049756
+     * @hash   194456948
      */
-    MCAPI bool isIdOutOfOrder(enum SideBySideExtractionId const &);
+    MCAPI bool isIdOutOfOrder(enum class SideBySideExtractionId const &);
+    /**
+     * @symbol ?shouldReportErrorsForId@SideBySideExtractionIdExt@@YA_NAEBW4SideBySideExtractionId@@@Z
+     * @hash   1196810966
+     */
+    MCAPI bool shouldReportErrorsForId(enum class SideBySideExtractionId const &);
     /**
      * @symbol ?toString@SideBySideExtractionIdExt@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4SideBySideExtractionId@@@Z
-     * @hash   1903879190
+     * @hash   -1447596778
      */
-    MCAPI std::string toString(enum SideBySideExtractionId const &);
+    MCAPI std::string toString(enum class SideBySideExtractionId const &);
 
 };

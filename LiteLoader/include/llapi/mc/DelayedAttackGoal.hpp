@@ -39,80 +39,80 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DelayedAttackGoal@@UEAA_NXZ
-     * @hash   592938659
+     * @hash   753786995
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DelayedAttackGoal@@UEAA_NXZ
-     * @hash   423070257
+     * @hash   583918593
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DelayedAttackGoal@@UEAAXXZ
-     * @hash   800776636
+     * @hash   961624972
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DelayedAttackGoal@@UEAAXXZ
-     * @hash   -287764052
+     * @hash   -126915716
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DelayedAttackGoal@@UEAAXXZ
-     * @hash   826783399
+     * @hash   987631735
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DelayedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1987723501
+     * @hash   -2146318579
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?_attemptMoveToTarget@DelayedAttackGoal@@EEAAXAEAVActor@@@Z
-     * @hash   1082945856
+     * @hash   1243840320
      */
     virtual void _attemptMoveToTarget(class Actor &);
     /**
      * @symbol ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   97429456
+     * @hash   258308544
      */
     MCAPI DelayedAttackGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_attemptAttack@DelayedAttackGoal@@AEAAXPEAVActor@@@Z
-     * @hash   1860709758
+     * @hash   2021588846
      */
     MCAPI void _attemptAttack(class Actor *);
     /**
      * @symbol ?_attemptStartAttacking@DelayedAttackGoal@@AEBAXPEAVActor@@@Z
-     * @hash   -309271043
+     * @hash   -148376579
      */
     MCAPI void _attemptStartAttacking(class Actor *) const;
     /**
      * @symbol ?_manageAttackTime@DelayedAttackGoal@@AEAAXXZ
-     * @hash   543897336
+     * @hash   704807176
      */
     MCAPI void _manageAttackTime();
 

@@ -39,102 +39,102 @@ public:
     virtual ~BottleItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  57
      * @symbol ?isLiquidClipItem@BottleItem@@UEBA_NH@Z
-     * @hash   -1602469803
+     * @hash   -1505970027
      */
     virtual bool isLiquidClipItem(int) const;
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  85
      * @symbol ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -465137627
+     * @hash   125423781
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  132
      * @symbol ?_useOn@BottleItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   324891367
+     * @hash   915452775
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0BottleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -245374969
+     * @hash   345186439
      */
     MCAPI BottleItem(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_createBottledItem@BottleItem@@AEBAXAEAVActor@@AEAVItemStack@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -275934127
+     * @hash   314627281
      */
     MCAPI void _createBottledItem(class Actor &, class ItemStack &, class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?_fillBottleViaDispenser@BottleItem@@AEBAXAEAVBlockSource@@V?$basic_string_span@$$CBD$0?0@gsl@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   -1619979233
+     * @hash   -1029417825
      */
     MCAPI void _fillBottleViaDispenser(class BlockSource &, class gsl::basic_string_span<char const, -1>, class Container &, int, class Vec3 const &, unsigned char) const;
 

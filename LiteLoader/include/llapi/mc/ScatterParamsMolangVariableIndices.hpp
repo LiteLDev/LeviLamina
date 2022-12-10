@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ
-     * @hash   -537103035
+     * @hash   32823781
      */
     MCAPI void initialize();
 

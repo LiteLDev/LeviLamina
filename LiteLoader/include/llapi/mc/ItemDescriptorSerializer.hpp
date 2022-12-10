@@ -22,7 +22,7 @@ namespace ItemDescriptorSerializer {
 #undef AFTER_EXTRA
     /**
      * @symbol ?fromString@ItemDescriptorSerializer@@YAXAEAVItemDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   224224848
+     * @hash   993316992
      */
     MCAPI void fromString(class ItemDescriptor &, std::string const &);
 

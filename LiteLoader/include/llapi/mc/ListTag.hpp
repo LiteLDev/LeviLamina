@@ -72,125 +72,125 @@ public:
     /**
      * @vftbl  1
      * @symbol ?deleteChildren@ListTag@@UEAAXXZ
-     * @hash   1709645845
+     * @hash   1837082133
      */
     virtual void deleteChildren();
     /**
      * @vftbl  2
      * @symbol ?write@ListTag@@UEBAXAEAVIDataOutput@@@Z
-     * @hash   1738824269
+     * @hash   1866429693
      */
     virtual void write(class IDataOutput &) const;
     /**
      * @vftbl  3
      * @symbol ?load@ListTag@@UEAAXAEAVIDataInput@@@Z
-     * @hash   -1017384324
+     * @hash   -889948036
      */
     virtual void load(class IDataInput &);
     /**
      * @vftbl  4
      * @symbol ?toString@ListTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1647272470
+     * @hash   -1519667046
      */
     virtual std::string toString() const;
     /**
      * @vftbl  5
      * @symbol ?getId@ListTag@@UEBA?AW4Type@Tag@@XZ
-     * @hash   -997535041
+     * @hash   -870098753
      */
     virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@ListTag@@UEBA_NAEBVTag@@@Z
-     * @hash   1994094962
+     * @hash   2121531250
      */
     virtual bool equals(class Tag const &) const;
     /**
      * @vftbl  8
      * @symbol ?print@ListTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
-     * @hash   -283039382
+     * @hash   -155603094
      */
     virtual void print(std::string const &, class PrintStream &) const;
     /**
      * @vftbl  9
      * @symbol ?copy@ListTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     * @hash   78046572
+     * @hash   205482860
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl  10
      * @symbol ?hash@ListTag@@UEBA_KXZ
-     * @hash   1155062226
+     * @hash   1282498514
      */
     virtual unsigned __int64 hash() const;
     /**
      * @symbol ??0ListTag@@QEAA@XZ
-     * @hash   601027864
+     * @hash   728464152
      */
     MCAPI ListTag();
     /**
      * @symbol ?add@ListTag@@QEAAXV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
-     * @hash   1976291152
+     * @hash   2103727440
      */
     MCAPI void add(std::unique_ptr<class Tag>);
     /**
      * @symbol ?copyList@ListTag@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
-     * @hash   742979416
+     * @hash   870415704
      */
     MCAPI std::unique_ptr<class ListTag> copyList() const;
     /**
      * @symbol ?erase@ListTag@@QEAAX_K@Z
-     * @hash   1327712673
+     * @hash   1455148961
      */
     MCAPI void erase(unsigned __int64);
     /**
      * @symbol ?forEachCompoundTag@ListTag@@QEBAXV?$function@$$A6AXAEBVCompoundTag@@@Z@std@@@Z
-     * @hash   -1857341929
+     * @hash   -1729905641
      */
     MCAPI void forEachCompoundTag(class std::function<void (class CompoundTag const &)>) const;
     /**
      * @symbol ?get@ListTag@@QEBAPEAVTag@@H@Z
-     * @hash   -1311864882
+     * @hash   -1184428594
      */
     MCAPI class Tag * get(int) const;
     /**
      * @symbol ?getCompound@ListTag@@QEAAPEAVCompoundTag@@_K@Z
-     * @hash   1317668949
+     * @hash   1445105237
      */
     MCAPI class CompoundTag * getCompound(unsigned __int64);
     /**
      * @symbol ?getCompound@ListTag@@QEBAPEBVCompoundTag@@_K@Z
-     * @hash   526158901
+     * @hash   653595189
      */
     MCAPI class CompoundTag const * getCompound(unsigned __int64) const;
     /**
      * @symbol ?getDouble@ListTag@@QEBANH@Z
-     * @hash   -183171525
+     * @hash   -55735237
      */
     MCAPI double getDouble(int) const;
     /**
      * @symbol ?getFloat@ListTag@@QEBAMH@Z
-     * @hash   1150678153
+     * @hash   1278114441
      */
     MCAPI float getFloat(int) const;
     /**
      * @symbol ?getInt@ListTag@@QEBAHH@Z
-     * @hash   88995617
+     * @hash   216431905
      */
     MCAPI int getInt(int) const;
     /**
      * @symbol ?getString@ListTag@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1377474989
+     * @hash   1504911277
      */
     MCAPI std::string const & getString(int) const;
     /**
      * @symbol ?popBack@ListTag@@QEAAXXZ
-     * @hash   29601013
+     * @hash   157037301
      */
     MCAPI void popBack();
     /**
      * @symbol ?size@ListTag@@QEBAHXZ
-     * @hash   776439944
+     * @hash   904045368
      */
     MCAPI int size() const;
 

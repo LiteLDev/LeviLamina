@@ -38,51 +38,50 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockBreathabilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   569791050
+     * @hash   1042157146
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
-     * @symbol ?initializeComponent@BlockBreathabilityDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   248893018
+     * @hash   -1315668094
      */
-    virtual void initializeComponent(class EntityContext &) const;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockBreathabilityDescription@@UEBA_NXZ
-     * @hash   -1032364062
+     * @hash   -935864286
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockBreathabilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   1727603172
+     * @hash   -2095490060
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockBreathabilityDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   -205443250
+     * @hash   266676830
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockBreathabilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -228632689
+     * @hash   1554944871
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockBreathabilityDescription@@SAXXZ
-     * @hash   -1673664801
+     * @hash   -1201806113
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockBreathabilityDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1317441418
+     * @hash   -845321338
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

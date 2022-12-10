@@ -37,97 +37,97 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@SculkShriekerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   155888178
+     * @hash   742036674
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@SculkShriekerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -22343903
+     * @hash   563804593
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1222385771
+     * @hash   1808534267
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
      * @symbol ?onRemoved@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1253419223
+     * @hash   1839567719
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
+     * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
      * @symbol ??0SculkShriekerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -320920834
+     * @hash   265227662
      */
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
     /**
      * @symbol ?tryRespond@SculkShriekerBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1906616625
+     * @hash   -1320468129
      */
     MCAPI void tryRespond(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?tryShriek@SculkShriekerBlockActor@@QEAA_NAEAVBlockSource@@VBlockPos@@AEAVPlayer@@@Z
-     * @hash   -1316531473
+     * @hash   -730382977
      */
     MCAPI bool tryShriek(class BlockSource &, class BlockPos, class Player &);
     /**
      * @symbol ?tryGet@SculkShriekerBlockActor@@SAPEAV1@AEAVBlockSource@@VBlockPos@@@Z
-     * @hash   -1567928139
+     * @hash   -981779643
      */
     MCAPI static class SculkShriekerBlockActor * tryGet(class BlockSource &, class BlockPos);
     /**
      * @symbol ?tryGetPlayerInHierarchy@SculkShriekerBlockActor@@SAPEAVPlayer@@PEAVActor@@@Z
-     * @hash   -238093529
+     * @hash   348054967
      */
     MCAPI static class Player * tryGetPlayerInHierarchy(class Actor *);
 
 //private:
     /**
      * @symbol ?_canRespond@SculkShriekerBlockActor@@CA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1167268692
+     * @hash   1753432564
      */
     MCAPI static bool _canRespond(class BlockSource const &, class BlockPos const &);
 

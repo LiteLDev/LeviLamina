@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@HoldGroundGoal@@UEAA_NXZ
-     * @hash   1282604231
+     * @hash   1443145047
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@HoldGroundGoal@@UEAA_NXZ
-     * @hash   1340137557
+     * @hash   1500709125
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@HoldGroundGoal@@UEAAXXZ
-     * @hash   -125978640
+     * @hash   34562176
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@HoldGroundGoal@@UEAAXXZ
-     * @hash   1129483632
+     * @hash   1290024448
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@HoldGroundGoal@@UEAAXXZ
-     * @hash   924248043
+     * @hash   1084788859
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@HoldGroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -650534727
+     * @hash   -489963159
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0HoldGroundGoal@@QEAA@AEAVMob@@M_NMAEBVActorDefinitionTrigger@@@Z
-     * @hash   -800792876
+     * @hash   -640221308
      */
     MCAPI HoldGroundGoal(class Mob &, float, bool, float, class ActorDefinitionTrigger const &);
 

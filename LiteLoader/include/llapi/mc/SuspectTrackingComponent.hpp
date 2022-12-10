@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ?clearSuspiciousPos@SuspectTrackingComponent@@QEAAXXZ
-     * @hash   -874436267
+     * @hash   -887521243
      */
     MCAPI void clearSuspiciousPos();
     /**
      * @symbol ?getSuspiciousPos@SuspectTrackingComponent@@QEBA?AV?$optional@VBlockPos@@@std@@XZ
-     * @hash   -2129824667
+     * @hash   -2086372091
      */
     MCAPI class std::optional<class BlockPos> getSuspiciousPos() const;
     /**
      * @symbol ?getTicksSinceLastSuspect@SuspectTrackingComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
-     * @hash   1882888358
+     * @hash   -1893431082
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     /**
      * @symbol ?setSuspiciousPos@SuspectTrackingComponent@@QEAAXV?$optional@VBlockPos@@@std@@UTick@@@Z
-     * @hash   2143220252
+     * @hash   -1633099188
      */
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
-     * @hash   933854918
+     * @hash   1105112806
      */
     MCAPI DragonBaseGoal(class Mob &);
 

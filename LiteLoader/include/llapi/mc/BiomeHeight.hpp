@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?MIN_DEPTH@BiomeHeight@@2MB
-     * @hash   -8367835
+     * @hash   770449629
      */
     MCAPI static float const MIN_DEPTH;
 

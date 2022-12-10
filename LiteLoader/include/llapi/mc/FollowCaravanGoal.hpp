@@ -38,59 +38,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FollowCaravanGoal@@UEAA_NXZ
-     * @hash   -508026408
+     * @hash   -347869992
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FollowCaravanGoal@@UEAA_NXZ
-     * @hash   -678110074
+     * @hash   -517953658
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@FollowCaravanGoal@@UEAAXXZ
-     * @hash   996774865
+     * @hash   1156915905
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FollowCaravanGoal@@UEAAXXZ
-     * @hash   -91765823
+     * @hash   68375217
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FollowCaravanGoal@@UEAAXXZ
-     * @hash   1023058396
+     * @hash   1183199436
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FollowCaravanGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1093800568
+     * @hash   -933644152
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FollowCaravanGoal@@QEAA@AEAVMob@@MHAEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
-     * @hash   1749974074
+     * @hash   1910130490
      */
     MCAPI FollowCaravanGoal(class Mob &, float, int, std::vector<struct MobDescriptor> const &);
 
 //private:
     /**
      * @symbol ?checkCaravanType@FollowCaravanGoal@@AEAA_NPEAVMob@@@Z
-     * @hash   -1609975422
+     * @hash   -1449819006
      */
     MCAPI bool checkCaravanType(class Mob *);
     /**
      * @symbol ?firstIsLeashed@FollowCaravanGoal@@AEAA_NPEAVMob@@H@Z
-     * @hash   239682407
+     * @hash   399838823
      */
     MCAPI bool firstIsLeashed(class Mob *, int);
 

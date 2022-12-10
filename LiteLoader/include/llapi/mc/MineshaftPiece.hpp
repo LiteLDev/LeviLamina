@@ -39,28 +39,28 @@ public:
     /**
      * @vftbl  6
      * @symbol ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
-     * @hash   395062029
+     * @hash   566781197
      */
     virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
     /**
      * @vftbl  10
      * @symbol ?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-     * @hash   -1978605454
+     * @hash   -1806901662
      */
     virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /**
      * @symbol ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
-     * @hash   -1925359247
+     * @hash   -1753640079
      */
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     /**
      * @symbol ?generateAndAddPiece@MineshaftPiece@@QEAAPEAVStructurePiece@@AEAV2@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHHH@Z
-     * @hash   -805488405
+     * @hash   -633769237
      */
     MCAPI class StructurePiece * generateAndAddPiece(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     /**
      * @symbol ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z
-     * @hash   -606823676
+     * @hash   -434966124
      */
     MCAPI void setPlanksBlock(class BlockSource &, class Block const &, int, int, int);
 

@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ??0BedHelper@@QEAA@HHHHMMMMMM@Z
-     * @hash   1541043475
+     * @hash   1583742627
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
     /**
      * @symbol ??0BedHelper@@QEAA@HHHHMMMM@Z
-     * @hash   -273970893
+     * @hash   -231271741
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float);
     /**
      * @symbol ?getBedRotation@BedHelper@@QEBAMH@Z
-     * @hash   894372099
+     * @hash   937071251
      */
     MCAPI float getBedRotation(int) const;
     /**
      * @symbol ?setBedPositionOffsets@BedHelper@@QEAAXHAEAM0AEAVVec3@@@Z
-     * @hash   285709307
+     * @hash   328408459
      */
     MCAPI void setBedPositionOffsets(int, float &, float &, class Vec3 &);
 

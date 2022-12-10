@@ -38,39 +38,39 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@LootCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -384868432
+     * @hash   -379317696
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?getToolItemStack@LootCommand@@QEBA?AVItemStack@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1598465224
+     * @hash   -1592760728
      */
     MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@LootCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   219540256
+     * @hash   225275504
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_getItemsFromSource@LootCommand@@AEBA?AV?$optional@V?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBVItemStack@@AEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-     * @hash   -1177966418
+     * @hash   -1173276738
      */
     MCAPI class std::optional<std::vector<class ItemStack>> _getItemsFromSource(class CommandOrigin const &, class CommandOutput &, class ItemStack const &, class Level &, class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ?_outputError@LootCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@PEBVActor@@@Z
-     * @hash   214790612
+     * @hash   219772436
      */
     MCAPI void _outputError(class CommandOutput &, struct Util::ReplacementResults, class Actor const *) const;
     /**
      * @symbol ?_outputSuccess@LootCommand@@AEBAXAEAVCommandOutput@@H@Z
-     * @hash   -1552537350
+     * @hash   -1547263382
      */
     MCAPI void _outputSuccess(class CommandOutput &, int) const;
     /**
      * @symbol ?_placeItemsInTarget@LootCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     * @hash   1195276848
+     * @hash   1200581568
      */
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;
 

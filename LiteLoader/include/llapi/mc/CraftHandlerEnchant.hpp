@@ -39,36 +39,36 @@ public:
     /**
      * @vftbl  3
      * @symbol ?endRequestBatch@CraftHandlerEnchant@@MEAAXXZ
-     * @hash   239986279
+     * @hash   709676951
      */
     virtual void endRequestBatch();
     /**
      * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerEnchant@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     * @hash   -971703757
+     * @hash   -502013085
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @vftbl  5
      * @symbol ?_postCraftRequest@CraftHandlerEnchant@@MEAAX_N@Z
-     * @hash   76168397
+     * @hash   545859069
      */
     virtual void _postCraftRequest(bool);
     /**
      * @symbol ??0CraftHandlerEnchant@@QEAA@AEAVPlayer@@AEAVItemStackRequestActionCraftHandler@@@Z
-     * @hash   1315412045
+     * @hash   1785102717
      */
     MCAPI CraftHandlerEnchant(class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**
      * @symbol ?_getEnchantingModel@CraftHandlerEnchant@@AEBAAEAVEnchantingContainerManagerModel@@XZ
-     * @hash   -694700589
+     * @hash   -225009917
      */
     MCAPI class EnchantingContainerManagerModel & _getEnchantingModel() const;
     /**
      * @symbol ?_handleEnchant@CraftHandlerEnchant@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-     * @hash   680264556
+     * @hash   1149955228
      */
     MCAPI enum class ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 

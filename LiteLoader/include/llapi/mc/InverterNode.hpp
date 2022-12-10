@@ -37,18 +37,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@InverterNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     * @hash   83615698
+     * @hash   165492898
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@InverterNode@@MEAAXAEAVActor@@@Z
-     * @hash   -1294564097
+     * @hash   -1205598561
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
      * @symbol ??0InverterNode@@QEAA@XZ
-     * @hash   -1356019455
+     * @hash   -1274142255
      */
     MCAPI InverterNode();
 

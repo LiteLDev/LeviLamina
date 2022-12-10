@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1LevelAddedActorEvent@@QEAA@XZ
-     * @hash   -1511547285
+     * @hash   -1455901541
      */
     MCAPI ~LevelAddedActorEvent();
 

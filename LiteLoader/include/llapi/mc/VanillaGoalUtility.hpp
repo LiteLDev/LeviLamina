@@ -24,7 +24,7 @@ namespace VanillaGoalUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?registerGoalsToFactory@VanillaGoalUtility@@YAXAEAVActorGoalFactory@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     * @hash   333588193
+     * @hash   489085681
      */
     MCAPI void registerGoalsToFactory(class ActorGoalFactory &, class BaseGameVersion const &, class Experiments const &);
 

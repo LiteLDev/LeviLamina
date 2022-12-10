@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0RailMovementDefinition@@QEAA@XZ
-     * @hash   -68747680
+     * @hash   -139969312
      */
     MCAPI RailMovementDefinition();
     /**
      * @symbol ?initialize@RailMovementDefinition@@QEAAXAEAVEntityContext@@AEAVRailMovementComponent@@@Z
-     * @hash   808464621
+     * @hash   737273741
      */
     MCAPI void initialize(class EntityContext &, class RailMovementComponent &);
     /**
      * @symbol ?buildSchema@RailMovementDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRailMovementDefinition@@@JsonUtil@@@std@@@Z
-     * @hash   1417942310
+     * @hash   1346751430
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailMovementDefinition>> &);
 

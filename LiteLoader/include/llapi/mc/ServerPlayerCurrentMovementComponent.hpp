@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ServerPlayerCurrentMovementComponent@@QEAA@XZ
-     * @hash   -152342077
+     * @hash   -13404541
      */
     MCAPI ~ServerPlayerCurrentMovementComponent();
 

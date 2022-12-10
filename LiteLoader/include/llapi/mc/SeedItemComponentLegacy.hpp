@@ -33,34 +33,34 @@ public:
 public:
     /**
      * @symbol ??0SeedItemComponentLegacy@@QEAA@AEAVItem@@@Z
-     * @hash   -577674849
+     * @hash   -30827409
      */
     MCAPI SeedItemComponentLegacy(class Item &);
     /**
      * @symbol ?init@SeedItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   1596581336
+     * @hash   2143428776
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     /**
      * @symbol ?isPlanting@SeedItemComponentLegacy@@QEBA_NXZ
-     * @hash   -1631695940
+     * @hash   -1652176772
      */
     MCAPI bool isPlanting() const;
     /**
      * @symbol ?setPlanting@SeedItemComponentLegacy@@QEAAX_N@Z
-     * @hash   483207986
+     * @hash   533856530
      */
     MCAPI void setPlanting(bool);
     /**
      * @symbol ?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     * @hash   1666113692
+     * @hash   -2082036916
      */
     MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
 
 //private:
     /**
      * @symbol ?_canPlant@SeedItemComponentLegacy@@AEBA_NAEBVBlock@@@Z
-     * @hash   -1594888563
+     * @hash   -1048041123
      */
     MCAPI bool _canPlant(class Block const &) const;
 

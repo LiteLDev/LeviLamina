@@ -32,74 +32,74 @@ public:
 public:
     /**
      * @symbol ??0RakWebSocketDataFrame@@QEAA@XZ
-     * @hash   962576740
+     * @hash   973678212
      */
     MCAPI RakWebSocketDataFrame();
     /**
      * @symbol ?getCloseCode@RakWebSocketDataFrame@@QEBA?AW4CloseStatusCode@@XZ
-     * @hash   1217974696
+     * @hash   1229076168
      */
     MCAPI enum class CloseStatusCode getCloseCode() const;
     /**
      * @symbol ?getHeader@RakWebSocketDataFrame@@QEBAAEBURakWebSocketDataFrameHeader@@XZ
-     * @hash   -398807760
+     * @hash   -305536944
      */
     MCAPI struct RakWebSocketDataFrameHeader const & getHeader() const;
     /**
      * @symbol ?getMessageType@RakWebSocketDataFrame@@QEBA?AW4WebSocketMessageType@@XZ
-     * @hash   105565540
+     * @hash   116667012
      */
     MCAPI enum class WebSocketMessageType getMessageType() const;
     /**
      * @symbol ?getParseState@RakWebSocketDataFrame@@QEBA?AW4ParseState@1@XZ
-     * @hash   -1282880549
+     * @hash   -1271779077
      */
     MCAPI enum class RakWebSocketDataFrame::ParseState getParseState() const;
     /**
      * @symbol ?getPayload@RakWebSocketDataFrame@@QEBAAEBVBitStream@RakNet@@XZ
-     * @hash   2116662316
+     * @hash   -2085034164
      */
     MCAPI class RakNet::BitStream const & getPayload() const;
     /**
      * @symbol ?getPayloadAsString@RakWebSocketDataFrame@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   717630910
+     * @hash   728732382
      */
     MCAPI std::string getPayloadAsString() const;
     /**
      * @symbol ??1RakWebSocketDataFrame@@QEAA@XZ
-     * @hash   308888500
+     * @hash   319989972
      */
     MCAPI ~RakWebSocketDataFrame();
     /**
      * @symbol ?writeFrameToStream@RakWebSocketDataFrame@@SAXAEAVBitStream@RakNet@@PEBEIW4OpCode@@_NI@Z
-     * @hash   -1986355866
+     * @hash   -1975085258
      */
     MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum class OpCode, bool, unsigned int);
 
 //private:
     /**
      * @symbol ?_isContinuation@RakWebSocketDataFrame@@CA_NE@Z
-     * @hash   -1763812417
+     * @hash   -1752710945
      */
     MCAPI static bool _isContinuation(unsigned char);
     /**
      * @symbol ?_isControl@RakWebSocketDataFrame@@CA_NE@Z
-     * @hash   -982694565
+     * @hash   -971593093
      */
     MCAPI static bool _isControl(unsigned char);
     /**
      * @symbol ?_isNonControl@RakWebSocketDataFrame@@CA_NE@Z
-     * @hash   609835654
+     * @hash   620937126
      */
     MCAPI static bool _isNonControl(unsigned char);
     /**
      * @symbol ?_isUnsupported@RakWebSocketDataFrame@@CA_NE@Z
-     * @hash   -1871097821
+     * @hash   -1859996349
      */
     MCAPI static bool _isUnsupported(unsigned char);
     /**
      * @symbol ?_maskUnmaskData@RakWebSocketDataFrame@@CAXPEAEIII@Z
-     * @hash   -1215024835
+     * @hash   -1203923363
      */
     MCAPI static void _maskUnmaskData(unsigned char *, unsigned int, unsigned int, unsigned int);
 

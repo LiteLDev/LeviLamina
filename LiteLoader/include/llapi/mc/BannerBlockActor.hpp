@@ -39,147 +39,147 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BannerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1495181861
+     * @hash   -906619333
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BannerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -185501430
+     * @hash   403061098
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1350900668
+     * @hash   -762430396
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  11
      * @symbol ?onPlace@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1273313015
+     * @hash   -684750487
      */
     virtual void onPlace(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@BannerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   1588565181
+     * @hash   1744247181
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@BannerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   1930062117
+     * @hash   -1776342651
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0BannerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1287851465
+     * @hash   -699273561
      */
     MCAPI BannerBlockActor(class BlockPos const &);
     /**
      * @symbol ?getBaseColorInt@BannerBlockActor@@QEBAEXZ
-     * @hash   -1913941449
+     * @hash   -1325378921
      */
     MCAPI unsigned char getBaseColorInt() const;
     /**
      * @symbol ?setItemValues@BannerBlockActor@@QEAAXAEBVItemStackBase@@@Z
-     * @hash   -157595786
+     * @hash   430874486
      */
     MCAPI void setItemValues(class ItemStackBase const &);
     /**
      * @symbol ?MAX_PATTERNS@BannerBlockActor@@2HB
-     * @hash   1587561081
+     * @hash   -1921500415
      */
     MCAPI static int const MAX_PATTERNS;
     /**
      * @symbol ?TAG_BASE_COLOR@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -924379905
+     * @hash   855146079
      */
     MCAPI static std::string const TAG_BASE_COLOR;
     /**
      * @symbol ?TAG_COLOR@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -150450935
+     * @hash   1629075049
      */
     MCAPI static std::string const TAG_COLOR;
     /**
      * @symbol ?TAG_PATTERN@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1310995325
+     * @hash   468530659
      */
     MCAPI static std::string const TAG_PATTERN;
     /**
      * @symbol ?TAG_PATTERNS@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -1118433669
+     * @hash   661092315
      */
     MCAPI static std::string const TAG_PATTERNS;
     /**
      * @symbol ?TAG_TYPE@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -627706103
+     * @hash   1151819881
      */
     MCAPI static std::string const TAG_TYPE;
     /**
      * @symbol ?getBannerType@BannerBlockActor@@SA?AW4BannerBlockType@@PEBVCompoundTag@@@Z
-     * @hash   -72122330
+     * @hash   516440198
      */
     MCAPI static enum class BannerBlockType getBannerType(class CompoundTag const *);
     /**
      * @symbol ?getBaseColor@BannerBlockActor@@SAHAEBVItemStack@@@Z
-     * @hash   -2051687129
+     * @hash   -1463124601
      */
     MCAPI static int getBaseColor(class ItemStack const &);
     /**
      * @symbol ?getPatternCount@BannerBlockActor@@SAHPEBVCompoundTag@@@Z
-     * @hash   -2085132430
+     * @hash   -1496569902
      */
     MCAPI static int getPatternCount(class CompoundTag const *);
     /**
      * @symbol ?isDefaultBanner@BannerBlockActor@@SA_NAEBVItemStackBase@@@Z
-     * @hash   56783653
+     * @hash   645346181
      */
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);
     /**
      * @symbol ?removeLastPattern@BannerBlockActor@@SA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   1600537496
+     * @hash   -2105867272
      */
     MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
 

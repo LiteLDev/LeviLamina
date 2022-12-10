@@ -38,61 +38,61 @@ public:
     /**
      * @vftbl  1
      * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -107870255
+     * @hash   -65094223
      */
     virtual std::string readString();
     /**
      * @vftbl  2
      * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1365370867
+     * @hash   -1322564083
      */
     virtual std::string readLongString();
     /**
      * @vftbl  3
      * @symbol ?readFloat@BigEndianStringByteInput@@UEAAMXZ
-     * @hash   -170944460
+     * @hash   -24844
      */
     virtual float readFloat();
     /**
      * @vftbl  4
      * @symbol ?readDouble@BigEndianStringByteInput@@UEAANXZ
-     * @hash   -395509024
+     * @hash   -224589408
      */
     virtual double readDouble();
     /**
      * @vftbl  5
      * @symbol ?readByte@BytesDataInput@@UEAADXZ
-     * @hash   750710722
+     * @hash   921630338
      */
     virtual char readByte();
     /**
      * @vftbl  6
      * @symbol ?readShort@BigEndianStringByteInput@@UEAAFXZ
-     * @hash   -496922476
+     * @hash   -326002860
      */
     virtual short readShort();
     /**
      * @vftbl  7
      * @symbol ?readInt@BigEndianStringByteInput@@UEAAHXZ
-     * @hash   1643182068
+     * @hash   1814101684
      */
     virtual int readInt();
     /**
      * @vftbl  8
      * @symbol ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-     * @hash   -937193517
+     * @hash   -766273901
      */
     virtual __int64 readLongLong();
     /**
      * @vftbl  9
      * @symbol ?readBytes@StringByteInput@@UEAA_NPEAX_K@Z
-     * @hash   -1264435075
+     * @hash   -1093515459
      */
     virtual bool readBytes(void *, unsigned __int64);
     /**
      * @vftbl  10
      * @symbol ?numBytesLeft@StringByteInput@@UEBA_KXZ
-     * @hash   -1588164645
+     * @hash   -1417245029
      */
     virtual unsigned __int64 numBytesLeft() const;
 

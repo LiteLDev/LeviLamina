@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1OnPlacedTrigger@@QEAA@XZ
-     * @hash   1123161704
+     * @hash   1889516920
      */
     MCAPI ~OnPlacedTrigger();
 

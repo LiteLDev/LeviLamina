@@ -39,180 +39,185 @@ public:
     /**
      * @vftbl  1
      * @symbol ?serialize@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
-     * @hash   868604837
+     * @hash   1636067125
      */
     virtual void serialize(class Json::Value &) const;
     /**
      * @vftbl  2
      * @symbol ?serialize@ItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1761055037
+     * @hash   -1766449971
      */
     virtual void serialize(class BinaryStream &) const;
     /**
      * @symbol ??0ItemDescriptor@@QEAA@XZ
-     * @hash   -990781170
+     * @hash   -220935602
      */
     MCAPI ItemDescriptor();
     /**
      * @symbol ??0ItemDescriptor@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@H@Z
-     * @hash   1890462052
+     * @hash   -1634644300
      */
     MCAPI ItemDescriptor(class gsl::basic_string_span<char const, -1>, int);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBVValue@Json@@AEBVSemVersion@@@Z
-     * @hash   -544308498
+     * @hash   225644702
      */
     MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
-     * @hash   -996980138
+     * @hash   -227026938
      */
     MCAPI ItemDescriptor(class Item const &, int);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBVBlockLegacy@@@Z
-     * @hash   -1843346533
+     * @hash   -1073393333
      */
     MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBVBlock@@@Z
-     * @hash   1426796989
+     * @hash   -2098217107
      */
     MCAPI ItemDescriptor(class Block const &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBV0@@Z
-     * @hash   -414429391
+     * @hash   355523809
      */
     MCAPI ItemDescriptor(class ItemDescriptor const &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
-     * @hash   -586099397
+     * @hash   183853803
      */
     MCAPI ItemDescriptor(struct ItemTag const &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1594800319
+     * @hash   -1930213777
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemDescriptor@@QEAA@$$QEAV0@@Z
-     * @hash   -339315107
+     * @hash   430638093
      */
     MCAPI ItemDescriptor(class ItemDescriptor &&);
     /**
      * @symbol ?forEachItemUntil@ItemDescriptor@@QEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-     * @hash   -1700942351
+     * @hash   -931542687
      */
     MCAPI bool forEachItemUntil(class std::function<bool (class Item const &, short)>) const;
     /**
      * @symbol ?getAuxValue@ItemDescriptor@@QEBAFXZ
-     * @hash   -7095269
+     * @hash   761996875
      */
     MCAPI short getAuxValue() const;
     /**
      * @symbol ?getBlock@ItemDescriptor@@QEBAPEBVBlock@@XZ
-     * @hash   1665654261
+     * @hash   -1860220891
      */
     MCAPI class Block const * getBlock() const;
     /**
      * @symbol ?getFullName@ItemDescriptor@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   932183466
+     * @hash   1701275610
      */
     MCAPI std::string getFullName() const;
     /**
+     * @symbol ?getHash@ItemDescriptor@@QEBA_KXZ
+     * @hash   1626165359
+     */
+    MCAPI unsigned __int64 getHash() const;
+    /**
      * @symbol ?getId@ItemDescriptor@@QEBAFXZ
-     * @hash   -1716411637
+     * @hash   -947319493
      */
     MCAPI short getId() const;
     /**
      * @symbol ?getIdAux@ItemDescriptor@@QEBAHXZ
-     * @hash   -1557413304
+     * @hash   -788321160
      */
     MCAPI int getIdAux() const;
     /**
      * @symbol ?getItem@ItemDescriptor@@QEBAPEBVItem@@XZ
-     * @hash   2119175791
+     * @hash   -1406699361
      */
     MCAPI class Item const * getItem() const;
     /**
      * @symbol ?getLegacyBlock@ItemDescriptor@@QEBAAEBV?$WeakPtr@VBlockLegacy@@@@XZ
-     * @hash   123039981
+     * @hash   892132125
      */
     MCAPI class WeakPtr<class BlockLegacy> const & getLegacyBlock() const;
     /**
      * @symbol ?getRawNameId@ItemDescriptor@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -820660744
+     * @hash   -51568600
      */
     MCAPI std::string getRawNameId() const;
     /**
      * @symbol ?getSerializedNameAndAux@ItemDescriptor@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -2028751314
+     * @hash   -1259659170
      */
     MCAPI std::string getSerializedNameAndAux() const;
     /**
      * @symbol ?isDefinedAsItemName@ItemDescriptor@@QEBA_NXZ
-     * @hash   -1204690118
+     * @hash   -435582598
      */
     MCAPI bool isDefinedAsItemName() const;
     /**
      * @symbol ?isNull@ItemDescriptor@@QEBA_NXZ
-     * @hash   -1317487892
+     * @hash   -548380372
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ?isValid@ItemDescriptor@@QEBA_N_N@Z
-     * @hash   -906742987
+     * @hash   -137635467
      */
     MCAPI bool isValid(bool) const;
     /**
      * @symbol ??4ItemDescriptor@@QEAAXAEBV0@@Z
-     * @hash   -903638343
+     * @hash   -133792775
      */
     MCAPI void operator=(class ItemDescriptor const &);
     /**
      * @symbol ??4ItemDescriptor@@QEAAX$$QEAV0@@Z
-     * @hash   1143460197
+     * @hash   1913305765
      */
     MCAPI void operator=(class ItemDescriptor &&);
     /**
      * @symbol ??8ItemDescriptor@@QEBA_NAEBV0@@Z
-     * @hash   -1977351339
+     * @hash   -1207505771
      */
     MCAPI bool operator==(class ItemDescriptor const &) const;
     /**
      * @symbol ?sameItem@ItemDescriptor@@QEBA_NAEBV1@_N@Z
-     * @hash   -2107586373
+     * @hash   -1340108709
      */
     MCAPI bool sameItem(class ItemDescriptor const &, bool) const;
     /**
      * @symbol ?sameItem@ItemDescriptor@@QEBA_NAEBVItemStack@@_N@Z
-     * @hash   1122070736
+     * @hash   1889548400
      */
     MCAPI bool sameItem(class ItemStack const &, bool) const;
     /**
      * @symbol ?save@ItemDescriptor@@QEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     * @hash   -124319969
+     * @hash   643142319
      */
     MCAPI class std::optional<class CompoundTag> save() const;
     /**
      * @symbol ?bindType@ItemDescriptor@@SAXXZ
-     * @hash   -363320237
+     * @hash   406525331
      */
     MCAPI static void bindType();
 
 //private:
     /**
      * @symbol ?_resolve@ItemDescriptor@@AEBAXXZ
-     * @hash   -779344250
+     * @hash   -9498682
      */
     MCAPI void _resolve() const;
     /**
      * @symbol ?fromMap@ItemDescriptor@@CAXAEAV1@AEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBVBedrockLoadContext@@@Z
-     * @hash   -399897709
+     * @hash   369501955
      */
     MCAPI static void fromMap(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
     /**
      * @symbol ?toMap@ItemDescriptor@@CA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV1@@Z
-     * @hash   -299966837
+     * @hash   467464699
      */
     MCAPI static class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap(class ItemDescriptor const &);
 

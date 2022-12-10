@@ -38,58 +38,58 @@ public:
     /**
      * @vftbl  1
      * @symbol ?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z
-     * @hash   2023956953
+     * @hash   -2002376247
      */
     virtual void tick(struct IPlayerMovementProxy &);
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?clearInputState@MoveInputHandler@@UEAAXXZ
-     * @hash   1385539066
+     * @hash   1654296170
      */
     virtual void clearInputState();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  9
      * @symbol ?isChangeHeight@MoveInputHandler@@UEBA_NXZ
-     * @hash   -2021954920
+     * @hash   -2042251240
      */
     virtual bool isChangeHeight() const;
     /**
      * @vftbl  11
      * @symbol ?isPlayerMoving@MoveInputHandler@@UEBA_NXZ
-     * @hash   339433616
+     * @hash   608144592
      */
     virtual bool isPlayerMoving() const;
     /**
      * @vftbl  12
-     * @symbol ?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ
-     * @hash   -834809775
-     */
-    virtual class Vec3 const & getGazeDirection() const;
-    /**
-     * @vftbl  13
      * @symbol ?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ
-     * @hash   451003243
+     * @hash   719760347
      */
     virtual struct MoveInputComponent extractInputComponent() const;
     /**
+     * @vftbl  13
+     * @symbol ?applyInputComponent@MoveInputHandler@@UEAAXAEBUMoveInputComponent@@@Z
+     * @hash   -1616556141
+     */
+    virtual void applyInputComponent(struct MoveInputComponent const &);
+    /**
      * @vftbl  14
      * @symbol ?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z
-     * @hash   1067265022
+     * @hash   1335991374
      */
     virtual void fillInputPacket(class PlayerAuthInputPacket &);
     /**
@@ -100,24 +100,19 @@ public:
     /**
      * @vftbl  16
      * @symbol ?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ
-     * @hash   -68516983
+     * @hash   87072761
      */
     virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
     /**
-     * @symbol ?setGazeDirection@MoveInputHandler@@QEAAXAEBVVec3@@@Z
-     * @hash   -84151490
-     */
-    MCAPI void setGazeDirection(class Vec3 const &);
-    /**
      * @symbol ?wantsMoveForward@MoveInputHandler@@QEBA_NXZ
-     * @hash   -2125016530
+     * @hash   -1856397810
      */
     MCAPI bool wantsMoveForward() const;
 
 //protected:
     /**
      * @symbol ??0MoveInputHandler@@IEAA@XZ
-     * @hash   2069119107
+     * @hash   -1957567741
      */
     MCAPI MoveInputHandler();
 

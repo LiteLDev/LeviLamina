@@ -35,24 +35,34 @@ public:
     virtual ~VerticalCollisionSystem();
     /**
      * @vftbl  1
-     * @hash   -407916143
+     * @hash   -253879375
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @symbol ?tick@VerticalCollisionSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UConstBlockSourceComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   1167084225
+     * @symbol ?tick@VerticalCollisionSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UConstBlockSourceComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@USideBySidePlaybackBlocksComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+     * @hash   798703025
      */
-    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct ConstBlockSourceComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
+    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct ConstBlockSourceComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent, struct SideBySidePlaybackBlocksComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
      * @symbol ?create@VerticalCollisionSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -926961192
+     * @hash   -953500168
      */
     MCAPI static struct TickingSystemWithInfo create();
+    /**
+     * @symbol ?createSideBySide@VerticalCollisionSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1302879640
+     */
+    MCAPI static struct TickingSystemWithInfo createSideBySide();
+    /**
+     * @symbol ?tickVerticalCollisionSystem@VerticalCollisionSystem@@SAXAEBVStrictEntityContext@@AEBUMoveRequestComponent@@AEBUAABBShapeComponent@@AEBUStateVectorComponent@@AEAUWalkDistComponent@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@@@U?$Read@USynchedActorDataComponent@@UMoveRequestComponent@@UAABBShapeComponent@@UConstBlockSourceComponent@@UStateVectorComponent@@@@U?$Write@UStateVectorComponent@@UWalkDistComponent@@USideBySidePlaybackBlocksComponent@@@@U?$AddRemove@UBounceComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
+     * @hash   -1424362479
+     */
+    MCAPI static void tickVerticalCollisionSystem(class StrictEntityContext const &, struct MoveRequestComponent const &, struct AABBShapeComponent const &, struct StateVectorComponent const &, struct WalkDistComponent &, class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct ConstBlockSourceComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent, struct SideBySidePlaybackBlocksComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &, class IConstBlockSource const &);
 
 };

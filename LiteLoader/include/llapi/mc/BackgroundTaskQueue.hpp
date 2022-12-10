@@ -31,49 +31,49 @@ public:
 public:
     /**
      * @symbol ??0BackgroundTaskQueue@@QEAA@XZ
-     * @hash   89480234
+     * @hash   602638858
      */
     MCAPI BackgroundTaskQueue();
     /**
      * @symbol ?flush@BackgroundTaskQueue@@QEAAXXZ
-     * @hash   2031294621
+     * @hash   -1750514051
      */
     MCAPI void flush();
     /**
      * @symbol ?getApproximateTaskCount@BackgroundTaskQueue@@QEBA_KXZ
-     * @hash   1516001581
+     * @hash   2029160205
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
      * @symbol ?getNextItemPriority@BackgroundTaskQueue@@QEAAHXZ
-     * @hash   -2100423622
+     * @hash   -1587264998
      */
     MCAPI int getNextItemPriority();
     /**
      * @symbol ?queue@BackgroundTaskQueue@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-     * @hash   1426000954
+     * @hash   1939159578
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?resortPriorityQueue@BackgroundTaskQueue@@QEAAXXZ
-     * @hash   1888131597
+     * @hash   -1893677075
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?tryPop@BackgroundTaskQueue@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@H@Z
-     * @hash   -751373038
+     * @hash   -238214414
      */
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
     /**
      * @symbol ??1BackgroundTaskQueue@@QEAA@XZ
-     * @hash   1991074810
+     * @hash   -1790733862
      */
     MCAPI ~BackgroundTaskQueue();
 
 //private:
     /**
      * @symbol ?_fetchAllAvailableTasks@BackgroundTaskQueue@@AEAA_NXZ
-     * @hash   79040947
+     * @hash   592199571
      */
     MCAPI bool _fetchAllAvailableTasks();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PerfContextTrackerReport@@QEAA@XZ
-     * @hash   -1152522752
+     * @hash   -1064848800
      */
     MCAPI ~PerfContextTrackerReport();
 

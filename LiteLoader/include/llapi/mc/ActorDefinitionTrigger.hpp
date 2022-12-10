@@ -29,27 +29,27 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionTrigger@@QEAA@$$QEAV0@@Z
-     * @hash   -1978964503
+     * @hash   -1821006855
      */
     MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger &&);
     /**
      * @symbol ?canTrigger@ActorDefinitionTrigger@@QEBA_NAEBVActor@@AEBVVariantParameterList@@@Z
-     * @hash   -1522419192
+     * @hash   -1469095224
      */
     MCAPI bool canTrigger(class Actor const &, class VariantParameterList const &) const;
     /**
      * @symbol ??4ActorDefinitionTrigger@@QEAAAEAV0@AEBV0@@Z
-     * @hash   855224884
+     * @hash   1014920020
      */
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger const &);
     /**
      * @symbol ??4ActorDefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1329000268
+     * @hash   1486957916
      */
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger &&);
     /**
      * @symbol ??1ActorDefinitionTrigger@@QEAA@XZ
-     * @hash   1951950602
+     * @hash   2055769354
      */
     MCAPI ~ActorDefinitionTrigger();
 

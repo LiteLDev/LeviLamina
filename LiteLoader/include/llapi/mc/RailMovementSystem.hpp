@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?tickRailMovementComponent@RailMovementSystem@@SAXAEAVActor@@AEAVRailMovementComponent@@@Z
-     * @hash   -1075723765
+     * @hash   -558782645
      */
     MCAPI static void tickRailMovementComponent(class Actor &, class RailMovementComponent &);
 

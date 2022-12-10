@@ -33,377 +33,382 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1030812013
+     * @hash   1075879069
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  9
+     * @vftbl  11
      * @symbol ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -624793880
+     * @hash   -579726824
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   1304473546
      */
     virtual ~WitherBoss();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@WitherBoss@@UEAAXXZ
-     * @hash   1087061915
+     * @hash   1132128971
      */
     virtual void remove();
     /**
-     * @vftbl  25
+     * @vftbl  28
      * @symbol ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
-     * @hash   -1587042581
+     * @hash   -1542021653
      */
     virtual class Vec3 getFiringPos() const;
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  52
+     * @vftbl  54
      * @symbol ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
-     * @hash   -2127644473
+     * @hash   -2030898681
      */
     virtual bool startRiding(class Actor &);
     /**
-     * @vftbl  60
-     * @hash   -188950850
+     * @vftbl  63
+     * @hash   -89434495
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  75
+     * @vftbl  78
      * @symbol ?setBlockMovementSlowdownMultiplier@WitherBoss@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
-     * @hash   1883099284
+     * @hash   1972064820
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  134
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -1998928850
+     * @hash   -1953907922
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  141
+     * @vftbl  144
      * @symbol ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -484026858
+     * @hash   -439005930
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  173
+     * @vftbl  176
      * @symbol ?canFreeze@WitherBoss@@UEBA_NXZ
-     * @hash   2037324287
+     * @hash   2134070079
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  185
+     * @vftbl  187
      * @symbol ?causeFallDamage@WitherBoss@@UEAAXMMVActorDamageSource@@@Z
-     * @hash   -1508301198
+     * @hash   -1419335662
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  210
+     * @vftbl  212
      * @symbol ?canBeAffected@WitherBoss@@UEBA_NI@Z
-     * @hash   -185346647
+     * @hash   -140325719
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
-     * @vftbl  211
+     * @vftbl  213
      * @symbol ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
-     * @hash   -1746825234
+     * @hash   -1701804306
      */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
     /**
      * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  252
      * @symbol ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   52349715
+     * @hash   97370643
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -1087140736
+     * @hash   -1042319696
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   2049878903
+     * @hash   2094945959
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   1051296822
+     * @hash   1096117862
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  291
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  290
      * @symbol ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     * @hash   -752809750
+     * @hash   -707788822
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  297
+     * @vftbl  295
      * @symbol ?aiStep@WitherBoss@@UEAAXXZ
-     * @hash   -1311482389
+     * @hash   -1266707477
      */
     virtual void aiStep();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  319
+     * @vftbl  317
      * @symbol ?getArmorValue@WitherBoss@@UEBAHXZ
-     * @hash   -2101005645
+     * @hash   -2055984717
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  357
+     * @vftbl  355
      * @symbol ?newServerAiStep@WitherBoss@@UEAAXXZ
-     * @hash   1806744910
+     * @hash   1851765838
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
     /**
      * @symbol ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   1777113884
+     * @hash   1821735036
      */
     MCAPI WitherBoss(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?awardSpawnWitherAchievement@WitherBoss@@QEBAXXZ
-     * @hash   331741761
+     * @hash   376762689
      */
     MCAPI void awardSpawnWitherAchievement() const;
     /**
      * @symbol ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
-     * @hash   -18216793
+     * @hash   26804135
      */
     MCAPI class Vec3 getHeadPos(int) const;
     /**
      * @symbol ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-     * @hash   -1107921067
+     * @hash   -1062900139
      */
     MCAPI class Vec2 getHeadRot(int);
     /**
      * @symbol ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
-     * @hash   69392232
+     * @hash   114413160
      */
     MCAPI int getInvulnerableTicks() const;
     /**
      * @symbol ?getOverlayAlpha@WitherBoss@@QEAAMXZ
-     * @hash   1225506710
+     * @hash   1270527638
      */
     MCAPI float getOverlayAlpha();
     /**
      * @symbol ?getSwellAmount@WitherBoss@@QEBAMM@Z
-     * @hash   572362897
+     * @hash   617383825
      */
     MCAPI float getSwellAmount(float) const;
     /**
      * @symbol ?hasAerialAttack@WitherBoss@@QEBA_NXZ
-     * @hash   -1854220144
+     * @hash   -1809199216
      */
     MCAPI bool hasAerialAttack() const;
     /**
      * @symbol ?postAiStep@WitherBoss@@QEAAXXZ
-     * @hash   -1828928955
+     * @hash   -1783908027
      */
     MCAPI void postAiStep();
     /**
-     * @symbol ?preAiStep@WitherBoss@@QEAA?AW4PreAiStepResult@1@XZ
-     * @hash   1438518549
+     * @symbol ?preAiStep@WitherBoss@@QEAA?AW4WitherBossPreAIStepResult@@XZ
+     * @hash   1389551410
      */
-    MCAPI enum class WitherBoss::PreAiStepResult preAiStep();
+    MCAPI enum class WitherBossPreAIStepResult preAiStep();
     /**
      * @symbol ?removeSkeleton@WitherBoss@@QEAAXXZ
-     * @hash   -529054443
+     * @hash   -483787499
      */
     MCAPI void removeSkeleton();
     /**
      * @symbol ?setAerialAttack@WitherBoss@@QEAAX_N@Z
-     * @hash   -1385761348
+     * @hash   -1340494404
      */
     MCAPI void setAerialAttack(bool);
     /**
      * @symbol ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
-     * @hash   1684438765
+     * @hash   1729705709
      */
     MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
     /**
      * @symbol ?setIsPathing@WitherBoss@@QEAAX_N@Z
-     * @hash   1856973820
+     * @hash   1902240764
      */
     MCAPI void setIsPathing(bool);
     /**
      * @symbol ?setShotDelay@WitherBoss@@QEAAXH@Z
-     * @hash   -339921546
+     * @hash   -294654602
      */
     MCAPI void setShotDelay(int);
     /**
      * @symbol ?setWantsToMove@WitherBoss@@QEAAX_N@Z
-     * @hash   1668074660
+     * @hash   1713341604
      */
     MCAPI void setWantsToMove(bool);
     /**
      * @symbol ?wantsToMove@WitherBoss@@QEAA_NXZ
-     * @hash   1148672798
+     * @hash   1193939742
      */
     MCAPI bool wantsToMove();
     /**
      * @symbol ?MAX_HEALTH_CAP_UUID@WitherBoss@@2VUUID@mce@@B
-     * @hash   -444334927
+     * @hash   415183473
      */
     MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
     /**
      * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
-     * @hash   1091183015
+     * @hash   1136203943
      */
     MCAPI static bool canDestroy(class Block const &, enum class WitherBoss::WitherAttackType);
 
 //private:
     /**
      * @symbol ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
-     * @hash   1697521694
+     * @hash   1742327358
      */
     MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum class WitherBoss::WitherAttackType);
     /**
      * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
-     * @hash   -26652187
+     * @hash   18168853
      */
     MCAPI void _performRangedAttack(int, class Actor &);
     /**
      * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
-     * @hash   1280344604
+     * @hash   1325165644
      */
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
     /**
      * @symbol ?canShoot@WitherBoss@@AEAA_NXZ
-     * @hash   1040953701
+     * @hash   1085974629
      */
     MCAPI bool canShoot();
 
 private:
     /**
      * @symbol ?TIME_BEFORE_MOVING@WitherBoss@@0HB
-     * @hash   891851548
+     * @hash   1651618148
      */
     MCAPI static int const TIME_BEFORE_MOVING;
 

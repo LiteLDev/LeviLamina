@@ -38,181 +38,181 @@ public:
     virtual ~MinecraftGameTest();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  6
-     * @hash   -1400939546
+     * @hash   -1311974010
      */
     virtual void __unk_vfn_6();
     /**
+     * @vftbl  7
+     * @hash   -1311050489
+     */
+    virtual void __unk_vfn_7();
+    /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1398168983
+     * @hash   -1309203447
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
-     * @hash   -382068605
-     */
-    virtual void __unk_vfn_10();
-    /**
-     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-     * @hash   2093699382
+     * @hash   -2107997098
      */
     virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
+     * @vftbl  11
+     * @hash   -292179548
+     */
+    virtual void __unk_vfn_11();
+    /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
      * @vftbl  13
-     * @hash   -379298042
+     * @hash   -290332506
      */
     virtual void __unk_vfn_13();
     /**
      * @vftbl  14
-     * @hash   -378374521
+     * @hash   -289408985
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  15
-     * @hash   -377451000
+     * @hash   -288485464
      */
     virtual void __unk_vfn_15();
     /**
      * @vftbl  16
-     * @hash   -376527479
+     * @hash   -287561943
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  17
-     * @hash   -375603958
+     * @hash   -286638422
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  18
-     * @hash   -374680437
+     * @hash   -285714901
      */
     virtual void __unk_vfn_18();
     /**
      * @vftbl  19
-     * @hash   -373756916
+     * @hash   -284791380
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  20
-     * @hash   -353439454
+     * @hash   -264473918
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  21
-     * @hash   -352515933
+     * @hash   -263550397
      */
     virtual void __unk_vfn_21();
     /**
      * @vftbl  22
-     * @hash   -351592412
+     * @hash   -262626876
      */
     virtual void __unk_vfn_22();
     /**
      * @vftbl  23
-     * @hash   -350668891
+     * @hash   -261703355
      */
     virtual void __unk_vfn_23();
     /**
      * @vftbl  24
-     * @hash   -349745370
+     * @hash   -260779834
      */
     virtual void __unk_vfn_24();
     /**
      * @vftbl  25
-     * @hash   -348821849
-     */
-    virtual void __unk_vfn_25();
-    /**
-     * @vftbl  26
      * @symbol ?onLevelDestruction@MinecraftGameTest@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1309740233
+     * @hash   1434808617
      */
     virtual void onLevelDestruction(std::string const &);
     /**
      * @symbol ??0MinecraftGameTest@@QEAA@AEAVLevel@@@Z
-     * @hash   1913414708
+     * @hash   2038436964
      */
     MCAPI MinecraftGameTest(class Level &);
     /**
      * @symbol ?clearAllTests@MinecraftGameTest@@QEAAXAEAVBlockSource@@@Z
-     * @hash   -974220726
+     * @hash   -849152342
      */
     MCAPI void clearAllTests(class BlockSource &);
     /**
      * @symbol ?getRegistry@MinecraftGameTest@@QEAAAEAVGameTestRegistry@gametest@@XZ
-     * @hash   1870532246
+     * @hash   1995600630
      */
     MCAPI class gametest::GameTestRegistry & getRegistry();
     /**
      * @symbol ?getTicker@MinecraftGameTest@@QEAAAEAVGameTestTicker@gametest@@XZ
-     * @hash   158255968
+     * @hash   283324352
      */
     MCAPI class gametest::GameTestTicker & getTicker();
     /**
      * @symbol ?loadExistingTests@MinecraftGameTest@@QEAAXAEAVLevel@@@Z
-     * @hash   -636867732
+     * @hash   -511799348
      */
     MCAPI void loadExistingTests(class Level &);
     /**
      * @symbol ?registerDefaultGameBatches@MinecraftGameTest@@QEAAXAEAVLevel@@@Z
-     * @hash   1610797278
+     * @hash   1735865662
      */
     MCAPI void registerDefaultGameBatches(class Level &);
     /**
      * @symbol ?registerNativeGameTests@MinecraftGameTest@@QEAAXXZ
-     * @hash   -1686698865
+     * @hash   -1597733329
      */
     MCAPI void registerNativeGameTests();
     /**
      * @symbol ?runTest@MinecraftGameTest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEAVDimension@@AEBUTestParameters@gametest@@@Z
-     * @hash   -1573663157
+     * @hash   -1448594773
      */
     MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &);
     /**
      * @symbol ?runTest@MinecraftGameTest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEAVDimension@@AEBUTestParameters@gametest@@V?$vector@V?$shared_ptr@VIGameTestListener@gametest@@@std@@V?$allocator@V?$shared_ptr@VIGameTestListener@gametest@@@std@@@2@@3@@Z
-     * @hash   -1819265297
+     * @hash   -1694196913
      */
     MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &, std::vector<class std::shared_ptr<class gametest::IGameTestListener>>);
     /**
      * @symbol ?runTestAt@MinecraftGameTest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@AEBVBlockPos@@V?$optional@W4Rotation@@@3@@Z
-     * @hash   135573860
+     * @hash   260642244
      */
     MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum class Rotation>);
     /**
      * @symbol ?runTests@MinecraftGameTest@@QEAAAEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@AEAVDimension@@$$QEAUTestParameters@gametest@@@Z
-     * @hash   1526062865
+     * @hash   1651131249
      */
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
 //private:
     /**
      * @symbol ?_runTestPreparation@MinecraftGameTest@@AEAAXAEBVBaseGameTestFunction@gametest@@@Z
-     * @hash   -1208744700
+     * @hash   -1083676316
      */
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
 

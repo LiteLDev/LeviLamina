@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerUpdateInteractionEvent@@QEAA@XZ
-     * @hash   344438828
+     * @hash   448257580
      */
     MCAPI ~PlayerUpdateInteractionEvent();
 

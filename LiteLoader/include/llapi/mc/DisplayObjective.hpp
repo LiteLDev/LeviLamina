@@ -32,42 +32,42 @@ public:
 public:
     /**
      * @symbol ??0DisplayObjective@@QEAA@AEBVObjective@@W4ObjectiveSortOrder@@@Z
-     * @hash   416878149
+     * @hash   1129217477
      */
     MCAPI DisplayObjective(class Objective const &, enum class ObjectiveSortOrder);
     /**
      * @symbol ?getBelowNameStringForId@DisplayObjective@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUScoreboardId@@@Z
-     * @hash   -1395931731
+     * @hash   -683592403
      */
     MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const &) const;
     /**
      * @symbol ?getObjective@DisplayObjective@@QEBAAEBVObjective@@XZ
-     * @hash   1207140960
+     * @hash   1331978704
      */
     MCAPI class Objective const & getObjective() const;
     /**
      * @symbol ?getSortOrder@DisplayObjective@@QEBA?AW4ObjectiveSortOrder@@XZ
-     * @hash   1187920430
+     * @hash   1167639486
      */
     MCAPI enum class ObjectiveSortOrder getSortOrder() const;
     /**
      * @symbol ?isDisplaying@DisplayObjective@@QEBA_NAEBVObjective@@@Z
-     * @hash   -1384491091
+     * @hash   -672151763
      */
     MCAPI bool isDisplaying(class Objective const &) const;
     /**
      * @symbol ?isValid@DisplayObjective@@QEBA_NXZ
-     * @hash   1307492822
+     * @hash   2019832150
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?deserialize@DisplayObjective@@SA?AV1@AEBVCompoundTag@@AEBVScoreboard@@@Z
-     * @hash   1681051060
+     * @hash   -1901576908
      */
     MCAPI static class DisplayObjective deserialize(class CompoundTag const &, class Scoreboard const &);
     /**
      * @symbol ?serialize@DisplayObjective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
-     * @hash   457438547
+     * @hash   1169777875
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const &);
 

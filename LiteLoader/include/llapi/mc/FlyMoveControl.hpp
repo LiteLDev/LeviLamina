@@ -38,12 +38,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     * @hash   1683097981
+     * @hash   1736667965
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
      * @symbol ??0FlyMoveControl@@QEAA@XZ
-     * @hash   -305739483
+     * @hash   -252169499
      */
     MCAPI FlyMoveControl();
 

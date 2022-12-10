@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerRespawnRandomizer@@QEAA@XZ
-     * @hash   1496462932
+     * @hash   1652052676
      */
     MCAPI ~PlayerRespawnRandomizer();
 

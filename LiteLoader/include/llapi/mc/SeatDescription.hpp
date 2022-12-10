@@ -30,37 +30,37 @@ public:
 public:
     /**
      * @symbol ??0SeatDescription@@QEAA@AEBU0@@Z
-     * @hash   321041765
+     * @hash   462700853
      */
     MCAPI SeatDescription(struct SeatDescription const &);
     /**
      * @symbol ?addRotationExpressionNode@SeatDescription@@QEAAXAEBVExpressionNode@@@Z
-     * @hash   -1957506108
+     * @hash   -1813371484
      */
     MCAPI void addRotationExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ??4SeatDescription@@QEAAAEAU0@AEBU0@@Z
-     * @hash   -940754930
+     * @hash   -796620306
      */
     MCAPI struct SeatDescription & operator=(struct SeatDescription const &);
     /**
      * @symbol ??4SeatDescription@@QEAAAEAU0@$$QEAU0@@Z
-     * @hash   -536650434
+     * @hash   -392515810
      */
     MCAPI struct SeatDescription & operator=(struct SeatDescription &&);
     /**
      * @symbol ??8SeatDescription@@QEBA_NAEBU0@@Z
-     * @hash   -1365740492
+     * @hash   -1221605868
      */
     MCAPI bool operator==(struct SeatDescription const &) const;
     /**
      * @symbol ??1SeatDescription@@QEAA@XZ
-     * @hash   2083852851
+     * @hash   -2072176909
      */
     MCAPI ~SeatDescription();
     /**
      * @symbol ?EMPTY@SeatDescription@@2U1@B
-     * @hash   -1841418937
+     * @hash   -972736441
      */
     MCAPI static struct SeatDescription const EMPTY;
 

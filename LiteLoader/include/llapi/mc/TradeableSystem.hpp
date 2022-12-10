@@ -37,13 +37,13 @@ public:
     virtual ~TradeableSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@TradeableSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1334960621
+     * @hash   1489673933
      */
     virtual void tick(class EntityRegistry &);
 

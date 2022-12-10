@@ -535,7 +535,8 @@ Local<Value> McClass::spawnParticle(const Arguments& args) {
             return Local<Value>();
         }
 
-        Global<Level>->spawnParticleEffect(type.toStr(), pos.getVec3(), Global<Level>->getDimension(pos.dim));
+        Global<Level>->spawnParticleEffect(type.toStr(), pos.getVec3(),
+                                           (Dimension*)Global<Level>->getDimension(pos.dim).mHandle.lock().get());
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in SpawnParticle!")

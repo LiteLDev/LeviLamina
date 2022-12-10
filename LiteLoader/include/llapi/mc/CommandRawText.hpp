@@ -39,7 +39,7 @@ public:
 public:
     /**
      * @symbol ?getText@CommandRawText@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   569462492
+     * @hash   662733308
      */
     MCAPI std::string const & getText() const;
 

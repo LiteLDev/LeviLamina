@@ -39,87 +39,87 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@WorkGoal@@UEAA_NXZ
-     * @hash   862809836
+     * @hash   1033821708
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@WorkGoal@@UEAA_NXZ
-     * @hash   -1050497334
+     * @hash   -879485462
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@WorkGoal@@UEAAXXZ
-     * @hash   -408964539
+     * @hash   -237952667
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@WorkGoal@@UEAAXXZ
-     * @hash   1724333605
+     * @hash   1895345477
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@WorkGoal@@UEAAXXZ
-     * @hash   -181511504
+     * @hash   -10499632
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1258491820
+     * @hash   -1087479948
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  18
      * @symbol ?useWorkstation@WorkGoal@@UEAAXXZ
-     * @hash   -405751233
+     * @hash   -234739361
      */
     virtual void useWorkstation();
     /**
      * @symbol ??0WorkGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -91067511
+     * @hash   79944361
      */
     MCAPI WorkGoal(class Mob &);
     /**
      * @symbol ?playPOISoundEvent@WorkGoal@@QEBAXXZ
-     * @hash   -355114751
+     * @hash   -184102879
      */
     MCAPI void playPOISoundEvent() const;
 
 //private:
     /**
      * @symbol ?_isInsideOrIsNotRaining@WorkGoal@@AEAA_NXZ
-     * @hash   -2034912097
+     * @hash   -1863900225
      */
     MCAPI bool _isInsideOrIsNotRaining();
 
 private:
     /**
      * @symbol ?RAIN_CHECK_MAX_COOLDOWN@WorkGoal@@0HB
-     * @hash   1178935468
+     * @hash   1934465980
      */
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
     /**
      * @symbol ?WORK_TIMESTAMP_UPDATE_INVERVAL@WorkGoal@@0HB
-     * @hash   1443777770
+     * @hash   -2095659014
      */
     MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 

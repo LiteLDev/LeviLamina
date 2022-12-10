@@ -46,271 +46,271 @@ public:
     virtual ~ArmorItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  12
      * @symbol ?isArmor@ArmorItem@@UEBA_NXZ
-     * @hash   214626283
+     * @hash   311126059
      */
     virtual bool isArmor() const;
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  18
      * @symbol ?isDyeable@ArmorItem@@UEBA_NXZ
-     * @hash   -1398856586
+     * @hash   -642418890
      */
     virtual bool isDyeable() const;
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -214809438
+     * @hash   -118063646
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  60
      * @symbol ?appendFormattedHovertext@ArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     * @hash   -1605896531
+     * @hash   -849827859
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl  61
      * @symbol ?isValidRepairItem@ArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-     * @hash   392069594
+     * @hash   1148507290
      */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /**
      * @vftbl  62
      * @symbol ?getEnchantSlot@ArmorItem@@UEBAHXZ
-     * @hash   -1590256774
+     * @hash   -834141974
      */
     virtual int getEnchantSlot() const;
     /**
      * @vftbl  63
      * @symbol ?getEnchantValue@ArmorItem@@UEBAHXZ
-     * @hash   -1640342073
+     * @hash   -884227273
      */
     virtual int getEnchantValue() const;
     /**
      * @vftbl  64
      * @symbol ?getArmorValue@ArmorItem@@UEBAHXZ
-     * @hash   -1406287951
+     * @hash   -650173151
      */
     virtual int getArmorValue() const;
     /**
      * @vftbl  65
      * @symbol ?getToughnessValue@ArmorItem@@UEBAHXZ
-     * @hash   735986894
+     * @hash   1492424590
      */
     virtual int getToughnessValue() const;
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  68
      * @symbol ?getDamageChance@ArmorItem@@UEBAHH@Z
-     * @hash   -375774837
+     * @hash   380339963
      */
     virtual int getDamageChance(int) const;
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -158474657
+     * @hash   -61728865
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  73
      * @symbol ?getColor@ArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     * @hash   -2136966233
+     * @hash   -1380851433
      */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /**
      * @vftbl  74
      * @symbol ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
-     * @hash   2107313158
+     * @hash   -1431216442
      */
     virtual bool hasCustomColor(class CompoundTag const *) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  76
      * @symbol ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
-     * @hash   -2068758470
+     * @hash   -1312643670
      */
     virtual void clearColor(class ItemStackBase &) const;
     /**
      * @vftbl  78
      * @symbol ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-     * @hash   -1573877484
+     * @hash   -817439788
      */
     virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  82
      * @symbol ?buildIdAux@ArmorItem@@UEBAHFPEBVCompoundTag@@@Z
-     * @hash   788002520
+     * @hash   1544117320
      */
     virtual int buildIdAux(short, class CompoundTag const *) const;
     /**
      * @vftbl  84
      * @symbol ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     * @hash   401684796
+     * @hash   1158107116
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
      * @vftbl  85
      * @symbol ?dispense@ArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     * @hash   1299126798
+     * @hash   2055241598
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl  89
      * @symbol ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     * @hash   -863993392
+     * @hash   -775027856
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
      * @vftbl  93
      * @symbol ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     * @hash   1425514617
+     * @hash   1522014393
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
      * @vftbl  113
      * @symbol ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
-     * @hash   516302601
+     * @hash   1272417401
      */
     virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @vftbl  114
      * @symbol ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@@XZ
-     * @hash   -1999670486
+     * @hash   -1243555686
      */
     virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -1386262999
+     * @hash   -630148199
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  133
      * @symbol ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
-     * @hash   1076387831
+     * @hash   1832502631
      */
     virtual float getArmorKnockbackResistance() const;
     /**
      * @symbol ??0ArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVArmorMaterial@0@HW4ArmorSlot@@@Z
-     * @hash   2053711935
+     * @hash   -1485186689
      */
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot);
     /**
      * @symbol ?CHAIN@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   -1310767094
+     * @hash   -672109558
      */
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     /**
      * @symbol ?DIAMOND@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   1507032016
+     * @hash   2145689552
      */
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
     /**
      * @symbol ?ELYTRA@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   776511624
+     * @hash   1415169160
      */
     MCAPI static class ArmorItem::ArmorMaterial const ELYTRA;
     /**
      * @symbol ?GOLD@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   467155430
+     * @hash   1105812966
      */
     MCAPI static class ArmorItem::ArmorMaterial const GOLD;
     /**
      * @symbol ?IRON@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   1322096278
+     * @hash   1960753814
      */
     MCAPI static class ArmorItem::ArmorMaterial const IRON;
     /**
      * @symbol ?LEATHER@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   1649453690
+     * @hash   -2006856070
      */
     MCAPI static class ArmorItem::ArmorMaterial const LEATHER;
     /**
      * @symbol ?NETHERITE@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   -1820034868
+     * @hash   -1181377332
      */
     MCAPI static class ArmorItem::ArmorMaterial const NETHERITE;
     /**
      * @symbol ?TURTLE@ArmorItem@@2VArmorMaterial@1@B
-     * @hash   -1821042114
+     * @hash   -1182384578
      */
     MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
     /**
      * @symbol ?dispenseArmor@ArmorItem@@SA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@EW4ArmorSlot@@@Z
-     * @hash   -589970479
+     * @hash   166144321
      */
     MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum class ArmorSlot);
     /**
      * @symbol ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z
-     * @hash   1914476655
+     * @hash   -1624375841
      */
     MCAPI static enum class ArmorSlot getSlotForItem(class ItemStackBase const &);
     /**
      * @symbol ?isDamageable@ArmorItem@@SA_NAEBVItemDescriptor@@@Z
-     * @hash   -824088835
+     * @hash   -67651139
      */
     MCAPI static bool isDamageable(class ItemDescriptor const &);
     /**
      * @symbol ?mHealthPerSlot@ArmorItem@@2QBHB
-     * @hash   -450944760
+     * @hash   328533872
      */
     MCAPI static int const mHealthPerSlot[];
 
 //private:
     /**
      * @symbol ?getTierItem@ArmorItem@@AEBA?AVItemInstance@@XZ
-     * @hash   513456357
+     * @hash   1269894053
      */
     MCAPI class ItemInstance getTierItem() const;
 

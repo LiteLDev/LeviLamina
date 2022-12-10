@@ -38,13 +38,13 @@ public:
     /**
      * @vftbl  1
      * @symbol ?fits@FitDoubleYZRoom@@UEBA_NAEBVRoomDefinition@@@Z
-     * @hash   1146636821
+     * @hash   1318509749
      */
     virtual bool fits(class RoomDefinition const &) const;
     /**
      * @vftbl  2
      * @symbol ?create@FitDoubleYZRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z
-     * @hash   968029374
+     * @hash   1139902302
      */
     virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
 

@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ?applyShortestPathBlend@BoneOrientation@@QEAAXAEBV1@0MM@Z
-     * @hash   312895284
+     * @hash   396909748
      */
     MCAPI void applyShortestPathBlend(class BoneOrientation const &, class BoneOrientation const &, float, float);
     /**
      * @symbol ?getName@BoneOrientation@@QEBAAEBVHashedString@@XZ
-     * @hash   -1374337994
+     * @hash   -1281067178
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getPivot@BoneOrientation@@QEAAAEAVVec3@@XZ
-     * @hash   -367392680
+     * @hash   -283378216
      */
     MCAPI class Vec3 & getPivot();
     /**
      * @symbol ?getPivot@BoneOrientation@@QEBAAEBVVec3@@XZ
-     * @hash   -1155831018
+     * @hash   -1071816554
      */
     MCAPI class Vec3 const & getPivot() const;
     /**
      * @symbol ?setDefaultPose@BoneOrientation@@QEAAXXZ
-     * @hash   1101138707
+     * @hash   1185153171
      */
     MCAPI void setDefaultPose();
 

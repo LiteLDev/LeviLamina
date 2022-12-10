@@ -39,34 +39,34 @@ public:
     /**
      * @vftbl  1
      * @symbol ?asString@TextObjectSelector@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1190704290
+     * @hash   1116837986
      */
     virtual std::string asString() const;
     /**
      * @vftbl  2
      * @symbol ?asJsonValue@TextObjectSelector@@UEBA?AVValue@Json@@XZ
-     * @hash   1661395106
+     * @hash   1648463890
      */
     virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl  3
      * @symbol ?resolve@TextObjectSelector@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
-     * @hash   -18143715
+     * @hash   -31074931
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
      * @symbol ??0TextObjectSelector@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1106399888
+     * @hash   1093468672
      */
     MCAPI TextObjectSelector(std::string);
     /**
      * @symbol ?RAW_TEXT_SELECTOR_KEY@TextObjectSelector@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   520796539
+     * @hash   2021325003
      */
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     /**
      * @symbol ?RAW_TEXT_SELECTOR_STAR@TextObjectSelector@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -346302029
+     * @hash   1154226435
      */
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
 

@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@MinecartPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -459490218
+     * @hash   -406058618
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doMinecartPostNormalTickSystem@MinecartPostNormalTickSystem@@CAXAEBVStrictEntityContext@@AEBUMinecartPreNormalTickBlockPosComponent@@AEAVActorOwnerComponent@@@Z
-     * @hash   -1404033159
+     * @hash   -1350601559
      */
     MCAPI static void _doMinecartPostNormalTickSystem(class StrictEntityContext const &, struct MinecartPreNormalTickBlockPosComponent const &, class ActorOwnerComponent &);
 

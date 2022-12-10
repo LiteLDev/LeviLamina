@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@OnPlayerDestroyedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -716928820
+     * @hash   -142512212
      */
     virtual std::string const & getName() const;
     /**
      * @symbol ?NameID@OnPlayerDestroyedTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1363787291
+     * @hash   -1147417933
      */
     MCAPI static std::string const NameID;
 

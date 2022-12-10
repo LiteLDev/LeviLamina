@@ -45,118 +45,118 @@ public:
     virtual ~SparklerItem();
     /**
      * @vftbl  7
-     * @hash   -1350044025
+     * @hash   -1253298233
      */
     virtual void __unk_vfn_7();
     /**
      * @vftbl  11
-     * @hash   -331173084
+     * @hash   -234427292
      */
     virtual void __unk_vfn_11();
     /**
      * @vftbl  14
-     * @hash   -328402521
+     * @hash   -231656729
      */
     virtual void __unk_vfn_14();
     /**
      * @vftbl  16
-     * @hash   -326555479
+     * @hash   -229809687
      */
     virtual void __unk_vfn_16();
     /**
      * @vftbl  49
      * @symbol ?isHandEquipped@SparklerItem@@UEBA_NXZ
-     * @hash   1140430961
+     * @hash   1236930737
      */
     virtual bool isHandEquipped() const;
     /**
      * @vftbl  51
-     * @hash   -216656480
+     * @hash   -119910688
      */
     virtual void __unk_vfn_51();
     /**
      * @vftbl  53
-     * @hash   -222020782
+     * @hash   -125521006
      */
     virtual void __unk_vfn_53();
     /**
      * @vftbl  66
-     * @hash   -183409724
+     * @hash   -86663932
      */
     virtual void __unk_vfn_66();
     /**
      * @vftbl  70
-     * @hash   -160321699
+     * @hash   -63575907
      */
     virtual void __unk_vfn_70();
     /**
      * @vftbl  71
-     * @hash   -159398178
+     * @hash   -62652386
      */
     virtual void __unk_vfn_71();
     /**
      * @vftbl  72
-     * @hash   -165686001
+     * @hash   -69186225
      */
     virtual void __unk_vfn_72();
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -1024298074
+     * @hash   -275840522
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -1003980612
+     * @hash   -255523060
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  95
      * @symbol ?buildDescriptionId@SparklerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     * @hash   208564683
+     * @hash   802155163
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl  101
      * @symbol ?inventoryTick@SparklerItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-     * @hash   714932495
+     * @hash   1308522975
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
      * @vftbl  117
      * @symbol ?setIconInfo@SparklerItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   733141579
+     * @hash   1451047019
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
      * @vftbl  118
      * @symbol ?getIconInfo@SparklerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-     * @hash   -1101594586
+     * @hash   -508004106
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl  122
      * @symbol ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
-     * @hash   -1501026838
+     * @hash   -910265542
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
      * @symbol ??0SparklerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   840196893
+     * @hash   1433787373
      */
     MCAPI SparklerItem(std::string const &, int);
     /**
      * @symbol ?COLORS@SparklerItem@@2QBUColorInfo@1@B
-     * @hash   -2124545159
+     * @hash   -1337209391
      */
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     /**
      * @symbol ?MAX_ACTIVE_TICKS@SparklerItem@@2HB
-     * @hash   -1080635215
+     * @hash   -293299447
      */
     MCAPI static int const MAX_ACTIVE_TICKS;
 

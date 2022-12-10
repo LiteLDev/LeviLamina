@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0POIBlueprint@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_N_K3000@Z
-     * @hash   1377769070
+     * @hash   1421206270
      */
     MCAPI POIBlueprint(std::string, enum POIType, float, bool, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
 

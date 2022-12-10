@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?reloadComponent@AddRiderComponent@@QEAAXAEAVActor@@@Z
-     * @hash   105930178
+     * @hash   622425394
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ??1AddRiderComponent@@QEAA@XZ
-     * @hash   -1220815248
+     * @hash   -1065148624
      */
     MCAPI ~AddRiderComponent();
 

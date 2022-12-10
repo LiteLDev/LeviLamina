@@ -37,59 +37,59 @@ public:
     virtual ~GameTestLevelListener();
     /**
      * @vftbl  1
-     * @hash   -1154497823
+     * @hash   -1052585695
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1153574302
+     * @hash   -1051662174
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1152650781
+     * @hash   -1050738653
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1151727260
+     * @hash   -1049815132
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1150803739
+     * @hash   -1048891611
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1149880218
+     * @hash   -1047968090
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?onLevelScriptTick@GameTestLevelListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-     * @hash   -1521937233
+     * @hash   -1005149873
      */
     virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
      * @vftbl  8
-     * @hash   -1148033176
+     * @hash   -1046121048
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1147109655
+     * @hash   -1045197527
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  10
      * @symbol ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-     * @hash   526450524
+     * @hash   1043237884
      */
     virtual enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
      * @symbol ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z
-     * @hash   -1100520831
+     * @hash   -583733471
      */
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 

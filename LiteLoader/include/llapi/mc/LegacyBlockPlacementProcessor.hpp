@@ -32,27 +32,27 @@ public:
 public:
     /**
      * @symbol ??0LegacyBlockPlacementProcessor@@QEAA@AEBVLegacyStructureSettings@@@Z
-     * @hash   1553552494
+     * @hash   -1984961730
      */
     MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const &);
     /**
      * @symbol ?applyBlockRules@LegacyBlockPlacementProcessor@@QEAAPEBVBlock@@AEAVBlockSource@@AEAVBlockPos@@PEBV2@AEBV4@@Z
-     * @hash   2011652716
+     * @hash   -1526861508
      */
     MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
     /**
      * @symbol ?applyGravity@LegacyBlockPlacementProcessor@@QEBAAEAVBlockPos@@AEAVBlockSource@@HAEAV2@@Z
-     * @hash   -387547080
+     * @hash   368905992
      */
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     /**
      * @symbol ?canPlace@LegacyBlockPlacementProcessor@@QEAA_NXZ
-     * @hash   1768260254
+     * @hash   -1770253970
      */
     MCAPI bool canPlace();
     /**
      * @symbol ??1LegacyBlockPlacementProcessor@@QEAA@XZ
-     * @hash   -472157587
+     * @hash   283618941
      */
     MCAPI ~LegacyBlockPlacementProcessor();
 

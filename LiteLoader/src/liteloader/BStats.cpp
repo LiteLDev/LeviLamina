@@ -224,9 +224,8 @@ nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int
 
 nlohmann::json getCustomCharts() {
     nlohmann::json pluginsJson;
-
     pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", ll::getLoaderVersion().toString(false)));
-    pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1)));
+    pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1)));//bad
     pluginsJson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));
     pluginsJson.emplace_back(addAdvancedPie("player_platform", playerPlatList));
 
@@ -246,6 +245,7 @@ string createJson() {
     json["coreCount"] = getCpuCoreCount();
     return json.dump();
 }
+
 
 void submitTask() {
     playerAmount = Global<ServerNetworkHandler>->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);

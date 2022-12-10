@@ -39,24 +39,24 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@MobEffectResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1890908377
+     * @hash   -1420987065
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?executeAction@MobEffectResponse@@UEBAXAEAVRenderParams@@@Z
-     * @hash   1597737095
+     * @hash   2067658407
      */
     virtual void executeAction(class RenderParams &) const;
     /**
      * @vftbl  3
      * @symbol ?buildSchema@MobEffectResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
-     * @hash   1045325397
+     * @hash   1515246709
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     /**
      * @symbol ?NameID@MobEffectResponse@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -2135042127
+     * @hash   -351180111
      */
     MCAPI static std::string const NameID;
 

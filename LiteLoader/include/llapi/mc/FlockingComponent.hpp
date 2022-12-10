@@ -31,67 +31,67 @@ public:
 public:
     /**
      * @symbol ??0FlockingComponent@@QEAA@XZ
-     * @hash   1723061592
+     * @hash   1708054616
      */
     MCAPI FlockingComponent();
     /**
      * @symbol ??0FlockingComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -1319873999
+     * @hash   -1158041599
      */
     MCAPI FlockingComponent(class FlockingComponent &&);
     /**
      * @symbol ?addFlockMember@FlockingComponent@@QEAAXUActorUniqueID@@@Z
-     * @hash   1729699624
+     * @hash   1714692648
      */
     MCAPI void addFlockMember(struct ActorUniqueID);
     /**
      * @symbol ?breakFlock@FlockingComponent@@QEAAXAEBVActor@@@Z
-     * @hash   1858415652
+     * @hash   1843408676
      */
     MCAPI void breakFlock(class Actor const &);
     /**
      * @symbol ?calculateFlockVector@FlockingComponent@@QEAAXAEBVActor@@@Z
-     * @hash   301947804
+     * @hash   286940828
      */
     MCAPI void calculateFlockVector(class Actor const &);
     /**
      * @symbol ?calculateGoalHeading@FlockingComponent@@QEAAXAEAVMob@@@Z
-     * @hash   -194804428
+     * @hash   -209811404
      */
     MCAPI void calculateGoalHeading(class Mob &);
     /**
      * @symbol ?canJoinFlock@FlockingComponent@@QEBA_NAEAVActor@@@Z
-     * @hash   -1817930315
+     * @hash   -1832937291
      */
     MCAPI bool canJoinFlock(class Actor &) const;
     /**
      * @symbol ?joinFlock@FlockingComponent@@QEAAXAEAVActor@@@Z
-     * @hash   718543836
+     * @hash   703536860
      */
     MCAPI void joinFlock(class Actor &);
     /**
      * @symbol ?manageNeighborhood@FlockingComponent@@QEAAXAEAVActor@@@Z
-     * @hash   1139298566
+     * @hash   1124291590
      */
     MCAPI void manageNeighborhood(class Actor &);
     /**
      * @symbol ?mergeNeighborhoods@FlockingComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -501404910
+     * @hash   -516411886
      */
     MCAPI void mergeNeighborhoods(class Actor &);
     /**
      * @symbol ??4FlockingComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -598855252
+     * @hash   -437022852
      */
     MCAPI class FlockingComponent & operator=(class FlockingComponent &&);
     /**
      * @symbol ?updateNeighborhoodData@FlockingComponent@@QEAAXAEBVActor@@@Z
-     * @hash   1481251078
+     * @hash   1466244102
      */
     MCAPI void updateNeighborhoodData(class Actor const &);
     /**
      * @symbol ?validateVariantEntityTypes@FlockingComponent@@QEBA_NAEBVActor@@0@Z
-     * @hash   -1501706291
+     * @hash   -1516713267
      */
     MCAPI bool validateVariantEntityTypes(class Actor const &, class Actor const &) const;
 

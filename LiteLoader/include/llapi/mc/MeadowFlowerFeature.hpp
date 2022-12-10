@@ -38,19 +38,19 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@MeadowFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1921602130
+     * @hash   2078975490
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0MeadowFlowerFeature@@QEAA@XZ
-     * @hash   1488041028
+     * @hash   1645414388
      */
     MCAPI MeadowFlowerFeature();
 
 //private:
     /**
      * @symbol ?getRandomArrayIndex@MeadowFlowerFeature@@AEBAHAEBVBlockPos@@_KM@Z
-     * @hash   -1108145972
+     * @hash   -950772612
      */
     MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
 

@@ -31,19 +31,19 @@ public:
 public:
     /**
      * @symbol ??0BeardKernel@@QEAA@XZ
-     * @hash   1979798425
+     * @hash   -1556763047
      */
     MCAPI BeardKernel();
     /**
      * @symbol ?getContribution@BeardKernel@@QEBAMHHH@Z
-     * @hash   703586711
+     * @hash   1461992535
      */
     MCAPI float getContribution(int, int, int) const;
 
 //private:
     /**
      * @symbol ?createBeardKernel@BeardKernel@@AEAA?BV?$array@M$0DGAA@@std@@XZ
-     * @hash   -2047663770
+     * @hash   -1289257946
      */
     MCAPI class std::array<float, 13824> const createBeardKernel();
 

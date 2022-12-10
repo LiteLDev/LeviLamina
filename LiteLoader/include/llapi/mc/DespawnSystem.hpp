@@ -37,13 +37,13 @@ public:
     virtual ~DespawnSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@DespawnSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -645933207
+     * @hash   -532858103
      */
     virtual void tick(class EntityRegistry &);
 

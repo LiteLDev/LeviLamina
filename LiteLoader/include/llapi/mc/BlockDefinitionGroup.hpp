@@ -39,109 +39,114 @@ public:
 public:
     /**
      * @symbol ??0BlockDefinitionGroup@@QEAA@XZ
-     * @hash   -387454261
+     * @hash   323270587
      */
     MCAPI BlockDefinitionGroup();
     /**
      * @symbol ?buildBlockSchema@BlockDefinitionGroup@@QEAAXAEBVBlockComponentFactory@@@Z
-     * @hash   1153078252
+     * @hash   1864110620
      */
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);
     /**
      * @symbol ?digestServerBlockProperties@BlockDefinitionGroup@@QEAAXAEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@AEBVBlockComponentFactory@@@Z
-     * @hash   -1614196458
+     * @hash   -903164090
      */
     MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const &, class BlockComponentFactory const &);
     /**
      * @symbol ?generateBlockDefinition@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@AEBUBlockResource@1@AEBVExperiments@@@Z
-     * @hash   -1343222290
+     * @hash   -631621010
      */
     MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const &, class Experiments const &);
     /**
      * @symbol ?generateServerBlockProperties@BlockDefinitionGroup@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@XZ
-     * @hash   1187948181
+     * @hash   1899549461
      */
     MCAPI std::vector<struct std::pair<std::string, class CompoundTag>> generateServerBlockProperties() const;
     /**
      * @symbol ?getBlockDefinitions@BlockDefinitionGroup@@QEBA?AV?$vector@PEBUBlockDefinition@@V?$allocator@PEBUBlockDefinition@@@std@@@std@@XZ
-     * @hash   -256674818
+     * @hash   454864958
      */
     MCAPI std::vector<struct BlockDefinition const *> getBlockDefinitions() const;
     /**
+     * @symbol ?initBlockLegacyFromDefinition@BlockDefinitionGroup@@QEAAXAEAVBlockLegacy@@AEBUBlockDefinition@@@Z
+     * @hash   66308949
+     */
+    MCAPI void initBlockLegacyFromDefinition(class BlockLegacy &, struct BlockDefinition const &);
+    /**
      * @symbol ?initializeBlockFromDefinition@BlockDefinitionGroup@@QEAAXAEBUBlockDefinition@@AEAVEntityRegistry@@AEAVLevel@@@Z
-     * @hash   -928429264
+     * @hash   -216428208
      */
     MCAPI void initializeBlockFromDefinition(struct BlockDefinition const &, class EntityRegistry &, class Level &);
     /**
      * @symbol ?initializeBlocks@BlockDefinitionGroup@@QEAAXAEAVEntityRegistry@@AEAVLevel@@@Z
-     * @hash   -2097484453
+     * @hash   -1385667909
      */
     MCAPI void initializeBlocks(class EntityRegistry &, class Level &);
     /**
      * @symbol ?loadResources@BlockDefinitionGroup@@QEAAXAEAVResourcePackManager@@AEBVBlockComponentFactory@@AEBVExperiments@@@Z
-     * @hash   1895225522
+     * @hash   -1687925230
      */
     MCAPI void loadResources(class ResourcePackManager &, class BlockComponentFactory const &, class Experiments const &);
     /**
      * @symbol ?registerBlockDefinition@BlockDefinitionGroup@@QEAAXV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@@Z
-     * @hash   -217023406
+     * @hash   494823890
      */
     MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition>);
     /**
      * @symbol ?registerBlockFromDefinition@BlockDefinitionGroup@@QEAAXAEBUBlockDefinition@@_N@Z
-     * @hash   -633714155
+     * @hash   78133141
      */
     MCAPI void registerBlockFromDefinition(struct BlockDefinition const &, bool);
     /**
      * @symbol ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ
-     * @hash   146761845
+     * @hash   858609141
      */
     MCAPI void registerBlocks();
     /**
      * @symbol ??1BlockDefinitionGroup@@QEAA@XZ
-     * @hash   1974197321
+     * @hash   -1610091255
      */
     MCAPI ~BlockDefinitionGroup();
 
 //private:
     /**
      * @symbol ?_buildBlockComponentsSchema@BlockDefinitionGroup@@AEAAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-     * @hash   -388977743
+     * @hash   321716353
      */
     MCAPI void _buildBlockComponentsSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &);
     /**
      * @symbol ?_buildBlockDescriptionSchema@BlockDefinitionGroup@@AEAAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockDescription@@@JsonUtil@@@std@@@Z
-     * @hash   1964720978
+     * @hash   -1619383086
      */
     MCAPI void _buildBlockDescriptionSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
     /**
      * @symbol ?_buildBlockMenuCategorySchema@BlockDefinitionGroup@@AEAAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockDescription@@@JsonUtil@@@std@@@Z
-     * @hash   888628245
+     * @hash   1599614485
      */
     MCAPI void _buildBlockMenuCategorySchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
     /**
      * @symbol ?_loadBlockDescription@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDescription@@@Z
-     * @hash   1639663077
+     * @hash   -1944056587
      */
     MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &);
     /**
      * @symbol ?_loadComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@AEBVExperiments@@@Z
-     * @hash   -470890942
+     * @hash   240187554
      */
     MCAPI bool _loadComponents(class Json::Value const &, struct BlockDefinition &, class Experiments const &);
     /**
      * @symbol ?_loadEvents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@@Z
-     * @hash   1668960388
+     * @hash   -1914928412
      */
     MCAPI bool _loadEvents(class Json::Value const &, struct BlockDefinition &);
     /**
      * @symbol ?_parseComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockComponentGroupDescription@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@3AEBVExperiments@@@Z
-     * @hash   1958919876
+     * @hash   -1624968924
      */
     MCAPI bool _parseComponents(class Json::Value const &, struct BlockComponentGroupDescription &, std::string const &, class SemVersion const &, class SemVersion const &, class Experiments const &);
     /**
      * @symbol ?_stringToCreativeItemCategory@BlockDefinitionGroup@@AEAA?AW4CreativeItemCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1666478514
+     * @hash   -1917410286
      */
     MCAPI enum class CreativeItemCategory _stringToCreativeItemCategory(std::string const &);
 

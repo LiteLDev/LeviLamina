@@ -37,13 +37,13 @@ public:
     virtual ~BalloonSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@BalloonSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1476523502
+     * @hash   1633989118
      */
     virtual void tick(class EntityRegistry &);
 

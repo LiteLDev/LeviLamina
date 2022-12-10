@@ -39,23 +39,23 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
-     * @hash   761904443
+     * @hash   858404219
      */
     virtual bool isInstantaneous() const;
     /**
      * @vftbl  2
      * @symbol ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
-     * @hash   1353864552
+     * @hash   1450610344
      */
     virtual bool isSerializable() const;
     /**
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
-     * @hash   1717976685
+     * @hash   1771254525
      */
     MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
     /**
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MAEBVActorDamageSource@@@Z
-     * @hash   -1638702661
+     * @hash   -1585424821
      */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
 

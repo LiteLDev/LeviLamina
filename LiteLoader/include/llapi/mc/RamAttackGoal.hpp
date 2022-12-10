@@ -38,78 +38,83 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@RamAttackGoal@@UEAA_NXZ
-     * @hash   242294087
+     * @hash   404187991
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@RamAttackGoal@@UEAA_NXZ
-     * @hash   1109197013
+     * @hash   1271090917
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@RamAttackGoal@@UEAAXXZ
-     * @hash   -1791419360
+     * @hash   -1629525456
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@RamAttackGoal@@UEAAXXZ
-     * @hash   2107992352
+     * @hash   -2025081040
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@RamAttackGoal@@UEAAXXZ
-     * @hash   1623624299
+     * @hash   1785533579
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@RamAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -2011631431
+     * @hash   -1849783655
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0RamAttackGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -446179580
+     * @hash   -284777708
      */
     MCAPI RamAttackGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_initiateRamAttack@RamAttackGoal@@IEAA_NXZ
-     * @hash   1706266610
+     * @hash   1867668482
      */
     MCAPI bool _initiateRamAttack();
 
 //private:
     /**
      * @symbol ?_hasChargePath@RamAttackGoal@@AEAA_NXZ
-     * @hash   84132177
+     * @hash   245534049
      */
     MCAPI bool _hasChargePath();
     /**
      * @symbol ?_pathablePos@RamAttackGoal@@AEAA_NAEBVBlockSource@@VBlockPos@@@Z
-     * @hash   -207795570
+     * @hash   -46393698
      */
     MCAPI bool _pathablePos(class BlockSource const &, class BlockPos);
     /**
      * @symbol ?_resetCooldown@RamAttackGoal@@AEAAXXZ
-     * @hash   -1492438482
+     * @hash   -1331036610
      */
     MCAPI void _resetCooldown();
     /**
      * @symbol ?_tryKnockbackTarget@RamAttackGoal@@AEAAXXZ
-     * @hash   -75012605
+     * @hash   86389267
      */
     MCAPI void _tryKnockbackTarget();
+    /**
+     * @symbol ?_verifyTargetStillInPositionAndPrepareForRamAttack@RamAttackGoal@@AEAA_NXZ
+     * @hash   1439449367
+     */
+    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
 
 protected:
 

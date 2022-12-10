@@ -22,32 +22,32 @@ namespace ActorValueValidation {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_fireTelemetryEvent@ActorValueValidation@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
-     * @hash   1835041341
+     * @hash   1885689885
      */
     MCAPI void _fireTelemetryEvent(std::string const &, char const *);
     /**
      * @symbol ?_fireTelemetryEvent@ActorValueValidation@@YAXAEBVVec3@@PEBD@Z
-     * @hash   -426804813
+     * @hash   -376156269
      */
     MCAPI void _fireTelemetryEvent(class Vec3 const &, char const *);
     /**
      * @symbol ?isLegalPlayerPosition@ActorValueValidation@@YA_NAEBVVec3@@PEBD@Z
-     * @hash   782547504
+     * @hash   833196048
      */
     MCAPI bool isLegalPlayerPosition(class Vec3 const &, char const *);
     /**
      * @symbol ?validateBlockPos@ActorValueValidation@@YAXAEBVBlockPos@@PEBD@Z
-     * @hash   -224896555
+     * @hash   -174248011
      */
     MCAPI void validateBlockPos(class BlockPos const &, char const *);
     /**
      * @symbol ?validateVec3Position@ActorValueValidation@@YAXAEBVVec3@@PEBD@Z
-     * @hash   -209001467
+     * @hash   -158352923
      */
     MCAPI void validateVec3Position(class Vec3 const &, char const *);
     /**
      * @symbol ?validateYHeadRot@ActorValueValidation@@YAXMPEBD@Z
-     * @hash   -644980829
+     * @hash   -594332285
      */
     MCAPI void validateYHeadRot(float, char const *);
 

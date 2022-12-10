@@ -55,6 +55,8 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceFunction("setNbt", &ItemClass::setNbt)
         .instanceFunction("getNbt", &ItemClass::getNbt)
 
+        .instanceFunction("match", &ItemClass::match)
+
         // For Compatibility
         .instanceFunction("setTag", &ItemClass::setNbt)
         .instanceFunction("getTag", &ItemClass::getNbt)
@@ -321,7 +323,7 @@ Local<Value> ItemClass::isNull(const Arguments& args) {
 
 Local<Value> ItemClass::setNull(const Arguments& args) {
     try {
-        item->setNull();
+        item->setNull({});
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setNull!");
@@ -500,4 +502,22 @@ Local<Value> McClass::spawnItem(const Arguments& args) {
         }
     }
     CATCH("Fail in SpawnItem!");
+}
+
+Local<Value> ItemClass::match(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kObject)
+    if (!IsInstanceOf<ItemClass>(args[0])) {
+        LOG_WRONG_ARG_TYPE();
+        return Boolean::newBoolean(false);
+    }
+
+    try {
+        ItemStackBase itemNew = *ItemClass::extract(args[0]);
+        if (!itemNew)
+            return Boolean::newBoolean(false);
+
+        return Boolean::newBoolean(item->matchesItem(itemNew));
+    }
+    CATCH("Fail in MatchItem!");
 }

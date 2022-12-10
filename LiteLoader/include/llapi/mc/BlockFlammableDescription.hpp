@@ -38,38 +38,38 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockFlammableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -595408747
+     * @hash   -48361419
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockFlammableDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1623573585
+     * @hash   -1076526257
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @symbol ?CATCH_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
-     * @hash   -747320365
+     * @hash   37539867
      */
     MCAPI static int const CATCH_CHANCE_DEFAULT;
     /**
      * @symbol ?DESTROY_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
-     * @hash   1488622681
+     * @hash   -2021484383
      */
     MCAPI static int const DESTROY_CHANCE_DEFAULT;
     /**
      * @symbol ?NameID@BlockFlammableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1617999013
+     * @hash   -895143587
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockFlammableDescription@@SAXXZ
-     * @hash   -1220756817
+     * @hash   -674170769
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockFlammableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   1787501952
+     * @hash   -1960418016
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

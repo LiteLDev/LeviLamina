@@ -37,17 +37,17 @@ public:
     /**
      * @vftbl  1
      * @symbol ?validateMobType@DragonBaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     * @hash   1113131865
+     * @hash   1274195465
      */
     virtual bool validateMobType(class Mob &);
     /**
      * @symbol ??0DragonBaseGoalDefinition@@QEAA@XZ
-     * @hash   1224087542
+     * @hash   1395345430
      */
     MCAPI DragonBaseGoalDefinition();
     /**
      * @symbol ?initialize@DragonBaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVDragonBaseGoal@@@Z
-     * @hash   784300753
+     * @hash   955558641
      */
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
 

@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ??0PlayerMovementTelemetryData@@QEAA@XZ
-     * @hash   498689647
+     * @hash   1015846031
      */
     MCAPI PlayerMovementTelemetryData();
     /**
      * @symbol ?getAverage@PlayerMovementTelemetryData@@QEBAMXZ
-     * @hash   -1754018270
+     * @hash   -1236861886
      */
     MCAPI float getAverage() const;
     /**
      * @symbol ?reset@PlayerMovementTelemetryData@@QEAAXXZ
-     * @hash   674170899
+     * @hash   1191327283
      */
     MCAPI void reset();
 

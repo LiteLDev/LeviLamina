@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@EnchantCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   -1972002095
+     * @hash   -1816335471
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@EnchantCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   -1816365588
+     * @hash   -1660606708
      */
     MCAPI static void setup(class CommandRegistry &);
 

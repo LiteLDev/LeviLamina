@@ -29,12 +29,12 @@ public:
 public:
     /**
      * @symbol ??0LevelChunkBuilderData@@QEAA@XZ
-     * @hash   327056504
+     * @hash   896860312
      */
     MCAPI LevelChunkBuilderData();
     /**
      * @symbol ??1LevelChunkBuilderData@@QEAA@XZ
-     * @hash   -326108952
+     * @hash   243694856
      */
     MCAPI ~LevelChunkBuilderData();
 

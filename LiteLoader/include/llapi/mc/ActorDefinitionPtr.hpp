@@ -30,32 +30,32 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEBV0@@Z
-     * @hash   -1789081743
+     * @hash   -1764910671
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEAVActorDefinitionGroup@@AEAVActorDefinition@@@Z
-     * @hash   -243958026
+     * @hash   -219786954
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@XZ
-     * @hash   1710226370
+     * @hash   1870797938
      */
     MCAPI ActorDefinitionPtr();
     /**
      * @symbol ??4ActorDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   1155854104
+     * @hash   1180025176
      */
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     /**
      * @symbol ??1ActorDefinitionPtr@@QEAA@XZ
-     * @hash   -1133129088
+     * @hash   -1108958016
      */
     MCAPI ~ActorDefinitionPtr();
     /**
      * @symbol ?NONE@ActorDefinitionPtr@@2V1@B
-     * @hash   335354484
+     * @hash   1171393732
      */
     MCAPI static class ActorDefinitionPtr const NONE;
 

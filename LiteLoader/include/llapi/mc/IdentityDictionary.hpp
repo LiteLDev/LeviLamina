@@ -31,62 +31,62 @@ public:
 public:
     /**
      * @symbol ??0IdentityDictionary@@QEAA@XZ
-     * @hash   -617924096
+     * @hash   -56976864
      */
     MCAPI IdentityDictionary();
     /**
      * @symbol ?clearIdentity@IdentityDictionary@@QEAA_NAEBUScoreboardId@@@Z
-     * @hash   -481557695
+     * @hash   -11867023
      */
     MCAPI bool clearIdentity(struct ScoreboardId const &);
     /**
      * @symbol ?convertFakeToReal@IdentityDictionary@@QEAAAEBUScoreboardId@@AEBU2@AEBUPlayerScoreboardId@@@Z
-     * @hash   -12988799
+     * @hash   456701873
      */
     MCAPI struct ScoreboardId const & convertFakeToReal(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
      * @symbol ?getAllScoreboardIds@IdentityDictionary@@QEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@XZ
-     * @hash   588795522
+     * @hash   1058486194
      */
     MCAPI std::vector<struct ScoreboardId> getAllScoreboardIds() const;
     /**
      * @symbol ?getScoreboardId@IdentityDictionary@@QEBAAEBUScoreboardId@@AEBUActorUniqueID@@@Z
-     * @hash   1072121189
+     * @hash   1541811861
      */
     MCAPI struct ScoreboardId const & getScoreboardId(struct ActorUniqueID const &) const;
     /**
      * @symbol ?getScoreboardId@IdentityDictionary@@QEBAAEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
-     * @hash   -122786523
+     * @hash   346904149
      */
     MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
     /**
      * @symbol ?getScoreboardId@IdentityDictionary@@QEBAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1135909041
+     * @hash   1605599713
      */
     MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
     /**
      * @symbol ?registerIdentity@IdentityDictionary@@QEAAAEBUScoreboardId@@AEBU2@AEBUActorUniqueID@@@Z
-     * @hash   -1529221945
+     * @hash   -1059531273
      */
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
     /**
      * @symbol ?registerIdentity@IdentityDictionary@@QEAAAEBUScoreboardId@@AEBU2@AEBUPlayerScoreboardId@@@Z
-     * @hash   -972204433
+     * @hash   -502513761
      */
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
      * @symbol ?registerIdentity@IdentityDictionary@@QEAAAEBUScoreboardId@@AEBU2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   2234659
+     * @hash   471925331
      */
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, std::string const &);
     /**
      * @symbol ?shouldConvertFakePlayer@IdentityDictionary@@QEAA_NAEBUPlayerScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   713202970
+     * @hash   1182893642
      */
     MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const &, std::string const &);
     /**
      * @symbol ??1IdentityDictionary@@QEAA@XZ
-     * @hash   -251141378
+     * @hash   309544462
      */
     MCAPI ~IdentityDictionary();
 

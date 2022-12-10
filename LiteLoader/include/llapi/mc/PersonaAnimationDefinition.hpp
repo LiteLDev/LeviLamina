@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??1PersonaAnimationDefinition@@QEAA@XZ
-     * @hash   -1112849499
+     * @hash   -1087156203
      */
     MCAPI ~PersonaAnimationDefinition();
     /**
      * @symbol ?INVALID_ANIMATION_DEFINITION@PersonaAnimationDefinition@@2U1@B
-     * @hash   -187767773
+     * @hash   669044451
      */
     MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
-     * @hash   -257468517
+     * @hash   310474795
      */
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
@@ -41,7 +41,7 @@ public:
 private:
     /**
      * @symbol ?mAlwaysBlockableDamageCauses@ShieldItemUtils@@0V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@B
-     * @hash   231771329
+     * @hash   849579009
      */
     MCAPI static std::vector<enum class ActorDamageCause> const mAlwaysBlockableDamageCauses;
 

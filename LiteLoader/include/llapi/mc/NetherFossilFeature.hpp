@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -1290673172
+     * @hash   -1134222372
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0NetherFossilFeature@@QEAA@$$QEAV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@_N@Z
-     * @hash   1194207860
+     * @hash   1350658660
      */
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
 
@@ -53,7 +53,7 @@ public:
 private:
     /**
      * @symbol ?STRUCTURE_LOCATION_FOSSIL@NetherFossilFeature@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   -597281236
+     * @hash   817526028
      */
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 

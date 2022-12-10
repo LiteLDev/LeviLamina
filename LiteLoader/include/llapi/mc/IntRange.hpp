@@ -33,37 +33,37 @@ public:
 public:
     /**
      * @symbol ??0IntRange@@QEAA@H@Z
-     * @hash   -1061757583
+     * @hash   -1008233727
      */
     MCAPI IntRange(int);
     /**
      * @symbol ??0IntRange@@QEAA@HH@Z
-     * @hash   1214389474
+     * @hash   1386954322
      */
     MCAPI IntRange(int, int);
     /**
      * @symbol ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
-     * @hash   -1923240267
+     * @hash   -1869716411
      */
     MCAPI int getValue(class Random &) const;
     /**
      * @symbol ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
-     * @hash   2056588279
+     * @hash   2110112135
      */
     MCAPI int getValueInclusive(class Random &) const;
     /**
      * @symbol ?isInRangeInclusive@IntRange@@QEBA_NH@Z
-     * @hash   841177467
+     * @hash   1014095963
      */
     MCAPI bool isInRangeInclusive(int) const;
     /**
      * @symbol ?parseJson@IntRange@@QEAA_NVValue@Json@@HH@Z
-     * @hash   -1245720809
+     * @hash   -1192196953
      */
     MCAPI bool parseJson(class Json::Value, int, int);
     /**
      * @symbol ?ZERO@IntRange@@2U1@B
-     * @hash   -1975238360
+     * @hash   -1115750712
      */
     MCAPI static struct IntRange const ZERO;
 

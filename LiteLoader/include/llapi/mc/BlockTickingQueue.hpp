@@ -39,141 +39,141 @@ public:
 public:
     /**
      * @symbol ?acquireAllRandomTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
-     * @hash   -1302344820
+     * @hash   -544384900
      */
     MCAPI void acquireAllRandomTicks(class LevelChunk &);
     /**
      * @symbol ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAV1@@Z
-     * @hash   1298406614
+     * @hash   2056366534
      */
     MCAPI void acquireAllTicks(class BlockTickingQueue &);
     /**
      * @symbol ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
-     * @hash   -1557319188
+     * @hash   -799359268
      */
     MCAPI void acquireAllTicks(class LevelChunk &);
     /**
      * @symbol ?add@BlockTickingQueue@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@HH@Z
-     * @hash   -1922906446
+     * @hash   -1164946526
      */
     MCAPI void add(class BlockSource &, class BlockPos const &, class Block const &, int, int);
     /**
      * @symbol ?addTickToLevelChunk@BlockTickingQueue@@QEAAXAEAVLevelChunk@@AEBVBlockPos@@AEBVBlock@@HH@Z
-     * @hash   -1446083148
+     * @hash   -688123228
      */
     MCAPI void addTickToLevelChunk(class LevelChunk &, class BlockPos const &, class Block const &, int, int);
     /**
      * @symbol ?eliminateAllTicksZeroAndAbove@BlockTickingQueue@@QEAAXXZ
-     * @hash   237742015
+     * @hash   995701935
      */
     MCAPI void eliminateAllTicksZeroAndAbove();
     /**
      * @symbol ?eliminateDuplicatesOf@BlockTickingQueue@@QEAAXAEBVBlockLegacy@@@Z
-     * @hash   591155474
+     * @hash   1349115394
      */
     MCAPI void eliminateDuplicatesOf(class BlockLegacy const &);
     /**
      * @symbol ?getNextUpdateForPos@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEAUTick@@@Z
-     * @hash   -781612134
+     * @hash   -23652214
      */
     MCAPI bool getNextUpdateForPos(class BlockPos const &, struct Tick &) const;
     /**
      * @symbol ?getTickDelaysInArea@BlockTickingQueue@@QEBA?AV?$unordered_multimap@VBlockPos@@UTickDelayBlock@@U?$hash@VBlockPos@@@std@@U?$equal_to@VBlockPos@@@4@V?$allocator@U?$pair@$$CBVBlockPos@@UTickDelayBlock@@@std@@@4@@std@@AEBVBoundingBox@@@Z
-     * @hash   -1381437438
+     * @hash   -623477518
      */
     MCAPI class std::unordered_multimap<class BlockPos, struct TickDelayBlock, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, struct TickDelayBlock>>> getTickDelaysInArea(class BoundingBox const &) const;
     /**
      * @symbol ?hasTickInCurrentTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
-     * @hash   -1960953889
+     * @hash   -1202993969
      */
     MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
     /**
      * @symbol ?hasTickInPendingTicks@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
-     * @hash   -2042174757
+     * @hash   -1284214837
      */
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
     /**
      * @symbol ?isBlockInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   496808150
+     * @hash   1254768070
      */
     MCAPI bool isBlockInPendingTick(class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?isBlockInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
-     * @hash   -282803836
+     * @hash   475156084
      */
     MCAPI bool isBlockInPendingTick(class BlockPos const &, class BlockLegacy const &) const;
     /**
      * @symbol ?isEmpty@BlockTickingQueue@@QEBA_NXZ
-     * @hash   -89888116
+     * @hash   668071804
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?isInstaticking@BlockTickingQueue@@QEBA_NXZ
-     * @hash   -382281378
+     * @hash   375678542
      */
     MCAPI bool isInstaticking() const;
     /**
      * @symbol ?load@BlockTickingQueue@@QEAAXAEBVCompoundTag@@AEBVBlockPalette@@@Z
-     * @hash   -426072025
+     * @hash   331887895
      */
     MCAPI void load(class CompoundTag const &, class BlockPalette const &);
     /**
      * @symbol ?remove@BlockTickingQueue@@QEAAX$$QEAV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
-     * @hash   -1924668386
+     * @hash   -1166708466
      */
     MCAPI void remove(class std::function<bool (class TickNextTickData const &)> &&);
     /**
      * @symbol ?remove@BlockTickingQueue@@QEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1896034423
+     * @hash   -1640972953
      */
     MCAPI void remove(class BlockPos const &, class Block const &);
     /**
      * @symbol ?save@BlockTickingQueue@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   -750681874
+     * @hash   7278046
      */
     MCAPI void save(class CompoundTag &) const;
     /**
      * @symbol ?setOwningChunk@BlockTickingQueue@@QEAAXPEAVLevelChunk@@@Z
-     * @hash   -1949588619
+     * @hash   -1191644075
      */
     MCAPI void setOwningChunk(class LevelChunk *);
     /**
      * @symbol ?tickAllPendingTicks@BlockTickingQueue@@QEAAXAEAVBlockSource@@_K@Z
-     * @hash   1833970270
+     * @hash   -1703052482
      */
     MCAPI void tickAllPendingTicks(class BlockSource &, unsigned __int64);
     /**
      * @symbol ?tickPendingTicks@BlockTickingQueue@@QEAA_NAEAVBlockSource@@AEBUTick@@H_N@Z
-     * @hash   1902247404
+     * @hash   -1634775348
      */
     MCAPI bool tickPendingTicks(class BlockSource &, struct Tick const &, int, bool);
     /**
      * @symbol ?ticksFromNow@BlockTickingQueue@@QEBAHH@Z
-     * @hash   -92634057
+     * @hash   665310487
      */
     MCAPI int ticksFromNow(int) const;
     /**
      * @symbol ??1BlockTickingQueue@@QEAA@XZ
-     * @hash   -1604836475
+     * @hash   -1433978363
      */
     MCAPI ~BlockTickingQueue();
 
 //protected:
     /**
      * @symbol ?_saveQueue@BlockTickingQueue@@IEBAXAEAVListTag@@AEBVTickDataSet@1@@Z
-     * @hash   -767713995
+     * @hash   -9738699
      */
     MCAPI void _saveQueue(class ListTag &, class BlockTickingQueue::TickDataSet const &) const;
 
 //private:
     /**
      * @symbol ?_acquireAllTicks@BlockTickingQueue@@AEAAXAEAV1@@Z
-     * @hash   253008916
+     * @hash   1010984212
      */
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
     /**
      * @symbol ?_addToNextTickQueue@BlockTickingQueue@@AEAAXAEBVBlockPos@@AEBVBlock@@HH@Z
-     * @hash   722726417
+     * @hash   1480701713
      */
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
 

@@ -1,16 +1,16 @@
-<!-- Version: 2.8.0 -->
+<!-- Version: 2.9.0 -->
 
 # LiteLoader Release Note
 
-**Adapted to BDS-1.19.41 | ProtocolVersion 557**
+**Adapted to BDS-1.19.50 | ProtocolVersion 560**
 
 ## New features
-- Support 1.19.41 @dreamguxiang
-- Add Player::getAbilities Player::setAbility #890 @dreamguxiang
-- Add Actor::getBiomeId Actor::getBiomeName #883 @dreamguxiang
+- Support 1.19.50 @dreamguxiang @ShrBox
+- Add offline nbt API #305 @Tsubasa6848
+- Add more parameters for LLSE PlayerEffectChangedEvent #922 @Tsubasa6848
+- Add Player::getAllUuid @Tsubasa6848
+- Add PlayerInfo::getUUIDByXuid #940 @Tsubasa6848
+- Add data.name2uuid and data.xuid2uuid for LLSE #940 @Tsubasa6848
 
 ## Bug Fixes
-- Fix #888 @ShrBox
-- Fix Abilities(MayFly) Permissions #890 @dreamguxiang
-- Fix `Player::getrealName` error #886 @dreamguxiang
-- Fix `Biome::getName` is empty @dreamguxiang
+- Fix isMinecart always true #923 @StarsDream00

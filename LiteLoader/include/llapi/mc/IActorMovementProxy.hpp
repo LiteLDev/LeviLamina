@@ -31,14 +31,19 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IACTORMOVEMENTPROXY
     /**
      * @symbol ?isFlying@IActorMovementProxy@@UEBA_NXZ
-     * @hash   90912766
+     * @hash   187658558
      */
     MCVAPI bool isFlying() const;
     /**
      * @symbol ?setIsFlying@IActorMovementProxy@@UEAAX_N@Z
-     * @hash   -2005189571
+     * @hash   -1916224035
      */
     MCVAPI void setIsFlying(bool);
 #endif
+    /**
+     * @symbol ?getRegionAsConstBlockSource@IActorMovementProxy@@QEBAAEBVIConstBlockSource@@XZ
+     * @hash   -1582283160
+     */
+    MCAPI class IConstBlockSource const & getRegionAsConstBlockSource() const;
 
 };

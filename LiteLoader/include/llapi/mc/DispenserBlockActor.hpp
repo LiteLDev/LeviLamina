@@ -33,105 +33,105 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
     /**
      * @symbol ?_getUpdatePacket@DispenserBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   -1594889226
+     * @hash   -1034141882
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   824279852
+     * @hash   1385027196
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   1808424642
+     * @hash   -1730181838
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1380702782
+     * @hash   2137063598
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@DispenserBlockActor@@UEBAHXZ
-     * @hash   -922655638
+     * @hash   -964878134
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   -47588271
+     * @hash   538283457
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@DispenserBlockActor@@UEBAHXZ
-     * @hash   1108517801
+     * @hash   1066695081
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@DispenserBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1231908002
+     * @hash   -646036274
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?getRandomSlot@DispenserBlockActor@@UEAAHXZ
-     * @hash   -1312582794
+     * @hash   -726695690
      */
     MCVAPI int getRandomSlot();
     /**
      * @symbol ?load@DispenserBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1938943564
+     * @hash   -1353056460
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onMove@DispenserBlockActor@@UEAAXXZ
-     * @hash   -1986342134
+     * @hash   -1230012070
      */
     MCVAPI void onMove();
     /**
      * @symbol ?save@DispenserBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -2101674381
+     * @hash   -1515787277
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   276155686
+     * @hash   862027414
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   432454372
+     * @hash   1018326100
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1882562979
+     * @hash   -1296691251
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -1972094371
+     * @hash   -1883128835
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ??1DispenserBlockActor@@UEAA@XZ
-     * @hash   26948408
+     * @hash   612820136
      */
     MCVAPI ~DispenserBlockActor();
 #endif
     /**
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
-     * @hash   1093015777
+     * @hash   1678902881
      */
     MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);
     /**
      * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@@Z
-     * @hash   -1709380854
+     * @hash   -1123462998
      */
     MCAPI DispenserBlockActor(class BlockPos);
 
 //protected:
     /**
      * @symbol ?initItems@DispenserBlockActor@@IEAAXXZ
-     * @hash   1148793398
+     * @hash   1734680502
      */
     MCAPI void initItems();
 

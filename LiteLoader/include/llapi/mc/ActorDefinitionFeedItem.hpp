@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorDefinitionFeedItem@@QEAA@XZ
-     * @hash   -1512219691
+     * @hash   -1408400939
      */
     MCAPI ~ActorDefinitionFeedItem();
 

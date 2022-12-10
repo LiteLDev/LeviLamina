@@ -26,22 +26,43 @@ class AreaAttackComponent {
 public:
     class AreaAttackComponent& operator=(class AreaAttackComponent const &) = delete;
     AreaAttackComponent(class AreaAttackComponent const &) = delete;
+    AreaAttackComponent() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0AreaAttackComponent@@QEAA@XZ
-     * @hash   -1207066268
+     * @symbol ??0AreaAttackComponent@@QEAA@$$QEAV0@@Z
+     * @hash   404175609
      */
-    MCAPI AreaAttackComponent();
+    MCAPI AreaAttackComponent(class AreaAttackComponent &&);
+    /**
+     * @symbol ?addAdditionalSaveData@AreaAttackComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   620389160
+     */
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?findCooldownEntry@AreaAttackComponent@@QEAAPEAU?$pair@UActorUniqueID@@UTick@@@std@@AEBUActorUniqueID@@@Z
+     * @hash   -156046393
+     */
+    MCAPI struct std::pair<struct ActorUniqueID, struct Tick> * findCooldownEntry(struct ActorUniqueID const &);
+    /**
+     * @symbol ?isEntryOnAttackCooldown@AreaAttackComponent@@QEBA_NPEBU?$pair@UActorUniqueID@@UTick@@@std@@AEBUTick@@@Z
+     * @hash   -1615033800
+     */
+    MCAPI bool isEntryOnAttackCooldown(struct std::pair<struct ActorUniqueID, struct Tick> const *, struct Tick const &) const;
     /**
      * @symbol ??4AreaAttackComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   896367076
+     * @hash   1028077892
      */
     MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
     /**
+     * @symbol ?readAdditionalSaveData@AreaAttackComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1758541120
+     */
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    /**
      * @symbol ??1AreaAttackComponent@@QEAA@XZ
-     * @hash   -2041292620
+     * @hash   -1909658684
      */
     MCAPI ~AreaAttackComponent();
 

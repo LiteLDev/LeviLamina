@@ -37,18 +37,18 @@ public:
     virtual ~ProjectileSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ProjectileSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1085563448
+     * @hash   1119590536
      */
     virtual void tick(class EntityRegistry &);
     /**
      * @symbol ?_tickProjectileComponent@ProjectileSystem@@SAXPEAVActor@@AEAVProjectileComponent@@@Z
-     * @hash   -278291808
+     * @hash   -244310848
      */
     MCAPI static void _tickProjectileComponent(class Actor *, class ProjectileComponent &);
 

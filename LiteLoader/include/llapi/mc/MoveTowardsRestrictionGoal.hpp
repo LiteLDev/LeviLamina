@@ -43,35 +43,35 @@ public:
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ
-     * @hash   892845178
+     * @hash   1053462874
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@MoveTowardsRestrictionGoal@@UEAAXXZ
-     * @hash   451028357
+     * @hash   613291285
      */
     virtual void start();
     /**
      * @symbol ??0MoveTowardsRestrictionGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -1251149543
+     * @hash   -1090055191
      */
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_getMob@MoveTowardsRestrictionGoal@@IEBAAEBVMob@@XZ
-     * @hash   1157497590
+     * @hash   1318591942
      */
     MCAPI class Mob const & _getMob() const;
     /**
      * @symbol ?_randomizeWantedPositionTowardsRestriction@MoveTowardsRestrictionGoal@@IEAA_NAEBVVec3@@@Z
-     * @hash   2091328279
+     * @hash   -2042544665
      */
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
 

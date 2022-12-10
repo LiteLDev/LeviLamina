@@ -25,104 +25,104 @@ class JumpControlComponent {
 public:
     /**
      * @symbol ??0JumpControlComponent@@QEAA@XZ
-     * @hash   -38931334
+     * @hash   -51585782
      */
     MCAPI JumpControlComponent();
     /**
      * @symbol ??0JumpControlComponent@@QEAA@AEBV0@@Z
-     * @hash   1418682145
+     * @hash   1406027697
      */
     MCAPI JumpControlComponent(class JumpControlComponent const &);
     /**
      * @symbol ?getAnimationDuration@JumpControlComponent@@QEBAHXZ
-     * @hash   1558691448
+     * @hash   1546037000
      */
     MCAPI int getAnimationDuration() const;
     /**
      * @symbol ?getDistanceScale@JumpControlComponent@@QEBAMXZ
-     * @hash   -1442165818
+     * @hash   -1454820266
      */
     MCAPI float getDistanceScale() const;
     /**
      * @symbol ?getJumpDelay@JumpControlComponent@@QEBAHXZ
-     * @hash   -269885032
+     * @hash   -282539480
      */
     MCAPI int getJumpDelay() const;
     /**
      * @symbol ?getJumpPower@JumpControlComponent@@QEBAMXZ
-     * @hash   -1482821818
+     * @hash   -1495476266
      */
     MCAPI float getJumpPower() const;
     /**
      * @symbol ?getJumping@JumpControlComponent@@QEBA_NXZ
-     * @hash   248294718
+     * @hash   395812062
      */
     MCAPI bool getJumping() const;
     /**
      * @symbol ?getSwimming@JumpControlComponent@@QEBA_NXZ
-     * @hash   368482426
+     * @hash   516045898
      */
     MCAPI bool getSwimming() const;
     /**
      * @symbol ?initMultiTypeJumpComponent@JumpControlComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-     * @hash   -1858709681
+     * @hash   -1871364129
      */
     MCAPI void initMultiTypeJumpComponent(class Mob &, class ActorDefinitionDescriptor &);
     /**
      * @symbol ?initializeFromDefinition@JumpControlComponent@@QEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
-     * @hash   -730990704
+     * @hash   -743845040
      */
     MCAPI void initializeFromDefinition(class Mob &, struct JumpControlDescription *);
     /**
      * @symbol ??4JumpControlComponent@@QEAAAEAV0@AEBV0@@Z
-     * @hash   1825843876
+     * @hash   1813189428
      */
     MCAPI class JumpControlComponent & operator=(class JumpControlComponent const &);
     /**
      * @symbol ?resetSpeedModifier@JumpControlComponent@@QEAAXAEAVMob@@@Z
-     * @hash   -287259916
+     * @hash   -300114252
      */
     MCAPI void resetSpeedModifier(class Mob &);
     /**
      * @symbol ?setInternalType@JumpControlComponent@@QEAAXV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@@Z
-     * @hash   1629482284
+     * @hash   1791591452
      */
     MCAPI void setInternalType(std::unique_ptr<class JumpControl>);
     /**
      * @symbol ?setJumpType@JumpControlComponent@@QEAAXW4JumpType@@@Z
-     * @hash   2100520430
+     * @hash   2087666094
      */
     MCAPI void setJumpType(enum class JumpType);
     /**
      * @symbol ?setJumping@JumpControlComponent@@QEAAX_N@Z
-     * @hash   -2012933482
+     * @hash   -1865539146
      */
     MCAPI void setJumping(bool);
     /**
      * @symbol ?setSwimming@JumpControlComponent@@QEAAX_N@Z
-     * @hash   636018250
+     * @hash   783412586
      */
     MCAPI void setSwimming(bool);
     /**
      * @symbol ?update@JumpControlComponent@@QEAAXAEAVMob@@@Z
-     * @hash   -1315895308
+     * @hash   -1328749644
      */
     MCAPI void update(class Mob &);
     /**
      * @symbol ??1JumpControlComponent@@QEAA@XZ
-     * @hash   1945536184
+     * @hash   2105692600
      */
     MCAPI ~JumpControlComponent();
 
 //private:
     /**
      * @symbol ?_getDelayInternal@JumpControlComponent@@AEBAMXZ
-     * @hash   1882271358
+     * @hash   1869616910
      */
     MCAPI float _getDelayInternal() const;
     /**
      * @symbol ?_getHeightInternal@JumpControlComponent@@AEBAMXZ
-     * @hash   1983213344
+     * @hash   1970558896
      */
     MCAPI float _getHeightInternal() const;
 

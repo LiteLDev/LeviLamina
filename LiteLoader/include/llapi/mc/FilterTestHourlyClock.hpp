@@ -40,19 +40,19 @@ public:
     /**
      * @vftbl  1
      * @symbol ?setup@FilterTestHourlyClock@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     * @hash   1107403287
+     * @hash   1103620791
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl  2
      * @symbol ?evaluate@FilterTestHourlyClock@@UEBA_NAEBUFilterContext@@@Z
-     * @hash   -1432023659
+     * @hash   -1435806155
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
      * @vftbl  4
      * @symbol ?getName@FilterTestHourlyClock@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     * @hash   2112582317
+     * @hash   -2099677475
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 

@@ -40,36 +40,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@LoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -1531066899
+     * @hash   -1429154771
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1417286134
+     * @hash   -1491260070
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1997110973
+     * @hash   1923137037
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?disallowBatching@LoginPacket@@UEBA_NXZ
-     * @hash   1565864474
+     * @hash   1662364250
      */
     virtual bool disallowBatching() const;
     /**
      * @vftbl  6
      * @symbol ?_read@LoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1890602403
+     * @hash   -1964576339
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LoginPacket@@QEAA@XZ
-     * @hash   2030786685
+     * @hash   1956812749
      */
     MCAPI LoginPacket();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorRemoveEffectEvent@@QEAA@XZ
-     * @hash   1107376970
+     * @hash   1263181978
      */
     MCAPI ~ActorRemoveEffectEvent();
 

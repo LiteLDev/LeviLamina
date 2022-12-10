@@ -22,7 +22,7 @@ namespace ClipDefaults {
 #undef AFTER_EXTRA
     /**
      * @symbol ?CHECK_ALL_PICKABLE_BLOCKS@ClipDefaults@@3V?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@B
-     * @hash   634544115
+     * @hash   1497137715
      */
     MCAPI extern class std::function<bool (class BlockSource const &, class Block const &, bool)> const CHECK_ALL_PICKABLE_BLOCKS;
 

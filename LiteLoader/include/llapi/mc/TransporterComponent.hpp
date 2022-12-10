@@ -38,52 +38,52 @@ public:
     /**
      * @vftbl  7
      * @symbol ?canConsumerPower@TransporterComponent@@UEBA_NXZ
-     * @hash   -100683936
+     * @hash   -4184160
      */
     virtual bool canConsumerPower() const;
     /**
      * @vftbl  11
      * @symbol ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     * @hash   -1887369803
+     * @hash   -1418017403
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
      * @vftbl  12
      * @symbol ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     * @hash   -1029606793
+     * @hash   -560254393
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
      * @vftbl  14
      * @symbol ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1544574655
+     * @hash   -1075222255
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  15
      * @symbol ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     * @hash   -1043267254
+     * @hash   -573914854
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
      * @vftbl  17
-     * @hash   -325631958
+     * @hash   -228886166
      */
     virtual void __unk_vfn_17();
     /**
      * @vftbl  20
-     * @hash   -303467454
+     * @hash   -206721662
      */
     virtual void __unk_vfn_20();
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentType@TransporterComponent@@UEBA?AW4CircuitComponentType@@XZ
-     * @hash   1921922367
+     * @hash   2111370063
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0TransporterComponent@@QEAA@XZ
-     * @hash   73556243
+     * @hash   542908643
      */
     MCAPI TransporterComponent();
 

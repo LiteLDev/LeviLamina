@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?createActorMoveSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1280661010
+     * @hash   1420844002
      */
     MCAPI static struct TickingSystemWithInfo createActorMoveSystem();
     /**
      * @symbol ?createUpdateHitboxSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   1623611108
+     * @hash   1763794100
      */
     MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();
 

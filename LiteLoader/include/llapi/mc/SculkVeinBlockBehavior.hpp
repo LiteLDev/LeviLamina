@@ -31,49 +31,49 @@ public:
     /**
      * @vftbl  0
      * @symbol ?updateDecayDelay@SculkVeinBlockBehavior@@UEBAHH@Z
-     * @hash   -1860139881
+     * @hash   -1758227753
      */
     virtual int updateDecayDelay(int) const;
     /**
      * @vftbl  1
      * @symbol ?updateFacingData@SculkVeinBlockBehavior@@UEBAHHAEBVBlock@@@Z
-     * @hash   -862612498
+     * @hash   -389615986
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
      * @vftbl  2
      * @symbol ?canChangeBlockOnSpread@SculkVeinBlockBehavior@@UEBA_NXZ
-     * @hash   1044294784
+     * @hash   1140794560
      */
     virtual bool canChangeBlockOnSpread() const;
     /**
      * @vftbl  3
      * @symbol ?attemptSpreadVeins@SculkVeinBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
-     * @hash   -1462793667
+     * @hash   -989797155
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
      * @vftbl  4
      * @symbol ?attemptUseCharge@SculkVeinBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
-     * @hash   -213473091
+     * @hash   259523421
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onDischarged@SculkVeinBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   208018796
+     * @hash   681015308
      */
     virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 
 //private:
     /**
      * @symbol ?_attemptPlaceSculk@SculkVeinBlockBehavior@@CA_NAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVSculkSpreader@@AEAVRandom@@@Z
-     * @hash   1048206541
+     * @hash   1521203053
      */
     MCAPI static bool _attemptPlaceSculk(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class SculkSpreader &, class Random &);
     /**
      * @symbol ?_cleanUpVeinsWithSculkSubstrate@SculkVeinBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -36680108
+     * @hash   436316404
      */
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
 

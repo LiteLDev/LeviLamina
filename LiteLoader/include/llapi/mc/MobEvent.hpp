@@ -31,32 +31,32 @@ public:
 public:
     /**
      * @symbol ??0MobEvent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-     * @hash   -1937053468
+     * @hash   -1376321500
      */
     MCAPI MobEvent(std::string, std::string, bool);
     /**
      * @symbol ??0MobEvent@@QEAA@AEBV0@@Z
-     * @hash   -411727119
+     * @hash   149004849
      */
     MCAPI MobEvent(class MobEvent const &);
     /**
      * @symbol ?getLocalizableName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -525942466
+     * @hash   -423615186
      */
     MCAPI std::string const & getLocalizableName() const;
     /**
      * @symbol ?getName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1864551908
+     * @hash   -1771281092
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?isEnabled@MobEvent@@QEBA_NXZ
-     * @hash   231028426
+     * @hash   401886538
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ??1MobEvent@@QEAA@XZ
-     * @hash   -1000479164
+     * @hash   -912497692
      */
     MCAPI ~MobEvent();
 

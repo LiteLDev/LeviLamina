@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -192003546
+     * @hash   -102530602
      */
     MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
 
 //private:
     /**
      * @symbol ?doFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@CAXAEAVStrictEntityContext@@AEBULocalMoveVelocityComponent@@AEAUActionOrStopComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UHasMoveInputFlag@@@@@@@Z
-     * @hash   -1249824271
+     * @hash   -1160351327
      */
     MCAPI static void doFramewiseActionOrStopSystem(class StrictEntityContext &, struct LocalMoveVelocityComponent const &, struct ActionOrStopComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct HasMoveInputFlag>>);
 

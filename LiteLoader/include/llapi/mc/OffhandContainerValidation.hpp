@@ -39,52 +39,52 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   1692497696
+     * @hash   -2129657600
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
      * @symbol ?isItemAllowedInSlot@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   1465572726
+     * @hash   1938553862
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1649571725
+     * @hash   -1176759725
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   125141978
+     * @hash   598123114
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @vftbl  6
-     * @hash   -1358178890
+     * @hash   -1261679114
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   1055625911
+     * @hash   1528437911
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFHANDCONTAINERVALIDATION
     /**
      * @symbol ?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   100791267
+     * @hash   197291043
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @symbol ?getContainerOffset@OffhandContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   1323288032
+     * @hash   1425200160
      */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif

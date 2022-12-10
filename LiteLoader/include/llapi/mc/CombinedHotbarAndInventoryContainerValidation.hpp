@@ -39,57 +39,57 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   462813454
+     * @hash   935625454
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -2104880955
+     * @hash   -1632068955
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@CombinedHotbarAndInventoryContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   1818365868
+     * @hash   -2003620292
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @vftbl  6
-     * @hash   -1358178890
+     * @hash   -1261679114
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   1595127845
+     * @hash   2067939845
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @vftbl  8
-     * @hash   -1362943528
+     * @hash   -1269672712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@CombinedHotbarAndInventoryContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -1921094522
+     * @hash   -1448067258
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBINEDHOTBARANDINVENTORYCONTAINERVALIDATION
     /**
      * @symbol ?canItemMoveToContainer@CombinedHotbarAndInventoryContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1573026991
+     * @hash   -1476527215
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif

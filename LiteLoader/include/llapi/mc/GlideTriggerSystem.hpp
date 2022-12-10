@@ -35,28 +35,28 @@ public:
     virtual ~GlideTriggerSystem();
     /**
      * @vftbl  1
-     * @hash   -407916143
+     * @hash   -253879375
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @symbol ?tick@GlideTriggerSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UUsesECSMovementFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UAABBShapeComponent@@UAbilitiesComponent@@V?$FlagComponent@UArmorFlyEnabledFlag@@@@UConstBlockSourceComponent@@UFallFlyTicksComponent@@UMoveInputComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UVanillaClientGameplayComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UStopGlidingRequestFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-     * @hash   -1021537661
+     * @symbol ?tick@GlideTriggerSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UUsesECSMovementFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UAABBShapeComponent@@UAbilitiesComponent@@V?$FlagComponent@UArmorFlyEnabledFlag@@@@V?$FlagComponent@UCanStandOnSnowFlag@@@@UConstBlockSourceComponent@@UFallFlyTicksComponent@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@UMoveInputComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UVanillaClientGameplayComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UStopGlidingRequestFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+     * @hash   -1196806537
      */
-    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, struct PlayerInputRequestComponent>, struct Read<struct AABBShapeComponent, struct AbilitiesComponent, class FlagComponent<struct ArmorFlyEnabledFlag>, struct ConstBlockSourceComponent, struct FallFlyTicksComponent, struct MoveInputComponent, struct StateVectorComponent, struct SynchedActorDataComponent, struct VanillaClientGameplayComponent, class FlagComponent<struct InWaterFlag>>, struct Write<>, struct AddRemove<class FlagComponent<struct StopGlidingRequestFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
+    virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, struct PlayerInputRequestComponent>, struct Read<struct AABBShapeComponent, struct AbilitiesComponent, class FlagComponent<struct ArmorFlyEnabledFlag>, class FlagComponent<struct CanStandOnSnowFlag>, struct ConstBlockSourceComponent, struct FallFlyTicksComponent, class FlagComponent<struct HasLightweightFamilyFlag>, struct MoveInputComponent, struct StateVectorComponent, struct SynchedActorDataComponent, struct VanillaClientGameplayComponent, class FlagComponent<struct InWaterFlag>>, struct Write<>, struct AddRemove<class FlagComponent<struct StopGlidingRequestFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
     /**
-     * @symbol ?_tickGlideTriggerSystem@GlideTriggerSystem@@SAXAEAVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUAbilitiesComponent@@AEBUConstBlockSourceComponent@@AEBUFallFlyTicksComponent@@AEBUMoveInputComponent@@AEBUStateVectorComponent@@AEBUSynchedActorDataComponent@@AEBUVanillaClientGameplayComponent@@V?$Optional@$$CBV?$FlagComponent@UArmorFlyEnabledFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UStopGlidingRequestFlag@@@@@@@Z
-     * @hash   -1189287635
+     * @symbol ?_tickGlideTriggerSystem@GlideTriggerSystem@@SAXAEAVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUAbilitiesComponent@@AEBUConstBlockSourceComponent@@AEBUFallFlyTicksComponent@@AEBUMoveInputComponent@@AEBUStateVectorComponent@@AEBUSynchedActorDataComponent@@AEBUVanillaClientGameplayComponent@@V?$Optional@$$CBV?$FlagComponent@UArmorFlyEnabledFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UCanStandOnSnowFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UHasLightweightFamilyFlag@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UStopGlidingRequestFlag@@@@@@@Z
+     * @hash   -524085773
      */
-    MCAPI static void _tickGlideTriggerSystem(class StrictEntityContext &, struct AABBShapeComponent const &, struct AbilitiesComponent const &, struct ConstBlockSourceComponent const &, struct FallFlyTicksComponent const &, struct MoveInputComponent const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, struct VanillaClientGameplayComponent const &, class Optional<class FlagComponent<struct ArmorFlyEnabledFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopGlidingRequestFlag>> &);
+    MCAPI static void _tickGlideTriggerSystem(class StrictEntityContext &, struct AABBShapeComponent const &, struct AbilitiesComponent const &, struct ConstBlockSourceComponent const &, struct FallFlyTicksComponent const &, struct MoveInputComponent const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, struct VanillaClientGameplayComponent const &, class Optional<class FlagComponent<struct ArmorFlyEnabledFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class Optional<class FlagComponent<struct CanStandOnSnowFlag> const>, class Optional<class FlagComponent<struct HasLightweightFamilyFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopGlidingRequestFlag>> &);
     /**
      * @symbol ?createSystem@GlideTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1703444882
+     * @hash   -1621121778
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

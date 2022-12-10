@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@DragonHoldingPatternGoal@@UEAA_NXZ
-     * @hash   -547669779
+     * @hash   -387528739
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@DragonHoldingPatternGoal@@UEAA_NXZ
-     * @hash   -359571157
+     * @hash   -199430117
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@DragonHoldingPatternGoal@@UEAAXXZ
-     * @hash   -622208714
+     * @hash   -462067674
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@DragonHoldingPatternGoal@@UEAAXXZ
-     * @hash   -1372970714
+     * @hash   -1212829674
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@DragonHoldingPatternGoal@@UEAAXXZ
-     * @hash   950790401
+     * @hash   1110931441
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@DragonHoldingPatternGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1415065091
+     * @hash   1575206131
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0DragonHoldingPatternGoal@@QEAA@AEAVEnderDragon@@@Z
-     * @hash   -586739164
+     * @hash   -426598124
      */
     MCAPI DragonHoldingPatternGoal(class EnderDragon &);
 
 //private:
     /**
      * @symbol ?findNewTarget@DragonHoldingPatternGoal@@AEAAXXZ
-     * @hash   -1870041295
+     * @hash   -1709900255
      */
     MCAPI void findNewTarget();
 

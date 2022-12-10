@@ -33,131 +33,136 @@ public:
 public:
     /**
      * @symbol ??0ActorFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
-     * @hash   -1639659778
+     * @hash   -1602572866
      */
     MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
     /**
-     * @symbol ?applyEntityInitializer@ActorFactory@@QEBAXAEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -989491865
+     * @symbol ?applyEntityInitializer@ActorFactory@@QEBAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@@Z
+     * @hash   258620725
      */
-    MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const &, class EntityContext &) const;
+    MCAPI void applyEntityInitializer(std::unique_ptr<class Actor>, class EntityContext &) const;
     /**
      * @symbol ?buildSummonEntityTypeEnum@ActorFactory@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUActorDefinitionIdentifier@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUActorDefinitionIdentifier@@@std@@@2@@std@@AEBVExperiments@@@Z
-     * @hash   714614146
+     * @hash   751562674
      */
     MCAPI std::vector<struct std::pair<std::string, struct ActorDefinitionIdentifier const *>> buildSummonEntityTypeEnum(class Experiments const &) const;
     /**
      * @symbol ?clearDefinitionGroup@ActorFactory@@QEAAXXZ
-     * @hash   -405476107
+     * @hash   -368527579
      */
     MCAPI void clearDefinitionGroup();
     /**
      * @symbol ?createActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
-     * @hash   1766648473
+     * @hash   1803597001
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createActor(std::string const &, struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?createBornActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@@Z
-     * @hash   246540025
+     * @hash   283488553
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createBornActor(struct ActorDefinitionIdentifier const &, class BlockPos const &);
     /**
      * @symbol ?createBornActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
-     * @hash   -984687774
+     * @hash   -947739246
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createBornActor(struct ActorDefinitionIdentifier const &, class Actor *);
     /**
      * @symbol ?createSpawnedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
-     * @hash   1684116088
+     * @hash   1721064616
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createSpawnedActor(struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?createSummonedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@@Z
-     * @hash   1554390745
+     * @hash   1591462281
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createSummonedActor(struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &);
     /**
      * @symbol ?createTransformedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
-     * @hash   -1124761276
+     * @hash   -1087689740
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> createTransformedActor(struct ActorDefinitionIdentifier const &, class Actor *);
     /**
      * @symbol ?getGoalFactory@ActorFactory@@QEAAAEAVActorGoalFactory@@XZ
-     * @hash   928623824
+     * @hash   1074434432
      */
     MCAPI class ActorGoalFactory & getGoalFactory();
     /**
      * @symbol ?init@ActorFactory@@QEAAXAEBVExperiments@@@Z
-     * @hash   -1762369324
+     * @hash   -1725282412
      */
     MCAPI void init(class Experiments const &);
     /**
      * @symbol ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@AEBVDimensionHeightRange@@PEBVLevelChunk@@@Z
-     * @hash   -1919594805
+     * @hash   -1882507893
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> loadActor(class CompoundTag *, class DataLoadHelper &, class DimensionHeightRange const &, class LevelChunk const *);
     /**
+     * @symbol ?lookupEntityType@ActorFactory@@QEBA?AW4ActorType@@AEBUActorDefinitionIdentifier@@@Z
+     * @hash   -1165896041
+     */
+    MCAPI enum class ActorType lookupEntityType(struct ActorDefinitionIdentifier const &) const;
+    /**
      * @symbol ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
-     * @hash   -1646508817
+     * @hash   -1609099009
      */
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup *);
     /**
      * @symbol ?setEntityInitializer@ActorFactory@@QEAAXV?$shared_ptr@VIEntityInitializer@@@std@@@Z
-     * @hash   1656864937
+     * @hash   1694274745
      */
     MCAPI void setEntityInitializer(class std::shared_ptr<class IEntityInitializer>);
     /**
      * @symbol ??1ActorFactory@@QEAA@XZ
-     * @hash   -1217034657
+     * @hash   -492210017
      */
     MCAPI ~ActorFactory();
     /**
      * @symbol ?clearEntityMappings@ActorFactory@@SAXXZ
-     * @hash   2013510977
+     * @hash   2050459505
      */
     MCAPI static void clearEntityMappings();
     /**
      * @symbol ?fixLegacyEntity@ActorFactory@@SAPEAVActor@@AEAVBlockSource@@PEBVCompoundTag@@@Z
-     * @hash   -207821382
+     * @hash   -170734470
      */
     MCAPI static class Actor * fixLegacyEntity(class BlockSource &, class CompoundTag const *);
     /**
      * @symbol ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
-     * @hash   302627082
+     * @hash   340036890
      */
     MCAPI static void registerEntityMapping(enum class ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), class std::optional<int>);
 
 //private:
     /**
      * @symbol ?_buildSummonableActorList@ActorFactory@@AEBAXAEBVExperiments@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorFactoryData@@@Z@std@@@Z
-     * @hash   -783604634
+     * @hash   -746517722
      */
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;
     /**
      * @symbol ?_constructActor@ActorFactory@@AEBA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@AEBVVec3@@AEBVVec2@@PEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     * @hash   -1922337822
+     * @hash   -1885250910
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const &, class Vec3 const &, class Vec2 const &, std::vector<std::string> const *) const;
     /**
      * @symbol ?_loadDefinitionGroups@ActorFactory@@AEAAXPEAVActorDefinitionGroup@@@Z
-     * @hash   -1540879154
+     * @hash   -1503961378
      */
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     /**
      * @symbol ?_loadDefinitionsHelper@ActorFactory@@AEAAXXZ
-     * @hash   -839847472
+     * @hash   -802929696
      */
     MCAPI void _loadDefinitionsHelper();
     /**
      * @symbol ?_validateActorData@ActorFactory@@AEBA_NAEAVCompoundTag@@AEAUActorDefinitionIdentifier@@AEAVVec3@@PEBVLevelChunk@@@Z
-     * @hash   927489514
+     * @hash   964391914
      */
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
 
 private:
     /**
      * @symbol ?builtinEntityMappings@ActorFactory@@0V?$vector@UVanillaActorData@@V?$allocator@UVanillaActorData@@@std@@@std@@A
-     * @hash   -1597821435
+     * @hash   -739041083
      */
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
 

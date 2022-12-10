@@ -38,40 +38,40 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@UpdateSubChunkBlocksPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -166789830
+     * @hash   -246929542
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateSubChunkBlocksPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -161035289
+     * @hash   -241175001
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@UpdateSubChunkBlocksPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -409487920
+     * @hash   -489627632
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@UpdateSubChunkBlocksPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -136144535
+     * @hash   -216284247
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateSubChunkBlocksPacket@@QEAA@XZ
-     * @hash   1882031520
+     * @hash   1801907184
      */
     MCAPI UpdateSubChunkBlocksPacket();
     /**
      * @symbol ??0UpdateSubChunkBlocksPacket@@QEAA@AEBV?$vector@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@V?$allocator@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@@std@@@std@@0@Z
-     * @hash   1495920542
+     * @hash   1415796206
      */
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     /**
      * @symbol ?setSubChunkPosition@UpdateSubChunkBlocksPacket@@QEAAXAEBVSubChunkPos@@@Z
-     * @hash   -45898908
+     * @hash   -126038620
      */
     MCAPI void setSubChunkPosition(class SubChunkPos const &);
 

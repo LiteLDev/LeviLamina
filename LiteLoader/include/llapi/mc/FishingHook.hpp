@@ -32,239 +32,239 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   1184499177
+     * @hash   1242066921
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1233442405
      */
     virtual ~FishingHook();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@FishingHook@@UEAAXXZ
-     * @hash   332813854
+     * @hash   390396974
      */
     virtual void remove();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@FishingHook@@UEAAXXZ
-     * @hash   -704611538
+     * @hash   -647074546
      */
     virtual void normalTick();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@FishingHook@@UEBAMXZ
-     * @hash   -1334717623
+     * @hash   -1085026759
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  141
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  144
      * @symbol ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-     * @hash   -690113847
+     * @hash   -632576855
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl  165
+     * @vftbl  168
      * @symbol ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   69715955
+     * @hash   166461747
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vftbl  171
+     * @vftbl  174
      * @symbol ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
-     * @hash   1435458313
+     * @hash   1492995305
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @vftbl  180
+     * @vftbl  182
      * @symbol ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
-     * @hash   1817828398
+     * @hash   1914574190
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  253
+     * @vftbl  251
      * @symbol ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
-     * @hash   1708644773
+     * @hash   1805390565
      */
     virtual bool shouldDropDeathLoot() const;
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
      * @symbol ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -837917479
+     * @hash   -780595751
      */
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getOwner@FishingHook@@QEAAPEAVActor@@XZ
-     * @hash   -619247789
+     * @hash   -561710797
      */
     MCAPI class Actor * getOwner();
     /**
      * @symbol ?postNormalTick@FishingHook@@QEAAXXZ
-     * @hash   -1689037829
+     * @hash   -1631500837
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?retrieve@FishingHook@@QEAAHXZ
-     * @hash   -228157744
+     * @hash   -170574624
      */
     MCAPI int retrieve();
     /**
      * @symbol ?BOBBER_SIZE@FishingHook@@2MB
-     * @hash   -1537962491
+     * @hash   -777342523
      */
     MCAPI static float const BOBBER_SIZE;
 
 //protected:
     /**
      * @symbol ?_fishPosEvent@FishingHook@@IEAAXXZ
-     * @hash   1226779363
+     * @hash   1284316355
      */
     MCAPI void _fishPosEvent();
     /**
      * @symbol ?_fishTeaseEvent@FishingHook@@IEAAXXZ
-     * @hash   -1701629499
+     * @hash   -1644092507
      */
     MCAPI void _fishTeaseEvent();
     /**
      * @symbol ?_fishhookEvent@FishingHook@@IEAAXXZ
-     * @hash   -247250922
+     * @hash   -189713930
      */
     MCAPI void _fishhookEvent();
     /**
      * @symbol ?_getWaterPercentage@FishingHook@@IEAAMXZ
-     * @hash   -1310096152
+     * @hash   -1252559160
      */
     MCAPI float _getWaterPercentage();
     /**
      * @symbol ?_hitCheck@FishingHook@@IEAA?AVHitResult@@XZ
-     * @hash   -281088589
+     * @hash   -223551597
      */
     MCAPI class HitResult _hitCheck();
     /**
      * @symbol ?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z
-     * @hash   -1177518097
+     * @hash   -1119981105
      */
     MCAPI void _pullCloser(class Actor &, float);
     /**
      * @symbol ?_serverHooked@FishingHook@@IEAA_NXZ
-     * @hash   1345017220
+     * @hash   1402554212
      */
     MCAPI bool _serverHooked();
     /**
      * @symbol ?_serverLured@FishingHook@@IEAA_NXZ
-     * @hash   -797387290
+     * @hash   -739850298
      */
     MCAPI bool _serverLured();
     /**
      * @symbol ?_updateGravity@FishingHook@@IEAAXXZ
-     * @hash   2080588300
+     * @hash   2138125292
      */
     MCAPI void _updateGravity();
     /**
      * @symbol ?_updateServer@FishingHook@@IEAAXXZ
-     * @hash   -190266063
+     * @hash   -132729071
      */
     MCAPI void _updateServer();
 

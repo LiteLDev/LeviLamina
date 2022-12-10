@@ -39,66 +39,66 @@ public:
     /**
      * @vftbl  2
      * @symbol ?getType@MonumentBuilding@@UEBA?AW4StructurePieceType@@XZ
-     * @hash   2145858528
+     * @hash   -1977235840
      */
     virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@MonumentBuilding@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1919814808
+     * @hash   2091687736
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @vftbl  5
      * @symbol ?postProcessMobsAt@MonumentBuilding@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -827334156
+     * @hash   -655445852
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ??0MonumentBuilding@@QEAA@AEAVRandom@@FHHAEAH@Z
-     * @hash   1016041812
+     * @hash   1187914740
      */
     MCAPI MonumentBuilding(class Random &, short, int, int, int &);
 
 //private:
     /**
      * @symbol ?generateEntranceArchs@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1817266406
+     * @hash   -1645393478
      */
     MCAPI void generateEntranceArchs(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateEntranceWall@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   146010231
+     * @hash   317883159
      */
     MCAPI void generateEntranceWall(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateLowerWall@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   2070894150
+     * @hash   -2052200218
      */
     MCAPI void generateLowerWall(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateMiddleWall@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1349201224
+     * @hash   -1177328296
      */
     MCAPI void generateMiddleWall(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateRoofPiece@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   1630367063
+     * @hash   1802239991
      */
     MCAPI void generateRoofPiece(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateRoomGraph@MonumentBuilding@@AEAA?AV?$vector@V?$shared_ptr@VRoomDefinition@@@std@@V?$allocator@V?$shared_ptr@VRoomDefinition@@@std@@@2@@std@@AEAVRandom@@@Z
-     * @hash   -1286497991
+     * @hash   -1114625063
      */
     MCAPI std::vector<class std::shared_ptr<class RoomDefinition>> generateRoomGraph(class Random &);
     /**
      * @symbol ?generateUpperWall@MonumentBuilding@@AEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1708411083
+     * @hash   -1536538155
      */
     MCAPI void generateUpperWall(class BlockSource &, class Random &, class BoundingBox const &);
     /**
      * @symbol ?generateWing@MonumentBuilding@@AEAAX_NHAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     * @hash   -1591772991
+     * @hash   -1419900063
      */
     MCAPI void generateWing(bool, int, class BlockSource &, class Random &, class BoundingBox const &);
 

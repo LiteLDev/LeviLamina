@@ -73,207 +73,207 @@ public:
     /**
      * @vftbl  1
      * @symbol ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
-     * @hash   -1175462935
+     * @hash   -426313463
      */
     virtual void reinit(class Item const &, int, int);
     /**
      * @vftbl  2
      * @symbol ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z
-     * @hash   -1592589775
+     * @hash   -843440303
      */
     virtual void reinit(class BlockLegacy const &, int);
     /**
      * @vftbl  3
      * @symbol ?reinit@ItemStack@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@HH@Z
-     * @hash   196106670
+     * @hash   945256142
      */
     virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
     /**
      * @vftbl  4
-     * @symbol ?setNull@ItemStack@@UEAAXXZ
-     * @hash   865577419
+     * @symbol ?setNull@ItemStack@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+     * @hash   -783605424
      */
-    virtual void setNull();
+    virtual void setNull(class std::optional<std::string>);
     /**
      * @vftbl  5
      * @symbol ?toString@ItemStack@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1410042607
+     * @hash   -660800879
      */
     virtual std::string toString() const;
     /**
      * @vftbl  6
      * @symbol ?toDebugString@ItemStack@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1679167218
+     * @hash   -929925490
      */
     virtual std::string toDebugString() const;
     /**
      * @symbol ??0ItemStack@@QEAA@XZ
-     * @hash   1244868593
+     * @hash   1994018065
      */
     MCAPI ItemStack();
     /**
      * @symbol ??0ItemStack@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HHPEBVCompoundTag@@@Z
-     * @hash   2044648362
+     * @hash   -1501169462
      */
     MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-     * @hash   95515000
+     * @hash   844664472
      */
     MCAPI ItemStack(class RecipeIngredient const &);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
-     * @hash   1474735206
+     * @hash   -2071082618
      */
     MCAPI ItemStack(class ItemInstance const &);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-     * @hash   1560191180
+     * @hash   -1985626644
      */
     MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
-     * @hash   1652473339
+     * @hash   -1893344485
      */
     MCAPI ItemStack(class BlockLegacy const &, int);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-     * @hash   1521675251
+     * @hash   -2024142573
      */
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStack@@QEAA@AEBV0@@Z
-     * @hash   761856993
+     * @hash   1511006465
      */
     MCAPI ItemStack(class ItemStack const &);
     /**
      * @symbol ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
-     * @hash   -891890322
+     * @hash   -142740850
      */
     MCAPI void _assignNetIdVariant(class ItemStack const &) const;
     /**
      * @symbol ?clientInitLegacyRequestId@ItemStack@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-     * @hash   -152376095
+     * @hash   596773377
      */
     MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     /**
      * @symbol ?clone@ItemStack@@QEBA?AV1@XZ
-     * @hash   -1298961242
+     * @hash   -549811770
      */
     MCAPI class ItemStack clone() const;
     /**
      * @symbol ?getDestroySpeed@ItemStack@@QEBAMAEBVBlock@@@Z
-     * @hash   65005549
+     * @hash   814155021
      */
     MCAPI float getDestroySpeed(class Block const &) const;
     /**
      * @symbol ?getItemStackNetIdVariant@ItemStack@@QEBAAEBUItemStackNetIdVariant@@XZ
-     * @hash   -760933194
+     * @hash   -615122586
      */
     MCAPI struct ItemStackNetIdVariant const & getItemStackNetIdVariant() const;
     /**
      * @symbol ?getMaxUseDuration@ItemStack@@QEBAHXZ
-     * @hash   -1739766830
+     * @hash   -990617358
      */
     MCAPI int getMaxUseDuration() const;
     /**
      * @symbol ?getStrippedNetworkItem@ItemStack@@QEBA?AV1@XZ
-     * @hash   1406031746
+     * @hash   -2139786078
      */
     MCAPI class ItemStack getStrippedNetworkItem() const;
     /**
      * @symbol ?hasItemStackNetId@ItemStack@@QEBA_NXZ
-     * @hash   104748500
+     * @hash   853897972
      */
     MCAPI bool hasItemStackNetId() const;
     /**
      * @symbol ?inventoryTick@ItemStack@@QEAA_NAEAVLevel@@AEAVActor@@H_N@Z
-     * @hash   -1155507426
+     * @hash   -406357954
      */
     MCAPI bool inventoryTick(class Level &, class Actor &, int, bool);
     /**
      * @symbol ?matchesAndNetIdVariantMatches@ItemStack@@QEBA_NAEBV1@@Z
-     * @hash   -1969665561
+     * @hash   -1220516089
      */
     MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const &) const;
     /**
      * @symbol ?matchesNetIdVariant@ItemStack@@QEBA_NAEBV1@@Z
-     * @hash   1480862843
+     * @hash   -2064954981
      */
     MCAPI bool matchesNetIdVariant(class ItemStack const &) const;
     /**
      * @symbol ?mineBlock@ItemStack@@QEAAXAEBVBlock@@HHHPEAVMob@@@Z
-     * @hash   1648981821
+     * @hash   -1896836003
      */
     MCAPI void mineBlock(class Block const &, int, int, int, class Mob *);
     /**
      * @symbol ??4ItemStack@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1648864564
+     * @hash   -899715092
      */
     MCAPI class ItemStack & operator=(class ItemStack const &);
     /**
      * @symbol ?playSoundIncrementally@ItemStack@@QEBAXAEAVMob@@@Z
-     * @hash   -846444322
+     * @hash   -97294850
      */
     MCAPI void playSoundIncrementally(class Mob &) const;
     /**
      * @symbol ?releaseUsing@ItemStack@@QEAAXPEAVPlayer@@H@Z
-     * @hash   -1701431306
+     * @hash   -952281834
      */
     MCAPI void releaseUsing(class Player *, int);
     /**
      * @symbol ?sameItemAndAuxAndBlockData@ItemStack@@QEBA_NAEBV1@@Z
-     * @hash   -477685823
+     * @hash   271463649
      */
     MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const &) const;
     /**
      * @symbol ?serverInitNetId@ItemStack@@QEAAXXZ
-     * @hash   1572738207
+     * @hash   -1973079617
      */
     MCAPI void serverInitNetId();
     /**
      * @symbol ?tryGetItemStackNetId@ItemStack@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-     * @hash   438785132
+     * @hash   1188026860
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetItemStackNetId() const;
     /**
      * @symbol ?use@ItemStack@@QEAAAEAV1@AEAVPlayer@@@Z
-     * @hash   301033557
+     * @hash   1050275285
      */
     MCAPI class ItemStack & use(class Player &);
     /**
      * @symbol ?useAsFuel@ItemStack@@QEAAXXZ
-     * @hash   1286410835
+     * @hash   2035652563
      */
     MCAPI void useAsFuel();
     /**
      * @symbol ?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z
-     * @hash   569115215
+     * @hash   1318356943
      */
     MCAPI bool useOn(class Actor &, int, int, int, unsigned char, class Vec3 const &);
     /**
      * @symbol ?useTimeDepleted@ItemStack@@QEAA?AW4ItemUseMethod@@PEAVLevel@@PEAVPlayer@@@Z
-     * @hash   1031156896
+     * @hash   1780398624
      */
     MCAPI enum class ItemUseMethod useTimeDepleted(class Level *, class Player *);
     /**
      * @symbol ?EMPTY_ITEM@ItemStack@@2V1@B
-     * @hash   -280087803
+     * @hash   357201269
      */
     MCAPI static class ItemStack const EMPTY_ITEM;
     /**
      * @symbol ?fromDescriptor@ItemStack@@SA?AV1@AEBVNetworkItemStackDescriptor@@AEAVBlockPalette@@_N@Z
-     * @hash   154382225
+     * @hash   903531697
      */
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const &, class BlockPalette &, bool);
     /**
      * @symbol ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z
-     * @hash   1739748623
+     * @hash   -1806069201
      */
     MCAPI static class ItemStack fromTag(class CompoundTag const &);
     /**
      * @symbol ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@AEAVLevel@@@Z
-     * @hash   -1479217474
+     * @hash   -730068002
      */
     MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
 

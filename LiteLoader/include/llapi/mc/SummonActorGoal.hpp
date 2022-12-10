@@ -38,59 +38,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@SummonActorGoal@@UEAA_NXZ
-     * @hash   -754451815
+     * @hash   -708754343
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@SummonActorGoal@@UEAA_NXZ
-     * @hash   -13712937
+     * @hash   31984535
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@SummonActorGoal@@UEAAXXZ
-     * @hash   470118466
+     * @hash   515815938
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@SummonActorGoal@@UEAAXXZ
-     * @hash   1360284626
+     * @hash   1405982098
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@SummonActorGoal@@UEAAXXZ
-     * @hash   1199031581
+     * @hash   1244729053
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@SummonActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -156223913
+     * @hash   -110526441
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0SummonActorGoal@@QEAA@AEAVMob@@AEBV?$vector@USummonSpellData@@V?$allocator@USummonSpellData@@@std@@@std@@@Z
-     * @hash   -1791100157
+     * @hash   -1745402685
      */
     MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
 //private:
     /**
      * @symbol ?_createSpellEntity@SummonActorGoal@@AEBAXMMMMMHUActorDefinitionIdentifier@@@Z
-     * @hash   -1339153950
+     * @hash   -1293456478
      */
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     /**
      * @symbol ?_selectBestSpell@SummonActorGoal@@AEBAHAEAVActor@@@Z
-     * @hash   -1415174285
+     * @hash   -1369476813
      */
     MCAPI int _selectBestSpell(class Actor &) const;
 

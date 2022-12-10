@@ -39,50 +39,50 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getRootKey@ActorSpawnRuleGroup@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1051464860
+     * @hash   1077142780
      */
     virtual std::string const & getRootKey();
     /**
      * @vftbl  2
      * @symbol ?getFileType@ActorSpawnRuleGroup@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   1385290641
+     * @hash   1410968561
      */
     virtual std::string const & getFileType();
     /**
      * @vftbl  3
      * @symbol ?processPopulationControl@ActorSpawnRuleGroup@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@@Z
-     * @hash   -874783291
+     * @hash   -849105371
      */
     virtual bool processPopulationControl(std::string const &, class Json::Value &);
     /**
      * @vftbl  4
      * @symbol ?readResourceFiles@ActorSpawnRuleGroup@@MEAAXAEAVResourcePackManager@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@@std@@@2@@std@@@Z
-     * @hash   449836393
+     * @hash   475483561
      */
     virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
     /**
      * @symbol ??0ActorSpawnRuleGroup@@QEAA@AEAVResourcePackManager@@AEAVIWorldRegistriesProvider@@@Z
-     * @hash   -538753003
+     * @hash   -513075083
      */
     MCAPI ActorSpawnRuleGroup(class ResourcePackManager &, class IWorldRegistriesProvider &);
     /**
      * @symbol ?getActorSpawnPool@ActorSpawnRuleGroup@@QEBAHAEBUActorDefinitionIdentifier@@@Z
-     * @hash   -1937666277
+     * @hash   -1911988357
      */
     MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const &) const;
     /**
      * @symbol ?getDelayEnd@ActorSpawnRuleGroup@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1178598123
+     * @hash   1204276043
      */
     MCAPI int getDelayEnd(std::string const &) const;
     /**
      * @symbol ?offSetDelayByCurrentTick@ActorSpawnRuleGroup@@QEAAXAEBUTick@@@Z
-     * @hash   824260582
+     * @hash   849938502
      */
     MCAPI void offSetDelayByCurrentTick(struct Tick const &);
     /**
      * @symbol ?resetDelayEnd@ActorSpawnRuleGroup@@QEAAXVMobSpawnRules@@_KAEAVRandom@@@Z
-     * @hash   -778654039
+     * @hash   -753006871
      */
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
 

@@ -38,90 +38,90 @@ public:
     /**
      * @vftbl  1
      * @symbol ?init@TickingAreaView@@UEAAXAEBUBounds@@_N@Z
-     * @hash   -1550543709
+     * @hash   -1006756093
      */
     virtual void init(struct Bounds const &, bool);
     /**
      * @vftbl  2
      * @symbol ?tick@TickingAreaView@@UEAAXAEBUTick@@AEAVBlockSource@@_N2@Z
-     * @hash   713265624
+     * @hash   1257053240
      */
     virtual void tick(struct Tick const &, class BlockSource &, bool, bool);
     /**
      * @vftbl  3
      * @symbol ?tickSeasons@TickingAreaView@@UEAAXAEAVBlockSource@@AEAVRandom@@@Z
-     * @hash   -1275877344
+     * @hash   -732089728
      */
     virtual void tickSeasons(class BlockSource &, class Random &);
     /**
      * @vftbl  4
      * @symbol ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-     * @hash   -1461731456
+     * @hash   -917959216
      */
     virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
      * @vftbl  5
      * @symbol ?getBounds@TickingAreaView@@UEBAAEBUBounds@@XZ
-     * @hash   -455101831
+     * @hash   88670409
      */
     virtual struct Bounds const & getBounds() const;
     /**
      * @vftbl  6
      * @symbol ?isCircle@TickingAreaView@@UEBA_NXZ
-     * @hash   1042704027
+     * @hash   1586491643
      */
     virtual bool isCircle() const;
     /**
      * @vftbl  7
      * @symbol ?isDoneLoading@TickingAreaView@@UEBA_NXZ
-     * @hash   -156400591
+     * @hash   610954065
      */
     virtual bool isDoneLoading() const;
     /**
      * @vftbl  8
      * @symbol ?checkInitialLoadDone@TickingAreaView@@UEAA_NUTick@@@Z
-     * @hash   592589149
+     * @hash   1136361389
      */
     virtual bool checkInitialLoadDone(struct Tick);
     /**
      * @vftbl  9
      * @symbol ?checkLoadedChunkNeighborsDone@TickingAreaView@@UEBA_NAEBVBlockSource@@_N@Z
-     * @hash   921809407
+     * @hash   1465581647
      */
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const &, bool) const;
     /**
      * @vftbl  10
      * @symbol ?move@TickingAreaView@@UEAAXAEBUBounds@@@Z
-     * @hash   491733128
+     * @hash   1035520744
      */
     virtual void move(struct Bounds const &);
     /**
      * @vftbl  11
      * @symbol ?createChildSource@TickingAreaView@@UEAA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
-     * @hash   1060058258
+     * @hash   1603830498
      */
     virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /**
      * @vftbl  12
      * @symbol ?getAvailableChunk@TickingAreaView@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     * @hash   1991809647
+     * @hash   -1759385409
      */
     virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
     /**
      * @symbol ??0TickingAreaView@@QEAA@AEAVChunkSource@@@Z
-     * @hash   -1936031146
+     * @hash   -1392258906
      */
     MCAPI TickingAreaView(class ChunkSource &);
     /**
      * @symbol ?unregisterChunkBuildOrderPolicy@TickingAreaView@@QEAAXAEAVChunkBuildOrderPolicyBase@@@Z
-     * @hash   1300713982
+     * @hash   1844501598
      */
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
 //private:
     /**
      * @symbol ?_tickChunk@TickingAreaView@@AEAA_NAEBUTick@@AEAVBlockSource@@AEAVLevel@@AEBVChunkPos@@@Z
-     * @hash   28521525
+     * @hash   572293765
      */
     MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
 

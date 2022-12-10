@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createStorePreviousClientInputSystem@StorePreviousClientInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   880581428
+     * @hash   873616100
      */
     MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem();
 

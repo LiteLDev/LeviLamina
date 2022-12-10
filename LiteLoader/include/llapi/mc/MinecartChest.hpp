@@ -33,147 +33,147 @@ public:
 
 public:
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -1412734308
      */
     virtual ~MinecartChest();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -125227901
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -6317605
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -95675229
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1428946562
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  111
+     * @hash   1450118353
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  113
+     * @hash   1459422755
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_113();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  250
-     * @hash   -739509363
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_250();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  268
-     * @hash   -1897023292
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_245();
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  248
+     * @hash   -511059482
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_248();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  266
+     * @hash   -1802124542
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  284
+     * @vftbl  274
+     * @hash   -1775342433
+     */
+    virtual void __unk_vfn_274();
+    /**
+     * @vftbl  281
+     * @hash   -1807236101
+     */
+    virtual void __unk_vfn_281();
+    /**
+     * @vftbl  282
      * @symbol ?destroy@MinecartChest@@UEAAXAEBVActorDamageSource@@_N@Z
-     * @hash   671408453
+     * @hash   720703909
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @vftbl  285
+     * @vftbl  283
      * @symbol ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
-     * @hash   -567418682
+     * @hash   -465506554
      */
     virtual enum class MinecartType getType();
     /**
-     * @vftbl  286
+     * @vftbl  284
      * @symbol ?getDefaultDisplayBlock@MinecartChest@@UEBAPEBVBlock@@XZ
-     * @hash   1919350940
+     * @hash   1968707900
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
-     * @vftbl  287
-     * @hash   -1854511535
+     * @vftbl  285
+     * @hash   -1763087761
      */
-    virtual void __unk_vfn_287();
+    virtual void __unk_vfn_285();
     /**
-     * @vftbl  289
+     * @vftbl  287
      * @symbol ?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -1053304403
+     * @hash   -1004008947
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
      * @symbol ??0MinecartChest@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   -1419499766
+     * @hash   -1370204310
      */
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
@@ -182,7 +182,7 @@ public:
 private:
     /**
      * @symbol ?ITEMS_SIZE@MinecartChest@@0HB
-     * @hash   736058358
+     * @hash   1496155542
      */
     MCAPI static int const ITEMS_SIZE;
 

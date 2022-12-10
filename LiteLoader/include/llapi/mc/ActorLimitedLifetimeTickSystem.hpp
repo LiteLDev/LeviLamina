@@ -37,13 +37,13 @@ public:
     virtual ~ActorLimitedLifetimeTickSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@ActorLimitedLifetimeTickSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -495807942
+     * @hash   -351012150
      */
     virtual void tick(class EntityRegistry &);
 

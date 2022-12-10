@@ -40,91 +40,91 @@ public:
 public:
     /**
      * @symbol ??0ActorDefinitionGroup@@QEAA@AEAVLevel@@AEAVResourcePackManager@@AEAVIMinecraftEventing@@AEBVExperiments@@@Z
-     * @hash   -1272211825
+     * @hash   -1192333505
      */
     MCAPI ActorDefinitionGroup(class Level &, class ResourcePackManager &, class IMinecraftEventing &, class Experiments const &);
     /**
      * @symbol ?buildActorEventList@ActorDefinitionGroup@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     * @hash   -1449625973
+     * @hash   -1367410501
      */
     MCAPI std::vector<std::string> buildActorEventList() const;
     /**
      * @symbol ?getComponentFactory@ActorDefinitionGroup@@QEAAPEAVActorComponentFactory@@XZ
-     * @hash   -1250997041
+     * @hash   -1080138929
      */
     MCAPI class ActorComponentFactory * getComponentFactory();
     /**
      * @symbol ?setComponentFactory@ActorDefinitionGroup@@QEAAXPEAVActorComponentFactory@@@Z
-     * @hash   -931874145
+     * @hash   -849689425
      */
     MCAPI void setComponentFactory(class ActorComponentFactory *);
     /**
      * @symbol ?tryGetDefinition@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1202299877
+     * @hash   -1120115157
      */
     MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const &);
     /**
      * @symbol ?tryGetDefinitionGroup@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   928855259
+     * @hash   1011039979
      */
     MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const &, std::string const &);
     /**
      * @symbol ?loadActorDefinitionIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   369619007
+     * @hash   451834479
      */
     MCAPI static bool loadActorDefinitionIdentifier(class Json::Value const &, class SemVersion const &, std::string &);
     /**
      * @symbol ?loadActorDefinitionRuntimeIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   414846729
+     * @hash   497031449
      */
     MCAPI static bool loadActorDefinitionRuntimeIdentifier(class Json::Value const &, class SemVersion const &, std::string &);
     /**
      * @symbol ?tryReadEntityResourceFile@ActorDefinitionGroup@@SA_NAEAVPackInstance@@AEBVPath@Core@@AEAVValue@Json@@@Z
-     * @hash   -322614623
+     * @hash   -240429903
      */
     MCAPI static bool tryReadEntityResourceFile(class PackInstance &, class Core::Path const &, class Json::Value &);
 
 //protected:
     /**
      * @symbol ?_addRef@ActorDefinitionGroup@@IEAAXAEAVActorDefinitionPtr@@@Z
-     * @hash   -2023164007
+     * @hash   -1942824407
      */
     MCAPI void _addRef(class ActorDefinitionPtr &);
     /**
      * @symbol ?_removeRef@ActorDefinitionGroup@@IEAAXAEAVActorDefinitionPtr@@@Z
-     * @hash   -711171078
+     * @hash   -630078054
      */
     MCAPI void _removeRef(class ActorDefinitionPtr &);
 
 //private:
     /**
      * @symbol ?_getResources@ActorDefinitionGroup@@AEAAXAEAVLevel@@@Z
-     * @hash   882228453
+     * @hash   962721813
      */
     MCAPI void _getResources(class Level &);
     /**
      * @symbol ?_loadActorDefinition@ActorDefinitionGroup@@AEAA?AULoadActorResult@1@AEAVLevel@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4CurrentCmdVersion@@AEAVValue@Json@@AEAV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@W4LogArea@@@Z
-     * @hash   1290005338
+     * @hash   1370452570
      */
     MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, class SemVersion const &, std::string const &, enum class CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &, enum class LogArea);
     /**
      * @symbol ?_loadDefinitionFromJSON@ActorDefinitionGroup@@AEAA_NAEBVSemVersion@@0AEBW4CurrentCmdVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@2AEAVLevel@@W4LogArea@@@Z
-     * @hash   -1333706458
+     * @hash   -1253120842
      */
     MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, class SemVersion const &, enum class CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &, enum class LogArea);
     /**
      * @symbol ?_loadTemplates@ActorDefinitionGroup@@AEAAXAEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UDeserializeDataParams@@@Z
-     * @hash   304869322
+     * @hash   385470314
      */
     MCAPI void _loadTemplates(class Level &, std::string const &, struct DeserializeDataParams);
     /**
      * @symbol ?_setupCommonResourceDefinitionMap@ActorDefinitionGroup@@AEAAXAEAVActorDefinition@@AEAVLevel@@@Z
-     * @hash   -812157925
+     * @hash   -731034149
      */
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition &, class Level &);
     /**
      * @symbol ?_setupPropertyGroups@ActorDefinitionGroup@@AEAAXAEAVLevel@@@Z
-     * @hash   873566700
+     * @hash   954705852
      */
     MCAPI void _setupPropertyGroups(class Level &);
 

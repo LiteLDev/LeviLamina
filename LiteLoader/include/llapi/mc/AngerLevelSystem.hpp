@@ -35,13 +35,13 @@ public:
     virtual ~AngerLevelSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@AngerLevelSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   -1245773092
+     * @hash   -1113570244
      */
     virtual void tick(class EntityRegistry &);
 

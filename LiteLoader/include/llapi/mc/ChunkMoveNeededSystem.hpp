@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createChunkMoveNeededSystem@ChunkMoveNeededSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -984493000
+     * @hash   -876753368
      */
     MCAPI static struct TickingSystemWithInfo createChunkMoveNeededSystem();
 

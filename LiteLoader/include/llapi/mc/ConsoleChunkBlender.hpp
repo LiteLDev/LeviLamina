@@ -34,64 +34,64 @@ public:
 public:
     /**
      * @symbol ??0ConsoleChunkBlender@@QEAA@XZ
-     * @hash   -1045219260
+     * @hash   -571715340
      */
     MCAPI ConsoleChunkBlender();
     /**
      * @symbol ?blendChunk@ConsoleChunkBlender@@QEAAXAEAVLevelChunk@@0W4BlenderMode@1@@Z
-     * @hash   1502260851
+     * @hash   1975764771
      */
     MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum class ConsoleChunkBlender::BlenderMode);
     /**
      * @symbol ?setInterpolants@ConsoleChunkBlender@@QEAAXMMMM@Z
-     * @hash   -629202757
+     * @hash   -155037669
      */
     MCAPI void setInterpolants(float, float, float, float);
     /**
      * @symbol ??1ConsoleChunkBlender@@QEAA@XZ
-     * @hash   1731804676
+     * @hash   1837530052
      */
     MCAPI ~ConsoleChunkBlender();
 
 //protected:
     /**
      * @symbol ?_blendChunkEnd4J@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0@Z
-     * @hash   392120561
+     * @hash   865624481
      */
     MCAPI void _blendChunkEnd4J(class LevelChunk &, class LevelChunk &);
     /**
      * @symbol ?_blendChunkNether4J@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0@Z
-     * @hash   197950788
+     * @hash   671454708
      */
     MCAPI void _blendChunkNether4J(class LevelChunk &, class LevelChunk &);
     /**
      * @symbol ?_blendChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0W4ShiftBlockTypes@1@@Z
-     * @hash   326418344
+     * @hash   799922264
      */
     MCAPI void _blendChunkOverworld(class LevelChunk &, class LevelChunk &, enum class ConsoleChunkBlender::ShiftBlockTypes);
     /**
      * @symbol ?_copyColumnFromGeneratedChunkNether@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HH@Z
-     * @hash   -745007131
+     * @hash   -271503211
      */
     MCAPI void _copyColumnFromGeneratedChunkNether(class LevelChunk &, class LevelChunk &, int, int);
     /**
      * @symbol ?_copyColumnFromGeneratedChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HHW4ShiftBlockTypes@1@@Z
-     * @hash   1953646095
+     * @hash   -1867817281
      */
     MCAPI void _copyColumnFromGeneratedChunkOverworld(class LevelChunk &, class LevelChunk &, int, int, enum class ConsoleChunkBlender::ShiftBlockTypes);
     /**
      * @symbol ?_findTopMostWaterHeight@ConsoleChunkBlender@@IEAA?AVChunkLocalHeight@@AEAVLevelChunk@@HHAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@@Z
-     * @hash   935081541
+     * @hash   1408585461
      */
     MCAPI class ChunkLocalHeight _findTopMostWaterHeight(class LevelChunk &, int, int, class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> const &);
     /**
      * @symbol ?_prepInterpTable@ConsoleChunkBlender@@IEAAXXZ
-     * @hash   -1449508935
+     * @hash   -976005015
      */
     MCAPI void _prepInterpTable();
     /**
      * @symbol ?_shiftColumnBySetBlocks@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@HHH_NVChunkLocalHeight@@W4ShiftBlockTypes@1@AEBUOverworldBlendRules@@@Z
-     * @hash   -598755573
+     * @hash   -125251653
      */
     MCAPI void _shiftColumnBySetBlocks(class LevelChunk &, int, int, int, bool, class ChunkLocalHeight, enum class ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const &);
 

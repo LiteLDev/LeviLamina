@@ -29,39 +29,39 @@ public:
 public:
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEBV0@@Z
-     * @hash   -1311382143
+     * @hash   -767517647
      */
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEAVIDataInput@@@Z
-     * @hash   1265488909
+     * @hash   1809353405
      */
     MCAPI LevelChunkMetaData(class IDataInput &);
     /**
      * @symbol ?getCurrentHash@LevelChunkMetaData@@QEBA_KXZ
-     * @hash   1358390315
+     * @hash   1902224059
      */
     MCAPI unsigned __int64 getCurrentHash() const;
     /**
      * @symbol ?serialize@LevelChunkMetaData@@QEBAXAEAVIDataOutput@@@Z
-     * @hash   349062062
+     * @hash   519966302
      */
     MCAPI void serialize(class IDataOutput &) const;
     /**
      * @symbol ??1LevelChunkMetaData@@QEAA@XZ
-     * @hash   953351906
+     * @hash   1015563202
      */
     MCAPI ~LevelChunkMetaData();
     /**
      * @symbol ?INVALID_META_DATA@LevelChunkMetaData@@2_KB
-     * @hash   1360157574
+     * @hash   2144987054
      */
     MCAPI static unsigned __int64 const INVALID_META_DATA;
 
 //protected:
     /**
      * @symbol ?_recomputeHash@LevelChunkMetaData@@IEBAXXZ
-     * @hash   -1941953907
+     * @hash   -1398089411
      */
     MCAPI void _recomputeHash() const;
 

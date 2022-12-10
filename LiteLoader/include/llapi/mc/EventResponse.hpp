@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@EventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -10482258
+     * @hash   26881422
      */
     virtual std::string const & getName() const;
     /**
@@ -50,7 +50,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?buildSchema@EventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
-     * @hash   323754508
+     * @hash   412720044
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 

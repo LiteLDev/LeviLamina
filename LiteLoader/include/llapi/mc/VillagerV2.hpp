@@ -33,192 +33,197 @@ public:
 
 public:
     /**
-     * @vftbl  8
+     * @vftbl  10
      * @symbol ?reloadHardcoded@VillagerV2@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     * @hash   -1906565413
+     * @hash   -1862405541
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -281194708
      */
     virtual ~VillagerV2();
     /**
-     * @vftbl  17
+     * @vftbl  20
      * @symbol ?remove@VillagerV2@@UEAAXXZ
-     * @hash   -2120229127
+     * @hash   -2067427943
      */
     virtual void remove();
     /**
-     * @vftbl  19
+     * @vftbl  22
      * @symbol ?isRuntimePredictedMovementEnabled@VillagerV2@@UEBA_NXZ
-     * @hash   -1018607954
+     * @hash   -974463458
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
-    /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_70();
     /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -132439245
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  95
-     * @hash   -105657136
+     * @vftbl  90
+     * @hash   -13774965
      */
-    virtual void __unk_vfn_95();
+    virtual void __unk_vfn_90();
     /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  111
+     * @hash   1450118353
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  113
+     * @hash   1459422755
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_113();
     /**
-     * @vftbl  202
+     * @vftbl  183
+     * @hash   1602074556
+     */
+    virtual void __unk_vfn_183();
+    /**
+     * @vftbl  197
+     * @hash   1692150047
+     */
+    virtual void __unk_vfn_197();
+    /**
+     * @vftbl  204
      * @symbol ?buildDebugInfo@VillagerV2@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   447665702
+     * @hash   491779446
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  237
+     * @vftbl  235
      * @symbol ?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   957688875
+     * @hash   1001802619
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
     /**
      * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  252
      * @symbol ?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   279852933
+     * @hash   333807317
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z
-     * @hash   1477403002
+     * @hash   1521609002
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  294
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  293
      * @symbol ?travel@VillagerV2@@UEAAXMMM@Z
-     * @hash   1332884915
+     * @hash   1377060163
      */
     virtual void travel(float, float, float);
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  357
+     * @vftbl  355
      * @symbol ?newServerAiStep@VillagerV2@@UEAAXXZ
-     * @hash   -1221692500
+     * @hash   -1177548004
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
     /**
      * @symbol ??0VillagerV2@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   26989406
+     * @hash   71103150
      */
     MCAPI VillagerV2(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?initialize@VanillaBastionJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
-     * @hash   1026007102
+     * @hash   1183795614
      */
     MCAPI static void initialize(class JigsawStructureRegistry &);
 

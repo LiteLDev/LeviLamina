@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ??0ActorTypeTracker@@QEAA@XZ
-     * @hash   410103397
+     * @hash   435842821
      */
     MCAPI ActorTypeTracker();
     /**
      * @symbol ?markSeenType@ActorTypeTracker@@QEAAXAEBVActor@@@Z
-     * @hash   600011110
+     * @hash   625750534
      */
     MCAPI void markSeenType(class Actor const &);
     /**
      * @symbol ?shouldSendPropertyUpdate@ActorTypeTracker@@QEAA_NAEBVActor@@@Z
-     * @hash   -1234716531
+     * @hash   -1208977107
      */
     MCAPI bool shouldSendPropertyUpdate(class Actor const &);
     /**
      * @symbol ??1ActorTypeTracker@@QEAA@XZ
-     * @hash   1073610819
+     * @hash   1122706387
      */
     MCAPI ~ActorTypeTracker();
 

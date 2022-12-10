@@ -38,7 +38,7 @@ public:
     virtual ~RabbitPanicGoal();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
 

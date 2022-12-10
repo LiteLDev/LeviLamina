@@ -31,37 +31,37 @@ public:
 public:
     /**
      * @symbol ??0ContainerScreenContext@@QEAA@XZ
-     * @hash   1545234606
+     * @hash   1589978766
      */
     MCAPI ContainerScreenContext();
     /**
      * @symbol ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBVBlockPos@@@Z
-     * @hash   2075179121
+     * @hash   2119923281
      */
     MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
     /**
      * @symbol ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBUActorUniqueID@@@Z
-     * @hash   956095667
+     * @hash   1000839827
      */
     MCAPI ContainerScreenContext(class Player &, enum class ContainerType, struct ActorUniqueID const &);
     /**
      * @symbol ?getPlayer@ContainerScreenContext@@QEBAAEAVPlayer@@XZ
-     * @hash   -113515114
+     * @hash   11322630
      */
     MCAPI class Player & getPlayer() const;
     /**
      * @symbol ?getScreenContainerType@ContainerScreenContext@@QEBA?AW4ContainerType@@XZ
-     * @hash   813889700
+     * @hash   793608756
      */
     MCAPI enum class ContainerType getScreenContainerType() const;
     /**
      * @symbol ?tryGetActor@ContainerScreenContext@@QEBAPEAVActor@@XZ
-     * @hash   -578405513
+     * @hash   -533661353
      */
     MCAPI class Actor * tryGetActor() const;
     /**
      * @symbol ?tryGetBlockActor@ContainerScreenContext@@QEBAPEAVBlockActor@@XZ
-     * @hash   -456850567
+     * @hash   -412106407
      */
     MCAPI class BlockActor * tryGetBlockActor() const;
 

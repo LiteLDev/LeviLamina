@@ -37,39 +37,39 @@ public:
     virtual ~ServerMoveInputHandler();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  5
-     * @hash   -1401863067
+     * @hash   -1312897531
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  15
-     * @hash   -377451000
+     * @hash   -288485464
      */
     virtual void __unk_vfn_15();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
     /**
      * @symbol ?registerInputHandlers@ServerMoveInputHandler@@UEAAXAEAVInputHandler@@@Z
-     * @hash   140909617
+     * @hash   229875153
      */
     MCVAPI void registerInputHandlers(class InputHandler &);
 #endif
     /**
      * @symbol ??0ServerMoveInputHandler@@QEAA@XZ
-     * @hash   1537018784
+     * @hash   1461445744
      */
     MCAPI ServerMoveInputHandler();
     /**
      * @symbol ?digestPlayerInputPacket@ServerMoveInputHandler@@QEAAXAEBVPlayerAuthInputPacket@@@Z
-     * @hash   1446680992
+     * @hash   1371107952
      */
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 

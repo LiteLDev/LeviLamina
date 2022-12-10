@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?getIdentity@ExtendedCertificate@@SA?AVUUID@mce@@AEBVCertificate@@@Z
-     * @hash   325041303
+     * @hash   507416039
      */
     MCAPI static class mce::UUID getIdentity(class Certificate const &);
     /**
      * @symbol ?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
-     * @hash   -1585356863
+     * @hash   -1403012879
      */
     MCAPI static std::string getIdentityName(class Certificate const &);
     /**
      * @symbol ?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
-     * @hash   1281085889
+     * @hash   1383966705
      */
     MCAPI static std::string getXuid(class Certificate const &);
     /**
      * @symbol ?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCertificate@@@Z
-     * @hash   -441439938
+     * @hash   -338589874
      */
     MCAPI static std::string getXuid(class Certificate const *);
 

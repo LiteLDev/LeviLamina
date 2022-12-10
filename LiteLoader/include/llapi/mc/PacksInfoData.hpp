@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ
-     * @hash   1655137605
+     * @hash   1639992245
      */
     MCAPI unsigned __int64 getBehaviorPackSize() const;
     /**
      * @symbol ?getResourcePackSize@PacksInfoData@@QEBA_KXZ
-     * @hash   566932293
+     * @hash   551786933
      */
     MCAPI unsigned __int64 getResourcePackSize() const;
 

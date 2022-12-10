@@ -39,36 +39,36 @@ public:
     /**
      * @vftbl  1
      * @symbol ?NewSequentialFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
-     * @hash   871349135
+     * @hash   1344991439
      */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
      * @vftbl  2
      * @symbol ?NewRandomAccessFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
-     * @hash   -1574648145
+     * @hash   -1101159601
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
      * @vftbl  3
      * @symbol ?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     * @hash   -1507703615
+     * @hash   -1034061311
      */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
      * @vftbl  7
      * @symbol ?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -9041495
+     * @hash   464447049
      */
     virtual class leveldb::Status DeleteFileA(std::string const &);
     /**
      * @vftbl  11
      * @symbol ?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     * @hash   -189481629
+     * @hash   284145299
      */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /**
      * @symbol ??0EncryptedProxyEnv@@QEAA@PEAVEnv@leveldb@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EncryptedProxyReadMode@@@Z
-     * @hash   -695586090
+     * @hash   -222589578
      */
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum class EncryptedProxyReadMode);
 

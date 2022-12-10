@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0ReplaceRule@@QEAA@VBlockDescriptor@@V?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-     * @hash   1039996608
+     * @hash   1148243648
      */
     MCAPI ReplaceRule(class BlockDescriptor, std::vector<class BlockDescriptor>);
     /**
      * @symbol ??1ReplaceRule@@QEAA@XZ
-     * @hash   -869826404
+     * @hash   -761702372
      */
     MCAPI ~ReplaceRule();
 

@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@ResourcePackStackPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1699822101
+     * @hash   1657599605
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ResourcePackStackPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -912911166
+     * @hash   -955133662
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@ResourcePackStackPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -434863451
+     * @hash   -477085947
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@ResourcePackStackPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   1661770181
+     * @hash   1619547685
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ResourcePackStackPacket@@QEAA@XZ
-     * @hash   -1548041739
+     * @hash   -1590264235
      */
     MCAPI ResourcePackStackPacket();
     /**
      * @symbol ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
-     * @hash   1379761850
+     * @hash   1337539354
      */
     MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
 

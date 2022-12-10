@@ -31,17 +31,17 @@ public:
 public:
     /**
      * @symbol ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@AEBUModuleDescriptor@Scripting@@@Z
-     * @hash   -2048956989
+     * @hash   -1969985853
      */
     MCAPI class ScriptPluginResult & getOrCreatePluginResults(struct Scripting::ModuleDescriptor const &);
     /**
      * @symbol ?writeToContentLog@ScriptPluginManagerResult@@QEBAXXZ
-     * @hash   -1840377875
+     * @hash   -1761406739
      */
     MCAPI void writeToContentLog() const;
     /**
      * @symbol ??1ScriptPluginManagerResult@@QEAA@XZ
-     * @hash   2053434856
+     * @hash   2109080600
      */
     MCAPI ~ScriptPluginManagerResult();
 

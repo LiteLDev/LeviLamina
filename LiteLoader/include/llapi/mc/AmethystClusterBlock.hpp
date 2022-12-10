@@ -38,279 +38,284 @@ public:
     virtual ~AmethystClusterBlock();
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  22
      * @symbol ?canProvideSupport@AmethystClusterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     * @hash   394118463
+     * @hash   490864255
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  54
-     * @hash   -221097261
+     * @hash   -124597485
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@AmethystClusterBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   654888036
+     * @hash   751387812
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  82
-     * @hash   -129845506
+     * @hash   -33099714
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  91
      * @symbol ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     * @hash   1040202651
+     * @hash   1634669563
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @vftbl  92
      * @symbol ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1762821488
+     * @hash   -1819468208
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   1068143058
+     * @hash   1662609970
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@AmethystClusterBlock@@EEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   430558044
+     * @hash   1196159836
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1256109822
+     * @hash   1850069326
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@AmethystClusterBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     * @hash   1463840287
+     * @hash   -2118403281
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  143
      * @symbol ?getVisualShape@AmethystClusterBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     * @hash   -2090870326
+     * @hash   -1496403414
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
      * @vftbl  152
      * @symbol ?init@AmethystClusterBlock@@UEAAAEAVBlockLegacy@@XZ
-     * @hash   1686637603
+     * @hash   -2013862781
      */
     virtual class BlockLegacy & init();
     /**
      * @vftbl  156
-     * @hash   1472752786
+     * @hash   1569252562
      */
     virtual void __unk_vfn_156();
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@AmethystClusterBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -372410265
+     * @hash   393191527
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
-     * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  172
+     * @vftbl  171
      * @symbol ?playerDestroy@AmethystClusterBlock@@EEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   -305575966
+     * @hash   288890946
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  173
      * @symbol ?tick@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1656658358
+     * @hash   -345465978
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @vftbl  176
-     * @hash   1537222432
+     * @hash   1633968224
      */
     virtual void __unk_vfn_176();
     /**
      * @vftbl  179
      * @symbol ?canSurvive@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -353079520
+     * @hash   241387392
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl  189
+     * @vftbl  188
      * @symbol ?getResourceItem@AmethystClusterBlock@@EEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -1430693076
+     * @hash   -836226164
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0AmethystClusterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-     * @hash   1289800174
+     * @hash   1884267086
      */
     MCAPI AmethystClusterBlock(std::string const &, int, int, int);
 
 //private:
     /**
      * @symbol ?_shapeFromDirection@AmethystClusterBlock@@AEBA?AVAABB@@H@Z
-     * @hash   1327565606
+     * @hash   1922032518
      */
     MCAPI class AABB _shapeFromDirection(int) const;
 

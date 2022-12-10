@@ -31,22 +31,22 @@ public:
 public:
     /**
      * @symbol ?isAnyToggleEnabled@ExperimentStorage@@QEBA_NXZ
-     * @hash   -1495758172
+     * @hash   -944851468
      */
     MCAPI bool isAnyToggleEnabled() const;
     /**
      * @symbol ??4ExperimentStorage@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -549537732
+     * @hash   -591760228
      */
     MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     /**
      * @symbol ?wereAnyExperimentsEverToggled@ExperimentStorage@@QEBA_NXZ
-     * @hash   2121511986
+     * @hash   -1622548606
      */
     MCAPI bool wereAnyExperimentsEverToggled() const;
     /**
      * @symbol ??1ExperimentStorage@@QEAA@XZ
-     * @hash   204320346
+     * @hash   294285322
      */
     MCAPI ~ExperimentStorage();
 

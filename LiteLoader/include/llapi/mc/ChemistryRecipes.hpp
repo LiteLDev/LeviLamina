@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?addRecipes@ChemistryRecipes@@SAXAEAVRecipes@@@Z
-     * @hash   760297856
+     * @hash   1307114544
      */
     MCAPI static void addRecipes(class Recipes &);
 

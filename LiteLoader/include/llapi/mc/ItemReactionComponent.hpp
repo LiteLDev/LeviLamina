@@ -37,18 +37,18 @@ public:
     virtual ~ItemReactionComponent();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   -1404633630
+     * @hash   -1315668094
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?_onEnd@ItemReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     * @hash   -1182616147
+     * @hash   -635476563
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

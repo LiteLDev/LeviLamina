@@ -40,91 +40,91 @@ public:
     /**
      * @vftbl  1
      * @symbol ?load@BellBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -2101024398
+     * @hash   -1540261678
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @vftbl  2
      * @symbol ?save@BellBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   982360609
+     * @hash   1543123329
      */
     virtual bool save(class CompoundTag &) const;
     /**
      * @vftbl  7
      * @symbol ?tick@BellBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   566981195
+     * @hash   1127728539
      */
     virtual void tick(class BlockSource &);
     /**
      * @vftbl  12
-     * @hash   -380221563
+     * @hash   -291256027
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  16
-     * @hash   -376527479
+     * @vftbl  18
+     * @hash   -285714901
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_18();
     /**
-     * @vftbl  28
-     * @hash   -346051286
+     * @vftbl  31
+     * @hash   -234921246
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl  29
-     * @hash   -308978789
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl  30
-     * @hash   -288661327
-     */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl  32
-     * @hash   -322963261
+     * @hash   -233997725
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -322039740
+     * @hash   -233074204
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -321116219
+     * @hash   -232150683
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  35
+     * @hash   -190772906
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl  36
+     * @hash   -189849385
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl  37
      * @symbol ?_getUpdatePacket@BellBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   1215748340
+     * @hash   1972309044
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  36
+     * @vftbl  38
      * @symbol ?_onUpdatePacket@BellBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   70738942
+     * @hash   827161262
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ??0BellBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   298324942
+     * @hash   859118414
      */
     MCAPI BellBlockActor(class BlockPos const &);
     /**
      * @symbol ?ejectItem@BellBlockActor@@QEBAXAEBVBlockPos@@AEAVActor@@@Z
-     * @hash   -1824753953
+     * @hash   -1263991233
      */
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?isRinging@BellBlockActor@@QEBA_NXZ
-     * @hash   1998114666
+     * @hash   -1736089910
      */
     MCAPI bool isRinging() const;
     /**
      * @symbol ?ring@BellBlockActor@@QEAA_NW4Type@Direction@@AEAVBlockSource@@PEAVActor@@_N@Z
-     * @hash   1622520259
+     * @hash   -2111684317
      */
     MCAPI bool ring(enum class Direction::Type, class BlockSource &, class Actor *, bool);
 

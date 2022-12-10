@@ -32,124 +32,124 @@ public:
 public:
     /**
      * @symbol ??0RaidBossComponent@@QEAA@$$QEAV0@@Z
-     * @hash   681297285
+     * @hash   836471877
      */
     MCAPI RaidBossComponent(class RaidBossComponent &&);
     /**
      * @symbol ?getColor@RaidBossComponent@@QEAA?AW4BossBarColor@@XZ
-     * @hash   -2145999934
+     * @hash   -1966746526
      */
     MCAPI enum class BossBarColor getColor();
     /**
      * @symbol ?getHealthPercent@RaidBossComponent@@QEAAMXZ
-     * @hash   -1884822116
+     * @hash   -1905302948
      */
     MCAPI float getHealthPercent();
     /**
      * @symbol ?getName@RaidBossComponent@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -382120624
+     * @hash   -402601456
      */
     MCAPI std::string getName();
     /**
      * @symbol ?getOwnerUniqueID@RaidBossComponent@@QEAA?AUActorUniqueID@@XZ
-     * @hash   1398768646
+     * @hash   1378472326
      */
     MCAPI struct ActorUniqueID getOwnerUniqueID();
     /**
      * @symbol ?getRaidInProgress@RaidBossComponent@@QEAA_NXZ
-     * @hash   892717522
+     * @hash   872421202
      */
     MCAPI bool getRaidInProgress();
     /**
      * @symbol ?getVillage@RaidBossComponent@@QEAA?AV?$shared_ptr@VVillage@@@std@@XZ
-     * @hash   2102649527
+     * @hash   2082353207
      */
     MCAPI class std::shared_ptr<class Village> getVillage();
     /**
      * @symbol ?getWaveStarted@RaidBossComponent@@QEAA_NXZ
-     * @hash   197452452
+     * @hash   177156132
      */
     MCAPI bool getWaveStarted();
     /**
      * @symbol ?initialize@RaidBossComponent@@QEAAXUActorUniqueID@@@Z
-     * @hash   2123195228
+     * @hash   2102898908
      */
     MCAPI void initialize(struct ActorUniqueID);
     /**
      * @symbol ?isWithinRange@RaidBossComponent@@QEAA_NAEBVMob@@@Z
-     * @hash   -1005263821
+     * @hash   -1025560141
      */
     MCAPI bool isWithinRange(class Mob const &);
     /**
      * @symbol ??4RaidBossComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1642624480
+     * @hash   -1487572896
      */
     MCAPI class RaidBossComponent & operator=(class RaidBossComponent &&);
     /**
      * @symbol ?registerPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-     * @hash   -218847329
+     * @hash   -239143649
      */
     MCAPI void registerPlayer(class Player *);
     /**
      * @symbol ?removeBossBar@RaidBossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   2111126438
+     * @hash   2090830118
      */
     MCAPI void removeBossBar(class Actor &);
     /**
      * @symbol ?resendRaidBossEventData@RaidBossComponent@@QEAAXAEAVPlayer@@@Z
-     * @hash   1796356102
+     * @hash   1776059782
      */
     MCAPI void resendRaidBossEventData(class Player &);
     /**
      * @symbol ?sendRegistryMessages@RaidBossComponent@@QEAAXAEAVActor@@@Z
-     * @hash   532069562
+     * @hash   511773242
      */
     MCAPI void sendRegistryMessages(class Actor &);
     /**
      * @symbol ?setVillage@RaidBossComponent@@QEAAXV?$weak_ptr@VVillage@@@std@@@Z
-     * @hash   550149171
+     * @hash   529868227
      */
     MCAPI void setVillage(class std::weak_ptr<class Village>);
     /**
      * @symbol ?setWaveStarted@RaidBossComponent@@QEAAX_N@Z
-     * @hash   352148744
+     * @hash   331867800
      */
     MCAPI void setWaveStarted(bool);
     /**
      * @symbol ?setupBossBarInfo@RaidBossComponent@@QEAAXAEAVActor@@PEAVVillage@@@Z
-     * @hash   -1598773720
+     * @hash   -1619054664
      */
     MCAPI void setupBossBarInfo(class Actor &, class Village *);
     /**
      * @symbol ?tryRemoveBoss@RaidBossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-     * @hash   1363234260
+     * @hash   1342953316
      */
     MCAPI bool tryRemoveBoss(class Actor &, class Player &);
     /**
      * @symbol ?unRegisterPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-     * @hash   -1484867489
+     * @hash   -1505117681
      */
     MCAPI void unRegisterPlayer(class Player *);
     /**
      * @symbol ?updateBossBarStats@RaidBossComponent@@QEAAXAEAVActor@@AEBVRaid@@@Z
-     * @hash   -1816023709
+     * @hash   -1836273901
      */
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
     /**
      * @symbol ??1RaidBossComponent@@QEAA@XZ
-     * @hash   738977826
+     * @hash   894029410
      */
     MCAPI ~RaidBossComponent();
 
 //private:
     /**
      * @symbol ?_broadcastBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVActor@@@Z
-     * @hash   1277228814
+     * @hash   1256747982
      */
     MCAPI void _broadcastBossEvent(enum class BossEventUpdateType, class Actor &);
     /**
      * @symbol ?_sendBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVPlayer@@@Z
-     * @hash   97888317
+     * @hash   77407485
      */
     MCAPI void _sendBossEvent(enum class BossEventUpdateType, class Player &);
 

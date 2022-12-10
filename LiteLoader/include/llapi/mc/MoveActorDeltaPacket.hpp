@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@MoveActorDeltaPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1580750338
+     * @hash   1510374386
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MoveActorDeltaPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1355242321
+     * @hash   -1425618273
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@MoveActorDeltaPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   158517272
+     * @hash   88141320
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@MoveActorDeltaPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -1245945688
+     * @hash   -1316321640
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MoveActorDeltaPacket@@QEAA@XZ
-     * @hash   -2075577944
+     * @hash   -2145953896
      */
     MCAPI MoveActorDeltaPacket();
     /**
      * @symbol ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
-     * @hash   -946472527
+     * @hash   -1016848479
      */
     MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const &);
 

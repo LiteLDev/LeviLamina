@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@EduUriResourcePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   -683007678
+     * @hash   -757366014
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@EduUriResourcePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   244346863
+     * @hash   169988527
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@EduUriResourcePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -2129721736
+     * @hash   2090887224
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@EduUriResourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   267716600
+     * @hash   193358264
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EduUriResourcePacket@@QEAA@XZ
-     * @hash   458336408
+     * @hash   383978072
      */
     MCAPI EduUriResourcePacket();
     /**
      * @symbol ??0EduUriResourcePacket@@QEAA@AEBUEduSharedUriResource@@@Z
-     * @hash   808900461
+     * @hash   734542125
      */
     MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
 

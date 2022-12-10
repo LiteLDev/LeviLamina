@@ -36,54 +36,54 @@ public:
 public:
     /**
      * @symbol ??0Certificate@@QEAA@AEBV0@@Z
-     * @hash   192369153
+     * @hash   317652801
      */
     MCAPI Certificate(class Certificate const &);
     /**
      * @symbol ?getExpirationDate@Certificate@@QEBA_JXZ
-     * @hash   -1457739215
+     * @hash   -1332486319
      */
     MCAPI __int64 getExpirationDate() const;
     /**
      * @symbol ?getExtraData@Certificate@@QEBA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-     * @hash   -259243190
+     * @hash   -133990294
      */
     MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;
     /**
      * @symbol ?getIdentityPublicKey@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   828416720
+     * @hash   953669616
      */
     MCAPI std::string getIdentityPublicKey() const;
     /**
      * @symbol ?getNotBeforeDate@Certificate@@QEBA_JXZ
-     * @hash   494804771
+     * @hash   620042291
      */
     MCAPI __int64 getNotBeforeDate() const;
     /**
      * @symbol ?isValid@Certificate@@QEBA_NXZ
-     * @hash   -1218975952
+     * @hash   -1093738432
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?toString@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -261204720
+     * @hash   -135967200
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?validate@Certificate@@QEAA_N_J@Z
-     * @hash   -480146486
+     * @hash   -354908966
      */
     MCAPI bool validate(__int64);
     /**
      * @symbol ??1Certificate@@QEAA@XZ
-     * @hash   1448873763
+     * @hash   1630448947
      */
     MCAPI ~Certificate();
 
 //private:
     /**
      * @symbol ??0Certificate@@AEAA@AEBVUnverifiedCertificate@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@@Z
-     * @hash   1548603374
+     * @hash   1673887022
      */
     MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 

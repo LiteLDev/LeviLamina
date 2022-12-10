@@ -39,57 +39,57 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1603009640
+     * @hash   -1130197640
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   -1478783749
+     * @hash   -1005971749
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @vftbl  4
-     * @hash   -1360025932
+     * @hash   -1263526156
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?isItemAllowedToRemove@HotbarContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   657027746
+     * @hash   1130008882
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @vftbl  6
-     * @hash   -1358178890
+     * @hash   -1261679114
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   -601432785
+     * @hash   -128620785
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @vftbl  8
-     * @hash   -1362943528
+     * @hash   -1269672712
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
      * @symbol ?getContainerSize@HotbarContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   -1477801620
+     * @hash   -1520024116
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOTBARCONTAINERVALIDATION
     /**
      * @symbol ?canItemMoveToContainer@HotbarContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -1745596645
+     * @hash   -1649096869
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif

@@ -33,47 +33,47 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
     /**
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     * @hash   341343334
+     * @hash   814155334
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     /**
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     * @hash   -877019374
+     * @hash   -404207374
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     * @hash   1977472164
+     * @hash   -1844683132
      */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
      * @symbol ?getContainerOffset@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@@Z
-     * @hash   -335905569
+     * @hash   -242634753
      */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
     /**
      * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     * @hash   1196899813
+     * @hash   1298811941
      */
     MCVAPI int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /**
      * @symbol ?isItemAllowedInSlot@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     * @hash   -377247737
+     * @hash   -280747961
      */
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @symbol ?isItemAllowedToAdd@ContainerValidationBase@@UEBA_NAEBVItemStack@@@Z
-     * @hash   1041602426
+     * @hash   1138102202
      */
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
      * @symbol ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     * @hash   -754152917
+     * @hash   -657653141
      */
     MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     * @hash   -1833258737
+     * @hash   -1360446737
      */
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif

@@ -37,20 +37,20 @@ public:
     virtual ~TrailSystem();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?tick@TrailSystem@@UEAAXAEAVEntityRegistry@@@Z
-     * @hash   1001819813
+     * @hash   1156010341
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
      * @symbol ?_tickComponent@TrailSystem@@AEAAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VTrailComponent@@@@@Z
-     * @hash   609277369
+     * @hash   763467897
      */
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class TrailComponent> &);
 

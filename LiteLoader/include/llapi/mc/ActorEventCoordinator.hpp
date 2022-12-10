@@ -32,82 +32,82 @@ public:
 public:
     /**
      * @symbol ?getActorGameplayHandler@ActorEventCoordinator@@QEAAAEAVActorGameplayHandler@@XZ
-     * @hash   -642573816
+     * @hash   -649031736
      */
     MCAPI class ActorGameplayHandler & getActorGameplayHandler();
     /**
      * @symbol ?registerActorGameplayHandler@ActorEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VActorGameplayHandler@@U?$default_delete@VActorGameplayHandler@@@std@@@std@@@Z
-     * @hash   1630269394
+     * @hash   1804833122
      */
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler> &&);
     /**
      * @symbol ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-     * @hash   1442250262
+     * @hash   1485764342
      */
     MCAPI void sendActorCreated(class Actor &);
     /**
      * @symbol ?sendActorDeath@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     * @hash   2141064628
+     * @hash   -2110388588
      */
     MCAPI void sendActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
     /**
      * @symbol ?sendActorMove@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVVec3@@@Z
-     * @hash   542790781
+     * @hash   586304861
      */
     MCAPI void sendActorMove(class Actor &, class Vec3 const &);
     /**
      * @symbol ?sendActorPredictedMove@ActorEventCoordinator@@QEAAXAEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-     * @hash   -1150507890
+     * @hash   -1106993810
      */
     MCAPI void sendActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
     /**
      * @symbol ?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z
-     * @hash   -1296204001
+     * @hash   -1252689921
      */
     MCAPI void sendActorSneakChanged(class Actor &, bool);
     /**
      * @symbol ?sendActorStartRiding@ActorEventCoordinator@@QEAAXAEAVActor@@0@Z
-     * @hash   -1538747093
+     * @hash   -1495233013
      */
     MCAPI void sendActorStartRiding(class Actor &, class Actor &);
     /**
      * @symbol ?sendActorStopRiding@ActorEventCoordinator@@QEAAXAEAVActor@@_N11@Z
-     * @hash   -363717201
+     * @hash   -320203121
      */
     MCAPI void sendActorStopRiding(class Actor &, bool, bool, bool);
     /**
      * @symbol ?sendActorTargetAcquired@ActorEventCoordinator@@QEAAXAEAVActor@@0@Z
-     * @hash   1943428481
+     * @hash   1986942561
      */
     MCAPI void sendActorTargetAcquired(class Actor &, class Actor &);
     /**
      * @symbol ?sendActorTeleported@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-     * @hash   77759836
+     * @hash   121273916
      */
     MCAPI void sendActorTeleported(class Actor &);
     /**
      * @symbol ?sendActorTick@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-     * @hash   -219470298
+     * @hash   -175956218
      */
     MCAPI void sendActorTick(class Actor &);
     /**
      * @symbol ?sendActorUseItemOn@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z
-     * @hash   361778066
+     * @hash   405292146
      */
     MCAPI void sendActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$ActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     * @hash   782625677
+     * @hash   826155133
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
     /**
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     * @hash   739727765
+     * @hash   783257221
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z
-     * @hash   504423944
+     * @hash   547953400
      */
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
 

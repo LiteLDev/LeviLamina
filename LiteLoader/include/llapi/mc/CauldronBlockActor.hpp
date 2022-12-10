@@ -34,133 +34,133 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCKACTOR
     /**
      * @symbol ?_getUpdatePacket@CauldronBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     * @hash   1927631363
+     * @hash   -1609406765
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
      * @symbol ?_onUpdatePacket@CauldronBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     * @hash   87960351
+     * @hash   844382671
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
      * @symbol ?getContainer@CauldronBlockActor@@UEAAPEAVContainer@@XZ
-     * @hash   -2123377291
+     * @hash   -1357790875
      */
     MCVAPI class Container * getContainer();
     /**
      * @symbol ?getContainer@CauldronBlockActor@@UEBAPEBVContainer@@XZ
-     * @hash   1743868145
+     * @hash   -1785512735
      */
     MCVAPI class Container const * getContainer() const;
     /**
      * @symbol ?getContainerSize@CauldronBlockActor@@UEBAHXZ
-     * @hash   1550217069
+     * @hash   1508394349
      */
     MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem@CauldronBlockActor@@UEBAAEBVItemStack@@H@Z
-     * @hash   1755412942
+     * @hash   -1783362674
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
      * @symbol ?getMaxStackSize@CauldronBlockActor@@UEBAHXZ
-     * @hash   -1554405380
+     * @hash   -1596228100
      */
     MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?getName@CauldronBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -297075327
+     * @hash   415510017
      */
     MCVAPI std::string getName() const;
     /**
      * @symbol ?load@CauldronBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -588878111
+     * @hash   123707233
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?onChanged@CauldronBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   -937031390
+     * @hash   -781318638
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
      * @symbol ?save@CauldronBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     * @hash   -348133792
+     * @hash   364451552
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
      * @symbol ?serverInitItemStackIds@CauldronBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     * @hash   -1668218765
+     * @hash   -955648797
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setItem@CauldronBlockActor@@UEAAXHAEBVItemStack@@@Z
-     * @hash   485249239
+     * @hash   1197819207
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
      * @symbol ?startOpen@CauldronBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   -780585270
+     * @hash   -691619734
      */
     MCVAPI void startOpen(class Player &);
     /**
      * @symbol ?stopOpen@CauldronBlockActor@@UEAAXAEAVPlayer@@@Z
-     * @hash   1138429674
+     * @hash   1227395210
      */
     MCVAPI void stopOpen(class Player &);
     /**
      * @symbol ?tick@CauldronBlockActor@@UEAAXAEAVBlockSource@@@Z
-     * @hash   1667074426
+     * @hash   -1915322902
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0CauldronBlockActor@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -207116707
+     * @hash   505422509
      */
     MCAPI CauldronBlockActor(class BlockPos const &);
     /**
      * @symbol ?getColor@CauldronBlockActor@@QEBA?AVColor@mce@@XZ
-     * @hash   -1919095664
+     * @hash   -1206556448
      */
     MCAPI class mce::Color getColor() const;
     /**
      * @symbol ?getCustomColor@CauldronBlockActor@@QEBA?AVColor@mce@@XZ
-     * @hash   1176186574
+     * @hash   1888725790
      */
     MCAPI class mce::Color getCustomColor() const;
     /**
      * @symbol ?getMixDyeColor@CauldronBlockActor@@QEAA?AVColor@mce@@XZ
-     * @hash   1469682728
+     * @hash   -2112745352
      */
     MCAPI class mce::Color getMixDyeColor();
     /**
      * @symbol ?getPotionColor@CauldronBlockActor@@QEBA?AVColor@mce@@XZ
-     * @hash   1295442922
+     * @hash   2008028266
      */
     MCAPI class mce::Color getPotionColor() const;
     /**
      * @symbol ?getPotionType@CauldronBlockActor@@QEBA?AW4PotionType@Potion@@XZ
-     * @hash   1286726564
+     * @hash   2042918244
      */
     MCAPI enum class Potion::PotionType getPotionType() const;
     /**
      * @symbol ?mixDyes@CauldronBlockActor@@QEAAXXZ
-     * @hash   -167654205
+     * @hash   544931139
      */
     MCAPI void mixDyes();
     /**
      * @symbol ?setCustomColor@CauldronBlockActor@@QEAAXAEBVColor@mce@@@Z
-     * @hash   -451423958
+     * @hash   261146010
      */
     MCAPI void setCustomColor(class mce::Color const &);
     /**
      * @symbol ?setPotionType@CauldronBlockActor@@QEAAXW4PotionType@Potion@@@Z
-     * @hash   -715195692
+     * @hash   40965236
      */
     MCAPI void setPotionType(enum class Potion::PotionType);
     /**
      * @symbol ?WATER_COLOR@CauldronBlockActor@@2VColor@mce@@A
-     * @hash   -1604482313
+     * @hash   -740889273
      */
     MCAPI static class mce::Color WATER_COLOR;
 

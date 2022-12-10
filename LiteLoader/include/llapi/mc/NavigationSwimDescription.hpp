@@ -34,7 +34,7 @@ public:
     /**
      * @vftbl  0
      * @symbol ?getJsonName@NavigationSwimDescription@@UEBAPEBDXZ
-     * @hash   -739937724
+     * @hash   -221289868
      */
     virtual char const * getJsonName() const;
     /**
@@ -45,7 +45,7 @@ public:
     /**
      * @vftbl  3
      * @symbol ?serializeData@NavigationSwimDescription@@UEBAXAEAVValue@Json@@@Z
-     * @hash   -1016631591
+     * @hash   -497983735
      */
     virtual void serializeData(class Json::Value &) const;
 

@@ -36,24 +36,24 @@ public:
     virtual ~CartographyContainerScreenValidator();
     /**
      * @vftbl  1
-     * @hash   2095050641
+     * @hash   -2020663247
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
      * @symbol ?isCraftingImplemented@CartographyContainerScreenValidator@@UEAA_NXZ
-     * @hash   65852800
+     * @hash   162352576
      */
     virtual bool isCraftingImplemented();
     /**
      * @vftbl  3
      * @symbol ?getCraftResult@CartographyContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
-     * @hash   -614471378
+     * @hash   -141444114
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
      * @symbol ??0CartographyContainerScreenValidator@@QEAA@XZ
-     * @hash   -1785983461
+     * @hash   -1312956197
      */
     MCAPI CartographyContainerScreenValidator();
 

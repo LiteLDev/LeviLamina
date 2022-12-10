@@ -32,17 +32,17 @@ public:
 public:
     /**
      * @symbol ??0SwimWithEntityDefinition@@QEAA@XZ
-     * @hash   1712308192
+     * @hash   1873909952
      */
     MCAPI SwimWithEntityDefinition();
     /**
      * @symbol ?initialize@SwimWithEntityDefinition@@QEAAXAEAVEntityContext@@AEAVSwimWithEntityGoal@@@Z
-     * @hash   534037587
+     * @hash   695470211
      */
     MCAPI void initialize(class EntityContext &, class SwimWithEntityGoal &);
     /**
      * @symbol ?buildSchema@SwimWithEntityDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwimWithEntityDefinition@@@JsonUtil@@@3@@Z
-     * @hash   -1316460989
+     * @hash   -1154859229
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWithEntityDefinition>> &);
 

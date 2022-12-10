@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @symbol ?isValidSize@SkinInfoData@@SA_N_K@Z
-     * @hash   723484214
+     * @hash   786295174
      */
     MCAPI static bool isValidSize(unsigned __int64);
 

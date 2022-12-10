@@ -36,39 +36,39 @@ public:
     virtual ~ItemStackRequestActionCraftLoom();
     /**
      * @vftbl  1
-     * @hash   -1405557151
+     * @hash   -1316591615
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   2096281682
+     * @hash   -2019447582
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1367545757
+     * @hash   -1274274941
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftLoom@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   1653419116
+     * @hash   -2078602068
      */
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftLoom@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     * @hash   1908378116
+     * @hash   -1823643068
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
-     * @hash   -1262489955
+     * @hash   -699543843
      */
     MCAPI ItemStackRequestActionCraftLoom();
     /**
      * @symbol ?getPatternNameId@ItemStackRequestActionCraftLoom@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   450826236
+     * @hash   595206876
      */
     MCAPI std::string const & getPatternNameId() const;
 

@@ -49,65 +49,65 @@ public:
     virtual ~VarIntDataOutput();
     /**
      * @vftbl  1
-     * @hash   1341457505
+     * @hash   1512315617
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1342381026
+     * @hash   1513239138
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?writeFloat@VarIntDataOutput@@UEAAXM@Z
-     * @hash   -487564735
+     * @hash   -316706623
      */
     virtual void writeFloat(float);
     /**
      * @vftbl  4
      * @symbol ?writeDouble@VarIntDataOutput@@UEAAXN@Z
-     * @hash   931869721
+     * @hash   1102727833
      */
     virtual void writeDouble(double);
     /**
      * @vftbl  5
      * @symbol ?writeByte@VarIntDataOutput@@UEAAXD@Z
-     * @hash   -1314030467
+     * @hash   -1143172355
      */
     virtual void writeByte(char);
     /**
      * @vftbl  6
      * @symbol ?writeShort@VarIntDataOutput@@UEAAXF@Z
-     * @hash   -1163861407
+     * @hash   -993003295
      */
     virtual void writeShort(short);
     /**
      * @vftbl  7
      * @symbol ?writeInt@VarIntDataOutput@@UEAAXH@Z
-     * @hash   -888890373
+     * @hash   -718032261
      */
     virtual void writeInt(int);
     /**
      * @vftbl  8
      * @symbol ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
-     * @hash   -914411058
+     * @hash   -743552946
      */
     virtual void writeLongLong(__int64);
     /**
      * @vftbl  9
      * @symbol ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
-     * @hash   1961031043
+     * @hash   2131889155
      */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
     /**
      * @symbol ?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   -1920602077
+     * @hash   -1749743965
      */
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   268917055
+     * @hash   439775167
      */
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif

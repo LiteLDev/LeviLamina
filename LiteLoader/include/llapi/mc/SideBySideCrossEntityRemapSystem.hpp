@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?_remapContext@SideBySideCrossEntityRemapSystem@@SAXAEAVStrictEntityContext@@AEBUSideBySideRemappingComponent@@@Z
-     * @hash   1539617459
+     * @hash   1692085875
      */
     MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 //private:
     /**
      * @symbol ?_removeNullStrictEntityContexts@SideBySideCrossEntityRemapSystem@@CAXAEAV?$vector@VStrictEntityContext@@V?$allocator@VStrictEntityContext@@@std@@@std@@@Z
-     * @hash   1661018664
+     * @hash   1813487080
      */
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);
 

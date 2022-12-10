@@ -39,42 +39,42 @@ public:
 public:
     /**
      * @symbol ??0ChunkPos@@QEAA@AEBVVec3@@@Z
-     * @hash   653327130
+     * @hash   1402461226
      */
     MCAPI ChunkPos(class Vec3 const &);
     /**
      * @symbol ??0ChunkPos@@QEAA@AEBVBlockPos@@@Z
-     * @hash   220289194
+     * @hash   969423290
      */
     MCAPI ChunkPos(class BlockPos const &);
     /**
      * @symbol ?isWithinBounds@ChunkPos@@QEBA_NAEBV1@0@Z
-     * @hash   -1462570413
+     * @hash   -713436317
      */
     MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
     /**
      * @symbol ?toBlockSpaceVec3@ChunkPos@@QEBA?AVVec3@@M@Z
-     * @hash   986502645
+     * @hash   1735636741
      */
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
     /**
      * @symbol ?INVALID@ChunkPos@@2V1@B
-     * @hash   2068372969
+     * @hash   -1364462007
      */
     MCAPI static class ChunkPos const INVALID;
     /**
      * @symbol ?MAX@ChunkPos@@2V1@B
-     * @hash   486914713
+     * @hash   1349047033
      */
     MCAPI static class ChunkPos const MAX;
     /**
      * @symbol ?MIN@ChunkPos@@2V1@B
-     * @hash   -373313711
+     * @hash   488818609
      */
     MCAPI static class ChunkPos const MIN;
     /**
      * @symbol ?ONE@ChunkPos@@2V1@B
-     * @hash   1175219169
+     * @hash   2037351489
      */
     MCAPI static class ChunkPos const ONE;
 

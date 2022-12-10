@@ -39,336 +39,341 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getNextBlockPermutation@BedBlock@@UEBAPEBVBlock@@AEBV2@@Z
-     * @hash   85802648
+     * @hash   179073464
      */
     virtual class Block const * getNextBlockPermutation(class Block const &) const;
     /**
      * @vftbl  19
-     * @hash   -323784916
+     * @hash   -227039124
      */
     virtual void __unk_vfn_19();
     /**
      * @vftbl  29
-     * @hash   -295155765
+     * @hash   -198409973
      */
     virtual void __unk_vfn_29();
     /**
      * @vftbl  30
-     * @hash   -274838303
+     * @hash   -178092511
      */
     virtual void __unk_vfn_30();
     /**
      * @vftbl  32
-     * @hash   -272991261
+     * @hash   -176245469
      */
     virtual void __unk_vfn_32();
     /**
      * @vftbl  33
-     * @hash   -272067740
+     * @hash   -175321948
      */
     virtual void __unk_vfn_33();
     /**
      * @vftbl  34
-     * @hash   -271144219
+     * @hash   -174398427
      */
     virtual void __unk_vfn_34();
     /**
      * @vftbl  36
-     * @hash   -269297177
+     * @hash   -172551385
      */
     virtual void __unk_vfn_36();
     /**
      * @vftbl  37
-     * @hash   -268373656
+     * @hash   -171627864
      */
     virtual void __unk_vfn_37();
     /**
      * @vftbl  38
-     * @hash   -267450135
+     * @hash   -170704343
      */
     virtual void __unk_vfn_38();
     /**
      * @vftbl  39
-     * @hash   -266526614
+     * @hash   -169780822
      */
     virtual void __unk_vfn_39();
     /**
      * @vftbl  40
-     * @hash   -246209152
+     * @hash   -149463360
      */
     virtual void __unk_vfn_40();
     /**
      * @vftbl  41
-     * @hash   -245285631
+     * @hash   -148539839
      */
     virtual void __unk_vfn_41();
     /**
      * @vftbl  42
-     * @hash   -244362110
+     * @hash   -147616318
      */
     virtual void __unk_vfn_42();
     /**
      * @vftbl  44
-     * @hash   -242515068
+     * @hash   -145769276
      */
     virtual void __unk_vfn_44();
     /**
      * @vftbl  45
-     * @hash   -241591547
+     * @hash   -144845755
      */
     virtual void __unk_vfn_45();
     /**
      * @vftbl  46
-     * @hash   -240668026
+     * @hash   -143922234
      */
     virtual void __unk_vfn_46();
     /**
      * @vftbl  47
-     * @hash   -239744505
+     * @hash   -142998713
      */
     virtual void __unk_vfn_47();
     /**
      * @vftbl  48
-     * @hash   -238820984
+     * @hash   -142075192
      */
     virtual void __unk_vfn_48();
     /**
      * @vftbl  49
-     * @hash   -237897463
+     * @hash   -141151671
      */
     virtual void __unk_vfn_49();
     /**
      * @vftbl  54
-     * @hash   -213885917
+     * @hash   -117140125
      */
     virtual void __unk_vfn_54();
     /**
      * @vftbl  56
      * @symbol ?canFillAtPos@BedBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1742372842
+     * @hash   -1796387398
      */
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  57
      * @symbol ?sanitizeFillBlock@BedBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-     * @hash   -1360760945
+     * @hash   -604538513
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  58
      * @symbol ?onFillBlock@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   428797647
+     * @hash   1185066207
      */
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  60
-     * @hash   -188950850
+     * @hash   -92205058
      */
     virtual void __unk_vfn_60();
     /**
      * @vftbl  61
-     * @hash   -188027329
+     * @hash   -91281537
      */
     virtual void __unk_vfn_61();
     /**
      * @vftbl  69
      * @symbol ?checkIsPathable@BedBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     * @hash   -638578720
+     * @hash   117628336
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  75
-     * @hash   -155704094
+     * @hash   -58958302
      */
     virtual void __unk_vfn_75();
     /**
      * @vftbl  81
      * @symbol ?updateEntityAfterFallOn@BedBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-     * @hash   -164837492
+     * @hash   591384940
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
      * @vftbl  82
-     * @hash   -137056850
+     * @hash   -40557074
      */
     virtual void __unk_vfn_82();
     /**
      * @vftbl  98
      * @symbol ?playerWillDestroy@BedBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   1496141040
+     * @hash   -2042557696
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -1175414786
+     * @hash   -419207730
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  101
      * @symbol ?getSecondPart@BedBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     * @hash   2000347289
+     * @hash   -1538412951
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   343374574
+     * @hash   1099581630
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
      * @vftbl  103
      * @symbol ?spawnResources@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@@Z
-     * @hash   1317804978
+     * @hash   2074027410
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &, std::vector<class Item const *> *) const;
     /**
      * @vftbl  105
-     * @hash   1335894854
+     * @hash   1432640646
      */
     virtual void __unk_vfn_105();
     /**
      * @vftbl  123
-     * @hash   1391306114
+     * @hash   1488051906
      */
     virtual void __unk_vfn_123();
     /**
      * @vftbl  125
-     * @hash   1393153156
+     * @hash   1489898948
      */
     virtual void __unk_vfn_125();
     /**
      * @vftbl  126
-     * @hash   1394076677
+     * @hash   1490822469
      */
     virtual void __unk_vfn_126();
     /**
      * @vftbl  129
      * @symbol ?canSpawnAt@BedBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   650344547
+     * @hash   746844323
      */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /**
      * @vftbl  131
-     * @hash   1418088223
+     * @hash   1514834015
      */
     virtual void __unk_vfn_131();
     /**
      * @vftbl  145
      * @symbol ?telemetryVariant@BedBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1745119263
+     * @hash   -988896831
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  146
      * @symbol ?getVariant@BedBlock@@UEBAHAEBVBlock@@@Z
-     * @hash   -247950820
+     * @hash   508256236
      */
     virtual int getVariant(class Block const &) const;
     /**
      * @vftbl  149
      * @symbol ?getMappedFace@BedBlock@@UEBAEEAEBVBlock@@@Z
-     * @hash   -622786990
+     * @hash   133420066
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
      * @vftbl  156
-     * @hash   1479964130
+     * @hash   1576709922
      */
     virtual void __unk_vfn_156();
     /**
+     * @vftbl  166
+     * @hash   1547586817
+     */
+    virtual void __unk_vfn_166();
+    /**
      * @vftbl  167
-     * @hash   1459544802
+     * @hash   1548510338
      */
     virtual void __unk_vfn_167();
     /**
      * @vftbl  168
-     * @hash   1460468323
+     * @hash   1549433859
      */
     virtual void __unk_vfn_168();
     /**
      * @vftbl  169
-     * @hash   1461391844
-     */
-    virtual void __unk_vfn_169();
-    /**
-     * @vftbl  170
      * @symbol ?onPlace@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1965613128
+     * @hash   -1209344568
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  171
+     * @vftbl  170
      * @symbol ?onFallOn@BedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     * @hash   1780550628
+     * @hash   -1758209612
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
+     * @vftbl  172
+     * @hash   1630274140
+     */
+    virtual void __unk_vfn_172();
+    /**
      * @vftbl  176
-     * @hash   1530011088
+     * @hash   1626510864
      */
     virtual void __unk_vfn_176();
     /**
      * @vftbl  178
      * @symbol ?use@BedBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     * @hash   2044582353
+     * @hash   -1494162511
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl  187
-     * @hash   1566775104
+     * @vftbl  186
+     * @hash   1662597375
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCK
     /**
      * @symbol ?canBeSilkTouched@BedBlock@@MEBA_NXZ
-     * @hash   -1774778981
+     * @hash   -1678033189
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
      * @symbol ?isBounceBlock@BedBlock@@UEBA_NXZ
-     * @hash   299316087
+     * @hash   395815863
      */
     MCVAPI bool isBounceBlock() const;
     /**
      * @symbol ?isInteractiveBlock@BedBlock@@UEBA_NXZ
-     * @hash   35763249
+     * @hash   132263025
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
      * @symbol ??0BedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   1908194810
+     * @hash   -1630565430
      */
     MCAPI BedBlock(std::string const &, int);
     /**
      * @symbol ?HEAD_PIECE_DATA@BedBlock@@2GB
-     * @hash   1750429068
+     * @hash   -1765344052
      */
     MCAPI static unsigned short const HEAD_PIECE_DATA;
     /**
      * @symbol ?OCCUPIED_DATA@BedBlock@@2GB
-     * @hash   -1630142544
+     * @hash   -850948368
      */
     MCAPI static unsigned short const OCCUPIED_DATA;
     /**
      * @symbol ?findWakeupPosition@BedBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@_NAEBV?$optional@VVec3@@@3@@Z
-     * @hash   1776136628
+     * @hash   -1762623612
      */
     MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, bool, class std::optional<class Vec3> const &);
     /**
      * @symbol ?isDangerousSpawnBlock@BedBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   991123802
+     * @hash   1747330858
      */
     MCAPI static bool isDangerousSpawnBlock(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?isValidStandUpPosition@BedBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   -1068445108
+     * @hash   -312238052
      */
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?setOccupied@BedBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     * @hash   158061040
+     * @hash   914283472
      */
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
 

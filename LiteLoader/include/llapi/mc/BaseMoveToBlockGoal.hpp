@@ -39,45 +39,45 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
-     * @hash   1826312685
+     * @hash   1997570573
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ
-     * @hash   -1632795397
+     * @hash   -1461537509
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  8
-     * @hash   -1399092504
+     * @hash   -1310126968
      */
     virtual void __unk_vfn_8();
     /**
      * @vftbl  9
-     * @hash   -1348196983
+     * @hash   -1251451191
      */
     virtual void __unk_vfn_9();
     /**
      * @vftbl  14
      * @symbol ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
-     * @hash   -1982673489
+     * @hash   -1811415601
      */
     virtual void _moveToBlock();
     /**
      * @vftbl  17
      * @symbol ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
-     * @hash   -808266663
+     * @hash   -637008775
      */
     virtual bool findTargetBlock();
     /**
      * @symbol ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
-     * @hash   993566684
+     * @hash   1164824572
      */
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 

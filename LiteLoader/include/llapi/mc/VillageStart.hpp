@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  2
      * @symbol ?isValid@VillageStart@@UEBA_NXZ
-     * @hash   -395550124
+     * @hash   -224692012
      */
     virtual bool isValid() const;
     /**
      * @symbol ??0VillageStart@@QEAA@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@HHAEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -1260109498
+     * @hash   -1088159690
      */
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
 

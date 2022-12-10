@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@LevelEventGenericPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   1985739093
+     * @hash   1943916373
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LevelEventGenericPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -299823086
+     * @hash   -341645806
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@LevelEventGenericPacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   -1988651467
+     * @hash   -2030474187
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@LevelEventGenericPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   2004734917
+     * @hash   1962912197
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LevelEventGenericPacket@@QEAA@XZ
-     * @hash   938664053
+     * @hash   896841333
      */
     MCAPI LevelEventGenericPacket();
     /**
      * @symbol ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
-     * @hash   -901005597
+     * @hash   -942828317
      */
     MCAPI LevelEventGenericPacket(enum class LevelEvent, class CompoundTag const &);
 

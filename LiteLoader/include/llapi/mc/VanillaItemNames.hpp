@@ -22,2032 +22,2107 @@ namespace VanillaItemNames {
 #undef AFTER_EXTRA
     /**
      * @symbol ?AcaciaBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   94326867
+     * @hash   731615939
      */
     MCAPI extern class HashedString const AcaciaBoat;
     /**
      * @symbol ?AcaciaChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   1688120961
+     * @hash   -1969557263
      */
     MCAPI extern class HashedString const AcaciaChestBoat;
     /**
      * @symbol ?AcaciaDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   1121530931
+     * @hash   1759465795
      */
     MCAPI extern class HashedString const AcaciaDoor;
     /**
+     * @symbol ?AcaciaHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -342636831
+     */
+    MCAPI extern class HashedString const AcaciaHangingSign;
+    /**
      * @symbol ?AcaciaSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   1914514515
+     * @hash   -1743117581
      */
     MCAPI extern class HashedString const AcaciaSign;
     /**
      * @symbol ?AgentSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1659048991
+     * @hash   -1021713791
      */
     MCAPI extern class HashedString const AgentSpawnEgg;
     /**
      * @symbol ?AllaySpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -459341167
+     * @hash   177994033
      */
     MCAPI extern class HashedString const AllaySpawnEgg;
     /**
      * @symbol ?AmethystShard@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1739542399
+     * @hash   -1102207199
      */
     MCAPI extern class HashedString const AmethystShard;
     /**
      * @symbol ?Apple@VanillaItemNames@@3VHashedString@@B
-     * @hash   1791658193
+     * @hash   -1865973903
      */
     MCAPI extern class HashedString const Apple;
     /**
      * @symbol ?ArmorStand@VanillaItemNames@@3VHashedString@@B
-     * @hash   131140867
+     * @hash   768476067
      */
     MCAPI extern class HashedString const ArmorStand;
     /**
      * @symbol ?Arrow@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1530588399
+     * @hash   -893253199
      */
     MCAPI extern class HashedString const Arrow;
     /**
      * @symbol ?Axolotl@VanillaItemNames@@3VHashedString@@B
-     * @hash   -331828031
+     * @hash   305507169
      */
     MCAPI extern class HashedString const Axolotl;
     /**
      * @symbol ?AxolotlBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -6267151
+     * @hash   631068049
      */
     MCAPI extern class HashedString const AxolotlBucket;
     /**
      * @symbol ?AxolotlSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1249143649
+     * @hash   1886478849
      */
     MCAPI extern class HashedString const AxolotlSpawnEgg;
     /**
      * @symbol ?BakedPotato@VanillaItemNames@@3VHashedString@@B
-     * @hash   1321079217
+     * @hash   1958414417
      */
     MCAPI extern class HashedString const BakedPotato;
     /**
      * @symbol ?Balloon@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1295388415
+     * @hash   -658053215
      */
     MCAPI extern class HashedString const Balloon;
     /**
+     * @symbol ?BambooChestRaft@VanillaItemNames@@3VHashedString@@B
+     * @hash   -2099724191
+     */
+    MCAPI extern class HashedString const BambooChestRaft;
+    /**
+     * @symbol ?BambooDoor@VanillaItemNames@@3VHashedString@@B
+     * @hash   1356253299
+     */
+    MCAPI extern class HashedString const BambooDoor;
+    /**
+     * @symbol ?BambooHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -938069327
+     */
+    MCAPI extern class HashedString const BambooHangingSign;
+    /**
+     * @symbol ?BambooRaft@VanillaItemNames@@3VHashedString@@B
+     * @hash   -1459288013
+     */
+    MCAPI extern class HashedString const BambooRaft;
+    /**
+     * @symbol ?BambooSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -2145684285
+     */
+    MCAPI extern class HashedString const BambooSign;
+    /**
      * @symbol ?Banner@VanillaItemNames@@3VHashedString@@B
-     * @hash   -389316237
+     * @hash   248203475
      */
     MCAPI extern class HashedString const Banner;
     /**
      * @symbol ?BannerLegacy@VanillaItemNames@@3VHashedString@@B
-     * @hash   1997618835
+     * @hash   -1659367469
      */
     MCAPI extern class HashedString const BannerLegacy;
     /**
      * @symbol ?BatSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -665234463
+     * @hash   -27714751
      */
     MCAPI extern class HashedString const BatSpawnEgg;
     /**
      * @symbol ?Bed@VanillaItemNames@@3VHashedString@@B
-     * @hash   140256929
+     * @hash   778237921
      */
     MCAPI extern class HashedString const Bed;
     /**
      * @symbol ?BeeSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1577785777
+     * @hash   -2079661807
      */
     MCAPI extern class HashedString const BeeSpawnEgg;
     /**
      * @symbol ?Beef@VanillaItemNames@@3VHashedString@@B
-     * @hash   780779843
+     * @hash   1418299555
      */
     MCAPI extern class HashedString const Beef;
     /**
      * @symbol ?Beetroot@VanillaItemNames@@3VHashedString@@B
-     * @hash   1816131091
+     * @hash   -1840855213
      */
     MCAPI extern class HashedString const Beetroot;
     /**
      * @symbol ?BeetrootSeeds@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1671119215
+     * @hash   -1033599503
      */
     MCAPI extern class HashedString const BeetrootSeeds;
     /**
      * @symbol ?BeetrootSoup@VanillaItemNames@@3VHashedString@@B
-     * @hash   412018051
+     * @hash   1049537763
      */
     MCAPI extern class HashedString const BeetrootSoup;
     /**
      * @symbol ?BirchBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   1098128049
+     * @hash   1735647761
      */
     MCAPI extern class HashedString const BirchBoat;
     /**
      * @symbol ?BirchChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   876969571
+     * @hash   1514489283
      */
     MCAPI extern class HashedString const BirchChestBoat;
     /**
      * @symbol ?BirchDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   2124547937
+     * @hash   -1532438367
      */
     MCAPI extern class HashedString const BirchDoor;
     /**
+     * @symbol ?BirchHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   939498291
+     */
+    MCAPI extern class HashedString const BirchHangingSign;
+    /**
      * @symbol ?BirchSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1376651599
+     * @hash   -739085759
      */
     MCAPI extern class HashedString const BirchSign;
     /**
      * @symbol ?BlackDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   398630787
+     * @hash   1036196627
      */
     MCAPI extern class HashedString const BlackDye;
     /**
      * @symbol ?BlazePowder@VanillaItemNames@@3VHashedString@@B
-     * @hash   -312269551
+     * @hash   325296289
      */
     MCAPI extern class HashedString const BlazePowder;
     /**
      * @symbol ?BlazeRod@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1262924189
+     * @hash   -625358349
      */
     MCAPI extern class HashedString const BlazeRod;
     /**
      * @symbol ?BlazeSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   920803281
+     * @hash   1558369121
      */
     MCAPI extern class HashedString const BlazeSpawnEgg;
     /**
      * @symbol ?Bleach@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2127972413
+     * @hash   -1490406573
      */
     MCAPI extern class HashedString const Bleach;
     /**
      * @symbol ?BlueDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -818291535
+     * @hash   -180725695
      */
     MCAPI extern class HashedString const BlueDye;
     /**
      * @symbol ?BoatLegacy@VanillaItemNames@@3VHashedString@@B
-     * @hash   124148099
+     * @hash   762129091
      */
     MCAPI extern class HashedString const BoatLegacy;
     /**
      * @symbol ?Bone@VanillaItemNames@@3VHashedString@@B
-     * @hash   1707050883
+     * @hash   -1950350573
      */
     MCAPI extern class HashedString const Bone;
     /**
      * @symbol ?BoneMeal@VanillaItemNames@@3VHashedString@@B
-     * @hash   1888902035
+     * @hash   -1768499421
      */
     MCAPI extern class HashedString const BoneMeal;
     /**
      * @symbol ?Book@VanillaItemNames@@3VHashedString@@B
-     * @hash   2025519235
+     * @hash   -1631882221
      */
     MCAPI extern class HashedString const Book;
     /**
      * @symbol ?BookAndQuill@VanillaItemNames@@3VHashedString@@B
-     * @hash   -551410317
+     * @hash   86155523
      */
     MCAPI extern class HashedString const BookAndQuill;
     /**
      * @symbol ?BordureIndentedBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1411589437
+     * @hash   -774023597
      */
     MCAPI extern class HashedString const BordureIndentedBannerPattern;
     /**
      * @symbol ?Bow@VanillaItemNames@@3VHashedString@@B
-     * @hash   749969361
+     * @hash   1387535201
      */
     MCAPI extern class HashedString const Bow;
     /**
      * @symbol ?Bowl@VanillaItemNames@@3VHashedString@@B
-     * @hash   801963107
+     * @hash   1439528947
      */
     MCAPI extern class HashedString const Bowl;
     /**
      * @symbol ?Bread@VanillaItemNames@@3VHashedString@@B
-     * @hash   -735219151
+     * @hash   -97653311
      */
     MCAPI extern class HashedString const Bread;
     /**
      * @symbol ?BrewingStand@VanillaItemNames@@3VHashedString@@B
-     * @hash   1743703603
+     * @hash   -1913282701
      */
     MCAPI extern class HashedString const BrewingStand;
     /**
      * @symbol ?Brick@VanillaItemNames@@3VHashedString@@B
-     * @hash   1129276289
+     * @hash   1766842129
      */
     MCAPI extern class HashedString const Brick;
     /**
      * @symbol ?BrownDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   319876979
+     * @hash   957442819
      */
     MCAPI extern class HashedString const BrownDye;
     /**
      * @symbol ?Bucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1354495517
+     * @hash   -716929677
      */
     MCAPI extern class HashedString const Bucket;
     /**
      * @symbol ?Bundle@VanillaItemNames@@3VHashedString@@B
-     * @hash   855929107
+     * @hash   1493494947
      */
     MCAPI extern class HashedString const Bundle;
     /**
      * @symbol ?Cake@VanillaItemNames@@3VHashedString@@B
-     * @hash   1390108579
+     * @hash   2028089571
      */
     MCAPI extern class HashedString const Cake;
     /**
+     * @symbol ?CamelSpawnEgg@VanillaItemNames@@3VHashedString@@B
+     * @hash   1283371185
+     */
+    MCAPI extern class HashedString const CamelSpawnEgg;
+    /**
      * @symbol ?Camera@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1233080013
+     * @hash   -595099021
      */
     MCAPI extern class HashedString const Camera;
     /**
      * @symbol ?CampFire@VanillaItemNames@@3VHashedString@@B
-     * @hash   1780784995
+     * @hash   -1876201309
      */
     MCAPI extern class HashedString const CampFire;
     /**
      * @symbol ?Carrot@VanillaItemNames@@3VHashedString@@B
-     * @hash   1918564707
+     * @hash   -1738790621
      */
     MCAPI extern class HashedString const Carrot;
     /**
      * @symbol ?CarrotOnAStick@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1418910125
+     * @hash   -781298157
      */
     MCAPI extern class HashedString const CarrotOnAStick;
     /**
      * @symbol ?CatSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1813189953
+     * @hash   -1844165375
      */
     MCAPI extern class HashedString const CatSpawnEgg;
     /**
      * @symbol ?Cauldron@VanillaItemNames@@3VHashedString@@B
-     * @hash   1734902003
+     * @hash   -1922084301
      */
     MCAPI extern class HashedString const Cauldron;
     /**
      * @symbol ?CaveSpiderSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1369268333
+     * @hash   -731656365
      */
     MCAPI extern class HashedString const CaveSpiderSpawnEgg;
     /**
      * @symbol ?Chain@VanillaItemNames@@3VHashedString@@B
-     * @hash   -685589407
+     * @hash   -47608415
      */
     MCAPI extern class HashedString const Chain;
     /**
      * @symbol ?ChainmailBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   1380759011
+     * @hash   2018370979
      */
     MCAPI extern class HashedString const ChainmailBoots;
     /**
      * @symbol ?ChainmailChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   1496248433
+     * @hash   2133860401
      */
     MCAPI extern class HashedString const ChainmailChestplate;
     /**
      * @symbol ?ChainmailHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   75690785
+     * @hash   713302753
      */
     MCAPI extern class HashedString const ChainmailHelmet;
     /**
      * @symbol ?ChainmailLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   1885247281
+     * @hash   -1772108047
      */
     MCAPI extern class HashedString const ChainmailLeggings;
     /**
      * @symbol ?ChalkBoard@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1631255709
+     * @hash   -993643741
      */
     MCAPI extern class HashedString const ChalkBoard;
     /**
      * @symbol ?Charcoal@VanillaItemNames@@3VHashedString@@B
-     * @hash   51793939
+     * @hash   689405907
      */
     MCAPI extern class HashedString const Charcoal;
     /**
      * @symbol ?ChestMinecart@VanillaItemNames@@3VHashedString@@B
-     * @hash   332506497
+     * @hash   970118465
      */
     MCAPI extern class HashedString const ChestMinecart;
     /**
      * @symbol ?Chicken@VanillaItemNames@@3VHashedString@@B
-     * @hash   1993264401
+     * @hash   -1664090927
      */
     MCAPI extern class HashedString const Chicken;
     /**
      * @symbol ?ChickenSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   722571137
+     * @hash   1360183105
      */
     MCAPI extern class HashedString const ChickenSpawnEgg;
     /**
      * @symbol ?ChorusFruit@VanillaItemNames@@3VHashedString@@B
-     * @hash   18570513
+     * @hash   656182481
      */
     MCAPI extern class HashedString const ChorusFruit;
     /**
      * @symbol ?ClayBall@VanillaItemNames@@3VHashedString@@B
-     * @hash   753595235
+     * @hash   1391207203
      */
     MCAPI extern class HashedString const ClayBall;
     /**
      * @symbol ?Clock@VanillaItemNames@@3VHashedString@@B
-     * @hash   1813471409
+     * @hash   -1843883919
      */
     MCAPI extern class HashedString const Clock;
     /**
      * @symbol ?Coal@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1195511005
+     * @hash   -557899037
      */
     MCAPI extern class HashedString const Coal;
     /**
      * @symbol ?CocoaBeans@VanillaItemNames@@3VHashedString@@B
-     * @hash   1485555
+     * @hash   639097523
      */
     MCAPI extern class HashedString const CocoaBeans;
     /**
      * @symbol ?Cod@VanillaItemNames@@3VHashedString@@B
-     * @hash   2124154433
+     * @hash   -1533200895
      */
     MCAPI extern class HashedString const Cod;
     /**
      * @symbol ?CodBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   1177753713
+     * @hash   1815365681
      */
     MCAPI extern class HashedString const CodBucket;
     /**
      * @symbol ?CodSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1287283487
+     * @hash   -649671519
      */
     MCAPI extern class HashedString const CodSpawnEgg;
     /**
      * @symbol ?CommandBlockMinecart@VanillaItemNames@@3VHashedString@@B
-     * @hash   676232659
+     * @hash   1313844627
      */
     MCAPI extern class HashedString const CommandBlockMinecart;
     /**
      * @symbol ?Comparator@VanillaItemNames@@3VHashedString@@B
-     * @hash   -628022429
+     * @hash   9589539
      */
     MCAPI extern class HashedString const Comparator;
     /**
      * @symbol ?Compass@VanillaItemNames@@3VHashedString@@B
-     * @hash   -947482895
+     * @hash   -309870927
      */
     MCAPI extern class HashedString const Compass;
     /**
      * @symbol ?Compound@VanillaItemNames@@3VHashedString@@B
-     * @hash   1667690147
+     * @hash   -1989665181
      */
     MCAPI extern class HashedString const Compound;
     /**
      * @symbol ?CookedBeef@VanillaItemNames@@3VHashedString@@B
-     * @hash   -8634733
+     * @hash   628977235
      */
     MCAPI extern class HashedString const CookedBeef;
     /**
      * @symbol ?CookedChicken@VanillaItemNames@@3VHashedString@@B
-     * @hash   873981889
+     * @hash   1511593857
      */
     MCAPI extern class HashedString const CookedChicken;
     /**
      * @symbol ?CookedCod@VanillaItemNames@@3VHashedString@@B
-     * @hash   297916369
+     * @hash   935528337
      */
     MCAPI extern class HashedString const CookedCod;
     /**
      * @symbol ?CookedMutton@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1330411709
+     * @hash   -692799741
      */
     MCAPI extern class HashedString const CookedMutton;
     /**
      * @symbol ?CookedPorkchop@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1970619885
+     * @hash   -1333007917
      */
     MCAPI extern class HashedString const CookedPorkchop;
     /**
      * @symbol ?CookedRabbit@VanillaItemNames@@3VHashedString@@B
-     * @hash   1170771459
+     * @hash   1808383427
      */
     MCAPI extern class HashedString const CookedRabbit;
     /**
      * @symbol ?CookedSalmon@VanillaItemNames@@3VHashedString@@B
-     * @hash   680402099
+     * @hash   1318014067
      */
     MCAPI extern class HashedString const CookedSalmon;
     /**
      * @symbol ?Cookie@VanillaItemNames@@3VHashedString@@B
-     * @hash   -819343485
+     * @hash   -181731517
      */
     MCAPI extern class HashedString const Cookie;
     /**
      * @symbol ?CopperHorn@VanillaItemNames@@3VHashedString@@B
-     * @hash   1705231923
+     * @hash   -1952123405
      */
     MCAPI extern class HashedString const CopperHorn;
     /**
      * @symbol ?CopperIngot@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1974806271
+     * @hash   -1337194303
      */
     MCAPI extern class HashedString const CopperIngot;
     /**
      * @symbol ?CowSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   719923729
+     * @hash   1357535697
      */
     MCAPI extern class HashedString const CowSpawnEgg;
     /**
      * @symbol ?CreeperBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   1943747779
+     * @hash   -1713607549
      */
     MCAPI extern class HashedString const CreeperBannerPattern;
     /**
      * @symbol ?CreeperSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1219062959
+     * @hash   -581450991
      */
     MCAPI extern class HashedString const CreeperSpawnEgg;
     /**
      * @symbol ?CrimsonDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   1389761233
+     * @hash   2027742225
      */
     MCAPI extern class HashedString const CrimsonDoor;
     /**
+     * @symbol ?CrimsonHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -2138972125
+     */
+    MCAPI extern class HashedString const CrimsonHangingSign;
+    /**
      * @symbol ?CrimsonSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2109131903
+     * @hash   -1471473807
      */
     MCAPI extern class HashedString const CrimsonSign;
     /**
      * @symbol ?Crossbow@VanillaItemNames@@3VHashedString@@B
-     * @hash   1670432083
+     * @hash   -1986877117
      */
     MCAPI extern class HashedString const Crossbow;
     /**
      * @symbol ?CyanDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1568085631
+     * @hash   -930427535
      */
     MCAPI extern class HashedString const CyanDye;
     /**
      * @symbol ?DarkOakBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   1842036977
+     * @hash   -1815272223
      */
     MCAPI extern class HashedString const DarkOakBoat;
     /**
      * @symbol ?DarkOakChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -768720029
+     * @hash   -131061933
      */
     MCAPI extern class HashedString const DarkOakChestBoat;
     /**
      * @symbol ?DarkOakDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1429001343
+     * @hash   -791020351
      */
     MCAPI extern class HashedString const DarkOakDoor;
     /**
+     * @symbol ?DarkOakHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   1529324739
+     */
+    MCAPI extern class HashedString const DarkOakHangingSign;
+    /**
      * @symbol ?DarkOakSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   -632742671
+     * @hash   4961553
      */
     MCAPI extern class HashedString const DarkOakSign;
     /**
      * @symbol ?DebugStick@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1766772637
+     * @hash   -1129068413
      */
     MCAPI extern class HashedString const DebugStick;
     /**
      * @symbol ?Diamond@VanillaItemNames@@3VHashedString@@B
-     * @hash   -625935535
+     * @hash   11768689
      */
     MCAPI extern class HashedString const Diamond;
     /**
      * @symbol ?DiamondAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   1021730915
+     * @hash   1659435139
      */
     MCAPI extern class HashedString const DiamondAxe;
     /**
      * @symbol ?DiamondBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   1292153523
+     * @hash   1929857747
      */
     MCAPI extern class HashedString const DiamondBoots;
     /**
      * @symbol ?DiamondChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   1504244673
+     * @hash   2141948897
      */
     MCAPI extern class HashedString const DiamondChestplate;
     /**
      * @symbol ?DiamondHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   1564382833
+     * @hash   -2092880239
      */
     MCAPI extern class HashedString const DiamondHelmet;
     /**
      * @symbol ?DiamondHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -257812701
+     * @hash   379891523
      */
     MCAPI extern class HashedString const DiamondHoe;
     /**
      * @symbol ?DiamondHorseArmor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -658896399
+     * @hash   -21192175
      */
     MCAPI extern class HashedString const DiamondHorseArmor;
     /**
      * @symbol ?DiamondLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   390124257
+     * @hash   1027828481
      */
     MCAPI extern class HashedString const DiamondLeggings;
     /**
      * @symbol ?DiamondPickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   534841619
+     * @hash   1172545843
      */
     MCAPI extern class HashedString const DiamondPickaxe;
     /**
      * @symbol ?DiamondShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   1205508641
+     * @hash   1843212865
      */
     MCAPI extern class HashedString const DiamondShovel;
     /**
      * @symbol ?DiamondSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   -45954125
+     * @hash   591750099
      */
     MCAPI extern class HashedString const DiamondSword;
     /**
      * @symbol ?DiscFragment5@VanillaItemNames@@3VHashedString@@B
-     * @hash   -341217887
+     * @hash   296486337
      */
     MCAPI extern class HashedString const DiscFragment5;
     /**
      * @symbol ?DolphinSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   927757585
+     * @hash   1565461809
      */
     MCAPI extern class HashedString const DolphinSpawnEgg;
     /**
      * @symbol ?DonkeySpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   748282787
+     * @hash   1385987011
      */
     MCAPI extern class HashedString const DonkeySpawnEgg;
     /**
      * @symbol ?DragonBreath@VanillaItemNames@@3VHashedString@@B
-     * @hash   1961987507
+     * @hash   -1695275565
      */
     MCAPI extern class HashedString const DragonBreath;
     /**
      * @symbol ?DriedKelp@VanillaItemNames@@3VHashedString@@B
-     * @hash   -984835359
+     * @hash   -347131135
      */
     MCAPI extern class HashedString const DriedKelp;
     /**
      * @symbol ?DrownedSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -954476303
+     * @hash   -316772079
      */
     MCAPI extern class HashedString const DrownedSpawnEgg;
     /**
      * @symbol ?DyeLegacy@VanillaItemNames@@3VHashedString@@B
-     * @hash   240058321
+     * @hash   878039313
      */
     MCAPI extern class HashedString const DyeLegacy;
     /**
      * @symbol ?EchoShard@VanillaItemNames@@3VHashedString@@B
-     * @hash   1847390049
+     * @hash   -1809873023
      */
     MCAPI extern class HashedString const EchoShard;
     /**
      * @symbol ?Egg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1698146385
+     * @hash   -1959116687
      */
     MCAPI extern class HashedString const Egg;
     /**
      * @symbol ?ElderGuardianSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1641633473
+     * @hash   -2015629599
      */
     MCAPI extern class HashedString const ElderGuardianSpawnEgg;
     /**
      * @symbol ?Elytra@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1016178861
+     * @hash   -378474637
      */
     MCAPI extern class HashedString const Elytra;
     /**
      * @symbol ?Emerald@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1874617023
+     * @hash   -1236912799
      */
     MCAPI extern class HashedString const Emerald;
     /**
      * @symbol ?EmptyMap@VanillaItemNames@@3VHashedString@@B
-     * @hash   -444438733
+     * @hash   193265491
      */
     MCAPI extern class HashedString const EmptyMap;
     /**
      * @symbol ?EnchantedBook@VanillaItemNames@@3VHashedString@@B
-     * @hash   1202737665
+     * @hash   1840441889
      */
     MCAPI extern class HashedString const EnchantedBook;
     /**
      * @symbol ?EnchantedGoldenApple@VanillaItemNames@@3VHashedString@@B
-     * @hash   886723411
+     * @hash   1524427635
      */
     MCAPI extern class HashedString const EnchantedGoldenApple;
     /**
      * @symbol ?EndCrystal@VanillaItemNames@@3VHashedString@@B
-     * @hash   1132433667
+     * @hash   1770137891
      */
     MCAPI extern class HashedString const EndCrystal;
     /**
      * @symbol ?EnderEye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1373884621
+     * @hash   -736180397
      */
     MCAPI extern class HashedString const EnderEye;
     /**
      * @symbol ?EnderPearl@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1312021053
+     * @hash   -674316829
      */
     MCAPI extern class HashedString const EnderPearl;
     /**
      * @symbol ?EndermanSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1707491571
+     * @hash   -1949771501
      */
     MCAPI extern class HashedString const EndermanSpawnEgg;
     /**
      * @symbol ?EndermiteSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1114913951
+     * @hash   -477209727
      */
     MCAPI extern class HashedString const EndermiteSpawnEgg;
     /**
      * @symbol ?EvokerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1313661587
+     * @hash   1951365811
      */
     MCAPI extern class HashedString const EvokerSpawnEgg;
     /**
      * @symbol ?ExperienceBottle@VanillaItemNames@@3VHashedString@@B
-     * @hash   1974312963
+     * @hash   -1682950109
      */
     MCAPI extern class HashedString const ExperienceBottle;
     /**
      * @symbol ?Feather@VanillaItemNames@@3VHashedString@@B
-     * @hash   848295729
+     * @hash   1485999953
      */
     MCAPI extern class HashedString const Feather;
     /**
      * @symbol ?FermentedSpiderEye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -410903133
+     * @hash   226801091
      */
     MCAPI extern class HashedString const FermentedSpiderEye;
     /**
      * @symbol ?FieldMasonedBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   1590376849
+     * @hash   -2066886223
      */
     MCAPI extern class HashedString const FieldMasonedBannerPattern;
     /**
      * @symbol ?FilledMap@VanillaItemNames@@3VHashedString@@B
-     * @hash   12634849
+     * @hash   650339073
      */
     MCAPI extern class HashedString const FilledMap;
     /**
      * @symbol ?FireCharge@VanillaItemNames@@3VHashedString@@B
-     * @hash   1677471987
+     * @hash   -1979791085
      */
     MCAPI extern class HashedString const FireCharge;
     /**
      * @symbol ?FireworkRocket@VanillaItemNames@@3VHashedString@@B
-     * @hash   1239445187
+     * @hash   1877149411
      */
     MCAPI extern class HashedString const FireworkRocket;
     /**
      * @symbol ?FireworkStar@VanillaItemNames@@3VHashedString@@B
-     * @hash   1804551923
+     * @hash   -1852711149
      */
     MCAPI extern class HashedString const FireworkStar;
     /**
      * @symbol ?FishingRod@VanillaItemNames@@3VHashedString@@B
-     * @hash   757822435
+     * @hash   1395526659
      */
     MCAPI extern class HashedString const FishingRod;
     /**
      * @symbol ?Flint@VanillaItemNames@@3VHashedString@@B
-     * @hash   425905457
+     * @hash   1063609681
      */
     MCAPI extern class HashedString const Flint;
     /**
      * @symbol ?FlintAndSteel@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1181430559
+     * @hash   -543726335
      */
     MCAPI extern class HashedString const FlintAndSteel;
     /**
      * @symbol ?FlowerBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   -920911023
+     * @hash   -283206799
      */
     MCAPI extern class HashedString const FlowerBannerPattern;
     /**
      * @symbol ?FlowerPot@VanillaItemNames@@3VHashedString@@B
-     * @hash   -412025711
+     * @hash   225955281
      */
     MCAPI extern class HashedString const FlowerPot;
     /**
      * @symbol ?FoxSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1912917887
+     * @hash   -1275213663
      */
     MCAPI extern class HashedString const FoxSpawnEgg;
     /**
      * @symbol ?FrogSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -364386637
+     * @hash   273317587
      */
     MCAPI extern class HashedString const FrogSpawnEgg;
     /**
      * @symbol ?GhastSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1923552097
+     * @hash   -1733710975
      */
     MCAPI extern class HashedString const GhastSpawnEgg;
     /**
      * @symbol ?GhastTear@VanillaItemNames@@3VHashedString@@B
-     * @hash   -314488303
+     * @hash   323215921
      */
     MCAPI extern class HashedString const GhastTear;
     /**
      * @symbol ?GlassBottle@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1017982367
+     * @hash   -380278143
      */
     MCAPI extern class HashedString const GlassBottle;
     /**
      * @symbol ?GlisteringMelonSlice@VanillaItemNames@@3VHashedString@@B
-     * @hash   845971091
+     * @hash   1483675315
      */
     MCAPI extern class HashedString const GlisteringMelonSlice;
     /**
      * @symbol ?GlobeBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   1444852739
+     * @hash   2082556963
      */
     MCAPI extern class HashedString const GlobeBannerPattern;
     /**
      * @symbol ?GlowBerries@VanillaItemNames@@3VHashedString@@B
-     * @hash   426140561
+     * @hash   1063844785
      */
     MCAPI extern class HashedString const GlowBerries;
     /**
      * @symbol ?GlowInkSac@VanillaItemNames@@3VHashedString@@B
-     * @hash   -842131965
+     * @hash   -204427741
      */
     MCAPI extern class HashedString const GlowInkSac;
     /**
      * @symbol ?GlowItemFrame@VanillaItemNames@@3VHashedString@@B
-     * @hash   -556820575
+     * @hash   81160417
      */
     MCAPI extern class HashedString const GlowItemFrame;
     /**
      * @symbol ?GlowSquidSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2125582927
+     * @hash   -1487878703
      */
     MCAPI extern class HashedString const GlowSquidSpawnEgg;
     /**
      * @symbol ?GlowStick@VanillaItemNames@@3VHashedString@@B
-     * @hash   1162811233
+     * @hash   1800515457
      */
     MCAPI extern class HashedString const GlowStick;
     /**
      * @symbol ?GlowStoneDust@VanillaItemNames@@3VHashedString@@B
-     * @hash   86996209
+     * @hash   724700433
      */
     MCAPI extern class HashedString const GlowStoneDust;
     /**
      * @symbol ?Goat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1778117789
+     * @hash   -1140413565
      */
     MCAPI extern class HashedString const Goat;
     /**
      * @symbol ?GoatHorn@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1713655949
+     * @hash   -1075951725
      */
     MCAPI extern class HashedString const GoatHorn;
     /**
      * @symbol ?GoatSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -781924349
+     * @hash   -144220125
      */
     MCAPI extern class HashedString const GoatSpawnEgg;
     /**
      * @symbol ?GoldIngot@VanillaItemNames@@3VHashedString@@B
-     * @hash   79897809
+     * @hash   717602033
      */
     MCAPI extern class HashedString const GoldIngot;
     /**
      * @symbol ?GoldNugget@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1674425661
+     * @hash   -1036721437
      */
     MCAPI extern class HashedString const GoldNugget;
     /**
      * @symbol ?GoldenApple@VanillaItemNames@@3VHashedString@@B
-     * @hash   439448241
+     * @hash   1077152465
      */
     MCAPI extern class HashedString const GoldenApple;
     /**
      * @symbol ?GoldenAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1368495839
+     * @hash   -730791615
      */
     MCAPI extern class HashedString const GoldenAxe;
     /**
      * @symbol ?GoldenBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   -565226511
+     * @hash   72477713
      */
     MCAPI extern class HashedString const GoldenBoots;
     /**
      * @symbol ?GoldenCarrot@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1540451837
+     * @hash   -902747613
      */
     MCAPI extern class HashedString const GoldenCarrot;
     /**
      * @symbol ?GoldenChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2019980301
+     * @hash   -1382276077
      */
     MCAPI extern class HashedString const GoldenChestplate;
     /**
      * @symbol ?GoldenHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   -262807645
+     * @hash   374896579
      */
     MCAPI extern class HashedString const GoldenHelmet;
     /**
      * @symbol ?GoldenHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   1646973969
+     * @hash   -2010289103
      */
     MCAPI extern class HashedString const GoldenHoe;
     /**
      * @symbol ?GoldenHorseArmor@VanillaItemNames@@3VHashedString@@B
-     * @hash   111845923
+     * @hash   749550147
      */
     MCAPI extern class HashedString const GoldenHorseArmor;
     /**
      * @symbol ?GoldenLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1599556717
+     * @hash   -961852493
      */
     MCAPI extern class HashedString const GoldenLeggings;
     /**
      * @symbol ?GoldenPickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -357902591
+     * @hash   279801633
      */
     MCAPI extern class HashedString const GoldenPickaxe;
     /**
      * @symbol ?GoldenShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   -621681837
+     * @hash   16022387
      */
     MCAPI extern class HashedString const GoldenShovel;
     /**
      * @symbol ?GoldenSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1903288031
+     * @hash   -1265583807
      */
     MCAPI extern class HashedString const GoldenSword;
     /**
      * @symbol ?GrayDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1866058767
+     * @hash   -1228354543
      */
     MCAPI extern class HashedString const GrayDye;
     /**
      * @symbol ?GreenDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -844638077
+     * @hash   -206933853
      */
     MCAPI extern class HashedString const GreenDye;
     /**
      * @symbol ?GuardianSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -670921357
+     * @hash   -33217133
      */
     MCAPI extern class HashedString const GuardianSpawnEgg;
     /**
      * @symbol ?Gunpowder@VanillaItemNames@@3VHashedString@@B
-     * @hash   380938817
+     * @hash   1018643041
      */
     MCAPI extern class HashedString const Gunpowder;
     /**
      * @symbol ?HeartOfTheSea@VanillaItemNames@@3VHashedString@@B
-     * @hash   -906897615
+     * @hash   -269193391
      */
     MCAPI extern class HashedString const HeartOfTheSea;
     /**
      * @symbol ?HoglinSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -558098877
+     * @hash   79605347
      */
     MCAPI extern class HashedString const HoglinSpawnEgg;
     /**
      * @symbol ?HoneyBottle@VanillaItemNames@@3VHashedString@@B
-     * @hash   322240529
+     * @hash   959944753
      */
     MCAPI extern class HashedString const HoneyBottle;
     /**
      * @symbol ?HoneyComb@VanillaItemNames@@3VHashedString@@B
-     * @hash   1173861217
+     * @hash   1811565441
      */
     MCAPI extern class HashedString const HoneyComb;
     /**
      * @symbol ?Hopper@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2023358317
+     * @hash   -1385377325
      */
     MCAPI extern class HashedString const Hopper;
     /**
      * @symbol ?HopperMinecart@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1242502061
+     * @hash   -604797837
      */
     MCAPI extern class HashedString const HopperMinecart;
     /**
      * @symbol ?HorseSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -752069215
+     * @hash   -114364991
      */
     MCAPI extern class HashedString const HorseSpawnEgg;
     /**
      * @symbol ?HuskSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1691732467
+     * @hash   -1965530605
      */
     MCAPI extern class HashedString const HuskSpawnEgg;
     /**
      * @symbol ?IceBomb@VanillaItemNames@@3VHashedString@@B
-     * @hash   1211451905
+     * @hash   1849156129
      */
     MCAPI extern class HashedString const IceBomb;
     /**
      * @symbol ?InkSac@VanillaItemNames@@3VHashedString@@B
-     * @hash   1110198035
+     * @hash   1747902259
      */
     MCAPI extern class HashedString const InkSac;
     /**
      * @symbol ?IronAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -748195455
+     * @hash   -110491231
      */
     MCAPI extern class HashedString const IronAxe;
     /**
      * @symbol ?IronBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   1775166545
+     * @hash   -1882096527
      */
     MCAPI extern class HashedString const IronBoots;
     /**
      * @symbol ?IronChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   1005288547
+     * @hash   1642992771
      */
     MCAPI extern class HashedString const IronChestplate;
     /**
      * @symbol ?IronDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   2040318195
+     * @hash   -1616668109
      */
     MCAPI extern class HashedString const IronDoor;
     /**
      * @symbol ?IronHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   -758325229
+     * @hash   -120621005
      */
     MCAPI extern class HashedString const IronHelmet;
     /**
      * @symbol ?IronHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2027739071
+     * @hash   -1390034847
      */
     MCAPI extern class HashedString const IronHoe;
     /**
      * @symbol ?IronHorseArmor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1157852525
+     * @hash   -520148301
      */
     MCAPI extern class HashedString const IronHorseArmor;
     /**
      * @symbol ?IronIngot@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1029254655
+     * @hash   -391550431
      */
     MCAPI extern class HashedString const IronIngot;
     /**
      * @symbol ?IronLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2069045197
+     * @hash   -1431340973
      */
     MCAPI extern class HashedString const IronLeggings;
     /**
      * @symbol ?IronNugget@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1744034269
+     * @hash   -1106330045
      */
     MCAPI extern class HashedString const IronNugget;
     /**
      * @symbol ?IronPickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   1429185425
+     * @hash   2066889649
      */
     MCAPI extern class HashedString const IronPickaxe;
     /**
      * @symbol ?IronShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1117107165
+     * @hash   -479402941
      */
     MCAPI extern class HashedString const IronShovel;
     /**
      * @symbol ?IronSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   437151153
+     * @hash   1074855377
      */
     MCAPI extern class HashedString const IronSword;
     /**
      * @symbol ?ItemFrame@VanillaItemNames@@3VHashedString@@B
-     * @hash   755244321
+     * @hash   1393225313
      */
     MCAPI extern class HashedString const ItemFrame;
     /**
      * @symbol ?JungleBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2137989437
+     * @hash   -1500285213
      */
     MCAPI extern class HashedString const JungleBoat;
     /**
      * @symbol ?JungleChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -910045007
+     * @hash   -272340783
      */
     MCAPI extern class HashedString const JungleChestBoat;
     /**
      * @symbol ?JungleDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1118442621
+     * @hash   -480461629
      */
     MCAPI extern class HashedString const JungleDoor;
     /**
+     * @symbol ?JungleHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -1317550399
+     */
+    MCAPI extern class HashedString const JungleHangingSign;
+    /**
      * @symbol ?JungleSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   -317801789
+     * @hash   319948563
      */
     MCAPI extern class HashedString const JungleSign;
     /**
      * @symbol ?Kelp@VanillaItemNames@@3VHashedString@@B
-     * @hash   551387859
+     * @hash   1189368851
      */
     MCAPI extern class HashedString const Kelp;
     /**
      * @symbol ?LapisLazuli@VanillaItemNames@@3VHashedString@@B
-     * @hash   773488209
+     * @hash   1411238561
      */
     MCAPI extern class HashedString const LapisLazuli;
     /**
      * @symbol ?LavaBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1667171037
+     * @hash   -1029420685
      */
     MCAPI extern class HashedString const LavaBucket;
     /**
      * @symbol ?Lead@VanillaItemNames@@3VHashedString@@B
-     * @hash   -831069101
+     * @hash   -193318749
      */
     MCAPI extern class HashedString const Lead;
     /**
      * @symbol ?Leather@VanillaItemNames@@3VHashedString@@B
-     * @hash   1101568321
+     * @hash   1739318673
      */
     MCAPI extern class HashedString const Leather;
     /**
      * @symbol ?LeatherBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   -26770637
+     * @hash   610979715
      */
     MCAPI extern class HashedString const LeatherBoots;
     /**
      * @symbol ?LeatherChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   1304565121
+     * @hash   1942315473
      */
     MCAPI extern class HashedString const LeatherChestplate;
     /**
      * @symbol ?LeatherHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   -808712143
+     * @hash   -170961791
      */
     MCAPI extern class HashedString const LeatherHelmet;
     /**
      * @symbol ?LeatherHorseArmor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -858622079
+     * @hash   -220871727
      */
     MCAPI extern class HashedString const LeatherHorseArmor;
     /**
      * @symbol ?LeatherLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   251553905
+     * @hash   889304257
      */
     MCAPI extern class HashedString const LeatherLeggings;
     /**
      * @symbol ?LightBlueDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1918452445
+     * @hash   -1280702093
      */
     MCAPI extern class HashedString const LightBlueDye;
     /**
      * @symbol ?LightGrayDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   1322797107
+     * @hash   1960547459
      */
     MCAPI extern class HashedString const LightGrayDye;
     /**
      * @symbol ?LimeDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -739366655
+     * @hash   -101616303
      */
     MCAPI extern class HashedString const LimeDye;
     /**
      * @symbol ?LingeringPotion@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1330669295
+     * @hash   -692918943
      */
     MCAPI extern class HashedString const LingeringPotion;
     /**
      * @symbol ?LlamaSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1086470495
+     * @hash   -448720143
      */
     MCAPI extern class HashedString const LlamaSpawnEgg;
     /**
      * @symbol ?LodestoneCompass@VanillaItemNames@@3VHashedString@@B
-     * @hash   1518947251
+     * @hash   -2138269693
      */
     MCAPI extern class HashedString const LodestoneCompass;
     /**
      * @symbol ?MagentaDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   2089566051
+     * @hash   -1567650893
      */
     MCAPI extern class HashedString const MagentaDye;
     /**
      * @symbol ?MagmaCream@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1230326253
+     * @hash   -592575901
      */
     MCAPI extern class HashedString const MagmaCream;
     /**
      * @symbol ?MagmaCubeSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1455971135
+     * @hash   -818220783
      */
     MCAPI extern class HashedString const MagmaCubeSpawnEgg;
     /**
      * @symbol ?MangroveBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   1201158643
+     * @hash   1838908995
      */
     MCAPI extern class HashedString const MangroveBoat;
     /**
      * @symbol ?MangroveChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -479064735
+     * @hash   158685617
      */
     MCAPI extern class HashedString const MangroveChestBoat;
     /**
      * @symbol ?MangroveDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2075138269
+     * @hash   -1437157277
      */
     MCAPI extern class HashedString const MangroveDoor;
     /**
+     * @symbol ?MangroveHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -392263775
+     */
+    MCAPI extern class HashedString const MangroveHangingSign;
+    /**
      * @symbol ?MangroveSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1273621005
+     * @hash   -635824525
      */
     MCAPI extern class HashedString const MangroveSign;
     /**
      * @symbol ?Medicine@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1066336477
+     * @hash   -428539997
      */
     MCAPI extern class HashedString const Medicine;
     /**
      * @symbol ?MelonSeeds@VanillaItemNames@@3VHashedString@@B
-     * @hash   911430067
+     * @hash   1549226547
      */
     MCAPI extern class HashedString const MelonSeeds;
     /**
      * @symbol ?MelonSlice@VanillaItemNames@@3VHashedString@@B
-     * @hash   -135367709
+     * @hash   502428771
      */
     MCAPI extern class HashedString const MelonSlice;
     /**
      * @symbol ?MilkBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   1255196883
+     * @hash   1892993363
      */
     MCAPI extern class HashedString const MilkBucket;
     /**
      * @symbol ?Minecart@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1344349437
+     * @hash   -706552957
      */
     MCAPI extern class HashedString const Minecart;
     /**
      * @symbol ?MojangBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1700875215
+     * @hash   -1063078735
      */
     MCAPI extern class HashedString const MojangBannerPattern;
     /**
      * @symbol ?MooshroomSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   2010063553
+     * @hash   -1647107263
      */
     MCAPI extern class HashedString const MooshroomSpawnEgg;
     /**
      * @symbol ?MuleSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   2000189971
+     * @hash   -1656980845
      */
     MCAPI extern class HashedString const MuleSpawnEgg;
     /**
      * @symbol ?MushroomStew@VanillaItemNames@@3VHashedString@@B
-     * @hash   1601257027
+     * @hash   -2055913789
      */
     MCAPI extern class HashedString const MushroomStew;
     /**
      * @symbol ?MusicDisc11@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1817811679
+     * @hash   -1180015199
      */
     MCAPI extern class HashedString const MusicDisc11;
     /**
      * @symbol ?MusicDisc13@VanillaItemNames@@3VHashedString@@B
-     * @hash   1449689489
+     * @hash   2087485969
      */
     MCAPI extern class HashedString const MusicDisc13;
     /**
      * @symbol ?MusicDisc5@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1181581133
+     * @hash   -543784653
      */
     MCAPI extern class HashedString const MusicDisc5;
     /**
      * @symbol ?MusicDiscBlocks@VanillaItemNames@@3VHashedString@@B
-     * @hash   59481793
+     * @hash   697278273
      */
     MCAPI extern class HashedString const MusicDiscBlocks;
     /**
      * @symbol ?MusicDiscCat@VanillaItemNames@@3VHashedString@@B
-     * @hash   2105790803
+     * @hash   -1551380013
      */
     MCAPI extern class HashedString const MusicDiscCat;
     /**
      * @symbol ?MusicDiscChirp@VanillaItemNames@@3VHashedString@@B
-     * @hash   -209476925
+     * @hash   428319555
      */
     MCAPI extern class HashedString const MusicDiscChirp;
     /**
      * @symbol ?MusicDiscFar@VanillaItemNames@@3VHashedString@@B
-     * @hash   1590711763
+     * @hash   -2066459053
      */
     MCAPI extern class HashedString const MusicDiscFar;
     /**
      * @symbol ?MusicDiscMall@VanillaItemNames@@3VHashedString@@B
-     * @hash   554421505
+     * @hash   1192217985
      */
     MCAPI extern class HashedString const MusicDiscMall;
     /**
      * @symbol ?MusicDiscMellohi@VanillaItemNames@@3VHashedString@@B
-     * @hash   328411603
+     * @hash   966208083
      */
     MCAPI extern class HashedString const MusicDiscMellohi;
     /**
      * @symbol ?MusicDiscOtherside@VanillaItemNames@@3VHashedString@@B
-     * @hash   492818339
+     * @hash   1130614819
      */
     MCAPI extern class HashedString const MusicDiscOtherside;
     /**
      * @symbol ?MusicDiscPigstep@VanillaItemNames@@3VHashedString@@B
-     * @hash   738521715
+     * @hash   1376318195
      */
     MCAPI extern class HashedString const MusicDiscPigstep;
     /**
      * @symbol ?MusicDiscStal@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1969879871
+     * @hash   -1332083391
      */
     MCAPI extern class HashedString const MusicDiscStal;
     /**
      * @symbol ?MusicDiscStrad@VanillaItemNames@@3VHashedString@@B
-     * @hash   163397203
+     * @hash   801193683
      */
     MCAPI extern class HashedString const MusicDiscStrad;
     /**
      * @symbol ?MusicDiscWait@VanillaItemNames@@3VHashedString@@B
-     * @hash   1493280321
+     * @hash   2131076801
      */
     MCAPI extern class HashedString const MusicDiscWait;
     /**
      * @symbol ?MusicDiscWard@VanillaItemNames@@3VHashedString@@B
-     * @hash   1666934609
+     * @hash   -1990236207
      */
     MCAPI extern class HashedString const MusicDiscWard;
     /**
      * @symbol ?Mutton@VanillaItemNames@@3VHashedString@@B
-     * @hash   -732621437
+     * @hash   -94824957
      */
     MCAPI extern class HashedString const Mutton;
     /**
      * @symbol ?NameTag@VanillaItemNames@@3VHashedString@@B
-     * @hash   961196561
+     * @hash   1598993041
      */
     MCAPI extern class HashedString const NameTag;
     /**
      * @symbol ?NautilusShell@VanillaItemNames@@3VHashedString@@B
-     * @hash   1593580737
+     * @hash   -2063590079
      */
     MCAPI extern class HashedString const NautilusShell;
     /**
      * @symbol ?NetherBrickItemName@VanillaItemNames@@3VHashedString@@B
-     * @hash   528283377
+     * @hash   1166079857
      */
     MCAPI extern class HashedString const NetherBrickItemName;
     /**
      * @symbol ?NetherSprouts@VanillaItemNames@@3VHashedString@@B
-     * @hash   2019441553
+     * @hash   -1637544751
      */
     MCAPI extern class HashedString const NetherSprouts;
     /**
      * @symbol ?NetherStar@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1360592349
+     * @hash   -722795869
      */
     MCAPI extern class HashedString const NetherStar;
     /**
      * @symbol ?NetherWart@VanillaItemNames@@3VHashedString@@B
-     * @hash   1440870243
+     * @hash   2078851235
      */
     MCAPI extern class HashedString const NetherWart;
     /**
      * @symbol ?NetheriteAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -835838381
+     * @hash   -198041901
      */
     MCAPI extern class HashedString const NetheriteAxe;
     /**
      * @symbol ?NetheriteBoots@VanillaItemNames@@3VHashedString@@B
-     * @hash   571273379
+     * @hash   1209069859
      */
     MCAPI extern class HashedString const NetheriteBoots;
     /**
      * @symbol ?NetheriteChestplate@VanillaItemNames@@3VHashedString@@B
-     * @hash   -128109135
+     * @hash   509687345
      */
     MCAPI extern class HashedString const NetheriteChestplate;
     /**
      * @symbol ?NetheriteHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   485742689
+     * @hash   1123539169
      */
     MCAPI extern class HashedString const NetheriteHelmet;
     /**
      * @symbol ?NetheriteHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2115381997
+     * @hash   -1477585517
      */
     MCAPI extern class HashedString const NetheriteHoe;
     /**
      * @symbol ?NetheriteIngot@VanillaItemNames@@3VHashedString@@B
-     * @hash   2061773347
+     * @hash   -1595397469
      */
     MCAPI extern class HashedString const NetheriteIngot;
     /**
      * @symbol ?NetheriteLeggings@VanillaItemNames@@3VHashedString@@B
-     * @hash   895849681
+     * @hash   1533646161
      */
     MCAPI extern class HashedString const NetheriteLeggings;
     /**
      * @symbol ?NetheritePickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   1250543363
+     * @hash   1888339843
      */
     MCAPI extern class HashedString const NetheritePickaxe;
     /**
      * @symbol ?NetheriteScrap@VanillaItemNames@@3VHashedString@@B
-     * @hash   1991352307
+     * @hash   -1665818509
      */
     MCAPI extern class HashedString const NetheriteScrap;
     /**
      * @symbol ?NetheriteShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   126914625
+     * @hash   764711105
      */
     MCAPI extern class HashedString const NetheriteShovel;
     /**
      * @symbol ?NetheriteSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   -766788141
+     * @hash   -128991661
      */
     MCAPI extern class HashedString const NetheriteSword;
     /**
      * @symbol ?NpcSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1152882463
+     * @hash   -515085983
      */
     MCAPI extern class HashedString const NpcSpawnEgg;
     /**
      * @symbol ?OakBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1568763311
+     * @hash   -930966831
      */
     MCAPI extern class HashedString const OakBoat;
     /**
      * @symbol ?OakChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   831981635
+     * @hash   1469778115
      */
     MCAPI extern class HashedString const OakChestBoat;
     /**
      * @symbol ?OakDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   -551984175
+     * @hash   85996817
      */
     MCAPI extern class HashedString const OakDoor;
     /**
+     * @symbol ?OakHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -850520525
+     */
+    MCAPI extern class HashedString const OakHangingSign;
+    /**
      * @symbol ?OakSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   251424337
+     * @hash   889266945
      */
     MCAPI extern class HashedString const OakSign;
     /**
      * @symbol ?OcelotSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   898825379
+     * @hash   1536667987
      */
     MCAPI extern class HashedString const OcelotSpawnEgg;
     /**
      * @symbol ?OrangeDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1669449615
+     * @hash   -1031607007
      */
     MCAPI extern class HashedString const OrangeDye;
     /**
      * @symbol ?Painting@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1851590397
+     * @hash   -1213747789
      */
     MCAPI extern class HashedString const Painting;
     /**
      * @symbol ?PandaSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1982098031
+     * @hash   -1344255423
      */
     MCAPI extern class HashedString const PandaSpawnEgg;
     /**
      * @symbol ?Paper@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1647920703
+     * @hash   -1010078095
      */
     MCAPI extern class HashedString const Paper;
     /**
      * @symbol ?ParrotSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1655318445
+     * @hash   -1017475837
      */
     MCAPI extern class HashedString const ParrotSpawnEgg;
     /**
      * @symbol ?PhantomMembrane@VanillaItemNames@@3VHashedString@@B
-     * @hash   1099173345
+     * @hash   1737015953
      */
     MCAPI extern class HashedString const PhantomMembrane;
     /**
      * @symbol ?PhantomSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   2099635441
+     * @hash   -1557489247
      */
     MCAPI extern class HashedString const PhantomSpawnEgg;
     /**
      * @symbol ?PhotoItem@VanillaItemNames@@3VHashedString@@B
-     * @hash   1756865057
+     * @hash   -1900259631
      */
     MCAPI extern class HashedString const PhotoItem;
     /**
      * @symbol ?PigSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   522217713
+     * @hash   1160060321
      */
     MCAPI extern class HashedString const PigSpawnEgg;
     /**
      * @symbol ?PiglinBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   1047864129
+     * @hash   1685706737
      */
     MCAPI extern class HashedString const PiglinBannerPattern;
     /**
      * @symbol ?PiglinBruteSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -788123919
+     * @hash   -150281311
      */
     MCAPI extern class HashedString const PiglinBruteSpawnEgg;
     /**
      * @symbol ?PiglinSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1846190269
+     * @hash   -1208347661
      */
     MCAPI extern class HashedString const PiglinSpawnEgg;
     /**
      * @symbol ?PillagerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   668871763
+     * @hash   1306714371
      */
     MCAPI extern class HashedString const PillagerSpawnEgg;
     /**
      * @symbol ?PinkDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1978390111
+     * @hash   -1340547503
      */
     MCAPI extern class HashedString const PinkDye;
     /**
      * @symbol ?PoisonousPotato@VanillaItemNames@@3VHashedString@@B
-     * @hash   -317182703
+     * @hash   320659905
      */
     MCAPI extern class HashedString const PoisonousPotato;
     /**
      * @symbol ?PolarBearSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2043311231
+     * @hash   -1405468623
      */
     MCAPI extern class HashedString const PolarBearSpawnEgg;
     /**
      * @symbol ?PoppedChorusFruit@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1102742991
+     * @hash   -464900383
      */
     MCAPI extern class HashedString const PoppedChorusFruit;
     /**
      * @symbol ?PorkChop@VanillaItemNames@@3VHashedString@@B
-     * @hash   274259779
+     * @hash   912102387
      */
     MCAPI extern class HashedString const PorkChop;
     /**
      * @symbol ?PortfolioBook@VanillaItemNames@@3VHashedString@@B
-     * @hash   64075313
+     * @hash   701917921
      */
     MCAPI extern class HashedString const PortfolioBook;
     /**
      * @symbol ?Potato@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1380548349
+     * @hash   -742705741
      */
     MCAPI extern class HashedString const Potato;
     /**
      * @symbol ?Potion@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1226124621
+     * @hash   -588282013
      */
     MCAPI extern class HashedString const Potion;
     /**
      * @symbol ?PowderSnowBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1472952317
+     * @hash   -835109709
      */
     MCAPI extern class HashedString const PowderSnowBucket;
     /**
      * @symbol ?PrismarineCrystals@VanillaItemNames@@3VHashedString@@B
-     * @hash   1511461011
+     * @hash   -2145663677
      */
     MCAPI extern class HashedString const PrismarineCrystals;
     /**
      * @symbol ?PrismarineShard@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1427997887
+     * @hash   -790155279
      */
     MCAPI extern class HashedString const PrismarineShard;
     /**
      * @symbol ?Pufferfish@VanillaItemNames@@3VHashedString@@B
-     * @hash   -509194797
+     * @hash   128647811
      */
     MCAPI extern class HashedString const Pufferfish;
     /**
      * @symbol ?PufferfishBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   531508867
+     * @hash   1169351475
      */
     MCAPI extern class HashedString const PufferfishBucket;
     /**
      * @symbol ?PufferfishSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -577772941
+     * @hash   60069667
      */
     MCAPI extern class HashedString const PufferfishSpawnEgg;
     /**
      * @symbol ?PumpkinPie@VanillaItemNames@@3VHashedString@@B
-     * @hash   1220872611
+     * @hash   1858715219
      */
     MCAPI extern class HashedString const PumpkinPie;
     /**
      * @symbol ?PumpkinSeeds@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1150659501
+     * @hash   -512816893
      */
     MCAPI extern class HashedString const PumpkinSeeds;
     /**
      * @symbol ?PurpleDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1110622175
+     * @hash   -472779567
      */
     MCAPI extern class HashedString const PurpleDye;
     /**
      * @symbol ?Quartz@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2095571565
+     * @hash   -1457728957
      */
     MCAPI extern class HashedString const Quartz;
     /**
      * @symbol ?Rabbit@VanillaItemNames@@3VHashedString@@B
-     * @hash   1770868131
+     * @hash   -1886256557
      */
     MCAPI extern class HashedString const Rabbit;
     /**
      * @symbol ?RabbitFoot@VanillaItemNames@@3VHashedString@@B
-     * @hash   1129853715
+     * @hash   1767696323
      */
     MCAPI extern class HashedString const RabbitFoot;
     /**
      * @symbol ?RabbitHide@VanillaItemNames@@3VHashedString@@B
-     * @hash   2043154883
+     * @hash   -1613969805
      */
     MCAPI extern class HashedString const RabbitHide;
     /**
      * @symbol ?RabbitSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1434261107
+     * @hash   2072103715
      */
     MCAPI extern class HashedString const RabbitSpawnEgg;
     /**
      * @symbol ?RabbitStew@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1559715773
+     * @hash   -921873165
      */
     MCAPI extern class HashedString const RabbitStew;
     /**
      * @symbol ?RapidFertilizer@VanillaItemNames@@3VHashedString@@B
-     * @hash   887427953
+     * @hash   1525270561
      */
     MCAPI extern class HashedString const RapidFertilizer;
     /**
      * @symbol ?RavagerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1661839263
+     * @hash   -1023996655
      */
     MCAPI extern class HashedString const RavagerSpawnEgg;
     /**
      * @symbol ?RawCopper@VanillaItemNames@@3VHashedString@@B
-     * @hash   1509753713
+     * @hash   -2147370975
      */
     MCAPI extern class HashedString const RawCopper;
     /**
      * @symbol ?RawGold@VanillaItemNames@@3VHashedString@@B
-     * @hash   1548697665
+     * @hash   -2108427023
      */
     MCAPI extern class HashedString const RawGold;
     /**
      * @symbol ?RawIron@VanillaItemNames@@3VHashedString@@B
-     * @hash   390570353
+     * @hash   1028412961
      */
     MCAPI extern class HashedString const RawIron;
     /**
      * @symbol ?RecoveryCompass@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1956077503
+     * @hash   -1318234895
      */
     MCAPI extern class HashedString const RecoveryCompass;
     /**
      * @symbol ?RedDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   1332973651
+     * @hash   1970816259
      */
     MCAPI extern class HashedString const RedDye;
     /**
      * @symbol ?RedStone@VanillaItemNames@@3VHashedString@@B
-     * @hash   275167971
+     * @hash   913010579
      */
     MCAPI extern class HashedString const RedStone;
     /**
      * @symbol ?Repeater@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1663588973
+     * @hash   -1025746365
      */
     MCAPI extern class HashedString const Repeater;
     /**
      * @symbol ?RottenFlesh@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1158604127
+     * @hash   -520761519
      */
     MCAPI extern class HashedString const RottenFlesh;
     /**
      * @symbol ?Saddle@VanillaItemNames@@3VHashedString@@B
-     * @hash   -274422253
+     * @hash   363420355
      */
     MCAPI extern class HashedString const Saddle;
     /**
      * @symbol ?Salmon@VanillaItemNames@@3VHashedString@@B
-     * @hash   1281190691
+     * @hash   1919033299
      */
     MCAPI extern class HashedString const Salmon;
     /**
      * @symbol ?SalmonBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1698722861
+     * @hash   -1060880253
      */
     MCAPI extern class HashedString const SalmonBucket;
     /**
      * @symbol ?SalmonSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1660289085
+     * @hash   -1022446477
      */
     MCAPI extern class HashedString const SalmonSpawnEgg;
     /**
      * @symbol ?Scute@VanillaItemNames@@3VHashedString@@B
-     * @hash   79318993
+     * @hash   717161601
      */
     MCAPI extern class HashedString const Scute;
     /**
      * @symbol ?Shears@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1790102429
+     * @hash   -1152259821
      */
     MCAPI extern class HashedString const Shears;
     /**
      * @symbol ?SheepSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1995033361
+     * @hash   -1662091327
      */
     MCAPI extern class HashedString const SheepSpawnEgg;
     /**
      * @symbol ?Shield@VanillaItemNames@@3VHashedString@@B
-     * @hash   578240419
+     * @hash   1216083027
      */
     MCAPI extern class HashedString const Shield;
     /**
      * @symbol ?Shroomlight@VanillaItemNames@@3VHashedString@@B
-     * @hash   884051889
+     * @hash   1521894497
      */
     MCAPI extern class HashedString const Shroomlight;
     /**
      * @symbol ?ShulkerShell@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1968553357
+     * @hash   -1330710749
      */
     MCAPI extern class HashedString const ShulkerShell;
     /**
      * @symbol ?ShulkerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1983917567
+     * @hash   -1346074959
      */
     MCAPI extern class HashedString const ShulkerSpawnEgg;
     /**
      * @symbol ?SilverfishSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1843829853
+     * @hash   -1205987245
      */
     MCAPI extern class HashedString const SilverfishSpawnEgg;
     /**
      * @symbol ?SkeletonHorseSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1702920239
+     * @hash   -1065077631
      */
     MCAPI extern class HashedString const SkeletonHorseSpawnEgg;
     /**
      * @symbol ?SkeletonSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   305225027
+     * @hash   943067635
      */
     MCAPI extern class HashedString const SkeletonSpawnEgg;
     /**
      * @symbol ?Skull@VanillaItemNames@@3VHashedString@@B
-     * @hash   -50439551
+     * @hash   587541441
      */
     MCAPI extern class HashedString const Skull;
     /**
      * @symbol ?SkullBannerPattern@VanillaItemNames@@3VHashedString@@B
-     * @hash   926128947
+     * @hash   1563971555
      */
     MCAPI extern class HashedString const SkullBannerPattern;
     /**
      * @symbol ?SlimeBall@VanillaItemNames@@3VHashedString@@B
-     * @hash   -377283455
+     * @hash   260559153
      */
     MCAPI extern class HashedString const SlimeBall;
     /**
      * @symbol ?SlimeSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -856553839
+     * @hash   -218711231
      */
     MCAPI extern class HashedString const SlimeSpawnEgg;
     /**
      * @symbol ?SnowBall@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1330667421
+     * @hash   -692824813
      */
     MCAPI extern class HashedString const SnowBall;
     /**
      * @symbol ?SoulCampfire@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1736583053
+     * @hash   -1098602061
      */
     MCAPI extern class HashedString const SoulCampfire;
     /**
      * @symbol ?Sparkler@VanillaItemNames@@3VHashedString@@B
-     * @hash   1520081875
+     * @hash   -2137042813
      */
     MCAPI extern class HashedString const Sparkler;
     /**
      * @symbol ?SpawnEggLegacy@VanillaItemNames@@3VHashedString@@B
-     * @hash   1991355043
+     * @hash   -1665631261
      */
     MCAPI extern class HashedString const SpawnEggLegacy;
     /**
      * @symbol ?SpiderEye@VanillaItemNames@@3VHashedString@@B
-     * @hash   -162531871
+     * @hash   475310737
      */
     MCAPI extern class HashedString const SpiderEye;
     /**
      * @symbol ?SpiderSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -498282029
+     * @hash   139560579
      */
     MCAPI extern class HashedString const SpiderSpawnEgg;
     /**
      * @symbol ?SplashPotion@VanillaItemNames@@3VHashedString@@B
-     * @hash   -483496029
+     * @hash   154346579
      */
     MCAPI extern class HashedString const SplashPotion;
     /**
      * @symbol ?SpruceBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -67428077
+     * @hash   570414531
      */
     MCAPI extern class HashedString const SpruceBoat;
     /**
      * @symbol ?SpruceChestBoat@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1591456319
+     * @hash   -953613711
      */
     MCAPI extern class HashedString const SpruceChestBoat;
     /**
      * @symbol ?SpruceDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   946168227
+     * @hash   1584149219
      */
     MCAPI extern class HashedString const SpruceDoor;
     /**
+     * @symbol ?SpruceHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   -795473823
+     */
+    MCAPI extern class HashedString const SpruceHangingSign;
+    /**
      * @symbol ?SpruceSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   1752759571
+     * @hash   -1904318989
      */
     MCAPI extern class HashedString const SpruceSign;
     /**
      * @symbol ?Spyglass@VanillaItemNames@@3VHashedString@@B
-     * @hash   1996488099
+     * @hash   -1660590461
      */
     MCAPI extern class HashedString const Spyglass;
     /**
      * @symbol ?SquidSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   418424241
+     * @hash   1056312977
      */
     MCAPI extern class HashedString const SquidSpawnEgg;
     /**
      * @symbol ?Stick@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2090815647
+     * @hash   -1452926911
      */
     MCAPI extern class HashedString const Stick;
     /**
      * @symbol ?StoneAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   179409747
+     * @hash   817298483
      */
     MCAPI extern class HashedString const StoneAxe;
     /**
      * @symbol ?StoneHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1100272253
+     * @hash   -462383517
      */
     MCAPI extern class HashedString const StoneHoe;
     /**
      * @symbol ?StonePickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   1365157651
+     * @hash   2003046387
      */
     MCAPI extern class HashedString const StonePickaxe;
     /**
      * @symbol ?StoneShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   1104191457
+     * @hash   1742080193
      */
     MCAPI extern class HashedString const StoneShovel;
     /**
      * @symbol ?StoneSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   238318003
+     * @hash   876206739
      */
     MCAPI extern class HashedString const StoneSword;
     /**
      * @symbol ?StraySpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   237272545
+     * @hash   875161281
      */
     MCAPI extern class HashedString const StraySpawnEgg;
     /**
      * @symbol ?StriderSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   2002133073
+     * @hash   -1654945487
      */
     MCAPI extern class HashedString const StriderSpawnEgg;
     /**
      * @symbol ?String@VanillaItemNames@@3VHashedString@@B
-     * @hash   -257349149
+     * @hash   380539587
      */
     MCAPI extern class HashedString const String;
     /**
      * @symbol ?Sugar@VanillaItemNames@@3VHashedString@@B
-     * @hash   1947816401
+     * @hash   -1709262159
      */
     MCAPI extern class HashedString const Sugar;
     /**
      * @symbol ?SugarCane@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2076645087
+     * @hash   -1438756351
      */
     MCAPI extern class HashedString const SugarCane;
     /**
      * @symbol ?SuspiciousStew@VanillaItemNames@@3VHashedString@@B
-     * @hash   29202771
+     * @hash   667091507
      */
     MCAPI extern class HashedString const SuspiciousStew;
     /**
      * @symbol ?SweetBerries@VanillaItemNames@@3VHashedString@@B
-     * @hash   -2135397309
+     * @hash   -1497508573
      */
     MCAPI extern class HashedString const SweetBerries;
     /**
      * @symbol ?TadpoleBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   1060404209
+     * @hash   1698292945
      */
     MCAPI extern class HashedString const TadpoleBucket;
     /**
      * @symbol ?TadpoleSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1816745887
+     * @hash   -1178857151
      */
     MCAPI extern class HashedString const TadpoleSpawnEgg;
     /**
      * @symbol ?TntMinecart@VanillaItemNames@@3VHashedString@@B
-     * @hash   108715665
+     * @hash   746604401
      */
     MCAPI extern class HashedString const TntMinecart;
     /**
      * @symbol ?TotemOfUndying@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1340373053
+     * @hash   -702484317
      */
     MCAPI extern class HashedString const TotemOfUndying;
     /**
      * @symbol ?TraderLlamaSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1792713615
+     * @hash   -1154824879
      */
     MCAPI extern class HashedString const TraderLlamaSpawnEgg;
     /**
      * @symbol ?Trident@VanillaItemNames@@3VHashedString@@B
-     * @hash   -520350911
+     * @hash   117537825
      */
     MCAPI extern class HashedString const Trident;
     /**
      * @symbol ?TropicalFish@VanillaItemNames@@3VHashedString@@B
-     * @hash   1302440083
+     * @hash   1940328819
      */
     MCAPI extern class HashedString const TropicalFish;
     /**
      * @symbol ?TropicalFishBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1735194301
+     * @hash   -1097305565
      */
     MCAPI extern class HashedString const TropicalFishBucket;
     /**
      * @symbol ?TropicalFishSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -47366861
+     * @hash   590521875
      */
     MCAPI extern class HashedString const TropicalFishSpawnEgg;
     /**
      * @symbol ?TurtleHelmet@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1161236797
+     * @hash   -523348061
      */
     MCAPI extern class HashedString const TurtleHelmet;
     /**
      * @symbol ?TurtleSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   908494419
+     * @hash   1546383155
      */
     MCAPI extern class HashedString const TurtleSpawnEgg;
     /**
      * @symbol ?VexSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1602710785
+     * @hash   -2054367775
      */
     MCAPI extern class HashedString const VexSpawnEgg;
     /**
      * @symbol ?VillagerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -448404557
+     * @hash   189484179
      */
     MCAPI extern class HashedString const VillagerSpawnEgg;
     /**
      * @symbol ?VindicatorSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1054536195
+     * @hash   1692424931
      */
     MCAPI extern class HashedString const VindicatorSpawnEgg;
     /**
      * @symbol ?WanderingTraderSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1604875857
+     * @hash   -2052202703
      */
     MCAPI extern class HashedString const WanderingTraderSpawnEgg;
     /**
      * @symbol ?WardenSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1778490467
+     * @hash   -1878588093
      */
     MCAPI extern class HashedString const WardenSpawnEgg;
     /**
      * @symbol ?WarpedDoor@VanillaItemNames@@3VHashedString@@B
-     * @hash   510506611
+     * @hash   1148487603
      */
     MCAPI extern class HashedString const WarpedDoor;
     /**
      * @symbol ?WarpedFungusOnAStick@VanillaItemNames@@3VHashedString@@B
-     * @hash   1965455699
+     * @hash   -1691622861
      */
     MCAPI extern class HashedString const WarpedFungusOnAStick;
     /**
+     * @symbol ?WarpedHangingSign@VanillaItemNames@@3VHashedString@@B
+     * @hash   227435041
+     */
+    MCAPI extern class HashedString const WarpedHangingSign;
+    /**
      * @symbol ?WarpedSign@VanillaItemNames@@3VHashedString@@B
-     * @hash   1318574051
+     * @hash   1956508915
      */
     MCAPI extern class HashedString const WarpedSign;
     /**
      * @symbol ?WaterBucket@VanillaItemNames@@3VHashedString@@B
-     * @hash   599704593
+     * @hash   1237639457
      */
     MCAPI extern class HashedString const WaterBucket;
     /**
      * @symbol ?Wheat@VanillaItemNames@@3VHashedString@@B
-     * @hash   588686465
+     * @hash   1226667457
      */
     MCAPI extern class HashedString const Wheat;
     /**
      * @symbol ?WheatSeeds@VanillaItemNames@@3VHashedString@@B
-     * @hash   1940663075
+     * @hash   -1716369357
      */
     MCAPI extern class HashedString const WheatSeeds;
     /**
      * @symbol ?WhiteDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   1908364563
+     * @hash   -1748667869
      */
     MCAPI extern class HashedString const WhiteDye;
     /**
      * @symbol ?WitchSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   430980833
+     * @hash   1068915697
      */
     MCAPI extern class HashedString const WitchSpawnEgg;
     /**
      * @symbol ?WitherSkeletonSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -342533101
+     * @hash   295401763
      */
     MCAPI extern class HashedString const WitherSkeletonSpawnEgg;
     /**
      * @symbol ?WolfSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1959324611
+     * @hash   -1697707821
      */
     MCAPI extern class HashedString const WolfSpawnEgg;
     /**
      * @symbol ?WoodenAxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   908219345
+     * @hash   1546154209
      */
     MCAPI extern class HashedString const WoodenAxe;
     /**
      * @symbol ?WoodenHoe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -371462655
+     * @hash   266472209
      */
     MCAPI extern class HashedString const WoodenHoe;
     /**
      * @symbol ?WoodenPickaxe@VanillaItemNames@@3VHashedString@@B
-     * @hash   -882354031
+     * @hash   -244419167
      */
     MCAPI extern class HashedString const WoodenPickaxe;
     /**
      * @symbol ?WoodenShovel@VanillaItemNames@@3VHashedString@@B
-     * @hash   -213627869
+     * @hash   424306995
      */
     MCAPI extern class HashedString const WoodenShovel;
     /**
      * @symbol ?WoodenSword@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1049511247
+     * @hash   -411576383
      */
     MCAPI extern class HashedString const WoodenSword;
     /**
      * @symbol ?WrittenBook@VanillaItemNames@@3VHashedString@@B
-     * @hash   -1849645567
+     * @hash   -1211710703
      */
     MCAPI extern class HashedString const WrittenBook;
     /**
      * @symbol ?YellowDye@VanillaItemNames@@3VHashedString@@B
-     * @hash   263595377
+     * @hash   901530241
      */
     MCAPI extern class HashedString const YellowDye;
     /**
      * @symbol ?ZoglinSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1901531811
+     * @hash   -1755500621
      */
     MCAPI extern class HashedString const ZoglinSpawnEgg;
     /**
      * @symbol ?ZombieHorseSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   -915483727
+     * @hash   -277548863
      */
     MCAPI extern class HashedString const ZombieHorseSpawnEgg;
     /**
      * @symbol ?ZombiePigmanSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   736613539
+     * @hash   1374548403
      */
     MCAPI extern class HashedString const ZombiePigmanSpawnEgg;
     /**
      * @symbol ?ZombieSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   196235283
+     * @hash   834170147
      */
     MCAPI extern class HashedString const ZombieSpawnEgg;
     /**
      * @symbol ?ZombieVillagerSpawnEgg@VanillaItemNames@@3VHashedString@@B
-     * @hash   1974269955
+     * @hash   -1682762477
      */
     MCAPI extern class HashedString const ZombieVillagerSpawnEgg;
 

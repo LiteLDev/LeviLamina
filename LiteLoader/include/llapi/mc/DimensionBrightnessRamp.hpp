@@ -38,18 +38,18 @@ public:
     /**
      * @vftbl  1
      * @symbol ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
-     * @hash   1731875071
+     * @hash   -1806931297
      */
     virtual void buildBrightnessRamp();
     /**
      * @vftbl  2
      * @symbol ?getBaseAmbientValue@DimensionBrightnessRamp@@UEBAMXZ
-     * @hash   -621537179
+     * @hash   -371846315
      */
     virtual float getBaseAmbientValue() const;
     /**
      * @symbol ?getBrightnessRampValue@DimensionBrightnessRamp@@QEBAMH@Z
-     * @hash   -438836187
+     * @hash   317324741
      */
     MCAPI float getBrightnessRampValue(int) const;
 

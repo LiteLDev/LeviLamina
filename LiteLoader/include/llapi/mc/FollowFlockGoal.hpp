@@ -38,48 +38,48 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@FollowFlockGoal@@UEAA_NXZ
-     * @hash   -403269091
+     * @hash   -388492755
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@FollowFlockGoal@@UEAA_NXZ
-     * @hash   337562043
+     * @hash   352338379
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
      * @symbol ?canBeInterrupted@FollowFlockGoal@@UEAA_NXZ
-     * @hash   295907493
+     * @hash   392407269
      */
     virtual bool canBeInterrupted();
     /**
      * @vftbl  4
      * @symbol ?start@FollowFlockGoal@@UEAAXXZ
-     * @hash   1070824326
+     * @hash   1085600662
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@FollowFlockGoal@@UEAAXXZ
-     * @hash   1960298566
+     * @hash   1975074902
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@FollowFlockGoal@@UEAAXXZ
-     * @hash   1798953265
+     * @hash   1813729601
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@FollowFlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1045981523
+     * @hash   1060757859
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0FollowFlockGoal@@QEAA@AEAVMob@@M@Z
-     * @hash   -780658665
+     * @hash   -765882329
      */
     MCAPI FollowFlockGoal(class Mob &, float);
 

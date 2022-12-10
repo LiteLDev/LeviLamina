@@ -38,54 +38,54 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ShareItemsGoal@@UEAA_NXZ
-     * @hash   -75573012
+     * @hash   86689916
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@ShareItemsGoal@@UEAA_NXZ
-     * @hash   -17962806
+     * @hash   144300122
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@ShareItemsGoal@@UEAAXXZ
-     * @hash   1292912453
+     * @hash   1455175381
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ShareItemsGoal@@UEAAXXZ
-     * @hash   -1746838587
+     * @hash   -1584575659
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ShareItemsGoal@@UEAAXXZ
-     * @hash   -1952581584
+     * @hash   -1790318656
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ShareItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   -1679263484
+     * @hash   -1517000556
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ShareItemsGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MHM@Z
-     * @hash   2037794009
+     * @hash   -2094910359
      */
     MCAPI ShareItemsGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, float);
 
 //protected:
     /**
      * @symbol ?selectEntityToShareWith@ShareItemsGoal@@IEAA?AU?$pair@HVItemStack@@@std@@AEBV?$vector@U?$pair@HVItemStack@@@std@@V?$allocator@U?$pair@HVItemStack@@@std@@@2@@3@@Z
-     * @hash   1823034054
+     * @hash   1985296982
      */
     MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
 

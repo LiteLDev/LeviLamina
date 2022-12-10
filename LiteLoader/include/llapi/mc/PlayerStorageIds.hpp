@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1PlayerStorageIds@@QEAA@XZ
-     * @hash   -1055476472
+     * @hash   -876161560
      */
     MCAPI ~PlayerStorageIds();
 

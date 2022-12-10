@@ -32,22 +32,22 @@ public:
 public:
     /**
      * @symbol ?dispatchEvent@BlockEventDispatcher@@QEAAXAEBVBlockPos@@IAEBVBlock@@1PEAVActor@@@Z
-     * @hash   -820670251
+     * @hash   -757966923
      */
     MCAPI void dispatchEvent(class BlockPos const &, unsigned int, class Block const &, class Block const &, class Actor *);
     /**
      * @symbol ?registerListener@BlockEventDispatcher@@QEAA?AVBlockEventDispatcherToken@@AEBVVec3@@MV?$function@$$A6AXAEBVBlockPos@@IAEBVBlock@@PEAVActor@@@Z@std@@@Z
-     * @hash   1196302388
+     * @hash   1259005716
      */
     MCAPI class BlockEventDispatcherToken registerListener(class Vec3 const &, float, class std::function<void (class BlockPos const &, unsigned int, class Block const &, class Actor *)>);
     /**
      * @symbol ?removeListener@BlockEventDispatcher@@QEAAXH@Z
-     * @hash   -157008890
+     * @hash   -94305562
      */
     MCAPI void removeListener(int);
     /**
      * @symbol ?updatePosition@BlockEventDispatcher@@QEAAXHAEBVVec3@@@Z
-     * @hash   -848773397
+     * @hash   -786070069
      */
     MCAPI void updatePosition(int, class Vec3 const &);
 

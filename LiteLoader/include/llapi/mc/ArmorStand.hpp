@@ -39,320 +39,325 @@ public:
 
 public:
     /**
-     * @vftbl  14
+     * @vftbl  16
      * @hash   -215274463
      */
     virtual ~ArmorStand();
     /**
-     * @vftbl  40
-     * @hash   -246209152
+     * @vftbl  42
+     * @hash   -147616318
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_42();
     /**
-     * @vftbl  48
+     * @vftbl  50
      * @symbol ?normalTick@ArmorStand@@UEAAXXZ
-     * @hash   22946164
+     * @hash   80975188
      */
     virtual void normalTick();
     /**
-     * @vftbl  60
-     * @hash   -196162194
+     * @vftbl  63
+     * @hash   -96891855
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl  67
-     * @hash   -182486203
+     * @vftbl  70
+     * @hash   -63575907
      */
-    virtual void __unk_vfn_67();
+    virtual void __unk_vfn_70();
     /**
-     * @vftbl  79
+     * @vftbl  82
      * @symbol ?getShadowRadius@ArmorStand@@UEBAMXZ
-     * @hash   1047979839
+     * @hash   1297670703
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  81
-     * @hash   -130769027
-     */
-    virtual void __unk_vfn_81();
-    /**
      * @vftbl  84
-     * @hash   -135209808
+     * @hash   -31252672
      */
     virtual void __unk_vfn_84();
     /**
      * @vftbl  87
-     * @hash   -132439245
+     * @hash   -35939469
      */
     virtual void __unk_vfn_87();
     /**
-     * @vftbl  94
+     * @vftbl  90
+     * @hash   -13774965
+     */
+    virtual void __unk_vfn_90();
+    /**
+     * @vftbl  97
      * @symbol ?isPickable@ArmorStand@@UEAA_NXZ
-     * @hash   -1971876553
+     * @hash   -1913847529
      */
     virtual bool isPickable();
     /**
-     * @vftbl  95
-     * @hash   -105657136
-     */
-    virtual void __unk_vfn_95();
-    /**
      * @vftbl  98
-     * @hash   -102886573
+     * @hash   -6386797
      */
     virtual void __unk_vfn_98();
     /**
-     * @vftbl  105
-     * @hash   1335894854
+     * @vftbl  101
+     * @hash   1421489202
      */
-    virtual void __unk_vfn_105();
-    /**
-     * @vftbl  107
-     * @hash   1337741896
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_101();
     /**
      * @vftbl  108
-     * @hash   1331454073
+     * @hash   1435411209
      */
     virtual void __unk_vfn_108();
     /**
      * @vftbl  110
-     * @hash   1359906400
+     * @hash   1456652192
      */
     virtual void __unk_vfn_110();
     /**
-     * @vftbl  134
+     * @vftbl  111
+     * @hash   1450118353
+     */
+    virtual void __unk_vfn_111();
+    /**
+     * @vftbl  113
+     * @hash   1459422755
+     */
+    virtual void __unk_vfn_113();
+    /**
+     * @vftbl  137
      * @symbol ?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z
-     * @hash   -2027068379
+     * @hash   -1969039355
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  181
-     * @hash   1511261978
+     * @vftbl  183
+     * @hash   1602074556
      */
-    virtual void __unk_vfn_181();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl  195
-     * @hash   1593557213
+     * @vftbl  197
+     * @hash   1692150047
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_197();
     /**
-     * @vftbl  220
-     * @hash   -2032751088
+     * @vftbl  222
+     * @hash   -1937633230
      */
-    virtual void __unk_vfn_220();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl  221
-     * @hash   -2018004543
+     * @vftbl  223
+     * @hash   -1919411709
      */
-    virtual void __unk_vfn_221();
+    virtual void __unk_vfn_223();
     /**
-     * @vftbl  237
+     * @vftbl  235
      * @symbol ?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     * @hash   -1524074496
+     * @hash   -1466137728
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
-     * @vftbl  247
-     * @hash   -2005177115
+     * @vftbl  245
+     * @hash   -1918058621
      */
-    virtual void __unk_vfn_247();
+    virtual void __unk_vfn_245();
+    /**
+     * @vftbl  248
+     * @hash   -511059482
+     */
+    virtual void __unk_vfn_248();
     /**
      * @vftbl  250
-     * @hash   -739509363
-     */
-    virtual void __unk_vfn_250();
-    /**
-     * @vftbl  252
      * @symbol ?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z
-     * @hash   -726666726
+     * @hash   -668729958
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl  266
+     * @vftbl  264
      * @symbol ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
-     * @hash   -1077332097
+     * @hash   -1019287697
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl  268
-     * @hash   -1904234636
+     * @vftbl  266
+     * @hash   -1809581902
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_266();
     /**
-     * @vftbl  269
+     * @vftbl  267
      * @symbol ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
-     * @hash   -705299104
+     * @hash   -647346960
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  272
+     * @vftbl  270
      * @symbol ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     * @hash   -1962450800
+     * @hash   -1904406400
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  273
+     * @vftbl  271
      * @symbol ?addAdditionalSaveData@ArmorStand@@UEBAXAEAVCompoundTag@@@Z
-     * @hash   143176669
+     * @hash   201128813
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  276
-     * @hash   -1870241183
+     * @vftbl  274
+     * @hash   -1775342433
      */
-    virtual void __unk_vfn_276();
+    virtual void __unk_vfn_274();
     /**
-     * @vftbl  283
-     * @hash   -1894354595
+     * @vftbl  281
+     * @hash   -1807236101
      */
-    virtual void __unk_vfn_283();
+    virtual void __unk_vfn_281();
     /**
-     * @vftbl  299
+     * @vftbl  289
+     * @hash   1042759315
+     */
+    virtual void __unk_vfn_289();
+    /**
+     * @vftbl  297
      * @symbol ?pushActors@ArmorStand@@UEAAXXZ
-     * @hash   -512393944
+     * @hash   -454349544
      */
     virtual void pushActors();
     /**
-     * @vftbl  310
-     * @hash   -1210025534
+     * @vftbl  308
+     * @hash   -1142300981
      */
-    virtual void __unk_vfn_310();
+    virtual void __unk_vfn_308();
     /**
-     * @vftbl  314
-     * @hash   -1156359450
+     * @vftbl  312
+     * @hash   -1061460700
      */
-    virtual void __unk_vfn_314();
+    virtual void __unk_vfn_312();
     /**
-     * @vftbl  348
-     * @hash   -1073989257
+     * @vftbl  346
+     * @hash   -979336523
      */
-    virtual void __unk_vfn_348();
+    virtual void __unk_vfn_346();
     /**
-     * @vftbl  362
-     * @hash   -1022272081
+     * @vftbl  360
+     * @hash   -927619347
      */
-    virtual void __unk_vfn_362();
+    virtual void __unk_vfn_360();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTAND
     /**
      * @symbol ?interactPreventDefault@ArmorStand@@UEAA_NXZ
-     * @hash   1576918449
+     * @hash   1673418225
      */
     MCVAPI bool interactPreventDefault();
 #endif
     /**
      * @symbol ??0ArmorStand@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     * @hash   836135411
+     * @hash   893903043
      */
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setPoseIndex@ArmorStand@@QEAAXH@Z
-     * @hash   1510189670
+     * @hash   1568234070
      */
     MCAPI void setPoseIndex(int);
 
 //private:
     /**
      * @symbol ?_causeDamage@ArmorStand@@AEAAXM@Z
-     * @hash   -1241018556
+     * @hash   -1183158668
      */
     MCAPI void _causeDamage(float);
     /**
      * @symbol ?_destroyWithEffects@ArmorStand@@AEAAXAEBVVec3@@@Z
-     * @hash   1821540228
+     * @hash   1879400116
      */
     MCAPI void _destroyWithEffects(class Vec3 const &);
     /**
      * @symbol ?_dropHeldItems@ArmorStand@@AEAAXXZ
-     * @hash   1760299122
+     * @hash   1818159010
      */
     MCAPI void _dropHeldItems();
     /**
      * @symbol ?_dropHeldItemsAndResource@ArmorStand@@AEAAXXZ
-     * @hash   -161098147
+     * @hash   -103146003
      */
     MCAPI void _dropHeldItemsAndResource();
     /**
      * @symbol ?_dropItem@ArmorStand@@AEAAXAEBVItemStack@@@Z
-     * @hash   -1284452626
+     * @hash   -1226500482
      */
     MCAPI void _dropItem(class ItemStack const &);
     /**
      * @symbol ?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z
-     * @hash   -601518892
+     * @hash   -543566748
      */
     MCAPI bool _trySwapItem(class Player &, enum class EquipmentSlot);
 
 private:
     /**
      * @symbol ?POSE_ATHENA@ArmorStand@@0UPose@1@B
-     * @hash   798969967
+     * @hash   1658595999
      */
     MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
     /**
      * @symbol ?POSE_BRANDISH@ArmorStand@@0UPose@1@B
-     * @hash   930263619
+     * @hash   1789889651
      */
     MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
     /**
      * @symbol ?POSE_CANCAN_A@ArmorStand@@0UPose@1@B
-     * @hash   -355223602
+     * @hash   504402430
      */
     MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
     /**
      * @symbol ?POSE_CANCAN_B@ArmorStand@@0UPose@1@B
-     * @hash   1796543375
+     * @hash   -1638797889
      */
     MCAPI static struct ArmorStand::Pose const POSE_CANCAN_B;
     /**
      * @symbol ?POSE_DEFAULT@ArmorStand@@0UPose@1@B
-     * @hash   -352276175
+     * @hash   507349857
      */
     MCAPI static struct ArmorStand::Pose const POSE_DEFAULT;
     /**
      * @symbol ?POSE_ENTERTAIN@ArmorStand@@0UPose@1@B
-     * @hash   -1188438470
+     * @hash   -328812438
      */
     MCAPI static struct ArmorStand::Pose const POSE_ENTERTAIN;
     /**
      * @symbol ?POSE_HERO@ArmorStand@@0UPose@1@B
-     * @hash   1042175686
+     * @hash   1901801718
      */
     MCAPI static struct ArmorStand::Pose const POSE_HERO;
     /**
      * @symbol ?POSE_HONOR@ArmorStand@@0UPose@1@B
-     * @hash   606006298
+     * @hash   1465632330
      */
     MCAPI static struct ArmorStand::Pose const POSE_HONOR;
     /**
      * @symbol ?POSE_RIPOSTE@ArmorStand@@0UPose@1@B
-     * @hash   1560849854
+     * @hash   -1874491410
      */
     MCAPI static struct ArmorStand::Pose const POSE_RIPOSTE;
     /**
      * @symbol ?POSE_SALUTE@ArmorStand@@0UPose@1@B
-     * @hash   -677842508
+     * @hash   181783524
      */
     MCAPI static struct ArmorStand::Pose const POSE_SALUTE;
     /**
      * @symbol ?POSE_SOLEMN@ArmorStand@@0UPose@1@B
-     * @hash   740110146
+     * @hash   1599736178
      */
     MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
     /**
      * @symbol ?POSE_ZERO_ROTATION@ArmorStand@@0UPose@1@B
-     * @hash   -994827099
+     * @hash   -135201067
      */
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     /**
      * @symbol ?POSE_ZOMBIE@ArmorStand@@0UPose@1@B
-     * @hash   -1599534894
+     * @hash   -739908862
      */
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
     /**
      * @symbol ?STAND_POSES@ArmorStand@@0PAPEBUPose@1@A
-     * @hash   -1342412222
+     * @hash   -489459374
      */
     MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
 

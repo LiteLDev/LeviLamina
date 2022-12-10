@@ -38,47 +38,47 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@ExploreOutskirtsGoal@@UEAA_NXZ
-     * @hash   -800266542
+     * @hash   -639402830
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@ExploreOutskirtsGoal@@UEAA_NXZ
-     * @hash   -1701136656
+     * @hash   -1540272944
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@ExploreOutskirtsGoal@@UEAAXXZ
-     * @hash   1230582155
+     * @hash   1391445867
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@ExploreOutskirtsGoal@@UEAAXXZ
-     * @hash   -240505557
+     * @hash   -79641845
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@ExploreOutskirtsGoal@@UEAAXXZ
-     * @hash   1080060150
+     * @hash   1240923862
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@ExploreOutskirtsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1193858622
+     * @hash   1354876094
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0ExploreOutskirtsGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -2084076065
+     * @hash   -1923058593
      */
     MCAPI ExploreOutskirtsGoal(class Mob &);
 

@@ -30,29 +30,29 @@ public:
 public:
     /**
      * @symbol ?checkAndSerialize@LevelChunkMetaDataDictionary@@QEBAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
-     * @hash   -2039454239
+     * @hash   -1478491631
      */
     MCAPI void checkAndSerialize(class std::function<void (std::string const &)>) const;
     /**
      * @symbol ?deserialize@LevelChunkMetaDataDictionary@@QEAAXAEAVIDataInput@@@Z
-     * @hash   -1795395574
+     * @hash   -1234463718
      */
     MCAPI void deserialize(class IDataInput &);
     /**
      * @symbol ?getMetaData@LevelChunkMetaDataDictionary@@QEBA?AV?$shared_ptr@$$CBVLevelChunkMetaData@@@std@@_K@Z
-     * @hash   -1182653971
+     * @hash   -621722115
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData const> getMetaData(unsigned __int64) const;
     /**
      * @symbol ?registerMetaData@LevelChunkMetaDataDictionary@@QEAA?AV?$shared_ptr@VLevelChunkMetaData@@@std@@AEBVLevelChunkMetaData@@@Z
-     * @hash   -1979519172
+     * @hash   -1418587316
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData> registerMetaData(class LevelChunkMetaData const &);
 
 //protected:
     /**
      * @symbol ?_registerMetaData@LevelChunkMetaDataDictionary@@IEAA?AV?$shared_ptr@VLevelChunkMetaData@@@std@@AEBVLevelChunkMetaData@@@Z
-     * @hash   273864363
+     * @hash   834826971
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const &);
 

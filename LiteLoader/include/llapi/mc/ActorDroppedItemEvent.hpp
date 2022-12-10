@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ActorDroppedItemEvent@@QEAA@XZ
-     * @hash   553526872
+     * @hash   709331880
      */
     MCAPI ~ActorDroppedItemEvent();
 

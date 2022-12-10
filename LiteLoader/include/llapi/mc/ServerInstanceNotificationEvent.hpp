@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1ServerInstanceNotificationEvent@@QEAA@XZ
-     * @hash   -674207149
+     * @hash   -492016925
      */
     MCAPI ~ServerInstanceNotificationEvent();
 

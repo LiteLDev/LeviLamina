@@ -38,35 +38,35 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getId@NetworkChunkPublisherUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     * @hash   2088913216
+     * @hash   2014554880
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@NetworkChunkPublisherUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1048673299
+     * @hash   -1123031635
      */
     virtual std::string getName() const;
     /**
      * @vftbl  3
      * @symbol ?write@NetworkChunkPublisherUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
-     * @hash   975376698
+     * @hash   901018362
      */
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl  6
      * @symbol ?_read@NetworkChunkPublisherUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     * @hash   -2075297670
+     * @hash   2145311290
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket@@QEAA@XZ
-     * @hash   -1540755606
+     * @hash   -1615113942
      */
     MCAPI NetworkChunkPublisherUpdatePacket();
     /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket@@QEAA@AEBVBlockPos@@I@Z
-     * @hash   -333006564
+     * @hash   -407364900
      */
     MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
 

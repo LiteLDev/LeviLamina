@@ -45,48 +45,48 @@ public:
     /**
      * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@StrongholdFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-     * @hash   773978167
+     * @hash   945927975
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
      * @vftbl  5
      * @symbol ?isFeatureChunk@StrongholdFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-     * @hash   1544805080
+     * @hash   1716754888
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
      * @vftbl  6
      * @symbol ?createStructureStart@StrongholdFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
-     * @hash   -1040408679
+     * @hash   -868458871
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     /**
      * @symbol ??0StrongholdFeature@@QEAA@PEAVVillageFeature@@I@Z
-     * @hash   -782911917
+     * @hash   -611085117
      */
     MCAPI StrongholdFeature(class VillageFeature *, unsigned int);
     /**
      * @symbol ?START_OFFSET@StrongholdFeature@@2VBlockPos@@B
-     * @hash   595488289
+     * @hash   1351018801
      */
     MCAPI static class BlockPos const START_OFFSET;
 
 //protected:
     /**
      * @symbol ?generatePositions@StrongholdFeature@@IEAAXAEAVRandom@@AEBVBiomeSource@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-     * @hash   -687772200
+     * @hash   -515822392
      */
     MCAPI void generatePositions(class Random &, class BiomeSource const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
 
 //private:
     /**
      * @symbol ?_generateStronghold@StrongholdFeature@@AEAA?BUStrongholdResult@1@IAEBVChunkPos@@@Z
-     * @hash   -465984124
+     * @hash   -294157324
      */
     MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(unsigned int, class ChunkPos const &);
     /**
      * @symbol ?_getNearestStronghold@StrongholdFeature@@AEAA_NAEBVDimension@@IAEBVBlockPos@@AEAV3@_N@Z
-     * @hash   1278818919
+     * @hash   1450645719
      */
     MCAPI bool _getNearestStronghold(class Dimension const &, unsigned int, class BlockPos const &, class BlockPos &, bool);
 

@@ -41,7 +41,6 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
 public:
     class StructureTemplate& operator=(class StructureTemplate const &) = delete;
-    StructureTemplate(class StructureTemplate const &) = delete;
     StructureTemplate() = delete;
 #endif
 
@@ -54,130 +53,140 @@ public:
     /**
      * @vftbl  1
      * @symbol ?_allowReadBlock@StructureTemplate@@MEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   752475619
+     * @hash   1459433347
      */
     virtual bool _allowReadBlock(class BlockPos const &, class Block const &) const;
     /**
      * @vftbl  2
      * @symbol ?_allowReadActor@StructureTemplate@@MEBA_NAEBVActor@@@Z
-     * @hash   -1744824039
+     * @hash   -1037866311
      */
     virtual bool _allowReadActor(class Actor const &) const;
     /**
      * @vftbl  3
-     * @hash   -664175229
+     * @hash   -552514717
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1038982636
+     * @hash   -332024908
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
-     * @hash   -1038335883
+     * @hash   -331378155
      */
     virtual void __unk_vfn_5();
     /**
      * @vftbl  6
-     * @hash   -1037458490
+     * @hash   -330500762
      */
     virtual void __unk_vfn_6();
     /**
      * @vftbl  7
-     * @hash   -1036534969
+     * @hash   -329577241
      */
     virtual void __unk_vfn_7();
     /**
+     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -481664832
+     */
+    MCAPI std::string const & getName() const;
+    /**
      * @symbol ??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     * @hash   1671214954
+     * @hash   -1916779238
      */
     MCAPI StructureTemplate(class gsl::basic_string_span<char const, -1>);
     /**
+     * @symbol ??0StructureTemplate@@QEAA@AEBV0@@Z
+     * @hash   -96105295
+     */
+    MCAPI StructureTemplate(class StructureTemplate const &);
+    /**
      * @symbol ?fillFromWorld@StructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVStructureSettings@@@Z
-     * @hash   109662088
+     * @hash   816173912
      */
     MCAPI void fillFromWorld(class BlockSource &, class BlockPos const &, class StructureSettings const &);
     /**
      * @symbol ?getBlockAtPos@StructureTemplate@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
-     * @hash   -2064366107
+     * @hash   -1357854283
      */
     MCAPI class Block const & getBlockAtPos(class BlockPos const &) const;
     /**
      * @symbol ?getJigsawMarkers@StructureTemplate@@QEBA?AV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@std@@XZ
-     * @hash   -1556979564
+     * @hash   -850467740
      */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
     /**
-     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -574935648
-     */
-    MCAPI std::string const & getName() const;
-    /**
      * @symbol ?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ
-     * @hash   1720585746
+     * @hash   -1867869726
      */
     MCAPI class BlockPos const & getSize() const;
     /**
      * @symbol ?getStructureVersion@StructureTemplate@@QEBAEXZ
-     * @hash   -1052724593
+     * @hash   -1128635905
      */
     MCAPI unsigned char getStructureVersion() const;
     /**
      * @symbol ?getTransformedBounds@StructureTemplate@@QEBA?AVBoundingBox@@VBlockPos@@AEBVStructureSettings@@@Z
-     * @hash   -1581494104
+     * @hash   -874982280
      */
     MCAPI class BoundingBox getTransformedBounds(class BlockPos, class StructureSettings const &) const;
     /**
      * @symbol ?isLoaded@StructureTemplate@@QEBA_NXZ
-     * @hash   1277086630
+     * @hash   1983598454
      */
     MCAPI bool isLoaded() const;
     /**
      * @symbol ?load@StructureTemplate@@QEAA_NAEBVCompoundTag@@@Z
-     * @hash   1241285185
+     * @hash   1947797009
      */
     MCAPI bool load(class CompoundTag const &);
     /**
      * @symbol ?placeInWorld@StructureTemplate@@QEBAXAEAVBlockSource@@AEBVBlockPalette@@AEBVBlockPos@@AEBVStructureSettings@@PEAVStructureTelemetryServerData@@_N@Z
-     * @hash   -235163978
+     * @hash   471347846
      */
     MCAPI void placeInWorld(class BlockSource &, class BlockPalette const &, class BlockPos const &, class StructureSettings const &, class StructureTelemetryServerData *, bool) const;
     /**
      * @symbol ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
-     * @hash   1794769347
+     * @hash   -1793686125
      */
     MCAPI void placeNextSegmentInWorld(class StructureAnimationData &, class BlockPalette const &) const;
     /**
      * @symbol ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   138434138
+     * @hash   844945962
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
+     * @symbol ?setStructureTemplateData@StructureTemplate@@QEAAXAEBVStructureTemplateData@@@Z
+     * @hash   1405147898
+     */
+    MCAPI void setStructureTemplateData(class StructureTemplateData const &);
+    /**
      * @symbol ?INVALID_POSITION@StructureTemplate@@2VBlockPos@@B
-     * @hash   1485308467
+     * @hash   -2030679917
      */
     MCAPI static class BlockPos const INVALID_POSITION;
 
 //private:
     /**
      * @symbol ?_fillBlockInfo@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@11@Z
-     * @hash   226985014
+     * @hash   933942742
      */
     MCAPI void _fillBlockInfo(class BlockSource &, class BlockPos const &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?_fillEntityList@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -953710702
+     * @hash   -247198878
      */
     MCAPI void _fillEntityList(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
-     * @hash   100640166
+     * @hash   807151990
      */
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
     /**
      * @symbol ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
-     * @hash   -1308988816
+     * @hash   -602476992
      */
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum class Rotation, enum class Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 

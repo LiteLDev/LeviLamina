@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @symbol ?initialize@VanillaVillageJigsawStructureElements@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVFeatureRegistry@@AEAVJigsawStructureRegistry@@@Z
-     * @hash   -1968171780
+     * @hash   -1810829172
      */
     MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry &, class JigsawStructureRegistry &);
 

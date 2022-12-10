@@ -36,59 +36,59 @@ public:
     /**
      * @vftbl  1
      * @symbol ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
-     * @hash   158765157
+     * @hash   255264933
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  2
-     * @hash   -1361872974
+     * @hash   -1265373198
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
-     * @hash   -1353738109
+     * @hash   -1256992317
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
-     * @hash   -1402786588
+     * @hash   -1313821052
      */
     virtual void __unk_vfn_4();
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -441149737
+     * @hash   272388919
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
-     * @hash   -1223957303
+     * @hash   -509419207
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
-     * @hash   -1047384914
+     * @hash   -332846818
      */
     MCAPI float getMovementModifier() const;
     /**
      * @symbol ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     * @hash   1556015384
+     * @hash   -2025151864
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?useTimeDepleted@ChargeableItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-     * @hash   1984072990
+     * @hash   -1597094258
      */
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
     /**
      * @symbol ?bindType@ChargeableItemComponent@@SAXXZ
-     * @hash   -1458127009
+     * @hash   -745341777
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ChargeableItemComponent@@SAAEBVHashedString@@XZ
-     * @hash   1362216256
+     * @hash   2076754352
      */
     MCAPI static class HashedString const & getIdentifier();
 

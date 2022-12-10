@@ -32,12 +32,12 @@ public:
 public:
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction@@QEAA@$$QEAU0@@Z
-     * @hash   1940782149
+     * @hash   2086592757
      */
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
     /**
      * @symbol ??1PackedItemUseLegacyInventoryTransaction@@QEAA@XZ
-     * @hash   -21424141
+     * @hash   124386467
      */
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 

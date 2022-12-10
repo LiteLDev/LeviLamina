@@ -35,679 +35,689 @@ public:
 public:
     /**
      * @symbol ??0LevelData@@QEAA@_N@Z
-     * @hash   -1455489213
+     * @hash   -726974333
      */
     MCAPI LevelData(bool);
     /**
      * @symbol ??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z
-     * @hash   -1014101178
+     * @hash   -285586298
      */
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
     /**
      * @symbol ?_getValue@LevelData@@QEBAPEBULevelDataValue@@AEBVHashedString@@@Z
-     * @hash   472967528
+     * @hash   1201467032
      */
     MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad@LevelData@@QEBA_NXZ
-     * @hash   -157081244
+     * @hash   571418260
      */
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     /**
      * @symbol ?createTag@LevelData@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   700698662
+     * @hash   1429198166
      */
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     /**
      * @symbol ?disableAchievements@LevelData@@QEAAXXZ
-     * @hash   1207677773
+     * @hash   1936177277
      */
     MCAPI void disableAchievements();
     /**
      * @symbol ?educationFeaturesEnabled@LevelData@@QEBA_NXZ
-     * @hash   -1527314572
+     * @hash   -798815068
      */
     MCAPI bool educationFeaturesEnabled() const;
     /**
      * @symbol ?getAdventureSettings@LevelData@@QEBAAEBUAdventureSettings@@XZ
-     * @hash   1269763366
+     * @hash   1363034182
      */
     MCAPI struct AdventureSettings const & getAdventureSettings() const;
     /**
      * @symbol ?getAdventureSettings@LevelData@@QEAAAEAUAdventureSettings@@XZ
-     * @hash   -707414932
+     * @hash   -614144116
      */
     MCAPI struct AdventureSettings & getAdventureSettings();
     /**
      * @symbol ?getBaseGameVersion@LevelData@@QEBAAEBVBaseGameVersion@@XZ
-     * @hash   -2098968844
+     * @hash   -1370469340
      */
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     /**
      * @symbol ?getBiomeOverride@LevelData@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2104873758
+     * @hash   -1461594034
      */
     MCAPI std::string const getBiomeOverride() const;
     /**
      * @symbol ?getBonusChestSpawned@LevelData@@QEBA_NXZ
-     * @hash   -440294108
+     * @hash   288205396
      */
     MCAPI bool getBonusChestSpawned() const;
     /**
      * @symbol ?getChatRestrictionLevel@LevelData@@QEBA?AW4ChatRestrictionLevel@@XZ
-     * @hash   253903418
+     * @hash   982402922
      */
     MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getCurrentTick@LevelData@@QEBAAEBUTick@@XZ
-     * @hash   -1514087132
+     * @hash   -785587628
      */
     MCAPI struct Tick const & getCurrentTick() const;
     /**
      * @symbol ?getCustomSkinsDisabled@LevelData@@QEBA_NXZ
-     * @hash   -1689725900
+     * @hash   -961226396
      */
     MCAPI bool getCustomSkinsDisabled() const;
     /**
      * @symbol ?getDefaultAbilities@LevelData@@QEAAAEAVAbilities@@XZ
-     * @hash   1565471314
+     * @hash   -2000996478
      */
     MCAPI class Abilities & getDefaultAbilities();
     /**
      * @symbol ?getDefaultPermissions@LevelData@@QEAAAEAVPermissionsHandler@@XZ
-     * @hash   1009171204
+     * @hash   1737670708
      */
     MCAPI class PermissionsHandler & getDefaultPermissions();
     /**
      * @symbol ?getDefaultPermissions@LevelData@@QEBAAEBVPermissionsHandler@@XZ
-     * @hash   1237773186
+     * @hash   1966272690
      */
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
     /**
      * @symbol ?getEduSharedUriResource@LevelData@@QEBAAEBVCompoundTag@@XZ
-     * @hash   -1739724082
+     * @hash   -1011224578
      */
     MCAPI class CompoundTag const & getEduSharedUriResource() const;
     /**
      * @symbol ?getEducationEditionOffer@LevelData@@QEBA?AW4EducationEditionOffer@@XZ
-     * @hash   -178427796
+     * @hash   550071708
      */
     MCAPI enum class EducationEditionOffer getEducationEditionOffer() const;
     /**
      * @symbol ?getEducationProductId@LevelData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1112498370
+     * @hash   -2040615298
      */
     MCAPI std::string const & getEducationProductId() const;
     /**
      * @symbol ?getExperiments@LevelData@@QEAAAEAVExperiments@@XZ
-     * @hash   392352954
+     * @hash   385879658
      */
     MCAPI class Experiments & getExperiments();
     /**
      * @symbol ?getExperiments@LevelData@@QEBAAEBVExperiments@@XZ
-     * @hash   121927796
+     * @hash   115454500
      */
     MCAPI class Experiments const & getExperiments() const;
     /**
      * @symbol ?getFlatWorldGeneratorOptions@LevelData@@QEBAAEBVValue@Json@@XZ
-     * @hash   1128631872
+     * @hash   1857116000
      */
     MCAPI class Json::Value const & getFlatWorldGeneratorOptions() const;
     /**
      * @symbol ?getForceGameType@LevelData@@QEBA_NXZ
-     * @hash   -351307324
+     * @hash   1239023172
      */
     MCAPI bool getForceGameType() const;
     /**
      * @symbol ?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ
-     * @hash   -1561467052
+     * @hash   132051780
      */
     MCAPI enum class Difficulty getGameDifficulty() const;
     /**
      * @symbol ?getGameRules@LevelData@@QEAAAEAVGameRules@@XZ
-     * @hash   1995340170
+     * @hash   2038792746
      */
     MCAPI class GameRules & getGameRules();
     /**
      * @symbol ?getGameRules@LevelData@@QEBAAEBVGameRules@@XZ
-     * @hash   -485420028
+     * @hash   -441967452
      */
     MCAPI class GameRules const & getGameRules() const;
     /**
      * @symbol ?getGameType@LevelData@@QEBA?AW4GameType@@XZ
-     * @hash   -617442990
+     * @hash   111071890
      */
     MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?getGenerator@LevelData@@QEBA?AW4GeneratorType@@XZ
-     * @hash   872034856
+     * @hash   1600549736
      */
     MCAPI enum class GeneratorType getGenerator() const;
     /**
      * @symbol ?getLANBroadcast@LevelData@@QEBA_NXZ
-     * @hash   -275252990
+     * @hash   453261890
      */
     MCAPI bool getLANBroadcast() const;
     /**
      * @symbol ?getLANBroadcastIntent@LevelData@@QEBA_NXZ
-     * @hash   -181327534
+     * @hash   547187346
      */
     MCAPI bool getLANBroadcastIntent() const;
     /**
      * @symbol ?getLastPlayed@LevelData@@QEBA_JXZ
-     * @hash   379478019
+     * @hash   1107992899
      */
     MCAPI __int64 getLastPlayed() const;
     /**
      * @symbol ?getLevelName@LevelData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -684798482
+     * @hash   -668253906
      */
     MCAPI std::string const & getLevelName() const;
     /**
      * @symbol ?getLightningLevel@LevelData@@QEBAMXZ
-     * @hash   -1089199898
+     * @hash   -360685018
      */
     MCAPI float getLightningLevel() const;
     /**
      * @symbol ?getLightningTime@LevelData@@QEBAHXZ
-     * @hash   1653923624
+     * @hash   -1912528792
      */
     MCAPI int getLightningTime() const;
     /**
      * @symbol ?getLimitedWorldDepth@LevelData@@QEBAHXZ
-     * @hash   940047200
+     * @hash   1668562080
      */
     MCAPI int getLimitedWorldDepth() const;
     /**
      * @symbol ?getLimitedWorldWidth@LevelData@@QEBAHXZ
-     * @hash   -1558132506
+     * @hash   -829617626
      */
     MCAPI int getLimitedWorldWidth() const;
     /**
      * @symbol ?getLoadedPlayerTag@LevelData@@QEAAAEAVCompoundTag@@XZ
-     * @hash   464474868
+     * @hash   1192989748
      */
     MCAPI class CompoundTag & getLoadedPlayerTag();
     /**
      * @symbol ?getMultiplayerGameIntent@LevelData@@QEBA_NXZ
-     * @hash   717722308
+     * @hash   1446237188
      */
     MCAPI bool getMultiplayerGameIntent() const;
     /**
      * @symbol ?getNetherScale@LevelData@@QEBAHXZ
-     * @hash   -1872571698
+     * @hash   -1144056818
      */
     MCAPI int getNetherScale() const;
     /**
      * @symbol ?getNetherType@LevelData@@QEBA?AW4NetherWorldType@@XZ
-     * @hash   1337980274
+     * @hash   2066495154
      */
     MCAPI enum class NetherWorldType getNetherType() const;
     /**
      * @symbol ?getOnlySpawnV1Villagers@LevelData@@QEBA_NXZ
-     * @hash   1320462706
+     * @hash   2048977586
      */
     MCAPI bool getOnlySpawnV1Villagers() const;
     /**
      * @symbol ?getPersonaDisabled@LevelData@@QEBA_NXZ
-     * @hash   -747396156
+     * @hash   -18881276
      */
     MCAPI bool getPersonaDisabled() const;
     /**
      * @symbol ?getPlatformBroadcastIntent@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
-     * @hash   2008310248
+     * @hash   -1558142168
      */
     MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
      * @symbol ?getPlatformBroadcastMode@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
-     * @hash   196769926
+     * @hash   925284806
      */
     MCAPI enum class Social::GamePublishSetting getPlatformBroadcastMode() const;
     /**
      * @symbol ?getPremiumTemplateContentIdentity@LevelData@@QEBAAEBVContentIdentity@@XZ
-     * @hash   -1737367940
+     * @hash   -1008853060
      */
     MCAPI class ContentIdentity const & getPremiumTemplateContentIdentity() const;
     /**
      * @symbol ?getRainLevel@LevelData@@QEBAMXZ
-     * @hash   -1826257464
+     * @hash   -1097742584
      */
     MCAPI float getRainLevel() const;
     /**
      * @symbol ?getRainTime@LevelData@@QEBAHXZ
-     * @hash   -2110109594
+     * @hash   -1381594714
      */
     MCAPI int getRainTime() const;
     /**
      * @symbol ?getSeed@LevelData@@QEBA?AVLevelSeed64@@XZ
-     * @hash   1340367358
+     * @hash   2068882238
      */
     MCAPI class LevelSeed64 getSeed() const;
     /**
      * @symbol ?getServerChunkTickRange@LevelData@@QEBAIXZ
-     * @hash   -2088909910
+     * @hash   -1360395030
      */
     MCAPI unsigned int getServerChunkTickRange() const;
     /**
      * @symbol ?getSpawnPos@LevelData@@QEBAAEBVBlockPos@@XZ
-     * @hash   -1947438304
+     * @hash   -1218923424
      */
     MCAPI class BlockPos const & getSpawnPos() const;
     /**
      * @symbol ?getSpawnSettings@LevelData@@QEBAAEBUSpawnSettings@@XZ
-     * @hash   -1718534554
+     * @hash   -15928506
      */
     MCAPI struct SpawnSettings const & getSpawnSettings() const;
     /**
      * @symbol ?getStorageVersion@LevelData@@QEBA?AW4StorageVersion@@XZ
-     * @hash   1235510432
+     * @hash   1964040688
      */
     MCAPI enum class StorageVersion getStorageVersion() const;
     /**
      * @symbol ?getStoredGenerator@LevelData@@QEBA?AW4GeneratorType@@XZ
-     * @hash   1842599618
+     * @hash   -1723837422
      */
     MCAPI enum class GeneratorType getStoredGenerator() const;
     /**
      * @symbol ?getTagData@LevelData@@QEAAXAEBVCompoundTag@@@Z
-     * @hash   -676013736
+     * @hash   52516520
      */
     MCAPI void getTagData(class CompoundTag const &);
     /**
      * @symbol ?getTime@LevelData@@QEBAHXZ
-     * @hash   2059346206
+     * @hash   -1507090834
      */
     MCAPI int getTime() const;
     /**
      * @symbol ?getUseMsaGamertagsOnly@LevelData@@QEBA_NXZ
-     * @hash   -70965148
+     * @hash   657565108
      */
     MCAPI bool getUseMsaGamertagsOnly() const;
     /**
      * @symbol ?getWorldCenter@LevelData@@QEBAAEBVBlockPos@@XZ
-     * @hash   -693279870
+     * @hash   35250386
      */
     MCAPI class BlockPos const & getWorldCenter() const;
     /**
      * @symbol ?getWorldStartCount@LevelData@@QEBAIXZ
-     * @hash   -1477432990
+     * @hash   -748902734
      */
     MCAPI unsigned int getWorldStartCount() const;
     /**
      * @symbol ?getWorldTemplateIdentity@LevelData@@QEBAAEBUPackIdVersion@@XZ
-     * @hash   -916821134
+     * @hash   -188290878
      */
     MCAPI struct PackIdVersion const & getWorldTemplateIdentity() const;
     /**
      * @symbol ?getWorldVersion@LevelData@@QEBA?AW4WorldVersion@@XZ
-     * @hash   -207272738
+     * @hash   521257518
      */
     MCAPI enum class WorldVersion getWorldVersion() const;
     /**
      * @symbol ?getXBLBroadcastIntent@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
-     * @hash   634826276
+     * @hash   1363356532
      */
     MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
      * @symbol ?getXBLBroadcastMode@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
-     * @hash   431844290
+     * @hash   1160374546
      */
     MCAPI enum class Social::GamePublishSetting getXBLBroadcastMode() const;
     /**
      * @symbol ?hasAchievementsDisabled@LevelData@@QEBA_NXZ
-     * @hash   336762546
+     * @hash   1065292802
      */
     MCAPI bool hasAchievementsDisabled() const;
     /**
      * @symbol ?hasBonusChestEnabled@LevelData@@QEBA_NXZ
-     * @hash   802096900
+     * @hash   1530627156
      */
     MCAPI bool hasBonusChestEnabled() const;
     /**
      * @symbol ?hasCommandsEnabled@LevelData@@QEBA_NXZ
-     * @hash   -2029283692
+     * @hash   -1300753436
      */
     MCAPI bool hasCommandsEnabled() const;
     /**
      * @symbol ?hasConfirmedPlatformLockedContent@LevelData@@QEBA_NXZ
-     * @hash   490402242
+     * @hash   1218932498
      */
     MCAPI bool hasConfirmedPlatformLockedContent() const;
     /**
      * @symbol ?hasLockedBehaviorPack@LevelData@@QEBA_NXZ
-     * @hash   -2134740142
+     * @hash   -1406209886
      */
     MCAPI bool hasLockedBehaviorPack() const;
     /**
      * @symbol ?hasLockedResourcePack@LevelData@@QEBA_NXZ
-     * @hash   -434020638
+     * @hash   294509618
      */
     MCAPI bool hasLockedResourcePack() const;
     /**
      * @symbol ?hasMapsCenteredToOrigin@LevelData@@QEBA_NXZ
-     * @hash   1746460818
+     * @hash   -1819976222
      */
     MCAPI bool hasMapsCenteredToOrigin() const;
     /**
      * @symbol ?hasStartWithMapEnabled@LevelData@@QEBA_NXZ
-     * @hash   812750052
+     * @hash   1541280308
      */
     MCAPI bool hasStartWithMapEnabled() const;
     /**
      * @symbol ?incrementTick@LevelData@@QEAAXXZ
-     * @hash   1318230909
+     * @hash   2046761165
      */
     MCAPI void incrementTick();
     /**
      * @symbol ?isEditorWorld@LevelData@@QEBA_NXZ
-     * @hash   -8422366
+     * @hash   720107890
      */
     MCAPI bool isEditorWorld() const;
     /**
      * @symbol ?isEducationEditionLevel@LevelData@@QEBA_NXZ
-     * @hash   1549473938
+     * @hash   -2016963102
      */
     MCAPI bool isEducationEditionLevel() const;
     /**
      * @symbol ?isFromLockedTemplate@LevelData@@QEBA_NXZ
-     * @hash   543630340
+     * @hash   1272160596
      */
     MCAPI bool isFromLockedTemplate() const;
     /**
      * @symbol ?isFromWorldTemplate@LevelData@@QEBA_NXZ
-     * @hash   -756801870
+     * @hash   -28271614
      */
     MCAPI bool isFromWorldTemplate() const;
     /**
      * @symbol ?isLegacyLevel@LevelData@@QEBA_NXZ
-     * @hash   -691315934
+     * @hash   37214322
      */
     MCAPI bool isLegacyLevel() const;
     /**
      * @symbol ?isLightning@LevelData@@QEBA_NXZ
-     * @hash   1122292466
+     * @hash   1850822722
      */
     MCAPI bool isLightning() const;
     /**
      * @symbol ?isMultiplayerGame@LevelData@@QEBA_NXZ
-     * @hash   -972641278
+     * @hash   -244111022
      */
     MCAPI bool isMultiplayerGame() const;
     /**
      * @symbol ?isPremiumWorldTemplate@LevelData@@QEBA_NXZ
-     * @hash   663353108
+     * @hash   1391883364
      */
     MCAPI bool isPremiumWorldTemplate() const;
     /**
      * @symbol ?isRaining@LevelData@@QEBA_NXZ
-     * @hash   908648306
+     * @hash   1637178562
      */
     MCAPI bool isRaining() const;
     /**
      * @symbol ?isTexturepacksRequired@LevelData@@QEBA_NXZ
-     * @hash   -600741276
+     * @hash   127788980
      */
     MCAPI bool isTexturepacksRequired() const;
     /**
      * @symbol ?isWorldTemplateOptionLocked@LevelData@@QEBA_NXZ
-     * @hash   629618
+     * @hash   729159874
      */
     MCAPI bool isWorldTemplateOptionLocked() const;
     /**
      * @symbol ??4LevelData@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -1553729728
+     * @hash   -825230224
      */
     MCAPI class LevelData & operator=(class LevelData &&);
     /**
      * @symbol ?recordStartUp@LevelData@@QEAAXXZ
-     * @hash   366483373
+     * @hash   1095013629
      */
     MCAPI void recordStartUp();
     /**
      * @symbol ?setBaseGameVersion@LevelData@@QEAAXAEBVBaseGameVersion@@@Z
-     * @hash   1438143218
+     * @hash   -2128293822
      */
     MCAPI void setBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setBonusChestSpawned@LevelData@@QEAAX_N@Z
-     * @hash   1976764328
+     * @hash   -1589672712
      */
     MCAPI void setBonusChestSpawned(bool);
     /**
      * @symbol ?setChatRestrictionLevel@LevelData@@QEAAXW4ChatRestrictionLevel@@@Z
-     * @hash   -16989788
+     * @hash   711540468
      */
     MCAPI void setChatRestrictionLevel(enum class ChatRestrictionLevel);
     /**
      * @symbol ?setCommandsEnabled@LevelData@@QEAAX_N@Z
-     * @hash   -80020120
+     * @hash   648510136
      */
     MCAPI void setCommandsEnabled(bool);
     /**
      * @symbol ?setCustomSkinsDisabled@LevelData@@QEAAX_N@Z
-     * @hash   -1191428872
+     * @hash   -462898616
      */
     MCAPI void setCustomSkinsDisabled(bool);
     /**
      * @symbol ?setDataDrivenGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
-     * @hash   -573087624
+     * @hash   155442632
      */
     MCAPI void setDataDrivenGenerator(enum class GeneratorType);
     /**
      * @symbol ?setEduSharedUriResource@LevelData@@QEAAXAEBUEduSharedUriResource@@@Z
-     * @hash   45686758
+     * @hash   774217014
      */
     MCAPI void setEduSharedUriResource(struct EduSharedUriResource const &);
     /**
      * @symbol ?setEducationEditionOffer@LevelData@@QEAAXW4EducationEditionOffer@@@Z
-     * @hash   -1334241036
+     * @hash   -605710780
      */
     MCAPI void setEducationEditionOffer(enum class EducationEditionOffer);
     /**
+     * @symbol ?setEducationFeaturesEnabled@LevelData@@QEAAX_N@Z
+     * @hash   59962234
+     */
+    MCAPI void setEducationFeaturesEnabled(bool);
+    /**
      * @symbol ?setEducationOid@LevelData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   1638741876
+     * @hash   -1927679788
      */
     MCAPI void setEducationOid(std::string const &);
     /**
      * @symbol ?setForceGameType@LevelData@@QEAAX_N@Z
-     * @hash   -300290280
+     * @hash   428255352
      */
     MCAPI void setForceGameType(bool);
     /**
      * @symbol ?setGameDifficulty@LevelData@@QEAAXW4Difficulty@@@Z
-     * @hash   2147180478
+     * @hash   -1419241186
      */
     MCAPI void setGameDifficulty(enum class Difficulty);
     /**
      * @symbol ?setGameType@LevelData@@QEAAXW4GameType@@@Z
-     * @hash   1122096012
+     * @hash   1850641644
      */
     MCAPI void setGameType(enum class GameType);
     /**
      * @symbol ?setGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
-     * @hash   222160556
+     * @hash   950706188
      */
     MCAPI void setGenerator(enum class GeneratorType);
     /**
      * @symbol ?setHasLockedBehaviorPack@LevelData@@QEAAX_N@Z
-     * @hash   -622184888
+     * @hash   106360744
      */
     MCAPI void setHasLockedBehaviorPack(bool);
     /**
      * @symbol ?setHasLockedResourcePack@LevelData@@QEAAX_N@Z
-     * @hash   560066280
+     * @hash   1288611912
      */
     MCAPI void setHasLockedResourcePack(bool);
     /**
+     * @symbol ?setIsEditorWorld@LevelData@@QEAAX_N@Z
+     * @hash   -213102232
+     */
+    MCAPI void setIsEditorWorld(bool);
+    /**
      * @symbol ?setLANBroadcast@LevelData@@QEAAX_N@Z
-     * @hash   -497192438
+     * @hash   231368570
      */
     MCAPI void setLANBroadcast(bool);
     /**
      * @symbol ?setLANBroadcastIntent@LevelData@@QEAAX_N@Z
-     * @hash   -1649384998
+     * @hash   -920823990
      */
     MCAPI void setLANBroadcastIntent(bool);
     /**
      * @symbol ?setLevelName@LevelData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   502355140
+     * @hash   1230916148
      */
     MCAPI void setLevelName(std::string const &);
     /**
      * @symbol ?setLightningLevel@LevelData@@QEAAXM@Z
-     * @hash   89390188
+     * @hash   817951196
      */
     MCAPI void setLightningLevel(float);
     /**
      * @symbol ?setLightningTime@LevelData@@QEAAXH@Z
-     * @hash   840785182
+     * @hash   1569346190
      */
     MCAPI void setLightningTime(int);
     /**
      * @symbol ?setMultiplayerGame@LevelData@@QEAAX_N@Z
-     * @hash   -762870648
+     * @hash   -34309640
      */
     MCAPI void setMultiplayerGame(bool);
     /**
      * @symbol ?setMultiplayerGameIntent@LevelData@@QEAAX_N@Z
-     * @hash   -433199656
+     * @hash   295361352
      */
     MCAPI void setMultiplayerGameIntent(bool);
     /**
      * @symbol ?setOnlySpawnV1Villagers@LevelData@@QEAAX_N@Z
-     * @hash   667561002
+     * @hash   1396122010
      */
     MCAPI void setOnlySpawnV1Villagers(bool);
     /**
      * @symbol ?setPersonaDisabled@LevelData@@QEAAX_N@Z
-     * @hash   1095267640
+     * @hash   1823828648
      */
     MCAPI void setPersonaDisabled(bool);
     /**
      * @symbol ?setPlatformBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-     * @hash   -312863728
+     * @hash   415697280
      */
     MCAPI void setPlatformBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPlatformBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-     * @hash   766316434
+     * @hash   1494877442
      */
     MCAPI void setPlatformBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPremiumTemplateContentIdentity@LevelData@@QEAAXAEBVContentIdentity@@@Z
-     * @hash   1896444082
+     * @hash   -1669962206
      */
     MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const &);
     /**
      * @symbol ?setRainLevel@LevelData@@QEAAXM@Z
-     * @hash   -2107422182
+     * @hash   -1378861174
      */
     MCAPI void setRainLevel(float);
     /**
      * @symbol ?setRainTime@LevelData@@QEAAXH@Z
-     * @hash   2017069456
+     * @hash   -1549336832
      */
     MCAPI void setRainTime(int);
     /**
      * @symbol ?setSeed@LevelData@@QEAAXVLevelSeed64@@@Z
-     * @hash   1131747192
+     * @hash   1860308200
      */
     MCAPI void setSeed(class LevelSeed64);
     /**
      * @symbol ?setServerChunkTickRange@LevelData@@QEAAXI@Z
-     * @hash   -1611035072
+     * @hash   -882474064
      */
     MCAPI void setServerChunkTickRange(unsigned int);
     /**
      * @symbol ?setSpawnPos@LevelData@@QEAAXAEBVBlockPos@@@Z
-     * @hash   -1936985480
+     * @hash   -1208424472
      */
     MCAPI void setSpawnPos(class BlockPos const &);
     /**
      * @symbol ?setStorageVersion@LevelData@@QEAAXW4StorageVersion@@@Z
-     * @hash   -500522758
+     * @hash   228038250
      */
     MCAPI void setStorageVersion(enum class StorageVersion);
     /**
      * @symbol ?setTagData@LevelData@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1155682116
+     * @hash   1884243124
      */
     MCAPI void setTagData(class CompoundTag &) const;
     /**
      * @symbol ?setTexturepacksRequired@LevelData@@QEAAX_N@Z
-     * @hash   -510556806
+     * @hash   217773562
      */
     MCAPI void setTexturepacksRequired(bool);
     /**
      * @symbol ?setTime@LevelData@@QEAAXH@Z
-     * @hash   847159160
+     * @hash   1575489528
      */
     MCAPI void setTime(int);
     /**
      * @symbol ?setUseMsaGamertagsOnly@LevelData@@QEAAX_N@Z
-     * @hash   1464702296
+     * @hash   -2101934632
      */
     MCAPI void setUseMsaGamertagsOnly(bool);
     /**
      * @symbol ?setWorldTemplateIdentity@LevelData@@QEAAXAEBUPackIdVersion@@@Z
-     * @hash   473778524
+     * @hash   1202108892
      */
     MCAPI void setWorldTemplateIdentity(struct PackIdVersion const &);
     /**
      * @symbol ?setWorldTemplateOptionLocked@LevelData@@QEAAX_N@Z
-     * @hash   1963074296
+     * @hash   -1603562632
      */
     MCAPI void setWorldTemplateOptionLocked(bool);
     /**
      * @symbol ?setWorldVersion@LevelData@@QEAAXW4WorldVersion@@@Z
-     * @hash   1039842280
+     * @hash   1768172648
      */
     MCAPI void setWorldVersion(enum class WorldVersion);
     /**
      * @symbol ?setXBLBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-     * @hash   -1060125564
+     * @hash   -331795196
      */
     MCAPI void setXBLBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setXBLBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-     * @hash   1484324102
+     * @hash   -2082312826
      */
     MCAPI void setXBLBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?touchLastLoadedWithVersion@LevelData@@QEAAXXZ
-     * @hash   325026115
+     * @hash   1053356483
      */
     MCAPI void touchLastLoadedWithVersion();
     /**
      * @symbol ?updateLastTimePlayed@LevelData@@QEBAXXZ
-     * @hash   -744611281
+     * @hash   -16280913
      */
     MCAPI void updateLastTimePlayed() const;
     /**
      * @symbol ?v1_read@LevelData@@QEAAXAEAVBitStream@RakNet@@W4StorageVersion@@@Z
-     * @hash   727449689
+     * @hash   1455780057
      */
     MCAPI void v1_read(class RakNet::BitStream &, enum class StorageVersion);
     /**
      * @symbol ??1LevelData@@QEAA@XZ
-     * @hash   1330510810
+     * @hash   2059010314
      */
     MCAPI ~LevelData();
 
 //private:
     /**
      * @symbol ?_determineMaxBaseGameVersion@LevelData@@AEAAXXZ
-     * @hash   -468534685
+     * @hash   259964819
      */
     MCAPI void _determineMaxBaseGameVersion();
     /**
      * @symbol ?_setGameRulesBasedOnPremiumContentIdentity@LevelData@@AEAAXXZ
-     * @hash   -960610466
+     * @hash   -232110962
      */
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     /**
      * @symbol ?_setValue@LevelData@@AEAAXAEBVHashedString@@$$QEAULevelDataValue@@@Z
-     * @hash   -993624327
+     * @hash   -265124823
      */
     MCAPI void _setValue(class HashedString const &, struct LevelDataValue &&);
 

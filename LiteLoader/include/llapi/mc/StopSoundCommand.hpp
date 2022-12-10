@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  1
      * @symbol ?execute@StopSoundCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     * @hash   1752454005
+     * @hash   1765046949
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?setup@StopSoundCommand@@SAXAEAVCommandRegistry@@@Z
-     * @hash   1449301564
+     * @hash   1461633116
      */
     MCAPI static void setup(class CommandRegistry &);
 

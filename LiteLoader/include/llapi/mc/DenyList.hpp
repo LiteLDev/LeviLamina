@@ -39,32 +39,32 @@ public:
 public:
     /**
      * @symbol ?addEntry@DenyList@@QEAAXAEBUEntry@1@@Z
-     * @hash   1923587627
+     * @hash   1985829675
      */
     MCAPI void addEntry(struct DenyList::Entry const &);
     /**
      * @symbol ?getDuration@DenyList@@QEBA?AW4Duration@1@AEBUEntry@1@@Z
-     * @hash   881844029
+     * @hash   944086077
      */
     MCAPI enum class DenyList::Duration getDuration(struct DenyList::Entry const &) const;
     /**
      * @symbol ?getMessage@DenyList@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEntry@1@@Z
-     * @hash   1664456752
+     * @hash   1726698800
      */
     MCAPI std::string const & getMessage(struct DenyList::Entry const &) const;
     /**
      * @symbol ?isBlocked@DenyList@@QEBA_NAEBUEntry@1@@Z
-     * @hash   2072941856
+     * @hash   2135183904
      */
     MCAPI bool isBlocked(struct DenyList::Entry const &) const;
     /**
      * @symbol ?removeEntry@DenyList@@QEAAXAEBUEntry@1@@Z
-     * @hash   1903662735
+     * @hash   1965904783
      */
     MCAPI void removeEntry(struct DenyList::Entry const &);
     /**
      * @symbol ??1DenyList@@QEAA@XZ
-     * @hash   -889567276
+     * @hash   -709129916
      */
     MCAPI ~DenyList();
 

@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?createPlayerRotationSystem@PlayerRotationSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -926479836
+     * @hash   -888516492
      */
     MCAPI static struct TickingSystemWithInfo createPlayerRotationSystem();
 

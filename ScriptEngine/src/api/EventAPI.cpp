@@ -64,6 +64,7 @@ enum class EVENT_TYPES : int {
     onTakeItem,
     onDropItem,
     onEat,
+    onAte,
     onConsumeTotem,
     onEffectAdded,
     onEffectUpdated,
@@ -368,7 +369,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onChat:
             Event::PlayerChatEvent::subscribe([](const PlayerChatEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onChat) {
-                    CallEvent(EVENT_TYPES::onChat, PlayerClass::newPlayer(ev.mPlayer), ev.mMessage);
+                    CallEvent(EVENT_TYPES::onChat, PlayerClass::newPlayer(ev.mPlayer), String::newString(ev.mMessage));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onChat);
             });
@@ -589,7 +590,7 @@ void EnableEventListener(int eventId) {
             Event::ContainerChangeEvent::subscribe([](const ContainerChangeEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onContainerChange) {
                     CallEvent(EVENT_TYPES::onContainerChange, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance),
-                              ev.mSlot, ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
+                              Number::newNumber(ev.mSlot), ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onContainerChange);
             });
@@ -652,6 +653,15 @@ void EnableEventListener(int eventId) {
             });
             break;
 
+        case EVENT_TYPES::onAte:
+            Event::PlayerAteEvent::subscribe([](const PlayerAteEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onAte) {
+                    CallEvent(EVENT_TYPES::onAte, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mFoodItem));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onAte);
+            });
+            break;
+
         case EVENT_TYPES::onConsumeTotem:
             Event::PlayerConsumeTotemEvent::subscribe([](const PlayerConsumeTotemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onConsumeTotem) {
@@ -668,7 +678,7 @@ void EnableEventListener(int eventId) {
                 if (ev.mEventType == PlayerEffectChangedEvent::EventType::Add) {
                     IF_LISTENED(EVENT_TYPES::onEffectAdded) {
                         CallEvent(EVENT_TYPES::onEffectAdded, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectAdded);
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Remove) {
@@ -680,7 +690,7 @@ void EnableEventListener(int eventId) {
                 } else if (ev.mEventType == PlayerEffectChangedEvent::EventType::Update) {
                     IF_LISTENED(EVENT_TYPES::onEffectUpdated) {
                         CallEvent(EVENT_TYPES::onEffectUpdated, PlayerClass::newPlayer(ev.mPlayer),
-                                  String::newString(ev.mEffect->getComponentName().getString()));
+                                  String::newString(ev.mEffect->getComponentName().getString()), Number::newNumber(ev.mEffect->getAmplifier()), Number::newNumber(ev.mEffect->getDuration()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onEffectUpdated);
                 }
@@ -762,11 +772,11 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED(EVENT_TYPES::onCmdBlockExecute) {
                     if (ev.mIsMinecart) {
                         CallEvent(EVENT_TYPES::onCmdBlockExecute, String::newString(ev.mCommand),
-                                  FloatPos::newPos(ev.mMinecart->getPosition(), ev.mMinecart->getDimensionId()), true);
+                                  FloatPos::newPos(ev.mMinecart->getPosition(), ev.mMinecart->getDimensionId()), Boolean::newBoolean(ev.mIsMinecart));
                     } else {
                         BlockInstance bl = ev.mBlockInstance;
                         CallEvent(EVENT_TYPES::onCmdBlockExecute, String::newString(ev.mCommand),
-                                  FloatPos::newPos(bl.getPosition().toVec3(), bl.getDimensionId()), true);
+                                  FloatPos::newPos(bl.getPosition().toVec3(), bl.getDimensionId()), Boolean::newBoolean(ev.mIsMinecart));
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onCmdBlockExecute);
@@ -808,7 +818,7 @@ void EnableEventListener(int eventId) {
 
                     CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
                               source ? EntityClass::newEntity(source) : Local<Value>(),
-                              float(ev.mDamage), Number::newNumber((int)ev.mDamageSource->getCause()));
+                              Number::newNumber(float(ev.mDamage)), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobHurt)
             });
@@ -962,10 +972,10 @@ void EnableEventListener(int eventId) {
             Event::HopperSearchItemEvent::subscribe([](const HopperSearchItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperSearchItem) {
                     if (ev.isMinecart) {
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId), ev.isMinecart);
+                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
                     } else {
                         BlockInstance bl = ev.mHopperBlock;
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), ev.isMinecart);
+                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperSearchItem);
@@ -1074,7 +1084,7 @@ void EnableEventListener(int eventId) {
             Event::ContainerChangeEvent::subscribe([](const ContainerChangeEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onContainerChange) {
                     CallEvent(EVENT_TYPES::onContainerChange, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance),
-                              ev.mSlot, ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
+                              Number::newNumber(ev.mSlot), ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onContainerChange);
             });

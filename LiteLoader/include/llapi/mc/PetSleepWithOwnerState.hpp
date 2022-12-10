@@ -33,12 +33,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
     /**
      * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
-     * @hash   -420921363
+     * @hash   -331955827
      */
     MCVAPI void start();
     /**
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
-     * @hash   894739853
+     * @hash   1065997741
      */
     MCVAPI void stop();
 #endif
@@ -46,7 +46,7 @@ public:
 //protected:
     /**
      * @symbol ?dampenSpeed@PetSleepWithOwnerState@@IEAAXXZ
-     * @hash   1361809621
+     * @hash   1533067509
      */
     MCAPI void dampenSpeed();
 

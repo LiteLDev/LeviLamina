@@ -30,22 +30,22 @@ public:
 public:
     /**
      * @symbol ??0DynamicPropertiesComponent@@QEAA@$$QEAV0@@Z
-     * @hash   -459833809
+     * @hash   -416719505
      */
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DynamicPropertiesComponent@@QEBAXAEAVCompoundTag@@@Z
-     * @hash   1915799544
+     * @hash   -1862672536
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getProperties@DynamicPropertiesComponent@@QEAAAEAVDynamicProperties@@XZ
-     * @hash   -1733813070
+     * @hash   -1640542254
      */
     MCAPI class DynamicProperties & getProperties();
     /**
      * @symbol ??4DynamicPropertiesComponent@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   754491122
+     * @hash   797528546
      */
     MCAPI class DynamicPropertiesComponent & operator=(class DynamicPropertiesComponent &&);
 

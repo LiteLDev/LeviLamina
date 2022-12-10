@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??1MolangContextVariableMapWithCleanup@@QEAA@XZ
-     * @hash   1557173369
+     * @hash   2096117545
      */
     MCAPI ~MolangContextVariableMapWithCleanup();
 

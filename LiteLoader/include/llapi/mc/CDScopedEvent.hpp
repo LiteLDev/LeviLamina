@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
-     * @hash   123867054
+     * @hash   635980110
      */
     MCAPI CDScopedEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     /**
      * @symbol ??1CDScopedEvent@@QEAA@XZ
-     * @hash   -1477867131
+     * @hash   -965754075
      */
     MCAPI ~CDScopedEvent();
 

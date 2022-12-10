@@ -38,14 +38,14 @@ public:
     /**
      * @vftbl  1
      * @symbol ?place@PartiallyExposedBlobFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     * @hash   -1442497946
+     * @hash   -1285109210
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 //private:
     /**
      * @symbol ?isWaterOrAir@PartiallyExposedBlobFeature@@CA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     * @hash   -904346802
+     * @hash   -746958066
      */
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const &, class BlockPos const &);
 

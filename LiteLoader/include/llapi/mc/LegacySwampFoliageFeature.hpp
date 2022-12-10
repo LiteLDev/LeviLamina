@@ -39,12 +39,12 @@ public:
     /**
      * @vftbl  3
      * @symbol ?place@LegacySwampFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   1649253454
+     * @hash   1806657566
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ??0LegacySwampFoliageFeature@@QEAA@AEAVFeatureRegistry@@@Z
-     * @hash   -318053437
+     * @hash   -160849213
      */
     MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
 

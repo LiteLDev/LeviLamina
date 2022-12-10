@@ -38,57 +38,57 @@ public:
     /**
      * @vftbl  1
      * @symbol ?canUse@AvoidMobTypeGoal@@UEAA_NXZ
-     * @hash   -157724168
+     * @hash   1817208
      */
     virtual bool canUse();
     /**
      * @vftbl  2
      * @symbol ?canContinueToUse@AvoidMobTypeGoal@@UEAA_NXZ
-     * @hash   285228566
+     * @hash   444769942
      */
     virtual bool canContinueToUse();
     /**
      * @vftbl  3
-     * @hash   -1360949453
+     * @hash   -1264449677
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?start@AvoidMobTypeGoal@@UEAAXXZ
-     * @hash   -464225023
+     * @hash   -304699023
      */
     virtual void start();
     /**
      * @vftbl  5
      * @symbol ?stop@AvoidMobTypeGoal@@UEAAXXZ
-     * @hash   1974039857
+     * @hash   2133581233
      */
     virtual void stop();
     /**
      * @vftbl  6
      * @symbol ?tick@AvoidMobTypeGoal@@UEAAXXZ
-     * @hash   -1099686132
+     * @hash   -940129380
      */
     virtual void tick();
     /**
      * @vftbl  7
      * @symbol ?appendDebugInfo@AvoidMobTypeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     * @hash   644211608
+     * @hash   803860616
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
      * @symbol ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
-     * @hash   -439199371
+     * @hash   -279504235
      */
     MCAPI AvoidMobTypeGoal(class Mob &);
     /**
      * @symbol ?canFindAvoidPath@AvoidMobTypeGoal@@QEAA_NPEAVActor@@@Z
-     * @hash   1022314396
+     * @hash   1181855772
      */
     MCAPI bool canFindAvoidPath(class Actor *);
     /**
      * @symbol ?findNearestEntityToAvoid@AvoidMobTypeGoal@@QEAAPEAVActor@@M@Z
-     * @hash   -975862274
+     * @hash   -816320898
      */
     MCAPI class Actor * findNearestEntityToAvoid(float);
 

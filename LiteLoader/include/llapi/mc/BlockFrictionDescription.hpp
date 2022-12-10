@@ -38,51 +38,51 @@ public:
     /**
      * @vftbl  1
      * @symbol ?getName@BlockFrictionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1488609436
+     * @hash   -1015766684
      */
     virtual std::string const & getName() const;
     /**
      * @vftbl  2
      * @symbol ?initializeComponent@BlockFrictionDescription@@UEBAXAEAVEntityContext@@@Z
-     * @hash   -1623668768
+     * @hash   -1150826016
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl  3
-     * @hash   -1403710109
+     * @hash   -1314744573
      */
     virtual void __unk_vfn_3();
     /**
      * @vftbl  4
      * @symbol ?isNetworkComponent@BlockFrictionDescription@@UEBA_NXZ
-     * @hash   -664887860
+     * @hash   -568388084
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl  5
      * @symbol ?buildNetworkTag@BlockFrictionDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     * @hash   -616593474
+     * @hash   -146995058
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockFrictionDescription@@UEAAXAEBVCompoundTag@@@Z
-     * @hash   1717292836
+     * @hash   -2108091420
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
      * @symbol ?NameID@BlockFrictionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-     * @hash   1628348253
+     * @hash   -882964603
      */
     MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockFrictionDescription@@SAXXZ
-     * @hash   1464641971
+     * @hash   1937192579
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockFrictionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     * @hash   -1258389976
+     * @hash   -785547224
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

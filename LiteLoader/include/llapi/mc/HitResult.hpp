@@ -70,62 +70,62 @@ public:
 public:
     /**
      * @symbol ??0HitResult@@QEAA@XZ
-     * @hash   26388044
+     * @hash   740188092
      */
     MCAPI HitResult();
     /**
      * @symbol ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
-     * @hash   436415540
+     * @hash   1150215588
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
     /**
      * @symbol ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
-     * @hash   680376724
+     * @hash   1394176772
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
     /**
      * @symbol ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@0@Z
-     * @hash   818662434
+     * @hash   1532462482
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
     /**
      * @symbol ??0HitResult@@QEAA@AEBVVec3@@00@Z
-     * @hash   -1606690109
+     * @hash   -892890061
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ??0HitResult@@QEAA@$$QEAV0@@Z
-     * @hash   -1820856983
+     * @hash   -1786876023
      */
     MCAPI HitResult(class HitResult &&);
     /**
      * @symbol ??0HitResult@@QEAA@AEBV0@@Z
-     * @hash   138180705
+     * @hash   282592097
      */
     MCAPI HitResult(class HitResult const &);
     /**
      * @symbol ?distanceTo@HitResult@@QEBAMAEBVActor@@@Z
-     * @hash   818806197
+     * @hash   1532606245
      */
     MCAPI float distanceTo(class Actor const &) const;
     /**
      * @symbol ?getEntity@HitResult@@QEBAPEAVActor@@XZ
-     * @hash   1783009643
+     * @hash   -1798157605
      */
     MCAPI class Actor * getEntity() const;
     /**
      * @symbol ??4HitResult@@QEAAAEAV0@$$QEAV0@@Z
-     * @hash   -810556124
+     * @hash   -776575164
      */
     MCAPI class HitResult & operator=(class HitResult &&);
     /**
      * @symbol ??4HitResult@@QEAAAEAV0@AEBV0@@Z
-     * @hash   160405500
+     * @hash   213314316
      */
     MCAPI class HitResult & operator=(class HitResult const &);
     /**
      * @symbol ??1HitResult@@QEAA@XZ
-     * @hash   -386023588
+     * @hash   -225621156
      */
     MCAPI ~HitResult();
 

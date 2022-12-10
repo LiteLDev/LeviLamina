@@ -37,71 +37,71 @@ public:
     virtual ~VarIntDataInput();
     /**
      * @vftbl  1
-     * @hash   1338597569
+     * @hash   1509517185
      */
     virtual void __unk_vfn_1();
     /**
      * @vftbl  2
-     * @hash   1339521090
+     * @hash   1510440706
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl  3
      * @symbol ?readFloat@VarIntDataInput@@UEAAMXZ
-     * @hash   789182877
+     * @hash   960102493
      */
     virtual float readFloat();
     /**
      * @vftbl  4
      * @symbol ?readDouble@VarIntDataInput@@UEAANXZ
-     * @hash   1303943305
+     * @hash   1474862921
      */
     virtual double readDouble();
     /**
      * @vftbl  5
      * @symbol ?readByte@VarIntDataInput@@UEAADXZ
-     * @hash   182382475
+     * @hash   353302091
      */
     virtual char readByte();
     /**
      * @vftbl  6
      * @symbol ?readShort@VarIntDataInput@@UEAAFXZ
-     * @hash   1508436477
+     * @hash   1679356093
      */
     virtual short readShort();
     /**
      * @vftbl  7
      * @symbol ?readInt@VarIntDataInput@@UEAAHXZ
-     * @hash   -523548515
+     * @hash   -352628899
      */
     virtual int readInt();
     /**
      * @vftbl  8
      * @symbol ?readLongLong@VarIntDataInput@@UEAA_JXZ
-     * @hash   945821372
+     * @hash   1116740988
      */
     virtual __int64 readLongLong();
     /**
      * @vftbl  9
      * @symbol ?readBytes@VarIntDataInput@@UEAA_NPEAX_K@Z
-     * @hash   393936550
+     * @hash   564856166
      */
     virtual bool readBytes(void *, unsigned __int64);
     /**
      * @vftbl  10
      * @symbol ?numBytesLeft@VarIntDataInput@@UEBA_KXZ
-     * @hash   -304191516
+     * @hash   -133271900
      */
     virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
     /**
      * @symbol ?readLongString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   2073458886
+     * @hash   -2050588794
      */
     MCVAPI std::string readLongString();
     /**
      * @symbol ?readString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   880339114
+     * @hash   1051258730
      */
     MCVAPI std::string readString();
 #endif

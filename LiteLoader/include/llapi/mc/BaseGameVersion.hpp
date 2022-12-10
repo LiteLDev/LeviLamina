@@ -26,122 +26,122 @@ class BaseGameVersion {
 public:
     /**
      * @symbol ??0BaseGameVersion@@QEAA@XZ
-     * @hash   -411054159
+     * @hash   -221160559
      */
     MCAPI BaseGameVersion();
     /**
      * @symbol ??0BaseGameVersion@@QEAA@GII@Z
-     * @hash   1190172457
+     * @hash   1380142937
      */
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
     /**
      * @symbol ??0BaseGameVersion@@QEAA@AEBVSemVersion@@@Z
-     * @hash   -642862868
+     * @hash   -452846260
      */
     MCAPI BaseGameVersion(class SemVersion const &);
     /**
      * @symbol ??0BaseGameVersion@@QEAA@AEBV0@@Z
-     * @hash   148955697
+     * @hash   338972305
      */
     MCAPI BaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?asSemVersion@BaseGameVersion@@QEBAAEBVSemVersion@@XZ
-     * @hash   1832453928
+     * @hash   1925724744
      */
     MCAPI class SemVersion const & asSemVersion() const;
     /**
      * @symbol ?asString@BaseGameVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     * @hash   -1679056846
+     * @hash   -1489163246
      */
     MCAPI std::string const & asString() const;
     /**
      * @symbol ?getMajor@BaseGameVersion@@QEBAGXZ
-     * @hash   1433962299
+     * @hash   1623825147
      */
     MCAPI unsigned short getMajor() const;
     /**
      * @symbol ?getMinor@BaseGameVersion@@QEBAGXZ
-     * @hash   314574403
+     * @hash   504437251
      */
     MCAPI unsigned short getMinor() const;
     /**
      * @symbol ?getPatch@BaseGameVersion@@QEBAGXZ
-     * @hash   1663029305
+     * @hash   1852892153
      */
     MCAPI unsigned short getPatch() const;
     /**
      * @symbol ?isAnyVersion@BaseGameVersion@@QEBA_NXZ
-     * @hash   2049981174
+     * @hash   -2055123274
      */
     MCAPI bool isAnyVersion() const;
     /**
      * @symbol ?isCompatibleWith@BaseGameVersion@@QEBA_NAEBV1@@Z
-     * @hash   -588724715
+     * @hash   -398861867
      */
     MCAPI bool isCompatibleWith(class BaseGameVersion const &) const;
     /**
      * @symbol ?isValid@BaseGameVersion@@QEBA_NXZ
-     * @hash   1854574980
+     * @hash   2044437828
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??9BaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1660413081
+     * @hash   -1470519481
      */
     MCAPI bool operator!=(class BaseGameVersion const &) const;
     /**
      * @symbol ??MBaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1609447805
+     * @hash   -1419554205
      */
     MCAPI bool operator<(class BaseGameVersion const &) const;
     /**
      * @symbol ??NBaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -2080115801
+     * @hash   -1890222201
      */
     MCAPI bool operator<=(class BaseGameVersion const &) const;
     /**
      * @symbol ??4BaseGameVersion@@QEAAAEAV0@AEBV0@@Z
-     * @hash   -1775615108
+     * @hash   -1673456964
      */
     MCAPI class BaseGameVersion & operator=(class BaseGameVersion const &);
     /**
      * @symbol ??8BaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -396467614
+     * @hash   -206574014
      */
     MCAPI bool operator==(class BaseGameVersion const &) const;
     /**
      * @symbol ??OBaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -1624545309
+     * @hash   -1434651709
      */
     MCAPI bool operator>(class BaseGameVersion const &) const;
     /**
      * @symbol ??PBaseGameVersion@@QEBA_NAEBV0@@Z
-     * @hash   -377464245
+     * @hash   -187570645
      */
     MCAPI bool operator>=(class BaseGameVersion const &) const;
     /**
      * @symbol ??1BaseGameVersion@@QEAA@XZ
-     * @hash   1973439937
+     * @hash   2063389537
      */
     MCAPI ~BaseGameVersion();
     /**
      * @symbol ?ANY@BaseGameVersion@@2V1@B
-     * @hash   663477109
+     * @hash   1532420997
      */
     MCAPI static class BaseGameVersion const ANY;
     /**
      * @symbol ?EMPTY@BaseGameVersion@@2V1@B
-     * @hash   1606170999
+     * @hash   -1819852409
      */
     MCAPI static class BaseGameVersion const EMPTY;
     /**
      * @symbol ?INCOMPATIBLE@BaseGameVersion@@2V1@B
-     * @hash   -1851420243
+     * @hash   -982476355
      */
     MCAPI static class BaseGameVersion const INCOMPATIBLE;
     /**
      * @symbol ?fromString@BaseGameVersion@@SA?AW4MatchType@SemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@@Z
-     * @hash   -2087304090
+     * @hash   -1897410490
      */
     MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 

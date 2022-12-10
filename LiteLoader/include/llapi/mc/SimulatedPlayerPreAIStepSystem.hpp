@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@SimulatedPlayerPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -2075052456
+     * @hash   -2065703848
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_doSimulatedPlayerPreAIStepSystem@SimulatedPlayerPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
-     * @hash   -2033635423
+     * @hash   -2024286815
      */
     MCAPI static void _doSimulatedPlayerPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

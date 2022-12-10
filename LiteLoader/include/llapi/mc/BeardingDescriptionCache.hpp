@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ??0BeardingDescriptionCache@@QEAA@AEBVBoundingBox@@H@Z
-     * @hash   690355424
+     * @hash   1237495008
      */
     MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
 

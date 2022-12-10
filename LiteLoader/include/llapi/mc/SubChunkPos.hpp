@@ -39,32 +39,32 @@ public:
 public:
     /**
      * @symbol ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
-     * @hash   -1066866022
+     * @hash   -353173606
      */
     MCAPI SubChunkPos(class BlockPos const &);
     /**
      * @symbol ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
-     * @hash   -1585271321
+     * @hash   -871578905
      */
     MCAPI operator class BlockPos() const;
     /**
      * @symbol ?MAX@SubChunkPos@@2V1@B
-     * @hash   -235163109
+     * @hash   628399179
      */
     MCAPI static class SubChunkPos const MAX;
     /**
      * @symbol ?MIN@SubChunkPos@@2V1@B
-     * @hash   -1253470745
+     * @hash   -389908457
      */
     MCAPI static class SubChunkPos const MIN;
     /**
      * @symbol ?ONE@SubChunkPos@@2V1@B
-     * @hash   -356574673
+     * @hash   506987615
      */
     MCAPI static class SubChunkPos const ONE;
     /**
      * @symbol ?ZERO@SubChunkPos@@2V1@B
-     * @hash   2014539705
+     * @hash   -1647167031
      */
     MCAPI static class SubChunkPos const ZERO;
 

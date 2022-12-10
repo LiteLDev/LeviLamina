@@ -39,18 +39,18 @@ public:
     /**
      * @vftbl  5
      * @symbol ?isShapeless@MultiRecipe@@EEBA_NXZ
-     * @hash   -1966701037
+     * @hash   -1869955245
      */
     virtual bool isShapeless() const;
     /**
      * @vftbl  9
      * @symbol ?isMultiRecipe@MultiRecipe@@EEBA_NXZ
-     * @hash   900212176
+     * @hash   996711952
      */
     virtual bool isMultiRecipe() const;
     /**
      * @symbol ??0MultiRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@VHashedString@@@Z
-     * @hash   319636953
+     * @hash   1033437001
      */
     MCAPI MultiRecipe(class gsl::basic_string_span<char const, -1>, class HashedString);
 
