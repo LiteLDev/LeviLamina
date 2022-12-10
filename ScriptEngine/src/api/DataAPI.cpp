@@ -22,6 +22,8 @@ ClassDefine<void> DataClassBuilder =
     defineClass("data")
         .function("xuid2name", &DataClass::xuid2name)
         .function("name2xuid", &DataClass::name2xuid)
+        .function("xuid2uuid", &DataClass::xuid2uuid)
+        .function("name2uuid", &DataClass::name2uuid)
         .function("getAllPlayerInfo", &DataClass::getAllPlayerInfo)
         .function("parseJson", &DataClass::parseJson)
         .function("toJson", &DataClass::toJson)
@@ -712,7 +714,8 @@ Local<Value> DataClass::xuid2name(const Arguments& args) {
     try {
         return String::newString(PlayerInfo::fromXuid(args[0].toStr()));
     }
-    CATCH("Fail in Xuid2Name!");
+    CATCH("Fail in 
+    Name!");
 }
 
 Local<Value> DataClass::name2xuid(const Arguments& args) {
@@ -722,7 +725,27 @@ Local<Value> DataClass::name2xuid(const Arguments& args) {
     try {
         return String::newString(PlayerInfo::getXuid(args[0].toStr()));
     }
-    CATCH("Fail in Name2Xuid!");
+    CATCH("Fail in NameToXuid!");
+}
+
+Local<Value> DataClass::name2uuid(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        return String::newString(PlayerInfo::getUUID(args[0].toStr()));
+    }
+    CATCH("Fail in NameToUuid!");
+}
+
+Local<Value> DataClass::xuid2uuid(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        return String::newString(PlayerInfo::getUUIDfromXuid(args[0].toStr()));
+    }
+    CATCH("Fail in XuidToUuid!");
 }
 
 Local<Value> DataClass::getAllPlayerInfo(const Arguments& args) {
