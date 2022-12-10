@@ -714,7 +714,7 @@ Local<Value> DataClass::xuid2name(const Arguments& args) {
     try {
         return String::newString(PlayerInfo::fromXuid(args[0].toStr()));
     }
-    CATCH("Fail in XuidtoName!");
+    CATCH("Fail in XuidToName!");
 }
 
 Local<Value> DataClass::name2xuid(const Arguments& args) {
