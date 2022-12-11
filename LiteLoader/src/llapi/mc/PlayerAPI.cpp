@@ -817,7 +817,8 @@ bool Player::sendTextTalkPacket(const string& msg) {
 bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
     if (target == nullptr) {
-        Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), packet);
+        ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+        handler->handle(*getNetworkIdentifier(), packet);
         return true;
     }
     try {
