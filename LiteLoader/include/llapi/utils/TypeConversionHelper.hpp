@@ -2,7 +2,6 @@
 #include "llapi/Global.h"
 #include <string>
 #include <ModUtils/ModUtils.h>
-using namespace std;
 
 namespace TCHelper {
 inline string uto_string(uintptr_t x) {
