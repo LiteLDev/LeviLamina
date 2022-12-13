@@ -148,22 +148,28 @@ void checkRunningBDS() {
             if (path == currentPath) {
                 logger.error(tr("ll.main.checkRunningBDS.detected"));
                 logger.error(tr("ll.main.checkRunningBDS.tip"));
-                logger.error(tr("ll.main.checkRunningBDS.ask", pid));
-                char ch;
-                rewind(stdin);
-                ch = getchar();
-                rewind(stdin);
-                if (ch == 'y' || ch == 'Y') {
-                    // auto cmd = "taskkill /F /PID " + std::to_string(pid);
-                    // system(cmd.c_str());
-                    TerminateProcess(handle, 1);
+                while (true) {
+                    logger.error(tr("ll.main.checkRunningBDS.ask", pid));
+                    char input;
+                    rewind(stdin);
+                    input = getchar();
+                    rewind(stdin);
+                    if (input == 'n' || input == 'N') {
+                        break;
+                    }
+                    if (input == 'y' || input == 'Y') {
+                        TerminateProcess(handle, 1);
+                        break;
+                    }
+                    if (input == 'e' || input == 'E') {
+                        std::terminate();
+                        break;
+                    }
                 }
             }
-
             CloseHandle(handle);
         }
     }
-
     delete[] buffer;
 }
 
