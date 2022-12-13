@@ -150,7 +150,9 @@ void checkRunningBDS() {
                 logger.error(tr("ll.main.checkRunningBDS.tip"));
                 logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                 char ch;
-                cin >> ch;
+                rewind(stdin);
+                ch = getchar();
+                rewind(stdin);
                 if (ch == 'y' || ch == 'Y') {
                     // auto cmd = "taskkill /F /PID " + std::to_string(pid);
                     // system(cmd.c_str());
