@@ -23,7 +23,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v3.2.0
         with:
           fetch-depth: 1
           submodules: 'true' 
