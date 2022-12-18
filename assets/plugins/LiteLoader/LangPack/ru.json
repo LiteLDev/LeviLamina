@@ -74,6 +74,29 @@
         "success": "{} плагин(-ов) были успешно перезагружены.",
         "fail": "Не удалось перезагрузить плагин"
       },
+      "settings": {
+        "set": {
+          "success": "Настройки {} были установлены в {}."
+        },
+        "get": {
+          "success": "Настройка {} успешно получена. Содержание: "
+        },
+        "delete": {
+          "success": "Настройки успешно удалены.",
+          "error": {
+            "emptyKey": "JsonPointer не может быть пустым!"
+          }
+        },
+        "reload": {
+          "success": "Настройки успешно перезагружены."
+        },
+        "save": {
+          "success": "Настройки успешно сохранены."
+        },
+        "list": {
+          "success": "Список доступных параметров:"
+        }
+      },
       "error": {
         "noPathSpecified": "Вы должны указать правильный путь плагина LiteLoader!",
         "noNameSpecified": "Вы должны дать правильное имя плагину LiteLoader!"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "Директория библиотек NodeJS не найдена, создаю."
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "Не удалось перезагрузить плагин {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "Не удалось распаковать архив: node_modules.tar"
     }
   },
   "llse": {
@@ -275,10 +298,10 @@
   "permapi": {
     "data": {
       "process": {
-        "fail": "Не удалось обработать данные: {}"
+        "fail": "Ошибка при попытке обработать файл: {}"
       },
       "read": {
-        "fail": "Не удалось прочитать файл данных {}"
+        "fail": "Возникла проблема при чтении файла: {}"
       },
       "save": {
         "fail": "Не удалось сохранить файл данных: {}"
@@ -287,12 +310,12 @@
     "cmd": {
       "error": {
         "invalidCommand": "Неизвестная команда. Введите '/help perm' для получения помощи.",
-        "internal": "Произошла ошибка, повторите попытку позже.",
+        "internal": "Произошла ошибка, попробуйте повторите попытку позже.",
         "roleAlreadyExists": "Такая роль уже существует.",
-        "permissionAlreadyExists": "Такое право уже существует.",
+        "permissionAlreadyExists": "Данное право уже существует.",
         "invalidPermissionName": "Неверное имя права.",
         "roleNotFound": "Роль не найдена.",
-        "permissionNotFound": "Право не найдено.",
+        "permissionNotFound": "Разрешение не найдено.",
         "playerNotFound": "Игрок не найден.",
         "modifyMembersOfEveryone": "Эта роль есть у каждого. Ты не можешь модифицировать его участников.",
         "jsonParsingError": "Ошибка при чтении JSON файла: {}",
@@ -319,7 +342,7 @@
         "list": {
           "role": {
             "none": "Нет ролей.",
-            "header": "§b§lРоли:",
+            "header": "§b§lСписок ролей:",
             "isMember": "§r(§eУчастник§r)"
           },
           "perm": {
@@ -332,7 +355,7 @@
             "yourStatus": "§b§lВаш текущий статус прав:",
             "status": "§b§lТекущий статус прав доступа у {}:",
             "rolesTitle": "- §eРоли:",
-            "permissionsTitle": "- §eПрава:"
+            "permissionsTitle": "- §eРазрешения:"
           },
           "role": {
             "header": "§b§lИнформация о роли:",
@@ -343,7 +366,7 @@
               "membersNone": "+ §eУчастники§r: Отсутствуют",
               "members": "+ §eУчастники§r:",
               "permissionsNone": "+ §eПрава§r: Отсутствуют",
-              "permissions": "+ §eПрава§r:"
+              "permissions": "+ §eРазрешения§r:"
             },
             "note": {
               "admin": "※ {}§r является специальной ролью. Все права будут включены по умолчанию.",
@@ -354,7 +377,7 @@
             "enabledWithExtra": "§b(Включено с ограничениями)§r"
           },
           "perm": {
-            "header": "§b§lИнформация о праве:",
+            "header": "§b§lИнформация о разрешениях:",
             "info": {
               "name": "+ §eИмя§r: {permissionName}",
               "desc": "+ §eОписание§r: {}"
@@ -373,15 +396,15 @@
             },
             "perm": {
               "add": {
-                "success": "Право {name}§r добавлено в роль {roleDisplayName}§r."
+                "success": "Разрешение {name}§r добавлено в роль {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Право {name}§r удалено из роли {roleDisplayName}§r."
+                "success": "Разрешение {name}§r удалено из роли {roleDisplayName}§r."
               },
               "set": {
                 "enabled": "§aвключено",
                 "disabled": "§cвыключено",
-                "success": "Право {name}§r от роли {roleDisplayName}§r установлено на {enable}."
+                "success": "Разрешение {name}§r от роли {roleDisplayName}§r установлено на {enable}."
               }
             },
             "priority": {
@@ -398,10 +421,10 @@
           "player": {
             "role": {
               "add": {
-                "success": "Игрок {name}§r({xuid}) стал обладателем роли {roleDisplayName}§r."
+                "success": "Игрок {name}§r({xuid}) теперь имеет роль {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Игрок {name}§r({xuid}) теперь не обладатель роли {roleDisplayName}§r."
+                "success": "Игрок {name}§r({xuid}) теперь не имеет роль {roleDisplayName}§r."
               }
             }
           }
