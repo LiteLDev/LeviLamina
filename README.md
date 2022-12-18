@@ -39,11 +39,11 @@ making it easy to learn and extremely flexible.
 ```c++
 // Template project: https://github.com/LiteLDev/PluginTemplate
 // More examples: https://github.com/LiteLDev/LiteLoaderPlugins
-#include <EventAPI.h>
-#include <LoggerAPI.h>
-#include <LLAPI.h>
-#include <MC/Actor.hpp>
-#include <MC/Player.hpp>
+#include <llapi/EventAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/LLAPI.h>
+#include <llapi/mc/Actor.hpp>
+#include <llapi/mc/Player.hpp>
 
 Logger logger("AttackLog");
 
