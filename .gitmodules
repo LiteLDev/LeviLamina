@@ -7,3 +7,6 @@
 [submodule "ParticleAPI"]
 	path = ParticleAPI
 	url = https://github.com/LiteLDev/ParticleAPI.git
+[submodule "ScriptEngine"]
+	path = ScriptEngine
+	url = https://github.com/LiteLDev/ScriptEngine.git
