@@ -15,6 +15,8 @@
 #include "engine/EngineOwnData.h"
 #include "engine/GlobalShareData.h"
 #include "main/EconomicSystem.h"
+#include <llapi/mc/Attribute.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
 #include <llapi/mc/Player.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>
 #include <llapi/mc/Actor.hpp>
@@ -27,10 +29,12 @@
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/SynchedActorData.hpp>
 #include <llapi/mc/SimulatedPlayer.hpp>
+#include <llapi/mc/SharedAttributes.hpp>
 #include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/Command.hpp>
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <llapi/PlayerInfoAPI.h>
+#include <llapi/mc/Biome.hpp>
 #include "main/SafeGuardRecord.h"
 #include <string>
 #include <vector>
@@ -121,13 +125,17 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
         .instanceFunction("heal", &PlayerClass::heal)
+        .instanceFunction("setHealth", &PlayerClass::setHealth)
+        .instanceFunction("setMaxHealth", &PlayerClass::setMaxHealth)
+        .instanceFunction("setHungry", &PlayerClass::setHungry)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
         .instanceFunction("clearItem", &PlayerClass::clearItem)
         .instanceFunction("isSprinting", &PlayerClass::isSprinting)
         .instanceFunction("setSprinting", &PlayerClass::setSprinting)
         .instanceFunction("sendToast", &PlayerClass::sendToast)
-        .instanceFunction("distanceToPos", &PlayerClass::distanceToPos)
+        .instanceFunction("distanceTo", &PlayerClass::distanceTo)
+        .instanceFunction("distanceToSqr", &PlayerClass::distanceToSqr)
 
         .instanceFunction("getBlockStandingOn", &PlayerClass::getBlockStandingOn)
         .instanceFunction("getDevice", &PlayerClass::getDevice)
@@ -162,6 +170,9 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getTotalExperience", &PlayerClass::getTotalExperience)
         .instanceFunction("setTotalExperience", &PlayerClass::setTotalExperience)
         .instanceFunction("getXpNeededForNextLevel", &PlayerClass::getXpNeededForNextLevel)
+        .instanceFunction("setAbility", &PlayerClass::setAbility)
+        .instanceFunction("getBiomeId", &PlayerClass::getBiomeId)
+        .instanceFunction("getBiomeName", &PlayerClass::getBiomeName)
 
         .instanceFunction("sendSimpleForm", &PlayerClass::sendSimpleForm)
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
@@ -222,6 +233,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("removeItem", &PlayerClass::removeItem)
         .instanceFunction("getAllItems", &PlayerClass::getAllItems)
         .instanceFunction("removeScore", &PlayerClass::deleteScore)
+        .instanceFunction("distanceToPos", &PlayerClass::distanceTo)
         .build();
 
 
@@ -244,6 +256,66 @@ Player* PlayerClass::extract(Local<Value> v) {
 }
 
 //公用API
+Local<Value> McClass::getPlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto nbt = Player::getPlayerNbt(uuid);
+        if (nbt != nullptr) {
+            return NbtCompoundClass::pack(Player::getPlayerNbt(uuid));
+        }
+        else {
+            return Local<Value>();
+        }
+    }
+    CATCH("Fail in getPlayerNbt!")
+}
+
+Local<Value> McClass::setPlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto nbt = NbtCompoundClass::extract(args[1]);
+        Player::setPlayerNbt(uuid, nbt);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setPlayerNbt!")
+}
+
+Local<Value> McClass::setPlayerNbtTags(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kArray);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto nbt = NbtCompoundClass::extract(args[1]);
+        auto arr = args[2].asArray();
+        std::vector<std::string> tags;
+        for (int i = 0; i < arr.size(); ++i) {
+            auto value = arr.get(i);
+            if (value.getKind() == ValueKind::kString) {
+                tags.push_back(value.asString().toString());
+            }
+        }
+        Player::setPlayerNbtTags(uuid, nbt, tags);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setPlayerNbtTags!")
+}
+
+Local<Value> McClass::deletePlayerNbt(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        Player::deletePlayerNbt(uuid);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in deletePlayerNbt!")
+}
+
 Local<Value> McClass::getPlayer(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
@@ -362,11 +434,14 @@ Local<Value> PlayerClass::getBlockPos() {
 Local<Value> PlayerClass::getLastDeathPos() {
     try {
         Player* player = get();
-        if (!player || player->hasDiedBefore()) {
+        if (!player) {
             return Local<Value>();
         }
-
-        return IntPos::newPos(player->getLastDeathPos().value(), player->getLastDeathDimension().value());
+        auto pos = player->getLastDeathPosition();
+        if (pos.second == -1) {
+            return Local<Value>();
+        }
+        return IntPos::newPos(pos.first, pos.second);
     }
     CATCH("Fail in getLastDeathPos!")
 }
@@ -2060,6 +2135,60 @@ Local<Value> PlayerClass::heal(const Arguments& args) {
     CATCH("Fail in heal!");
 }
 
+Local<Value> PlayerClass::setHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHealth!");
+}
+
+Local<Value> PlayerClass::setMaxHealth(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(Global<SharedAttributes>->HEALTH);
+
+        healthAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxHealth!");
+}
+
+Local<Value> PlayerClass::setHungry(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* healthAttribute = player->getMutableAttribute(player->HUNGER);
+
+        healthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setHungry!");
+}
+
 Local<Value> PlayerClass::setFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2131,7 +2260,11 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
         auto item = ItemClass::extract(args[0]);
         if (!item)
             return Local<Value>(); // Null
-
+        if (args.size() >= 2)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            return Boolean::newBoolean(player->giveItem(item, args[1].toInt()));
+        }
         return Boolean::newBoolean(player->giveItem(item));
     }
     CATCH("Fail in giveItem!");
@@ -2571,7 +2704,7 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
     CATCH("Fail in sendToast!");
 }
 
-Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
+Local<Value> PlayerClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     if (args.size() == 4) {
         CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2603,6 +2736,17 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
                 else {
                     pos = *posObj;
                 }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
             } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
@@ -2627,11 +2771,116 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        if ((int)player->getDimensionId() != pos.dim) {
-            return Local<Value>();
-        } else {
-            return Number::newNumber(player->distanceTo(pos.getVec3()));
-        }
+        return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
-    CATCH("Fail in distanceToPos!")
+    CATCH("Fail in distanceTo!")
+}
+
+Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    if (args.size() == 4) {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    }
+
+    try {
+        FloatVec4 pos;
+
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos.x = posObj->x;
+                    pos.y = posObj->y;
+                    pos.z = posObj->z;
+                    pos.dim = posObj->dim;
+                }
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos = *posObj;
+                }
+            } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
+                // Player or Entity
+
+                Actor* targetActor = EntityClass::extract(args[0]);
+
+                Vec3 targetActorPos = targetActor->getPosition();
+
+                pos.x = targetActorPos.x;
+                pos.y = targetActorPos.y;
+                pos.z = targetActorPos.z;
+                pos.dim = targetActor->getDimensionId();
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        } else if (args.size() == 4) {
+            // number pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+
+            pos.x = args[0].asNumber().toFloat();
+            pos.y = args[1].asNumber().toFloat();
+            pos.z = args[2].asNumber().toFloat();
+            pos.dim = args[3].toInt();
+        } else {
+            LOG_WRONG_ARGS_COUNT();
+            return Local<Value>();
+        }
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->distanceToSqr(pos.getVec3()));
+    }
+    CATCH("Fail in distanceToSqr!")
+}
+
+Local<Value> PlayerClass::setAbility(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        player->setAbility(AbilitiesIndex(args[0].asNumber().toInt32()), args[1].asBoolean().value());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAbility!");
+}
+
+Local<Value> PlayerClass::getBiomeId() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto bio = player->getBiome();
+        return Number::newNumber(bio->getId());
+    }
+    CATCH("Fail in getBiomeId!");
+}
+
+Local<Value> PlayerClass::getBiomeName() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto bio = player->getBiome();
+        return String::newString(bio->getName());
+    }
+    CATCH("Fail in getBiomeName!");
 }

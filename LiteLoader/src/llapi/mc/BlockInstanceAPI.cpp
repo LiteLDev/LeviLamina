@@ -52,7 +52,15 @@ Container* BlockInstance::getContainer() {
     auto be = getBlockEntity();
     if (!be)
         return nullptr;
-    return VirtualCall<Container*>(be, 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    switch ((int)be->getType()) { // From Hopper::_getContainerInBlock
+        case 1:
+        case 8:
+        case 15:
+        case 38:
+        case 39:
+            return SymCall("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
+    }
+    return SymCall("?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
 }
 
 bool BlockInstance::breakNaturally(bool isCreativeMode) {

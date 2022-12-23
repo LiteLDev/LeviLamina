@@ -5,14 +5,14 @@ on:
     inputs:
       tag:
         required: true
-        description: 'tag is going to be released'
+        description: 'release tag'
 
 env:
   BUILD_TYPE: Release
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v3.0.2
@@ -84,11 +84,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/include/liteloader/Version.h
-        shell: bash
-
-      - name: Get MSVC Path
-        working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
-        run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
         shell: bash
 
       - name: Configure CMake(MSVC)

@@ -683,6 +683,25 @@ enum class ItemStackNetResult : unsigned char {
 //     int Min = 1, Max = 0x7FFFFFFF;
 // };
 
+enum class ClientPlayMode {
+	Normal              = 0,
+	Teaser              = 1,
+	Screen              = 2,
+	Viewer              = 3,
+	VR                  = 4,
+	Placement           = 5,
+	LivingRoom          = 6,
+	ExitLevel           = 7,
+	ExitLevelLivingRoom = 8
+};
+
+enum class InputMode {
+	Mouse            = 1,
+	Touch            = 2,
+	GamePad          = 3,
+	MotionController = 4
+};
+
 enum class InventoryTransactionError {
     Unknown            = 0,
     NoError            = 1,
@@ -799,6 +818,44 @@ enum class BuildPlatform : int {
     WindowsPhone = 0xE,
     Linux = 0xF,
     Unknown = 0xFF,
+};
+
+enum class AbilitiesIndex : int16_t {
+    Build = 0,
+    Mine = 1,
+    DoorsAndSwitches = 2,
+    OpenContainers = 3,
+    AttackPlayers = 4,
+    AttackMobs = 5,
+    OperatorCommands = 6,
+    Teleport = 7,
+    ExposedAbilityCount = 8,
+    Invulnerable = 8,
+    Flying = 9,
+    MayFly = 10,
+    Instabuild = 11,
+    Lightning = 12,
+    FlySpeed = 13,
+    WalkSpeed = 14,
+    Muted = 15,
+    WorldBuilder = 16,
+    NoClip = 17,
+    AbilityCount = 18
+};
+
+enum class AdventureFlag : int
+{
+    WorldImmutable = 1,
+    NoPvM = 2,
+    NoMvP = 4,
+    Unused = 8,
+    ShowNameTags = 16,
+    AutoJump = 32,
+    AllowFlight = 64,
+    NoClip = 128,
+    WorldBuilder = 256,
+    Flying = 512,
+    Muted = 1024,
 };
 
 // clang-format on

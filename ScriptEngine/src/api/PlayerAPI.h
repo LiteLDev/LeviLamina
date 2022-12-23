@@ -55,6 +55,8 @@ public:
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
+    Local<Value> getBiomeName();
+    Local<Value> getBiomeId();
     Local<Value> isLoading();
     Local<Value> isInvisible();
     Local<Value> isInsidePortal();
@@ -94,6 +96,9 @@ public:
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
+    Local<Value> setHealth(const Arguments& args);
+    Local<Value> setMaxHealth(const Arguments& args);
+    Local<Value> setHungry(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
     Local<Value> stopFire(const Arguments& args);
@@ -103,7 +108,8 @@ public:
     Local<Value> isSprinting(const Arguments& args);
     Local<Value> setSprinting(const Arguments& args);
     Local<Value> sendToast(const Arguments& args);
-    Local<Value> distanceToPos(const Arguments& args);
+    Local<Value> distanceTo(const Arguments& args);
+    Local<Value> distanceToSqr(const Arguments& args);
 
     Local<Value> getBlockStandingOn(const Arguments& args);
     Local<Value> getDevice(const Arguments& args);
@@ -200,5 +206,7 @@ public:
     Local<Value> getIP();
     Local<Value> getAllItems(const Arguments& args);
     Local<Value> removeItem(const Arguments& args);
+
+    Local<Value> setAbility(const Arguments& args);
 };
 extern ClassDefine<PlayerClass> PlayerClassBuilder;

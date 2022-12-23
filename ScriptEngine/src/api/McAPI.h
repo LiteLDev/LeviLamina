@@ -54,5 +54,10 @@ public:
     static Local<Value> setStructure(const Arguments& args);
 
     static Local<Value> newParticleSpawner(const Arguments& args);
+
+    static Local<Value> getPlayerNbt(const Arguments& args);
+    static Local<Value> setPlayerNbt(const Arguments& args);
+    static Local<Value> setPlayerNbtTags(const Arguments& args);
+    static Local<Value> deletePlayerNbt(const Arguments& args);
 };
 extern ClassDefine<void> McClassBuilder;

@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS player_new (
     UUID TEXT NOT NULL
 ) WITHOUT ROWID; )";
 constexpr auto SQL_UPDATE_PLAYER_TABLE = R"(
+DELETE FROM player WHERE name IN (SELECT name FROM player GROUP BY xuid HAVING COUNT(*)>1);
 INSERT INTO player_new (XUID, NAME, UUID)
     SELECT XUID, NAME, UUID from player;
 DROP TABLE player;
@@ -102,6 +103,11 @@ std::string getXuid(std::string name) {
 
 std::string getUUID(std::string name) {
     auto res = findByName(name);
+    return res.has_value() ? res.value().uuid : "";
+}
+
+std::string getUUIDByXuid(xuid_t xuid) {
+    auto res = findByXuid(xuid);
     return res.has_value() ? res.value().uuid : "";
 }
 

@@ -94,6 +94,12 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
              {"PermissionAPI", {
                 {"enabled", conf.enablePermissionAPI}
             }},
+             {"ClientChunkPreGeneration", {
+                {"enabled", conf.enableClientChunkPreGeneration}
+            }},
+            {"FixAbility", {
+                {"enabled", conf.enableFixAbility}
+            }},
         }}
     };
     // clang-format on
@@ -210,6 +216,14 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
             const nlohmann::json& setting = modules.at("PermissionAPI");
             conf.enablePermissionAPI = setting.value("enabled", false);
         }
+        if (modules.find("ClientChunkPreGeneration") != modules.end()) {
+            const nlohmann::json& setting = modules.at("ClientChunkPreGeneration");
+            conf.enableClientChunkPreGeneration = setting.value("enabled", true);
+        }
+        if (modules.find("FixAbility") != modules.end()) {
+            const nlohmann::json& setting = modules.at("FixAbility");
+            conf.enableFixAbility = setting.value("enabled", true);
+        }
     }
 }
 } // namespace LL
@@ -259,7 +273,7 @@ bool ll::LoadLLConfig() {
             // if (IsWineEnvironment()) {
             //     ChooseLanguage();
             // }
-            filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
+            filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename());
             ll::SaveLLConfig();
         } else {
             try {
