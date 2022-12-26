@@ -1,10 +1,10 @@
 #!/bin/bash
 # Install wine
 codename=$(lsb_release -c --short)
-BDSVER="1.19.41.01"
-LLVER="2.8.1"
+BDSVER="1.19.51.01"
+LLVER="2.9.0"
 sudo apt install -y wget unzip
-sudo dpkg --add-architecture i386
+sudo dpkg --add-architecture amd64
 sudo mkdir -pm755 /etc/apt/keyrings
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/${codename}/winehq-${codename}.sources
