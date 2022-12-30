@@ -36,7 +36,67 @@ class Scoreboard {
 #define AFTER_EXTRA
 // Add new members to class
 #define ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
+private:
+     /**
+     * @brief return new available ScoreboardId, don't use directly
+     * 
+     * @return ScoreboardId const reference 
+     */
+    LIAPI const ScoreboardId& nextScoreboardId();
+    /**
+    * @brief createa new available ScoreboardId for Entity by  PlayerScoreBoardId
+    * 
+    * by ActorUniqueID can be added too, but needs check anotherway
+    * The user should check PlayerScoreBoardId is valid or not
+    * @return bool
+    */
+    template <typename T>
+    inline bool createScoreboardId(T const&) = delete;
+    template<>
+    inline bool createScoreboardId(PlayerScoreboardId const& pid) {
+        ScoreboardId newsid = nextScoreboardId();
+        ScoreboardId* (Scoreboard:: * rv)(ScoreboardId, PlayerScoreboardId const&) = NULL;
+        *((void**)&rv) = SYM("??$_createScoreboardId@UPlayerScoreboardId@@@Scoreboard@@IEAAAEBUScoreboardId@@U1@AEBUPlayerScoreboardId@@@Z");
+        return (this->*rv)(newsid, pid))->isValid();
+    }
 public:
+
+    /**
+    * @brief create a new available ScoreboardId for Player by mce::UUID
+    * 
+    * The user should check uuid's validity
+    * @return bool
+    */
+    LIAPI bool createPScoreBoardId(mce::UUID const& uuid);
+    LIAPI static bool createPScoreBoardId(xuid_t const& xuid);
+    /**
+    * @brief get a new available ScoreboardId for Player by mce::UUID
+    *
+    * The user should check uuid's validity
+    * @return ScoreboardId
+    */
+    LIAPI ScoreboardId getPScoreBoardId(mce::UUID const& uuid);
+    LIAPI static ScoreboardId getPScoreBoardId(xuid_t const& xuid);
+    LIAPI static ScoreboardId getorcreatePScoreBoardId(xuid_t const& xuid);
+    /**
+    * @brief modify Score for Player by xuid forcely
+    * 
+    * Create forcibly if the objective does not exist
+    * If the player exists but the ScoreboardId does not exist, create it forcibly
+    * modify scores their scores whether they are online or not
+    * return false only when xuid is wrong or runtime-error
+    * @return bool
+    */
+    LIAPI static bool forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname,int val, PlayerScoreSetFunction pf);
+    /**
+    * @brief query Score for Player by xuid
+    * 
+    * works whether Players are online or not
+    * return false only when xuid is wrong or the objective does not exist-error
+    * @return std::optional<int>
+    */
+    LIAPI static std::optional<int> queryPlayerScore(xuid_t const& xuid, std::string const& objname);
+
 
     /**
      * @brief Create a new objective.
@@ -122,6 +182,15 @@ public:
     LIAPI static bool deleteScore(Player* player, const std::string& objname);
 
     LIAPI static bool scoreboardIdIsValid(ScoreboardId* id);
+
+     /**
+     * @brief return new available ScoreboardId, don't use directly
+     * 
+     * @return ScoreboardId const reference 
+     */
+
+
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARD
 public:

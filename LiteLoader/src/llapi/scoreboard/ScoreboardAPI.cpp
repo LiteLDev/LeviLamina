@@ -1,4 +1,4 @@
-#include "llapi/mc/DisplayObjective.hpp"
+﻿#include "llapi/mc/DisplayObjective.hpp"
 #include "llapi/mc/Objective.hpp"
 #include "llapi/mc/ObjectiveCriteria.hpp"
 #include "llapi/mc/Player.hpp"
@@ -9,6 +9,93 @@
 #include "llapi/mc/setScorePacket.hpp"
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/IdentityDefinition.hpp"
+#include "llapi/mc/CompoundTag.hpp"
+#include "llapi/PlayerInfoAPI.h"
+LIAPI const ScoreboardId & Scoreboard::nextScoreboardId()
+{
+    return ++*(ScoreboardId*)((char *)this + 1072);
+}
+
+LIAPI bool Scoreboard::createPScoreBoardId(mce::UUID const& uuid)
+{
+    auto cTag=Player::getPlayerNbt(uuid);
+    if (cTag->contains("UniqueID")) {
+        ActorUniqueID aId(cTag->getInt64("UniqueID"));
+        PlayerScoreboardId myPid(aId);
+        //check
+        auto& maySid = this->getScoreboardId(myPid);
+        if (!maySid.isValid()) {
+            return this->createScoreboardId(myPid);
+        }
+    }
+    return false;
+}
+
+LIAPI ScoreboardId Scoreboard::getPScoreBoardId(mce::UUID const& uuid)
+{
+    auto cTag = Player::getPlayerNbt(uuid);
+    if (cTag->contains("UniqueID")) {
+        ActorUniqueID aId(cTag->getInt64("UniqueID"));
+        PlayerScoreboardId myPid(aId);
+        return this->getScoreboardId(myPid);
+    }
+    return ScoreboardId::INVALID;
+}
+
+LIAPI ScoreboardId Scoreboard::getPScoreBoardId(xuid_t const& xuid)
+{
+    auto uids = PlayerInfo::getUUIDByXuid(xuid);
+    if (uids != "") {
+        return Global<Scoreboard>->getPScoreBoardId(mce::UUID::fromString(uids));
+    }
+    return ScoreboardId::INVALID;
+}
+
+LIAPI ScoreboardId Scoreboard::getorcreatePScoreBoardId(xuid_t const& xuid)
+{
+    ScoreboardId sid= Global<Scoreboard>->getPScoreBoardId(xuid);
+    if (!sid.isValid()) {
+        Global<Scoreboard>->createPScoreBoardId(xuid);
+        sid= Global<Scoreboard>->getPScoreBoardId(xuid);
+    }
+    return sid;
+}
+
+LIAPI bool Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val, PlayerScoreSetFunction pf)
+{
+    Objective* obj = Global<Scoreboard>->getObjective(objname);
+    if (!obj)
+        obj = Global<Scoreboard>->newObjective(objname, objname);
+    auto Sid = Global<Scoreboard>->getorcreatePScoreBoardId(xuid);
+    if (Sid.isValid() && obj != NULL) {
+        bool kg;
+         Global<Scoreboard>->modifyPlayerScore(kg, maysid, *obj, val, pf);
+        return kg;
+    }
+    return false;
+}
+
+LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::string const& objname)
+{
+    auto obj = Global<Scoreboard>->getObjective(objname);
+    auto Sid = Global<Scoreboard>->getPScoreBoardId(xuid);
+    if (!obj||!Sid.isValid())
+        return std::nullopt;
+    return obj->getPlayerScore(Sid).getCount();
+}
+
+
+
+LIAPI bool Scoreboard::createPScoreBoardId(xuid_t const& xuid)
+{
+    auto uids=PlayerInfo::getUUIDByXuid(xuid);
+    if (uids != "") {
+        return Global<Scoreboard>->createPScoreBoardId(mce::UUID::fromString(uids));
+    }
+    return false;
+}
+
+
 
 LIAPI Objective* Scoreboard::newObjective(const std::string& objname, const std::string& displayName) {
     std::string criteria = "dummy";

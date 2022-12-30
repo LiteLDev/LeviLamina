@@ -20,7 +20,29 @@ struct PlayerScoreboardId {
 
 #define AFTER_EXTRA
 // Add Member There
+    //acotid
+    long long Actoruniqueid;
+    PlayerScoreboardId():id(-1)
+    {
 
+    }
+
+    PlayerScoreboardId(ActorUniqueID const& aid):id(aid.id)
+    {
+
+    }
+
+    inline long long get() const
+    {
+        return id;
+    }
+
+    inline operator long long() const
+    {
+        return id;
+    }
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
 public:
