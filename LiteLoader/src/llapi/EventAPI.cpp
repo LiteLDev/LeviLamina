@@ -2017,7 +2017,6 @@ TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@
     return spawn;
 }
 
-
 TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z",
     int a1) {
     IF_LISTENED(MobSpawnEvent) {
