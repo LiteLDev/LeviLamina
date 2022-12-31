@@ -93,7 +93,7 @@ Local<Value> CommandOutputClass::addMessage(const Arguments& args) {
             }
             if (args.size() >= 3) {
                 CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-                get()->addMessage(msg, param, (CommandOutputMessageType)args[2].asNumber());
+                get()->addMessage(msg, param, (CommandOutputMessageType)args[2].toInt());
                 return Boolean::newBoolean(true);
             }
             get()->addMessage(msg, param, (CommandOutputMessageType)0);
