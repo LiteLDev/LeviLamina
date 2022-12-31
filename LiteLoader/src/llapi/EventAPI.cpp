@@ -2025,9 +2025,10 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         ev.mPos = Vec3::ZERO;
         ev.mDimensionId = 2;
         if (!ev.call())
-            return original(this,a1);
+            return;
     }
     IF_LISTENED_END(MobSpawnEvent);
+    return original(this, a1);
 }
 
 #include "llapi/impl/FormPacketHelper.h"
