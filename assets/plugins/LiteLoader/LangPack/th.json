@@ -74,6 +74,29 @@
         "success": "ปลั๊กอิน {} รีโหลดสำเร็จ",
         "fail": "ไม่สามารถรีโหลดปลั๊กอินใดๆ"
       },
+      "settings": {
+        "set": {
+          "success": "ตั้งค่า {} เป็น {} สำเร็จแล้ว"
+        },
+        "get": {
+          "success": "การตั้งค่ารับ {} สำเร็จ ค่า: "
+        },
+        "delete": {
+          "success": "ลบตั้งค่า {} เรียบร้อยแล้ว",
+          "error": {
+            "emptyKey": "JsonPointer ต้องไม่ว่างเปล่า!"
+          }
+        },
+        "reload": {
+          "success": "รีโหลดการตั้งค่าเรียบร้อยแล้ว"
+        },
+        "save": {
+          "success": "บันทึกการตั้งค่าเรียบร้อยแล้ว"
+        },
+        "list": {
+          "success": "รายการตั้งค่า:"
+        }
+      },
       "error": {
         "noPathSpecified": "คุณต้องระบุตำแหน่งที่ถูกต้องของปลั๊กอิน LiteLoader!",
         "noNameSpecified": "คุณต้องระบุชื่อที่ถูกต้องของปลั๊กอิน LiteLoader!"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "ไม่พบตำแหน่ง RunTime NodeJs, สร้างใหม่แล้ว"
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "ไม่สามารถรีโหลดปลั๊กอิน {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "ล้มเหลวในการแยกไฟล์ node_modules.tar"
     }
   },
   "llse": {
@@ -289,7 +312,7 @@
         "invalidCommand": "คำสั่งไม่ถูกต้อง พิมพ์  '/help perm' เพื่อรับการช่วยเหลือ",
         "internal": "เกิดข้อผิดพลาด โปรดลองอีกครั้งในภายหลัง",
         "roleAlreadyExists": "มีบทบาทผู้ใช้อยู่แล้ว",
-        "permissionAlreadyExists": "มีการอนุญาตอยู่แล้ว",
+        "permissionAlreadyExists": "มี Permission อยู่แล้ว",
         "invalidPermissionName": "ชื่อ Permission ไม่ถูกต้อง",
         "roleNotFound": "ไม่พบบทบาท",
         "permissionNotFound": "ไม่พบ Permission",
@@ -381,7 +404,7 @@
               "set": {
                 "enabled": "§aเปิดใช้งาน",
                 "disabled": "§cปิดใช้งาน",
-                "success": "Permission {name}§r ของบทบาท {roleDisplayName}§r ตั้งค่าเป็น {enable}."
+                "success": "Permission {name}§r ของบทบาท {roleDisplayName}§r ตั้งค่าเป็น {enable}"
               }
             },
             "priority": {

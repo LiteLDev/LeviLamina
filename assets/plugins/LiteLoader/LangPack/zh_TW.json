@@ -74,6 +74,29 @@
         "success": "卸載 {} 插件成功。",
         "fail": "沒有可用的插件可以重載。"
       },
+      "settings": {
+        "set": {
+          "success": "成功將 {} 設置為 {}."
+        },
+        "get": {
+          "success": "設置讀取 {} 成功. 值: "
+        },
+        "delete": {
+          "success": "成功刪除設置 {}",
+          "error": {
+            "emptyKey": "JsonPointer 不能為空"
+          }
+        },
+        "reload": {
+          "success": "成功重新加載設置."
+        },
+        "save": {
+          "success": "設置保存成功."
+        },
+        "list": {
+          "success": "設置列表:"
+        }
+      },
       "error": {
         "noPathSpecified": "您必須提供一個LiteLoader插件的有效路徑！",
         "noNameSpecified": "您必須提供一個LiteLoader插件的有效名稱！"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "無法找到NodeJS運行文件，已自動創建。"
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "無法重新載入插件 {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "解壓 node_modules.tar 失敗"
     }
   },
   "llse": {
@@ -275,89 +298,89 @@
   "permapi": {
     "data": {
       "process": {
-        "fail": "Failed to process the data file: {}"
+        "fail": "處理數據文件失敗: {}"
       },
       "read": {
-        "fail": "Failed to read the data file at {}"
+        "fail": "讀取位於 {} 的數據文件失敗"
       },
       "save": {
-        "fail": "Failed to save the data file: {}"
+        "fail": "保存數據文件失敗：{}"
       }
     },
     "cmd": {
       "error": {
-        "invalidCommand": "Invalid command. Type '/help perm' to get help.",
-        "internal": "Internal error. Please try again later.",
-        "roleAlreadyExists": "Role already exists.",
-        "permissionAlreadyExists": "Permission already exists.",
-        "invalidPermissionName": "Invalid permission name.",
-        "roleNotFound": "Role not found.",
-        "permissionNotFound": "Permission not found.",
-        "playerNotFound": "Player not found.",
-        "modifyMembersOfEveryone": "The role is a everyone role. You cannot modify the members of it.",
-        "jsonParsingError": "JSON parsing error: {}",
-        "missingArgument": "Missing argument: {}",
-        "permissionDenied": "You don't have permission to use this command."
+        "invalidCommand": "未知的指令。輸入'/help perm' 來取得更多幫助。",
+        "internal": "發生內部錯誤，請稍後再嘗試。",
+        "roleAlreadyExists": "角色已存在",
+        "permissionAlreadyExists": "權限已存在",
+        "invalidPermissionName": "無效的權限名稱.",
+        "roleNotFound": "找不到此身分組.",
+        "permissionNotFound": "找不到權限.",
+        "playerNotFound": "找不到玩家",
+        "modifyMembersOfEveryone": "該身分組是每個人都應有的角色，您不能修改它的任何成員。",
+        "jsonParsingError": "JSON 解析錯誤: {}",
+        "missingArgument": "缺失參數: {}",
+        "permissionDenied": "你沒有權限來使用這個指令。"
       },
       "output": {
         "create": {
           "role": {
-            "success": "Role created."
+            "success": "身分組已創建"
           },
           "perm": {
-            "success": "Permission created."
+            "success": "權限已創建"
           }
         },
         "delete": {
           "role": {
-            "success": "Role deleted."
+            "success": "身分組已刪除"
           },
           "perm": {
-            "success": "Permission deleted."
+            "success": "權限已刪除"
           }
         },
         "list": {
           "role": {
-            "none": "No roles to display.",
-            "header": "§b§lRole List:",
-            "isMember": "§r(§eMember§r)"
+            "none": "無身分組",
+            "header": "§b§l身分組列表:",
+            "isMember": "§r(§e成員§r)"
           },
           "perm": {
-            "none": "No permissions to display.",
-            "header": "§b§lPermission List:"
+            "none": "無權限",
+            "header": "§b§l權限列表:"
           }
         },
         "view": {
           "player": {
-            "yourStatus": "§b§lYour current permission status:",
-            "status": "§b§l{}'s current permission status:",
-            "rolesTitle": "- §eRoles:",
-            "permissionsTitle": "- §ePermissions:"
+            "yourStatus": "§b§l您當前的權限狀態:",
+            "status": "§b§l{} 當前的權限狀態:",
+            "rolesTitle": "- §e身分組:",
+            "permissionsTitle": "- §e權限:"
           },
           "role": {
-            "header": "§b§lRole Info:",
+            "header": "§b§l身分組資訊:",
             "info": {
-              "name": "+ §eName§r: {roleName}",
-              "displayName": "+ §eDisplayName§r: {}",
-              "priority": "+ §ePriority§r: {}",
-              "membersNone": "+ §eMembers§r: None",
-              "members": "+ §eMembers§r:",
-              "permissionsNone": "+ §ePermissions§r: None",
-              "permissions": "+ §ePermissions§r:"
+              "name": "+ §e名稱§r: {roleName}",
+              "displayName": "+ §e顯示名稱§r: {}",
+              "priority": "+ §e優先權§r: {}",
+              "membersNone": "+ §e成員§r: 無",
+              "members": "+ §e成員§r:",
+              "permissionsNone": "+ §e權限§r: 無",
+              "permissions": "+ §e權限§r:"
             },
             "note": {
-              "admin": "※ {}§r is a special role. All permissions will be enabled by default.",
-              "everyone": "※ {}§r is a special role. All players are members of this role."
+              "admin": "※ {}§r 是一個特殊身分， 所有權限將會預設啟用。",
+              "everyone": "※ {}§r 是一個特殊身分，所有玩家都應有本身份組。"
             },
-            "enabled": "§a(Enabled)§r",
-            "disabled": "§c(Disabled)§r",
-            "enabledWithExtra": "§b(Enabled with extra restrictions)§r"
+            "enabled": "§a(啟用)§r",
+            "disabled": "§c(禁用)§r",
+            "enabledWithExtra": "§b（已啟用額外限制）§r"
           },
           "perm": {
-            "header": "§b§lPermission Info:",
+            "header": "§b§l權限內容:",
             "info": {
-              "name": "+ §eName§r: {permissionName}",
-              "desc": "+ §eDescription§r: {}"
+              "name": "+ §e名稱§r: {permissionName}",
+              "desc": "+ §e說明§r: {}"
             }
           }
         },
@@ -365,23 +388,23 @@
           "role": {
             "member": {
               "add": {
-                "success": "Member {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "成員 {name}§r({xuid}) 已被添加至 {roleDisplayName} 身分中§r。"
               },
               "remove": {
-                "success": "Member {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "成員 {name}§r({xuid}) 已被移除 {roleDisplayName} 身分§r。"
               }
             },
             "perm": {
               "add": {
-                "success": "Permission {name}§r added to Role {roleDisplayName}§r."
+                "success": "權限 {name}§r 已添加到身分組 {roleDisplayName} 中§r。"
               },
               "remove": {
-                "success": "Permission {name}§r removed from Role {roleDisplayName}§r."
+                "success": "已從身分組 {roleDisplayName} 移除權限 {name}§r 。"
               },
               "set": {
-                "enabled": "§aenabled§r",
-                "disabled": "§cdisabled§r",
-                "success": "Permission {name}§r of Role {roleDisplayName}§r set to {enable}."
+                "enabled": "§a啟用§r",
+                "disabled": "§c禁用§r",
+                "success": "身分組 {roleDisplayName}§r 中的 {name}§r 權限已被設置成{enable}."
               }
             },
             "priority": {
@@ -406,7 +429,7 @@
             }
           }
         },
-        "noDesc": "[No description]",
+        "noDesc": "[沒有說明]",
         "permissionNameExamples": "Permission name examples: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
       }
     }

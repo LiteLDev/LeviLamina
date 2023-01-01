@@ -74,6 +74,29 @@
         "success": "Plugin {} berhasil dimuat ulang.",
         "fail": "Gagal memuat ulang plugin apa pun"
       },
+      "settings": {
+        "set": {
+          "success": "Settings set {} to {} successfully."
+        },
+        "get": {
+          "success": "Settings get {} successfully. Value: "
+        },
+        "delete": {
+          "success": "Settings delete {} successfully.",
+          "error": {
+            "emptyKey": "JsonPointer cannot be empty!"
+          }
+        },
+        "reload": {
+          "success": "Settings reloaded successfully."
+        },
+        "save": {
+          "success": "Settings saved successfully."
+        },
+        "list": {
+          "success": "Settings list:"
+        }
+      },
       "error": {
         "noPathSpecified": "Anda harus memberikan jalur plugin LiteLoader yang valid!",
         "noNameSpecified": "Anda harus memberikan nama plugin LiteLoader yang valid!"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "Direktori runtime Node.js tidak dapat ditemukan, dibuat."
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "Gagal memuat ulang plugin {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "Failed to unzip node_modules.tar"
     }
   },
   "llse": {

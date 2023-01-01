@@ -72,7 +72,7 @@ target_include_directories(
 
 add_custom_command(
         TARGET LiteLoader PRE_BUILD
-        COMMAND cmd /c ${CMAKE_SOURCE_DIR}/scripts/PrepareLibraries.cmd ${CMAKE_SOURCE_DIR}
+        COMMAND ${CMAKE_SOURCE_DIR}/scripts/PrepareLibraries.cmd ${CMAKE_SOURCE_DIR}
 )
 
 # Copy the built DLL and PDB to the output directory
