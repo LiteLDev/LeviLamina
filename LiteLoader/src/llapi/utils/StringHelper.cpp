@@ -44,7 +44,7 @@ std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::
     while (pos != std::string::npos) {
         std::string x = strs.substr(0, pos);
         resVec.push_back(x);
-        strs = strs.substr(pos + 1, size);
+        strs = strs.substr(pos + pattern.size(), size);
         pos = strs.find(pattern);
     }
 
