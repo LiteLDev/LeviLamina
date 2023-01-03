@@ -7,7 +7,7 @@ body:
       value: |
         感谢您花时间填写这份 Bug 反馈!
         > **注意事项**
-        > 1. 请勿反馈非加载器问题
+        > 1. 请勿反馈非加载器能解决的问题
         > 2. 请勿在这里反馈具有严重影响的游戏漏洞, 相关问题请在聊天软件内私聊项目开发者并向及时向 Mojang 反馈
 
   - type: dropdown
@@ -17,7 +17,6 @@ body:
       description: 出现问题的模块
       options:
         - LiteLoader (本体)
-        - ScriptEngine (脚本引擎)
         - AddonsHelper
         - PeEditor
     validations:
@@ -31,13 +30,14 @@ body:
         - Windows Server 2022
         - Windows Server 2019
         - Windows Server 2016
+        - Windows Server 2012 R2
         - Windows Server 2012
         - 其他版本的 Windows Server
         - Windows 11
         - Windows 10
         - 其他版本的 Windows
-        - GNU/Linux with docker
-        - GNU/Linux with wine
+        - GNU/Linux 上的 docker
+        - GNU/Linux 上的 wine
         - 其他操作系统
     validations:
       required: true

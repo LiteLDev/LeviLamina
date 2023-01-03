@@ -7,7 +7,7 @@ body:
       value: |
         Thanks for taking the time to fill out this bug report!
         > **NOTICE**
-        > 1. Feedback issues should belong to LiteLoader.
+        > 1. Feedback issues should be solvable by LiteLoader.
         > 2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time.
 
   - type: dropdown
@@ -16,8 +16,7 @@ body:
       label: Exceptions module
       description: The module with problems
       options:
-        - Core
-        - ScriptEngine
+        - LiteLoader (Core)
         - AddonsHelper
         - PeEditor
     validations:
@@ -31,6 +30,7 @@ body:
         - Windows Server 2022
         - Windows Server 2019
         - Windows Server 2016
+        - Windows Server 2012 R2
         - Windows Server 2012
         - Other Windows Server
         - Windows 11

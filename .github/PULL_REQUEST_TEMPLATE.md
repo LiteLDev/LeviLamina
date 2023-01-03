@@ -12,7 +12,6 @@ And, **Do not make a pull request to merge into main branch unless it is a hotfi
 - [ ] Bug fix
 - [ ] New feature 
 - [ ] Enhancement
-- [ ] Documentation
 
 ## Checklist:
 
@@ -20,3 +19,4 @@ And, **Do not make a pull request to merge into main branch unless it is a hotfi
 - [ ] My pull request is unique and no other pull requests have been opened for these changes
 - [ ] I have read the [Contributing note](https://docs.litebds.com/#/zh_CN/Maintenance/README)
 - [ ] I am responsible for any copyright issues with my code if it occurs in the future.
+- [ ] I also updated the documentation if this is a new feature.
