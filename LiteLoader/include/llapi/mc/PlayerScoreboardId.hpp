@@ -17,15 +17,26 @@
  *
  */
 struct PlayerScoreboardId {
-
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+    // acotid
+    long long Actoruniqueid;
+
+    PlayerScoreboardId(ActorUniqueID const& aid) : Actoruniqueid(aid.id) {}
+
+    inline long long get() const {
+        return Actoruniqueid;
+    }
+
+    inline operator long long() const {
+        return Actoruniqueid;
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
 public:
-    struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const &) = delete;
-    PlayerScoreboardId(struct PlayerScoreboardId const &) = delete;
+    struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const&) = delete;
+    PlayerScoreboardId(struct PlayerScoreboardId const&) = delete;
 #endif
 
 public:
@@ -48,11 +59,10 @@ public:
      * @symbol ??8PlayerScoreboardId@@QEBA_NAEBU0@@Z
      * @hash   -1750191467
      */
-    MCAPI bool operator==(struct PlayerScoreboardId const &) const;
+    MCAPI bool operator==(struct PlayerScoreboardId const&) const;
     /**
      * @symbol ?INVALID@PlayerScoreboardId@@2U1@B
      * @hash   -1015004428
      */
     MCAPI static struct PlayerScoreboardId const INVALID;
-
 };
