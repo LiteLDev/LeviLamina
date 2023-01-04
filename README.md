@@ -1,6 +1,6 @@
 # LiteLoaderBDS - Epoch-making & Cross-language Bedrock Dedicated Servers Plugin Loader
 
-[![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
+[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/cmake_repo.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?color=blue&label=Discord&style=for-the-badge)](https://discord.gg/27KTrxHc9t)
 [![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)](https://t.me/liteloader)
 [
