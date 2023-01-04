@@ -129,8 +129,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setMaxHealth", &PlayerClass::setMaxHealth)
         .instanceFunction("setAbsorption", &PlayerClass::setAbsorption)
         .instanceFunction("setAttackDamage", &PlayerClass::setAttackDamage)
+        .instanceFunction("setMaxAttackDamage", &PlayerClass::setMaxAttackDamage)
         .instanceFunction("setFollowRange", &PlayerClass::setFollowRange)
-        .instanceFunction("setJumpStrength", &PlayerClass::setJumpStrength)
         .instanceFunction("setKnockbackResistance", &PlayerClass::setKnockbackResistance)
         .instanceFunction("setLuck", &PlayerClass::setLuck)
         .instanceFunction("setMovementSpeed", &PlayerClass::setMovementSpeed)
@@ -2216,6 +2216,24 @@ Local<Value> PlayerClass::setAttackDamage(const Arguments& args) {
     CATCH("Fail in setAttackDamage!");
 }
 
+Local<Value> PlayerClass::setMaxAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* AttactDamageAttribute = player->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        AttactDamageAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxAttackDamage!");
+}
+
 Local<Value> PlayerClass::setFollowRange(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2232,24 +2250,6 @@ Local<Value> PlayerClass::setFollowRange(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setFollowRange!");
-}
-
-Local<Value> PlayerClass::setJumpStrength(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        AttributeInstance* JumpStrengthAttribute = player->getMutableAttribute(Global<SharedAttributes>->JUMP_STRENGTH);
-
-        JumpStrengthAttribute->setCurrentValue(args[0].asNumber().toFloat());
-
-        return Boolean::newBoolean(true);
-    }
-    CATCH("Fail in setJumpStrength!");
 }
 
 Local<Value> PlayerClass::setKnockbackResistance(const Arguments& args) {

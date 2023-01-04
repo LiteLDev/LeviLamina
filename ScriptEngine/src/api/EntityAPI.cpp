@@ -77,6 +77,15 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
         .instanceFunction("setHealth", &EntityClass::setHealth)
+        .instanceFunction("setAbsorption", &EntityClass::setAbsorption)
+        .instanceFunction("setAttackDamage", &EntityClass::setAttackDamage)
+        .instanceFunction("setMaxAttackDamage", &EntityClass::setMaxAttackDamage)
+        .instanceFunction("setFollowRange", &EntityClass::setFollowRange)
+        .instanceFunction("setKnockbackResistance", &EntityClass::setKnockbackResistance)
+        .instanceFunction("setLuck", &EntityClass::setLuck)
+        .instanceFunction("setMovementSpeed", &EntityClass::setMovementSpeed)
+        .instanceFunction("setUnderwaterMovementSpeed", &EntityClass::setUnderwaterMovementSpeed)
+        .instanceFunction("setLavaMovementSpeed", &EntityClass::setLavaMovementSpeed)
         .instanceFunction("setMaxHealth", &EntityClass::setMaxHealth)
         .instanceFunction("setFire", &EntityClass::setFire)
         .instanceFunction("stopFire", &EntityClass::stopFire)
@@ -981,6 +990,168 @@ Local<Value> EntityClass::setHealth(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setHealth!");
+}
+
+Local<Value> EntityClass::setAbsorption(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* AbsorptionAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ABSORPTION);
+
+        AbsorptionAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAbsorptionAttribute!");
+}
+
+Local<Value> EntityClass::setAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* AttactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        AttactDamageAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAttackDamage!");
+}
+
+Local<Value> EntityClass::setMaxAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* AttactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        AttactDamageAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxAttackDamage!");
+}
+
+Local<Value> EntityClass::setFollowRange(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* FollowRangeAttribute = entity->getMutableAttribute(Global<SharedAttributes>->FOLLOW_RANGE);
+
+        FollowRangeAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setFollowRange!");
+}
+
+Local<Value> EntityClass::setKnockbackResistance(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* KnockbackResistanceAttribute = entity->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+
+        KnockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setKnockbackResistance!");
+}
+
+Local<Value> EntityClass::setLuck(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* LuckAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LUCK);
+
+        LuckAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLuck!");
+}
+
+Local<Value> EntityClass::setMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* MovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+
+        MovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMovementSpeed!");
+}
+
+Local<Value> EntityClass::setUnderwaterMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* UnderwaterMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+
+        UnderwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setUnderwaterMovementSpeed!");
+}
+
+Local<Value> EntityClass::setLavaMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        AttributeInstance* LavaMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+
+        LavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLavaMovementSpeed!");
 }
 
 Local<Value> EntityClass::setMaxHealth(const Arguments& args) {

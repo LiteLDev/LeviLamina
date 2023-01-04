@@ -100,9 +100,10 @@ public:
     Local<Value> setMaxHealth(const Arguments& args);
     Local<Value> setAbsorption(const Arguments& args);
     Local<Value> setAttackDamage(const Arguments& args);
+    Local<Value> setMaxAttackDamage(const Arguments& args);
     Local<Value> setFollowRange(const Arguments& args);
-    Local<Value> setJumpStrength(const Arguments& args);
     Local<Value> setKnockbackResistance(const Arguments& args);
+    Local<Value> setMaxKnockbackResistance(const Arguments& args);
     Local<Value> setLuck(const Arguments& args);
     Local<Value> setMovementSpeed(const Arguments& args);
     Local<Value> setUnderwaterMovementSpeed(const Arguments& args);
