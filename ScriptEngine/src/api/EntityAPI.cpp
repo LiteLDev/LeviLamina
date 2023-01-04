@@ -1001,9 +1001,9 @@ Local<Value> EntityClass::setAbsorption(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* AbsorptionAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ABSORPTION);
+        AttributeInstance* absorptionAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ABSORPTION);
 
-        AbsorptionAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        absorptionAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1019,9 +1019,9 @@ Local<Value> EntityClass::setAttackDamage(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* AttactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+        AttributeInstance* attactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
 
-        AttactDamageAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        attactDamageAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1037,9 +1037,9 @@ Local<Value> EntityClass::setMaxAttackDamage(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* AttactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+        AttributeInstance* attactDamageAttribute = entity->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
 
-        AttactDamageAttribute->setMaxValue(args[0].asNumber().toFloat());
+        attactDamageAttribute->setMaxValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1055,9 +1055,9 @@ Local<Value> EntityClass::setFollowRange(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* FollowRangeAttribute = entity->getMutableAttribute(Global<SharedAttributes>->FOLLOW_RANGE);
+        AttributeInstance* followRangeAttribute = entity->getMutableAttribute(Global<SharedAttributes>->FOLLOW_RANGE);
 
-        FollowRangeAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        followRangeAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1073,9 +1073,9 @@ Local<Value> EntityClass::setKnockbackResistance(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* KnockbackResistanceAttribute = entity->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+        AttributeInstance* knockbackResistanceAttribute = entity->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
 
-        KnockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        knockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1091,9 +1091,9 @@ Local<Value> EntityClass::setLuck(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* LuckAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LUCK);
+        AttributeInstance* luckAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LUCK);
 
-        LuckAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        luckAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1109,9 +1109,9 @@ Local<Value> EntityClass::setMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* MovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+        AttributeInstance* movementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
 
-        MovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        movementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1127,9 +1127,9 @@ Local<Value> EntityClass::setUnderwaterMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* UnderwaterMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+        AttributeInstance* underwaterMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
 
-        UnderwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        underwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
@@ -1145,9 +1145,9 @@ Local<Value> EntityClass::setLavaMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* LavaMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+        AttributeInstance* lavaMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
 
-        LavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+        lavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
         return Boolean::newBoolean(true);
     }
