@@ -127,6 +127,15 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("heal", &PlayerClass::heal)
         .instanceFunction("setHealth", &PlayerClass::setHealth)
         .instanceFunction("setMaxHealth", &PlayerClass::setMaxHealth)
+        .instanceFunction("setAbsorption", &PlayerClass::setAbsorption)
+        .instanceFunction("setAttackDamage", &PlayerClass::setAttackDamage)
+        .instanceFunction("setFollowRange", &PlayerClass::setFollowRange)
+        .instanceFunction("setJumpStrength", &PlayerClass::setJumpStrength)
+        .instanceFunction("setKnockbackResistance", &PlayerClass::setKnockbackResistance)
+        .instanceFunction("setLuck", &PlayerClass::setLuck)
+        .instanceFunction("setMovementSpeed", &PlayerClass::setMovementSpeed)
+        .instanceFunction("setUnderwaterMovementSpeed", &PlayerClass::setUnderwaterMovementSpeed)
+        .instanceFunction("setLavaMovementSpeed", &PlayerClass::setLavaMovementSpeed)
         .instanceFunction("setHungry", &PlayerClass::setHungry)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
@@ -2169,6 +2178,168 @@ Local<Value> PlayerClass::setMaxHealth(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setMaxHealth!");
+}
+
+Local<Value> PlayerClass::setAbsorption(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* AbsorptionAttribute = player->getMutableAttribute(Global<SharedAttributes>->ABSORPTION);
+
+        AbsorptionAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAbsorptionAttribute!");
+}
+
+Local<Value> PlayerClass::setAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* AttactDamageAttribute = player->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        AttactDamageAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAttackDamage!");
+}
+
+Local<Value> PlayerClass::setFollowRange(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* FollowRangeAttribute = player->getMutableAttribute(Global<SharedAttributes>->FOLLOW_RANGE);
+
+        FollowRangeAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setFollowRange!");
+}
+
+Local<Value> PlayerClass::setJumpStrength(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* JumpStrengthAttribute = player->getMutableAttribute(Global<SharedAttributes>->JUMP_STRENGTH);
+
+        JumpStrengthAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setJumpStrength!");
+}
+
+Local<Value> PlayerClass::setKnockbackResistance(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* KnockbackResistanceAttribute = player->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+
+        KnockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setKnockbackResistance!");
+}
+
+Local<Value> PlayerClass::setLuck(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* LuckAttribute = player->getMutableAttribute(Global<SharedAttributes>->LUCK);
+
+        LuckAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLuck!");
+}
+
+Local<Value> PlayerClass::setMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* MovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+
+        MovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMovementSpeed!");
+}
+
+Local<Value> PlayerClass::setUnderwaterMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* UnderwaterMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+
+        UnderwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setUnderwaterMovementSpeed!");
+}
+
+Local<Value> PlayerClass::setLavaMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* LavaMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+
+        LavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLavaMovementSpeed!");
 }
 
 Local<Value> PlayerClass::setHungry(const Arguments& args) {
