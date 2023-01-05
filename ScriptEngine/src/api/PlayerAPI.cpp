@@ -316,6 +316,34 @@ Local<Value> McClass::deletePlayerNbt(const Arguments& args) {
     CATCH("Fail in deletePlayerNbt!")
 }
 
+Local<Value> McClass::getPlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto score = Scoreboard::queryPlayerScore(uuid,obj).value();
+        return Number::newNumber(score);
+    }
+    CATCH("Fail in getPlayerScore!")
+}
+
+Local<Value> McClass::setPlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto value = args[2].asNumber().toInt32();
+        auto res = Scoreboard::forceModifyPlayerScore(uuid, obj, value, PlayerScoreSetFunction::Set);
+        return Boolean::newBoolean(res);
+    }
+    CATCH("Fail in setPlayerScore!")
+}
+
 Local<Value> McClass::getPlayer(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
