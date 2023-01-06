@@ -43,7 +43,7 @@ ClassDefine<void> McClassBuilder =
         .function("setPlayerNbtTags", &McClass::setPlayerNbtTags)
         .function("deletePlayerNbt", &McClass::deletePlayerNbt)
         .function("getPlayerScore", &McClass::getPlayerScore)
-        .function("getPlayerScore", &McClass::setPlayerScore)
+        .function("setPlayerScore", &McClass::setPlayerScore)
 
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)
