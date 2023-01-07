@@ -30,11 +30,11 @@ BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为�
 #### C++语言示例插件
 
 ```c++
-#include <EventAPI.h>
-#include <LoggerAPI.h>
-#include <LLAPI.h>
-#include <MC/Player.hpp>
-#include <MC/Actor.hpp>
+#include <llapi/EventAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/LLAPI.h>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/Actor.hpp>
 
 Logger logger("AttackLog");
 

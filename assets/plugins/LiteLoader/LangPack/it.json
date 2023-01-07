@@ -74,6 +74,29 @@
         "success": "{} plugins ricaricati con successo.",
         "fail": "Impossibile ricaricare tutti i plugin"
       },
+      "settings": {
+        "set": {
+          "success": "Impostazioni impostate {} su {} correttamente."
+        },
+        "get": {
+          "success": "Le impostazioni ottengono {} correttamente. Valore: "
+        },
+        "delete": {
+          "success": "Impostazione rimossa {} con successo.",
+          "error": {
+            "emptyKey": "JsonPointe non può essere vuoto!"
+          }
+        },
+        "reload": {
+          "success": "Impostazioni ricaricato con successo."
+        },
+        "save": {
+          "success": "Impostazioni salvate con successo."
+        },
+        "list": {
+          "success": "Lista impostazioni:"
+        }
+      },
       "error": {
         "noPathSpecified": "È necessario fornire un percorso valido di LiteLoader per un plugin!",
         "noNameSpecified": "È necessario fornire un nome valido per un plugin!"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "Cartella del runtime Node.js non trovata, creata una nuova cartella."
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "Impossibile ricaricare il plugin {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "Impossibile decomprimere node_modules.tar"
     }
   },
   "llse": {
@@ -275,89 +298,89 @@
   "permapi": {
     "data": {
       "process": {
-        "fail": "Failed to process the data file: {}"
+        "fail": "Impossibile processare il file con i dati: {}"
       },
       "read": {
-        "fail": "Failed to read the data file at {}"
+        "fail": "Impossibile leggere il file con i dati in {}"
       },
       "save": {
-        "fail": "Failed to save the data file: {}"
+        "fail": "Impossibile salvare il file con i dati: {}"
       }
     },
     "cmd": {
       "error": {
-        "invalidCommand": "Invalid command. Type '/help perm' to get help.",
-        "internal": "Internal error. Please try again later.",
-        "roleAlreadyExists": "Role already exists.",
-        "permissionAlreadyExists": "Permission already exists.",
-        "invalidPermissionName": "Invalid permission name.",
-        "roleNotFound": "Role not found.",
-        "permissionNotFound": "Permission not found.",
-        "playerNotFound": "Player not found.",
-        "modifyMembersOfEveryone": "The role is a everyone role. You cannot modify the members of it.",
-        "jsonParsingError": "JSON parsing error: {}",
-        "missingArgument": "Missing argument: {}",
-        "permissionDenied": "You don't have permission to use this command."
+        "invalidCommand": "Comando non valido. Scrivi '/help perm' per ricevere aiuto.",
+        "internal": "Errore interno. Per favore prova più tardi.",
+        "roleAlreadyExists": "Ruolo già esistente.",
+        "permissionAlreadyExists": "Permesso già esistente.",
+        "invalidPermissionName": "Nome permesso invalido.",
+        "roleNotFound": "Ruolo non trovato.",
+        "permissionNotFound": "Permessi non trovati.",
+        "playerNotFound": "Player non trovato.",
+        "modifyMembersOfEveryone": "Il ruolo è un ruolo di tutti. Non puoi modificare i membri di questo ruolo.",
+        "jsonParsingError": "Errore di analisi JSON: {}",
+        "missingArgument": "Argomento mancante: {}",
+        "permissionDenied": "Non hai il permesso di usare questo comando."
       },
       "output": {
         "create": {
           "role": {
-            "success": "Role created."
+            "success": "Ruolo creato."
           },
           "perm": {
-            "success": "Permission created."
+            "success": "Permesso creato."
           }
         },
         "delete": {
           "role": {
-            "success": "Role deleted."
+            "success": "Ruolo rimosso."
           },
           "perm": {
-            "success": "Permission deleted."
+            "success": "Permesso rimosso."
           }
         },
         "list": {
           "role": {
-            "none": "No roles to display.",
-            "header": "§b§lRole List:",
-            "isMember": "§r(§eMember§r)"
+            "none": "Nessun ruolo da mostrare.",
+            "header": "§b§lLista ruoli:",
+            "isMember": "§r(§eMembro§r)"
           },
           "perm": {
-            "none": "No permissions to display.",
-            "header": "§b§lPermission List:"
+            "none": "Nessun permesso da mostrare.",
+            "header": "§b§lLista permessi:"
           }
         },
         "view": {
           "player": {
-            "yourStatus": "§b§lYour current permission status:",
-            "status": "§b§l{}'s current permission status:",
-            "rolesTitle": "- §eRoles:",
-            "permissionsTitle": "- §ePermissions:"
+            "yourStatus": "§b§lStato dei tuoi permessi attuali:",
+            "status": "§b§l{} stato permesso attuale:",
+            "rolesTitle": "- §eRuoli:",
+            "permissionsTitle": "- §ePermessi:"
           },
           "role": {
-            "header": "§b§lRole Info:",
+            "header": "§b§lInfo ruolo:",
             "info": {
-              "name": "+ §eName§r: {roleName}",
-              "displayName": "+ §eDisplayName§r: {}",
-              "priority": "+ §ePriority§r: {}",
-              "membersNone": "+ §eMembers§r: None",
-              "members": "+ §eMembers§r:",
-              "permissionsNone": "+ §ePermissions§r: None",
-              "permissions": "+ §ePermissions§r:"
+              "name": "+ §eNome§r: {roleName}",
+              "displayName": "+ §eNomeDaVisualizzare§r: {}",
+              "priority": "+ §ePriorità§r: {}",
+              "membersNone": "+ §eMembri§r: Nessuno",
+              "members": "+ §eMembri§r:",
+              "permissionsNone": "+ §ePermessi§r: Nessuno",
+              "permissions": "+ §ePermessi§r:"
             },
             "note": {
-              "admin": "※ {}§r is a special role. All permissions will be enabled by default.",
-              "everyone": "※ {}§r is a special role. All players are members of this role."
+              "admin": "※ {}§r è un ruolo speciale. Tutti i permessi saranno abilitati predefinitivamente.",
+              "everyone": "※ {}§r è un ruolo speciale. Tutti i giocatori sono membri di questo ruolo."
             },
-            "enabled": "§a(Enabled)§r",
-            "disabled": "§c(Disabled)§r",
-            "enabledWithExtra": "§b(Enabled with extra restrictions)§r"
+            "enabled": "§a(Abilitato)§r",
+            "disabled": "§c(Disabilitato)§r",
+            "enabledWithExtra": "§b(Abilitato con extra restrizioni)§r"
           },
           "perm": {
-            "header": "§b§lPermission Info:",
+            "header": "§b§lPermesso Info:",
             "info": {
-              "name": "+ §eName§r: {permissionName}",
-              "desc": "+ §eDescription§r: {}"
+              "name": "+ §eNome§r: {permissionName}",
+              "desc": "+ §eDescrizione§r: {}"
             }
           }
         },
@@ -365,49 +388,49 @@
           "role": {
             "member": {
               "add": {
-                "success": "Member {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "Membro {name}§r({xuid}) aggiunto al ruolo {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Member {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "Membro {name}§r({xuid}) rimosso dal ruolo {roleDisplayName}§r."
               }
             },
             "perm": {
               "add": {
-                "success": "Permission {name}§r added to Role {roleDisplayName}§r."
+                "success": "Permesso {name}§r aggiunto al ruolo {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Permission {name}§r removed from Role {roleDisplayName}§r."
+                "success": "Permesso {name}§r rimosso dal ruolo {roleDisplayName}§r."
               },
               "set": {
-                "enabled": "§aenabled§r",
-                "disabled": "§cdisabled§r",
-                "success": "Permission {name}§r of Role {roleDisplayName}§r set to {enable}."
+                "enabled": "§aabilitato§r",
+                "disabled": "§cdisabilitato§r",
+                "success": "Permesso {name}§r di Ruolo {roleDisplayName}§r è impostato su {enable}."
               }
             },
             "priority": {
               "set": {
-                "success": "Priority of Role {roleDisplayName}§r set to {priority}."
+                "success": "Priorità di ruolo {roleDisplayName}§r impostate su {priority}."
               }
             },
             "displayName": {
               "set": {
-                "success": "Display name of Role <{roleName}§r> set to {displayName}§r."
+                "success": "Nome ruolo mostrato <{roleName}§r> impostato su {displayName}§r."
               }
             }
           },
           "player": {
             "role": {
               "add": {
-                "success": "Player {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "Player {name}§r({xuid}) aggiunto al ruolo {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Player {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "Player {name}§r({xuid}) rimosso dal ruolo {roleDisplayName}§r."
               }
             }
           }
         },
-        "noDesc": "[No description]",
-        "permissionNameExamples": "Permission name examples: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+        "noDesc": "[Nessuna descrizione]",
+        "permissionNameExamples": "Esempi nome permesso:  'SpazioNomi:PermessoNome', 'a:b:c:d_e_f.g'"
       }
     }
   }

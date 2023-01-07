@@ -1,0 +1,437 @@
+{
+  "base": {
+    "getDimName": {
+      "0": "Surface",
+      "1": "Nether",
+      "2": "L'Ender",
+      "unknown": "Autre dimension"
+    }
+  },
+  "ll": {
+    "main": {
+      "checkRunningBDS": {
+        "detected": "L'existence d'un autre processus BDS a été détecté avec le même chemin !",
+        "tip": "Cela peut entraîner l'occupation du port réseau et du monde",
+        "ask": "Voulez-vous terminer le processus avec PID {} ? (y=Oui, n=Non)"
+      },
+      "fixAllowList": {
+        "removeEmptyAllowlist": "allowlist.json est vide! Suppression...",
+        "checkManually": "allowlist.json et whitelist.json existent et ne sont pas vides. Veuillez les vérifier manuellement",
+        "renamed": "Renommé whitelist.json en allowlist.json"
+      },
+      "warning": {
+        "inDevMode": "Actuellement en mode développeur !",
+        "betaVersion": "Utilisation actuelle d'une version bêta.",
+        "productionEnv": "VEUILLEZ NE PAS UTILISER DANS L'ENVIRONNEMENT DE PRODUCTION!",
+        "protocolVersionNotMatch": {
+          "1": "La version du protocole ne correspond pas, la version cible : {}, la version actuelle : {}.",
+          "2": "Cela va probablement planter le serveur, veuillez utiliser la version de LiteLoader qui correspond à la version du BDS !"
+        }
+      }
+    },
+    "antiAbnormalItem": {
+      "detected": "Erreur de données de l'item Player({}) !",
+      "itemInfo": "Item: {}"
+    },
+    "cmd": {
+      "tpdim": {
+        "success": "{} s'est fait téléporter vers {} ({:2f}, {:2f}, {:2f})",
+        "error": {
+          "noActorTeleported": "Aucune Entité Téléportée",
+          "noActorSpecified": "Aucune Entité Spécifiée"
+        },
+        "invalidDimid": "DimensionId: {} invalide"
+      },
+      "listPlugin": {
+        "overview": "Liste des plugins [{}]",
+        "tip": "* Envoyez la commande \"ll list <Plugin Name>\" pour plus d'informations"
+      },
+      "pluginInfo": {
+        "title": "Plugin <{}>",
+        "error": {
+          "pluginNotFound": "Plugin <{}> introuvable !"
+        }
+      },
+      "version": {
+        "msg": "Serveur Dédié Bedrock {}\n- avec LiteLoaderBDS {}\n- Protocole réseau : {}"
+      },
+      "help": {
+        "msg": "[Introduction]\nLiteLoaderBDS est un chargeur de plugin non officiel pour le développement de Serveurs Dédiés Bedrock, BDS.\nIl fournit un nombre énorme d'API, un système d'événements puissant et de nombreuses interfaces utilitaires empaquetées.\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nBienvenue sur notre projet github pour obtenir plus d'informations ~"
+      },
+      "loadPlugin": {
+        "success": "Plugin <{}> chargé.",
+        "fail": "Échec lors de l'initialisation du plugin {}"
+      },
+      "unloadPlugin": {
+        "success": "Plugin <{}> déchargé.",
+        "fail": "Échec lors du déchargement du plugin <{}>"
+      },
+      "reloadPlugin": {
+        "success": "Plugin <{}> rechargé.",
+        "fail": "Échec lors du rechargement du plugin <{}>"
+      },
+      "reloadAllPlugins": {
+        "success": "Plugins {} rechargés avec succès.",
+        "fail": "Échec lors du rechargement des plugins"
+      },
+      "settings": {
+        "set": {
+          "success": "Les paramètres ont été changés de {} à {} avec succès."
+        },
+        "get": {
+          "success": "Obtention de paramètres {} avec succès. Valeur :"
+        },
+        "delete": {
+          "success": "Suppression des paramètres {} avec succès.",
+          "error": {
+            "emptyKey": "JsonPointer ne peut pas être vide !"
+          }
+        },
+        "reload": {
+          "success": "Les paramètres ont été rechargés avec succès."
+        },
+        "save": {
+          "success": "Les paramètres ont été enregistrés avec succès."
+        },
+        "list": {
+          "success": "Liste des paramètres :"
+        }
+      },
+      "error": {
+        "noPathSpecified": "Vous devez fournir un chemin valide du plugin LiteLoader !",
+        "noNameSpecified": "Vous devez fournir un nom valide pour le plugin LiteLoader !"
+      }
+    },
+    "config": {
+      "save": {
+        "fail": "Échec de la sauvegarde (création) du fichier de configuration !"
+      },
+      "creating": "Fichier de configuration LL <{}> introuvable. Création du fichier de configuration...",
+      "warning": {
+        "configOutdated": "Le fichier de configuration LL <{}> est obsolète."
+      },
+      "updating": "Mise à jour du fichier de configuration..."
+    },
+    "crashLogger": {
+      "existsingDebuggerDetected": "Débogueur existant détecté. Le fichier CrashLogger intégré ne fonctionnera pas.",
+      "wineDetected": "Wine Environment détecté. Le CrashLogger intégré ne marchera pas.",
+      "error": {
+        "cannotCreateDaemonProcess": "Impossible de créer le processus CrashLogger Daemon !"
+      },
+      "warning": {
+        "crashLoggerDisabled": {
+          "1": "Le CrashLogger interne n'est pas activé car la configuration l'a désactivé.",
+          "2": "Il n'y aura pas de journal de plantage en cas d'exception non gérée,",
+          "3": "ce qui rend presque impossible de trouver la raison du crash et la source du crash.",
+          "4": "Nous vous recommandons fortement de l'activer pour assurer la stabilité du serveur"
+        },
+        "conflicts": {
+          "1": "CrashLogger interne n'est pas activé car le plugin <{}> est en conflit avec lui",
+          "2": "Il n'y aura pas de journal de plantage en cas d'exception non gérée,",
+          "3": "ce qui rend presque impossible de trouver la raison du crash et la source du crash.",
+          "4": "Puisque CrashLogger est un composant important qui assure la stabilité du serveur",
+          "5": "Nous vous recommandons de réfléchir deux fois à l'utilisation du plugin <{}>"
+        }
+      },
+      "init": {
+        "fail": {
+          "msg": "Échec du démarrage de CrashLogger intégré !",
+          "tip": "Il n'y aura pas de journal de plantage en cas d'exception non gérée."
+        }
+      }
+    },
+    "addonsHelper": {
+      "error": {
+        "addonConfigNotFound": "Configuration de l'addon introuvable !",
+        "addonFileNotFound": "Fichier d'addon \"{}\" introuvable !",
+        "addonNotFound": "Addon <{}> introuvable !",
+        "outOfRange": "Indice de l'addon {} hors de portée",
+        "unsupportedFileType": "Fichier non pris en charge trouvé !",
+        "parsingEnabledAddonsList": "Erreur lors de l'analyse de la liste des addons activés",
+        "noAddonInstalled": "Aucun addon n'a été installé.",
+        "installationAborted": "Progression de l'installation annulée !"
+      },
+      "displayError": "Erreur : {}",
+      "removeAddonFromList": {
+        "fail": "Impossible de supprimer l'addon <{}> du fichier de configuration !",
+        "success": "Addon <{}> enlevé du fichier de configuration."
+      },
+      "addAddonToList": {
+        "invalidList": "Fichier de liste d'addons {} non valide, sauvegarde de {} et réinitialisation à la valeur par défaut",
+        "fail": "Impossible d'insérer l'addon {} dans {} !",
+        "success": "Addon <{}> ajouté dans le fichier de configuration."
+      },
+      "install": {
+        "installing": "Installation de l'addon <{}>...",
+        "error": {
+          "failToUncompress": {
+            "msg": "Échec de décompression de l'addon {} !",
+            "exitCode": "Code de sortie : {}",
+            "programOutput": "Sortie du programme :\n{}"
+          }
+        }
+      },
+      "uninstall": {
+        "success": "Addon <{}> désinstallé."
+      },
+      "autoInstall": {
+        "tip": {
+          "dirCreated": "Répertoire créé. Vous pouvez déplacer les fichiers d'addon compressés vers {} pour être installés au prochain lancement."
+        },
+        "working": "{} nouveau(x) addon(s) trouvé(s) à installer. En cours d'installation...",
+        "installed": "L'Addon {} a été installé.",
+        "installedCount": "{} addon(s) ont été installé."
+      },
+      "cmd": {
+        "output": {
+          "list": {
+            "overview": "Addons : {} addon(s) installé(s) :"
+          }
+        }
+      }
+    },
+    "loader": {
+      "loadScriptEngine": {
+        "error": {
+          "versionNotMatch": "La version du fichier <{}> du moteur de script pour {} ne correspond pas à la version de LiteLoader <{}>"
+        },
+        "success": "* ScriptEngine pour {} chargé."
+      },
+      "loadDotNetEngine": {
+        "error": {
+          "versionNotMatch": "La version du fichier <{}> de LiteLoader.NET ne correspond pas à la version de LiteLoader <{}>"
+        },
+        "success": "* .NET Engine chargé."
+      },
+      "loadMain": {
+        "loadingPlugins": "Chargement des plugins natifs...",
+        "loadedShellLink": "Plugin ShellLinked <{} => {}> chargé",
+        "loadedPlugin": "Plugin natif <{name}> chargé",
+        "done": "{} plugin(s) natif(s) chargé(s).",
+        "start": "Chargement des plugins natifs..."
+      },
+      "initNodeJsDirectories": {
+        "created": "Création du répertoire d'exécution de Node.js car il est introuvable."
+      }
+    },
+    "notice": {
+      "newForum": "Notre nouveau forum est en ligne ! -> {}",
+      "license": "LiteLoader est licencié sous {}",
+      "translateText": "Aidez-nous à traduire et améliorer le texte sur LL -> {}"
+    },
+    "pluginManager": {
+      "error": {
+        "invalidFileType": "Type de fichier de plugin {} invalide dans {}",
+        "noValidPluginFound": "Aucun plugin valide trouvé à {} !",
+        "failToRegisterPlugin": "Échec lors de l'enregistrement du plugin {} !",
+        "hasBeenRegistered": "Un plugin nommé {} a été enregistré",
+        "failToLoadPlugin": "Échec lors du chargement du plugin {} !",
+        "pluginNotFound": "Plugin <{}> introuvable"
+      },
+      "warning": {
+        "unloadDllNotFinished": "La fonction de déchargement des plugins dll n'est pas terminée.",
+        "reloadDllNotFinished": "La fonction de rechargement des plugins dll n'est pas terminée."
+      },
+      "reloadPlugin": {
+        "fail": "Échec lors du rechargement du plugin {} !"
+      }
+    },
+    "unzipNodeModules": {
+      "fail": "Échec de la décompression de node_modules.tar"
+    }
+  },
+  "llse": {
+    "init": {
+      "llMoney": {
+        "notFound": "LLMoney.dll introuvable,le système d'économie ScriptEngine ne fonctionnera pas"
+      }
+    },
+    "api": {
+      "ll": {
+        "require": {
+          "success": " - Plugin chargé avec succès par require. Chargé : ",
+          "fail": " - Échec du chargement du plugin par require",
+          "download": {
+            "success": "- Require téléchargé avec succès ! Chemin d'accès :",
+            "fail": "- Échec du téléchargement de plugin par require ! Code :"
+          }
+        }
+      }
+    },
+    "apiHelp": {
+      "parseJson": {
+        "fail": "Erreur JSON parse"
+      }
+    },
+    "loader": {
+      "loadDepends": {
+        "success": "Dépendance {} chargée.",
+        "fail": "Échec de chargement de la dépendance {}"
+      },
+      "loadMain": {
+        "start": "Chargement des plugins {type}...",
+        "done": "{count} plugin(s) {type} chargé(s).",
+        "nodejs": {
+          "installPack": {
+            "fail": "Impossible d'installer le plugin pack {}, veuillez vérifier votre fichier package.json !",
+            "start": "Pack de plugin Node.js «{path}» trouvé ! Essayez d'installer..."
+          },
+          "ignored": "Aucun fichier package.json trouvé dans le répertoire {path}, ignoré."
+        },
+        "loadedPlugin": "Plugin {type} <{name}> chargé.",
+        "installPluginPack": {
+          "done": "{count} pack(s) de plugins {type} chargé(s)."
+        }
+      },
+      "nodejs": {
+        "executeNpmInstall": {
+          "success": "NPM fini avec succès.",
+          "start": "Exécution de \"npm install\" pour le plugin {name}...",
+          "fail": "Une erreur est survenue. Code de sortie : {code}"
+        },
+        "register": {
+          "fail": "Échec de l'enregistrement du plugin {name} !"
+        }
+      }
+    }
+  },
+  "permapi": {
+    "data": {
+      "process": {
+        "fail": "Impossible de traiter le fichier de données : {}"
+      },
+      "read": {
+        "fail": "Echec de lecture du fichier de données dans {}"
+      },
+      "save": {
+        "fail": "Echec de lecture du fichier de données dans: {}"
+      }
+    },
+    "cmd": {
+      "error": {
+        "invalidCommand": "Commande invalide. Tapez '/help perm' pour obtenir de l'aide.",
+        "internal": "Erreur interne. Veuillez réessayer plus tard.",
+        "roleAlreadyExists": "Ce rôle existe déjà.",
+        "permissionAlreadyExists": "La permission existe déjà.",
+        "invalidPermissionName": "Nom de la permission invalide.",
+        "roleNotFound": "Rôle introuvable.",
+        "permissionNotFound": "Permission introuvable.",
+        "playerNotFound": "Joueur introuvable.",
+        "modifyMembersOfEveryone": "Le rôle est un rôle pour tout le monde. Vous ne pouvez pas modifier les membres de celui-ci.",
+        "jsonParsingError": "Erreur JSON parse: {}",
+        "missingArgument": "Argument manquant : {}",
+        "permissionDenied": "Vous n'avez pas la permission d'utiliser cette commande slash."
+      },
+      "output": {
+        "create": {
+          "role": {
+            "success": "Rôle créé."
+          },
+          "perm": {
+            "success": "Permission créée."
+          }
+        },
+        "delete": {
+          "role": {
+            "success": "Rôle supprimé."
+          },
+          "perm": {
+            "success": "Permission supprimée."
+          }
+        },
+        "list": {
+          "role": {
+            "none": "Aucun rôle à afficher.",
+            "header": "§b§lListe des rôles :",
+            "isMember": "§r(§eMembre§r)"
+          },
+          "perm": {
+            "none": "Aucune permission à afficher.",
+            "header": "§b§lListe des Permissions :"
+          }
+        },
+        "view": {
+          "player": {
+            "yourStatus": "§b§lVotre statut de permission actuel :",
+            "status": "§b§lLe statut de permission actuel de {} :",
+            "rolesTitle": "- §eRôles :",
+            "permissionsTitle": "- §ePermissions :"
+          },
+          "role": {
+            "header": "§b§lInfos du rôle :",
+            "info": {
+              "name": "+ §eNom§r : {roleName}",
+              "displayName": "+ §eNom d'affichage§r: {}",
+              "priority": "+ §ePriorité§r : {}",
+              "membersNone": "+ §eMembres§r : Aucun",
+              "members": "+ §eMembres§r :",
+              "permissionsNone": "+ §ePermissions§r : Aucune",
+              "permissions": "+ §ePermissions §r:"
+            },
+            "note": {
+              "admin": "※ {}§r est un rôle spécial. Toutes les permissions seront activées par défaut.",
+              "everyone": "※ {}§r est un rôle spécial. Tous les joueurs sont membres de ce rôle."
+            },
+            "enabled": "§a(Activé)§r",
+            "disabled": "§c(Désactivé)§r",
+            "enabledWithExtra": "§b(Activé avec des restrictions supplémentaires)§r"
+          },
+          "perm": {
+            "header": "§b§lInfos sur les Permissions :",
+            "info": {
+              "name": "+ §eNom§r : {permissionName}",
+              "desc": "+ §eDescription§r : {}"
+            }
+          }
+        },
+        "update": {
+          "role": {
+            "member": {
+              "add": {
+                "success": "Membre {name}§r({xuid}) ajouté au rôle {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Membre {name}§r({xuid}) enlevé du rôle {roleDisplayName}§r."
+              }
+            },
+            "perm": {
+              "add": {
+                "success": "Permission {name}§r ajoutée au rôle {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Permission {name}§r retirée du rôle {roleDisplayName}§r."
+              },
+              "set": {
+                "enabled": "§aactivé(e)§r",
+                "disabled": "§cdésactivé(e)§r",
+                "success": "Permission {name}§r du rôle {roleDisplayName}§r {enable}."
+              }
+            },
+            "priority": {
+              "set": {
+                "success": "Priorité du rôle {roleDisplayName}§r définie à {priority}."
+              }
+            },
+            "displayName": {
+              "set": {
+                "success": "Nom d'affichage du rôle <{roleName}§r> défini à {displayName}§r."
+              }
+            }
+          },
+          "player": {
+            "role": {
+              "add": {
+                "success": "Le joueur {name}§r({xuid}) a été ajouté au rôle {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Le joueur {name}§r({xuid}) a été retiré du rôle {roleDisplayName}§r."
+              }
+            }
+          }
+        },
+        "noDesc": "[Aucune description]",
+        "permissionNameExamples": "Exemples de noms de permissions : 'Identifiant:NomDePermission', 'a:b:c:d_e_f.g'"
+      }
+    }
+  }
+}

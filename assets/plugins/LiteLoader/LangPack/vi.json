@@ -12,7 +12,7 @@
       "checkRunningBDS": {
         "detected": "Đã phát hiện ra sự tồn tại của một trình chạy BDS khác với cùng một đường dẫn!",
         "tip": "Điều này có thể khiến cổng mạng và thế giới bị chiếm",
-        "ask": "Bạn có muốn kết thúc trình chạy với PID {} không? (y=Có, n=Không)"
+        "ask": "Bạn có muốn kết thúc trình chạy với PID {} không? (y=Có, n=Không, e=Thoát khỏi)"
       },
       "fixAllowList": {
         "removeEmptyAllowlist": "allowlist.json trống! Đang xóa...",
@@ -21,7 +21,7 @@
       },
       "warning": {
         "inDevMode": "Hiện đang ở chế độ nhà phát triển!",
-        "betaVersion": "Hiện đang sử dụng phiên bản beta.",
+        "betaVersion": "Hiện đang sử dụng phiên bản thử nghiệm (beta).",
         "productionEnv": "VUI LÒNG KHÔNG SỬ DỤNG TRONG MÔI TRƯỜNG SẢN XUẤT!",
         "protocolVersionNotMatch": {
           "1": "Phiên bản giao thức không khớp, phiên bản mục tiêu: {}, phiên bản hiện tại: {}.",
@@ -30,21 +30,21 @@
       }
     },
     "antiAbnormalItem": {
-      "detected": "Lỗi khi đọc dữ liệu vật phẩm người chơi({})!",
+      "detected": "Người chơi ({}) lỗi dữ liệu vật phẩm!",
       "itemInfo": "Vật phẩm: {}"
     },
     "cmd": {
       "tpdim": {
-        "success": "Dịch chuyển người chơi {} đến {} ({:2f}, {:2f}, {:2f})",
+        "success": "Dịch chuyển đối tượng {} đến {} ({:2f}, {:2f}, {:2f})",
         "error": {
-          "noActorTeleported": "Không có thực thể nào được dịch chuyển",
-          "noActorSpecified": "Không có thực thể nào được chỉ định"
+          "noActorTeleported": "Không có đối tượng nào được dịch chuyển",
+          "noActorSpecified": "Không có đối tượng nào được chỉ định"
         },
-        "invalidDimid": "ID Không gian không hợp kệ: {}"
+        "invalidDimid": "ID không gian không hợp lệ: {}"
       },
       "listPlugin": {
         "overview": "Danh sách plugin [{}]",
-        "tip": "* Gõ lệnh \"ll list <Plugin Name>\" để biết thêm thông tin"
+        "tip": "* Send command \"ll list <Tên plugin>\" for more information"
       },
       "pluginInfo": {
         "title": "Plugin <{}>",
@@ -56,15 +56,15 @@
         "msg": "Bedrock Dedicated Server {}\n- với LiteLoaderBDS {}\n- Giao thức mạng: {}"
       },
       "help": {
-        "msg": "[Giới thiệu]\nLiteLoaderBDS là một trình tải plugin không chính thức để phát triển modding cho Bedrock Dedicated Server.\nNó cung cấp một kho API khổng lồ, một hệ thống sự kiện mạnh mẽ và rất nhiều giao diện tiện ích được đóng gói.\n[Github]\n-> https://github.com/LiteLDev/LiteLoaderBDS <-\nChào mừng bạn đến với dự án github của chúng tôi để biết thêm thông tin ~"
+        "msg": "[Giới thiệu]\nLiteLoaderBDS là một trình tải plugin không chính thức để phát triển mod cho Bedrock Dedicated Server.\nNó cung cấp một kho API khổng lồ, một hệ thống sự kiện mạnh mẽ và rất nhiều giao diện tiện ích được đóng gói.\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nChào mừng bạn đến với dự án github của chúng tôi để biết thêm thông tin ~"
       },
       "loadPlugin": {
         "success": "Đã tải plugin <{}>.",
         "fail": "Không tải được plugin {}"
       },
       "unloadPlugin": {
-        "success": "Đã hủy tải plugin <{}>.",
-        "fail": "Không hủy tải được plugin <{}>"
+        "success": "Đã dỡ plugin <{}>.",
+        "fail": "Không dỡ được plugin <{}>"
       },
       "reloadPlugin": {
         "success": "Đã tải lại plugin <{}>.",
@@ -73,6 +73,29 @@
       "reloadAllPlugins": {
         "success": "{} plugin đã được tải lại thành công.",
         "fail": "Không tải lại được bất kỳ plugin nào"
+      },
+      "settings": {
+        "set": {
+          "success": "Thay đổi cài đặt {} sang {} thành công."
+        },
+        "get": {
+          "success": "Nhận cài đặt {} thành công. Giá trị: "
+        },
+        "delete": {
+          "success": "Xoá cài đặt {} thành công.",
+          "error": {
+            "emptyKey": "JsonPointer không được để trống!"
+          }
+        },
+        "reload": {
+          "success": "Cài đặt đã được tải lại thành công."
+        },
+        "save": {
+          "success": "Lưu cài đặt thành công."
+        },
+        "list": {
+          "success": "Danh sách cài đặt:"
+        }
       },
       "error": {
         "noPathSpecified": "Bạn phải cung cấp đường dẫn hợp lệ của plugin LiteLoader!",
@@ -103,61 +126,61 @@
           "4": "Chúng tôi thực sự khuyên bạn nên bật nó để đảm bảo sự ổn định của máy chủ"
         },
         "conflicts": {
-          "1": "Builtin CrashLogger is not enabled because plugin <{}> conflicts with it",
-          "2": "There will be no crash log when unhandled exception occurs,",
-          "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
-          "4": "Since CrashLogger is an important component which ensures server stability",
-          "5": "We recommend you to think twice about the usage of plugin <{}>"
+          "1": "Builtin CrashLogger không được bật vì plugin <{}> xung đột với nó",
+          "2": "Sẽ không có nhật ký sự cố khi ngoại lệ được xử lý xảy ra",
+          "3": "điều này khiến cho việc tìm ra lý do của sự cố và nguồn gốc của sự cố gần như không thể.",
+          "4": "Vì CrashLogger là một thành phần quan trọng đảm bảo sự ổn định của máy chủ",
+          "5": "Chúng tôi khuyên bạn nên suy nghĩ kỹ về việc sử dụng plugin <{}>"
         }
       },
       "init": {
         "fail": {
-          "msg": "Builtin CrashLogger failed to start!",
-          "tip": "There will be no crash log when unhandled exception occurs."
+          "msg": "CrashLogger không khởi động được!",
+          "tip": "Sẽ không có nhật ký sự cố khi ngoại lệ được xử lý xảy ra."
         }
       }
     },
     "addonsHelper": {
       "error": {
-        "addonConfigNotFound": "Addon config not found!",
-        "addonFileNotFound": "Addon file \"{}\" not found!",
-        "addonNotFound": "Addon <{}> not found!",
-        "outOfRange": "Addon index {} out of range",
-        "unsupportedFileType": "Unsupported type of file found!",
-        "parsingEnabledAddonsList": "Error when parsing enabled addons list",
-        "noAddonInstalled": "No addon was installed.",
-        "installationAborted": "Install progress aborted!"
+        "addonConfigNotFound": "Không tìm thấy config Addon!",
+        "addonFileNotFound": "Không tìm thấy tệp Addon \"{}\"!",
+        "addonNotFound": "Addon <{}> không tìm thấy!",
+        "outOfRange": "Index Addon {} nằm ngoài phạm vi",
+        "unsupportedFileType": "Tìm thấy file không được hỗ trợ!",
+        "parsingEnabledAddonsList": "Lỗi khi phân tích cú pháp danh sách Addon đã bật",
+        "noAddonInstalled": "Không có Addon nào được cài đặt.",
+        "installationAborted": "Tiến trình cài đặt đã bị hủy bỏ!"
       },
-      "displayError": "Error: {}",
+      "displayError": "Lỗi: {}",
       "removeAddonFromList": {
-        "fail": "Fail to remove addon <{}> from config file!",
-        "success": "Removed addon <{}> from config file."
+        "fail": "Không xóa được addon <{}> khỏi tệp config!",
+        "success": "Không xóa được addon <{}> khỏi tệp config."
       },
       "addAddonToList": {
-        "invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
-        "fail": "Fail to insert the addon {} into {}!",
-        "success": "Added addon <{}> to config file."
+        "invalidList": "Tệp danh sách Addon không hợp lệ {}, sao lưu vào {} và đặt lại về mặc định",
+        "fail": "Không thể chèn Addon {} vào {}!",
+        "success": "Đã thêm Addon <{}> vào config."
       },
       "install": {
-        "installing": "Installing addon <{}>...",
+        "installing": "Đang cài đặt Addon <{}>...",
         "error": {
           "failToUncompress": {
-            "msg": "Fail to uncompress addon {}!",
-            "exitCode": "Exit Code: {}",
-            "programOutput": "Program Output:\n{}"
+            "msg": "Không thể giải nén Addon {}!",
+            "exitCode": "Mã thoát: {}",
+            "programOutput": "Đầu ra thiết bị"
           }
         }
       },
       "uninstall": {
-        "success": "Addon <{}> uninstalled."
+        "success": "Đã gỡ cài đặt Addon <{}>."
       },
       "autoInstall": {
         "tip": {
-          "dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch."
+          "dirCreated": "Đã tạo thư mục. Bạn có thể di chuyển các tệp Addon đã nén vào {} để cài đặt vào lần khởi chạy tiếp theo."
         },
-        "working": "{} new addon(s) found to install. Working...",
-        "installed": "Addon {} has beed installed.",
-        "installedCount": "{} addon(s) was installed."
+        "working": "{} tìm thấy (các) tiện ích mới để cài đặt. Đang làm việc...",
+        "installed": "Tiện ích {} đã được cài đặt.",
+        "installedCount": "{} (các) tiện ích đã được cài đặt."
       },
       "cmd": {
         "output": {
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "Node.js runtime directory no found, created."
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "Failed to reload plugin {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "Failed to unzip node_modules.tar"
     }
   },
   "llse": {
@@ -379,8 +402,8 @@
                 "success": "Quyền {name}§r đã bị xóa khỏi Vai trò {roleDisplayName}§r."
               },
               "set": {
-                "enabled": "§abật",
-                "disabled": "§ctắt",
+                "enabled": "§abật§r",
+                "disabled": "§ctắt§r",
                 "success": "Quyền {name}§r của Vai trò {roleDisplayName}§r đã được {enable}."
               }
             },
