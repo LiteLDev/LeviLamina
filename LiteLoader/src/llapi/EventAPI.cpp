@@ -2017,6 +2017,20 @@ TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@
     return spawn;
 }
 
+TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z",
+    int a1) {
+    IF_LISTENED(MobSpawnEvent) {
+        MobSpawnEvent ev{};
+        ev.mTypeName = "minecraft:ender_dragon";
+        ev.mPos = Vec3::ZERO;
+        ev.mDimensionId = 2;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(MobSpawnEvent);
+    return original(this, a1);
+}
+
 #include "llapi/impl/FormPacketHelper.h"
 #include "llapi/mc/Json.hpp"
 ////////////// FormResponsePacket //////////////

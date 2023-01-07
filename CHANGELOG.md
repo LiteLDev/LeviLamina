@@ -1,16 +1,18 @@
-<!-- Version: 2.9.0 -->
+<!-- Version: 2.9.1 -->
 
 # LiteLoader Release Note
 
-**Adapted to BDS-1.19.50 | ProtocolVersion 560**
+**Support BDS 1.19.50 & 1.19.51 | ProtocolVersion 560**
 
 ## New features
-- Support 1.19.50 @dreamguxiang @ShrBox
-- Add offline nbt API #305 @Tsubasa6848
-- Add more parameters for LLSE PlayerEffectChangedEvent #922 @Tsubasa6848
-- Add Player::getAllUuid @Tsubasa6848
-- Add PlayerInfo::getUUIDByXuid #940 @Tsubasa6848
-- Add data.name2uuid and data.xuid2uuid for LLSE #940 @Tsubasa6848
+- Add offline score API to ScoreboardAPI @kkj9333
+- Add CommandOutputParameters support for LLSE @StarsDream00
+- Add methods to change attributes in LLSE @shishkevichd
+- Add offline score API for LLSE @Tsubasa6848
 
 ## Bug Fixes
-- Fix isMinecart always true #923 @StarsDream00
+- Fix Player::sendTextTalkPacket @ShrBox
+- Refactor checkRunningBDS & Fix #912 @pa733
+- Fix includes in I18nAPI.h #969 @JasonZyt
+- Fix a bug in SplitStrWithPattern algorithm @yqs112358
+- Fix the bug of not listening to the respawn of EnderDragon @wzyyyyyyy

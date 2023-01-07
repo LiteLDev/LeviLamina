@@ -74,6 +74,29 @@
         "success": "{} 個のプラグインが正常にリロードされました",
         "fail": "プラグインのリロードに失敗しました"
       },
+      "settings": {
+        "set": {
+          "success": "設定は正常に{}に設定されました。"
+        },
+        "get": {
+          "success": "設定の {} の取得に成功しました。 値: "
+        },
+        "delete": {
+          "success": "設定の {} の削除に成功しました。",
+          "error": {
+            "emptyKey": "JsonPointer を空にすることはできません！"
+          }
+        },
+        "reload": {
+          "success": "設定が正常に再読み込みされました。"
+        },
+        "save": {
+          "success": "設定は正常に保存されました。"
+        },
+        "list": {
+          "success": "設定リスト:"
+        }
+      },
       "error": {
         "noPathSpecified": "LiteLoader プラグインの有効なパスを指定してください。",
         "noNameSpecified": "LiteLoader プラグインの有効な名前を入力してください。"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "NodeJs ランタイムファイルが見つかりませんでした。"
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "プラグイン {} の読み込みに失敗しました"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "node_modules.tarの解凍に失敗しました。"
     }
   },
   "llse": {

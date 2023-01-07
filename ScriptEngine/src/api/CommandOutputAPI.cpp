@@ -64,6 +64,16 @@ Local<Value> CommandOutputClass::success(const Arguments& args) {
         }
         CHECK_ARG_TYPE(args[0], ValueKind::kString);
         auto msg = args[0].toStr();
+        if (args.size() >= 2) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+            std::vector<CommandOutputParameter> param{};
+            auto paramArr = args[1].asArray();
+            for (int i = 0; i < paramArr.size(); ++i) {
+                param.push_back(paramArr.get(i).toStr());
+            }
+            get()->success(msg, param);
+            return Boolean::newBoolean(true);
+        }
         get()->success(msg);
         return Boolean::newBoolean(true);
     }
@@ -74,6 +84,21 @@ Local<Value> CommandOutputClass::addMessage(const Arguments& args) {
     try {
         CHECK_ARG_TYPE(args[0], ValueKind::kString);
         auto msg = args[0].toStr();
+        if (args.size() >= 2) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+            std::vector<CommandOutputParameter> param{};
+            auto paramArr = args[1].asArray();
+            for (int i = 0; i < paramArr.size(); ++i) {
+                param.push_back(paramArr.get(i).toStr());
+            }
+            if (args.size() >= 3) {
+                CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+                get()->addMessage(msg, param, (CommandOutputMessageType)args[2].toInt());
+                return Boolean::newBoolean(true);
+            }
+            get()->addMessage(msg, param, (CommandOutputMessageType)0);
+            return Boolean::newBoolean(true);
+        }
         get()->addMessage(msg);
         return Boolean::newBoolean(true);
     }
@@ -86,6 +111,16 @@ Local<Value> CommandOutputClass::error(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     try {
         auto msg = args[0].toStr();
+        if (args.size() >= 2) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+            std::vector<CommandOutputParameter> param{};
+            auto paramArr = args[1].asArray();
+            for (int i = 0; i < paramArr.size(); ++i) {
+                param.push_back(paramArr.get(i).toStr());
+            }
+            get()->error(msg, param);
+            return Boolean::newBoolean(true);
+        }
         get()->error(msg);
         return Boolean::newBoolean(true);
     }

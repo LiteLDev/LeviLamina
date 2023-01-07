@@ -9,6 +9,7 @@
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
+#include "llapi/mc/ScoreboardId.hpp"
 class Player;
 class Objective;
 struct PlayerScore;
@@ -17,7 +18,7 @@ struct ScoreInfo {
     Objective* mObjective;
     bool mValid;
     int mValue;
-	
+
     Objective* getObjective() {
         return mObjective;
     }
@@ -36,11 +37,90 @@ class Scoreboard {
 #define AFTER_EXTRA
 // Add new members to class
 #define ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
-public:
+protected:
+    /**
+     * @brief return new available ScoreboardId, don't use directly
+     *
+     * @return ScoreboardId const reference
+     */
+    LIAPI const ScoreboardId& nextScoreboardId();
 
     /**
+     * @brief createa new available ScoreboardId for Entity by  PlayerScoreBoardId.
+     *
+     * by ActorUniqueID can be added too, but needs check anotherway.
+     * The user should check PlayerScoreBoardId is valid or not.
+     * @return bool
+     */
+    bool createScoreboardId(struct PlayerScoreboardId const& pid);
+
+public:
+    /**
+     * @brief create a new available ScoreboardId for Player by mce::UUID.
+     *
+     * The user should check uuid's validity.
+     * @return bool
+     */
+    LIAPI bool createScoreboardId(mce::UUID const& uuid);
+    /**
+     * @brief get a new available ScoreboardId for Player by mce::UUID.
+     *
+     * The user should check uuid's validity.
+     * @return ScoreboardId
+     */
+    LIAPI ScoreboardId getScoreboardId(mce::UUID const& uuid);
+    /**
+     * @brief get or create a new available ScoreboardId for Player by mce::UUID.
+     *
+     * The user should check uuid's validity.
+     * @return ScoreboardId
+     */
+    LIAPI static ScoreboardId getorCreateScoreboardId(mce::UUID const& uuid);
+    /**
+     * @brief modify Score for Player by mce::UUID forcely.
+     *
+     * Works whether Players are online or not.
+     * Create forcibly if the objective does not exist.
+     * If the player exists but the ScoreboardId does not exist, create it forcibly.
+     * return false only when mce::UUID is wrong or runtime-error.
+     * @return bool
+     */
+    LIAPI static bool forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
+                                             PlayerScoreSetFunction pf);
+    /**
+     * @brief modify Score for Player by Xuid forcely.
+     *
+     * Xuid must be recorded by PlayerInfo first!
+     * works whether Players are online or not.
+     * Create forcibly if the objective does not exist.
+     * If the player exists but the ScoreboardId does not exist, create it forcibly.
+     * return false only when Xuid is wrong or runtime-error.
+     * @return bool
+     */
+    LIAPI static bool forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val,
+                                             PlayerScoreSetFunction pf);
+    /**
+     * @brief query Score for Player by mce::UUID.
+     *
+     * works whether Players are online or not.
+     * return std::nullopt if mce::UUID is wrong or the objective does not exist-error or Player dont have a
+     * ScoreboardId.
+     * @return std::optional<int>
+     */
+    LIAPI static std::optional<int> queryPlayerScore(mce::UUID const& uuid, std::string const& objname);
+    /**
+     * @brief query Score for Player by Xuid.
+     *
+     * Xuid must be recorded by PlayerInfo first!
+     * works whether Players are online or not.
+     * return std::nullopt if Xuid is wrong or the objective does not exist-error or Player dont have a
+     * ScoreboardId.
+     * @return std::optional<int>
+     */
+    LIAPI static std::optional<int> queryPlayerScore(xuid_t const& xuid, std::string const& objname);
+    /**
      * @brief Create a new objective.
-     * 
+     *
      * @param objname The objective name
      * @param displayName The display name of the objective
      * @return The objective
@@ -54,7 +134,7 @@ public:
 
     /**
      * @brief Remove the score of a player from an objective.
-     * 
+     *
      * @param objname The objective name
      * @param player The player
      * @return True if removed; otherwise false.

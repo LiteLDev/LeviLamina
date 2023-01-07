@@ -12,7 +12,7 @@
       "checkRunningBDS": {
         "detected": "Detected the existence of another BDS process with the same path!",
         "tip": "This may cause the network port and the level to be occupied",
-        "ask": "Do you want to terminate the process with PID {}?  (y=Yes, n=No)"
+        "ask": "Do you want to terminate the process with PID {}?  (y=Yes, n=No, e=Exit)"
       },
       "fixAllowList": {
         "removeEmptyAllowlist": "allowlist.json is empty! Removing...",
@@ -212,12 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "Node.js runtime directory no found, created."
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
-      },
-      "loadParticleAPI": {
-        "success": "* ParticleAPI loaded."
       }
     },
     "notice": {
