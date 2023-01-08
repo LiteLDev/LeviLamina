@@ -68,14 +68,14 @@ public:
      * The user should check uuid's validity.
      * @return ScoreboardId
      */
-    LIAPI ScoreboardId getScoreboardId(mce::UUID const& uuid);
+    LIAPI ScoreboardId getScoreboardId(mce::UUID const& uuid) const;
     /**
      * @brief get or create a new available ScoreboardId for Player by mce::UUID.
      *
      * The user should check uuid's validity.
      * @return ScoreboardId
      */
-    LIAPI static ScoreboardId getorCreateScoreboardId(mce::UUID const& uuid);
+    LIAPI static ScoreboardId getOrCreateScoreboardId(mce::UUID const& uuid);
     /**
      * @brief modify Score for Player by mce::UUID forcely.
      *
