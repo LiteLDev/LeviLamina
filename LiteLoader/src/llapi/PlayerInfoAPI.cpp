@@ -1,7 +1,5 @@
 #include "llapi/EventAPI.h"
-#include "llapi/LoggerAPI.h"
 #include "llapi/mc/ServerPlayer.hpp"
-#include "llapi/mc/PropertiesSettings.hpp"
 #include "liteloader/LiteLoader.h"
 #include "llapi/PlayerInfoAPI.h"
 #include <exception>
@@ -33,7 +31,7 @@ std::optional<Info> findByName(const std::string& name) {
             return info;
         }
     }
-    return std::optional<Info>();
+    return {};
 }
 std::optional<Info> findByXuid(const xuid_t& xuid) {
     for (Info info : data) {
@@ -41,7 +39,7 @@ std::optional<Info> findByXuid(const xuid_t& xuid) {
             return info;
         }
     }
-    return std::optional<Info>();
+    return {};
 }
 std::optional<Info> findByUUID(const std::string& uuid) {
     for (Info info : data) {
@@ -49,7 +47,7 @@ std::optional<Info> findByUUID(const std::string& uuid) {
             return info;
         }
     }
-    return std::optional<Info>();
+    return {};
 }
 
 std::vector<std::string> getAllPlayerNames() {
