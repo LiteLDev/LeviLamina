@@ -398,22 +398,6 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Ac
     return bs;
 }
 
-THook(void*, "?write@StartGamePacket@@UEBAXAEAVBinaryStream@@@Z", void* a, void* b) {
-    if (!ll::globalConfig.enableClientChunkPreGeneration) {
-        dAccess<bool, 1280>(a) = false;
-    }
-    return original(a, b);
-}
-
-THook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z", __int64 a1, int a2) {
-    if (!ll::globalConfig.enableClientChunkPreGeneration) {
-        if (a2 == 59) {
-            return 0;
-        }
-    }
-    return original(a1, a2);
-}
-
 //From https://github.com/dreamguxiang/BETweaker
 enum class AbilitiesLayer;
 enum class SubClientId;

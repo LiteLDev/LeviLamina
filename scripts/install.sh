@@ -2,7 +2,7 @@
 # Install wine
 codename=$(lsb_release -c --short)
 BDSVER="1.19.51.01"
-LLVER="2.9.0"
+LLVER="2.9.1"
 sudo apt install -y wget unzip
 sudo dpkg --add-architecture i386
 sudo mkdir -pm755 /etc/apt/keyrings

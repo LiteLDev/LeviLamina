@@ -128,9 +128,7 @@ mc.listen("onServerStarted", () => {
 #### 安装脚本(Ubuntu)
 
 ```
-wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh
-chmod +x install.sh
-./install.sh
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh && sh install.sh
 ```
 
 #### Docker

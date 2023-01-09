@@ -18,7 +18,8 @@
 struct ExtendedStreamReadResult {
 
 #define AFTER_EXTRA
-
+    StreamReadResult result;
+    std::string resultContext;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTENDEDSTREAMREADRESULT
 public:
