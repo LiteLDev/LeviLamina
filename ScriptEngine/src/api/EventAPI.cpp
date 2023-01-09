@@ -1033,7 +1033,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onMobSpawn:
             Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMobSpawn) {
-                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId), EntityClass::newEntity((Actor*)(ev.mMob)));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
             });

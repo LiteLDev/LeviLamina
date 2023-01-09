@@ -681,6 +681,7 @@ public:
     string mTypeName;
     Vec3 mPos;
     int mDimensionId = -1;
+    Mob* mMob;
 };
 
 /* endregion */
