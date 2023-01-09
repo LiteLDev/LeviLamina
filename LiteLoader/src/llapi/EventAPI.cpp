@@ -1994,11 +1994,13 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
         IF_LISTENED(MobSpawnEvent) {
             MobSpawnEvent ev{};
             ev.mTypeName = a3->getCanonicalName();
-            ev.mMob = en;
             ev.mPos = a5;
             ev.mDimensionId = a2->getDimensionId();
-            if (!ev.call())
+            ev.mMob = en;
+            if (!ev.call()) {
+                en->despawn();
                 return nullptr;
+            }
         }
         IF_LISTENED_END(MobSpawnEvent)
         return en;
