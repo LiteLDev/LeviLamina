@@ -680,8 +680,8 @@ class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
 public:
     string mTypeName;
     Vec3 mPos;
-    Mob* mMob;
     int mDimensionId = -1;
+    Mob* mMob;
 };
 
 /* endregion */
