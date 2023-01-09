@@ -1986,16 +1986,23 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
 ////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
-    IF_LISTENED(MobSpawnEvent) {
-        MobSpawnEvent ev{};
-        ev.mTypeName = a3->getCanonicalName();
-        ev.mPos = a5;
-        ev.mDimensionId = a2->getDimensionId();
-        if (!ev.call())
-            return nullptr;
+    auto en = original(this, a2, a3, a4, a5, a6, a7, a8);
+    if (en == nullptr) {
+        return en;
     }
-    IF_LISTENED_END(MobSpawnEvent)
-    return original(this, a2, a3, a4, a5, a6, a7, a8);
+    else {
+        IF_LISTENED(MobSpawnEvent) {
+            MobSpawnEvent ev{};
+            ev.mTypeName = a3->getCanonicalName();
+            ev.mMob = en;
+            ev.mPos = a5;
+            ev.mDimensionId = a2->getDimensionId();
+            if (!ev.call())
+                return nullptr;
+        }
+        IF_LISTENED_END(MobSpawnEvent)
+        return en;
+    }
 }
 
 TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z",
