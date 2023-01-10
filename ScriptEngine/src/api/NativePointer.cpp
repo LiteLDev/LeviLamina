@@ -1,6 +1,7 @@
 #include "api/APIHelp.h"
 #include "api/NativeAPI.h"
 #include "api/NativeStdString.h"
+#include "api/EntityAPI.h"
 #include <llapi/utils/TypeConversionHelper.hpp>
 
 //////////////////// NativePointer ////////////////////
@@ -35,6 +36,7 @@ ClassDefine<NativePointer>
             .instanceProperty("bool", &NativePointer::getBool, &NativePointer::setBool)
 
             .instanceFunction("asStdString", &NativePointer::asStdString)
+            .instanceFunction("asEntity", &NativePointer::asEntity)
             .build();
 
 NativePointer::NativePointer(void* p)
@@ -399,4 +401,11 @@ Local<Value> NativePointer::asStdString() {
         return NativeStdString::newNativeStdString((std::string*)mPtr);
     }
     CATCH("Fail in NativePointer::asStdString!")
+}
+
+Local<Value> NativePointer::asEntity() {
+    try {
+        return EntityClass::newEntity((Actor*)mPtr);
+    }
+    CATCH("Fail in NativePointer::asEntity!")
 }

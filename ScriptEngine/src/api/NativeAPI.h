@@ -194,6 +194,7 @@ public:
     Local<Value> getBool();
 
     Local<Value> asStdString();
+    Local<Value> asEntity();
 };
 
 class NativePatch : public ScriptClass {
