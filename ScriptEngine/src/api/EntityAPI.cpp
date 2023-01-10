@@ -74,6 +74,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
+        .instanceFunction("despawn", &EntityClass::despawn)
+        .instanceFunction("remove", &EntityClass::remove)
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
         .instanceFunction("setHealth", &EntityClass::setHealth)
@@ -830,6 +832,30 @@ Local<Value> EntityClass::kill(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in killEntity!")
+}
+
+Local<Value> EntityClass::despawn(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->despawn();
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in despawnEntity!")
+}
+
+Local<Value> EntityClass::remove(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->remove();
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in removeEntity!")
 }
 
 Local<Value> EntityClass::isPlayer(const Arguments& args) {
