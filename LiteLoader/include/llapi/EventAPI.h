@@ -28,6 +28,8 @@ copies or substantial portions of the Software.
 #include "llapi/LLAPI.h"
 #include "llapi/utils/WinHelper.h"
 #include "llapi/mc/AABB.hpp"
+#include "llapi/mc/EnderDragon.hpp"
+#include "llapi/mc/BlockLegacy.hpp"
 
 class Actor;
 class ServerPlayer;
@@ -42,6 +44,8 @@ class CommandRegistry;
 class MobEffectInstance;
 class Container;
 class WitherBoss;
+class EnderDragon;
+class BlockLegacy;
 class ArmorStand;
 class Objective;
 struct ScoreboardId;
@@ -629,6 +633,12 @@ class WitherBossDestroyEvent : public EventTemplate<WitherBossDestroyEvent> {
 public:
     WitherBoss* mWitherBoss = nullptr;
     AABB mDestroyRange{{}, {}};
+};
+
+class EnderDragonDestroyEvent : public EventTemplate<EnderDragonDestroyEvent> {
+public:
+    EnderDragon* mEnderDragon = nullptr;
+    BlockLegacy* mBlockLegacy = nullptr;
 };
 
 class EntityRideEvent : public EventTemplate<EntityRideEvent> {
