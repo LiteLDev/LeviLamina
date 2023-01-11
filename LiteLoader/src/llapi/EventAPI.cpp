@@ -261,6 +261,7 @@ DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
 DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
 DECLARE_EVENT_DATA(WitherBossDestroyEvent);
+DECLARE_EVENT_DATA(EnderDragonDestroyEvent);
 DECLARE_EVENT_DATA(EntityRideEvent);
 DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
@@ -1096,7 +1097,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockS
 
 /////////////////// HopperSearchItem ///////////////////
 TClasslessInstanceHook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
-                       BlockSource* bs, void* container, Vec3* pos) {
+                       BlockSource* bs, Container* container, Vec3* pos) {
     bool isMinecart = dAccess<bool>(this, 5); // IDA Hopper::Hopper
 
     IF_LISTENED(HopperSearchItemEvent) {
@@ -1118,7 +1119,7 @@ TClasslessInstanceHook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NA
 
 /////////////////// HopperPushOut ///////////////////
 TClasslessInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
-                       BlockSource* bs, void* container, Vec3* pos, int a5) {
+                       BlockSource* bs, Container* container, Vec3* pos, int a5) {
     IF_LISTENED(HopperPushOutEvent) {
         HopperPushOutEvent ev{};
         ev.mPos = *pos;
@@ -1662,6 +1663,22 @@ TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVB
     original(this, a2, aabb, a4, a5, a6);
 }
 
+////////////// EnderDragonDestroy //////////////
+#include <llapi/mc/EnderDragon.hpp>
+#include <llapi/mc/BlockLegacy.hpp>
+TInstanceHook(bool, "?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z",
+              EnderDragon, BlockLegacy* bl) {
+    IF_LISTENED(EnderDragonDestroyEvent) {
+        EnderDragonDestroyEvent ev{};
+        ev.mEnderDragon = (EnderDragon*)this;
+        ev.mBlockLegacy = bl;
+        if (!ev.call()) {
+            return true;
+        }
+    }
+    IF_LISTENED_END(EnderDragonDestroyEvent)
+    return original(this, bl);
+}
 
 ////////////// EntityRide //////////////
 TInstanceHook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
@@ -1706,7 +1723,6 @@ TClasslessInstanceHook(Actor*,
             ev.mShooter = a4;
             ev.mIdentifier = a3;
             ev.mType = name;
-
             if (!ev.call())
                 return nullptr;
         }
@@ -2018,6 +2034,7 @@ TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@
             ev.mTypeName = "minecraft:wandering_trader";
             ev.mPos = spawn->toVec3();
             ev.mDimensionId = bs->getDimensionId();
+            ev.mMob = nullptr;
             if (!ev.call())
                 return std::nullopt;
         }
@@ -2033,6 +2050,7 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         ev.mTypeName = "minecraft:ender_dragon";
         ev.mPos = Vec3::ZERO;
         ev.mDimensionId = 2;
+        ev.mMob = nullptr;
         if (!ev.call())
             return;
     }
