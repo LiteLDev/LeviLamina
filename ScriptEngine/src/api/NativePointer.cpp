@@ -1,6 +1,10 @@
 #include "api/APIHelp.h"
 #include "api/NativeAPI.h"
 #include "api/NativeStdString.h"
+#include "api/EntityAPI.h"
+#include "api/PlayerAPI.h"
+#include "api/ContainerAPI.h"
+#include "api/ItemAPI.h"
 #include <llapi/utils/TypeConversionHelper.hpp>
 
 //////////////////// NativePointer ////////////////////
@@ -35,6 +39,10 @@ ClassDefine<NativePointer>
             .instanceProperty("bool", &NativePointer::getBool, &NativePointer::setBool)
 
             .instanceFunction("asStdString", &NativePointer::asStdString)
+            .instanceFunction("asEntity", &NativePointer::asEntity)
+            .instanceFunction("asItem", &NativePointer::asItem)
+            .instanceFunction("asPlayer", &NativePointer::asPlayer)
+            .instanceFunction("asContainer", &NativePointer::asContainer)
             .build();
 
 NativePointer::NativePointer(void* p)
@@ -399,4 +407,32 @@ Local<Value> NativePointer::asStdString() {
         return NativeStdString::newNativeStdString((std::string*)mPtr);
     }
     CATCH("Fail in NativePointer::asStdString!")
+}
+
+Local<Value> NativePointer::asEntity() {
+    try {
+        return EntityClass::newEntity((Actor*)mPtr);
+    }
+    CATCH("Fail in NativePointer::asEntity!")
+}
+
+Local<Value> NativePointer::asItem() {
+    try {
+        return ItemClass::newItem((ItemStack*)mPtr);
+    }
+    CATCH("Fail in NativePointer::asItem!")
+}
+
+Local<Value> NativePointer::asPlayer() {
+    try {
+        return PlayerClass::newPlayer((Player*)mPtr);
+    }
+    CATCH("Fail in NativePointer::asPlayer!")
+}
+
+Local<Value> NativePointer::asContainer() {
+    try {
+        return ContainerClass::newContainer((Container*)mPtr);
+    }
+    CATCH("Fail in NativePointer::asContaine!")
 }
