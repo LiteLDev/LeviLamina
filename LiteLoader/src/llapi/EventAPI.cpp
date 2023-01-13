@@ -293,7 +293,8 @@ DECLARE_EVENT_DATA(ServerStoppedEvent);
 DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
-DECLARE_EVENT_DATA(MobSpawnEvent);
+DECLARE_EVENT_DATA(MobTrySpawnEvent);
+DECLARE_EVENT_DATA(MobSpawnedEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -2002,23 +2003,29 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
 ////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
+    IF_LISTENED(MobTrySpawnEvent) {
+        MobTrySpawnEvent ev{};
+        ev.mTypeName = a3->getCanonicalName();
+        ev.mPos = a5;
+        ev.mDimensionId = a2->getDimensionId();
+        if (!ev.call()) {
+            return nullptr;
+        }
+    }
+    IF_LISTENED_END(MobTrySpawnEvent);
     auto en = original(this, a2, a3, a4, a5, a6, a7, a8);
     if (en == nullptr) {
         return en;
     }
     else {
-        IF_LISTENED(MobSpawnEvent) {
-            MobSpawnEvent ev{};
-            ev.mTypeName = a3->getCanonicalName();
+        IF_LISTENED(MobSpawnedEvent) {
+            MobSpawnedEvent ev{};
+            ev.mMob = en;
             ev.mPos = a5;
             ev.mDimensionId = a2->getDimensionId();
-            ev.mMob = en;
-            if (!ev.call()) {
-                en->despawn();
-                return nullptr;
-            }
+            ev.call();
         }
-        IF_LISTENED_END(MobSpawnEvent)
+        IF_LISTENED_END(MobSpawnedEvent)
         return en;
     }
 }
@@ -2029,32 +2036,30 @@ TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@
     auto spawn = original(this, pos, bs);
     if (spawn)
     {
-        IF_LISTENED(MobSpawnEvent) {
-            MobSpawnEvent ev{};
+        IF_LISTENED(MobTrySpawnEvent) {
+            MobTrySpawnEvent ev{};
             ev.mTypeName = "minecraft:wandering_trader";
             ev.mPos = spawn->toVec3();
             ev.mDimensionId = bs->getDimensionId();
-            ev.mMob = nullptr;
             if (!ev.call())
                 return std::nullopt;
         }
-        IF_LISTENED_END(MobSpawnEvent)
+        IF_LISTENED_END(MobTrySpawnEvent)
     }
     return spawn;
 }
 
 TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z",
     int a1) {
-    IF_LISTENED(MobSpawnEvent) {
-        MobSpawnEvent ev{};
+    IF_LISTENED(MobTrySpawnEvent) {
+        MobTrySpawnEvent ev{};
         ev.mTypeName = "minecraft:ender_dragon";
         ev.mPos = Vec3::ZERO;
         ev.mDimensionId = 2;
-        ev.mMob = nullptr;
         if (!ev.call())
             return;
     }
-    IF_LISTENED_END(MobSpawnEvent);
+    IF_LISTENED_END(MobTrySpawnEvent);
     return original(this, a1);
 }
 
