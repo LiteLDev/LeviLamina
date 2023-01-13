@@ -2012,9 +2012,7 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
             return nullptr;
         }
     }
-    IF_LISTENED_END(MobTrySpawnEvent) {
-        return original(this, a2, a3, a4, a5, a6, a7, a8);
-    }
+    IF_LISTENED_END(MobTrySpawnEvent);
     auto en = original(this, a2, a3, a4, a5, a6, a7, a8);
     if (en == nullptr) {
         return en;
