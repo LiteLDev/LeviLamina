@@ -136,7 +136,8 @@ enum class EVENT_TYPES : int {
     onAttack,
     onExplode,
     onBedExplode,
-    onMobSpawn,
+    onMobTrySpawn,
+    onMobSpawned,
     onContainerChangeSlot,
     EVENT_COUNT
 };
@@ -1040,12 +1041,21 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        case EVENT_TYPES::onMobSpawn:
-            Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onMobSpawn) {
-                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId), EntityClass::newEntity((Actor*)(ev.mMob)));
+        case EVENT_TYPES::onMobTrySpawn:
+            Event::MobTrySpawnEvent::subscribe([](const MobTrySpawnEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onMobTrySpawn) {
+                    CallEvent(EVENT_TYPES::onMobTrySpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
                 }
-                IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
+                IF_LISTENED_END(EVENT_TYPES::onMobTrySpawn);
+            });
+            break;
+
+        case EVENT_TYPES::onMobSpawned:
+            Event::MobSpawnedEvent::subscribe([](const MobSpawnedEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onMobSpawned) {
+                    CallEvent(EVENT_TYPES::onMobSpawned, EntityClass::newEntity((Actor*)(ev.mMob)), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onMobSpawned);
             });
             break;
 
