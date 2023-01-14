@@ -48,6 +48,9 @@ public:
     bool mForcePlayer;
     bool mIsExplicitIdSelector;
 
+    // c++ buffer, issue #1006.
+    char unk[8];
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORBASE
 public:
