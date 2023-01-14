@@ -105,6 +105,11 @@ ActorUniqueID Actor::getActorUniqueId() const {
 static_assert(sizeof(RotationCommandUtils::RotationData) == 32);
 
 bool Actor::teleport(Vec3 to, int dimID) {
+    auto rot = getRotation();
+    return teleport(to, dimID, rot.x, rot.y);
+}
+
+bool Actor::teleport(Vec3 to, int dimID, float x, float y) {
     if (!this->isAlive())
         return false;
     char mem[48];
@@ -112,19 +117,11 @@ bool Actor::teleport(Vec3 to, int dimID) {
         (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>,
                               std::optional<RotationCommandUtils::RotationData> const&,
                               int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID,
-                                RotationCommandUtils::RotationData{getRotation().x, getRotation().y, {}}, 15);
-    TeleportCommand::applyTarget(*this, *target, false);
-    return true;
-}
-
-bool Actor::teleport(Vec3 to, int dimID, float x, float y) {
-    char mem[48];
-    auto computeTarget =
-        (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>,
-                              std::optional<RotationCommandUtils::RotationData> const&,
-                              int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, RotationCommandUtils::RotationData{x, y, {}}, 15);
+    auto rot = getRotation();
+    // The rotation of the BDS internal teleport command is the relative rotation,
+    // See RotationCommandUtils::ComputeRotation(),
+    // CommandVersion should not be greater than 1, otherwise it will cause unnecessary trouble.
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, RotationCommandUtils::RotationData{x - rot.x, y - rot.y, {}}, 1);
     TeleportCommand::applyTarget(*this, *target, false);
     return true;
 }
