@@ -1129,9 +1129,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
 
     try {
+        Player* player = get();
+        if (!player)
+            return Boolean::newBoolean(false);
+        float pitch;
+        float yaw;
         FloatVec4 pos;
+        bool rotationIsValid = false;
 
-        if (args.size() == 1) {
+        if (args.size() <= 2) {
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -1153,9 +1159,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
                 }
             } else {
                 LOG_WRONG_ARG_TYPE();
-                return Local<Value>();
+                return Boolean::newBoolean(false);
             }
-        } else if (args.size() == 4) {
+            if (args.size() == 2 && IsInstanceOf<DirectionAngle>(args[1])) {
+                auto angle = DirectionAngle::extract(args[1]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
+        } else if (args.size() <= 5) { // teleport(x,y,z,dimid[,rot])
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -1166,16 +1178,22 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
             pos.y = args[1].asNumber().toFloat();
             pos.z = args[2].asNumber().toFloat();
             pos.dim = args[3].toInt();
+            if (args.size() == 5 && IsInstanceOf<DirectionAngle>(args[4])) {
+                auto angle = DirectionAngle::extract(args[4]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
         } else {
             LOG_WRONG_ARG_TYPE();
-            return Local<Value>();
+            return Boolean::newBoolean(false);
         }
-
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-        player->teleport(pos.getVec3(), pos.dim);
-        return Boolean::newBoolean(true); //=========???
+        if (!rotationIsValid) {
+            auto ang = player->getRotation();
+            pitch = ang.x;
+            yaw = ang.y;
+        }
+        return Boolean::newBoolean(player->teleport(pos.getVec3(), pos.dim, pitch, yaw));
     }
     CATCH("Fail in TeleportPlayer!")
 }
