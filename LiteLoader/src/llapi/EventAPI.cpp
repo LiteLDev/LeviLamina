@@ -363,20 +363,23 @@ THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
 }
 
 /////////////////// PlayerRespawn ///////////////////
-TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VPlayerActionPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    PlayerActionPacket* packet = *(PlayerActionPacket**)pPacket;
-    if (packet->actionType == PlayerActionType::Respawn) {
+
+TInstanceHook(void, "?respawn@Player@@UEAAXXZ",
+              Player)
+{
+    // If the player returns from TheEnd, the health will > 0.
+    if (getHealth() <= 0)
+    {
         IF_LISTENED(PlayerRespawnEvent) {
             PlayerRespawnEvent ev{};
-            ev.mPlayer = packet->getPlayerFromPacket(handler, id);
+            ev.mPlayer = this;
             if (!ev.mPlayer)
                 return;
             ev.call();
         }
         IF_LISTENED_END(PlayerRespawnEvent)
     }
-    return original(this, id, handler, pPacket);
+    original(this);
 }
 
 /////////////////// PlayerChat ///////////////////
