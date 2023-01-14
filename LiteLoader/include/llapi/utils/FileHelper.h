@@ -3,6 +3,7 @@
 #include <optional>
 #include <string>
 #include "llapi/Global.h"
+#include "llapi/LoggerAPI.h"
 
 LIAPI FILE* GetFILEfromFstream(std::fstream& fs);
 LIAPI HANDLE GetHANDLEfromFstream(std::fstream& fs);
