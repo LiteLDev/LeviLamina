@@ -9,6 +9,7 @@
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/PlayerScoreboardId.hpp"
 #include "llapi/PlayerInfoAPI.h"
+#include "llapi/mc/ServerScoreboard.hpp"
 
 LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() {
     return ++*(ScoreboardId*)((char*)this + 1072);
@@ -133,7 +134,7 @@ LIAPI Objective* Scoreboard::getDisplayObjective(const std::string& slot) {
 LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
     if (!scoreboardIdIsValid(&identity)) {
-        identity = const_cast<ScoreboardId&>(Global<Scoreboard>->createScoreboardId(id));
+        identity = const_cast<ScoreboardId&>(((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(id));
     }
     return identity;
 }
@@ -298,10 +299,10 @@ LIAPI bool Scoreboard::setScore(const std::string& objname, Player* player, int 
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        identity = Global<Scoreboard>->createScoreboardId(*player);
+        identity = const_cast<ScoreboardId&>(((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player));
     }
     bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)0); // Set
+    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, PlayerScoreSetFunction::Set); // Set
     return true;
 }
 

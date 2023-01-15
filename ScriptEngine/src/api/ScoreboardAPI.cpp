@@ -121,7 +121,7 @@ Local<Value> ObjectiveClass::addScore(const Arguments& args) {
 
         string id;
         if (args[0].isString()) {
-            string id = args[0].toStr();
+            id = args[0].toStr();
             std::optional<int> res = Scoreboard::addScore(objname, id, score);
             if (res)
                 rtn = Number::newNumber(*res);
