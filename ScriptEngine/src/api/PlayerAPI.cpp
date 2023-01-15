@@ -2953,17 +2953,15 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
-        FloatVec4 pos;
+        FloatVec4 pos{};
 
-        if (args.size() == 1) {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        if (args.size() == 1) { // pos | player | entity
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -2987,6 +2985,8 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
                 // Player or Entity
 
                 Actor* targetActor = EntityClass::extract(args[0]);
+                if (!targetActor)
+                    targetActor = PlayerClass::extract(args[0]);
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -2998,7 +2998,7 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        } else if (args.size() == 4) {
+        } else if (args.size() == 4) { // x, y, z, dimId
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -3014,9 +3014,8 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
@@ -3025,15 +3024,13 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
         FloatVec4 pos;
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
 
         if (args.size() == 1) {
             if (IsInstanceOf<IntPos>(args[0])) {
@@ -3059,6 +3056,8 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
                 // Player or Entity
 
                 Actor* targetActor = EntityClass::extract(args[0]);
+                if (!targetActor)
+                    targetActor = PlayerClass::extract(args[0]);
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -3086,9 +3085,8 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceToSqr(pos.getVec3()));
     }
