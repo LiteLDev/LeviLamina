@@ -51,6 +51,13 @@ ClassDefine<void> LlClassBuilder =
 
         .build();
 
+ClassDefine<void> VersionClassBuilder =
+    defineClass("Version")
+        // wait for: constructor, setter, converter(toString, toArray, toObject)...
+        .property("Dev", []() { return Number::newNumber(ll::Version::Dev); })
+        .property("Beta", []() { return Number::newNumber(ll::Version::Beta); })
+        .property("Release", []() { return Number::newNumber(ll::Version::Release); })
+        .build();
 
 Local<Value> LlClass::getLanguage() {
     try {

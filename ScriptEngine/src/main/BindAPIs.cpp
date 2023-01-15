@@ -56,6 +56,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(MoneyClassBuilder);
     engine->registerNativeClass(NetworkClassBuilder);
     engine->registerNativeClass(LlClassBuilder);
+    engine->registerNativeClass(VersionClassBuilder);
     engine->registerNativeClass(NbtStaticBuilder);
     engine->registerNativeClass(TextClassBuilder);
     engine->registerNativeClass(ParticleColorBuilder);

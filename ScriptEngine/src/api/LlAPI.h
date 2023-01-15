@@ -37,3 +37,4 @@ public:
     static Local<Value> getScriptEngineVersionFunction(const Arguments& args);
 };
 extern ClassDefine<void> LlClassBuilder;
+extern ClassDefine<void> VersionClassBuilder;
