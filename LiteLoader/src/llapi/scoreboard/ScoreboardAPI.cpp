@@ -271,7 +271,7 @@ LIAPI int Scoreboard::getScore(const std::string& objname, Player* player) {
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
 
     auto score = obj->getPlayerScore(identity);
@@ -319,7 +319,7 @@ LIAPI bool Scoreboard::addScore(const std::string& objname, Player* player, int 
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        identity = Global<Scoreboard>->createScoreboardId(*player);
+        identity = ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
     bool a2 = true;
     Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)1); // Add
@@ -341,7 +341,7 @@ LIAPI bool Scoreboard::reduceScore(const std::string& objname, Player* player, i
     bool& pa = a1;
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
     bool a2 = true;
     Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)2); // Reduce
