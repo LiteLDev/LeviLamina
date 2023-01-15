@@ -298,7 +298,7 @@ LIAPI bool Scoreboard::setScore(const std::string& objname, Player* player, int 
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+        identity = Global<Scoreboard>->createScoreboardId(*player);
     }
     bool a2 = true;
     Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)0); // Set
@@ -318,7 +318,7 @@ LIAPI bool Scoreboard::addScore(const std::string& objname, Player* player, int 
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+        identity = Global<Scoreboard>->createScoreboardId(*player);
     }
     bool a2 = true;
     Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)1); // Add
