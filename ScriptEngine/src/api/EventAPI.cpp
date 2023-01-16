@@ -556,7 +556,7 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED(EVENT_TYPES::onUseItemOn) {
                     CallEvent(EVENT_TYPES::onUseItemOn, PlayerClass::newPlayer((Player*)ev.mPlayer),
                               ItemClass::newItem(ev.mItemStack), BlockClass::newBlock(ev.mBlockInstance),
-                              Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos));
+                              Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos, ev.mPlayer->getDimensionId()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onUseItemOn);
             });
@@ -569,7 +569,7 @@ void EnableEventListener(int eventId) {
                     IF_LISTENED(EVENT_TYPES::onUseBucketPlace) {
                         CallEvent(EVENT_TYPES::onUseBucketPlace, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                   ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
-                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketPlace);
                 } else if (ev.mEventType == PlayerUseBucketEvent::EventType::Take) {
@@ -577,11 +577,11 @@ void EnableEventListener(int eventId) {
                         if (ev.mTargetActor) {
                             CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                       ItemClass::newItem(ev.mBucket), EntityClass::newEntity(ev.mTargetActor),
-                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                         } else {
                             CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                       ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
-                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                         }
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketTake);
