@@ -2984,9 +2984,9 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
                 if (!targetActor)
-                    targetActor = PlayerClass::extract(args[0]);
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -3055,9 +3055,9 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
                 if (!targetActor)
-                    targetActor = PlayerClass::extract(args[0]);
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
