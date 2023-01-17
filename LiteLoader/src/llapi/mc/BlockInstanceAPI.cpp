@@ -59,8 +59,16 @@ Container* BlockInstance::getContainer() {
         case 38:
         case 39:
             return SymCall("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
+            break;
+        case 2:
+        case 13:
+        case 14:
+        case 25:
+        case 33:
+        case 42:
+            return SymCall("?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
     }
-    return SymCall("?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
+    return nullptr;
 }
 
 bool BlockInstance::breakNaturally(bool isCreativeMode) {
