@@ -26,7 +26,7 @@ bool Scoreboard::createScoreboardId(PlayerScoreboardId const& pid) {
 LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 
     auto cTag = Player::getPlayerNbt(uuid);
-    if (cTag->contains("UniqueID")) {
+    if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
         ActorUniqueID aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         // check
@@ -41,7 +41,7 @@ LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 
 LIAPI ScoreboardId Scoreboard::getScoreboardId(mce::UUID const& uuid) const {
     auto cTag = Player::getPlayerNbt(uuid);
-    if (cTag->contains("UniqueID")) {
+    if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
         ActorUniqueID aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         return this->getScoreboardId(myPid);
@@ -60,14 +60,16 @@ LIAPI ScoreboardId Scoreboard::getOrCreateScoreboardId(mce::UUID const& uuid) {
 
 LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
                                               PlayerScoreSetFunction pf) {
-    Objective* obj = Global<Scoreboard>->getObjective(objname);
-    if (!obj)
-        obj = Scoreboard::newObjective(objname, objname);
     auto Sid = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
-    if (Sid.isValid() && obj != nullptr) {
-        bool kg;
-        Global<Scoreboard>->modifyPlayerScore(kg, Sid, *obj, val, pf);
-        return kg;
+    if (Sid.isValid()) {
+        Objective* obj = Global<Scoreboard>->getObjective(objname);
+        if (!obj)
+            obj = Scoreboard::newObjective(objname, objname);
+        if (obj) {
+            bool kg;
+            Global<Scoreboard>->modifyPlayerScore(kg, Sid, *obj, val, pf);
+            return kg;
+        }
     }
     return false;
 }
