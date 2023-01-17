@@ -1046,10 +1046,10 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onMobSpawn:
             logger.warn("Event 'onMobSpawn' is outdated, please use 'onMobTrySpawn' instead.");
             Event::MobTrySpawnEvent::subscribe([](const MobTrySpawnEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onMobTrySpawn) {
-                    CallEvent(EVENT_TYPES::onMobTrySpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                IF_LISTENED(EVENT_TYPES::onMobSpawn) {
+                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
                 }
-                IF_LISTENED_END(EVENT_TYPES::onMobTrySpawn);
+                IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
             });
             break;
 
