@@ -136,6 +136,7 @@ enum class EVENT_TYPES : int {
     onAttack,
     onExplode,
     onBedExplode,
+    onMobSpawn,
     onMobTrySpawn,
     onMobSpawned,
     onContainerChangeSlot,
@@ -585,6 +586,7 @@ void EnableEventListener(int eventId) {
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketTake);
                 }
+                return true;
             });
             break;
 
@@ -1038,6 +1040,16 @@ void EnableEventListener(int eventId) {
                     CallEvent(EVENT_TYPES::onConsoleOutput, String::newString(ev.mOutput));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onConsoleOutput);
+            });
+            break;
+
+        case EVENT_TYPES::onMobSpawn:
+            logger.warn("Event 'onMobSpawn' is outdated, please use 'onMobTrySpawn' instead.");
+            Event::MobTrySpawnEvent::subscribe([](const MobTrySpawnEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onMobSpawn) {
+                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
             });
             break;
 

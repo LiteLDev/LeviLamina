@@ -363,7 +363,6 @@ THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
 }
 
 /////////////////// PlayerRespawn ///////////////////
-
 TInstanceHook(void, "?respawn@Player@@UEAAXXZ",
               Player)
 {
@@ -371,7 +370,7 @@ TInstanceHook(void, "?respawn@Player@@UEAAXXZ",
     if (getHealth() <= 0)
     {
         IF_LISTENED(PlayerRespawnEvent) {
-            PlayerRespawnEvent ev{};
+            PlayerRespawnEvent ev{};            
             ev.mPlayer = this;
             if (!ev.mPlayer)
                 return;

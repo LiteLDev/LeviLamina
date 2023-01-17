@@ -686,13 +686,14 @@ public:
     Actor* mAfterEntity = nullptr;
 };
 
-// This Event is outdated, please use MobTrySpawnEvent or MobSpawnedEvent instead.
 class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
 public:
+    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]]
     string mTypeName;
     Vec3 mPos;
     int mDimensionId = -1;
 };
+
 
 class MobTrySpawnEvent : public EventTemplate<MobTrySpawnEvent> {
 public:
