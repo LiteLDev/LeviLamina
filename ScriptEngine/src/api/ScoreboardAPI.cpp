@@ -91,7 +91,6 @@ Local<Value> ObjectiveClass::setScore(const Arguments& args) {
         int score = args[1].toInt();
         Local<Value> rtn;
 
-        string id;
         if (args[0].isString()) {
             string id = args[0].toStr();
             std::optional<int> res = Scoreboard::setScore(objname, id, score);
@@ -119,9 +118,8 @@ Local<Value> ObjectiveClass::addScore(const Arguments& args) {
         int score = args[1].toInt();
         Local<Value> rtn;
 
-        string id;
         if (args[0].isString()) {
-            id = args[0].toStr();
+            string id = args[0].toStr();
             std::optional<int> res = Scoreboard::addScore(objname, id, score);
             if (res)
                 rtn = Number::newNumber(*res);
@@ -147,7 +145,6 @@ Local<Value> ObjectiveClass::reduceScore(const Arguments& args) {
         int score = args[1].toInt();
         Local<Value> rtn;
 
-        string id;
         if (args[0].isString()) {
             string id = args[0].toStr();
             std::optional<int> res = Scoreboard::reduceScore(objname, id, score);
@@ -172,9 +169,9 @@ Local<Value> ObjectiveClass::deleteScore(const Arguments& args) {
 
     try {
         bool res = false;
-        string id;
-        if (args[0].isString())
-            res = Scoreboard::removeFromObjective(objname, id);
+        if (args[0].isString()) {
+            res = Scoreboard::removeFromObjective(objname, args[0].toStr());
+        }
         else if (IsInstanceOf<PlayerClass>(args[0]))
             res = Scoreboard::removeFromObjective(objname, PlayerClass::extract(args[0]));
         else {
