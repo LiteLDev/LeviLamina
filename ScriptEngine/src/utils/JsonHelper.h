@@ -20,10 +20,25 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
     fifo_json jsonConf;
     if (!filesystem::exists(str2wstr(path)))
     {
-        //创建新的
-        CreateDirs(path);
+        if (path.find('/') != std::string::npos) {
+            std::size_t pos = path.find_last_of('/');
+            if (pos != std::string::npos) {
+                std::string dirPath = path.substr(0, pos);
+                CreateDirs(dirPath);
+            }
+        } else if(path.find('\\') != std::string::npos) {
+            std::size_t pos = path.find_last_of('\\');
+            if (pos != std::string::npos) {
+                std::string dirPath = path.substr(0, pos);
+                CreateDirs(dirPath);
+            }
+        } else {
+            logger.error("Fail in create json file!");
+            logger.error("invalid path");
+            jsonConf = fifo_json::object();
+        }
 
-        if (defContent != "")
+        if (!defContent.empty())
         {
             try
             {
@@ -42,7 +57,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
         }
 
         ofstream jsonFile(path);
-        if (jsonFile.is_open() && defContent != "")
+        if (jsonFile.is_open() && !defContent.empty())
             jsonFile << jsonConf.dump(4);
         jsonFile.close();
     }
