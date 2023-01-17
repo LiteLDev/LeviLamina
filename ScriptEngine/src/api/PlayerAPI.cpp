@@ -127,6 +127,15 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("heal", &PlayerClass::heal)
         .instanceFunction("setHealth", &PlayerClass::setHealth)
         .instanceFunction("setMaxHealth", &PlayerClass::setMaxHealth)
+        .instanceFunction("setAbsorption", &PlayerClass::setAbsorption)
+        .instanceFunction("setAttackDamage", &PlayerClass::setAttackDamage)
+        .instanceFunction("setMaxAttackDamage", &PlayerClass::setMaxAttackDamage)
+        .instanceFunction("setFollowRange", &PlayerClass::setFollowRange)
+        .instanceFunction("setKnockbackResistance", &PlayerClass::setKnockbackResistance)
+        .instanceFunction("setLuck", &PlayerClass::setLuck)
+        .instanceFunction("setMovementSpeed", &PlayerClass::setMovementSpeed)
+        .instanceFunction("setUnderwaterMovementSpeed", &PlayerClass::setUnderwaterMovementSpeed)
+        .instanceFunction("setLavaMovementSpeed", &PlayerClass::setLavaMovementSpeed)
         .instanceFunction("setHungry", &PlayerClass::setHungry)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
@@ -314,6 +323,64 @@ Local<Value> McClass::deletePlayerNbt(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in deletePlayerNbt!")
+}
+
+Local<Value> McClass::getPlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto score = Scoreboard::queryPlayerScore(uuid,obj).value();
+        return Number::newNumber(score);
+    }
+    CATCH("Fail in getPlayerScore!")
+}
+
+Local<Value> McClass::setPlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto value = args[2].asNumber().toInt32();
+        auto res = Scoreboard::forceModifyPlayerScore(uuid, obj, value, PlayerScoreSetFunction::Set);
+        return Boolean::newBoolean(res);
+    }
+    CATCH("Fail in setPlayerScore!")
+}
+
+Local<Value> McClass::addPlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto value = args[2].asNumber().toInt32();
+        auto res = Scoreboard::forceModifyPlayerScore(uuid, obj, value, PlayerScoreSetFunction::Add);
+        return Boolean::newBoolean(res);
+    }
+    CATCH("Fail in addPlayerScore!")
+}
+
+Local<Value> McClass::reducePlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto value = args[2].asNumber().toInt32();
+        auto res = Scoreboard::forceModifyPlayerScore(uuid, obj, value, PlayerScoreSetFunction::Remove);
+        return Boolean::newBoolean(res);
+    }
+    CATCH("Fail in reducePlayerScore!")
 }
 
 Local<Value> McClass::getPlayer(const Arguments& args) {
@@ -1062,9 +1129,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
 
     try {
+        Player* player = get();
+        if (!player)
+            return Boolean::newBoolean(false);
+        float pitch;
+        float yaw;
         FloatVec4 pos;
+        bool rotationIsValid = false;
 
-        if (args.size() == 1) {
+        if (args.size() <= 2) {
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -1086,9 +1159,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
                 }
             } else {
                 LOG_WRONG_ARG_TYPE();
-                return Local<Value>();
+                return Boolean::newBoolean(false);
             }
-        } else if (args.size() == 4) {
+            if (args.size() == 2 && IsInstanceOf<DirectionAngle>(args[1])) {
+                auto angle = DirectionAngle::extract(args[1]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
+        } else if (args.size() <= 5) { // teleport(x,y,z,dimid[,rot])
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -1099,16 +1178,22 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
             pos.y = args[1].asNumber().toFloat();
             pos.z = args[2].asNumber().toFloat();
             pos.dim = args[3].toInt();
+            if (args.size() == 5 && IsInstanceOf<DirectionAngle>(args[4])) {
+                auto angle = DirectionAngle::extract(args[4]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
         } else {
             LOG_WRONG_ARG_TYPE();
-            return Local<Value>();
+            return Boolean::newBoolean(false);
         }
-
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-        player->teleport(pos.getVec3(), pos.dim);
-        return Boolean::newBoolean(true); //=========???
+        if (!rotationIsValid) {
+            auto ang = player->getRotation();
+            pitch = ang.x;
+            yaw = ang.y;
+        }
+        return Boolean::newBoolean(player->teleport(pos.getVec3(), pos.dim, pitch, yaw));
     }
     CATCH("Fail in TeleportPlayer!")
 }
@@ -1147,7 +1232,7 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
 
         bool res = false;
         int newPerm = args[0].asNumber().toInt32();
-        if (newPerm >= 0 || newPerm <= 4) {
+        if (newPerm >= 0 && newPerm <= 4) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
@@ -2171,6 +2256,168 @@ Local<Value> PlayerClass::setMaxHealth(const Arguments& args) {
     CATCH("Fail in setMaxHealth!");
 }
 
+Local<Value> PlayerClass::setAbsorption(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* absorptionAttribute = player->getMutableAttribute(Global<SharedAttributes>->ABSORPTION);
+
+        absorptionAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAbsorptionAttribute!");
+}
+
+Local<Value> PlayerClass::setAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* attactDamageAttribute = player->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        attactDamageAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setAttackDamage!");
+}
+
+Local<Value> PlayerClass::setMaxAttackDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* attactDamageAttribute = player->getMutableAttribute(Global<SharedAttributes>->ATTACK_DAMAGE);
+
+        attactDamageAttribute->setMaxValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMaxAttackDamage!");
+}
+
+Local<Value> PlayerClass::setFollowRange(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* followRangeAttribute = player->getMutableAttribute(Global<SharedAttributes>->FOLLOW_RANGE);
+
+        followRangeAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setFollowRange!");
+}
+
+Local<Value> PlayerClass::setKnockbackResistance(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* knockbackResistanceAttribute = player->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+
+        knockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setKnockbackResistance!");
+}
+
+Local<Value> PlayerClass::setLuck(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* luckAttribute = player->getMutableAttribute(Global<SharedAttributes>->LUCK);
+
+        luckAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLuck!");
+}
+
+Local<Value> PlayerClass::setMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* movementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+
+        movementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setMovementSpeed!");
+}
+
+Local<Value> PlayerClass::setUnderwaterMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* underwaterMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+
+        underwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setUnderwaterMovementSpeed!");
+}
+
+Local<Value> PlayerClass::setLavaMovementSpeed(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        AttributeInstance* lavaMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+
+        lavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
+
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setLavaMovementSpeed!");
+}
+
 Local<Value> PlayerClass::setHungry(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2706,17 +2953,15 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
-        FloatVec4 pos;
+        FloatVec4 pos{};
 
-        if (args.size() == 1) {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        if (args.size() == 1) { // pos | player | entity
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -2739,7 +2984,9 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
+                if (!targetActor)
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -2751,7 +2998,7 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        } else if (args.size() == 4) {
+        } else if (args.size() == 4) { // x, y, z, dimId
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -2767,9 +3014,8 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
@@ -2778,15 +3024,13 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
         FloatVec4 pos;
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
 
         if (args.size() == 1) {
             if (IsInstanceOf<IntPos>(args[0])) {
@@ -2811,7 +3055,9 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
+                if (!targetActor)
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -2839,9 +3085,8 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceToSqr(pos.getVec3()));
     }

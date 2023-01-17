@@ -104,6 +104,7 @@ public:
     : ScriptClass(scriptObj) {
     }
     static DirectionAngle* create(const Arguments& args);
+    static DirectionAngle* extract(Local<Value> value);
 
     static Local<Object> newAngle(float pitch, float yaw);
     Local<Value> getPitch() {

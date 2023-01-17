@@ -94,9 +94,6 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
              {"PermissionAPI", {
                 {"enabled", conf.enablePermissionAPI}
             }},
-             {"ClientChunkPreGeneration", {
-                {"enabled", conf.enableClientChunkPreGeneration}
-            }},
             {"FixAbility", {
                 {"enabled", conf.enableFixAbility}
             }},
@@ -215,10 +212,6 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.find("PermissionAPI") != modules.end()) {
             const nlohmann::json& setting = modules.at("PermissionAPI");
             conf.enablePermissionAPI = setting.value("enabled", false);
-        }
-        if (modules.find("ClientChunkPreGeneration") != modules.end()) {
-            const nlohmann::json& setting = modules.at("ClientChunkPreGeneration");
-            conf.enableClientChunkPreGeneration = setting.value("enabled", true);
         }
         if (modules.find("FixAbility") != modules.end()) {
             const nlohmann::json& setting = modules.at("FixAbility");

@@ -1073,6 +1073,7 @@ bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     catch (const std::exception& exc) {
         logger.error("Fail to set player nbt!\n{}",exc.what());
     }
+    return false;
 }
 
 bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags) {
