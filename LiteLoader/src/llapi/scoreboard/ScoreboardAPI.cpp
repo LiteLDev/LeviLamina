@@ -60,15 +60,15 @@ LIAPI ScoreboardId Scoreboard::getOrCreateScoreboardId(mce::UUID const& uuid) {
 
 LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
                                               PlayerScoreSetFunction pf) {
-    auto Sid = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
-    if (Sid.isValid()) {
+    auto sId = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
+    if (sId.isValid()) {
         Objective* obj = Global<Scoreboard>->getObjective(objname);
         if (!obj)
             obj = Scoreboard::newObjective(objname, objname);
         if (obj) {
-            bool kg;
-            Global<Scoreboard>->modifyPlayerScore(kg, Sid, *obj, val, pf);
-            return kg;
+            bool ret;
+            Global<Scoreboard>->modifyPlayerScore(ret, sId, *obj, val, pf);
+            return ret;
         }
     }
     return false;
