@@ -86,7 +86,7 @@ LIAPI bool Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string co
 LIAPI std::optional<int> Scoreboard::queryPlayerScore(mce::UUID const& uuid, std::string const& objname) {
     auto obj = Global<Scoreboard>->getObjective(objname);
     auto sId = Global<Scoreboard>->getScoreboardId(uuid);
-    if (!obj || !sId.isValid())
+    if (!obj || !sId.isValid() || !obj->hasScore(sId))
         return std::nullopt;
     return obj->getPlayerScore(sId).getCount();
 }
@@ -97,9 +97,21 @@ LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::s
     if (uuid.empty())
         return std::nullopt;
     const auto& sId = Global<Scoreboard>->getScoreboardId(uuid);
-    if (!obj || !sId.isValid())
+    if (!obj || !sId.isValid() || !obj->hasScore(sId))
         return std::nullopt;
     return obj->getPlayerScore(sId).getCount();
+}
+
+LIAPI bool Scoreboard::forceRemovePlayerScoreFromObjective(mce::UUID const& uuid, std::string const& objname) {
+
+    return removeFromObjective(objname, Global<Scoreboard>->getScoreboardId(uuid));
+}
+
+LIAPI bool Scoreboard::forceRemovePlayerScoreFromObjective(xuid_t const& xuid, std::string const& objname) {
+    auto uuid = PlayerInfo::getUUIDByXuid(xuid);
+    if (uuid.empty())
+        return false;
+    return removeFromObjective(objname, Global<Scoreboard>->getScoreboardId(uuid));
 }
 
 LIAPI Objective* Scoreboard::newObjective(const std::string& objname, const std::string& displayName) {
@@ -187,6 +199,24 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, const std
 
 LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* player) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
+    if (!identity.isValid())
+        return true;
+    Objective* obj = Global<Scoreboard>->getObjective(objname);
+    if (!obj)
+        return true;
+    vector<ScorePacketInfo> info;
+    ScorePacketInfo i((ScoreboardId*)&identity, objname,
+                      Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
+                      obj->getPlayerScore(identity).getCount(), obj->getName());
+    info.emplace_back(i);
+    for (auto sp : Level::getAllPlayers()) {
+        sp->sendSetScorePacket(1, info);
+    }
+    auto out = Global<Scoreboard>->getScoreboardIdentityRef(identity)->removeFromObjective(*Global<Scoreboard>, *obj);
+    return out;
+}
+
+LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, ScoreboardId const& identity) {
     if (!identity.isValid())
         return true;
     Objective* obj = Global<Scoreboard>->getObjective(objname);
