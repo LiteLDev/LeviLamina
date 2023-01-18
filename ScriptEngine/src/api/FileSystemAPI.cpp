@@ -95,7 +95,22 @@ FileClass* FileClass::constructor(const Arguments& args) {
 
     try {
         string path = args[0].toStr();
-        CreateDirs(path);
+        std::string dirPath; // Directory path
+        if (path.find('/') != std::string::npos) { // e.g. plugins/LiteLoader/LiteLoader.json
+            std::size_t pos = path.find_last_of('/');
+            if (pos != std::string::npos) {
+                dirPath = path.substr(0, pos);
+            }
+        } else if(path.find('\\') != std::string::npos) { // e.g. plugins\\LiteLoader\\LiteLoader.json
+            std::size_t pos = path.find_last_of('\\');
+            if (pos != std::string::npos) {
+                dirPath = path.substr(0, pos);
+            }
+        } else {
+            LOG_ERROR_WITH_SCRIPT_INFO("Fail to create directory " + dirPath + "!\n");
+            return nullptr;
+        }
+        CreateDirs(dirPath);
 
         FileOpenMode fMode = (FileOpenMode)(args[1].toInt());
         // Auto Create

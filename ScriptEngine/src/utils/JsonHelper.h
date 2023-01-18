@@ -20,13 +20,13 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
     fifo_json jsonConf;
     if (!filesystem::exists(str2wstr(path)))
     {
-        if (path.find('/') != std::string::npos) {
+        if (path.find('/') != std::string::npos) { // e.g. plugins/LiteLoader/LiteLoader.json
             std::size_t pos = path.find_last_of('/');
             if (pos != std::string::npos) {
                 std::string dirPath = path.substr(0, pos);
                 CreateDirs(dirPath);
             }
-        } else if(path.find('\\') != std::string::npos) {
+        } else if(path.find('\\') != std::string::npos) { // e.g. plugins\\LiteLoader\\LiteLoader.json
             std::size_t pos = path.find_last_of('\\');
             if (pos != std::string::npos) {
                 std::string dirPath = path.substr(0, pos);
