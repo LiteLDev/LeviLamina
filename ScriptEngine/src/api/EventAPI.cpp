@@ -90,6 +90,7 @@ enum class EVENT_TYPES : int {
     onEntityExplode,
     onProjectileHitEntity,
     onWitherBossDestroy,
+    onEnderDragonDestroy,
     onRide,
     onStepOnPressurePlate,
     onSpawnProjectile,
@@ -136,6 +137,8 @@ enum class EVENT_TYPES : int {
     onExplode,
     onBedExplode,
     onMobSpawn,
+    onMobTrySpawn,
+    onMobSpawned,
     onContainerChangeSlot,
     EVENT_COUNT
 };
@@ -553,7 +556,7 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED(EVENT_TYPES::onUseItemOn) {
                     CallEvent(EVENT_TYPES::onUseItemOn, PlayerClass::newPlayer((Player*)ev.mPlayer),
                               ItemClass::newItem(ev.mItemStack), BlockClass::newBlock(ev.mBlockInstance),
-                              Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos));
+                              Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos, ev.mPlayer->getDimensionId()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onUseItemOn);
             });
@@ -566,7 +569,7 @@ void EnableEventListener(int eventId) {
                     IF_LISTENED(EVENT_TYPES::onUseBucketPlace) {
                         CallEvent(EVENT_TYPES::onUseBucketPlace, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                   ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
-                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketPlace);
                 } else if (ev.mEventType == PlayerUseBucketEvent::EventType::Take) {
@@ -574,15 +577,16 @@ void EnableEventListener(int eventId) {
                         if (ev.mTargetActor) {
                             CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                       ItemClass::newItem(ev.mBucket), EntityClass::newEntity(ev.mTargetActor),
-                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                         } else {
                             CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
                                       ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
-                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos, ev.mPlayer->getDimensionId()));
                         }
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketTake);
                 }
+                return true;
             });
             break;
 
@@ -802,6 +806,15 @@ void EnableEventListener(int eventId) {
                               IntPos::newPos(range.min.toBlockPos(), dimId), IntPos::newPos(range.max.toBlockPos(), dimId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onWitherBossDestroy);
+            });
+            break;
+
+        case EVENT_TYPES::onEnderDragonDestroy:
+            Event::EnderDragonDestroyEvent::subscribe([](const EnderDragonDestroyEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onEnderDragonDestroy) {
+                    CallEvent(EVENT_TYPES::onEnderDragonDestroy, EntityClass::newEntity((Actor*)ev.mEnderDragon), BlockClass::newBlock(*(BlockInstance*)(ev.mBlockLegacy)));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onEnderDragonDestroy);
             });
             break;
 
@@ -1031,11 +1044,30 @@ void EnableEventListener(int eventId) {
             break;
 
         case EVENT_TYPES::onMobSpawn:
-            Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
+            logger.warn("Event 'onMobSpawn' is outdated, please use 'onMobTrySpawn' instead.");
+            Event::MobTrySpawnEvent::subscribe([](const MobTrySpawnEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMobSpawn) {
                     CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
+            });
+            break;
+
+        case EVENT_TYPES::onMobTrySpawn:
+            Event::MobTrySpawnEvent::subscribe([](const MobTrySpawnEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onMobTrySpawn) {
+                    CallEvent(EVENT_TYPES::onMobTrySpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onMobTrySpawn);
+            });
+            break;
+
+        case EVENT_TYPES::onMobSpawned:
+            Event::MobSpawnedEvent::subscribe([](const MobSpawnedEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onMobSpawned) {
+                    CallEvent(EVENT_TYPES::onMobSpawned, EntityClass::newEntity((Actor*)(ev.mMob)), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onMobSpawned);
             });
             break;
 

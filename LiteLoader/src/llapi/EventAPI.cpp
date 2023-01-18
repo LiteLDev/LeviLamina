@@ -261,6 +261,7 @@ DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
 DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
 DECLARE_EVENT_DATA(WitherBossDestroyEvent);
+DECLARE_EVENT_DATA(EnderDragonDestroyEvent);
 DECLARE_EVENT_DATA(EntityRideEvent);
 DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
@@ -292,7 +293,8 @@ DECLARE_EVENT_DATA(ServerStoppedEvent);
 DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
-DECLARE_EVENT_DATA(MobSpawnEvent);
+DECLARE_EVENT_DATA(MobTrySpawnEvent);
+DECLARE_EVENT_DATA(MobSpawnedEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -361,20 +363,22 @@ THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
 }
 
 /////////////////// PlayerRespawn ///////////////////
-TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VPlayerActionPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    PlayerActionPacket* packet = *(PlayerActionPacket**)pPacket;
-    if (packet->actionType == PlayerActionType::Respawn) {
+TInstanceHook(void, "?respawn@Player@@UEAAXXZ",
+              Player)
+{
+    // If the player returns from TheEnd, the health will > 0.
+    if (getHealth() <= 0)
+    {
         IF_LISTENED(PlayerRespawnEvent) {
-            PlayerRespawnEvent ev{};
-            ev.mPlayer = packet->getPlayerFromPacket(handler, id);
+            PlayerRespawnEvent ev{};            
+            ev.mPlayer = this;
             if (!ev.mPlayer)
                 return;
             ev.call();
         }
         IF_LISTENED_END(PlayerRespawnEvent)
     }
-    return original(this, id, handler, pPacket);
+    original(this);
 }
 
 /////////////////// PlayerChat ///////////////////
@@ -1096,7 +1100,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockS
 
 /////////////////// HopperSearchItem ///////////////////
 TClasslessInstanceHook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
-                       BlockSource* bs, void* container, Vec3* pos) {
+                       BlockSource* bs, Container* container, Vec3* pos) {
     bool isMinecart = dAccess<bool>(this, 5); // IDA Hopper::Hopper
 
     IF_LISTENED(HopperSearchItemEvent) {
@@ -1118,7 +1122,7 @@ TClasslessInstanceHook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NA
 
 /////////////////// HopperPushOut ///////////////////
 TClasslessInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
-                       BlockSource* bs, void* container, Vec3* pos, int a5) {
+                       BlockSource* bs, Container* container, Vec3* pos, int a5) {
     IF_LISTENED(HopperPushOutEvent) {
         HopperPushOutEvent ev{};
         ev.mPos = *pos;
@@ -1662,6 +1666,22 @@ TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVB
     original(this, a2, aabb, a4, a5, a6);
 }
 
+////////////// EnderDragonDestroy //////////////
+#include <llapi/mc/EnderDragon.hpp>
+#include <llapi/mc/BlockLegacy.hpp>
+TInstanceHook(bool, "?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z",
+              EnderDragon, BlockLegacy* bl) {
+    IF_LISTENED(EnderDragonDestroyEvent) {
+        EnderDragonDestroyEvent ev{};
+        ev.mEnderDragon = (EnderDragon*)this;
+        ev.mBlockLegacy = bl;
+        if (!ev.call()) {
+            return true;
+        }
+    }
+    IF_LISTENED_END(EnderDragonDestroyEvent)
+    return original(this, bl);
+}
 
 ////////////// EntityRide //////////////
 TInstanceHook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
@@ -1706,7 +1726,6 @@ TClasslessInstanceHook(Actor*,
             ev.mShooter = a4;
             ev.mIdentifier = a3;
             ev.mType = name;
-
             if (!ev.call())
                 return nullptr;
         }
@@ -1986,16 +2005,31 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
 ////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
-    IF_LISTENED(MobSpawnEvent) {
-        MobSpawnEvent ev{};
+    IF_LISTENED(MobTrySpawnEvent) {
+        MobTrySpawnEvent ev{};
         ev.mTypeName = a3->getCanonicalName();
         ev.mPos = a5;
         ev.mDimensionId = a2->getDimensionId();
-        if (!ev.call())
+        if (!ev.call()) {
             return nullptr;
+        }
     }
-    IF_LISTENED_END(MobSpawnEvent)
-    return original(this, a2, a3, a4, a5, a6, a7, a8);
+    IF_LISTENED_END(MobTrySpawnEvent);
+    auto en = original(this, a2, a3, a4, a5, a6, a7, a8);
+    if (en == nullptr) {
+        return en;
+    }
+    else {
+        IF_LISTENED(MobSpawnedEvent) {
+            MobSpawnedEvent ev{};
+            ev.mMob = en;
+            ev.mPos = a5;
+            ev.mDimensionId = a2->getDimensionId();
+            ev.call();
+        }
+        IF_LISTENED_END(MobSpawnedEvent)
+        return en;
+    }
 }
 
 TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z",
@@ -2004,30 +2038,30 @@ TClasslessInstanceHook(std::optional<class BlockPos>, "?_findValidSpawnPosUnder@
     auto spawn = original(this, pos, bs);
     if (spawn)
     {
-        IF_LISTENED(MobSpawnEvent) {
-            MobSpawnEvent ev{};
+        IF_LISTENED(MobTrySpawnEvent) {
+            MobTrySpawnEvent ev{};
             ev.mTypeName = "minecraft:wandering_trader";
             ev.mPos = spawn->toVec3();
             ev.mDimensionId = bs->getDimensionId();
             if (!ev.call())
                 return std::nullopt;
         }
-        IF_LISTENED_END(MobSpawnEvent)
+        IF_LISTENED_END(MobTrySpawnEvent)
     }
     return spawn;
 }
 
 TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z",
     int a1) {
-    IF_LISTENED(MobSpawnEvent) {
-        MobSpawnEvent ev{};
+    IF_LISTENED(MobTrySpawnEvent) {
+        MobTrySpawnEvent ev{};
         ev.mTypeName = "minecraft:ender_dragon";
         ev.mPos = Vec3::ZERO;
         ev.mDimensionId = 2;
         if (!ev.call())
             return;
     }
-    IF_LISTENED_END(MobSpawnEvent);
+    IF_LISTENED_END(MobTrySpawnEvent);
     return original(this, a1);
 }
 

@@ -332,8 +332,11 @@ Local<Value> McClass::getPlayerScore(const Arguments& args) {
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
         auto obj = args[1].asString().toString();
-        auto score = Scoreboard::queryPlayerScore(uuid,obj).value();
-        return Number::newNumber(score);
+        auto scorev = Scoreboard::queryPlayerScore(uuid,obj);
+        if (scorev.has_value())
+            return Number::newNumber(scorev.value());
+        else
+            return Local<Value>();
     }
     CATCH("Fail in getPlayerScore!")
 }
@@ -1129,9 +1132,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
 
     try {
+        Player* player = get();
+        if (!player)
+            return Boolean::newBoolean(false);
+        float pitch;
+        float yaw;
         FloatVec4 pos;
+        bool rotationIsValid = false;
 
-        if (args.size() == 1) {
+        if (args.size() <= 2) {
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -1153,9 +1162,15 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
                 }
             } else {
                 LOG_WRONG_ARG_TYPE();
-                return Local<Value>();
+                return Boolean::newBoolean(false);
             }
-        } else if (args.size() == 4) {
+            if (args.size() == 2 && IsInstanceOf<DirectionAngle>(args[1])) {
+                auto angle = DirectionAngle::extract(args[1]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
+        } else if (args.size() <= 5) { // teleport(x,y,z,dimid[,rot])
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -1166,16 +1181,22 @@ Local<Value> PlayerClass::teleport(const Arguments& args) {
             pos.y = args[1].asNumber().toFloat();
             pos.z = args[2].asNumber().toFloat();
             pos.dim = args[3].toInt();
+            if (args.size() == 5 && IsInstanceOf<DirectionAngle>(args[4])) {
+                auto angle = DirectionAngle::extract(args[4]);
+                pitch = angle->pitch;
+                yaw = angle->yaw;
+                rotationIsValid = true;
+            }
         } else {
             LOG_WRONG_ARG_TYPE();
-            return Local<Value>();
+            return Boolean::newBoolean(false);
         }
-
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-        player->teleport(pos.getVec3(), pos.dim);
-        return Boolean::newBoolean(true); //=========???
+        if (!rotationIsValid) {
+            auto ang = player->getRotation();
+            pitch = ang.x;
+            yaw = ang.y;
+        }
+        return Boolean::newBoolean(player->teleport(pos.getVec3(), pos.dim, pitch, yaw));
     }
     CATCH("Fail in TeleportPlayer!")
 }
@@ -1214,7 +1235,7 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
 
         bool res = false;
         int newPerm = args[0].asNumber().toInt32();
-        if (newPerm >= 0 || newPerm <= 4) {
+        if (newPerm >= 0 && newPerm <= 4) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
@@ -2935,17 +2956,15 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceTo(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
-        FloatVec4 pos;
+        FloatVec4 pos{};
 
-        if (args.size() == 1) {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        if (args.size() == 1) { // pos | player | entity
             if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
@@ -2968,7 +2987,9 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
+                if (!targetActor)
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -2980,7 +3001,7 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        } else if (args.size() == 4) {
+        } else if (args.size() == 4) { // x, y, z, dimId
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -2996,9 +3017,8 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
@@ -3007,15 +3027,13 @@ Local<Value> PlayerClass::distanceTo(const Arguments& args) {
 
 Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4) {
-        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    }
 
     try {
         FloatVec4 pos;
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
 
         if (args.size() == 1) {
             if (IsInstanceOf<IntPos>(args[0])) {
@@ -3040,7 +3058,9 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             } else if (IsInstanceOf<PlayerClass>(args[0]) || IsInstanceOf<EntityClass>(args[0])) {
                 // Player or Entity
 
-                Actor* targetActor = EntityClass::extract(args[0]);
+                Actor* targetActor = EntityClass::tryExtractActor(args[0]).value();
+                if (!targetActor)
+                    return Local<Value>();
 
                 Vec3 targetActorPos = targetActor->getPosition();
 
@@ -3068,9 +3088,8 @@ Local<Value> PlayerClass::distanceToSqr(const Arguments& args) {
             return Local<Value>();
         }
 
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+        if (player->getDimensionId() != pos.dim)
+            return Number::newNumber(INT_MAX);
 
         return Number::newNumber(player->distanceToSqr(pos.getVec3()));
     }

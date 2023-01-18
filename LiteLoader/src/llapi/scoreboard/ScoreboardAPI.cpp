@@ -9,6 +9,7 @@
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/PlayerScoreboardId.hpp"
 #include "llapi/PlayerInfoAPI.h"
+#include "llapi/mc/ServerScoreboard.hpp"
 
 LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() {
     return ++*(ScoreboardId*)((char*)this + 1072);
@@ -25,7 +26,7 @@ bool Scoreboard::createScoreboardId(PlayerScoreboardId const& pid) {
 LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 
     auto cTag = Player::getPlayerNbt(uuid);
-    if (cTag->contains("UniqueID")) {
+    if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
         ActorUniqueID aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         // check
@@ -40,7 +41,7 @@ LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 
 LIAPI ScoreboardId Scoreboard::getScoreboardId(mce::UUID const& uuid) const {
     auto cTag = Player::getPlayerNbt(uuid);
-    if (cTag->contains("UniqueID")) {
+    if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
         ActorUniqueID aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         return this->getScoreboardId(myPid);
@@ -59,14 +60,16 @@ LIAPI ScoreboardId Scoreboard::getOrCreateScoreboardId(mce::UUID const& uuid) {
 
 LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
                                               PlayerScoreSetFunction pf) {
-    Objective* obj = Global<Scoreboard>->getObjective(objname);
-    if (!obj)
-        obj = Scoreboard::newObjective(objname, objname);
-    auto Sid = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
-    if (Sid.isValid() && obj != nullptr) {
-        bool kg;
-        Global<Scoreboard>->modifyPlayerScore(kg, Sid, *obj, val, pf);
-        return kg;
+    auto sId = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
+    if (sId.isValid()) {
+        Objective* obj = Global<Scoreboard>->getObjective(objname);
+        if (!obj)
+            obj = Scoreboard::newObjective(objname, objname);
+        if (obj) {
+            bool ret;
+            Global<Scoreboard>->modifyPlayerScore(ret, sId, *obj, val, pf);
+            return ret;
+        }
     }
     return false;
 }
@@ -132,8 +135,8 @@ LIAPI Objective* Scoreboard::getDisplayObjective(const std::string& slot) {
 }*/
 LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
-    if (!scoreboardIdIsValid(&identity)) {
-        identity = const_cast<ScoreboardId&>(Global<Scoreboard>->createScoreboardId(id));
+    if (!identity.isValid()) {
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(id);
     }
     return identity;
 }
@@ -145,14 +148,8 @@ LIAPI std::optional<int> Scoreboard::addScore(const std::string& objname, const 
 
     auto& identity = getOrCreateScoreboardId(id);
 
-    int a1 = 0;
-    auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Add);
-    if (res) {
-        Global<Scoreboard>->onScoreChanged(identity, *obj);
-        return a1;
-    }
-    return std::nullopt;
+    bool temp = true;
+    return Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, score, PlayerScoreSetFunction::Add);
 }
 
 LIAPI std::optional<int> Scoreboard::setScore(const std::string& objname, const std::string& id, int score) {
@@ -161,15 +158,8 @@ LIAPI std::optional<int> Scoreboard::setScore(const std::string& objname, const 
         return std::nullopt;
 
     auto& identity = getOrCreateScoreboardId(id);
-
-    int a1 = 0;
-    auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Set);
-    if (res) {
-        Global<Scoreboard>->onScoreChanged(identity, *obj);
-        return a1;
-    }
-    return std::nullopt;
+    bool temp = true;
+    return Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, score, PlayerScoreSetFunction::Set);
 }
 
 LIAPI std::optional<int> Scoreboard::reduceScore(const std::string& objname, const std::string& id, int score) {
@@ -179,31 +169,25 @@ LIAPI std::optional<int> Scoreboard::reduceScore(const std::string& objname, con
 
     auto& identity = getOrCreateScoreboardId(id);
 
-    int a1 = 0;
-    auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Remove);
-    if (res) {
-        Global<Scoreboard>->onScoreChanged(identity, *obj);
-        return a1;
-    }
-    return std::nullopt;
+    bool temp = true;
+    return Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, score, PlayerScoreSetFunction::Remove);
 }
 
 LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, const std::string& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
-    if (!scoreboardIdIsValid(&identity))
+    if (!identity.isValid()) {
         return true;
-
+    }
     auto obj = Global<Scoreboard>->getObjective(objname);
-    if (!obj)
+    if (!obj) {
         return true;
-
+    }
     return Global<Scoreboard>->getScoreboardIdentityRef(identity)->removeFromObjective(*Global<Scoreboard>, *obj);
 }
 
 LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* player) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
-    if (!scoreboardIdIsValid(&identity))
+    if (!identity.isValid())
         return true;
     Objective* obj = Global<Scoreboard>->getObjective(objname);
     if (!obj)
@@ -224,7 +208,7 @@ LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id
     auto& identity =
         const_cast<ScoreboardId&>(Global<Scoreboard>->getOrCreateScoreboardId(id) // If not exists, create a new one
         );
-    if (!scoreboardIdIsValid(&identity)) {
+    if (!identity.isValid()) {
         throw std::runtime_error("Bad ScoreboardId");
     }
 
@@ -269,8 +253,8 @@ LIAPI int Scoreboard::getScore(const std::string& objname, Player* player) {
     }
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
-    if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+    if (!identity.isValid()) {
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
 
     auto score = obj->getPlayerScore(identity);
@@ -297,11 +281,14 @@ LIAPI bool Scoreboard::setScore(const std::string& objname, Player* player, int 
     }
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
-    if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+    if (!identity.isValid()) {
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
-    bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)0); // Set
+    bool temp = true;
+    int result = Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, value, PlayerScoreSetFunction::Set);
+    if (result != value) {
+        return false;
+    }
     return true;
 }
 
@@ -317,11 +304,12 @@ LIAPI bool Scoreboard::addScore(const std::string& objname, Player* player, int 
     }
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
-    if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+    if (!identity.isValid()) {
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
+        return false;
     }
-    bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)1); // Add
+    bool temp = true;
+    Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, value, PlayerScoreSetFunction::Add);
     return true;
 }
 
@@ -339,11 +327,11 @@ LIAPI bool Scoreboard::reduceScore(const std::string& objname, Player* player, i
     bool a1 = true;
     bool& pa = a1;
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
-    if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(*player);
+    if (!identity.isValid()) {
+        ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
-    bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)2); // Reduce
+    bool temp = true;
+    Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, value, PlayerScoreSetFunction::Remove); // Reduce
     return true;
 }
 

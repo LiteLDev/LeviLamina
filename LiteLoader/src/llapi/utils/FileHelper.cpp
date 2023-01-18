@@ -8,7 +8,10 @@
 #include "llapi/utils/WinHelper.h"
 
 #include "liteloader/Config.h"
+
 using namespace std;
+
+Logger logger("FileHelper");
 
 ///////////// Hacker to get private FILE* /////////////
 
@@ -85,7 +88,12 @@ vector<string> GetFileNameList(const std::string& dir) {
 
 bool CreateDirs(const string path) {
     std::error_code ec;
-    return std::filesystem::create_directories(std::filesystem::path(str2wstr(path)).remove_filename(), ec);
+    auto ret = std::filesystem::create_directories(std::filesystem::path(str2wstr(path)), ec);
+    if (ec.value() != 0) {
+        logger.error("Fail to create dir, err code: {}",ec.value());
+        logger.error(ec.message());
+    }
+    return ret;
 }
 
 std::pair<int, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout)
@@ -94,6 +102,6 @@ std::pair<int, std::string> UncompressFile(const std::string& filePath, const st
     std::filesystem::create_directories(toDir, ec);
     std::string realToDir = EndsWith(toDir, "/") ? toDir : toDir + "/";
     auto&& [exitCode, output] = 
-        NewProcessSync(fmt::format("{} x \"{}\" -o\"{}\" -aoa", ZIP_PROGRAM_PATH, filePath, realToDir), processTimeout);
+        NewProcessSync(fmt::format(R"({} x "{}" -o"{}" -aoa)", ZIP_PROGRAM_PATH, filePath, realToDir), processTimeout);
     return { exitCode, std::move(output) };
 }

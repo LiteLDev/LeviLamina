@@ -13,6 +13,7 @@
 #include "RecipeIngredient.hpp"
 #include "Item.hpp"
 #include "Block.hpp"
+#include  "HashedString.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -25,22 +26,46 @@ class Recipes {
 #define AFTER_EXTRA
 // Add Member There
 public:
-class Type {
-    Item const* item;
-    Block const* block;
-    RecipeIngredient ingredient;
-    char label;
 public:
-    inline Type(string const& name, char label, int aux, unsigned short count) :ingredient(name, aux, count), label(label) {
-        item = ingredient.descriptor.getItem();
-        block = ingredient.descriptor.getBlock();
+struct FurnaceRecipeKey {
+public:
+    int mID;
+    HashedString mTag;
+
+public:
+    inline FurnaceRecipeKey(int aux, HashedString tag) : mID(aux), mTag(tag) {}
+};
+
+class Type {
+public:
+    const Item* mItem;
+    const Block* mBlock;
+    RecipeIngredient mIngredient;
+    char mLabel;
+
+public:
+    class Type& operator=(class Type const&) = default;
+
+    inline Type(string const& name, char label, int aux, unsigned short count)
+    : mIngredient(name, aux, count), mLabel(label) {
+        mItem = mIngredient.getItem();
+        mBlock = mIngredient.getBlock();
     }
 };
+
 struct NormalizedRectangularRecipeResults {
+public:
+    int mWidth;
+    int mHeight;
+    std::string mNormalizedResult;
+    std::string mWarning;
+
     NormalizedRectangularRecipeResults() = delete;
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&) = delete;
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&&) = delete;
 };
+
+
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPES

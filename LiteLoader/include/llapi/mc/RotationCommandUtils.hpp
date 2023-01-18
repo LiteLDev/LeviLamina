@@ -28,8 +28,7 @@ class RotationData {
 		
 };
 
-;
-enum class FacingResult;
+    enum class FacingResult;
 
 #undef AFTER_EXTRA
     /**

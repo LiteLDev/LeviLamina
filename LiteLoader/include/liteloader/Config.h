@@ -11,7 +11,6 @@
 
 namespace ll {
 
-constexpr const char* NO_CRASH_LOGGER_PLUGIN_LIST[] = {"AntiCheats"};
 struct CommandLineOption {
     bool noColorOption = false;
 };
@@ -57,7 +56,6 @@ struct LLConfig {
     bool enableFixBDSCrash = true;
     bool enableParticleAPI = false;
     bool enablePermissionAPI = true;
-    bool enableClientChunkPreGeneration = true;
     bool enableFixAbility = true;
     std::vector<std::string> outputFilterRegex = {};
 };

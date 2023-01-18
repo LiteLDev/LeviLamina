@@ -184,6 +184,13 @@ DirectionAngle* DirectionAngle::create(const Arguments& args) {
     }
 }
 
+DirectionAngle* DirectionAngle::extract(Local<Value> v) {
+    if (EngineScope::currentEngine()->isInstanceOf<DirectionAngle>(v))
+        return EngineScope::currentEngine()->getNativeInstance<DirectionAngle>(v);
+    else
+        return nullptr;
+}
+
 Local<Value> DirectionAngle::toString() {
     try {
         return String::newString(fmt::format("({}, {})", pitch, yaw));

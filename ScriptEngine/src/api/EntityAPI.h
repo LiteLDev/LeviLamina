@@ -65,6 +65,8 @@ public:
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);
+    Local<Value> despawn(const Arguments& args);
+    Local<Value> remove(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
     Local<Value> setHealth(const Arguments& args);
