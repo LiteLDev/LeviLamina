@@ -2062,7 +2062,19 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
             return;
     }
     IF_LISTENED_END(MobTrySpawnEvent);
-    return original(this, a1);
+    original(this, a1);
+    auto uid = dAccess<ActorUniqueID>(this, 64);
+    auto en = Global<Level>->getEntity(uid);
+    if (en) {
+        IF_LISTENED(MobSpawnedEvent) {
+            MobSpawnedEvent ev{};
+            ev.mMob = (Mob*)en;
+            ev.mPos = en->getPos();
+            ev.mDimensionId = 2;
+            ev.call();
+        }
+        IF_LISTENED_END(MobSpawnedEvent)
+    }
 }
 
 #include "llapi/impl/FormPacketHelper.h"
