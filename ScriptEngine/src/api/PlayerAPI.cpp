@@ -332,8 +332,11 @@ Local<Value> McClass::getPlayerScore(const Arguments& args) {
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
         auto obj = args[1].asString().toString();
-        auto score = Scoreboard::queryPlayerScore(uuid,obj).value();
-        return Number::newNumber(score);
+        auto scorev = Scoreboard::queryPlayerScore(uuid,obj);
+        if (scorev.has_value())
+            return Number::newNumber(scorev.value());
+        else
+            return Local<Value>();
     }
     CATCH("Fail in getPlayerScore!")
 }
