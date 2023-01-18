@@ -28,6 +28,8 @@ copies or substantial portions of the Software.
 #include "llapi/LLAPI.h"
 #include "llapi/utils/WinHelper.h"
 #include "llapi/mc/AABB.hpp"
+#include "llapi/mc/EnderDragon.hpp"
+#include "llapi/mc/BlockLegacy.hpp"
 
 class Actor;
 class ServerPlayer;
@@ -42,6 +44,8 @@ class CommandRegistry;
 class MobEffectInstance;
 class Container;
 class WitherBoss;
+class EnderDragon;
+class BlockLegacy;
 class ArmorStand;
 class Objective;
 struct ScoreboardId;
@@ -631,6 +635,12 @@ public:
     AABB mDestroyRange{{}, {}};
 };
 
+class EnderDragonDestroyEvent : public EventTemplate<EnderDragonDestroyEvent> {
+public:
+    EnderDragon* mEnderDragon = nullptr;
+    BlockLegacy* mBlockLegacy = nullptr;
+};
+
 class EntityRideEvent : public EventTemplate<EntityRideEvent> {
 public:
     Actor* mRider = nullptr;
@@ -678,7 +688,23 @@ public:
 
 class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
 public:
+    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]]
     string mTypeName;
+    Vec3 mPos;
+    int mDimensionId = -1;
+};
+
+
+class MobTrySpawnEvent : public EventTemplate<MobTrySpawnEvent> {
+public:
+    string mTypeName;
+    Vec3 mPos;
+    int mDimensionId = -1;
+};
+
+class MobSpawnedEvent : public EventTemplate<MobSpawnedEvent> {
+public:
+    Mob* mMob;
     Vec3 mPos;
     int mDimensionId = -1;
 };

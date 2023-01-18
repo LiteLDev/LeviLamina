@@ -10,6 +10,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "BlockInstance.hpp"
+#include "Actor.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -28,6 +29,25 @@ struct ClipParameters
     MCAPI static const std::function<bool(class Block const&)> CHECK_ALL_BLOCKS;
 };
     LIAPI BlockInstance getBlockInstance(BlockPos);
+
+    /**
+     * @par Example
+     * @code
+     * BlockSource* bs;
+     * Actor* actor;
+     * AABB aabb = actor->getAABB();
+     * aabb.min -= 10;
+     * aabb.max += 10;
+     *
+     * // By default, ignoreTargetType = false. The results of the query will all be the target actorType.
+     * bs->queryEntities(ActorType::Creeper, aabb);
+     *
+     * // If ignoreTargetType = true, query results will contain actorTypes other than targets.
+     * bs->queryEntities(ActorType::Creeper, aabb, true);
+     *
+     * @endcode
+     */
+    LIAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE

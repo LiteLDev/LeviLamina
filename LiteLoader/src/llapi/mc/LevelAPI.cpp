@@ -326,7 +326,7 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bo
 ItemStack* Level::getItemStackFromId(short itemId, int aux) {
     auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
-        return new ItemStack(*item, 1, aux,0);
+        return new ItemStack(*item, 1, aux, nullptr);
     return nullptr;
 }
 

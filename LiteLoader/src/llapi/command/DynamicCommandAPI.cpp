@@ -13,7 +13,7 @@
 #include "llapi/mc/MobEffect.hpp"
 #include "llapi/mc/ActorDefinitionIdentifier.hpp"
 #include "llapi/mc/Level.hpp"
-#include "llapi/mc/Block.hpp"
+#include "llapi/mc/CommandBlockName.hpp"
 #include "llapi/utils/SRWLock.h"
 #include "llapi/ScheduleAPI.h"
 #include "llapi/mc/Minecraft.hpp"
@@ -38,7 +38,7 @@ using ll::logger;
     func(Message);                 \
     func(JsonValue);               \
     func(Item);                    \
-    func(Block);                   \
+    func(Block);        \
     func(Effect);                  \
     func(Enum);                    \
     func(SoftEnum);                \
@@ -85,7 +85,7 @@ typedef CommandRawText RawText;
 typedef CommandMessage Message;
 typedef Json::Value JsonValue;
 typedef CommandItem Item;
-typedef Block const* Block;
+typedef CommandBlockName Block;
 typedef MobEffect const* Effect;
 // typedef CommandPosition Position;
 #ifdef USE_PARSE_ENUM_STRING
@@ -355,7 +355,7 @@ std::string DynamicCommand::Result::toDebugString() const {
         case ParameterType::Item:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM).toString());
         case ParameterType::Block:
-            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<Block const*>()->toDebugString() : "nullptr");
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<CommandBlockName>().getDescriptionId() : "nullptr" );
         case ParameterType::Effect:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<MobEffect const*>()->getResourceName() : "nullptr");
         case ParameterType::Enum:

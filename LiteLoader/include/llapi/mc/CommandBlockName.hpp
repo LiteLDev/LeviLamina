@@ -18,6 +18,11 @@
 class CommandBlockName {
 
 #define AFTER_EXTRA
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKNAME
+public:
+    unsigned __int64 id;
+
+    CommandBlockName(){};
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKNAME
