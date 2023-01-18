@@ -45,7 +45,11 @@ class DynamicCommandInstance;
 class Player;
 
 
-#define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*, CommandMessage const*, Json::Value const*, CommandItem const*, Block const* const*, MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*
+#define AllResultType                                                                                                  \
+    bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*,                          \
+        CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*,    \
+        CommandMessage const*, Json::Value const*, CommandItem const*, CommandBlockName const*,                        \
+        MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*
 
 /**
  * @brief The dynamic command
@@ -196,7 +200,7 @@ public:
         Item,
 
         /**
-         * @brief The block type ( `Const* Block` )
+         * @brief The block type ( `CommandBlockName` )
          *
          */
         Block,
@@ -460,7 +464,7 @@ private:
             case ParameterType::Item:
                 return std::is_same_v<CommandItem, std::remove_cv_t<_Ty>>;
             case ParameterType::Block:
-                return std::is_same_v<Block const*, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandBlockName, std::remove_cv_t<_Ty>>;
             case ParameterType::Effect:
                 return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
             // case ParameterType::Position:
