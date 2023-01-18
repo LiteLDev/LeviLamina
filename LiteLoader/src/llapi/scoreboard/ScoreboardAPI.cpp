@@ -66,9 +66,9 @@ LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string
         if (!obj)
             obj = Scoreboard::newObjective(objname, objname);
         if (obj) {
-            bool kg;
-            Global<Scoreboard>->modifyPlayerScore(kg, sId, *obj, val, pf);
-            return kg;
+            bool ret;
+            Global<Scoreboard>->modifyPlayerScore(ret, sId, *obj, val, pf);
+            return ret;
         }
     }
     return false;

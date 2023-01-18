@@ -23,6 +23,7 @@ class CommandParameterData;
 #include "CommandRawText.hpp"
 #include "CommandItem.hpp"
 #include "CommandIntegerRange.hpp"
+#include "CommandBlockName.hpp"
 #include "ActorDamageSource.hpp"
 
 #undef BEFORE_EXTRA
@@ -439,6 +440,8 @@ public:
         {typeid(ActorDefinitionIdentifier const*).name(),
          dlsym_real(
              "??$parse@PEBUActorDefinitionIdentifier@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(CommandBlockName).name(),
+         dlsym_real("??$parse@VCommandBlockName@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
     };
 
 private:

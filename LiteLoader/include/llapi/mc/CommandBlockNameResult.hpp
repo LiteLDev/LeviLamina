@@ -18,7 +18,8 @@
 class CommandBlockNameResult {
 
 #define AFTER_EXTRA
-
+public:
+ enum class Result;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKNAMERESULT
 public:
