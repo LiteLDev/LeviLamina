@@ -386,6 +386,19 @@ Local<Value> McClass::reducePlayerScore(const Arguments& args) {
     CATCH("Fail in reducePlayerScore!")
 }
 
+Local<Value> McClass::deletePlayerScore(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    try {
+        auto uuid = mce::UUID::fromString(args[0].asString().toString());
+        auto obj = args[1].asString().toString();
+        auto res = Scoreboard::forceRemovePlayerScoreFromObjective(uuid, obj);
+        return Boolean::newBoolean(res);
+    }
+    CATCH("Fail in deletePlayerScore!")
+}
+
 Local<Value> McClass::getPlayer(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)

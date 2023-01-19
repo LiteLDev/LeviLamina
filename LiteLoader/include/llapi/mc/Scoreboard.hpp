@@ -119,6 +119,23 @@ public:
      */
     LIAPI static std::optional<int> queryPlayerScore(xuid_t const& xuid, std::string const& objname);
     /**
+     * @brief delete Score from an Objective for Player by mce::UUID.
+     *
+     * works whether Players are online or not.
+     * @return bool
+     */
+    LIAPI static bool forceRemovePlayerScoreFromObjective(mce::UUID const& uuid, std::string const& objname);
+    /**
+     * @brief query Score for Player by Xuid.
+     *
+     * Xuid must be recorded by PlayerInfo first!
+     * works whether Players are online or not.
+     * return false if Xuid is wrong
+     * ScoreboardId.
+     * @return bool
+     */
+    LIAPI static bool forceRemovePlayerScoreFromObjective(xuid_t const& xuid, std::string const& objname);
+    /**
      * @brief Create a new objective.
      *
      * @param objname The objective name
@@ -140,6 +157,15 @@ public:
      * @return True if removed; otherwise false.
      */
     LIAPI static bool removeFromObjective(const std::string& objname, Player* player);
+
+    /**
+     * @brief Remove the score of a ScoreboardId from an objective.
+     *
+     * @param objname The objective name
+     * @param ScoreboardId The ScoreboardId
+     * @return True if removed; otherwise false.
+     */
+    LIAPI static bool removeFromObjective(const std::string& objname, ScoreboardId const& Id);
 
     LIAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
     LIAPI static int getScore(const std::string& objname, const std::string& id);
