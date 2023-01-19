@@ -46,6 +46,7 @@ ClassDefine<void> McClassBuilder =
         .function("setPlayerScore", &McClass::setPlayerScore)
         .function("addPlayerScore", &McClass::addPlayerScore)
         .function("reducePlayerScore", &McClass::reducePlayerScore)
+        .function("deletePlayerScore", &McClass::deletePlayerScore)
 
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)
