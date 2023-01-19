@@ -85,10 +85,10 @@ LIAPI bool Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string co
 
 LIAPI std::optional<int> Scoreboard::queryPlayerScore(mce::UUID const& uuid, std::string const& objname) {
     auto obj = Global<Scoreboard>->getObjective(objname);
-    auto Sid = Global<Scoreboard>->getScoreboardId(uuid);
-    if (!obj || !Sid.isValid())
+    auto sId = Global<Scoreboard>->getScoreboardId(uuid);
+    if (!obj || !sId.isValid())
         return std::nullopt;
-    return obj->getPlayerScore(Sid).getCount();
+    return obj->getPlayerScore(sId).getCount();
 }
 
 LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::string const& objname) {
@@ -96,10 +96,10 @@ LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::s
     auto uuid = PlayerInfo::getUUIDByXuid(xuid);
     if (uuid.empty())
         return std::nullopt;
-    const auto& Sid = Global<Scoreboard>->getScoreboardId(uuid);
-    if (!obj || !Sid.isValid())
+    const auto& sId = Global<Scoreboard>->getScoreboardId(uuid);
+    if (!obj || !sId.isValid())
         return std::nullopt;
-    return obj->getPlayerScore(Sid).getCount();
+    return obj->getPlayerScore(sId).getCount();
 }
 
 LIAPI bool Scoreboard::forceRemovePlayerScoreFromObjective(mce::UUID const& uuid, std::string const& objname) {
