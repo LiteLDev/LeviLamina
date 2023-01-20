@@ -57,6 +57,7 @@
 #include "llapi/mc/BucketableComponent.hpp"
 #include "llapi/mc/AnimatePacket.hpp"
 #include "llapi/mc/Util.hpp"
+#include "llapi/mc/EmotePacket.hpp"
 
 #include "llapi/utils/StringHelper.h"
 #include "llapi/utils/DbgHelper.h"
@@ -299,6 +300,7 @@ DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
 DECLARE_EVENT_DATA(PlayerSwingEvent);
+DECLARE_EVENT_DATA(PlayerSendEmoteEvent);
 
 #define IF_LISTENED(EVENT)      \
     if (EVENT::hasListener()) { \
@@ -2140,4 +2142,20 @@ TInstanceHook(void, "?openInventory@ServerPlayer@@UEAAXXZ", ServerPlayer) {
     }
     IF_LISTENED_END(PlayerOpenInventoryEvent)
     original(this);
+}
+
+/////////////////// PlayerSendEmoteEvent ///////////////////
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVEmotePacket@@@Z",
+    ServerNetworkHandler, NetworkIdentifier* id, EmotePacket* packet) {
+    IF_LISTENED(PlayerSendEmoteEvent) {
+        PlayerSendEmoteEvent ev{};
+        ev.mPlayer = packet->getPlayerFromPacket(this, id);
+        if (!ev.mPlayer)
+            return;
+        ev.mIsServerSide = packet->isServerSide();
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerSendEmoteEvent);
+    original(this, id, packet);
 }

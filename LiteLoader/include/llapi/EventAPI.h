@@ -485,6 +485,12 @@ public:
     ServerPlayer* mServerPlayer = nullptr;
 };
 
+class PlayerSendEmoteEvent : public EventTemplate<PlayerSendEmoteEvent> {
+public:
+    Player* mPlayer = nullptr;
+    bool mIsServerSide = false;
+};
+
 /* endregion */
 
 /* region ## Block Events ## */

@@ -140,6 +140,7 @@ enum class EVENT_TYPES : int {
     onMobTrySpawn,
     onMobSpawned,
     onContainerChangeSlot,
+    onPlayerSendEmote,
     EVENT_COUNT
 };
 
@@ -1096,6 +1097,15 @@ void EnableEventListener(int eventId) {
                     CallEvent(EVENT_TYPES::onOpenInventory, PlayerClass::newPlayer(ev.mPlayer));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onOpenInventory);
+            });
+            break;
+
+        case EVENT_TYPES::onPlayerSendEmote:
+            Event::PlayerSendEmoteEvent::subscribe([](const PlayerSendEmoteEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onPlayerSendEmote) {
+                    CallEvent(EVENT_TYPES::onPlayerSendEmote, PlayerClass::newPlayer(ev.mPlayer), Boolean::newBoolean(ev.mIsServerSide));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onPlayerSendEmote);
             });
             break;
 
