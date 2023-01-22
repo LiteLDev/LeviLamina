@@ -131,23 +131,6 @@ mc.listen("onServerStarted", () => {
 wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh && sh install.sh
 ```
 
-#### Docker
-
-在终端中输入：
-
-```
-docker pull shrbox/liteloaderbds
-mkdir <install directory>
-docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
-```
-
-`<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
-第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
-启动服务器：`docker container start llbds -a`  
-强制停止服务器（不推荐）：`docker container stop llbds`  
-进入控制台：`docker attach llbds`  
-退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。
-
 ## 🎯 下载 & 加载插件
 
 ### 插件的下载

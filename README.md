@@ -149,25 +149,6 @@ We do not recommend you to use Wine due to BDS 1.19.20+ on Wine has a performanc
 wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh && sh install.sh
 ```
 
-#### Docker
-
-Enter the following lines in your terminal:
-
-```
-docker pull shrbox/liteloaderbds
-mkdir <install directory>
-docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
-```
-
-`<install directory>` is directory to store data, for example: `/home/shrbox/bedrock-server`  
-The first boot takes a little while to download the Bedrock Dedicated Server and LiteLoaderBDS  
-Start server: `docker container start llbds -a`  
-Force stop server(not recommended): `docker container stop llbds`  
-Enter console: `docker attach llbds`  
-Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.
-
-Everything's done! Next, you can install **LiteLoader** plugins!
-
 ## 🎯 Find & Install plugins
 
 ### Plugin downloads
