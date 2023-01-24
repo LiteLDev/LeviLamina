@@ -63,5 +63,6 @@ public:
     static Local<Value> setPlayerScore(const Arguments& args);
     static Local<Value> addPlayerScore(const Arguments& args);
     static Local<Value> reducePlayerScore(const Arguments& args);
+    static Local<Value> deletePlayerScore(const Arguments& args);
 };
 extern ClassDefine<void> McClassBuilder;
