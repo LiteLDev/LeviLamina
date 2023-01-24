@@ -1,7 +1,7 @@
 {
     "format_version": 1,
-    "tooth": "github.com/LiteLoaderBDS-Hub/LiteLoaderBDS",
-    "version": "2.9.2",
+    "tooth": "github.com/Tooth-Hub/LiteLoaderBDS",
+    "version": "2.9.3",
     "dependencies": {},
     "information": {
         "name": "LiteLoaderBDS",
