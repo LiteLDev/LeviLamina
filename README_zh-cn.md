@@ -4,8 +4,8 @@
 [![Discord](https://img.shields.io/discord/849252980430864384?color=blue&label=Discord&style=for-the-badge)](https://discord.gg/27KTrxHc9t)
 [![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)](https://t.me/liteloader)
 [
-![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
+![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoaderBDS?label=LATEST%20TAG&style=for-the-badge)
+![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoaderBDS/latest/total?style=for-the-badge)
 ](https://github.com/LiteLDev/LiteLoader/releases/latest)  
 QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
