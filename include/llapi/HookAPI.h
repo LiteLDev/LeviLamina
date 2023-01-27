@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <thread>
+#include <sstream>
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
