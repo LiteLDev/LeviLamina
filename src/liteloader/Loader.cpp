@@ -176,17 +176,6 @@ inline void loadDotNETEngine() {
     }
 }
 
-inline void loadPermissionAPI() {
-    std::string path = "plugins/LiteLoader/PermissionAPI.dll";
-    auto lib = LoadLibrary(str2wstr(path).c_str());
-    if (lib) {
-        Permission::init(lib);
-    } else {
-        ll::logger.error("Fail to load PermissionAPI!");
-        ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
-    }
-}
-
 inline void loadParticleApi() {
     std::string path = "plugins/LiteLoader/ParticleAPI.dll";
     auto lib = LoadLibrary(str2wstr(path).c_str());
@@ -286,13 +275,6 @@ void ll::LoadMain() {
             }
             ll::logger.error("Fail to load plugin <{}>!", info);
             ll::logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
-        }
-    }
-
-    // Load PermissionAPI
-    if (ll::globalConfig.enablePermissionAPI) {
-        if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
-            loadPermissionAPI();
         }
     }
 

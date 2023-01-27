@@ -47,7 +47,8 @@ target_compile_definitions(
 # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 target_link_options(
         LiteLoader
-        PRIVATE /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1 /DELAYLOAD:bedrock_server.dll
+        PRIVATE /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO
+        /SUBSYSTEM:CONSOLE /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1 /DELAYLOAD:bedrock_server.dll
 )
 
 target_link_libraries(

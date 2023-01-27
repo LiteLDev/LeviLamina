@@ -44,7 +44,7 @@ class DynPermissionAPI {
 
     template <typename T>
     T getFunc(const std::string& name) {
-        return (T)GetProcAddress(handle, name.c_str());
+        return reinterpret_cast<T>(GetProcAddress(handle, name.c_str()));
     }
 
 public:
@@ -56,7 +56,7 @@ public:
      */
     void init(HMODULE hModule = nullptr) {
         if (!hModule) {
-            auto pPtr = ll::getPlugin("PermissionAPI");
+            auto pPtr = ll::getPlugin("LLPermission");
             if (!pPtr) {
                 throw std::runtime_error("Cannot get the plugin object");
             }
