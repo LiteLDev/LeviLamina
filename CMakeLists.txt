@@ -82,6 +82,6 @@ target_include_directories(
 )
 
 target_include_directories(
-        LiteLoader PRIVATE
+        LiteLoader PUBLIC
         ${PROJECT_SOURCE_DIR}/include/
 )
