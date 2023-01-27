@@ -52,23 +52,13 @@ target_link_options(
 
 target_link_libraries(
         LiteLoader
-        leveldb
-        crypto
-        ssl
-        SQLiteCpp
-        sqlite3
-        mysql
-        CED
-        dyncall_s
-        dyncallback_s
-        dynload_s
-        dbghelp
+        leveldb crypto ssl SQLiteCpp sqlite3 mysql CED dyncall_s dyncallback_s dynload_s dbghelp nlohmann_json nbt_cpp
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
-        bds_api bds_var PreLoader SymDBHelper nlohmann_json nbt_cpp
+        bds_api bds_var PreLoader SymDBHelper
 )
 
 target_include_directories(
-        LiteLoader SYSTEM PRIVATE
+        LiteLoader SYSTEM PUBLIC
         ${PROJECT_SOURCE_DIR}/prebuilt/include
         ${FMT_SOURCE_DIR}/include
         ${nlohmann_json_SOURCE_DIR}/include
@@ -94,5 +84,4 @@ target_include_directories(
 target_include_directories(
         LiteLoader PRIVATE
         ${PROJECT_SOURCE_DIR}/include/
-        ${PROJECT_SOURCE_DIR}
 )
