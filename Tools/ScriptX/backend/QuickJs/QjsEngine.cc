@@ -17,6 +17,7 @@
 
 #include "QjsEngine.h"
 #include <ScriptX/ScriptX.h>
+#include "../../src/utils/Helper.hpp"
 
 namespace script::qjs_backend {
 
@@ -94,6 +95,9 @@ QjsEngine::QjsEngine(std::shared_ptr<utils::MessageQueue> queue, const QjsFactor
   }
 
   initEngineResource();
+
+  /* set default loader for ES6 modules */
+  JS_SetModuleLoaderFunc(runtime_, NULL, js_module_loader, NULL);  
 }
 
 void QjsEngine::initEngineResource() {
@@ -263,6 +267,39 @@ Local<Value> QjsEngine::eval(const Local<String>& script, const Local<Value>& so
   }
   qjs_backend::checkException(ret);
 
+  scheduleTick();
+
+  return Local<Value>(ret);
+}
+
+Local<Value> QjsEngine::loadFile(const Local<String>& scriptFile) {
+  Tracer trace(this, "QjsEngine::loadFile");
+
+  if(scriptFile.toString().empty())
+    throw Exception("script file no found");
+  Local<Value> content = internal::readAllFileContent(scriptFile);
+  if(content.isNull())
+    throw Exception("can't load script file");
+
+  // get source file name
+  std::string sourceFilePath = scriptFile.toString();
+  std::size_t pathSymbol = sourceFilePath.rfind("/");
+  if(pathSymbol != -1)
+    sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  else
+  {
+    pathSymbol = sourceFilePath.rfind("\\");
+    if(pathSymbol != -1)
+      sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  }
+  Local<String> sourceFileName = String::newString(sourceFilePath);
+
+  StringHolder contentStr(content.asString());
+  StringHolder fileNameStr(sourceFileName);
+  JSValue ret = JS_Eval(context_, contentStr.c_str(), contentStr.length(), fileNameStr.c_str(),
+      JS_EVAL_TYPE_MODULE);
+    
+  qjs_backend::checkException(ret);
   scheduleTick();
 
   return Local<Value>(ret);

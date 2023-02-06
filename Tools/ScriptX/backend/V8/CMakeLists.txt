@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(ScriptX PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/V8Engine.cc
         ${CMAKE_CURRENT_LIST_DIR}/V8Platform.cc
         ${CMAKE_CURRENT_LIST_DIR}/V8Scope.cc
@@ -20,7 +20,7 @@ if (${SCRIPTX_FEATURE_INSPECTOR})
 
 endif ()
 
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(ScriptX PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/V8Engine.h
         ${CMAKE_CURRENT_LIST_DIR}/V8Engine.hpp
         ${CMAKE_CURRENT_LIST_DIR}/V8Helper.h

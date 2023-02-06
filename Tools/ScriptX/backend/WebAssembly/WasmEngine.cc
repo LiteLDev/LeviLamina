@@ -23,6 +23,7 @@
 #include "WasmNative.hpp"
 #include "WasmReference.hpp"
 #include "WasmScope.hpp"
+#include "../../src/utils/Helper.hpp"
 
 namespace script::wasm_backend {
 
@@ -74,6 +75,27 @@ Local<Value> WasmEngine::eval(const Local<String>& script, const Local<Value>& s
   Tracer trace(this, "WasmEngine::eval");
   auto retIndex = evaluateJavaScriptCode(script.val_, sourceFile.val_);
   return Local<Value>(retIndex);
+}
+
+Local<Value> WasmEngine::loadFile(const Local<String>& scriptFile) {
+  if(scriptFile.toString().empty())
+    throw Exception("script file no found");
+  Local<Value> content = internal::readAllFileContent(scriptFile);
+  if(content.isNull())
+    throw Exception("can't load script file");
+
+  std::string sourceFilePath = scriptFile.toString();
+  std::size_t pathSymbol = sourceFilePath.rfind("/");
+  if(pathSymbol != -1)
+    sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  else
+  {
+    pathSymbol = sourceFilePath.rfind("\\");
+    if(pathSymbol != -1)
+      sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  }
+  Local<String> sourceFileName = String::newString(sourceFilePath);
+  return eval(content.asString(), sourceFileName);
 }
 
 std::shared_ptr<utils::MessageQueue> WasmEngine::messageQueue() { return messageQueue_; }

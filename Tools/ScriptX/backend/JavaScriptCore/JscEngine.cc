@@ -19,6 +19,7 @@
 #include "../../src/Native.hpp"
 #include "JscEngine.hpp"
 #include "JscHelper.h"
+#include "../../src/utils/Helper.hpp"
 
 namespace script::jsc_backend {
 
@@ -175,6 +176,27 @@ script::Local<script::Value> JscEngine::eval(const script::Local<script::String>
 
 script::Local<script::Value> JscEngine::eval(const script::Local<script::String>& script) {
   return eval(script, {});
+}
+
+Local<Value> JscEngine::loadFile(const Local<String>& scriptFile) {
+  if(scriptFile.toString().empty())
+    throw Exception("script file no found");
+  Local<Value> content = internal::readAllFileContent(scriptFile);
+  if(content.isNull())
+    throw Exception("can't load script file");
+
+  std::string sourceFilePath = scriptFile.toString();
+  std::size_t pathSymbol = sourceFilePath.rfind("/");
+  if(pathSymbol != -1)
+    sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  else
+  {
+    pathSymbol = sourceFilePath.rfind("\\");
+    if(pathSymbol != -1)
+      sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  }
+  Local<String> sourceFileName = String::newString(sourceFilePath);
+  return eval(content.asString(), sourceFileName);
 }
 
 std::shared_ptr<utils::MessageQueue> JscEngine::messageQueue() { return messageQueue_; }
