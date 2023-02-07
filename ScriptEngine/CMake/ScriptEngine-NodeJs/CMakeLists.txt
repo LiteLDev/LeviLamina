@@ -12,8 +12,8 @@ include(../../CMakeLists.txt)
 
 target_include_directories(
         ${PROJECT_NAME}
-        PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/include/NodeJs
-        PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/include/NodeJs/v8
+        PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/NodeJs
+        PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/NodeJs/v8
 )
 
 # copy target DLL and PDB to output directory

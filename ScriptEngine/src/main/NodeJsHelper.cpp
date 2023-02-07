@@ -12,8 +12,8 @@
 #include "main/NodeJsHelper.h"
 #include "engine/EngineManager.h"
 #include "engine/EngineOwnData.h"
-#include <NodeJs/uv/uv.h>
-#include <NodeJs/v8/v8.h>
+#include <uv/uv.h>
+#include <v8/v8.h>
 
 // pre-declare
 extern void BindAPIs(ScriptEngine* engine);

@@ -10,4 +10,4 @@ project(ScriptX-Lua)
 
 include(../../CMakeLists.txt)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/include/Lua/)
+target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/Lua/)
