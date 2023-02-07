@@ -2,7 +2,7 @@
 #if defined(LLSE_BACKEND_NODEJS)
 #pragma warning(disable : 4251)
 #include <map>
-#include <NodeJs/node.h>
+#include <node.h>
 #include <ScriptX/ScriptX.h>
 #include "main/Configs.h"
 #include <string>

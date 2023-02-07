@@ -10,7 +10,7 @@ set(LLSE_BACKEND_LIBRARY Lua)
 
 include(../../CMakeLists.txt)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/include/Lua/)
+target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/Lua/)
 
 # copy target DLL and PDB to output directory
 add_custom_command(

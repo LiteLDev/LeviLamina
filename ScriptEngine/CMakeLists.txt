@@ -63,6 +63,7 @@ target_include_directories(
 file(
         GLOB_RECURSE SCRIPTENGINE_THIRD_PARTY_LIBS
         ${SCRIPTENGINE_DIR}/third-party/lib/*.lib
+        ${SCRIPTENGINE_DIR}/third-party/backend/lib/${LLSE_BACKEND_LIBRARY}/*.lib
 )
 
 target_link_libraries(
