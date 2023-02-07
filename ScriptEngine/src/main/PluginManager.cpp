@@ -109,11 +109,6 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
 
     ScriptEngine* engine = nullptr;
     try {
-        auto scripts = ReadAllFile(realPath);
-        if (!scripts) {
-            throw std::runtime_error("Fail to open plugin file!");
-        }
-
         // Create script engine
         engine = EngineManager::newEngine();
         EngineScope enter(engine);
@@ -142,7 +137,7 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
 
         // Load script
         try {
-            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFileOrDirPath);
+            engine->loadFile(realPath);
         } catch (const Exception& e) {
             logger.error("Fail in Loading Script Plugin!\n");
             throw;

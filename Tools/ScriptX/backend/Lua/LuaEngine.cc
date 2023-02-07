@@ -28,6 +28,7 @@
 #include "LuaHelper.hpp"
 #include "LuaReference.hpp"
 #include "LuaScope.hpp"
+#include "../../src/utils/Helper.hpp"
 
 // ref https://www.lua.org/manual/5.1/manual.html
 // https://www.lua.org/wshop14/Zykov.pdf
@@ -257,6 +258,27 @@ Local<Value> LuaEngine::eval(const Local<String>& script, const Local<Value>& so
   }
 
   return lua_backend::callFunction({}, {}, 0, nullptr);
+}
+
+Local<Value> LuaEngine::loadFile(const Local<String>& scriptFile) {
+  if(scriptFile.toString().empty())
+    throw Exception("script file no found");
+  Local<Value> content = internal::readAllFileContent(scriptFile);
+  if(content.isNull())
+    throw Exception("can't load script file");
+
+  std::string sourceFilePath = scriptFile.toString();
+  std::size_t pathSymbol = sourceFilePath.rfind("/");
+  if(pathSymbol != -1)
+    sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  else
+  {
+    pathSymbol = sourceFilePath.rfind("\\");
+    if(pathSymbol != -1)
+      sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
+  }
+  Local<String> sourceFileName = String::newString(sourceFilePath);
+  return eval(content.asString(), sourceFileName);
 }
 
 Arguments LuaEngine::makeArguments(LuaEngine* engine, int stackBase, size_t paramCount,

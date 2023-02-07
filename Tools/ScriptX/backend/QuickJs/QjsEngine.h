@@ -94,6 +94,8 @@ class QjsEngine : public ScriptEngine {
   Local<Value> eval(const Local<String>& script) override;
   using ScriptEngine::eval;
 
+  Local<Value> loadFile(const Local<String>& scriptFile) override;
+
   std::shared_ptr<utils::MessageQueue> messageQueue() override;
 
   void gc() override;

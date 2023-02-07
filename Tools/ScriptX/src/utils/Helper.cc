@@ -18,6 +18,7 @@
 #include <ScriptX/ScriptX.h>
 
 #include <utility>
+#include <fstream>
 
 namespace script::internal {
 
@@ -54,6 +55,19 @@ Local<Value> getNamespaceObject(ScriptEngine* engine, const std::string_view& na
     }
   }
   return nameSpaceObj;
+}
+
+Local<Value> readAllFileContent(const Local<String>& scriptFile)
+{
+  std::ifstream fRead;
+  fRead.open(scriptFile.toString(), std::ios_base::in);
+  if (!fRead.is_open()) {
+      return Local<Value>();
+  }
+  std::string data((std::istreambuf_iterator<char>(fRead)),
+                    std::istreambuf_iterator<char>());
+  fRead.close();
+  return String::newString(std::move(data)).asValue();
 }
 
 }  // namespace script::internal
