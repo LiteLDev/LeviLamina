@@ -37,7 +37,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
-     * @hash   -1169949188
+     * @hash   -1169856932
      */
     MCAPI void reloadComponent(class Actor &);
 

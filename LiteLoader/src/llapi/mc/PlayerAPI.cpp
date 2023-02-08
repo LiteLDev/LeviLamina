@@ -78,36 +78,32 @@ Certificate* Player::getCertificate() {
 }
 
 enum class AbilitiesLayer;
-LayeredAbilities* Player::getAbilities() {
-    return &dAccess<LayeredAbilities>(this, 2124); // AbilityCommand::execute
-}
-
 //From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
     ActorUniqueID uid = getUniqueID();
     auto abilities = getAbilities();
-    auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    auto flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
-        abilities->setAbility(AbilitiesIndex::MayFly, value);
+        abilities.setAbility(AbilitiesIndex::MayFly, value);
     }
     if (index == AbilitiesIndex::MayFly && value == false && flying) {
-        abilities->setAbility(AbilitiesIndex::Flying, false);
+        abilities.setAbility(AbilitiesIndex::Flying, false);
     }
-    abilities->setAbility(index, value);
-    auto mayfly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
-    auto noclip = abilities->getAbility(AbilitiesIndex::NoClip).getBool();
+    abilities.setAbility(index, value);
+    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
+    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).getBool();
     setCanFly(mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
-        abilities->setAbility(AbilitiesIndex::Flying, value);
+        abilities.setAbility(AbilitiesIndex::Flying, value);
     }
-    flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
-    Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+    flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
+    Ability& ab = abilities.getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
     ab.setBool(0);
     if (flying)
         ab.setBool(1);
-    UpdateAbilitiesPacket pkt(uid, *abilities);
+    UpdateAbilitiesPacket pkt(uid, abilities);
     auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
-    abilities->setAbility(AbilitiesIndex::Flying, flying);
+    abilities.setAbility(AbilitiesIndex::Flying, flying);
     sendNetworkPacket(pkt2);
     sendNetworkPacket(pkt);
 }
@@ -311,7 +307,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 3792); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {

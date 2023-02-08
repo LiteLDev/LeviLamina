@@ -40,7 +40,6 @@ BlockSource* Level::getBlockSource(int dimID) {
     // auto dim = Global<Level>->createDimension(dimID);
     auto dim = (Dimension*)Global<Level>->getDimension(dimID).mHandle.lock().get();
     return &dim->getBlockSourceFromMainChunkSource();
-    // return dAccess<BlockSource*>(dim, 96);
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {

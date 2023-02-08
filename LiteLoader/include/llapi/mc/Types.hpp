@@ -305,6 +305,12 @@ inline static const char getParticleColorType(ColorPalette const& p) {
 
 }; // namespace mce
 
+
+namespace reflection {
+    struct Schema {};
+}
+
+
 namespace std {
 
 template <>
