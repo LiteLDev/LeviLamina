@@ -49,11 +49,11 @@ public:
 
     LIAPI class BoundingBox toBoundingBox() const;
 
-    bool operator!=(class AABB const& x) const {
+    constexpr bool operator!=(class AABB const& x) const {
         return min != x.min || max != x.max;
     }
 
-    bool operator==(class AABB const& x) const {
+    constexpr bool operator==(class AABB const& x) const {
         return min == x.min && max == x.max;
     }
 
