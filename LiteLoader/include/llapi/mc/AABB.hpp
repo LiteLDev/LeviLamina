@@ -114,3 +114,14 @@ public:
         return AABB(std::min(a, min), std::max(a, max));
     }
 };
+
+namespace std {
+
+template <>
+struct hash<AABB> {
+    std::size_t operator()(AABB const& box) const noexcept {
+        return (std::hash<Vec3>()(box.min) ^ std::hash<Vec3>()(box.max));
+    }
+};
+
+} // namespace std
