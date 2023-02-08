@@ -38,8 +38,8 @@ public:
     MCAPI bool intersects(class Vec3 const&, class Vec3 const&) const;
     MCAPI bool intersectsInner(class AABB const&) const;
     MCAPI bool isValid() const;
-    bool operator!=(class AABB const&) const;
-    bool operator==(class AABB const&) const;
+    MCAPI bool operator!=(class AABB const&) const;
+    MCAPI bool operator==(class AABB const&) const;
     MCAPI class AABB& set(float, float, float, float, float, float);
     MCAPI class AABB& set(class AABB const&);
     MCAPI class AABB& set(class Vec3 const&, class Vec3 const&);
