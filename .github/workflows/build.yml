@@ -1,14 +1,9 @@
-name: Release
+name: Build
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        required: true
-        description: 'Release Tag'
-      status:
-        required: true
-        description: 'Release Status (beta, stable)'
+  pull_request:
+  push:
 
 env:
   BUILD_TYPE: Release
@@ -23,16 +18,6 @@ jobs:
         with:
           fetch-depth: 1
           submodules: 'true'
-
-      - name: Create tag
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag | xargs git tag -d
-          git tag ${{ github.event.inputs.tag }}
-          git push origin ${{ github.event.inputs.tag }}
-        shell: bash
 
       - name: Cache BDS libraries
         id: cache-bds-lib
@@ -74,20 +59,6 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' LiteLoader/include/liteloader/Version.h
-        shell: bash
-
-      - name: Set LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: ${{ github.event.inputs.status }} == 'beta'
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/include/liteloader/Version.h
-        shell: bash
-
-      - name: Set LITELOADER_VERSION_STATUS_RELEASE
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: ${{ github.event.inputs.status }} == 'stable'
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
       - name: Configure CMake (MSVC)
@@ -213,43 +184,3 @@ jobs:
         with:
           name: PDB
           path: ${{ github.workspace }}\build\pdb\
-
-  publish_release:
-    name: Publish release
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-
-      - name: Pack artifacts
-        run: |
-          zip -9r LiteLoaderBDS.zip LiteLoaderBDS/*
-          zip -9r PeEditor.zip PeEditor/*
-          zip -9r PreLoader.zip PreLoader/*
-          zip -9r LiteLoader.zip LiteLoader/*
-          zip -9r ScriptEngine.zip ScriptEngine/*
-          zip -9r LLParticle.zip LLParticle/*
-          zip -9r LLPermission.zip LLPermission/*
-          zip -9r LLMoney.zip LLMoney/*
-          zip -9r PDB.zip PDB/*
-        shell: bash
-
-      - name: Create release
-        uses: ncipollo/release-action@v1
-        with:
-          prerelease: ${{ github.event.inputs.status != 'stable' }}
-          tag: ${{ github.event.inputs.tag }}
-          bodyFile: ${{ github.workspace }}\RELEASE_NOTES.md
-          artifacts: |
-            LiteLoaderBDS.zip
-            PeEditor.zip
-            PreLoader.zip
-            LiteLoader.zip
-            ScriptEngine.zip
-            LLParticle.zip
-            LLPermission.zip
-            LLMoney.zip
-            PDB.zip
-        env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
