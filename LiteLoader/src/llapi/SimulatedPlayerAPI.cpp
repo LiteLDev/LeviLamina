@@ -67,10 +67,12 @@ public:
     // inline bool isValid()
 };
 
+#include "llapi/mc/HashedString.hpp"
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId) {
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
-    OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, "");
+    OwnerPtrT<EntityRefTraits> ownerPtr =
+        Global<ServerNetworkHandler>->createSimulatedPlayer(name, std::to_string(HashedString::computeHash(name) / -rand()) );
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
@@ -84,16 +86,19 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
         player->setSpawnBlockRespawnPosition(position, dimensionId);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
+        player->teleport(position.bottomCenter(), dimensionId);
     }
     return player;
 }
 
 
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId) {
-    OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, "");
+    OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
+        name, std::to_string(HashedString::computeHash(name) / -rand()));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
+        player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
