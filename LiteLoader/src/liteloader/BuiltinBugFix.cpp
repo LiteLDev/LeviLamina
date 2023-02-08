@@ -416,15 +416,15 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             if (!pkt.tryGetBool(flying))
                 return;
             auto abilities = sp->getAbilities();
-            auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
+            auto mayFly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
             flying = flying && mayFly;
-            Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+            Ability& ab = abilities.getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket packet(sp->getUniqueID(), *abilities);
+            UpdateAbilitiesPacket packet(sp->getUniqueID(), abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
-            abilities->setAbility(AbilitiesIndex::Flying, flying);
+            abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
             sp->sendNetworkPacket(packet);
         }

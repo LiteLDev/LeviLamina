@@ -60,7 +60,7 @@ public:
     /**
      * @vftbl  45
      * @symbol ?getLevelDataForAuxValue@BambooBlockItem@@UEBAHH@Z
-     * @hash   -2027061568
+     * @hash   -2027030816
      */
     virtual int getLevelDataForAuxValue(int) const;
     /**
@@ -100,23 +100,23 @@ public:
     virtual void __unk_vfn_75();
     /**
      * @vftbl  79
-     * @hash   -275840522
+     * @hash   -275809770
      */
     virtual void __unk_vfn_79();
     /**
      * @vftbl  80
-     * @hash   -255523060
+     * @hash   -255492308
      */
     virtual void __unk_vfn_80();
     /**
      * @vftbl  132
      * @symbol ?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     * @hash   446346428
+     * @hash   446438684
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0BambooBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   -1330807094
+     * @hash   -1330714838
      */
     MCAPI BambooBlockItem(std::string const &, int);
 

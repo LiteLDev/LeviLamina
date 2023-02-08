@@ -39,7 +39,7 @@ public:
     /**
      * @vftbl  8
      * @symbol ?randomlyModifyPosition@BambooSapling@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-     * @hash   1166634761
+     * @hash   1166727017
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
@@ -145,7 +145,7 @@ public:
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@BambooSapling@@UEBA_NH@Z
-     * @hash   296354986
+     * @hash   296447242
      */
     virtual bool isValidAuxValue(int) const;
     /**
@@ -177,9 +177,9 @@ public:
     /**
      * @vftbl  86
      * @symbol ?onFertilized@BambooSapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-     * @hash   1568405570
+     * @hash   1568497826
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /**
      * @vftbl  88
      * @symbol ?canBeFertilized@BambooSapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -189,19 +189,19 @@ public:
     /**
      * @vftbl  92
      * @symbol ?mayPlace@BambooSapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   1013525756
+     * @hash   1013618012
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  100
      * @symbol ?neighborChanged@BambooSapling@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     * @hash   -942807514
+     * @hash   -942776762
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
      * @vftbl  102
      * @symbol ?asItemInstance@BambooSapling@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-     * @hash   905027542
+     * @hash   905119798
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
@@ -249,7 +249,7 @@ public:
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BambooSapling@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     * @hash   -953704133
+     * @hash   -953611877
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
@@ -270,7 +270,7 @@ public:
     /**
      * @vftbl  171
      * @symbol ?playerDestroy@BambooSapling@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     * @hash   66158488
+     * @hash   66189240
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
@@ -281,7 +281,7 @@ public:
     /**
      * @vftbl  174
      * @symbol ?randomTick@BambooSapling@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     * @hash   -248348857
+     * @hash   -248256601
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
@@ -303,19 +303,19 @@ public:
     /**
      * @vftbl  188
      * @symbol ?getResourceItem@BambooSapling@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     * @hash   -508302446
+     * @hash   -508210190
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
      * @symbol ??0BambooSapling@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     * @hash   876711154
+     * @hash   876803410
      */
     MCAPI BambooSapling(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_grow@BambooSapling@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     * @hash   823135073
+     * @hash   823227329
      */
     MCAPI bool _grow(class BlockSource &, class BlockPos const &) const;
 

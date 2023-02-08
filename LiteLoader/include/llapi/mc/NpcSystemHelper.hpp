@@ -22,7 +22,7 @@ namespace NpcSystemHelper {
 #undef AFTER_EXTRA
     /**
      * @symbol ?sendClosePacket@NpcSystemHelper@@YAXAEAVEntityContext@@AEBULeaveMenuCountdown@NpcComponents@@@Z
-     * @hash   1283872454
+     * @hash   1283826326
      */
     MCAPI void sendClosePacket(class EntityContext &, struct NpcComponents::LeaveMenuCountdown const &);
 
