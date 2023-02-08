@@ -20,7 +20,15 @@ public:
     : min(pMin), max(pMax){};
     inline BoundingBox() : min(BlockPos::MIN), max(BlockPos::MIN){};
 
-    inline BlockPos& operator[](int index) {
+    bool operator!=(class BoundingBox const& x) const {
+        return min != x.min || max != x.max;
+    }
+
+    bool operator==(class BoundingBox const& x) const {
+        return min == x.min && max == x.max;
+    }
+
+    constexpr BlockPos& operator[](int index) {
         switch (index) {
             case 1:
                 return max;
@@ -29,25 +37,25 @@ public:
         }
     }
 
-    inline BoundingBox& operator+=(int b) {
+    constexpr BoundingBox& operator+=(int b) {
         min += b;
         max += b;
         return *this;
     }
 
-    inline BoundingBox& operator-=(int b) {
+    constexpr BoundingBox& operator-=(int b) {
         min -= b;
         max -= b;
         return *this;
     }
 
-    inline BoundingBox& operator+=(BlockPos const& b) {
+    constexpr BoundingBox& operator+=(BlockPos const& b) {
         min += b;
         max += b;
         return *this;
     }
 
-    inline BoundingBox& operator-=(BlockPos const& b) {
+    constexpr BoundingBox& operator-=(BlockPos const& b) {
         min -= b;
         max -= b;
         return *this;
@@ -98,7 +106,7 @@ public:
 namespace std {
 
 template <> struct hash<BoundingBox> {
-    std::size_t operator()(BoundingBox const& box) const noexcept {
+    constexprize_t operator()(BoundingBox const& box) const noexcept {
         return (std::hash<BlockPos>()(box.min) ^ std::hash<BlockPos>()(box.max));
     }
 };
