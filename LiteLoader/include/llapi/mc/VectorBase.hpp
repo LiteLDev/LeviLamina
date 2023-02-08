@@ -120,25 +120,25 @@ constexpr void unroll(Fn fn) {
         return static_cast<T&>(*this);                                                                                 \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator*(_t_type_ b) const {                                                                             \
+    inline T operator+(_t_type_ b) const {                                                                             \
         T tmp(static_cast<T const&>(*this));                                                                           \
         tmp += b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator/(_t_type_ b) const {                                                                             \
+    inline T operator-(_t_type_ b) const {                                                                             \
         T tmp(static_cast<T const&>(*this));                                                                           \
         tmp -= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator+(_t_type_ b) const {                                                                             \
+    inline T operator*(_t_type_ b) const {                                                                             \
         T tmp(static_cast<T const&>(*this));                                                                           \
         tmp *= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator-(_t_type_ b) const {                                                                             \
+    inline T operator/(_t_type_ b) const {                                                                             \
         T tmp(static_cast<T const&>(*this));                                                                           \
         tmp /= b;                                                                                                      \
         return tmp;                                                                                                    \
