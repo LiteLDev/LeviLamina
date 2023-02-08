@@ -216,6 +216,7 @@ jobs:
 
   publish_release:
     name: Publish release
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
