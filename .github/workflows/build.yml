@@ -10,8 +10,8 @@ env:
 
 jobs:
   build:
+    name: Build
     runs-on: windows-2022
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3.2.0
