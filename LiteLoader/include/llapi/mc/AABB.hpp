@@ -52,10 +52,12 @@ public:
     LIAPI class BoundingBox toBoundingBox() const;
 
     inline Vec3& operator[](int index) {
-        if (index < 0 || index > 1) {
-            return (&min)[0];
+        switch (index) {
+            case 1:
+                return max;
+            default:
+                return min;
         }
-        return (&min)[index];
     }
 
     inline AABB& operator+=(float& b) {
