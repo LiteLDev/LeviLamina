@@ -21,31 +21,33 @@ public:
     inline BoundingBox() : min(BlockPos::MIN), max(BlockPos::MIN){};
 
     inline BlockPos& operator[](int index) {
-        if (index < 0 || index > 1) {
-            return (&min)[0];
+        switch (index) {
+            case 1:
+                return max;
+            default:
+                return min;
         }
-        return (&min)[index];
     }
 
-    constexpr BoundingBox& operator+=(int& b) {
+    inline BoundingBox& operator+=(int b) {
         min += b;
         max += b;
         return *this;
     }
 
-    constexpr BoundingBox& operator-=(int& b) {
+    inline BoundingBox& operator-=(int b) {
         min -= b;
         max -= b;
         return *this;
     }
 
-    constexpr BoundingBox& operator+=(BlockPos const& b) {
+    inline BoundingBox& operator+=(BlockPos const& b) {
         min += b;
         max += b;
         return *this;
     }
 
-    constexpr BoundingBox& operator-=(BlockPos const& b) {
+    inline BoundingBox& operator-=(BlockPos const& b) {
         min -= b;
         max -= b;
         return *this;
@@ -55,7 +57,7 @@ public:
         return BoundingBox(min + b, max + b);
     }
 
-    inline BoundingBox operator+(int& b) const {
+    inline BoundingBox operator+(int b) const {
         return BoundingBox(min + b, max + b);
     }
 
@@ -63,7 +65,7 @@ public:
         return BoundingBox(min - b, max - b);
     }
 
-    inline BoundingBox operator-(int& b) const {
+    inline BoundingBox operator-(int b) const {
         return BoundingBox(min - b, max - b);
     }
 
@@ -75,14 +77,15 @@ public:
                 }
     }
 
-    // TODO: remove this
-    // inline BoundingBox merge(BoundingBox const& a) {
-    //     return BoundingBox(std::min(a.min, min), std::max(a.max, max));
-    // }
+    inline BoundingBox& merge(BoundingBox const& a) {
+         *this= BoundingBox(BlockPos::min(a.min, min), BlockPos::max(a.max, max));
+        return *this;
+    }
 
-    // inline BoundingBox merge(BlockPos const& a) {
-    //     return BoundingBox(std::min(a, min), std::max(a, max));
-    // }
+    inline BoundingBox& merge(BlockPos const& a) {
+        *this= BoundingBox(BlockPos::min(a, min), BlockPos::max(a, max));
+        return *this;
+    }
 
 public:
     MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum class Rotation);

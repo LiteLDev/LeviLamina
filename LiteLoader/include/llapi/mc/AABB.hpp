@@ -10,15 +10,6 @@ public:
 
 public:
     inline AABB(class AABB const& k) : min(k.min), max(k.max){};
-    // inline AABB(Vec3 const& p1, Vec3 const& p2)
-    //     : min(p1)
-    //     , max(p2){};
-    // inline AABB(float ax, float ay, float az, float bx, float by, float bz)
-    //     : min({ax, ay, az})
-    //     , max({bx, by, bz}){};
-    // inline AABB(Vec3 const& p1, float size)
-    //     : min(p1)
-    //     , max(p1 + size){};
     inline AABB() : min(Vec3::MIN), max(Vec3::MIN){};
 
     MCAPI AABB(class Vec3 const&, class Vec3 const&);
@@ -67,25 +58,25 @@ public:
         return (&min)[index];
     }
 
-    constexpr AABB& operator+=(float& b) {
+    inline AABB& operator+=(float& b) {
         min += b;
         max += b;
         return *this;
     }
 
-    constexpr AABB& operator-=(float& b) {
+    inline AABB& operator-=(float& b) {
         min -= b;
         max -= b;
         return *this;
     }
 
-    constexpr AABB& operator+=(Vec3 const& b) {
+    inline AABB& operator+=(Vec3 const& b) {
         min += b;
         max += b;
         return *this;
     }
 
-    constexpr AABB& operator-=(Vec3 const& b) {
+    inline AABB& operator-=(Vec3 const& b) {
         min -= b;
         max -= b;
         return *this;

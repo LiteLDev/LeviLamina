@@ -6,6 +6,8 @@
 #include "llapi/mc/StackResultStorageEntity.hpp"
 #include "llapi/mc/OwnerStorageEntity.hpp"
 #include "llapi/mc/Level.hpp"
+#include "llapi/utils/RNG.h"
+
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 
 // For compatibility
@@ -48,6 +50,7 @@ public:
         *((void**)&rv) = dlsym("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
         (this->*rv)(std::move(right));
     }
+
     inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept {
         void (OwnerPtrT::*rv)(OwnerPtrT && right);
         *((void**)&rv) = dlsym("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
@@ -64,37 +67,46 @@ public:
             return false;
         return dAccess<bool, 16>(this);
     }
+
     // inline bool isValid()
 };
 
 #include "llapi/mc/HashedString.hpp"
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId) {
+
+class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Vec3 const& pos,
+                                               class AutomaticID<class Dimension, int> dimensionId) {
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
-    OwnerPtrT<EntityRefTraits> ownerPtr =
-        Global<ServerNetworkHandler>->createSimulatedPlayer(name, std::to_string(HashedString::computeHash(name) / -rand()) );
+    OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
+        player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
-        auto pos = position.bottomCenter();
-        pos.y = pos.y + 1.62001f;
-        player->setPos(pos);
-        player->setRespawnReady(pos);
-        player->setSpawnBlockRespawnPosition(position, dimensionId);
+        Vec3 headPos = pos;
+        headPos.y += 1.62001f;
+        player->setPos(headPos);
+        player->setRespawnReady(headPos);
+        player->setSpawnBlockRespawnPosition(pos.toBlockPos(), dimensionId);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
-        player->teleport(position.bottomCenter(), dimensionId);
+        player->teleport(pos, dimensionId);
     }
     return player;
 }
 
+class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position,
+                                               class AutomaticID<class Dimension, int> dimensionId) {
+    create(name, position.bottomCenter(), dimensionId);
+}
 
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId) {
+class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
+                                               class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
-        name, std::to_string(HashedString::computeHash(name) / -rand()));
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
