@@ -106,7 +106,7 @@ public:
 namespace std {
 
 template <> struct hash<BoundingBox> {
-    constexprize_t operator()(BoundingBox const& box) const noexcept {
+    std::size_t operator()(BoundingBox const& box) const noexcept {
         return (std::hash<BlockPos>()(box.min) ^ std::hash<BlockPos>()(box.max));
     }
 };
