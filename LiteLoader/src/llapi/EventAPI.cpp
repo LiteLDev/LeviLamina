@@ -1382,7 +1382,7 @@ struct BucketPlayerAndActor {
     Actor* owner;
 };
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_54df3fc3e331d6aa3755551a14a31db0>::operator()",
+THook(void, "<lambda_5478cd0ac89791b5579ee785b32a789a>::operator()",
       BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;

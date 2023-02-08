@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ??0GossipType@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHH@Z
-     * @hash   407188807
+     * @hash   407849975
      */
     MCAPI GossipType(std::string const &, int, int, int, int, int);
     /**
@@ -71,7 +71,7 @@ public:
     MCAPI static class GossipType const UNRECOGNIZED;
     /**
      * @symbol ?tryCreateFromJSON@GossipType@@SA?AV1@AEBVValue@Json@@@Z
-     * @hash   1521752295
+     * @hash   1522413463
      */
     MCAPI static class GossipType tryCreateFromJSON(class Json::Value const &);
 
