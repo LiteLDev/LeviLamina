@@ -105,8 +105,7 @@ jobs:
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
         shell: cmd
 
-      - name: Pack SDK on push event
-        if: github.event_name == 'push'
+      - name: Pack SDK
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
         shell: cmd
@@ -119,22 +118,20 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Compress resource packs for LiteLoaderBDS CUI on push event
-        if: github.event_name == 'push'
+      - name: Compress resource packs for LiteLoaderBDS
         run: |
           cd build/output/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-      - name: Update C++ SDK on push event
-        if: github.event_name == 'push'
+      - name: Update C++ SDK
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd scripts
-          ./UploadSDK.cmd action
+          ./UploadSDK.cmd action release
         env:
           REPO_KEY: ${{secrets.PUSH_TOKEN}}
           USERNAME: github-actions[bot]
