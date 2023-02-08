@@ -38,6 +38,8 @@ public:
     MCAPI bool intersects(class Vec3 const&, class Vec3 const&) const;
     MCAPI bool intersectsInner(class AABB const&) const;
     MCAPI bool isValid() const;
+    bool operator!=(class AABB const&) const;
+    bool operator==(class AABB const&) const;
     MCAPI class AABB& set(float, float, float, float, float, float);
     MCAPI class AABB& set(class AABB const&);
     MCAPI class AABB& set(class Vec3 const&, class Vec3 const&);
@@ -48,14 +50,6 @@ public:
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 
     LIAPI class BoundingBox toBoundingBox() const;
-
-    constexpr bool operator!=(class AABB const& x) const {
-        return min != x.min || max != x.max;
-    }
-
-    constexpr bool operator==(class AABB const& x) const {
-        return min == x.min && max == x.max;
-    }
 
     constexpr Vec3& operator[](int index) {
         switch (index) {
