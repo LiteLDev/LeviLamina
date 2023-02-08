@@ -415,7 +415,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             bool flying;
             if (!pkt.tryGetBool(flying))
                 return;
-            auto abilities = sp->getAbilities();
+            auto& abilities = sp->getAbilities();
             auto mayFly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
             flying = flying && mayFly;
             Ability& ab = abilities.getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);

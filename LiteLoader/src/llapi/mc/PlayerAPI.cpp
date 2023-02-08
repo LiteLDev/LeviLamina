@@ -81,7 +81,7 @@ enum class AbilitiesLayer;
 //From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
     ActorUniqueID uid = getUniqueID();
-    auto abilities = getAbilities();
+    auto& abilities = getAbilities();
     auto flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
         abilities.setAbility(AbilitiesIndex::MayFly, value);
@@ -538,6 +538,7 @@ bool Player::deleteScore(const string& key) {
 
 void Player::addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
+    wp.reserve(8 + name.size());
     wp.writeVarInt64(uid);
     wp.writeUnsignedVarInt((int)0);
     wp.writeString(name);
@@ -756,6 +757,7 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
+    wp.reserve(8 + name.size());
     wp.writeVarInt64(getUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type) {
