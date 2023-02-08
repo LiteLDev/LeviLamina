@@ -19,7 +19,7 @@
 class Abilities {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIES
@@ -37,32 +37,36 @@ public:
      * @hash   1270617025
      * @symbol  ??0Abilities\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI Abilities(class Abilities const &);
+    MCAPI Abilities(class Abilities const&);
     /**
      * @hash   -1456629706
      * @symbol  ?addSaveData\@Abilities\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addSaveData(class CompoundTag &) const;
+    MCAPI void addSaveData(class CompoundTag&) const;
     /**
      * @hash   2119988726
-     * @symbol  ?forEachAbility\@Abilities\@\@QEAAXAEBV?$function\@$$A6AXAEAVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
+     * @symbol
+     * ?forEachAbility\@Abilities\@\@QEAAXAEBV?$function\@$$A6AXAEAVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
      */
-    MCAPI void forEachAbility(class std::function<void (class Ability &, enum class AbilitiesIndex)> const &, enum class Ability::Options);
+    MCAPI void forEachAbility(class std::function<void(class Ability&, enum class AbilitiesIndex)> const&,
+                              enum class Ability::Options);
     /**
      * @hash   -1477290572
-     * @symbol  ?forEachAbility\@Abilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
+     * @symbol
+     * ?forEachAbility\@Abilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
      */
-    MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
+    MCAPI void forEachAbility(class std::function<void(class Ability const&, enum class AbilitiesIndex)> const&,
+                              enum class Ability::Options) const;
     /**
      * @hash   396816385
      * @symbol  ?getAbility\@Abilities\@\@QEAAAEAVAbility\@\@W4AbilitiesIndex\@\@\@Z
      */
-    MCAPI class Ability & getAbility(enum class AbilitiesIndex);
+    MCAPI class Ability& getAbility(enum class AbilitiesIndex);
     /**
      * @hash   1066483361
      * @symbol  ?getAbility\@Abilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
      */
-    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
+    MCAPI class Ability const& getAbility(enum class AbilitiesIndex) const;
     /**
      * @hash   -1044054103
      * @symbol  ?getBool\@Abilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
@@ -82,17 +86,17 @@ public:
      * @hash   9616855
      * @symbol  ?loadSaveData\@Abilities\@\@QEAA_NAEBVCompoundTag\@\@\@Z
      */
-    MCAPI bool loadSaveData(class CompoundTag const &);
+    MCAPI bool loadSaveData(class CompoundTag const&);
     /**
      * @hash   1798334492
      * @symbol  ??4Abilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class Abilities & operator=(class Abilities const &);
+    MCAPI class Abilities& operator=(class Abilities const&);
     /**
      * @hash   -919013385
      * @symbol  ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@AEBVAbility\@\@\@Z
      */
-    MCAPI void setAbility(enum class AbilitiesIndex, class Ability const &);
+    MCAPI void setAbility(enum class AbilitiesIndex, class Ability const&);
     /**
      * @hash   928554831
      * @symbol  ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
@@ -107,7 +111,7 @@ public:
      * @hash   1006006217
      * @symbol  ?setAbilityDiff\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@_NAEA_N\@Z
      */
-    MCAPI void setAbilityDiff(enum class AbilitiesIndex, bool, bool &);
+    MCAPI void setAbilityDiff(enum class AbilitiesIndex, bool, bool&);
     /**
      * @hash   1849077873
      * @symbol  ?setDefault\@Abilities\@\@QEAAXXZ
@@ -130,7 +134,8 @@ public:
     MCAPI void unSet();
     /**
      * @hash   -1256648363
-     * @symbol  ?DIFF_ABILITIY_AT\@Abilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?DIFF_ABILITIY_AT\@Abilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_ABILITIY_AT;
     /**
@@ -140,37 +145,39 @@ public:
     MCAPI static class Ability INVALID_ABILITY;
     /**
      * @hash   55752019
-     * @symbol  ?SERIALIZATION_TAG\@Abilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol
+     * ?SERIALIZATION_TAG\@Abilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const SERIALIZATION_TAG;
     /**
      * @hash   -433000312
      * @symbol  ?getAbilityName\@Abilities\@\@SAPEBDW4AbilitiesIndex\@\@\@Z
      */
-    MCAPI static char const * getAbilityName(enum class AbilitiesIndex);
+    MCAPI static char const* getAbilityName(enum class AbilitiesIndex);
     /**
      * @hash   83437005
      * @symbol  ?getDefault\@Abilities\@\@SAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
      */
-    MCAPI static class Ability const & getDefault(enum class AbilitiesIndex);
+    MCAPI static class Ability const& getDefault(enum class AbilitiesIndex);
     /**
      * @hash   -815128476
-     * @symbol  ?getDiff\@Abilities\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
+     * @symbol
+     * ?getDiff\@Abilities\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
      */
-    MCAPI static class std::optional<std::string> getDiff(class Abilities const &, class Abilities const &);
+    MCAPI static class std::optional<std::string> getDiff(class Abilities const&, class Abilities const&);
     /**
      * @hash   1514000695
-     * @symbol  ?nameToAbilityIndex\@Abilities\@\@SA?AW4AbilitiesIndex\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol
+     * ?nameToAbilityIndex\@Abilities\@\@SA?AW4AbilitiesIndex\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const &);
+    MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const&);
 
-//private:
+    // private:
 
 private:
     /**
      * @hash   303898644
      * @symbol  ?ABILITY_NAMES\@Abilities\@\@0V?$array\@PEBD$0BC\@\@std\@\@A
      */
-    MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
-
+    MCAPI static class std::array<char const*, 18> ABILITY_NAMES;
 };

@@ -24,7 +24,8 @@ std::string ll::getLoaderVersionString() {
 }
 
 ll::Version ll::getLoaderVersion() {
-    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, (ll::Version::Status)LITELOADER_VERSION_STATUS);
+    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
+                   (ll::Version::Status)LITELOADER_VERSION_STATUS);
 }
 
 bool ll::isDebugMode() {
@@ -53,8 +54,7 @@ HMODULE ll::getLoaderHandle() {
 
 // Version
 ll::Version::Version(int major, int minor, int revision, Status status)
-: major(major), minor(minor), revision(revision), status(status) {
-}
+: major(major), minor(minor), revision(revision), status(status) {}
 
 bool ll::Version::operator<(ll::Version b) {
     return major < b.major || (major == b.major && minor < b.minor) ||
@@ -77,7 +77,6 @@ std::string ll::Version::toString(bool needStatus) {
     }
     return res;
 }
-
 
 ll::Version ll::Version::parse(const std::string& str) {
     Version ver;
@@ -134,7 +133,8 @@ std::string LL::getLoaderVersionString() {
 }
 
 LL::Version LL::getLoaderVersion() {
-    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, (LL::Version::Status)LITELOADER_VERSION_STATUS);
+    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
+                   (LL::Version::Status)LITELOADER_VERSION_STATUS);
 }
 
 bool LL::isDebugMode() {
@@ -168,8 +168,7 @@ HMODULE LL::getLoaderHandle() {
 
 // Version
 LL::Version::Version(int major, int minor, int revision, Status status)
-: major(major), minor(minor), revision(revision), status(status) {
-}
+: major(major), minor(minor), revision(revision), status(status) {}
 
 bool LL::Version::operator<(LL::Version b) {
     return major < b.major || (major == b.major && minor < b.minor) ||
@@ -190,7 +189,6 @@ std::string LL::Version::toString(bool needStatus) {
     }
     return res;
 }
-
 
 LL::Version LL::Version::parse(const std::string& str) {
     Version ver;

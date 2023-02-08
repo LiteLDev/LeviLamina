@@ -20,7 +20,7 @@
 class ChunkPos {
 #define AFTER_EXTRA
     // Add Member There
-   public:
+public:
     int x, z;
     ChunkPos() = default;
     ChunkPos(int ix, int iz) : x(ix), z(iz){};
@@ -49,8 +49,8 @@ class ChunkPos {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
 public:
-    class ChunkPos& operator=(class ChunkPos const &) = delete;
-    ChunkPos(class ChunkPos const &) = delete;
+    class ChunkPos& operator=(class ChunkPos const&) = delete;
+    ChunkPos(class ChunkPos const&) = delete;
     ChunkPos() = delete;
 #endif
 
@@ -59,17 +59,17 @@ public:
      * @hash   1402461226
      * @symbol  ??0ChunkPos\@\@QEAA\@AEBVVec3\@\@\@Z
      */
-    MCAPI ChunkPos(class Vec3 const &);
+    MCAPI ChunkPos(class Vec3 const&);
     /**
      * @hash   969423290
      * @symbol  ??0ChunkPos\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI ChunkPos(class BlockPos const &);
+    MCAPI ChunkPos(class BlockPos const&);
     /**
      * @hash   -713436317
      * @symbol  ?isWithinBounds\@ChunkPos\@\@QEBA_NAEBV1\@0\@Z
      */
-    MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
+    MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;
     /**
      * @hash   1735636741
      * @symbol  ?toBlockSpaceVec3\@ChunkPos\@\@QEBA?AVVec3\@\@M\@Z
@@ -99,8 +99,10 @@ public:
 
 namespace std {
 
-    template <>
-    struct hash<ChunkPos> {
-        std::size_t operator()(ChunkPos const& pos) const noexcept { return pos.hash(); }
-    };
-}  // namespace std
+template <>
+struct hash<ChunkPos> {
+    std::size_t operator()(ChunkPos const& pos) const noexcept {
+        return pos.hash();
+    }
+};
+} // namespace std

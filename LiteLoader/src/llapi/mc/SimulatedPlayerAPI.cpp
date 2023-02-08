@@ -100,7 +100,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
 
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position,
                                                class AutomaticID<class Dimension, int> dimensionId) {
-   return create(name, position.bottomCenter(), dimensionId);
+    return create(name, position.bottomCenter(), dimensionId);
 }
 
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,

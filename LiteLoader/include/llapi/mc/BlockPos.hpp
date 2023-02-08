@@ -3,8 +3,9 @@
 #include "VectorBase.hpp"
 
 class Vec3;
+
 class BlockPos {
-   public:
+public:
     int x, y, z;
     inline BlockPos() : BlockPos(0, 0, 0){};
     inline BlockPos(int mx, int my, int mz) : x(mx), y(my), z(mz){};
@@ -32,11 +33,17 @@ class BlockPos {
 
     MCAPI static void bindType();
 
-    inline BlockPos add(int dx) const { return {x + dx, y, z}; }
+    inline BlockPos add(int dx) const {
+        return {x + dx, y, z};
+    }
 
-    inline BlockPos add(int dx, int dy) const { return {x + dx, y + dy, z}; }
+    inline BlockPos add(int dx, int dy) const {
+        return {x + dx, y + dy, z};
+    }
 
-    inline BlockPos add(int dx, int dy, int dz) const { return {x + dx, y + dy, z + dz}; }
+    inline BlockPos add(int dx, int dy, int dz) const {
+        return {x + dx, y + dy, z + dz};
+    }
 
     inline int& operator[](size_t index) {
         switch (index) {
@@ -76,36 +83,36 @@ class BlockPos {
 
 namespace std {
 
-    template <>
-    struct hash<BlockPos> {
-        std::size_t operator()(BlockPos const& pos) const noexcept {
-            //??$hash3@HHH@Math@mce@@SA_KAEBH00@Z
-            unsigned __int64 t1;  // r8
-            unsigned __int64 t2;  // r8
+template <>
+struct hash<BlockPos> {
+    std::size_t operator()(BlockPos const& pos) const noexcept {
+        //??$hash3@HHH@Math@mce@@SA_KAEBH00@Z
+        unsigned __int64 t1; // r8
+        unsigned __int64 t2; // r8
 
-            t1 = *((unsigned __int8*)&pos.x + 3) ^
-                 (0x100000001B3i64 *
-                  (*((unsigned __int8*)&pos.x + 2) ^
-                   (0x100000001B3i64 * (*((unsigned __int8*)&pos.x + 1) ^
-                                        (0x100000001B3i64 * (*(unsigned __int8*)&pos.x ^ 0xCBF29CE484222325ui64))))));
-            t2 = (((0x100000001B3i64 * t1 + 2654435769u) >> 2) + 2654435769u +
-                  ((0x100000001B3i64 * t1 + 2654435769u) << 6) +
-                  0x100000001B3i64 *
-                      (*((unsigned __int8*)&pos.y + 3) ^
-                       (0x100000001B3i64 * (*((unsigned __int8*)&pos.y + 2) ^
-                                            (0x100000001B3i64 * (*((unsigned __int8*)&pos.y + 1) ^
-                                                                 (0x100000001B3i64 * (*(unsigned __int8*)&pos.y ^
-                                                                                      0xCBF29CE484222325ui64)))))))) ^
-                 (0x100000001B3i64 * t1 + 2654435769u);
-            return t2 ^ ((t2 << 6) +
-                         0x100000001B3i64 * (*((unsigned __int8*)&pos.z + 3) ^
-                                             (0x100000001B3i64 *
-                                              (*((unsigned __int8*)&pos.z + 2) ^
+        t1 = *((unsigned __int8*)&pos.x + 3) ^
+             (0x100000001B3i64 *
+              (*((unsigned __int8*)&pos.x + 2) ^
+               (0x100000001B3i64 * (*((unsigned __int8*)&pos.x + 1) ^
+                                    (0x100000001B3i64 * (*(unsigned __int8*)&pos.x ^ 0xCBF29CE484222325ui64))))));
+        t2 =
+            (((0x100000001B3i64 * t1 + 2654435769u) >> 2) + 2654435769u + ((0x100000001B3i64 * t1 + 2654435769u) << 6) +
+             0x100000001B3i64 * (*((unsigned __int8*)&pos.y + 3) ^
+                                 (0x100000001B3i64 *
+                                  (*((unsigned __int8*)&pos.y + 2) ^
+                                   (0x100000001B3i64 *
+                                    (*((unsigned __int8*)&pos.y + 1) ^
+                                     (0x100000001B3i64 * (*(unsigned __int8*)&pos.y ^ 0xCBF29CE484222325ui64)))))))) ^
+            (0x100000001B3i64 * t1 + 2654435769u);
+        return t2 ^ ((t2 << 6) +
+                     0x100000001B3i64 *
+                         (*((unsigned __int8*)&pos.z + 3) ^
+                          (0x100000001B3i64 * (*((unsigned __int8*)&pos.z + 2) ^
                                                (0x100000001B3i64 * (*((unsigned __int8*)&pos.z + 1) ^
                                                                     (0x100000001B3i64 * (*(unsigned __int8*)&pos.z ^
                                                                                          0xCBF29CE484222325ui64))))))) +
-                         (t2 >> 2) + 2654435769u);
-        }
-    };
+                     (t2 >> 2) + 2654435769u);
+    }
+};
 
-}  // namespace std
+} // namespace std

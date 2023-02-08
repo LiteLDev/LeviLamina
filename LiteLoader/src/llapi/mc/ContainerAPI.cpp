@@ -22,8 +22,7 @@ LIAPI bool Container::addItem_s(ItemStack* item) {
 LIAPI bool Container::addItem_s(ItemStack* item, int amount) {
     auto single = item->clone_s();
     single->set(1);
-    for (int i = 0; i < amount; i++)
-    {
+    for (int i = 0; i < amount; i++) {
         if (!this->addItem(*single->clone_s()))
             return false;
     }
@@ -33,6 +32,7 @@ LIAPI bool Container::addItem_s(ItemStack* item, int amount) {
 LIAPI bool Container::addItemToFirstEmptySlot_s(ItemStack* item) {
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
 }
+
 // Safely remove items to the container
 LIAPI bool Container::removeItem_s(int slot, unsigned int number) {
     if (slot >= getSize())
@@ -53,7 +53,8 @@ LIAPI std::vector<const ItemStack*> Container::getAllSlots() {
 }
 
 LIAPI int Container::getSize() {
-    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
+    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA
+    // Container::getSlotCopies
     return getContainerSize();
 }
 
