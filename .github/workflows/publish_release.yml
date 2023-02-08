@@ -127,18 +127,18 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-        # - name: Update C++ SDK on push event
-      #   if: github.event_name == 'push'
-      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     cd scripts
-      #     ./UploadSDK.cmd action
-      #   env:
-      #     REPO_KEY: ${{secrets.PUSH_TOKEN}}
-      #     USERNAME: github-actions[bot]
-      #   shell: cmd
+      - name: Update C++ SDK on push event
+        if: github.event_name == 'push'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cd scripts
+          ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
+        shell: cmd
 
       - name: Upload LiteLoaderBDS
         uses: actions/upload-artifact@v3.1.0
@@ -251,4 +251,4 @@ jobs:
             LLMoney.zip
             PDB.zip
         env:
-          GITHUB_REPOSITORY: Futrime/fork-LiteLoaderBDS
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
