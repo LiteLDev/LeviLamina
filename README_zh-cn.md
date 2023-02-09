@@ -1,6 +1,6 @@
 # LiteLoaderBDS - 划时代 x 跨语言BDS插件加载器
 
-[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/cmake_repo.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoaderBDS/actions)
+[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/build.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoaderBDS/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?color=blue&label=Discord&style=for-the-badge)](https://discord.gg/27KTrxHc9t)
 [![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)](https://t.me/liteloader)
 [

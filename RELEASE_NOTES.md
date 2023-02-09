@@ -5,11 +5,11 @@
 
 ## Fixed
 
-- Bugs related to QuickJS ESM by @yqs112358
+- Bugs related to QuickJS ESM (by @yqs112358)
 
 ## Changed
 
-- Adapt to BDS 1.19.61.01 by @dreamguxiang
+- Adapt to BDS 1.19.61.01 (by @dreamguxiang)
 
 
 **Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.9.3...2.10.0-beta.1
