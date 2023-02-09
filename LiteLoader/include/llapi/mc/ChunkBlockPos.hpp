@@ -8,14 +8,13 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "VectorBase.hpp"
 
 class ChunkLocalHeight {
 public:
     short mVal;
-    ChunkLocalHeight(short v)
-    : mVal(v){};
-    ChunkLocalHeight()
-    : mVal(0){};
+    ChunkLocalHeight(short v) : mVal(v){};
+    ChunkLocalHeight() : mVal(0){};
 };
 
 #undef BEFORE_EXTRA
@@ -30,18 +29,16 @@ class ChunkBlockPos {
 // Add Member There
 #define DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
 public:
-char x;
-char z;
-ChunkLocalHeight y;
-ChunkBlockPos()
-    : x(0)
-    , y(0)
-    , z(0){};
+    char x;
+    char z;
+    ChunkLocalHeight y;
+    ChunkBlockPos() : x(0), y(0), z(0){};
 
-ChunkBlockPos(char x, short y, char z)
-    : x(x)
-    , y(y)
-    , z(z){};
+    ChunkBlockPos(char x, short y, char z) : x(x), y(y), z(z){};
+
+    inline unsigned short toLegacyIndex() {
+        return (y.mVal & 0xF) + 16 * (z + 16 * x);
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
@@ -77,5 +74,14 @@ public:
      * @symbol  ?fromLegacyIndex\@ChunkBlockPos\@\@SA?AV1\@G\@Z
      */
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
-
 };
+
+namespace std {
+
+template <>
+struct hash<ChunkBlockPos> {
+    std::size_t operator()(ChunkBlockPos const& pos) const noexcept {
+        return (std::hash<char>()(pos.x) ^ std::hash<short>()(pos.y.mVal) ^ std::hash<char>()(pos.z));
+    }
+};
+} // namespace std

@@ -18,13 +18,13 @@
 class AABBPred {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBPRED
 public:
-    class AABBPred& operator=(class AABBPred const &) = delete;
-    AABBPred(class AABBPred const &) = delete;
+    class AABBPred& operator=(class AABBPred const&) = delete;
+    AABBPred(class AABBPred const&) = delete;
     AABBPred() = delete;
 #endif
 
@@ -33,6 +33,5 @@ public:
      * @hash   -1676841961
      * @symbol  ??RAABBPred\@\@QEBA_NAEBVAABB\@\@0\@Z
      */
-    MCAPI bool operator()(class AABB const &, class AABB const &) const;
-
+    MCAPI bool operator()(class AABB const&, class AABB const&) const;
 };

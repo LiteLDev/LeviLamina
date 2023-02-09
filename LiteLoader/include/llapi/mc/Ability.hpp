@@ -18,16 +18,16 @@
 class Ability {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
-enum class Options;
-enum class Type;
+    enum class Options;
+    enum class Type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITY
 public:
-    class Ability& operator=(class Ability const &) = delete;
-    Ability(class Ability const &) = delete;
+    class Ability& operator=(class Ability const&) = delete;
+    Ability(class Ability const&) = delete;
 #endif
 
 public:
@@ -70,7 +70,7 @@ public:
      * @hash   -1981161502
      * @symbol  ??9Ability\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class Ability const &) const;
+    MCAPI bool operator!=(class Ability const&) const;
     /**
      * @hash   -1140397038
      * @symbol  ?setBool\@Ability\@\@QEAAX_N\@Z
@@ -86,5 +86,4 @@ public:
      * @symbol  ?unSet\@Ability\@\@QEAAXXZ
      */
     MCAPI void unSet();
-
 };

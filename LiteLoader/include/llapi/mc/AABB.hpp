@@ -10,15 +10,6 @@ public:
 
 public:
     inline AABB(class AABB const& k) : min(k.min), max(k.max){};
-    // inline AABB(Vec3 const& p1, Vec3 const& p2)
-    //     : min(p1)
-    //     , max(p2){};
-    // inline AABB(float ax, float ay, float az, float bx, float by, float bz)
-    //     : min({ax, ay, az})
-    //     , max({bx, by, bz}){};
-    // inline AABB(Vec3 const& p1, float size)
-    //     : min(p1)
-    //     , max(p1 + size){};
     inline AABB() : min(Vec3::MIN), max(Vec3::MIN){};
 
     MCAPI AABB(class Vec3 const&, class Vec3 const&);
@@ -60,11 +51,13 @@ public:
 
     LIAPI class BoundingBox toBoundingBox() const;
 
-    inline Vec3& operator[](int index) {
-        if (index < 0 || index > 1) {
-            return (&min)[0];
+    constexpr Vec3& operator[](int index) {
+        switch (index) {
+            case 1:
+                return max;
+            default:
+                return min;
         }
-        return (&min)[index];
     }
 
     constexpr AABB& operator+=(float& b) {
@@ -115,3 +108,14 @@ public:
         return AABB(std::min(a, min), std::max(a, max));
     }
 };
+
+namespace std {
+
+template <>
+struct hash<AABB> {
+    std::size_t operator()(AABB const& box) const noexcept {
+        return (std::hash<Vec3>()(box.min) ^ std::hash<Vec3>()(box.max));
+    }
+};
+
+} // namespace std

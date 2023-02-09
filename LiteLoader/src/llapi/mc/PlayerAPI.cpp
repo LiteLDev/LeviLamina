@@ -68,7 +68,6 @@ NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
-
 Certificate* Player::getCertificate() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
@@ -78,7 +77,8 @@ Certificate* Player::getCertificate() {
 }
 
 enum class AbilitiesLayer;
-//From https://github.com/dreamguxiang/BETweaker
+
+// From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
     ActorUniqueID uid = getUniqueID();
     auto& abilities = getAbilities();
@@ -108,13 +108,11 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
     sendNetworkPacket(pkt);
 }
 
-
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
         return getName();
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
-
 
 int Player::getAvgPing() {
     if (isSimulatedPlayer())
@@ -135,11 +133,13 @@ string Player::getIP() {
 }
 
 #include "llapi/mc/Localization.hpp"
+
 string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
+    auto map =
+        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
         if (s.find("LanguageCode") != std::string::npos) {
@@ -153,7 +153,8 @@ string Player::getLanguageCode() {
 string Player::getServerAddress() {
     if (isSimulatedPlayer())
         return "unknown";
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
+    auto map =
+        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto iter = map->begin(); iter != map->end(); ++iter) {
         string s(iter->first.c_str());
         if (s.find("ServerAddress") != s.npos) {
@@ -217,7 +218,6 @@ bool Player::talkAs(const std::string& msg) {
     return sendTextTalkPacket(msg);
 }
 
-
 bool Player::giveItem(ItemStack* item) {
     this->add(*item);
     refreshInventory();
@@ -227,8 +227,7 @@ bool Player::giveItem(ItemStack* item) {
 bool Player::giveItem(ItemStack* item, int amount) {
     auto single = item->clone_s();
     single->set(1);
-    for (int i = 0; i < amount; i++)
-    {
+    for (int i = 0; i < amount; i++) {
         auto it = *single->clone_s();
         if (!this->add(it) && !this->isCreative()) {
             this->drop(it, false);
@@ -334,12 +333,15 @@ bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
     return true;
 }
+
 #include "llapi/mc/Attribute.hpp"
 #include "llapi/mc/HashedString.hpp"
 #include "llapi/SendPacketAPI.h"
+
 bool Player::refreshAttribute(class Attribute const& attribute) {
     return refreshAttributes({&attribute});
 }
+
 bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) {
     BinaryStream wp;
     wp.writeUnsignedVarInt64(getRuntimeID()); // EntityId
@@ -499,7 +501,8 @@ bool Player::crashClient() {
     return true;
 }
 
-bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder) {
+bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data,
+                        ObjectiveSortOrder sortOrder) {
     sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 
     vector<ScorePacketInfo> info;
@@ -566,7 +569,6 @@ void Player::updateBossEvent(int64_t uid, string name, float percent, BossEventC
     addBossEvent(uid, name, percent, colour, overlay);
 }
 
-
 ////////////////////////// Packet //////////////////////////
 
 static_assert(sizeof(TextPacket) == 216);
@@ -611,7 +613,8 @@ bool Player::sendToastPacket(string title, string msg) {
     return true;
 }
 
-bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration,
+                             int FadeOutDuration) const {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -649,15 +652,18 @@ bool Player::sendNotePacket(unsigned int tone) {
     return true;
 }
 
-bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName,
+                                           int64_t EntityUniqueID) const {
     BinaryStream wp;
     wp.writeUnsignedChar(dimID);
-    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
+    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity
+    // associated with this unique ID.
     wp.writeVarInt64(EntityUniqueID);
     wp.writeFloat(spawnPos.x);
     wp.writeFloat(spawnPos.y);
     wp.writeFloat(spawnPos.z);
-    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
+    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is
+    // built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
@@ -672,26 +678,28 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos,
+                                     vector<std::unique_ptr<DataItem>> dataItems) const {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeID);                                // RuntimeId
+    wp.writeVarInt64(runtimeID);         // RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); // EntityId
     ItemStackDescriptor desc(item, aux, stackSize, nullptr);
     NetworkItemStackDescriptor netDesc(desc);
     wp.writeType(netDesc);
-    wp.writeType(pos); 
+    wp.writeType(pos);
     wp.writeType(Vec3::ZERO);
 
-    wp.writeType(dataItems); 
+    wp.writeType(dataItems);
 
-    wp.writeBool(false); 
+    wp.writeBool(false);
 
     NetworkPacket<15> pkt(wp.getRaw());
     sendNetworkPacket(pkt);
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems) {
+bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation,
+                                 float headYaw, vector<std::unique_ptr<DataItem>> dataItems) {
     BinaryStream bs;
     bs.writeVarInt64(runtimeID);
     bs.writeUnsignedVarInt64(runtimeID);
@@ -718,7 +726,8 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer) {
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag,
+                                   UpdateBlockLayer layer) {
     BinaryStream wp;
     wp.writeVarInt(bpos.x);
     wp.writeUnsignedVarInt(bpos.y);
@@ -731,7 +740,9 @@ bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId,
     sendNetworkPacket(*pkt);
     return true;
 }
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer) {
+
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag,
+                                   UpdateBlockLayer layer) {
     return sendUpdateBlockPacket(bpos, block.getRuntimeId(), flag, layer);
 }
 
@@ -742,7 +753,8 @@ bool Player::sendTransferPacket(const string& address, short port) const {
 }
 
 bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
-    SetDisplayObjectivePacket pkt = SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder));
+    SetDisplayObjectivePacket pkt =
+        SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder));
     sendNetworkPacket(pkt);
     return true;
 }
@@ -811,7 +823,9 @@ bool Player::sendCommandRequestPacket(const string& cmd) {
 bool Player::sendTextTalkPacket(const string& msg) {
     return sendTextTalkPacket(msg, nullptr);
 }
+
 #include "llapi/utils/DbgHelper.h"
+
 bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
     if (target == nullptr) {
@@ -847,7 +861,8 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     return true;
 }
 
-bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const {
+bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons,
+                            const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const {
     nlohmann::json model = R"({"title": "","content":"","buttons":[],"type":"form"})"_json;
     model["title"] = title;
     model["content"] = content;
@@ -871,7 +886,8 @@ bool Player::sendSimpleForm(const string& title, const string& content, const ve
     return true;
 }
 
-bool Player::sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const {
+bool Player::sendModalForm(const string& title, const string& content, const string& confirmButton,
+                           const string& cancelButton, std::function<void(Player*, bool)> callback) const {
     nlohmann::json model = R"({"title":"","content":"","button1":"","button2":"","type":"modal"})"_json;
     model["title"] = title;
     model["content"] = content;
@@ -902,7 +918,8 @@ bool Player::isValid(Player* player) {
 }
 
 // For Compatibility
-bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const {
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons,
+                                  const std::vector<std::string>& images, std::function<void(int)> callback) const {
     return sendSimpleForm(title, content, buttons, images, [callback](Player* pl, int id) {
         if (!callback || !Player::isValid(pl))
             return;
@@ -914,7 +931,9 @@ bool Player::sendSimpleFormPacket(const string& title, const string& content, co
         }
     });
 }
-bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback) {
+
+bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1,
+                                 const string& button2, std::function<void(bool)> callback) {
     return sendModalForm(title, content, button1, button2, [callback](Player* pl, bool res) {
         if (!callback || !Player::isValid(pl))
             return;
@@ -948,37 +967,37 @@ std::string const PLAYER_KEY_SELF_SIGNED_ID = "SelfSignedId";
 void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view const& uuid)> callback) {
     static size_t count;
     count = 0;
-    Global<DBStorage>->forEachKeyWithPrefix("player_", playerCategory, [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
-        if (key_left.size() == 36) {
-            auto tag = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
-            auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
-            if (!msaId.empty()) {
-                if (msaId == key_left) {
-                    count++;
-                    callback(msaId);
+    Global<DBStorage>->forEachKeyWithPrefix(
+        "player_", playerCategory,
+        [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
+            if (key_left.size() == 36) {
+                auto tag = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
+                auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
+                if (!msaId.empty()) {
+                    if (msaId == key_left) {
+                        count++;
+                        callback(msaId);
+                    }
+                    return;
                 }
-                return;
-            }
-            if (!includeSelfSignedId) {
-                return;
-            }
-            auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
-            if (!selfSignedId.empty()) {
-                if(selfSignedId == key_left) {
-                    count++;
-                    callback(selfSignedId);
+                if (!includeSelfSignedId) {
+                    return;
                 }
-                return;
+                auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
+                if (!selfSignedId.empty()) {
+                    if (selfSignedId == key_left) {
+                        count++;
+                        callback(selfSignedId);
+                    }
+                    return;
+                }
             }
-        }
-    });
+        });
 }
 
 std::vector<string> Player::getAllUuid(bool includeSelfSignedId) {
     std::vector<std::string> uuids;
-    forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) {
-        uuids.push_back(std::string(uuid));
-    });
+    forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) { uuids.push_back(std::string(uuid)); });
     return uuids;
 }
 
@@ -1000,7 +1019,7 @@ std::string getServerId(mce::UUID const& uuid) {
 }
 
 bool Player::deletePlayerNbt(mce::UUID const& uuid) {
-    try{
+    try {
         auto& dbStorage = *Global<DBStorage>;
         auto serverId = getServerId(uuid);
         if (serverId.empty())
@@ -1011,10 +1030,7 @@ bool Player::deletePlayerNbt(mce::UUID const& uuid) {
         }
         auto res = dbStorage.deleteData(serverId, playerCategory);
         return true;
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to delete player nbt!\n{}", exc.what());
-    }
+    } catch (const std::exception& exc) { logger.error("Fail to delete player nbt!\n{}", exc.what()); }
     return false;
 }
 
@@ -1029,8 +1045,6 @@ std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
     return Global<DBStorage>->getCompoundTag(serverId, playerCategory);
 }
 
-
-
 std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
     if (auto player = Global<Level>->getPlayer(uuid)) {
         return player->getNbt();
@@ -1040,17 +1054,14 @@ std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
 
 bool setOfflineNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     try {
-        auto &data = *nbt;
+        auto& data = *nbt;
         auto serverId = getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }
         Global<DBStorage>->saveData(serverId, data.toBinaryNBT(), playerCategory);
         return true;
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to set offline player nbt!\n{}",exc.what());
-    }
+    } catch (const std::exception& exc) { logger.error("Fail to set offline player nbt!\n{}", exc.what()); }
     return false;
 }
 
@@ -1063,20 +1074,16 @@ bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
         bool res = true;
         if (auto pl = Global<Level>->getPlayer(uuid)) {
             return pl->setNbt(nbt);
-        }
-        else {
+        } else {
             return setOfflineNbt(uuid, nbt);
         }
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to set player nbt!\n{}",exc.what());
-    }
+    } catch (const std::exception& exc) { logger.error("Fail to set player nbt!\n{}", exc.what()); }
     return false;
 }
 
 bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags) {
     try {
-        auto &data = *nbt;
+        auto& data = *nbt;
         auto serverId = getServerId(uuid);
         if (serverId.empty()) {
             return false;
@@ -1084,11 +1091,10 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vec
         bool res = true;
         if (auto pl = Global<Level>->getPlayer(uuid)) {
             auto playerTag = pl->getNbt();
-            for (int i = 0; i <= tags.size()-1; i++) {
+            for (int i = 0; i <= tags.size() - 1; i++) {
                 if (data.get(tags[i]) == nullptr) {
                     continue;
-                }
-                else{
+                } else {
                     res = res && (*playerTag).put(tags[i], data.get(tags[i])->copy());
                 }
             }
@@ -1096,15 +1102,13 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vec
             pl->refreshInventory();
             data.destroy();
             return res;
-        }
-        else {
+        } else {
             auto oridata = getOfflineNbt(uuid);
             CompoundTag& olddata = *oridata;
-            for (int i = 0; i <= tags.size()-1; i++) {
+            for (int i = 0; i <= tags.size() - 1; i++) {
                 if (data.get(tags[i]) == nullptr) {
                     continue;
-                }
-                else{
+                } else {
                     res = res && olddata.put(tags[i], data.get(tags[i])->copy());
                 }
             }
@@ -1113,12 +1117,9 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vec
             olddata.destroy();
             return res;
         }
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to set player nbt tag!\n{}", exc.what());
-    }
+    } catch (const std::exception& exc) { logger.error("Fail to set player nbt tag!\n{}", exc.what()); }
     return false;
-}   
+}
 
 std::pair<Vec3, int> Player::getLastDeathPosition() {
     for (auto pos : PlayerDeathPositions::getDeathPositions()) {

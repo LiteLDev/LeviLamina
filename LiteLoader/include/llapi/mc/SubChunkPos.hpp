@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "VectorBase.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -16,17 +17,41 @@
  *
  */
 class SubChunkPos {
-
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
     int x;
     int y;
     int z;
-    inline SubChunkPos(int ix, int iy, int iz)
-        : x(ix)
-        , y(iy)
-        , z(iz) {}
+    SubChunkPos() = default;
+
+    inline SubChunkPos(int ix, int iy, int iz) : x(ix), y(iy), z(iz) {}
+
+    inline int& operator[](size_t index) {
+        switch (index) {
+            case 1:
+                return y;
+            case 2:
+                return z;
+            default:
+                return x;
+        }
+    }
+
+    inline int operator[](size_t index) const {
+        switch (index) {
+            case 1:
+                return y;
+            case 2:
+                return z;
+            default:
+                return x;
+        }
+    }
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
+
+    FAKE_CRTP(SubChunkPos, int, 3);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
 public:
@@ -66,5 +91,12 @@ public:
      * @symbol  ?ZERO\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const ZERO;
-
 };
+
+namespace std {
+
+    template <>
+    struct hash<SubChunkPos> {
+        std::size_t operator()(SubChunkPos const& pos) const noexcept { return pos.hash(); }
+    };
+}  // namespace std

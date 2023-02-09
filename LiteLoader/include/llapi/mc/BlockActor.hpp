@@ -29,7 +29,9 @@ public:
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
-    static unsigned int getBlockEntityType(Block* block);
+    LIAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt);
+    LIAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt, class BlockPos const& pos);
+    LIAPI static unsigned int getBlockEntityType(Block* block);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR

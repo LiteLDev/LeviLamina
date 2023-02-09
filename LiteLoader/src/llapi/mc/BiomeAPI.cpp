@@ -3,6 +3,7 @@
 #include "llapi/mc/VanillaBiomes.hpp"
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/HashedString.hpp"
+
 int Biome::getId() const {
     return dAccess<int, 136>(this);
 }

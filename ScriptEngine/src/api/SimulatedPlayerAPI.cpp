@@ -30,7 +30,6 @@
 #include <algorithm>
 using namespace std;
 
-
 Local<Value> McClass::spawnSimulatedPlayer(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -44,10 +43,10 @@ Local<Value> McClass::spawnSimulatedPlayer(const Arguments& args) {
                 return Local<Value>();
         }
         auto dimid = 0;
-        BlockPos bpos;
+        Vec3 bpos;
         if (IsInstanceOf<IntPos>(args[1])) {
             auto pos = IntPos::extractPos(args[1]);
-            bpos = pos->getBlockPos();
+            bpos = pos->getBlockPos().bottomCenter();
             dimid = pos->getDimensionId();
         } else if (IsInstanceOf<FloatPos>(args[1])) {
             auto pos = FloatPos::extractPos(args[1]);
@@ -62,7 +61,7 @@ Local<Value> McClass::spawnSimulatedPlayer(const Arguments& args) {
                 CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
                 dimid = args[4].toInt();
             }
-            bpos = BlockPos(args[1].toInt(), args[2].toInt(), args[3].toInt());
+            bpos = BlockPos(args[1].toInt(), args[2].toInt(), args[3].toInt()).bottomCenter();
         }
         if (auto sp = SimulatedPlayer::create(name, bpos, dimid))
             return PlayerClass::newPlayer(sp);
@@ -456,7 +455,6 @@ Local<Value> PlayerClass::simulateSetBodyRotation(const Arguments& args) {
     CATCH("Fail in " __FUNCTION__ "!")
 }
 
-
 // void simulateWorldMove(class Vec3 const&, float);
 // void simulateMoveToLocation(class Vec3 const&, float);
 
@@ -470,6 +468,7 @@ inline Local<Value> NavigateResultToObject(ScriptModuleMinecraft::ScriptNavigati
     obj.set(String::newString("path"), path);
     return obj;
 }
+
 // struct ScriptNavigationResult simulateNavigateToEntity(class Actor&, float);
 // struct ScriptNavigationResult simulateNavigateToLocation(class Vec3 const&, float);
 // void simulateNavigateToLocations(std::vector<class Vec3>&&, float);
@@ -500,7 +499,8 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args) {
                         LOG_WRONG_ARG_TYPE();
                         return Local<Value>();
                     }
-                    path.emplace_back(posArr.get(0).asNumber().toFloat(), posArr.get(1).asNumber().toFloat(), posArr.get(2).asNumber().toFloat());
+                    path.emplace_back(posArr.get(0).asNumber().toFloat(), posArr.get(1).asNumber().toFloat(),
+                                      posArr.get(2).asNumber().toFloat());
                 } else {
                     LOG_WRONG_ARG_TYPE();
                     return Local<Value>();
@@ -514,7 +514,8 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args) {
             auto res = sp->simulateNavigateToEntity(**actor, speed);
             return NavigateResultToObject(res);
         } else if (IsInstanceOf<IntPos>(args[0]) || IsInstanceOf<FloatPos>(args[0])) {
-            Vec3 pos = IsInstanceOf<IntPos>(args[0]) ? IntPos::extractPos(args[0])->getBlockPos().bottomCenter() : FloatPos::extractPos(args[0])->getVec3();
+            Vec3 pos = IsInstanceOf<IntPos>(args[0]) ? IntPos::extractPos(args[0])->getBlockPos().bottomCenter()
+                                                     : FloatPos::extractPos(args[0])->getVec3();
             auto res = sp->simulateNavigateToLocation(pos, speed);
             return NavigateResultToObject(res);
         }
@@ -540,7 +541,6 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args) {
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
-
 
 // bool simulateSetItem(class ItemStack&, bool, int);
 

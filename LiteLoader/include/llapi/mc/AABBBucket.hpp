@@ -18,13 +18,13 @@
 struct AABBBucket {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBBUCKET
 public:
-    struct AABBBucket& operator=(struct AABBBucket const &) = delete;
-    AABBBucket(struct AABBBucket const &) = delete;
+    struct AABBBucket& operator=(struct AABBBucket const&) = delete;
+    AABBBucket(struct AABBBucket const&) = delete;
 #endif
 
 public:
@@ -63,5 +63,4 @@ public:
      * @symbol  ?needsFinalize\@AABBBucket\@\@QEBA_NXZ
      */
     MCAPI bool needsFinalize() const;
-
 };

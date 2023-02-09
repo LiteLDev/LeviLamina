@@ -15,9 +15,7 @@ AllowListManager::AllowListManager() {
         if (content.has_value()) {
             try {
                 allowList = nlohmann::json::parse(content.value());
-            } catch (std::exception e) {
-                allowListLogger.error("Failed to parse allowlist.json: {}", e.what());
-            }
+            } catch (std::exception e) { allowListLogger.error("Failed to parse allowlist.json: {}", e.what()); }
         } else {
             allowListLogger.error("Failed to read allowlist.json");
         }
@@ -67,9 +65,7 @@ AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& x
             allowListLogger.warn("Added player \"{}\" to AllowList with ignoresPlayerLimit on", name);
         else
             allowListLogger.info("Added player \"{}\" to AllowList", name);
-    } catch (std::exception e) {
-        allowListLogger.error("Failed to add player to AllowList: {}", e.what());
-    }
+    } catch (std::exception e) { allowListLogger.error("Failed to add player to AllowList: {}", e.what()); }
     return *this;
 }
 
@@ -83,9 +79,7 @@ AllowListManager& AllowListManager::remove(const std::string& name, const xuid_t
         } else {
             allowListLogger.error("Failed to remove player from AllowList: Target player is not found");
         }
-    } catch (std::exception e) {
-        allowListLogger.error("Failed to remove player from AllowList: {}", e.what());
-    }
+    } catch (std::exception e) { allowListLogger.error("Failed to remove player from AllowList: {}", e.what()); }
     return *this;
 }
 
