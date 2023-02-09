@@ -27,7 +27,7 @@ public:
 
     inline SubChunkPos(int ix, int iy, int iz) : x(ix), y(iy), z(iz) {}
 
-    inline int& operator[](size_t index) {
+    constexpr int& operator[](size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -38,7 +38,7 @@ public:
         }
     }
 
-    inline int operator[](size_t index) const {
+    constexpr int operator[](size_t index) const {
         switch (index) {
             case 1:
                 return y;

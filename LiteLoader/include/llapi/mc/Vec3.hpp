@@ -70,7 +70,7 @@ class Vec3 {
 
     inline Vec3 add(float dx, float dy, float dz) const { return {x + dx, y + dy, z + dz}; }
 
-    inline float& operator[](size_t index) {
+    constexpr float& operator[](size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -81,7 +81,7 @@ class Vec3 {
         }
     }
 
-    inline float operator[](size_t index) const {
+    constexpr float operator[](size_t index) const {
         switch (index) {
             case 1:
                 return y;
