@@ -251,6 +251,33 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
+bool Player::removeItem(ItemStack* item) {
+    Container* container = &getInventory();
+    auto items = container->getAllSlots();
+    int size = container->getSize();
+    int amount = item->getCount();
+    for (int i = 0; i < size; ++i) {
+        if (items[i]->getTypeName() == item->getTypeName()) {
+            int cnt = items[i]->getCount();
+            container->removeItem(i, amount);
+            
+            if(amount<=cnt) break;
+            amount -= cnt;
+        }
+    }
+    
+    refreshInventory();
+    return true;
+}
+
+bool Player::removeItem(ItemStack* item, int amount) {
+    return this->removeItem(item->getTypeName(), amount);
+}
+
+bool Player::removeItem(string typeName, int amount) {
+    return this->removeItem(ItemStack::create(typeName, amount));
+}
+
 int Player::clearItem(string typeName) {
     int res = 0;
 

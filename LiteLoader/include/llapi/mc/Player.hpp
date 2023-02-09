@@ -133,6 +133,10 @@ public:
     LIAPI bool giveItem(string typeName, int amount);
     LIAPI bool giveItem(ItemStack* item, int amount);
 
+    LIAPI bool removeItem(ItemStack* item);
+    LIAPI bool removeItem(string typeName, int amount);
+    LIAPI bool removeItem(ItemStack* item, int amount);
+
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
