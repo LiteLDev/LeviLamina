@@ -45,7 +45,7 @@ public:
         return {x + dx, y + dy, z + dz};
     }
 
-    inline int& operator[](size_t index) {
+    constexpr int& operator[](size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -56,7 +56,7 @@ public:
         }
     }
 
-    inline int operator[](size_t index) const {
+    constexpr int operator[](size_t index) const {
         switch (index) {
             case 1:
                 return y;

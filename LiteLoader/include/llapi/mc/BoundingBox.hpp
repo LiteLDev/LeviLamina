@@ -14,7 +14,7 @@ public:
 
     LIAPI class AABB toAABB() const;
 
-
+    inline std::string toString() const { return '(' + min.toString() +", " + max.toString() + ')'; }
     inline BoundingBox(class BoundingBox const& k) : min(k.min), max(k.max){};
     inline BoundingBox(BlockPos const& pMin, BlockPos const& pMax)
     : min(pMin), max(pMax){};

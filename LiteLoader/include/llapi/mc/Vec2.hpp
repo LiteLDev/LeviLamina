@@ -9,7 +9,7 @@ class Vec2 {
     Vec2() = default;
     Vec2(float a, float b) : x(a), y(b){};
 
-    inline float& operator[](size_t index) {
+    constexpr float& operator[](size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -18,7 +18,7 @@ class Vec2 {
         }
     }
 
-    inline float operator[](size_t index) const {
+    constexpr float operator[](size_t index) const {
         switch (index) {
             case 1:
                 return y;
