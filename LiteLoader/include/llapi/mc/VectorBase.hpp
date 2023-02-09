@@ -50,8 +50,8 @@ constexpr void unroll(Fn fn) {
                                                                                                                    \
     constexpr bool operator==(T const& b) const {                                                                  \
         bool res = true;                                                                                           \
-        unroll<N>([&](size_t iter) { res &= (b[iter] == operator[](iter)); });                                     \
-        return true;                                                                                               \
+        unroll<N>([&](size_t iter) { res = res && (b[iter] == operator[](iter)); });                               \
+        return res;                                                                                                \
     }                                                                                                              \
                                                                                                                    \
     constexpr bool operator!=(T const& b) const { return !(static_cast<T const&>(*this) == b); }                   \
