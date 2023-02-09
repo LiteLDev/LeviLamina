@@ -11,6 +11,7 @@
 #include "engine/EngineOwnData.h"
 #include "engine/GlobalShareData.h"
 #include <llapi/mc/Player.hpp>
+#include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>
 #include <llapi/mc/Actor.hpp>
 #include <llapi/mc/Container.hpp>
@@ -261,7 +262,13 @@ Local<Value> PlayerClass::simulateRespawn(const Arguments& args) {
         auto sp = asSimulatedPlayer();
         if (!sp)
             return Local<Value>();
-        return Boolean::newBoolean(sp->simulateRespawn());
+       if(sp->simulateRespawn()){
+            auto position = sp->getRespawnPosition();
+          get()->teleport(position.first.bottomCenter(), position.second);
+            return Boolean::newBoolean(true);
+       }else{
+            return Boolean::newBoolean(false);
+       }
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };

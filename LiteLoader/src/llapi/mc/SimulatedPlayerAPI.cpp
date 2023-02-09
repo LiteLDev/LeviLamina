@@ -90,7 +90,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
         // headPos.y += 1.62001f;
         // player->setPos(headPos);
         player->setRespawnReady(Vec3(0, 32768, 0));
-        player->setSpawnBlockRespawnPosition(pos.toBlockPos(), dimensionId);
+        player->setRespawnPosition(pos.toBlockPos(), dimensionId);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
         player->teleport(pos, dimensionId);
