@@ -126,6 +126,9 @@ jobs:
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
 
       - name: Upload PeEditor
         uses: actions/upload-artifact@v3.1.0
@@ -172,12 +175,6 @@ jobs:
         with:
           name: LLPermission
           path: ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
-
-      - name: Upload LLMoney
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LLMoney
-          path: ${{ github.workspace }}\build\output\plugins\LLMoney.dll
 
       - name: Upload PDB files
         uses: actions/upload-artifact@v3.1.0

@@ -152,6 +152,9 @@ jobs:
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
 
       - name: Upload PeEditor
         uses: actions/upload-artifact@v3.1.0
@@ -199,12 +202,6 @@ jobs:
           name: LLPermission
           path: ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
 
-      - name: Upload LLMoney
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LLMoney
-          path: ${{ github.workspace }}\build\output\plugins\LLMoney.dll
-
       - name: Upload PDB files
         uses: actions/upload-artifact@v3.1.0
         with:
@@ -227,14 +224,13 @@ jobs:
       - name: Pack artifacts
         run: |
           cd build/
-          zip -9r LiteLoaderBDS.zip LiteLoaderBDS/*
+          zip -9r LiteLoaderBDS-full.zip LiteLoaderBDS/*
           zip -9r PeEditor.zip PeEditor/*
           zip -9r PreLoader.zip PreLoader/*
           zip -9r LiteLoader.zip LiteLoader/*
           zip -9r ScriptEngine.zip ScriptEngine/*
           zip -9r LLParticle.zip LLParticle/*
           zip -9r LLPermission.zip LLPermission/*
-          zip -9r LLMoney.zip LLMoney/*
           zip -9r PDB.zip PDB/*
         shell: bash
 
@@ -245,14 +241,13 @@ jobs:
           tag: ${{ github.event.inputs.tag }}
           bodyFile: RELEASE_NOTES.md
           artifacts: |
-            build/LiteLoaderBDS.zip
+            build/LiteLoaderBDS-full.zip
             build/PeEditor.zip
             build/PreLoader.zip
             build/LiteLoader.zip
             build/ScriptEngine.zip
             build/LLParticle.zip
             build/LLPermission.zip
-            build/LLMoney.zip
             build/PDB.zip
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
