@@ -69,7 +69,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
         .instanceFunction("setGameMode", &PlayerClass::setGameMode)
 
-        .instanceFunction("is", &Player::is)
+        .instanceFunction("is", &PlayerClass::is)
         .instanceFunction("runcmd", &PlayerClass::runcmd)
         .instanceFunction("teleport", &PlayerClass::teleport)
         .instanceFunction("kill", &PlayerClass::kill)
@@ -812,7 +812,7 @@ Local<Value> PlayerClass::setGameMode(const Arguments& args) {
     CATCH("Fail in setGameMode!");
 }
 
-Local<Value> PlayerClass::is() {
+Local<Value> PlayerClass::is(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
@@ -822,130 +822,130 @@ Local<Value> PlayerClass::is() {
             return Local<Value>();
 
         string condition = args[0].toStr();
-        boolean conditionValue = false;
+        bool conditionValue = false;
 
         switch ( condition )
         {
             case "canFly":
-                condition = player->canFly();
+                conditionValue = player->canFly();
                 break;
             case "canBeSeenOnMap":
-                condition = player->canBeSeenOnMap();
+                conditionValue = player->canBeSeenOnMap();
                 break;
             case "canFreeze":
-                condition = player->canFreeze();
+                conditionValue = player->canFreeze();
                 break;
             case "canSeeDaylight":
-                condition = player->canSeeDaylight();
+                conditionValue = player->canSeeDaylight();
                 break;
             case "canStartSleepInBed":
-                condition = player->canStartSleepInBed();
+                conditionValue = player->canStartSleepInBed();
                 break;
             case "canPickupItems":
-                condition = player->getCanPickupItems();
+                conditionValue = player->getCanPickupItems();
                 break;
-            case "isSneaking":
-                condition = player->isSneaking();
+            case "sneaking":
+                conditionValue = player->isSneaking();
                 break;
-            case "isInAir":
-                condition = !player->isOnGround() && !player->isInWater();
+            case "inAir":
+                conditionValue = !player->isOnGround() && !player->isInWater();
                 break;
-            case "isInWater":
-                condition = player->isInWater();
+            case "inWater":
+                conditionValue = player->isInWater();
                 break;
-            case "isInLava":
-                condition = player->isInLava();
+            case "inLava":
+                conditionValue = player->isInLava();
                 break;
-            case "isInRain":
-                condition = player->isInRain();
+            case "inRain":
+                conditionValue = player->isInRain();
                 break;
-            case "isInSnow":
-                condition = player->isInSnow();
+            case "inSnow":
+                conditionValue = player->isInSnow();
                 break;
-            case "isInWall":
-                condition = player->isInWall();
+            case "inWall":
+                conditionValue = player->isInWall();
                 break;
-            case "isInWaterOrRain":
-                condition = player->isInWaterOrRain();
+            case "inWaterOrRain":
+                conditionValue = player->isInWaterOrRain();
                 break;
-            case "isInWorld":
-                condition = player->isInWorld();
+            case "inWorld":
+                conditionValue = player->isInWorld();
                 break;
-            case "isInClouds":
-                condition = player->isInClouds();
+            case "inClouds":
+                conditionValue = player->isInClouds();
                 break;
-            case "isLoading":
-                condition = player->isLoading();
+            case "loading":
+                conditionValue = player->isLoading();
                 break;
-            case "isInvisible":
-                condition = player->isInvisible();
+            case "invisible":
+                conditionValue = player->isInvisible();
                 break;
-            case "isInsidePortal":
-                condition = player->isInsidePortal();
+            case "insidePortal":
+                conditionValue = player->isInsidePortal();
                 break;
-            case "isHurt":
-                condition = player->isHurt();
+            case "hurt":
+                conditionValue = player->isHurt();
                 break;
-            case "isTrusting":
-                condition = player->isTrusting();
+            case "trusting":
+                conditionValue = player->isTrusting();
                 break;
-            case "isTouchingDamageBlock":
-                condition = player->isTouchingDamageBlock();
+            case "touchingDamageBlock":
+                conditionValue = player->isTouchingDamageBlock();
                 break;
-            case "isHungry":
-                condition = player->isHungry();
+            case "hungry":
+                conditionValue = player->isHungry();
                 break;
-            case "isOnFire":
-                condition = player->isOnFire();
+            case "onFire":
+                conditionValue = player->isOnFire();
                 break;
-            case "isOnGround":
-                condition = player->isOnGround();
+            case "onGround":
+                conditionValue = player->isOnGround();
                 break;
-            case "isOnHotBlock":
-                condition = player->isOnHotBlock();
+            case "onHotBlock":
+                conditionValue = player->isOnHotBlock();
                 break;
-            case "isTrading":
-                condition = player->isTrading();
+            case "trading":
+                conditionValue = player->isTrading();
                 break;
-            case "isAdventure":
-                condition = player->isAdventure();
+            case "adventure":
+                conditionValue = player->isAdventure();
                 break;
-            case "isGliding":
-                condition = player->isGliding();
+            case "gliding":
+                conditionValue = player->isGliding();
                 break;
-            case "isSurvival":
-                condition = player->isSurvival();
+            case "survival":
+                conditionValue = player->isSurvival();
                 break;
-            case "isSpectator":
-                condition = player->isSpectator();
+            case "spectator":
+                conditionValue = player->isSpectator();
                 break;
-            case "isRiding":
-                condition = player->isRiding();
+            case "riding":
+                conditionValue = player->isRiding();
                 break;
-            case "isDancing":
-                condition = player->isDancing();
+            case "dancing":
+                conditionValue = player->isDancing();
                 break;
-            case "isCreative":
-                condition = player->isCreative();
+            case "creative":
+                conditionValue = player->isCreative();
                 break;
-            case "isFlying":
-                condition = player->isFlying();
+            case "flying":
+                conditionValue = player->isFlying();
                 break;
-            case "isMoving":
-                condition = player->isMoving();
+            case "moving":
+                conditionValue = player->isMoving();
                 break;
-            case "isOperator":
-                condition = player->isOperator();
+            case "operator":
+                conditionValue = player->isOperator();
                 break;
-            case "isSprinting":
-                condition = player->isSprinting();
+            case "sprinting":
+                conditionValue = player->isSprinting();
                 break;
             default:
-                condition = false;
+                conditionValue = false;
                 break;
         }
 
-        return Boolean::newBoolean(condition);
+        return Boolean::newBoolean(conditionValue);
     }
     CATCH("Fail in playerIs")
 }

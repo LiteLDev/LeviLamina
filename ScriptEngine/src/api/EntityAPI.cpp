@@ -40,38 +40,13 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("blockPos", &EntityClass::getBlockPos)
         .instanceProperty("maxHealth", &EntityClass::getMaxHealth)
         .instanceProperty("health", &EntityClass::getHealth)
-        .instanceProperty("canFly", &EntityClass::getCanFly)
-        .instanceProperty("canFreeze", &EntityClass::getCanFreeze)
-        .instanceProperty("canSeeDaylight", &EntityClass::getCanSeeDaylight)
-        .instanceProperty("canPickupItems", &EntityClass::getCanPickupItems)
-        .instanceProperty("inAir", &EntityClass::getInAir)
-        .instanceProperty("inWater", &EntityClass::getInWater)
-        .instanceProperty("inLava", &EntityClass::getInLava)
-        .instanceProperty("inRain", &EntityClass::getInRain)
-        .instanceProperty("inSnow", &EntityClass::getInSnow)
-        .instanceProperty("inWall", &EntityClass::getInWall)
-        .instanceProperty("inWaterOrRain", &EntityClass::getInWaterOrRain)
-        .instanceProperty("inWorld", &EntityClass::getInWorld)
         .instanceProperty("speed", &EntityClass::getSpeed)
         .instanceProperty("direction", &EntityClass::getDirection)
         .instanceProperty("uniqueId", &EntityClass::getUniqueID)
-        .instanceProperty("isInvisible", &EntityClass::isInvisible)
-        .instanceProperty("isInsidePortal", &EntityClass::isInsidePortal)
-        .instanceProperty("isTrusting", &EntityClass::isTrusting)
-        .instanceProperty("isTouchingDamageBlock", &EntityClass::isTouchingDamageBlock)
-        .instanceProperty("isOnFire", &EntityClass::isOnFire)
-        .instanceProperty("isOnGround", &EntityClass::isOnGround)
-        .instanceProperty("isOnHotBlock", &EntityClass::isOnHotBlock)
-        .instanceProperty("isTrading", &EntityClass::isTrading)
-        .instanceProperty("isRiding", &EntityClass::isRiding)
-        .instanceProperty("isDancing", &EntityClass::isDancing)
-        .instanceProperty("isSleeping", &EntityClass::isSleeping)
-        .instanceProperty("isAngry", &EntityClass::isAngry)
-        .instanceProperty("isBaby", &EntityClass::isBaby)
-        .instanceProperty("isMoving", &EntityClass::isMoving)
         .instanceProperty("getBiomeName", &EntityClass::getBiomeName)
         .instanceProperty("getBiomeId", &EntityClass::getBiomeId)
 
+        .instanceFunction("is", &EntityClass::is)
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("despawn", &EntityClass::despawn)
@@ -91,9 +66,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("setMaxHealth", &EntityClass::setMaxHealth)
         .instanceFunction("setFire", &EntityClass::setFire)
         .instanceFunction("stopFire", &EntityClass::stopFire)
-        .instanceFunction("isPlayer", &EntityClass::isPlayer)
         .instanceFunction("toPlayer", &EntityClass::toPlayer)
-        .instanceFunction("isItemEntity", &EntityClass::isItemEntity)
         .instanceFunction("toItem", &EntityClass::toItem)
         .instanceFunction("getBlockStandingOn", &EntityClass::getBlockStandingOn)
         .instanceFunction("getArmor", &EntityClass::getArmor)
@@ -114,6 +87,34 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
         // For Compatibility
+        .instanceProperty("canFly", &EntityClass::getCanFly)
+        .instanceProperty("canFreeze", &EntityClass::getCanFreeze)
+        .instanceProperty("canSeeDaylight", &EntityClass::getCanSeeDaylight)
+        .instanceProperty("canPickupItems", &EntityClass::getCanPickupItems)
+        .instanceProperty("inAir", &EntityClass::getInAir)
+        .instanceProperty("inWater", &EntityClass::getInWater)
+        .instanceProperty("inLava", &EntityClass::getInLava)
+        .instanceProperty("inRain", &EntityClass::getInRain)
+        .instanceProperty("inSnow", &EntityClass::getInSnow)
+        .instanceProperty("inWall", &EntityClass::getInWall)
+        .instanceProperty("inWaterOrRain", &EntityClass::getInWaterOrRain)
+        .instanceProperty("inWorld", &EntityClass::getInWorld)
+        .instanceProperty("isInvisible", &EntityClass::isInvisible)
+        .instanceProperty("isInsidePortal", &EntityClass::isInsidePortal)
+        .instanceProperty("isTrusting", &EntityClass::isTrusting)
+        .instanceProperty("isTouchingDamageBlock", &EntityClass::isTouchingDamageBlock)
+        .instanceProperty("isOnFire", &EntityClass::isOnFire)
+        .instanceProperty("isOnGround", &EntityClass::isOnGround)
+        .instanceProperty("isOnHotBlock", &EntityClass::isOnHotBlock)
+        .instanceProperty("isTrading", &EntityClass::isTrading)
+        .instanceProperty("isRiding", &EntityClass::isRiding)
+        .instanceProperty("isDancing", &EntityClass::isDancing)
+        .instanceProperty("isSleeping", &EntityClass::isSleeping)
+        .instanceProperty("isAngry", &EntityClass::isAngry)
+        .instanceProperty("isBaby", &EntityClass::isBaby)
+        .instanceProperty("isMoving", &EntityClass::isMoving)
+        .instanceFunction("isItemEntity", &EntityClass::isItemEntity)
+        .instanceFunction("isPlayer", &EntityClass::isPlayer)
         .instanceFunction("setTag", &EntityClass::setNbt)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
         .instanceFunction("getTag", &EntityClass::getNbt)
@@ -218,160 +219,6 @@ Local<Value> EntityClass::getUniqueID() {
     CATCH("Fail in getUniqueID!")
 }
 
-Local<Value> EntityClass::isInvisible() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInvisible());
-    }
-    CATCH("Fail in isInvisible!")
-}
-
-Local<Value> EntityClass::isInsidePortal() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInsidePortal());
-    }
-    CATCH("Fail in isInsidePortal!")
-}
-
-Local<Value> EntityClass::isTrusting() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isTrusting());
-    }
-    CATCH("Fail in isTrusting!")
-}
-
-Local<Value> EntityClass::isTouchingDamageBlock() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isTouchingDamageBlock());
-    }
-    CATCH("Fail in isTouchingDamageBlock!")
-}
-
-Local<Value> EntityClass::isOnFire() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isOnFire());
-    }
-    CATCH("Fail in isOnFire!")
-}
-
-Local<Value> EntityClass::isOnGround() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isOnGround());
-    }
-    CATCH("Fail in isOnGround!")
-}
-
-Local<Value> EntityClass::isOnHotBlock() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isOnHotBlock());
-    }
-    CATCH("Fail in isOnHotBlock!")
-}
-
-Local<Value> EntityClass::isTrading() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isTrading());
-    }
-    CATCH("Fail in isTrading!")
-}
-
-Local<Value> EntityClass::isRiding() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isRiding());
-    }
-    CATCH("Fail in isRiding!")
-}
-
-Local<Value> EntityClass::isDancing() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isDancing());
-    }
-    CATCH("Fail in isDancing!")
-}
-
-Local<Value> EntityClass::isSleeping() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isSleeping());
-    }
-    CATCH("Fail in isSleeping!")
-}
-
-Local<Value> EntityClass::isAngry() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isAngry());
-    }
-    CATCH("Fail in isAngry!")
-}
-
-Local<Value> EntityClass::isBaby() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isBaby());
-    }
-    CATCH("Fail in isBaby!")
-}
-
-Local<Value> EntityClass::isMoving() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isMoving());
-    }
-    CATCH("Fail in isMoving!")
-}
-
 #include <llapi/mc/CommandUtils.hpp>
 Local<Value> EntityClass::getName() {
     try {
@@ -450,149 +297,6 @@ Local<Value> EntityClass::getHealth() {
     CATCH("Fail in GetHealth!")
 }
 
-Local<Value> EntityClass::getCanFly() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->canFly());
-    }
-    CATCH("Fail in getCanFly!")
-}
-
-Local<Value> EntityClass::getCanFreeze() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->canFreeze());
-    }
-    CATCH("Fail in getCanFreeze!")
-}
-
-Local<Value> EntityClass::getCanSeeDaylight() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->canSeeDaylight());
-    }
-    CATCH("Fail in getCanSeeDaylight!")
-}
-
-Local<Value> EntityClass::getCanPickupItems() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->getCanPickupItems());
-    }
-    CATCH("Fail in getCanPickupItems!")
-}
-
-Local<Value> EntityClass::getInAir() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(!entity->isOnGround() && !entity->isInWater());
-    }
-    CATCH("Fail in getInAir!")
-}
-
-Local<Value> EntityClass::getInWater() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInWater());
-    }
-    CATCH("Fail in getInWater!")
-}
-
-Local<Value> EntityClass::getInClouds() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInClouds());
-    }
-    CATCH("Fail in getInClouds!")
-}
-
-Local<Value> EntityClass::getInLava() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInLava());
-    }
-    CATCH("Fail in getInLava!")
-}
-
-Local<Value> EntityClass::getInRain() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInRain());
-    }
-    CATCH("Fail in getInRain!")
-}
-
-Local<Value> EntityClass::getInSnow() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInSnow());
-    }
-    CATCH("Fail in getInSnow!")
-}
-
-Local<Value> EntityClass::getInWall() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInWall());
-    }
-    CATCH("Fail in getInWall!")
-}
-
-Local<Value> EntityClass::getInWaterOrRain() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInWaterOrRain());
-    }
-    CATCH("Fail in getInWaterOrRain!")
-}
-
-Local<Value> EntityClass::getInWorld() {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isInWorld());
-    }
-    CATCH("Fail in getInWorld!")
-}
-
 Local<Value> EntityClass::getSpeed() {
     try {
         Actor* entity = get();
@@ -614,6 +318,116 @@ Local<Value> EntityClass::getDirection() {
         return DirectionAngle::newAngle(vec->x, vec->y);
     }
     CATCH("Fail in getDirection!")
+}
+
+Local<Value> EntityClass::is(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        string condition = args[0].toStr();
+        bool conditionValue = false;
+
+        switch (condition) {
+            case "canFly":
+                conditionValue = entity->canFly();
+                break;
+            case "canFreeze":
+                conditionValue = entity->canFreeze();
+                break;
+            case "canSeeDaylight":
+                conditionValue = entity->canSeeDaylight();
+                break;
+            case "canPickupItems":
+                conditionValue = entity->getCanPickupItems();
+                break;
+            case "inAir":
+                conditionValue = !entity->isOnGround() && !entity->isInWater();
+                break;
+            case "inWater":
+                conditionValue = entity->isInWater();
+                break;
+            case "inClouds":
+                conditionValue = entity->isInClouds();
+                break;
+            case "inLava":
+                conditionValue = entity->isInLava();
+                break;
+            case "inRain":
+                conditionValue = entity->isInRain();
+                break;
+            case "inSnow":
+                conditionValue = entity->isInSnow();
+                break;
+            case "inWall":
+                conditionValue = entity->isInWall();
+                break;
+            case "inWaterOrRain":
+                conditionValue = entity->isInWaterOrRain();
+                break;
+            case "inWorld":
+                conditionValue = entity->isInWorld();
+                break;
+            case "invisible":
+                conditionValue = entity->isInvisible();
+                break;
+            case "insidePortal":
+                conditionValue = entity->isInsidePortal();
+                break;
+            case "trusting":
+                conditionValue = entity->isTrusting();
+                break;
+            case "touchingDamageBlock":
+                conditionValue = entity->isTouchingDamageBlock();
+                break;
+            case "onFire":
+                conditionValue = entity->isOnFire();
+                break;
+            case "onGround":
+                conditionValue = entity->isOnGround();
+                break;
+            case "onHotBlock":
+                conditionValue = entity->isOnHotBlock();
+                break;
+            case "trading":
+                conditionValue = entity->isTrading();
+                break;
+            case "riding":
+                conditionValue = entity->isRiding();
+                break;
+            case "dancing":
+                conditionValue = entity->isDancing();
+                break;
+            case "sleeping":
+                conditionValue = entity->isSleeping();
+                break;
+            case "angry":
+                conditionValue = entity->isAngry();
+                break;
+            case "baby":
+                conditionValue = entity->isBaby();
+                break;
+            case "moving":
+                conditionValue = entity->isMoving();
+                break;
+            case "player":
+                conditionValue = entity->isPlayer();
+                break;
+            case "itemActor":
+                conditionValue = entity->isItemActor();
+                break;
+            default:
+                conditionValue = false;
+                break;
+        }
+    
+        return Boolean::newBoolean(conditionValue);
+    }
+    CATCH("Fail in entityIs!")
 }
 
 Local<Value> EntityClass::teleport(const Arguments& args) {
@@ -867,17 +681,6 @@ Local<Value> EntityClass::remove(const Arguments& args) {
     CATCH("Fail in removeEntity!")
 }
 
-Local<Value> EntityClass::isPlayer(const Arguments& args) {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isPlayer());
-    }
-    CATCH("Fail in isPlayer!")
-}
-
 Local<Value> EntityClass::toPlayer(const Arguments& args) {
     try {
         Actor* entity = get();
@@ -891,17 +694,6 @@ Local<Value> EntityClass::toPlayer(const Arguments& args) {
             return PlayerClass::newPlayer(pl);
     }
     CATCH("Fail in toPlayer!");
-}
-
-Local<Value> EntityClass::isItemEntity(const Arguments& args) {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Boolean::newBoolean(entity->isItemActor());
-    }
-    CATCH("Fail in isPlayer!")
 }
 
 Local<Value> EntityClass::toItem(const Arguments& args) {
@@ -1624,4 +1416,327 @@ Local<Value> McClass::explode(const Arguments& args) {
         return Boolean::newBoolean(Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
     }
     CATCH("Fail in Explode!");
+}
+
+//////////////////// For Compatibility ////////////////////
+
+Local<Value> EntityClass::getCanFly() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->canFly());
+    }
+    CATCH("Fail in getCanFly!")
+}
+
+Local<Value> EntityClass::getCanFreeze() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->canFreeze());
+    }
+    CATCH("Fail in getCanFreeze!")
+}
+
+Local<Value> EntityClass::getCanSeeDaylight() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->canSeeDaylight());
+    }
+    CATCH("Fail in getCanSeeDaylight!")
+}
+
+Local<Value> EntityClass::getCanPickupItems() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->getCanPickupItems());
+    }
+    CATCH("Fail in getCanPickupItems!")
+}
+
+Local<Value> EntityClass::getInAir() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(!entity->isOnGround() && !entity->isInWater());
+    }
+    CATCH("Fail in getInAir!")
+}
+
+Local<Value> EntityClass::getInWater() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInWater());
+    }
+    CATCH("Fail in getInWater!")
+}
+
+Local<Value> EntityClass::getInClouds() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInClouds());
+    }
+    CATCH("Fail in getInClouds!")
+}
+
+Local<Value> EntityClass::getInLava() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInLava());
+    }
+    CATCH("Fail in getInLava!")
+}
+
+Local<Value> EntityClass::getInRain() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInRain());
+    }
+    CATCH("Fail in getInRain!")
+}
+
+Local<Value> EntityClass::getInSnow() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInSnow());
+    }
+    CATCH("Fail in getInSnow!")
+}
+
+Local<Value> EntityClass::getInWall() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInWall());
+    }
+    CATCH("Fail in getInWall!")
+}
+
+Local<Value> EntityClass::getInWaterOrRain() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInWaterOrRain());
+    }
+    CATCH("Fail in getInWaterOrRain!")
+}
+
+Local<Value> EntityClass::getInWorld() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInWorld());
+    }
+    CATCH("Fail in getInWorld!")
+}
+
+
+Local<Value> EntityClass::isInvisible() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInvisible());
+    }
+    CATCH("Fail in isInvisible!")
+}
+
+Local<Value> EntityClass::isInsidePortal() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isInsidePortal());
+    }
+    CATCH("Fail in isInsidePortal!")
+}
+
+Local<Value> EntityClass::isTrusting() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isTrusting());
+    }
+    CATCH("Fail in isTrusting!")
+}
+
+Local<Value> EntityClass::isTouchingDamageBlock() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isTouchingDamageBlock());
+    }
+    CATCH("Fail in isTouchingDamageBlock!")
+}
+
+Local<Value> EntityClass::isOnFire() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isOnFire());
+    }
+    CATCH("Fail in isOnFire!")
+}
+
+Local<Value> EntityClass::isOnGround() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isOnGround());
+    }
+    CATCH("Fail in isOnGround!")
+}
+
+Local<Value> EntityClass::isOnHotBlock() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isOnHotBlock());
+    }
+    CATCH("Fail in isOnHotBlock!")
+}
+
+Local<Value> EntityClass::isTrading() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isTrading());
+    }
+    CATCH("Fail in isTrading!")
+}
+
+Local<Value> EntityClass::isRiding() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isRiding());
+    }
+    CATCH("Fail in isRiding!")
+}
+
+Local<Value> EntityClass::isDancing() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isDancing());
+    }
+    CATCH("Fail in isDancing!")
+}
+
+Local<Value> EntityClass::isSleeping() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isSleeping());
+    }
+    CATCH("Fail in isSleeping!")
+}
+
+Local<Value> EntityClass::isAngry() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isAngry());
+    }
+    CATCH("Fail in isAngry!")
+}
+
+Local<Value> EntityClass::isBaby() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isBaby());
+    }
+    CATCH("Fail in isBaby!")
+}
+
+Local<Value> EntityClass::isMoving() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isMoving());
+    }
+    CATCH("Fail in isMoving!")
+}
+
+
+Local<Value> EntityClass::isPlayer(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isPlayer());
+    }
+    CATCH("Fail in isPlayer!")
+}
+
+Local<Value> EntityClass::isItemEntity(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isItemActor());
+    }
+    CATCH("Fail in isItemEntity!")
 }
