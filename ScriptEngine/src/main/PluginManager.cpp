@@ -140,7 +140,7 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
             // Try use loadFile
             engine->loadFile(realPath);
         } 
-        catch (const Exception& e) {
+        catch (const Exception& e1) {
             try{
                 // loadFile failed. Try use eval instead
                 auto scripts = ReadAllFile(realPath);
@@ -149,10 +149,10 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
                 }
                 engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFileOrDirPath);
             } 
-            catch (const Exception& e) {
+            catch (const Exception& e2) {
                 // Fail
                 logger.error("Fail in Loading Script Plugin!\n");
-                throw;
+                throw e1;       // throw the original exception out
             }
         }
         std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
