@@ -224,14 +224,9 @@ jobs:
       - name: Pack artifacts
         run: |
           cd build/
-          zip -9r LiteLoaderBDS-full.zip LiteLoaderBDS/*
-          zip -9r PeEditor.zip PeEditor/*
-          zip -9r PreLoader.zip PreLoader/*
-          zip -9r LiteLoader.zip LiteLoader/*
-          zip -9r ScriptEngine.zip ScriptEngine/*
-          zip -9r LLParticle.zip LLParticle/*
-          zip -9r LLPermission.zip LLPermission/*
-          zip -9r PDB.zip PDB/*
+          zip -0r LiteLoaderBDS.zip LiteLoaderBDS/*
+          zip -0r PDB.zip PDB/*
+          zip -9r Modules.zip PeEditor PreLoader LiteLoader ScriptEngine LLParticle LLPermission
         shell: bash
 
       - name: Create release
@@ -241,13 +236,8 @@ jobs:
           tag: ${{ github.event.inputs.tag }}
           bodyFile: RELEASE_NOTES.md
           artifacts: |
-            build/LiteLoaderBDS-full.zip
-            build/PeEditor.zip
-            build/PreLoader.zip
-            build/LiteLoader.zip
-            build/ScriptEngine.zip
-            build/LLParticle.zip
-            build/LLPermission.zip
+            build/LiteLoaderBDS.zip
+            build/Modules.zip
             build/PDB.zip
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
