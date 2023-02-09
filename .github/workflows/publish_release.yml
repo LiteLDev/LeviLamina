@@ -218,9 +218,12 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
+        with:
+          path: build/
 
       - name: Pack artifacts
         run: |
+          cd build/
           zip -9r LiteLoaderBDS.zip LiteLoaderBDS/*
           zip -9r PeEditor.zip PeEditor/*
           zip -9r PreLoader.zip PreLoader/*
@@ -237,16 +240,16 @@ jobs:
         with:
           prerelease: ${{ github.event.inputs.status != 'stable' }}
           tag: ${{ github.event.inputs.tag }}
-          bodyFile: ${{ github.workspace }}\RELEASE_NOTES.md
+          bodyFile: RELEASE_NOTES.md
           artifacts: |
-            LiteLoaderBDS.zip
-            PeEditor.zip
-            PreLoader.zip
-            LiteLoader.zip
-            ScriptEngine.zip
-            LLParticle.zip
-            LLPermission.zip
-            LLMoney.zip
-            PDB.zip
+            build/LiteLoaderBDS.zip
+            build/PeEditor.zip
+            build/PreLoader.zip
+            build/LiteLoader.zip
+            build/ScriptEngine.zip
+            build/LLParticle.zip
+            build/LLPermission.zip
+            build/LLMoney.zip
+            build/PDB.zip
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
