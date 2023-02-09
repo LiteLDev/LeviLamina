@@ -78,19 +78,19 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
-        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()).substr(3));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
-        player->changeDimension(dimensionId);
+        // player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
-        Vec3 headPos = pos;
-        headPos.y += 1.62001f;
-        player->setPos(headPos);
-        player->setRespawnReady(headPos);
-        player->setSpawnBlockRespawnPosition(pos.toBlockPos(), dimensionId);
+        // Vec3 headPos = pos;
+        // headPos.y += 1.62001f;
+        // player->setPos(headPos);
+        player->setRespawnReady(Vec3(0, 32768, 0));
+        player->setRespawnPosition(pos.toBlockPos(), dimensionId);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
         player->teleport(pos, dimensionId);
@@ -106,11 +106,11 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
                                                class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
-        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()).substr(3));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
-        player->changeDimension(dimensionId);
+        // player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));

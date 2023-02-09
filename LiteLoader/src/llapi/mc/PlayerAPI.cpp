@@ -322,6 +322,11 @@ std::pair<BlockPos, int> Player::getRespawnPosition() {
         dimId = getExpectedSpawnDimensionId();
     }
 
+    if (bp.y >= 32767) {
+        auto region = Level::getBlockSource(dimId);
+        if (region)
+            bp = region->getHeightmapPos(bp);
+    }
     return {bp, dimId};
 }
 
