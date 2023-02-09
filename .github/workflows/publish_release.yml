@@ -224,8 +224,8 @@ jobs:
       - name: Pack artifacts
         run: |
           cd build/
-          zip -0r LiteLoaderBDS.zip LiteLoaderBDS/*
-          zip -0r PDB.zip PDB/*
+          zip -9r LiteLoaderBDS.zip LiteLoaderBDS/*
+          zip -9r PDB.zip PDB/*
           zip -9r Modules.zip PeEditor PreLoader LiteLoader ScriptEngine LLParticle LLPermission
         shell: bash
 
