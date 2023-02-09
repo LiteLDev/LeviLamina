@@ -78,14 +78,14 @@ jobs:
 
       - name: Set LITELOADER_VERSION_STATUS_BETA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: ${{ github.event.inputs.status }} == 'beta'
+        if: github.event.inputs.status == 'beta'
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
       - name: Set LITELOADER_VERSION_STATUS_RELEASE
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: ${{ github.event.inputs.status }} == 'stable'
+        if: github.event.inputs.status == 'stable'
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/include/liteloader/Version.h
         shell: bash
