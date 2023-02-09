@@ -82,15 +82,15 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
-        player->changeDimension(dimensionId);
+        // player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
-        Vec3 headPos = pos;
-        headPos.y += 1.62001f;
-        player->setPos(headPos);
-        player->setRespawnReady(headPos);
-        player->setSpawnBlockRespawnPosition(pos.toBlockPos(), dimensionId);
+        // Vec3 headPos = pos;
+        // headPos.y += 1.62001f;
+        // player->setPos(headPos);
+        // player->setRespawnReady(headPos);
+        // player->setSpawnBlockRespawnPosition(pos.toBlockPos(), dimensionId);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
         player->teleport(pos, dimensionId);
@@ -110,7 +110,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
-        player->changeDimension(dimensionId);
+        // player->changeDimension(dimensionId);
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
