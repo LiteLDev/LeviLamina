@@ -332,97 +332,66 @@ Local<Value> EntityClass::is(const Arguments& args) {
         string condition = args[0].toStr();
         bool conditionValue = false;
 
-        switch (condition) {
-            case "canFly":
-                conditionValue = entity->canFly();
-                break;
-            case "canFreeze":
-                conditionValue = entity->canFreeze();
-                break;
-            case "canSeeDaylight":
-                conditionValue = entity->canSeeDaylight();
-                break;
-            case "canPickupItems":
-                conditionValue = entity->getCanPickupItems();
-                break;
-            case "inAir":
-                conditionValue = !entity->isOnGround() && !entity->isInWater();
-                break;
-            case "inWater":
-                conditionValue = entity->isInWater();
-                break;
-            case "inClouds":
-                conditionValue = entity->isInClouds();
-                break;
-            case "inLava":
-                conditionValue = entity->isInLava();
-                break;
-            case "inRain":
-                conditionValue = entity->isInRain();
-                break;
-            case "inSnow":
-                conditionValue = entity->isInSnow();
-                break;
-            case "inWall":
-                conditionValue = entity->isInWall();
-                break;
-            case "inWaterOrRain":
-                conditionValue = entity->isInWaterOrRain();
-                break;
-            case "inWorld":
-                conditionValue = entity->isInWorld();
-                break;
-            case "invisible":
-                conditionValue = entity->isInvisible();
-                break;
-            case "insidePortal":
-                conditionValue = entity->isInsidePortal();
-                break;
-            case "trusting":
-                conditionValue = entity->isTrusting();
-                break;
-            case "touchingDamageBlock":
-                conditionValue = entity->isTouchingDamageBlock();
-                break;
-            case "onFire":
-                conditionValue = entity->isOnFire();
-                break;
-            case "onGround":
-                conditionValue = entity->isOnGround();
-                break;
-            case "onHotBlock":
-                conditionValue = entity->isOnHotBlock();
-                break;
-            case "trading":
-                conditionValue = entity->isTrading();
-                break;
-            case "riding":
-                conditionValue = entity->isRiding();
-                break;
-            case "dancing":
-                conditionValue = entity->isDancing();
-                break;
-            case "sleeping":
-                conditionValue = entity->isSleeping();
-                break;
-            case "angry":
-                conditionValue = entity->isAngry();
-                break;
-            case "baby":
-                conditionValue = entity->isBaby();
-                break;
-            case "moving":
-                conditionValue = entity->isMoving();
-                break;
-            case "player":
-                conditionValue = entity->isPlayer();
-                break;
-            case "itemActor":
-                conditionValue = entity->isItemActor();
-                break;
-            default:
-                conditionValue = false;
-                break;
+        if (condition == "canFly") {
+            conditionValue = entity->canFly();
+        } else if (condition == "canFreeze") {
+            conditionValue = entity->canFreeze();
+        } else if (condition == "canSeeDaylight") {
+            conditionValue = entity->canSeeDaylight();
+        } else if (condition == "canPickupItems") {
+            conditionValue = entity->getCanPickupItems();
+        } else if (condition == "inAir") {
+            conditionValue = !entity->isOnGround() && !entity->isInWater();
+        } else if (condition == "inWater") {
+            conditionValue = entity->isInWater();
+        } else if (condition == "inClouds") {
+            conditionValue = entity->isInClouds();
+        } else if (condition == "inLava") {
+            conditionValue = entity->isInLava();
+        } else if (condition == "inRain") {
+            conditionValue = entity->isInRain();
+        } else if (condition == "inSnow") {
+            conditionValue = entity->isInSnow();
+        } else if (condition == "inWall") {
+            conditionValue = entity->isInWall();
+        } else if (condition == "inWaterOrRain") {
+            conditionValue = entity->isInWaterOrRain();
+        } else if (condition == "inWorld") {
+            conditionValue = entity->isInWorld();
+        } else if (condition == "invisible") {
+            conditionValue = entity->isInvisible();
+        } else if (condition == "insidePortal") {
+            conditionValue = entity->isInsidePortal();
+        } else if (condition == "trusting") {
+            conditionValue = entity->isTrusting();
+        } else if (condition == "touchingDamageBlock") {
+            conditionValue = entity->isTouchingDamageBlock();
+        } else if (condition == "onFire") {
+            conditionValue = entity->isOnFire();
+        } else if (condition == "onGround") {
+            conditionValue = entity->isOnGround();
+        }  else if (condition == "onHotBlock") {
+            conditionValue = entity->isOnHotBlock();
+        } else if (condition == "trading") {
+            conditionValue = entity->isTrading();
+        } else if (condition == "riding") {
+            conditionValue = entity->isRiding();
+        } else if (condition == "dancing") {
+            conditionValue = entity->isDancing();
+        } else if (condition == "sleeping") {
+            conditionValue = entity->isSleeping();
+        } else if (condition == "angry") {
+            conditionValue = entity->isAngry();
+        } else if (condition == "baby") {
+            conditionValue = entity->isBaby();
+        } else if (condition == "moving") {
+            conditionValue = entity->isMoving();
+        } else if (condition == "player") {
+            conditionValue = entity->isPlayer();
+        } else if (condition == "itemEntity") {
+            conditionValue = entity->isItemActor();
+        } else {
+            conditionValue = false;
         }
     
         return Boolean::newBoolean(conditionValue);
