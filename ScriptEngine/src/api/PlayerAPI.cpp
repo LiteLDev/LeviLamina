@@ -59,56 +59,17 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("uuid", &PlayerClass::getUuid)
         .instanceProperty("permLevel", &PlayerClass::getPermLevel)
         .instanceProperty("gameMode", &PlayerClass::getGameMode)
-        .instanceProperty("canSleep", &PlayerClass::getCanSleep)
-        .instanceProperty("canFly", &PlayerClass::getCanFly)
-        .instanceProperty("canBeSeenOnMap", &PlayerClass::getCanBeSeenOnMap)
-        .instanceProperty("canFreeze", &PlayerClass::getCanFreeze)
-        .instanceProperty("canSeeDaylight", &PlayerClass::getCanSeeDaylight)
-        .instanceProperty("canShowNameTag", &PlayerClass::getCanShowNameTag)
-        .instanceProperty("canStartSleepInBed", &PlayerClass::getCanStartSleepInBed)
-        .instanceProperty("canPickupItems", &PlayerClass::getCanPickupItems)
         .instanceProperty("maxHealth", &PlayerClass::getMaxHealth)
         .instanceProperty("health", &PlayerClass::getHealth)
-        .instanceProperty("inAir", &PlayerClass::getInAir)
-        .instanceProperty("inWater", &PlayerClass::getInWater)
-        .instanceProperty("inLava", &PlayerClass::getInLava)
-        .instanceProperty("inRain", &PlayerClass::getInRain)
-        .instanceProperty("inSnow", &PlayerClass::getInSnow)
-        .instanceProperty("inWall", &PlayerClass::getInWall)
-        .instanceProperty("inWaterOrRain", &PlayerClass::getInWaterOrRain)
-        .instanceProperty("inWorld", &PlayerClass::getInWorld)
-        .instanceProperty("inClouds", &PlayerClass::getInClouds)
-        .instanceProperty("sneaking", &PlayerClass::getSneaking)
         .instanceProperty("speed", &PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
         .instanceProperty("langCode", &PlayerClass::getLangCode)
-        .instanceProperty("isLoading", &PlayerClass::isLoading)
-        .instanceProperty("isInvisible", &PlayerClass::isInvisible)
-        .instanceProperty("isInsidePortal", &PlayerClass::isInsidePortal)
-        .instanceProperty("isHurt", &PlayerClass::isHurt)
-        .instanceProperty("isTrusting", &PlayerClass::isTrusting)
-        .instanceProperty("isTouchingDamageBlock", &PlayerClass::isTouchingDamageBlock)
-        .instanceProperty("isHungry", &PlayerClass::isHungry)
-        .instanceProperty("isOnFire", &PlayerClass::isOnFire)
-        .instanceProperty("isOnGround", &PlayerClass::isOnGround)
-        .instanceProperty("isOnHotBlock", &PlayerClass::isOnHotBlock)
-        .instanceProperty("isTrading", &PlayerClass::isTrading)
-        .instanceProperty("isAdventure", &PlayerClass::isAdventure)
-        .instanceProperty("isGliding", &PlayerClass::isGliding)
-        .instanceProperty("isSurvival", &PlayerClass::isSurvival)
-        .instanceProperty("isSpectator", &PlayerClass::isSpectator)
-        .instanceProperty("isRiding", &PlayerClass::isRiding)
-        .instanceProperty("isDancing", &PlayerClass::isDancing)
-        .instanceProperty("isCreative", &PlayerClass::isCreative)
-        .instanceProperty("isFlying", &PlayerClass::isFlying)
-        .instanceProperty("isSleeping", &PlayerClass::isSleeping)
-        .instanceProperty("isMoving", &PlayerClass::isMoving)
 
-        .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
         .instanceFunction("setGameMode", &PlayerClass::setGameMode)
 
+        .instanceFunction("is", &Player::is)
         .instanceFunction("runcmd", &PlayerClass::runcmd)
         .instanceFunction("teleport", &PlayerClass::teleport)
         .instanceFunction("kill", &PlayerClass::kill)
@@ -236,6 +197,46 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
 
         // For Compatibility
         .instanceProperty("ip", &PlayerClass::getIP)
+        .instanceProperty("canSleep", &PlayerClass::getCanSleep)
+        .instanceProperty("canFly", &PlayerClass::getCanFly)
+        .instanceProperty("canBeSeenOnMap", &PlayerClass::getCanBeSeenOnMap)
+        .instanceProperty("canFreeze", &PlayerClass::getCanFreeze)
+        .instanceProperty("canSeeDaylight", &PlayerClass::getCanSeeDaylight)
+        .instanceProperty("canShowNameTag", &PlayerClass::getCanShowNameTag)
+        .instanceProperty("canStartSleepInBed", &PlayerClass::getCanStartSleepInBed)
+        .instanceProperty("canPickupItems", &PlayerClass::getCanPickupItems)
+        .instanceProperty("inAir", &PlayerClass::getInAir)
+        .instanceProperty("inWater", &PlayerClass::getInWater)
+        .instanceProperty("inLava", &PlayerClass::getInLava)
+        .instanceProperty("inRain", &PlayerClass::getInRain)
+        .instanceProperty("inSnow", &PlayerClass::getInSnow)
+        .instanceProperty("inWall", &PlayerClass::getInWall)
+        .instanceProperty("inWaterOrRain", &PlayerClass::getInWaterOrRain)
+        .instanceProperty("inWorld", &PlayerClass::getInWorld)
+        .instanceProperty("inClouds", &PlayerClass::getInClouds)
+        .instanceProperty("sneaking", &PlayerClass::getSneaking)
+        .instanceProperty("isLoading", &PlayerClass::isLoading)
+        .instanceProperty("isInvisible", &PlayerClass::isInvisible)
+        .instanceProperty("isInsidePortal", &PlayerClass::isInsidePortal)
+        .instanceProperty("isHurt", &PlayerClass::isHurt)
+        .instanceProperty("isTrusting", &PlayerClass::isTrusting)
+        .instanceProperty("isTouchingDamageBlock", &PlayerClass::isTouchingDamageBlock)
+        .instanceProperty("isHungry", &PlayerClass::isHungry)
+        .instanceProperty("isOnFire", &PlayerClass::isOnFire)
+        .instanceProperty("isOnGround", &PlayerClass::isOnGround)
+        .instanceProperty("isOnHotBlock", &PlayerClass::isOnHotBlock)
+        .instanceProperty("isTrading", &PlayerClass::isTrading)
+        .instanceProperty("isAdventure", &PlayerClass::isAdventure)
+        .instanceProperty("isGliding", &PlayerClass::isGliding)
+        .instanceProperty("isSurvival", &PlayerClass::isSurvival)
+        .instanceProperty("isSpectator", &PlayerClass::isSpectator)
+        .instanceProperty("isRiding", &PlayerClass::isRiding)
+        .instanceProperty("isDancing", &PlayerClass::isDancing)
+        .instanceProperty("isCreative", &PlayerClass::isCreative)
+        .instanceProperty("isFlying", &PlayerClass::isFlying)
+        .instanceProperty("isSleeping", &PlayerClass::isSleeping)
+        .instanceProperty("isMoving", &PlayerClass::isMoving)
+        .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
         .instanceFunction("getTag", &PlayerClass::getNbt)
         .instanceFunction("setOnFire", &PlayerClass::setOnFire)
@@ -609,111 +610,6 @@ Local<Value> PlayerClass::getGameMode() {
     CATCH("Fail in getGameMode!")
 }
 
-Local<Value> PlayerClass::getCanSleep() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->canSleep());
-    }
-    CATCH("Fail in getCanSleep!")
-}
-
-Local<Value> PlayerClass::getCanFly() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->canFly());
-    }
-    CATCH("Fail in getCanFly!")
-}
-
-Local<Value> PlayerClass::getCanBeSeenOnMap() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->canBeSeenOnMap());
-    }
-    CATCH("Fail in getCanBeSeenOnMap!")
-}
-
-Local<Value> PlayerClass::getCanFreeze() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->canFreeze());
-    }
-    CATCH("Fail in getCanFreeze!")
-}
-
-Local<Value> PlayerClass::getCanSeeDaylight() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->canSeeDaylight());
-    }
-    CATCH("Fail in getCanSeeDaylight!")
-}
-
-Local<Value> PlayerClass::getCanShowNameTag() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->canShowNameTag());
-    }
-    CATCH("Fail in getCanShowNameTag!")
-}
-
-Local<Value> PlayerClass::getCanStartSleepInBed() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->canStartSleepInBed());
-    }
-    CATCH("Fail in getCanStartSleepInBed!")
-}
-
-Local<Value> PlayerClass::getCanPickupItems() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->getCanPickupItems());
-    }
-    CATCH("Fail in getCanPickupItems!")
-}
-
-Local<Value> PlayerClass::getSneaking() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isSneaking());
-    }
-    CATCH("Fail in getSneaking!")
-}
-
 Local<Value> PlayerClass::getSpeed() {
     try {
         Player* player = get();
@@ -759,106 +655,6 @@ Local<Value> PlayerClass::getHealth() {
     CATCH("Fail in GetHealth!")
 }
 
-Local<Value> PlayerClass::getInAir() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(!player->isOnGround() && !player->isInWater());
-    }
-    CATCH("Fail in GetInAir!")
-}
-
-Local<Value> PlayerClass::getInWater() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInWater());
-    }
-    CATCH("Fail in getInWater!")
-}
-
-Local<Value> PlayerClass::getInLava() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInLava());
-    }
-    CATCH("Fail in getInLava!")
-}
-
-Local<Value> PlayerClass::getInRain() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInRain());
-    }
-    CATCH("Fail in getInRain!")
-}
-
-Local<Value> PlayerClass::getInSnow() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInSnow());
-    }
-    CATCH("Fail in getInSnow!")
-}
-
-Local<Value> PlayerClass::getInWall() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInWall());
-    }
-    CATCH("Fail in getInWall!")
-}
-
-Local<Value> PlayerClass::getInWaterOrRain() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInWaterOrRain());
-    }
-    CATCH("Fail in getInWaterOrRain!")
-}
-
-Local<Value> PlayerClass::getInWorld() {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isInWorld());
-    }
-    CATCH("Fail in getInWorld!")
-}
-
-Local<Value> PlayerClass::getInClouds() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isInClouds());
-    }
-    CATCH("Fail in getInClouds!")
-}
-
 Local<Value> PlayerClass::asPointer(const Arguments& args) {
     try {
         Player* player = get();
@@ -887,258 +683,6 @@ Local<Value> PlayerClass::getLangCode() {
         return String::newString(result);
     }
     CATCH("Fail in getLangCode!");
-}
-
-Local<Value> PlayerClass::isLoading() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isLoading());
-    }
-    CATCH("Fail in isLoading!")
-}
-
-Local<Value> PlayerClass::isInvisible() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isInvisible());
-    }
-    CATCH("Fail in isInvisible!")
-}
-
-Local<Value> PlayerClass::isInsidePortal() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isInsidePortal());
-    }
-    CATCH("Fail in isInsidePortal!")
-}
-
-Local<Value> PlayerClass::isHurt() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isHurt());
-    }
-    CATCH("Fail in isHurt!")
-}
-
-Local<Value> PlayerClass::isTrusting() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isTrusting());
-    }
-    CATCH("Fail in isTrusting!")
-}
-
-Local<Value> PlayerClass::isTouchingDamageBlock() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isTouchingDamageBlock());
-    }
-    CATCH("Fail in isTouchingDamageBlock!")
-}
-
-Local<Value> PlayerClass::isHungry() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isHungry());
-    }
-    CATCH("Fail in isHungry!")
-}
-
-Local<Value> PlayerClass::isOnFire() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isOnFire());
-    }
-    CATCH("Fail in isOnFire!")
-}
-
-Local<Value> PlayerClass::isOnGround() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isOnGround());
-    }
-    CATCH("Fail in isOnGround!")
-}
-
-Local<Value> PlayerClass::isOnHotBlock() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isOnHotBlock());
-    }
-    CATCH("Fail in isOnHotBlock!")
-}
-
-Local<Value> PlayerClass::isTrading() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isTrading());
-    }
-    CATCH("Fail in isTrading!")
-}
-
-Local<Value> PlayerClass::isAdventure() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isAdventure());
-    }
-    CATCH("Fail in isAdventure!")
-}
-
-Local<Value> PlayerClass::isGliding() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isGliding());
-    }
-    CATCH("Fail in isGliding!")
-}
-
-Local<Value> PlayerClass::isSurvival() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isSurvival());
-    }
-    CATCH("Fail in isSurvival!")
-}
-
-Local<Value> PlayerClass::isSpectator() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isSpectator());
-    }
-    CATCH("Fail in isSpectator!")
-}
-
-Local<Value> PlayerClass::isRiding() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isRiding());
-    }
-    CATCH("Fail in isRiding!")
-}
-
-Local<Value> PlayerClass::isDancing() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isDancing());
-    }
-    CATCH("Fail in isDancing!")
-}
-
-Local<Value> PlayerClass::isCreative() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isCreative());
-    }
-    CATCH("Fail in isCreative!")
-}
-
-Local<Value> PlayerClass::isFlying() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isFlying());
-    }
-    CATCH("Fail in isFlying!")
-}
-
-Local<Value> PlayerClass::isSleeping() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isSleeping());
-    }
-    CATCH("Fail in isSleeping!")
-}
-
-Local<Value> PlayerClass::isMoving() {
-    try {
-        Player* player = get();
-        if (!player) {
-            return Local<Value>();
-        }
-
-        return Boolean::newBoolean(player->isMoving());
-    }
-    CATCH("Fail in isMoving!")
 }
 
 Local<Value> PlayerClass::teleport(const Arguments& args) {
@@ -1226,17 +770,6 @@ Local<Value> PlayerClass::kill(const Arguments& args) {
     CATCH("Fail in KillPlayer!")
 }
 
-Local<Value> PlayerClass::isOP(const Arguments& args) {
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Boolean::newBoolean(player->isOperator());
-    }
-    CATCH("Fail in IsOP!")
-}
-
 Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -1277,6 +810,144 @@ Local<Value> PlayerClass::setGameMode(const Arguments& args) {
         return Boolean::newBoolean(res);
     }
     CATCH("Fail in setGameMode!");
+}
+
+Local<Value> PlayerClass::is() {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        string condition = args[0].toStr();
+        boolean conditionValue = false;
+
+        switch ( condition )
+        {
+            case "canFly":
+                condition = player->canFly();
+                break;
+            case "canBeSeenOnMap":
+                condition = player->canBeSeenOnMap();
+                break;
+            case "canFreeze":
+                condition = player->canFreeze();
+                break;
+            case "canSeeDaylight":
+                condition = player->canSeeDaylight();
+                break;
+            case "canStartSleepInBed":
+                condition = player->canStartSleepInBed();
+                break;
+            case "canPickupItems":
+                condition = player->getCanPickupItems();
+                break;
+            case "isSneaking":
+                condition = player->isSneaking();
+                break;
+            case "isInAir":
+                condition = !player->isOnGround() && !player->isInWater();
+                break;
+            case "isInWater":
+                condition = player->isInWater();
+                break;
+            case "isInLava":
+                condition = player->isInLava();
+                break;
+            case "isInRain":
+                condition = player->isInRain();
+                break;
+            case "isInSnow":
+                condition = player->isInSnow();
+                break;
+            case "isInWall":
+                condition = player->isInWall();
+                break;
+            case "isInWaterOrRain":
+                condition = player->isInWaterOrRain();
+                break;
+            case "isInWorld":
+                condition = player->isInWorld();
+                break;
+            case "isInClouds":
+                condition = player->isInClouds();
+                break;
+            case "isLoading":
+                condition = player->isLoading();
+                break;
+            case "isInvisible":
+                condition = player->isInvisible();
+                break;
+            case "isInsidePortal":
+                condition = player->isInsidePortal();
+                break;
+            case "isHurt":
+                condition = player->isHurt();
+                break;
+            case "isTrusting":
+                condition = player->isTrusting();
+                break;
+            case "isTouchingDamageBlock":
+                condition = player->isTouchingDamageBlock();
+                break;
+            case "isHungry":
+                condition = player->isHungry();
+                break;
+            case "isOnFire":
+                condition = player->isOnFire();
+                break;
+            case "isOnGround":
+                condition = player->isOnGround();
+                break;
+            case "isOnHotBlock":
+                condition = player->isOnHotBlock();
+                break;
+            case "isTrading":
+                condition = player->isTrading();
+                break;
+            case "isAdventure":
+                condition = player->isAdventure();
+                break;
+            case "isGliding":
+                condition = player->isGliding();
+                break;
+            case "isSurvival":
+                condition = player->isSurvival();
+                break;
+            case "isSpectator":
+                condition = player->isSpectator();
+                break;
+            case "isRiding":
+                condition = player->isRiding();
+                break;
+            case "isDancing":
+                condition = player->isDancing();
+                break;
+            case "isCreative":
+                condition = player->isCreative();
+                break;
+            case "isFlying":
+                condition = player->isFlying();
+                break;
+            case "isMoving":
+                condition = player->isMoving();
+                break;
+            case "isOperator":
+                condition = player->isOperator();
+                break;
+            case "isSprinting":
+                condition = player->isSprinting();
+                break;
+            default:
+                condition = false;
+                break;
+        }
+
+        return Boolean::newBoolean(condition);
+    }
+    CATCH("Fail in playerIs")
 }
 
 Local<Value> PlayerClass::runcmd(const Arguments& args) {
@@ -2884,6 +2555,475 @@ Local<Value> PlayerClass::getMoneyHistory(const Arguments& args) {
 }
 
 //////////////////// For Compatibility ////////////////////
+
+Local<Value> PlayerClass::getCanSleep() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->canSleep());
+    }
+    CATCH("Fail in getCanSleep!")
+}
+
+Local<Value> PlayerClass::getCanFly() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->canFly());
+    }
+    CATCH("Fail in getCanFly!")
+}
+
+Local<Value> PlayerClass::getCanBeSeenOnMap() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->canBeSeenOnMap());
+    }
+    CATCH("Fail in getCanBeSeenOnMap!")
+}
+
+Local<Value> PlayerClass::getCanFreeze() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->canFreeze());
+    }
+    CATCH("Fail in getCanFreeze!")
+}
+
+Local<Value> PlayerClass::getCanSeeDaylight() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->canSeeDaylight());
+    }
+    CATCH("Fail in getCanSeeDaylight!")
+}
+
+Local<Value> PlayerClass::getCanShowNameTag() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->canShowNameTag());
+    }
+    CATCH("Fail in getCanShowNameTag!")
+}
+
+Local<Value> PlayerClass::getCanStartSleepInBed() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->canStartSleepInBed());
+    }
+    CATCH("Fail in getCanStartSleepInBed!")
+}
+
+Local<Value> PlayerClass::getCanPickupItems() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->getCanPickupItems());
+    }
+    CATCH("Fail in getCanPickupItems!")
+}
+
+Local<Value> PlayerClass::getInAir() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(!player->isOnGround() && !player->isInWater());
+    }
+    CATCH("Fail in GetInAir!")
+}
+
+Local<Value> PlayerClass::getInWater() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInWater());
+    }
+    CATCH("Fail in getInWater!")
+}
+
+Local<Value> PlayerClass::getInLava() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInLava());
+    }
+    CATCH("Fail in getInLava!")
+}
+
+Local<Value> PlayerClass::getInRain() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInRain());
+    }
+    CATCH("Fail in getInRain!")
+}
+
+Local<Value> PlayerClass::getInSnow() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInSnow());
+    }
+    CATCH("Fail in getInSnow!")
+}
+
+Local<Value> PlayerClass::getInWall() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInWall());
+    }
+    CATCH("Fail in getInWall!")
+}
+
+Local<Value> PlayerClass::getInWaterOrRain() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInWaterOrRain());
+    }
+    CATCH("Fail in getInWaterOrRain!")
+}
+
+Local<Value> PlayerClass::getInWorld() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInWorld());
+    }
+    CATCH("Fail in getInWorld!")
+}
+
+Local<Value> PlayerClass::getInClouds() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isInClouds());
+    }
+    CATCH("Fail in getInClouds!")
+}
+
+Local<Value> PlayerClass::getSneaking() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isSneaking());
+    }
+    CATCH("Fail in getSneaking!")
+}
+
+Local<Value> PlayerClass::isLoading() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isLoading());
+    }
+    CATCH("Fail in isLoading!")
+}
+
+Local<Value> PlayerClass::isInvisible() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isInvisible());
+    }
+    CATCH("Fail in isInvisible!")
+}
+
+Local<Value> PlayerClass::isInsidePortal() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isInsidePortal());
+    }
+    CATCH("Fail in isInsidePortal!")
+}
+
+Local<Value> PlayerClass::isHurt() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isHurt());
+    }
+    CATCH("Fail in isHurt!")
+}
+
+Local<Value> PlayerClass::isTrusting() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isTrusting());
+    }
+    CATCH("Fail in isTrusting!")
+}
+
+Local<Value> PlayerClass::isTouchingDamageBlock() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isTouchingDamageBlock());
+    }
+    CATCH("Fail in isTouchingDamageBlock!")
+}
+
+Local<Value> PlayerClass::isHungry() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isHungry());
+    }
+    CATCH("Fail in isHungry!")
+}
+
+Local<Value> PlayerClass::isOnFire() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isOnFire());
+    }
+    CATCH("Fail in isOnFire!")
+}
+
+Local<Value> PlayerClass::isOnGround() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isOnGround());
+    }
+    CATCH("Fail in isOnGround!")
+}
+
+Local<Value> PlayerClass::isOnHotBlock() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isOnHotBlock());
+    }
+    CATCH("Fail in isOnHotBlock!")
+}
+
+Local<Value> PlayerClass::isTrading() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isTrading());
+    }
+    CATCH("Fail in isTrading!")
+}
+
+Local<Value> PlayerClass::isAdventure() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isAdventure());
+    }
+    CATCH("Fail in isAdventure!")
+}
+
+Local<Value> PlayerClass::isGliding() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isGliding());
+    }
+    CATCH("Fail in isGliding!")
+}
+
+Local<Value> PlayerClass::isSurvival() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isSurvival());
+    }
+    CATCH("Fail in isSurvival!")
+}
+
+Local<Value> PlayerClass::isSpectator() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isSpectator());
+    }
+    CATCH("Fail in isSpectator!")
+}
+
+Local<Value> PlayerClass::isRiding() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isRiding());
+    }
+    CATCH("Fail in isRiding!")
+}
+
+Local<Value> PlayerClass::isDancing() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isDancing());
+    }
+    CATCH("Fail in isDancing!")
+}
+
+Local<Value> PlayerClass::isCreative() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isCreative());
+    }
+    CATCH("Fail in isCreative!")
+}
+
+Local<Value> PlayerClass::isFlying() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isFlying());
+    }
+    CATCH("Fail in isFlying!")
+}
+
+Local<Value> PlayerClass::isSleeping() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isSleeping());
+    }
+    CATCH("Fail in isSleeping!")
+}
+
+Local<Value> PlayerClass::isMoving() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isMoving());
+    }
+    CATCH("Fail in isMoving!")
+}
+
+Local<Value> PlayerClass::isOP(const Arguments& args) {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isOperator());
+    }
+    CATCH("Fail in IsOP!")
+}
+
 
 Local<Value> PlayerClass::getAllItems(const Arguments& args) {
     try {
