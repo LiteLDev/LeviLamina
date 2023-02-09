@@ -220,6 +220,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateDestroy", &PlayerClass::simulateDestroy)
         .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
         .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
+        .instanceFunction("simulateRespawn", &PlayerClass::simulateRespawn)
         .instanceFunction("simulateJump", &PlayerClass::simulateJump)
         .instanceFunction("simulateLocalMove", &PlayerClass::simulateLocalMove)
         .instanceFunction("simulateWorldMove", &PlayerClass::simulateWorldMove)

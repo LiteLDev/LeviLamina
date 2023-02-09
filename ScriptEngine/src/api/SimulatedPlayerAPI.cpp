@@ -255,6 +255,17 @@ Local<Value> PlayerClass::simulateJump(const Arguments& args) {
     CATCH("Fail in " __FUNCTION__ "!")
 };
 
+// bool simulateRespawn();
+Local<Value> PlayerClass::simulateRespawn(const Arguments& args) {
+    try {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+        return Boolean::newBoolean(sp->simulateRespawn());
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
+};
+
 // void simulateLocalMove(class Vec3 const&, float);
 Local<Value> PlayerClass::simulateLocalMove(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
