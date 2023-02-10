@@ -182,8 +182,9 @@ jobs:
           name: LiteLoader
           path: |
             ${{ github.workspace }}\build\output\LiteLoader.dll
-            ${{ github.workspace }}\build\output\plugins\lib\
+            ${{ github.workspace }}\build\output\plugins\lib\*.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
 
       - name: Upload ScriptEngine
@@ -194,7 +195,8 @@ jobs:
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Js.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
+            ${{ github.workspace }}\build\output\plugins\lib\node_modules.tar
+            ${{ github.workspace }}\build\output\plugins\lib\package.json
       
       - name: Upload LLParticle
         uses: actions/upload-artifact@v3.1.0
