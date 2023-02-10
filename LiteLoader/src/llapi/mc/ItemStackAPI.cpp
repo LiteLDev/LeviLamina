@@ -10,6 +10,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include "llapi/mc/Recipes.hpp"
 
 using namespace std;
 
@@ -19,9 +20,7 @@ static_assert(sizeof(ItemInstance) == 136);
 ItemStack* ItemStack::create() {
     try {
         return new ItemStack();
-    } catch (...) {
-        return nullptr;
-    }
+    } catch (...) { return nullptr; }
 }
 
 ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
@@ -34,10 +33,11 @@ ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
 
 #include "llapi/mc/ItemRegistryRef.hpp"
 #include "llapi/mc/ItemRegistryManager.hpp"
+
 ItemStack* ItemStack::create(short itemId, int aux, int count) {
     auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
-        return new ItemStack(*item, count, aux,0);
+        return new ItemStack(*item, count, aux, 0);
     return nullptr;
 }
 
@@ -53,9 +53,7 @@ ItemStack* ItemStack::create(std::string type, int count) {
 ItemStack ItemStack::fromItemInstance(ItemInstance const& ins) {
     try {
         return {ins};
-    } catch (...) {
-        return ItemStack::EMPTY_ITEM;
-    }
+    } catch (...) { return ItemStack::EMPTY_ITEM; }
 }
 
 ItemStack* ItemStack::clone_s() const {

@@ -1,0 +1,183 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-2022
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.2.0
+        with:
+          fetch-depth: 1
+          submodules: 'true'
+
+      - name: Cache BDS libraries
+        id: cache-bds-lib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-bds-lib
+        with:
+          path: |
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('scripts/LINK.txt') }}
+
+      - name: Download BDS if not cached
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir Tools/Server
+          ServerLink=$(cat 'scripts/LINK.txt')
+          curl -L -o Tools/Server/server.zip "$ServerLink"
+          unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
+        shell: bash
+
+      - name: Build libraries if not cached
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd Tools
+          LibraryBuilder.exe Server
+          mkdir ..\LiteLoader\lib
+          move bedrock_server_api.lib ..\LiteLoader\lib
+          move bedrock_server_var.lib ..\LiteLoader\lib
+        shell: cmd
+
+      - name: Get short SHA
+        id: sha_short
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Set LITELOADER_VERSION_COMMIT_SHA
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' LiteLoader/include/liteloader/Version.h
+        shell: bash
+
+      - name: Configure CMake (MSVC)
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Build all
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Pack output
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+        shell: cmd
+
+      - name: Pack SDK on push event
+        if: github.event_name == 'push'
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
+        shell: cmd
+
+      - name: Configure CMake (ClangCL)
+        run: |
+          cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+        shell: cmd
+
+      - name: Build SymDBHelper
+        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
+
+      - name: Compress resource packs for LiteLoaderBDS CUI on push event
+        if: github.event_name == 'push'
+        run: |
+          cd build/output/plugins/LiteLoader/ResourcePacks
+          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
+          rm -r LiteLoaderBDS-CUI
+        shell: bash
+
+      - name: Update C++ SDK on push event
+        if: github.event_name == 'push'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cd scripts
+          ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
+        shell: cmd
+
+      - name: Upload LiteLoaderBDS
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LiteLoaderBDS
+          path: |
+            ${{ github.workspace }}\build\output\LLPeEditor.exe
+            ${{ github.workspace }}\build\output\LLPreLoader.dll
+            ${{ github.workspace }}\build\output\LiteLoader.dll
+            ${{ github.workspace }}\build\output\plugins\lib\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Js.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
+
+      - name: Upload PeEditor
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: PeEditor
+          path: ${{ github.workspace }}\build\output\LLPeEditor.exe
+
+      - name: Upload PreLoader
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: PreLoader
+          path: ${{ github.workspace }}\build\output\LLPreLoader.dll
+
+      - name: Upload LiteLoader
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LiteLoader
+          path: |
+            ${{ github.workspace }}\build\output\LiteLoader.dll
+            ${{ github.workspace }}\build\output\plugins\lib\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
+
+      - name: Upload ScriptEngine
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: ScriptEngine
+          path: |
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Js.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
+      
+      - name: Upload LLParticle
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LLParticle
+          path: |
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
+
+      - name: Upload LLPermission
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LLPermission
+          path: ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
+
+      - name: Upload PDB files
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: PDB
+          path: ${{ github.workspace }}\build\pdb\

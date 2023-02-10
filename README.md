@@ -1,12 +1,12 @@
 # LiteLoaderBDS - Epoch-making & Cross-language Bedrock Dedicated Servers Plugin Loader
 
-[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/cmake_repo.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
+[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/build.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoaderBDS/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?color=blue&label=Discord&style=for-the-badge)](https://discord.gg/27KTrxHc9t)
 [![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)](https://t.me/liteloader)
 [
-![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)  
+![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoaderBDS?label=LATEST%20TAG&style=for-the-badge)
+![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoaderBDS/latest/total?style=for-the-badge)
+](https://github.com/LiteLDev/LiteLoaderBDS/releases/latest)  
 QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group
 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
@@ -84,7 +84,7 @@ mc.listen("onServerStarted", () => {
 
 <br/>
 
-## 💎 Advantage
+## 💎 Advantages
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
@@ -125,80 +125,19 @@ mc.listen("onServerStarted", () => {
 
 ------
 
-## 💻 Install
+## 💻 Install LiteLoaderBDS
 
-### For Windows
+Refer to the [installation guide](https://docs.litebds.com/en/#/Usage?id=%f0%9f%92%bb-install-liteloaderbds) to install LiteLoaderBDS.
 
-1. Download the latest <code>LiteLoader-<i>version</i>.zip</code>
-   from [Releases](https://github.com/LiteLDev/LiteLoader/releases)
-   or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
-2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the
-   decompression process, just select `Overwrite`.
-3. Ensure that the `bedrock_server.pdb` file exists.
-   Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)
-4. When the console output `Press any key to continue . . .` , press any key to close the window
-5. Execute `bedrock_server_mod.exe` and enjoy it!
+## 🎯 Install plugins
 
-### For Linux
-
-We do not recommend you to use Wine due to BDS 1.19.20+ on Wine has a performance problem
-
-#### Installation script(Ubuntu)
-
-```
-wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh && sh install.sh
-```
-
-## 🎯 Find & Install plugins
-
-### Plugin downloads
-
-`LiteLoader` main plugin distribution channels.
-
-- [Official Forum](https://www.litebds.com/)
-- [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
-
-### Plugin installation
-
-1. If you downloaded a zip file, unzip it
-2. Place all the obtained contents directly into the `plugins` directory
-3. Run `bedrock_server_mod.exe` to start the service
-
-For more **installation and usage guides**, come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)
-👈 to view
+Refer to the [plugin installation guide](https://docs.litebds.com/en/#/Usage?id=%f0%9f%8e%af-installing-plug-ins) to install plugins.
 
 ------
 
-## 📕 LiteLoader plugin development
+## 📕 Create a plugin
 
-### Developing plugins with C++
-
-1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project
-   templates, or create your own project repository based on the templates and download the code locally
-2. Open the Template.sln project file
-3. Start writing the plugin code in Plugin.cpp
-4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
-5. Copy the plugin to the plugins directory for testing
-
-For plugins development examples and guidance, please come to
-👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈  
-If you have a revision request or need to add an API, please contact the author or post an Issue
-
-### Developing plugins using scripting Languages
-
-1. Create the file
-2. Write the code
-3. Copy the plugin to the plugins directory for testing
-
-Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Development/)👈 for detailed **API
-documentation** and **plugin development tutorial**.
-If you have a revision request or need to add an API, please feel free to contact the author or post an Issue
-
-### Example Plugins
-
-[Click here](https://github.com/LiteLDev) for more open source LiteLoader plugins as sample plugins.
-You can use them directly in production environments
-You can also learn plugin development methods and tips here
+Refer to the [plugin development guide](https://docs.litebds.com/en/#/README?id=%f0%9f%9b%b4-i-want-to-get-my-hands-dirty-and-write-a-plugin-what-do-i-need-to-do) to develop plugins.
 
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 

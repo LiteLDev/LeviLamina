@@ -179,13 +179,13 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
     fixPlayerPosition(this, false);
 }
 
+
 TClasslessInstanceHook(
     __int64,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$"
-    "buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
-    BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
+    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+    BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
     if (validPosition(a2))
-        return original(this, a2, a3, a4, a5, a6, a7);
+        return original(this, a2, a3, a4, a5, a6);
     fixPlayerPosition(movingViewPlayer);
     return 0;
 }
@@ -339,7 +339,7 @@ TInstanceHook(LevelData*,
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
 
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_2166e5158bf5234f43e997b0cbaf4395>,TaskResult>::_Do_call", __int64 a1,
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_2381ef31a87ebf59a36ffb68603804e4>,TaskResult>::_Do_call", __int64 a1,
       __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
@@ -387,7 +387,7 @@ THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z"
     return original(self, a2);
 }
 
-TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
+TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
 
     auto bs = original(this);
     if (ll::globalConfig.enableFixBDSCrash) {
@@ -415,16 +415,16 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             bool flying;
             if (!pkt.tryGetBool(flying))
                 return;
-            auto abilities = sp->getAbilities();
-            auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
+            auto& abilities = sp->getAbilities();
+            auto mayFly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
             flying = flying && mayFly;
-            Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+            Ability& ab = abilities.getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket packet(sp->getUniqueID(), *abilities);
+            UpdateAbilitiesPacket packet(sp->getUniqueID(), abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
-            abilities->setAbility(AbilitiesIndex::Flying, flying);
+            abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
             sp->sendNetworkPacket(packet);
         }

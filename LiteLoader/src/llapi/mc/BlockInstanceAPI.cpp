@@ -11,15 +11,9 @@
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/ItemInstance.hpp"
 
-BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID)
-: block(block)
-, pos(pos)
-, dim(dimID) {
-}
+BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID) : block(block), pos(pos), dim(dimID) {}
 
-BlockInstance::BlockInstance(BlockPos pos, int dimID)
-: pos(pos)
-, dim(dimID) {
+BlockInstance::BlockInstance(BlockPos pos, int dimID) : pos(pos), dim(dimID) {
     block = Level::getBlock(pos, dimID);
 }
 
@@ -48,6 +42,7 @@ bool BlockInstance::hasContainer() {
 }
 
 class DropperBlockActor;
+
 Container* BlockInstance::getContainer() {
     auto be = getBlockEntity();
     if (!be)
@@ -58,7 +53,8 @@ Container* BlockInstance::getContainer() {
         case 15:
         case 38:
         case 39:
-            return SymCall("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
+            return SymCall("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ", Container*,
+                           BlockActor*)(be);
             break;
         case 2:
         case 13:
@@ -113,7 +109,6 @@ BlockSource* BlockInstance::getBlockSource() {
 int BlockInstance::getDimensionId() {
     return dim;
 }
-
 
 bool BlockInstance::isNull() {
     return *this == BlockInstance::Null;

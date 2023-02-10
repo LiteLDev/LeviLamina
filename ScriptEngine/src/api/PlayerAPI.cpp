@@ -220,6 +220,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateDestroy", &PlayerClass::simulateDestroy)
         .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
         .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
+        .instanceFunction("simulateRespawn", &PlayerClass::simulateRespawn)
         .instanceFunction("simulateJump", &PlayerClass::simulateJump)
         .instanceFunction("simulateLocalMove", &PlayerClass::simulateLocalMove)
         .instanceFunction("simulateWorldMove", &PlayerClass::simulateWorldMove)
@@ -1467,11 +1468,6 @@ Local<Value> PlayerClass::getRespawnPosition(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto position = player->getRespawnPosition();
-        if (position.first.y == 32767) {
-            auto region = Level::getBlockSource(position.second);
-            if (region)
-                position.first = region->getHeightmapPos(position.first);
-        }
         return IntPos::newPos(position.first, position.second);
     }
     CATCH("Fail in getRespawnPosition!")

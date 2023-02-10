@@ -189,6 +189,7 @@ public:
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
 
+    Local<Value> simulateRespawn(const Arguments& args);
     Local<Value> simulateSneak(const Arguments& args);
     Local<Value> simulateAttack(const Arguments& args);
     Local<Value> simulateDestroy(const Arguments& args);

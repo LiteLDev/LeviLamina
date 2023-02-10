@@ -27,6 +27,7 @@
 #include "llapi/mc/MolangSerializer.hpp"
 
 #pragma region Hook
+
 THook(void*,
       "?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$"
       "allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$"
@@ -38,9 +39,11 @@ THook(void*,
     // in order to use all query functions,we need to delete all experiment requirements here
     return original(a2, a3, a4, a5, a6, a7, a8, experiment);
 }
+
 #pragma endregion
 
 #pragma region MolangInstance
+
 MolangInstance::MolangInstance(const string& expressionStr) {
     SymCall("??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
             "W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z",
@@ -50,37 +53,47 @@ MolangInstance::MolangInstance(const string& expressionStr) {
     // the HashedString "default" is necessary for using query.xxx functions interacting with actor
     // otherwise only standard math expression available
 }
+
 MolangInstance::~MolangInstance() {
     ((ExpressionNode*)expression)->~ExpressionNode(); // release memory
 }
+
 float MolangInstance::evalAsFloat(Actor* actor) {
     return ((ExpressionNode*)expression)->evalAsFloat(RenderParams::getRenderParams(*actor));
 }
+
 Json::Value MolangInstance::evalAsJson(Actor* actor) {
     return MolangSerializer::serializeScriptArg(
         ((ExpressionNode*)expression)->evalGeneric(RenderParams::getRenderParams(*actor)));
 }
+
 string MolangInstance::getExpressionString() {
     return ((ExpressionNode*)expression)->getExpressionString();
 }
+
 bool MolangInstance::isInitialized() {
     return ((ExpressionNode*)expression)->isInitialized();
 }
+
 bool MolangInstance::isValid() {
     return ((ExpressionNode*)expression)->isValid();
 }
+
 bool MolangInstance::parse(const string& expressionStr, MolangVersion version,
                            gsl::span<class HashedString const, -1> types) {
     return ((ExpressionNode*)expression)->parse(expressionStr, version, types);
 }
+
 #pragma endregion
 
 #pragma region QuickEval
+
 float Actor::quickEvalMolangScript(const string& expression) {
     // MolangInstance instance(expression);
     MolangInstance instance(expression);
     return instance.evalAsFloat(this);
 }
+
 // I don't know if it is necessary add this ,it seems that the result of which is similar to above one
 //  result sample:
 //   {
