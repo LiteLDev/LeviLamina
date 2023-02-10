@@ -12,6 +12,8 @@
 #include "llapi/mc/ServerPlayer.hpp"
 #include <Nlohmann/json.hpp>
 
+Logger bstatsLogger("bStats");
+
 #define BSTATS_JSON(key, val)                     \
     if (json.find(key) != json.end()) {           \
         const nlohmann::json& out = json.at(key); \
@@ -334,6 +336,7 @@ void scheduleThread() {
 void registerBStats() {
     configInit();
     if (bstatsSettings::enable) {
+        bstatsLogger.info(tr("ll.main.bstats.enabled"));
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
             scheduleThread();
