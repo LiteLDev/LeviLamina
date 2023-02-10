@@ -110,9 +110,7 @@ private:
     bool deleted = false;
 
 public:
-    explicit EventListener(int id)
-    : listenerId(id) {
-    }
+    explicit EventListener(int id) : listenerId(id) {}
 
     /**
      * @brief Stop listening to the event and remove the event listener.
@@ -171,7 +169,6 @@ public:
     bool callToPlugin(std::string pluginName) {
         return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this);
     }
-
 
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 protected:
@@ -285,7 +282,7 @@ class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent> {
 public:
     Player* mPlayer = nullptr;
     Actor* mTarget = nullptr;
-    int mAttackDamage = false;
+    float mAttackDamage = 0;
 };
 
 class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
@@ -332,13 +329,13 @@ class PlayerEatEvent : public EventTemplate<PlayerEatEvent> {
 public:
     Player* mPlayer;
     ItemStack* mFoodItem;
-}; 
+};
 
 class PlayerAteEvent : public EventTemplate<PlayerAteEvent> {
 public:
     Player* mPlayer;
     ItemStack* mFoodItem;
-}; 
+};
 
 class PlayerConsumeTotemEvent : public EventTemplate<PlayerConsumeTotemEvent> {
 public:
@@ -541,13 +538,15 @@ public:
 class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
     bool isMinecart = false;
-    BlockInstance mHopperBlock;
-    Vec3 mMinecartPos;
+    ItemStack* mItemStack;
+    Vec3 mPos;
     int mDimensionId = -1;
 };
 
 class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent> {
 public:
+    bool isMinecart = false;
+    ItemStack* mItemStack;
     Vec3 mPos;
     int mDimensionId = -1;
 };
@@ -688,12 +687,10 @@ public:
 
 class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
 public:
-    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]]
-    string mTypeName;
+    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]] string mTypeName;
     Vec3 mPos;
     int mDimensionId = -1;
 };
-
 
 class MobTrySpawnEvent : public EventTemplate<MobTrySpawnEvent> {
 public:
@@ -714,19 +711,16 @@ public:
 /* region ## Other Events ## */
 ///////////////////////////// Other Events /////////////////////////////
 
-class PostInitEvent : public EventTemplate<PostInitEvent> {
-};
+class PostInitEvent : public EventTemplate<PostInitEvent> {};
 
 /**
  * @brief An event that fires as the server has started.
  *
  * @note This event cannot be suppressed.
  */
-class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {
-};
+class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {};
 
-class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent> {
-};
+class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent> {};
 
 class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent> {
 public:

@@ -474,20 +474,43 @@ THook(void,
 }
 
 /////////////////// PlayerAttackEntity ///////////////////
-TInstanceHook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z", Player, Actor* ac, int* damageCause) {
-    IF_LISTENED(PlayerAttackEvent) {
-        PlayerAttackEvent ev{};
-        ev.mPlayer = this;
-        ev.mTarget = ac;
-        ev.mAttackDamage = *damageCause;
-        if (!ev.call())
-            return false;
+struct {
+    Player* player{};
+    Actor* target{};
+    bool cancelled = false;
+} currentAttackingPlayer;
 
-        ac = ev.mTarget;
-        *damageCause = ev.mAttackDamage;
+TInstanceHook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z", Player, Actor* ac,
+              ActorDamageCause cause) {
+    currentAttackingPlayer.player = this;
+    currentAttackingPlayer.target = ac;
+    auto res = original(this, ac, cause);
+    if (currentAttackingPlayer.cancelled) {
+        currentAttackingPlayer.cancelled = false;
+        return false;
     }
-    IF_LISTENED_END(PlayerAttackEvent)
-    return original(this, ac, damageCause);
+    return res;
+}
+
+TInstanceHook(float, "?calculateAttackDamage@Actor@@QEAAMAEAV1@@Z", Actor, Actor* other) {
+    auto damage = original(this, other);
+    if ((Actor*)currentAttackingPlayer.player == this && currentAttackingPlayer.target == other) {
+        IF_LISTENED(PlayerAttackEvent) {
+            PlayerAttackEvent ev{};
+            ev.mPlayer = currentAttackingPlayer.player;
+            ev.mTarget = currentAttackingPlayer.target;
+            ev.mAttackDamage = damage;
+            currentAttackingPlayer.player = nullptr;
+            currentAttackingPlayer.target = nullptr;
+            if (!ev.call()) {
+                currentAttackingPlayer.cancelled = true;
+                return 0;
+            }
+            return ev.mAttackDamage;
+        }
+        IF_LISTENED_END(PlayerAttackEvent)
+    }
+    return damage;
 }
 
 /////////////////// PlayerAttackBlock ///////////////////
@@ -1100,40 +1123,66 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockS
     return original(this, bs, bp, level, isActive);
 }
 
+/////////////////// HopperSearchItem & HopperPushOut ///////////////////
+enum {
+    None,
+    Search,
+    Push
+} HopperState = None;
+
+Vec3* HopperPos;
+
+TClasslessInstanceHook(bool, "?_addItem@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEAVItemStack@@HH@Z",
+                       BlockSource* bs, Container* a3, ItemStack* it, int a5, int a6) {
+    if (HopperState == Search) {
+        IF_LISTENED(HopperSearchItemEvent) {
+            HopperSearchItemEvent ev{};
+            ev.isMinecart = dAccess<bool>(this, 5); // IDA Hopper::Hopper
+            ev.mItemStack = it;
+            ev.mPos = *HopperPos;
+            ev.mDimensionId = bs->getDimensionId();
+            if (!ev.call())
+                return false;
+        }
+        IF_LISTENED_END(HopperSearchItemEvent)
+    } else if (HopperState == Push) {
+        IF_LISTENED(HopperPushOutEvent) {
+            HopperPushOutEvent ev{};
+            ev.isMinecart = dAccess<bool>(this, 5); // IDA Hopper::Hopper
+            ev.mItemStack = it;
+            ev.mPos = *HopperPos;
+            ev.mDimensionId = bs->getDimensionId();
+            if (!ev.call())
+                return false;
+        }
+        IF_LISTENED_END(HopperPushOutEvent)
+    }
+
+    HopperState = None;
+
+    return original(this, bs, a3, it, a5, a6);
+}
+
+TClasslessInstanceHook(bool, "?_tryMoveItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H_N@Z",
+                       BlockSource* a2, Container* a3, Vec3* a4, int a5, bool a6) {
+    original(this, a2, a3, a4, a5, a6);
+    return true; // Just in case it does anything
+}
+
 /////////////////// HopperSearchItem ///////////////////
 TClasslessInstanceHook(bool,
                        "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
                        BlockSource* bs, Container* container, Vec3* pos) {
-    bool isMinecart = dAccess<bool>(this, 5); // IDA Hopper::Hopper
-
-    IF_LISTENED(HopperSearchItemEvent) {
-        HopperSearchItemEvent ev{};
-        if (isMinecart) {
-            ev.isMinecart = true;
-            ev.mMinecartPos = *pos;
-        } else {
-            ev.isMinecart = false;
-            ev.mHopperBlock = Level::getBlockInstance(pos->toBlockPos(), bs);
-        }
-        ev.mDimensionId = bs->getDimensionId();
-        if (!ev.call())
-            return false;
-    }
-    IF_LISTENED_END(HopperSearchItemEvent)
+    HopperPos = pos;
+    HopperState = Search;
     return original(this, bs, container, pos);
 }
 
 /////////////////// HopperPushOut ///////////////////
 TClasslessInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
                        BlockSource* bs, Container* container, Vec3* pos, int a5) {
-    IF_LISTENED(HopperPushOutEvent) {
-        HopperPushOutEvent ev{};
-        ev.mPos = *pos;
-        ev.mDimensionId = bs->getDimensionId();
-        if (!ev.call())
-            return false;
-    }
-    IF_LISTENED_END(HopperPushOutEvent)
+    HopperPos = pos;
+    HopperState = Push;
     return original(this, bs, container, pos, a5);
 }
 
