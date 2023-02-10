@@ -137,6 +137,13 @@ jobs:
           USERNAME: github-actions[bot]
         shell: cmd
 
+      - name: Download LLMoney
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git clone https://github.com/Tooth-Hub/LLMoney.git LLMoney-bin
+          cp LLMoney-bin/LLMoney.dll build/output/plugins/
+        shell: bash
+
       - name: Upload LiteLoaderBDS
         uses: actions/upload-artifact@v3.1.0
         with:
@@ -145,6 +152,7 @@ jobs:
             ${{ github.workspace }}\build\output\LLPeEditor.exe
             ${{ github.workspace }}\build\output\LLPreLoader.dll
             ${{ github.workspace }}\build\output\LiteLoader.dll
+            ${{ github.workspace }}\build\output\plugins\LLMoney.dll
             ${{ github.workspace }}\build\output\plugins\lib\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
