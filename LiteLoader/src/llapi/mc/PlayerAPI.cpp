@@ -342,6 +342,7 @@ bool Player::setNbt(CompoundTag* nbt) {
 #include "llapi/mc/Attribute.hpp"
 #include "llapi/mc/HashedString.hpp"
 #include "llapi/SendPacketAPI.h"
+#include <llapi/mc/CommandVersion.hpp>
 
 bool Player::refreshAttribute(class Attribute const& attribute) {
     return refreshAttributes({&attribute});
@@ -817,9 +818,11 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     return true;
 }
 
+
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
+    dAccess<int, 144>(packet.get()) = CommandVersion::CurrentVersion;
     ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
     handler->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
