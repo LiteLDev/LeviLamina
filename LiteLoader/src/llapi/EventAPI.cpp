@@ -2034,9 +2034,8 @@ TInstanceHook(
             ev.call();
         }
         IF_LISTENED_END(MobSpawnedEvent)
-        return en;
     }
-    return nullptr;
+    return en;
 }
 
 TClasslessInstanceHook(std::optional<class BlockPos>,
