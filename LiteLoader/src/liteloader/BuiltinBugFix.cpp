@@ -213,7 +213,7 @@ TInstanceHook(NetworkPeer::DataStatus,
       "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
       "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
     NetworkConnection, string* data, __int64 a3, __int64** a4) {
-    auto status = original(this, data, a3, a4);	
+    auto status = original(this, data, a3, a4);
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
