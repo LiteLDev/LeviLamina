@@ -282,7 +282,7 @@ class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent> {
 public:
     Player* mPlayer = nullptr;
     Actor* mTarget = nullptr;
-    float mAttackDamage = 0;
+    int mAttackDamage = false;
 };
 
 class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
