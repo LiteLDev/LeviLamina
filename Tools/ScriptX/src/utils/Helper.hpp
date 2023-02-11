@@ -55,4 +55,6 @@ void withNArray(size_t N, FN&& fn) {
 
 Local<Value> getNamespaceObject(ScriptEngine* engine, const std::string_view& nameSpace,
                                 Local<Value> rootNs = {});
+
+Local<Value> readAllFileContent(const Local<String>& scriptFile);
 }  // namespace script::internal

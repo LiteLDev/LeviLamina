@@ -1,12 +1,12 @@
 # LiteLoaderBDS - 划时代 x 跨语言BDS插件加载器
 
-[![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
+[![status](https://img.shields.io/github/actions/workflow/status/LiteLDev/LiteLoaderBDS/build.yml?style=for-the-badge)](https://github.com/LiteLDev/LiteLoaderBDS/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?color=blue&label=Discord&style=for-the-badge)](https://discord.gg/27KTrxHc9t)
 [![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)](https://t.me/liteloader)
 [
-![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)  
+![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoaderBDS?label=LATEST%20TAG&style=for-the-badge)
+![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoaderBDS/latest/total?style=for-the-badge)
+](https://github.com/LiteLDev/LiteLoaderBDS/releases/latest)  
 QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### [English](README.md) | 简体中文
@@ -109,91 +109,18 @@ mc.listen("onServerStarted", () => {
 
 ------
 
-## 💻 安装
+## 💻 安装LiteLoaderBDS
 
-### 对于 Windows 用户
+请参考[安装指南](https://docs.litebds.com/zh-Hans/#/Usage?id=%f0%9f%92%bb-%e5%ae%89%e8%a3%85liteloaderbds)。
+## 🎯 安装插件
 
-1. 前往 [MineBBS](https://www.minebbs.com/liteloader/)
-   或 [GitHub Release](https://github.com/LiteLDev/LiteLoader/releases) 下载最新的 `LiteLoader-版本号.zip`
-2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
-3. 保证 `bedrock_server.pdb`文件存在。
-   运行 `LLPeEditor.exe` 来生成具有导出符号的BDS（`bedrock_server_mod.exe`）
-4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
-5. 运行 `bedrock_server_mod.exe` 开服
-
-### 对于 Linux 用户
-
-我们不再建议使用Wine，因为BDS 1.19.20+运行在Wine上会有严重的性能问题
-
-#### 安装脚本(Ubuntu)
-
-```
-wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh && sh install.sh
-```
-
-#### Docker
-
-在终端中输入：
-
-```
-docker pull shrbox/liteloaderbds
-mkdir <install directory>
-docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
-```
-
-`<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
-第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
-启动服务器：`docker container start llbds -a`  
-强制停止服务器（不推荐）：`docker container stop llbds`  
-进入控制台：`docker attach llbds`  
-退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。
-
-## 🎯 下载 & 加载插件
-
-### 插件的下载
-
-`LiteLoader`主要插件发布渠道：
-
-- [官方论坛](https://www.litebds.com/)
-- [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
-
-### 插件的安装
-
-1. 如果下载到的是一个压缩包文件，请解压它
-2. 将所有获取到的内容直接放入`plugins`目录
-3. 运行`bedrock_server_mod.exe` 开服
-
-更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
+请参考[插件安装指南](https://docs.litebds.com/zh-Hans/#/Usage?id=%f0%9f%8e%af-%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6)。
 
 ------
 
-## 📕 LiteLoader 插件开发
+## 📕 编写插件
 
-### 使用 C++ 开发插件
-
-1. 前往 [LiteLoader 插件模板仓库](https://github.com/LiteLDev/PluginTemplate) 下载项目模板，或者根据模板创建自己的项目仓库，并下载代码到本地
-2. 打开 Template.sln 项目文件
-3. 在Plugin.cpp中开始编写插件代码
-4. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
-5. 复制插件到 plugins 目录进行测试
-
-具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
-如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
-
-### 使用脚本语言开发插件
-
-1. 创建文件
-2. 编写代码
-3. 复制插件到 plugins 目录进行测试
-
-请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**
-如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
-
-### 示例插件
-
-[点击这里](https://github.com/LiteLDev) 查看更多开源的 LiteLoader 插件，作为示例插件。
-你可以直接在生产环境中使用它们
-也可以在这里学习插件开发的方法和技巧
+请参考[插件开发指南](https://docs.litebds.com/zh-Hans/#/README?id=%f0%9f%9b%b4-%e6%88%91%e6%83%b3%e5%8a%a8%e6%89%8b%e5%86%99%e4%b8%80%e4%b8%aa%e6%8f%92%e4%bb%b6%ef%bc%8c%e8%a6%81%e6%80%8e%e4%b9%88%e5%81%9a%e5%91%a2%ef%bc%9f)。
 
 ### 开发辅助工具 - VSCode 开发辅助插件 & 补全库
 

@@ -6,10 +6,24 @@
 #include "llapi/mc/StructureBlockActor.hpp"
 #include "llapi/mc/StructureBlockPalette.hpp"
 #include "llapi/mc/StructureEditorData.hpp"
+#include "llapi/mc/BlockPos.hpp"
 #include <magic_enum/magic_enum.hpp>
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {
     return static_cast<unsigned int>(block->getBlockEntityType()); // IDA Block::getBlockEntityType
+}
+
+std::shared_ptr<BlockActor> BlockActor::create(CompoundTag* nbt) {
+    void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
+    return loadStatic(*Global<Level>, *nbt, (class DataLoadHelper&)vtbl);
+}
+
+std::shared_ptr<BlockActor> BlockActor::create(CompoundTag* nbt, class BlockPos const& pos) {
+    auto b = create(nbt);
+    if (b != nullptr) {
+        b->moveTo(pos);
+    }
+    return b;
 }
 
 bool BlockActor::refreshData() {

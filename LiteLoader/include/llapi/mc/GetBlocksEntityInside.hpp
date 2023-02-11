@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @symbol ?get@GetBlocksEntityInside@@SA?AV?$vector@UInternalData@SideBySideEntityInsideBlocksComponent@@V?$allocator@UInternalData@SideBySideEntityInsideBlocksComponent@@@std@@@std@@AEBVAABB@@AEBVIConstBlockSource@@@Z
-     * @hash   -1354130998
+     * @hash   -1354177126
      */
     MCAPI static std::vector<struct SideBySideEntityInsideBlocksComponent::InternalData> get(class AABB const &, class IConstBlockSource const &);
 

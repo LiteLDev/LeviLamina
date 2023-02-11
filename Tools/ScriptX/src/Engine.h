@@ -121,6 +121,17 @@ class ScriptEngine {
   }
 
   /**
+   * @param scriptFile path of script file to load
+   * @return evaluate result
+   */
+  virtual Local<Value> loadFile(const Local<String>& scriptFile) = 0;
+
+  template <typename T = std::string, StringLikeConcept(T)>
+  Local<Value> loadFile(T&& scriptFileStringLike) {
+    return loadFile(String::newString(std::forward<T>(scriptFileStringLike)));
+  }
+
+  /**
    * register a native class definition (constructor & property & function) to script.
    * @tparam T a subclass of the NativeClass, which implements all the Script-Native method in cpp.
    * (can be void if no instance is required).

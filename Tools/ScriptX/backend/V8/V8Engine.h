@@ -115,6 +115,8 @@ class V8Engine : public ::script::ScriptEngine {
   Local<Value> eval(const Local<String>& script) override;
   using ScriptEngine::eval;
 
+  Local<Value> loadFile(const Local<String>& scriptFile) override;
+
   /**
    * Create a new V8 Engine that share the same isolate, but with different context.
    * Caller own the returned pointer, and the returned instance

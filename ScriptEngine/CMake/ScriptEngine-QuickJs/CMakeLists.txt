@@ -10,7 +10,7 @@ set(LLSE_BACKEND_LIBRARY QuickJs)
 
 include(../../CMakeLists.txt)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/include/QuickJs/)
+target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/QuickJs/)
 
 # copy target DLL and PDB to output directory
 add_custom_command(

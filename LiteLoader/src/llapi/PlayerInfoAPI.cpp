@@ -33,6 +33,7 @@ std::optional<Info> findByName(const std::string& name) {
     }
     return {};
 }
+
 std::optional<Info> findByXuid(const xuid_t& xuid) {
     for (Info info : data) {
         if (info.xuid == xuid) {
@@ -41,6 +42,7 @@ std::optional<Info> findByXuid(const xuid_t& xuid) {
     }
     return {};
 }
+
 std::optional<Info> findByUUID(const std::string& uuid) {
     for (Info info : data) {
         if (info.uuid == uuid) {
@@ -82,7 +84,8 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
                     if (it.name != name || it.uuid != uuid) {
                         it.name = name;
                         it.uuid = uuid;
-                        db << "update player_new set NAME = ?, UUID = ? where XUID = ?", DB::use(DB::Row{name, uuid, xuid});
+                        db << "update player_new set NAME = ?, UUID = ? where XUID = ?",
+                            DB::use(DB::Row{name, uuid, xuid});
                     }
                 }
             }
@@ -131,12 +134,9 @@ void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid
 
 template <>
 PlayerInfo::Info row_to(const DB::Row& row) {
-    //ll::logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>());
-    return {
-        row["NAME"].get<std::string>(),
-        row["XUID"].get<std::string>(),
-        row["UUID"].get<std::string>()
-    };
+    // ll::logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(),
+    // row["UUID"].get<std::string>());
+    return {row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>()};
 }
 
 void UpdatePlayerDatabase() {

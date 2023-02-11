@@ -30,14 +30,14 @@ public:
 public:
     /**
      * @symbol ?createSystem@UnderWaterSensingSideBySideSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   310745806
+     * @hash   310699678
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?doUnderWaterSensing@UnderWaterSensingSideBySideSystem@@CAXAEAVStrictEntityContext@@AEBUSideBySideLiquidSensingComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorHeadInWaterFlag@@@@@@@Z
-     * @hash   -1771643493
+     * @hash   -1771689621
      */
     MCAPI static void doUnderWaterSensing(class StrictEntityContext &, struct SideBySideLiquidSensingComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorHeadInWaterFlag>>);
 

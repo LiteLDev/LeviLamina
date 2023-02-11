@@ -26,7 +26,6 @@ string Block::getTypeName() const {
     return Block::getName().getString();
 }
 
-
 int Block::getId() const {
     return getLegacyBlock().getBlockItemId();
 }
