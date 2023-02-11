@@ -38,9 +38,6 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
             {"SimpleServerLogger", {
                 {"enabled", conf.enableSimpleServerLogger}
             }},
-            {"FixDisconnectBug", {
-                {"enabled", conf.enableFixDisconnectBug}
-            }},
             {"UnlockCmd", {
                 {"enabled", conf.enableUnlockCmd}
             }},
@@ -91,11 +88,17 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
             {"ParticleAPI", {
                 {"enabled", conf.enableParticleAPI}
             }},
-             {"PermissionAPI", {
+            {"PermissionAPI", {
                 {"enabled", conf.enablePermissionAPI}
             }},
             {"FixAbility", {
                 {"enabled", conf.enableFixAbility}
+            }},
+            {"FixBroadcastBug", {
+                {"enabled", conf.enableFixBroadcastBug}
+            }},
+            {"DisableAutoCompactionLog", {
+                {"enabled", conf.disableAutoCompactionLog}
             }},
         }}
     };
@@ -131,10 +134,6 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.find("SimpleServerLogger") != modules.end()) {
             const nlohmann::json& setting = modules.at("SimpleServerLogger");
             conf.enableSimpleServerLogger = setting.value("enabled", true);
-        }
-        if (modules.find("FixDisconnectBug") != modules.end()) {
-            const nlohmann::json& setting = modules.at("FixDisconnectBug");
-            conf.enableFixDisconnectBug = setting.value("enabled", true);
         }
         if (modules.find("FixListenPort") != modules.end()) {
             const nlohmann::json& setting = modules.at("FixListenPort");

@@ -30,13 +30,12 @@ struct LLConfig {
     bool alwaysLaunchScriptEngine = false;
 
     bool enableAddonsHelper = true;
-    std::string addonsInstallPath = "plugins/AddonsHelper";
+    std::string addonsInstallPath = ".\\plugins\\AddonsHelper\\";
 
     bool enableCrashLogger = true;
-    std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+    std::string crashLoggerPath = ".\\plugins\\LiteLoader\\CrashLogger_Daemon.exe";
     std::string antiGiveCommand = "kick {player}";
     bool enableSimpleServerLogger = true;
-    bool enableFixDisconnectBug = true;
     bool enableFixListenPort = false;
     bool enableAntiGive = true;
     bool enableUnlockCmd = true;
