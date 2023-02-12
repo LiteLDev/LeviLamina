@@ -27,6 +27,9 @@
           "1": "协议版本不匹配，目标版本：{}，当前版本：{}。",
           "2": "这很可能会使服务器崩溃，请使用与BDS版本匹配的LiteLoaderBDS！"
         }
+      },
+      "bstats": {
+        "enabled": "bStats已启用，你可以通过编辑 plugins/bStats/config.json 来禁用它"
       }
     },
     "antiAbnormalItem": {

@@ -27,6 +27,9 @@
           "1": "La version du protocole ne correspond pas, la version cible : {}, la version actuelle : {}.",
           "2": "Cela va probablement planter le serveur, veuillez utiliser la version de LiteLoader qui correspond à la version du BDS !"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit \nplugins/bStats/config.json to disable it"
       }
     },
     "antiAbnormalItem": {

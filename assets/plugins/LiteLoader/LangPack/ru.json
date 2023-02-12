@@ -27,6 +27,9 @@
           "1": "Версия протокола не совпадает, целевая версия: {}, текущая версия: {}.",
           "2": "Скорее всего, это приведет к сбою сервера, пожалуйста, используйте LiteLoader, который соответствует версии BDS!"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit \nplugins/bStats/config.json to disable it"
       }
     },
     "antiAbnormalItem": {
@@ -76,7 +79,7 @@
       },
       "settings": {
         "set": {
-          "success": "Настройки {} были установлены в {}."
+          "success": "Настройки {} установлены в {} успешно."
         },
         "get": {
           "success": "Настройка {} успешно получена. Содержание: "
@@ -310,7 +313,7 @@
     "cmd": {
       "error": {
         "invalidCommand": "Неизвестная команда. Введите '/help perm' для получения помощи.",
-        "internal": "Произошла ошибка, попробуйте повторите попытку позже.",
+        "internal": "Внутренняя ошибка, повторите попытку позже.",
         "roleAlreadyExists": "Такая роль уже существует.",
         "permissionAlreadyExists": "Данное право уже существует.",
         "invalidPermissionName": "Неверное имя права.",
@@ -347,12 +350,12 @@
           },
           "perm": {
             "none": "Нет прав.",
-            "header": "§b§lСписок прав:"
+            "header": "§b§lСписок разрешений:"
           }
         },
         "view": {
           "player": {
-            "yourStatus": "§b§lВаш текущий статус прав:",
+            "yourStatus": "§b§lВаш текущий статус разрешений:",
             "status": "§b§lТекущий статус прав доступа у {}:",
             "rolesTitle": "- §eРоли:",
             "permissionsTitle": "- §eРазрешения:"
@@ -369,7 +372,7 @@
               "permissions": "+ §eРазрешения§r:"
             },
             "note": {
-              "admin": "※ {}§r является специальной ролью. Все права будут включены по умолчанию.",
+              "admin": "※ {}§r является специальной ролью. Все разрешения будут включены по умолчанию.",
               "everyone": "※ {}§r является специальной ролью. Все игроки являются обладателями этой роли."
             },
             "enabled": "§a(Включено)§r",
@@ -388,10 +391,10 @@
           "role": {
             "member": {
               "add": {
-                "success": "Участник {name}§r({xuid}) стал обладателем роли {roleDisplayName}§r."
+                "success": "Участник {name}§r({xuid}) теперь имеет роль {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Участник {name}§r({xuid}) теперь не обладатель роли {roleDisplayName}§r."
+                "success": "Участник {name}§r({xuid}) больше не имеет роль {roleDisplayName}§r."
               }
             },
             "perm": {
@@ -402,8 +405,8 @@
                 "success": "Разрешение {name}§r удалено из роли {roleDisplayName}§r."
               },
               "set": {
-                "enabled": "§aвключено",
-                "disabled": "§cвыключено",
+                "enabled": "§aвключено§r",
+                "disabled": "§cвыключено§r",
                 "success": "Разрешение {name}§r от роли {roleDisplayName}§r установлено на {enable}."
               }
             },
@@ -414,7 +417,7 @@
             },
             "displayName": {
               "set": {
-                "success": "Теперь роль <{roleName}§r> отображается, как {displayName}."
+                "success": "Теперь роль <{roleName}§r> отображается как {displayName}."
               }
             }
           },

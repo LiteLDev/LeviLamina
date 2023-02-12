@@ -11,7 +11,7 @@
     "main": {
       "checkRunningBDS": {
         "detected": "동일한 파일 경로에서 이미 다른 BDS 서버가 열려 있습니다.",
-        "tip": "This may cause the network port and the level to be occupied",
+        "tip": "네트워크 포트나 월드를 사용중인 상태로 만들수도 있습니다.",
         "ask": "PID {} 로 프로세스를 종료하시겠습니까? (y=예, n=아니오, e=종료)"
       },
       "fixAllowList": {
@@ -27,24 +27,27 @@
           "1": "프로토콜 버전이 맞지 않습니다. 타겟 버전 {}, 현재 버전: {}.",
           "2": "높은 확률로 서버 크래시가 발생할 수도 있습니다. BDS 버전과 맞는 LiteLoader을 사용해주세요!"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit \nplugins/bStats/config.json to disable it"
       }
     },
     "antiAbnormalItem": {
-      "detected": "Player({}) item data error!",
+      "detected": "플레이어({}) 아이템 데이터 오류 발생!",
       "itemInfo": "아이템: {}"
     },
     "cmd": {
       "tpdim": {
         "success": "유저 {} (을)를 {} ({:2f}, {:2f}, {:2f}) 로 이동시킵니다.",
         "error": {
-          "noActorTeleported": "No Actor Teleported",
-          "noActorSpecified": "No Actor Specified"
+          "noActorTeleported": "Actor가 텔레포트 되지 않았습니다",
+          "noActorSpecified": "Actor가 지정되지 않았습니다"
         },
         "invalidDimid": "유효하지 않은 월드: {}"
       },
       "listPlugin": {
         "overview": "플러그인 목록 [{}]",
-        "tip": "더 많은 정보가 필요하시면 \"ll list <Plugin Name>\" 명령어를 입력해주세요."
+        "tip": "* 더 많은 정보가 필요하시면 \"ll list <Plugin Name>\" 명령어를 입력해주세요."
       },
       "pluginInfo": {
         "title": "플러그인 <{}>",
@@ -53,7 +56,7 @@
         }
       },
       "version": {
-        "msg": "Bedrock Dedicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}"
+        "msg": "Bedrock Dedicated Server {}\n- LiteLoaderBDS 포함 {}\n- 네트워크 프로토콜: {}"
       },
       "help": {
         "msg": "[Introduction]\nLiteLoaderBDS는 Bedrock Dedicated Server 모딩이 가능한 비공식 플러그인 로더입니다.\n많은 수의 API과 패킷 유틸리티 인터페이스, 그리고 강력한 이벤트 시스템을 제공합니다.\n\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\n더 자세한 정보를 원하신다면 자유롭게 Github 프로젝트를 확인해주세요!"
@@ -79,10 +82,10 @@
           "success": "설정에서 {} 를 {} 로 성공적으로 변경했습니다."
         },
         "get": {
-          "success": "Settings get {} successfully. Value: "
+          "success": "{} 가 설정에 업데이트 되었습니다. 값:"
         },
         "delete": {
-          "success": "Settings delete {} successfully.",
+          "success": "{} 설정 제거가 완료되었습니다.",
           "error": {
             "emptyKey": "JsonPointer 파일은 비어 있을수 없습니다."
           }
@@ -106,36 +109,36 @@
       "save": {
         "fail": "Config 파일을 저장(생성)하지 못했습니다!"
       },
-      "creating": "LL Config 파일을 찾을 수 없습니다. Config 파일을 생성합니다.",
+      "creating": "LL Config <{}> 파일을 찾을 수 없습니다. Config 파일을 생성합니다.",
       "warning": {
-        "configOutdated": "LL Config 파일이 오래됐거나 현재 버전과 호환되지 않습니다."
+        "configOutdated": "LL Config <{}> 파일이 오래됐거나 현재 버전과 호환되지 않습니다."
       },
-      "updating": "Config 파일을 업데이트 합니다.."
+      "updating": "설정 파일을 업데이트 합니다.."
     },
     "crashLogger": {
-      "existsingDebuggerDetected": "이미 존재하는 다른 디버거가 감지되었습니다. Builtin CrashLogger가 작동하지 않을수도 있습니다.",
-      "wineDetected": "Wine 환경이 감지되었습니다. Builtin CrashLogger가 작동하지 않을수도 있습니다.",
+      "existsingDebuggerDetected": "이미 존재하는 다른 디버거가 감지되었습니다. 빌트인 CrashLogger가 작동하지 않을수도 있습니다.",
+      "wineDetected": "Wine 환경이 감지되었습니다. 빌트인 CrashLogger가 작동하지 않을수도 있습니다.",
       "error": {
         "cannotCreateDaemonProcess": "CrashLogger 데몬 프로세스를 생성하지 못했습니다!"
       },
       "warning": {
         "crashLoggerDisabled": {
-          "1": "Config 파일에서 비활성화 됐기 때문에 Builtin CrashLogger가 활성화되지 않습니다.",
+          "1": "Config 파일에서 비활성화 됐기 때문에 빌트인 CrashLogger가 활성화되지 않습니다.",
           "2": "처리되지 않은 예외 발생시 크래시 로그가 생성되지 않습니다.",
-          "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
+          "3": "충돌이 발생한 이유나 원인을 파악하기가 거의 불가능하게 만듭니다.",
           "4": "서버 안정성을 위해 활성화 하기를 적극 권장합니다."
         },
         "conflicts": {
           "1": "플러그인 <{}> 와 충돌이 발생해 Builtin CrashLogger 가 활성화 되지 않습니다.",
           "2": "처리되지 않은 예외 발생시 크래시 로그가 생성되지 않습니다.",
-          "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
+          "3": "충돌이 발생한 이유나 원인을 파악하기가 거의 불가능하게 만듭니다.",
           "4": "CrashLogger이 서버 안정성을 보장해주는 중요한 컴포넌트이기 때문에",
           "5": "플러그인 <{}> 을 사용할지 다시 한번 고려해보길 권장합니다."
         }
       },
       "init": {
         "fail": {
-          "msg": "Builtin CrashLogger 를 시작하지 못했습니다!",
+          "msg": "Builtin CrashLogger 시작에 실패했습니다.",
           "tip": "처리되지 않은 예외 발생시 크래시 로그가 생성되지 않습니다."
         }
       }
@@ -145,9 +148,9 @@
         "addonConfigNotFound": "애드온 config를 찾을 수 없습니다.",
         "addonFileNotFound": "애드온 파일 \"{}\" 을(를) 찾을 수 없습니다.",
         "addonNotFound": "애드온 \"{}\" 을(를) 찾을 수 없습니다.",
-        "outOfRange": "Addon index {} out of range",
+        "outOfRange": "애드온 인덱스 {} 범위 초과",
         "unsupportedFileType": "지원하지 않는 확장자의 파일이 발견되었습니다.",
-        "parsingEnabledAddonsList": "Error when parsing enabled addons list",
+        "parsingEnabledAddonsList": "활성화된 애드온을 읽는 도중 에러 발생",
         "noAddonInstalled": "아무 애드온도 설치돼 있지 않습니다.",
         "installationAborted": "설치 프로세스가 취소됐습니다."
       },
@@ -166,7 +169,7 @@
         "error": {
           "failToUncompress": {
             "msg": "애드온 {} 의 압축을 풀지 못했습니다.",
-            "exitCode": "Exit Code: {}",
+            "exitCode": "코드 종료: {}",
             "programOutput": "프로그램 출력:\n{}"
           }
         }
@@ -195,7 +198,7 @@
         "error": {
           "versionNotMatch": "<{}> 버전의 {} 스크립트 엔진이 LiteLoader 버전 <{}> 와 일치하지 않습니다."
         },
-        "success": "{} 스크립트 엔진이 로드됐습니다."
+        "success": "* {} 스크립트 엔진이 로드됐습니다."
       },
       "loadDotNetEngine": {
         "error": {
@@ -205,23 +208,23 @@
       },
       "loadMain": {
         "loadingPlugins": "네이티브 플러그인을 불러옵니다...",
-        "loadedShellLink": "ShellLinked plugin <{} => {}> loaded",
+        "loadedShellLink": "ShellLinked 플러그인  <{} => {}> 로드됨",
         "loadedPlugin": "네이티브 플러그인 <{name}> 이 로드됐습니다.",
         "done": "{} 개의 네이티브 플러그인이 로드됐습니다.",
         "start": "네이티브 플러그인을 불러옵니다."
       },
       "initNodeJsDirectories": {
-        "created": "Node.js 런타임 경로를 찾을 수 없어 생성했습니다."
+        "created": "Node.js 런타임 경로를 찾을 수 없으므로 생성합니다."
       }
     },
     "notice": {
-      "newForum": "Our new forum is live! -> {}",
-      "license": "LiteLoader is licensed under {}",
+      "newForum": "저희의 새로운 포럼이 공개됐습니다! -> {}",
+      "license": "LiteLoader는 {} 라이선스로 관리됩니다.",
       "translateText": "LiteLoader 를 번역하고 개선할 수 있도록 도와주세요! -> {}"
     },
     "pluginManager": {
       "error": {
-        "invalidFileType": "Invalid plugin file type {} in {}",
+        "invalidFileType": "{} 경로의 {} 타입 플러그인 파일이 유효하지 않음",
         "noValidPluginFound": "{} 경로에서 유효한 플러그인을 찾을 수 없습니다!",
         "failToRegisterPlugin": "{} 플러그인 등록에 실패했습니다!",
         "hasBeenRegistered": "{} 라는 플러그인이 등록됐습니다.",
@@ -249,11 +252,11 @@
     "api": {
       "ll": {
         "require": {
-          "success": " - Plugin require loaded successfully. Loaded: ",
-          "fail": " - Plugin require load failed",
+          "success": " - 요구되는 플러그인 로드에 성공했습니다. 로드됨: ",
+          "fail": " - 요구되는 플러그인을 로드하지 못했습니다. ",
           "download": {
-            "success": " - Successfully downloaded require! Path: ",
-            "fail": " - Download plugin require failed! Code: "
+            "success": " - 필요한 것들을 다운로드 했습니다! 경로: ",
+            "fail": " - 필요한 플러그인을 다운로드 하지 못했습니다! 코드: "
           }
         }
       }
@@ -265,32 +268,32 @@
     },
     "loader": {
       "loadDepends": {
-        "success": "Dependence {} loaded.",
-        "fail": "Fail to load dependence {}"
+        "success": "Dependence {} 가 로드됐습니다.",
+        "fail": "Dependence '{}' 로드에 실패했습니다."
       },
       "loadMain": {
-        "start": "Loading {type} plugins...",
-        "done": "{count} {type} plugin(s) loaded.",
+        "start": "{type} 플러그인을 로드합니다...",
+        "done": "{count} 개의 {type} 플러그인을 로드합니다...",
         "nodejs": {
           "installPack": {
-            "fail": "Failed to install plugin pack {}, please check your package.json file!",
-            "start": "Found Node.js plugin pack \"{path}\"! Try installing..."
+            "fail": "플러그인 팩 {} 로드에 실패했습니다. package.json 파일을 확인해주세요!",
+            "start": "Node.js 플러그인 팩 \"{path}\"을 발견했습니다. 설치를 시도합니다..."
           },
-          "ignored": "No package.json file found in directory {path}, ignored."
+          "ignored": "경로 {path} 에서 package.json 파일을 찾지 못하여 무시합니다."
         },
-        "loadedPlugin": "{type} plugin <{name}> loaded.",
+        "loadedPlugin": "{type} 타입 플러그인 <{name}> 를 로드했습니다.",
         "installPluginPack": {
-          "done": "{count} {type} plugin pack(s) installed."
+          "done": "{count} 개의 {type} 플러그인 팩이 로드됐습니다."
         }
       },
       "nodejs": {
         "executeNpmInstall": {
-          "success": "Npm finished successfully.",
-          "start": "Executing \"npm install\" for plugin {name}...",
-          "fail": "Error occurred. Exit code: {code}"
+          "success": "Npm이 성공적으로 설치됐습니다.",
+          "start": "플러그인 {name} 에 대하여 \"npm install\" 명령어를 실행합니다.",
+          "fail": "에러 발생. 코드 종료: {code}"
         },
         "register": {
-          "fail": "Fail to help plugin {name} get registered!"
+          "fail": "플러그인 {name} 을 등록하지 못했습니다."
         }
       }
     }
@@ -298,10 +301,10 @@
   "permapi": {
     "data": {
       "process": {
-        "fail": "Failed to process the data file: {}"
+        "fail": "데이터 파일 처리에 실패했습니다: {}"
       },
       "read": {
-        "fail": "Failed to read the data file at {}"
+        "fail": "{} 경로에 위치한 데이터 파일을 읽지 못했습니다."
       },
       "save": {
         "fail": "데이터 파일 저장에 실패했습니다: {}"
@@ -309,7 +312,7 @@
     },
     "cmd": {
       "error": {
-        "invalidCommand": "Invalid command. Type '/help perm' to get help.",
+        "invalidCommand": "유효하지 않은 명령어입니다. 도움말을 보려면 '/help perm' 명령어를 입력해주세요.",
         "internal": "내부 오류 발생. 나중에 다시 시도해주세요.",
         "roleAlreadyExists": "역할이 이미 존재합니다.",
         "permissionAlreadyExists": "권한이 이미 존재합니다.",
@@ -352,35 +355,35 @@
         },
         "view": {
           "player": {
-            "yourStatus": "§b§l당신의 현재 권한 상태:",
+            "yourStatus": "§b§l당신의 현재 권한 상태입니다:",
             "status": "§b§l유저 {}의 현재 권한 상태:",
-            "rolesTitle": "- §eRoles:",
-            "permissionsTitle": "- §ePermissions:"
+            "rolesTitle": "- §e역할:",
+            "permissionsTitle": "- §e권한:"
           },
           "role": {
-            "header": "§b§lRole Info:",
+            "header": "§b§l역할 정보:",
             "info": {
-              "name": "+ §eName§r: {roleName}",
-              "displayName": "+ §eDisplayName§r: {}",
-              "priority": "+ §ePriority§r: {}",
-              "membersNone": "+ §eMembers§r: None",
-              "members": "+ §eMembers§r:",
-              "permissionsNone": "+ §ePermissions§r: None",
-              "permissions": "+ §ePermissions§r:"
+              "name": "+ §e이름§r: {roleName}",
+              "displayName": "+ §e표시되는 이름§r: {}",
+              "priority": "+ §e우선순위§r: {}",
+              "membersNone": "+ §e멤버§r: 없음",
+              "members": "+ §e멤버§r:",
+              "permissionsNone": "+ §e권한§r: 없음",
+              "permissions": "+ §e권한§r:"
             },
             "note": {
-              "admin": "※ {}§r is a special role. All permissions will be enabled by default.",
-              "everyone": "※ {}§r is a special role. All players are members of this role."
+              "admin": "※ {}§r는 특별한 역할입니다. 모든 권한이 기본값으로 활성화됩니다.",
+              "everyone": "※ {}§r는 특별한 역할입니다. 모든 플레이어가 이 역할의 멤버가 됩니다."
             },
-            "enabled": "§a(Enabled)§r",
-            "disabled": "§c(Disabled)§r",
-            "enabledWithExtra": "§b(Enabled with extra restrictions)§r"
+            "enabled": "§a(활성화됨)§r",
+            "disabled": "§c(비활성화 됨)§r",
+            "enabledWithExtra": "§b(추가 제한 사항과 함께 활성화됨)§r"
           },
           "perm": {
-            "header": "§b§lPermission Info:",
+            "header": "§b§l역할 정보:",
             "info": {
-              "name": "+ §eName§r: {permissionName}",
-              "desc": "+ §eDescription§r: {}"
+              "name": "+ §e이름§r: {permissionName}",
+              "desc": "+ §e설명§r: {}"
             }
           }
         },
@@ -388,49 +391,49 @@
           "role": {
             "member": {
               "add": {
-                "success": "Member {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "멤버 {name}§r({xuid}) 가 역할 {roleDisplayName}§r에 추가되었습니다."
               },
               "remove": {
-                "success": "Member {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "멤버 {name}§r({xuid}) 가 역할 {roleDisplayName}에 제거되었습니다§r."
               }
             },
             "perm": {
               "add": {
-                "success": "Permission {name}§r added to Role {roleDisplayName}§r."
+                "success": "권한 {name}§r가 역할 {roleDisplayName}에 추가되었습니다§r."
               },
               "remove": {
-                "success": "Permission {name}§r removed from Role {roleDisplayName}§r."
+                "success": "권한 {name}§r가 {roleDisplayName}§r에서 제거되었습니다."
               },
               "set": {
-                "enabled": "§aenabled§r",
-                "disabled": "§cdisabled§r",
-                "success": "Permission {name}§r of Role {roleDisplayName}§r set to {enable}."
+                "enabled": "§a활성화됨§r",
+                "disabled": "§c비활성화됨§r",
+                "success": "역할 {roleDisplayName}§r의 권한 {name}§r가 {enable} 상태로 설정되었습니다."
               }
             },
             "priority": {
               "set": {
-                "success": "Priority of Role {roleDisplayName}§r set to {priority}."
+                "success": "역할 {roleDisplayName}§r의 우선순위가 {priority}로 설정되었습니다."
               }
             },
             "displayName": {
               "set": {
-                "success": "Display name of Role <{roleName}§r> set to {displayName}§r."
+                "success": "역할 <{roleName}§r>의 표시되는 이름이 {displayName}§r로 설정되었습니다."
               }
             }
           },
           "player": {
             "role": {
               "add": {
-                "success": "Player {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "플레이어 {name}§r({xuid})가 역할 {roleDisplayName}§r에 추가되었습니다."
               },
               "remove": {
-                "success": "Player {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "플레이어 {name}§r({xuid})가 역할 {roleDisplayName}§r에서 제거되었습니다."
               }
             }
           }
         },
-        "noDesc": "[No description]",
-        "permissionNameExamples": "Permission name examples: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+        "noDesc": "[설명 없음]",
+        "permissionNameExamples": "권한 이름 예시: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
       }
     }
   }
