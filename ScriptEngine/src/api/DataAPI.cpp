@@ -253,7 +253,7 @@ bool ConfJsonClass::reload() {
 
     try {
         jsonConf = fifo_json::parse(*jsonTexts, nullptr, true, true);
-    } catch (...){
+    } catch (...) {
         logger.error("Fail in confJsonReload!");
         PrintScriptStackTrace();
     }
