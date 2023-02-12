@@ -2025,9 +2025,7 @@ TInstanceHook(
     }
     IF_LISTENED_END(MobTrySpawnEvent);
     auto en = original(this, a2, a3, a4, a5, a6, a7, a8);
-    if (en == nullptr) {
-        return en;
-    } else {
+    if (en) {
         IF_LISTENED(MobSpawnedEvent) {
             MobSpawnedEvent ev{};
             ev.mMob = en;
@@ -2036,8 +2034,8 @@ TInstanceHook(
             ev.call();
         }
         IF_LISTENED_END(MobSpawnedEvent)
-        return en;
     }
+    return en;
 }
 
 TClasslessInstanceHook(std::optional<class BlockPos>,
