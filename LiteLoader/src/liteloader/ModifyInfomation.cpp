@@ -25,7 +25,7 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     }
     return str;
 }
-THook(void, "?BedrockLogOut@@YAXIPEBDZZ", 
+THook(void, "?BedrockLogOut@@YAXIPEBDZZ",
     int a1, char * a2,...)
 {
     char Buffer[4096];
@@ -39,7 +39,7 @@ THook(void, "?BedrockLogOut@@YAXIPEBDZZ",
 		return original(a1,a2,va);
 	string input = Buffer;
 
-	
+
     input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
     switch (a1) {
         case 1u:
@@ -57,8 +57,8 @@ THook(void, "?BedrockLogOut@@YAXIPEBDZZ",
         default:
             serverLogger.info << input << Logger::endl;
             return;
-    }	
-	
+    }
+
 	return original(a1,a2,va);
 }
 
