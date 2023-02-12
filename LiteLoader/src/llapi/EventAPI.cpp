@@ -1105,7 +1105,7 @@ enum {
     None,
     Search,
     Push
-} HopperState = None;
+} hopperState = None;
 
 Vec3* hopperPos;
 
