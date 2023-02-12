@@ -1107,7 +1107,7 @@ enum {
     Push
 } HopperState = None;
 
-Vec3* HopperPos;
+Vec3* hopperPos;
 
 TClasslessInstanceHook(bool, "?_addItem@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEAVItemStack@@HH@Z",
                        BlockSource* bs, Container* a3, ItemStack* it, int a5, int a6) {
