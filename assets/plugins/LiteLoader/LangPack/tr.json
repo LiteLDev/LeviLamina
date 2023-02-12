@@ -29,7 +29,7 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit \nplugins/bStats/config.json to disable it"
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
       }
     },
     "antiAbnormalItem": {
