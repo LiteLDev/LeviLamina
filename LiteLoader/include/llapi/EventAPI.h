@@ -538,17 +538,19 @@ public:
 class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
     bool isMinecart = false;
-    ItemStack* mItemStack;
+    [[deprecated("hopper don't have to be a block")]]BlockInstance mHopperBlock;
+    [[deprecated("it can be a block position")]]Vec3 mMinecartPos;
     Vec3 mPos;
     int mDimensionId = -1;
+    ItemStack* mItemStack;
 };
 
 class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent> {
 public:
     bool isMinecart = false;
-    ItemStack* mItemStack;
     Vec3 mPos;
     int mDimensionId = -1;
+    ItemStack* mItemStack;
 };
 
 class PistonTryPushEvent : public EventTemplate<PistonTryPushEvent> {
