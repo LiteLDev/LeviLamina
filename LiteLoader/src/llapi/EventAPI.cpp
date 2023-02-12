@@ -474,20 +474,43 @@ THook(void,
 }
 
 /////////////////// PlayerAttackEntity ///////////////////
-TInstanceHook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z", Player, Actor* ac, int* damageCause) {
-    IF_LISTENED(PlayerAttackEvent) {
-        PlayerAttackEvent ev{};
-        ev.mPlayer = this;
-        ev.mTarget = ac;
-        ev.mAttackDamage = *damageCause;
-        if (!ev.call())
-            return false;
+struct {
+    Player* player{};
+    Actor* target{};
+    bool cancelled = false;
+} currentAttackingPlayer;
 
-        ac = ev.mTarget;
-        *damageCause = ev.mAttackDamage;
+TInstanceHook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z", Player, Actor* ac,
+              ActorDamageCause cause) {
+    currentAttackingPlayer.player = this;
+    currentAttackingPlayer.target = ac;
+    auto res = original(this, ac, cause);
+    if (currentAttackingPlayer.cancelled) {
+        currentAttackingPlayer.cancelled = false;
+        return false;
     }
-    IF_LISTENED_END(PlayerAttackEvent)
-    return original(this, ac, damageCause);
+    return res;
+}
+
+TInstanceHook(float, "?calculateAttackDamage@Actor@@QEAAMAEAV1@@Z", Actor, Actor* other) {
+    auto damage = original(this, other);
+    if ((Actor*)currentAttackingPlayer.player == this && currentAttackingPlayer.target == other) {
+        IF_LISTENED(PlayerAttackEvent) {
+            PlayerAttackEvent ev{};
+            ev.mPlayer = currentAttackingPlayer.player;
+            ev.mTarget = currentAttackingPlayer.target;
+            ev.mAttackDamage = (int)damage;
+            currentAttackingPlayer.player = nullptr;
+            currentAttackingPlayer.target = nullptr;
+            if (!ev.call()) {
+                currentAttackingPlayer.cancelled = true;
+                return 0;
+            }
+            return (int)ev.mAttackDamage;
+        }
+        IF_LISTENED_END(PlayerAttackEvent)
+    }
+    return damage;
 }
 
 /////////////////// PlayerAttackBlock ///////////////////
