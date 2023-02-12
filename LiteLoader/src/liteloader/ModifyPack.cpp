@@ -22,15 +22,15 @@ namespace ModifyPack {
 THook(ResourcePack*, "??0ResourcePack@@QEAA@AEAVPack@@@Z",
       ResourcePack* self, Pack* a2) {
     auto Pack = original(self, a2);
-        auto manifest = &Pack->getManifest();
-        if (manifest && manifest->getPackOrigin() == PackOrigin::PackOrigin_Dev) {
-            ModifyPack::PackListCache.push_back(a2->getManifest().getIdentity());  
-        }
+    auto manifest = &Pack->getManifest();
+    if (manifest && manifest->getPackOrigin() == PackOrigin::PackOrigin_Dev) {
+        ModifyPack::PackListCache.push_back(a2->getManifest().getIdentity());
+    }
     return Pack;
 }
 
 THook(std::unique_ptr<ResourcePackStack>, "?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBVIResourcePackRepository@@@Z",
-      __int64 a2, ResourcePackRepository* a3) {	
+      __int64 a2, ResourcePackRepository* a3) {
     auto Stack = original( a2, a3);
     for (auto& id : ModifyPack::PackListCache) {
         auto Pack = a3->getResourcePackForPackId(id);
