@@ -8,7 +8,10 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum class TargetSelectionMethod {
+    Nearest = 0,
+    Random = 1,
+};
 #undef BEFORE_EXTRA
 
 /**
