@@ -64,5 +64,10 @@ public:
     static Local<Value> addPlayerScore(const Arguments& args);
     static Local<Value> reducePlayerScore(const Arguments& args);
     static Local<Value> deletePlayerScore(const Arguments& args);
+
+    static Local<Value> getTime(const Arguments& args);
+    static Local<Value> setTime(const Arguments& args);
+    static Local<Value> getWeather(const Arguments& args);
+    static Local<Value> setWeather(const Arguments& args);
 };
 extern ClassDefine<void> McClassBuilder;
