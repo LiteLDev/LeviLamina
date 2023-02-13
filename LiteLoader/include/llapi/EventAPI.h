@@ -547,10 +547,10 @@ public:
 
 class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent> {
 public:
-    bool isMinecart = false;
     Vec3 mPos;
     int mDimensionId = -1;
     ItemStack* mItemStack;
+    bool isMinecart = false;
 };
 
 class PistonTryPushEvent : public EventTemplate<PistonTryPushEvent> {
