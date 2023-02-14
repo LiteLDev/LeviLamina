@@ -42,22 +42,22 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose
     if (globalConfig.enableFixListenPort) {
         if (isFirstLog) {
             isFirstLog = false;
-            original(this);
+            __int64 rt = original(this);
             endTime = clock();
             Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                                   R"(s)! For help, type "help" or "?")");
-            return 1;
+            return rt;
         }
         return 0;
     } else {
-        original(this);
+        __int64 rt = original(this);
         if (!isFirstLog) {
             endTime = clock();
             Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                                   R"(s)! For help, type "help" or "?")");
         }
         isFirstLog = false;
-        return 1;
+        return rt;
     }
 }
 
@@ -213,7 +213,7 @@ TInstanceHook(NetworkPeer::DataStatus,
       "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
       "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
     NetworkConnection, string* data, __int64 a3, __int64** a4) {
-    auto status = original(this, data, a3, a4);	
+    auto status = original(this, data, a3, a4);
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
@@ -272,27 +272,27 @@ TClasslessInstanceHook(void,
                        "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
                        "allocator@D@2@@std@@000@Z",
                        std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z", class Player& a1) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z", class Player& a1,
                        float a2) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
                        class Player* a1, float a2, int a3, int a4) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
