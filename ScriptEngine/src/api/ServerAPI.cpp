@@ -6,6 +6,7 @@
 #include <llapi/mc/ServerNetworkHandler.hpp>
 #include <llapi/mc/LevelData.hpp>
 #include <llapi/mc/SetTimePacket.hpp>
+#include <llapi/mc/LoopbackPacketSender.hpp>
 #include "main/SafeGuardRecord.h"
 
 Local<Value> McClass::setMotd(const Arguments& args) {
@@ -55,9 +56,8 @@ Local<Value> McClass::getTime(const Arguments& args) {
     else if (option == 2)
         return Number::newNumber(Global<Level>->getTime() / 24000);
     else
-        logger.error("Wrong Argument");
+        throw script::Exception("The range of this argument is between 0 and 2");
 
-    return Local<Value>();
 }
 
 Local<Value> McClass::setTime(const Arguments& args) {
@@ -67,11 +67,19 @@ Local<Value> McClass::setTime(const Arguments& args) {
     try {
         int currentTime = Global<Level>->getTime();
         int targetTime = args[0].asNumber().toInt32(); // Tick
-        int finalTime = SymCall("?projectToTimeOfDay@LevelUtils@@YAHHH@Z", int, int, int)(currentTime, targetTime);
-        Global<Level>->setTime(finalTime);
-        SetTimePacket pkt = SetTimePacket(finalTime);
-        SymCall("?send@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z", void, PacketSender*,
-                SetTimePacket*)(Global<Level>->getPacketSender(), &pkt);
+
+        int newTime = currentTime;
+        int currentTimeOfDay = currentTime % 24000;
+
+        if ( targetTime > currentTime % 24000 )
+            newTime = currentTime + targetTime - currentTimeOfDay;
+        else if ( targetTime < currentTimeOfDay )
+            newTime = currentTime + targetTime + 24000 - currentTimeOfDay;
+
+        Global<Level>->setTime(newTime);
+        SetTimePacket pkt = SetTimePacket(newTime);
+        LoopbackPacketSender* pktSender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
+        pktSender->send(pkt);
     }
     CATCH("Fail in setTime!")
 
