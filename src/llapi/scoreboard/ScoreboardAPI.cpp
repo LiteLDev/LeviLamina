@@ -11,15 +11,17 @@
 #include "llapi/PlayerInfoAPI.h"
 #include "llapi/mc/ServerScoreboard.hpp"
 
-LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() {
-    return ++*(ScoreboardId*)((char*)this + 1072);
-}
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
+LIAPI const ScoreboardId& Scoreboard::nextScoreboardId() { return ++*(ScoreboardId*)((char*)this + 1072); }
 
 bool Scoreboard::createScoreboardId(PlayerScoreboardId const& pid) {
-    ScoreboardId newsid = nextScoreboardId();
+    ScoreboardId newsid                                                      = nextScoreboardId();
     ScoreboardId* (Scoreboard::*rv)(ScoreboardId, PlayerScoreboardId const&) = nullptr;
-    *((void**)&rv) = SYM("??$_createScoreboardId@UPlayerScoreboardId@@@Scoreboard@@IEAAAEBUScoreboardId@@U1@"
-                         "AEBUPlayerScoreboardId@@@Z");
+    *((void**)&rv) = LL_RESOLVE_SYMBOL("??$_createScoreboardId@UPlayerScoreboardId@@@Scoreboard@@IEAAAEBUScoreboardId@@U1@"
+                           "AEBUPlayerScoreboardId@@@Z");
     return (this->*rv)(newsid, pid)->isValid();
 }
 
@@ -27,7 +29,7 @@ LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 
     auto cTag = Player::getPlayerNbt(uuid);
     if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
-        ActorUniqueID aId(cTag->getInt64("UniqueID"));
+        ActorUniqueID      aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         // check
         auto& maySid = this->getScoreboardId(myPid);
@@ -42,7 +44,7 @@ LIAPI bool Scoreboard::createScoreboardId(mce::UUID const& uuid) {
 LIAPI ScoreboardId Scoreboard::getScoreboardId(mce::UUID const& uuid) const {
     auto cTag = Player::getPlayerNbt(uuid);
     if (cTag != nullptr && !cTag->isEmpty() && cTag->contains("UniqueID")) {
-        ActorUniqueID aId(cTag->getInt64("UniqueID"));
+        ActorUniqueID      aId(cTag->getInt64("UniqueID"));
         PlayerScoreboardId myPid(aId);
         return this->getScoreboardId(myPid);
     }
@@ -58,8 +60,12 @@ LIAPI ScoreboardId Scoreboard::getOrCreateScoreboardId(mce::UUID const& uuid) {
     return sId;
 }
 
-LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
-                                              PlayerScoreSetFunction pf) {
+LIAPI bool Scoreboard::forceModifyPlayerScore(
+    mce::UUID const&       uuid,
+    std::string const&     objname,
+    int                    val,
+    PlayerScoreSetFunction pf
+) {
     auto sId = Global<Scoreboard>->getOrCreateScoreboardId(uuid);
     if (sId.isValid()) {
         Objective* obj = Global<Scoreboard>->getObjective(objname);
@@ -74,8 +80,8 @@ LIAPI bool Scoreboard::forceModifyPlayerScore(mce::UUID const& uuid, std::string
     return false;
 }
 
-LIAPI bool Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val,
-                                              PlayerScoreSetFunction pf) {
+LIAPI bool
+Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val, PlayerScoreSetFunction pf) {
     auto uuid = PlayerInfo::getUUIDByXuid(xuid);
     if (!uuid.empty()) {
         return Global<Scoreboard>->forceModifyPlayerScore(mce::UUID::fromString(uuid), objname, val, pf);
@@ -92,7 +98,7 @@ LIAPI std::optional<int> Scoreboard::queryPlayerScore(mce::UUID const& uuid, std
 }
 
 LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::string const& objname) {
-    auto obj = Global<Scoreboard>->getObjective(objname);
+    auto obj  = Global<Scoreboard>->getObjective(objname);
     auto uuid = PlayerInfo::getUUIDByXuid(xuid);
     if (uuid.empty())
         return std::nullopt;
@@ -170,7 +176,7 @@ LIAPI std::optional<int> Scoreboard::setScore(const std::string& objname, const 
         return std::nullopt;
 
     auto& identity = getOrCreateScoreboardId(id);
-    bool temp = true;
+    bool  temp     = true;
     return Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, score, PlayerScoreSetFunction::Set);
 }
 
@@ -205,9 +211,13 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* p
     if (!obj)
         return true;
     vector<ScorePacketInfo> info;
-    ScorePacketInfo i((ScoreboardId*)&identity, objname,
-                      Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
-                      obj->getPlayerScore(identity).getCount(), obj->getName());
+    ScorePacketInfo         i(
+        (ScoreboardId*)&identity,
+        objname,
+        Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
+        obj->getPlayerScore(identity).getCount(),
+        obj->getName()
+    );
     info.emplace_back(i);
     for (auto sp : Level::getAllPlayers()) {
         sp->sendSetScorePacket(1, info);
@@ -223,9 +233,13 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Scoreboar
     if (!obj)
         return true;
     vector<ScorePacketInfo> info;
-    ScorePacketInfo i((ScoreboardId*)&identity, objname,
-                      Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
-                      obj->getPlayerScore(identity).getCount(), obj->getName());
+    ScorePacketInfo         i(
+        (ScoreboardId*)&identity,
+        objname,
+        Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
+        obj->getPlayerScore(identity).getCount(),
+        obj->getName()
+    );
     info.emplace_back(i);
     for (auto sp : Level::getAllPlayers()) {
         sp->sendSetScorePacket(1, info);
@@ -267,14 +281,13 @@ LIAPI bool Scoreboard::getScore(const std::string& objname, const std::string& i
     try {
         score = getScore(objname, id);
         return true;
-    } catch (...) {}
+    } catch (...) {
+    }
     return false;
 }
 
 // For compatibility
-LIAPI int Scoreboard::getScore(Player* player, const std::string& objname) {
-    return getScore(objname, player);
-}
+LIAPI int Scoreboard::getScore(Player* player, const std::string& objname) { return getScore(objname, player); }
 
 LIAPI int Scoreboard::getScore(const std::string& objname, Player* player) {
     Objective* obj = Global<Scoreboard>->getObjective(objname);
@@ -295,7 +308,8 @@ LIAPI bool Scoreboard::getScore(const std::string& objname, Player* player, int&
     try {
         score = getScore(objname, player);
         return true;
-    } catch (...) {}
+    } catch (...) {
+    }
     return false;
 }
 
@@ -314,8 +328,8 @@ LIAPI bool Scoreboard::setScore(const std::string& objname, Player* player, int 
     if (!identity.isValid()) {
         ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
     }
-    bool temp = true;
-    int result = Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, value, PlayerScoreSetFunction::Set);
+    bool temp   = true;
+    int  result = Global<Scoreboard>->modifyPlayerScore(temp, identity, *obj, value, PlayerScoreSetFunction::Set);
     if (result != value) {
         return false;
     }
@@ -354,8 +368,8 @@ LIAPI bool Scoreboard::reduceScore(const std::string& objname, Player* player, i
         return false;
     }
 
-    bool a1 = true;
-    bool& pa = a1;
+    bool  a1       = true;
+    bool& pa       = a1;
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!identity.isValid()) {
         ((ServerScoreboard*)Global<Scoreboard>)->createScoreboardId(*player);
@@ -366,14 +380,10 @@ LIAPI bool Scoreboard::reduceScore(const std::string& objname, Player* player, i
 }
 
 // For compatibility
-LIAPI bool Scoreboard::deleteScore(Player* player, const std::string& objname) {
-    return deleteScore(objname, player);
-}
+LIAPI bool Scoreboard::deleteScore(Player* player, const std::string& objname) { return deleteScore(objname, player); }
 
 LIAPI bool Scoreboard::deleteScore(const std::string& objname, Player* player) {
     return removeFromObjective(objname, player);
 }
 
-LIAPI bool Scoreboard::scoreboardIdIsValid(ScoreboardId* id) {
-    return id->isValid();
-}
+LIAPI bool Scoreboard::scoreboardIdIsValid(ScoreboardId* id) { return id->isValid(); }

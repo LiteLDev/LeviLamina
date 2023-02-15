@@ -9,68 +9,61 @@
 #include "llapi/utils/DbgHelper.h"
 #include "llapi/I18nAPI.h"
 
+#include "llapi/memory/Hook.h"
+
 using namespace std;
 
-CsLock locker;
+CsLock      locker;
 atomic_uint nextTaskId = 0;
 
 class ScheduleTaskData {
 public:
-    enum class TaskType {
-        Delay,
-        Repeat,
-        InfiniteRepeat
-    };
-    unsigned int taskId;
-    TaskType type;
-    long long leftTime, interval;
-    int count;
+    enum class TaskType { Delay, Repeat, InfiniteRepeat };
+    unsigned int              taskId;
+    TaskType                  type;
+    long long                 leftTime, interval;
+    int                       count;
     std::function<void(void)> task;
-    HMODULE handle;
+    HMODULE                   handle;
 
-    ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
-                                       unsigned long long interval, int count, HMODULE handle)
-    : type(type)
-    , task(task)
-    , leftTime((long long)delay)
-    , interval((long long)interval)
-    , count(count)
-    , taskId(++nextTaskId)
-    , handle(handle){};
+    ScheduleTaskData(
+        TaskType                  type,
+        std::function<void(void)> task,
+        unsigned long long        delay,
+        unsigned long long        interval,
+        int                       count,
+        HMODULE                   handle
+    )
+    : type(type), task(task), leftTime((long long)delay), interval((long long)interval), count(count),
+      taskId(++nextTaskId), handle(handle){};
 
-    inline unsigned int getTaskId() {
-        return taskId;
-    }
+    inline unsigned int getTaskId() { return taskId; }
 
-    inline bool operator>(const ScheduleTaskData& t) const {
-        return leftTime > t.leftTime;
-    }
+    inline bool operator>(const ScheduleTaskData& t) const { return leftTime > t.leftTime; }
 };
 
 std::vector<ScheduleTaskData> pendingTaskList{};
-std::vector<unsigned int> pendingCancelList{};
-bool pendingClear = false;
+std::vector<unsigned int>     pendingCancelList{};
+bool                          pendingClear = false;
 
 class ScheduleTaskQueueType
 : public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<ScheduleTaskData>> {
 public:
     bool remove(unsigned int taskId) {
-        size_t size = c.size();
-        bool removed = false;
+        size_t size    = c.size();
+        bool   removed = false;
 
         for (size_t i = 0; i < c.size(); ++i)
             if (c[i].taskId == taskId) {
                 c[i] = c.back();
                 c.pop_back();
-                std::make_heap(c.begin(), c.end(), comp); //重排二叉堆
+                std::make_heap(c.begin(), c.end(), comp); // 重排二叉堆
                 removed = true;
             }
         return removed;
     }
 
-    void clear() {
-        c.clear();
-    }
+    void clear() { c.clear(); }
 
     inline void tick() {
         if (pendingClear) {
@@ -125,23 +118,23 @@ public:
                     t.task();
 
                     switch (t.type) {
-                        case ScheduleTaskData::TaskType::InfiniteRepeat: {
+                    case ScheduleTaskData::TaskType::InfiniteRepeat: {
+                        ScheduleTaskData sche{std::move(t)};
+                        sche.leftTime = sche.interval;
+                        push(std::move(sche));
+                        break;
+                    }
+                    case ScheduleTaskData::TaskType::Repeat: {
+                        if (t.count > 0) {
                             ScheduleTaskData sche{std::move(t)};
                             sche.leftTime = sche.interval;
+                            --sche.count;
                             push(std::move(sche));
-                            break;
                         }
-                        case ScheduleTaskData::TaskType::Repeat: {
-                            if (t.count > 0) {
-                                ScheduleTaskData sche{std::move(t)};
-                                sche.leftTime = sche.interval;
-                                --sche.count;
-                                push(std::move(sche));
-                            }
-                            break;
-                        }
-                        default:
-                            break;
+                        break;
+                    }
+                    default:
+                        break;
                     }
                 } catch (const seh_exception& e) {
                     ll::logger.error("SEH exception occurred in ScheduleTask!");
@@ -193,8 +186,8 @@ ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay,
 ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handle) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
-    ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
-                                                   : ScheduleTaskData::TaskType::Repeat;
+    ScheduleTaskData::TaskType type =
+        maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -202,12 +195,17 @@ ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepea
     return ScheduleTask(sche.getTaskId());
 }
 
-ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
-                         unsigned long long tickRepeat, int maxCount, HMODULE handle) {
+ScheduleTask delayRepeat(
+    std::function<void(void)> task,
+    unsigned long long        tickDelay,
+    unsigned long long        tickRepeat,
+    int                       maxCount,
+    HMODULE                   handle
+) {
     if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
-    ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
-                                                   : ScheduleTaskData::TaskType::Repeat;
+    ScheduleTaskData::TaskType type =
+        maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -226,9 +224,8 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-THook(void, "?tick@ServerLevel@@UEAAXXZ",
-      void* _this) {
-    original(_this);
+LL_AUTO_STATIC_HOOK(SAHook1, ll::memory::Priority::PriorityNormal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
+    origin(_this);
     taskQueue.tick();
 }
 
@@ -239,9 +236,7 @@ void EndScheduleSystem() {
 }
 
 
-ScheduleTask::ScheduleTask(unsigned int taskId)
-: taskId(taskId) {
-}
+ScheduleTask::ScheduleTask(unsigned int taskId) : taskId(taskId) {}
 
 bool ScheduleTask::cancel() {
     locker.lock();

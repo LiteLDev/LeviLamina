@@ -1,5 +1,6 @@
-#include <windows.h>
 #include "llapi/utils/SRWLock.h"
+
+#include <Windows.h>
 
 SRWLock::SRWLock() {
     if (!inited) {
@@ -25,9 +26,7 @@ bool SRWLock::try_lock() {
     return TryAcquireSRWLockExclusive(&srwlock);
 }
 
-void SRWLock::unlock() {
-    ReleaseSRWLockExclusive(&srwlock);
-}
+void SRWLock::unlock() { ReleaseSRWLockExclusive(&srwlock); }
 
 void SRWLock::lock_shared() {
     if (!inited) {
@@ -45,6 +44,4 @@ bool SRWLock::try_lock_shared() {
     return TryAcquireSRWLockShared(&srwlock);
 }
 
-void SRWLock::unlock_shared() {
-    ReleaseSRWLockShared(&srwlock);
-}
+void SRWLock::unlock_shared() { ReleaseSRWLockShared(&srwlock); }

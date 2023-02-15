@@ -232,7 +232,7 @@ public:
 
         [[deprecated]] ServerCommandOrigin() {
             if (fake_vtbl[1] == nullptr) {
-                memcpy(fake_vtbl, (void**)(SYM("??_7ServerCommandOrigin@@6B@")) - 1, sizeof(fake_vtbl));
+                memcpy(fake_vtbl, (void**)(LL_RESOLVE_SYMBOL("??_7ServerCommandOrigin@@6B@")) - 1, sizeof(fake_vtbl));
                 fake_vtbl[1] = (void*)dummy;
             }
             myVTBL = fake_vtbl + 1;

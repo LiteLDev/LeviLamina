@@ -22,8 +22,7 @@ LIAPI bool Container::addItem_s(ItemStack* item) {
 LIAPI bool Container::addItem_s(ItemStack* item, int amount) {
     auto single = item->clone_s();
     single->set(1);
-    for (int i = 0; i < amount; i++)
-    {
+    for (int i = 0; i < amount; i++) {
         if (!this->addItem(*single->clone_s()))
             return false;
     }
@@ -48,19 +47,14 @@ LIAPI ItemStack* Container::getSlot(int slot) {
     return const_cast<ItemStack*>(list[slot]);
 }
 
-LIAPI std::vector<const ItemStack*> Container::getAllSlots() {
-    return getSlots();
-}
+LIAPI std::vector<const ItemStack*> Container::getAllSlots() { return getSlots(); }
 
 LIAPI int Container::getSize() {
-    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
+    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA
+    // Container::getSlotCopies
     return getContainerSize();
 }
 
-LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
-    return getContainerAt(pos, dim) != nullptr;
-}
+LIAPI bool Container::hasContainer(Vec3& pos, int dim) { return getContainerAt(pos, dim) != nullptr; }
 
-LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) {
-    return Level::getContainer(pos, dim);
-}
+LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) { return Level::getContainer(pos, dim); }

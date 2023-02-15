@@ -419,7 +419,7 @@ inline void __initPacketVftable() {
         return;
     inited = true;
 #define INIT_ADDR(type) \
-    VFTABLE_ADDR<type> = dlsym_real("??_7" #type "@@6B@");
+    VFTABLE_ADDR<type> = ll::memory::getPtr("??_7" #type "@@6B@");
 
     ForEachPacket(INIT_ADDR);
 

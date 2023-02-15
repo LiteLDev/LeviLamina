@@ -60,13 +60,13 @@
 #include "llapi/mc/BlockInstance.hpp"
 #include "llapi/mc/DBStorage.hpp"
 #include "llapi/mc/StringTag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 #include "liteloader/PlayerDeathPositions.h"
 
 using ll::logger;
+using ll::memory::dAccess;
 
-NetworkIdentifier* Player::getNetworkIdentifier() {
-    return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
-}
+NetworkIdentifier* Player::getNetworkIdentifier() { return (NetworkIdentifier*)(getUserEntityIdentifierComponent()); }
 
 
 Certificate* Player::getCertificate() {
@@ -82,11 +82,11 @@ LayeredAbilities* Player::getAbilities() {
     return &dAccess<LayeredAbilities>(this, 2124); // AbilityCommand::execute
 }
 
-//From https://github.com/dreamguxiang/BETweaker
+// From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
-    ActorUniqueID uid = getUniqueID();
-    auto abilities = getAbilities();
-    auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    ActorUniqueID uid       = getUniqueID();
+    auto          abilities = getAbilities();
+    auto          flying    = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
         abilities->setAbility(AbilitiesIndex::MayFly, value);
     }
@@ -100,13 +100,13 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
     if (index == AbilitiesIndex::NoClip) {
         abilities->setAbility(AbilitiesIndex::Flying, value);
     }
-    flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    flying      = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
     ab.setBool(0);
     if (flying)
         ab.setBool(1);
     UpdateAbilitiesPacket pkt(uid, *abilities);
-    auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
+    auto                  pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
     abilities->setAbility(AbilitiesIndex::Flying, flying);
     sendNetworkPacket(pkt2);
     sendNetworkPacket(pkt);
@@ -143,7 +143,8 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
+    auto map =
+        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
         if (s.find("LanguageCode") != std::string::npos) {
@@ -157,7 +158,8 @@ string Player::getLanguageCode() {
 string Player::getServerAddress() {
     if (isSimulatedPlayer())
         return "unknown";
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
+    auto map =
+        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto iter = map->begin(); iter != map->end(); ++iter) {
         string s(iter->first.c_str());
         if (s.find("ServerAddress") != s.npos) {
@@ -170,40 +172,40 @@ string Player::getServerAddress() {
 
 string Player::getDeviceTypeName() {
     switch ((int)getPlatform()) {
-        case -1:
-            return "Unknown";
-        case 1:
-            return "Android";
-        case 2:
-            return "iOS";
-        case 3:
-            return "OSX";
-        case 4:
-            return "Amazon";
-        case 5:
-            return "GearVR";
-        case 6:
-            return "Hololens";
-        case 7:
-            return "Win10";
-        case 8:
-            return "WIN32";
-        case 9:
-            return "Dedicated";
-        case 10:
-            return "TVOS";
-        case 11:
-            return "PlayStation";
-        case 12:
-            return "Nintendo";
-        case 13:
-            return "Xbox";
-        case 14:
-            return "WindowsPhone";
-        case 15:
-            return "Linux";
-        default:
-            return "Unknown";
+    case -1:
+        return "Unknown";
+    case 1:
+        return "Android";
+    case 2:
+        return "iOS";
+    case 3:
+        return "OSX";
+    case 4:
+        return "Amazon";
+    case 5:
+        return "GearVR";
+    case 6:
+        return "Hololens";
+    case 7:
+        return "Win10";
+    case 8:
+        return "WIN32";
+    case 9:
+        return "Dedicated";
+    case 10:
+        return "TVOS";
+    case 11:
+        return "PlayStation";
+    case 12:
+        return "Nintendo";
+    case 13:
+        return "Xbox";
+    case 14:
+        return "WindowsPhone";
+    case 15:
+        return "Linux";
+    default:
+        return "Unknown";
     }
 }
 
@@ -213,13 +215,9 @@ bool Player::kick(const std::string& msg) {
     return true;
 }
 
-bool Player::sendText(const std::string& text, TextType type) {
-    return sendTextPacket(text, type);
-}
+bool Player::sendText(const std::string& text, TextType type) { return sendTextPacket(text, type); }
 
-bool Player::talkAs(const std::string& msg) {
-    return sendTextTalkPacket(msg);
-}
+bool Player::talkAs(const std::string& msg) { return sendTextTalkPacket(msg); }
 
 
 bool Player::giveItem(ItemStack* item) {
@@ -231,8 +229,7 @@ bool Player::giveItem(ItemStack* item) {
 bool Player::giveItem(ItemStack* item, int amount) {
     auto single = item->clone_s();
     single->set(1);
-    for (int i = 0; i < amount; i++)
-    {
+    for (int i = 0; i < amount; i++) {
         auto it = *single->clone_s();
         if (!this->add(it) && !this->isCreative()) {
             this->drop(it, false);
@@ -243,7 +240,7 @@ bool Player::giveItem(ItemStack* item, int amount) {
 }
 
 bool Player::giveItem(string typeName, int amount) {
-    int temp;
+    int  temp;
     auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), amount, temp);
     for (auto& itemstack : itemlist) {
         if (!itemstack.isNull()) {
@@ -277,8 +274,8 @@ int Player::clearItem(string typeName) {
 
     // Inventory
     Container* container = &getInventory();
-    auto items = container->getAllSlots();
-    int size = container->getSize();
+    auto       items     = container->getAllSlots();
+    int        size      = container->getSize();
     for (int i = 0; i < size; ++i) {
         if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
@@ -289,8 +286,8 @@ int Player::clearItem(string typeName) {
 
     // Armor
     auto& armor = getArmorContainer();
-    items = armor.getAllSlots();
-    size = armor.getSize();
+    items       = armor.getAllSlots();
+    size        = armor.getSize();
     for (int i = 0; i < size; ++i) {
         if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
@@ -302,37 +299,29 @@ int Player::clearItem(string typeName) {
     return res;
 }
 
-string Player::getName() {
-    return getNameTag();
-}
+string Player::getName() { return getNameTag(); }
 
-bool Player::runcmd(const string& cmd) {
-    return sendCommandRequestPacket(cmd);
-}
+bool Player::runcmd(const string& cmd) { return sendCommandRequestPacket(cmd); }
 
 Container* Player::getEnderChestContainer() {
     return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
 }
 
-bool Player::transferServer(const string& address, unsigned short port) {
-    return sendTransferPacket(address, port);
-}
+bool Player::transferServer(const string& address, unsigned short port) { return sendTransferPacket(address, port); }
 
 std::pair<BlockPos, int> Player::getRespawnPosition() {
-    BlockPos bp = getSpawnPosition();
-    int dimId = getSpawnDimension();
+    BlockPos bp    = getSpawnPosition();
+    int      dimId = getSpawnDimension();
     if (dimId == 3) // has no bed.
     {
-        bp = getExpectedSpawnPosition();
+        bp    = getExpectedSpawnPosition();
         dimId = getExpectedSpawnDimensionId();
     }
 
     return {bp, dimId};
 }
 
-std::unique_ptr<CompoundTag> Player::getNbt() {
-    return CompoundTag::fromPlayer(this);
-}
+std::unique_ptr<CompoundTag> Player::getNbt() { return CompoundTag::fromPlayer(this); }
 
 bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
@@ -341,9 +330,7 @@ bool Player::setNbt(CompoundTag* nbt) {
 #include "llapi/mc/Attribute.hpp"
 #include "llapi/mc/HashedString.hpp"
 #include "llapi/SendPacketAPI.h"
-bool Player::refreshAttribute(class Attribute const& attribute) {
-    return refreshAttributes({&attribute});
-}
+bool Player::refreshAttribute(class Attribute const& attribute) { return refreshAttributes({&attribute}); }
 bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) {
     BinaryStream wp;
     wp.writeUnsignedVarInt64(getRuntimeID()); // EntityId
@@ -396,20 +383,14 @@ string Player::getClientId() {
     return Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getDeviceId();
 }
 
-int Player::getDeviceType() {
-    return magic_enum::enum_integer(getPlatform());
-}
+int Player::getDeviceType() { return magic_enum::enum_integer(getPlatform()); }
 
-bool Player::isOperator() {
-    return (int)getPlayerPermissionLevel() >= 2;
-}
+bool Player::isOperator() { return (int)getPlayerPermissionLevel() >= 2; }
 
-bool Player::isOP() {
-    return isOperator();
-}
+bool Player::isOP() { return isOperator(); }
 
 int Player::getCurrentExperience() {
-    auto& attr = getAttribute(Player::EXPERIENCE);
+    auto& attr       = getAttribute(Player::EXPERIENCE);
     float currentExp = getXpNeededForNextLevel() * attr.getCurrentValue();
     return static_cast<int>(currentExp);
 }
@@ -424,9 +405,9 @@ bool Player::setCurrentExperience(int exp) {
 }
 
 size_t Player::getTotalExperience() {
-    int level = getPlayerLevel();
-    size_t exp = getTotalXpNeededForLevel(level);
-    exp += getCurrentExperience();
+    int    level = getPlayerLevel();
+    size_t exp   = getTotalXpNeededForLevel(level);
+    exp          += getCurrentExperience();
     return exp;
 }
 
@@ -453,14 +434,14 @@ bool Player::reduceExperience(size_t exp) {
     if (!attr)
         return false;
     int neededExp = getXpNeededForNextLevel();
-    int currExp = static_cast<int>(attr->getCurrentValue() * neededExp);
+    int currExp   = static_cast<int>(attr->getCurrentValue() * neededExp);
     if (exp <= currExp) {
         attr->setCurrentValue(static_cast<float>(currExp - exp) / neededExp);
         return true;
     }
     attr->setCurrentValue(0);
     size_t needExp = exp - currExp;
-    int level = getPlayerLevel();
+    int    level   = getPlayerLevel();
     while (level > 0) {
         addLevels(-1);
         int levelXp = getXpNeededForNextLevel();
@@ -469,7 +450,7 @@ bool Player::reduceExperience(size_t exp) {
             return true;
         }
         needExp -= levelXp;
-        level = getPlayerLevel();
+        level   = getPlayerLevel();
     }
     return false;
 }
@@ -497,48 +478,40 @@ size_t Player::getTotalXpNeededForLevel(int level) {
 bool Player::crashClient() {
     if (isSimulatedPlayer())
         return false;
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::LevelChunk);
+    auto pkt                     = MinecraftPackets::createPacket(MinecraftPacketIds::LevelChunk);
     dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
     return true;
 }
 
-bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder) {
+bool Player::setSidebar(
+    const std::string&                              title,
+    const std::vector<std::pair<std::string, int>>& data,
+    ObjectiveSortOrder                              sortOrder
+) {
     sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 
     vector<ScorePacketInfo> info;
     for (auto& x : data) {
         const ScoreboardId& id = ScoreboardId(NewScoreId());
-        ScorePacketInfo i((ScoreboardId*)&id, "FakeScoreObj", IdentityDefinition::Type::Fake, x.second, x.first);
+        ScorePacketInfo     i((ScoreboardId*)&id, "FakeScoreObj", IdentityDefinition::Type::Fake, x.second, x.first);
         info.emplace_back(i);
     }
     sendSetScorePacket(0, info);
     return sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 }
 
-bool Player::removeSidebar() {
-    return sendSetDisplayObjectivePacket("", "", (char)0);
-}
+bool Player::removeSidebar() { return sendSetDisplayObjectivePacket("", "", (char)0); }
 
-int Player::getScore(const string& key) {
-    return Scoreboard::getScore(this, key);
-}
+int Player::getScore(const string& key) { return Scoreboard::getScore(this, key); }
 
-bool Player::setScore(const string& key, int value) {
-    return Scoreboard::setScore(this, key, value);
-}
+bool Player::setScore(const string& key, int value) { return Scoreboard::setScore(this, key, value); }
 
-bool Player::addScore(const string& key, int value) {
-    return Scoreboard::addScore(this, key, value);
-}
+bool Player::addScore(const string& key, int value) { return Scoreboard::addScore(this, key, value); }
 
-bool Player::reduceScore(const string& key, int value) {
-    return Scoreboard::reduceScore(this, key, value);
-}
+bool Player::reduceScore(const string& key, int value) { return Scoreboard::reduceScore(this, key, value); }
 
-bool Player::deleteScore(const string& key) {
-    return Scoreboard::deleteScore(this, key);
-}
+bool Player::deleteScore(const string& key) { return Scoreboard::deleteScore(this, key); }
 
 void Player::addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
@@ -581,23 +554,23 @@ bool Player::sendTextPacket(string text, TextType Type) const {
     wp.writeUnsignedChar((char)Type);
     wp.writeBool(true);
     switch (Type) {
-        case TextType::CHAT:
-        case TextType::WHISPER:
-        case TextType::ANNOUNCEMENT:
-            wp.writeString("Server");
-        case TextType::RAW:
-        case TextType::TIP:
-        case TextType::SYSTEM:
-        case TextType::JSON_WHISPER:
-        case TextType::JSON:
-            wp.writeString(text);
-            break;
-        case TextType::TRANSLATION:
-        case TextType::POPUP:
-        case TextType::JUKEBOX_POPUP:
-            wp.writeString(text);
-            wp.writeUnsignedVarInt(0);
-            break;
+    case TextType::CHAT:
+    case TextType::WHISPER:
+    case TextType::ANNOUNCEMENT:
+        wp.writeString("Server");
+    case TextType::RAW:
+    case TextType::TIP:
+    case TextType::SYSTEM:
+    case TextType::JSON_WHISPER:
+    case TextType::JSON:
+        wp.writeString(text);
+        break;
+    case TextType::TRANSLATION:
+    case TextType::POPUP:
+    case TextType::JUKEBOX_POPUP:
+        wp.writeString(text);
+        wp.writeUnsignedVarInt(0);
+        break;
     }
     wp.writeString("");
     wp.writeString("");
@@ -614,7 +587,8 @@ bool Player::sendToastPacket(string title, string msg) {
     return true;
 }
 
-bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
+    const {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -652,15 +626,18 @@ bool Player::sendNotePacket(unsigned int tone) {
     return true;
 }
 
-bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID)
+    const {
     BinaryStream wp;
     wp.writeUnsignedChar(dimID);
-    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
+    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity
+    // associated with this unique ID.
     wp.writeVarInt64(EntityUniqueID);
     wp.writeFloat(spawnPos.x);
     wp.writeFloat(spawnPos.y);
     wp.writeFloat(spawnPos.z);
-    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
+    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is
+    // built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
@@ -675,26 +652,40 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
+bool Player::sendAddItemEntityPacket(
+    unsigned long long                runtimeID,
+    Item const&                       item,
+    int                               stackSize,
+    short                             aux,
+    Vec3                              pos,
+    vector<std::unique_ptr<DataItem>> dataItems
+) const {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeID);                                // RuntimeId
+    wp.writeVarInt64(runtimeID);         // RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); // EntityId
-    ItemStackDescriptor desc(item, aux, stackSize, nullptr);
+    ItemStackDescriptor        desc(item, aux, stackSize, nullptr);
     NetworkItemStackDescriptor netDesc(desc);
     wp.writeType(netDesc);
-    wp.writeType(pos); 
+    wp.writeType(pos);
     wp.writeType(Vec3::ZERO);
 
-    wp.writeType(dataItems); 
+    wp.writeType(dataItems);
 
-    wp.writeBool(false); 
+    wp.writeBool(false);
 
     NetworkPacket<15> pkt(wp.getRaw());
     sendNetworkPacket(pkt);
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems) {
+bool Player::sendAddEntityPacket(
+    unsigned long long                runtimeID,
+    string                            entityType,
+    Vec3                              pos,
+    Vec2                              rotation,
+    float                             headYaw,
+    vector<std::unique_ptr<DataItem>> dataItems
+) {
     BinaryStream bs;
     bs.writeVarInt64(runtimeID);
     bs.writeUnsignedVarInt64(runtimeID);
@@ -721,7 +712,12 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer) {
+bool Player::sendUpdateBlockPacket(
+    BlockPos const&  bpos,
+    unsigned int     runtimeId,
+    UpdateBlockFlags flag,
+    UpdateBlockLayer layer
+) {
     BinaryStream wp;
     wp.writeVarInt(bpos.x);
     wp.writeUnsignedVarInt(bpos.y);
@@ -734,7 +730,12 @@ bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId,
     sendNetworkPacket(*pkt);
     return true;
 }
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer) {
+bool Player::sendUpdateBlockPacket(
+    BlockPos const&  bpos,
+    const Block&     block,
+    UpdateBlockFlags flag,
+    UpdateBlockLayer layer
+) {
     return sendUpdateBlockPacket(bpos, block.getRuntimeId(), flag, layer);
 }
 
@@ -745,14 +746,15 @@ bool Player::sendTransferPacket(const string& address, short port) const {
 }
 
 bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
-    SetDisplayObjectivePacket pkt = SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder));
+    SetDisplayObjectivePacket pkt =
+        SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder));
     sendNetworkPacket(pkt);
     return true;
 }
 
 bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
-    auto packet = MinecraftPackets::createPacket(0x6c);
-    dAccess<char>(packet.get(), 48) = type;
+    auto packet                                        = MinecraftPackets::createPacket(0x6c);
+    dAccess<char>(packet.get(), 48)                    = type;
     dAccess<vector<ScorePacketInfo>>(packet.get(), 56) = data;
     sendNetworkPacket(*packet);
     return true;
@@ -763,33 +765,33 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     wp.writeVarInt64(getUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type) {
-        case BossEvent::Show:
-            wp.writeString(name);
-            wp.writeFloat(percent);
-            goto LABEL_3;
-        case BossEvent::RegisterPlayer:
-        case BossEvent::UnregisterPlayer:
-        case BossEvent::ResendRaidBossEventData: {
-            wp.writeVarInt64(getUniqueID() + 1145141919);
-            break;
-        }
-        case BossEvent::HealthPercentage: {
-            wp.writeFloat(percent);
-            break;
-        }
-        case BossEvent::Title: {
-            wp.writeString(name);
-            break;
-        }
-        case BossEvent::AppearanceProperties:
-        LABEL_3:
-            wp.writeUnsignedShort(1);
-            goto LABEL_4;
-        case BossEvent::Texture:
-        LABEL_4:
-            wp.writeUnsignedVarInt((int)colour);
-            wp.writeUnsignedVarInt(overlay);
-            break;
+    case BossEvent::Show:
+        wp.writeString(name);
+        wp.writeFloat(percent);
+        goto LABEL_3;
+    case BossEvent::RegisterPlayer:
+    case BossEvent::UnregisterPlayer:
+    case BossEvent::ResendRaidBossEventData: {
+        wp.writeVarInt64(getUniqueID() + 1145141919);
+        break;
+    }
+    case BossEvent::HealthPercentage: {
+        wp.writeFloat(percent);
+        break;
+    }
+    case BossEvent::Title: {
+        wp.writeString(name);
+        break;
+    }
+    case BossEvent::AppearanceProperties:
+    LABEL_3:
+        wp.writeUnsignedShort(1);
+        goto LABEL_4;
+    case BossEvent::Texture:
+    LABEL_4:
+        wp.writeUnsignedVarInt((int)colour);
+        wp.writeUnsignedVarInt(overlay);
+        break;
     }
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
@@ -803,16 +805,14 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 }
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
-    auto packet = MinecraftPackets::createPacket(0x4d);
+    auto packet                       = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
-    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    ServerNetworkHandler* handler     = Global<ServerNetworkHandler> + 16;
     handler->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
-bool Player::sendTextTalkPacket(const string& msg) {
-    return sendTextTalkPacket(msg, nullptr);
-}
+bool Player::sendTextTalkPacket(const string& msg) { return sendTextTalkPacket(msg, nullptr); }
 #include "llapi/utils/DbgHelper.h"
 bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
@@ -824,7 +824,7 @@ bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     try {
         Event::PlayerChatEvent ev;
         ev.mMessage = msg;
-        ev.mPlayer = this;
+        ev.mPlayer  = this;
         if (!ev.call())
             return false;
     } catch (...) {
@@ -849,18 +849,24 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     return true;
 }
 
-bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const {
+bool Player::sendSimpleForm(
+    const string&                     title,
+    const string&                     content,
+    const vector<string>&             buttons,
+    const std::vector<std::string>&   images,
+    std::function<void(Player*, int)> callback
+) const {
     nlohmann::json model = R"({"title": "","content":"","buttons":[],"type":"form"})"_json;
-    model["title"] = title;
-    model["content"] = content;
+    model["title"]       = title;
+    model["content"]     = content;
     for (int i = 0; i < buttons.size(); ++i) {
         nlohmann::json oneButton = "{}"_json;
-        oneButton["text"] = buttons[i];
+        oneButton["text"]        = buttons[i];
         if (!images[i].empty()) {
             nlohmann::json image = "{}"_json;
-            image["type"] = images[i].find("textures/") == 0 ? "path" : "url";
-            image["data"] = images[i];
-            oneButton["image"] = image;
+            image["type"]        = images[i].find("textures/") == 0 ? "path" : "url";
+            image["data"]        = images[i];
+            oneButton["image"]   = image;
         }
         model["buttons"].push_back(oneButton);
     }
@@ -873,14 +879,20 @@ bool Player::sendSimpleForm(const string& title, const string& content, const ve
     return true;
 }
 
-bool Player::sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const {
+bool Player::sendModalForm(
+    const string&                      title,
+    const string&                      content,
+    const string&                      confirmButton,
+    const string&                      cancelButton,
+    std::function<void(Player*, bool)> callback
+) const {
     nlohmann::json model = R"({"title":"","content":"","button1":"","button2":"","type":"modal"})"_json;
-    model["title"] = title;
-    model["content"] = content;
-    model["button1"] = confirmButton;
-    model["button2"] = cancelButton;
-    std::string data = model.dump();
-    unsigned formId = NewFormId();
+    model["title"]       = title;
+    model["content"]     = content;
+    model["button1"]     = confirmButton;
+    model["button2"]     = cancelButton;
+    std::string data     = model.dump();
+    unsigned    formId   = NewFormId();
     if (!sendRawFormPacket(formId, data))
         return false;
     SetModalFormPacketCallback(formId, callback);
@@ -904,7 +916,13 @@ bool Player::isValid(Player* player) {
 }
 
 // For Compatibility
-bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const {
+bool Player::sendSimpleFormPacket(
+    const string&                   title,
+    const string&                   content,
+    const vector<string>&           buttons,
+    const std::vector<std::string>& images,
+    std::function<void(int)>        callback
+) const {
     return sendSimpleForm(title, content, buttons, images, [callback](Player* pl, int id) {
         if (!callback || !Player::isValid(pl))
             return;
@@ -916,7 +934,13 @@ bool Player::sendSimpleFormPacket(const string& title, const string& content, co
         }
     });
 }
-bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback) {
+bool Player::sendModalFormPacket(
+    const string&             title,
+    const string&             content,
+    const string&             button1,
+    const string&             button2,
+    std::function<void(bool)> callback
+) {
     return sendModalForm(title, content, button1, button2, [callback](Player* pl, bool res) {
         if (!callback || !Player::isValid(pl))
             return;
@@ -942,51 +966,53 @@ bool Player::sendCustomFormPacket(const std::string& data, std::function<void(st
     });
 }
 
-DBHelpers::Category const playerCategory = (DBHelpers::Category)7;
-std::string const PLAYER_KEY_SERVER_ID = "ServerId";
-std::string const PLAYER_KEY_MSA_ID = "MsaId";
-std::string const PLAYER_KEY_SELF_SIGNED_ID = "SelfSignedId";
+DBHelpers::Category const playerCategory            = (DBHelpers::Category)7;
+std::string const         PLAYER_KEY_SERVER_ID      = "ServerId";
+std::string const         PLAYER_KEY_MSA_ID         = "MsaId";
+std::string const         PLAYER_KEY_SELF_SIGNED_ID = "SelfSignedId";
 
 void forEachUuid(bool includeSelfSignedId, std::function<void(std::string_view const& uuid)> callback) {
     static size_t count;
     count = 0;
-    Global<DBStorage>->forEachKeyWithPrefix("player_", playerCategory, [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
-        if (key_left.size() == 36) {
-            auto tag = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
-            auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
-            if (!msaId.empty()) {
-                if (msaId == key_left) {
-                    count++;
-                    callback(msaId);
+    Global<DBStorage>->forEachKeyWithPrefix(
+        "player_",
+        playerCategory,
+        [&callback, includeSelfSignedId](gsl::cstring_span<-1> key_left, gsl::cstring_span<-1> data) {
+            if (key_left.size() == 36) {
+                auto  tag   = CompoundTag::fromBinaryNBT((void*)data.data(), data.size());
+                auto& msaId = tag->getString(PLAYER_KEY_MSA_ID);
+                if (!msaId.empty()) {
+                    if (msaId == key_left) {
+                        count++;
+                        callback(msaId);
+                    }
+                    return;
                 }
-                return;
-            }
-            if (!includeSelfSignedId) {
-                return;
-            }
-            auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
-            if (!selfSignedId.empty()) {
-                if(selfSignedId == key_left) {
-                    count++;
-                    callback(selfSignedId);
+                if (!includeSelfSignedId) {
+                    return;
                 }
-                return;
+                auto& selfSignedId = tag->getString(PLAYER_KEY_SELF_SIGNED_ID);
+                if (!selfSignedId.empty()) {
+                    if (selfSignedId == key_left) {
+                        count++;
+                        callback(selfSignedId);
+                    }
+                    return;
+                }
             }
         }
-    });
+    );
 }
 
 std::vector<string> Player::getAllUuid(bool includeSelfSignedId) {
     std::vector<std::string> uuids;
-    forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) {
-        uuids.push_back(std::string(uuid));
-    });
+    forEachUuid(includeSelfSignedId, [&uuids](std::string_view uuid) { uuids.push_back(std::string(uuid)); });
     return uuids;
 }
 
 std::unique_ptr<CompoundTag> getPlayerIdsTag(mce::UUID const& uuid) {
     auto& dbStorage = *Global<DBStorage>;
-    auto playerKey = "player_" + uuid.asString();
+    auto  playerKey = "player_" + uuid.asString();
     if (dbStorage.hasKey(playerKey, playerCategory)) {
         return dbStorage.getCompoundTag(playerKey, playerCategory);
     }
@@ -1002,9 +1028,9 @@ std::string getServerId(mce::UUID const& uuid) {
 }
 
 bool Player::deletePlayerNbt(mce::UUID const& uuid) {
-    try{
+    try {
         auto& dbStorage = *Global<DBStorage>;
-        auto serverId = getServerId(uuid);
+        auto  serverId  = getServerId(uuid);
         if (serverId.empty())
             return false;
         if (!dbStorage.hasKey(serverId, playerCategory)) {
@@ -1013,8 +1039,7 @@ bool Player::deletePlayerNbt(mce::UUID const& uuid) {
         }
         auto res = dbStorage.deleteData(serverId, playerCategory);
         return true;
-    }
-    catch (const std::exception& exc) {
+    } catch (const std::exception& exc) {
         logger.error("Fail to delete player nbt!\n{}", exc.what());
     }
     return false;
@@ -1032,7 +1057,6 @@ std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
 }
 
 
-
 std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
     if (auto player = Global<Level>->getPlayer(uuid)) {
         return player->getNbt();
@@ -1042,16 +1066,15 @@ std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
 
 bool setOfflineNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     try {
-        auto &data = *nbt;
-        auto serverId = getServerId(uuid);
+        auto& data     = *nbt;
+        auto  serverId = getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }
         Global<DBStorage>->saveData(serverId, data.toBinaryNBT(), playerCategory);
         return true;
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to set offline player nbt!\n{}",exc.what());
+    } catch (const std::exception& exc) {
+        logger.error("Fail to set offline player nbt!\n{}", exc.what());
     }
     return false;
 }
@@ -1065,32 +1088,29 @@ bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
         bool res = true;
         if (auto pl = Global<Level>->getPlayer(uuid)) {
             return pl->setNbt(nbt);
-        }
-        else {
+        } else {
             return setOfflineNbt(uuid, nbt);
         }
-    }
-    catch (const std::exception& exc) {
-        logger.error("Fail to set player nbt!\n{}",exc.what());
+    } catch (const std::exception& exc) {
+        logger.error("Fail to set player nbt!\n{}", exc.what());
     }
     return false;
 }
 
 bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags) {
     try {
-        auto &data = *nbt;
-        auto serverId = getServerId(uuid);
+        auto& data     = *nbt;
+        auto  serverId = getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }
         bool res = true;
         if (auto pl = Global<Level>->getPlayer(uuid)) {
             auto playerTag = pl->getNbt();
-            for (int i = 0; i <= tags.size()-1; i++) {
+            for (int i = 0; i <= tags.size() - 1; i++) {
                 if (data.get(tags[i]) == nullptr) {
                     continue;
-                }
-                else{
+                } else {
                     res = res && (*playerTag).put(tags[i], data.get(tags[i])->copy());
                 }
             }
@@ -1098,15 +1118,13 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vec
             pl->refreshInventory();
             data.destroy();
             return res;
-        }
-        else {
-            auto oridata = getOfflineNbt(uuid);
+        } else {
+            auto         oridata = getOfflineNbt(uuid);
             CompoundTag& olddata = *oridata;
-            for (int i = 0; i <= tags.size()-1; i++) {
+            for (int i = 0; i <= tags.size() - 1; i++) {
                 if (data.get(tags[i]) == nullptr) {
                     continue;
-                }
-                else{
+                } else {
                     res = res && olddata.put(tags[i], data.get(tags[i])->copy());
                 }
             }
@@ -1115,12 +1133,11 @@ bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vec
             olddata.destroy();
             return res;
         }
-    }
-    catch (const std::exception& exc) {
+    } catch (const std::exception& exc) {
         logger.error("Fail to set player nbt tag!\n{}", exc.what());
     }
     return false;
-}   
+}
 
 std::pair<Vec3, int> Player::getLastDeathPosition() {
     for (auto pos : PlayerDeathPositions::getDeathPositions()) {
@@ -1143,20 +1160,20 @@ bool testPlayerExperience(Player& player) {
 
     assert(player.reduceExperience(12345));
     int level = player.getPlayerLevel();
-    int exp = player.getCurrentExperience();
-    totalExp = player.getTotalExperience();
+    int exp   = player.getCurrentExperience();
+    totalExp  = player.getTotalExperience();
     logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
     assert(totalExp == 123456 - 12345);
     player.resetPlayerLevel();
     player.addLevels(12345);
-    level = player.getPlayerLevel();
-    exp = player.getCurrentExperience();
+    level    = player.getPlayerLevel();
+    exp      = player.getCurrentExperience();
     totalExp = player.getTotalExperience();
     logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
     player.resetPlayerLevel();
     player.addExperience(INT32_MAX);
-    level = player.getPlayerLevel();
-    exp = player.getCurrentExperience();
+    level    = player.getPlayerLevel();
+    exp      = player.getCurrentExperience();
     totalExp = player.getTotalExperience();
     logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
     // for (int i = 0; i <= 1000; i++) {

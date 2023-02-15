@@ -27,7 +27,6 @@ using ll::logger;
 
 std::unordered_map<std::string, ll::Plugin> plugins;
 
-
 bool ll::PluginManager::registerPlugin(HMODULE handle, std::string name, std::string desc, ll::Version version,
                                        std::map<std::string, std::string> others) {
     if (handle != nullptr) // DLL Plugin

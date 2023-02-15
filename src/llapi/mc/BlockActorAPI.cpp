@@ -4,9 +4,6 @@
 #include "llapi/mc/Dimension.hpp"
 #include "llapi/mc/BlockSource.hpp"
 #include "llapi/mc/StructureBlockActor.hpp"
-#include "llapi/mc/StructureBlockPalette.hpp"
-#include "llapi/mc/StructureEditorData.hpp"
-#include <magic_enum.hpp>
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {
     return static_cast<unsigned int>(block->getBlockEntityType()); // IDA Block::getBlockEntityType
@@ -31,13 +28,9 @@ bool BlockActor::refreshData(BlockSource* bs) {
     return true;
 }
 
-std::unique_ptr<CompoundTag> BlockActor::getNbt() {
-    return CompoundTag::fromBlockActor(this);
-}
+std::unique_ptr<CompoundTag> BlockActor::getNbt() { return CompoundTag::fromBlockActor(this); }
 
-bool BlockActor::setNbt(CompoundTag* nbt) {
-    return nbt->setBlockActor(this);
-}
+bool BlockActor::setNbt(CompoundTag* nbt) { return nbt->setBlockActor(this); }
 
 bool BlockActor::setNbt(CompoundTag* nbt, BlockSource* bs) {
     auto res = setNbt(nbt);

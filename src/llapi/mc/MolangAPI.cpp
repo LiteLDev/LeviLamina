@@ -19,6 +19,7 @@
 
 
 #include "llapi/Global.h"
+#include "llapi/memory/Hook.h"
 #include "llapi/mc/ExpressionNode.hpp"
 #include "llapi/mc/Actor.hpp"
 #include "llapi/mc/MolangScriptArg.hpp"
@@ -27,22 +28,32 @@
 #include "llapi/mc/MolangSerializer.hpp"
 
 #pragma region Hook
-THook(void*,
-      "?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$"
-      "allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$"
-      "allocator@VExpressionNode@@@std@@@std@@@Z@4@0W4MolangQueryFunctionReturnType@@VHashedString@@_K4AEBV?$"
-      "initializer_list@H@4@@Z",
-      std::string const& a2, void* a3, std::string const& a4, void* a5, HashedString a6, __int64 a7, __int64 a8,
-      std::initializer_list<int>& a9) {
+LL_AUTO_STATIC_HOOK(
+    MolangAPIHook,
+    ll::memory::Priority::PriorityNormal,
+    "?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$"
+    "allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$"
+    "allocator@VExpressionNode@@@std@@@std@@@Z@4@0W4MolangQueryFunctionReturnType@@VHashedString@@_K4AEBV?$"
+    "initializer_list@H@4@@Z",
+    void*,
+    std::string const&          a2,
+    void*                       a3,
+    std::string const&          a4,
+    void*                       a5,
+    HashedString                a6,
+    __int64                     a7,
+    __int64                     a8,
+    std::initializer_list<int>& a9
+) {
     auto experiment = std::initializer_list<int>{};
     // in order to use all query functions,we need to delete all experiment requirements here
-    return original(a2, a3, a4, a5, a6, a7, a8, experiment);
+    return origin(a2, a3, a4, a5, a6, a7, a8, experiment);
 }
 #pragma endregion
 
 #pragma region MolangInstance
 MolangInstance::MolangInstance(const string& expressionStr) {
-    SymCall("??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
+    LL_SYMBOL_CALL("??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
             "W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z",
             ExpressionNode*, ExpressionNode*, string, int, gsl::span<class HashedString const, -1>)(
         (ExpressionNode*)expression, expressionStr, /*MolangVersion*/ 6,
@@ -58,24 +69,23 @@ float MolangInstance::evalAsFloat(Actor* actor) {
 }
 Json::Value MolangInstance::evalAsJson(Actor* actor) {
     return MolangSerializer::serializeScriptArg(
-        ((ExpressionNode*)expression)->evalGeneric(RenderParams::getRenderParams(*actor)));
+        ((ExpressionNode*)expression)->evalGeneric(RenderParams::getRenderParams(*actor))
+    );
 }
-string MolangInstance::getExpressionString() {
-    return ((ExpressionNode*)expression)->getExpressionString();
-}
-bool MolangInstance::isInitialized() {
-    return ((ExpressionNode*)expression)->isInitialized();
-}
-bool MolangInstance::isValid() {
-    return ((ExpressionNode*)expression)->isValid();
-}
-bool MolangInstance::parse(const string& expressionStr, MolangVersion version,
-                           gsl::span<class HashedString const, -1> types) {
+string MolangInstance::getExpressionString() { return ((ExpressionNode*)expression)->getExpressionString(); }
+bool   MolangInstance::isInitialized() { return ((ExpressionNode*)expression)->isInitialized(); }
+bool   MolangInstance::isValid() { return ((ExpressionNode*)expression)->isValid(); }
+bool   MolangInstance::parse(
+    const string&                           expressionStr,
+    MolangVersion                           version,
+    gsl::span<class HashedString const, -1> types
+) {
     return ((ExpressionNode*)expression)->parse(expressionStr, version, types);
 }
 #pragma endregion
 
 #pragma region QuickEval
+
 float Actor::quickEvalMolangScript(const string& expression) {
     // MolangInstance instance(expression);
     MolangInstance instance(expression);
@@ -91,7 +101,7 @@ float Actor::quickEvalMolangScript(const string& expression) {
 // Json::Value Actor::quickEvalMolangScriptAsJson(Actor& actor, string& expression) {
 //     char v56[0xC8]{}; // allocate memory
 //     ExpressionNode* exp =
-//         SymCall("??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
+//         LL_SYMBOL_CALL("??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
 //                 "W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z",
 //                 ExpressionNode*, ExpressionNode*, string, int, gsl::span<class HashedString const, -1>)(
 //             (ExpressionNode*)v56, expression, 6,

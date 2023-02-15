@@ -30,7 +30,7 @@ public:
             BinaryStream* stream;
         }* CStruct      = new VarIntDataOutput_C();
         CStruct->stream = bs;
-        CStruct->vtbl   = (__int64)dlsym("??_7VarIntDataOutput@@6B@");
+        CStruct->vtbl   = (__int64)LL_RESOLVE_SYMBOL("??_7VarIntDataOutput@@6B@");
         return (VarIntDataOutput*)CStruct;
     };
 #undef AFTER_EXTRA

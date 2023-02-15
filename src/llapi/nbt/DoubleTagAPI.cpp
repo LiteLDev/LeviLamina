@@ -1,8 +1,9 @@
 #include "llapi/mc/DoubleTag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 
-double& DoubleTag::value() {
-    return dAccess<double, 8>(this);
-}
+using ll::memory::dAccess;
+
+double& DoubleTag::value() { return dAccess<double, 8>(this); }
 
 DoubleTag& DoubleTag::operator=(double val) {
     value() = val;
@@ -22,9 +23,7 @@ bool DoubleTag::set(double val) {
     return true;
 }
 
-double DoubleTag::get() {
-    return value();
-}
+double DoubleTag::get() { return value(); }
 
 DoubleTag::operator double() const {
     if (!this)

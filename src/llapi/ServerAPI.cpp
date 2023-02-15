@@ -4,16 +4,13 @@
 #include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/ServerAPI.h"
 #include <string>
+
 class UserEntityIdentifierComponent;
 
 namespace ll {
-std::string getBdsVersion() {
-    return Common::getGameVersionString();
-}
+std::string getBdsVersion() { return Common::getGameVersionString(); }
 
-int getServerProtocolVersion() {
-    return SharedConstants::NetworkProtocolVersion;
-}
+int getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
 
 bool setServerMotd(const std::string& motd) {
     if (!Global<ServerNetworkHandler>)
@@ -27,15 +24,9 @@ bool setServerMotd(const std::string& motd) {
 // for abi compatibility
 
 namespace LL {
-std::string getBdsVersion() {
-    return ll::getBdsVersion();
-}
+std::string getBdsVersion() { return ll::getBdsVersion(); }
 
-int getServerProtocolVersion() {
-    return ll::getServerProtocolVersion();
-}
+int getServerProtocolVersion() { return ll::getServerProtocolVersion(); }
 
-bool setServerMotd(const std::string& motd) {
-    return ll::setServerMotd(motd);
-}
+bool setServerMotd(const std::string& motd) { return ll::setServerMotd(motd); }
 } // namespace LL

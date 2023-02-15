@@ -1,5 +1,4 @@
 #include "llapi/LoggerAPI.h"
-#include "liteloader/LiteLoader.h"
 #include "llapi/mc/Block.hpp"
 #include "llapi/mc/BlockLegacy.hpp"
 #include "llapi/mc/BlockPalette.hpp"
@@ -10,6 +9,7 @@
 
 Block* Block::create(const string& name, unsigned short tileData) {
     BlockPalette& generator = Global<Level>->getBlockPalette();
+
     auto blk = generator.getBlockLegacy(name);
     if (!blk)
         return nullptr;
@@ -22,18 +22,11 @@ Block* Block::create(CompoundTag* nbt) {
     return const_cast<Block*>(result.second);
 }
 
-string Block::getTypeName() const {
-    return Block::getName().getString();
-}
+string Block::getTypeName() const { return Block::getName().getString(); }
 
+int Block::getId() const { return getLegacyBlock().getBlockItemId(); }
 
-int Block::getId() const {
-    return getLegacyBlock().getBlockItemId();
-}
-
-std::unique_ptr<CompoundTag> Block::getNbt() {
-    return CompoundTag::fromBlock(this);
-}
+std::unique_ptr<CompoundTag> Block::getNbt() { return CompoundTag::fromBlock(this); }
 
 bool Block::setNbt(CompoundTag* nbt) {
     nbt->setBlock(this);

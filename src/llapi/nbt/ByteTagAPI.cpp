@@ -1,8 +1,10 @@
 #include "llapi/mc/ByteTag.hpp"
 
-unsigned char& ByteTag::value() {
-    return dAccess<unsigned char, 8>(this);
-}
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
+unsigned char& ByteTag::value() { return dAccess<unsigned char, 8>(this); }
 
 ByteTag& ByteTag::operator=(unsigned char val) {
     value() = val;
@@ -22,9 +24,7 @@ bool ByteTag::set(unsigned char val) {
     return true;
 }
 
-unsigned char ByteTag::get() {
-    return value();
-}
+unsigned char ByteTag::get() { return value(); }
 
 ByteTag::operator unsigned char() const {
     if (!this)

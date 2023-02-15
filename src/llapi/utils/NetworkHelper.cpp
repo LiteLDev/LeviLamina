@@ -18,7 +18,7 @@ void SplitHttpUrl(const std::string& url, string& host, string& path) {
 
     bool foundProtocol = host.find('/') != string::npos;
 
-    auto splitPos = host.find('/', foundProtocol ? host.find('/') + 2 : 0); //查找协议后的第一个/分割host与路径
+    auto splitPos = host.find('/', foundProtocol ? host.find('/') + 2 : 0); // 查找协议后的第一个/分割host与路径
     if (splitPos == string::npos) {
         path = "/";
     } else {
@@ -31,7 +31,12 @@ bool HttpGet(const string& url, const function<void(int, string)>& callback, int
     return HttpGet(url, {}, callback, timeout);
 }
 
-bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout) {
+bool HttpGet(
+    const string&                      url,
+    const httplib::Headers&            headers,
+    const function<void(int, string)>& callback,
+    int                                timeout
+) {
     string host, path;
     SplitHttpUrl(url, host, path);
 
@@ -72,13 +77,24 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
     return true;
 }
 
-bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback,
-              int timeout) {
+bool HttpPost(
+    const string&                           url,
+    const string&                           data,
+    const string&                           type,
+    const std::function<void(int, string)>& callback,
+    int                                     timeout
+) {
     return HttpPost(url, {}, data, type, callback);
 }
 
-bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
-              int timeout) {
+bool HttpPost(
+    const string&                           url,
+    const httplib::Headers&                 headers,
+    const string&                           data,
+    const string&                           type,
+    const std::function<void(int, string)>& callback,
+    int                                     timeout
+) {
     string host, path;
     SplitHttpUrl(url, host, path);
     auto* cli = new httplib::Client(host.c_str());

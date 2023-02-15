@@ -1,8 +1,9 @@
 #include "llapi/mc/FloatTag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 
-float& FloatTag::value() {
-    return dAccess<float, 8>(this);
-}
+using ll::memory::dAccess;
+
+float& FloatTag::value() { return dAccess<float, 8>(this); }
 
 FloatTag& FloatTag::operator=(float val) {
     value() = val;
@@ -22,9 +23,7 @@ bool FloatTag::set(float val) {
     return true;
 }
 
-float FloatTag::get() {
-    return value();
-}
+float FloatTag::get() { return value(); }
 
 FloatTag::operator float() const {
     if (!this)

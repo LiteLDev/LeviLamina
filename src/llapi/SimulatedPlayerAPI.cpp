@@ -6,16 +6,19 @@
 #include "llapi/mc/StackResultStorageEntity.hpp"
 #include "llapi/mc/OwnerStorageEntity.hpp"
 #include "llapi/mc/Level.hpp"
+
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 
 // For compatibility
-bool SimulatedPlayer::simulateDestory() {
-    return SimulatedPlayer::simulateDestroy();
-}
+bool SimulatedPlayer::simulateDestory() { return SimulatedPlayer::simulateDestroy(); }
 
 bool SimulatedPlayer::simulateDestroy() {
-    FaceID face = FaceID::Unknown;
-    auto blockIns = getBlockFromViewVector(face);
+    FaceID face     = FaceID::Unknown;
+    auto   blockIns = getBlockFromViewVector(face);
     if (blockIns.isNull())
         return false;
     return simulateDestroyBlock(blockIns.getPosition(), (ScriptModuleMinecraft::ScriptFacing)face);
@@ -45,12 +48,12 @@ public:
 
     inline OwnerPtrT(OwnerPtrT&& right) noexcept {
         void (OwnerPtrT::*rv)(OwnerPtrT && right);
-        *((void**)&rv) = dlsym("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
+        *((void**)&rv) = LL_RESOLVE_SYMBOL("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
         (this->*rv)(std::move(right));
     }
     inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept {
         void (OwnerPtrT::*rv)(OwnerPtrT && right);
-        *((void**)&rv) = dlsym("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
+        *((void**)&rv) = LL_RESOLVE_SYMBOL("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
         (this->*rv)(std::move(right));
     }
 
@@ -67,18 +70,22 @@ public:
     // inline bool isValid()
 };
 
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId) {
+class SimulatedPlayer* SimulatedPlayer::create(
+    std::string const&                      name,
+    class BlockPos const&                   position,
+    class AutomaticID<class Dimension, int> dimensionId
+) {
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, "");
-    auto player = ownerPtr.tryGetSimulatedPlayer();
+    auto                       player   = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
         auto pos = position.bottomCenter();
-        pos.y = pos.y + 1.62001f;
+        pos.y    = pos.y + 1.62001f;
         player->setPos(pos);
         player->setRespawnReady(pos);
         player->setSpawnBlockRespawnPosition(position, dimensionId);
@@ -89,9 +96,10 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
 }
 
 
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId) {
+class SimulatedPlayer*
+SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, "");
-    auto player = ownerPtr.tryGetSimulatedPlayer();
+    auto                       player   = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
         player->postLoad(/* isNewPlayer */ true);

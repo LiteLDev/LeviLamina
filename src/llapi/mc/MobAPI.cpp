@@ -1,9 +1,7 @@
 //#include "llapi/MobAPI.h"
 #include "llapi/Global.h"
-#include "llapi/mc/Actor.hpp"
 #include "llapi/mc/Mob.hpp"
 #include "llapi/mc/ActorDefinitionIdentifier.hpp"
-#include "llapi/mc/PathNavigation.hpp"
 
 bool Mob::refreshInventory() {
     sendInventory(true);

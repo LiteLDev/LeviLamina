@@ -20,17 +20,19 @@
 #include "llapi/mc/ListTag.hpp"
 #include "llapi/mc/NbtIo.hpp"
 #include "llapi/mc/Player.hpp"
-#include "llapi/mc/ServerPlayer.hpp"
 #include "llapi/mc/ShortTag.hpp"
 #include "llapi/mc/EndTag.hpp"
 #include "llapi/mc/StringTag.hpp"
 #include "llapi/mc/Tag.hpp"
 #include "llapi/I18nAPI.h"
+#include "llapi/memory/MemoryUtils.h"
 
 #include "liteloader/LiteLoader.h"
 
-using magic_enum::enum_integer;
+using ll::memory::dAccess;
+
 using ll::logger;
+using magic_enum::enum_integer;
 
 class DataLoadHelper;
 
@@ -40,9 +42,7 @@ std::unique_ptr<CompoundTag> CompoundTag::create() {
 
 #pragma region Set
 // put value
-void CompoundTag::putEnd(std::string key) {
-    put(key, EndTag::create());
-}
+void CompoundTag::putEnd(std::string key) { put(key, EndTag::create()); }
 
 double& CompoundTag::putDouble(std::string key, double val) {
     return put(key, DoubleTag::create(val))->asDoubleTag()->value();
@@ -122,20 +122,16 @@ class CompoundTag const* CompoundTag::getCompoundTag(class gsl::basic_string_spa
     return getCompound(key);
 };
 
-Tag* CompoundTag::operator[](class gsl::basic_string_span<char const, -1> key) {
-    return get(key);
-}
+Tag* CompoundTag::operator[](class gsl::basic_string_span<char const, -1> key) { return get(key); }
 
 #pragma endregion
 
 #pragma region Convert
 
-std::unique_ptr<CompoundTag> CompoundTag::fromItemStack(ItemStack* item) {
-    return item->save();
-}
+std::unique_ptr<CompoundTag> CompoundTag::fromItemStack(ItemStack* item) { return item->save(); }
 
 void CompoundTag::setItemStack(ItemStack* item) {
-    using SetItemStackFn = ItemStack* (*)(ItemStack*, CompoundTag*);
+    using SetItemStackFn                  = ItemStack* (*)(ItemStack*, CompoundTag*);
     ItemStack (*func)(const CompoundTag&) = &ItemStack::fromTag;
     (*(SetItemStackFn)func)(item, this);
 }
@@ -160,23 +156,19 @@ std::unique_ptr<CompoundTag> CompoundTag::fromActor(Actor* actor) {
 }
 
 bool CompoundTag::setActor(Actor* actor) const {
-    void* vtbl = (void*)dlsym("??_7DefaultDataLoadHelper@@6B@");
-    bool res = actor->load(*this, (DataLoadHelper&)vtbl);
+    void* vtbl = (void*)LL_RESOLVE_SYMBOL("??_7DefaultDataLoadHelper@@6B@");
+    bool  res  = actor->load(*this, (DataLoadHelper&)vtbl);
     // actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
     actor->_sendDirtyActorData();
     return res;
 }
 
-std::unique_ptr<CompoundTag> CompoundTag::fromPlayer(Player* player) {
-    return fromActor(player);
-}
+std::unique_ptr<CompoundTag> CompoundTag::fromPlayer(Player* player) { return fromActor(player); }
 
-bool CompoundTag::setPlayer(Player* player) {
-    return setActor(player);
-}
+bool CompoundTag::setPlayer(Player* player) { return setActor(player); }
 
 bool CompoundTag::setBlockActor(BlockActor* blockActor) const {
-    void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
+    void* vtbl = LL_RESOLVE_SYMBOL("??_7DefaultDataLoadHelper@@6B@");
     blockActor->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
     blockActor->refreshData();
     return true;
@@ -195,21 +187,22 @@ using namespace std;
 
 #include "llapi/LoggerAPI.h"
 
-inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
+inline void
+OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In {}", functionName);
 }
 
-#define CatchNBTError(func)                                                                                 \
-    catch (const seh_exception& e) {                                                                        \
-        OutputNBTError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func); \
-    }                                                                                                       \
-    catch (const std::exception& e) {                                                                       \
-        OutputNBTError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func);    \
-    }                                                                                                       \
-    catch (...) {                                                                                           \
-        OutputNBTError("Uncaught Exception Detected!", -1, "", func);                                       \
+#define CatchNBTError(func)                                                                                            \
+    catch (const seh_exception& e) {                                                                                   \
+        OutputNBTError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func);            \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        OutputNBTError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func);               \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        OutputNBTError("Uncaught Exception Detected!", -1, "", func);                                                  \
     }
 
 #pragma region To Binary
@@ -222,7 +215,7 @@ class BigEndianStringByteOutput {
             auto left = bytes;
             do {
                 auto tmp = *left;
-                *left = *right;
+                *left    = *right;
                 *right-- = tmp;
             } while (left++ < right);
         }
@@ -233,47 +226,38 @@ public:
     virtual ~BigEndianStringByteOutput() = default;
     ;
     virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+        return LL_SYMBOL_CALL("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z", void*, void*, gsl::basic_string_span<char const, -1>)(
+            (void*)this, std::move(string_span)
+        );
     }
     virtual void* writeLongString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+        return LL_SYMBOL_CALL("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z", void*, void*, gsl::basic_string_span<char const, -1>)(
+            (void*)this, std::move(string_span)
+        );
     }
-    virtual void writeFloat(float data) {
-        writeBigEndianBytes((byte*)&data, 4);
-    }
-    virtual void writeDouble(double data) {
-        writeBigEndianBytes((byte*)&data, 8);
-    }
-    virtual void writeByte(byte data) {
-        writeBytes(&data, 1);
-    }
-    virtual void writeShort(short data) {
-        writeBigEndianBytes((byte*)&data, 2);
-    }
-    virtual void writeInt(int data) {
-        writeBigEndianBytes((byte*)&data, 4);
-    }
-    virtual void writeLongLong(long long data) {
-        writeBigEndianBytes((byte*)&data, 8);
-    }
+    virtual void  writeFloat(float data) { writeBigEndianBytes((byte*)&data, 4); }
+    virtual void  writeDouble(double data) { writeBigEndianBytes((byte*)&data, 8); }
+    virtual void  writeByte(byte data) { writeBytes(&data, 1); }
+    virtual void  writeShort(short data) { writeBigEndianBytes((byte*)&data, 2); }
+    virtual void  writeInt(int data) { writeBigEndianBytes((byte*)&data, 4); }
+    virtual void  writeLongLong(long long data) { writeBigEndianBytes((byte*)&data, 8); }
     virtual void* writeBytes(byte* bytes, size_t count) {
-        return SymCall("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z",
-                       void*, void*, byte*, size_t)((void*)this, bytes, count);
+        return LL_SYMBOL_CALL("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z", void*, void*, byte*, size_t)(
+            (void*)this, bytes, count
+        );
     }
 };
 
 string CompoundTag::toBinaryNBT(bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian) {
-        vtbl = dlsym("??_7StringByteOutput@@6B@");
+        vtbl = LL_RESOLVE_SYMBOL("??_7StringByteOutput@@6B@");
     } else {
         auto tmp = BigEndianStringByteOutput();
-        vtbl = *(void**)&tmp;
+        vtbl     = *(void**)&tmp;
     }
-    string result = "";
-    void* iDataOutput[2] = {vtbl, &result};
+    string result         = "";
+    void*  iDataOutput[2] = {vtbl, &result};
     NbtIo::write(this, (IDataOutput&)iDataOutput);
     return result;
 }
@@ -293,12 +277,12 @@ std::string CompoundTag::nbtListToBinary(std::vector<std::unique_ptr<CompoundTag
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian)
-        vtbl = dlsym("??_7StringByteInput@@6B@");
+        vtbl = LL_RESOLVE_SYMBOL("??_7StringByteInput@@6B@");
     else
-        vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
+        vtbl = LL_RESOLVE_SYMBOL("??_7BigEndianStringByteInput@@6B@");
 
     uintptr_t iDataInput[4] = {(uintptr_t)vtbl, offset, len, (uintptr_t)data};
-    auto rtn = NbtIo::read((IDataInput&)iDataInput);
+    auto      rtn           = NbtIo::read((IDataInput&)iDataInput);
 
     offset = iDataInput[1];
     return rtn;
@@ -320,7 +304,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data,
 
 std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromBinary(std::string const& data, bool isLittleEndian) {
     std::vector<std::unique_ptr<CompoundTag>> rtn;
-    size_t endOffset = 0;
+    size_t                                    endOffset = 0;
     while (endOffset < data.size()) {
         auto tmp = CompoundTag::fromBinaryNBT(data, endOffset, isLittleEndian);
         if (tmp)
@@ -359,7 +343,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNBT(std::string const& data
 }
 std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromNetwork(std::string const& data) {
     std::vector<std::unique_ptr<CompoundTag>> rtn;
-    ReadOnlyBinaryStream bs(data, false);
+    ReadOnlyBinaryStream                      bs(data, false);
     while (bs.getUnreadLength()) {
         rtn.emplace_back(bs.getCompoundTag());
     }
@@ -420,7 +404,7 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
     for (auto& tag : list) {
         auto& bytes = tag->asByteArrayTag()->value();
 
-        char* raw = (char*)bytes.data.get();
+        char*          raw = (char*)bytes.data.get();
         vector<int8_t> data;
         data.reserve(bytes.size);
         for (int i = 0; i < bytes.size; ++i)
@@ -435,7 +419,7 @@ void TagToSNBT_List_Helper(tags::intarray_list_tag& res, ListTag* nbt) {
     for (auto& tag : list) {
         auto& bytes = tag->asIntArrayTag()->value();
 
-        int* raw = (int*)bytes.data.get();
+        int*            raw = (int*)bytes.data.get();
         vector<int32_t> data;
         data.reserve(bytes.size);
         for (int i = 0; i < bytes.size / 4; ++i)
@@ -452,71 +436,71 @@ tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
     // }
 
     switch (nbt->getElementType()) {
-        case Tag::Type::End:
-            return tags::end_list_tag().as_tags();
-        case Tag::Type::Byte: {
-            tags::byte_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
+    case Tag::Type::End:
+        return tags::end_list_tag().as_tags();
+    case Tag::Type::Byte: {
+        tags::byte_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::Short: {
+        tags::short_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::Int: {
+        tags::int_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        // this is error, so return.
+        // res = std::move(data.as_tags());
+        return data.as_tags();
+    }
+    case Tag::Type::Int64: {
+        tags::long_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::Float: {
+        tags::float_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::Double: {
+        tags::double_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::String: {
+        tags::string_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::ByteArray: {
+        tags::bytearray_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::IntArray: {
+        tags::intarray_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    case Tag::Type::List: {
+        tags::list_list_tag res;
+        for (auto& tag : nbt->value()) {
+            tags::tag_list_tag data = TagToSNBT_List_Helper((ListTag*)tag);
+            res.value.emplace_back(std::make_unique<tags::tag_list_tag>(data));
         }
-        case Tag::Type::Short: {
-            tags::short_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::Int: {
-            tags::int_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            // this is error, so return.
-            // res = std::move(data.as_tags());
-            return data.as_tags();
-        }
-        case Tag::Type::Int64: {
-            tags::long_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::Float: {
-            tags::float_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::Double: {
-            tags::double_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::String: {
-            tags::string_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::ByteArray: {
-            tags::bytearray_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::IntArray: {
-            tags::intarray_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        case Tag::Type::List: {
-            tags::list_list_tag res;
-            for (auto& tag : nbt->value()) {
-                tags::tag_list_tag data = TagToSNBT_List_Helper((ListTag*)tag);
-                res.value.emplace_back(std::make_unique<tags::tag_list_tag>(data));
-            }
-            return res.as_tags();
-        }
-        case Tag::Type::Compound: {
-            tags::compound_list_tag data;
-            TagToSNBT_List_Helper(data, nbt);
-            return data.as_tags();
-        }
-        default: {
-            return tags::end_list_tag().as_tags();
-        }
+        return res.as_tags();
+    }
+    case Tag::Type::Compound: {
+        tags::compound_list_tag data;
+        TagToSNBT_List_Helper(data, nbt);
+        return data.as_tags();
+    }
+    default: {
+        return tags::end_list_tag().as_tags();
+    }
     }
 }
 
@@ -534,71 +518,71 @@ void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
     for (auto& [key, tmp] : list) {
         auto& tag = *tmp.get();
         switch (tag.getTagType()) {
-            case Tag::Type::End:
-                res.value[key].reset();
-                break;
-            case Tag::Type::Byte:
-                res.value[key] = make_unique<tags::byte_tag>(tag.asByteTag()->value());
-                break;
-            case Tag::Type::Short:
-                res.value[key] = make_unique<tags::short_tag>(tag.asShortTag()->value());
-                break;
-            case Tag::Type::Int:
-                res.value[key] = make_unique<tags::int_tag>(tag.asIntTag()->value());
-                break;
-            case Tag::Type::Int64:
-                res.value[key] = make_unique<tags::long_tag>(tag.asInt64Tag()->value());
-                break;
-            case Tag::Type::Float:
-                res.value[key] = make_unique<tags::float_tag>(tag.asFloatTag()->value());
-                break;
-            case Tag::Type::Double:
-                res.value[key] = make_unique<tags::double_tag>(tag.asDoubleTag()->value());
-                break;
-            case Tag::Type::String:
-                res.value[key] = make_unique<tags::string_tag>(tag.asStringTag()->value());
-                break;
-            case Tag::Type::ByteArray: {
-                auto& bytes = tag.asByteArrayTag()->value();
-                char* raw = (char*)bytes.data.get();
-                vector<int8_t> data;
-                data.reserve(bytes.size);
-                for (int i = 0; i < bytes.size; ++i)
-                    data.emplace_back(raw[i]);
+        case Tag::Type::End:
+            res.value[key].reset();
+            break;
+        case Tag::Type::Byte:
+            res.value[key] = make_unique<tags::byte_tag>(tag.asByteTag()->value());
+            break;
+        case Tag::Type::Short:
+            res.value[key] = make_unique<tags::short_tag>(tag.asShortTag()->value());
+            break;
+        case Tag::Type::Int:
+            res.value[key] = make_unique<tags::int_tag>(tag.asIntTag()->value());
+            break;
+        case Tag::Type::Int64:
+            res.value[key] = make_unique<tags::long_tag>(tag.asInt64Tag()->value());
+            break;
+        case Tag::Type::Float:
+            res.value[key] = make_unique<tags::float_tag>(tag.asFloatTag()->value());
+            break;
+        case Tag::Type::Double:
+            res.value[key] = make_unique<tags::double_tag>(tag.asDoubleTag()->value());
+            break;
+        case Tag::Type::String:
+            res.value[key] = make_unique<tags::string_tag>(tag.asStringTag()->value());
+            break;
+        case Tag::Type::ByteArray: {
+            auto&          bytes = tag.asByteArrayTag()->value();
+            char*          raw   = (char*)bytes.data.get();
+            vector<int8_t> data;
+            data.reserve(bytes.size);
+            for (int i = 0; i < bytes.size; ++i)
+                data.emplace_back(raw[i]);
 
-                res.value[key] = make_unique<tags::bytearray_tag>(data);
-                break;
-            }
-            case Tag::Type::IntArray: {
-                auto& bytes = tag.asIntArrayTag()->value();
-                int* raw = (int*)bytes.data.get();
-                vector<int32_t> data;
-                data.reserve(bytes.size);
-                for (int i = 0; i < bytes.size / 4; ++i)
-                    data.emplace_back(raw[i]);
+            res.value[key] = make_unique<tags::bytearray_tag>(data);
+            break;
+        }
+        case Tag::Type::IntArray: {
+            auto&           bytes = tag.asIntArrayTag()->value();
+            int*            raw   = (int*)bytes.data.get();
+            vector<int32_t> data;
+            data.reserve(bytes.size);
+            for (int i = 0; i < bytes.size / 4; ++i)
+                data.emplace_back(raw[i]);
 
-                res.value[key] = make_unique<tags::intarray_tag>(data);
+            res.value[key] = make_unique<tags::intarray_tag>(data);
+            break;
+        }
+        case Tag::Type::List: {
+            auto& list = tag.asListTag()->value();
+            if (list.empty()) {
+                res.value[key] = make_unique<tags::tag_list_tag>();
                 break;
             }
-            case Tag::Type::List: {
-                auto& list = tag.asListTag()->value();
-                if (list.empty()) {
-                    res.value[key] = make_unique<tags::tag_list_tag>();
-                    break;
-                }
-                tags::tag_list_tag obj = TagToSNBT_List_Helper((ListTag*)&tag);
-                res.value[key] = make_unique<tags::tag_list_tag>(obj);
-                break;
-            }
-            case Tag::Type::Compound: {
-                auto obj = tags::compound_tag(false);
-                TagToSNBT_Compound_Helper(obj, (CompoundTag*)&tag);
-                res.value[key] = make_unique<tags::compound_tag>(obj);
-                break;
-            }
-            default:
-                res.value[key].reset();
-                break;
+            tags::tag_list_tag obj = TagToSNBT_List_Helper((ListTag*)&tag);
+            res.value[key]         = make_unique<tags::tag_list_tag>(obj);
+            break;
+        }
+        case Tag::Type::Compound: {
+            auto obj = tags::compound_tag(false);
+            TagToSNBT_Compound_Helper(obj, (CompoundTag*)&tag);
+            res.value[key] = make_unique<tags::compound_tag>(obj);
+            break;
+        }
+        default:
+            res.value[key].reset();
+            break;
         }
     }
 }
@@ -679,44 +663,44 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::list_list_tag& data) 
     for (auto& dat : data.value) {
         unique_ptr<ListTag> tagList = ListTag::create();
         switch (dat->element_id()) {
-            case tag_id::tag_end:
-                SNBTToTag_List_Helper(tagList, *(tags::end_list_tag*)dat.get());
-                break;
-            case tag_id::tag_byte:
-                SNBTToTag_List_Helper(tagList, *(tags::byte_list_tag*)dat.get());
-                break;
-            case tag_id::tag_short:
-                SNBTToTag_List_Helper(tagList, *(tags::short_list_tag*)dat.get());
-                break;
-            case tag_id::tag_int:
-                SNBTToTag_List_Helper(tagList, *(tags::int_list_tag*)dat.get());
-                break;
-            case tag_id::tag_long:
-                SNBTToTag_List_Helper(tagList, *(tags::long_list_tag*)dat.get());
-                break;
-            case tag_id::tag_float:
-                SNBTToTag_List_Helper(tagList, *(tags::float_list_tag*)dat.get());
-                break;
-            case tag_id::tag_double:
-                SNBTToTag_List_Helper(tagList, *(tags::double_list_tag*)dat.get());
-                break;
-            case tag_id::tag_string:
-                SNBTToTag_List_Helper(tagList, *(tags::string_list_tag*)dat.get());
-                break;
-            case tag_id::tag_bytearray:
-                SNBTToTag_List_Helper(tagList, *(tags::bytearray_list_tag*)dat.get());
-                break;
-            case tag_id::tag_intarray:
-                SNBTToTag_List_Helper(tagList, *(tags::intarray_list_tag*)dat.get());
-                break;
-            case tag_id::tag_list:
-                SNBTToTag_List_Helper(tagList, *(tags::list_list_tag*)dat.get());
-                break;
-            case tag_id::tag_compound:
-                SNBTToTag_List_Helper(tagList, *(tags::compound_list_tag*)dat.get());
-                break;
-            default:
-                break;
+        case tag_id::tag_end:
+            SNBTToTag_List_Helper(tagList, *(tags::end_list_tag*)dat.get());
+            break;
+        case tag_id::tag_byte:
+            SNBTToTag_List_Helper(tagList, *(tags::byte_list_tag*)dat.get());
+            break;
+        case tag_id::tag_short:
+            SNBTToTag_List_Helper(tagList, *(tags::short_list_tag*)dat.get());
+            break;
+        case tag_id::tag_int:
+            SNBTToTag_List_Helper(tagList, *(tags::int_list_tag*)dat.get());
+            break;
+        case tag_id::tag_long:
+            SNBTToTag_List_Helper(tagList, *(tags::long_list_tag*)dat.get());
+            break;
+        case tag_id::tag_float:
+            SNBTToTag_List_Helper(tagList, *(tags::float_list_tag*)dat.get());
+            break;
+        case tag_id::tag_double:
+            SNBTToTag_List_Helper(tagList, *(tags::double_list_tag*)dat.get());
+            break;
+        case tag_id::tag_string:
+            SNBTToTag_List_Helper(tagList, *(tags::string_list_tag*)dat.get());
+            break;
+        case tag_id::tag_bytearray:
+            SNBTToTag_List_Helper(tagList, *(tags::bytearray_list_tag*)dat.get());
+            break;
+        case tag_id::tag_intarray:
+            SNBTToTag_List_Helper(tagList, *(tags::intarray_list_tag*)dat.get());
+            break;
+        case tag_id::tag_list:
+            SNBTToTag_List_Helper(tagList, *(tags::list_list_tag*)dat.get());
+            break;
+        case tag_id::tag_compound:
+            SNBTToTag_List_Helper(tagList, *(tags::compound_list_tag*)dat.get());
+            break;
+        default:
+            break;
         }
         nbt->add(Tag::asTag(std::move(tagList)));
     }
@@ -733,98 +717,98 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::compound_list_tag& da
 void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag& data) {
     for (auto& [key, value] : data.value) {
         switch (value->id()) {
-            case tag_id::tag_end:
-                nbt->putEnd(key);
-                break;
+        case tag_id::tag_end:
+            nbt->putEnd(key);
+            break;
+        case tag_id::tag_byte:
+            nbt->putByte(key, ((tags::byte_tag*)value.get())->value);
+            break;
+        case tag_id::tag_short:
+            nbt->putShort(key, ((tags::short_tag*)value.get())->value);
+            break;
+        case tag_id::tag_int:
+            nbt->putInt(key, ((tags::int_tag*)value.get())->value);
+            break;
+        case tag_id::tag_long:
+            nbt->putInt64(key, ((tags::long_tag*)value.get())->value);
+            break;
+        case tag_id::tag_float:
+            nbt->putFloat(key, ((tags::float_tag*)value.get())->value);
+            break;
+        case tag_id::tag_double:
+            nbt->putDouble(key, ((tags::double_tag*)value.get())->value);
+            break;
+        case tag_id::tag_string:
+            nbt->putString(key, ((tags::string_tag*)value.get())->value);
+            break;
+        case tag_id::tag_bytearray: {
+            auto& data = ((tags::bytearray_tag*)value.get())->value;
+            nbt->putByteArray(key, (char*)data.data(), data.size());
+            break;
+        }
+        case tag_id::tag_intarray: {
+            auto& data = ((tags::intarray_tag*)value.get())->value;
+            nbt->putIntArray(key, data.data(), data.size());
+            break;
+        }
+        case tag_id::tag_list: {
+            unique_ptr<ListTag> res = ListTag::create();
+
+            tags::list_tag* data = (tags::list_tag*)value.get();
+            switch (data->element_id()) {
             case tag_id::tag_byte:
-                nbt->putByte(key, ((tags::byte_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::byte_list_tag*)data);
                 break;
             case tag_id::tag_short:
-                nbt->putShort(key, ((tags::short_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::short_list_tag*)data);
                 break;
             case tag_id::tag_int:
-                nbt->putInt(key, ((tags::int_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::int_list_tag*)data);
                 break;
             case tag_id::tag_long:
-                nbt->putInt64(key, ((tags::long_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::long_list_tag*)data);
                 break;
             case tag_id::tag_float:
-                nbt->putFloat(key, ((tags::float_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::float_list_tag*)data);
                 break;
             case tag_id::tag_double:
-                nbt->putDouble(key, ((tags::double_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::double_list_tag*)data);
                 break;
             case tag_id::tag_string:
-                nbt->putString(key, ((tags::string_tag*)value.get())->value);
+                SNBTToTag_List_Helper(res, *(tags::string_list_tag*)data);
                 break;
-            case tag_id::tag_bytearray: {
-                auto& data = ((tags::bytearray_tag*)value.get())->value;
-                nbt->putByteArray(key, (char*)data.data(), data.size());
+            case tag_id::tag_bytearray:
+                SNBTToTag_List_Helper(res, *(tags::bytearray_list_tag*)data);
                 break;
-            }
-            case tag_id::tag_intarray: {
-                auto& data = ((tags::intarray_tag*)value.get())->value;
-                nbt->putIntArray(key, data.data(), data.size());
+            case tag_id::tag_intarray:
+                SNBTToTag_List_Helper(res, *(tags::intarray_list_tag*)data);
                 break;
-            }
-            case tag_id::tag_list: {
-                unique_ptr<ListTag> res = ListTag::create();
-
-                tags::list_tag* data = (tags::list_tag*)value.get();
-                switch (data->element_id()) {
-                    case tag_id::tag_byte:
-                        SNBTToTag_List_Helper(res, *(tags::byte_list_tag*)data);
-                        break;
-                    case tag_id::tag_short:
-                        SNBTToTag_List_Helper(res, *(tags::short_list_tag*)data);
-                        break;
-                    case tag_id::tag_int:
-                        SNBTToTag_List_Helper(res, *(tags::int_list_tag*)data);
-                        break;
-                    case tag_id::tag_long:
-                        SNBTToTag_List_Helper(res, *(tags::long_list_tag*)data);
-                        break;
-                    case tag_id::tag_float:
-                        SNBTToTag_List_Helper(res, *(tags::float_list_tag*)data);
-                        break;
-                    case tag_id::tag_double:
-                        SNBTToTag_List_Helper(res, *(tags::double_list_tag*)data);
-                        break;
-                    case tag_id::tag_string:
-                        SNBTToTag_List_Helper(res, *(tags::string_list_tag*)data);
-                        break;
-                    case tag_id::tag_bytearray:
-                        SNBTToTag_List_Helper(res, *(tags::bytearray_list_tag*)data);
-                        break;
-                    case tag_id::tag_intarray:
-                        SNBTToTag_List_Helper(res, *(tags::intarray_list_tag*)data);
-                        break;
-                    case tag_id::tag_list:
-                        SNBTToTag_List_Helper(res, *(tags::list_list_tag*)data);
-                        break;
-                    case tag_id::tag_compound:
-                        SNBTToTag_List_Helper(res, *(tags::compound_list_tag*)data);
-                        break;
-                    default:
-                        break;
-                }
-                nbt->put(key, Tag::asTag(std::move(res)));
+            case tag_id::tag_list:
+                SNBTToTag_List_Helper(res, *(tags::list_list_tag*)data);
+                break;
+            case tag_id::tag_compound:
+                SNBTToTag_List_Helper(res, *(tags::compound_list_tag*)data);
+                break;
+            default:
                 break;
             }
-            case tag_id::tag_compound: {
-                auto res = CompoundTag::create();
-                tags::compound_tag* data = (tags::compound_tag*)value.get();
-                SNBTToTag_Compound_Helper(res, *data);
-                nbt->put(key, Tag::asTag(std::move(res)));
-                break;
-            }
+            nbt->put(key, Tag::asTag(std::move(res)));
+            break;
+        }
+        case tag_id::tag_compound: {
+            auto                res  = CompoundTag::create();
+            tags::compound_tag* data = (tags::compound_tag*)value.get();
+            SNBTToTag_Compound_Helper(res, *data);
+            nbt->put(key, Tag::asTag(std::move(res)));
+            break;
+        }
         }
     }
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(const string& snbt) {
     try {
-        istringstream sin(snbt);
+        istringstream      sin(snbt);
         tags::compound_tag root(true);
         sin >> contexts::mojangson >> root;
 
@@ -844,29 +828,29 @@ void __appendString(std::ostringstream& oss, std::string const& str) {
     oss << '"';
     for (auto& c : str) {
         switch (c) {
-            case '"':
-                oss << "\\\"";
-                break;
-            case '\\':
-                oss << "\\\\";
-                break;
-            case '\b':
-                oss << "\\b";
-                break;
-            case '\f':
-                oss << "\\f";
-                break;
-            case '\n':
-                oss << "\\n";
-                break;
-            case '\r':
-                oss << "\\r";
-                break;
-            case '\t':
-                oss << "\\t";
-                break;
-            default:
-                oss << c;
+        case '"':
+            oss << "\\\"";
+            break;
+        case '\\':
+            oss << "\\\\";
+            break;
+        case '\b':
+            oss << "\\b";
+            break;
+        case '\f':
+            oss << "\\f";
+            break;
+        case '\n':
+            oss << "\\n";
+            break;
+        case '\r':
+            oss << "\\r";
+            break;
+        case '\t':
+            oss << "\\t";
+            break;
+        default:
+            oss << c;
         }
     }
     oss << '"';
@@ -874,28 +858,28 @@ void __appendString(std::ostringstream& oss, std::string const& str) {
 
 inline void __appendSpace(std::ostringstream& oss, int indent, int level) {
     switch (indent * level) {
-        case 0:
-            break;
-        case 4:
-            oss << "    ";
-            break;
-        case 8:
-            oss << "        ";
-            break;
-        case 12:
-            oss << "            ";
-            break;
-        case 16:
-            oss << "                ";
-            break;
-        case 20:
-            oss << "                    ";
-            break;
-        default:
-            std::string spaces;
-            spaces.resize(indent * level, ' ');
-            oss << spaces;
-            break;
+    case 0:
+        break;
+    case 4:
+        oss << "    ";
+        break;
+    case 8:
+        oss << "        ";
+        break;
+    case 12:
+        oss << "            ";
+        break;
+    case 16:
+        oss << "                ";
+        break;
+    case 20:
+        oss << "                    ";
+        break;
+    default:
+        std::string spaces;
+        spaces.resize(indent * level, ' ');
+        oss << spaces;
+        break;
     }
 }
 
@@ -912,8 +896,7 @@ template <>
 inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int level, SnbtFormat snbtFormat);
 
 template <>
-inline void __appendSNBT(std::ostringstream& oss, EndTag& tag, int indent, int level, SnbtFormat snbtFormat) {
-}
+inline void __appendSNBT(std::ostringstream& oss, EndTag& tag, int indent, int level, SnbtFormat snbtFormat) {}
 template <>
 inline void __appendSNBT(std::ostringstream& oss, ByteTag& tag, int indent, int level, SnbtFormat snbtFormat) {
     oss << (int)(signed char)tag.value() << 'b';
@@ -945,8 +928,8 @@ inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int indent,
         oss << "[B;]";
         return;
     }
-    auto val = tag.value().data.get();
-    bool first = true;
+    auto               val       = tag.value().data.get();
+    bool               first     = true;
     std::string const& separator = snbtFormat == SnbtFormat::Minimize ? "," : ", ";
     oss << "[B; ";
     for (size_t i = 0; i < size; ++i) {
@@ -964,7 +947,7 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
         oss << "[I;]";
         return;
     }
-    auto val = tag.value().data.get();
+    auto val   = tag.value().data.get();
     bool first = true;
     oss << "[I; ";
     std::string const& separator = snbtFormat == SnbtFormat::Minimize ? "," : ", ";
@@ -989,7 +972,7 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
         return;
     }
     auto childrenType = tag.getElementType();
-    bool first = true;
+    bool first        = true;
     bool shouldReturn = snbtFormat == SnbtFormat::AlwayNewLine;
     oss << '[';
     for (auto& child : tag) {
@@ -999,73 +982,73 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
                 oss << ' ';
         }
         switch (childrenType) {
-            case Tag::Type::End:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asEndTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Byte:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asByteTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Short:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asShortTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Int:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asIntTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Int64:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asInt64Tag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Float:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asFloatTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Double:
-                if (snbtFormat == SnbtFormat::AlwayNewLine)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asDoubleTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::ByteArray:
-                if (snbtFormat != SnbtFormat::Minimize)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asByteArrayTag(), indent, level + 1, snbtFormat);
-                shouldReturn = true;
-                break;
-            case Tag::Type::String:
-                if (snbtFormat != SnbtFormat::Minimize)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asStringTag(), indent, level + 1, snbtFormat);
-                shouldReturn = true;
-                break;
-            case Tag::Type::List:
-                if (snbtFormat != SnbtFormat::Minimize)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asListTag(), indent, level + 1, snbtFormat);
-                shouldReturn = true;
-                break;
-            case Tag::Type::Compound:
-                if (snbtFormat != SnbtFormat::Minimize)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asCompoundTag(), indent, level + 1, snbtFormat);
-                shouldReturn = true;
-                break;
-            case Tag::Type::IntArray:
-                if (snbtFormat != SnbtFormat::Minimize)
-                    __appendReturnSpace(oss, indent, level + 1);
-                __appendSNBT(oss, *child->asIntArrayTag(), indent, level + 1, snbtFormat);
-                shouldReturn = true;
-                break;
-            default:
-                break;
+        case Tag::Type::End:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asEndTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Byte:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asByteTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Short:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asShortTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Int:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asIntTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Int64:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asInt64Tag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Float:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asFloatTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Double:
+            if (snbtFormat == SnbtFormat::AlwayNewLine)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asDoubleTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::ByteArray:
+            if (snbtFormat != SnbtFormat::Minimize)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asByteArrayTag(), indent, level + 1, snbtFormat);
+            shouldReturn = true;
+            break;
+        case Tag::Type::String:
+            if (snbtFormat != SnbtFormat::Minimize)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asStringTag(), indent, level + 1, snbtFormat);
+            shouldReturn = true;
+            break;
+        case Tag::Type::List:
+            if (snbtFormat != SnbtFormat::Minimize)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asListTag(), indent, level + 1, snbtFormat);
+            shouldReturn = true;
+            break;
+        case Tag::Type::Compound:
+            if (snbtFormat != SnbtFormat::Minimize)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asCompoundTag(), indent, level + 1, snbtFormat);
+            shouldReturn = true;
+            break;
+        case Tag::Type::IntArray:
+            if (snbtFormat != SnbtFormat::Minimize)
+                __appendReturnSpace(oss, indent, level + 1);
+            __appendSNBT(oss, *child->asIntArrayTag(), indent, level + 1, snbtFormat);
+            shouldReturn = true;
+            break;
+        default:
+            break;
         }
 
         first = false;
@@ -1095,44 +1078,44 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
         }
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType()) {
-            case Tag::Type::End:
-                __appendSNBT(oss, *tag->asEndTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Byte:
-                __appendSNBT(oss, *tag->asByteTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Short:
-                __appendSNBT(oss, *tag->asShortTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Int:
-                __appendSNBT(oss, *tag->asIntTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Int64:
-                __appendSNBT(oss, *tag->asInt64Tag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Float:
-                __appendSNBT(oss, *tag->asFloatTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Double:
-                __appendSNBT(oss, *tag->asDoubleTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::ByteArray:
-                __appendSNBT(oss, *tag->asByteArrayTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::String:
-                __appendSNBT(oss, *tag->asStringTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::List:
-                __appendSNBT(oss, *tag->asListTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::Compound:
-                __appendSNBT(oss, *tag->asCompoundTag(), indent, level + 1, snbtFormat);
-                break;
-            case Tag::Type::IntArray:
-                __appendSNBT(oss, *tag->asIntArrayTag(), indent, level + 1, snbtFormat);
-                break;
-            default:
-                break;
+        case Tag::Type::End:
+            __appendSNBT(oss, *tag->asEndTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Byte:
+            __appendSNBT(oss, *tag->asByteTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Short:
+            __appendSNBT(oss, *tag->asShortTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Int:
+            __appendSNBT(oss, *tag->asIntTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Int64:
+            __appendSNBT(oss, *tag->asInt64Tag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Float:
+            __appendSNBT(oss, *tag->asFloatTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Double:
+            __appendSNBT(oss, *tag->asDoubleTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::ByteArray:
+            __appendSNBT(oss, *tag->asByteArrayTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::String:
+            __appendSNBT(oss, *tag->asStringTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::List:
+            __appendSNBT(oss, *tag->asListTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::Compound:
+            __appendSNBT(oss, *tag->asCompoundTag(), indent, level + 1, snbtFormat);
+            break;
+        case Tag::Type::IntArray:
+            __appendSNBT(oss, *tag->asIntArrayTag(), indent, level + 1, snbtFormat);
+            break;
+        default:
+            break;
         }
 
         first = false;
@@ -1163,29 +1146,29 @@ string CompoundTag::toSNBT(int indent, SnbtFormat snbtFormat) {
 void __appendPrettyString(std::ostringstream& oss, std::string const& str, PrettySnbtFormat const& format) {
     for (auto& c : str) {
         switch (c) {
-            case '"':
-                oss << "\\\"";
-                break;
-            case '\\':
-                oss << "\\\\";
-                break;
-            case '\b':
-                oss << "\\b";
-                break;
-            case '\f':
-                oss << "\\f";
-                break;
-            case '\n':
-                oss << "\\n";
-                break;
-            case '\r':
-                oss << "\\r";
-                break;
-            case '\t':
-                oss << "\\t";
-                break;
-            default:
-                oss << c;
+        case '"':
+            oss << "\\\"";
+            break;
+        case '\\':
+            oss << "\\\\";
+            break;
+        case '\b':
+            oss << "\\b";
+            break;
+        case '\f':
+            oss << "\\f";
+            break;
+        case '\n':
+            oss << "\\n";
+            break;
+        case '\r':
+            oss << "\\r";
+            break;
+        case '\t':
+            oss << "\\t";
+            break;
+        default:
+            oss << c;
         }
     }
 }
@@ -1206,50 +1189,66 @@ inline void __appendPrettyReturnSpace(std::ostringstream& oss, unsigned int leve
 }
 
 // template <typename T>
-// inline void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format) = delete;
+// inline void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format) =
+// delete;
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format);
+inline void
+__appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format);
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format);
+inline void
+__appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format);
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, EndTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+inline void
+__appendPrettySNBT(std::ostringstream& oss, EndTag& tag, unsigned int level, PrettySnbtFormat const& format) {}
+template <>
+inline void
+__appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Byte)].mPrefix << (int)(signed char)tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Byte)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Byte)].mPrefix << (int)(signed char)tag.value() << format.mValueFormats[enum_integer(Tag::Type::Byte)].mSuffix;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Short)].mPrefix << tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Short)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Short)].mPrefix << tag.value() << format.mValueFormats[enum_integer(Tag::Type::Short)].mSuffix;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, IntTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Int)].mPrefix << tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Int)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, IntTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Int)].mPrefix << tag.value() << format.mValueFormats[enum_integer(Tag::Type::Int)].mSuffix;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Int64)].mPrefix << tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Int64)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Int64)].mPrefix << tag.value() << format.mValueFormats[enum_integer(Tag::Type::Int64) ].mSuffix;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Float)].mPrefix << tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Float)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Float)].mPrefix << tag.value() << format.mValueFormats[enum_integer(Tag::Type::Float)].mSuffix;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[enum_integer(Tag::Type::Double)].mPrefix << tag.value()
+        << format.mValueFormats[enum_integer(Tag::Type::Double)].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[enum_integer(Tag::Type::Double)].mPrefix << tag.value() << format.mValueFormats[enum_integer(Tag::Type::Double)].mSuffix;
-}
-template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::ByteArray)];
-    auto& elementFormat = format.mValueFormats[enum_integer(Tag::Type::Byte)];
-    auto& separator = format.mSeparator;
-    size_t size = tag.value().size;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    auto&  valueFormat   = format.mValueFormats[enum_integer(Tag::Type::ByteArray)];
+    auto&  elementFormat = format.mValueFormats[enum_integer(Tag::Type::Byte)];
+    auto&  separator     = format.mSeparator;
+    size_t size          = tag.value().size;
     if (size == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
         return;
     }
-    auto val = tag.value().data.get();
+    auto val   = tag.value().data.get();
     bool first = true;
     oss << valueFormat.mPrefix;
     for (size_t i = 0; i < size; ++i) {
@@ -1261,16 +1260,17 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsig
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
-    auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::IntArray)];
-    auto& elementFormat = format.mValueFormats[enum_integer(Tag::Type::Int)];
-    auto& separator = format.mSeparator;
-    size_t size = tag.value().size;
+inline void
+__appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    auto&  valueFormat   = format.mValueFormats[enum_integer(Tag::Type::IntArray)];
+    auto&  elementFormat = format.mValueFormats[enum_integer(Tag::Type::Int)];
+    auto&  separator     = format.mSeparator;
+    size_t size          = tag.value().size;
     if (size == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
         return;
     }
-    auto val = tag.value().data.get();
+    auto val   = tag.value().data.get();
     bool first = true;
     oss << valueFormat.mPrefix;
     for (size_t i = 0; i < size; i += 4) {
@@ -1283,7 +1283,8 @@ inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsign
 }
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+inline void
+__appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::String)];
     oss << valueFormat.mPrefix;
     __appendPrettyString(oss, tag.value(), format);
@@ -1291,7 +1292,13 @@ inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned
 }
 
 template <typename type>
-inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format, Tag::Type childrenType) {
+inline void __appendPrettyList(
+    std::ostringstream&     oss,
+    ListTag&                tag,
+    unsigned int            level,
+    PrettySnbtFormat const& format,
+    Tag::Type               childrenType
+) {
     bool first = true;
     for (auto& child : tag) {
         if (!first) {
@@ -1305,14 +1312,15 @@ inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned i
 }
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+inline void
+__appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::List)];
     if (tag.size() == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
         return;
     }
     auto childrenType = tag.getElementType();
-    bool expand = format.mExpandInList[enum_integer(childrenType)];
+    bool expand       = format.mExpandInList[enum_integer(childrenType)];
 
     oss << valueFormat.mPrefix;
     if (expand && level < format.mMaxLevel)
@@ -1320,44 +1328,44 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned i
     const Tag::Type tagType = childrenType;
 
     switch (childrenType) {
-        case Tag::Type::End:
-            __appendPrettyList<EndTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Byte:
-            __appendPrettyList<ByteTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Short:
-            __appendPrettyList<ShortTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Int:
-            __appendPrettyList<IntTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Int64:
-            __appendPrettyList<Int64Tag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Float:
-            __appendPrettyList<FloatTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Double:
-            __appendPrettyList<DoubleTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::ByteArray:
-            __appendPrettyList<ByteArrayTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::String:
-            __appendPrettyList<StringTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::List:
-            __appendPrettyList<ListTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::Compound:
-            __appendPrettyList<CompoundTag>(oss, tag, level, format, childrenType);
-            break;
-        case Tag::Type::IntArray:
-            __appendPrettyList<IntArrayTag>(oss, tag, level, format, childrenType);
-            break;
-        default:
-            break;
+    case Tag::Type::End:
+        __appendPrettyList<EndTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Byte:
+        __appendPrettyList<ByteTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Short:
+        __appendPrettyList<ShortTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Int:
+        __appendPrettyList<IntTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Int64:
+        __appendPrettyList<Int64Tag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Float:
+        __appendPrettyList<FloatTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Double:
+        __appendPrettyList<DoubleTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::ByteArray:
+        __appendPrettyList<ByteArrayTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::String:
+        __appendPrettyList<StringTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::List:
+        __appendPrettyList<ListTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::Compound:
+        __appendPrettyList<CompoundTag>(oss, tag, level, format, childrenType);
+        break;
+    case Tag::Type::IntArray:
+        __appendPrettyList<IntArrayTag>(oss, tag, level, format, childrenType);
+        break;
+    default:
+        break;
     }
 
     if (expand && level < format.mMaxLevel)
@@ -1365,7 +1373,8 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned i
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+inline void
+__appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[enum_integer(Tag::Type::Compound)];
     if (tag.isEmpty()) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
@@ -1386,44 +1395,44 @@ inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsign
 
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType()) {
-            case Tag::Type::End:
-                __appendPrettySNBT(oss, *tag->asEndTag(), level + 1, format);
-                break;
-            case Tag::Type::Byte:
-                __appendPrettySNBT(oss, *tag->asByteTag(), level + 1, format);
-                break;
-            case Tag::Type::Short:
-                __appendPrettySNBT(oss, *tag->asShortTag(), level + 1, format);
-                break;
-            case Tag::Type::Int:
-                __appendPrettySNBT(oss, *tag->asIntTag(), level + 1, format);
-                break;
-            case Tag::Type::Int64:
-                __appendPrettySNBT(oss, *tag->asInt64Tag(), level + 1, format);
-                break;
-            case Tag::Type::Float:
-                __appendPrettySNBT(oss, *tag->asFloatTag(), level + 1, format);
-                break;
-            case Tag::Type::Double:
-                __appendPrettySNBT(oss, *tag->asDoubleTag(), level + 1, format);
-                break;
-            case Tag::Type::ByteArray:
-                __appendPrettySNBT(oss, *tag->asByteArrayTag(), level + 1, format);
-                break;
-            case Tag::Type::String:
-                __appendPrettySNBT(oss, *tag->asStringTag(), level + 1, format);
-                break;
-            case Tag::Type::List:
-                __appendPrettySNBT(oss, *tag->asListTag(), level + 1, format);
-                break;
-            case Tag::Type::Compound:
-                __appendPrettySNBT(oss, *tag->asCompoundTag(), level + 1, format);
-                break;
-            case Tag::Type::IntArray:
-                __appendPrettySNBT(oss, *tag->asIntArrayTag(), level + 1, format);
-                break;
-            default:
-                break;
+        case Tag::Type::End:
+            __appendPrettySNBT(oss, *tag->asEndTag(), level + 1, format);
+            break;
+        case Tag::Type::Byte:
+            __appendPrettySNBT(oss, *tag->asByteTag(), level + 1, format);
+            break;
+        case Tag::Type::Short:
+            __appendPrettySNBT(oss, *tag->asShortTag(), level + 1, format);
+            break;
+        case Tag::Type::Int:
+            __appendPrettySNBT(oss, *tag->asIntTag(), level + 1, format);
+            break;
+        case Tag::Type::Int64:
+            __appendPrettySNBT(oss, *tag->asInt64Tag(), level + 1, format);
+            break;
+        case Tag::Type::Float:
+            __appendPrettySNBT(oss, *tag->asFloatTag(), level + 1, format);
+            break;
+        case Tag::Type::Double:
+            __appendPrettySNBT(oss, *tag->asDoubleTag(), level + 1, format);
+            break;
+        case Tag::Type::ByteArray:
+            __appendPrettySNBT(oss, *tag->asByteArrayTag(), level + 1, format);
+            break;
+        case Tag::Type::String:
+            __appendPrettySNBT(oss, *tag->asStringTag(), level + 1, format);
+            break;
+        case Tag::Type::List:
+            __appendPrettySNBT(oss, *tag->asListTag(), level + 1, format);
+            break;
+        case Tag::Type::Compound:
+            __appendPrettySNBT(oss, *tag->asCompoundTag(), level + 1, format);
+            break;
+        case Tag::Type::IntArray:
+            __appendPrettySNBT(oss, *tag->asIntArrayTag(), level + 1, format);
+            break;
+        default:
+            break;
         }
         first = false;
     }
@@ -1456,10 +1465,8 @@ string CompoundTag::toPrettySNBT(PrettySnbtFormat const& format) const {
 #pragma region From SNBT For Tag of BDS
 #ifdef Working
 
-inline bool __isEmptyChar(int c) {
-    return c == ' ' || c == '\n' || c == '\t';
-}
-inline int __readEmpty(std::istringstream& iss) {
+inline bool __isEmptyChar(int c) { return c == ' ' || c == '\n' || c == '\t'; }
+inline int  __readEmpty(std::istringstream& iss) {
     while (!iss.eof()) {
         auto c = cheof(iss);
         if (!__isEmptyChar(c))
@@ -1470,8 +1477,8 @@ inline int __readEmpty(std::istringstream& iss) {
 
 inline std::string __readString(std::istringstream& iss) {
     std::ostringstream oss;
-    bool qoute = false;
-    auto c = __readEmpty(iss);
+    bool               qoute = false;
+    auto               c     = __readEmpty(iss);
     if (c == '"')
         qoute == true;
     else
@@ -1514,8 +1521,8 @@ std::unique_ptr<Tag>&& __readIntArrayValue(std::istringstream& iss) {
         throw runtime_error("Expected char ';'");
 
     std::ostringstream oss;
-    auto res = IntArrayTag::create();
-    auto c = __readEmpty(iss);
+    auto               res = IntArrayTag::create();
+    auto               c   = __readEmpty(iss);
     while (!iss.eof()) {
         if (c == ']') {
             if (oss.eof())
@@ -1538,8 +1545,7 @@ std::unique_ptr<Tag>&& __readValue(std::istringstream& iss) {
     }
 }
 
-void __readList(std::istringstream& iss, ListTag& tag) {
-}
+void __readList(std::istringstream& iss, ListTag& tag) {}
 
 void __readCompound(std::istringstream& iss, CompoundTag& tag) {
     while (true) {
@@ -1556,7 +1562,7 @@ void __readCompound(std::istringstream& iss, CompoundTag& tag) {
 
 std::unique_ptr<CompoundTag> fromSNBT(string& snbt) {
     std::istringstream iss(snbt);
-    auto tag = CompoundTag::create();
+    auto               tag = CompoundTag::create();
     __readCompound(iss, *tag);
     return {};
 }

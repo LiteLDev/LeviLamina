@@ -20,12 +20,12 @@ std::unique_ptr<KVDB> KVDB::open(const std::string& path, bool create, bool read
 }
 
 void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit) {
-    rdopt = leveldb::ReadOptions();
-    wropt = leveldb::WriteOptions();
-    options = leveldb::Options();
-    rdopt.fill_cache = read_cache;
+    rdopt                  = leveldb::ReadOptions();
+    wropt                  = leveldb::WriteOptions();
+    options                = leveldb::Options();
+    rdopt.fill_cache       = read_cache;
     rdopt.verify_checksums = false;
-    wropt.sync = false;
+    wropt.sync             = false;
     if (cache_sz) {
         options.block_cache = leveldb::NewLRUCache(cache_sz);
     }
@@ -33,8 +33,8 @@ void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, i
     if (Bfilter_bit)
         options.filter_policy = leveldb::NewBloomFilterPolicy(Bfilter_bit);
     options.create_if_missing = create;
-    dbpath = path;
-    status = leveldb::DB::Open(options, path, &db);
+    dbpath                    = path;
+    status                    = leveldb::DB::Open(options, path, &db);
     if (!status.ok()) {
         levelDBLogger.error("Fail to load KVDB <{}>", path);
         auto output = error(status);
@@ -60,7 +60,7 @@ bool KVDB::get(std::string_view key, std::string& val) {
 }
 std::optional<std::string> KVDB::get(std::string_view key) {
     std::string result;
-    auto s = db->Get(rdopt, leveldb::Slice(key.data(), key.size()), &result);
+    auto        s = db->Get(rdopt, leveldb::Slice(key.data(), key.size()), &result);
     if (!s.ok()) {
         return std::nullopt;
     }
@@ -68,8 +68,7 @@ std::optional<std::string> KVDB::get(std::string_view key) {
 }
 
 bool KVDB::set(std::string_view key, std::string_view val) {
-    auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
-                     leveldb::Slice(val.data(), val.size()));
+    auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()));
     if (!s.ok()) {
         levelDBLogger.error("put %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }
@@ -114,15 +113,8 @@ std::vector<std::string> KVDB::getAllKeys() {
     return keyList;
 }
 
-bool KVDB::isValid() {
-    return status.ok();
-}
+bool KVDB::isValid() { return status.ok(); }
 
-KVDB::operator bool() {
-    return isValid();
-}
+KVDB::operator bool() { return isValid(); }
 
-
-LIAPI std::string KVDB::error(leveldb::Status status) {
-    return status.ToString();
-}
+LIAPI std::string KVDB::error(leveldb::Status status) { return status.ToString(); }

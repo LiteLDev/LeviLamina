@@ -1,21 +1,17 @@
 #include "llapi/mc/ReadOnlyBinaryStream.hpp"
 #include "llapi/mc/CompoundTag.hpp"
 
-std::string const& ReadOnlyBinaryStream::getData() const {
-    return *pBuf;
-}
+#include "llapi/memory/MemoryUtils.h"
 
-size_t ReadOnlyBinaryStream::getLength() const {
-    return pBuf->size();
-}
+using ll::memory::dAccess;
 
-size_t ReadOnlyBinaryStream::getReadPointer() const {
-    return readPointer;
-}
+std::string const& ReadOnlyBinaryStream::getData() const { return *pBuf; }
 
-size_t ReadOnlyBinaryStream::getUnreadLength() const {
-    return getLength() - getReadPointer();
-}
+size_t ReadOnlyBinaryStream::getLength() const { return pBuf->size(); }
+
+size_t ReadOnlyBinaryStream::getReadPointer() const { return readPointer; }
+
+size_t ReadOnlyBinaryStream::getUnreadLength() const { return getLength() - getReadPointer(); }
 
 void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
     auto len = getLength();
@@ -28,7 +24,7 @@ void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
 std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag() {
     auto tag = CompoundTag::create();
     class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
-    *((void**)&rv) = dlsym("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
+    *((void**)&rv) = LL_RESOLVE_SYMBOL("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
     (*rv)(*tag, *this);
     return std::move(tag);
 }

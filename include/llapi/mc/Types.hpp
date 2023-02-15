@@ -9,7 +9,6 @@
 
 // enum
 #include "inc/enums.inc"
-#include "../HookAPI.h"
 #include "../utils/RNG.h"
 class Vec2;
 class Vec3;

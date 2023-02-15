@@ -1,8 +1,9 @@
 #include "llapi/mc/IntTag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 
-int& IntTag::value() {
-    return dAccess<int, 8>(this);
-}
+using ll::memory::dAccess;
+
+int& IntTag::value() { return dAccess<int, 8>(this); }
 
 IntTag& IntTag::operator=(int val) {
     value() = val;
@@ -22,9 +23,7 @@ bool IntTag::set(int val) {
     return true;
 }
 
-int IntTag::get() {
-    return value();
-}
+int IntTag::get() { return value(); }
 
 IntTag::operator int() const {
     if (!this)

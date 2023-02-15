@@ -1,59 +1,31 @@
 #include "llapi/utils/StringReader.h"
+
 #include <stdexcept>
 
 //////////////////////////////// CONSTRUCTOR ////////////////////////////////
 
 StringReader::StringReader(const std::string& str)
-: str(str)
-, len(str.length())
-, begin(str.begin())
-, end(str.end())
-, it(begin) {
-}
+: str(str), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
 StringReader::StringReader(const char* cstr)
-: str(cstr)
-, len(str.length())
-, begin(str.begin())
-, end(str.end())
-, it(begin) {
-}
+: str(cstr), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {}
 StringReader::StringReader(const char* cstr, size_t len)
-: str(cstr, len)
-, len(len)
-, begin(str.begin())
-, end(str.end())
-, it(begin) {
-}
+: str(cstr, len), len(len), begin(str.begin()), end(str.end()), it(begin) {}
 
 //////////////////////////////// GET ////////////////////////////////
 
-bool StringReader::isEmpty() const {
-    return len == 0;
-}
+bool StringReader::isEmpty() const { return len == 0; }
 
-bool StringReader::isEnd() const {
-    return it == end;
-}
+bool StringReader::isEnd() const { return it == end; }
 
-bool StringReader::isStart() const {
-    return it == begin;
-}
+bool StringReader::isStart() const { return it == begin; }
 
-bool StringReader::isValid() const {
-    return it != end;
-}
+bool StringReader::isValid() const { return it != end; }
 
-size_t StringReader::getPos() const {
-    return it - begin;
-}
+size_t StringReader::getPos() const { return it - begin; }
 
-size_t StringReader::getLength() const {
-    return len;
-}
+size_t StringReader::getLength() const { return len; }
 
-size_t StringReader::getRemaining() const {
-    return end - it;
-}
+size_t StringReader::getRemaining() const { return end - it; }
 
 //////////////////////////////// READ ////////////////////////////////
 
@@ -64,9 +36,7 @@ char StringReader::read() {
     return *it++;
 }
 
-char StringReader::read(char& c) {
-    return c = read();
-}
+char StringReader::read(char& c) { return c = read(); }
 
 std::string StringReader::read(size_t len) {
     if (len > getRemaining()) {
@@ -109,9 +79,7 @@ std::string StringReader::readUntilNot(const std::string& chars) {
     return result;
 }
 
-std::string StringReader::readLine() {
-    return readUntil('\n');
-}
+std::string StringReader::readLine() { return readUntil('\n'); }
 
 std::string StringReader::readLetters(const std::string& chars) {
     std::string result;
@@ -155,7 +123,7 @@ std::string StringReader::readLettersAndDigits(const std::string& chars) {
 
 std::string StringReader::readVariableName() {
     std::string result;
-    bool first = true;
+    bool        first = true;
     while (!isEnd() && (isalnum(peek()) || peek() == '_')) {
         if (first && isdigit(peek())) {
             return result;
@@ -182,9 +150,7 @@ char StringReader::peek() {
     return *it;
 }
 
-char StringReader::peek(char& c) {
-    return c = peek();
-}
+char StringReader::peek(char& c) { return c = peek(); }
 
 char StringReader::peek(size_t offset) {
     if (isEnd()) {
@@ -276,10 +242,6 @@ void StringReader::skipLettersAndDigits(const std::string& chars) {
     }
 }
 
-void StringReader::skipWhitespace() {
-    skipUntilNot(" \t\r\n");
-}
+void StringReader::skipWhitespace() { skipUntilNot(" \t\r\n"); }
 
-void StringReader::skipLine() {
-    skipUntil('\n');
-}
+void StringReader::skipLine() { skipUntil('\n'); }

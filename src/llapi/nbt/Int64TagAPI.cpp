@@ -1,8 +1,9 @@
 #include "llapi/mc/Int64Tag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 
-int64_t& Int64Tag::value() {
-    return dAccess<int64_t, 8>(this);
-}
+using ll::memory::dAccess;
+
+int64_t& Int64Tag::value() { return dAccess<int64_t, 8>(this); }
 
 Int64Tag& Int64Tag::operator=(int64_t val) {
     value() = val;
@@ -22,9 +23,7 @@ bool Int64Tag::set(int64_t val) {
     return true;
 }
 
-int64_t Int64Tag::get() {
-    return value();
-}
+int64_t Int64Tag::get() { return value(); }
 
 Int64Tag::operator int64_t() const {
     if (!this)

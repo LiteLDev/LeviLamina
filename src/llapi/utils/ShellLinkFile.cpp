@@ -1,6 +1,5 @@
 #include "llapi/utils/ShellLinkFile.h"
 
-#include <memory>
 #include <string>
 
 #include "llapi/utils/StringHelper.h"
@@ -45,13 +44,9 @@ ShellLinkFile::ShellLinkFile(const std::wstring& path) {
     }
 }
 
-ShellLinkFile::~ShellLinkFile() {
-    close();
-}
+ShellLinkFile::~ShellLinkFile() { close(); }
 
-ShellLinkFile& ShellLinkFile::load(const std::string& path) {
-    return load(str2wstr(path));
-}
+ShellLinkFile& ShellLinkFile::load(const std::string& path) { return load(str2wstr(path)); }
 
 ShellLinkFile& ShellLinkFile::load(const std::wstring& path) {
     if (path.empty()) {
@@ -61,16 +56,14 @@ ShellLinkFile& ShellLinkFile::load(const std::wstring& path) {
         throw std::exception("ShellLinkFile::load: presistFile is null");
     }
     auto res = presistFile->Load(path.c_str(), 0);
-    lnkPath = path;
+    lnkPath  = path;
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::load: Failed to load");
     }
     return *this;
 }
 
-ShellLinkFile& ShellLinkFile::save(const std::string& path) {
-    return save(str2wstr(path));
-}
+ShellLinkFile& ShellLinkFile::save(const std::string& path) { return save(str2wstr(path)); }
 
 ShellLinkFile& ShellLinkFile::save(const std::wstring& path) {
     if (!presistFile) {
@@ -102,16 +95,14 @@ void ShellLinkFile::close() {
     ::CoUninitialize();
 }
 
-std::string ShellLinkFile::getPath() {
-    return wstr2str(getPathW());
-}
+std::string ShellLinkFile::getPath() { return wstr2str(getPathW()); }
 
 std::wstring ShellLinkFile::getPathW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getPathW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    auto res = shellLink->GetPath(buffer, MAX_PATH_LENGTH, nullptr, 0);
+    auto res    = shellLink->GetPath(buffer, MAX_PATH_LENGTH, nullptr, 0);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getPathW: Failed to get the path");
     }
@@ -120,9 +111,7 @@ std::wstring ShellLinkFile::getPathW() {
     return path;
 }
 
-ShellLinkFile& ShellLinkFile::setPath(const std::string& path) {
-    return setPath(str2wstr(path));
-}
+ShellLinkFile& ShellLinkFile::setPath(const std::string& path) { return setPath(str2wstr(path)); }
 
 ShellLinkFile& ShellLinkFile::setPath(const std::wstring& path) {
     if (!shellLink) {
@@ -135,16 +124,14 @@ ShellLinkFile& ShellLinkFile::setPath(const std::wstring& path) {
     return *this;
 }
 
-std::string ShellLinkFile::getWorkingDirectory() {
-    return wstr2str(getWorkingDirectoryW());
-}
+std::string ShellLinkFile::getWorkingDirectory() { return wstr2str(getWorkingDirectoryW()); }
 
 std::wstring ShellLinkFile::getWorkingDirectoryW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    auto res = shellLink->GetWorkingDirectory(buffer, MAX_PATH_LENGTH);
+    auto res    = shellLink->GetWorkingDirectory(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: Failed to get the working directory");
     }
@@ -168,16 +155,14 @@ ShellLinkFile& ShellLinkFile::setWorkingDirectory(const std::wstring& path) {
     return *this;
 }
 
-std::string ShellLinkFile::getDescription() {
-    return wstr2str(getDescriptionW());
-}
+std::string ShellLinkFile::getDescription() { return wstr2str(getDescriptionW()); }
 
 std::wstring ShellLinkFile::getDescriptionW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getDescriptionW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    auto res = shellLink->GetDescription(buffer, MAX_PATH_LENGTH);
+    auto res    = shellLink->GetDescription(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getDescriptionW: Failed to get the description");
     }
@@ -186,9 +171,7 @@ std::wstring ShellLinkFile::getDescriptionW() {
     return path;
 }
 
-ShellLinkFile& ShellLinkFile::setDescription(const std::string& desc) {
-    return setDescription(str2wstr(desc));
-}
+ShellLinkFile& ShellLinkFile::setDescription(const std::string& desc) { return setDescription(str2wstr(desc)); }
 
 ShellLinkFile& ShellLinkFile::setDescription(const std::wstring& desc) {
     if (!shellLink) {
@@ -201,16 +184,14 @@ ShellLinkFile& ShellLinkFile::setDescription(const std::wstring& desc) {
     return *this;
 }
 
-std::string ShellLinkFile::getArguments() {
-    return wstr2str(getArgumentsW());
-}
+std::string ShellLinkFile::getArguments() { return wstr2str(getArgumentsW()); }
 
 std::wstring ShellLinkFile::getArgumentsW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getArgumentsW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    auto res = shellLink->GetArguments(buffer, MAX_PATH_LENGTH);
+    auto res    = shellLink->GetArguments(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getArgumentsW: Failed to get the arguments");
     }
@@ -219,9 +200,7 @@ std::wstring ShellLinkFile::getArgumentsW() {
     return path;
 }
 
-ShellLinkFile& ShellLinkFile::setArguments(const std::string& arguments) {
-    return setArguments(str2wstr(arguments));
-}
+ShellLinkFile& ShellLinkFile::setArguments(const std::string& arguments) { return setArguments(str2wstr(arguments)); }
 
 ShellLinkFile& ShellLinkFile::setArguments(const std::wstring& arguments) {
     if (!shellLink) {
@@ -234,16 +213,14 @@ ShellLinkFile& ShellLinkFile::setArguments(const std::wstring& arguments) {
     return *this;
 }
 
-std::string ShellLinkFile::getIconLocation() {
-    return wstr2str(getIconLocationW());
-}
+std::string ShellLinkFile::getIconLocation() { return wstr2str(getIconLocationW()); }
 
 std::wstring ShellLinkFile::getIconLocationW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getIconLocationW: shellLink is null");
     }
     auto buffer = new wchar_t[MAX_PATH_LENGTH];
-    int _;
+    int  _;
     auto res = shellLink->GetIconLocation(buffer, MAX_PATH_LENGTH, &_);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getIconLocationW: Failed to get the icon location");
@@ -272,8 +249,8 @@ int ShellLinkFile::getShowCmd() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getShowCmd: shellLink is null");
     }
-    int showCmd = 0;
-    auto res = shellLink->GetShowCmd(&showCmd);
+    int  showCmd = 0;
+    auto res     = shellLink->GetShowCmd(&showCmd);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getShowCmd: Failed to get the show command");
     }
@@ -323,7 +300,7 @@ ShellLinkFile& ShellLinkFile::setHotKey(const HotKey& hotKey) {
     } hotKey1{};
 
     hotKey1.in = hotKey;
-    auto res = shellLink->SetHotkey(hotKey1.out);
+    auto res   = shellLink->SetHotkey(hotKey1.out);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::setHotKey: Failed to set the hot key");
     }

@@ -206,7 +206,7 @@ public:
     /*
     inline  ~DataItem(){
          (DataItem::*rv)();
-        *((void**)&rv) = dlsym("??1DataItem@@UEAA@XZ");
+        *((void**)&rv) = LL_RESOLVE_SYMBOL("??1DataItem@@UEAA@XZ");
         return (this->*rv)();
     }
     */

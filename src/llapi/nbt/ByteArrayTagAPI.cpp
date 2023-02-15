@@ -1,8 +1,10 @@
 #include "llapi/mc/ByteArrayTag.hpp"
 
-TagMemoryChunk& ByteArrayTag::value() {
-    return dAccess<TagMemoryChunk, 8>(this);
-}
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
+TagMemoryChunk& ByteArrayTag::value() { return dAccess<TagMemoryChunk, 8>(this); }
 
 ByteArrayTag& ByteArrayTag::operator=(TagMemoryChunk const& val) {
     value() = val;
@@ -31,6 +33,4 @@ bool ByteArrayTag::set(TagMemoryChunk const& val) {
     return true;
 }
 
-TagMemoryChunk ByteArrayTag::get() {
-    return value();
-}
+TagMemoryChunk ByteArrayTag::get() { return value(); }

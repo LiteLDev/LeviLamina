@@ -1,8 +1,10 @@
 #include "llapi/mc/ShortTag.hpp"
 
-short& ShortTag::value() {
-    return dAccess<short, 8>(this);
-}
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
+short& ShortTag::value() { return dAccess<short, 8>(this); }
 
 ShortTag& ShortTag::operator=(short val) {
     value() = val;
@@ -22,9 +24,7 @@ bool ShortTag::set(short val) {
     return true;
 }
 
-short ShortTag::get() {
-    return value();
-}
+short ShortTag::get() { return value(); }
 
 ShortTag::operator short() const {
     if (!this)

@@ -1,31 +1,33 @@
 #pragma once
-#include "llapi/Global.h"
+
+#include <vector>
 #include <string>
-#include "llapi/utils/ModUtils.h"
+#include <sstream>
 
 namespace TCHelper {
-inline string uto_string(uintptr_t x) {
-    stringstream ss;
-    ss << hex << x;
+
+inline std::string uto_string(uintptr_t x) {
+    std::stringstream ss;
+    ss << std::hex << x;
     return ss.str();
 }
 
-inline uintptr_t string_tohex(const string& str) {
-    stringstream ss;
-    ss << hex << str;
+inline uintptr_t string_tohex(const std::string& str) {
+    std::stringstream ss;
+    ss << std::hex << str;
     uintptr_t res;
     ss >> res;
     return res;
 }
 
 
-inline vector<uint8_t> splitHex8(const string& str) {
-    vector<uint8_t> res;
-    stringstream ss(str);
-    string item;
+inline std::vector<uint8_t> splitHex8(const std::string& str) {
+    std::vector<uint8_t> res;
+    std::stringstream    ss(str);
+    std::string          item;
     while (getline(ss, item, ' ')) {
         if (item == "?") {
-            res.push_back(ModUtils::MASKED);
+            res.push_back(0xff);
         } else {
             res.push_back(stoul(item, nullptr, 16));
         }
@@ -33,25 +35,24 @@ inline vector<uint8_t> splitHex8(const string& str) {
     return res;
 }
 
-inline string uto_string(uint8_t x) {
-    stringstream ss;
-    ss << hex << x;
+inline std::string uto_string(uint8_t x) {
+    std::stringstream ss;
+    ss << std::hex << x;
     return ss.str();
 }
 
 
-inline vector<uint16_t> splitHex(const string& str) {
-    vector<uint16_t> res;
-	stringstream ss(str);
-	string item;
+inline std::vector<uint16_t> splitHex(const std::string& str) {
+    std::vector<uint16_t> res;
+    std::stringstream     ss(str);
+    std::string           item;
     while (getline(ss, item, ' ')) {
         if (item == "?") {
-            res.push_back(ModUtils::MASKED);
+            res.push_back(0xffff);
         } else {
             res.push_back(stoul(item, nullptr, 16));
         }
-
-	}
-	return res;
+    }
+    return res;
 }
-}
+} // namespace TCHelper

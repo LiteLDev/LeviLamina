@@ -5,7 +5,7 @@
 #include <exception>
 #include "llapi/db/Session.h"
 
-constexpr auto PLAYER_DATABASE_PATH = "plugins/LiteLoader/PlayerDB.db";
+constexpr auto PLAYER_DATABASE_PATH    = "plugins/LiteLoader/PlayerDB.db";
 constexpr auto SQL_CREATE_PLAYER_TABLE = R"(
 CREATE TABLE IF NOT EXISTS player_new (
     XUID TEXT PRIMARY KEY NOT NULL,
@@ -58,9 +58,7 @@ std::vector<std::string> getAllPlayerNames() {
     return result;
 }
 
-std::vector<Info> getAllPlayerInfo() {
-    return data;
-}
+std::vector<Info> getAllPlayerInfo() { return data; }
 
 bool insert(std::string name, std::string xuid, std::string uuid) {
     if (name.empty() || xuid.empty() || uuid.empty()) {
@@ -82,7 +80,8 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
                     if (it.name != name || it.uuid != uuid) {
                         it.name = name;
                         it.uuid = uuid;
-                        db << "update player_new set NAME = ?, UUID = ? where XUID = ?", DB::use(DB::Row{name, uuid, xuid});
+                        db << "update player_new set NAME = ?, UUID = ? where XUID = ?",
+                            DB::use(DB::Row{name, uuid, xuid});
                     }
                 }
             }
@@ -131,17 +130,14 @@ void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid
 
 template <>
 PlayerInfo::Info row_to(const DB::Row& row) {
-    //ll::logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>());
-    return {
-        row["NAME"].get<std::string>(),
-        row["XUID"].get<std::string>(),
-        row["UUID"].get<std::string>()
-    };
+    // ll::logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(),
+    // row["UUID"].get<std::string>());
+    return {row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>()};
 }
 
 void UpdatePlayerDatabase() {
-    auto query = db->query(R"(SELECT count(*) FROM sqlite_master WHERE type="table" AND name = "player")");
-    DB::Any res = query.data()->front();
+    auto    query = db->query(R"(SELECT count(*) FROM sqlite_master WHERE type="table" AND name = "player")");
+    DB::Any res   = query.data()->front();
     if (res.is_number()) {
         if (res.get_number<unsigned short>() > 0) {
             ll::logger.warn("Converting old PlayerInfo to new one, please wait.");

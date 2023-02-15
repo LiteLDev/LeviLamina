@@ -80,6 +80,8 @@ target_include_directories(
         ${openssl_SOURCE_DIR}/include
         ${sqlite3_SOURCE_DIR}/include
         ${SQLiteCpp_SOURCE_DIR}/include
+
+        ${PreLoader_SOURCE_DIR}/include
 )
 
 target_include_directories(

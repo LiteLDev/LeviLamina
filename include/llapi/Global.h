@@ -2,13 +2,7 @@
 #pragma warning(disable : 4250)
 #pragma warning(disable : 4949)
 
-#ifndef LIAPI
-#ifdef LITELOADER_EXPORTS
-#define LIAPI __declspec(dllexport)
-#else
-#define LIAPI __declspec(dllimport)
-#endif
-#endif
+#include "llapi/Macro.h"
 
 #ifndef NOMINMAX
 #define NOMINMAX
@@ -97,3 +91,7 @@
 using std::map;
 using std::string;
 using std::vector;
+
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;

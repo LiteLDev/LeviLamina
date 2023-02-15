@@ -1,5 +1,5 @@
 #include "llapi/db/Row.h"
-#include "llapi/HookAPI.h"
+#include "llapi/utils/Hash.h"
 
 namespace DB {
 

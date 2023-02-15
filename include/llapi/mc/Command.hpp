@@ -39,9 +39,9 @@ public:
     static bool checkHasTargets(CommandSelectorResults<T> const& a, CommandOutput& b) {
         bool (*sym)(CommandSelectorResults<T> const& a, CommandOutput& b);
         if constexpr (std::is_same<T, class Actor>()) {
-            sym = (decltype(sym))dlsym("??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@AEAVCommandOutput@@@Z");
+            sym = (decltype(sym))LL_RESOLVE_SYMBOL("??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@AEAVCommandOutput@@@Z");
         } else {
-            sym = (decltype(sym))dlsym("??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@AEAVCommandOutput@@@Z");
+            sym = (decltype(sym))LL_RESOLVE_SYMBOL("??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@AEAVCommandOutput@@@Z");
         }
         return sym(a, b);
     }

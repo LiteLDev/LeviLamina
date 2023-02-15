@@ -1,4 +1,9 @@
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "llapi/Global.h"
+#include "llapi/memory/Hook.h"
 #include "llapi/mc/Item.hpp"
 #include "llapi/mc/ItemStack.hpp"
 #include "llapi/mc/Spawner.hpp"
@@ -7,11 +12,9 @@
 #include "llapi/mc/I18n.hpp"
 #include "llapi/mc/PropertiesSettings.hpp"
 #include "llapi/mc/CompoundTag.hpp"
-#include <string>
-#include <utility>
-#include <vector>
 
 using namespace std;
+using ll::memory::dAccess;
 
 static_assert(sizeof(ItemStack) == 160);
 static_assert(sizeof(ItemInstance) == 136);
@@ -37,7 +40,7 @@ ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
 ItemStack* ItemStack::create(short itemId, int aux, int count) {
     auto item = ItemRegistryManager::getItemRegistry().getItem(itemId);
     if (item)
-        return new ItemStack(*item, count, aux,0);
+        return new ItemStack(*item, count, aux, 0);
     return nullptr;
 }
 
@@ -60,7 +63,7 @@ ItemStack ItemStack::fromItemInstance(ItemInstance const& ins) {
 
 ItemStack* ItemStack::clone_s() const {
     ItemStack* a = ItemStack::create();
-    *a = clone();
+    *a           = clone();
     return a;
 }
 
@@ -95,9 +98,7 @@ bool ItemStack::setLore(const vector<string>& lores) {
     return true;
 }
 
-std::unique_ptr<CompoundTag> ItemStack::getNbt() {
-    return CompoundTag::fromItemStack(this);
-}
+std::unique_ptr<CompoundTag> ItemStack::getNbt() { return CompoundTag::fromItemStack(this); }
 
 bool ItemStack::setNbt(CompoundTag* nbt) {
     nbt->setItemStack(this);

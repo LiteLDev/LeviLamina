@@ -10,9 +10,10 @@
 #include "llapi/utils/FileHelper.h"
 #include "llapi/utils/SehTranslator.h"
 
+#include "llapi/memory/Hook.h"
+
 #include "llapi/LoggerAPI.h"
 #include "llapi/ServerAPI.h"
-#include "llapi/HookAPI.h"
 #include "llapi/EventAPI.h"
 
 #include "llapi/mc/Minecraft.hpp"
@@ -74,7 +75,8 @@ void unzipNodeModules() {
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
         auto res = NewProcessSync(
             fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"),
-            30000);
+            30000
+        );
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
@@ -85,14 +87,19 @@ void unzipNodeModules() {
 
 void decompressResourcePacks() {
     if (std::filesystem::exists(
-            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"))
+        )) {
         std::error_code ec;
         // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res =
-            NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)", ZIP_PROGRAM_PATH,
-                                       R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"),
-                           30000);
+        auto res = NewProcessSync(
+            fmt::format(
+                R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)",
+                ZIP_PROGRAM_PATH,
+                R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"
+            ),
+            30000
+        );
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
@@ -104,7 +111,7 @@ void decompressResourcePacks() {
 void checkRunningBDS() {
 
     constexpr const DWORD MAX_PATH_LEN = 32767;
-    auto* buffer = new wchar_t[MAX_PATH_LEN];
+    auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
 
     if (!ll::globalConfig.enableCheckRunningBDS)
         return;
@@ -112,8 +119,8 @@ void checkRunningBDS() {
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
     std::vector<DWORD> pids;
-    PROCESSENTRY32 pe32;
-    pe32.dwSize = sizeof(PROCESSENTRY32);
+    PROCESSENTRY32     pe32;
+    pe32.dwSize         = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hProcessSnap == INVALID_HANDLE_VALUE) {
         return;
@@ -234,35 +241,35 @@ void checkProtocolVersion() {
 
 BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     switch (CEvent) {
-        case CTRL_C_EVENT:
-        case CTRL_CLOSE_EVENT:
-        case CTRL_SHUTDOWN_EVENT: {
-            if (Global<Minecraft>) {
-                Global<Minecraft>->requestServerShutdown("");
-            } else {
-                std::terminate();
-            }
-            return TRUE;
+    case CTRL_C_EVENT:
+    case CTRL_CLOSE_EVENT:
+    case CTRL_SHUTDOWN_EVENT: {
+        if (Global<Minecraft>) {
+            Global<Minecraft>->requestServerShutdown("");
+        } else {
+            std::terminate();
         }
-        default:
-            break;
+        return TRUE;
+    }
+    default:
+        break;
     }
     return FALSE;
 }
 
 void unixSignalHandler(int signum) {
     switch (signum) {
-        case SIGINT:
-        case SIGTERM: {
-            if (Global<Minecraft>) {
-                Global<Minecraft>->requestServerShutdown("");
-            } else {
-                std::terminate();
-            }
-            break;
+    case SIGINT:
+    case SIGTERM: {
+        if (Global<Minecraft>) {
+            Global<Minecraft>->requestServerShutdown("");
+        } else {
+            std::terminate();
         }
-        default:
-            break;
+        break;
+    }
+    default:
+        break;
     }
 }
 
@@ -336,8 +343,8 @@ void liteloaderMain() {
     InitPlayerDatabase();
 
     // Rename Window
-    HWND hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
+    HWND         hwnd = GetConsoleWindow();
+    std::wstring s    = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -387,16 +394,18 @@ void liteloaderMain() {
     PlayerDeathPositions::deathEventListener();
 }
 
-// Call LLMain
-THook(int, "main", int a, void* b) {
+using namespace ll::memory;
+
+LL_AUTO_STATIC_HOOK(LiteLoaderMain, Priority::PriorityNormal, "main", int, int argc, char** argv) {
     startTime = clock();
-    char** str = static_cast<char**>(b);
-    for (int i = 0; i < a; ++i) {
-        if (strcmp(str[i], "--noColor") == 0) {
+    for (int i = 0; i < argc; ++i) {
+        if (strcmp(argv[i], "--noColor") == 0) {
             ll::commandLineOption.noColorOption = true;
             break;
         }
     }
     liteloaderMain();
-    return original(a, b);
+    return origin(argc, argv);
 }
+
+LL_UNUSED BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID) { return TRUE; }

@@ -1,15 +1,16 @@
 #include "llapi/utils/StringHelper.h"
+
 #include <string>
 #include <vector>
-#include <windows.h>
+
+#include <Windows.h>
+
 using namespace std;
 
-wstring str2wstr(const string& str) {
-    return str2wstr(str, CP_UTF8);
-}
+wstring str2wstr(const string& str) { return str2wstr(str, CP_UTF8); }
 
 std::wstring str2wstr(const std::string& str, UINT codePage) {
-    auto len = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
+    auto  len    = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
     auto* buffer = new wchar_t[len];
     MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len);
     wstring result = wstring(buffer);
@@ -17,12 +18,10 @@ std::wstring str2wstr(const std::string& str, UINT codePage) {
     return result;
 }
 
-string wstr2str(const wstring& wstr) {
-    return wstr2str(wstr, CP_UTF8);
-}
+string wstr2str(const wstring& wstr) { return wstr2str(wstr, CP_UTF8); }
 
 std::string wstr2str(const std::wstring& wstr, UINT codePage) {
-    auto len = WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
+    auto  len    = WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
     char* buffer = new char[len];
     WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, buffer, len, nullptr, nullptr);
     string result = string(buffer);
@@ -38,14 +37,14 @@ std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::
 
     std::string strs = str + pattern;
 
-    size_t pos = strs.find(pattern);
+    size_t pos  = strs.find(pattern);
     size_t size = strs.size();
 
     while (pos != std::string::npos) {
         std::string x = strs.substr(0, pos);
         resVec.push_back(x);
         strs = strs.substr(pos + pattern.size(), size);
-        pos = strs.find(pattern);
+        pos  = strs.find(pattern);
     }
 
     return resVec;
@@ -65,7 +64,7 @@ string& ReplaceStr(string& str, const string& old_value, const string& new_value
 }
 
 bool StartsWith(const std::string& str, const std::string& start) {
-    size_t srcLen = str.size();
+    size_t srcLen   = str.size();
     size_t startLen = start.size();
     if (srcLen >= startLen) {
         string temp = str.substr(0, startLen);
@@ -95,10 +94,6 @@ std::string FixCurlyBracket(std::string str) {
 }
 
 #ifdef __cpp_lib_char8_t
-LIAPI std::string UTF82String(std::u8string str) {
-    return reinterpret_cast<std::string&>(str);
-}
+LIAPI std::string UTF82String(std::u8string str) { return reinterpret_cast<std::string&>(str); }
 #endif
-LIAPI std::string UTF82String(std::string str) {
-    return str;
-}
+LIAPI std::string UTF82String(std::string str) { return str; }

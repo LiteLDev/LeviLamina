@@ -5,13 +5,11 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-std::vector<std::string> GeneralLanguages{
-    "en", "zh"
-};
+std::vector<std::string> GeneralLanguages{"en", "zh"};
 
 std::string I18nBase::get(const std::string& key, const std::string& langCode) {
-    auto& langc = (langCode.empty() ? defaultLocaleName : langCode);
-    auto langType = langc.substr(0, 2);
+    auto& langc    = (langCode.empty() ? defaultLocaleName : langCode);
+    auto  langType = langc.substr(0, 2);
     if (langData.count(langc)) { // If there is lang data for the language
         auto& lang = langData[langc];
         if (lang.count(key)) { // If there is matched key in the language data
@@ -66,9 +64,7 @@ std::string I18nBase::get(const std::string& key, const std::string& langCode) {
     return key;
 }
 
-std::string I18nBase::getDefaultLocaleName() {
-    return this->defaultLocaleName;
-}
+std::string I18nBase::getDefaultLocaleName() { return this->defaultLocaleName; }
 
 I18nBase* I18nBase::clone() {
     if (getType() == Type::SingleFile) {
@@ -85,14 +81,14 @@ void SingleFileI18N::load(const std::string& fileName) {
     this->filePath = fileName;
     if (!fs::exists(fileName)) {
         fs::create_directories(fs::path(fileName).parent_path());
-        std::fstream file(fileName, std::ios::out | std::ios::app);
+        std::fstream   file(fileName, std::ios::out | std::ios::app);
         nlohmann::json j = defaultLangData;
         file << std::setw(4) << j; // Dump default language data
         file.close();
         langData = defaultLangData;
         return; // Skip parsing
     }
-    std::fstream file(fileName, std::ios::in);
+    std::fstream   file(fileName, std::ios::in);
     nlohmann::json j;
     file >> j;
     langData = j.get<LangData>();
@@ -121,9 +117,7 @@ void SingleFileI18N::save() {
     file.close();
 }
 
-I18nBase::Type SingleFileI18N::getType() {
-    return Type::SingleFile;
-}
+I18nBase::Type SingleFileI18N::getType() { return Type::SingleFile; }
 
 
 ////////////////////////////////////////// MultiFileI18N //////////////////////////////////////////
@@ -162,8 +156,8 @@ void MultiFileI18N::load(const std::string& dirName) {
         if (!f.is_regular_file() || f.path().extension() != ".json") {
             continue;
         }
-        auto langName = f.path().stem().string();
-        std::fstream file(f.path().wstring(), std::ios::in);
+        auto           langName = f.path().stem().string();
+        std::fstream   file(f.path().wstring(), std::ios::in);
         nlohmann::json j;
         file >> j;
         auto data = NestedHelper(j);
@@ -175,17 +169,17 @@ void MultiFileI18N::save(bool nested) {
     if (!fs::exists(dirPath)) {
         fs::create_directories(dirPath);
         for (auto& [lc, lv] : this->defaultLangData) {
-            auto fileName = fs::path(dirPath).append(lc + ".json").wstring();
+            auto         fileName = fs::path(dirPath).append(lc + ".json").wstring();
             std::fstream file;
             if (fs::exists(fileName)) {
                 file.open(fileName, std::ios::out | std::ios::ate);
             } else {
-                file.open(fileName, std::ios::out | std::ios::app);     
+                file.open(fileName, std::ios::out | std::ios::app);
             }
             if (nested) {
                 auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
-                    auto keys = SplitStrWithPattern(k, ".");
+                    auto        keys = SplitStrWithPattern(k, ".");
                     std::string name = keys.back();
                     keys.pop_back();
                     nlohmann::json* j = &out;
@@ -203,15 +197,17 @@ void MultiFileI18N::save(bool nested) {
     }
 }
 
-I18nBase::Type MultiFileI18N::getType() {
-    return Type::MultiFile;
-}
+I18nBase::Type MultiFileI18N::getType() { return Type::MultiFile; }
 
 
 namespace Translation {
 
-I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
-               const I18nBase::LangData& defaultLangData) {
+I18nBase* loadI18nImpl(
+    HMODULE                   hPlugin,
+    const std::string&        path,
+    const std::string&        defaultLocaleName,
+    const I18nBase::LangData& defaultLangData
+) {
     try {
         I18nBase* res = nullptr;
         if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
@@ -223,7 +219,9 @@ I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::stri
     } catch (const std::exception& e) {
         ll::logger.error("Fail to load translation file <{}> !", path);
         ll::logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) { ll::logger.error("Fail to load translation file <{}> !", path); }
+    } catch (...) {
+        ll::logger.error("Fail to load translation file <{}> !", path);
+    }
     return nullptr;
 }
 
@@ -234,7 +232,9 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     } catch (const std::exception& e) {
         ll::logger.error("Fail to load translation from another plugin!", e.what());
         ll::logger.error("- {}", e.what());
-    } catch (...) { ll::logger.error("Fail to load translation from another plugin!"); }
+    } catch (...) {
+        ll::logger.error("Fail to load translation from another plugin!");
+    }
     return nullptr;
 }
 
@@ -251,78 +251,78 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
 #undef UNICODE
 namespace TextEncoding {
 const std::unordered_map<Encoding, UINT> Encoding_CodePage_Map = {
-    {Encoding::ISO_8859_1, 28591},
-    {Encoding::ISO_8859_2, 28592},
-    {Encoding::ISO_8859_3, 28593},
-    {Encoding::ISO_8859_4, 28594},
-    {Encoding::ISO_8859_5, 28595},
-    {Encoding::ISO_8859_6, 28596},
-    {Encoding::ISO_8859_7, 28597},
-    {Encoding::ISO_8859_8, 28598},
-    {Encoding::ISO_8859_9, 28599},
-    //{Encoding::ISO_8859_10,},             //?
-    {Encoding::JAPANESE_EUC_JP, 51932},
-    {Encoding::JAPANESE_SHIFT_JIS, 932},
-    {Encoding::JAPANESE_JIS, 932},
-    {Encoding::CHINESE_BIG5, 950},
-    {Encoding::CHINESE_GB, 936},
-    {Encoding::CHINESE_EUC_CN, 51936},
-    {Encoding::KOREAN_EUC_KR, 51949},
-    //{Encoding::UNICODE, },
-    {Encoding::CHINESE_EUC_DEC, 51936},
-    {Encoding::CHINESE_CNS, 20000},
-    {Encoding::CHINESE_BIG5_CP950, 950},
-    {Encoding::JAPANESE_CP932, 932},
-    {Encoding::UTF8, CP_UTF8},
-    {Encoding::UNKNOWN_ENCODING, CP_ACP},
-    {Encoding::ASCII_7BIT, 28591},
-    {Encoding::RUSSIAN_KOI8_R, 20866},
-    {Encoding::RUSSIAN_CP1251, 1251},
-    {Encoding::MSFT_CP1252, 1252},
-    {Encoding::RUSSIAN_KOI8_RU, 20866},
-    {Encoding::MSFT_CP1250, 1250},
-    {Encoding::ISO_8859_15, 28605},
-    {Encoding::MSFT_CP1254, 1254},
-    {Encoding::MSFT_CP1257, 1257},
-    {Encoding::ISO_8859_11, 10021}, //?
-    {Encoding::MSFT_CP874, 874},
-    {Encoding::MSFT_CP1256, 1256},
-    {Encoding::MSFT_CP1255, 1255},
-    {Encoding::ISO_8859_8_I, 38598},
-    {Encoding::HEBREW_VISUAL, 28598},
-    {Encoding::CZECH_CP852, 852},
-    //{Encoding::CZECH_CSN_369103, },       //?
-    {Encoding::MSFT_CP1253, 1253},
-    {Encoding::RUSSIAN_CP866, 866},
-    {Encoding::ISO_8859_13, 28603},
-    {Encoding::ISO_2022_KR, 50225},
-    {Encoding::GBK, 936},
-    {Encoding::GB18030, 54936},
-    {Encoding::BIG5_HKSCS, 950},
-    {Encoding::ISO_2022_CN, 50227},
-    {Encoding::TSCII, 57004},      //?
-    {Encoding::TAMIL_MONO, 57004}, //?
-    {Encoding::TAMIL_BI, 57004},   //?
-    //{Encoding::JAGRAN, },                 //?
-    {Encoding::MACINTOSH_ROMAN, 10000},
-    {Encoding::UTF7, CP_UTF7},
-    {Encoding::UTF16BE, 1201},
-    {Encoding::UTF16LE, 1200},
-    {Encoding::UTF32BE, 12001},
-    {Encoding::UTF32LE, 12000},
-    //{Encoding::BINARYENC, },
-    {Encoding::HZ_GB_2312, 52936},
-    //{Encoding::TAM_ELANGO, },             //?
-    //{Encoding::TAM_LTTMBARANI, },         //?
-    //{Encoding::TAM_SHREE, },              //?
-    //{Encoding::TAM_TBOOMIS, },            //?
-    //{Encoding::TAM_TMNEWS, },             //?
-    //{Encoding::TAM_WEBTAMIL, },           //?
-    {Encoding::KDDI_SHIFT_JIS, 932},
-    {Encoding::DOCOMO_SHIFT_JIS, 932},
-    {Encoding::SOFTBANK_SHIFT_JIS, 932},
-    {Encoding::KDDI_ISO_2022_JP, 50220},
-    {Encoding::SOFTBANK_ISO_2022_JP, 50220},
+    {Encoding::ISO_8859_1,           28591  },
+    {Encoding::ISO_8859_2,           28592  },
+    {Encoding::ISO_8859_3,           28593  },
+    {Encoding::ISO_8859_4,           28594  },
+    {Encoding::ISO_8859_5,           28595  },
+    {Encoding::ISO_8859_6,           28596  },
+    {Encoding::ISO_8859_7,           28597  },
+    {Encoding::ISO_8859_8,           28598  },
+    {Encoding::ISO_8859_9,           28599  },
+ //{Encoding::ISO_8859_10,},             //?
+    {Encoding::JAPANESE_EUC_JP,      51932  },
+    {Encoding::JAPANESE_SHIFT_JIS,   932    },
+    {Encoding::JAPANESE_JIS,         932    },
+    {Encoding::CHINESE_BIG5,         950    },
+    {Encoding::CHINESE_GB,           936    },
+    {Encoding::CHINESE_EUC_CN,       51936  },
+    {Encoding::KOREAN_EUC_KR,        51949  },
+ //{Encoding::UNICODE, },
+    {Encoding::CHINESE_EUC_DEC,      51936  },
+    {Encoding::CHINESE_CNS,          20000  },
+    {Encoding::CHINESE_BIG5_CP950,   950    },
+    {Encoding::JAPANESE_CP932,       932    },
+    {Encoding::UTF8,                 CP_UTF8},
+    {Encoding::UNKNOWN_ENCODING,     CP_ACP },
+    {Encoding::ASCII_7BIT,           28591  },
+    {Encoding::RUSSIAN_KOI8_R,       20866  },
+    {Encoding::RUSSIAN_CP1251,       1251   },
+    {Encoding::MSFT_CP1252,          1252   },
+    {Encoding::RUSSIAN_KOI8_RU,      20866  },
+    {Encoding::MSFT_CP1250,          1250   },
+    {Encoding::ISO_8859_15,          28605  },
+    {Encoding::MSFT_CP1254,          1254   },
+    {Encoding::MSFT_CP1257,          1257   },
+    {Encoding::ISO_8859_11,          10021  }, //?
+    {Encoding::MSFT_CP874,           874    },
+    {Encoding::MSFT_CP1256,          1256   },
+    {Encoding::MSFT_CP1255,          1255   },
+    {Encoding::ISO_8859_8_I,         38598  },
+    {Encoding::HEBREW_VISUAL,        28598  },
+    {Encoding::CZECH_CP852,          852    },
+ //{Encoding::CZECH_CSN_369103, },       //?
+    {Encoding::MSFT_CP1253,          1253   },
+    {Encoding::RUSSIAN_CP866,        866    },
+    {Encoding::ISO_8859_13,          28603  },
+    {Encoding::ISO_2022_KR,          50225  },
+    {Encoding::GBK,                  936    },
+    {Encoding::GB18030,              54936  },
+    {Encoding::BIG5_HKSCS,           950    },
+    {Encoding::ISO_2022_CN,          50227  },
+    {Encoding::TSCII,                57004  }, //?
+    {Encoding::TAMIL_MONO,           57004  }, //?
+    {Encoding::TAMIL_BI,             57004  }, //?
+  //{Encoding::JAGRAN, },                 //?
+    {Encoding::MACINTOSH_ROMAN,      10000  },
+    {Encoding::UTF7,                 CP_UTF7},
+    {Encoding::UTF16BE,              1201   },
+    {Encoding::UTF16LE,              1200   },
+    {Encoding::UTF32BE,              12001  },
+    {Encoding::UTF32LE,              12000  },
+ //{Encoding::BINARYENC, },
+    {Encoding::HZ_GB_2312,           52936  },
+ //{Encoding::TAM_ELANGO, },             //?
+  //{Encoding::TAM_LTTMBARANI, },         //?
+  //{Encoding::TAM_SHREE, },              //?
+  //{Encoding::TAM_TBOOMIS, },            //?
+  //{Encoding::TAM_TMNEWS, },             //?
+  //{Encoding::TAM_WEBTAMIL, },           //?
+    {Encoding::KDDI_SHIFT_JIS,       932    },
+    {Encoding::DOCOMO_SHIFT_JIS,     932    },
+    {Encoding::SOFTBANK_SHIFT_JIS,   932    },
+    {Encoding::KDDI_ISO_2022_JP,     50220  },
+    {Encoding::SOFTBANK_ISO_2022_JP, 50220  },
 };
 }
 #define UNICODE
@@ -340,17 +340,21 @@ Encoding getLocalEncoding() {
 
 Encoding detectEncoding(const std::string& text, bool* isReliable) {
     bool temp;
-    int bytes_consumed;
+    int  bytes_consumed;
 
     return DetectEncoding(
-        text.c_str(), (int)text.size(),
-        nullptr, nullptr, nullptr,
+        text.c_str(),
+        (int)text.size(),
+        nullptr,
+        nullptr,
+        nullptr,
         UNKNOWN_ENCODING,
         UNKNOWN_LANGUAGE,
         CompactEncDet::WEB_CORPUS,
         false,
         &bytes_consumed,
-        isReliable ? isReliable : &temp);
+        isReliable ? isReliable : &temp
+    );
 }
 
 std::string fromUnicode(const std::wstring& text, Encoding encoding) {
@@ -369,13 +373,9 @@ std::wstring toUnicode(const std::string& text, Encoding encoding) {
     }
 }
 
-std::string toUTF8(const std::string& text) {
-    return convert(text, detectEncoding(text), Encoding::UTF8);
-}
+std::string toUTF8(const std::string& text) { return convert(text, detectEncoding(text), Encoding::UTF8); }
 
-std::string toUTF8(const std::string& text, Encoding from) {
-    return convert(text, from, Encoding::UTF8);
-}
+std::string toUTF8(const std::string& text, Encoding from) { return convert(text, from, Encoding::UTF8); }
 
 std::string convert(const std::string& text, Encoding from, Encoding to) {
     if (text.empty() || from == to)

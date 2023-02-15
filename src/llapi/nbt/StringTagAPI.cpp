@@ -1,8 +1,10 @@
 #include "llapi/mc/StringTag.hpp"
 
-std::string& StringTag::value() {
-    return dAccess<std::string, 8>(this);
-}
+#include "llapi/memory/MemoryUtils.h"
+
+using ll::memory::dAccess;
+
+std::string& StringTag::value() { return dAccess<std::string, 8>(this); }
 
 StringTag& StringTag::operator=(std::string const& val) {
     value() = val;
@@ -22,9 +24,7 @@ bool StringTag::set(std::string const& val) {
     return true;
 }
 
-std::string StringTag::get() {
-    return value();
-}
+std::string StringTag::get() { return value(); }
 
 StringTag::operator std::string() const {
     if (!this)

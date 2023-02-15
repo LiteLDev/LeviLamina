@@ -24,7 +24,7 @@ public:
 inline class ItemStack const& getItem(int a0) const
 {
     class ItemStack const& (SimpleSparseContainer::*rv)(int) const;
-    *((void**)&rv) = dlsym("?getItem@SimpleSparseContainer@@UEBAAEBVItemStack@@H@Z");
+    *((void**)&rv) = LL_RESOLVE_SYMBOL("?getItem@SimpleSparseContainer@@UEBAAEBVItemStack@@H@Z");
     return (this->*rv)(std::forward<int>(a0));
 }
 #undef AFTER_EXTRA

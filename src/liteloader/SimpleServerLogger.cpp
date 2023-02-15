@@ -1,5 +1,6 @@
 #include "liteloader/SimpleServerLogger.h"
 
+#include "llapi/memory/Hook.h"
 #include "llapi/LoggerAPI.h"
 #include "llapi/mc/ServerPlayer.hpp"
 #include "llapi/EventAPI.h"
@@ -10,9 +11,9 @@
 
 using namespace Event;
 
-bool ll::SimpleServerLogger::inited = false;
+bool                           ll::SimpleServerLogger::inited = false;
 EventListener<PlayerChatEvent> ll::SimpleServerLogger::chatListener{0};
-EventListener<PlayerCmdEvent> ll::SimpleServerLogger::cmdListener{0};
+EventListener<PlayerCmdEvent>  ll::SimpleServerLogger::cmdListener{0};
 
 bool ll::SimpleServerLogger::registerSimpleServerLogger() {
     if (inited)
@@ -23,12 +24,12 @@ bool ll::SimpleServerLogger::registerSimpleServerLogger() {
             logger.info("<{}> {}", ev.mPlayer->getRealName(), ev.mMessage);
             return true;
         });
-        cmdListener = Event::PlayerCmdEvent::subscribe([](const Event::PlayerCmdEvent& ev) {
+        cmdListener  = Event::PlayerCmdEvent::subscribe([](const Event::PlayerCmdEvent& ev) {
             static Logger logger("Command");
             logger.info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;
         });
-        inited = true;
+        inited       = true;
         return true;
     }
     return false;
@@ -43,23 +44,41 @@ bool ll::SimpleServerLogger::unregisterSimpleServerLogger() {
     return true;
 }
 
-#include "llapi/mc/Command.hpp"
-
-TInstanceHook(void, "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z", Player, CommandPermissionLevel perm) {
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    PermissionLog,
+    Player,
+    ll::memory::Priority::PriorityNormal,
+    "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z",
+    void,
+    CommandPermissionLevel perm
+) {
     if (ll::globalConfig.enableSimpleServerLogger) {
         static Logger logger("Permissions");
-        logger.info("<{}> {}({}) -> {}({})", getRealName(), magic_enum::enum_name(getCommandPermissionLevel()),
-                    (int)getCommandPermissionLevel(), magic_enum::enum_name(perm), (int)perm);
+        logger.info(
+            "<{}> {}({}) -> {}({})",
+            getRealName(),
+            magic_enum::enum_name(getCommandPermissionLevel()),
+            (int)getCommandPermissionLevel(),
+            magic_enum::enum_name(perm),
+            (int)perm
+        );
     }
-    return original(this, perm);
+    return origin(perm);
 }
 
 // ==> LiteLoader/Main/BuiltinUnlockCmd.cpp
 #include "llapi/mc/I18n.hpp"
 
-void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm,
-                            short flag1, short flag2) {
-    static Logger logger("RegsterCommand");
+void LogCommandRegistration(
+    std::string const&          name,
+    char const*                 description,
+    enum CommandPermissionLevel perm,
+    short                       flag1,
+    short                       flag2
+) {
+    static Logger logger("RegisterCommand");
     logger.consoleLevel = logger.debug.level;
-    logger.debug("{:<18} - {:<12} - 0x{:<5x} - {}", name, magic_enum::enum_name(perm), flag1 | flag2, I18n::get(description));
+    logger.debug(
+        "{:<18} - {:<12} - 0x{:<5x} - {}", name, magic_enum::enum_name(perm), flag1 | flag2, I18n::get(description)
+    );
 }

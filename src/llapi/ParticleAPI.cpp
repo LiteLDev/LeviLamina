@@ -3,12 +3,11 @@
 //
 #include "llapi/ParticleAPI.h"
 #include "llapi/mc/Player.hpp"
-#include "llapi/mc/Dimension.hpp"
-#include "llapi/mc/Level.hpp"
+
 #include "llapi/mc/ResourcePackRepository.hpp"
 #include "llapi/mc/ResourcePackStack.hpp"
 #include "llapi/EventAPI.h"
-#include "llapi/mc/ResourcePackRepository.hpp"
+
 void InitParticle() {
     Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
         ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, R"(plugins/LiteLoader/ResourcePacks)");

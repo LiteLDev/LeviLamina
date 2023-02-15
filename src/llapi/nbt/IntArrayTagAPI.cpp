@@ -1,8 +1,9 @@
 #include "llapi/mc/IntArrayTag.hpp"
+#include "llapi/memory/MemoryUtils.h"
 
-TagMemoryChunk& IntArrayTag::value() {
-    return dAccess<TagMemoryChunk, 8>(this);
-}
+using ll::memory::dAccess;
+
+TagMemoryChunk& IntArrayTag::value() { return dAccess<TagMemoryChunk, 8>(this); }
 IntArrayTag& IntArrayTag::operator=(TagMemoryChunk const& val) {
     value() = val;
     return *this;
@@ -32,6 +33,4 @@ bool IntArrayTag::set(TagMemoryChunk const& val) {
     return true;
 }
 
-TagMemoryChunk IntArrayTag::get() {
-    return value();
-}
+TagMemoryChunk IntArrayTag::get() { return value(); }

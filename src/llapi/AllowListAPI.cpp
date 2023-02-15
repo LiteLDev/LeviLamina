@@ -26,13 +26,9 @@ AllowListManager::AllowListManager() {
     allowListLogger.warn("allowlist.json is not found");
 }
 
-void AllowListManager::save() {
-    WriteAllFile("allowlist.json", allowList.dump());
-}
+void AllowListManager::save() { WriteAllFile("allowlist.json", allowList.dump()); }
 
-size_t AllowListManager::size() {
-    return allowList.size();
-}
+size_t AllowListManager::size() { return allowList.size(); }
 
 bool AllowListManager::has(const std::string& name, const xuid_t& xuid) {
     size_t _;
@@ -57,7 +53,10 @@ bool AllowListManager::has(const std::string& name, const xuid_t& xuid, size_t& 
 
 AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& xuid, bool ignore) {
     try {
-        nlohmann::json j{{"name", name}, {"ignoresPlayerLimit", ignore}};
+        nlohmann::json j{
+            {"name",               name  },
+            {"ignoresPlayerLimit", ignore}
+        };
         if (!xuid.empty()) {
             j.emplace("xuid", xuid);
         }

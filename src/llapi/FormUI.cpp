@@ -9,7 +9,6 @@
 #include "llapi/mc/ServerPlayer.hpp"
 #include "liteloader/LiteLoader.h"
 #include <utility>
-#include "llapi/LLAPI.h"
 
 using namespace std;
 
@@ -23,7 +22,7 @@ string Button::serialize() {
             fifo_json imageObj;
             imageObj["type"] = image.find("textures/") == 0 ? "path" : "url";
             imageObj["data"] = image;
-            button["image"] = imageObj;
+            button["image"]  = imageObj;
         }
         return button.dump();
     } catch (const fifo_json::exception&) {
@@ -53,8 +52,8 @@ SimpleForm& SimpleForm::append(const Button& element) {
 
 string SimpleForm::serialize() {
     try {
-        fifo_json form = fifo_json::parse(R"({"title":"","content":"","buttons":[],"type":"form"})");
-        form["title"] = title;
+        fifo_json form  = fifo_json::parse(R"({"title":"","content":"","buttons":[],"type":"form"})");
+        form["title"]   = title;
         form["content"] = content;
         for (auto& e : elements) {
             string element = e->serialize();
@@ -69,7 +68,7 @@ string SimpleForm::serialize() {
 }
 
 bool SimpleForm::sendTo(Player* player, Callback callback) {
-    unsigned id = NewFormId();
+    unsigned id    = NewFormId();
     this->callback = std::move(callback);
     SetSimpleFormBuilderData(id, make_shared<SimpleForm>(*this));
 
@@ -102,8 +101,8 @@ ModalForm& ModalForm::setCancelButton(const string& text) {
 
 string ModalForm::serialize() {
     try {
-        fifo_json form = fifo_json::parse(R"({"title":"","content":"","button1":"","button2":"","type":"modal"})");
-        form["title"] = title;
+        fifo_json form  = fifo_json::parse(R"({"title":"","content":"","button1":"","button2":"","type":"modal"})");
+        form["title"]   = title;
         form["content"] = content;
         form["button1"] = confirmButton;
         form["button2"] = cancelButton;
@@ -115,7 +114,7 @@ string ModalForm::serialize() {
 }
 
 bool ModalForm::sendTo(Player* player, Callback callback) {
-    unsigned id = NewFormId();
+    unsigned id    = NewFormId();
     this->callback = std::move(callback);
     SetModalFormBuilderData(id, make_shared<ModalForm>(*this));
 
@@ -126,13 +125,9 @@ bool ModalForm::sendTo(Player* player, Callback callback) {
 }
 
 //////////////////////////////// Custom Form ////////////////////////////////
-std::string CustomFormElement::getString() {
-    return value;
-}
+std::string CustomFormElement::getString() { return value; }
 
-int CustomFormElement::getNumber() {
-    return getInt();
-}
+int CustomFormElement::getNumber() { return getInt(); }
 
 int CustomFormElement::getInt() {
     try {
@@ -234,12 +229,12 @@ string Slider::serialize() {
 
         if (minValue > maxValue) {
             const auto t = maxValue;
-            maxValue = minValue;
-            minValue = t;
+            maxValue     = minValue;
+            minValue     = t;
         }
-        itemAdd["min"] = minValue;
-        itemAdd["max"] = maxValue;
-        itemAdd["step"] = step > 0 ? step : maxValue - minValue;
+        itemAdd["min"]     = minValue;
+        itemAdd["max"]     = maxValue;
+        itemAdd["step"]    = step > 0 ? step : maxValue - minValue;
         itemAdd["default"] = max(min(def, maxValue), minValue);
 
         return itemAdd.dump();
@@ -276,9 +271,7 @@ CustomForm& CustomForm::setTitle(const string& title) {
     return *this;
 }
 
-CustomForm& CustomForm::addLabel(const string& name, string text) {
-    return append(Label(name, text));
-}
+CustomForm& CustomForm::addLabel(const string& name, string text) { return append(Label(name, text)); }
 
 CustomForm& CustomForm::addInput(const string& name, string title, string placeholder, string def) {
     return append(Input(name, title, placeholder, def));
@@ -333,7 +326,7 @@ CustomForm& CustomForm::append(const StepSlider& element) {
 string CustomForm::serialize() {
     try {
         fifo_json form = fifo_json::parse(R"({ "title":"", "type":"custom_form", "content":[], "buttons":[] })");
-        form["title"] = title;
+        form["title"]  = title;
         for (auto& [k, v] : elements) {
             string element = v->serialize();
             if (!element.empty())
@@ -347,7 +340,7 @@ string CustomForm::serialize() {
 }
 
 bool CustomForm::sendTo(Player* player, Callback callback) {
-    unsigned id = NewFormId();
+    unsigned id    = NewFormId();
     this->callback = std::move(callback);
     SetCustomFormBuilderData(id, make_shared<CustomForm>(*this));
 
@@ -376,9 +369,7 @@ string CustomForm::getString(const string& name) {
     return element != nullptr ? element->getString() : "";
 }
 
-int CustomForm::getNumber(const string& name) {
-    return getInt(name);
-}
+int CustomForm::getNumber(const string& name) { return getInt(name); }
 
 int CustomForm::getInt(const string& name) {
     const auto element = getElement(name);
@@ -405,9 +396,7 @@ string CustomForm::getString(int index) {
     return element != nullptr ? element->getString() : "";
 }
 
-int CustomForm::getNumber(int index) {
-    return getInt(index);
-}
+int CustomForm::getNumber(int index) { return getInt(index); }
 
 int CustomForm::getInt(int index) {
     const auto element = getElement(index);
@@ -440,8 +429,6 @@ CustomFormElement* CustomForm::getElement(int index) {
     return elements.size() > index ? elements[index].second.get() : nullptr;
 }
 
-CustomFormElement::Type CustomForm::getType(int index) {
-    return elements[index].second->getType();
-}
+CustomFormElement::Type CustomForm::getType(int index) { return elements[index].second->getType(); }
 
 } // namespace Form
