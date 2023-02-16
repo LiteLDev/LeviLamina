@@ -538,11 +538,11 @@ public:
 class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
     bool isMinecart = false;
-    [[deprecated("hopper don't have to be a block")]]BlockInstance mHopperBlock;
-    [[deprecated("it can be a block position")]]Vec3 mMinecartPos;
-    Vec3 mPos;
+    [[deprecated("mHopperBlock is outdated, please use Level::getBlockInstance() instead to get it")]] BlockInstance mHopperBlock;
+    [[deprecated("mMinecartPos is outdated, please use mPos instead")]] Vec3 mMinecartPos;
     int mDimensionId = -1;
     ItemStack* mItemStack;
+    Vec3 mPos;
 };
 
 class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent> {
