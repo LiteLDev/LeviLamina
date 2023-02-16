@@ -286,7 +286,7 @@ public:
     Player* mPlayer = nullptr;
     Actor* mTarget = nullptr;
     [[deprecated("mIntAttackDamage is outdated, please use mAttackDamage instead")]] int mIntAttackDamage = false;
-    float mAttackDamage = false;
+    float mAttackDamage = 0;
 };
 
 class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
