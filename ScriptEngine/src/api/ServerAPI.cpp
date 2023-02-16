@@ -99,7 +99,8 @@ Local<Value> McClass::setWeather(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber)
 
-    int duration, weather = args[0].asNumber().toInt32(); // weather: 0: Clear, 1: Rain, 2: Thunder
+    int duration = 0;
+    int weather = args[0].asNumber().toInt32(); // weather: 0: Clear, 1: Rain, 2: Thunder
 
     try {
         if (args.size() > 1) {
