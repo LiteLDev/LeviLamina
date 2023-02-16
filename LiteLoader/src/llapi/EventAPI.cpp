@@ -499,14 +499,14 @@ TInstanceHook(float, "?calculateAttackDamage@Actor@@QEAAMAEAV1@@Z", Actor, Actor
             PlayerAttackEvent ev{};
             ev.mPlayer = currentAttackingPlayer.player;
             ev.mTarget = currentAttackingPlayer.target;
-            ev.mAttackDamage = (int)damage;
+            ev.mAttackDamage = damage;
             currentAttackingPlayer.player = nullptr;
             currentAttackingPlayer.target = nullptr;
             if (!ev.call()) {
                 currentAttackingPlayer.cancelled = true;
                 return 0;
             }
-            return (int)ev.mAttackDamage;
+            return ev.mAttackDamage;
         }
         IF_LISTENED_END(PlayerAttackEvent)
     }
