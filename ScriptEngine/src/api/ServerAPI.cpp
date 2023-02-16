@@ -49,15 +49,19 @@ Local<Value> McClass::getTime(const Arguments& args) {
         option = args[0].asNumber().toInt32();
     }
 
-    if (option == 0)
-        return Number::newNumber(Global<Level>->getTime() % 24000);
-    else if (option == 1)
-        return Number::newNumber((int)Global<Level>->getCurrentTick());
-    else if (option == 2)
-        return Number::newNumber(Global<Level>->getTime() / 24000);
-    else
-        throw script::Exception("The range of this argument is between 0 and 2");
-
+    switch (option) {
+        case 0:
+            return Number::newNumber(Global<Level>->getTime() % 24000);
+            break;
+        case 1:
+            return Number::newNumber((int)Global<Level>->getCurrentTick());
+            break;
+        case 2:
+            return Number::newNumber(Global<Level>->getTime() / 24000);
+            break;
+        default:
+            throw script::Exception("The range of this argument is between 0 and 2");
+    }
 }
 
 Local<Value> McClass::setTime(const Arguments& args) {
@@ -71,9 +75,9 @@ Local<Value> McClass::setTime(const Arguments& args) {
         int newTime = currentTime;
         int currentTimeOfDay = currentTime % 24000;
 
-        if ( targetTime > currentTime % 24000 )
+        if (targetTime > currentTime % 24000)
             newTime = currentTime + targetTime - currentTimeOfDay;
-        else if ( targetTime < currentTimeOfDay )
+        else if (targetTime < currentTimeOfDay)
             newTime = currentTime + targetTime + 24000 - currentTimeOfDay;
 
         Global<Level>->setTime(newTime);
