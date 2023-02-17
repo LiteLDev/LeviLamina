@@ -20,8 +20,14 @@ class ChunkSource {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum class LoadMode;
-    enum class ChunkSourceViewGenerateMode;
+char filler[0x48];
+
+enum class LoadMode : int {
+    None = 0x0,
+    Deferred = 0x1,
+};
+
+enum class ChunkSourceViewGenerateMode;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSOURCE
 public:

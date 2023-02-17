@@ -20,6 +20,8 @@ class ChunkViewSource : public ChunkSource {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+char filler[0x188];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKVIEWSOURCE
