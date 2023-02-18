@@ -21,6 +21,8 @@ class ModalFormResponsePacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    int mFormId;
+    std::string mData;
 	
 
 #undef AFTER_EXTRA
