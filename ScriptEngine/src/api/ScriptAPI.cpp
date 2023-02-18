@@ -104,7 +104,6 @@ Local<Value> FastLog(const Arguments& args) {
         ostringstream sout;
         for (int i = 0; i < args.size(); ++i)
             PrintValue(sout, args[i]);
-        sout << endl;
 
         pool.enqueue([str{sout.str()}, pluginName{ENGINE_OWN_DATA()->pluginName}]() {
             Logger fastLogger(pluginName);

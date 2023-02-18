@@ -34,10 +34,17 @@ namespace RakNet {
         char filler[17 * 8]; // uncertain?
         MCAPI const char* ToString(bool, char) const;
     };
+
     struct RakNetGUID {
-        uint64_t unk;
-        short unk8;
+        unsigned __int64 g;
+        unsigned __int16 systemIndex;
+
+    public:
+        bool operator!=(const RakNetGUID& a1) {
+            return *this != a1;
+        }
     };
+
     struct AddressOrGUID {
         RakNetGUID guid;
         SystemAddress adr;
