@@ -15,6 +15,9 @@
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
 #include "llapi/mc/NetworkConnection.hpp"
+#include "llapi/mc/SimulatedPlayer.hpp"
+#include "llapi/mc/MinecraftPackets.hpp"
+#include "llapi/mc/MobEquipmentPacket.hpp"
 
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
@@ -398,7 +401,6 @@ TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockS
     return bs;
 }
 
-//From https://github.com/dreamguxiang/BETweaker
 enum class AbilitiesLayer;
 enum class SubClientId;
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
@@ -427,6 +429,100 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
             sp->sendNetworkPacket(packet);
+        }
+    }
+}
+
+// Fix SimulatedPlayer Bugs
+namespace SimulatedPlayerClient {
+template <typename T>
+void send(Player* sp, T& packet) {
+    packet.clientSubId = sp->getClientSubId();
+    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    handler->handle(*sp->getNetworkIdentifier(), packet);
+}
+} // namespace SimulatedPlayerClient
+
+TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick const& tick) {
+    original(this, tick);
+
+    //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
+    if (isSimulatedPlayer()) {
+        // Force to call the implementation of ServerPlayer
+        ((ServerPlayer*)this)->_updateChunkPublisherView(getPos(),16.0f);
+    }
+}
+
+// fix chunk load and tick - ChunkSource load mode
+static_assert(sizeof(ChunkSource) == 0x50); // 88
+static_assert(sizeof(ChunkViewSource) == 0x1d8);//472
+
+TInstanceHook(
+    std::shared_ptr<class ChunkViewSource>,
+              "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
+              SimulatedPlayer, ChunkSource& chunkSource) {
+    auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
+    return std::make_shared<ChunkViewSource>(result);
+}
+
+// fix carried item display
+// fix armor display
+#include "llapi/mc/WeakStorageEntity.hpp"
+#include "llapi/mc/WeakEntityRef.hpp"
+//void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z",
+                       void* a2) {
+    original(this, a2);
+    if (a2) {
+        auto type = dAccess<char, 312>(a2);
+        // sendActorCarriedItemChanged
+        if (type == 4) {
+            auto v56 = dAccess<char, 304>(a2);
+            WeakStorageEntity* v59;
+            if (v56) {
+                if (v56 != 1) {
+                    return;
+                }
+                v59 = (WeakStorageEntity*)a2;
+            } else {
+                v59 = *(WeakStorageEntity**)a2;
+            }
+            if (v59) {
+                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
+                                       WeakStorageEntity*)(v59);
+                if (actor->isSimulatedPlayer()) {
+                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
+                    int slot = dAccess<int, 296>(v59);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), newItem, (int)slot, (int)slot,
+                                           ContainerID::Inventory);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
+        }
+        // sendActorEquippedArmor
+        else if (type == 8) {
+            auto v30 = dAccess<char, 168>(a2);
+            WeakStorageEntity* v31;
+            if (v30) {
+                if (v30 != 1) {
+                    return;
+                }
+                v31 = (WeakStorageEntity*)a2;
+            } else {
+                v31 = *(WeakStorageEntity**)a2;
+            }
+            if (v31) {
+                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
+                                       WeakStorageEntity*)(v31);
+                if (actor->isSimulatedPlayer()) {
+                    int slot = dAccess<int, 160>(v31);
+                    ItemInstance const& item = dAccess<ItemInstance, 24>(v31);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
         }
     }
 }

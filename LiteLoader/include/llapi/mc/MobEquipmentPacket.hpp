@@ -19,7 +19,10 @@
 class MobEquipmentPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    char filler[120];
+
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEQUIPMENTPACKET
