@@ -240,13 +240,27 @@ jobs:
         shell: bash
 
       - name: Create release
+        if: github.event.inputs.status == 'stable'
         uses: ncipollo/release-action@v1
         with:
-          prerelease: ${{ github.event.inputs.status != 'stable' }}
+          prerelease: false
           tag: ${{ github.event.inputs.tag }}
           bodyFile: RELEASE_NOTES.md
           artifacts: |
             build/LiteLoaderBDS.zip
+            build/Modules.zip
+            build/PDB.zip
+        env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+
+      - name: Create pre-release
+        if: github.event.inputs.status != 'stable'
+        uses: ncipollo/release-action@v1
+        with:
+          prerelease: true
+          tag: ${{ github.event.inputs.tag }}
+          bodyFile: RELEASE_NOTES.md
+          artifacts: |
             build/Modules.zip
             build/PDB.zip
         env:
