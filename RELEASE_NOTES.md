@@ -1,23 +1,19 @@
-# Release 2.10.0
+# Release 2.10.1
 
-![BDS 1.19.61.01](https://img.shields.io/badge/BDS-1.19.61.01-blue?style=for-the-badge)&emsp;![Protocol 567](https://img.shields.io/badge/Protocol-567-orange?style=for-the-badge)
+![BDS 1.19.62.01](https://img.shields.io/badge/BDS-1.19.62.01-blue?style=for-the-badge)&emsp;![Protocol 567](https://img.shields.io/badge/Protocol-567-orange?style=for-the-badge)
 
+<!--
 ## Added
-
-* Release package containing all modules seperately (by @Futrime)
-* Throwing original exception when fail to load plugin (by @yqs112358)
+-->
 
 ## Changed
-
-* Adapt to 1.19.61 (by @dreamguxiang)
-* Update README to latest documentation (by @Futrime)
+* Remove unused configuration item (by @StarsDream00)
 
 ## Fixed
 
-* Small bugs in vectors (by @OEOTYAN)
-* Simplayer problem (by @ShrBox)
-* Strict mode error of some LLSE quickjs plugins (by @yqs112358)
-* QuickJS ESM bugs (by @yqs112358)
+* Fix SimulatedPlayer Bugs (by @dreamguxiang)
+* Fix LLSE crash when loading wrong json config file (by @ACX66)
+* Fix LLSE's fastlog (by @ACX66)
 
 
-**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.9.3...2.10.0
+**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.10.0...2.10.1
