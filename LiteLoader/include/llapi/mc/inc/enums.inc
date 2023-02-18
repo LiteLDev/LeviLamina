@@ -858,4 +858,9 @@ enum class AdventureFlag : int
     Muted = 1024,
 };
 
+enum class TargetSelectionMethod {
+    Nearest = 0,
+    Random = 1,
+};
+
 // clang-format on

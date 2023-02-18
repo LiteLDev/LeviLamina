@@ -15,6 +15,9 @@
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
 #include "llapi/mc/NetworkConnection.hpp"
+#include "llapi/mc/SimulatedPlayer.hpp"
+#include "llapi/mc/MinecraftPackets.hpp"
+#include "llapi/mc/MobEquipmentPacket.hpp"
 
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
@@ -42,22 +45,22 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose
     if (globalConfig.enableFixListenPort) {
         if (isFirstLog) {
             isFirstLog = false;
-            original(this);
+            __int64 rt = original(this);
             endTime = clock();
             Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                                   R"(s)! For help, type "help" or "?")");
-            return 1;
+            return rt;
         }
         return 0;
     } else {
-        original(this);
+        __int64 rt = original(this);
         if (!isFirstLog) {
             endTime = clock();
             Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                                   R"(s)! For help, type "help" or "?")");
         }
         isFirstLog = false;
-        return 1;
+        return rt;
     }
 }
 
@@ -213,7 +216,7 @@ TInstanceHook(NetworkPeer::DataStatus,
       "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
       "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
     NetworkConnection, string* data, __int64 a3, __int64** a4) {
-    auto status = original(this, data, a3, a4);	
+    auto status = original(this, data, a3, a4);
     if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
@@ -272,27 +275,27 @@ TClasslessInstanceHook(void,
                        "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
                        "allocator@D@2@@std@@000@Z",
                        std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z", class Player& a1) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z", class Player& a1,
                        float a2) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
                        class Player* a1, float a2, int a3, int a4) {
-    if (ll::isServerStopping())
+    if (ll::globalConfig.enableFixBDSCrash && ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
@@ -398,7 +401,6 @@ TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockS
     return bs;
 }
 
-//From https://github.com/dreamguxiang/BETweaker
 enum class AbilitiesLayer;
 enum class SubClientId;
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
@@ -427,6 +429,100 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
             sp->sendNetworkPacket(packet);
+        }
+    }
+}
+
+// Fix SimulatedPlayer Bugs
+namespace SimulatedPlayerClient {
+template <typename T>
+void send(Player* sp, T& packet) {
+    packet.clientSubId = sp->getClientSubId();
+    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    handler->handle(*sp->getNetworkIdentifier(), packet);
+}
+} // namespace SimulatedPlayerClient
+
+TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick const& tick) {
+    original(this, tick);
+
+    //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
+    if (isSimulatedPlayer()) {
+        // Force to call the implementation of ServerPlayer
+        ((ServerPlayer*)this)->_updateChunkPublisherView(getPos(),16.0f);
+    }
+}
+
+// fix chunk load and tick - ChunkSource load mode
+static_assert(sizeof(ChunkSource) == 0x50); // 88
+static_assert(sizeof(ChunkViewSource) == 0x1d8);//472
+
+TInstanceHook(
+    std::shared_ptr<class ChunkViewSource>,
+              "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
+              SimulatedPlayer, ChunkSource& chunkSource) {
+    auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
+    return std::make_shared<ChunkViewSource>(result);
+}
+
+// fix carried item display
+// fix armor display
+#include "llapi/mc/WeakStorageEntity.hpp"
+#include "llapi/mc/WeakEntityRef.hpp"
+//void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z",
+                       void* a2) {
+    original(this, a2);
+    if (a2) {
+        auto type = dAccess<char, 312>(a2);
+        // sendActorCarriedItemChanged
+        if (type == 4) {
+            auto v56 = dAccess<char, 304>(a2);
+            WeakStorageEntity* v59;
+            if (v56) {
+                if (v56 != 1) {
+                    return;
+                }
+                v59 = (WeakStorageEntity*)a2;
+            } else {
+                v59 = *(WeakStorageEntity**)a2;
+            }
+            if (v59) {
+                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
+                                       WeakStorageEntity*)(v59);
+                if (actor->isSimulatedPlayer()) {
+                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
+                    int slot = dAccess<int, 296>(v59);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), newItem, (int)slot, (int)slot,
+                                           ContainerID::Inventory);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
+        }
+        // sendActorEquippedArmor
+        else if (type == 8) {
+            auto v30 = dAccess<char, 168>(a2);
+            WeakStorageEntity* v31;
+            if (v30) {
+                if (v30 != 1) {
+                    return;
+                }
+                v31 = (WeakStorageEntity*)a2;
+            } else {
+                v31 = *(WeakStorageEntity**)a2;
+            }
+            if (v31) {
+                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
+                                       WeakStorageEntity*)(v31);
+                if (actor->isSimulatedPlayer()) {
+                    int slot = dAccess<int, 160>(v31);
+                    ItemInstance const& item = dAccess<ItemInstance, 24>(v31);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
         }
     }
 }
