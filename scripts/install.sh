@@ -1,8 +1,8 @@
 #!/bin/bash
 # Install wine
 codename=$(lsb_release -c --short)
-BDSVER="1.19.61.01"
-LLVER="2.10.0"
+BDSVER="1.19.62.01"
+LLVER="2.10.1"
 sudo apt install -y wget unzip
 sudo dpkg --add-architecture i386
 sudo mkdir -pm755 /etc/apt/keyrings
@@ -21,7 +21,7 @@ rm bedrock-server-${BDSVER}.zip
 
 # Install LiteLoaderBDS
 wget https://github.com/LiteLDev/LiteLoaderBDS/releases/download/${LLVER}/LiteLoaderBDS.zip
-unzip LiteLoader-${LLVER}.zip -d bedrock_server
+unzip LiteLoader.zip -d bedrock_server
 rm LiteLoaderBDS.zip
 cd bedrock_server
 wine LLPeEditor.exe
