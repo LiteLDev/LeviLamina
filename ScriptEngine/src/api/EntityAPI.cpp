@@ -37,6 +37,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("type", &EntityClass::getType)
         .instanceProperty("id", &EntityClass::getId)
         .instanceProperty("pos", &EntityClass::getPos)
+        .instanceProperty("feetPos", &EntityClass::getFeetPos)
         .instanceProperty("blockPos", &EntityClass::getBlockPos)
         .instanceProperty("maxHealth", &EntityClass::getMaxHealth)
         .instanceProperty("health", &EntityClass::getHealth)
@@ -415,6 +416,17 @@ Local<Value> EntityClass::getPos() {
         return FloatPos::newPos(entity->getPosition(), entity->getDimensionId());
     }
     CATCH("Fail in GetEntityPos!")
+}
+
+Local<Value> EntityClass::getFeetPos() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return FloatPos::newPos(entity->getFeetPosition(), entity->getDimensionId());
+    }
+    CATCH("Fail in GetEntityFeetPos!")
 }
 
 Local<Value> EntityClass::getBlockPos() {
