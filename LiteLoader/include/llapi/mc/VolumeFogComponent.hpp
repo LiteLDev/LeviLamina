@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   983605214
      * @symbol  ??4VolumeFogComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class VolumeFogComponent & operator=(class VolumeFogComponent &&);
     /**
-     * @hash   -166410541
      * @symbol  ??1VolumeFogComponent\@\@QEAA\@XZ
      */
     MCAPI ~VolumeFogComponent();

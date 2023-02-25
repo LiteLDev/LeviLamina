@@ -22,7 +22,6 @@ namespace CelebrateHuntSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -2120679484
      * @symbol  ?_stopCelebrating\@CelebrateHuntSystemInternal\@\@YAXAEAVActor\@\@AEAVCelebrateHuntComponent\@\@\@Z
      */
     MCAPI void _stopCelebrating(class Actor &, class CelebrateHuntComponent &);

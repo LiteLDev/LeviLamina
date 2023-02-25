@@ -27,17 +27,14 @@ public:
 
 public:
     /**
-     * @hash   1394372045
      * @symbol  ??0DimensionDocument\@\@QEAA\@XZ
      */
     MCAPI DimensionDocument();
     /**
-     * @hash   -508530547
      * @symbol  ??1DimensionDocument\@\@QEAA\@XZ
      */
     MCAPI ~DimensionDocument();
     /**
-     * @hash   402775983
      * @symbol  ?bindType\@DimensionDocument\@\@SAXXZ
      */
     MCAPI static void bindType();

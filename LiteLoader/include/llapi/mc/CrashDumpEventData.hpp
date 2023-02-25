@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -1296860251
      * @symbol  ??0CrashDumpEventData\@\@QEAA\@W4CrashDumpLogStringID\@\@0\@Z
      */
     MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
     /**
-     * @hash   -1326145587
      * @symbol  ?kFormat\@CrashDumpEventData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];

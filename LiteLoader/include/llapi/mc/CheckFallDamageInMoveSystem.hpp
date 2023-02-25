@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   2057084944
      * @symbol  ?createSystem\@CheckFallDamageInMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

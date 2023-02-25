@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1538858032
      * @vftbl  0
      * @symbol  ?getJsonName\@MoveControlSwayDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~MoveControlSwayDescription();
     /**
-     * @hash   892957587
      * @vftbl  2
      * @symbol  ?deserializeData\@MoveControlSwayDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -417691155
      * @vftbl  3
      * @symbol  ?serializeData\@MoveControlSwayDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

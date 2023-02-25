@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   390491121
      * @vftbl  151
      * @symbol  ?animateTick\@BookshelfBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -222,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1589404714
      * @vftbl  187
      * @symbol  ?getResourceItem\@BookshelfBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -2133120686
      * @vftbl  188
      * @symbol  ?getResourceCount\@BookshelfBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   995826186
      * @symbol  ??0BookshelfBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BookshelfBlock(std::string const &, int);

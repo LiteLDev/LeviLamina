@@ -36,7 +36,6 @@ public:
      */
     virtual ~FleeSunGoal();
     /**
-     * @hash   -1678094873
      * @vftbl  1
      * @symbol  ?canUse\@FleeSunGoal\@\@UEAA_NXZ
      */
@@ -52,13 +51,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -75310743
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@FleeSunGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -2140268067
      * @symbol  ??0FleeSunGoal\@\@QEAA\@AEAVMob\@\@M\@Z
      */
     MCAPI FleeSunGoal(class Mob &, float);

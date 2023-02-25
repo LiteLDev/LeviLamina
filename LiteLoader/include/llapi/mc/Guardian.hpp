@@ -32,13 +32,11 @@ public:
 
 public:
     /**
-     * @hash   -1555606980
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Guardian\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -914994681
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@Guardian\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -109,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   1336601306
      * @vftbl  115
      * @symbol  ?setTarget\@Guardian\@\@UEAAXPEAVActor\@\@\@Z
      */
@@ -150,19 +147,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -257970577
      * @vftbl  263
      * @symbol  ?_hurt\@Guardian\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1459351535
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Guardian\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -849901202
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Guardian\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -173,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   785561748
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Guardian\@\@EEAAXXZ
      */
@@ -189,13 +182,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1305065638
      * @vftbl  291
      * @symbol  ?aiStep\@Guardian\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @hash   1486783840
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Guardian\@\@UEAA_N_N\@Z
      */
@@ -206,7 +197,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   -105849541
      * @vftbl  305
      * @symbol  ?getMaxHeadXRot\@Guardian\@\@UEAAMXZ
      */
@@ -222,67 +212,55 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -493004992
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Guardian\@\@MEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
     /**
-     * @hash   -2136249791
      * @symbol  ?canSeeInvisible\@Guardian\@\@UEBA_NXZ
      */
     MCVAPI bool canSeeInvisible() const;
 #endif
     /**
-     * @hash   1036359629
      * @symbol  ??0Guardian\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -477888696
      * @symbol  ?getAttackDuration\@Guardian\@\@QEAAHXZ
      */
     MCAPI int getAttackDuration();
     /**
-     * @hash   1427778900
      * @symbol  ?getMoveEyeVector\@Guardian\@\@QEAA?AVVec3\@\@XZ
      */
     MCAPI class Vec3 getMoveEyeVector();
     /**
-     * @hash   -1818451657
      * @symbol  ?getTargetEntity\@Guardian\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getTargetEntity() const;
     /**
-     * @hash   -1783207362
      * @symbol  ?isElder\@Guardian\@\@QEBA_NXZ
      */
     MCAPI bool isElder() const;
     /**
-     * @hash   291729946
      * @symbol  ?isElderGhost\@Guardian\@\@QEBA_NXZ
      */
     MCAPI bool isElderGhost() const;
     /**
-     * @hash   2063112035
      * @symbol  ?preAiStep\@Guardian\@\@QEAAXXZ
      */
     MCAPI void preAiStep();
     /**
-     * @hash   -1467106728
      * @symbol  ?setAttackTime\@Guardian\@\@QEAAXH\@Z
      */
     MCAPI void setAttackTime(int);
     /**
-     * @hash   -1271423056
      * @symbol  ?setElder\@Guardian\@\@QEAAX_N\@Z
      */
     MCAPI void setElder(bool);
 
 //protected:
     /**
-     * @hash   -1756077695
      * @symbol  ?registerLoopingSounds\@Guardian\@\@IEAAXXZ
      */
     MCAPI void registerLoopingSounds();
@@ -293,12 +271,10 @@ protected:
 
 private:
     /**
-     * @hash   -846046645
      * @symbol  ?ATTACK_TIME\@Guardian\@\@0HB
      */
     MCAPI static int const ATTACK_TIME;
     /**
-     * @hash   -431722087
      * @symbol  ?FIRST_DAMAGE_TIME\@Guardian\@\@0HB
      */
     MCAPI static int const FIRST_DAMAGE_TIME;

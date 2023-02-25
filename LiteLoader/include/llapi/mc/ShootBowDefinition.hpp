@@ -37,7 +37,6 @@ public:
      */
     virtual ~ShootBowDefinition();
     /**
-     * @hash   2114940598
      * @vftbl  1
      * @symbol  ?load\@ShootBowDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

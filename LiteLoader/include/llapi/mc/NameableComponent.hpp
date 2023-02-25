@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   -850126908
      * @symbol  ??0NameableComponent\@\@QEAA\@XZ
      */
     MCAPI NameableComponent();
     /**
-     * @hash   -675735837
      * @symbol  ?getInteraction\@NameableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   -187998583
      * @symbol  ?nameEntity\@NameableComponent\@\@QEAAXAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void nameEntity(class Actor &, std::string const &);

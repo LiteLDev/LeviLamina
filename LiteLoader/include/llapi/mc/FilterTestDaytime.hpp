@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestDaytime();
     /**
-     * @hash   1710433905
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestDaytime\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   667775665
      * @vftbl  4
      * @symbol  ?getName\@FilterTestDaytime\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

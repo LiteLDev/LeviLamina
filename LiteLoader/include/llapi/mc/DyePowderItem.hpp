@@ -57,19 +57,16 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   1618136306
      * @vftbl  19
      * @symbol  ?isDye\@DyePowderItem\@\@UEBA_NXZ
      */
     virtual bool isDye() const;
     /**
-     * @hash   1475008276
      * @vftbl  20
      * @symbol  ?getItemColor\@DyePowderItem\@\@UEBA?AW4ItemColor\@\@XZ
      */
     virtual enum class ItemColor getItemColor() const;
     /**
-     * @hash   4520728
      * @vftbl  21
      * @symbol  ?isFertilizer\@DyePowderItem\@\@UEBA_NXZ
      */
@@ -90,7 +87,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   -124641838
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@DyePowderItem\@\@UEBA_NH\@Z
      */
@@ -126,31 +122,26 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1232490328
      * @vftbl  85
      * @symbol  ?dispense\@DyePowderItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -923490674
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@DyePowderItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -1213999298
      * @vftbl  117
      * @symbol  ?setIconInfo\@DyePowderItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -462359590
      * @vftbl  132
      * @symbol  ?_useOn\@DyePowderItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -1550584166
      * @symbol  ??0DyePowderItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ItemColor\@\@_N2\@Z
      */
     MCAPI DyePowderItem(std::string const &, int, enum class ItemColor, bool, bool);

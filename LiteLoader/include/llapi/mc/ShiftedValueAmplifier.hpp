@@ -35,13 +35,11 @@ public:
      */
     virtual ~ShiftedValueAmplifier();
     /**
-     * @hash   -178969138
      * @vftbl  1
      * @symbol  ?getAmount\@ShiftedValueAmplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
     /**
-     * @hash   -566906365
      * @symbol  ??0ShiftedValueAmplifier\@\@QEAA\@HM\@Z
      */
     MCAPI ShiftedValueAmplifier(int, float);

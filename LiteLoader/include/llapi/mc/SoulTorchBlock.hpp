@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1853877815
      * @vftbl  151
      * @symbol  ?animateTick\@SoulTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -222,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   148636258
      * @vftbl  187
      * @symbol  ?getResourceItem\@SoulTorchBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1619782658
      * @symbol  ??0SoulTorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SoulTorchBlock(std::string const &, int);

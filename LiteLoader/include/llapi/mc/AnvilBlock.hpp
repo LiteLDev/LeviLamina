@@ -36,13 +36,11 @@ public:
      */
     virtual ~AnvilBlock();
     /**
-     * @hash   1634059361
      * @vftbl  10
      * @symbol  ?getAABB\@AnvilBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1505374823
      * @vftbl  14
      * @symbol  ?getLiquidClipVolume\@AnvilBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -485732377
      * @vftbl  62
      * @symbol  ?canContainLiquid\@AnvilBlock\@\@UEBA_NXZ
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1272351894
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@AnvilBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -482872775
      * @vftbl  103
      * @symbol  ?asItemInstance\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   2092617328
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@AnvilBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -217,25 +211,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -896725080
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@AnvilBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1800975731
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@AnvilBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   782524401
      * @vftbl  146
      * @symbol  ?getVariant\@AnvilBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   1647431270
      * @vftbl  151
      * @symbol  ?animateTick\@AnvilBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -271,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   745829046
      * @vftbl  177
      * @symbol  ?use\@AnvilBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -282,25 +271,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   649805487
      * @vftbl  187
      * @symbol  ?getResourceItem\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -332398696
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@AnvilBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -690880755
      * @vftbl  193
      * @symbol  ?getDustColor\@AnvilBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   1418049400
      * @vftbl  194
      * @symbol  ?getDustParticleName\@AnvilBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -311,35 +296,29 @@ public:
      */
     virtual void __unk_vfn_195();
     /**
-     * @hash   1286352389
      * @vftbl  196
      * @symbol  ?onLand\@AnvilBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onLand(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILBLOCK
     /**
-     * @hash   -1995109370
      * @symbol  ?canBeSilkTouched\@AnvilBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -1831262066
      * @symbol  ?falling\@AnvilBlock\@\@UEBA_NXZ
      */
     MCVAPI bool falling() const;
     /**
-     * @hash   1295003816
      * @symbol  ?isCraftingBlock\@AnvilBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   -2060226148
      * @symbol  ?isInteractiveBlock\@AnvilBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1583462735
      * @symbol  ??0AnvilBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI AnvilBlock(std::string const &, int);

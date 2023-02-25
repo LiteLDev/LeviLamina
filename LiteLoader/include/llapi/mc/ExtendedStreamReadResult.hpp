@@ -29,7 +29,6 @@ public:
 
 public:
     /**
-     * @hash   1138867718
      * @symbol  ??1ExtendedStreamReadResult\@\@QEAA\@XZ
      */
     MCAPI ~ExtendedStreamReadResult();

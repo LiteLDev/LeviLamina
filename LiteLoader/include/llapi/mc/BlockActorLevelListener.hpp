@@ -120,7 +120,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1866462929
      * @vftbl  20
      * @symbol  ?onChunkLoaded\@BlockActorLevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
@@ -136,13 +135,11 @@ public:
      */
     virtual void __unk_vfn_22();
     /**
-     * @hash   -1908152072
      * @vftbl  23
      * @symbol  ?onChunkUnloaded\@BlockActorLevelListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
      */
     virtual void onChunkUnloaded(class LevelChunk &);
     /**
-     * @hash   -310274532
      * @symbol  ??0BlockActorLevelListener\@\@QEAA\@XZ
      */
     MCAPI BlockActorLevelListener();

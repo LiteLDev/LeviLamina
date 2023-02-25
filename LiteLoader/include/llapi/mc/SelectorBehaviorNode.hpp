@@ -34,19 +34,16 @@ public:
      */
     virtual ~SelectorBehaviorNode();
     /**
-     * @hash   132458320
      * @vftbl  1
      * @symbol  ?tick\@SelectorBehaviorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   704533293
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@SelectorBehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   72356367
      * @symbol  ??0SelectorBehaviorNode\@\@QEAA\@XZ
      */
     MCAPI SelectorBehaviorNode();

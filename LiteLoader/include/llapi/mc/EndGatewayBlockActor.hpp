@@ -36,25 +36,21 @@ public:
      */
     virtual ~EndGatewayBlockActor();
     /**
-     * @hash   2011966744
      * @vftbl  1
      * @symbol  ?load\@EndGatewayBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1481652137
      * @vftbl  2
      * @symbol  ?save\@EndGatewayBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1884334673
      * @vftbl  7
      * @symbol  ?tick\@EndGatewayBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void tick(class BlockSource &);
     /**
-     * @hash   -1078705671
      * @vftbl  8
      * @symbol  ?onChanged\@EndGatewayBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -65,7 +61,6 @@ public:
      */
     virtual void __unk_vfn_12();
     /**
-     * @hash   869850936
      * @vftbl  16
      * @symbol  ?triggerEvent\@EndGatewayBlockActor\@\@UEAAXHH\@Z
      */
@@ -76,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
-     * @hash   1004143364
      * @vftbl  20
      * @symbol  ?hasAlphaLayer\@EndGatewayBlockActor\@\@UEBA_NXZ
      */
@@ -112,75 +106,61 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   922291626
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@EndGatewayBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   1926258276
      * @symbol  ??0EndGatewayBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI EndGatewayBlockActor(class BlockPos const &);
     /**
-     * @hash   -1917034137
      * @symbol  ?canTeleport\@EndGatewayBlockActor\@\@QEBA_NPEBVGetCollisionShapeInterface\@\@AEBVBlockSource\@\@\@Z
      */
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
     /**
-     * @hash   -358264960
      * @symbol  ?getExitPosition\@EndGatewayBlockActor\@\@QEBA?AVBlockPos\@\@XZ
      */
     MCAPI class BlockPos getExitPosition() const;
     /**
-     * @hash   1034816288
      * @symbol  ?getParticleAmount\@EndGatewayBlockActor\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -70888278
      * @symbol  ?setExitPosition\@EndGatewayBlockActor\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void setExitPosition(class BlockPos const &);
     /**
-     * @hash   -1758598070
      * @symbol  ?teleportEntity\@EndGatewayBlockActor\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void teleportEntity(class Actor &);
     /**
-     * @hash   -1479176257
      * @symbol  ?COOLDOWN_TIME\@EndGatewayBlockActor\@\@2HB
      */
     MCAPI static int const COOLDOWN_TIME;
     /**
-     * @hash   404062021
      * @symbol  ?EVENT_COOLDOWN\@EndGatewayBlockActor\@\@2HB
      */
     MCAPI static int const EVENT_COOLDOWN;
     /**
-     * @hash   -64936803
      * @symbol  ?SPAWN_TIME\@EndGatewayBlockActor\@\@2HB
      */
     MCAPI static int const SPAWN_TIME;
     /**
-     * @hash   -989584175
      * @symbol  ?findExitPortal\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVWorldGenerator\@\@AEBV2\@\@Z
      */
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
     /**
-     * @hash   915924539
      * @symbol  ?findTallestBlock\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVBlockSource\@\@AEBV2\@H_N\@Z
      */
     MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     /**
-     * @hash   -1768461841
      * @symbol  ?findValidSpawnAround\@EndGatewayBlockActor\@\@SA?AVBlockPos\@\@AEAVBlockSource\@\@AEBV2\@_NH\@Z
      */
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
 
 //private:
     /**
-     * @hash   1810276544
      * @symbol  ?_getHighestSection\@EndGatewayBlockActor\@\@CAHAEAVWorldGenerator\@\@AEAVBlockVolume\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);

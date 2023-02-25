@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   450355407
      * @vftbl  0
      * @symbol  ?getJsonName\@PersistentDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~PersistentDescription();
     /**
-     * @hash   1686021358
      * @vftbl  3
      * @symbol  ?serializeData\@PersistentDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

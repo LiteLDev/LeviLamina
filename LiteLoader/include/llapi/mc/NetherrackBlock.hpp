@@ -156,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -179764536
      * @vftbl  86
      * @symbol  ?onFertilized\@NetherrackBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1133606493
      * @vftbl  88
      * @symbol  ?canBeFertilized\@NetherrackBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -253,12 +251,10 @@ public:
      */
     virtual void __unk_vfn_197();
     /**
-     * @hash   -1144566378
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
-     * @hash   1464525372
      * @symbol  ??0NetherrackBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI NetherrackBlock(std::string const &, int);

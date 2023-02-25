@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1423532612
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@StainedGlassPaneBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   478662375
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@StainedGlassPaneBlock\@\@UEBA_NXZ
      */
@@ -233,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1039842364
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StainedGlassPaneBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1664288721
      * @symbol  ??0StainedGlassPaneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N22\@Z
      */
     MCAPI StainedGlassPaneBlock(std::string const &, int, class Material const &, bool, bool, bool);

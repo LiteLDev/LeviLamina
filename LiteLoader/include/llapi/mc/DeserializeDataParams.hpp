@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -995935957
      * @symbol  ??1DeserializeDataParams\@\@QEAA\@XZ
      */
     MCAPI ~DeserializeDataParams();

@@ -35,7 +35,6 @@ public:
      */
     virtual ~CodeScreenCapabilities();
     /**
-     * @hash   1629742520
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UCodeScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

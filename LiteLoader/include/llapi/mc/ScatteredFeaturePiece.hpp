@@ -42,12 +42,10 @@ public:
      */
     MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
     /**
-     * @hash   -1057168153
      * @symbol  ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
     /**
-     * @hash   1926100101
      * @symbol  ?updateHeightPositionToLowestGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
     MCAPI bool updateHeightPositionToLowestGroundHeight(class BlockSource &, class BoundingBox const &, int);

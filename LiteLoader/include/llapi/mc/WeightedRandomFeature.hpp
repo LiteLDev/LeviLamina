@@ -34,13 +34,11 @@ public:
      */
     virtual ~WeightedRandomFeature();
     /**
-     * @hash   1249613681
      * @vftbl  1
      * @symbol  ?place\@WeightedRandomFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   1098428552
      * @symbol  ??0WeightedRandomFeature\@\@QEAA\@XZ
      */
     MCAPI WeightedRandomFeature();

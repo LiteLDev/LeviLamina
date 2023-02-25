@@ -161,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_27();
     /**
-     * @hash   1270873699
      * @vftbl  28
      * @symbol  ?levelSoundEvent\@DanceComponentListener\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */

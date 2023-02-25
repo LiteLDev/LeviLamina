@@ -34,7 +34,6 @@ public:
      */
     virtual ~ContainerScreenValidationActivate();
     /**
-     * @hash   -1514712629
      * @vftbl  3
      * @symbol  ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
      */

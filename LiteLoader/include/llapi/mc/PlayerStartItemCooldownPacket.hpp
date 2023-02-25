@@ -33,36 +33,30 @@ public:
      */
     virtual ~PlayerStartItemCooldownPacket();
     /**
-     * @hash   -1007895081
      * @vftbl  1
      * @symbol  ?getId\@PlayerStartItemCooldownPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   16668804
      * @vftbl  2
      * @symbol  ?getName\@PlayerStartItemCooldownPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1685486045
      * @vftbl  3
      * @symbol  ?write\@PlayerStartItemCooldownPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1519932429
      * @vftbl  6
      * @symbol  ?_read\@PlayerStartItemCooldownPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   89500243
      * @symbol  ??0PlayerStartItemCooldownPacket\@\@QEAA\@XZ
      */
     MCAPI PlayerStartItemCooldownPacket();
     /**
-     * @hash   -593450507
      * @symbol  ??0PlayerStartItemCooldownPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PlayerStartItemCooldownPacket(std::string const &, int);

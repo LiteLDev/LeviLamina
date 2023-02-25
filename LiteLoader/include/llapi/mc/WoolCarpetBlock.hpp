@@ -186,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2045258711
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@WoolCarpetBlock\@\@UEBA_NXZ
      */
@@ -222,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2065909729
      * @vftbl  184
      * @symbol  ?getMapColor\@WoolCarpetBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -233,26 +231,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -714207621
      * @vftbl  187
      * @symbol  ?getResourceItem\@WoolCarpetBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1946639012
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@WoolCarpetBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOOLCARPETBLOCK
     /**
-     * @hash   1866101433
      * @symbol  ?canDamperVibrations\@WoolCarpetBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canDamperVibrations() const;
 #endif
     /**
-     * @hash   1970813851
      * @symbol  ??0WoolCarpetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WoolCarpetBlock(std::string const &, int);

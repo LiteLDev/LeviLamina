@@ -156,19 +156,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1440002298
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@FrostedIceBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -679147383
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@FrostedIceBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   497043829
      * @vftbl  103
      * @symbol  ?asItemInstance\@FrostedIceBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -219,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   438162559
      * @vftbl  168
      * @symbol  ?onPlace\@FrostedIceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -230,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1288667909
      * @vftbl  171
      * @symbol  ?tick\@FrostedIceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -246,25 +241,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1728604713
      * @vftbl  186
      * @symbol  ?playerDestroy\@FrostedIceBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROSTEDICEBLOCK
     /**
-     * @hash   525482089
      * @symbol  ?canBeSilkTouched\@FrostedIceBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1517297646
      * @symbol  ??0FrostedIceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI FrostedIceBlock(std::string const &, int, bool);
     /**
-     * @hash   1205837865
      * @symbol  ?_slightlyMelt\@FrostedIceBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
     MCAPI void _slightlyMelt(class BlockSource &, class BlockPos const &, class Random &, bool) const;
@@ -273,12 +264,10 @@ public:
 
 private:
     /**
-     * @hash   1155998547
      * @symbol  ?MAX_AGE\@FrostedIceBlock\@\@0HB
      */
     MCAPI static int const MAX_AGE;
     /**
-     * @hash   -2081352513
      * @symbol  ?MIN_NEIGHBORS\@FrostedIceBlock\@\@0HB
      */
     MCAPI static int const MIN_NEIGHBORS;

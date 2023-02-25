@@ -31,17 +31,14 @@ public:
 
 public:
     /**
-     * @hash   -583236703
      * @symbol  ??0ZlibFileAccessWrapper\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
     /**
-     * @hash   -1121001559
      * @symbol  ?getZipFunctions\@ZlibFileAccessWrapper\@\@QEBAPEAUzlib_filefunc64_32_def_s\@\@XZ
      */
     MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
     /**
-     * @hash   -917672556
      * @symbol  ??1ZlibFileAccessWrapper\@\@QEAA\@XZ
      */
     MCAPI ~ZlibFileAccessWrapper();

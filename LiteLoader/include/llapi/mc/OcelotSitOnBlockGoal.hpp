@@ -36,7 +36,6 @@ public:
      */
     virtual ~OcelotSitOnBlockGoal();
     /**
-     * @hash   -1917078083
      * @vftbl  1
      * @symbol  ?canUse\@OcelotSitOnBlockGoal\@\@UEAA_NXZ
      */
@@ -47,25 +46,21 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   695284502
      * @vftbl  4
      * @symbol  ?start\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -775849338
      * @vftbl  5
      * @symbol  ?stop\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   544654865
      * @vftbl  6
      * @symbol  ?tick\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -974170029
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@OcelotSitOnBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -81,19 +76,16 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   528089727
      * @vftbl  11
      * @symbol  ?isValidTarget\@OcelotSitOnBlockGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   640588114
      * @vftbl  13
      * @symbol  ?_canReach\@OcelotSitOnBlockGoal\@\@UEAA_NAEBVBlockPos\@\@\@Z
      */
     virtual bool _canReach(class BlockPos const &);
     /**
-     * @hash   726509111
      * @symbol  ??0OcelotSitOnBlockGoal\@\@QEAA\@AEAVMob\@\@M\@Z
      */
     MCAPI OcelotSitOnBlockGoal(class Mob &, float);

@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   89307758
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@TripodCamera\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -43,7 +42,6 @@ public:
      */
     virtual ~TripodCamera();
     /**
-     * @hash   830701164
      * @vftbl  19
      * @symbol  ?remove\@TripodCamera\@\@UEAAXXZ
      */
@@ -64,13 +62,11 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   796488897
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@TripodCamera\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @hash   1378741191
      * @vftbl  81
      * @symbol  ?getShadowRadius\@TripodCamera\@\@UEBAMXZ
      */
@@ -91,7 +87,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   1689610447
      * @vftbl  96
      * @symbol  ?isPickable\@TripodCamera\@\@UEAA_NXZ
      */
@@ -157,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   558107351
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@TripodCamera\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -168,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   809399169
      * @vftbl  263
      * @symbol  ?_hurt\@TripodCamera\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -199,7 +192,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   618849005
      * @vftbl  341
      * @symbol  ?canExistWhenDisallowMob\@TripodCamera\@\@UEBA_NXZ
      */
@@ -211,38 +203,31 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERA
     /**
-     * @hash   1050668002
      * @symbol  ?breaksFallingBlocks\@TripodCamera\@\@UEBA_NXZ
      */
     MCVAPI bool breaksFallingBlocks() const;
     /**
-     * @hash   -1097341623
      * @symbol  ?interactPreventDefault\@TripodCamera\@\@UEAA_NXZ
      */
     MCVAPI bool interactPreventDefault();
     /**
-     * @hash   -1050198994
      * @symbol  ?isTargetable\@TripodCamera\@\@UEBA_NXZ
      */
     MCVAPI bool isTargetable() const;
 #endif
     /**
-     * @hash   -189407029
      * @symbol  ??0TripodCamera\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI TripodCamera(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1679412751
      * @symbol  ?interactWithPlayer\@TripodCamera\@\@QEAA_NAEAVPlayer\@\@\@Z
      */
     MCAPI bool interactWithPlayer(class Player &);
     /**
-     * @hash   -831472128
      * @symbol  ?isActivated\@TripodCamera\@\@QEBA_NXZ
      */
     MCAPI bool isActivated() const;
     /**
-     * @hash   -860508216
      * @symbol  ?startTakingPicture\@TripodCamera\@\@QEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void startTakingPicture(class Player &);

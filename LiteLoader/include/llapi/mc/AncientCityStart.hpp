@@ -34,7 +34,6 @@ public:
      */
     virtual ~AncientCityStart();
     /**
-     * @hash   1858242763
      * @vftbl  2
      * @symbol  ?isValid\@AncientCityStart\@\@UEBA_NXZ
      */

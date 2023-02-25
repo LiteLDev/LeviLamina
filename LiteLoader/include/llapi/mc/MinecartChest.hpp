@@ -142,19 +142,16 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   720703909
      * @vftbl  278
      * @symbol  ?destroy\@MinecartChest\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @hash   -465506554
      * @vftbl  279
      * @symbol  ?getType\@MinecartChest\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType();
     /**
-     * @hash   1968707900
      * @vftbl  280
      * @symbol  ?getDefaultDisplayBlock\@MinecartChest\@\@UEBAPEBVBlock\@\@XZ
      */
@@ -165,13 +162,11 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   -1004008947
      * @vftbl  283
      * @symbol  ?applyNaturalSlowdown\@MinecartChest\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @hash   -1370204310
      * @symbol  ??0MinecartChest\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -180,7 +175,6 @@ public:
 
 private:
     /**
-     * @hash   1496155542
      * @symbol  ?ITEMS_SIZE\@MinecartChest\@\@0HB
      */
     MCAPI static int const ITEMS_SIZE;

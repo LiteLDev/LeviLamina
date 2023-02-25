@@ -35,31 +35,26 @@ public:
      */
     virtual ~SpawnChanceSubcomponent();
     /**
-     * @hash   1550591276
      * @vftbl  1
      * @symbol  ?readfromJSON\@SpawnChanceSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   -489908531
      * @vftbl  2
      * @symbol  ?writetoJSON\@SpawnChanceSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   -715113002
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@SpawnChanceSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   669344833
      * @vftbl  4
      * @symbol  ?getName\@SpawnChanceSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   -572603432
      * @symbol  ??0SpawnChanceSubcomponent\@\@QEAA\@XZ
      */
     MCAPI SpawnChanceSubcomponent();

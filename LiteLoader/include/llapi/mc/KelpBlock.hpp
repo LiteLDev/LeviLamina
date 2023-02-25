@@ -36,7 +36,6 @@ public:
      */
     virtual ~KelpBlock();
     /**
-     * @hash   -2031053889
      * @vftbl  10
      * @symbol  ?getAABB\@KelpBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1260010823
      * @vftbl  62
      * @symbol  ?canContainLiquid\@KelpBlock\@\@UEBA_NXZ
      */
@@ -168,37 +166,31 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1042687481
      * @vftbl  86
      * @symbol  ?onFertilized\@KelpBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   848795280
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@KelpBlock\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   261073812
      * @vftbl  88
      * @symbol  ?canBeFertilized\@KelpBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1766942751
      * @vftbl  92
      * @symbol  ?mayPlace\@KelpBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   558581233
      * @vftbl  99
      * @symbol  ?neighborChanged\@KelpBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1159003717
      * @vftbl  103
      * @symbol  ?asItemInstance\@KelpBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -229,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -834504943
      * @vftbl  135
      * @symbol  ?getColor\@KelpBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -1655371605
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@KelpBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
@@ -261,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   716710501
      * @vftbl  168
      * @symbol  ?onPlace\@KelpBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -272,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   662383605
      * @vftbl  171
      * @symbol  ?tick\@KelpBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -283,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2073845121
      * @vftbl  178
      * @symbol  ?canSurvive\@KelpBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -294,42 +281,35 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   812146509
      * @vftbl  187
      * @symbol  ?getResourceItem\@KelpBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KELPBLOCK
     /**
-     * @hash   1241680984
      * @symbol  ?canBeSilkTouched\@KelpBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1807204224
      * @symbol  ?waterSpreadCausesSpawn\@KelpBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   549117789
      * @symbol  ??0KelpBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI KelpBlock(std::string const &, int);
     /**
-     * @hash   1461047910
      * @symbol  ?shouldGrow\@KelpBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool shouldGrow(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
-     * @hash   1047742897
      * @symbol  ?_getAge\@KelpBlock\@\@AEBAHAEBVBlock\@\@\@Z
      */
     MCAPI int _getAge(class Block const &) const;
     /**
-     * @hash   102120180
      * @symbol  ?_tryGrow\@KelpBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;

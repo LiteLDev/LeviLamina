@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestHasTradeSupply();
     /**
-     * @hash   -1152776123
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestHasTradeSupply\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1692972003
      * @vftbl  4
      * @symbol  ?getName\@FilterTestHasTradeSupply\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

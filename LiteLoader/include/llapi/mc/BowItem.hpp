@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1867173441
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@BowItem\@\@UEBAHXZ
      */
@@ -108,25 +107,21 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1869143169
      * @vftbl  112
      * @symbol  ?enchantProjectile\@BowItem\@\@UEBAXAEBVItemStackBase\@\@AEAVActor\@\@\@Z
      */
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
     /**
-     * @hash   1071273933
      * @vftbl  117
      * @symbol  ?setIconInfo\@BowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -1845643500
      * @vftbl  118
      * @symbol  ?getIconInfo\@BowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   1778676875
      * @symbol  ??0BowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BowItem(std::string const &, int);

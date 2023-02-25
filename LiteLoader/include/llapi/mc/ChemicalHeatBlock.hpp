@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   777854632
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@ChemicalHeatBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -207,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1500300775
      * @vftbl  168
      * @symbol  ?onPlace\@ChemicalHeatBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1601611151
      * @vftbl  171
      * @symbol  ?tick\@ChemicalHeatBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1540284142
      * @vftbl  181
      * @symbol  ?getExtraRenderLayers\@ChemicalHeatBlock\@\@UEBAHXZ
      */
@@ -240,14 +236,12 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1312857849
      * @symbol  ??0ChemicalHeatBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChemicalHeatBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   673151306
      * @symbol  ?_queueTick\@ChemicalHeatBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void _queueTick(class BlockSource &, class BlockPos const &, class Random &) const;

@@ -36,19 +36,16 @@ public:
      */
     virtual ~RakWebSocketClient();
     /**
-     * @hash   -1981316509
      * @vftbl  8
      * @symbol  ?_updateState\@RakWebSocketClient\@\@MEAAXXZ
      */
     virtual void _updateState();
     /**
-     * @hash   402897091
      * @vftbl  9
      * @symbol  ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
      */
     virtual unsigned int _genMaskingKey() const;
     /**
-     * @hash   24620829
      * @symbol  ??0RakWebSocketClient\@\@QEAA\@V?$unique_ptr\@VTcpProxy\@\@U?$default_delete\@VTcpProxy\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);

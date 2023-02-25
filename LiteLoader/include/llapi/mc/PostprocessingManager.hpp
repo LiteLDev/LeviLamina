@@ -35,17 +35,14 @@ public:
 
 public:
     /**
-     * @hash   1506203238
      * @symbol  ??0PostprocessingManager\@\@QEAA\@XZ
      */
     MCAPI PostprocessingManager();
     /**
-     * @hash   -124927299
      * @symbol  ?tryLock\@PostprocessingManager\@\@QEAA?AV?$optional\@V?$vector\@ULockedChunk\@PostprocessingManager\@\@V?$allocator\@ULockedChunk\@PostprocessingManager\@\@\@std\@\@\@std\@\@\@std\@\@AEBVChunkPos\@\@AEAVChunkSource\@\@\@Z
      */
     MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk>> tryLock(class ChunkPos const &, class ChunkSource &);
     /**
-     * @hash   1491487846
      * @symbol  ??1PostprocessingManager\@\@QEAA\@XZ
      */
     MCAPI ~PostprocessingManager();

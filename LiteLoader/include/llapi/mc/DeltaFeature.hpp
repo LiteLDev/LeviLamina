@@ -36,7 +36,6 @@ public:
      */
     virtual ~DeltaFeature();
     /**
-     * @hash   -422641160
      * @vftbl  3
      * @symbol  ?place\@DeltaFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   -318437391
      * @symbol  ?_isValidPlacement\@DeltaFeature\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;

@@ -36,7 +36,6 @@ public:
      */
     virtual ~NearestPrioritizedAttackableTargetGoal();
     /**
-     * @hash   -1330275123
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@NearestPrioritizedAttackableTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -52,13 +51,11 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -562923551
      * @vftbl  11
      * @symbol  ?_findTarget\@NearestPrioritizedAttackableTargetGoal\@\@EEAA?AUActorUniqueID\@\@PEAPEBUMobDescriptor\@\@\@Z
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
     /**
-     * @hash   -2060487864
      * @symbol  ??0NearestPrioritizedAttackableTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MH_NH22HM2H2\@Z
      */
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);

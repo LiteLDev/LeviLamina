@@ -36,13 +36,11 @@ public:
      */
     virtual ~GetEduServerInfoCommand();
     /**
-     * @hash   807364025
      * @vftbl  1
      * @symbol  ?execute\@GetEduServerInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -175640816
      * @symbol  ?setup\@GetEduServerInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

@@ -35,7 +35,6 @@ public:
      */
     virtual ~ShooterItemComponent();
     /**
-     * @hash   -343448908
      * @vftbl  1
      * @symbol  ?checkComponentDataForContentErrors\@ShooterItemComponent\@\@UEBA_NXZ
      */
@@ -51,57 +50,47 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   639880483
      * @vftbl  4
      * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @hash   -650279435
      * @vftbl  5
      * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   1795969307
      * @vftbl  6
      * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VShooterItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   1827632076
      * @symbol  ?releaseUsing\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     /**
-     * @hash   -1468018424
      * @symbol  ?use\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -1360814541
      * @symbol  ?bindType\@ShooterItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -125044740
      * @symbol  ?getIdentifier\@ShooterItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
-     * @hash   401867155
      * @symbol  ?_consumeAmmunition\@ShooterItemComponent\@\@AEBAXPEAVPlayer\@\@AEBVItemStack\@\@H_N2\@Z
      */
     MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
     /**
-     * @hash   -824248209
      * @symbol  ?_getAmmunition\@ShooterItemComponent\@\@AEBAHPEBVPlayer\@\@_NAEAVItemStack\@\@AEA_N\@Z
      */
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
     /**
-     * @hash   -344480090
      * @symbol  ?_shootProjectiles\@ShooterItemComponent\@\@AEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;

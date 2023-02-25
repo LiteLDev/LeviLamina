@@ -34,35 +34,29 @@ public:
      */
     virtual ~VolumeAreaCommand();
     /**
-     * @hash   -898453857
      * @vftbl  1
      * @symbol  ?execute\@VolumeAreaCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   727264704
      * @symbol  ?setup\@VolumeAreaCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @hash   -1694358282
      * @symbol  ?_add\@VolumeAreaCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVDimension\@\@AEAVVolumeEntityManagerServer\@\@AEAVPacketSender\@\@\@Z
      */
     MCAPI void _add(class CommandOrigin const &, class CommandOutput &, class Dimension const &, class VolumeEntityManagerServer &, class PacketSender &) const;
     /**
-     * @hash   -1991457700
      * @symbol  ?_list\@VolumeAreaCommand\@\@AEBAXAEAVCommandOutput\@\@AEBVLevel\@\@AEBVDimension\@\@AEBVVolumeEntityManagerServer\@\@\@Z
      */
     MCAPI void _list(class CommandOutput &, class Level const &, class Dimension const &, class VolumeEntityManagerServer const &) const;
     /**
-     * @hash   -1249144491
      * @symbol  ?_remove\@VolumeAreaCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVDimension\@\@AEAVVolumeEntityManagerServer\@\@AEAVPacketSender\@\@\@Z
      */
     MCAPI void _remove(class CommandOrigin const &, class CommandOutput &, class Dimension const &, class VolumeEntityManagerServer &, class PacketSender &) const;
     /**
-     * @hash   1837931994
      * @symbol  ?_removeAll\@VolumeAreaCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVDimension\@\@AEAVVolumeEntityManagerServer\@\@AEAVPacketSender\@\@\@Z
      */
     MCAPI void _removeAll(class CommandOrigin const &, class CommandOutput &, class Dimension const &, class VolumeEntityManagerServer &, class PacketSender &) const;

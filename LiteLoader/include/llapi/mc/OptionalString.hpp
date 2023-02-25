@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1476682347
      * @symbol  ??1OptionalString\@\@QEAA\@XZ
      */
     MCAPI ~OptionalString();

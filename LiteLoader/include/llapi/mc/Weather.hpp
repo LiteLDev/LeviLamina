@@ -151,118 +151,95 @@ public:
      */
     virtual void __unk_vfn_25();
     /**
-     * @hash   -1370381966
      * @vftbl  26
      * @symbol  ?levelEvent\@Weather\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
     virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
-     * @hash   -913659716
      * @symbol  ??0Weather\@\@QEAA\@AEAVDimension\@\@AEAVIRandom\@\@\@Z
      */
     MCAPI Weather(class Dimension &, class IRandom &);
     /**
-     * @hash   1877784335
      * @symbol  ?calcSnowBlockDepth\@Weather\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -894862226
      * @symbol  ?canPlaceTopSnow\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2PEAH\@Z
      */
     MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;
     /**
-     * @hash   -659221682
      * @symbol  ?getFogLevel\@Weather\@\@QEBAMXZ
      */
     MCAPI float getFogLevel() const;
     /**
-     * @hash   -1321144207
      * @symbol  ?getLightningLevel\@Weather\@\@QEBAMM\@Z
      */
     MCAPI float getLightningLevel(float) const;
     /**
-     * @hash   -283118049
      * @symbol  ?getRainLevel\@Weather\@\@QEBAMM\@Z
      */
     MCAPI float getRainLevel(float) const;
     /**
-     * @hash   1353530310
      * @symbol  ?isLightning\@Weather\@\@QEBA_NXZ
      */
     MCAPI bool isLightning() const;
     /**
-     * @hash   -2071779256
      * @symbol  ?isPrecipitatingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isPrecipitatingAt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   695068614
      * @symbol  ?isRaining\@Weather\@\@QEBA_NXZ
      */
     MCAPI bool isRaining() const;
     /**
-     * @hash   -414071782
      * @symbol  ?isRainingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isRainingAt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1159469988
      * @symbol  ?isSnowingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isSnowingAt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -723306781
      * @symbol  ?serverTick\@Weather\@\@QEAAXXZ
      */
     MCAPI void serverTick();
     /**
-     * @hash   -80195078
      * @symbol  ?setSkyFlashTime\@Weather\@\@QEAAXH\@Z
      */
     MCAPI void setSkyFlashTime(int);
     /**
-     * @hash   -281250582
      * @symbol  ?setTargetLightningLevel\@Weather\@\@QEAAXM\@Z
      */
     MCAPI void setTargetLightningLevel(float);
     /**
-     * @hash   256954556
      * @symbol  ?setTargetRainLevel\@Weather\@\@QEAAXM\@Z
      */
     MCAPI void setTargetRainLevel(float);
     /**
-     * @hash   -2027731945
      * @symbol  ?stop\@Weather\@\@QEAAXXZ
      */
     MCAPI void stop();
     /**
-     * @hash   -1334944099
      * @symbol  ?tick\@Weather\@\@QEAAXXZ
      */
     MCAPI void tick();
     /**
-     * @hash   -380535849
      * @symbol  ?tryToPlaceTopSnow\@Weather\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2\@Z
      */
     MCAPI bool tryToPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool);
     /**
-     * @hash   -784847101
      * @symbol  ?calcLightningCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
     MCAPI static int calcLightningCycleTime(class IRandom &);
     /**
-     * @hash   -1722222391
      * @symbol  ?calcRainCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
     MCAPI static int calcRainCycleTime(class IRandom &);
     /**
-     * @hash   -1791481883
      * @symbol  ?calcRainDuration\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
     MCAPI static int calcRainDuration(class IRandom &);
     /**
-     * @hash   -1812139134
      * @symbol  ?rebuildTopSnowToDepth\@Weather\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);

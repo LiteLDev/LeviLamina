@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   1192494709
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@ShulkerBoxBlockItem\@\@UEBAHH\@Z
      */
@@ -73,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   800419070
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@ShulkerBoxBlockItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -114,26 +112,22 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1161010137
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@ShulkerBoxBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -19433712
      * @vftbl  96
      * @symbol  ?buildEffectDescriptionName\@ShulkerBoxBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
     virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /**
-     * @hash   608251809
      * @symbol  ??0ShulkerBoxBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HPEBVBlock\@\@\@Z
      */
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);
 
 //private:
     /**
-     * @hash   617684968
      * @symbol  ?buildContainedItemList\@ShulkerBoxBlockItem\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVCompoundTag\@\@\@Z
      */
     MCAPI std::string buildContainedItemList(class CompoundTag const *) const;

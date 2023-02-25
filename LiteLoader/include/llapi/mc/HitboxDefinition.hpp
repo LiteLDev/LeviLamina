@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -470210310
      * @symbol  ?addAABB\@HitboxDefinition\@\@QEAAXAEBUHitboxJson\@\@\@Z
      */
     MCAPI void addAABB(struct HitboxJson const &);
@@ -40,7 +39,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class HitboxComponent &) const;
     /**
-     * @hash   1342327702
      * @symbol  ?buildSchema\@HitboxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHitboxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>> &);

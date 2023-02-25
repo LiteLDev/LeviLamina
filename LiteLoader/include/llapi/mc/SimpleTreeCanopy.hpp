@@ -36,7 +36,6 @@ public:
      */
     virtual ~SimpleTreeCanopy();
     /**
-     * @hash   -744693954
      * @vftbl  1
      * @symbol  ?placeCanopy\@SimpleTreeCanopy\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@AEBV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@3\@\@Z
      */

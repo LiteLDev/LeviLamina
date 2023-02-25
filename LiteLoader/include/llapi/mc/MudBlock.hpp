@@ -34,13 +34,11 @@ public:
      */
     virtual ~MudBlock();
     /**
-     * @hash   7698647
      * @vftbl  5
      * @symbol  ?getCollisionShape\@MudBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   736532433
      * @vftbl  10
      * @symbol  ?getAABB\@MudBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -141,7 +139,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -740471072
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@MudBlock\@\@UEBA_NXZ
      */
@@ -172,7 +169,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -359904790
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@MudBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -228,7 +224,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   903621764
      * @vftbl  172
      * @symbol  ?randomTick\@MudBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -244,12 +239,10 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1597103519
      * @symbol  ??0MudBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MudBlock(std::string const &, int);
     /**
-     * @hash   927010135
      * @symbol  ?BLOCK_AABB\@MudBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB BLOCK_AABB;

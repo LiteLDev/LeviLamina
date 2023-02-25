@@ -37,36 +37,30 @@ public:
      */
     virtual ~SetItemDataFunction();
     /**
-     * @hash   72058851
      * @vftbl  1
      * @symbol  ?apply\@SetItemDataFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @hash   2126091864
      * @vftbl  3
      * @symbol  ?apply\@SetItemDataFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
-     * @hash   -1346918577
      * @symbol  ?deserialize\@SetItemDataFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
-     * @hash   1642979166
      * @symbol  ?_applyImplForComplexAliasBlock\@SetItemDataFunction\@\@AEAA?AW4ApplyForComplexAliasBlockResult\@1\@AEAPEBVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@AEAH\@Z
      */
     MCAPI enum class SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(class Item const *&, std::string const &, class Random &, int &);
     /**
-     * @hash   1622861283
      * @symbol  ?_applyImplForItem\@SetItemDataFunction\@\@AEAA?AW4ApplyForItemResult\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAVRandom\@\@AEAHAEAV?$WeakPtr\@VItem\@\@\@\@\@Z
      */
     MCAPI enum class SetItemDataFunction::ApplyForItemResult _applyImplForItem(std::string const &, std::string const &, class Random &, int &, class WeakPtr<class Item> &);
     /**
-     * @hash   -1816581996
      * @symbol  ?_applyImplForNormalBlock\@SetItemDataFunction\@\@AEAAXAEAPEBVBlock\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void _applyImplForNormalBlock(class Block const *&, class Random &);

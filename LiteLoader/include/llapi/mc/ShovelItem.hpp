@@ -43,7 +43,6 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -826867365
      * @vftbl  10
      * @symbol  ?executeEvent\@ShovelItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -64,7 +63,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -1579262551
      * @vftbl  44
      * @symbol  ?canDestroySpecial\@ShovelItem\@\@UEBA_NAEBVBlock\@\@\@Z
      */
@@ -80,7 +78,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   423526358
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@ShovelItem\@\@UEBAHXZ
      */
@@ -121,13 +118,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   410612509
      * @vftbl  132
      * @symbol  ?_useOn\@ShovelItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   999551635
      * @symbol  ??0ShovelItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */
     MCAPI ShovelItem(std::string const &, int, class Item::Tier const &);

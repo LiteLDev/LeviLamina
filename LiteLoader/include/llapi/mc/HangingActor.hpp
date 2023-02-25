@@ -31,13 +31,11 @@ public:
 
 public:
     /**
-     * @hash   1287337656
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   179647907
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +46,6 @@ public:
      */
     virtual ~HangingActor();
     /**
-     * @hash   -1941953969
      * @vftbl  28
      * @symbol  ?move\@HangingActor\@\@UEAAXAEBVVec3\@\@\@Z
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1268187402
      * @vftbl  49
      * @symbol  ?normalTick\@HangingActor\@\@UEAAXXZ
      */
@@ -95,7 +91,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   1741606921
      * @vftbl  96
      * @symbol  ?isPickable\@HangingActor\@\@UEAA_NXZ
      */
@@ -131,7 +126,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   171507603
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@HangingActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -157,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   1298541381
      * @vftbl  234
      * @symbol  ?setSize\@HangingActor\@\@UEAAXMM\@Z
      */
@@ -178,19 +171,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -422590261
      * @vftbl  263
      * @symbol  ?_hurt\@HangingActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1864877499
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@HangingActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1516709586
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@HangingActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -206,82 +196,68 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -896574670
      * @vftbl  278
      * @symbol  ?setDir\@HangingActor\@\@UEAAXH\@Z
      */
     virtual void setDir(int);
     /**
-     * @hash   1171034321
      * @vftbl  279
      * @symbol  ?getWidth\@Painting\@\@UEBAHXZ
      */
     virtual int getWidth() const = 0;
     /**
-     * @hash   -1936156610
      * @vftbl  280
      * @symbol  ?getHeight\@Painting\@\@UEBAHXZ
      */
     virtual int getHeight() const = 0;
     /**
-     * @hash   1871553759
      * @vftbl  281
      * @symbol  ?dropItem\@Painting\@\@UEAAXXZ
      */
     virtual void dropItem() = 0;
     /**
-     * @hash   -714675621
      * @vftbl  282
      * @symbol  ?placeHangingEntity\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@H\@Z
      */
     virtual bool placeHangingEntity(class BlockSource &, int);
     /**
-     * @hash   1214005667
      * @vftbl  283
      * @symbol  ?wouldSurvive\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool wouldSurvive(class BlockSource &);
     /**
-     * @hash   2127167569
      * @symbol  ??0HangingActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1449362488
      * @symbol  ?getDirection\@HangingActor\@\@QEBAHXZ
      */
     MCAPI int getDirection() const;
 
 //protected:
     /**
-     * @hash   257254229
      * @symbol  ?_calculateAABB\@HangingActor\@\@IEAAXXZ
      */
     MCAPI void _calculateAABB();
     /**
-     * @hash   -429065929
      * @symbol  ?_calculateActorPositionFromPlacementPosition\@HangingActor\@\@IEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const &);
     /**
-     * @hash   1211552514
      * @symbol  ?_wouldSurvive\@HangingActor\@\@IEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI bool _wouldSurvive(class BlockSource &, class BlockPos const &, bool);
 
 //private:
     /**
-     * @hash   -250101852
      * @symbol  ?_blockContainsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @hash   1626627785
      * @symbol  ?_blockIsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _blockIsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @hash   105244420
      * @symbol  ?_canSurviveOnBlock\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
@@ -290,7 +266,6 @@ protected:
 
 private:
     /**
-     * @hash   959750064
      * @symbol  ?HANGING_OFFSET\@HangingActor\@\@0MB
      */
     MCAPI static float const HANGING_OFFSET;

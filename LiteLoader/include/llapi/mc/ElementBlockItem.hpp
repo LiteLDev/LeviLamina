@@ -102,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -368350347
      * @vftbl  105
      * @symbol  ?fixupCommon\@ElementBlockItem\@\@EEBAXAEAVItemStackBase\@\@\@Z
      */

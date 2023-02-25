@@ -35,7 +35,6 @@ public:
      */
     virtual ~FloatGoal();
     /**
-     * @hash   -2061331839
      * @vftbl  1
      * @symbol  ?canUse\@FloatGoal\@\@UEAA_NXZ
      */
@@ -61,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   151171493
      * @vftbl  6
      * @symbol  ?tick\@FloatGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1988168337
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@FloatGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   206106767
      * @symbol  ??0FloatGoal\@\@QEAA\@AEAVMob\@\@_N\@Z
      */
     MCAPI FloatGoal(class Mob &, bool);

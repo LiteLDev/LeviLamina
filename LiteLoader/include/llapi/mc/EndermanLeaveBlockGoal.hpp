@@ -35,7 +35,6 @@ public:
      */
     virtual ~EndermanLeaveBlockGoal();
     /**
-     * @hash   1105726453
      * @vftbl  1
      * @symbol  ?canUse\@EndermanLeaveBlockGoal\@\@UEAA_NXZ
      */
@@ -61,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   1814473001
      * @vftbl  6
      * @symbol  ?tick\@EndermanLeaveBlockGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1169450053
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@EndermanLeaveBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -764583766
      * @symbol  ??0EndermanLeaveBlockGoal\@\@QEAA\@AEAVEnderMan\@\@\@Z
      */
     MCAPI EndermanLeaveBlockGoal(class EnderMan &);

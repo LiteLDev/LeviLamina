@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -667178438
      * @vftbl  103
      * @symbol  ?asItemInstance\@OldLogBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -645526937
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@OldLogBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -902815772
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@OldLogBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -587842304
      * @vftbl  146
      * @symbol  ?getVariant\@OldLogBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -235,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -368551531
      * @vftbl  177
      * @symbol  ?use\@OldLogBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   2140702180
      * @vftbl  184
      * @symbol  ?getMapColor\@OldLogBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -252,19 +246,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1234788738
      * @vftbl  187
      * @symbol  ?getResourceItem\@OldLogBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -2070661417
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@OldLogBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   2024231022
      * @symbol  ??0OldLogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI OldLogBlock(std::string const &, int);

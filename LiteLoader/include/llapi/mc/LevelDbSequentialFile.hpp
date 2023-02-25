@@ -36,19 +36,16 @@ public:
      */
     virtual ~LevelDbSequentialFile();
     /**
-     * @hash   861626449
      * @vftbl  1
      * @symbol  ?Read\@LevelDbSequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_KPEAVSlice\@3\@PEAD\@Z
      */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /**
-     * @hash   1405271734
      * @vftbl  2
      * @symbol  ?Skip\@LevelDbSequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_K\@Z
      */
     virtual class leveldb::Status Skip(unsigned __int64);
     /**
-     * @hash   1105533470
      * @symbol  ??0LevelDbSequentialFile\@\@QEAA\@$$QEAVFile\@Core\@\@\@Z
      */
     MCAPI LevelDbSequentialFile(class Core::File &&);

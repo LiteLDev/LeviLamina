@@ -66,19 +66,16 @@ public:
      */
     virtual class std::optional<struct Scripting::ModuleBinding> createModuleBinding(struct Scripting::Version, class std::optional<struct Scripting::ContextConfig> const &, std::vector<struct Scripting::ModuleBinding> &&);
     /**
-     * @hash   -303583546
      * @symbol  ??0ScriptGameTestModuleFactory\@\@QEAA\@AEAVGameTestRegistry\@gametest\@\@\@Z
      */
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     /**
-     * @hash   -1552105304
      * @symbol  ?getModuleUUIDAsString\@ScriptGameTestModuleFactory\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
-     * @hash   -2030536022
      * @symbol  ?_addVersions\@ScriptGameTestModuleFactory\@\@AEAAXXZ
      */
     MCAPI void _addVersions();
@@ -89,12 +86,10 @@ public:
 
 private:
     /**
-     * @hash   -1331494813
      * @symbol  ?ModuleName\@ScriptGameTestModuleFactory\@\@0PEBDEB
      */
     MCAPI static char const * ModuleName;
     /**
-     * @hash   215510789
      * @symbol  ?ModuleUUID\@ScriptGameTestModuleFactory\@\@0VUUID\@mce\@\@A
      */
     MCAPI static class mce::UUID ModuleUUID;

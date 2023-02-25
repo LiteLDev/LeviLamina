@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   2076287597
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@WoodSlabBlockItem\@\@UEBAHH\@Z
      */

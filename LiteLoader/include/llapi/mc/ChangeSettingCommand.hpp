@@ -36,13 +36,11 @@ public:
      */
     virtual ~ChangeSettingCommand();
     /**
-     * @hash   1802115272
      * @vftbl  1
      * @symbol  ?execute\@ChangeSettingCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   713980780
      * @symbol  ?setup\@ChangeSettingCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

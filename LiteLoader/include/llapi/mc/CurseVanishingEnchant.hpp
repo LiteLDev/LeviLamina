@@ -36,13 +36,11 @@ public:
      */
     virtual ~CurseVanishingEnchant();
     /**
-     * @hash   1741630733
      * @vftbl  2
      * @symbol  ?getMinCost\@CurseVanishingEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   -1332009637
      * @vftbl  3
      * @symbol  ?getMaxCost\@CurseVanishingEnchant\@\@UEBAHH\@Z
      */
@@ -69,13 +67,11 @@ public:
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSEVANISHINGENCHANT
     /**
-     * @hash   193904617
      * @symbol  ?isTreasureOnly\@CurseVanishingEnchant\@\@UEBA_NXZ
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @hash   -700651626
      * @symbol  ??0CurseVanishingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2H_NH\@Z
      */
     MCAPI CurseVanishingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);

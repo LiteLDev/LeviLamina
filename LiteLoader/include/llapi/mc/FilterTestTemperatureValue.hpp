@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestTemperatureValue();
     /**
-     * @hash   1853532953
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestTemperatureValue\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1776870503
      * @vftbl  4
      * @symbol  ?getName\@FilterTestTemperatureValue\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

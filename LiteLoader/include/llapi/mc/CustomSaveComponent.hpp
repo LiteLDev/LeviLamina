@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   1591565436
      * @symbol  ?save\@CustomSaveComponent\@\@QEAA_NAEAVLevelStorage\@\@AEAVActor\@\@\@Z
      */
     MCAPI bool save(class LevelStorage &, class Actor &);

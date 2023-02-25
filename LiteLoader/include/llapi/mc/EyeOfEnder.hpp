@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -2134162323
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@EyeOfEnder\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -47,13 +46,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -227432562
      * @vftbl  47
      * @symbol  ?lerpMotion\@EyeOfEnder\@\@UEAAXAEBVVec3\@\@\@Z
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @hash   -1385430821
      * @vftbl  49
      * @symbol  ?normalTick\@EyeOfEnder\@\@UEAAXXZ
      */
@@ -69,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -260483898
      * @vftbl  81
      * @symbol  ?getShadowRadius\@EyeOfEnder\@\@UEBAMXZ
      */
@@ -160,17 +156,14 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -321198532
      * @symbol  ??0EyeOfEnder\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   685969299
      * @symbol  ?preNormalTick\@EyeOfEnder\@\@QEAAXXZ
      */
     MCAPI void preNormalTick();
     /**
-     * @hash   1042213345
      * @symbol  ?signalTo\@EyeOfEnder\@\@QEAAXAEBVPlayer\@\@AEAVBlockPos\@\@\@Z
      */
     MCAPI void signalTo(class Player const &, class BlockPos &);

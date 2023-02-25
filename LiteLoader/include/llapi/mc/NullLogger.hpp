@@ -35,13 +35,11 @@ public:
      */
     virtual ~NullLogger();
     /**
-     * @hash   -924345659
      * @vftbl  1
      * @symbol  ?Logv\@NullLogger\@\@UEAAXPEBDPEAD\@Z
      */
     virtual void Logv(char const *, char *);
     /**
-     * @hash   1152685871
      * @symbol  ?instance\@NullLogger\@\@2V1\@A
      */
     MCAPI static class NullLogger instance;

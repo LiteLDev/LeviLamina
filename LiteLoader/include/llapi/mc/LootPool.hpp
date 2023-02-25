@@ -31,19 +31,16 @@ public:
 
 public:
     /**
-     * @hash   -1964940882
      * @symbol  ?addRandomItems\@LootPool\@\@QEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     MCAPI void addRandomItems(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /**
-     * @hash   1359777906
      * @symbol  ?deserialize\@LootPool\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void deserialize(class Json::Value const &);
 
 //protected:
     /**
-     * @hash   823135332
      * @symbol  ?addRandomItem\@LootPool\@\@IEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     MCAPI void addRandomItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);

@@ -29,7 +29,6 @@ public:
 
 public:
     /**
-     * @hash   429574877
      * @symbol  ??0GameModuleServer\@\@QEAA\@XZ
      */
     MCAPI GameModuleServer();

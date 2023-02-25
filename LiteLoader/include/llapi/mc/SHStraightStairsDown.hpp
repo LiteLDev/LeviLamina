@@ -36,19 +36,16 @@ public:
      */
     virtual ~SHStraightStairsDown();
     /**
-     * @hash   1226765504
      * @vftbl  2
      * @symbol  ?getType\@SHStraightStairsDown\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   517577040
      * @vftbl  3
      * @symbol  ?addChildren\@SHStraightStairsDown\@\@UEAAXAEAVStructurePiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@\@Z
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @hash   -1382734648
      * @vftbl  4
      * @symbol  ?postProcess\@SHStraightStairsDown\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */

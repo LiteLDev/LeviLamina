@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   251867800
      * @vftbl  25
      * @symbol  ?canConnect\@GlassBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   807988734
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@GlassBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -555187302
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@GlassBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -234,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   337534391
      * @vftbl  188
      * @symbol  ?getResourceCount\@GlassBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -892193237
      * @symbol  ??0GlassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N2\@Z
      */
     MCAPI GlassBlock(std::string const &, int, class Material const &, bool, bool);

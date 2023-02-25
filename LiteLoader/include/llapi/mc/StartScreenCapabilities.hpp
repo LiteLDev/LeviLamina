@@ -35,7 +35,6 @@ public:
      */
     virtual ~StartScreenCapabilities();
     /**
-     * @hash   -980015763
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UStartScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

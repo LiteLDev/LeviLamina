@@ -35,36 +35,30 @@ public:
      */
     virtual ~ContainerOpenPacket();
     /**
-     * @hash   -188185381
      * @vftbl  1
      * @symbol  ?getId\@ContainerOpenPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1097998216
      * @vftbl  2
      * @symbol  ?getName\@ContainerOpenPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1568397313
      * @vftbl  3
      * @symbol  ?write\@ContainerOpenPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   566637791
      * @vftbl  6
      * @symbol  ?_read\@ContainerOpenPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1383277151
      * @symbol  ??0ContainerOpenPacket\@\@QEAA\@XZ
      */
     MCAPI ContainerOpenPacket();
     /**
-     * @hash   84463303
      * @symbol  ??0ContainerOpenPacket\@\@QEAA\@W4ContainerID\@\@W4ContainerType\@\@AEBVBlockPos\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI ContainerOpenPacket(enum class ContainerID, enum class ContainerType, class BlockPos const &, struct ActorUniqueID const &);

@@ -20,17 +20,14 @@ namespace EventCoordinatorRegistration {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -322230583
      * @symbol  ?registerClientEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVLevel\@\@\@Z
      */
     MCAPI void registerClientEventCoordinators(class Level &);
     /**
-     * @hash   743388559
      * @symbol  ?registerServerEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVServerLevel\@\@\@Z
      */
     MCAPI void registerServerEventCoordinators(class ServerLevel &);
     /**
-     * @hash   -1767171047
      * @symbol  ?registerSharedEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVLevel\@\@\@Z
      */
     MCAPI void registerSharedEventCoordinators(class Level &);

@@ -38,7 +38,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -324267931
      * @vftbl  2
      * @symbol  ?tick\@VibrationListenerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

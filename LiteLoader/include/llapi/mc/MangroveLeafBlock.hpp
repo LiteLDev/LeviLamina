@@ -154,13 +154,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -812164640
      * @vftbl  86
      * @symbol  ?onFertilized\@MangroveLeafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   788840683
      * @vftbl  88
      * @symbol  ?canBeFertilized\@MangroveLeafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -226,19 +224,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   272544740
      * @vftbl  187
      * @symbol  ?getResourceItem\@MangroveLeafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1026500451
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@MangroveLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1647228272
      * @symbol  ??0MangroveLeafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI MangroveLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1138921782
      * @symbol  ?createSystem\@CollidableMobNotifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

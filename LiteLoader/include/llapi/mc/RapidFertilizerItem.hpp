@@ -102,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1148129556
      * @vftbl  105
      * @symbol  ?fixupCommon\@RapidFertilizerItem\@\@UEBAXAEAVItemStackBase\@\@\@Z
      */

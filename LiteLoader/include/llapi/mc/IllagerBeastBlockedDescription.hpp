@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1172975521
      * @vftbl  0
      * @symbol  ?getJsonName\@IllagerBeastBlockedDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~IllagerBeastBlockedDescription();
     /**
-     * @hash   1532498210
      * @vftbl  2
      * @symbol  ?deserializeData\@IllagerBeastBlockedDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   110500588
      * @vftbl  3
      * @symbol  ?serializeData\@IllagerBeastBlockedDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

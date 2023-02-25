@@ -40,13 +40,11 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -218352395
      * @vftbl  2
      * @symbol  ?tick\@AgentCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @hash   1884383969
      * @symbol  ?cleanUp\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
      */
     MCAPI static void cleanUp(class EntityContext &, float);

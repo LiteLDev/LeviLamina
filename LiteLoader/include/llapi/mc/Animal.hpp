@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1634424198
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Animal\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   910713306
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@Animal\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -144,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   297915556
      * @vftbl  263
      * @symbol  ?_hurt\@Animal\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -155,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -1802506167
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Animal\@\@EEAAXXZ
      */
@@ -181,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1960209022
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Animal\@\@MEAAMAEBVBlockPos\@\@\@Z
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   332887256
      * @symbol  ??0Animal\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Animal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

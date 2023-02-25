@@ -97,7 +97,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1377180213
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Sheep\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   2084515008
      * @vftbl  291
      * @symbol  ?aiStep\@Sheep\@\@UEAAXXZ
      */
@@ -169,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1983432220
      * @vftbl  349
      * @symbol  ?newServerAiStep\@Sheep\@\@MEAAXXZ
      */
@@ -180,17 +177,14 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1684085511
      * @symbol  ??0Sheep\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1986610504
      * @symbol  ?isGrazing\@Sheep\@\@QEBA_NXZ
      */
     MCAPI bool isGrazing() const;
     /**
-     * @hash   -572008045
      * @symbol  ?preAiStep\@Sheep\@\@QEAAXXZ
      */
     MCAPI void preAiStep();
@@ -199,7 +193,6 @@ public:
 
 private:
     /**
-     * @hash   1592566881
      * @symbol  ?EAT_ANIMATION_TICKS\@Sheep\@\@0HB
      */
     MCAPI static int const EAT_ANIMATION_TICKS;

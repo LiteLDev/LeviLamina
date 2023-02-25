@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1158332764
      * @vftbl  25
      * @symbol  ?canConnect\@StainedGlassBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   170483058
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@StainedGlassBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -218300858
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@StainedGlassBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -204,13 +201,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   202105292
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@StainedGlassBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -856854945
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@StainedGlassBlock\@\@UEBA_NXZ
      */
@@ -246,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1200147161
      * @vftbl  184
      * @symbol  ?getMapColor\@StainedGlassBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -257,19 +251,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1068765755
      * @vftbl  188
      * @symbol  ?getResourceCount\@StainedGlassBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -850152116
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StainedGlassBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1703793401
      * @symbol  ??0StainedGlassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N2\@Z
      */
     MCAPI StainedGlassBlock(std::string const &, int, class Material const &, bool, bool);
@@ -278,7 +269,6 @@ public:
 
 private:
     /**
-     * @hash   -751977310
      * @symbol  ?STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION\@StainedGlassBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;

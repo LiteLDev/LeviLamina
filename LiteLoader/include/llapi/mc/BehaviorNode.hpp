@@ -39,18 +39,15 @@ public:
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @hash   -1140237042
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@BehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -813966960
      * @symbol  ??0BehaviorNode\@\@QEAA\@XZ
      */
     MCAPI BehaviorNode();
     /**
-     * @hash   1119563218
      * @symbol  ?getBehaviorData\@BehaviorNode\@\@QEAAAEAVBehaviorData\@\@XZ
      */
     MCAPI class BehaviorData & getBehaviorData();

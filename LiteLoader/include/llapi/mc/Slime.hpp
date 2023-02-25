@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   148726805
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Slime\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -43,7 +42,6 @@ public:
      */
     virtual ~Slime();
     /**
-     * @hash   1836242563
      * @vftbl  19
      * @symbol  ?remove\@Slime\@\@UEAAXXZ
      */
@@ -54,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -334399565
      * @vftbl  49
      * @symbol  ?normalTick\@Slime\@\@UEAAXXZ
      */
@@ -70,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1524492242
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Slime\@\@UEBAMXZ
      */
@@ -126,7 +122,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   1911941744
      * @vftbl  188
      * @symbol  ?onSynchedDataUpdate\@Slime\@\@UEAAXH\@Z
      */
@@ -162,13 +157,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1521129512
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Slime\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -593114027
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Slime\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -189,13 +182,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   247530899
      * @vftbl  291
      * @symbol  ?aiStep\@Slime\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @hash   -324535993
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Slime\@\@UEAA_N_N\@Z
      */
@@ -211,7 +202,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1651189062
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Slime\@\@MEAAMAEBVBlockPos\@\@\@Z
      */
@@ -222,97 +212,80 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1546944242
      * @vftbl  357
      * @symbol  ?getSquishSound\@Slime\@\@UEAA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getSquishSound();
     /**
-     * @hash   -2022386112
      * @vftbl  358
      * @symbol  ?setSlimeSize\@Slime\@\@MEAAXH\@Z
      */
     virtual void setSlimeSize(int);
     /**
-     * @hash   1799348204
      * @vftbl  359
      * @symbol  ?doPlayJumpSound\@Slime\@\@MEAA_NXZ
      */
     virtual bool doPlayJumpSound();
     /**
-     * @hash   1436691279
      * @vftbl  360
      * @symbol  ?doPlayLandSound\@Slime\@\@MEAA_NXZ
      */
     virtual bool doPlayLandSound();
     /**
-     * @hash   667221285
      * @vftbl  361
      * @symbol  ?playJumpSound\@Slime\@\@MEAAXXZ
      */
     virtual void playJumpSound();
     /**
-     * @hash   -66384856
      * @vftbl  362
      * @symbol  ?playLandSound\@Slime\@\@MEAAXXZ
      */
     virtual void playLandSound();
     /**
-     * @hash   -2143701555
      * @vftbl  363
      * @symbol  ?decreaseSquish\@Slime\@\@MEAAXXZ
      */
     virtual void decreaseSquish();
     /**
-     * @hash   5836943
      * @vftbl  364
      * @symbol  ?createChild\@Slime\@\@MEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@H\@Z
      */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /**
-     * @hash   1198418020
      * @symbol  ??0Slime\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1250437960
      * @symbol  ?getOldSquishValue\@Slime\@\@QEBAMXZ
      */
     MCAPI float getOldSquishValue() const;
     /**
-     * @hash   -1461860052
      * @symbol  ?getSlimeSize\@Slime\@\@QEBAHXZ
      */
     MCAPI int getSlimeSize() const;
     /**
-     * @hash   -1572846804
      * @symbol  ?getSquishValue\@Slime\@\@QEBAMXZ
      */
     MCAPI float getSquishValue() const;
     /**
-     * @hash   -1555130788
      * @symbol  ?postNormalTick\@Slime\@\@QEAAX_N\@Z
      */
     MCAPI void postNormalTick(bool);
     /**
-     * @hash   -1914605501
      * @symbol  ?preNormalTick\@Slime\@\@QEAAXXZ
      */
     MCAPI void preNormalTick();
     /**
-     * @hash   144998431
      * @symbol  ?getSpawnRulesCallback\@Slime\@\@SA?AV?$function\@$$A6A_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z\@std\@\@XZ
      */
     MCAPI static class std::function<bool (class SpawnConditions const &, class BlockSource &)> getSpawnRulesCallback();
 
 //protected:
     /**
-     * @hash   1596644308
      * @symbol  ?justJumped\@Slime\@\@IEAAXXZ
      */
     MCAPI void justJumped();
     /**
-     * @hash   -1952767871
      * @symbol  ?justLanded\@Slime\@\@IEAAXXZ
      */
     MCAPI void justLanded();

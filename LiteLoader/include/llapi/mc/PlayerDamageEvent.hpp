@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -254432597
      * @symbol  ??0PlayerDamageEvent\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VActorDamageSource\@\@U?$default_delete\@VActorDamageSource\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
     /**
-     * @hash   -1963635258
      * @symbol  ??1PlayerDamageEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerDamageEvent();

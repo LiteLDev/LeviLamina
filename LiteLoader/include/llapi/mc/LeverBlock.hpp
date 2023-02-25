@@ -36,7 +36,6 @@ public:
      */
     virtual ~LeverBlock();
     /**
-     * @hash   -1641531853
      * @vftbl  10
      * @symbol  ?getAABB\@LeverBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -137,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -210186446
      * @vftbl  51
      * @symbol  ?isSignalSource\@LeverBlock\@\@UEBA_NXZ
      */
@@ -148,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   724623990
      * @vftbl  58
      * @symbol  ?onFillBlock\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -164,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   66026076
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   848627253
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -186,19 +181,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1112073378
      * @vftbl  91
      * @symbol  ?mayPlace\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1863930803
      * @vftbl  92
      * @symbol  ?mayPlace\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   2043130069
      * @vftbl  99
      * @symbol  ?neighborChanged\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -209,13 +201,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -590140462
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LeverBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   1221960951
      * @vftbl  108
      * @symbol  ?isAttachedTo\@LeverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
@@ -241,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -2090369699
      * @vftbl  143
      * @symbol  ?getVisualShape\@LeverBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -51908270
      * @vftbl  147
      * @symbol  ?canSpawnOn\@LeverBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -258,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -761103124
      * @vftbl  162
      * @symbol  ?onRemove\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -279,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1152045231
      * @vftbl  168
      * @symbol  ?onPlace\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -290,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   303483033
      * @vftbl  171
      * @symbol  ?tick\@LeverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -301,13 +286,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1383237128
      * @vftbl  177
      * @symbol  ?use\@LeverBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1299021434
      * @vftbl  178
      * @symbol  ?canSurvive\@LeverBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -318,42 +301,35 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1534179306
      * @vftbl  193
      * @symbol  ?updateShape\@LeverBlock\@\@UEAAXPEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void updateShape(class BlockSource *, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERBLOCK
     /**
-     * @hash   -960841958
      * @symbol  ?isInteractiveBlock\@LeverBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
     /**
-     * @hash   247014386
      * @symbol  ?isLeverBlock\@LeverBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isLeverBlock() const;
 #endif
     /**
-     * @hash   -1543644991
      * @symbol  ??0LeverBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LeverBlock(std::string const &, int);
     /**
-     * @hash   1986474975
      * @symbol  ?toggle\@LeverBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVPlayer\@\@\@Z
      */
     MCAPI void toggle(class BlockSource &, class BlockPos const &, class Player *) const;
     /**
-     * @hash   1300255027
      * @symbol  ?getLeverFacing\@LeverBlock\@\@SA?AW4LeverDirection\@\@H\@Z
      */
     MCAPI static enum class LeverDirection getLeverFacing(int);
 
 //private:
     /**
-     * @hash   -203229374
      * @symbol  ?_getShape\@LeverBlock\@\@AEBAXAEBVBlock\@\@AEAVAABB\@\@\@Z
      */
     MCAPI void _getShape(class Block const &, class AABB &) const;

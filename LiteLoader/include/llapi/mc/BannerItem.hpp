@@ -67,13 +67,11 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -385220217
      * @vftbl  54
      * @symbol  ?isWearableThroughLootTable\@BannerItem\@\@UEBA_NPEBVCompoundTag\@\@\@Z
      */
     virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
     /**
-     * @hash   -749610832
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@BannerItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -84,7 +82,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   -178899003
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@BannerItem\@\@UEBA_NH\@Z
      */
@@ -120,24 +117,20 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   321382715
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@BannerItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   541318591
      * @vftbl  132
      * @symbol  ?_useOn\@BannerItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   922339053
      * @symbol  ??0BannerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BannerItem(std::string const &, int);
     /**
-     * @hash   -1701582244
      * @symbol  ?getPatternAndColorPairsFromItemStack\@BannerItem\@\@SA?AV?$vector\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@V?$allocator\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum class ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);

@@ -34,19 +34,16 @@ public:
      */
     virtual ~ShootBowNode();
     /**
-     * @hash   -1276670598
      * @vftbl  1
      * @symbol  ?tick\@ShootBowNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1930139922
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@ShootBowNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   681355833
      * @symbol  ??0ShootBowNode\@\@QEAA\@XZ
      */
     MCAPI ShootBowNode();

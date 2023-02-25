@@ -37,18 +37,15 @@ public:
      */
     virtual ~UnderwaterCanyonFeature();
     /**
-     * @hash   -1981629792
      * @vftbl  1
      * @symbol  ?carve\@UnderwaterCanyonFeature\@\@MEBA_NAEAVBlockVolume\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@4HHHHHHMMV?$span\@$$CBM$0?0\@gsl\@\@AEBUWorldGenContext\@\@\@Z
      */
     virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
     /**
-     * @hash   710622965
      * @symbol  ??0UnderwaterCanyonFeature\@\@QEAA\@F\@Z
      */
     MCAPI UnderwaterCanyonFeature(short);
     /**
-     * @hash   1534240883
      * @symbol  ?isDiggable\@UnderwaterCanyonFeature\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isDiggable(class Block const &);

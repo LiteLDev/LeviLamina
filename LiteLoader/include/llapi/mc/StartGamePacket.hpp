@@ -35,31 +35,26 @@ public:
      */
     virtual ~StartGamePacket();
     /**
-     * @hash   918221010
      * @vftbl  1
      * @symbol  ?getId\@StartGamePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -575149185
      * @vftbl  2
      * @symbol  ?getName\@StartGamePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1350688280
      * @vftbl  3
      * @symbol  ?write\@StartGamePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1560840360
      * @vftbl  6
      * @symbol  ?_read\@StartGamePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1500269832
      * @symbol  ??0StartGamePacket\@\@QEAA\@XZ
      */
     MCAPI StartGamePacket();

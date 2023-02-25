@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   2135933925
      * @symbol  ??0SummonSpellData\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SummonSpellData(struct SummonSpellData const &);
     /**
-     * @hash   -1789803939
      * @symbol  ??1SummonSpellData\@\@QEAA\@XZ
      */
     MCAPI ~SummonSpellData();

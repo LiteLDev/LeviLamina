@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   764915040
      * @vftbl  12
      * @symbol  ?initializeComponents\@Throwable\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -330813922
      * @vftbl  47
      * @symbol  ?lerpMotion\@Throwable\@\@UEAAXAEBVVec3\@\@\@Z
      */
@@ -64,7 +62,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -2017952704
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@Throwable\@\@UEAAMXZ
      */
@@ -115,7 +112,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -980973018
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@Throwable\@\@UEBA?AUActorUniqueID\@\@XZ
      */
@@ -156,13 +152,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -572974048
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Throwable\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1583435629
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Throwable\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -178,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1568412204
      * @vftbl  278
      * @symbol  ?getThrowPower\@Throwable\@\@UEAAMXZ
      */
@@ -189,52 +182,43 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   547115779
      * @vftbl  280
      * @symbol  ?getThrowUpAngleOffset\@Throwable\@\@MEAAMXZ
      */
     virtual float getThrowUpAngleOffset();
     /**
-     * @hash   1705086080
      * @vftbl  281
      * @symbol  ?getGravity\@Throwable\@\@MEAAMXZ
      */
     virtual float getGravity();
     /**
-     * @hash   825628672
      * @vftbl  282
      * @symbol  ?getParticleType\@Throwable\@\@MEAA?AW4ParticleType\@\@XZ
      */
     virtual enum class ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
     /**
-     * @hash   -989198186
      * @symbol  ?canMakeStepSound\@Throwable\@\@MEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
     /**
-     * @hash   856621461
      * @symbol  ?onHit\@Throwable\@\@MEAAXAEBVHitResult\@\@\@Z
      */
     MCVAPI void onHit(class HitResult const &);
     /**
-     * @hash   2135782823
      * @symbol  ?stopUponGroundCollision\@Throwable\@\@UEBA_NXZ
      */
     MCVAPI bool stopUponGroundCollision() const;
 #endif
     /**
-     * @hash   -1724190628
      * @symbol  ??0Throwable\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -2046777802
      * @symbol  ?shoot\@Throwable\@\@QEAAXAEAVMob\@\@\@Z
      */
     MCAPI void shoot(class Mob &);
     /**
-     * @hash   245594074
      * @symbol  ?shoot\@Throwable\@\@QEAAXAEBVVec3\@\@MM0\@Z
      */
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);

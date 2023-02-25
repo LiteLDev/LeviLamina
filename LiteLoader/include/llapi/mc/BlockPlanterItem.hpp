@@ -47,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_11();
     /**
-     * @hash   -1754864686
      * @vftbl  13
      * @symbol  ?isBlockPlanterItem\@BlockPlanterItem\@\@UEBA_NXZ
      */
@@ -108,19 +107,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -144177686
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@BlockPlanterItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   -17656459
      * @vftbl  132
      * @symbol  ?_useOn\@BlockPlanterItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   2006194942
      * @symbol  ??0BlockPlanterItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlock\@\@_N\@Z
      */
     MCAPI BlockPlanterItem(std::string const &, int, class Block const &, bool);

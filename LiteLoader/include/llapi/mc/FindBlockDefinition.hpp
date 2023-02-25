@@ -37,7 +37,6 @@ public:
      */
     virtual ~FindBlockDefinition();
     /**
-     * @hash   -471566643
      * @vftbl  1
      * @symbol  ?load\@FindBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

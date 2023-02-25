@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -2120432977
      * @symbol  ??1ModuleIdentifier\@\@QEAA\@XZ
      */
     MCAPI ~ModuleIdentifier();

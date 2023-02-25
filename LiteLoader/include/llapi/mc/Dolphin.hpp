@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   106705314
      * @vftbl  12
      * @symbol  ?initializeComponents\@Dolphin\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -108,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   1650307215
      * @vftbl  191
      * @symbol  ?canBePulledIntoVehicle\@Dolphin\@\@UEBA_NXZ
      */
@@ -159,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1176239763
      * @vftbl  291
      * @symbol  ?aiStep\@Dolphin\@\@UEAAXXZ
      */
@@ -175,13 +172,11 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -583490297
      * @vftbl  334
      * @symbol  ?createAIGoals\@Dolphin\@\@UEAA_NXZ
      */
     virtual bool createAIGoals();
     /**
-     * @hash   -285757703
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Dolphin\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   387259018
      * @symbol  ??0Dolphin\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Dolphin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

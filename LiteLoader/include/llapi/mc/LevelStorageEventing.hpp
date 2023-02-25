@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   2003477789
      * @symbol  ??0LevelStorageEventing\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVLevelData\@\@0\@Z
      */
     MCAPI LevelStorageEventing(std::string const &, class LevelData const &, std::string const &);
     /**
-     * @hash   1209438037
      * @symbol  ?fireDBStorageError\@LevelStorageEventing\@\@QEAAXPEBD\@Z
      */
     MCAPI void fireDBStorageError(char const *);
     /**
-     * @hash   -793816979
      * @symbol  ?fireEventWorldCorruptionCausedWorldShutdown\@LevelStorageEventing\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@_N\@3\@\@Z
      */
     MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const &, class std::optional<bool>);

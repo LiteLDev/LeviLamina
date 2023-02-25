@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   2048061544
      * @symbol  ?createSystem\@MoveTowardsClosestSpaceSystemFromActorContext\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

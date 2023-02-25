@@ -35,7 +35,6 @@ public:
      */
     virtual ~SitGoal();
     /**
-     * @hash   688025535
      * @vftbl  1
      * @symbol  ?canUse\@SitGoal\@\@UEAA_NXZ
      */
@@ -51,13 +50,11 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1060742648
      * @vftbl  4
      * @symbol  ?start\@SitGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   417436792
      * @vftbl  5
      * @symbol  ?stop\@SitGoal\@\@UEAAXXZ
      */
@@ -68,13 +65,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   491002609
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SitGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1341861604
      * @symbol  ??0SitGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SitGoal(class Mob &);

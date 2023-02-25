@@ -36,20 +36,17 @@ public:
      */
     virtual ~SnapToSurfaceFeature();
     /**
-     * @hash   -179184961
      * @vftbl  1
      * @symbol  ?place\@SnapToSurfaceFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -571127894
      * @symbol  ??0SnapToSurfaceFeature\@\@QEAA\@XZ
      */
     MCAPI SnapToSurfaceFeature();
 
 //private:
     /**
-     * @hash   913827145
      * @symbol  ?_findSnapPos\@SnapToSurfaceFeature\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@W4Surface\@1\@\@Z
      */
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum class SnapToSurfaceFeature::Surface) const;

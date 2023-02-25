@@ -31,13 +31,11 @@ public:
 
 public:
     /**
-     * @hash   -1923960275
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Boat\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -670529224
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@Boat\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +46,6 @@ public:
      */
     virtual ~Boat();
     /**
-     * @hash   227818939
      * @vftbl  19
      * @symbol  ?remove\@Boat\@\@UEAAXXZ
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   765715163
      * @vftbl  49
      * @symbol  ?normalTick\@Boat\@\@UEAAXXZ
      */
@@ -80,13 +76,11 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -98008960
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@Boat\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @hash   1105154614
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Boat\@\@UEBAMXZ
      */
@@ -107,13 +101,11 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   1187420533
      * @vftbl  91
      * @symbol  ?onAboveBubbleColumn\@Boat\@\@UEAAX_N\@Z
      */
     virtual void onAboveBubbleColumn(bool);
     /**
-     * @hash   -183822130
      * @vftbl  96
      * @symbol  ?isPickable\@Boat\@\@UEAA_NXZ
      */
@@ -149,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -522673266
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@Boat\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -160,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   1641682951
      * @vftbl  181
      * @symbol  ?getControllingPlayer\@Boat\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @hash   -655348844
      * @vftbl  189
      * @symbol  ?canAddPassenger\@Boat\@\@UEBA_NAEAVActor\@\@\@Z
      */
@@ -187,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   1522884881
      * @vftbl  222
      * @symbol  ?getPassengerYRotation\@Boat\@\@UEBAMAEBVActor\@\@\@Z
      */
@@ -208,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -555167591
      * @vftbl  263
      * @symbol  ?_hurt\@Boat\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -224,55 +211,45 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1154982446
      * @vftbl  278
      * @symbol  ?destroy\@Boat\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void destroy(class Actor *);
     /**
-     * @hash   926160060
      * @symbol  ??0Boat\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   952114819
      * @symbol  ?getRowingTime\@Boat\@\@QEBAMW4Side\@\@\@Z
      */
     MCAPI float getRowingTime(enum class Side) const;
     /**
-     * @hash   836415111
      * @symbol  ?getWoodID\@Boat\@\@QEBAEXZ
      */
     MCAPI unsigned char getWoodID() const;
     /**
-     * @hash   -1071018027
      * @symbol  ?postNormalTick\@Boat\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   333133020
      * @symbol  ?setPaddleState\@Boat\@\@QEAA_NW4Side\@\@_N\@Z
      */
     MCAPI bool setPaddleState(enum class Side, bool);
     /**
-     * @hash   217803031
      * @symbol  ?setRowingTime\@Boat\@\@QEAAXW4Side\@\@M\@Z
      */
     MCAPI void setRowingTime(enum class Side, float);
 
 //private:
     /**
-     * @hash   -1391286710
      * @symbol  ?_control\@Boat\@\@AEAAXXZ
      */
     MCAPI void _control();
     /**
-     * @hash   -1375527524
      * @symbol  ?_move\@Boat\@\@AEAAXXZ
      */
     MCAPI void _move();
     /**
-     * @hash   397379093
      * @symbol  ?_paddleControl\@Boat\@\@AEAAXW4Side\@\@AEAVVec3\@\@1\@Z
      */
     MCAPI void _paddleControl(enum class Side, class Vec3 &, class Vec3 &);

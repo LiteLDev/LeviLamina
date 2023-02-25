@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -566832406
      * @symbol  ?matchesContainerAndSlot\@ItemStackRequestSlotInfo\@\@QEBA_NAEBU1\@\@Z
      */
     MCAPI bool matchesContainerAndSlot(struct ItemStackRequestSlotInfo const &) const;
     /**
-     * @hash   849011696
      * @symbol  ??1ItemStackRequestSlotInfo\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackRequestSlotInfo();

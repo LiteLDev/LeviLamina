@@ -146,19 +146,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   663653476
      * @vftbl  62
      * @symbol  ?canContainLiquid\@TurtleEggBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1673853144
      * @vftbl  69
      * @symbol  ?checkIsPathable\@TurtleEggBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -2118515555
      * @vftbl  72
      * @symbol  ?transformOnFall\@TurtleEggBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@M\@Z
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1863967313
      * @vftbl  91
      * @symbol  ?mayPlace\@TurtleEggBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1107561880
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@TurtleEggBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -332837874
      * @vftbl  113
      * @symbol  ?entityInside\@TurtleEggBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -217,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   624383403
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@TurtleEggBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1941899744
      * @vftbl  168
      * @symbol  ?onPlace\@TurtleEggBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1515872378
      * @vftbl  171
      * @symbol  ?tick\@TurtleEggBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1682382953
      * @vftbl  177
      * @symbol  ?use\@TurtleEggBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -276,44 +266,37 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   138085122
      * @vftbl  187
      * @symbol  ?getResourceItem\@TurtleEggBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   382239210
      * @vftbl  188
      * @symbol  ?getResourceCount\@TurtleEggBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1775652475
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@TurtleEggBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TURTLEEGGBLOCK
     /**
-     * @hash   887666107
      * @symbol  ?waterSpreadCausesSpawn\@TurtleEggBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -738743998
      * @symbol  ??0TurtleEggBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TurtleEggBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -148770801
      * @symbol  ?_decreaseEggs\@TurtleEggBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@I_N\@Z
      */
     MCAPI static void _decreaseEggs(class BlockSource &, class BlockPos const &, unsigned int, bool);
     /**
-     * @hash   -451325236
      * @symbol  ?_destroyEgg\@TurtleEggBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@H_N\@Z
      */
     MCAPI static void _destroyEgg(class BlockSource &, class BlockPos const &, class Actor &, int, bool);

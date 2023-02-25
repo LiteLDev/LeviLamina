@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1576630833
      * @symbol  ??1VibrationListenerComponent\@\@QEAA\@XZ
      */
     MCAPI ~VibrationListenerComponent();

@@ -35,7 +35,6 @@ public:
      */
     virtual ~ServerScriptManager();
     /**
-     * @hash   -398951057
      * @vftbl  1
      * @symbol  ?onServerLevelInitialized\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@AEAVLevel\@\@\@Z
      */
@@ -56,7 +55,6 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   1641494740
      * @vftbl  5
      * @symbol  ?onServerUpdateStart\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
      */
@@ -77,13 +75,11 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -1533612298
      * @vftbl  9
      * @symbol  ?onServerThreadStarted\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
      */
     virtual enum class EventResult onServerThreadStarted(class ServerInstance &);
     /**
-     * @hash   904492346
      * @vftbl  10
      * @symbol  ?onServerThreadStopped\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@\@Z
      */
@@ -94,56 +90,46 @@ public:
      */
     virtual void __unk_vfn_11();
     /**
-     * @hash   -1666872446
      * @vftbl  12
      * @symbol  ?onEvent\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEBUServerInstanceRequestResourceReload\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
     /**
-     * @hash   691638720
      * @vftbl  13
      * @symbol  ?onEvent\@?$EventListenerDispatcher\@VServerInstanceEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUServerInstanceNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ServerInstanceNotificationEvent const &);
     /**
-     * @hash   1771138786
      * @symbol  ??0ServerScriptManager\@\@QEAA\@UScriptSettings\@\@V?$NonOwnerPointer\@VScheduler\@\@\@Bedrock\@\@AEAVIMinecraftEventing\@\@_N\@Z
      */
     MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>, class IMinecraftEventing &, bool);
     /**
-     * @hash   757531327
      * @symbol  ?addModuleFilter\@ServerScriptManager\@\@QEAAXAEBV?$function\@$$A6A_NAEBVPackManifest\@\@AEBUModuleDescriptor\@Scripting\@\@1AEAVScriptPluginResult\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void addModuleFilter(class std::function<bool (class PackManifest const &, struct Scripting::ModuleDescriptor const &, struct Scripting::ModuleDescriptor const &, class ScriptPluginResult &)> const &);
     /**
-     * @hash   1953409478
      * @symbol  ?getScriptEngine\@ServerScriptManager\@\@QEAAAEAVScriptEngine\@Scripting\@\@XZ
      */
     MCAPI class Scripting::ScriptEngine & getScriptEngine();
     /**
-     * @hash   -799623307
      * @symbol  ?onMainThreadStartLeaveGame\@ServerScriptManager\@\@QEAAXXZ
      */
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
     /**
-     * @hash   249834422
      * @symbol  ?_loadAndRunAllPlugins\@ServerScriptManager\@\@AEAA_NAEAVServerInstance\@\@AEAVServerLevel\@\@\@Z
      */
     MCAPI bool _loadAndRunAllPlugins(class ServerInstance &, class ServerLevel &);
     /**
-     * @hash   -1716089991
      * @symbol  ?_registerEventHandlers\@ServerScriptManager\@\@AEBAXAEAVLevel\@\@\@Z
      */
     MCAPI void _registerEventHandlers(class Level &) const;
     /**
-     * @hash   1533495218
      * @symbol  ?_unregisterEventHandlers\@ServerScriptManager\@\@AEBAXAEAVLevel\@\@\@Z
      */
     MCAPI void _unregisterEventHandlers(class Level &) const;
     /**
-     * @hash   -1530419972
      * @symbol  ?_sendWorldInitializeEvent\@ServerScriptManager\@\@CAXAEAVServerLevel\@\@VWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI static void _sendWorldInitializeEvent(class ServerLevel &, class Scripting::WeakLifetimeScope);

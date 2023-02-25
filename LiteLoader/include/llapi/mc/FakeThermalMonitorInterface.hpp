@@ -34,25 +34,21 @@ public:
      */
     virtual ~FakeThermalMonitorInterface();
     /**
-     * @hash   1632443797
      * @vftbl  1
      * @symbol  ?getThermalState\@FakeThermalMonitorInterface\@\@UEBA?AW4ThermalState\@\@XZ
      */
     virtual enum class ThermalState getThermalState() const;
     /**
-     * @hash   -844392677
      * @vftbl  2
      * @symbol  ?getThermalValueCelsius\@FakeThermalMonitorInterface\@\@UEBAMXZ
      */
     virtual float getThermalValueCelsius() const;
     /**
-     * @hash   -114290222
      * @vftbl  3
      * @symbol  ?isLowBatteryModeEnabled\@FakeThermalMonitorInterface\@\@UEBA_NXZ
      */
     virtual bool isLowBatteryModeEnabled() const;
     /**
-     * @hash   -185654323
      * @symbol  ??0FakeThermalMonitorInterface\@\@QEAA\@XZ
      */
     MCAPI FakeThermalMonitorInterface();

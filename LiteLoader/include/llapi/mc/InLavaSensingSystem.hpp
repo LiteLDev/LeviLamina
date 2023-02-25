@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   488179540
      * @symbol  ?createSystem\@InLavaSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

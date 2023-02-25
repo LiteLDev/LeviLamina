@@ -35,31 +35,26 @@ public:
      */
     virtual ~InMemoryWritableFile();
     /**
-     * @hash   1354818525
      * @vftbl  1
      * @symbol  ?Append\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
      */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
     /**
-     * @hash   -978297630
      * @vftbl  2
      * @symbol  ?Close\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYWRITABLEFILE
     /**
-     * @hash   -2116509154
      * @symbol  ?Flush\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     MCVAPI class leveldb::Status Flush();
     /**
-     * @hash   833818901
      * @symbol  ?Sync\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     MCVAPI class leveldb::Status Sync();
 #endif
     /**
-     * @hash   1400783600
      * @symbol  ??0InMemoryWritableFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
      */
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);

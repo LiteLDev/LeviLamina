@@ -20,7 +20,6 @@ namespace DBLoggingUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -729630010
      * @symbol  ?toPrintableDBKey\@DBLoggingUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
      */
     MCAPI std::string toPrintableDBKey(class gsl::basic_string_span<char const, -1> const &);

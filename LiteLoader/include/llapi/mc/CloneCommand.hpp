@@ -36,13 +36,11 @@ public:
      */
     virtual ~CloneCommand();
     /**
-     * @hash   723405813
      * @vftbl  1
      * @symbol  ?execute\@CloneCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -593952276
      * @symbol  ?setup\@CloneCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

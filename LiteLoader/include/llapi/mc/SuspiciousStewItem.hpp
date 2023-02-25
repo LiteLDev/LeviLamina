@@ -102,25 +102,21 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   667377523
      * @vftbl  86
      * @symbol  ?useTimeDepleted\@SuspiciousStewItem\@\@UEBA?AW4ItemUseMethod\@\@AEAVItemStack\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
     /**
-     * @hash   -1860505830
      * @symbol  ?uniqueAuxValues\@SuspiciousStewItem\@\@UEBA_NXZ
      */
     MCVAPI bool uniqueAuxValues() const;
 #endif
     /**
-     * @hash   1287417478
      * @symbol  ??0SuspiciousStewItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
     MCAPI SuspiciousStewItem(std::string const &, short);
     /**
-     * @hash   797024317
      * @symbol  ?applyStewEffect\@SuspiciousStewItem\@\@SAXAEBVItemStack\@\@AEAVActor\@\@\@Z
      */
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);

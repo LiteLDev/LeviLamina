@@ -61,13 +61,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1246106772
      * @vftbl  21
      * @symbol  ?_getContainerOffset\@PlayerUIContainerModel\@\@MEBAHXZ
      */
     virtual int _getContainerOffset() const;
     /**
-     * @hash   -974920989
      * @symbol  ??0PlayerUIContainerModel\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI PlayerUIContainerModel(enum class ContainerEnumName, class Player &);

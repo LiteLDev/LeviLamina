@@ -102,20 +102,17 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1739175692
      * @vftbl  133
      * @symbol  ?getUpdatePacket\@ComplexItem\@\@UEBA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@\@Z
      */
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXITEM
     /**
-     * @hash   150195595
      * @symbol  ?isComplex\@ComplexItem\@\@UEBA_NXZ
      */
     MCVAPI bool isComplex() const;
 #endif
     /**
-     * @hash   -1303152959
      * @symbol  ??0ComplexItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ComplexItem(std::string const &, int);

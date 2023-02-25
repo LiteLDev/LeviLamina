@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -167530384
      * @symbol  ??0MolangContextVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
     MCAPI MolangContextVariable(class HashedString const &);
     /**
-     * @hash   -1497638425
      * @symbol  ??1MolangContextVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangContextVariable();

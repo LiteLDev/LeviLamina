@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -351012150
      * @vftbl  2
      * @symbol  ?tick\@ActorLimitedLifetimeTickSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

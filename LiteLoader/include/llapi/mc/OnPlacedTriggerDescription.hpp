@@ -36,13 +36,11 @@ public:
      */
     virtual ~OnPlacedTriggerDescription();
     /**
-     * @hash   -504774279
      * @vftbl  1
      * @symbol  ?getName\@OnPlacedTriggerDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   1115949559
      * @symbol  ?NameID\@OnPlacedTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;

@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestLightLevel();
     /**
-     * @hash   387703482
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestLightLevel\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   196745192
      * @vftbl  4
      * @symbol  ?getName\@FilterTestLightLevel\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

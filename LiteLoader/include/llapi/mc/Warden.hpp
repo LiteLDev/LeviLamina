@@ -40,13 +40,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -495696315
      * @vftbl  43
      * @symbol  ?canDisableShield\@Warden\@\@UEAA_NXZ
      */
     virtual bool canDisableShield();
     /**
-     * @hash   -131921370
      * @vftbl  49
      * @symbol  ?normalTick\@Warden\@\@UEAAXXZ
      */
@@ -107,13 +105,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   1513482494
      * @vftbl  115
      * @symbol  ?setTarget\@Warden\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void setTarget(class Actor *);
     /**
-     * @hash   1614405267
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@Warden\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -124,7 +120,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -1002189699
      * @vftbl  188
      * @symbol  ?onSynchedDataUpdate\@Warden\@\@UEAAXH\@Z
      */
@@ -155,7 +150,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   710610252
      * @vftbl  253
      * @symbol  ?onPush\@Warden\@\@UEAAXAEAVActor\@\@\@Z
      */
@@ -166,7 +160,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   592899115
      * @vftbl  263
      * @symbol  ?_hurt\@Warden\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -187,13 +180,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   240216212
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Warden\@\@UEAA_N_N\@Z
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @hash   423787728
      * @vftbl  297
      * @symbol  ?checkSpawnObstruction\@Warden\@\@UEBA_NXZ
      */
@@ -204,7 +195,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   1496899986
      * @vftbl  307
      * @symbol  ?doHurtTarget\@Warden\@\@MEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
      */
@@ -220,7 +210,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1322676481
      * @symbol  ??0Warden\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

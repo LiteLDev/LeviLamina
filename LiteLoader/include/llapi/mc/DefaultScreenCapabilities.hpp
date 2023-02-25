@@ -35,7 +35,6 @@ public:
      */
     virtual ~DefaultScreenCapabilities();
     /**
-     * @hash   1768517804
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UDefaultScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

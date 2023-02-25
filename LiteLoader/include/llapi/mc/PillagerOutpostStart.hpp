@@ -35,7 +35,6 @@ public:
      */
     virtual ~PillagerOutpostStart();
     /**
-     * @hash   562351165
      * @vftbl  1
      * @symbol  ?postProcess\@PillagerOutpostStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */

@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1576888474
      * @symbol  ??4UpdateWaterStateRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct UpdateWaterStateRequestComponent & operator=(struct UpdateWaterStateRequestComponent &&);
     /**
-     * @hash   -1645248421
      * @symbol  ??1UpdateWaterStateRequestComponent\@\@QEAA\@XZ
      */
     MCAPI ~UpdateWaterStateRequestComponent();

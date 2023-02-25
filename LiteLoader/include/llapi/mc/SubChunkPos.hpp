@@ -17,6 +17,7 @@
  *
  */
 class SubChunkPos {
+
 #define AFTER_EXTRA
     // Add Member There
 public:
@@ -62,41 +63,28 @@ public:
 
 public:
     /**
-     * @hash   -353173606
      * @symbol  ??0SubChunkPos\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SubChunkPos(class BlockPos const &);
     /**
-     * @hash   -871578905
      * @symbol  ??BSubChunkPos\@\@QEBA?AVBlockPos\@\@XZ
      */
     MCAPI operator class BlockPos() const;
     /**
-     * @hash   628399179
      * @symbol  ?MAX\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const MAX;
     /**
-     * @hash   -389908457
      * @symbol  ?MIN\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const MIN;
     /**
-     * @hash   506987615
      * @symbol  ?ONE\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const ONE;
     /**
-     * @hash   -1647167031
      * @symbol  ?ZERO\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const ZERO;
+
 };
-
-namespace std {
-
-    template <>
-    struct hash<SubChunkPos> {
-        std::size_t operator()(SubChunkPos const& pos) const noexcept { return pos.hash(); }
-    };
-}  // namespace std

@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   1228424477
      * @symbol  ??0TickNextTickData\@\@QEAA\@AEBVBlockPos\@\@AEBVBlock\@\@AEBUTick\@\@H\@Z
      */
     MCAPI TickNextTickData(class BlockPos const &, class Block const &, struct Tick const &, int);
     /**
-     * @hash   -777728624
      * @symbol  ??8TickNextTickData\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class TickNextTickData const &) const;
     /**
-     * @hash   -1209411181
      * @symbol  ??OTickNextTickData\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator>(class TickNextTickData const &) const;

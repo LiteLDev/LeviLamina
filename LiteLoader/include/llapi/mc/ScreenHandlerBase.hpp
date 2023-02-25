@@ -35,38 +35,32 @@ public:
      */
     virtual ~ScreenHandlerBase();
     /**
-     * @hash   87190
      * @vftbl  1
      * @symbol  ?handleAction\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
-     * @hash   -157684623
      * @vftbl  2
      * @symbol  ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
     /**
-     * @hash   -1727835394
      * @symbol  ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
      */
     MCVAPI void endRequestBatch();
     /**
-     * @hash   -518500795
      * @symbol  ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
      */
     MCVAPI void postRequest(bool);
 #endif
     /**
-     * @hash   -1275342214
      * @symbol  ??0ScreenHandlerBase\@\@QEAA\@AEAVItemStackRequestActionHandler\@\@\@Z
      */
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 //protected:
     /**
-     * @hash   1154476437
      * @symbol  ?_tryGetSparseContainer\@ScreenHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);

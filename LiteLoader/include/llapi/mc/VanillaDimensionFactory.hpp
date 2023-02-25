@@ -22,7 +22,6 @@ namespace VanillaDimensionFactory {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1381763944
      * @symbol  ?registerDimensionTypes\@VanillaDimensionFactory\@\@YAXAEAV?$OwnerPtrFactory\@VDimension\@\@AEAVLevel\@\@AEAVScheduler\@\@\@\@\@Z
      */
     MCAPI void registerDimensionTypes(class OwnerPtrFactory<class Dimension, class Level &, class Scheduler &> &);

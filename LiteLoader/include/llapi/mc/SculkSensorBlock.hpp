@@ -36,7 +36,6 @@ public:
      */
     virtual ~SculkSensorBlock();
     /**
-     * @hash   -802858062
      * @vftbl  17
      * @symbol  ?liquidCanFlowIntoFromDirection\@SculkSensorBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1380136338
      * @vftbl  22
      * @symbol  ?canProvideSupport\@SculkSensorBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -143,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   447319398
      * @vftbl  51
      * @symbol  ?isSignalSource\@SculkSensorBlock\@\@UEBA_NXZ
      */
@@ -164,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1152928424
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@SculkSensorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -871422583
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -206,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   1936594295
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@SculkSensorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -217,13 +211,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1624829100
      * @vftbl  151
      * @symbol  ?animateTick\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -339078009
      * @vftbl  153
      * @symbol  ?getLightEmission\@SculkSensorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -234,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   2878519
      * @vftbl  164
      * @symbol  ?onStandOn\@SculkSensorBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
@@ -255,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1786369915
      * @vftbl  168
      * @symbol  ?onPlace\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -266,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -72510891
      * @vftbl  171
      * @symbol  ?tick\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -277,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1912949904
      * @vftbl  183
      * @symbol  ?getEmissiveBrightness\@SculkSensorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -288,47 +276,39 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1207924701
      * @vftbl  187
      * @symbol  ?getResourceItem\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   80529749
      * @vftbl  188
      * @symbol  ?getResourceCount\@SculkSensorBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1305210346
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCK
     /**
-     * @hash   -1702517137
      * @symbol  ?canBeSilkTouched\@SculkSensorBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1979774193
      * @symbol  ?hasComparatorSignal\@SculkSensorBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @hash   435358061
      * @symbol  ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SculkSensorBlock(std::string const &, int);
     /**
-     * @hash   967469748
      * @symbol  ?activate\@SculkSensorBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@H\@Z
      */
     MCAPI static void activate(class BlockSource &, class BlockPos const &, class Actor *, int);
     /**
-     * @hash   -531747028
      * @symbol  ?isActive\@SculkSensorBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isActive(class BlockSource &, class BlockPos const &);

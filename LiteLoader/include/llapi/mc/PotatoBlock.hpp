@@ -36,7 +36,6 @@ public:
      */
     virtual ~PotatoBlock();
     /**
-     * @hash   -300610714
      * @vftbl  10
      * @symbol  ?getAABB\@PotatoBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -192,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   744708454
      * @vftbl  146
      * @symbol  ?getVariant\@PotatoBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -238,25 +236,21 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   1981102118
      * @vftbl  194
      * @symbol  ?getBaseSeed\@PotatoBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
-     * @hash   1188979941
      * @vftbl  195
      * @symbol  ?getBaseCrop\@PotatoBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
-     * @hash   -144900588
      * @vftbl  197
      * @symbol  ?getCropNum\@PotatoBlock\@\@UEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
-     * @hash   -419112908
      * @symbol  ??0PotatoBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PotatoBlock(std::string const &, int);

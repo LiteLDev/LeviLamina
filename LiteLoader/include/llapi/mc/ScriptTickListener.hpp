@@ -49,7 +49,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   15348171
      * @vftbl  4
      * @symbol  ?onLevelRemovedPlayer\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
@@ -65,13 +64,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1046913689
      * @vftbl  7
      * @symbol  ?onLevelScriptTick\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
     virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
-     * @hash   -1104820143
      * @symbol  ??0ScriptTickListener\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptFormPromiseTracker\@\@AEAVScriptDeferredActionManager\@\@\@Z
      */
     MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptDeferredActionManager &);

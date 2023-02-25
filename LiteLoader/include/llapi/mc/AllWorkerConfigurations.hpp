@@ -27,7 +27,6 @@ public:
 
 public:
     /**
-     * @hash   904180120
      * @symbol  ??0AllWorkerConfigurations\@\@QEAA\@XZ
      */
     MCAPI AllWorkerConfigurations();

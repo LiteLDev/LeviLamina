@@ -35,7 +35,6 @@ public:
      */
     virtual ~MaterialReducerContainerScreenValidator();
     /**
-     * @hash   728419286
      * @symbol  ??0MaterialReducerContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI MaterialReducerContainerScreenValidator();

@@ -63,7 +63,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   1236930737
      * @vftbl  49
      * @symbol  ?isHandEquipped\@SparklerItem\@\@UEBA_NXZ
      */
@@ -114,47 +113,39 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   802155163
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@SparklerItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   1308522975
      * @vftbl  101
      * @symbol  ?inventoryTick\@SparklerItem\@\@UEBA_NAEAVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@H_N\@Z
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
-     * @hash   1451047019
      * @vftbl  117
      * @symbol  ?setIconInfo\@SparklerItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -508004106
      * @vftbl  118
      * @symbol  ?getIconInfo\@SparklerItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -910265542
      * @vftbl  122
      * @symbol  ?getLightEmission\@SparklerItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
-     * @hash   1433787373
      * @symbol  ??0SparklerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SparklerItem(std::string const &, int);
     /**
-     * @hash   -1337209391
      * @symbol  ?COLORS\@SparklerItem\@\@2QBUColorInfo\@1\@B
      */
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     /**
-     * @hash   -293299447
      * @symbol  ?MAX_ACTIVE_TICKS\@SparklerItem\@\@2HB
      */
     MCAPI static int const MAX_ACTIVE_TICKS;

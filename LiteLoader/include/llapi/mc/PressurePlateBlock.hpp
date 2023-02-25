@@ -216,31 +216,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -586737302
      * @vftbl  187
      * @symbol  ?getResourceItem\@PressurePlateBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1294994653
      * @vftbl  194
      * @symbol  ?getSignalStrength\@PressurePlateBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   581584592
      * @vftbl  195
      * @symbol  ?getSignalForData\@PressurePlateBlock\@\@MEBAHH\@Z
      */
     virtual int getSignalForData(int) const;
     /**
-     * @hash   -1988461981
      * @vftbl  196
      * @symbol  ?getRedstoneSignal\@PressurePlateBlock\@\@MEBAHH\@Z
      */
     virtual int getRedstoneSignal(int) const;
     /**
-     * @hash   1346489954
      * @symbol  ??0PressurePlateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@W4Sensitivity\@0\@\@Z
      */
     MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum class PressurePlateBlock::Sensitivity);

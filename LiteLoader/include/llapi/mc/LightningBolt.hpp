@@ -31,13 +31,11 @@ public:
 
 public:
     /**
-     * @hash   -426069794
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@LightningBolt\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   310154617
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@LightningBolt\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -53,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1681123884
      * @vftbl  49
      * @symbol  ?normalTick\@LightningBolt\@\@UEAAXXZ
      */
@@ -69,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1364031097
      * @vftbl  81
      * @symbol  ?getShadowRadius\@LightningBolt\@\@UEBAMXZ
      */
@@ -155,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1490300792
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@LightningBolt\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   786613157
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@LightningBolt\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -173,20 +167,17 @@ public:
     virtual void __unk_vfn_270();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTNINGBOLT
     /**
-     * @hash   1268331618
      * @symbol  ?shouldAlwaysRender\@LightningBolt\@\@UEAA_NXZ
      */
     MCVAPI bool shouldAlwaysRender();
 #endif
     /**
-     * @hash   -1118217093
      * @symbol  ??0LightningBolt\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI LightningBolt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
-     * @hash   1203163307
      * @symbol  ?_shouldSetOnFire\@LightningBolt\@\@AEBA_NXZ
      */
     MCAPI bool _shouldSetOnFire() const;

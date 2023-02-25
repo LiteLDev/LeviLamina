@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -2031395930
      * @vftbl  2
      * @symbol  ?tick\@OpenDoorAnnotationSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

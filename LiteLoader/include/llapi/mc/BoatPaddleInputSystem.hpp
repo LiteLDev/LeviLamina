@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   2134505630
      * @symbol  ?createBoatPaddleInputSystemClient\@BoatPaddleInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createBoatPaddleInputSystemClient();

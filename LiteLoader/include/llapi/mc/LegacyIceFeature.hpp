@@ -36,13 +36,11 @@ public:
      */
     virtual ~LegacyIceFeature();
     /**
-     * @hash   1269782590
      * @vftbl  3
      * @symbol  ?place\@LegacyIceFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -791825041
      * @symbol  ??0LegacyIceFeature\@\@QEAA\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacyIceFeature(class FeatureRegistry const &);

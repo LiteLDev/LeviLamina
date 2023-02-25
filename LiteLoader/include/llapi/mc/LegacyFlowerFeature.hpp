@@ -36,13 +36,11 @@ public:
      */
     virtual ~LegacyFlowerFeature();
     /**
-     * @hash   620160604
      * @vftbl  3
      * @symbol  ?place\@LegacyFlowerFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -74698395
      * @symbol  ??0LegacyFlowerFeature\@\@QEAA\@W4FlowerPlacementType\@\@\@Z
      */
     MCAPI LegacyFlowerFeature(enum class FlowerPlacementType);

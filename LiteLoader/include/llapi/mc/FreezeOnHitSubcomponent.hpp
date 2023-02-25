@@ -36,25 +36,21 @@ public:
      */
     virtual ~FreezeOnHitSubcomponent();
     /**
-     * @hash   410133950
      * @vftbl  1
      * @symbol  ?readfromJSON\@FreezeOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   556521483
      * @vftbl  2
      * @symbol  ?writetoJSON\@FreezeOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   376807672
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@FreezeOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1732737149
      * @vftbl  4
      * @symbol  ?getName\@FreezeOnHitSubcomponent\@\@UEAAPEBDXZ
      */

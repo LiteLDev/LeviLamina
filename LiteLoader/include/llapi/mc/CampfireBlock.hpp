@@ -36,7 +36,6 @@ public:
      */
     virtual ~CampfireBlock();
     /**
-     * @hash   823743654
      * @vftbl  10
      * @symbol  ?getAABB\@CampfireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1572187019
      * @vftbl  22
      * @symbol  ?canProvideSupport\@CampfireBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   816698324
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@CampfireBlock\@\@UEBA_NXZ
      */
@@ -164,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   556237874
      * @vftbl  62
      * @symbol  ?canContainLiquid\@CampfireBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   915157434
      * @vftbl  69
      * @symbol  ?checkIsPathable\@CampfireBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -186,19 +181,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1174166310
      * @vftbl  92
      * @symbol  ?mayPlace\@CampfireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1997384744
      * @vftbl  99
      * @symbol  ?neighborChanged\@CampfireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1838399708
      * @vftbl  103
      * @symbol  ?asItemInstance\@CampfireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -209,13 +201,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1347570821
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@CampfireBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   1839487664
      * @vftbl  113
      * @symbol  ?entityInside\@CampfireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -241,25 +231,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2057371424
      * @vftbl  143
      * @symbol  ?getVisualShape\@CampfireBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1695561307
      * @vftbl  147
      * @symbol  ?canSpawnOn\@CampfireBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @hash   -548590533
      * @vftbl  151
      * @symbol  ?animateTick\@CampfireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -854830786
      * @vftbl  153
      * @symbol  ?getLightEmission\@CampfireBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -270,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1739782649
      * @vftbl  162
      * @symbol  ?onRemove\@CampfireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -291,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -30121442
      * @vftbl  168
      * @symbol  ?onPlace\@CampfireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -307,7 +291,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1773436939
      * @vftbl  177
      * @symbol  ?use\@CampfireBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -318,36 +301,30 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -733644604
      * @vftbl  187
      * @symbol  ?getResourceItem\@CampfireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1519725452
      * @vftbl  188
      * @symbol  ?getResourceCount\@CampfireBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -747134755
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@CampfireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCK
     /**
-     * @hash   -1971641471
      * @symbol  ?canBeSilkTouched\@CampfireBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -1994367276
      * @symbol  ?hasVariableLighting\@CampfireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasVariableLighting() const;
     /**
-     * @hash   1572199241
      * @symbol  ?waterSpreadCausesSpawn\@CampfireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
@@ -357,17 +334,14 @@ public:
      */
     MCAPI CampfireBlock(std::string const &, int, bool, enum class CampfireBlock::Behavior);
     /**
-     * @hash   625850419
      * @symbol  ?isLit\@CampfireBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isLit(class Block const &);
     /**
-     * @hash   1895687705
      * @symbol  ?tryDouseFire\@CampfireBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@_N\@Z
      */
     MCAPI static bool tryDouseFire(class BlockSource &, class BlockPos const &, class Actor *, bool);
     /**
-     * @hash   -467527652
      * @symbol  ?tryLightFire\@CampfireBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);

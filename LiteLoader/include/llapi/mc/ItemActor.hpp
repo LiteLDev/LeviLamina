@@ -35,7 +35,6 @@ public:
 
 public:
     /**
-     * @hash   -1819501653
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ItemActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -46,13 +45,11 @@ public:
      */
     virtual ~ItemActor();
     /**
-     * @hash   969554894
      * @vftbl  21
      * @symbol  ?isRuntimePredictedMovementEnabled\@ItemActor\@\@UEBA_NXZ
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
-     * @hash   1648268873
      * @vftbl  40
      * @symbol  ?isFireImmune\@ItemActor\@\@UEBA_NXZ
      */
@@ -63,13 +60,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1161518411
      * @vftbl  48
      * @symbol  ?tryCreateAddActorPacket\@ItemActor\@\@UEAA?AV?$unique_ptr\@VAddActorBasePacket\@\@U?$default_delete\@VAddActorBasePacket\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
-     * @hash   1530112905
      * @vftbl  49
      * @symbol  ?normalTick\@ItemActor\@\@UEAAXXZ
      */
@@ -100,7 +95,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -1675745264
      * @vftbl  90
      * @symbol  ?playerTouch\@ItemActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -136,25 +130,21 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -51058608
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@ItemActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @hash   2022346804
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@ItemActor\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @hash   -352184108
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@ItemActor\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @hash   -710772654
      * @vftbl  174
      * @symbol  ?getLiquidAABB\@ItemActor\@\@UEBA?AVAABB\@\@W4MaterialType\@\@\@Z
      */
@@ -170,7 +160,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   1134049513
      * @vftbl  196
      * @symbol  ?canSynchronizeNewEntity\@ItemActor\@\@UEBA_NXZ
      */
@@ -201,19 +190,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   2032465102
      * @vftbl  263
      * @symbol  ?_hurt\@ItemActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -1560776594
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ItemActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1558371343
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ItemActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -225,62 +211,51 @@ public:
     virtual void __unk_vfn_270();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
     /**
-     * @hash   1710858683
      * @symbol  ?canMakeStepSound\@ItemActor\@\@UEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
-     * @hash   2114863278
      * @symbol  ??0ItemActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1386009147
      * @symbol  ?postNormalTick\@ItemActor\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   1906381843
      * @symbol  ?setSourceEntity\@ItemActor\@\@QEAAXPEBVActor\@\@\@Z
      */
     MCAPI void setSourceEntity(class Actor const *);
     /**
-     * @hash   694083721
      * @symbol  ?getLiquidAABB\@ItemActor\@\@SA?AVAABB\@\@AEBUAABBShapeComponent\@\@\@Z
      */
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const &);
     /**
-     * @hash   1441080952
      * @symbol  ?tryGetFromEntity\@ItemActor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
-     * @hash   393176610
      * @symbol  ?_addComponents\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _addComponents();
     /**
-     * @hash   -321513886
      * @symbol  ?_dropContents\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _dropContents();
     /**
-     * @hash   -44842007
      * @symbol  ?_merge\@ItemActor\@\@AEAA_NPEAV1\@\@Z
      */
     MCAPI bool _merge(class ItemActor *);
     /**
-     * @hash   1782447522
      * @symbol  ?_validateItem\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _validateItem();
 
 private:
     /**
-     * @hash   1581500431
      * @symbol  ?LIFETIME\@ItemActor\@\@0HB
      */
     MCAPI static int const LIFETIME;

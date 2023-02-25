@@ -36,7 +36,6 @@ public:
      */
     virtual ~TripWireBlock();
     /**
-     * @hash   80434563
      * @vftbl  10
      * @symbol  ?getAABB\@TripWireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -162,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   106260583
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@TripWireBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   388009175
      * @vftbl  103
      * @symbol  ?asItemInstance\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -179,13 +176,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1100681514
      * @vftbl  112
      * @symbol  ?shouldTriggerEntityInside\@TripWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
-     * @hash   -779905331
      * @vftbl  113
      * @symbol  ?entityInside\@TripWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   218202781
      * @vftbl  143
      * @symbol  ?getVisualShape\@TripWireBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -222,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   597838908
      * @vftbl  162
      * @symbol  ?onRemove\@TripWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1014430431
      * @vftbl  168
      * @symbol  ?onPlace\@TripWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1356497703
      * @vftbl  171
      * @symbol  ?tick\@TripWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -270,36 +261,30 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -537757679
      * @vftbl  187
      * @symbol  ?getResourceItem\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1894225542
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@TripWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -894913487
      * @symbol  ??0TripWireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TripWireBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -103065904
      * @symbol  ?checkPressed\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1287423239
      * @symbol  ?isEntityInsideTriggerable\@TripWireBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
     /**
-     * @hash   -695048704
      * @symbol  ?updateSource\@TripWireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;

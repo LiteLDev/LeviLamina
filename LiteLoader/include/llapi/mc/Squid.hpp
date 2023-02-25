@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1951577580
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Squid\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -979475820
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Squid\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -139,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1776613382
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Squid\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -150,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   807185358
      * @vftbl  263
      * @symbol  ?_hurt\@Squid\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -171,19 +167,16 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1649224743
      * @vftbl  291
      * @symbol  ?aiStep\@Squid\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @hash   -1029020191
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Squid\@\@UEAA_N_N\@Z
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @hash   612307715
      * @vftbl  297
      * @symbol  ?checkSpawnObstruction\@Squid\@\@UEBA_NXZ
      */
@@ -204,30 +197,25 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1721974892
      * @vftbl  356
      * @symbol  ?_getInkSquirtSoundEvent\@Squid\@\@MEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
-     * @hash   -419339463
      * @symbol  ??0Squid\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI Squid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &, class mce::Color const &);
     /**
-     * @hash   729617243
      * @symbol  ?postAiStep\@Squid\@\@QEAAXXZ
      */
     MCAPI void postAiStep();
     /**
-     * @hash   1552153097
      * @symbol  ?spawnInkParticles\@Squid\@\@QEAAXXZ
      */
     MCAPI void spawnInkParticles();
 
 //private:
     /**
-     * @hash   1899872749
      * @symbol  ?_randomInkDir\@Squid\@\@AEAA?AVVec3\@\@XZ
      */
     MCAPI class Vec3 _randomInkDir();

@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -221289868
      * @vftbl  0
      * @symbol  ?getJsonName\@NavigationSwimDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~NavigationSwimDescription();
     /**
-     * @hash   -497983735
      * @vftbl  3
      * @symbol  ?serializeData\@NavigationSwimDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

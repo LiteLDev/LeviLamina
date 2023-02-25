@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1553782424
      * @symbol  ??1MolangQueryFunctionPtr\@\@QEAA\@XZ
      */
     MCAPI ~MolangQueryFunctionPtr();

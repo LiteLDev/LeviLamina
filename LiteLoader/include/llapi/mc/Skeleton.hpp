@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -425863426
      * @vftbl  49
      * @symbol  ?normalTick\@Skeleton\@\@UEAAXXZ
      */
@@ -103,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -2097658858
      * @vftbl  115
      * @symbol  ?setTarget\@Skeleton\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void setTarget(class Actor *);
     /**
-     * @hash   -329215518
      * @vftbl  172
      * @symbol  ?canFreeze\@Skeleton\@\@UEBA_NXZ
      */
@@ -125,7 +122,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -35733978
      * @vftbl  208
      * @symbol  ?canBeAffected\@Skeleton\@\@UEBA_NI\@Z
      */
@@ -141,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -1280697404
      * @vftbl  220
      * @symbol  ?getDebugText\@Skeleton\@\@EEAAXAEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
@@ -157,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -904615392
      * @vftbl  246
      * @symbol  ?die\@Skeleton\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
@@ -188,7 +182,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   -1057766079
      * @vftbl  307
      * @symbol  ?doHurtTarget\@Skeleton\@\@UEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
      */
@@ -204,12 +197,10 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -568828407
      * @symbol  ??0Skeleton\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1816014593
      * @symbol  ?setWitherParent\@Skeleton\@\@QEAAXPEAVWitherBoss\@\@\@Z
      */
     MCAPI void setWitherParent(class WitherBoss *);
@@ -218,7 +209,6 @@ public:
 
 private:
     /**
-     * @hash   310689647
      * @symbol  ?SPEED_MODIFIER_ATTACK_UUID\@Skeleton\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;

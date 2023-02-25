@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1836035190
      * @vftbl  59
      * @symbol  ?requiresInteract\@EmptyMapItem\@\@UEBA_NXZ
      */
@@ -108,46 +107,38 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1430305068
      * @vftbl  84
      * @symbol  ?use\@EmptyMapItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   193087576
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@EmptyMapItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -591345603
      * @vftbl  119
      * @symbol  ?getInteractText\@EmptyMapItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @hash   -820010285
      * @vftbl  133
      * @symbol  ?getUpdatePacket\@ComplexItem\@\@UEBA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@\@Z
      */
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /**
-     * @hash   -2058502635
      * @symbol  ??0EmptyMapItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */
     MCAPI EmptyMapItem(std::string const &, short);
     /**
-     * @hash   -2019579214
      * @symbol  ?addPlayerMarker\@EmptyMapItem\@\@SAXAEAVItemStack\@\@\@Z
      */
     MCAPI static void addPlayerMarker(class ItemStack &);
     /**
-     * @hash   1661505728
      * @symbol  ?addPlayerMarker\@EmptyMapItem\@\@SAXAEAVItemInstance\@\@\@Z
      */
     MCAPI static void addPlayerMarker(class ItemInstance &);
     /**
-     * @hash   1608305083
      * @symbol  ?isLocatorMap\@EmptyMapItem\@\@SA_NAEBVItemStack\@\@\@Z
      */
     MCAPI static bool isLocatorMap(class ItemStack const &);

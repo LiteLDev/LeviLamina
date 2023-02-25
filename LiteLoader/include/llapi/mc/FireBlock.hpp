@@ -36,7 +36,6 @@ public:
      */
     virtual ~FireBlock();
     /**
-     * @hash   621563223
      * @vftbl  10
      * @symbol  ?getAABB\@FireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -475116063
      * @vftbl  62
      * @symbol  ?canContainLiquid\@FireBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -461686981
      * @vftbl  69
      * @symbol  ?checkIsPathable\@FireBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -174,19 +171,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -543560249
      * @vftbl  89
      * @symbol  ?mayPick\@FireBlock\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @hash   691360809
      * @vftbl  92
      * @symbol  ?mayPlace\@FireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   37495993
      * @vftbl  99
      * @symbol  ?neighborChanged\@FireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -197,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   801072113
      * @vftbl  113
      * @symbol  ?entityInside\@FireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -223,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -989681156
      * @vftbl  151
      * @symbol  ?animateTick\@FireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -249,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   2029459053
      * @vftbl  168
      * @symbol  ?onPlace\@FireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -260,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1202389363
      * @vftbl  171
      * @symbol  ?tick\@FireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -277,50 +267,41 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBLOCK
     /**
-     * @hash   2019118384
      * @symbol  ?canBeSilkTouched\@FireBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -1710325672
      * @symbol  ?waterSpreadCausesSpawn\@FireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -1534878267
      * @symbol  ??0FireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FireBlock(std::string const &, int);
     /**
-     * @hash   657122160
      * @symbol  ?checkBurn\@FireBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HAEAVRandomize\@\@H\@Z
      */
     MCAPI void checkBurn(class BlockSource &, class BlockPos const &, int, class Randomize &, int) const;
     /**
-     * @hash   -635672738
      * @symbol  ?isSolidToppedBlock\@FireBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isSolidToppedBlock(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   1640575449
      * @symbol  ?_tryAddToTickingQueue\@FireBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void _tryAddToTickingQueue(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -1789320021
      * @symbol  ?_trySpawnBlueFire\@FireBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _trySpawnBlueFire(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   161820266
      * @symbol  ?getFireOdds\@FireBlock\@\@AEBAMAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI float getFireOdds(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -253767767
      * @symbol  ?isValidFireLocation\@FireBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isValidFireLocation(class BlockSource &, class BlockPos const &) const;

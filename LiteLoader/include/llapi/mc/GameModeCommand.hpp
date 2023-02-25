@@ -36,13 +36,11 @@ public:
      */
     virtual ~GameModeCommand();
     /**
-     * @hash   -1638509651
      * @vftbl  1
      * @symbol  ?execute\@GameModeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   629756000
      * @symbol  ?setup\@GameModeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

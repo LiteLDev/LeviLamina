@@ -37,7 +37,6 @@ public:
      */
     virtual ~SubtreeDefinition();
     /**
-     * @hash   454846451
      * @vftbl  1
      * @symbol  ?load\@SubtreeDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

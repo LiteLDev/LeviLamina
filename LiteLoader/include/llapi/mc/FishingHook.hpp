@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1242066921
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@FishingHook\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~FishingHook();
     /**
-     * @hash   390396974
      * @vftbl  19
      * @symbol  ?remove\@FishingHook\@\@UEAAXXZ
      */
@@ -53,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -647074546
      * @vftbl  49
      * @symbol  ?normalTick\@FishingHook\@\@UEAAXXZ
      */
@@ -69,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1085026759
      * @vftbl  81
      * @symbol  ?getShadowRadius\@FishingHook\@\@UEBAMXZ
      */
@@ -120,25 +116,21 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -632576855
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@FishingHook\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @hash   166461747
      * @vftbl  164
      * @symbol  ?save\@FishingHook\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1492995305
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@FishingHook\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @hash   1914574190
      * @vftbl  178
      * @symbol  ?canChangeDimensionsUsingPortal\@FishingHook\@\@UEBA_NXZ
      */
@@ -174,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   1805390565
      * @vftbl  247
      * @symbol  ?shouldDropDeathLoot\@FishingHook\@\@UEBA_NXZ
      */
@@ -190,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -780595751
      * @symbol  ??0FishingHook\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -199,74 +189,60 @@ public:
      */
     MCAPI class Actor * getFishingTarget();
     /**
-     * @hash   -561710797
      * @symbol  ?getOwner\@FishingHook\@\@QEAAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getOwner();
     /**
-     * @hash   -1631500837
      * @symbol  ?postNormalTick\@FishingHook\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   -170574624
      * @symbol  ?retrieve\@FishingHook\@\@QEAAHXZ
      */
     MCAPI int retrieve();
     /**
-     * @hash   -777342523
      * @symbol  ?BOBBER_SIZE\@FishingHook\@\@2MB
      */
     MCAPI static float const BOBBER_SIZE;
 
 //protected:
     /**
-     * @hash   1284316355
      * @symbol  ?_fishPosEvent\@FishingHook\@\@IEAAXXZ
      */
     MCAPI void _fishPosEvent();
     /**
-     * @hash   -1644092507
      * @symbol  ?_fishTeaseEvent\@FishingHook\@\@IEAAXXZ
      */
     MCAPI void _fishTeaseEvent();
     /**
-     * @hash   -189713930
      * @symbol  ?_fishhookEvent\@FishingHook\@\@IEAAXXZ
      */
     MCAPI void _fishhookEvent();
     /**
-     * @hash   -1252559160
      * @symbol  ?_getWaterPercentage\@FishingHook\@\@IEAAMXZ
      */
     MCAPI float _getWaterPercentage();
     /**
-     * @hash   -223551597
      * @symbol  ?_hitCheck\@FishingHook\@\@IEAA?AVHitResult\@\@XZ
      */
     MCAPI class HitResult _hitCheck();
     /**
-     * @hash   -1119981105
      * @symbol  ?_pullCloser\@FishingHook\@\@IEAAXAEAVActor\@\@M\@Z
      */
     MCAPI void _pullCloser(class Actor &, float);
     /**
-     * @hash   1402554212
      * @symbol  ?_serverHooked\@FishingHook\@\@IEAA_NXZ
      */
     MCAPI bool _serverHooked();
     /**
-     * @hash   -739850298
      * @symbol  ?_serverLured\@FishingHook\@\@IEAA_NXZ
      */
     MCAPI bool _serverLured();
     /**
-     * @hash   2138125292
      * @symbol  ?_updateGravity\@FishingHook\@\@IEAAXXZ
      */
     MCAPI void _updateGravity();
     /**
-     * @hash   -132729071
      * @symbol  ?_updateServer\@FishingHook\@\@IEAAXXZ
      */
     MCAPI void _updateServer();

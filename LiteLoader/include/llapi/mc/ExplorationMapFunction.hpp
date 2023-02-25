@@ -37,19 +37,16 @@ public:
      */
     virtual ~ExplorationMapFunction();
     /**
-     * @hash   1879803629
      * @vftbl  1
      * @symbol  ?apply\@ExplorationMapFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @hash   -1482778382
      * @vftbl  3
      * @symbol  ?apply\@ExplorationMapFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
-     * @hash   -1541184801
      * @symbol  ?deserialize\@ExplorationMapFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);

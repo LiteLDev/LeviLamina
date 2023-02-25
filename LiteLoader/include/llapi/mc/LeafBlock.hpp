@@ -41,13 +41,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1262618162
      * @vftbl  22
      * @symbol  ?canProvideSupport\@LeafBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   -109327516
      * @vftbl  24
      * @symbol  ?canProvideMultifaceSupport\@LeafBlock\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1184372153
      * @vftbl  62
      * @symbol  ?canContainLiquid\@LeafBlock\@\@UEBA_NXZ
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1718486780
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@LeafBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -190,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   585921918
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LeafBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -216,19 +211,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   959710731
      * @vftbl  136
      * @symbol  ?getColor\@LeafBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   64565808
      * @vftbl  139
      * @symbol  ?isSeasonTinted\@LeafBlock\@\@UEBA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2019278181
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@LeafBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
@@ -239,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   285554304
      * @vftbl  162
      * @symbol  ?onRemove\@LeafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   129809794
      * @vftbl  172
      * @symbol  ?randomTick\@LeafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -276,13 +266,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1524023720
      * @vftbl  180
      * @symbol  ?getRenderLayer\@LeafBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -455194365
      * @vftbl  184
      * @symbol  ?getMapColor\@LeafBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -293,35 +281,29 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -563397517
      * @vftbl  186
      * @symbol  ?playerDestroy\@LeafBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   81646197
      * @vftbl  188
      * @symbol  ?getResourceCount\@LeafBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1642425977
      * @vftbl  193
      * @symbol  ?getExtraResourceItem\@LeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
-     * @hash   -1374434729
      * @symbol  ??0LeafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI LeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
     /**
-     * @hash   2063624904
      * @symbol  ?getSeasonsColor\@LeafBlock\@\@QEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI class mce::Color getSeasonsColor(class BlockSource &, class BlockPos const &, int, int) const;
     /**
-     * @hash   -1979483402
      * @symbol  ?runDecay\@LeafBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI static void runDecay(class BlockSource &, class BlockPos const &, int);
@@ -332,7 +314,6 @@ public:
      */
     MCAPI class Block const & _getSapling() const;
     /**
-     * @hash   1655286205
      * @symbol  ?_isTransparent\@LeafBlock\@\@KA_NAEBVBlock\@\@AEBW4BlockProperty\@\@\@Z
      */
     MCAPI static bool _isTransparent(class Block const &, enum class BlockProperty const &);

@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   1689941497
      * @vftbl  3
      * @symbol  ?_fillArea\@AddOceanTemperatureOperationNode\@\@MEBAXAEAV?$WorkingData\@W4BiomeTemperatureCategory\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
      */

@@ -37,7 +37,6 @@ public:
      */
     virtual ~InverterDefinition();
     /**
-     * @hash   1611297902
      * @vftbl  1
      * @symbol  ?load\@InverterDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

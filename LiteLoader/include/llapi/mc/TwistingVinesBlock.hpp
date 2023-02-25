@@ -36,7 +36,6 @@ public:
      */
     virtual ~TwistingVinesBlock();
     /**
-     * @hash   226752687
      * @vftbl  10
      * @symbol  ?getAABB\@TwistingVinesBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1726069273
      * @vftbl  62
      * @symbol  ?canContainLiquid\@TwistingVinesBlock\@\@UEBA_NXZ
      */
@@ -168,25 +166,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1719080857
      * @vftbl  86
      * @symbol  ?onFertilized\@TwistingVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   44640964
      * @vftbl  88
      * @symbol  ?canBeFertilized\@TwistingVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1683537729
      * @vftbl  92
      * @symbol  ?mayPlace\@TwistingVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2102631919
      * @vftbl  99
      * @symbol  ?neighborChanged\@TwistingVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -222,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -775784048
      * @vftbl  162
      * @symbol  ?onRemove\@TwistingVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -924671819
      * @vftbl  168
      * @symbol  ?onPlace\@TwistingVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1074660613
      * @vftbl  171
      * @symbol  ?tick\@TwistingVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   812085905
      * @vftbl  178
      * @symbol  ?canSurvive\@TwistingVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -276,25 +266,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   569508013
      * @vftbl  187
      * @symbol  ?getResourceItem\@TwistingVinesBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -663733843
      * @symbol  ??0TwistingVinesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TwistingVinesBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -1447950655
      * @symbol  ?_getAge\@TwistingVinesBlock\@\@AEBAHAEBVBlock\@\@\@Z
      */
     MCAPI int _getAge(class Block const &) const;
     /**
-     * @hash   1196151236
      * @symbol  ?_tryGrow\@TwistingVinesBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;

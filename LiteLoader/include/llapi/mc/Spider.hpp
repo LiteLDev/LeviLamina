@@ -54,13 +54,11 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1538219937
      * @vftbl  77
      * @symbol  ?setBlockMovementSlowdownMultiplier\@Spider\@\@UEAAXAEBVBlockLegacy\@\@AEBVVec3\@\@\@Z
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
-     * @hash   -605396431
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Spider\@\@UEBAMXZ
      */
@@ -111,7 +109,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   620162412
      * @vftbl  132
      * @symbol  ?shouldRender\@Spider\@\@UEBA_NXZ
      */
@@ -127,7 +124,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -463214146
      * @vftbl  208
      * @symbol  ?canBeAffected\@Spider\@\@UEBA_NI\@Z
      */
@@ -158,7 +154,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1143051267
      * @vftbl  268
      * @symbol  ?_playStepSound\@Spider\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -194,19 +189,16 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1331887936
      * @vftbl  357
      * @symbol  ?getModelScale\@Spider\@\@UEBAMXZ
      */
     virtual float getModelScale() const;
     /**
-     * @hash   1938652457
      * @vftbl  358
      * @symbol  ?getSpiderType\@Spider\@\@UEBA?AW4Type\@1\@XZ
      */
     virtual enum class Spider::Type getSpiderType() const;
     /**
-     * @hash   -565204303
      * @symbol  ??0Spider\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

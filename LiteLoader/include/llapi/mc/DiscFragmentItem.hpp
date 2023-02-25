@@ -65,7 +65,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   156672119
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@DiscFragmentItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -106,13 +105,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -222627886
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@DiscFragmentItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   1185342406
      * @symbol  ??0DiscFragmentItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DiscFragmentItem(std::string const &, int);

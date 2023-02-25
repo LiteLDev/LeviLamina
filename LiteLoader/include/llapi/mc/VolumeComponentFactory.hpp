@@ -31,7 +31,6 @@ public:
      */
     MCAPI VolumeComponentFactory();
     /**
-     * @hash   664090348
      * @symbol  ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
      */
     MCAPI void registerVolumeComponentDefinitions(bool);

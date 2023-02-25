@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -1195482214
      * @vftbl  2
      * @symbol  ?tick\@TeleportSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

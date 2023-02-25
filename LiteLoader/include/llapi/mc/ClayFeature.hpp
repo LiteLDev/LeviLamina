@@ -36,13 +36,11 @@ public:
      */
     virtual ~ClayFeature();
     /**
-     * @hash   1669022575
      * @vftbl  3
      * @symbol  ?place\@ClayFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -1794880998
      * @symbol  ??0ClayFeature\@\@QEAA\@H\@Z
      */
     MCAPI ClayFeature(int);

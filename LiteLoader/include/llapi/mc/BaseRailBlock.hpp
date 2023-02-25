@@ -36,7 +36,6 @@ public:
      */
     virtual ~BaseRailBlock();
     /**
-     * @hash   -1943127878
      * @vftbl  10
      * @symbol  ?getAABB\@BaseRailBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -72,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   533828464
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@BaseRailBlock\@\@UEBA_NXZ
      */
@@ -158,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   265910654
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BaseRailBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1195548501
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1681932626
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -186,13 +181,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   967959814
      * @vftbl  92
      * @symbol  ?mayPlace\@BaseRailBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1856366196
      * @vftbl  99
      * @symbol  ?neighborChanged\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -223,19 +216,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   375538918
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@BaseRailBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @hash   -562957468
      * @vftbl  143
      * @symbol  ?getVisualShape\@BaseRailBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1149067815
      * @vftbl  147
      * @symbol  ?canSpawnOn\@BaseRailBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -261,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1564164666
      * @vftbl  168
      * @symbol  ?onPlace\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -272,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -538818544
      * @vftbl  171
      * @symbol  ?tick\@BaseRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -283,13 +271,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1677309873
      * @vftbl  178
      * @symbol  ?canSurvive\@BaseRailBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1125663437
      * @vftbl  180
      * @symbol  ?getRenderLayer\@BaseRailBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -301,60 +287,49 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILBLOCK
     /**
-     * @hash   228175919
      * @symbol  ?isRailBlock\@BaseRailBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isRailBlock() const;
     /**
-     * @hash   1274414661
      * @symbol  ?waterSpreadCausesSpawn\@BaseRailBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   1712306195
      * @symbol  ??0BaseRailBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI BaseRailBlock(std::string const &, int, bool);
     /**
-     * @hash   1081518330
      * @symbol  ?isCorner\@BaseRailBlock\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isCorner(class BlockSource const &, class BlockPos const &);
     /**
-     * @hash   492193420
      * @symbol  ?isFacingWestEast\@BaseRailBlock\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isFacingWestEast(class BlockSource const &, class BlockPos const &);
     /**
-     * @hash   -467221207
      * @symbol  ?isRail\@BaseRailBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isRail(class Block const &);
     /**
-     * @hash   1927881060
      * @symbol  ?isRail\@BaseRailBlock\@\@SA_NAEBVIConstBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isRail(class IConstBlockSource const &, class BlockPos const &);
     /**
-     * @hash   -167955285
      * @symbol  ?isSlope\@BaseRailBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isSlope(class Block const &);
     /**
-     * @hash   -507660917
      * @symbol  ?isSlope\@BaseRailBlock\@\@SA_NH\@Z
      */
     MCAPI static bool isSlope(int);
 
 //private:
     /**
-     * @hash   -1661042116
      * @symbol  ?_updatePlacement\@BaseRailBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _updatePlacement(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -896212141
      * @symbol  ?_createCircuitComponent\@BaseRailBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void _createCircuitComponent(class BlockSource &, class BlockPos const &);

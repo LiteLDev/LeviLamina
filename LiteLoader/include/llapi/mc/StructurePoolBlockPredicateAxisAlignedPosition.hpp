@@ -35,19 +35,16 @@ public:
      */
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
     /**
-     * @hash   865515446
      * @vftbl  1
      * @symbol  ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
-     * @hash   -1609893766
      * @vftbl  2
      * @symbol  ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
-     * @hash   82021309
      * @symbol  ??0StructurePoolBlockPredicateAxisAlignedPosition\@\@QEAA\@MMHHE\@Z
      */
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);

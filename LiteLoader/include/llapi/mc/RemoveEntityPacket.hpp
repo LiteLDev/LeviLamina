@@ -35,24 +35,20 @@ public:
      */
     virtual ~RemoveEntityPacket();
     /**
-     * @hash   989528431
      * @vftbl  1
      * @symbol  ?getId\@RemoveEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -1211960420
      * @vftbl  2
      * @symbol  ?getName\@RemoveEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   379334187
      * @symbol  ??0RemoveEntityPacket\@\@QEAA\@XZ
      */
     MCAPI RemoveEntityPacket();
     /**
-     * @hash   163498742
      * @symbol  ??0RemoveEntityPacket\@\@QEAA\@AEAVEntityContext\@\@\@Z
      */
     MCAPI RemoveEntityPacket(class EntityContext &);

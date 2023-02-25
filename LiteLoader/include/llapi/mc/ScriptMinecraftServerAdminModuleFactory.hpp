@@ -65,17 +65,14 @@ public:
      */
     virtual class std::optional<struct Scripting::ModuleBinding> createModuleBinding(struct Scripting::Version, class std::optional<struct Scripting::ContextConfig> const &, std::vector<struct Scripting::ModuleBinding> &&);
     /**
-     * @hash   -536007516
      * @symbol  ??0ScriptMinecraftServerAdminModuleFactory\@\@QEAA\@V?$NonOwnerPointer\@VScriptPackConfigurationManager\@\@\@Bedrock\@\@\@Z
      */
     MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
     /**
-     * @hash   58604270
      * @symbol  ?getModuleUUIDAsString\@ScriptMinecraftServerAdminModuleFactory\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI static std::string getModuleUUIDAsString();
     /**
-     * @hash   1586998189
      * @symbol  ?makeModuleDescriptorFor\@ScriptMinecraftServerAdminModuleFactory\@\@SA?AUModuleDescriptor\@Scripting\@\@UVersion\@3\@\@Z
      */
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
@@ -88,12 +85,10 @@ public:
 
 private:
     /**
-     * @hash   1123076190
      * @symbol  ?ModuleName\@ScriptMinecraftServerAdminModuleFactory\@\@0PEBDEB
      */
     MCAPI static char const * ModuleName;
     /**
-     * @hash   -1488322763
      * @symbol  ?ModuleUUID\@ScriptMinecraftServerAdminModuleFactory\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ModuleUUID;

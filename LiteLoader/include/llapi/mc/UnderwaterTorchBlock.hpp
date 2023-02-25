@@ -66,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -1595088982
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@UnderwaterTorchBlock\@\@UEBA_NXZ
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -235883080
      * @vftbl  62
      * @symbol  ?canContainLiquid\@UnderwaterTorchBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1390227955
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@UnderwaterTorchBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1746038944
      * @vftbl  92
      * @symbol  ?mayPlace\@UnderwaterTorchBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -340076219
      * @vftbl  151
      * @symbol  ?animateTick\@UnderwaterTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -246,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1951518062
      * @symbol  ??0UnderwaterTorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI UnderwaterTorchBlock(std::string const &, int);

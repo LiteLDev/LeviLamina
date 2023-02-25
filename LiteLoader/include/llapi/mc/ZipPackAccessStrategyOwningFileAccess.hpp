@@ -35,7 +35,6 @@ public:
      */
     virtual ~ZipPackAccessStrategyOwningFileAccess();
     /**
-     * @hash   -1873822533
      * @symbol  ??0ZipPackAccessStrategyOwningFileAccess\@\@QEAA\@V?$shared_ptr\@VIFileAccess\@\@\@std\@\@AEBVResourceLocation\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);

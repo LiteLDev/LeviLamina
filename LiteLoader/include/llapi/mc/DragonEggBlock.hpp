@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -508837040
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@DragonEggBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -172,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1987806848
      * @vftbl  109
      * @symbol  ?attack\@DragonEggBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   691688656
      * @vftbl  177
      * @symbol  ?use\@DragonEggBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -239,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   879676391
      * @vftbl  193
      * @symbol  ?getDustColor\@DragonEggBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   1034590210
      * @vftbl  194
      * @symbol  ?getDustParticleName\@DragonEggBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -256,14 +251,12 @@ public:
      */
     virtual void __unk_vfn_195();
     /**
-     * @hash   793439481
      * @symbol  ??0DragonEggBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DragonEggBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -237162767
      * @symbol  ?_teleport\@DragonEggBlock\@\@AEBAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _teleport(class BlockSource &, class Random &, class BlockPos const &) const;

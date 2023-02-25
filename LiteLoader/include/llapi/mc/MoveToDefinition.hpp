@@ -37,7 +37,6 @@ public:
      */
     virtual ~MoveToDefinition();
     /**
-     * @hash   747382469
      * @vftbl  1
      * @symbol  ?load\@MoveToDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

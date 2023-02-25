@@ -35,7 +35,6 @@ public:
 
 public:
     /**
-     * @hash   -1340609974
      * @symbol  ?createPacket\@MinecraftPackets\@\@SA?AV?$shared_ptr\@VPacket\@\@\@std\@\@W4MinecraftPacketIds\@\@\@Z
      */
     MCAPI static class std::shared_ptr<class Packet> createPacket(enum class MinecraftPacketIds);

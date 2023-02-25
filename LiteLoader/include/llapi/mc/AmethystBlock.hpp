@@ -36,7 +36,6 @@ public:
      */
     virtual ~AmethystBlock();
     /**
-     * @hash   -836532837
      * @vftbl  15
      * @symbol  ?onProjectileHit\@AmethystBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
@@ -222,20 +221,17 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -957291426
      * @vftbl  187
      * @symbol  ?getResourceItem\@AmethystBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMETHYSTBLOCK
     /**
-     * @hash   -1228864708
      * @symbol  ?isSilentWhenJumpingOff\@AmethystBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isSilentWhenJumpingOff() const;
 #endif
     /**
-     * @hash   -154900857
      * @symbol  ??0AmethystBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI AmethystBlock(std::string const &, int, class Material const &);

@@ -36,30 +36,25 @@ public:
      */
     virtual ~TextObjectLocalizedTextWithParams();
     /**
-     * @hash   1503755925
      * @vftbl  1
      * @symbol  ?asString\@TextObjectLocalizedTextWithParams\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string asString() const;
     /**
-     * @hash   480735637
      * @vftbl  2
      * @symbol  ?asJsonValue\@TextObjectLocalizedTextWithParams\@\@UEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @hash   -1248351510
      * @vftbl  3
      * @symbol  ?resolve\@TextObjectLocalizedTextWithParams\@\@UEBA?AVValue\@Json\@\@AEBUResolveData\@\@\@Z
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
-     * @hash   -552421087
      * @symbol  ??0TextObjectLocalizedTextWithParams\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTextObjectRoot\@\@U?$default_delete\@VTextObjectRoot\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::unique_ptr<class TextObjectRoot>);
     /**
-     * @hash   -2130356132
      * @symbol  ??0TextObjectLocalizedTextWithParams\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@2\@\@Z
      */
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);

@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1967386662
      * @vftbl  49
      * @symbol  ?normalTick\@GlowSquid\@\@UEAAXXZ
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1437864015
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@GlowSquid\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -144,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1660497653
      * @vftbl  263
      * @symbol  ?_hurt\@GlowSquid\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -175,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1446570256
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@GlowSquid\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -186,20 +182,17 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -124434407
      * @vftbl  356
      * @symbol  ?_getInkSquirtSoundEvent\@GlowSquid\@\@MEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
-     * @hash   -835389775
      * @symbol  ??0GlowSquid\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI GlowSquid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
-     * @hash   -12311404
      * @symbol  ?_startGoingDark\@GlowSquid\@\@AEAAXXZ
      */
     MCAPI void _startGoingDark();

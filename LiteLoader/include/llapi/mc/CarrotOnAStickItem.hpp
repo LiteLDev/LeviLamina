@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   298056444
      * @vftbl  49
      * @symbol  ?isHandEquipped\@CarrotOnAStickItem\@\@UEBA_NXZ
      */
@@ -73,19 +72,16 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1667041080
      * @vftbl  59
      * @symbol  ?requiresInteract\@CarrotOnAStickItem\@\@UEBA_NXZ
      */
     virtual bool requiresInteract() const;
     /**
-     * @hash   204920568
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@CarrotOnAStickItem\@\@UEBAHXZ
      */
     virtual int getEnchantSlot() const;
     /**
-     * @hash   1936571893
      * @vftbl  63
      * @symbol  ?getEnchantValue\@CarrotOnAStickItem\@\@UEBAHXZ
      */
@@ -126,19 +122,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   58172930
      * @vftbl  89
      * @symbol  ?hurtActor\@CarrotOnAStickItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @hash   1095743719
      * @vftbl  93
      * @symbol  ?mineBlock\@CarrotOnAStickItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @hash   -1660948654
      * @symbol  ??0CarrotOnAStickItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CarrotOnAStickItem(std::string const &, int);

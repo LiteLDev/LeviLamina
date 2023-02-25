@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1861730452
      * @symbol  ?createSetActorLinkPacketSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();

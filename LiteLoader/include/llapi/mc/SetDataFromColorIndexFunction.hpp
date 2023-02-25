@@ -36,13 +36,11 @@ public:
      */
     virtual ~SetDataFromColorIndexFunction();
     /**
-     * @hash   -1981021943
      * @vftbl  1
      * @symbol  ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @hash   336012078
      * @vftbl  3
      * @symbol  ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
@@ -50,7 +48,6 @@ public:
 
 //private:
     /**
-     * @hash   996734815
      * @symbol  ?_applyImpl\@SetDataFromColorIndexFunction\@\@AEAA_NPEBVItem\@\@PEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAH\@Z
      */
     MCAPI bool _applyImpl(class Item const *, class Actor const *, std::string const &, int &);

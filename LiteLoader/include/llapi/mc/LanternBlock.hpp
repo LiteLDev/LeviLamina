@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1979069035
      * @vftbl  69
      * @symbol  ?checkIsPathable\@LanternBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1322696424
      * @vftbl  76
      * @symbol  ?movedByPiston\@LanternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -168,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   158525401
      * @vftbl  92
      * @symbol  ?mayPlace\@LanternBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1105381191
      * @vftbl  99
      * @symbol  ?neighborChanged\@LanternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -725765621
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@LanternBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -392043562
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LanternBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -217,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1539752671
      * @vftbl  143
      * @symbol  ?getVisualShape\@LanternBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1784485587
      * @vftbl  171
      * @symbol  ?tick\@LanternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -496741063
      * @vftbl  178
      * @symbol  ?canSurvive\@LanternBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,39 +261,33 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -40014805
      * @vftbl  186
      * @symbol  ?playerDestroy\@LanternBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -211771867
      * @vftbl  187
      * @symbol  ?getResourceItem\@LanternBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -2077087858
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@LanternBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LANTERNBLOCK
     /**
-     * @hash   849929735
      * @symbol  ?canBeSilkTouched\@LanternBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1858069253
      * @symbol  ??0LanternBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LanternBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   537085952
      * @symbol  ?_couldHang\@LanternBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _couldHang(class BlockSource &, class BlockPos const &) const;

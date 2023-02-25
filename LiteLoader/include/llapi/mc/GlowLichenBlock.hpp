@@ -156,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   192203553
      * @vftbl  86
      * @symbol  ?onFertilized\@GlowLichenBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   1116614298
      * @vftbl  88
      * @symbol  ?canBeFertilized\@GlowLichenBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1636567166
      * @vftbl  152
      * @symbol  ?init\@GlowLichenBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -234,38 +231,32 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1731753575
      * @vftbl  186
      * @symbol  ?playerDestroy\@GlowLichenBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1261203173
      * @vftbl  188
      * @symbol  ?getResourceCount\@GlowLichenBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   432636640
      * @vftbl  193
      * @symbol  ?getMultifaceBlock\@GlowLichenBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getMultifaceBlock() const;
     /**
-     * @hash   1509091098
      * @vftbl  194
      * @symbol  ?getMultifaceSpreader\@GlowLichenBlock\@\@UEBAAEBVMultifaceSpreader\@\@XZ
      */
     virtual class MultifaceSpreader const & getMultifaceSpreader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWLICHENBLOCK
     /**
-     * @hash   1981438969
      * @symbol  ?canBeSilkTouched\@GlowLichenBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -60500068
      * @symbol  ??0GlowLichenBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);

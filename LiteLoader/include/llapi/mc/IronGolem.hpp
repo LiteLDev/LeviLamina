@@ -52,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   1220197442
      * @vftbl  81
      * @symbol  ?getShadowRadius\@IronGolem\@\@UEBAMXZ
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   1518594066
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@IronGolem\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -139,13 +137,11 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1015321737
      * @vftbl  246
      * @symbol  ?die\@IronGolem\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @hash   -1253657508
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@IronGolem\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -156,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   159440286
      * @vftbl  268
      * @symbol  ?_playStepSound\@IronGolem\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -177,13 +172,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1189060950
      * @vftbl  286
      * @symbol  ?hurtEffects\@IronGolem\@\@UEAAXAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1231840343
      * @vftbl  291
      * @symbol  ?aiStep\@IronGolem\@\@UEAAXXZ
      */
@@ -194,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   -1833382614
      * @vftbl  307
      * @symbol  ?doHurtTarget\@IronGolem\@\@UEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
      */
@@ -210,7 +202,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   246199088
      * @symbol  ??0IronGolem\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI IronGolem(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

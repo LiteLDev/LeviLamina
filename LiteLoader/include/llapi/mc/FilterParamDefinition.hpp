@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1298715822
      * @symbol  ??0FilterParamDefinition\@\@QEAA\@W4FilterParamType\@\@W4FilterParamRequirement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4FilterParamOption\@\@VFilterInput\@\@UFilterStringMap\@\@\@Z
      */
     MCAPI FilterParamDefinition(enum class FilterParamType, enum class FilterParamRequirement, std::string, enum class FilterParamOption, class FilterInput, struct FilterStringMap);
     /**
-     * @hash   1472002029
      * @symbol  ??0FilterParamDefinition\@\@QEAA\@W4FilterParamType\@\@W4FilterParamRequirement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VFilterInput\@\@UFilterStringMap\@\@\@Z
      */
     MCAPI FilterParamDefinition(enum class FilterParamType, enum class FilterParamRequirement, std::string, class FilterInput, struct FilterStringMap);

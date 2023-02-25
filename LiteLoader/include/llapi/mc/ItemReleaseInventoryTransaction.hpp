@@ -35,31 +35,26 @@ public:
      */
     virtual ~ItemReleaseInventoryTransaction();
     /**
-     * @hash   -56695270
      * @vftbl  1
      * @symbol  ?read\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1199146110
      * @vftbl  2
      * @symbol  ?write\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -886740703
      * @vftbl  3
      * @symbol  ?postLoadItems\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
-     * @hash   2049326043
      * @vftbl  4
      * @symbol  ?handle\@ItemReleaseInventoryTransaction\@\@UEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
      */
     virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
-     * @hash   1725843450
      * @vftbl  5
      * @symbol  ?onTransactionError\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVPlayer\@\@W4InventoryTransactionError\@\@\@Z
      */

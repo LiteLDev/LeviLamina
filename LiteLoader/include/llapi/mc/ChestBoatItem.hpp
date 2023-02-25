@@ -100,19 +100,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -600768410
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@ChestBoatItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   1848113437
      * @vftbl  133
      * @symbol  ?_getActorType\@ChestBoatItem\@\@EEBA?AW4ActorType\@\@XZ
      */
     virtual enum class ActorType _getActorType() const;
     /**
-     * @hash   -414020399
      * @symbol  ??0ChestBoatItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HH\@Z
      */
     MCAPI ChestBoatItem(std::string const &, int, int);

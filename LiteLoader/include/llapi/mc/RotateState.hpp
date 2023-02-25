@@ -36,19 +36,16 @@ public:
      */
     virtual ~RotateState();
     /**
-     * @hash   1271745198
      * @vftbl  1
      * @symbol  ?tick\@RotateState\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -408737741
      * @vftbl  2
      * @symbol  ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   989215827
      * @vftbl  3
      * @symbol  ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */

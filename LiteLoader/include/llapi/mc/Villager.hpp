@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -2003370633
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Villager\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -113,7 +112,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -1440193622
      * @vftbl  200
      * @symbol  ?buildDebugInfo\@Villager\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -174,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -830054350
      * @symbol  ??0Villager\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Villager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

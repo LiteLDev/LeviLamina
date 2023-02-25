@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2015025264
      * @vftbl  103
      * @symbol  ?asItemInstance\@HugeMushroomBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1888361839
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@HugeMushroomBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -387280854
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@HugeMushroomBlock\@\@UEBA_NXZ
      */
@@ -239,32 +236,27 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1351061128
      * @vftbl  187
      * @symbol  ?getResourceItem\@HugeMushroomBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   251821152
      * @vftbl  188
      * @symbol  ?getResourceCount\@HugeMushroomBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   262672961
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@HugeMushroomBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1111187016
      * @symbol  ??0HugeMushroomBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@W4Type\@0\@\@Z
      */
     MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum class HugeMushroomBlock::Type);
 
 //private:
     /**
-     * @hash   1777182821
      * @symbol  ?_getBlockItemWithState\@HugeMushroomBlock\@\@AEBA?AVItemInstance\@\@AEBVBlock\@\@W4MushroomOuterType\@\@\@Z
      */
     MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum class MushroomOuterType) const;

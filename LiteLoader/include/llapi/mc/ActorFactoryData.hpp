@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   -2099543946
      * @symbol  ??4ActorFactoryData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ActorFactoryData & operator=(struct ActorFactoryData const &);
     /**
-     * @hash   1730962777
      * @symbol  ??1ActorFactoryData\@\@QEAA\@XZ
      */
     MCAPI ~ActorFactoryData();

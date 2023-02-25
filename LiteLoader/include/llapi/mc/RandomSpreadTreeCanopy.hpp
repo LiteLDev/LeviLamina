@@ -35,13 +35,11 @@ public:
      */
     virtual ~RandomSpreadTreeCanopy();
     /**
-     * @hash   -1595842326
      * @vftbl  1
      * @symbol  ?placeCanopy\@RandomSpreadTreeCanopy\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@AEBV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@3\@\@Z
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
     /**
-     * @hash   -962118552
      * @symbol  ??0RandomSpreadTreeCanopy\@\@QEAA\@XZ
      */
     MCAPI RandomSpreadTreeCanopy();

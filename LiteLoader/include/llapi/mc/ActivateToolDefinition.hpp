@@ -37,7 +37,6 @@ public:
      */
     virtual ~ActivateToolDefinition();
     /**
-     * @hash   -562508250
      * @vftbl  1
      * @symbol  ?load\@ActivateToolDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

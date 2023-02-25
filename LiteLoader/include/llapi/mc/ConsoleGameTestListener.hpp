@@ -35,19 +35,16 @@ public:
      */
     virtual ~ConsoleGameTestListener();
     /**
-     * @hash   2047910271
      * @vftbl  1
      * @symbol  ?onTestStructureLoaded\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
-     * @hash   -1100721787
      * @vftbl  2
      * @symbol  ?onTestPassed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
-     * @hash   -1698285992
      * @vftbl  3
      * @symbol  ?onTestFailed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */

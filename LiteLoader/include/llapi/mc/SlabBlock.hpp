@@ -36,13 +36,11 @@ public:
      */
     virtual ~SlabBlock();
     /**
-     * @hash   -220795859
      * @vftbl  6
      * @symbol  ?isObstructingChests\@SlabBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1640542438
      * @vftbl  17
      * @symbol  ?liquidCanFlowIntoFromDirection\@SlabBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -113,7 +111,6 @@ public:
      */
     virtual void __unk_vfn_42();
     /**
-     * @hash   -1460316179
      * @vftbl  43
      * @symbol  ?isDoubleSlabBlock\@SlabBlock\@\@UEBA_NXZ
      */
@@ -164,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1852312983
      * @vftbl  69
      * @symbol  ?checkIsPathable\@SlabBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1849248954
      * @vftbl  80
      * @symbol  ?getRedstoneProperty\@SlabBlock\@\@UEBA?AW4BlockProperty\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -186,13 +181,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1855343576
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@SlabBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -1774500585
      * @vftbl  103
      * @symbol  ?asItemInstance\@SlabBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -203,13 +196,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1046699982
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@SlabBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   -339998536
      * @vftbl  121
      * @symbol  ?getMobToSpawn\@SlabBlock\@\@UEBAPEBVMobSpawnerData\@\@AEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
      */
@@ -235,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -2006538515
      * @vftbl  143
      * @symbol  ?getVisualShape\@SlabBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -276,38 +266,32 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1013368207
      * @vftbl  187
      * @symbol  ?getResourceItem\@SlabBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1374409015
      * @vftbl  188
      * @symbol  ?getResourceCount\@SlabBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCK
     /**
-     * @hash   1720990132
      * @symbol  ?canBeSilkTouched\@SlabBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1568997918
      * @symbol  ?isSlabBlock\@SlabBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isSlabBlock() const;
 #endif
     /**
-     * @hash   1372628515
      * @symbol  ??0SlabBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NAEBVMaterial\@\@V?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
 
 //protected:
     /**
-     * @hash   2092824274
      * @symbol  ?getBaseSlab\@SlabBlock\@\@IEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const & getBaseSlab() const;
@@ -318,7 +302,6 @@ protected:
 
 private:
     /**
-     * @hash   1671634097
      * @symbol  ?TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION\@SlabBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;

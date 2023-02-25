@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1845689140
      * @vftbl  49
      * @symbol  ?normalTick\@MinecartTNT\@\@UEAAXXZ
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -973363345
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@MinecartTNT\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -114,7 +112,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -1031598240
      * @vftbl  183
      * @symbol  ?causeFallDamage\@MinecartTNT\@\@MEAAXMMVActorDamageSource\@\@\@Z
      */
@@ -150,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   514928825
      * @vftbl  263
      * @symbol  ?_hurt\@MinecartTNT\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -166,19 +162,16 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   478625180
      * @vftbl  278
      * @symbol  ?destroy\@MinecartTNT\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @hash   -534001987
      * @vftbl  279
      * @symbol  ?getType\@MinecartTNT\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType();
     /**
-     * @hash   -1415144605
      * @vftbl  280
      * @symbol  ?getDefaultDisplayBlock\@MinecartTNT\@\@UEBAPEBVBlock\@\@XZ
      */
@@ -189,12 +182,10 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   -1541898349
      * @symbol  ??0MinecartTNT\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -938874212
      * @symbol  ?primeFuse\@MinecartTNT\@\@QEAAXW4ActorDamageCause\@\@\@Z
      */
     MCAPI void primeFuse(enum class ActorDamageCause);
@@ -203,7 +194,6 @@ public:
 
 private:
     /**
-     * @hash   -819215641
      * @symbol  ?DEFAULT_FUSE_LENGTH\@MinecartTNT\@\@0HB
      */
     MCAPI static int const DEFAULT_FUSE_LENGTH;

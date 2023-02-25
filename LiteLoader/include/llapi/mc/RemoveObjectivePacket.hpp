@@ -35,36 +35,30 @@ public:
      */
     virtual ~RemoveObjectivePacket();
     /**
-     * @hash   -1618308063
      * @vftbl  1
      * @symbol  ?getId\@RemoveObjectivePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1350594254
      * @vftbl  2
      * @symbol  ?getName\@RemoveObjectivePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   793487401
      * @vftbl  3
      * @symbol  ?write\@RemoveObjectivePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1119186023
      * @vftbl  6
      * @symbol  ?_read\@RemoveObjectivePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -729961031
      * @symbol  ??0RemoveObjectivePacket\@\@QEAA\@XZ
      */
     MCAPI RemoveObjectivePacket();
     /**
-     * @hash   1909159514
      * @symbol  ??0RemoveObjectivePacket\@\@QEAA\@AEBVObjective\@\@\@Z
      */
     MCAPI RemoveObjectivePacket(class Objective const &);

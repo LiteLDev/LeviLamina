@@ -34,19 +34,16 @@ public:
      */
     virtual ~BreakBlockNode();
     /**
-     * @hash   -2035642819
      * @vftbl  1
      * @symbol  ?tick\@BreakBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1033383793
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@BreakBlockNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   623118428
      * @symbol  ??0BreakBlockNode\@\@QEAA\@XZ
      */
     MCAPI BreakBlockNode();

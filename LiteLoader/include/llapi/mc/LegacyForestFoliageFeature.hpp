@@ -36,13 +36,11 @@ public:
      */
     virtual ~LegacyForestFoliageFeature();
     /**
-     * @hash   554391229
      * @vftbl  3
      * @symbol  ?place\@LegacyForestFoliageFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -1335453792
      * @symbol  ??0LegacyForestFoliageFeature\@\@QEAA\@W4Type\@0\@AEAVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacyForestFoliageFeature(enum class LegacyForestFoliageFeature::Type, class FeatureRegistry &);

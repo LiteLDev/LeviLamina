@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorRandomChanceTest();
     /**
-     * @hash   1178935104
      * @vftbl  2
      * @symbol  ?evaluate\@ActorRandomChanceTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -77117534
      * @vftbl  4
      * @symbol  ?getName\@ActorRandomChanceTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

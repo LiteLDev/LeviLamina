@@ -211,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -414769586
      * @vftbl  177
      * @symbol  ?use\@CartographyTableBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -223,18 +222,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYTABLEBLOCK
     /**
-     * @hash   -1553442160
      * @symbol  ?isCraftingBlock\@CartographyTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   485238788
      * @symbol  ?isInteractiveBlock\@CartographyTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -56137033
      * @symbol  ??0CartographyTableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CartographyTableBlock(std::string const &, int);

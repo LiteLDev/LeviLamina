@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1352679264
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ThrownEgg\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   526563369
      * @symbol  ??0ThrownEgg\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ThrownEgg(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

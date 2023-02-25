@@ -36,7 +36,6 @@ public:
      */
     virtual ~BorderBlock();
     /**
-     * @hash   -867608345
      * @vftbl  5
      * @symbol  ?getCollisionShape\@BorderBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1594645863
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@BorderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -193,31 +191,26 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2086901640
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@BorderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -977837789
      * @vftbl  142
      * @symbol  ?getVisualShapeInWorld\@BorderBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @hash   1906231275
      * @vftbl  143
      * @symbol  ?getVisualShape\@BorderBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -988780271
      * @vftbl  146
      * @symbol  ?getVariant\@BorderBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -418234154
      * @vftbl  151
      * @symbol  ?animateTick\@BorderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -228,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -81846722
      * @vftbl  162
      * @symbol  ?onRemove\@BorderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -249,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   213140355
      * @vftbl  168
      * @symbol  ?onPlace\@BorderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,13 +261,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1861296577
      * @vftbl  187
      * @symbol  ?getResourceItem\@BorderBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1298159185
      * @symbol  ??0BorderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BorderBlock(std::string const &, int);

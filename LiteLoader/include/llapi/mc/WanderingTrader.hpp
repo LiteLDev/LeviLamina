@@ -97,7 +97,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -536571278
      * @vftbl  168
      * @symbol  ?getEntityTypeId\@WanderingTrader\@\@UEBA?AW4ActorType\@\@XZ
      */
@@ -133,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   1001488395
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@WanderingTrader\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -175,13 +173,11 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADER
     /**
-     * @hash   22157957
      * @symbol  ?interactPreventDefault\@WanderingTrader\@\@UEAA_NXZ
      */
     MCVAPI bool interactPreventDefault();
 #endif
     /**
-     * @hash   560545039
      * @symbol  ??0WanderingTrader\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI WanderingTrader(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorPassengerCountTest();
     /**
-     * @hash   1933654862
      * @vftbl  2
      * @symbol  ?evaluate\@ActorPassengerCountTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   394758996
      * @vftbl  4
      * @symbol  ?getName\@ActorPassengerCountTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

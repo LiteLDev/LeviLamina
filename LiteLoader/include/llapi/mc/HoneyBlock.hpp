@@ -36,7 +36,6 @@ public:
      */
     virtual ~HoneyBlock();
     /**
-     * @hash   -241813736
      * @vftbl  5
      * @symbol  ?getCollisionShape\@HoneyBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -629915828
      * @vftbl  113
      * @symbol  ?entityInside\@HoneyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1125301396
      * @vftbl  143
      * @symbol  ?getVisualShape\@HoneyBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -204,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -1955694956
      * @vftbl  164
      * @symbol  ?onStandOn\@HoneyBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
@@ -225,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -2074880370
      * @vftbl  169
      * @symbol  ?onFallOn\@HoneyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -455399669
      * @vftbl  181
      * @symbol  ?getExtraRenderLayers\@HoneyBlock\@\@UEBAHXZ
      */
@@ -252,12 +246,10 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2101530889
      * @symbol  ??0HoneyBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -1439313480
      * @symbol  ?triggerSlidingDownEffects\@HoneyBlock\@\@SAXAEAVActor\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI static void triggerSlidingDownEffects(class Actor &, class BlockPos const &, class Block const &);

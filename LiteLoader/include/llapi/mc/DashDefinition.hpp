@@ -37,7 +37,6 @@ public:
      */
     MCAPI void uninitialize(class EntityContext &, class DashComponent &) const;
     /**
-     * @hash   1869033590
      * @symbol  ?buildSchema\@DashDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDashDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>> &);

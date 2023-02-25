@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1764970756
      * @symbol  ??0WebSocketPacketData\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI WebSocketPacketData(std::string const &);

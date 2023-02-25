@@ -36,13 +36,11 @@ public:
      */
     virtual ~IsSpawnableDescription();
     /**
-     * @hash   -238345981
      * @vftbl  1
      * @symbol  ?getJsonName\@IsSpawnableDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @hash   -1381726636
      * @symbol  ?parse\@IsSpawnableDescription\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void parse(class Json::Value const &);

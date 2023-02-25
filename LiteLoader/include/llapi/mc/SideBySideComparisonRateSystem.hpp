@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1583288200
      * @symbol  ?createSystem\@SideBySideComparisonRateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

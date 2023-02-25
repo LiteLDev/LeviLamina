@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1738761220
      * @vftbl  0
      * @symbol  ?getJsonName\@BreakDoorAnnotationDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~BreakDoorAnnotationDescription();
     /**
-     * @hash   325169951
      * @vftbl  2
      * @symbol  ?deserializeData\@BreakDoorAnnotationDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   822164105
      * @vftbl  3
      * @symbol  ?serializeData\@BreakDoorAnnotationDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

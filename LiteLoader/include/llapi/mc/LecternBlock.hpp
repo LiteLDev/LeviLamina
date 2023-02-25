@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -2112025675
      * @vftbl  22
      * @symbol  ?canProvideSupport\@LecternBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -137,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -589400257
      * @vftbl  51
      * @symbol  ?isSignalSource\@LecternBlock\@\@UEBA_NXZ
      */
@@ -158,19 +156,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1682134386
      * @vftbl  62
      * @symbol  ?canContainLiquid\@LecternBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   309857263
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@LecternBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   1302696490
      * @vftbl  69
      * @symbol  ?checkIsPathable\@LecternBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -181,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -120139134
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@LecternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -192,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1682081946
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@LecternBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -203,13 +196,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   111001781
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LecternBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   1397880053
      * @vftbl  109
      * @symbol  ?attack\@LecternBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
@@ -230,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   471580496
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@LecternBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -246,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1671866362
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@LecternBlock\@\@UEAAXXZ
      */
@@ -267,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1104863202
      * @vftbl  168
      * @symbol  ?onPlace\@LecternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -278,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -221537892
      * @vftbl  171
      * @symbol  ?tick\@LecternBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -289,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   800622699
      * @vftbl  177
      * @symbol  ?use\@LecternBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -301,30 +287,25 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCK
     /**
-     * @hash   -72216886
      * @symbol  ?hasComparatorSignal\@LecternBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   -118513881
      * @symbol  ?isInteractiveBlock\@LecternBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1467011796
      * @symbol  ??0LecternBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LecternBlock(std::string const &, int);
     /**
-     * @hash   -1116455651
      * @symbol  ?emitRedstonePulse\@LecternBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
-     * @hash   -193925811
      * @symbol  ?_dropBook\@LecternBlock\@\@AEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;

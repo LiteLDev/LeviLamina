@@ -32,17 +32,14 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
     /**
-     * @hash   -363961370
      * @symbol  ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createMovementSlowdownSystem();
     /**
-     * @hash   1959027764
      * @symbol  ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSideClearFireSystem();
     /**
-     * @hash   1404099526
      * @symbol  ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSideFreezingSystem();

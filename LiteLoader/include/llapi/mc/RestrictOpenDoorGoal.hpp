@@ -35,13 +35,11 @@ public:
      */
     virtual ~RestrictOpenDoorGoal();
     /**
-     * @hash   431902825
      * @vftbl  1
      * @symbol  ?canUse\@RestrictOpenDoorGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -469044169
      * @vftbl  2
      * @symbol  ?canContinueToUse\@RestrictOpenDoorGoal\@\@UEAA_NXZ
      */
@@ -52,13 +50,11 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1135998930
      * @vftbl  4
      * @symbol  ?start\@RestrictOpenDoorGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -335088782
      * @vftbl  5
      * @symbol  ?stop\@RestrictOpenDoorGoal\@\@UEAAXXZ
      */
@@ -69,13 +65,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1227346697
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@RestrictOpenDoorGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   320602406
      * @symbol  ??0RestrictOpenDoorGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI RestrictOpenDoorGoal(class Mob &);

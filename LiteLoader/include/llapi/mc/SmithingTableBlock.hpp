@@ -211,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1580910259
      * @vftbl  177
      * @symbol  ?use\@SmithingTableBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -223,18 +222,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
     /**
-     * @hash   152159691
      * @symbol  ?isCraftingBlock\@SmithingTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   -177518913
      * @symbol  ?isInteractiveBlock\@SmithingTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -1106026075
      * @symbol  ??0SmithingTableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);

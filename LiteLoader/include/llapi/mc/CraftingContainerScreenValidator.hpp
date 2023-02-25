@@ -35,7 +35,6 @@ public:
      */
     virtual ~CraftingContainerScreenValidator();
     /**
-     * @hash   1902477651
      * @symbol  ??0CraftingContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI CraftingContainerScreenValidator();

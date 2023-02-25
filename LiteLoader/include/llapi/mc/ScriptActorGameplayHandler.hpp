@@ -37,7 +37,6 @@ public:
      */
     virtual ~ScriptActorGameplayHandler();
     /**
-     * @hash   1716317936
      * @vftbl  1
      * @symbol  ?handleEvent\@ScriptActorGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUActorDefinitionStartedEvent\@\@\@Z
      */
@@ -60,7 +59,6 @@ public:
 
 //private:
     /**
-     * @hash   744148752
      * @symbol  ?_handleActorDefinitionStartedEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEAUActorDefinitionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;

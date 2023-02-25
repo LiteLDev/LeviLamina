@@ -28,27 +28,22 @@ public:
 
 public:
     /**
-     * @hash   681638394
      * @symbol  ??0SerializedAbilitiesData\@\@QEAA\@XZ
      */
     MCAPI SerializedAbilitiesData();
     /**
-     * @hash   2048367378
      * @symbol  ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const &);
     /**
-     * @hash   1573292580
      * @symbol  ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
      */
     MCAPI void fillIn(class LayeredAbilities &) const;
     /**
-     * @hash   -950278476
      * @symbol  ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
      */
     MCAPI struct ActorUniqueID getTargetPlayer() const;
     /**
-     * @hash   1926595930
      * @symbol  ??1SerializedAbilitiesData\@\@QEAA\@XZ
      */
     MCAPI ~SerializedAbilitiesData();

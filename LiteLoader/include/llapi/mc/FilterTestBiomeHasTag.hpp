@@ -37,19 +37,16 @@ public:
      */
     virtual ~FilterTestBiomeHasTag();
     /**
-     * @hash   -271499864
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestBiomeHasTag\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1391685052
      * @vftbl  3
      * @symbol  ?finalizeParsedValue\@FilterTestBiomeHasTag\@\@UEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /**
-     * @hash   296795754
      * @vftbl  4
      * @symbol  ?getName\@FilterTestBiomeHasTag\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */
@@ -57,7 +54,6 @@ public:
 
 //private:
     /**
-     * @hash   1029210720
      * @symbol  ?_evalBiome\@FilterTestBiomeHasTag\@\@AEBA_NAEBVBiome\@\@AEBUFilterContext\@\@\@Z
      */
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1477509601
      * @symbol  ??1PlayerFormCloseEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerFormCloseEvent();

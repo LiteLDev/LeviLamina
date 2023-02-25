@@ -31,12 +31,10 @@ public:
 
 public:
     /**
-     * @hash   1934465193
      * @symbol  ?parseJson\@EntityTypes\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */
     MCAPI bool parseJson(class Json::Value const &);
     /**
-     * @hash   1927291906
      * @symbol  ??1EntityTypes\@\@QEAA\@XZ
      */
     MCAPI ~EntityTypes();

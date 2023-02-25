@@ -186,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -598377342
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@WorkbenchBlock\@\@UEAAXXZ
      */
@@ -217,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1091891331
      * @vftbl  177
      * @symbol  ?use\@WorkbenchBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -229,13 +227,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKBENCHBLOCK
     /**
-     * @hash   1821425531
      * @symbol  ?isCraftingBlock\@WorkbenchBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
 #endif
     /**
-     * @hash   -1327867876
      * @symbol  ??0WorkbenchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WorkbenchBlock(std::string const &, int);

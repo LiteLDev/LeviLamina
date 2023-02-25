@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1395211273
      * @vftbl  0
      * @symbol  ?getJsonName\@DwellerDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~DwellerDescription();
     /**
-     * @hash   2080323996
      * @vftbl  2
      * @symbol  ?deserializeData\@DwellerDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   242812758
      * @vftbl  3
      * @symbol  ?serializeData\@DwellerDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

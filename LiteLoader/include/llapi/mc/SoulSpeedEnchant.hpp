@@ -36,19 +36,16 @@ public:
      */
     virtual ~SoulSpeedEnchant();
     /**
-     * @hash   -1728854530
      * @vftbl  2
      * @symbol  ?getMinCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   -515901236
      * @vftbl  3
      * @symbol  ?getMaxCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
     virtual int getMaxCost(int) const;
     /**
-     * @hash   -1955530260
      * @vftbl  5
      * @symbol  ?getMaxLevel\@SoulSpeedEnchant\@\@UEBAHXZ
      */
@@ -75,43 +72,35 @@ public:
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSPEEDENCHANT
     /**
-     * @hash   -33847712
      * @symbol  ?isDiscoverable\@SoulSpeedEnchant\@\@UEBA_NXZ
      */
     MCVAPI bool isDiscoverable() const;
     /**
-     * @hash   -1540714680
      * @symbol  ?isTreasureOnly\@SoulSpeedEnchant\@\@UEBA_NXZ
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @hash   1843828148
      * @symbol  ??0SoulSpeedEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2HH\@Z
      */
     MCAPI SoulSpeedEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     /**
-     * @hash   -1930690375
      * @symbol  ?SOUL_SPEED_BOOST_UUID\@SoulSpeedEnchant\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     /**
-     * @hash   -1384909753
      * @symbol  ?getLevel\@SoulSpeedEnchant\@\@SAHAEBVActor\@\@\@Z
      */
     MCAPI static int getLevel(class Actor const &);
     /**
-     * @hash   -1546119973
      * @symbol  ?getSpeedBoost\@SoulSpeedEnchant\@\@SAMH\@Z
      */
     MCAPI static float getSpeedBoost(int);
     /**
-     * @hash   1467556769
      * @symbol  ?isActive\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
      */
     MCAPI static bool isActive(class Actor const &);
     /**
-     * @hash   475283159
      * @symbol  ?shouldSpawnParticles\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
      */
     MCAPI static bool shouldSpawnParticles(class Actor const &);

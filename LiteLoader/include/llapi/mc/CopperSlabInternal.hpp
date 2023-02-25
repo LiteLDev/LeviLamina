@@ -22,7 +22,6 @@ namespace CopperSlabInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1469972346
      * @symbol  ?BlockLegacy_nullptr\@CopperSlabInternal\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;

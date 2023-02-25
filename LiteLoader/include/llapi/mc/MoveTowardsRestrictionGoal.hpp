@@ -40,7 +40,6 @@ public:
      */
     virtual bool canUse() = 0;
     /**
-     * @hash   1053462874
      * @vftbl  2
      * @symbol  ?canContinueToUse\@MoveTowardsRestrictionGoal\@\@UEAA_NXZ
      */
@@ -51,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   613291285
      * @vftbl  4
      * @symbol  ?start\@MoveTowardsRestrictionGoal\@\@UEAAXXZ
      */
@@ -72,19 +70,16 @@ public:
      */
     virtual void appendDebugInfo(std::string &) const = 0;
     /**
-     * @hash   -1090055191
      * @symbol  ??0MoveTowardsRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 //protected:
     /**
-     * @hash   1318591942
      * @symbol  ?_getMob\@MoveTowardsRestrictionGoal\@\@IEBAAEBVMob\@\@XZ
      */
     MCAPI class Mob const & _getMob() const;
     /**
-     * @hash   -2042544665
      * @symbol  ?_randomizeWantedPositionTowardsRestriction\@MoveTowardsRestrictionGoal\@\@IEAA_NAEBVVec3\@\@\@Z
      */
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);

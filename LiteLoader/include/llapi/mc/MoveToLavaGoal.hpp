@@ -51,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -1617595967
      * @symbol  ??0MoveToLavaGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);

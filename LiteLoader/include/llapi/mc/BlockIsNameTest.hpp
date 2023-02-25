@@ -37,13 +37,11 @@ public:
      */
     virtual ~BlockIsNameTest();
     /**
-     * @hash   -398692730
      * @vftbl  2
      * @symbol  ?evaluate\@BlockIsNameTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1478433628
      * @vftbl  4
      * @symbol  ?getName\@BlockIsNameTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

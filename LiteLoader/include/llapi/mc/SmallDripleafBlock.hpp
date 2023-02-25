@@ -36,7 +36,6 @@ public:
      */
     virtual ~SmallDripleafBlock();
     /**
-     * @hash   -1388743677
      * @vftbl  10
      * @symbol  ?getAABB\@SmallDripleafBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -72,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   1597951495
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@SmallDripleafBlock\@\@UEBA_NXZ
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -336046827
      * @vftbl  62
      * @symbol  ?canContainLiquid\@SmallDripleafBlock\@\@UEBA_NXZ
      */
@@ -174,31 +171,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   530650099
      * @vftbl  86
      * @symbol  ?onFertilized\@SmallDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1431122184
      * @vftbl  88
      * @symbol  ?canBeFertilized\@SmallDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1387564381
      * @vftbl  92
      * @symbol  ?mayPlace\@SmallDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1140157380
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@SmallDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   505749973
      * @vftbl  99
      * @symbol  ?neighborChanged\@SmallDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -209,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   189709650
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@SmallDripleafBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -235,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2105281904
      * @vftbl  152
      * @symbol  ?init\@SmallDripleafBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -261,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1639479825
      * @vftbl  168
      * @symbol  ?onPlace\@SmallDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -272,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1066218361
      * @vftbl  171
      * @symbol  ?tick\@SmallDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -283,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1423728685
      * @vftbl  178
      * @symbol  ?canSurvive\@SmallDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -294,48 +281,40 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2070808425
      * @vftbl  186
      * @symbol  ?playerDestroy\@SmallDripleafBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -929626655
      * @vftbl  187
      * @symbol  ?getResourceItem\@SmallDripleafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLDRIPLEAFBLOCK
     /**
-     * @hash   1007082043
      * @symbol  ?canBeSilkTouched\@SmallDripleafBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -333320596
      * @symbol  ?waterSpreadCausesSpawn\@SmallDripleafBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -2085711967
      * @symbol  ??0SmallDripleafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SmallDripleafBlock(std::string const &, int);
     /**
-     * @hash   -1446019094
      * @symbol  ?tryPlaceSmallDripleaf\@SmallDripleafBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
 
 //private:
     /**
-     * @hash   1990505331
      * @symbol  ?_isViablePlacePos\@SmallDripleafBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   703933446
      * @symbol  ?placeUpperBlock\@SmallDripleafBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);

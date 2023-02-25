@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   12112267
      * @vftbl  0
      * @symbol  ?containerContentChanged\@HudContainerModel\@\@UEAAXH\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -335634298
      * @vftbl  7
      * @symbol  ?getContainerWeakRef\@HudContainerModel\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
@@ -58,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_12();
     /**
-     * @hash   -142110628
      * @vftbl  14
      * @symbol  ?isValid\@HudContainerModel\@\@UEAA_NXZ
      */
@@ -79,20 +76,17 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -363385136
      * @vftbl  20
      * @symbol  ?_getContainer\@HudContainerModel\@\@EEBAPEAVContainer\@\@XZ
      */
     virtual class Container * _getContainer() const;
     /**
-     * @hash   -535941999
      * @symbol  ??0HudContainerModel\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI HudContainerModel(enum class ContainerEnumName, class Player &);
 
 //private:
     /**
-     * @hash   1723305986
      * @symbol  ?_refreshContainer\@HudContainerModel\@\@AEAAXXZ
      */
     MCAPI void _refreshContainer();

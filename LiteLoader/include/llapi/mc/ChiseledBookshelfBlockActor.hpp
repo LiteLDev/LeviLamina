@@ -29,12 +29,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHISELEDBOOKSHELFBLOCKACTOR
     /**
-     * @hash   305873005
      * @symbol  ?_getUpdatePacket\@ChiseledBookshelfBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   -154398235
      * @symbol  ?_onUpdatePacket\@ChiseledBookshelfBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
@@ -79,17 +77,14 @@ public:
      */
     MCVAPI bool isEmpty() const;
     /**
-     * @hash   -409726533
      * @symbol  ?load\@ChiseledBookshelfBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1571431612
      * @symbol  ?onChanged\@ChiseledBookshelfBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
-     * @hash   1703137594
      * @symbol  ?save\@ChiseledBookshelfBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     MCVAPI bool save(class CompoundTag &) const;
@@ -111,7 +106,6 @@ public:
     MCVAPI void stopOpen(class Player &);
 #endif
     /**
-     * @hash   -1765187913
      * @symbol  ??0ChiseledBookshelfBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI ChiseledBookshelfBlockActor(class BlockPos const &);
@@ -124,7 +118,6 @@ public:
      */
     MCAPI class ItemStack retrieveBook(int);
     /**
-     * @hash   -1084322545
      * @symbol  ?allowedItem\@ChiseledBookshelfBlockActor\@\@SA_NAEBVItemStack\@\@\@Z
      */
     MCAPI static bool allowedItem(class ItemStack const &);

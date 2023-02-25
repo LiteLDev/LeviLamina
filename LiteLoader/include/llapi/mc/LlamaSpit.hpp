@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   613884782
      * @vftbl  49
      * @symbol  ?normalTick\@LlamaSpit\@\@UEAAXXZ
      */
@@ -58,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1354692125
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@LlamaSpit\@\@UEAAMXZ
      */
@@ -84,7 +82,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -2093644079
      * @vftbl  96
      * @symbol  ?isPickable\@LlamaSpit\@\@UEAA_NXZ
      */
@@ -120,13 +117,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   584574075
      * @vftbl  143
      * @symbol  ?getPickRadius\@LlamaSpit\@\@UEAAMXZ
      */
     virtual float getPickRadius();
     /**
-     * @hash   1210020249
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@LlamaSpit\@\@UEBA?AUActorUniqueID\@\@XZ
      */
@@ -172,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -2054477959
      * @symbol  ??0LlamaSpit\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

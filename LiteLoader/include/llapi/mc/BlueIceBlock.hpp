@@ -216,13 +216,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   693369666
      * @vftbl  188
      * @symbol  ?getResourceCount\@BlueIceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -885366086
      * @symbol  ??0BlueIceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BlueIceBlock(std::string const &, int);

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -888516492
      * @symbol  ?createPlayerRotationSystem\@PlayerRotationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPlayerRotationSystem();

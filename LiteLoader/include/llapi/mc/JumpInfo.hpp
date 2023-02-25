@@ -30,27 +30,22 @@ public:
 
 public:
     /**
-     * @hash   623850368
      * @symbol  ??0JumpInfo\@\@QEAA\@MMHH\@Z
      */
     MCAPI JumpInfo(float, float, int, int);
     /**
-     * @hash   1623225190
      * @symbol  ?getAnimDuration\@JumpInfo\@\@QEBAHXZ
      */
     MCAPI int getAnimDuration() const;
     /**
-     * @hash   -321329722
      * @symbol  ?getDistanceScale\@JumpInfo\@\@QEBAMXZ
      */
     MCAPI float getDistanceScale() const;
     /**
-     * @hash   -2136903052
      * @symbol  ?getHeight\@JumpInfo\@\@QEBAMXZ
      */
     MCAPI float getHeight() const;
     /**
-     * @hash   -2088554920
      * @symbol  ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
      */
     MCAPI int getJumpDelay() const;

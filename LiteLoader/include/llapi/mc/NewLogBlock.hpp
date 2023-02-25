@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1259513409
      * @vftbl  103
      * @symbol  ?asItemInstance\@NewLogBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   372544640
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@NewLogBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -174719735
      * @vftbl  146
      * @symbol  ?getVariant\@NewLogBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -229,13 +226,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   807744798
      * @vftbl  177
      * @symbol  ?use\@NewLogBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1906360285
      * @vftbl  184
      * @symbol  ?getMapColor\@NewLogBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -246,19 +241,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   865326151
      * @vftbl  187
      * @symbol  ?getResourceItem\@NewLogBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -107814096
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@NewLogBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1125024249
      * @symbol  ??0NewLogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI NewLogBlock(std::string const &, int);

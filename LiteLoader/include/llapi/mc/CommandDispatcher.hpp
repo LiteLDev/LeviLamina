@@ -34,13 +34,11 @@ public:
      */
     virtual ~CommandDispatcher();
     /**
-     * @hash   -576098019
      * @vftbl  1
      * @symbol  ?performCommand\@CommandDispatcher\@\@UEAAHAEBVCommandOrigin\@\@AEAVCommand\@\@\@Z
      */
     virtual int performCommand(class CommandOrigin const &, class Command &);
     /**
-     * @hash   -2014892178
      * @symbol  ??0CommandDispatcher\@\@QEAA\@XZ
      */
     MCAPI CommandDispatcher();

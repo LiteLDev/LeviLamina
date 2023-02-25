@@ -36,7 +36,6 @@ public:
      */
     virtual ~EndRodBlock();
     /**
-     * @hash   -2045769711
      * @vftbl  9
      * @symbol  ?addAABBs\@EndRodBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -865287024
      * @vftbl  22
      * @symbol  ?canProvideSupport\@EndRodBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1458974837
      * @vftbl  69
      * @symbol  ?checkIsPathable\@EndRodBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -174,25 +171,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   922964716
      * @vftbl  91
      * @symbol  ?mayPlace\@EndRodBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1858445455
      * @vftbl  92
      * @symbol  ?mayPlace\@EndRodBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1977358826
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@EndRodBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   1625311923
      * @vftbl  99
      * @symbol  ?neighborChanged\@EndRodBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -203,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1803529904
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@EndRodBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -229,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -184087125
      * @vftbl  143
      * @symbol  ?getVisualShape\@EndRodBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1348174346
      * @vftbl  151
      * @symbol  ?animateTick\@EndRodBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -246,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1752071983
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@EndRodBlock\@\@UEAAXXZ
      */
@@ -277,13 +266,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1067173809
      * @vftbl  178
      * @symbol  ?canSurvive\@EndRodBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   39919461
      * @vftbl  184
      * @symbol  ?getMapColor\@EndRodBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -294,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -479406209
      * @symbol  ??0EndRodBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EndRodBlock(std::string const &, int);

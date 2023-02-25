@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -302544484
      * @vftbl  57
      * @symbol  ?getEntityLocNameString\@ChestBoat\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -131,7 +130,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   781217524
      * @vftbl  245
      * @symbol  ?kill\@ChestBoat\@\@UEAAXXZ
      */
@@ -152,20 +150,17 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   418930115
      * @vftbl  278
      * @symbol  ?destroy\@ChestBoat\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void destroy(class Actor *);
     /**
-     * @hash   -1754691923
      * @symbol  ??0ChestBoat\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ChestBoat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:
     /**
-     * @hash   1190183682
      * @symbol  ?_dropChestContents\@ChestBoat\@\@AEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void _dropChestContents(class Vec3 const &);

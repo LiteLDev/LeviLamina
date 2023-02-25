@@ -35,13 +35,11 @@ public:
      */
     virtual ~PlayDeadGoal();
     /**
-     * @hash   102488917
      * @vftbl  1
      * @symbol  ?canUse\@PlayDeadGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   164227955
      * @vftbl  2
      * @symbol  ?canContinueToUse\@PlayDeadGoal\@\@UEAA_NXZ
      */
@@ -52,13 +50,11 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1634674606
      * @vftbl  4
      * @symbol  ?start\@PlayDeadGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1740149902
      * @vftbl  5
      * @symbol  ?stop\@PlayDeadGoal\@\@UEAAXXZ
      */
@@ -69,13 +65,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   610409819
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@PlayDeadGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1342614894
      * @symbol  ??0PlayDeadGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI PlayDeadGoal(class Mob &);

@@ -36,13 +36,11 @@ public:
      */
     virtual ~DelayedAttackGoal();
     /**
-     * @hash   753786995
      * @vftbl  1
      * @symbol  ?canUse\@DelayedAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   583918593
      * @vftbl  2
      * @symbol  ?canContinueToUse\@DelayedAttackGoal\@\@UEAA_NXZ
      */
@@ -53,25 +51,21 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   961624972
      * @vftbl  4
      * @symbol  ?start\@DelayedAttackGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -126915716
      * @vftbl  5
      * @symbol  ?stop\@DelayedAttackGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   987631735
      * @vftbl  6
      * @symbol  ?tick\@DelayedAttackGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -2146318579
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@DelayedAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -87,13 +81,11 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1243840320
      * @vftbl  10
      * @symbol  ?_attemptMoveToTarget\@DelayedAttackGoal\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void _attemptMoveToTarget(class Actor &);
     /**
-     * @hash   258308544
      * @symbol  ??0DelayedAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI DelayedAttackGoal(class Mob &);
@@ -108,12 +100,10 @@ public:
 
 //private:
     /**
-     * @hash   2021588846
      * @symbol  ?_attemptAttack\@DelayedAttackGoal\@\@AEAAXPEAVActor\@\@\@Z
      */
     MCAPI void _attemptAttack(class Actor *);
     /**
-     * @hash   704807176
      * @symbol  ?_manageAttackTime\@DelayedAttackGoal\@\@AEAAXXZ
      */
     MCAPI void _manageAttackTime();

@@ -36,13 +36,11 @@ public:
      */
     virtual ~CurseBindingEnchant();
     /**
-     * @hash   -390383729
      * @vftbl  2
      * @symbol  ?getMinCost\@CurseBindingEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   1108525021
      * @vftbl  3
      * @symbol  ?getMaxCost\@CurseBindingEnchant\@\@UEBAHH\@Z
      */
@@ -69,13 +67,11 @@ public:
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSEBINDINGENCHANT
     /**
-     * @hash   1615664551
      * @symbol  ?isTreasureOnly\@CurseBindingEnchant\@\@UEBA_NXZ
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @hash   -296326188
      * @symbol  ??0CurseBindingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2H_NH\@Z
      */
     MCAPI CurseBindingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);

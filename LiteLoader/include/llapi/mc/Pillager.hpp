@@ -127,7 +127,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   442467972
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Pillager\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -138,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1856287829
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Pillager\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
@@ -169,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1585577943
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Pillager\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -180,13 +177,11 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -783474164
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Pillager\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @hash   -1958556616
      * @symbol  ??0Pillager\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Pillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -35,36 +35,30 @@ public:
      */
     virtual ~RemoveActorPacket();
     /**
-     * @hash   -1060967067
      * @vftbl  1
      * @symbol  ?getId\@RemoveActorPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -1797896174
      * @vftbl  2
      * @symbol  ?getName\@RemoveActorPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1636926315
      * @vftbl  3
      * @symbol  ?write\@RemoveActorPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1839426731
      * @vftbl  6
      * @symbol  ?_read\@RemoveActorPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1729230309
      * @symbol  ??0RemoveActorPacket\@\@QEAA\@XZ
      */
     MCAPI RemoveActorPacket();
     /**
-     * @hash   1771606722
      * @symbol  ??0RemoveActorPacket\@\@QEAA\@UActorUniqueID\@\@\@Z
      */
     MCAPI RemoveActorPacket(struct ActorUniqueID);

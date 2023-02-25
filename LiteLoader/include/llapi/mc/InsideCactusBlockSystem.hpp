@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -299118456
      * @symbol  ?createSystem\@InsideCactusBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

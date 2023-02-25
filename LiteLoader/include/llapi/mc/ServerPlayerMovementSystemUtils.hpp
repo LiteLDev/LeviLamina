@@ -20,7 +20,6 @@ namespace ServerPlayerMovementSystemUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1330226997
      * @symbol  ?_handlePlayerAuthInputPacket\@ServerPlayerMovementSystemUtils\@\@YAXAEBVPlayerAuthInputPacket\@\@V?$not_null\@PEAVServerPlayer\@\@\@gsl\@\@\@Z
      */
     MCAPI void _handlePlayerAuthInputPacket(class PlayerAuthInputPacket const &, class gsl::not_null<class ServerPlayer *>);

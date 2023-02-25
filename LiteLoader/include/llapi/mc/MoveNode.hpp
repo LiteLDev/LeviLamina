@@ -34,26 +34,22 @@ public:
      */
     virtual ~MoveNode();
     /**
-     * @hash   -1806951584
      * @vftbl  1
      * @symbol  ?tick\@MoveNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1621465428
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@MoveNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -1741221313
      * @symbol  ??0MoveNode\@\@QEAA\@XZ
      */
     MCAPI MoveNode();
 
 //private:
     /**
-     * @hash   -1186573170
      * @symbol  ?convertDirectionStringToKeyPress\@MoveNode\@\@AEAAEV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);

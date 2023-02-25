@@ -32,19 +32,16 @@ public:
 
 public:
     /**
-     * @hash   -1683332594
      * @symbol  ??0EntityContext\@\@QEAA\@AEAVEntityRegistry\@\@VEntityId\@\@\@Z
      */
     MCAPI EntityContext(class EntityRegistry &, class EntityId);
     /**
-     * @hash   -1342391177
      * @symbol  ?getWeakRef\@EntityContext\@\@QEBA?AV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
 //protected:
     /**
-     * @hash   1817071764
      * @symbol  ?_registry\@EntityContext\@\@IEBAAEAVEntityRegistry\@\@XZ
      */
     MCAPI class EntityRegistry & _registry() const;

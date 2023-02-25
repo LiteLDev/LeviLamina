@@ -97,7 +97,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   1602280595
      * @vftbl  123
      * @symbol  ?onFailedTame\@Llama\@\@UEAAXXZ
      */
@@ -108,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -656772370
      * @vftbl  183
      * @symbol  ?causeFallDamage\@Llama\@\@MEAAXMMVActorDamageSource\@\@\@Z
      */
@@ -139,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1525641571
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Llama\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -150,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1040784045
      * @vftbl  268
      * @symbol  ?_playStepSound\@Llama\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -181,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   19285742
      * @vftbl  313
      * @symbol  ?getArmorValue\@Llama\@\@UEBAHXZ
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -560390735
      * @symbol  ??0Llama\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Llama(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

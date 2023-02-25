@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -2050317014
      * @vftbl  10
      * @symbol  ?executeEvent\@FertilizerItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -63,7 +62,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   829674463
      * @vftbl  21
      * @symbol  ?isFertilizer\@FertilizerItem\@\@UEBA_NXZ
      */
@@ -114,24 +112,20 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1277996847
      * @vftbl  85
      * @symbol  ?dispense\@FertilizerItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   1093441772
      * @vftbl  132
      * @symbol  ?_useOn\@FertilizerItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -993521120
      * @symbol  ??0FertilizerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4FertilizerType\@\@\@Z
      */
     MCAPI FertilizerItem(std::string const &, int, enum class FertilizerType);
     /**
-     * @hash   694504138
      * @symbol  ?getFertilizerType\@FertilizerItem\@\@QEBA?AW4FertilizerType\@\@XZ
      */
     MCAPI enum class FertilizerType getFertilizerType() const;

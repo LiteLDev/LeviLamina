@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -1395067098
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@AuxDataBlockItem\@\@UEBAHH\@Z
      */
@@ -108,13 +107,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -49456904
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@AuxDataBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   1072380096
      * @symbol  ??0AuxDataBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HPEBVBlock\@\@\@Z
      */
     MCAPI AuxDataBlockItem(std::string const &, int, class Block const *);

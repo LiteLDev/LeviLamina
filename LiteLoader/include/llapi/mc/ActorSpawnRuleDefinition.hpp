@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1082207985
      * @symbol  ??1ActorSpawnRuleDefinition\@\@QEAA\@XZ
      */
     MCAPI ~ActorSpawnRuleDefinition();

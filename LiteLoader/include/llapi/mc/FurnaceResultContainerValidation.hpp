@@ -36,7 +36,6 @@ public:
      */
     virtual ~FurnaceResultContainerValidation();
     /**
-     * @hash   1560059241
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -2027567926
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -63,25 +61,21 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -964296212
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   254066496
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @hash   309546489
      * @vftbl  8
      * @symbol  ?getContainerOffset\@FurnaceResultContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @hash   1115927147
      * @vftbl  9
      * @symbol  ?getContainerSize\@ContainerValidationBase\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */

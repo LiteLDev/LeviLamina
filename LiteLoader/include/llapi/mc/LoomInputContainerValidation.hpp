@@ -36,19 +36,16 @@ public:
      */
     virtual ~LoomInputContainerValidation();
     /**
-     * @hash   -116800811
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   734496513
      * @vftbl  2
      * @symbol  ?isItemAllowedInSlot\@LoomInputContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   1936212446
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -64,25 +61,21 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   271946328
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   1490309036
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @hash   -1461198651
      * @vftbl  8
      * @symbol  ?getContainerOffset\@LoomInputContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @hash   784740223
      * @vftbl  9
      * @symbol  ?getContainerSize\@ContainerValidationBase\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */

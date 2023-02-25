@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1386508280
      * @symbol  ?create\@StackableAndMobNearCollisionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();

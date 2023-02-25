@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsSneakingTest();
     /**
-     * @hash   1957380721
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsSneakingTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1656099999
      * @vftbl  4
      * @symbol  ?getName\@ActorIsSneakingTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

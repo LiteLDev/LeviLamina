@@ -146,13 +146,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   706498122
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@RedstoneLampBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   1489890868
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@RedstoneLampBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -163,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -709461561
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@RedstoneLampBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1608105559
      * @vftbl  103
      * @symbol  ?asItemInstance\@RedstoneLampBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -225,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   725013955
      * @vftbl  168
      * @symbol  ?onPlace\@RedstoneLampBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1862237769
      * @vftbl  171
      * @symbol  ?tick\@RedstoneLampBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -252,19 +246,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2141456095
      * @vftbl  187
      * @symbol  ?getResourceItem\@RedstoneLampBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -651069496
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@RedstoneLampBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1401986490
      * @symbol  ??0RedstoneLampBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI RedstoneLampBlock(std::string const &, int, bool);

@@ -34,13 +34,11 @@ public:
      */
     virtual ~DeferredCommandBlockCommand();
     /**
-     * @hash   -1714856347
      * @vftbl  1
      * @symbol  ?execute\@DeferredCommandBlockCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
     virtual void execute(class MinecraftCommands &);
     /**
-     * @hash   1880833124
      * @symbol  ??0DeferredCommandBlockCommand\@\@QEAA\@VBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI DeferredCommandBlockCommand(class BlockPos, class BlockSource &);

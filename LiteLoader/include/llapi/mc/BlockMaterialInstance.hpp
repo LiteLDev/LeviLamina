@@ -27,27 +27,22 @@ public:
 
 public:
     /**
-     * @hash   -1117310322
      * @symbol  ??4BlockMaterialInstance\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     /**
-     * @hash   -65236366
      * @symbol  ??4BlockMaterialInstance\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
     /**
-     * @hash   -2097784955
      * @symbol  ??1BlockMaterialInstance\@\@QEAA\@XZ
      */
     MCAPI ~BlockMaterialInstance();
     /**
-     * @hash   -545201
      * @symbol  ?blockRenderLayerEnumValues\@BlockMaterialInstance\@\@2V?$initializer_list\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockRenderLayer\@\@\@std\@\@\@std\@\@B
      */
     MCAPI static class std::initializer_list<struct std::pair<std::string, enum class BlockRenderLayer>> const blockRenderLayerEnumValues;
     /**
-     * @hash   1700300170
      * @symbol  ?renderLayerNameBiMap\@BlockMaterialInstance\@\@2V?$BidirectionalUnorderedMap\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockRenderLayer\@\@\@\@B
      */
     MCAPI static class BidirectionalUnorderedMap<std::string, enum class BlockRenderLayer> const renderLayerNameBiMap;

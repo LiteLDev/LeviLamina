@@ -36,7 +36,6 @@ public:
      */
     virtual ~NetherWartBlock();
     /**
-     * @hash   -589176519
      * @vftbl  10
      * @symbol  ?getAABB\@NetherWartBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   881237871
      * @vftbl  62
      * @symbol  ?canContainLiquid\@NetherWartBlock\@\@UEBA_NXZ
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1849915761
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@NetherWartBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1767987295
      * @vftbl  103
      * @symbol  ?asItemInstance\@NetherWartBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -230,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1670998516
      * @vftbl  172
      * @symbol  ?randomTick\@NetherWartBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   488674151
      * @vftbl  178
      * @symbol  ?canSurvive\@NetherWartBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -252,26 +246,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   56026791
      * @vftbl  187
      * @symbol  ?getResourceItem\@NetherWartBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1541499073
      * @vftbl  188
      * @symbol  ?getResourceCount\@NetherWartBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERWARTBLOCK
     /**
-     * @hash   867208894
      * @symbol  ?canBeSilkTouched\@NetherWartBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -17442825
      * @symbol  ??0NetherWartBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI NetherWartBlock(std::string const &, int);
@@ -280,7 +270,6 @@ public:
 
 private:
     /**
-     * @hash   1769916603
      * @symbol  ?MAX_AGE\@NetherWartBlock\@\@0HB
      */
     MCAPI static int const MAX_AGE;

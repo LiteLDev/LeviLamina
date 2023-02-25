@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   -641070987
      * @symbol  ??0MobDescriptor\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI MobDescriptor(struct MobDescriptor const &);
     /**
-     * @hash   1042477899
      * @symbol  ??1MobDescriptor\@\@QEAA\@XZ
      */
     MCAPI ~MobDescriptor();

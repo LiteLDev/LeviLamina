@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   299508335
      * @vftbl  103
      * @symbol  ?asItemInstance\@QuartzBlockBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   2142330922
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@QuartzBlockBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -193,25 +191,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1422801618
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@QuartzBlockBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1227831065
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@QuartzBlockBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   758042187
      * @vftbl  146
      * @symbol  ?getVariant\@QuartzBlockBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   536982003
      * @vftbl  149
      * @symbol  ?getMappedFace\@QuartzBlockBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -252,19 +246,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   269559264
      * @vftbl  187
      * @symbol  ?getResourceItem\@QuartzBlockBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1586988121
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@QuartzBlockBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1253084263
      * @symbol  ??0QuartzBlockBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI QuartzBlockBlock(std::string const &, int);

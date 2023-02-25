@@ -36,32 +36,26 @@ public:
 
 public:
     /**
-     * @hash   -1728150326
      * @symbol  ??0MapItemTrackedActor\@\@QEAA\@AEBUUniqueId\@0\@AEAVBlockSource\@\@\@Z
      */
     MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const &, class BlockSource &);
     /**
-     * @hash   670487545
      * @symbol  ?getDecorationRotation\@MapItemTrackedActor\@\@QEAAMAEAVBlockSource\@\@\@Z
      */
     MCAPI float getDecorationRotation(class BlockSource &);
     /**
-     * @hash   281937324
      * @symbol  ?getEntity\@MapItemTrackedActor\@\@QEAAPEAVActor\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI class Actor * getEntity(class BlockSource &);
     /**
-     * @hash   577971251
      * @symbol  ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
      */
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
     /**
-     * @hash   10237631
      * @symbol  ?setNeedsResend\@MapItemTrackedActor\@\@QEAAXXZ
      */
     MCAPI void setNeedsResend();
     /**
-     * @hash   -419551319
      * @symbol  ?setPixelDirty\@MapItemTrackedActor\@\@QEAAXII\@Z
      */
     MCAPI void setPixelDirty(unsigned int, unsigned int);

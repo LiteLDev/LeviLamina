@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   1383895672
      * @symbol  ?createSystem\@SlimePostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   1850774098
      * @symbol  ?_doSlimePostNormalTickSystem\@SlimePostNormalTickSystem\@\@CAXAEAVStrictEntityContext\@\@V?$Optional\@$$CBV?$FlagComponent\@USlimeWasOnGroundPreNormalTick\@\@\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doSlimePostNormalTickSystem(class StrictEntityContext &, class Optional<class FlagComponent<struct SlimeWasOnGroundPreNormalTick> const>, class ActorOwnerComponent &);

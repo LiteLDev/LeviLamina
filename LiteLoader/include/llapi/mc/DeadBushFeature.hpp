@@ -36,7 +36,6 @@ public:
      */
     virtual ~DeadBushFeature();
     /**
-     * @hash   1299107524
      * @vftbl  3
      * @symbol  ?place\@DeadBushFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

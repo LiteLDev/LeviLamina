@@ -216,19 +216,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   307848749
      * @vftbl  187
      * @symbol  ?getResourceItem\@GildedBlackstone\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1616424854
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@GildedBlackstone\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -262521594
      * @symbol  ??0GildedBlackstone\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI GildedBlackstone(std::string const &, int, class Material const &);

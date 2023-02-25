@@ -38,7 +38,6 @@ public:
      */
     MCAPI bool hasMagicAttacks() const;
     /**
-     * @hash   -1630732372
      * @symbol  ?onShoot\@ShooterComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void onShoot(class Actor &);
@@ -47,7 +46,6 @@ public:
      */
     MCAPI class ShooterComponent & operator=(class ShooterComponent &&);
     /**
-     * @hash   1129506491
      * @symbol  ??1ShooterComponent\@\@QEAA\@XZ
      */
     MCAPI ~ShooterComponent();

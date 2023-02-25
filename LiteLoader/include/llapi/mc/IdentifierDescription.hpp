@@ -35,7 +35,6 @@ public:
      */
     virtual ~IdentifierDescription();
     /**
-     * @hash   -1908143279
      * @vftbl  1
      * @symbol  ?getJsonName\@IdentifierDescription\@\@UEBAPEBDXZ
      */

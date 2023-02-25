@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -371217324
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Arrow\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1557292766
      * @vftbl  49
      * @symbol  ?normalTick\@Arrow\@\@UEAAXXZ
      */
@@ -79,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -388949033
      * @vftbl  90
      * @symbol  ?playerTouch\@Arrow\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -135,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -1961501598
      * @vftbl  233
      * @symbol  ?setAuxValue\@Arrow\@\@UEAAXH\@Z
      */
@@ -156,13 +152,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -423289609
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Arrow\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -55745098
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Arrow\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -178,73 +172,60 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1851583099
      * @vftbl  278
      * @symbol  ?shoot\@Arrow\@\@UEAAXAEBVVec3\@\@MM0\@Z
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @hash   -139874744
      * @vftbl  280
      * @symbol  ?_getPickupItem\@Arrow\@\@MEBA?AVItemStack\@\@XZ
      */
     virtual class ItemStack _getPickupItem() const;
     /**
-     * @hash   -1132140684
      * @vftbl  281
      * @symbol  ?applyParticleColor\@Arrow\@\@MEAAXPEAVParticle\@\@\@Z
      */
     virtual void applyParticleColor(class Particle *);
     /**
-     * @hash   -634620880
      * @vftbl  282
      * @symbol  ?getEffectColor\@Arrow\@\@MEAA?AVColor\@mce\@\@XZ
      */
     virtual class mce::Color getEffectColor();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROW
     /**
-     * @hash   240452749
      * @symbol  ?canMakeStepSound\@Arrow\@\@MEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
-     * @hash   1669634885
      * @symbol  ??0Arrow\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Arrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -787221306
      * @symbol  ?addMobEffect\@Arrow\@\@QEAAXVMobEffectInstance\@\@\@Z
      */
     MCAPI void addMobEffect(class MobEffectInstance);
     /**
-     * @hash   2032236590
      * @symbol  ?getAuxValue\@Arrow\@\@QEBAHXZ
      */
     MCAPI int getAuxValue() const;
     /**
-     * @hash   453778304
      * @symbol  ?setCritical\@Arrow\@\@QEAAX_N\@Z
      */
     MCAPI void setCritical(bool);
     /**
-     * @hash   -1013198082
      * @symbol  ?setEnchantFlame\@Arrow\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantFlame(int);
     /**
-     * @hash   -1047413638
      * @symbol  ?setEnchantInfinity\@Arrow\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantInfinity(int);
     /**
-     * @hash   1151419658
      * @symbol  ?setEnchantPower\@Arrow\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantPower(int);
     /**
-     * @hash   2052255160
      * @symbol  ?setEnchantPunch\@Arrow\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantPunch(int);

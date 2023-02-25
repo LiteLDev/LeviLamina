@@ -102,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1903064781
      * @vftbl  132
      * @symbol  ?_useOn\@BellBlockItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -771186517
      * @symbol  ??0BellBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BellBlockItem(std::string const &, int);

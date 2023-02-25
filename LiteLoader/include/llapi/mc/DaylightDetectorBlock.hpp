@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -469067384
      * @vftbl  51
      * @symbol  ?isSignalSource\@DaylightDetectorBlock\@\@UEBA_NXZ
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1407267962
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@DaylightDetectorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -1070993871
      * @vftbl  69
      * @symbol  ?checkIsPathable\@DaylightDetectorBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1374312229
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@DaylightDetectorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -180,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   623716861
      * @vftbl  103
      * @symbol  ?asItemInstance\@DaylightDetectorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1848433267
      * @vftbl  146
      * @symbol  ?getVariant\@DaylightDetectorBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -222,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -1873449806
      * @vftbl  162
      * @symbol  ?onRemove\@DaylightDetectorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1139650407
      * @vftbl  168
      * @symbol  ?onPlace\@DaylightDetectorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1306972910
      * @vftbl  177
      * @symbol  ?use\@DaylightDetectorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -270,38 +261,32 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1519361227
      * @vftbl  187
      * @symbol  ?getResourceItem\@DaylightDetectorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1102647116
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@DaylightDetectorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   622868280
      * @vftbl  194
      * @symbol  ?updateShape\@DaylightDetectorBlock\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void updateShape(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -1635053791
      * @vftbl  195
      * @symbol  ?updateSignalStrength\@DaylightDetectorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void updateSignalStrength(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLIGHTDETECTORBLOCK
     /**
-     * @hash   1462680432
      * @symbol  ?isInteractiveBlock\@DaylightDetectorBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   397159222
      * @symbol  ??0DaylightDetectorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI DaylightDetectorBlock(std::string const &, int, bool);

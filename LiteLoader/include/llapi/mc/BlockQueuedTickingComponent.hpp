@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   1340117223
      * @symbol  ??0BlockQueuedTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent &&);
     /**
-     * @hash   -24800476
      * @symbol  ??1BlockQueuedTickingComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockQueuedTickingComponent();

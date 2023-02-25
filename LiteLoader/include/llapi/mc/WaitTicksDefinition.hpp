@@ -37,7 +37,6 @@ public:
      */
     virtual ~WaitTicksDefinition();
     /**
-     * @hash   1952144816
      * @vftbl  1
      * @symbol  ?load\@WaitTicksDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

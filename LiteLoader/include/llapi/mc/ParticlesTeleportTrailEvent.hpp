@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   1888430748
      * @symbol  ?save\@ParticlesTeleportTrailEvent\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;

@@ -42,7 +42,6 @@ public:
      */
     virtual ~FilterTest();
     /**
-     * @hash   -1139042576
      * @vftbl  1
      * @symbol  ?setup\@FilterTest\@\@UEAA_NAEBUDefinition\@1\@AEBUFilterInputs\@\@\@Z
      */
@@ -53,7 +52,6 @@ public:
      */
     virtual bool evaluate(struct FilterContext const &) const = 0;
     /**
-     * @hash   946884544
      * @vftbl  3
      * @symbol  ?finalizeParsedValue\@FilterTest\@\@UEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
@@ -64,41 +62,34 @@ public:
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
     /**
-     * @hash   714048026
      * @vftbl  5
      * @symbol  ?_serializeDomain\@FilterTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeDomain() const;
     /**
-     * @hash   1244360112
      * @vftbl  6
      * @symbol  ?_serializeValue\@FilterTestDimensionWeather\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeValue() const = 0;
     /**
-     * @hash   -18848722
      * @symbol  ?serialize\@FilterTest\@\@QEBA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value serialize() const;
 
 //protected:
     /**
-     * @hash   -715791025
      * @symbol  ?_testValuesWithOperator\@FilterTest\@\@IEBA_NAEBVHashedString\@\@0\@Z
      */
     MCAPI bool _testValuesWithOperator(class HashedString const &, class HashedString const &) const;
     /**
-     * @hash   -59647697
      * @symbol  ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
      */
     MCAPI bool _testValuesWithOperator(int, int) const;
     /**
-     * @hash   868009983
      * @symbol  ?_testValuesWithOperator\@FilterTest\@\@IEBA_NMM\@Z
      */
     MCAPI bool _testValuesWithOperator(float, float) const;
     /**
-     * @hash   -1948690849
      * @symbol  ?_testValuesWithOperator\@FilterTest\@\@IEBA_N_N0\@Z
      */
     MCAPI bool _testValuesWithOperator(bool, bool) const;

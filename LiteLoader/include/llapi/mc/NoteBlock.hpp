@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -808503446
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   168884621
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -173,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1856191056
      * @vftbl  109
      * @symbol  ?attack\@NoteBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
-     * @hash   1193162979
      * @vftbl  116
      * @symbol  ?triggerEvent\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
@@ -225,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   382277001
      * @vftbl  168
      * @symbol  ?onPlace\@NoteBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -604779632
      * @vftbl  177
      * @symbol  ?use\@NoteBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -253,13 +247,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOTEBLOCK
     /**
-     * @hash   -932672062
      * @symbol  ?isInteractiveBlock\@NoteBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1267056585
      * @symbol  ??0NoteBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI NoteBlock(std::string const &, int);

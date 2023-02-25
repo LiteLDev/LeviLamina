@@ -37,25 +37,21 @@ public:
      */
     virtual ~FilterTestDimensionWeather();
     /**
-     * @hash   755885138
      * @vftbl  1
      * @symbol  ?setup\@FilterTestDimensionWeather\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @hash   -610959814
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestDimensionWeather\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1404229064
      * @vftbl  4
      * @symbol  ?getName\@FilterTestDimensionWeather\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @hash   572100903
      * @vftbl  6
      * @symbol  ?_serializeValue\@FilterTestDimensionWeather\@\@MEBA?AVValue\@Json\@\@XZ
      */

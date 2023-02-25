@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   217653571
      * @symbol  ??0SlimeFloatDefinition\@\@QEAA\@XZ
      */
     MCAPI SlimeFloatDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class SlimeFloatGoal &) const;
     /**
-     * @hash   -499380473
      * @symbol  ?buildSchema\@SlimeFloatDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeFloatDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>> &);

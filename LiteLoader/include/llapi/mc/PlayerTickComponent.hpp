@@ -30,22 +30,18 @@ public:
 
 public:
     /**
-     * @hash   -1024909116
      * @symbol  ??0PlayerTickComponent\@\@QEAA\@V?$unique_ptr\@UIPlayerTickPolicy\@\@U?$default_delete\@UIPlayerTickPolicy\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
     /**
-     * @hash   -1907526923
      * @symbol  ??0PlayerTickComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     /**
-     * @hash   -2018938722
      * @symbol  ??4PlayerTickComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct PlayerTickComponent & operator=(struct PlayerTickComponent &&);
     /**
-     * @hash   -1143519013
      * @symbol  ??1PlayerTickComponent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerTickComponent();

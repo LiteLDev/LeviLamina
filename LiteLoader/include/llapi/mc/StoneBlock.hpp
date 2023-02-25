@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   133394217
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@StoneBlock\@\@UEBA_NXZ
      */
@@ -192,13 +191,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -478768977
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@StoneBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   225016492
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@StoneBlock\@\@UEBA_NXZ
      */
@@ -209,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1709700055
      * @vftbl  159
      * @symbol  ?tryGetInfested\@StoneBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
-     * @hash   -212485720
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@StoneBlock\@\@UEAAXXZ
      */
@@ -246,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1331275156
      * @vftbl  184
      * @symbol  ?getMapColor\@StoneBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -257,13 +251,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1666961258
      * @vftbl  187
      * @symbol  ?getResourceItem\@StoneBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1306155462
      * @symbol  ??0StoneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StoneBlock(std::string const &, int);

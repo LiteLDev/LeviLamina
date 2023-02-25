@@ -36,19 +36,16 @@ public:
      */
     virtual ~HungerAttributeDelegate();
     /**
-     * @hash   1612824790
      * @vftbl  1
      * @symbol  ?tick\@HungerAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1693892249
      * @vftbl  2
      * @symbol  ?notify\@HungerAttributeDelegate\@\@UEAAX_J\@Z
      */
     virtual void notify(__int64);
     /**
-     * @hash   1276232377
      * @symbol  ??0HungerAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVPlayer\@\@\@Z
      */
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);

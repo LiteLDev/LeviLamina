@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   -562127240
      * @symbol  ?addAdditionalSaveData\@SpawnActorComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   1944309718
      * @symbol  ?getSpawnEntries\@SpawnActorComponent\@\@QEAAAEAV?$vector\@USpawnActorEntry\@\@V?$allocator\@USpawnActorEntry\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     /**
-     * @hash   -1654884874
      * @symbol  ?readAdditionalSaveData\@SpawnActorComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);

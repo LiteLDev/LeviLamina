@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -1936373963
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@StoneSlabBlockItem\@\@UEBAHH\@Z
      */
@@ -108,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -336285489
      * @symbol  ??0StoneSlabBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StoneSlabBlockItem(std::string const &, int);

@@ -36,19 +36,16 @@ public:
      */
     virtual ~LootEnchant();
     /**
-     * @hash   -1741880518
      * @vftbl  2
      * @symbol  ?getMinCost\@LootEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   1345285528
      * @vftbl  3
      * @symbol  ?getMaxCost\@LootEnchant\@\@UEBAHH\@Z
      */
     virtual int getMaxCost(int) const;
     /**
-     * @hash   701109632
      * @vftbl  5
      * @symbol  ?getMaxLevel\@LootEnchant\@\@UEBAHXZ
      */
@@ -74,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_13();
     /**
-     * @hash   973255288
      * @symbol  ??0LootEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2HH\@Z
      */
     MCAPI LootEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);

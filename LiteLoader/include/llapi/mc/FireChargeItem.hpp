@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -861180150
      * @vftbl  56
      * @symbol  ?isDestructive\@FireChargeItem\@\@UEBA_NH\@Z
      */
@@ -108,30 +107,25 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1143641655
      * @vftbl  85
      * @symbol  ?dispense\@FireChargeItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -439699740
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@FireChargeItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   1703610395
      * @vftbl  132
      * @symbol  ?_useOn\@FireChargeItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -1792887269
      * @symbol  ??0FireChargeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FireChargeItem(std::string const &, int);
     /**
-     * @hash   -1841009127
      * @symbol  ?LEVEL_SOUND_EVENT_VOLUME\@FireChargeItem\@\@2HB
      */
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;

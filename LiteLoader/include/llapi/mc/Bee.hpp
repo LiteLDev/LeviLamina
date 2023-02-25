@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1035577722
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@Bee\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1043988151
      * @vftbl  49
      * @symbol  ?normalTick\@Bee\@\@UEAAXXZ
      */
@@ -114,7 +112,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   813794842
      * @vftbl  188
      * @symbol  ?onSynchedDataUpdate\@Bee\@\@UEAAXH\@Z
      */
@@ -180,19 +177,16 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1832160962
      * @symbol  ??0Bee\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Bee(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -2104159173
      * @symbol  ?postNormalTick\@Bee\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
 
 //protected:
     /**
-     * @hash   -174816591
      * @symbol  ?_registerLoopingSounds\@Bee\@\@IEAAXXZ
      */
     MCAPI void _registerLoopingSounds();

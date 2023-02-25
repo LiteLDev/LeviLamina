@@ -36,13 +36,11 @@ public:
      */
     virtual ~LightningRod();
     /**
-     * @hash   1356584280
      * @vftbl  15
      * @symbol  ?onProjectileHit\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
-     * @hash   -1917551289
      * @vftbl  16
      * @symbol  ?onLightningHit\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -53,13 +51,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   200617516
      * @vftbl  22
      * @symbol  ?canProvideSupport\@LightningRod\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   119052836
      * @vftbl  25
      * @symbol  ?canConnect\@LightningRod\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -155,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   2064486200
      * @vftbl  51
      * @symbol  ?isSignalSource\@LightningRod\@\@UEBA_NXZ
      */
@@ -176,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   41053547
      * @vftbl  62
      * @symbol  ?canContainLiquid\@LightningRod\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   1162318614
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@LightningRod\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -193,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1206339195
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -204,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   38529262
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@LightningRod\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -215,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1853849012
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LightningRod\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -241,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   6786935
      * @vftbl  143
      * @symbol  ?getVisualShape\@LightningRod\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -71084782
      * @vftbl  151
      * @symbol  ?animateTick\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -273,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   216141271
      * @vftbl  168
      * @symbol  ?onPlace\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -284,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -107648365
      * @vftbl  171
      * @symbol  ?tick\@LightningRod\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -300,19 +286,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1339686181
      * @vftbl  187
      * @symbol  ?getResourceItem\@LightningRod\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1270758916
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@LightningRod\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -370836972
      * @symbol  ??0LightningRod\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LightningRod(std::string const &, int, class Material const &);

@@ -37,7 +37,6 @@ public:
      */
     virtual ~InteractActionDefinition();
     /**
-     * @hash   1075978917
      * @vftbl  1
      * @symbol  ?load\@InteractActionDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

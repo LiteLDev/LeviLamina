@@ -23,7 +23,6 @@ namespace ScriptResultUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1551231153
      * @symbol  ?ScriptingResultToGameTestResult\@ScriptResultUtil\@\@YA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEBVResultAny\@Scripting\@\@\@Z
      */
     MCAPI class std::optional<struct gametest::GameTestError> ScriptingResultToGameTestResult(class Scripting::ResultAny const &);

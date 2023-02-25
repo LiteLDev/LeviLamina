@@ -35,7 +35,6 @@ public:
      */
     virtual ~MossStoneSelector();
     /**
-     * @hash   -281550829
      * @vftbl  1
      * @symbol  ?next\@MossStoneSelector\@\@UEBAAEBVBlock\@\@AEAVRandom\@\@HHH_N\@Z
      */

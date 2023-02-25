@@ -35,7 +35,6 @@ public:
      */
     virtual ~EndermanTakeBlockGoal();
     /**
-     * @hash   1155441177
      * @vftbl  1
      * @symbol  ?canUse\@EndermanTakeBlockGoal\@\@UEAA_NXZ
      */
@@ -61,13 +60,11 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   1670038749
      * @vftbl  6
      * @symbol  ?tick\@EndermanTakeBlockGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -2078395385
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@EndermanTakeBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -83,13 +80,11 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -194677993
      * @vftbl  10
      * @symbol  ?getRandomNearbyBlockPos\@EndermanTakeBlockGoal\@\@MEBA?AVBlockPos\@\@AEBVVec3\@\@\@Z
      */
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const &) const;
     /**
-     * @hash   540229142
      * @symbol  ??0EndermanTakeBlockGoal\@\@QEAA\@AEAVEnderMan\@\@\@Z
      */
     MCAPI EndermanTakeBlockGoal(class EnderMan &);

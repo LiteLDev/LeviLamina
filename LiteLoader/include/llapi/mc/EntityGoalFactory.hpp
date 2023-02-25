@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   1088184266
      * @symbol  ?tryGetDefinitionSerializer\@EntityGoalFactory\@\@QEAAPEAVIJsonDefinitionSerializer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
     /**
-     * @hash   -420312224
      * @symbol  ??1EntityGoalFactory\@\@QEAA\@XZ
      */
     MCAPI ~EntityGoalFactory();

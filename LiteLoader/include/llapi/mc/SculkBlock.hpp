@@ -216,19 +216,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1339520439
      * @vftbl  187
      * @symbol  ?getResourceItem\@SculkBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   2075039535
      * @vftbl  188
      * @symbol  ?getResourceCount\@SculkBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1291331104
      * @symbol  ??0SculkBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SculkBlock(std::string const &, int, class Material const &);

@@ -29,7 +29,6 @@ public:
 
 public:
     /**
-     * @hash   1158388928
      * @symbol  ??0MoveTowardsRestrictionDefinition\@\@QEAA\@XZ
      */
     MCAPI MoveTowardsRestrictionDefinition();

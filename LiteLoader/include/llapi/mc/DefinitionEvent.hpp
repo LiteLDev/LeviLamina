@@ -28,27 +28,22 @@ public:
 
 public:
     /**
-     * @hash   -1507030873
      * @symbol  ??0DefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI DefinitionEvent(class DefinitionEvent &&);
     /**
-     * @hash   -719252047
      * @symbol  ??0DefinitionEvent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI DefinitionEvent(class DefinitionEvent const &);
     /**
-     * @hash   1112102099
      * @symbol  ?evaluateEvent\@DefinitionEvent\@\@QEBAXAEAVRenderParams\@\@AEAV?$vector\@UDefinitionModifier\@\@V?$allocator\@UDefinitionModifier\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void evaluateEvent(class RenderParams &, std::vector<struct DefinitionModifier> &) const;
     /**
-     * @hash   -373268132
      * @symbol  ??4DefinitionEvent\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     /**
-     * @hash   -495892877
      * @symbol  ??1DefinitionEvent\@\@QEAA\@XZ
      */
     MCAPI ~DefinitionEvent();

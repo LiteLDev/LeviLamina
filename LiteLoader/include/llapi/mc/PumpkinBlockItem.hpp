@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   1298002004
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@PumpkinBlockItem\@\@UEBAHXZ
      */
@@ -108,19 +107,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1936561507
      * @vftbl  113
      * @symbol  ?getEquipLocation\@PumpkinBlockItem\@\@UEBA?AW4ActorLocation\@\@XZ
      */
     virtual enum class ActorLocation getEquipLocation() const;
     /**
-     * @hash   -1957441676
      * @vftbl  114
      * @symbol  ?getEquipSound\@PumpkinBlockItem\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getEquipSound() const;
     /**
-     * @hash   168748854
      * @symbol  ??0PumpkinBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PumpkinBlockItem(std::string const &, int);

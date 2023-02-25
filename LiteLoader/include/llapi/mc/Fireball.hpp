@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1587262838
      * @vftbl  49
      * @symbol  ?normalTick\@Fireball\@\@UEAAXXZ
      */
@@ -58,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   1370152715
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@Fireball\@\@UEAAMXZ
      */
@@ -84,7 +82,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -1920849799
      * @vftbl  96
      * @symbol  ?isPickable\@Fireball\@\@UEAA_NXZ
      */
@@ -120,19 +117,16 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   466219939
      * @vftbl  143
      * @symbol  ?getPickRadius\@Fireball\@\@UEAAMXZ
      */
     virtual float getPickRadius();
     /**
-     * @hash   -775701311
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@Fireball\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @hash   1226318918
      * @vftbl  178
      * @symbol  ?canChangeDimensionsUsingPortal\@Fireball\@\@UEBA_NXZ
      */
@@ -173,13 +167,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -636918725
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Fireball\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   307889826
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Fireball\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -195,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1970433625
      * @vftbl  278
      * @symbol  ?getInertia\@Fireball\@\@MEAAMXZ
      */
@@ -206,30 +197,25 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -1897942053
      * @vftbl  280
      * @symbol  ?getTrailParticle\@Fireball\@\@MEAA?AW4ParticleType\@\@XZ
      */
     virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
     /**
-     * @hash   -1765975263
      * @symbol  ?canMakeStepSound\@Fireball\@\@MEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
     /**
-     * @hash   -1797177494
      * @symbol  ?onHit\@Fireball\@\@MEAAXAEBVHitResult\@\@\@Z
      */
     MCVAPI void onHit(class HitResult const &);
     /**
-     * @hash   -2014818513
      * @symbol  ?shouldBurn\@Fireball\@\@MEAA_NXZ
      */
     MCVAPI bool shouldBurn();
 #endif
     /**
-     * @hash   1810975297
      * @symbol  ??0Fireball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1983650873
      * @vftbl  69
      * @symbol  ?checkIsPathable\@SculkVeinBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1049808421
      * @vftbl  103
      * @symbol  ?asItemInstance\@SculkVeinBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -228,37 +226,31 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1240967805
      * @vftbl  187
      * @symbol  ?getResourceItem\@SculkVeinBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -255224069
      * @vftbl  188
      * @symbol  ?getResourceCount\@SculkVeinBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1609855596
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SculkVeinBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -733666384
      * @vftbl  193
      * @symbol  ?getMultifaceBlock\@SculkVeinBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getMultifaceBlock() const;
     /**
-     * @hash   -288829398
      * @vftbl  194
      * @symbol  ?getMultifaceSpreader\@SculkVeinBlock\@\@UEBAAEBVMultifaceSpreader\@\@XZ
      */
     virtual class MultifaceSpreader const & getMultifaceSpreader() const;
     /**
-     * @hash   1077675292
      * @symbol  ??0SculkVeinBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);

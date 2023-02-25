@@ -51,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -1419870096
      * @symbol  ??0MoveToWaterGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);

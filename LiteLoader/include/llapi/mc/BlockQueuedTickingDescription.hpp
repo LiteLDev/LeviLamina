@@ -35,29 +35,24 @@ public:
      */
     virtual ~BlockQueuedTickingDescription();
     /**
-     * @hash   277007218
      * @vftbl  1
      * @symbol  ?getName\@BlockQueuedTickingDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   215786418
      * @vftbl  2
      * @symbol  ?initializeComponent\@BlockQueuedTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @hash   -1285791025
      * @symbol  ?NameID\@BlockQueuedTickingDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   392574927
      * @symbol  ?bindType\@BlockQueuedTickingDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -94717962
      * @symbol  ?registerVersionUpgrades\@BlockQueuedTickingDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);

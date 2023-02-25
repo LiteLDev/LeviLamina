@@ -34,13 +34,11 @@ public:
      */
     virtual ~SurfaceRelativeThresholdFeature();
     /**
-     * @hash   -861560903
      * @vftbl  1
      * @symbol  ?place\@SurfaceRelativeThresholdFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -1750637840
      * @symbol  ??0SurfaceRelativeThresholdFeature\@\@QEAA\@XZ
      */
     MCAPI SurfaceRelativeThresholdFeature();

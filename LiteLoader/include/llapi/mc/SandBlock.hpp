@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   2103337704
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@SandBlock\@\@UEBA_NXZ
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -500837267
      * @vftbl  86
      * @symbol  ?onFertilized\@SandBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   1373475690
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@SandBlock\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   126261950
      * @vftbl  88
      * @symbol  ?canBeFertilized\@SandBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -210,19 +206,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   494622656
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@SandBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -157639893
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@SandBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1055006345
      * @vftbl  146
      * @symbol  ?getVariant\@SandBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -258,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   125710621
      * @vftbl  184
      * @symbol  ?getMapColor\@SandBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -269,25 +261,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1887758969
      * @vftbl  187
      * @symbol  ?getResourceItem\@SandBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1670516560
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SandBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1444336987
      * @vftbl  193
      * @symbol  ?getDustColor\@SandBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   820895040
      * @vftbl  194
      * @symbol  ?getDustParticleName\@SandBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -298,7 +286,6 @@ public:
      */
     virtual void __unk_vfn_195();
     /**
-     * @hash   -423106217
      * @symbol  ??0SandBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SandBlock(std::string const &, int);

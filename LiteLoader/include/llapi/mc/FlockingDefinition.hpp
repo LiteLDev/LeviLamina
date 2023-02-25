@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1729962944
      * @symbol  ??0FlockingDefinition\@\@QEAA\@XZ
      */
     MCAPI FlockingDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class FlockingComponent &) const;
     /**
-     * @hash   -1902312650
      * @symbol  ?buildSchema\@FlockingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VFlockingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>> &);

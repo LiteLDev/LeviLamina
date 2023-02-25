@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1857667204
      * @vftbl  0
      * @symbol  ?getJsonName\@SlimeMoveControlDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~SlimeMoveControlDescription();
     /**
-     * @hash   -320472969
      * @vftbl  2
      * @symbol  ?deserializeData\@SlimeMoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   1401140833
      * @vftbl  3
      * @symbol  ?serializeData\@SlimeMoveControlDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

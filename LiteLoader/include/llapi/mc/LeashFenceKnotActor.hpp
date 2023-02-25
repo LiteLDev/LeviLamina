@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -755937820
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@LeashFenceKnotActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -43,7 +42,6 @@ public:
      */
     virtual ~LeashFenceKnotActor();
     /**
-     * @hash   738356130
      * @vftbl  19
      * @symbol  ?remove\@LeashFenceKnotActor\@\@UEAAXXZ
      */
@@ -54,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1492738054
      * @vftbl  44
      * @symbol  ?teleportTo\@LeashFenceKnotActor\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
@@ -70,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -286830547
      * @vftbl  81
      * @symbol  ?getShadowRadius\@LeashFenceKnotActor\@\@UEBAMXZ
      */
@@ -91,7 +87,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -235960555
      * @vftbl  96
      * @symbol  ?isPickable\@LeashFenceKnotActor\@\@UEAA_NXZ
      */
@@ -147,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -1235597870
      * @vftbl  231
      * @symbol  ?getInteraction\@LeashFenceKnotActor\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
@@ -168,13 +162,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -2068040930
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@LeashFenceKnotActor\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   70265279
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@LeashFenceKnotActor\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -185,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   1304520748
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@LeashFenceKnotActor\@\@EEAAXXZ
      */
@@ -196,42 +187,35 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -879096074
      * @vftbl  278
      * @symbol  ?setDir\@LeashFenceKnotActor\@\@UEAAXH\@Z
      */
     virtual void setDir(int);
     /**
-     * @hash   -1680725230
      * @vftbl  279
      * @symbol  ?getWidth\@LeashFenceKnotActor\@\@UEBAHXZ
      */
     virtual int getWidth() const;
     /**
-     * @hash   2133973695
      * @vftbl  280
      * @symbol  ?getHeight\@LeashFenceKnotActor\@\@UEBAHXZ
      */
     virtual int getHeight() const;
     /**
-     * @hash   -759598768
      * @vftbl  281
      * @symbol  ?dropItem\@LeashFenceKnotActor\@\@UEAAXXZ
      */
     virtual void dropItem();
     /**
-     * @hash   -432711977
      * @vftbl  283
      * @symbol  ?wouldSurvive\@LeashFenceKnotActor\@\@UEAA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool wouldSurvive(class BlockSource &);
     /**
-     * @hash   -249433291
      * @symbol  ??0LeashFenceKnotActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -540795504
      * @symbol  ?numberofAnimalsAttached\@LeashFenceKnotActor\@\@QEAAHXZ
      */
     MCAPI int numberofAnimalsAttached();

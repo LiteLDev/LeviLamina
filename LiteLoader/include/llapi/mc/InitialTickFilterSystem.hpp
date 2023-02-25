@@ -32,12 +32,10 @@ public:
      */
     MCAPI static void blockFilterTickEntity(class StrictEntityContext const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &, class IConstBlockSource const &);
     /**
-     * @hash   409201692
      * @symbol  ?createBlockFilterSystem\@InitialTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
     /**
-     * @hash   -1379680692
      * @symbol  ?createTickingAreaFilterSystem\@InitialTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();

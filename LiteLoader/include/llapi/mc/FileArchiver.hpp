@@ -55,7 +55,6 @@ public:
      */
     MCAPI void setWorldConverter(std::unique_ptr<class FileArchiver::IWorldConverter>);
     /**
-     * @hash   1204889709
      * @symbol  ?EXTENSION_ADDON\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EXTENSION_ADDON;
@@ -64,34 +63,28 @@ public:
      */
     MCAPI static std::string const EXTENSION_EDITOR_ADDON;
     /**
-     * @hash   -1891760385
      * @symbol  ?EXTENSION_PROJECT\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EXTENSION_PROJECT;
     /**
-     * @hash   -1553243463
      * @symbol  ?EXTENSION_RESOURCEPACK\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EXTENSION_RESOURCEPACK;
     /**
-     * @hash   -437537505
      * @symbol  ?EXTENSION_TEMPLATE\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EXTENSION_TEMPLATE;
     /**
-     * @hash   -547910941
      * @symbol  ?EXTENSION_VANILLA\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EXTENSION_VANILLA;
     /**
-     * @hash   884189687
      * @symbol  ?IMPORT_LOCK_FILE\@FileArchiver\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const IMPORT_LOCK_FILE;
 
 //private:
     /**
-     * @hash   1421560633
      * @symbol  ?_printLevelResultMessage\@FileArchiver\@\@AEAAXAEBUResult\@1\@\@Z
      */
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);

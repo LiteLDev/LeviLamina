@@ -36,13 +36,11 @@ public:
      */
     virtual ~CoralFanHang();
     /**
-     * @hash   3340553
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@CoralFanHang\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   269258516
      * @vftbl  10
      * @symbol  ?getAABB\@CoralFanHang\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -168,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1888928573
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@CoralFanHang\@\@EEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1164238406
      * @vftbl  99
      * @symbol  ?neighborChanged\@CoralFanHang\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   460432518
      * @vftbl  103
      * @symbol  ?asItemInstance\@CoralFanHang\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -343576773
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@CoralFanHang\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   704829684
      * @vftbl  146
      * @symbol  ?getVariant\@CoralFanHang\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   2121898914
      * @vftbl  168
      * @symbol  ?onPlace\@CoralFanHang\@\@EEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -592694276
      * @vftbl  178
      * @symbol  ?canSurvive\@CoralFanHang\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,36 +261,30 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -102651582
      * @vftbl  187
      * @symbol  ?getResourceItem\@CoralFanHang\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   418374586
      * @vftbl  188
      * @symbol  ?getResourceCount\@CoralFanHang\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1069075877
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@CoralFanHang\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1355215057
      * @vftbl  193
      * @symbol  ?checkAlive\@CoralFanHang\@\@EEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2009754254
      * @symbol  ??0CoralFanHang\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CoralFanHang(std::string const &, int);
     /**
-     * @hash   -1761891021
      * @symbol  ?hasSupport\@CoralFanHang\@\@SA_NAEBVBlock\@\@E\@Z
      */
     MCAPI static bool hasSupport(class Block const &, unsigned char);

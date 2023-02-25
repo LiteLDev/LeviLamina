@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorHasAbilityTest();
     /**
-     * @hash   1795679193
      * @vftbl  2
      * @symbol  ?evaluate\@ActorHasAbilityTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   2133752809
      * @vftbl  4
      * @symbol  ?getName\@ActorHasAbilityTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

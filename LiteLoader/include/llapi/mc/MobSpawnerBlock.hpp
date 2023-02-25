@@ -36,7 +36,6 @@ public:
      */
     virtual ~MobSpawnerBlock();
     /**
-     * @hash   -1153833435
      * @vftbl  10
      * @symbol  ?getAABB\@MobSpawnerBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1471041052
      * @vftbl  22
      * @symbol  ?canProvideSupport\@MobSpawnerBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1896582429
      * @vftbl  62
      * @symbol  ?canContainLiquid\@MobSpawnerBlock\@\@UEBA_NXZ
      */
@@ -234,26 +231,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -980989917
      * @vftbl  187
      * @symbol  ?getResourceItem\@MobSpawnerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1359374731
      * @vftbl  188
      * @symbol  ?getResourceCount\@MobSpawnerBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCK
     /**
-     * @hash   -1000772136
      * @symbol  ?isInteractiveBlock\@MobSpawnerBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -1682504125
      * @symbol  ??0MobSpawnerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MobSpawnerBlock(std::string const &, int);

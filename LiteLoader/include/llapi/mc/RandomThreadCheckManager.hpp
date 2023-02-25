@@ -60,7 +60,6 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1865568502
      * @vftbl  6
      * @symbol  ?onAppResumed\@RandomThreadCheckManager\@\@UEAAXXZ
      */
@@ -70,12 +69,10 @@ public:
 
 private:
     /**
-     * @hash   527088277
      * @symbol  ?mInstance\@RandomThreadCheckManager\@\@0V?$unique_ptr\@VRandomThreadCheckManager\@\@U?$default_delete\@VRandomThreadCheckManager\@\@\@std\@\@\@std\@\@A
      */
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     /**
-     * @hash   -22982972
      * @symbol  ?mMutex\@RandomThreadCheckManager\@\@0Vrecursive_mutex\@std\@\@A
      */
     MCAPI static class std::recursive_mutex mMutex;

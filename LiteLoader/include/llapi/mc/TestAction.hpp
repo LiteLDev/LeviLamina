@@ -35,19 +35,16 @@ public:
      */
     virtual ~TestAction();
     /**
-     * @hash   437074527
      * @vftbl  1
      * @symbol  ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
-     * @hash   -1468046363
      * @vftbl  3
      * @symbol  ??8TestAction\@\@UEBA_NAEAVIRequestAction\@\@\@Z
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
-     * @hash   2074977764
      * @symbol  ??0TestAction\@\@QEAA\@XZ
      */
     MCAPI TestAction();

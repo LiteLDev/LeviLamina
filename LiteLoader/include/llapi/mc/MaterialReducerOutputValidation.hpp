@@ -36,7 +36,6 @@ public:
      */
     virtual ~MaterialReducerOutputValidation();
     /**
-     * @hash   1865576515
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   199044784
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -63,7 +61,6 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   770097990
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -74,20 +71,17 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -1308477661
      * @vftbl  8
      * @symbol  ?getContainerOffset\@MaterialReducerOutputValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @hash   -835477759
      * @vftbl  9
      * @symbol  ?getContainerSize\@MaterialReducerOutputValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCEROUTPUTVALIDATION
     /**
-     * @hash   -498906582
      * @symbol  ?canDestroy\@MaterialReducerOutputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;

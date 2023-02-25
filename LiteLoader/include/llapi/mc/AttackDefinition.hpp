@@ -37,7 +37,6 @@ public:
      */
     virtual ~AttackDefinition();
     /**
-     * @hash   164781161
      * @vftbl  1
      * @symbol  ?load\@AttackDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

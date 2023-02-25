@@ -35,24 +35,20 @@ public:
      */
     virtual ~BlockRandomTickingDescription();
     /**
-     * @hash   -14336750
      * @vftbl  1
      * @symbol  ?getName\@BlockRandomTickingDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   1435314674
      * @vftbl  2
      * @symbol  ?initializeComponent\@BlockRandomTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @hash   -885411209
      * @symbol  ?NameID\@BlockRandomTickingDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   -177231857
      * @symbol  ?bindType\@BlockRandomTickingDescription\@\@SAXXZ
      */
     MCAPI static void bindType();

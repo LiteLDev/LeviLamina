@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   189761284
      * @symbol  ??1OSInformation\@\@QEAA\@XZ
      */
     MCAPI ~OSInformation();

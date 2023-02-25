@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1305924594
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Balloon\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -43,7 +42,6 @@ public:
      */
     virtual ~Balloon();
     /**
-     * @hash   -1487157140
      * @vftbl  19
      * @symbol  ?remove\@Balloon\@\@UEAAXXZ
      */
@@ -79,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   2076339775
      * @vftbl  96
      * @symbol  ?isPickable\@Balloon\@\@UEAA_NXZ
      */
@@ -150,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1984556120
      * @vftbl  263
      * @symbol  ?_hurt\@Balloon\@\@UEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -161,12 +157,10 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -906103077
      * @symbol  ??0Balloon\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1773035158
      * @symbol  ?remove\@Balloon\@\@QEAAX_N\@Z
      */
     MCAPI void remove(bool);

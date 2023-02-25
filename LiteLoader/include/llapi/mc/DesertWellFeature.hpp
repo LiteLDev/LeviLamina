@@ -36,7 +36,6 @@ public:
      */
     virtual ~DesertWellFeature();
     /**
-     * @hash   -1902151523
      * @vftbl  3
      * @symbol  ?place\@DesertWellFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

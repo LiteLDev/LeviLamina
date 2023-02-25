@@ -36,7 +36,6 @@ public:
      */
     virtual ~EndIslandFeature();
     /**
-     * @hash   1162206032
      * @vftbl  3
      * @symbol  ?place\@EndIslandFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

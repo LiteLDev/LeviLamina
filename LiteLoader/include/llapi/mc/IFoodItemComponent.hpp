@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -434094821
      * @symbol  ?CAN_ALWAYS_EAT\@IFoodItemComponent\@\@2QBDB
      */
     MCAPI static char const CAN_ALWAYS_EAT[];
     /**
-     * @hash   781536713
      * @symbol  ?NUTRITION\@IFoodItemComponent\@\@2QBDB
      */
     MCAPI static char const NUTRITION[];
     /**
-     * @hash   1120646825
      * @symbol  ?SATURATION_MODIFIER\@IFoodItemComponent\@\@2QBDB
      */
     MCAPI static char const SATURATION_MODIFIER[];

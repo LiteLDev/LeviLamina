@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1183263729
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@DeepslateBlock\@\@UEBA_NXZ
      */
@@ -192,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   2072024783
      * @vftbl  159
      * @symbol  ?tryGetInfested\@DeepslateBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
@@ -228,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2129683474
      * @vftbl  187
      * @symbol  ?getResourceItem\@DeepslateBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -615217689
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@DeepslateBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -978214226
      * @symbol  ??0DeepslateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DeepslateBlock(std::string const &, int);

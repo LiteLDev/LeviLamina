@@ -34,19 +34,16 @@ public:
      */
     virtual ~SculkSensorVibrationConfig();
     /**
-     * @hash   -1648935848
      * @vftbl  1
      * @symbol  ?onSignalReceive\@SculkSensorVibrationConfig\@\@UEAAXAEAVBlockSource\@\@VBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@M3\@Z
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @hash   -522798866
      * @vftbl  2
      * @symbol  ?isValidVibration\@VibrationListenerConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @hash   -662413747
      * @vftbl  3
      * @symbol  ?shouldListen\@SculkSensorVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */

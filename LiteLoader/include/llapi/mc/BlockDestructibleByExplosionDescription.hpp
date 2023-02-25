@@ -33,29 +33,24 @@ public:
      */
     virtual ~BlockDestructibleByExplosionDescription();
     /**
-     * @hash   434508662
      * @vftbl  1
      * @symbol  ?getName\@BlockDestructibleByExplosionDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   552250926
      * @vftbl  2
      * @symbol  ?initializeComponent\@BlockDestructibleByExplosionDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @hash   878769695
      * @symbol  ?NameID\@BlockDestructibleByExplosionDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   -1041042065
      * @symbol  ?bindType\@BlockDestructibleByExplosionDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   2114571406
      * @symbol  ?registerVersionUpgrades\@BlockDestructibleByExplosionDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);

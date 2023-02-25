@@ -36,7 +36,6 @@ public:
      */
     virtual ~MoveTowardsDwellingRestrictionGoal();
     /**
-     * @hash   115993276
      * @vftbl  1
      * @symbol  ?canUse\@MoveTowardsDwellingRestrictionGoal\@\@UEAA_NXZ
      */
@@ -57,13 +56,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   1692297428
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@MoveTowardsDwellingRestrictionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   842213369
      * @symbol  ??0MoveTowardsDwellingRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI MoveTowardsDwellingRestrictionGoal(class Mob &);

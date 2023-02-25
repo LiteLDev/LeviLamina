@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   1094375657
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@SpongeBlock\@\@UEBA_NH\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1131269387
      * @vftbl  99
      * @symbol  ?neighborChanged\@SpongeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -198,19 +196,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1950689766
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@SpongeBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -137028799
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@SpongeBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1526136872
      * @vftbl  151
      * @symbol  ?animateTick\@SpongeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1427092431
      * @vftbl  168
      * @symbol  ?onPlace\@SpongeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1242316601
      * @vftbl  171
      * @symbol  ?tick\@SpongeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -263,46 +256,38 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -985639023
      * @vftbl  187
      * @symbol  ?getResourceItem\@SpongeBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   301165882
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SpongeBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   570715994
      * @symbol  ??0SpongeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SpongeBlock(std::string const &, int, class Material const &);
 
 //private:
     /**
-     * @hash   142151394
      * @symbol  ?_attemptAbsorbWater\@SpongeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _attemptAbsorbWater(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2144068947
      * @symbol  ?_evaporateWater\@SpongeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _evaporateWater(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   60329752
      * @symbol  ?_performAbsorbWater\@SpongeBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _performAbsorbWater(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -775494885
      * @symbol  ?_setShouldDry\@SpongeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _setShouldDry(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2038215174
      * @symbol  ?_spawnAbsorbParticles\@SpongeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _spawnAbsorbParticles(class BlockSource &, class BlockPos const &) const;

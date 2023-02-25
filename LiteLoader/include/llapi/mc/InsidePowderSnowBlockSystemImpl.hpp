@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   246777545
      * @symbol  ?SLOWDOWN_MODIFIER\@InsidePowderSnowBlockSystemImpl\@\@2VVec3\@\@B
      */
     MCAPI static class Vec3 const SLOWDOWN_MODIFIER;

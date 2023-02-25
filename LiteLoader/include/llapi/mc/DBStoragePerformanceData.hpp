@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   -1101119979
      * @symbol  ?resetAll\@DBStoragePerformanceData\@\@QEAAXXZ
      */
     MCAPI void resetAll();
     /**
-     * @hash   -838241732
      * @symbol  ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0M\@\@std\@\@A
      */
     MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
     /**
-     * @hash   461131493
      * @symbol  ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
      */
     MCAPI static class std::array<char const *, 4> OPERATION_NAMES;

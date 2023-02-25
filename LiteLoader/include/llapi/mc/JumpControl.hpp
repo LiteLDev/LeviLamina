@@ -39,13 +39,11 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -656568489
      * @vftbl  2
      * @symbol  ?clone\@JumpControl\@\@UEBA?AV?$unique_ptr\@VJumpControl\@\@U?$default_delete\@VJumpControl\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
-     * @hash   -1838393644
      * @vftbl  3
      * @symbol  ?tick\@JumpControl\@\@MEAAXAEAVJumpControlComponent\@\@AEAVMob\@\@\@Z
      */
@@ -56,40 +54,33 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   753079176
      * @vftbl  5
      * @symbol  ?getJumpPower\@JumpControl\@\@MEBAMAEBVJumpControlComponent\@\@\@Z
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
     /**
-     * @hash   1580998109
      * @symbol  ?getJumpDelay\@JumpControl\@\@MEBAHAEBVJumpControlComponent\@\@\@Z
      */
     MCVAPI int getJumpDelay(class JumpControlComponent const &) const;
     /**
-     * @hash   738010689
      * @symbol  ?getJumpType\@JumpControl\@\@MEBA?AW4JumpType\@\@AEBVJumpControlComponent\@\@\@Z
      */
     MCVAPI enum class JumpType getJumpType(class JumpControlComponent const &) const;
     /**
-     * @hash   1260571561
      * @symbol  ?initializeInternal\@JumpControl\@\@UEAAXAEAVMob\@\@PEAUJumpControlDescription\@\@\@Z
      */
     MCVAPI void initializeInternal(class Mob &, struct JumpControlDescription *);
     /**
-     * @hash   -910761367
      * @symbol  ?resetSpeedModifier\@JumpControl\@\@MEAAXAEBVJumpControlComponent\@\@AEAVMob\@\@\@Z
      */
     MCVAPI void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
     /**
-     * @hash   -457830207
      * @symbol  ?setJumpType\@JumpControl\@\@MEAAXAEAVJumpControlComponent\@\@W4JumpType\@\@\@Z
      */
     MCVAPI void setJumpType(class JumpControlComponent &, enum class JumpType);
 #endif
     /**
-     * @hash   288801355
      * @symbol  ??0JumpControl\@\@QEAA\@XZ
      */
     MCAPI JumpControl();

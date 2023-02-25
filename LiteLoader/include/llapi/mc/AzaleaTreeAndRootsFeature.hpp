@@ -36,7 +36,6 @@ public:
      */
     virtual ~AzaleaTreeAndRootsFeature();
     /**
-     * @hash   -1893874472
      * @vftbl  3
      * @symbol  ?place\@AzaleaTreeAndRootsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,12 +43,10 @@ public:
 
 //private:
     /**
-     * @hash   -937232235
      * @symbol  ?_isLushGroundReplaceable\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1626997535
      * @symbol  ?_tryPlaceAzaleaTree\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@I\@Z
      */
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;

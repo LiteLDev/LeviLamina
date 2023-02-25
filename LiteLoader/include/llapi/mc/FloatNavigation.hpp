@@ -36,7 +36,6 @@ public:
      */
     virtual ~FloatNavigation();
     /**
-     * @hash   121732763
      * @vftbl  10
      * @symbol  ?travel\@FloatNavigation\@\@MEAA_NAEAVNavigationComponent\@\@AEAVMob\@\@AEAM22\@Z
      */

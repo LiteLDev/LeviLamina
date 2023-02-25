@@ -35,13 +35,11 @@ public:
      */
     virtual ~FitDoubleYRoom();
     /**
-     * @hash   -475862647
      * @vftbl  1
      * @symbol  ?fits\@FitDoubleYRoom\@\@UEBA_NAEBVRoomDefinition\@\@\@Z
      */
     virtual bool fits(class RoomDefinition const &) const;
     /**
-     * @hash   1706555218
      * @vftbl  2
      * @symbol  ?create\@FitDoubleYRoom\@\@UEAA?AV?$unique_ptr\@VOceanMonumentPiece\@\@U?$default_delete\@VOceanMonumentPiece\@\@\@std\@\@\@std\@\@AEAHV?$shared_ptr\@VRoomDefinition\@\@\@3\@AEAVRandom\@\@\@Z
      */

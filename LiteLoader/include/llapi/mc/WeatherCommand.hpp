@@ -36,13 +36,11 @@ public:
      */
     virtual ~WeatherCommand();
     /**
-     * @hash   1659426780
      * @vftbl  1
      * @symbol  ?execute\@WeatherCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1519064132
      * @symbol  ?setup\@WeatherCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

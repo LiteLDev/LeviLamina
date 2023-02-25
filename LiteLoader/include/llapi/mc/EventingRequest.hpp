@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -1614480205
      * @symbol  ??1EventingRequest\@\@QEAA\@XZ
      */
     MCAPI ~EventingRequest();
     /**
-     * @hash   1110676239
      * @symbol  ?addPersonaEmotePlayed\@EventingRequest\@\@SA?AU1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NH\@Z
      */
     MCAPI static struct EventingRequest addPersonaEmotePlayed(std::string const &, bool, int);
     /**
-     * @hash   -1483276599
      * @symbol  ?addPlayerBounced\@EventingRequest\@\@SA?AU1\@AEBUActorUniqueID\@\@AEBVBlock\@\@H\@Z
      */
     MCAPI static struct EventingRequest addPlayerBounced(struct ActorUniqueID const &, class Block const &, int);

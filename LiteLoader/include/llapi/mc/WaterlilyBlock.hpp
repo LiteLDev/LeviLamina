@@ -36,7 +36,6 @@ public:
      */
     virtual ~WaterlilyBlock();
     /**
-     * @hash   -698839332
      * @vftbl  10
      * @symbol  ?getAABB\@WaterlilyBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -72,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -234664818
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@WaterlilyBlock\@\@UEBA_NXZ
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1226235372
      * @vftbl  62
      * @symbol  ?canContainLiquid\@WaterlilyBlock\@\@UEBA_NXZ
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   14206643
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@WaterlilyBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -2067761242
      * @vftbl  113
      * @symbol  ?entityInside\@WaterlilyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1771712802
      * @vftbl  135
      * @symbol  ?getColor\@WaterlilyBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -2135650343
      * @vftbl  137
      * @symbol  ?getColorAtPos\@WaterlilyBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -253,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   279751812
      * @vftbl  178
      * @symbol  ?canSurvive\@WaterlilyBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   387374970
      * @symbol  ??0WaterlilyBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WaterlilyBlock(std::string const &, int);

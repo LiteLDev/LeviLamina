@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1909803198
      * @symbol  ?createSystem\@BatPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

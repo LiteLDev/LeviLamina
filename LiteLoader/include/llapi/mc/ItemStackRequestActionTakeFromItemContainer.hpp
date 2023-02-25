@@ -48,7 +48,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -760466743
      * @symbol  ??0ItemStackRequestActionTakeFromItemContainer\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionTakeFromItemContainer();

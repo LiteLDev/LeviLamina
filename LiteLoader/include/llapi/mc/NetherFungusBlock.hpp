@@ -36,7 +36,6 @@ public:
      */
     virtual ~NetherFungusBlock();
     /**
-     * @hash   559138863
      * @vftbl  10
      * @symbol  ?getAABB\@NetherFungusBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1059429751
      * @vftbl  62
      * @symbol  ?canContainLiquid\@NetherFungusBlock\@\@UEBA_NXZ
      */
@@ -168,31 +166,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -777783833
      * @vftbl  86
      * @symbol  ?onFertilized\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   1704764948
      * @vftbl  88
      * @symbol  ?canBeFertilized\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   2075220698
      * @vftbl  91
      * @symbol  ?mayPlace\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -411039488
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1084241455
      * @vftbl  99
      * @symbol  ?neighborChanged\@NetherFungusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -255359083
      * @vftbl  171
      * @symbol  ?tick\@NetherFungusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1785372639
      * @vftbl  178
      * @symbol  ?canSurvive\@NetherFungusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -271,13 +262,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFUNGUSBLOCK
     /**
-     * @hash   -1173900032
      * @symbol  ?waterSpreadCausesSpawn\@NetherFungusBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -1254245219
      * @symbol  ??0NetherFungusBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI NetherFungusBlock(std::string const &, int);

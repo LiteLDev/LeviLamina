@@ -46,49 +46,41 @@ public:
      */
     virtual ~IntArrayTag();
     /**
-     * @hash   159141217
      * @vftbl  2
      * @symbol  ?write\@IntArrayTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @hash   -1149717264
      * @vftbl  3
      * @symbol  ?load\@IntArrayTag\@\@UEAAXAEAVIDataInput\@\@\@Z
      */
     virtual void load(class IDataInput &);
     /**
-     * @hash   1067286006
      * @vftbl  4
      * @symbol  ?toString\@IntArrayTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string toString() const;
     /**
-     * @hash   -571496501
      * @vftbl  5
      * @symbol  ?getId\@IntArrayTag\@\@UEBA?AW4Type\@Tag\@\@XZ
      */
     virtual enum class Tag::Type getId() const;
     /**
-     * @hash   -1330636810
      * @vftbl  6
      * @symbol  ?equals\@IntArrayTag\@\@UEBA_NAEBVTag\@\@\@Z
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @hash   -176135320
      * @vftbl  9
      * @symbol  ?copy\@IntArrayTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @hash   -1026529730
      * @vftbl  10
      * @symbol  ?hash\@IntArrayTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
     /**
-     * @hash   229549852
      * @symbol  ??0IntArrayTag\@\@QEAA\@XZ
      */
     MCAPI IntArrayTag();

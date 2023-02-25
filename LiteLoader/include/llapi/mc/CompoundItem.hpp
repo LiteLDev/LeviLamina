@@ -72,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   -1373243612
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@CompoundItem\@\@UEBA_NH\@Z
      */
@@ -108,79 +107,65 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1268018100
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@CompoundItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -657217700
      * @vftbl  117
      * @symbol  ?setIconInfo\@CompoundItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -978093739
      * @vftbl  118
      * @symbol  ?getIconInfo\@CompoundItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -1507404683
      * @symbol  ??0CompoundItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVExperiments\@\@\@Z
      */
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
     /**
-     * @hash   1378398955
      * @symbol  ?getCompoundType\@CompoundItem\@\@SA?AW4CompoundType\@\@AEBVItemDescriptor\@\@\@Z
      */
     MCAPI static enum class CompoundType getCompoundType(class ItemDescriptor const &);
     /**
-     * @hash   1123626949
      * @symbol  ?getIngredientForCompound\@CompoundItem\@\@SA?AVRecipeIngredient\@\@W4CompoundType\@\@\@Z
      */
     MCAPI static class RecipeIngredient getIngredientForCompound(enum class CompoundType);
     /**
-     * @hash   2248766
      * @symbol  ?getItemForCompound\@CompoundItem\@\@SA?AVItemInstance\@\@W4CompoundType\@\@H\@Z
      */
     MCAPI static class ItemInstance getItemForCompound(enum class CompoundType, int);
     /**
-     * @hash   80867809
      * @symbol  ?isCompoundItem\@CompoundItem\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
     /**
-     * @hash   -1725837965
      * @symbol  ?unregisterSpecialCompounds\@CompoundItem\@\@SAXXZ
      */
     MCAPI static void unregisterSpecialCompounds();
 
 //private:
     /**
-     * @hash   852044934
      * @symbol  ?_registerSpecialCompound\@CompoundItem\@\@AEAAXAEBVItemInstance\@\@W4CompoundType\@\@\@Z
      */
     MCAPI void _registerSpecialCompound(class ItemInstance const &, enum class CompoundType);
     /**
-     * @hash   838215716
      * @symbol  ?_registerSpecialCompounds\@CompoundItem\@\@AEAAXAEBVExperiments\@\@\@Z
      */
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     /**
-     * @hash   315496779
      * @symbol  ?_getName\@CompoundItem\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CompoundType\@\@\@Z
      */
     MCAPI static std::string _getName(enum class CompoundType);
 
 private:
     /**
-     * @hash   -462174491
      * @symbol  ?mIdToSpecialCompound\@CompoundItem\@\@0V?$unordered_map\@HHU?$hash\@H\@std\@\@U?$equal_to\@H\@2\@V?$allocator\@U?$pair\@$$CBHH\@std\@\@\@2\@\@std\@\@A
      */
     MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
     /**
-     * @hash   1210188544
      * @symbol  ?mTypeToSpecialCompound\@CompoundItem\@\@0V?$unordered_map\@HVItemInstance\@\@U?$hash\@H\@std\@\@U?$equal_to\@H\@3\@V?$allocator\@U?$pair\@$$CBHVItemInstance\@\@\@std\@\@\@3\@\@std\@\@A
      */
     MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;

@@ -35,13 +35,11 @@ public:
      */
     virtual ~FitSimpleRoom();
     /**
-     * @hash   -1669234971
      * @vftbl  1
      * @symbol  ?fits\@FitSimpleRoom\@\@UEBA_NAEBVRoomDefinition\@\@\@Z
      */
     virtual bool fits(class RoomDefinition const &) const;
     /**
-     * @hash   863763966
      * @vftbl  2
      * @symbol  ?create\@FitSimpleRoom\@\@UEAA?AV?$unique_ptr\@VOceanMonumentPiece\@\@U?$default_delete\@VOceanMonumentPiece\@\@\@std\@\@\@std\@\@AEAHV?$shared_ptr\@VRoomDefinition\@\@\@3\@AEAVRandom\@\@\@Z
      */

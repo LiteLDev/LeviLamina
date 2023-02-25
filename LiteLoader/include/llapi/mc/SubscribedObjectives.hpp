@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   353011708
      * @symbol  ?addObjective\@SubscribedObjectives\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addObjective(std::string const &);
     /**
-     * @hash   -487090722
      * @symbol  ?removeObjective\@SubscribedObjectives\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void removeObjective(std::string const &);

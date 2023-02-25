@@ -221,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1543742359
      * @vftbl  188
      * @symbol  ?getResourceCount\@NetherReactorBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1376009030
      * @symbol  ??0NetherReactorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI NetherReactorBlock(std::string const &, int, class Material const &);

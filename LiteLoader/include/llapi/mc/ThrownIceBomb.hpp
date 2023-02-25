@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   90493656
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ThrownIceBomb\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -1069972239
      * @symbol  ??0ThrownIceBomb\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ThrownIceBomb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

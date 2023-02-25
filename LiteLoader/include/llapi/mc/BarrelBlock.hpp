@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -1837704178
      * @vftbl  51
      * @symbol  ?isSignalSource\@BarrelBlock\@\@UEBA_NXZ
      */
@@ -182,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   954981839
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@BarrelBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -193,13 +191,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   319241767
      * @vftbl  146
      * @symbol  ?getVariant\@BarrelBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -1753974581
      * @vftbl  150
      * @symbol  ?getFaceFlip\@BarrelBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
@@ -210,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   53865976
      * @vftbl  162
      * @symbol  ?onRemove\@BarrelBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   17410940
      * @vftbl  177
      * @symbol  ?use\@BarrelBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -253,28 +247,23 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCK
     /**
-     * @hash   2070467289
      * @symbol  ?hasComparatorSignal\@BarrelBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   184604119
      * @symbol  ?isContainerBlock\@BarrelBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isContainerBlock() const;
     /**
-     * @hash   1476345334
      * @symbol  ?isInteractiveBlock\@BarrelBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1585821566
      * @symbol  ??0BarrelBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -1963485312
      * @symbol  ?setOpen\@BarrelBlock\@\@SAX_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);

@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1844885464
      * @vftbl  99
      * @symbol  ?neighborChanged\@MagmaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -187,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   924415382
      * @vftbl  146
      * @symbol  ?getVariant\@MagmaBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   1368660155
      * @vftbl  151
      * @symbol  ?animateTick\@MagmaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -224,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -863045796
      * @vftbl  171
      * @symbol  ?tick\@MagmaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -720537383
      * @vftbl  172
      * @symbol  ?randomTick\@MagmaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -585624937
      * @vftbl  183
      * @symbol  ?getEmissiveBrightness\@MagmaBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -253,20 +247,17 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAGMABLOCK
     /**
-     * @hash   1620142332
      * @symbol  ?shouldTickOnSetBlock\@MagmaBlock\@\@UEBA_NXZ
      */
     MCVAPI bool shouldTickOnSetBlock() const;
 #endif
     /**
-     * @hash   1064854788
      * @symbol  ??0MagmaBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MagmaBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -1855643572
      * @symbol  ?addToTickQueue\@MagmaBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void addToTickQueue(class BlockSource &, class BlockPos const &, class Random &) const;

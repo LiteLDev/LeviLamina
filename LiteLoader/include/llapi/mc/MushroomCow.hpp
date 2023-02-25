@@ -147,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1195639278
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@MushroomCow\@\@UEAA_N_N\@Z
      */
@@ -168,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1681593377
      * @symbol  ??0MushroomCow\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MushroomCow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

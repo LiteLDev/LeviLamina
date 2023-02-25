@@ -31,17 +31,14 @@ public:
 
 public:
     /**
-     * @hash   -1425097854
      * @symbol  ??0PacketViolationDetectedTelemetryData\@\@QEAA\@AEBUExtendedStreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@\@Z
      */
     MCAPI PacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
     /**
-     * @hash   467803250
      * @symbol  ?WriteEventData\@PacketViolationDetectedTelemetryData\@\@QEBAXAEAVEvent\@Events\@Social\@\@\@Z
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
-     * @hash   4275150
      * @symbol  ??1PacketViolationDetectedTelemetryData\@\@QEAA\@XZ
      */
     MCAPI ~PacketViolationDetectedTelemetryData();
@@ -50,7 +47,6 @@ public:
 
 private:
     /**
-     * @hash   746715751
      * @symbol  ?mEventName\@PacketViolationDetectedTelemetryData\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const mEventName;

@@ -156,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   885996491
      * @vftbl  86
      * @symbol  ?onFertilized\@MossBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -659145840
      * @vftbl  88
      * @symbol  ?canBeFertilized\@MossBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -472418167
      * @symbol  ??0MossBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MossBlock(std::string const &, int);

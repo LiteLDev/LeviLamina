@@ -35,7 +35,6 @@ public:
      */
     virtual ~SlimeRandomDirectionGoal();
     /**
-     * @hash   -1364870071
      * @vftbl  1
      * @symbol  ?canUse\@SlimeRandomDirectionGoal\@\@UEAA_NXZ
      */
@@ -61,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   2069533341
      * @vftbl  6
      * @symbol  ?tick\@SlimeRandomDirectionGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -408531305
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SlimeRandomDirectionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1754364822
      * @symbol  ??0SlimeRandomDirectionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SlimeRandomDirectionGoal(class Mob &);

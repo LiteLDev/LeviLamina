@@ -65,35 +65,29 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   1456569287
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@PlayerVehicleTamedGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERVEHICLETAMEDGOAL
     /**
-     * @hash   -170688761
      * @symbol  ?canContinueToUse\@PlayerVehicleTamedGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @hash   1421004457
      * @symbol  ?canUse\@PlayerVehicleTamedGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canUse();
     /**
-     * @hash   1801037314
      * @symbol  ?start\@PlayerVehicleTamedGoal\@\@UEAAXXZ
      */
     MCVAPI void start();
     /**
-     * @hash   -624789283
      * @symbol  ?tick\@PlayerVehicleTamedGoal\@\@UEAAXXZ
      */
     MCVAPI void tick();
 #endif
     /**
-     * @hash   124912614
      * @symbol  ??0PlayerVehicleTamedGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI PlayerVehicleTamedGoal(class Mob &);

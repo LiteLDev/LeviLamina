@@ -43,7 +43,6 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -222437097
      * @vftbl  10
      * @symbol  ?executeEvent\@HatchetItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -74,7 +73,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -180533974
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@HatchetItem\@\@UEBAHXZ
      */
@@ -115,13 +113,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   230826872
      * @vftbl  88
      * @symbol  ?getDestroySpeed\@HatchetItem\@\@UEBAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
-     * @hash   1797358727
      * @symbol  ??0HatchetItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */
     MCAPI HatchetItem(std::string const &, int, class Item::Tier const &);

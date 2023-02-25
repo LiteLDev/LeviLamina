@@ -36,7 +36,6 @@ public:
      */
     virtual ~NetherBrightnessRamp();
     /**
-     * @hash   -611452013
      * @vftbl  2
      * @symbol  ?getBaseAmbientValue\@NetherBrightnessRamp\@\@UEBAMXZ
      */

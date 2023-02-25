@@ -36,24 +36,20 @@ public:
      */
     virtual ~AllowListEntry();
     /**
-     * @hash   -16748721
      * @vftbl  1
      * @symbol  ?serialize\@AllowListEntry\@\@UEAAXAEAVValue\@Json\@\@\@Z
      */
     virtual void serialize(class Json::Value &);
     /**
-     * @hash   -905658960
      * @vftbl  2
      * @symbol  ?deserialize\@AllowListEntry\@\@UEAAXAEAVValue\@Json\@\@\@Z
      */
     virtual void deserialize(class Json::Value &);
     /**
-     * @hash   171388016
      * @symbol  ??0AllowListEntry\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI AllowListEntry(std::string);
     /**
-     * @hash   -1530196946
      * @symbol  ??0AllowListEntry\@\@QEAA\@AEAVValue\@Json\@\@\@Z
      */
     MCAPI AllowListEntry(class Json::Value &);

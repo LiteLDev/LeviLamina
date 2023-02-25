@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -2126595731
      * @vftbl  50
      * @symbol  ?isGlint\@EnchantedBookItem\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -73,13 +72,11 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -351086312
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@EnchantedBookItem\@\@UEBAHXZ
      */
     virtual int getEnchantSlot() const;
     /**
-     * @hash   -1933291835
      * @vftbl  63
      * @symbol  ?getEnchantValue\@EnchantedBookItem\@\@UEBAHXZ
      */
@@ -120,7 +117,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   839249949
      * @symbol  ??0EnchantedBookItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI EnchantedBookItem(std::string const &, int, bool);

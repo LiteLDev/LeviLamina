@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1716796940
      * @vftbl  0
      * @symbol  ?getJsonName\@AnimationScriptsDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~AnimationScriptsDescription();
     /**
-     * @hash   1509945463
      * @vftbl  2
      * @symbol  ?deserializeData\@AnimationScriptsDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   923825329
      * @vftbl  3
      * @symbol  ?serializeData\@AnimationScriptsDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

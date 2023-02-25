@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   -204376316
      * @symbol  ?createSystem\@ItemActorPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   539675821
      * @symbol  ?_doItemActorPostNormalTickSystem\@ItemActorPostNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doItemActorPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);

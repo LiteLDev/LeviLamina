@@ -32,22 +32,18 @@ public:
      */
     MCAPI static bool _calculateAllPassengersRailMovementInput(std::vector<struct StrictActorIDEntityContextPair> const &, class Vec3 &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>);
     /**
-     * @hash   -566396264
      * @symbol  ?createCleanupSystem\@MinecartMoveAlongRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
-     * @hash   338229962
      * @symbol  ?createPostRailMovementPositionSystem\@MinecartMoveAlongRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPostRailMovementPositionSystem();
     /**
-     * @hash   1712428568
      * @symbol  ?createPreRailMovementPositionSystem\@MinecartMoveAlongRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPreRailMovementPositionSystem();
     /**
-     * @hash   1785590986
      * @symbol  ?createRailMovementSystem\@MinecartMoveAlongRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createRailMovementSystem();

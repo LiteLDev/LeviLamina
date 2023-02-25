@@ -106,91 +106,74 @@ public:
      */
     virtual void __unk_vfn_14();
     /**
-     * @hash   -669041803
      * @vftbl  15
      * @symbol  ?loadActorInternalComponentInfo\@DefaultDataLoadHelper\@\@UEAAPEBUComponentInfo\@InternalComponentRegistry\@\@AEBV?$unordered_map\@VHashedString\@\@UComponentInfo\@InternalComponentRegistry\@\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@5\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@UComponentInfo\@InternalComponentRegistry\@\@\@std\@\@\@5\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@5\@\@Z
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
-     * @hash   -14996679
      * @vftbl  16
      * @symbol  ?getType\@DefaultDataLoadHelper\@\@UEBA?AW4DataLoadHelperType\@\@XZ
      */
     virtual enum class DataLoadHelperType getType() const;
     /**
-     * @hash   1444101987
      * @vftbl  17
      * @symbol  ?shouldResetTime\@DefaultDataLoadHelper\@\@UEAA_NXZ
      */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
     /**
-     * @hash   577440335
      * @symbol  ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
-     * @hash   312935296
      * @symbol  ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     /**
-     * @hash   -1403247539
      * @symbol  ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
-     * @hash   1123166689
      * @symbol  ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
      */
     MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
-     * @hash   1730851927
      * @symbol  ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
-     * @hash   -2000192025
      * @symbol  ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
      */
     MCVAPI unsigned char loadFacingID(unsigned char);
     /**
-     * @hash   201859773
      * @symbol  ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
      */
     MCVAPI enum class Mirror loadMirror(enum class Mirror);
     /**
-     * @hash   -911463422
      * @symbol  ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
     MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
-     * @hash   448947361
      * @symbol  ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
     /**
-     * @hash   -703654146
      * @symbol  ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
      */
     MCVAPI enum class Rotation loadRotation(enum class Rotation);
     /**
-     * @hash   -207501283
      * @symbol  ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
-     * @hash   -1337057060
      * @symbol  ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
     MCVAPI float loadRotationDegreesY(float);
     /**
-     * @hash   -856156728
      * @symbol  ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
     MCVAPI float loadRotationRadiansX(float);
     /**
-     * @hash   -1985712505
      * @symbol  ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
     MCVAPI float loadRotationRadiansY(float);

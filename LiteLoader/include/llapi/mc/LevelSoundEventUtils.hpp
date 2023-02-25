@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   47553127
      * @symbol  ?serializePercentageToData\@LevelSoundEventUtils\@\@SAHM\@Z
      */
     MCAPI static int serializePercentageToData(float);
@@ -39,7 +38,6 @@ public:
 
 private:
     /**
-     * @hash   572687573
      * @symbol  ?MAX_INT_REPRESENTABLE_AS_FLOAT\@LevelSoundEventUtils\@\@0HB
      */
     MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;

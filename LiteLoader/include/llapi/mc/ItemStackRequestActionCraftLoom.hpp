@@ -49,24 +49,20 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -2078602068
      * @vftbl  4
      * @symbol  ?_write\@ItemStackRequestActionCraftLoom\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   -1823643068
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionCraftLoom\@\@UEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -699543843
      * @symbol  ??0ItemStackRequestActionCraftLoom\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftLoom();
     /**
-     * @hash   595206876
      * @symbol  ?getPatternNameId\@ItemStackRequestActionCraftLoom\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getPatternNameId() const;

@@ -36,7 +36,6 @@ public:
      */
     virtual ~CactusBlock();
     /**
-     * @hash   -1908468848
      * @vftbl  10
      * @symbol  ?getAABB\@CactusBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -142,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   1109504678
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@CactusBlock\@\@UEBA_NH\@Z
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -195342240
      * @vftbl  92
      * @symbol  ?mayPlace\@CactusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   687091026
      * @vftbl  99
      * @symbol  ?neighborChanged\@CactusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   828304186
      * @vftbl  113
      * @symbol  ?entityInside\@CactusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1478930180
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@CactusBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
@@ -222,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -144975550
      * @vftbl  158
      * @symbol  ?dealsContactDamage\@CactusBlock\@\@UEBA_NAEBVActor\@\@AEBVBlock\@\@_N\@Z
      */
@@ -248,13 +241,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1637860410
      * @vftbl  171
      * @symbol  ?tick\@CactusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -321391085
      * @vftbl  172
      * @symbol  ?randomTick\@CactusBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1498089408
      * @vftbl  178
      * @symbol  ?canSurvive\@CactusBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,13 +267,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACTUSBLOCK
     /**
-     * @hash   1683059591
      * @symbol  ?canBeSilkTouched\@CactusBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1148232542
      * @symbol  ??0CactusBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CactusBlock(std::string const &, int);

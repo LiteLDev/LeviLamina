@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -2015299477
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@SeaPickleBlockItem\@\@UEBAHH\@Z
      */
@@ -108,13 +107,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1034988265
      * @vftbl  132
      * @symbol  ?_useOn\@SeaPickleBlockItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   901425285
      * @symbol  ??0SeaPickleBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SeaPickleBlockItem(std::string const &, int);

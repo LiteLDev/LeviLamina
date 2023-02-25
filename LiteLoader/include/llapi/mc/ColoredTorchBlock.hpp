@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1523487248
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@ColoredTorchBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -223005433
      * @vftbl  103
      * @symbol  ?asItemInstance\@ColoredTorchBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -173,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1102234082
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@ColoredTorchBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -199,25 +196,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2121121786
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@ColoredTorchBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -61681087
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@ColoredTorchBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -1311589501
      * @vftbl  146
      * @symbol  ?getVariant\@ColoredTorchBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   1602705832
      * @vftbl  151
      * @symbol  ?animateTick\@ColoredTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -258,25 +251,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1928998847
      * @vftbl  187
      * @symbol  ?getResourceItem\@ColoredTorchBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1290601584
      * @symbol  ??0ColoredTorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ColoredTorchColor\@\@\@Z
      */
     MCAPI ColoredTorchBlock(std::string const &, int, enum class ColoredTorchColor);
     /**
-     * @hash   2105709687
      * @symbol  ?getItemForColor\@ColoredTorchBlock\@\@SA?AVItemInstance\@\@W4ColoredTorchColor\@\@\@Z
      */
     MCAPI static class ItemInstance getItemForColor(enum class ColoredTorchColor);
 
 //private:
     /**
-     * @hash   -1546580721
      * @symbol  ?_getColor\@ColoredTorchBlock\@\@AEBA?AW4ColoredTorchColor\@\@AEBVBlock\@\@\@Z
      */
     MCAPI enum class ColoredTorchColor _getColor(class Block const &) const;

@@ -31,7 +31,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
     /**
-     * @hash   1848666237
      * @symbol  __unk_destructor_-1
      */
     MCVAPI ~EntityComponentFactoryBase();

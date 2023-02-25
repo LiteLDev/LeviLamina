@@ -37,7 +37,6 @@ public:
      */
     virtual ~LookAtActorDefinition();
     /**
-     * @hash   1359472286
      * @vftbl  1
      * @symbol  ?load\@LookAtActorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

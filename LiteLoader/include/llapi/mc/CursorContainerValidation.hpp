@@ -36,7 +36,6 @@ public:
      */
     virtual ~CursorContainerValidation();
     /**
-     * @hash   -1668172600
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -2131704437
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -68,26 +66,22 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   1636180575
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @hash   1539919096
      * @vftbl  8
      * @symbol  ?getContainerOffset\@CursorContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @hash   1011790636
      * @vftbl  9
      * @symbol  ?getContainerSize\@ContainerValidationBase\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSORCONTAINERVALIDATION
     /**
-     * @hash   -1676224341
      * @symbol  ?canItemMoveToContainer\@CursorContainerValidation\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;

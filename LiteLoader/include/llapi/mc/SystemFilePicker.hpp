@@ -35,32 +35,27 @@ public:
      */
     virtual ~SystemFilePicker();
     /**
-     * @hash   -1503802214
      * @vftbl  1
      * @symbol  ?initFilePick\@SystemFilePicker\@\@UEAAXAEBVPath\@Core\@\@V?$function\@$$A6AX_NUFileInfo\@\@\@Z\@std\@\@\@Z
      */
     virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
     /**
-     * @hash   2029629473
      * @vftbl  2
      * @symbol  ?readBytes\@SystemFilePicker\@\@UEAA_KAEBUFileInfo\@\@_K1AEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
     virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
     /**
-     * @hash   886630893
      * @vftbl  3
      * @symbol  ?writeBytes\@SystemFilePicker\@\@UEAA_NAEBUFileInfo\@\@_K1AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
     virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
     /**
-     * @hash   -1001592603
      * @symbol  ??0SystemFilePicker\@\@QEAA\@XZ
      */
     MCAPI SystemFilePicker();
 
 //protected:
     /**
-     * @hash   1519032819
      * @symbol  ?_fillFileInfo\@SystemFilePicker\@\@IEAA?AUFileInfo\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);

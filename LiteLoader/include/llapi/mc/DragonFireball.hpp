@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   1092649430
      * @vftbl  96
      * @symbol  ?isPickable\@DragonFireball\@\@UEAA_NXZ
      */
@@ -138,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -931007432
      * @vftbl  263
      * @symbol  ?_hurt\@DragonFireball\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -159,25 +157,21 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -1622893112
      * @vftbl  280
      * @symbol  ?getTrailParticle\@DragonFireball\@\@MEAA?AW4ParticleType\@\@XZ
      */
     virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFIREBALL
     /**
-     * @hash   -430645108
      * @symbol  ?shouldBurn\@DragonFireball\@\@MEAA_NXZ
      */
     MCVAPI bool shouldBurn();
 #endif
     /**
-     * @hash   575710196
      * @symbol  ??0DragonFireball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1813873091
      * @symbol  ?SPLASH_RANGE\@DragonFireball\@\@2MA
      */
     MCAPI static float SPLASH_RANGE;

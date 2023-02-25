@@ -51,17 +51,14 @@ public:
 
 public:
     /**
-     * @hash   325725642
      * @symbol  ??0CommandContext\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@2\@H\@Z
      */
     MCAPI CommandContext(std::string const &, std::unique_ptr<class CommandOrigin>, int);
     /**
-     * @hash   789295344
      * @symbol  ?getCommandOrigin\@CommandContext\@\@QEBAAEBVCommandOrigin\@\@XZ
      */
     MCAPI class CommandOrigin const & getCommandOrigin() const;
     /**
-     * @hash   -1516241938
      * @symbol  ??1CommandContext\@\@QEAA\@XZ
      */
     MCAPI ~CommandContext();

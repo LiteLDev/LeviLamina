@@ -36,13 +36,11 @@ public:
      */
     virtual ~HangingRoots();
     /**
-     * @hash   1463317222
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@HangingRoots\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   -2132208479
      * @vftbl  10
      * @symbol  ?getAABB\@HangingRoots\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   304891351
      * @vftbl  62
      * @symbol  ?canContainLiquid\@HangingRoots\@\@UEBA_NXZ
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1193076303
      * @vftbl  92
      * @symbol  ?mayPlace\@HangingRoots\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -373646141
      * @vftbl  99
      * @symbol  ?neighborChanged\@HangingRoots\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   604103495
      * @vftbl  171
      * @symbol  ?tick\@HangingRoots\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -302367153
      * @vftbl  178
      * @symbol  ?canSurvive\@HangingRoots\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -258,19 +251,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1037091259
      * @vftbl  186
      * @symbol  ?playerDestroy\@HangingRoots\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1293150801
      * @vftbl  187
      * @symbol  ?getResourceItem\@HangingRoots\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -964996465
      * @symbol  ??0HangingRoots\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI HangingRoots(std::string const &, int);

@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   2050695887
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ShulkerBullet\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -715206483
      * @vftbl  49
      * @symbol  ?normalTick\@ShulkerBullet\@\@UEAAXXZ
      */
@@ -79,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -1912881568
      * @vftbl  96
      * @symbol  ?isPickable\@ShulkerBullet\@\@UEAA_NXZ
      */
@@ -95,7 +92,6 @@ public:
      */
     virtual void __unk_vfn_100();
     /**
-     * @hash   -423919255
      * @vftbl  105
      * @symbol  ?isOnFire\@ShulkerBullet\@\@UEBA_NXZ
      */
@@ -121,7 +117,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   779602216
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@ShulkerBullet\@\@UEBA?AUActorUniqueID\@\@XZ
      */
@@ -162,13 +157,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   852370018
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ShulkerBullet\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1575666133
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ShulkerBullet\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -179,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -1924649766
      * @symbol  ??0ShulkerBullet\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ShulkerBullet(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

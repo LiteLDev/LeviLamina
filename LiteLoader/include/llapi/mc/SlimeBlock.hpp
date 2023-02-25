@@ -151,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -901591981
      * @vftbl  81
      * @symbol  ?updateEntityAfterFallOn\@SlimeBlock\@\@UEBAXAEBVBlockPos\@\@AEAUUpdateEntityAfterFallOnInterface\@\@\@Z
      */
@@ -192,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   853622017
      * @vftbl  164
      * @symbol  ?onStandOn\@SlimeBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
@@ -213,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   2085203547
      * @vftbl  169
      * @symbol  ?onFallOn\@SlimeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1517647880
      * @vftbl  181
      * @symbol  ?getExtraRenderLayers\@SlimeBlock\@\@UEBAHXZ
      */
@@ -241,13 +237,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEBLOCK
     /**
-     * @hash   1695269982
      * @symbol  ?isBounceBlock\@SlimeBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isBounceBlock() const;
 #endif
     /**
-     * @hash   1301570524
      * @symbol  ??0SlimeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SlimeBlock(std::string const &, int, class Material const &);

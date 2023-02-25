@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -138048493
      * @symbol  ?bindType\@Easing\@\@SAXXZ
      */
     MCAPI static void bindType();

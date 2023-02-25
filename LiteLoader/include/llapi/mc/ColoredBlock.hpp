@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -908433854
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@ColoredBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1016533417
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@ColoredBlock\@\@UEBA_NXZ
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1426797199
      * @vftbl  184
      * @symbol  ?getMapColor\@ColoredBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -239,19 +236,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1334247335
      * @vftbl  187
      * @symbol  ?getResourceItem\@ColoredBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   228247362
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@ColoredBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1486610530
      * @symbol  ??0ColoredBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI ColoredBlock(std::string const &, int, class Material const &);

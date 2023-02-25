@@ -36,7 +36,6 @@ public:
      */
     virtual ~FossilFeature();
     /**
-     * @hash   1215495364
      * @vftbl  3
      * @symbol  ?place\@FossilFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -46,7 +45,6 @@ public:
 
 private:
     /**
-     * @hash   504695924
      * @symbol  ?STRUCTURE_LOCATION_FOSSIL\@FossilFeature\@\@0QBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];

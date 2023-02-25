@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   547428563
      * @vftbl  51
      * @symbol  ?isSignalSource\@DiodeBlock\@\@UEBA_NXZ
      */
@@ -142,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -448740457
      * @vftbl  59
      * @symbol  ?getDirectSignal\@DiodeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   827626851
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@DiodeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   86428670
      * @vftbl  92
      * @symbol  ?mayPlace\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   606570449
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@DiodeBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1410966926
      * @vftbl  146
      * @symbol  ?getVariant\@DiodeBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -503893039
      * @vftbl  147
      * @symbol  ?canSpawnOn\@DiodeBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -253,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1256888558
      * @vftbl  178
      * @symbol  ?canSurvive\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,103 +256,86 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   274114992
      * @vftbl  193
      * @symbol  ?getSignal\@DiodeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -871812400
      * @vftbl  194
      * @symbol  ?isLocked\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   108821753
      * @vftbl  195
      * @symbol  ?isSameDiode\@DiodeBlock\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isSameDiode(class Block const &) const;
     /**
-     * @hash   -1252023826
      * @vftbl  196
      * @symbol  ?shouldPrioritize\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool shouldPrioritize(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1443491624
      * @vftbl  197
      * @symbol  ?isOn\@DiodeBlock\@\@MEBA_NXZ
      */
     virtual bool isOn() const;
     /**
-     * @hash   1909682676
      * @vftbl  198
      * @symbol  ?shouldTurnOn\@DiodeBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool shouldTurnOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1860055036
      * @vftbl  199
      * @symbol  ?getInputSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getInputSignal(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1929838033
      * @vftbl  200
      * @symbol  ?isAlternateInput\@DiodeBlock\@\@MEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isAlternateInput(class Block const &) const;
     /**
-     * @hash   305985444
      * @vftbl  201
      * @symbol  ?getAlternateSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1372376071
      * @vftbl  202
      * @symbol  ?getOutputSignal\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getOutputSignal(class Block const &) const;
     /**
-     * @hash   -1481828847
      * @vftbl  203
      * @symbol  ?getTurnOffDelay\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getTurnOffDelay(class Block const &) const;
     /**
-     * @hash   757956690
      * @vftbl  204
      * @symbol  ?getTurnOnDelay\@RepeaterBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getTurnOnDelay(class Block const &) const = 0;
     /**
-     * @hash   832630566
      * @vftbl  205
      * @symbol  ?getOnBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
      */
     virtual class Block const * getOnBlock(class Block const *) const = 0;
     /**
-     * @hash   -3199798
      * @vftbl  206
      * @symbol  ?getOffBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
      */
     virtual class Block const * getOffBlock(class Block const *) const = 0;
     /**
-     * @hash   1622420091
      * @symbol  ??0DiodeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI DiodeBlock(std::string const &, int, bool);
     /**
-     * @hash   197088215
      * @symbol  ?isDiode\@DiodeBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isDiode(class Block const &);
 
 //protected:
     /**
-     * @hash   663036795
      * @symbol  ?getAlternateSignalAt\@DiodeBlock\@\@IEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;

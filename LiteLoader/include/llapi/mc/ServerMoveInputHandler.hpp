@@ -56,18 +56,15 @@ public:
     virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
     /**
-     * @hash   229875153
      * @symbol  ?registerInputHandlers\@ServerMoveInputHandler\@\@UEAAXAEAVInputHandler\@\@\@Z
      */
     MCVAPI void registerInputHandlers(class InputHandler &);
 #endif
     /**
-     * @hash   1461445744
      * @symbol  ??0ServerMoveInputHandler\@\@QEAA\@XZ
      */
     MCAPI ServerMoveInputHandler();
     /**
-     * @hash   1371107952
      * @symbol  ?digestPlayerInputPacket\@ServerMoveInputHandler\@\@QEAAXAEBVPlayerAuthInputPacket\@\@\@Z
      */
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);

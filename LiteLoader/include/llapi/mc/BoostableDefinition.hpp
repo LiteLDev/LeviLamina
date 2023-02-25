@@ -35,7 +35,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class BoostableComponent &) const;
     /**
-     * @hash   1870580690
      * @symbol  ?buildSchema\@BoostableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBoostableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>> &);

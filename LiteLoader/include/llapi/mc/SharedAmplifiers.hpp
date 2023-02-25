@@ -30,52 +30,42 @@ public:
 
 public:
     /**
-     * @hash   -1757843744
      * @symbol  ?ABSORPTION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
     /**
-     * @hash   770623032
      * @symbol  ?FATAL_POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
     /**
-     * @hash   -1537680902
      * @symbol  ?HARM\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HARM;
     /**
-     * @hash   -1287561518
      * @symbol  ?HEAL\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HEAL;
     /**
-     * @hash   652527732
      * @symbol  ?HUNGER_DURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_DURATION;
     /**
-     * @hash   1207637868
      * @symbol  ?HUNGER_VALUE\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_VALUE;
     /**
-     * @hash   -34441806
      * @symbol  ?POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> POISON;
     /**
-     * @hash   305759656
      * @symbol  ?REGENERATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
     /**
-     * @hash   1190503190
      * @symbol  ?SATURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
     /**
-     * @hash   573058024
      * @symbol  ?WITHER\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> WITHER;

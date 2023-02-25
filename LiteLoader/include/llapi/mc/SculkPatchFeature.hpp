@@ -35,7 +35,6 @@ public:
      */
     virtual ~SculkPatchFeature();
     /**
-     * @hash   1278179643
      * @vftbl  1
      * @symbol  ?place\@SculkPatchFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

@@ -67,13 +67,11 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   1126159517
      * @vftbl  56
      * @symbol  ?isDestructive\@FlintAndSteelItem\@\@UEBA_NH\@Z
      */
     virtual bool isDestructive(int) const;
     /**
-     * @hash   1823315340
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@FlintAndSteelItem\@\@UEBAHXZ
      */
@@ -114,31 +112,26 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1334406428
      * @vftbl  85
      * @symbol  ?dispense\@FlintAndSteelItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -1674005586
      * @vftbl  89
      * @symbol  ?hurtActor\@FlintAndSteelItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @hash   -848351384
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@FlintAndSteelItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   1391219079
      * @vftbl  132
      * @symbol  ?_useOn\@FlintAndSteelItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   1594339502
      * @symbol  ??0FlintAndSteelItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FlintAndSteelItem(std::string const &, int);

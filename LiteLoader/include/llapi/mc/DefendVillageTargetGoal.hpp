@@ -36,25 +36,21 @@ public:
      */
     virtual ~DefendVillageTargetGoal();
     /**
-     * @hash   -691684378
      * @vftbl  1
      * @symbol  ?canUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   456504164
      * @vftbl  2
      * @symbol  ?canContinueToUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @hash   -916825073
      * @vftbl  4
      * @symbol  ?start\@DefendVillageTargetGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -395430150
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@DefendVillageTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -70,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1232961267
      * @symbol  ??0DefendVillageTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI DefendVillageTargetGoal(class Mob &);

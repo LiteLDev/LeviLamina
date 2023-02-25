@@ -102,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   121455971
      * @vftbl  132
      * @symbol  ?_useOn\@CompassItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -373067613
      * @symbol  ??0CompassItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CompassItem(std::string const &, int);

@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -250573243
      * @vftbl  12
      * @symbol  ?initializeComponents\@ThrownPotion\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   241329954
      * @vftbl  169
      * @symbol  ?queryEntityRenderer\@ThrownPotion\@\@UEBAAEBVHashedString\@\@XZ
      */
@@ -129,7 +127,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -414065996
      * @vftbl  233
      * @symbol  ?setAuxValue\@ThrownPotion\@\@UEAAXH\@Z
      */
@@ -150,13 +147,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1412558220
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ThrownPotion\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1254694753
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ThrownPotion\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -177,22 +172,18 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   1925628743
      * @symbol  ??0ThrownPotion\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   414969787
      * @symbol  ?getPotionId\@ThrownPotion\@\@QEBAFXZ
      */
     MCAPI short getPotionId() const;
     /**
-     * @hash   -1211959496
      * @symbol  ?setLinger\@ThrownPotion\@\@QEAAX_N\@Z
      */
     MCAPI void setLinger(bool);
     /**
-     * @hash   2140039201
      * @symbol  ?SPLASH_RANGE\@ThrownPotion\@\@2MB
      */
     MCAPI static float const SPLASH_RANGE;

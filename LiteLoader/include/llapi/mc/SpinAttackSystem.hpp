@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   496940481
      * @symbol  ?_spinAttack\@SpinAttackSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _spinAttack(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
-     * @hash   -2045510864
      * @symbol  ?createSystem\@SpinAttackSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

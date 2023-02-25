@@ -37,7 +37,6 @@ public:
      */
     virtual ~WaitDefinition();
     /**
-     * @hash   282532892
      * @vftbl  1
      * @symbol  ?load\@WaitDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

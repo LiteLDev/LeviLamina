@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -893068380
      * @symbol  ??0SwimWanderDefinition\@\@QEAA\@XZ
      */
     MCAPI SwimWanderDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class SwimWanderGoal &) const;
     /**
-     * @hash   -686869533
      * @symbol  ?buildSchema\@SwimWanderDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwimWanderDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>> &);

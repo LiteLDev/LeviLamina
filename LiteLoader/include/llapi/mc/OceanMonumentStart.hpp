@@ -35,13 +35,11 @@ public:
      */
     virtual ~OceanMonumentStart();
     /**
-     * @hash   -1256609478
      * @vftbl  1
      * @symbol  ?postProcess\@OceanMonumentStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @hash   -574258071
      * @symbol  ?createMonument\@OceanMonumentStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
     MCAPI void createMonument(class Dimension &, class Random &, int, int);

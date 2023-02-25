@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -772680039
      * @symbol  ??1BlockDisplayNameComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockDisplayNameComponent();

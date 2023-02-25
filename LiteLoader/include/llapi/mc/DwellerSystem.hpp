@@ -35,13 +35,11 @@ public:
      */
     virtual ~DwellerSystem();
     /**
-     * @hash   -1841775910
      * @vftbl  1
      * @symbol  ?registerEvents\@DwellerSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @hash   -287876226
      * @vftbl  2
      * @symbol  ?tick\@DwellerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

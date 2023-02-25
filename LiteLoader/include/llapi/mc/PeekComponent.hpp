@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   -1177418881
      * @symbol  ?getDuration\@PeekComponent\@\@QEAAAEAHXZ
      */
     MCAPI int & getDuration();
     /**
-     * @hash   -125460004
      * @symbol  ?getHadTarget\@PeekComponent\@\@QEBA_NXZ
      */
     MCAPI bool getHadTarget() const;
     /**
-     * @hash   807161824
      * @symbol  ?setHadTarget\@PeekComponent\@\@QEAAX_N\@Z
      */
     MCAPI void setHadTarget(bool);

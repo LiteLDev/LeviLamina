@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   471035287
      * @symbol  ??0DragonChargePlayerDefinition\@\@QEAA\@XZ
      */
     MCAPI DragonChargePlayerDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class DragonChargePlayerGoal &) const;
     /**
-     * @hash   -2136777641
      * @symbol  ?buildSchema\@DragonChargePlayerDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDragonChargePlayerDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>> &);

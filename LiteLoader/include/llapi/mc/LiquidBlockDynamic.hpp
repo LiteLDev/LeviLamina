@@ -161,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   993549064
      * @vftbl  113
      * @symbol  ?entityInside\@LiquidBlockDynamic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -207,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1888574554
      * @vftbl  168
      * @symbol  ?onPlace\@LiquidBlockDynamic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1219470140
      * @vftbl  171
      * @symbol  ?tick\@LiquidBlockDynamic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -234,49 +231,40 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2134769429
      * @symbol  ??0LiquidBlockDynamic\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LiquidBlockDynamic(std::string const &, int, class Material const &);
     /**
-     * @hash   -1109956649
      * @symbol  ?getSpread\@LiquidBlockDynamic\@\@QEBA?AV?$array\@_N$03\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI class std::array<bool, 4> getSpread(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -132497455
      * @symbol  ?shouldBecomeStatic\@LiquidBlockDynamic\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI bool shouldBecomeStatic(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
-     * @hash   733238943
      * @symbol  ?_canSpreadTo\@LiquidBlockDynamic\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@1E\@Z
      */
     MCAPI bool _canSpreadTo(class BlockSource &, class BlockPos const &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -905297767
      * @symbol  ?_getSlopeDistance\@LiquidBlockDynamic\@\@AEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI int _getSlopeDistance(class BlockSource &, class BlockPos const &, int, int) const;
     /**
-     * @hash   -819363933
      * @symbol  ?_isWaterBlocking\@LiquidBlockDynamic\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@1E\@Z
      */
     MCAPI bool _isWaterBlocking(class BlockSource &, class BlockPos const &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -300921722
      * @symbol  ?_setStatic\@LiquidBlockDynamic\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI void _setStatic(class BlockSource &, class BlockPos const &, bool) const;
     /**
-     * @hash   1976098572
      * @symbol  ?_tick\@LiquidBlockDynamic\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
     MCAPI bool _tick(class BlockSource &, class BlockPos const &, class Random &, bool) const;
     /**
-     * @hash   1621926579
      * @symbol  ?_trySpreadTo\@LiquidBlockDynamic\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H1E\@Z
      */
     MCAPI void _trySpreadTo(class BlockSource &, class BlockPos const &, int, class BlockPos const &, unsigned char) const;

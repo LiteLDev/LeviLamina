@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   267342546
      * @symbol  ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;

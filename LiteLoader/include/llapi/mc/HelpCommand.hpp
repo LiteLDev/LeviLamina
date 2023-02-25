@@ -36,25 +36,21 @@ public:
      */
     virtual ~HelpCommand();
     /**
-     * @hash   161161881
      * @vftbl  1
      * @symbol  ?execute\@HelpCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1331134256
      * @symbol  ?setup\@HelpCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @hash   -765378928
      * @symbol  ?getCommandHelp\@HelpCommand\@\@AEBAXAEBVCommandRegistry\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void getCommandHelp(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1890482928
      * @symbol  ?getHelpPage\@HelpCommand\@\@AEBAXAEBVCommandRegistry\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void getHelpPage(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;

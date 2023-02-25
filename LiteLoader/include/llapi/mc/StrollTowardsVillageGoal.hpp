@@ -36,7 +36,6 @@ public:
      */
     virtual ~StrollTowardsVillageGoal();
     /**
-     * @hash   -2076301105
      * @vftbl  1
      * @symbol  ?canUse\@StrollTowardsVillageGoal\@\@UEAA_NXZ
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -186915167
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@StrollTowardsVillageGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -63,13 +61,11 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   344686546
      * @vftbl  17
      * @symbol  ?_selectRandomPosInVillage\@StrollTowardsVillageGoal\@\@MEAA?AVBlockPos\@\@XZ
      */
     virtual class BlockPos _selectRandomPosInVillage();
     /**
-     * @hash   1245577091
      * @symbol  ??0StrollTowardsVillageGoal\@\@QEAA\@AEAVMob\@\@MMMHM\@Z
      */
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);

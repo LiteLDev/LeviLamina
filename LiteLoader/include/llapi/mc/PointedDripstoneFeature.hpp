@@ -35,7 +35,6 @@ public:
      */
     virtual ~PointedDripstoneFeature();
     /**
-     * @hash   -967425416
      * @vftbl  1
      * @symbol  ?place\@PointedDripstoneFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

@@ -41,13 +41,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   321391830
      * @vftbl  20
      * @symbol  ?isStrippable\@WoodBlock\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isStrippable(class Block const &) const;
     /**
-     * @hash   -1671935542
      * @vftbl  21
      * @symbol  ?getStrippedBlock\@WoodBlock\@\@UEBAAEBVBlock\@\@AEBV2\@\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1745127546
      * @vftbl  103
      * @symbol  ?asItemInstance\@WoodBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -199,19 +196,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   784009335
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@WoodBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   2057705716
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@WoodBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   876957312
      * @vftbl  146
      * @symbol  ?getVariant\@WoodBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -247,13 +241,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1097634773
      * @vftbl  177
      * @symbol  ?use\@WoodBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -425711164
      * @vftbl  184
      * @symbol  ?getMapColor\@WoodBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -264,26 +256,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1603701726
      * @vftbl  187
      * @symbol  ?getResourceItem\@WoodBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1746568439
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@WoodBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1702483246
      * @symbol  ??0WoodBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WoodBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   1585680963
      * @symbol  ?_createBlockWithStates\@WoodBlock\@\@AEBAAEBVBlock\@\@AEBV2\@\@Z
      */
     MCAPI class Block const & _createBlockWithStates(class Block const &) const;

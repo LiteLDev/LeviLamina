@@ -20,7 +20,6 @@ namespace utility {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -2129223111
      * @symbol  ?extract_fractional_second\@utility\@\@YAXAEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@AEAV23\@AEA_K\@Z
      */
     MCAPI void extract_fractional_second(class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> const &, class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> &, unsigned __int64 &);

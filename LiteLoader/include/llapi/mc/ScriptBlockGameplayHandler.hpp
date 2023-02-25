@@ -42,7 +42,6 @@ public:
      */
     virtual struct GameplayHandlerResult<class std::optional<std::string>> handleEvent(struct CraftUISetResultNameEvent const &);
     /**
-     * @hash   -1461138005
      * @vftbl  2
      * @symbol  ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUExplosionStartedEvent\@\@\@Z
      */
@@ -78,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -1016281669
      * @vftbl  9
      * @symbol  ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBUPistonActionEvent\@\@\@Z
      */
@@ -86,12 +84,10 @@ public:
 
 //private:
     /**
-     * @hash   741030430
      * @symbol  ?_handleExplosionStartedEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUExplosionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
     /**
-     * @hash   -1861361135
      * @symbol  ?_handlePistonActionEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;

@@ -156,19 +156,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1010234027
      * @vftbl  86
      * @symbol  ?onFertilized\@WitherRoseBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   427114000
      * @vftbl  88
      * @symbol  ?canBeFertilized\@WitherRoseBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   335914509
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@WitherRoseBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -179,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1877037173
      * @vftbl  113
      * @symbol  ?entityInside\@WitherRoseBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -205,25 +201,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -310981246
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@WitherRoseBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -620565607
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@WitherRoseBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   841168602
      * @vftbl  147
      * @symbol  ?canSpawnOn\@WitherRoseBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @hash   -2088608576
      * @vftbl  151
      * @symbol  ?animateTick\@WitherRoseBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -264,19 +256,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1236396144
      * @vftbl  187
      * @symbol  ?getResourceItem\@WitherRoseBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1580785369
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@WitherRoseBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1654072119
      * @symbol  ??0WitherRoseBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WitherRoseBlock(std::string const &, int);

@@ -35,36 +35,30 @@ public:
      */
     virtual ~SetActorDataPacket();
     /**
-     * @hash   1406957913
      * @vftbl  1
      * @symbol  ?getId\@SetActorDataPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -1448105978
      * @vftbl  2
      * @symbol  ?getName\@SetActorDataPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1769105119
      * @vftbl  3
      * @symbol  ?write\@SetActorDataPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -80950815
      * @vftbl  6
      * @symbol  ?_read\@SetActorDataPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -735614287
      * @symbol  ??0SetActorDataPacket\@\@QEAA\@XZ
      */
     MCAPI SetActorDataPacket();
     /**
-     * @hash   645774824
      * @symbol  ??0SetActorDataPacket\@\@QEAA\@VActorRuntimeID\@\@AEAVSynchedActorDataEntityWrapper\@\@PEAVPropertyComponent\@\@_K_N\@Z
      */
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorDataEntityWrapper &, class PropertyComponent *, unsigned __int64, bool);

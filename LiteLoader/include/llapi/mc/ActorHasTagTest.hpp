@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorHasTagTest();
     /**
-     * @hash   -1240571703
      * @vftbl  2
      * @symbol  ?evaluate\@ActorHasTagTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1554155831
      * @vftbl  4
      * @symbol  ?getName\@ActorHasTagTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

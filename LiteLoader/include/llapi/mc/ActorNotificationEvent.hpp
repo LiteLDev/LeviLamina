@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -956823116
      * @symbol  ??1ActorNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorNotificationEvent();

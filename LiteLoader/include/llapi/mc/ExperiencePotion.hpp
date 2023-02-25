@@ -142,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -580746304
      * @vftbl  278
      * @symbol  ?getThrowPower\@ExperiencePotion\@\@MEAAMXZ
      */
@@ -153,19 +152,16 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   1706409366
      * @vftbl  280
      * @symbol  ?getThrowUpAngleOffset\@ExperiencePotion\@\@MEAAMXZ
      */
     virtual float getThrowUpAngleOffset();
     /**
-     * @hash   -2075153885
      * @vftbl  281
      * @symbol  ?getGravity\@ExperiencePotion\@\@MEAAMXZ
      */
     virtual float getGravity();
     /**
-     * @hash   -1699468455
      * @symbol  ??0ExperiencePotion\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ExperiencePotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsSkinIDTest();
     /**
-     * @hash   -1673838869
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsSkinIDTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1658277769
      * @vftbl  4
      * @symbol  ?getName\@ActorIsSkinIDTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

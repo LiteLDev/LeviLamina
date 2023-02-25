@@ -59,13 +59,11 @@ public:
      */
     virtual ~IDefinitionInstance();
     /**
-     * @hash   -1700071409
      * @vftbl  6
      * @symbol  ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ
      */
     virtual unsigned short getRuntimeTypeId() const;
     /**
-     * @hash   -1095093012
      * @symbol  ??4IDefinitionInstance\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class IDefinitionInstance & operator=(class IDefinitionInstance const &);

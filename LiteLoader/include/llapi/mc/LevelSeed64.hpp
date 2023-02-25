@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -406003328
      * @symbol  ?to32BitRandomSeed\@LevelSeed64\@\@QEBAIXZ
      */
     MCAPI unsigned int to32BitRandomSeed() const;
     /**
-     * @hash   -1200919663
      * @symbol  ?fromUnsigned32\@LevelSeed64\@\@SA?AV1\@I\@Z
      */
     MCAPI static class LevelSeed64 fromUnsigned32(unsigned int);

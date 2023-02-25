@@ -33,19 +33,16 @@ public:
      */
     virtual ~SculkShriekerVibrationConfig();
     /**
-     * @hash   1933076925
      * @vftbl  1
      * @symbol  ?onSignalReceive\@SculkShriekerVibrationConfig\@\@UEAAXAEAVBlockSource\@\@VBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@M3\@Z
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @hash   320150521
      * @vftbl  2
      * @symbol  ?isValidVibration\@SculkShriekerVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @hash   -1384133288
      * @vftbl  3
      * @symbol  ?shouldListen\@SculkShriekerVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */

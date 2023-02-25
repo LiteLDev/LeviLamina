@@ -146,13 +146,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   881738046
      * @vftbl  62
      * @symbol  ?canContainLiquid\@StructureBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1481306373
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@StructureBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -163,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   142546926
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@StructureBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -219,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -2013039894
      * @vftbl  168
      * @symbol  ?onPlace\@StructureBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -235,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -949622193
      * @vftbl  177
      * @symbol  ?use\@StructureBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -246,20 +241,17 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1092630688
      * @vftbl  188
      * @symbol  ?getResourceCount\@StructureBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCK
     /**
-     * @hash   782493859
      * @symbol  ?isInteractiveBlock\@StructureBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   646638856
      * @symbol  ??0StructureBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StructureBlock(std::string const &, int);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~CutCopperSlab();
     /**
-     * @hash   1319252319
      * @vftbl  16
      * @symbol  ?onLightningHit\@CutCopperSlab\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   553959855
      * @vftbl  28
      * @symbol  ?tryGetCopperBehavior\@CutCopperSlab\@\@UEBAPEBVCopperBehavior\@\@XZ
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1672142616
      * @vftbl  172
      * @symbol  ?randomTick\@CutCopperSlab\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1514579526
      * @vftbl  177
      * @symbol  ?use\@CutCopperSlab\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -265,17 +261,14 @@ public:
      */
     virtual void __unk_vfn_197();
     /**
-     * @hash   306111935
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
-     * @hash   -980688593
      * @symbol  ??0CutCopperSlab\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NAEBVHashedString\@\@W4CopperType\@\@2\@Z
      */
     MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, enum class CopperType, class HashedString const &);
     /**
-     * @hash   1958879983
      * @symbol  ??0CutCopperSlab\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NAEBVHashedString\@\@W4CopperType\@\@222\@Z
      */
     MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);

@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -2007859990
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@StoneSlabBlock2\@\@UEBA_NH\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1724327286
      * @vftbl  103
      * @symbol  ?asItemInstance\@StoneSlabBlock2\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -123723573
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@StoneSlabBlock2\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -204,7 +201,6 @@ public:
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1574092564
      * @vftbl  146
      * @symbol  ?getVariant\@StoneSlabBlock2\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -240,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -964357000
      * @vftbl  184
      * @symbol  ?getMapColor\@StoneSlabBlock2\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -251,24 +246,20 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2018055262
      * @vftbl  187
      * @symbol  ?getResourceItem\@StoneSlabBlock2\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1843103611
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StoneSlabBlock2\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1109486041
      * @symbol  ??0StoneSlabBlock2\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI StoneSlabBlock2(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
     /**
-     * @hash   -109523393
      * @symbol  ?SLAB_NAMES\@StoneSlabBlock2\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$07\@std\@\@B
      */
     MCAPI static class std::array<std::string, 8> const SLAB_NAMES;

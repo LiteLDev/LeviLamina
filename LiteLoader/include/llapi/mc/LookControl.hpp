@@ -34,19 +34,16 @@ public:
      */
     virtual ~LookControl();
     /**
-     * @hash   -836297834
      * @vftbl  1
      * @symbol  ?initializeInternal\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @hash   -2085148874
      * @vftbl  2
      * @symbol  ?tick\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
     /**
-     * @hash   -1253409110
      * @symbol  ??0LookControl\@\@QEAA\@XZ
      */
     MCAPI LookControl();

@@ -30,22 +30,18 @@ public:
 
 public:
     /**
-     * @hash   1583742627
      * @symbol  ??0BedHelper\@\@QEAA\@HHHHMMMMMM\@Z
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
     /**
-     * @hash   -231271741
      * @symbol  ??0BedHelper\@\@QEAA\@HHHHMMMM\@Z
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float);
     /**
-     * @hash   937071251
      * @symbol  ?getBedRotation\@BedHelper\@\@QEBAMH\@Z
      */
     MCAPI float getBedRotation(int) const;
     /**
-     * @hash   328408459
      * @symbol  ?setBedPositionOffsets\@BedHelper\@\@QEAAXHAEAM0AEAVVec3\@\@\@Z
      */
     MCAPI void setBedPositionOffsets(int, float &, float &, class Vec3 &);

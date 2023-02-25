@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -289949472
      * @symbol  ?createFlagResetSystem\@LiquidSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createFlagResetSystem();
     /**
-     * @hash   948087360
      * @symbol  ?createSensingSystem\@LiquidSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSensingSystem();

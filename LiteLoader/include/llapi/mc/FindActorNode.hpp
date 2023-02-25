@@ -34,19 +34,16 @@ public:
      */
     virtual ~FindActorNode();
     /**
-     * @hash   254815835
      * @vftbl  1
      * @symbol  ?tick\@FindActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1950619617
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@FindActorNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   813638890
      * @symbol  ??0FindActorNode\@\@QEAA\@XZ
      */
     MCAPI FindActorNode();

@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -1360370314
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@FaceDirectionalBlock\@\@UEBA_NH\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   963279455
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@FaceDirectionalBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -193,19 +191,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -531379527
      * @vftbl  148
      * @symbol  ?getRenderBlock\@FaceDirectionalBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getRenderBlock() const;
     /**
-     * @hash   15506942
      * @vftbl  149
      * @symbol  ?getMappedFace\@FaceDirectionalBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @hash   -554463838
      * @vftbl  150
      * @symbol  ?getFaceFlip\@FaceDirectionalBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
@@ -246,22 +241,18 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   890680959
      * @symbol  ??0FaceDirectionalBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_NM\@Z
      */
     MCAPI FaceDirectionalBlock(std::string const &, int, class Material const &, bool, float);
     /**
-     * @hash   139052820
      * @symbol  ?getFaceFlipStatic\@FaceDirectionalBlock\@\@SA?AW4Flip\@\@EAEBVBlock\@\@_N\@Z
      */
     MCAPI static enum class Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     /**
-     * @hash   -1748642257
      * @symbol  ?getFacingDirection\@FaceDirectionalBlock\@\@SAEAEBVBlock\@\@_N\@Z
      */
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);
     /**
-     * @hash   -865219217
      * @symbol  ?getMappedFaceStatic\@FaceDirectionalBlock\@\@SAEEAEBVBlock\@\@_N\@Z
      */
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);

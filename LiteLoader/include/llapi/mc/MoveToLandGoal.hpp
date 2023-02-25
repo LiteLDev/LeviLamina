@@ -36,13 +36,11 @@ public:
      */
     virtual ~MoveToLandGoal();
     /**
-     * @hash   -185174282
      * @vftbl  1
      * @symbol  ?canUse\@MoveToLandGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -127502572
      * @vftbl  2
      * @symbol  ?canContinueToUse\@MoveToLandGoal\@\@UEAA_NXZ
      */
@@ -53,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -2048761542
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@MoveToLandGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -69,19 +66,16 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1582323624
      * @vftbl  11
      * @symbol  ?isValidTarget\@MoveToLandGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -1335344920
      * @vftbl  14
      * @symbol  ?_moveToBlock\@MoveToLandGoal\@\@MEAAXXZ
      */
     virtual void _moveToBlock();
     /**
-     * @hash   913858316
      * @symbol  ??0MoveToLandGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);

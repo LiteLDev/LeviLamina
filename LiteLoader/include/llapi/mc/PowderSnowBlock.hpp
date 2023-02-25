@@ -36,13 +36,11 @@ public:
      */
     virtual ~PowderSnowBlock();
     /**
-     * @hash   -308856137
      * @vftbl  5
      * @symbol  ?getCollisionShape\@PowderSnowBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -1794069199
      * @vftbl  10
      * @symbol  ?getAABB\@PowderSnowBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -53,13 +51,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1609070000
      * @vftbl  22
      * @symbol  ?canProvideSupport\@PowderSnowBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   1530296472
      * @vftbl  25
      * @symbol  ?canConnect\@PowderSnowBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -75,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_30();
     /**
-     * @hash   1815066923
      * @vftbl  31
      * @symbol  ?isClimbable\@PowderSnowBlock\@\@UEBA_NAEBUIActorMovementProxy\@\@\@Z
      */
@@ -96,7 +91,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   489969385
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@PowderSnowBlock\@\@UEBA_NXZ
      */
@@ -167,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1399226142
      * @vftbl  53
      * @symbol  ?canBeAscendedByJumping\@PowderSnowBlock\@\@UEBA_NAEBVActor\@\@AEBVBlockPos\@\@\@Z
      */
@@ -188,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -521525433
      * @vftbl  62
      * @symbol  ?canContainLiquid\@PowderSnowBlock\@\@UEBA_NXZ
      */
@@ -204,13 +196,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1939384774
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@PowderSnowBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   714183257
      * @vftbl  103
      * @symbol  ?asItemInstance\@PowderSnowBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -221,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1348385275
      * @vftbl  113
      * @symbol  ?entityInside\@PowderSnowBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -267,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1101439375
      * @vftbl  169
      * @symbol  ?onFallOn\@PowderSnowBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -289,38 +277,31 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
     /**
-     * @hash   1111195172
      * @symbol  ?canBeDestroyedByWaterSpread\@PowderSnowBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     /**
-     * @hash   -302833763
      * @symbol  ?canBeSilkTouched\@PowderSnowBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   76243529
      * @symbol  ?causesFreezeEffect\@PowderSnowBlock\@\@UEBA_NXZ
      */
     MCVAPI bool causesFreezeEffect() const;
 #endif
     /**
-     * @hash   1279845320
      * @symbol  ??0PowderSnowBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI PowderSnowBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   382268413
      * @symbol  ?canWalkOnTop\@PowderSnowBlock\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
      */
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
     /**
-     * @hash   -880407947
      * @symbol  ?canWalkOnTop\@PowderSnowBlock\@\@SA_NAEBVGetCollisionShapeInterface\@\@\@Z
      */
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);
     /**
-     * @hash   2124038108
      * @symbol  ?clearFire\@PowderSnowBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI static void clearFire(class BlockSource &, class BlockPos const &, class Block const &);

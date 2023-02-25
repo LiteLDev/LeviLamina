@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1444064374
      * @symbol  ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void ejectAllPassengers(class Actor &);

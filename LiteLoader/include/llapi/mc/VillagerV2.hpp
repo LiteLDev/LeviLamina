@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1862405541
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@VillagerV2\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -43,13 +42,11 @@ public:
      */
     virtual ~VillagerV2();
     /**
-     * @hash   -2067427943
      * @vftbl  19
      * @symbol  ?remove\@VillagerV2\@\@UEAAXXZ
      */
     virtual void remove();
     /**
-     * @hash   -974463458
      * @vftbl  21
      * @symbol  ?isRuntimePredictedMovementEnabled\@VillagerV2\@\@UEBA_NXZ
      */
@@ -125,7 +122,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   491779446
      * @vftbl  200
      * @symbol  ?buildDebugInfo\@VillagerV2\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -141,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   1001802619
      * @vftbl  231
      * @symbol  ?getInteraction\@VillagerV2\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
@@ -157,13 +152,11 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   333807317
      * @vftbl  246
      * @symbol  ?die\@VillagerV2\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @hash   1521609002
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@VillagerV2\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -189,7 +182,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1377060163
      * @vftbl  289
      * @symbol  ?travel\@VillagerV2\@\@UEAAXMMM\@Z
      */
@@ -205,7 +197,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1177548004
      * @vftbl  349
      * @symbol  ?newServerAiStep\@VillagerV2\@\@UEAAXXZ
      */
@@ -216,7 +207,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   71103150
      * @symbol  ??0VillagerV2\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI VillagerV2(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

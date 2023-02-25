@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   2146596731
      * @vftbl  103
      * @symbol  ?asItemInstance\@NewLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -599575418
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@NewLeafBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -198,7 +196,6 @@ public:
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   145047039
      * @vftbl  146
      * @symbol  ?getVariant\@NewLeafBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -239,25 +236,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2012332125
      * @vftbl  187
      * @symbol  ?getResourceItem\@NewLeafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1136259062
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@NewLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1122646167
      * @vftbl  193
      * @symbol  ?getExtraResourceItem\@NewLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
-     * @hash   -1400250601
      * @symbol  ??0NewLeafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);

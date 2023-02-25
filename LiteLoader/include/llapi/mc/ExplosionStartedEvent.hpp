@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   -1005330139
      * @symbol  ??0ExplosionStartedEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const &);
     /**
-     * @hash   -1178626470
      * @symbol  ??1ExplosionStartedEvent\@\@QEAA\@XZ
      */
     MCAPI ~ExplosionStartedEvent();

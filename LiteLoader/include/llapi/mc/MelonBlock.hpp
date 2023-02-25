@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   693558497
      * @vftbl  25
      * @symbol  ?canConnect\@MelonBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -222,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2077523896
      * @vftbl  187
      * @symbol  ?getResourceItem\@MelonBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -249164256
      * @vftbl  188
      * @symbol  ?getResourceCount\@MelonBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1866397976
      * @symbol  ??0MelonBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MelonBlock(std::string const &, int);

@@ -157,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   266155255
      * @vftbl  334
      * @symbol  ?createAIGoals\@Salmon\@\@UEAA_NXZ
      */
@@ -168,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -739565542
      * @symbol  ??0Salmon\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Salmon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

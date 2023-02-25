@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1487080314
      * @symbol  ?createSystem\@SlimePreNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

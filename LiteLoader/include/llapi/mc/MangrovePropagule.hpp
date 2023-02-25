@@ -34,13 +34,11 @@ public:
      */
     virtual ~MangrovePropagule();
     /**
-     * @hash   1314945297
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@MangrovePropagule\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   -1504865380
      * @vftbl  10
      * @symbol  ?getAABB\@MangrovePropagule\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -156,7 +154,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -576126084
      * @vftbl  62
      * @symbol  ?canContainLiquid\@MangrovePropagule\@\@UEBA_NXZ
      */
@@ -172,19 +169,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1435521574
      * @vftbl  86
      * @symbol  ?onFertilized\@MangrovePropagule\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1376823471
      * @vftbl  88
      * @symbol  ?canBeFertilized\@MangrovePropagule\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -454201821
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@MangrovePropagule\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -215,19 +209,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1539391862
      * @vftbl  143
      * @symbol  ?getVisualShape\@MangrovePropagule\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1784986196
      * @vftbl  146
      * @symbol  ?getVariant\@MangrovePropagule\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   101727607
      * @vftbl  152
      * @symbol  ?init\@MangrovePropagule\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -258,7 +249,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   801960559
      * @vftbl  172
      * @symbol  ?randomTick\@MangrovePropagule\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -269,7 +259,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1829565164
      * @vftbl  178
      * @symbol  ?canSurvive\@MangrovePropagule\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -280,49 +269,41 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1574834346
      * @vftbl  187
      * @symbol  ?getResourceItem\@MangrovePropagule\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1363844738
      * @vftbl  188
      * @symbol  ?getResourceCount\@MangrovePropagule\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1711115139
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@MangrovePropagule\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULE
     /**
-     * @hash   -675681645
      * @symbol  ?waterSpreadCausesSpawn\@MangrovePropagule\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -615042182
      * @symbol  ??0MangrovePropagule\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MangrovePropagule(std::string const &, int);
 
 //private:
     /**
-     * @hash   -1087049248
      * @symbol  ?_growTree\@MangrovePropagule\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   2094140167
      * @symbol  ?_isFullyGrown\@MangrovePropagule\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _isFullyGrown(class Block const &) const;
     /**
-     * @hash   -1702277718
      * @symbol  ?_isHanging\@MangrovePropagule\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _isHanging(class Block const &) const;

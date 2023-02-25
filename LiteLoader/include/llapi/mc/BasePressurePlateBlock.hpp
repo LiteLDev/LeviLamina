@@ -36,7 +36,6 @@ public:
      */
     virtual ~BasePressurePlateBlock();
     /**
-     * @hash   -1635323267
      * @vftbl  10
      * @symbol  ?getAABB\@BasePressurePlateBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -137,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   382692840
      * @vftbl  51
      * @symbol  ?isSignalSource\@BasePressurePlateBlock\@\@UEBA_NXZ
      */
@@ -158,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1883964006
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@BasePressurePlateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -572809647
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BasePressurePlateBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   993902107
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@BasePressurePlateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -186,13 +181,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   604988563
      * @vftbl  92
      * @symbol  ?mayPlace\@BasePressurePlateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -190038241
      * @vftbl  99
      * @symbol  ?neighborChanged\@BasePressurePlateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -203,19 +196,16 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1524810865
      * @vftbl  108
      * @symbol  ?isAttachedTo\@BasePressurePlateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @hash   978827984
      * @vftbl  112
      * @symbol  ?shouldTriggerEntityInside\@BasePressurePlateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
-     * @hash   -2079932681
      * @vftbl  113
      * @symbol  ?entityInside\@BasePressurePlateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -241,19 +231,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1949490199
      * @vftbl  143
      * @symbol  ?getVisualShape\@BasePressurePlateBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   287165053
      * @vftbl  146
      * @symbol  ?getVariant\@BasePressurePlateBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   294996316
      * @vftbl  147
      * @symbol  ?canSpawnOn\@BasePressurePlateBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -279,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -810088313
      * @vftbl  168
      * @symbol  ?onPlace\@BasePressurePlateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -290,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   328875795
      * @vftbl  171
      * @symbol  ?tick\@BasePressurePlateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -301,7 +286,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1446759764
      * @vftbl  178
      * @symbol  ?canSurvive\@BasePressurePlateBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -312,37 +296,31 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1350213292
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@BasePressurePlateBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   738455086
      * @vftbl  193
      * @symbol  ?getTickDelay\@BasePressurePlateBlock\@\@UEBAHXZ
      */
     virtual int getTickDelay() const;
     /**
-     * @hash   -1328376217
      * @vftbl  194
      * @symbol  ?getSignalStrength\@WeightedPressurePlateBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
     /**
-     * @hash   1243334188
      * @vftbl  195
      * @symbol  ?getSignalForData\@WeightedPressurePlateBlock\@\@MEBAHH\@Z
      */
     virtual int getSignalForData(int) const = 0;
     /**
-     * @hash   -143780401
      * @vftbl  196
      * @symbol  ?getRedstoneSignal\@WeightedPressurePlateBlock\@\@MEBAHH\@Z
      */
     virtual int getRedstoneSignal(int) const = 0;
     /**
-     * @hash   -634731184
      * @vftbl  197
      * @symbol  ?getSensitiveAABB\@BasePressurePlateBlock\@\@MEBA?BVAABB\@\@AEBVBlockPos\@\@\@Z
      */
@@ -350,19 +328,16 @@ public:
 
 //protected:
     /**
-     * @hash   -997453364
      * @symbol  ??0BasePressurePlateBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   454420932
      * @symbol  ?checkPressed\@BasePressurePlateBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@HH\@Z
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int, int) const;
 
 //private:
     /**
-     * @hash   -1902291421
      * @symbol  ?isEntityInsideTriggerable\@BasePressurePlateBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;

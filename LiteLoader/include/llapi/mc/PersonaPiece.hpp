@@ -27,17 +27,14 @@ public:
 
 public:
     /**
-     * @hash   194391598
      * @symbol  ??0PersonaPiece\@\@QEAA\@XZ
      */
     MCAPI PersonaPiece();
     /**
-     * @hash   1900880684
      * @symbol  ??1PersonaPiece\@\@QEAA\@XZ
      */
     MCAPI ~PersonaPiece();
     /**
-     * @hash   1065808974
      * @symbol  ?INVALID_PIECE\@PersonaPiece\@\@2V1\@B
      */
     MCAPI static class PersonaPiece const INVALID_PIECE;

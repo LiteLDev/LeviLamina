@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   -2063328401
      * @symbol  ?UNIFORM_MAX_DENSITY_HEIGHT\@FogVolumetricDensitySetting\@\@2MB
      */
     MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
     /**
-     * @hash   -1912847583
      * @symbol  ?UNIFORM_ZERO_DENSITY_HEIGHT\@FogVolumetricDensitySetting\@\@2MB
      */
     MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
     /**
-     * @hash   1320926004
      * @symbol  ?ZERO_SETTING\@FogVolumetricDensitySetting\@\@2U1\@B
      */
     MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;

@@ -32,13 +32,11 @@ public:
 
 public:
     /**
-     * @hash   745659924
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Vex\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   1396655783
      * @vftbl  12
      * @symbol  ?initializeComponents\@Vex\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -54,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -268693656
      * @vftbl  59
      * @symbol  ?isInWall\@Vex\@\@UEBA_NXZ
      */
@@ -150,13 +147,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1612610754
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Vex\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   2132647791
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Vex\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -177,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1321218730
      * @vftbl  290
      * @symbol  ?applyFinalFriction\@Vex\@\@UEAAXM_N\@Z
      */
@@ -198,7 +192,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   963303237
      * @symbol  ??0Vex\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Vex(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

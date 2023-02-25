@@ -36,7 +36,6 @@ public:
      */
     virtual ~CoralHangFeature();
     /**
-     * @hash   1205437229
      * @vftbl  3
      * @symbol  ?place\@CoralHangFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1063602185
      * @symbol  ??0SoundEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent &&);
     /**
-     * @hash   -1744143268
      * @symbol  ??1SoundEventRequestQueueComponent\@\@QEAA\@XZ
      */
     MCAPI ~SoundEventRequestQueueComponent();

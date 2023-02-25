@@ -35,31 +35,26 @@ public:
      */
     virtual ~StickInGroundSubcomponent();
     /**
-     * @hash   608721967
      * @vftbl  1
      * @symbol  ?readfromJSON\@StickInGroundSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   1041598154
      * @vftbl  2
      * @symbol  ?writetoJSON\@StickInGroundSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   1718885401
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@StickInGroundSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1761935260
      * @vftbl  4
      * @symbol  ?getName\@StickInGroundSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   -1047606459
      * @symbol  ??0StickInGroundSubcomponent\@\@QEAA\@XZ
      */
     MCAPI StickInGroundSubcomponent();

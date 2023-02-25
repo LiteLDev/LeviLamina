@@ -142,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1586455937
      * @vftbl  279
      * @symbol  ?getType\@MinecartRideable\@\@UEAA?AW4MinecartType\@\@XZ
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   2022990609
      * @symbol  ??0MinecartRideable\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MinecartRideable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~WaterlilyFeature();
     /**
-     * @hash   -1872725393
      * @vftbl  3
      * @symbol  ?place\@WaterlilyFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

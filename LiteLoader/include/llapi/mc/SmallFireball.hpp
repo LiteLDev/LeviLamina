@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   511546146
      * @vftbl  96
      * @symbol  ?isPickable\@SmallFireball\@\@UEAA_NXZ
      */
@@ -138,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   777462212
      * @vftbl  263
      * @symbol  ?_hurt\@SmallFireball\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -159,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -1392916824
      * @symbol  ??0SmallFireball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI SmallFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

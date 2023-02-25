@@ -65,12 +65,10 @@ public:
      */
     virtual class std::optional<struct Scripting::ModuleBinding> createModuleBinding(struct Scripting::Version, class std::optional<struct Scripting::ContextConfig> const &, std::vector<struct Scripting::ModuleBinding> &&);
     /**
-     * @hash   -621793357
      * @symbol  ??0ScriptMinecraftNetModuleFactory\@\@QEAA\@V?$NonOwnerPointer\@VScheduler\@\@\@Bedrock\@\@\@Z
      */
     MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     /**
-     * @hash   -2132988672
      * @symbol  ?getModuleUUIDAsString\@ScriptMinecraftNetModuleFactory\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI static std::string getModuleUUIDAsString();
@@ -83,12 +81,10 @@ public:
 
 private:
     /**
-     * @hash   2071123279
      * @symbol  ?ModuleName\@ScriptMinecraftNetModuleFactory\@\@0PEBDEB
      */
     MCAPI static char const * ModuleName;
     /**
-     * @hash   -1808089338
      * @symbol  ?ModuleUUID\@ScriptMinecraftNetModuleFactory\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ModuleUUID;

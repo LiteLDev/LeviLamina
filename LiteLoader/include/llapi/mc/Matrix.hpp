@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -637592568
      * @symbol  ?transform3\@Matrix\@\@QEBAXAEAU?$vec\@$02M$0A\@\@glm\@\@AEAM\@Z
      */
     MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;

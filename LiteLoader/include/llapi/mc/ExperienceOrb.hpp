@@ -33,7 +33,6 @@ public:
 
 public:
     /**
-     * @hash   1376698248
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ExperienceOrb\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -49,7 +48,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1975860934
      * @vftbl  49
      * @symbol  ?normalTick\@ExperienceOrb\@\@UEAAXXZ
      */
@@ -65,7 +63,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -883844111
      * @vftbl  81
      * @symbol  ?getShadowRadius\@ExperienceOrb\@\@UEBAMXZ
      */
@@ -86,7 +83,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   717106707
      * @vftbl  90
      * @symbol  ?playerTouch\@ExperienceOrb\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -122,7 +118,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   593210147
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@ExperienceOrb\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -158,7 +153,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   962780479
      * @vftbl  257
      * @symbol  ?doWaterSplashEffect\@ExperienceOrb\@\@MEAAXXZ
      */
@@ -169,25 +163,21 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   741531275
      * @vftbl  263
      * @symbol  ?_hurt\@ExperienceOrb\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -1602679838
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ExperienceOrb\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   406436635
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ExperienceOrb\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   1487043213
      * @vftbl  268
      * @symbol  ?_playStepSound\@ExperienceOrb\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -198,39 +188,32 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -834938543
      * @symbol  ??0ExperienceOrb\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1011561676
      * @symbol  ?getIconIndex\@ExperienceOrb\@\@QEBAHXZ
      */
     MCAPI int getIconIndex() const;
     /**
-     * @hash   -1358323925
      * @symbol  ?postNormalTick\@ExperienceOrb\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   2033361850
      * @symbol  ?setValue\@ExperienceOrb\@\@QEAAXH\@Z
      */
     MCAPI void setValue(int);
     /**
-     * @hash   -1063024292
      * @symbol  ?spawnOrbs\@ExperienceOrb\@\@SAXAEAVBlockSource\@\@AEBVVec3\@\@HHW4DropType\@1\@PEAVPlayer\@\@\@Z
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum class ExperienceOrb::DropType, class Player *);
     /**
-     * @hash   1661703721
      * @symbol  ?spawnOrbs\@ExperienceOrb\@\@SAXAEAVBlockSource\@\@AEBVVec3\@\@HW4DropType\@1\@PEAVPlayer\@\@\@Z
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum class ExperienceOrb::DropType, class Player *);
 
 //private:
     /**
-     * @hash   -121556713
      * @symbol  ?_handleMending\@ExperienceOrb\@\@AEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void _handleMending(class Player &);

@@ -35,37 +35,31 @@ public:
      */
     virtual ~ItemComponentPacket();
     /**
-     * @hash   1426358044
      * @vftbl  1
      * @symbol  ?getId\@ItemComponentPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1303951817
      * @vftbl  2
      * @symbol  ?getName\@ItemComponentPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   414067886
      * @vftbl  3
      * @symbol  ?write\@ItemComponentPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   920033283
      * @vftbl  4
      * @symbol  ?readExtended\@ItemComponentPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @hash   801559438
      * @vftbl  6
      * @symbol  ?_read\@ItemComponentPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1591807262
      * @symbol  ??0ItemComponentPacket\@\@QEAA\@XZ
      */
     MCAPI ItemComponentPacket();

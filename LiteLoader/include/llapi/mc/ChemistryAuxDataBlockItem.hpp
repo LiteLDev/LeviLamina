@@ -102,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1200246009
      * @vftbl  105
      * @symbol  ?fixupCommon\@ChemistryAuxDataBlockItem\@\@UEBAXAEAVItemStackBase\@\@\@Z
      */

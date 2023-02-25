@@ -48,7 +48,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   80975188
      * @vftbl  49
      * @symbol  ?normalTick\@ArmorStand\@\@UEAAXXZ
      */
@@ -64,7 +63,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   1297670703
      * @vftbl  81
      * @symbol  ?getShadowRadius\@ArmorStand\@\@UEBAMXZ
      */
@@ -85,7 +83,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -1913847529
      * @vftbl  96
      * @symbol  ?isPickable\@ArmorStand\@\@UEAA_NXZ
      */
@@ -121,7 +118,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1969039355
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@ArmorStand\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -147,7 +143,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -1466137728
      * @vftbl  231
      * @symbol  ?getInteraction\@ArmorStand\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
@@ -163,13 +158,11 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -668729958
      * @vftbl  246
      * @symbol  ?die\@ArmorStand\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @hash   -1019287697
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@ArmorStand\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -180,19 +173,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -647346960
      * @vftbl  263
      * @symbol  ?_hurt\@ArmorStand\@\@UEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -1904406400
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ArmorStand\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   201128813
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ArmorStand\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -213,7 +203,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -454349544
      * @vftbl  293
      * @symbol  ?pushActors\@ArmorStand\@\@UEAAXXZ
      */
@@ -235,122 +224,99 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTAND
     /**
-     * @hash   1673418225
      * @symbol  ?interactPreventDefault\@ArmorStand\@\@UEAA_NXZ
      */
     MCVAPI bool interactPreventDefault();
 #endif
     /**
-     * @hash   893903043
      * @symbol  ??0ArmorStand\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1568234070
      * @symbol  ?setPoseIndex\@ArmorStand\@\@QEAAXH\@Z
      */
     MCAPI void setPoseIndex(int);
 
 //private:
     /**
-     * @hash   -1183158668
      * @symbol  ?_causeDamage\@ArmorStand\@\@AEAAXM\@Z
      */
     MCAPI void _causeDamage(float);
     /**
-     * @hash   1879400116
      * @symbol  ?_destroyWithEffects\@ArmorStand\@\@AEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void _destroyWithEffects(class Vec3 const &);
     /**
-     * @hash   1818159010
      * @symbol  ?_dropHeldItems\@ArmorStand\@\@AEAAXXZ
      */
     MCAPI void _dropHeldItems();
     /**
-     * @hash   -103146003
      * @symbol  ?_dropHeldItemsAndResource\@ArmorStand\@\@AEAAXXZ
      */
     MCAPI void _dropHeldItemsAndResource();
     /**
-     * @hash   -1226500482
      * @symbol  ?_dropItem\@ArmorStand\@\@AEAAXAEBVItemStack\@\@\@Z
      */
     MCAPI void _dropItem(class ItemStack const &);
     /**
-     * @hash   -543566748
      * @symbol  ?_trySwapItem\@ArmorStand\@\@AEAA_NAEAVPlayer\@\@W4EquipmentSlot\@\@\@Z
      */
     MCAPI bool _trySwapItem(class Player &, enum class EquipmentSlot);
 
 private:
     /**
-     * @hash   1658595999
      * @symbol  ?POSE_ATHENA\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
     /**
-     * @hash   1789889651
      * @symbol  ?POSE_BRANDISH\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
     /**
-     * @hash   504402430
      * @symbol  ?POSE_CANCAN_A\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
     /**
-     * @hash   -1638797889
      * @symbol  ?POSE_CANCAN_B\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_CANCAN_B;
     /**
-     * @hash   507349857
      * @symbol  ?POSE_DEFAULT\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_DEFAULT;
     /**
-     * @hash   -328812438
      * @symbol  ?POSE_ENTERTAIN\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_ENTERTAIN;
     /**
-     * @hash   1901801718
      * @symbol  ?POSE_HERO\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_HERO;
     /**
-     * @hash   1465632330
      * @symbol  ?POSE_HONOR\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_HONOR;
     /**
-     * @hash   -1874491410
      * @symbol  ?POSE_RIPOSTE\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_RIPOSTE;
     /**
-     * @hash   181783524
      * @symbol  ?POSE_SALUTE\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_SALUTE;
     /**
-     * @hash   1599736178
      * @symbol  ?POSE_SOLEMN\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
     /**
-     * @hash   -135201067
      * @symbol  ?POSE_ZERO_ROTATION\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     /**
-     * @hash   -739908862
      * @symbol  ?POSE_ZOMBIE\@ArmorStand\@\@0UPose\@1\@B
      */
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
     /**
-     * @hash   -489459374
      * @symbol  ?STAND_POSES\@ArmorStand\@\@0PAPEBUPose\@1\@A
      */
     MCAPI static struct ArmorStand::Pose const * STAND_POSES[];

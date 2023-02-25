@@ -30,27 +30,22 @@ public:
 
 public:
     /**
-     * @hash   -1306129592
      * @symbol  ?addAdditionalSaveData\@AgeableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   -788170552
      * @symbol  ?getAge\@AgeableComponent\@\@QEBAHXZ
      */
     MCAPI int getAge() const;
     /**
-     * @hash   914975829
      * @symbol  ?getInteraction\@AgeableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   1816393298
      * @symbol  ?readAdditionalSaveData\@AgeableComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1209829098
      * @symbol  ?setAge\@AgeableComponent\@\@QEAAXH\@Z
      */
     MCAPI void setAge(int);

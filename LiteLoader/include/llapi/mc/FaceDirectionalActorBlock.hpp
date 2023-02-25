@@ -161,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1667932612
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@FaceDirectionalActorBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -187,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -420961292
      * @vftbl  148
      * @symbol  ?getRenderBlock\@FaceDirectionalActorBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getRenderBlock() const;
     /**
-     * @hash   1209888377
      * @vftbl  149
      * @symbol  ?getMappedFace\@FaceDirectionalActorBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @hash   1998436029
      * @vftbl  150
      * @symbol  ?getFaceFlip\@FaceDirectionalActorBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
@@ -240,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   562297466
      * @symbol  ??0FaceDirectionalActorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_NM\@Z
      */
     MCAPI FaceDirectionalActorBlock(std::string const &, int, class Material const &, bool, float);

@@ -102,19 +102,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   120710656
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@CoalItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -2084221278
      * @vftbl  128
      * @symbol  ?getFurnaceXPmultiplier\@CoalItem\@\@UEBAMAEBVItemStackBase\@\@\@Z
      */
     virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
     /**
-     * @hash   999161587
      * @symbol  ??0CoalItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@\@Z
      */
     MCAPI CoalItem(std::string const &, int, enum class CoalItem::Type);

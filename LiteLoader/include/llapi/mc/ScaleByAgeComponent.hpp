@@ -29,12 +29,10 @@ public:
 
 public:
     /**
-     * @hash   -1022904917
      * @symbol  ??0ScaleByAgeComponent\@\@QEAA\@XZ
      */
     MCAPI ScaleByAgeComponent();
     /**
-     * @hash   524456216
      * @symbol  ?_initializeScale\@ScaleByAgeComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void _initializeScale(class EntityContext &);

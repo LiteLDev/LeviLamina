@@ -35,7 +35,6 @@ public:
      */
     virtual ~MockUnknownBlockTypeRegistry();
     /**
-     * @hash   467120956
      * @vftbl  1
      * @symbol  ?getUnknownBlock\@MockUnknownBlockTypeRegistry\@\@UEAAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
      */

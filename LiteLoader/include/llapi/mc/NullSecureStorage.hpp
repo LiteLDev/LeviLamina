@@ -31,22 +31,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
     /**
-     * @hash   1792655357
      * @symbol  ?add\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCVAPI bool add(std::string const &, std::string const &);
     /**
-     * @hash   1348580393
      * @symbol  ?addOrUpdate\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCVAPI bool addOrUpdate(std::string const &, std::string const &);
     /**
-     * @hash   218490421
      * @symbol  ?get\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
     MCVAPI bool get(std::string const &, std::string &);
     /**
-     * @hash   2061919532
      * @symbol  ?remove\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI bool remove(std::string const &);

@@ -36,13 +36,11 @@ public:
      */
     virtual ~DedicatedWSServerCommand();
     /**
-     * @hash   -394929994
      * @vftbl  1
      * @symbol  ?execute\@DedicatedWSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   289238335
      * @symbol  ?setup\@DedicatedWSServerCommand\@\@SAXAEAVCommandRegistry\@\@AEAVIMinecraftApp\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
@@ -51,7 +49,6 @@ public:
 
 private:
     /**
-     * @hash   -999935246
      * @symbol  ?mApp\@DedicatedWSServerCommand\@\@0PEAVIMinecraftApp\@\@EA
      */
     MCAPI static class IMinecraftApp * mApp;

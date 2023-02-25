@@ -36,37 +36,31 @@ public:
      */
     virtual ~PermissionCommand();
     /**
-     * @hash   598629751
      * @vftbl  1
      * @symbol  ?execute\@PermissionCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   158069218
      * @symbol  ?setup\@PermissionCommand\@\@SAXAEAVCommandRegistry\@\@PEAVPermissionsFile\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
 //private:
     /**
-     * @hash   187175765
      * @symbol  ?list\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void list(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -118740688
      * @symbol  ?reload\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1109666727
      * @symbol  ?set\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 
 private:
     /**
-     * @hash   384573855
      * @symbol  ?mPermissionsFile\@PermissionCommand\@\@0PEAVPermissionsFile\@\@EA
      */
     MCAPI static class PermissionsFile * mPermissionsFile;

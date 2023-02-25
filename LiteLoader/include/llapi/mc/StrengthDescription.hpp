@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   159151273
      * @vftbl  0
      * @symbol  ?getJsonName\@StrengthDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~StrengthDescription();
     /**
-     * @hash   -621398694
      * @vftbl  2
      * @symbol  ?deserializeData\@StrengthDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   1380168260
      * @vftbl  3
      * @symbol  ?serializeData\@StrengthDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorOnLadderTest();
     /**
-     * @hash   663512218
      * @vftbl  2
      * @symbol  ?evaluate\@ActorOnLadderTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -2110557192
      * @vftbl  4
      * @symbol  ?getName\@ActorOnLadderTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

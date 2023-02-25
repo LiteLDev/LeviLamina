@@ -46,7 +46,6 @@ public:
 
 public:
     /**
-     * @hash   141236852
      * @symbol  ??1ScorePacketInfo\@\@QEAA\@XZ
      */
     MCAPI ~ScorePacketInfo();

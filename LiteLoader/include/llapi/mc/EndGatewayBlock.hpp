@@ -36,13 +36,11 @@ public:
      */
     virtual ~EndGatewayBlock();
     /**
-     * @hash   -1336205068
      * @vftbl  2
      * @symbol  ?newBlockEntity\@EndGatewayBlock\@\@UEBA?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1376227593
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@EndGatewayBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   1849888710
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@EndGatewayBlock\@\@UEBA_NXZ
      */
@@ -164,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   845851252
      * @vftbl  62
      * @symbol  ?canContainLiquid\@EndGatewayBlock\@\@UEBA_NXZ
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   1502631590
      * @vftbl  103
      * @symbol  ?asItemInstance\@EndGatewayBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -216,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -2011549559
      * @vftbl  151
      * @symbol  ?animateTick\@EndGatewayBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -257,20 +251,17 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   693873770
      * @vftbl  188
      * @symbol  ?getResourceCount\@EndGatewayBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCK
     /**
-     * @hash   -2013167813
      * @symbol  ?waterSpreadCausesSpawn\@EndGatewayBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -465241278
      * @symbol  ??0EndGatewayBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EndGatewayBlock(std::string const &, int);

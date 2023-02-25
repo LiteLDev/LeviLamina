@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1657543306
      * @symbol  ??1PlayerNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerNotificationEvent();

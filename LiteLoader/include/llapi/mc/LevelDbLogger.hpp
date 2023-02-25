@@ -35,7 +35,6 @@ public:
      */
     virtual ~LevelDbLogger();
     /**
-     * @hash   -152380100
      * @vftbl  1
      * @symbol  ?Logv\@LevelDbLogger\@\@EEAAXPEBDPEAD\@Z
      */

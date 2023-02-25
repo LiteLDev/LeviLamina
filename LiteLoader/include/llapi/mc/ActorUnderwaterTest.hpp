@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorUnderwaterTest();
     /**
-     * @hash   903129000
      * @vftbl  2
      * @symbol  ?evaluate\@ActorUnderwaterTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1458667066
      * @vftbl  4
      * @symbol  ?getName\@ActorUnderwaterTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

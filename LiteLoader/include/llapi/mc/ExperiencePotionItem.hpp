@@ -57,13 +57,11 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   588314094
      * @vftbl  23
      * @symbol  ?isThrowable\@ExperiencePotionItem\@\@UEBA_NXZ
      */
     virtual bool isThrowable() const;
     /**
-     * @hash   1724897641
      * @vftbl  50
      * @symbol  ?isGlint\@ExperiencePotionItem\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -114,19 +112,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1349350946
      * @vftbl  84
      * @symbol  ?use\@ExperiencePotionItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   1561402540
      * @vftbl  85
      * @symbol  ?dispense\@ExperiencePotionItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   1041274414
      * @symbol  ??0ExperiencePotionItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ExperiencePotionItem(std::string const &, int);

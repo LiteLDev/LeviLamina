@@ -36,13 +36,11 @@ public:
      */
     virtual ~LadderBlock();
     /**
-     * @hash   1723599003
      * @vftbl  10
      * @symbol  ?getAABB\@LadderBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1390106947
      * @vftbl  14
      * @symbol  ?getLiquidClipVolume\@LadderBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -2072748897
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@LadderBlock\@\@UEBA_NXZ
      */
@@ -154,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   1296566350
      * @vftbl  57
      * @symbol  ?sanitizeFillBlock\@LadderBlock\@\@UEBAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
@@ -170,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1054216963
      * @vftbl  62
      * @symbol  ?canContainLiquid\@LadderBlock\@\@UEBA_NXZ
      */
@@ -186,13 +181,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1131785738
      * @vftbl  91
      * @symbol  ?mayPlace\@LadderBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   188914813
      * @vftbl  99
      * @symbol  ?neighborChanged\@LadderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -203,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   375472154
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LadderBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -229,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1890869893
      * @vftbl  143
      * @symbol  ?getVisualShape\@LadderBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -260,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -794102959
      * @vftbl  171
      * @symbol  ?tick\@LadderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -271,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1102232805
      * @vftbl  178
      * @symbol  ?canSurvive\@LadderBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -283,18 +272,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LADDERBLOCK
     /**
-     * @hash   1942292124
      * @symbol  ?canBeSilkTouched\@LadderBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -1169425388
      * @symbol  ?waterSpreadCausesSpawn\@LadderBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   77903577
      * @symbol  ??0LadderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LadderBlock(std::string const &, int);

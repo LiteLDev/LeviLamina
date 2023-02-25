@@ -35,7 +35,6 @@ public:
      */
     virtual ~SlimeFloatGoal();
     /**
-     * @hash   1067938889
      * @vftbl  1
      * @symbol  ?canUse\@SlimeFloatGoal\@\@UEAA_NXZ
      */
@@ -61,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   746960589
      * @vftbl  6
      * @symbol  ?tick\@SlimeFloatGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -145730521
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SlimeFloatGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -835143434
      * @symbol  ??0SlimeFloatGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SlimeFloatGoal(class Mob &);

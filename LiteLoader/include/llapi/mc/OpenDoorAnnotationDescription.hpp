@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   701374671
      * @vftbl  0
      * @symbol  ?getJsonName\@OpenDoorAnnotationDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~OpenDoorAnnotationDescription();
     /**
-     * @hash   -1344441058
      * @vftbl  3
      * @symbol  ?serializeData\@OpenDoorAnnotationDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

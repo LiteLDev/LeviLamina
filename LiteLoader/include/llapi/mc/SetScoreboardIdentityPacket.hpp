@@ -36,31 +36,26 @@ public:
      */
     virtual ~SetScoreboardIdentityPacket();
     /**
-     * @hash   -168337214
      * @vftbl  1
      * @symbol  ?getId\@SetScoreboardIdentityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -910992529
      * @vftbl  2
      * @symbol  ?getName\@SetScoreboardIdentityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -279942184
      * @vftbl  3
      * @symbol  ?write\@SetScoreboardIdentityPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1888352680
      * @vftbl  6
      * @symbol  ?_read\@SetScoreboardIdentityPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -944644083
      * @symbol  ?change\@SetScoreboardIdentityPacket\@\@SA?AV1\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */
     MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const &, struct PlayerScoreboardId const &);

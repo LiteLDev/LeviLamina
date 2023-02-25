@@ -46,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -1565948099
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -62,30 +61,25 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   2098636057
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   -977968531
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREVIEWCONTAINERVALIDATION
     /**
-     * @hash   -278902800
      * @symbol  ?isItemAllowedInSlot\@PreviewContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   -2091441199
      * @symbol  ?isItemAllowedToAdd\@PreviewContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
-     * @hash   -1434140522
      * @symbol  ?isValidSlotForContainer\@PreviewContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;

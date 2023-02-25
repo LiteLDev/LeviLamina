@@ -29,7 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
     /**
-     * @hash   -1075193091
      * @symbol  __unk_destructor_-1
      */
     MCVAPI ~IEntityRegistryOwner();

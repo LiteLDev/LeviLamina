@@ -35,13 +35,11 @@ public:
      */
     virtual ~RandomSitGoal();
     /**
-     * @hash   1764065122
      * @vftbl  1
      * @symbol  ?canUse\@RandomSitGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1664091504
      * @vftbl  2
      * @symbol  ?canContinueToUse\@RandomSitGoal\@\@UEAA_NXZ
      */
@@ -52,13 +50,11 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1955275451
      * @vftbl  4
      * @symbol  ?start\@RandomSitGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1559550731
      * @vftbl  5
      * @symbol  ?stop\@RandomSitGoal\@\@UEAAXXZ
      */
@@ -69,13 +65,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   834226558
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@RandomSitGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1375978415
      * @symbol  ??0RandomSitGoal\@\@QEAA\@AEAVMob\@\@MMMM\@Z
      */
     MCAPI RandomSitGoal(class Mob &, float, float, float, float);

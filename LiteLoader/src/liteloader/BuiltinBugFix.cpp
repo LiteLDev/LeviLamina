@@ -449,7 +449,7 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
     //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
     if (isSimulatedPlayer()) {
         // Force to call the implementation of ServerPlayer
-        ((ServerPlayer*)this)->_updateChunkPublisherView(getPos(),16.0f);
+        ((ServerPlayer*)this)->_updateChunkPublisherView(getPos(), 16.0f * Global<PropertiesSettings>->getServerTickRange());
     }
 }
 

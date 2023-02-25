@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorSurfaceMobTest();
     /**
-     * @hash   1777122188
      * @vftbl  2
      * @symbol  ?evaluate\@ActorSurfaceMobTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   893944950
      * @vftbl  4
      * @symbol  ?getName\@ActorSurfaceMobTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

@@ -36,7 +36,6 @@ public:
      */
     virtual ~LegacyEmeraldOreFeature();
     /**
-     * @hash   1492624073
      * @vftbl  3
      * @symbol  ?place\@LegacyEmeraldOreFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

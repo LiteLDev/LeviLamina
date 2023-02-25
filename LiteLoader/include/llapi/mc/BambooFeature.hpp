@@ -36,7 +36,6 @@ public:
      */
     virtual ~BambooFeature();
     /**
-     * @hash   -1442239652
      * @vftbl  3
      * @symbol  ?place\@BambooFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

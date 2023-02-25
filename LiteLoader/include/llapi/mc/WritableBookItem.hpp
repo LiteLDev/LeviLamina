@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -826742224
      * @vftbl  59
      * @symbol  ?requiresInteract\@WritableBookItem\@\@UEBA_NXZ
      */
@@ -108,44 +107,36 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   486360498
      * @vftbl  84
      * @symbol  ?use\@WritableBookItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -701415929
      * @vftbl  119
      * @symbol  ?getInteractText\@WritableBookItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @hash   1675396330
      * @symbol  ??0WritableBookItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WritableBookItem(std::string const &, int);
     /**
-     * @hash   100808266
      * @symbol  ?addPageAt\@WritableBookItem\@\@SAXAEAVItemStack\@\@HAEBUPageContent\@\@\@Z
      */
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
     /**
-     * @hash   -510023256
      * @symbol  ?deletePage\@WritableBookItem\@\@SA?AUPageContent\@\@AEAVItemStack\@\@H\@Z
      */
     MCAPI static struct PageContent deletePage(class ItemStack &, int);
     /**
-     * @hash   604830570
      * @symbol  ?replacePage\@WritableBookItem\@\@SAXAEAVItemStack\@\@HAEBUPageContent\@\@\@Z
      */
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
     /**
-     * @hash   -919516605
      * @symbol  ?signBook\@WritableBookItem\@\@SAXAEAVItemStack\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@11\@Z
      */
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     /**
-     * @hash   -1408764062
      * @symbol  ?swapPages\@WritableBookItem\@\@SAXAEAVItemStack\@\@HH\@Z
      */
     MCAPI static void swapPages(class ItemStack &, int, int);

@@ -37,27 +37,22 @@ public:
 
 //protected:
     /**
-     * @hash   -1030812928
      * @symbol  ??0StackResultStorageEntity\@\@IEAA\@AEBVWeakStorageEntity\@\@\@Z
      */
     MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
     /**
-     * @hash   1632147979
      * @symbol  ??0StackResultStorageEntity\@\@IEAA\@AEBVOwnerStorageEntity\@\@\@Z
      */
     MCAPI StackResultStorageEntity(class OwnerStorageEntity const &);
     /**
-     * @hash   -1470527976
      * @symbol  ??0StackResultStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);
     /**
-     * @hash   1265077185
      * @symbol  ?_getStackRef\@StackResultStorageEntity\@\@IEBAAEAVEntityContext\@\@XZ
      */
     MCAPI class EntityContext & _getStackRef() const;
     /**
-     * @hash   -1370199399
      * @symbol  ?_hasValue\@StackResultStorageEntity\@\@IEBA_NXZ
      */
     MCAPI bool _hasValue() const;

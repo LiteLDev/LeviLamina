@@ -36,7 +36,6 @@ public:
      */
     virtual ~CopperBlock();
     /**
-     * @hash   -2085640864
      * @vftbl  16
      * @symbol  ?onLightningHit\@CopperBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   510199264
      * @vftbl  28
      * @symbol  ?tryGetCopperBehavior\@CopperBlock\@\@UEBAPEBVCopperBehavior\@\@XZ
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   591640311
      * @vftbl  172
      * @symbol  ?randomTick\@CopperBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   865979401
      * @vftbl  177
      * @symbol  ?use\@CopperBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -265,17 +261,14 @@ public:
      */
     virtual void __unk_vfn_197();
     /**
-     * @hash   -2117661952
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
-     * @hash   471560526
      * @symbol  ??0CopperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CopperType\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI CopperBlock(std::string const &, int, enum class CopperType, class HashedString const &);
     /**
-     * @hash   1795940222
      * @symbol  ??0CopperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CopperType\@\@AEBVHashedString\@\@22\@Z
      */
     MCAPI CopperBlock(std::string const &, int, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);

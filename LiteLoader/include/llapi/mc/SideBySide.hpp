@@ -21,22 +21,18 @@ namespace SideBySide {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   73628619
      * @symbol  ?GLOBAL_MODE\@SideBySide\@\@3W4GlobalMode\@SideBySideTrigger\@\@A
      */
     MCAPI extern enum class SideBySideTrigger::GlobalMode GLOBAL_MODE;
     /**
-     * @hash   -1349704559
      * @symbol  ?_collectVehiclesAndPassengersNotInView\@SideBySide\@\@YAXAEBVStrictEntityContext\@\@AEBUSideBySideValidationExceptionComponent\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UUsesSideBySideComparisonComponent\@\@USideBySideExceptionVisitedFlagComponent\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUPassengerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@\@\@AEAV?$vector\@U?$pair\@VStrictEntityContext\@\@USideBySideValidationExceptionComponent\@\@\@std\@\@V?$allocator\@U?$pair\@VStrictEntityContext\@\@USideBySideValidationExceptionComponent\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void _collectVehiclesAndPassengersNotInView(class StrictEntityContext const &, struct SideBySideValidationExceptionComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct UsesSideBySideComparisonComponent, struct SideBySideExceptionVisitedFlagComponent>> const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, std::vector<struct std::pair<class StrictEntityContext, struct SideBySideValidationExceptionComponent>> &);
     /**
-     * @hash   -639054436
      * @symbol  ?_tryAddFailureComponent\@SideBySide\@\@YAXAEBVStrictEntityContext\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USideBySideValidationFailureComponent\@\@\@\@AEBUSideBySideValidationFailure\@\@\@Z
      */
     MCAPI void _tryAddFailureComponent(class StrictEntityContext const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SideBySideValidationFailureComponent> &, struct SideBySideValidationFailure const &);
     /**
-     * @hash   -855921014
      * @symbol  ?combineComparison\@SideBySide\@\@YA?AUSideBySidePartialComparison\@\@AEBU2\@0\@Z
      */
     MCAPI struct SideBySidePartialComparison combineComparison(struct SideBySidePartialComparison const &, struct SideBySidePartialComparison const &);

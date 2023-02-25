@@ -36,25 +36,21 @@ public:
      */
     virtual ~BubbleColumnBlock();
     /**
-     * @hash   74745633
      * @vftbl  5
      * @symbol  ?getCollisionShape\@BubbleColumnBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   623618987
      * @vftbl  9
      * @symbol  ?addAABBs\@BubbleColumnBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   1935942683
      * @vftbl  10
      * @symbol  ?getAABB\@BubbleColumnBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -864747406
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@BubbleColumnBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -170,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -478539811
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BubbleColumnBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -2141140673
      * @vftbl  63
      * @symbol  ?getRequiredMedium\@BubbleColumnBlock\@\@UEBA?AV?$optional\@VHashedString\@\@\@std\@\@XZ
      */
     virtual class std::optional<class HashedString> getRequiredMedium() const;
     /**
-     * @hash   -2117197041
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BubbleColumnBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -198,19 +191,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1084357473
      * @vftbl  84
      * @symbol  ?isPreservingMediumWhenPlaced\@BubbleColumnBlock\@\@UEBA_NPEBVBlockLegacy\@\@\@Z
      */
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /**
-     * @hash   942025212
      * @vftbl  90
      * @symbol  ?mayPick\@BubbleColumnBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @hash   1394471421
      * @vftbl  99
      * @symbol  ?neighborChanged\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -221,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1967562875
      * @vftbl  113
      * @symbol  ?entityInside\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -247,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -450997801
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@BubbleColumnBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @hash   991695712
      * @vftbl  151
      * @symbol  ?animateTick\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -279,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1049776071
      * @vftbl  168
      * @symbol  ?onPlace\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -290,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   2047830865
      * @vftbl  171
      * @symbol  ?tick\@BubbleColumnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -301,7 +286,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2014327013
      * @vftbl  178
      * @symbol  ?canSurvive\@BubbleColumnBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -312,47 +296,39 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -666340399
      * @vftbl  188
      * @symbol  ?getResourceCount\@BubbleColumnBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUBBLECOLUMNBLOCK
     /**
-     * @hash   331135799
      * @symbol  ?shouldTickOnSetBlock\@BubbleColumnBlock\@\@UEBA_NXZ
      */
     MCVAPI bool shouldTickOnSetBlock() const;
 #endif
     /**
-     * @hash   1310531993
      * @symbol  ??0BubbleColumnBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BubbleColumnBlock(std::string const &, int);
     /**
-     * @hash   351544970
      * @symbol  ?addBubbleColumnSegment\@BubbleColumnBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool addBubbleColumnSegment(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -109043333
      * @symbol  ?shouldDragDown\@BubbleColumnBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool shouldDragDown(class Block const &);
     /**
-     * @hash   -606352247
      * @symbol  ?spawnBubbles\@BubbleColumnBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void spawnBubbles(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   -258977617
      * @symbol  ?createParticles\@BubbleColumnBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
     MCAPI static void createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
     /**
-     * @hash   -61411057
      * @symbol  ?getFlowDownward\@BubbleColumnBlock\@\@CA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool getFlowDownward(class Block const &);

@@ -44,7 +44,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   34476462
      * @vftbl  3
      * @symbol  ?_write\@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
@@ -55,13 +54,11 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   -1800356170
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   21939192
      * @symbol  ??0ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();

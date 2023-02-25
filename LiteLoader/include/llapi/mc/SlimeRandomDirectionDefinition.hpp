@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   1208161059
      * @symbol  ??0SlimeRandomDirectionDefinition\@\@QEAA\@XZ
      */
     MCAPI SlimeRandomDirectionDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class SlimeRandomDirectionGoal &) const;
     /**
-     * @hash   1794246743
      * @symbol  ?buildSchema\@SlimeRandomDirectionDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeRandomDirectionDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>> &);

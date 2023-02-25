@@ -36,13 +36,11 @@ public:
      */
     virtual ~ToggleDownfallCommand();
     /**
-     * @hash   917064169
      * @vftbl  1
      * @symbol  ?execute\@ToggleDownfallCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1173392
      * @symbol  ?setup\@ToggleDownfallCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

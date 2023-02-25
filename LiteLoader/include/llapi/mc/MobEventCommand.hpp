@@ -42,13 +42,11 @@ public:
      */
     virtual ~MobEventCommand();
     /**
-     * @hash   -469278686
      * @vftbl  1
      * @symbol  ?execute\@MobEventCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   845068209
      * @symbol  ?setup\@MobEventCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, struct MobEventCommand::InitProxy &&);

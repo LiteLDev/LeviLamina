@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -996892312
      * @vftbl  0
      * @symbol  ?getJsonName\@DynamicJumpControlDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~DynamicJumpControlDescription();
     /**
-     * @hash   -599274197
      * @vftbl  2
      * @symbol  ?deserializeData\@DynamicJumpControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -947969995
      * @vftbl  3
      * @symbol  ?serializeData\@DynamicJumpControlDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

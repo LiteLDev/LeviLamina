@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -637672364
      * @vftbl  62
      * @symbol  ?canContainLiquid\@StemBlock\@\@UEBA_NXZ
      */
@@ -162,31 +161,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1873310946
      * @vftbl  86
      * @symbol  ?onFertilized\@StemBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -158116439
      * @vftbl  88
      * @symbol  ?canBeFertilized\@StemBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   236216203
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@StemBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1777601286
      * @vftbl  99
      * @symbol  ?neighborChanged\@StemBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -784321610
      * @vftbl  103
      * @symbol  ?asItemInstance\@StemBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -217,25 +211,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1247993658
      * @vftbl  135
      * @symbol  ?getColor\@StemBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   1386725760
      * @vftbl  136
      * @symbol  ?getColor\@StemBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1007769455
      * @vftbl  137
      * @symbol  ?getColorAtPos\@StemBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2109449778
      * @vftbl  143
      * @symbol  ?getVisualShape\@StemBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -266,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1230380023
      * @vftbl  172
      * @symbol  ?randomTick\@StemBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -282,43 +271,36 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1857598110
      * @vftbl  187
      * @symbol  ?getResourceItem\@StemBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   256190474
      * @vftbl  188
      * @symbol  ?getResourceCount\@StemBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STEMBLOCK
     /**
-     * @hash   1856562083
      * @symbol  ?canBeSilkTouched\@StemBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   2051246206
      * @symbol  ?isStemBlock\@StemBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isStemBlock() const;
 #endif
     /**
-     * @hash   1796386703
      * @symbol  ??0StemBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@\@Z
      */
     MCAPI StemBlock(std::string const &, int, class BlockLegacy const &);
     /**
-     * @hash   -165704940
      * @symbol  ?getFruitBlock\@StemBlock\@\@QEBAAEBVBlockLegacy\@\@XZ
      */
     MCAPI class BlockLegacy const & getFruitBlock() const;
 
 //private:
     /**
-     * @hash   -253928889
      * @symbol  ?getGrowthSpeed\@StemBlock\@\@AEBAMAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;

@@ -36,19 +36,16 @@ public:
      */
     virtual ~FenceBlock();
     /**
-     * @hash   -741956292
      * @vftbl  10
      * @symbol  ?getAABB\@FenceBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   40580929
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@FenceBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -830732556
      * @vftbl  14
      * @symbol  ?getLiquidClipVolume\@FenceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
@@ -59,13 +56,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1007063397
      * @vftbl  22
      * @symbol  ?canProvideSupport\@FenceBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   14270483
      * @vftbl  25
      * @symbol  ?canConnect\@FenceBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -176,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -208432020
      * @vftbl  62
      * @symbol  ?canContainLiquid\@FenceBlock\@\@UEBA_NXZ
      */
@@ -192,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -888162076
      * @vftbl  92
      * @symbol  ?mayPlace\@FenceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1536186897
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@FenceBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -234,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1353751709
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@FenceBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   2078276088
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@FenceBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1432393838
      * @vftbl  142
      * @symbol  ?getVisualShapeInWorld\@FenceBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
@@ -282,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -721672463
      * @vftbl  177
      * @symbol  ?use\@FenceBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -298,30 +286,25 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -507136742
      * @vftbl  187
      * @symbol  ?getResourceItem\@FenceBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEBLOCK
     /**
-     * @hash   -1717809013
      * @symbol  ?canBeSilkTouched\@FenceBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1828542226
      * @symbol  ?isFenceBlock\@FenceBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isFenceBlock() const;
 #endif
     /**
-     * @hash   1946376755
      * @symbol  ??0FenceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -1949700983
      * @symbol  ?fetchPathableNeighbors\@FenceBlock\@\@QEBAXAEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@\@Z
      */
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
@@ -330,7 +313,6 @@ public:
 
 private:
     /**
-     * @hash   -1850753909
      * @symbol  ?FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION\@FenceBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;

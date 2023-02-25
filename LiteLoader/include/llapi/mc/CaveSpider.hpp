@@ -117,7 +117,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   358987865
      * @vftbl  220
      * @symbol  ?getDebugText\@CaveSpider\@\@EEAAXAEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
@@ -168,19 +167,16 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1016759197
      * @vftbl  357
      * @symbol  ?getModelScale\@CaveSpider\@\@UEBAMXZ
      */
     virtual float getModelScale() const;
     /**
-     * @hash   613549100
      * @vftbl  358
      * @symbol  ?getSpiderType\@CaveSpider\@\@UEBA?AW4Type\@Spider\@\@XZ
      */
     virtual enum class Spider::Type getSpiderType() const;
     /**
-     * @hash   988245774
      * @symbol  ??0CaveSpider\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

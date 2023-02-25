@@ -216,19 +216,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -61377724
      * @vftbl  187
      * @symbol  ?getResourceItem\@SeaLanternBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -300398020
      * @vftbl  188
      * @symbol  ?getResourceCount\@SeaLanternBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   341076548
      * @symbol  ??0SeaLanternBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SeaLanternBlock(std::string const &, int);

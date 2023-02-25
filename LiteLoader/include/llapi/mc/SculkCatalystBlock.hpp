@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -979312192
      * @vftbl  146
      * @symbol  ?getVariant\@SculkCatalystBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -212,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   737475030
      * @vftbl  171
      * @symbol  ?tick\@SculkCatalystBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -228,37 +226,31 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   157318302
      * @vftbl  187
      * @symbol  ?getResourceItem\@SculkCatalystBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   112434710
      * @vftbl  188
      * @symbol  ?getResourceCount\@SculkCatalystBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -819420393
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SculkCatalystBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCK
     /**
-     * @hash   -874109554
      * @symbol  ?canBeSilkTouched\@SculkCatalystBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -46417993
      * @symbol  ??0SculkCatalystBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SculkCatalystBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -1703036799
      * @symbol  ?bloom\@SculkCatalystBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void bloom(class BlockSource &, class BlockPos const &, class Block const &, class Random &);

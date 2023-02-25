@@ -35,13 +35,11 @@ public:
      */
     virtual ~IsHoldingSilkTouchTest();
     /**
-     * @hash   -102730507
      * @vftbl  2
      * @symbol  ?evaluate\@IsHoldingSilkTouchTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -6497875
      * @vftbl  4
      * @symbol  ?getName\@IsHoldingSilkTouchTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

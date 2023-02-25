@@ -60,7 +60,6 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1792787123
      * @vftbl  6
      * @symbol  ?onDownloadBegin\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
@@ -71,19 +70,16 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -1478958017
      * @vftbl  8
      * @symbol  ?onDownloadComplete\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
-     * @hash   -441648049
      * @vftbl  9
      * @symbol  ?onDownloadCanceled\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
-     * @hash   2139821506
      * @symbol  ??0IWebviewTelemetry\@\@QEAA\@AEBVIMinecraftEventing\@\@\@Z
      */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);

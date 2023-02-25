@@ -35,7 +35,6 @@ public:
      */
     virtual ~VanillaInPackagePacks();
     /**
-     * @hash   -995938414
      * @vftbl  1
      * @symbol  ?getPacks\@VanillaInPackagePacks\@\@UEBA?AV?$vector\@UMetaData\@IInPackagePacks\@\@V?$allocator\@UMetaData\@IInPackagePacks\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
      */

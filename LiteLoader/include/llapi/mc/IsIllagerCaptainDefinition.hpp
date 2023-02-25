@@ -39,7 +39,6 @@ public:
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
-     * @hash   128909370
      * @symbol  ?buildSchema\@IsIllagerCaptainDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsIllagerCaptainDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIllagerCaptainDefinition>> &);

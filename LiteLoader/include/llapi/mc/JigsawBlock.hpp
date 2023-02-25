@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   322430569
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@JigsawBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -2003424549
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@JigsawBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -193,19 +191,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -906009699
      * @vftbl  148
      * @symbol  ?getRenderBlock\@JigsawBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getRenderBlock() const;
     /**
-     * @hash   1049675474
      * @vftbl  149
      * @symbol  ?getMappedFace\@JigsawBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @hash   916146934
      * @vftbl  150
      * @symbol  ?getFaceFlip\@JigsawBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   129682977
      * @vftbl  177
      * @symbol  ?use\@JigsawBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -252,25 +246,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   529671538
      * @vftbl  188
      * @symbol  ?getResourceCount\@JigsawBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCK
     /**
-     * @hash   -1965702895
      * @symbol  ?isInteractiveBlock\@JigsawBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   643024730
      * @symbol  ??0JigsawBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI JigsawBlock(std::string const &, int);
     /**
-     * @hash   497354122
      * @symbol  ?canAttach\@JigsawBlock\@\@SA_NAEBVJigsawBlockInfo\@\@0\@Z
      */
     MCAPI static bool canAttach(class JigsawBlockInfo const &, class JigsawBlockInfo const &);

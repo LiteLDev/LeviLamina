@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   551791177
      * @symbol  ??0BuryDescription\@\@QEAA\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI BuryDescription(class BoundingBox const &);
     /**
-     * @hash   1762034353
      * @symbol  ?calculateContribution\@BuryDescription\@\@QEBAMAEBVBlockPos\@\@\@Z
      */
     MCAPI float calculateContribution(class BlockPos const &) const;

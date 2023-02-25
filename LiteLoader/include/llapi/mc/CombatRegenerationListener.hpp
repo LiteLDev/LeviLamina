@@ -75,7 +75,6 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -402536867
      * @vftbl  9
      * @symbol  ?onActorDeath\@CombatRegenerationListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@AEBVActorDamageSource\@\@W4ActorType\@\@\@Z
      */

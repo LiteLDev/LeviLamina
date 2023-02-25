@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -629737514
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@LeafBlockItem\@\@UEBAHH\@Z
      */
@@ -108,19 +107,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -340126440
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@LeafBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   497130181
      * @vftbl  105
      * @symbol  ?fixupCommon\@LeafBlockItem\@\@UEBAXAEAVItemStackBase\@\@\@Z
      */
     virtual void fixupCommon(class ItemStackBase &) const;
     /**
-     * @hash   857325201
      * @vftbl  106
      * @symbol  ?fixupCommon\@LeafBlockItem\@\@UEBAXAEAVItemStackBase\@\@AEAVLevel\@\@\@Z
      */

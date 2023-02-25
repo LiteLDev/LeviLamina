@@ -36,7 +36,6 @@ public:
      */
     virtual ~BlueIceFeature();
     /**
-     * @hash   318948543
      * @vftbl  3
      * @symbol  ?place\@BlueIceFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

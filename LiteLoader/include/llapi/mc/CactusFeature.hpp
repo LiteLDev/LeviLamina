@@ -36,7 +36,6 @@ public:
      */
     virtual ~CactusFeature();
     /**
-     * @hash   -1535836589
      * @vftbl  3
      * @symbol  ?place\@CactusFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

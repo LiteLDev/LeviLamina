@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1176511830
      * @symbol  ??1ActorDefinitionIdentifierComponent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionIdentifierComponent();

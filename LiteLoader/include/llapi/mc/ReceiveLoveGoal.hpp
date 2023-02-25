@@ -60,31 +60,26 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1685985460
      * @vftbl  6
      * @symbol  ?tick\@ReceiveLoveGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   1008562344
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@ReceiveLoveGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
     /**
-     * @hash   1873955430
      * @symbol  ?canContinueToUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @hash   1133062792
      * @symbol  ?canUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canUse();
 #endif
     /**
-     * @hash   1723620797
      * @symbol  ??0ReceiveLoveGoal\@\@QEAA\@AEAVVillagerBase\@\@\@Z
      */
     MCAPI ReceiveLoveGoal(class VillagerBase &);

@@ -103,31 +103,26 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -319206527
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@SignItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   -1058497810
      * @vftbl  132
      * @symbol  ?_useOn\@SignItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   396442385
      * @vftbl  133
      * @symbol  ?getBlockToPlace\@SignItem\@\@MEBAPEBVBlock\@\@EAEBVActor\@\@VBlockPos\@\@\@Z
      */
     virtual class Block const * getBlockToPlace(unsigned char, class Actor const &, class BlockPos) const;
     /**
-     * @hash   1030750897
      * @vftbl  134
      * @symbol  ?_initializeTags\@SignItem\@\@EEAAXXZ
      */
     virtual void _initializeTags();
     /**
-     * @hash   -1850665795
      * @symbol  ??0SignItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4SignType\@SignBlockActor\@\@\@Z
      */
     MCAPI SignItem(std::string const &, int, enum class SignBlockActor::SignType);

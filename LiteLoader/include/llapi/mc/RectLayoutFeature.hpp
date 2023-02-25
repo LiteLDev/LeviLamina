@@ -41,7 +41,6 @@ public:
      */
     virtual ~RectLayoutFeature();
     /**
-     * @hash   1889424213
      * @vftbl  1
      * @symbol  ?place\@RectLayoutFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
@@ -49,7 +48,6 @@ public:
 
 //private:
     /**
-     * @hash   204297156
      * @symbol  ?_tryPlaceFeature\@RectLayoutFeature\@\@AEBA?AV?$optional\@UFeatureArea\@RectLayoutFeature\@\@\@std\@\@AEBVVec2\@\@HAEBV?$array\@V?$array\@E$0BA\@\@std\@\@$0BA\@\@3\@\@Z
      */
     MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const &, int, class std::array<class std::array<unsigned char, 16>, 16> const &) const;

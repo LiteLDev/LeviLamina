@@ -29,7 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
     /**
-     * @hash   439460
      * @symbol  __unk_destructor_-1
      */
     MCVAPI ~AddActorBasePacket();

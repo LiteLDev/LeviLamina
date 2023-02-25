@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -236144938
      * @symbol  ??0DropItemForDefinition\@\@QEAA\@XZ
      */
     MCAPI DropItemForDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class DropItemForGoal &) const;
     /**
-     * @hash   638689081
      * @symbol  ?buildSchema\@DropItemForDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDropItemForDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>> &);

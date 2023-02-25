@@ -211,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   227603636
      * @vftbl  177
      * @symbol  ?use\@FungusStem\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -227,13 +226,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1796115318
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@FungusStem\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1075432582
      * @symbol  ??0FungusStem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI FungusStem(std::string const &, int, class Material const &);

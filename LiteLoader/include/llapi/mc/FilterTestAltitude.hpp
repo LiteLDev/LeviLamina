@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestAltitude();
     /**
-     * @hash   -1920403378
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestAltitude\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1577787020
      * @vftbl  4
      * @symbol  ?getName\@FilterTestAltitude\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

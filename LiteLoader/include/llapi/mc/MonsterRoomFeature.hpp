@@ -35,13 +35,11 @@ public:
      */
     virtual ~MonsterRoomFeature();
     /**
-     * @hash   -962907189
      * @vftbl  3
      * @symbol  ?place\@MonsterRoomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -2074774083
      * @symbol  ??0MonsterRoomFeature\@\@QEAA\@XZ
      */
     MCAPI MonsterRoomFeature();

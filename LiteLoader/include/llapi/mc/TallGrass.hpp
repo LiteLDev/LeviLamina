@@ -36,13 +36,11 @@ public:
      */
     virtual ~TallGrass();
     /**
-     * @hash   -387447026
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@TallGrass\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   -1670458711
      * @vftbl  10
      * @symbol  ?getAABB\@TallGrass\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1161972303
      * @vftbl  62
      * @symbol  ?canContainLiquid\@TallGrass\@\@UEBA_NXZ
      */
@@ -174,25 +171,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1647276115
      * @vftbl  86
      * @symbol  ?onFertilized\@TallGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1934487862
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@TallGrass\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   1073497870
      * @vftbl  88
      * @symbol  ?canBeFertilized\@TallGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   773234503
      * @vftbl  92
      * @symbol  ?mayPlace\@TallGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -228,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -753121168
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@TallGrass\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -239,13 +231,11 @@ public:
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -1910515445
      * @vftbl  135
      * @symbol  ?getColor\@TallGrass\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -1441350939
      * @vftbl  136
      * @symbol  ?getColor\@TallGrass\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -286,25 +276,21 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1270431303
      * @vftbl  178
      * @symbol  ?canSurvive\@TallGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -804973842
      * @vftbl  179
      * @symbol  ?getRenderLayer\@TallGrass\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @hash   -1329176414
      * @vftbl  180
      * @symbol  ?getRenderLayer\@TallGrass\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -382706291
      * @vftbl  184
      * @symbol  ?getMapColor\@TallGrass\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -315,26 +301,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2092774259
      * @vftbl  186
      * @symbol  ?playerDestroy\@TallGrass\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1759879367
      * @vftbl  187
      * @symbol  ?getResourceItem\@TallGrass\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TALLGRASS
     /**
-     * @hash   -638760546
      * @symbol  ?canBeSilkTouched\@TallGrass\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1404460471
      * @symbol  ??0TallGrass\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TallGrass(std::string const &, int);

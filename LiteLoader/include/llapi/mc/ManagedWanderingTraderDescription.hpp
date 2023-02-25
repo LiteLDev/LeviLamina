@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   952686588
      * @vftbl  0
      * @symbol  ?getJsonName\@ManagedWanderingTraderDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~ManagedWanderingTraderDescription();
     /**
-     * @hash   665327713
      * @vftbl  3
      * @symbol  ?serializeData\@ManagedWanderingTraderDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

@@ -35,13 +35,11 @@ public:
      */
     virtual ~ShulkerPeekGoal();
     /**
-     * @hash   2025959270
      * @vftbl  1
      * @symbol  ?canUse\@ShulkerPeekGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1528161516
      * @vftbl  2
      * @symbol  ?canContinueToUse\@ShulkerPeekGoal\@\@UEAA_NXZ
      */
@@ -52,31 +50,26 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   2001711887
      * @vftbl  4
      * @symbol  ?start\@ShulkerPeekGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1403904177
      * @vftbl  5
      * @symbol  ?stop\@ShulkerPeekGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1565234102
      * @vftbl  6
      * @symbol  ?tick\@ShulkerPeekGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -2110531430
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@ShulkerPeekGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   21524003
      * @symbol  ??0ShulkerPeekGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI ShulkerPeekGoal(class Mob &);

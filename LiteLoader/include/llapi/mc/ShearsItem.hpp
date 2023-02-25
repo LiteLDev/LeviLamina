@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -1380981000
      * @vftbl  44
      * @symbol  ?canDestroySpecial\@ShearsItem\@\@UEBA_NAEBVBlock\@\@\@Z
      */
@@ -73,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   798011079
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@ShearsItem\@\@UEBAHXZ
      */
@@ -114,31 +112,26 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -437445375
      * @vftbl  85
      * @symbol  ?dispense\@ShearsItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   798783253
      * @vftbl  88
      * @symbol  ?getDestroySpeed\@ShearsItem\@\@UEBAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
-     * @hash   -1857820093
      * @vftbl  89
      * @symbol  ?hurtActor\@ShearsItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @hash   278576582
      * @vftbl  93
      * @symbol  ?mineBlock\@ShearsItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @hash   -1444991787
      * @vftbl  132
      * @symbol  ?_useOn\@ShearsItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */

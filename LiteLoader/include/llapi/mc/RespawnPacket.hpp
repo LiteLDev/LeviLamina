@@ -61,36 +61,30 @@ public:
      */
     virtual ~RespawnPacket();
     /**
-     * @hash   -1242033474
      * @vftbl  1
      * @symbol  ?getId\@RespawnPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -338555541
      * @vftbl  2
      * @symbol  ?getName\@RespawnPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -519510852
      * @vftbl  3
      * @symbol  ?write\@RespawnPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   2062329052
      * @vftbl  6
      * @symbol  ?_read\@RespawnPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1186425836
      * @symbol  ??0RespawnPacket\@\@QEAA\@XZ
      */
     MCAPI RespawnPacket();
     /**
-     * @hash   -1081415572
      * @symbol  ??0RespawnPacket\@\@QEAA\@AEBVVec3\@\@AEBW4PlayerRespawnState\@\@\@Z
      */
     MCAPI RespawnPacket(class Vec3 const &, enum class PlayerRespawnState const &);

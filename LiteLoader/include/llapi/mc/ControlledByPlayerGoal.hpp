@@ -35,7 +35,6 @@ public:
      */
     virtual ~ControlledByPlayerGoal();
     /**
-     * @hash   2145590967
      * @vftbl  1
      * @symbol  ?canUse\@ControlledByPlayerGoal\@\@UEAA_NXZ
      */
@@ -51,31 +50,26 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   726096576
      * @vftbl  4
      * @symbol  ?start\@ControlledByPlayerGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -971876704
      * @vftbl  5
      * @symbol  ?stop\@ControlledByPlayerGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1699576261
      * @vftbl  6
      * @symbol  ?tick\@ControlledByPlayerGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   835160281
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@ControlledByPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1923990060
      * @symbol  ??0ControlledByPlayerGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI ControlledByPlayerGoal(class Mob &);

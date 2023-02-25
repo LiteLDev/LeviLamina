@@ -37,7 +37,6 @@ public:
      */
     virtual ~RepeatUntilSuccessDefinition();
     /**
-     * @hash   -1991153087
      * @vftbl  1
      * @symbol  ?load\@RepeatUntilSuccessDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

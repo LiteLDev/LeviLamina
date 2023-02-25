@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   348739277
      * @vftbl  12
      * @symbol  ?initializeComponents\@Axolotl\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -163,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1361179778
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Axolotl\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -174,13 +172,11 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   433159070
      * @vftbl  355
      * @symbol  ?_getAdjustedAABBForSpawnCheck\@Axolotl\@\@UEBA?AVAABB\@\@AEBV2\@AEBVVec3\@\@\@Z
      */
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
     /**
-     * @hash   -1246192785
      * @symbol  ??0Axolotl\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Axolotl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

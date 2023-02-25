@@ -36,19 +36,16 @@ public:
      */
     virtual ~ShulkerBoxContainerValidation();
     /**
-     * @hash   -1431616641
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   -492791081
      * @vftbl  2
      * @symbol  ?isItemAllowedInSlot\@ShulkerBoxContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   1755251700
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -64,13 +61,11 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   1790129538
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   -1286475050
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
@@ -81,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -1215640907
      * @vftbl  9
      * @symbol  ?getContainerSize\@ShulkerBoxContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */

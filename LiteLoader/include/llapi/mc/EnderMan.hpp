@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1456831881
      * @vftbl  49
      * @symbol  ?normalTick\@EnderMan\@\@UEAAXXZ
      */
@@ -103,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1621960545
      * @vftbl  132
      * @symbol  ?shouldRender\@EnderMan\@\@UEBA_NXZ
      */
     virtual bool shouldRender() const;
     /**
-     * @hash   -1686642510
      * @vftbl  134
      * @symbol  ?getAmbientSound\@EnderMan\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
@@ -125,7 +122,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -2093851120
      * @vftbl  209
      * @symbol  ?canBeAffectedByArrow\@EnderMan\@\@UEBA_NAEBVMobEffectInstance\@\@\@Z
      */
@@ -156,19 +152,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1653229746
      * @vftbl  263
      * @symbol  ?_hurt\@EnderMan\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -370193106
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@EnderMan\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1027978383
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@EnderMan\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -189,13 +182,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1858139992
      * @vftbl  286
      * @symbol  ?hurtEffects\@EnderMan\@\@UEAAXAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   273365049
      * @vftbl  291
      * @symbol  ?aiStep\@EnderMan\@\@UEAAXXZ
      */
@@ -211,7 +202,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   554644652
      * @vftbl  349
      * @symbol  ?newServerAiStep\@EnderMan\@\@UEAAXXZ
      */
@@ -222,37 +212,30 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   6982398
      * @symbol  ??0EnderMan\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -149759704
      * @symbol  ?getCarryingBlock\@EnderMan\@\@QEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const & getCarryingBlock() const;
     /**
-     * @hash   -1468162602
      * @symbol  ?setCarryingBlock\@EnderMan\@\@QEAAXAEBVBlock\@\@\@Z
      */
     MCAPI void setCarryingBlock(class Block const &);
     /**
-     * @hash   527577324
      * @symbol  ?SPEED_MODIFIER_ATTACKING\@EnderMan\@\@2V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
     /**
-     * @hash   -1795624527
      * @symbol  ?SPEED_MODIFIER_ATTACKING_UUID\@EnderMan\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
     /**
-     * @hash   1580626
      * @symbol  ?mMayTake\@EnderMan\@\@2V?$set\@PEBVBlock\@\@U?$less\@PEBVBlock\@\@\@std\@\@V?$allocator\@PEBVBlock\@\@\@3\@\@std\@\@A
      */
     MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
     /**
-     * @hash   1848456211
      * @symbol  ?shutdown\@EnderMan\@\@SAXXZ
      */
     MCAPI static void shutdown();
@@ -261,7 +244,6 @@ public:
 
 private:
     /**
-     * @hash   -1101133354
      * @symbol  ?mMayTakeIsSetup\@EnderMan\@\@0_NA
      */
     MCAPI static bool mMayTakeIsSetup;

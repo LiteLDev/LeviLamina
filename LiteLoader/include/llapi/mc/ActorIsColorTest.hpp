@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsColorTest();
     /**
-     * @hash   -1808883224
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsColorTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -873635222
      * @vftbl  4
      * @symbol  ?getName\@ActorIsColorTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

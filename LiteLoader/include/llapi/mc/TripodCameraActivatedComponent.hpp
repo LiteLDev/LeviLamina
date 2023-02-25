@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1444710651
      * @symbol  ??1TripodCameraActivatedComponent\@\@QEAA\@XZ
      */
     MCAPI ~TripodCameraActivatedComponent();

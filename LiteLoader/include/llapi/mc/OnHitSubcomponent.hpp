@@ -49,20 +49,17 @@ public:
      */
     virtual void __unk_vfn_3() = 0;
     /**
-     * @hash   -1972859748
      * @vftbl  4
      * @symbol  ?getName\@OnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   -908782419
      * @symbol  ??0OnHitSubcomponent\@\@QEAA\@XZ
      */
     MCAPI OnHitSubcomponent();
 
 //protected:
     /**
-     * @hash   369815092
      * @symbol  ?_canAttack\@OnHitSubcomponent\@\@IEBA_NPEAVActor\@\@0\@Z
      */
     MCAPI bool _canAttack(class Actor *, class Actor *) const;

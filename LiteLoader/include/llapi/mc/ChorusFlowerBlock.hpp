@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1667647989
      * @vftbl  22
      * @symbol  ?canProvideSupport\@ChorusFlowerBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -72,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   1255626702
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@ChorusFlowerBlock\@\@UEBA_NXZ
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   54609964
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ChorusFlowerBlock\@\@UEBA_NXZ
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -505169500
      * @vftbl  92
      * @symbol  ?mayPlace\@ChorusFlowerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -855067426
      * @vftbl  99
      * @symbol  ?neighborChanged\@ChorusFlowerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -424200980
      * @vftbl  146
      * @symbol  ?getVariant\@ChorusFlowerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -242,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -316431470
      * @vftbl  171
      * @symbol  ?tick\@ChorusFlowerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -488427825
      * @vftbl  172
      * @symbol  ?randomTick\@ChorusFlowerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   15552964
      * @vftbl  178
      * @symbol  ?canSurvive\@ChorusFlowerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,63 +261,52 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1973389824
      * @vftbl  186
      * @symbol  ?playerDestroy\@ChorusFlowerBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -433144398
      * @vftbl  188
      * @symbol  ?getResourceCount\@ChorusFlowerBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSFLOWERBLOCK
     /**
-     * @hash   -59860317
      * @symbol  ?waterSpreadCausesSpawn\@ChorusFlowerBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -321955078
      * @symbol  ??0ChorusFlowerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChorusFlowerBlock(std::string const &, int);
     /**
-     * @hash   468793867
      * @symbol  ?BRANCH_DIRECTIONS\@ChorusFlowerBlock\@\@2HB
      */
     MCAPI static int const BRANCH_DIRECTIONS;
     /**
-     * @hash   -999098140
      * @symbol  ?DEAD_AGE\@ChorusFlowerBlock\@\@2GB
      */
     MCAPI static unsigned short const DEAD_AGE;
     /**
-     * @hash   -834580099
      * @symbol  ?GROW_RATE\@ChorusFlowerBlock\@\@2HB
      */
     MCAPI static int const GROW_RATE;
     /**
-     * @hash   -1071203603
      * @symbol  ?generatePlant\@ChorusFlowerBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@H\@Z
      */
     MCAPI static void generatePlant(class BlockSource &, class BlockPos const &, class Random &, int);
 
 //private:
     /**
-     * @hash   -1904624748
      * @symbol  ?_placeDeadFlower\@ChorusFlowerBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _placeDeadFlower(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1421785234
      * @symbol  ?_placeGrownFlower\@ChorusFlowerBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void _placeGrownFlower(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -1374560901
      * @symbol  ?_growTreeRecursive\@ChorusFlowerBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAVRandom\@\@HH\@Z
      */
     MCAPI static void _growTreeRecursive(class BlockSource &, class BlockPos const &, class BlockPos const &, class Random &, int, int);

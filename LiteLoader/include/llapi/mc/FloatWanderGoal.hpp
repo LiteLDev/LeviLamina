@@ -35,7 +35,6 @@ public:
      */
     virtual ~FloatWanderGoal();
     /**
-     * @hash   2047926596
      * @vftbl  1
      * @symbol  ?canUse\@FloatWanderGoal\@\@UEAA_NXZ
      */
@@ -61,26 +60,22 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -594613928
      * @vftbl  6
      * @symbol  ?tick\@FloatWanderGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -2059526932
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@FloatWanderGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1642874203
      * @symbol  ??0FloatWanderGoal\@\@QEAA\@AEAVMob\@\@MMM_N1UFloatRange\@\@\@Z
      */
     MCAPI FloatWanderGoal(class Mob &, float, float, float, bool, bool, struct FloatRange);
 
 //private:
     /**
-     * @hash   1022270132
      * @symbol  ?_canReach\@FloatWanderGoal\@\@AEAA_NAEBVVec3\@\@M\@Z
      */
     MCAPI bool _canReach(class Vec3 const &, float);

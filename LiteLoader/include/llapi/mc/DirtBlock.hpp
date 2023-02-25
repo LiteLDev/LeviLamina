@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -1918952501
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@DirtBlock\@\@UEBA_NXZ
      */
@@ -142,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -593544372
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@DirtBlock\@\@UEBA_NH\@Z
      */
@@ -168,25 +166,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   824837072
      * @vftbl  86
      * @symbol  ?onFertilized\@DirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   1940338407
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@DirtBlock\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   2076104251
      * @vftbl  88
      * @symbol  ?canBeFertilized\@DirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   521229859
      * @vftbl  95
      * @symbol  ?tryToTill\@DirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@\@Z
      */
@@ -222,19 +216,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -574168995
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@DirtBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   115037198
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@DirtBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -345880058
      * @vftbl  146
      * @symbol  ?getVariant\@DirtBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -245,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1801387818
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@DirtBlock\@\@UEAAXXZ
      */
@@ -276,13 +266,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1045086731
      * @vftbl  177
      * @symbol  ?use\@DirtBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1077861706
      * @vftbl  184
      * @symbol  ?getMapColor\@DirtBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -293,19 +281,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -107975228
      * @vftbl  187
      * @symbol  ?getResourceItem\@DirtBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -56435667
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@DirtBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -437424332
      * @symbol  ??0DirtBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DirtBlock(std::string const &, int);

@@ -37,19 +37,16 @@ public:
      */
     virtual ~FilterTestHourlyClock();
     /**
-     * @hash   1103620791
      * @vftbl  1
      * @symbol  ?setup\@FilterTestHourlyClock\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @hash   -1435806155
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestHourlyClock\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -2099677475
      * @vftbl  4
      * @symbol  ?getName\@FilterTestHourlyClock\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

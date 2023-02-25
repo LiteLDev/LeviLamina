@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1317450094
      * @symbol  ?getPlayerFlySpeed\@FlyTravelSystem\@\@SAMAEBVLayeredAbilities\@\@VSynchedActorDataReader\@\@\@Z
      */
     MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorDataReader);

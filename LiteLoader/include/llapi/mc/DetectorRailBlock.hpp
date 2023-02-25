@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1040222240
      * @vftbl  51
      * @symbol  ?isSignalSource\@DetectorRailBlock\@\@UEBA_NXZ
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   324526062
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@DetectorRailBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -135407232
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@DetectorRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1707596691
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@DetectorRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   234878047
      * @vftbl  113
      * @symbol  ?entityInside\@DetectorRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -206,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   1188344625
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@DetectorRailBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -217,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1418341531
      * @vftbl  146
      * @symbol  ?getVariant\@DetectorRailBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -2016240869
      * @vftbl  171
      * @symbol  ?tick\@DetectorRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,20 +257,17 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DETECTORRAILBLOCK
     /**
-     * @hash   924632811
      * @symbol  ?hasComparatorSignal\@DetectorRailBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @hash   2101411459
      * @symbol  ??0DetectorRailBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DetectorRailBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   649817470
      * @symbol  ?checkPressed\@DetectorRailBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;

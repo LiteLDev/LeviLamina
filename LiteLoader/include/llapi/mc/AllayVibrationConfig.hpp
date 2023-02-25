@@ -33,19 +33,16 @@ public:
      */
     virtual ~AllayVibrationConfig();
     /**
-     * @hash   197004243
      * @vftbl  1
      * @symbol  ?onSignalReceive\@AllayVibrationConfig\@\@UEAAXAEAVBlockSource\@\@VBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@M3\@Z
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @hash   -394802893
      * @vftbl  2
      * @symbol  ?isValidVibration\@AllayVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @hash   -1832486830
      * @vftbl  3
      * @symbol  ?shouldListen\@AllayVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */
@@ -81,7 +78,6 @@ public:
      */
     virtual void const * _Get() const;
     /**
-     * @hash   433839594
      * @symbol  ??0AllayVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);

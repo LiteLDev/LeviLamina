@@ -36,19 +36,16 @@ public:
      */
     virtual ~WalkState();
     /**
-     * @hash   1651880300
      * @vftbl  1
      * @symbol  ?tick\@WalkState\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   1517695777
      * @vftbl  2
      * @symbol  ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1379317951
      * @vftbl  3
      * @symbol  ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */

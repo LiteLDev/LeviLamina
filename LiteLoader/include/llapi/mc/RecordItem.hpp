@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   1925906475
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@RecordItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -108,30 +107,25 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -729014954
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@RecordItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
     /**
-     * @hash   -751460068
      * @symbol  ?isMusicDisk\@RecordItem\@\@UEBA_NXZ
      */
     MCVAPI bool isMusicDisk() const;
 #endif
     /**
-     * @hash   1882309203
      * @symbol  ??0RecordItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4LevelSoundEvent\@\@\@Z
      */
     MCAPI RecordItem(std::string const &, int, enum class LevelSoundEvent);
     /**
-     * @hash   -1515090220
      * @symbol  ?getDuration\@RecordItem\@\@QEBAMXZ
      */
     MCAPI float getDuration() const;
     /**
-     * @hash   1100028588
      * @symbol  ?getSound\@RecordItem\@\@QEBA?AW4LevelSoundEvent\@\@XZ
      */
     MCAPI enum class LevelSoundEvent getSound() const;

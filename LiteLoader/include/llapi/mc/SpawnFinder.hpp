@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -1753790803
      * @symbol  ?findStandupPosition\@SpawnFinder\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBVBlockPos\@\@AEBVBlockSource\@\@\@Z
      */
     MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const &, class BlockSource const &);
     /**
-     * @hash   -1494356838
      * @symbol  ?isStandupPosition\@SpawnFinder\@\@SA_NAEBVBlockPos\@\@AEBVBlockSource\@\@\@Z
      */
     MCAPI static bool isStandupPosition(class BlockPos const &, class BlockSource const &);

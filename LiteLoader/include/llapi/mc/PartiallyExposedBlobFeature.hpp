@@ -35,7 +35,6 @@ public:
      */
     virtual ~PartiallyExposedBlobFeature();
     /**
-     * @hash   -1285109210
      * @vftbl  1
      * @symbol  ?place\@PartiallyExposedBlobFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
@@ -43,7 +42,6 @@ public:
 
 //private:
     /**
-     * @hash   -746958066
      * @symbol  ?isWaterOrAir\@PartiallyExposedBlobFeature\@\@CA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const &, class BlockPos const &);

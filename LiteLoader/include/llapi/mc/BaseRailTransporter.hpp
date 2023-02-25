@@ -36,19 +36,16 @@ public:
      */
     virtual ~BaseRailTransporter();
     /**
-     * @hash   -904403879
      * @vftbl  11
      * @symbol  ?addSource\@BaseRailTransporter\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @hash   -2054472637
      * @vftbl  12
      * @symbol  ?allowConnection\@BaseRailTransporter\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @hash   1357416517
      * @vftbl  14
      * @symbol  ?evaluate\@BaseRailTransporter\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
      */
@@ -64,7 +61,6 @@ public:
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   -492896701
      * @vftbl  23
      * @symbol  ?getCircuitComponentType\@BaseRailTransporter\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */

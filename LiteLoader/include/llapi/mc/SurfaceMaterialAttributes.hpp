@@ -29,22 +29,18 @@ public:
 
 public:
     /**
-     * @hash   -1221799083
      * @symbol  ??0SurfaceMaterialAttributes\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const &);
     /**
-     * @hash   1532879085
      * @symbol  ??0SurfaceMaterialAttributes\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
     /**
-     * @hash   -938574298
      * @symbol  ??4SurfaceMaterialAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SurfaceMaterialAttributes & operator=(struct SurfaceMaterialAttributes &&);
     /**
-     * @hash   299108167
      * @symbol  ??1SurfaceMaterialAttributes\@\@QEAA\@XZ
      */
     MCAPI ~SurfaceMaterialAttributes();

@@ -45,7 +45,6 @@ public:
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @hash   -1415904191
      * @vftbl  3
      * @symbol  ?onBeforeSimTick\@GameCallbacks\@\@UEAAXXZ
      */

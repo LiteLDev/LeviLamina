@@ -181,19 +181,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1029294970
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@ShulkerBoxBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -404712112
      * @vftbl  135
      * @symbol  ?getColor\@ShulkerBoxBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -2094289947
      * @vftbl  138
      * @symbol  ?getColorForParticle\@ShulkerBoxBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1820665454
      * @vftbl  184
      * @symbol  ?getMapColor\@ShulkerBoxBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -240,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1706619476
      * @symbol  ??0ShulkerBoxBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ShulkerBoxBlock(std::string const &, int);

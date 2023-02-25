@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -550678755
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Allay\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -136,13 +135,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   641881278
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Allay\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1211316127
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Allay\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -163,7 +160,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   375805762
      * @vftbl  291
      * @symbol  ?aiStep\@Allay\@\@UEAAXXZ
      */
@@ -184,17 +180,14 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -455678587
      * @symbol  ??0Allay\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Allay(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1030760414
      * @symbol  ?hasDuplicationCooldown\@Allay\@\@QEAA_NXZ
      */
     MCAPI bool hasDuplicationCooldown();
     /**
-     * @hash   -1476195989
      * @symbol  ?setNewDuplicationCooldown\@Allay\@\@QEAAXXZ
      */
     MCAPI void setNewDuplicationCooldown();

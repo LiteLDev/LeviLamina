@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   683540963
      * @vftbl  22
      * @symbol  ?canProvideSupport\@PistonBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -142,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   1706198474
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@PistonBlock\@\@UEBA_NH\@Z
      */
@@ -158,19 +156,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -255012172
      * @vftbl  62
      * @symbol  ?canContainLiquid\@PistonBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   920803597
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@PistonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   1801511137
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -181,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1997141556
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -192,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   853115895
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@PistonBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   1621740886
      * @vftbl  99
      * @symbol  ?neighborChanged\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1920334479
      * @vftbl  100
      * @symbol  ?getSecondPart\@PistonBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
@@ -215,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1826603699
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@PistonBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -241,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   697529348
      * @vftbl  146
      * @symbol  ?getVariant\@PistonBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   94265178
      * @vftbl  149
      * @symbol  ?getMappedFace\@PistonBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -273,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   405876656
      * @vftbl  168
      * @symbol  ?onPlace\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -284,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   286932090
      * @vftbl  171
      * @symbol  ?tick\@PistonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -295,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -214878692
      * @vftbl  178
      * @symbol  ?canSurvive\@PistonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -306,20 +291,17 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1764397170
      * @vftbl  187
      * @symbol  ?getResourceItem\@PistonBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
     /**
-     * @hash   -301202530
      * @symbol  ?pushesUpFallingBlocks\@PistonBlock\@\@UEBA_NXZ
      */
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     /**
-     * @hash   1249628733
      * @symbol  ??0PistonBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@\@Z
      */
     MCAPI PistonBlock(std::string const &, int, enum class PistonBlock::Type);
@@ -332,7 +314,6 @@ public:
 
 private:
     /**
-     * @hash   -1546740409
      * @symbol  ?ARM_DIRECTION_OFFSETS\@PistonBlock\@\@0QBVBlockPos\@\@B
      */
     MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];

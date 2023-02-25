@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1644819782
      * @vftbl  49
      * @symbol  ?normalTick\@Bat\@\@UEAAXXZ
      */
@@ -108,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   345480071
      * @vftbl  182
      * @symbol  ?checkFallDamage\@Bat\@\@MEAAXM_N\@Z
      */
@@ -144,19 +142,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1893079163
      * @vftbl  263
      * @symbol  ?_hurt\@Bat\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   311663778
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Bat\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   290352955
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Bat\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -177,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -657100150
      * @vftbl  293
      * @symbol  ?pushActors\@Bat\@\@UEAAXXZ
      */
@@ -193,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -2130662702
      * @vftbl  349
      * @symbol  ?newServerAiStep\@Bat\@\@MEAAXXZ
      */
@@ -204,17 +197,14 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -364007327
      * @symbol  ??0Bat\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Bat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   639559323
      * @symbol  ?postNormalTick\@Bat\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   -1282401008
      * @symbol  ?hasRestingBlockAbove\@Bat\@\@SA_NAEBVVec3\@\@AEBVBlockSource\@\@\@Z
      */
     MCAPI static bool hasRestingBlockAbove(class Vec3 const &, class BlockSource const &);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~TargetBlock();
     /**
-     * @hash   -1946438841
      * @vftbl  15
      * @symbol  ?onProjectileHit\@TargetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
@@ -137,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   2007767769
      * @vftbl  51
      * @symbol  ?isSignalSource\@TargetBlock\@\@UEBA_NXZ
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   793414741
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@TargetBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -569351988
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@TargetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -225,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1355114376
      * @vftbl  168
      * @symbol  ?onPlace\@TargetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   409016082
      * @vftbl  171
      * @symbol  ?tick\@TargetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -252,14 +246,12 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1318746458
      * @symbol  ??0TargetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TargetBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -388477399
      * @symbol  ?_processHitByProjectileAtPos\@TargetBlock\@\@AEBAXAEBVVec3\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
     MCAPI void _processHitByProjectileAtPos(class Vec3 const &, class BlockSource &, class BlockPos const &, class Actor const &) const;

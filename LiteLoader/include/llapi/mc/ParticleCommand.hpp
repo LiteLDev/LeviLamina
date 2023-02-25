@@ -36,13 +36,11 @@ public:
      */
     virtual ~ParticleCommand();
     /**
-     * @hash   -1351173474
      * @vftbl  1
      * @symbol  ?execute\@ParticleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1679538432
      * @symbol  ?setup\@ParticleCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

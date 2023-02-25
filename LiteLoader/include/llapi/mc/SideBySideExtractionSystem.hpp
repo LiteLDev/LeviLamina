@@ -34,7 +34,6 @@ public:
      */
     virtual ~SideBySideExtractionSystem();
     /**
-     * @hash   1215759495
      * @vftbl  1
      * @symbol  ?registerEvents\@SideBySideExtractionSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
@@ -44,12 +43,10 @@ public:
      */
     MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 24> const &);
     /**
-     * @hash   607946893
      * @symbol  ?_onSideBySideExtractionRequest\@SideBySideExtractionSystem\@\@SAXAEBUExtractMethods\@SideBySide\@\@AEBUOnExtractSideBySide\@\@\@Z
      */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
     /**
-     * @hash   -1968669246
      * @symbol  ?onStoreSideBySideResult\@SideBySideExtractionSystem\@\@SAXAEBUOnStoreSideBySideResult\@\@\@Z
      */
     MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);

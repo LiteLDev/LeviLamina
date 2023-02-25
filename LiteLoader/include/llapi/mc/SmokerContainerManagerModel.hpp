@@ -36,7 +36,6 @@ public:
      */
     virtual ~SmokerContainerManagerModel();
     /**
-     * @hash   -291031141
      * @symbol  ??0SmokerContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SmokerContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);

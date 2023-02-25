@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1497212548
      * @vftbl  0
      * @symbol  ?getJsonName\@PushableDescription\@\@UEBAPEBDXZ
      */
@@ -41,19 +40,16 @@ public:
      */
     virtual ~PushableDescription();
     /**
-     * @hash   -2124447993
      * @vftbl  2
      * @symbol  ?deserializeData\@PushableDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -827657055
      * @vftbl  3
      * @symbol  ?serializeData\@PushableDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void serializeData(class Json::Value &) const;
     /**
-     * @hash   1481446932
      * @symbol  ??0PushableDescription\@\@QEAA\@XZ
      */
     MCAPI PushableDescription();

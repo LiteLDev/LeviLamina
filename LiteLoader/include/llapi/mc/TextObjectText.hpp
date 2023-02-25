@@ -36,30 +36,25 @@ public:
      */
     virtual ~TextObjectText();
     /**
-     * @hash   1829619396
      * @vftbl  1
      * @symbol  ?asString\@TextObjectText\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string asString() const;
     /**
-     * @hash   1509354132
      * @vftbl  2
      * @symbol  ?asJsonValue\@TextObjectText\@\@UEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @hash   764686427
      * @vftbl  3
      * @symbol  ?resolve\@TextObjectText\@\@UEBA?AVValue\@Json\@\@AEBUResolveData\@\@\@Z
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
-     * @hash   -1509717954
      * @symbol  ??0TextObjectText\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI TextObjectText(std::string);
     /**
-     * @hash   -1311253161
      * @symbol  ?asJsonValue\@TextObjectText\@\@SA?AVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class Json::Value asJsonValue(std::string const &);

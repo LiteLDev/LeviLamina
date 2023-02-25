@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1985811217
      * @symbol  ??1ChemistryIngredient\@\@QEAA\@XZ
      */
     MCAPI ~ChemistryIngredient();

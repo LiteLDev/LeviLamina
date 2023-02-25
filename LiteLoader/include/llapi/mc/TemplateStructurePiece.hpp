@@ -36,13 +36,11 @@ public:
      */
     virtual ~TemplateStructurePiece();
     /**
-     * @hash   -736375065
      * @vftbl  1
      * @symbol  ?moveBoundingBox\@TemplateStructurePiece\@\@UEAAXHHH\@Z
      */
     virtual void moveBoundingBox(int, int, int);
     /**
-     * @hash   -771903614
      * @vftbl  4
      * @symbol  ?postProcess\@TemplateStructurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
@@ -53,21 +51,18 @@ public:
      */
     virtual void _handleDataMarker(std::string const &, class BlockPos const &, class BlockSource &, class Random &, class BoundingBox const &) = 0;
     /**
-     * @hash   -2026316198
      * @symbol  ??0TemplateStructurePiece\@\@QEAA\@H\@Z
      */
     MCAPI TemplateStructurePiece(int);
 
 //protected:
     /**
-     * @hash   -208606142
      * @symbol  ?_setup\@TemplateStructurePiece\@\@IEAAXAEAVLegacyStructureTemplate\@\@AEBVLegacyStructureSettings\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _setup(class LegacyStructureTemplate &, class LegacyStructureSettings const &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   -792884417
      * @symbol  ?_setBoundingBoxFromTemplate\@TemplateStructurePiece\@\@AEAAXXZ
      */
     MCAPI void _setBoundingBoxFromTemplate();
