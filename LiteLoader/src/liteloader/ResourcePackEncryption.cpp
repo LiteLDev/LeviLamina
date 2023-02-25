@@ -8,6 +8,7 @@ THook(ResourcePacksInfoPacket*,
       bool a5) {
     try {      
         for (int i = 0; i < a4.size(); ++i) {
+            auto uuid = a4[i].mPackIdVersion.mUUID.asString();
             transform(uuid.begin(), uuid.end(), uuid.begin(), ::toupper);
             a4[i].mContentKey = ll::globalConfig.resourcePackEncryptionMap[uuid];
         }
