@@ -1,0 +1,440 @@
+{
+  "base": {
+    "getDimName": {
+      "0": "Overworld",
+      "1": "Nether",
+      "2": "End",
+      "unknown": "Diğer boyut"
+    }
+  },
+  "ll": {
+    "main": {
+      "checkRunningBDS": {
+        "detected": "Aynı yola sahip başka bir BDS sürecinin varlığı tespit edildi!",
+        "tip": "Bu, ağ bağlantı noktasının ve düzeyinin meşgul edilmesine neden olabilir",
+        "ask": "İşlemi PID {} ile sonlandırmak ister misiniz?  (y =Evet, n =Hayır, e =Çıkış)"
+      },
+      "fixAllowList": {
+        "removeEmptyAllowlist": "allowlist.json boş! Kaldırılıyor...",
+        "checkManually": "Her ikisi de; allowlist.json ve whitelist.json var ve boş değil. Lütfen bunları manuel olarak kontrol edin",
+        "renamed": "whitelist.json, allowlist.json olarak yeniden adlandırıldı"
+      },
+      "warning": {
+        "inDevMode": "Şu anda geliştirici modunda!",
+        "betaVersion": "Şu anda bir beta sürümü kullanılıyor.",
+        "productionEnv": "LÜTFEN ÜRETİM ORTAMINDA KULLANMAYIN!",
+        "protocolVersionNotMatch": {
+          "1": "Protokol sürümü eşleşmiyor, hedef sürüm: {}, geçerli sürüm: {}.",
+          "2": "Bu büyük olasılıkla sunucuyu çökertecektir, lütfen BDS sürümüyle eşleşen LiteLoader'ı kullanın!"
+        }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+      }
+    },
+    "antiAbnormalItem": {
+      "detected": "Oyuncu({}) eşya veri hatası!",
+      "itemInfo": "Eşya: {}"
+    },
+    "cmd": {
+      "tpdim": {
+        "success": "{}, {}'ye ışınlandı ({:2f}, {:2f}, {:2f})",
+        "error": {
+          "noActorTeleported": "Hiçbir Varlık Işınlanamadı",
+          "noActorSpecified": "Hiçbir Varlık Belirtilmedi"
+        },
+        "invalidDimid": "Geçersiz DimensionId: {}"
+      },
+      "listPlugin": {
+        "overview": "Eklenti Listesi [{}]",
+        "tip": "* Daha fazla bilgi için \"ll list <Eklenti Adı>\" komutunu gönderin"
+      },
+      "pluginInfo": {
+        "title": "Eklenti <{}>",
+        "error": {
+          "pluginNotFound": "Eklenti, <{}> bulunamadı!"
+        }
+      },
+      "version": {
+        "msg": "Bedrock Dedicated Server {}\n- ve LiteLoaderBDS {}\n- Ağ Protokolü: {}"
+      },
+      "help": {
+        "msg": "[Introduction]\nLiteLoaderBDS, Bedrock Dedicated Server'ın geliştirilmesini değiştirmek için resmi olmayan bir eklenti yükleyicidir.\nÇok sayıda API, güçlü bir event sistemi ve çok sayıda paketlenmiş yardımcı program arabirimi sağlar.\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nDaha fazla bilgi almak için github projemizi ziyaret edin ~"
+      },
+      "loadPlugin": {
+        "success": "Eklenti, <{}> yüklendi.",
+        "fail": "Eklenti yüklenemedi {}"
+      },
+      "unloadPlugin": {
+        "success": "Eklenti, <{}> kapatıldı.",
+        "fail": "Eklenti kapatılamadı <{}>"
+      },
+      "reloadPlugin": {
+        "success": "Eklenti, <{}> yeniden yüklendi.",
+        "fail": "Eklenti yeniden yüklenemedi <{}>"
+      },
+      "reloadAllPlugins": {
+        "success": "{} eklenti başarıyla yeniden yüklendi.",
+        "fail": "Herhangi bir eklenti yeniden yüklenemedi"
+      },
+      "settings": {
+        "set": {
+          "success": "Ayarlar {}'dan {} olarak başarıyla ayarlandı."
+        },
+        "get": {
+          "success": "Ayarlar, {} başarıyla alındı. Değer: "
+        },
+        "delete": {
+          "success": "Ayarlar, {} başarıyla silindi.",
+          "error": {
+            "emptyKey": "JsonPointer boş olamaz!"
+          }
+        },
+        "reload": {
+          "success": "Ayarlar başarıyla yeniden yüklendi."
+        },
+        "save": {
+          "success": "Ayarlar başarıyla kaydedildi."
+        },
+        "list": {
+          "success": "Ayarlar listesi:"
+        }
+      },
+      "error": {
+        "noPathSpecified": "LiteLoader eklentisinin geçerli bir yolunu belirtmelisiniz!",
+        "noNameSpecified": "LiteLoader eklentisinin geçerli bir adını belirtmelisiniz!"
+      }
+    },
+    "config": {
+      "save": {
+        "fail": "Konfigürasyon dosyası kaydedilemedi (oluşturulamadı)!"
+      },
+      "creating": "LL Konfigürasyon Dosyası, <{}> bulunamadı. Konfigürasyon dosyası oluşturuluyor...",
+      "warning": {
+        "configOutdated": "LL Konfigürasyon dosyası, <{}> eski."
+      },
+      "updating": "Konfigürasyon dosyası güncelleniyor..."
+    },
+    "crashLogger": {
+      "existsingDebuggerDetected": "Mevcut hata ayıklayıcı algılandı. Yerleşik CrashLogger çalışmayacak.",
+      "wineDetected": "Wine Environment tespit edildi. Yerleşik CrashLogger çalışmayacak.",
+      "error": {
+        "cannotCreateDaemonProcess": "CrashLogger Arka Plan Programı İşlemi Oluşturulamadı!"
+      },
+      "warning": {
+        "crashLoggerDisabled": {
+          "1": "Builtin CrashLogger konfigürasyonda devre dışı bırakıldığı için etkinleştirilmedi.",
+          "2": "İşlenemeyen özel durum oluştuğunda çökme raporu oluşturulamayacak,",
+          "3": "bu da çökmenin nedenini ve kaynağını bulmayı neredeyse imkansız hale getiriyor.",
+          "4": "Sunucu kararlılığını sağlamak için etkinleştirmenizi önemle öneririz"
+        },
+        "conflicts": {
+          "1": "Builtin CrashLogger, <{}> eklentisiyle çakıştığı için etkinleştirilemedi",
+          "2": "İşlenmeyen özel durum oluştuğunda çökme raporu oluşturulayamayacak,",
+          "3": "bu da çökmenin nedenini ve kaynağını bulmayı neredeyse imkansız hale getiriyor.",
+          "4": "CrashLogger, sunucu kararlılığını sağlayan önemli bir bileşen olduğundan",
+          "5": "<{}> eklentisinin kullanımı hakkında iki kez düşünmenizi öneririz"
+        }
+      },
+      "init": {
+        "fail": {
+          "msg": "Builtin CrashLogger başlatılamadı!",
+          "tip": "İşlenmeyen özel durum oluştuğunda çökme raporu oluşturulayamayacak."
+        }
+      }
+    },
+    "addonsHelper": {
+      "error": {
+        "addonConfigNotFound": "Eklenti konfigürasyonu bulunamadı!",
+        "addonFileNotFound": "Eklenti dosyası, \"{}\" bulunamadı!",
+        "addonNotFound": "Eklenti, <{}> bulunamadı!",
+        "outOfRange": "Addon dizini {} aralık dışı",
+        "unsupportedFileType": "Desteklenmeyen dosya türü bulundu!",
+        "parsingEnabledAddonsList": "Etkin addon listesi ayrıştırılırken hata oluştu",
+        "noAddonInstalled": "Hiçbir addon yüklenemedi.",
+        "installationAborted": "Yükleme işlemi iptal edildi!"
+      },
+      "displayError": "Hata: {}",
+      "removeAddonFromList": {
+        "fail": "Addon <{}> konfigürasyon dosyasından kaldırılamadı!",
+        "success": "Addon <{}> konfigürasyon dosyasından kaldırıldı."
+      },
+      "addAddonToList": {
+        "invalidList": "Geçersiz Eklenti Listesi Dosyası {}, {} 'ye yedekle ve varsayılana sıfırla",
+        "fail": "{} eklentisi {} içine eklenemedi!",
+        "success": "Konfigürasyon dosyasına addon <{}> eklendi."
+      },
+      "install": {
+        "installing": "Addon kuruluyor <{}>...",
+        "error": {
+          "failToUncompress": {
+            "msg": "Addon {} sıkıştırması açılamadı!",
+            "exitCode": "Çıkış Kodu: {}",
+            "programOutput": "Program Çıktısı:\n{}"
+          }
+        }
+      },
+      "uninstall": {
+        "success": "Addon <{}> kaldırıldı."
+      },
+      "autoInstall": {
+        "tip": {
+          "dirCreated": "Dizin oluşturuldu. Sıkıştırılmış Addon dosyalarını bir sonraki açılışta yüklenmek üzere {} konumuna taşıyabilirsiniz."
+        },
+        "working": "{} tane yüklenecek yeni addon(lar) bulundu. Yükleniyor...",
+        "installed": "Addon {} yüklendi.",
+        "installedCount": "{} addon(lar) kuruldu."
+      },
+      "cmd": {
+        "output": {
+          "list": {
+            "overview": "Addons: {} addon(lar) yüklendi:"
+          }
+        }
+      }
+    },
+    "loader": {
+      "loadScriptEngine": {
+        "error": {
+          "versionNotMatch": "Script Engine için {} dosya sürümü <{}>, LiteLoader sürümü <{}> ile eşleşmiyor"
+        },
+        "success": "* {} için ScriptEngine yüklendi."
+      },
+      "loadDotNetEngine": {
+        "error": {
+          "versionNotMatch": "LiteLoader.NET dosyasının <{}> sürümü LiteLoader sürümüyle eşleşmiyor <{}>"
+        },
+        "success": "* .NET Motoru yüklendi."
+      },
+      "loadMain": {
+        "loadingPlugins": "Native eklentiler yükleniyor...",
+        "loadedShellLink": "ShellLinked eklenti <{} => {}> yüklendi",
+        "loadedPlugin": "Native eklenti <{name}> yüklendi",
+        "done": "{} native eklenti(ler) yüklendi.",
+        "start": "Native eklentiler yükleniyor..."
+      },
+      "initNodeJsDirectories": {
+        "created": "Node.js runtime dizini bulunamadı, oluşturuldu."
+      }
+    },
+    "notice": {
+      "newForum": "Yeni forumumuz yayında! -> {}",
+      "license": "LiteLoader {} altında lisanslanmıştır",
+      "translateText": "LL'deki metinleri çevirmemize ve geliştirmemize yardımcı olun -> {}"
+    },
+    "pluginManager": {
+      "error": {
+        "invalidFileType": "Geçersiz eklenti dosya türü: {} Şunun içinde: {}",
+        "noValidPluginFound": "{} adresinde geçerli bir eklenti bulunamadı!",
+        "failToRegisterPlugin": "Eklenti {} kaydedilemedi!",
+        "hasBeenRegistered": "{} adında bir eklenti kaydedildi",
+        "failToLoadPlugin": "Eklenti, {} yüklenemedi!",
+        "pluginNotFound": "<{}> eklentisi bulunamadı"
+      },
+      "warning": {
+        "unloadDllNotFinished": "Dll eklentilerinin kaldırma işlevi tamamlanamadı.",
+        "reloadDllNotFinished": "Dll eklentilerinin yeniden yükleme işlevi tamamlanamadı."
+      },
+      "reloadPlugin": {
+        "fail": "Eklenti, {} yeniden yüklenemedi!"
+      }
+    },
+    "unzipNodeModules": {
+      "fail": "node_modules.tar sıkıştırması açılamadı."
+    }
+  },
+  "llse": {
+    "init": {
+      "llMoney": {
+        "notFound": "LLMoney.dll bulunamadı, ScriptEngine Ekonomi Sistemi çalışamayacak"
+      }
+    },
+    "api": {
+      "ll": {
+        "require": {
+          "success": " - Eklenti gereksinimi başarıyla yüklendi. Yüklendi: ",
+          "fail": " - Eklenti gereksinim yüklemesi başarısız oldu",
+          "download": {
+            "success": " - Gereksinim başarıyla indirildi! Yol: ",
+            "fail": " - Eklenti gereksinimini indirme başarısız oldu! Kod: "
+          }
+        }
+      }
+    },
+    "apiHelp": {
+      "parseJson": {
+        "fail": "JSON ayrıştırma hatası"
+      }
+    },
+    "loader": {
+      "loadDepends": {
+        "success": "Bağımlılık {} yüklendi.",
+        "fail": "Bağımlılık yüklenemedi: {}"
+      },
+      "loadMain": {
+        "start": "{type} eklentileri yükleniyor...",
+        "done": "{count} tane {type} eklenti(ler) yüklendi.",
+        "nodejs": {
+          "installPack": {
+            "fail": "Eklenti paketi {} yüklenemedi, lütfen package.json dosyanızı kontrol edin!",
+            "start": "Node.js eklenti paketi \"{path}\" bulundu! Yüklemeyi deneyin..."
+          },
+          "ignored": "{path} dizininde package.json dosyası bulunamadı, yok sayıldı."
+        },
+        "loadedPlugin": "{type} eklenti <{name}> yüklendi.",
+        "installPluginPack": {
+          "done": "{count} tane {type} eklenti paket(ler) indirildi."
+        }
+      },
+      "nodejs": {
+        "executeNpmInstall": {
+          "success": "Npm başarıyla tamamlandı.",
+          "start": "Eklenti {name} için \"npm install\" çalıştırılıyor...",
+          "fail": "Hata oluştu. Çıkış kodu: {code}"
+        },
+        "register": {
+          "fail": "Eklenti {name} kaydedilmesine yardımcı olunamıyor!"
+        }
+      }
+    }
+  },
+  "permapi": {
+    "data": {
+      "process": {
+        "fail": "Veri dosyası işlenemedi: {}"
+      },
+      "read": {
+        "fail": "Veri dosyası okunamadı: {}"
+      },
+      "save": {
+        "fail": "Veri dosyası kaydedilemedi: {}"
+      }
+    },
+    "cmd": {
+      "error": {
+        "invalidCommand": "Geçersiz komut. Yardım almak için '/help perm' yazın.",
+        "internal": "Dahili sunucu hatası. Lütfen daha sonra tekrar deneyiniz.",
+        "roleAlreadyExists": "Rol ismi zaten var.",
+        "permissionAlreadyExists": "Yetki zaten mevcut.",
+        "invalidPermissionName": "Geçersiz yetki ismi.",
+        "roleNotFound": "Rol bulunamadı.",
+        "permissionNotFound": "Yetki bulunamadı.",
+        "playerNotFound": "Oyuncu bulunamadı.",
+        "modifyMembersOfEveryone": "Rol herkesin rolüdür. Üyelerini değiştiremezsiniz.",
+        "jsonParsingError": "JSON ayrıştırma hatası: {}",
+        "missingArgument": "Eksik argüman: {}",
+        "permissionDenied": "Bu komutu kullanmak için yetkiniz yok."
+      },
+      "output": {
+        "create": {
+          "role": {
+            "success": "Rol oluşturuldu."
+          },
+          "perm": {
+            "success": "Yetki oluşturuldu."
+          }
+        },
+        "delete": {
+          "role": {
+            "success": "Rol silindi."
+          },
+          "perm": {
+            "success": "Yetki silindi."
+          }
+        },
+        "list": {
+          "role": {
+            "none": "Görüntülenebilecek rol yok.",
+            "header": "§b§lRol Listesi:",
+            "isMember": "§r(§eÜye§r)"
+          },
+          "perm": {
+            "none": "Görüntülenebilecek yetkiler yok.",
+            "header": "§b§lYetki Listesi:"
+          }
+        },
+        "view": {
+          "player": {
+            "yourStatus": "§b§lGeçerli yetki durumunuz:",
+            "status": "§b§l{}'nın geçerli yetki durumu:",
+            "rolesTitle": "- §eRoller:",
+            "permissionsTitle": "- §eYetkiler:"
+          },
+          "role": {
+            "header": "§b§lRol Bilgisi:",
+            "info": {
+              "name": "+ §eİsim§r: {roleName}",
+              "displayName": "+ §eGörünenİsim§r: {}",
+              "priority": "+ §eÖncelik§r: {}",
+              "membersNone": "+ §eÜyeler§r: Yok",
+              "members": "+ §eÜyeler§r:",
+              "permissionsNone": "+ §eYetkiler§r: Yok",
+              "permissions": "+ §eYetkiler§r:"
+            },
+            "note": {
+              "admin": "※ {}§r özel bir roldür. Tüm izinler varsayılan olarak etkinleştirilecektir.",
+              "everyone": "※ {}§r özel bir roldür. Tüm oyuncular bu rolün üyesidir."
+            },
+            "enabled": "§a(Aktif)§r",
+            "disabled": "§c(Devredışı)§r",
+            "enabledWithExtra": "§b(Ekstra kısıtlamalarla aktif)§r"
+          },
+          "perm": {
+            "header": "§b§lYetki Bilgileri:",
+            "info": {
+              "name": "+ §eİsim§r: {permissionName}",
+              "desc": "+ §eAçıklama§r: {}"
+            }
+          }
+        },
+        "update": {
+          "role": {
+            "member": {
+              "add": {
+                "success": "Üye {name}§r({xuid}) Rol {roleDisplayName}§r'ye eklendi."
+              },
+              "remove": {
+                "success": "Üye {name}§r({xuid}) Rol {roleDisplayName}§r'den kaldırıldı."
+              }
+            },
+            "perm": {
+              "add": {
+                "success": "Rol {roleDisplayName}§r'ye {name}§r yetkisi eklendi."
+              },
+              "remove": {
+                "success": "Rol {roleDisplayName}§r'den {name}§r yetkisi kaldırıldı."
+              },
+              "set": {
+                "enabled": "§aaktifleştirildi§r",
+                "disabled": "§cdeaktifleştirildi§r",
+                "success": "Rol {roleDisplayName}§r'nin {name}§r yetkisi {enable} olarak ayarlandı."
+              }
+            },
+            "priority": {
+              "set": {
+                "success": "{roleDisplayName}§r rolünün önceliği, {priority} olarak ayarlandı."
+              }
+            },
+            "displayName": {
+              "set": {
+                "success": "<{roleName}§r> rolünün görünen adı {displayName}§r olarak ayarlandı."
+              }
+            }
+          },
+          "player": {
+            "role": {
+              "add": {
+                "success": "Oyuncu {name}§r({xuid}), {roleDisplayName}§r rolüne eklendi."
+              },
+              "remove": {
+                "success": "Oyuncu {name}§r({xuid}) {roleDisplayName}§r rolünden çıkarıldı."
+              }
+            }
+          }
+        },
+        "noDesc": "[Açıklama yok]",
+        "permissionNameExamples": "Yetki adı örnekleri: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  }
+}
