@@ -984,12 +984,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onHopperSearchItem:
             Event::HopperSearchItemEvent::subscribe([](const HopperSearchItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperSearchItem) {
-                    if (ev.isMinecart) {
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
-                    } else {
-                        BlockInstance bl = ev.mHopperBlock;
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
-                    }
+                    CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mPos, ev.mDimensionId),
+                              Boolean::newBoolean(ev.isMinecart), ItemClass::newItem(ev.mItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperSearchItem);
             });
@@ -998,7 +994,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onHopperPushOut:
             Event::HopperPushOutEvent::subscribe([](const HopperPushOutEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperPushOut) {
-                    CallEvent(EVENT_TYPES::onHopperPushOut, FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                    CallEvent(EVENT_TYPES::onHopperPushOut, FloatPos::newPos(ev.mPos, ev.mDimensionId),
+                              Boolean::newBoolean(ev.isMinecart), ItemClass::newItem(ev.mItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperPushOut);
             });
