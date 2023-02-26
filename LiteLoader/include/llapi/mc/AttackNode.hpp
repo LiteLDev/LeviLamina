@@ -34,19 +34,16 @@ public:
      */
     virtual ~AttackNode();
     /**
-     * @hash   -1364621545
      * @vftbl  1
      * @symbol  ?tick\@AttackNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1888298859
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@AttackNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   473349078
      * @symbol  ??0AttackNode\@\@QEAA\@XZ
      */
     MCAPI AttackNode();

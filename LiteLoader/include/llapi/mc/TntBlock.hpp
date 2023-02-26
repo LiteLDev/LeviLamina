@@ -146,19 +146,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -374366180
      * @vftbl  70
      * @symbol  ?shouldDispense\@TntBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@\@Z
      */
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
     /**
-     * @hash   -236266593
      * @vftbl  71
      * @symbol  ?dispense\@TntBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   1885213282
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -922574987
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -180,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1385593274
      * @vftbl  97
      * @symbol  ?destroy\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
@@ -216,19 +211,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -946139206
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@TntBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -1145157135
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@TntBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   2029973507
      * @vftbl  146
      * @symbol  ?getVariant\@TntBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -239,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   693253718
      * @vftbl  163
      * @symbol  ?onExploded\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
@@ -260,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   7608145
      * @vftbl  168
      * @symbol  ?onPlace\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -276,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   393890728
      * @vftbl  177
      * @symbol  ?use\@TntBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -287,28 +276,23 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1879434737
      * @vftbl  187
      * @symbol  ?getResourceItem\@TntBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -30631039
      * @symbol  ??0TntBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TntBlock(std::string const &, int);
     /**
-     * @hash   -1290075207
      * @symbol  ?_setAllowUnderwater\@TntBlock\@\@QEBAXPEAVActor\@\@\@Z
      */
     MCAPI void _setAllowUnderwater(class Actor *) const;
     /**
-     * @hash   301766741
      * @symbol  ?_shouldAllowUnderwater\@TntBlock\@\@QEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _shouldAllowUnderwater(class Block const &) const;
     /**
-     * @hash   -1729605832
      * @symbol  ?tryLightTnt\@TntBlock\@\@SA_NAEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool tryLightTnt(class Player &, class BlockPos const &);

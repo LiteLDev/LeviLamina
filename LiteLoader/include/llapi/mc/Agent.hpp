@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -2146609749
      * @vftbl  12
      * @symbol  ?initializeComponents\@Agent\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,25 +47,21 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -596144862
      * @vftbl  44
      * @symbol  ?teleportTo\@Agent\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @hash   399920486
      * @vftbl  49
      * @symbol  ?normalTick\@Agent\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @hash   -442073338
      * @vftbl  60
      * @symbol  ?isInvisible\@Agent\@\@UEBA_NXZ
      */
     virtual bool isInvisible() const;
     /**
-     * @hash   -1732533659
      * @vftbl  61
      * @symbol  ?canShowNameTag\@Agent\@\@UEBA_NXZ
      */
@@ -77,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_62();
     /**
-     * @hash   35323774
      * @vftbl  66
      * @symbol  ?getFormattedNameTag\@Agent\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -103,7 +97,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -1304319735
      * @vftbl  96
      * @symbol  ?isPickable\@Agent\@\@UEAA_NXZ
      */
@@ -139,13 +132,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1874884751
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Agent\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @hash   1374043159
      * @vftbl  159
      * @symbol  ?setCarriedItem\@Agent\@\@UEAAXAEBVItemStack\@\@\@Z
      */
@@ -156,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   1007041704
      * @vftbl  191
      * @symbol  ?canBePulledIntoVehicle\@Agent\@\@UEBA_NXZ
      */
@@ -167,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -1510802754
      * @vftbl  208
      * @symbol  ?canBeAffected\@Agent\@\@UEBA_NI\@Z
      */
@@ -183,13 +172,11 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   -69918154
      * @vftbl  223
      * @symbol  ?isWorldBuilder\@Agent\@\@UEBA_NXZ
      */
     virtual bool isWorldBuilder() const;
     /**
-     * @hash   -402698263
      * @vftbl  225
      * @symbol  ?isAdventure\@Agent\@\@UEBA_NXZ
      */
@@ -205,13 +192,11 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -983615312
      * @vftbl  245
      * @symbol  ?kill\@Agent\@\@UEAAXXZ
      */
     virtual void kill();
     /**
-     * @hash   1238093709
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Agent\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -222,7 +207,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1276384636
      * @vftbl  263
      * @symbol  ?_hurt\@Agent\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -238,7 +222,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -437452791
      * @vftbl  278
      * @symbol  ?knockback\@Agent\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
@@ -249,13 +232,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -674536042
      * @vftbl  289
      * @symbol  ?travel\@Agent\@\@UEAAXMMM\@Z
      */
     virtual void travel(float, float, float);
     /**
-     * @hash   1296951318
      * @vftbl  291
      * @symbol  ?aiStep\@Agent\@\@UEAAXXZ
      */
@@ -271,19 +252,16 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1846880960
      * @vftbl  334
      * @symbol  ?createAIGoals\@Agent\@\@UEAA_NXZ
      */
     virtual bool createAIGoals();
     /**
-     * @hash   1499502183
      * @vftbl  341
      * @symbol  ?canExistWhenDisallowMob\@Agent\@\@UEBA_NXZ
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @hash   1378552250
      * @vftbl  346
      * @symbol  ?initBodyControl\@Agent\@\@EEAA?AV?$unique_ptr\@VBodyControl\@\@U?$default_delete\@VBodyControl\@\@\@std\@\@\@std\@\@XZ
      */
@@ -295,28 +273,23 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
     /**
-     * @hash   956692636
      * @symbol  ?breaksFallingBlocks\@Agent\@\@UEBA_NXZ
      */
     MCVAPI bool breaksFallingBlocks() const;
     /**
-     * @hash   150440432
      * @symbol  ?getAlwaysShowNameTag\@Agent\@\@UEBA_NXZ
      */
     MCVAPI bool getAlwaysShowNameTag() const;
     /**
-     * @hash   -2102316285
      * @symbol  ?interactPreventDefault\@Agent\@\@UEAA_NXZ
      */
     MCVAPI bool interactPreventDefault();
     /**
-     * @hash   -730179736
      * @symbol  ?isTargetable\@Agent\@\@UEBA_NXZ
      */
     MCVAPI bool isTargetable() const;
 #endif
     /**
-     * @hash   1257518145
      * @symbol  ??0Agent\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Agent(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -333,67 +306,54 @@ public:
      */
     MCAPI class Vec3 doServerTravel(class AABB const &, enum class AgentTravelType);
     /**
-     * @hash   1460315036
      * @symbol  ?getMoveSpeedScalar\@Agent\@\@QEBAMXZ
      */
     MCAPI float getMoveSpeedScalar() const;
     /**
-     * @hash   507522022
      * @symbol  ?getSelectedSlot\@Agent\@\@QEBAHXZ
      */
     MCAPI int getSelectedSlot() const;
     /**
-     * @hash   -505338923
      * @symbol  ?isValidSlotNum\@Agent\@\@QEAA_NH\@Z
      */
     MCAPI bool isValidSlotNum(int);
     /**
-     * @hash   223370156
      * @symbol  ?setMoveTarget\@Agent\@\@QEAAXM\@Z
      */
     MCAPI void setMoveTarget(float);
     /**
-     * @hash   836990168
      * @symbol  ?setMoveTarget\@Agent\@\@QEAAXVVec2\@\@\@Z
      */
     MCAPI void setMoveTarget(class Vec2);
     /**
-     * @hash   91847458
      * @symbol  ?setNameTagFromOwner\@Agent\@\@QEAAXAEBVPlayer\@\@\@Z
      */
     MCAPI void setNameTagFromOwner(class Player const &);
     /**
-     * @hash   -493118005
      * @symbol  ?startCommandMode\@Agent\@\@QEAAXXZ
      */
     MCAPI void startCommandMode();
     /**
-     * @hash   1017170765
      * @symbol  ?stopCommandMode\@Agent\@\@QEAAXXZ
      */
     MCAPI void stopCommandMode();
     /**
-     * @hash   1125836308
      * @symbol  ?swingAnimationCompleted\@Agent\@\@QEAA_NXZ
      */
     MCAPI bool swingAnimationCompleted();
     /**
-     * @hash   837189375
      * @symbol  ?swingArm\@Agent\@\@QEAAXXZ
      */
     MCAPI void swingArm();
     /**
-     * @hash   1734432994
      * @symbol  ?tryFireCreateEvent\@Agent\@\@QEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void tryFireCreateEvent(class Player &);
     /**
-     * @hash   -932439014
      * @symbol  ?roundTeleportPos\@Agent\@\@SA?AVVec3\@\@AEBV2\@\@Z
      */
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const &);
     /**
-     * @hash   -1371615899
      * @symbol  ?tryGetFromEntity\@Agent\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */
     MCAPI static class Agent * tryGetFromEntity(class EntityContext &, bool);

@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   988256492
      * @vftbl  25
      * @symbol  ?canConnect\@PumpkinBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1782518255
      * @vftbl  71
      * @symbol  ?dispense\@PumpkinBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1969326069
      * @vftbl  92
      * @symbol  ?mayPlace\@PumpkinBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1760733125
      * @vftbl  103
      * @symbol  ?asItemInstance\@PumpkinBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -577450620
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@PumpkinBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   581675765
      * @vftbl  146
      * @symbol  ?getVariant\@PumpkinBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -474115319
      * @vftbl  149
      * @symbol  ?getMappedFace\@PumpkinBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -381134321
      * @vftbl  168
      * @symbol  ?onPlace\@PumpkinBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,32 +256,27 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -944553149
      * @vftbl  187
      * @symbol  ?getResourceItem\@PumpkinBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCK
     /**
-     * @hash   727561513
      * @symbol  ?canBeSilkTouched\@PumpkinBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   674943281
      * @symbol  ??0PumpkinBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N1\@Z
      */
     MCAPI PumpkinBlock(std::string const &, int, bool, bool);
 
 //private:
     /**
-     * @hash   -1181373465
      * @symbol  ?_canDispense\@PumpkinBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVVec3\@\@E\@Z
      */
     MCAPI bool _canDispense(class BlockSource &, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -2068255424
      * @symbol  ?_canSpawnGolem\@PumpkinBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _canSpawnGolem(class BlockSource &, class BlockPos const &) const;

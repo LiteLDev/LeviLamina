@@ -35,13 +35,11 @@ public:
      */
     virtual ~UnburiedConstraint();
     /**
-     * @hash   812679912
      * @vftbl  1
      * @symbol  ?isSatisfied\@UnburiedConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
-     * @hash   1752541332
      * @symbol  ??0UnburiedConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
      */
     MCAPI UnburiedConstraint(class StructureTemplate &);

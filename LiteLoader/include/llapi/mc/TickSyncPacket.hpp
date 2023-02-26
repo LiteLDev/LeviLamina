@@ -36,25 +36,21 @@ public:
      */
     virtual ~TickSyncPacket();
     /**
-     * @hash   -1051414834
      * @vftbl  1
      * @symbol  ?getId\@TickSyncPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -58851973
      * @vftbl  2
      * @symbol  ?getName\@TickSyncPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1849251540
      * @vftbl  3
      * @symbol  ?write\@TickSyncPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1563019276
      * @vftbl  6
      * @symbol  ?_read\@TickSyncPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */

@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1967579506
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@PoweredRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   391530007
      * @vftbl  146
      * @symbol  ?getVariant\@PoweredRailBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -892022139
      * @symbol  ??0PoweredRailBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PoweredRailBlock(std::string const &, int);

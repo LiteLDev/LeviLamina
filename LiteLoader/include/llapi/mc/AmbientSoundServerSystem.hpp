@@ -38,7 +38,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   805832761
      * @vftbl  2
      * @symbol  ?tick\@AmbientSoundServerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

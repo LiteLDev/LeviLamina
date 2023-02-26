@@ -22,7 +22,6 @@ namespace PlayerTickPolicy {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1185608460
      * @symbol  ?createPolicy\@PlayerTickPolicy\@\@YA?AV?$unique_ptr\@UIPlayerTickPolicy\@\@U?$default_delete\@UIPlayerTickPolicy\@\@\@std\@\@\@std\@\@AEBUPlayerTickConfig\@\@\@Z
      */
     MCAPI std::unique_ptr<struct IPlayerTickPolicy> createPolicy(struct PlayerTickConfig const &);

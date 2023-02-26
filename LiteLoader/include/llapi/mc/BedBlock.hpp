@@ -36,7 +36,6 @@ public:
      */
     virtual ~BedBlock();
     /**
-     * @hash   179073464
      * @vftbl  3
      * @symbol  ?getNextBlockPermutation\@BedBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
@@ -142,19 +141,16 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -1796387398
      * @vftbl  56
      * @symbol  ?canFillAtPos\@BedBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -604538513
      * @vftbl  57
      * @symbol  ?sanitizeFillBlock\@BedBlock\@\@UEBAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1185066207
      * @vftbl  58
      * @symbol  ?onFillBlock\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -170,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   117628336
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BedBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -181,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   591384940
      * @vftbl  81
      * @symbol  ?updateEntityAfterFallOn\@BedBlock\@\@UEBAXAEBVBlockPos\@\@AEAUUpdateEntityAfterFallOnInterface\@\@\@Z
      */
@@ -192,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -419207730
      * @vftbl  99
      * @symbol  ?neighborChanged\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1538412951
      * @vftbl  100
      * @symbol  ?getSecondPart\@BedBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @hash   -2042557696
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@BedBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -215,7 +206,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   1099581630
      * @vftbl  103
      * @symbol  ?asItemInstance\@BedBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -241,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   746844323
      * @vftbl  129
      * @symbol  ?canSpawnAt\@BedBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -252,19 +241,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -988896831
      * @vftbl  145
      * @symbol  ?telemetryVariant\@BedBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   508256236
      * @vftbl  146
      * @symbol  ?getVariant\@BedBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   133420066
      * @vftbl  149
      * @symbol  ?getMappedFace\@BedBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -290,13 +276,11 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1209344568
      * @vftbl  168
      * @symbol  ?onPlace\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1758209612
      * @vftbl  169
      * @symbol  ?onFallOn\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -312,7 +296,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1494162511
      * @vftbl  177
      * @symbol  ?use\@BedBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -329,38 +312,31 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCK
     /**
-     * @hash   -1678033189
      * @symbol  ?canBeSilkTouched\@BedBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   395815863
      * @symbol  ?isBounceBlock\@BedBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isBounceBlock() const;
     /**
-     * @hash   132263025
      * @symbol  ?isInteractiveBlock\@BedBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -1630565430
      * @symbol  ??0BedBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BedBlock(std::string const &, int);
     /**
-     * @hash   -1765344052
      * @symbol  ?HEAD_PIECE_DATA\@BedBlock\@\@2GB
      */
     MCAPI static unsigned short const HEAD_PIECE_DATA;
     /**
-     * @hash   -850948368
      * @symbol  ?OCCUPIED_DATA\@BedBlock\@\@2GB
      */
     MCAPI static unsigned short const OCCUPIED_DATA;
     /**
-     * @hash   -1762623612
      * @symbol  ?findWakeupPosition\@BedBlock\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_NAEBV?$optional\@VVec3\@\@\@3\@\@Z
      */
     MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, bool, class std::optional<class Vec3> const &);
@@ -369,12 +345,10 @@ public:
      */
     MCAPI static bool isDangerousSpawnPosition(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -312238052
      * @symbol  ?isValidStandUpPosition\@BedBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   914283472
      * @symbol  ?setOccupied\@BedBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);

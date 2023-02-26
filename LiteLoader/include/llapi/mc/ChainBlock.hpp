@@ -41,13 +41,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1745469557
      * @vftbl  22
      * @symbol  ?canProvideSupport\@ChainBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   2107819251
      * @vftbl  25
      * @symbol  ?canConnect\@ChainBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -221481732
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ChainBlock\@\@UEBA_NXZ
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1701368990
      * @vftbl  103
      * @symbol  ?asItemInstance\@ChainBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1839870490
      * @vftbl  143
      * @symbol  ?getVisualShape\@ChainBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -246,19 +241,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1159856246
      * @vftbl  187
      * @symbol  ?getResourceItem\@ChainBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1309031821
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@ChainBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -1811025597
      * @symbol  ??0ChainBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI ChainBlock(std::string const &, int, class Material const &);

@@ -36,13 +36,11 @@ public:
      */
     virtual ~SHStartPiece();
     /**
-     * @hash   -1658171142
      * @vftbl  2
      * @symbol  ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   -1687033455
      * @symbol  ??0SHStartPiece\@\@QEAA\@HAEAVRandom\@\@HH\@Z
      */
     MCAPI SHStartPiece(int, class Random &, int, int);

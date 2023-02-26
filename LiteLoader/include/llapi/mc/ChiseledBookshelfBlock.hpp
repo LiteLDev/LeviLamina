@@ -154,7 +154,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1240572775
      * @vftbl  103
      * @symbol  ?asItemInstance\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -180,7 +179,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   -9492395
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@ChiseledBookshelfBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -196,7 +194,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1821829534
      * @vftbl  162
      * @symbol  ?onRemove\@ChiseledBookshelfBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -237,42 +234,35 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -851666417
      * @vftbl  187
      * @symbol  ?getResourceItem\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1794172025
      * @vftbl  188
      * @symbol  ?getResourceCount\@ChiseledBookshelfBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1637182328
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@ChiseledBookshelfBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHISELEDBOOKSHELFBLOCK
     /**
-     * @hash   693247485
      * @symbol  ?canBeSilkTouched\@ChiseledBookshelfBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -2140746625
      * @symbol  ?hasComparatorSignal\@ChiseledBookshelfBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   -268823332
      * @symbol  ?isInteractiveBlock\@ChiseledBookshelfBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -299902289
      * @symbol  ??0ChiseledBookshelfBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChiseledBookshelfBlock(std::string const &, int);

@@ -36,43 +36,36 @@ public:
      */
     virtual ~SimpleContainer();
     /**
-     * @hash   -981255352
      * @vftbl  2
      * @symbol  ?serverInitItemStackIds\@SimpleContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @hash   1409815251
      * @vftbl  5
      * @symbol  ?getItem\@SimpleContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @hash   1322672402
      * @vftbl  9
      * @symbol  ?setItem\@SimpleContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @hash   131692936
      * @vftbl  14
      * @symbol  ?getContainerSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const;
     /**
-     * @hash   -1758124617
      * @vftbl  15
      * @symbol  ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const;
     /**
-     * @hash   -1731904369
      * @vftbl  16
      * @symbol  ?startOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @hash   2100567343
      * @vftbl  17
      * @symbol  ?stopOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -88,7 +81,6 @@ public:
      */
     virtual void __unk_vfn_23();
     /**
-     * @hash   1746514977
      * @symbol  ??0SimpleContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHW4ContainerType\@\@\@Z
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum class ContainerType);

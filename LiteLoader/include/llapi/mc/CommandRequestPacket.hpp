@@ -36,36 +36,30 @@ public:
      */
     virtual ~CommandRequestPacket();
     /**
-     * @hash   1713334338
      * @vftbl  1
      * @symbol  ?getId\@CommandRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -101861649
      * @vftbl  2
      * @symbol  ?getName\@CommandRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1908527368
      * @vftbl  3
      * @symbol  ?write\@CommandRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -603514232
      * @vftbl  6
      * @symbol  ?_read\@CommandRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1907324312
      * @symbol  ??0CommandRequestPacket\@\@QEAA\@XZ
      */
     MCAPI CommandRequestPacket();
     /**
-     * @hash   -2073068912
      * @symbol  ??0CommandRequestPacket\@\@QEAA\@AEAVCommandContext\@\@_N\@Z
      */
     MCAPI CommandRequestPacket(class CommandContext &, bool);
@@ -74,7 +68,6 @@ public:
      */
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &) const;
     /**
-     * @hash   -2111743020
      * @symbol  ?getInternalSource\@CommandRequestPacket\@\@QEBA_NXZ
      */
     MCAPI bool getInternalSource() const;

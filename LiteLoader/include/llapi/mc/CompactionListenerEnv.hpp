@@ -100,7 +100,6 @@ public:
      */
     virtual class leveldb::Status UnlockFile(class leveldb::FileLock *);
     /**
-     * @hash   1883198010
      * @vftbl  14
      * @symbol  ?Schedule\@CompactionListenerEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
@@ -131,12 +130,10 @@ public:
      */
     virtual void SleepForMicroseconds(int);
     /**
-     * @hash   1185751020
      * @symbol  ??0CompactionListenerEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@\@Z
      */
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     /**
-     * @hash   1431604140
      * @symbol  ?setCompactionCallback\@CompactionListenerEnv\@\@QEAAXV?$function\@$$A6AXW4CompactionStatus\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void setCompactionCallback(class std::function<void (enum class CompactionStatus)>);

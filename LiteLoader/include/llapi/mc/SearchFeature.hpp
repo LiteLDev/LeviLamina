@@ -35,7 +35,6 @@ public:
      */
     virtual ~SearchFeature();
     /**
-     * @hash   530865903
      * @vftbl  1
      * @symbol  ?place\@SearchFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   105019720
      * @vftbl  0
      * @symbol  ?getJsonName\@BehaviorTreeDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~BehaviorTreeDescription();
     /**
-     * @hash   -357379403
      * @vftbl  3
      * @symbol  ?serializeData\@BehaviorTreeDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

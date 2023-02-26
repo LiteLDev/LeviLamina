@@ -34,24 +34,20 @@ public:
      */
     virtual ~AgentLookControl();
     /**
-     * @hash   -1456549455
      * @vftbl  1
      * @symbol  ?initializeInternal\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @hash   -1820137791
      * @vftbl  2
      * @symbol  ?tick\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
     /**
-     * @hash   -680242699
      * @symbol  ??0AgentLookControl\@\@QEAA\@XZ
      */
     MCAPI AgentLookControl();
     /**
-     * @hash   852126315
      * @symbol  ?sBaseYMax\@AgentLookControl\@\@2MA
      */
     MCAPI static float sBaseYMax;

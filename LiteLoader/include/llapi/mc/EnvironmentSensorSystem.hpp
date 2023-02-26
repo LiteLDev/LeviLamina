@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -1690453428
      * @vftbl  2
      * @symbol  ?tick\@EnvironmentSensorSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

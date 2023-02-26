@@ -36,7 +36,6 @@ public:
      */
     virtual ~BastionStart();
     /**
-     * @hash   2062814928
      * @vftbl  2
      * @symbol  ?isValid\@BastionStart\@\@UEBA_NXZ
      */

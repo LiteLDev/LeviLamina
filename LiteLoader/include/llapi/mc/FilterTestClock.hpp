@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestClock();
     /**
-     * @hash   -338741514
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestClock\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   631308540
      * @vftbl  4
      * @symbol  ?getName\@FilterTestClock\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

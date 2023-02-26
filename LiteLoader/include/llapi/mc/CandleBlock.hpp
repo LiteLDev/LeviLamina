@@ -161,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1239623130
      * @vftbl  103
      * @symbol  ?asItemInstance\@CandleBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -192,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   640495194
      * @vftbl  143
      * @symbol  ?getVisualShape\@CandleBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1508434357
      * @vftbl  177
      * @symbol  ?use\@CandleBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -239,31 +236,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2126469602
      * @vftbl  187
      * @symbol  ?getResourceItem\@CandleBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   367467798
      * @vftbl  188
      * @symbol  ?getResourceCount\@CandleBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   874736927
      * @vftbl  193
      * @symbol  ?_getNumCandles\@CandleBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int _getNumCandles(class Block const &) const;
     /**
-     * @hash   37040886
      * @vftbl  194
      * @symbol  ?_iterateCandles\@CandleBlock\@\@MEBAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /**
-     * @hash   1059035293
      * @vftbl  195
      * @symbol  ?_tryLightOnFire\@CandleBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
@@ -295,30 +287,25 @@ public:
     virtual void __unk_vfn_200();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCK
     /**
-     * @hash   -1104383043
      * @symbol  ?isInteractiveBlock\@CandleBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
     /**
-     * @hash   891383183
      * @symbol  ?waterSpreadCausesSpawn\@CandleBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   1118114798
      * @symbol  ??0CandleBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CandleBlock(std::string const &, int);
     /**
-     * @hash   1591789420
      * @symbol  ?tryLightFire\@CandleBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
 
 //private:
     /**
-     * @hash   941934166
      * @symbol  ?_forEachCandle\@CandleBlock\@\@CAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);

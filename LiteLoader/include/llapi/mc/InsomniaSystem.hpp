@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   736454969
      * @vftbl  2
      * @symbol  ?tick\@InsomniaSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

@@ -35,7 +35,6 @@ public:
      */
     virtual ~SmoothStoneSelector();
     /**
-     * @hash   -2131706025
      * @vftbl  1
      * @symbol  ?next\@SmoothStoneSelector\@\@UEBAAEBVBlock\@\@AEAVRandom\@\@HHH_N\@Z
      */

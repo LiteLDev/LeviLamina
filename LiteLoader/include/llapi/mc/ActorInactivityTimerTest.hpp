@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorInactivityTimerTest();
     /**
-     * @hash   -1548218352
      * @vftbl  2
      * @symbol  ?evaluate\@ActorInactivityTimerTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -83989054
      * @vftbl  4
      * @symbol  ?getName\@ActorInactivityTimerTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

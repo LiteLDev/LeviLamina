@@ -157,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   648478037
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@VindicationIllager\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -169,13 +168,11 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINDICATIONILLAGER
     /**
-     * @hash   -2083630887
      * @symbol  ?canExistInPeaceful\@VindicationIllager\@\@UEBA_NXZ
      */
     MCVAPI bool canExistInPeaceful() const;
 #endif
     /**
-     * @hash   -1264122618
      * @symbol  ??0VindicationIllager\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI VindicationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -35,7 +35,6 @@ public:
      */
     virtual ~RepairableItemComponent();
     /**
-     * @hash   764613278
      * @vftbl  1
      * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VRepairableItemComponent\@\@\@\@UEBA_NXZ
      */
@@ -56,51 +55,42 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   282759968
      * @vftbl  5
      * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VRepairableItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   1172469344
      * @vftbl  6
      * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VRepairableItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   591503293
      * @symbol  ?handleItemRepair\@RepairableItemComponent\@\@QEAAHAEAVItemStackBase\@\@0\@Z
      */
     MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
     /**
-     * @hash   -530922017
      * @symbol  ?isValidRepairItem\@RepairableItemComponent\@\@QEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI bool isValidRepairItem(class ItemStackBase const &) const;
     /**
-     * @hash   307403423
      * @symbol  ?bindType\@RepairableItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   1352865010
      * @symbol  ?getIdentifier\@RepairableItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
-     * @hash   -113624610
      * @symbol  ?registerVersionUpgrades\@RepairableItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 //private:
     /**
-     * @hash   -1539884238
      * @symbol  ?_getRepairItemEntry\@RepairableItemComponent\@\@AEBAPEBURepairItemEntry\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     /**
-     * @hash   -1759777668
      * @symbol  ?_repairItem\@RepairableItemComponent\@\@AEAAHAEAVItemStackBase\@\@0VExpressionNode\@\@\@Z
      */
     MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);

@@ -40,7 +40,6 @@ public:
      */
     virtual bool validateMobType(class Mob &) const;
     /**
-     * @hash   842371128
      * @symbol  ??0GuardianAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI GuardianAttackDefinition();
@@ -49,7 +48,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class GuardianAttackGoal &) const;
     /**
-     * @hash   -1775020685
      * @symbol  ?buildSchema\@GuardianAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGuardianAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>> &);

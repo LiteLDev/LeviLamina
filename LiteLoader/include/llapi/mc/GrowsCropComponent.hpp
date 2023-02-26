@@ -29,7 +29,6 @@ public:
 
 public:
     /**
-     * @hash   -1511734967
      * @symbol  ??0GrowsCropComponent\@\@QEAA\@XZ
      */
     MCAPI GrowsCropComponent();
@@ -38,7 +37,6 @@ public:
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   1208905844
      * @symbol  ?readAdditionalSaveData\@GrowsCropComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);

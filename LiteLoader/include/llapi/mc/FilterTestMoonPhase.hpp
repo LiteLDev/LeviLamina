@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestMoonPhase();
     /**
-     * @hash   -1280862542
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestMoonPhase\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   769404208
      * @vftbl  4
      * @symbol  ?getName\@FilterTestMoonPhase\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

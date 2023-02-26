@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   156097935
      * @vftbl  151
      * @symbol  ?animateTick\@MyceliumBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -212,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   228445037
      * @vftbl  172
      * @symbol  ?randomTick\@MyceliumBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -228,30 +226,25 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -94119624
      * @vftbl  187
      * @symbol  ?getResourceItem\@MyceliumBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1735333032
      * @symbol  ??0MyceliumBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MyceliumBlock(std::string const &, int);
     /**
-     * @hash   -1281582263
      * @symbol  ?MIN_BRIGHTNESS_TO_PERSIST\@MyceliumBlock\@\@2UBrightness\@\@B
      */
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
     /**
-     * @hash   756729074
      * @symbol  ?MIN_BRIGHTNESS_TO_SPREAD\@MyceliumBlock\@\@2UBrightness\@\@B
      */
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
 
 //private:
     /**
-     * @hash   1550110970
      * @symbol  ?_canSpreadToBlock\@MyceliumBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _canSpreadToBlock(class BlockSource const &, class BlockPos const &) const;

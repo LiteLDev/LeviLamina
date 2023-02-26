@@ -36,7 +36,6 @@ public:
      */
     virtual ~SporeBlossom();
     /**
-     * @hash   1698323806
      * @vftbl  10
      * @symbol  ?getAABB\@SporeBlossom\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   131426074
      * @vftbl  62
      * @symbol  ?canContainLiquid\@SporeBlossom\@\@UEBA_NXZ
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1277155438
      * @vftbl  92
      * @symbol  ?mayPlace\@SporeBlossom\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1044381536
      * @vftbl  99
      * @symbol  ?neighborChanged\@SporeBlossom\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -2126062301
      * @vftbl  151
      * @symbol  ?animateTick\@SporeBlossom\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -780549532
      * @vftbl  171
      * @symbol  ?tick\@SporeBlossom\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1522368402
      * @vftbl  178
      * @symbol  ?canSurvive\@SporeBlossom\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -259,13 +252,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPOREBLOSSOM
     /**
-     * @hash   1301746160
      * @symbol  ?canBeSilkTouched\@SporeBlossom\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -239985220
      * @symbol  ??0SporeBlossom\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SporeBlossom(std::string const &, int);

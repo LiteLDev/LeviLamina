@@ -36,13 +36,11 @@ public:
      */
     virtual ~StopSoundCommand();
     /**
-     * @hash   1765046949
      * @vftbl  1
      * @symbol  ?execute\@StopSoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1461633116
      * @symbol  ?setup\@StopSoundCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

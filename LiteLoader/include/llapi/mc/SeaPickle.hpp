@@ -36,7 +36,6 @@ public:
      */
     virtual ~SeaPickle();
     /**
-     * @hash   -1980667639
      * @vftbl  10
      * @symbol  ?getAABB\@SeaPickle\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1670594104
      * @vftbl  22
      * @symbol  ?canProvideSupport\@SeaPickle\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   772220543
      * @vftbl  62
      * @symbol  ?canContainLiquid\@SeaPickle\@\@UEBA_NXZ
      */
@@ -174,31 +171,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -122328595
      * @vftbl  86
      * @symbol  ?onFertilized\@SeaPickle\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1123472502
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@SeaPickle\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   -1150390130
      * @vftbl  88
      * @symbol  ?canBeFertilized\@SeaPickle\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1021606241
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@SeaPickle\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -768148437
      * @vftbl  99
      * @symbol  ?neighborChanged\@SeaPickle\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -229,25 +221,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -275062608
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@SeaPickle\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -1791333141
      * @vftbl  135
      * @symbol  ?getColor\@SeaPickle\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -2095335627
      * @vftbl  136
      * @symbol  ?getColor\@SeaPickle\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   377280417
      * @vftbl  153
      * @symbol  ?getLightEmission\@SeaPickle\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -273,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -2141667573
      * @vftbl  168
      * @symbol  ?onPlace\@SeaPickle\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -284,13 +271,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -651750257
      * @vftbl  171
      * @symbol  ?tick\@SeaPickle\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -1708838132
      * @vftbl  172
      * @symbol  ?randomTick\@SeaPickle\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -301,7 +286,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2061493447
      * @vftbl  178
      * @symbol  ?canSurvive\@SeaPickle\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -312,42 +296,35 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -644009539
      * @vftbl  186
      * @symbol  ?playerDestroy\@SeaPickle\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -502602393
      * @vftbl  187
      * @symbol  ?getResourceItem\@SeaPickle\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1900769231
      * @vftbl  193
      * @symbol  ?checkAlive\@SeaPickle\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAPICKLE
     /**
-     * @hash   -1021054946
      * @symbol  ?canBeSilkTouched\@SeaPickle\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   314065185
      * @symbol  ?hasVariableLighting\@SeaPickle\@\@UEBA_NXZ
      */
     MCVAPI bool hasVariableLighting() const;
     /**
-     * @hash   -455531706
      * @symbol  ?waterSpreadCausesSpawn\@SeaPickle\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   961024407
      * @symbol  ??0SeaPickle\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SeaPickle(std::string const &, int);

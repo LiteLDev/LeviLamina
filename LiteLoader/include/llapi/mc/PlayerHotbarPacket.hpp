@@ -35,36 +35,30 @@ public:
      */
     virtual ~PlayerHotbarPacket();
     /**
-     * @hash   1493080655
      * @vftbl  1
      * @symbol  ?getId\@PlayerHotbarPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -380925700
      * @vftbl  2
      * @symbol  ?getName\@PlayerHotbarPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   2055436267
      * @vftbl  3
      * @symbol  ?write\@PlayerHotbarPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   306723451
      * @vftbl  6
      * @symbol  ?_read\@PlayerHotbarPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   218628651
      * @symbol  ??0PlayerHotbarPacket\@\@QEAA\@XZ
      */
     MCAPI PlayerHotbarPacket();
     /**
-     * @hash   140800666
      * @symbol  ??0PlayerHotbarPacket\@\@QEAA\@IW4ContainerID\@\@_N\@Z
      */
     MCAPI PlayerHotbarPacket(unsigned int, enum class ContainerID, bool);

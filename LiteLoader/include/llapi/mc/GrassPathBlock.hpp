@@ -36,7 +36,6 @@ public:
      */
     virtual ~GrassPathBlock();
     /**
-     * @hash   338575266
      * @vftbl  10
      * @symbol  ?getAABB\@GrassPathBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -137,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1634953087
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@GrassPathBlock\@\@UEBA_NXZ
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   2007058374
      * @vftbl  62
      * @symbol  ?canContainLiquid\@GrassPathBlock\@\@UEBA_NXZ
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1139888953
      * @vftbl  95
      * @symbol  ?tryToTill\@GrassPathBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@\@Z
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
-     * @hash   271511668
      * @vftbl  99
      * @symbol  ?neighborChanged\@GrassPathBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -664727560
      * @vftbl  171
      * @symbol  ?tick\@GrassPathBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -247,13 +241,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -124634665
      * @vftbl  177
      * @symbol  ?use\@GrassPathBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   103983294
      * @vftbl  178
      * @symbol  ?canSurvive\@GrassPathBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,18 +256,15 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -457976480
      * @vftbl  187
      * @symbol  ?getResourceItem\@GrassPathBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -508631952
      * @symbol  ??0GrassPathBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GrassPathBlock(std::string const &, int);
     /**
-     * @hash   -700435401
      * @symbol  ?BLOCK_AABB\@GrassPathBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB BLOCK_AABB;

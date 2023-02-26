@@ -35,7 +35,6 @@ public:
      */
     virtual ~PauseScreenCapabilities();
     /**
-     * @hash   -1324456863
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UPauseScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

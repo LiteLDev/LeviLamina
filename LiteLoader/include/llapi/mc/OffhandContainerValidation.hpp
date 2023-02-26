@@ -36,19 +36,16 @@ public:
      */
     virtual ~OffhandContainerValidation();
     /**
-     * @hash   -2129657600
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   1938553862
      * @vftbl  2
      * @symbol  ?isItemAllowedInSlot\@OffhandContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   -1176759725
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   598123114
      * @vftbl  5
      * @symbol  ?isItemAllowedToRemove\@OffhandContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVItemStackBase\@\@\@Z
      */
@@ -70,19 +66,16 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   1528437911
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFHANDCONTAINERVALIDATION
     /**
-     * @hash   197291043
      * @symbol  ?canItemMoveToContainer\@OffhandContainerValidation\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   1425200160
      * @symbol  ?getContainerOffset\@OffhandContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;

@@ -36,13 +36,11 @@ public:
      */
     virtual ~ScaffoldingBlock();
     /**
-     * @hash   1791297239
      * @vftbl  5
      * @symbol  ?getCollisionShape\@ScaffoldingBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -719213119
      * @vftbl  10
      * @symbol  ?getAABB\@ScaffoldingBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   1696073193
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@ScaffoldingBlock\@\@UEBA_NXZ
      */
@@ -149,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1960772574
      * @vftbl  53
      * @symbol  ?canBeAscendedByJumping\@ScaffoldingBlock\@\@UEBA_NAEBVActor\@\@AEBVBlockPos\@\@\@Z
      */
@@ -170,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1349744455
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ScaffoldingBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1948177195
      * @vftbl  69
      * @symbol  ?checkIsPathable\@ScaffoldingBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -192,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -811597313
      * @vftbl  92
      * @symbol  ?mayPlace\@ScaffoldingBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1954561334
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@ScaffoldingBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -710124397
      * @vftbl  99
      * @symbol  ?neighborChanged\@ScaffoldingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -215,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -461987536
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@ScaffoldingBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -236,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   2078689182
      * @vftbl  128
      * @symbol  ?canSlide\@ScaffoldingBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -247,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -105268154
      * @vftbl  151
      * @symbol  ?animateTick\@ScaffoldingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -273,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1340357667
      * @vftbl  168
      * @symbol  ?onPlace\@ScaffoldingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -284,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1451170823
      * @vftbl  171
      * @symbol  ?tick\@ScaffoldingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -295,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -165364989
      * @vftbl  175
      * @symbol  ?clip\@ScaffoldingBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
@@ -306,13 +291,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1853601565
      * @vftbl  193
      * @symbol  ?getDustColor\@ScaffoldingBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   -1741479592
      * @vftbl  194
      * @symbol  ?getDustParticleName\@ScaffoldingBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -324,32 +307,27 @@ public:
     virtual void __unk_vfn_195();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCK
     /**
-     * @hash   1939626142
      * @symbol  ?waterSpreadCausesSpawn\@ScaffoldingBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   84083391
      * @symbol  ??0ScaffoldingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ScaffoldingBlock(std::string const &, int);
     /**
-     * @hash   -2138781817
      * @symbol  ?MAX_STABILITY\@ScaffoldingBlock\@\@2HB
      */
     MCAPI static int const MAX_STABILITY;
 
 //protected:
     /**
-     * @hash   235179946
      * @symbol  ?calculateStability\@ScaffoldingBlock\@\@IEBAHAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI int calculateStability(class BlockSource const &, class BlockPos const &) const;
 
 //private:
     /**
-     * @hash   734898502
      * @symbol  ?_updateBlockStability\@ScaffoldingBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;

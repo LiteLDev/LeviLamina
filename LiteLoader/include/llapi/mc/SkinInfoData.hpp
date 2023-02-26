@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   786295174
      * @symbol  ?isValidSize\@SkinInfoData\@\@SA_N_K\@Z
      */
     MCAPI static bool isValidSize(unsigned __int64);

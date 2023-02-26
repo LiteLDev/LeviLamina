@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1076193957
      * @symbol  ??0ParticleEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent &&);
     /**
-     * @hash   -480357119
      * @symbol  ??1ParticleEventRequestQueueComponent\@\@QEAA\@XZ
      */
     MCAPI ~ParticleEventRequestQueueComponent();

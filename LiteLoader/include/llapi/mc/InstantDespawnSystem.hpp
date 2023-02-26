@@ -40,13 +40,11 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1576380744
      * @vftbl  2
      * @symbol  ?tick\@InstantDespawnSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @hash   -1335117258
      * @symbol  ?createInstantDespawningPlayerCleanupSystem\@InstantDespawnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();

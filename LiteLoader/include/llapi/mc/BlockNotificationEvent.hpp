@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   449546284
      * @symbol  ??1BlockNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~BlockNotificationEvent();

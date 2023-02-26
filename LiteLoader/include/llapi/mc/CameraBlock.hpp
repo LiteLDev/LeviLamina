@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -24625883
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@CameraBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -222,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   244707174
      * @symbol  ??0CameraBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CameraBlock(std::string const &, int);

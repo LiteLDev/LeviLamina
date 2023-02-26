@@ -39,7 +39,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1237282313
      * @vftbl  4
      * @symbol  ?start\@WorkComposterGoal\@\@UEAAXXZ
      */
@@ -55,25 +54,21 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -1631224109
      * @vftbl  18
      * @symbol  ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
      */
     virtual void useWorkstation();
     /**
-     * @hash   -245432387
      * @symbol  ??0WorkComposterGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI WorkComposterGoal(class Mob &);
 
 //private:
     /**
-     * @hash   651339585
      * @symbol  ?_tryCompostItems\@WorkComposterGoal\@\@AEAA_NXZ
      */
     MCAPI bool _tryCompostItems();
     /**
-     * @hash   853273491
      * @symbol  ?_tryEmptyComposter\@WorkComposterGoal\@\@AEAA_NXZ
      */
     MCAPI bool _tryEmptyComposter();

@@ -47,6 +47,10 @@ ClassDefine<void> McClassBuilder =
         .function("addPlayerScore", &McClass::addPlayerScore)
         .function("reducePlayerScore", &McClass::reducePlayerScore)
         .function("deletePlayerScore", &McClass::deletePlayerScore)
+        .function("getTime", &McClass::getTime)
+        .function("setTime", &McClass::setTime)
+        .function("getWeather", &McClass::getWeather)
+        .function("setWeather", &McClass::setWeather)
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)
         .function("getDisplayObjectives", &McClass::getDisplayObjective)

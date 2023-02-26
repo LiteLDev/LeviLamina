@@ -36,7 +36,6 @@ public:
      */
     virtual ~BannerBlock();
     /**
-     * @hash   2050905777
      * @vftbl  10
      * @symbol  ?getAABB\@BannerBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   266636773
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BannerBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -168,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   877360163
      * @vftbl  99
      * @symbol  ?neighborChanged\@BannerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   12166757
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@BannerBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   2137993305
      * @vftbl  103
      * @symbol  ?asItemInstance\@BannerBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1234085883
      * @vftbl  143
      * @symbol  ?getVisualShape\@BannerBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   159194641
      * @vftbl  146
      * @symbol  ?getVariant\@BannerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -894677613
      * @vftbl  168
      * @symbol  ?onPlace\@BannerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -491126969
      * @vftbl  171
      * @symbol  ?tick\@BannerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   564428943
      * @vftbl  178
      * @symbol  ?canSurvive\@BannerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -276,45 +266,37 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1664554417
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@BannerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /**
-     * @hash   286074554
      * @symbol  ??0BannerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI BannerBlock(std::string const &, int, bool);
     /**
-     * @hash   533577091
      * @symbol  ?EAST_AABB\@BannerBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB EAST_AABB;
     /**
-     * @hash   -849077663
      * @symbol  ?NORTH_AABB\@BannerBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB NORTH_AABB;
     /**
-     * @hash   402516201
      * @symbol  ?SOUTH_AABB\@BannerBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB SOUTH_AABB;
     /**
-     * @hash   1738093917
      * @symbol  ?STANDING_AABB\@BannerBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB STANDING_AABB;
     /**
-     * @hash   -38315593
      * @symbol  ?WEST_AABB\@BannerBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB WEST_AABB;
 
 //private:
     /**
-     * @hash   1268467787
      * @symbol  ?_itemInstanceFromBlockEntity\@BannerBlock\@\@AEBA?AVItemInstance\@\@V?$not_null\@PEBVBannerBlockActor\@\@\@gsl\@\@\@Z
      */
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;

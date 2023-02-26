@@ -36,19 +36,16 @@ public:
      */
     virtual ~Inventory();
     /**
-     * @hash   -971129397
      * @vftbl  1
      * @symbol  ?init\@Inventory\@\@UEAAXXZ
      */
     virtual void init();
     /**
-     * @hash   591440805
      * @vftbl  9
      * @symbol  ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @hash   1586454528
      * @vftbl  10
      * @symbol  ?setItemWithForceBalance\@Inventory\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
@@ -64,31 +61,26 @@ public:
      */
     virtual void __unk_vfn_23();
     /**
-     * @hash   2052973129
      * @vftbl  33
      * @symbol  ?add\@Inventory\@\@UEAA_NAEAVItemStack\@\@\@Z
      */
     virtual bool add(class ItemStack &);
     /**
-     * @hash   1970733765
      * @vftbl  34
      * @symbol  ?canAdd\@Inventory\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
-     * @hash   1886864880
      * @vftbl  38
      * @symbol  ?getEmptySlotsCount\@Inventory\@\@UEBAHXZ
      */
     virtual int getEmptySlotsCount() const;
     /**
-     * @hash   -1965752288
      * @vftbl  39
      * @symbol  ?getFirstEmptySlot\@Inventory\@\@UEBAHXZ
      */
     virtual int getFirstEmptySlot() const;
     /**
-     * @hash   -1985243852
      * @vftbl  40
      * @symbol  ?setContainerSize\@Inventory\@\@UEAAXH\@Z
      */
@@ -119,27 +111,22 @@ public:
      */
     virtual void _Delete_this(bool);
     /**
-     * @hash   1800945432
      * @symbol  ??0Inventory\@\@QEAA\@PEAVPlayer\@\@\@Z
      */
     MCAPI Inventory(class Player *);
     /**
-     * @hash   416837307
      * @symbol  ?dropSlot\@Inventory\@\@QEAAXH_N00\@Z
      */
     MCAPI void dropSlot(int, bool, bool, bool);
     /**
-     * @hash   1710783044
      * @symbol  ?getComplexItems\@Inventory\@\@QEAA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class ItemStack> getComplexItems();
     /**
-     * @hash   781988539
      * @symbol  ?setupDefault\@Inventory\@\@QEAAXXZ
      */
     MCAPI void setupDefault();
     /**
-     * @hash   768386830
      * @symbol  ?tick\@Inventory\@\@QEAAXH\@Z
      */
     MCAPI void tick(int);

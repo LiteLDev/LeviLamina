@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   781510441
      * @vftbl  51
      * @symbol  ?isSignalSource\@ChestBlock\@\@UEBA_NXZ
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   958905733
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@ChestBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -1065305136
      * @vftbl  74
      * @symbol  ?onMove\@ChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -179,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1356671428
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@ChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -190,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -845448529
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@ChestBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   1445110793
      * @vftbl  100
      * @symbol  ?getSecondPart\@ChestBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
@@ -207,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   55323259
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@ChestBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -228,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   -812718838
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@ChestBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -239,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   726113954
      * @vftbl  149
      * @symbol  ?getMappedFace\@ChestBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @hash   350749207
      * @vftbl  152
      * @symbol  ?init\@ChestBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -256,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1328473235
      * @vftbl  162
      * @symbol  ?onRemove\@ChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1367454280
      * @vftbl  168
      * @symbol  ?onPlace\@ChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -293,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1634735695
      * @vftbl  177
      * @symbol  ?use\@ChestBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -305,33 +292,27 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCK
     /**
-     * @hash   953295468
      * @symbol  ?detachesOnPistonMove\@ChestBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCVAPI bool detachesOnPistonMove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1319245460
      * @symbol  ?hasComparatorSignal\@ChestBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   1617695378
      * @symbol  ?isContainerBlock\@ChestBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isContainerBlock() const;
     /**
-     * @hash   1677283057
      * @symbol  ?isInteractiveBlock\@ChestBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   278163546
      * @symbol  ??0ChestBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ChestType\@0\@W4MaterialType\@\@\@Z
      */
     MCAPI ChestBlock(std::string const &, int, enum class ChestBlock::ChestType, enum class MaterialType);
     /**
-     * @hash   -401810350
      * @symbol  ?updateSignalStrength\@ChestBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;

@@ -34,31 +34,26 @@ public:
      */
     virtual ~AncientCityPiece();
     /**
-     * @hash   -953915940
      * @vftbl  13
      * @symbol  ?generateHeightAtPosition\@AncientCityPiece\@\@UEBAHAEBVBlockPos\@\@AEAVDimension\@\@AEAVBlockVolume\@\@AEAV?$unordered_map\@VChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
     virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const;
     /**
-     * @hash   1786109855
      * @vftbl  14
      * @symbol  ?getSupportBlock\@AncientCityPiece\@\@UEBAPEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
     virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -2118847475
      * @vftbl  15
      * @symbol  ?getBeardStabilizeBlock\@AncientCityPiece\@\@UEBAAEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const & getBeardStabilizeBlock(class Block const &) const;
     /**
-     * @hash   -1670252348
      * @vftbl  16
      * @symbol  ?getTerrainAdjustmentEffect\@AncientCityPiece\@\@UEBA?AW4AdjustmentEffect\@\@XZ
      */
     virtual enum class AdjustmentEffect getTerrainAdjustmentEffect() const;
     /**
-     * @hash   1834306110
      * @symbol  ?addPieces\@AncientCityPiece\@\@SAXVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVJigsawStructureRegistry\@\@W4VanillaBiomeTypes\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum class VanillaBiomeTypes, class Dimension &);

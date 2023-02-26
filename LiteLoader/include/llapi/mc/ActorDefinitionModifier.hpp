@@ -26,22 +26,18 @@ public:
 
 public:
     /**
-     * @hash   89889973
      * @symbol  ??0ActorDefinitionModifier\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const &);
     /**
-     * @hash   850791470
      * @symbol  ??4ActorDefinitionModifier\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier const &);
     /**
-     * @hash   -562212418
      * @symbol  ??4ActorDefinitionModifier\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier &&);
     /**
-     * @hash   1632253835
      * @symbol  ??1ActorDefinitionModifier\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionModifier();

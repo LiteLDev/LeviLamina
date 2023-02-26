@@ -36,19 +36,16 @@ public:
      */
     virtual ~BigDripleafBlock();
     /**
-     * @hash   965420592
      * @vftbl  5
      * @symbol  ?getCollisionShape\@BigDripleafBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -77210902
      * @vftbl  10
      * @symbol  ?getAABB\@BigDripleafBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1673479051
      * @vftbl  15
      * @symbol  ?onProjectileHit\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
@@ -84,7 +81,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   477882016
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@BigDripleafBlock\@\@UEBA_NXZ
      */
@@ -170,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   124095918
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BigDripleafBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   938762110
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BigDripleafBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -151995173
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -193,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -935035602
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -204,25 +196,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   841050828
      * @vftbl  86
      * @symbol  ?onFertilized\@BigDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   1644990175
      * @vftbl  88
      * @symbol  ?canBeFertilized\@BigDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -908876107
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@BigDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1417165556
      * @vftbl  99
      * @symbol  ?neighborChanged\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -233,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1209269079
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@BigDripleafBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   -1741730956
      * @vftbl  113
      * @symbol  ?entityInside\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -265,13 +251,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -434736988
      * @vftbl  143
      * @symbol  ?getVisualShape\@BigDripleafBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1202498313
      * @vftbl  152
      * @symbol  ?init\@BigDripleafBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -297,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -205642742
      * @vftbl  168
      * @symbol  ?onPlace\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -308,7 +291,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -578181280
      * @vftbl  171
      * @symbol  ?tick\@BigDripleafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -319,7 +301,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -750829210
      * @vftbl  178
      * @symbol  ?canSurvive\@BigDripleafBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -330,47 +311,39 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   130036472
      * @vftbl  187
      * @symbol  ?getResourceItem\@BigDripleafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGDRIPLEAFBLOCK
     /**
-     * @hash   -1599315244
      * @symbol  ?canBeSilkTouched\@BigDripleafBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   713977605
      * @symbol  ?waterSpreadCausesSpawn\@BigDripleafBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -222131464
      * @symbol  ??0BigDripleafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BigDripleafBlock(std::string const &, int);
     /**
-     * @hash   -483275039
      * @symbol  ?MAX_DRIPLEAF_GROWTH_HEIGHT\@BigDripleafBlock\@\@2HB
      */
     MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
     /**
-     * @hash   47279067
      * @symbol  ?placeWithRandomHeight\@BigDripleafBlock\@\@SAXAEAVBlockSource\@\@AEAVRandom\@\@VBlockPos\@\@H\@Z
      */
     MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int);
 
 //private:
     /**
-     * @hash   156395292
      * @symbol  ?_resetTilt\@BigDripleafBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _resetTilt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -2145042022
      * @symbol  ?_setTiltAndScheduleTick\@BigDripleafBlock\@\@AEBAXW4BigDripleafTilt\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _setTiltAndScheduleTick(enum class BigDripleafTilt, class BlockSource &, class BlockPos const &) const;

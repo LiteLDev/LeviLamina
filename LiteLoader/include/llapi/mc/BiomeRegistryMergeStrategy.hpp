@@ -35,7 +35,6 @@ public:
      */
     virtual ~BiomeRegistryMergeStrategy();
     /**
-     * @hash   1979174903
      * @vftbl  1
      * @symbol  ?mergeFiles\@BiomeRegistryMergeStrategy\@\@UEAAXAEBV?$vector\@VLoadedResourceData\@\@V?$allocator\@VLoadedResourceData\@\@\@std\@\@\@std\@\@\@Z
      */

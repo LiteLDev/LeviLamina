@@ -38,30 +38,25 @@ public:
      */
     virtual ~ResourcePackFileUploadManager();
     /**
-     * @hash   -1710158280
      * @vftbl  2
      * @symbol  ?uploadFileToRealmStorage\@ResourcePackFileUploadManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
     virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
     /**
-     * @hash   -133802426
      * @symbol  ??0ResourcePackFileUploadManager\@\@QEAA\@AEAVTaskGroup\@\@V?$shared_ptr\@VIFileChunkUploader\@\@\@std\@\@\@Z
      */
     MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     /**
-     * @hash   -805256801
      * @symbol  ?uploadResourcePack\@ResourcePackFileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceLocation\@\@_N2W4PackType\@\@\@Z
      */
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum class PackType);
 
 //private:
     /**
-     * @hash   171895417
      * @symbol  ?_uploadPackToRealmStorage\@ResourcePackFileUploadManager\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
     MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
     /**
-     * @hash   1247782797
      * @symbol  ?_uploadResourcePackFolder\@ResourcePackFileUploadManager\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceLocation\@\@AEBVPath\@Core\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);

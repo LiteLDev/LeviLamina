@@ -35,31 +35,26 @@ public:
      */
     virtual ~ActorDefinitionEventSubcomponent();
     /**
-     * @hash   663912105
      * @vftbl  1
      * @symbol  ?readfromJSON\@ActorDefinitionEventSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   -1157772592
      * @vftbl  2
      * @symbol  ?writetoJSON\@ActorDefinitionEventSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   -911811901
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@ActorDefinitionEventSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1314035266
      * @vftbl  4
      * @symbol  ?getName\@ActorDefinitionEventSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   -2054041685
      * @symbol  ??0ActorDefinitionEventSubcomponent\@\@QEAA\@XZ
      */
     MCAPI ActorDefinitionEventSubcomponent();

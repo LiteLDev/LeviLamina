@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1876348553
      * @vftbl  151
      * @symbol  ?animateTick\@EnderChestBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -222,26 +221,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1220314030
      * @vftbl  187
      * @symbol  ?getResourceItem\@EnderChestBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1588334806
      * @vftbl  188
      * @symbol  ?getResourceCount\@EnderChestBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCK
     /**
-     * @hash   -988185181
      * @symbol  ?canBeSilkTouched\@EnderChestBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -24119742
      * @symbol  ??0EnderChestBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EnderChestBlock(std::string const &, int);

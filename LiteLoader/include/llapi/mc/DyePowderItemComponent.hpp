@@ -35,7 +35,6 @@ public:
      */
     virtual ~DyePowderItemComponent();
     /**
-     * @hash   -604940160
      * @vftbl  1
      * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VDyePowderItemComponent\@\@\@\@UEBA_NXZ
      */
@@ -56,29 +55,24 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   497119106
      * @vftbl  5
      * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VDyePowderItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   -2120126594
      * @vftbl  6
      * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VDyePowderItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   1903043565
      * @symbol  ?isValidAuxValue\@DyePowderItemComponent\@\@QEBA_NH\@Z
      */
     MCAPI bool isValidAuxValue(int) const;
     /**
-     * @hash   -1463790301
      * @symbol  ?bindType\@DyePowderItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -2041907850
      * @symbol  ?getIdentifier\@DyePowderItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();

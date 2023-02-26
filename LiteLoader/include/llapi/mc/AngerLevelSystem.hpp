@@ -38,7 +38,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -1113570244
      * @vftbl  2
      * @symbol  ?tick\@AngerLevelSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

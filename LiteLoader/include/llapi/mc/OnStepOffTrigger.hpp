@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   479616910
      * @symbol  ??1OnStepOffTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnStepOffTrigger();

@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   165464252
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@TopSnowBlockItem\@\@UEBAHH\@Z
      */
@@ -108,13 +107,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1578966552
      * @vftbl  132
      * @symbol  ?_useOn\@TopSnowBlockItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -202074810
      * @symbol  ??0TopSnowBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TopSnowBlockItem(std::string const &, int);

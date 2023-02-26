@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   683509866
      * @symbol  ??1SideBySideFetchCollisionShapesComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideFetchCollisionShapesComponent();

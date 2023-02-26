@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1874693794
      * @symbol  ??1PlayerOpenContainerEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerOpenContainerEvent();

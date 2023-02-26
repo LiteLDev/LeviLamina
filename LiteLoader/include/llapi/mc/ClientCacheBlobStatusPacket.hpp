@@ -36,25 +36,21 @@ public:
      */
     virtual ~ClientCacheBlobStatusPacket();
     /**
-     * @hash   -780548304
      * @vftbl  1
      * @symbol  ?getId\@ClientCacheBlobStatusPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   201228765
      * @vftbl  2
      * @symbol  ?getName\@ClientCacheBlobStatusPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1734607018
      * @vftbl  3
      * @symbol  ?write\@ClientCacheBlobStatusPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -850055222
      * @vftbl  6
      * @symbol  ?_read\@ClientCacheBlobStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */

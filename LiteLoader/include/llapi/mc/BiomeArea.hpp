@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -632375217
      * @symbol  ??0BiomeArea\@\@QEAA\@AEBVBoundingBox\@\@I\@Z
      */
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     /**
-     * @hash   418391385
      * @symbol  ??1BiomeArea\@\@QEAA\@XZ
      */
     MCAPI ~BiomeArea();

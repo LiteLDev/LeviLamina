@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   1142947336
      * @symbol  ??0RailMovementComponent\@\@QEAA\@XZ
      */
     MCAPI RailMovementComponent();
     /**
-     * @hash   -150833912
      * @symbol  ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
      */
     MCAPI float getMaxSpeed() const;
     /**
-     * @hash   1602507835
      * @symbol  ??8RailMovementComponent\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class RailMovementComponent const &) const;

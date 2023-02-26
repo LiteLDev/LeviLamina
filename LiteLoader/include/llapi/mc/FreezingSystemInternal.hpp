@@ -22,7 +22,6 @@ namespace FreezingSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1580629448
      * @symbol  ?processFreezeEffect\@FreezingSystemInternal\@\@YAXAEAVActor\@\@AEBVFreezingComponent\@\@\@Z
      */
     MCAPI void processFreezeEffect(class Actor &, class FreezingComponent const &);

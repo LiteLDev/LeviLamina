@@ -36,7 +36,6 @@ public:
      */
     virtual ~AzaleaBlock();
     /**
-     * @hash   1977733037
      * @vftbl  10
      * @symbol  ?getAABB\@AzaleaBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   277766582
      * @vftbl  24
      * @symbol  ?canProvideMultifaceSupport\@AzaleaBlock\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   684739405
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@AzaleaBlock\@\@UEBA_NXZ
      */
@@ -174,19 +171,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1730662873
      * @vftbl  86
      * @symbol  ?onFertilized\@AzaleaBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -146142926
      * @vftbl  88
      * @symbol  ?canBeFertilized\@AzaleaBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1575412405
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@AzaleaBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -252,14 +246,12 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -727506309
      * @symbol  ??0AzaleaBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI AzaleaBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -861594351
      * @symbol  ?_growTree\@AzaleaBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;

@@ -58,7 +58,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -1046635389
      * @vftbl  44
      * @symbol  ?canDestroySpecial\@PickaxeItem\@\@UEBA_NAEBVBlock\@\@\@Z
      */
@@ -74,7 +73,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1764817140
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@PickaxeItem\@\@UEBAHXZ
      */
@@ -115,20 +113,17 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -116789078
      * @vftbl  88
      * @symbol  ?getDestroySpeed\@PickaxeItem\@\@UEBAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
-     * @hash   1171825625
      * @symbol  ??0PickaxeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */
     MCAPI PickaxeItem(std::string const &, int, class Item::Tier const &);
 
 //private:
     /**
-     * @hash   -740714883
      * @symbol  ?_isTierOneBlock\@PickaxeItem\@\@AEBA?B_NAEBVBlockLegacy\@\@\@Z
      */
     MCAPI bool const _isTierOneBlock(class BlockLegacy const &) const;

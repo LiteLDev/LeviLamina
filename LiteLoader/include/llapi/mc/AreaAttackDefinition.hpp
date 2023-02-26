@@ -35,12 +35,10 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class AreaAttackComponent &) const;
     /**
-     * @hash   -610099540
      * @symbol  ?setDamageCause\@AreaAttackDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setDamageCause(std::string const &);
     /**
-     * @hash   -1625048778
      * @symbol  ?buildSchema\@AreaAttackDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAreaAttackDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition>> &);

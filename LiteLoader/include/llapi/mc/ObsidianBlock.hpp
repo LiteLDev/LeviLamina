@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1360728727
      * @vftbl  151
      * @symbol  ?animateTick\@ObsidianBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -227,12 +226,10 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   681669627
      * @symbol  ??0ObsidianBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI ObsidianBlock(std::string const &, int, bool);
     /**
-     * @hash   1630315327
      * @symbol  ?poofParticles\@ObsidianBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void poofParticles(class BlockSource &, class BlockPos const &) const;

@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1966676527
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@ActivatorRailBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -57224922
      * @vftbl  146
      * @symbol  ?getVariant\@ActivatorRailBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1963098428
      * @symbol  ??0ActivatorRailBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ActivatorRailBlock(std::string const &, int);

@@ -35,13 +35,11 @@ public:
      */
     virtual ~ActorMissingHealthTest();
     /**
-     * @hash   563660337
      * @vftbl  2
      * @symbol  ?evaluate\@ActorMissingHealthTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   362219489
      * @vftbl  4
      * @symbol  ?getName\@ActorMissingHealthTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

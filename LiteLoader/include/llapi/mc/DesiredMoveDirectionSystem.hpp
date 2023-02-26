@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -2067516333
      * @symbol  ?rotateTowardsControllingPassenger\@DesiredMoveDirectionSystem\@\@SAX_NAEAVVec2\@\@1AEAM2AEBV2\@\@Z
      */
     MCAPI static void rotateTowardsControllingPassenger(bool, class Vec2 &, class Vec2 &, float &, float &, class Vec2 const &);

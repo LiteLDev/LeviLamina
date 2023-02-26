@@ -85,25 +85,21 @@ public:
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /**
-     * @hash   1999376144
      * @vftbl  4
      * @symbol  ?update\@NetworkPeer\@\@UEAAXXZ
      */
     virtual void update();
     /**
-     * @hash   -215391571
      * @vftbl  5
      * @symbol  ?flush\@NetworkPeer\@\@UEAAX$$QEAV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
     virtual void flush(class std::function<void (void)> &&);
     /**
-     * @hash   -1596853431
      * @vftbl  6
      * @symbol  ?isLocal\@NetworkPeer\@\@UEBA_NXZ
      */
     virtual bool isLocal() const;
     /**
-     * @hash   1785125154
      * @vftbl  7
      * @symbol  ?isEncrypted\@NetworkPeer\@\@UEBA_NXZ
      */

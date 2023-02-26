@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1717292803
      * @vftbl  2
      * @symbol  ?tick\@HopperSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

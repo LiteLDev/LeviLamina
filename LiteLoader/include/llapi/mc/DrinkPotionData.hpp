@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1893148081
      * @symbol  ??1DrinkPotionData\@\@QEAA\@XZ
      */
     MCAPI ~DrinkPotionData();

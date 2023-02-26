@@ -52,38 +52,31 @@ public:
     virtual void __unk_vfn_4();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODELISTENER
     /**
-     * @hash   -54798761
      * @symbol  ?onAreaChanged\@ClassroomModeListener\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
-     * @hash   717642803
      * @symbol  ?onBlockChanged\@ClassroomModeListener\@\@UEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@IAEBVBlock\@\@2HPEBUActorBlockSyncMessage\@\@W4BlockChangedEventTarget\@\@PEAVActor\@\@\@Z
      */
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum class BlockChangedEventTarget, class Actor *);
     /**
-     * @hash   1761214151
      * @symbol  ?onChunkLoaded\@ClassroomModeListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
-     * @hash   2064202498
      * @symbol  ?onChunkUnloaded\@ClassroomModeListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
      */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     /**
-     * @hash   -1143894340
      * @symbol  ?onEntityAdded\@ClassroomModeListener\@\@UEAAXAEAVActor\@\@\@Z
      */
     MCVAPI void onEntityAdded(class Actor &);
     /**
-     * @hash   564354780
      * @symbol  ?onEntityRemoved\@ClassroomModeListener\@\@UEAAXAEAVActor\@\@\@Z
      */
     MCVAPI void onEntityRemoved(class Actor &);
 #endif
     /**
-     * @hash   1211150709
      * @symbol  ??0ClassroomModeListener\@\@QEAA\@AEAVIMinecraftEventing\@\@\@Z
      */
     MCAPI ClassroomModeListener(class IMinecraftEventing &);

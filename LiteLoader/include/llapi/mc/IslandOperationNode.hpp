@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -2029899070
      * @vftbl  3
      * @symbol  ?_fillArea\@IslandOperationNode\@\@EEBAXAEAV?$WorkingData\@W4Terrain\@OperationNodeValues\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
      */

@@ -37,7 +37,6 @@ public:
      */
     virtual ~RepeatUntilFailureDefinition();
     /**
-     * @hash   1946445290
      * @vftbl  1
      * @symbol  ?load\@RepeatUntilFailureDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

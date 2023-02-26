@@ -37,7 +37,6 @@ public:
      */
     virtual ~SignBlock();
     /**
-     * @hash   1231313328
      * @vftbl  10
      * @symbol  ?getAABB\@SignBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -864142124
      * @vftbl  69
      * @symbol  ?checkIsPathable\@SignBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -169,19 +167,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1623647851
      * @vftbl  91
      * @symbol  ?mayPlace\@SignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1755262126
      * @vftbl  99
      * @symbol  ?neighborChanged\@SignBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1318430550
      * @vftbl  103
      * @symbol  ?asItemInstance\@SignBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -212,7 +207,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1321797942
      * @vftbl  143
      * @symbol  ?getVisualShape\@SignBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -243,7 +237,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -767869386
      * @vftbl  171
      * @symbol  ?tick\@SignBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -254,13 +247,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1646723323
      * @vftbl  177
      * @symbol  ?use\@SignBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -858911632
      * @vftbl  178
      * @symbol  ?canSurvive\@SignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -271,31 +262,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   399793950
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@SignBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /**
-     * @hash   1984586195
      * @vftbl  194
      * @symbol  ?_canSurvive\@SignBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool _canSurvive(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1396714849
      * @vftbl  195
      * @symbol  ?_getItemInstance\@SignBlock\@\@MEBA?AVItemInstance\@\@XZ
      */
     virtual class ItemInstance _getItemInstance() const;
     /**
-     * @hash   1877109518
      * @vftbl  196
      * @symbol  ?_getShape\@SignBlock\@\@MEBAXHAEAVAABB\@\@\@Z
      */
     virtual void _getShape(int, class AABB &) const;
     /**
-     * @hash   2085622130
      * @symbol  ??0SignBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NW4SignType\@SignBlockActor\@\@\@Z
      */
     MCAPI SignBlock(std::string const &, int, bool, enum class SignBlockActor::SignType);

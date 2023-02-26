@@ -35,13 +35,11 @@ public:
      */
     virtual ~HangingSignBlock();
     /**
-     * @hash   291328262
      * @vftbl  5
      * @symbol  ?getCollisionShape\@HangingSignBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -1313623152
      * @vftbl  10
      * @symbol  ?getAABB\@HangingSignBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -52,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -2101734017
      * @vftbl  22
      * @symbol  ?canProvideSupport\@HangingSignBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -163,7 +160,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1584231772
      * @vftbl  69
      * @symbol  ?checkIsPathable\@HangingSignBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -179,7 +175,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1789219045
      * @vftbl  91
      * @symbol  ?mayPlace\@HangingSignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -210,7 +205,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -853111446
      * @vftbl  143
      * @symbol  ?getVisualShape\@HangingSignBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -246,7 +240,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -707693952
      * @vftbl  178
      * @symbol  ?canSurvive\@HangingSignBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -257,29 +250,24 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -517558705
      * @vftbl  195
      * @symbol  ?_getItemInstance\@HangingSignBlock\@\@MEBA?AVItemInstance\@\@XZ
      */
     virtual class ItemInstance _getItemInstance() const;
     /**
-     * @hash   683552894
      * @vftbl  196
      * @symbol  ?_getShape\@HangingSignBlock\@\@MEBAXHAEAVAABB\@\@\@Z
      */
     virtual void _getShape(int, class AABB &) const;
     /**
-     * @hash   375243762
      * @symbol  ??0HangingSignBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NW4SignType\@SignBlockActor\@\@\@Z
      */
     MCAPI HangingSignBlock(std::string const &, int, bool, enum class SignBlockActor::SignType);
     /**
-     * @hash   667586137
      * @symbol  ?isDoubleChainHangingSign\@HangingSignBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isDoubleChainHangingSign(class Block const &);
     /**
-     * @hash   718907269
      * @symbol  ?isSideAttachedHangingSign\@HangingSignBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isSideAttachedHangingSign(class Block const &);
@@ -290,14 +278,12 @@ public:
 
 //protected:
     /**
-     * @hash   1253893781
      * @symbol  ?_canAttachTo\@HangingSignBlock\@\@IEBA_NAEAVBlockSource\@\@VBlockPos\@\@EE\@Z
      */
     MCAPI bool _canAttachTo(class BlockSource &, class BlockPos, unsigned char, unsigned char) const;
 
 //private:
     /**
-     * @hash   -1392582046
      * @symbol  ?_isHangingSign\@HangingSignBlock\@\@CA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool _isHangingSign(class Block const &);

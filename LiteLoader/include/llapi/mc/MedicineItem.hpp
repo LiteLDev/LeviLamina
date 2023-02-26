@@ -72,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   1030432227
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@MedicineItem\@\@UEBA_NH\@Z
      */
@@ -108,42 +107,35 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1255129825
      * @vftbl  84
      * @symbol  ?use\@MedicineItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -1614737283
      * @vftbl  86
      * @symbol  ?useTimeDepleted\@MedicineItem\@\@UEBA?AW4ItemUseMethod\@\@AEAVItemStack\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
-     * @hash   -1986063171
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@MedicineItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   828960077
      * @vftbl  117
      * @symbol  ?setIconInfo\@MedicineItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -860098396
      * @vftbl  118
      * @symbol  ?getIconInfo\@MedicineItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   887093387
      * @symbol  ??0MedicineItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MedicineItem(std::string const &, int);
     /**
-     * @hash   10525218
      * @symbol  ?getMobEffect\@MedicineItem\@\@SAPEBVMobEffect\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI static class MobEffect const * getMobEffect(class ItemStack const &);

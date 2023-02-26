@@ -39,7 +39,6 @@ public:
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
-     * @hash   -593819168
      * @symbol  ?buildSchema\@IsShearedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsShearedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShearedDefinition>> &);

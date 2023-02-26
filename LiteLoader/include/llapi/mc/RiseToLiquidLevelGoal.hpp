@@ -35,7 +35,6 @@ public:
      */
     virtual ~RiseToLiquidLevelGoal();
     /**
-     * @hash   -264024807
      * @vftbl  1
      * @symbol  ?canUse\@RiseToLiquidLevelGoal\@\@UEAA_NXZ
      */
@@ -61,26 +60,22 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   1417378925
      * @vftbl  6
      * @symbol  ?tick\@RiseToLiquidLevelGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   217168919
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@RiseToLiquidLevelGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1772339941
      * @symbol  ??0RiseToLiquidLevelGoal\@\@QEAA\@AEAVMob\@\@MMM\@Z
      */
     MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
 //private:
     /**
-     * @hash   1468693436
      * @symbol  ?findLiquidLevel\@RiseToLiquidLevelGoal\@\@AEAAMXZ
      */
     MCAPI float findLiquidLevel();

@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -125475383
      * @vftbl  23
      * @symbol  ?isThrowable\@SnowballItem\@\@UEBA_NXZ
      */
@@ -108,13 +107,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1108170633
      * @vftbl  84
      * @symbol  ?use\@SnowballItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -844146287
      * @vftbl  85
      * @symbol  ?dispense\@SnowballItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */

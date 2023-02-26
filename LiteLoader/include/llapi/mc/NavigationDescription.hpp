@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   716389959
      * @vftbl  0
      * @symbol  ?getJsonName\@NavigationWalkDescription\@\@UEBAPEBDXZ
      */
@@ -41,19 +40,16 @@ public:
      */
     virtual ~NavigationDescription();
     /**
-     * @hash   -1084516153
      * @vftbl  2
      * @symbol  ?deserializeData\@NavigationDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -1301819791
      * @vftbl  3
      * @symbol  ?serializeData\@NavigationDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void serializeData(class Json::Value &) const;
     /**
-     * @hash   -606548124
      * @symbol  ??0NavigationDescription\@\@QEAA\@XZ
      */
     MCAPI NavigationDescription();

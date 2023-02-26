@@ -36,19 +36,16 @@ public:
      */
     virtual ~FlowerPotBlockActor();
     /**
-     * @hash   -1031815
      * @vftbl  1
      * @symbol  ?load\@FlowerPotBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -671452168
      * @vftbl  2
      * @symbol  ?save\@FlowerPotBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   -1866567270
      * @vftbl  8
      * @symbol  ?onChanged\@FlowerPotBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -94,29 +91,24 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   1867100315
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@FlowerPotBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   -29793289
      * @vftbl  38
      * @symbol  ?_onUpdatePacket\@FlowerPotBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   -101694971
      * @symbol  ??0FlowerPotBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI FlowerPotBlockActor(class BlockPos const &);
     /**
-     * @hash   -1744827805
      * @symbol  ?getPlantItem\@FlowerPotBlockActor\@\@QEBAPEBVBlock\@\@XZ
      */
     MCAPI class Block const * getPlantItem() const;
     /**
-     * @hash   537332749
      * @symbol  ?setPlantItem\@FlowerPotBlockActor\@\@QEAAXPEBVBlock\@\@\@Z
      */
     MCAPI void setPlantItem(class Block const *);

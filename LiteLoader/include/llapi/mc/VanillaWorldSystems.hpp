@@ -28,7 +28,6 @@ public:
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -903198159
      * @symbol  ?init\@VanillaWorldSystems\@\@YA?AV?$shared_ptr\@VImpl\@VanillaWorldSystems\@\@\@std\@\@PEAVLevel\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@PEAVResourcePackManager\@\@VItemRegistryRef\@\@\@Z
      */
     MCAPI class std::shared_ptr<class VanillaWorldSystems::Impl> init(class Level *, class Experiments const &, class BaseGameVersion const &, class ResourcePackManager *, class ItemRegistryRef);

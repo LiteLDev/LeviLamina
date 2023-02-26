@@ -33,7 +33,6 @@ public:
      */
     virtual ~ScriptingEventListener();
     /**
-     * @hash   2098544258
      * @vftbl  1
      * @symbol  ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
      */

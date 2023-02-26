@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1302796277
      * @vftbl  2
      * @symbol  ?tick\@InteractSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

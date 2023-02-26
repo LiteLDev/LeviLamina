@@ -35,7 +35,6 @@ public:
      */
     virtual ~ShulkerBoxContainerScreenValidator();
     /**
-     * @hash   -725910336
      * @symbol  ??0ShulkerBoxContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI ShulkerBoxContainerScreenValidator();

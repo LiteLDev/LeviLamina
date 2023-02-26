@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   2086592757
      * @symbol  ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
     /**
-     * @hash   124386467
      * @symbol  ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
     MCAPI ~PackedItemUseLegacyInventoryTransaction();

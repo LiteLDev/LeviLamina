@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   1413936435
      * @symbol  ?executeActions\@ScriptDeferredActionManager\@\@QEAAXXZ
      */
     MCAPI void executeActions();
     /**
-     * @hash   606373849
      * @symbol  ?rejectAll\@ScriptDeferredActionManager\@\@QEAAXXZ
      */
     MCAPI void rejectAll();
     /**
-     * @hash   1439271305
      * @symbol  ??1ScriptDeferredActionManager\@\@QEAA\@XZ
      */
     MCAPI ~ScriptDeferredActionManager();

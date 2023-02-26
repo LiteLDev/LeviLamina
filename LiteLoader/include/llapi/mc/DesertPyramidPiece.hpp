@@ -36,19 +36,16 @@ public:
      */
     virtual ~DesertPyramidPiece();
     /**
-     * @hash   1574227384
      * @vftbl  2
      * @symbol  ?getType\@DesertPyramidPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   1434586352
      * @vftbl  4
      * @symbol  ?postProcess\@DesertPyramidPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @hash   -415867199
      * @symbol  ??0DesertPyramidPiece\@\@QEAA\@FHH\@Z
      */
     MCAPI DesertPyramidPiece(short, int, int);

@@ -49,29 +49,24 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1896099432
      * @vftbl  4
      * @symbol  ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   -960219408
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1385683559
      * @symbol  ??0ItemStackRequestActionCraftRecipeAuto\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     /**
-     * @hash   741983731
      * @symbol  ?getIngredients\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAPEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class RecipeIngredient> const * getIngredients() const;
     /**
-     * @hash   321770637
      * @symbol  ?getNumCrafts\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAEXZ
      */
     MCAPI unsigned char getNumCrafts() const;

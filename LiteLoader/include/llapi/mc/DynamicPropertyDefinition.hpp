@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1543898819
      * @symbol  ??1DynamicPropertyDefinition\@\@QEAA\@XZ
      */
     MCAPI ~DynamicPropertyDefinition();

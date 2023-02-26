@@ -36,13 +36,11 @@ public:
      */
     virtual ~TimeCommand();
     /**
-     * @hash   743246005
      * @vftbl  1
      * @symbol  ?execute\@TimeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1978429712
      * @symbol  ?setup\@TimeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

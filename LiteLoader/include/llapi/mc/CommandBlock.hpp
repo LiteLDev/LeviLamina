@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1090249709
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@CommandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -736352698
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@CommandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -59944988
      * @vftbl  99
      * @symbol  ?neighborChanged\@CommandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1263587368
      * @vftbl  103
      * @symbol  ?asItemInstance\@CommandBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   74810881
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@CommandBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -206,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   -884706572
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@CommandBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -217,13 +211,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1935790926
      * @vftbl  146
      * @symbol  ?getVariant\@CommandBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -391055700
      * @vftbl  149
      * @symbol  ?getMappedFace\@CommandBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -249,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -167700990
      * @vftbl  168
      * @symbol  ?onPlace\@CommandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -260,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1183039064
      * @vftbl  171
      * @symbol  ?tick\@CommandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -271,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   544225911
      * @vftbl  177
      * @symbol  ?use\@CommandBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -307,73 +296,60 @@ public:
      */
     virtual void _Delete_this(bool);
     /**
-     * @hash   822984306
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCK
     /**
-     * @hash   183359774
      * @symbol  ?hasComparatorSignal\@CommandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   137062779
      * @symbol  ?isInteractiveBlock\@CommandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1499802235
      * @symbol  ??0CommandBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CommandBlockMode\@\@\@Z
      */
     MCAPI CommandBlock(std::string const &, int, enum class CommandBlockMode);
     /**
-     * @hash   -1400553829
      * @symbol  ?execute\@CommandBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void execute(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1457488268
      * @symbol  ?getMode\@CommandBlock\@\@QEBA?AW4CommandBlockMode\@\@XZ
      */
     MCAPI enum class CommandBlockMode getMode() const;
     /**
-     * @hash   -983407515
      * @symbol  ?updateBlock\@CommandBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@W4CommandBlockMode\@\@_N\@Z
      */
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum class CommandBlockMode, bool) const;
     /**
-     * @hash   1427725567
      * @symbol  ?_getCommandBlockActor\@CommandBlock\@\@SAPEAVCommandBlockActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class CommandBlockActor * _getCommandBlockActor(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   1478224678
      * @symbol  ?_execute\@CommandBlock\@\@AEBAXAEAVBlockSource\@\@AEAVCommandBlockActor\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI void _execute(class BlockSource &, class CommandBlockActor &, class BlockPos const &, bool) const;
     /**
-     * @hash   -851793790
      * @symbol  ?_executeChain\@CommandBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _executeChain(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1936806706
      * @symbol  ?_executeChainBlock\@CommandBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVCommandBlockActor\@\@_N\@Z
      */
     MCAPI bool _executeChainBlock(class BlockSource &, class BlockPos const &, class CommandBlockActor &, bool) const;
     /**
-     * @hash   -1499955538
      * @symbol  ?_installCircuit\@CommandBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
 
 private:
     /**
-     * @hash   -2040043348
      * @symbol  ?mCBModeMap\@CommandBlock\@\@0PAHA
      */
     MCAPI static int mCBModeMap[];

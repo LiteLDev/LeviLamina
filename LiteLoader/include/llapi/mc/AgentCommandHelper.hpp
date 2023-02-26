@@ -20,7 +20,6 @@ namespace AgentCommandHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -298428479
      * @symbol  ?isInRange\@AgentCommandHelper\@\@YA_NAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAVPlayer\@\@AEAVAgent\@\@\@Z
      */
     MCAPI bool isInRange(class CommandOrigin const &, class CommandOutput &, class Player &, class Agent &);

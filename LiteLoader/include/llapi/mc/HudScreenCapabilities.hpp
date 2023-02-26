@@ -35,7 +35,6 @@ public:
      */
     virtual ~HudScreenCapabilities();
     /**
-     * @hash   -270923934
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UHudScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

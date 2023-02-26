@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -377720399
      * @symbol  ?sendPacketReceivedFrom\@NetworkPacketEventCoordinator\@\@QEAAXAEBVPacketHeader\@\@AEBVPacket\@\@\@Z
      */
     MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);

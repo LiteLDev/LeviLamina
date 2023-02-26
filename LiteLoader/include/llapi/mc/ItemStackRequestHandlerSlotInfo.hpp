@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   -677437736
      * @symbol  ??0ItemStackRequestHandlerSlotInfo\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestHandlerSlotInfo();
     /**
-     * @hash   -863942484
      * @symbol  ??BItemStackRequestHandlerSlotInfo\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
     /**
-     * @hash   2116725272
      * @symbol  ??1ItemStackRequestHandlerSlotInfo\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackRequestHandlerSlotInfo();

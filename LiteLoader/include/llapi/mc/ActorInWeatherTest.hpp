@@ -37,25 +37,21 @@ public:
      */
     virtual ~ActorInWeatherTest();
     /**
-     * @hash   -1774844802
      * @vftbl  1
      * @symbol  ?setup\@ActorInWeatherTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @hash   361790702
      * @vftbl  2
      * @symbol  ?evaluate\@ActorInWeatherTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1612019732
      * @vftbl  4
      * @symbol  ?getName\@ActorInWeatherTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @hash   -1300835629
      * @vftbl  6
      * @symbol  ?_serializeValue\@ActorInWeatherTest\@\@MEBA?AVValue\@Json\@\@XZ
      */

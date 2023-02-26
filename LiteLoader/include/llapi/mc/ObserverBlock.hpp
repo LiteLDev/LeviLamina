@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -1300986562
      * @vftbl  51
      * @symbol  ?isSignalSource\@ObserverBlock\@\@UEBA_NXZ
      */
@@ -142,7 +141,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -1546193379
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@ObserverBlock\@\@UEBA_NH\@Z
      */
@@ -158,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -259910832
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@ObserverBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -294201570
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -175,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1417411864
      * @vftbl  76
      * @symbol  ?movedByPiston\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -730155487
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -192,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -426078263
      * @vftbl  99
      * @symbol  ?neighborChanged\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -208,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1920760086
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@ObserverBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -234,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1042094793
      * @vftbl  146
      * @symbol  ?getVariant\@ObserverBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   1793994295
      * @vftbl  149
      * @symbol  ?getMappedFace\@ObserverBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @hash   718769867
      * @vftbl  150
      * @symbol  ?getFaceFlip\@ObserverBlock\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
@@ -272,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1776672963
      * @vftbl  168
      * @symbol  ?onPlace\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -283,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1785663955
      * @vftbl  171
      * @symbol  ?tick\@ObserverBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -299,19 +286,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2033280443
      * @symbol  ??0ObserverBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ObserverBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   76135855
      * @symbol  ?_installCircuit\@ObserverBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N2\@Z
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     /**
-     * @hash   -1792940580
      * @symbol  ?_updateState\@ObserverBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVPulseCapacitor\@\@_N\@Z
      */
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;

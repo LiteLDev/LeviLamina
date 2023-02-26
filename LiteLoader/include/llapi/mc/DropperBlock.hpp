@@ -216,30 +216,25 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1704102947
      * @vftbl  187
      * @symbol  ?getResourceItem\@DropperBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   112818054
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@DropperBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1210093789
      * @vftbl  195
      * @symbol  ?dispenseFrom\@DropperBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1443464221
      * @symbol  ??0DropperBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DropperBlock(std::string const &, int);
     /**
-     * @hash   -597075207
      * @symbol  ?getAttachedFace\@DropperBlock\@\@SAHH\@Z
      */
     MCAPI static int getAttachedFace(int);

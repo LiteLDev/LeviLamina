@@ -34,13 +34,11 @@ public:
      */
     virtual ~LootItemActorKilledCondition();
     /**
-     * @hash   -52504229
      * @vftbl  1
      * @symbol  ?applies\@LootItemActorKilledCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual bool applies(class Random &, class LootTableContext &);
     /**
-     * @hash   -941677163
      * @symbol  ?deserialize\@LootItemActorKilledCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);

@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   1015846031
      * @symbol  ??0PlayerMovementTelemetryData\@\@QEAA\@XZ
      */
     MCAPI PlayerMovementTelemetryData();
     /**
-     * @hash   -1236861886
      * @symbol  ?getAverage\@PlayerMovementTelemetryData\@\@QEBAMXZ
      */
     MCAPI float getAverage() const;
     /**
-     * @hash   1191327283
      * @symbol  ?reset\@PlayerMovementTelemetryData\@\@QEAAXXZ
      */
     MCAPI void reset();

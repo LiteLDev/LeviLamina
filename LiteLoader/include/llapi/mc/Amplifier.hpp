@@ -35,19 +35,16 @@ public:
      */
     virtual ~Amplifier();
     /**
-     * @hash   667829262
      * @vftbl  1
      * @symbol  ?getAmount\@Amplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
     /**
-     * @hash   -365600995
      * @vftbl  2
      * @symbol  ?shouldBuff\@Amplifier\@\@UEBA_NHH\@Z
      */
     virtual bool shouldBuff(int, int) const;
     /**
-     * @hash   2000498971
      * @vftbl  3
      * @symbol  ?getTickInterval\@Amplifier\@\@UEBAHH\@Z
      */

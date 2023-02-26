@@ -36,13 +36,11 @@ public:
      */
     virtual ~CropBlock();
     /**
-     * @hash   -1611921903
      * @vftbl  4
      * @symbol  ?hasTag\@CropBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /**
-     * @hash   494497213
      * @vftbl  10
      * @symbol  ?getAABB\@CropBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -595167621
      * @vftbl  62
      * @symbol  ?canContainLiquid\@CropBlock\@\@UEBA_NXZ
      */
@@ -174,25 +171,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   2058485442
      * @vftbl  86
      * @symbol  ?onFertilized\@CropBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1941260359
      * @vftbl  88
      * @symbol  ?canBeFertilized\@CropBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -187133518
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@CropBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1431441775
      * @vftbl  99
      * @symbol  ?neighborChanged\@CropBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -203,7 +196,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   1847405805
      * @vftbl  103
      * @symbol  ?asItemInstance\@CropBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -214,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   748992433
      * @vftbl  118
      * @symbol  ?executeEvent\@CropBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVActor\@\@\@Z
      */
@@ -240,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -394062419
      * @vftbl  146
      * @symbol  ?getVariant\@CropBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -271,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1866705104
      * @vftbl  172
      * @symbol  ?randomTick\@CropBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -282,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   269943155
      * @vftbl  178
      * @symbol  ?canSurvive\@CropBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -298,45 +286,38 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -1462294744
      * @vftbl  194
      * @symbol  ?getBaseSeed\@CropBlock\@\@MEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
-     * @hash   18449223
      * @vftbl  195
      * @symbol  ?getBaseCrop\@CropBlock\@\@MEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
-     * @hash   -289252381
      * @vftbl  196
      * @symbol  ?getSeedNum\@CropBlock\@\@MEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getSeedNum(class Randomize &, int, int) const;
     /**
-     * @hash   735974706
      * @vftbl  197
      * @symbol  ?getCropNum\@CropBlock\@\@MEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
     /**
-     * @hash   1899066826
      * @symbol  ?canBeSilkTouched\@CropBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -1825161909
      * @symbol  ??0CropBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CropBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   494502542
      * @symbol  ?getGrowthSpeed\@CropBlock\@\@AEBAMAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;

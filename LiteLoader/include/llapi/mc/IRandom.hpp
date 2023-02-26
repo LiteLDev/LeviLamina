@@ -80,7 +80,6 @@ public:
      */
     virtual void __unk_vfn_9() = 0;
     /**
-     * @hash   -2067680044
      * @vftbl  10
      * @symbol  ?forkPositional\@IRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
      */

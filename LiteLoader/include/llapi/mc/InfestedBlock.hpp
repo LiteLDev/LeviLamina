@@ -221,24 +221,20 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -123514769
      * @vftbl  188
      * @symbol  ?getResourceCount\@InfestedBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -635449609
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@InfestedBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -353066448
      * @symbol  ??0InfestedBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI InfestedBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -1412722693
      * @symbol  ?spawnSilverfish\@InfestedBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void spawnSilverfish(class BlockSource &, class BlockPos const &);

@@ -45,7 +45,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -635476563
      * @vftbl  3
      * @symbol  ?_onEnd\@ItemReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */

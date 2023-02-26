@@ -282,7 +282,8 @@ class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent> {
 public:
     Player* mPlayer = nullptr;
     Actor* mTarget = nullptr;
-    int mAttackDamage = false;
+    [[deprecated("mIntAttackDamage is outdated, please use mAttackDamage instead")]] int mIntAttackDamage = 0;
+    float mAttackDamage = 0;
 };
 
 class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
@@ -685,13 +686,6 @@ class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
 public:
     ActorUniqueID* mBeforeEntityUniqueId = nullptr;
     Actor* mAfterEntity = nullptr;
-};
-
-class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
-public:
-    [[deprecated("MobSpawnEvent is outdated, please use MobTrySpawnEvent instead")]] string mTypeName;
-    Vec3 mPos;
-    int mDimensionId = -1;
 };
 
 class MobTrySpawnEvent : public EventTemplate<MobTrySpawnEvent> {

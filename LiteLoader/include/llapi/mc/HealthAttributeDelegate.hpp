@@ -35,7 +35,6 @@ public:
      */
     virtual ~HealthAttributeDelegate();
     /**
-     * @hash   -165593953
      * @vftbl  1
      * @symbol  ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
      */
@@ -46,25 +45,21 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   947633668
      * @vftbl  3
      * @symbol  ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z
      */
     virtual bool willChange(float, float, class AttributeBuff const &);
     /**
-     * @hash   996951472
      * @vftbl  4
      * @symbol  ?change\@HealthAttributeDelegate\@\@UEAAMMMAEBVAttributeBuff\@\@\@Z
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
-     * @hash   -1006447119
      * @vftbl  5
      * @symbol  ?getBuffValueWithModifiers\@HealthAttributeDelegate\@\@UEBAMAEBVAttributeBuff\@\@\@Z
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /**
-     * @hash   -691387604
      * @symbol  ??0HealthAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVMob\@\@\@Z
      */
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);

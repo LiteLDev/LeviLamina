@@ -36,7 +36,6 @@ public:
      */
     virtual ~SeagrassFeature();
     /**
-     * @hash   2128751545
      * @vftbl  3
      * @symbol  ?place\@SeagrassFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   2001924581
      * @symbol  ?_isNotIce\@SeagrassFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _isNotIce(class BlockSource &, class BlockPos const &) const;

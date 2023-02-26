@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -306040191
      * @symbol  ?append\@ContainerValidationCommitObject\@\@SAXV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@AEAV?$vector\@V?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI static void append(class std::shared_ptr<class ContainerValidationCommitObject>, std::vector<class std::shared_ptr<class ContainerValidationCommitObject>> &);

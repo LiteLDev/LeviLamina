@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -1315834609
      * @symbol  ??0PackInstanceId\@\@QEAA\@AEBUPackIdVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
     /**
-     * @hash   1719287535
      * @symbol  ??0PackInstanceId\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI PackInstanceId(struct PackInstanceId &&);
     /**
-     * @hash   2055219475
      * @symbol  ??1PackInstanceId\@\@QEAA\@XZ
      */
     MCAPI ~PackInstanceId();

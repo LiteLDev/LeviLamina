@@ -151,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1898381080
      * @vftbl  62
      * @symbol  ?canContainLiquid\@SkullBlock\@\@UEBA_NXZ
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -488989896
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@SkullBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -173,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   2027407680
      * @vftbl  92
      * @symbol  ?mayPlace\@SkullBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1812914810
      * @vftbl  103
      * @symbol  ?asItemInstance\@SkullBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -190,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -380926977
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@SkullBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -216,13 +211,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -590276409
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@SkullBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -1603593926
      * @vftbl  143
      * @symbol  ?getVisualShape\@SkullBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1805397172
      * @vftbl  168
      * @symbol  ?onPlace\@SkullBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -269,37 +261,31 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1050071682
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@SkullBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLBLOCK
     /**
-     * @hash   1510469151
      * @symbol  ?waterSpreadCausesSpawn\@SkullBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -410964834
      * @symbol  ??0SkullBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SkullBlock(std::string const &, int);
     /**
-     * @hash   -1594273566
      * @symbol  ?checkMobSpawn\@SkullBlock\@\@QEBA_NAEAVLevel\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAVSkullBlockActor\@\@\@Z
      */
     MCAPI bool checkMobSpawn(class Level &, class BlockSource &, class BlockPos const &, class SkullBlockActor &) const;
     /**
-     * @hash   -759548581
      * @symbol  ?getTypeDescriptionId\@SkullBlock\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI static std::string getTypeDescriptionId(int);
 
 //private:
     /**
-     * @hash   -618449757
      * @symbol  ?_updatedDragonCircuit\@SkullBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _updatedDragonCircuit(class BlockSource &, class BlockPos const &) const;

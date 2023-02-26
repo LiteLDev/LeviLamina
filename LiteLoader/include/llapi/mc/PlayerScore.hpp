@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   344189457
      * @symbol  ??0PlayerScore\@\@QEAA\@AEBUScoreboardId\@\@H\@Z
      */
     MCAPI PlayerScore(struct ScoreboardId const &, int);
     /**
-     * @hash   729873288
      * @symbol  ?getId\@PlayerScore\@\@QEBAAEBUScoreboardId\@\@XZ
      */
     MCAPI struct ScoreboardId const & getId() const;

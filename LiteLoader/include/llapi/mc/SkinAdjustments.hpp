@@ -27,7 +27,6 @@ public:
 
 public:
     /**
-     * @hash   -1217885147
      * @symbol  ??0SkinAdjustments\@\@QEAA\@XZ
      */
     MCAPI SkinAdjustments();

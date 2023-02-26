@@ -36,7 +36,6 @@ public:
      */
     virtual ~CreatedOutputContainerValidation();
     /**
-     * @hash   -872391051
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   526365246
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -68,36 +66,30 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -771927220
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @hash   -252586907
      * @vftbl  8
      * @symbol  ?getContainerOffset\@CreatedOutputContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @hash   -625106977
      * @vftbl  9
      * @symbol  ?getContainerSize\@ContainerValidationBase\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATEDOUTPUTCONTAINERVALIDATION
     /**
-     * @hash   -1899478984
      * @symbol  ?canItemMoveToContainer\@CreatedOutputContainerValidation\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   699555537
      * @symbol  ?isItemAllowedInSlot\@CreatedOutputContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   -364036912
      * @symbol  ?isItemAllowedToAdd\@CreatedOutputContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;

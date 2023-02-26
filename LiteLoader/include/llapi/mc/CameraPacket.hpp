@@ -35,36 +35,30 @@ public:
      */
     virtual ~CameraPacket();
     /**
-     * @hash   696752145
      * @vftbl  1
      * @symbol  ?getId\@CameraPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -1438562626
      * @vftbl  2
      * @symbol  ?getName\@CameraPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1022086247
      * @vftbl  3
      * @symbol  ?write\@CameraPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1355592089
      * @vftbl  6
      * @symbol  ?_read\@CameraPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1373970567
      * @symbol  ??0CameraPacket\@\@QEAA\@XZ
      */
     MCAPI CameraPacket();
     /**
-     * @hash   -878879941
      * @symbol  ??0CameraPacket\@\@QEAA\@UActorUniqueID\@\@0\@Z
      */
     MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);

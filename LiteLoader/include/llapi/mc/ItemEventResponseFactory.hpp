@@ -35,13 +35,11 @@ public:
      */
     virtual ~ItemEventResponseFactory();
     /**
-     * @hash   -1339553820
      * @vftbl  1
      * @symbol  ?initializeFactory\@ItemEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
      */
     virtual void initializeFactory(class Experiments const &);
     /**
-     * @hash   864376582
      * @vftbl  2
      * @symbol  ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
      */

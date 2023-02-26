@@ -36,7 +36,6 @@ public:
      */
     virtual ~IceSpikeFeature();
     /**
-     * @hash   -70884491
      * @vftbl  3
      * @symbol  ?place\@IceSpikeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   -664227593
      * @symbol  ?_isValidPlaceBlock\@IceSpikeFeature\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _isValidPlaceBlock(class Block const &) const;

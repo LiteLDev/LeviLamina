@@ -29,47 +29,38 @@ public:
 
 public:
     /**
-     * @hash   -2061780602
      * @symbol  ??0LevelEventCoordinator\@\@QEAA\@XZ
      */
     MCAPI LevelEventCoordinator();
     /**
-     * @hash   -1320385504
      * @symbol  ?registerLevelGameplayHandler\@LevelEventCoordinator\@\@QEAAX$$QEAV?$unique_ptr\@VLevelGameplayHandler\@\@U?$default_delete\@VLevelGameplayHandler\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     /**
-     * @hash   882331238
      * @symbol  ?sendEvent\@LevelEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$LevelGameplayEvent\@X\@\@\@\@\@Z
      */
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
     /**
-     * @hash   -826490554
      * @symbol  ?sendLevelBiomesRegistered\@LevelEventCoordinator\@\@QEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
     MCAPI void sendLevelBiomesRegistered(class IWorldRegistriesProvider &);
     /**
-     * @hash   -395886722
      * @symbol  ?sendLevelInitialized\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void sendLevelInitialized(class Level &);
     /**
-     * @hash   -1199081459
      * @symbol  ?sendLevelRemovedActor\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVActor\@\@\@Z
      */
     MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     /**
-     * @hash   1429538484
      * @symbol  ?sendLevelScriptTick\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void sendLevelScriptTick(class Level &);
     /**
-     * @hash   2085831930
      * @symbol  ?sendLevelTick\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void sendLevelTick(class Level &);
     /**
-     * @hash   -1880689418
      * @symbol  ?sendLevelWeatherChanged\@LevelEventCoordinator\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N1\@Z
      */
     MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);

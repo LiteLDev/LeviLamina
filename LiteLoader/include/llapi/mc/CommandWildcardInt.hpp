@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   -50510106
      * @symbol  ??0CommandWildcardInt\@\@QEAA\@XZ
      */
     MCAPI CommandWildcardInt();
     /**
-     * @hash   229454616
      * @symbol  ?getValue\@CommandWildcardInt\@\@QEBAHXZ
      */
     MCAPI int getValue() const;
     /**
-     * @hash   -1514661518
      * @symbol  ?isWildcard\@CommandWildcardInt\@\@QEBA_NXZ
      */
     MCAPI bool isWildcard() const;

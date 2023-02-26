@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1003498580
      * @vftbl  0
      * @symbol  ?getJsonName\@BucketableDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~BucketableDescription();
     /**
-     * @hash   -1231442303
      * @vftbl  3
      * @symbol  ?serializeData\@BucketableDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

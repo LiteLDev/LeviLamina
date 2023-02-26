@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -854705626
      * @vftbl  18
      * @symbol  ?isDyeable\@BalloonItem\@\@UEBA_NXZ
      */
@@ -93,7 +92,6 @@ public:
      */
     virtual void __unk_vfn_72();
     /**
-     * @hash   -430549769
      * @vftbl  73
      * @symbol  ?getColor\@BalloonItem\@\@UEBA?AVColor\@mce\@\@PEBVCompoundTag\@\@AEBVItemDescriptor\@\@\@Z
      */
@@ -114,19 +112,16 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   294048584
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@BalloonItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -1186243200
      * @vftbl  132
      * @symbol  ?_useOn\@BalloonItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   1549350624
      * @symbol  ??0BalloonItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BalloonItem(std::string const &, int);

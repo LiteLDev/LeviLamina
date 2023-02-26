@@ -211,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   631416416
      * @vftbl  175
      * @symbol  ?clip\@ClientRequestPlaceholderBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
@@ -222,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2040170101
      * @symbol  ??0ClientRequestPlaceholderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI ClientRequestPlaceholderBlock(std::string const &, int, class Material const &);

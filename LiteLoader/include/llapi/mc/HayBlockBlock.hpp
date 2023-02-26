@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   593794874
      * @vftbl  103
      * @symbol  ?asItemInstance\@HayBlockBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1508450480
      * @vftbl  146
      * @symbol  ?getVariant\@HayBlockBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -213,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1959423984
      * @vftbl  169
      * @symbol  ?onFallOn\@HayBlockBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -234,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1389269394
      * @symbol  ??0HayBlockBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI HayBlockBlock(std::string const &, int);

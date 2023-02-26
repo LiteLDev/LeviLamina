@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1863989881
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@DeepslateOreBlock\@\@UEBA_NXZ
      */
@@ -227,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1941866042
      * @vftbl  187
      * @symbol  ?getResourceItem\@DeepslateOreBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -96840850
      * @vftbl  188
      * @symbol  ?getResourceCount\@DeepslateOreBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   610952822
      * @symbol  ??0DeepslateOreBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DeepslateOreBlock(std::string const &, int);

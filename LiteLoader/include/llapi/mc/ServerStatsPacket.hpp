@@ -34,25 +34,21 @@ public:
      */
     virtual ~ServerStatsPacket();
     /**
-     * @hash   708697290
      * @vftbl  1
      * @symbol  ?getId\@ServerStatsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -458467465
      * @vftbl  2
      * @symbol  ?getName\@ServerStatsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1110091824
      * @vftbl  3
      * @symbol  ?write\@ServerStatsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -31570544
      * @vftbl  6
      * @symbol  ?_read\@ServerStatsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */

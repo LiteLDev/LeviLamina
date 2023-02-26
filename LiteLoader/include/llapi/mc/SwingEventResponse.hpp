@@ -36,25 +36,21 @@ public:
      */
     virtual ~SwingEventResponse();
     /**
-     * @hash   -1050042708
      * @vftbl  1
      * @symbol  ?getName\@SwingEventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   267267874
      * @vftbl  2
      * @symbol  ?executeAction\@SwingEventResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @hash   -1126736230
      * @vftbl  3
      * @symbol  ?buildSchema\@SwingEventResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     /**
-     * @hash   1753381285
      * @symbol  ?NameID\@SwingEventResponse\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;

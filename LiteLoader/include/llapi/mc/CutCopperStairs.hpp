@@ -36,7 +36,6 @@ public:
      */
     virtual ~CutCopperStairs();
     /**
-     * @hash   218565615
      * @vftbl  16
      * @symbol  ?onLightningHit\@CutCopperStairs\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   579311679
      * @vftbl  28
      * @symbol  ?tryGetCopperBehavior\@CutCopperStairs\@\@UEBAPEBVCopperBehavior\@\@XZ
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1434756072
      * @vftbl  172
      * @symbol  ?randomTick\@CutCopperStairs\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -229,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   595966186
      * @vftbl  177
      * @symbol  ?use\@CutCopperStairs\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -265,17 +261,14 @@ public:
      */
     virtual void __unk_vfn_197();
     /**
-     * @hash   -1720390545
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
-     * @hash   -1417904774
      * @symbol  ??0CutCopperStairs\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@W4CopperType\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class HashedString const &);
     /**
-     * @hash   1447289018
      * @symbol  ??0CutCopperStairs\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@W4CopperType\@\@AEBVHashedString\@\@33\@Z
      */
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &);

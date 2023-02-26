@@ -36,13 +36,11 @@ public:
      */
     virtual ~JigsawBlockActor();
     /**
-     * @hash   688888640
      * @vftbl  1
      * @symbol  ?load\@JigsawBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1056020015
      * @vftbl  2
      * @symbol  ?save\@JigsawBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
@@ -88,19 +86,16 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -1503819358
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@JigsawBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   -1716090928
      * @vftbl  38
      * @symbol  ?_onUpdatePacket\@JigsawBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   -2031208276
      * @symbol  ??0JigsawBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI JigsawBlockActor(class BlockPos const &);

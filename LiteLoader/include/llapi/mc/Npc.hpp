@@ -32,13 +32,11 @@ public:
 
 public:
     /**
-     * @hash   1642708332
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Npc\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -1977860833
      * @vftbl  12
      * @symbol  ?initializeComponents\@Npc\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -54,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1999531913
      * @vftbl  61
      * @symbol  ?canShowNameTag\@Npc\@\@UEBA_NXZ
      */
@@ -65,7 +62,6 @@ public:
      */
     virtual void __unk_vfn_62();
     /**
-     * @hash   -380686030
      * @vftbl  66
      * @symbol  ?getFormattedNameTag\@Npc\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -126,7 +122,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -148495924
      * @vftbl  191
      * @symbol  ?canBePulledIntoVehicle\@Npc\@\@UEBA_NXZ
      */
@@ -137,13 +132,11 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   1555192997
      * @vftbl  200
      * @symbol  ?buildDebugInfo\@Npc\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void buildDebugInfo(std::string &) const;
     /**
-     * @hash   -1570629094
      * @vftbl  208
      * @symbol  ?canBeAffected\@Npc\@\@UEBA_NI\@Z
      */
@@ -169,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   733647364
      * @vftbl  246
      * @symbol  ?die\@Npc\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
@@ -180,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   432816143
      * @vftbl  263
      * @symbol  ?_hurt\@Npc\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -191,7 +182,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -225361180
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Npc\@\@EEAAXXZ
      */
@@ -202,7 +192,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -734498459
      * @vftbl  278
      * @symbol  ?knockback\@Npc\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
@@ -223,19 +212,16 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1467710581
      * @vftbl  341
      * @symbol  ?canExistWhenDisallowMob\@Npc\@\@UEBA_NXZ
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @hash   -1553669235
      * @vftbl  349
      * @symbol  ?newServerAiStep\@Npc\@\@UEAAXXZ
      */
     virtual void newServerAiStep();
     /**
-     * @hash   -1452152559
      * @vftbl  350
      * @symbol  ?_serverAiMobStep\@Npc\@\@MEAAXXZ
      */
@@ -247,38 +233,31 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPC
     /**
-     * @hash   -372372032
      * @symbol  ?breaksFallingBlocks\@Npc\@\@UEBA_NXZ
      */
     MCVAPI bool breaksFallingBlocks() const;
     /**
-     * @hash   -9082841
      * @symbol  ?interactPreventDefault\@Npc\@\@UEAA_NXZ
      */
     MCVAPI bool interactPreventDefault();
     /**
-     * @hash   1554865587
      * @symbol  ?isFishable\@Npc\@\@UEBA_NXZ
      */
     MCVAPI bool isFishable() const;
     /**
-     * @hash   -112837492
      * @symbol  ?isTargetable\@Npc\@\@UEBA_NXZ
      */
     MCVAPI bool isTargetable() const;
 #endif
     /**
-     * @hash   -483251
      * @symbol  ??0Npc\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1192542991
      * @symbol  ?SKIN_ID_TAG\@Npc\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const SKIN_ID_TAG;
     /**
-     * @hash   -193050386
      * @symbol  ?Skins\@Npc\@\@2V?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@B
      */
     MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;

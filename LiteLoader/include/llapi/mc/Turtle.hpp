@@ -52,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1353098534
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Turtle\@\@UEBAMXZ
      */
@@ -133,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   770334575
      * @vftbl  246
      * @symbol  ?die\@Turtle\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
@@ -169,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1099052825
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Turtle\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -180,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -193844360
      * @symbol  ??0Turtle\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Turtle(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

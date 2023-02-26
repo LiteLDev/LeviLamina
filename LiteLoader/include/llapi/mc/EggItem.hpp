@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -165007994
      * @vftbl  23
      * @symbol  ?isThrowable\@EggItem\@\@UEBA_NXZ
      */
@@ -108,13 +107,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1531096630
      * @vftbl  84
      * @symbol  ?use\@EggItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   1495791620
      * @vftbl  85
      * @symbol  ?dispense\@EggItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */

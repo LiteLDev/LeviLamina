@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   -300408028
      * @symbol  ?createSystem\@PandaPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   672439869
      * @symbol  ?_doPandaPostNormalTickSystem\@PandaPostNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doPandaPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);

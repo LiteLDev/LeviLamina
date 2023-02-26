@@ -36,13 +36,11 @@ public:
      */
     virtual ~CaveVinesBlock();
     /**
-     * @hash   1552904205
      * @vftbl  4
      * @symbol  ?hasTag\@CaveVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /**
-     * @hash   -1038284463
      * @vftbl  10
      * @symbol  ?getAABB\@CaveVinesBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   892638695
      * @vftbl  62
      * @symbol  ?canContainLiquid\@CaveVinesBlock\@\@UEBA_NXZ
      */
@@ -174,31 +171,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1519178469
      * @vftbl  86
      * @symbol  ?onFertilized\@CaveVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   351314406
      * @vftbl  88
      * @symbol  ?canBeFertilized\@CaveVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -64455569
      * @vftbl  92
      * @symbol  ?mayPlace\@CaveVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   541701475
      * @vftbl  99
      * @symbol  ?neighborChanged\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -2146913479
      * @vftbl  103
      * @symbol  ?asItemInstance\@CaveVinesBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -209,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1226224107
      * @vftbl  118
      * @symbol  ?executeEvent\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVActor\@\@\@Z
      */
@@ -235,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1294612559
      * @vftbl  146
      * @symbol  ?getVariant\@CaveVinesBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -246,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -290570466
      * @vftbl  162
      * @symbol  ?onRemove\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -267,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1809145725
      * @vftbl  168
      * @symbol  ?onPlace\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -278,13 +266,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -889098953
      * @vftbl  171
      * @symbol  ?tick\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -574882348
      * @vftbl  172
      * @symbol  ?randomTick\@CaveVinesBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -295,13 +281,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1585791702
      * @vftbl  177
      * @symbol  ?use\@CaveVinesBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   579893695
      * @vftbl  178
      * @symbol  ?canSurvive\@CaveVinesBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -312,46 +296,38 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -370568721
      * @vftbl  187
      * @symbol  ?getResourceItem\@CaveVinesBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   964214584
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@CaveVinesBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   849647874
      * @symbol  ??0CaveVinesBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4CaveVinesVariant\@\@\@Z
      */
     MCAPI CaveVinesBlock(std::string const &, int, enum class CaveVinesVariant);
     /**
-     * @hash   -1921160695
      * @symbol  ?tryGrow\@CaveVinesBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@MM\@Z
      */
     MCAPI static void tryGrow(class BlockSource &, class BlockPos const &, float, float);
 
 //private:
     /**
-     * @hash   1629000828
      * @symbol  ?_isCaveVinesBlock\@CaveVinesBlock\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _isCaveVinesBlock(class Block const &) const;
     /**
-     * @hash   1619362309
      * @symbol  ?_isCaveVinesHead\@CaveVinesBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _isCaveVinesHead(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -580275242
      * @symbol  ?_pickBerries\@CaveVinesBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   671101850
      * @symbol  ?_updateBlockBasedOnNeighborBelow\@CaveVinesBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _updateBlockBasedOnNeighborBelow(class BlockSource &, class BlockPos const &) const;

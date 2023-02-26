@@ -36,19 +36,16 @@ public:
      */
     virtual ~ComparatorBlockActor();
     /**
-     * @hash   780184789
      * @vftbl  1
      * @symbol  ?load\@ComparatorBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   436093220
      * @vftbl  2
      * @symbol  ?save\@ComparatorBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   -1832944258
      * @vftbl  7
      * @symbol  ?tick\@ComparatorBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -94,19 +91,16 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -1317396771
      * @vftbl  40
      * @symbol  ?getOutputSignal\@ComparatorBlockActor\@\@UEAAHXZ
      */
     virtual int getOutputSignal();
     /**
-     * @hash   -2047465413
      * @vftbl  41
      * @symbol  ?setOutputSignal\@ComparatorBlockActor\@\@UEAAXH\@Z
      */
     virtual void setOutputSignal(int);
     /**
-     * @hash   -972281087
      * @symbol  ??0ComparatorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI ComparatorBlockActor(class BlockPos const &);

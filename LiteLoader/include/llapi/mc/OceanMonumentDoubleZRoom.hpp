@@ -36,13 +36,11 @@ public:
      */
     virtual ~OceanMonumentDoubleZRoom();
     /**
-     * @hash   -1905200516
      * @vftbl  2
      * @symbol  ?getType\@OceanMonumentDoubleZRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   397000252
      * @vftbl  4
      * @symbol  ?postProcess\@OceanMonumentDoubleZRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */

@@ -35,7 +35,6 @@ public:
      */
     virtual ~SleepState();
     /**
-     * @hash   -2094182006
      * @vftbl  1
      * @symbol  ?tick\@SleepState\@\@UEAAXXZ
      */
@@ -46,7 +45,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   1521443663
      * @vftbl  3
      * @symbol  ?stop\@SleepState\@\@UEAAXXZ
      */

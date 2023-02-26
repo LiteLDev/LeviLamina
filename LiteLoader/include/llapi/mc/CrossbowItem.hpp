@@ -37,7 +37,6 @@ public:
      */
     virtual ~CrossbowItem();
     /**
-     * @hash   -2091694605
      * @vftbl  6
      * @symbol  ?getMaxUseDuration\@CrossbowItem\@\@UEBAHPEBVItemStack\@\@\@Z
      */
@@ -73,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   653297439
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@CrossbowItem\@\@UEBAHXZ
      */
@@ -114,61 +112,51 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -733711727
      * @vftbl  84
      * @symbol  ?use\@CrossbowItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -601176851
      * @vftbl  86
      * @symbol  ?useTimeDepleted\@CrossbowItem\@\@UEBA?AW4ItemUseMethod\@\@AEAVItemStack\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
-     * @hash   328774495
      * @vftbl  87
      * @symbol  ?releaseUsing\@CrossbowItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
-     * @hash   -820766529
      * @vftbl  112
      * @symbol  ?enchantProjectile\@CrossbowItem\@\@UEBAXAEBVItemStackBase\@\@AEAVActor\@\@\@Z
      */
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
     /**
-     * @hash   513649213
      * @vftbl  117
      * @symbol  ?setIconInfo\@CrossbowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   231686804
      * @vftbl  118
      * @symbol  ?getIconInfo\@CrossbowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -482829176
      * @vftbl  120
      * @symbol  ?getAnimationFrameFor\@CrossbowItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @hash   1361385832
      * @vftbl  124
      * @symbol  ?canBeCharged\@CrossbowItem\@\@UEBA_NXZ
      */
     virtual bool canBeCharged() const;
     /**
-     * @hash   -1375460691
      * @vftbl  126
      * @symbol  ?playSoundIncrementally\@CrossbowItem\@\@UEBAXAEBVItemStack\@\@AEAVMob\@\@\@Z
      */
     virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
     /**
-     * @hash   -502839573
      * @symbol  ??0CrossbowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CrossbowItem(std::string const &, int);
@@ -179,24 +167,20 @@ public:
      */
     MCAPI int const _getMaxUseDuration(class ItemStack const &) const;
     /**
-     * @hash   1065189943
      * @symbol  ?_getShootDir\@CrossbowItem\@\@AEBA?AVVec3\@\@AEBVPlayer\@\@M\@Z
      */
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
     /**
-     * @hash   1204327762
      * @symbol  ?_shootArrow\@CrossbowItem\@\@AEBAXAEBVItemInstance\@\@0AEAVPlayer\@\@\@Z
      */
     MCAPI void _shootArrow(class ItemInstance const &, class ItemInstance const &, class Player &) const;
     /**
-     * @hash   1522000751
      * @symbol  ?_shootFirework\@CrossbowItem\@\@AEBAXAEBVItemInstance\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
 
 private:
     /**
-     * @hash   872235801
      * @symbol  ?DEFAULT_USE_DURATION\@CrossbowItem\@\@0HB
      */
     MCAPI static int const DEFAULT_USE_DURATION;

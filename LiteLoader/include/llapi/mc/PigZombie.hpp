@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1499474487
      * @vftbl  49
      * @symbol  ?normalTick\@PigZombie\@\@UEAAXXZ
      */
@@ -138,19 +137,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1109992556
      * @vftbl  263
      * @symbol  ?_hurt\@PigZombie\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   959190412
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@PigZombie\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   2109663809
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@PigZombie\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -171,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   804727587
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@PigZombie\@\@UEAA_N_N\@Z
      */
@@ -187,7 +182,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1592318771
      * @vftbl  339
      * @symbol  ?getAttackTime\@PigZombie\@\@UEAAHXZ
      */
@@ -198,7 +192,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1931527312
      * @symbol  ??0PigZombie\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -207,7 +200,6 @@ public:
 
 private:
     /**
-     * @hash   507453600
      * @symbol  ?SPEED_MODIFIER_ATTACK_UUID\@PigZombie\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;

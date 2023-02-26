@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1838439192
      * @symbol  ??RLevelChunkFinalDeleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
      */
     MCAPI void operator()(class LevelChunk *);

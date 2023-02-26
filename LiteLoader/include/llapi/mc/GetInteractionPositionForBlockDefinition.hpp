@@ -37,7 +37,6 @@ public:
      */
     virtual ~GetInteractionPositionForBlockDefinition();
     /**
-     * @hash   -1130130664
      * @vftbl  1
      * @symbol  ?load\@GetInteractionPositionForBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

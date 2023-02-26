@@ -66,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -558164649
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@ChemistryTableBlock\@\@UEBA_NXZ
      */
@@ -142,13 +141,11 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   251074649
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@ChemistryTableBlock\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @hash   913090726
      * @vftbl  58
      * @symbol  ?onFillBlock\@ChemistryTableBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -164,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   2036681536
      * @vftbl  66
      * @symbol  ?canBeUsedInCommands\@ChemistryTableBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
@@ -180,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1258064041
      * @vftbl  103
      * @symbol  ?asItemInstance\@ChemistryTableBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -786987150
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@ChemistryTableBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -217,25 +211,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -758489014
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@ChemistryTableBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -555494415
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@ChemistryTableBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   604180883
      * @vftbl  146
      * @symbol  ?getVariant\@ChemistryTableBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -862133493
      * @vftbl  149
      * @symbol  ?getMappedFace\@ChemistryTableBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -246,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -1112475044
      * @vftbl  162
      * @symbol  ?onRemove\@ChemistryTableBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1215215672
      * @vftbl  177
      * @symbol  ?use\@ChemistryTableBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -288,35 +276,29 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1513193135
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@ChemistryTableBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK
     /**
-     * @hash   -1693931290
      * @symbol  ?isCraftingBlock\@ChemistryTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   -879360422
      * @symbol  ?isInteractiveBlock\@ChemistryTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1264930945
      * @symbol  ??0ChemistryTableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChemistryTableBlock(std::string const &, int);
     /**
-     * @hash   -1238804386
      * @symbol  ?getItemForType\@ChemistryTableBlock\@\@SA?AVItemInstance\@\@W4ChemistryTableType\@\@H\@Z
      */
     MCAPI static class ItemInstance getItemForType(enum class ChemistryTableType, int);
     /**
-     * @hash   -850777044
      * @symbol  ?isUIValidForPlayer\@ChemistryTableBlock\@\@SA_NAEBVBlockPos\@\@AEAVPlayer\@\@MW4ChemistryTableType\@\@\@Z
      */
     MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum class ChemistryTableType);

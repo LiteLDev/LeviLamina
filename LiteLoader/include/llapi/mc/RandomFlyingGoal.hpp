@@ -36,13 +36,11 @@ public:
      */
     virtual ~RandomFlyingGoal();
     /**
-     * @hash   1161032507
      * @vftbl  1
      * @symbol  ?canUse\@RandomFlyingGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -822434923
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@RandomFlyingGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -58,20 +56,17 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -123674136
      * @vftbl  10
      * @symbol  ?_setWantedPosition\@RandomFlyingGoal\@\@MEAA_NXZ
      */
     virtual bool _setWantedPosition();
     /**
-     * @hash   547195886
      * @symbol  ??0RandomFlyingGoal\@\@QEAA\@AEAVMob\@\@MHH_N\@Z
      */
     MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
 //private:
     /**
-     * @hash   -1944766628
      * @symbol  ?_getTreePos\@RandomFlyingGoal\@\@AEBA_NAEAVVec3\@\@\@Z
      */
     MCAPI bool _getTreePos(class Vec3 &) const;

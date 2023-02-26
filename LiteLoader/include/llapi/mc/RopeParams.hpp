@@ -29,17 +29,14 @@ public:
 
 public:
     /**
-     * @hash   -1835203532
      * @symbol  ??0RopeParams\@\@QEAA\@XZ
      */
     MCAPI RopeParams();
     /**
-     * @hash   2106842838
      * @symbol  ??0RopeParams\@\@QEAA\@AEBVVec3\@\@0M\@Z
      */
     MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     /**
-     * @hash   1516780549
      * @symbol  ?leadInit\@RopeParams\@\@QEAAXXZ
      */
     MCAPI void leadInit();

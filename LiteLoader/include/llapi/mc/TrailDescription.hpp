@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1929876418
      * @vftbl  0
      * @symbol  ?getJsonName\@TrailDescription\@\@UEBAPEBDXZ
      */
@@ -41,19 +40,16 @@ public:
      */
     virtual ~TrailDescription();
     /**
-     * @hash   70075573
      * @vftbl  2
      * @symbol  ?deserializeData\@TrailDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -1938249361
      * @vftbl  3
      * @symbol  ?serializeData\@TrailDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void serializeData(class Json::Value &) const;
     /**
-     * @hash   -1898522638
      * @symbol  ??0TrailDescription\@\@QEAA\@XZ
      */
     MCAPI TrailDescription();

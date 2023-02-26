@@ -37,19 +37,16 @@ public:
      */
     virtual ~BellBlockActor();
     /**
-     * @hash   -1540261678
      * @vftbl  1
      * @symbol  ?load\@BellBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1543123329
      * @vftbl  2
      * @symbol  ?save\@BellBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1127728539
      * @vftbl  7
      * @symbol  ?tick\@BellBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -95,34 +92,28 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   1972309044
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@BellBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   827161262
      * @vftbl  38
      * @symbol  ?_onUpdatePacket\@BellBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   859118414
      * @symbol  ??0BellBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI BellBlockActor(class BlockPos const &);
     /**
-     * @hash   -1263991233
      * @symbol  ?ejectItem\@BellBlockActor\@\@QEBAXAEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     /**
-     * @hash   -1736089910
      * @symbol  ?isRinging\@BellBlockActor\@\@QEBA_NXZ
      */
     MCAPI bool isRinging() const;
     /**
-     * @hash   -2111684317
      * @symbol  ?ring\@BellBlockActor\@\@QEAA_NW4Type\@Direction\@\@AEAVBlockSource\@\@PEAVActor\@\@_N\@Z
      */
     MCAPI bool ring(enum class Direction::Type, class BlockSource &, class Actor *, bool);

@@ -20,7 +20,6 @@ namespace UseItemGoalUtilityInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1979040266
      * @symbol  ?updateEquipment\@UseItemGoalUtilityInternal\@\@YAXAEAVMob\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI void updateEquipment(class Mob &, class ItemStack const &);

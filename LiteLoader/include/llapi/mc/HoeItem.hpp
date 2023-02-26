@@ -43,7 +43,6 @@ public:
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -6926330
      * @vftbl  10
      * @symbol  ?executeEvent\@HoeItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -74,7 +73,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   1709387355
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@HoeItem\@\@UEBAHXZ
      */
@@ -115,7 +113,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   786176409
      * @symbol  ??0HoeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@AEBVExperiments\@\@\@Z
      */
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);

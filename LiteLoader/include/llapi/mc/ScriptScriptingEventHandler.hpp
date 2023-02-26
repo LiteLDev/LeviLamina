@@ -50,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1441172400
      * @vftbl  4
      * @symbol  ?handleEvent\@ScriptScriptingEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBeforeWatchdogTerminateEvent\@\@\@Z
      */
@@ -58,7 +57,6 @@ public:
 
 //private:
     /**
-     * @hash   -1996450394
      * @symbol  ?_handleWatchdogTerminateEvent\@ScriptScriptingEventHandler\@\@AEBA_NAEAUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptSystemEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemEvents>) const;

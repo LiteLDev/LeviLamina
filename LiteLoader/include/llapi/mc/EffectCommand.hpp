@@ -36,20 +36,17 @@ public:
      */
     virtual ~EffectCommand();
     /**
-     * @hash   -609513975
      * @vftbl  1
      * @symbol  ?execute\@EffectCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   749484000
      * @symbol  ?setup\@EffectCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @hash   -2048225274
      * @symbol  ?clear\@EffectCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;

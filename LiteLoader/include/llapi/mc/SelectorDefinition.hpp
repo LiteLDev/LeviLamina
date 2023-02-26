@@ -37,7 +37,6 @@ public:
      */
     virtual ~SelectorDefinition();
     /**
-     * @hash   -1293652830
      * @vftbl  1
      * @symbol  ?load\@SelectorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

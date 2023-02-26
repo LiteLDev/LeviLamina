@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1169433030
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@OreBlock\@\@UEBA_NXZ
      */
@@ -227,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1974827303
      * @vftbl  187
      * @symbol  ?getResourceItem\@OreBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1555960833
      * @vftbl  188
      * @symbol  ?getResourceCount\@OreBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   475252393
      * @symbol  ??0OreBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI OreBlock(std::string const &, int);

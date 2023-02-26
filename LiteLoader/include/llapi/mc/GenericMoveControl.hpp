@@ -35,19 +35,16 @@ public:
      */
     virtual ~GenericMoveControl();
     /**
-     * @hash   -626632976
      * @vftbl  1
      * @symbol  ?initializeInternal\@GenericMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @hash   452850609
      * @vftbl  2
      * @symbol  ?tick\@GenericMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   -633643087
      * @symbol  ??0GenericMoveControl\@\@QEAA\@XZ
      */
     MCAPI GenericMoveControl();

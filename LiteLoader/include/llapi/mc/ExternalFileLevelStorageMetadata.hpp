@@ -20,7 +20,6 @@ namespace ExternalFileLevelStorageMetadata {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1996433788
      * @symbol  ?saveLevelMetadata\@ExternalFileLevelStorageMetadata\@\@YAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVLevelData\@\@\@Z
      */
     MCAPI void saveLevelMetadata(std::string const &, class LevelData const &);

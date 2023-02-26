@@ -36,13 +36,11 @@ public:
      */
     virtual ~ClearSpawnPointCommand();
     /**
-     * @hash   1030703930
      * @vftbl  1
      * @symbol  ?execute\@ClearSpawnPointCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -723482692
      * @symbol  ?setup\@ClearSpawnPointCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

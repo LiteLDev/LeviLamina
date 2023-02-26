@@ -35,13 +35,11 @@ public:
      */
     virtual ~SwoopAttackGoal();
     /**
-     * @hash   -555923575
      * @vftbl  1
      * @symbol  ?canUse\@SwoopAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   184892183
      * @vftbl  2
      * @symbol  ?canContinueToUse\@SwoopAttackGoal\@\@UEAA_NXZ
      */
@@ -52,31 +50,26 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -568119070
      * @vftbl  4
      * @symbol  ?start\@SwoopAttackGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -82464718
      * @vftbl  5
      * @symbol  ?stop\@SwoopAttackGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   159856109
      * @vftbl  6
      * @symbol  ?tick\@SwoopAttackGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   337319863
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SwoopAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1736987494
      * @symbol  ??0SwoopAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SwoopAttackGoal(class Mob &);

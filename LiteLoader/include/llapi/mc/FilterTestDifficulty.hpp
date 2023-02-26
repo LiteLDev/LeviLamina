@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestDifficulty();
     /**
-     * @hash   588229063
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestDifficulty\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1203098597
      * @vftbl  4
      * @symbol  ?getName\@FilterTestDifficulty\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

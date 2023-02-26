@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   2030886301
      * @symbol  ??0ScaleByAgeDefinition\@\@QEAA\@XZ
      */
     MCAPI ScaleByAgeDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &) const;
     /**
-     * @hash   171205702
      * @symbol  ?buildSchema\@ScaleByAgeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VScaleByAgeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);

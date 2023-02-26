@@ -400,7 +400,7 @@ void EnableEventListener(int eventId) {
             Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onAttackEntity) {
                     if (ev.mTarget) {
-                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
+                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget), Number::newNumber(ev.mAttackDamage));
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onAttackEntity);

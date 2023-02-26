@@ -39,7 +39,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -698861311
      * @vftbl  2
      * @symbol  ?getFilteredStringIndex\@ItemStackRequestActionCraftRecipeOptional\@\@UEBAHXZ
      */
@@ -50,24 +49,20 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   901623465
      * @vftbl  4
      * @symbol  ?_write\@ItemStackRequestActionCraftRecipeOptional\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   -1777673119
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionCraftRecipeOptional\@\@UEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -2024787574
      * @symbol  ??0ItemStackRequestActionCraftRecipeOptional\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     /**
-     * @hash   1785202597
      * @symbol  ?getRecipeNetId\@ItemStackRequestActionCraftRecipeOptional\@\@QEBAAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@XZ
      */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;

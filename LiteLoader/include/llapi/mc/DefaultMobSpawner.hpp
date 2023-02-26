@@ -36,7 +36,6 @@ public:
      */
     virtual ~DefaultMobSpawner();
     /**
-     * @hash   -938747508
      * @vftbl  4
      * @symbol  ?getPos\@DefaultMobSpawner\@\@UEAAAEBVBlockPos\@\@XZ
      */

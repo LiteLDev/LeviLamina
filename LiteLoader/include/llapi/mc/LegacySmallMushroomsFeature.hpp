@@ -36,13 +36,11 @@ public:
      */
     virtual ~LegacySmallMushroomsFeature();
     /**
-     * @hash   1584484307
      * @vftbl  3
      * @symbol  ?place\@LegacySmallMushroomsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   1053920138
      * @symbol  ??0LegacySmallMushroomsFeature\@\@QEAA\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);

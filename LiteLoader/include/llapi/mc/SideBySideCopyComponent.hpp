@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -88877987
      * @symbol  ??0SideBySideCopyComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SideBySideCopyComponent(struct SideBySideCopyComponent &&);
     /**
-     * @hash   1204881782
      * @symbol  ??4SideBySideCopyComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SideBySideCopyComponent & operator=(struct SideBySideCopyComponent &&);
     /**
-     * @hash   -1172995217
      * @symbol  ??1SideBySideCopyComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideCopyComponent();

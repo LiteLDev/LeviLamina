@@ -35,13 +35,11 @@ public:
      */
     virtual ~SquidIdleGoal();
     /**
-     * @hash   -997884569
      * @vftbl  1
      * @symbol  ?canUse\@SquidIdleGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1204310133
      * @vftbl  2
      * @symbol  ?canContinueToUse\@SquidIdleGoal\@\@UEAA_NXZ
      */
@@ -52,25 +50,21 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   136736656
      * @vftbl  4
      * @symbol  ?start\@SquidIdleGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -979944144
      * @vftbl  5
      * @symbol  ?stop\@SquidIdleGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -742525813
      * @vftbl  6
      * @symbol  ?tick\@SquidIdleGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1963681367
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SquidIdleGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

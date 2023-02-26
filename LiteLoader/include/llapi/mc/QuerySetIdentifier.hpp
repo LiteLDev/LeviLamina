@@ -22,12 +22,10 @@ namespace QuerySetIdentifier {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -129109393
      * @symbol  ?getDefaultCollection\@QuerySetIdentifier\@\@YA?AV?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@XZ
      */
     MCAPI class gsl::span<class HashedString const, -1> getDefaultCollection();
     /**
-     * @hash   -25551315
      * @symbol  ?getTagsCollection\@QuerySetIdentifier\@\@YA?AV?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@XZ
      */
     MCAPI class gsl::span<class HashedString const, -1> getTagsCollection();

@@ -35,13 +35,11 @@ public:
      */
     virtual ~ActorIntPropertyTest();
     /**
-     * @hash   -435419367
      * @vftbl  1
      * @symbol  ?setup\@ActorIntPropertyTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @hash   2114316883
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIntPropertyTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
@@ -52,19 +50,16 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1638504993
      * @vftbl  4
      * @symbol  ?getName\@ActorIntPropertyTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @hash   -1478785085
      * @vftbl  5
      * @symbol  ?_serializeDomain\@ActorIntPropertyTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeDomain() const;
     /**
-     * @hash   -764522818
      * @vftbl  6
      * @symbol  ?_serializeValue\@ActorIntPropertyTest\@\@MEBA?AVValue\@Json\@\@XZ
      */

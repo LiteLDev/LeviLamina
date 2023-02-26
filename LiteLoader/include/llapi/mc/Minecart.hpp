@@ -31,13 +31,11 @@ public:
 
 public:
     /**
-     * @hash   -1062580486
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Minecart\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -422137323
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@Minecart\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +46,6 @@ public:
      */
     virtual ~Minecart();
     /**
-     * @hash   -338767935
      * @vftbl  33
      * @symbol  ?getInterpolatedBodyYaw\@Minecart\@\@UEBAMM\@Z
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -2032505016
      * @vftbl  49
      * @symbol  ?normalTick\@Minecart\@\@UEAAXXZ
      */
@@ -75,13 +71,11 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -817694387
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@Minecart\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @hash   -1859197933
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Minecart\@\@UEBAMXZ
      */
@@ -102,7 +96,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -236094885
      * @vftbl  96
      * @symbol  ?isPickable\@Minecart\@\@UEAA_NXZ
      */
@@ -138,13 +131,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1419203679
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@Minecart\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @hash   2042791200
      * @vftbl  140
      * @symbol  ?onBounceStarted\@Minecart\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -155,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -1136559740
      * @vftbl  181
      * @symbol  ?getControllingPlayer\@Minecart\@\@UEBA?AUActorUniqueID\@\@XZ
      */
@@ -186,13 +176,11 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1135504085
      * @vftbl  245
      * @symbol  ?kill\@Minecart\@\@MEAAXXZ
      */
     virtual void kill();
     /**
-     * @hash   -376183224
      * @vftbl  252
      * @symbol  ?interpolatorTick\@Minecart\@\@UEAAXXZ
      */
@@ -203,19 +191,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1984148467
      * @vftbl  263
      * @symbol  ?_hurt\@Minecart\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -2141077155
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Minecart\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1024837712
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Minecart\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -226,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -1125974878
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Minecart\@\@EEAAXXZ
      */
@@ -237,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   198399856
      * @vftbl  278
      * @symbol  ?destroy\@Minecart\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @hash   1753602812
      * @vftbl  279
      * @symbol  ?getType\@MinecartTNT\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType() = 0;
     /**
-     * @hash   -1881011033
      * @vftbl  280
      * @symbol  ?getDefaultDisplayBlock\@Minecart\@\@UEBAPEBVBlock\@\@XZ
      */
@@ -260,69 +241,57 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   -1479460078
      * @vftbl  282
      * @symbol  ?getDefaultDisplayOffset\@Minecart\@\@UEBAHXZ
      */
     virtual int getDefaultDisplayOffset() const;
     /**
-     * @hash   472030185
      * @vftbl  283
      * @symbol  ?applyNaturalSlowdown\@Minecart\@\@MEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @hash   904420852
      * @vftbl  284
      * @symbol  ?_lazyInitDisplayBlock\@Minecart\@\@EEAAXXZ
      */
     virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
     /**
-     * @hash   -1232063524
      * @symbol  ?canMakeStepSound\@Minecart\@\@EEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
     /**
-     * @hash   -1590001175
      * @symbol  ?getDefaultDisplayData\@Minecart\@\@UEBAHXZ
      */
     MCVAPI int getDefaultDisplayData() const;
 #endif
     /**
-     * @hash   -774628001
      * @symbol  ??0Minecart\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -2100619401
      * @symbol  ?dropMinecartWithContentsAndRemove\@Minecart\@\@QEAAXV?$basic_string_span\@$$CBD$0?0\@gsl\@\@_N\@Z
      */
     MCAPI void dropMinecartWithContentsAndRemove(class gsl::basic_string_span<char const, -1>, bool);
     /**
-     * @hash   -1562666070
      * @symbol  ?postNormalTick\@Minecart\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void postNormalTick(class BlockPos const &);
     /**
-     * @hash   1077877682
      * @symbol  ?preNormalTick\@Minecart\@\@QEAA?AVBlockPos\@\@XZ
      */
     MCAPI class BlockPos preNormalTick();
     /**
-     * @hash   274250934
      * @symbol  ?setCustomDisplay\@Minecart\@\@QEAAX_N\@Z
      */
     MCAPI void setCustomDisplay(bool);
     /**
-     * @hash   -2554456
      * @symbol  ?setDisplayBlock\@Minecart\@\@QEAAXAEBVBlock\@\@\@Z
      */
     MCAPI void setDisplayBlock(class Block const &);
 
 //private:
     /**
-     * @hash   253683145
      * @symbol  ?_registerLoopingSounds\@Minecart\@\@AEAAXXZ
      */
     MCAPI void _registerLoopingSounds();

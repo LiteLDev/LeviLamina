@@ -32,13 +32,11 @@ public:
      */
     virtual ~AppPlatformNetworkSettings();
     /**
-     * @hash   -505556626
      * @vftbl  1
      * @symbol  ?requiresNetworkOutageMessaging\@AppPlatformNetworkSettings\@\@UEBA_NXZ
      */
     virtual bool requiresNetworkOutageMessaging() const;
     /**
-     * @hash   2011878169
      * @symbol  ??0AppPlatformNetworkSettings\@\@QEAA\@XZ
      */
     MCAPI AppPlatformNetworkSettings();

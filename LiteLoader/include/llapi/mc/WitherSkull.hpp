@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   1703024422
      * @vftbl  12
      * @symbol  ?initializeComponents\@WitherSkull\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -73,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -896730236
      * @vftbl  96
      * @symbol  ?isPickable\@WitherSkull\@\@UEAA_NXZ
      */
@@ -89,7 +87,6 @@ public:
      */
     virtual void __unk_vfn_100();
     /**
-     * @hash   887328397
      * @vftbl  105
      * @symbol  ?isOnFire\@WitherSkull\@\@UEBA_NXZ
      */
@@ -135,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   1377761849
      * @vftbl  232
      * @symbol  ?canDestroyBlock\@WitherSkull\@\@UEBA_NAEBVBlock\@\@\@Z
      */
@@ -156,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1973754794
      * @vftbl  263
      * @symbol  ?_hurt\@WitherSkull\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -172,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -598516574
      * @vftbl  278
      * @symbol  ?getInertia\@WitherSkull\@\@MEAAMXZ
      */
@@ -184,13 +178,11 @@ public:
     virtual void __unk_vfn_279();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERSKULL
     /**
-     * @hash   1249433809
      * @symbol  ?shouldBurn\@WitherSkull\@\@UEAA_NXZ
      */
     MCVAPI bool shouldBurn();
 #endif
     /**
-     * @hash   -2093400922
      * @symbol  ??0WitherSkull\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

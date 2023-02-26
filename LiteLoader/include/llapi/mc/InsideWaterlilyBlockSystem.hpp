@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1446592798
      * @symbol  ?createDestroyWaterlilySystem\@InsideWaterlilyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
     /**
-     * @hash   -1274887550
      * @symbol  ?createMovementSystem\@InsideWaterlilyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();

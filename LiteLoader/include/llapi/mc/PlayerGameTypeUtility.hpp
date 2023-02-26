@@ -20,12 +20,10 @@ namespace PlayerGameTypeUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   2053441608
      * @symbol  ?isCreative\@PlayerGameTypeUtility\@\@YA_NAEBUPlayerGameTypeComponent\@\@\@Z
      */
     MCAPI bool isCreative(struct PlayerGameTypeComponent const &);
     /**
-     * @hash   200241098
      * @symbol  ?isSpectator\@PlayerGameTypeUtility\@\@YA_NAEBUPlayerGameTypeComponent\@\@\@Z
      */
     MCAPI bool isSpectator(struct PlayerGameTypeComponent const &);

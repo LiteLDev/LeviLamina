@@ -35,7 +35,6 @@ public:
      */
     virtual ~DisplayNameItemComponent();
     /**
-     * @hash   -41799644
      * @vftbl  1
      * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VDisplayNameItemComponent\@\@\@\@UEBA_NXZ
      */
@@ -56,29 +55,24 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   -169581306
      * @vftbl  5
      * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VDisplayNameItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   1479135642
      * @vftbl  6
      * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VDisplayNameItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   -653486178
      * @symbol  ?getDescriptionId\@DisplayNameItemComponent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
     /**
-     * @hash   1659425139
      * @symbol  ?bindType\@DisplayNameItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   538081758
      * @symbol  ?getIdentifier\@DisplayNameItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();

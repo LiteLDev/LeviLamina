@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   514111167
      * @symbol  ??0AliasInfoDescription\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI AliasInfoDescription(struct AliasInfoDescription const &);
     /**
-     * @hash   1364859320
      * @symbol  ??1AliasInfoDescription\@\@QEAA\@XZ
      */
     MCAPI ~AliasInfoDescription();

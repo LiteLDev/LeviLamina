@@ -36,13 +36,11 @@ public:
      */
     virtual ~FlowerBlock();
     /**
-     * @hash   1052190151
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@FlowerBlock\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   -1287323022
      * @vftbl  10
      * @symbol  ?getAABB\@FlowerBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -158,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1835880230
      * @vftbl  62
      * @symbol  ?canContainLiquid\@FlowerBlock\@\@UEBA_NXZ
      */
@@ -174,25 +171,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   566778660
      * @vftbl  86
      * @symbol  ?onFertilized\@FlowerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -809274665
      * @vftbl  88
      * @symbol  ?canBeFertilized\@FlowerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1770472478
      * @vftbl  92
      * @symbol  ?mayPlace\@FlowerBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   2127025206
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@FlowerBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -228,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1934543415
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@FlowerBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1007254882
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@FlowerBlock\@\@UEBA_NXZ
      */
@@ -245,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -911528114
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@FlowerBlock\@\@UEAAXXZ
      */
@@ -276,19 +266,16 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1906073659
      * @vftbl  179
      * @symbol  ?getRenderLayer\@FlowerBlock\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @hash   -1740372309
      * @vftbl  180
      * @symbol  ?getRenderLayer\@FlowerBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -448104842
      * @vftbl  184
      * @symbol  ?getMapColor\@FlowerBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -299,19 +286,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2065192857
      * @vftbl  187
      * @symbol  ?getResourceItem\@FlowerBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -99732080
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@FlowerBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   843181762
      * @symbol  ??0FlowerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@0\@AEBVMaterial\@\@\@Z
      */
     MCAPI FlowerBlock(std::string const &, int, enum class FlowerBlock::Type, class Material const &);

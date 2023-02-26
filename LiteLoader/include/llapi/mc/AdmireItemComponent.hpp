@@ -30,42 +30,34 @@ public:
 
 public:
     /**
-     * @hash   -943594263
      * @symbol  ??0AdmireItemComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI AdmireItemComponent(class AdmireItemComponent &&);
     /**
-     * @hash   -991625730
      * @symbol  ?getAdmireItem\@AdmireItemComponent\@\@QEBAAEBVItemStack\@\@XZ
      */
     MCAPI class ItemStack const & getAdmireItem() const;
     /**
-     * @hash   403211840
      * @symbol  ?getAdmireUntil\@AdmireItemComponent\@\@QEBAAEBUTick\@\@XZ
      */
     MCAPI struct Tick const & getAdmireUntil() const;
     /**
-     * @hash   838706944
      * @symbol  ?getItemOwnerRef\@AdmireItemComponent\@\@QEBA?AVWeakEntityRef\@\@XZ
      */
     MCAPI class WeakEntityRef getItemOwnerRef() const;
     /**
-     * @hash   673653776
      * @symbol  ?isAdmiring\@AdmireItemComponent\@\@QEBA_NXZ
      */
     MCAPI bool isAdmiring() const;
     /**
-     * @hash   581913394
      * @symbol  ?onAdmireItemPickedUp\@AdmireItemComponent\@\@QEAAXAEBVActor\@\@AEBVItemStack\@\@PEAV2\@\@Z
      */
     MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     /**
-     * @hash   487713845
      * @symbol  ?stopAdmiring\@AdmireItemComponent\@\@QEAAXXZ
      */
     MCAPI void stopAdmiring();
     /**
-     * @hash   -1739588188
      * @symbol  ??1AdmireItemComponent\@\@QEAA\@XZ
      */
     MCAPI ~AdmireItemComponent();

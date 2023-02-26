@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1282742497
      * @symbol  ??1EmotePlayedTelemetryDataComponent\@\@QEAA\@XZ
      */
     MCAPI ~EmotePlayedTelemetryDataComponent();

@@ -36,13 +36,11 @@ public:
      */
     virtual ~DialogueCommand();
     /**
-     * @hash   556406928
      * @vftbl  1
      * @symbol  ?execute\@DialogueCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1308098784
      * @symbol  ?setup\@DialogueCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

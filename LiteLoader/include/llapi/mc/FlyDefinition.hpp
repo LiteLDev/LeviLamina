@@ -37,7 +37,6 @@ public:
      */
     virtual ~FlyDefinition();
     /**
-     * @hash   -509456850
      * @vftbl  1
      * @symbol  ?load\@FlyDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

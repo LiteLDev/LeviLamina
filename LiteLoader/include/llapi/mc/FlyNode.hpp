@@ -34,19 +34,16 @@ public:
      */
     virtual ~FlyNode();
     /**
-     * @hash   -1377373982
      * @vftbl  1
      * @symbol  ?tick\@FlyNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   372971046
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@FlyNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -1102055647
      * @symbol  ??0FlyNode\@\@QEAA\@XZ
      */
     MCAPI FlyNode();

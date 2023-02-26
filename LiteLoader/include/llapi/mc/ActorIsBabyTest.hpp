@@ -35,13 +35,11 @@ public:
      */
     virtual ~ActorIsBabyTest();
     /**
-     * @hash   1233097353
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsBabyTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -847526663
      * @vftbl  4
      * @symbol  ?getName\@ActorIsBabyTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

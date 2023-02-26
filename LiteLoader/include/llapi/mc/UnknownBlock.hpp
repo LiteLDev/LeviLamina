@@ -216,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -493679366
      * @symbol  ??0UnknownBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI UnknownBlock(std::string const &, int, class Material const &);

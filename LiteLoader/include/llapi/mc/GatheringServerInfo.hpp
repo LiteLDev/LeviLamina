@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1598866084
      * @symbol  ??1GatheringServerInfo\@\@QEAA\@XZ
      */
     MCAPI ~GatheringServerInfo();

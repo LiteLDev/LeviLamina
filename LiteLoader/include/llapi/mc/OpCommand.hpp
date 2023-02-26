@@ -36,13 +36,11 @@ public:
      */
     virtual ~OpCommand();
     /**
-     * @hash   1121821801
      * @vftbl  1
      * @symbol  ?execute\@OpCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1698898688
      * @symbol  ?setup\@OpCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   813433902
      * @symbol  ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   8690417
      * @symbol  ?_doCurrentSwimAmountSystem\@CurrentSwimAmountSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUCurrentSwimAmountComponent\@\@AEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI static void _doCurrentSwimAmountSystem(class StrictEntityContext const &, struct CurrentSwimAmountComponent &, struct SynchedActorDataComponent const &);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~BonusChestFeature();
     /**
-     * @hash   -1079412226
      * @vftbl  3
      * @symbol  ?place\@BonusChestFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   -812309776
      * @symbol  ?_place\@BonusChestFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;

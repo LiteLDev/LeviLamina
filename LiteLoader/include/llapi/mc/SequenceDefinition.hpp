@@ -37,7 +37,6 @@ public:
      */
     virtual ~SequenceDefinition();
     /**
-     * @hash   -148990784
      * @vftbl  1
      * @symbol  ?load\@SequenceDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

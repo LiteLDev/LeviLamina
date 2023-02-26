@@ -36,13 +36,11 @@ public:
      */
     virtual ~TellRawCommand();
     /**
-     * @hash   946303295
      * @vftbl  1
      * @symbol  ?execute\@TellRawCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1377464116
      * @symbol  ?setup\@TellRawCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

@@ -29,19 +29,16 @@ public:
 
 public:
     /**
-     * @hash   -920142707
      * @symbol  ?loadEvent\@ActorDefinitionEventLoader\@\@SA?AVActorDefinitionEvent\@\@VValue\@Json\@\@AEBVSemVersion\@\@1PEBVActorEventResponseFactory\@\@\@Z
      */
     MCAPI static class ActorDefinitionEvent loadEvent(class Json::Value, class SemVersion const &, class SemVersion const &, class ActorEventResponseFactory const *);
 
 //private:
     /**
-     * @hash   479509833
      * @symbol  ?_loadCollection\@ActorDefinitionEventLoader\@\@CAXAEAVActorDefinitionEvent\@\@AEBVValue\@Json\@\@AEBVSemVersion\@\@PEBVActorEventResponseFactory\@\@\@Z
      */
     MCAPI static void _loadCollection(class ActorDefinitionEvent &, class Json::Value const &, class SemVersion const &, class ActorEventResponseFactory const *);
     /**
-     * @hash   -395738315
      * @symbol  ?_loadEvent\@ActorDefinitionEventLoader\@\@CA?AVActorDefinitionEvent\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@PEBVActorEventResponseFactory\@\@\@Z
      */
     MCAPI static class ActorDefinitionEvent _loadEvent(class Json::Value &, class SemVersion const &, class ActorEventResponseFactory const *);

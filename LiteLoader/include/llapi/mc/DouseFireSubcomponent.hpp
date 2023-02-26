@@ -44,36 +44,30 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -1478806093
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@DouseFireSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1868306562
      * @vftbl  4
      * @symbol  ?getName\@DouseFireSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUSEFIRESUBCOMPONENT
     /**
-     * @hash   1949283801
      * @symbol  ?readfromJSON\@DouseFireSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   -480882496
      * @symbol  ?writetoJSON\@DouseFireSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
-     * @hash   -1179158421
      * @symbol  ??0DouseFireSubcomponent\@\@QEAA\@XZ
      */
     MCAPI DouseFireSubcomponent();
     /**
-     * @hash   -1257108742
      * @symbol  ?douseFire\@DouseFireSubcomponent\@\@QEAAXAEAVActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void douseFire(class Actor &, class BlockSource &, class BlockPos const &);

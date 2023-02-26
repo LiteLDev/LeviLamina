@@ -27,27 +27,22 @@ public:
 
 public:
     /**
-     * @hash   -765525371
      * @symbol  ??0TimeAccumulator\@\@QEAA\@XZ
      */
     MCAPI TimeAccumulator();
     /**
-     * @hash   901649849
      * @symbol  ?getCount\@TimeAccumulator\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getCount() const;
     /**
-     * @hash   252365628
      * @symbol  ?getTimeSumAverageMS\@TimeAccumulator\@\@QEBAMXZ
      */
     MCAPI float getTimeSumAverageMS() const;
     /**
-     * @hash   141462712
      * @symbol  ?getTimeSumAverageSeconds\@TimeAccumulator\@\@QEBAMXZ
      */
     MCAPI float getTimeSumAverageSeconds() const;
     /**
-     * @hash   -608281756
      * @symbol  ?getTimeSumSeconds\@TimeAccumulator\@\@QEBAMXZ
      */
     MCAPI float getTimeSumSeconds() const;

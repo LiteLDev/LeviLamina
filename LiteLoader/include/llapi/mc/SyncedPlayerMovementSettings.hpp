@@ -27,12 +27,10 @@ public:
 
 public:
     /**
-     * @hash   1825914329
      * @symbol  ??0SyncedPlayerMovementSettings\@\@QEAA\@XZ
      */
     MCAPI SyncedPlayerMovementSettings();
     /**
-     * @hash   86687398
      * @symbol  ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
      */
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);

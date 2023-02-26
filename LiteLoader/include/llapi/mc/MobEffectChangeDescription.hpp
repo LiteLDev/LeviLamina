@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1343314599
      * @vftbl  0
      * @symbol  ?getJsonName\@MobEffectChangeDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~MobEffectChangeDescription();
     /**
-     * @hash   -459599350
      * @vftbl  2
      * @symbol  ?deserializeData\@MobEffectChangeDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   1741105380
      * @vftbl  3
      * @symbol  ?serializeData\@MobEffectChangeDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

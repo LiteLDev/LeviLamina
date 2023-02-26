@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @hash   -370129509
      * @vftbl  2
      * @symbol  ?registerForUpdates\@ChunkBuildOrderPolicyBase\@\@UEAAIXZ
      */

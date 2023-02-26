@@ -36,7 +36,6 @@ public:
      */
     virtual ~MovingBlock();
     /**
-     * @hash   86616997
      * @vftbl  5
      * @symbol  ?getCollisionShape\@MovingBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1069147385
      * @vftbl  81
      * @symbol  ?updateEntityAfterFallOn\@MovingBlock\@\@UEBAXAEBVBlockPos\@\@AEAUUpdateEntityAfterFallOnInterface\@\@\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1097069667
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@MovingBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -179,7 +176,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   -1052121381
      * @vftbl  103
      * @symbol  ?asItemInstance\@MovingBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -210,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1048376511
      * @vftbl  142
      * @symbol  ?getVisualShapeInWorld\@MovingBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1561219823
      * @vftbl  169
      * @symbol  ?onFallOn\@MovingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -258,13 +252,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVINGBLOCK
     /**
-     * @hash   318047635
      * @symbol  ?pushesUpFallingBlocks\@MovingBlock\@\@UEBA_NXZ
      */
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     /**
-     * @hash   1882469341
      * @symbol  ??0MovingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MovingBlock(std::string const &, int);

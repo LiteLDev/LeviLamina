@@ -211,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1670719934
      * @vftbl  175
      * @symbol  ?clip\@InvisibleBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
@@ -222,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1870019799
      * @symbol  ??0InvisibleBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI InvisibleBlock(std::string const &, int, class Material const &);

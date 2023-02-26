@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1004177498
      * @symbol  ?createSystem\@EnderManPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

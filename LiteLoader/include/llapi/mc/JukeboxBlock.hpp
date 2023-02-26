@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1755237614
      * @vftbl  51
      * @symbol  ?isSignalSource\@JukeboxBlock\@\@UEBA_NXZ
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1792029664
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@JukeboxBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -163,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -721745247
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@JukeboxBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -194,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   476195903
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@JukeboxBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -210,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -175712792
      * @vftbl  162
      * @symbol  ?onRemove\@JukeboxBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -231,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -152601507
      * @vftbl  168
      * @symbol  ?onPlace\@JukeboxBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1358777668
      * @vftbl  177
      * @symbol  ?use\@JukeboxBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -259,25 +252,21 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCK
     /**
-     * @hash   -2022546311
      * @symbol  ?hasComparatorSignal\@JukeboxBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @hash   -1532948683
      * @symbol  ??0JukeboxBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI JukeboxBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -1787843387
      * @symbol  ?_dropRecording\@JukeboxBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   231647199
      * @symbol  ?_installCircuit\@JukeboxBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;

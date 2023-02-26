@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -21900044
      * @vftbl  2
      * @symbol  ?tick\@BlockClimberSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

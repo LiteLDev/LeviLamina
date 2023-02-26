@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   690234975
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BeaconBlock\@\@UEBA_NXZ
      */
@@ -217,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -713919746
      * @vftbl  177
      * @symbol  ?use\@BeaconBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -229,13 +227,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONBLOCK
     /**
-     * @hash   -1428197036
      * @symbol  ?isInteractiveBlock\@BeaconBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1893877367
      * @symbol  ??0BeaconBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BeaconBlock(std::string const &, int);

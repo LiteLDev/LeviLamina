@@ -141,70 +141,57 @@ public:
      */
     virtual void __unk_vfn_23();
     /**
-     * @hash   1434808617
      * @vftbl  24
      * @symbol  ?onLevelDestruction\@MinecraftGameTest\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void onLevelDestruction(std::string const &);
     /**
-     * @hash   2038436964
      * @symbol  ??0MinecraftGameTest\@\@QEAA\@AEAVLevel\@\@\@Z
      */
     MCAPI MinecraftGameTest(class Level &);
     /**
-     * @hash   -849152342
      * @symbol  ?clearAllTests\@MinecraftGameTest\@\@QEAAXAEAVBlockSource\@\@\@Z
      */
     MCAPI void clearAllTests(class BlockSource &);
     /**
-     * @hash   1995600630
      * @symbol  ?getRegistry\@MinecraftGameTest\@\@QEAAAEAVGameTestRegistry\@gametest\@\@XZ
      */
     MCAPI class gametest::GameTestRegistry & getRegistry();
     /**
-     * @hash   283324352
      * @symbol  ?getTicker\@MinecraftGameTest\@\@QEAAAEAVGameTestTicker\@gametest\@\@XZ
      */
     MCAPI class gametest::GameTestTicker & getTicker();
     /**
-     * @hash   -511799348
      * @symbol  ?loadExistingTests\@MinecraftGameTest\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void loadExistingTests(class Level &);
     /**
-     * @hash   1735865662
      * @symbol  ?registerDefaultGameBatches\@MinecraftGameTest\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void registerDefaultGameBatches(class Level &);
     /**
-     * @hash   -1597733329
      * @symbol  ?registerNativeGameTests\@MinecraftGameTest\@\@QEAAXXZ
      */
     MCAPI void registerNativeGameTests();
     /**
-     * @hash   -1448594773
      * @symbol  ?runTest\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@\@Z
      */
     MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &);
     /**
-     * @hash   -1694196913
      * @symbol  ?runTest\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@V?$vector\@V?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &, std::vector<class std::shared_ptr<class gametest::IGameTestListener>>);
     /**
-     * @hash   260642244
      * @symbol  ?runTestAt\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@V?$optional\@W4Rotation\@\@\@3\@\@Z
      */
     MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum class Rotation>);
     /**
-     * @hash   1651131249
      * @symbol  ?runTests\@MinecraftGameTest\@\@QEAAAEBV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@AEAVDimension\@\@$$QEAUTestParameters\@gametest\@\@\@Z
      */
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
 //private:
     /**
-     * @hash   -1083676316
      * @symbol  ?_runTestPreparation\@MinecraftGameTest\@\@AEAAXAEBVBaseGameTestFunction\@gametest\@\@\@Z
      */
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);

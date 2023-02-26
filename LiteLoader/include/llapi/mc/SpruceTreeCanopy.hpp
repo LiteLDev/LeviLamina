@@ -36,7 +36,6 @@ public:
      */
     virtual ~SpruceTreeCanopy();
     /**
-     * @hash   2091333534
      * @vftbl  1
      * @symbol  ?placeCanopy\@SpruceTreeCanopy\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@AEBV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@3\@\@Z
      */

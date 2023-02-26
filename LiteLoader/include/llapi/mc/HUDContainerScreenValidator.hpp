@@ -35,7 +35,6 @@ public:
      */
     virtual ~HUDContainerScreenValidator();
     /**
-     * @hash   1280589192
      * @symbol  ??0HUDContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI HUDContainerScreenValidator();

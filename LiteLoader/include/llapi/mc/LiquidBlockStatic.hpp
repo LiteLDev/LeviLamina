@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1936463089
      * @vftbl  99
      * @symbol  ?neighborChanged\@LiquidBlockStatic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1696890137
      * @vftbl  113
      * @symbol  ?entityInside\@LiquidBlockStatic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -218,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1713384146
      * @vftbl  172
      * @symbol  ?randomTick\@LiquidBlockStatic\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -234,14 +231,12 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1657104566
      * @symbol  ??0LiquidBlockStatic\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LiquidBlockStatic(std::string const &, int, class Material const &);
 
 //private:
     /**
-     * @hash   -426150618
      * @symbol  ?_setDynamic\@LiquidBlockStatic\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _setDynamic(class BlockSource &, class BlockPos const &) const;

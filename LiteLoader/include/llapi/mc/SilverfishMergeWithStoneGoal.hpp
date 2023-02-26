@@ -36,25 +36,21 @@ public:
      */
     virtual ~SilverfishMergeWithStoneGoal();
     /**
-     * @hash   -2001182703
      * @vftbl  1
      * @symbol  ?canUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1575396447
      * @vftbl  2
      * @symbol  ?canContinueToUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @hash   -113399350
      * @vftbl  4
      * @symbol  ?start\@SilverfishMergeWithStoneGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1591238641
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SilverfishMergeWithStoneGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -70,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   466506248
      * @symbol  ??0SilverfishMergeWithStoneGoal\@\@QEAA\@AEAVSilverfish\@\@\@Z
      */
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);

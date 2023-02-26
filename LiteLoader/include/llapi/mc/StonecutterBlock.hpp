@@ -36,7 +36,6 @@ public:
      */
     virtual ~StonecutterBlock();
     /**
-     * @hash   414944489
      * @vftbl  10
      * @symbol  ?getAABB\@StonecutterBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -619802273
      * @vftbl  62
      * @symbol  ?canContainLiquid\@StonecutterBlock\@\@UEBA_NXZ
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   223500493
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@StonecutterBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -179,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   202213928
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@StonecutterBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   596798099
      * @vftbl  143
      * @symbol  ?getVisualShape\@StonecutterBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -241,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   858900030
      * @vftbl  177
      * @symbol  ?use\@StonecutterBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -252,31 +246,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1920103571
      * @vftbl  186
      * @symbol  ?playerDestroy\@StonecutterBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1781323520
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StonecutterBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERBLOCK
     /**
-     * @hash   1426930208
      * @symbol  ?isCraftingBlock\@StonecutterBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   826747668
      * @symbol  ?isInteractiveBlock\@StonecutterBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -988110649
      * @symbol  ??0StonecutterBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StonecutterBlock(std::string const &, int);

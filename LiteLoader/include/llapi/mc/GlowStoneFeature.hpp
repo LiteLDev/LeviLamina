@@ -36,7 +36,6 @@ public:
      */
     virtual ~GlowStoneFeature();
     /**
-     * @hash   1256624072
      * @vftbl  3
      * @symbol  ?place\@GlowStoneFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

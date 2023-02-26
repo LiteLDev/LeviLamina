@@ -36,7 +36,6 @@ public:
      */
     virtual ~HellFireFeature();
     /**
-     * @hash   122598733
      * @vftbl  3
      * @symbol  ?place\@HellFireFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

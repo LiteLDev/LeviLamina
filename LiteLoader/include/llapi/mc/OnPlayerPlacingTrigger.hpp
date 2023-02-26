@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1762355758
      * @symbol  ??1OnPlayerPlacingTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnPlayerPlacingTrigger();

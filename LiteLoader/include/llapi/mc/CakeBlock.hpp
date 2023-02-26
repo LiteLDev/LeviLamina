@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1289764057
      * @vftbl  69
      * @symbol  ?checkIsPathable\@CakeBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1175366624
      * @vftbl  91
      * @symbol  ?mayPlace\@CakeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1181639351
      * @vftbl  99
      * @symbol  ?neighborChanged\@CakeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -936283131
      * @vftbl  103
      * @symbol  ?asItemInstance\@CakeBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -200,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   1688167649
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@CakeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   103184191
      * @vftbl  143
      * @symbol  ?getVisualShape\@CakeBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -333112347
      * @vftbl  146
      * @symbol  ?getVariant\@CakeBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   993948539
      * @vftbl  171
      * @symbol  ?tick\@CakeBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,13 +251,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -221341414
      * @vftbl  177
      * @symbol  ?use\@CakeBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -512329989
      * @vftbl  178
      * @symbol  ?canSurvive\@CakeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,28 +267,23 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAKEBLOCK
     /**
-     * @hash   -729537173
      * @symbol  ?canBeSilkTouched\@CakeBlock\@\@EEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   874779819
      * @symbol  ?hasComparatorSignal\@CakeBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @hash   1616226947
      * @symbol  ??0CakeBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CakeBlock(std::string const &, int);
     /**
-     * @hash   1708171007
      * @symbol  ?getComparatorSignalFromBites\@CakeBlock\@\@SAHH\@Z
      */
     MCAPI static int getComparatorSignalFromBites(int);
     /**
-     * @hash   -1954179418
      * @symbol  ?removeCakeSlice\@CakeBlock\@\@SAXAEAVPlayer\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@PEBVBlock\@\@\@Z
      */
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);

@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2031346718
      * @vftbl  103
      * @symbol  ?asItemInstance\@OldLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -187,25 +186,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1914873023
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@OldLeafBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -461877140
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@OldLeafBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1566952612
      * @vftbl  136
      * @symbol  ?getColor\@OldLeafBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -63367096
      * @vftbl  146
      * @symbol  ?getVariant\@OldLeafBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -241,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -99999647
      * @vftbl  180
      * @symbol  ?getRenderLayer\@OldLeafBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -212559716
      * @vftbl  184
      * @symbol  ?getMapColor\@OldLeafBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -258,25 +251,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   700256189
      * @vftbl  187
      * @symbol  ?getResourceItem\@OldLeafBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   132463215
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@OldLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -996085689
      * @vftbl  193
      * @symbol  ?getExtraResourceItem\@OldLeafBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     /**
-     * @hash   1471128894
      * @symbol  ??0OldLeafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI OldLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1678077923
      * @symbol  ??1WorldGenContext\@\@QEAA\@XZ
      */
     MCAPI ~WorldGenContext();

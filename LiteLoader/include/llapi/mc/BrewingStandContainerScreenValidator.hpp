@@ -35,7 +35,6 @@ public:
      */
     virtual ~BrewingStandContainerScreenValidator();
     /**
-     * @hash   1409621831
      * @symbol  ??0BrewingStandContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BrewingStandContainerScreenValidator();

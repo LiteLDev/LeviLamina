@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   1407397073
      * @symbol  ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
      */
     MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
-     * @hash   -807161556
      * @symbol  ??1CircuitComponentList\@\@QEAA\@XZ
      */
     MCAPI ~CircuitComponentList();

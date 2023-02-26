@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1634796633
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ConduitBlock\@\@UEBA_NXZ
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1345108934
      * @vftbl  91
      * @symbol  ?mayPlace\@ConduitBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1206267459
      * @symbol  ??0ConduitBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ConduitBlock(std::string const &, int);

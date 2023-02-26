@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -719355567
      * @symbol  ??0CircleAroundAnchorDefinition\@\@QEAA\@XZ
      */
     MCAPI CircleAroundAnchorDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class CircleAroundAnchorGoal &) const;
     /**
-     * @hash   -1076979489
      * @symbol  ?buildSchema\@CircleAroundAnchorDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCircleAroundAnchorDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CircleAroundAnchorDefinition>> &);

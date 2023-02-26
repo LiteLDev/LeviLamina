@@ -181,19 +181,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1242513445
      * @vftbl  136
      * @symbol  ?getColor\@AzaleaLeafBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1925850933
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@AzaleaLeafBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @hash   -1196983713
      * @vftbl  146
      * @symbol  ?getVariant\@AzaleaLeafBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -229,13 +226,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1019102344
      * @vftbl  180
      * @symbol  ?getRenderLayer\@AzaleaLeafBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   804583331
      * @vftbl  184
      * @symbol  ?getMapColor\@AzaleaLeafBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -246,19 +241,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1066649629
      * @vftbl  187
      * @symbol  ?getResourceItem\@AzaleaLeafBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1705946262
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@AzaleaLeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1065856919
      * @symbol  ??0AzaleaLeafBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI AzaleaLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);

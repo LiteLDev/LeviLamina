@@ -36,7 +36,6 @@ public:
      */
     virtual ~SeaAnemoneFeature();
     /**
-     * @hash   173153118
      * @vftbl  3
      * @symbol  ?place\@SeaAnemoneFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

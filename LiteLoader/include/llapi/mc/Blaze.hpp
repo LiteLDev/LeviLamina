@@ -47,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1859253273
      * @vftbl  49
      * @symbol  ?normalTick\@Blaze\@\@UEAAXXZ
      */
@@ -93,7 +92,6 @@ public:
      */
     virtual void __unk_vfn_100();
     /**
-     * @hash   1756497173
      * @vftbl  105
      * @symbol  ?isOnFire\@Blaze\@\@UEBA_NXZ
      */
@@ -169,13 +167,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   263901539
      * @vftbl  289
      * @symbol  ?travel\@Blaze\@\@UEAAXMMM\@Z
      */
     virtual void travel(float, float, float);
     /**
-     * @hash   -1536023143
      * @vftbl  291
      * @symbol  ?aiStep\@Blaze\@\@UEAAXXZ
      */
@@ -196,13 +192,11 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1057443926
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Blaze\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @hash   565207870
      * @symbol  ??0Blaze\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Blaze(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

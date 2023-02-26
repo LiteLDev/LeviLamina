@@ -216,13 +216,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1448540883
      * @vftbl  194
      * @symbol  ?getSpawnedItemName\@GlowItemFrameBlock\@\@UEBA?AVHashedString\@\@XZ
      */
     virtual class HashedString getSpawnedItemName() const;
     /**
-     * @hash   573625006
      * @symbol  ??0GlowItemFrameBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GlowItemFrameBlock(std::string const &, int);

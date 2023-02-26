@@ -36,13 +36,11 @@ public:
      */
     virtual ~SeaGrass();
     /**
-     * @hash   -95477156
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@SeaGrass\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   -1352466169
      * @vftbl  10
      * @symbol  ?getAABB\@SeaGrass\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -148,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   218335005
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@SeaGrass\@\@UEBA_NH\@Z
      */
@@ -174,31 +171,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   744762863
      * @vftbl  86
      * @symbol  ?onFertilized\@SeaGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -617119832
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@SeaGrass\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   968752300
      * @vftbl  88
      * @symbol  ?canBeFertilized\@SeaGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1176971879
      * @vftbl  92
      * @symbol  ?mayPlace\@SeaGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   229853897
      * @vftbl  99
      * @symbol  ?neighborChanged\@SeaGrass\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -229,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -814801362
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@SeaGrass\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   617901353
      * @vftbl  135
      * @symbol  ?getColor\@SeaGrass\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -1635494397
      * @vftbl  136
      * @symbol  ?getColor\@SeaGrass\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -267,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1827134851
      * @vftbl  168
      * @symbol  ?onPlace\@SeaGrass\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -278,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1302022547
      * @vftbl  171
      * @symbol  ?tick\@SeaGrass\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -289,7 +276,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -643918407
      * @vftbl  178
      * @symbol  ?canSurvive\@SeaGrass\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -300,36 +286,30 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1544586571
      * @vftbl  186
      * @symbol  ?playerDestroy\@SeaGrass\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1168784115
      * @vftbl  188
      * @symbol  ?getResourceCount\@SeaGrass\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAGRASS
     /**
-     * @hash   842888448
      * @symbol  ?canBeSilkTouched\@SeaGrass\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   559194088
      * @symbol  ?waterSpreadCausesSpawn\@SeaGrass\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -1021700891
      * @symbol  ??0SeaGrass\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SeaGrass(std::string const &, int);
     /**
-     * @hash   -1837374804
      * @symbol  ?trySpawnSeaGrass\@SeaGrass\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool trySpawnSeaGrass(class BlockSource &, class BlockPos const &);

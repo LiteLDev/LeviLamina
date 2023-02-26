@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   1681053445
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@LavaSlime\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -58,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1819849382
      * @vftbl  74
      * @symbol  ?isInLava\@LavaSlime\@\@UEBA_NAEBVIConstBlockSource\@\@\@Z
      */
@@ -94,7 +92,6 @@ public:
      */
     virtual void __unk_vfn_100();
     /**
-     * @hash   443576168
      * @vftbl  105
      * @symbol  ?isOnFire\@LavaSlime\@\@MEBA_NXZ
      */
@@ -170,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   343756007
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@LavaSlime\@\@UEAA_N_N\@Z
      */
@@ -186,13 +182,11 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   2068669307
      * @vftbl  313
      * @symbol  ?getArmorValue\@LavaSlime\@\@UEBAHXZ
      */
     virtual int getArmorValue() const;
     /**
-     * @hash   1129690871
      * @vftbl  347
      * @symbol  ?jumpFromGround\@LavaSlime\@\@MEAAXXZ
      */
@@ -203,31 +197,26 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -2034098224
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@LavaSlime\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @hash   -851426657
      * @vftbl  360
      * @symbol  ?doPlayLandSound\@LavaSlime\@\@MEAA_NXZ
      */
     virtual bool doPlayLandSound();
     /**
-     * @hash   476227549
      * @vftbl  363
      * @symbol  ?decreaseSquish\@LavaSlime\@\@MEAAXXZ
      */
     virtual void decreaseSquish();
     /**
-     * @hash   1142637727
      * @vftbl  364
      * @symbol  ?createChild\@LavaSlime\@\@MEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@H\@Z
      */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /**
-     * @hash   -946789804
      * @symbol  ??0LavaSlime\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

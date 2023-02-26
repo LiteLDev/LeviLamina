@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   478999483
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Snowball\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -536026610
      * @symbol  ??0Snowball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Snowball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

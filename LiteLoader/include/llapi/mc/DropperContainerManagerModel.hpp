@@ -36,13 +36,11 @@ public:
      */
     virtual ~DropperContainerManagerModel();
     /**
-     * @hash   695642183
      * @vftbl  17
      * @symbol  ?_postInit\@DropperContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   -514181930
      * @symbol  ??0DropperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI DropperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1697480992
      * @symbol  ?createSystem\@RemovePassengersWithoutSeatSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

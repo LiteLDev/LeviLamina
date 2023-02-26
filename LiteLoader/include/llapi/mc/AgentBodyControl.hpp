@@ -34,13 +34,11 @@ public:
      */
     virtual ~AgentBodyControl();
     /**
-     * @hash   1554090403
      * @vftbl  1
      * @symbol  ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
     /**
-     * @hash   1939875714
      * @symbol  ??0AgentBodyControl\@\@QEAA\@XZ
      */
     MCAPI AgentBodyControl();

@@ -36,7 +36,6 @@ public:
      */
     virtual ~CarpetBlock();
     /**
-     * @hash   1851314088
      * @vftbl  5
      * @symbol  ?getCollisionShape\@CarpetBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   992173766
      * @vftbl  69
      * @symbol  ?checkIsPathable\@CarpetBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1820631794
      * @vftbl  92
      * @symbol  ?mayPlace\@CarpetBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   336814388
      * @vftbl  99
      * @symbol  ?neighborChanged\@CarpetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -210,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1144447236
      * @vftbl  143
      * @symbol  ?getVisualShape\@CarpetBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1705206270
      * @vftbl  168
      * @symbol  ?onPlace\@CarpetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -2132805160
      * @vftbl  171
      * @symbol  ?tick\@CarpetBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -258,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1149438834
      * @vftbl  178
      * @symbol  ?canSurvive\@CarpetBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,13 +262,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARPETBLOCK
     /**
-     * @hash   2066327053
      * @symbol  ?waterSpreadCausesSpawn\@CarpetBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -837086935
      * @symbol  ??0CarpetBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI CarpetBlock(std::string const &, int, class Material const &);

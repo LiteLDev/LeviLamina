@@ -44,31 +44,26 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   2066164357
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@RemoveOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1898339872
      * @vftbl  4
      * @symbol  ?getName\@RemoveOnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEONHITSUBCOMPONENT
     /**
-     * @hash   486082491
      * @symbol  ?readfromJSON\@RemoveOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   -147203298
      * @symbol  ?writetoJSON\@RemoveOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
-     * @hash   706153833
      * @symbol  ??0RemoveOnHitSubcomponent\@\@QEAA\@XZ
      */
     MCAPI RemoveOnHitSubcomponent();

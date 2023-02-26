@@ -36,7 +36,6 @@ public:
      */
     virtual ~UndyedShulkerBoxBlock();
     /**
-     * @hash   765479073
      * @vftbl  10
      * @symbol  ?getAABB\@UndyedShulkerBoxBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1130015171
      * @vftbl  71
      * @symbol  ?dispense\@UndyedShulkerBoxBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -767494297
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@UndyedShulkerBoxBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -179,13 +176,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1461443974
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@UndyedShulkerBoxBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   58097925
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@UndyedShulkerBoxBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -196,7 +191,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   1338549113
      * @vftbl  103
      * @symbol  ?asItemInstance\@UndyedShulkerBoxBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -207,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1050959120
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@UndyedShulkerBoxBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -233,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2102583603
      * @vftbl  135
      * @symbol  ?getColor\@UndyedShulkerBoxBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -274,20 +266,17 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1651086481
      * @vftbl  187
      * @symbol  ?getResourceItem\@UndyedShulkerBoxBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1947269841
      * @symbol  ??0UndyedShulkerBoxBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI UndyedShulkerBoxBlock(std::string const &, int);
 
 //protected:
     /**
-     * @hash   -525433488
      * @symbol  ?spawnBoxInstance\@UndyedShulkerBoxBlock\@\@IEBAXAEAVBlockSource\@\@AEAVLevel\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@7\@H\@Z
      */
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
@@ -300,7 +289,6 @@ public:
 
 protected:
     /**
-     * @hash   740455807
      * @symbol  ?SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION\@UndyedShulkerBoxBlock\@\@1VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;

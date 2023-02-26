@@ -34,13 +34,11 @@ public:
      */
     virtual ~PlaceBlockNode();
     /**
-     * @hash   1743528085
      * @vftbl  1
      * @symbol  ?tick\@PlaceBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1984150876
      * @symbol  ??0PlaceBlockNode\@\@QEAA\@XZ
      */
     MCAPI PlaceBlockNode();

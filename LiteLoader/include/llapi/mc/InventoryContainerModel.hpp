@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -1615296144
      * @vftbl  0
      * @symbol  ?containerContentChanged\@InventoryContainerModel\@\@UEAAXH\@Z
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~InventoryContainerModel();
     /**
-     * @hash   958123795
      * @vftbl  2
      * @symbol  ?postInit\@InventoryContainerModel\@\@UEAAXXZ
      */
     virtual void postInit();
     /**
-     * @hash   -913499295
      * @vftbl  3
      * @symbol  ?releaseResources\@InventoryContainerModel\@\@UEAAXXZ
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -2069921951
      * @vftbl  7
      * @symbol  ?getContainerWeakRef\@InventoryContainerModel\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
@@ -70,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_12();
     /**
-     * @hash   -1778979721
      * @vftbl  14
      * @symbol  ?isValid\@InventoryContainerModel\@\@UEAA_NXZ
      */
@@ -91,32 +86,27 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1719764395
      * @vftbl  20
      * @symbol  ?_getContainer\@InventoryContainerModel\@\@EEBAPEAVContainer\@\@XZ
      */
     virtual class Container * _getContainer() const;
     /**
-     * @hash   -1586351315
      * @vftbl  21
      * @symbol  ?_getContainerOffset\@InventoryContainerModel\@\@MEBAHXZ
      */
     virtual int _getContainerOffset() const;
     /**
-     * @hash   -642824265
      * @vftbl  22
      * @symbol  ?_onItemChanged\@InventoryContainerModel\@\@EEAAXHAEBVItemStack\@\@0\@Z
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     /**
-     * @hash   -1908512101
      * @symbol  ??0InventoryContainerModel\@\@QEAA\@W4ContainerEnumName\@\@HAEAVPlayer\@\@\@Z
      */
     MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player &);
 
 //private:
     /**
-     * @hash   1040301357
      * @symbol  ?_refreshSlot\@InventoryContainerModel\@\@AEAAXH\@Z
      */
     MCAPI void _refreshSlot(int);

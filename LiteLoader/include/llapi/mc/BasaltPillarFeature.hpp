@@ -36,7 +36,6 @@ public:
      */
     virtual ~BasaltPillarFeature();
     /**
-     * @hash   1527378881
      * @vftbl  3
      * @symbol  ?place\@BasaltPillarFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   -652075923
      * @symbol  ?_growColumn\@BasaltPillarFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@M\@Z
      */
     MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;

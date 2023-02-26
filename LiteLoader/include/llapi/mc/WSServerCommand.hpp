@@ -36,13 +36,11 @@ public:
      */
     virtual ~WSServerCommand();
     /**
-     * @hash   -1680134953
      * @vftbl  1
      * @symbol  ?execute\@WSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -2105648496
      * @symbol  ?setup\@WSServerCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

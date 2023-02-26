@@ -36,7 +36,6 @@ public:
      */
     virtual ~BlueFireBlock();
     /**
-     * @hash   -1501263011
      * @vftbl  10
      * @symbol  ?getAABB\@BlueFireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -346993253
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BlueFireBlock\@\@UEBA_NXZ
      */
@@ -168,19 +166,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1751936385
      * @vftbl  89
      * @symbol  ?mayPick\@BlueFireBlock\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @hash   -1254667853
      * @vftbl  92
      * @symbol  ?mayPlace\@BlueFireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   948637055
      * @vftbl  99
      * @symbol  ?neighborChanged\@BlueFireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1932214007
      * @vftbl  113
      * @symbol  ?entityInside\@BlueFireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -217,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -289232638
      * @vftbl  151
      * @symbol  ?animateTick\@BlueFireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -243,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   928320343
      * @vftbl  168
      * @symbol  ?onPlace\@BlueFireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1296286445
      * @vftbl  171
      * @symbol  ?tick\@BlueFireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -265,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1001994867
      * @vftbl  178
      * @symbol  ?canSurvive\@BlueFireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,23 +267,19 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLUEFIREBLOCK
     /**
-     * @hash   1652815345
      * @symbol  ?canBeSilkTouched\@BlueFireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   654053394
      * @symbol  ?waterSpreadCausesSpawn\@BlueFireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -1195471957
      * @symbol  ??0BlueFireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BlueFireBlock(std::string const &, int);
     /**
-     * @hash   794723151
      * @symbol  ?isValidBlueFireFuel\@BlueFireBlock\@\@SA_NAEBVBlockLegacy\@\@\@Z
      */
     MCAPI static bool isValidBlueFireFuel(class BlockLegacy const &);

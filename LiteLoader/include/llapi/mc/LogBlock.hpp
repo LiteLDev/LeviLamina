@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   210526955
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@LogBlock\@\@UEBA_NXZ
      */
@@ -192,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -868210154
      * @vftbl  162
      * @symbol  ?onRemove\@LogBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1035621721
      * @symbol  ??0LogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LogBlock(std::string const &, int);

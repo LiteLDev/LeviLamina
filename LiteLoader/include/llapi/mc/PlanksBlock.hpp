@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -794805693
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@PlanksBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1956258584
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@PlanksBlock\@\@UEBA_NXZ
      */
@@ -233,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -908887008
      * @vftbl  184
      * @symbol  ?getMapColor\@PlanksBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -244,29 +241,24 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1178561519
      * @vftbl  187
      * @symbol  ?getResourceItem\@PlanksBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1098841158
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@PlanksBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   2095944298
      * @symbol  ??0PlanksBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PlanksBlock(std::string const &, int);
     /**
-     * @hash   -814397521
      * @symbol  ?WOOD_NAMES\@PlanksBlock\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$07\@std\@\@B
      */
     MCAPI static class std::array<std::string, 8> const WOOD_NAMES;
     /**
-     * @hash   55192367
      * @symbol  ?isValidWoodMaterial\@PlanksBlock\@\@SA_NH\@Z
      */
     MCAPI static bool isValidWoodMaterial(int);

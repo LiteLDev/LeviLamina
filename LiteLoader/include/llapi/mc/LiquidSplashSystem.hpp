@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1596720958
      * @symbol  ?createSystem\@LiquidSplashSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

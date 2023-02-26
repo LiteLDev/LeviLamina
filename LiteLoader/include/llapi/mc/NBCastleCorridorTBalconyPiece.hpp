@@ -36,19 +36,16 @@ public:
      */
     virtual ~NBCastleCorridorTBalconyPiece();
     /**
-     * @hash   -1055603213
      * @vftbl  2
      * @symbol  ?getType\@NBCastleCorridorTBalconyPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   -380588915
      * @vftbl  3
      * @symbol  ?addChildren\@NBCastleCorridorTBalconyPiece\@\@UEAAXAEAVStructurePiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@\@Z
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @hash   -1140879787
      * @vftbl  4
      * @symbol  ?postProcess\@NBCastleCorridorTBalconyPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */

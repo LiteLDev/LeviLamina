@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   745933218
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@CoralBlock\@\@UEBA_NH\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   636337726
      * @vftbl  99
      * @symbol  ?neighborChanged\@CoralBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -198,19 +196,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   983245379
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@CoralBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -1270428168
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@CoralBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -255888836
      * @vftbl  146
      * @symbol  ?getVariant\@CoralBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1440948504
      * @vftbl  168
      * @symbol  ?onPlace\@CoralBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -247,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1433794350
      * @vftbl  171
      * @symbol  ?tick\@CoralBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -258,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   939511792
      * @vftbl  184
      * @symbol  ?getMapColor\@CoralBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -269,23 +261,19 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1461428778
      * @vftbl  187
      * @symbol  ?getResourceItem\@CoralBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   2026170122
      * @symbol  ??0CoralBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CoralBlock(std::string const &, int);
     /**
-     * @hash   -695249915
      * @symbol  ?DEAD_CORAL_BIT\@CoralBlock\@\@2HB
      */
     MCAPI static int const DEAD_CORAL_BIT;
     /**
-     * @hash   1927552159
      * @symbol  ?DEAD_CORAL_OFFSET\@CoralBlock\@\@2HB
      */
     MCAPI static int const DEAD_CORAL_OFFSET;

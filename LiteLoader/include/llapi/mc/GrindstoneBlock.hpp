@@ -36,7 +36,6 @@ public:
      */
     virtual ~GrindstoneBlock();
     /**
-     * @hash   219254588
      * @vftbl  10
      * @symbol  ?getAABB\@GrindstoneBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1600474636
      * @vftbl  62
      * @symbol  ?canContainLiquid\@GrindstoneBlock\@\@UEBA_NXZ
      */
@@ -168,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1261278894
      * @vftbl  99
      * @symbol  ?neighborChanged\@GrindstoneBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -179,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1499191717
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@GrindstoneBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1536119958
      * @vftbl  143
      * @symbol  ?getVisualShape\@GrindstoneBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1052820446
      * @vftbl  171
      * @symbol  ?tick\@GrindstoneBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -247,13 +241,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -713473999
      * @vftbl  177
      * @symbol  ?use\@GrindstoneBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1536860964
      * @vftbl  178
      * @symbol  ?canSurvive\@GrindstoneBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,27 +256,23 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -371815485
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@GrindstoneBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONEBLOCK
     /**
-     * @hash   -1798682367
      * @symbol  ?isInteractiveBlock\@GrindstoneBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1721627514
      * @symbol  ??0GrindstoneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GrindstoneBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   -1974914520
      * @symbol  ?_getShape\@GrindstoneBlock\@\@AEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
      */
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;

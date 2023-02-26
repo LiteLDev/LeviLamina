@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -906121847
      * @vftbl  22
      * @symbol  ?canProvideSupport\@SculkShriekerBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -157,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -196992706
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@SculkShriekerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -193,13 +191,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1981361194
      * @vftbl  146
      * @symbol  ?getVariant\@SculkShriekerBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -1570391639
      * @vftbl  152
      * @symbol  ?init\@SculkShriekerBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
@@ -210,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -282544395
      * @vftbl  162
      * @symbol  ?onRemove\@SculkShriekerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1961411652
      * @vftbl  164
      * @symbol  ?onStandOn\@SculkShriekerBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
@@ -237,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1227273958
      * @vftbl  168
      * @symbol  ?onPlace\@SculkShriekerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -481851200
      * @vftbl  171
      * @symbol  ?tick\@SculkShriekerBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -264,32 +256,27 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1063130376
      * @vftbl  187
      * @symbol  ?getResourceItem\@SculkShriekerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1109160848
      * @vftbl  188
      * @symbol  ?getResourceCount\@SculkShriekerBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -760442895
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SculkShriekerBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERBLOCK
     /**
-     * @hash   -1722338316
      * @symbol  ?canBeSilkTouched\@SculkShriekerBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -511554623
      * @symbol  ??0SculkShriekerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI SculkShriekerBlock(std::string const &, int, class Material const &);

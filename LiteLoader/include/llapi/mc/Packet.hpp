@@ -73,53 +73,44 @@ public:
      */
     virtual ~Packet();
     /**
-     * @hash   799490161
      * @vftbl  1
      * @symbol  ?getId\@UpdateTradePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const = 0;
     /**
-     * @hash   -21487858
      * @vftbl  2
      * @symbol  ?getName\@UpdateTradePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
-     * @hash   1878747727
      * @vftbl  3
      * @symbol  ?write\@UpdateTradePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
-     * @hash   399594553
      * @vftbl  4
      * @symbol  ?readExtended\@Packet\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1232468467
      * @vftbl  5
      * @symbol  ?disallowBatching\@Packet\@\@UEBA_NXZ
      */
     virtual bool disallowBatching() const;
     /**
-     * @hash   1142874111
      * @vftbl  6
      * @symbol  ?_read\@UpdateTradePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
     /**
-     * @hash   -1820019475
      * @symbol  ?handle\@Packet\@\@QEAAXAEBVNetworkIdentifier\@\@AEAVNetEventCallback\@\@AEAV?$shared_ptr\@VPacket\@\@\@std\@\@\@Z
      */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     /**
-     * @hash   1229535695
      * @symbol  ?readNoHeader\@Packet\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@AEBW4SubClientId\@\@AEAUExtendedStreamReadResult\@\@\@Z
      */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
-     * @hash   -515901715
      * @symbol  ?writeWithHeader\@Packet\@\@QEBAXW4SubClientId\@\@AEAVBinaryStream\@\@\@Z
      */
     MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;

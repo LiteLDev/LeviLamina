@@ -34,28 +34,23 @@ public:
      */
     virtual ~BlockReducer();
     /**
-     * @hash   -1078814380
      * @vftbl  1
      * @symbol  ?registerBlock\@BlockReducer\@\@UEAAXAEBVItemStack\@\@$$QEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void registerBlock(class ItemStack const &, std::vector<class ItemStack> &&);
     /**
-     * @hash   964322123
      * @symbol  ??0BlockReducer\@\@QEAA\@XZ
      */
     MCAPI BlockReducer();
     /**
-     * @hash   -1313951984
      * @symbol  ?getReduction\@BlockReducer\@\@QEBAPEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI std::vector<class ItemStack> const * getReduction(class ItemStackBase const &) const;
     /**
-     * @hash   2101697130
      * @symbol  ?getReductionMap\@BlockReducer\@\@QEBAAEBV?$unordered_map\@HV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@U?$hash\@H\@2\@U?$equal_to\@H\@2\@V?$allocator\@U?$pair\@$$CBHV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
     /**
-     * @hash   732936815
      * @symbol  ?tryGetItemDescriptorFromKey\@BlockReducer\@\@QEBA?AVItemDescriptor\@\@H\@Z
      */
     MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int) const;

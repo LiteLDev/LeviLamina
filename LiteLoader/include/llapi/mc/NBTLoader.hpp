@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1072899743
      * @symbol  ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
      */
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);

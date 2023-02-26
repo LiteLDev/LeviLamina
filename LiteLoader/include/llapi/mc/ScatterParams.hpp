@@ -37,44 +37,36 @@ public:
 
 public:
     /**
-     * @hash   1116601384
      * @symbol  ?addAdditionalSaveData\@ScatterParams\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   1347261564
      * @symbol  ?readAdditionalSaveData\@ScatterParams\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     /**
-     * @hash   190130796
      * @symbol  ?scatter\@ScatterParams\@\@QEBA?AVScatteredPositions\@1\@AEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   1724064960
      * @symbol  ??1ScatterParams\@\@QEAA\@XZ
      */
     MCAPI ~ScatterParams();
     /**
-     * @hash   -1142651280
      * @symbol  ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
     /**
-     * @hash   328476307
      * @symbol  ?initScatterParamIndices\@ScatterParams\@\@SAXXZ
      */
     MCAPI static void initScatterParamIndices();
 
 //private:
     /**
-     * @hash   1680951829
      * @symbol  ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -1729153948
      * @symbol  ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
      */
     MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);

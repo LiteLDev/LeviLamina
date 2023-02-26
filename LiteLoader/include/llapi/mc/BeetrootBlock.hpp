@@ -36,7 +36,6 @@ public:
      */
     virtual ~BeetrootBlock();
     /**
-     * @hash   1559097913
      * @vftbl  10
      * @symbol  ?getAABB\@BeetrootBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   927255433
      * @vftbl  146
      * @symbol  ?getVariant\@BeetrootBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -233,25 +231,21 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   -850023645
      * @vftbl  194
      * @symbol  ?getBaseSeed\@BeetrootBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
-     * @hash   123926338
      * @vftbl  195
      * @symbol  ?getBaseCrop\@BeetrootBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
-     * @hash   773401431
      * @vftbl  197
      * @symbol  ?getCropNum\@BeetrootBlock\@\@UEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
-     * @hash   2096701943
      * @symbol  ??0BeetrootBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BeetrootBlock(std::string const &, int);

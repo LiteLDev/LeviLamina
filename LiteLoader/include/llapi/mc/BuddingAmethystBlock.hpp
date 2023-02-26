@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2037223895
      * @vftbl  103
      * @symbol  ?asItemInstance\@BuddingAmethystBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -212,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1760935860
      * @vftbl  172
      * @symbol  ?randomTick\@BuddingAmethystBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -229,30 +227,25 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUDDINGAMETHYSTBLOCK
     /**
-     * @hash   176511453
      * @symbol  ?canBeSilkTouched\@BuddingAmethystBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   973443499
      * @symbol  ?isSilentWhenJumpingOff\@BuddingAmethystBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isSilentWhenJumpingOff() const;
 #endif
     /**
-     * @hash   -373530392
      * @symbol  ??0BuddingAmethystBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI BuddingAmethystBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   339264058
      * @symbol  ?canBudGrowAtPos\@BuddingAmethystBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool canBudGrowAtPos(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   -1941841925
      * @symbol  ?_canGrowInDirection\@BuddingAmethystBlock\@\@AEBA_NAEBVBlock\@\@E\@Z
      */
     MCAPI bool _canGrowInDirection(class Block const &, unsigned char) const;

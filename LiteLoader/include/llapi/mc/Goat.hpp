@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -1089876875
      * @vftbl  12
      * @symbol  ?initializeComponents\@Goat\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -103,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   1728708473
      * @vftbl  134
      * @symbol  ?getAmbientSound\@Goat\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @hash   1330245355
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Goat\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -145,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   104778499
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Goat\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -156,13 +152,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1691645372
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Goat\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   543209217
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Goat\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -178,13 +172,11 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -240592873
      * @vftbl  281
      * @symbol  ?getHurtSound\@Goat\@\@UEAA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getHurtSound();
     /**
-     * @hash   1028245710
      * @vftbl  282
      * @symbol  ?getDeathSound\@Goat\@\@UEAA?AW4LevelSoundEvent\@\@XZ
      */
@@ -210,22 +202,18 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1529390551
      * @symbol  ??0Goat\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Goat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   406913320
      * @symbol  ?getHornCount\@Goat\@\@QEBAHXZ
      */
     MCAPI int getHornCount() const;
     /**
-     * @hash   -1082408660
      * @symbol  ?isScreaming\@Goat\@\@QEAA_NXZ
      */
     MCAPI bool isScreaming();
     /**
-     * @hash   121221747
      * @symbol  ?reduceHornCount\@Goat\@\@QEAAXXZ
      */
     MCAPI void reduceHornCount();
@@ -234,12 +222,10 @@ public:
 
 private:
     /**
-     * @hash   1808284177
      * @symbol  ?DEFAULT_HORN_COUNT\@Goat\@\@0HA
      */
     MCAPI static int DEFAULT_HORN_COUNT;
     /**
-     * @hash   1115310353
      * @symbol  ?SCREAMING_GOAT_VARIANT\@Goat\@\@0HA
      */
     MCAPI static int SCREAMING_GOAT_VARIANT;

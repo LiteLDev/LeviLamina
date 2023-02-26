@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1846106177
      * @vftbl  49
      * @symbol  ?normalTick\@Monster\@\@UEAAXXZ
      */
@@ -138,19 +137,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1462913254
      * @vftbl  263
      * @symbol  ?_hurt\@Monster\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1285392022
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Monster\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   2015639751
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@Monster\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -171,13 +167,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   502676465
      * @vftbl  291
      * @symbol  ?aiStep\@Monster\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @hash   -246423063
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Monster\@\@UEAA_N_N\@Z
      */
@@ -193,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   556222773
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Monster\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -204,20 +197,17 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   180254542
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Monster\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTER
     /**
-     * @hash   630108633
      * @symbol  ?canExistInPeaceful\@Monster\@\@UEBA_NXZ
      */
     MCVAPI bool canExistInPeaceful() const;
 #endif
     /**
-     * @hash   296238406
      * @symbol  ??0Monster\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Monster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

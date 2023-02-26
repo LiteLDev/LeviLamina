@@ -36,13 +36,11 @@ public:
      */
     virtual ~EndPortalFrameBlock();
     /**
-     * @hash   665112791
      * @vftbl  9
      * @symbol  ?addAABBs\@EndPortalFrameBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   -510776810
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@EndPortalFrameBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -178,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1809099878
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@EndPortalFrameBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -199,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   -1942004401
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@EndPortalFrameBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -215,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -1847113368
      * @vftbl  162
      * @symbol  ?onRemove\@EndPortalFrameBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -246,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2008633196
      * @vftbl  177
      * @symbol  ?use\@EndPortalFrameBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -257,38 +251,32 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   414470221
      * @vftbl  188
      * @symbol  ?getResourceCount\@EndPortalFrameBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -746885298
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@EndPortalFrameBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALFRAMEBLOCK
     /**
-     * @hash   -1924551751
      * @symbol  ?hasComparatorSignal\@EndPortalFrameBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   540456662
      * @symbol  ?isInteractiveBlock\@EndPortalFrameBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -11215979
      * @symbol  ??0EndPortalFrameBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EndPortalFrameBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   1786003823
      * @symbol  ?createPortal\@EndPortalFrameBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void createPortal(class BlockSource &, class BlockPos const &);

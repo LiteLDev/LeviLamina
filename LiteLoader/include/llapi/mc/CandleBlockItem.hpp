@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   1390919271
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@CandleBlockItem\@\@UEBAHH\@Z
      */
@@ -108,20 +107,17 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1021727139
      * @vftbl  132
      * @symbol  ?_useOn\@CandleBlockItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCKITEM
     /**
-     * @hash   1474510540
      * @symbol  ?isCandle\@CandleBlockItem\@\@UEBA_NXZ
      */
     MCVAPI bool isCandle() const;
 #endif
     /**
-     * @hash   1502633457
      * @symbol  ??0CandleBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CandleBlockItem(std::string const &, int);

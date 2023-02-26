@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   185177800
      * @vftbl  99
      * @symbol  ?neighborChanged\@HeavyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   103458475
      * @vftbl  151
      * @symbol  ?animateTick\@HeavyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -213,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -141497250
      * @vftbl  168
      * @symbol  ?onPlace\@HeavyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -224,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -2127171156
      * @vftbl  171
      * @symbol  ?tick\@HeavyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -240,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1403806291
      * @vftbl  193
      * @symbol  ?getDustColor\@TopSnowBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const = 0;
     /**
-     * @hash   1086664648
      * @vftbl  194
      * @symbol  ?getDustParticleName\@TopSnowBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -257,49 +251,41 @@ public:
      */
     virtual void __unk_vfn_195();
     /**
-     * @hash   -1164846432
      * @vftbl  196
      * @symbol  ?onLand\@HeavyBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onLand(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -949255404
      * @vftbl  197
      * @symbol  ?isFreeToFall\@HeavyBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1712952812
      * @vftbl  198
      * @symbol  ?startFalling\@HeavyBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@_N\@Z
      */
     virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
     /**
-     * @hash   1785661881
      * @symbol  ?falling\@HeavyBlock\@\@UEBA_NXZ
      */
     MCVAPI bool falling() const;
 #endif
     /**
-     * @hash   1433716589
      * @symbol  ??0HeavyBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI HeavyBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   283126865
      * @symbol  ?triggerFallCheck\@HeavyBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void triggerFallCheck(class BlockSource &, class BlockPos const &) const;
 
 //protected:
     /**
-     * @hash   1525454687
      * @symbol  ?_tickBlocksAround2D\@HeavyBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1395451853
      * @symbol  ?checkSlide\@HeavyBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;

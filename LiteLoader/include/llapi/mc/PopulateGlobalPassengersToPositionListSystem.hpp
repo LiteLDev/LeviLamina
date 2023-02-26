@@ -40,7 +40,6 @@ public:
      */
     MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct Exclude<struct PassengerComponent>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PositionPassengerRequestComponent>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const>, class OptionalGlobalT<struct PassengersToPositionComponent, class EntityRegistryBase>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PositionPassengerRequestComponent>);
     /**
-     * @hash   -1304349036
      * @symbol  ?createSystem\@PopulateGlobalPassengersToPositionListSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

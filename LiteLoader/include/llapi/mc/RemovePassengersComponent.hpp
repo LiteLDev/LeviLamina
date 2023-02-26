@@ -32,7 +32,6 @@ public:
      */
     MCAPI struct RemovePassengersComponent & operator=(struct RemovePassengersComponent &&);
     /**
-     * @hash   -1856848132
      * @symbol  ??1RemovePassengersComponent\@\@QEAA\@XZ
      */
     MCAPI ~RemovePassengersComponent();

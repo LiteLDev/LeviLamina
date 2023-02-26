@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   788811310
      * @vftbl  2
      * @symbol  ?onSourceDestroyed\@BlockSourceHandle\@\@UEAAXAEAVBlockSource\@\@\@Z
      */

@@ -102,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -1645151512
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@RedStoneDustItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   -1107311945
      * @vftbl  132
      * @symbol  ?_useOn\@RedStoneDustItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */

@@ -36,7 +36,6 @@ public:
      */
     virtual ~SeaPickleFeature();
     /**
-     * @hash   1152612759
      * @vftbl  3
      * @symbol  ?place\@SeaPickleFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

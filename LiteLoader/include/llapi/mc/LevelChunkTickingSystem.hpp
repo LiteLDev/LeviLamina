@@ -38,7 +38,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   600971579
      * @vftbl  2
      * @symbol  ?tick\@LevelChunkTickingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
@@ -46,12 +45,10 @@ public:
 
 //private:
     /**
-     * @hash   758401682
      * @symbol  ?_determineLevelChunksToTick\@LevelChunkTickingSystem\@\@CAXAEBVActor\@\@AEAVBlockSource\@\@AEAVLoadedChunksComponent\@\@AEAV?$vector\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@2\@\@std\@\@3AEBUTick\@\@\@Z
      */
     MCAPI static void _determineLevelChunksToTick(class Actor const &, class BlockSource &, class LoadedChunksComponent &, std::vector<class std::shared_ptr<class LevelChunk>> &, std::vector<class std::shared_ptr<class LevelChunk>> &, struct Tick const &);
     /**
-     * @hash   691873362
      * @symbol  ?_tickLevelChunksAroundActor\@LevelChunkTickingSystem\@\@CAXAEAVActor\@\@AEAVBlockSource\@\@AEAVLoadedChunksComponent\@\@\@Z
      */
     MCAPI static void _tickLevelChunksAroundActor(class Actor &, class BlockSource &, class LoadedChunksComponent &);

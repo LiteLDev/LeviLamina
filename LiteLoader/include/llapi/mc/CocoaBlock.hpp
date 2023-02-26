@@ -156,25 +156,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1869716178
      * @vftbl  86
      * @symbol  ?onFertilized\@CocoaBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1053288151
      * @vftbl  88
      * @symbol  ?canBeFertilized\@CocoaBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   619868662
      * @vftbl  99
      * @symbol  ?neighborChanged\@CocoaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1573272426
      * @vftbl  103
      * @symbol  ?asItemInstance\@CocoaBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1394120589
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@CocoaBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -982721234
      * @vftbl  143
      * @symbol  ?getVisualShape\@CocoaBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -242,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   966000042
      * @vftbl  171
      * @symbol  ?tick\@CocoaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -517923289
      * @vftbl  172
      * @symbol  ?randomTick\@CocoaBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1079199308
      * @vftbl  178
      * @symbol  ?canSurvive\@CocoaBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,31 +261,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2061913358
      * @vftbl  187
      * @symbol  ?getResourceItem\@CocoaBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   538448922
      * @vftbl  188
      * @symbol  ?getResourceCount\@CocoaBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COCOABLOCK
     /**
-     * @hash   1298437347
      * @symbol  ?canBeSilkTouched\@CocoaBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -1204254894
      * @symbol  ??0CocoaBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CocoaBlock(std::string const &, int);
     /**
-     * @hash   1994412535
      * @symbol  ?isSupportedBy\@CocoaBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isSupportedBy(class Block const &);

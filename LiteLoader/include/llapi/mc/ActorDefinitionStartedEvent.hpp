@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   633571389
      * @symbol  ??1ActorDefinitionStartedEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionStartedEvent();

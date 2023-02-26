@@ -102,13 +102,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   2012154138
      * @vftbl  105
      * @symbol  ?fixupCommon\@ChemistryItem\@\@UEBAXAEAVItemStackBase\@\@\@Z
      */
     virtual void fixupCommon(class ItemStackBase &) const;
     /**
-     * @hash   285960996
      * @symbol  ?validate\@ChemistryItem\@\@SAXAEAVItemStackBase\@\@\@Z
      */
     MCAPI static void validate(class ItemStackBase &);

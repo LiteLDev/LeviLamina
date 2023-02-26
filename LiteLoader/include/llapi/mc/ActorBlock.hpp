@@ -156,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -502464118
      * @vftbl  99
      * @symbol  ?neighborChanged\@ActorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   1591787308
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@ActorBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -178,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   751121174
      * @vftbl  116
      * @symbol  ?triggerEvent\@ActorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
@@ -239,14 +236,12 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -553919930
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@ActorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORBLOCK
     /**
-     * @hash   1629183183
      * @symbol  ?canBeSilkTouched\@ActorBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
@@ -254,7 +249,6 @@ public:
 
 //protected:
     /**
-     * @hash   2036532652
      * @symbol  ??0ActorBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI ActorBlock(std::string const &, int, class Material const &);

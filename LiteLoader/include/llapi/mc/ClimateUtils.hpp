@@ -32,7 +32,6 @@ struct Parameter {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1021821575
      * @symbol  ?squareDistance\@ClimateUtils\@\@YA_JAEBV?$array\@UParameter\@ClimateUtils\@\@$06\@std\@\@AEBUTargetSpace\@1\@\@Z
      */
     MCAPI __int64 squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const &, struct ClimateUtils::TargetSpace const &);

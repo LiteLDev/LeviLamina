@@ -36,7 +36,6 @@ public:
      */
     virtual ~BarrelContainerValidation();
     /**
-     * @hash   943928952
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   1831882203
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -63,13 +61,11 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1116892485
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   101470223
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
@@ -80,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   730985404
      * @vftbl  9
      * @symbol  ?getContainerSize\@BarrelContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */

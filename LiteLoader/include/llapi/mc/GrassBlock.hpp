@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -1702373094
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@GrassBlock\@\@UEBA_NXZ
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1283562145
      * @vftbl  86
      * @symbol  ?onFertilized\@GrassBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -377512548
      * @vftbl  88
      * @symbol  ?canBeFertilized\@GrassBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -325373854
      * @vftbl  95
      * @symbol  ?tryToTill\@GrassBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -514901943
      * @vftbl  107
      * @symbol  ?calcVariant\@GrassBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVColor\@mce\@\@\@Z
      */
@@ -211,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1902610233
      * @vftbl  135
      * @symbol  ?getColor\@GrassBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -1890732941
      * @vftbl  136
      * @symbol  ?getColor\@GrassBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1798698954
      * @vftbl  172
      * @symbol  ?randomTick\@GrassBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,13 +251,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   201752156
      * @vftbl  177
      * @symbol  ?use\@GrassBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1525068421
      * @vftbl  184
      * @symbol  ?getMapColor\@GrassBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -276,37 +266,31 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   256323365
      * @vftbl  187
      * @symbol  ?getResourceItem\@GrassBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
     /**
-     * @hash   9596440
      * @symbol  ?waterSpreadCausesSpawn\@GrassBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -418200235
      * @symbol  ??0GrassBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GrassBlock(std::string const &, int);
     /**
-     * @hash   1338125811
      * @symbol  ?fertilize\@GrassBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandomize\@\@\@Z
      */
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
     /**
-     * @hash   377902255
      * @symbol  ?MIN_BRIGHTNESS\@GrassBlock\@\@2UBrightness\@\@B
      */
     MCAPI static struct Brightness const MIN_BRIGHTNESS;
 
 //private:
     /**
-     * @hash   -1678833167
      * @symbol  ?_canBeGrass\@GrassBlock\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;

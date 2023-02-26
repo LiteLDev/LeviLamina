@@ -24,6 +24,7 @@ public:
 
     Local<Value> getName();
     Local<Value> getPos();
+    Local<Value> getFeetPos();
     Local<Value> getBlockPos();
     Local<Value> getLastDeathPos();
     Local<Value> getRealName();

@@ -36,19 +36,16 @@ public:
      */
     virtual ~LightBlock();
     /**
-     * @hash   1305049805
      * @vftbl  5
      * @symbol  ?getCollisionShape\@LightBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   576745047
      * @vftbl  10
      * @symbol  ?getAABB\@LightBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1270044998
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@LightBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   444426390
      * @vftbl  22
      * @symbol  ?canProvideSupport\@LightBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -180,25 +176,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1585445194
      * @vftbl  83
      * @symbol  ?isFilteredOut\@LightBlock\@\@UEBA_NW4BlockRenderLayer\@\@\@Z
      */
     virtual bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
-     * @hash   -649966734
      * @vftbl  91
      * @symbol  ?mayPlace\@LightBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1670674585
      * @vftbl  92
      * @symbol  ?mayPlace\@LightBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1154009248
      * @vftbl  94
      * @symbol  ?tryToPlace\@LightBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEBUActorBlockSyncMessage\@\@\@Z
      */
@@ -214,13 +206,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -475949162
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@LightBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   253791585
      * @vftbl  114
      * @symbol  ?canBeBuiltOver\@LightBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
      */
@@ -246,19 +236,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1666954237
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@LightBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   790096636
      * @vftbl  152
      * @symbol  ?init\@LightBlock\@\@UEAAAEAVBlockLegacy\@\@XZ
      */
     virtual class BlockLegacy & init();
     /**
-     * @hash   -105406609
      * @vftbl  153
      * @symbol  ?getLightEmission\@LightBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
@@ -294,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   470403619
      * @vftbl  177
      * @symbol  ?use\@LightBlock\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -305,7 +291,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -424039858
      * @symbol  ??0LightBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LightBlock(std::string const &, int, class Material const &);

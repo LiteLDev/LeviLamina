@@ -37,7 +37,6 @@ public:
      */
     virtual ~LookAtBlockDefinition();
     /**
-     * @hash   157244886
      * @vftbl  1
      * @symbol  ?load\@LookAtBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

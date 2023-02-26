@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   1104028562
      * @vftbl  49
      * @symbol  ?isHandEquipped\@WarpedFungusOnAStickItem\@\@UEBA_NXZ
      */
@@ -73,19 +72,16 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -320585378
      * @vftbl  59
      * @symbol  ?requiresInteract\@WarpedFungusOnAStickItem\@\@UEBA_NXZ
      */
     virtual bool requiresInteract() const;
     /**
-     * @hash   -1167881698
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@WarpedFungusOnAStickItem\@\@UEBAHXZ
      */
     virtual int getEnchantSlot() const;
     /**
-     * @hash   2009797643
      * @vftbl  63
      * @symbol  ?getEnchantValue\@WarpedFungusOnAStickItem\@\@UEBAHXZ
      */
@@ -126,13 +122,11 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   643082493
      * @vftbl  93
      * @symbol  ?mineBlock\@WarpedFungusOnAStickItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @hash   -1561459316
      * @symbol  ??0WarpedFungusOnAStickItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WarpedFungusOnAStickItem(std::string const &, int);

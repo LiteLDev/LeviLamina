@@ -27,6 +27,9 @@
           "1": "プロトコルバージョンが一致しません。ターゲットバージョン: {}、現在のバージョン: {}。",
           "2": "サーバーがクラッシュする可能性があります。BDS バージョンに一致する LiteLoader を使用してください。"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
       }
     },
     "antiAbnormalItem": {

@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -120350214
      * @vftbl  0
      * @symbol  ?getJsonName\@CommandBlockDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~CommandBlockDescription();
     /**
-     * @hash   -1559524727
      * @vftbl  2
      * @symbol  ?deserializeData\@CommandBlockDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   1509697731
      * @vftbl  3
      * @symbol  ?serializeData\@CommandBlockDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

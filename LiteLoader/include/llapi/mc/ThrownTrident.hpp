@@ -32,13 +32,11 @@ public:
 
 public:
     /**
-     * @hash   -534995030
      * @vftbl  9
      * @symbol  ?outOfWorld\@ThrownTrident\@\@UEAAXXZ
      */
     virtual void outOfWorld();
     /**
-     * @hash   -61217933
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ThrownTrident\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -79,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   -155995784
      * @vftbl  90
      * @symbol  ?playerTouch\@ThrownTrident\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -115,13 +112,11 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1179418148
      * @vftbl  130
      * @symbol  ?isEnchanted\@ThrownTrident\@\@UEBA_NXZ
      */
     virtual bool isEnchanted() const;
     /**
-     * @hash   -1465353193
      * @vftbl  148
      * @symbol  ?despawn\@ThrownTrident\@\@UEAAXXZ
      */
@@ -162,19 +157,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   810424502
      * @vftbl  263
      * @symbol  ?_hurt\@ThrownTrident\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1037793814
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@ThrownTrident\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1567887287
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@ThrownTrident\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -190,19 +182,16 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -1604491804
      * @vftbl  278
      * @symbol  ?shoot\@ThrownTrident\@\@UEAAXAEBVVec3\@\@MM0\@Z
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @hash   40555415
      * @vftbl  280
      * @symbol  ?_getPickupItem\@ThrownTrident\@\@MEBA?AVItemStack\@\@XZ
      */
     virtual class ItemStack _getPickupItem() const;
     /**
-     * @hash   -2013403034
      * @symbol  ??0ThrownTrident\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ThrownTrident(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -211,17 +200,14 @@ public:
      */
     MCAPI void doNormalTick();
     /**
-     * @hash   -948208542
      * @symbol  ?getPickupItem\@ThrownTrident\@\@QEBA?AVItemStack\@\@XZ
      */
     MCAPI class ItemStack getPickupItem() const;
     /**
-     * @hash   -86808522
      * @symbol  ?returnWithLoyalty\@ThrownTrident\@\@QEAAXH\@Z
      */
     MCAPI void returnWithLoyalty(int);
     /**
-     * @hash   526565058
      * @symbol  ?setTridentItem\@ThrownTrident\@\@QEAAXAEBVItemStack\@\@\@Z
      */
     MCAPI void setTridentItem(class ItemStack const &);

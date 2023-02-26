@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   1572137169
      * @symbol  ??0SideBySideResult\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SideBySideResult(struct SideBySideResult &&);
     /**
-     * @hash   -666877604
      * @symbol  ??1SideBySideResult\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideResult();

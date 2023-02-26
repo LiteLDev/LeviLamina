@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1914966928
      * @symbol  ?createLavaResetFallDistanceSystem\@LavaResetFallDistanceSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createLavaResetFallDistanceSystem();

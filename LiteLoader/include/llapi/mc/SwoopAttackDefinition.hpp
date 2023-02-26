@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -1434028253
      * @symbol  ??0SwoopAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI SwoopAttackDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &) const;
     /**
-     * @hash   -1257635249
      * @symbol  ?buildSchema\@SwoopAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwoopAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);

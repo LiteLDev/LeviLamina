@@ -27,6 +27,7 @@ public:
     Local<Value> getType();
     Local<Value> getId();
     Local<Value> getPos();
+    Local<Value> getFeetPos();
     Local<Value> getBlockPos();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();

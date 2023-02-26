@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   2012334000
      * @vftbl  0
      * @symbol  ?getJsonName\@AttackDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~AttackDescription();
     /**
-     * @hash   646590403
      * @vftbl  2
      * @symbol  ?deserializeData\@AttackDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -766520707
      * @vftbl  3
      * @symbol  ?serializeData\@AttackDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

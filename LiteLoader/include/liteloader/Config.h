@@ -57,6 +57,7 @@ struct LLConfig {
     bool enablePermissionAPI = true;
     bool enableFixAbility = true;
     std::vector<std::string> outputFilterRegex = {};
+    std::map<string, string> resourcePackEncryptionMap = {};
 };
 
 struct LLRuntimeConfig {

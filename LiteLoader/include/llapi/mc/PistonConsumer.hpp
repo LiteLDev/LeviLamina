@@ -35,19 +35,16 @@ public:
      */
     virtual ~PistonConsumer();
     /**
-     * @hash   -393186331
      * @vftbl  6
      * @symbol  ?canConsumePowerAnyDirection\@PistonConsumer\@\@UEBA_NXZ
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
-     * @hash   -1997692163
      * @vftbl  11
      * @symbol  ?addSource\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @hash   -1595974017
      * @vftbl  12
      * @symbol  ?allowConnection\@PistonConsumer\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
      */
@@ -63,18 +60,15 @@ public:
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   -1928852969
      * @vftbl  23
      * @symbol  ?getCircuitComponentType\@PistonConsumer\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
-     * @hash   -785253621
      * @symbol  ??0PistonConsumer\@\@QEAA\@XZ
      */
     MCAPI PistonConsumer();
     /**
-     * @hash   -6837671
      * @symbol  ?setBlockPowerFace\@PistonConsumer\@\@QEAAXE\@Z
      */
     MCAPI void setBlockPowerFace(unsigned char);

@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -1151417976
      * @symbol  ?createSetPositionRequestSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
     /**
-     * @hash   495463354
      * @symbol  ?createSetPreviousPosRotSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
     /**
-     * @hash   -1321445830
      * @symbol  ?createSetRotationLock\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetRotationLock();

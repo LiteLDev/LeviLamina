@@ -36,13 +36,11 @@ public:
      */
     virtual ~NBStartPiece();
     /**
-     * @hash   -337320773
      * @vftbl  2
      * @symbol  ?getType\@NBStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   860530141
      * @symbol  ??0NBStartPiece\@\@QEAA\@AEAVRandom\@\@HH\@Z
      */
     MCAPI NBStartPiece(class Random &, int, int);

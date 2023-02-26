@@ -35,7 +35,6 @@ public:
      */
     virtual ~BeaconContainerScreenValidator();
     /**
-     * @hash   485207157
      * @symbol  ??0BeaconContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BeaconContainerScreenValidator();

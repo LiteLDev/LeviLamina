@@ -33,19 +33,16 @@ public:
      */
     virtual ~ServerMetricsImpl();
     /**
-     * @hash   -712161291
      * @vftbl  1
      * @symbol  ?sendPeriodicMetrics\@ServerMetricsImpl\@\@UEAAXAEAVServerInstance\@\@\@Z
      */
     virtual void sendPeriodicMetrics(class ServerInstance &);
     /**
-     * @hash   -784991199
      * @vftbl  2
      * @symbol  ?sendServerTickTime\@ServerMetricsImpl\@\@UEAAXAEBV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
     virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     /**
-     * @hash   720907647
      * @vftbl  3
      * @symbol  ?sendChunkLoadTelemetryData\@ServerMetricsImpl\@\@UEAAXXZ
      */
@@ -81,14 +78,12 @@ public:
      */
     virtual void const * _Get() const;
     /**
-     * @hash   791442546
      * @symbol  ??0ServerMetricsImpl\@\@QEAA\@PEAVServerCommunicationInterface\@\@\@Z
      */
     MCAPI ServerMetricsImpl(class ServerCommunicationInterface *);
 
 //private:
     /**
-     * @hash   -892091925
      * @symbol  ?sendPeriodicMetricsInternal\@ServerMetricsImpl\@\@AEAAXAEAVServerInstance\@\@\@Z
      */
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance &);

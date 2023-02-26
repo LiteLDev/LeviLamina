@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsAvoidingMobsTest();
     /**
-     * @hash   -50449917
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsAvoidingMobsTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1058413471
      * @vftbl  4
      * @symbol  ?getName\@ActorIsAvoidingMobsTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

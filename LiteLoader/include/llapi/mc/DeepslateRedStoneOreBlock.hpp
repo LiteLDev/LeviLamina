@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   60313486
      * @vftbl  103
      * @symbol  ?asItemInstance\@DeepslateRedStoneOreBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -212,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1061844478
      * @vftbl  171
      * @symbol  ?tick\@DeepslateRedStoneOreBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -228,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   911712227
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@DeepslateRedStoneOreBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1777152612
      * @vftbl  193
      * @symbol  ?_lightUpBlock\@DeepslateRedStoneOreBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   1196793237
      * @symbol  ??0DeepslateRedStoneOreBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI DeepslateRedStoneOreBlock(std::string const &, int, bool);

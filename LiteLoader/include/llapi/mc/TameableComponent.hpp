@@ -29,29 +29,24 @@ public:
 
 public:
     /**
-     * @hash   -1693337110
      * @symbol  ??0TameableComponent\@\@QEAA\@XZ
      */
     MCAPI TameableComponent();
     /**
-     * @hash   -1640679281
      * @symbol  ?getInteraction\@TameableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   1713656375
      * @symbol  ?tame\@TameableComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI void tame(class Actor &, class Player &);
 
 //private:
     /**
-     * @hash   -112599958
      * @symbol  ?_attemptToTame\@TameableComponent\@\@AEAA_NAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     /**
-     * @hash   -2122506926
      * @symbol  ?_canTame\@TameableComponent\@\@AEAA_NAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool _canTame(class Actor &, class Player &);

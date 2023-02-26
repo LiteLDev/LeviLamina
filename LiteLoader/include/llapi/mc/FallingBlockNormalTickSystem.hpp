@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   -1395337712
      * @symbol  ?createSystem\@FallingBlockNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   410774132
      * @symbol  ?_doFallingBlockNormalTickSystem\@FallingBlockNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVITickDelegate\@\@\@Z
      */
     MCAPI static void _doFallingBlockNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &, class ITickDelegate &);

@@ -40,7 +40,6 @@ public:
      */
     virtual enum class EventResult onEvent(struct ActorRemoveEffectEvent const &);
     /**
-     * @hash   -666758496
      * @vftbl  2
      * @symbol  ?onEvent\@?$EventListenerDispatcher\@VActorEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
      */
@@ -166,7 +165,6 @@ public:
      */
     virtual void __unk_vfn_26();
     /**
-     * @hash   2065594722
      * @vftbl  27
      * @symbol  ?onEvent\@NetheriteArmorEquippedListener\@\@UEAA?AW4EventResult\@\@AEBUActorEquippedArmorEvent\@\@\@Z
      */

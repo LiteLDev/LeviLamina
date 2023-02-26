@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -240205476
      * @symbol  ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
      */
     MCAPI void cancel(enum class ResourceLoadType);

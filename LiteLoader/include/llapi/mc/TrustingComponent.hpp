@@ -29,12 +29,10 @@ public:
 
 public:
     /**
-     * @hash   2128078783
      * @symbol  ??0TrustingComponent\@\@QEAA\@XZ
      */
     MCAPI TrustingComponent();
     /**
-     * @hash   156065417
      * @symbol  ?getInteraction\@TrustingComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);

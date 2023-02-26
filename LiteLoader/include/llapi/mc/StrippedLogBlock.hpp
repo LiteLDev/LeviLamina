@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   261380720
      * @vftbl  146
      * @symbol  ?getVariant\@StrippedLogBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -222,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1615453858
      * @vftbl  187
      * @symbol  ?getResourceItem\@StrippedLogBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   2076866887
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StrippedLogBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   909332830
      * @symbol  ??0StrippedLogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StrippedLogBlock(std::string const &, int);

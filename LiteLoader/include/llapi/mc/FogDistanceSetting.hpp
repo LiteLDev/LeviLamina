@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -856065767
      * @symbol  ?ZERO_SETTING\@FogDistanceSetting\@\@2U1\@B
      */
     MCAPI static struct FogDistanceSetting const ZERO_SETTING;

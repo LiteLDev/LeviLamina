@@ -36,7 +36,6 @@ public:
      */
     virtual ~TorchBlock();
     /**
-     * @hash   678923889
      * @vftbl  10
      * @symbol  ?getAABB\@TorchBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   2034162535
      * @vftbl  62
      * @symbol  ?canContainLiquid\@TorchBlock\@\@UEBA_NXZ
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1302760447
      * @vftbl  92
      * @symbol  ?mayPlace\@TorchBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1671895965
      * @vftbl  99
      * @symbol  ?neighborChanged\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -257129520
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@TorchBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -211,19 +206,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1080770087
      * @vftbl  132
      * @symbol  ?getIconYOffset\@TorchBlock\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @hash   -918541189
      * @vftbl  143
      * @symbol  ?getVisualShape\@TorchBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   609069606
      * @vftbl  151
      * @symbol  ?animateTick\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -249,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -446197149
      * @vftbl  168
      * @symbol  ?onPlace\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -260,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1621037241
      * @vftbl  171
      * @symbol  ?tick\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -271,13 +261,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1822346625
      * @vftbl  178
      * @symbol  ?canSurvive\@TorchBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1183725270
      * @vftbl  180
      * @symbol  ?getRenderLayer\@TorchBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -289,30 +277,25 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TORCHBLOCK
     /**
-     * @hash   517328182
      * @symbol  ?canBeSilkTouched\@TorchBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1638793246
      * @symbol  ?waterSpreadCausesSpawn\@TorchBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   301183410
      * @symbol  ??0TorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4MaterialType\@\@\@Z
      */
     MCAPI TorchBlock(std::string const &, int, enum class MaterialType);
 
 //protected:
     /**
-     * @hash   -20773049
      * @symbol  ?_flameParticlePos\@TorchBlock\@\@IEBA?AVVec3\@\@AEBVBlockPos\@\@W4TorchFacing\@\@\@Z
      */
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum class TorchFacing) const;
     /**
-     * @hash   2035700067
      * @symbol  ?canBePlacedOn\@TorchBlock\@\@IEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
@@ -323,12 +306,10 @@ protected:
 
 private:
     /**
-     * @hash   -1680795097
      * @symbol  ?DATA_FROM_FACING\@TorchBlock\@\@0QBW4TorchFacing\@\@B
      */
     MCAPI static enum class TorchFacing const DATA_FROM_FACING[];
     /**
-     * @hash   367094501
      * @symbol  ?FACING_FROM_DATA\@TorchBlock\@\@0QBGB
      */
     MCAPI static unsigned short const FACING_FROM_DATA[];

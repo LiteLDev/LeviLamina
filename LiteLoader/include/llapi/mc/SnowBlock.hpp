@@ -36,7 +36,6 @@ public:
      */
     virtual ~SnowBlock();
     /**
-     * @hash   -606772016
      * @vftbl  5
      * @symbol  ?getCollisionShape\@SnowBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -172,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_123();
     /**
-     * @hash   253030368
      * @vftbl  124
      * @symbol  ?calcGroundFriction\@SnowBlock\@\@UEBAMAEBUIMobMovementProxy\@\@AEBVBlockPos\@\@\@Z
      */
@@ -228,26 +226,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1949913512
      * @vftbl  187
      * @symbol  ?getResourceItem\@SnowBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1545479792
      * @vftbl  188
      * @symbol  ?getResourceCount\@SnowBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBLOCK
     /**
-     * @hash   1960733717
      * @symbol  ?waterSpreadCausesSpawn\@SnowBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -848509640
      * @symbol  ??0SnowBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SnowBlock(std::string const &, int);

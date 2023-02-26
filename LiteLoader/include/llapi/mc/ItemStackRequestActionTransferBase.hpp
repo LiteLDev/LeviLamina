@@ -50,29 +50,24 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1225182290
      * @vftbl  4
      * @symbol  ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   -1466289466
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1475508233
      * @symbol  ?getAmount\@ItemStackRequestActionTransferBase\@\@QEBAEXZ
      */
     MCAPI unsigned char getAmount() const;
     /**
-     * @hash   1138506242
      * @symbol  ?getDst\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     /**
-     * @hash   -1036984048
      * @symbol  ?getSrc\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;

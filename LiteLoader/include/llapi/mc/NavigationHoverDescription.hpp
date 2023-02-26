@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   860162800
      * @vftbl  0
      * @symbol  ?getJsonName\@NavigationHoverDescription\@\@UEBAPEBDXZ
      */

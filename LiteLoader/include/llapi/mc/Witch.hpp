@@ -97,19 +97,16 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1750404622
      * @vftbl  114
      * @symbol  ?canAttack\@Witch\@\@UEBA_NPEAVActor\@\@_N\@Z
      */
     virtual bool canAttack(class Actor *, bool) const;
     /**
-     * @hash   1705591307
      * @vftbl  118
      * @symbol  ?performRangedAttack\@Witch\@\@UEAAXAEAVActor\@\@M\@Z
      */
     virtual void performRangedAttack(class Actor &, float);
     /**
-     * @hash   -479569569
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Witch\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -145,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1336785937
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Witch\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -161,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   1404966174
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Witch\@\@EEAAXXZ
      */
@@ -177,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   801873284
      * @vftbl  291
      * @symbol  ?aiStep\@Witch\@\@UEAAXXZ
      */
@@ -193,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -88986359
      * @vftbl  331
      * @symbol  ?getDamageAfterEnchantReduction\@Witch\@\@MEBAMAEBVActorDamageSource\@\@M\@Z
      */
@@ -204,12 +197,10 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1242088765
      * @symbol  ??0Witch\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1951054067
      * @symbol  ?preAiStep\@Witch\@\@QEAAXXZ
      */
     MCAPI void preAiStep();
@@ -218,12 +209,10 @@ public:
 
 private:
     /**
-     * @hash   1609970062
      * @symbol  ?SPEED_MODIFIER_DRINKING\@Witch\@\@0V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
     /**
-     * @hash   -1168158269
      * @symbol  ?SPEED_MODIFIER_DRINKING_UUID\@Witch\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;

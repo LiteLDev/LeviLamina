@@ -30,22 +30,18 @@ public:
 
 public:
     /**
-     * @hash   1877733441
      * @symbol  ??0HealableDefinition\@\@QEAA\@XZ
      */
     MCAPI HealableDefinition();
     /**
-     * @hash   -2030620950
      * @symbol  ?addFeedItem\@HealableDefinition\@\@QEAAXAEBUFeedItem\@\@\@Z
      */
     MCAPI void addFeedItem(struct FeedItem const &);
     /**
-     * @hash   202831166
      * @symbol  ?addFeedItemByName\@HealableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addFeedItemByName(std::string const &);
     /**
-     * @hash   1102040534
      * @symbol  ?buildSchema\@HealableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHealableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition>> &);

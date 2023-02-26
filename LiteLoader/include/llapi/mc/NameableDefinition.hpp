@@ -30,27 +30,22 @@ public:
 
 public:
     /**
-     * @hash   -1025181644
      * @symbol  ??0NameableDefinition\@\@QEAA\@XZ
      */
     MCAPI NameableDefinition();
     /**
-     * @hash   -1052763616
      * @symbol  ?addNameAction\@NameableDefinition\@\@QEAAXAEBUNameAction\@\@\@Z
      */
     MCAPI void addNameAction(struct NameAction const &);
     /**
-     * @hash   1699358515
      * @symbol  ?initialize\@NameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVNameableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class NameableComponent &) const;
     /**
-     * @hash   -662519694
      * @symbol  ??1NameableDefinition\@\@QEAA\@XZ
      */
     MCAPI ~NameableDefinition();
     /**
-     * @hash   -1429309386
      * @symbol  ?buildSchema\@NameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VNameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>> &);

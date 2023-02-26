@@ -118,94 +118,78 @@ public:
      */
     virtual ~Tag();
     /**
-     * @hash   234628663
      * @vftbl  1
      * @symbol  ?deleteChildren\@Tag\@\@UEAAXXZ
      */
     virtual void deleteChildren();
     /**
-     * @hash   -775383290
      * @vftbl  2
      * @symbol  ?write\@StringTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
     virtual void write(class IDataOutput &) const = 0;
     /**
-     * @hash   -57392347
      * @vftbl  3
      * @symbol  ?load\@StringTag\@\@UEAAXAEAVIDataInput\@\@\@Z
      */
     virtual void load(class IDataInput &) = 0;
     /**
-     * @hash   -1440030905
      * @vftbl  4
      * @symbol  ?toString\@StringTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string toString() const = 0;
     /**
-     * @hash   -1252022612
      * @vftbl  5
      * @symbol  ?getId\@StringTag\@\@UEBA?AW4Type\@Tag\@\@XZ
      */
     virtual enum class Tag::Type getId() const = 0;
     /**
-     * @hash   381625464
      * @vftbl  6
      * @symbol  ?equals\@Tag\@\@UEBA_NAEBV1\@\@Z
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @hash   667091044
      * @vftbl  7
      * @symbol  ?print\@Tag\@\@UEBAXAEAVPrintStream\@\@\@Z
      */
     virtual void print(class PrintStream &) const;
     /**
-     * @hash   -997263092
      * @vftbl  8
      * @symbol  ?print\@Tag\@\@UEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVPrintStream\@\@\@Z
      */
     virtual void print(std::string const &, class PrintStream &) const;
     /**
-     * @hash   -1996453079
      * @vftbl  9
      * @symbol  ?copy\@StringTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class Tag> copy() const = 0;
     /**
-     * @hash   1797337359
      * @vftbl  10
      * @symbol  ?hash\@StringTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const = 0;
     /**
-     * @hash   -136136743
      * @symbol  ?NullString\@Tag\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NullString;
     /**
-     * @hash   1424133746
      * @symbol  ?getTagName\@Tag\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@1\@\@Z
      */
     MCAPI static std::string getTagName(enum class Tag::Type);
     /**
-     * @hash   -488137656
      * @symbol  ?newTag\@Tag\@\@SA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@W4Type\@1\@\@Z
      */
     MCAPI static std::unique_ptr<class Tag> newTag(enum class Tag::Type);
     /**
-     * @hash   1172360526
      * @symbol  ?readNamedTag\@Tag\@\@SA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@AEAVIDataInput\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
     /**
-     * @hash   -1442731897
      * @symbol  ?writeNamedTag\@Tag\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV1\@AEAVIDataOutput\@\@\@Z
      */
     MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
 
 //protected:
     /**
-     * @hash   -284614205
      * @symbol  ??0Tag\@\@IEAA\@XZ
      */
     MCAPI Tag();

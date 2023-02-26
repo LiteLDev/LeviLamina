@@ -34,7 +34,6 @@ public:
 
 public:
     /**
-     * @hash   -276244457
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Zombie\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -110,7 +109,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -482701311
      * @vftbl  190
      * @symbol  ?canPickupItem\@Zombie\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
@@ -161,7 +159,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1669212245
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Zombie\@\@UEAA_N_N\@Z
      */
@@ -177,7 +174,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1778603766
      * @vftbl  313
      * @symbol  ?getArmorValue\@Zombie\@\@MEBAHXZ
      */
@@ -188,12 +184,10 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   2107886802
      * @symbol  ??0Zombie\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -707518427
      * @symbol  ?setZombieType\@Zombie\@\@QEAAXW4ZombieType\@1\@\@Z
      */
     MCAPI void setZombieType(enum class Zombie::ZombieType);
@@ -202,12 +196,10 @@ public:
 
 protected:
     /**
-     * @hash   -1108818271
      * @symbol  ?SPAWN_BONUS_UUID\@Zombie\@\@1VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
     /**
-     * @hash   1857206091
      * @symbol  ?SPAWN_REINFORCEMENTS_CHANCE\@Zombie\@\@1VAttribute\@\@B
      */
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;

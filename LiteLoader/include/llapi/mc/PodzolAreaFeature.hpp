@@ -36,7 +36,6 @@ public:
      */
     virtual ~PodzolAreaFeature();
     /**
-     * @hash   1821332849
      * @vftbl  3
      * @symbol  ?place\@PodzolAreaFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

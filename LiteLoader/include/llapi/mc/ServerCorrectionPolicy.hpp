@@ -36,7 +36,6 @@ public:
      */
     virtual ~ServerCorrectionPolicy();
     /**
-     * @hash   -1911579491
      * @vftbl  3
      * @symbol  ?shouldCorrectMovement\@ServerCorrectionPolicy\@\@UEAA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
      */

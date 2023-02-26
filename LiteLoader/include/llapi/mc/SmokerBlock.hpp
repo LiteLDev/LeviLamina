@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   558043760
      * @vftbl  103
      * @symbol  ?asItemInstance\@SmokerBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -217,7 +216,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1024001039
      * @vftbl  177
      * @symbol  ?use\@SmokerBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -228,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1849143496
      * @vftbl  187
      * @symbol  ?getResourceItem\@SmokerBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1554585025
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@SmokerBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -175016765
      * @symbol  ??0SmokerBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI SmokerBlock(std::string const &, int, bool);

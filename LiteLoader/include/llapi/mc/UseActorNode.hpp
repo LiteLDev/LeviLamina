@@ -34,13 +34,11 @@ public:
      */
     virtual ~UseActorNode();
     /**
-     * @hash   -1821496707
      * @vftbl  1
      * @symbol  ?tick\@UseActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1847977612
      * @symbol  ??0UseActorNode\@\@QEAA\@XZ
      */
     MCAPI UseActorNode();

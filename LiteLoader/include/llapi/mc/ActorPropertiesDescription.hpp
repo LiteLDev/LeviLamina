@@ -35,18 +35,15 @@ public:
      */
     virtual ~ActorPropertiesDescription();
     /**
-     * @hash   -715420960
      * @vftbl  1
      * @symbol  ?getJsonName\@ActorPropertiesDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @hash   1346514806
      * @symbol  ??4ActorPropertiesDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
     /**
-     * @hash   -1430262353
      * @symbol  ?parse\@ActorPropertiesDescription\@\@QEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void parse(class Json::Value &, class SemVersion const &);

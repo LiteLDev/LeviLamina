@@ -129,7 +129,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   250106592
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@ReinforcedDeepslateBlock\@\@UEBA_NXZ
      */
@@ -221,13 +220,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REINFORCEDDEEPSLATEBLOCK
     /**
-     * @hash   877336061
      * @symbol  ?canBeSilkTouched\@ReinforcedDeepslateBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -1052030865
      * @symbol  ??0ReinforcedDeepslateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ReinforcedDeepslateBlock(std::string const &, int);

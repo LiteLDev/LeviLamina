@@ -36,13 +36,11 @@ public:
      */
     virtual ~GetTopSolidBlockCommand();
     /**
-     * @hash   -2077207415
      * @vftbl  1
      * @symbol  ?execute\@GetTopSolidBlockCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1636085568
      * @symbol  ?setup\@GetTopSolidBlockCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

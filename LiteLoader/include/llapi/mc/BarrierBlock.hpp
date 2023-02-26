@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1197257149
      * @vftbl  25
      * @symbol  ?canConnect\@BarrierBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1344212914
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BarrierBlock\@\@UEBA_NXZ
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1226331174
      * @vftbl  141
      * @symbol  ?getShadeBrightness\@BarrierBlock\@\@UEBAMAEBVBlock\@\@\@Z
      */
@@ -234,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1524955860
      * @symbol  ??0BarrierBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BarrierBlock(std::string const &, int);

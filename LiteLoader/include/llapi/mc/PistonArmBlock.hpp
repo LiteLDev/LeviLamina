@@ -37,13 +37,11 @@ public:
      */
     virtual ~PistonArmBlock();
     /**
-     * @hash   -1892719680
      * @vftbl  5
      * @symbol  ?getCollisionShape\@PistonArmBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -1723631821
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@PistonArmBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -54,7 +52,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1090486295
      * @vftbl  22
      * @symbol  ?canProvideSupport\@PistonArmBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -165,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1325938274
      * @vftbl  62
      * @symbol  ?canContainLiquid\@PistonArmBlock\@\@UEBA_NXZ
      */
@@ -181,25 +177,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -626707167
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@PistonArmBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   1049350988
      * @vftbl  99
      * @symbol  ?neighborChanged\@PistonArmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -1047320537
      * @vftbl  100
      * @symbol  ?getSecondPart\@PistonArmBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @hash   -1439864242
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@PistonArmBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -210,7 +202,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   -394431024
      * @vftbl  103
      * @symbol  ?asItemInstance\@PistonArmBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -266,7 +257,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1792180176
      * @vftbl  171
      * @symbol  ?tick\@PistonArmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -277,13 +267,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1520343468
      * @vftbl  175
      * @symbol  ?clip\@PistonArmBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
-     * @hash   1372154358
      * @vftbl  178
      * @symbol  ?canSurvive\@PistonArmBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -294,27 +282,23 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -345355208
      * @vftbl  187
      * @symbol  ?getResourceItem\@PistonArmBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
     /**
-     * @hash   625667780
      * @symbol  ?canBeSilkTouched\@PistonArmBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -1004748129
      * @symbol  ??0PistonArmBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4Type\@PistonBlock\@\@\@Z
      */
     MCAPI PistonArmBlock(std::string const &, int, enum class PistonBlock::Type);
 
 //private:
     /**
-     * @hash   -1429474438
      * @symbol  ?_getCollisions\@PistonArmBlock\@\@AEBAXAEAVAABB\@\@00E\@Z
      */
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;

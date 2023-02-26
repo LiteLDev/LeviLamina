@@ -132,13 +132,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1817793042
      * @vftbl  263
      * @symbol  ?_hurt\@Pig\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1187725908
      * @vftbl  268
      * @symbol  ?_playStepSound\@Pig\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -174,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   386604362
      * @symbol  ??0Pig\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Pig(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

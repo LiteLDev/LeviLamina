@@ -35,13 +35,11 @@ public:
      */
     virtual ~CommandFunctionEntry();
     /**
-     * @hash   857922337
      * @vftbl  1
      * @symbol  ?execute\@CommandFunctionEntry\@\@UEAAXAEAVFunctionManager\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
      */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
-     * @hash   1336771674
      * @symbol  ??0CommandFunctionEntry\@\@QEAA\@V?$unique_ptr\@VCommand\@\@U?$default_delete\@VCommand\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);

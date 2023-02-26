@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   2061154053
      * @symbol  ??0BlockRotationComponent\@\@QEAA\@AEBVVec3\@\@\@Z
      */
     MCAPI BlockRotationComponent(class Vec3 const &);
     /**
-     * @hash   170291090
      * @symbol  ?setRotationDegrees\@BlockRotationComponent\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void setRotationDegrees(class Vec3 const &);

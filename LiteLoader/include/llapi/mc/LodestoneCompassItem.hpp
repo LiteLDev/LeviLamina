@@ -102,29 +102,24 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1794844369
      * @vftbl  120
      * @symbol  ?getAnimationFrameFor\@LodestoneCompassItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @hash   -849627342
      * @vftbl  132
      * @symbol  ?_useOn\@LodestoneCompassItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -1102389950
      * @symbol  ??0LodestoneCompassItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI LodestoneCompassItem(std::string const &, int);
     /**
-     * @hash   47160933
      * @symbol  ?getPositionTrackingId\@LodestoneCompassItem\@\@SA?AVPositionTrackingId\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     /**
-     * @hash   1185922961
      * @symbol  ?linkCompassToLodestone\@LodestoneCompassItem\@\@SA_NAEAVItemStack\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);

@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -603149158
      * @symbol  ??1MesaSurfaceAttributes\@\@QEAA\@XZ
      */
     MCAPI ~MesaSurfaceAttributes();

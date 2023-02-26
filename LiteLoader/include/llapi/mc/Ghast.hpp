@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   1801634293
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@Ghast\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -133,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1478888935
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Ghast\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -144,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1778576785
      * @vftbl  263
      * @symbol  ?_hurt\@Ghast\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -175,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -574631188
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Ghast\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -186,13 +182,11 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   105770071
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Ghast\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @hash   1360943341
      * @symbol  ??0Ghast\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Ghast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

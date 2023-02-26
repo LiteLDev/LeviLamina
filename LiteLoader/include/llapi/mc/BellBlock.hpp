@@ -36,13 +36,11 @@ public:
      */
     virtual ~BellBlock();
     /**
-     * @hash   -442241558
      * @vftbl  10
      * @symbol  ?getAABB\@BellBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1991680939
      * @vftbl  15
      * @symbol  ?onProjectileHit\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
@@ -53,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   1717130161
      * @vftbl  25
      * @symbol  ?canConnect\@BellBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -164,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1206515838
      * @vftbl  62
      * @symbol  ?canContainLiquid\@BellBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   650120163
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@BellBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -181,13 +176,11 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   443351221
      * @vftbl  76
      * @symbol  ?movedByPiston\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1374445826
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -198,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2124540052
      * @vftbl  99
      * @symbol  ?neighborChanged\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -209,13 +201,11 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1683043593
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@BellBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   1156265140
      * @vftbl  113
      * @symbol  ?entityInside\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -241,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -641919340
      * @vftbl  143
      * @symbol  ?getVisualShape\@BellBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -267,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1161053446
      * @vftbl  168
      * @symbol  ?onPlace\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -278,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -390531088
      * @vftbl  171
      * @symbol  ?tick\@BellBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -289,13 +276,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -966014417
      * @vftbl  177
      * @symbol  ?use\@BellBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   1633407926
      * @vftbl  178
      * @symbol  ?canSurvive\@BellBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -306,47 +291,39 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1281860847
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@BellBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCK
     /**
-     * @hash   896494451
      * @symbol  ?isInteractiveBlock\@BellBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -190767416
      * @symbol  ??0BellBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BellBlock(std::string const &, int);
     /**
-     * @hash   -1694563641
      * @symbol  ?hasValidAttachment\@BellBlock\@\@QEBA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool hasValidAttachment(class Block const &, class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
-     * @hash   2023194402
      * @symbol  ?_determineAttachment\@BellBlock\@\@AEBAAEBVBlock\@\@AEAVActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   381745000
      * @symbol  ?_getItemId\@BellBlock\@\@AEBAFAEBVBlockSource\@\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
      */
     MCAPI short _getItemId(class BlockSource const &, class gsl::basic_string_span<char const, -1>) const;
     /**
-     * @hash   156009994
      * @symbol  ?_getShape\@BellBlock\@\@AEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
      */
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
     /**
-     * @hash   1538796493
      * @symbol  ?_sendBellUsedEventToClient\@BellBlock\@\@AEBAXAEBVBlockSource\@\@AEBVActor\@\@\@Z
      */
     MCAPI void _sendBellUsedEventToClient(class BlockSource const &, class Actor const &) const;

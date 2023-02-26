@@ -36,7 +36,6 @@ public:
      */
     virtual ~WebBlock();
     /**
-     * @hash   1614503369
      * @vftbl  10
      * @symbol  ?getAABB\@WebBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -1056022077
      * @vftbl  113
      * @symbol  ?entityInside\@WebBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -198,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1318297543
      * @vftbl  161
      * @symbol  ?_addHardCodedBlockComponents\@WebBlock\@\@UEAAXXZ
      */
@@ -234,26 +231,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1552963827
      * @vftbl  186
      * @symbol  ?playerDestroy\@WebBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1782446151
      * @vftbl  187
      * @symbol  ?getResourceItem\@WebBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBBLOCK
     /**
-     * @hash   -1937594762
      * @symbol  ?waterSpreadCausesSpawn\@WebBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -1143004761
      * @symbol  ??0WebBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI WebBlock(std::string const &, int);

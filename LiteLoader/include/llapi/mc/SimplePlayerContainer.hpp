@@ -36,7 +36,6 @@ public:
      */
     virtual ~SimplePlayerContainer();
     /**
-     * @hash   -1037380557
      * @vftbl  9
      * @symbol  ?setItem\@SimplePlayerContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
@@ -77,7 +76,6 @@ public:
      */
     virtual void _Delete_this(bool);
     /**
-     * @hash   -437481453
      * @symbol  ??0SimplePlayerContainer\@\@QEAA\@AEAVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHW4ContainerType\@\@\@Z
      */
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum class ContainerType);

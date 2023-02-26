@@ -38,36 +38,30 @@ public:
      */
     virtual ~ActorEventPacket();
     /**
-     * @hash   1220778993
      * @vftbl  1
      * @symbol  ?getId\@ActorEventPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -2028451170
      * @vftbl  2
      * @symbol  ?getName\@ActorEventPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -46099127
      * @vftbl  3
      * @symbol  ?write\@ActorEventPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1393275047
      * @vftbl  6
      * @symbol  ?_read\@ActorEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1360663543
      * @symbol  ??0ActorEventPacket\@\@QEAA\@XZ
      */
     MCAPI ActorEventPacket();
     /**
-     * @hash   1578270680
      * @symbol  ??0ActorEventPacket\@\@QEAA\@VActorRuntimeID\@\@W4ActorEvent\@\@H\@Z
      */
     MCAPI ActorEventPacket(class ActorRuntimeID, enum class ActorEvent, int);

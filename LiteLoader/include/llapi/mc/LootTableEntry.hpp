@@ -31,13 +31,11 @@ public:
 
 public:
     /**
-     * @hash   -1128711138
      * @vftbl  0
      * @symbol  ?_createItem\@LootTableEntry\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /**
-     * @hash   1913669773
      * @symbol  ?deserialize\@LootTableEntry\@\@SA?AV?$unique_ptr\@VLootPoolEntry\@\@U?$default_delete\@VLootPoolEntry\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value);

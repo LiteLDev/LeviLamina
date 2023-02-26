@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1612885493
      * @symbol  ??0CommandArea\@\@QEAA\@V?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
@@ -41,7 +40,6 @@ public:
      */
     MCAPI class BlockSource const & getDimensionBlockSource() const;
     /**
-     * @hash   1971547684
      * @symbol  ??1CommandArea\@\@QEAA\@XZ
      */
     MCAPI ~CommandArea();

@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestBiomeHumid();
     /**
-     * @hash   657012583
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestBiomeHumid\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1621954795
      * @vftbl  4
      * @symbol  ?getName\@FilterTestBiomeHumid\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

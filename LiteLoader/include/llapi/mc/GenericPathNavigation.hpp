@@ -36,31 +36,26 @@ public:
      */
     virtual ~GenericPathNavigation();
     /**
-     * @hash   -1587760405
      * @vftbl  1
      * @symbol  ?initializeInternal\@GenericPathNavigation\@\@UEAAXAEAVMob\@\@PEAUNavigationDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
-     * @hash   -1167294810
      * @vftbl  2
      * @symbol  ?tick\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @hash   441417456
      * @vftbl  3
      * @symbol  ?getTempMobPos\@GenericPathNavigation\@\@MEBA?AVVec3\@\@AEBVMob\@\@\@Z
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
-     * @hash   -115888037
      * @vftbl  9
      * @symbol  ?stop\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
-     * @hash   -2019036137
      * @vftbl  12
      * @symbol  ?updatePath\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */

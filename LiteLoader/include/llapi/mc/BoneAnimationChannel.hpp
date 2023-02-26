@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   2038873375
      * @symbol  ?addKeyFrame\@BoneAnimationChannel\@\@QEAAAEAVKeyFrameTransform\@\@M\@Z
      */
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     /**
-     * @hash   75718291
      * @symbol  ?sortKeyFrames\@BoneAnimationChannel\@\@QEAAXXZ
      */
     MCAPI void sortKeyFrames();

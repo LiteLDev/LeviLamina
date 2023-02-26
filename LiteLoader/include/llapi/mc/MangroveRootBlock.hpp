@@ -39,7 +39,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -50495527
      * @vftbl  25
      * @symbol  ?canConnect\@MangroveRootBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -150,7 +149,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -816203658
      * @vftbl  62
      * @symbol  ?canContainLiquid\@MangroveRootBlock\@\@UEBA_NXZ
      */
@@ -226,7 +224,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   465319961
      * @symbol  ??0MangroveRootBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI MangroveRootBlock(std::string const &, int, class Material const &);

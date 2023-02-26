@@ -36,7 +36,6 @@ public:
      */
     virtual ~BushBlock();
     /**
-     * @hash   -1615358331
      * @vftbl  10
      * @symbol  ?getAABB\@BushBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -162,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1148089341
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@BushBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1745263913
      * @vftbl  99
      * @symbol  ?neighborChanged\@BushBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -224,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   573767467
      * @vftbl  171
      * @symbol  ?tick\@BushBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -235,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1566632139
      * @vftbl  178
      * @symbol  ?canSurvive\@BushBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -246,25 +241,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   355787573
      * @vftbl  193
      * @symbol  ?checkAlive\@BushBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUSHBLOCK
     /**
-     * @hash   -1196644534
      * @symbol  ?waterSpreadCausesSpawn\@BushBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   1425463372
      * @symbol  ??0BushBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI BushBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   1303152921
      * @symbol  ?growCrops\@BushBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4FertilizerType\@\@\@Z
      */
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum class FertilizerType) const;

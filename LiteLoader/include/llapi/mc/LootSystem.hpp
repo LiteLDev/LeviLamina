@@ -35,13 +35,11 @@ public:
      */
     virtual ~LootSystem();
     /**
-     * @hash   1076680275
      * @vftbl  1
      * @symbol  ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @hash   -1222838681
      * @vftbl  2
      * @symbol  ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

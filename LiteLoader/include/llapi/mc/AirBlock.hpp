@@ -36,31 +36,26 @@ public:
      */
     virtual ~AirBlock();
     /**
-     * @hash   1867335321
      * @vftbl  5
      * @symbol  ?getCollisionShape\@AirBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -831440867
      * @vftbl  6
      * @symbol  ?isObstructingChests\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   284563939
      * @vftbl  9
      * @symbol  ?addAABBs\@AirBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   148627731
      * @vftbl  10
      * @symbol  ?getAABB\@AirBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1881187322
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@AirBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -176,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   77910151
      * @vftbl  69
      * @symbol  ?checkIsPathable\@AirBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -192,43 +186,36 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   178533211
      * @vftbl  89
      * @symbol  ?mayPick\@AirBlock\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @hash   18622500
      * @vftbl  90
      * @symbol  ?mayPick\@AirBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @hash   1439379422
      * @vftbl  91
      * @symbol  ?mayPlace\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   912489469
      * @vftbl  92
      * @symbol  ?mayPlace\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1068781852
      * @vftbl  94
      * @symbol  ?tryToPlace\@AirBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEBUActorBlockSyncMessage\@\@\@Z
      */
     virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
     /**
-     * @hash   -2043774006
      * @vftbl  97
      * @symbol  ?destroy\@AirBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
-     * @hash   1506408935
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@AirBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -264,19 +251,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   484380373
      * @vftbl  142
      * @symbol  ?getVisualShapeInWorld\@AirBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @hash   696070445
      * @vftbl  143
      * @symbol  ?getVisualShape\@AirBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   680426216
      * @vftbl  151
      * @symbol  ?animateTick\@AirBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -307,7 +291,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1082168553
      * @vftbl  171
      * @symbol  ?tick\@AirBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -324,18 +307,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCK
     /**
-     * @hash   1924634436
      * @symbol  ?canBeSilkTouched\@AirBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1229267031
      * @symbol  ?canHaveExtraData\@AirBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canHaveExtraData() const;
 #endif
     /**
-     * @hash   -1289266710
      * @symbol  ??0AirBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI AirBlock(std::string const &, int, class Material const &);

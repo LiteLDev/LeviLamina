@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -762456269
      * @symbol  ?kFormat\@CrashDumpGameplayData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];

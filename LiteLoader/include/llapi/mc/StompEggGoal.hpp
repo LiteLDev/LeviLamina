@@ -41,7 +41,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -852790217
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@StompEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -57,31 +56,26 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -472379829
      * @vftbl  18
      * @symbol  ?_createBreakProgressParticles\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
     /**
-     * @hash   -2048455703
      * @vftbl  19
      * @symbol  ?_createDestroyParticles\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /**
-     * @hash   -726727471
      * @vftbl  20
      * @symbol  ?_playBreakProgressSound\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /**
-     * @hash   -1913316417
      * @vftbl  21
      * @symbol  ?_playDestroySound\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
     /**
-     * @hash   -1390919811
      * @symbol  ??0StompEggGoal\@\@QEAA\@AEAVMob\@\@MHHMH\@Z
      */
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);

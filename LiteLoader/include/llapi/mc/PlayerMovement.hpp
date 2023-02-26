@@ -26,17 +26,14 @@ namespace PlayerMovement {
      */
     MCAPI struct ActorUniqueID getControllingPassengerID(std::vector<struct StrictActorIDEntityContextPair> const &, int);
     /**
-     * @hash   -515418769
      * @symbol  ?updatePlayerOnInput\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@AEAVVec3\@\@\@Z
      */
     MCAPI void updatePlayerOnInput(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);
     /**
-     * @hash   792376246
      * @symbol  ?updatePlayerRiding\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@\@Z
      */
     MCAPI void updatePlayerRiding(struct IPlayerMovementProxy &, class MoveInputHandler &);
     /**
-     * @hash   -531225219
      * @symbol  ?updateSwimTravel\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@AEAVVec3\@\@\@Z
      */
     MCAPI void updateSwimTravel(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);

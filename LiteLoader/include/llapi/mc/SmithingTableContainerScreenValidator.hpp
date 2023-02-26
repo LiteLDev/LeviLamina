@@ -35,7 +35,6 @@ public:
      */
     virtual ~SmithingTableContainerScreenValidator();
     /**
-     * @hash   -225433664
      * @symbol  ??0SmithingTableContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI SmithingTableContainerScreenValidator();

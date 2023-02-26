@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1206835415
      * @vftbl  0
      * @symbol  ?getJsonName\@TripodCameraDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~TripodCameraDescription();
     /**
-     * @hash   -1599302394
      * @vftbl  3
      * @symbol  ?serializeData\@TripodCameraDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

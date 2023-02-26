@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1361210369
      * @vftbl  49
      * @symbol  ?normalTick\@Panda\@\@UEAAXXZ
      */
@@ -103,7 +102,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   555176714
      * @vftbl  134
      * @symbol  ?getAmbientSound\@Panda\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
@@ -144,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1604068797
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@Panda\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
@@ -155,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   3807161
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Panda\@\@UEAAXXZ
      */
@@ -181,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   1418166222
      * @vftbl  337
      * @symbol  ?setTransitioningSitting\@Panda\@\@UEAAX_N\@Z
      */
@@ -192,32 +187,26 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   964414966
      * @symbol  ??0Panda\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   232344435
      * @symbol  ?getLieOnBackAmount\@Panda\@\@QEBAMM\@Z
      */
     MCAPI float getLieOnBackAmount(float) const;
     /**
-     * @hash   -1443221469
      * @symbol  ?getSitAmount\@Panda\@\@QEBAMM\@Z
      */
     MCAPI float getSitAmount(float) const;
     /**
-     * @hash   656126838
      * @symbol  ?getSneezeCounter\@Panda\@\@QEBAHXZ
      */
     MCAPI int getSneezeCounter() const;
     /**
-     * @hash   1970356862
      * @symbol  ?getUnhappyCounter\@Panda\@\@QEBAHXZ
      */
     MCAPI int getUnhappyCounter() const;
     /**
-     * @hash   -49811589
      * @symbol  ?postNormalTick\@Panda\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();

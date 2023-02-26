@@ -31,12 +31,10 @@ public:
 
 public:
     /**
-     * @hash   1015222366
      * @symbol  ?addFamilyName\@FamilyTypeDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addFamilyName(std::string const &);
     /**
-     * @hash   -11682566
      * @symbol  ?buildSchema\@FamilyTypeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UFamilyTypeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FamilyTypeDefinition>> &);

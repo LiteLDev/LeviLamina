@@ -36,13 +36,11 @@ public:
      */
     virtual ~GetChunkDataCommand();
     /**
-     * @hash   -43967831
      * @vftbl  1
      * @symbol  ?execute\@GetChunkDataCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1005542720
      * @symbol  ?setup\@GetChunkDataCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

@@ -34,19 +34,16 @@ public:
      */
     virtual ~SculkShriekerBlockActor();
     /**
-     * @hash   742036674
      * @vftbl  1
      * @symbol  ?load\@SculkShriekerBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   563804593
      * @vftbl  2
      * @symbol  ?save\@SculkShriekerBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1808534267
      * @vftbl  7
      * @symbol  ?tick\@SculkShriekerBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -57,7 +54,6 @@ public:
      */
     virtual void __unk_vfn_12();
     /**
-     * @hash   1839567719
      * @vftbl  13
      * @symbol  ?onRemoved\@SculkShriekerBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -98,34 +94,28 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   265227662
      * @symbol  ??0SculkShriekerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
     /**
-     * @hash   -1320468129
      * @symbol  ?tryRespond\@SculkShriekerBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void tryRespond(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -730382977
      * @symbol  ?tryShriek\@SculkShriekerBlockActor\@\@QEAA_NAEAVBlockSource\@\@VBlockPos\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool tryShriek(class BlockSource &, class BlockPos, class Player &);
     /**
-     * @hash   -981779643
      * @symbol  ?tryGet\@SculkShriekerBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     MCAPI static class SculkShriekerBlockActor * tryGet(class BlockSource &, class BlockPos);
     /**
-     * @hash   348054967
      * @symbol  ?tryGetPlayerInHierarchy\@SculkShriekerBlockActor\@\@SAPEAVPlayer\@\@PEAVActor\@\@\@Z
      */
     MCAPI static class Player * tryGetPlayerInHierarchy(class Actor *);
 
 //private:
     /**
-     * @hash   1753432564
      * @symbol  ?_canRespond\@SculkShriekerBlockActor\@\@CA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool _canRespond(class BlockSource const &, class BlockPos const &);

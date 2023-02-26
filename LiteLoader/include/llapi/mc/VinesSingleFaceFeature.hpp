@@ -35,7 +35,6 @@ public:
      */
     virtual ~VinesSingleFaceFeature();
     /**
-     * @hash   84050037
      * @vftbl  1
      * @symbol  ?place\@VinesSingleFaceFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

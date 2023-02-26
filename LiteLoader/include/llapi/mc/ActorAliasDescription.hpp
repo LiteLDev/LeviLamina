@@ -35,23 +35,19 @@ public:
      */
     virtual ~ActorAliasDescription();
     /**
-     * @hash   416258435
      * @vftbl  1
      * @symbol  ?getJsonName\@ActorAliasDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @hash   -800387752
      * @symbol  ?getAliasInfo\@ActorAliasDescription\@\@QEBAPEBUAliasInfoDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     /**
-     * @hash   1184115790
      * @symbol  ??4ActorAliasDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ActorAliasDescription & operator=(struct ActorAliasDescription const &);
     /**
-     * @hash   808545493
      * @symbol  ?parse\@ActorAliasDescription\@\@QEAAXAEAVValue\@Json\@\@_N\@Z
      */
     MCAPI void parse(class Json::Value &, bool);

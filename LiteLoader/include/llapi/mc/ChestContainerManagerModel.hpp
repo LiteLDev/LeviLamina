@@ -36,24 +36,20 @@ public:
      */
     virtual ~ChestContainerManagerModel();
     /**
-     * @hash   434084403
      * @vftbl  16
      * @symbol  ?isValid\@ChestContainerManagerModel\@\@UEAA_NM\@Z
      */
     virtual bool isValid(float);
     /**
-     * @hash   -307274150
      * @vftbl  17
      * @symbol  ?_postInit\@ChestContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   1632840687
      * @symbol  ??0ChestContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@UActorUniqueID\@\@\@Z
      */
     MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
     /**
-     * @hash   -784102658
      * @symbol  ??0ChestContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@W4BlockActorType\@\@\@Z
      */
     MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);

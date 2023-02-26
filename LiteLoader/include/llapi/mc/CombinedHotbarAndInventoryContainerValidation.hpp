@@ -36,7 +36,6 @@ public:
      */
     virtual ~CombinedHotbarAndInventoryContainerValidation();
     /**
-     * @hash   935625454
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -1632068955
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -58,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   -2003620292
      * @vftbl  5
      * @symbol  ?isItemAllowedToRemove\@CombinedHotbarAndInventoryContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVItemStackBase\@\@\@Z
      */
@@ -69,7 +66,6 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   2067939845
      * @vftbl  7
      * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
@@ -80,14 +76,12 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -1448067258
      * @vftbl  9
      * @symbol  ?getContainerSize\@CombinedHotbarAndInventoryContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBINEDHOTBARANDINVENTORYCONTAINERVALIDATION
     /**
-     * @hash   -1476527215
      * @symbol  ?canItemMoveToContainer\@CombinedHotbarAndInventoryContainerValidation\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;

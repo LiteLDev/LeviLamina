@@ -35,13 +35,11 @@ public:
      */
     virtual ~SwimIdleGoal();
     /**
-     * @hash   -217890511
      * @vftbl  1
      * @symbol  ?canUse\@SwimIdleGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -156136097
      * @vftbl  2
      * @symbol  ?canContinueToUse\@SwimIdleGoal\@\@UEAA_NXZ
      */
@@ -52,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1182837530
      * @vftbl  4
      * @symbol  ?start\@SwimIdleGoal\@\@UEAAXXZ
      */
@@ -63,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -809649067
      * @vftbl  6
      * @symbol  ?tick\@SwimIdleGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   608771311
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SwimIdleGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1717867058
      * @symbol  ??0SwimIdleGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SwimIdleGoal(class Mob &);

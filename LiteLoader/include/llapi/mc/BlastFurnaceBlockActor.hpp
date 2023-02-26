@@ -31,13 +31,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACEBLOCKACTOR
     /**
-     * @hash   -283743933
      * @symbol  ?getName\@BlastFurnaceBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getName() const;
 #endif
     /**
-     * @hash   387484811
      * @symbol  ??0BlastFurnaceBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI BlastFurnaceBlockActor(class BlockPos const &);

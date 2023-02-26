@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1368808627
      * @vftbl  42
      * @symbol  ?blockedByShield\@IllagerBeast\@\@UEAAXAEBVActorDamageSource\@\@AEAVActor\@\@\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1500252872
      * @vftbl  291
      * @symbol  ?aiStep\@IllagerBeast\@\@UEAAXXZ
      */
@@ -174,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   614527391
      * @symbol  ??0IllagerBeast\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI IllagerBeast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

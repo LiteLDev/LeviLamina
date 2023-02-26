@@ -36,7 +36,6 @@ public:
      */
     virtual ~ReedsFeature();
     /**
-     * @hash   152768431
      * @vftbl  3
      * @symbol  ?place\@ReedsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

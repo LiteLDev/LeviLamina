@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1896109379
      * @vftbl  62
      * @symbol  ?canContainLiquid\@MushroomBlock\@\@UEBA_NXZ
      */
@@ -162,25 +161,21 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1413301759
      * @vftbl  86
      * @symbol  ?onFertilized\@MushroomBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1031746918
      * @vftbl  88
      * @symbol  ?canBeFertilized\@MushroomBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -846517936
      * @vftbl  91
      * @symbol  ?mayPlace\@MushroomBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -370107878
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@MushroomBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -236,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   38146472
      * @vftbl  172
      * @symbol  ?randomTick\@MushroomBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -247,19 +241,16 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -849102885
      * @vftbl  178
      * @symbol  ?canSurvive\@MushroomBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1179382302
      * @vftbl  179
      * @symbol  ?getRenderLayer\@MushroomBlock\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @hash   -765500370
      * @vftbl  180
      * @symbol  ?getRenderLayer\@MushroomBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   872075155
      * @symbol  ??0MushroomBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MushroomBlock(std::string const &, int);

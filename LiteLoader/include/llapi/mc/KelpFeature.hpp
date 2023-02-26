@@ -36,7 +36,6 @@ public:
      */
     virtual ~KelpFeature();
     /**
-     * @hash   1397391314
      * @vftbl  3
      * @symbol  ?place\@KelpFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

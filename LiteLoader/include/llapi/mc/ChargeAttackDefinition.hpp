@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   893575627
      * @symbol  ??0ChargeAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI ChargeAttackDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class ChargeAttackGoal &) const;
     /**
-     * @hash   2080765383
      * @symbol  ?buildSchema\@ChargeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VChargeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>> &);

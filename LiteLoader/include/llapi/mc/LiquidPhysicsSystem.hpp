@@ -36,22 +36,18 @@ public:
      */
     MCAPI static void _tickLiquidBlocksFetch(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct UpdateWaterStateRequestComponent, struct AABBShapeComponent const, class Optional<class FlagComponent<struct ItemActorFlag> const>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct DimensionTypeComponent const>, class OptionalGlobalT<struct LocalConstBlockSourceFactoryComponent const, class EntityRegistryBase>);
     /**
-     * @hash   -342060590
      * @symbol  ?applyPhysics\@LiquidPhysicsSystem\@\@SA_NW4MaterialType\@\@AEBVIConstBlockSource\@\@AEBVAABB\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static bool applyPhysics(enum class MaterialType, class IConstBlockSource const &, class AABB const &, struct StateVectorComponent &);
     /**
-     * @hash   -1465734520
      * @symbol  ?createApplyFlowSystem\@LiquidPhysicsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createApplyFlowSystem();
     /**
-     * @hash   1571594101
      * @symbol  ?createFilterSystem\@LiquidPhysicsSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
      */
     MCAPI static struct TickingSystemWithInfo createFilterSystem(bool);
     /**
-     * @hash   -1475375190
      * @symbol  ?createLiquidFetchingSystem\@LiquidPhysicsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createLiquidFetchingSystem();

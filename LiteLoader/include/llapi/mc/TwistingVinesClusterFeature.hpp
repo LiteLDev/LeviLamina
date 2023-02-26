@@ -36,7 +36,6 @@ public:
      */
     virtual ~TwistingVinesClusterFeature();
     /**
-     * @hash   -414163308
      * @vftbl  3
      * @symbol  ?place\@TwistingVinesClusterFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   -266370682
      * @symbol  ?_placeVineString\@TwistingVinesClusterFeature\@\@AEBAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBlockPos\@\@HHH\@Z
      */
     MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;

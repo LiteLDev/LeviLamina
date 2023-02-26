@@ -36,7 +36,6 @@ public:
      */
     virtual ~CarrotBlock();
     /**
-     * @hash   -810511878
      * @vftbl  10
      * @symbol  ?getAABB\@CarrotBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -187,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   243787994
      * @vftbl  146
      * @symbol  ?getVariant\@CarrotBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -223,13 +221,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   751264349
      * @vftbl  179
      * @symbol  ?getRenderLayer\@CarrotBlock\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @hash   915095027
      * @vftbl  180
      * @symbol  ?getRenderLayer\@CarrotBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -240,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1022454192
      * @vftbl  188
      * @symbol  ?getResourceCount\@CarrotBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
@@ -251,25 +246,21 @@ public:
      */
     virtual void __unk_vfn_193();
     /**
-     * @hash   342268418
      * @vftbl  194
      * @symbol  ?getBaseSeed\@CarrotBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
-     * @hash   -449853759
      * @vftbl  195
      * @symbol  ?getBaseCrop\@CarrotBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
-     * @hash   208431800
      * @vftbl  197
      * @symbol  ?getCropNum\@CarrotBlock\@\@UEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getCropNum(class Randomize &, int, int) const;
     /**
-     * @hash   -709077640
      * @symbol  ??0CarrotBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CarrotBlock(std::string const &, int);

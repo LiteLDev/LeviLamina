@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   1927154230
      * @symbol  ??0DedicatedServerGameTestRunner\@\@QEAA\@AEBVTestConfig\@\@AEAVMinecraftGameTest\@\@AEAVServerInstance\@\@AEAVLevel\@\@\@Z
      */
     MCAPI DedicatedServerGameTestRunner(class TestConfig const &, class MinecraftGameTest &, class ServerInstance &, class Level &);
@@ -55,7 +54,6 @@ public:
      */
     MCAPI bool _saveReport();
     /**
-     * @hash   -966476804
      * @symbol  ?_writeFile\@DedicatedServerGameTestRunner\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI bool _writeFile(std::string const &, std::string const &);

@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsPersistentTest();
     /**
-     * @hash   2075784954
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsPersistentTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -1612961064
      * @vftbl  4
      * @symbol  ?getName\@ActorIsPersistentTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

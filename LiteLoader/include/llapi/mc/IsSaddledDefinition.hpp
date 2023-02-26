@@ -39,7 +39,6 @@ public:
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
-     * @hash   90211130
      * @symbol  ?buildSchema\@IsSaddledDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsSaddledDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsSaddledDefinition>> &);

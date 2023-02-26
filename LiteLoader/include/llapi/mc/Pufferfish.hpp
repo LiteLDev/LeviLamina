@@ -42,13 +42,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   320765249
      * @vftbl  49
      * @symbol  ?normalTick\@Pufferfish\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @hash   226216337
      * @vftbl  53
      * @symbol  ?startRiding\@Pufferfish\@\@UEAA_NAEAVActor\@\@\@Z
      */
@@ -139,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   2114004498
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Pufferfish\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -150,7 +147,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -1075001578
      * @vftbl  263
      * @symbol  ?_hurt\@Pufferfish\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
@@ -161,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   -8886023
      * @vftbl  276
      * @symbol  ?_onSizeUpdated\@Pufferfish\@\@UEAAXXZ
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1389453898
      * @symbol  ??0Pufferfish\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Pufferfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

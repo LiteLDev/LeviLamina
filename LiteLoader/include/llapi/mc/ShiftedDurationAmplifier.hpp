@@ -40,19 +40,16 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -1053981518
      * @vftbl  2
      * @symbol  ?shouldBuff\@ShiftedDurationAmplifier\@\@UEBA_NHH\@Z
      */
     virtual bool shouldBuff(int, int) const;
     /**
-     * @hash   1441191894
      * @vftbl  3
      * @symbol  ?getTickInterval\@ShiftedDurationAmplifier\@\@UEBAHH\@Z
      */
     virtual int getTickInterval(int) const;
     /**
-     * @hash   -144094429
      * @symbol  ??0ShiftedDurationAmplifier\@\@QEAA\@H\@Z
      */
     MCAPI ShiftedDurationAmplifier(int);

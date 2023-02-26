@@ -35,13 +35,11 @@ public:
      */
     virtual ~BlockStateVariant();
     /**
-     * @hash   -1212483668
      * @vftbl  1
      * @symbol  ?toNBT\@BlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
      */
     virtual void toNBT(class CompoundTag &, int) const;
     /**
-     * @hash   -370818224
      * @vftbl  2
      * @symbol  ?fromNBT\@BlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
      */

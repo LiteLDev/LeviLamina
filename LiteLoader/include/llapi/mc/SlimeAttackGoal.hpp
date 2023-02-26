@@ -35,13 +35,11 @@ public:
      */
     virtual ~SlimeAttackGoal();
     /**
-     * @hash   -72162435
      * @vftbl  1
      * @symbol  ?canUse\@SlimeAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   668653323
      * @vftbl  2
      * @symbol  ?canContinueToUse\@SlimeAttackGoal\@\@UEAA_NXZ
      */
@@ -52,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1999792682
      * @vftbl  4
      * @symbol  ?start\@SlimeAttackGoal\@\@UEAAXXZ
      */
@@ -63,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1271909759
      * @vftbl  6
      * @symbol  ?tick\@SlimeAttackGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -637370365
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SlimeAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   241724298
      * @symbol  ??0SlimeAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SlimeAttackGoal(class Mob &);

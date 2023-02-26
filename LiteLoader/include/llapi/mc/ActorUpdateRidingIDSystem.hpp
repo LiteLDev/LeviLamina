@@ -28,22 +28,18 @@ public:
 
 public:
     /**
-     * @hash   45210690
      * @symbol  ?createClearPrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
     /**
-     * @hash   1419786610
      * @symbol  ?createClearRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
     /**
-     * @hash   -878470204
      * @symbol  ?createUpdatePrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
     /**
-     * @hash   1276097067
      * @symbol  ?tickClearRidingID\@ActorUpdateRidingIDSystem\@\@SAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPassengerComponent\@\@\@\@\@Z
      */
     MCAPI static void tickClearRidingID(class StrictEntityContext &, struct PassengerComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PassengerComponent> &);

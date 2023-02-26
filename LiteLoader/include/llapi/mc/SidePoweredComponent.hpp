@@ -35,25 +35,21 @@ public:
      */
     virtual ~SidePoweredComponent();
     /**
-     * @hash   -405662524
      * @vftbl  6
      * @symbol  ?canConsumePowerAnyDirection\@SidePoweredComponent\@\@UEBA_NXZ
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
-     * @hash   614651383
      * @vftbl  7
      * @symbol  ?canConsumerPower\@SidePoweredComponent\@\@UEBA_NXZ
      */
     virtual bool canConsumerPower() const;
     /**
-     * @hash   1245493878
      * @vftbl  10
      * @symbol  ?removeSource\@SidePoweredComponent\@\@UEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
-     * @hash   1175414976
      * @vftbl  12
      * @symbol  ?allowConnection\@SidePoweredComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
      */
@@ -69,19 +65,16 @@ public:
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   1290703983
      * @vftbl  22
      * @symbol  ?removeFromAnySourceList\@SidePoweredComponent\@\@MEAA_NPEBVBaseCircuitComponent\@\@\@Z
      */
     virtual bool removeFromAnySourceList(class BaseCircuitComponent const *);
     /**
-     * @hash   -1325322311
      * @vftbl  25
      * @symbol  ?getPoweroutDirection\@SidePoweredComponent\@\@UEBAEXZ
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
-     * @hash   -425741055
      * @symbol  ?addToSideComponents\@SidePoweredComponent\@\@QEAAXAEAV?$_Vector_iterator\@V?$_Vector_val\@U?$_Simple_types\@VItem\@CircuitComponentList\@\@\@std\@\@\@std\@\@\@std\@\@PEAVBaseCircuitComponent\@\@\@Z
      */
     MCAPI void addToSideComponents(class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>> &, class BaseCircuitComponent *);

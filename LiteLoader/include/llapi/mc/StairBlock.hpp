@@ -36,31 +36,26 @@ public:
      */
     virtual ~StairBlock();
     /**
-     * @hash   618431652
      * @vftbl  9
      * @symbol  ?addAABBs\@StairBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   -1025362055
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@StairBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   891436279
      * @vftbl  13
      * @symbol  ?getOutline\@StairBlock\@\@UEBAAEBVAABB\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
      */
     virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
-     * @hash   -1031601220
      * @vftbl  14
      * @symbol  ?getLiquidClipVolume\@StairBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
-     * @hash   -1055580217
      * @vftbl  17
      * @symbol  ?liquidCanFlowIntoFromDirection\@StairBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -71,13 +66,11 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1192528093
      * @vftbl  22
      * @symbol  ?canProvideSupport\@StairBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   -196581829
      * @vftbl  25
      * @symbol  ?canConnect\@StairBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -193,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -944917019
      * @vftbl  80
      * @symbol  ?getRedstoneProperty\@StairBlock\@\@UEBA?AW4BlockProperty\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -204,31 +196,26 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1841708458
      * @vftbl  89
      * @symbol  ?mayPick\@StairBlock\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @hash   2040711029
      * @vftbl  90
      * @symbol  ?mayPick\@StairBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @hash   -557447313
      * @vftbl  91
      * @symbol  ?mayPlace\@StairBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   2102048407
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@StairBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -1956570087
      * @vftbl  97
      * @symbol  ?destroy\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
@@ -239,19 +226,16 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   288997955
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@StairBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   -349382841
      * @vftbl  109
      * @symbol  ?attack\@StairBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
-     * @hash   -10039279
      * @vftbl  110
      * @symbol  ?handleEntityInside\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@AEAVVec3\@\@\@Z
      */
@@ -277,13 +261,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -249768204
      * @vftbl  146
      * @symbol  ?getVariant\@StairBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   1895191769
      * @vftbl  151
      * @symbol  ?animateTick\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -294,19 +276,16 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   -57618101
      * @vftbl  162
      * @symbol  ?onRemove\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   59567623
      * @vftbl  163
      * @symbol  ?onExploded\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
-     * @hash   -1630484094
      * @vftbl  164
      * @symbol  ?onStandOn\@StairBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
@@ -327,7 +306,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -448621712
      * @vftbl  168
      * @symbol  ?onPlace\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -338,7 +316,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -329087574
      * @vftbl  171
      * @symbol  ?tick\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -349,13 +326,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1445510746
      * @vftbl  175
      * @symbol  ?clip\@StairBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
-     * @hash   1673687785
      * @vftbl  177
      * @symbol  ?use\@StairBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -366,53 +341,44 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   902544610
      * @vftbl  187
      * @symbol  ?getResourceItem\@StairBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1564897322
      * @vftbl  188
      * @symbol  ?getResourceCount\@StairBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
     /**
-     * @hash   -1397595485
      * @symbol  ?canBeSilkTouched\@StairBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1338651666
      * @symbol  ?isStairBlock\@StairBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isStairBlock() const;
 #endif
     /**
-     * @hash   -933923132
      * @symbol  ??0StairBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@H\@Z
      */
     MCAPI StairBlock(std::string const &, int, class BlockLegacy const &, int);
     /**
-     * @hash   455889825
      * @symbol  ?setInnerPieceShape\@StairBlock\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@_N\@Z
      */
     MCAPI bool setInnerPieceShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @hash   -61339983
      * @symbol  ?setStepShape\@StairBlock\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@_N\@Z
      */
     MCAPI bool setStepShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @hash   1659506838
      * @symbol  ?stairDirectionToFacing\@StairBlock\@\@SAEH\@Z
      */
     MCAPI static unsigned char stairDirectionToFacing(int);
 
 //protected:
     /**
-     * @hash   -1646427396
      * @symbol  ?shapeZFightShrink\@StairBlock\@\@IEBAXAEAVAABB\@\@\@Z
      */
     MCAPI void shapeZFightShrink(class AABB &) const;

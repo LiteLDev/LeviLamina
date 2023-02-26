@@ -36,7 +36,6 @@ public:
      */
     virtual ~TripWireHookBlock();
     /**
-     * @hash   -2006799232
      * @vftbl  10
      * @symbol  ?getAABB\@TripWireHookBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -339827367
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -163,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1238532632
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@TripWireHookBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -174,19 +171,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1918056811
      * @vftbl  91
      * @symbol  ?mayPlace\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -260744464
      * @vftbl  92
      * @symbol  ?mayPlace\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1306332430
      * @vftbl  99
      * @symbol  ?neighborChanged\@TripWireHookBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -197,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -111930401
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@TripWireHookBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -223,13 +216,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1234792826
      * @vftbl  143
      * @symbol  ?getVisualShape\@TripWireHookBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1392170929
      * @vftbl  147
      * @symbol  ?canSpawnOn\@TripWireHookBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -240,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1758297695
      * @vftbl  162
      * @symbol  ?onRemove\@TripWireHookBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -261,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   642325988
      * @vftbl  168
      * @symbol  ?onPlace\@TripWireHookBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -272,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1623673946
      * @vftbl  171
      * @symbol  ?tick\@TripWireHookBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -283,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   260039504
      * @vftbl  178
      * @symbol  ?canSurvive\@TripWireHookBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -299,24 +286,20 @@ public:
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -892535794
      * @symbol  ??0TripWireHookBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI TripWireHookBlock(std::string const &, int);
     /**
-     * @hash   -117551736
      * @symbol  ?calculateState\@TripWireHookBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N2HAEBVBlock\@\@\@Z
      */
     MCAPI void calculateState(class BlockSource &, class BlockPos const &, bool, bool, int, class Block const &) const;
 
 //private:
     /**
-     * @hash   -622198088
      * @symbol  ?_emitState\@TripWireHookBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N222\@Z
      */
     MCAPI void _emitState(class BlockSource &, class BlockPos const &, bool, bool, bool, bool) const;
     /**
-     * @hash   1771619090
      * @symbol  ?_getShape\@TripWireHookBlock\@\@AEBAXHAEAVAABB\@\@\@Z
      */
     MCAPI void _getShape(int, class AABB &) const;

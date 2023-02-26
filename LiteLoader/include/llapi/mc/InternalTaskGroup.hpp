@@ -55,39 +55,32 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   893126535
      * @vftbl  5
      * @symbol  ?getState\@InternalTaskGroup\@\@UEBA?AW4TaskGroupState\@\@XZ
      */
     virtual enum class TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     /**
-     * @hash   1282038004
      * @symbol  ?processCoroutines\@InternalTaskGroup\@\@UEAAXXZ
      */
     MCVAPI void processCoroutines();
     /**
-     * @hash   -1225578377
      * @symbol  ?queue\@InternalTaskGroup\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@X\@Threading\@Bedrock\@\@\@std\@\@AEBU?$TaskStartInfoEx\@X\@\@$$QEAV?$function\@$$A6A?AVTaskResult\@\@XZ\@3\@$$QEAV?$function\@$$A6AXXZ\@3\@\@Z
      */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
     /**
-     * @hash   268310948
      * @symbol  ?queueSync\@InternalTaskGroup\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@X\@Threading\@Bedrock\@\@\@std\@\@AEBU?$TaskStartInfoEx\@X\@\@$$QEAV?$function\@$$A6A?AVTaskResult\@\@XZ\@3\@\@Z
      */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     /**
-     * @hash   -1995063517
      * @symbol  ?requeueTask\@InternalTaskGroup\@\@UEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
-     * @hash   1579249988
      * @symbol  ?taskComplete\@InternalTaskGroup\@\@UEAAXV?$not_null\@PEAVBackgroundTaskBase\@\@\@gsl\@\@\@Z
      */
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     /**
-     * @hash   -868810796
      * @symbol  ?taskRegister\@InternalTaskGroup\@\@UEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);

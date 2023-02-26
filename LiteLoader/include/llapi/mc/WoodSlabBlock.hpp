@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   2107811292
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@WoodSlabBlock\@\@UEBA_NH\@Z
      */
@@ -162,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1302224316
      * @vftbl  103
      * @symbol  ?asItemInstance\@WoodSlabBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   797326365
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@WoodSlabBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -204,7 +201,6 @@ public:
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   1248169142
      * @vftbl  146
      * @symbol  ?getVariant\@WoodSlabBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -240,7 +236,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   550344474
      * @vftbl  184
      * @symbol  ?getMapColor\@WoodSlabBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -251,19 +246,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1825632244
      * @vftbl  187
      * @symbol  ?getResourceItem\@WoodSlabBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   876568221
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@WoodSlabBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1269594613
      * @symbol  ??0WoodSlabBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_NV?$WeakPtr\@VBlockLegacy\@\@\@\@\@Z
      */
     MCAPI WoodSlabBlock(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);

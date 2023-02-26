@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   2029762547
      * @vftbl  0
      * @symbol  ?getJsonName\@TeleportDescription\@\@UEBAPEBDXZ
      */
@@ -41,19 +40,16 @@ public:
      */
     virtual ~TeleportDescription();
     /**
-     * @hash   495474928
      * @vftbl  2
      * @symbol  ?deserializeData\@TeleportDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   609807002
      * @vftbl  3
      * @symbol  ?serializeData\@TeleportDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void serializeData(class Json::Value &) const;
     /**
-     * @hash   1678795805
      * @symbol  ??0TeleportDescription\@\@QEAA\@XZ
      */
     MCAPI TeleportDescription();

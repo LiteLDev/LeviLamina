@@ -97,7 +97,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -1631324607
      * @vftbl  142
      * @symbol  ?handleEntityEvent\@Silverfish\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
@@ -138,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1801373693
      * @vftbl  268
      * @symbol  ?_playStepSound\@Silverfish\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -154,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   -2146828866
      * @vftbl  279
      * @symbol  ?spawnAnim\@Silverfish\@\@UEAAXXZ
      */
@@ -165,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   635502244
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@Silverfish\@\@UEAA_N_N\@Z
      */
@@ -181,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -1536169408
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Silverfish\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -192,13 +187,11 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   168553971
      * @vftbl  356
      * @symbol  ?isDarkEnoughToSpawn\@Silverfish\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @hash   -1672595999
      * @symbol  ??0Silverfish\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Silverfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

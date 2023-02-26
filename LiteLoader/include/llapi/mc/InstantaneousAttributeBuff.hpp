@@ -36,24 +36,20 @@ public:
      */
     virtual ~InstantaneousAttributeBuff();
     /**
-     * @hash   858404219
      * @vftbl  1
      * @symbol  ?isInstantaneous\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isInstantaneous() const;
     /**
-     * @hash   1450610344
      * @vftbl  2
      * @symbol  ?isSerializable\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isSerializable() const;
     /**
-     * @hash   1771254525
      * @symbol  ??0InstantaneousAttributeBuff\@\@QEAA\@MW4AttributeBuffType\@\@\@Z
      */
     MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
     /**
-     * @hash   -1585424821
      * @symbol  ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
      */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);

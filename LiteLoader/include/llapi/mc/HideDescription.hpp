@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   567465914
      * @vftbl  0
      * @symbol  ?getJsonName\@HideDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~HideDescription();
     /**
-     * @hash   -2070370557
      * @vftbl  3
      * @symbol  ?serializeData\@HideDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

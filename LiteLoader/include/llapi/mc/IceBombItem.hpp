@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   902562574
      * @vftbl  23
      * @symbol  ?isThrowable\@IceBombItem\@\@UEBA_NXZ
      */
@@ -108,36 +107,30 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   2113978814
      * @vftbl  84
      * @symbol  ?use\@IceBombItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -894414324
      * @vftbl  85
      * @symbol  ?dispense\@IceBombItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   131605802
      * @vftbl  103
      * @symbol  ?getCooldownType\@IceBombItem\@\@UEBAAEBVHashedString\@\@XZ
      */
     virtual class HashedString const & getCooldownType() const;
     /**
-     * @hash   -1459811911
      * @vftbl  104
      * @symbol  ?getCooldownTime\@IceBombItem\@\@UEBAHXZ
      */
     virtual int getCooldownTime() const;
     /**
-     * @hash   -2137626146
      * @symbol  ??0IceBombItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI IceBombItem(std::string const &, int);
     /**
-     * @hash   2086923963
      * @symbol  ?ICE_BOMB_COOLDOWN\@IceBombItem\@\@2VHashedString\@\@B
      */
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;

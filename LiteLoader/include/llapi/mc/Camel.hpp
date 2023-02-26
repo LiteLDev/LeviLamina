@@ -35,7 +35,6 @@ public:
      */
     virtual ~Camel();
     /**
-     * @hash   458686424
      * @vftbl  36
      * @symbol  ?getInterpolatedRidingOffset\@Camel\@\@UEBA?AVVec3\@\@MH\@Z
      */
@@ -46,7 +45,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1100007291
      * @vftbl  49
      * @symbol  ?normalTick\@Camel\@\@UEAAXXZ
      */
@@ -147,7 +145,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   246591564
      * @vftbl  268
      * @symbol  ?_playStepSound\@Camel\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -168,7 +165,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -200823819
      * @vftbl  291
      * @symbol  ?aiStep\@Camel\@\@UEAAXXZ
      */
@@ -190,18 +186,15 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMEL
     /**
-     * @hash   1628776785
      * @symbol  ?getSprintSpeedIncrease\@Camel\@\@UEBAMXZ
      */
     MCVAPI float getSprintSpeedIncrease() const;
 #endif
     /**
-     * @hash   688098146
      * @symbol  ??0Camel\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Camel(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1347054283
      * @symbol  ?getDashCooldown\@Camel\@\@QEBA?AV?$optional\@VExpiringTick\@\@\@std\@\@XZ
      */
     MCAPI class std::optional<class ExpiringTick> getDashCooldown() const;

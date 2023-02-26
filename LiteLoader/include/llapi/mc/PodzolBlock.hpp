@@ -216,13 +216,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1905103145
      * @vftbl  187
      * @symbol  ?getResourceItem\@PodzolBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -932378983
      * @symbol  ??0PodzolBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PodzolBlock(std::string const &, int);

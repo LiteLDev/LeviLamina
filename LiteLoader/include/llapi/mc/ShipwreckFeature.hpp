@@ -36,30 +36,25 @@ public:
      */
     virtual ~ShipwreckFeature();
     /**
-     * @hash   -658033353
      * @vftbl  3
      * @symbol  ?getNearestGeneratedFeature\@ShipwreckFeature\@\@UEAA_NAEAVDimension\@\@AEBVBiomeSource\@\@AEBVBlockPos\@\@AEAV4\@AEBVIPreliminarySurfaceProvider\@\@_N\@Z
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
-     * @hash   -1891643839
      * @vftbl  5
      * @symbol  ?isFeatureChunk\@ShipwreckFeature\@\@MEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
-     * @hash   -2081244711
      * @vftbl  6
      * @symbol  ?createStructureStart\@ShipwreckFeature\@\@MEAA?AV?$unique_ptr\@VStructureStart\@\@U?$default_delete\@VStructureStart\@\@\@std\@\@\@std\@\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     /**
-     * @hash   -1406054745
      * @symbol  ??0ShipwreckFeature\@\@QEAA\@AEAVOceanMonumentFeature\@\@IAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI ShipwreckFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
     /**
-     * @hash   -482190974
      * @symbol  ?isShipwreckBeached\@ShipwreckFeature\@\@SA_NPEBVBiome\@\@\@Z
      */
     MCAPI static bool isShipwreckBeached(class Biome const *);

@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   -1116754743
      * @symbol  ?isAffectedByGravity\@PhysicsComponent\@\@QEBA_NAEBUIActorMovementProxy\@\@\@Z
      */
     MCAPI bool isAffectedByGravity(struct IActorMovementProxy const &) const;
     /**
-     * @hash   -254248073
      * @symbol  ?setAffectedByGravity\@PhysicsComponent\@\@QEBAXAEAUIActorMovementProxy\@\@_N\@Z
      */
     MCAPI void setAffectedByGravity(struct IActorMovementProxy &, bool) const;
     /**
-     * @hash   698102191
      * @symbol  ?setHasCollision\@PhysicsComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
     MCAPI void setHasCollision(class Actor &, bool);

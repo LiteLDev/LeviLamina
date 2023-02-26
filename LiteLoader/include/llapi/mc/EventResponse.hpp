@@ -36,7 +36,6 @@ public:
      */
     virtual ~EventResponse();
     /**
-     * @hash   26881422
      * @vftbl  1
      * @symbol  ?getName\@EventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @hash   412720044
      * @vftbl  3
      * @symbol  ?buildSchema\@EventResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
      */

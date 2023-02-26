@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -661091248
      * @vftbl  51
      * @symbol  ?isSignalSource\@RedstoneTorchBlock\@\@UEBA_NXZ
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1214611202
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@RedstoneTorchBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -642931136
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@RedstoneTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1841896771
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@RedstoneTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -180,13 +176,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -120552489
      * @vftbl  99
      * @symbol  ?neighborChanged\@RedstoneTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -762972251
      * @vftbl  103
      * @symbol  ?asItemInstance\@RedstoneTorchBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -217,13 +211,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1158248460
      * @vftbl  147
      * @symbol  ?canSpawnOn\@RedstoneTorchBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @hash   -649025910
      * @vftbl  151
      * @symbol  ?animateTick\@RedstoneTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -249,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1692860207
      * @vftbl  168
      * @symbol  ?onPlace\@RedstoneTorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,32 +261,27 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -102443485
      * @vftbl  187
      * @symbol  ?getResourceItem\@RedstoneTorchBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1493241012
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@RedstoneTorchBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1463640743
      * @vftbl  193
      * @symbol  ?getTickDelay\@RedstoneTorchBlock\@\@UEAAHXZ
      */
     virtual int getTickDelay();
     /**
-     * @hash   -223050306
      * @symbol  ??0RedstoneTorchBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI RedstoneTorchBlock(std::string const &, int, bool);
 
 //private:
     /**
-     * @hash   1690148353
      * @symbol  ?_installCircuit\@RedstoneTorchBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;

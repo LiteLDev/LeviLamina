@@ -44,7 +44,6 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
-     * @hash   693318065
      * @vftbl  19
      * @symbol  ?getShadowRadius\@HangingSignBlockActor\@\@UEBAMAEAVBlockSource\@\@\@Z
      */
@@ -80,7 +79,6 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -1052183160
      * @symbol  ??0HangingSignBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI HangingSignBlockActor(class BlockPos const &);

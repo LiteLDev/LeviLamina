@@ -36,19 +36,16 @@ public:
      */
     virtual ~SHFillerCorridor();
     /**
-     * @hash   -1934768660
      * @vftbl  2
      * @symbol  ?getType\@SHFillerCorridor\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   -1531320548
      * @vftbl  4
      * @symbol  ?postProcess\@SHFillerCorridor\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @hash   -1229719305
      * @symbol  ?findPieceBox\@SHFillerCorridor\@\@SA?AVBoundingBox\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHH\@Z
      */
     MCAPI static class BoundingBox findPieceBox(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int);

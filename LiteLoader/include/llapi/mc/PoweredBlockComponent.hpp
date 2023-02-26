@@ -36,31 +36,26 @@ public:
      */
     virtual ~PoweredBlockComponent();
     /**
-     * @hash   -423294338
      * @vftbl  1
      * @symbol  ?getStrength\@PoweredBlockComponent\@\@UEBAHXZ
      */
     virtual int getStrength() const;
     /**
-     * @hash   316313779
      * @vftbl  7
      * @symbol  ?canConsumerPower\@PoweredBlockComponent\@\@UEBA_NXZ
      */
     virtual bool canConsumerPower() const;
     /**
-     * @hash   -1552936328
      * @vftbl  11
      * @symbol  ?addSource\@PoweredBlockComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @hash   451440068
      * @vftbl  12
      * @symbol  ?allowConnection\@PoweredBlockComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @hash   1136493684
      * @vftbl  14
      * @symbol  ?evaluate\@PoweredBlockComponent\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
      */
@@ -76,20 +71,17 @@ public:
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   -1265366494
      * @vftbl  23
      * @symbol  ?getCircuitComponentType\@PoweredBlockComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
     /**
-     * @hash   691366024
      * @symbol  ?hasChildrenSource\@PoweredBlockComponent\@\@UEBA_NXZ
      */
     MCVAPI bool hasChildrenSource() const;
 #endif
     /**
-     * @hash   1205780796
      * @symbol  ??0PoweredBlockComponent\@\@QEAA\@E\@Z
      */
     MCAPI PoweredBlockComponent(unsigned char);

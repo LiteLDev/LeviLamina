@@ -38,22 +38,18 @@ public:
 
 //protected:
     /**
-     * @hash   1807800451
      * @symbol  ??0MessagingCommand\@\@IEAA\@_N0\@Z
      */
     MCAPI MessagingCommand(bool, bool);
     /**
-     * @hash   227150433
      * @symbol  ?checkChatPermissions\@MessagingCommand\@\@IEBA_NAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1755722497
      * @symbol  ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@IEBAXAEBUCommandOriginIdentity\@\@AEBVLevel\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &) const;
     /**
-     * @hash   325569837
      * @symbol  ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@IEBAXAEBVPlayer\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;

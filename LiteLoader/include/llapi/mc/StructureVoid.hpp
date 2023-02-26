@@ -36,25 +36,21 @@ public:
      */
     virtual ~StructureVoid();
     /**
-     * @hash   -1174621283
      * @vftbl  5
      * @symbol  ?getCollisionShape\@StructureVoid\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -576281247
      * @vftbl  6
      * @symbol  ?isObstructingChests\@StructureVoid\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -356238025
      * @vftbl  10
      * @symbol  ?getAABB\@StructureVoid\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   -1864739722
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@StructureVoid\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -170,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -870183541
      * @vftbl  69
      * @symbol  ?checkIsPathable\@StructureVoid\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -247,18 +242,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREVOID
     /**
-     * @hash   171999104
      * @symbol  ?canBeSilkTouched\@StructureVoid\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   1113054099
      * @symbol  ?canHaveExtraData\@StructureVoid\@\@UEBA_NXZ
      */
     MCVAPI bool canHaveExtraData() const;
 #endif
     /**
-     * @hash   -768701115
      * @symbol  ??0StructureVoid\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI StructureVoid(std::string const &, int);

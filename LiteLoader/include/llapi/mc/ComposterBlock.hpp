@@ -42,13 +42,11 @@ public:
      */
     virtual ~ComposterBlock();
     /**
-     * @hash   -220523601
      * @vftbl  9
      * @symbol  ?addAABBs\@ComposterBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   1584915678
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@ComposterBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -59,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -485185106
      * @vftbl  22
      * @symbol  ?canProvideSupport\@ComposterBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -170,13 +167,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1742691945
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ComposterBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -807474477
      * @vftbl  74
      * @symbol  ?onMove\@ComposterBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2115986132
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@ComposterBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
@@ -218,7 +212,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   558367607
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@ComposterBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -229,7 +222,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1810993553
      * @vftbl  146
      * @symbol  ?getVariant\@ComposterBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -240,7 +232,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1670628144
      * @vftbl  162
      * @symbol  ?onRemove\@ComposterBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -261,7 +252,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   152145141
      * @vftbl  168
      * @symbol  ?onPlace\@ComposterBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -272,7 +262,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   178280613
      * @vftbl  171
      * @symbol  ?tick\@ComposterBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -283,7 +272,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   630020276
      * @vftbl  177
      * @symbol  ?use\@ComposterBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -319,78 +307,64 @@ public:
      */
     virtual void __unk_vfn_197();
     /**
-     * @hash   -281237131
      * @symbol  ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
     /**
-     * @hash   -579278911
      * @symbol  ?hasComparatorSignal\@ComposterBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
 #endif
     /**
-     * @hash   1325085693
      * @symbol  ??0ComposterBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ComposterBlock(std::string const &, int);
     /**
-     * @hash   -606847616
      * @symbol  ?addItem\@ComposterBlock\@\@SA_NAEAVContainer\@\@HAEAVItemStack\@\@AEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @hash   971231261
      * @symbol  ?addItems\@ComposterBlock\@\@SAHAEBVItemStack\@\@HAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @hash   1064150129
      * @symbol  ?addItems\@ComposterBlock\@\@SA_NAEAVContainer\@\@HAEAVItemStack\@\@HAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @hash   -1047129766
      * @symbol  ?empty\@ComposterBlock\@\@SAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void empty(class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @hash   -831459585
      * @symbol  ?extractItem\@ComposterBlock\@\@SA?AVItemStack\@\@AEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class ItemStack extractItem(class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @hash   2023746463
      * @symbol  ?getComposterAt\@ComposterBlock\@\@SAPEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class Block const * getComposterAt(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   1562612063
      * @symbol  ?_emitBoneMeal\@ComposterBlock\@\@AEBAXAEAVLevel\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   26348904
      * @symbol  ?_notifyClientComposterUsed\@ComposterBlock\@\@AEBAXAEBVPlayer\@\@FW4POIBlockInteractionType\@MinecraftEventing\@\@\@Z
      */
     MCAPI void _notifyClientComposterUsed(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     /**
-     * @hash   281433229
      * @symbol  ?_getCompostableItems\@ComposterBlock\@\@CAAEBV?$vector\@U?$pair\@HC\@std\@\@V?$allocator\@U?$pair\@HC\@std\@\@\@2\@\@std\@\@AEBVExperiments\@\@\@Z
      */
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
 private:
     /**
-     * @hash   -2088238805
      * @symbol  ?COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION\@ComposterBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     /**
-     * @hash   1258350690
      * @symbol  ?PARTICLE_OFFSET\@ComposterBlock\@\@0VVec3\@\@B
      */
     MCAPI static class Vec3 const PARTICLE_OFFSET;

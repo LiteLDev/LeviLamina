@@ -103,18 +103,15 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -222874065
      * @vftbl  132
      * @symbol  ?_useOn\@DoorItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -2046007820
      * @symbol  ??0DoorItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4DoorType\@DoorBlock\@\@\@Z
      */
     MCAPI DoorItem(std::string const &, int, enum class DoorBlock::DoorType);
     /**
-     * @hash   -1152600704
      * @symbol  ?place\@DoorItem\@\@SA_NPEAVBlockSource\@\@HHHHPEBVBlock\@\@\@Z
      */
     MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);

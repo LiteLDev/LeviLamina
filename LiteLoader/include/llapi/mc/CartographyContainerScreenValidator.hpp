@@ -39,19 +39,16 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   162352576
      * @vftbl  2
      * @symbol  ?isCraftingImplemented\@CartographyContainerScreenValidator\@\@UEAA_NXZ
      */
     virtual bool isCraftingImplemented();
     /**
-     * @hash   -141444114
      * @vftbl  3
      * @symbol  ?getCraftResult\@CartographyContainerScreenValidator\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /**
-     * @hash   -1312956197
      * @symbol  ??0CartographyContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI CartographyContainerScreenValidator();

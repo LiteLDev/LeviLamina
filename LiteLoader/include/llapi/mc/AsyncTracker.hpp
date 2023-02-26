@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   793739984
      * @symbol  ?hasAsyncOperationTimedOut\@AsyncTracker\@\@QEAA_NXZ
      */
     MCAPI bool hasAsyncOperationTimedOut();

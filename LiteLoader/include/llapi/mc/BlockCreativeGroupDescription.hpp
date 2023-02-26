@@ -35,18 +35,15 @@ public:
      */
     virtual ~BlockCreativeGroupDescription();
     /**
-     * @hash   -1478547360
      * @vftbl  1
      * @symbol  ?getName\@BlockCreativeGroupDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   1643750611
      * @symbol  ?NameID\@BlockCreativeGroupDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   -1195073926
      * @symbol  ?registerVersionUpgrades\@BlockCreativeGroupDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);

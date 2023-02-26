@@ -181,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -955538801
      * @vftbl  151
      * @symbol  ?animateTick\@CryingObsidianBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -222,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -378241554
      * @vftbl  186
      * @symbol  ?playerDestroy\@CryingObsidianBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1500118120
      * @vftbl  187
      * @symbol  ?getResourceItem\@CryingObsidianBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   340345656
      * @symbol  ??0CryingObsidianBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI CryingObsidianBlock(std::string const &, int);

@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   -135313961
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@ThrownEnderpearl\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -153,7 +152,6 @@ public:
      */
     virtual void __unk_vfn_279();
     /**
-     * @hash   -592094350
      * @symbol  ??0ThrownEnderpearl\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ThrownEnderpearl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

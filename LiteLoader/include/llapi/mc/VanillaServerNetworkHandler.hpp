@@ -36,13 +36,11 @@ public:
      */
     virtual ~VanillaServerNetworkHandler();
     /**
-     * @hash   -458822439
      * @vftbl  1
      * @symbol  ?handle\@VanillaServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackClientResponsePacket\@\@\@Z
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     /**
-     * @hash   -1278799402
      * @symbol  ??0VanillaServerNetworkHandler\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@AEAVServerInstance\@\@\@Z
      */
     MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);

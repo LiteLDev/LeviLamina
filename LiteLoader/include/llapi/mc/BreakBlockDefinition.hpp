@@ -37,7 +37,6 @@ public:
      */
     virtual ~BreakBlockDefinition();
     /**
-     * @hash   1434189539
      * @vftbl  1
      * @symbol  ?load\@BreakBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

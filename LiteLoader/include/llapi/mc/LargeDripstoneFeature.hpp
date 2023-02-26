@@ -35,7 +35,6 @@ public:
      */
     virtual ~LargeDripstoneFeature();
     /**
-     * @hash   -1872661108
      * @vftbl  1
      * @symbol  ?place\@LargeDripstoneFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

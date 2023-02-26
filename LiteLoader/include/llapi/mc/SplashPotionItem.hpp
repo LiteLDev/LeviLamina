@@ -58,7 +58,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -2135950607
      * @vftbl  23
      * @symbol  ?isThrowable\@SplashPotionItem\@\@UEBA_NXZ
      */
@@ -74,7 +73,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1737209582
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@SplashPotionItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -115,43 +113,36 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   766144209
      * @vftbl  84
      * @symbol  ?use\@SplashPotionItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   70668441
      * @vftbl  85
      * @symbol  ?dispense\@SplashPotionItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   607189933
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@SplashPotionItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   362470013
      * @vftbl  117
      * @symbol  ?setIconInfo\@SplashPotionItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   -897337548
      * @vftbl  118
      * @symbol  ?getIconInfo\@SplashPotionItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -247431106
      * @vftbl  133
      * @symbol  ?getPotionType\@SplashPotionItem\@\@UEBA?AW4PotionType\@Potion\@\@XZ
      */
     virtual enum class Potion::PotionType getPotionType() const;
     /**
-     * @hash   -1509409205
      * @symbol  ??0SplashPotionItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SplashPotionItem(std::string const &, int);

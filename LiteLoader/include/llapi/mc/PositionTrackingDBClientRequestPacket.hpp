@@ -35,31 +35,26 @@ public:
      */
     virtual ~PositionTrackingDBClientRequestPacket();
     /**
-     * @hash   1678068624
      * @vftbl  1
      * @symbol  ?getId\@PositionTrackingDBClientRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1576699453
      * @vftbl  2
      * @symbol  ?getName\@PositionTrackingDBClientRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   816782410
      * @vftbl  3
      * @symbol  ?write\@PositionTrackingDBClientRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   902306826
      * @vftbl  6
      * @symbol  ?_read\@PositionTrackingDBClientRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1439278106
      * @symbol  ??0PositionTrackingDBClientRequestPacket\@\@QEAA\@XZ
      */
     MCAPI PositionTrackingDBClientRequestPacket();

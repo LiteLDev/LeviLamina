@@ -35,13 +35,11 @@ public:
      */
     virtual ~BarterGoal();
     /**
-     * @hash   -1802168593
      * @vftbl  1
      * @symbol  ?canUse\@BarterGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1335372243
      * @vftbl  2
      * @symbol  ?canContinueToUse\@BarterGoal\@\@UEAA_NXZ
      */
@@ -62,26 +60,22 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   630689475
      * @vftbl  6
      * @symbol  ?tick\@BarterGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   1534575809
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@BarterGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -646600356
      * @symbol  ??0BarterGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI BarterGoal(class Mob &);
 
 //private:
     /**
-     * @hash   -222433673
      * @symbol  ?_getThrowVector\@BarterGoal\@\@AEAA?AVVec3\@\@XZ
      */
     MCAPI class Vec3 _getThrowVector();

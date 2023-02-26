@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -1673632987
      * @vftbl  2
      * @symbol  ?tick\@ActorMotionSyncSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

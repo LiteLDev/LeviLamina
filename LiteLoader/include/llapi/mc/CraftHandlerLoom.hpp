@@ -36,13 +36,11 @@ public:
      */
     virtual ~CraftHandlerLoom();
     /**
-     * @hash   14429551
      * @vftbl  4
      * @symbol  ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @hash   -168258982
      * @symbol  ??0CraftHandlerLoom\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
      */
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);

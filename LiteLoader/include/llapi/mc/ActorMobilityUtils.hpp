@@ -20,22 +20,18 @@ namespace ActorMobilityUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1647930882
      * @symbol  ?actorSetSize\@ActorMobilityUtils\@\@YAXAEAVStrictEntityContext\@\@AEBVVec2\@\@AEAUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasPenetratingLastFrameFlag\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@UOffsetsComponent\@\@\@\@\@Z
      */
     MCAPI void actorSetSize(class StrictEntityContext &, class Vec2 const &, struct SynchedActorDataComponent &, struct AABBShapeComponent &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasPenetratingLastFrameFlag>> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct OffsetsComponent>);
     /**
-     * @hash   463746776
      * @symbol  ?canBeginOrContinueClimbingLadder\@ActorMobilityUtils\@\@YA_NAEBUAABBShapeComponent\@\@AEBVIConstBlockSource\@\@AEBUStateVectorComponent\@\@AEBUSynchedActorDataComponent\@\@_N4\@Z
      */
     MCAPI bool canBeginOrContinueClimbingLadder(struct AABBShapeComponent const &, class IConstBlockSource const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, bool, bool);
     /**
-     * @hash   -627427116
      * @symbol  ?canDash\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI bool canDash(struct SynchedActorDataComponent const &);
     /**
-     * @hash   -1414466525
      * @symbol  ?canPowerJump\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@PEBUAttributesComponent\@\@_N\@Z
      */
     MCAPI bool canPowerJump(struct SynchedActorDataComponent const &, struct AttributesComponent const *, bool);
@@ -56,22 +52,18 @@ namespace ActorMobilityUtils {
      */
     MCAPI float getJumpPower(class JumpControlComponent const *, bool);
     /**
-     * @hash   1829328146
      * @symbol  ?getPosFromAABB\@ActorMobilityUtils\@\@YA?AVVec3\@\@AEBVAABB\@\@MAEBVVec2\@\@\@Z
      */
     MCAPI class Vec3 getPosFromAABB(class AABB const &, float, class Vec2 const &);
     /**
-     * @hash   -35066066
      * @symbol  ?isFlying\@ActorMobilityUtils\@\@YA_NAEBUAbilitiesComponent\@\@\@Z
      */
     MCAPI bool isFlying(struct AbilitiesComponent const &);
     /**
-     * @hash   1425261375
      * @symbol  ?isFree\@ActorMobilityUtils\@\@YA_NAEBVIConstBlockSource\@\@AEBVAABB\@\@AEBVVec3\@\@M\@Z
      */
     MCAPI bool isFree(class IConstBlockSource const &, class AABB const &, class Vec3 const &, float);
     /**
-     * @hash   -497066890
      * @symbol  ?isImmersedInWater\@ActorMobilityUtils\@\@YA_NAEBVVec3\@\@AEBVIConstBlockSource\@\@AEBVVec2\@\@\@Z
      */
     MCAPI bool isImmersedInWater(class Vec3 const &, class IConstBlockSource const &, class Vec2 const &);
@@ -80,62 +72,50 @@ namespace ActorMobilityUtils {
      */
     MCAPI bool isImmobile(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct ActorIsImmobileFlag>>> *, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct MobFlag>>, struct AttributesComponent const, class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag>>> *, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SynchedActorDataComponent const, struct Include<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct HorseFlag>>, struct Exclude<class FlagComponent<struct MobAllowStandSlidingFlag>, class FlagComponent<struct MobIsJumpingFlag>>> *, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct HorseFlag>> *, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct PlayerIsSleepingFlag> const, class FlagComponent<struct PlayerComponentFlag> const> *);
     /**
-     * @hash   1000228306
      * @symbol  ?isInLava\@ActorMobilityUtils\@\@YA_NAEBVIConstBlockSource\@\@AEBUAABBShapeComponent\@\@AEBUSubBBsComponent\@\@\@Z
      */
     MCAPI bool isInLava(class IConstBlockSource const &, struct AABBShapeComponent const &, struct SubBBsComponent const &);
     /**
-     * @hash   564307056
      * @symbol  ?isOnFire\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@PEBUOnFireComponent\@\@PEBV?$FlagComponent\@ULavaSlimeFlag\@\@\@\@PEBV?$FlagComponent\@UShulkerBulletFlag\@\@\@\@PEBV?$FlagComponent\@UWitherSkullFlag\@\@\@\@PEBV?$FlagComponent\@UBlazeFlag\@\@\@\@\@Z
      */
     MCAPI bool isOnFire(struct SynchedActorDataComponent const &, struct OnFireComponent const *, class FlagComponent<struct LavaSlimeFlag> const *, class FlagComponent<struct ShulkerBulletFlag> const *, class FlagComponent<struct WitherSkullFlag> const *, class FlagComponent<struct BlazeFlag> const *);
     /**
-     * @hash   572790556
      * @symbol  ?isSprinting\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI bool isSprinting(struct SynchedActorDataComponent const &);
     /**
-     * @hash   1621319676
      * @symbol  ?isSwimming\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI bool isSwimming(struct SynchedActorDataComponent const &);
     /**
-     * @hash   924031536
      * @symbol  ?isUnderLiquid\@ActorMobilityUtils\@\@YA_NAEBVVec3\@\@0AEBVIConstBlockSource\@\@W4MaterialType\@\@\@Z
      */
     MCAPI bool isUnderLiquid(class Vec3 const &, class Vec3 const &, class IConstBlockSource const &, enum class MaterialType);
     /**
-     * @hash   -1350564297
      * @symbol  ?moveBBs\@ActorMobilityUtils\@\@YAXAEBVVec3\@\@AEAUAABBShapeComponent\@\@AEAUSubBBsComponent\@\@\@Z
      */
     MCAPI void moveBBs(class Vec3 const &, struct AABBShapeComponent &, struct SubBBsComponent &);
     /**
-     * @hash   555162788
      * @symbol  ?onClimbableBlock\@ActorMobilityUtils\@\@YA_NAEBUAABBShapeComponent\@\@AEBVIConstBlockSource\@\@AEBUStateVectorComponent\@\@_N3\@Z
      */
     MCAPI bool onClimbableBlock(struct AABBShapeComponent const &, class IConstBlockSource const &, struct StateVectorComponent const &, bool, bool);
     /**
-     * @hash   -2123166296
      * @symbol  ?setLocalPlayerSneaking\@ActorMobilityUtils\@\@YAXAEAUSynchedActorDataComponent\@\@PEAUPlayerActionComponent\@\@_N\@Z
      */
     MCAPI void setLocalPlayerSneaking(struct SynchedActorDataComponent &, struct PlayerActionComponent *, bool);
     /**
-     * @hash   -1209796599
      * @symbol  ?setSprinting\@ActorMobilityUtils\@\@YAXAEAUAttributesComponent\@\@AEAUSynchedActorDataComponent\@\@V?$optional_ref\@UPlayerActionComponent\@\@\@\@_N\@Z
      */
     MCAPI void setSprinting(struct AttributesComponent &, struct SynchedActorDataComponent &, class optional_ref<struct PlayerActionComponent>, bool);
     /**
-     * @hash   -1332914223
      * @symbol  ?setStanding\@ActorMobilityUtils\@\@YAXVSynchedActorDataWriter\@\@_NPEAUHorseStandCounterComponent\@\@1\@Z
      */
     MCAPI void setStanding(class SynchedActorDataWriter, bool, struct HorseStandCounterComponent *, bool);
     /**
-     * @hash   -2004339651
      * @symbol  ?shouldApplyWaterGravity\@ActorMobilityUtils\@\@YA_NPEBVNavigationComponent\@\@PEBVPhysicsComponent\@\@VSynchedActorDataReader\@\@AEBVVec3\@\@AEBVIConstBlockSource\@\@AEBVVec2\@\@\@Z
      */
     MCAPI bool shouldApplyWaterGravity(class NavigationComponent const *, class PhysicsComponent const *, class SynchedActorDataReader, class Vec3 const &, class IConstBlockSource const &, class Vec2 const &);
     /**
-     * @hash   1637731713
      * @symbol  ?updateBBFromDefinition\@ActorMobilityUtils\@\@YAXAEAVStrictEntityContext\@\@V?$optional_ref\@$$CBUCollisionBoxDefinitionComponent\@\@\@\@AEAUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasPenetratingLastFrameFlag\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@UOffsetsComponent\@\@\@\@\@Z
      */
     MCAPI void updateBBFromDefinition(class StrictEntityContext &, class optional_ref<struct CollisionBoxDefinitionComponent const>, struct SynchedActorDataComponent &, struct AABBShapeComponent &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasPenetratingLastFrameFlag>> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct OffsetsComponent>);

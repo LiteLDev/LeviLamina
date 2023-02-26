@@ -31,22 +31,18 @@ public:
 
 public:
     /**
-     * @hash   -655114715
      * @symbol  ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
      */
     MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
     /**
-     * @hash   1163931026
      * @symbol  ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     /**
-     * @hash   880696739
      * @symbol  ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
     /**
-     * @hash   -969449351
      * @symbol  ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
      */
     MCAPI void registrationFinished();

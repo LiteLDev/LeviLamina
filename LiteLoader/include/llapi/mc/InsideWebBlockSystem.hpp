@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   -407567087
      * @symbol  ?SLOWDOWN_MULTIPLIER\@InsideWebBlockSystem\@\@2VVec3\@\@B
      */
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
     /**
-     * @hash   2019054815
      * @symbol  ?_applySlowdown\@InsideWebBlockSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
      */
     MCAPI static void _applySlowdown(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
     /**
-     * @hash   1120392272
      * @symbol  ?createSlowdownSystem\@InsideWebBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSlowdownSystem();

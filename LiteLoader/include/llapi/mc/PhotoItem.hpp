@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   1183206379
      * @symbol  ?TAG_PHOTO_NAME\@PhotoItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_PHOTO_NAME;
     /**
-     * @hash   2015694825
      * @symbol  ?TAG_PHOTO_OWNER\@PhotoItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_PHOTO_OWNER;
     /**
-     * @hash   2105125323
      * @symbol  ?TAG_PHOTO_UUID\@PhotoItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_PHOTO_UUID;

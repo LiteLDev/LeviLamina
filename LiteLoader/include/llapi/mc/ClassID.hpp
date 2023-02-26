@@ -32,7 +32,6 @@ public:
 
 //private:
     /**
-     * @hash   1091452339
      * @symbol  ?getNextID\@ClassID\@\@CA_KXZ
      */
     MCAPI static unsigned __int64 getNextID();

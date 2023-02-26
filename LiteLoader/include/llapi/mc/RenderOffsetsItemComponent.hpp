@@ -46,13 +46,11 @@ public:
      */
     virtual ~RenderOffsetsItemComponent();
     /**
-     * @hash   538180769
      * @vftbl  1
      * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @hash   -1033191318
      * @symbol  ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
@@ -67,43 +65,36 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   107758419
      * @vftbl  5
      * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   1337263773
      * @vftbl  6
      * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   791609891
      * @symbol  ?bindType\@RenderOffsetsItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -1582944920
      * @symbol  ?getIdentifier\@RenderOffsetsItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
-     * @hash   -1033191318
      * @symbol  ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:
     /**
-     * @hash   1850002466
      * @symbol  ?Main_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
     /**
-     * @hash   143908712
      * @symbol  ?Off_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;

@@ -36,25 +36,21 @@ public:
      */
     virtual ~DoublePlantBlock();
     /**
-     * @hash   623441567
      * @vftbl  3
      * @symbol  ?getNextBlockPermutation\@DoublePlantBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const * getNextBlockPermutation(class Block const &) const;
     /**
-     * @hash   1713364627
      * @vftbl  7
      * @symbol  ?randomlyModifyPosition\@DoublePlantBlock\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@AEAH\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
     /**
-     * @hash   304620072
      * @vftbl  8
      * @symbol  ?randomlyModifyPosition\@DoublePlantBlock\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @hash   209049283
      * @vftbl  10
      * @symbol  ?getAABB\@DoublePlantBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -170,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1450424507
      * @vftbl  62
      * @symbol  ?canContainLiquid\@DoublePlantBlock\@\@UEBA_NXZ
      */
@@ -181,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1055259461
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@DoublePlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -192,37 +186,31 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1471120269
      * @vftbl  86
      * @symbol  ?onFertilized\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   130974568
      * @vftbl  88
      * @symbol  ?canBeFertilized\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -508743298
      * @vftbl  91
      * @symbol  ?mayPlace\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   594194205
      * @vftbl  92
      * @symbol  ?mayPlace\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1281378320
      * @vftbl  100
      * @symbol  ?getSecondPart\@DoublePlantBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @hash   -834717193
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@DoublePlantBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -233,7 +221,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   -1364671129
      * @vftbl  103
      * @symbol  ?asItemInstance\@DoublePlantBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -244,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -46585814
      * @vftbl  115
      * @symbol  ?canBeBuiltOver\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,37 +256,31 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   326626810
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@DoublePlantBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1454768769
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@DoublePlantBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -1042854129
      * @vftbl  136
      * @symbol  ?getColor\@DoublePlantBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -841589814
      * @vftbl  138
      * @symbol  ?getColorForParticle\@DoublePlantBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1371919293
      * @vftbl  143
      * @symbol  ?getVisualShape\@DoublePlantBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   145246595
      * @vftbl  146
      * @symbol  ?getVariant\@DoublePlantBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -326,7 +306,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1775734241
      * @vftbl  168
      * @symbol  ?onPlace\@DoublePlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -337,7 +316,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -2094088135
      * @vftbl  171
      * @symbol  ?tick\@DoublePlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -348,19 +326,16 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   713757341
      * @vftbl  178
      * @symbol  ?canSurvive\@DoublePlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1432916268
      * @vftbl  179
      * @symbol  ?getRenderLayer\@DoublePlantBlock\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @hash   -1570885156
      * @vftbl  180
      * @symbol  ?getRenderLayer\@DoublePlantBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -371,48 +346,40 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2102019417
      * @vftbl  186
      * @symbol  ?playerDestroy\@DoublePlantBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   1830496673
      * @vftbl  187
      * @symbol  ?getResourceItem\@DoublePlantBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -13376487
      * @vftbl  188
      * @symbol  ?getResourceCount\@DoublePlantBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -2070570194
      * @vftbl  193
      * @symbol  ?checkAlive\@DoublePlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTBLOCK
     /**
-     * @hash   880953620
      * @symbol  ?canBeSilkTouched\@DoublePlantBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1311786513
      * @symbol  ??0DoublePlantBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI DoublePlantBlock(std::string const &, int);
     /**
-     * @hash   1465582045
      * @symbol  ?getType\@DoublePlantBlock\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   2049374528
      * @symbol  ?placeAt\@DoublePlantBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4DoublePlantType\@\@HPEAVActor\@\@\@Z
      */
     MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum class DoublePlantType, int, class Actor *) const;

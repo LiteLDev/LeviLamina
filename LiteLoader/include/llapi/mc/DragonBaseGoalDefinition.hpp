@@ -39,7 +39,6 @@ public:
      */
     virtual bool validateMobType(class Mob &) const;
     /**
-     * @hash   1395345430
      * @symbol  ??0DragonBaseGoalDefinition\@\@QEAA\@XZ
      */
     MCAPI DragonBaseGoalDefinition();

@@ -34,25 +34,21 @@ public:
      */
     virtual ~MultifaceFeature();
     /**
-     * @hash   1015536365
      * @vftbl  1
      * @symbol  ?place\@MultifaceFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -864673444
      * @symbol  ??0MultifaceFeature\@\@QEAA\@XZ
      */
     MCAPI MultifaceFeature();
 
 //private:
     /**
-     * @hash   -1383381989
      * @symbol  ?_placeBlockIfPossible\@MultifaceFeature\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@3\@\@Z
      */
     MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource &, class BlockPos const &, class Random &, std::vector<unsigned char> const &) const;
     /**
-     * @hash   -218238712
      * @symbol  ?_getShuffledDirections\@MultifaceFeature\@\@CA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V23\@\@Z
      */
     MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);

@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -565025295
      * @symbol  ??0InternalSystemInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI InternalSystemInfo(struct InternalSystemInfo &&);
     /**
-     * @hash   1864726052
      * @symbol  ??1InternalSystemInfo\@\@QEAA\@XZ
      */
     MCAPI ~InternalSystemInfo();

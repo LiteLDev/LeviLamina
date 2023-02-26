@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -861862101
      * @symbol  ??0ItemStackResponseSlotInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo &&);
     /**
-     * @hash   -1955483234
      * @symbol  ??1ItemStackResponseSlotInfo\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackResponseSlotInfo();

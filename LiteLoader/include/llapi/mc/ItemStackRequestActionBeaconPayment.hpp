@@ -49,29 +49,24 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1924644588
      * @vftbl  4
      * @symbol  ?_write\@ItemStackRequestActionBeaconPayment\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   1298645964
      * @vftbl  5
      * @symbol  ?_read\@ItemStackRequestActionBeaconPayment\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   142086382
      * @symbol  ??0ItemStackRequestActionBeaconPayment\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionBeaconPayment();
     /**
-     * @hash   1994566918
      * @symbol  ?getPrimaryEffectId\@ItemStackRequestActionBeaconPayment\@\@QEBAHXZ
      */
     MCAPI int getPrimaryEffectId() const;
     /**
-     * @hash   733767530
      * @symbol  ?getSecondaryEffectId\@ItemStackRequestActionBeaconPayment\@\@QEBAHXZ
      */
     MCAPI int getSecondaryEffectId() const;

@@ -31,12 +31,10 @@ public:
 
 public:
     /**
-     * @hash   1046554292
      * @symbol  ?getSchema\@EventResponseFactory\@\@QEBAAEBV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@XZ
      */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     /**
-     * @hash   1476184755
      * @symbol  ?initSchema\@EventResponseFactory\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void initSchema(std::string const &, class SemVersion const &);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~MelonFeature();
     /**
-     * @hash   -1001088643
      * @vftbl  3
      * @symbol  ?place\@MelonFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

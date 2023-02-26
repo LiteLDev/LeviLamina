@@ -36,13 +36,11 @@ public:
      */
     virtual ~LootItemActorHasMarkVariantCondition();
     /**
-     * @hash   -1673513780
      * @vftbl  1
      * @symbol  ?applies\@LootItemActorHasMarkVariantCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual bool applies(class Random &, class LootTableContext &);
     /**
-     * @hash   21669075
      * @symbol  ?deserialize\@LootItemActorHasMarkVariantCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);

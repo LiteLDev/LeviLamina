@@ -127,7 +127,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1448102392
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Ocelot\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -163,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   336067161
      * @vftbl  350
      * @symbol  ?_serverAiMobStep\@Ocelot\@\@UEAAXXZ
      */
@@ -174,17 +172,14 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1269537084
      * @symbol  ??0Ocelot\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1313325505
      * @symbol  ?SNEAK_SPEED_MOD\@Ocelot\@\@2MB
      */
     MCAPI static float const SNEAK_SPEED_MOD;
     /**
-     * @hash   1706305637
      * @symbol  ?SPRINT_SPEED_MOD\@Ocelot\@\@2MB
      */
     MCAPI static float const SPRINT_SPEED_MOD;

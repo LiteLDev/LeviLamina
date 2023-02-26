@@ -65,7 +65,6 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1005149873
      * @vftbl  7
      * @symbol  ?onLevelScriptTick\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
@@ -81,13 +80,11 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1043237884
      * @vftbl  10
      * @symbol  ?onEvent\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEBULevelNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
-     * @hash   -583733471
      * @symbol  ??0GameTestLevelListener\@\@QEAA\@AEAVGameTestTicker\@gametest\@\@\@Z
      */
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);

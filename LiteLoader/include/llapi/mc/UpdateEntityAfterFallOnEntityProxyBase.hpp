@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   473913487
      * @symbol  ?mDummy\@UpdateEntityAfterFallOnEntityProxyBase\@\@2VVec3\@\@A
      */
     MCAPI static class Vec3 mDummy;

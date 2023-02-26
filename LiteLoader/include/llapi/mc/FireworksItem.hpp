@@ -67,13 +67,11 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -559349684
      * @vftbl  56
      * @symbol  ?isDestructive\@FireworksItem\@\@UEBA_NH\@Z
      */
     virtual bool isDestructive(int) const;
     /**
-     * @hash   -1855797504
      * @vftbl  60
      * @symbol  ?appendFormattedHovertext\@FireworksItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -114,50 +112,41 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -880284177
      * @vftbl  84
      * @symbol  ?use\@FireworksItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -747958165
      * @vftbl  85
      * @symbol  ?dispense\@FireworksItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -815866817
      * @vftbl  132
      * @symbol  ?_useOn\@FireworksItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -674377331
      * @symbol  ??0FireworksItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FireworksItem(std::string const &, int);
     /**
-     * @hash   1703978327
      * @symbol  ?TAG_EXPLOSIONS\@FireworksItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_EXPLOSIONS;
     /**
-     * @hash   1153884471
      * @symbol  ?TAG_E_FLIGHT\@FireworksItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_E_FLIGHT;
     /**
-     * @hash   348152789
      * @symbol  ?TAG_FIREWORKS\@FireworksItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_FIREWORKS;
     /**
-     * @hash   -768240865
      * @symbol  ?initFireworksRocketItem\@FireworksItem\@\@SAAEBVItemInstance\@\@AEAV2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI static class ItemInstance const & initFireworksRocketItem(class ItemInstance &, std::vector<class ItemInstance> const &, int);
     /**
-     * @hash   1837997496
      * @symbol  ?initFireworksRocketItem\@FireworksItem\@\@SAAEBVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI static class ItemStack const & initFireworksRocketItem(class ItemStack &, std::vector<class ItemStack> const &, int);

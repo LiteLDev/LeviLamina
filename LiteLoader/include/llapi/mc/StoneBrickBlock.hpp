@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -221632248
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@StoneBrickBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   659454083
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@StoneBrickBlock\@\@UEBA_NXZ
      */
@@ -203,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   2085200224
      * @vftbl  159
      * @symbol  ?tryGetInfested\@StoneBrickBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
@@ -239,19 +236,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1837505770
      * @vftbl  187
      * @symbol  ?getResourceItem\@StoneBrickBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1347927039
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@StoneBrickBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -390341048
      * @symbol  ??0StoneBrickBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI StoneBrickBlock(std::string const &, int, class Material const &);

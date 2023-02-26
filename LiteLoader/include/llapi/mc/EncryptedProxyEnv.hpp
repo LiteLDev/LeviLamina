@@ -35,19 +35,16 @@ public:
      */
     virtual ~EncryptedProxyEnv();
     /**
-     * @hash   1344991439
      * @vftbl  1
      * @symbol  ?NewSequentialFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@3\@\@Z
      */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
-     * @hash   -1101159601
      * @vftbl  2
      * @symbol  ?NewRandomAccessFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@3\@\@Z
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
-     * @hash   -1034061311
      * @vftbl  3
      * @symbol  ?NewWritableFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@3\@\@Z
      */
@@ -68,7 +65,6 @@ public:
      */
     virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
     /**
-     * @hash   464447049
      * @vftbl  7
      * @symbol  ?DeleteFileA\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -89,7 +85,6 @@ public:
      */
     virtual class leveldb::Status GetFileSize(std::string const &, unsigned __int64 *);
     /**
-     * @hash   284145299
      * @vftbl  11
      * @symbol  ?RenameFile\@EncryptedProxyEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
@@ -135,7 +130,6 @@ public:
      */
     virtual void SleepForMicroseconds(int);
     /**
-     * @hash   -222589578
      * @symbol  ??0EncryptedProxyEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@AEBVContentIdentity\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4EncryptedProxyReadMode\@\@\@Z
      */
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum class EncryptedProxyReadMode);

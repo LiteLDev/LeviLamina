@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   -425491152
      * @vftbl  49
      * @symbol  ?isHandEquipped\@FishingRodItem\@\@UEBA_NXZ
      */
@@ -73,19 +72,16 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   937804540
      * @vftbl  59
      * @symbol  ?requiresInteract\@FishingRodItem\@\@UEBA_NXZ
      */
     virtual bool requiresInteract() const;
     /**
-     * @hash   -641877700
      * @vftbl  62
      * @symbol  ?getEnchantSlot\@FishingRodItem\@\@UEBAHXZ
      */
     virtual int getEnchantSlot() const;
     /**
-     * @hash   -687438551
      * @vftbl  63
      * @symbol  ?getEnchantValue\@FishingRodItem\@\@UEBAHXZ
      */
@@ -126,43 +122,36 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -2129696226
      * @vftbl  84
      * @symbol  ?use\@FishingRodItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   523346510
      * @vftbl  89
      * @symbol  ?hurtActor\@FishingRodItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @hash   452930587
      * @vftbl  93
      * @symbol  ?mineBlock\@FishingRodItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @hash   367284423
      * @vftbl  118
      * @symbol  ?getIconInfo\@FishingRodItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   1855116491
      * @vftbl  119
      * @symbol  ?getInteractText\@FishingRodItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @hash   -600225963
      * @vftbl  120
      * @symbol  ?getAnimationFrameFor\@FishingRodItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @hash   1491831246
      * @symbol  ??0FishingRodItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FishingRodItem(std::string const &, int);

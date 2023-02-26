@@ -37,13 +37,11 @@ public:
      */
     virtual ~FilterTestDistanceToNearestPlayer();
     /**
-     * @hash   1102851879
      * @vftbl  2
      * @symbol  ?evaluate\@FilterTestDistanceToNearestPlayer\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   -729304293
      * @vftbl  4
      * @symbol  ?getName\@FilterTestDistanceToNearestPlayer\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   915524508
      * @vftbl  51
      * @symbol  ?isSignalSource\@RedstoneBlock\@\@UEBA_NXZ
      */
@@ -152,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1249461262
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@RedstoneBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -163,7 +161,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -2139037409
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@RedstoneBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -199,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -300202264
      * @vftbl  147
      * @symbol  ?canSpawnOn\@RedstoneBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
@@ -225,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -507835269
      * @vftbl  168
      * @symbol  ?onPlace\@RedstoneBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -246,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1163263321
      * @symbol  ??0RedstoneBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI RedstoneBlock(std::string const &, int);

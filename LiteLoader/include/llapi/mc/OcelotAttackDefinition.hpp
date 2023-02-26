@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   -718973913
      * @symbol  ??0OcelotAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI OcelotAttackDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class OcelotAttackGoal &) const;
     /**
-     * @hash   -1160038969
      * @symbol  ?buildSchema\@OcelotAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VOcelotAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OcelotAttackDefinition>> &);

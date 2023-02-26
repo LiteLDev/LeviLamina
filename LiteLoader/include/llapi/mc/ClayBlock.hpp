@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   1888576741
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@ClayBlock\@\@UEBA_NXZ
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   943779818
      * @vftbl  86
      * @symbol  ?onFertilized\@ClayBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -606105331
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@ClayBlock\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   -970915743
      * @vftbl  88
      * @symbol  ?canBeFertilized\@ClayBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -240,19 +236,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1097288298
      * @vftbl  187
      * @symbol  ?getResourceItem\@ClayBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   306473618
      * @vftbl  188
      * @symbol  ?getResourceCount\@ClayBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1042133578
      * @symbol  ??0ClayBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ClayBlock(std::string const &, int);

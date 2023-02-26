@@ -36,7 +36,6 @@ public:
      */
     virtual ~DripleafFeature();
     /**
-     * @hash   -2044554643
      * @vftbl  3
      * @symbol  ?place\@DripleafFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -44,7 +43,6 @@ public:
 
 //private:
     /**
-     * @hash   1107507229
      * @symbol  ?_placeBigDripleaf\@DripleafFeature\@\@CA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);

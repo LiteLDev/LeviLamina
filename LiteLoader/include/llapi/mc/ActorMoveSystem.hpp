@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   1420844002
      * @symbol  ?createActorMoveSystem\@ActorMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createActorMoveSystem();
     /**
-     * @hash   1763794100
      * @symbol  ?createUpdateHitboxSystem\@ActorMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();

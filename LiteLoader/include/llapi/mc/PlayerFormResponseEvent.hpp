@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   2039759824
      * @symbol  ??1PlayerFormResponseEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerFormResponseEvent();

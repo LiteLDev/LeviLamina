@@ -36,7 +36,6 @@ public:
      */
     virtual ~ChorusPlantBlock();
     /**
-     * @hash   -942825992
      * @vftbl  10
      * @symbol  ?getAABB\@ChorusPlantBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -47,7 +46,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1757470777
      * @vftbl  22
      * @symbol  ?canProvideSupport\@ChorusPlantBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -78,7 +76,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -571017710
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@ChorusPlantBlock\@\@UEBA_NXZ
      */
@@ -164,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -917346448
      * @vftbl  62
      * @symbol  ?canContainLiquid\@ChorusPlantBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   1305002044
      * @vftbl  69
      * @symbol  ?checkIsPathable\@ChorusPlantBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -186,13 +181,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2078076600
      * @vftbl  92
      * @symbol  ?mayPlace\@ChorusPlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1027842022
      * @vftbl  99
      * @symbol  ?neighborChanged\@ChorusPlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -267014962
      * @vftbl  171
      * @symbol  ?tick\@ChorusPlantBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -1958405832
      * @vftbl  178
      * @symbol  ?canSurvive\@ChorusPlantBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,51 +261,42 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   2030615318
      * @vftbl  187
      * @symbol  ?getResourceItem\@ChorusPlantBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   930804126
      * @vftbl  188
      * @symbol  ?getResourceCount\@ChorusPlantBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSPLANTBLOCK
     /**
-     * @hash   1646752326
      * @symbol  ?canBeSilkTouched\@ChorusPlantBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @hash   -342379481
      * @symbol  ?waterSpreadCausesSpawn\@ChorusPlantBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   1407196022
      * @symbol  ??0ChorusPlantBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ChorusPlantBlock(std::string const &, int);
     /**
-     * @hash   -1759334347
      * @symbol  ?PLANT_HEIGHT\@ChorusPlantBlock\@\@2MB
      */
     MCAPI static float const PLANT_HEIGHT;
     /**
-     * @hash   -1724998823
      * @symbol  ?PLANT_ITEM_DIMENSION\@ChorusPlantBlock\@\@2MB
      */
     MCAPI static float const PLANT_ITEM_DIMENSION;
     /**
-     * @hash   -664320785
      * @symbol  ?PLANT_WIDTH\@ChorusPlantBlock\@\@2MB
      */
     MCAPI static float const PLANT_WIDTH;
     /**
-     * @hash   -1069245565
      * @symbol  ?canGrowChorus\@ChorusPlantBlock\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool canGrowChorus(class Block const &);

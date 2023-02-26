@@ -35,7 +35,6 @@ public:
      */
     virtual ~SlimeKeepOnJumpingGoal();
     /**
-     * @hash   -30792523
      * @vftbl  1
      * @symbol  ?canUse\@SlimeKeepOnJumpingGoal\@\@UEAA_NXZ
      */
@@ -61,19 +60,16 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -778461815
      * @vftbl  6
      * @symbol  ?tick\@SlimeKeepOnJumpingGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1105001941
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@SlimeKeepOnJumpingGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1456075106
      * @symbol  ??0SlimeKeepOnJumpingGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SlimeKeepOnJumpingGoal(class Mob &);

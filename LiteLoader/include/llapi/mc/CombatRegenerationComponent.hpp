@@ -30,14 +30,12 @@ public:
 
 public:
     /**
-     * @hash   -1691541822
      * @symbol  ?tick\@CombatRegenerationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void tick(class Actor &);
 
 //private:
     /**
-     * @hash   -13193130
      * @symbol  ?_applyCombatBuffsToMob\@CombatRegenerationComponent\@\@AEAAXAEAVActor\@\@0\@Z
      */
     MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);

@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -484798276
      * @symbol  ??0CrashDumpFrameData\@\@QEAA\@HH_KMMMM\@Z
      */
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
     /**
-     * @hash   1271934925
      * @symbol  ?kFormat\@CrashDumpFrameData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];

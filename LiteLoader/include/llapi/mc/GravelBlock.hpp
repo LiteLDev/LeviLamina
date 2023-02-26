@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   351974731
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@GravelBlock\@\@UEBA_NXZ
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -137786032
      * @vftbl  86
      * @symbol  ?onFertilized\@GravelBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -40940185
      * @vftbl  87
      * @symbol  ?mayConsumeFertilizer\@GravelBlock\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @hash   2130177211
      * @vftbl  88
      * @symbol  ?canBeFertilized\@GravelBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -240,19 +236,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1312914820
      * @vftbl  187
      * @symbol  ?getResourceItem\@GravelBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   733500978
      * @vftbl  193
      * @symbol  ?getDustColor\@GravelBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   -962541459
      * @vftbl  194
      * @symbol  ?getDustParticleName\@GravelBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -263,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_195();
     /**
-     * @hash   -253055836
      * @symbol  ??0GravelBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GravelBlock(std::string const &, int);

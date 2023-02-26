@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1851847336
      * @symbol  ??1SideBySideSimulatorComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideSimulatorComponent();

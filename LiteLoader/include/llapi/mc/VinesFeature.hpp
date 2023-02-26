@@ -36,7 +36,6 @@ public:
      */
     virtual ~VinesFeature();
     /**
-     * @hash   -1158117913
      * @vftbl  3
      * @symbol  ?place\@VinesFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

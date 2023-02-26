@@ -50,38 +50,24 @@ public:
 
 public:
     /**
-     * @hash   -424401551
      * @symbol  ??0ChunkBlockPos\@\@QEAA\@EVChunkLocalHeight\@\@E\@Z
      */
     MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
     /**
-     * @hash   -989104271
      * @symbol  ??0ChunkBlockPos\@\@QEAA\@AEBVBlockPos\@\@F\@Z
      */
     MCAPI ChunkBlockPos(class BlockPos const &, short);
     /**
-     * @hash   2001865840
      * @symbol  ?toPos\@ChunkBlockPos\@\@QEBA?AVPos\@\@XZ
      */
     MCAPI class Pos toPos() const;
     /**
-     * @hash   -1423122181
      * @symbol  ?from2D\@ChunkBlockPos\@\@SA?AV1\@EE\@Z
      */
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
     /**
-     * @hash   -493940829
      * @symbol  ?fromLegacyIndex\@ChunkBlockPos\@\@SA?AV1\@G\@Z
      */
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
-};
 
-namespace std {
-
-template <>
-struct hash<ChunkBlockPos> {
-    std::size_t operator()(ChunkBlockPos const& pos) const noexcept {
-        return (std::hash<char>()(pos.x) ^ std::hash<short>()(pos.y.mVal) ^ std::hash<char>()(pos.z));
-    }
 };
-} // namespace std

@@ -34,19 +34,16 @@ public:
      */
     virtual ~RepeatUntilFailureNode();
     /**
-     * @hash   1772397350
      * @vftbl  1
      * @symbol  ?tick\@RepeatUntilFailureNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1000767325
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@RepeatUntilFailureNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   1230825989
      * @symbol  ??0RepeatUntilFailureNode\@\@QEAA\@XZ
      */
     MCAPI RepeatUntilFailureNode();

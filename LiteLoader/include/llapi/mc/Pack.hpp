@@ -67,77 +67,62 @@ public:
      */
     virtual void const * _Get() const;
     /**
-     * @hash   1163053650
      * @symbol  ??0Pack\@\@QEAA\@V?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@2\@V?$unique_ptr\@VSubpackInfoCollection\@\@U?$default_delete\@VSubpackInfoCollection\@\@\@std\@\@\@2\@V?$unique_ptr\@VPackMetadata\@\@U?$default_delete\@VPackMetadata\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     /**
-     * @hash   2076129217
      * @symbol  ?getAccessStrategy\@Pack\@\@QEAAPEAVPackAccessStrategy\@\@XZ
      */
     MCAPI class PackAccessStrategy * getAccessStrategy();
     /**
-     * @hash   -1885465498
      * @symbol  ?getManifest\@Pack\@\@QEAAAEAVPackManifest\@\@XZ
      */
     MCAPI class PackManifest & getManifest();
     /**
-     * @hash   -670803996
      * @symbol  ?getManifest\@Pack\@\@QEBAAEBVPackManifest\@\@XZ
      */
     MCAPI class PackManifest const & getManifest() const;
     /**
-     * @hash   1186320087
      * @symbol  ?getManifestPtr\@Pack\@\@QEAAPEAVPackManifest\@\@XZ
      */
     MCAPI class PackManifest * getManifestPtr();
     /**
-     * @hash   -1933286183
      * @symbol  ?getSubpackInfoStack\@Pack\@\@QEAAPEAVSubpackInfoCollection\@\@XZ
      */
     MCAPI class SubpackInfoCollection * getSubpackInfoStack();
     /**
-     * @hash   609769004
      * @symbol  ?move\@Pack\@\@QEAAX$$QEAV1\@\@Z
      */
     MCAPI void move(class Pack &&);
     /**
-     * @hash   -1290852589
      * @symbol  ?notifyDeleted\@Pack\@\@QEAAXXZ
      */
     MCAPI void notifyDeleted();
     /**
-     * @hash   -646118781
      * @symbol  ?notifyUpdated\@Pack\@\@QEAAXXZ
      */
     MCAPI void notifyUpdated();
     /**
-     * @hash   -903237851
      * @symbol  ?registerPackDeletedCallback\@Pack\@\@QEAAXPEAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void registerPackDeletedCallback(void *, class std::function<void (class Pack &)>);
     /**
-     * @hash   -408886187
      * @symbol  ?registerPackUpdatedCallback\@Pack\@\@QEAAXPEAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void registerPackUpdatedCallback(void *, class std::function<void (class Pack &)>);
     /**
-     * @hash   -1797628505
      * @symbol  ?unregisterPackDeletedCallback\@Pack\@\@QEAAXPEAX\@Z
      */
     MCAPI void unregisterPackDeletedCallback(void *);
     /**
-     * @hash   1207023235
      * @symbol  ?unregisterPackUpdatedCallback\@Pack\@\@QEAAXPEAX\@Z
      */
     MCAPI void unregisterPackUpdatedCallback(void *);
     /**
-     * @hash   825843067
      * @symbol  ?createPack\@Pack\@\@SA?AV?$unique_ptr\@VPack\@\@U?$default_delete\@VPack\@\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@W4PackType\@\@W4PackOrigin\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@PEAVPackSourceReport\@\@\@Z
      */
     MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum class PackType, enum class PackOrigin, class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceReport *);
     /**
-     * @hash   212688216
      * @symbol  ?createPackMetadata\@Pack\@\@SA?AV?$unique_ptr\@VPackMetadata\@\@U?$default_delete\@VPackMetadata\@\@\@std\@\@\@std\@\@W4PackType\@\@AEAVPackManifest\@\@AEBVPackAccessStrategy\@\@AEAVPackReport\@\@\@Z
      */
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum class PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
@@ -146,7 +131,6 @@ public:
 
 private:
     /**
-     * @hash   -1509419049
      * @symbol  ?EDUCATION_METADATA_FILE\@Pack\@\@0V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B
      */
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;

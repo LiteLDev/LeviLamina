@@ -130,7 +130,6 @@ public:
      */
     virtual void SleepForMicroseconds(int);
     /**
-     * @hash   251290529
      * @symbol  ??0FlushableEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@\@Z
      */
     MCAPI FlushableEnv(class leveldb::Env *);

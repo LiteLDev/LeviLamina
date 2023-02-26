@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1332727816
      * @vftbl  0
      * @symbol  ?getJsonName\@EconomyTradeableDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~EconomyTradeableDescription();
     /**
-     * @hash   1456248619
      * @vftbl  2
      * @symbol  ?deserializeData\@EconomyTradeableDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   -1136771115
      * @vftbl  3
      * @symbol  ?serializeData\@EconomyTradeableDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

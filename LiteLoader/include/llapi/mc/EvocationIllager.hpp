@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   1281408193
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@EvocationIllager\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -133,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -1056637249
      * @vftbl  246
      * @symbol  ?die\@EvocationIllager\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
@@ -159,7 +157,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1834944079
      * @vftbl  291
      * @symbol  ?aiStep\@EvocationIllager\@\@UEAAXXZ
      */
@@ -170,7 +167,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   -1105760737
      * @vftbl  306
      * @symbol  ?isAlliedTo\@EvocationIllager\@\@UEAA_NPEAVMob\@\@\@Z
      */
@@ -181,7 +177,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   -715103344
      * @vftbl  313
      * @symbol  ?getArmorValue\@EvocationIllager\@\@MEBAHXZ
      */
@@ -193,13 +188,11 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVOCATIONILLAGER
     /**
-     * @hash   -1473262185
      * @symbol  ?canExistInPeaceful\@EvocationIllager\@\@UEBA_NXZ
      */
     MCVAPI bool canExistInPeaceful() const;
 #endif
     /**
-     * @hash   991592424
      * @symbol  ??0EvocationIllager\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI EvocationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -37,7 +37,6 @@ public:
      */
     virtual ~ScriptServerNetworkEventHandler();
     /**
-     * @hash   1169487653
      * @vftbl  1
      * @symbol  ?handleEvent\@ScriptServerNetworkEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUChatEvent\@\@\@Z
      */
@@ -50,7 +49,6 @@ public:
 
 //private:
     /**
-     * @hash   481349296
      * @symbol  ?_handleChat\@ScriptServerNetworkEventHandler\@\@AEBA_NAEAUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;

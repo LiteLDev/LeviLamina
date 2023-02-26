@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1628717682
      * @symbol  ?createSystem\@TryExitVehicleSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

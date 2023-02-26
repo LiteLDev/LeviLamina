@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -813294000
      * @symbol  ??1MolangMemberVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangMemberVariable();

@@ -36,7 +36,6 @@ public:
      */
     virtual ~LiquidBlock();
     /**
-     * @hash   -1260897439
      * @vftbl  10
      * @symbol  ?getAABB\@LiquidBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -65865561
      * @vftbl  62
      * @symbol  ?canContainLiquid\@LiquidBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   146575173
      * @vftbl  69
      * @symbol  ?checkIsPathable\@LiquidBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -2029126126
      * @vftbl  90
      * @symbol  ?mayPick\@LiquidBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @hash   1407411379
      * @vftbl  99
      * @symbol  ?neighborChanged\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1211165892
      * @vftbl  110
      * @symbol  ?handleEntityInside\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@AEAVVec3\@\@\@Z
      */
@@ -217,25 +211,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -447380557
      * @vftbl  135
      * @symbol  ?getColor\@LiquidBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   476596676
      * @vftbl  137
      * @symbol  ?getColorAtPos\@LiquidBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -842037811
      * @vftbl  140
      * @symbol  ?onGraphicsModeChanged\@LiquidBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @hash   -8229178
      * @vftbl  151
      * @symbol  ?animateTick\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -261,7 +251,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1566355597
      * @vftbl  168
      * @symbol  ?onPlace\@LiquidBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -277,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -526258699
      * @vftbl  184
      * @symbol  ?getMapColor\@LiquidBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -288,74 +276,61 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1011200873
      * @vftbl  188
      * @symbol  ?getResourceCount\@LiquidBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCK
     /**
-     * @hash   -1139060483
      * @symbol  ?canBeSilkTouched\@LiquidBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   1451054136
      * @symbol  ??0LiquidBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LiquidBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   1911015825
      * @symbol  ?getTickDelay\@LiquidBlock\@\@QEBAHAEAVBlockSource\@\@\@Z
      */
     MCAPI int getTickDelay(class BlockSource &) const;
     /**
-     * @hash   2087258707
      * @symbol  ?getHeightFromDepth\@LiquidBlock\@\@SAMH\@Z
      */
     MCAPI static float getHeightFromDepth(int);
     /**
-     * @hash   -832295555
      * @symbol  ?handleEntityInside\@LiquidBlock\@\@SAXAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAVVec3\@\@AEBVMaterial\@\@\@Z
      */
     MCAPI static void handleEntityInside(class IConstBlockSource const &, class BlockPos const &, class Vec3 &, class Material const &);
 
 //protected:
     /**
-     * @hash   -858665141
      * @symbol  ?emitFizzParticle\@LiquidBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void emitFizzParticle(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1023920720
      * @symbol  ?solidify\@LiquidBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     MCAPI void solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   -848666588
      * @symbol  ?trySpreadFire\@LiquidBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   565195687
      * @symbol  ?getDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
      */
     MCAPI static int getDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
     /**
-     * @hash   991260252
      * @symbol  ?getRenderedDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
      */
     MCAPI static int getRenderedDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 
 //private:
     /**
-     * @hash   -897113224
      * @symbol  ?_solidify\@LiquidBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     MCAPI void _solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   412752641
      * @symbol  ?_getFlow\@LiquidBlock\@\@CA?AVVec3\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
      */
     MCAPI static class Vec3 _getFlow(class IConstBlockSource const &, class BlockPos const &, class Material const &);

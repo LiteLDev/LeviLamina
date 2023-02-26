@@ -36,7 +36,6 @@ public:
      */
     virtual ~MoveTowardsHomeRestrictionGoal();
     /**
-     * @hash   -876432549
      * @vftbl  1
      * @symbol  ?canUse\@MoveTowardsHomeRestrictionGoal\@\@UEAA_NXZ
      */
@@ -57,13 +56,11 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   473037941
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@MoveTowardsHomeRestrictionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   2091092632
      * @symbol  ??0MoveTowardsHomeRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI MoveTowardsHomeRestrictionGoal(class Mob &);

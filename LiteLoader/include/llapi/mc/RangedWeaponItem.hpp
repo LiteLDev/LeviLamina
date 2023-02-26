@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   1047200323
      * @vftbl  63
      * @symbol  ?getEnchantValue\@RangedWeaponItem\@\@UEBAHXZ
      */
@@ -108,42 +107,35 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   168881976
      * @vftbl  84
      * @symbol  ?use\@RangedWeaponItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @hash   -352520040
      * @vftbl  87
      * @symbol  ?releaseUsing\@RangedWeaponItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
-     * @hash   622565108
      * @vftbl  89
      * @symbol  ?hurtActor\@RangedWeaponItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @hash   1630281525
      * @vftbl  93
      * @symbol  ?mineBlock\@RangedWeaponItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @hash   -470394321
      * @vftbl  120
      * @symbol  ?getAnimationFrameFor\@RangedWeaponItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @hash   -578423260
      * @symbol  ??0RangedWeaponItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI RangedWeaponItem(std::string const &, int);
     /**
-     * @hash   -1552321949
      * @symbol  ?getLaunchPower\@RangedWeaponItem\@\@QEBAMHHH\@Z
      */
     MCAPI float getLaunchPower(int, int, int) const;

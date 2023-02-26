@@ -29,7 +29,6 @@ public:
 
 public:
     /**
-     * @hash   117778377
      * @symbol  ??0VolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI VolumeDefinition();
@@ -38,27 +37,22 @@ public:
      */
     MCAPI VolumeDefinition(struct VolumeDefinition &&);
     /**
-     * @hash   -1481758473
      * @symbol  ??1VolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI ~VolumeDefinition();
     /**
-     * @hash   -563126025
      * @symbol  ?NAME\@VolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NAME;
     /**
-     * @hash   -1171837821
      * @symbol  ?bindType\@VolumeDefinition\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -295300608
      * @symbol  ?getMaxSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
     /**
-     * @hash   -1808078100
      * @symbol  ?getMinSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */
     MCAPI static class SemVersion const & getMinSupportedVersion();

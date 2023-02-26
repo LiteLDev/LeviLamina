@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   356908126
      * @symbol  ?createSystem\@ExperienceOrbPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   -1698490547
      * @symbol  ?_doExperienceOrbPostNormalTickSystem\@ExperienceOrbPostNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doExperienceOrbPostNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);

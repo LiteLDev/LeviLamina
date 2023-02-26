@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -1143879278
      * @symbol  ?getTimeAccumulator\@ImguiProfiler\@\@QEAA?AVTimeAccumulator\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
      */
     MCAPI class TimeAccumulator getTimeAccumulator(std::string const &, std::string const &, bool);
     /**
-     * @hash   -110293597
      * @symbol  ?reset\@ImguiProfiler\@\@QEAAXXZ
      */
     MCAPI void reset();

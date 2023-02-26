@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1503767305
      * @vftbl  0
      * @symbol  ?getJsonName\@ContainerDescription\@\@UEBAPEBDXZ
      */
@@ -42,13 +41,11 @@ public:
      */
     virtual ~ContainerDescription();
     /**
-     * @hash   356502410
      * @vftbl  2
      * @symbol  ?deserializeData\@ContainerDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @hash   211004628
      * @vftbl  3
      * @symbol  ?serializeData\@ContainerDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

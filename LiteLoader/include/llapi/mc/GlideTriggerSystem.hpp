@@ -36,7 +36,6 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideSystem();
     /**
-     * @hash   -1621121778
      * @symbol  ?createSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

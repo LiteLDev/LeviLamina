@@ -36,7 +36,6 @@ public:
      */
     virtual ~RedStoneWireBlock();
     /**
-     * @hash   1410117908
      * @vftbl  10
      * @symbol  ?getAABB\@RedStoneWireBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,19 +151,16 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   259405956
      * @vftbl  62
      * @symbol  ?canContainLiquid\@RedStoneWireBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -661304083
      * @vftbl  64
      * @symbol  ?shouldConnectToRedstone\@RedStoneWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   -2019159087
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -175,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   487587460
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -186,19 +181,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   111580316
      * @vftbl  92
      * @symbol  ?mayPlace\@RedStoneWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1161027226
      * @vftbl  99
      * @symbol  ?neighborChanged\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   168551942
      * @vftbl  103
      * @symbol  ?asItemInstance\@RedStoneWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -229,25 +221,21 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   489224022
      * @vftbl  135
      * @symbol  ?getColor\@RedStoneWireBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @hash   -1640243376
      * @vftbl  136
      * @symbol  ?getColor\@RedStoneWireBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1169854493
      * @vftbl  147
      * @symbol  ?canSpawnOn\@RedStoneWireBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @hash   1703193481
      * @vftbl  151
      * @symbol  ?animateTick\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -273,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -108557680
      * @vftbl  168
      * @symbol  ?onPlace\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -284,7 +271,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1537330022
      * @vftbl  171
      * @symbol  ?tick\@RedStoneWireBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -295,7 +281,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   868001484
      * @vftbl  178
      * @symbol  ?canSurvive\@RedStoneWireBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -306,26 +291,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1833277758
      * @vftbl  187
      * @symbol  ?getResourceItem\@RedStoneWireBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   620830827
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@RedStoneWireBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEWIREBLOCK
     /**
-     * @hash   144935675
      * @symbol  ?waterSpreadCausesSpawn\@RedStoneWireBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   1934324402
      * @symbol  ??0RedStoneWireBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI RedStoneWireBlock(std::string const &, int);

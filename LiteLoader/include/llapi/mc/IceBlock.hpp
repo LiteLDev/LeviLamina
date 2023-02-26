@@ -156,13 +156,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1302568311
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@IceBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -1215989370
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@IceBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -223,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   925101893
      * @vftbl  172
      * @symbol  ?randomTick\@IceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -239,18 +236,15 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   440482696
      * @vftbl  188
      * @symbol  ?getResourceCount\@IceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1239345899
      * @symbol  ??0IceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H_N\@Z
      */
     MCAPI IceBlock(std::string const &, int, bool);
     /**
-     * @hash   1721196297
      * @symbol  ?melt\@IceBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static void melt(class BlockSource &, class BlockPos const &);

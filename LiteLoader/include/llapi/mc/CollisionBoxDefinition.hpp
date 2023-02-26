@@ -31,22 +31,18 @@ public:
 
 public:
     /**
-     * @hash   1910023859
      * @symbol  ?setHeight\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setHeight(float const &);
     /**
-     * @hash   1192341503
      * @symbol  ?setWidth\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setWidth(float const &);
     /**
-     * @hash   -1113445510
      * @symbol  ?buildSchema\@CollisionBoxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCollisionBoxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition>> &);
     /**
-     * @hash   738953287
      * @symbol  ?mBoxEpsilon\@CollisionBoxDefinition\@\@2MB
      */
     MCAPI static float const mBoxEpsilon;

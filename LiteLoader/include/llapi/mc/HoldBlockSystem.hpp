@@ -35,13 +35,11 @@ public:
      */
     virtual ~HoldBlockSystem();
     /**
-     * @hash   -1199167943
      * @vftbl  1
      * @symbol  ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @hash   -1884439091
      * @vftbl  2
      * @symbol  ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
@@ -49,7 +47,6 @@ public:
 
 //private:
     /**
-     * @hash   -1819253095
      * @symbol  ?_holdBlockSystemOnActorDie\@HoldBlockSystem\@\@CAXAEAUActorDieEvent\@\@\@Z
      */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);

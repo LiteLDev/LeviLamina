@@ -36,29 +36,24 @@ public:
 
 public:
     /**
-     * @hash   -2107120575
      * @symbol  ??0SpawnClimateFinder\@\@QEAA\@V?$vector\@UClimateParameters\@\@V?$allocator\@UClimateParameters\@\@\@std\@\@\@std\@\@AEBUOverworldNoises3d\@\@AEBVDimensionHeightRange\@\@\@Z
      */
     MCAPI SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const &, class DimensionHeightRange const &);
     /**
-     * @hash   1422062704
      * @symbol  ?findSpawnPosition\@SpawnClimateFinder\@\@QEBA?AVBlockPos\@\@XZ
      */
     MCAPI class BlockPos findSpawnPosition() const;
     /**
-     * @hash   -2005450422
      * @symbol  ??1SpawnClimateFinder\@\@QEAA\@XZ
      */
     MCAPI ~SpawnClimateFinder();
 
 //private:
     /**
-     * @hash   -518101810
      * @symbol  ?_getSpawnPositionAndFitness\@SpawnClimateFinder\@\@AEBA?AU?$pair\@VBlockPos\@\@_J\@std\@\@VBlockPos\@\@\@Z
      */
     MCAPI struct std::pair<class BlockPos, __int64> _getSpawnPositionAndFitness(class BlockPos) const;
     /**
-     * @hash   -853992729
      * @symbol  ?_radialSearch\@SpawnClimateFinder\@\@AEBA?AUResultDetails\@1\@U21\@HH\@Z
      */
     MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;

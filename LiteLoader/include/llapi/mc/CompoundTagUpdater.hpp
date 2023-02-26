@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -767309907
      * @symbol  ?update\@CompoundTagUpdater\@\@QEBA_NAEAVCompoundTag\@\@\@Z
      */
     MCAPI bool update(class CompoundTag &) const;
     /**
-     * @hash   -1278903980
      * @symbol  ??1CompoundTagUpdater\@\@QEAA\@XZ
      */
     MCAPI ~CompoundTagUpdater();

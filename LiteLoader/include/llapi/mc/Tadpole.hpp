@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   223998881
      * @vftbl  12
      * @symbol  ?initializeComponents\@Tadpole\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -166,19 +165,16 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   -1304165250
      * @vftbl  356
      * @symbol  ?getFlopVerticalVelocityFactor\@Tadpole\@\@UEBAMXZ
      */
     virtual float getFlopVerticalVelocityFactor() const;
     /**
-     * @hash   -1354456564
      * @vftbl  357
      * @symbol  ?getFlopHorizontalVelocityFactor\@Tadpole\@\@UEBAMXZ
      */
     virtual float getFlopHorizontalVelocityFactor() const;
     /**
-     * @hash   -2091967845
      * @symbol  ??0Tadpole\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Tadpole(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

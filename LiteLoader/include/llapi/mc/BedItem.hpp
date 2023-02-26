@@ -72,7 +72,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   1589253114
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@BedItem\@\@UEBA_NH\@Z
      */
@@ -108,25 +107,21 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -770499354
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@BedItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -1356827893
      * @vftbl  118
      * @symbol  ?getIconInfo\@BedItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -872717826
      * @vftbl  130
      * @symbol  ?_checkUseOnPermissions\@BedItem\@\@EEBA_NAEAVActor\@\@AEAVItemStackBase\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /**
-     * @hash   -600098622
      * @vftbl  132
      * @symbol  ?_useOn\@BedItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
@@ -134,7 +129,6 @@ public:
 
 //private:
     /**
-     * @hash   1621366571
      * @symbol  ?_tryUseOn\@BedItem\@\@AEBA_NAEAVItemStackBase\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     MCAPI bool _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

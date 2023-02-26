@@ -35,7 +35,6 @@ public:
      */
     virtual ~BlastFurnaceContainerScreenValidator();
     /**
-     * @hash   -1203090687
      * @symbol  ??0BlastFurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BlastFurnaceContainerScreenValidator();

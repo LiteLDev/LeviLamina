@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -849980174
      * @symbol  ?isSolidOpaque\@BlockBakedMaterialDataComponent\@\@QEBA_NXZ
      */
     MCAPI bool isSolidOpaque() const;
     /**
-     * @hash   347328188
      * @symbol  ??4BlockBakedMaterialDataComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockBakedMaterialDataComponent & operator=(struct BlockBakedMaterialDataComponent &&);

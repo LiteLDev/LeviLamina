@@ -35,19 +35,16 @@ public:
      */
     virtual ~SwimMoveControl();
     /**
-     * @hash   1710128097
      * @vftbl  1
      * @symbol  ?initializeInternal\@SwimMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @hash   -1708571326
      * @vftbl  2
      * @symbol  ?tick\@SwimMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   1707849808
      * @symbol  ??0SwimMoveControl\@\@QEAA\@XZ
      */
     MCAPI SwimMoveControl();

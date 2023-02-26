@@ -67,7 +67,6 @@ public:
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1323040915
      * @vftbl  56
      * @symbol  ?isDestructive\@BlockItem\@\@UEBA_NH\@Z
      */
@@ -78,7 +77,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   -1201188410
      * @vftbl  67
      * @symbol  ?isValidAuxValue\@BlockItem\@\@UEBA_NH\@Z
      */
@@ -114,43 +112,36 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -743939078
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@BlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   709408439
      * @vftbl  118
      * @symbol  ?getIconInfo\@BlockItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   2007807979
      * @vftbl  122
      * @symbol  ?getLightEmission\@BlockItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
-     * @hash   -1577317368
      * @vftbl  123
      * @symbol  ?getIconYOffset\@BlockItem\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @hash   1687964648
      * @vftbl  131
      * @symbol  ?_calculatePlacePos\@BlockItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   1416088551
      * @vftbl  132
      * @symbol  ?_useOn\@BlockItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @hash   -1125688018
      * @symbol  ??0BlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BlockItem(std::string const &, int);

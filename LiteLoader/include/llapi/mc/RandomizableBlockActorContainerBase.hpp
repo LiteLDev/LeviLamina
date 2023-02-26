@@ -36,13 +36,11 @@ public:
      */
     virtual ~RandomizableBlockActorContainerBase();
     /**
-     * @hash   -611298509
      * @vftbl  1
      * @symbol  ?load\@RandomizableBlockActorContainerBase\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -2089398750
      * @vftbl  2
      * @symbol  ?save\@RandomizableBlockActorContainerBase\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
@@ -88,12 +86,10 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -341359331
      * @symbol  ?setLootTable\@RandomizableBlockActorContainerBase\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI void setLootTable(std::string const &, int);
     /**
-     * @hash   -120115730
      * @symbol  ?unPackLootTable\@RandomizableBlockActorContainerBase\@\@QEAAXAEAVLevel\@\@AEAVContainer\@\@V?$AutomaticID\@VDimension\@\@H\@\@PEAVActor\@\@\@Z
      */
     MCAPI void unPackLootTable(class Level &, class Container &, class AutomaticID<class Dimension, int>, class Actor *);

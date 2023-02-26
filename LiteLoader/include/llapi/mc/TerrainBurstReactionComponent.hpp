@@ -45,7 +45,6 @@ public:
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -1628188571
      * @vftbl  3
      * @symbol  ?_onEnd\@TerrainBurstReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */

@@ -29,22 +29,18 @@ public:
 
 public:
     /**
-     * @hash   617972581
      * @symbol  ??0BucketableComponent\@\@QEAA\@XZ
      */
     MCAPI BucketableComponent();
     /**
-     * @hash   1186978757
      * @symbol  ?getInteraction\@BucketableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   -987029022
      * @symbol  ?initFromDefinition\@BucketableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @hash   -169621383
      * @symbol  ?implInteraction\@BucketableComponent\@\@SAXAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI static void implInteraction(class Actor &, class Player &);
@@ -53,7 +49,6 @@ public:
 
 private:
     /**
-     * @hash   -1203468545
      * @symbol  ?WATER_BUCKET_USEABLE_VERSION\@BucketableComponent\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;

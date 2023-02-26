@@ -35,13 +35,11 @@ public:
      */
     virtual ~NpcUrlAction();
     /**
-     * @hash   -1567769626
      * @vftbl  1
      * @symbol  ?toJson\@NpcUrlAction\@\@UEAA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value toJson();
     /**
-     * @hash   -2084717248
      * @symbol  ??0NpcUrlAction\@\@QEAA\@XZ
      */
     MCAPI NpcUrlAction();

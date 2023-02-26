@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -259546186
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@PrismarineBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1451300949
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@PrismarineBlock\@\@UEBA_NXZ
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   509663779
      * @vftbl  184
      * @symbol  ?getMapColor\@PrismarineBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -239,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1033474419
      * @vftbl  187
      * @symbol  ?getResourceItem\@PrismarineBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1908981155
      * @symbol  ??0PrismarineBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI PrismarineBlock(std::string const &, int);

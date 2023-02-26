@@ -147,13 +147,11 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1359063560
      * @vftbl  291
      * @symbol  ?aiStep\@WaterAnimal\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @hash   1366112274
      * @vftbl  296
      * @symbol  ?checkSpawnRules\@WaterAnimal\@\@UEAA_N_N\@Z
      */
@@ -174,24 +172,20 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   683391818
      * @vftbl  356
      * @symbol  ?getFlopVerticalVelocityFactor\@WaterAnimal\@\@UEBAMXZ
      */
     virtual float getFlopVerticalVelocityFactor() const;
     /**
-     * @hash   1490187016
      * @vftbl  357
      * @symbol  ?getFlopHorizontalVelocityFactor\@WaterAnimal\@\@UEBAMXZ
      */
     virtual float getFlopHorizontalVelocityFactor() const;
     /**
-     * @hash   1756349567
      * @symbol  ??0WaterAnimal\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI WaterAnimal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -531908621
      * @symbol  ?preAiStep\@WaterAnimal\@\@QEAAXXZ
      */
     MCAPI void preAiStep();

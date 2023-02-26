@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   1716733982
      * @vftbl  0
      * @symbol  ?getJsonName\@TradeResupplyDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~TradeResupplyDescription();
     /**
-     * @hash   702370271
      * @vftbl  3
      * @symbol  ?serializeData\@TradeResupplyDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

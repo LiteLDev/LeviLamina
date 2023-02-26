@@ -36,19 +36,16 @@ public:
      */
     virtual ~FrostWalkerEnchant();
     /**
-     * @hash   1902227704
      * @vftbl  2
      * @symbol  ?getMinCost\@FrostWalkerEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   -468749370
      * @vftbl  3
      * @symbol  ?getMaxCost\@FrostWalkerEnchant\@\@UEBAHH\@Z
      */
     virtual int getMaxCost(int) const;
     /**
-     * @hash   -1908066926
      * @vftbl  5
      * @symbol  ?getMaxLevel\@FrostWalkerEnchant\@\@UEBAHXZ
      */
@@ -75,13 +72,11 @@ public:
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROSTWALKERENCHANT
     /**
-     * @hash   -1995418738
      * @symbol  ?isTreasureOnly\@FrostWalkerEnchant\@\@UEBA_NXZ
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
-     * @hash   -1888378438
      * @symbol  ??0FrostWalkerEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2HH\@Z
      */
     MCAPI FrostWalkerEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);

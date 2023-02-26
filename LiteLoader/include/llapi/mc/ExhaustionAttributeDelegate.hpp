@@ -36,13 +36,11 @@ public:
      */
     virtual ~ExhaustionAttributeDelegate();
     /**
-     * @hash   776350065
      * @vftbl  1
      * @symbol  ?tick\@ExhaustionAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   1043433684
      * @symbol  ??0ExhaustionAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
      */
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);

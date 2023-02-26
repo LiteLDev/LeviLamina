@@ -186,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1965417322
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@ClothBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1973925761
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@ClothBlock\@\@UEBA_NXZ
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1530838967
      * @vftbl  184
      * @symbol  ?getMapColor\@ClothBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -239,31 +236,26 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -633015080
      * @vftbl  187
      * @symbol  ?getResourceItem\@ClothBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1598278017
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@ClothBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOTHBLOCK
     /**
-     * @hash   -68484813
      * @symbol  ?canDamperVibrations\@ClothBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canDamperVibrations() const;
     /**
-     * @hash   -2137180449
      * @symbol  ?canOccludeVibrations\@ClothBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canOccludeVibrations() const;
 #endif
     /**
-     * @hash   1683811505
      * @symbol  ??0ClothBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ClothBlock(std::string const &, int);

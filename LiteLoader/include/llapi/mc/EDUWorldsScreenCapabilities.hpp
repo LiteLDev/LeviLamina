@@ -35,7 +35,6 @@ public:
      */
     virtual ~EDUWorldsScreenCapabilities();
     /**
-     * @hash   296047698
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UEDUWorldsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

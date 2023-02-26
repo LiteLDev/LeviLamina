@@ -34,13 +34,11 @@ public:
      */
     virtual ~DiscFeature();
     /**
-     * @hash   1841931051
      * @vftbl  3
      * @symbol  ?place\@DiscFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   93401765
      * @symbol  ??0DiscFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
      */
     MCAPI DiscFeature(class Block const &, int);

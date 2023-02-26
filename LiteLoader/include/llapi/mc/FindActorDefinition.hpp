@@ -37,7 +37,6 @@ public:
      */
     virtual ~FindActorDefinition();
     /**
-     * @hash   726524613
      * @vftbl  1
      * @symbol  ?load\@FindActorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */

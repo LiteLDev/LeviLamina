@@ -36,7 +36,6 @@ public:
      */
     virtual ~MegaPineTreeCanopy();
     /**
-     * @hash   453273326
      * @vftbl  1
      * @symbol  ?placeCanopy\@MegaPineTreeCanopy\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@AEBV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@3\@\@Z
      */

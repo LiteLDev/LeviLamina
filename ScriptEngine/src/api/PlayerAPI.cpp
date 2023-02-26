@@ -52,6 +52,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
 
         .instanceProperty("name", &PlayerClass::getName)
         .instanceProperty("pos", &PlayerClass::getPos)
+        .instanceProperty("feetPos", &PlayerClass::getFeetPos)
         .instanceProperty("blockPos", &PlayerClass::getBlockPos)
         .instanceProperty("lastDeathPos", &PlayerClass::getLastDeathPos)
         .instanceProperty("realName", &PlayerClass::getRealName)
@@ -502,6 +503,17 @@ Local<Value> PlayerClass::getPos() {
         return FloatPos::newPos(player->getPosition(), player->getDimensionId());
     }
     CATCH("Fail in getPlayerPos!")
+}
+
+Local<Value> PlayerClass::getFeetPos() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return FloatPos::newPos(player->getFeetPosition(), player->getDimensionId());
+    }
+    CATCH("Fail in getPlayerFeetPos!")
 }
 
 Local<Value> PlayerClass::getBlockPos() {

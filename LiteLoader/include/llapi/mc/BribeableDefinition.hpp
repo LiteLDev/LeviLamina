@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -477419338
      * @symbol  ?addBribeItem\@BribeableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
     MCAPI void addBribeItem(class ItemDescriptor const &);
@@ -40,7 +39,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class BribeableComponent &) const;
     /**
-     * @hash   -925706668
      * @symbol  ?buildSchema\@BribeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBribeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>> &);

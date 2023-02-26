@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   1790287149
      * @symbol  ??0AttackCooldownComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
     /**
-     * @hash   -2134634360
      * @symbol  ??4AttackCooldownComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     /**
-     * @hash   1309582694
      * @symbol  ??1AttackCooldownComponent\@\@QEAA\@XZ
      */
     MCAPI ~AttackCooldownComponent();

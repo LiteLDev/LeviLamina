@@ -36,19 +36,16 @@ public:
      */
     virtual ~BrewingStandBlock();
     /**
-     * @hash   1519647351
      * @vftbl  9
      * @symbol  ?addAABBs\@BrewingStandBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   -1891797225
      * @vftbl  10
      * @symbol  ?getAABB\@BrewingStandBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1498858406
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@BrewingStandBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -169,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1024383563
      * @vftbl  69
      * @symbol  ?checkIsPathable\@BrewingStandBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -185,7 +181,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   911661795
      * @vftbl  103
      * @symbol  ?asItemInstance\@BrewingStandBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -211,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @hash   272680431
      * @vftbl  127
      * @symbol  ?getComparatorSignal\@BrewingStandBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
@@ -222,13 +216,11 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1121496782
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@BrewingStandBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1834578748
      * @vftbl  151
      * @symbol  ?animateTick\@BrewingStandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -239,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   1228431336
      * @vftbl  162
      * @symbol  ?onRemove\@BrewingStandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -270,7 +261,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   783059628
      * @vftbl  177
      * @symbol  ?use\@BrewingStandBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -281,35 +271,29 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1698555899
      * @vftbl  187
      * @symbol  ?getResourceItem\@BrewingStandBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCK
     /**
-     * @hash   1350493513
      * @symbol  ?hasComparatorSignal\@BrewingStandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool hasComparatorSignal() const;
     /**
-     * @hash   1313884231
      * @symbol  ?isContainerBlock\@BrewingStandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isContainerBlock() const;
     /**
-     * @hash   -1242932494
      * @symbol  ?isCraftingBlock\@BrewingStandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   -224049050
      * @symbol  ?isInteractiveBlock\@BrewingStandBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1782463285
      * @symbol  ??0BrewingStandBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BrewingStandBlock(std::string const &, int);

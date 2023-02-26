@@ -37,13 +37,11 @@ public:
      */
     virtual ~ActorIsClimbingTest();
     /**
-     * @hash   -1380807712
      * @vftbl  2
      * @symbol  ?evaluate\@ActorIsClimbingTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   1715163474
      * @vftbl  4
      * @symbol  ?getName\@ActorIsClimbingTest\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
      */

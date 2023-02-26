@@ -34,13 +34,11 @@ public:
      */
     virtual ~CodeBuilderActorInfoCommand();
     /**
-     * @hash   -756169779
      * @vftbl  1
      * @symbol  ?execute\@CodeBuilderActorInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   148604080
      * @symbol  ?setup\@CodeBuilderActorInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

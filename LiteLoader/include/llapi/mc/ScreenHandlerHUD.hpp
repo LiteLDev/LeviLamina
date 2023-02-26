@@ -35,7 +35,6 @@ public:
      */
     virtual ~ScreenHandlerHUD();
     /**
-     * @hash   -1216619289
      * @vftbl  1
      * @symbol  ?handleAction\@ScreenHandlerHUD\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */

@@ -31,7 +31,6 @@ public:
 
 public:
     /**
-     * @hash   -600582992
      * @vftbl  0
      * @symbol  ?getJsonName\@TrustDescription\@\@UEBAPEBDXZ
      */
@@ -42,7 +41,6 @@ public:
      */
     virtual ~TrustDescription();
     /**
-     * @hash   495897197
      * @vftbl  3
      * @symbol  ?serializeData\@TrustDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */

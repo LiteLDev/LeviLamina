@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   751752459
      * @vftbl  12
      * @symbol  ?initializeComponents\@MinecartCommandBlock\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -48,7 +47,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1030604629
      * @vftbl  61
      * @symbol  ?canShowNameTag\@MinecartCommandBlock\@\@UEBA_NXZ
      */
@@ -144,13 +142,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   1937297570
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@MinecartCommandBlock\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   740099595
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@MinecartCommandBlock\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -166,13 +162,11 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   877566895
      * @vftbl  279
      * @symbol  ?getType\@MinecartCommandBlock\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType();
     /**
-     * @hash   -1492252555
      * @vftbl  280
      * @symbol  ?getDefaultDisplayBlock\@MinecartCommandBlock\@\@UEBAPEBVBlock\@\@XZ
      */
@@ -183,19 +177,16 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   1892422795
      * @vftbl  283
      * @symbol  ?applyNaturalSlowdown\@MinecartCommandBlock\@\@MEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @hash   519405538
      * @vftbl  284
      * @symbol  ?_lazyInitDisplayBlock\@MinecartCommandBlock\@\@EEAAXXZ
      */
     virtual void _lazyInitDisplayBlock();
     /**
-     * @hash   1333959265
      * @symbol  ??0MinecartCommandBlock\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

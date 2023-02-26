@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   828268746
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@BedrockBlock\@\@UEBA_NXZ
      */
@@ -227,13 +226,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1764210194
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@BedrockBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   3202821
      * @symbol  ??0BedrockBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BedrockBlock(std::string const &, int);

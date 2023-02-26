@@ -33,36 +33,30 @@ public:
      */
     virtual ~UpdateAbilitiesPacket();
     /**
-     * @hash   1247638455
      * @vftbl  1
      * @symbol  ?getId\@UpdateAbilitiesPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   2111639140
      * @vftbl  2
      * @symbol  ?getName\@UpdateAbilitiesPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1825797251
      * @vftbl  3
      * @symbol  ?write\@UpdateAbilitiesPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -180955741
      * @vftbl  6
      * @symbol  ?_read\@UpdateAbilitiesPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1147162413
      * @symbol  ??0UpdateAbilitiesPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateAbilitiesPacket();
     /**
-     * @hash   -730438789
      * @symbol  ??0UpdateAbilitiesPacket\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
     MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);

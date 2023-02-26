@@ -35,7 +35,6 @@ public:
      */
     virtual ~ScanSurfaceFeature();
     /**
-     * @hash   614683175
      * @vftbl  1
      * @symbol  ?place\@ScanSurfaceFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */

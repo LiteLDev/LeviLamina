@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   383355400
      * @symbol  ?forEachBlockInAABB\@SpatialQueryUtility\@\@SAXAEBVIConstBlockSource\@\@AEBVAABB\@\@AEBV?$function\@$$A6AXAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, class std::function<void (class Block const &, class BlockPos const &)> const &);

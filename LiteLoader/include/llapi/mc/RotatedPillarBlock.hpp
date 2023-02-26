@@ -156,7 +156,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1061242912
      * @vftbl  103
      * @symbol  ?asItemInstance\@RotatedPillarBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1894136441
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@RotatedPillarBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -193,7 +191,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   801498548
      * @vftbl  149
      * @symbol  ?getMappedFace\@RotatedPillarBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
@@ -234,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1998319944
      * @vftbl  187
      * @symbol  ?getResourceItem\@RotatedPillarBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -1704816079
      * @symbol  ??0RotatedPillarBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI RotatedPillarBlock(std::string const &, int, class Material const &);
@@ -249,12 +244,10 @@ public:
 
 private:
     /**
-     * @hash   -901164928
      * @symbol  ?mRotatedX\@RotatedPillarBlock\@\@0QBHB
      */
     MCAPI static int const mRotatedX[];
     /**
-     * @hash   -2007346854
      * @symbol  ?mRotatedZ\@RotatedPillarBlock\@\@0QBHB
      */
     MCAPI static int const mRotatedZ[];

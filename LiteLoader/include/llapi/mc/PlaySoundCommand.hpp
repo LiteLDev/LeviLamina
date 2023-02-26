@@ -36,13 +36,11 @@ public:
      */
     virtual ~PlaySoundCommand();
     /**
-     * @hash   -1542588861
      * @vftbl  1
      * @symbol  ?execute\@PlaySoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1211879348
      * @symbol  ?setup\@PlaySoundCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

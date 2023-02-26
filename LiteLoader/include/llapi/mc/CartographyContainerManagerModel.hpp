@@ -36,49 +36,41 @@ public:
      */
     virtual ~CartographyContainerManagerModel();
     /**
-     * @hash   576561948
      * @vftbl  6
      * @symbol  ?getItemCopies\@CartographyContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @hash   864719043
      * @vftbl  7
      * @symbol  ?setSlot\@CartographyContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @hash   1429351260
      * @vftbl  8
      * @symbol  ?getSlot\@CartographyContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @hash   1487461200
      * @vftbl  9
      * @symbol  ?setData\@CartographyContainerManagerModel\@\@UEAAXHH\@Z
      */
     virtual void setData(int, int);
     /**
-     * @hash   1096321414
      * @vftbl  10
      * @symbol  ?broadcastChanges\@CartographyContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges();
     /**
-     * @hash   -623299814
      * @vftbl  16
      * @symbol  ?isValid\@CartographyContainerManagerModel\@\@UEAA_NM\@Z
      */
     virtual bool isValid(float);
     /**
-     * @hash   -1714042061
      * @vftbl  17
      * @symbol  ?_postInit\@CartographyContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   -1652532574
      * @symbol  ??0CartographyContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI CartographyContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);

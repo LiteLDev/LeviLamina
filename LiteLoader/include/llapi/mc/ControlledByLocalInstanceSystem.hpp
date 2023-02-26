@@ -32,7 +32,6 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createCalculateControlledByLocalInstanceSystem(struct ControlledByLocalInstanceSystem::Config const &);
     /**
-     * @hash   -981434630
      * @symbol  ?createWasControlledByLocalInstanceSystem\@ControlledByLocalInstanceSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();

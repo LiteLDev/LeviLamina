@@ -35,7 +35,6 @@ public:
      */
     virtual ~MoveInputHandler();
     /**
-     * @hash   -2002376247
      * @vftbl  1
      * @symbol  ?tick\@MoveInputHandler\@\@UEAAXAEAUIPlayerMovementProxy\@\@\@Z
      */
@@ -51,7 +50,6 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1654296170
      * @vftbl  4
      * @symbol  ?clearInputState\@MoveInputHandler\@\@UEAAXXZ
      */
@@ -62,31 +60,26 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -2042251240
      * @vftbl  9
      * @symbol  ?isChangeHeight\@MoveInputHandler\@\@UEBA_NXZ
      */
     virtual bool isChangeHeight() const;
     /**
-     * @hash   608144592
      * @vftbl  10
      * @symbol  ?isPlayerMoving\@MoveInputHandler\@\@UEBA_NXZ
      */
     virtual bool isPlayerMoving() const;
     /**
-     * @hash   719760347
      * @vftbl  11
      * @symbol  ?extractInputComponent\@MoveInputHandler\@\@UEBA?AUMoveInputComponent\@\@XZ
      */
     virtual struct MoveInputComponent extractInputComponent() const;
     /**
-     * @hash   -1616556141
      * @vftbl  12
      * @symbol  ?applyInputComponent\@MoveInputHandler\@\@UEAAXAEBUMoveInputComponent\@\@\@Z
      */
     virtual void applyInputComponent(struct MoveInputComponent const &);
     /**
-     * @hash   1335991374
      * @vftbl  13
      * @symbol  ?fillInputPacket\@MoveInputHandler\@\@UEAAXAEAVPlayerAuthInputPacket\@\@\@Z
      */
@@ -97,7 +90,6 @@ public:
      */
     virtual void __unk_vfn_14() = 0;
     /**
-     * @hash   87072761
      * @vftbl  15
      * @symbol  ?createSnapshot\@MoveInputHandler\@\@UEAA?AV?$unique_ptr\@UIReplayableActorInput\@\@U?$default_delete\@UIReplayableActorInput\@\@\@std\@\@\@std\@\@XZ
      */
@@ -123,7 +115,6 @@ public:
      */
     MCAPI bool wantsDownSlow() const;
     /**
-     * @hash   -1856397810
      * @symbol  ?wantsMoveForward\@MoveInputHandler\@\@QEBA_NXZ
      */
     MCAPI bool wantsMoveForward() const;
@@ -134,7 +125,6 @@ public:
 
 //protected:
     /**
-     * @hash   -1957567741
      * @symbol  ??0MoveInputHandler\@\@IEAA\@XZ
      */
     MCAPI MoveInputHandler();

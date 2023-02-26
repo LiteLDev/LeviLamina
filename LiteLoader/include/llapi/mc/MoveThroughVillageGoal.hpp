@@ -50,13 +50,11 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1477804110
      * @vftbl  4
      * @symbol  ?start\@MoveThroughVillageGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1922358014
      * @vftbl  5
      * @symbol  ?stop\@MoveThroughVillageGoal\@\@UEAAXXZ
      */
@@ -67,25 +65,21 @@ public:
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1132413559
      * @vftbl  7
      * @symbol  ?appendDebugInfo\@MoveThroughVillageGoal\@\@EEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETHROUGHVILLAGEGOAL
     /**
-     * @hash   -1701760669
      * @symbol  ?canContinueToUse\@MoveThroughVillageGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @hash   -110067451
      * @symbol  ?canUse\@MoveThroughVillageGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canUse();
 #endif
     /**
-     * @hash   -315209436
      * @symbol  ??0MoveThroughVillageGoal\@\@QEAA\@AEAVMob\@\@M_N\@Z
      */
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);

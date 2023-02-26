@@ -36,19 +36,16 @@ public:
      */
     virtual ~MobSpawnerBlockActor();
     /**
-     * @hash   282089847
      * @vftbl  1
      * @symbol  ?load\@MobSpawnerBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -357147114
      * @vftbl  2
      * @symbol  ?save\@MobSpawnerBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1934965440
      * @vftbl  7
      * @symbol  ?tick\@MobSpawnerBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -59,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_12();
     /**
-     * @hash   -413333444
      * @vftbl  13
      * @symbol  ?onRemoved\@MobSpawnerBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -100,24 +96,20 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -482202327
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@MobSpawnerBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   829003625
      * @vftbl  38
      * @symbol  ?_onUpdatePacket\@MobSpawnerBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   775462515
      * @symbol  ??0MobSpawnerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     /**
-     * @hash   -671142034
      * @symbol  ?getSpawner\@MobSpawnerBlockActor\@\@QEAAAEAVBaseMobSpawner\@\@XZ
      */
     MCAPI class BaseMobSpawner & getSpawner();

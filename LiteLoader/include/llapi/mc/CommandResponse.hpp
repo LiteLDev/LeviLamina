@@ -36,19 +36,16 @@ public:
      */
     virtual ~CommandResponse();
     /**
-     * @hash   -785791011
      * @vftbl  1
      * @symbol  ?getName\@CommandResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   1363959105
      * @vftbl  2
      * @symbol  ?executeAction\@CommandResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @hash   1110199739
      * @vftbl  3
      * @symbol  ?buildSchema\@CommandResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
      */

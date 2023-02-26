@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   -1489938140
      * @symbol  ?createRemovePassengersSystem\@RemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createRemovePassengersSystem();

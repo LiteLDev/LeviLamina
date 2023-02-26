@@ -35,36 +35,30 @@ public:
      */
     virtual ~UpdateAttributesPacket();
     /**
-     * @hash   -405446650
      * @vftbl  1
      * @symbol  ?getId\@UpdateAttributesPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   315338419
      * @vftbl  2
      * @symbol  ?getName\@UpdateAttributesPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1482260756
      * @vftbl  3
      * @symbol  ?write\@UpdateAttributesPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   429716548
      * @vftbl  6
      * @symbol  ?_read\@UpdateAttributesPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   1601884484
      * @symbol  ??0UpdateAttributesPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateAttributesPacket();
     /**
-     * @hash   1364014082
      * @symbol  ??0UpdateAttributesPacket\@\@QEAA\@AEBVActor\@\@AEBV?$vector\@VAttributeInstanceHandle\@\@V?$allocator\@VAttributeInstanceHandle\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI UpdateAttributesPacket(class Actor const &, std::vector<class AttributeInstanceHandle> const &);

@@ -36,7 +36,6 @@ public:
      */
     virtual ~MultifaceBlock();
     /**
-     * @hash   112367095
      * @vftbl  10
      * @symbol  ?getAABB\@MultifaceBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -72,7 +71,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   -1492439277
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@MultifaceBlock\@\@UEBA_NXZ
      */
@@ -148,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   2094623114
      * @vftbl  57
      * @symbol  ?sanitizeFillBlock\@MultifaceBlock\@\@UEBAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
@@ -174,13 +171,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   828644098
      * @vftbl  91
      * @symbol  ?mayPlace\@MultifaceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1073104999
      * @vftbl  99
      * @symbol  ?neighborChanged\@MultifaceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   133079222
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@MultifaceBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -217,7 +211,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -44029783
      * @vftbl  142
      * @symbol  ?getVisualShapeInWorld\@MultifaceBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
@@ -248,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   1083118861
      * @vftbl  171
      * @symbol  ?tick\@MultifaceBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -259,13 +251,11 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -813101687
      * @vftbl  175
      * @symbol  ?clip\@MultifaceBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
     virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
-     * @hash   516020313
      * @vftbl  178
      * @symbol  ?canSurvive\@MultifaceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -276,115 +266,94 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -2129323703
      * @vftbl  193
      * @symbol  ?getMultifaceBlock\@SculkVeinBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getMultifaceBlock() const = 0;
     /**
-     * @hash   -1684502093
      * @vftbl  194
      * @symbol  ?getMultifaceSpreader\@SculkVeinBlock\@\@UEBAAEBVMultifaceSpreader\@\@XZ
      */
     virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
     /**
-     * @hash   1708588402
      * @symbol  ?isMultifaceBlock\@MultifaceBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isMultifaceBlock() const;
 #endif
     /**
-     * @hash   1607606302
      * @symbol  ??0MultifaceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
     /**
-     * @hash   -763357691
      * @symbol  ?removeFace\@MultifaceBlock\@\@QEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@E_N\@Z
      */
     MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, unsigned char, bool) const;
     /**
-     * @hash   1340377755
      * @symbol  ?MULTIFACE_ALL\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_ALL;
     /**
-     * @hash   -129351599
      * @symbol  ?MULTIFACE_DOWN\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_DOWN;
     /**
-     * @hash   1708078389
      * @symbol  ?MULTIFACE_EAST\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_EAST;
     /**
-     * @hash   332068431
      * @symbol  ?MULTIFACE_NORTH\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_NORTH;
     /**
-     * @hash   589517111
      * @symbol  ?MULTIFACE_SIDES\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_SIDES;
     /**
-     * @hash   -1793654457
      * @symbol  ?MULTIFACE_SOUTH\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_SOUTH;
     /**
-     * @hash   -430506827
      * @symbol  ?MULTIFACE_UP\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_UP;
     /**
-     * @hash   -1029123731
      * @symbol  ?MULTIFACE_WEST\@MultifaceBlock\@\@2HB
      */
     MCAPI static int const MULTIFACE_WEST;
     /**
-     * @hash   2141788871
      * @symbol  ?convertOldMultifaceToNewMultifaceValue\@MultifaceBlock\@\@SAHH\@Z
      */
     MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
     /**
-     * @hash   -588660770
      * @symbol  ?getBlockForPlacement\@MultifaceBlock\@\@SAAEBVBlock\@\@AEBV2\@0AEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI static class Block const & getBlockForPlacement(class Block const &, class Block const &, class BlockSource &, class BlockPos const &, unsigned char);
     /**
-     * @hash   802336974
      * @symbol  ?getBlockForPlacementWorldGen\@MultifaceBlock\@\@SAAEBVBlock\@\@AEBV2\@0AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI static class Block const & getBlockForPlacementWorldGen(class Block const &, class Block const &, class IBlockWorldGenAPI &, class BlockPos const &, unsigned char);
     /**
-     * @hash   -645641414
      * @symbol  ?getMultifaceValueFromFace\@MultifaceBlock\@\@SAHE\@Z
      */
     MCAPI static int getMultifaceValueFromFace(unsigned char);
     /**
-     * @hash   -686898445
      * @symbol  ?hasFace\@MultifaceBlock\@\@SA_NAEBVBlock\@\@E\@Z
      */
     MCAPI static bool hasFace(class Block const &, unsigned char);
 
 //protected:
     /**
-     * @hash   -479577348
      * @symbol  ?_canSpread\@MultifaceBlock\@\@IEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI bool _canSpread(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1375050419
      * @symbol  ?_getNumSides\@MultifaceBlock\@\@IEBAHAEBVBlock\@\@\@Z
      */
     MCAPI int _getNumSides(class Block const &) const;
 
 //private:
     /**
-     * @hash   -1790492004
      * @symbol  ?_removeBlock\@MultifaceBlock\@\@AEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI void _removeBlock(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, bool) const;

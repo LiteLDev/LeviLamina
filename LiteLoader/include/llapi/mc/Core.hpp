@@ -130,42 +130,34 @@ enum class FileAccessType;
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1155437408
      * @symbol  ?RESULT_FAILED_MESSAGE\@Core\@\@3PEBDEB
      */
     MCAPI extern char const * RESULT_FAILED_MESSAGE;
     /**
-     * @hash   -1138620182
      * @symbol  ?RESULT_NOT_IMPLEMENTED_MESSAGE\@Core\@\@3PEBDEB
      */
     MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
     /**
-     * @hash   1095518394
      * @symbol  ?RESULT_SUCCEEDED_MESSAGE\@Core\@\@3PEBDEB
      */
     MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
     /**
-     * @hash   -881055399
      * @symbol  ??ICore\@\@YA_KW4DirectoryIterationFlags\@0\@0\@Z
      */
     MCAPI unsigned __int64 operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
-     * @hash   1391990355
      * @symbol  ??UCore\@\@YA?AW4DirectoryIterationFlags\@0\@W410\@0\@Z
      */
     MCAPI enum class Core::DirectoryIterationFlags operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
-     * @hash   167005006
      * @symbol  ?sRootStorageArea\@Core\@\@3V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@A
      */
     MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
     /**
-     * @hash   995779411
      * @symbol  ?starts_with\@Core\@\@YA_NVStringSpan\@1\@0\@Z
      */
     MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
     /**
-     * @hash   695624256
      * @symbol  ?transferDirectory\@Core\@\@YA?AVResult\@1\@PEAVFileSystemImpl\@1\@AEBVPath\@1\@01AEBV?$function\@$$A6A?AVResult\@Core\@\@AEBVPath\@2\@0\@Z\@std\@\@\@Z
      */
     MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &, class std::function<class Core::Result (class Core::Path const &, class Core::Path const &)> const &);

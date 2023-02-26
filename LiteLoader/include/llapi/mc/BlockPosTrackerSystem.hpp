@@ -40,13 +40,11 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1851460496
      * @vftbl  2
      * @symbol  ?tick\@BlockPosTrackerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @hash   -1933762523
      * @symbol  ?_tickBlockPosTrackerComponent\@BlockPosTrackerSystem\@\@SAXAEAVActor\@\@AEAVBlockPosTrackerComponent\@\@\@Z
      */
     MCAPI static void _tickBlockPosTrackerComponent(class Actor &, class BlockPosTrackerComponent &);

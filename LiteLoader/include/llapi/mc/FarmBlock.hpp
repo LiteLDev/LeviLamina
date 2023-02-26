@@ -36,7 +36,6 @@ public:
      */
     virtual ~FarmBlock();
     /**
-     * @hash   -895190265
      * @vftbl  10
      * @symbol  ?getAABB\@FarmBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -152,13 +151,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   381120481
      * @vftbl  62
      * @symbol  ?canContainLiquid\@FarmBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -304477670
      * @vftbl  72
      * @symbol  ?transformOnFall\@FarmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@M\@Z
      */
@@ -174,7 +171,6 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   1791785833
      * @vftbl  99
      * @symbol  ?neighborChanged\@FarmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -205,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -1236447897
      * @vftbl  146
      * @symbol  ?getVariant\@FarmBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -236,13 +231,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   430417405
      * @vftbl  171
      * @symbol  ?tick\@FarmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -626947238
      * @vftbl  172
      * @symbol  ?randomTick\@FarmBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -253,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1302411577
      * @vftbl  178
      * @symbol  ?canSurvive\@FarmBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -264,25 +256,21 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   581118245
      * @vftbl  187
      * @symbol  ?getResourceItem\@FarmBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FARMBLOCK
     /**
-     * @hash   -1419612368
      * @symbol  ?canBeSilkTouched\@FarmBlock\@\@MEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   601406117
      * @symbol  ??0FarmBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FarmBlock(std::string const &, int);
     /**
-     * @hash   -854407695
      * @symbol  ?BLOCK_AABB\@FarmBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB BLOCK_AABB;

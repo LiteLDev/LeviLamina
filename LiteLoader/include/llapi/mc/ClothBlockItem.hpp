@@ -57,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @hash   14523034
      * @vftbl  45
      * @symbol  ?getLevelDataForAuxValue\@ClothBlockItem\@\@UEBAHH\@Z
      */
@@ -108,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1289134404
      * @vftbl  95
      * @symbol  ?buildDescriptionId\@ClothBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */

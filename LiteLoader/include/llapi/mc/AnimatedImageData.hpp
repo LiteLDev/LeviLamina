@@ -28,12 +28,10 @@ public:
 
 public:
     /**
-     * @hash   -224821314
      * @symbol  ??0AnimatedImageData\@\@QEAA\@W4AnimatedTextureType\@persona\@\@W4AnimationExpression\@2\@AEBUImage\@mce\@\@M\@Z
      */
     MCAPI AnimatedImageData(enum class persona::AnimatedTextureType, enum class persona::AnimationExpression, struct mce::Image const &, float);
     /**
-     * @hash   -465969327
      * @symbol  ??0AnimatedImageData\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI AnimatedImageData(class AnimatedImageData const &);

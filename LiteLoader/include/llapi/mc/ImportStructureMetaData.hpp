@@ -28,17 +28,14 @@ public:
 
 public:
     /**
-     * @hash   1807361570
      * @symbol  ?getStructure\@ImportStructureMetaData\@\@QEAAPEBVStructureTemplate\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class StructureTemplate const * getStructure(std::string const &);
     /**
-     * @hash   -629923919
      * @symbol  ?isSpecificStructureDirty\@ImportStructureMetaData\@\@QEAA?B_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool const isSpecificStructureDirty(std::string const &);
     /**
-     * @hash   -1871280717
      * @symbol  ?setSpecificStructureDirty\@ImportStructureMetaData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI void setSpecificStructureDirty(std::string const &, bool);

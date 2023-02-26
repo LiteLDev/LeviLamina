@@ -28,14 +28,12 @@ public:
 
 public:
     /**
-     * @hash   1703369922
      * @symbol  ?createSystem\@EnderDragonPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   1961945309
      * @symbol  ?_doEnderDragonPostAIStepSystem\@EnderDragonPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doEnderDragonPostAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);

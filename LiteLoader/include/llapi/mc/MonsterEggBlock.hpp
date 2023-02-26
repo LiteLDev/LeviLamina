@@ -186,19 +186,16 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   2140408217
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@MonsterEggBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   1808566994
      * @vftbl  134
      * @symbol  ?isAuxValueRelevantForPicking\@MonsterEggBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @hash   -796276814
      * @vftbl  146
      * @symbol  ?getVariant\@MonsterEggBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
@@ -209,7 +206,6 @@ public:
      */
     virtual void __unk_vfn_156();
     /**
-     * @hash   685675560
      * @vftbl  160
      * @symbol  ?tryGetUninfested\@MonsterEggBlock\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
@@ -245,7 +241,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   161441472
      * @symbol  ??0MonsterEggBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI MonsterEggBlock(std::string const &, int);

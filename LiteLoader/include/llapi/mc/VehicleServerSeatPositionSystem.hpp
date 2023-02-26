@@ -28,7 +28,6 @@ public:
 
 public:
     /**
-     * @hash   102609126
      * @symbol  ?createSystem\@VehicleServerSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

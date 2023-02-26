@@ -50,18 +50,15 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -288797702
      * @vftbl  4
      * @symbol  ?onScoreChanged\@PlayerScoreboardEventListener\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
-     * @hash   -1228493826
      * @symbol  ?getPlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAAEAVSubscribedObjectives\@\@AEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
      */
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     /**
-     * @hash   1853435036
      * @symbol  ?removePlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAXAEBUScoreboardId\@\@\@Z
      */
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);

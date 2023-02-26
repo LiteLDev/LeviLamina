@@ -40,7 +40,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1939946889
      * @vftbl  2
      * @symbol  ?tick\@BreathableSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

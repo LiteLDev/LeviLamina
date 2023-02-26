@@ -36,7 +36,6 @@ public:
      */
     virtual ~DaylightDetectorBlockActor();
     /**
-     * @hash   461623880
      * @vftbl  7
      * @symbol  ?tick\@DaylightDetectorBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -82,7 +81,6 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   38634347
      * @symbol  ??0DaylightDetectorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI DaylightDetectorBlockActor(class BlockPos const &);

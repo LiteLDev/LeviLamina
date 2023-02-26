@@ -42,13 +42,11 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1644858918
      * @vftbl  2
      * @symbol  ?initFileUploader\@ServerFileChunkUploader\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFileInfo\@\@HAEBVValue\@Json\@\@V?$function\@$$A6AX_N\@Z\@3\@\@Z
      */
     virtual void initFileUploader(std::string const &, struct FileInfo const &, int, class Json::Value const &, class std::function<void (bool)>) = 0;
     /**
-     * @hash   -598966208
      * @vftbl  3
      * @symbol  ?getServerMissingChunks\@IFileChunkUploader\@\@UEBAXAEBUFileInfo\@\@V?$function\@$$A6AXV?$vector\@UFileChunkInfo\@\@V?$allocator\@UFileChunkInfo\@\@\@std\@\@\@std\@\@\@Z\@std\@\@\@Z
      */
@@ -59,19 +57,16 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   -298263376
      * @vftbl  5
      * @symbol  ?uploadChunk\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V?$function\@$$A6AX_N\@Z\@5\@\@Z
      */
     virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
     /**
-     * @hash   -851943162
      * @vftbl  6
      * @symbol  ?uploadStream\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AXW4UploadStreamResult\@IFileChunkUploader\@\@\@Z\@4\@\@Z
      */
     virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /**
-     * @hash   96491456
      * @vftbl  7
      * @symbol  ?canCancelUpload\@ServerFileChunkUploader\@\@UEBA_NAEBUFileInfo\@\@\@Z
      */
@@ -82,37 +77,31 @@ public:
      */
     virtual void __unk_vfn_8() = 0;
     /**
-     * @hash   547337715
      * @vftbl  9
      * @symbol  ?getInitErrorCode\@ServerFileChunkUploader\@\@UEBA?AW4UploadError\@\@XZ
      */
     virtual enum class UploadError getInitErrorCode() const = 0;
     /**
-     * @hash   1597931761
      * @vftbl  10
      * @symbol  ?getUploadProgress\@ServerFileChunkUploader\@\@UEBAMAEBUFileInfo\@\@\@Z
      */
     virtual float getUploadProgress(struct FileInfo const &) const = 0;
     /**
-     * @hash   -38313467
      * @vftbl  11
      * @symbol  ?getChunkInfo\@IFileChunkUploader\@\@UEBA?AUFileChunkInfo\@\@AEBUFileInfo\@\@H\@Z
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
     /**
-     * @hash   859398472
      * @symbol  ?confirmChunkReceived\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z
      */
     MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
     /**
-     * @hash   1373423546
      * @symbol  ?update\@IFileChunkUploader\@\@UEAAXXZ
      */
     MCVAPI void update();
 #endif
     /**
-     * @hash   -229285422
      * @symbol  ??0IFileChunkUploader\@\@QEAA\@XZ
      */
     MCAPI IFileChunkUploader();

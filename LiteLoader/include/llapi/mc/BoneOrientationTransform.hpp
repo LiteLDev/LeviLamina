@@ -27,7 +27,6 @@ public:
 
 public:
     /**
-     * @hash   -230578868
      * @symbol  ??0BoneOrientationTransform\@\@QEAA\@XZ
      */
     MCAPI BoneOrientationTransform();

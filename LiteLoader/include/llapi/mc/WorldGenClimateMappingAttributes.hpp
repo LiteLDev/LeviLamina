@@ -30,12 +30,10 @@ public:
 
 public:
     /**
-     * @hash   -712776792
      * @symbol  ??4WorldGenClimateMappingAttributes\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
     /**
-     * @hash   -1237343080
      * @symbol  ??1WorldGenClimateMappingAttributes\@\@QEAA\@XZ
      */
     MCAPI ~WorldGenClimateMappingAttributes();

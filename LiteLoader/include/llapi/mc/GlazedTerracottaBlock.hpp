@@ -136,7 +136,6 @@ public:
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -1532576255
      * @vftbl  55
      * @symbol  ?isValidAuxValue\@GlazedTerracottaBlock\@\@UEBA_NH\@Z
      */
@@ -167,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1526968026
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@GlazedTerracottaBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -228,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   772191129
      * @symbol  ??0GlazedTerracottaBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI GlazedTerracottaBlock(std::string const &, int);

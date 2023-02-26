@@ -146,7 +146,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -130701008
      * @vftbl  71
      * @symbol  ?dispense\@LightGemBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
@@ -222,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   1277709858
      * @vftbl  187
      * @symbol  ?getResourceItem\@LightGemBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   444070154
      * @vftbl  188
      * @symbol  ?getResourceCount\@LightGemBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   876747131
      * @symbol  ??0LightGemBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI LightGemBlock(std::string const &, int, class Material const &);

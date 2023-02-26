@@ -34,7 +34,6 @@ public:
      */
     MCAPI BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>);
     /**
-     * @hash   -1772379002
      * @symbol  ?tryGetBlockSource\@BlockSourceComponent\@\@QEBA?AV?$StackRefResultT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@XZ
      */
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;

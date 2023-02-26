@@ -36,19 +36,16 @@ public:
      */
     virtual ~LabTableInputValidation();
     /**
-     * @hash   -1536676474
      * @vftbl  1
      * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   -201119104
      * @vftbl  2
      * @symbol  ?isItemAllowedInSlot\@LabTableInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   1613315341
      * @vftbl  3
      * @symbol  ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
@@ -64,7 +61,6 @@ public:
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   954266953
      * @vftbl  6
      * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -80,14 +76,12 @@ public:
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   1409787326
      * @vftbl  9
      * @symbol  ?getContainerSize\@LabTableInputValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEINPUTVALIDATION
     /**
-     * @hash   2040355981
      * @symbol  ?canDestroy\@LabTableInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;

@@ -38,25 +38,21 @@ public:
      */
     virtual ~SkullBlockActor();
     /**
-     * @hash   2035095324
      * @vftbl  1
      * @symbol  ?load\@SkullBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1355719205
      * @vftbl  2
      * @symbol  ?save\@SkullBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @hash   1349941989
      * @vftbl  7
      * @symbol  ?tick\@SkullBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void tick(class BlockSource &);
     /**
-     * @hash   51018989
      * @vftbl  8
      * @symbol  ?onChanged\@SkullBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -102,34 +98,28 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -1673581842
      * @vftbl  37
      * @symbol  ?_getUpdatePacket\@SkullBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   942914708
      * @vftbl  38
      * @symbol  ?_onUpdatePacket\@SkullBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   -1853033096
      * @symbol  ??0SkullBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SkullBlockActor(class BlockPos const &);
     /**
-     * @hash   -815522508
      * @symbol  ?getSkullType\@SkullBlockActor\@\@QEBA?AW4SkullType\@1\@XZ
      */
     MCAPI enum class SkullBlockActor::SkullType getSkullType() const;
     /**
-     * @hash   -1581047612
      * @symbol  ?setRotation\@SkullBlockActor\@\@QEAAXM\@Z
      */
     MCAPI void setRotation(float);
     /**
-     * @hash   441115454
      * @symbol  ?setSkullType\@SkullBlockActor\@\@QEAAXH\@Z
      */
     MCAPI void setSkullType(int);

@@ -32,19 +32,16 @@ public:
 
 public:
     /**
-     * @hash   -337630456
      * @vftbl  10
      * @symbol  ?reloadHardcoded\@PrimedTnt\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -1244752429
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@PrimedTnt\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   -316415541
      * @vftbl  12
      * @symbol  ?initializeComponents\@PrimedTnt\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -55,7 +52,6 @@ public:
      */
     virtual ~PrimedTnt();
     /**
-     * @hash   1798323757
      * @vftbl  18
      * @symbol  ?getOwnerEntityType\@PrimedTnt\@\@UEAA?AW4ActorType\@\@XZ
      */
@@ -66,13 +62,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   571788386
      * @vftbl  44
      * @symbol  ?teleportTo\@PrimedTnt\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @hash   257121462
      * @vftbl  49
      * @symbol  ?normalTick\@PrimedTnt\@\@UEAAXXZ
      */
@@ -88,13 +82,11 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1583619381
      * @vftbl  80
      * @symbol  ?getShadowHeightOffs\@PrimedTnt\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @hash   153878481
      * @vftbl  81
      * @symbol  ?getShadowRadius\@PrimedTnt\@\@UEBAMXZ
      */
@@ -115,7 +107,6 @@ public:
      */
     virtual void __unk_vfn_89();
     /**
-     * @hash   1098872281
      * @vftbl  96
      * @symbol  ?isPickable\@PrimedTnt\@\@UEAA_NXZ
      */
@@ -151,7 +142,6 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   -354436447
      * @vftbl  170
      * @symbol  ?getSourceUniqueID\@PrimedTnt\@\@UEBA?AUActorUniqueID\@\@XZ
      */
@@ -192,19 +182,16 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   2094152139
      * @vftbl  263
      * @symbol  ?_hurt\@PrimedTnt\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   673951611
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@PrimedTnt\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1285222478
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@PrimedTnt\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -215,12 +202,10 @@ public:
      */
     virtual void __unk_vfn_270();
     /**
-     * @hash   1564445585
      * @symbol  ??0PrimedTnt\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI PrimedTnt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1298237301
      * @symbol  ?postNormalTick\@PrimedTnt\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();

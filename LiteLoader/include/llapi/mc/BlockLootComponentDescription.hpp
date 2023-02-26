@@ -33,29 +33,24 @@ public:
      */
     virtual ~BlockLootComponentDescription();
     /**
-     * @hash   107406277
      * @vftbl  1
      * @symbol  ?getName\@BlockLootComponentDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   -1635156577
      * @vftbl  2
      * @symbol  ?initializeComponent\@BlockLootComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @hash   -451210091
      * @symbol  ?NameID\@BlockLootComponentDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   935283103
      * @symbol  ?bindType\@BlockLootComponentDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   -1408000368
      * @symbol  ?registerVersionUpgrades\@BlockLootComponentDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);

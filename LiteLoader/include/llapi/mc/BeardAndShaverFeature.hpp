@@ -34,13 +34,11 @@ public:
      */
     virtual ~BeardAndShaverFeature();
     /**
-     * @hash   -1102894411
      * @vftbl  1
      * @symbol  ?place\@BeardAndShaverFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -496830236
      * @symbol  ??0BeardAndShaverFeature\@\@QEAA\@XZ
      */
     MCAPI BeardAndShaverFeature();

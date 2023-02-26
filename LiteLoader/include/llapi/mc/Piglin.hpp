@@ -117,7 +117,6 @@ public:
      */
     virtual void __unk_vfn_219();
     /**
-     * @hash   1489949084
      * @vftbl  231
      * @symbol  ?getInteraction\@Piglin\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
@@ -133,7 +132,6 @@ public:
      */
     virtual void __unk_vfn_244();
     /**
-     * @hash   -152567653
      * @vftbl  260
      * @symbol  ?updateEntitySpecificMolangVariables\@Piglin\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
@@ -180,13 +178,11 @@ public:
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIGLIN
     /**
-     * @hash   -2100849376
      * @symbol  ?canExistInPeaceful\@Piglin\@\@UEBA_NXZ
      */
     MCVAPI bool canExistInPeaceful() const;
 #endif
     /**
-     * @hash   -1600438401
      * @symbol  ??0Piglin\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Piglin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -36,20 +36,17 @@ public:
      */
     virtual ~MeCommand();
     /**
-     * @hash   2106240800
      * @vftbl  1
      * @symbol  ?execute\@MeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1574285776
      * @symbol  ?setup\@MeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @hash   -1211698358
      * @symbol  ?_sendMessage\@MeCommand\@\@AEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUCommandOriginIdentity\@\@AEBVLevel\@\@\@Z
      */
     MCAPI void _sendMessage(std::string const &, struct CommandOriginIdentity const &, class Level const &) const;

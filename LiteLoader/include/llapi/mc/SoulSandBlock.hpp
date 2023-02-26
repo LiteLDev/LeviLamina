@@ -36,13 +36,11 @@ public:
      */
     virtual ~SoulSandBlock();
     /**
-     * @hash   -1274292356
      * @vftbl  5
      * @symbol  ?getCollisionShape\@SoulSandBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   758978294
      * @vftbl  10
      * @symbol  ?getAABB\@SoulSandBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -168,13 +166,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1748343035
      * @vftbl  96
      * @symbol  ?breaksFallingBlocks\@SoulSandBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @hash   -1257171016
      * @vftbl  99
      * @symbol  ?neighborChanged\@SoulSandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -190,7 +186,6 @@ public:
      */
     virtual void __unk_vfn_123();
     /**
-     * @hash   -1497877516
      * @vftbl  124
      * @symbol  ?calcGroundFriction\@SoulSandBlock\@\@UEBAMAEBUIMobMovementProxy\@\@AEBVBlockPos\@\@\@Z
      */
@@ -231,7 +226,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -1140674882
      * @vftbl  168
      * @symbol  ?onPlace\@SoulSandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -242,13 +236,11 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -1046645972
      * @vftbl  171
      * @symbol  ?tick\@SoulSandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   33200841
      * @vftbl  172
      * @symbol  ?randomTick\@SoulSandBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -264,12 +256,10 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1434814844
      * @symbol  ??0SoulSandBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI SoulSandBlock(std::string const &, int);
     /**
-     * @hash   -712407759
      * @symbol  ?BLOCK_AABB\@SoulSandBlock\@\@2VAABB\@\@A
      */
     MCAPI static class AABB BLOCK_AABB;
@@ -278,7 +268,6 @@ public:
 
 private:
     /**
-     * @hash   288632711
      * @symbol  ?SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION\@SoulSandBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;

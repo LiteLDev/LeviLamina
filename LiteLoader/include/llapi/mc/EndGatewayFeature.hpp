@@ -36,7 +36,6 @@ public:
      */
     virtual ~EndGatewayFeature();
     /**
-     * @hash   -1227822617
      * @vftbl  3
      * @symbol  ?place\@EndGatewayFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */

@@ -35,7 +35,6 @@ public:
      */
     virtual ~ActiveDirectoryScreenCapabilities();
     /**
-     * @hash   -1368447806
      * @vftbl  1
      * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UActiveDirectoryScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */

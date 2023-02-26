@@ -30,7 +30,6 @@ public:
 
 public:
     /**
-     * @hash   1017544091
      * @symbol  ??0MeleeAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI MeleeAttackDefinition();
@@ -39,7 +38,6 @@ public:
      */
     MCAPI void initialize(class EntityContext &, class MeleeAttackGoal &) const;
     /**
-     * @hash   2103159471
      * @symbol  ?buildSchema\@MeleeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMeleeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeAttackDefinition>> &);

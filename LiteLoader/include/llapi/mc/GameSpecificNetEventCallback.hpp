@@ -35,7 +35,6 @@ public:
      */
     virtual ~GameSpecificNetEventCallback();
     /**
-     * @hash   1384589405
      * @vftbl  1
      * @symbol  ?handle\@GameSpecificNetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackClientResponsePacket\@\@\@Z
      */

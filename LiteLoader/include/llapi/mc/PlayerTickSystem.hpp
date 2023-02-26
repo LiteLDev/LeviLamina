@@ -30,17 +30,14 @@ public:
 
 public:
     /**
-     * @hash   572584906
      * @symbol  ?create\@PlayerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
-     * @hash   -1057180442
      * @symbol  ?onTickAdded\@PlayerTickSystem\@\@SAXAEAUPlayerTickComponent\@\@_K\@Z
      */
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
     /**
-     * @hash   1494865939
      * @symbol  ?shouldTickMovementSystemOnEntity\@PlayerTickSystem\@\@SA_NAEBVEntityContext\@\@\@Z
      */
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);

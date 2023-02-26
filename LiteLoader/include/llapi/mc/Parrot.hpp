@@ -32,7 +32,6 @@ public:
 
 public:
     /**
-     * @hash   1811256379
      * @vftbl  11
      * @symbol  ?reloadHardcodedClient\@Parrot\@\@MEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -58,7 +57,6 @@ public:
      */
     virtual void __unk_vfn_69();
     /**
-     * @hash   -1991018752
      * @vftbl  81
      * @symbol  ?getShadowRadius\@Parrot\@\@UEBAMXZ
      */
@@ -109,31 +107,26 @@ public:
      */
     virtual void __unk_vfn_112();
     /**
-     * @hash   676805409
      * @vftbl  121
      * @symbol  ?setSitting\@Parrot\@\@UEAAX_N\@Z
      */
     virtual void setSitting(bool);
     /**
-     * @hash   -1438143265
      * @vftbl  131
      * @symbol  ?vehicleLanded\@Parrot\@\@UEAAXAEBVVec3\@\@0\@Z
      */
     virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /**
-     * @hash   -381454548
      * @vftbl  133
      * @symbol  ?playAmbientSound\@Parrot\@\@UEAAXXZ
      */
     virtual void playAmbientSound();
     /**
-     * @hash   1673890910
      * @vftbl  134
      * @symbol  ?getAmbientSound\@Parrot\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @hash   332034644
      * @vftbl  135
      * @symbol  ?isInvulnerableTo\@Parrot\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
@@ -144,7 +137,6 @@ public:
      */
     virtual void __unk_vfn_179();
     /**
-     * @hash   -1248571657
      * @vftbl  191
      * @symbol  ?canBePulledIntoVehicle\@Parrot\@\@UEBA_NXZ
      */
@@ -180,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   171482700
      * @vftbl  268
      * @symbol  ?_playStepSound\@Parrot\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -201,7 +192,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   1369743013
      * @vftbl  291
      * @symbol  ?aiStep\@Parrot\@\@UEAAXXZ
      */
@@ -217,7 +207,6 @@ public:
      */
     virtual void __unk_vfn_308();
     /**
-     * @hash   310535793
      * @vftbl  340
      * @symbol  ?_getWalkTargetValue\@Parrot\@\@UEAAMAEBVBlockPos\@\@\@Z
      */
@@ -229,28 +218,23 @@ public:
     virtual void __unk_vfn_354();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARROT
     /**
-     * @hash   -413978796
      * @symbol  ?_makeFlySound\@Parrot\@\@MEBA_NXZ
      */
     MCVAPI bool _makeFlySound() const;
 #endif
     /**
-     * @hash   456069074
      * @symbol  ??0Parrot\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -287062124
      * @symbol  ?getFlap\@Parrot\@\@QEBAMXZ
      */
     MCAPI float getFlap() const;
     /**
-     * @hash   -1504840666
      * @symbol  ?getFlapSpeed\@Parrot\@\@QEBAMXZ
      */
     MCAPI float getFlapSpeed() const;
     /**
-     * @hash   -139648667
      * @symbol  ?postAiStep\@Parrot\@\@QEAAXXZ
      */
     MCAPI void postAiStep();

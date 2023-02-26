@@ -35,19 +35,16 @@ public:
      */
     virtual ~StructurePoolBlockPredicateBlockMatch();
     /**
-     * @hash   1124250632
      * @vftbl  1
      * @symbol  ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
-     * @hash   512591112
      * @vftbl  2
      * @symbol  ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
-     * @hash   -1763107042
      * @symbol  ??0StructurePoolBlockPredicateBlockMatch\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);

@@ -42,7 +42,6 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1040254942
      * @vftbl  49
      * @symbol  ?normalTick\@HumanoidMonster\@\@UEAAXXZ
      */
@@ -138,13 +137,11 @@ public:
      */
     virtual void __unk_vfn_262();
     /**
-     * @hash   -935188989
      * @vftbl  266
      * @symbol  ?readAdditionalSaveData\@HumanoidMonster\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -1020088326
      * @vftbl  267
      * @symbol  ?addAdditionalSaveData\@HumanoidMonster\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -165,7 +162,6 @@ public:
      */
     virtual void __unk_vfn_285();
     /**
-     * @hash   -1144129536
      * @vftbl  299
      * @symbol  ?getItemUseDuration\@HumanoidMonster\@\@UEBAHXZ
      */
@@ -176,7 +172,6 @@ public:
      */
     virtual void __unk_vfn_304();
     /**
-     * @hash   2093218337
      * @vftbl  307
      * @symbol  ?doHurtTarget\@HumanoidMonster\@\@UEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
      */
@@ -192,7 +187,6 @@ public:
      */
     virtual void __unk_vfn_354();
     /**
-     * @hash   1358238249
      * @symbol  ??0HumanoidMonster\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI HumanoidMonster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -201,22 +195,18 @@ public:
 
 private:
     /**
-     * @hash   427896704
      * @symbol  ?MAX_ENCHANTED_ARMOR_CHANCE\@HumanoidMonster\@\@0MB
      */
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     /**
-     * @hash   -923460541
      * @symbol  ?MAX_ENCHANTED_WEAPON_CHANCE\@HumanoidMonster\@\@0MB
      */
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     /**
-     * @hash   -740734807
      * @symbol  ?MAX_PICKUP_LOOT_CHANCE\@HumanoidMonster\@\@0MB
      */
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
     /**
-     * @hash   679969709
      * @symbol  ?MAX_WEARING_ARMOR_CHANCE\@HumanoidMonster\@\@0MB
      */
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;

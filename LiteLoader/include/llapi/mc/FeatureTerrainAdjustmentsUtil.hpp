@@ -22,7 +22,6 @@ namespace FeatureTerrainAdjustmentsUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1406891716
      * @symbol  ?_findIntersectingChunks\@FeatureTerrainAdjustmentsUtil\@\@YA?AV?$vector\@VChunkPos\@\@V?$allocator\@VChunkPos\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0\@Z
      */
     MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const &, class BlockPos const &);

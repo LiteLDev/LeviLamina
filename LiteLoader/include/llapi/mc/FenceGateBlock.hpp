@@ -36,13 +36,11 @@ public:
      */
     virtual ~FenceGateBlock();
     /**
-     * @hash   272296625
      * @vftbl  10
      * @symbol  ?getAABB\@FenceGateBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   877500873
      * @vftbl  14
      * @symbol  ?getLiquidClipVolume\@FenceGateBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
@@ -53,7 +51,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   947387832
      * @vftbl  25
      * @symbol  ?canConnect\@FenceGateBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
@@ -164,13 +161,11 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   421925303
      * @vftbl  62
      * @symbol  ?canContainLiquid\@FenceGateBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   -1225680124
      * @vftbl  73
      * @symbol  ?onRedstoneUpdate\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
@@ -181,7 +176,6 @@ public:
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   -1135919657
      * @vftbl  79
      * @symbol  ?setupRedstoneComponent\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -192,13 +186,11 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1559899113
      * @vftbl  85
      * @symbol  ?ignoreEntitiesOnPistonMove\@FenceGateBlock\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool ignoreEntitiesOnPistonMove(class Block const &) const;
     /**
-     * @hash   -917118317
      * @vftbl  99
      * @symbol  ?neighborChanged\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -209,7 +201,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   -421283664
      * @vftbl  106
      * @symbol  ?getPlacementBlock\@FenceGateBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
@@ -255,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   -728004381
      * @vftbl  168
      * @symbol  ?onPlace\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -266,7 +256,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   -117808697
      * @vftbl  171
      * @symbol  ?tick\@FenceGateBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -277,7 +266,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1238516662
      * @vftbl  177
      * @symbol  ?use\@FenceGateBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -289,35 +277,29 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEGATEBLOCK
     /**
-     * @hash   -666157902
      * @symbol  ?isFenceGateBlock\@FenceGateBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isFenceGateBlock() const;
     /**
-     * @hash   330138476
      * @symbol  ?isInteractiveBlock\@FenceGateBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   564748230
      * @symbol  ??0FenceGateBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4WoodType\@\@\@Z
      */
     MCAPI FenceGateBlock(std::string const &, int, enum class WoodType);
     /**
-     * @hash   -964783859
      * @symbol  ?resolveIsInWall\@FenceGateBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 
 //private:
     /**
-     * @hash   -1795647036
      * @symbol  ?_onOpenChanged\@FenceGateBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   407105724
      * @symbol  ?_setOpen\@FenceGateBlock\@\@AEBAXAEAVBlockSource\@\@V?$not_null\@PEBVBlock\@\@\@gsl\@\@AEBVBlockPos\@\@PEAVPlayer\@\@_N\@Z
      */
     MCAPI void _setOpen(class BlockSource &, class gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;

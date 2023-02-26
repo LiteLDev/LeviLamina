@@ -142,19 +142,16 @@ public:
      */
     virtual void __unk_vfn_277();
     /**
-     * @hash   1602544380
      * @vftbl  278
      * @symbol  ?destroy\@MinecartHopper\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @hash   -106368035
      * @vftbl  279
      * @symbol  ?getType\@MinecartHopper\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType();
     /**
-     * @hash   -1660702637
      * @vftbl  280
      * @symbol  ?getDefaultDisplayBlock\@MinecartHopper\@\@UEBAPEBVBlock\@\@XZ
      */
@@ -165,19 +162,16 @@ public:
      */
     virtual void __unk_vfn_281();
     /**
-     * @hash   -1559631282
      * @vftbl  282
      * @symbol  ?getDefaultDisplayOffset\@MinecartHopper\@\@UEBAHXZ
      */
     virtual int getDefaultDisplayOffset() const;
     /**
-     * @hash   -581060954
      * @vftbl  283
      * @symbol  ?applyNaturalSlowdown\@MinecartHopper\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @hash   -658792093
      * @symbol  ??0MinecartHopper\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -34,7 +34,6 @@ public:
      */
     virtual ~FrogSpawnBlock();
     /**
-     * @hash   35291894
      * @vftbl  10
      * @symbol  ?getAABB\@FrogSpawnBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
@@ -45,7 +44,6 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -1651531531
      * @vftbl  22
      * @symbol  ?canProvideSupport\@FrogSpawnBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
@@ -156,7 +154,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1649234150
      * @vftbl  69
      * @symbol  ?checkIsPathable\@FrogSpawnBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -172,19 +169,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1002880967
      * @vftbl  93
      * @symbol  ?mayPlaceOn\@FrogSpawnBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   231751112
      * @vftbl  99
      * @symbol  ?neighborChanged\@FrogSpawnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   553614538
      * @vftbl  101
      * @symbol  ?playerWillDestroy\@FrogSpawnBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -195,7 +189,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   288417808
      * @vftbl  113
      * @symbol  ?entityInside\@FrogSpawnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -221,7 +214,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1769524637
      * @vftbl  133
      * @symbol  ?buildDescriptionId\@FrogSpawnBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
@@ -247,7 +239,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   275618718
      * @vftbl  168
      * @symbol  ?onPlace\@FrogSpawnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -258,7 +249,6 @@ public:
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   517474460
      * @vftbl  171
      * @symbol  ?tick\@FrogSpawnBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -269,7 +259,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   -737428054
      * @vftbl  178
      * @symbol  ?canSurvive\@FrogSpawnBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -281,13 +270,11 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROGSPAWNBLOCK
     /**
-     * @hash   481604440
      * @symbol  ?canBeSilkTouched\@FrogSpawnBlock\@\@UEBA_NXZ
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
-     * @hash   -1669027596
      * @symbol  ??0FrogSpawnBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI FrogSpawnBlock(std::string const &, int);

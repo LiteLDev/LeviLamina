@@ -36,13 +36,11 @@ public:
      */
     virtual ~OwnerHurtTargetGoal();
     /**
-     * @hash   -21134310
      * @vftbl  1
      * @symbol  ?canUse\@OwnerHurtTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1047889277
      * @vftbl  4
      * @symbol  ?start\@OwnerHurtTargetGoal\@\@UEAAXXZ
      */
@@ -58,7 +56,6 @@ public:
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   794521476
      * @symbol  ??0OwnerHurtTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI OwnerHurtTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);

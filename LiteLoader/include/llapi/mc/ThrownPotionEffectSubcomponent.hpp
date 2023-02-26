@@ -37,19 +37,16 @@ public:
      */
     virtual ~ThrownPotionEffectSubcomponent();
     /**
-     * @hash   -275458566
      * @vftbl  2
      * @symbol  ?writetoJSON\@ThrownPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   34669033
      * @vftbl  3
      * @symbol  ?doOnHitEffect\@ThrownPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   1393731076
      * @vftbl  4
      * @symbol  ?getName\@ThrownPotionEffectSubcomponent\@\@UEAAPEBDXZ
      */

@@ -36,13 +36,11 @@ public:
      */
     virtual ~ImmutableWorldCommand();
     /**
-     * @hash   1357141048
      * @vftbl  1
      * @symbol  ?execute\@ImmutableWorldCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1892173744
      * @symbol  ?setup\@ImmutableWorldCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);

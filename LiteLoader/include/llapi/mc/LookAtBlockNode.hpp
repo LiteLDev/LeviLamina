@@ -34,19 +34,16 @@ public:
      */
     virtual ~LookAtBlockNode();
     /**
-     * @hash   348014282
      * @vftbl  1
      * @symbol  ?tick\@LookAtBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -724643858
      * @vftbl  2
      * @symbol  ?initializeFromDefinition\@LookAtBlockNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   171214809
      * @symbol  ??0LookAtBlockNode\@\@QEAA\@XZ
      */
     MCAPI LookAtBlockNode();

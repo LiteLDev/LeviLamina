@@ -221,19 +221,16 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -671291748
      * @vftbl  188
      * @symbol  ?getResourceCount\@RotatedPillarInfestedBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   466608020
      * @vftbl  189
      * @symbol  ?getSilkTouchItemInstance\@RotatedPillarInfestedBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   1831342189
      * @symbol  ??0RotatedPillarInfestedBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
     MCAPI RotatedPillarInfestedBlock(std::string const &, int, class Material const &);

@@ -36,19 +36,16 @@ public:
      */
     virtual ~EndPortalBlock();
     /**
-     * @hash   1097029484
      * @vftbl  5
      * @symbol  ?getCollisionShape\@EndPortalBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -1007046714
      * @vftbl  10
      * @symbol  ?getAABB\@EndPortalBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   259957447
      * @vftbl  11
      * @symbol  ?addCollisionShapes\@EndPortalBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
@@ -84,7 +81,6 @@ public:
      */
     virtual void __unk_vfn_34();
     /**
-     * @hash   698387908
      * @vftbl  35
      * @symbol  ?isWaterBlocking\@EndPortalBlock\@\@UEBA_NXZ
      */
@@ -170,7 +166,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -2128221838
      * @vftbl  62
      * @symbol  ?canContainLiquid\@EndPortalBlock\@\@UEBA_NXZ
      */
@@ -191,7 +186,6 @@ public:
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @hash   589621396
      * @vftbl  103
      * @symbol  ?asItemInstance\@EndPortalBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
@@ -202,7 +196,6 @@ public:
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   625304032
      * @vftbl  113
      * @symbol  ?entityInside\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
@@ -228,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   -65645861
      * @vftbl  151
      * @symbol  ?animateTick\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
@@ -254,7 +246,6 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   388255706
      * @vftbl  169
      * @symbol  ?onFallOn\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
@@ -275,26 +266,22 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -1834535188
      * @vftbl  188
      * @symbol  ?getResourceCount\@EndPortalBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   -856022156
      * @vftbl  193
      * @symbol  ?getEntityResourceItem\@EndPortalBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCK
     /**
-     * @hash   -1911666567
      * @symbol  ?waterSpreadCausesSpawn\@EndPortalBlock\@\@UEBA_NXZ
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
-     * @hash   -814531756
      * @symbol  ??0EndPortalBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EndPortalBlock(std::string const &, int);

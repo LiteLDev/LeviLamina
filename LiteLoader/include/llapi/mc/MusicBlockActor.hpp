@@ -36,13 +36,11 @@ public:
      */
     virtual ~MusicBlockActor();
     /**
-     * @hash   -1633916092
      * @vftbl  1
      * @symbol  ?load\@MusicBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1754998147
      * @vftbl  2
      * @symbol  ?save\@MusicBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
@@ -88,17 +86,14 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -628055552
      * @symbol  ??0MusicBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI MusicBlockActor(class BlockPos const &);
     /**
-     * @hash   -1100526213
      * @symbol  ?playNote\@MusicBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void playNote(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   1878823539
      * @symbol  ?tune\@MusicBlockActor\@\@QEAAXXZ
      */
     MCAPI void tune();

@@ -35,7 +35,6 @@ public:
      */
     virtual ~PrintStream();
     /**
-     * @hash   -310446811
      * @vftbl  1
      * @symbol  ?print\@PrintStream\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

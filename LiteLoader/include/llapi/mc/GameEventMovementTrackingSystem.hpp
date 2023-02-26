@@ -38,7 +38,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1276075277
      * @vftbl  2
      * @symbol  ?tick\@GameEventMovementTrackingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
@@ -50,7 +49,6 @@ public:
      */
     MCAPI static void _tickGameEventMovementTrackingComponent(class ActorOwnerComponent &, class GameEventMovementTrackingComponent &);
     /**
-     * @hash   625632516
      * @symbol  ?_trackMovement\@GameEventMovementTrackingSystem\@\@CAXAEAVActor\@\@AEAVGameEventMovementTrackingComponent\@\@\@Z
      */
     MCAPI static void _trackMovement(class Actor &, class GameEventMovementTrackingComponent &);

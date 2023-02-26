@@ -131,7 +131,6 @@ public:
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   764624652
      * @vftbl  52
      * @symbol  ?canBeOriginalSurface\@RootedDirtBlock\@\@UEBA_NXZ
      */
@@ -162,19 +161,16 @@ public:
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1262203903
      * @vftbl  86
      * @symbol  ?onFertilized\@RootedDirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @hash   -1329253062
      * @vftbl  88
      * @symbol  ?canBeFertilized\@RootedDirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   330242468
      * @vftbl  95
      * @symbol  ?tryToTill\@RootedDirtBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@\@Z
      */
@@ -235,7 +231,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1959410586
      * @vftbl  177
      * @symbol  ?use\@RootedDirtBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -246,13 +241,11 @@ public:
      */
     virtual void __unk_vfn_185();
     /**
-     * @hash   -476039613
      * @vftbl  187
      * @symbol  ?getResourceItem\@RootedDirtBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   7102115
      * @symbol  ??0RootedDirtBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI RootedDirtBlock(std::string const &, int);

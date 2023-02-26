@@ -151,7 +151,6 @@ public:
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   1569608172
      * @vftbl  69
      * @symbol  ?checkIsPathable\@EnchantingTableBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
@@ -222,7 +221,6 @@ public:
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   2112615133
      * @vftbl  177
      * @symbol  ?use\@EnchantingTableBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -234,18 +232,15 @@ public:
     virtual void __unk_vfn_185();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGTABLEBLOCK
     /**
-     * @hash   -1561482783
      * @symbol  ?isCraftingBlock\@EnchantingTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isCraftingBlock() const;
     /**
-     * @hash   365083349
      * @symbol  ?isInteractiveBlock\@EnchantingTableBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   -1805884154
      * @symbol  ??0EnchantingTableBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI EnchantingTableBlock(std::string const &, int);
