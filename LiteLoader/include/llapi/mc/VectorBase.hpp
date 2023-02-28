@@ -143,19 +143,19 @@ constexpr void unroll(Fn fn) {
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline _t_type_ dot(T const& b) const {                                                                            \
-        _t_type_ res = static_cast<_t_type_>(0);                                                                       \
-        unroll<N>([&](size_t iter) { res += operator[](iter) * b[iter]; });                                            \
+    inline double dot(T const& b) const {                                                                              \
+        double res = 0.0;                                                                                              \
+        unroll<N>([&](size_t iter) { res += double(operator[](iter)) * b[iter]; });                                    \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline _t_type_ lengthSqr() const { return dot((*this)); }                                                         \
+    inline double lengthSqr() const { return dot((*this)); }                                                           \
                                                                                                                        \
     inline double length() const { return sqrt(static_cast<double>(lengthSqr())); }                                    \
                                                                                                                        \
     inline double distanceTo(T const& b) const { return ((*this) - b).length(); }                                      \
                                                                                                                        \
-    inline _t_type_ distanceToSqr(T const& b) const { return ((*this) - b).lengthSqr(); }                              \
+    inline double distanceToSqr(T const& b) const { return ((*this) - b).lengthSqr(); }                                \
                                                                                                                        \
     inline T normalize() const { return (*this) / static_cast<_t_type_>(length()); }                                   \
                                                                                                                        \
@@ -217,7 +217,7 @@ constexpr void unroll(Fn fn) {
     inline bool operator>(const T& b) const { return lengthSqr() > b.lengthSqr(); }                                    \
                                                                                                                        \
     inline std::size_t hash() const {                                                                                  \
-        std::size_t res = 0;                                                                                               \
+        std::size_t res = 0;                                                                                           \
         unroll<N>(                                                                                                     \
             [&](size_t iter) { res ^= std::hash<_t_type_>()(operator[](iter)) + (res << 3) + (res >> 7) - res; });     \
         return res;                                                                                                    \
