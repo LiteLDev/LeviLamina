@@ -42,7 +42,7 @@ using ll::logger;
 
 LL_AUTO_INSTANCE_HOOK(
     StartServerThread_TestBiome,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?startServerThread@ServerInstance@@QEAAXXZ",
     void,
 ) {

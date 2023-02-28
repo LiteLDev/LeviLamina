@@ -1,3 +1,4 @@
+#include "llapi/mc/CompoundTag.hpp"
 #include "llapi/mc/DisplayObjective.hpp"
 #include "llapi/mc/Objective.hpp"
 #include "llapi/mc/ObjectiveCriteria.hpp"

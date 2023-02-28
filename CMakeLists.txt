@@ -30,6 +30,11 @@ add_library(LiteLoader SHARED ${SRC_FILES})
 # Replace Compile Flag /EHsc to /EHa
 string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
+target_precompile_headers(
+        LiteLoader PRIVATE
+        ${PROJECT_SOURCE_DIR}/include/llapi/Global.h
+)
+
 target_compile_options(
         LiteLoader PRIVATE
         /permissive- /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise

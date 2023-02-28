@@ -1306,7 +1306,7 @@ void assignBlocks() {
 
 LL_AUTO_STATIC_HOOK(
     SVBAHook1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z",
     void,
     class Experiments const& exp

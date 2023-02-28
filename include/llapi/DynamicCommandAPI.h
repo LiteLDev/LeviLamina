@@ -485,7 +485,7 @@ private:
     }
 
     LIAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
-    LIAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, std::string name);
+    LIAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, const std::string& name);
     LIAPI static DynamicCommandInstance* _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:

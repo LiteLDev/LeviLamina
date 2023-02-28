@@ -13,7 +13,7 @@
 #include "llapi/mc/ClientCacheBlobStatusPacket.hpp"
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/mc/LevelData.hpp"
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
 #include "llapi/mc/NetworkConnection.hpp"
 
 #include "llapi/mc/LevelChunk.hpp"
@@ -45,7 +45,7 @@ static inline bool& connState(void* conn) { return *((bool*)conn + 362); }
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BultinBugFixHook0,
     NetworkConnection,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$"
     "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
     "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
@@ -78,7 +78,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     Hook1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
     "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
     "Bedrock@@AEAVScheduler@@@Z",
@@ -98,7 +98,7 @@ LL_AUTO_STATIC_HOOK(
 }
 
 // Fix wine stop
-LL_AUTO_INSTANCE_HOOK(Hook2, ll::memory::Priority::PriorityNormal, "?leaveGameSync@ServerInstance@@QEAAXXZ", void, ) {
+LL_AUTO_INSTANCE_HOOK(Hook2, HookPriority::Normal, "?leaveGameSync@ServerInstance@@QEAAXXZ", void, ) {
     origin();
     if (IsWineEnvironment()) {
         std::cerr << "Quit correctly" << std::endl;
@@ -109,7 +109,7 @@ LL_AUTO_INSTANCE_HOOK(Hook2, ll::memory::Priority::PriorityNormal, "?leaveGameSy
 
 LL_AUTO_INSTANCE_HOOK(
     Hook3,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
     enum StartupResult,
     unsigned int            maxConnections,
@@ -126,7 +126,7 @@ LL_AUTO_INSTANCE_HOOK(
 // Fix command crash when server is stopping
 LL_AUTO_INSTANCE_HOOK(
     Hook4,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
     "allocator@D@2@@std@@000@Z",
     void,
@@ -142,7 +142,7 @@ LL_AUTO_INSTANCE_HOOK(
 
 LL_AUTO_INSTANCE_HOOK(
     Hook5,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z",
     void,
     class Player& a1
@@ -154,7 +154,7 @@ LL_AUTO_INSTANCE_HOOK(
 
 LL_AUTO_INSTANCE_HOOK(
     Hook6,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z",
     void,
     class Player& a1,
@@ -167,7 +167,7 @@ LL_AUTO_INSTANCE_HOOK(
 
 LL_AUTO_INSTANCE_HOOK(
     Hook7,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
     void,
     class Player* a1,
@@ -196,7 +196,7 @@ inline bool tryFixConsoleInputMode() {
 // Fix wine console input
 LL_AUTO_STATIC_HOOK(
     Hook8,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??$getline@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@YAAEAV?$basic_istream@_WU?$char_traits@_W@std@@@0@$$"
     "QEAV10@AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@0@_W@Z",
     std::wistream&,
@@ -214,7 +214,7 @@ LL_AUTO_STATIC_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FixBroadcastBug,
     LevelData,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
     "W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z",
     LevelData*,
@@ -241,7 +241,7 @@ bool pauseBLogging = false;
 
 LL_AUTO_STATIC_HOOK(
     Hook9,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "std::_Func_impl_no_alloc<<lambda_2166e5158bf5234f43e997b0cbaf4395>,TaskResult>::_Do_call",
     __int64,
     __int64 a1,
@@ -258,7 +258,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_INSTANCE_HOOK(
     Hook10,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
     char,
     char         a2,
@@ -281,7 +281,7 @@ LL_AUTO_INSTANCE_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     Hook11,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
     void*,
     void* self,
@@ -297,7 +297,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     Hook12,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
     void,
     void* self
@@ -310,7 +310,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     Hook13,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
     LevelChunk*,
     BlockSource* self,
@@ -330,7 +330,7 @@ LL_AUTO_STATIC_HOOK(
 
 #include "llapi/mc/Level.hpp"
 
-LL_AUTO_TYPED_INSTANCE_HOOK(FixBlockSourceCrash, Actor, Priority::PriorityNormal, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", BlockSource*) {
+LL_AUTO_TYPED_INSTANCE_HOOK(FixBlockSourceCrash, Actor, HookPriority::Normal, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", BlockSource*) {
     auto bs = origin();
     if (ll::globalConfig.enableFixBDSCrash) {
         if (!bs) {
@@ -346,7 +346,7 @@ enum class SubClientId;
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FixAbility,
     ServerNetworkHandler,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
     void,
     class NetworkIdentifier const&    nid,

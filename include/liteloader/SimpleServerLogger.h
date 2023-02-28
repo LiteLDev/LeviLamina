@@ -1,13 +1,17 @@
 #pragma once
 
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/event/player/PlayerChatEvent.h"
 
 namespace ll {
 class SimpleServerLogger {
+    using PlayerChatEvent  = ll::event::player::PlayerChatEvent;
+    using ChatListenerType = ll::event::Listener<PlayerChatEvent>;
+
 private:
-    static bool inited;
-    static Event::EventListener<Event::PlayerChatEvent> chatListener;
-    static Event::EventListener<Event::PlayerCmdEvent> cmdListener;
+    static bool                                        inited;
+    static std::weak_ptr<ChatListenerType>             chatListener;
+    static ll::event::legacy::EventListener<ll::event::legacy::PlayerCmdEvent> cmdListener;
 
 public:
     static bool registerSimpleServerLogger();

@@ -132,7 +132,7 @@ std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player) { return play
 void exportTestSimulatedPlayerLL() {
     RemoteCall::exportAs("TestRemoteCall", "TestSimulatedPlayerLL", TestSimulatedPlayerLL);
 }
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
 auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);

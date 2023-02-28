@@ -9,7 +9,7 @@ using namespace ll::memory;
 // Fix the listening port twice
 LL_AUTO_INSTANCE_HOOK(
     PortListenFix,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose@1@@Z",
     __int64
 ) {

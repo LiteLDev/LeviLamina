@@ -1,4 +1,5 @@
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/event/player/PlayerJoinEvent.h"
 #include "llapi/mc/ServerPlayer.hpp"
 #include "liteloader/LiteLoader.h"
 #include "llapi/PlayerInfoAPI.h"
@@ -164,9 +165,10 @@ bool InitPlayerDatabase() {
         //     }
         //     return true;
         // });
-        Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& e) {
-            if (!e.mPlayer->isSimulatedPlayer()) {
-                insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
+        using ll::event::player::PlayerJoinEvent;
+        PlayerJoinEvent::subscribe([](const PlayerJoinEvent& e) {
+            if (!e.getPlayer()->isSimulatedPlayer()) {
+                insert(e.getPlayer()->getRealName(), e.getPlayer()->getXuid(), e.getPlayer()->getUuid());
             }
             return true;
         });

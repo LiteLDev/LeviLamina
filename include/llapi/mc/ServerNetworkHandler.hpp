@@ -26,18 +26,16 @@ class ServerNetworkHandler {
 #define ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
 
 public:
-    inline void onClientAuthenticated(class NetworkIdentifier const& a0, class Certificate const& a1)
-    {
+    inline void onClientAuthenticated(class NetworkIdentifier const& a0, class Certificate const& a1) {
        return _onClientAuthenticated(a0, a1);
     }
     // Do not use _getServerPlayer directly
-    inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
+    inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1 = 0) {
         auto v3 = (ServerNetworkHandler*)((char*)this - 16);
         return v3->_getServerPlayer(a0, (SubClientId)a1);
     }
 
-    inline int getActiveAndInProgressPlayerCount(class mce::UUID a1)
-    {
+    inline int getActiveAndInProgressPlayerCount(class mce::UUID a1) {
         return _getActiveAndInProgressPlayerCount(a1);
     }
 #undef AFTER_EXTRA

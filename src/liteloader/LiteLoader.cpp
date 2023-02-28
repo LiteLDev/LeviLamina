@@ -14,7 +14,9 @@
 
 #include "llapi/LoggerAPI.h"
 #include "llapi/ServerAPI.h"
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/event/server/ServerStartedEvent.h"
+#include "llapi/event/server/ServerStoppedEvent.h"
 
 #include "llapi/mc/Minecraft.hpp"
 
@@ -376,7 +378,8 @@ void liteloaderMain() {
     bstats::registerBStats();
 
     // Register Started
-    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
+    using namespace ll::event::server;
+    ServerStartedEvent::subscribe([](const ServerStartedEvent&) {
         logger.info(tr("ll.notice.license", "LGPLv3"));
         logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
         logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
@@ -385,7 +388,7 @@ void liteloaderMain() {
     });
 
     // Register Cleanup
-    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
+    ServerStoppedEvent::subscribe([](const ServerStoppedEvent&) {
         EndScheduleSystem();
         return true;
     });
@@ -396,7 +399,7 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMain, Priority::PriorityNormal, "main", int, int argc, char** argv) {
+LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc, char** argv) {
     startTime = clock();
     for (int i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {

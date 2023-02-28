@@ -1,4 +1,3 @@
-#include "llapi/Global.h"
 #include "llapi/utils/PlayerMap.h"
 
 #include "llapi/memory/Hook.h"
@@ -27,7 +26,7 @@ LIAPI void         _regDePlayerCB(DePlayerCB cb) {
 
 LL_AUTO_STATIC_HOOK(
     PM1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??_EServerPlayer@@UEAAPEAXI@Z",
     void,
     ServerPlayer* thi,

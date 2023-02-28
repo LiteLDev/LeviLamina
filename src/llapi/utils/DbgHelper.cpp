@@ -221,16 +221,15 @@ std::string GetCallerModuleFileName(unsigned long FramesToSkip) {
 
 bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag) {
 
-    DWORD dwHandle = 0;
-    DWORD dwLen = GetFileVersionInfoSizeW(filePath, &dwHandle);
-    if (0 >= dwLen) {
+    DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
+    if (!dwLen) {
         return false;
     }
-    wchar_t* pBlock = new wchar_t[dwLen];
-    if (NULL == pBlock) {
+    auto* pBlock = new(std::nothrow) wchar_t[dwLen];
+    if (nullptr == pBlock) {
         return false;
     }
-    if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, pBlock)) {
+    if (!GetFileVersionInfoW(filePath, 0, dwLen, pBlock)) {
         delete[] pBlock;
         return false;
     }

@@ -93,7 +93,7 @@ BlockInstance Actor::getBlockStandingOn() const {
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
         return getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
+    } __except (GetExceptionCode(), EXCEPTION_EXECUTE_HANDLER) {
         return {0};
     }
 }

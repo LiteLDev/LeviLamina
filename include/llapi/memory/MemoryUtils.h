@@ -34,7 +34,7 @@ auto inline virtualCall(void const* _this, Args... args) -> RTN {
 
 template <typename T, uintptr_t off>
 inline T& dAccess(void* ptr) {
-    return *(T*)(((uintptr_t)ptr) + off);
+    return *(T*)(reinterpret_cast<uintptr_t>(ptr) + off);
 }
 
 template <typename T, uintptr_t off>

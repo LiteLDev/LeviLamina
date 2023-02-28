@@ -30,7 +30,7 @@
 #pragma region Hook
 LL_AUTO_STATIC_HOOK(
     MolangAPIHook,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$"
     "allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$"
     "allocator@VExpressionNode@@@std@@@std@@@Z@4@0W4MolangQueryFunctionReturnType@@VHashedString@@_K4AEBV?$"

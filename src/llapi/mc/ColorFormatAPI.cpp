@@ -366,7 +366,7 @@ void testAll() {
 }
 LL_AUTO_INSTANCE_HOOK(
     TestColorFormat,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?startServerThread@ServerInstance@@QEAAXXZ",
     void,
 ) {

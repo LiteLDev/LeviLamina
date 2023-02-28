@@ -20,6 +20,7 @@
 #include "llapi/mc/LoopbackPacketSender.hpp"
 #include "llapi/mc/CommandUtils.hpp"
 #include "llapi/mc/CommandSoftEnumRegistry.hpp"
+#include "llapi/mc/CompoundTag.hpp"
 #include "llapi/memory/Hook.h"
 
 #include "liteloader/LiteLoader.h"
@@ -476,7 +477,7 @@ inline char DynamicCommand::builderCallbackHanler(DCCallback* cb, DCArgs* args, 
     return 'p';
 }
 
-std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string name) {
+std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, const std::string& name) {
 #define CaseInitBreak(type)                                                                                            \
     case ParameterType::type:                                                                                          \
         initValue<ParameterDataType::type>(command, offset);                                                           \
@@ -490,7 +491,7 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
     auto& commandInstance = *dynamicCommandInstances.at(name);
     auto  command         = new char[commandInstance.commandSize]{0};
     (*(DynamicCommand*)command).DynamicCommand::DynamicCommand();
-    for (auto& [name, param] : commandInstance.parameterPtrs) {
+    for (auto& [paramName, param] : commandInstance.parameterPtrs) {
         size_t offset                                                    = param.getOffset();
         dAccess<bool>(command, offset + ParameterSizeMap.at(param.type)) = false; // XXXX_isSet;
         switch (param.type) {
@@ -499,7 +500,7 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
             break;
         }
     }
-    rtn->reset(std::move((Command*)command));
+    rtn->reset((Command*)command);
     return rtn;
 }
 
@@ -553,15 +554,15 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
         // fix enum name with prefix '_...' if Enum name is exists in BDS
         auto                                                            namesInBds = CommandRegistry::getEnumNames();
         std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
-        for (auto& [name, range] : commandInstance->enumRanges) {
-            std::string fixedName = name.data();
+        for (auto& [enumName, range] : commandInstance->enumRanges) {
+            std::string fixedName = enumName.data();
             while (std::find(namesInBds.begin(), namesInBds.end(), fixedName) != namesInBds.end()) {
                 fixedName.append("_");
             }
-            std::string_view fixedView = name;
-            if (fixedName != name) {
+            std::string_view fixedView = enumName;
+            if (fixedName != enumName) {
                 for (auto& namePtr : commandInstance->enumNames) {
-                    if (*namePtr == name) {
+                    if (*namePtr == enumName) {
                         namePtr->swap(fixedName);
                         fixedView = *namePtr;
                         for (auto& data : commandInstance->parameterDatas) {
@@ -590,8 +591,8 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
         commandInstance->enumRanges.swap(convertedEnumRanges);
 
         // add Soft Enum to BDS
-        for (auto& [name, values] : commandInstance->softEnums) {
-            Global<CommandRegistry>->addSoftEnum(name, values);
+        for (auto& [enumName, values] : commandInstance->softEnums) {
+            Global<CommandRegistry>->addSoftEnum(enumName, values);
         }
 
         Global<CommandRegistry>->registerCommand(
@@ -690,7 +691,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handle);
 }
 #include "llapi/LLAPI.h"
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
 #include "liteloader/Config.h"
 
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
@@ -727,9 +728,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 ) {
     auto command = createCommand(name, description, permission, flag1, flag2, handle);
     if (!command)
-        return std::unique_ptr<class DynamicCommandInstance>();
-    for (auto& [name, values] : enums) {
-        command->setEnum(name, std::move(values));
+        return {};
+    for (auto& [enumName, values] : enums) {
+        command->setEnum(enumName, values);
     }
     for (auto& param : params) {
         command->newParameter(std::move(param));
@@ -1342,18 +1343,13 @@ void setupRemoveCommand() {
 // }
 
 // force enable cheat
-LL_AUTO_INSTANCE_HOOK(
-    bool,
-    ll::memory::Priority::PriorityNormal,
-    CommandParameterData,
-    "?hasCommandsEnabled@LevelData@@QEBA_NXZ"
-) {
+LL_AUTO_INSTANCE_HOOK(bool, HookPriority::Normal, CommandParameterData, "?hasCommandsEnabled@LevelData@@QEBA_NXZ") {
     return true;
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     AddOptionHook,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z",
     CommandParameterData&,
     CommandParameterOption option
@@ -1471,7 +1467,7 @@ TClasslessInstanceHook2("startServerThread_RegisterDebugCommand", void, "?startS
 
 LL_AUTO_INSTANCE_HOOK(
     DCAPIHook1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?compile@BaseCommandBlock@@AEAAXAEBVCommandOrigin@@AEAVLevel@@@Z",
     void,
     class CommandOrigin const& origin,

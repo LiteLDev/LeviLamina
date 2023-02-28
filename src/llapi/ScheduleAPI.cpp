@@ -224,7 +224,7 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-LL_AUTO_STATIC_HOOK(SAHook1, ll::memory::Priority::PriorityNormal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
+LL_AUTO_STATIC_HOOK(SAHook1, HookPriority::Normal, "?tick@ServerLevel@@UEAAXXZ", void, void* _this) {
     origin(_this);
     taskQueue.tick();
 }

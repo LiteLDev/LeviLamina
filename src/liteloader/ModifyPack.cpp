@@ -20,7 +20,7 @@ using namespace ll::memory;
 
 LL_AUTO_STATIC_HOOK(
     MpHook1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0ResourcePack@@QEAA@AEAVPack@@@Z",
     ResourcePack*,
     ResourcePack* self,
@@ -36,7 +36,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     MpHook2,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?deserialize@ResourcePackStack@@SA?AV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@"
     "@std@@AEAV?$basic_istream@DU?$char_traits@D@std@@@3@AEBVIResourcePackRepository@@@Z",
     std::unique_ptr<ResourcePackStack>,

@@ -17,7 +17,7 @@ Logger      serverLogger("Server");
 extern void checkBetaVersion();
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(1),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
     std::string,
 ) {
@@ -42,7 +42,7 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(2),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?BedrockLogOut@@YAXIPEBDZZ",
     void,
     int   a1,
@@ -86,7 +86,7 @@ LL_AUTO_STATIC_HOOK(
 // Standardize BDS's output
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(3),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?PlatformBedrockLogOut@@YAXIPEBD@Z",
     void,
     int         a1,
@@ -116,7 +116,7 @@ LL_AUTO_STATIC_HOOK(
 // Block BDS from adding LOG metadata
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(4),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@"
     "std@@V34@W4LogAreaID@@I1HH@Z",
     void,
@@ -137,7 +137,7 @@ int telemetryText = 0;
 }
 LL_AUTO_STATIC_HOOK(
     MI_HOOK_NAME(5),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
     void,
     enum BedrockLog::LogCategory a1,
@@ -186,7 +186,7 @@ LL_AUTO_STATIC_HOOK(
 extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 LL_AUTO_INSTANCE_HOOK(
     MI_HOOK_NAME(6),
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
     void*,
     class CommandOrigin const& origin,

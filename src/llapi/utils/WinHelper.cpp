@@ -204,8 +204,10 @@ std::string GetSystemLocaleName() {
 }
 
 inline bool isWine() {
-    HMODULE ntdll             = GetModuleHandle(L"ntdll.dll");
-    auto    pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
+    HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
+    if (!ntdll)
+        return false;
+    auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
     if (pwine_get_version)
         return true;
     else

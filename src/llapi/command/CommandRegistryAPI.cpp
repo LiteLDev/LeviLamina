@@ -129,10 +129,10 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         if (sig == mSignatures.end())
             return false;
         {
-            auto iter = std::remove_if(mCommandSymbols.begin(), mCommandSymbols.end(),
+            auto symbolIter = std::remove_if(mCommandSymbols.begin(), mCommandSymbols.end(),
                                        [&](Symbol const& r) { return r == sig->second.main_symbol || r == sig->second.alt_symbol; });
-            if (iter != mCommandSymbols.end())
-                mCommandSymbols.erase(iter, mCommandSymbols.end());
+            if (symbolIter != mCommandSymbols.end())
+                mCommandSymbols.erase(symbolIter, mCommandSymbols.end());
         }
         //{
         //    auto iter = std::remove_if(mRules.begin(), mRules.end(),
@@ -141,10 +141,10 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         //        mRules.erase(iter, mRules.end());
         //};
         {
-            auto iter = std::remove_if(mFactorizations.begin(), mFactorizations.end(),
+            auto factorizationIter = std::remove_if(mFactorizations.begin(), mFactorizations.end(),
                                        [&](Factorization const& r) { return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol; });
-            if (iter != mFactorizations.end())
-                mFactorizations.erase(iter, mFactorizations.end());
+            if (factorizationIter != mFactorizations.end())
+                mFactorizations.erase(factorizationIter, mFactorizations.end());
         };
 
         mSignatures.erase(sig);

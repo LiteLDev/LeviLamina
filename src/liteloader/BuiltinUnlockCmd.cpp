@@ -21,7 +21,7 @@ void LogCommandRegistration(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     UnlockCmdHook0,
     CommandRegistry,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
     "PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
     void,
@@ -52,7 +52,7 @@ class CommandSelectorBase;
 class CommandOrigin;
 LL_AUTO_INSTANCE_HOOK(
     UnlockCmdHook1,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@Z",
     bool,
     CommandOrigin* a2
@@ -83,7 +83,7 @@ LL_AUTO_INSTANCE_HOOK(
 //               operationParam, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
-//     return original(this, unk, version, operationParam, nameParam);
+//     return origin( unk, version, operationParam, nameParam);
 // }
 //// op
 // TInstanceHook(CommandRegistry::Overload*,
@@ -91,7 +91,7 @@ LL_AUTO_INSTANCE_HOOK(
 //               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
-//     return original(this, unk, version, nameParam);
+//     return origin( unk, version, nameParam);
 // }
 //// deop
 // TInstanceHook(CommandRegistry::Overload*,
@@ -99,7 +99,7 @@ LL_AUTO_INSTANCE_HOOK(
 //               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
-//     return original(this, unk, version, nameParam);
+//     return origin( unk, version, nameParam);
 // }
 //  bool unlockNewExecute = true;
 //  TClasslessInstanceHook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z",
@@ -107,7 +107,7 @@ LL_AUTO_INSTANCE_HOOK(
 //  {
 //      if (feature == 54 && unlockNewExecute)
 //          return true;
-//      return original(this, feature);
+//      return origin( feature);
 //  }
 // TClasslessInstanceHook(void, "?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z",
 //                        enum SemanticConstraint)
@@ -116,7 +116,7 @@ LL_AUTO_INSTANCE_HOOK(
 // }
 LL_AUTO_INSTANCE_HOOK(
     UnlockCmdHook2,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
     "AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_"
     "traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",

@@ -1,4 +1,3 @@
-// clang-format off
 #include <stdint.h>
 
 enum class ContainerType : char {
@@ -31,19 +30,9 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
-enum class GameType : int {
-    GameTypeSurvival  = 0,
-    GameTypeCreative  = 1,
-    GameTypeAdventure = 2,
-    GameTypeSpectator = 6
-};
+enum class GameType : int { GameTypeSurvival = 0, GameTypeCreative = 1, GameTypeAdventure = 2, GameTypeSpectator = 6 };
 
-enum class Difficulty : int {
-    DifficultyPeaceful = 0,
-    DifficultyEasy     = 1,
-    DifficultyNormal   = 2,
-    DifficultyHard     = 3
-};
+enum class Difficulty : int { DifficultyPeaceful = 0, DifficultyEasy = 1, DifficultyNormal = 2, DifficultyHard = 3 };
 
 enum class PlayerPermissionLevel : int {
     PlayerPermissionLevelVisitor  = 0,
@@ -53,31 +42,31 @@ enum class PlayerPermissionLevel : int {
 };
 
 enum class CommandPermissionLevel : char {
-    Any = 0,
+    Any         = 0,
     GameMasters = 1,
-    Admin = 2,
-    HostPlayer = 3,
-    Console = 4,
-    Internal = 5,
+    Admin       = 2,
+    HostPlayer  = 3,
+    Console     = 4,
+    Internal    = 5,
 };
 
 enum class OriginType : char {
-    Player = 0,
-    Block = 1,
-    MinecartBlock = 2,
-    DevConsole = 3,
-    Test = 4,
-    AutomationPlayer = 5,
-    ClientAutomation = 6,
-    Server = 7,
-    Actor = 8,
-    Virtual = 9,
-    GameArgument = 10,
-    ActorServer = 11,
-    Precompiled = 12,
+    Player             = 0,
+    Block              = 1,
+    MinecartBlock      = 2,
+    DevConsole         = 3,
+    Test               = 4,
+    AutomationPlayer   = 5,
+    ClientAutomation   = 6,
+    Server             = 7,
+    Actor              = 8,
+    Virtual            = 9,
+    GameArgument       = 10,
+    ActorServer        = 11,
+    Precompiled        = 12,
     GameDirectorEntity = 13,
-    Script = 14,
-    ExecuteContext = 15,
+    Script             = 14,
+    ExecuteContext     = 15,
 
     DedicatedServer = 7, // Server
 };
@@ -89,27 +78,22 @@ enum class CommandParameterDataType {
     POSIFIX,
 };
 
-enum class SemanticConstraint: unsigned char
-{
-    NoneConstraint = 0,
-    RequiresCheatsEnabled=1,
-    RequiresElevatedPermissions=2,
-    RequiresHostPermissions=4,
-    VALUE_MASK=8,
+enum class SemanticConstraint : unsigned char {
+    NoneConstraint              = 0,
+    RequiresCheatsEnabled       = 1,
+    RequiresElevatedPermissions = 2,
+    RequiresHostPermissions     = 4,
+    VALUE_MASK                  = 8,
 };
 
-enum class CommandParameterOption : unsigned char
-{
-    None = 0,
+enum class CommandParameterOption : unsigned char {
+    None                      = 0,
     EnumAutocompleteExpansion = 1,
-    HasSemanticConstraint = 2, //be used in block or item name enum
-    EnumAsChainedCommand = 4,  //be used in NewExecuteCommand
+    HasSemanticConstraint     = 2, // be used in block or item name enum
+    EnumAsChainedCommand      = 4, // be used in NewExecuteCommand
 };
 
-enum class UpdateBlockLayer : int {
-    UpdateBlockDefault,
-    UpdateBlockLiquid
-};
+enum class UpdateBlockLayer : int { UpdateBlockDefault, UpdateBlockLiquid };
 
 enum class UpdateBlockFlags : int {
     UpdateBlockNone        = 0,
@@ -142,29 +126,29 @@ enum class TextType : char {
 
 /**
  * @brief The title type
- * 
+ *
  */
 enum class TitleType : int {
-    Clear               = 0,
-    Reset               = 1,
+    Clear = 0,
+    Reset = 1,
 
     /**
      * @brief The main title
-     * 
+     *
      */
-    SetTitle            = 2,
+    SetTitle = 2,
 
     /**
      * @brief The subtitle
-     * 
+     *
      */
-    SetSubtitle         = 3,
+    SetSubtitle = 3,
 
     /**
      * @brief The actionbar title
-     * 
+     *
      */
-    SetActionBar        = 4,
+    SetActionBar = 4,
 
     SetDurations        = 5,
     TitleTextObject     = 6,
@@ -184,15 +168,7 @@ enum class BossEvent : int {
     ResendRaidBossEventData = 8,
 };
 
-enum class BossEventColour : int {
-    Grey   = 0,
-    Blue   = 1,
-    Red    = 2,
-    Green  = 3,
-    Yellow = 4,
-    Purple = 5,
-    White  = 6
-};
+enum class BossEventColour : int { Grey = 0, Blue = 1, Red = 2, Green = 3, Yellow = 4, Purple = 5, White = 6 };
 
 enum class ContainerEnumName : int8_t {
     AnvilInputContainer                 = 0,
@@ -371,27 +347,23 @@ enum class ItemStackRequestActionType : char {
 
 /**
  * @brief Ranking method of the objective
- * 
+ *
  */
 enum class ObjectiveSortOrder : char {
     /**
      * @brief Ascending
-     * 
+     *
      */
-    Ascending  = 0,
+    Ascending = 0,
 
     /**
      * @brief Descending
-     * 
+     *
      */
     Descending = 1
 };
 
-enum class PlayerScoreSetFunction : char {
-    Set    = 0,
-    Add    = 1,
-    Remove = 2
-};
+enum class PlayerScoreSetFunction : char { Set = 0, Add = 1, Remove = 2 };
 
 enum class ContainerID : uint8_t {
     Invalid        = 0xff,
@@ -467,7 +439,7 @@ enum class MinecraftPacketIds : int {
     CraftingData                      = 0x34,
     CraftingEvent                     = 0x35,
     GuiDataPickItem                   = 0x36,
-    AdventureSettings                 = 0x37,// removed
+    AdventureSettings                 = 0x37, // removed
     BlockActorData                    = 0x38,
     PlayerInput                       = 0x39,
     LevelChunk                        = 0x3A,
@@ -602,10 +574,10 @@ enum class MinecraftPacketIds : int {
     EditorNetwork                     = 0xBE,
     FeatureRegistry                   = 0xBF,
     ServerStats                       = 0xC0,
-	RequestNetworkSettings            = 0xC1,
-	GameTestRequest                   = 0XC2,
-	GameTestResults                   = 0xC3
-	
+    RequestNetworkSettings            = 0xC1,
+    GameTestRequest                   = 0XC2,
+    GameTestResults                   = 0xC3
+
 };
 
 enum class ItemStackNetResult : unsigned char {
@@ -684,23 +656,18 @@ enum class ItemStackNetResult : unsigned char {
 // };
 
 enum class ClientPlayMode {
-	Normal              = 0,
-	Teaser              = 1,
-	Screen              = 2,
-	Viewer              = 3,
-	VR                  = 4,
-	Placement           = 5,
-	LivingRoom          = 6,
-	ExitLevel           = 7,
-	ExitLevelLivingRoom = 8
+    Normal              = 0,
+    Teaser              = 1,
+    Screen              = 2,
+    Viewer              = 3,
+    VR                  = 4,
+    Placement           = 5,
+    LivingRoom          = 6,
+    ExitLevel           = 7,
+    ExitLevelLivingRoom = 8
 };
 
-enum class InputMode {
-	Mouse            = 1,
-	Touch            = 2,
-	GamePad          = 3,
-	MotionController = 4
-};
+enum class InputMode { Mouse = 1, Touch = 2, GamePad = 3, MotionController = 4 };
 
 enum class InventoryTransactionError {
     Unknown            = 0,
@@ -725,13 +692,13 @@ enum class InventorySourceType {
 };
 
 enum class Mirror : unsigned char {
-    None_15=0,
+    None_15 = 0,
     X,
     Z,
     XZ,
 };
 enum class Rotation : unsigned char {
-    None_14=0,
+    None_14 = 0,
     Rotate90,
     Rotate180,
     Rotate270,
@@ -739,123 +706,258 @@ enum class Rotation : unsigned char {
 };
 
 enum class EquipmentSlot : int {
-    _none = 0xFF,
-    _begin = 0x0,
-    _handSlot = 0x0,
-    Mainhand = 0x0,
-    Offhand = 0x1,
-    _armorSlot = 0x2,
-    Head = 0x2,
-    Torso = 0x3,
-    Legs = 0x4,
-    Feet = 0x5,
+    _none          = 0xFF,
+    _begin         = 0x0,
+    _handSlot      = 0x0,
+    Mainhand       = 0x0,
+    Offhand        = 0x1,
+    _armorSlot     = 0x2,
+    Head           = 0x2,
+    Torso          = 0x3,
+    Legs           = 0x4,
+    Feet           = 0x5,
     _containerSlot = 0x6,
-    Hotbar = 0x6,
-    Inventory = 0x7,
-    EnderChest = 0x8,
-    Saddle = 0x9,
-    EntityArmor = 0xA,
-    Chest = 0xB,
-    _count = 0xC,
+    Hotbar         = 0x6,
+    Inventory      = 0x7,
+    EnderChest     = 0x8,
+    Saddle         = 0x9,
+    EntityArmor    = 0xA,
+    Chest          = 0xB,
+    _count         = 0xC,
 };
 
 enum class CommandOperator : unsigned char {
-    Invalid = 0x0,
-    Equals = 0x1,
-    PlusEquals = 0x2,
-    MinusEquals = 0x3,
-    TimesEquals = 0x4,
+    Invalid      = 0x0,
+    Equals       = 0x1,
+    PlusEquals   = 0x2,
+    MinusEquals  = 0x3,
+    TimesEquals  = 0x4,
     DivideEquals = 0x5,
-    ModEquals = 0x6,
-    MinEquals = 0x7,
-    MaxEquals = 0x8,
-    Swap = 0x9,
+    ModEquals    = 0x6,
+    MinEquals    = 0x7,
+    MaxEquals    = 0x8,
+    Swap         = 0x9,
 };
 
 enum class ActorLocation : int {
-    Feet = 0x0,
-    Body = 0x1,
+    Feet              = 0x0,
+    Body              = 0x1,
     WeaponAttachPoint = 0x2,
-    Head = 0x3,
-    DropAttachPoint = 0x4,
-    ExplosionPoint = 0x5,
-    Eyes = 0x6,
-    BreathingPoint = 0x7,
-    Mouth = 0x8,
+    Head              = 0x3,
+    DropAttachPoint   = 0x4,
+    ExplosionPoint    = 0x5,
+    Eyes              = 0x6,
+    BreathingPoint    = 0x7,
+    Mouth             = 0x8,
 };
 
 enum class StreamReadResult : int {
     Malformed = 0x0,
-    Valid = 0x1,
+    Valid     = 0x1,
 };
 
-enum class BossEventUpdateType
-{
+enum class BossEventUpdateType {
     BossEventShow = 0,
     // BossEventRegisterPlayer is sent by the client to the server to request being shown the boss bar.
     BossEventRegisterPlayer = 1,
-    BossEventHide = 2,
+    BossEventHide           = 2,
     // BossEventUnregisterPlayer is sent by the client to request the removal of the boss bar.
-    BossEventUnregisterPlayer = 3,
-    BossEventHealthPercentage = 4,
-    BossEventTitle = 5,
+    BossEventUnregisterPlayer     = 3,
+    BossEventHealthPercentage     = 4,
+    BossEventTitle                = 5,
     BossEventAppearanceProperties = 6,
-    BossEventTexture = 7,
+    BossEventTexture              = 7,
 };
 
 enum class BuildPlatform : int {
-    Android = 0x1,
-    iOS = 0x2,
-    OSX = 0x3,
-    Amazon = 0x4,
-    GearVR = 0x5,
-    WIN10 = 0x7,
-    Win32 = 0x8,
-    Dedicated = 0x9,
-    PS4 = 0xB,
-    Nx = 0xC,
-    Xbox = 0xD,
+    Android      = 0x1,
+    iOS          = 0x2,
+    OSX          = 0x3,
+    Amazon       = 0x4,
+    GearVR       = 0x5,
+    WIN10        = 0x7,
+    Win32        = 0x8,
+    Dedicated    = 0x9,
+    PS4          = 0xB,
+    Nx           = 0xC,
+    Xbox         = 0xD,
     WindowsPhone = 0xE,
-    Linux = 0xF,
-    Unknown = 0xFF,
+    Linux        = 0xF,
+    Unknown      = 0xFF,
 };
 
 enum class AbilitiesIndex : int16_t {
-    Build = 0,
-    Mine = 1,
-    DoorsAndSwitches = 2,
-    OpenContainers = 3,
-    AttackPlayers = 4,
-    AttackMobs = 5,
-    OperatorCommands = 6,
-    Teleport = 7,
+    Build               = 0,
+    Mine                = 1,
+    DoorsAndSwitches    = 2,
+    OpenContainers      = 3,
+    AttackPlayers       = 4,
+    AttackMobs          = 5,
+    OperatorCommands    = 6,
+    Teleport            = 7,
     ExposedAbilityCount = 8,
-    Invulnerable = 8,
-    Flying = 9,
-    MayFly = 10,
-    Instabuild = 11,
-    Lightning = 12,
-    FlySpeed = 13,
-    WalkSpeed = 14,
-    Muted = 15,
-    WorldBuilder = 16,
-    NoClip = 17,
-    AbilityCount = 18
+    Invulnerable        = 8,
+    Flying              = 9,
+    MayFly              = 10,
+    Instabuild          = 11,
+    Lightning           = 12,
+    FlySpeed            = 13,
+    WalkSpeed           = 14,
+    Muted               = 15,
+    WorldBuilder        = 16,
+    NoClip              = 17,
+    AbilityCount        = 18
 };
 
-enum class AdventureFlag : int
-{
+enum class AdventureFlag : int {
     WorldImmutable = 1,
-    NoPvM = 2,
-    NoMvP = 4,
-    Unused = 8,
-    ShowNameTags = 16,
-    AutoJump = 32,
-    AllowFlight = 64,
-    NoClip = 128,
-    WorldBuilder = 256,
-    Flying = 512,
-    Muted = 1024,
+    NoPvM          = 2,
+    NoMvP          = 4,
+    Unused         = 8,
+    ShowNameTags   = 16,
+    AutoJump       = 32,
+    AllowFlight    = 64,
+    NoClip         = 128,
+    WorldBuilder   = 256,
+    Flying         = 512,
+    Muted          = 1024,
 };
 
-// clang-format on
+enum class ActorDataIDs : unsigned short {
+    FLAGS                     = 0,  // Int64
+    HEALTH                    = 1,  // Int
+    VARIANT                   = 2,  // Int
+    COLOR                     = 3,  // Byte
+    NAMETAG                   = 4,  // String
+    OWNER                     = 5,  // Int64
+    TARGET                    = 6,  // Int64
+    AIR                       = 7,  // Short
+    POTION_COLOR              = 8,  // Int (ARGB!)
+    POTION_AMBIENT            = 9,  // Byte
+    JUMP_DURATION             = 10, // Byte (not Int64?)
+    HURT_TIME                 = 11, // Int (minecart/boat)
+    HURT_DIRECTION            = 12, // Int (minecart/boat)
+    PADDLE_TIME_LEFT          = 13, // Float
+    PADDLE_TIME_RIGHT         = 14, // Float
+    EXPERIENCE_VALUE          = 15, // Int (xp orb)
+    DISPLAY_ITEM              = 16, // Byte    Int    CompoundTag
+    HORSE_FLAGS               = 16, // Int, old
+    WITHER_SKULL_IS_DANGEROUS = 16, // Byte, old
+    MINECART_DISPLAY_OFFSET   = 17, // Int    Int64    Vec3
+    ARROW_SHOOTER_ID          = 17, // Int64, old
+    MINECART_HAS_DISPLAY      = 18, // Byte    Int64
+    HORSE_TYPE                = 19, // Byte
+    SWELL                     = 19, // old
+    OLD_SWELL                 = 20, // old
+    SWELL_DIR                 = 21, // old
+    CHARGE_AMOUNT             = 22, // Byte
+    ENDERMAN_HELD_RUNTIME_ID  = 23, // Int, (not Short?)
+    ACTOR_AGE                 = 24, // Byte, (not Short?)
+    // UNKNOWN_25                          = 25,  // 25 Byte Int
+    PLAYER_FLAGS                       = 26, // Byte
+    PLAYER_INDEX                       = 27, // Int
+    PLAYER_BED_POSITION                = 28, // BlockPos
+    FIREBALL_POWER_X                   = 29, // Float
+    FIREBALL_POWER_Y                   = 30, // Float
+    FIREBALL_POWER_Z                   = 31, // Float
+    AUX_POWER                          = 32, // old
+    FISH_X                             = 33, // old
+    FISH_Z                             = 34, // old
+    FISH_ANGLE                         = 35, // old
+    POTION_AUX_VALUE                   = 36, // Short
+    LEAD_HOLDER                        = 37, // Int64
+    SCALE                              = 38, // Float
+    INTERACTIVE_TAG                    = 39, // Byte, (not String?)
+    NPC_SKIN_ID                        = 40, // String
+    URL_TAG                            = 41, // String
+    MAX_AIR                            = 42, // Short
+    MARK_VARIANT                       = 43, // Int
+    CONTAINER_TYPE                     = 44, // Byte
+    CONTAINER_BASE_SIZE                = 45, // Int
+    CONTAINER_EXTRA_SLOTS_PER_STRENGTH = 46, // Int
+    BLOCK_TARGET                       = 47, // BlockPos (ENDER CRYSTAL)
+    WITHER_INVULNERABLE_TICKS          = 48, // Int
+    WITHER_TARGET_1                    = 49, // Int64
+    WITHER_TARGET_2                    = 50, // Int64
+    WITHER_TARGET_3                    = 51, // Int64
+    AERIAL_ATTACK                      = 52, // Short
+    BOUNDING_BOX_WIDTH                 = 53, // Float
+    BOUNDING_BOX_HEIGHT                = 54, // Float
+    FUSE_LENGTH                        = 55, // Int
+    RIDER_SEAT_POSITION                = 56, // Vec3
+    RIDER_ROTATION_LOCKED              = 57, // Byte
+    RIDER_MAX_ROTATION                 = 58, // Float
+    RIDER_MIN_ROTATION                 = 59, // Byte, (not Float?)
+    // UNKNOWN_60                          = 60,  // Float
+    AREA_EFFECT_CLOUD_RADIUS            = 61, // Float
+    AREA_EFFECT_CLOUD_WAITING           = 62, // Int
+    AREA_EFFECT_CLOUD_PARTICLE_ID       = 63, // Int
+    SHULKER_PEEK_ID                     = 64, // Int
+    SHULKER_ATTACH_FACE                 = 65, // Byte
+    SHULKER_ATTACHED                    = 66, // Short
+    SHULKER_ATTACH_POS                  = 67, // BlockPos
+    TRADING_PLAYER_EID                  = 68, // Int64
+    TRADING_CAREER                      = 69,
+    HAS_COMMAND_BLOCK                   = 70, // Byte
+    COMMAND_BLOCK_COMMAND               = 71, // String
+    COMMAND_BLOCK_LAST_OUTPUT           = 72, // String
+    COMMAND_BLOCK_TRACK_OUTPUT          = 73, // Byte
+    CONTROLLING_RIDER_SEAT_NUMBER       = 74, // Byte
+    STRENGTH                            = 75, // Int
+    MAX_STRENGTH                        = 76, // Int
+    SPELL_CASTING_COLOR                 = 77, // Int
+    LIMITED_LIFE                        = 78, // Int
+    ARMOR_STAND_POSE_INDEX              = 79, // Int
+    ENDER_CRYSTAL_TIME_OFFSET           = 80, // Int
+    ALWAYS_SHOW_NAMETAG                 = 81, // Byte
+    COLOR_2                             = 82, // Byte
+    NAME_AUTHOR                         = 83,
+    SCORE_TAG                           = 84, // String
+    BALLOON_ATTACHED_ENTITY             = 85, // Int64
+    PUFFERFISH_SIZE                     = 86, // Byte
+    BUBBLE_TIME                         = 87,
+    AGENT                               = 88, // Int64
+    SITTING_AMOUNT                      = 89, // Float
+    SITTING_AMOUNT_PREVIOUS             = 90, // Float
+    EATING_COUNTER                      = 91, // Int
+    FLAGS_EXTENDED                      = 92, // Int64
+    LAYING_AMOUNT                       = 93, // Float
+    LAYING_AMOUNT_PREVIOUS              = 94, // Float
+    DURATION                            = 95,
+    SPAWN_TIME                          = 96,
+    CHANGE_RATE                         = 97,
+    CHANGE_ON_PICKUP                    = 98,
+    PICKUP_COUNT                        = 99,
+    INTERACT_TEXT                       = 100, // String
+    TRADE_TIER                          = 101, // Int
+    MAX_TRADE_TIER                      = 102, // Int
+    TRADE_EXPERIENCE                    = 103, // Int
+    SKIN_ID                             = 104, // Int
+    SPAWNING_FRAMES                     = 105, // Int
+    COMMAND_BLOCK_TICK_DELAY            = 106, // Int
+    COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK = 107, // Byte
+    AMBIENT_SOUND_INTERVAL              = 108, // Float
+    // UNKNOWN_109                         = 109, // Float
+    // UNKNOWN_110                         = 110, // String
+    // UNKNOWN_111                         = 111, // Float
+    // UNKNOWN_112                         = 112, // String
+    // UNKNOWN_113                         = 113, // Byte
+    // UNKNOWN_114                         = 114, // Int
+    // UNKNOWN_115                         = 115, // Int
+    // UNKNOWN_116                         = 116, // Int
+    // UNKNOWN_117                         = 117, // Int
+    // UNKNOWN_118                         = 118, // CompoundTag
+    // UNKNOWN_119                         = 119, // Byte
+    // UNKNOWN_120                         = 120, // CompoundTag
+    // UNKNOWN_121                         = 121, // Float
+    // UNKNOWN_122                         = 122, // String
+    // UNKNOWN_123                         = 123, // Int
+    // UNKNOWN_124                         = 124, // String
+
+    /*
+    AMBIENT_SOUND_EVENT_NAME            = 109,
+    FALL_DAMAGE_MULTIPLIER              = 110,
+    NAME_RAW_TEXT                       = 111,
+    CAN_RIDE_TARGET                     = 112,
+    */
+};

@@ -13,7 +13,7 @@ using namespace ll::memory;
 LL_AUTO_TYPED_INSTANCE_HOOK(
     UnBindDefaultPort,
     PropertiesSettings,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
     size_t,
     const std::string& file

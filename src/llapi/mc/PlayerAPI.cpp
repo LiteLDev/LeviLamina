@@ -39,7 +39,9 @@
 
 #include "llapi/impl/ObjectivePacketHelper.h"
 #include "llapi/impl/FormPacketHelper.h"
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/event/EventManager.h"
+#include "llapi/event/player/PlayerChatEvent.h"
 
 #include "liteloader/LiteLoader.h"
 
@@ -60,6 +62,7 @@
 #include "llapi/mc/BlockInstance.hpp"
 #include "llapi/mc/DBStorage.hpp"
 #include "llapi/mc/StringTag.hpp"
+#include "llapi/mc/Vec2.hpp"
 #include "llapi/memory/MemoryUtils.h"
 #include "liteloader/PlayerDeathPositions.h"
 
@@ -822,10 +825,10 @@ bool Player::sendTextTalkPacket(const string& msg, Player* target) {
         return true;
     }
     try {
-        Event::PlayerChatEvent ev;
-        ev.mMessage = msg;
-        ev.mPlayer  = this;
-        if (!ev.call())
+        using ll::event::player::PlayerChatEvent;
+        PlayerChatEvent event(this, msg);
+        ll::event::EventManager<PlayerChatEvent>::fireEvent(event);
+        if (event.isCancelled())
             return false;
     } catch (...) {
         logger.error("Event Callback Failed!");

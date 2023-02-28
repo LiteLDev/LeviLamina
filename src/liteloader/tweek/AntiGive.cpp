@@ -22,7 +22,7 @@ inline bool itemMayFromReducer(ItemStack const& item) {
 LL_AUTO_TYPED_INSTANCE_HOOK(
     AntiGive,
     ServerNetworkHandler,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
     void,
     NetworkIdentifier const&    netId,

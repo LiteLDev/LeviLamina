@@ -6,10 +6,10 @@
 
 #include "llapi/mc/ResourcePackRepository.hpp"
 #include "llapi/mc/ResourcePackStack.hpp"
-#include "llapi/EventAPI.h"
+#include "llapi/event/LegacyEvents.h"
 
 void InitParticle() {
-    Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
+    ll::event::legacy::ResourcePackInitEvent::subscribe([](const ll::event::legacy::ResourcePackInitEvent& ev) {
         ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, R"(plugins/LiteLoader/ResourcePacks)");
         return true;
     });

@@ -1,0 +1,92 @@
+name: build
+
+on:
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
+      - '.github/workflows/build.yml'
+      - '**/CMakeLists.txt'
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+      - uses: actions/checkout@v3.2.0
+        with:
+          fetch-depth: 1
+          submodules: 'recursive'
+
+      - name: Cache Bedrock Dedicated Server Library
+        id: cache-bds-lib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-bds-lib
+        with:
+          path: |
+            ${{ env.GITHUB_WORKSPACE }}lib/bds/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}lib/bds/bedrock_server_var.lib
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('assets/link.txt') }}
+
+      - name: Download Server
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir prebuilt/tools/server
+          server_link=$(cat 'assets/link.txt')
+          curl -L -o prebuilt/tools/server/server.zip "$server_link"
+          unzip prebuilt/tools/server/server.zip -d prebuilt/tools/server/ > /dev/null
+        shell: bash
+
+      - name: Build Library
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd prebuilt/tools
+          LibraryBuilder.exe server
+          move bedrock_server_api.lib ..\..\lib\bds\
+          move bedrock_server_var.lib ..\..\lib\bds\
+        shell: cmd
+
+      - name: Get Short Sha
+        id: sha_short
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Change LITELOADER_VERSION_COMMIT_SHA
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' include/liteloader/Version.h
+        shell: bash
+
+      - name: Configure CMake
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Build
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        shell: cmd
+
+
+      - name: Upload LiteLoader
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LiteLoader
+          path: ${{ github.workspace }}\build\Release\LiteLoader.dll
+
+      - name: Upload PDB
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: PDB
+          path: ${{ github.workspace }}\build\Release\LiteLoader.pdb

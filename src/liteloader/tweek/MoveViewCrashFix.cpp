@@ -12,7 +12,7 @@ using namespace ll::memory;
 // Fix move view crash (ref PlayerAuthInput[MoveView])
 Player* movingViewPlayer = nullptr;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(MoveViewCrashFix, Player, Priority::PriorityNormal, "?moveView@Player@@UEAAXXZ", void) {
+LL_AUTO_TYPED_INSTANCE_HOOK(MoveViewCrashFix, Player, HookPriority::Normal, "?moveView@Player@@UEAAXXZ", void) {
     movingViewPlayer = this;
     origin();
     movingViewPlayer = nullptr;
@@ -47,7 +47,7 @@ inline void fixPlayerPosition(Player* pl, bool kick = true) {
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FixPlayerPosition1,
     Player,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z",
     void,
     class Vec3 const&                       pos,
@@ -60,7 +60,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 LL_AUTO_INSTANCE_HOOK(
     FixPlayerPosition2,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$"
     "buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
     __int64,
@@ -80,7 +80,7 @@ LL_AUTO_INSTANCE_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ValidPlayerPosition,
     Player,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?move@Player@@UEAAXAEBVVec3@@@Z",
     void,
     Vec3 pos

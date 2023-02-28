@@ -1,35 +1,42 @@
 #include "liteloader/SimpleServerLogger.h"
 
-#include "llapi/memory/Hook.h"
-#include "llapi/LoggerAPI.h"
-#include "llapi/mc/ServerPlayer.hpp"
-#include "llapi/EventAPI.h"
-#include "liteloader/Config.h"
-#include "llapi/mc/ItemStack.hpp"
-#include "llapi/mc/CommandRegistry.hpp"
 #include <magic_enum.hpp>
 
-using namespace Event;
+#include "llapi/LoggerAPI.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/memory/Hook.h"
+#include "llapi/event/EventManager.h"
+#include "llapi/mc/ServerPlayer.hpp"
+#include "llapi/mc/ItemStack.hpp"
+#include "llapi/mc/CommandRegistry.hpp"
 
-bool                           ll::SimpleServerLogger::inited = false;
-EventListener<PlayerChatEvent> ll::SimpleServerLogger::chatListener{0};
-EventListener<PlayerCmdEvent>  ll::SimpleServerLogger::cmdListener{0};
+#include "liteloader/Config.h"
+
+using namespace ll::event::legacy;
+using ll::event::Listener;
+using ll::event::player::PlayerChatEvent;
+bool                                     ll::SimpleServerLogger::inited = false;
+std::weak_ptr<Listener<PlayerChatEvent>> ll::SimpleServerLogger::chatListener{};
+EventListener<PlayerCmdEvent>            ll::SimpleServerLogger::cmdListener{0};
 
 bool ll::SimpleServerLogger::registerSimpleServerLogger() {
     if (inited)
         return false;
     if (ll::globalConfig.enableSimpleServerLogger) {
-        chatListener = Event::PlayerChatEvent::subscribe([](const Event::PlayerChatEvent& ev) {
-            static Logger logger("Chat");
-            logger.info("<{}> {}", ev.mPlayer->getRealName(), ev.mMessage);
-            return true;
-        });
-        cmdListener  = Event::PlayerCmdEvent::subscribe([](const Event::PlayerCmdEvent& ev) {
+        chatListener = PlayerChatEvent::subscribe(
+            [](const PlayerChatEvent& event) {
+                static Logger logger("Chat");
+                logger.info("<{}> {}", event.getPlayer()->getRealName(), event.getMessage());
+            },
+            event::EventPriority::Monitor
+        );
+
+        cmdListener = ll::event::legacy::PlayerCmdEvent::subscribe([](const ll::event::legacy::PlayerCmdEvent& ev) {
             static Logger logger("Command");
             logger.info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;
         });
-        inited       = true;
+        inited      = true;
         return true;
     }
     return false;
@@ -38,7 +45,7 @@ bool ll::SimpleServerLogger::registerSimpleServerLogger() {
 bool ll::SimpleServerLogger::unregisterSimpleServerLogger() {
     if (!inited)
         return false;
-    chatListener.remove();
+    ll::event::EventManager<PlayerChatEvent>::removeListener(chatListener);
     cmdListener.remove();
     inited = false;
     return true;
@@ -47,7 +54,7 @@ bool ll::SimpleServerLogger::unregisterSimpleServerLogger() {
 LL_AUTO_TYPED_INSTANCE_HOOK(
     PermissionLog,
     Player,
-    ll::memory::Priority::PriorityNormal,
+    HookPriority::Normal,
     "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z",
     void,
     CommandPermissionLevel perm

@@ -2,7 +2,7 @@
 // Created by ShrBox on 2022/12/5.
 //
 #include <liteloader/PlayerDeathPositions.h>
-#include <llapi/EventAPI.h>
+#include <llapi/event/LegacyEvents.h>
 #include <llapi/mc/Player.hpp>
 
 std::unordered_map<std::string, std::pair<Vec3, int>> deathPositions = {};
@@ -17,7 +17,7 @@ std::pair<Vec3, int> PlayerDeathPositions::makeDeathPos(Vec3 vec3, int dim) {
 }
 
 void PlayerDeathPositions::deathEventListener() {
-    Event::PlayerDieEvent::subscribe([](Event::PlayerDieEvent ev) {
+    ll::event::legacy::PlayerDieEvent::subscribe([](ll::event::legacy::PlayerDieEvent ev) {
         deathPositions[ev.mPlayer->getUuid()] = PlayerDeathPositions::makeDeathPos(ev.mPlayer->getPos(), ev.mPlayer->getDimensionId());
         return true;
     });

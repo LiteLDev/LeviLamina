@@ -22,7 +22,7 @@ using namespace ll::memory;
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftService,
     Minecraft,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?initAsDedicatedServer@Minecraft@@QEAAXXZ",
     void
 ) {
@@ -34,7 +34,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerNetworkHandlerService,
     ServerNetworkHandler,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@"
     "std@@_N@Z",
     void,
@@ -60,7 +60,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 //               IMinecraftApp& a16, class std::unordered_map<struct PackIdVersion, std::string> const& a17, class
 //               Scheduler& a18, class Bedrock::NonOwnerPointer<class TextFilteringProcessor> a19)
 //{
-//     auto rtn = original(this, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
+//     auto rtn = origin( a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
 //     Global<ServerNetworkHandler> = this;
 //     //Global<NetworkHandler> = &a3;
 //     Global<MinecraftCommands> = &a15;
@@ -71,7 +71,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftCommandsService,
     MinecraftCommands,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@"
     "@AEBVExperiments@@AEBVBaseGameVersion@@@Z",
     void,
@@ -89,7 +89,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     LevelStorageService,
     DBStorage,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z",
     DBStorage*,
     struct DBStorageConfig* config,
@@ -103,7 +103,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // RakNetServerLocator
 // ?activate@RakNetServerLocator@@AEAAXXZ
-LL_AUTO_TYPED_INSTANCE_HOOK(RakNetServerLocatorService, RakNetServerLocator, Priority::PriorityNormal, "?_activate@RakNetServerLocator@@AEAAXXZ", void*) {
+LL_AUTO_TYPED_INSTANCE_HOOK(RakNetServerLocatorService, RakNetServerLocator, HookPriority::Normal, "?_activate@RakNetServerLocator@@AEAAXXZ", void*) {
     constexpr auto h   = do_hash("?_activate@RakNetServerLocator@@AEAAXXZ");
     static bool    set = false;
     if (!set) {
@@ -114,7 +114,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(RakNetServerLocatorService, RakNetServerLocator, Pri
 }
 
 using RakNet::RakPeer;
-LL_AUTO_TYPED_INSTANCE_HOOK(RakPeerService, RakPeer, Priority::PriorityNormal, "??0RakPeer@RakNet@@QEAA@XZ", void*) {
+LL_AUTO_TYPED_INSTANCE_HOOK(RakPeerService, RakPeer, HookPriority::Normal, "??0RakPeer@RakNet@@QEAA@XZ", void*) {
     static bool set = false;
     if (!set) {
         set                     = true;
@@ -127,7 +127,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(RakPeerService, RakPeer, Priority::PriorityNormal, "
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ScoreboardService,
     Scoreboard,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@@Z",
     Scoreboard*,
     void**              a2,
@@ -142,7 +142,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 LL_AUTO_TYPED_INSTANCE_HOOK(
     AllowListFileService,
     AllowListFile,
-    Priority::PriorityNormal,
+    HookPriority::Normal,
     "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ",
     int
 ) {
