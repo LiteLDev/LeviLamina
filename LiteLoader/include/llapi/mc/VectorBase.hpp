@@ -145,7 +145,7 @@ constexpr void unroll(Fn fn) {
                                                                                                                        \
     inline double dot(T const& b) const {                                                                              \
         double res = 0.0;                                                                                              \
-        unroll<N>([&](size_t iter) { res += (double)(operator[](iter)) * b[iter]; });                                    \
+        unroll<N>([&](size_t iter) { res += (double)(operator[](iter)) * b[iter]; });                                  \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
