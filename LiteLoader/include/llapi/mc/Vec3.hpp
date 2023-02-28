@@ -68,8 +68,6 @@ class Vec3 {
 
     LIAPI BlockPos toBlockPos() const;
 
-    inline Vec3 add(float dx, float dy, float dz) const { return {x + dx, y + dy, z + dz}; }
-
     constexpr float& operator[](size_t index) {
         switch (index) {
             case 1:

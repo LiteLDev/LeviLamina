@@ -33,18 +33,6 @@ public:
 
     MCAPI static void bindType();
 
-    inline BlockPos add(int dx) const {
-        return {x + dx, y, z};
-    }
-
-    inline BlockPos add(int dx, int dy) const {
-        return {x + dx, y + dy, z};
-    }
-
-    inline BlockPos add(int dx, int dy, int dz) const {
-        return {x + dx, y + dy, z + dz};
-    }
-
     constexpr int& operator[](size_t index) {
         switch (index) {
             case 1:

@@ -88,7 +88,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return getPosition().add(0, -1.0, 0).toBlockPos();
+    return (getPosition()-Vec3(0.0, 1.62001, 0.0)).toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const {
@@ -164,11 +164,11 @@ bool Actor::stopFire() {
 }
 
 Vec3 Actor::getCameraPos() const {
-    auto& pos = this->getPosition();
+    Vec3 pos = this->getPosition();
     if (isSneaking()) {
-        pos.add(0, -0.125, 0);
+        pos.y -= 0.125;
     } else {
-        pos.add(0, ((Player*)this)->getCameraOffset(), 0);
+        pos.y += ((Player*)this)->getCameraOffset();
     }
     return pos;
 }
