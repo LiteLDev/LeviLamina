@@ -5,7 +5,7 @@
  * @note Only LiteLoader itself should include this file in the source code of event.
  */
 
-#include <llapi/event/EventManager.h>
+#include "llapi/event/EventManager.h"
 
 namespace ll::event {
 

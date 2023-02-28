@@ -1,7 +1,7 @@
-#include <llapi/memory/Hook.h>
+#include "llapi/memory/Hook.h"
 
-#include <liteloader/LiteLoader.h>
-#include <liteloader/Config.h>
+#include "liteloader/LiteLoader.h"
+#include "liteloader/Config.h"
 
 using namespace ll;
 using namespace ll::memory;

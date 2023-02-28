@@ -1,9 +1,9 @@
 //
 // Created by ShrBox on 2022/12/5.
 //
-#include <liteloader/PlayerDeathPositions.h>
-#include <llapi/event/LegacyEvents.h>
-#include <llapi/mc/Player.hpp>
+#include "liteloader/PlayerDeathPositions.h"
+#include "llapi/event/LegacyEvents.h"
+#include "llapi/mc/Player.hpp"
 
 std::unordered_map<std::string, std::pair<Vec3, int>> deathPositions = {};
 

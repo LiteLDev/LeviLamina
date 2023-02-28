@@ -2,7 +2,7 @@
 #include "liteloader/Config.h"
 #include "llapi/mc/CommandParameterData.hpp"
 
-#include <llapi/memory/Hook.h>
+#include "llapi/memory/Hook.h"
 #include <magic_enum.hpp>
 
 using namespace ll::memory;

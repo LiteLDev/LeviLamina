@@ -5,10 +5,10 @@
  * @note Only LiteLoader itself should include this file in the source code of event.
  */
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/event/Listener.h>
+#include "llapi/LoggerAPI.h"
+#include "llapi/event/Listener.h"
 
 namespace ll::event {
 namespace detail {

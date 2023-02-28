@@ -965,8 +965,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 }
 
 ////////////// EnderDragonDestroy //////////////
-#include <llapi/mc/BlockLegacy.hpp>
-#include <llapi/mc/EnderDragon.hpp>
+#include "llapi/mc/BlockLegacy.hpp"
+#include "llapi/mc/EnderDragon.hpp"
 LL_AUTO_TYPED_INSTANCE_HOOK(
     EnderDragonDestroyEventHook,
     EnderDragon,

@@ -1,10 +1,10 @@
-#include <llapi/memory/Hook.h>
+#include "llapi/memory/Hook.h"
 
-#include <llapi/mc/Player.hpp>
-#include <llapi/mc/ChunkViewSource.hpp>
-#include <llapi/mc/Level.hpp>
+#include "llapi/mc/Player.hpp"
+#include "llapi/mc/ChunkViewSource.hpp"
+#include "llapi/mc/Level.hpp"
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 using namespace ll;
 using namespace ll::memory;

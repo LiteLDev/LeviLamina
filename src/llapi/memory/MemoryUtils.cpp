@@ -1,8 +1,8 @@
-#include <llapi/memory/MemoryUtils.h>
+#include "llapi/memory/MemoryUtils.h"
 
-#include <pl/SymbolProvider.h>
+#include "pl/SymbolProvider.h"
 
-#include <llapi/utils/WinHelper.h>
+#include "llapi/utils/WinHelper.h"
 
 namespace ll::memory {
 

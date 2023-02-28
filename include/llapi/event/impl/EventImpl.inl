@@ -5,10 +5,10 @@
 
 #pragma once
 
-#include <llapi/LLAPI.h>
-#include <llapi/event/Event.h>
-#include <llapi/event/EventManager.h>
-#include <llapi/utils/StringHelper.h>
+#include "llapi/LLAPI.h"
+#include "llapi/event/Event.h"
+#include "llapi/event/EventManager.h"
+#include "llapi/utils/StringHelper.h"
 
 #define LL_EVENT_IMPL(EventType)                                                                                       \
     namespace ll::event {                                                                                              \
