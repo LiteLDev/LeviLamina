@@ -88,7 +88,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return (getPosition()-Vec3(0.0, 1.62001, 0.0)).toBlockPos();
+    return getFeetPosition().toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const {
