@@ -217,7 +217,7 @@ constexpr void unroll(Fn fn) {
     inline bool operator>(const T& b) const { return lengthSqr() > b.lengthSqr(); }                                    \
                                                                                                                        \
     inline std::size_t hash() const {                                                                                  \
-        std::size_t res;                                                                                               \
+        std::size_t res = 0;                                                                                               \
         unroll<N>(                                                                                                     \
             [&](size_t iter) { res ^= std::hash<_t_type_>()(operator[](iter)) + (res << 3) + (res >> 7) - res; });     \
         return res;                                                                                                    \
