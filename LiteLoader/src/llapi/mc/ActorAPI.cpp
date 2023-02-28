@@ -37,6 +37,10 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
         UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
+float Actor::getRealSpeed() const {
+    return (float)(getPosDelta().length() * 20.0);
+}
+
 MCINLINE Vec3 Actor::getFeetPosition() const {
     return CommandUtils::getFeetPos(this);
 }

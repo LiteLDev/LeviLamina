@@ -656,7 +656,7 @@ Local<Value> EntityClass::getSpeed() {
         if (!entity)
             return Local<Value>();
 
-        return Number::newNumber(entity->getPosDelta().length() * 20.0);
+        return Number::newNumber(entity->getRealSpeed());
     }
     CATCH("Fail in getSpeed!")
 }
