@@ -1541,7 +1541,7 @@ TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageS
     return original(this, src, damage);
 }
 
-//////////////// PlayerUseItem & PlayerEat ////////////////
+//////////////// PlayerUseItem & PlayerEat&Ate ////////////////
 #include "llapi/mc/ComponentItem.hpp"
 
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode, ItemStack& it) {
@@ -1554,19 +1554,28 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode, 
             return false;
     }
     IF_LISTENED_END(PlayerUseItemEvent)
-    IF_LISTENED(PlayerEatEvent) {
-        if (it.getItem()->isFood() && (pl->isHungry() || pl->forceAllowEating())) {
+    return original(this, it);
+}
+
+TInstanceHook(void, "?eat@Player@@QEAAXAEBVItemStack@@@Z", Player, ItemStack* a1) {
+        IF_LISTENED(PlayerEatEvent) {
             PlayerEatEvent ev{};
-            ev.mPlayer = pl;
-            ev.mFoodItem = &it;
+            ev.mPlayer = this;
+            ev.mFoodItem = a1;
             if (!ev.call()) {
-                pl->refreshAttribute(Player::HUNGER);
-                return false;
+                return;
             }
         }
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, it);
+        IF_LISTENED_END(PlayerEatEvent)
+        original(this, a1);
+        IF_LISTENED(PlayerAteEvent) {
+            PlayerAteEvent ev{};
+            ev.mPlayer = this;
+            ev.mFoodItem = a1;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerAteEvent)
+        return;
 }
 
 TInstanceHook(ItemStack*, "?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", BucketItem, ItemStack* a1,
@@ -1597,21 +1606,6 @@ TClasslessInstanceHook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AE
     }
     IF_LISTENED_END(PlayerEatEvent)
     return original(this, a1, a2);
-}
-
-/////////////////// PlayerAte ////////////////////
-#include "llapi/mc/FoodItemComponentLegacy.hpp"
-
-TInstanceHook(Item*, "?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z",
-              FoodItemComponentLegacy, ItemStack* a, Player* b, Level* c) {
-    IF_LISTENED(PlayerAteEvent) {
-        PlayerAteEvent ev{};
-        ev.mPlayer = b;
-        ev.mFoodItem = a;
-        ev.call();
-    }
-    IF_LISTENED_END(PlayerAteEvent)
-    return original(this, a, b, c);
 }
 
 /////////////////// MobDie ///////////////////
