@@ -37,10 +37,6 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
         UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
-float Actor::getRealSpeed() const {
-    return (float)(getPosDelta().length() * 20.0);
-}
-
 MCINLINE Vec3 Actor::getFeetPosition() const {
     return CommandUtils::getFeetPos(this);
 }
@@ -92,7 +88,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return getFeetPosition().toBlockPos();
+    return getPosition().add(0, -1.0, 0).toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const {
@@ -168,11 +164,11 @@ bool Actor::stopFire() {
 }
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = this->getPosition();
+    auto& pos = this->getPosition();
     if (isSneaking()) {
-        pos.y -= 0.125;
+        pos.add(0, -0.125, 0);
     } else {
-        pos.y += ((Player*)this)->getCameraOffset();
+        pos.add(0, ((Player*)this)->getCameraOffset(), 0);
     }
     return pos;
 }
@@ -236,11 +232,12 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
 bool Actor::addEffect(MobEffect::EffectType type, int tick, int level, bool ambient, bool showParticles,
                       bool showAnimation) {
     MobEffectInstance ins = MobEffectInstance((unsigned int)type, tick, level, ambient, showParticles, showAnimation);
-    ins.applyEffects(this);
+    this->addEffect(ins);
+    //ins.applyEffects(this);
     return true;
 };
 
-std::vector<std::string> Actor::getAllTags() {
+std::vector<std::string> Actor::getAllTags() { 
     try {
         auto nbt = getNbt();
         auto& list = ((ListTag*)nbt->getListTag("Tags"))->value();
