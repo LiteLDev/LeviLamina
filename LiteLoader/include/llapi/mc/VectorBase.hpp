@@ -168,7 +168,7 @@ constexpr void unroll(Fn fn) {
     inline T div(T const& b) const { return (*this) / b; }                                                             \
                                                                                                                        \
     template <typename... Args>                                                                                        \
-    inline T add(_t_type_ first, Args... args) {                                                                       \
+    inline T add(_t_type_ first, Args... args) const {                                                                 \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
         const std::array<_t_type_> vec = {first, args...};                                                             \
@@ -176,7 +176,7 @@ constexpr void unroll(Fn fn) {
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T sub(_t_type_ first, Args... args) {                                                                       \
+    inline T sub(_t_type_ first, Args... args) const {                                                                 \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
         const std::array<_t_type_> vec = {first, args...};                                                             \
@@ -184,7 +184,7 @@ constexpr void unroll(Fn fn) {
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T mul(_t_type_ first, Args... args) {                                                                       \
+    inline T mul(_t_type_ first, Args... args) const {                                                                 \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
         const std::array<_t_type_> vec = {first, args...};                                                             \
@@ -192,7 +192,7 @@ constexpr void unroll(Fn fn) {
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T div(_t_type_ first, Args... args) {                                                                       \
+    inline T div(_t_type_ first, Args... args) const {                                                                 \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
         const std::array<_t_type_> vec = {first, args...};                                                             \
@@ -221,4 +221,6 @@ constexpr void unroll(Fn fn) {
         unroll<N>(                                                                                                     \
             [&](size_t iter) { res ^= std::hash<_t_type_>()(operator[](iter)) + (res << 3) + (res >> 7) - res; });     \
         return res;                                                                                                    \
-    }
+    }                                                                                                                  \
+                                                                                                                       \
+    constexpr size_t size() const { return N; }
