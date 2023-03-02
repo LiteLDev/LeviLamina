@@ -3168,7 +3168,7 @@ Local<Value> PlayerClass::getAllEffects() {
         if (effects.size() == 0) {
             return Local<Value>();
         }
-        Local<Array> effectlist = Array::newArray();
+        Local<Array> effectList = Array::newArray();
         for (auto effect : effects)
             effectlist.add(Number::newNumber((int)effect.getId()));
         return effectlist;
