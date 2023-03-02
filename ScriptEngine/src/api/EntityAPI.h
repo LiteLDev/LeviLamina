@@ -27,6 +27,7 @@ public:
     Local<Value> getType();
     Local<Value> getId();
     Local<Value> getPos();
+    Local<Value> getPosDelta();
     Local<Value> getFeetPos();
     Local<Value> getBlockPos();
     Local<Value> getMaxHealth();
@@ -64,6 +65,7 @@ public:
     Local<Value> isBaby();
     Local<Value> isMoving();
 
+    Local<Value> setPosDelta(const Arguments& args);
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);
     Local<Value> despawn(const Arguments& args);

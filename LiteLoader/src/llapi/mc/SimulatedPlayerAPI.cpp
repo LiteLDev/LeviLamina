@@ -78,7 +78,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
-        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()).substr(3));
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {
@@ -106,7 +106,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
                                                class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
-        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()).substr(3));
+        name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
     if (player /* && player->isSimulatedPlayer() */) {

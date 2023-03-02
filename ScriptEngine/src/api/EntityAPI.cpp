@@ -37,6 +37,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("type", &EntityClass::getType)
         .instanceProperty("id", &EntityClass::getId)
         .instanceProperty("pos", &EntityClass::getPos)
+        .instanceProperty("posDelta", &EntityClass::getPosDelta)
         .instanceProperty("feetPos", &EntityClass::getFeetPos)
         .instanceProperty("blockPos", &EntityClass::getBlockPos)
         .instanceProperty("maxHealth", &EntityClass::getMaxHealth)
@@ -79,6 +80,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("remove", &EntityClass::remove)
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
+        .instanceFunction("setPosDelta", &EntityClass::setPosDelta)
         .instanceFunction("setHealth", &EntityClass::setHealth)
         .instanceFunction("setAbsorption", &EntityClass::setAbsorption)
         .instanceFunction("setAttackDamage", &EntityClass::setAttackDamage)
@@ -124,6 +126,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
 
 //////////////////// Classes ////////////////////
 
+// clang-format off
 ClassDefine<void> ActorDamageCauseBuilder =
     defineClass("ActorDamageCause")
         .property("Override", []() { return Number::newNumber(0); })
@@ -157,15 +160,15 @@ ClassDefine<void> ActorDamageCauseBuilder =
         .property("Stalactite", []() { return Number::newNumber(28); })
         .property("Stalagmite", []() { return Number::newNumber(29); })
         .build();
-        
-        
 
+// clang-format on
 
-//生成函数
+// 生成函数
 Local<Object> EntityClass::newEntity(Actor* p) {
     auto newp = new EntityClass(p);
     return newp->getScriptObject();
 }
+
 Actor* EntityClass::extract(Local<Value> v) {
     if (EngineScope::currentEngine()->isInstanceOf<EntityClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<EntityClass>(v)->get();
@@ -181,7 +184,7 @@ std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v) {
     return std::nullopt;
 }
 
-//成员函数
+// 成员函数
 void EntityClass::set(Actor* actor) {
     __try {
         id = actor->getUniqueID();
@@ -374,6 +377,7 @@ Local<Value> EntityClass::isMoving() {
 }
 
 #include <llapi/mc/CommandUtils.hpp>
+
 Local<Value> EntityClass::getName() {
     try {
         Actor* entity = get();
@@ -414,6 +418,47 @@ Local<Value> EntityClass::getPos() {
             return Local<Value>();
 
         return FloatPos::newPos(entity->getPosition(), entity->getDimensionId());
+    }
+    CATCH("Fail in GetEntityPos!")
+}
+
+Local<Value> EntityClass::getPosDelta() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return FloatPos::newPos(entity->getPosDelta(), entity->getDimensionId());
+    }
+    CATCH("Fail in GetEntityPosDelta!")
+}
+
+Local<Value> EntityClass::setPosDelta(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Boolean::newBoolean(false);
+        Vec3 delta;
+        if (args.size() == 1) {
+            if (!IsInstanceOf<FloatPos>(args[0])) {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+            delta = EngineScope::currentEngine()->getNativeInstance<FloatPos>(args[0])->getVec3();
+        } else if (args.size() == 3) {
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+
+            delta.x = args[0].asNumber().toFloat();
+            delta.y = args[1].asNumber().toFloat();
+            delta.z = args[2].asNumber().toFloat();
+        }
+        entity->getPosDeltaNonConst() = delta;
+
+        return Boolean::newBoolean(true);
     }
     CATCH("Fail in GetEntityPos!")
 }
@@ -611,7 +656,7 @@ Local<Value> EntityClass::getSpeed() {
         if (!entity)
             return Local<Value>();
 
-        return Number::newNumber(entity->getSpeedInMetersPerSecond());
+        return Number::newNumber(entity->getRealSpeed());
     }
     CATCH("Fail in getSpeed!")
 }
@@ -937,7 +982,8 @@ Local<Value> EntityClass::getBlockStandingOn(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr), (int)entity->getDimensionId()); //===========?
+        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr),
+                                    (int)entity->getDimensionId());
     }
     CATCH("Fail in getBlockStandingOn!");
 }
@@ -998,11 +1044,11 @@ Local<Value> EntityClass::hurt(const Arguments& args) {
             return Local<Value>();
         float damage = args[0].asNumber().toFloat();
         int type = 0;
-        if(args.size() == 2){
+        if (args.size() == 2) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             type = args[1].asNumber().toInt32();
         }
-        return Boolean::newBoolean(entity->hurtEntity(damage,(ActorDamageCause)type));
+        return Boolean::newBoolean(entity->hurtEntity(damage, (ActorDamageCause)type));
     }
     CATCH("Fail in hurt!");
 }
@@ -1120,7 +1166,8 @@ Local<Value> EntityClass::setKnockbackResistance(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* knockbackResistanceAttribute = entity->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+        AttributeInstance* knockbackResistanceAttribute =
+            entity->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
 
         knockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -1156,7 +1203,8 @@ Local<Value> EntityClass::setMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* movementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+        AttributeInstance* movementSpeedAttribute =
+            entity->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
 
         movementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -1174,7 +1222,8 @@ Local<Value> EntityClass::setUnderwaterMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* underwaterMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+        AttributeInstance* underwaterMovementSpeedAttribute =
+            entity->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
 
         underwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -1192,7 +1241,8 @@ Local<Value> EntityClass::setLavaMovementSpeed(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        AttributeInstance* lavaMovementSpeedAttribute = entity->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+        AttributeInstance* lavaMovementSpeedAttribute =
+            entity->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
 
         lavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -1411,7 +1461,8 @@ Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args) {
             CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
             fullOnly = args[3].asBoolean().value();
         }
-        auto blockInstance = actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        auto blockInstance =
+            actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
         if (blockInstance.isNull())
             return Local<Value>();
         return BlockClass::newBlock(std::move(blockInstance));
@@ -1507,7 +1558,8 @@ Local<Value> McClass::cloneMob(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
+                   args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -1560,7 +1612,8 @@ Local<Value> McClass::spawnMob(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
+                   args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -1615,7 +1668,8 @@ Local<Value> McClass::explode(const Arguments& args) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(),
+                   args[3].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -1633,7 +1687,8 @@ Local<Value> McClass::explode(const Arguments& args) {
         bool isDestroy = args[beginIndex + 3].asBoolean().value();
         bool isFire = args[beginIndex + 4].asBoolean().value();
 
-        return Boolean::newBoolean(Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
+        return Boolean::newBoolean(
+            Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
     }
     CATCH("Fail in Explode!");
 }
