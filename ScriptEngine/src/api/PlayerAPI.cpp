@@ -3170,8 +3170,8 @@ Local<Value> PlayerClass::getAllEffects() {
         }
         Local<Array> effectList = Array::newArray();
         for (auto effect : effects)
-            effectlist.add(Number::newNumber((int)effect.getId()));
-        return effectlist;
+            effectList.add(Number::newNumber((int)effect.getId()));
+        return effectList;
     }
     CATCH("Fail in getAllEffects!")
 }
