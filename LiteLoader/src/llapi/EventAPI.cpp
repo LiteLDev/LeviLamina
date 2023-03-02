@@ -1599,19 +1599,17 @@ TClasslessInstanceHook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AE
     return original(this, a1, a2);
 }
 
-/////////////////// PlayerAte ////////////////////
-#include "llapi/mc/FoodItemComponentLegacy.hpp"
-
-TInstanceHook(Item*, "?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z",
-              FoodItemComponentLegacy, ItemStack* a, Player* b, Level* c) {
-    IF_LISTENED(PlayerAteEvent) {
-        PlayerAteEvent ev{};
-        ev.mPlayer = b;
-        ev.mFoodItem = a;
-        ev.call();
-    }
-    IF_LISTENED_END(PlayerAteEvent)
-    return original(this, a, b, c);
+///////////////////  PlayerAte  //////////////////////
+TInstanceHook(void, "?eat@Player@@QEAAXAEBVItemStack@@@Z", Player, ItemStack* a1) {
+        original(this, a1);
+        IF_LISTENED(PlayerAteEvent) {
+            PlayerAteEvent ev{};
+            ev.mPlayer = this;
+            ev.mFoodItem = a1;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerAteEvent)
+        return;
 }
 
 /////////////////// MobDie ///////////////////
