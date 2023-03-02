@@ -1541,7 +1541,7 @@ TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageS
     return original(this, src, damage);
 }
 
-//////////////// PlayerUseItem & PlayerEat&Ate ////////////////
+//////////////// PlayerUseItem & PlayerEat ////////////////
 #include "llapi/mc/ComponentItem.hpp"
 
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode, ItemStack& it) {
@@ -1554,28 +1554,19 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode, 
             return false;
     }
     IF_LISTENED_END(PlayerUseItemEvent)
-    return original(this, it);
-}
-
-TInstanceHook(void, "?eat@Player@@QEAAXAEBVItemStack@@@Z", Player, ItemStack* a1) {
-        IF_LISTENED(PlayerEatEvent) {
+    IF_LISTENED(PlayerEatEvent) {
+        if (it.getItem()->isFood() && (pl->isHungry() || pl->forceAllowEating())) {
             PlayerEatEvent ev{};
-            ev.mPlayer = this;
-            ev.mFoodItem = a1;
+            ev.mPlayer = pl;
+            ev.mFoodItem = &it;
             if (!ev.call()) {
-                return;
+                pl->refreshAttribute(Player::HUNGER);
+                return false;
             }
         }
-        IF_LISTENED_END(PlayerEatEvent)
-        original(this, a1);
-        IF_LISTENED(PlayerAteEvent) {
-            PlayerAteEvent ev{};
-            ev.mPlayer = this;
-            ev.mFoodItem = a1;
-            ev.call();
-        }
-        IF_LISTENED_END(PlayerAteEvent)
-        return;
+    }
+    IF_LISTENED_END(PlayerEatEvent)
+    return original(this, it);
 }
 
 TInstanceHook(ItemStack*, "?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", BucketItem, ItemStack* a1,
@@ -1606,6 +1597,19 @@ TClasslessInstanceHook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AE
     }
     IF_LISTENED_END(PlayerEatEvent)
     return original(this, a1, a2);
+}
+
+///////////////////  PlayerAte  //////////////////////
+TInstanceHook(void, "?eat@Player@@QEAAXAEBVItemStack@@@Z", Player, ItemStack* a1) {
+        original(this, a1);
+        IF_LISTENED(PlayerAteEvent) {
+            PlayerAteEvent ev{};
+            ev.mPlayer = this;
+            ev.mFoodItem = a1;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerAteEvent)
+        return;
 }
 
 /////////////////// MobDie ///////////////////
