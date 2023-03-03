@@ -101,7 +101,7 @@ class Player;
  *     CommandOutput& output,
  *     std::unordered_map<std::string, DynamicCommand::Result>& results
  *   ) {
- *     auto& action = results["testEnum"].get<std::string>();
+ *     auto action = results["testEnum"].get<std::string>();
  *     switch (do_hash(action.c_str()))
  *     {
  *       case do_hash("add"):
