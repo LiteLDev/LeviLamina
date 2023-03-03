@@ -1,8 +1,8 @@
 #include "llapi/memory/Hook.h"
 
-#include "llapi/mc/Player.hpp"
 #include "llapi/mc/ChunkViewSource.hpp"
 #include "llapi/mc/Level.hpp"
+#include "llapi/mc/Player.hpp"
 
 #include "liteloader/LiteLoader.h"
 
@@ -61,18 +61,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 LL_AUTO_INSTANCE_HOOK(
     FixPlayerPosition2,
     HookPriority::Normal,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$"
-    "buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
+    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@"
+    "V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
     __int64,
     BlockPos        a1,
     int             a2,
     unsigned __int8 a3,
     int             a4,
-    __int64         a5,
-    __int64         a6
+    __int64         a5
 ) {
     if (validPosition(a1))
-        return origin(a1, a2, a3, a4, a5, a6);
+        return origin(a1, a2, a3, a4, a5);
     fixPlayerPosition(movingViewPlayer);
     return 0;
 }

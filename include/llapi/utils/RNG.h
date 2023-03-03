@@ -7,7 +7,9 @@
  *
  */
 #pragma once
-#include "llapi/Global.h"
+
+#include <random>
+
 #include <pcg_random.hpp>
 namespace RNG {
 
@@ -81,7 +83,7 @@ template <>
 inline float rand() {
     union {
         uint32_t u;
-        float f;
+        float    f;
     } x;
     x.u = (rand<uint32_t>() >> 9u) | 0x3f800000u;
     /* Trick from MTGP: generate an uniformly distributed
@@ -98,7 +100,7 @@ template <>
 inline double rand() {
     union {
         uint64_t u;
-        double f;
+        double   f;
     } x;
     x.u = (rand<uint64_t>() >> 12ull) | 0x3ff0000000000000ull;
     /* Trick from MTGP: generate an uniformly distributed

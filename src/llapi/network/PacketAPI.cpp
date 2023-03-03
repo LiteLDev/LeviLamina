@@ -202,8 +202,9 @@ using ll::logger;
 #include "llapi/mc/GameTestRequestPacket.hpp"
 #include "llapi/mc/GameTestResultsPacket.hpp"
 #include "llapi/mc/UpdateClientInputLocksPacket.hpp"
+#include "llapi/mc/ClientCheatAbilityPacket.hpp"
 
-#endif INCLUDE_ALL_PACKET
+#endif // INCLUDE_ALL_PACKET
 
 #pragma region ForEachPacketMacro
 
@@ -398,7 +399,8 @@ using ll::logger;
     Func(RequestNetworkSettingsPacket);            \
     Func(GameTestRequestPacket);                   \
     Func(GameTestResultsPacket);                   \
-    Func(UpdateClientInputLocksPacket);
+    Func(UpdateClientInputLocksPacket);            \
+    Func(ClientCheatAbilityPacket);
 
 #define DeclearClass(packet) class packet;
 
@@ -819,6 +821,7 @@ static_assert(sizeof(RequestNetworkSettingsPacket) == 0x38, "size of RequestNetw
 static_assert(sizeof(GameTestRequestPacket) == 0x90, "size of GameTestRequestPacket should be 144");
 static_assert(sizeof(GameTestResultsPacket) == 0x78, "size of GameTestResultsPacket should be 120");
 static_assert(sizeof(UpdateClientInputLocksPacket) == 0x40, "size of UpdateClientInputLocksPacket should be 64");
+static_assert(sizeof(ClientCheatAbilityPacket) == 0x58, "size of ClientCheatAbilityPacket should be 88");
 
 #endif // SIZE_STATIC_ASSERT
 
@@ -1013,5 +1016,6 @@ static_assert(sizeof(RequestNetworkSettingsPacket) == 0x38 || sizeof(RequestNetw
 static_assert(sizeof(GameTestRequestPacket) == 0x90 || sizeof(GameTestRequestPacket) == 48, "size of GameTestRequestPacket should be 144 or 48(default)");
 static_assert(sizeof(GameTestResultsPacket) == 0x78 || sizeof(GameTestResultsPacket) == 48, "size of GameTestResultsPacket should be 120 or 48(default)");
 static_assert(sizeof(UpdateClientInputLocksPacket) == 0x40 || sizeof(UpdateClientInputLocksPacket) == 48, "size of UpdateClientInputLocksPacket should be 64 or 48(default)");
+static_assert(sizeof(ClientCheatAbilityPacket) == 0x58 || sizeof(ClientCheatAbilityPacket) == 48, "size of ClientCheatAbilityPacket should be 88 or 48(default)");
 
 #endif // SIZE_STATIC_ASSERT_IF_DEFINE

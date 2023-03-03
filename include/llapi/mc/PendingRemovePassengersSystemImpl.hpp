@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @symbol ?_pendingRemovePassengersSystem@PendingRemovePassengersSystemImpl@@SAXAEAV?$ViewedEntityContextT@VStrictEntityContext@@$$CBUVehicleComponent@@$$CBUPendingRemovePassengersComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPendingRemovePassengersComponent@@URemovePassengersComponent@@@@@Z
-     * @hash   728951591
+     * @hash   728905463
      */
     MCAPI static void _pendingRemovePassengersSystem(class ViewedEntityContextT<class StrictEntityContext, struct VehicleComponent const, struct PendingRemovePassengersComponent const> &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent, struct RemovePassengersComponent>);
 

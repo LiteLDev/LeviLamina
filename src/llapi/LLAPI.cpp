@@ -4,12 +4,12 @@
 #include <string>
 
 #include "llapi/LLAPI.h"
-#include "llapi/utils/WinHelper.h"
 #include "llapi/utils/StringHelper.h"
+#include "llapi/utils/WinHelper.h"
 
 #include "liteloader/Config.h"
-#include "liteloader/Version.h"
 #include "liteloader/PluginManager.h"
+#include "liteloader/Version.h"
 
 using namespace std;
 

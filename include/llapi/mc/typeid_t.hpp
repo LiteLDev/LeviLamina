@@ -92,7 +92,7 @@ template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
     static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::getPtr("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     // static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-    //    CommandParameterData data = LL_SYMBOL_CALL("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
+    //    CommandParameterData data = SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
     //             CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
     //     return data.tid;
     //     })();

@@ -584,7 +584,7 @@ struct BucketPlayerAndActor {
 LL_AUTO_STATIC_HOOK(
     PlayerUseBucketEventHook3,
     HookPriority::Normal,
-    "<lambda_54df3fc3e331d6aa3755551a14a31db0>::operator()",
+    "<lambda_5478cd0ac89791b5579ee785b32a789a>::operator()",
     void,
     BucketPlayerAndActor* a1
 ) {
@@ -1372,9 +1372,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
     IF_LISTENED_END(MobTrySpawnEvent);
     auto en = origin(a2, a3, a4, a5, a6, a7, a8);
-    if (en == nullptr) {
-        return en;
-    } else {
+    if (en) {
         IF_LISTENED(MobSpawnedEvent) {
             MobSpawnedEvent ev{};
             ev.mMob         = en;
@@ -1383,8 +1381,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             ev.call();
         }
         IF_LISTENED_END(MobSpawnedEvent)
-        return en;
     }
+    return en;
 }
 
 LL_AUTO_INSTANCE_HOOK(

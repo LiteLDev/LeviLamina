@@ -1,5 +1,5 @@
-﻿#include <bitset>
-#include "magic_enum.hpp"
+﻿#include "magic_enum.hpp"
+#include <bitset>
 
 #include "llapi/mc/Minecraft.hpp"
 
@@ -10,61 +10,61 @@
 #include "llapi/mc/CompoundTag.hpp"
 
 #include "llapi/mc/NetworkHandler.hpp"
-#include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/mc/NetworkIdentifier.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
+#include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/mc/ToastRequestPacket.hpp"
 
-#include "llapi/mc/ExtendedCertificate.hpp"
-#include "llapi/mc/ConnectionRequest.hpp"
-#include "llapi/mc/MinecraftPackets.hpp"
-#include "llapi/mc/CommandRequestPacket.hpp"
-#include "llapi/mc/TextPacket.hpp"
-#include "llapi/mc/ScorePacketInfo.hpp"
 #include "llapi/mc/BinaryStream.hpp"
+#include "llapi/mc/CommandRequestPacket.hpp"
+#include "llapi/mc/ConnectionRequest.hpp"
+#include "llapi/mc/ExtendedCertificate.hpp"
+#include "llapi/mc/MinecraftPackets.hpp"
+#include "llapi/mc/ScorePacketInfo.hpp"
+#include "llapi/mc/TextPacket.hpp"
 #include "llapi/mc/TransferPacket.hpp"
 
-#include "llapi/mc/Level.hpp"
-#include "llapi/mc/ItemStack.hpp"
-#include "llapi/mc/Container.hpp"
-#include "llapi/mc/SimpleContainer.hpp"
-#include "llapi/mc/Scoreboard.hpp"
-#include "llapi/mc/PlaySoundPacket.hpp"
-#include "llapi/mc/SetDisplayObjectivePacket.hpp"
-#include "llapi/mc/Block.hpp"
 #include "llapi/mc/AttributeInstance.hpp"
+#include "llapi/mc/Block.hpp"
+#include "llapi/mc/Container.hpp"
+#include "llapi/mc/ItemStack.hpp"
+#include "llapi/mc/Level.hpp"
+#include "llapi/mc/PlaySoundPacket.hpp"
+#include "llapi/mc/Scoreboard.hpp"
+#include "llapi/mc/SetDisplayObjectivePacket.hpp"
+#include "llapi/mc/SimpleContainer.hpp"
 
 #include "llapi/mc/ItemStackDescriptor.hpp"
 #include "llapi/mc/NetworkItemStackDescriptor.hpp"
 
-#include "llapi/impl/ObjectivePacketHelper.h"
-#include "llapi/impl/FormPacketHelper.h"
-#include "llapi/event/LegacyEvents.h"
 #include "llapi/event/EventManager.h"
+#include "llapi/event/LegacyEvents.h"
 #include "llapi/event/player/PlayerChatEvent.h"
+#include "llapi/impl/FormPacketHelper.h"
+#include "llapi/impl/ObjectivePacketHelper.h"
 
 #include "liteloader/LiteLoader.h"
 
 #include "llapi/mc/CommandUtils.hpp"
-#include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/Item.hpp"
+#include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/LayeredAbilities.hpp"
 
+#include "llapi/mc/AdventureSettings.hpp"
 #include "llapi/mc/UpdateAbilitiesPacket.hpp"
 #include "llapi/mc/UpdateAdventureSettingsPacket.hpp"
-#include "llapi/mc/AdventureSettings.hpp"
 
 #include "llapi/mc/Biome.hpp"
 #include "llapi/mc/BlockSource.hpp"
 #include "llapi/mc/ChunkPos.hpp"
 
+#include "liteloader/PlayerDeathPositions.h"
 #include "llapi/Global.h"
 #include "llapi/mc/BlockInstance.hpp"
 #include "llapi/mc/DBStorage.hpp"
 #include "llapi/mc/StringTag.hpp"
 #include "llapi/mc/Vec2.hpp"
 #include "llapi/memory/MemoryUtils.h"
-#include "liteloader/PlayerDeathPositions.h"
 
 using ll::logger;
 using ll::memory::dAccess;
@@ -81,36 +81,33 @@ Certificate* Player::getCertificate() {
 }
 
 enum class AbilitiesLayer;
-LayeredAbilities* Player::getAbilities() {
-    return &dAccess<LayeredAbilities>(this, 2124); // AbilityCommand::execute
-}
 
 // From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
     ActorUniqueID uid       = getUniqueID();
-    auto          abilities = getAbilities();
-    auto          flying    = abilities->getAbility(AbilitiesIndex::Flying).getBool();
+    auto&         abilities = getAbilities();
+    auto          flying    = abilities.getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
-        abilities->setAbility(AbilitiesIndex::MayFly, value);
+        abilities.setAbility(AbilitiesIndex::MayFly, value);
     }
     if (index == AbilitiesIndex::MayFly && value == false && flying) {
-        abilities->setAbility(AbilitiesIndex::Flying, false);
+        abilities.setAbility(AbilitiesIndex::Flying, false);
     }
-    abilities->setAbility(index, value);
-    auto mayfly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
-    auto noclip = abilities->getAbility(AbilitiesIndex::NoClip).getBool();
+    abilities.setAbility(index, value);
+    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
+    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).getBool();
     setCanFly(mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
-        abilities->setAbility(AbilitiesIndex::Flying, value);
+        abilities.setAbility(AbilitiesIndex::Flying, value);
     }
-    flying      = abilities->getAbility(AbilitiesIndex::Flying).getBool();
-    Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+    flying      = abilities.getAbility(AbilitiesIndex::Flying).getBool();
+    Ability& ab = abilities.getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
     ab.setBool(0);
     if (flying)
         ab.setBool(1);
-    UpdateAbilitiesPacket pkt(uid, *abilities);
+    UpdateAbilitiesPacket pkt(uid, abilities);
     auto                  pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
-    abilities->setAbility(AbilitiesIndex::Flying, flying);
+    abilities.setAbility(AbilitiesIndex::Flying, flying);
     sendNetworkPacket(pkt2);
     sendNetworkPacket(pkt);
 }
@@ -307,7 +304,7 @@ string Player::getName() { return getNameTag(); }
 bool Player::runcmd(const string& cmd) { return sendCommandRequestPacket(cmd); }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 5232); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 3792); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) { return sendTransferPacket(address, port); }
@@ -315,10 +312,15 @@ bool Player::transferServer(const string& address, unsigned short port) { return
 std::pair<BlockPos, int> Player::getRespawnPosition() {
     BlockPos bp    = getSpawnPosition();
     int      dimId = getSpawnDimension();
-    if (dimId == 3) // has no bed.
-    {
+    if (dimId == 3) { // has no bed.
         bp    = getExpectedSpawnPosition();
         dimId = getExpectedSpawnDimensionId();
+    }
+
+    if (bp.y >= 32767) {
+        auto region = Level::getBlockSource(dimId);
+        if (region)
+            bp = region->getHeightmapPos(bp);
     }
 
     return {bp, dimId};
@@ -330,9 +332,12 @@ bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
     return true;
 }
-#include "llapi/mc/Attribute.hpp"
-#include "llapi/mc/HashedString.hpp"
+
 #include "llapi/SendPacketAPI.h"
+#include "llapi/mc/Attribute.hpp"
+#include "llapi/mc/CommandVersion.hpp"
+#include "llapi/mc/HashedString.hpp"
+
 bool Player::refreshAttribute(class Attribute const& attribute) { return refreshAttributes({&attribute}); }
 bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) {
     BinaryStream wp;
@@ -518,6 +523,7 @@ bool Player::deleteScore(const string& key) { return Scoreboard::deleteScore(thi
 
 void Player::addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
+    wp.reserve(8 + name.size());
     wp.writeVarInt64(uid);
     wp.writeUnsignedVarInt((int)0);
     wp.writeString(name);
@@ -765,6 +771,7 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
+    wp.reserve(8 + name.size());
     wp.writeVarInt64(getUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type) {
@@ -810,6 +817,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet                       = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
+    dAccess<int, 144>(packet.get())   = CommandVersion::CurrentVersion;
     ServerNetworkHandler* handler     = Global<ServerNetworkHandler> + 16;
     handler->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;

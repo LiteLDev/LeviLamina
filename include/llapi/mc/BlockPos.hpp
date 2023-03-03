@@ -1,7 +1,9 @@
 #pragma once
 #include "../Global.h"
+#include "VectorBase.hpp"
 
 class Vec3;
+
 class BlockPos {
 public:
     int x, y, z;
@@ -31,21 +33,6 @@ public:
 
     MCAPI static void bindType();
 
-    std::vector<BlockPos> getNeighbors() const {
-        std::vector<BlockPos> res;
-        res.push_back({x, y - 1, z});
-        res.push_back({x, y + 1, z});
-        res.push_back({x, y, z - 1});
-        res.push_back({x, y, z + 1});
-        res.push_back({x - 1, y, z});
-        res.push_back({x + 1, y, z});
-        return res;
-    }
-
-    inline std::string toString() const {
-        return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
-    }
-
     inline BlockPos add(int dx) const {
         return {x + dx, y, z};
     }
@@ -58,120 +45,30 @@ public:
         return {x + dx, y + dy, z + dz};
     }
 
-
-    int& operator[](int index) {
-        if (index < 0 || index > 2) {
-            return (&x)[0];
+    constexpr int& operator[](size_t index) {
+        switch (index) {
+            case 1:
+                return y;
+            case 2:
+                return z;
+            default:
+                return x;
         }
-        return (&x)[index];
     }
 
-    constexpr inline bool operator==(BlockPos const& b) const {
-        return x == b.x && y == b.y && z == b.z;
-    }
-
-    constexpr bool operator!=(BlockPos const& b) const {
-        return x != b.x || y != b.y || z != b.z;
-    }
-
-    constexpr BlockPos& operator+=(BlockPos const& b) {
-        x += b.x;
-        y += b.y;
-        z += b.z;
-        return *this;
-    }
-
-    constexpr BlockPos& operator-=(BlockPos const& b) {
-        x -= b.x;
-        y -= b.y;
-        z -= b.z;
-        return *this;
-    }
-
-    constexpr BlockPos& operator*=(BlockPos const& b) {
-        x *= b.x;
-        y *= b.y;
-        z *= b.z;
-        return *this;
-    }
-
-    constexpr BlockPos& operator/=(BlockPos const& b) {
-        x /= b.x;
-        y /= b.y;
-        z /= b.z;
-        return *this;
-    }
-
-    inline BlockPos operator+(BlockPos const& b) const {
-        return {x + b.x, y + b.y, z + b.z};
-    }
-
-    inline BlockPos operator*(BlockPos const& b) const {
-        return {x * b.x, y * b.y, z * b.z};
-    }
-
-    inline BlockPos operator/(BlockPos const& b) const {
-        return {x / b.x, y / b.y, z / b.z};
-    }
-
-    inline BlockPos operator-(BlockPos const& b) const {
-        return {x - b.x, y - b.y, z - b.z};
-    }
-
-    inline BlockPos operator*(int b) const {
-        return {x * b, y * b, z * b};
-    }
-
-    inline BlockPos operator/(int b) const {
-        return {x / b, y / b, z / b};
-    }
-
-    inline BlockPos operator+(int b) const {
-        return {x + b, y + b, z + b};
-    }
-
-    inline BlockPos operator-(int b) const {
-        return {x - b, y - b, z - b};
-    }
-
-    constexpr BlockPos& operator+=(int b) {
-        x += b;
-        y += b;
-        z += b;
-        return *this;
-    }
-
-    constexpr BlockPos& operator-=(int b) {
-        x -= b;
-        y -= b;
-        z -= b;
-        return *this;
-    }
-
-    constexpr BlockPos& operator*=(int b) {
-        x *= b;
-        y *= b;
-        z *= b;
-        return *this;
-    }
-
-    constexpr BlockPos& operator/=(int b) {
-        x /= b;
-        y /= b;
-        z /= b;
-        return *this;
+    constexpr int operator[](size_t index) const {
+        switch (index) {
+            case 1:
+                return y;
+            case 2:
+                return z;
+            default:
+                return x;
+        }
     }
 
     inline bool containedWithin(BlockPos const& a, BlockPos const& b) const {
         return x >= a.x && y >= a.y && z >= a.z && x <= b.x && y <= b.y && z <= b.z;
-    }
-
-    inline double length() const {
-        return sqrt(x * x + y * y + z * z);
-    }
-
-    inline double distanceTo(BlockPos const& a) const {
-        return (*this - a).length();
     }
 
     LIAPI Vec3 toVec3() const;
@@ -180,6 +77,8 @@ public:
     LIAPI Vec3 bottomCenter() const;
     LIAPI Vec3 center() const;
     LIAPI bool containedWithin(class BoundingBox const&) const;
+
+    FAKE_CRTP(BlockPos, int, 3);
 };
 
 namespace std {

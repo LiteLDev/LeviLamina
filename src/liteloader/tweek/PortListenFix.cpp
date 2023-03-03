@@ -1,7 +1,7 @@
 #include "llapi/memory/Hook.h"
 
-#include "liteloader/LiteLoader.h"
 #include "liteloader/Config.h"
+#include "liteloader/LiteLoader.h"
 
 using namespace ll;
 using namespace ll::memory;
@@ -16,18 +16,18 @@ LL_AUTO_INSTANCE_HOOK(
     static bool isFirstLog = true;
     if (globalConfig.enableFixListenPort) {
         if (isFirstLog) {
-            isFirstLog = false;
-            origin();
-            endTime = clock();
+            isFirstLog  = false;
+            __int64 ret = origin();
+            endTime     = clock();
             Logger("Server").info(
                 "Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
                 R"(s)! For help, type "help" or "?")"
             );
-            return 1;
+            return ret;
         }
         return 0;
     } else {
-        origin();
+        __int64 ret = origin();
         if (!isFirstLog) {
             endTime = clock();
             Logger("Server").info(
@@ -36,6 +36,6 @@ LL_AUTO_INSTANCE_HOOK(
             );
         }
         isFirstLog = false;
-        return 1;
+        return ret;
     }
 }

@@ -30,12 +30,12 @@ public:
 public:
     /**
      * @symbol ?boostableRemovePassenger@BoostableRemovePassengerSystem@@SAXAEAVStrictEntityContext@@AEBURemovePassengersComponent@@AEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UPassengerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@@@UFOVModifierComponent@@@@@Z
-     * @hash   1797460731
+     * @hash   1797414603
      */
     MCAPI static void boostableRemovePassenger(class StrictEntityContext &, struct RemovePassengersComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent, class FlagComponent<struct PlayerComponentFlag>>, struct FOVModifierComponent> &);
     /**
      * @symbol ?createSystem@BoostableRemovePassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     * @hash   -1980738750
+     * @hash   -1980784878
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

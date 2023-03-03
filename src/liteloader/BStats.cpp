@@ -1,17 +1,20 @@
 ﻿#include "liteloader/LiteLoader.h"
-#include "llapi/event/LegacyEvents.h"
-#include "llapi/event/server/ServerStartedEvent.h"
+
 #include "llapi/Global.h"
 #include "llapi/ScheduleAPI.h"
 #include "llapi/ServerAPI.h"
-#include "llapi/utils/WinHelper.h"
-#include "llapi/utils/StringHelper.h"
-#include "llapi/utils/NetworkHelper.h"
+#include "llapi/event/server/ServerStartedEvent.h"
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/PropertiesSettings.hpp"
 #include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/mc/ServerPlayer.hpp"
+#include "llapi/utils/NetworkHelper.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/WinHelper.h"
+
 #include <Nlohmann/json.hpp>
+
+Logger bstatsLogger("bStats");
 
 #define BSTATS_JSON(key, val)                                                                                          \
     if (json.find(key) != json.end()) {                                                                                \
@@ -354,6 +357,7 @@ void scheduleThread() {
 void registerBStats() {
     configInit();
     if (bstatsSettings::enable) {
+        bstatsLogger.info(tr("ll.main.bstats.enabled"));
         using ll::event::server::ServerStartedEvent;
         ServerStartedEvent::subscribe([](const ServerStartedEvent& ev) {
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();

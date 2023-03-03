@@ -75,9 +75,7 @@ public:
 protected:
 private:
 };
-
-template<typename T>
-class DataItem2;
+#include "DataItem2.hpp"
 
 template <typename T>
 inline T const& DataItem::getData() const {

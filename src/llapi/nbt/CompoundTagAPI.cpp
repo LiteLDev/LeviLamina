@@ -1,9 +1,10 @@
-﻿#include <map>
+﻿#include <magic_enum.hpp>
+#include <map>
+#include <nbt.hpp>
 #include <sstream>
 #include <vector>
-#include <nbt.hpp>
-#include <magic_enum.hpp>
 
+#include "llapi/I18nAPI.h"
 #include "llapi/mc/Actor.hpp"
 #include "llapi/mc/Block.hpp"
 #include "llapi/mc/BlockActor.hpp"
@@ -12,6 +13,7 @@
 #include "llapi/mc/CompoundTag.hpp"
 #include "llapi/mc/CompoundTagVariant.hpp"
 #include "llapi/mc/DoubleTag.hpp"
+#include "llapi/mc/EndTag.hpp"
 #include "llapi/mc/FloatTag.hpp"
 #include "llapi/mc/Int64Tag.hpp"
 #include "llapi/mc/IntArrayTag.hpp"
@@ -21,10 +23,8 @@
 #include "llapi/mc/NbtIo.hpp"
 #include "llapi/mc/Player.hpp"
 #include "llapi/mc/ShortTag.hpp"
-#include "llapi/mc/EndTag.hpp"
 #include "llapi/mc/StringTag.hpp"
 #include "llapi/mc/Tag.hpp"
-#include "llapi/I18nAPI.h"
 #include "llapi/memory/MemoryUtils.h"
 
 #include "liteloader/LiteLoader.h"
@@ -137,12 +137,12 @@ void CompoundTag::setItemStack(ItemStack* item) {
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* block) {
-    auto tag = (CompoundTag*)((uintptr_t)block + 152); // dAccess Block::Block
+    auto tag = (CompoundTag*)((uintptr_t)block + 160); // dAccess Block::Block
     return tag->clone();
 }
 
 void CompoundTag::setBlock(Block* blk) {
-    auto tag = (CompoundTag*)((uintptr_t)blk + 152); // dAccess Block::Block
+    auto tag = (CompoundTag*)((uintptr_t)blk + 160); // dAccess Block::Block
     tag->deepCopy(*this);
 }
 

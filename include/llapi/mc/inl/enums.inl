@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include <cstdint>
 
 enum class ContainerType : char {
     INVENTORY              = -1,
@@ -821,6 +821,11 @@ enum class AdventureFlag : int {
     WorldBuilder   = 256,
     Flying         = 512,
     Muted          = 1024,
+};
+
+enum class TargetSelectionMethod {
+    Nearest = 0,
+    Random  = 1,
 };
 
 enum class ActorDataIDs : unsigned short {

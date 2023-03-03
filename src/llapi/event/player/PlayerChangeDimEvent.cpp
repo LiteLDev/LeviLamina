@@ -1,5 +1,5 @@
-#include "llapi/event/EventManager.h"
 #include "llapi/event/player/PlayerChangeDimEvent.h"
+#include "llapi/event/EventManager.h"
 #include "llapi/memory/Hook.h"
 
 #include "llapi/mc/ChangeDimensionRequest.hpp"

@@ -26,32 +26,30 @@
 #endif
 
 /// std containers
-#include <string>
-#include <vector>
-#include <stack>
-#include <queue>
 #include <bitset>
-
-#include <set>
 #include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
-
-#include <iostream>
-#include <optional>
-#include <functional>
-#include <mutex>
-#include <shared_mutex>
+#include <vector>
 
 // std utils
+#include <algorithm>
+#include <cmath>
 #include <cuchar>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <mutex>
+#include <numeric>
+#include <optional>
+#include <random>
+#include <shared_mutex>
 #include <utility>
 #include <variant>
-#include <numeric>
-#include <cmath>
-#include <random>
-#include <algorithm>
-#include <iomanip>
 #include <xhash>
 
 // windows types
@@ -60,12 +58,12 @@
 #pragma unmanaged
 #include <entt/entt.hpp>
 #pragma managed
-#include <gsl/gsl>
 #include <FMT/chrono.h>
 #include <FMT/color.h>
 #include <FMT/core.h>
 #include <FMT/os.h>
 #include <FMT/printf.h>
+#include <gsl/gsl>
 
 #include "llapi/GlobalServiceAPI.h"
 #include "llapi/utils/Optional.h"

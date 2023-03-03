@@ -1,12 +1,25 @@
-#include "llapi/mc/CompoundTag.hpp"
 #include "llapi/mc/Block.hpp"
 #include "llapi/mc/BlockActorDataPacket.hpp"
-#include "llapi/mc/Dimension.hpp"
 #include "llapi/mc/BlockSource.hpp"
+#include "llapi/mc/CompoundTag.hpp"
+#include "llapi/mc/Dimension.hpp"
 #include "llapi/mc/StructureBlockActor.hpp"
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {
     return static_cast<unsigned int>(block->getBlockEntityType()); // IDA Block::getBlockEntityType
+}
+
+std::shared_ptr<BlockActor> BlockActor::create(CompoundTag* nbt) {
+    void* vtbl = LL_RESOLVE_SYMBOL("??_7DefaultDataLoadHelper@@6B@");
+    return loadStatic(*Global<Level>, *nbt, (class DataLoadHelper&)vtbl);
+}
+
+std::shared_ptr<BlockActor> BlockActor::create(CompoundTag* nbt, class BlockPos const& pos) {
+    auto b = create(nbt);
+    if (b != nullptr) {
+        b->moveTo(pos);
+    }
+    return b;
 }
 
 bool BlockActor::refreshData() {

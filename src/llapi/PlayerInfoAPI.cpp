@@ -1,10 +1,11 @@
+#include <exception>
+
+#include "llapi/PlayerInfoAPI.h"
+#include "llapi/db/Session.h"
 #include "llapi/event/LegacyEvents.h"
 #include "llapi/event/player/PlayerJoinEvent.h"
-#include "llapi/mc/ServerPlayer.hpp"
+
 #include "liteloader/LiteLoader.h"
-#include "llapi/PlayerInfoAPI.h"
-#include <exception>
-#include "llapi/db/Session.h"
 
 constexpr auto PLAYER_DATABASE_PATH    = "plugins/LiteLoader/PlayerDB.db";
 constexpr auto SQL_CREATE_PLAYER_TABLE = R"(

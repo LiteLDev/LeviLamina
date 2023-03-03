@@ -1,9 +1,9 @@
 #include "llapi/Global.h"
-#include "liteloader/Config.h"
 #include "llapi/mc/CommandParameterData.hpp"
-
 #include "llapi/memory/Hook.h"
-#include <magic_enum.hpp>
+
+#include "liteloader/Config.h"
+#include "magic_enum.hpp"
 
 using namespace ll::memory;
 
@@ -126,9 +126,8 @@ LL_AUTO_INSTANCE_HOOK(
     SemanticConstraint              constraint
 ) {
     using namespace magic_enum::bitwise_operators;
-    if (!ll::globalConfig.enableUnlockCmd)
-        return origin(enumName, enumValues, constraint);
-    if (magic_enum::enum_integer(constraint & SemanticConstraint::RequiresCheatsEnabled)) {
+    if (ll::globalConfig.enableUnlockCmd &&
+        magic_enum::enum_integer(constraint & SemanticConstraint::RequiresCheatsEnabled)) {
         constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresCheatsEnabled));
         constraint = (SemanticConstraint)(constraint | SemanticConstraint::RequiresElevatedPermissions);
     }
