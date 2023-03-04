@@ -79,7 +79,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("inWaterOrRain", &PlayerClass::getInWaterOrRain)
         .instanceProperty("inWorld", &PlayerClass::getInWorld)
         .instanceProperty("inClouds", &PlayerClass::getInClouds)
-        .instanceProperty("sneaking", &PlayerClass::getSneaking)
         .instanceProperty("speed", &PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
@@ -105,6 +104,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("isFlying", &PlayerClass::isFlying)
         .instanceProperty("isSleeping", &PlayerClass::isSleeping)
         .instanceProperty("isMoving", &PlayerClass::isMoving)
+        .instanceProperty("isSneaking", &PlayerClass::isSneaking)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -237,6 +237,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateStopSneaking", &PlayerClass::simulateStopSneaking)
 
         // For Compatibility
+        .instanceProperty("sneaking", &PlayerClass::isSneaking)
         .instanceProperty("ip", &PlayerClass::getIP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
         .instanceFunction("getTag", &PlayerClass::getNbt)
@@ -716,7 +717,7 @@ Local<Value> PlayerClass::getCanPickupItems() {
     CATCH("Fail in getCanPickupItems!")
 }
 
-Local<Value> PlayerClass::getSneaking() {
+Local<Value> PlayerClass::isSneaking() {
     try {
         Player* player = get();
         if (!player)
@@ -724,7 +725,7 @@ Local<Value> PlayerClass::getSneaking() {
 
         return Boolean::newBoolean(player->isSneaking());
     }
-    CATCH("Fail in getSneaking!")
+    CATCH("Fail in isSneaking!")
 }
 
 Local<Value> PlayerClass::getSpeed() {

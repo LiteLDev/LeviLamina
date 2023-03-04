@@ -51,7 +51,6 @@ public:
     Local<Value> getInWaterOrRain();
     Local<Value> getInWorld();
     Local<Value> getInClouds();
-    Local<Value> getSneaking();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
@@ -79,6 +78,7 @@ public:
     Local<Value> isFlying();
     Local<Value> isSleeping();
     Local<Value> isMoving();
+    Local<Value> isSneaking();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
