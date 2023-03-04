@@ -179,6 +179,10 @@ public:
     Local<Value> isSimulatedPlayer(const Arguments& args);
     Local<Value> quickEvalMolangScript(const Arguments& args);
 
+    Local<Value> getAllEffects();
+    Local<Value> addEffect(const Arguments& args);
+    Local<Value> removeEffect(const Arguments& args);
+
     // LLMoney
 
     Local<Value> getMoney(const Arguments& args);
