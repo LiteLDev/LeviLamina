@@ -1629,12 +1629,12 @@ Local<Value> McClass::spawnMob(const Arguments& args) {
 }
 
 Local<Value> McClass::explode(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 6);
+    CHECK_ARGS_COUNT(args, 5);
 
     try {
         FloatVec4 pos;
         int beginIndex;
-        if (args.size() == 6) {
+        if (args.size() == 5) {
             // PosObj
             beginIndex = 1;
 
@@ -1661,15 +1661,14 @@ Local<Value> McClass::explode(const Arguments& args) {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        } else if (args.size() == 9) {
+        } else if (args.size() == 8) {
             // Number Pos
             beginIndex = 4;
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(),
-                   args[3].toInt()};
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -1678,17 +1677,14 @@ Local<Value> McClass::explode(const Arguments& args) {
         auto source = EntityClass::extract(args[beginIndex + 0]); // Can be nullptr
 
         CHECK_ARG_TYPE(args[beginIndex + 1], ValueKind::kNumber);
-        CHECK_ARG_TYPE(args[beginIndex + 2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[beginIndex + 2], ValueKind::kBoolean);
         CHECK_ARG_TYPE(args[beginIndex + 3], ValueKind::kBoolean);
-        CHECK_ARG_TYPE(args[beginIndex + 4], ValueKind::kBoolean);
 
         float power = args[beginIndex + 1].asNumber().toFloat();
-        float range = args[beginIndex + 2].asNumber().toFloat();
-        bool isDestroy = args[beginIndex + 3].asBoolean().value();
-        bool isFire = args[beginIndex + 4].asBoolean().value();
+        bool isDestroy = args[beginIndex + 2].asBoolean().value();
+        bool isFire = args[beginIndex + 3].asBoolean().value();
 
-        return Boolean::newBoolean(
-            Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
+        return Boolean::newBoolean(Level::createExplosion(pos.getVec3(), pos.dim, source, power, isFire, isDestroy));
     }
     CATCH("Fail in Explode!");
 }
