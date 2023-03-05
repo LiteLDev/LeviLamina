@@ -1528,13 +1528,15 @@ TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageS
               ActorDamageSource* src, float damage) {
     if (src->getCause() == ActorDamageCause::Magic) {
         IF_LISTENED(MobHurtEvent) {
-            MobHurtEvent ev{};
-            ev.mMob = this;
-            ev.mDamageSource = src;
-            ev.mDamage = damage;
-            if (!ev.call())
-                return 0;
-            damage = ev.mDamage;
+            if (this) {
+                MobHurtEvent ev{};
+                ev.mMob = this;
+                ev.mDamageSource = src;
+                ev.mDamage = damage;
+                if (!ev.call())
+                    return 0;
+                damage = ev.mDamage;
+            }
         }
         IF_LISTENED_END(MobHurtEvent)
     }
@@ -1601,15 +1603,15 @@ TClasslessInstanceHook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AE
 
 ///////////////////  PlayerAte  //////////////////////
 TInstanceHook(void, "?eat@Player@@QEAAXAEBVItemStack@@@Z", Player, ItemStack* a1) {
-        original(this, a1);
-        IF_LISTENED(PlayerAteEvent) {
-            PlayerAteEvent ev{};
-            ev.mPlayer = this;
-            ev.mFoodItem = a1;
-            ev.call();
-        }
-        IF_LISTENED_END(PlayerAteEvent)
-        return;
+    original(this, a1);
+    IF_LISTENED(PlayerAteEvent) {
+        PlayerAteEvent ev{};
+        ev.mPlayer = this;
+        ev.mFoodItem = a1;
+        ev.call();
+    }
+    IF_LISTENED_END(PlayerAteEvent)
+    return;
 }
 
 /////////////////// MobDie ///////////////////
