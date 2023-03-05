@@ -1,20 +1,23 @@
-# Release 2.11.0
+# Release 2.11.1
 
 ![BDS 1.19.63.01](https://img.shields.io/badge/BDS-1.19.63.01-blue?style=for-the-badge)&emsp;![Protocol 568](https://img.shields.io/badge/Protocol-568-orange?style=for-the-badge)
 
 ## Added
 
-* Add feetPos for Player and Entity in LLSE (by @yqs112358)
-* Add resourcepack encryption (by @dreamguxiang)
-* Add get/setTime() get/setWeather() api in LLSE (by @ACX66)
+* feat: add PosDelta for entity in LLSE (by OEOTYAN)
+* feat: rename pl.sneaking & add be.name for LLSE (by @shishkevichd @OEOTYAN)
+* feat: add Level::getDimensionPtr (by @OEOTYAN)
 
 ## Changed
 
-* Update Header for 1.19.63 (by @dreamguxiang)
-* Add members for HopperSearchItemEvent & HopperPushOutEvent (by @ACX66)
+* feat: update WeakEntityRef.hpp (by @OEOTYAN)
+* fix: fix a problem caused by HopperEvents (by @OEOTYAN)
 
 ## Fixed
 
-* Fix PlayerAttackEvent::mAttackDamage (by @ACX66)
+* fix: Fix AddEfect #1100 (by @Tsubasa6848 @RimuruChan)
+* fix: #1088 (by @Tsubasa6848 @OEOTYAN)
+* fix: #959 (by @Tsubasa6848)
+* feat: #1011 (by @Tsubasa6848 @Jasonzyt)
 
-**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.10.1...2.11.0
+**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.11.0...2.11.1
