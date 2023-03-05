@@ -28,6 +28,16 @@
 #include "llapi/mc/Vec2.hpp"
 #include "llapi/mc/AABB.hpp"
 #include "llapi/mc/RotationCommandUtils.hpp"
+#include "llapi/mc/WeakEntityRef.hpp"
+#include "llapi/mc/WeakStorageEntity.hpp"
+
+Actor* WeakStorageEntity::tryUnwrap() {
+    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,void*)(this);
+}
+
+Actor* WeakEntityRef::tryUnwrap() {
+    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(this);
+}
 
 class UserEntityIdentifierComponent;
 
@@ -68,7 +78,7 @@ bool Actor::isPlayer(bool allowSimulatedPlayer) const {
 }
 
 bool Actor::isItemActor() const {
-    return hasCategory((ActorCategory)1024); // IDA Player::take
+    return hasCategory(ActorCategory::Item); // IDA Player::take
 }
 
 bool Actor::isOnGround() const {

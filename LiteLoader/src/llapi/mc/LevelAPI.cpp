@@ -218,8 +218,6 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
         std::vector<Actor*> result;
         auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
         for (auto& i : list) {
-            // auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
-            //     Actor*, void*)(&i.second);
             auto entity = getEntity(i.first);
             if (!entity)
                 continue;

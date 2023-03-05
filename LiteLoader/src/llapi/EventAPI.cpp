@@ -671,7 +671,7 @@ TClasslessInstanceHook(void,
 TClasslessInstanceHook(
     __int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
     void* a2) {
-    Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
+    Actor* pl = ((class WeakEntityRef*)(a2))->tryUnwrap();
     if (pl->isPlayer()) {
         IF_LISTENED(PlayerOpenContainerEvent) {
             BlockPos bp = dAccess<BlockPos>(a2, 28);

@@ -488,8 +488,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
                 v59 = *(WeakStorageEntity**)a2;
             }
             if (v59) {
-                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
-                                       WeakStorageEntity*)(v59);
+                Actor* actor = v59->tryUnwrap();
                 if (actor->isSimulatedPlayer()) {
                     ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
                     int slot = dAccess<int, 296>(v59);
@@ -513,8 +512,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
                 v31 = *(WeakStorageEntity**)a2;
             }
             if (v31) {
-                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
-                                       WeakStorageEntity*)(v31);
+                Actor* actor = v31->tryUnwrap();
                 if (actor->isSimulatedPlayer()) {
                     int slot = dAccess<int, 160>(v31);
                     ItemInstance const& item = dAccess<ItemInstance, 24>(v31);

@@ -18,7 +18,10 @@ class WeakEntityRef {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     char filler[24];
+    LIAPI class Actor* tryUnwrap();
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
