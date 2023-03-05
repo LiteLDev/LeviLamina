@@ -1130,7 +1130,8 @@ enum class HopperStateType {
     None,
     Search,
     Push
-} hopperState = HopperStateType::None;
+};
+HopperStateType hopperState = HopperStateType::None;
 } // namespace ll
 
 Vec3* hopperPos;
