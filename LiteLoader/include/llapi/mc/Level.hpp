@@ -199,7 +199,7 @@ public:
 
     LIAPI static BlockSource* getBlockSource(Actor* actor);
     // LIAPI static BlockPalette* getBlockPalette();
-    // LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
+    LIAPI static Dimension* getDimensionPtr(class AutomaticID<class Dimension, int>);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(const string& text, TextType type);
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
