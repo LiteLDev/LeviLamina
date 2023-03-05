@@ -1508,27 +1508,26 @@ TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemS
 /////////////////// MobHurt ///////////////////
 TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z", Mob, ActorDamageSource& src, float damage,
               bool unk1_1, bool unk2_0) {
-    IF_LISTENED(MobHurtEvent) {
-        if (this) {
+    if (this) {
+        IF_LISTENED(MobHurtEvent) {
             MobHurtEvent ev{};
             ev.mMob = this;
             ev.mDamageSource = &src;
             ev.mDamage = damage;
             if (!ev.call())
                 return false;
-
             damage = ev.mDamage;
         }
+        IF_LISTENED_END(MobHurtEvent)
     }
-    IF_LISTENED_END(MobHurtEvent)
     return original(this, src, damage, unk1_1, unk2_0);
 }
 
 TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob,
               ActorDamageSource* src, float damage) {
-    if (src->getCause() == ActorDamageCause::Magic) {
-        IF_LISTENED(MobHurtEvent) {
-            if (this) {
+    if (this) {
+        if (src->getCause() == ActorDamageCause::Magic) {
+            IF_LISTENED(MobHurtEvent) {
                 MobHurtEvent ev{};
                 ev.mMob = this;
                 ev.mDamageSource = src;
@@ -1537,8 +1536,8 @@ TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageS
                     return 0;
                 damage = ev.mDamage;
             }
+            IF_LISTENED_END(MobHurtEvent)
         }
-        IF_LISTENED_END(MobHurtEvent)
     }
     return original(this, src, damage);
 }
