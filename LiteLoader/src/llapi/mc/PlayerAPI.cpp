@@ -251,23 +251,45 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
-int Player::clearItem(string typeName) {
+int Player::clearItem(string typeName, int num) {
     int res = 0;
-
+    if (num < 0) {
+        return 0;
+    }
     // Hand
     ItemStack* item = getHandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull({});
-        res += out;
+        if (out >= num - res) {
+            item->setNull({});
+            res += out;
+        }
+        else {
+            item->remove(num - res);
+            res = num;
+        }
+        if (res >= num) {
+            refreshInventory();
+            return res;
+        }
     }
 
     // OffHand
     item = (ItemStack*)&getOffhandSlot();
     if (item->getTypeName() == typeName) {
         auto out = item->getCount();
-        item->setNull({});
-        res += out;
+        if (out >= num - res) {
+            item->setNull({});
+            res += out;
+        }
+        else {
+            item->remove(num - res);
+            res = num;
+        }
+        if (res >= num) {
+            refreshInventory();
+            return res;
+        }
     }
 
     // Inventory
@@ -277,8 +299,18 @@ int Player::clearItem(string typeName) {
     for (int i = 0; i < size; ++i) {
         if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
-            container->removeItem(i, cnt);
-            res += cnt;
+            if (cnt >= num - res) {
+                container->removeItem(i, cnt);
+                res += cnt;
+            }
+            else {
+                container->removeItem(i, num - res);
+                res = num;
+            }
+            if (res >= num) {
+                refreshInventory();
+                return res;
+            }
         }
     }
 
@@ -289,8 +321,18 @@ int Player::clearItem(string typeName) {
     for (int i = 0; i < size; ++i) {
         if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
-            armor.removeItem(i, cnt);
-            res += cnt;
+            if (cnt >= num - res) {
+                container->removeItem(i, cnt);
+                res += cnt;
+            }
+            else {
+                container->removeItem(i, num - res);
+                res = num;
+            }
+            if (res >= num) {
+                refreshInventory();
+                return res;
+            }
         }
     }
     refreshInventory();
