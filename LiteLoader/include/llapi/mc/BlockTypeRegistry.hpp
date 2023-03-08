@@ -20,6 +20,7 @@ class BlockTypeRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     struct LookupByNameImplReturnType;
     class InhibitModificationsLock;
     struct BlockComplexAliasBlockState;
