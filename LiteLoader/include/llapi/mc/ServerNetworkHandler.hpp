@@ -11,6 +11,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "EntityRefTraits.hpp"
 
 #undef BEFORE_EXTRA
 

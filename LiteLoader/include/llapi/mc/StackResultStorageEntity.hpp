@@ -20,10 +20,8 @@ class StackResultStorageEntity {
 #define AFTER_EXTRA
 // Add Member There
 public:
-
-inline class EntityContext& getStackRef() {
-    return _getStackRef();
-}
+    std::optional<EntityContext> mContext;
+    inline class EntityContext& getStackRef() { return _getStackRef(); }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEENTITY

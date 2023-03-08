@@ -24,7 +24,7 @@ class BlockTypeRegistry {
     class InhibitModificationsLock;
     struct BlockComplexAliasBlockState;
     class BlockComplexAliasContent;
-
+    inline static std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>>& getBlockLookupMap(){return mBlockLookupMap;}
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRY
 public:

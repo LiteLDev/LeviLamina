@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "EntityContext.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -18,7 +19,17 @@
 class OwnerStorageEntity {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+
+    enum class VariadicInit : int {
+        NonAmbiguous = 0,
+    };
+    enum class EmptyInit : int {
+        NoValue = 0,
+    };
+
+    std::optional<EntityContext> mContext;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERSTORAGEENTITY

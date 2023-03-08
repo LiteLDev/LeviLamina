@@ -12,8 +12,10 @@
 #include "MobEffectInstance.hpp"
 #include "Tick.hpp"
 #include "ActorDamageSource.hpp"
+#include "EntityRegistryRefTraits.hpp"
 #include "VehicleUtils.hpp"
 #include "Vec3.hpp"
+#include "Ref.hpp"
 class Actor;
 class Player;
 class NetworkIdentifier;
