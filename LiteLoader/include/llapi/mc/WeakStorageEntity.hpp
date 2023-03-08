@@ -19,6 +19,14 @@ class WeakStorageEntity {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class VariadicInit{
+        NonAmbiguous = 0,
+    };
+    enum class EmptyInit {
+        NoValue = 0,
+    };
+    LIAPI class Actor* tryUnwrap();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEENTITY

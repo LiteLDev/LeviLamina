@@ -33,7 +33,7 @@ public:
     LIAPI static StructureTemplate* fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = true, bool ignoreBlocks = false);
     //LIAPI bool load(CompoundTag const& tag);
     LIAPI std::unique_ptr<CompoundTag> toTag();
-    LIAPI bool toWorld(int dimid, BlockPos const& p1, Mirror mirror = Mirror::None_15, Rotation rotation = Rotation::None_14);
+    LIAPI bool toWorld(int dimid, BlockPos const& p1, Mirror mirror = Mirror::None, Rotation rotation = Rotation::None);
     LIAPI StructureTemplateData* getData();
 
 #undef AFTER_EXTRA
