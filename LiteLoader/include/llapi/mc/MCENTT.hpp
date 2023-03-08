@@ -77,6 +77,7 @@ namespace entt {
 
     template <typename TEntity>
     class Registry {
+       public:
         template <typename TComponent>
         class Pool : SparseSet<TEntity, TComponent> {
             std::vector<std::pair<entt::SparseSet<TEntity>*, bool (entt::Registry<TEntity>::*)(TEntity) const>> data;
@@ -88,14 +89,14 @@ namespace entt {
             virtual void destroy(TEntity) override;
         };
         class Attachee;
-        std::vector<std::unique_ptr<SparseSet<TEntity>>> entset;   // 0
-        std::vector<std::unique_ptr<SparseSet<TEntity>>> entset2;  // 24
-        std::vector<std::unique_ptr<Attachee>> attachees;          // 48
-        std::vector<TEntity> entityIds;                            // 72
-        void* unk96;                                               // 96
-        char mem104[4];                                            // 104
 
-       public:
+        std::vector<std::unique_ptr<SparseSet<TEntity>>> handlers;
+        std::vector<std::unique_ptr<SparseSet<TEntity>>> pools;
+        std::vector<std::unique_ptr<Attachee>> tags;
+        std::vector<TEntity> entities;
+        std::size_t available{};
+        TEntity next{};
+
         Registry();
 
         template <typename TComponent, typename... PS>
@@ -106,17 +107,17 @@ namespace entt {
         void destroy(TEntity);
         template <typename Func>
         void each(Func func) const {
-            if (unk96) {
-                for (std::size_t i = entityIds.size(); i != 0; --i) {
+            if (available) {
+                for (std::size_t i = tags.size(); i != 0; --i) {
                     TEntity temp{i - 1};
-                    auto id = entityIds[temp];
+                    auto id = tags[temp];
                     TEntity target{((std::size_t)id) & 0xFFFFF};
                     if (temp == target)
                         func(id);
                 }
             } else {
-                for (std::size_t i = entityIds.size(); i != 0; --i) {
-                    auto id = entityIds[i];
+                for (std::size_t i = tags.size(); i != 0; --i) {
+                    auto id = tags[i];
                     func(id);
                 }
             }
