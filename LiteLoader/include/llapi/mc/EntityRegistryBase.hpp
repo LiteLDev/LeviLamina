@@ -20,12 +20,12 @@ class EntityRegistryBase {
 
 #define AFTER_EXTRA
 // Add Member There
-struct ICanModifyComponentPoolDuringView {};
-
-entt::Registry<EntityId>* mRegistry;
-std::optional<EntityId> mViewedEntity;
-std::unique_ptr<EntityRegistryBase::ICanModifyComponentPoolDuringView> mCanModifyDuringView;
-bool mViewUsesViewedContext;
+    struct ICanModifyComponentPoolDuringView {};
+    
+    entt::basic_registry<EntityId, std::allocator<EntityId>>* mRegistry;
+    std::optional<EntityId> mViewedEntity;
+    std::unique_ptr<EntityRegistryBase::ICanModifyComponentPoolDuringView> mCanModifyDuringView;
+    bool mViewUsesViewedContext;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYBASE
