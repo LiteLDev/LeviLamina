@@ -262,7 +262,8 @@ DECLARE_EVENT_DATA(PlayerOpenContainerScreenEvent);
 DECLARE_EVENT_DATA(PlayerUseFrameBlockEvent);
 DECLARE_EVENT_DATA(PlayerExperienceAddEvent);
 DECLARE_EVENT_DATA(PlayerInteractEntityEvent);
-DECLARE_EVENT_DATA(MobHurtEvent);
+DECLARE_EVENT_DATA(BeforeMobHurtEvent);
+DECLARE_EVENT_DATA(AfterMobHurtEvent);
 DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
 DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
@@ -1507,36 +1508,74 @@ TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemS
 /////////////////// MobHurt ///////////////////
 TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z", Mob, ActorDamageSource& src, float damage,
               bool unk1_1, bool unk2_0) {
-    if (this) {
-        IF_LISTENED(MobHurtEvent) {
-            MobHurtEvent ev{};
+    IF_LISTENED(BeforeMobHurtEvent) {
+        if (this) {
+            BeforeMobHurtEvent ev{};
             ev.mMob = this;
             ev.mDamageSource = &src;
-            ev.mDamage = damage;
-            if (!ev.call())
+            ev.mOriginalDamage = damage;
+            if (!ev.call()) {
                 return false;
-            damage = ev.mDamage;
+            }
+            damage = ev.mOriginalDamage;
         }
-        IF_LISTENED_END(MobHurtEvent)
     }
-    return original(this, src, damage, unk1_1, unk2_0);
+    IF_LISTENED_END(BeforeMobHurtEvent)
+    auto uid = getActorUniqueId();
+    auto health = getHealth();
+    auto res = original(this, src, damage, unk1_1, unk2_0);
+    IF_LISTENED(AfterMobHurtEvent) {
+        if (this) {
+            AfterMobHurtEvent ev{};
+            ev.mMob = this;
+            ev.mDamageSource = &src;
+            ev.mOriginalDamage = damage;
+            auto en = Global<Level>->getEntity(uid);
+            if (en->getHealth() == 0) {
+                ev.mFinalDamage = (float)health;
+            }
+            else {
+                ev.mFinalDamage = en->getLastHurtDamage();
+            }
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(AfterMobHurtEvent)
+    return res;
 }
 
 TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob,
               ActorDamageSource* src, float damage) {
-    if (this) {
-        if (src->getCause() == ActorDamageCause::Magic) {
-            IF_LISTENED(MobHurtEvent) {
-                MobHurtEvent ev{};
-                ev.mMob = this;
-                ev.mDamageSource = src;
-                ev.mDamage = damage;
-                if (!ev.call())
-                    return 0;
-                damage = ev.mDamage;
-            }
-            IF_LISTENED_END(MobHurtEvent)
+    if (src->getCause() == ActorDamageCause::Magic) {
+        IF_LISTENED(BeforeMobHurtEvent) {
+            BeforeMobHurtEvent ev{};
+            ev.mMob = this;
+            ev.mDamageSource = src;
+            ev.mOriginalDamage = damage;
+            if (!ev.call()) {
+                return 0;
+            } 
+            damage = ev.mOriginalDamage;
         }
+        IF_LISTENED_END(BeforeMobHurtEvent)
+        auto uid = getActorUniqueId();
+        auto health = getHealth();
+        auto res = original(this, src, damage);
+        IF_LISTENED(AfterMobHurtEvent) {
+            AfterMobHurtEvent ev{};
+            ev.mMob = this;
+            ev.mDamageSource = src;
+            ev.mOriginalDamage = damage;
+            auto en = Global<Level>->getEntity(uid);
+            if (en->getHealth() == 0) {
+                ev.mFinalDamage = (float)health;
+            }
+            else {
+                ev.mFinalDamage = en->getLastHurtDamage();
+            }
+            ev.call();
+        }
+        IF_LISTENED_END(AfterMobHurtEvent)
     }
     return original(this, src, damage);
 }

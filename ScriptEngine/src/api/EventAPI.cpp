@@ -87,6 +87,8 @@ enum class EVENT_TYPES : int {
     /* Entity Events */
     onMobDie,
     onMobHurt,
+    onBeforeMobHurt,
+    onAfterMobHurt,
     onEntityExplode,
     onProjectileHitEntity,
     onWitherBossDestroy,
@@ -819,7 +821,7 @@ void EnableEventListener(int eventId) {
             break;
 
         case EVENT_TYPES::onMobHurt:
-            Event::MobHurtEvent::subscribe([](const MobHurtEvent& ev) {
+            Event::BeforeMobHurtEvent::subscribe([](const BeforeMobHurtEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMobHurt) {
                     Actor* source = nullptr;
                     if (ev.mDamageSource->isEntitySource()) {
@@ -831,9 +833,47 @@ void EnableEventListener(int eventId) {
 
                     CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
                               source ? EntityClass::newEntity(source) : Local<Value>(),
-                              Number::newNumber(float(ev.mDamage)), Number::newNumber((int)ev.mDamageSource->getCause()));
+                              Number::newNumber(float(ev.mOriginalDamage)), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobHurt)
+            });
+            break;
+
+        case EVENT_TYPES::onBeforeMobHurt:
+            Event::BeforeMobHurtEvent::subscribe([](const BeforeMobHurtEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onBeforeMobHurt) {
+                    Actor* source = nullptr;
+                    if (ev.mDamageSource->isEntitySource()) {
+                        if (ev.mDamageSource->isChildEntitySource())
+                            source = Level::getEntity(ev.mDamageSource->getEntityUniqueID());
+                        else
+                            source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                    }
+
+                    CallEvent(EVENT_TYPES::onBeforeMobHurt, EntityClass::newEntity(ev.mMob),
+                              source ? EntityClass::newEntity(source) : Local<Value>(),
+                              Number::newNumber(float(ev.mOriginalDamage)), Number::newNumber((int)ev.mDamageSource->getCause()));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onBeforeMobHurt)
+            });
+            break;
+
+        case EVENT_TYPES::onAfterMobHurt:
+            Event::AfterMobHurtEvent::subscribe([](const AfterMobHurtEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onAfterMobHurt) {
+                    Actor* source = nullptr;
+                    if (ev.mDamageSource->isEntitySource()) {
+                        if (ev.mDamageSource->isChildEntitySource())
+                            source = Level::getEntity(ev.mDamageSource->getEntityUniqueID());
+                        else
+                            source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                    }
+
+                    CallEvent(EVENT_TYPES::onAfterMobHurt, EntityClass::newEntity(ev.mMob),
+                              source ? EntityClass::newEntity(source) : Local<Value>(),
+                              Number::newNumber(float(ev.mOriginalDamage)), Number::newNumber((int)ev.mDamageSource->getCause()), Number::newNumber(int(ev.mFinalDamage)));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onAfterMobHurt)
             });
             break;
 

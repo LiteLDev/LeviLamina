@@ -613,10 +613,26 @@ public:
 };
 
 class MobHurtEvent : public EventTemplate<MobHurtEvent> {
+[[deprecated("MobHurtEvent is outdated, please use BeforeMobHurtEvent instead")]];
 public:
     Mob* mMob = nullptr;
     ActorDamageSource* mDamageSource = nullptr;
-    float mDamage = 0.0f;
+    float mOriginalDamage = 0.0f;
+};
+
+class BeforeMobHurtEvent : public EventTemplate<BeforeMobHurtEvent> {
+public:
+    Mob* mMob = nullptr;
+    ActorDamageSource* mDamageSource = nullptr;
+    float mOriginalDamage = 0.0f;
+};
+
+class AfterMobHurtEvent : public EventTemplate<AfterMobHurtEvent> {
+public:
+    Mob* mMob = nullptr;
+    ActorDamageSource* mDamageSource = nullptr;
+    float mOriginalDamage = 0.0f;
+    float mFinalDamage = 0.0f;
 };
 
 class MobDieEvent : public EventTemplate<MobDieEvent> {
