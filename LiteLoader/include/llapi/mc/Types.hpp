@@ -10,13 +10,11 @@
 // enum
 #include "inc/enums.inc"
 #include "../HookAPI.h"
-#pragma unmanaged
-#include <entt/entt.hpp>
-#pragma managed
+#include "entt/entity/entity.hpp"
 #include "mce.hpp"
 #include "Ref.hpp"
 
-class EntityId : public entt::entt_traits<std::uint32_t> {
+class EntityId : public entt::internal::entt_traits<std::uint32_t> {
    public:
     uint32_t mRawId;
 };
