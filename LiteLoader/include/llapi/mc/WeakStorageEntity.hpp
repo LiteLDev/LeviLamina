@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "EntityRegistry.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -20,13 +21,16 @@ class WeakStorageEntity {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum class VariadicInit{
+    enum class VariadicInit : int {
         NonAmbiguous = 0,
     };
-    enum class EmptyInit {
+    enum class EmptyInit : int {
         NoValue = 0,
     };
     LIAPI class Actor* tryUnwrap();
+
+    WeakRefT<EntityRegistryRefTraits> mRegistry;
+    class EntityId mEntity;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEENTITY

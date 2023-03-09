@@ -19,6 +19,8 @@ class EntityContextBase {
 
 #define AFTER_EXTRA
 // Add Member There
+    class EntityRegistryBase* mRegistry;
+    const class EntityId mEntity;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
