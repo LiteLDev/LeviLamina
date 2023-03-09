@@ -16,7 +16,7 @@
 #include "mce.hpp"
 #include "Ref.hpp"
 
-class EntityId : public entt_traits<std::uint32_t> {
+class EntityId : public entt::entt_traits<std::uint32_t> {
    public:
     uint32_t mRawId;
 };
