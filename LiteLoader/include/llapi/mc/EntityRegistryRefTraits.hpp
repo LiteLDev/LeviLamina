@@ -4,6 +4,7 @@
 #include "EntityRegistry.hpp"
 
 class EntityRegistryOwned : public EntityRegistry {
+public:
     entt::basic_registry<EntityId, std::allocator<EntityId>> mOwnedRegistry;
 };
 
