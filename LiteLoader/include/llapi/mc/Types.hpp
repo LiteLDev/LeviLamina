@@ -10,6 +10,7 @@
 // enum
 #include "inc/enums.inc"
 #include "../HookAPI.h"
+#include "entt/entity/entity.hpp"
 #include "mce.hpp"
 #include "Ref.hpp"
 
