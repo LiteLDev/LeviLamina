@@ -13,7 +13,7 @@
 #include "mce.hpp"
 #include "Ref.hpp"
 
-class EntityId {
+class EntityId : public entt_traits<std::uint32_t> {
    public:
     uint32_t mRawId;
 };
