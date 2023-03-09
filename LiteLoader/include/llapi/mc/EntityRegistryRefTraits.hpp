@@ -4,7 +4,7 @@
 #include "EntityRegistry.hpp"
 
 class EntityRegistryOwned : public EntityRegistry {
-    entt::basic_registry<EntityId, std::allocator<EntityId> mOwnedRegistry;
+    entt::basic_registry<EntityId, std::allocator<EntityId>> mOwnedRegistry;
 };
 
 struct EntityRegistryRefTraits {
