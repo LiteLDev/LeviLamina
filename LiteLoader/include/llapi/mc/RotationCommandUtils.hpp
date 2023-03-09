@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
+#include "llapi/mc/RelativeFloat.hpp"
 
 #undef BEFORE_EXTRA
 

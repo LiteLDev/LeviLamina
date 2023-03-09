@@ -31,9 +31,9 @@ public:
     LIAPI int getSize();
 
     // static??
-    LIAPI bool hasContainer(Vec3& pos, int dim);
+    LIAPI bool hasContainer(class Vec3& pos, int dim);
     // static??
-    LIAPI Container* getContainerAt(Vec3& pos, int dim);
+    LIAPI Container* getContainerAt(class Vec3& pos, int dim);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:

@@ -8,6 +8,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "EntityRefTraits.hpp"
+
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +21,7 @@ class WeakEntityRef {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    char filler[24];
+    WeakRefT<struct EntityRefTraits> val;
     LIAPI class Actor* tryUnwrap();
 
 #undef AFTER_EXTRA

@@ -12,6 +12,7 @@
 #include "typeid_t.hpp"
 // Include Headers or Declare Types Here
 class CommandParameterData;
+#include "RelativeFloat.hpp"
 #include "CommandFlag.hpp"
 #include "CommandPosition.hpp"
 #include "CommandPositionFloat.hpp"
