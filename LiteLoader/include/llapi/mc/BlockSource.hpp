@@ -44,9 +44,13 @@ struct ClipParameters
      * // If ignoreTargetType = true, query results will contain actorTypes other than targets.
      * bs->queryEntities(ActorType::Creeper, aabb, true);
      *
+     * // extendDistance means to the distance to expand outward when querying chunks, depends on the
+     * size of the collision box of entity you want to query
+     *
      * @endcode
      */
-    LIAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false);
+    LIAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false,
+                                       float extendDistance = 2.0f);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE
