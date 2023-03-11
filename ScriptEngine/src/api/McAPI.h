@@ -19,6 +19,7 @@ public:
     static Local<Value> getPlayer(const Arguments& args);
     static Local<Value> getOnlinePlayers(const Arguments& args);
     static Local<Value> getAllEntities(const Arguments& args);
+    static Local<Value> getEntities(const Arguments& args);
 
     static Local<Value> newItem(const Arguments& args);
     static Local<Value> spawnMob(const Arguments& args);

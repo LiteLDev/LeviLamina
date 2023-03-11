@@ -51,6 +51,7 @@ struct ClipParameters
      */
     LIAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false,
                                        float extendDistance = 2.0f);
+    LIAPI vector<Actor*> getEntities(const AABB& range, float extendDistance = 2.0f);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE
