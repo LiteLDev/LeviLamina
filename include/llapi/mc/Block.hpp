@@ -21,16 +21,16 @@ class Block {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-    LIAPI static Block* create(const string& str, unsigned short tileData);
-    LIAPI static Block* create(CompoundTag* nbt);
+    LLAPI static Block* create(const string& str, unsigned short tileData);
+    LLAPI static Block* create(CompoundTag* nbt);
 
-    LIAPI string getTypeName() const;
-    LIAPI int getId() const;
+    LLAPI string getTypeName() const;
+    LLAPI int getId() const;
     inline unsigned short getTileData(){
         return static_cast<unsigned short>(getVariant());
     }
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
+    LLAPI std::unique_ptr<CompoundTag> getNbt();
+    LLAPI bool setNbt(CompoundTag* nbt);
 
     inline unsigned short getData() const {
         return dAccess<unsigned short, 8>(this);

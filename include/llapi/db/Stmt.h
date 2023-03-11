@@ -66,7 +66,7 @@ public:
      *
      * @param enable  Enable or not
      */
-    LIAPI void setDebugOutput(bool enable);
+    LLAPI void setDebugOutput(bool enable);
 
     /**
      * @brief Bind a value to a statement parameter.

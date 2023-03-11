@@ -54,16 +54,16 @@ public:
         return (unsigned int)(*((int*)this + 6) - 2) > 1;
     }
 
-    LIAPI FaceID getFacing();
-    LIAPI Vec3 getPos();
-    LIAPI bool isHitLiquid();
-    LIAPI bool isEntity();
-    LIAPI bool isTile();
-    LIAPI BlockPos getBlockPos();
-    LIAPI BlockPos getLiquidPos();
-    LIAPI FaceID getLiquidFacing();
-    //LIAPI Vec3 getLiquidHitPos();
-    LIAPI HitResultType getHitResultType();
+    LLAPI FaceID getFacing();
+    LLAPI Vec3 getPos();
+    LLAPI bool isHitLiquid();
+    LLAPI bool isEntity();
+    LLAPI bool isTile();
+    LLAPI BlockPos getBlockPos();
+    LLAPI BlockPos getLiquidPos();
+    LLAPI FaceID getLiquidFacing();
+    //LLAPI Vec3 getLiquidHitPos();
+    LLAPI HitResultType getHitResultType();
 
 #undef AFTER_EXTRA
 public:

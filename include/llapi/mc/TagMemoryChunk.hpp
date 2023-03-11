@@ -28,12 +28,12 @@ public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
     TagMemoryChunk() = delete;
 
-    LIAPI TagMemoryChunk(char data[], size_t size);
-    LIAPI TagMemoryChunk(const TagMemoryChunk& a1);
-    LIAPI TagMemoryChunk(TagMemoryChunk&& a1);
+    LLAPI TagMemoryChunk(char data[], size_t size);
+    LLAPI TagMemoryChunk(const TagMemoryChunk& a1);
+    LLAPI TagMemoryChunk(TagMemoryChunk&& a1);
 
-    LIAPI void operator=(const TagMemoryChunk& a1);
-    LIAPI void operator=(TagMemoryChunk&& a1);
+    LLAPI void operator=(const TagMemoryChunk& a1);
+    LLAPI void operator=(TagMemoryChunk&& a1);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK

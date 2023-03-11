@@ -22,7 +22,7 @@
 #include <string_view>
 #include "llapi/Global.h"
 
-LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
+LLAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
 
 namespace PluginOwnData {
 inline bool hasImpl(HMODULE hPlugin, const std::string& key) {

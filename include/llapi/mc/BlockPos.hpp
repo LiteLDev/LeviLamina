@@ -71,12 +71,12 @@ public:
         return x >= a.x && y >= a.y && z >= a.z && x <= b.x && y <= b.y && z <= b.z;
     }
 
-    LIAPI Vec3 toVec3() const;
-    LIAPI class BoundingBox toBoundingBox() const;
-    LIAPI class AABB toAABB() const;
-    LIAPI Vec3 bottomCenter() const;
-    LIAPI Vec3 center() const;
-    LIAPI bool containedWithin(class BoundingBox const&) const;
+    LLAPI Vec3 toVec3() const;
+    LLAPI class BoundingBox toBoundingBox() const;
+    LLAPI class AABB toAABB() const;
+    LLAPI Vec3 bottomCenter() const;
+    LLAPI Vec3 center() const;
+    LLAPI bool containedWithin(class BoundingBox const&) const;
 
     FAKE_CRTP(BlockPos, int, 3);
 };

@@ -12,7 +12,7 @@ public:
         return {(min.x + max.x) / 2, (min.y + max.y) / 2, (min.z + max.z) / 2};
     }
 
-    LIAPI class AABB toAABB() const;
+    LLAPI class AABB toAABB() const;
 
     inline std::string toString() const { return '(' + min.toString() +", " + max.toString() + ')'; }
     inline BoundingBox(class BoundingBox const& k) : min(k.min), max(k.max){};

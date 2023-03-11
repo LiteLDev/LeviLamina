@@ -49,7 +49,7 @@ public:
     MCAPI static class AABB const BLOCK_SHAPE;
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 
-    LIAPI class BoundingBox toBoundingBox() const;
+    LLAPI class BoundingBox toBoundingBox() const;
 
     constexpr Vec3& operator[](int index) {
         switch (index) {

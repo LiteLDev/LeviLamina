@@ -24,14 +24,14 @@ class BlockActor {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-    LIAPI bool refreshData();
-    LIAPI bool refreshData(BlockSource* bs);
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
-    LIAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
-    LIAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt);
-    LIAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt, class BlockPos const& pos);
-    LIAPI static unsigned int getBlockEntityType(Block* block);
+    LLAPI bool refreshData();
+    LLAPI bool refreshData(BlockSource* bs);
+    LLAPI std::unique_ptr<CompoundTag> getNbt();
+    LLAPI bool setNbt(CompoundTag* nbt);
+    LLAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
+    LLAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt);
+    LLAPI static std::shared_ptr<BlockActor> create(CompoundTag* nbt, class BlockPos const& pos);
+    LLAPI static unsigned int getBlockEntityType(Block* block);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR

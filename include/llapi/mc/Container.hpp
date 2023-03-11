@@ -20,20 +20,20 @@ class Container {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-    LIAPI std::string getTypeName();
+    LLAPI std::string getTypeName();
 
-    LIAPI bool addItem_s(ItemStack* item);
-    LIAPI bool addItem_s(ItemStack* item, int amount);
-    LIAPI bool addItemToFirstEmptySlot_s(ItemStack* item);
-    LIAPI bool removeItem_s(int slot, unsigned int number);
-    LIAPI ItemStack* getSlot(int slot);
-    LIAPI std::vector<const ItemStack*> getAllSlots();
-    LIAPI int getSize();
+    LLAPI bool addItem_s(ItemStack* item);
+    LLAPI bool addItem_s(ItemStack* item, int amount);
+    LLAPI bool addItemToFirstEmptySlot_s(ItemStack* item);
+    LLAPI bool removeItem_s(int slot, unsigned int number);
+    LLAPI ItemStack* getSlot(int slot);
+    LLAPI std::vector<const ItemStack*> getAllSlots();
+    LLAPI int getSize();
 
     // static??
-    LIAPI bool hasContainer(Vec3& pos, int dim);
+    LLAPI bool hasContainer(Vec3& pos, int dim);
     // static??
-    LIAPI Container* getContainerAt(Vec3& pos, int dim);
+    LLAPI Container* getContainerAt(Vec3& pos, int dim);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:

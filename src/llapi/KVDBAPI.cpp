@@ -117,4 +117,4 @@ bool KVDB::isValid() { return status.ok(); }
 
 KVDB::operator bool() { return isValid(); }
 
-LIAPI std::string KVDB::error(leveldb::Status status) { return status.ToString(); }
+LLAPI std::string KVDB::error(leveldb::Status status) { return status.ToString(); }

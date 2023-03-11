@@ -32,7 +32,7 @@ class ItemStack : public ItemStackBase {
 
 public:
     // The return value should be freed by the developer if it is no longer used
-    LIAPI static ItemStack* create();
+    LLAPI static ItemStack* create();
     
     /**
      * @brief Create an item stack.
@@ -43,24 +43,24 @@ public:
      * 
      * @note To prevent memory leakage, the item stack created should be released.
      */
-    LIAPI static ItemStack* create(std::string type, int count = 1);
+    LLAPI static ItemStack* create(std::string type, int count = 1);
 
     // The return value should be freed by the developer if it is no longer used
-    LIAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
+    LLAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
     // The return value should be freed by the developer if it is no longer used
-    LIAPI static ItemStack* create(short itemId, int aux,int count = 1);
-    LIAPI ItemStack* clone_s() const;
-    LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
+    LLAPI static ItemStack* create(short itemId, int aux,int count = 1);
+    LLAPI ItemStack* clone_s() const;
+    LLAPI static ItemStack fromItemInstance(ItemInstance const& ins);
 
-    LIAPI std::string getTypeName() const;
-    LIAPI int getAux() const;
-    LIAPI int getCount() const;
+    LLAPI std::string getTypeName() const;
+    LLAPI int getAux() const;
+    LLAPI int getCount() const;
 
-    LIAPI bool setItem(ItemStack* newItem);
-    LIAPI bool setLore(const std::vector<std::string>& lores);
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
-    LIAPI string getStandardName(const Localization& language);
+    LLAPI bool setItem(ItemStack* newItem);
+    LLAPI bool setLore(const std::vector<std::string>& lores);
+    LLAPI std::unique_ptr<CompoundTag> getNbt();
+    LLAPI bool setNbt(CompoundTag* nbt);
+    LLAPI string getStandardName(const Localization& language);
 
 #undef AFTER_EXTRA
 public:

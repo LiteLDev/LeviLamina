@@ -26,7 +26,7 @@ private:
     char filler[128];
 
 public:
-LIAPI int getCount() const;
+LLAPI int getCount() const;
 
 #undef AFTER_EXTRA
 public:

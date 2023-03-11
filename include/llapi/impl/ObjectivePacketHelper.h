@@ -2,4 +2,4 @@
 
 #include "llapi/Global.h"
 
-LIAPI uint64_t NewScoreId();
+LLAPI uint64_t NewScoreId();

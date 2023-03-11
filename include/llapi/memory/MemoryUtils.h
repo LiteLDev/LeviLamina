@@ -25,7 +25,7 @@ inline constexpr FuncPtr getPtr(T t) {
  * @return pointer to resolved object. E.g. function pointer, vtable pointer, etc.
  */
 template <>
-LIAPI FuncPtr getPtr(const char* t);
+LLAPI FuncPtr getPtr(const char* t);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
 auto inline virtualCall(void const* _this, Args... args) -> RTN {

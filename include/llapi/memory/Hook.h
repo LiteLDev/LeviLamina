@@ -15,9 +15,9 @@ enum class HookPriority : int {
     Lowest  = 400,
 };
 
-LIAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
+LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
 
-LIAPI bool unhook(FuncPtr target, FuncPtr detour);
+LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
 // Use a individual struct to register hook, in case DefType can't be constructed.
 template <typename T>

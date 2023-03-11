@@ -38,7 +38,7 @@ public:
      * });
      * @endcode
      */
-    LIAPI static std::weak_ptr<ListenerType> subscribe(
+    LLAPI static std::weak_ptr<ListenerType> subscribe(
         const std::function<void(EventType&)>& callback,
         EventPriority                          priority = EventPriority::Normal,
         HMODULE                                plugin   = GetCurrentModule()
@@ -48,19 +48,19 @@ public:
      * @brief Subscribe the event.
      * @param listener The listener instance to subscribe.
      */
-    LIAPI static void subscribe(std::shared_ptr<ListenerType> listener);
+    LLAPI static void subscribe(std::shared_ptr<ListenerType> listener);
 
     /**
      * @brief Unsubscribe the event.
      * @param listener The listener instance to unsubscribe.
      */
-    LIAPI static void unsubscribe(std::weak_ptr<ListenerType> listener);
+    LLAPI static void unsubscribe(std::weak_ptr<ListenerType> listener);
 
     /**
      * @brief Unsubscribe the event by id.
      * @param id The listener id.
      */
-    LIAPI static void unsubscribe(int listenerId) noexcept;
+    LLAPI static void unsubscribe(int listenerId) noexcept;
 };
 
 } // namespace ll::event

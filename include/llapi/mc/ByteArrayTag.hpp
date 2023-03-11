@@ -24,13 +24,13 @@ class ByteArrayTag : public Tag {
 TagMemoryChunk val;
 
 public:
-    LIAPI TagMemoryChunk& value();
-    LIAPI ByteArrayTag& operator=(TagMemoryChunk const& val);
-    LIAPI static std::unique_ptr<ByteArrayTag> create();
-    LIAPI static std::unique_ptr<ByteArrayTag> create(TagMemoryChunk const& val);
-    LIAPI static std::unique_ptr<ByteArrayTag> create(char data[], size_t size);
-    LIAPI bool set(TagMemoryChunk const& val);
-    LIAPI TagMemoryChunk get();
+    LLAPI TagMemoryChunk& value();
+    LLAPI ByteArrayTag& operator=(TagMemoryChunk const& val);
+    LLAPI static std::unique_ptr<ByteArrayTag> create();
+    LLAPI static std::unique_ptr<ByteArrayTag> create(TagMemoryChunk const& val);
+    LLAPI static std::unique_ptr<ByteArrayTag> create(char data[], size_t size);
+    LLAPI bool set(TagMemoryChunk const& val);
+    LLAPI TagMemoryChunk get();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTEARRAYTAG

@@ -7,13 +7,13 @@ class SRWLock {
     SRWLOCK srwlock{};
 
 public:
-    LIAPI SRWLock();
-    LIAPI void lock();
-    LIAPI bool try_lock();
-    LIAPI void unlock();
-    LIAPI void lock_shared();
-    LIAPI bool try_lock_shared();
-    LIAPI void unlock_shared();
+    LLAPI SRWLock();
+    LLAPI void lock();
+    LLAPI bool try_lock();
+    LLAPI void unlock();
+    LLAPI void lock_shared();
+    LLAPI bool try_lock_shared();
+    LLAPI void unlock_shared();
 };
 
 class SRWLockHolder {

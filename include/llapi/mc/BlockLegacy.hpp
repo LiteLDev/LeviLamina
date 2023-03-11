@@ -25,10 +25,10 @@ class BlockLegacy {
 public:
     struct NameInfo;
 
-    LIAPI Block* toBlock(unsigned short tileData);
-    LIAPI string getTypeName();
-    LIAPI bool applyBoneMeal(class BlockSource* a1, class BlockPos const& a2);
-    LIAPI ItemStack* getBlockDrops();
+    LLAPI Block* toBlock(unsigned short tileData);
+    LLAPI string getTypeName();
+    LLAPI bool applyBoneMeal(class BlockSource* a1, class BlockPos const& a2);
+    LLAPI ItemStack* getBlockDrops();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACY
 public:

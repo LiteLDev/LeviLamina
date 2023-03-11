@@ -23,12 +23,12 @@ class ShortTag : public Tag {
 short val;
 
 public:
-    LIAPI short& value();
-    LIAPI ShortTag& operator=(short val);
-    LIAPI static std::unique_ptr<ShortTag> create(short val = 0);
-    LIAPI bool set(short val);
-    LIAPI short get();
-    LIAPI operator short() const;
+    LLAPI short& value();
+    LLAPI ShortTag& operator=(short val);
+    LLAPI static std::unique_ptr<ShortTag> create(short val = 0);
+    LLAPI bool set(short val);
+    LLAPI short get();
+    LLAPI operator short() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHORTTAG

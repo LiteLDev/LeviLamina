@@ -31,21 +31,21 @@ public:
      *
      * @param str The message
      */
-    LIAPI void addMessage(const std::string& str);
+    LLAPI void addMessage(const std::string& str);
 
     /**
      * @brief Output a success message.
      *
      * @param str The message
      */
-    LIAPI void success(const string& str);
+    LLAPI void success(const string& str);
 
     /**
      * @brief Output a error message.
      *
      * @param str The message
      */
-    LIAPI void error(const string& str);
+    LLAPI void error(const string& str);
 
     inline void setLanguageCode(const std::string& code = "") {
         PluginOwnData::set<std::string>(POD_COMMANDOUTPUT_LANGCODE, code);

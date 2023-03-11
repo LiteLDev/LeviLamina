@@ -465,9 +465,9 @@ struct ExportedFuncData {
     CallbackFn callback;
 };
 
-LIAPI extern CallbackFn const EMPTY_FUNC;
-LIAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle = GetCurrentModule());
-LIAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI extern CallbackFn const EMPTY_FUNC;
+LLAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle = GetCurrentModule());
+LLAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
 
 
 inline ValueType _expandArg(std::vector<ValueType>& args, int& index) {
@@ -490,11 +490,11 @@ inline bool _exportAs(std::string const& nameSpace, std::string const& funcName,
     return exportFunc(nameSpace, funcName, std::move(cb), GetCurrentModule());
 }
 
-LIAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
-LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
-LIAPI int removeNameSpace(std::string const& nameSpace);
-LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
-LIAPI void _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
+LLAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
+LLAPI int removeNameSpace(std::string const& nameSpace);
+LLAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
+LLAPI void _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func) {

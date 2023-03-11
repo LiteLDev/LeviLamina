@@ -32,8 +32,8 @@ class CompoundTag : public Tag {
 
 public:
 
-    LIAPI static std::unique_ptr<CompoundTag> create();
-    LIAPI map<std::string, CompoundTagVariant>& value();
+    LLAPI static std::unique_ptr<CompoundTag> create();
+    LLAPI map<std::string, CompoundTagVariant>& value();
 
     template <typename T>
     inline T const* get(class gsl::basic_string_span<char const, -1> key) const {
@@ -41,62 +41,62 @@ public:
     };
 
     // put value
-    LIAPI void putEnd(std::string key);
-    LIAPI double& putDouble(std::string key, double val);
-    LIAPI void putByteArray(std::string key, char data[], size_t size);
-    LIAPI void putIntArray(std::string key, int data[], size_t size);
-    LIAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
+    LLAPI void putEnd(std::string key);
+    LLAPI double& putDouble(std::string key, double val);
+    LLAPI void putByteArray(std::string key, char data[], size_t size);
+    LLAPI void putIntArray(std::string key, int data[], size_t size);
+    LLAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
 
     // get value
-    LIAPI double getDouble(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI struct TagMemoryChunk const& getIntArray(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI double getDouble(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI struct TagMemoryChunk const& getIntArray(class gsl::basic_string_span<char const, -1> key) const;
 
     // get tag
-    LIAPI class ByteTag const* getByteTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class ByteTag const* getByteTag(class gsl::basic_string_span<char const, -1> key) const;
     //BDS has implemented this interface
-    //LIAPI class ShortTag const* getShortTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class FloatTag const* getFloatTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class DoubleTag const* getDoubleTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class ByteArrayTag const* getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const;
-    //LIAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class IntArrayTag const* getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class Tag* operator[](class gsl::basic_string_span<char const, -1> key);
+    //LLAPI class ShortTag const* getShortTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class FloatTag const* getFloatTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class DoubleTag const* getDoubleTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class ByteArrayTag const* getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const;
+    //LLAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class IntArrayTag const* getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
+    LLAPI class Tag* operator[](class gsl::basic_string_span<char const, -1> key);
 
     // IO
-    LIAPI void setItemStack(ItemStack* item);
-    LIAPI void setBlock(Block* blk);
-    LIAPI bool setActor(Actor* actor) const;
-    LIAPI bool setPlayer(Player* player);
-    LIAPI bool setBlockActor(BlockActor* ble) const;
-    LIAPI static std::unique_ptr<CompoundTag> fromItemStack(ItemStack* item);
-    LIAPI static std::unique_ptr<CompoundTag> fromBlock(Block* blk);
-    LIAPI static std::unique_ptr<CompoundTag> fromActor(Actor* actor);
-    LIAPI static std::unique_ptr<CompoundTag> fromPlayer(Player* player);
-    LIAPI static std::unique_ptr<CompoundTag> fromBlockActor(BlockActor* ble);
+    LLAPI void setItemStack(ItemStack* item);
+    LLAPI void setBlock(Block* blk);
+    LLAPI bool setActor(Actor* actor) const;
+    LLAPI bool setPlayer(Player* player);
+    LLAPI bool setBlockActor(BlockActor* ble) const;
+    LLAPI static std::unique_ptr<CompoundTag> fromItemStack(ItemStack* item);
+    LLAPI static std::unique_ptr<CompoundTag> fromBlock(Block* blk);
+    LLAPI static std::unique_ptr<CompoundTag> fromActor(Actor* actor);
+    LLAPI static std::unique_ptr<CompoundTag> fromPlayer(Player* player);
+    LLAPI static std::unique_ptr<CompoundTag> fromBlockActor(BlockActor* ble);
 
     // To Formatted SNBT
-    LIAPI std::string toSNBT(int indent, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine);
-    LIAPI string toPrettySNBT(bool forPlayer = false) const;
-    LIAPI string toPrettySNBT(struct PrettySnbtFormat const& format) const;
-    LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
-    LIAPI static std::string nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> tags, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
-    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string const& data, bool isLittleEndian = true);
+    LLAPI std::string toSNBT(int indent, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine);
+    LLAPI string toPrettySNBT(bool forPlayer = false) const;
+    LLAPI string toPrettySNBT(struct PrettySnbtFormat const& format) const;
+    LLAPI std::string toBinaryNBT(bool isLittleEndian = true);
+    LLAPI static std::string nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> tags, bool isLittleEndian = true);
+    LLAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
+    LLAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
+    LLAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
+    LLAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian = true);
+    LLAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
+    LLAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string const& data, bool isLittleEndian = true);
 
-    LIAPI std::string toNetworkNBT() const;
-    LIAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
-    LIAPI static std::string nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags);
-    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromNetwork(std::string const& data);
+    LLAPI std::string toNetworkNBT() const;
+    LLAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
+    LLAPI static std::string nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags);
+    LLAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromNetwork(std::string const& data);
 
 
     // Deprecated?
-    LIAPI std::string toSNBT();
+    LLAPI std::string toSNBT();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAG

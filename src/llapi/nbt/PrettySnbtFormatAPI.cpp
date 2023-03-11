@@ -105,11 +105,11 @@ inline bool PrettySnbtFormat::setExpand(bool expand) {
 }
 
 #define DllExport_SetValueColor(type) \
-    template LIAPI bool PrettySnbtFormat::setValueColor<type>(mce::Color const& color)
+    template LLAPI bool PrettySnbtFormat::setValueColor<type>(mce::Color const& color)
 #define DllExport_SetValueFormat(type) \
-    template LIAPI bool PrettySnbtFormat::setValueFormat<type>(std::string const& prefix, std::string const& suffix)
+    template LLAPI bool PrettySnbtFormat::setValueFormat<type>(std::string const& prefix, std::string const& suffix)
 #define DllExport_SetExpand(type) \
-    template LIAPI bool PrettySnbtFormat::setExpand<type>(bool expand)
+    template LLAPI bool PrettySnbtFormat::setExpand<type>(bool expand)
 
 ForEachTagType(DllExport_SetValueColor);
 ForEachTagType(DllExport_SetValueFormat);

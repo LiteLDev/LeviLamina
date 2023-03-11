@@ -19,68 +19,68 @@ public:
      * @param list  An initializer list like `{"host", "localhost", "port", 3306}`
      * @throw std::invalid_argument  If the type of key is not supported
      */
-    LIAPI ConnParams(const std::initializer_list<Any>& list);
+    LLAPI ConnParams(const std::initializer_list<Any>& list);
     /**
      * @brief Construct a new ConnParams object
      *
      * @param list  An initializer list like `{{"key1", "value1"}, {"key2", "value2"}}`
      */
-    LIAPI ConnParams(const std::initializer_list<std::pair<std::string, Any>>& list);
+    LLAPI ConnParams(const std::initializer_list<std::pair<std::string, Any>>& list);
     /**
      * @brief Construct a new ConnParams object
      *
      * @param str  Connection string like `mysql://localhost:3306?key1=value1&key2=value2`
      */
-    LIAPI ConnParams(const std::string& str);
+    LLAPI ConnParams(const std::string& str);
     /**
      * @brief Construct a new ConnParams object
      *
      * @param str  Connection string like `mysql://localhost:3306?key1=value1&key2=value2`
      */
-    LIAPI ConnParams(const char* str);
+    LLAPI ConnParams(const char* str);
 
     /**
      * @brief Get the scheme.
      * 
      * @return std::string  The scheme
      */
-    LIAPI std::string getScheme();
+    LLAPI std::string getScheme();
     /**
      * @brief Get the host.
      *
      * @return std::string  The host name
      */
-    LIAPI std::string getHost();
+    LLAPI std::string getHost();
     /**
      * @brief Get the port.
      *
      * @return uint16_t  The port number
      */
-    LIAPI uint16_t getPort();
+    LLAPI uint16_t getPort();
     /**
      * @brief Get the username.
      *
      * @return std::string  The username
      */
-    LIAPI std::string getUsername();
+    LLAPI std::string getUsername();
     /**
      * @brief Get the password.
      *
      * @return std::string  The password
      */
-    LIAPI std::string getPassword();
+    LLAPI std::string getPassword();
     /**
      * @brief Get the database.
      *
      * @return std::string  The database name
      */
-    LIAPI std::string getDatabase();
+    LLAPI std::string getDatabase();
     /**
      * @brief Get the path.
      *
      * @return std::string  The path
      */
-    LIAPI std::string getPath();
+    LLAPI std::string getPath();
     /**
      * @brief Get the raw connection string.
      *
@@ -90,7 +90,7 @@ public:
      *          the return value is the same as the parameter `str`.
      *         Otherwise, the return value will be empty.
      */
-    LIAPI std::string getRaw();
+    LLAPI std::string getRaw();
 
     /**
      * @brief Get the value of one of the keys.

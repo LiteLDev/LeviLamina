@@ -4,12 +4,12 @@
 #include <libloaderapi.h>
 
 // GetLastError() -> string
-LIAPI std::string GetLastErrorMessage();
-LIAPI std::string GetLastErrorMessage(DWORD error_message_id);
+LLAPI std::string GetLastErrorMessage();
+LLAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
-LIAPI bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
-LIAPI std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit = -1, bool noReadOutput = true);
+LLAPI bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
+LLAPI std::pair<int, std::string> NewProcessSync(const std::string& process, int timeLimit = -1, bool noReadOutput = true);
 
 /**
  * @brief Get Current DLL's module handle
@@ -26,16 +26,16 @@ HMODULE inline GetCurrentModule() {
 }
 
 // Get the module path from a module handle
-LIAPI std::string GetModulePath(HMODULE handle);
-LIAPI std::string GetModuleName(HMODULE handle);
+LLAPI std::string GetModulePath(HMODULE handle);
+LLAPI std::string GetModuleName(HMODULE handle);
 
 /**
  * @brief Get the system locale name.
  * 
  * @return  std::string  The system locale name.
  */
-LIAPI std::string GetSystemLocaleName();
+LLAPI std::string GetSystemLocaleName();
 
-LIAPI bool IsWineEnvironment();
+LLAPI bool IsWineEnvironment();
 
-LIAPI uintptr_t FindSig(const char* szSignature);
+LLAPI uintptr_t FindSig(const char* szSignature);

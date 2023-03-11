@@ -1,15 +1,15 @@
 #pragma once
 
-#ifndef LIAPI
+#ifndef LLAPI
 #ifdef LITELOADER_EXPORTS
-#define LIAPI [[maybe_unused]] __declspec(dllexport)
+#define LLAPI [[maybe_unused]] __declspec(dllexport)
 #else
-#define LIAPI [[maybe_unused]] __declspec(dllimport)
+#define LLAPI [[maybe_unused]] __declspec(dllimport)
 #endif
 #endif
 
 #ifndef LICAPI
-#define LICAPI extern "C" LIAPI
+#define LICAPI extern "C" LLAPI
 #endif
 
 #ifndef LL_UNUSED

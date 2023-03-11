@@ -275,7 +275,7 @@ public:
 class Permission {
 
 public:
-    static LIAPI DynPermissionAPI api;
+    static LLAPI DynPermissionAPI api;
 
     static void init(HMODULE hModule = nullptr) {
         api.init(hModule);

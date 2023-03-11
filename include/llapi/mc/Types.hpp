@@ -125,22 +125,22 @@ public:
 
     inline operator bool() const { return !(*this == NIL); }
 
-    LIAPI double distanceTo(mce::Color const& dst) const;
-    LIAPI std::string toConsoleCode(bool foreground = true) const;
-    LIAPI std::string             toNearestColorCode() const;
-    LIAPI char                    toNearestParticleColorCode() const;
-    LIAPI ColorPalette            toNearestParticleColorType() const;
-    LIAPI static class mce::Color fromConsoleCode(std::string const&);
-    LIAPI static class mce::Color fromColorCode(std::string const&);
-    LIAPI class mce::Color        sRGBToLinear() const;
-    LIAPI class mce::Color        LinearTosRGB() const;
-    LIAPI class mce::Color        LinearToXYZ() const;
-    LIAPI class mce::Color        XYZToLinear() const;
-    LIAPI class mce::Color        XYZToLab() const;
-    LIAPI class mce::Color        LabToXYZ() const;
-    LIAPI double                  deltaE76(mce::Color const& dst) const; // 2.3 for JND
-    LIAPI double                  deltaE94(mce::Color const& dst) const; // 1.0 for JND
-    LIAPI double                  deltaE00(mce::Color const& dst) const; // 1.0 for JND
+    LLAPI double distanceTo(mce::Color const& dst) const;
+    LLAPI std::string toConsoleCode(bool foreground = true) const;
+    LLAPI std::string             toNearestColorCode() const;
+    LLAPI char                    toNearestParticleColorCode() const;
+    LLAPI ColorPalette            toNearestParticleColorType() const;
+    LLAPI static class mce::Color fromConsoleCode(std::string const&);
+    LLAPI static class mce::Color fromColorCode(std::string const&);
+    LLAPI class mce::Color        sRGBToLinear() const;
+    LLAPI class mce::Color        LinearTosRGB() const;
+    LLAPI class mce::Color        LinearToXYZ() const;
+    LLAPI class mce::Color        XYZToLinear() const;
+    LLAPI class mce::Color        XYZToLab() const;
+    LLAPI class mce::Color        LabToXYZ() const;
+    LLAPI double                  deltaE76(mce::Color const& dst) const; // 2.3 for JND
+    LLAPI double                  deltaE94(mce::Color const& dst) const; // 1.0 for JND
+    LLAPI double                  deltaE00(mce::Color const& dst) const; // 1.0 for JND
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);

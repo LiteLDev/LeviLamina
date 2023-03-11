@@ -23,12 +23,12 @@ class FloatTag : public Tag {
 float val;
 
 public:
-    LIAPI float& value();
-    LIAPI FloatTag& operator=(float val);
-    LIAPI static std::unique_ptr<FloatTag> create(float val = 0.0f);
-    LIAPI bool set(float val);
-    LIAPI float get();
-    LIAPI operator float() const;
+    LLAPI float& value();
+    LLAPI FloatTag& operator=(float val);
+    LLAPI static std::unique_ptr<FloatTag> create(float val = 0.0f);
+    LLAPI bool set(float val);
+    LLAPI float get();
+    LLAPI operator float() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATTAG

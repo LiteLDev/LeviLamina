@@ -66,7 +66,7 @@ class Vec3 {
 
     MCAPI static class Vec2 rotationFromDirection(class Vec3 const&);
 
-    LIAPI BlockPos toBlockPos() const;
+    LLAPI BlockPos toBlockPos() const;
 
     inline Vec3 add(float dx, float dy, float dz) const { return {x + dx, y + dy, z + dz}; }
 

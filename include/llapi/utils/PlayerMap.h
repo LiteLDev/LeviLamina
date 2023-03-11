@@ -9,7 +9,7 @@ struct DePlayerCB {
     }
 };
 
-LIAPI void _regDePlayerCB(DePlayerCB);
+LLAPI void _regDePlayerCB(DePlayerCB);
 
 template <typename T>
 class playerMap {

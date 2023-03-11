@@ -43,15 +43,15 @@ public:
 #define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
 
     // Entity & Player
-    // LIAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
-    // LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
+    // LLAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
+    // LLAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
 
     /**
      * @brief Get all players.
      *
      * @return A list containing all player
      */
-    LIAPI static std::vector<Player*> getAllPlayers();
+    LLAPI static std::vector<Player*> getAllPlayers();
 
     /**
      * @brief Get a player by his/her name or XUID.
@@ -61,7 +61,7 @@ public:
      *
      * @note Use `Global<Level>->getPlayer()` to call this method.
      */
-    LIAPI Player* getPlayer(const string& info);
+    LLAPI Player* getPlayer(const string& info);
 
     /**
      * @brief Get a player by a unique ID.
@@ -71,7 +71,7 @@ public:
      *
      * @note Use `Global<Level>->getPlayer()` to call this method.
      */
-    LIAPI Player* getPlayer(ActorUniqueID id);
+    LLAPI Player* getPlayer(ActorUniqueID id);
 
     /**
      * @brief Get an entity by a unique ID.
@@ -79,7 +79,7 @@ public:
      * @param id The unique ID
      * @return The entity to get, `nullptr` if failed to get
      */
-    LIAPI static Actor* getEntity(ActorUniqueID id);
+    LLAPI static Actor* getEntity(ActorUniqueID id);
 
     /**
      * @brief Get all entities in a dimension.
@@ -87,14 +87,14 @@ public:
      * @param dimId The dimension ID of the dimension (Overworld: 0; Nether: 1; Ender: 2)
      * @return A list containing all entities in the dimension
      */
-    LIAPI static std::vector<Actor*> getAllEntities(int dimId);
+    LLAPI static std::vector<Actor*> getAllEntities(int dimId);
 
     /**
      * @brief Get all entities.
      *
      * @return A list containing all entities
      */
-    LIAPI static std::vector<Actor*> getAllEntities();
+    LLAPI static std::vector<Actor*> getAllEntities();
 
     /**
      * @brief Spawn a mob.
@@ -104,11 +104,11 @@ public:
      * @param typeName The type of the mob
      * @return The mob spawned, `nullptr` if failed to spawn
      */
-    LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
+    LLAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
 
-    LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack* item);
-    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
-    // LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
+    LLAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack* item);
+    LLAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
+    // LLAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
 
     /**
      * @brief Clone a mob.
@@ -118,11 +118,11 @@ public:
      * @param ac The mob to be cloned
      * @return The cloned mob, `nullptr` if failed to clone
      */
-    LIAPI static Actor* cloneMob(Vec3 pos, int dimId, Actor* ac);
+    LLAPI static Actor* cloneMob(Vec3 pos, int dimId, Actor* ac);
 
     // Block
-    LIAPI static Block* getBlock(BlockPos* pos, int dimId);
-    LIAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
+    LLAPI static Block* getBlock(BlockPos* pos, int dimId);
+    LLAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
 
     /**
      * @brief Get a block by a position
@@ -131,16 +131,16 @@ public:
      * @param dimId The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block to get, `nullptr` if failed to get
      */
-    LIAPI static Block* getBlock(const BlockPos& pos, int dimId);
+    LLAPI static Block* getBlock(const BlockPos& pos, int dimId);
 
-    LIAPI static Block* getBlock(const BlockPos& pos, BlockSource* blockSource);
-    LIAPI static Block* getBlockEx(const BlockPos& pos, int dimId);
-    LIAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimId);
-    LIAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
-    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
-    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
-    LIAPI static BlockActor* getBlockEntity(BlockPos* pos, int dimId);
-    LIAPI static BlockActor* getBlockEntity(BlockPos* pos, BlockSource* blockSource);
+    LLAPI static Block* getBlock(const BlockPos& pos, BlockSource* blockSource);
+    LLAPI static Block* getBlockEx(const BlockPos& pos, int dimId);
+    LLAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimId);
+    LLAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
+    LLAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
+    LLAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
+    LLAPI static BlockActor* getBlockEntity(BlockPos* pos, int dimId);
+    LLAPI static BlockActor* getBlockEntity(BlockPos* pos, BlockSource* blockSource);
 
     /**
      * @brief Get the block entity of a block by a position
@@ -149,9 +149,9 @@ public:
      * @param dimId The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block entity to get, `nullptr` if failed to get
      */
-    LIAPI static BlockActor* getBlockEntity(const BlockPos& pos, int dimId);
+    LLAPI static BlockActor* getBlockEntity(const BlockPos& pos, int dimId);
 
-    LIAPI static BlockActor* getBlockEntity(const BlockPos& pos, BlockSource* blockSource);
+    LLAPI static BlockActor* getBlockEntity(const BlockPos& pos, BlockSource* blockSource);
 
     /**
      * @brief Place a block.
@@ -161,10 +161,10 @@ public:
      * @param block The block
      * @return True if having successfully placed the block; otherwise false
      */
-    LIAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
+    LLAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
 
-    LIAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
+    LLAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);
+    LLAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
 
     /**
      * @brief Break a block naturally.
@@ -175,18 +175,18 @@ public:
      * 
      * @par "Naturally" means simulating breaking the block with a certain item.
      */
-    LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos);
+    LLAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos);
 
-    LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* tool);
-    // LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
-    // LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
-    // LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
-    LIAPI static bool hasContainer(Vec3 pos, int dim);
-    LIAPI static Container* getContainer(Vec3 pos, int dim);
+    LLAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* tool);
+    // LLAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
+    // LLAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
+    // LLAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
+    LLAPI static bool hasContainer(Vec3 pos, int dim);
+    LLAPI static Container* getContainer(Vec3 pos, int dim);
 
     // Item
     //  The return value should be freed by the developer if it is no longer used
-    LIAPI static ItemStack* getItemStackFromId(short itemId, int aux = 0);
+    LLAPI static ItemStack* getItemStackFromId(short itemId, int aux = 0);
 
     // Helper
     /**
@@ -195,28 +195,28 @@ public:
      * @param dimid The dimension ID of the dimension of the block source (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block source to get, `nullptr` if failed to get
      */
-    LIAPI static BlockSource* getBlockSource(int dimid);
+    LLAPI static BlockSource* getBlockSource(int dimid);
 
-    LIAPI static BlockSource* getBlockSource(Actor* actor);
-    // LIAPI static BlockPalette* getBlockPalette();
-    // LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
-    LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-    LIAPI static void broadcastText(const string& text, TextType type);
-    LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LLAPI static BlockSource* getBlockSource(Actor* actor);
+    // LLAPI static BlockPalette* getBlockPalette();
+    // LLAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
+    LLAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
+    LLAPI static void broadcastText(const string& text, TextType type);
+    LLAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
 
-    [[deprecated("This is a typo. Use Level::sendPacketForAllPlayers")]] LIAPI static void sendPacketForAllPlayer(Packet& pkt);
+    [[deprecated("This is a typo. Use Level::sendPacketForAllPlayers")]] LLAPI static void sendPacketForAllPlayer(Packet& pkt);
 
-    LIAPI static void sendPacketForAllPlayers(Packet& pkt);
+    LLAPI static void sendPacketForAllPlayers(Packet& pkt);
 
     /**
      * @brief Get the name of the level
      * 
      * @return The name of the level
      */
-    LIAPI static std::string getCurrentLevelName();
+    LLAPI static std::string getCurrentLevelName();
 
-    LIAPI static std::string getCurrentLevelPath();
-    LIAPI static int64_t createBossEvent();
+    LLAPI static std::string getCurrentLevelPath();
+    LLAPI static int64_t createBossEvent();
 
 public:
     static void dummy() {
@@ -242,19 +242,19 @@ public:
         }
     };
 
-    LIAPI static bool executeCommandAs(Player* player, const string& cmd);
-    LIAPI static std::pair<bool, string> executeCommandEx(const string& cmd);
-    LIAPI static bool executeCommand(const string& cmd);
+    LLAPI static bool executeCommandAs(Player* player, const string& cmd);
+    LLAPI static std::pair<bool, string> executeCommandEx(const string& cmd);
+    LLAPI static bool executeCommand(const string& cmd);
 
 
     // For compatibility
-    LIAPI static bool runcmdAs(Player* pl, const string& cmd) {
+    LLAPI static bool runcmdAs(Player* pl, const string& cmd) {
         return executeCommandAs(pl, cmd);
     }
-    LIAPI static std::pair<bool, string> runcmdEx(const string& cmd) {
+    LLAPI static std::pair<bool, string> runcmdEx(const string& cmd) {
         return executeCommandEx(cmd);
     }
-    LIAPI static bool runcmd(const string& cmd) {
+    LLAPI static bool runcmd(const string& cmd) {
         return executeCommand(cmd);
     }
 

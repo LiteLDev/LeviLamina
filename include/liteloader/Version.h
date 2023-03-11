@@ -16,30 +16,29 @@
 #define LITELOADER_VERSION ll::getLoaderVersion()
 
 
-#define TO_VERSION_STRING(ver)        #ver
-#define TO_VERSION_STRING_EXPAND(ver) TO_VERSION_STRING(ver)
-#define LL_VERSION_EXPAND(...)        __VA_ARGS__
+#define LL_VERSION_TO_STRING_INNER(ver) #ver
+#define LL_VERSION_TO_STRING(ver)       LL_VERSION_TO_STRING_INNER(ver)
 
 // Used in LiteLoader.rc or ScriptEngine.rc
 #if LITELOADER_VERSION_STATUS == LITELOADER_VERSION_BETA
 #define LITELOADER_FILE_VERSION_FLAG VS_FF_DEBUG
 #define LITELOADER_FILE_VERSION_STRING                                                                                 \
-    TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MAJOR)                                                                 \
-    "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MINOR) "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_REVISION    \
-    ) "-beta." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_STATUS_VERSION                                              \
-    ) "+" TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_COMMIT_SHA)
+    LL_VERSION_TO_STRING(LITELOADER_VERSION_MAJOR)                                                                     \
+    "." LL_VERSION_TO_STRING(LITELOADER_VERSION_MINOR) "." LL_VERSION_TO_STRING(LITELOADER_VERSION_REVISION            \
+    ) "-beta." LL_VERSION_TO_STRING(LITELOADER_VERSION_STATUS_VERSION                                                  \
+    ) "+" LL_VERSION_TO_STRING(LITELOADER_VERSION_COMMIT_SHA)
 #elif LITELOADER_VERSION_STATUS == LITELOADER_VERSION_DEV
 #define LITELOADER_FILE_VERSION_FLAG VS_FF_PRIVATEBUILD
 #define LITELOADER_FILE_VERSION_STRING                                                                                 \
-    TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MAJOR)                                                                 \
-    "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MINOR) "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_REVISION    \
-    ) "-dev." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_STATUS_VERSION                                               \
-    ) "+" TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_COMMIT_SHA)
+    LL_VERSION_TO_STRING(LITELOADER_VERSION_MAJOR)                                                                     \
+    "." LL_VERSION_TO_STRING(LITELOADER_VERSION_MINOR) "." LL_VERSION_TO_STRING(LITELOADER_VERSION_REVISION            \
+    ) "-dev." LL_VERSION_TO_STRING(LITELOADER_VERSION_STATUS_VERSION                                                   \
+    ) "+" LL_VERSION_TO_STRING(LITELOADER_VERSION_COMMIT_SHA)
 
 #else
 #define LITELOADER_FILE_VERSION_FLAG 0x00000000L
 #define LITELOADER_FILE_VERSION_STRING                                                                                 \
-    TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MAJOR)                                                                 \
-    "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_MINOR) "." TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_REVISION    \
-    ) "+" TO_VERSION_STRING_EXPAND(LITELOADER_VERSION_COMMIT_SHA)
+    LL_VERSION_TO_STRING(LITELOADER_VERSION_MAJOR)                                                                     \
+    "." LL_VERSION_TO_STRING(LITELOADER_VERSION_MINOR) "." LL_VERSION_TO_STRING(LITELOADER_VERSION_REVISION            \
+    ) "+" LL_VERSION_TO_STRING(LITELOADER_VERSION_COMMIT_SHA)
 #endif

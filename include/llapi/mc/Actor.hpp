@@ -40,40 +40,40 @@ class Actor {
 public:
     enum class InitializationMethod;
 
-    LIAPI std::string getTypeName() const;
-    LIAPI Vec3 getFeetPosition() const;
-    LIAPI BlockSource* getBlockSource() const;
-    LIAPI Vec2* getDirection() const;
-    LIAPI ActorUniqueID getActorUniqueId() const;
-    LIAPI Vec3 getCameraPos() const;
-    LIAPI Tick* getLastTick() const;
-    LIAPI std::vector<std::string> getAllTags();
-    LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
-    LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
-    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
-    LIAPI Actor* getActorFromViewVector(float maxDistance);
-    LIAPI BlockPos getBlockPos();
-    LIAPI BlockInstance getBlockStandingOn() const;
+    LLAPI std::string getTypeName() const;
+    LLAPI Vec3 getFeetPosition() const;
+    LLAPI BlockSource* getBlockSource() const;
+    LLAPI Vec2* getDirection() const;
+    LLAPI ActorUniqueID getActorUniqueId() const;
+    LLAPI Vec3 getCameraPos() const;
+    LLAPI Tick* getLastTick() const;
+    LLAPI std::vector<std::string> getAllTags();
+    LLAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
+    LLAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
+    LLAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
+    LLAPI Actor* getActorFromViewVector(float maxDistance);
+    LLAPI BlockPos getBlockPos();
+    LLAPI BlockInstance getBlockStandingOn() const;
 
-    LIAPI bool isSimulatedPlayer() const;
-    LIAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
-    LIAPI bool isItemActor() const;
-    LIAPI bool isOnGround() const;
-    LIAPI bool setOnFire(int time, bool isEffect);
-    LIAPI bool stopFire();
-    LIAPI bool hasTag(const string& tag);
-    LIAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::Override);
-    LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
-    LIAPI bool teleport(Vec3 pos,int dimid);
-    LIAPI ItemStack* getHandSlot();
-    LIAPI bool rename(const string& name);
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
-    LIAPI bool refreshActorData();
-    LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
-    LIAPI float quickEvalMolangScript(const string& expression);
-    LIAPI Biome* getBiome();
-    //LIAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
+    LLAPI bool isSimulatedPlayer() const;
+    LLAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
+    LLAPI bool isItemActor() const;
+    LLAPI bool isOnGround() const;
+    LLAPI bool setOnFire(int time, bool isEffect);
+    LLAPI bool stopFire();
+    LLAPI bool hasTag(const string& tag);
+    LLAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::Override);
+    LLAPI bool teleport(Vec3 to, int dimID, float x, float y);
+    LLAPI bool teleport(Vec3 pos,int dimid);
+    LLAPI ItemStack* getHandSlot();
+    LLAPI bool rename(const string& name);
+    LLAPI std::unique_ptr<CompoundTag> getNbt();
+    LLAPI bool setNbt(CompoundTag* nbt);
+    LLAPI bool refreshActorData();
+    LLAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
+    LLAPI float quickEvalMolangScript(const string& expression);
+    LLAPI Biome* getBiome();
+    //LLAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
 
     inline Vec3 getPos()
     {

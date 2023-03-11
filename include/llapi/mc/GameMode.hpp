@@ -20,7 +20,7 @@ class GameMode {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    LIAPI ServerPlayer* getPlayer();
+    LLAPI ServerPlayer* getPlayer();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODE
 public:

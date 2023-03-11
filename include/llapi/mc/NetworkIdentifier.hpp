@@ -22,7 +22,7 @@ class NetworkIdentifier {
 // Add Member There
     char filler[160];
 public:
-    LIAPI std::string getIP();
+    LLAPI std::string getIP();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKIDENTIFIER

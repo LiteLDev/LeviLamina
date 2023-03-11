@@ -27,7 +27,7 @@ struct ClipParameters
 {
     MCAPI static const std::function<bool(class Block const&)> CHECK_ALL_BLOCKS;
 };
-    LIAPI BlockInstance getBlockInstance(BlockPos);
+    LLAPI BlockInstance getBlockInstance(BlockPos);
 
     /**
      * @par Example
@@ -46,7 +46,7 @@ struct ClipParameters
      *
      * @endcode
      */
-    LIAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false);
+    LLAPI vector<Actor*> queryEntities(ActorType actorType, const AABB& range, bool ignoreTargetType = false);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE

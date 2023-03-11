@@ -25,7 +25,7 @@ public:
      * 
      * @param slotName The display position (The right of the escape menu: `list` ; The sidebar: `sidebar` ; Below the name bar: `belowName` )
      */
-    LIAPI bool setDisplay(const std::string& slotName, ObjectiveSortOrder sort);
+    LLAPI bool setDisplay(const std::string& slotName, ObjectiveSortOrder sort);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBJECTIVE

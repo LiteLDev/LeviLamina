@@ -26,38 +26,38 @@ public:
      * @brief Add an event listener.
      * @param listener The listener instance to add.
      */
-    LIAPI static void addListener(std::shared_ptr<ListenerType> listener);
+    LLAPI static void addListener(std::shared_ptr<ListenerType> listener);
 
     /**
      * @brief Remove an event listener.
      * @param listener The listener to remove.
      */
-    LIAPI static void removeListener(std::weak_ptr<ListenerType> listener);
+    LLAPI static void removeListener(std::weak_ptr<ListenerType> listener);
 
     /**
      * @brief Get the listener by id.
      * @param id The listener id.
      */
-    LIAPI static std::optional<std::weak_ptr<ListenerType>> getListener(int id) noexcept;
+    LLAPI static std::optional<std::weak_ptr<ListenerType>> getListener(int id) noexcept;
 
     /**
      * @brief Get if the event has listeners.
      * @return True if the event has listeners.
      */
-    [[nodiscard]] LIAPI static bool hasListener() noexcept;
+    [[nodiscard]] LLAPI static bool hasListener() noexcept;
 
     /**
      * @brief Fire the event.
      * @param event Event instance.
      */
-    LIAPI static void fireEvent(EventType& event);
+    LLAPI static void fireEvent(EventType& event);
 
     /**
      * @brief Send event to specific plugin.
      * @param event Event instance.
      * @param plugin Plugin handle.
      */
-    LIAPI static void fireEvent(EventType& event, HMODULE plugin);
+    LLAPI static void fireEvent(EventType& event, HMODULE plugin);
 };
 
 } // namespace ll::event

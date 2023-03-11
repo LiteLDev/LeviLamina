@@ -20,41 +20,41 @@ public:
      *
      * @param header  The header(column names) of rows(shared_ptr)
      */
-    LIAPI RowSet(const std::shared_ptr<RowHeader>& header = nullptr);
+    LLAPI RowSet(const std::shared_ptr<RowHeader>& header = nullptr);
     /**
      * @brief Construct a new Row Set object
      *
      * @param header  The header(column names) of rows
      */
-    LIAPI RowSet(const RowHeader& header);
+    LLAPI RowSet(const RowHeader& header);
     /// Move constructor
-    LIAPI RowSet(RowSet&& set) noexcept;
+    LLAPI RowSet(RowSet&& set) noexcept;
     /// Copy constructor
-    LIAPI RowSet(const RowSet& set);
+    LLAPI RowSet(const RowSet& set);
     /// Move assignment operator
-    LIAPI RowSet& operator=(RowSet&& set) noexcept;
+    LLAPI RowSet& operator=(RowSet&& set) noexcept;
     /// Copy assignment operator
-    LIAPI RowSet& operator=(const RowSet& set);
+    LLAPI RowSet& operator=(const RowSet& set);
 
     /**
      * @brief Add a row to the set.
      *
      * @param row  The row to add
      */
-    LIAPI void add(const Row& row);
+    LLAPI void add(const Row& row);
     /**
      * @brief Get if the set is valid
      * 
      * @return bool  True if valid
      */
-    LIAPI bool valid();
+    LLAPI bool valid();
     /**
      * @brief Add a row to the set.
      *
      * @param row  The row to add
      * @see   add(const Row&)
      */
-    LIAPI void push_back(const Row& row);
+    LLAPI void push_back(const Row& row);
     /**
      * @brief Convert to the table string.
      *
@@ -70,7 +70,7 @@ public:
      * |=====|========|
      * @endcode
      */
-    LIAPI std::string toTableString(const std::string& nullPattern = "<NULL>") const;
+    LLAPI std::string toTableString(const std::string& nullPattern = "<NULL>") const;
 };
 
 using ResultSet = RowSet;

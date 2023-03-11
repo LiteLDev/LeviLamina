@@ -60,38 +60,38 @@ public:
         IntArray,
     };
 
-    LIAPI Type getTagType() const;
+    LLAPI Type getTagType() const;
 
     //value
-    //LIAPI char& asByte();
-    //LIAPI short& asShort();
-    //LIAPI int& asInt();
-    //LIAPI __int64& asLong();
-    //LIAPI float& asFloat();
-    //LIAPI double& asDouble();
-    //LIAPI std::string& asString();
-    //LIAPI std::vector<Tag*>& asList();
-    //LIAPI std::map<std::string, char[0x28]>& asCompound();
-    //LIAPI TagMemoryChunk& asByteArray();
+    //LLAPI char& asByte();
+    //LLAPI short& asShort();
+    //LLAPI int& asInt();
+    //LLAPI __int64& asLong();
+    //LLAPI float& asFloat();
+    //LLAPI double& asDouble();
+    //LLAPI std::string& asString();
+    //LLAPI std::vector<Tag*>& asList();
+    //LLAPI std::map<std::string, char[0x28]>& asCompound();
+    //LLAPI TagMemoryChunk& asByteArray();
 
-    LIAPI EndTag* asEndTag();
-    LIAPI ByteTag* asByteTag();
-    LIAPI ShortTag* asShortTag();
-    LIAPI IntTag* asIntTag();
-    LIAPI Int64Tag* asInt64Tag();
-    LIAPI FloatTag* asFloatTag();
-    LIAPI DoubleTag* asDoubleTag();
-    LIAPI StringTag* asStringTag();
-    LIAPI ListTag* asListTag();
-    LIAPI CompoundTag* asCompoundTag();
-    LIAPI ByteArrayTag* asByteArrayTag();
-    LIAPI IntArrayTag* asIntArrayTag();
+    LLAPI EndTag* asEndTag();
+    LLAPI ByteTag* asByteTag();
+    LLAPI ShortTag* asShortTag();
+    LLAPI IntTag* asIntTag();
+    LLAPI Int64Tag* asInt64Tag();
+    LLAPI FloatTag* asFloatTag();
+    LLAPI DoubleTag* asDoubleTag();
+    LLAPI StringTag* asStringTag();
+    LLAPI ListTag* asListTag();
+    LLAPI CompoundTag* asCompoundTag();
+    LLAPI ByteArrayTag* asByteArrayTag();
+    LLAPI IntArrayTag* asIntArrayTag();
 
-    LIAPI void destroy();
+    LLAPI void destroy();
 
 //static
 
-    LIAPI std::string toJson(int formatIndent);
+    LLAPI std::string toJson(int formatIndent);
 
     template <typename T>
     inline static std::unique_ptr<Tag> asTag(std::unique_ptr<T>&& tag)

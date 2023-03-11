@@ -26,7 +26,7 @@ public:
      *
      * @param list  An initializer list like `{"col1", "col2", "col3"}`
      */
-    LIAPI RowHeader(const std::initializer_list<std::string>& list);
+    LLAPI RowHeader(const std::initializer_list<std::string>& list);
     /// Move constructor
     RowHeader(RowHeader&& other) noexcept = default;
     /// Copy constructor
@@ -39,33 +39,33 @@ public:
      * @param  name  The name of the column
      * @return int   The index of the column
      */
-    LIAPI size_t add(const std::string& name);
+    LLAPI size_t add(const std::string& name);
     /**
      * @brief Get whether the header contains a column.
      *
      * @param  name  The name of the column
      * @return bool  True if the column exists
      */
-    LIAPI bool contains(const std::string& name);
+    LLAPI bool contains(const std::string& name);
     /**
      * @brief Remove a column from the header.
      *
      * @param  name  The name of the column
      * @throws std::out_of_range  If the column does not exist
      */
-    LIAPI void remove(const std::string& name);
+    LLAPI void remove(const std::string& name);
     /**
      * @brief Get the size of the header.
      *
      * @return int  The size of the header
      */
-    LIAPI size_t size() const;
+    LLAPI size_t size() const;
     /**
      * @brief Get weather the header is empty.
      *
      * @return bool  True if the header is empty
      */
-    LIAPI bool empty() const;
+    LLAPI bool empty() const;
     /**
      * @brief Get the index of a column.
      *
@@ -73,7 +73,7 @@ public:
      * @return int   The index of the column
      * @throws std::out_of_range  If the column does not exist
      */
-    LIAPI size_t at(const std::string& name);
+    LLAPI size_t at(const std::string& name);
     /**
      * @brief Get the index of a column.
      *
@@ -81,26 +81,26 @@ public:
      * @return std::string&  The name of the column
      * @throws std::out_of_range  If the column does not exist
      */
-    LIAPI std::string& at(size_t index);
+    LLAPI std::string& at(size_t index);
     /**
      * @brief Get the iterator to the first element
      *
      * @return std::unordered_map<std::string, int>::iterator  The iterator
      */
-    LIAPI std::vector<std::string>::iterator begin();
+    LLAPI std::vector<std::string>::iterator begin();
     /**
      * @brief Get the iterator to the last element.
      *
      * @return std::unordered_map<std::string, int>::iterator  The iterator
      */
-    LIAPI std::vector<std::string>::iterator end();
+    LLAPI std::vector<std::string>::iterator end();
     /**
      * @brief Check whether the row can be adapted to the header.
      *
      * @param  row  The row to adapt
      * @return bool True if the row can be adapted
      */
-    LIAPI bool check(const Row& row) const;
+    LLAPI bool check(const Row& row) const;
 
     /**
      * @brief Get the index of a column.
@@ -109,14 +109,14 @@ public:
      * @return int   The index of the column
      * @note   It will create the column(=add) if it does not exist
      */
-    LIAPI size_t operator[](const std::string& name);
+    LLAPI size_t operator[](const std::string& name);
     /**
      * @brief Get the name of a column.
      *
      * @param  index         The index of the column
      * @return std::string&  The name of the column
      */
-    LIAPI std::string& operator[](size_t index);
+    LLAPI std::string& operator[](size_t index);
 
     /// Move assignment operator
     RowHeader& operator=(RowHeader&& other) noexcept = default;
@@ -135,14 +135,14 @@ public:
      *
      * @param header  The header(column names) of the row(shared_ptr)
      */
-    LIAPI Row(const std::shared_ptr<RowHeader>& header = nullptr);
+    LLAPI Row(const std::shared_ptr<RowHeader>& header = nullptr);
     /**
      * @brief Construct a new Row object.
      *
      * @param header  The header(column names) of the row
      * @note  This will create a shared_ptr of the header
      */
-    LIAPI Row(const RowHeader& header);
+    LLAPI Row(const RowHeader& header);
     /**
      * @brief Construct a new Row object.
      *
@@ -156,7 +156,7 @@ public:
      * Row row2({514, 24, "steve"}, {"id", "age", "name"});
      * @endcode
      */
-    LIAPI Row(const std::initializer_list<Any>& list, const RowHeader& header);
+    LLAPI Row(const std::initializer_list<Any>& list, const RowHeader& header);
     /**
      * @brief Construct a new Row object.
      *
@@ -164,7 +164,7 @@ public:
      * @param header  The header(column names) of the row(shared_ptr)
      * @throw std::invalid_argument If the size of the list is not equal to the size of the header
      */
-    LIAPI Row(const std::initializer_list<Any>& list,
+    LLAPI Row(const std::initializer_list<Any>& list,
               const std::shared_ptr<RowHeader>& header = nullptr);
     /**
      * @brief Construct a new Row object(move).
@@ -173,7 +173,7 @@ public:
      * @param header  The header(column names) of the row
      * @throw std::invalid_argument If the size of the vector is not equal to the size of the header
      */
-    LIAPI Row(std::vector<Any>&& list, const RowHeader& header);
+    LLAPI Row(std::vector<Any>&& list, const RowHeader& header);
     /**
      * @brief Construct a new Row object.
      *
@@ -181,7 +181,7 @@ public:
      * @param header  The header(column names) of the row
      * @throw std::invalid_argument If the size of the vector is not equal to the size of the header
      */
-    LIAPI Row(const std::vector<Any>& list, const RowHeader& header);
+    LLAPI Row(const std::vector<Any>& list, const RowHeader& header);
     /**
      * @brief Construct a new Row object(move).
      *
@@ -191,15 +191,15 @@ public:
      * Row row({{"id", 114}, {"age", 2000}, {"name", "alex"}});
      * @endcode
      */
-    LIAPI Row(const std::initializer_list<std::pair<std::string, Any>>& list);
+    LLAPI Row(const std::initializer_list<std::pair<std::string, Any>>& list);
     /// Move constructor
-    LIAPI Row(Row&& other) noexcept;
+    LLAPI Row(Row&& other) noexcept;
     /// Copy constructor
-    LIAPI Row(const Row& other);
+    LLAPI Row(const Row& other);
     /// Move assignment operator
-    LIAPI Row& operator=(Row&& other) noexcept;
+    LLAPI Row& operator=(Row&& other) noexcept;
     /// Copy assignment operator
-    LIAPI Row& operator=(const Row& other);
+    LLAPI Row& operator=(const Row& other);
     /**
      * @brief Get the value of a column
      *
@@ -207,7 +207,7 @@ public:
      * @return Any&    The value of the column
      * @note   It will create a new Any object if the column doesn't exist
      */
-    LIAPI Any& operator[](const std::string& name);
+    LLAPI Any& operator[](const std::string& name);
     /**
      * @brief Get the value of a column
      *
@@ -215,7 +215,7 @@ public:
      * @return Any&    The value of the column
      * @see    Row::at
      */
-    LIAPI const Any& operator[](const std::string& name) const;
+    LLAPI const Any& operator[](const std::string& name) const;
     /**
      * @brief Get the value of a column
      *
@@ -223,22 +223,22 @@ public:
      * @return Any&    The value of the column
      * @throw  std::out_of_range If the column does not exist
      */
-    LIAPI Any& at(const std::string& column);
-    LIAPI const Any& at(const std::string& column) const;
+    LLAPI Any& at(const std::string& column);
+    LLAPI const Any& at(const std::string& column) const;
     /**
      * @brief Traverse the row(references)
      *
      * @param cb  The function to call for each element
      * @note  Return false in callback function to stop the iteration
      */
-    LIAPI void forEach_ref(std::function<bool(const std::string&, Any&)> cb);
+    LLAPI void forEach_ref(std::function<bool(const std::string&, Any&)> cb);
     /**
      * @brief Traverse the row
      *
      * @param cb  The function to call for each element
      * @note  Return false in callback function to stop the iteration
      */
-    LIAPI void forEach(std::function<bool(const std::string&, const Any&)> cb) const;
+    LLAPI void forEach(std::function<bool(const std::string&, const Any&)> cb) const;
 };
 
 } // namespace DB

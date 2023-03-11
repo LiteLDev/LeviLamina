@@ -33,23 +33,23 @@ class Listener {
     friend class EventManager<EventType>;
 
 public:
-    LIAPI
+    LLAPI
     Listener(std::function<void(EventType&)> callback, EventPriority priority, HMODULE plugin = GetCurrentModule());
 
     /**
      * @brief Call the listener.
      * @param event Event instance
      */
-    LIAPI void call(EventType& event);
+    LLAPI void call(EventType& event);
 
     /**
      * @brief Unsubscribe the event.
      */
-    LIAPI void unsubscribe();
+    LLAPI void unsubscribe();
 
-    LIAPI bool operator==(const Listener& other) const;
+    LLAPI bool operator==(const Listener& other) const;
 
-    LIAPI bool operator<(const Listener& other) const;
+    LLAPI bool operator<(const Listener& other) const;
 };
 
 

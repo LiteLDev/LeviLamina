@@ -10,22 +10,22 @@ class CsLock {
     CRITICAL_SECTION cslock;
 
 public:
-    LIAPI CsLock();
-    LIAPI ~CsLock();
-    LIAPI bool tryLock();
-    LIAPI bool lock();
-    LIAPI bool unlock();
+    LLAPI CsLock();
+    LLAPI ~CsLock();
+    LLAPI bool tryLock();
+    LLAPI bool lock();
+    LLAPI bool unlock();
 };
 
 class CsLockHolder {
     CsLock& locker;
 
 public:
-    LIAPI CsLockHolder(CsLock& lock)
+    LLAPI CsLockHolder(CsLock& lock)
     : locker(lock) {
         locker.lock();
     }
-    LIAPI ~CsLockHolder() {
+    LLAPI ~CsLockHolder() {
         locker.unlock();
     }
 };

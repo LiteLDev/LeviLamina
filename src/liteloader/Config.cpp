@@ -14,9 +14,9 @@ using namespace std;
 
 namespace ll {
 
-LIAPI LLConfig        globalConfig;
-LIAPI LLRuntimeConfig globalRuntimeConfig;
-LIAPI ll::CommandLineOption commandLineOption;
+LLAPI LLConfig        globalConfig;
+LLAPI LLRuntimeConfig globalRuntimeConfig;
+LLAPI ll::CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf) {
     j = nlohmann::json{

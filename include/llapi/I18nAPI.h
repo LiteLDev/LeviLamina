@@ -73,28 +73,28 @@ public:
      * @return std::string  The translation
      * @see    I18nBase::defaultLocaleName
      */
-    LIAPI virtual std::string get(const std::string& key, const std::string& localeName = "");
+    LLAPI virtual std::string get(const std::string& key, const std::string& localeName = "");
 
     /**
      * @brief Get the type of the i18n object.
      *
      * @return  The type of the i18n object
      */
-    LIAPI virtual Type getType() = 0;
+    LLAPI virtual Type getType() = 0;
 
     /**
      * @brief Get the default language code of the i18n object.
      *
      * @return  The default language code of the i18n object
      */
-    LIAPI virtual std::string getDefaultLocaleName();
+    LLAPI virtual std::string getDefaultLocaleName();
 
     /**
      * @brief Clone a new i18n object.
      *
      * @return  The new i18n object.
      */
-    LIAPI virtual I18nBase* clone();
+    LLAPI virtual I18nBase* clone();
     
     static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 };
@@ -105,8 +105,8 @@ class SingleFileI18N : public I18nBase {
 public:
     std::string filePath;
 
-    LIAPI void load(const std::string& fileName);
-    LIAPI void save();
+    LLAPI void load(const std::string& fileName);
+    LLAPI void save();
 
     SingleFileI18N() {
         this->type = Type::SingleFile;
@@ -136,7 +136,7 @@ public:
     }
     ~SingleFileI18N() = default;
 
-    LIAPI Type getType();
+    LLAPI Type getType();
 };
 
 class MultiFileI18N : public I18nBase {
@@ -144,8 +144,8 @@ class MultiFileI18N : public I18nBase {
 public:
     std::string dirPath;
 
-    LIAPI void load(const std::string& dirName);
-    LIAPI void save(bool nested = false);
+    LLAPI void load(const std::string& dirName);
+    LLAPI void save(bool nested = false);
 
     MultiFileI18N() {
         this->type = Type::MultiFile;
@@ -175,7 +175,7 @@ public:
     }
     ~MultiFileI18N() = default;
 
-    LIAPI Type getType();
+    LLAPI Type getType();
 };
 
 #ifdef UNICODE
@@ -245,10 +245,10 @@ template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detai
     return str.c_str();
 }
 
-LIAPI I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
+LLAPI I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
                const I18nBase::LangData& defaultLangData);
 
-LIAPI I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
+LLAPI I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
 
 /**
  * @brief Load translation from a file or dir.
@@ -484,13 +484,13 @@ inline std::string operator""_tr(const char* str, size_t) {
 
 // For text encoding
 namespace TextEncoding {
-LIAPI Encoding getLocalEncoding();
-LIAPI Encoding detectEncoding(const std::string& text, bool* isReliable = nullptr);
+LLAPI Encoding getLocalEncoding();
+LLAPI Encoding detectEncoding(const std::string& text, bool* isReliable = nullptr);
 
-LIAPI std::string fromUnicode(const std::wstring& text, Encoding to = Encoding::UTF8);
-LIAPI std::wstring toUnicode(const std::string& text, Encoding from = Encoding::UTF8);
-LIAPI std::string toUTF8(const std::string& text);
-LIAPI std::string toUTF8(const std::string& text, Encoding from);
+LLAPI std::string fromUnicode(const std::wstring& text, Encoding to = Encoding::UTF8);
+LLAPI std::wstring toUnicode(const std::string& text, Encoding from = Encoding::UTF8);
+LLAPI std::string toUTF8(const std::string& text);
+LLAPI std::string toUTF8(const std::string& text, Encoding from);
 
-LIAPI std::string convert(const std::string& text, Encoding from, Encoding to);
+LLAPI std::string convert(const std::string& text, Encoding from, Encoding to);
 } // namespace TextEncoding

@@ -23,12 +23,12 @@ class StringTag : public Tag {
 string val;
 
 public:
-    LIAPI std::string& value();
-    LIAPI StringTag& operator=(std::string const& val);
-    LIAPI static std::unique_ptr<StringTag> create(std::string val = "");
-    LIAPI bool set(std::string const& val);
-    LIAPI std::string get();
-    LIAPI operator std::string() const;
+    LLAPI std::string& value();
+    LLAPI StringTag& operator=(std::string const& val);
+    LLAPI static std::unique_ptr<StringTag> create(std::string val = "");
+    LLAPI bool set(std::string const& val);
+    LLAPI std::string get();
+    LLAPI operator std::string() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGTAG

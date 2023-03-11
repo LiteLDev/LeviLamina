@@ -27,7 +27,7 @@ struct KnownPackContainer {
     KnownPackContainer(KnownPackContainer const&) = delete;
     KnownPackContainer(KnownPackContainer const&&) = delete;
 };
-LIAPI void setCustomResourcePackPath(PackType, const std::string& path);
+LLAPI void setCustomResourcePackPath(PackType, const std::string& path);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKREPOSITORY

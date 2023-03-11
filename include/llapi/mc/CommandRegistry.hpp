@@ -99,11 +99,11 @@ public:
         unsigned char unk;                        // 40
         std::vector<Symbol> syms = {};            // 48
 
-        LIAPI Overload(CommandVersion version,
+        LLAPI Overload(CommandVersion version,
                        FactoryFn factory,
                        std::vector<CommandParameterData>&& args);
 
-        LIAPI ~Overload();
+        LLAPI ~Overload();
 
         inline std::string toDebugString() {
             return fmt::format("<Overload>");
@@ -152,13 +152,13 @@ public:
         }
     };
 
-    LIAPI static std::vector<std::string> getEnumNames();
-    LIAPI static std::vector<std::string> getSoftEnumNames();
-    LIAPI static std::vector<std::string> getEnumValues(std::string const& name);
-    LIAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
-    LIAPI static std::string getCommandFullName(std::string const& name);
+    LLAPI static std::vector<std::string> getEnumNames();
+    LLAPI static std::vector<std::string> getSoftEnumNames();
+    LLAPI static std::vector<std::string> getEnumValues(std::string const& name);
+    LLAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
+    LLAPI static std::string getCommandFullName(std::string const& name);
     // Experiment
-    LIAPI bool unregisterCommand(std::string const& name);
+    LLAPI bool unregisterCommand(std::string const& name);
 
     template <typename Type>
     struct DefaultIdConverter {
@@ -348,7 +348,7 @@ public:
         return std::make_unique<T>();
     }
 
-    LIAPI void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
+    LLAPI void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
 
     template <typename T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {

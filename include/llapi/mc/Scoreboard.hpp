@@ -42,7 +42,7 @@ protected:
      *
      * @return ScoreboardId const reference
      */
-    LIAPI const ScoreboardId& nextScoreboardId();
+    LLAPI const ScoreboardId& nextScoreboardId();
 
     /**
      * @brief createa new available ScoreboardId for Entity by  PlayerScoreBoardId.
@@ -60,21 +60,21 @@ public:
      * The user should check uuid's validity.
      * @return bool
      */
-    LIAPI bool createScoreboardId(mce::UUID const& uuid);
+    LLAPI bool createScoreboardId(mce::UUID const& uuid);
     /**
      * @brief get a new available ScoreboardId for Player by mce::UUID.
      *
      * The user should check uuid's validity.
      * @return ScoreboardId
      */
-    LIAPI ScoreboardId getScoreboardId(mce::UUID const& uuid) const;
+    LLAPI ScoreboardId getScoreboardId(mce::UUID const& uuid) const;
     /**
      * @brief get or create a new available ScoreboardId for Player by mce::UUID.
      *
      * The user should check uuid's validity.
      * @return ScoreboardId
      */
-    LIAPI static ScoreboardId getOrCreateScoreboardId(mce::UUID const& uuid);
+    LLAPI static ScoreboardId getOrCreateScoreboardId(mce::UUID const& uuid);
     /**
      * @brief modify Score for Player by mce::UUID forcely.
      *
@@ -84,7 +84,7 @@ public:
      * return false only when mce::UUID is wrong or runtime-error.
      * @return bool
      */
-    LIAPI static bool forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
+    LLAPI static bool forceModifyPlayerScore(mce::UUID const& uuid, std::string const& objname, int val,
                                              PlayerScoreSetFunction pf);
     /**
      * @brief modify Score for Player by Xuid forcely.
@@ -96,7 +96,7 @@ public:
      * return false only when Xuid is wrong or runtime-error.
      * @return bool
      */
-    LIAPI static bool forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val,
+    LLAPI static bool forceModifyPlayerScore(xuid_t const& xuid, std::string const& objname, int val,
                                              PlayerScoreSetFunction pf);
     /**
      * @brief query Score for Player by mce::UUID.
@@ -106,7 +106,7 @@ public:
      * ScoreboardId.
      * @return std::optional<int>
      */
-    LIAPI static std::optional<int> queryPlayerScore(mce::UUID const& uuid, std::string const& objname);
+    LLAPI static std::optional<int> queryPlayerScore(mce::UUID const& uuid, std::string const& objname);
     /**
      * @brief query Score for Player by Xuid.
      *
@@ -116,14 +116,14 @@ public:
      * ScoreboardId.
      * @return std::optional<int>
      */
-    LIAPI static std::optional<int> queryPlayerScore(xuid_t const& xuid, std::string const& objname);
+    LLAPI static std::optional<int> queryPlayerScore(xuid_t const& xuid, std::string const& objname);
     /**
      * @brief delete Score from an Objective for Player by mce::UUID.
      *
      * works whether Players are online or not.
      * @return bool
      */
-    LIAPI static bool forceRemovePlayerScoreFromObjective(mce::UUID const& uuid, std::string const& objname);
+    LLAPI static bool forceRemovePlayerScoreFromObjective(mce::UUID const& uuid, std::string const& objname);
     /**
      * @brief query Score for Player by Xuid.
      *
@@ -133,7 +133,7 @@ public:
      * ScoreboardId.
      * @return bool
      */
-    LIAPI static bool forceRemovePlayerScoreFromObjective(xuid_t const& xuid, std::string const& objname);
+    LLAPI static bool forceRemovePlayerScoreFromObjective(xuid_t const& xuid, std::string const& objname);
     /**
      * @brief Create a new objective.
      *
@@ -141,12 +141,12 @@ public:
      * @param displayName The display name of the objective
      * @return The objective
      */
-    LIAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
+    LLAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
 
-    //LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
-    //LIAPI static Objective* clearDisplayObjective(const std::string& slot);
-    //LIAPI static Objective* getDisplayObjective(const std::string& slot);
-    LIAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
+    //LLAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
+    //LLAPI static Objective* clearDisplayObjective(const std::string& slot);
+    //LLAPI static Objective* getDisplayObjective(const std::string& slot);
+    LLAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
 
     /**
      * @brief Remove the score of a player from an objective.
@@ -155,7 +155,7 @@ public:
      * @param player The player
      * @return True if removed; otherwise false.
      */
-    LIAPI static bool removeFromObjective(const std::string& objname, Player* player);
+    LLAPI static bool removeFromObjective(const std::string& objname, Player* player);
 
     /**
      * @brief Remove the score of a ScoreboardId from an objective.
@@ -164,14 +164,14 @@ public:
      * @param ScoreboardId The ScoreboardId
      * @return True if removed; otherwise false.
      */
-    LIAPI static bool removeFromObjective(const std::string& objname, ScoreboardId const& Id);
+    LLAPI static bool removeFromObjective(const std::string& objname, ScoreboardId const& Id);
 
-    LIAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
-    LIAPI static int getScore(const std::string& objname, const std::string& id);
-    LIAPI static bool getScore(const std::string& objname, const std::string& id, int& score);
-    LIAPI static std::optional<int> setScore(const std::string& objname, const std::string& id, int score);
-    LIAPI static std::optional<int> addScore(const std::string& objname, const std::string& id, int score);
-    LIAPI static std::optional<int> reduceScore(const std::string& objname, const std::string& id, int score);
+    LLAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
+    LLAPI static int getScore(const std::string& objname, const std::string& id);
+    LLAPI static bool getScore(const std::string& objname, const std::string& id, int& score);
+    LLAPI static std::optional<int> setScore(const std::string& objname, const std::string& id, int score);
+    LLAPI static std::optional<int> addScore(const std::string& objname, const std::string& id, int score);
+    LLAPI static std::optional<int> reduceScore(const std::string& objname, const std::string& id, int score);
 
     /**
      * @brief Get the score of a player of an objective.
@@ -182,10 +182,10 @@ public:
      * @exception std::invalid_argument The objective is not found.
      * @exception std::runtime_error Failed to get the score.
      */
-    LIAPI static int getScore(const std::string& objname, Player* player);
+    LLAPI static int getScore(const std::string& objname, Player* player);
 
-    LIAPI static int getScore(Player* player, const std::string& objname);
-    LIAPI static bool getScore(const std::string& objname, Player* player, int& score);
+    LLAPI static int getScore(Player* player, const std::string& objname);
+    LLAPI static bool getScore(const std::string& objname, Player* player, int& score);
 
     /**
      * @brief Set the score of a player of an objective.
@@ -195,9 +195,9 @@ public:
      * @param value The score
      * @return True if set; otherwise false.
      */
-    LIAPI static bool setScore(const std::string& objname, Player* player, int value);
+    LLAPI static bool setScore(const std::string& objname, Player* player, int value);
 
-    LIAPI static bool setScore(Player* player, const std::string& objname, int value);
+    LLAPI static bool setScore(Player* player, const std::string& objname, int value);
 
     /**
      * @brief Add the score of a player of an objective.
@@ -207,9 +207,9 @@ public:
      * @param value The added score
      * @return True if added; otherwise false.
      */
-    LIAPI static bool addScore(const std::string& objname, Player* player, int value);
+    LLAPI static bool addScore(const std::string& objname, Player* player, int value);
 
-    LIAPI static bool addScore(Player* player, const std::string& objname, int value);
+    LLAPI static bool addScore(Player* player, const std::string& objname, int value);
 
     /**
      * @brief Reduce the score of a player of an objective.
@@ -219,14 +219,14 @@ public:
      * @param value The reduced score
      * @return True if reduced; otherwise false.
      */
-    LIAPI static bool reduceScore(const std::string& objname, Player* player, int value);
+    LLAPI static bool reduceScore(const std::string& objname, Player* player, int value);
 
-    LIAPI static bool reduceScore(Player* player, const std::string& objname, int value);
+    LLAPI static bool reduceScore(Player* player, const std::string& objname, int value);
 
-    LIAPI static bool deleteScore(const std::string& objname, Player* player);
-    LIAPI static bool deleteScore(Player* player, const std::string& objname);
+    LLAPI static bool deleteScore(const std::string& objname, Player* player);
+    LLAPI static bool deleteScore(Player* player, const std::string& objname);
 
-    LIAPI static bool scoreboardIdIsValid(ScoreboardId* id);
+    LLAPI static bool scoreboardIdIsValid(ScoreboardId* id);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARD
 public:

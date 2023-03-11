@@ -109,7 +109,7 @@ public:
     bool highDetial;
     bool doubleSide;
 
-    static LIAPI ParticleAPI api;
+    static LLAPI ParticleAPI api;
 
     static void init(HMODULE hModule = nullptr) {
         if (!api.initialized) {

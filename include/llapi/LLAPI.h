@@ -30,13 +30,13 @@ struct Version {
     int revision;
     Status status;
 
-    LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
+    LLAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-    LIAPI bool operator<(Version b);
-    LIAPI bool operator==(Version b);
+    LLAPI bool operator<(Version b);
+    LLAPI bool operator==(Version b);
 
-    LIAPI std::string toString(bool needStatus = false);
-    LIAPI static Version parse(const std::string& str);
+    LLAPI std::string toString(bool needStatus = false);
+    LLAPI static Version parse(const std::string& str);
 };
 
 struct Plugin {
@@ -76,7 +76,7 @@ inline bool operator>=(ll::Version a, ll::Version b) {
     return b < a || b == a;
 }
 
-LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, ll::Version version,
+LLAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, ll::Version version,
                           std::map<std::string, std::string> others);
 
 // for abi compatibility
@@ -94,13 +94,13 @@ struct Version {
     int revision;
     Status status;
 
-    LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
+    LLAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-    LIAPI bool operator<(Version b);
-    LIAPI bool operator==(Version b);
+    LLAPI bool operator<(Version b);
+    LLAPI bool operator==(Version b);
 
-    LIAPI std::string toString(bool needStatus = false);
-    LIAPI static Version parse(const std::string& str);
+    LLAPI std::string toString(bool needStatus = false);
+    LLAPI static Version parse(const std::string& str);
 
     inline ll::Version toNewVersion() {
         return ll::Version(major, minor, revision, static_cast<ll::Version::Status>(status));
@@ -136,7 +136,7 @@ struct Plugin {
 } // namespace LL
 
 // for abi compatibility
-[[deprecated("Moved to RegisterPlugin")]] LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, LL::Version version,
+[[deprecated("Moved to RegisterPlugin")]] LLAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, LL::Version version,
                                                                     std::map<std::string, std::string> others);
 
 // Loader APIs
@@ -147,19 +147,19 @@ namespace ll {
  *
  * @return std::string  The loader version
  */
-LIAPI std::string getLoaderVersionString();
+LLAPI std::string getLoaderVersionString();
 /**
  * @brief Get the loader version as a Version object
  *
  * @return ll::Version  The loader version
  */
-LIAPI Version getLoaderVersion();
+LLAPI Version getLoaderVersion();
 /**
  * @brief Get whether LiteLoader is in debug mode
  *
  * @return bool  True if it is in debug mode
  */
-LIAPI bool isDebugMode();
+LLAPI bool isDebugMode();
 
 /**
  * @brief Get the data path of the plugin
@@ -167,7 +167,7 @@ LIAPI bool isDebugMode();
  * @param  pluginName   The name of the plugin
  * @return std::string  The data path of the plugin
  */
-LIAPI std::string getDataPath(const std::string& pluginName);
+LLAPI std::string getDataPath(const std::string& pluginName);
 
 /**
  * @brief Register a plugin
@@ -219,14 +219,14 @@ inline bool registerPlugin(std::string name, std::string desc, ll::Version versi
  * @param  name         The name of the plugin
  * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LIAPI ll::Plugin* getPlugin(std::string name);
+LLAPI ll::Plugin* getPlugin(std::string name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
  *
  * @param  handle       The HMODULE handle of the plugin
  * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LIAPI ll::Plugin* getPlugin(HMODULE handle);
+LLAPI ll::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded
@@ -234,21 +234,21 @@ LIAPI ll::Plugin* getPlugin(HMODULE handle);
  * @param  name  The name of the plugin
  * @return bool  True if the plugin is loaded
  */
-LIAPI bool hasPlugin(std::string name);
+LLAPI bool hasPlugin(std::string name);
 
 /**
  * @brief Get the All the loaded plugins
  *
  * @return std::unordered_map<std::string, ll::Plugin*>  The loaded plugins(name-plugin)
  */
-LIAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
+LLAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
 
 /**
  * @brief Get the handle of LiteLoader.dll.
  *
  * @return HMODULE  The handle
  */
-LIAPI HMODULE getLoaderHandle();
+LLAPI HMODULE getLoaderHandle();
 
 /// Server Status
 enum class ServerStatus {
@@ -256,9 +256,9 @@ enum class ServerStatus {
     Running,
     Stopping
 };
-LIAPI ServerStatus getServerStatus();
-LIAPI bool isServerStarting();
-LIAPI bool isServerStopping();
+LLAPI ServerStatus getServerStatus();
+LLAPI bool isServerStarting();
+LLAPI bool isServerStopping();
 
 /**
  * @breif Get LiteLoaderBDS's current language
@@ -276,19 +276,19 @@ namespace LL {
  *
  * @return std::string  The loader version
  */
-[[deprecated("Moved to ll::getLoaderVersionString")]] LIAPI std::string getLoaderVersionString();
+[[deprecated("Moved to ll::getLoaderVersionString")]] LLAPI std::string getLoaderVersionString();
 /**
  * @brief Get the loader version as a Version object
  *
  * @return LL::Version  The loader version
  */
-[[deprecated("Moved to ll::getLoaderVersion")]] LIAPI Version getLoaderVersion();
+[[deprecated("Moved to ll::getLoaderVersion")]] LLAPI Version getLoaderVersion();
 /**
  * @brief Get whether LiteLoader is in debug mode
  *
  * @return bool  True if it is in debug mode
  */
-[[deprecated("Moved to ll::isDebugMode")]] LIAPI bool isDebugMode();
+[[deprecated("Moved to ll::isDebugMode")]] LLAPI bool isDebugMode();
 
 /**
  * @brief Get the data path of the plugin
@@ -296,7 +296,7 @@ namespace LL {
  * @param  pluginName   The name of the plugin
  * @return std::string  The data path of the plugin
  */
-[[deprecated("Moved to ll::getDataPath")]] LIAPI std::string getDataPath(const std::string& pluginName);
+[[deprecated("Moved to ll::getDataPath")]] LLAPI std::string getDataPath(const std::string& pluginName);
 
 /**
  * @brief Register a plugin
@@ -350,14 +350,14 @@ namespace LL {
  * @param  name         The name of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
-[[deprecated("Moved to ll::getPlugin")]] LIAPI LL::Plugin* getPlugin(std::string name);
+[[deprecated("Moved to ll::getPlugin")]] LLAPI LL::Plugin* getPlugin(std::string name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
  *
  * @param  handle       The HMODULE handle of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
-[[deprecated("Moved to ll::getPlugin")]] LIAPI LL::Plugin* getPlugin(HMODULE handle);
+[[deprecated("Moved to ll::getPlugin")]] LLAPI LL::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded
@@ -365,21 +365,21 @@ namespace LL {
  * @param  name  The name of the plugin
  * @return bool  True if the plugin is loaded
  */
-[[deprecated("Moved to ll::hasPlugin")]] LIAPI bool hasPlugin(std::string name);
+[[deprecated("Moved to ll::hasPlugin")]] LLAPI bool hasPlugin(std::string name);
 
 /**
  * @brief Get the All the loaded plugins
  *
  * @return std::unordered_map<std::string, LL::Plugin*>  The loaded plugins(name-plugin)
  */
-[[deprecated("Moved to ll::getAllPlugins")]] LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+[[deprecated("Moved to ll::getAllPlugins")]] LLAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 /**
  * @brief Get the handle of LiteLoader.dll.
  *
  * @return HMODULE  The handle
  */
-[[deprecated("Moved to ll::getLoaderHandle")]] LIAPI HMODULE getLoaderHandle();
+[[deprecated("Moved to ll::getLoaderHandle")]] LLAPI HMODULE getLoaderHandle();
 
 /// Server Status
 enum class ServerStatus {
@@ -387,9 +387,9 @@ enum class ServerStatus {
     Running,
     Stopping
 };
-[[deprecated("Moved to ll::getServerStatus")]] LIAPI ServerStatus getServerStatus();
-[[deprecated("Moved to ll::isServerStarting")]] LIAPI bool isServerStarting();
-[[deprecated("Moved to ll::isServerStopping")]] LIAPI bool isServerStopping();
+[[deprecated("Moved to ll::getServerStatus")]] LLAPI ServerStatus getServerStatus();
+[[deprecated("Moved to ll::isServerStarting")]] LLAPI bool isServerStarting();
+[[deprecated("Moved to ll::isServerStopping")]] LLAPI bool isServerStopping();
 
 /**
  * @breif Get LiteLoaderBDS's current language

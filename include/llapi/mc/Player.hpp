@@ -49,7 +49,7 @@ public:
         Unknown,
     };
     
-    LIAPI std::string getName();
+    LLAPI std::string getName();
 
     /**
      * @brief Get the real name of the player.
@@ -58,40 +58,40 @@ public:
      * 
      * @note This method gets the XBOX account name of the player.
      */
-    LIAPI std::string getRealName();
+    LLAPI std::string getRealName();
 
-    LIAPI std::string getUuid();
-    LIAPI unsigned char getClientSubId();
-    LIAPI string getDeviceTypeName();
-    LIAPI int getAvgPing();
-    LIAPI int getLastPing();
-    LIAPI std::string getIP();
-    LIAPI string getLanguageCode();
-    LIAPI string getServerAddress();
-    LIAPI NetworkIdentifier* getNetworkIdentifier();
-    LIAPI Certificate* getCertificate();
-    LIAPI Container* getEnderChestContainer();
-    LIAPI std::pair<BlockPos, int> getRespawnPosition();
-    LIAPI float getAvgPacketLoss();
-    LIAPI float getLastPacketLoss();
-    LIAPI string getClientId();
-    LIAPI int getDeviceType();
-    LIAPI bool isOperator();
-    LIAPI bool isOP();
+    LLAPI std::string getUuid();
+    LLAPI unsigned char getClientSubId();
+    LLAPI string getDeviceTypeName();
+    LLAPI int getAvgPing();
+    LLAPI int getLastPing();
+    LLAPI std::string getIP();
+    LLAPI string getLanguageCode();
+    LLAPI string getServerAddress();
+    LLAPI NetworkIdentifier* getNetworkIdentifier();
+    LLAPI Certificate* getCertificate();
+    LLAPI Container* getEnderChestContainer();
+    LLAPI std::pair<BlockPos, int> getRespawnPosition();
+    LLAPI float getAvgPacketLoss();
+    LLAPI float getLastPacketLoss();
+    LLAPI string getClientId();
+    LLAPI int getDeviceType();
+    LLAPI bool isOperator();
+    LLAPI bool isOP();
 
-    LIAPI int getCurrentExperience();
-    LIAPI bool setCurrentExperience(int exp);
-    LIAPI size_t getTotalExperience();
-    LIAPI bool setTotalExperience(size_t exp);
-    LIAPI bool reduceExperience(size_t exp);
+    LLAPI int getCurrentExperience();
+    LLAPI bool setCurrentExperience(int exp);
+    LLAPI size_t getTotalExperience();
+    LLAPI bool setTotalExperience(size_t exp);
+    LLAPI bool reduceExperience(size_t exp);
 
-    LIAPI void setAbility(AbilitiesIndex index, bool value);
+    LLAPI void setAbility(AbilitiesIndex index, bool value);
 	
     // Experience required to upgrade to level from (level-1)
-    LIAPI static int getXpNeededForLevel(int level);
+    LLAPI static int getXpNeededForLevel(int level);
 
     // Experience required to upgrade to level from level 0
-    LIAPI static size_t getTotalXpNeededForLevel(int level);
+    LLAPI static size_t getTotalXpNeededForLevel(int level);
 
     template <typename... Args>
     inline std::string trImpl(HMODULE hPlugin, const std::string& format, Args&&... args) {
@@ -103,7 +103,7 @@ public:
         return trImpl(GetCurrentModule(), format, std::forward<Args>(args)...);
     }
 
-    LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
+    LLAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
 
     template <TextType ttype = TextType::RAW, typename... Args>
     inline bool sendText(const std::string& text, Args&&... args) {
@@ -119,9 +119,9 @@ public:
         }
     }
 
-    LIAPI bool kick(const string& msg);
-    LIAPI bool crashClient();
-    LIAPI bool talkAs(const string& msg);
+    LLAPI bool kick(const string& msg);
+    LLAPI bool crashClient();
+    LLAPI bool talkAs(const string& msg);
 
     /**
      * @brief Give the player items.
@@ -129,44 +129,44 @@ public:
      * @param item The items to give
      * @return True if the player is successfully given the items; otherwise false
      */
-    LIAPI bool giveItem(ItemStack* item);
-    LIAPI bool giveItem(string typeName, int amount);
-    LIAPI bool giveItem(ItemStack* item, int amount);
+    LLAPI bool giveItem(ItemStack* item);
+    LLAPI bool giveItem(string typeName, int amount);
+    LLAPI bool giveItem(ItemStack* item, int amount);
 
-    LIAPI int clearItem(string typeName);
-    LIAPI bool runcmd(const string& cmd);
-    LIAPI bool transferServer(const string& address, unsigned short port);
-    LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
-    LIAPI bool removeSidebar();
+    LLAPI int clearItem(string typeName);
+    LLAPI bool runcmd(const string& cmd);
+    LLAPI bool transferServer(const string& address, unsigned short port);
+    LLAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
+    LLAPI bool removeSidebar();
 
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
+    LLAPI std::unique_ptr<CompoundTag> getNbt();
+    LLAPI bool setNbt(CompoundTag* nbt);
 
-    LIAPI static bool setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt);
-    LIAPI static bool setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags);
-    LIAPI static bool deletePlayerNbt(mce::UUID const& uuid);
-    LIAPI static std::unique_ptr<CompoundTag> getPlayerNbt(mce::UUID const& uuid);
-    LIAPI static std::vector<string> getAllUuid(bool includeSelfSignedId);
+    LLAPI static bool setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt);
+    LLAPI static bool setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags);
+    LLAPI static bool deletePlayerNbt(mce::UUID const& uuid);
+    LLAPI static std::unique_ptr<CompoundTag> getPlayerNbt(mce::UUID const& uuid);
+    LLAPI static std::vector<string> getAllUuid(bool includeSelfSignedId);
 
-    LIAPI bool refreshAttribute(class Attribute const& attribute);
-    LIAPI bool refreshAttributes(std::vector<Attribute const*> const& attributes);
-    LIAPI void addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
-    LIAPI void removeBossEvent(int64_t uid);
-    LIAPI void updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
+    LLAPI bool refreshAttribute(class Attribute const& attribute);
+    LLAPI bool refreshAttributes(std::vector<Attribute const*> const& attributes);
+    LLAPI void addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
+    LLAPI void removeBossEvent(int64_t uid);
+    LLAPI void updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
 
-    LIAPI int getScore(const string& key);
-    LIAPI bool setScore(const string& key, int value);
-    LIAPI bool addScore(const string& key, int value);
-    LIAPI bool reduceScore(const string& key, int value);
-    LIAPI bool deleteScore(const string& key);
+    LLAPI int getScore(const string& key);
+    LLAPI bool setScore(const string& key, int value);
+    LLAPI bool addScore(const string& key, int value);
+    LLAPI bool reduceScore(const string& key, int value);
+    LLAPI bool deleteScore(const string& key);
 
     // Form
-    LIAPI bool sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const;
-    LIAPI bool sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const;
-    LIAPI bool sendCustomForm(const std::string& data, std::function<void(Player*, string)> callback) const;
+    LLAPI bool sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const;
+    LLAPI bool sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const;
+    LLAPI bool sendCustomForm(const std::string& data, std::function<void(Player*, string)> callback) const;
 
     // Packet
-    LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
+    LLAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
 
     /**
      * @brief Display a title on the player's screen.
@@ -178,36 +178,36 @@ public:
      * @param FadeOutDuration The fade out duration
      * @return True if the title is successfully shown; otherwise false
      */
-    LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
+    LLAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
 
-    LIAPI bool sendNotePacket(unsigned int tone);
-    LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimid, string ParticleName, int64_t EntityUniqueID = -1) const;
-    /*bad*/ LIAPI bool sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const;
-    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeID, class Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems = {}) const;
-    LIAPI bool sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems = {});
-    LIAPI bool sendUpdateBlockPacket(BlockPos const& blockPos, unsigned int runtimeId, UpdateBlockFlags flag = UpdateBlockFlags::BlockUpdateAll, UpdateBlockLayer layer = UpdateBlockLayer::UpdateBlockDefault);
-    LIAPI bool sendUpdateBlockPacket(BlockPos const& blockPos, const Block& block, UpdateBlockFlags flag = UpdateBlockFlags::BlockUpdateAll, UpdateBlockLayer layer = UpdateBlockLayer::UpdateBlockDefault);
-    LIAPI bool sendTransferPacket(const string& address, short port) const;
-    LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const;
-    LIAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
-    LIAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
-    LIAPI bool sendCommandRequestPacket(const string& cmd);
-    LIAPI bool sendTextTalkPacket(const string& msg);
-    LIAPI bool sendTextTalkPacket(const string& msg, Player* target /* = nullptr*/);
+    LLAPI bool sendNotePacket(unsigned int tone);
+    LLAPI bool sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimid, string ParticleName, int64_t EntityUniqueID = -1) const;
+    /*bad*/ LLAPI bool sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const;
+    LLAPI bool sendAddItemEntityPacket(unsigned long long runtimeID, class Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems = {}) const;
+    LLAPI bool sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems = {});
+    LLAPI bool sendUpdateBlockPacket(BlockPos const& blockPos, unsigned int runtimeId, UpdateBlockFlags flag = UpdateBlockFlags::BlockUpdateAll, UpdateBlockLayer layer = UpdateBlockLayer::UpdateBlockDefault);
+    LLAPI bool sendUpdateBlockPacket(BlockPos const& blockPos, const Block& block, UpdateBlockFlags flag = UpdateBlockFlags::BlockUpdateAll, UpdateBlockLayer layer = UpdateBlockLayer::UpdateBlockDefault);
+    LLAPI bool sendTransferPacket(const string& address, short port) const;
+    LLAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const;
+    LLAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
+    LLAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
+    LLAPI bool sendCommandRequestPacket(const string& cmd);
+    LLAPI bool sendTextTalkPacket(const string& msg);
+    LLAPI bool sendTextTalkPacket(const string& msg, Player* target /* = nullptr*/);
 
-    LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
-    LIAPI bool sendToastPacket(string title, string msg);
+    LLAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
+    LLAPI bool sendToastPacket(string title, string msg);
 
-    LIAPI static bool isValid(Player* player);
+    LLAPI static bool isValid(Player* player);
 
     // For compatibility
     inline string getDeviceName() {
         return getDeviceTypeName();
     }
-    LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
-    LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
-    LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
-    LIAPI std::pair<Vec3, int> getLastDeathPosition();
+    LLAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
+    LLAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
+    LLAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
+    LLAPI std::pair<Vec3, int> getLastDeathPosition();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER

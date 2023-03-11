@@ -25,11 +25,11 @@ public:
     std::string ownBuf, *pBuf;
 
 public:
-    LIAPI std::string const& getData() const;
-    LIAPI size_t getLength() const;
-    LIAPI size_t getReadPointer() const;
-    LIAPI size_t getUnreadLength() const;
-    LIAPI void setReadPointer(std::size_t size);
+    LLAPI std::string const& getData() const;
+    LLAPI size_t getLength() const;
+    LLAPI size_t getReadPointer() const;
+    LLAPI size_t getUnreadLength() const;
+    LLAPI void setReadPointer(std::size_t size);
 
     template <typename T>
     inline void readType(T&) = delete;
@@ -58,7 +58,7 @@ public:
     //{
     //    descriptor.read(*this);
     //}
-    LIAPI std::unique_ptr<class CompoundTag> getCompoundTag();
+    LLAPI std::unique_ptr<class CompoundTag> getCompoundTag();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_READONLYBINARYSTREAM

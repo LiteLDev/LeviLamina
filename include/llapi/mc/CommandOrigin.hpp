@@ -32,7 +32,7 @@ public:
  * 
  * @return The player as the command origin, `nullptr` if the command origin is not a player
  */
-LIAPI ServerPlayer* getPlayer() const;
+LLAPI ServerPlayer* getPlayer() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGIN

@@ -4,32 +4,32 @@
 #include <string>
 
 // std::string -> std::wstring
-LIAPI std::wstring str2wstr(const std::string& str);
-LIAPI std::wstring str2wstr(const std::string& str, UINT codePage);
+LLAPI std::wstring str2wstr(const std::string& str);
+LLAPI std::wstring str2wstr(const std::string& str, UINT codePage);
 
 // std::wstring -> std::string
-LIAPI std::string wstr2str(const std::wstring& wstr);
-LIAPI std::string wstr2str(const std::wstring& wstr, UINT codePage);
+LLAPI std::string wstr2str(const std::wstring& wstr);
+LLAPI std::string wstr2str(const std::wstring& wstr, UINT codePage);
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-LIAPI std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::string& pattern);
+LLAPI std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::string& pattern);
 
 // ReplaceStr("aaabbbcc","bbb","tt")
-LIAPI std::string& ReplaceStr(std::string& str, const std::string& old_value, const std::string& new_value);
+LLAPI std::string& ReplaceStr(std::string& str, const std::string& old_value, const std::string& new_value);
 
 // StartsWith("helloworld", "hello") == true
-LIAPI bool StartsWith(const std::string& str, const std::string& start);
+LLAPI bool StartsWith(const std::string& str, const std::string& start);
 
 // EndsWith("helloworld","world") == true
-LIAPI bool EndsWith(const std::string& str, const std::string& end);
+LLAPI bool EndsWith(const std::string& str, const std::string& end);
 
 // "hello {Jim}" -> "hello {{Jim}}"  (for FMT bug)
-LIAPI std::string FixCurlyBracket(std::string str);
+LLAPI std::string FixCurlyBracket(std::string str);
 
 #ifdef __cpp_lib_char8_t
-LIAPI std::string UTF82String(std::u8string str);
+LLAPI std::string UTF82String(std::u8string str);
 #endif
-LIAPI std::string UTF82String(std::string str);
+LLAPI std::string UTF82String(std::string str);
 /**
  * @brief Integer to hex string.
  *

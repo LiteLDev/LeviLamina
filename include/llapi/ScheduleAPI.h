@@ -31,10 +31,10 @@ public:
      *
      * @return True if canceled; otherwise false.
      */
-    LIAPI bool cancel();
+    LLAPI bool cancel();
 
-    LIAPI ScheduleTask() = default;
-    LIAPI ScheduleTask(unsigned int taskId);
+    LLAPI ScheduleTask() = default;
+    LLAPI ScheduleTask(unsigned int taskId);
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -45,7 +45,7 @@ public:
      *
      * @return True if finished; otherwise false.
      */
-    LIAPI bool isFinished() const;
+    LLAPI bool isFinished() const;
 
 private:
     unsigned int taskId;
@@ -79,7 +79,7 @@ namespace Schedule {
  * @param tickDelay The delayed ticks
  * @return The scheduled task
  */
-LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief Execute the function every `tickInterval` ticks.
@@ -89,7 +89,7 @@ LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tick
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief After `tickDelay` ticks, execute the function every `tickInterval` ticks.
@@ -100,7 +100,7 @@ LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tic
  * @param maxCount The maximum number of executions, -1 means the function will always execute
  * @return The scheduled task
  */
-LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
 
 /**
  * @brief Execute the function the next tick.
@@ -108,6 +108,6 @@ LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long lon
  * @param task The function to execute
  * @return The scheduled task
  */
-LIAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
+LLAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
 
 }; // namespace Schedule

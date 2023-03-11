@@ -23,7 +23,7 @@ class I18n {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    LIAPI static Localization const* getLanguage(std::string const& languageCode);
+    LLAPI static Localization const* getLanguage(std::string const& languageCode);
     inline static std::string get(std::string const& key)
     {
         return get(key, mCurrentLanguage);

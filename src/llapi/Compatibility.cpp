@@ -6,18 +6,18 @@
 
 using ll::logger;
 
-LIAPI void OutputEventError(const std::string& errorMsg, const std::string& eventName, const std::string& pluginName) {
+LLAPI void OutputEventError(const std::string& errorMsg, const std::string& eventName, const std::string& pluginName) {
     logger.error("Please upgrade the plugin <{}>, or it will not work properly!!!", pluginName);
 }
 
 namespace Schedule {
-LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay) {
+LLAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay) {
     return delay(task, tickDelay, nullptr);
 }
-LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1) {
+LLAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1) {
     return repeat(task, tickInterval, maxCount, nullptr);
 }
-LIAPI ScheduleTask delayRepeat(
+LLAPI ScheduleTask delayRepeat(
     std::function<void(void)> task,
     unsigned long long        tickDelay,
     unsigned long long        tickInterval,
@@ -25,10 +25,10 @@ LIAPI ScheduleTask delayRepeat(
 ) {
     return delayRepeat(task, tickDelay, tickInterval, maxCount, nullptr);
 }
-LIAPI ScheduleTask nextTick(std::function<void(void)> task) { return nextTick(task, nullptr); }
+LLAPI ScheduleTask nextTick(std::function<void(void)> task) { return nextTick(task, nullptr); }
 } // namespace Schedule
 
-LIAPI std::wstring ANSI2Unicode(const std::string& str) {
+LLAPI std::wstring ANSI2Unicode(const std::string& str) {
     std::wstring   ret;
     std::mbstate_t state = {};
     const char*    src   = str.data();
@@ -54,7 +54,7 @@ public:
     LangData    langData;
     LangData    defaultLangData;
     std::string defaultLangCode = "en_US";
-    LIAPI std::string get(const std::string& key, const std::string& langCode = "");
+    LLAPI std::string get(const std::string& key, const std::string& langCode = "");
 };
 
 std::string I18N::get(const std::string& key, const std::string& langCode) {
@@ -96,7 +96,7 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
 
 namespace Translation {
 
-LIAPI I18N* loadImpl(
+LLAPI I18N* loadImpl(
     HMODULE               hPlugin,
     const std::string&    path,
     const std::string&    defaultLocaleName,

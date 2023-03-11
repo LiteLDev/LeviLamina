@@ -22,11 +22,11 @@ class Biome {
     // Add Member There
 public:
     enum class BiomeTempCategory;
-    LIAPI int getId() const;
-    LIAPI std::string const& getName() const;
-    LIAPI static Biome* fromId(int id);
-    LIAPI static Biome* fromName(std::string const& name);
-    LIAPI static std::vector<Biome*> getBiomesByType(VanillaBiomeTypes type);
+    LLAPI int getId() const;
+    LLAPI std::string const& getName() const;
+    LLAPI static Biome* fromId(int id);
+    LLAPI static Biome* fromName(std::string const& name);
+    LLAPI static std::vector<Biome*> getBiomesByType(VanillaBiomeTypes type);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOME

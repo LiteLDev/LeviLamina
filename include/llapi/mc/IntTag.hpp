@@ -23,12 +23,12 @@ class IntTag : public Tag {
 int val;
 
 public:
-    LIAPI int& value();
-    LIAPI IntTag& operator=(int val);
-    LIAPI static std::unique_ptr<IntTag> create(int val = 0);
-    LIAPI bool set(int val);
-    LIAPI int get();
-    LIAPI operator int() const;
+    LLAPI int& value();
+    LLAPI IntTag& operator=(int val);
+    LLAPI static std::unique_ptr<IntTag> create(int val = 0);
+    LLAPI bool set(int val);
+    LLAPI int get();
+    LLAPI operator int() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTTAG

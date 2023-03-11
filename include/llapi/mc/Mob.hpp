@@ -30,7 +30,7 @@ struct JumpPreventionResult {
 
 public:
 
-    LIAPI bool refreshInventory();
+    LLAPI bool refreshInventory();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOB

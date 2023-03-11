@@ -7,7 +7,7 @@
 // static std::vector<DePlayerCB> depcbs;
 static size_t      CBSZ, CBSZ_USED;
 static DePlayerCB* CBS;
-LIAPI void         _regDePlayerCB(DePlayerCB cb) {
+LLAPI void         _regDePlayerCB(DePlayerCB cb) {
     if (CBS == nullptr) {
         CBS              = (DePlayerCB*)malloc(4 * sizeof(cb));
         CBSZ             = 4;

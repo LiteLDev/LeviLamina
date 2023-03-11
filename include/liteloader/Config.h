@@ -60,9 +60,9 @@ struct LLRuntimeConfig {
     std::thread::id tickThreadId;
 };
 
-LIAPI extern LLConfig          globalConfig;
-LIAPI extern LLRuntimeConfig   globalRuntimeConfig;
-LIAPI extern CommandLineOption commandLineOption;
+LLAPI extern LLConfig          globalConfig;
+LLAPI extern LLRuntimeConfig   globalRuntimeConfig;
+LLAPI extern CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf);
 

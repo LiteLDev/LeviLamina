@@ -23,8 +23,8 @@ class BinaryStream : public ReadOnlyBinaryStream {
 public:
     std::string writeBuf, *pwBuf;
 
-    LIAPI void reserve(size_t size);
-    LIAPI std::string& getRaw();
+    LLAPI void reserve(size_t size);
+    LLAPI std::string& getRaw();
     template <typename T>
     inline void writeType(T const&) = delete;
     template <>
@@ -56,7 +56,7 @@ public:
         writeFloat(vec3.y);
         writeFloat(vec3.z);
     }
-    LIAPI void writeCompoundTag(class CompoundTag const& tag);
+    LLAPI void writeCompoundTag(class CompoundTag const& tag);
 
 
 #undef AFTER_EXTRA

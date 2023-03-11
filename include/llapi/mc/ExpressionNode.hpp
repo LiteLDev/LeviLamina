@@ -13,14 +13,14 @@
 #include "HashedString.hpp"
 class MolangInstance {
 public:
-    LIAPI MolangInstance(const string&);
-    LIAPI ~MolangInstance();
-    LIAPI float evalAsFloat(Actor* actor);
-    LIAPI Json ::Value evalAsJson(Actor* actor);
-    LIAPI string getExpressionString();
-    LIAPI bool isInitialized();
-    LIAPI bool isValid();
-    LIAPI bool parse(const string& expressionStr, enum class MolangVersion version = (MolangVersion)6,
+    LLAPI MolangInstance(const string&);
+    LLAPI ~MolangInstance();
+    LLAPI float evalAsFloat(Actor* actor);
+    LLAPI Json ::Value evalAsJson(Actor* actor);
+    LLAPI string getExpressionString();
+    LLAPI bool isInitialized();
+    LLAPI bool isValid();
+    LLAPI bool parse(const string& expressionStr, enum class MolangVersion version = (MolangVersion)6,
                               gsl::span<class HashedString const, -1> v = gsl::span<class HashedString const, -1>(
                                   {HashedString("default" /*or "world_gen"*/)}));
 

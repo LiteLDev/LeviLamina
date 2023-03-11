@@ -26,14 +26,14 @@ class SimulatedPlayer : public ServerPlayer {
 // Add Member There
 public:
     [[deprecated("This is a typo. Please use simulateDestroy")]]
-    LIAPI bool simulateDestory();
-    LIAPI bool simulateDestroy();
-    LIAPI bool simulateUseItem();
-    LIAPI bool simulateSneak();
-    LIAPI bool simulateStopSneaking();
-    LIAPI static class SimulatedPlayer* create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
-    LIAPI static class SimulatedPlayer* create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId = 0);
-    LIAPI static class SimulatedPlayer* create(std::string const& name, class Vec3 const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
+    LLAPI bool simulateDestory();
+    LLAPI bool simulateDestroy();
+    LLAPI bool simulateUseItem();
+    LLAPI bool simulateSneak();
+    LLAPI bool simulateStopSneaking();
+    LLAPI static class SimulatedPlayer* create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
+    LLAPI static class SimulatedPlayer* create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId = 0);
+    LLAPI static class SimulatedPlayer* create(std::string const& name, class Vec3 const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATEDPLAYER

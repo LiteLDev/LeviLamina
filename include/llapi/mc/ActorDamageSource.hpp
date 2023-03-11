@@ -59,7 +59,7 @@ class ActorDamageSource {
     char filler[4];
 
 public:
-    LIAPI Actor* getEntity();
+    LLAPI Actor* getEntity();
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGESOURCE

@@ -6,7 +6,7 @@
 
 // helper
 #define H do_hash
-LIAPI bool checkSlotName(const std::string& slot) {
+LLAPI bool checkSlotName(const std::string& slot) {
     switch (H(slot.c_str())) {
     case H("list"):
         break;

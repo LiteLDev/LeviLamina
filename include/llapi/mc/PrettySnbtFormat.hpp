@@ -9,8 +9,8 @@ protected:
     {
         std::string mPrefix;
         std::string mSuffix;
-        LIAPI void toPlayerFormat();
-        LIAPI void toConsoleFormat();
+        LLAPI void toPlayerFormat();
+        LLAPI void toConsoleFormat();
     };
 
     bool mForPlayer = false;
@@ -22,8 +22,8 @@ protected:
     std::string mIndent = "    ";
     std::string mSeparator = ",";
     std::string mColon = ":";
-    LIAPI bool setStringColor(std::string& in, mce::Color const& color);
-    LIAPI void setDefaultColor();
+    LLAPI bool setStringColor(std::string& in, mce::Color const& color);
+    LLAPI void setDefaultColor();
 
     template <typename T>
     friend void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format) = delete;
@@ -33,26 +33,26 @@ protected:
     friend void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format, Tag::Type childrenType);
 
 public:
-    LIAPI PrettySnbtFormat();
-    LIAPI std::string getColorCode(mce::Color const& color) const;
-    LIAPI std::string getResetColorCode() const;
-    LIAPI std::string getItalicCode() const;
+    LLAPI PrettySnbtFormat();
+    LLAPI std::string getColorCode(mce::Color const& color) const;
+    LLAPI std::string getResetColorCode() const;
+    LLAPI std::string getItalicCode() const;
 
     template <Tag::Type type>
-    LIAPI bool setValueColor(mce::Color const& color);
+    LLAPI bool setValueColor(mce::Color const& color);
     template <Tag::Type type>
-    LIAPI bool setValueFormat(std::string const& prefix, std::string const& suffix);
+    LLAPI bool setValueFormat(std::string const& prefix, std::string const& suffix);
     template <Tag::Type type>
-    LIAPI bool setExpand(bool expand);
+    LLAPI bool setExpand(bool expand);
 
-    LIAPI bool setKeyColor(mce::Color const& color);
-    LIAPI bool isPlayerFormat() const;
-    LIAPI bool setColonColor(mce::Color const& color);
-    LIAPI bool setSeparatorColor(mce::Color const& color);
-    LIAPI bool setIndent(int indent);
+    LLAPI bool setKeyColor(mce::Color const& color);
+    LLAPI bool isPlayerFormat() const;
+    LLAPI bool setColonColor(mce::Color const& color);
+    LLAPI bool setSeparatorColor(mce::Color const& color);
+    LLAPI bool setIndent(int indent);
 
-    LIAPI void switchToPlayerFormat();
-    LIAPI void switchToConsoleFormat();
+    LLAPI void switchToPlayerFormat();
+    LLAPI void switchToConsoleFormat();
 
-    LIAPI static PrettySnbtFormat const& getDefaultFormat(bool forPlayer);
+    LLAPI static PrettySnbtFormat const& getDefaultFormat(bool forPlayer);
 };

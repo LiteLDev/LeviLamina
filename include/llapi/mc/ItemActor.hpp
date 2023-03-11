@@ -21,10 +21,10 @@ class ItemActor : public Actor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    LIAPI ItemStack* getItemStack();
-    LIAPI int getDespawnTime();
-    LIAPI bool setDespawnTime(int);
-    LIAPI int getLatestSpawnTime();
+    LLAPI ItemStack* getItemStack();
+    LLAPI int getDespawnTime();
+    LLAPI bool setDespawnTime(int);
+    LLAPI int getLatestSpawnTime();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTOR
 public:

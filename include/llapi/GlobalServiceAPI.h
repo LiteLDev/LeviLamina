@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef LIAPI
+#ifndef LLAPI
 #ifdef LITELOADER_EXPORTS
-#define LIAPI __declspec(dllexport)
+#define LLAPI __declspec(dllexport)
 #else
-#define LIAPI __declspec(dllimport)
+#define LLAPI __declspec(dllimport)
 #endif
 #endif
 
@@ -28,8 +28,8 @@ class LevelStorage;
 
 #ifdef LITELOADER_EXPORTS
 template <typename T>
-LIAPI inline T* Global = nullptr;
+LLAPI inline T* Global = nullptr;
 #else
 template <typename T>
-LIAPI inline T* Global;
+LLAPI inline T* Global;
 #endif

@@ -63,7 +63,7 @@ public:
         friend class Logger;
 
     protected:
-        LIAPI explicit OutputStream();
+        LLAPI explicit OutputStream();
 
     public:
         Logger* logger{};
@@ -76,7 +76,7 @@ public:
         std::ostringstream os;
         bool locked = false; // Deprecated
 
-        LIAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
+        LLAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
 
         template <typename T>
         OutputStream& operator<<(T t) {
@@ -131,10 +131,10 @@ public:
     };
 
 private:
-    LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
-    LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
+    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
+    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
 
-    LIAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
+    LLAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
 
 public:
     std::string title;
@@ -160,12 +160,12 @@ public:
         return endlImpl(GetCurrentModule(), o);
     };
 
-    LIAPI bool setFile(const std::string& logFile, bool appendMode = true);
-    LIAPI bool setFile(nullptr_t);
+    LLAPI bool setFile(const std::string& logFile, bool appendMode = true);
+    LLAPI bool setFile(nullptr_t);
 
-    LIAPI bool tryLock();
-    LIAPI bool lock();
-    LIAPI bool unlock();
+    LLAPI bool tryLock();
+    LLAPI bool lock();
+    LLAPI bool unlock();
 
     OutputStream debug;
     OutputStream info;
@@ -176,15 +176,15 @@ public:
     inline Logger()
     : Logger("") {
     }
-    LIAPI explicit Logger(const std::string& title);
+    LLAPI explicit Logger(const std::string& title);
 
 private:
-    LIAPI CsLock& getLocker();
+    LLAPI CsLock& getLocker();
 
 
     // For compatibility
 private:
-    LIAPI static void initLockImpl(HMODULE hPlugin);
-    LIAPI static void lockImpl(HMODULE hPlugin);
-    LIAPI static void unlockImpl(HMODULE hPlugin);
+    LLAPI static void initLockImpl(HMODULE hPlugin);
+    LLAPI static void lockImpl(HMODULE hPlugin);
+    LLAPI static void unlockImpl(HMODULE hPlugin);
 };

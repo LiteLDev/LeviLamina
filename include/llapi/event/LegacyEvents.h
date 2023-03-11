@@ -93,12 +93,12 @@ constexpr bool Cancel = false;
 template <typename EVENT>
 class EventManager {
 public:
-    LIAPI static int  addEventListener(std::string name, std::function<bool(EVENT)> callback);
-    LIAPI static int  addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
-    LIAPI static bool removeEventListener(int id);
-    LIAPI static bool hasListener();
-    LIAPI static bool call(EVENT& ev);
-    LIAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
+    LLAPI static int  addEventListener(std::string name, std::function<bool(EVENT)> callback);
+    LLAPI static int  addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
+    LLAPI static bool removeEventListener(int id);
+    LLAPI static bool hasListener();
+    LLAPI static bool call(EVENT& ev);
+    LLAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
 };
 
 /**
@@ -169,8 +169,8 @@ public:
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 protected:
     friend class EventManager<EVENT>;
-    LIAPI static std::list<std::pair<string, std::function<bool(const EVENT&)>>> listeners;
-    LIAPI static std::list<std::pair<string, std::function<bool(EVENT&)>>>       listenersNoConst;
+    LLAPI static std::list<std::pair<string, std::function<bool(const EVENT&)>>> listeners;
+    LLAPI static std::list<std::pair<string, std::function<bool(EVENT&)>>>       listenersNoConst;
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 };
 

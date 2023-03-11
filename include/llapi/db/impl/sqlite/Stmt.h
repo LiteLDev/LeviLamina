@@ -51,7 +51,7 @@ public:
     int getParamsCount() const;
     DBType getType() const;
 
-    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
+    LLAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
 };
 
 } // namespace DB

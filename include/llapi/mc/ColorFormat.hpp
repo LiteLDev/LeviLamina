@@ -19,34 +19,34 @@ namespace ColorFormat {
 
 #define AFTER_EXTRA
 // Add Member There
-LIAPI extern std::unordered_map<std::string, const char*> const colorCodeToConsoleMap;
-LIAPI extern std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap;
+LLAPI extern std::unordered_map<std::string, const char*> const colorCodeToConsoleMap;
+LLAPI extern std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap;
 
 
-LIAPI std::string nearestColorCodeFromColor(mce::Color const& color);
-LIAPI mce::Color ColorFromConsoleCode(std::string const& consoleCode);
+LLAPI std::string nearestColorCodeFromColor(mce::Color const& color);
+LLAPI mce::Color ColorFromConsoleCode(std::string const& consoleCode);
 
-LIAPI std::string consoleCodeFromColorCode(std::string const& mcCode);
-LIAPI std::string nearestColorCodeFromConsoleCode(std::string const& consoleCode);
+LLAPI std::string consoleCodeFromColorCode(std::string const& mcCode);
+LLAPI std::string nearestColorCodeFromConsoleCode(std::string const& consoleCode);
 
-LIAPI std::string& convertToMc(std::string& str);
-LIAPI std::string convertToMc(std::string&& str);
+LLAPI std::string& convertToMc(std::string& str);
+LLAPI std::string convertToMc(std::string&& str);
 
 [[deprecated("This is a typo. Use convertToConsole instead")]]
-LIAPI std::string& convertToColsole(std::string& str, bool keepColorCode = false);
+LLAPI std::string& convertToColsole(std::string& str, bool keepColorCode = false);
 [[deprecated("This is a typo. Use convertToConsole instead")]]
-LIAPI std::string convertToColsole(std::string&& str, bool keepColorCode = false);
+LLAPI std::string convertToColsole(std::string&& str, bool keepColorCode = false);
  
-LIAPI std::string& convertToConsole(std::string& str, bool keepColorCode = false);
-LIAPI std::string convertToConsole(std::string&& str, bool keepColorCode = false);
+LLAPI std::string& convertToConsole(std::string& str, bool keepColorCode = false);
+LLAPI std::string convertToConsole(std::string&& str, bool keepColorCode = false);
 
-LIAPI std::string& removeColorCode(std::string& str);
-LIAPI std::string removeColorCode(std::string&& str);
+LLAPI std::string& removeColorCode(std::string& str);
+LLAPI std::string removeColorCode(std::string&& str);
 
 [[deprecated("Use convertToMc instead")]]
-LIAPI std::string& transferConsoleColorToColorCode(std::string& str);
+LLAPI std::string& transferConsoleColorToColorCode(std::string& str);
 [[deprecated("Use convertToConsole instead")]]
-LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode = false);
+LLAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode = false);
 
 #undef AFTER_EXTRA
     /**

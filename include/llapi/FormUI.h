@@ -86,7 +86,7 @@ protected:
 
 class Button : public SimpleFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     using ButtonCallback = std::function<void(Player*)>;
@@ -113,7 +113,7 @@ public:
 //////////////////////////////// Custom Form Elements ////////////////////////////////
 class CustomFormElement {
 protected:
-    LIAPI virtual string serialize() = 0;
+    LLAPI virtual string serialize() = 0;
     friend class CustomForm;
 
 public:
@@ -132,18 +132,18 @@ public:
         this->name = _name;
     }
     inline virtual Type getType() = 0;
-    LIAPI std::string getString();
+    LLAPI std::string getString();
     [[deprecated("Please use getInt")]]
-    LIAPI int getNumber();
-    LIAPI int getInt();
-    LIAPI float getFloat();
-    LIAPI double getDouble();
-    LIAPI bool getBool();
+    LLAPI int getNumber();
+    LLAPI int getInt();
+    LLAPI float getFloat();
+    LLAPI double getDouble();
+    LLAPI bool getBool();
 };
 
 class Label : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     string text;
@@ -163,7 +163,7 @@ public:
 
 class Input : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     string title, placeholder, def;
@@ -189,7 +189,7 @@ public:
 
 class Toggle : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
 public:
@@ -215,7 +215,7 @@ public:
 
 class Dropdown : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     string title;
@@ -248,7 +248,7 @@ public:
 
 class Slider : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     string title;
@@ -285,7 +285,7 @@ public:
 
 class StepSlider : public CustomFormElement {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     string title;
@@ -325,7 +325,7 @@ protected:
 
 class SimpleForm : public FormImpl {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     using Callback = std::function<void(Player*, int)>;
@@ -343,16 +343,16 @@ public:
         append(element);
         SimpleForm(title, content, args...);
     }
-    LIAPI SimpleForm& setTitle(const string& title);
-    LIAPI SimpleForm& setContent(const string& content);
-    LIAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
-    LIAPI SimpleForm& append(const Button& element);
-    LIAPI bool sendTo(Player* player, Callback callback = Callback());
+    LLAPI SimpleForm& setTitle(const string& title);
+    LLAPI SimpleForm& setContent(const string& content);
+    LLAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
+    LLAPI SimpleForm& append(const Button& element);
+    LLAPI bool sendTo(Player* player, Callback callback = Callback());
 };
 
 class ModalForm : public FormImpl {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     using Callback = std::function<void(Player*, bool)>;
@@ -370,16 +370,16 @@ public:
     ModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, Args... args) {
         ModalForm(title, content, confirmButton, cancelButton, args...);
     }
-    LIAPI ModalForm& setTitle(const string& title);
-    LIAPI ModalForm& setContent(const string& content);
-    LIAPI ModalForm& setConfirmButton(const string& text);
-    LIAPI ModalForm& setCancelButton(const string& text);
-    LIAPI bool sendTo(Player* player, Callback callback = Callback());
+    LLAPI ModalForm& setTitle(const string& title);
+    LLAPI ModalForm& setContent(const string& content);
+    LLAPI ModalForm& setConfirmButton(const string& text);
+    LLAPI ModalForm& setCancelButton(const string& text);
+    LLAPI bool sendTo(Player* player, Callback callback = Callback());
 };
 
 class CustomForm : public FormImpl {
 protected:
-    LIAPI string serialize() override;
+    LLAPI string serialize() override;
 
 public:
     using Callback = std::function<void(Player*, std::map<string, std::shared_ptr<CustomFormElement>>)>;
@@ -397,42 +397,42 @@ public:
         append(element);
         CustomForm(title, args...);
     }
-    LIAPI CustomForm& setTitle(const string& title);
+    LLAPI CustomForm& setTitle(const string& title);
 
-    LIAPI CustomForm& addLabel(const string& name, string text);
-    LIAPI CustomForm& addInput(const string& name, string title, string placeholder = "", string def = "");
-    LIAPI CustomForm& addToggle(const string& name, string title, bool def = false);
-    LIAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int defId = 0);
-    LIAPI CustomForm& addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
-    LIAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int defId = 0);
+    LLAPI CustomForm& addLabel(const string& name, string text);
+    LLAPI CustomForm& addInput(const string& name, string title, string placeholder = "", string def = "");
+    LLAPI CustomForm& addToggle(const string& name, string title, bool def = false);
+    LLAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int defId = 0);
+    LLAPI CustomForm& addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
+    LLAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int defId = 0);
 
-    LIAPI CustomForm& append(const Label& element);
-    LIAPI CustomForm& append(const Input& element);
-    LIAPI CustomForm& append(const Toggle& element);
-    LIAPI CustomForm& append(const Dropdown& element);
-    LIAPI CustomForm& append(const Slider& element);
-    LIAPI CustomForm& append(const StepSlider& element);
+    LLAPI CustomForm& append(const Label& element);
+    LLAPI CustomForm& append(const Input& element);
+    LLAPI CustomForm& append(const Toggle& element);
+    LLAPI CustomForm& append(const Dropdown& element);
+    LLAPI CustomForm& append(const Slider& element);
+    LLAPI CustomForm& append(const StepSlider& element);
 
-    LIAPI bool sendTo(Player* player, Callback callback);
-    LIAPI bool sendToForRawJson(Player* player, Callback2 callback);
-    LIAPI CustomFormElement* getElement(const string& name);
-    LIAPI CustomFormElement* getElement(int index);
-    LIAPI CustomFormElement::Type getType(int index);
+    LLAPI bool sendTo(Player* player, Callback callback);
+    LLAPI bool sendToForRawJson(Player* player, Callback2 callback);
+    LLAPI CustomFormElement* getElement(const string& name);
+    LLAPI CustomFormElement* getElement(int index);
+    LLAPI CustomFormElement::Type getType(int index);
 
-    LIAPI string getString(const string& name);
+    LLAPI string getString(const string& name);
     [[deprecated("Please use getInt")]]
-    LIAPI int getNumber(const string& name);
-    LIAPI int getInt(const string& name);
-    LIAPI float getFloat(const string& name);
-    LIAPI double getDouble(const string& name);
-    LIAPI bool getBool(const string& name);
-    LIAPI string getString(int index);
+    LLAPI int getNumber(const string& name);
+    LLAPI int getInt(const string& name);
+    LLAPI float getFloat(const string& name);
+    LLAPI double getDouble(const string& name);
+    LLAPI bool getBool(const string& name);
+    LLAPI string getString(int index);
     [[deprecated("Please use getInt")]]
-    LIAPI int getNumber(int index);
-    LIAPI int getInt(int index);
-    LIAPI float getFloat(int index);
-    LIAPI double getDouble(int index);
-    LIAPI bool getBool(int index);
+    LLAPI int getNumber(int index);
+    LLAPI int getInt(int index);
+    LLAPI float getFloat(int index);
+    LLAPI double getDouble(int index);
+    LLAPI bool getBool(int index);
 
     // Tool Functions
     template <typename T>

@@ -25,35 +25,35 @@ class ListTag : public Tag {
     Tag::Type elementType;
 
 public:
-    LIAPI static std::unique_ptr<ListTag> create();
-    LIAPI std::vector<Tag*>& value();
-    LIAPI Tag const* operator[](int index) const;
-    LIAPI Tag::Type getElementType() const;
-    LIAPI size_t getSize() const;
-    LIAPI vector<Tag*> get();
+    LLAPI static std::unique_ptr<ListTag> create();
+    LLAPI std::vector<Tag*>& value();
+    LLAPI Tag const* operator[](int index) const;
+    LLAPI Tag::Type getElementType() const;
+    LLAPI size_t getSize() const;
+    LLAPI vector<Tag*> get();
 
     // get value
-    LIAPI unsigned char getByte(int) const;
-    LIAPI short getShort(int) const;
-    LIAPI int64_t getInt64(int) const;
-    LIAPI TagMemoryChunk getByteArray(int) const;
+    LLAPI unsigned char getByte(int) const;
+    LLAPI short getShort(int) const;
+    LLAPI int64_t getInt64(int) const;
+    LLAPI TagMemoryChunk getByteArray(int) const;
 
 
-    LIAPI void addEnd();
-    LIAPI void addByte(unsigned char v);
-    LIAPI void addShort(short v);
-    LIAPI void addInt(int v);
-    LIAPI void addInt64(__int64 v);
-    LIAPI void addFloat(float v);
-    LIAPI void addDouble(double v);
-    LIAPI void addString(const std::string& v);
-    LIAPI void addByteArray(TagMemoryChunk);
-    LIAPI void addByteArray(char data[], size_t size);
-    LIAPI void addIntArray(TagMemoryChunk);
-    LIAPI void addIntArray(int data[], size_t size);
+    LLAPI void addEnd();
+    LLAPI void addByte(unsigned char v);
+    LLAPI void addShort(short v);
+    LLAPI void addInt(int v);
+    LLAPI void addInt64(__int64 v);
+    LLAPI void addFloat(float v);
+    LLAPI void addDouble(double v);
+    LLAPI void addString(const std::string& v);
+    LLAPI void addByteArray(TagMemoryChunk);
+    LLAPI void addByteArray(char data[], size_t size);
+    LLAPI void addIntArray(TagMemoryChunk);
+    LLAPI void addIntArray(int data[], size_t size);
 
-    LIAPI std::vector<Tag*>::const_iterator begin() const;
-    LIAPI std::vector<Tag*>::const_iterator end() const;
+    LLAPI std::vector<Tag*>::const_iterator begin() const;
+    LLAPI std::vector<Tag*>::const_iterator end() const;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAG

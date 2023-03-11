@@ -398,7 +398,7 @@ bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
 }
 
 // Helper
-LIAPI bool RegisterPlugin(
+LLAPI bool RegisterPlugin(
     HMODULE                            handle,
     std::string                        name,
     std::string                        desc,
@@ -411,7 +411,7 @@ LIAPI bool RegisterPlugin(
 }
 
 // for abi compatibility
-LIAPI bool RegisterPlugin(
+LLAPI bool RegisterPlugin(
     HMODULE                            handle,
     std::string                        name,
     std::string                        desc,
