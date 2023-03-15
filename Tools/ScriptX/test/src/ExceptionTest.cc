@@ -46,7 +46,11 @@ TEST_F(ExceptionTest, Function) {
   try {
     EXPECT_THROW(
         {
-          engine->eval(TS().js("throw Error('hello error')").lua("error('hello error')").select());
+          engine->eval(TS()
+            .js("throw Error('hello error')")
+            .lua("error('hello error')")
+            .py("raise Exception('hello error')")
+          .select());
         },
         Exception);
 
@@ -63,6 +67,17 @@ TEST_F(ExceptionTest, Function) {
 
     engine->set("func", func);
     Local<Value> ret;
+#ifdef SCRIPTX_LANG_PYTHON
+  engine->eval(R"(
+exceptiontest_function_var = None
+try:
+  func()
+  exceptiontest_function_var = False
+except:
+  exceptiontest_function_var = True
+)");
+  ret = engine->eval("exceptiontest_function_var");
+#else
     ret = engine->eval(TS().js(R"(
 try {
     func();
@@ -75,6 +90,7 @@ try {
        return not pcall(func)
   )")
                            .select());
+#endif
 
     EXPECT_TRUE(ret.isBoolean());
     EXPECT_TRUE(ret.asBoolean().value());
@@ -96,6 +112,18 @@ TEST_F(ExceptionTest, StackTrace) {
   EngineScope engineScope(engine);
   Local<Value> func;
 
+#ifdef SCRIPTX_LANG_PYTHON
+  engine->eval(R"(
+def exceptionStackTraceTestThrow():
+  raise Exception("recursive too deep")
+
+def exceptionStackTraceTest(depth):
+  if (depth >= 10):
+    exceptionStackTraceTestThrow()
+  exceptionStackTraceTest(depth + 1)
+)");
+  func = engine->eval("exceptionStackTraceTest");
+#else
   func = engine->eval(TS().js(R"(
 function exceptionStackTraceTestThrow() {
   throw new Error("recursive too deep");
@@ -119,6 +147,7 @@ end
 return exceptionStackTraceTest
 )")
                           .select());
+#endif
 
   try {
 #ifdef SCRIPTX_BACKEND_QUICKJS
@@ -149,8 +178,12 @@ TEST_F(ExceptionTest, Cross) {
   auto exception = e.exception();
   try {
     EXPECT_FALSE(exception.isNull());
+    #ifdef SCRIPTX_LANG_PYTHON
+    engine->eval("def exceptiontest_cross_function(e):\n\traise e");
+    #endif
     auto throwIt = engine->eval(TS().js("function throwIt(e) { throw e; }; throwIt")
                                     .lua("return function (e) error(e) end;")
+                                    .py("exceptiontest_cross_function")
                                     .select());
     throwIt.asFunction().call({}, exception);
   } catch (Exception& ex) {

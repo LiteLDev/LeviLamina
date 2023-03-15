@@ -187,12 +187,12 @@ Local<Value> JscEngine::loadFile(const Local<String>& scriptFile) {
 
   std::string sourceFilePath = scriptFile.toString();
   std::size_t pathSymbol = sourceFilePath.rfind("/");
-  if(pathSymbol != -1)
+  if(pathSymbol != std::string::npos)
     sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   else
   {
     pathSymbol = sourceFilePath.rfind("\\");
-    if(pathSymbol != -1)
+    if(pathSymbol != std::string::npos)
       sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   }
   Local<String> sourceFileName = String::newString(sourceFilePath);

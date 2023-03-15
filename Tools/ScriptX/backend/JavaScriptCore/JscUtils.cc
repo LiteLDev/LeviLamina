@@ -73,7 +73,7 @@ std::string_view StringHolder::stringView() const {
 std::string StringHolder::string() const {
   jsc_backend::initString(internalHolder_);
   internalHolder_.inited = false;
-  return std::move(internalHolder_.stringContent);
+  return internalHolder_.stringContent;
 }
 
 #if defined(__cpp_char8_t)

@@ -99,6 +99,7 @@ TEST_F(PressureTest, All) {
         auto ctor = engine
                         ->eval(TS().js("script.engine.test.TestClass")
                                    .lua("return script.engine.test.TestClass")
+                                   .py("script.engine.test.TestClass")
                                    .select())
                         .asObject();
 
@@ -122,9 +123,11 @@ TEST_F(PressureTest, All) {
 
         globals.emplace_back(engine->eval(TS().js("({hello: 123, world: 456})")
                                               .lua("return {hello = 123, world = 456}")
+                                              .py("{'hello': 123, 'world': 456}")
                                               .select()));
         weaks.emplace_back(engine->eval(TS().js("({hello: 123, world: 456})")
                                             .lua("return {hello = 123, world = 456}")
+                                            .py("{'hello': 123, 'world': 456}")
                                             .select()));
         engine->messageQueue()->loopQueue(utils::MessageQueue::LoopType::kLoopOnce);
       }
@@ -142,6 +145,7 @@ TEST_F(PressureTest, All) {
         engine->newNativeClass<TestClass>();
         engine->eval(TS().js("new script.engine.test.TestClass();")
                          .lua("script.engine.test.TestClass();")
+                         .py("script.engine.test.TestClass()")
                          .select());
         engine->messageQueue()->loopQueue(utils::MessageQueue::LoopType::kLoopOnce);
       }
