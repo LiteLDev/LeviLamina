@@ -126,24 +126,34 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         std::filesystem::remove_all(LLSE_PLUGIN_PACKAGE_TEMP_DIR, ec);
     }
 
-    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
+    std::string entryPath = PythonHelper::findEntryScript(dirPath);
     if (entryPath.empty())
         return false;
-    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
+    std::string pluginName = PythonHelper::getPluginPackageName(dirPath);
 
-    // Run "npm install" if needed
-    if (NodeJsHelper::doesPluginPackHasDependency(dirPath) && !filesystem::exists(filesystem::path(dirPath) / "node_modules")) {
-        int exitCode = 0;
-        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
-        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
-            logger.info(tr("llse.loader.nodejs.executeNpmInstall.success"));
-        else
-            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", fmt::arg("code", exitCode)));
+    // Run "pip install" if needed
+    if(!filesystem::exists(filesystem::path(dirPath) / "site-packages"))
+    {
+        std::string dependTmpFilePath = PythonHelper::getPluginPackDependencyFilePath(dirPath);
+        if (!dependTmpFilePath.empty())
+        {
+            int exitCode = 0;
+            logger.info(tr("llse.loader.python.executePipInstall.start",
+                fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
+            
+            if ((exitCode = PythonHelper::executePipCommand("pip install -r " + dependTmpFilePath + " -t " + dirPath)) == 0)
+                logger.info(tr("llse.loader.python.executePipInstall.success"));
+            else
+                logger.error(tr("llse.loader.python.executePipInstall.fail", fmt::arg("code", exitCode)));
+            
+            // remove temp dependency file after installation
+            std::error_code ec;
+            std::filesystem::remove(dependTmpFilePath, &ec);
+        }
     }
 
     // Create engine & Load plugin
     ScriptEngine* engine = nullptr;
-    node::Environment* env = nullptr;
     try {
         engine = EngineManager::newEngine();
         {
@@ -153,9 +163,26 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
             ENGINE_OWN_DATA()->logger.title = pluginName;
             // bindAPIs
-            BindAPIs(engine);
+            try {
+                BindAPIs(engine);
+            } catch (const Exception& e) {
+                logger.error("Fail in Binding APIs!\n");
+                throw;
+            }
         }
-        if (!NodeJsHelper::loadPluginCode(engine, entryPath, dirPath))
+
+        // Load depend libs
+        try {
+            for (auto& [path, content] : depends) {
+                engine->eval(content, path);
+            }
+        } catch (const Exception& e) {
+            logger.error("Fail in Loading Dependence Lib!\n");
+            throw;
+        }
+
+        // Load script
+        if (!PythonHelper::loadPluginCode(engine, entryPath, dirPath))
             throw "Uncaught exception thrown in code";
 
         if (!PluginManager::getPlugin(pluginName)) {
@@ -164,40 +191,30 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             ll::Version ver(1, 0, 0);
             std::map<string, string> others = {};
 
-            // Read information from package.json
+            // Read information from pyproject.toml
             try {
-                std::filesystem::path packageFilePath = std::filesystem::path(dirPath) / "package.json";
-                std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
-                nlohmann::json j;
-                file >> j;
-                file.close();
+                std::filesystem::path packageFilePath = std::filesystem::path(dirPath) / "pyproject.toml";
+                string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
+                
+                toml::table configData = toml::parse_file(packageFilePathStr);
+                auto projectNode = configData["project"];
 
                 // description
-                if (j.contains("description")) {
-                    description = j["description"].get<std::string>();
+                if(projectNode.contains("description"))
+                {
+                    description = *(projectNode["description"].value<std::string>());
                 }
+
                 // version
-                if (j.contains("version") && j["version"].is_string()) {
-                    ver = ll::Version::parse(j["version"].get<std::string>());
+                if(projectNode.contains("version"))
+                {
+                    version = ll::Version::parse(*(projectNode["version"].value<std::string>()));
                 }
-                // license
-                if (j.contains("license") && j["license"].is_string()) {
-                    others["License"] = j["license"].get<std::string>();
-                }
-                else if (j["license"].is_object() && j["license"].contains("url")) {
-                    others["License"] = j["license"]["url"].get<std::string>();
-                }
-                // repository
-                if (j.contains("repository") && j["repository"].is_string()) {
-                    others["Repository"] = j["repository"].get<std::string>();
-                }
-                else if (j["repository"].is_object() && j["repository"].contains("url")) {
-                    others["Repository"] = j["repository"]["url"].get<std::string>();
-                }
+
+                // TODO: more information to read
             }
-            catch (...) {
-                logger.warn(tr("llse.loader.nodejs.register.fail", fmt::arg("name", pluginName)));
-            }
+            catch (...)
+            { }
 
             // register
             PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
@@ -209,7 +226,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
 
         // Success
         logger.info(tr("llse.loader.loadMain.loadedPlugin",
-            fmt::arg("type", "Node.js"),
+            fmt::arg("type", "Python"),
             fmt::arg("name", pluginName)));
         return true;
     }
@@ -221,9 +238,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             PrintException(e);
             ExitEngineScope exit;
 
-            // NodeJs use his own setTimeout, so no need to remove
-            // LLSERemoveTimeTaskData(engine);
-
+            LLSERemoveTimeTaskData(engine);
             LLSERemoveAllEventListeners(engine);
             LLSERemoveCmdRegister(engine);
             LLSERemoveCmdCallback(engine);
@@ -233,7 +248,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             EngineManager::unRegisterEngine(engine);
         }
         if (engine) {
-            NodeJsHelper::stopEngine(engine);
+            engine->destroy();
         }
     }
     catch (const std::exception& e) {
@@ -250,28 +265,11 @@ std::string findEntryScript(const std::string& dirPath)
 {
     auto dirPath_obj = std::filesystem::path(dirPath);
 
-    std::filesystem::path packageFilePath = dirPath_obj / "package.json";
-    if (!std::filesystem::exists(packageFilePath))
+    std::filesystem::path entryFilePath = dirPath_obj / "__init__.py";
+    if (!std::filesystem::exists(entryFilePath))
         return "";
-
-    try {
-        std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
-        nlohmann::json j;
-        file >> j;
-        std::string entryFile = "index.js";
-        if (j.contains("main")) {
-            entryFile = j["main"].get<std::string>();
-        }
-        auto entryPath = std::filesystem::canonical(dirPath_obj / std::filesystem::path(entryFile));
-        if (!std::filesystem::exists(entryPath))
-            return "";
-        else
-            return UTF82String(entryPath.u8string());
-    }
-    catch (...)
-    {
-        return "";
-    }
+    else
+        return UTF82String(entryFilePath.u8string());
 }
 
 std::string getPluginPackageName(const std::string& dirPath)
@@ -281,12 +279,12 @@ std::string getPluginPackageName(const std::string& dirPath)
     std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("pyproject.toml");
     if (!std::filesystem::exists(packageFilePath))
         return "";
-
+    
     try {
         string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
         toml::table configData = toml::parse_file(packageFilePathStr);
         std::optional<std::string> packageName = configData["project"]["name"].value<std::string>();
-        return *packageName;
+        return packageName ? *packageName : "";
     }
     catch (...)
     {
@@ -294,27 +292,53 @@ std::string getPluginPackageName(const std::string& dirPath)
     }
 }
 
-bool doesPluginPackHasDependency(const std::string& dirPath)
+std::string getPluginPackDependencyFilePath(const std::string& dirPath)
 {
     auto dirPath_obj = std::filesystem::path(dirPath);
-
-    std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("package.json");
-    if (!std::filesystem::exists(packageFilePath))
-        return false;
-
-    try {
-        std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
-        nlohmann::json j;
-        file >> j;
-        if (j.contains("dependencies")) {
-            return true;
-        }
-        return false;
-    }
-    catch (...)
+    std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("pyproject.toml");
+    std::filesystem::path requirementsFilePath = dirPath_obj / std::filesystem::path("requirements.txt");
+    std::filesystem::path requirementsTmpFilePath 
+        = dirPath_obj / std::filesystem::path("_requirements_llse_temp.txt");
+    
+    // if requirements.txt exists, copy a temp version
+    if(std::filesystem::exists(requirementsFilePath))
     {
-        return false;
+        std::error_code ec;
+        std::filesystem::copy_file(requirementsFilePath, requirementsTmpFilePath, &ec);
     }
+
+    if (std::filesystem::exists(packageFilePath))
+    {
+        // copy dependencies from pyproject.toml to _requirements_llse_temp.txt
+        std::string dependsAdded = "";
+        try {
+            string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
+            toml::table configData = toml::parse_file(packageFilePathStr);
+            toml::array* arr = configData["project"]["dependencies"].as_array();
+            arr->for_each([](auto&& el)
+            {
+                if constexpr (toml::is_string<decltype(el)>)
+                {
+                    std::optional<std::string> depend = el.value<std::string>();
+                    dependsAdded += "\n" + *depend;
+                }
+            });
+        }
+        catch (...)
+        { }
+
+        if(!dependsAdded.empty())
+        {
+            std::ofstream fout(UTF82String(requirementsTmpFilePath.make_preferred().u8string()), std::ios::app);
+            fout << dependsAdded;
+            fout.close();
+        }
+    }
+
+    if(std::filesystem::exists(requirementsTmpFilePath))
+        return UTF82String(requirementsTmpFilePath.make_preferred().u8string());
+    else
+        return "";
 }
 
 bool processConsolePipCmd(const std::string& cmd)

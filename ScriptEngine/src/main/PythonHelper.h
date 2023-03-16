@@ -15,7 +15,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
 
 std::string findEntryScript(const std::string& dirPath);
 std::string getPluginPackageName(const std::string& dirPath);
-bool doesPluginPackHasDependency(const std::string& dirPath);
+std::string getPluginPackDependencyFilePath(const std::string& dirPath);
 
 bool processConsolePipCmd(const std::string& cmd);
 int executePipCommand(std::string cmd, std::string workingDir = LLSE_PLUGINS_ROOT_DIR);
