@@ -30,24 +30,20 @@ namespace py_runtime_settings {
   #define SCRIPTX_ENVIRONMENT_VARS_SEPERATOR L";"
 
   // Python runtime config default values
-  // .\\lib\\python3
-  #define SCRIPTX_DEFAULT_PYTHON_HOME \
-    L"." SCRIPTX_PATH_SEPERATOR L"lib" SCRIPTX_PATH_SEPERATOR L"python3" SCRIPTX_PATH_SEPERATOR
-  // (.\\lib\\python3\\)Lib
-  #define SCRIPTX_DEFAULT_PYTHON_LIBS_SUFFIX \
-    L"Lib" SCRIPTX_PATH_SEPERATOR
+  // ".\\"
+  #define SCRIPTX_DEFAULT_PYTHON_HOME L"." SCRIPTX_PATH_SEPERATOR
+  // {".\\python310.zip"}
+  #define SCRIPTX_DEFAULT_PYTHON_LIB_PATHS  {SCRIPTX_DEFAULT_PYTHON_HOME L"python310.zip"}
 
 #elif defined(__linux__) || defined(__unix__)
   #define SCRIPTX_PATH_SEPERATOR L"/"
   #define SCRIPTX_ENVIRONMENT_VARS_SEPERATOR L":"
 
   // Python runtime config default values
-  // ./lib/python3/
-  #define SCRIPTX_DEFAULT_PYTHON_HOME \
-    L"." SCRIPTX_PATH_SEPERATOR L"lib" SCRIPTX_PATH_SEPERATOR L"python3" SCRIPTX_PATH_SEPERATOR
-  // (./lib/python3/)lib/python3.10/
-  #define SCRIPTX_DEFAULT_PYTHON_LIBS_SUFFIX \
-    L"lib" SCRIPTX_PATH_SEPERATOR L"python3.10" SCRIPTX_PATH_SEPERATOR
+  // "./"
+  #define SCRIPTX_DEFAULT_PYTHON_HOME L"." SCRIPTX_PATH_SEPERATOR
+  // {"./python310.zip"}
+  #define SCRIPTX_DEFAULT_PYTHON_LIB_PATHS  {SCRIPTX_DEFAULT_PYTHON_HOME L"python310.zip"}
 
 #elif defined(__APPLE__)
   #define SCRIPTX_PATH_SEPERATOR L"/"
@@ -55,26 +51,13 @@ namespace py_runtime_settings {
 
   // TODO: Is this correct? Asuming that same as Linux
   // Python runtime config default values
-  // ./lib/python3/
-  #define SCRIPTX_DEFAULT_PYTHON_HOME \
-    L"." SCRIPTX_PATH_SEPERATOR L"lib" SCRIPTX_PATH_SEPERATOR L"python3" SCRIPTX_PATH_SEPERATOR
-  // (./lib/python3/)lib/python3.10/
-  #define SCRIPTX_DEFAULT_PYTHON_LIBS_SUFFIX \
-    L"lib" SCRIPTX_PATH_SEPERATOR L"python3.10" SCRIPTX_PATH_SEPERATOR
+  // "./"
+  #define SCRIPTX_DEFAULT_PYTHON_HOME L"." SCRIPTX_PATH_SEPERATOR
+  // {"./python310.zip"}
+  #define SCRIPTX_DEFAULT_PYTHON_LIB_PATHS  {SCRIPTX_DEFAULT_PYTHON_HOME L"python310.zip"}
 
 #else
-  #define SCRIPTX_PATH_SEPERATOR L"/"
-  #define SCRIPTX_ENVIRONMENT_VARS_SEPERATOR L":"
-
-  // TODO: Is this correct? Asuming that same as Linux
-  // Python runtime config default values
-  // ./lib/python3/
-  #define SCRIPTX_DEFAULT_PYTHON_HOME \
-    L"." SCRIPTX_PATH_SEPERATOR L"lib" SCRIPTX_PATH_SEPERATOR L"python3" SCRIPTX_PATH_SEPERATOR
-  // (./lib/python3/)lib/python3.10/
-  #define SCRIPTX_DEFAULT_PYTHON_LIBS_SUFFIX \
-    L"lib" SCRIPTX_PATH_SEPERATOR L"python3.10" SCRIPTX_PATH_SEPERATOR
-
+  static_assert("Need adaptation here");
 #endif
 
 
@@ -94,9 +77,7 @@ void initDefaultPythonRuntimeSettings() {
 
   // module search paths
   if(_SCRIPTX_PYTHON_MODULE_SEARCH_PATHS.empty()) {
-    setModuleSearchPaths(
-      {std::wstring(SCRIPTX_DEFAULT_PYTHON_HOME) + std::wstring(SCRIPTX_DEFAULT_PYTHON_LIBS_SUFFIX)}
-    );
+    setModuleSearchPaths(SCRIPTX_DEFAULT_PYTHON_LIB_PATHS);
   }
 }
 

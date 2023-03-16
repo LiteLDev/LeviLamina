@@ -43,57 +43,65 @@ Python API 提供的执行代码接口分为两种：其中 eval 类型的接口
 
 ## 标准库与运行时环境
 
-和其他的引擎略有不同的是，CPython使用了外置的标准库。因此，当你使用ScriptX嵌入Python解释器到你的应用程序时，除了动态链接库之外，还需要额外再携带一份Python运行时环境，以保证Python可以正常启动。
+和其他的引擎略有不同的是，CPython使用了外置的标准库。因此，当你使用ScriptX嵌入Python解释器到你的应用程序时，除了动态链接库之外，还需要额外再携带一份Python标准库的压缩包，以保证Python可以正常启动。
 
-这里将详细说明一下如何配置这一运行环境，以及如何为Python引擎设置与运行时环境相关的参数：
+### 下载CPython标准库压缩包
 
-### 下载CPython嵌入式运行环境
+1. 前往ScriptX单元测试项目下载python310.zip：
 
-1. 前往https://github.com/indygreg/python-build-standalone/releases，从项目Release中下载你打算运行的平台和架构所使用的运行时环境
-   - Windows x64环境下载：[cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz](https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz)
-   - MacOS Arm64环境下载：[cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz](https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz)
-   - Linux x64环境下载：[cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz](https://github.com/indygreg/python-build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz)
-   - 如果是其他平台，寻找并下载对应平台的运行时环境压缩包
-2. **如果上述项目失效**，也可以去下载ScriptX单元测试项目中储存的cpython-3.10.9.tar.gz。此包为ScriptX运行单元测试时自动拉取的嵌入式运行环境，和上述项目中下载的包完全相同。
    - Windows x64环境下载：https://github.com/LiteLDev/ScriptXTestLibs/tree/main/python/win64/embed-env
+
    - Linux x64环境下载：https://github.com/LiteLDev/ScriptXTestLibs/tree/main/python/linux64/embed-env
-3. 下载好压缩包后，将压缩包解压，得到一个名为`Python`的目录
-4. 将此目录重命名为`Python3`，并将其整个移动到`你应用程序所在目录/lib`目录下
 
-在你的应用程序启动时，将自动从此目录下寻找Python的标准库并加载。
+2. 将压缩包放置到你应用程序所在目录即可。
 
-另外，嵌入式运行时环境也有额外的好处：你可以在那个嵌入式环境目录下执行`./bin/python3 -m pip install xxx`来在此嵌入式运行环境中安装自定义pip包。安装的包可以在ScriptX引擎中直接导入和使用。
+在你的应用程序启动时，将自动从工作目录下寻找这个Python标准库并加载。
+
+### 自定义标准库压缩包
+
+如果你需要让嵌入解释器可以使用一些第三方的Pip包，可以按如下方法修改上面的压缩包：
+
+1. 将下载到的`python310.zip`解压，可以看到里面有个site-packages目录
+2. 安装 CPython 3.10.9
+3. 在终端执行`python3 -m pip install <包名> -t xxxx/site-packages`，将你需要的包安装到解压出来的site-packages目录中
+4. 将解压出的全部内容重新打包为`python310.zip`，将压缩包放到你应用程序所在目录即可。
+
+这样，在ScriptX的Python解释器中就可以import这些第三方的包并进行使用。
 
 ### 自定义CPython运行时设置
 
-将目录固定在`应用程序所在目录/lib`肯定不是个好主意。在PyEngine中提供了一系列静态方法，可以对标准库搜索目录在内的一些运行时设置进行读取和修改：
+在PyEngine中提供了一系列静态方法，可以对标准库压缩包路径在内的部分设置进行修改：
 
 ```c++
 class PyEngine
 {
 	//...
     
-	// 用于设置PythonHome路径，即CPython解释器所在位置
-    // 在Linux平台上，默认值为 "./lib/python3/" 
-    // 在Windows平台上，默认值为 ".\\lib\\python3\\"
-    // 可以按需修改
+	// 用于设置PythonHome路径，即CPython解释器所在位置。有部分第三方包依赖此机制工作
+    // 在Linux平台上，默认值为 "./"，在Windows平台上，默认值为 ".\\"。可以按需修改
     static void setPythonHomePath(const std::wstring &path);
     // 用于读取PythonHome路径
     static std::wstring getPythonHomePath();
-    // 用于设置模块搜索路径，即Python中的sys.path，执行import时将从这些目录搜索目标模块。CPython所附带的标准库也通过这些搜索路径进行搜索
-    // 在Linux平台上，默认值为 {"./lib/Python3/lib/python3.10/"}
-    // 在Windows平台上，默认值为 {".\\lib\\Python3\\Lib\\"}
-    // 可以按需修改，或添加新的搜索路径。注意标准库路径必须包括在内，不然ScriptX的Python解释器将无法启动
+    
+    // 用于设置模块搜索路径，执行import时将从这些目录（或压缩包）中搜索目标模块。CPython也通过此搜索路径搜索上面提到的标准库压缩包。
+    // 在Linux平台上，默认值为 {"./python310.zip"}，在Windows平台上，默认值为 {".\\python310.zip"}
+    // 可以按需修改，或添加新的搜索路径。注意标准库压缩包必须包括在内，否则Python解释器将无法启动
     static void setModuleSearchPaths(const std::vector<std::wstring> &paths);
     // 用于添加一条新的模块搜索路径到CPython引擎中
     static void addModuleSearchPath(const std::wstring &path);
     // 用于读取所有的模块搜索路径
     static std::vector<std::wstring> getModuleSearchPaths();
-    // 用于获取当前平台的路径分隔符符号。Linux平台为"/"，Windows平台为"\"
+    
+    // 用于获取当前平台的路径分隔符符号。Linux平台为"/"，Windows平台为"\\"
     static std::wstring getPlatformPathSeparator();
     
     //...
 }
 ```
 
-可以任何需要的时候调用这些静态函数，对Python运行时环境的参数进行自定义设置。
+比如，你想把标准库压缩包路径修改为`"./lib/python310.zip"`，可以编写如下代码：
+
+```C++
+PyEngine::setModuleSearchPaths( {"./lib/python310.zip"} );
+```
+

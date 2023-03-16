@@ -45,57 +45,64 @@ This shows that performance in a multi-threaded environment is still limited by 
 
 ## Standard Libraries and Runtime Environment
 
-Different from other types of engines, CPython uses an external stand-alone standard library. Therefore, when you use ScriptX to embed the Python interpreter into your application, you need to carry an additional copy of the Python runtime environment to ensure that Python will run properly.
+Different from other engines, CPython uses stand-alone standard libraries. Therefore, when you use ScriptX to embed the Python interpreter into your application, you need to carry a Python standard library zip together with your application, to ensure that Python will start properly.
 
-Here is instructions of how to configure this runtime environment and set the parameters related to the runtime environment for the CPython engine.
+### Download the CPython standard library zip
 
-### Download the CPython embedded runtime environment
+1. Go to the ScriptX unit test project to download python310.zip.
 
-1. Go to https://github.com/indygreg/python-build-standalone/releases and download the runtime environment from Release page, for the platform and architecture you intend to run on 
-   - Windows x64 environment download: [cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz](https://github.com/indygreg/python- build-standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-pc-windows-msvc-shared-install_only.tar.gz)
-   - MacOS Arm64 environment download: [cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz](https://github.com/indygreg/python-build- standalone/releases/download/20230116/cpython-3.10.9+20230116-aarch64-apple-darwin-install_only.tar.gz)
-   - Linux x64 environment download: [cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz](https://github.com/indygreg/python-build- standalone/releases/download/20230116/cpython-3.10.9+20230116-x86_64-unknown-linux-gnu-install_only.tar.gz)
-   - For other platforms, find and download the runtime environment package for the corresponding platform
-2. **If the above project fails**, you can also go and download the cpython-3.10.9.tar.gz stored in the ScriptX unit test project. This package is automatically pulled by ScriptX when running unit tests, and is exactly the same as the package downloaded in the above project.
    - Windows x64 environment download: https://github.com/LiteLDev/ScriptXTestLibs/tree/main/python/win64/embed-env
+
    - Linux x64 environment download: https://github.com/LiteLDev/ScriptXTestLibs/tree/main/python/linux64/embed-env
-3. After downloading the package, extract the package and get a directory named `Python`
-4. Rename this directory to `Python3` and move it into `your application directory/lib` directory.
 
-When your application starts, it will automatically look for Python's standard libraries in this directory and load them. 
+2. Simply place the zip package into the directory where your application is located.
 
-By the way, the embedded runtime environment has additional benefits: you can run `. /bin/python3 -m pip install xxx` to install custom pip packages in this embedded runtime environment. Installed packages can be imported and used directly in the ScriptX engine.
+When your application starts, it will automatically look for this Python standard library from the working directory and load it.
+
+### Customizing the standard library zip
+
+If you need to make the embedded Python engine work with some third-party Pip packages, you can modify the zip above as follows:
+
+1. Extract `python310.zip`, you can see a site-packages directory inside
+2. Install Python 3.10.9
+3. Run `python3 -m pip install <package name> -t xxxx/site-packages` in the terminal, and install the packages you need into the extracted site-packages directory.
+4. Repackage all the contents back as `python310.zip`, then put the zip package into the directory where your application is located.
+
+Then you can import these third-party packages and use them in ScriptX's Python engines.
 
 ### Customizing CPython runtime settings
 
-It's certainly not a good idea to fix the directory to `application directory/lib`. So a number of static methods are provided in PyEngine to read and modify some runtime settings, including the standard library search directory.
+A number of static methods are provided in PyEngine to modify some settings, including the path to the standard library zip.
 
 ```c++
 class PyEngine
 {
 	//...
     
-	// Used to set the PythonHome path, i.e. the location of the CPython interpreter
-    // On Linux platform, the default value is "./lib/python3/" 
-    // On Windows platform, the default value is ".\\lib\\\python3\\"
-    // You can change it as needed
+	// Used to set the PythonHome path, which is the location of the CPython interpreter. There are some third-party packages that rely on this mechanism to work
+    // On Linux platforms, the default value is "./", on Windows platforms, the default value is ".\\". This can be modified on demand
     static void setPythonHomePath(const std::wstring &path);
     // Used to read the PythonHome path
     static std::wstring getPythonHomePath();
-    // Used to set the module search paths, i.e. sys.path in Python, from which the target module will be searched when "import" is executed; Python standard libraries are also searched via these search paths
-    // On Linux, the default value is {"./lib/Python3/lib/python3.10/"}
-    // On Windows, the default value is {".\\lib\\\Python3\\\Lib\"}
-    // You can modify it as needed, or add new search paths. Note that the standard library path must be included, otherwise ScriptX's Python interpreter will not start
+    
+    // Used to set the module search path from which the target module will be searched when import is executed. CPython also searches the standard library zip mentioned above via this search path.
+    // On Linux platforms, the default value is {"./python310.zip"}, and on Windows platforms, the default value is {".\\python310.zip"}
+    // You can change it as needed, or add new search paths. Note that the standard library zip must be included, otherwise the Python interpreter will not start
     static void setModuleSearchPaths(const std::vector<std::wstring> &paths);
-    // Used to add a new module search path to CPython runtime
+    // Used to add a new module search path to the CPython engine
     static void addModuleSearchPath(const std::wstring &path);
     // Used to read all module search paths
     static std::vector<std::wstring> getModuleSearchPaths();
-    // Used to get the path separator symbol for the current platform; Linux is "/", Windows is "\"
+    
+    // Used to get the path separator symbol for the current platform; Linux is "/", Windows is "\\"
     static std::wstring getPlatformPathSeparator();
     
     //...
 }
 ```
 
-These static functions can be called at any time to customize the settings of the Python runtime environment.
+For example, if you want to change the path of the standard library zip to `". /lib/python310.zip"`, you can write the following code.
+
+```C++
+PyEngine::setModuleSearchPaths( {"./lib/python310.zip"} );
+```

@@ -164,16 +164,9 @@ elseif (${SCRIPTX_BACKEND} STREQUAL Python)
             CACHE STRING "" FORCE)
 
         add_custom_command(TARGET UnitTests POST_BUILD
-            COMMAND tar -zxvf cpython-3.10.9.tar.gz > /dev/null
-            WORKING_DIRECTORY "${SCRIPTX_TEST_LIBS}/python/linux64/embed-env"
+            COMMAND ${CMAKE_COMMAND} -E copy
+            "${SCRIPTX_TEST_LIBS}/python/linux64/embed-env/python310.zip" $<TARGET_FILE_DIR:UnitTests>
             )
-        add_custom_command(TARGET UnitTests POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_directory
-            "${SCRIPTX_TEST_LIBS}/python/linux64/embed-env/python" $<TARGET_FILE_DIR:UnitTests>/lib/python3
-            )
-        add_custom_command(TARGET UnitTests POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E remove_directory
-            "${SCRIPTX_TEST_LIBS}/python/linux64/embed-env/python")
             
     elseif (WIN32)
         set(DEVOPS_LIBS_INCLUDE
@@ -184,9 +177,10 @@ elseif (${SCRIPTX_BACKEND} STREQUAL Python)
             CACHE STRING "" FORCE)
 
         add_custom_command(TARGET UnitTests POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy_directory
-            "${SCRIPTX_TEST_LIBS}/python/win64/embed-env" $<TARGET_FILE_DIR:UnitTests>/lib/python3
+            COMMAND ${CMAKE_COMMAND} -E copy
+            "${SCRIPTX_TEST_LIBS}/python/win64/embed-env/python310.zip" $<TARGET_FILE_DIR:UnitTests>
             )
+
     elseif (APPLE)
         # Need adaptation here
         set(DEVOPS_LIBS_INCLUDE
