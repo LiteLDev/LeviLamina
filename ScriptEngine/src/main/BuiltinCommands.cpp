@@ -4,32 +4,98 @@
 #include <string>
 #include <llapi/LoggerAPI.h>
 using namespace std;
+
 extern Logger logger;
+extern bool isInConsoleDebugMode;
+extern ScriptEngine* debugEngine;
 
-bool ProcessDebugEngine(const std::string& cmd)
-{
 #define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
-    extern bool globalDebug;
-    extern ScriptEngine* debugEngine;
 
+// process python debug seperately
+#ifdef LLSE_BACKEND_PYTHON
+
+#define OUTPUT_DEBUG_NEED_MORE_CODE_SIGN() std::cout << ". " << std::flush
+
+bool ProcessPythonDebugEngine(const std::string &cmd)
+{
     if (cmd == LLSE_DEBUG_CMD)
     {
-        if (globalDebug)
+        if (isInConsoleDebugMode)
         {
             //EndDebug
             logger.info("Debug mode ended");
-            globalDebug = false;
+            isInConsoleDebugMode = false;
         }
         else
         {
             //StartDebug
             logger.info("Debug mode begins");
-            globalDebug = true;
+            isInConsoleDebugMode = true;
             OUTPUT_DEBUG_SIGN();
         }
         return false;
     }
-    if (globalDebug)
+    if (isInConsoleDebugMode)
+    {
+        EngineScope enter(debugEngine);
+        try
+        {
+            if (cmd == "stop")
+            {
+                return true;
+            }
+            else
+            {
+                auto result = debugEngine->eval("_llse_python_debug_interactive_obj.push(r'" + cmd + "')");
+                if(!result.isBoolean() || !result.asBoolean().value())
+                {
+                    // no more code needed
+                    OUTPUT_DEBUG_SIGN();
+                }
+                else
+                {
+                    // in a code block, need more code next
+                    OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                }
+            }
+        }
+        catch (Exception& e)
+        {
+            // Generally will not reach here
+            PrintException(e);
+            OUTPUT_DEBUG_SIGN();
+        }
+        return false;
+    }
+    return true;
+}
+#endif
+
+
+bool ProcessDebugEngine(const std::string& cmd)
+{
+#ifdef LLSE_BACKEND_PYTHON
+    return ProcessPythonDebugEngine(cmd);
+#endif
+
+    if (cmd == LLSE_DEBUG_CMD)
+    {
+        if (isInConsoleDebugMode)
+        {
+            //EndDebug
+            logger.info("Debug mode ended");
+            isInConsoleDebugMode = false;
+        }
+        else
+        {
+            //StartDebug
+            logger.info("Debug mode begins");
+            isInConsoleDebugMode = true;
+            OUTPUT_DEBUG_SIGN();
+        }
+        return false;
+    }
+    if (isInConsoleDebugMode)
     {
         EngineScope enter(debugEngine);
         try
