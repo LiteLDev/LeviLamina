@@ -11,7 +11,7 @@
     "main": {
       "checkRunningBDS": {
         "detected": "동일한 파일 경로에서 이미 다른 BDS 서버가 열려 있습니다.",
-        "tip": "네트워크 포트나 월드를 사용중인 상태로 만들수도 있습니다.",
+        "tip": "이로 인해 네트워크 포트와 월드가 사용될 수 있습니다.",
         "ask": "PID {} 로 프로세스를 종료하시겠습니까? (y=예, n=아니오, e=종료)"
       },
       "fixAllowList": {
@@ -29,7 +29,7 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats 가 활성화 되었습니다. plugins/bStats/config.json 에서 비활성화 할 수 있습니다."
       }
     },
     "antiAbnormalItem": {
@@ -215,6 +215,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Node.js 런타임 경로를 찾을 수 없으므로 생성합니다."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -284,6 +287,13 @@
         "loadedPlugin": "{type} 타입 플러그인 <{name}> 를 로드했습니다.",
         "installPluginPack": {
           "done": "{count} 개의 {type} 플러그인 팩이 로드됐습니다."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +304,13 @@
         },
         "register": {
           "fail": "플러그인 {name} 을 등록하지 못했습니다."
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

@@ -215,6 +215,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Cartella del runtime Node.js non trovata, creata una nuova cartella."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -284,6 +287,13 @@
         "loadedPlugin": "Plugin {type} <{name}> caricato.",
         "installPluginPack": {
           "done": "{count} pacchetti plugin {type} installati."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +304,13 @@
         },
         "register": {
           "fail": "Impossibile aiutare il plugin {name} a registrarsi!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

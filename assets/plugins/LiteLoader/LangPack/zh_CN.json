@@ -215,6 +215,9 @@
       },
       "initNodeJsDirectories": {
         "created": "NodeJs运行库文件夹未找到，已自动创建"
+      },
+      "initPythonDirectories": {
+        "created": "Python运行库文件夹未找到，已自动创建"
       }
     },
     "notice": {
@@ -284,6 +287,13 @@
         "loadedPlugin": "{type} 插件 <{name}> 已加载。",
         "installPluginPack": {
           "done": "{count} 个 {type} 插件包已安装。"
+        },
+        "python": {
+          "ignored": "在目录 {path} 中没有找到 pyproject.toml 文件，已忽略。",
+          "installPack": {
+            "start": "找到 Python 插件包 \"{path}\"！尝试安装...",
+            "fail": "安装插件包 {} 失败，请检查插件源文件！"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +304,13 @@
         },
         "register": {
           "fail": "插件 {name} 注册失败！"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "为插件 {name} 执行 \"pip install\"...",
+          "success": "Pip 命令成功完成",
+          "fail": "发生错误。退出代码： {code}"
         }
       }
     }

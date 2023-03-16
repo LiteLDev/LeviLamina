@@ -29,7 +29,7 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats เปิดใช้งานแล้ว คุณสามารถแก้ไข plugin/bStats/config.json เพื่อปิดใช้การงานได้"
       }
     },
     "antiAbnormalItem": {
@@ -215,6 +215,9 @@
       },
       "initNodeJsDirectories": {
         "created": "ไม่พบตำแหน่ง RunTime NodeJs, สร้างใหม่แล้ว"
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -284,6 +287,13 @@
         "loadedPlugin": "ปลั๊กอิน {type} <{name}> โหลดแล้ว",
         "installPluginPack": {
           "done": "{count} {type} ปลั๊กอินแพ็คติดตั้งแล้ว"
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +304,13 @@
         },
         "register": {
           "fail": "ไม่สามารถลงทะเบียนปลั๊กอิน {name} ได้!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }
