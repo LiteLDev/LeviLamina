@@ -3,10 +3,12 @@
 #if defined(LLSE_BACKEND_PYTHON)
 #include "Global.hpp"
 #include <llapi/ScheduleAPI.h>
+#include "Loader.h"
 #include "api/EventAPI.h"
 #include "api/CommandCompatibleAPI.h"
 #include "api/CommandAPI.h"
 #include "engine/RemoteCall.h"
+#include <engine/TimeTaskSystem.h>
 #include <llapi/LLAPI.h>
 #include <llapi/utils/StringHelper.h>
 #include "PythonHelper.h"
@@ -17,7 +19,7 @@
 // pre-declare
 extern void BindAPIs(ScriptEngine* engine);
 
-namespace PythonJsHelper {
+namespace PythonHelper {
 
 bool pythonInited = false;
 
@@ -93,7 +95,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             
             // remove temp dependency file after installation
             std::error_code ec;
-            std::filesystem::remove(dependTmpFilePath, &ec);
+            std::filesystem::remove(std::filesystem::path(dependTmpFilePath), ec);
         }
     }
 
@@ -146,15 +148,15 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
                 auto projectNode = configData["project"];
 
                 // description
-                if(projectNode.contains("description"))
+                if(projectNode["description"])
                 {
                     description = *(projectNode["description"].value<std::string>());
                 }
 
                 // version
-                if(projectNode.contains("version"))
+                if(projectNode["version"])
                 {
-                    version = ll::Version::parse(*(projectNode["version"].value<std::string>()));
+                    ver = ll::Version::parse(*(projectNode["version"].value<std::string>()));
                 }
 
                 // TODO: more information to read
@@ -230,7 +232,7 @@ std::string getPluginPackageName(const std::string& dirPath)
         string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
         toml::table configData = toml::parse_file(packageFilePathStr);
         auto projectNode = configData["project"];
-        if(!projectNode.contains("name"))
+        if(!projectNode["name"])
             return "";
         std::optional<std::string> packageName = projectNode["name"].value<std::string>();
         return packageName ? *packageName : "";
@@ -253,7 +255,7 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath)
     if(std::filesystem::exists(requirementsFilePath))
     {
         std::error_code ec;
-        std::filesystem::copy_file(requirementsFilePath, requirementsTmpFilePath, &ec);
+        std::filesystem::copy_file(requirementsFilePath, requirementsTmpFilePath, ec);
     }
 
     if (std::filesystem::exists(packageFilePath))
@@ -264,16 +266,13 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath)
             string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
             toml::table configData = toml::parse_file(packageFilePathStr);
             auto projectNode = configData["project"];
-            if(projectNode.contains("dependencies"))
+            if(projectNode["dependencies"])
             {
                 toml::array* arr = projectNode["dependencies"].as_array();
-                arr->for_each([](auto&& el)
+                arr->for_each([&dependsAdded](toml::value<std::string>& elem)
                 {
-                    if constexpr (toml::is_string<decltype(el)>)
-                    {
-                        std::optional<std::string> depend = el.value<std::string>();
-                        dependsAdded += "\n" + *depend;
-                    }
+                    std::optional<std::string> depend = *elem;
+                    dependsAdded += "\n" + *depend;
                 });
             }
         }
@@ -299,7 +298,7 @@ bool processConsolePipCmd(const std::string& cmd)
 #ifdef LLSE_BACKEND_PYTHON
     if (StartsWith(cmd, "pip "))
     {
-        executePipCommand(cmd);
+        PythonHelper::executePipCommand(cmd);
         return false;
     }
     else
