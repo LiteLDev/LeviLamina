@@ -16,6 +16,7 @@
 #include "main/BuiltinCommands.h"
 #include "api/APIHelp.h"
 #include "main/NodeJsHelper.h"
+#include "main/PythonHelper.h"
 #include "api/BaseAPI.h"
 #include "api/BlockAPI.h"
 #include "api/GuiAPI.h"
@@ -1199,8 +1200,10 @@ void InitBasicEventListeners() {
 #ifdef LLSE_BACKEND_NODEJS
         if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
+#elif defined(LLSE_BACKEND_PYTHON)
+        if (!PythonHelper::processConsolePipCmd(ev.mCommand))
+            return false;
 #endif
-
         // CallEvents
         vector<string> paras;
         bool isFromOtherEngine = false;

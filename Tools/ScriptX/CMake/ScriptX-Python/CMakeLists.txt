@@ -10,4 +10,7 @@ project(ScriptX-Python)
 
 include(../../CMakeLists.txt)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/Python/)
+target_include_directories(
+        ${PROJECT_NAME}
+        PRIVATE ${SCRIPTENGINE_SOURCE_DIR}/third-party/backend/include/Python/
+)

@@ -110,7 +110,6 @@ void LoadMain() {
 }
 
 
-
 #ifdef LLSE_BACKEND_NODEJS
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs() {
@@ -155,11 +154,61 @@ void LoadMain_NodeJs() {
 }
 #endif
 
+
+#ifdef LLSE_BACKEND_PYTHON
+// Python后端 - 主加载
+void LoadMain_Python() {
+    logger.info(tr("llse.loader.loadMain.start", fmt::arg("type", "Python")));
+    int installCount = 0;
+    int count = 0;
+
+    // Load plugins in PYTHON_ROOT_DIR
+    std::filesystem::directory_iterator files(LLSE_PLUGINS_ROOT_DIR);
+    for (auto& i : files) {
+        std::filesystem::path pth = i.path();
+        if (i.is_directory() && pth.filename() != "site-packages") {
+            if (std::filesystem::exists(pth / "pyproject.toml")) {
+                if (PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
+                    ++count;
+                }
+            }
+            else {
+                logger.warn(tr("llse.loader.loadMain.python.ignored", UTF82String(pth.filename().u8string())));
+            }
+        }
+    }
+
+    // Unpack .llplugin & install
+    // Tips: Must after plugins loaded in PYTHON_ROOT_DIR
+    files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
+    for (auto& i : files) {
+        std::filesystem::path pth = i.path();
+        if (i.is_regular_file() && EndsWith(UTF82String(pth.u8string()), LLSE_PLUGIN_PACKAGE_EXTENSION)) {
+            logger.info(tr("llse.loader.loadMain.python.installPack.start",
+                           fmt::arg("path", UTF82String(pth.u8string()))));
+            if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
+                logger.error(tr("llse.loader.loadMain.python.installPack.fail"));
+            }
+            ++installCount;
+        }
+    }
+
+    logger.info(tr("llse.loader.loadMain.done",
+                   fmt::arg("count", count),
+                   fmt::arg("type", "Python")));
+}
+#endif
+
+
 void LoadMain_Package()
 {
 #ifdef LLSE_BACKEND_NODEJS
     // Process NodeJs backend's plugin load separately
     LoadMain_NodeJs();
+    return;
+#elif defined(LLSE_BACKEND_PYTHON)
+    // Process Python backend's plugin load separately
+    LoadMain_Python();
     return;
 #endif
 }
