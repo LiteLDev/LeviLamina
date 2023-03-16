@@ -283,7 +283,10 @@ std::string getPluginPackageName(const std::string& dirPath)
     try {
         string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
         toml::table configData = toml::parse_file(packageFilePathStr);
-        std::optional<std::string> packageName = configData["project"]["name"].value<std::string>();
+        auto projectNode = configData["project"];
+        if(!projectNode.contains("name"))
+            return "";
+        std::optional<std::string> packageName = projectNode["name"].value<std::string>();
         return packageName ? *packageName : "";
     }
     catch (...)
@@ -314,15 +317,19 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath)
         try {
             string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
             toml::table configData = toml::parse_file(packageFilePathStr);
-            toml::array* arr = configData["project"]["dependencies"].as_array();
-            arr->for_each([](auto&& el)
+            auto projectNode = configData["project"];
+            if(projectNode.contains("dependencies"))
             {
-                if constexpr (toml::is_string<decltype(el)>)
+                toml::array* arr = projectNode["dependencies"].as_array();
+                arr->for_each([](auto&& el)
                 {
-                    std::optional<std::string> depend = el.value<std::string>();
-                    dependsAdded += "\n" + *depend;
-                }
-            });
+                    if constexpr (toml::is_string<decltype(el)>)
+                    {
+                        std::optional<std::string> depend = el.value<std::string>();
+                        dependsAdded += "\n" + *depend;
+                    }
+                });
+            }
         }
         catch (...)
         { }
@@ -359,18 +366,6 @@ bool processConsolePipCmd(const std::string& cmd)
 int executePipCommand(std::string cmd, std::string workingDir)
 {
     return 0;
-}
-
-std::vector<std::string> getAllPyFilesList(const std::filesystem::path &dirPath)
-{
-    std::vector<std::string> filesList = {};
-    std::filesystem::directory_iterator files(dirPath);
-    for (auto& i : files) {
-        std::string fileName = i.path().filename();
-        if(EndsWith(fileName, ".py"))
-            filesList.push_back(fileName);
-    }
-    return filesList;
 }
 
 } // namespace PythonHelper

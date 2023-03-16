@@ -20,8 +20,6 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath);
 bool processConsolePipCmd(const std::string& cmd);
 int executePipCommand(std::string cmd, std::string workingDir = LLSE_PLUGINS_ROOT_DIR);
 
-std::vector<std::string> getAllPyFilesList(const std::filesystem::path &dirPath);
-
 }
 
 #endif
