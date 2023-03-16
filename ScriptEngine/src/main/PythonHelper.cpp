@@ -29,69 +29,14 @@ bool initPython() {
 
 bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, std::string pluginDirPath)
 {
-    auto mainScripts = ReadAllFile(entryScriptPath);
-    if (!mainScripts) {
-        return false;
-    }
-
-    // Process requireDir
-    if (!EndsWith(pluginDirPath, "/"))
-        pluginDirPath += "/";
-    pluginDirPath = ReplaceStr(pluginDirPath, "\\", "/");
-
-    // Find setup
-    auto it = setups->find(engine);
-    if (it == setups->end())
-        return false;
-
-    auto isolate = it->second->isolate();
-    auto env = it->second->env();
-
-    try
-    {
-        using namespace v8;
-        EngineScope enter(engine);
-
-        string executeJs =
-            "const __LLSE_PublicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
-            + "const __LLSE_PublicModule = require('module'); __LLSE_PublicModule.exports = {};"
-
-            + "(function (exports, require, module, __filename, __dirname) { "
-            + *mainScripts + "\n})({}, __LLSE_PublicRequire, __LLSE_PublicModule, '"
-            + entryScriptPath + "', '" + pluginDirPath + "'); ";        // TODO __filename & __dirname need to be reviewed
-        //TODO: ESM Support
-
-        // Set exit handler
-        node::SetProcessExitHandler(env, [](node::Environment* env_, int exit_code){
-            stopEngine(getEngine(env_));
-        });
-
-        // Load code
-        MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
-        if (loadenv_ret.IsEmpty()) // There has been a JS exception.
-        {
-            node::Stop(env);
-            uv_stop(it->second->event_loop());
-            return false;
-        }
-
-        // Start libuv event loop
-        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{&isRunning}, eventLoop{it->second->event_loop()}]() {
-            if (!ll::isServerStopping() && (*isRunningMap)[env]) {
-                EngineScope enter(engine);
-                uv_run(eventLoop, UV_RUN_NOWAIT);
-            }
-            if (ll::isServerStopping()) {
-                uv_stop(eventLoop);
-                logger.debug("Destroy ServerStopping");
-            }
-        },2);
-        
-        return true;
-    }
-    catch (...)
-    {
-        return false;
+    // TODO: add import path to sys.path
+    try {
+        engine->loadFile(entryScriptPath);
+    } 
+    catch (const Exception& e1) {
+        // Fail
+        logger.error("Fail in Loading Script Plugin!\n");
+        throw e1;
     }
 }
 
@@ -174,7 +119,8 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         // Load depend libs
         try {
             for (auto& [path, content] : depends) {
-                engine->eval(content, path);
+                if(!content.empty())
+                    engine->eval(content, path);
             }
         } catch (const Exception& e) {
             logger.error("Fail in Loading Dependence Lib!\n");

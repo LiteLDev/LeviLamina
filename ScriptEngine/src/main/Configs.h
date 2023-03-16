@@ -25,36 +25,31 @@
 #if defined(LLSE_BACKEND_QUICKJS)
 // QuickJs
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS_NAME
-	#define LLSE_PLUGINS_EXTENSION ".js"
+	#define LLSE_SOURCE_FILE_EXTENSION ".js"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins"
 	#define LLSE_IS_PLUGIN_PACKAGE 0
 
 #elif defined(LLSE_BACKEND_LUA)
 // Lua
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA_NAME
-	#define LLSE_PLUGINS_EXTENSION ".lua"
+	#define LLSE_SOURCE_FILE_EXTENSION ".lua"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins"
 	#define LLSE_IS_PLUGIN_PACKAGE 0
 
 #elif defined(LLSE_BACKEND_NODEJS)
 // NodeJs
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
-	#define LLSE_PLUGINS_EXTENSION LLSE_PLUGIN_PACKAGE_EXTENSION
+	#define LLSE_SOURCE_FILE_EXTENSION ".js"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins/nodejs"
 	#define LLSE_IS_PLUGIN_PACKAGE 1
 
 #elif defined(LLSE_BACKEND_PYTHON)
 // Python
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_PYTHON_NAME
-	#define LLSE_PLUGINS_EXTENSION LLSE_PLUGIN_PACKAGE_EXTENSION
+	#define LLSE_SOURCE_FILE_EXTENSION ".py"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins/python"
 	#define LLSE_IS_PLUGIN_PACKAGE 1
 #endif
-
-
-// Language specific information
-#define LLSE_NODEJS_ROOT_DIR "plugins/nodejs"
-#define LLSE_PYTHON_ROOT_DIR "plugins/python"
 
 
 // All backends information

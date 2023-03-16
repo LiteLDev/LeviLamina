@@ -133,7 +133,8 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
         // Load depend libs
         try {
             for (auto& [path, content] : depends) {
-                engine->eval(content, path);
+                if(!content.empty())
+                    engine->eval(content, path);
             }
         } catch (const Exception& e) {
             logger.error("Fail in Loading Dependence Lib!\n");

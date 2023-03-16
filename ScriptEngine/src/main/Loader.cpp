@@ -35,7 +35,7 @@ void LoadDepends() {
 
     std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
     for (auto& i : deps) {
-        if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_PLUGINS_EXTENSION) {
+        if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_SOURCE_FILE_EXTENSION) {
             try {
                 auto path = UTF82String(i.path().generic_u8string());
                 auto content = ReadAllFile(path);
@@ -74,7 +74,8 @@ void LoadDebugEngine() {
     // Load baselibs
     try {
         for (auto& [path, content] : depends) {
-            debugEngine->eval(content, path);
+            if(!content.empty())
+                debugEngine->eval(content, path);
         }
     } catch (const Exception& e) {
         logger.error("Fail in Loading Dependence Lib!\n");
@@ -98,7 +99,7 @@ void LoadMain() {
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
-        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION) {
+        if (i.is_regular_file() && i.path().extension() == LLSE_SOURCE_FILE_EXTENSION) {
             if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
                 ++count;
         }
