@@ -156,10 +156,6 @@ inline void initPythonDirectories() {
     if (!filesystem::exists(LLSE_PYTHON_ROOT_DIR)) {
         filesystem::create_directories(LLSE_PYTHON_ROOT_DIR);
     }
-    auto node_modules_path = filesystem::path(LLSE_PYTHON_ROOT_DIR) / "site-packages";
-    if (!filesystem::exists(node_modules_path)) {
-        filesystem::create_directories(node_modules_path);
-    }
     ll::logger.warn(tr("ll.loader.initPythonDirectories.created"));
 }
 
