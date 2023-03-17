@@ -23,9 +23,16 @@ namespace PythonHelper {
 
 bool pythonInited = false;
 
-bool initPython() {
-
-    pythonInited = true;
+bool initPythonRuntime() {
+    if(!pythonInited)
+    {
+        script::py_interop::setPythonHomePath(L".\\plugins\\lib\\python-env");
+        script::py_interop::setModuleSearchPaths({
+            L".\\plugins\\lib\\python-env\\python310.zip",
+            L".\\plugins\\lib\\python-env\\Lib\\site-packages",
+        });
+        pythonInited = true;
+    }
     return true;
 }
 

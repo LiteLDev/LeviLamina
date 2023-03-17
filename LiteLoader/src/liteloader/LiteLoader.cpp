@@ -83,6 +83,22 @@ void unzipNodeModules() {
     }
 }
 
+void unzipPythonModules() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\python-env.zip")))) {
+        std::error_code ec;
+        // if(std::filesystem::exists(".\\plugins\\lib\\python-env\\"))
+        //     filesystem::remove_all(".\\plugins\\lib\\python-env\\", ec);
+        auto res = NewProcessSync(
+            fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\python-env.zip)"),
+            30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.unzipPythonModules.fail"));
+        } else {
+            filesystem::remove(R"(.\plugins\lib\python-env.zip)", ec);
+        }
+    }
+}
+
 void decompressResourcePacks() {
     if (std::filesystem::exists(
             std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
@@ -297,8 +313,9 @@ void liteloaderMain() {
     // Load Config
     ll::LoadLLConfig();
 
-    // Unzip packed Node Modules
+    // Unzip packed Node & Python Modules
     unzipNodeModules();
+    unzipPythonModules();
 
     // Decompress resource packs
     decompressResourcePacks();
