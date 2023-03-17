@@ -17,11 +17,36 @@
 
 #include "PyHelper.hpp"
 #include "PyEngine.h"
+#include "PyRuntimeSettings.h"
 
 namespace script {
   
   Arguments py_interop::makeArguments(py_backend::PyEngine* engine, PyObject* self, PyObject* args) {
     return Arguments(py_backend::ArgumentsData{engine, self, args});
+  }
+
+  void py_interop::setPythonHomePath(const std::wstring &path) {
+    return script::py_backend::py_runtime_settings::setPythonHomePath(path);
+  }
+
+  std::wstring py_interop::getPythonHomePath() {
+    return script::py_backend::py_runtime_settings::getPythonHomePath();
+  }
+
+  void py_interop::setModuleSearchPaths(const std::vector<std::wstring> &paths) {
+    return script::py_backend::py_runtime_settings::setModuleSearchPaths(paths);
+  }
+
+  void py_interop::addModuleSearchPath(const std::wstring &path) {
+    return script::py_backend::py_runtime_settings::addModuleSearchPath(path);
+  }
+
+  std::vector<std::wstring> py_interop::getModuleSearchPaths() {
+    return script::py_backend::py_runtime_settings::getModuleSearchPaths();
+  }
+
+  std::wstring py_interop::getPlatformPathSeparator() {
+    return script::py_backend::py_runtime_settings::getPlatformPathSeparator();
   }
   
 namespace py_backend {

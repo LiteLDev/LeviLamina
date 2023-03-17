@@ -70,10 +70,10 @@ Python API 提供的执行代码接口分为两种：其中 eval 类型的接口
 
 ### 自定义CPython运行时设置
 
-在PyEngine中提供了一系列静态方法，可以对标准库压缩包路径在内的部分设置进行修改：
+在`script::py_interop`中提供了一系列静态方法，可以对标准库压缩包路径在内的部分设置进行修改：
 
 ```c++
-class PyEngine
+struct py_interop
 {
 	//...
     
@@ -102,6 +102,6 @@ class PyEngine
 比如，你想把标准库压缩包路径修改为`"./lib/python310.zip"`，可以编写如下代码：
 
 ```C++
-PyEngine::setModuleSearchPaths( {"./lib/python310.zip"} );
+script::py_interop::setModuleSearchPaths( {"./lib/python310.zip"} );
 ```
 

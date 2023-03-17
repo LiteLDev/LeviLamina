@@ -216,30 +216,6 @@ std::string PyEngine::getEngineVersion() { return Py_GetVersion(); }
 
 bool PyEngine::isDestroying() const { return destroying; }
 
-void PyEngine::setPythonHomePath(const std::wstring &path) {
-  return py_runtime_settings::setPythonHomePath(path);
-}
-
-std::wstring PyEngine::getPythonHomePath() {
-  return py_runtime_settings::getPythonHomePath();
-}
-
-void PyEngine::setModuleSearchPaths(const std::vector<std::wstring> &paths) {
-  return py_runtime_settings::setModuleSearchPaths(paths);
-}
-
-void PyEngine::addModuleSearchPath(const std::wstring &path) {
-  return py_runtime_settings::addModuleSearchPath(path);
-}
-
-std::vector<std::wstring> PyEngine::getModuleSearchPaths() {
-  return py_runtime_settings::getModuleSearchPaths();
-}
-
-std::wstring PyEngine::getPlatformPathSeparator() {
-  return py_runtime_settings::getPlatformPathSeparator();
-}
-
 }  // namespace script::py_backend
 
 SCRIPTX_END_IGNORE_DEPRECARED

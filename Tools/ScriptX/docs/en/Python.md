@@ -72,10 +72,10 @@ Then you can import these third-party packages and use them in ScriptX's Python 
 
 ### Customizing CPython runtime settings
 
-A number of static methods are provided in PyEngine to modify some settings, including the path to the standard library zip.
+A number of static methods are provided in `script::py_interop` to modify some settings, including the path to the standard library zip.
 
 ```c++
-class PyEngine
+struct py_interop
 {
 	//...
     
@@ -104,5 +104,5 @@ class PyEngine
 For example, if you want to change the path of the standard library zip to `". /lib/python310.zip"`, you can write the following code.
 
 ```C++
-PyEngine::setModuleSearchPaths( {"./lib/python310.zip"} );
+script::py_interop::setModuleSearchPaths( {"./lib/python310.zip"} );
 ```

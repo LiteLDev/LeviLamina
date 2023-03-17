@@ -61,6 +61,14 @@ struct py_interop {
   }
 
   static Arguments makeArguments(py_backend::PyEngine* engine, PyObject* self, PyObject* args);
+
+  // Python runtime config APIs
+  static void setPythonHomePath(const std::wstring &path);
+  static std::wstring getPythonHomePath();
+  static void setModuleSearchPaths(const std::vector<std::wstring> &paths);
+  static void addModuleSearchPath(const std::wstring &path);
+  static std::vector<std::wstring> getModuleSearchPaths();
+  static std::wstring getPlatformPathSeparator();
 };
 
 namespace py_backend {
