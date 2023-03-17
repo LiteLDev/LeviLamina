@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats a été activé, vous pouvez modifier plugins/bStats/config.json pour le désactiver"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Échec de la décompression de node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {

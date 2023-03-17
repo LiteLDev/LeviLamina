@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats เปิดใช้งานแล้ว คุณสามารถแก้ไข plugin/bStats/config.json เพื่อปิดใช้การงานได้"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "ล้มเหลวในการแยกไฟล์ node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {

@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats 가 활성화 되었습니다. plugins/bStats/config.json 에서 비활성화 할 수 있습니다."
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "node_modules.tar 파일의 압축을 해제하지 못했습니다."
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {

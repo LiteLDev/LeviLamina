@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats已启用，你可以通过编辑 plugins/bStats/config.json 来禁用它"
+      },
+      "unpackResources": {
+        "begin": "正在解包LiteLoaderBDS运行时资源，请耐心等待...",
+        "end": "解包完毕。"
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "解压缩node_modules.tar失败"
+    },
+    "unzipPythonModules": {
+      "fail": "解压 python-env.zip 失败"
     }
   },
   "llse": {

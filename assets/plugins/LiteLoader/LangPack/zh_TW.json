@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats已啟用，你可以通過編輯 plugins/bStats/config.json 來禁用它"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "解壓 node_modules.tar 失敗"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {

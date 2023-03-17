@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats etkinleştirildi, devre dışı bırakmak için plugins/bStats/config.json dosyasını düzenleyebilirsiniz"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -244,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "node_modules.tar sıkıştırması açılamadı."
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
