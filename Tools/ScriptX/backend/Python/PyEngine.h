@@ -58,7 +58,7 @@ private:
   inline static PyTypeObject* staticPropertyType_ = nullptr;
   inline static PyTypeObject* namespaceType_ = nullptr;
   inline static PyTypeObject* defaultMetaType_ = nullptr;
-  inline static PyObject* weakRefGcEmptyCallback = nullptr;
+  inline static PyObject* emptyPyFunction = nullptr;
   PyTypeObject* scriptxExceptionTypeObj;
 
   PyEngine(std::shared_ptr<::script::utils::MessageQueue> queue);
@@ -358,14 +358,18 @@ private:
   template <typename T>
   void registerStaticProperty(const ClassDefine<T>* classDefine, PyObject* type) {
     for (const auto& property : classDefine->staticDefine.properties) {
-      PyObject* g = Py_None;
+      PyObject* g = nullptr;
       if (property.getter) {
         g = warpGetter(property.name.c_str(), property.getter);
       }
-      PyObject* s = Py_None;
+      else g = Py_NewRef(PyEngine::emptyPyFunction);
+
+      PyObject* s = nullptr;
       if (property.setter) {
         s = warpSetter(property.name.c_str(), property.setter);
       }
+      else s = Py_NewRef(PyEngine::emptyPyFunction);
+
       PyObject* doc = toStr("");
       PyObject* warpped_property =
           PyObject_CallFunctionObjArgs((PyObject*)staticPropertyType_, g, s, Py_None, doc, nullptr);
@@ -380,20 +384,23 @@ private:
   template <typename T>
   void registerInstanceProperty(const ClassDefine<T>* classDefine, PyObject* type) {
     for (const auto& property : classDefine->instanceDefine.properties) {
-      PyObject* g = Py_None;
+      PyObject* g = nullptr;
       if (property.getter) {
         g = warpInstanceGetter(property.name.c_str(), property.getter);
       }
-      PyObject* s = Py_None;
+      else g = Py_NewRef(PyEngine::emptyPyFunction);
+
+      PyObject* s = nullptr;
       if (property.setter) {
         s = warpInstanceSetter(property.name.c_str(), property.setter);
       }
+      else s = Py_NewRef(PyEngine::emptyPyFunction);
+
       PyObject* doc = toStr("");
       PyObject* warpped_property =
           PyObject_CallFunctionObjArgs((PyObject*)&PyProperty_Type, g, s, Py_None, doc, nullptr);
       Py_DECREF(g);
       Py_DECREF(s);
-      // Py_DECREF(Py_None);
       Py_DECREF(doc);
       setAttr(type, property.name.c_str(), warpped_property);
       Py_DECREF(warpped_property);

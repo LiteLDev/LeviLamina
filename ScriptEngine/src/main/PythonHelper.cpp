@@ -47,6 +47,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
         logger.error("Fail in Loading Script Plugin!\n");
         throw e1;
     }
+    return true;
 }
 
 // Load Python plugin

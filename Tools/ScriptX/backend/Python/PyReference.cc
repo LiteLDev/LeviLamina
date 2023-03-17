@@ -124,7 +124,7 @@ WeakRefState::WeakRefState(PyObject* obj)
     return;
   }
 
-  _ref = PyWeakref_NewRef(obj, PyEngine::weakRefGcEmptyCallback);
+  _ref = PyWeakref_NewRef(obj, PyEngine::emptyPyFunction);
   if(checkAndClearError() || !_ref)
   {
     // Fail to create weak ref, change to global ref
@@ -147,7 +147,7 @@ WeakRefState::WeakRefState(const WeakRefState& assign)
   PyObject *originRef = assign.peek();
   if(assign._isRealWeakRef)
   {
-    _ref = PyWeakref_NewRef(originRef, PyEngine::weakRefGcEmptyCallback);
+    _ref = PyWeakref_NewRef(originRef, PyEngine::emptyPyFunction);
     if(checkAndClearError() || !_ref)
     {
       // Fail to create weak ref, change to global ref
@@ -191,7 +191,7 @@ WeakRefState& WeakRefState::operator=(const WeakRefState& assign){
   PyObject *originRef = assign.peek();
   if(assign._isRealWeakRef)
   {
-    _ref = PyWeakref_NewRef(originRef, PyEngine::weakRefGcEmptyCallback);
+    _ref = PyWeakref_NewRef(originRef, PyEngine::emptyPyFunction);
     if(checkAndClearError() || !_ref)
     {
       // Fail to create weak ref, change to global ref

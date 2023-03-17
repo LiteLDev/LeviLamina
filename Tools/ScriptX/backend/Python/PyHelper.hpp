@@ -99,7 +99,7 @@ PyTypeObject* makeNamespaceType();
 // @return new reference
 PyTypeObject* makeDefaultMetaclass();
 // @return new reference
-PyObject *makeWeakRefGcEmptyCallback();
+PyObject *makeEmptyPyFunction();
 
 class GlobalOrWeakRefKeeper
 {

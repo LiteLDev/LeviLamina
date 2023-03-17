@@ -409,7 +409,7 @@ PyTypeObject* makeDefaultMetaclass() {
   return type;
 }
 
-PyObject *makeWeakRefGcEmptyCallback() {
+PyObject *makeEmptyPyFunction() {
   PyMethodDef* method = new PyMethodDef;
   method->ml_name = "scriptx_function";
   method->ml_flags = METH_VARARGS;

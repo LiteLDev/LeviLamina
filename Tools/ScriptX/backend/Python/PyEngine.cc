@@ -45,7 +45,7 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
     namespaceType_ = makeNamespaceType();
     staticPropertyType_ = makeStaticPropertyType();
     defaultMetaType_ = makeDefaultMetaclass();
-    weakRefGcEmptyCallback = makeWeakRefGcEmptyCallback();
+    emptyPyFunction = makeEmptyPyFunction();
 
     PyEval_ReleaseLock();   // release GIL
 
