@@ -68,17 +68,17 @@ void fixUpCWD() {
 }
 
 void unzipNodeModules() {
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.zip")))) {
         std::error_code ec;
-        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
-        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+            filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
         auto res = NewProcessSync(
-            fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"),
+            fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.zip)"),
             30000);
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
-            filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
+            filesystem::remove(R"(.\plugins\lib\node_modules.zip)", ec);
         }
     }
 }
@@ -86,8 +86,8 @@ void unzipNodeModules() {
 void unzipPythonModules() {
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\python-env.zip")))) {
         std::error_code ec;
-        // if(std::filesystem::exists(".\\plugins\\lib\\python-env\\"))
-        //     filesystem::remove_all(".\\plugins\\lib\\python-env\\", ec);
+        if(std::filesystem::exists(".\\plugins\\lib\\python-env\\"))
+            filesystem::remove_all(".\\plugins\\lib\\python-env\\", ec);
         auto res = NewProcessSync(
             fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\python-env.zip)"),
             30000);
@@ -101,18 +101,18 @@ void unzipPythonModules() {
 
 void decompressResourcePacks() {
     if (std::filesystem::exists(
-            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.zip")))) {
         std::error_code ec;
-        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
-        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        if(std::filesystem::exists(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI"))
+            filesystem::remove_all(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI", ec);
         auto res =
             NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)", ZIP_PROGRAM_PATH,
-                                       R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"),
+                                       R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.zip)"),
                            30000);
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
-            filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)", ec);
+            filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.zip)", ec);
         }
     }
 }
@@ -313,13 +313,6 @@ void liteloaderMain() {
     // Load Config
     ll::LoadLLConfig();
 
-    // Unzip packed Node & Python Modules
-    unzipNodeModules();
-    unzipPythonModules();
-
-    // Decompress resource packs
-    decompressResourcePacks();
-
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
     if (!ll::isDebugMode())
         _set_se_translator(oldSeTranslator);
@@ -341,6 +334,14 @@ void liteloaderMain() {
 
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
+
+    logger.info(tr("ll.main.unpackResources.begin"));
+    // Unzip packed Node & Python Modules
+    unzipNodeModules();
+    unzipPythonModules();
+    // Decompress resource packs
+    decompressResourcePacks();
+    logger.info(tr("ll.main.unpackResources.end"));
 
     // Check Running BDS(Requires Config)
     checkRunningBDS();
