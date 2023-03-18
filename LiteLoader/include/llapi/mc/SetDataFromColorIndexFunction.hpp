@@ -31,26 +31,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SetDataFromColorIndexFunction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 1
+     * @symbol ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @vftbl  3
-     * @symbol  ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 3
+     * @symbol ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 
 //private:
     /**
-     * @symbol  ?_applyImpl\@SetDataFromColorIndexFunction\@\@AEAA_NPEBVItem\@\@PEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAH\@Z
+     * @symbol ?_applyImpl\@SetDataFromColorIndexFunction\@\@AEAA_NAEAPEBVItem\@\@PEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAH\@Z
      */
-    MCAPI bool _applyImpl(class Item const *, class Actor const *, std::string const &, int &);
+    MCAPI bool _applyImpl(class Item const *&, class Actor const *, std::string const &, int &);
 
 private:
 

@@ -30,31 +30,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0Attribute\@\@QEAA\@AEBVHashedString\@\@W4RedefinitionMode\@\@_N\@Z
+     * @symbol ??0Attribute\@\@QEAA\@AEBVHashedString\@\@W4RedefinitionMode\@\@_N\@Z
      */
     MCAPI Attribute(class HashedString const &, enum class RedefinitionMode, bool);
     /**
-     * @symbol  ?getIDValue\@Attribute\@\@QEBA?BIXZ
+     * @symbol ?getIDValue\@Attribute\@\@QEBA?BIXZ
      */
     MCAPI unsigned int const getIDValue() const;
     /**
-     * @symbol  ?getName\@Attribute\@\@QEBAAEBVHashedString\@\@XZ
+     * @symbol ?getName\@Attribute\@\@QEBAAEBVHashedString\@\@XZ
      */
     MCAPI class HashedString const & getName() const;
     /**
-     * @symbol  ?getRedefinitionMode\@Attribute\@\@QEBA?AW4RedefinitionMode\@\@XZ
+     * @symbol ?getRedefinitionMode\@Attribute\@\@QEBA?AW4RedefinitionMode\@\@XZ
      */
     MCAPI enum class RedefinitionMode getRedefinitionMode() const;
     /**
-     * @symbol  ?isClientSyncable\@Attribute\@\@QEBA_NXZ
+     * @symbol ?isClientSyncable\@Attribute\@\@QEBA_NXZ
      */
     MCAPI bool isClientSyncable() const;
     /**
-     * @symbol  ??8Attribute\@\@QEBA_NAEBV0\@\@Z
+     * @symbol ??8Attribute\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class Attribute const &) const;
     /**
-     * @symbol  ?getByName\@Attribute\@\@SAAEAV1\@AEBVHashedString\@\@\@Z
+     * @symbol ?getByName\@Attribute\@\@SAAEAV1\@AEBVHashedString\@\@\@Z
      */
     MCAPI static class Attribute & getByName(class HashedString const &);
 

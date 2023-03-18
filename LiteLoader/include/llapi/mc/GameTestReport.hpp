@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ??1GameTestReport\@\@QEAA\@XZ
+     * @symbol ??1GameTestReport\@\@QEAA\@XZ
      */
     MCAPI ~GameTestReport();
     /**
-     * @symbol  ?bindType\@GameTestReport\@\@SAXXZ
+     * @symbol ?bindType\@GameTestReport\@\@SAXXZ
      */
     MCAPI static void bindType();
 

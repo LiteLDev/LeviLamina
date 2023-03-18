@@ -24,12 +24,19 @@ struct ExtendedStreamReadResult {
 public:
     struct ExtendedStreamReadResult& operator=(struct ExtendedStreamReadResult const &) = delete;
     ExtendedStreamReadResult(struct ExtendedStreamReadResult const &) = delete;
-    ExtendedStreamReadResult() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1ExtendedStreamReadResult\@\@QEAA\@XZ
+     * @symbol ??0ExtendedStreamReadResult\@\@QEAA\@W4StreamReadResult\@\@\@Z
+     */
+    MCAPI ExtendedStreamReadResult(enum class StreamReadResult);
+    /**
+     * @symbol ??0ExtendedStreamReadResult\@\@QEAA\@XZ
+     */
+    MCAPI ExtendedStreamReadResult();
+    /**
+     * @symbol ??1ExtendedStreamReadResult\@\@QEAA\@XZ
      */
     MCAPI ~ExtendedStreamReadResult();
 

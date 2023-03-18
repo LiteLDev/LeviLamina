@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0PersistentBlendData\@\@QEAA\@AEAVStringByteInput\@\@\@Z
+     * @symbol ??0PersistentBlendData\@\@QEAA\@AEAVStringByteInput\@\@\@Z
      */
     MCAPI PersistentBlendData(class StringByteInput &);
     /**
-     * @symbol  ?serialize\@PersistentBlendData\@\@QEBAXAEAVStringByteOutput\@\@\@Z
+     * @symbol ?serialize\@PersistentBlendData\@\@QEBAXAEAVStringByteOutput\@\@\@Z
      */
     MCAPI void serialize(class StringByteOutput &) const;
 

@@ -25,21 +25,21 @@ public:
 
 public:
     /**
-     * @symbol  ?createClientSystem\@AgentTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createClientSystem\@AgentTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createClientSystem();
     /**
-     * @symbol  ?createServerSystem\@AgentTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerSystem\@AgentTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSystem();
 
 //private:
     /**
-     * @symbol  ?_doClientAgentTravelSystem\@AgentTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_doClientAgentTravelSystem\@AgentTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doClientAgentTravelSystem(class StrictEntityContext const &, class ActorMovementProxyComponent &, class ActorOwnerComponent &);
     /**
-     * @symbol  ?_doServerAgentTravelSystem\@AgentTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@AEAVActorOwnerComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
+     * @symbol ?_doServerAgentTravelSystem\@AgentTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@AEAVActorOwnerComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void _doServerAgentTravelSystem(class StrictEntityContext const &, class ActorMovementProxyComponent &, class ActorOwnerComponent &, struct StateVectorComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
 

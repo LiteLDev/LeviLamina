@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerRespawnEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerRespawnEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerRespawnEvent();
 

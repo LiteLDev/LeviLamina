@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
+     * @symbol ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
      */
     MCAPI ReplayStateConfig(enum class ReplayStateMode);
     /**
-     * @symbol  ?usesUnsupportedThresholds\@ReplayStateConfig\@\@QEBA_NXZ
+     * @symbol ?usesUnsupportedThresholds\@ReplayStateConfig\@\@QEBA_NXZ
      */
     MCAPI bool usesUnsupportedThresholds() const;
 

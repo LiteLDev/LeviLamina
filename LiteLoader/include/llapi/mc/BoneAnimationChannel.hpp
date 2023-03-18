@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?addKeyFrame\@BoneAnimationChannel\@\@QEAAAEAVKeyFrameTransform\@\@M\@Z
+     * @symbol ?addKeyFrame\@BoneAnimationChannel\@\@QEAAAEAVKeyFrameTransform\@\@M\@Z
      */
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     /**
-     * @symbol  ?sortKeyFrames\@BoneAnimationChannel\@\@QEAAXXZ
+     * @symbol ?sortKeyFrames\@BoneAnimationChannel\@\@QEAAXXZ
      */
     MCAPI void sortKeyFrames();
 

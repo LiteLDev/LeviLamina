@@ -10,25 +10,22 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure DeserializeDataParams.
- *
- */
-struct DeserializeDataParams {
+
+class DeserializeDataParams {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZEDATAPARAMS
 public:
-    struct DeserializeDataParams& operator=(struct DeserializeDataParams const &) = delete;
-    DeserializeDataParams(struct DeserializeDataParams const &) = delete;
+    class DeserializeDataParams& operator=(class DeserializeDataParams const &) = delete;
+    DeserializeDataParams(class DeserializeDataParams const &) = delete;
     DeserializeDataParams() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1DeserializeDataParams\@\@QEAA\@XZ
+     * @symbol ??1DeserializeDataParams\@\@QEAA\@XZ
      */
     MCAPI ~DeserializeDataParams();
 

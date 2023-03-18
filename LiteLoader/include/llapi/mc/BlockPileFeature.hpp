@@ -31,22 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockPileFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@BlockPileFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@BlockPileFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl  4
-     * @symbol  ?getBlockToPlace\@BlockPileFeature\@\@MEBAAEBVBlock\@\@AEAVRandom\@\@\@Z
+     * @vftbl 4
+     * @symbol ?getBlockToPlace\@BlockPileFeature\@\@MEBAAEBVBlock\@\@AEAVRandom\@\@\@Z
      */
     virtual class Block const & getBlockToPlace(class Random &) const;
     /**
-     * @symbol  ??0BlockPileFeature\@\@QEAA\@AEBVBlock\@\@\@Z
+     * @symbol ??0BlockPileFeature\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI BlockPileFeature(class Block const &);
 

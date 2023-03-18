@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SubpackInfo\@\@QEAA\@XZ
+     * @symbol ??1SubpackInfo\@\@QEAA\@XZ
      */
     MCAPI ~SubpackInfo();
 

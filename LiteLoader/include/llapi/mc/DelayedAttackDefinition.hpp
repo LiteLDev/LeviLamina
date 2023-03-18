@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0DelayedAttackDefinition\@\@QEAA\@XZ
+     * @symbol ??0DelayedAttackDefinition\@\@QEAA\@XZ
      */
     MCAPI DelayedAttackDefinition();
     /**
-     * @symbol  ?initialize\@DelayedAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDelayedAttackGoal\@\@\@Z
+     * @symbol ?initialize\@DelayedAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDelayedAttackGoal\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &) const;
     /**
-     * @symbol  ?buildSchema\@DelayedAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDelayedAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
+     * @symbol ?buildSchema\@DelayedAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDelayedAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
 

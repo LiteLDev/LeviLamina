@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangQueryFunctionPtr\@\@QEAA\@XZ
+     * @symbol ??1MolangQueryFunctionPtr\@\@QEAA\@XZ
      */
     MCAPI ~MolangQueryFunctionPtr();
 

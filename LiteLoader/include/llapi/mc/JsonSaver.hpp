@@ -29,8 +29,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONSAVER
     /**
-     * @symbol  ?toString\@JsonSaver\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~JsonSaver();
+#endif
+    /**
+     * @symbol ?toString\@JsonSaver\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string toString();
 

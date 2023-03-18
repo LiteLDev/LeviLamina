@@ -29,73 +29,73 @@ public:
 
 public:
     /**
-     * @symbol  ??0WorldTemplateLevelData\@\@QEAA\@_N0AEBVBaseGameVersion\@\@1\@Z
+     * @symbol ??0WorldTemplateLevelData\@\@QEAA\@_N0AEBVBaseGameVersion\@\@1\@Z
      */
     MCAPI WorldTemplateLevelData(bool, bool, class BaseGameVersion const &, class BaseGameVersion const &);
     /**
-     * @symbol  ??0WorldTemplateLevelData\@\@QEAA\@XZ
+     * @symbol ??0WorldTemplateLevelData\@\@QEAA\@XZ
      */
     MCAPI WorldTemplateLevelData();
     /**
-     * @symbol  ?getBaseGameVersion\@WorldTemplateLevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
+     * @symbol ?getBaseGameVersion\@WorldTemplateLevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     /**
-     * @symbol  ?getContentIdentity\@WorldTemplateLevelData\@\@QEBAAEBVContentIdentity\@\@XZ
+     * @symbol ?getContentIdentity\@WorldTemplateLevelData\@\@QEBAAEBVContentIdentity\@\@XZ
      */
     MCAPI class ContentIdentity const & getContentIdentity() const;
     /**
-     * @symbol  ?getTagData\@WorldTemplateLevelData\@\@QEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?getTagData\@WorldTemplateLevelData\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void getTagData(class CompoundTag const &);
     /**
-     * @symbol  ?getWorldTemplateIdentity\@WorldTemplateLevelData\@\@QEBAAEBUPackIdVersion\@\@XZ
+     * @symbol ?getWorldTemplateIdentity\@WorldTemplateLevelData\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
     MCAPI struct PackIdVersion const & getWorldTemplateIdentity() const;
     /**
-     * @symbol  ?isFromWorldTemplate\@WorldTemplateLevelData\@\@QEBA_NXZ
+     * @symbol ?isFromWorldTemplate\@WorldTemplateLevelData\@\@QEBA_NXZ
      */
     MCAPI bool isFromWorldTemplate() const;
     /**
-     * @symbol  ?isWorldTemplateOptionLocked\@WorldTemplateLevelData\@\@QEBA_NXZ
+     * @symbol ?isWorldTemplateOptionLocked\@WorldTemplateLevelData\@\@QEBA_NXZ
      */
     MCAPI bool isWorldTemplateOptionLocked() const;
     /**
-     * @symbol  ?setBaseGameVersion\@WorldTemplateLevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
+     * @symbol ?setBaseGameVersion\@WorldTemplateLevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI void setBaseGameVersion(class BaseGameVersion const &);
     /**
-     * @symbol  ?setContentIdentity\@WorldTemplateLevelData\@\@QEAAXAEBVContentIdentity\@\@\@Z
+     * @symbol ?setContentIdentity\@WorldTemplateLevelData\@\@QEAAXAEBVContentIdentity\@\@\@Z
      */
     MCAPI void setContentIdentity(class ContentIdentity const &);
     /**
-     * @symbol  ?setIsWorldTemplateOptionLocked\@WorldTemplateLevelData\@\@QEAAX_N\@Z
+     * @symbol ?setIsWorldTemplateOptionLocked\@WorldTemplateLevelData\@\@QEAAX_N\@Z
      */
     MCAPI void setIsWorldTemplateOptionLocked(bool);
     /**
-     * @symbol  ?setMaxBaseGameVersion\@WorldTemplateLevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
+     * @symbol ?setMaxBaseGameVersion\@WorldTemplateLevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI void setMaxBaseGameVersion(class BaseGameVersion const &);
     /**
-     * @symbol  ?setTagData\@WorldTemplateLevelData\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?setTagData\@WorldTemplateLevelData\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void setTagData(class CompoundTag &) const;
     /**
-     * @symbol  ?setWorldTemplateIdentity\@WorldTemplateLevelData\@\@QEAAXAEBUPackIdVersion\@\@\@Z
+     * @symbol ?setWorldTemplateIdentity\@WorldTemplateLevelData\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void setWorldTemplateIdentity(struct PackIdVersion const &);
     /**
-     * @symbol  ??1WorldTemplateLevelData\@\@QEAA\@XZ
+     * @symbol ??1WorldTemplateLevelData\@\@QEAA\@XZ
      */
     MCAPI ~WorldTemplateLevelData();
 
 //protected:
     /**
-     * @symbol  ?_getTagData\@WorldTemplateLevelData\@\@IEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?_getTagData\@WorldTemplateLevelData\@\@IEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void _getTagData(class CompoundTag const &);
     /**
-     * @symbol  ?_setTagData\@WorldTemplateLevelData\@\@IEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?_setTagData\@WorldTemplateLevelData\@\@IEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void _setTagData(class CompoundTag &) const;
 

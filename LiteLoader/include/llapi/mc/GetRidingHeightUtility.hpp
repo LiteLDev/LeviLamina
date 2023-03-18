@@ -20,7 +20,7 @@ namespace GetRidingHeightUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?getRidingHeight\@GetRidingHeightUtility\@\@YAMVSynchedActorDataReader\@\@PEBURidingHeightComponent\@\@PEBUAdultRidingHeightOffsetComponent\@\@M\@Z
+     * @symbol ?getRidingHeight\@GetRidingHeightUtility\@\@YAMVSynchedActorDataReader\@\@PEBURidingHeightComponent\@\@PEBUAdultRidingHeightOffsetComponent\@\@M\@Z
      */
     MCAPI float getRidingHeight(class SynchedActorDataReader, struct RidingHeightComponent const *, struct AdultRidingHeightOffsetComponent const *, float);
 

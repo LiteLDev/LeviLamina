@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0PlayerMovementTelemetryData\@\@QEAA\@XZ
+     * @symbol ??0PlayerMovementTelemetryData\@\@QEAA\@XZ
      */
     MCAPI PlayerMovementTelemetryData();
     /**
-     * @symbol  ?getAverage\@PlayerMovementTelemetryData\@\@QEBAMXZ
+     * @symbol ?getAverage\@PlayerMovementTelemetryData\@\@QEBAMXZ
      */
     MCAPI float getAverage() const;
     /**
-     * @symbol  ?reset\@PlayerMovementTelemetryData\@\@QEAAXXZ
+     * @symbol ?reset\@PlayerMovementTelemetryData\@\@QEAAXXZ
      */
     MCAPI void reset();
 

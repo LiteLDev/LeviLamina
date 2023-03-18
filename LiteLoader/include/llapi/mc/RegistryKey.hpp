@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @symbol  ??BRegistryKey\@\@QEBA_NXZ
+     * @symbol ??BRegistryKey\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
     /**
-     * @symbol  ?readValue\@RegistryKey\@\@QEBA_NPEBDAEAK\@Z
+     * @symbol ?readValue\@RegistryKey\@\@QEBA_NPEBDAEAK\@Z
      */
     MCAPI bool readValue(char const *, unsigned long &) const;
     /**
-     * @symbol  ?readValue\@RegistryKey\@\@QEBA_NPEBDAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?readValue\@RegistryKey\@\@QEBA_NPEBDAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool readValue(char const *, std::string &) const;
     /**
-     * @symbol  ??1RegistryKey\@\@QEAA\@XZ
+     * @symbol ??1RegistryKey\@\@QEAA\@XZ
      */
     MCAPI ~RegistryKey();
     /**
-     * @symbol  ?open\@RegistryKey\@\@SA?AV1\@PEAUHKEY__\@\@PEBDK\@Z
+     * @symbol ?open\@RegistryKey\@\@SA?AV1\@PEAUHKEY__\@\@PEBDK\@Z
      */
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
 

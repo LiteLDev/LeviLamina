@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ?getOrCreatePluginResults\@ScriptPluginManagerResult\@\@QEAAAEAVScriptPluginResult\@\@AEBUModuleDescriptor\@Scripting\@\@\@Z
+     * @symbol ?getOrCreatePluginResults\@ScriptPluginManagerResult\@\@QEAAAEAVScriptPluginResult\@\@AEBUModuleDescriptor\@Scripting\@\@\@Z
      */
     MCAPI class ScriptPluginResult & getOrCreatePluginResults(struct Scripting::ModuleDescriptor const &);
     /**
-     * @symbol  ?writeToContentLog\@ScriptPluginManagerResult\@\@QEBAXXZ
+     * @symbol ?writeToContentLog\@ScriptPluginManagerResult\@\@QEBAXXZ
      */
     MCAPI void writeToContentLog() const;
     /**
-     * @symbol  ??1ScriptPluginManagerResult\@\@QEAA\@XZ
+     * @symbol ??1ScriptPluginManagerResult\@\@QEAA\@XZ
      */
     MCAPI ~ScriptPluginManagerResult();
 

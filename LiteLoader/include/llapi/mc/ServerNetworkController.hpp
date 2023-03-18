@@ -30,27 +30,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ServerNetworkController();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isDedicatedServer\@ServerNetworkController\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isDedicatedServer\@ServerNetworkController\@\@UEBA_NXZ
      */
     virtual bool isDedicatedServer() const;
     /**
-     * @vftbl  2
-     * @symbol  ?isHost\@ServerNetworkController\@\@UEBA_NAEBVUUID\@mce\@\@\@Z
+     * @vftbl 2
+     * @symbol ?isHost\@ServerNetworkController\@\@UEBA_NAEBVUUID\@mce\@\@\@Z
      */
     virtual bool isHost(class mce::UUID const &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?canChangePermission\@ServerNetworkController\@\@UEBA_NAEBVUUID\@mce\@\@AEBVServerPlayer\@\@\@Z
+     * @vftbl 3
+     * @symbol ?canChangePermission\@ServerNetworkController\@\@UEBA_NAEBVUUID\@mce\@\@AEBVServerPlayer\@\@\@Z
      */
     virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
     /**
-     * @symbol  ??0ServerNetworkController\@\@QEAA\@_NAEBVUUID\@mce\@\@V?$function\@$$A6A_NAEBVServerPlayer\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@\@Z
+     * @symbol ??0ServerNetworkController\@\@QEAA\@_NAEBVUUID\@mce\@\@V?$function\@$$A6A_NAEBVServerPlayer\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@\@Z
      */
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum class AbilitiesIndex)>);
 

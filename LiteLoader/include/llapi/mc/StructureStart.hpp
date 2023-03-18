@@ -30,40 +30,46 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StructureStart();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?postProcess\@StructureStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 1
+     * @symbol ?postProcess\@StructureStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @vftbl  2
-     * @symbol  ?isValid\@StructureStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@StructureStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESTART
     /**
-     * @symbol  ?postProcessMobsAt\@StructureStart\@\@QEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~StructureStart();
+#endif
+    /**
+     * @symbol ?postProcessMobsAt\@StructureStart\@\@QEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 //protected:
     /**
-     * @symbol  ?calculateBoundingBox\@StructureStart\@\@IEAAXXZ
+     * @symbol ?calculateBoundingBox\@StructureStart\@\@IEAAXXZ
      */
     MCAPI void calculateBoundingBox();
     /**
-     * @symbol  ?moveBoundingBoxes\@StructureStart\@\@IEAAXH\@Z
+     * @symbol ?moveBoundingBoxes\@StructureStart\@\@IEAAXH\@Z
      */
     MCAPI void moveBoundingBoxes(int);
     /**
-     * @symbol  ?moveInsideHeights\@StructureStart\@\@IEAAXAEAVRandom\@\@FF\@Z
+     * @symbol ?moveInsideHeights\@StructureStart\@\@IEAAXAEAVRandom\@\@FF\@Z
      */
     MCAPI void moveInsideHeights(class Random &, short, short);
     /**
-     * @symbol  ?moveToBelowSeaLevel\@StructureStart\@\@IEAAXFFAEAVRandom\@\@H\@Z
+     * @symbol ?moveToBelowSeaLevel\@StructureStart\@\@IEAAXFFAEAVRandom\@\@H\@Z
      */
     MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 

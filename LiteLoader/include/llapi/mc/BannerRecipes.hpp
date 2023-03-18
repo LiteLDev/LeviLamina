@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?addRecipes\@BannerRecipes\@\@SAXAEAVRecipes\@\@\@Z
+     * @symbol ?addRecipes\@BannerRecipes\@\@SAXAEAVRecipes\@\@\@Z
      */
     MCAPI static void addRecipes(class Recipes &);
 

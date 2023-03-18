@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GameSpecificNetEventCallback();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?handle\@GameSpecificNetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackClientResponsePacket\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handle\@GameSpecificNetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackClientResponsePacket\@\@\@Z
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 

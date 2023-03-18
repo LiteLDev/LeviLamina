@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1EntitiesInsideVolumeComponent\@\@QEAA\@XZ
+     * @symbol ??1EntitiesInsideVolumeComponent\@\@QEAA\@XZ
      */
     MCAPI ~EntitiesInsideVolumeComponent();
 

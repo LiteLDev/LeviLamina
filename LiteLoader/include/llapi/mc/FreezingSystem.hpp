@@ -30,26 +30,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FreezingSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@FreezingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@FreezingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @symbol  ?FREEZE_EFFECT_UUID\@FreezingSystem\@\@2VUUID\@mce\@\@B
+     * @symbol ?FREEZE_EFFECT_UUID\@FreezingSystem\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
     /**
-     * @symbol  ?VULNERABLE_MOB_FREEZE_DAMAGE\@FreezingSystem\@\@2HB
+     * @symbol ?VULNERABLE_MOB_FREEZE_DAMAGE\@FreezingSystem\@\@2HB
      */
     MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
 

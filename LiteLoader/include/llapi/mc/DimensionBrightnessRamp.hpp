@@ -30,22 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DimensionBrightnessRamp();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?buildBrightnessRamp\@DimensionBrightnessRamp\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?buildBrightnessRamp\@DimensionBrightnessRamp\@\@UEAAXXZ
      */
     virtual void buildBrightnessRamp();
     /**
-     * @vftbl  2
-     * @symbol  ?getBaseAmbientValue\@DimensionBrightnessRamp\@\@UEBAMXZ
+     * @vftbl 2
+     * @symbol ?getBaseAmbientValue\@DimensionBrightnessRamp\@\@UEBAMXZ
      */
     virtual float getBaseAmbientValue() const;
     /**
-     * @symbol  ?getBrightnessRampValue\@DimensionBrightnessRamp\@\@QEBAMH\@Z
+     * @symbol ?getBrightnessRampValue\@DimensionBrightnessRamp\@\@QEBAMH\@Z
      */
     MCAPI float getBrightnessRampValue(int) const;
 

@@ -25,16 +25,19 @@ struct PackedItemUseLegacyInventoryTransaction {
 public:
     struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
     PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
-    PackedItemUseLegacyInventoryTransaction() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
+     */
+    MCAPI PackedItemUseLegacyInventoryTransaction();
+    /**
+     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
     /**
-     * @symbol  ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
+     * @symbol ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 

@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
+     * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
      */
     MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     /**
-     * @symbol  ?isValid\@FileChunkInfo\@\@QEBA_NXZ
+     * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol  ?size\@FileChunkInfo\@\@QEBAHXZ
+     * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
      */
     MCAPI int size() const;
 

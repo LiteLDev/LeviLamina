@@ -29,5 +29,11 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATA
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SavedData();
+#endif
 
 };

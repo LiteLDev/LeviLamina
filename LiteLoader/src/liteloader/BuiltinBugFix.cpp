@@ -22,7 +22,6 @@
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
 
-#include "llapi/mc/NetworkHandler.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
 #include "llapi/mc/ReadOnlyBinaryStream.hpp"
 
@@ -212,9 +211,7 @@ static inline bool& connState(void* conn) {
 
 
 TInstanceHook(NetworkPeer::DataStatus,
-      "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$"
-      "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
-      "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
+      "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVNetworkSystem@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
     NetworkConnection, string* data, __int64 a3, __int64** a4) {
     auto status = original(this, data, a3, a4);
     if (status == NetworkPeer::DataStatus::HasData) {

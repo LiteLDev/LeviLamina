@@ -25,7 +25,7 @@ class AllowListFile;
 class PropertiesSettings;
 class ResourcePackRepository;
 class LevelStorage;
-
+class StructureManager;
 #ifdef LITELOADER_EXPORTS
 template <typename T>
 LIAPI inline T* Global = nullptr;

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangGeometryVariable\@\@QEAA\@XZ
+     * @symbol ??1MolangGeometryVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangGeometryVariable();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1AsyncStateRef\@\@QEAA\@XZ
+     * @symbol ??1AsyncStateRef\@\@QEAA\@XZ
      */
     MCAPI ~AsyncStateRef();
 

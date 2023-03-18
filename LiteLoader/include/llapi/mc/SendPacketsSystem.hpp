@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSendPacketsSystem\@SendPacketsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSendPacketsSystem\@SendPacketsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
 

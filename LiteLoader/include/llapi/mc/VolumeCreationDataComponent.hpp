@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1VolumeCreationDataComponent\@\@QEAA\@XZ
+     * @symbol ??1VolumeCreationDataComponent\@\@QEAA\@XZ
      */
     MCAPI ~VolumeCreationDataComponent();
 

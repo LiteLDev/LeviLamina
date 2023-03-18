@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorDefinitionFeedItem\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionFeedItem\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionFeedItem();
 

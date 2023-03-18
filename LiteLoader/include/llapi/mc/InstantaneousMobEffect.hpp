@@ -31,22 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InstantaneousMobEffect();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  5
-     * @symbol  ?isInstantaneous\@InstantaneousMobEffect\@\@UEBA_NXZ
+     * @vftbl 5
+     * @symbol ?isInstantaneous\@InstantaneousMobEffect\@\@UEBA_NXZ
      */
     virtual bool isInstantaneous() const;
     /**
-     * @vftbl  7
-     * @symbol  ?isDurationEffectTick\@InstantaneousMobEffect\@\@UEBA_NHH\@Z
+     * @vftbl 7
+     * @symbol ?isDurationEffectTick\@InstantaneousMobEffect\@\@UEBA_NHH\@Z
      */
     virtual bool isDurationEffectTick(int, int) const;
     /**
-     * @symbol  ??0InstantaneousMobEffect\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
+     * @symbol ??0InstantaneousMobEffect\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
      */
     MCAPI InstantaneousMobEffect(unsigned int, std::string const &, std::string const &, bool, int, int);
 

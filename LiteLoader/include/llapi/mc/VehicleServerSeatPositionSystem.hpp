@@ -28,8 +28,16 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@VehicleServerSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@VehicleServerSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+
+//private:
+    /**
+     * @symbol ?_getRidingHeight\@VehicleServerSeatPositionSystem\@\@CAMAEBVStrictEntityContext\@\@AEBUOffsetsComponent\@\@AEBUSynchedActorDataComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBURidingHeightComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUAdultRidingHeightOffsetComponent\@\@\@\@\@Z
+     */
+    MCAPI static float _getRidingHeight(class StrictEntityContext const &, struct OffsetsComponent const &, struct SynchedActorDataComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct RidingHeightComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AdultRidingHeightOffsetComponent const>);
+
+private:
 
 };

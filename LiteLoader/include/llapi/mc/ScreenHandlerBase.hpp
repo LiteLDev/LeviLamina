@@ -30,38 +30,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScreenHandlerBase();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?handleAction\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleAction\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
-     * @vftbl  2
-     * @symbol  ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
+     * @vftbl 2
+     * @symbol ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
     /**
-     * @symbol  ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
+     * @symbol ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
      */
     MCVAPI void endRequestBatch();
     /**
-     * @symbol  ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
+     * @symbol ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
      */
     MCVAPI void postRequest(bool);
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScreenHandlerBase();
 #endif
     /**
-     * @symbol  ??0ScreenHandlerBase\@\@QEAA\@AEAVItemStackRequestActionHandler\@\@\@Z
+     * @symbol ??0ScreenHandlerBase\@\@QEAA\@AEAVItemStackRequestActionHandler\@\@\@Z
      */
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 //protected:
     /**
-     * @symbol  ?_tryGetSparseContainer\@ScreenHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
+     * @symbol ?_tryGetSparseContainer\@ScreenHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
 

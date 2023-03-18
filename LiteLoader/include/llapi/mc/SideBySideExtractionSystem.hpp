@@ -29,25 +29,25 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SideBySideExtractionSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?registerEvents\@SideBySideExtractionSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
+     * @vftbl 1
+     * @symbol ?registerEvents\@SideBySideExtractionSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @symbol  ??0SideBySideExtractionSystem\@\@QEAA\@AEBV?$array\@V?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@$0BI\@\@std\@\@\@Z
+     * @symbol ??0SideBySideExtractionSystem\@\@QEAA\@AEBV?$array\@V?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@$0BJ\@\@std\@\@\@Z
      */
-    MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 24> const &);
+    MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 25> const &);
     /**
-     * @symbol  ?_onSideBySideExtractionRequest\@SideBySideExtractionSystem\@\@SAXAEBUExtractMethods\@SideBySide\@\@AEBUOnExtractSideBySide\@\@\@Z
+     * @symbol ?_onSideBySideExtractionRequest\@SideBySideExtractionSystem\@\@SAXAEBUExtractMethods\@SideBySide\@\@AEBUOnExtractSideBySide\@\@\@Z
      */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
     /**
-     * @symbol  ?onStoreSideBySideResult\@SideBySideExtractionSystem\@\@SAXAEBUOnStoreSideBySideResult\@\@\@Z
+     * @symbol ?onStoreSideBySideResult\@SideBySideExtractionSystem\@\@SAXAEBUOnStoreSideBySideResult\@\@\@Z
      */
     MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
 

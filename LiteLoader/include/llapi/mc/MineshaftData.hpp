@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0MineshaftData\@\@QEAA\@_N\@Z
+     * @symbol ??0MineshaftData\@\@QEAA\@_N\@Z
      */
     MCAPI MineshaftData(bool);
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?addKeyFrame\@StateAnimationVariable\@\@QEAAXMM\@Z
+     * @symbol ?addKeyFrame\@StateAnimationVariable\@\@QEAAXMM\@Z
      */
     MCAPI void addKeyFrame(float, float);
 

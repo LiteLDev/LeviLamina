@@ -20,7 +20,7 @@ namespace ChiseledBookshelfBlockActorKeys {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?Items\@ChiseledBookshelfBlockActorKeys\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?Items\@ChiseledBookshelfBlockActorKeys\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const Items;
 

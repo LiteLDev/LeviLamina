@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorDefinitionIdentifierComponent\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionIdentifierComponent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionIdentifierComponent();
 

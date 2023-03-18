@@ -31,17 +31,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
     /**
-     * @symbol  ?_onEnd\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ?_onEnd\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
     /**
-     * @symbol  ?_onStart\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ?_onStart\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
     /**
-     * @symbol  ?_onTick\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ?_onTick\@LabTableReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~LabTableReactionComponent();
 #endif
 
 };

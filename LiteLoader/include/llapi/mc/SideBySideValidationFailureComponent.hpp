@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SideBySideValidationFailureComponent\@\@QEAA\@XZ
+     * @symbol ??1SideBySideValidationFailureComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideValidationFailureComponent();
 

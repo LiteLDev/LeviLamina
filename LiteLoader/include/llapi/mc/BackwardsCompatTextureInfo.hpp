@@ -27,7 +27,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0BackwardsCompatTextureInfo\@\@QEAA\@XZ
+     * @symbol ??0BackwardsCompatTextureInfo\@\@QEAA\@XZ
      */
     MCAPI BackwardsCompatTextureInfo();
 

@@ -26,8 +26,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HC_CALL
     /**
-     * @symbol  ??0HC_CALL\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~HC_CALL();
+#endif
+    /**
+     * @symbol ??0HC_CALL\@\@QEAA\@XZ
      */
     MCAPI HC_CALL();
 

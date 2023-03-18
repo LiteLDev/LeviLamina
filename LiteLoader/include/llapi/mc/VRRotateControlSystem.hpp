@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@VRRotateControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@VRRotateControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

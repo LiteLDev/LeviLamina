@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ?addOnIncreaseSoundDefinition\@AngerLevelDefinition\@\@QEAAXAEBVSoundDefinition\@\@\@Z
+     * @symbol ?addOnIncreaseSoundDefinition\@AngerLevelDefinition\@\@QEAAXAEBVSoundDefinition\@\@\@Z
      */
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const &);
     /**
-     * @symbol  ?initialize\@AngerLevelDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAngerLevelComponent\@\@\@Z
+     * @symbol ?initialize\@AngerLevelDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAngerLevelComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class AngerLevelComponent &) const;
     /**
-     * @symbol  ?buildSchema\@AngerLevelDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAngerLevelDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@AngerLevelDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAngerLevelDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>> &);
 

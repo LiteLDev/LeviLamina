@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1GatheringServerInfo\@\@QEAA\@XZ
+     * @symbol ??1GatheringServerInfo\@\@QEAA\@XZ
      */
     MCAPI ~GatheringServerInfo();
 

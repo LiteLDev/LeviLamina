@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SendEventStage\@\@QEAA\@XZ
+     * @symbol ??1SendEventStage\@\@QEAA\@XZ
      */
     MCAPI ~SendEventStage();
 

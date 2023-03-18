@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1DeserializedChunkLoadedRequest\@\@QEAA\@XZ
+     * @symbol ??1DeserializedChunkLoadedRequest\@\@QEAA\@XZ
      */
     MCAPI ~DeserializedChunkLoadedRequest();
 

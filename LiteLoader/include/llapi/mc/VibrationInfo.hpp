@@ -28,27 +28,27 @@ public:
 
 public:
     /**
-     * @symbol  ??0VibrationInfo\@\@QEAA\@AEBVGameEvent\@\@AEBUGameEventContext\@\@M\@Z
-     */
-    MCAPI VibrationInfo(class GameEvent const &, struct GameEventContext const &, float);
-    /**
-     * @symbol  ??0VibrationInfo\@\@QEAA\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ??0VibrationInfo\@\@QEAA\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI VibrationInfo(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?getProjectileOwner\@VibrationInfo\@\@QEBAPEAVActor\@\@AEAVLevel\@\@\@Z
+     * @symbol ??0VibrationInfo\@\@QEAA\@AEBVGameEvent\@\@AEBUGameEventContext\@\@M\@Z
+     */
+    MCAPI VibrationInfo(class GameEvent const &, struct GameEventContext const &, float);
+    /**
+     * @symbol ?getProjectileOwner\@VibrationInfo\@\@QEBAPEAVActor\@\@AEAVLevel\@\@\@Z
      */
     MCAPI class Actor * getProjectileOwner(class Level &) const;
     /**
-     * @symbol  ?getSource\@VibrationInfo\@\@QEBAPEAVActor\@\@AEAVLevel\@\@\@Z
+     * @symbol ?getSource\@VibrationInfo\@\@QEBAPEAVActor\@\@AEAVLevel\@\@\@Z
      */
     MCAPI class Actor * getSource(class Level &) const;
     /**
-     * @symbol  ?load\@VibrationInfo\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?load\@VibrationInfo\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?save\@VibrationInfo\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?save\@VibrationInfo\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void save(class CompoundTag &) const;
 

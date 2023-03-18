@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerDestroyBlockEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerDestroyBlockEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerDestroyBlockEvent();
 

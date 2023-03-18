@@ -36,34 +36,34 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NpcCommandAction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?toJson\@NpcCommandAction\@\@UEAA?AVValue\@Json\@\@XZ
+     * @vftbl 1
+     * @symbol ?toJson\@NpcCommandAction\@\@UEAA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value toJson();
     /**
-     * @vftbl  2
-     * @symbol  ?fromJson\@NpcCommandAction\@\@UEAA_NAEBVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?fromJson\@NpcCommandAction\@\@UEAA_NAEBVValue\@Json\@\@\@Z
      */
     virtual bool fromJson(class Json::Value const &);
     /**
-     * @symbol  ??0NpcCommandAction\@\@QEAA\@XZ
+     * @symbol ??0NpcCommandAction\@\@QEAA\@XZ
      */
     MCAPI NpcCommandAction();
     /**
-     * @symbol  ?getCommands\@NpcCommandAction\@\@QEAAAEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getCommands\@NpcCommandAction\@\@QEAAAEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     /**
-     * @symbol  ?setCommands\@NpcCommandAction\@\@QEAAX$$QEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?setCommands\@NpcCommandAction\@\@QEAAX$$QEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
     /**
-     * @symbol  ?COMMAND_DELIMITER\@NpcCommandAction\@\@2DB
+     * @symbol ?COMMAND_DELIMITER\@NpcCommandAction\@\@2DB
      */
     MCAPI static char const COMMAND_DELIMITER;
 
@@ -71,11 +71,11 @@ public:
 
 private:
     /**
-     * @symbol  ?COMMAND_LINE_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?COMMAND_LINE_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const COMMAND_LINE_KEY;
     /**
-     * @symbol  ?COMMAND_VERSION_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?COMMAND_VERSION_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const COMMAND_VERSION_KEY;
 

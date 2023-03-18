@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createShulkerUpdatePositionSystem\@ShulkerUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createShulkerUpdatePositionSystem\@ShulkerUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createShulkerUpdatePositionSystem();
 

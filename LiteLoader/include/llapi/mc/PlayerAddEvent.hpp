@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerAddEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerAddEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerAddEvent();
 

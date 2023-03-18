@@ -32,36 +32,36 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BoolOption();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?save\@BoolOption\@\@UEAAXAEAV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @vftbl 1
+     * @symbol ?save\@BoolOption\@\@UEAAXAEAV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     virtual void save(std::vector<struct std::pair<std::string, std::string>> &);
     /**
-     * @vftbl  2
-     * @symbol  ?load\@BoolOption\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol ?load\@BoolOption\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void load(std::string const &);
     /**
-     * @symbol  ??0BoolOption\@\@QEAA\@W4OptionID\@\@W4OptionOwnerType\@\@W4OptionResetFlags\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3_N\@Z
+     * @symbol ??0BoolOption\@\@QEAA\@W4OptionID\@\@W4OptionOwnerType\@\@W4OptionResetFlags\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3_N\@Z
      */
     MCAPI BoolOption(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, bool);
     /**
-     * @symbol  ?getValue\@BoolOption\@\@QEBA_NXZ
+     * @symbol ?getValue\@BoolOption\@\@QEBA_NXZ
      */
     MCAPI bool getValue() const;
     /**
-     * @symbol  ?set\@BoolOption\@\@QEAAX_N0\@Z
+     * @symbol ?set\@BoolOption\@\@QEAAX_N0\@Z
      */
     MCAPI void set(bool, bool);
 
 //private:
     /**
-     * @symbol  ?_set\@BoolOption\@\@AEAAX_N0\@Z
+     * @symbol ?_set\@BoolOption\@\@AEAAX_N0\@Z
      */
     MCAPI void _set(bool, bool);
 

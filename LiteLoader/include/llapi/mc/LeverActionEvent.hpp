@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0LeverActionEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0LeverActionEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI LeverActionEvent(struct LeverActionEvent const &);
     /**
-     * @symbol  ??1LeverActionEvent\@\@QEAA\@XZ
+     * @symbol ??1LeverActionEvent\@\@QEAA\@XZ
      */
     MCAPI ~LeverActionEvent();
 

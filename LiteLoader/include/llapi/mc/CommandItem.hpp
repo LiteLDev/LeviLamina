@@ -32,31 +32,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0CommandItem\@\@QEAA\@XZ
+     * @symbol ??0CommandItem\@\@QEAA\@XZ
      */
     MCAPI CommandItem();
     /**
-     * @symbol  ??0CommandItem\@\@QEAA\@HF_N\@Z
+     * @symbol ??0CommandItem\@\@QEAA\@HF_N\@Z
      */
     MCAPI CommandItem(int, short, bool);
     /**
-     * @symbol  ??0CommandItem\@\@QEAA\@_K\@Z
+     * @symbol ??0CommandItem\@\@QEAA\@_K\@Z
      */
     MCAPI CommandItem(unsigned __int64);
     /**
-     * @symbol  ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHPEAVCommandOutput\@\@_N\@Z
+     * @symbol ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHPEAVCommandOutput\@\@_N\@Z
      */
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
     /**
-     * @symbol  ?getId\@CommandItem\@\@QEBAHXZ
+     * @symbol ?getId\@CommandItem\@\@QEBAHXZ
      */
     MCAPI int getId() const;
     /**
-     * @symbol  ??BCommandItem\@\@QEBA_NXZ
+     * @symbol ??BCommandItem\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
     /**
-     * @symbol  ??BCommandItem\@\@QEBA_KXZ
+     * @symbol ??BCommandItem\@\@QEBA_KXZ
      */
     MCAPI operator unsigned __int64() const;
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1WorldTemplateManagerProxyCallbacks\@\@QEAA\@XZ
+     * @symbol ??1WorldTemplateManagerProxyCallbacks\@\@QEAA\@XZ
      */
     MCAPI ~WorldTemplateManagerProxyCallbacks();
 

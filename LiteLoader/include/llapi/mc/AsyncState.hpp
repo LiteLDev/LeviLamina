@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?Release\@AsyncState\@\@QEAAXXZ
+     * @symbol ?Release\@AsyncState\@\@QEAAXXZ
      */
     MCAPI void Release();
 

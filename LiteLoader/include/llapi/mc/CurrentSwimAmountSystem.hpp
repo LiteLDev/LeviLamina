@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @symbol  ?_doCurrentSwimAmountSystem\@CurrentSwimAmountSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUCurrentSwimAmountComponent\@\@AEBUSynchedActorDataComponent\@\@\@Z
+     * @symbol ?_doCurrentSwimAmountSystem\@CurrentSwimAmountSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUCurrentSwimAmountComponent\@\@AEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI static void _doCurrentSwimAmountSystem(class StrictEntityContext const &, struct CurrentSwimAmountComponent &, struct SynchedActorDataComponent const &);
 

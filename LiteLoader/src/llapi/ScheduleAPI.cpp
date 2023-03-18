@@ -226,7 +226,7 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-THook(void, "?tick@ServerLevel@@UEAAXXZ",
+THook(void, "?_subTick@ServerLevel@@MEAAXXZ",
       void* _this) {
     original(_this);
     taskQueue.tick();

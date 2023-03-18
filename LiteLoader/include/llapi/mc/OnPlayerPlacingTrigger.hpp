@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnPlayerPlacingTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnPlayerPlacingTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnPlayerPlacingTrigger();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnStepOnTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnStepOnTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnStepOnTrigger();
 

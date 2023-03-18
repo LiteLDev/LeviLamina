@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1KeyOrNameResult\@\@QEAA\@XZ
+     * @symbol ??1KeyOrNameResult\@\@QEAA\@XZ
      */
     MCAPI ~KeyOrNameResult();
 

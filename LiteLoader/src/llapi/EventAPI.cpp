@@ -431,14 +431,14 @@ TClasslessInstanceHook(bool,
 int num = 0;
 
 /////////////////// PlayerJump ///////////////////
-TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player) {
+TInstanceHook(void, "?jumpFromGround@Player@@UEAAXAEBVIConstBlockSource@@@Z", Player,void* a2) {
     IF_LISTENED(PlayerJumpEvent) {
         PlayerJumpEvent ev{};
         ev.mPlayer = this;
         ev.call();
     }
     IF_LISTENED_END(PlayerJumpEvent)
-    return original(this);
+    return original(this,a2);
 }
 
 /////////////////// PlayerSneak ///////////////////

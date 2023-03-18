@@ -30,63 +30,67 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?writeSettings\@ItemComponent\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
      */
     virtual void writeSettings();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
     /**
-     * @symbol  ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
      */
     MCVAPI bool checkComponentDataForContentErrors() const;
     /**
-     * @symbol  ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?isNetworkComponent\@ItemComponent\@\@UEBA_NXZ
+     * @symbol ?isNetworkComponent\@ItemComponent\@\@UEBA_NXZ
      */
     MCVAPI bool isNetworkComponent() const;
     /**
-     * @symbol  ?useOn\@ItemComponent\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?useOn\@ItemComponent\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ItemComponent();
 #endif
     /**
-     * @symbol  ??0ItemComponent\@\@QEAA\@PEAVComponentItem\@\@\@Z
+     * @symbol ??0ItemComponent\@\@QEAA\@PEAVComponentItem\@\@\@Z
      */
     MCAPI ItemComponent(class ComponentItem *);
     /**
-     * @symbol  ?bindItemComponentType\@ItemComponent\@\@SAXXZ
+     * @symbol ?bindItemComponentType\@ItemComponent\@\@SAXXZ
      */
     MCAPI static void bindItemComponentType();
     /**
-     * @symbol  ?registerVersionUpgrades\@ItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
+     * @symbol ?registerVersionUpgrades\@ItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

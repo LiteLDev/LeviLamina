@@ -36,43 +36,49 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackRequestAction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getCraftAction\@ItemStackRequestAction\@\@UEBAPEBVItemStackRequestActionCraftBase\@\@XZ
+     * @vftbl 1
+     * @symbol ?getCraftAction\@ItemStackRequestAction\@\@UEBAPEBVItemStackRequestActionCraftBase\@\@XZ
      */
     virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
+     * @vftbl 2
+     * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
      */
     virtual int getFilteredStringIndex() const;
     /**
-     * @vftbl  3
-     * @symbol  ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestAction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
+     * @vftbl 3
+     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestAction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
     /**
-     * @symbol  ??0ItemStackRequestAction\@\@QEAA\@W4ItemStackRequestActionType\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ItemStackRequestAction();
+#endif
+    /**
+     * @symbol ??0ItemStackRequestAction\@\@QEAA\@W4ItemStackRequestActionType\@\@\@Z
      */
     MCAPI ItemStackRequestAction(enum class ItemStackRequestActionType);
     /**
-     * @symbol  ?getActionType\@ItemStackRequestAction\@\@QEBA?AW4ItemStackRequestActionType\@\@XZ
+     * @symbol ?getActionType\@ItemStackRequestAction\@\@QEBA?AW4ItemStackRequestActionType\@\@XZ
      */
     MCAPI enum class ItemStackRequestActionType getActionType() const;
     /**
-     * @symbol  ?write\@ItemStackRequestAction\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@ItemStackRequestAction\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
     /**
-     * @symbol  ?getActionTypeName\@ItemStackRequestAction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackRequestActionType\@\@\@Z
+     * @symbol ?getActionTypeName\@ItemStackRequestAction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackRequestActionType\@\@\@Z
      */
     MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     /**
-     * @symbol  ?read\@ItemStackRequestAction\@\@SA?AV?$unique_ptr\@VItemStackRequestAction\@\@U?$default_delete\@VItemStackRequestAction\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemStackRequestAction\@\@SA?AV?$unique_ptr\@VItemStackRequestAction\@\@U?$default_delete\@VItemStackRequestAction\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
@@ -80,7 +86,7 @@ public:
 
 private:
     /**
-     * @symbol  ?actionTypeMap\@ItemStackRequestAction\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackRequestActionType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
+     * @symbol ?actionTypeMap\@ItemStackRequestAction\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackRequestActionType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
     MCAPI static class BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const actionTypeMap;
 

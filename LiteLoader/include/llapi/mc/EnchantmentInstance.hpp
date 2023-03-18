@@ -30,31 +30,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0EnchantmentInstance\@\@QEAA\@XZ
+     * @symbol ??0EnchantmentInstance\@\@QEAA\@XZ
      */
     MCAPI EnchantmentInstance();
     /**
-     * @symbol  ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
+     * @symbol ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
      */
     MCAPI EnchantmentInstance(enum class Enchant::Type, int);
     /**
-     * @symbol  ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
+     * @symbol ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
      */
     MCAPI int getEnchantLevel() const;
     /**
-     * @symbol  ?getEnchantType\@EnchantmentInstance\@\@QEBA?AW4Type\@Enchant\@\@XZ
+     * @symbol ?getEnchantType\@EnchantmentInstance\@\@QEBA?AW4Type\@Enchant\@\@XZ
      */
     MCAPI enum class Enchant::Type getEnchantType() const;
     /**
-     * @symbol  ??8EnchantmentInstance\@\@QEBA_NAEBV0\@\@Z
+     * @symbol ??8EnchantmentInstance\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class EnchantmentInstance const &) const;
     /**
-     * @symbol  ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
+     * @symbol ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
      */
     MCAPI void setEnchantLevel(int);
     /**
-     * @symbol  ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
+     * @symbol ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
      */
     MCAPI void setEnchantType(enum class Enchant::Type);
 

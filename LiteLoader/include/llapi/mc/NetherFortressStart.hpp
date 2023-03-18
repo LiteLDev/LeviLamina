@@ -31,12 +31,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NetherFortressStart();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0NetherFortressStart\@\@QEAA\@AEAVRandom\@\@FHH\@Z
+     * @symbol ??0NetherFortressStart\@\@QEAA\@AEAVRandom\@\@FHH\@Z
      */
     MCAPI NetherFortressStart(class Random &, short, int, int);
 

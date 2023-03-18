@@ -31,18 +31,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
     /**
-     * @symbol  ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
+     * @symbol ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     MCVAPI void start();
     /**
-     * @symbol  ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
+     * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     MCVAPI void stop();
 #endif
 
 //protected:
     /**
-     * @symbol  ?dampenSpeed\@PetSleepWithOwnerState\@\@IEAAXXZ
+     * @symbol ?dampenSpeed\@PetSleepWithOwnerState\@\@IEAAXXZ
      */
     MCAPI void dampenSpeed();
 

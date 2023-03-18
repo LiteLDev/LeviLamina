@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MetaDataTypeVisitor_Get\@\@QEAA\@XZ
+     * @symbol ??1MetaDataTypeVisitor_Get\@\@QEAA\@XZ
      */
     MCAPI ~MetaDataTypeVisitor_Get();
 

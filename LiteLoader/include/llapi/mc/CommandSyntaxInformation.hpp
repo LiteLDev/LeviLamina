@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0CommandSyntaxInformation\@\@QEAA\@XZ
+     * @symbol ??0CommandSyntaxInformation\@\@QEAA\@XZ
      */
     MCAPI CommandSyntaxInformation();
     /**
-     * @symbol  ??1CommandSyntaxInformation\@\@QEAA\@XZ
+     * @symbol ??1CommandSyntaxInformation\@\@QEAA\@XZ
      */
     MCAPI ~CommandSyntaxInformation();
 

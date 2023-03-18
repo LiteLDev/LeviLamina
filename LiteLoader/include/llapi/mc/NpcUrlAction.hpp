@@ -30,17 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NpcUrlAction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?toJson\@NpcUrlAction\@\@UEAA?AVValue\@Json\@\@XZ
+     * @vftbl 1
+     * @symbol ?toJson\@NpcUrlAction\@\@UEAA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value toJson();
     /**
-     * @symbol  ??0NpcUrlAction\@\@QEAA\@XZ
+     * @symbol ??0NpcUrlAction\@\@QEAA\@XZ
      */
     MCAPI NpcUrlAction();
 

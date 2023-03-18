@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerRespawnRandomizer\@\@QEAA\@XZ
+     * @symbol ??1PlayerRespawnRandomizer\@\@QEAA\@XZ
      */
     MCAPI ~PlayerRespawnRandomizer();
 

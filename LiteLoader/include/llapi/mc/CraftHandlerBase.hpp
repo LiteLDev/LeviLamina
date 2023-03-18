@@ -31,76 +31,82 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CraftHandlerBase();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?handleConsumedItem\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ContainerEnumName\@\@EAEBVItemStack\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleConsumedItem\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ContainerEnumName\@\@EAEBVItemStack\@\@\@Z
      */
     virtual enum class ItemStackNetResult handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const &);
     /**
-     * @vftbl  2
-     * @symbol  ?preHandleAction\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ItemStackRequestActionType\@\@\@Z
+     * @vftbl 2
+     * @symbol ?preHandleAction\@CraftHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@W4ItemStackRequestActionType\@\@\@Z
      */
     virtual enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
     /**
-     * @vftbl  3
-     * @symbol  ?endRequestBatch\@CraftHandlerBase\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?endRequestBatch\@CraftHandlerBase\@\@UEAAXXZ
      */
     virtual void endRequestBatch();
     /**
-     * @vftbl  4
-     * @symbol  ?_handleCraftAction\@CraftHandlerSmithingTable\@\@EEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_handleCraftAction\@CraftHandlerEnchant\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /**
-     * @vftbl  5
-     * @symbol  ?_postCraftRequest\@CraftHandlerBase\@\@MEAAX_N\@Z
+     * @vftbl 5
+     * @symbol ?_postCraftRequest\@CraftHandlerBase\@\@MEAAX_N\@Z
      */
     virtual void _postCraftRequest(bool);
     /**
-     * @vftbl  6
-     * @symbol  ?_getLevelRecipes\@CraftHandlerBase\@\@MEBAPEBVRecipes\@\@XZ
+     * @vftbl 6
+     * @symbol ?_getLevelRecipes\@CraftHandlerBase\@\@MEBAPEBVRecipes\@\@XZ
      */
     virtual class Recipes const * _getLevelRecipes() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
     /**
-     * @symbol  ??0CraftHandlerBase\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~CraftHandlerBase();
+#endif
+    /**
+     * @symbol ??0CraftHandlerBase\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
      */
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     /**
-     * @symbol  ?_isNonImplementedTrustClientResults\@CraftHandlerBase\@\@QEBA_NXZ
+     * @symbol ?_isNonImplementedTrustClientResults\@CraftHandlerBase\@\@QEBA_NXZ
      */
     MCAPI bool _isNonImplementedTrustClientResults() const;
     /**
-     * @symbol  ?endRequest\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@W42\@\@Z
+     * @symbol ?endRequest\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@W42\@\@Z
      */
     MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
     /**
-     * @symbol  ?handleCraftAction\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@W42\@\@Z
+     * @symbol ?handleCraftAction\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@W42\@\@Z
      */
     MCAPI enum class ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &, enum class ItemStackNetResult);
     /**
-     * @symbol  ?isCraftRequest\@CraftHandlerBase\@\@QEAA_NXZ
+     * @symbol ?isCraftRequest\@CraftHandlerBase\@\@QEAA_NXZ
      */
     MCAPI bool isCraftRequest();
     /**
-     * @symbol  ?postRequest\@CraftHandlerBase\@\@QEAAX_N\@Z
+     * @symbol ?postRequest\@CraftHandlerBase\@\@QEAAX_N\@Z
      */
     MCAPI void postRequest(bool);
 
 //protected:
     /**
-     * @symbol  ?_getRecipeFromNetId\@CraftHandlerBase\@\@IEAA?AV?$tuple\@W4ItemStackNetResult\@\@PEBVRecipe\@\@\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
+     * @symbol ?_getRecipeFromNetId\@CraftHandlerBase\@\@IEAA?AV?$tuple\@W4ItemStackNetResult\@\@PEBVRecipe\@\@\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI class std::tuple<enum class ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
-     * @symbol  ?_tryGetSparseContainer\@CraftHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
+     * @symbol ?_tryGetSparseContainer\@CraftHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
      */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
     /**
-     * @symbol  ?_validateRequestSlot\@CraftHandlerBase\@\@IEAA?AUItemStackRequestHandlerSlotInfo\@\@UItemStackRequestSlotInfo\@\@\@Z
+     * @symbol ?_validateRequestSlot\@CraftHandlerBase\@\@IEAA?AUItemStackRequestHandlerSlotInfo\@\@UItemStackRequestSlotInfo\@\@\@Z
      */
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 

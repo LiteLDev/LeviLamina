@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0ScopedAutoreleasePool\@\@QEAA\@XZ
+     * @symbol ??0ScopedAutoreleasePool\@\@QEAA\@XZ
      */
     MCAPI ScopedAutoreleasePool();
     /**
-     * @symbol  ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void drain();
     /**
-     * @symbol  ?drainNow\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?drainNow\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void drainNow();
     /**
-     * @symbol  ?reset\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?reset\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void reset();
     /**
-     * @symbol  ??1ScopedAutoreleasePool\@\@QEAA\@XZ
+     * @symbol ??1ScopedAutoreleasePool\@\@QEAA\@XZ
      */
     MCAPI ~ScopedAutoreleasePool();
 

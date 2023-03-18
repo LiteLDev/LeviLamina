@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createPostFallDamageFinalizeMoveSystem\@PostFallDamageFinalizeMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createPostFallDamageFinalizeMoveSystem\@PostFallDamageFinalizeMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPostFallDamageFinalizeMoveSystem();
 

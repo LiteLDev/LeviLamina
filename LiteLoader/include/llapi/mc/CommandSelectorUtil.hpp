@@ -20,8 +20,8 @@ namespace CommandSelectorUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?isValidSelector\@CommandSelectorUtil\@\@YA_NV?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ?isValidSelector\@CommandSelectorUtil\@\@YA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI bool isValidSelector(class gsl::basic_string_span<char const, -1>);
+    MCAPI bool isValidSelector(class std::basic_string_view<char, struct std::char_traits<char>>);
 
 };

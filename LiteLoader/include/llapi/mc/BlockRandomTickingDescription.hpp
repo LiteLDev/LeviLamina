@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockRandomTickingDescription.
- *
- */
-struct BlockRandomTickingDescription {
+
+class BlockRandomTickingDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,33 +20,33 @@ struct BlockRandomTickingDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKRANDOMTICKINGDESCRIPTION
 public:
-    struct BlockRandomTickingDescription& operator=(struct BlockRandomTickingDescription const &) = delete;
-    BlockRandomTickingDescription(struct BlockRandomTickingDescription const &) = delete;
+    class BlockRandomTickingDescription& operator=(class BlockRandomTickingDescription const &) = delete;
+    BlockRandomTickingDescription(class BlockRandomTickingDescription const &) = delete;
     BlockRandomTickingDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockRandomTickingDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getName\@BlockRandomTickingDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockRandomTickingDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl  2
-     * @symbol  ?initializeComponent\@BlockRandomTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeComponent\@BlockRandomTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @symbol  ?NameID\@BlockRandomTickingDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockRandomTickingDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol  ?bindType\@BlockRandomTickingDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockRandomTickingDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
 

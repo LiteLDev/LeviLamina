@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangTextureVariable\@\@QEAA\@XZ
+     * @symbol ??1MolangTextureVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangTextureVariable();
 

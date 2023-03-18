@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockUnitCubeComponent.
- *
- */
-struct BlockUnitCubeComponent {
+
+class BlockUnitCubeComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,14 +20,14 @@ struct BlockUnitCubeComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBECOMPONENT
 public:
-    struct BlockUnitCubeComponent& operator=(struct BlockUnitCubeComponent const &) = delete;
-    BlockUnitCubeComponent(struct BlockUnitCubeComponent const &) = delete;
+    class BlockUnitCubeComponent& operator=(class BlockUnitCubeComponent const &) = delete;
+    BlockUnitCubeComponent(class BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
+     * @symbol ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 

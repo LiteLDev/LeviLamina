@@ -31,23 +31,27 @@ public:
 
 public:
     /**
-     * @symbol  ?getAllowList\@AllowListFile\@\@QEBAAEAVAllowList\@\@XZ
+     * @symbol ??0AllowListFile\@\@QEAA\@AEBVPath\@Core\@\@\@Z
+     */
+    MCAPI AllowListFile(class Core::Path const &);
+    /**
+     * @symbol ?getAllowList\@AllowListFile\@\@QEBAAEAVAllowList\@\@XZ
      */
     MCAPI class AllowList & getAllowList() const;
     /**
-     * @symbol  ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
+     * @symbol ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
      */
     MCAPI enum class FileReadResult reload();
     /**
-     * @symbol  ?syncToDisc\@AllowListFile\@\@QEAAXXZ
+     * @symbol ?syncToDisc\@AllowListFile\@\@QEAAXXZ
      */
     MCAPI void syncToDisc();
     /**
-     * @symbol  ??1AllowListFile\@\@QEAA\@XZ
+     * @symbol ??1AllowListFile\@\@QEAA\@XZ
      */
     MCAPI ~AllowListFile();
     /**
-     * @symbol  ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
+     * @symbol ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
      */
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
 

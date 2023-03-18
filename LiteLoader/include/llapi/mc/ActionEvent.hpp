@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0ActionEvent\@\@QEAA\@HW4ActionState\@0\@_NW4FocusImpact\@\@\@Z
+     * @symbol ??0ActionEvent\@\@QEAA\@HW4ActionState\@0\@_NW4FocusImpact\@\@\@Z
      */
     MCAPI ActionEvent(int, enum class ActionEvent::ActionState, bool, enum class FocusImpact);
 

@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0JigsawStructureBlockInfo\@\@QEAA\@AEBVBlockPos\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
+     * @symbol ??0JigsawStructureBlockInfo\@\@QEAA\@AEBVBlockPos\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
      */
     MCAPI JigsawStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &);
     /**
-     * @symbol  ??0JigsawStructureBlockInfo\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0JigsawStructureBlockInfo\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI JigsawStructureBlockInfo(class JigsawStructureBlockInfo &&);
     /**
-     * @symbol  ?getNonEmptyTag\@JigsawStructureBlockInfo\@\@QEAAPEAVCompoundTag\@\@XZ
+     * @symbol ?getNonEmptyTag\@JigsawStructureBlockInfo\@\@QEAAPEAVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag * getNonEmptyTag();
 

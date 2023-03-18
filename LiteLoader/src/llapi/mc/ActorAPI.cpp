@@ -80,9 +80,10 @@ bool Actor::isPlayer(bool allowSimulatedPlayer) const {
 bool Actor::isItemActor() const {
     return hasCategory(ActorCategory::Item); // IDA Player::take
 }
+#include "llapi/mc/ActorCollision.hpp"
 
 bool Actor::isOnGround() const {
-    return (dAccess<bool, 392>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return ActorCollision::isOnGround(*dAccess<EntityContext*, 8>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {

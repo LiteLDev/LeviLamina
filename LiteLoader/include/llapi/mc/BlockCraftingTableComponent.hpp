@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockCraftingTableComponent & operator=(struct BlockCraftingTableComponent &&);
     /**
-     * @symbol  ??1BlockCraftingTableComponent\@\@QEAA\@XZ
+     * @symbol ??1BlockCraftingTableComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockCraftingTableComponent();
 

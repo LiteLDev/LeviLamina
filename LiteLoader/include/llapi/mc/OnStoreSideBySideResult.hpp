@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0OnStoreSideBySideResult\@\@QEAA\@V?$optional\@W4SideBySideExtractionId\@\@\@std\@\@AEBVStrictEntityContext\@\@V?$not_null\@PEAVEntityRegistryBase\@\@\@gsl\@\@USideBySideResult\@\@\@Z
+     * @symbol ??0OnStoreSideBySideResult\@\@QEAA\@V?$optional\@W4SideBySideExtractionId\@\@\@std\@\@AEBVStrictEntityContext\@\@V?$not_null\@PEAVEntityRegistryBase\@\@\@gsl\@\@USideBySideResult\@\@\@Z
      */
     MCAPI OnStoreSideBySideResult(class std::optional<enum class SideBySideExtractionId>, class StrictEntityContext const &, class gsl::not_null<class EntityRegistryBase *>, struct SideBySideResult);
     /**
-     * @symbol  ?createContext\@OnStoreSideBySideResult\@\@QEBA?AUSideBySideResultSystemContext\@\@XZ
+     * @symbol ?createContext\@OnStoreSideBySideResult\@\@QEBA?AUSideBySideResultSystemContext\@\@XZ
      */
     MCAPI struct SideBySideResultSystemContext createContext() const;
     /**
-     * @symbol  ??1OnStoreSideBySideResult\@\@QEAA\@XZ
+     * @symbol ??1OnStoreSideBySideResult\@\@QEAA\@XZ
      */
     MCAPI ~OnStoreSideBySideResult();
 

@@ -26,19 +26,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0ScriptPackPermissions\@\@QEAA\@XZ
+     * @symbol ??0ScriptPackPermissions\@\@QEAA\@XZ
      */
     MCAPI ScriptPackPermissions();
     /**
-     * @symbol  ??0ScriptPackPermissions\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ScriptPackPermissions\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     /**
-     * @symbol  ?isModuleAllowed\@ScriptPackPermissions\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?isModuleAllowed\@ScriptPackPermissions\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool isModuleAllowed(std::string const &) const;
     /**
-     * @symbol  ??4ScriptPackPermissions\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4ScriptPackPermissions\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 
@@ -46,7 +46,7 @@ public:
 
 private:
     /**
-     * @symbol  ?sWildCardModuleName\@ScriptPackPermissions\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?sWildCardModuleName\@ScriptPackPermissions\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const sWildCardModuleName;
 

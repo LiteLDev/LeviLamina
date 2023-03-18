@@ -28,19 +28,19 @@ public:
 
 public:
     /**
-     * @symbol  ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
     /**
-     * @symbol  ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createMovementSlowdownSystem();
     /**
-     * @symbol  ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSideClearFireSystem();
     /**
-     * @symbol  ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSideFreezingSystem();
 

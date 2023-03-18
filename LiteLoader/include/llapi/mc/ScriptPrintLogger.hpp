@@ -31,34 +31,40 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptPrintLogger();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?onInfo\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     * @vftbl 1
+     * @symbol ?onInfo\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @vftbl  2
-     * @symbol  ?onWarn\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol ?onWarn\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?onError\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     * @vftbl 3
+     * @symbol ?onError\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @vftbl  4
-     * @symbol  ?onException\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBUError\@3\@\@Z
+     * @vftbl 4
+     * @symbol ?onException\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBUError\@3\@\@Z
      */
     virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
     /**
-     * @vftbl  5
-     * @symbol  ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NAEBUError\@Scripting\@\@\@Z
+     * @vftbl 5
+     * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NAEBUError\@Scripting\@\@\@Z
      */
     virtual bool shouldPrintException(struct Scripting::Error const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScriptPrintLogger();
+#endif
 
 };

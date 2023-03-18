@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0WorldTemplateManagerProxy\@\@QEAA\@AEBUWorldTemplateManagerProxyCallbacks\@\@\@Z
+     * @symbol ??0WorldTemplateManagerProxy\@\@QEAA\@AEBUWorldTemplateManagerProxyCallbacks\@\@\@Z
      */
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
     /**
-     * @symbol  ??1WorldTemplateManagerProxy\@\@QEAA\@XZ
+     * @symbol ??1WorldTemplateManagerProxy\@\@QEAA\@XZ
      */
     MCAPI ~WorldTemplateManagerProxy();
 

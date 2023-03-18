@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CraftHandlerLoom();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  4
-     * @symbol  ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @symbol  ??0CraftHandlerLoom\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     * @symbol ??0CraftHandlerLoom\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
      */
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 

@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0LeashableDefinition\@\@QEAA\@XZ
+     * @symbol ??0LeashableDefinition\@\@QEAA\@XZ
      */
     MCAPI LeashableDefinition();
     /**
-     * @symbol  ?buildSchema\@LeashableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLeashableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@LeashableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLeashableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>> &);
 

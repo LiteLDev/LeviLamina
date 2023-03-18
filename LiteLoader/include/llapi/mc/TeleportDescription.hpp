@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,27 +29,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  ?getJsonName\@TeleportDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@TeleportDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~TeleportDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?deserializeData\@TeleportDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@TeleportDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTDESCRIPTION
     /**
-     * @vftbl  3
-     * @symbol  ?serializeData\@TeleportDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~TeleportDescription();
+#endif
     /**
-     * @symbol  ??0TeleportDescription\@\@QEAA\@XZ
+     * @symbol ??0TeleportDescription\@\@QEAA\@XZ
      */
     MCAPI TeleportDescription();
 

@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?setAmbientSoundRemainingTime\@AmbientSoundComponent\@\@SAXAEAVActor\@\@M\@Z
+     * @symbol ?setAmbientSoundRemainingTime\@AmbientSoundComponent\@\@SAXAEAVActor\@\@M\@Z
      */
     MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
 

@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0SideBySideValidationExceptionComponent\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0SideBySideValidationExceptionComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent &&);
     /**
-     * @symbol  ??0SideBySideValidationExceptionComponent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0SideBySideValidationExceptionComponent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
 

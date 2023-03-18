@@ -30,33 +30,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemReleaseInventoryTransaction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?read\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 1
+     * @symbol ?read\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
-     * @vftbl  2
-     * @symbol  ?write\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 2
+     * @symbol ?write\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?postLoadItems\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
+     * @vftbl 3
+     * @symbol ?postLoadItems\@ItemReleaseInventoryTransaction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
-     * @vftbl  4
-     * @symbol  ?handle\@ItemReleaseInventoryTransaction\@\@UEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
+     * @vftbl 4
+     * @symbol ?handle\@ItemReleaseInventoryTransaction\@\@UEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
      */
     virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
-     * @vftbl  5
-     * @symbol  ?onTransactionError\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVPlayer\@\@W4InventoryTransactionError\@\@\@Z
+     * @vftbl 5
+     * @symbol ?onTransactionError\@ItemReleaseInventoryTransaction\@\@UEBAXAEAVPlayer\@\@W4InventoryTransactionError\@\@\@Z
      */
     virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
 

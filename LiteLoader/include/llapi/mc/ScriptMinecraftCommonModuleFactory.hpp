@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
+     * @symbol ??0ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
      */
     MCAPI ScriptMinecraftCommonModuleFactory();
     /**
-     * @symbol  ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
     /**
-     * @symbol  ??1ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
+     * @symbol ??1ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
      */
     MCAPI ~ScriptMinecraftCommonModuleFactory();
 

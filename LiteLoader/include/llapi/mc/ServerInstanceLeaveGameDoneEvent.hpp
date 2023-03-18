@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ServerInstanceLeaveGameDoneEvent\@\@QEAA\@XZ
+     * @symbol ??1ServerInstanceLeaveGameDoneEvent\@\@QEAA\@XZ
      */
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 

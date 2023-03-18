@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ScriptingNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1ScriptingNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ScriptingNotificationEvent();
 

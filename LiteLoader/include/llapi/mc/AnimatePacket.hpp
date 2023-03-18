@@ -44,45 +44,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AnimatePacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@AnimatePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@AnimatePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@AnimatePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@AnimatePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@AnimatePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@AnimatePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@AnimatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 6
+     * @symbol ?_read\@AnimatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
     /**
-     * @symbol  ??0AnimatePacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI AnimatePacket();
+    MCVAPI ~AnimatePacket();
+#endif
     /**
-     * @symbol  ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
+     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
+     */
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
+    /**
+     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
      */
     MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
     /**
-     * @symbol  ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@\@Z
+     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@\@Z
      */
     MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID);
     /**
-     * @symbol  ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
+     * @symbol ??0AnimatePacket\@\@QEAA\@XZ
      */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
+    MCAPI AnimatePacket();
 
 };

@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@RemovePassengersWithoutSeatSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@RemovePassengersWithoutSeatSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
-     * @symbol  ?removePassengersWithoutSeat\@RemovePassengersWithoutSeatSystem\@\@SAXAEAVStrictEntityContext\@\@AEBVRideableComponent\@\@AEAUVehicleComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@\@Z
+     * @symbol ?removePassengersWithoutSeat\@RemovePassengersWithoutSeatSystem\@\@SAXAEAVStrictEntityContext\@\@AEBVRideableComponent\@\@AEAUVehicleComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void removePassengersWithoutSeat(class StrictEntityContext &, class RideableComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopRidingRequestFlag>> &);
 

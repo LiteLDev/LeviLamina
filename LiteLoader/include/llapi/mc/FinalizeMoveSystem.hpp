@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@FinalizeMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@FinalizeMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

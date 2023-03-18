@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0SoundEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0SoundEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent &&);
     /**
-     * @symbol  ??1SoundEventRequestQueueComponent\@\@QEAA\@XZ
+     * @symbol ??1SoundEventRequestQueueComponent\@\@QEAA\@XZ
      */
     MCAPI ~SoundEventRequestQueueComponent();
 

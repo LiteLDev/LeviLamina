@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0PlayerArmorExchangeEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0PlayerArmorExchangeEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI PlayerArmorExchangeEvent(struct PlayerArmorExchangeEvent const &);
     /**
-     * @symbol  ??1PlayerArmorExchangeEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerArmorExchangeEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerArmorExchangeEvent();
 

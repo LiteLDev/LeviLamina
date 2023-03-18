@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0Seasons\@\@QEAA\@AEAVDimension\@\@\@Z
+     * @symbol ??0Seasons\@\@QEAA\@AEAVDimension\@\@\@Z
      */
     MCAPI Seasons(class Dimension &);
     /**
-     * @symbol  ?postProcess\@Seasons\@\@QEAAXAEAVLevelChunk\@\@AEAVBlockSource\@\@AEBVChunkPos\@\@\@Z
+     * @symbol ?postProcess\@Seasons\@\@QEAAXAEAVLevelChunk\@\@AEAVBlockSource\@\@AEBVChunkPos\@\@\@Z
      */
     MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     /**
-     * @symbol  ?tick\@Seasons\@\@QEAAXXZ
+     * @symbol ?tick\@Seasons\@\@QEAAXXZ
      */
     MCAPI void tick();
     /**
-     * @symbol  ??1Seasons\@\@QEAA\@XZ
+     * @symbol ??1Seasons\@\@QEAA\@XZ
      */
     MCAPI ~Seasons();
 

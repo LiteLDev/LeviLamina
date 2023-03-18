@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0ItemUseEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ItemUseEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ItemUseEvent(struct ItemUseEvent const &);
     /**
-     * @symbol  ??1ItemUseEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemUseEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemUseEvent();
 
