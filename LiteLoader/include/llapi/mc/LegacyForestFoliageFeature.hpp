@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LegacyForestFoliageFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@LegacyForestFoliageFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@LegacyForestFoliageFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @symbol  ??0LegacyForestFoliageFeature\@\@QEAA\@W4Type\@0\@AEAVFeatureRegistry\@\@\@Z
+     * @symbol ??0LegacyForestFoliageFeature\@\@QEAA\@W4Type\@0\@AEAVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacyForestFoliageFeature(enum class LegacyForestFoliageFeature::Type, class FeatureRegistry &);
 

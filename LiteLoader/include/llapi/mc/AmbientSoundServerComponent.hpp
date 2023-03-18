@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??4AmbientSoundServerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4AmbientSoundServerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class AmbientSoundServerComponent & operator=(class AmbientSoundServerComponent &&);
     /**
-     * @symbol  ??1AmbientSoundServerComponent\@\@QEAA\@XZ
+     * @symbol ??1AmbientSoundServerComponent\@\@QEAA\@XZ
      */
     MCAPI ~AmbientSoundServerComponent();
 

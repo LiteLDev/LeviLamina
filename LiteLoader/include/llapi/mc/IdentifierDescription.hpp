@@ -30,14 +30,20 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IdentifierDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getJsonName\@IdentifierDescription\@\@UEBAPEBDXZ
+     * @vftbl 1
+     * @symbol ?getJsonName\@IdentifierDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTIFIERDESCRIPTION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~IdentifierDescription();
+#endif
 
 };

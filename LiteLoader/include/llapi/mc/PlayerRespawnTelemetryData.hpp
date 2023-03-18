@@ -30,35 +30,35 @@ public:
 
 public:
     /**
-     * @symbol  ??0PlayerRespawnTelemetryData\@\@QEAA\@XZ
+     * @symbol ??0PlayerRespawnTelemetryData\@\@QEAA\@XZ
      */
     MCAPI PlayerRespawnTelemetryData();
     /**
-     * @symbol  ?WriteEventData\@PlayerRespawnTelemetryData\@\@QEBAXAEAVEvent\@Events\@Social\@\@\@Z
+     * @symbol ?WriteEventData\@PlayerRespawnTelemetryData\@\@QEBAXAEAVEvent\@Events\@Social\@\@\@Z
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
-     * @symbol  ?setChangedDimension\@PlayerRespawnTelemetryData\@\@QEAAX_N\@Z
+     * @symbol ?setChangedDimension\@PlayerRespawnTelemetryData\@\@QEAAX_N\@Z
      */
     MCAPI void setChangedDimension(bool);
     /**
-     * @symbol  ?setJumpDistance\@PlayerRespawnTelemetryData\@\@QEAAXN\@Z
+     * @symbol ?setJumpDistance\@PlayerRespawnTelemetryData\@\@QEAAXN\@Z
      */
     MCAPI void setJumpDistance(double);
     /**
-     * @symbol  ?setLongJumpCount\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
+     * @symbol ?setLongJumpCount\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
      */
     MCAPI void setLongJumpCount(unsigned int);
     /**
-     * @symbol  ?setPositionSourceType\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
+     * @symbol ?setPositionSourceType\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
      */
     MCAPI void setPositionSourceType(unsigned int);
     /**
-     * @symbol  ?setSearchTime\@PlayerRespawnTelemetryData\@\@QEAAXN\@Z
+     * @symbol ?setSearchTime\@PlayerRespawnTelemetryData\@\@QEAAXN\@Z
      */
     MCAPI void setSearchTime(double);
     /**
-     * @symbol  ?setShortJumpCount\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
+     * @symbol ?setShortJumpCount\@PlayerRespawnTelemetryData\@\@QEAAXI\@Z
      */
     MCAPI void setShortJumpCount(unsigned int);
 
@@ -66,7 +66,7 @@ public:
 
 private:
     /**
-     * @symbol  ?mEventName\@PlayerRespawnTelemetryData\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?mEventName\@PlayerRespawnTelemetryData\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const mEventName;
 

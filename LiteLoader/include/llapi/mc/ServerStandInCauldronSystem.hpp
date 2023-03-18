@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?_checkInsideCauldron\@ServerStandInCauldronSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_checkInsideCauldron\@ServerStandInCauldronSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _checkInsideCauldron(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
-     * @symbol  ?createSystem\@ServerStandInCauldronSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@ServerStandInCauldronSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

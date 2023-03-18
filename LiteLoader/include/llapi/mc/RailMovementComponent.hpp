@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0RailMovementComponent\@\@QEAA\@XZ
+     * @symbol ??0RailMovementComponent\@\@QEAA\@XZ
      */
     MCAPI RailMovementComponent();
     /**
-     * @symbol  ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
+     * @symbol ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
      */
     MCAPI float getMaxSpeed() const;
     /**
-     * @symbol  ??8RailMovementComponent\@\@QEBA_NAEBV0\@\@Z
+     * @symbol ??8RailMovementComponent\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class RailMovementComponent const &) const;
 

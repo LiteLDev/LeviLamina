@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerDropItemEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerDropItemEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerDropItemEvent();
 

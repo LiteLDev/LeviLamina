@@ -23,15 +23,12 @@ class VolumeComponentFactory {
 public:
     class VolumeComponentFactory& operator=(class VolumeComponentFactory const &) = delete;
     VolumeComponentFactory(class VolumeComponentFactory const &) = delete;
+    VolumeComponentFactory() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??0VolumeComponentFactory\@\@QEAA\@XZ
-     */
-    MCAPI VolumeComponentFactory();
-    /**
-     * @symbol  ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
+     * @symbol ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
      */
     MCAPI void registerVolumeComponentDefinitions(bool);
 

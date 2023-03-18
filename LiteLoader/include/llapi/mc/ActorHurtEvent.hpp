@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorHurtEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorHurtEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorHurtEvent();
 

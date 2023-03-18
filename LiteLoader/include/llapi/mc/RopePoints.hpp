@@ -28,31 +28,31 @@ public:
 
 public:
     /**
-     * @symbol  ?beginRope\@RopePoints\@\@QEAAXXZ
+     * @symbol ?beginRope\@RopePoints\@\@QEAAXXZ
      */
     MCAPI void beginRope();
     /**
-     * @symbol  ?endRope\@RopePoints\@\@QEAAXXZ
+     * @symbol ?endRope\@RopePoints\@\@QEAAXXZ
      */
     MCAPI void endRope();
     /**
-     * @symbol  ?freezeInterpolation\@RopePoints\@\@QEAAXXZ
+     * @symbol ?freezeInterpolation\@RopePoints\@\@QEAAXXZ
      */
     MCAPI void freezeInterpolation();
     /**
-     * @symbol  ?pushBack\@RopePoints\@\@QEAAXAEBVVec3\@\@\@Z
+     * @symbol ?pushBack\@RopePoints\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void pushBack(class Vec3 const &);
     /**
-     * @symbol  ?reserve\@RopePoints\@\@QEAAX_K\@Z
+     * @symbol ?reserve\@RopePoints\@\@QEAAX_K\@Z
      */
     MCAPI void reserve(unsigned __int64);
     /**
-     * @symbol  ?size\@RopePoints\@\@QEBA_KXZ
+     * @symbol ?size\@RopePoints\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 size() const;
     /**
-     * @symbol  ??1RopePoints\@\@QEAA\@XZ
+     * @symbol ??1RopePoints\@\@QEAA\@XZ
      */
     MCAPI ~RopePoints();
 

@@ -30,22 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GlideMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?initializeInternal\@GlideMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeInternal\@GlideMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@GlideMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@GlideMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @symbol  ??0GlideMoveControl\@\@QEAA\@XZ
+     * @symbol ??0GlideMoveControl\@\@QEAA\@XZ
      */
     MCAPI GlideMoveControl();
 

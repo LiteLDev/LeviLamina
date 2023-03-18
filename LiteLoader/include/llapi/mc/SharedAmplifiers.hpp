@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @symbol  ?ABSORPTION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?ABSORPTION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
     /**
-     * @symbol  ?FATAL_POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?FATAL_POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
     /**
-     * @symbol  ?HARM\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?HARM\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HARM;
     /**
-     * @symbol  ?HEAL\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?HEAL\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HEAL;
     /**
-     * @symbol  ?HUNGER_DURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?HUNGER_DURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_DURATION;
     /**
-     * @symbol  ?HUNGER_VALUE\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?HUNGER_VALUE\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> HUNGER_VALUE;
     /**
-     * @symbol  ?POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?POISON\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> POISON;
     /**
-     * @symbol  ?REGENERATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?REGENERATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
     /**
-     * @symbol  ?SATURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?SATURATION\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
     /**
-     * @symbol  ?WITHER\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
+     * @symbol ?WITHER\@SharedAmplifiers\@\@2V?$shared_ptr\@VAmplifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class Amplifier> WITHER;
 

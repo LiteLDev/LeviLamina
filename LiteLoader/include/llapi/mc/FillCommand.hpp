@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FillCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@FillCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@FillCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@FillCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@FillCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

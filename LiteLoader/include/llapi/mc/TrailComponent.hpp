@@ -29,11 +29,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0TrailComponent\@\@QEAA\@XZ
+     * @symbol ??0TrailComponent\@\@QEAA\@XZ
      */
     MCAPI TrailComponent();
     /**
-     * @symbol  ?initFromDefinition\@TrailComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@TrailComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
 

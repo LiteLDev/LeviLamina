@@ -29,5 +29,11 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ContainerSizeChangeListener();
+#endif
 
 };

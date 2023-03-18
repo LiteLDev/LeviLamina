@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?createApplySystem\@LegacyActorExtractApplySystem\@\@SA?AUTickingSystemWithInfo\@\@AEBV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@_N\@Z
+     * @symbol ?createApplySystem\@LegacyActorExtractApplySystem\@\@SA?AUTickingSystemWithInfo\@\@AEBV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI static struct TickingSystemWithInfo createApplySystem(std::vector<unsigned int> const &, bool);
     /**
-     * @symbol  ?createExtractSystem\@LegacyActorExtractApplySystem\@\@SA?AUTickingSystemWithInfo\@\@AEBV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@_N\@Z
+     * @symbol ?createExtractSystem\@LegacyActorExtractApplySystem\@\@SA?AUTickingSystemWithInfo\@\@AEBV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI static struct TickingSystemWithInfo createExtractSystem(std::vector<unsigned int> const &, bool);
 

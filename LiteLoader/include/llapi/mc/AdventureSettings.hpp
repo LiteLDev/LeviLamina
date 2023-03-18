@@ -32,7 +32,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0AdventureSettings\@\@QEAA\@XZ
+     * @symbol ??0AdventureSettings\@\@QEAA\@XZ
      */
     MCAPI AdventureSettings();
 

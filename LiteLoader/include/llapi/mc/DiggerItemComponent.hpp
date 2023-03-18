@@ -24,64 +24,67 @@ class DiggerItemComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
 public:
     class DiggerItemComponent& operator=(class DiggerItemComponent const &) = delete;
-    DiggerItemComponent(class DiggerItemComponent const &) = delete;
     DiggerItemComponent() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DiggerItemComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?canDestroySpecial\@DiggerItemComponent\@\@QEBA_NAEBVBlock\@\@\@Z
+     * @symbol ??0DiggerItemComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI DiggerItemComponent(class DiggerItemComponent const &);
+    /**
+     * @symbol ?canDestroySpecial\@DiggerItemComponent\@\@QEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool canDestroySpecial(class Block const &) const;
     /**
-     * @symbol  ?getDestroySpeed\@DiggerItemComponent\@\@QEAAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
+     * @symbol ?getDestroySpeed\@DiggerItemComponent\@\@QEAAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
      */
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     /**
-     * @symbol  ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
+     * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /**
-     * @symbol  ?bindType\@DiggerItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@DiggerItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
+     * @symbol ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 

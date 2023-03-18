@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MountainAttributes\@\@QEAA\@XZ
+     * @symbol ??1MountainAttributes\@\@QEAA\@XZ
      */
     MCAPI ~MountainAttributes();
 

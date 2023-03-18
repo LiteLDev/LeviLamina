@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorDefinitionEndedEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionEndedEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionEndedEvent();
 

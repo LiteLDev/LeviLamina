@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0VehicleRenderingRidingOffsetComponent\@\@QEAA\@AEBV?$vector\@URenderingRidingOffsetInfo\@\@V?$allocator\@URenderingRidingOffsetInfo\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0VehicleRenderingRidingOffsetComponent\@\@QEAA\@AEBV?$vector\@URenderingRidingOffsetInfo\@\@V?$allocator\@URenderingRidingOffsetInfo\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI VehicleRenderingRidingOffsetComponent(std::vector<struct RenderingRidingOffsetInfo> const &);
 

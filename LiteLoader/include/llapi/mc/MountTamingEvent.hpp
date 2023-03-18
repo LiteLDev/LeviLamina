@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MountTamingEvent\@\@QEAA\@XZ
+     * @symbol ??1MountTamingEvent\@\@QEAA\@XZ
      */
     MCAPI ~MountTamingEvent();
 

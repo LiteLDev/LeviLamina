@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0MobSpawnerData\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0MobSpawnerData\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI MobSpawnerData(class MobSpawnerData const &);
     /**
-     * @symbol  ??1MobSpawnerData\@\@QEAA\@XZ
+     * @symbol ??1MobSpawnerData\@\@QEAA\@XZ
      */
     MCAPI ~MobSpawnerData();
 

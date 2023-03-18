@@ -30,25 +30,25 @@ public:
 
 public:
     /**
-     * @symbol  ??0BehaviorTreeGroup\@\@QEAA\@AEAVResourcePackManager\@\@AEAVBehaviorFactory\@\@\@Z
+     * @symbol ??0BehaviorTreeGroup\@\@QEAA\@AEAVResourcePackManager\@\@AEAVBehaviorFactory\@\@\@Z
      */
     MCAPI BehaviorTreeGroup(class ResourcePackManager &, class BehaviorFactory &);
     /**
-     * @symbol  ?tryGetDefinition\@BehaviorTreeGroup\@\@QEAA?AVBehaviorTreeDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?tryGetDefinition\@BehaviorTreeGroup\@\@QEAA?AVBehaviorTreeDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     /**
-     * @symbol  ??1BehaviorTreeGroup\@\@QEAA\@XZ
+     * @symbol ??1BehaviorTreeGroup\@\@QEAA\@XZ
      */
     MCAPI ~BehaviorTreeGroup();
 
 //private:
     /**
-     * @symbol  ?_addRef\@BehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
+     * @symbol ?_addRef\@BehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
      */
     MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
     /**
-     * @symbol  ?_removeRef\@BehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
+     * @symbol ?_removeRef\@BehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
      */
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
 

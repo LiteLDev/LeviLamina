@@ -1,0 +1,69 @@
+/**
+ * @file  DimensionManager.hpp
+ *
+ */
+#pragma once
+#define AUTO_GENERATED
+#include "llapi/Global.h"
+#include "Bedrock.hpp"
+
+#define BEFORE_EXTRA
+
+#undef BEFORE_EXTRA
+
+
+class DimensionManager {
+
+#define AFTER_EXTRA
+
+#undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONMANAGER
+public:
+    class DimensionManager& operator=(class DimensionManager const &) = delete;
+    DimensionManager(class DimensionManager const &) = delete;
+    DimensionManager() = delete;
+#endif
+
+public:
+    /**
+     * @symbol ??0DimensionManager\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIDimensionFactory\@\@\@Bedrock\@\@\@gsl\@\@\@Z
+     */
+    MCAPI DimensionManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>);
+    /**
+     * @symbol ?forEachDimension\@DimensionManager\@\@QEAAXV?$function\@$$A6A_NAEAVDimension\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void forEachDimension(class std::function<bool (class Dimension &)>);
+    /**
+     * @symbol ?forEachDimension\@DimensionManager\@\@QEBAXV?$function\@$$A6A_NAEBVDimension\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void forEachDimension(class std::function<bool (class Dimension const &)>) const;
+    /**
+     * @symbol ?getDimension\@DimensionManager\@\@QEBA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
+     */
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(class AutomaticID<class Dimension, int>) const;
+    /**
+     * @symbol ?getOrCreateDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
+     */
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(class AutomaticID<class Dimension, int>);
+    /**
+     * @symbol ?getRandomDimension\@DimensionManager\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VDimension\@\@\@\@\@\@AEAVRandom\@\@\@Z
+     */
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getRandomDimension(class Random &);
+    /**
+     * @symbol ?hasDimensions\@DimensionManager\@\@QEBA_NXZ
+     */
+    MCAPI bool hasDimensions() const;
+    /**
+     * @symbol ?registerOnNewDimensionCreated\@DimensionManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVDimension\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::PubSub::Subscription registerOnNewDimensionCreated(class std::function<void (class Dimension &)>);
+    /**
+     * @symbol ?shutdown\@DimensionManager\@\@QEAAXXZ
+     */
+    MCAPI void shutdown();
+    /**
+     * @symbol ??1DimensionManager\@\@QEAA\@XZ
+     */
+    MCAPI ~DimensionManager();
+
+};

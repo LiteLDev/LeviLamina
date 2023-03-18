@@ -28,15 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0ServerPlayerMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0ServerPlayerMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
     /**
-     * @symbol  ??4ServerPlayerMovementComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct ServerPlayerMovementComponent & operator=(struct ServerPlayerMovementComponent &&);
-    /**
-     * @symbol  ??1ServerPlayerMovementComponent\@\@QEAA\@XZ
+     * @symbol ??1ServerPlayerMovementComponent\@\@QEAA\@XZ
      */
     MCAPI ~ServerPlayerMovementComponent();
 

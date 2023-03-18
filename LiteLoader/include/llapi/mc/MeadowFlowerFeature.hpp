@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MeadowFlowerFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@MeadowFlowerFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@MeadowFlowerFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @symbol  ??0MeadowFlowerFeature\@\@QEAA\@XZ
+     * @symbol ??0MeadowFlowerFeature\@\@QEAA\@XZ
      */
     MCAPI MeadowFlowerFeature();
 
 //private:
     /**
-     * @symbol  ?getRandomArrayIndex\@MeadowFlowerFeature\@\@AEBAHAEBVBlockPos\@\@_KM\@Z
+     * @symbol ?getRandomArrayIndex\@MeadowFlowerFeature\@\@AEBAHAEBVBlockPos\@\@_KM\@Z
      */
     MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
 

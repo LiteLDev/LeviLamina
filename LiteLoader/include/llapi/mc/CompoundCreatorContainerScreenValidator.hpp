@@ -30,12 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CompoundCreatorContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0CompoundCreatorContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0CompoundCreatorContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI CompoundCreatorContainerScreenValidator();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@MoveTowardsClosestSpaceSystemFromActorContext\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@MoveTowardsClosestSpaceSystemFromActorContext\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

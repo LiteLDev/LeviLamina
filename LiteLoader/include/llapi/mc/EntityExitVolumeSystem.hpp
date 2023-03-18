@@ -31,28 +31,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EntityExitVolumeSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@EntityExitVolumeSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@EntityExitVolumeSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @symbol  ??0EntityExitVolumeSystem\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
+     * @symbol ??0EntityExitVolumeSystem\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI EntityExitVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 //private:
     /**
-     * @symbol  ?_tick\@EntityExitVolumeSystem\@\@AEBAXAEAVEntityContext\@\@AEAVVolumeBoundsComponent\@\@AEAVEntitiesInsideVolumeComponent\@\@\@Z
+     * @symbol ?_tick\@EntityExitVolumeSystem\@\@AEBAXAEAVEntityContext\@\@AEAVVolumeBoundsComponent\@\@AEAVEntitiesInsideVolumeComponent\@\@\@Z
      */
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &, class EntitiesInsideVolumeComponent &) const;
 

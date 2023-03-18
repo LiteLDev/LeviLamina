@@ -30,17 +30,17 @@ public:
 
 public:
     /**
-     * @symbol  ?tick\@CombatRegenerationComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?tick\@CombatRegenerationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void tick(class Actor &);
 
 //private:
     /**
-     * @symbol  ?_applyCombatBuffsToMob\@CombatRegenerationComponent\@\@AEAAXAEAVActor\@\@0\@Z
+     * @symbol ?_applyCombatBuffsToMob\@CombatRegenerationComponent\@\@AEAAXAEAVActor\@\@0\@Z
      */
     MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);
     /**
-     * @symbol  ?_getDefinition\@CombatRegenerationComponent\@\@AEBAPEBVCombatRegenerationDefinition\@\@AEAVActor\@\@\@Z
+     * @symbol ?_getDefinition\@CombatRegenerationComponent\@\@AEBAPEBVCombatRegenerationDefinition\@\@AEAVActor\@\@\@Z
      */
     MCAPI class CombatRegenerationDefinition const * _getDefinition(class Actor &) const;
 

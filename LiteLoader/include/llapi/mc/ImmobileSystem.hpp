@@ -25,13 +25,13 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@ImmobileSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@ImmobileSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @symbol  ?doImmobileSystem\@ImmobileSystem\@\@CAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@AEAUMobRotationComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
+     * @symbol ?doImmobileSystem\@ImmobileSystem\@\@CAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@AEAUMobRotationComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void doImmobileSystem(class StrictEntityContext const &, struct LocalMoveVelocityComponent &, struct MobRotationComponent &, struct StateVectorComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
 

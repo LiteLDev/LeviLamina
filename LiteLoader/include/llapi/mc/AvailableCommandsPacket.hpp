@@ -128,37 +128,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AvailableCommandsPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@AvailableCommandsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@AvailableCommandsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@AvailableCommandsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@AvailableCommandsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@AvailableCommandsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@AvailableCommandsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@AvailableCommandsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 6
+     * @symbol ?_read\@AvailableCommandsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVAILABLECOMMANDSPACKET
     /**
-     * @symbol  ??0AvailableCommandsPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI AvailableCommandsPacket();
+    MCVAPI ~AvailableCommandsPacket();
+#endif
     /**
-     * @symbol  ??0AvailableCommandsPacket\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@0$$QEAV?$vector\@UEnumData\@AvailableCommandsPacket\@\@V?$allocator\@UEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UConstrainedValueData\@AvailableCommandsPacket\@\@V?$allocator\@UConstrainedValueData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UCommandData\@AvailableCommandsPacket\@\@V?$allocator\@UCommandData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@USoftEnumData\@AvailableCommandsPacket\@\@V?$allocator\@USoftEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@\@Z
+     * @symbol ??0AvailableCommandsPacket\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@0$$QEAV?$vector\@UEnumData\@AvailableCommandsPacket\@\@V?$allocator\@UEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UConstrainedValueData\@AvailableCommandsPacket\@\@V?$allocator\@UConstrainedValueData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@UCommandData\@AvailableCommandsPacket\@\@V?$allocator\@UCommandData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@$$QEAV?$vector\@USoftEnumData\@AvailableCommandsPacket\@\@V?$allocator\@USoftEnumData\@AvailableCommandsPacket\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI AvailableCommandsPacket(std::vector<std::string> const &, std::vector<std::string> const &, std::vector<struct AvailableCommandsPacket::EnumData> &&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData> &&, std::vector<struct AvailableCommandsPacket::CommandData> &&, std::vector<struct AvailableCommandsPacket::SoftEnumData> &&);
+    /**
+     * @symbol ??0AvailableCommandsPacket\@\@QEAA\@XZ
+     */
+    MCAPI AvailableCommandsPacket();
 
 };

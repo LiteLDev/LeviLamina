@@ -27,7 +27,7 @@ public:
 
 public:
     /**
-     * @symbol  ?setEquipmentSlot\@SlotDropChance\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setEquipmentSlot\@SlotDropChance\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setEquipmentSlot(std::string const &);
 

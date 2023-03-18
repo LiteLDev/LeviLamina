@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1DBStorageConfig\@\@QEAA\@XZ
+     * @symbol ??1DBStorageConfig\@\@QEAA\@XZ
      */
     MCAPI ~DBStorageConfig();
 

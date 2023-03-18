@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~Amplifier();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getAmount\@Amplifier\@\@UEBAMHM\@Z
+     * @vftbl 1
+     * @symbol ?getAmount\@Amplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
     /**
-     * @vftbl  2
-     * @symbol  ?shouldBuff\@Amplifier\@\@UEBA_NHH\@Z
+     * @vftbl 2
+     * @symbol ?shouldBuff\@Amplifier\@\@UEBA_NHH\@Z
      */
     virtual bool shouldBuff(int, int) const;
     /**
-     * @vftbl  3
-     * @symbol  ?getTickInterval\@Amplifier\@\@UEBAHH\@Z
+     * @vftbl 3
+     * @symbol ?getTickInterval\@Amplifier\@\@UEBAHH\@Z
      */
     virtual int getTickInterval(int) const;
 

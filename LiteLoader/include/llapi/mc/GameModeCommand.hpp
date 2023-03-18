@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GameModeCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@GameModeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@GameModeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@GameModeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@GameModeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

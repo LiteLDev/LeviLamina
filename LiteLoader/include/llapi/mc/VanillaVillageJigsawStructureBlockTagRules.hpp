@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@VanillaVillageJigsawStructureBlockTagRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
+     * @symbol ?initialize\@VanillaVillageJigsawStructureBlockTagRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
      */
     MCAPI static void initialize(class JigsawStructureRegistry &);
 

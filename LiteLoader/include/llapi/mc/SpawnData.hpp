@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0SpawnData\@\@QEAA\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI SpawnData(class CompoundTag const &);
-    /**
-     * @symbol  ??0SpawnData\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0SpawnData\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SpawnData(class SpawnData const &);
     /**
-     * @symbol  ?save\@SpawnData\@\@QEAA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ??0SpawnData\@\@QEAA\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI SpawnData(class CompoundTag const &);
+    /**
+     * @symbol ?save\@SpawnData\@\@QEAA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class CompoundTag> save();
 

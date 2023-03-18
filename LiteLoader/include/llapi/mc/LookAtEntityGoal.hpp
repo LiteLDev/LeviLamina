@@ -31,13 +31,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LookAtEntityGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
 

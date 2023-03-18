@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
+     * @symbol ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
      */
     MCAPI void cancel(enum class ResourceLoadType);
 

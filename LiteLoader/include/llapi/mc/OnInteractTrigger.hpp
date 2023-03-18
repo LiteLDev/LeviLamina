@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnInteractTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnInteractTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnInteractTrigger();
 

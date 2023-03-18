@@ -31,42 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockUnwalkableDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getName\@BlockUnwalkableDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockUnwalkableDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl  2
-     * @symbol  ?initializeComponent\@BlockUnwalkableDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeComponent\@BlockUnwalkableDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?buildSchema\@BlockUnwalkableDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
+     * @vftbl 3
+     * @symbol ?buildSchema\@BlockUnwalkableDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /**
-     * @vftbl  4
-     * @symbol  ?isNetworkComponent\@BlockUnwalkableDescription\@\@UEBA_NXZ
+     * @vftbl 4
+     * @symbol ?isNetworkComponent\@BlockUnwalkableDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@BlockUnwalkableDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@BlockUnwalkableDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@BlockUnwalkableDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@BlockUnwalkableDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?NameID\@BlockUnwalkableDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockUnwalkableDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
 

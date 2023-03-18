@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1GameTestSaveData\@\@QEAA\@XZ
+     * @symbol ??1GameTestSaveData\@\@QEAA\@XZ
      */
     MCAPI ~GameTestSaveData();
 

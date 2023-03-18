@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1TripodCameraActivatedComponent\@\@QEAA\@XZ
+     * @symbol ??1TripodCameraActivatedComponent\@\@QEAA\@XZ
      */
     MCAPI ~TripodCameraActivatedComponent();
 

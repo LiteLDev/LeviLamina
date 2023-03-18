@@ -30,27 +30,27 @@ public:
 
 public:
     /**
-     * @symbol  ?addAdditionalSaveData\@DamageOverTimeComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@DamageOverTimeComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @symbol  ?getDamageTime\@DamageOverTimeComponent\@\@QEBAHXZ
+     * @symbol ?getDamageTime\@DamageOverTimeComponent\@\@QEBAHXZ
      */
     MCAPI int getDamageTime() const;
     /**
-     * @symbol  ?getDamageTimeInterval\@DamageOverTimeComponent\@\@QEBAHXZ
+     * @symbol ?getDamageTimeInterval\@DamageOverTimeComponent\@\@QEBAHXZ
      */
     MCAPI int getDamageTimeInterval() const;
     /**
-     * @symbol  ?getHurtValue\@DamageOverTimeComponent\@\@QEBAHXZ
+     * @symbol ?getHurtValue\@DamageOverTimeComponent\@\@QEBAHXZ
      */
     MCAPI int getHurtValue() const;
     /**
-     * @symbol  ?readAdditionalSaveData\@DamageOverTimeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@DamageOverTimeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?setDamageTime\@DamageOverTimeComponent\@\@QEAAXH\@Z
+     * @symbol ?setDamageTime\@DamageOverTimeComponent\@\@QEAAXH\@Z
      */
     MCAPI void setDamageTime(int);
 

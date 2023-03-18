@@ -21,17 +21,20 @@ struct SendEventData {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTDATA
 public:
-    struct SendEventData& operator=(struct SendEventData const &) = delete;
     SendEventData() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??0SendEventData\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0SendEventData\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SendEventData(struct SendEventData const &);
     /**
-     * @symbol  ??1SendEventData\@\@QEAA\@XZ
+     * @symbol ??4SendEventData\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SendEventData & operator=(struct SendEventData const &);
+    /**
+     * @symbol ??1SendEventData\@\@QEAA\@XZ
      */
     MCAPI ~SendEventData();
 

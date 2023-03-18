@@ -31,56 +31,56 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MapExtendingRecipe();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?assemble\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @vftbl 1
+     * @symbol ?assemble\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @vftbl  2
-     * @symbol  ?getCraftingSize\@MapExtendingRecipe\@\@UEBAHXZ
+     * @vftbl 2
+     * @symbol ?getCraftingSize\@MapExtendingRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const;
     /**
-     * @vftbl  3
-     * @symbol  ?getIngredient\@MapExtendingRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
+     * @vftbl 3
+     * @symbol ?getIngredient\@MapExtendingRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @vftbl  4
-     * @symbol  ?getResultItem\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 4
+     * @symbol ?getResultItem\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @vftbl  6
-     * @symbol  ?matches\@MapExtendingRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @vftbl 6
+     * @symbol ?matches\@MapExtendingRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @vftbl  7
-     * @symbol  ?size\@MapExtendingRecipe\@\@UEBAHXZ
+     * @vftbl 7
+     * @symbol ?size\@MapExtendingRecipe\@\@UEBAHXZ
      */
     virtual int size() const;
     /**
-     * @symbol  ??0MapExtendingRecipe\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@AEBVUUID\@mce\@\@\@Z
+     * @symbol ??0MapExtendingRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
-    MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    MCAPI MapExtendingRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
     /**
-     * @symbol  ?CartographyTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?CartographyTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const CartographyTableID;
     /**
-     * @symbol  ?CraftingTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?CraftingTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const CraftingTableID;
 
 //private:
     /**
-     * @symbol  ?_updateMapInstance\@MapExtendingRecipe\@\@AEBAXAEAVItemInstance\@\@\@Z
+     * @symbol ?_updateMapInstance\@MapExtendingRecipe\@\@AEBAXAEAVItemInstance\@\@\@Z
      */
     MCAPI void _updateMapInstance(class ItemInstance &) const;
 

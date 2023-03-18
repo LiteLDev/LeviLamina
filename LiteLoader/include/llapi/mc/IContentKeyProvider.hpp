@@ -31,11 +31,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
     /**
-     * @symbol  ?getAlternateContentKey\@IContentKeyProvider\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVContentIdentity\@\@\@Z
+     * @symbol ?getAlternateContentKey\@IContentKeyProvider\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVContentIdentity\@\@\@Z
      */
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const &) const;
     /**
-     * @symbol  ?requireEncryptedReads\@IContentKeyProvider\@\@UEBA_NXZ
+     * @symbol ?requireEncryptedReads\@IContentKeyProvider\@\@UEBA_NXZ
      */
     MCVAPI bool requireEncryptedReads() const;
 #endif

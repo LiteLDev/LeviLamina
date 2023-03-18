@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure CodeScreenCapabilities.
- *
- */
-struct CodeScreenCapabilities {
+
+class CodeScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,21 +20,27 @@ struct CodeScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODESCREENCAPABILITIES
 public:
-    struct CodeScreenCapabilities& operator=(struct CodeScreenCapabilities const &) = delete;
-    CodeScreenCapabilities(struct CodeScreenCapabilities const &) = delete;
+    class CodeScreenCapabilities& operator=(class CodeScreenCapabilities const &) = delete;
+    CodeScreenCapabilities(class CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CodeScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UCodeScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UCodeScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODESCREENCAPABILITIES
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~CodeScreenCapabilities();
+#endif
 
 };

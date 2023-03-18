@@ -30,32 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ImpactDamageSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?readfromJSON\@ImpactDamageSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 1
+     * @symbol ?readfromJSON\@ImpactDamageSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@ImpactDamageSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@ImpactDamageSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@ImpactDamageSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@ImpactDamageSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vftbl  4
-     * @symbol  ?getName\@ImpactDamageSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@ImpactDamageSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @symbol  ??0ImpactDamageSubcomponent\@\@QEAA\@XZ
+     * @symbol ??0ImpactDamageSubcomponent\@\@QEAA\@XZ
      */
     MCAPI ImpactDamageSubcomponent();
 

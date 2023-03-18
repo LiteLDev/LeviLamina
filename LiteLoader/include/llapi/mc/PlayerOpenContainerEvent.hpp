@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerOpenContainerEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerOpenContainerEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerOpenContainerEvent();
 

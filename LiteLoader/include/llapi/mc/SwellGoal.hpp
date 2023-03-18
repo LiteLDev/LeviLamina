@@ -30,47 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SwellGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@SwellGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SwellGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@SwellGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SwellGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@SwellGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@SwellGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@SwellGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SwellGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SwellGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SwellGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0SwellGoal\@\@QEAA\@PEAVCreeper\@\@MM\@Z
+     * @symbol ??0SwellGoal\@\@QEAA\@PEAVCreeper\@\@MM\@Z
      */
     MCAPI SwellGoal(class Creeper *, float, float);
 

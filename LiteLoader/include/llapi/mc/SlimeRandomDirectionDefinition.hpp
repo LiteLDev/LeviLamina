@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0SlimeRandomDirectionDefinition\@\@QEAA\@XZ
+     * @symbol ??0SlimeRandomDirectionDefinition\@\@QEAA\@XZ
      */
     MCAPI SlimeRandomDirectionDefinition();
     /**
-     * @symbol  ?initialize\@SlimeRandomDirectionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeRandomDirectionGoal\@\@\@Z
+     * @symbol ?initialize\@SlimeRandomDirectionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeRandomDirectionGoal\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class SlimeRandomDirectionGoal &) const;
     /**
-     * @symbol  ?buildSchema\@SlimeRandomDirectionDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeRandomDirectionDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
+     * @symbol ?buildSchema\@SlimeRandomDirectionDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeRandomDirectionDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>> &);
 

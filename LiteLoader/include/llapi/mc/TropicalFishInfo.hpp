@@ -11,21 +11,21 @@
 #undef BEFORE_EXTRA
 
 
-struct TropicalFishInfo {
+class TropicalFishInfo {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
 public:
-    struct TropicalFishInfo& operator=(struct TropicalFishInfo const &) = delete;
-    TropicalFishInfo(struct TropicalFishInfo const &) = delete;
+    class TropicalFishInfo& operator=(class TropicalFishInfo const &) = delete;
+    TropicalFishInfo(class TropicalFishInfo const &) = delete;
     TropicalFishInfo() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1TropicalFishInfo\@\@QEAA\@XZ
+     * @symbol ??1TropicalFishInfo\@\@QEAA\@XZ
      */
     MCAPI ~TropicalFishInfo();
 

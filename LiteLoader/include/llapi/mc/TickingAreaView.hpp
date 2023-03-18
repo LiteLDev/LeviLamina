@@ -30,82 +30,88 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TickingAreaView();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?init\@TickingAreaView\@\@UEAAXAEBUBounds\@\@_N\@Z
+     * @vftbl 1
+     * @symbol ?init\@TickingAreaView\@\@UEAAXAEBUBounds\@\@_N\@Z
      */
     virtual void init(struct Bounds const &, bool);
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@TickingAreaView\@\@UEAAXAEBUTick\@\@AEAVBlockSource\@\@_N2\@Z
+     * @vftbl 2
+     * @symbol ?tick\@TickingAreaView\@\@UEAAXAEBUTick\@\@AEAVBlockSource\@\@_N2\@Z
      */
     virtual void tick(struct Tick const &, class BlockSource &, bool, bool);
     /**
-     * @vftbl  3
-     * @symbol  ?tickSeasons\@TickingAreaView\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?tickSeasons\@TickingAreaView\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@\@Z
      */
     virtual void tickSeasons(class BlockSource &, class Random &);
     /**
-     * @vftbl  4
-     * @symbol  ?getDimensionId\@TickingAreaView\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
+     * @vftbl 4
+     * @symbol ?getDimensionId\@TickingAreaView\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
     virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
-     * @vftbl  5
-     * @symbol  ?getBounds\@TickingAreaView\@\@UEBAAEBUBounds\@\@XZ
+     * @vftbl 5
+     * @symbol ?getBounds\@TickingAreaView\@\@UEBAAEBUBounds\@\@XZ
      */
     virtual struct Bounds const & getBounds() const;
     /**
-     * @vftbl  6
-     * @symbol  ?isCircle\@TickingAreaView\@\@UEBA_NXZ
+     * @vftbl 6
+     * @symbol ?isCircle\@TickingAreaView\@\@UEBA_NXZ
      */
     virtual bool isCircle() const;
     /**
-     * @vftbl  7
-     * @symbol  ?isDoneLoading\@TickingAreaView\@\@UEBA_NXZ
+     * @vftbl 7
+     * @symbol ?isDoneLoading\@TickingAreaView\@\@UEBA_NXZ
      */
     virtual bool isDoneLoading() const;
     /**
-     * @vftbl  8
-     * @symbol  ?checkInitialLoadDone\@TickingAreaView\@\@UEAA_NUTick\@\@\@Z
+     * @vftbl 8
+     * @symbol ?checkInitialLoadDone\@TickingAreaView\@\@UEAA_NUTick\@\@\@Z
      */
     virtual bool checkInitialLoadDone(struct Tick);
     /**
-     * @vftbl  9
-     * @symbol  ?checkLoadedChunkNeighborsDone\@TickingAreaView\@\@UEBA_NAEBVBlockSource\@\@_N\@Z
+     * @vftbl 9
+     * @symbol ?checkLoadedChunkNeighborsDone\@TickingAreaView\@\@UEBA_NAEBVBlockSource\@\@_N\@Z
      */
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const &, bool) const;
     /**
-     * @vftbl  10
-     * @symbol  ?move\@TickingAreaView\@\@UEAAXAEBUBounds\@\@\@Z
+     * @vftbl 10
+     * @symbol ?move\@TickingAreaView\@\@UEAAXAEBUBounds\@\@\@Z
      */
     virtual void move(struct Bounds const &);
     /**
-     * @vftbl  11
-     * @symbol  ?createChildSource\@TickingAreaView\@\@UEAA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 11
+     * @symbol ?createChildSource\@TickingAreaView\@\@UEAA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /**
-     * @vftbl  12
-     * @symbol  ?getAvailableChunk\@TickingAreaView\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
+     * @vftbl 12
+     * @symbol ?getAvailableChunk\@TickingAreaView\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
     virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREAVIEW
     /**
-     * @symbol  ??0TickingAreaView\@\@QEAA\@AEAVChunkSource\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~TickingAreaView();
+#endif
+    /**
+     * @symbol ??0TickingAreaView\@\@QEAA\@AEAVChunkSource\@\@\@Z
      */
     MCAPI TickingAreaView(class ChunkSource &);
     /**
-     * @symbol  ?unregisterChunkBuildOrderPolicy\@TickingAreaView\@\@QEAAXAEAVChunkBuildOrderPolicyBase\@\@\@Z
+     * @symbol ?unregisterChunkBuildOrderPolicy\@TickingAreaView\@\@QEAAXAEAVChunkBuildOrderPolicyBase\@\@\@Z
      */
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
 //private:
     /**
-     * @symbol  ?_tickChunk\@TickingAreaView\@\@AEAA_NAEBUTick\@\@AEAVBlockSource\@\@AEAVLevel\@\@AEBVChunkPos\@\@\@Z
+     * @symbol ?_tickChunk\@TickingAreaView\@\@AEAA_NAEBUTick\@\@AEAVBlockSource\@\@AEAVLevel\@\@AEBVChunkPos\@\@\@Z
      */
     MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
 

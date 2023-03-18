@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ToggleDownfallCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@ToggleDownfallCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@ToggleDownfallCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@ToggleDownfallCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@ToggleDownfallCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

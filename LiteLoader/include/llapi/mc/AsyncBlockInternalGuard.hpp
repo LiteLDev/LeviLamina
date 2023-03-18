@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0AsyncBlockInternalGuard\@\@QEAA\@PEAUXAsyncBlock\@\@\@Z
+     * @symbol ??0AsyncBlockInternalGuard\@\@QEAA\@PEAUXAsyncBlock\@\@\@Z
      */
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock *);
 

@@ -68,50 +68,56 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~Packet();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@UpdateTradePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@UpdateBlockSyncedPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const = 0;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@UpdateTradePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@UpdateBlockSyncedPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@UpdateTradePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@UpdateBlockSyncedPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
-     * @vftbl  4
-     * @symbol  ?readExtended\@Packet\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?readExtended\@Packet\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vftbl  5
-     * @symbol  ?disallowBatching\@Packet\@\@UEBA_NXZ
+     * @vftbl 5
+     * @symbol ?disallowBatching\@Packet\@\@UEBA_NXZ
      */
     virtual bool disallowBatching() const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@UpdateTradePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 6
+     * @symbol ?_read\@UpdateBlockSyncedPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
     /**
-     * @symbol  ?handle\@Packet\@\@QEAAXAEBVNetworkIdentifier\@\@AEAVNetEventCallback\@\@AEAV?$shared_ptr\@VPacket\@\@\@std\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~Packet();
+#endif
+    /**
+     * @symbol ?handle\@Packet\@\@QEAAXAEBVNetworkIdentifier\@\@AEAVNetEventCallback\@\@AEAV?$shared_ptr\@VPacket\@\@\@std\@\@\@Z
      */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     /**
-     * @symbol  ?readNoHeader\@Packet\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@AEBW4SubClientId\@\@AEAUExtendedStreamReadResult\@\@\@Z
+     * @symbol ?readNoHeader\@Packet\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@AEBW4SubClientId\@\@AEAUExtendedStreamReadResult\@\@\@Z
      */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
-     * @symbol  ?writeWithHeader\@Packet\@\@QEBAXW4SubClientId\@\@AEAVBinaryStream\@\@\@Z
+     * @symbol ?writeWithHeader\@Packet\@\@QEBAXW4SubClientId\@\@AEAVBinaryStream\@\@\@Z
      */
     MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;
 

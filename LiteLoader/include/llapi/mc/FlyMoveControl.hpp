@@ -30,17 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FlyMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@FlyMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@FlyMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @symbol  ??0FlyMoveControl\@\@QEAA\@XZ
+     * @symbol ??0FlyMoveControl\@\@QEAA\@XZ
      */
     MCAPI FlyMoveControl();
 

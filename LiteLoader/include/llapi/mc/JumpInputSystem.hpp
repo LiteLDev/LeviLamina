@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createJumpInputSystem\@JumpInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createJumpInputSystem\@JumpInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createJumpInputSystem();
 

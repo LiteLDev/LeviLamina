@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1TradeGroup\@\@QEAA\@XZ
+     * @symbol ??1TradeGroup\@\@QEAA\@XZ
      */
     MCAPI ~TradeGroup();
 

@@ -931,7 +931,7 @@ void assignBlocks() {
     mGlassPane = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlassPane, true);
     mGlowItemFrame = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlowItemFrame, true);
     mGlowLichen = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlowLichen, true);
-    mGlowingobsidian = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Glowingobsidian, true);
+    //mGlowingobsidian = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Glowingobsidian, true);
     mGlowstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Glowstone, true);
     mGoldBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GoldBlock, true);
     mGoldOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GoldOre, true);
@@ -1360,7 +1360,7 @@ void assignBlocks() {
     mWoodenDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenDoor, true);
     mWoodenPressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenPressurePlate, true);
     mWoodenSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenSlab, true);
-    mWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Wool, true);
+    //mWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Wool, true);
     mYellowCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowCandle, true);
     mYellowCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowCandleCake, true);
     mYellowFlower = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowFlower, true);

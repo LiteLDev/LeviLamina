@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0InternalSystemInfo\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0InternalSystemInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI InternalSystemInfo(struct InternalSystemInfo &&);
     /**
-     * @symbol  ??1InternalSystemInfo\@\@QEAA\@XZ
+     * @symbol ??1InternalSystemInfo\@\@QEAA\@XZ
      */
     MCAPI ~InternalSystemInfo();
 

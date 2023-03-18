@@ -31,51 +31,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  ?listen\@ScriptDebugger\@\@UEAA_NG\@Z
+     * @vftbl 0
+     * @symbol ?listen\@ScriptDebugger\@\@UEAA_NG\@Z
      */
     virtual bool listen(unsigned short);
     /**
-     * @vftbl  1
-     * @symbol  ?connect\@ScriptDebugger\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
+     * @vftbl 1
+     * @symbol ?connect\@ScriptDebugger\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@G\@Z
      */
     virtual bool connect(std::string const &, unsigned short);
     /**
-     * @vftbl  2
-     * @symbol  ?close\@ScriptDebugger\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?close\@ScriptDebugger\@\@UEAAXXZ
      */
     virtual void close();
     /**
-     * @vftbl  3
-     * @symbol  ?startProfiler\@ScriptDebugger\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?startProfiler\@ScriptDebugger\@\@UEAAXXZ
      */
     virtual void startProfiler();
     /**
-     * @vftbl  4
-     * @symbol  ?stopProfiler\@ScriptDebugger\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 4
+     * @symbol ?stopProfiler\@ScriptDebugger\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void stopProfiler(std::string const &);
     /**
-     * @vftbl  5
-     * @symbol  ?getResourceStats\@ScriptDebugger\@\@UEBA?AUScriptResourceStats\@\@XZ
+     * @vftbl 5
+     * @symbol ?getResourceStats\@ScriptDebugger\@\@UEBA?AUScriptResourceStats\@\@XZ
      */
     virtual struct ScriptResourceStats getResourceStats() const;
     /**
-     * @symbol  ??0ScriptDebugger\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptPluginManager\@\@AEAVIScriptDebuggerWatchdog\@\@V?$unique_ptr\@VIScriptTelemetryLogger\@\@U?$default_delete\@VIScriptTelemetryLogger\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0ScriptDebugger\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptPluginManager\@\@AEAVIScriptDebuggerWatchdog\@\@V?$unique_ptr\@VIScriptTelemetryLogger\@\@U?$default_delete\@VIScriptTelemetryLogger\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class ScriptPluginManager &, class IScriptDebuggerWatchdog &, std::unique_ptr<class IScriptTelemetryLogger>);
     /**
-     * @symbol  ?checkConnections\@ScriptDebugger\@\@QEAAXXZ
+     * @symbol ?checkConnections\@ScriptDebugger\@\@QEAAXXZ
      */
     MCAPI void checkConnections();
 
 //private:
     /**
-     * @symbol  ?_createController\@ScriptDebugger\@\@AEAAPEAVIDebuggerController\@Scripting\@\@XZ
+     * @symbol ?_createController\@ScriptDebugger\@\@AEAAPEAVIDebuggerController\@Scripting\@\@XZ
      */
     MCAPI class Scripting::IDebuggerController * _createController();
     /**
-     * @symbol  ?_releaseController\@ScriptDebugger\@\@AEAAXXZ
+     * @symbol ?_releaseController\@ScriptDebugger\@\@AEAAXXZ
      */
     MCAPI void _releaseController();
 

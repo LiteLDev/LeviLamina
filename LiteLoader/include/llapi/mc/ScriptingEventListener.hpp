@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptingEventListener();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
+     * @vftbl 1
+     * @symbol ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const &);
 

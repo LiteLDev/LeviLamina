@@ -30,57 +30,57 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SummonActorGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@SummonActorGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SummonActorGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@SummonActorGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@SummonActorGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@SummonActorGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SummonActorGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@SummonActorGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@SummonActorGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@SummonActorGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SummonActorGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SummonActorGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SummonActorGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0SummonActorGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@USummonSpellData\@\@V?$allocator\@USummonSpellData\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0SummonActorGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@USummonSpellData\@\@V?$allocator\@USummonSpellData\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
 //private:
     /**
-     * @symbol  ?_createSpellEntity\@SummonActorGoal\@\@AEBAXMMMMMHUActorDefinitionIdentifier\@\@\@Z
+     * @symbol ?_createSpellEntity\@SummonActorGoal\@\@AEBAXMMMMMHUActorDefinitionIdentifier\@\@\@Z
      */
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     /**
-     * @symbol  ?_selectBestSpell\@SummonActorGoal\@\@AEBAHAEAVActor\@\@\@Z
+     * @symbol ?_selectBestSpell\@SummonActorGoal\@\@AEBAHAEAVActor\@\@\@Z
      */
     MCAPI int _selectBestSpell(class Actor &) const;
 

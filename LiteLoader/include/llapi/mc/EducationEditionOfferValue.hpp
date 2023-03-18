@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ??4EducationEditionOfferValue\@\@QEAAAEAV0\@W4EducationEditionOffer\@\@\@Z
+     * @symbol ??4EducationEditionOfferValue\@\@QEAAAEAV0\@W4EducationEditionOffer\@\@\@Z
      */
     MCAPI class EducationEditionOfferValue & operator=(enum class EducationEditionOffer);
 

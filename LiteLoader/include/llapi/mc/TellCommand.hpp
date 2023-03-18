@@ -31,23 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TellCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@TellCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@TellCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@TellCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@TellCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @symbol  ?_sendMessageToPlayers\@TellCommand\@\@AEBAXAEBV?$CommandSelectorResults\@VPlayer\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
+     * @symbol ?_sendMessageToPlayers\@TellCommand\@\@AEBAXAEBV?$CommandSelectorResults\@VPlayer\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
      */
     MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
 

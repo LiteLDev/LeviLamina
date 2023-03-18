@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DeferredCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@DeferredCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@DeferredCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
     virtual void execute(class MinecraftCommands &);
     /**
-     * @symbol  ??0DeferredCommand\@\@QEAA\@V?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@std\@\@_N1V?$function\@$$A6AXUMCRESULT\@\@\@Z\@2\@\@Z
+     * @symbol ??0DeferredCommand\@\@QEAA\@V?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@std\@\@_N1V?$function\@$$A6AXUMCRESULT\@\@\@Z\@2\@\@Z
      */
     MCAPI DeferredCommand(std::unique_ptr<class CommandContext>, bool, bool, class std::function<void (struct MCRESULT)>);
 

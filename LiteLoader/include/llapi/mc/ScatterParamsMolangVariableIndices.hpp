@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
+     * @symbol ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
      */
     MCAPI void initialize();
 

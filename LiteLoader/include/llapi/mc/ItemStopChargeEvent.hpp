@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ItemStopChargeEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemStopChargeEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemStopChargeEvent();
 

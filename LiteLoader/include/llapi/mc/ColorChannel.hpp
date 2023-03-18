@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?INVALID\@ColorChannel\@\@2V1\@B
+     * @symbol ?INVALID\@ColorChannel\@\@2V1\@B
      */
     MCAPI static class ColorChannel const INVALID;
 

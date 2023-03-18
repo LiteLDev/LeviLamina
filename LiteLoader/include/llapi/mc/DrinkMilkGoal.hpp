@@ -28,47 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DrinkMilkGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@DrinkMilkGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@DrinkMilkGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@DrinkMilkGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@DrinkMilkGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@DrinkMilkGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@DrinkMilkGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@DrinkMilkGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@DrinkMilkGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@DrinkMilkGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@DrinkMilkGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@DrinkMilkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@DrinkMilkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0DrinkMilkGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0DrinkMilkGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI DrinkMilkGoal(class Mob &);
 

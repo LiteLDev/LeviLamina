@@ -35,11 +35,11 @@ public:
 
 public:
     /**
-     * @symbol  ?getFullCode\@MCRESULT\@\@QEBAHXZ
+     * @symbol ?getFullCode\@MCRESULT\@\@QEBAHXZ
      */
     MCAPI int getFullCode() const;
     /**
-     * @symbol  ?isSuccess\@MCRESULT\@\@QEBA_NXZ
+     * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
      */
     MCAPI bool isSuccess() const;
 

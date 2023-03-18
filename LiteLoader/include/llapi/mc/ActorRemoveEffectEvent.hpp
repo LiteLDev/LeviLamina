@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorRemoveEffectEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorRemoveEffectEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorRemoveEffectEvent();
 

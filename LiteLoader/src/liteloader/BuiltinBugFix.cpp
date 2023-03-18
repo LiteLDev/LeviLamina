@@ -22,7 +22,6 @@
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
 
-#include "llapi/mc/NetworkHandler.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
 #include "llapi/mc/ReadOnlyBinaryStream.hpp"
 

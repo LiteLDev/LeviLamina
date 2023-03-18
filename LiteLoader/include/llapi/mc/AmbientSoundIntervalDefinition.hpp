@@ -31,15 +31,15 @@ public:
 
 public:
     /**
-     * @symbol  ?addDynamic\@AmbientSoundIntervalDefinition\@\@QEAAXAEBUDynamicAmbientSound\@\@\@Z
+     * @symbol ?addDynamic\@AmbientSoundIntervalDefinition\@\@QEAAXAEBUDynamicAmbientSound\@\@\@Z
      */
     MCAPI void addDynamic(struct DynamicAmbientSound const &);
     /**
-     * @symbol  ?initialize\@AmbientSoundIntervalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAmbientSoundServerComponent\@\@\@Z
+     * @symbol ?initialize\@AmbientSoundIntervalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAmbientSoundServerComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class AmbientSoundServerComponent &) const;
     /**
-     * @symbol  ?buildSchema\@AmbientSoundIntervalDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UAmbientSoundIntervalDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@AmbientSoundIntervalDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UAmbientSoundIntervalDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct AmbientSoundIntervalDefinition>> &);
 

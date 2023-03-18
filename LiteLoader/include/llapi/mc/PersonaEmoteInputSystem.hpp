@@ -28,15 +28,19 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@PersonaEmoteInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSideBySideResultSystem\@PersonaEmoteInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createSideBySideResultSystem();
+    /**
+     * @symbol ?createSystem\@PersonaEmoteInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @symbol  ?_personaEmoteInputSystem\@PersonaEmoteInputSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUEventingDispatcherComponent\@\@AEAUMoveInputComponent\@\@AEAUSynchedActorDataComponent\@\@AEAUVanillaClientGameplayComponent\@\@V?$Optional\@UEmotePlayedTelemetryDataComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UEmotePlayedTelemetryDataComponent\@\@\@\@\@Z
+     * @symbol ?_personaEmoteInputSystem\@PersonaEmoteInputSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUEventingDispatcherComponent\@\@AEBUEmotePlayedTelemetryDataComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UEmotePlayedTelemetryDataComponent\@\@UShouldStopEmotingRequestComponent\@\@\@\@\@Z
      */
-    MCAPI static void _personaEmoteInputSystem(class StrictEntityContext const &, struct EventingDispatcherComponent const &, struct MoveInputComponent &, struct SynchedActorDataComponent &, struct VanillaClientGameplayComponent &, class Optional<struct EmotePlayedTelemetryDataComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EmotePlayedTelemetryDataComponent>);
+    MCAPI static void _personaEmoteInputSystem(class StrictEntityContext const &, struct EventingDispatcherComponent const &, struct EmotePlayedTelemetryDataComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>);
 
 private:
 

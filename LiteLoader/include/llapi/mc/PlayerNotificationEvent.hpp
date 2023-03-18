@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerNotificationEvent();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createContext\@OnExtractSideBySide\@\@QEBA?AUExtractionSystemContext\@\@XZ
+     * @symbol ?createContext\@OnExtractSideBySide\@\@QEBA?AUExtractionSystemContext\@\@XZ
      */
     MCAPI struct ExtractionSystemContext createContext() const;
 

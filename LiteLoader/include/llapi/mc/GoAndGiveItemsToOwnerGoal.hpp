@@ -28,53 +28,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GoAndGiveItemsToOwnerGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@GoAndGiveItemsToOwnerGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@GoAndGiveItemsToOwnerGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@GoAndGiveItemsToOwnerGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@GoAndGiveItemsToOwnerGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@GoAndGiveItemsToOwnerGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@GoAndGiveItemsToOwnerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@GoAndGiveItemsToOwnerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0GoAndGiveItemsToOwnerGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0GoAndGiveItemsToOwnerGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
 
 //private:
     /**
-     * @symbol  ?_attemptToGiveItem\@GoAndGiveItemsToOwnerGoal\@\@AEAA_NXZ
+     * @symbol ?_attemptToGiveItem\@GoAndGiveItemsToOwnerGoal\@\@AEAA_NXZ
      */
     MCAPI bool _attemptToGiveItem();
 

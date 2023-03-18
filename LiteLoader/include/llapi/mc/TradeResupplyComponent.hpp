@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0TradeResupplyComponent\@\@QEAA\@XZ
+     * @symbol ??0TradeResupplyComponent\@\@QEAA\@XZ
      */
     MCAPI TradeResupplyComponent();
     /**
-     * @symbol  ?addAdditionalSaveData\@TradeResupplyComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@TradeResupplyComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @symbol  ?initFromDefinition\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @symbol  ?readAdditionalSaveData\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?reloadComponent\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?reloadComponent\@TradeResupplyComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void reloadComponent(class Actor &);
 

@@ -42,11 +42,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0PackInfoData\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3AEBVContentIdentity\@\@_N5\@Z
+     * @symbol ??0PackInfoData\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3AEBVContentIdentity\@\@_N5\@Z
      */
     MCAPI PackInfoData(class mce::UUID const &, class SemVersion const &, unsigned __int64, std::string const &, std::string const &, class ContentIdentity const &, bool, bool);
     /**
-     * @symbol  ??1PackInfoData\@\@QEAA\@XZ
+     * @symbol ??1PackInfoData\@\@QEAA\@XZ
      */
     MCAPI ~PackInfoData();
 

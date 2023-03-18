@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0BlockMaterialInstancesComponent\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0BlockMaterialInstancesComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent &&);
     /**
-     * @symbol  ?getRenderLayer\@BlockMaterialInstancesComponent\@\@QEBA?AW4BlockRenderLayer\@\@XZ
+     * @symbol ?getRenderLayer\@BlockMaterialInstancesComponent\@\@QEBA?AW4BlockRenderLayer\@\@XZ
      */
     MCAPI enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @symbol  ??4BlockMaterialInstancesComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4BlockMaterialInstancesComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
     /**
-     * @symbol  ??1BlockMaterialInstancesComponent\@\@QEAA\@XZ
+     * @symbol ??1BlockMaterialInstancesComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockMaterialInstancesComponent();
 

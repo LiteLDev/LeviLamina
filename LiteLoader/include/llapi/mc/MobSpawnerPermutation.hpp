@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MobSpawnerPermutation\@\@QEAA\@XZ
+     * @symbol ??1MobSpawnerPermutation\@\@QEAA\@XZ
      */
     MCAPI ~MobSpawnerPermutation();
 

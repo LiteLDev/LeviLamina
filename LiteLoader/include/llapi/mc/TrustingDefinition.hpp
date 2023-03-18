@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0TrustingDefinition\@\@QEAA\@XZ
+     * @symbol ??0TrustingDefinition\@\@QEAA\@XZ
      */
     MCAPI TrustingDefinition();
     /**
-     * @symbol  ?addTrustItemByName\@TrustingDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?addTrustItemByName\@TrustingDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addTrustItemByName(std::string const &);
     /**
-     * @symbol  ?initialize\@TrustingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTrustingComponent\@\@\@Z
+     * @symbol ?initialize\@TrustingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTrustingComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class TrustingComponent &) const;
     /**
-     * @symbol  ?buildSchema\@TrustingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTrustingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@TrustingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTrustingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TrustingDefinition>> &);
 

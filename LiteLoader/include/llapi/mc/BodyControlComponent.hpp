@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BodyControlComponent\@\@QEAA\@XZ
+     * @symbol ??1BodyControlComponent\@\@QEAA\@XZ
      */
     MCAPI ~BodyControlComponent();
 

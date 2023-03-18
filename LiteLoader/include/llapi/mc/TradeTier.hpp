@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1TradeTier\@\@QEAA\@XZ
+     * @symbol ??1TradeTier\@\@QEAA\@XZ
      */
     MCAPI ~TradeTier();
 

@@ -20,7 +20,7 @@ namespace DanceComponentInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?DEFAULT_DISTANCE\@DanceComponentInternal\@\@3MA
+     * @symbol ?DEFAULT_DISTANCE\@DanceComponentInternal\@\@3MA
      */
     MCAPI extern float DEFAULT_DISTANCE;
 

@@ -60,31 +60,31 @@ public:
 };
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?INVALID_CONTAINER_SLOT_ERROR\@ScriptModuleMinecraft\@\@3PEBDEB
-     */
-    MCAPI extern char const * INVALID_CONTAINER_SLOT_ERROR;
-    /**
-     * @symbol  ?bindBlockLocation\@ScriptModuleMinecraft\@\@YA?AV?$ClassBindingBuilder\@VBlockPos\@\@\@Scripting\@\@XZ
+     * @symbol ?bindBlockLocation\@ScriptModuleMinecraft\@\@YA?AV?$ClassBindingBuilder\@VBlockPos\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();
     /**
-     * @symbol  ?bindFacingEnumV010\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptFacing\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
+     * @symbol ?bindFacingEnumV010\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptFacing\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptFacing, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV010();
     /**
-     * @symbol  ?bindFacingEnumV1\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     * @symbol ?bindFacingEnumV1\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
     /**
-     * @symbol  ?bindMessageSourceTypeV010\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptMessageSourceType\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
+     * @symbol ?bindItemLockMode\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemLockMode\@\@\@Scripting\@\@XZ
+     */
+    MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ItemLockMode> bindItemLockMode();
+    /**
+     * @symbol ?bindMessageSourceTypeV010\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptMessageSourceType\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptMessageSourceType, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV010();
     /**
-     * @symbol  ?bindMessageSourceTypeV1\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptMessageSourceType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     * @symbol ?bindMessageSourceTypeV1\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptMessageSourceType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceTypeV1();
     /**
-     * @symbol  ?bindTimeOfDay\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptTimeOfDay\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
+     * @symbol ?bindTimeOfDay\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptTimeOfDay\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptTimeOfDay, enum class ScriptModuleMinecraft::ScriptTimeOfDay> bindTimeOfDay();
 

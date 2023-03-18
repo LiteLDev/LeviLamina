@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?initFromDefinition\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @symbol  ?onBlocked\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@AEBVActorDamageSource\@\@0\@Z
+     * @symbol ?onBlocked\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@AEBVActorDamageSource\@\@0\@Z
      */
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 

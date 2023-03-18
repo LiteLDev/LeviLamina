@@ -22,23 +22,23 @@ namespace BedrockBlockTypes {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?mAir\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
+     * @symbol ?mAir\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAir;
     /**
-     * @symbol  ?mClientRequestPlaceholderBlock\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
+     * @symbol ?mClientRequestPlaceholderBlock\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
     /**
-     * @symbol  ?mUnknown\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
+     * @symbol ?mUnknown\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
-     * @symbol  ?registerBlocks\@BedrockBlockTypes\@\@YAXXZ
+     * @symbol ?registerBlocks\@BedrockBlockTypes\@\@YAXXZ
      */
     MCAPI void registerBlocks();
     /**
-     * @symbol  ?unregisterBlocks\@BedrockBlockTypes\@\@YAXXZ
+     * @symbol ?unregisterBlocks\@BedrockBlockTypes\@\@YAXXZ
      */
     MCAPI void unregisterBlocks();
 

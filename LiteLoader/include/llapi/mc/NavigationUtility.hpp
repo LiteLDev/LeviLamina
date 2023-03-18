@@ -22,83 +22,83 @@ namespace NavigationUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?canFlyDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1\@Z
+     * @symbol ?canFlyDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1\@Z
      */
     MCAPI bool canFlyDirectly(class Mob &, class Vec3 const &, class Vec3 const &);
     /**
-     * @symbol  ?canMoveDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1HHH_N\@Z
+     * @symbol ?canMoveDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1HHH_N\@Z
      */
     MCAPI bool canMoveDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     /**
-     * @symbol  ?canMoveDirectlyWaterBound\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVVec3\@\@1\@Z
+     * @symbol ?canMoveDirectlyWaterBound\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVVec3\@\@1\@Z
      */
     MCAPI bool canMoveDirectlyWaterBound(class Mob const &, class Vec3 const &, class Vec3 const &);
     /**
-     * @symbol  ?canWalkDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1HHH_N\@Z
+     * @symbol ?canWalkDirectly\@NavigationUtility\@\@YA_NAEAVMob\@\@AEBVVec3\@\@1HHH_N\@Z
      */
     MCAPI bool canWalkDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     /**
-     * @symbol  ?canWalkOn\@NavigationUtility\@\@YA_NAEAVMob\@\@HHHHHHAEBVVec3\@\@MM_N\@Z
+     * @symbol ?canWalkOn\@NavigationUtility\@\@YA_NAEAVMob\@\@HHHHHHAEBVVec3\@\@MM_N\@Z
      */
     MCAPI bool canWalkOn(class Mob &, int, int, int, int, int, int, class Vec3 const &, float, float, bool);
     /**
-     * @symbol  ?closeToDone\@NavigationUtility\@\@YA_NAEBVMob\@\@M\@Z
+     * @symbol ?closeToDone\@NavigationUtility\@\@YA_NAEBVMob\@\@M\@Z
      */
     MCAPI bool closeToDone(class Mob const &, float);
     /**
-     * @symbol  ?flyCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockSource\@\@HHH\@Z
+     * @symbol ?flyCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockSource\@\@HHH\@Z
      */
     MCAPI bool flyCondition(class Mob const &, class BlockSource &, int, int, int);
     /**
-     * @symbol  ?getHeightDifference\@NavigationUtility\@\@YAMAEAVBlockSource\@\@AEBVVec3\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?getHeightDifference\@NavigationUtility\@\@YAMAEAVBlockSource\@\@AEBVVec3\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI float getHeightDifference(class BlockSource &, class Vec3 const &, class Block const &, class BlockPos const &);
     /**
-     * @symbol  ?getMobScale\@NavigationUtility\@\@YA?BVBlockPos\@\@AEBVMob\@\@\@Z
+     * @symbol ?getMobScale\@NavigationUtility\@\@YA?BVBlockPos\@\@AEBVMob\@\@\@Z
      */
     MCAPI class BlockPos const getMobScale(class Mob const &);
     /**
-     * @symbol  ?getSurfaceY\@NavigationUtility\@\@YAHAEBVMob\@\@\@Z
+     * @symbol ?getSurfaceY\@NavigationUtility\@\@YAHAEBVMob\@\@\@Z
      */
     MCAPI int getSurfaceY(class Mob const &);
     /**
-     * @symbol  ?invalidPathStartStatus\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockPos\@\@\@Z
+     * @symbol ?invalidPathStartStatus\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockPos\@\@\@Z
      */
     MCAPI bool invalidPathStartStatus(class Mob const &, class BlockPos &);
     /**
-     * @symbol  ?isDoorBlockingPath\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlock\@\@AEBVPath\@\@AEBVBlockPos\@\@_K\@Z
+     * @symbol ?isDoorBlockingPath\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlock\@\@AEBVPath\@\@AEBVBlockPos\@\@_K\@Z
      */
     MCAPI bool isDoorBlockingPath(class Mob const &, class Block const &, class Path const &, class BlockPos const &, unsigned __int64);
     /**
-     * @symbol  ?isInLiquid\@NavigationUtility\@\@YA_NAEBVMob\@\@\@Z
+     * @symbol ?isInLiquid\@NavigationUtility\@\@YA_NAEBVMob\@\@\@Z
      */
     MCAPI bool isInLiquid(class Mob const &);
     /**
-     * @symbol  ?isInNode\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?isInNode\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isInNode(class Mob const &, class BlockPos const &);
     /**
-     * @symbol  ?isLastNode\@NavigationUtility\@\@YA_N_KAEBVPath\@\@\@Z
+     * @symbol ?isLastNode\@NavigationUtility\@\@YA_N_KAEBVPath\@\@\@Z
      */
     MCAPI bool isLastNode(unsigned __int64, class Path const &);
     /**
-     * @symbol  ?isStableDestination\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockPos\@\@\@Z
+     * @symbol ?isStableDestination\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockPos\@\@\@Z
      */
     MCAPI bool isStableDestination(class Mob const &, class BlockPos &);
     /**
-     * @symbol  ?isStairBlockFacingMob\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?isStairBlockFacingMob\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool isStairBlockFacingMob(class Mob const &, class BlockPos const &);
     /**
-     * @symbol  ?moveCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlock\@\@\@Z
+     * @symbol ?moveCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEBVBlock\@\@\@Z
      */
     MCAPI bool moveCondition(class Mob const &, class Block const &);
     /**
-     * @symbol  ?swimCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockSource\@\@HHH\@Z
+     * @symbol ?swimCondition\@NavigationUtility\@\@YA_NAEBVMob\@\@AEAVBlockSource\@\@HHH\@Z
      */
     MCAPI bool swimCondition(class Mob const &, class BlockSource &, int, int, int);
     /**
-     * @symbol  ?trimPathFromSun\@NavigationUtility\@\@YAXAEBVMob\@\@\@Z
+     * @symbol ?trimPathFromSun\@NavigationUtility\@\@YAXAEBVMob\@\@\@Z
      */
     MCAPI void trimPathFromSun(class Mob const &);
 

@@ -28,30 +28,30 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentMoveCommandSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@AgentMoveCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@AgentMoveCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @symbol  ?cleanUp\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
+     * @symbol ?cleanUp\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
      */
     MCAPI static void cleanUp(class EntityContext &, float);
     /**
-     * @symbol  ?initialize\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@AEAUActionDetails\@AgentComponents\@\@AEAVMove\@4\@\@Z
+     * @symbol ?initialize\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@AEAUActionDetails\@AgentComponents\@\@AEAVMove\@4\@\@Z
      */
     MCAPI static void initialize(class EntityContext &, struct AgentComponents::ActionDetails &, class AgentComponents::Move &);
     /**
-     * @symbol  ?tickMove\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@AEAUActionDetails\@AgentComponents\@\@AEAVMove\@4\@\@Z
+     * @symbol ?tickMove\@AgentMoveCommandSystem\@\@SAXAEAVEntityContext\@\@AEAUActionDetails\@AgentComponents\@\@AEAVMove\@4\@\@Z
      */
     MCAPI static void tickMove(class EntityContext &, struct AgentComponents::ActionDetails &, class AgentComponents::Move &);
 

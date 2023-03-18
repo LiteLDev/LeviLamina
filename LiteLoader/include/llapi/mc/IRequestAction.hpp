@@ -32,31 +32,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IRequestAction();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
      */
     virtual void execute(class ServerLevel &, class Dimension &) = 0;
     /**
-     * @vftbl  2
-     * @symbol  ?serialize\@IRequestAction\@\@UEAAXAEAVCompoundTag\@\@\@Z
+     * @vftbl 2
+     * @symbol ?serialize\@IRequestAction\@\@UEAAXAEAVCompoundTag\@\@\@Z
      */
     virtual void serialize(class CompoundTag &);
     /**
-     * @vftbl  3
-     * @symbol  ??8IRequestAction\@\@UEBA_NAEAV0\@\@Z
+     * @vftbl 3
+     * @symbol ??8IRequestAction\@\@UEBA_NAEAV0\@\@Z
      */
     virtual bool operator==(class IRequestAction &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
     /**
-     * @symbol  ??0IRequestAction\@\@QEAA\@AEBW4RequestActionType\@0\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~IRequestAction();
+#endif
+    /**
+     * @symbol ??0IRequestAction\@\@QEAA\@AEBW4RequestActionType\@0\@\@Z
      */
     MCAPI IRequestAction(enum class IRequestAction::RequestActionType const &);
     /**
-     * @symbol  ?isValidTag\@IRequestAction\@\@SA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?isValidTag\@IRequestAction\@\@SA_NAEBVCompoundTag\@\@\@Z
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
 

@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DamageCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@DamageCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@DamageCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@DamageCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@DamageCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @symbol  ?_applyDamage\@DamageCommand\@\@AEBAXAEAV?$CommandSelectorResults\@VActor\@\@\@\@AEBVActorDamageSource\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?_applyDamage\@DamageCommand\@\@AEBAXAEAV?$CommandSelectorResults\@VActor\@\@\@\@AEBVActorDamageSource\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
 

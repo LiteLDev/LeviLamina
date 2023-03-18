@@ -25,12 +25,20 @@ public:
 
 public:
     /**
-     * @symbol  ?_postPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUAbilitiesComponent\@\@AEBULocalPlayerPrePlayerTravelComponent\@\@\@Z
+     * @symbol ?_postPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUAbilitiesComponent\@\@AEBULocalPlayerPrePlayerTravelComponent\@\@\@Z
      */
     MCAPI static void _postPlayerTravelSystem(class StrictEntityContext const &, struct AbilitiesComponent &, struct LocalPlayerPrePlayerTravelComponent const &);
     /**
-     * @symbol  ?createPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?_prePlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUMobTravelComponent\@\@AEAUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@ULocalPlayerPrePlayerTravelComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _prePlayerTravelSystem(class StrictEntityContext const &, struct MobTravelComponent &, struct AbilitiesComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>);
+    /**
+     * @symbol ?createPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem();
+    /**
+     * @symbol ?createPrePlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem();
 
 };

@@ -20,11 +20,11 @@ namespace PathFinderUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?getActorRadius\@PathFinderUtils\@\@YAMAEBVActor\@\@\@Z
+     * @symbol ?getActorRadius\@PathFinderUtils\@\@YAMAEBVActor\@\@\@Z
      */
     MCAPI float getActorRadius(class Actor const &);
     /**
-     * @symbol  ?getMaxJumpHeight\@PathFinderUtils\@\@YAMAEBVActor\@\@\@Z
+     * @symbol ?getMaxJumpHeight\@PathFinderUtils\@\@YAMAEBVActor\@\@\@Z
      */
     MCAPI float getMaxJumpHeight(class Actor const &);
 

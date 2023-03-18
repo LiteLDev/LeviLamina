@@ -31,11 +31,11 @@ public:
 
 public:
     /**
-     * @symbol  ?RAY_TRACING_TAG\@RayTracingOptions\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
+     * @symbol ?RAY_TRACING_TAG\@RayTracingOptions\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */
     MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const RAY_TRACING_TAG;
     /**
-     * @symbol  ?getPackCapability\@RayTracingOptions\@\@SA?AVPackCapability\@\@V?$NonOwnerPointer\@VIAdvancedGraphicsOptions\@\@\@Bedrock\@\@\@Z
+     * @symbol ?getPackCapability\@RayTracingOptions\@\@SA?AVPackCapability\@\@V?$NonOwnerPointer\@VIAdvancedGraphicsOptions\@\@\@Bedrock\@\@\@Z
      */
     MCAPI static class PackCapability getPackCapability(class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions>);
 

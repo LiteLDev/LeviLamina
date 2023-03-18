@@ -30,24 +30,24 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HoldBlockSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
+     * @vftbl 1
+     * @symbol ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @vftbl  2
-     * @symbol  ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
-     * @symbol  ?_holdBlockSystemOnActorDie\@HoldBlockSystem\@\@CAXAEAUActorDieEvent\@\@\@Z
+     * @symbol ?_holdBlockSystemOnActorDie\@HoldBlockSystem\@\@CAXAEAUActorDieEvent\@\@\@Z
      */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 

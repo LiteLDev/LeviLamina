@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createPaintingUpdatePositionSystem\@PaintingUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createPaintingUpdatePositionSystem\@PaintingUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPaintingUpdatePositionSystem();
 

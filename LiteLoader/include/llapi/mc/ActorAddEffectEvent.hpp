@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorAddEffectEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorAddEffectEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorAddEffectEvent();
 

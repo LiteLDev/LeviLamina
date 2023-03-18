@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ?getRadius\@GameEvent\@\@QEBAMXZ
+     * @symbol ?getRadius\@GameEvent\@\@QEBAMXZ
      */
     MCAPI float getRadius() const;
     /**
-     * @symbol  ?getRadiusSqrd\@GameEvent\@\@QEBAMXZ
+     * @symbol ?getRadiusSqrd\@GameEvent\@\@QEBAMXZ
      */
     MCAPI float getRadiusSqrd() const;
     /**
-     * @symbol  ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
+     * @symbol ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
      */
     MCAPI enum class GameEventConfig::GameEventType const getType() const;
     /**
-     * @symbol  ?isCategory\@GameEvent\@\@QEBA_NW4GameEventCategory\@GameEventConfig\@\@\@Z
+     * @symbol ?isCategory\@GameEvent\@\@QEBA_NW4GameEventCategory\@GameEventConfig\@\@\@Z
      */
     MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
 

@@ -31,7 +31,7 @@ public:
 
 public:
     /**
-     * @symbol  ?initializeContentLogging\@DebugEndPoint\@\@QEAAXAEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
+     * @symbol ?initializeContentLogging\@DebugEndPoint\@\@QEAAXAEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI void initializeContentLogging(class ResourcePackManager &, class Core::Path const &);
 
@@ -39,7 +39,7 @@ public:
 
 private:
     /**
-     * @symbol  ?mAssertAreas\@DebugEndPoint\@\@0V?$unordered_map\@W4LogArea\@\@_NU?$hash\@W4LogArea\@\@\@std\@\@U?$equal_to\@W4LogArea\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4LogArea\@\@_N\@std\@\@\@3\@\@std\@\@B
+     * @symbol ?mAssertAreas\@DebugEndPoint\@\@0V?$unordered_map\@W4LogArea\@\@_NU?$hash\@W4LogArea\@\@\@std\@\@U?$equal_to\@W4LogArea\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4LogArea\@\@_N\@std\@\@\@3\@\@std\@\@B
      */
     MCAPI static class std::unordered_map<enum class LogArea, bool, struct std::hash<enum class LogArea>, struct std::equal_to<enum class LogArea>, class std::allocator<struct std::pair<enum class LogArea const, bool>>> const mAssertAreas;
 

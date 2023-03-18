@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockPatternPreEvent\@\@QEAA\@XZ
+     * @symbol ??1BlockPatternPreEvent\@\@QEAA\@XZ
      */
     MCAPI ~BlockPatternPreEvent();
 

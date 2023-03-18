@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?MAX_NUMBER_OF_SAMPLES\@NetworkDebugManager\@\@2HB
+     * @symbol ?MAX_NUMBER_OF_SAMPLES\@NetworkDebugManager\@\@2HB
      */
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     /**
-     * @symbol  ?UPDATE_INTERVAL_MILLISECONDS\@NetworkDebugManager\@\@2HB
+     * @symbol ?UPDATE_INTERVAL_MILLISECONDS\@NetworkDebugManager\@\@2HB
      */
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 

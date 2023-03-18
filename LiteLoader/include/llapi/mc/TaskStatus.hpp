@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0TaskStatus\@\@QEAA\@XZ
+     * @symbol ??0TaskStatus\@\@QEAA\@XZ
      */
     MCAPI TaskStatus();
     /**
-     * @symbol  ?isComplete\@TaskStatus\@\@QEBA_NXZ
+     * @symbol ?isComplete\@TaskStatus\@\@QEBA_NXZ
      */
     MCAPI bool isComplete() const;
     /**
-     * @symbol  ??BTaskStatus\@\@QEBA?AW4Value\@0\@XZ
+     * @symbol ??BTaskStatus\@\@QEBA?AW4Value\@0\@XZ
      */
     MCAPI operator enum TaskStatus::Value() const;
     /**
-     * @symbol  ?toAsyncStatus\@TaskStatus\@\@QEBA?AW4AsyncStatus\@Threading\@Bedrock\@\@XZ
+     * @symbol ?toAsyncStatus\@TaskStatus\@\@QEBA?AW4AsyncStatus\@Threading\@Bedrock\@\@XZ
      */
     MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     /**
-     * @symbol  ?toErrorCode\@TaskStatus\@\@QEBA?AVerror_code\@std\@\@XZ
+     * @symbol ?toErrorCode\@TaskStatus\@\@QEBA?AVerror_code\@std\@\@XZ
      */
     MCAPI class std::error_code toErrorCode() const;
 

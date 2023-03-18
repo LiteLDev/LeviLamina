@@ -30,35 +30,35 @@ public:
 
 public:
     /**
-     * @symbol  ?allocateInstruction\@MolangProgramBuildState\@\@QEAA_KXZ
+     * @symbol ?allocateInstruction\@MolangProgramBuildState\@\@QEAA_KXZ
      */
     MCAPI unsigned __int64 allocateInstruction();
     /**
-     * @symbol  ?emplaceInstruction\@MolangProgramBuildState\@\@QEAAXV?$function\@$$A6AXAEAUMolangEvalParams\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
-    /**
-     * @symbol  ?emplaceInstruction\@MolangProgramBuildState\@\@QEAAX_KV?$function\@$$A6AXAEAUMolangEvalParams\@\@\@Z\@std\@\@\@Z
+     * @symbol ?emplaceInstruction\@MolangProgramBuildState\@\@QEAAX_KV?$function\@$$A6AXAEAUMolangEvalParams\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams &)>);
     /**
-     * @symbol  ?insertJumpWithMaddAtIndex\@MolangProgramBuildState\@\@QEAAX_K0MM\@Z
+     * @symbol ?emplaceInstruction\@MolangProgramBuildState\@\@QEAAXV?$function\@$$A6AXAEAUMolangEvalParams\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
+    /**
+     * @symbol ?insertJumpWithMaddAtIndex\@MolangProgramBuildState\@\@QEAAX_K0MM\@Z
      */
     MCAPI void insertJumpWithMaddAtIndex(unsigned __int64, unsigned __int64, float, float);
     /**
-     * @symbol  ?numInstructions\@MolangProgramBuildState\@\@QEBA_KXZ
+     * @symbol ?numInstructions\@MolangProgramBuildState\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 numInstructions() const;
     /**
-     * @symbol  ?pushReturnValue\@MolangProgramBuildState\@\@QEAAXXZ
+     * @symbol ?pushReturnValue\@MolangProgramBuildState\@\@QEAAXXZ
      */
     MCAPI void pushReturnValue();
     /**
-     * @symbol  ?setReturnValue\@MolangProgramBuildState\@\@QEAAXM\@Z
+     * @symbol ?setReturnValue\@MolangProgramBuildState\@\@QEAAXM\@Z
      */
     MCAPI void setReturnValue(float);
     /**
-     * @symbol  ??1MolangProgramBuildState\@\@QEAA\@XZ
+     * @symbol ??1MolangProgramBuildState\@\@QEAA\@XZ
      */
     MCAPI ~MolangProgramBuildState();
 

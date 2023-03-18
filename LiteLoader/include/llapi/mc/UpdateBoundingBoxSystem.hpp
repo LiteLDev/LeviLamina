@@ -28,8 +28,16 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@UpdateBoundingBoxSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@UpdateBoundingBoxSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?updateBoundingBoxFromDefinition\@UpdateBoundingBoxSystem\@\@SAXAEAVActor\@\@\@Z
+     */
+    MCAPI static void updateBoundingBoxFromDefinition(class Actor &);
+    /**
+     * @symbol ?updatePlayerBoundingBoxFromDefinition\@UpdateBoundingBoxSystem\@\@SAXAEAVPlayer\@\@\@Z
+     */
+    MCAPI static void updatePlayerBoundingBoxFromDefinition(class Player &);
 
 };

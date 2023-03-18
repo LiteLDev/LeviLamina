@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BeforeWatchdogTerminateEvent\@\@QEAA\@XZ
+     * @symbol ??1BeforeWatchdogTerminateEvent\@\@QEAA\@XZ
      */
     MCAPI ~BeforeWatchdogTerminateEvent();
 

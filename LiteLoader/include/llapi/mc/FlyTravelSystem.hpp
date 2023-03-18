@@ -28,7 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?getPlayerFlySpeed\@FlyTravelSystem\@\@SAMAEBVLayeredAbilities\@\@VSynchedActorDataReader\@\@\@Z
+     * @symbol ?createFlyTravelSystem\@FlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
+    /**
+     * @symbol ?getPlayerFlySpeed\@FlyTravelSystem\@\@SAMAEBVLayeredAbilities\@\@VSynchedActorDataReader\@\@\@Z
      */
     MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorDataReader);
 

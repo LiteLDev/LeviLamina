@@ -17,7 +17,7 @@ namespace WardenSpawnTrackerSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?tickWardenSpawnTrackerComponent\@WardenSpawnTrackerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVWardenSpawnTrackerComponent\@\@\@Z
+     * @symbol ?tickWardenSpawnTrackerComponent\@WardenSpawnTrackerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVWardenSpawnTrackerComponent\@\@\@Z
      */
     MCAPI void tickWardenSpawnTrackerComponent(class ActorOwnerComponent &, class WardenSpawnTrackerComponent &);
 

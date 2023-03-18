@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0VehicleComponent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0VehicleComponent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI VehicleComponent(struct VehicleComponent const &);
     /**
-     * @symbol  ??1VehicleComponent\@\@QEAA\@XZ
+     * @symbol ??1VehicleComponent\@\@QEAA\@XZ
      */
     MCAPI ~VehicleComponent();
 

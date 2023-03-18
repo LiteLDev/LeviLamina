@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?executeActions\@ScriptDeferredActionManager\@\@QEAAXXZ
+     * @symbol ?executeActions\@ScriptDeferredActionManager\@\@QEAAXXZ
      */
     MCAPI void executeActions();
     /**
-     * @symbol  ?rejectAll\@ScriptDeferredActionManager\@\@QEAAXXZ
+     * @symbol ?rejectAll\@ScriptDeferredActionManager\@\@QEAAXXZ
      */
     MCAPI void rejectAll();
     /**
-     * @symbol  ??1ScriptDeferredActionManager\@\@QEAA\@XZ
+     * @symbol ??1ScriptDeferredActionManager\@\@QEAA\@XZ
      */
     MCAPI ~ScriptDeferredActionManager();
 

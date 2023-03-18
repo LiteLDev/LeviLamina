@@ -31,15 +31,15 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &) const;
     /**
-     * @symbol  ?uninitialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?uninitialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
-     * @symbol  ?buildSchema\@IsHiddenWhenInvisibleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsHiddenWhenInvisibleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@IsHiddenWhenInvisibleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsHiddenWhenInvisibleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsHiddenWhenInvisibleDefinition>> &);
 

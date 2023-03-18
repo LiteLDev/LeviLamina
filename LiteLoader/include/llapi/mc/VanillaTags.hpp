@@ -22,87 +22,87 @@ namespace VanillaTags {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?DiamondDiggable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?DiamondDiggable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DiamondDiggable;
     /**
-     * @symbol  ?Dirt\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Dirt\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Dirt;
     /**
-     * @symbol  ?FertilizeArea\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?FertilizeArea\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FertilizeArea;
     /**
-     * @symbol  ?GoldDiggable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?GoldDiggable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GoldDiggable;
     /**
-     * @symbol  ?Grass\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Grass\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Grass;
     /**
-     * @symbol  ?Gravel\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Gravel\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Gravel;
     /**
-     * @symbol  ?IronDiggable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?IronDiggable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronDiggable;
     /**
-     * @symbol  ?Metal\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Metal\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Metal;
     /**
-     * @symbol  ?MobSpawner\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?MobSpawner\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MobSpawner;
     /**
-     * @symbol  ?NotFeatureReplaceable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?NotFeatureReplaceable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NotFeatureReplaceable;
     /**
-     * @symbol  ?Plant\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Plant\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Plant;
     /**
-     * @symbol  ?Pumpkin\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Pumpkin\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Pumpkin;
     /**
-     * @symbol  ?Rail\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Rail\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Rail;
     /**
-     * @symbol  ?Sand\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Sand\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sand;
     /**
-     * @symbol  ?Snow\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Snow\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Snow;
     /**
-     * @symbol  ?Stone\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Stone\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Stone;
     /**
-     * @symbol  ?StoneDiggable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?StoneDiggable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneDiggable;
     /**
-     * @symbol  ?TextSign\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?TextSign\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TextSign;
     /**
-     * @symbol  ?Water\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Water\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Water;
     /**
-     * @symbol  ?Wood\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?Wood\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Wood;
     /**
-     * @symbol  ?WoodDiggable\@VanillaTags\@\@3VHashedString\@\@B
+     * @symbol ?WoodDiggable\@VanillaTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WoodDiggable;
 

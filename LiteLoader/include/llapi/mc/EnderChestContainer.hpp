@@ -30,36 +30,36 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EnderChestContainer();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  16
-     * @symbol  ?startOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @vftbl 16
+     * @symbol ?startOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @vftbl  17
-     * @symbol  ?stopOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @vftbl 17
+     * @symbol ?stopOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
     /**
-     * @vftbl  22
-     * @symbol  __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
-     * @vftbl  23
-     * @symbol  __unk_vfn_23
+     * @vftbl 23
+     * @symbol __unk_vfn_23
      */
     virtual void __unk_vfn_23();
     /**
-     * @symbol  ??0EnderChestContainer\@\@QEAA\@XZ
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
+    /**
+     * @symbol ??0EnderChestContainer\@\@QEAA\@XZ
      */
     MCAPI EnderChestContainer();
     /**
-     * @symbol  ?ITEMS_SIZE\@EnderChestContainer\@\@2HB
+     * @symbol ?ITEMS_SIZE\@EnderChestContainer\@\@2HB
      */
     MCAPI static int const ITEMS_SIZE;
 

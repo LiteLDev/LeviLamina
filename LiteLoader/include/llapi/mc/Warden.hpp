@@ -30,187 +30,182 @@ public:
 
 public:
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~Warden();
+    virtual void __unk_vfn_16();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  43
-     * @symbol  ?canDisableShield\@Warden\@\@UEAA_NXZ
+     * @vftbl 43
+     * @symbol ?canDisableShield\@Warden\@\@UEAA_NXZ
      */
     virtual bool canDisableShield();
     /**
-     * @vftbl  49
-     * @symbol  ?normalTick\@Warden\@\@UEAAXXZ
+     * @vftbl 49
+     * @symbol ?normalTick\@Warden\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @vftbl  115
-     * @symbol  ?setTarget\@Warden\@\@UEAAXPEAVActor\@\@\@Z
+     * @vftbl 114
+     * @symbol ?setTarget\@Warden\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void setTarget(class Actor *);
     /**
-     * @vftbl  135
-     * @symbol  ?isInvulnerableTo\@Warden\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
+     * @vftbl 134
+     * @symbol ?isInvulnerableTo\@Warden\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  188
-     * @symbol  ?onSynchedDataUpdate\@Warden\@\@UEAAXH\@Z
+     * @vftbl 187
+     * @symbol ?onSynchedDataUpdate\@Warden\@\@UEAAXH\@Z
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
-     */
-    virtual void __unk_vfn_244();
-    /**
-     * @vftbl  253
-     * @symbol  ?onPush\@Warden\@\@UEAAXAEAVActor\@\@\@Z
+     * @vftbl 251
+     * @symbol ?onPush\@Warden\@\@UEAAXAEAVActor\@\@\@Z
      */
     virtual void onPush(class Actor &);
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_262();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  263
-     * @symbol  ?_hurt\@Warden\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@Warden\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
     /**
-     * @vftbl  277
-     * @symbol  __unk_vfn_277
+     * @vftbl 275
+     * @symbol __unk_vfn_275
      */
-    virtual void __unk_vfn_277();
+    virtual void __unk_vfn_275();
     /**
-     * @vftbl  285
-     * @symbol  __unk_vfn_285
-     */
-    virtual void __unk_vfn_285();
-    /**
-     * @vftbl  296
-     * @symbol  ?checkSpawnRules\@Warden\@\@UEAA_N_N\@Z
+     * @vftbl 293
+     * @symbol ?checkSpawnRules\@Warden\@\@UEAA_N_N\@Z
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @vftbl  297
-     * @symbol  ?checkSpawnObstruction\@Warden\@\@UEBA_NXZ
+     * @vftbl 294
+     * @symbol ?checkSpawnObstruction\@Warden\@\@UEBA_NXZ
      */
     virtual bool checkSpawnObstruction() const;
     /**
-     * @vftbl  304
-     * @symbol  __unk_vfn_304
+     * @vftbl 301
+     * @symbol __unk_vfn_301
      */
-    virtual void __unk_vfn_304();
+    virtual void __unk_vfn_301();
     /**
-     * @vftbl  307
-     * @symbol  ?doHurtTarget\@Warden\@\@MEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
+     * @vftbl 304
+     * @symbol ?doHurtTarget\@Warden\@\@MEAA_NPEAVActor\@\@AEBW4ActorDamageCause\@\@\@Z
      */
     virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
-     * @vftbl  308
-     * @symbol  __unk_vfn_308
+     * @vftbl 305
+     * @symbol __unk_vfn_305
      */
-    virtual void __unk_vfn_308();
+    virtual void __unk_vfn_305();
     /**
-     * @vftbl  354
-     * @symbol  __unk_vfn_354
+     * @vftbl 351
+     * @symbol __unk_vfn_351
      */
-    virtual void __unk_vfn_354();
+    virtual void __unk_vfn_351();
     /**
-     * @symbol  ??0Warden\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0Warden\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

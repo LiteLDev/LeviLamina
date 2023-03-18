@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@InsideGenericBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@InsideGenericBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

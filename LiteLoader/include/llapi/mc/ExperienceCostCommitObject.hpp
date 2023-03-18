@@ -28,27 +28,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ExperienceCostCommitObject();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?append\@ExperienceCostCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
+     * @vftbl 1
+     * @symbol ?append\@ExperienceCostCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
-     * @vftbl  2
-     * @symbol  ?canCommit\@ExperienceCostCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?canCommit\@ExperienceCostCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canCommit(class ContainerScreenContext const &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?commit\@ExperienceCostCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 3
+     * @symbol ?commit\@ExperienceCostCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
      */
     virtual void commit(class ContainerScreenContext const &);
     /**
-     * @symbol  ??0ExperienceCostCommitObject\@\@QEAA\@H\@Z
+     * @symbol ??0ExperienceCostCommitObject\@\@QEAA\@H\@Z
      */
     MCAPI ExperienceCostCommitObject(int);
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createDimensionChunkMoveSystem\@DimensionChunkMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createDimensionChunkMoveSystem\@DimensionChunkMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
 

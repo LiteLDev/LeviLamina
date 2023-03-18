@@ -31,11 +31,11 @@ public:
 
 public:
     /**
-     * @symbol  ?Deserialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
+     * @symbol ?Deserialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
     MCAPI void Deserialize(class RakNet::BitStream *);
     /**
-     * @symbol  ?Serialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
+     * @symbol ?Serialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
     MCAPI void Serialize(class RakNet::BitStream *);
 
