@@ -233,13 +233,14 @@ class BigEndianStringByteOutput {
 public:
     virtual ~BigEndianStringByteOutput() = default;
     ;
-    virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+    virtual void* writeString(std::string_view string_span) {
+        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z", void*,
+                       void*, std::string_view)((void*)this, std::move(string_span));
     }
-    virtual void* writeLongString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+
+    virtual void* writeLongString(std::string_view string_span) {
+        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z", void*, void*,
+                       std::string_view)((void*)this, std::move(string_span));
     }
     virtual void writeFloat(float data) {
         writeBigEndianBytes((byte*)&data, 4);
