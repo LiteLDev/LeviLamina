@@ -4,8 +4,8 @@
 #include "llapi/mc/VanillaBlockTypeIds.hpp"
 #include "llapi/mc/Experiments.hpp"
 
-TInstanceHook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", Experiments) {
-    original(this);
+THook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", Experiments const& exp) {
+    original(exp);
     StaticVanillaBlocks::assignBlocks();
 }
 
