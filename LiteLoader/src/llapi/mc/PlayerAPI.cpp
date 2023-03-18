@@ -306,7 +306,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 3792); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 3800); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {
