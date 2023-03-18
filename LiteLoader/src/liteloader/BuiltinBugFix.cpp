@@ -205,7 +205,7 @@ static inline bool checkPktId(unsigned int id) {
 }
 
 static inline bool& connState(void* conn) {
-    return *((bool*)conn + 360);
+    return *((bool*)conn + 362);
 }
 
 
