@@ -624,13 +624,13 @@ void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOu
 TClasslessInstanceHook2("SetupPacketCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ") {
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
-    autoGenerate();
+    /*autoGenerate();
     autoFill();
 
     auto command = DynamicCommand::createCommand("pkt", "packet");
     command->addOverload();
     command->setCallback(onExecute);
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(std::move(command));*/
 }
 
 #pragma endregion
