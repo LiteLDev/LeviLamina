@@ -25,7 +25,7 @@ public:
     ChunkPos() = default;
     ChunkPos(int ix, int iz) : x(ix), z(iz){};
 
-    constexpr int& operator[](size_t index) {
+    [[nodiscard]] constexpr int& operator[](size_t index) {
         switch (index) {
             case 1:
                 return z;
@@ -34,7 +34,7 @@ public:
         }
     }
 
-    constexpr int operator[](size_t index) const {
+    [[nodiscard]] constexpr int operator[](size_t index) const {
         switch (index) {
             case 1:
                 return z;
