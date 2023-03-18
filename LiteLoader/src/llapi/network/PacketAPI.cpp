@@ -6,7 +6,7 @@
 #define INCLUDE_ALL_PACKET
 #define SIZE_STATIC_ASSERT_IF_DEFINE
 //#define SIZE_STATIC_ASSERT
-#define GENERATE_PACKET
+//#define GENERATE_PACKET
 //#define FILL_PACKET
 
 using ll::logger;
@@ -624,13 +624,13 @@ void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOu
 TClasslessInstanceHook2("SetupPacketCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ") {
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
-    /*autoGenerate();
+    autoGenerate();
     autoFill();
 
     auto command = DynamicCommand::createCommand("pkt", "packet");
     command->addOverload();
     command->setCallback(onExecute);
-    DynamicCommand::setup(std::move(command));*/
+    DynamicCommand::setup(std::move(command));
 }
 
 #pragma endregion
