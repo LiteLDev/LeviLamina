@@ -31,14 +31,6 @@
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/WeakStorageEntity.hpp"
 
-Actor* WeakStorageEntity::tryUnwrap() {
-    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(this);
-}
-
-Actor* WeakEntityRef::tryUnwrap() {
-    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(this);
-}
-
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {

@@ -9,6 +9,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "EntityRegistry.hpp"
+#include "StackResultStorageEntity.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -27,10 +28,18 @@ public:
     enum class EmptyInit : int {
         NoValue = 0,
     };
-    LIAPI class Actor* tryUnwrap();
 
     WeakRefT<EntityRegistryRefTraits> mRegistry;
     class EntityId mEntity;
+
+    template <class Entity, bool Unknown = false>
+    Entity* tryUnwrap() {
+        StackResultStorageEntity ref(*this);
+        if (!ref._hasValue()) {
+            return Entity::tryGetFromEntity(ref._getStackRef(), Unknown);
+        }
+        return nullptr;
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEENTITY
