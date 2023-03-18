@@ -33,7 +33,7 @@ public:
     class EntityId mEntity;
 
     template <class Entity, bool Unknown = false>
-    Entity* tryUnwrap() {
+    inline Entity* tryUnwrap() {
         StackResultStorageEntity ref(*this);
         if (!ref._hasValue()) {
             return Entity::tryGetFromEntity(ref._getStackRef(), Unknown);
