@@ -56,12 +56,16 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual ~Command();
+
+protected:
     /**
      * @vftbl 1
      * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
      */
     virtual bool collectOptionalArguments();
+
+public:
     /**
      * @vftbl 2
      * @symbol ?execute\@SpawnPointCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
