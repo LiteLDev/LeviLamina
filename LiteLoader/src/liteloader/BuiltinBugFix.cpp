@@ -205,7 +205,7 @@ static inline bool checkPktId(unsigned int id) {
 }
 
 static inline bool& connState(void* conn) {
-    return *((bool*)conn + 362);
+    return dAccess<bool, 362>(conn);
 }
 
 

@@ -2,7 +2,7 @@
 #include "llapi/mc/ItemActor.hpp"
 
 ItemStack* ItemActor::getItemStack() {
-    return (ItemStack*)((uintptr_t)this + 1136); // IDA Player::take
+    return dAccess<ItemStack*, 1136>(this); // IDA Player::take
 }
 
 int ItemActor::getDespawnTime() {
