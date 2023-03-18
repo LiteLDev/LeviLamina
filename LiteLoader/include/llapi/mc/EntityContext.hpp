@@ -20,6 +20,7 @@ class EntityContext : public EntityContextBase {
 
 #define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 public:

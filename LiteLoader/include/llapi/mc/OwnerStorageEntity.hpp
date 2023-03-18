@@ -31,6 +31,8 @@ public:
 
     std::optional<EntityContext> mContext;
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_OWNERSTORAGEENTITY
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERSTORAGEENTITY
 public:

@@ -24,6 +24,7 @@ public:
     WeakRefT<struct EntityRefTraits> val;
     LIAPI class Actor* tryUnwrap();
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
