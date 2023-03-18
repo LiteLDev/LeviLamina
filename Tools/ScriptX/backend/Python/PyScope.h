@@ -35,6 +35,8 @@ class EngineScopeImpl {
 class ExitEngineScopeImpl {
   // Entered thread state
   PyThreadState* enteredThreadState;
+  // Entered engine
+  PyEngine* enteredEngine;
 
  public:
   explicit ExitEngineScopeImpl(PyEngine &);

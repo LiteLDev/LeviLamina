@@ -48,11 +48,9 @@ private:
   PyInterpreterState* subInterpreterState_;
   // Sub thread state of this sub interpreter (in TLS)
   TssStorage<PyThreadState> subThreadStateInTLS_;
-
-  // Record global EngineScope enter times to determine
-  // whether it is needed to unlock GIL when exit EngineScope
-  // -- see more comments in "PyScope.cc"
-  inline static int engineEnterCount_ = 0;
+  // Locker used by EngineScope
+  // -- see more comments of EngineLockerHelper in "PyHelper.h" and "PyScope.cc"
+  EngineLockerHelper engineLockHelper;
 
  public:
   inline static PyTypeObject* staticPropertyType_ = nullptr;

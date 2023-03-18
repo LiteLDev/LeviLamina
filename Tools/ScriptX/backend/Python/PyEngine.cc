@@ -28,7 +28,9 @@ SCRIPTX_BEGIN_IGNORE_DEPRECARED
 namespace script::py_backend {
 
 PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
-    : queue_(queue ? std::move(queue) : std::make_shared<utils::MessageQueue>()) {
+    : queue_(queue ? std::move(queue) : std::make_shared<utils::MessageQueue>()),
+      engineLockHelper(this)
+{
   if (Py_IsInitialized() == 0)
   {
     // Not initialized. So no thread state at this time
@@ -54,16 +56,15 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
     mainThreadState_ = PyThreadState_Swap(NULL);
     PyThreadState_Swap(mainThreadState_);
 
-    // After this, thread state of main interpreter is loaded
+    // After this, thread state of main interpreter is loaded, and GIL is released.
+    // Any code will run in sub-interpreters. The main interpreter just keeps the runtime environment.
   }
+
+  // Use here to protect thread state switch
+  engineLockHelper.waitToEnterEngine();
 
   // Resume main thread state (to execute Py_NewInterpreter)
   PyThreadState* oldState = PyThreadState_Swap(mainThreadState_);
-
-  // If GIL is released, lock it
-  if (PyEngine::engineEnterCount_ == 0) {
-    PyEval_AcquireLock();
-  }
 
   // Create new interpreter
   PyThreadState* newSubState = Py_NewInterpreter();
@@ -76,12 +77,11 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
   scriptxExceptionTypeObj = (PyTypeObject*)PyErr_NewExceptionWithDoc("Scriptx.ScriptxException",
     "Exception from ScriptX", PyExc_Exception, NULL);
 
-  // If GIL is released before, unlock it
-  if (PyEngine::engineEnterCount_ == 0) {
-    PyEval_ReleaseLock();
-  }
   // Store created new sub thread state & recover old thread state stored before
   subThreadStateInTLS_.set(PyThreadState_Swap(oldState));
+
+  // Exit engine locker
+  engineLockHelper.finishExitEngine();
 }
 
 PyEngine::PyEngine() : PyEngine(nullptr) {}
@@ -90,6 +90,7 @@ PyEngine::~PyEngine() = default;
 
 void PyEngine::destroy() noexcept {
   destroying = true;
+  engineLockHelper.startDestroyEngine();
   ScriptEngine::destroyUserData();
 
   {
@@ -97,11 +98,6 @@ void PyEngine::destroy() noexcept {
     messageQueue()->removeMessageByTag(this);
     messageQueue()->shutdown();
     PyEngine::refsKeeper.dtor(this);          // destroy all Global and Weak refs of current engine
-  }
-
-  if (PyEngine::engineEnterCount_ == 0) {
-    // GIL is not locked. Just lock it
-    PyEval_AcquireLock();
   }
 
   // =========================================
@@ -134,12 +130,7 @@ void PyEngine::destroy() noexcept {
 
   // =========================================
 
-  // Even if all engine is destroyed, there will be main interpreter thread state loaded.
-  // So ReleaseLock will not cause any problem.
-  if (PyEngine::engineEnterCount_ == 0) {
-      // Unlock the GIL because it is not locked before
-      PyEval_ReleaseLock();
-  }
+  engineLockHelper.endDestroyEngine();
 }
 
 Local<Value> PyEngine::get(const Local<String>& key) {

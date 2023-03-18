@@ -27,8 +27,10 @@ SCRIPTX_BEGIN_IGNORE_DEPRECARED
 // https://stackoverflow.com/questions/15470367/pyeval-initthreads-in-python-3-how-when-to-call-it-the-saga-continues-ad-naus
 //
 // Because python's bad support of sub-interpreter, we need to manage GIL & thread state manually.
+// * There is no any documentation or post to explain the logic about this. We have explored it
+// by ourselves, so we describe the logic in detail below.
 //
-// - One engine owns a sub-interpreter, and owns a TLS storage called engine.subThreadState_, 
+// - One PyEngine "is" a sub-interpreter, and owns a TLS storage called engine.subThreadState_, 
 //   which stores his own current thread state on each thread.
 // - This "thread state" works like "CPU Context". When changing engine, "context" need to be
 //   switched to correct target thread state.
@@ -50,17 +52,30 @@ SCRIPTX_BEGIN_IGNORE_DEPRECARED
 //     time. So create a new thread state for it manually (and load it too), then save it 
 //     to TLS storage subThreadState_.
 //   3. When exiting an EngineScope, if old thread state is saved before, it will be recovered.
-//   4. GIL is locked when any EngineScope is entered, and it is a global state (which means that 
-//     this lock is shared by all threads). When the last EngineScope exited, the GIL will be released.
+//   
+// - Locker logic:
+//   1. When create a PyEngine:
+//      - Call waitToEnterEngine() -> Create interpreter and threadstate -> Call finishExitEngine()
+//   2. When enter an EngineScope: 
+//      - Call waitToEnterEngine() -> Create or switch threadstate -> Call finishEngineSwitch()
+//      - After this GIL is held and engineLocker of this engine is locked. "engineLocker" prevents 
+//        current engine to be entered in another thread at the same time.
+//   3. When exit an EngineScope:
+//      - Call waitToExitEngine() -> Switch threadstate -> Call finishExitEngine()
+//      - If this is the last PyEngine to exit, the GIL will be released after this exit.
+//   4. ExitEngineScope: (the opposite logic of EngineScope above)
+//   5. When destroy a PyEngine:
+//      - Call startDestroyEngine() -> Destroy interpreter and all threadstates -> Call endDestroyEngine()
+//   6. Read more docs about EngineLockerHelper in "PyHelper.h"
 // 
-// GIL keeps at one time only one thread can be running. This unpleasant situation is caused by 
-// bad design of CPython. Hope that GIL will be removed in next versions and sub-interpreter support
-// will be public. Only that can save us from managing these annoying things manually
-//
+
 
 namespace script::py_backend {
 
 EngineScopeImpl::EngineScopeImpl(PyEngine &engine, PyEngine * enginePtr) {
+  // wait to enter engine
+  engine.engineLockHelper.waitToEnterEngine();
+
   // Check if there is another existing thread state (put by another engine)   
   // PyThreadState_GET will cause FATAL error if oldState is NULL
   // so here get & check oldState by swap twice
@@ -96,46 +111,35 @@ EngineScopeImpl::EngineScopeImpl(PyEngine &engine, PyEngine * enginePtr) {
     PyThreadState_Swap(currentThreadState);
   }
 
-  if (PyEngine::engineEnterCount_ == 0)
-  {
-    // This is first EngineScope to enter, so lock GIL
-    PyEval_AcquireLock();
-  }
-  ++PyEngine::engineEnterCount_;
+  engine.engineLockHelper.finishEngineSwitch();
   // GIL locked & correct thread state here
   // GIL will keep locked until last EngineScope exit
 }
 
 EngineScopeImpl::~EngineScopeImpl() {
-  if ((--PyEngine::engineEnterCount_) == 0)
-  {
-      // This is the last enginescope to exit, so release GIL
-      PyEval_ReleaseLock();
-  }
+  PyEngine* engine = EngineScope::currentEngineAs<PyEngine>();
+  engine->engineLockHelper.waitToExitEngine();
+
   // Set old thread state stored back
   PyThreadState_Swap(prevThreadState);
+
+  engine->engineLockHelper.finishExitEngine();
 }
 
-ExitEngineScopeImpl::ExitEngineScopeImpl(PyEngine &engine) {
-  if ((--PyEngine::engineEnterCount_) == 0)
-  {
-      // This is the last enginescope to exit, so release GIL
-      PyEval_ReleaseLock();
-  }
+ExitEngineScopeImpl::ExitEngineScopeImpl(PyEngine &engine)
+ :enteredEngine(&engine)
+ {
+  engine.engineLockHelper.waitToExitEngine();
   // Store entered thread state
   enteredThreadState = PyThreadState_Swap(engine.mainThreadState_);
+  engine.engineLockHelper.finishExitEngine();
 }
 
 ExitEngineScopeImpl::~ExitEngineScopeImpl() {
+  enteredEngine->engineLockHelper.waitToEnterEngine();
   // Set old thread state stored back
   PyThreadState_Swap(enteredThreadState);
-
-  if (PyEngine::engineEnterCount_ == 0)
-  {
-    // This is first EngineScope to enter, so lock GIL
-    PyEval_AcquireLock();
-  }
-  ++PyEngine::engineEnterCount_;
+  enteredEngine->engineLockHelper.finishEngineSwitch();
 }
 
 }  // namespace script::py_backend

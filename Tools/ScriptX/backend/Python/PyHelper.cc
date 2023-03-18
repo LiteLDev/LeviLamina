@@ -51,6 +51,83 @@ namespace script {
   
 namespace py_backend {
 
+SCRIPTX_BEGIN_IGNORE_DEPRECARED
+
+// static vars impl
+std::mutex EngineLockerHelper::engineSwitchSharedLocker;
+int EngineLockerHelper::allPyEnginesEnterCount = 0;
+
+EngineLockerHelper::EngineLockerHelper(PyEngine* currentEngine)
+  :engine(currentEngine)
+{}
+
+EngineLockerHelper::~EngineLockerHelper() {
+  // Nothing to do here. All cleanup is done in start/endDestroyEngine.
+}
+
+void EngineLockerHelper::waitToEnterEngine() {
+  engineLocker.lock();
+  engineSwitchSharedLocker.lock();
+
+  if(engine->isDestroying())
+    return;
+
+  if (EngineLockerHelper::allPyEnginesEnterCount == 0) {
+    // The first EngineScope entered. Lock GIL
+    PyEval_AcquireLock();
+  }
+  ++EngineLockerHelper::allPyEnginesEnterCount;
+}
+
+void EngineLockerHelper::finishEngineSwitch() {
+  engineSwitchSharedLocker.unlock();
+}
+
+void EngineLockerHelper::waitToExitEngine() {
+  engineSwitchSharedLocker.lock();
+}
+
+void EngineLockerHelper::finishExitEngine() {
+  if(engine->isDestroying())
+  {
+    engineSwitchSharedLocker.unlock();
+    engineLocker.unlock();
+    return;
+  }
+
+  --EngineLockerHelper::allPyEnginesEnterCount;
+  if (EngineLockerHelper::allPyEnginesEnterCount == 0) {
+    // The last EngineScope exited. Unlock GIL
+    PyEval_ReleaseLock();
+  }
+  engineSwitchSharedLocker.unlock();
+  engineLocker.unlock();
+}
+
+void EngineLockerHelper::startDestroyEngine() {
+  engineLocker.lock();
+  engineSwitchSharedLocker.lock();
+
+  if (EngineLockerHelper::allPyEnginesEnterCount == 0) {
+    // GIL is not locked. Just lock it
+    PyEval_AcquireLock();
+  }
+}
+
+void EngineLockerHelper::endDestroyEngine() {
+  // Even if all engine is destroyed, there will be main interpreter thread state loaded.
+  // So ReleaseLock will not cause any problem.
+  if (EngineLockerHelper::allPyEnginesEnterCount == 0) {
+      // Unlock the GIL because it is not locked before
+      PyEval_ReleaseLock();
+  }
+
+  engineSwitchSharedLocker.unlock();
+  engineLocker.unlock();
+}
+
+SCRIPTX_END_IGNORE_DEPRECARED
+
 void setAttr(PyObject* obj, PyObject* key, PyObject* value) {
   if (PyObject_SetAttr(obj, key, value) != 0) {
     checkAndThrowError();

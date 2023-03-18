@@ -19,6 +19,7 @@
 
 #include "../../src/foundation.h"
 #include <string>
+#include <mutex>
 
 // docs:
 // https://docs.python.org/3/c-api/index.html
@@ -48,8 +49,51 @@ struct GeneralObject : PyObject {
   static T* getInstance(PyObject* self) {
     return reinterpret_cast<T*>(reinterpret_cast<GeneralObject*>(self)->instance);
   }
-
 };
+
+//
+// - Locker Helper:
+//   1. In CPython3.12, it will be changed to per sub-interpreter per GIL, it is great. But in 3.10 
+//      now GIL is global, so we have to use our own lockers instead.
+//   2. This class is used for PyEngine and EngineScope to protect their process. Every PyEngine owns
+//      an instance of EngineLockerHelper.
+//   3. Two lockers are stored in EngineLockerHelper:
+//   - The locker named "engineLocker" is used to mutually exclude multi-threaded access to the same 
+//     engine, just like what GIL does in the single-interpreter environment.
+//   - The locker named "engineSwitchSharedLocker" is shared globally. It is used to protect threadstate
+//     switching and GIL locking/unlocking because they are all "global states" of CPython.
+//   4. "allPyEnginesEnterCount" is shared globally. It stores the number of all entered PyEngines to 
+//      determine whether the GIL is needed to lock/unlock. If any engine is entered, GIL must be locked;
+//      after all engines is exited, GIL is need to be unlocked.
+//   5. Read more docs about locker usage in "PyScope.cc"
+//
+
+class PyEngine;
+class EngineLockerHelper {
+private:
+  PyEngine* engine;
+  std::recursive_mutex engineLocker;
+  static std::mutex engineSwitchSharedLocker;
+  static int allPyEnginesEnterCount;
+
+public:
+  EngineLockerHelper(PyEngine* currentEngine);
+  ~EngineLockerHelper();
+
+  // May wait on lock. After this the GIL must be held.
+  void waitToEnterEngine();       
+  void finishEngineSwitch();
+
+  // May wait on lock.
+  void waitToExitEngine();
+  // After this the GIL maybe released.
+  void finishExitEngine();
+
+  // May wait on lock
+  void startDestroyEngine();      
+  void endDestroyEngine();
+};
+
 // key +1 value +1
 void setAttr(PyObject* obj, PyObject* key, PyObject* value);
 // value +1
