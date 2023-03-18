@@ -9,12 +9,14 @@ extern Logger logger;
 extern bool isInConsoleDebugMode;
 extern ScriptEngine* debugEngine;
 
-#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
+#define OUTPUT_DEBUG_SIGN() std::cout << ">>> " << std::flush
 
 // process python debug seperately
 #ifdef LLSE_BACKEND_PYTHON
 
-#define OUTPUT_DEBUG_NEED_MORE_CODE_SIGN() std::cout << ". " << std::flush
+#define OUTPUT_DEBUG_NEED_MORE_CODE_SIGN() std::cout << "... " << std::flush
+std::string codeBlockBuffer = "";
+bool isInsideCodeBlock = false;
 
 bool ProcessPythonDebugEngine(const std::string &cmd)
 {
@@ -30,6 +32,8 @@ bool ProcessPythonDebugEngine(const std::string &cmd)
         {
             //StartDebug
             logger.info("Debug mode begins");
+            codeBlockBuffer.clear();
+            isInsideCodeBlock = false;
             isInConsoleDebugMode = true;
             OUTPUT_DEBUG_SIGN();
         }
@@ -38,32 +42,66 @@ bool ProcessPythonDebugEngine(const std::string &cmd)
     if (isInConsoleDebugMode)
     {
         EngineScope enter(debugEngine);
-        try
+        if (cmd == "stop")
         {
-            if (cmd == "stop")
-            {
-                return true;
-            }
-            else
-            {
-                auto result = debugEngine->eval("_llse_python_debug_interactive_obj.push(r'" + cmd + "')");
-                if(!result.isBoolean() || !result.asBoolean().value())
+            return true;
+        }
+        else
+        {
+            try {
+                Local<Value> result;
+                if(isInsideCodeBlock)
                 {
-                    // no more code needed
+                    // is in code block mode
+                    if(cmd.empty())
+                    {
+                        // exit code block
+                        isInsideCodeBlock = false;
+                        result = debugEngine->eval(codeBlockBuffer);
+                        codeBlockBuffer = "";
+                    }
+                    else
+                    {
+                        // add a new line to buffer
+                        codeBlockBuffer += cmd + "\n";
+                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                        return false;
+                    }
+                }
+                else
+                {
+                    // not in code block mode
+                    if(EndsWith(cmd, ":"))
+                    {
+                        // begin code block mode
+                        isInsideCodeBlock = true;
+                        codeBlockBuffer = cmd + "\n";
+                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                        return false;
+                    }
+                    else
+                    {
+                        result = debugEngine->eval(cmd);
+                    }
+                }
+
+                if(result.isNull())
+                {
+                    // No result output
                     OUTPUT_DEBUG_SIGN();
                 }
                 else
                 {
-                    // in a code block, need more code next
-                    OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                    PrintValue(std::cout, result);
+                    cout << endl;
+                    OUTPUT_DEBUG_SIGN();
                 }
+            } catch(const Exception &e) {
+                isInsideCodeBlock = false;
+                codeBlockBuffer.clear();
+                PrintException(e);
+                OUTPUT_DEBUG_SIGN();
             }
-        }
-        catch (Exception& e)
-        {
-            // Generally will not reach here
-            PrintException(e);
-            OUTPUT_DEBUG_SIGN();
         }
         return false;
     }

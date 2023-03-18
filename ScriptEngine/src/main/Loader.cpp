@@ -81,16 +81,6 @@ void LoadDebugEngine() {
         logger.error("Fail in Loading Dependence Lib!\n");
         throw;
     }
-
-#ifdef LLSE_BACKEND_PYTHON
-    // create python InteractiveConsole object first
-    try {
-        debugEngine->eval("import code\n_llse_python_debug_interactive_obj = code.InteractiveConsole()");
-    } catch (const Exception& e) {
-        logger.error("Fail to create python interactive debugging engine!\n");
-        throw;
-    }
-#endif
 }
 
 
