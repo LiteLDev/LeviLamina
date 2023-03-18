@@ -36,7 +36,7 @@ public:
     LIAPI map<std::string, CompoundTagVariant>& value();
 
     template <typename T>
-    inline T const* get(class gsl::basic_string_span<char const, -1> key) const {
+    inline T const* get(std::string_view key) const {
         return (T*)get(key);
     };
 
