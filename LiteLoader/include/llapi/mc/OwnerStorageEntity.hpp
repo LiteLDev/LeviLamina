@@ -33,7 +33,7 @@ public:
 
     
     template <class Entity, bool Unknown = false>
-    Entity* tryUnwrap() {
+    inline Entity* tryUnwrap() {
         if (!_hasValue()) {
             return Entity::tryGetFromEntity(_getStackRef(), Unknown);
         }
