@@ -199,54 +199,6 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
     this->kick("error move");
 }
 
-static inline bool checkPktId(unsigned int id) {
-    id &= 0x3ff;
-    return id==0 || id == 0x01 || id == 0x5e || id == 0xc1;
-}
-
-static inline bool& connState(void* conn) {
-    return dAccess<bool, 362>(conn);
-}
-
-
-
-TInstanceHook(NetworkPeer::DataStatus,
-      "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVNetworkSystem@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
-    NetworkConnection, string* data, __int64 a3, __int64** a4) {
-    auto status = original(this, data, a3, a4);
-    if (status == NetworkPeer::DataStatus::HasData) {
-        auto stream = ReadOnlyBinaryStream(*data, false);
-        auto packetId = stream.getUnsignedVarInt();
-        if (packetId == 0) {
-            data->clear();
-            return NetworkPeer::DataStatus::NoData;
-        }
-        if (!data->empty()) {
-            if (checkPktId(packetId)) {
-                connState(this) = true;
-            } else {
-                if (!connState(this)) {
-                    data->clear();
-                    return NetworkPeer::DataStatus::NoData;
-                }
-            }
-        }
-    }
-    return status;
-}
-
-THook(void*,
-      "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
-      "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
-      "Bedrock@@AEAVScheduler@@@Z",
-      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7) {
-    auto res = original(thi, a1, a2, a3, a4, a5, a6,a7);
-    connState(thi) = false;
-    return res;
-}
-
-
-
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
     original(this);
