@@ -22,6 +22,7 @@ class EntityContextBase {
     class EntityRegistryBase* mRegistry;
     const class EntityId mEntity;
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 public:

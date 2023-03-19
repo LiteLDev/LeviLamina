@@ -3,7 +3,7 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
@@ -16,14 +16,12 @@
  * @brief MC class WeakEntityRef.
  *
  */
-class WeakEntityRef {
+class WeakEntityRef : public WeakRefT<struct EntityRefTraits> {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
-    WeakRefT<struct EntityRefTraits> val;
-    LIAPI class Actor* tryUnwrap();
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:

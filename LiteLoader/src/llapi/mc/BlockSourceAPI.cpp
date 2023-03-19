@@ -26,7 +26,7 @@ std::vector<Actor*> BlockSource::queryEntities(ActorType actorType, const AABB& 
             LevelChunk* chunk = getChunk({x, z});
             if (chunk != nullptr) {
                 for (auto& weakEntityRef : chunk->getChunkEntities()) {
-                    Actor* actor = weakEntityRef.tryUnwrap();
+                    Actor* actor = weakEntityRef.tryUnwrap<Actor>();
                     if (actor != nullptr && ActorClassTree::isInstanceOf(*actor, actorType) != ignoreType &&
                         range.intersects(actor->getAABB())) {
                         entities.emplace_back(actor);
@@ -50,7 +50,7 @@ std::vector<Actor*> BlockSource::getEntities(const AABB& range, float extendDist
             LevelChunk* chunk = getChunk({x, z});
             if (chunk != nullptr) {
                 for (auto& weakEntityRef : chunk->getChunkEntities()) {
-                    Actor* actor = weakEntityRef.tryUnwrap();
+                    Actor* actor = weakEntityRef.tryUnwrap<Actor>();
                     if (actor != nullptr && range.intersects(actor->getAABB())) {
                         entities.emplace_back(actor);
                     }
