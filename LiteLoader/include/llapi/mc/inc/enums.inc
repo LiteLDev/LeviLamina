@@ -604,7 +604,12 @@ enum class MinecraftPacketIds : int {
     ServerStats                       = 0xC0,
     RequestNetworkSettings            = 0xC1,
     GameTestRequest                   = 0XC2,
-    GameTestResults                   = 0xC3
+    GameTestResults                   = 0xC3,
+    UpdateClientInputLocks            = 0xC4,
+    ClientCheatAbility                = 0xC5,
+    CameraPresets                     = 0xC6,
+    UnlockedRecipes                   = 0xC7,
+    CameraInstruction                 = 0x12C // 300
 };
 
 enum class ItemStackNetResult : unsigned char {
