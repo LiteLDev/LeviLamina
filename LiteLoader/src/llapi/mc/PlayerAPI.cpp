@@ -361,8 +361,9 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
         wp.writeString((*attribute).getName().getString());
     }
     wp.writeUnsignedVarInt64(0);
-    NetworkPacket<(int)MinecraftPacketIds::UpdateAttributes> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(0x1D);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -554,17 +555,19 @@ void Player::addBossEvent(int64_t uid, string name, float percent, BossEventColo
     wp.writeUnsignedShort(1);
     wp.writeUnsignedVarInt((int)colour);
     wp.writeUnsignedVarInt(overlay);
-    NetworkPacket<(int)MinecraftPacketIds::BossEvent> pkt(wp.getAndReleaseData());
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    pkt->read(wp);
     sendAddEntityPacket(uid, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
-    sendNetworkPacket(pkt);
+    sendNetworkPacket(*pkt);
 }
 
 void Player::removeBossEvent(int64_t uid) {
     BinaryStream wp;
     wp.writeVarInt64(uid);
     wp.writeUnsignedVarInt((int)2);
-    NetworkPacket<(int)MinecraftPacketIds::BossEvent> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
 }
 
 void Player::updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay) {
@@ -579,7 +582,7 @@ static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type) const {
     BinaryStream wp;
-    wp.reserve(8 + text.size());
+    wp.reserve(40 + text.size());
     wp.writeUnsignedChar((char)Type);
     wp.writeBool(true);
     switch (Type) {
@@ -604,8 +607,9 @@ bool Player::sendTextPacket(string text, TextType Type) const {
     wp.writeString("");
     wp.writeString("");
 
-    NetworkPacket<(int)MinecraftPacketIds::Text> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::Text);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -618,7 +622,7 @@ bool Player::sendToastPacket(string title, string msg) {
 bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration,
                              int FadeOutDuration) const {
     BinaryStream wp;
-    wp.reserve(8 + text.size());
+    wp.reserve(16 + text.size());
     wp.writeVarInt((int)Type);
     wp.writeString(text);
     wp.writeVarInt(FadeInDuration);
@@ -647,8 +651,9 @@ bool Player::sendNotePacket(unsigned int tone) {
     wp.writeBool(false);
     wp.writeBool(true);
 
-    NetworkPacket<(int)MinecraftPacketIds::LevelSoundEvent> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::LevelSoundEvent);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -666,8 +671,9 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string Part
     // built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
-    NetworkPacket<(int)MinecraftPacketIds::SpawnParticleEffect> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+   auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -734,8 +740,9 @@ bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId,
     wp.writeUnsignedVarInt(runtimeId);
     wp.writeUnsignedVarInt((unsigned int)flag);
     wp.writeUnsignedVarInt((unsigned int)layer);
-    NetworkPacket<(int)MinecraftPacketIds::UpdateBlock> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::UpdateBlock);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -800,12 +807,13 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
             break;
     }
 
-    NetworkPacket<(int)MinecraftPacketIds::BossEvent> pkt(wp.getAndReleaseData());
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    pkt->read(wp);
     sendAddEntityPacket(getUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
     if (type != BossEvent::Hide) {
         sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::White);
     }
-    sendNetworkPacket(pkt);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -850,12 +858,13 @@ bool Player::sendTextTalkPacket(const string& msg, Player* target) {
 
 bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     BinaryStream wp;
-    wp.reserve(32 + data.size());
+    wp.reserve(8 + data.size());
     wp.writeUnsignedVarInt(formId);
     wp.writeString(data);
 
-    NetworkPacket<(int)MinecraftPacketIds::ModalFormRequest> pkt(wp.getAndReleaseData());
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::ModalFormRequest);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
