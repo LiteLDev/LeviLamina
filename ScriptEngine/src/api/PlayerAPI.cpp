@@ -2556,12 +2556,8 @@ Local<Value> PlayerClass::clearItem(const Arguments& args) {
         if (!player) {
             return Local<Value>();
         }
-        if (args.size() == 1) {
-            return Number::newNumber(player->clearItem(args[0].toStr()));
-        }
-        else {
-            return Number::newNumber(player->clearItem(args[0].toStr(), args[1].asNumber().toInt32()));
-        }
+        return Number::newNumber(
+            player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
     }
     CATCH("Fail in clearItem!");
 }
