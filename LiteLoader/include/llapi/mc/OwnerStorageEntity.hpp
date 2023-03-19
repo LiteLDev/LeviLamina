@@ -35,9 +35,9 @@ public:
     template <class Entity, bool Unknown = false>
     inline Entity* tryUnwrap() {
         if (!_hasValue()) {
-            return Entity::tryGetFromEntity(_getStackRef(), Unknown);
+            return nullptr;
         }
-        return nullptr;
+        return Entity::tryGetFromEntity(_getStackRef(), Unknown);
     }
 
 #define DISABLE_CONSTRUCTOR_PREVENTION_OWNERSTORAGEENTITY
